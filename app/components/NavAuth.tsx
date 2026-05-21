@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Link from 'next/link'
 import { useAuth } from '@/app/providers'
 
 export default function NavAuth() {
@@ -8,7 +9,6 @@ export default function NavAuth() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
-  // Close dropdown on outside click
   useEffect(() => {
     function handler(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -45,16 +45,24 @@ export default function NavAuth() {
       {dropdownOpen && (
         <div className="absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-gray-100 z-[100] overflow-hidden">
           <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
-            <p className="text-xs text-gray-500">Signed in as</p>
-            <p className="text-sm font-semibold text-[#0f1f3d] truncate mt-0.5">{user.email}</p>
+            <p className="text-sm font-semibold text-[#0f1f3d] truncate">{user.name}</p>
+            <p className="text-xs text-gray-500 truncate mt-0.5">{user.email}</p>
           </div>
           <div className="py-1">
-            <button className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#1e40af] transition-colors">
+            <Link
+              href="/profile"
+              onClick={() => setDropdownOpen(false)}
+              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#1e40af] transition-colors"
+            >
               My Profile
-            </button>
-            <button className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#1e40af] transition-colors">
+            </Link>
+            <Link
+              href="/pricing"
+              onClick={() => setDropdownOpen(false)}
+              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#1e40af] transition-colors"
+            >
               My Subscription
-            </button>
+            </Link>
           </div>
           <div className="border-t border-gray-100 py-1">
             <button

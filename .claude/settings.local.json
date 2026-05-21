@@ -4,7 +4,26 @@
       "Bash(npm run:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(gh repo:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next:*)",
+      "Bash(Remove-Item -Path \"C:\\\\Users\\\\bosma\\\\mathly\\\\app\\\\about\\\\page.tsx\" -Force)",
+      "Bash(Remove-Item -Path \"C:\\\\Users\\\\bosma\\\\mathly\\\\app\\\\about\" -Force)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\bosma\\\\mathly\" -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(dir /s /b)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\bosma\\\\mathly\" -Recurse -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(node *)",
+      "Bash(Get-Item \"src\\\\data\\\\grade4\\\\numbers-operations.ts\", \"src\\\\data\\\\grade4\\\\patterns-functions-algebra.ts\")",
+      "Bash(Select-Object Name, Length)",
+      "Bash(taskkill /PID 1868 /F)",
+      "Bash(rd /s /q .next)",
+      "Bash(npx grep *)",
+      "Bash(Get-ChildItem *)",
+      "Bash(dir C:\\\\Users\\\\bosma\\\\mathly\\\\app\\\\grade\\\\[grade]\\\\[topic] *)",
+      "PowerShell(git add *)"
     ]
   }
 }

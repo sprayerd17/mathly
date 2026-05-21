@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useAuth } from '@/app/providers'
+import { useAuth, type Language } from '@/app/providers'
+import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart } from '@/src/data/grade4/numbers-operations'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -12,36 +13,8 @@ interface Props {
   topicName: string
   grade: string
   isLocked: boolean
+  studyGuideData?: TopicData
 }
-
-// ─── Placeholder content ─────────────────────────────────────────────────────
-
-const QUESTIONS = [
-  {
-    n: 1,
-    q: 'Solve for x: 3x + 7 = 22',
-    a: 'x = 5',
-    working: 'Subtract 7 from both sides: 3x = 15. Divide both sides by 3: x = 5.',
-  },
-  {
-    n: 2,
-    q: 'Simplify the expression: 4a² × 2a³',
-    a: '8a⁵',
-    working: 'Multiply the coefficients (4 × 2 = 8) and add the exponents (2 + 3 = 5).',
-  },
-  {
-    n: 3,
-    q: 'A rectangle has length (2x + 1) cm and width 4 cm. Write an expression for its area.',
-    a: 'Area = 8x + 4 cm²',
-    working: 'Area = length × width = (2x + 1) × 4 = 8x + 4 cm².',
-  },
-  {
-    n: 4,
-    q: 'Factorise completely: x² + 7x + 12',
-    a: '(x + 3)(x + 4)',
-    working: 'Find two numbers that multiply to 12 and add to 7. These are 3 and 4.',
-  },
-]
 
 // ─── Lock icon ───────────────────────────────────────────────────────────────
 
@@ -89,94 +62,22 @@ function LoggedOutLocked({ onLoginClick }: { onLoginClick: () => void }) {
 // ─── Locked: logged-in / upgrade view ────────────────────────────────────────
 
 function UpgradePanel() {
-  const [comingSoon, setComingSoon] = useState(false)
-
   return (
-    <div className="max-w-2xl mx-auto py-14 px-6">
-      <div className="flex flex-col items-center text-center mb-10">
-        <div className="w-18 h-18 w-[72px] h-[72px] rounded-full bg-blue-50 flex items-center justify-center mb-5 text-[#1e40af]">
-          <LockIcon />
-        </div>
-        <h2 className="text-2xl font-bold text-[#0f1f3d] mb-2">Upgrade to Mathly Pro</h2>
-        <p className="text-gray-500 text-sm max-w-sm">
-          Unlock unlimited access to all topics and grades with a Pro subscription.
-        </p>
+    <div className="flex flex-col items-center justify-center py-24 px-6 text-center max-w-md mx-auto">
+      <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center mb-6 text-[#1e40af]">
+        <LockIcon />
       </div>
-
-      {comingSoon && (
-        <div className="bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 text-center mb-8">
-          <p className="text-[#1e40af] text-sm font-semibold">
-            Mathly Pro is coming soon!
-          </p>
-          <p className="text-blue-700 text-xs mt-1">
-            Payment integration is on its way. Thank you for your interest.
-          </p>
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {/* Monthly */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-7 flex flex-col shadow-sm">
-          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Monthly</p>
-          <div className="mb-5">
-            <span className="text-4xl font-bold text-[#0f1f3d]">$9.99</span>
-            <span className="text-gray-400 text-sm ml-1.5">/ month</span>
-          </div>
-          <ul className="text-sm text-gray-600 space-y-2.5 mb-7 flex-1">
-            {[
-              'All grades & topics',
-              'Study guides & worked examples',
-              'Practice questions & answers',
-              'Cancel anytime',
-            ].map((f) => (
-              <li key={f} className="flex items-start gap-2">
-                <span className="text-[#1e40af] font-bold shrink-0 mt-0.5">✓</span>
-                {f}
-              </li>
-            ))}
-          </ul>
-          <button
-            onClick={() => setComingSoon(true)}
-            className="w-full bg-[#0f1f3d] hover:bg-[#1e40af] text-white font-semibold py-3 rounded-xl text-sm transition-colors"
-          >
-            Subscribe Monthly
-          </button>
-        </div>
-
-        {/* Annual */}
-        <div className="relative bg-[#0f1f3d] rounded-2xl p-7 flex flex-col shadow-md">
-          <div className="absolute top-5 right-5">
-            <span className="bg-[#1e40af] text-white text-xs font-bold px-2.5 py-1 rounded-full">
-              Best value
-            </span>
-          </div>
-          <p className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-4">Annual</p>
-          <div className="mb-1">
-            <span className="text-4xl font-bold text-white">$7.99</span>
-            <span className="text-blue-300 text-sm ml-1.5">/ month</span>
-          </div>
-          <p className="text-blue-400 text-xs mb-5">Billed as $95.88 / year · Save 20%</p>
-          <ul className="text-sm text-blue-100 space-y-2.5 mb-7 flex-1">
-            {[
-              'All grades & topics',
-              'Study guides & worked examples',
-              'Practice questions & answers',
-              'Priority support',
-            ].map((f) => (
-              <li key={f} className="flex items-start gap-2">
-                <span className="text-blue-400 font-bold shrink-0 mt-0.5">✓</span>
-                {f}
-              </li>
-            ))}
-          </ul>
-          <button
-            onClick={() => setComingSoon(true)}
-            className="w-full bg-[#1e40af] hover:bg-blue-500 text-white font-semibold py-3 rounded-xl text-sm transition-colors"
-          >
-            Subscribe Annually
-          </button>
-        </div>
-      </div>
+      <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">This topic requires a subscription</h2>
+      <p className="text-gray-500 text-sm leading-relaxed mb-8">
+        Subscribe to unlock all topics across every grade. View the available packages to find
+        the plan that works for you.
+      </p>
+      <Link
+        href="/pricing"
+        className="bg-[#1e40af] hover:bg-[#1d3a9e] text-white font-semibold px-7 py-3 rounded-xl text-sm transition-colors shadow-sm"
+      >
+        View packages
+      </Link>
     </div>
   )
 }
@@ -185,109 +86,8 @@ function UpgradePanel() {
 
 function StudyGuide({ topicName }: { topicName: string }) {
   return (
-    <div className="space-y-5">
-      {/* Overview callout */}
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
-        <h2 className="font-semibold text-[#1e40af] mb-1.5">Overview</h2>
-        <p className="text-blue-800 text-sm leading-relaxed">
-          This topic introduces fundamental algebraic concepts that form the foundation for
-          higher mathematics. You will learn to work with variables, simplify expressions, solve
-          basic equations, and apply these techniques to real-world problems.
-        </p>
-      </div>
-
-      {/* Key Definitions */}
-      <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
-        <h2 className="font-semibold text-[#0f1f3d] mb-4">Key Definitions</h2>
-        <div className="space-y-4">
-          {[
-            {
-              term: 'Variable',
-              def: 'A letter (such as x, y, or n) that represents an unknown or changing quantity.',
-            },
-            {
-              term: 'Expression',
-              def: 'A combination of numbers, variables, and operations — for example, 3x + 7. An expression does not have an equals sign.',
-            },
-            {
-              term: 'Equation',
-              def: 'A mathematical statement that asserts two expressions are equal — for example, 3x + 7 = 22. Solving an equation means finding the value of the variable.',
-            },
-          ].map(({ term, def }) => (
-            <div key={term} className="flex gap-3">
-              <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#1e40af] mt-2" />
-              <p className="text-sm text-gray-700 leading-relaxed">
-                <strong className="font-semibold text-[#0f1f3d]">{term}: </strong>
-                {def}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Key Rules */}
-      <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
-        <h2 className="font-semibold text-[#0f1f3d] mb-4">Key Rules &amp; Principles</h2>
-        <div className="space-y-4">
-          {[
-            {
-              rule: 'Balance method',
-              detail:
-                'Whatever you do to one side of an equation, you must do to the other. This keeps the equation balanced.',
-            },
-            {
-              rule: 'Inverse operations',
-              detail:
-                'To isolate a variable, use the opposite operation. Addition undoes subtraction; multiplication undoes division.',
-            },
-            {
-              rule: 'Collecting like terms',
-              detail:
-                'Only terms with the same variable and power can be combined — for example, 3x + 2x = 5x, but 3x + 2x² cannot be simplified.',
-            },
-          ].map(({ rule, detail }) => (
-            <div key={rule} className="flex gap-3">
-              <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#1e40af] mt-2" />
-              <p className="text-sm text-gray-700 leading-relaxed">
-                <strong className="font-semibold text-[#0f1f3d]">{rule}: </strong>
-                {detail}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Worked Example */}
-      <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
-        <h2 className="font-semibold text-[#0f1f3d] mb-4">Worked Example</h2>
-        <div className="bg-gray-50 rounded-lg p-4 mb-4 text-sm font-mono text-[#0f1f3d]">
-          Solve: 2x + 5 = 17
-        </div>
-        <ol className="space-y-3">
-          {[
-            { step: 'Step 1', detail: 'Subtract 5 from both sides:', result: '2x = 12' },
-            { step: 'Step 2', detail: 'Divide both sides by 2:', result: 'x = 6' },
-          ].map(({ step, detail, result }) => (
-            <li key={step} className="flex items-start gap-3 text-sm">
-              <span className="shrink-0 bg-[#1e40af] text-white text-xs font-bold px-2 py-0.5 rounded-md mt-0.5">
-                {step}
-              </span>
-              <span className="text-gray-700">
-                {detail}{' '}
-                <code className="bg-gray-100 px-1.5 py-0.5 rounded text-[#0f1f3d] font-mono text-xs">
-                  {result}
-                </code>
-              </span>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2 text-sm">
-          <span className="text-gray-500">Answer:</span>
-          <code className="bg-blue-50 text-[#1e40af] font-mono font-semibold px-2 py-0.5 rounded text-sm">
-            x = 6
-          </code>
-        </div>
-      </div>
+    <div className="flex items-center justify-center py-24">
+      <p className="text-sm text-gray-500">Content coming soon</p>
     </div>
   )
 }
@@ -296,29 +96,8 @@ function StudyGuide({ topicName }: { topicName: string }) {
 
 function Practice({ topicName }: { topicName: string }) {
   return (
-    <div className="space-y-5">
-      <p className="text-sm text-gray-500 leading-relaxed">
-        Work through each question below. Try to solve it yourself before checking the answer in
-        the <strong>Answers</strong> tab.
-      </p>
-      {QUESTIONS.map(({ n, q }) => (
-        <div key={n} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 w-7 h-7 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
-              {n}
-            </span>
-            <div className="flex-1">
-              <p className="text-gray-800 text-sm leading-relaxed font-medium">{q}</p>
-              <div className="mt-4 h-10 w-full rounded-lg border border-dashed border-gray-200 bg-gray-50 flex items-center px-3">
-                <span className="text-xs text-gray-400">Your working / answer here…</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-      <p className="text-xs text-gray-400 text-center pt-2">
-        When you are ready, open the <strong>Answers</strong> tab to check your work.
-      </p>
+    <div className="flex items-center justify-center py-24">
+      <p className="text-sm text-gray-500">Content coming soon</p>
     </div>
   )
 }
@@ -326,54 +105,715 @@ function Practice({ topicName }: { topicName: string }) {
 // ─── Tab content: Answers ─────────────────────────────────────────────────────
 
 function Answers() {
-  const [revealed, setRevealed] = useState(false)
+  return (
+    <div className="flex items-center justify-center py-24">
+      <p className="text-sm text-gray-500">Content coming soon</p>
+    </div>
+  )
+}
 
-  if (!revealed) {
-    return (
-      <div className="flex flex-col items-center py-16 text-center">
-        <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-5">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#1e40af" className="w-7 h-7">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.355a14.998 14.998 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-          </svg>
-        </div>
-        <h3 className="font-semibold text-[#0f1f3d] mb-2">Have you attempted all the questions?</h3>
-        <p className="text-sm text-gray-500 mb-7 max-w-xs">
-          Try working through the Practice questions first, then come back to check your answers.
-        </p>
-        <button
-          onClick={() => setRevealed(true)}
-          className="bg-[#1e40af] hover:bg-[#1d3a9e] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors shadow-sm"
+// ─── Real study guide renderers ───────────────────────────────────────────────
+
+/** Splits a single explanation string into groups of ~3 sentences per paragraph. */
+function splitIntoParagraphs(text: string, sentencesPerParagraph = 3): string[] {
+  const sentences = text.split(/(?<=[.!?])\s+(?=[A-Z"'(])/)
+  const paragraphs: string[] = []
+  for (let i = 0; i < sentences.length; i += sentencesPerParagraph) {
+    paragraphs.push(sentences.slice(i, i + sentencesPerParagraph).join(' '))
+  }
+  return paragraphs
+}
+
+function WorkedExampleCard({ example, number }: { example: WorkedExample; number: number }) {
+  const [open, setOpen] = useState(true)
+  return (
+    <div className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
+      {/* Header */}
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="w-full flex items-center justify-between px-6 py-5 bg-blue-50 hover:bg-blue-100 transition-colors text-left"
+      >
+        {example.question.includes('<') ? (
+          <span
+            className="text-sm font-semibold text-[#0f1f3d] leading-snug pr-4"
+            dangerouslySetInnerHTML={{ __html: `Example ${number}: ${example.question}` }}
+          />
+        ) : (
+          <span className="text-sm font-semibold text-[#0f1f3d] leading-snug pr-4">
+            Example {number}: {example.question}
+          </span>
+        )}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className={`w-4 h-4 shrink-0 text-[#1e40af] transition-transform ${open ? 'rotate-180' : ''}`}
+          aria-hidden="true"
         >
-          Reveal Answers
-        </button>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      {/* Body */}
+      {open && (
+        <div className="bg-white px-6 py-6">
+          <ol className="space-y-4">
+            {example.steps.map((step, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                  {i + 1}
+                </span>
+                {step.includes('<') ? (
+                <div className="text-gray-700" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: step }} />
+              ) : (
+                <span className="text-gray-700" style={{ lineHeight: 1.8 }}>{step}</span>
+              )}
+              </li>
+            ))}
+          </ol>
+          <div className="flex items-center gap-3 mt-6 pt-5 border-t border-gray-100">
+            <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide shrink-0">Answer</span>
+            {example.answer.includes('<') ? (
+              <span className="bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug" dangerouslySetInnerHTML={{ __html: example.answer }} />
+            ) : (
+              <span className="bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug">
+                {example.answer}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function VideoPlaceholderCard({ label }: { label: string }) {
+  return (
+    <div
+      className="flex items-center gap-4 rounded-xl px-5 py-5"
+      style={{ border: '1.5px dashed #bfdbfe', backgroundColor: '#f8faff' }}
+    >
+      <div
+        className="shrink-0 w-11 h-11 rounded-full flex items-center justify-center"
+        style={{ backgroundColor: '#dbeafe' }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1e40af" className="w-5 h-5" aria-hidden="true">
+          <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clipRule="evenodd" />
+        </svg>
       </div>
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>Video</p>
+        <p className="text-sm font-medium" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
+        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>Video coming soon</p>
+      </div>
+    </div>
+  )
+}
+
+function DiagramPlaceholderCard({ label }: { label: string }) {
+  return (
+    <div
+      className="flex items-center gap-4 rounded-xl px-5 py-5"
+      style={{ border: '1.5px dashed #bfdbfe', backgroundColor: '#f8faff' }}
+    >
+      <div
+        className="shrink-0 w-11 h-11 rounded-full flex items-center justify-center"
+        style={{ backgroundColor: '#dbeafe' }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1e40af" className="w-5 h-5" aria-hidden="true">
+          <path fillRule="evenodd" d="M1.5 5.625c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v12.75c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 18.375V5.625ZM21 9.375A.375.375 0 0 0 20.625 9h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5A.375.375 0 0 0 21 10.875v-1.5Zm0 3.75a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 0 0 .375-.375v-1.5Zm0 3.75a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 0 0 .375-.375v-1.5ZM10.875 18.75a.375.375 0 0 0 .375-.375v-1.5a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5ZM3.375 15h7.5a.375.375 0 0 0 .375-.375v-1.5a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375Zm0-3.75h7.5a.375.375 0 0 0 .375-.375v-1.5A.375.375 0 0 0 10.875 9h-7.5A.375.375 0 0 0 3 9.375v1.5c0 .207.168.375.375.375Z" clipRule="evenodd" />
+        </svg>
+      </div>
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>Diagram</p>
+        <p className="text-sm font-medium" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
+        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>Diagram coming soon</p>
+      </div>
+    </div>
+  )
+}
+
+function PracticeCard({
+  question,
+  number,
+  onAnswer,
+}: {
+  question: PracticeQuestion
+  number: number
+  onAnswer: (correct: boolean) => void
+}) {
+  const [selected, setSelected] = useState<number | null>(null)
+
+  function handleSelect(idx: number) {
+    if (selected !== null) return
+    setSelected(idx)
+    onAnswer(idx === question.correctIndex)
+  }
+
+  const answered = selected !== null
+
+  return (
+    <div className="bg-white border border-gray-100 rounded-xl shadow-sm" style={{ padding: '24px' }}>
+      <div className="flex items-start gap-4 mb-5">
+        <span className="shrink-0 w-7 h-7 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
+          {number}
+        </span>
+        {question.question.includes('<') ? (
+          <p className="text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
+        ) : (
+          <p className="text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }}>
+            {question.question}
+          </p>
+        )}
+      </div>
+
+      <div className="ml-11 space-y-2">
+        {question.options.map((opt, idx) => {
+          const isCorrect = idx === question.correctIndex
+          const isSelected = idx === selected
+
+          let btnClass =
+            'w-full text-left text-sm px-4 py-3 rounded-xl border transition-colors font-medium '
+          if (!answered) {
+            btnClass += 'border-gray-200 text-gray-700 hover:border-[#1e40af] hover:bg-blue-50 hover:text-[#1e40af]'
+          } else if (isCorrect) {
+            btnClass += 'border-green-400 bg-green-50 text-green-800'
+          } else if (isSelected) {
+            btnClass += 'border-red-300 bg-red-50 text-red-700'
+          } else {
+            btnClass += 'border-gray-100 text-gray-400'
+          }
+
+          return (
+            <button key={idx} onClick={() => handleSelect(idx)} className={btnClass}>
+              <span className="inline-flex items-center gap-2.5">
+                <span className="shrink-0 w-5 h-5 rounded-full border border-current flex items-center justify-center text-xs font-bold">
+                  {answered && isCorrect ? '✓' : answered && isSelected ? '✗' : String.fromCharCode(65 + idx)}
+                </span>
+                {opt}
+              </span>
+            </button>
+          )
+        })}
+      </div>
+
+      {answered && selected !== question.correctIndex && (
+        <div className="ml-11 mt-4 bg-amber-50 border border-amber-200 rounded-xl px-4 py-4">
+          <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">How to work it out</p>
+          <p className="text-sm text-amber-900 whitespace-pre-line" style={{ lineHeight: 1.8 }}>
+            {question.answer}
+          </p>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ─── Open-ended question card ─────────────────────────────────────────────────
+
+const DIFFICULTY_STYLE: Record<string, { bg: string; color: string; border: string }> = {
+  'Easy':        { bg: '#f0fdf4', color: '#16a34a', border: '#86efac' },
+  'Easy-Medium': { bg: '#ecfdf5', color: '#059669', border: '#6ee7b7' },
+  'Medium':      { bg: '#fffbeb', color: '#d97706', border: '#fcd34d' },
+  'Medium-Hard': { bg: '#fff7ed', color: '#ea580c', border: '#fdba74' },
+  'Hard':        { bg: '#fef2f2', color: '#dc2626', border: '#fca5a5' },
+}
+
+function normalizeAnswer(s: string): string {
+  return s.toLowerCase().replace(/×/g, 'x').replace(/\s+/g, '').replace(/,/g, '').replace(/[.;:!?]/g, '')
+}
+
+function matchesAnswer(input: string, correctAnswer: string, correctAnswers?: string[]): boolean {
+  const n = normalizeAnswer(input)
+  if (correctAnswers && correctAnswers.length > 0) {
+    return correctAnswers.some((a) => normalizeAnswer(a) === n)
+  }
+  return n === normalizeAnswer(correctAnswer)
+}
+
+function FeedbackBox({
+  correct,
+  text,
+}: {
+  correct: boolean
+  text: string
+}) {
+  return correct ? (
+    <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
+      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#16a34a' }}>Correct!</p>
+      {text.includes('<') ? (
+        <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
+      ) : (
+        <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{text}</p>
+      )}
+    </div>
+  ) : (
+    <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#fef2f2', border: '1px solid #fca5a5' }}>
+      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#dc2626' }}>Not quite</p>
+      {text.includes('<') ? (
+        <p className="text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
+      ) : (
+        <p className="text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }}>{text}</p>
+      )}
+    </div>
+  )
+}
+
+function OpenQuestionCard({
+  question,
+  index,
+  onResult,
+}: {
+  question: OpenQuestion
+  index: number
+  onResult: (partResults: boolean[]) => void
+}) {
+  const [singleInput, setSingleInput] = useState('')
+  const [partInputs, setPartInputs] = useState<string[]>(
+    question.parts ? question.parts.map(() => '') : []
+  )
+  const [checked, setChecked] = useState(false)
+  const [singleCorrect, setSingleCorrect] = useState(false)
+  const [partCorrects, setPartCorrects] = useState<boolean[]>([])
+  const [revealed, setRevealed] = useState(false)
+  const [selfMark, setSelfMark] = useState<boolean | null>(null)
+
+  const d = DIFFICULTY_STYLE[question.difficulty] ?? DIFFICULTY_STYLE['Medium']
+
+  function handleAutoSingleCheck() {
+    const correct = matchesAnswer(singleInput, question.correctAnswer ?? '', question.correctAnswers)
+    setSingleCorrect(correct)
+    setChecked(true)
+    onResult([correct])
+  }
+
+  function handleAutoPartsCheck() {
+    const results = (question.parts ?? []).map((p: QuestionPart, i: number) =>
+      matchesAnswer(partInputs[i] ?? '', p.correctAnswer, p.correctAnswers)
     )
+    setPartCorrects(results)
+    setChecked(true)
+    onResult(results)
+  }
+
+  function handleSelfMark(correct: boolean) {
+    setSelfMark(correct)
+    onResult([correct])
   }
 
   return (
-    <div className="space-y-5">
-      <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 text-sm text-[#1e40af] font-medium">
-        Compare your answers carefully. Understanding why an answer is correct matters more than getting it right first time.
+    <div className="bg-white border border-gray-100 rounded-xl shadow-sm" style={{ padding: '24px' }}>
+      {/* Header */}
+      <div className="flex items-start gap-4 mb-5">
+        <span className="shrink-0 w-7 h-7 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
+          {index + 1}
+        </span>
+        <div className="flex-1">
+          <span
+            className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full mb-3"
+            style={{ backgroundColor: d.bg, color: d.color, border: `1px solid ${d.border}` }}
+          >
+            {question.difficulty}
+          </span>
+          {question.question.includes('<') ? (
+            <p className="text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
+          ) : (
+            <p className="text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }}>
+              {question.question}
+            </p>
+          )}
+        </div>
       </div>
-      {QUESTIONS.map(({ n, q, a, working }) => (
-        <div key={n} className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-          <div className="flex items-start gap-4">
-            <span className="shrink-0 w-7 h-7 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
-              {n}
-            </span>
-            <div className="flex-1 space-y-3">
-              <p className="text-gray-600 text-sm">{q}</p>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">Answer</span>
-                <code className="bg-blue-50 text-[#1e40af] font-mono font-semibold px-2.5 py-1 rounded-lg text-sm">
-                  {a}
-                </code>
+
+      <div className="ml-11">
+        {/* ── AUTO SINGLE ── */}
+        {question.checkMode === 'auto' && !question.parts && (
+          <div>
+            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+              Your answer
+            </label>
+            <input
+              type="text"
+              value={singleInput}
+              onChange={(e) => setSingleInput(e.target.value)}
+              disabled={checked}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !checked && singleInput.trim()) handleAutoSingleCheck() }}
+              placeholder="Type your answer here…"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
+            />
+            {!checked ? (
+              <button
+                onClick={handleAutoSingleCheck}
+                disabled={!singleInput.trim()}
+                className="mt-3 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-40"
+                style={{ backgroundColor: '#1e40af' }}
+              >
+                Check Answer
+              </button>
+            ) : (
+              <FeedbackBox correct={singleCorrect} text={question.explanation ?? ''} />
+            )}
+          </div>
+        )}
+
+        {/* ── AUTO PARTS ── */}
+        {question.checkMode === 'auto' && question.parts && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {question.parts.map((part: QuestionPart, pi: number) => (
+              <div key={pi}>
+                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+                  {part.label} Your answer
+                </label>
+                <input
+                  type="text"
+                  value={partInputs[pi] ?? ''}
+                  onChange={(e) => {
+                    const next = [...partInputs]
+                    next[pi] = e.target.value
+                    setPartInputs(next)
+                  }}
+                  disabled={checked}
+                  placeholder="Type your answer here…"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
+                />
+                {checked && (
+                  <FeedbackBox
+                    correct={partCorrects[pi] ?? false}
+                    text={part.explanation}
+                  />
+                )}
               </div>
-              <div className="bg-gray-50 rounded-lg px-4 py-3">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Working</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{working}</p>
+            ))}
+            {!checked && (
+              <button
+                onClick={handleAutoPartsCheck}
+                disabled={partInputs.some((v) => !v.trim())}
+                className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-40 self-start"
+                style={{ backgroundColor: '#1e40af' }}
+              >
+                Check Answer
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── SELF MARK ── */}
+        {question.checkMode === 'self' && (
+          <div>
+            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+              Show your working
+            </label>
+            <textarea
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 resize-none focus:outline-none focus:border-[#1e40af] transition-colors"
+              rows={4}
+              placeholder="Write your working here…"
+              style={{ fontFamily: 'inherit' }}
+            />
+            {!revealed ? (
+              <button
+                onClick={() => setRevealed(true)}
+                className="mt-3 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
+                style={{ backgroundColor: '#1e40af' }}
+              >
+                Check Answer
+              </button>
+            ) : (
+              <div>
+                <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
+                  <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>Answer</p>
+                  <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{question.answer}</p>
+                </div>
+                {selfMark === null ? (
+                  <div className="flex gap-3 mt-3">
+                    <button
+                      onClick={() => handleSelfMark(true)}
+                      className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+                      style={{ backgroundColor: '#f0fdf4', color: '#16a34a', border: '1px solid #86efac' }}
+                    >
+                      I got it right
+                    </button>
+                    <button
+                      onClick={() => handleSelfMark(false)}
+                      className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+                      style={{ backgroundColor: '#fef2f2', color: '#dc2626', border: '1px solid #fca5a5' }}
+                    >
+                      I got it wrong
+                    </button>
+                  </div>
+                ) : (
+                  <p className="mt-3 text-sm font-semibold" style={{ color: selfMark ? '#16a34a' : '#dc2626' }}>
+                    {selfMark ? 'Marked as correct.' : 'Marked as incorrect.'}
+                  </p>
+                )}
               </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ─── Results summary ──────────────────────────────────────────────────────────
+
+function ResultsSummary({
+  score,
+  total,
+  onReset,
+  customMessages,
+}: {
+  score: number
+  total: number
+  onReset: () => void
+  customMessages?: { minScore: number; message: string }[]
+}) {
+  let message: string
+  let barColor: string
+  if (customMessages && customMessages.length > 0) {
+    const sorted = [...customMessages].sort((a, b) => b.minScore - a.minScore)
+    const match = sorted.find((m) => score >= m.minScore)
+    message = match ? match.message : sorted[sorted.length - 1].message
+    if (score === total) barColor = '#16a34a'
+    else if (score / total >= 0.7) barColor = '#1e40af'
+    else if (score / total >= 0.5) barColor = '#ea580c'
+    else barColor = '#dc2626'
+  } else if (score === total) {
+    message = 'Excellent! You have mastered this topic.'
+    barColor = '#16a34a'
+  } else if (score / total >= 0.6) {
+    message = 'Good work! Review the questions you got wrong and try again.'
+    barColor = '#1e40af'
+  } else {
+    message = 'Keep going! Read through the study guide again and retry.'
+    barColor = '#dc2626'
+  }
+
+  return (
+    <div className="bg-white border border-gray-200 rounded-2xl px-6 py-6 shadow-sm">
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <div>
+          <p className="text-2xl font-bold text-[#0f1f3d] mb-1">
+            {score} <span className="text-base font-medium text-gray-400">/ {total}</span>
+          </p>
+          <p className="text-sm text-gray-600">{message}</p>
+        </div>
+        <button
+          onClick={onReset}
+          className="shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold border border-gray-200 text-gray-700 hover:border-[#1e40af] hover:text-[#1e40af] transition-colors"
+        >
+          Try again
+        </button>
+      </div>
+      <div className="h-2.5 w-full rounded-full bg-gray-100 overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all duration-700"
+          style={{ width: `${(score / total) * 100}%`, backgroundColor: barColor }}
+        />
+      </div>
+    </div>
+  )
+}
+
+// ─── Open practice ────────────────────────────────────────────────────────────
+
+function OpenPractice({
+  questions,
+  scoreMessages,
+}: {
+  questions: OpenQuestion[]
+  scoreMessages?: { minScore: number; message: string }[]
+}) {
+  // 1 mark per part; questions without parts count as 1 mark
+  const totalMarks = questions.reduce(
+    (sum, q) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1),
+    0
+  )
+
+  const [results, setResults] = useState<(boolean[] | null)[]>(() =>
+    Array(questions.length).fill(null)
+  )
+  const [resetKey, setResetKey] = useState(0)
+
+  function handleResult(index: number, partResults: boolean[]) {
+    setResults((prev) => {
+      const next = [...prev]
+      next[index] = partResults
+      return next
+    })
+  }
+
+  function handleReset() {
+    setResults(Array(questions.length).fill(null))
+    setResetKey((k) => k + 1)
+  }
+
+  const allAnswered = results.every((r) => r !== null)
+  const score = results.reduce(
+    (sum, r) => sum + (r ? r.filter(Boolean).length : 0),
+    0
+  )
+
+  return (
+    <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+      <div>
+        <h2 className="text-base font-bold text-[#0f1f3d] mb-1">Practice Questions</h2>
+        <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
+          Work out each question, then click <strong>Check Answer</strong>. For questions where you show your working, reveal the answer and mark yourself honestly.
+        </p>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        {questions.map((q, i) => (
+          <OpenQuestionCard
+            key={`q-${i}-${resetKey}`}
+            question={q}
+            index={i}
+            onResult={(partResults) => handleResult(i, partResults)}
+          />
+        ))}
+      </div>
+      {allAnswered && (
+        <ResultsSummary score={score} total={totalMarks} onReset={handleReset} customMessages={scoreMessages} />
+      )}
+    </div>
+  )
+}
+
+// ─── Real study guide renderers ───────────────────────────────────────────────
+
+function RealStudyGuide({ data }: { data: TopicData }) {
+  return (
+    <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+      {data.sections.map((section: Section, i: number) => (
+        <div key={section.id}>
+          {/* Section heading */}
+          <div className="flex items-center gap-3" style={{ marginBottom: '32px' }}>
+            <span className="text-2xl" aria-hidden="true">{section.icon}</span>
+            <h2 className="text-lg font-bold text-[#0f1f3d]">
+              {i + 1}. {section.title}
+            </h2>
+          </div>
+
+          {/* Explanation card */}
+          <div
+            style={{
+              border: '1.5px solid #1e40af',
+              borderRadius: '12px',
+              backgroundColor: 'rgba(239, 246, 255, 0.4)',
+              padding: '24px',
+              marginBottom: '32px',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {section.explanation.includes('<') ? (
+                <div
+                  className="text-blue-900"
+                  style={{ fontSize: '17px', lineHeight: 1.8 }}
+                  dangerouslySetInnerHTML={{ __html: section.explanation }}
+                />
+              ) : (
+                splitIntoParagraphs(section.explanation).map((para, pi) => (
+                  <p key={pi} className="text-blue-900" style={{ fontSize: '17px', lineHeight: 1.8 }}>
+                    {para}
+                  </p>
+                ))
+              )}
             </div>
+          </div>
+
+          {/* Worked examples */}
+          <h3
+            className="text-sm font-semibold text-gray-500 uppercase tracking-wide"
+            style={{ marginBottom: '16px' }}
+          >
+            Worked Examples
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {section.workedExamples.map((ex: WorkedExample, j: number) => (
+              <WorkedExampleCard key={j} example={ex} number={j + 1} />
+            ))}
+          </div>
+
+          {section.diagramPlaceholder && (
+            <div style={{ marginTop: '16px' }}>
+              <DiagramPlaceholderCard label={section.diagramPlaceholder} />
+            </div>
+          )}
+          {section.videoPlaceholder && (
+            <div style={{ marginTop: '12px' }}>
+              <VideoPlaceholderCard label={section.videoPlaceholder} />
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function RealPractice({ data }: { data: TopicData }) {
+  if (data.topicPractice && data.topicPractice.length > 0) {
+    return <OpenPractice questions={data.topicPractice} scoreMessages={data.scoreMessages} />
+  }
+
+  const total = data.sections.reduce((sum, s) => sum + s.practiceQuestions.length, 0)
+  const [answers, setAnswers] = useState<Record<string, boolean>>({})
+
+  function handleAnswer(key: string, correct: boolean) {
+    setAnswers((prev) => ({ ...prev, [key]: correct }))
+  }
+
+  const answered = Object.keys(answers).length
+  const correct = Object.values(answers).filter(Boolean).length
+
+  return (
+    <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+      {/* Score tracker */}
+      <div className="bg-white border border-gray-200 rounded-2xl px-6 py-5 shadow-sm">
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-sm font-semibold text-[#0f1f3d]">Your Score</p>
+          <span className="text-sm font-bold text-[#1e40af]">
+            {correct} / {total}
+          </span>
+        </div>
+        <div className="h-2.5 w-full rounded-full bg-gray-100 overflow-hidden">
+          <div
+            className="h-full rounded-full bg-[#1e40af] transition-all duration-500"
+            style={{ width: total ? `${(correct / total) * 100}%` : '0%' }}
+          />
+        </div>
+        <p className="text-xs text-gray-400 mt-2">
+          {answered === 0
+            ? 'Select an answer to begin.'
+            : answered < total
+            ? `${total - answered} question${total - answered !== 1 ? 's' : ''} remaining.`
+            : correct === total
+            ? 'Perfect score! Well done.'
+            : `${total - correct} incorrect — review the working shown below each question.`}
+        </p>
+      </div>
+
+      {data.sections.map((section: Section) => (
+        <div key={section.id}>
+          <h2
+            className="text-sm font-semibold text-[#0f1f3d] uppercase tracking-wide flex items-center gap-2"
+            style={{ marginBottom: '16px' }}
+          >
+            <span aria-hidden="true">{section.icon}</span>
+            {section.title}
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {section.practiceQuestions.map((q: PracticeQuestion, i: number) => {
+              const key = `${section.id}-${i}`
+              return (
+                <PracticeCard
+                  key={key}
+                  question={q}
+                  number={i + 1}
+                  onAnswer={(c) => handleAnswer(key, c)}
+                />
+              )
+            })}
           </div>
         </div>
       ))}
@@ -381,9 +821,36 @@ function Answers() {
   )
 }
 
+// ─── Language toggle ──────────────────────────────────────────────────────────
+
+function LanguageToggle({ lang, onChange }: { lang: Language; onChange: (l: Language) => void }) {
+  return (
+    <div
+      className="inline-flex items-center rounded-lg overflow-hidden text-xs font-semibold shrink-0"
+      style={{ border: '1px solid #e5e7eb' }}
+    >
+      {(['en', 'af'] as const).map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => onChange(l)}
+          className="px-3 py-1.5 transition-colors"
+          style={
+            lang === l
+              ? { backgroundColor: '#1e40af', color: '#fff' }
+              : { backgroundColor: '#fff', color: '#9ca3af' }
+          }
+        >
+          {l === 'en' ? 'EN' : 'AF'}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export default function TopicTabs({ topicName, grade, isLocked }: Props) {
+export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>('Study Guide')
   const [mounted, setMounted] = useState(false)
   const { user, openModal } = useAuth()
@@ -392,13 +859,22 @@ export default function TopicTabs({ topicName, grade, isLocked }: Props) {
     setMounted(true)
   }, [])
 
+  const [lang, setLang] = useState<Language>('en')
+
+  useEffect(() => {
+    setLang(user?.language ?? 'en')
+  }, [user?.language])
+
   // ── Locked topic ──────────────────────────────────────────────────────────
   if (isLocked) {
     return (
       <div className="max-w-4xl mx-auto px-6 py-10">
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-[#0f1f3d] mb-1">{topicName}</h1>
-          <p className="text-sm text-gray-500">Grade {grade}</p>
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <h1 className="text-3xl font-bold text-[#0f1f3d] mb-1">{topicName}</h1>
+            <p className="text-sm text-gray-500">Grade {grade}</p>
+          </div>
+          <LanguageToggle lang={lang} onChange={setLang} />
         </div>
         {/* Suppress auth-dependent content until hydrated to avoid mismatch */}
         {!mounted ? (
@@ -422,7 +898,9 @@ export default function TopicTabs({ topicName, grade, isLocked }: Props) {
   }
 
   // ── Free topic ────────────────────────────────────────────────────────────
-  const TABS: Tab[] = ['Study Guide', 'Practice', 'Answers']
+  const TABS: Tab[] = studyGuideData
+    ? ['Study Guide', 'Practice']
+    : ['Study Guide', 'Practice', 'Answers']
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
@@ -437,26 +915,39 @@ export default function TopicTabs({ topicName, grade, isLocked }: Props) {
       </div>
 
       {/* Tab bar */}
-      <div className="flex border-b border-gray-200 mb-8">
-        {TABS.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-5 py-3 text-sm font-medium border-b-2 -mb-px transition-colors ${
-              activeTab === tab
-                ? 'border-[#1e40af] text-[#1e40af]'
-                : 'border-transparent text-gray-500 hover:text-gray-800'
-            }`}
-          >
-            {tab}
-          </button>
-        ))}
+      <div className="flex items-center justify-between border-b border-gray-200 mb-8">
+        <div className="flex">
+          {TABS.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-5 py-3 text-sm font-medium border-b-2 -mb-px transition-colors ${
+                activeTab === tab
+                  ? 'border-[#1e40af] text-[#1e40af]'
+                  : 'border-transparent text-gray-500 hover:text-gray-800'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+        <div className="pb-px">
+          <LanguageToggle lang={lang} onChange={setLang} />
+        </div>
       </div>
 
       {/* Tab panels */}
-      {activeTab === 'Study Guide' && <StudyGuide topicName={topicName} />}
-      {activeTab === 'Practice' && <Practice topicName={topicName} />}
-      {activeTab === 'Answers' && <Answers />}
+      {activeTab === 'Study Guide' && (
+        studyGuideData
+          ? <RealStudyGuide data={studyGuideData} />
+          : <StudyGuide topicName={topicName} />
+      )}
+      {activeTab === 'Practice' && (
+        studyGuideData
+          ? <RealPractice data={studyGuideData} />
+          : <Practice topicName={topicName} />
+      )}
+      {activeTab === 'Answers' && !studyGuideData && <Answers />}
 
       <div className="mt-10 pt-6 border-t border-gray-100">
         <Link
