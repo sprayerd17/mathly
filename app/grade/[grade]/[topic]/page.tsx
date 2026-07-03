@@ -1,52 +1,36 @@
+'use client'
+
+import { use, useState, useEffect } from 'react'
 import Link from 'next/link'
 import TopicTabs from '@/app/components/TopicTabs'
 import NavAuth from '@/app/components/NavAuth'
-import AIAssistant from '@/app/components/AIAssistant'
-import { topicData as grade4Topic1 } from '@/src/data/grade4/numbers-operations'
-import { topicData as grade4Topic2 } from '@/src/data/grade4/addition-subtraction'
-import { topicData as grade4Topic3 } from '@/src/data/grade4/multiplication'
-import { topicData as grade4Topic4 } from '@/src/data/grade4/division'
-import { topicData as grade4Topic5 } from '@/src/data/grade4/number-sentences'
-import { topicData as grade4Topic6 } from '@/src/data/grade4/common-fractions'
-import { topicData as grade4Topic7 } from '@/src/data/grade4/number-patterns'
-import { topicData as grade4Topic8 } from '@/src/data/grade4/geometric-patterns'
-import { topicData as grade4Topic9 } from '@/src/data/grade4/symmetry'
-import { topicData as grade4Topic10 } from '@/src/data/grade4/2d-shapes'
-import { topicData as grade4Topic11 } from '@/src/data/grade4/3d-objects'
-import { topicData as grade4Topic12 } from '@/src/data/grade4/position-movement'
-import { topicData as grade4Topic13 } from '@/src/data/grade4/transformations'
-import { topicData as grade4Topic14 } from '@/src/data/grade4/length'
-import { topicData as grade4Topic15 } from '@/src/data/grade4/mass'
-import { topicData as grade4Topic16 } from '@/src/data/grade4/capacity-volume'
-import { topicData as grade4Topic17 } from '@/src/data/grade4/perimeter-area'
-import { topicData as grade4Topic18 } from '@/src/data/grade4/time'
-import { topicData as grade4Topic19 } from '@/src/data/grade4/data-handling'
-import { topicData as grade4Topic20 } from '@/src/data/grade4/probability'
-import type { TopicData } from '@/src/data/grade4/numbers-operations'
+import { useAuth } from '@/app/providers'
+import { useTranslations } from '@/src/i18n/useTranslations'
+import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 
-// const FREE_TOPICS = new Set(['topic-1', 'topic-2']) // REVIEW MODE: re-enable to restore locking
-
-function resolveStudyGuideData(grade: string, topic: string): TopicData | undefined {
-  if (grade === '4' && topic === 'topic-1') return grade4Topic1
-  if (grade === '4' && topic === 'topic-2') return grade4Topic2
-  if (grade === '4' && topic === 'topic-3') return grade4Topic3
-  if (grade === '4' && topic === 'topic-4') return grade4Topic4
-  if (grade === '4' && topic === 'topic-5') return grade4Topic5
-  if (grade === '4' && topic === 'topic-6') return grade4Topic6
-  if (grade === '4' && topic === 'topic-7') return grade4Topic7
-  if (grade === '4' && topic === 'topic-8') return grade4Topic8
-  if (grade === '4' && topic === 'topic-9') return grade4Topic9
-  if (grade === '4' && topic === 'topic-10') return grade4Topic10
-  if (grade === '4' && topic === 'topic-11') return grade4Topic11
-  if (grade === '4' && topic === 'topic-12') return grade4Topic12
-  if (grade === '4' && topic === 'topic-13') return grade4Topic13
-  if (grade === '4' && topic === 'topic-14') return grade4Topic14
-  if (grade === '4' && topic === 'topic-15') return grade4Topic15
-  if (grade === '4' && topic === 'topic-16') return grade4Topic16
-  if (grade === '4' && topic === 'topic-17') return grade4Topic17
-  if (grade === '4' && topic === 'topic-18') return grade4Topic18
-  if (grade === '4' && topic === 'topic-19') return grade4Topic19
-  if (grade === '4' && topic === 'topic-20') return grade4Topic20
+async function resolveStudyGuideData(
+  grade: string,
+  topic: string,
+  language: 'en' | 'af',
+): Promise<TopicData | undefined> {
+  const langs: Array<'en' | 'af'> = language === 'af' ? ['af', 'en'] : ['en']
+  for (const lang of langs) {
+    try {
+      let mod: { topicData: TopicData } | undefined
+      if      (grade === '4')  mod = await import(`@/src/data/grade4/${lang}/${topic}`)
+      else if (grade === '5')  mod = await import(`@/src/data/grade5/${lang}/${topic}`)
+      else if (grade === '6')  mod = await import(`@/src/data/grade6/${lang}/${topic}`)
+      else if (grade === '7')  mod = await import(`@/src/data/grade7/${lang}/${topic}`)
+      else if (grade === '8')  mod = await import(`@/src/data/grade8/${lang}/${topic}`)
+      else if (grade === '9')  mod = await import(`@/src/data/grade9/${lang}/${topic}`)
+      else if (grade === '10') mod = await import(`@/src/data/grade10/${lang}/${topic}`)
+      else if (grade === '11') mod = await import(`@/src/data/grade11/${lang}/${topic}`)
+      else if (grade === '12') mod = await import(`@/src/data/grade12/${lang}/${topic}`)
+      if (mod) return mod.topicData
+    } catch {
+      // language file not found; try next in fallback chain
+    }
+  }
   return undefined
 }
 
@@ -57,15 +41,25 @@ function formatSlug(slug: string): string {
     .join(' ')
 }
 
-export default async function TopicPage({
+export default function TopicPage({
   params,
 }: {
   params: Promise<{ grade: string; topic: string }>
 }) {
-  const { grade, topic } = await params
-  // const isLocked = !FREE_TOPICS.has(topic) // REVIEW MODE: re-enable to restore locking
+  const { grade, topic } = use(params)
+  const { user } = useAuth()
+  const t = useTranslations()
+  const language = (user?.language ?? 'en') as 'en' | 'af'
+  // const FREE_TOPICS = new Set(['topic-1', 'topic-2']) // REVIEW MODE: re-enable to restore locking
   const isLocked = false
-  const studyGuideData = resolveStudyGuideData(grade, topic)
+
+  const [studyGuideData, setStudyGuideData] = useState<TopicData | undefined>(undefined)
+
+  useEffect(() => {
+    setStudyGuideData(undefined)
+    resolveStudyGuideData(grade, topic, language).then(setStudyGuideData)
+  }, [grade, topic, language])
+
   const topicName = studyGuideData ? studyGuideData.title : formatSlug(topic)
 
   return (
@@ -80,13 +74,13 @@ export default async function TopicPage({
               className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0f1f3d] hover:underline underline-offset-4 transition-all shrink-0"
             >
               <span aria-hidden="true">←</span>
-              Back to Grade {grade}
+              {t.grade_back_to_grade.replace('{grade}', String(grade))}
             </Link>
             <nav className="hidden md:flex items-center gap-2 text-sm text-gray-400 min-w-0" aria-label="Breadcrumb">
               <span aria-hidden="true">/</span>
-              <Link href="/" className="hover:text-[#0f1f3d] transition-colors shrink-0">Home</Link>
+              <Link href="/" className="hover:text-[#0f1f3d] transition-colors shrink-0">{t.nav_home}</Link>
               <span aria-hidden="true">/</span>
-              <Link href={`/grade/${grade}`} className="hover:text-[#0f1f3d] transition-colors shrink-0">Grade {grade}</Link>
+              <Link href={`/grade/${grade}`} className="hover:text-[#0f1f3d] transition-colors shrink-0">{t.grade_heading.replace('{grade}', String(grade))}</Link>
               <span aria-hidden="true">/</span>
               <span className="text-[#0f1f3d] font-medium truncate">{topicName}</span>
             </nav>
@@ -101,7 +95,6 @@ export default async function TopicPage({
         <TopicTabs topicName={topicName} grade={grade} isLocked={isLocked} studyGuideData={studyGuideData} />
       </main>
 
-      <AIAssistant grade={grade} />
     </div>
   )
 }

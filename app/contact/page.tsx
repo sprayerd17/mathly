@@ -3,9 +3,18 @@
 import { useState } from 'react'
 import Navbar from '@/app/components/Navbar'
 import FAQAccordion from '@/app/components/FAQAccordion'
+import { useTranslations } from '@/src/i18n/useTranslations'
 
 const CONTACT_GRADES    = [4, 5, 6, 7, 8, 9, 10, 11, 12]
-const CONTACT_REQ_TYPES = ['Missing Topic', 'Missing Grade Content', 'Feature Request', 'General Suggestion', 'Other']
+// Underlying stored values stay in English (matches admin/page.tsx REQUEST_TYPES),
+// each paired with the translation key used to render its label.
+const CONTACT_REQ_TYPES: { value: string; labelKey: string }[] = [
+  { value: 'Missing Topic',          labelKey: 'contact_req_type_missing_topic' },
+  { value: 'Missing Grade Content',  labelKey: 'contact_req_type_missing_grade_content' },
+  { value: 'Feature Request',        labelKey: 'contact_req_type_feature_request' },
+  { value: 'General Suggestion',     labelKey: 'contact_req_type_general_suggestion' },
+  { value: 'Other',                  labelKey: 'topic_query_other_option' },
+]
 const REQUESTS_KEY      = 'mathly_requests'
 
 const EMPTY_FORM = {
@@ -54,6 +63,7 @@ function ClockIcon() {
 }
 
 export default function ContactPage() {
+  const t = useTranslations()
   const [form, setForm]           = useState(EMPTY_FORM)
   const [submitted, setSubmitted] = useState(false)
 
@@ -84,10 +94,10 @@ export default function ContactPage() {
         {/* ── Heading ─────────────────────────────────────────────────────── */}
         <div className="mb-10">
           <h1 className="text-4xl font-bold tracking-tight" style={{ color: '#0f1f3d' }}>
-            Get in touch
+            {t.contact_hero_heading}
           </h1>
           <p className="mt-3 text-lg text-gray-500">
-            Have a question or feedback? We&apos;d love to hear from you.
+            {t.contact_hero_subheading}
           </p>
         </div>
 
@@ -109,9 +119,9 @@ export default function ContactPage() {
           <div className="flex items-start gap-3 text-gray-500">
             <ClockIcon />
             <div>
-              <p className="text-sm font-semibold text-[#0f1f3d]">Response time</p>
+              <p className="text-sm font-semibold text-[#0f1f3d]">{t.contact_response_time_heading}</p>
               <p className="text-sm mt-0.5">
-                We typically respond within 1 to 2 business days.
+                {t.contact_response_time_description}
               </p>
             </div>
           </div>
@@ -120,10 +130,10 @@ export default function ContactPage() {
         {/* ── Submit a request ────────────────────────────────────────────── */}
         <section className="mb-14">
           <h2 className="text-xl font-bold mb-2" style={{ color: '#0f1f3d' }}>
-            Submit a request
+            {t.contact_submit_request_heading}
           </h2>
           <p className="text-sm text-gray-500 mb-8">
-            Missing a topic, need a feature, or have a suggestion? Let us know.
+            {t.contact_submit_request_description}
           </p>
 
           {submitted ? (
@@ -131,7 +141,7 @@ export default function ContactPage() {
               className="rounded-xl px-6 py-5 text-sm font-medium"
               style={{ backgroundColor: '#dcfce7', color: '#15803d', border: '1px solid #bbf7d0' }}
             >
-              Thank you, your request has been noted. We review all requests weekly.
+              {t.contact_submit_success_message}
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -139,7 +149,7 @@ export default function ContactPage() {
               {/* Name */}
               <div>
                 <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  Name
+                  {t.contact_form_name_label}
                 </label>
                 <input
                   type="text"
@@ -147,7 +157,7 @@ export default function ContactPage() {
                   onChange={e => f('name', e.target.value)}
                   className="w-full border rounded-lg px-4 py-2.5 text-sm outline-none"
                   style={{ borderColor: '#d1d5db' }}
-                  placeholder="Your name"
+                  placeholder={t.contact_form_name_placeholder}
                   required
                 />
               </div>
@@ -155,7 +165,7 @@ export default function ContactPage() {
               {/* Email */}
               <div>
                 <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  Email
+                  {t.contact_form_email_label}
                 </label>
                 <input
                   type="email"
@@ -163,7 +173,7 @@ export default function ContactPage() {
                   onChange={e => f('email', e.target.value)}
                   className="w-full border rounded-lg px-4 py-2.5 text-sm outline-none"
                   style={{ borderColor: '#d1d5db' }}
-                  placeholder="you@example.com"
+                  placeholder={t.auth_email_placeholder}
                   required
                 />
               </div>
@@ -171,7 +181,7 @@ export default function ContactPage() {
               {/* Grade */}
               <div>
                 <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  Grade
+                  {t.dash_form_grade}
                 </label>
                 <select
                   value={form.grade}
@@ -181,7 +191,7 @@ export default function ContactPage() {
                   required
                 >
                   {CONTACT_GRADES.map(g => (
-                    <option key={g} value={g}>Grade {g}</option>
+                    <option key={g} value={g}>{t.topic_grade_value.replace('{grade}', String(g))}</option>
                   ))}
                 </select>
               </div>
@@ -189,7 +199,7 @@ export default function ContactPage() {
               {/* Language */}
               <div>
                 <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  Language
+                  {t.contact_form_language_label}
                 </label>
                 <div className="flex gap-3">
                   {(['en', 'af'] as const).map(lang => (
@@ -204,7 +214,7 @@ export default function ContactPage() {
                           : { backgroundColor: '#f8fafc', color: '#374151', borderColor: '#d1d5db' }
                       }
                     >
-                      {lang === 'en' ? 'English' : 'Afrikaans'}
+                      {lang === 'en' ? t.topic_language_english : t.topic_language_afrikaans}
                     </button>
                   ))}
                 </div>
@@ -213,7 +223,7 @@ export default function ContactPage() {
               {/* Request type */}
               <div>
                 <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  Request type
+                  {t.contact_form_request_type_label}
                 </label>
                 <select
                   value={form.requestType}
@@ -222,8 +232,8 @@ export default function ContactPage() {
                   style={{ borderColor: '#d1d5db' }}
                   required
                 >
-                  {CONTACT_REQ_TYPES.map(t => (
-                    <option key={t} value={t}>{t}</option>
+                  {CONTACT_REQ_TYPES.map(rt => (
+                    <option key={rt.value} value={rt.value}>{t[rt.labelKey as keyof typeof t]}</option>
                   ))}
                 </select>
               </div>
@@ -231,7 +241,7 @@ export default function ContactPage() {
               {/* Description */}
               <div>
                 <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  Description
+                  {t.contact_form_description_label}
                 </label>
                 <textarea
                   value={form.description}
@@ -239,7 +249,7 @@ export default function ContactPage() {
                   className="w-full border rounded-lg px-4 py-3 text-sm outline-none resize-none"
                   style={{ borderColor: '#d1d5db' }}
                   rows={4}
-                  placeholder="Describe what you need"
+                  placeholder={t.contact_form_description_placeholder}
                   required
                 />
               </div>
@@ -249,7 +259,7 @@ export default function ContactPage() {
                 className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-colors"
                 style={{ backgroundColor: '#1e40af' }}
               >
-                Submit Request
+                {t.contact_submit_request_button}
               </button>
             </form>
           )}
@@ -258,7 +268,7 @@ export default function ContactPage() {
         {/* ── FAQ ─────────────────────────────────────────────────────────── */}
         <section className="mb-14">
           <h2 className="text-xl font-bold mb-6" style={{ color: '#0f1f3d' }}>
-            Frequently asked questions
+            {t.contact_faq_heading}
           </h2>
           <FAQAccordion />
         </section>
@@ -266,13 +276,10 @@ export default function ContactPage() {
         {/* ── About Mathly ────────────────────────────────────────────────── */}
         <section className="rounded-xl border border-gray-200 bg-white px-6 py-6 shadow-sm">
           <h2 className="text-base font-bold mb-2" style={{ color: '#0f1f3d' }}>
-            About Mathly
+            {t.contact_about_heading}
           </h2>
           <p className="text-sm text-gray-500 leading-relaxed">
-            Mathly is a South African maths education platform covering Grade 4 to Grade 12.
-            Our study guides, worked examples, and practice problems are aligned to the CAPS
-            curriculum. We&apos;re a small team passionate about making quality maths education
-            accessible to every learner in South Africa.
+            {t.contact_about_blurb}
           </p>
         </section>
 

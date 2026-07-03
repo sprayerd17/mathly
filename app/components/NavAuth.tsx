@@ -3,9 +3,11 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useAuth } from '@/app/providers'
+import { useTranslations } from '@/src/i18n/useTranslations'
 
 export default function NavAuth() {
   const { user, logout, openModal } = useAuth()
+  const t = useTranslations()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -54,14 +56,14 @@ export default function NavAuth() {
               onClick={() => setDropdownOpen(false)}
               className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#1e40af] transition-colors"
             >
-              My Profile
+              {t.nav_my_profile}
             </Link>
             <Link
               href="/pricing"
               onClick={() => setDropdownOpen(false)}
               className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#1e40af] transition-colors"
             >
-              My Subscription
+              {t.nav_my_subscription}
             </Link>
           </div>
           <div className="border-t border-gray-100 py-1">
@@ -69,7 +71,7 @@ export default function NavAuth() {
               onClick={() => { logout(); setDropdownOpen(false) }}
               className="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors"
             >
-              Log out
+              {t.nav_log_out}
             </button>
           </div>
         </div>

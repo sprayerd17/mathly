@@ -1,23 +1,30 @@
+'use client'
+
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
+import FamilyPlanBuilder from './FamilyPlanBuilder'
+import { useTranslations } from '@/src/i18n/useTranslations'
 
-const TABLE_FEATURES = [
-  { label: 'Study guides',           free: true,  pro: true,  guided: true  },
-  { label: 'Practice questions',     free: true,  pro: true,  guided: true  },
-  { label: 'Answers',                free: false, pro: true,  guided: true  },
-  { label: 'All topics & grades',    free: false, pro: true,  guided: true  },
-  { label: 'Weekly topic queries',   free: false, pro: false, guided: true  },
-  { label: 'Expert group responses', free: false, pro: false, guided: true  },
-]
+function useTableFeatures() {
+  const t = useTranslations()
+  return [
+    { label: t.pricing_feature_study_guides,           free: true,  pro: true,  guided: true  },
+    { label: t.pricing_feature_practice_questions,     free: true,  pro: true,  guided: true  },
+    { label: t.pricing_feature_answers,                free: false, pro: true,  guided: true  },
+    { label: t.pricing_feature_all_topics_grades,      free: false, pro: true,  guided: true  },
+    { label: t.pricing_feature_weekly_topic_queries,   free: false, pro: false, guided: true  },
+    { label: t.pricing_feature_expert_group_responses, free: false, pro: false, guided: true  },
+  ]
+}
 
-function Check() {
+function Check({ label }: { label: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
       className="w-5 h-5 text-[#1e40af] mx-auto"
-      aria-label="Included"
+      aria-label={label}
     >
       <path
         fillRule="evenodd"
@@ -28,44 +35,18 @@ function Check() {
   )
 }
 
-function Dash() {
+function Dash({ label }: { label: string }) {
   return (
-    <span className="block text-gray-300 text-lg leading-none mx-auto w-fit" aria-label="Not included">
+    <span className="block text-gray-300 text-lg leading-none mx-auto w-fit" aria-label={label}>
       —
     </span>
   )
 }
 
-function FoundingBadge() {
-  return (
-    <span
-      className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-4"
-      style={{ background: '#fef3c7', color: '#92400e', border: '1px solid #fcd34d' }}
-    >
-      ★ Founding Member
-    </span>
-  )
-}
-
-function SpotCounter({ remaining, total }: { remaining: number; total: number }) {
-  const taken = total - remaining
-  const pct = Math.round((taken / total) * 100)
-  return (
-    <div className="mt-4 mb-5">
-      <p className="text-xs font-semibold text-gray-500 mb-1.5">
-        <span style={{ color: '#b45309', fontWeight: 700 }}>{remaining}</span> of {total} spots remaining
-      </p>
-      <div className="w-full h-2 rounded-full" style={{ background: '#fef3c7' }}>
-        <div
-          className="h-2 rounded-full"
-          style={{ width: `${pct}%`, background: '#f59e0b' }}
-        />
-      </div>
-    </div>
-  )
-}
-
 export default function PricingPage() {
+  const t = useTranslations()
+  const TABLE_FEATURES = useTableFeatures()
+
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
       <Navbar />
@@ -75,161 +56,109 @@ export default function PricingPage() {
         {/* Launch banner */}
         <div
           className="w-full py-3 px-6 text-center text-sm font-semibold"
-          style={{ background: '#0f1f3d', color: '#f59e0b' }}
+          style={{ background: '#0f1f3d', color: '#93c5fd' }}
         >
-          ★ Founding Member Launch — Limited spots available. Lock in your rate for life before they are gone.
+          {t.pricing_launch_banner}
         </div>
 
         {/* Hero */}
-        <section className="pt-16 pb-12 px-6 text-center">
+        <section className="pt-8 pb-5 px-6 text-center">
           <h1
             className="text-4xl sm:text-5xl font-bold tracking-tight mb-4"
             style={{ color: '#0f1f3d' }}
           >
-            Simple, affordable packages
+            {t.pricing_hero_heading}
           </h1>
           <p className="text-lg text-gray-500 max-w-md mx-auto">
-            No hidden fees. Cancel anytime. Pick the option that works for you.
+            {t.pricing_hero_subheading}
           </p>
         </section>
 
-        {/* Cards */}
-        <section className="px-6 pb-6 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {/* Plan selector */}
+        <section className="px-6 pt-2 pb-8 max-w-6xl mx-auto">
+          <FamilyPlanBuilder />
+          <p className="text-sm text-center text-gray-500 mt-4 max-w-2xl mx-auto">
+            {t.pricing_family_discount_note}
+          </p>
+        </section>
 
-            {/* Free */}
-            <div
-              className="relative flex flex-col rounded-2xl bg-white shadow-sm"
-              style={{ border: '1px solid #e5e7eb' }}
-            >
-              <div className="p-7 flex flex-col flex-1">
-                <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#6b7280' }}>
-                  Free
-                </p>
-                <div className="mb-2">
-                  <span className="text-4xl font-bold" style={{ color: '#0f1f3d' }}>R0</span>
-                  <span className="text-gray-400 text-sm ml-1">/month</span>
-                </div>
-                <ul className="space-y-3 flex-1 mb-4 mt-4">
-                  {['2 topics per grade to get you started', 'Study guides and practice questions'].map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-gray-600">
-                      <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }} aria-hidden="true">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-xs text-gray-400 mb-6">No credit card required. Upgrade anytime.</p>
-                <button
-                  className="w-full font-semibold py-3 rounded-xl text-sm transition-colors"
-                  style={{ backgroundColor: '#0f1f3d', color: '#fff' }}
-                >
-                  Start for Free
-                </button>
-              </div>
+        {/* Get Mathly Free */}
+        <section className="px-6 pt-4 pb-4 max-w-6xl mx-auto">
+          <div className="rounded-2xl px-8 py-8 sm:px-12" style={{ backgroundColor: '#0f1f3d' }}>
+            <div className="max-w-2xl mx-auto text-center mb-7">
+              <h2 className="text-3xl font-bold text-white mb-3">
+                {t.pricing_referral_promo_heading}
+              </h2>
+              <p className="text-base" style={{ color: '#93c5fd' }}>
+                {t.pricing_referral_promo_description}
+              </p>
+              <p className="text-xs mt-2" style={{ color: '#64748b' }}>
+                {t.pricing_referral_promo_fine_print}
+              </p>
             </div>
 
-            {/* Pro — Founding Member */}
-            <div
-              className="relative flex flex-col rounded-2xl bg-white shadow-sm"
-              style={{ border: '2px solid #1e40af' }}
-            >
-              <div className="p-7 flex flex-col flex-1">
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#1e40af' }}>
-                  Pro
-                </p>
-                <FoundingBadge />
-                <div className="mb-1">
-                  <span className="text-sm line-through" style={{ color: '#9ca3af' }}>R49/month</span>
-                </div>
-                <div className="mb-1 flex items-baseline gap-1.5">
-                  <span className="text-4xl font-bold" style={{ color: '#0f1f3d' }}>R29</span>
-                  <span className="text-gray-400 text-sm">/month</span>
-                </div>
-                <p className="text-xs font-semibold mb-1" style={{ color: '#b45309' }}>
-                  Your rate for life — never increases
-                </p>
-                <SpotCounter remaining={67} total={100} />
-                <ul className="space-y-3 flex-1 mb-8">
-                  {[
-                    'Full access to all topics, all grades',
-                    'Study guides, practice questions and answers',
-                    'Cancel anytime',
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-gray-600">
-                      <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }} aria-hidden="true">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className="w-full font-semibold py-3 rounded-xl text-sm transition-colors"
-                  style={{ backgroundColor: '#1e40af', color: '#fff' }}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-7">
+              {[
+                t.pricing_referral_stat_full_year,
+                t.pricing_referral_stat_stay_subscribed,
+              ].map(stat => (
+                <div
+                  key={stat}
+                  className="rounded-xl px-5 py-4 text-center"
+                  style={{ backgroundColor: '#1e3560' }}
                 >
-                  Claim Your Spot
-                </button>
-              </div>
+                  <p className="text-white font-semibold text-sm leading-snug">{stat}</p>
+                </div>
+              ))}
             </div>
 
-            {/* Guided — Founding Member + Most Popular */}
-            <div
-              className="relative flex flex-col rounded-2xl bg-white shadow-sm"
-              style={{ border: '1px solid #e5e7eb' }}
-            >
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="bg-[#1e40af] text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
-                  Most Popular
-                </span>
-              </div>
-              <div className="p-7 flex flex-col flex-1">
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
-                  Guided
-                </p>
-                <FoundingBadge />
-                <div className="mb-1">
-                  <span className="text-sm line-through" style={{ color: '#9ca3af' }}>R99/month</span>
-                </div>
-                <div className="mb-1 flex items-baseline gap-1.5">
-                  <span className="text-4xl font-bold" style={{ color: '#0f1f3d' }}>R59</span>
-                  <span className="text-gray-400 text-sm">/month</span>
-                </div>
-                <p className="text-xs font-semibold mb-1" style={{ color: '#b45309' }}>
-                  Your rate for life — never increases
-                </p>
-                <SpotCounter remaining={43} total={100} />
-                <ul className="space-y-3 flex-1 mb-8">
-                  {[
-                    'Everything in Pro',
-                    'Submit weekly topic queries',
-                    'Grouped expert responses sent to you',
-                    'Structured support without the tutor price tag',
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-gray-600">
-                      <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }} aria-hidden="true">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className="w-full font-semibold py-3 rounded-xl text-sm transition-colors"
-                  style={{ backgroundColor: '#0f1f3d', color: '#fff' }}
-                >
-                  Claim Your Spot
-                </button>
-              </div>
+            <div className="text-center">
+              <Link
+                href="/refer"
+                className="inline-block font-semibold py-3 px-8 rounded-xl text-sm transition-colors"
+                style={{ backgroundColor: '#1e40af', color: '#ffffff' }}
+              >
+                {t.pricing_referral_promo_cta}
+              </Link>
             </div>
-
           </div>
-
-          {/* Reassurance */}
-          <p className="text-center text-sm text-gray-400 mt-8">
-            All paid packages include a 7-day free trial. No contracts, no commitments.
-          </p>
         </section>
+
+        {/* Live Classes horizontal card */}
+        <section className="px-6 pt-8 pb-4 max-w-4xl mx-auto">
+          <div
+            className="rounded-2xl px-8 py-7 flex flex-col sm:flex-row items-center gap-6 sm:gap-8"
+            style={{ background: '#0f1f3d' }}
+          >
+            <div className="flex-1 text-center sm:text-left">
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#93c5fd' }}>
+                {t.pricing_live_classes_label}
+              </p>
+              <p className="text-sm" style={{ color: '#cbd5e1', lineHeight: 1.7 }}>
+                {t.pricing_live_classes_description}
+              </p>
+            </div>
+            <div className="text-center shrink-0">
+              <span className="text-4xl font-bold text-white">R100</span>
+              <span className="text-sm ml-1" style={{ color: '#94a3b8' }}>{t.pricing_per_session}</span>
+            </div>
+            <div className="shrink-0">
+              <Link
+                href="/live-classes"
+                className="inline-block font-semibold py-3 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+                style={{ background: '#ffffff', color: '#0f1f3d' }}
+              >
+                {t.pricing_view_upcoming_classes}
+              </Link>
+            </div>
+          </div>
+        </section>
+
 
         {/* Comparison table */}
-        <section className="px-6 pt-16 pb-12 max-w-4xl mx-auto">
+        <section className="px-6 pt-8 pb-24 max-w-4xl mx-auto">
           <h2 className="text-xl font-bold text-center mb-8" style={{ color: '#0f1f3d' }}>
-            What&apos;s included
+            {t.pricing_whats_included_heading}
           </h2>
 
           <div className="overflow-x-auto">
@@ -237,12 +166,12 @@ export default function PricingPage() {
               <thead>
                 <tr>
                   <th className="text-left pb-4 pr-6 font-semibold text-gray-400 uppercase tracking-wide text-xs w-2/5">
-                    Feature
+                    {t.pricing_table_feature_column}
                   </th>
                   {[
-                    { name: 'Free', price: 'R0', highlighted: false },
-                    { name: 'Pro', price: 'R29*', highlighted: true },
-                    { name: 'Guided', price: 'R59*', highlighted: false },
+                    { name: t.dash_package_free, price: 'R0', highlighted: false },
+                    { name: t.dash_package_pro, price: 'R29*', highlighted: true },
+                    { name: t.dash_package_guided, price: 'R59*', highlighted: false },
                   ].map((col) => (
                     <th
                       key={col.name}
@@ -264,77 +193,15 @@ export default function PricingPage() {
                     <td className="py-3.5 pr-6 text-gray-700 font-medium rounded-l-lg pl-4">
                       {row.label}
                     </td>
-                    <td className="py-3.5 px-3 text-center">{row.free   ? <Check /> : <Dash />}</td>
-                    <td className="py-3.5 px-3 text-center">{row.pro    ? <Check /> : <Dash />}</td>
-                    <td className="py-3.5 px-3 text-center rounded-r-lg">{row.guided ? <Check /> : <Dash />}</td>
+                    <td className="py-3.5 px-3 text-center">{row.free   ? <Check label={t.pricing_included_label} /> : <Dash label={t.pricing_not_included_label} />}</td>
+                    <td className="py-3.5 px-3 text-center">{row.pro    ? <Check label={t.pricing_included_label} /> : <Dash label={t.pricing_not_included_label} />}</td>
+                    <td className="py-3.5 px-3 text-center rounded-r-lg">{row.guided ? <Check label={t.pricing_included_label} /> : <Dash label={t.pricing_not_included_label} />}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-4 text-right">* Founding Member rate</p>
-
-          {/* Live Classes horizontal card */}
-          <div
-            className="mt-10 rounded-2xl px-8 py-7 flex flex-col sm:flex-row items-center gap-6 sm:gap-8"
-            style={{ background: '#0f1f3d' }}
-          >
-            <div className="flex-1 text-center sm:text-left">
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#93c5fd' }}>
-                Live Classes
-              </p>
-              <p className="text-sm" style={{ color: '#cbd5e1', lineHeight: 1.7 }}>
-                Drop-in live sessions for Grades 8 to 12. One topic per week per grade.
-                Pay only for what you attend — no subscription needed.
-              </p>
-            </div>
-            <div className="text-center shrink-0">
-              <span className="text-4xl font-bold text-white">R100</span>
-              <span className="text-sm ml-1" style={{ color: '#94a3b8' }}>per session</span>
-            </div>
-            <div className="shrink-0">
-              <Link
-                href="/live-classes"
-                className="inline-block font-semibold py-3 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
-                style={{ background: '#ffffff', color: '#0f1f3d' }}
-              >
-                View Upcoming Classes
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Founding Member */}
-        <section className="px-6 pb-24 max-w-4xl mx-auto">
-          <div
-            className="rounded-2xl p-8"
-            style={{ background: '#0f1f3d' }}
-          >
-            <h2 className="text-xl font-bold mb-6 text-center" style={{ color: '#f59e0b' }}>
-              Why become a Founding Member?
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: '🔒',
-                  text: 'Lock in your rate for life — price never increases for you',
-                },
-                {
-                  icon: '🌱',
-                  text: 'Support Mathly from the start and help shape its future',
-                },
-                {
-                  icon: '⏳',
-                  text: 'Limited to 100 members per tier — once spots are gone, they are gone',
-                },
-              ].map((item) => (
-                <div key={item.text} className="flex flex-col items-center text-center gap-3">
-                  <span className="text-3xl">{item.icon}</span>
-                  <p className="text-sm font-medium" style={{ color: '#e2e8f0' }}>{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="text-xs text-gray-400 mt-4 text-right">{t.pricing_founding_member_rate_note}</p>
         </section>
 
       </main>

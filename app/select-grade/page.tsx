@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Navbar from '@/app/components/Navbar'
+import { useTranslations } from '@/src/i18n/useTranslations'
 
 const ALL_GRADES = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 export default function SelectGradePage() {
   const router = useRouter()
+  const t = useTranslations()
   const [userGrades, setUserGrades] = useState<number[] | null>(null)
   const [activeGrade, setActiveGrade] = useState<number | null>(null)
   useEffect(() => {
@@ -45,10 +47,10 @@ export default function SelectGradePage() {
         {/* Heading */}
         <div className="mb-10">
           <h1 className="text-4xl font-bold tracking-tight mb-3" style={{ color: '#0f1f3d' }}>
-            Select your grade
+            {t.grade_select_heading}
           </h1>
           <p className="text-lg text-gray-500">
-            Choose the grade you want to study. You can add more grades in your profile later.
+            {t.grade_select_description}
           </p>
         </div>
 
@@ -69,7 +71,7 @@ export default function SelectGradePage() {
                         : { backgroundColor: '#fff', color: '#0f1f3d', borderColor: '#d1d5db' }
                     }
                   >
-                    Grade {grade}
+                    {t.grade_heading.replace('{grade}', String(grade))}
                   </button>
                 )
               })}
@@ -81,31 +83,31 @@ export default function SelectGradePage() {
               style={{ borderColor: '#e5e7eb' }}
             >
               <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#1e40af' }}>
-                Curriculum
+                {t.grade_curriculum}
               </p>
               <h2 className="text-4xl font-bold mb-3" style={{ color: '#0f1f3d' }}>
-                Grade {activeGrade}
+                {t.grade_heading.replace('{grade}', String(activeGrade))}
               </h2>
               <p className="text-base text-gray-500 mb-8">
-                Ready to study Grade {activeGrade}? Jump into your topics.
+                {t.grade_ready_to_study.replace('{grade}', String(activeGrade))}
               </p>
               <button
                 onClick={() => router.push(`/grade/${activeGrade}`)}
                 className="px-8 py-4 rounded-xl text-base font-semibold text-white transition-colors"
                 style={{ backgroundColor: '#1e40af' }}
               >
-                Go to Grade {activeGrade} topics
+                {t.grade_go_to_topics.replace('{grade}', String(activeGrade))}
               </button>
             </div>
 
             {/* Profile link */}
             <p className="text-sm text-gray-400">
-              Not your grades?{' '}
+              {t.grade_not_your_grades}{' '}
               <Link
                 href="/profile"
                 className="underline underline-offset-2 hover:text-[#1e40af] transition-colors"
               >
-                Update them in My Profile
+                {t.grade_update_them_in_profile}
               </Link>
             </p>
           </>
@@ -118,12 +120,12 @@ export default function SelectGradePage() {
                 href={`/grade/${grade}`}
                 className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-[#1e40af]/30 hover:shadow-md transition-all flex flex-col items-center justify-center py-10 gap-2"
               >
-                <span className="text-lg font-semibold" style={{ color: '#6b7280' }}>Grade</span>
+                <span className="text-lg font-semibold" style={{ color: '#6b7280' }}>{t.grade_word}</span>
                 <span className="text-5xl font-bold leading-none" style={{ color: '#0f1f3d' }}>
                   {grade}
                 </span>
                 <span className="text-xs font-medium mt-1" style={{ color: '#9ca3af' }}>
-                  Tap to explore topics
+                  {t.grade_tap_to_explore}
                 </span>
               </Link>
             ))}

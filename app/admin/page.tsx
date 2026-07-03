@@ -23,11 +23,20 @@ type QueryStatus = 'unanswered' | 'in-progress' | 'answered'
 type Query = {
   id: string
   date: string
+  name: string
+  email: string
   grade: number
   topic: string
   struggle: string
   language: 'en' | 'af'
   status: QueryStatus
+}
+
+type QueryGroup = {
+  key: string
+  topic: string
+  struggle: string
+  queries: Query[]
 }
 
 type SubscriberPackage = 'free' | 'pro' | 'guided'
@@ -59,25 +68,12 @@ type Request = {
   status: RequestStatus
 }
 
-type SessionStatus = 'upcoming' | 'completed' | 'cancelled'
-
-type SessionBooking = {
+type LiveInterestEntry = {
   id: string
   name: string
   email: string
-  payment: 'paid' | 'pending'
-}
-
-type BookingSession = {
-  id: string
-  grade: number
-  topic: string
+  grades: number[]
   date: string
-  time: string
-  duration: string
-  totalSpots: number
-  bookings: SessionBooking[]
-  status: SessionStatus
 }
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -85,7 +81,7 @@ type BookingSession = {
 const LESSON_GRADES = [8, 9, 10, 11, 12]
 const ALL_GRADES    = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 const DURATIONS     = ['30min', '1hour', '1.5hours', '2hours']
-const SIDEBAR_ITEMS = ['Lesson Schedule', 'Queries', 'Requests', 'Subscribers', 'Bookings']
+const SIDEBAR_ITEMS = ['Lesson Schedule', 'Queries', 'Requests', 'Subscribers', 'Live Interest']
 const ADMIN_PASSWORD = 'xAN2Xl7ic7%G'
 const AUTH_KEY       = 'mathly-admin-auth'
 const STORAGE_KEY    = 'mathly_lessons'
@@ -191,9 +187,12 @@ const PLACEHOLDER_SUBSCRIBERS: Subscriber[] = [
 ]
 
 const PLACEHOLDER_QUERIES: Query[] = [
+  // Group 1: Algebra – 4 students
   {
     id: 'q1',
     date: '2026-05-15',
+    name: 'Liam van der Merwe',
+    email: 'liam.vdm@gmail.com',
     grade: 9,
     topic: 'Algebra',
     struggle: "I don't understand how to solve equations with brackets on both sides",
@@ -202,7 +201,43 @@ const PLACEHOLDER_QUERIES: Query[] = [
   },
   {
     id: 'q2',
+    date: '2026-05-16',
+    name: 'Amahle Dlamini',
+    email: 'amahle.d@outlook.com',
+    grade: 10,
+    topic: 'Algebra',
+    struggle: "I don't understand how to solve equations with brackets on both sides",
+    language: 'en',
+    status: 'unanswered',
+  },
+  {
+    id: 'q3',
     date: '2026-05-17',
+    name: 'Jake Pretorius',
+    email: 'jake.p@gmail.com',
+    grade: 9,
+    topic: 'Algebra',
+    struggle: "I don't understand how to solve equations with brackets on both sides",
+    language: 'en',
+    status: 'unanswered',
+  },
+  {
+    id: 'q4',
+    date: '2026-05-18',
+    name: 'Nadia Venter',
+    email: 'nadia.v@gmail.com',
+    grade: 11,
+    topic: 'Algebra',
+    struggle: "I don't understand how to solve equations with brackets on both sides",
+    language: 'en',
+    status: 'unanswered',
+  },
+  // Group 2: Trigonometry – 3 students
+  {
+    id: 'q5',
+    date: '2026-05-17',
+    name: 'Connor Botha',
+    email: 'c.botha@gmail.com',
     grade: 11,
     topic: 'Trigonometry',
     struggle: 'Confused about when to use sin, cos or tan in right-angled triangles',
@@ -210,8 +245,44 @@ const PLACEHOLDER_QUERIES: Query[] = [
     status: 'in-progress',
   },
   {
-    id: 'q3',
+    id: 'q6',
     date: '2026-05-18',
+    name: 'Zanele Khumalo',
+    email: 'zanele.k@webmail.co.za',
+    grade: 11,
+    topic: 'Trigonometry',
+    struggle: 'Confused about when to use sin, cos or tan in right-angled triangles',
+    language: 'en',
+    status: 'unanswered',
+  },
+  {
+    id: 'q7',
+    date: '2026-05-19',
+    name: 'Ruan Steyn',
+    email: 'r.steyn@gmail.com',
+    grade: 12,
+    topic: 'Trigonometry',
+    struggle: 'Confused about when to use sin, cos or tan in right-angled triangles',
+    language: 'en',
+    status: 'unanswered',
+  },
+  // Group 3: Fractions – 2 students
+  {
+    id: 'q8',
+    date: '2026-05-18',
+    name: 'Pieter Rousseau',
+    email: 'p.rousseau@icloud.com',
+    grade: 7,
+    topic: 'Fractions',
+    struggle: 'Ek verstaan nie hoe om gemengde getalle te deel nie',
+    language: 'af',
+    status: 'answered',
+  },
+  {
+    id: 'q9',
+    date: '2026-05-19',
+    name: 'Lerato Mokoena',
+    email: 'lerato.m@gmail.com',
     grade: 7,
     topic: 'Fractions',
     struggle: 'Ek verstaan nie hoe om gemengde getalle te deel nie',
@@ -220,7 +291,8 @@ const PLACEHOLDER_QUERIES: Query[] = [
   },
 ]
 
-const REQUESTS_KEY = 'mathly_requests'
+const REQUESTS_KEY       = 'mathly_requests'
+const STUDENT_QUERIES_KEY = 'mathly_queries'
 
 const REQUEST_TYPES = ['Missing Topic', 'Missing Grade Content', 'Feature Request', 'Other']
 
@@ -266,64 +338,12 @@ const PLACEHOLDER_REQUESTS: Request[] = [
   },
 ]
 
-const SESSION_STATUS_STYLES: Record<SessionStatus, { bg: string; color: string; label: string }> = {
-  upcoming:  { bg: '#eff6ff', color: '#1e40af', label: 'Upcoming'  },
-  completed: { bg: '#dcfce7', color: '#15803d', label: 'Completed' },
-  cancelled: { bg: '#fee2e2', color: '#b91c1c', label: 'Cancelled' },
-}
-
-const PLACEHOLDER_SESSIONS: BookingSession[] = [
-  {
-    id: 'ses1',
-    grade: 10,
-    topic: 'Quadratic Equations',
-    date: '2026-05-12',
-    time: '18:00',
-    duration: '1hour',
-    totalSpots: 10,
-    status: 'completed',
-    bookings: [
-      { id: 'b1',  name: 'Amahle Dlamini',      email: 'amahle.d@outlook.com',      payment: 'paid'    },
-      { id: 'b2',  name: 'Liam van der Merwe',   email: 'liam.vdm@gmail.com',        payment: 'paid'    },
-      { id: 'b3',  name: 'Connor Botha',         email: 'c.botha@gmail.com',         payment: 'paid'    },
-      { id: 'b4',  name: 'Zanele Khumalo',       email: 'zanele.k@webmail.co.za',    payment: 'paid'    },
-      { id: 'b5',  name: 'Pieter Rousseau',      email: 'p.rousseau@icloud.com',     payment: 'paid'    },
-      { id: 'b6',  name: 'Sipho Ndlovu',         email: 'sipho.n@gmail.com',         payment: 'pending' },
-      { id: 'b7',  name: 'Nadia Venter',         email: 'nadia.v@gmail.com',         payment: 'paid'    },
-    ],
-  },
-  {
-    id: 'ses2',
-    grade: 12,
-    topic: 'Calculus: Differentiation',
-    date: '2026-05-26',
-    time: '18:00',
-    duration: '1hour',
-    totalSpots: 12,
-    status: 'upcoming',
-    bookings: [
-      { id: 'b8',  name: 'Ayasha Naidoo',        email: 'ayasha.n@gmail.com',        payment: 'paid'    },
-      { id: 'b9',  name: 'Ruan Steyn',           email: 'r.steyn@gmail.com',         payment: 'pending' },
-      { id: 'b10', name: 'Fatima Patel',         email: 'fatima.p@outlook.com',      payment: 'paid'    },
-      { id: 'b11', name: 'Danie Joubert',        email: 'd.joubert@gmail.com',       payment: 'paid'    },
-      { id: 'b12', name: 'Keanu Williams',       email: 'keanu.w@gmail.com',         payment: 'pending' },
-    ],
-  },
-  {
-    id: 'ses3',
-    grade: 8,
-    topic: 'Linear Equations',
-    date: '2026-05-10',
-    time: '17:00',
-    duration: '1hour',
-    totalSpots: 8,
-    status: 'cancelled',
-    bookings: [
-      { id: 'b13', name: 'Jake Pretorius',       email: 'jake.p@gmail.com',          payment: 'pending' },
-      { id: 'b14', name: 'Lerato Mokoena',       email: 'lerato.m@gmail.com',        payment: 'pending' },
-      { id: 'b15', name: 'Siya Hlongwane',       email: 'siya.h@gmail.com',          payment: 'paid'    },
-    ],
-  },
+const PLACEHOLDER_INTEREST: LiveInterestEntry[] = [
+  { id: 'li1', name: 'Amahle Dlamini',     email: 'amahle.d@outlook.com',   grades: [12],     date: '2026-05-10' },
+  { id: 'li2', name: 'Liam van der Merwe', email: 'liam.vdm@gmail.com',     grades: [10, 11], date: '2026-05-11' },
+  { id: 'li3', name: 'Connor Botha',       email: 'c.botha@gmail.com',      grades: [8],      date: '2026-05-12' },
+  { id: 'li4', name: 'Zanele Khumalo',     email: 'zanele.k@webmail.co.za', grades: [9, 10],  date: '2026-05-13' },
+  { id: 'li5', name: 'Ayasha Naidoo',      email: 'ayasha.n@gmail.com',     grades: [11, 12], date: '2026-05-14' },
 ]
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -341,11 +361,16 @@ export default function AdminPage() {
   const [editingId, setEditingId] = useState<string | null>(null)
 
   // Queries
-  const [queries]             = useState<Query[]>(PLACEHOLDER_QUERIES)
+  const [queries, setQueries] = useState<Query[]>(PLACEHOLDER_QUERIES)
+  const [qView, setQView]     = useState<'grouped' | 'individual'>('grouped')
   const [qGrade, setQGrade]   = useState('')
   const [qTopic, setQTopic]   = useState('')
   const [qStatus, setQStatus] = useState('')
   const [qSort, setQSort]     = useState('newest')
+  const [expandedGroups, setExpandedGroups]           = useState<Set<string>>(new Set())
+  const [groupVideoLinks, setGroupVideoLinks]         = useState<Record<string, string>>({})
+  const [groupSentStatus, setGroupSentStatus]         = useState<Record<string, boolean>>({})
+  const [expandedStudentLists, setExpandedStudentLists] = useState<Set<string>>(new Set())
 
   // Requests
   const [requests, setRequests] = useState<Request[]>([])
@@ -362,12 +387,8 @@ export default function AdminPage() {
   const [sStatus, setSStatus]   = useState('')
   const [sSort, setSSort]       = useState('newest')
 
-  // Bookings
-  const [bookingSessions]                    = useState<BookingSession[]>(PLACEHOLDER_SESSIONS)
-  const [bGrade, setBGrade]                  = useState('')
-  const [bStatus, setBStatus]                = useState('')
-  const [bSort, setBSort]                    = useState('newest')
-  const [expandedSessions, setExpandedSessions] = useState<Set<string>>(new Set())
+  // Live Interest
+  const [interestData] = useState<LiveInterestEntry[]>(PLACEHOLDER_INTEREST)
 
   useEffect(() => {
     setMounted(true)
@@ -382,6 +403,28 @@ export default function AdminPage() {
       setRequests(PLACEHOLDER_REQUESTS)
       localStorage.setItem(REQUESTS_KEY, JSON.stringify(PLACEHOLDER_REQUESTS))
     }
+
+    try {
+      const sqRaw = localStorage.getItem(STUDENT_QUERIES_KEY)
+      if (sqRaw) {
+        const studentQueries = JSON.parse(sqRaw) as Array<{
+          date: string; grade: string; topic: string; specificStruggle: string;
+          note: string; language: 'en' | 'af'; userName: string; userEmail: string;
+        }>
+        const mapped: Query[] = studentQueries.map((q, i) => ({
+          id:       `real-${i}`,
+          date:     q.date,
+          name:     q.userName,
+          email:    q.userEmail,
+          grade:    Number(q.grade),
+          topic:    q.topic,
+          struggle: q.specificStruggle,
+          language: q.language,
+          status:   'unanswered' as QueryStatus,
+        }))
+        setQueries([...PLACEHOLDER_QUERIES, ...mapped])
+      }
+    } catch { /* ignore */ }
   }, [])
 
   // ── Auth ──────────────────────────────────────────────────────────────────
@@ -457,9 +500,11 @@ export default function AdminPage() {
     })
 
   function exportCsv() {
-    const headers = ['Date', 'Grade', 'Topic', 'Struggle', 'Language', 'Status']
+    const headers = ['Date', 'Name', 'Email', 'Grade', 'Topic', 'Struggle', 'Language', 'Status']
     const rows = filteredQueries.map(q => [
       q.date,
+      `"${q.name}"`,
+      q.email,
       `Grade ${q.grade}`,
       q.topic,
       `"${q.struggle.replace(/"/g, '""')}"`,
@@ -482,6 +527,42 @@ export default function AdminPage() {
     setQStatus('')
     setQSort('newest')
   }
+
+  const groupedQueries: QueryGroup[] = (() => {
+    const map: Record<string, QueryGroup> = {}
+    queries.forEach(q => {
+      const key = `${q.topic}|||${q.struggle}`
+      if (!map[key]) map[key] = { key, topic: q.topic, struggle: q.struggle, queries: [] }
+      map[key].queries.push(q)
+    })
+    return Object.values(map).sort((a, b) => b.queries.length - a.queries.length)
+  })()
+
+  function toggleGroup(key: string) {
+    setExpandedGroups(prev => {
+      const next = new Set(prev)
+      next.has(key) ? next.delete(key) : next.add(key)
+      return next
+    })
+  }
+
+  function toggleStudentList(key: string) {
+    setExpandedStudentLists(prev => {
+      const next = new Set(prev)
+      next.has(key) ? next.delete(key) : next.add(key)
+      return next
+    })
+  }
+
+  function sendGroupResponse(key: string) {
+    if (!groupVideoLinks[key]?.trim()) return
+    setGroupSentStatus(prev => ({ ...prev, [key]: true }))
+  }
+
+  const uniqueTopics       = new Set(queries.map(q => q.topic)).size
+  const uniqueQueryTopics  = [...new Set(queries.map(q => q.topic))].sort()
+  const unansweredGroups = groupedQueries.filter(g => !groupSentStatus[g.key]).length
+  const responsesSent    = Object.values(groupSentStatus).filter(Boolean).length
 
   // ── Subscribers ───────────────────────────────────────────────────────────
 
@@ -573,63 +654,29 @@ export default function AdminPage() {
     setRSort('newest')
   }
 
-  // ── Bookings ──────────────────────────────────────────────────────────────
+  // ── Live Interest ─────────────────────────────────────────────────────────
 
-  const filteredSessions = bookingSessions
-    .filter(s => !bGrade  || s.grade === Number(bGrade))
-    .filter(s => !bStatus || s.status === bStatus)
-    .sort((a, b) => {
-      if (bSort === 'date-asc')      return a.date.localeCompare(b.date)
-      if (bSort === 'most-bookings') return b.bookings.length - a.bookings.length
-      return b.date.localeCompare(a.date)
-    })
+  const iGradeCounts: Record<number, number> = {}
+  LESSON_GRADES.forEach(g => { iGradeCounts[g] = 0 })
+  interestData.forEach(e => e.grades.forEach(g => { if (iGradeCounts[g] !== undefined) iGradeCounts[g]++ }))
+  const iMaxCount = Math.max(...Object.values(iGradeCounts), 1)
 
-  const bTotalBookings   = bookingSessions.reduce((n, s) => n + s.bookings.length, 0)
-  const bUpcoming        = bookingSessions.filter(s => s.status === 'upcoming').length
-  const bCompleted       = bookingSessions.filter(s => s.status === 'completed').length
-  const bRevenue         = bookingSessions
-    .filter(s => s.status !== 'cancelled')
-    .reduce((n, s) => n + s.bookings.filter(b => b.payment === 'paid').length * 100, 0)
-
-  function toggleExpanded(id: string) {
-    setExpandedSessions(prev => {
-      const next = new Set(prev)
-      next.has(id) ? next.delete(id) : next.add(id)
-      return next
-    })
-  }
-
-  function exportBookingsCsv() {
-    const headers = ['Session Date', 'Grade', 'Topic', 'Duration', 'Session Status', 'Student Name', 'Email', 'Payment']
-    const rows: string[][] = []
-    filteredSessions.forEach(sess => {
-      sess.bookings.forEach(b => {
-        rows.push([
-          sess.date,
-          `Grade ${sess.grade}`,
-          sess.topic,
-          sess.duration,
-          sess.status,
-          `"${b.name}"`,
-          b.email,
-          b.payment,
-        ])
-      })
-    })
+  function exportInterestCsv() {
+    const headers = ['Name', 'Email', 'Grades Interested', 'Date Registered']
+    const rows = interestData.map(e => [
+      `"${e.name}"`,
+      e.email,
+      `"${e.grades.map(g => `Grade ${g}`).join(', ')}"`,
+      e.date,
+    ])
     const csv  = [headers.join(','), ...rows.map(r => r.join(','))].join('\n')
     const blob = new Blob([csv], { type: 'text/csv' })
     const url  = URL.createObjectURL(blob)
     const a    = document.createElement('a')
     a.href     = url
-    a.download = 'bookings.csv'
+    a.download = 'live-interest.csv'
     a.click()
     URL.revokeObjectURL(url)
-  }
-
-  function clearBFilters() {
-    setBGrade('')
-    setBStatus('')
-    setBSort('newest')
   }
 
   // ── Early returns ─────────────────────────────────────────────────────────
@@ -1000,11 +1047,12 @@ export default function AdminPage() {
             </div>
 
             {/* Stats row */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-8">
               {[
-                { label: 'Total Queries', value: queries.length },
-                { label: 'Unanswered',   value: queries.filter(q => q.status === 'unanswered').length },
-                { label: 'This Week',    value: queries.filter(q => q.date >= weekStr).length },
+                { label: 'Total Queries',     value: queries.length   },
+                { label: 'Unique Topics',     value: uniqueTopics     },
+                { label: 'Unanswered Groups', value: unansweredGroups },
+                { label: 'Responses Sent',    value: responsesSent    },
               ].map(stat => (
                 <div
                   key={stat.label}
@@ -1024,144 +1072,365 @@ export default function AdminPage() {
               ))}
             </div>
 
-            {/* Filter bar */}
+            {/* Toggle */}
             <div
-              className="bg-white rounded-2xl shadow-sm px-6 py-4 mb-6 flex flex-wrap items-center gap-3"
+              className="flex gap-1 mb-6 bg-white rounded-xl p-1 w-fit"
               style={{ border: '1px solid #e5e7eb' }}
             >
-              <select
-                value={qGrade}
-                onChange={e => setQGrade(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm bg-white"
-                style={{ borderColor: '#d1d5db' }}
-              >
-                <option value="">All Grades</option>
-                {ALL_GRADES.map(g => <option key={g} value={g}>Grade {g}</option>)}
-              </select>
-
-              <select
-                value={qTopic}
-                onChange={e => setQTopic(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm bg-white"
-                style={{ borderColor: '#d1d5db' }}
-              >
-                <option value="">All Topics</option>
-                {QUERY_TOPICS.map(t => <option key={t} value={t}>{t}</option>)}
-              </select>
-
-              <select
-                value={qStatus}
-                onChange={e => setQStatus(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm bg-white"
-                style={{ borderColor: '#d1d5db' }}
-              >
-                <option value="">All Statuses</option>
-                <option value="unanswered">Unanswered</option>
-                <option value="in-progress">In Progress</option>
-                <option value="answered">Answered</option>
-              </select>
-
-              <select
-                value={qSort}
-                onChange={e => setQSort(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm bg-white"
-                style={{ borderColor: '#d1d5db' }}
-              >
-                <option value="newest">Newest First</option>
-                <option value="oldest">Oldest First</option>
-                <option value="grade">Grade</option>
-                <option value="topic">Topic</option>
-              </select>
-
-              {(qGrade || qTopic || qStatus || qSort !== 'newest') && (
-                <button
-                  onClick={clearQFilters}
-                  className="text-xs font-semibold hover:underline ml-auto"
-                  style={{ color: '#6b7280' }}
-                >
-                  Clear filters
-                </button>
-              )}
+              {(['Grouped', 'Individual'] as const).map(label => {
+                const v = label.toLowerCase() as 'grouped' | 'individual'
+                return (
+                  <button
+                    key={label}
+                    onClick={() => setQView(v)}
+                    className="px-5 py-2 rounded-lg text-sm font-semibold transition-all"
+                    style={qView === v
+                      ? { backgroundColor: '#0f1f3d', color: '#ffffff' }
+                      : { backgroundColor: 'transparent', color: '#6b7280' }
+                    }
+                  >
+                    {label}
+                  </button>
+                )
+              })}
             </div>
 
-            {/* Table */}
-            <div className="bg-white rounded-2xl shadow-sm" style={{ border: '1px solid #e5e7eb' }}>
-              <div
-                className="px-7 py-5 border-b flex items-center justify-between"
-                style={{ borderColor: '#f3f4f6' }}
-              >
-                <h2 className="text-base font-bold" style={{ color: '#0f1f3d' }}>
-                  Queries ({filteredQueries.length})
-                </h2>
-                <button
-                  onClick={exportCsv}
-                  className="text-xs font-semibold px-4 py-2 rounded-lg border transition-colors hover:bg-gray-50"
-                  style={{ borderColor: '#d1d5db', color: '#374151' }}
+            {qView === 'grouped' ? (
+              /* ── Grouped view ── */
+              groupedQueries.length === 0 ? (
+                <div
+                  className="rounded-2xl py-16 text-center text-sm text-gray-400"
+                  style={{ border: '1px dashed #d1d5db' }}
                 >
-                  Export to CSV
-                </button>
-              </div>
-
-              {filteredQueries.length === 0 ? (
-                <div className="px-7 py-14 text-center text-sm text-gray-400">
                   No queries yet. Queries will appear here once students start submitting them.
                 </div>
               ) : (
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
-                        {['Date', 'Grade', 'Topic', 'Specific struggle', 'Language', 'Status'].map(h => (
-                          <th
-                            key={h}
-                            className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider whitespace-nowrap"
-                            style={{ color: '#6b7280' }}
-                          >
-                            {h}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {filteredQueries.map(q => (
-                        <tr key={q.id} style={{ borderBottom: '1px solid #f9fafb' }}>
-                          <td className="px-5 py-4 text-gray-500 whitespace-nowrap">{q.date}</td>
-                          <td className="px-5 py-4 font-semibold whitespace-nowrap" style={{ color: '#0f1f3d' }}>
-                            Grade {q.grade}
-                          </td>
-                          <td className="px-5 py-4 whitespace-nowrap" style={{ color: '#0f1f3d' }}>
-                            {q.topic}
-                          </td>
-                          <td className="px-5 py-4 text-gray-600" style={{ maxWidth: '320px' }}>
-                            {q.struggle}
-                          </td>
-                          <td className="px-5 py-4">
-                            <span
-                              className="inline-block text-xs font-bold px-2.5 py-1 rounded-full"
-                              style={
-                                q.language === 'en'
-                                  ? { backgroundColor: '#eff6ff', color: '#1e40af' }
-                                  : { backgroundColor: '#f5f3ff', color: '#6d28d9' }
-                              }
+                <div className="flex flex-col gap-4">
+                  {groupedQueries.map(group => {
+                    const open         = expandedGroups.has(group.key)
+                    const studentsOpen = expandedStudentLists.has(group.key)
+                    const sent         = groupSentStatus[group.key] ?? false
+                    const videoLink    = groupVideoLinks[group.key] ?? ''
+
+                    const gradeCounts: Record<number, number> = {}
+                    group.queries.forEach(q => { gradeCounts[q.grade] = (gradeCounts[q.grade] || 0) + 1 })
+                    const langCounts: Record<string, number> = {}
+                    group.queries.forEach(q => { langCounts[q.language] = (langCounts[q.language] || 0) + 1 })
+
+                    return (
+                      <div
+                        key={group.key}
+                        className="bg-white rounded-2xl shadow-sm overflow-hidden"
+                        style={{ border: '1px solid #e5e7eb' }}
+                      >
+                        {/* Card header — click to collapse/expand */}
+                        <button
+                          className="w-full px-6 pt-5 pb-4 text-left"
+                          onClick={() => toggleGroup(group.key)}
+                        >
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex flex-wrap items-center gap-2 mb-2">
+                                <span className="text-base font-bold" style={{ color: '#0f1f3d' }}>
+                                  {group.topic}
+                                </span>
+                                <span
+                                  className="text-xs font-bold px-2.5 py-1 rounded-full"
+                                  style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                                >
+                                  {group.queries.length} student{group.queries.length !== 1 ? 's' : ''}
+                                </span>
+                                <span
+                                  className="text-xs font-semibold px-2.5 py-1 rounded-full"
+                                  style={sent
+                                    ? { backgroundColor: '#dcfce7', color: '#15803d' }
+                                    : { backgroundColor: '#fee2e2', color: '#b91c1c' }
+                                  }
+                                >
+                                  {sent ? 'Response Sent' : 'Unanswered'}
+                                </span>
+                              </div>
+                              <p className="text-sm text-gray-600 mb-3">{group.struggle}</p>
+                              <div className="flex flex-wrap gap-1.5">
+                                {Object.entries(gradeCounts)
+                                  .sort(([a], [b]) => Number(a) - Number(b))
+                                  .map(([g, count]) => (
+                                    <span
+                                      key={g}
+                                      className="text-xs font-bold px-2 py-0.5 rounded-full"
+                                      style={{ backgroundColor: '#f3f4f6', color: '#374151' }}
+                                    >
+                                      Gr {g}{count > 1 ? ` ×${count}` : ''}
+                                    </span>
+                                  ))}
+                                {Object.entries(langCounts).map(([lang, count]) => (
+                                  <span
+                                    key={lang}
+                                    className="text-xs font-bold px-2 py-0.5 rounded-full"
+                                    style={lang === 'en'
+                                      ? { backgroundColor: '#eff6ff', color: '#1e40af' }
+                                      : { backgroundColor: '#f5f3ff', color: '#6d28d9' }
+                                    }
+                                  >
+                                    {lang.toUpperCase()}{count > 1 ? ` ×${count}` : ''}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="w-5 h-5 shrink-0 mt-0.5 transition-transform"
+                              style={{ color: '#9ca3af', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
                             >
-                              {q.language.toUpperCase()}
-                            </span>
-                          </td>
-                          <td className="px-5 py-4">
-                            <span
-                              className="text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap"
-                              style={QUERY_STATUS_STYLES[q.status]}
-                            >
-                              {QUERY_STATUS_STYLES[q.status].label}
-                            </span>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                              <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                        </button>
+
+                        {open && (
+                          <div style={{ borderTop: '1px solid #f3f4f6' }}>
+                            {/* Student list */}
+                            <div className="px-6 py-4">
+                              <button
+                                onClick={() => toggleStudentList(group.key)}
+                                className="text-xs font-semibold hover:underline mb-3"
+                                style={{ color: '#1e40af' }}
+                              >
+                                {studentsOpen ? '▲ Hide students' : '▼ Show students'}
+                              </button>
+                              {studentsOpen && (
+                                <table className="w-full text-sm mt-2">
+                                  <thead>
+                                    <tr style={{ borderBottom: '1px solid #f3f4f6', backgroundColor: '#fafafa' }}>
+                                      {['Name', 'Email', 'Grade', 'Language', 'Date'].map(h => (
+                                        <th
+                                          key={h}
+                                          className="text-left px-4 py-2.5 text-xs font-semibold uppercase tracking-wider whitespace-nowrap"
+                                          style={{ color: '#6b7280' }}
+                                        >
+                                          {h}
+                                        </th>
+                                      ))}
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {group.queries.map(q => (
+                                      <tr key={q.id} style={{ borderBottom: '1px solid #f9fafb' }}>
+                                        <td className="px-4 py-3 font-medium whitespace-nowrap" style={{ color: '#0f1f3d' }}>{q.name}</td>
+                                        <td className="px-4 py-3 text-gray-500 whitespace-nowrap">{q.email}</td>
+                                        <td className="px-4 py-3 text-gray-600 whitespace-nowrap">Grade {q.grade}</td>
+                                        <td className="px-4 py-3">
+                                          <span
+                                            className="text-xs font-bold px-2 py-0.5 rounded-full"
+                                            style={q.language === 'en'
+                                              ? { backgroundColor: '#eff6ff', color: '#1e40af' }
+                                              : { backgroundColor: '#f5f3ff', color: '#6d28d9' }
+                                            }
+                                          >
+                                            {q.language.toUpperCase()}
+                                          </span>
+                                        </td>
+                                        <td className="px-4 py-3 text-gray-500 whitespace-nowrap">{q.date}</td>
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
+                              )}
+                            </div>
+
+                            {/* Video response */}
+                            <div className="px-6 py-4" style={{ borderTop: '1px solid #f3f4f6' }}>
+                              <p
+                                className="text-xs font-semibold uppercase tracking-wide mb-3"
+                                style={{ color: '#6b7280' }}
+                              >
+                                Video Response
+                              </p>
+                              {sent ? (
+                                <div className="flex items-center gap-2" style={{ color: '#15803d' }}>
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 shrink-0">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clipRule="evenodd" />
+                                  </svg>
+                                  <span className="text-sm font-semibold">
+                                    Response sent to {group.queries.length} student{group.queries.length !== 1 ? 's' : ''}
+                                  </span>
+                                </div>
+                              ) : (
+                                <div className="flex gap-3">
+                                  <input
+                                    type="url"
+                                    value={videoLink}
+                                    onChange={e => setGroupVideoLinks(prev => ({ ...prev, [group.key]: e.target.value }))}
+                                    placeholder="Paste video link (YouTube, Loom, etc.)"
+                                    className="flex-1 border rounded-lg px-3 py-2 text-sm outline-none"
+                                    style={{ borderColor: '#d1d5db' }}
+                                  />
+                                  <button
+                                    onClick={() => sendGroupResponse(group.key)}
+                                    disabled={!videoLink.trim()}
+                                    className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-opacity disabled:opacity-40"
+                                    style={{ backgroundColor: '#1e40af' }}
+                                  >
+                                    Send
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
                 </div>
-              )}
-            </div>
+              )
+            ) : (
+              /* ── Individual view ── */
+              <>
+                {/* Filter bar */}
+                <div
+                  className="bg-white rounded-2xl shadow-sm px-6 py-4 mb-6 flex flex-wrap items-center gap-3"
+                  style={{ border: '1px solid #e5e7eb' }}
+                >
+                  <select
+                    value={qGrade}
+                    onChange={e => setQGrade(e.target.value)}
+                    className="border rounded-lg px-3 py-2 text-sm bg-white"
+                    style={{ borderColor: '#d1d5db' }}
+                  >
+                    <option value="">All Grades</option>
+                    {ALL_GRADES.map(g => <option key={g} value={g}>Grade {g}</option>)}
+                  </select>
+
+                  <select
+                    value={qTopic}
+                    onChange={e => setQTopic(e.target.value)}
+                    className="border rounded-lg px-3 py-2 text-sm bg-white"
+                    style={{ borderColor: '#d1d5db' }}
+                  >
+                    <option value="">All Topics</option>
+                    {uniqueQueryTopics.map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+
+                  <select
+                    value={qStatus}
+                    onChange={e => setQStatus(e.target.value)}
+                    className="border rounded-lg px-3 py-2 text-sm bg-white"
+                    style={{ borderColor: '#d1d5db' }}
+                  >
+                    <option value="">All Statuses</option>
+                    <option value="unanswered">Unanswered</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="answered">Answered</option>
+                  </select>
+
+                  <select
+                    value={qSort}
+                    onChange={e => setQSort(e.target.value)}
+                    className="border rounded-lg px-3 py-2 text-sm bg-white"
+                    style={{ borderColor: '#d1d5db' }}
+                  >
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="grade">Grade</option>
+                    <option value="topic">Topic</option>
+                  </select>
+
+                  {(qGrade || qTopic || qStatus || qSort !== 'newest') && (
+                    <button
+                      onClick={clearQFilters}
+                      className="text-xs font-semibold hover:underline ml-auto"
+                      style={{ color: '#6b7280' }}
+                    >
+                      Clear filters
+                    </button>
+                  )}
+                </div>
+
+                {/* Table */}
+                <div className="bg-white rounded-2xl shadow-sm" style={{ border: '1px solid #e5e7eb' }}>
+                  <div
+                    className="px-7 py-5 border-b flex items-center justify-between"
+                    style={{ borderColor: '#f3f4f6' }}
+                  >
+                    <h2 className="text-base font-bold" style={{ color: '#0f1f3d' }}>
+                      Queries ({filteredQueries.length})
+                    </h2>
+                    <button
+                      onClick={exportCsv}
+                      className="text-xs font-semibold px-4 py-2 rounded-lg border transition-colors hover:bg-gray-50"
+                      style={{ borderColor: '#d1d5db', color: '#374151' }}
+                    >
+                      Export to CSV
+                    </button>
+                  </div>
+
+                  {filteredQueries.length === 0 ? (
+                    <div className="px-7 py-14 text-center text-sm text-gray-400">
+                      No queries match the current filters.
+                    </div>
+                  ) : (
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
+                            {['Date', 'Name', 'Grade', 'Topic', 'Specific struggle', 'Language', 'Status'].map(h => (
+                              <th
+                                key={h}
+                                className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider whitespace-nowrap"
+                                style={{ color: '#6b7280' }}
+                              >
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {filteredQueries.map(q => (
+                            <tr key={q.id} style={{ borderBottom: '1px solid #f9fafb' }}>
+                              <td className="px-5 py-4 text-gray-500 whitespace-nowrap">{q.date}</td>
+                              <td className="px-5 py-4 font-medium whitespace-nowrap" style={{ color: '#0f1f3d' }}>
+                                {q.name}
+                              </td>
+                              <td className="px-5 py-4 font-semibold whitespace-nowrap" style={{ color: '#0f1f3d' }}>
+                                Grade {q.grade}
+                              </td>
+                              <td className="px-5 py-4 whitespace-nowrap" style={{ color: '#0f1f3d' }}>
+                                {q.topic}
+                              </td>
+                              <td className="px-5 py-4 text-gray-600" style={{ maxWidth: '280px' }}>
+                                {q.struggle}
+                              </td>
+                              <td className="px-5 py-4">
+                                <span
+                                  className="inline-block text-xs font-bold px-2.5 py-1 rounded-full"
+                                  style={
+                                    q.language === 'en'
+                                      ? { backgroundColor: '#eff6ff', color: '#1e40af' }
+                                      : { backgroundColor: '#f5f3ff', color: '#6d28d9' }
+                                  }
+                                >
+                                  {q.language.toUpperCase()}
+                                </span>
+                              </td>
+                              <td className="px-5 py-4">
+                                <span
+                                  className="text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap"
+                                  style={QUERY_STATUS_STYLES[q.status]}
+                                >
+                                  {QUERY_STATUS_STYLES[q.status].label}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
           </>
 
         /* ── Requests ──────────────────────────────────────────────────────── */
@@ -1547,21 +1816,21 @@ export default function AdminPage() {
             </div>
           </>
 
-        /* ── Bookings ──────────────────────────────────────────────────────── */
-        ) : activeSection === 'Bookings' ? (
+        /* ── Live Interest ──────────────────────────────────────────────────── */
+        ) : activeSection === 'Live Interest' ? (
           <>
             {/* Heading + export */}
-            <div className="flex items-start justify-between gap-4 mb-8">
+            <div className="flex items-start justify-between gap-4 mb-6">
               <div>
                 <h1 className="text-2xl font-bold" style={{ color: '#0f1f3d' }}>
-                  Live Class Bookings
+                  Live Class Interest
                 </h1>
                 <p className="text-sm text-gray-500 mt-1">
-                  Track bookings and attendance for each scheduled live class session.
+                  Sessions will show here once you schedule and publish them. Use this panel to track demand and decide when to launch.
                 </p>
               </div>
               <button
-                onClick={exportBookingsCsv}
+                onClick={exportInterestCsv}
                 className="shrink-0 text-xs font-semibold px-4 py-2 rounded-lg border transition-colors hover:bg-gray-50"
                 style={{ borderColor: '#d1d5db', color: '#374151' }}
               >
@@ -1570,225 +1839,89 @@ export default function AdminPage() {
             </div>
 
             {/* Stats row */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-8">
-              {[
-                { label: 'Total Bookings',     value: bTotalBookings },
-                { label: 'Upcoming Sessions',  value: bUpcoming      },
-                { label: 'Completed Sessions', value: bCompleted     },
-                { label: 'Total Revenue',      value: `R${bRevenue}` },
-              ].map(stat => (
-                <div
-                  key={stat.label}
-                  className="bg-white rounded-2xl shadow-sm px-7 py-5"
-                  style={{ border: '1px solid #e5e7eb' }}
-                >
-                  <p
-                    className="text-xs font-semibold uppercase tracking-wider mb-2"
-                    style={{ color: '#6b7280' }}
-                  >
-                    {stat.label}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-8">
+              <div className="bg-white rounded-2xl shadow-sm px-7 py-5" style={{ border: '1px solid #e5e7eb' }}>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#6b7280' }}>
+                  Total Interested
+                </p>
+                <p className="text-3xl font-bold" style={{ color: '#0f1f3d' }}>{interestData.length}</p>
+              </div>
+              {LESSON_GRADES.map(g => (
+                <div key={g} className="bg-white rounded-2xl shadow-sm px-7 py-5" style={{ border: '1px solid #e5e7eb' }}>
+                  <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#6b7280' }}>
+                    Grade {g}
                   </p>
-                  <p className="text-3xl font-bold" style={{ color: '#0f1f3d' }}>{stat.value}</p>
+                  <p className="text-3xl font-bold" style={{ color: '#0f1f3d' }}>{iGradeCounts[g]}</p>
                 </div>
               ))}
             </div>
 
-            {/* Filter bar */}
-            <div
-              className="bg-white rounded-2xl shadow-sm px-6 py-4 mb-6 flex flex-wrap items-center gap-3"
-              style={{ border: '1px solid #e5e7eb' }}
-            >
-              <select
-                value={bGrade}
-                onChange={e => setBGrade(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm bg-white"
-                style={{ borderColor: '#d1d5db' }}
-              >
-                <option value="">All Grades</option>
-                {LESSON_GRADES.map(g => <option key={g} value={g}>Grade {g}</option>)}
-              </select>
-
-              <select
-                value={bStatus}
-                onChange={e => setBStatus(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm bg-white"
-                style={{ borderColor: '#d1d5db' }}
-              >
-                <option value="">All Statuses</option>
-                <option value="upcoming">Upcoming</option>
-                <option value="completed">Completed</option>
-                <option value="cancelled">Cancelled</option>
-              </select>
-
-              <select
-                value={bSort}
-                onChange={e => setBSort(e.target.value)}
-                className="border rounded-lg px-3 py-2 text-sm bg-white"
-                style={{ borderColor: '#d1d5db' }}
-              >
-                <option value="newest">Newest First</option>
-                <option value="date-asc">Date Ascending</option>
-                <option value="most-bookings">Most Bookings</option>
-              </select>
-
-              {(bGrade || bStatus || bSort !== 'newest') && (
-                <button
-                  onClick={clearBFilters}
-                  className="text-xs font-semibold hover:underline ml-auto"
-                  style={{ color: '#6b7280' }}
-                >
-                  Clear filters
-                </button>
-              )}
-            </div>
-
-            {/* Session cards */}
-            {filteredSessions.length === 0 ? (
-              <div
-                className="rounded-2xl py-16 text-center text-sm text-gray-400"
-                style={{ border: '1px dashed #d1d5db' }}
-              >
-                No sessions match the current filters.
-              </div>
-            ) : (
+            {/* Demand bars */}
+            <div className="bg-white rounded-2xl shadow-sm p-6 mb-8" style={{ border: '1px solid #e5e7eb' }}>
+              <h2 className="text-sm font-bold mb-5" style={{ color: '#0f1f3d' }}>Demand by grade</h2>
               <div className="flex flex-col gap-4">
-                {filteredSessions.map(sess => {
-                  const filled  = sess.bookings.length
-                  const pct     = Math.round((filled / sess.totalSpots) * 100)
-                  const revenue = sess.bookings.filter(b => b.payment === 'paid').length * 100
-                  const open    = expandedSessions.has(sess.id)
-
+                {LESSON_GRADES.map(g => {
+                  const count = iGradeCounts[g]
+                  const pct   = Math.round((count / iMaxCount) * 100)
                   return (
-                    <div
-                      key={sess.id}
-                      className="bg-white rounded-2xl shadow-sm overflow-hidden"
-                      style={{ border: '1px solid #e5e7eb' }}
-                    >
-                      {/* Card header */}
-                      <div className="p-6">
-                        <div className="flex items-start justify-between gap-4 mb-4">
-                          <div className="flex items-center gap-3 flex-wrap">
-                            <span
-                              className="text-xs font-bold px-2.5 py-1 rounded-full"
-                              style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
-                            >
-                              Grade {sess.grade}
-                            </span>
-                            <h3 className="font-bold text-base" style={{ color: '#0f1f3d' }}>
-                              {sess.topic}
-                            </h3>
-                          </div>
-                          <span
-                            className="shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full"
-                            style={SESSION_STATUS_STYLES[sess.status]}
-                          >
-                            {SESSION_STATUS_STYLES[sess.status].label}
-                          </span>
-                        </div>
-
-                        {/* Date / time / duration */}
-                        <p className="text-sm text-gray-500 mb-5">
-                          {sess.date} · {sess.time} · {sess.duration}
-                        </p>
-
-                        {/* Progress bar */}
-                        <div className="mb-1">
-                          <div
-                            className="rounded-full overflow-hidden"
-                            style={{ backgroundColor: '#f3f4f6', height: '8px' }}
-                          >
-                            <div
-                              className="h-full rounded-full"
-                              style={{ width: `${pct}%`, backgroundColor: '#1e40af' }}
-                            />
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-                          <span>{filled} of {sess.totalSpots} spots filled</span>
-                          <span>{pct}%</span>
-                        </div>
-
-                        {/* Revenue + View Bookings */}
-                        <div className="flex items-center justify-between gap-3">
-                          <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>
-                            Revenue: <span style={{ color: '#15803d' }}>R{revenue}</span>
-                            <span className="font-normal text-gray-400 ml-1">
-                              ({sess.bookings.filter(b => b.payment === 'paid').length} paid)
-                            </span>
-                          </p>
-                          <button
-                            onClick={() => toggleExpanded(sess.id)}
-                            className="flex items-center gap-1.5 text-xs font-semibold transition-colors"
-                            style={{ color: '#1e40af' }}
-                          >
-                            {open ? 'Hide Bookings' : 'View Bookings'}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              className="w-4 h-4 transition-transform"
-                              style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </button>
-                        </div>
+                    <div key={g}>
+                      <div className="flex items-center justify-between text-xs mb-1.5">
+                        <span className="font-semibold" style={{ color: '#374151' }}>Grade {g}</span>
+                        <span style={{ color: '#6b7280' }}>{count} interested</span>
                       </div>
-
-                      {/* Expanded bookings table */}
-                      {open && (
-                        <div style={{ borderTop: '1px solid #f3f4f6' }}>
-                          {sess.bookings.length === 0 ? (
-                            <p className="px-6 py-5 text-sm text-gray-400">No bookings for this session.</p>
-                          ) : (
-                            <table className="w-full text-sm">
-                              <thead>
-                                <tr style={{ borderBottom: '1px solid #f3f4f6', backgroundColor: '#fafafa' }}>
-                                  {['#', 'Student Name', 'Email', 'Payment'].map(h => (
-                                    <th
-                                      key={h}
-                                      className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wider"
-                                      style={{ color: '#6b7280' }}
-                                    >
-                                      {h}
-                                    </th>
-                                  ))}
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {sess.bookings.map((b, i) => (
-                                  <tr key={b.id} style={{ borderBottom: '1px solid #f9fafb' }}>
-                                    <td className="px-6 py-3.5 text-gray-400 text-xs">{i + 1}</td>
-                                    <td className="px-6 py-3.5 font-medium" style={{ color: '#0f1f3d' }}>
-                                      {b.name}
-                                    </td>
-                                    <td className="px-6 py-3.5 text-gray-500">{b.email}</td>
-                                    <td className="px-6 py-3.5">
-                                      <span
-                                        className="text-xs font-semibold px-2.5 py-1 rounded-full capitalize"
-                                        style={
-                                          b.payment === 'paid'
-                                            ? { backgroundColor: '#dcfce7', color: '#15803d' }
-                                            : { backgroundColor: '#fef3c7', color: '#92400e' }
-                                        }
-                                      >
-                                        {b.payment === 'paid' ? 'Paid' : 'Pending'}
-                                      </span>
-                                    </td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          )}
-                        </div>
-                      )}
+                      <div className="rounded-full overflow-hidden" style={{ backgroundColor: '#f3f4f6', height: '8px' }}>
+                        <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: '#1e40af' }} />
+                      </div>
                     </div>
                   )
                 })}
+              </div>
+            </div>
+
+            {/* Table */}
+            {interestData.length === 0 ? (
+              <div className="rounded-2xl py-16 text-center text-sm text-gray-400" style={{ border: '1px dashed #d1d5db' }}>
+                No interest registrations yet.
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl shadow-sm overflow-hidden" style={{ border: '1px solid #e5e7eb' }}>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr style={{ borderBottom: '1px solid #f3f4f6', backgroundColor: '#fafafa' }}>
+                      {['Name', 'Email', 'Grades Interested', 'Date Registered'].map(h => (
+                        <th
+                          key={h}
+                          className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wider"
+                          style={{ color: '#6b7280' }}
+                        >
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {interestData.map(e => (
+                      <tr key={e.id} style={{ borderBottom: '1px solid #f9fafb' }}>
+                        <td className="px-6 py-3.5 font-medium" style={{ color: '#0f1f3d' }}>{e.name}</td>
+                        <td className="px-6 py-3.5 text-gray-500">{e.email}</td>
+                        <td className="px-6 py-3.5">
+                          <div className="flex flex-wrap gap-1.5">
+                            {e.grades.map(g => (
+                              <span
+                                key={g}
+                                className="text-xs font-bold px-2 py-0.5 rounded-full"
+                                style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                              >
+                                Grade {g}
+                              </span>
+                            ))}
+                          </div>
+                        </td>
+                        <td className="px-6 py-3.5 text-gray-500">{e.date}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             )}
           </>

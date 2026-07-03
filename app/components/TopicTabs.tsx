@@ -3,7 +3,24 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useAuth, type Language } from '@/app/providers'
-import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart } from '@/src/data/grade4/numbers-operations'
+import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart } from '@/src/data/grade4/en/numbers-operations'
+import AIAssistant from '@/app/components/AIAssistant'
+import { useTranslations } from '@/src/i18n/useTranslations'
+
+// ─── Query constants ─────────────────────────────────────────────────────────
+
+const QUERIES_KEY        = 'mathly_queries'
+const WEEKLY_QUERIES_KEY = 'mathly_weekly_queries'
+const WEEKLY_LIMIT       = 2
+
+
+function getMondayStr(date: Date): string {
+  const d = new Date(date)
+  const day = d.getDay()
+  const diff = day === 0 ? -6 : 1 - day
+  d.setDate(d.getDate() + diff)
+  return d.toISOString().slice(0, 10)
+}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -39,21 +56,21 @@ function LockIcon() {
 // ─── Locked: logged-out view ──────────────────────────────────────────────────
 
 function LoggedOutLocked({ onLoginClick }: { onLoginClick: () => void }) {
+  const t = useTranslations()
   return (
     <div className="flex flex-col items-center justify-center py-24 px-6 text-center max-w-md mx-auto">
       <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center mb-6 text-[#1e40af]">
         <LockIcon />
       </div>
-      <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">This is a premium topic</h2>
+      <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">{t.topic_premium_heading}</h2>
       <p className="text-gray-500 text-sm leading-relaxed mb-8">
-        Create a free account to preview our free topics, or log in and subscribe to unlock all
-        topics across every grade.
+        {t.topic_premium_message}
       </p>
       <button
         onClick={onLoginClick}
         className="bg-[#1e40af] hover:bg-[#1d3a9e] text-white font-semibold px-7 py-3 rounded-xl text-sm transition-colors shadow-sm"
       >
-        Log in / Register
+        {t.nav_login}
       </button>
     </div>
   )
@@ -62,21 +79,21 @@ function LoggedOutLocked({ onLoginClick }: { onLoginClick: () => void }) {
 // ─── Locked: logged-in / upgrade view ────────────────────────────────────────
 
 function UpgradePanel() {
+  const t = useTranslations()
   return (
     <div className="flex flex-col items-center justify-center py-24 px-6 text-center max-w-md mx-auto">
       <div className="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center mb-6 text-[#1e40af]">
         <LockIcon />
       </div>
-      <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">This topic requires a subscription</h2>
+      <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">{t.topic_subscription_heading}</h2>
       <p className="text-gray-500 text-sm leading-relaxed mb-8">
-        Subscribe to unlock all topics across every grade. View the available packages to find
-        the plan that works for you.
+        {t.topic_subscription_message}
       </p>
       <Link
         href="/pricing"
         className="bg-[#1e40af] hover:bg-[#1d3a9e] text-white font-semibold px-7 py-3 rounded-xl text-sm transition-colors shadow-sm"
       >
-        View packages
+        {t.topic_view_packages}
       </Link>
     </div>
   )
@@ -85,9 +102,10 @@ function UpgradePanel() {
 // ─── Tab content: Study Guide ─────────────────────────────────────────────────
 
 function StudyGuide({ topicName }: { topicName: string }) {
+  const t = useTranslations()
   return (
     <div className="flex items-center justify-center py-24">
-      <p className="text-sm text-gray-500">Content coming soon</p>
+      <p className="text-sm text-gray-500">{t.topic_content_coming_soon}</p>
     </div>
   )
 }
@@ -95,9 +113,10 @@ function StudyGuide({ topicName }: { topicName: string }) {
 // ─── Tab content: Practice ────────────────────────────────────────────────────
 
 function Practice({ topicName }: { topicName: string }) {
+  const t = useTranslations()
   return (
     <div className="flex items-center justify-center py-24">
-      <p className="text-sm text-gray-500">Content coming soon</p>
+      <p className="text-sm text-gray-500">{t.topic_content_coming_soon}</p>
     </div>
   )
 }
@@ -105,9 +124,10 @@ function Practice({ topicName }: { topicName: string }) {
 // ─── Tab content: Answers ─────────────────────────────────────────────────────
 
 function Answers() {
+  const t = useTranslations()
   return (
     <div className="flex items-center justify-center py-24">
-      <p className="text-sm text-gray-500">Content coming soon</p>
+      <p className="text-sm text-gray-500">{t.topic_content_coming_soon}</p>
     </div>
   )
 }
@@ -126,6 +146,8 @@ function splitIntoParagraphs(text: string, sentencesPerParagraph = 3): string[] 
 
 function WorkedExampleCard({ example, number }: { example: WorkedExample; number: number }) {
   const [open, setOpen] = useState(true)
+  const t = useTranslations()
+  const exampleLabel = t.topic_example_label.replace('{number}', String(number))
   return (
     <div className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
       {/* Header */}
@@ -136,11 +158,11 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
         {example.question.includes('<') ? (
           <span
             className="text-sm font-semibold text-[#0f1f3d] leading-snug pr-4"
-            dangerouslySetInnerHTML={{ __html: `Example ${number}: ${example.question}` }}
+            dangerouslySetInnerHTML={{ __html: `${exampleLabel}: ${example.question}` }}
           />
         ) : (
           <span className="text-sm font-semibold text-[#0f1f3d] leading-snug pr-4">
-            Example {number}: {example.question}
+            {exampleLabel}: {example.question}
           </span>
         )}
         <svg
@@ -174,7 +196,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
             ))}
           </ol>
           <div className="flex items-center gap-3 mt-6 pt-5 border-t border-gray-100">
-            <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide shrink-0">Answer</span>
+            <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide shrink-0">{t.topic_answer_label}</span>
             {example.answer.includes('<') ? (
               <span className="bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug" dangerouslySetInnerHTML={{ __html: example.answer }} />
             ) : (
@@ -190,6 +212,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
 }
 
 function VideoPlaceholderCard({ label }: { label: string }) {
+  const t = useTranslations()
   return (
     <div
       className="flex items-center gap-4 rounded-xl px-5 py-5"
@@ -204,15 +227,32 @@ function VideoPlaceholderCard({ label }: { label: string }) {
         </svg>
       </div>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>Video</p>
+        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>{t.topic_video_label}</p>
         <p className="text-sm font-medium" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
-        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>Video coming soon</p>
+        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>{t.topic_video_coming_soon}</p>
       </div>
     </div>
   )
 }
 
-function DiagramPlaceholderCard({ label }: { label: string }) {
+function DiagramPlaceholderCard({ label, svg }: { label: string; svg?: string }) {
+  const t = useTranslations()
+  if (svg) {
+    return (
+      <div
+        className="rounded-xl px-5 py-5"
+        style={{ border: '1.5px dashed #bfdbfe', backgroundColor: '#f8faff' }}
+      >
+        <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#1e40af' }}>{t.topic_diagram_label}</p>
+        <p className="text-sm font-medium mb-3" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
+        <div
+          dangerouslySetInnerHTML={{ __html: svg }}
+          style={{ maxWidth: '100%', display: 'flex', justifyContent: 'center' }}
+        />
+      </div>
+    )
+  }
+
   return (
     <div
       className="flex items-center gap-4 rounded-xl px-5 py-5"
@@ -227,9 +267,9 @@ function DiagramPlaceholderCard({ label }: { label: string }) {
         </svg>
       </div>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>Diagram</p>
+        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>{t.topic_diagram_label}</p>
         <p className="text-sm font-medium" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
-        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>Diagram coming soon</p>
+        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>{t.topic_diagram_coming_soon}</p>
       </div>
     </div>
   )
@@ -245,6 +285,7 @@ function PracticeCard({
   onAnswer: (correct: boolean) => void
 }) {
   const [selected, setSelected] = useState<number | null>(null)
+  const t = useTranslations()
 
   function handleSelect(idx: number) {
     if (selected !== null) return
@@ -270,7 +311,7 @@ function PracticeCard({
       </div>
 
       <div className="ml-11 space-y-2">
-        {question.options.map((opt, idx) => {
+        {Array.isArray(question.options) && question.options.map((opt, idx) => {
           const isCorrect = idx === question.correctIndex
           const isSelected = idx === selected
 
@@ -300,9 +341,9 @@ function PracticeCard({
       </div>
 
       {answered && selected !== question.correctIndex && (
-        <div className="ml-11 mt-4 bg-amber-50 border border-amber-200 rounded-xl px-4 py-4">
-          <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">How to work it out</p>
-          <p className="text-sm text-amber-900 whitespace-pre-line" style={{ lineHeight: 1.8 }}>
+        <div className="ml-11 mt-4 bg-blue-50 border border-blue-200 rounded-xl px-4 py-4">
+          <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-2">{t.topic_how_to_work_it_out}</p>
+          <p className="text-sm text-blue-900 whitespace-pre-line" style={{ lineHeight: 1.8 }}>
             {question.answer}
           </p>
         </div>
@@ -340,9 +381,10 @@ function FeedbackBox({
   correct: boolean
   text: string
 }) {
+  const t = useTranslations()
   return correct ? (
     <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
-      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#16a34a' }}>Correct!</p>
+      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#16a34a' }}>{t.topic_correct_badge}</p>
       {text.includes('<') ? (
         <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
       ) : (
@@ -351,7 +393,7 @@ function FeedbackBox({
     </div>
   ) : (
     <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#fef2f2', border: '1px solid #fca5a5' }}>
-      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#dc2626' }}>Not quite</p>
+      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#dc2626' }}>{t.topic_incorrect_badge}</p>
       {text.includes('<') ? (
         <p className="text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
       ) : (
@@ -377,8 +419,13 @@ function OpenQuestionCard({
   const [checked, setChecked] = useState(false)
   const [singleCorrect, setSingleCorrect] = useState(false)
   const [partCorrects, setPartCorrects] = useState<boolean[]>([])
+  const [partSelfResults, setPartSelfResults] = useState<(boolean | null)[]>(() =>
+    (question.parts ?? []).map(() => null)
+  )
+  const [resultSent, setResultSent] = useState(false)
   const [revealed, setRevealed] = useState(false)
   const [selfMark, setSelfMark] = useState<boolean | null>(null)
+  const t = useTranslations()
 
   const d = DIFFICULTY_STYLE[question.difficulty] ?? DIFFICULTY_STYLE['Medium']
 
@@ -390,12 +437,32 @@ function OpenQuestionCard({
   }
 
   function handleAutoPartsCheck() {
-    const results = (question.parts ?? []).map((p: QuestionPart, i: number) =>
-      matchesAnswer(partInputs[i] ?? '', p.correctAnswer, p.correctAnswers)
-    )
+    const hasSelfParts = (question.parts ?? []).some((p: QuestionPart) => p.checkMode === 'self')
+    const results = (question.parts ?? []).map((p: QuestionPart, i: number) => {
+      if (p.checkMode === 'self') return false
+      return matchesAnswer(partInputs[i] ?? '', p.correctAnswer ?? '', p.correctAnswers)
+    })
     setPartCorrects(results)
     setChecked(true)
-    onResult(results)
+    if (!hasSelfParts) onResult(results)
+  }
+
+  function handlePartSelfMark(pi: number, correct: boolean) {
+    if (resultSent) return
+    const newSelfResults = [...partSelfResults]
+    newSelfResults[pi] = correct
+    setPartSelfResults(newSelfResults)
+    const parts = question.parts ?? []
+    const allSelfDone = parts.every((p: QuestionPart, i: number) =>
+      p.checkMode !== 'self' || newSelfResults[i] !== null
+    )
+    if (allSelfDone) {
+      setResultSent(true)
+      const combined = parts.map((p: QuestionPart, i: number) =>
+        p.checkMode === 'self' ? (newSelfResults[i] ?? false) : (partCorrects[i] ?? false)
+      )
+      onResult(combined)
+    }
   }
 
   function handleSelfMark(correct: boolean) {
@@ -432,7 +499,7 @@ function OpenQuestionCard({
         {question.checkMode === 'auto' && !question.parts && (
           <div>
             <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              Your answer
+              {t.topic_your_answer_label}
             </label>
             <input
               type="text"
@@ -440,7 +507,7 @@ function OpenQuestionCard({
               onChange={(e) => setSingleInput(e.target.value)}
               disabled={checked}
               onKeyDown={(e) => { if (e.key === 'Enter' && !checked && singleInput.trim()) handleAutoSingleCheck() }}
-              placeholder="Type your answer here…"
+              placeholder={t.topic_type_answer_placeholder}
               className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
             />
             {!checked ? (
@@ -450,7 +517,7 @@ function OpenQuestionCard({
                 className="mt-3 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-40"
                 style={{ backgroundColor: '#1e40af' }}
               >
-                Check Answer
+                {t.topic_check_answer}
               </button>
             ) : (
               <FeedbackBox correct={singleCorrect} text={question.explanation ?? ''} />
@@ -458,42 +525,89 @@ function OpenQuestionCard({
           </div>
         )}
 
-        {/* ── AUTO PARTS ── */}
+        {/* ── AUTO PARTS (with optional per-part self-mark) ── */}
         {question.checkMode === 'auto' && question.parts && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {question.parts.map((part: QuestionPart, pi: number) => (
               <div key={pi}>
-                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-                  {part.label} Your answer
-                </label>
-                <input
-                  type="text"
-                  value={partInputs[pi] ?? ''}
-                  onChange={(e) => {
-                    const next = [...partInputs]
-                    next[pi] = e.target.value
-                    setPartInputs(next)
-                  }}
-                  disabled={checked}
-                  placeholder="Type your answer here…"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
-                />
-                {checked && (
-                  <FeedbackBox
-                    correct={partCorrects[pi] ?? false}
-                    text={part.explanation}
-                  />
+                {part.checkMode === 'self' ? (
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+                      {t.topic_part_show_working_label.replace('{part}', part.label)}
+                    </label>
+                    <textarea
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 resize-none focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
+                      rows={3}
+                      placeholder={t.topic_write_working_placeholder}
+                      style={{ fontFamily: 'inherit' }}
+                      disabled={checked}
+                    />
+                    {checked && (
+                      <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
+                        <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
+                        <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
+                          {part.answer ?? part.explanation ?? ''}
+                        </p>
+                        {partSelfResults[pi] === null ? (
+                          <div className="flex gap-3 mt-3">
+                            <button
+                              onClick={() => handlePartSelfMark(pi, true)}
+                              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+                              style={{ backgroundColor: '#f0fdf4', color: '#16a34a', border: '1px solid #86efac' }}
+                            >
+                              {t.topic_i_got_it_right}
+                            </button>
+                            <button
+                              onClick={() => handlePartSelfMark(pi, false)}
+                              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+                              style={{ backgroundColor: '#fef2f2', color: '#dc2626', border: '1px solid #fca5a5' }}
+                            >
+                              {t.topic_i_got_it_wrong}
+                            </button>
+                          </div>
+                        ) : (
+                          <p className="mt-3 text-sm font-semibold" style={{ color: partSelfResults[pi] ? '#16a34a' : '#dc2626' }}>
+                            {partSelfResults[pi] ? t.topic_marked_correct : t.topic_marked_incorrect}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+                      {t.topic_part_your_answer_label.replace('{part}', part.label)}
+                    </label>
+                    <input
+                      type="text"
+                      value={partInputs[pi] ?? ''}
+                      onChange={(e) => {
+                        const next = [...partInputs]
+                        next[pi] = e.target.value
+                        setPartInputs(next)
+                      }}
+                      disabled={checked}
+                      placeholder={t.topic_type_answer_placeholder}
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
+                    />
+                    {checked && (
+                      <FeedbackBox
+                        correct={partCorrects[pi] ?? false}
+                        text={part.explanation ?? ''}
+                      />
+                    )}
+                  </div>
                 )}
               </div>
             ))}
             {!checked && (
               <button
                 onClick={handleAutoPartsCheck}
-                disabled={partInputs.some((v) => !v.trim())}
+                disabled={partInputs.some((v, i) => !v.trim() && question.parts?.[i]?.checkMode !== 'self')}
                 className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-40 self-start"
                 style={{ backgroundColor: '#1e40af' }}
               >
-                Check Answer
+                {t.topic_check_answer}
               </button>
             )}
           </div>
@@ -503,12 +617,12 @@ function OpenQuestionCard({
         {question.checkMode === 'self' && (
           <div>
             <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              Show your working
+              {t.topic_show_your_working_label}
             </label>
             <textarea
               className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 resize-none focus:outline-none focus:border-[#1e40af] transition-colors"
               rows={4}
-              placeholder="Write your working here…"
+              placeholder={t.topic_write_working_placeholder}
               style={{ fontFamily: 'inherit' }}
             />
             {!revealed ? (
@@ -517,13 +631,17 @@ function OpenQuestionCard({
                 className="mt-3 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
                 style={{ backgroundColor: '#1e40af' }}
               >
-                Check Answer
+                {t.topic_check_answer}
               </button>
             ) : (
               <div>
                 <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
-                  <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>Answer</p>
-                  <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{question.answer}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
+                  {question.answer.includes('<') ? (
+                    <p className="text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.answer }} />
+                  ) : (
+                    <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{question.answer}</p>
+                  )}
                 </div>
                 {selfMark === null ? (
                   <div className="flex gap-3 mt-3">
@@ -532,19 +650,19 @@ function OpenQuestionCard({
                       className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
                       style={{ backgroundColor: '#f0fdf4', color: '#16a34a', border: '1px solid #86efac' }}
                     >
-                      I got it right
+                      {t.topic_i_got_it_right}
                     </button>
                     <button
                       onClick={() => handleSelfMark(false)}
                       className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
                       style={{ backgroundColor: '#fef2f2', color: '#dc2626', border: '1px solid #fca5a5' }}
                     >
-                      I got it wrong
+                      {t.topic_i_got_it_wrong}
                     </button>
                   </div>
                 ) : (
                   <p className="mt-3 text-sm font-semibold" style={{ color: selfMark ? '#16a34a' : '#dc2626' }}>
-                    {selfMark ? 'Marked as correct.' : 'Marked as incorrect.'}
+                    {selfMark ? t.topic_marked_correct : t.topic_marked_incorrect}
                   </p>
                 )}
               </div>
@@ -569,6 +687,7 @@ function ResultsSummary({
   onReset: () => void
   customMessages?: { minScore: number; message: string }[]
 }) {
+  const t = useTranslations()
   let message: string
   let barColor: string
   if (customMessages && customMessages.length > 0) {
@@ -580,13 +699,13 @@ function ResultsSummary({
     else if (score / total >= 0.5) barColor = '#ea580c'
     else barColor = '#dc2626'
   } else if (score === total) {
-    message = 'Excellent! You have mastered this topic.'
+    message = t.topic_score_excellent
     barColor = '#16a34a'
   } else if (score / total >= 0.6) {
-    message = 'Good work! Review the questions you got wrong and try again.'
+    message = t.topic_score_good
     barColor = '#1e40af'
   } else {
-    message = 'Keep going! Read through the study guide again and retry.'
+    message = t.topic_score_keep_going
     barColor = '#dc2626'
   }
 
@@ -603,7 +722,7 @@ function ResultsSummary({
           onClick={onReset}
           className="shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold border border-gray-200 text-gray-700 hover:border-[#1e40af] hover:text-[#1e40af] transition-colors"
         >
-          Try again
+          {t.topic_try_again}
         </button>
       </div>
       <div className="h-2.5 w-full rounded-full bg-gray-100 overflow-hidden">
@@ -654,13 +773,14 @@ function OpenPractice({
     (sum, r) => sum + (r ? r.filter(Boolean).length : 0),
     0
   )
+  const t = useTranslations()
 
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
       <div>
-        <h2 className="text-base font-bold text-[#0f1f3d] mb-1">Practice Questions</h2>
+        <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
         <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
-          Work out each question, then click <strong>Check Answer</strong>. For questions where you show your working, reveal the answer and mark yourself honestly.
+          {t.topic_practice_instructions_prefix} <strong>{t.topic_check_answer}</strong>{t.topic_practice_instructions_suffix}
         </p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -683,6 +803,7 @@ function OpenPractice({
 // ─── Real study guide renderers ───────────────────────────────────────────────
 
 function RealStudyGuide({ data }: { data: TopicData }) {
+  const t = useTranslations()
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
       {data.sections.map((section: Section, i: number) => (
@@ -727,7 +848,7 @@ function RealStudyGuide({ data }: { data: TopicData }) {
             className="text-sm font-semibold text-gray-500 uppercase tracking-wide"
             style={{ marginBottom: '16px' }}
           >
-            Worked Examples
+            {t.topic_worked_examples_heading}
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {section.workedExamples.map((ex: WorkedExample, j: number) => (
@@ -735,9 +856,9 @@ function RealStudyGuide({ data }: { data: TopicData }) {
             ))}
           </div>
 
-          {section.diagramPlaceholder && (
+          {(section.diagramPlaceholder || section.diagramSvg) && (
             <div style={{ marginTop: '16px' }}>
-              <DiagramPlaceholderCard label={section.diagramPlaceholder} />
+              <DiagramPlaceholderCard label={section.diagramPlaceholder} svg={section.diagramSvg} />
             </div>
           )}
           {section.videoPlaceholder && (
@@ -751,13 +872,103 @@ function RealStudyGuide({ data }: { data: TopicData }) {
   )
 }
 
+// ─── Section-grouped open practice ───────────────────────────────────────────
+
+function SectionOpenPractice({ data }: { data: TopicData }) {
+  const sectionsWithQ = data.sections.filter(s => (s.openQuestions?.length ?? 0) > 0)
+
+  // Build a stable flat list with global indices before any hooks
+  const flatItems: Array<{ q: OpenQuestion; idx: number; sectionId: string }> = []
+  sectionsWithQ.forEach(section => {
+    ;(section.openQuestions ?? []).forEach(q => {
+      flatItems.push({ q, idx: flatItems.length, sectionId: section.id })
+    })
+  })
+
+  const totalMarks = flatItems.reduce(
+    (sum, { q }) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1),
+    0
+  )
+
+  const [results, setResults] = useState<(boolean[] | null)[]>(() =>
+    Array(flatItems.length).fill(null)
+  )
+  const [resetKey, setResetKey] = useState(0)
+
+  function handleResult(idx: number, partResults: boolean[]) {
+    setResults(prev => {
+      const next = [...prev]
+      next[idx] = partResults
+      return next
+    })
+  }
+
+  function handleReset() {
+    setResults(Array(flatItems.length).fill(null))
+    setResetKey(k => k + 1)
+  }
+
+  const allAnswered = results.every(r => r !== null)
+  const score = results.reduce((sum, r) => sum + (r ? r.filter(Boolean).length : 0), 0)
+  const t = useTranslations()
+
+  return (
+    <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+      <div>
+        <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
+        <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
+          {t.topic_practice_instructions_prefix} <strong>{t.topic_check_answer}</strong>{t.topic_practice_instructions_suffix}
+        </p>
+      </div>
+
+      {sectionsWithQ.map(section => {
+        const items = flatItems.filter(item => item.sectionId === section.id)
+        return (
+          <div key={section.id}>
+            <h3
+              className="text-sm font-semibold text-[#0f1f3d] uppercase tracking-wide flex items-center gap-2"
+              style={{ marginBottom: '16px' }}
+            >
+              <span aria-hidden="true">{section.icon}</span>
+              {section.title}
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {items.map(({ q, idx }) => (
+                <OpenQuestionCard
+                  key={`q-${idx}-${resetKey}`}
+                  question={q}
+                  index={idx}
+                  onResult={r => handleResult(idx, r)}
+                />
+              ))}
+            </div>
+          </div>
+        )
+      })}
+
+      {allAnswered && (
+        <ResultsSummary
+          score={score}
+          total={totalMarks}
+          onReset={handleReset}
+          customMessages={data.scoreMessages}
+        />
+      )}
+    </div>
+  )
+}
+
 function RealPractice({ data }: { data: TopicData }) {
+  const hasSectionOpenQ = data.sections.some(s => (s.openQuestions?.length ?? 0) > 0)
+  const total = data.sections.reduce((sum, s) => sum + (s.practiceQuestions?.length ?? 0), 0)
+  const [answers, setAnswers] = useState<Record<string, boolean>>({})
+  const t = useTranslations()
+
+  if (hasSectionOpenQ) return <SectionOpenPractice data={data} />
+
   if (data.topicPractice && data.topicPractice.length > 0) {
     return <OpenPractice questions={data.topicPractice} scoreMessages={data.scoreMessages} />
   }
-
-  const total = data.sections.reduce((sum, s) => sum + s.practiceQuestions.length, 0)
-  const [answers, setAnswers] = useState<Record<string, boolean>>({})
 
   function handleAnswer(key: string, correct: boolean) {
     setAnswers((prev) => ({ ...prev, [key]: correct }))
@@ -771,7 +982,7 @@ function RealPractice({ data }: { data: TopicData }) {
       {/* Score tracker */}
       <div className="bg-white border border-gray-200 rounded-2xl px-6 py-5 shadow-sm">
         <div className="flex items-center justify-between mb-3">
-          <p className="text-sm font-semibold text-[#0f1f3d]">Your Score</p>
+          <p className="text-sm font-semibold text-[#0f1f3d]">{t.topic_your_score}</p>
           <span className="text-sm font-bold text-[#1e40af]">
             {correct} / {total}
           </span>
@@ -784,12 +995,14 @@ function RealPractice({ data }: { data: TopicData }) {
         </div>
         <p className="text-xs text-gray-400 mt-2">
           {answered === 0
-            ? 'Select an answer to begin.'
+            ? t.topic_select_answer_to_begin
             : answered < total
-            ? `${total - answered} question${total - answered !== 1 ? 's' : ''} remaining.`
+            ? (total - answered === 1
+                ? t.topic_questions_remaining_singular.replace('{count}', String(total - answered))
+                : t.topic_questions_remaining_plural.replace('{count}', String(total - answered)))
             : correct === total
-            ? 'Perfect score! Well done.'
-            : `${total - correct} incorrect — review the working shown below each question.`}
+            ? t.topic_perfect_score
+            : t.topic_incorrect_review.replace('{count}', String(total - correct))}
         </p>
       </div>
 
@@ -803,7 +1016,7 @@ function RealPractice({ data }: { data: TopicData }) {
             {section.title}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {section.practiceQuestions.map((q: PracticeQuestion, i: number) => {
+            {(section.practiceQuestions ?? []).map((q: PracticeQuestion, i: number) => {
               const key = `${section.id}-${i}`
               return (
                 <PracticeCard
@@ -821,29 +1034,189 @@ function RealPractice({ data }: { data: TopicData }) {
   )
 }
 
-// ─── Language toggle ──────────────────────────────────────────────────────────
+// ─── Query section ────────────────────────────────────────────────────────────
 
-function LanguageToggle({ lang, onChange }: { lang: Language; onChange: (l: Language) => void }) {
+function QuerySection({ grade, topicName, lang, sectionTitles }: { grade: string; topicName: string; lang: Language; sectionTitles?: string[] }) {
+  const t = useTranslations()
+  const dropdownOptions = [...(sectionTitles && sectionTitles.length > 0 ? sectionTitles : []), t.topic_query_other_option]
+  const [mounted, setMounted]         = useState(false)
+  const [isGuided, setIsGuided]       = useState(false)
+  const [isLoggedIn, setIsLoggedIn]   = useState(false)
+  const [open, setOpen]               = useState(false)
+  const [struggle, setStruggle]       = useState('')
+  const [note, setNote]               = useState('')
+  const [formLang, setFormLang]       = useState<Language>(lang)
+  const [submitted, setSubmitted]     = useState(false)
+  const [weeklyCount, setWeeklyCount] = useState(0)
+  const [userName, setUserName]       = useState('')
+  const [userEmail, setUserEmail]     = useState('')
+
+  useEffect(() => {
+    setMounted(true)
+    try {
+      const raw = localStorage.getItem('mathly_user')
+      if (raw) {
+        const parsed = JSON.parse(raw)
+        const pkg = (parsed.package as string | undefined)?.toLowerCase() ?? ''
+        setIsGuided(pkg === 'guided' || pkg.startsWith('family_guided'))
+        setIsLoggedIn(true)
+        setUserName(parsed.name || parsed.email || '')
+        setUserEmail(parsed.email || '')
+      }
+    } catch { /* ignore */ }
+    try {
+      const raw = localStorage.getItem(WEEKLY_QUERIES_KEY)
+      if (raw) {
+        const tracker = JSON.parse(raw)
+        if (tracker.weekStart === getMondayStr(new Date())) {
+          setWeeklyCount(tracker.count)
+        }
+      }
+    } catch { /* ignore */ }
+  }, [])
+
+  useEffect(() => { setFormLang(lang) }, [lang])
+
+  // TODO: Re-enable Guided only check before launch.
+  // if (!mounted || !isGuided) return null
+  if (!mounted || !isLoggedIn) return null
+
+  const remaining    = Math.max(0, WEEKLY_LIMIT - weeklyCount)
+  const limitReached = weeklyCount >= WEEKLY_LIMIT
+
+  function handleSubmit() {
+    if (!struggle) return
+    const query = {
+      date: new Date().toISOString().slice(0, 10),
+      grade,
+      topic: topicName,
+      specificStruggle: struggle,
+      note,
+      language: formLang,
+      userName,
+      userEmail,
+    }
+    let all: unknown[] = []
+    try { const raw = localStorage.getItem(QUERIES_KEY); if (raw) all = JSON.parse(raw) } catch { /* ignore */ }
+    all.push(query)
+    localStorage.setItem(QUERIES_KEY, JSON.stringify(all))
+    const newCount = weeklyCount + 1
+    localStorage.setItem(WEEKLY_QUERIES_KEY, JSON.stringify({ weekStart: getMondayStr(new Date()), count: newCount }))
+    setWeeklyCount(newCount)
+    setSubmitted(true)
+  }
+
   return (
-    <div
-      className="inline-flex items-center rounded-lg overflow-hidden text-xs font-semibold shrink-0"
-      style={{ border: '1px solid #e5e7eb' }}
-    >
-      {(['en', 'af'] as const).map((l) => (
-        <button
-          key={l}
-          type="button"
-          onClick={() => onChange(l)}
-          className="px-3 py-1.5 transition-colors"
-          style={
-            lang === l
-              ? { backgroundColor: '#1e40af', color: '#fff' }
-              : { backgroundColor: '#fff', color: '#9ca3af' }
-          }
+    <div className="mt-12 pt-8 border-t border-gray-100 max-w-[720px]">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between gap-4 text-left"
+      >
+        <div>
+          <p className="text-base font-bold" style={{ color: '#0f1f3d' }}>{t.topic_still_struggling}</p>
+          <p className="text-sm text-gray-500 mt-0.5">
+            {t.topic_submit_query_description}
+          </p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          strokeWidth={2} stroke="currentColor"
+          className="w-5 h-5 shrink-0 transition-transform"
+          style={{ color: '#9ca3af', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
+          aria-hidden="true"
         >
-          {l === 'en' ? 'EN' : 'AF'}
-        </button>
-      ))}
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="mt-5 rounded-2xl border bg-white p-6" style={{ borderColor: '#e5e7eb' }}>
+          {limitReached ? (
+            <p className="text-sm text-gray-600">
+              {t.topic_weekly_limit_reached}
+            </p>
+          ) : submitted ? (
+            <div>
+              <p className="text-sm font-semibold mb-1" style={{ color: '#15803d' }}>{t.topic_query_submitted}</p>
+              <p className="text-sm text-gray-600">
+                {t.topic_query_submitted_detail_prefix}{' '}
+                <strong>{remaining}</strong> {remaining === 1 ? t.topic_query_singular : t.topic_query_plural} {t.topic_query_submitted_detail_suffix}
+              </p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_grade_label}</p>
+                <div className="border rounded-xl px-4 py-3 text-sm bg-gray-50 text-gray-500" style={{ borderColor: '#e5e7eb' }}>
+                  {t.topic_grade_value.replace('{grade}', grade)}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_topic_label}</p>
+                <div className="border rounded-xl px-4 py-3 text-sm bg-gray-50 text-gray-500" style={{ borderColor: '#e5e7eb' }}>
+                  {topicName}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_specific_struggle_label}</p>
+                <select
+                  value={struggle}
+                  onChange={e => setStruggle(e.target.value)}
+                  className="w-full border rounded-xl px-4 py-3 text-sm bg-white"
+                  style={{ borderColor: '#d1d5db', color: struggle ? '#374151' : '#9ca3af' }}
+                >
+                  <option value="" disabled>{t.topic_struggle_select_placeholder}</option>
+                  {dropdownOptions.map(o => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>
+                  {t.topic_note_label} <span className="font-normal normal-case" style={{ color: '#9ca3af' }}>({t.topic_optional_label})</span>
+                </p>
+                <textarea
+                  value={note}
+                  onChange={e => setNote(e.target.value.slice(0, 200))}
+                  rows={3}
+                  placeholder={t.topic_note_placeholder}
+                  className="w-full border rounded-xl px-4 py-3 text-sm resize-none focus:outline-none focus:border-[#1e40af] transition-colors"
+                  style={{ borderColor: '#d1d5db', fontFamily: 'inherit' }}
+                />
+                <p className="text-xs text-right mt-0.5" style={{ color: '#9ca3af' }}>{note.length}/200</p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_response_language_label}</p>
+                <div
+                  className="inline-flex items-center rounded-lg overflow-hidden text-xs font-semibold"
+                  style={{ border: '1px solid #e5e7eb' }}
+                >
+                  {(['en', 'af'] as const).map(l => (
+                    <button
+                      key={l}
+                      type="button"
+                      onClick={() => setFormLang(l)}
+                      className="px-4 py-2 transition-colors"
+                      style={formLang === l
+                        ? { backgroundColor: '#1e40af', color: '#fff' }
+                        : { backgroundColor: '#fff', color: '#9ca3af' }
+                      }
+                    >
+                      {l === 'en' ? t.topic_language_english : t.topic_language_afrikaans}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <button
+                onClick={handleSubmit}
+                disabled={!struggle}
+                className="self-start px-6 py-3 rounded-xl text-sm font-semibold text-white transition-opacity disabled:opacity-40"
+                style={{ backgroundColor: '#1e40af' }}
+              >
+                {t.topic_submit_query}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }
@@ -854,27 +1227,27 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
   const [activeTab, setActiveTab] = useState<Tab>('Study Guide')
   const [mounted, setMounted] = useState(false)
   const { user, openModal } = useAuth()
+  const t = useTranslations()
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  const [lang, setLang] = useState<Language>('en')
+  const lang: Language = user?.language ?? 'en'
 
-  useEffect(() => {
-    setLang(user?.language ?? 'en')
-  }, [user?.language])
+  const TAB_LABELS: Record<Tab, string> = {
+    'Study Guide': t.topic_tab_study_guide,
+    'Practice': t.topic_tab_practice,
+    'Answers': t.topic_tab_answers,
+  }
 
   // ── Locked topic ──────────────────────────────────────────────────────────
   if (isLocked) {
     return (
       <div className="max-w-4xl mx-auto px-6 py-10">
-        <div className="flex items-start justify-between mb-6">
-          <div>
-            <h1 className="text-3xl font-bold text-[#0f1f3d] mb-1">{topicName}</h1>
-            <p className="text-sm text-gray-500">Grade {grade}</p>
-          </div>
-          <LanguageToggle lang={lang} onChange={setLang} />
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold text-[#0f1f3d] mb-1">{topicName}</h1>
+          <p className="text-sm text-gray-500">{t.topic_grade_value.replace('{grade}', grade)}</p>
         </div>
         {/* Suppress auth-dependent content until hydrated to avoid mismatch */}
         {!mounted ? (
@@ -890,7 +1263,7 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
             className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0f1f3d] hover:underline underline-offset-4 transition-all"
           >
             <span aria-hidden="true">←</span>
-            Back to Grade {grade}
+            {t.topic_back_to_grade.replace('{grade}', grade)}
           </Link>
         </div>
       </div>
@@ -908,32 +1281,27 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
         <div className="flex items-center gap-2 mb-1">
           <h1 className="text-3xl font-bold text-[#0f1f3d]">{topicName}</h1>
           <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-[#1e40af] border border-blue-200">
-            Free
+            {t.topic_free_badge}
           </span>
         </div>
-        <p className="text-sm text-gray-500">Grade {grade}</p>
+        <p className="text-sm text-gray-500">{t.topic_grade_value.replace('{grade}', grade)}</p>
       </div>
 
       {/* Tab bar */}
-      <div className="flex items-center justify-between border-b border-gray-200 mb-8">
-        <div className="flex">
-          {TABS.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-5 py-3 text-sm font-medium border-b-2 -mb-px transition-colors ${
-                activeTab === tab
-                  ? 'border-[#1e40af] text-[#1e40af]'
-                  : 'border-transparent text-gray-500 hover:text-gray-800'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-        <div className="pb-px">
-          <LanguageToggle lang={lang} onChange={setLang} />
-        </div>
+      <div className="flex border-b border-gray-200 mb-8">
+        {TABS.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-5 py-3 text-sm font-medium border-b-2 -mb-px transition-colors ${
+              activeTab === tab
+                ? 'border-[#1e40af] text-[#1e40af]'
+                : 'border-transparent text-gray-500 hover:text-gray-800'
+            }`}
+          >
+            {TAB_LABELS[tab]}
+          </button>
+        ))}
       </div>
 
       {/* Tab panels */}
@@ -943,11 +1311,17 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
           : <StudyGuide topicName={topicName} />
       )}
       {activeTab === 'Practice' && (
-        studyGuideData
-          ? <RealPractice data={studyGuideData} />
-          : <Practice topicName={topicName} />
+        <>
+          {studyGuideData
+            ? <RealPractice data={studyGuideData} />
+            : <Practice topicName={topicName} />
+          }
+          <QuerySection grade={grade} topicName={topicName} lang={lang} sectionTitles={studyGuideData?.sections.map((s: Section) => s.title)} />
+        </>
       )}
       {activeTab === 'Answers' && !studyGuideData && <Answers />}
+
+      {activeTab === 'Study Guide' && <AIAssistant grade={grade} />}
 
       <div className="mt-10 pt-6 border-t border-gray-100">
         <Link
@@ -955,7 +1329,7 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
           className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0f1f3d] hover:underline underline-offset-4 transition-all"
         >
           <span aria-hidden="true">←</span>
-          Back to Grade {grade}
+          {t.topic_back_to_grade.replace('{grade}', grade)}
         </Link>
       </div>
     </div>

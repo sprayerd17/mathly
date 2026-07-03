@@ -5,13 +5,14 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import NavAuth from './NavAuth'
 import { useAuth } from '@/app/providers'
+import { useTranslations } from '@/src/i18n/useTranslations'
 
 const navLinks = [
-  { label: 'Home',         href: '/'            },
-  { label: 'Packages',     href: '/pricing'     },
-  { label: 'Live Classes', href: '/live-classes' },
-  { label: 'Contact',      href: '/contact'     },
-]
+  { key: 'nav_home',         href: '/'            },
+  { key: 'nav_packages',     href: '/pricing'     },
+  { key: 'nav_live_classes', href: '/live-classes' },
+  { key: 'nav_contact',      href: '/contact'     },
+] as const
 
 function HamburgerIcon() {
   return (
@@ -42,6 +43,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
   const { user, logout, openModal } = useAuth()
+  const t = useTranslations()
 
   const lastScrollY = useRef(0)
 
@@ -86,16 +88,24 @@ export default function Navbar() {
 
           {/* Desktop nav — centered */}
           <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-5">
-            {navLinks.map(({ label, href }) => {
+            {navLinks.map(({ key, href }) => {
               const isActive = pathname === href
               return (
                 <Link
                   key={href}
                   href={href}
-                  className="text-sm font-medium transition-colors"
+                  className="flex items-center gap-1.5 text-sm font-medium transition-colors"
                   style={{ color: isActive ? '#1e40af' : '#0f1f3d' }}
                 >
-                  {label}
+                  {t[key]}
+                  {href === '/live-classes' && (
+                    <span
+                      className="text-[10px] font-bold px-1.5 py-0.5 rounded-full"
+                      style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}
+                    >
+                      {t.nav_coming_soon}
+                    </span>
+                  )}
                 </Link>
               )
             })}
@@ -105,7 +115,7 @@ export default function Navbar() {
                 className="text-sm font-medium transition-colors"
                 style={{ color: pathname === '/dashboard' ? '#1e40af' : '#0f1f3d' }}
               >
-                Dashboard
+                {t.nav_dashboard}
               </Link>
             )}
           </nav>
@@ -162,20 +172,28 @@ export default function Navbar() {
 
         {/* Nav links */}
         <nav className="flex flex-col gap-0.5 px-3 pt-5 pb-6 flex-1">
-          {navLinks.map(({ label, href }) => {
+          {navLinks.map(({ key, href }) => {
             const isActive = pathname === href
             return (
               <Link
                 key={href}
                 href={href}
                 onClick={close}
-                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 style={{
                   color: isActive ? '#fff' : '#a8b8d8',
                   backgroundColor: isActive ? '#1e40af' : 'transparent',
                 }}
               >
-                {label}
+                {t[key]}
+                {href === '/live-classes' && (
+                  <span
+                    className="text-[10px] font-bold px-1.5 py-0.5 rounded-full"
+                    style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}
+                  >
+                    {t.nav_coming_soon}
+                  </span>
+                )}
               </Link>
             )
           })}
@@ -189,7 +207,7 @@ export default function Navbar() {
                 backgroundColor: pathname === '/dashboard' ? '#1e40af' : 'transparent',
               }}
             >
-              Dashboard
+              {t.nav_dashboard}
             </Link>
           )}
         </nav>
@@ -213,13 +231,13 @@ export default function Navbar() {
                 className="block text-sm py-2 transition-colors"
                 style={{ color: '#a8b8d8' }}
               >
-                My Profile
+                {t.nav_my_profile}
               </Link>
               <button
                 onClick={() => { logout(); close() }}
                 className="block text-sm py-2 text-red-400 hover:text-red-300 transition-colors"
               >
-                Log out
+                {t.nav_log_out}
               </button>
             </div>
           ) : (
@@ -227,7 +245,7 @@ export default function Navbar() {
               onClick={() => { openModal(); close() }}
               className="w-full py-2.5 rounded-xl text-sm font-semibold border border-white/20 text-white hover:bg-white/10 transition-colors"
             >
-              Log in / Register
+              {t.nav_login}
             </button>
           )}
         </div>

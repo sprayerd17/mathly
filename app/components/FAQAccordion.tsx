@@ -1,32 +1,18 @@
 'use client'
 
 import { useState } from 'react'
-
-const faqs = [
-  {
-    question: 'How do I subscribe?',
-    answer:
-      'You can subscribe by creating a free account and then choosing a plan from your account dashboard. We offer monthly and annual options, and you can upgrade or downgrade at any time.',
-  },
-  {
-    question: 'Which grades are covered?',
-    answer:
-      'Mathly covers Grade 4 through Grade 12, following the South African school curriculum. Each grade has its own set of topics, worked examples, and practice problems.',
-  },
-  {
-    question: 'Are the study guides aligned to the SA curriculum?',
-    answer:
-      'Yes. All content on Mathly is aligned to the CAPS (Curriculum and Assessment Policy Statement) framework, so the topics, terminology, and examples match exactly what learners are taught in school.',
-  },
-  {
-    question: 'Can I cancel my subscription?',
-    answer:
-      'Absolutely. You can cancel your subscription at any time from your account settings. You will retain access until the end of your current billing period, and you will not be charged again after cancellation.',
-  },
-]
+import { useTranslations } from '@/src/i18n/useTranslations'
 
 export default function FAQAccordion() {
+  const t = useTranslations()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const faqs = [
+    { question: t.faq_q1_question, answer: t.faq_q1_answer },
+    { question: t.faq_q2_question, answer: t.faq_q2_answer },
+    { question: t.faq_q3_question, answer: t.faq_q3_answer },
+    { question: t.faq_q4_question, answer: t.faq_q4_answer },
+  ]
 
   return (
     <div className="divide-y divide-gray-200 rounded-xl border border-gray-200 overflow-hidden">
