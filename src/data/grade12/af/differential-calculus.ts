@@ -1,0 +1,759 @@
+import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
+
+// ─── Colour helpers ───────────────────────────────────────────────────────────
+// indeterminate form   → red     (#dc2626)
+// factorised form      → blue    (#2563eb)
+// limit / derivative   → green   (#16a34a)
+// simplified numerator → orange  (#ea580c)
+const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
+const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
+const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
+const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
+
+export const topicData: TopicData = {
+  title: 'Differensiaalrekening',
+  grade: 12,
+  sections: [
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 1 — AN INTUITIVE UNDERSTANDING OF LIMITS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'limits-intuitive',
+      title: 'ʼn Intuïtiewe Begrip van Limiete',
+      icon: '→',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Limiet</strong> beskryf die waarde waarnatoe ʼn funksie beweeg soos die invoer ʼn bepaalde waarde nader — selfs al is die funksie nie by daardie presiese punt gedefinieer nie. Ons skryf lim<sub>x→a</sub> f(x) = L om te beteken "soos x nader en nader aan <em>a</em> kom, kom f(x) nader en nader aan <em>L</em>". Limiete is die grondslag van differensiaalrekening, aangesien die afgeleide gedefinieer word as ʼn spesifieke limiet.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('onbepaalde vorm')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gefaktoriseerde vorm')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('limietwaarde')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Kernbegrippe</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Onbepaalde vorm</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Wanneer direkte vervanging 0/0 gee, kan ons nie die antwoord direk aflees nie — ons moet eers vereenvoudig. Dit word ʼn <strong>onbepaalde vorm</strong> genoem.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Faktorisering om die limiet te vind</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Faktoriseer die teller, kanselleer die gemeenskaplike faktor wat die 0/0 veroorsaak, en vervang dan om die limiet te vind.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Limietwaarde</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die waarde L waarnatoe f(x) beweeg soos x → a. Die funksie hoef nie by x = a gedefinieer te wees vir die limiet om te bestaan nie.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:0.75em;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Limietnotasie</p>` +
+        `<p style="font-size:1.2em;font-weight:700;color:#374151;margin:0;">lim<sub>x→a</sub> f(x) = ${gr('L')}</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin-top:6px;margin-bottom:0;">"Soos x na a nader, nader f(x) na ${gr('L')}"</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">ʼn Limiet gaan oor nadering, nie aankoms nie</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Die limiet beskryf waarnatoe f(x) <em>op pad</em> is, nie noodwendig die waarde by x = a nie. ʼn Funksie kan ʼn limiet by ʼn punt hê waar dit ongedefinieerd is of ʼn gat in die grafiek het.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Bereken lim(x→2) van (x² − 4)/(x − 2).',
+          answer: `lim<sub>x→2</sub> (x² − 4)/(x − 2) = ${gr('4')}`,
+          steps: [
+            `<strong>Direkte vervanging:</strong> Vervang x = 2: (2² − 4)/(2 − 2) = ${re('0/0')} — dit is ʼn ${re('onbepaalde vorm')}. Ons kan nie die antwoord direk aflees nie.`,
+            `<strong>Faktoriseer die teller:</strong> x² − 4 = ${bl('(x − 2)(x + 2)')}. Die uitdrukking word ${bl('(x − 2)(x + 2)')} / (x − 2).`,
+            `<strong>Kanselleer die gemeenskaplike faktor:</strong> Kanselleer (x − 2) uit die teller en noemer — die uitdrukking vereenvoudig na ${bl('x + 2')}.`,
+            `<strong>Vervang x = 2:</strong> ${bl('x + 2')} = 2 + 2 = ${gr('4')}.`,
+            `<strong>Antwoord:</strong> lim<sub>x→2</sub> (x² − 4)/(x − 2) = ${gr('4')} ✓`,
+          ],
+        },
+        {
+          question: 'Bereken lim(h→0) van [(x + h)² − x²] / h.',
+          answer: `lim<sub>h→0</sub> [(x + h)² − x²] / h = ${gr('2x')}`,
+          steps: [
+            `<strong>Brei die teller uit:</strong> (x + h)² = x² + 2xh + h². Dus (x + h)² − x² = ${bl('2xh + h²')}.`,
+            `<strong>Faktoriseer h uit die teller:</strong> ${bl('2xh + h²')} = ${bl('h(2x + h)')}. Die uitdrukking word ${bl('h(2x + h)')} / h.`,
+            `<strong>Kanselleer h:</strong> ${bl('h(2x + h)')} / h = ${bl('2x + h')} (geldig aangesien h ≠ 0 wanneer die limiet bereken word).`,
+            `<strong>Vervang h = 0:</strong> ${bl('2x + h')} → ${gr('2x')}.`,
+            `<strong>Antwoord:</strong> lim<sub>h→0</sub> [(x + h)² − x²] / h = ${gr('2x')} ✓`,
+          ],
+        },
+        {
+          question: 'Sipho sê lim(x→3) van (x² − 9)/(x − 3) is ongedefinieerd aangesien die noemer 0 is by x = 3. Is hy korrek?',
+          answer: `Nee — die limiet bestaan en is gelyk aan ${gr('6')}`,
+          steps: [
+            `<strong>Sipho se fout:</strong> Hy het "die funksie is ongedefinieerd by x = 3" verwar met "die limiet bestaan nie". ${re('Dit is nie dieselfde ding nie.')} ʼn Limiet kan bestaan selfs al is die funksie ongedefinieerd by daardie punt.`,
+            `<strong>Faktoriseer die teller:</strong> x² − 9 = ${bl('(x − 3)(x + 3)')}. Die uitdrukking word ${bl('(x − 3)(x + 3)')} / (x − 3).`,
+            `<strong>Kanselleer (x − 3):</strong> Die uitdrukking vereenvoudig na ${bl('x + 3')}.`,
+            `<strong>Vervang x = 3:</strong> ${bl('x + 3')} = 3 + 3 = ${gr('6')}.`,
+            `<strong>Gevolgtrekking:</strong> Sipho is <strong>verkeerd</strong>. lim<sub>x→3</sub> (x² − 9)/(x − 3) = ${gr('6')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q1 Easy — direct limit by factorising ─────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Bereken lim(x→3) van (x² − 9)/(x − 3).',
+          answer: '6',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          explanation: 'Direkte vervanging gee (9−9)/(3−3) = 0/0 — onbepaalde vorm.\nFaktoriseer die teller: x²−9 = (x−3)(x+3). Kanselleer (x−3) om x+3 te kry.\nVervang x=3: 3+3 = 6 ✓',
+        },
+
+        // ── Q2 Medium — limit of a cubic difference quotient ──────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Bereken lim(h→0) van [(x+h)³ − x³]/h.',
+          answer: '3x²',
+          checkMode: 'auto',
+          correctAnswer: '3x²',
+          correctAnswers: ['3x²', '3x^2'],
+          explanation: 'Brei uit: (x+h)³ = x³+3x²h+3xh²+h³.\nTeller: (x³+3x²h+3xh²+h³)−x³ = h(3x²+3xh+h²).\nDeel deur h: 3x²+3xh+h².\nSoos h→0: 3x² ✓',
+        },
+
+        // ── Q3 Hard — conceptual error correction ─────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Sipho sê lim(x→2) van (x−2)/(x²−4) is ongedefinieerd omdat die teller en noemer albei nul is by x=2. Is hy korrek? Verduidelik.',
+          answer: 'Nee — faktoriseer die noemer: (x−2)(x+2). Kanselleer (x−2): 1/(x+2). Limiet soos x→2 = 1/4.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video explaining what a limit is, how to recognise an indeterminate form, and how to evaluate limits by factorising" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 2 — DIFFERENTIATION FROM FIRST PRINCIPLES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'first-principles',
+      title: 'Differensiasie vanuit Eerste Beginsels',
+      icon: "f'",
+      explanation:
+        `<p style="margin-bottom:16px;">Die <strong>afgeleide</strong> van ʼn funksie f(x), geskryf f'(x) of dy/dx, meet die oombliklike koers van verandering van f by enige punt. Dit word gedefinieer met behulp van die <strong>eerste-beginsels-formule</strong>: f'(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h. Hierdie formule bereken die gradiënt van die raaklyn aan die kurwe by enige punt x deur die limiet van die gradiënt van ʼn snylyn te vind soos die twee punte oneindig na aan mekaar beweeg.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('f(x+h) vervanging')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('vereenvoudigde teller')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('limietresultaat')}</span>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:0.75em;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Eerste-beginsels-formule</p>` +
+        `<p style="font-size:1.15em;font-weight:700;color:#374151;margin:0;">f'(x) = lim<sub>h→0</sub> [ ${bl('f(x+h)')} − f(x) ] / h</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Eerste beginsels toepas: stap vir stap</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Vervang f(x+h)')} — Vervang elke x in die funksie met (x + h) en brei uit.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Vereenvoudig die teller')} — Trek f(x) af, brei ten volle uit, en versamel gelyksoortige terme sodat alle h-vrye terme kanselleer.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Deel deur h')} — Faktoriseer h uit die teller en kanselleer met die noemer. Dit verwyder die deling deur nul.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Neem die limiet')} — Vervang h = 0 in die vereenvoudigde uitdrukking. Die resultaat is f'(x).</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Brei altyd ten volle uit voordat jy h kanselleer</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Die sleutelstap is om ${bl('f(x+h)')} ten volle uit te brei sodat alle h-vrye terme met f(x) kanselleer, en slegs terme met h in die teller oorbly. Probeer nooit om h te kanselleer voordat jy uitgebrei het nie.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Vind die afgeleide van f(x) = x² vanuit eerste beginsels.',
+          answer: `f'(x) = ${gr('2x')}`,
+          steps: [
+            `<strong>Skryf die formule:</strong> f'(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h`,
+            `<strong>Vervang ${bl('f(x+h)')}:</strong> ${bl('f(x+h)')} = ${bl('(x+h)²')} = ${bl('x² + 2xh + h²')}.`,
+            `<strong>Trek f(x) af:</strong> ${bl('x² + 2xh + h²')} − x² = ${or('2xh + h²')}.`,
+            `<strong>Deel deur h:</strong> ${or('(2xh + h²)')} / h = ${or('h(2x + h)')} / h = ${or('2x + h')}.`,
+            `<strong>Neem die limiet (h → 0):</strong> ${or('2x + h')} → ${gr('2x')}.`,
+            `<strong>Antwoord:</strong> f'(x) = ${gr('2x')} ✓`,
+          ],
+        },
+        {
+          question: 'Vind die afgeleide van f(x) = 3x + 5 vanuit eerste beginsels.',
+          answer: `f'(x) = ${gr('3')}`,
+          steps: [
+            `<strong>Skryf die formule:</strong> f'(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h`,
+            `<strong>Vervang ${bl('f(x+h)')}:</strong> ${bl('f(x+h)')} = ${bl('3(x+h) + 5')} = ${bl('3x + 3h + 5')}.`,
+            `<strong>Trek f(x) af:</strong> (${bl('3x + 3h + 5')}) − (3x + 5) = ${or('3h')}.`,
+            `<strong>Deel deur h:</strong> ${or('3h')} / h = ${or('3')}.`,
+            `<strong>Neem die limiet (h → 0):</strong> ${or('3')} → ${gr('3')} (konstant — geen h-terme bly oor nie).`,
+            `<strong>Antwoord:</strong> f'(x) = ${gr('3')} ✓`,
+          ],
+        },
+        {
+          question: 'Vind die afgeleide van f(x) = x³ vanuit eerste beginsels.',
+          answer: `f'(x) = ${gr('3x²')}`,
+          steps: [
+            `<strong>Skryf die formule:</strong> f'(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h`,
+            `<strong>Vervang ${bl('f(x+h)')}:</strong> ${bl('f(x+h)')} = ${bl('(x+h)³')}.`,
+            `<strong>Brei ${bl('(x+h)³')} uit:</strong> ${bl('x³ + 3x²h + 3xh² + h³')}.`,
+            `<strong>Trek f(x) af:</strong> (${bl('x³ + 3x²h + 3xh² + h³')}) − x³ = ${or('3x²h + 3xh² + h³')}.`,
+            `<strong>Deel deur h:</strong> ${or('h(3x² + 3xh + h²)')} / h = ${or('3x² + 3xh + h²')}.`,
+            `<strong>Neem die limiet (h → 0):</strong> ${or('3x² + 3xh + h²')} → ${gr('3x²')}.`,
+            `<strong>Antwoord:</strong> f'(x) = ${gr('3x²')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q4 Easy — derivative of x² from first principles ──────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Vind die afgeleide van f(x) = x² vanuit eerste beginsels.',
+          answer: "f'(x) = 2x",
+          checkMode: 'auto',
+          correctAnswer: '2x',
+          correctAnswers: ['2x', "f'(x)=2x", "f'(x) = 2x"],
+          explanation: "f'(x) = lim(h→0) [(x+h)²−x²]/h\n= lim(h→0) [x²+2xh+h²−x²]/h\n= lim(h→0) [2xh+h²]/h\n= lim(h→0) (2x+h)\n= 2x ✓",
+        },
+
+        // ── Q5 Medium — derivative of a linear function from first principles ──
+        {
+          difficulty: 'Medium',
+          question: 'Vind die afgeleide van f(x) = 4x + 7 vanuit eerste beginsels.',
+          answer: "f'(x) = 4",
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4', "f'(x)=4", "f'(x) = 4"],
+          explanation: "f'(x) = lim(h→0) [(4(x+h)+7)−(4x+7)]/h\n= lim(h→0) [4x+4h+7−4x−7]/h\n= lim(h→0) 4h/h\n= lim(h→0) 4\n= 4 ✓",
+        },
+
+        // ── Q6 Hard — derivative of a quadratic from first principles ─────────
+        {
+          difficulty: 'Hard',
+          question: 'Vind die afgeleide van f(x) = x² + 3x vanuit eerste beginsels, en wys alle stappe.',
+          answer: "f'(x) = lim(h→0) [(x+h)²+3(x+h)−x²−3x]/h = lim(h→0) [2xh+h²+3h]/h = lim(h→0) (2x+h+3) = 2x+3.",
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video demonstrating differentiation from first principles for f(x) = x² and f(x) = x³ step by step" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — RULES OF DIFFERENTIATION
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'differentiation-rules',
+      title: 'Reëls van Differensiasie',
+      icon: 'd/dx',
+      explanation:
+        `<p style="margin-bottom:16px;">In plaas daarvan om altyd eerste beginsels te gebruik, pas ons die volgende reëls toe om polinome vinnig en doeltreffend te differensieer. <strong>Let wel:</strong> uitdrukkings moet uitgebrei of vereenvoudig word tot afsonderlike terme voordat jy differensieer.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('magsreël toegepas')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('vereenvoudigde uitdrukking')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('afgeleide')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die vier reëls</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:6px;">Konstante reël</p>` +
+        `<p style="font-family:monospace;font-size:14px;color:#374151;margin-bottom:4px;">d/dx (c) = 0</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Die afgeleide van enige konstante is nul.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Magsreël</p>` +
+        `<p style="font-family:monospace;font-size:14px;color:#374151;margin-bottom:4px;">d/dx (xⁿ) = nxⁿ⁻¹</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Vermenigvuldig met die eksponent, verminder dan die eksponent met 1.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Konstante-veelvoud-reël</p>` +
+        `<p style="font-family:monospace;font-size:14px;color:#374151;margin-bottom:4px;">d/dx (c·f(x)) = c·f'(x)</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Die konstante faktor bly onveranderd deurgaans.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:6px;">Som-/verskilreël</p>` +
+        `<p style="font-family:monospace;font-size:14px;color:#374151;margin-bottom:4px;">d/dx [f ± g] = f' ± g'</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Differensieer elke term afsonderlik en kombineer.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">Vereenvoudig voordat jy differensieer</p>` +
+        `<p style="margin:0;color:#991b1b;">As die uitdrukking breuke of produkte bevat, brei dit uit of herskryf dit as ʼn som van individuele terme (met negatiewe eksponente waar nodig) voordat jy die reëls toepas. Jy kan nie die reëls term-vir-term op ʼn produk of breuk toepas sonder om eers te vereenvoudig nie.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Differensieer f(x) = 5x³ − 4x² + 7x − 3.',
+          answer: `f'(x) = ${gr('15x² − 8x + 7')}`,
+          steps: [
+            `<strong>Pas die magsreël op elke term toe:</strong>`,
+            `${bl('d/dx(5x³)')} = ${bl('5 · 3 · x²')} = 15x²`,
+            `${bl('d/dx(−4x²)')} = ${bl('−4 · 2 · x')} = −8x`,
+            `${bl('d/dx(7x)')} = ${bl('7 · 1')} = 7`,
+            `${bl('d/dx(−3)')} = 0 (konstante reël)`,
+            `<strong>Kombineer alle terme:</strong> f'(x) = ${gr('15x² − 8x + 7')} ✓`,
+          ],
+        },
+        {
+          question: 'Differensieer f(x) = (x² + 3) / x.',
+          answer: `f'(x) = ${gr('1 − 3/x²')}`,
+          steps: [
+            `<strong>Vereenvoudig eers — deel elke term deur x:</strong>`,
+            `(x² + 3) / x = x²/x + 3/x = ${or('x + 3x⁻¹')}`,
+            `<strong>Pas die magsreël op elke term van ${or('x + 3x⁻¹')} toe:</strong>`,
+            `${bl('d/dx(x)')} = 1`,
+            `${bl('d/dx(3x⁻¹)')} = ${bl('3 · (−1) · x⁻²')} = −3x⁻²`,
+            `<strong>Kombineer en herskryf:</strong> f'(x) = 1 − 3x⁻² = ${gr('1 − 3/x²')} ✓`,
+          ],
+        },
+        {
+          question: 'Differensieer f(x) = (2x − 1)(x + 3).',
+          answer: `f'(x) = ${gr('4x + 5')}`,
+          steps: [
+            `<strong>Brei die produk eers uit:</strong>`,
+            `(2x − 1)(x + 3) = 2x² + 6x − x − 3 = ${or('2x² + 5x − 3')}`,
+            `<strong>Pas die magsreël op elke term van ${or('2x² + 5x − 3')} toe:</strong>`,
+            `${bl('d/dx(2x²)')} = 4x`,
+            `${bl('d/dx(5x)')} = 5`,
+            `${bl('d/dx(−3)')} = 0`,
+            `<strong>Kombineer:</strong> f'(x) = ${gr('4x + 5')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q7 Easy — differentiate a polynomial using the rules ───────────────
+        {
+          difficulty: 'Easy',
+          question: 'Differensieer f(x) = 6x⁴ − 3x² + 8x − 5.',
+          answer: "f'(x) = 24x³ − 6x + 8",
+          checkMode: 'auto',
+          correctAnswer: '24x³-6x+8',
+          correctAnswers: ['24x³-6x+8', '24x^3-6x+8', '24x³ − 6x + 8', '24x^3 - 6x + 8'],
+          explanation: 'Pas die magsreël op elke term toe:\nd/dx(6x⁴) = 24x³\nd/dx(−3x²) = −6x\nd/dx(8x) = 8\nd/dx(−5) = 0\nf\'(x) = 24x³ − 6x + 8 ✓',
+        },
+
+        // ── Q8 Medium — differentiate a rational function by simplifying first ─
+        {
+          difficulty: 'Medium',
+          question: 'Differensieer f(x) = (x² + 4)/x deur eers te vereenvoudig.',
+          answer: "f'(x) = 1 − 4/x²",
+          checkMode: 'auto',
+          correctAnswer: '1-4/x²',
+          correctAnswers: ['1-4/x²', '1-4/x^2', '1 − 4/x²', '1 - 4/x^2'],
+          explanation: 'Vereenvoudig: (x²+4)/x = x + 4x⁻¹.\nDifferensieer: d/dx(x) = 1, d/dx(4x⁻¹) = −4x⁻².\nf\'(x) = 1 − 4x⁻² = 1 − 4/x² ✓',
+        },
+
+        // ── Q9 Hard — differentiate a squared binomial by expanding first ──────
+        {
+          difficulty: 'Hard',
+          question: 'Differensieer f(x) = (3x − 2)², deur eers uit te brei.',
+          answer: "Brei uit: 9x²−12x+4. f'(x) = 18x−12.",
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to apply the constant, power, constant multiple, and sum/difference rules to differentiate polynomials and simplified rational expressions" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — EQUATIONS OF TANGENTS TO CURVES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'tangent-equations',
+      title: 'Vergelykings van Raaklyne aan Kurwes',
+      icon: '∥',
+      explanation:
+        `<p style="margin-bottom:16px;">Die <strong>gradiënt van die raaklyn</strong> aan ʼn kurwe y = f(x) by ʼn spesifieke punt x = a word gegee deur f'(a) — die afgeleide geëvalueer by daardie punt. Ons gebruik dan die <strong>punt-gradiëntvorm</strong> van ʼn reguit lyn (y − y₁ = m(x − x₁)) om die vergelyking van die raaklyn te skryf, deur die gradiënt m = f'(a) en die punt (a, f(a)) te vervang.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('afgeleide (gradiënt)')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('punt op die kurwe')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('raaklynvergelyking')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die raaklynvergelyking vind: stap vir stap</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Differensieer f(x)')} om f'(x) te vind, vervang dan x = a om die gradiënt m = f'(a) te kry.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Vind die punt')} — as slegs x = a gegee is, bereken y₁ = f(a) om die punt (a, y₁) te kry.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Skryf die raaklynvergelyking')} deur y − y₁ = m(x − x₁) te gebruik en vereenvoudig na die vorm y = mx + c.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:0.75em;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Punt-gradiëntvorm</p>` +
+        `<p style="font-size:1.15em;font-weight:700;color:#374151;margin:0;">y − y₁ = ${bl('m')}(x − x₁)&nbsp;&nbsp; waar &nbsp;&nbsp;${bl('m')} = ${bl("f'(a)")}&nbsp;&nbsp; en &nbsp;&nbsp;${or('(x₁, y₁)')} = ${or('(a, f(a))')}</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Vind altyd eers die punt as slegs x gegee is</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As ʼn vraag slegs x = a gee, vervang dit terug in die oorspronklike funksie f(x) om die y-koördinaat te vind voordat jy die raaklynvergelyking skryf. Om hierdie stap oor te slaan is ʼn algemene fout.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Vind die vergelyking van die raaklyn aan y = x² by die punt (3, 9).',
+          answer: `${gr('y = 6x − 9')}`,
+          steps: [
+            `<strong>Vind die gradiënt:</strong> ${bl("f'(x)")} = ${bl('2x')}.`,
+            `<strong>Evalueer by x = 3:</strong> ${bl("f'(3)")} = ${bl('2(3)')} = ${bl('6')}. Die gradiënt van die raaklyn is ${bl('m = 6')}.`,
+            `<strong>Gebruik die gegewe punt</strong> ${or('(3, 9)')}${or('')}: y − y₁ = m(x − x₁) → y − ${or('9')} = ${bl('6')}(x − ${or('3')}).`,
+            `<strong>Vereenvoudig:</strong> y = ${bl('6')}x − 18 + ${or('9')} = ${gr('6x − 9')}.`,
+            `<strong>Antwoord:</strong> ${gr('y = 6x − 9')} ✓`,
+          ],
+        },
+        {
+          question: 'Vind die vergelyking van die raaklyn aan y = x³ − 2x by x = 1.',
+          answer: `${gr('y = x − 2')}`,
+          steps: [
+            `<strong>Vind die y-koördinaat:</strong> f(1) = 1³ − 2(1) = 1 − 2 = ${or('−1')}. Punt: ${or('(1, −1)')}.`,
+            `<strong>Differensieer:</strong> ${bl("f'(x)")} = ${bl('3x² − 2')}.`,
+            `<strong>Evalueer by x = 1:</strong> ${bl("f'(1)")} = ${bl('3(1)² − 2')} = ${bl('1')}. Gradiënt: ${bl('m = 1')}.`,
+            `<strong>Skryf die raaklynvergelyking:</strong> y − ${or('(−1)')} = ${bl('1')}(x − ${or('1')}) → y + 1 = x − 1.`,
+            `<strong>Vereenvoudig:</strong> ${gr('y = x − 2')} ✓`,
+          ],
+        },
+        {
+          question: 'Lerato vind die vergelyking van die raaklyn aan y = 2x² + 3x − 1 by die punt waar x = 2.',
+          answer: `${gr('y = 11x − 9')}`,
+          steps: [
+            `<strong>Vind die y-koördinaat:</strong> f(2) = 2(4) + 3(2) − 1 = 8 + 6 − 1 = ${or('13')}. Punt: ${or('(2, 13)')}.`,
+            `<strong>Differensieer:</strong> ${bl("f'(x)")} = ${bl('4x + 3')}.`,
+            `<strong>Evalueer by x = 2:</strong> ${bl("f'(2)")} = ${bl('4(2) + 3')} = ${bl('11')}. Gradiënt: ${bl('m = 11')}.`,
+            `<strong>Skryf die raaklynvergelyking:</strong> y − ${or('13')} = ${bl('11')}(x − ${or('2')}) → y = ${bl('11')}x − 22 + ${or('13')}.`,
+            `<strong>Vereenvoudig:</strong> ${gr('y = 11x − 9')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q10 Medium — tangent equation given a point ───────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Vind die vergelyking van die raaklyn aan y = x² + 1 by die punt (2, 5).',
+          answer: 'y = 4x − 3',
+          checkMode: 'auto',
+          correctAnswer: 'y=4x-3',
+          correctAnswers: ['y=4x-3', 'y = 4x - 3', 'y=4x−3', '4x-3'],
+          explanation: "f'(x) = 2x. f'(2) = 4. Gradiënt m = 4.\nRaaklyn: y−5 = 4(x−2) → y = 4x−8+5 = 4x−3 ✓",
+        },
+
+        // ── Q11 Hard — tangent given only x-value ─────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Vind die vergelyking van die raaklyn aan y = x³ − 4x by x = −1.',
+          answer: "f(−1) = −1+4 = 3. Punt: (−1, 3). f'(x) = 3x²−4. f'(−1) = 3−4 = −1. Raaklyn: y−3 = −1(x+1). y = −x+2.",
+          checkMode: 'self',
+        },
+
+        // ── Q12 Hard — conceptual: tangent at a turning point ─────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Lerato sê die raaklyn aan ʼn kurwe by sy draaipunt is altyd horisontaal. Is sy korrek? Verduidelik.',
+          answer: 'Ja — by ʼn draaipunt is die gradiënt van die kurwe nul, wat beteken die afgeleide is gelyk aan nul, wat beteken die raaklyn ʼn gradiënt van nul het en dus horisontaal is.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to find the equation of a tangent to a curve using differentiation and the point-slope formula" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — SKETCHING GRAPHS OF CUBIC FUNCTIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'cubic-sketching',
+      title: 'Skets van Grafieke van Derdegraadse Funksies',
+      icon: '∿',
+      explanation:
+        `<p style="margin-bottom:16px;">Om ʼn derdegraadse funksie y = f(x) te skets, vind ons stelselmatig: (1) <strong>x-afsnitte</strong> deur f(x) = 0 op te los met die Faktorstelling, (2) <strong>y-afsnit</strong> deur x = 0 te stel, (3) <strong>stilstandspunte (draaipunte)</strong> deur f'(x) = 0 op te los en elkeen te klassifiseer as ʼn plaaslike maksimum of minimum deur die teken van f'(x) aan weerskante te toets (of deur die tweede afgeleide te gebruik), en (4) die <strong>eindgedrag</strong> gebaseer op die teken van die leidende koëffisiënt.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('x-afsnitte')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('stilstandspunte')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('rigting van die kurwe')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">ʼn Derdegraadse funksie skets: stap vir stap</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('x-afsnitte')} — Gebruik die Faktorstelling om ʼn wortel te vind, faktoriseer dan ten volle en los f(x) = 0 op.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>y-afsnit</strong> — Vervang x = 0 in f(x).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Stilstandspunte')} — Los f'(x) = 0 op. Toets f'(x) aan weerskante om as plaaslike maksimum of minimum te klassifiseer.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Eindgedrag')} — Positiewe leidende koëffisiënt: styg na regs. Negatiewe leidende koëffisiënt: daal na regs.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Tekentabel-kortpad om stilstandspunte te klassifiseer</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Kies toetswaardes net links en regs van elke stilstandspunt en kyk of f'(x) positief (toenemend) of negatief (afnemend) is. ʼn Verandering van + na − is ʼn plaaslike maksimum; − na + is ʼn plaaslike minimum.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Skets y = x³ − 3x².',
+          answer: `Plaaslike maksimum by ${or('(0, 0)')}, plaaslike minimum by ${or('(2, −4)')}; ${bl('x-afsnitte')} by x = 0 en x = 3`,
+          steps: [
+            `<strong>y-afsnit:</strong> f(0) = 0. y-afsnit: (0, 0).`,
+            `<strong>${bl('x-afsnitte')}:</strong> x³ − 3x² = ${bl('x²(x − 3)')} = 0. Dus ${bl('x = 0')} (herhaalde wortel) en ${bl('x = 3')}.`,
+            `<strong>Differensieer:</strong> f'(x) = 3x² − 6x = ${or('3x(x − 2)')}.`,
+            `<strong>${or('Stilstandspunte')}:</strong> f'(x) = 0 → ${or('x = 0')} en ${or('x = 2')}. f(0) = 0, f(2) = 8 − 12 = ${or('−4')}.`,
+            `<strong>Klassifiseer met ʼn tekentabel:</strong> f'(−1) = 3(−1)(−3) = 9 > 0 (toenemend). f'(1) = 3(1)(−1) = −3 < 0 (afnemend). f'(3) = 3(3)(1) = 9 > 0 (toenemend). Dus is ${or('x = 0 ʼn plaaslike maksimum')} en ${or('x = 2 ʼn plaaslike minimum')}.`,
+            `<strong>${gr('Eindgedrag')}:</strong> Die leidende koëffisiënt is positief (+1), dus die ${gr('kurwe styg na regs en daal na links')}.`,
+            `<strong>Skets:</strong> Teken die afsnitte ${bl('(0,0)')} en ${bl('(3,0)')}, merk die stilstandspunte ${or('(0,0)')} (plaaslike maksimum) en ${or('(2,−4)')} (plaaslike minimum), teken dan die ${gr('S-vormige kurwe')} in ooreenstemming met die eindgedrag.`,
+          ],
+        },
+        {
+          question: 'Sipho moet y = −x³ + 3x skets.',
+          answer: `Plaaslike maksimum by ${or('(1, 2)')}, plaaslike minimum by ${or('(−1, −2)')}; ${bl('x-afsnitte')} by x = 0, x = √3, x = −√3`,
+          steps: [
+            `<strong>y-afsnit:</strong> f(0) = 0. y-afsnit: (0, 0).`,
+            `<strong>${bl('x-afsnitte')}:</strong> −x³ + 3x = ${bl('−x(x² − 3)')} = 0. Dus ${bl('x = 0')}, ${bl('x = √3')} ≈ 1.73, en ${bl('x = −√3')} ≈ −1.73.`,
+            `<strong>Differensieer:</strong> f'(x) = −3x² + 3 = ${or('−3(x² − 1)')}.`,
+            `<strong>${or('Stilstandspunte')}:</strong> f'(x) = 0 → x² = 1 → ${or('x = ±1')}. f(1) = −1 + 3 = ${or('2')}, f(−1) = 1 − 3 = ${or('−2')}.`,
+            `<strong>Klassifiseer:</strong> f'(0) = 3 > 0, f'(2) = −9 < 0, dus ${or('x = 1 is ʼn plaaslike maksimum (2)')}. f'(−2) = −9 < 0, f'(0) = 3 > 0, dus ${or('x = −1 is ʼn plaaslike minimum (−2)')}.`,
+            `<strong>${gr('Eindgedrag')}:</strong> Die leidende koëffisiënt is negatief (−1), dus die ${gr('kurwe daal na regs en styg na links')}.`,
+            `<strong>Skets:</strong> Teken die ${bl('drie x-afsnitte')}, merk die ${or('stilstandspunte')} (1, 2) en (−1, −2), teken dan die ${gr('omgekeerde S-kurwe')} wat oor die algemeen van links na regs daal.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q13 Hard — interpret increasing/decreasing from a diagram ──────────
+        {
+          difficulty: 'Hard',
+          question: '<DiagramPlaceholder label="A cubic curve with x-intercepts at x=−2, x=1, x=3, a local maximum between x=−2 and x=1, and a local minimum between x=1 and x=3, with a positive leading coefficient" />\nGebruik die diagram en beskryf die intervalle waar die funksie toenemend is en waar dit afnemend is.',
+          answer: 'Die funksie neem toe vir x < (plaaslike maksimum se x-waarde) en x > (plaaslike minimum se x-waarde), en neem af tussen die plaaslike maksimum en plaaslike minimum — verwys na die werklike draaipunt-x-waardes op die diagram vir presiese intervalle.',
+          checkMode: 'self',
+        },
+
+        // ── Q14 Hard — find and classify stationary points ────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Vind die stilstandspunte van y = x³ − 6x² + 9x en klassifiseer elkeen as ʼn plaaslike maksimum of minimum.',
+          answer: "f'(x) = 3x²−12x+9 = 3(x²−4x+3) = 3(x−1)(x−3) = 0. x=1 of x=3. f(1) = 1−6+9 = 4 (plaaslike maksimum). f(3) = 27−54+27 = 0 (plaaslike minimum).",
+          checkMode: 'self',
+        },
+
+        // ── Q15 Hard — sketch a cubic showing intercepts and stationary points ─
+        {
+          difficulty: 'Hard',
+          question: 'Skets y = x³ − 6x² + 9x, en toon die afsnitte en stilstandspunte.',
+          answer: 'y-afsnit: 0. x-afsnitte: x(x²−6x+9) = x(x−3)² = 0, dus x=0 of x=3 (herhaal). Stilstandspunte vanaf Vraag 14: (1, 4) plaaslike maksimum, (3, 0) plaaslike minimum (raak die x-as). Positiewe leidende koëffisiënt.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video demonstrating how to find intercepts, stationary points, and sketch a cubic function step by step" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — OPTIMISATION AND RATES OF CHANGE
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'optimisation',
+      title: 'Optimering en Koerse van Verandering',
+      icon: '★',
+      explanation:
+        `<p style="margin-bottom:16px;">Wiskundige analise word gebruik om werklike-lewe <strong>optimeringsprobleme</strong> op te los — om die maksimum of minimum waarde van ʼn hoeveelheid (soos oppervlakte, volume, wins of koste) te vind, onderworpe aan beperkings. Die metode is: skryf ʼn vergelyking vir die hoeveelheid wat geoptimeer moet word in terme van een veranderlike, differensieer en stel gelyk aan nul om die stilstandspunt te vind, verifieer dan of dit ʼn maksimum of minimum is, en beantwoord die vraag in konteks.</p>` +
+        `<p style="margin-bottom:16px;"><strong>Koers-van-verandering</strong>-probleme gebruik die afgeleide om te bepaal hoe vinnig een hoeveelheid verander relatief tot ʼn ander, insluitend die gemiddelde koers van verandering (gradiënt van ʼn snylyn) en die oombliklike koers van verandering (gradiënt van ʼn raaklyn).</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('beperkingsvergelyking')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('geoptimeerde funksie')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('kritieke punt (maks/min)')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Optimeringsmetode: stap vir stap</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Identifiseer die beperking')} — Skryf die beperkingsvergelyking wat jou veranderlikes verbind, en gebruik dit om een veranderlike in terme van die ander uit te druk.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Skryf die doelfunksie')} — Druk die hoeveelheid wat gemaksimeer of geminimeer moet word uit in terme van slegs een veranderlike.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Differensieer, stel gelyk aan nul')} — Los op vir die ${gr('kritieke punt')}, verifieer of dit ʼn maksimum of minimum is, en beantwoord dan in konteks.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">Beantwoord altyd in konteks</p>` +
+        `<p style="margin:0;color:#991b1b;">ʼn Optimeringsantwoord is nie volledig totdat jy verduidelik wat die maksimum of minimum waarde beteken in die werklike-lewe konteks van die probleem nie, insluitend eenhede. Moenie by die kritieke x-waarde stop nie — vervang terug om die werklike geoptimeerde hoeveelheid te vind.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Boer het 40 m heining en wil ʼn reghoekige tuin teen ʼn muur toemaak (een kant het geen heining nodig nie). Vind die dimensies wat die oppervlakte maksimeer.',
+          answer: `Dimensies: ${gr('10 m × 20 m')}, maksimum oppervlakte = ${gr('200 m²')}`,
+          steps: [
+            `<strong>${bl('Beperking')}:</strong> Slegs drie kante het heining nodig. Laat die twee loodregte kante elk lengte x hê. Dan het die parallelle kant (teenoor die muur) lengte ${bl('40 − 2x')}.`,
+            `<strong>${or('Doelfunksie')}:</strong> Oppervlakte A = x(${bl('40 − 2x')}) = ${or('40x − 2x²')}.`,
+            `<strong>Differensieer:</strong> dA/dx = 40 − 4x.`,
+            `<strong>${gr('Kritieke punt')}:</strong> Stel dA/dx = 0 → 40 − 4x = 0 → ${gr('x = 10')}.`,
+            `<strong>Maksimum oppervlakte:</strong> A = 10(40 − 20) = ${gr('200 m²')}.`,
+            `<strong>Antwoord:</strong> Dimensies is ${gr('10 m by 20 m')}, wat ʼn maksimum oppervlakte van ${gr('200 m²')} gee ✓`,
+          ],
+        },
+        {
+          question: 'Die hoogte van ʼn bal (in meter) na t sekondes word gegee deur h(t) = −5t² + 20t + 2. Vind die maksimum hoogte en wanneer dit voorkom.',
+          answer: `Maksimum hoogte = ${gr('22 m')} by t = ${gr('2 sekondes')}`,
+          steps: [
+            `<strong>${or('Doelfunksie')}:</strong> h(t) = ${or('−5t² + 20t + 2')}.`,
+            `<strong>Differensieer:</strong> h'(t) = −10t + 20.`,
+            `<strong>${gr('Kritieke punt')}:</strong> Stel h'(t) = 0 → −10t + 20 = 0 → ${gr('t = 2 sekondes')}.`,
+            `<strong>Verifieer maksimum:</strong> h''(t) = −10 < 0, wat ʼn maksimum bevestig.`,
+            `<strong>Maksimum hoogte:</strong> h(2) = −5(4) + 20(2) + 2 = −20 + 40 + 2 = ${gr('22 m')}.`,
+            `<strong>Antwoord:</strong> Die bal bereik ʼn maksimum hoogte van ${gr('22 m')} by ${gr('t = 2 sekondes')} ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Silindriese blik moet ʼn volume van 500 cm³ hê. Vind die radius wat die totale oppervlakte minimeer.',
+          answer: `Optimale radius ≈ ${gr('4.30 cm')}`,
+          steps: [
+            `<strong>${bl('Beperking')}:</strong> Volume V = πr²h = ${bl('500')}, dus h = ${bl('500 / (πr²)')}.`,
+            `<strong>${or('Doelfunksie')}:</strong> Oppervlakte S = 2πr² + 2πrh = 2πr² + 2πr · ${bl('500/(πr²)')} = ${or('2πr² + 1000/r')}.`,
+            `<strong>Differensieer:</strong> dS/dr = 4πr − 1000/r².`,
+            `<strong>${gr('Kritieke punt')}:</strong> Stel dS/dr = 0 → 4πr = 1000/r² → 4πr³ = 1000 → r³ = 1000/(4π) ≈ 79.58 → ${gr('r ≈ 4.30 cm')}.`,
+            `<strong>Verifieer minimum:</strong> Die tweede afgeleide d²S/dr² = 4π + 2000/r³ > 0, wat ʼn minimum bevestig.`,
+            `<strong>Antwoord:</strong> Die radius wat die oppervlakte minimeer is ${gr('r ≈ 4.30 cm')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q16 Hard — fencing optimisation ───────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Boer het 60 m heining om ʼn reghoekige area teen ʼn reguit muur toe te maak. Vind die dimensies en maksimum oppervlakte.',
+          answer: 'Laat die loodregte kant = x. Parallelle kant = 60−2x. A = x(60−2x) = 60x−2x². dA/dx = 60−4x = 0. x = 15. Maksimum oppervlakte = 15×30 = 450 m².',
+          checkMode: 'self',
+        },
+
+        // ── Q17 Hard — rocket height: max value and time ──────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Die hoogte van ʼn vuurpyl na t sekondes is h(t) = −4t² + 24t + 10. Vind die maksimum hoogte en die tyd wat dit neem om dit te bereik.',
+          answer: 'Maksimum hoogte by t = 3 sekondes, h = 46 m.',
+          checkMode: 'self',
+        },
+
+        // ── Q18 Hard — open box optimisation ──────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Amahle wil ʼn oop boks maak van ʼn 20 cm by 20 cm stuk karton deur gelyke vierkante uit elke hoek te sny en die kante op te vou. Vind die grootte van die vierkant wat gesny moet word om die volume te maksimeer.',
+          answer: 'Laat die snygrootte = x. Volume = x(20−2x)² = x(400−80x+4x²) = 400x−80x²+4x³. dV/dx = 400−160x+12x² = 0. Deel deur 4: 3x²−40x+100 = 0. x = (40±√(1600−1200))/6 = (40±20)/6. x = 10/3 ≈ 3.33 cm of x = 10 (verwerp aangesien 2x = 20 geen basis laat nie). x ≈ 3.33 cm.',
+          checkMode: 'self',
+        },
+
+        // ── Q19 Hard — conceptual: when does max occur? ───────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Sipho sê die maksimum van ʼn funksie kom altyd voor waar die afgeleide gelyk is aan nul. Is hy korrek? Verduidelik.',
+          answer: 'Nie altyd nie — die afgeleide is gelyk aan nul by stilstandspunte, maar hierdie kan plaaslike maksima, plaaslike minima, of buigpunte wees; ook kan globale maksima op ʼn geslote interval by die eindpunte voorkom, waar die afgeleide nie nul hoef te wees nie.',
+          checkMode: 'self',
+        },
+
+        // ── Q20 Hard — average vs instantaneous rate of change ────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Vind die gemiddelde koers van verandering van f(x) = x³ tussen x = 1 en x = 3, en vergelyk dit met die oombliklike koers van verandering by x = 2.',
+          answer: 'Gemiddelde koers = (f(3)−f(1))/(3−1) = (27−1)/2 = 13. Oombliklik: f\'(x) = 3x². f\'(2) = 12. Die gemiddelde koers (13) is effens hoër as die oombliklike koers by die middelpunt (12).',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video demonstrating optimisation using calculus — fencing problem and falling object worked through step by step" />',
+    },
+  ],
+  scoreMessages: [
+    { minScore: 20, message: 'Uitstekend! Jy het differensiaalrekening bemeester.' },
+    { minScore: 15, message: 'Puik werk!' },
+    { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
+    { minScore: 0, message: 'Hou aan probeer, werk deur die gids weer.' },
+  ],
+}

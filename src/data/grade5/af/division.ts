@@ -1,0 +1,840 @@
+import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
+
+// ─── Colour helpers (division roles) ─────────────────────────────────────────
+// dividend       → red     (#dc2626)
+// divisor        → blue    (#2563eb)
+// quotient       → green   (#16a34a)
+// remainder      → orange  (#ea580c)
+// estimated digit→ purple  (#7c3aed)
+const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
+const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
+const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
+const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
+const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</span>`
+
+export const topicData: TopicData = {
+  title: 'Deling',
+  grade: 5,
+  sections: [
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 1 — DIVISION AS THE INVERSE OF MULTIPLICATION
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'division-inverse-multiplication',
+      title: 'Deling as die Inverse van Vermenigvuldiging',
+      icon: '÷',
+      explanation:
+        `<p style="margin-bottom:16px;">Deling en vermenigvuldiging is <strong>inverse bewerkings</strong> — hulle maak mekaar ongedaan, net soos optelling en aftrekking mekaar ongedaan maak. In Graad 5 gebruik ons hierdie verwantskap om groter getalle vinnig te deel deur aan die ooreenstemmende vermenigvuldigingsfeit te dink.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('deeltal')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('deler')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('kwosiënt')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('res')}</span>` +
+        `</div>` +
+
+        // ── Key terms ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelterme</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Deeltal</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die getal wat gedeel word — dit is die beginhoeveelheid.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Deler</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die getal waarmee jy deel — hoeveel gelyke groepe ons maak.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Kwosiënt</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die antwoord op ʼn deling — hoeveel is in elke groep.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Res</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Wat oorbly nadat jy so gelyk moontlik gedeel het.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Fact family ──────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Feitefamilies</p>` +
+        `<p style="margin-bottom:12px;">Een vermenigvuldigingsfeit gee jou <strong>twee delingsfeite</strong> gratis. Hierdie drie feite vorm ʼn <strong>feitefamilie</strong>:</p>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;">` +
+        `<div style="text-align:center;min-width:150px;">` +
+        `<p style="font-size:0.75em;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Vermenigvuldiging</p>` +
+        `<p style="font-size:1.1em;font-weight:700;color:#374151;margin:0;">8 × 9 = ${re('72')}</p>` +
+        `</div>` +
+        `<div style="color:#9ca3af;font-size:1.4em;font-weight:300;">⟶</div>` +
+        `<div style="text-align:center;min-width:150px;">` +
+        `<p style="font-size:0.75em;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Delingsfeit 1</p>` +
+        `<p style="font-size:1.1em;font-weight:700;color:#374151;margin:0;">${re('72')} ÷ ${bl('9')} = ${gr('8')}</p>` +
+        `</div>` +
+        `<div style="color:#9ca3af;font-size:1.4em;font-weight:300;">⟶</div>` +
+        `<div style="text-align:center;min-width:150px;">` +
+        `<p style="font-size:0.75em;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Delingsfeit 2</p>` +
+        `<p style="font-size:1.1em;font-weight:700;color:#374151;margin:0;">${re('72')} ÷ ${bl('8')} = ${gr('9')}</p>` +
+        `</div>` +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Waarom vermenigvuldigingstafels belangrik is</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As jy jou vermenigvuldigingstafels tot by <strong>12 × 12</strong> ken, kan jy die meeste delingsvrae onmiddellik oplos — dink net aan die ooreenstemmende vermenigvuldigingsfeit en die antwoord is klaar daar.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Gebruik die feitefamilie vir 11 × 12 = 132 om twee delingsfeite te skryf.',
+          answer: `${re('132')} ÷ ${bl('12')} = ${gr('11')} en ${re('132')} ÷ ${bl('11')} = ${gr('12')}`,
+          steps: [
+            `Begin met die vermenigvuldigingsfeit: <strong>11 × 12 = ${re('132')}</strong>. Die produk ${re('132')} word die ${re('deeltal')} in albei delingsfeite.`,
+            `<strong>Delingsfeit 1:</strong> Wissel die produk en een van die faktore om. Gebruik ${bl('12')} as die ${bl('deler')}:<br>${re('132')} ÷ ${bl('12')} = ${gr('11')}`,
+            `<strong>Delingsfeit 2:</strong> Gebruik nou ${bl('11')} as die ${bl('deler')}:<br>${re('132')} ÷ ${bl('11')} = ${gr('12')}`,
+            `<strong>Kontroleer:</strong> Albei antwoorde werk omdat 11 × 12 en 12 × 11 altwee gelyk is aan 132. ✓`,
+          ],
+        },
+        {
+          question: 'Bereken 144 ÷ 12 met vermenigvuldigingstafels.',
+          answer: `${re('144')} ÷ ${bl('12')} = ${gr('12')}`,
+          steps: [
+            `Skryf die deling: ${re('144')} ÷ ${bl('12')} = ?`,
+            `<strong>Dink:</strong> Watter getal maal ${bl('12')} is gelyk aan ${re('144')}?<br>Vra jouself: "__ × 12 = 144"`,
+            `Onthou die 12×-tafel: ${bl('12')} × ${gr('12')} = ${re('144')}`,
+            `Dus ${re('144')} ÷ ${bl('12')} = ${gr('12')} ✓`,
+          ],
+        },
+        {
+          question: 'Bereken 108 ÷ 9.',
+          answer: `${re('108')} ÷ ${bl('9')} = ${gr('12')}`,
+          steps: [
+            `Skryf die deling: ${re('108')} ÷ ${bl('9')} = ?`,
+            `<strong>Dink:</strong> Watter getal maal ${bl('9')} is gelyk aan ${re('108')}?<br>Vra jouself: "__ × 9 = 108"`,
+            `Onthou die 9×-tafel: ${bl('9')} × ${gr('12')} = ${re('108')}`,
+            `Dus ${re('108')} ÷ ${bl('9')} = ${gr('12')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q1 Easy — two division facts from a fact family ──────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Gebruik die feitefamilie vir 9 × 12 = 108 om twee delingsfeite te skryf.',
+          answer: '108 ÷ 12 = 9\n108 ÷ 9 = 12',
+          checkMode: 'self',
+        },
+
+        // ── Q2 Medium — three multiplication-table divisions ─────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Bereken elkeen van die volgende met jou vermenigvuldigingstafels.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) 132 ÷ 11 =',
+              correctAnswer: '12',
+              explanation: 'Dink: watter getal × 11 = 132?\n11 × 12 = 132, dus 132 ÷ 11 = 12 ✓',
+            },
+            {
+              label: 'b) 144 ÷ 12 =',
+              correctAnswer: '12',
+              explanation: 'Dink: watter getal × 12 = 144?\n12 × 12 = 144, dus 144 ÷ 12 = 12 ✓',
+            },
+            {
+              label: 'c) 121 ÷ 11 =',
+              correctAnswer: '11',
+              explanation: 'Dink: watter getal × 11 = 121?\n11 × 11 = 121, dus 121 ÷ 11 = 11 ✓',
+            },
+          ],
+        },
+
+        // ── Q3 Hard — find the dividend and write full fact family ────────────
+        {
+          difficulty: 'Hard',
+          question: 'Die antwoord op ʼn deling is 11. Die deler is 12. Wat is die deeltal? Skryf die volledige feitefamilie vir hierdie drie getalle.',
+          answer: 'Stap 1: Deeltal = kwosiënt × deler = 11 × 12 = 132\n\nVolledige feitefamilie:\n11 × 12 = 132\n12 × 11 = 132\n132 ÷ 12 = 11\n132 ÷ 11 = 12',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe vermenigvuldiging-feitefamilies help om delingsprobleme met groter getalle tot by 12 x 12 op te los" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 2 — DIVIDING A 4-DIGIT NUMBER BY A 1-DIGIT NUMBER
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'long-division-4-digit',
+      title: 'Deel ʼn 4-Syfergetal deur ʼn 1-Syfergetal',
+      icon: '÷',
+      explanation:
+        `<p style="margin-bottom:16px;">In Graad 5 gebruik ons <strong>langdeling</strong> om 4-syfergetalle deur ʼn 1-syfergetal te deel. Die stappe is dieselfde as dié wat jy in Graad 4 gebruik het — ons pas dit net op groter getalle toe. Werk van <strong>links na regs</strong>, een syfer op ʼn slag.</p>` +
+
+        // ── Colour key (long division step colours) ──────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('deel')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('vermenigvuldig')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('trek af')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('bring af')}</span>` +
+        `</div>` +
+
+        // ── 5 steps reference ────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die 5 langdelingstappe</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Deel')} — Kyk na die syfer heel links. As dit kleiner as die deler is, sluit die volgende syfer ook in, en deel dan.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Vermenigvuldig')} — Vermenigvuldig die kwosiëntsyfer wat jy so pas geskryf het met die deler. Skryf die resultaat daaronder.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Trek af')} — Trek die produk af van die syfers bo dit. Skryf die verskil onder die lyn.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Bring af')} — Bring die volgende syfer van die deeltal af en voeg dit regs van jou aftrekkingsresultaat by.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#6b7280;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">5</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Herhaal</strong> — Herhaal stappe 1–4 totdat alle syfers gebruik is. Wat ook al aan die einde oorbly, is die res.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Zero in quotient tip ─────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Let wel: nul in die kwosiënt</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As die getal wat jy deel kleiner as die deler is, skryf <strong>0</strong> in die kwosiënt, ${bl('vermenigvuldig')} (0 × deler = 0), ${gr('trek af')} (niks verander nie), en ${or('bring')} dan die volgende syfer ${or('af')}. Slaan nooit hierdie nul oor nie — dit is deel van jou antwoord.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        // ── Example 4: 2 436 ÷ 4 = 609 ──────────────────────────────────────
+        {
+          question: 'Bereken 2 436 ÷ 4.',
+          answer: `${re('2 436')} ÷ ${bl('4')} = ${gr('609')}`,
+          steps: [
+            `${re('Deel:')} Kyk na die eerste syfer — <strong>2</strong>. Aangesien 2 &lt; 4 kan ons nog nie deel nie. Neem die eerste twee syfers: <strong>24</strong>. 24 ÷ ${bl('4')} = ${gr('6')}. Skryf ${gr('6')} in die kwosiënt bo die 4.`,
+            `${bl('Vermenigvuldig:')} ${gr('6')} × ${bl('4')} = ${bl('24')}. Skryf ${bl('24')} onder die 24 in die deeltal.`,
+            `${gr('Trek af:')} 24 − ${bl('24')} = ${gr('0')}. Skryf ${gr('0')} onder die lyn.`,
+            `${or('Bring af:')} Bring die volgende syfer <strong>3</strong> af → ons het nou <strong>${or('03')}</strong>. ${re('Deel:')} 03 ÷ ${bl('4')} = ${gr('0')} res 3. Skryf ${gr('0')} in die kwosiënt bo die 3. ${bl('Vermenigvuldig:')} ${gr('0')} × ${bl('4')} = ${bl('0')}. ${gr('Trek af:')} 03 − ${bl('0')} = ${gr('3')}.`,
+            `${or('Bring af:')} Bring die laaste syfer <strong>6</strong> af → ons het nou <strong>${or('36')}</strong>. ${re('Deel:')} 36 ÷ ${bl('4')} = ${gr('9')}. Skryf ${gr('9')} in die kwosiënt bo die 6.`,
+            `${bl('Vermenigvuldig:')} ${gr('9')} × ${bl('4')} = ${bl('36')}. Skryf ${bl('36')} daaronder. ${gr('Trek af:')} 36 − ${bl('36')} = ${gr('0')}. Geen res.`,
+            `<strong>Antwoord:</strong> ${re('2 436')} ÷ ${bl('4')} = ${gr('609')} ✓`,
+          ],
+        },
+
+        // ── Example 5: 3 752 ÷ 8 = 469 ──────────────────────────────────────
+        {
+          question: 'Bereken 3 752 ÷ 8.',
+          answer: `${re('3 752')} ÷ ${bl('8')} = ${gr('469')}`,
+          steps: [
+            `${re('Deel:')} 3 &lt; 8, dus neem ons die eerste twee syfers: <strong>37</strong>. 37 ÷ ${bl('8')} = ${gr('4')} res 5. Skryf ${gr('4')} in die kwosiënt.`,
+            `${bl('Vermenigvuldig:')} ${gr('4')} × ${bl('8')} = ${bl('32')}. Skryf ${bl('32')} onder 37. ${gr('Trek af:')} 37 − ${bl('32')} = ${gr('5')}.`,
+            `${or('Bring af:')} Bring <strong>5</strong> af → ons het nou <strong>${or('55')}</strong>. ${re('Deel:')} 55 ÷ ${bl('8')} = ${gr('6')} res 7. Skryf ${gr('6')} in die kwosiënt.`,
+            `${bl('Vermenigvuldig:')} ${gr('6')} × ${bl('8')} = ${bl('48')}. Skryf ${bl('48')} onder 55. ${gr('Trek af:')} 55 − ${bl('48')} = ${gr('7')}.`,
+            `${or('Bring af:')} Bring <strong>2</strong> af → ons het nou <strong>${or('72')}</strong>. ${re('Deel:')} 72 ÷ ${bl('8')} = ${gr('9')}. Skryf ${gr('9')} in die kwosiënt.`,
+            `${bl('Vermenigvuldig:')} ${gr('9')} × ${bl('8')} = ${bl('72')}. Skryf ${bl('72')} daaronder. ${gr('Trek af:')} 72 − ${bl('72')} = ${gr('0')}. Geen res.`,
+            `<strong>Antwoord:</strong> ${re('3 752')} ÷ ${bl('8')} = ${gr('469')} ✓`,
+          ],
+        },
+
+        // ── Example 6: 5 043 ÷ 7 = 720 r3, with inverse check ───────────────
+        {
+          question: 'Bereken 5 043 ÷ 7 en kontroleer jou antwoord deur die inverse bewerking te gebruik.',
+          answer: `${re('5 043')} ÷ ${bl('7')} = ${gr('720')} res ${or('3')}`,
+          steps: [
+            `${re('Deel:')} 5 &lt; 7, dus neem ons die eerste twee syfers: <strong>50</strong>. 50 ÷ ${bl('7')} = ${gr('7')} res 1. Skryf ${gr('7')} in die kwosiënt.`,
+            `${bl('Vermenigvuldig:')} ${gr('7')} × ${bl('7')} = ${bl('49')}. Skryf ${bl('49')} onder 50. ${gr('Trek af:')} 50 − ${bl('49')} = ${gr('1')}.`,
+            `${or('Bring af:')} Bring <strong>4</strong> af → ons het nou <strong>${or('14')}</strong>. ${re('Deel:')} 14 ÷ ${bl('7')} = ${gr('2')}. Skryf ${gr('2')} in die kwosiënt.`,
+            `${bl('Vermenigvuldig:')} ${gr('2')} × ${bl('7')} = ${bl('14')}. Skryf ${bl('14')} daaronder. ${gr('Trek af:')} 14 − ${bl('14')} = ${gr('0')}.`,
+            `${or('Bring af:')} Bring <strong>3</strong> af → ons het nou <strong>${or('03')}</strong>. ${re('Deel:')} 03 ÷ ${bl('7')} = ${gr('0')} res ${or('3')}. Skryf ${gr('0')} in die kwosiënt. ${bl('Vermenigvuldig:')} ${gr('0')} × ${bl('7')} = ${bl('0')}. ${gr('Trek af:')} 03 − ${bl('0')} = ${or('3')}. Dit is die res.`,
+            `<strong>Kwosiënt:</strong> ${gr('720')} &nbsp; <strong>Res:</strong> ${or('3')}`,
+            `<strong>Kontroleer met die inverse:</strong> (${gr('kwosiënt')} × ${bl('deler')}) + ${or('res')} = ${re('deeltal')}<br>${gr('720')} × ${bl('7')} = 5 040 &nbsp;→&nbsp; 5 040 + ${or('3')} = ${re('5 043')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q4 Easy — single 4-digit ÷ 1-digit ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Bereken 1 848 ÷ 4 met langdeling.',
+          answer: '462',
+          checkMode: 'auto',
+          correctAnswer: '462',
+          explanation: 'Stap 1: 1 < 4 — neem 18. 18 ÷ 4 = 4 res 2. Skryf 4.\nStap 2: 4 × 4 = 16. 18 − 16 = 2. Bring 4 af → 24.\nStap 3: 24 ÷ 4 = 6. Skryf 6.\nStap 4: 6 × 4 = 24. 24 − 24 = 0. Bring 8 af → 8.\nStap 5: 8 ÷ 4 = 2. Skryf 2.\nStap 6: 2 × 4 = 8. 8 − 8 = 0. Geen res.\nAntwoord: 1 848 ÷ 4 = 462 ✓',
+        },
+
+        // ── Q5 Medium — two 4-digit ÷ 1-digit calculations ───────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Bereken elkeen van die volgende met langdeling.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) 3 276 ÷ 6 =',
+              correctAnswer: '546',
+              explanation: 'Stap 1: 3 < 6 — neem 32. 32 ÷ 6 = 5 res 2. Skryf 5.\nStap 2: 5 × 6 = 30. 32 − 30 = 2. Bring 7 af → 27.\nStap 3: 27 ÷ 6 = 4 res 3. Skryf 4.\nStap 4: 4 × 6 = 24. 27 − 24 = 3. Bring 6 af → 36.\nStap 5: 36 ÷ 6 = 6. Skryf 6.\nStap 6: 6 × 6 = 36. 36 − 36 = 0.\nAntwoord: 546. Kontroleer: 546 × 6 = 3 276 ✓',
+            },
+            {
+              label: 'b) 4 536 ÷ 9 =',
+              correctAnswer: '504',
+              explanation: 'Stap 1: 4 < 9 — neem 45. 45 ÷ 9 = 5. Skryf 5.\nStap 2: 5 × 9 = 45. 45 − 45 = 0. Bring 3 af → 03.\nStap 3: 03 ÷ 9 = 0 res 3. Skryf 0.\nStap 4: 0 × 9 = 0. 03 − 0 = 3. Bring 6 af → 36.\nStap 5: 36 ÷ 9 = 4. Skryf 4.\nStap 6: 4 × 9 = 36. 36 − 36 = 0.\nAntwoord: 504. Kontroleer: 504 × 9 = 4 536 ✓',
+            },
+          ],
+        },
+
+        // ── Q6 Hard — word problem with inverse check ────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Fabriek vervaardig 5 824 items in 8 uur.\n\na) Hoeveel items vervaardig dit per uur?\nb) Kontroleer jou antwoord deur die inverse bewerking te gebruik.\nc) As die fabriek 12 uur teen dieselfde tempo werk, hoeveel items sal dit vervaardig?',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Items per uur',
+              correctAnswer: '728',
+              explanation: 'Stap 1: 5 < 8 — neem 58. 58 ÷ 8 = 7 res 2. Skryf 7.\nStap 2: 7 × 8 = 56. 58 − 56 = 2. Bring 2 af → 22.\nStap 3: 22 ÷ 8 = 2 res 6. Skryf 2.\nStap 4: 2 × 8 = 16. 22 − 16 = 6. Bring 4 af → 64.\nStap 5: 64 ÷ 8 = 8. Skryf 8.\nStap 6: 8 × 8 = 64. 64 − 64 = 0.\nAntwoord: 5 824 ÷ 8 = 728 items per uur ✓',
+            },
+            {
+              label: 'b) Inverse kontrole',
+              correctAnswer: '728x8=5824',
+              correctAnswers: ['728x8=5824', '5824'],
+              explanation: 'Inverse kontrole: kwosiënt × deler = deeltal\n728 × 8 = 5 824 ✓\nDit bevestig dat 728 items per uur korrek is.',
+            },
+            {
+              label: 'c) Items in 12 uur',
+              correctAnswer: '8736',
+              correctAnswers: ['8736', '728x12=8736'],
+              explanation: 'Tempo × tyd = totale items\n728 × 12 = 8 736\n(728 × 10 = 7 280) + (728 × 2 = 1 456) = 8 736 items ✓',
+            },
+          ],
+        },
+      ],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Langdeling-uitleg wat 2 436 gedeel deur 4 wys met elke stap kleur-gekodeer — deel rooi, vermenigvuldig blou, trek af groen, bring af oranje" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat stap-vir-stap langdeling van ʼn 4-syfergetal deur ʼn 1-syfergetal met kleur-gekodeerde stappe wys" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — DIVIDING A 3-DIGIT NUMBER BY A 2-DIGIT NUMBER
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'long-division-3-digit-2-digit',
+      title: 'Deel ʼn 3-Syfergetal deur ʼn 2-Syfergetal',
+      icon: '÷',
+      explanation:
+        `<p style="margin-bottom:16px;">Wanneer die deler <strong>twee syfers</strong> het, kan jy nie die antwoord direk in ʼn vermenigvuldigingstafel opsoek nie. In plaas daarvan gebruik jy <strong>skatting</strong> om elke kwosiëntsyfer te vind. Die langdelingstappe is presies dieselfde — die enigste verskil is dat jy nou eers die kwosiëntsyfer <em>skat</em>, en dan kontroleer en aanpas indien nodig.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('deel')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('vermenigvuldig')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('trek af')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('bring af')}</span>` +
+        `<span style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:3px 10px;font-size:13px;">${pu('geskatte syfer')}</span>` +
+        `</div>` +
+
+        // ── Estimation strategy ──────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Skattingstrategie</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f5f3ff;border:1.5px solid #ddd6fe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong style="color:#7c3aed;">Rond af</strong> — Rond die 2-syfer deler af na die naaste 10. Dit gee jou ʼn eenvoudiger getal om mee te werk.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f5f3ff;border:1.5px solid #ddd6fe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong style="color:#7c3aed;">Skat</strong> — Deel die gedeeltelike deeltal deur die afgeronde deler. Dit gee jou jou ${pu('geskatte syfer')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Probeer')} — ${bl('Vermenigvuldig')} jou ${pu('geskatte syfer')} met die <em>werklike</em> deler. Skryf die produk onder die gedeeltelike deeltal.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Kontroleer en pas aan')} — ${gr('Trek af')} en kontroleer die resultaat. Pas jou skatting op of af aan indien nodig (sien reëls hieronder).</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Adjustment rules ─────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Pas jou skatting aan</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">Produk is te groot → verminder met 1</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">As ${pu('geskatte syfer')} × deler <strong>&gt;</strong> gedeeltelike deeltal, is jou skatting te hoog.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Verlaag die ${pu('syfer')} met 1 en vermenigvuldig weer.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Res ≥ deler → verhoog met 1</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">As die res na aftrekking <strong>≥</strong> die deler is, is jou skatting te laag.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Verhoog die ${pu('syfer')} met 1 en probeer weer.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Probeer en aanpassing is normaal</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Dit is heeltemal aanvaarbaar om ʼn syfer te probeer, te vind dit werk nie, en aan te pas. ${bl('Vermenigvuldig')} altyd terug om te kontroleer. Wanneer daar geen res oorbly nie, of die res kleiner as die deler is, is jou ${pu('skatting')} korrek.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        // ── Example 7: 756 ÷ 12 = 63 ────────────────────────────────────────
+        {
+          question: 'Bereken 756 ÷ 12.',
+          answer: `${re('756')} ÷ ${bl('12')} = ${pu('63')}`,
+          steps: [
+            `${re('Deel:')} 7 &lt; 12, dus neem ons die eerste twee syfers: <strong>75</strong>. Hoeveel keer pas ${bl('12')} in 75?`,
+            `${pu('Skat:')} Rond ${bl('12')} af na 10. 75 ÷ 10 = 7,5. Probeer ${pu('6')} (gaan effens laer aangesien 12 &gt; 10). ${bl('Vermenigvuldig:')} ${pu('6')} × ${bl('12')} = ${bl('72')}. Kontroleer: ${bl('72')} ≤ 75 ✓. Skryf ${pu('6')} in die kwosiënt.`,
+            `${gr('Trek af:')} 75 − ${bl('72')} = ${gr('3')}.`,
+            `${or('Bring af:')} Bring <strong>6</strong> af → ons het nou <strong>${or('36')}</strong>.`,
+            `${re('Deel:')} 36 ÷ ${bl('12')} = ${pu('3')} presies (dink: 3 × 12 = 36). Skryf ${pu('3')} in die kwosiënt. ${bl('Vermenigvuldig:')} ${pu('3')} × ${bl('12')} = ${bl('36')}. ${gr('Trek af:')} 36 − ${bl('36')} = ${gr('0')}. Geen res.`,
+            `<strong>Antwoord:</strong> ${re('756')} ÷ ${bl('12')} = ${pu('63')} ✓`,
+          ],
+        },
+
+        // ── Example 8: 924 ÷ 11 = 84 ────────────────────────────────────────
+        {
+          question: 'Bereken 924 ÷ 11.',
+          answer: `${re('924')} ÷ ${bl('11')} = ${pu('84')}`,
+          steps: [
+            `${re('Deel:')} 9 &lt; 11, dus neem ons die eerste twee syfers: <strong>92</strong>. Hoeveel keer pas ${bl('11')} in 92?`,
+            `${pu('Skat:')} Rond ${bl('11')} af na 10. 92 ÷ 10 ≈ 9. Probeer ${pu('8')} (effens laer aangesien 11 &gt; 10). ${bl('Vermenigvuldig:')} ${pu('8')} × ${bl('11')} = ${bl('88')}. Kontroleer: ${bl('88')} ≤ 92 ✓. Skryf ${pu('8')} in die kwosiënt.`,
+            `${gr('Trek af:')} 92 − ${bl('88')} = ${gr('4')}. Kontroleer: 4 &lt; 11 ✓ — die res is kleiner as die deler, dus is die skatting korrek.`,
+            `${or('Bring af:')} Bring <strong>4</strong> af → ons het nou <strong>${or('44')}</strong>.`,
+            `${re('Deel:')} 44 ÷ ${bl('11')} = ${pu('4')} presies (dink: 4 × 11 = 44). Skryf ${pu('4')} in die kwosiënt. ${bl('Vermenigvuldig:')} ${pu('4')} × ${bl('11')} = ${bl('44')}. ${gr('Trek af:')} 44 − ${bl('44')} = ${gr('0')}. Geen res.`,
+            `<strong>Antwoord:</strong> ${re('924')} ÷ ${bl('11')} = ${pu('84')} ✓`,
+          ],
+        },
+
+        // ── Example 9: 845 ÷ 13 = 65 ────────────────────────────────────────
+        {
+          question: 'Bereken 845 ÷ 13.',
+          answer: `${re('845')} ÷ ${bl('13')} = ${pu('65')}`,
+          steps: [
+            `${re('Deel:')} 8 &lt; 13, dus neem ons die eerste twee syfers: <strong>84</strong>. Hoeveel keer pas ${bl('13')} in 84?`,
+            `${pu('Skat:')} Rond ${bl('13')} af na 10. 84 ÷ 10 ≈ 8. Probeer ${pu('6')} (pas af aan — 13 is aansienlik groter as 10). ${bl('Vermenigvuldig:')} ${pu('6')} × ${bl('13')} = ${bl('78')}. Kontroleer: ${bl('78')} ≤ 84 ✓. Kontroleer ook: 7 × 13 = 91 &gt; 84 — dus is ${pu('6')} die korrekte syfer. Skryf ${pu('6')} in die kwosiënt.`,
+            `${gr('Trek af:')} 84 − ${bl('78')} = ${gr('6')}. Kontroleer: 6 &lt; 13 ✓ — die res is kleiner as die deler, dus is die skatting korrek.`,
+            `${or('Bring af:')} Bring <strong>5</strong> af → ons het nou <strong>${or('65')}</strong>.`,
+            `${re('Deel:')} 65 ÷ ${bl('13')} = ${pu('5')} presies (dink: 5 × 13 = 65). Skryf ${pu('5')} in die kwosiënt. ${bl('Vermenigvuldig:')} ${pu('5')} × ${bl('13')} = ${bl('65')}. ${gr('Trek af:')} 65 − ${bl('65')} = ${gr('0')}. Geen res.`,
+            `<strong>Antwoord:</strong> ${re('845')} ÷ ${bl('13')} = ${pu('65')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q7 Easy — single 3-digit ÷ 2-digit ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Bereken met langdeling en wys elke stap:\n624 ÷ 12',
+          answer: '52',
+          checkMode: 'auto',
+          correctAnswer: '52',
+          explanation: 'Stap 1: 6 < 12 — neem 62. Skat: 62 ÷ 10 ≈ 6. Probeer 5: 5 × 12 = 60 ≤ 62 ✓.\nStap 2: 62 − 60 = 2. Bring 4 af → 24.\nStap 3: 24 ÷ 12 = 2 presies (2 × 12 = 24). 24 − 24 = 0. Geen res.\nAntwoord: 624 ÷ 12 = 52 ✓',
+        },
+
+        // ── Q8 Medium — two 3-digit ÷ 2-digit calculations ──────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Bereken met langdeling en wys elke stap.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) 858 ÷ 11 =',
+              correctAnswer: '78',
+              explanation: 'Stap 1: 8 < 11 — neem 85. Skat: 85 ÷ 10 ≈ 8. Probeer 7: 7 × 11 = 77 ≤ 85 ✓.\nStap 2: 85 − 77 = 8. Bring 8 af → 88.\nStap 3: 88 ÷ 11 = 8 presies (8 × 11 = 88). 88 − 88 = 0. Geen res.\nAntwoord: 858 ÷ 11 = 78 ✓',
+            },
+            {
+              label: 'b) 884 ÷ 13 =',
+              correctAnswer: '68',
+              explanation: 'Stap 1: 8 < 13 — neem 88. Skat: 88 ÷ 10 ≈ 8. Probeer 6: 6 × 13 = 78 ≤ 88 ✓. Kontroleer: 7 × 13 = 91 > 88 — dus is 6 korrek.\nStap 2: 88 − 78 = 10. Bring 4 af → 104.\nStap 3: 104 ÷ 13 = 8 presies (8 × 13 = 104). 104 − 104 = 0. Geen res.\nAntwoord: 884 ÷ 13 = 68 ✓',
+            },
+          ],
+        },
+
+        // ── Q9 Hard — word problem with inverse and reasoning ────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Skool het 936 leerders om gelyk in klasse van 12 te verdeel.\n\na) Hoeveel klasse is daar?\nb) Kontroleer jou antwoord deur die inverse bewerking te gebruik.\nc) As 3 meer leerders by die skool aansluit, kan hulle by bestaande klasse gevoeg word sonder om ʼn nuwe klas te skep?',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Aantal klasse',
+              correctAnswer: '78',
+              explanation: 'Stap 1: 9 < 12 — neem 93. Skat: 93 ÷ 10 ≈ 9. Probeer 7: 7 × 12 = 84 ≤ 93 ✓. Kontroleer: 8 × 12 = 96 > 93 — dus is 7 korrek.\nStap 2: 93 − 84 = 9. Bring 6 af → 96.\nStap 3: 96 ÷ 12 = 8 presies (8 × 12 = 96). 96 − 96 = 0. Geen res.\nAntwoord: 936 ÷ 12 = 78 klasse ✓',
+            },
+            {
+              label: 'b) Inverse kontrole (kwosiënt × deler)',
+              correctAnswer: '936',
+              correctAnswers: ['936', '78x12=936', '78×12=936', '78 x 12 = 936', '78 × 12 = 936'],
+              explanation: 'Inverse kontrole: kwosiënt × deler = deeltal\n78 × 12 = 936 ✓\nDit bevestig dat 78 klasse korrek is.',
+            },
+            {
+              label: 'c) Kan 3 meer leerders bysluit sonder ʼn nuwe klas?',
+              correctAnswer: 'Ja',
+              checkMode: 'self',
+              answer: 'Ja — daar is 78 klasse en slegs 3 ekstra leerders, dus kan elk van 3 klasse 1 ekstra leerder opneem. Geen nuwe klas is nodig nie.',
+            },
+          ],
+        },
+      ],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Langdeling-uitleg wat 756 gedeel deur 12 wys met skatting getoon vir elke stap en kleur-gekodeerde werk" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn 3-syfergetal deur ʼn 2-syfergetal te deel met skatting en langdeling" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — REMAINDERS AND WHAT THEY MEAN IN CONTEXT
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'remainders-in-context',
+      title: 'Reste en Wat Hulle in Konteks Beteken',
+      icon: '÷',
+      explanation:
+        `<p style="margin-bottom:16px;">Wanneer jy deel en daar is ʼn ${or('res')}, moet jy besluit wat om daarmee te doen. Die regte keuse hang af van wat die vraag vra — dit staan bekend as die lees van die <span style="color:#dc2626;font-weight:700">konteks</span>. Daar is drie maniere om ʼn ${or('res')} te hanteer.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('kwosiënt')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('res')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('konteksbesluit')}</span>` +
+        `</div>` +
+
+        // ── Three types ─────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Drie soorte res-situasies</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;margin-bottom:6px;font-size:1em;">1. ${re('Rond af')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Gebruik die ${gr('kwosiënt')} as jou antwoord en ignoreer die ${or('res')}.</p>` +
+        `<p style="color:#374151;font-size:13px;margin-bottom:4px;"><strong>Wanneer:</strong> jy nie ʼn gebroke of gedeeltelike item kan gebruik nie.</p>` +
+        `<p style="color:#6b7280;font-size:13px;font-style:italic;margin:0;">Voorbeeld: Hoeveel <strong>volle bokse</strong> kan jy vul?</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;margin-bottom:6px;font-size:1em;">2. ${re('Rond op')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Tel <strong>1</strong> by die ${gr('kwosiënt')} omdat die ${or('res')} steeds ingesluit moet word.</p>` +
+        `<p style="color:#374151;font-size:13px;margin-bottom:4px;"><strong>Wanneer:</strong> alles moet inpas, selfs die oorblywende hoeveelheid.</p>` +
+        `<p style="color:#6b7280;font-size:13px;font-style:italic;margin:0;">Voorbeeld: Hoeveel <strong>busse word benodig</strong>?</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;margin-bottom:6px;font-size:1em;">3. ${re('Skryf as ʼn breuk')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Skryf die ${or('res')} as ʼn breuk van die deler.</p>` +
+        `<p style="color:#374151;font-size:13px;margin-bottom:4px;"><strong>Wanneer:</strong> jy deel en elke persoon kry deel van wat oorbly.</p>` +
+        `<p style="color:#6b7280;font-size:13px;font-style:italic;margin:0;">Voorbeeld: Hoeveel kry <strong>elke persoon</strong>?</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">Kontroleer altyd die konteks</p>` +
+        `<p style="margin:0;color:#991b1b;">Lees die vraag noukeurig weer voordat jy jou finale antwoord skryf. Die ${re('konteks')} vertel jou of jy moet ${re('afrond')}, ${re('oprond')}, of die ${re('res as ʼn breuk skryf')}.` +
+        ` Die ${or('res')} self verander nie — net wat jy daarmee doen, verander.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: '456 leerders moet in rye van 14 gesit word. Hoeveel volle rye is daar en hoeveel leerders bly oor?',
+          answer: `${gr('32')} volle rye met ${or('8')} leerders wat oorbly — ${re('rond af')} aangesien ons nie ʼn gedeeltelike ry kan hê nie`,
+          steps: [
+            `Deel: ${re('456')} ÷ ${bl('14')} = ${gr('32')} res ${or('8')}`,
+            `${re('Konteksbesluit:')} Die vraag vra vir <strong>volle rye</strong>. Jy kan nie ${or('8')} mense in ʼn ry ontwerp vir 14 sit nie, dus bly die ${or('res')} eenvoudig oor. ${re('Rond af')} — die antwoord is ${gr('32')} volle rye.`,
+          ],
+        },
+        {
+          question: '348 leerders moet per bus reis. Elke bus hou 45 leerders. Hoeveel busse word benodig?',
+          answer: `${gr('8')} busse word benodig — ${re('rond op')} sodat almal ʼn sitplek het`,
+          steps: [
+            `Deel: ${re('348')} ÷ ${bl('45')} = ${gr('7')} res ${or('33')}`,
+            `${re('Konteksbesluit:')} 7 busse vervoer 7 × 45 = 315 leerders, maar ${or('33')} leerders het steeds vervoer nodig. Ons het nog een bus nodig. ${re('Rond op')} — die antwoord is ${gr('8')} busse.`,
+          ],
+        },
+        {
+          question: 'R875 word gelyk verdeel tussen 4 vriende. Hoeveel kry elke vriend?',
+          answer: `Elke vriend kry R${gr('218')}.${or('75')}`,
+          steps: [
+            `Deel: ${re('875')} ÷ ${bl('4')} = ${gr('218')} res ${or('3')}`,
+            `${re('Konteksbesluit:')} Geld kan in kleiner dele verdeel word (sent). Skryf die ${or('res')} as ʼn breuk: ${or('3')} ÷ ${bl('4')} = ${or('0,75')}. Elke vriend kry dus R${gr('218')} + R${or('0,75')} = <strong>R218,75</strong>.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q10 Easy — remainder calculation ────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Bereken 275 ÷ 8 en skryf die res.',
+          answer: '34 res 3',
+          checkMode: 'auto',
+          correctAnswer: '34 remainder 3',
+          correctAnswers: ['34 remainder 3', '34 res 3', '34 r 3', '34r3', '34 rem 3'],
+          explanation: 'Stap 1: 2 < 8 — neem 27. 27 ÷ 8 = 3 (3 × 8 = 24). 27 − 24 = 3. Bring 5 af → 35.\nStap 2: 35 ÷ 8 = 4 (4 × 8 = 32). 35 − 32 = 3. Dit is die res.\nAntwoord: 275 ÷ 8 = 34 res 3 ✓',
+        },
+
+        // ── Q11 Medium — transport word problem with remainder ───────────────
+        {
+          difficulty: 'Medium',
+          question: '247 leerders moet per minibus reis. Elke minibus hou 15 leerders.\n\na) Hoeveel volle minibusse word benodig?\nb) Hoeveel leerders bly oor?\nc) Hoeveel minibusse in totaal word benodig sodat almal ʼn sitplek het?',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Volle minibusse',
+              correctAnswer: '16',
+              explanation: 'Stap 1: 2 < 15 — neem 24. 24 ÷ 15 = 1 (1 × 15 = 15). 24 − 15 = 9. Bring 7 af → 97.\nStap 2: 97 ÷ 15 = 6 (6 × 15 = 90). 97 − 90 = 7. Res is 7.\nAntwoord: 16 volle minibusse (vervoer 16 × 15 = 240 leerders).',
+            },
+            {
+              label: 'b) Leerders wat oorbly',
+              correctAnswer: '7',
+              explanation: 'Die res van 247 ÷ 15 = 16 res 7.\n7 leerders bly oor nadat 16 minibusse gevul is.',
+            },
+            {
+              label: 'c) Totale aantal minibusse benodig',
+              correctAnswer: '17',
+              explanation: 'Konteksbesluit: die 7 oorblywende leerders het steeds sitplekke nodig. Rond op — voeg nog 1 minibus by.\nTotaal: 16 + 1 = 17 minibusse sodat al 247 leerders ʼn sitplek het.',
+            },
+          ],
+        },
+
+        // ── Q12 Hard — sharing money with remainder as fraction ──────────────
+        {
+          difficulty: 'Hard',
+          question: 'R1 250 word gelyk verdeel tussen 6 vriende.\n\na) Hoeveel kry elke vriend as ʼn heelgetal met res?\nb) Skryf die res as ʼn breuk.\nc) Hoeveel kry elke vriend in rand en sent?\nd) Hoeveel geld bly oor as jy net heelrand-bedrae gee?',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Heelgetal met res',
+              correctAnswer: '208 remainder 2',
+              correctAnswers: ['208 remainder 2', '208 res 2', '208 r 2', '208r2', '208 rem 2'],
+              explanation: 'Stap 1: 1 < 6 — neem 12. 12 ÷ 6 = 2. 12 − 12 = 0. Bring 5 af → 05.\nStap 2: 05 ÷ 6 = 0 (0 × 6 = 0). 05 − 0 = 5. Bring 0 af → 50.\nStap 3: 50 ÷ 6 = 8 (8 × 6 = 48). 50 − 48 = 2. Res is 2.\nAntwoord: 1 250 ÷ 6 = 208 res 2 ✓',
+            },
+            {
+              label: 'b) Res as ʼn breuk',
+              correctAnswer: '1/3',
+              correctAnswers: ['1/3', '2/6'],
+              explanation: 'Res is 2 uit 6 gelyke dele.\nAs ʼn breuk: 2/6 = 1/3.\nElke vriend kry ʼn ekstra 1/3 van ʼn rand bo-op R208.',
+            },
+            {
+              label: 'c) Bedrag in rand en sent',
+              correctAnswer: 'R208.33',
+              correctAnswers: ['R208.33', '208.33', 'R208,33', '208,33'],
+              explanation: 'Res-breuk: 2 ÷ 6 = 0,333... ≈ 0,33 (na die naaste sent).\nElke vriend kry R208 + R0,33 = R208,33.',
+            },
+            {
+              label: 'd) Geld wat oorbly (slegs heelrand)',
+              correctAnswer: 'R2',
+              correctAnswers: ['R2', '2', 'R 2'],
+              explanation: 'As jy elke vriend presies R208 gee: 6 × 208 = R1 248.\nGeld wat oorbly: R1 250 − R1 248 = R2.',
+            },
+          ],
+        },
+      ],
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — DIVISION WORD PROBLEMS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'division-word-problems',
+      title: 'Deling Woordprobleme',
+      icon: '📝',
+      explanation:
+        `<p style="margin-bottom:16px;">Delingwoordprobleme kom in die alledaagse lewe voor. Voordat jy bereken, identifiseer of die probleem <strong>deling</strong> (ʼn totaal in gelyke groepe verdeel) of <strong>groepering</strong> (vind hoeveel groepe van ʼn gegewe grootte in ʼn totaal pas) is. Kyk vir ${or('sleutelwoorde')} wat jou vertel watter tipe dit is.</p>` +
+
+        // ── Key words ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelwoorde om na te kyk</p>` +
+        `<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        [
+          'gelyk gedeel', 'deel', 'verdeel', 'elk', 'per',
+          'hoeveel groepe', 'hoeveel elk', 'versprei',
+        ].map(w => `<span style="background:#fed7aa;border-radius:6px;padding:3px 10px;font-size:14px;font-weight:700;color:#ea580c;">${w}</span>`).join('<span style="color:#9ca3af;font-size:1.1em;">·</span>') +
+        `</div>` +
+
+        // ── Sharing vs Grouping ──────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Deling teenoor Groepering</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Delingsverdeling</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Jy ken die totaal en die aantal groepe. Jy vind <strong>hoeveel in elke groep gaan</strong>.</p>` +
+        `<p style="color:#6b7280;font-size:13px;font-style:italic;margin:0;">Voorbeeld: R4 752 ${or('gelyk gedeel')} tussen 8 werkers — hoeveel ${or('elk')}?</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Groeperingsverdeling</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Jy ken die totaal en die grootte van elke groep. Jy vind <strong>hoeveel groepe</strong> daar is.</p>` +
+        `<p style="color:#6b7280;font-size:13px;font-style:italic;margin:0;">Voorbeeld: 3 648 lemoene verpak in bokse van 12 — ${or('hoeveel groepe')}?</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Strategy tip ─────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">3-stap strategie vir woordprobleme</p>` +
+        `<p style="margin:0;color:#1e3a8a;"><strong>Stap 1</strong> — Vind die ${or('sleutelwoord')} en besluit: deling of groepering.<br><strong>Stap 2</strong> — Skryf die delings-getalsin.<br><strong>Stap 3</strong> — Bereken en skryf jou antwoord in ʼn volledige sin.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Boer oes 3 648 lemoene en verpak dit in bokse van 12. Hoeveel bokse vul hy?',
+          answer: `Die boer vul ${gr('304')} bokse`,
+          steps: [
+            `${or('Sleutelwoord:')} <em>"verpak in bokse van"</em> — dit is ʼn <strong>groeperingsverdeling</strong>. Ons weet elke groep hou 12 en wil weet hoeveel groepe daar is.`,
+            `Skryf die getalsin: ${re('3 648')} ÷ ${bl('12')} = ?`,
+            `Bereken: ${re('3 648')} ÷ ${bl('12')} = ${gr('304')}`,
+            `<strong>Antwoord:</strong> Die boer vul ${gr('304')} bokse.`,
+          ],
+        },
+        {
+          question: 'R4 752 word gelyk verdeel tussen 8 werkers. Hoeveel ontvang elke werker?',
+          answer: `Elke werker ontvang R${gr('594')}`,
+          steps: [
+            `${or('Sleutelwoord:')} <em>"gelyk verdeel"</em> — dit is ʼn <strong>delingsverdeling</strong>. Ons ken die totaal (R4 752) en die aantal groepe (8 werkers) en wil weet hoeveel elkeen kry.`,
+            `Skryf die getalsin: ${re('4 752')} ÷ ${bl('8')} = ?`,
+            `Bereken: ${re('4 752')} ÷ ${bl('8')} = ${gr('594')}`,
+            `<strong>Antwoord:</strong> Elke werker ontvang R${gr('594')}.`,
+          ],
+        },
+        {
+          question: 'ʼn Skool het 2 184 oefenboeke om gelyk tussen 24 klaskamers te versprei. Hoeveel boeke kry elke klaskamer en hoeveel bly oor?',
+          answer: `Elke klaskamer kry ${gr('91')} boeke met niks oor nie`,
+          steps: [
+            `${or('Sleutelwoord:')} <em>"gelyk versprei"</em> — dit is ʼn <strong>delingsverdeling</strong>. Ons wil weet hoeveel boeke elke klaskamer kry.`,
+            `Skryf die getalsin: ${re('2 184')} ÷ ${bl('24')} = ?`,
+            `Bereken: ${re('2 184')} ÷ ${bl('24')} = ${gr('91')}`,
+            `<strong>Kontroleer:</strong> ${gr('91')} × ${bl('24')} = 2 184 ✓ — geen res nie.`,
+            `<strong>Antwoord:</strong> Elke klaskamer kry ${gr('91')} boeke met niks oor nie.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q13 Easy — grouping word problem ─────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Boer oes 2 184 appels en verpak dit in sakkies van 8. Hoeveel volle sakkies vul hy?',
+          answer: '273',
+          checkMode: 'auto',
+          correctAnswer: '273',
+          explanation: 'Sleutelwoord: "verpak in sakkies van" — groeperingsverdeling.\n2 184 ÷ 8:\nStap 1: 2 < 8 — neem 21. 21 ÷ 8 = 2 (2 × 8 = 16). 21 − 16 = 5. Bring 8 af → 58.\nStap 2: 58 ÷ 8 = 7 (7 × 8 = 56). 58 − 56 = 2. Bring 4 af → 24.\nStap 3: 24 ÷ 8 = 3 (3 × 8 = 24). 24 − 24 = 0. Geen res.\nAntwoord: 273 volle sakkies. Kontroleer: 273 × 8 = 2 184 ✓',
+        },
+
+        // ── Q14 Medium — sharing with changed conditions ──────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'R3 456 word gelyk verdeel tussen 12 werkers.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Hoeveel ontvang elke werker?',
+              correctAnswer: 'R288',
+              correctAnswers: ['R288', '288'],
+              explanation: '3 456 ÷ 12:\nStap 1: 3 < 12 — neem 34. 34 ÷ 12 = 2 (2 × 12 = 24). 34 − 24 = 10. Bring 5 af → 105.\nStap 2: 105 ÷ 12 = 8 (8 × 12 = 96). 105 − 96 = 9. Bring 6 af → 96.\nStap 3: 96 ÷ 12 = 8 (8 × 12 = 96). 96 − 96 = 0. Geen res.\nAntwoord: R288 per werker. Kontroleer: 288 × 12 = 3 456 ✓',
+            },
+            {
+              label: 'b) As 2 werkers afwesig is en die geld tussen die oorblywende werkers verdeel word, hoeveel ontvang elke werker?',
+              correctAnswer: 'R345.60',
+              correctAnswers: ['R345.60', '345.60', 'R345,60', '345,60', 'R345.6', '345.6'],
+              explanation: 'Oorblywende werkers: 12 − 2 = 10.\n3 456 ÷ 10 = 345,6 → R345,60 (deling deur 10 skuif die desimale punt een plek).\nAntwoord: R345,60 per werker ✓',
+            },
+            {
+              label: 'c) Hoeveel meer kry elke werker in scenario b in vergelyking met scenario a?',
+              correctAnswer: 'R57.60',
+              correctAnswers: ['R57.60', '57.60', 'R57,60', '57,60', 'R57.6', '57.6'],
+              explanation: 'Verskil: R345,60 − R288,00 = R57,60.\nElke werker ontvang R57,60 meer in scenario b ✓',
+            },
+          ],
+        },
+
+        // ── Q15 Hard — multi-step stationery problem ──────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Skool bestel 2 496 oefenboeke om gelyk tussen sy 24 klaskamers te versprei.\n\na) Hoeveel boeke kry elke klaskamer?\nb) Die skool het ook 384 penne om gelyk tussen 16 klaskamers te versprei. Hoeveel penne per klaskamer?\nc) Wat is die totale aantal skryfbehoeftes (boeke en penne) wat elke klaskamer ontvang as alle klaskamers albei kry?\nd) As boeke R8 elk kos en penne R3 elk kos, wat is die totale koste van skryfbehoeftes vir een klaskamer?',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Boeke per klaskamer',
+              correctAnswer: '104',
+              explanation: '2 496 ÷ 24:\nStap 1: 2 < 24 — neem 24. 24 ÷ 24 = 1 (1 × 24 = 24). 24 − 24 = 0. Bring 9 af → 09.\nStap 2: 9 ÷ 24 = 0 (0 × 24 = 0). 9 − 0 = 9. Bring 6 af → 96.\nStap 3: 96 ÷ 24 = 4 (4 × 24 = 96). 96 − 96 = 0. Geen res.\nAntwoord: 104 boeke per klaskamer. Kontroleer: 104 × 24 = 2 496 ✓',
+            },
+            {
+              label: 'b) Penne per klaskamer',
+              correctAnswer: '24',
+              explanation: '384 ÷ 16:\nStap 1: 3 < 16 — neem 38. 38 ÷ 16 = 2 (2 × 16 = 32). 38 − 32 = 6. Bring 4 af → 64.\nStap 2: 64 ÷ 16 = 4 (4 × 16 = 64). 64 − 64 = 0. Geen res.\nAntwoord: 24 penne per klaskamer. Kontroleer: 24 × 16 = 384 ✓',
+            },
+            {
+              label: 'c) Totale skryfbehoeftes per klaskamer',
+              correctAnswer: '128',
+              explanation: 'Totale items: 104 boeke + 24 penne = 128 items per klaskamer ✓',
+            },
+            {
+              label: 'd) Totale koste vir een klaskamer',
+              checkMode: 'self',
+              answer: 'Boeke: 104 × R8 = R832\nPenne: 24 × R3 = R72\nTotaal: R832 + R72 = R904 per klaskamer',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om reste in konteks te interpreteer en delingwoordprobleme op te los deur deling- en groeperingsituasies te identifiseer" />',
+    },
+  ],
+  scoreMessages: [
+    { minScore: 33, message: 'Uitstekend! ʼn Perfekte telling — jy het deling vir Graad 5 volkome bemeester. Hou so aan!' },
+    { minScore: 27, message: 'Puik werk! Jy het ʼn baie sterk begrip van deling. Hersien enige gemiste dele en jy sal dit perfek hê.' },
+    { minScore: 20, message: 'Goed gedaan! Jy verstaan die meeste van die inhoud. Gaan terug na die afdelings waar jy punte verloor het en probeer weer.' },
+    { minScore: 12, message: 'Goeie poging! Werk terug deur die studiegids en uitgewerkte voorbeelde vir elke afdeling, en probeer dan weer.' },
+    { minScore: 0, message: 'Moenie moed opgee nie — elke kenner was eens ʼn beginner! Gaan deur die verduidelikings en uitgewerkte voorbeelde afdeling vir afdeling, en probeer dan weer.' },
+  ],
+}

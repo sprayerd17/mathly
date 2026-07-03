@@ -1,0 +1,424 @@
+import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
+
+// ─── Colour helpers (factorising roles) ──────────────────────────────────────
+// common factor / first square / numbers found → blue   (#2563eb)
+// remaining expression / factorised form       → green  (#16a34a)
+// second square / common factor in trinomials  → orange (#ea580c)
+// step labels / checks                         → red    (#dc2626)
+const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
+const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
+const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
+const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
+
+export const topicData: TopicData = {
+  title: 'Factorising Algebraic Expressions',
+  grade: 9,
+  sections: [
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 1 — FACTORISING USING COMMON FACTORS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'common-factors',
+      title: 'Factorising Using Common Factors',
+      icon: '÷',
+      explanation:
+        `<p style="margin-bottom:16px;">Factorising means writing an expression as a <strong>product of its factors</strong> — the reverse of expanding. We find the <strong>highest common factor (HCF)</strong> of all terms and write it outside brackets, with the remaining parts inside.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('common factor')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('remaining expression')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">How to find and factor out the HCF</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Find the ${bl('HCF')} of the numerical coefficients of all terms.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Find the ${bl('HCF')} of any variable parts — the lowest power of each variable that appears in every term.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Write the ${bl('HCF')} outside the brackets and divide each term by it to get the ${gr('remaining expression')} inside the brackets.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Check your answer</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Always expand your answer to verify it matches the original expression. If ${bl('HCF')} × ${gr('bracket')} = original expression, your factorisation is correct.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Factorise 6x² + 9x.',
+          answer: `${bl('3x')}(${gr('2x + 3')})`,
+          steps: [
+            `Find the ${bl('HCF')} of 6x² and 9x. HCF of 6 and 9 is 3; HCF of x² and x is x. So ${bl('HCF = 3x')}.`,
+            `Factor out ${bl('3x')}: divide each term by ${bl('3x')} to get the ${gr('remaining expression')}: 6x² ÷ 3x = ${gr('2x')} and 9x ÷ 3x = ${gr('3')}.`,
+            `Write the factorised form: ${bl('3x')}(${gr('2x + 3')}).`,
+            `<strong>Check:</strong> ${bl('3x')} × ${gr('2x')} = 6x² and ${bl('3x')} × ${gr('3')} = 9x → 6x² + 9x ✓`,
+          ],
+        },
+        {
+          question: 'Factorise 12x³ − 8x² + 4x.',
+          answer: `${bl('4x')}(${gr('3x² − 2x + 1')})`,
+          steps: [
+            `Find the ${bl('HCF')} of 12x³, 8x², and 4x. HCF of 12, 8 and 4 is 4; HCF of x³, x² and x is x. So ${bl('HCF = 4x')}.`,
+            `Factor out ${bl('4x')}: 12x³ ÷ 4x = ${gr('3x²')}, 8x² ÷ 4x = ${gr('2x')}, 4x ÷ 4x = ${gr('1')}.`,
+            `Write the factorised form: ${bl('4x')}(${gr('3x² − 2x + 1')}).`,
+            `<strong>Check:</strong> ${bl('4x')} × ${gr('3x²')} = 12x³, ${bl('4x')} × ${gr('−2x')} = −8x², ${bl('4x')} × ${gr('1')} = 4x → 12x³ − 8x² + 4x ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to find the HCF of algebraic terms and factor it out of an expression" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Diagram showing 6x² + 9x with HCF 3x in blue factored out to give 3x(2x+3) with the remaining expression in green" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 2 — FACTORISING THE DIFFERENCE OF TWO SQUARES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'difference-of-two-squares',
+      title: 'Factorising the Difference of Two Squares',
+      icon: '²',
+      explanation:
+        `<p style="margin-bottom:16px;">The <strong>difference of two squares</strong> pattern states that a² − b² = (a − b)(a + b). We recognise this pattern when an expression is a <strong>subtraction of two perfect squares</strong>, and factorise accordingly.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('first square (a²)')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('second square (b²)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('factorised form')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The pattern</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.15em;font-weight:700;color:#374151;margin:0;">${bl('a²')} − ${or('b²')} = ${gr('(a − b)(a + b)')}</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">How to recognise the pattern</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">The expression must be a <strong>subtraction</strong> (difference), not addition.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Both terms must be <strong>perfect squares</strong> — a number or expression that results from squaring something.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Find the square root of each term (a and b), then write the ${gr('factorised form')} (a − b)(a + b).</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">Important: addition cannot be factorised this way</p>` +
+        `<p style="margin:0;color:#991b1b;">The difference of two squares only works for <strong>subtraction</strong>. An expression like x² + 16 cannot be factorised using this pattern because it is an addition.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Factorise x² − 25.',
+          answer: `${gr('(x − 5)(x + 5)')}`,
+          steps: [
+            `Recognise the pattern: ${bl('x²')} − ${or('25')} is a difference of two squares since ${bl('x²')} = (x)² and ${or('25')} = (5)².`,
+            `Identify a = x and b = 5.`,
+            `Apply the pattern a² − b² = (a − b)(a + b): ${gr('(x − 5)(x + 5)')}.`,
+            `<strong>Check:</strong> (x − 5)(x + 5) = x² + 5x − 5x − 25 = x² − 25 ✓`,
+          ],
+        },
+        {
+          question: 'Sipho factorises 9x² − 16 and gets (3x − 4)(3x + 4). Check his answer.',
+          answer: `Sipho is correct — ${gr('(3x − 4)(3x + 4)')}`,
+          steps: [
+            `Check whether 9x² and 16 are perfect squares: ${bl('9x²')} = (3x)² and ${or('16')} = (4)². Both are perfect squares and the expression is a subtraction — the pattern applies.`,
+            `Applying a² − b² = (a − b)(a + b) with a = 3x and b = 4 gives ${gr('(3x − 4)(3x + 4)')}.`,
+            `Sipho is <strong>correct</strong>. ✓`,
+            `<strong>Verify by expanding:</strong> (3x − 4)(3x + 4) = 9x² + 12x − 12x − 16 = 9x² − 16 ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to recognise and factorise a difference of two squares using the pattern a squared minus b squared equals (a minus b)(a plus b)" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Diagram showing x² minus 25 with first square in blue and second square in orange giving factorised form (x minus 5)(x plus 5) in green" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — FACTORISING TRINOMIALS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'trinomials',
+      title: 'Factorising Trinomials',
+      icon: '()',
+      explanation:
+        `<p style="margin-bottom:16px;">We factorise trinomials of the form <strong>x² + bx + c</strong> by finding two numbers that multiply to give <strong>c</strong> and add to give <strong>b</strong>. For trinomials of the form <strong>ax² + bx + c</strong> where a is a common factor, we factor out a first, then factorise the remaining trinomial.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('numbers found')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('factorised brackets')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('common factor')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Factorising x² + bx + c</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Find two ${bl('numbers')} that <strong>multiply</strong> to give c (the constant term) and <strong>add</strong> to give b (the coefficient of x).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Write the ${gr('factorised form')}: (x + first number)(x + second number).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#6b7280;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Check</strong> by expanding your answer — it should equal the original trinomial.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">When a ≠ 1 but a is a common factor</p>` +
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="margin:0;color:#374151;font-size:14px;">If every term shares a ${or('common factor')} a, <strong>factor it out first</strong>: write ${or('a')}(x² + …). Then factorise the trinomial inside the brackets as normal.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Sign rules for the two numbers</p>` +
+        `<p style="margin:0;color:#1e3a8a;">If c is positive and b is positive → both numbers are <strong>positive</strong>.<br>If c is positive and b is negative → both numbers are <strong>negative</strong>.<br>If c is negative → one number is positive and one is <strong>negative</strong>; the larger absolute value has the same sign as b.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Factorise x² + 7x + 12.',
+          answer: `${gr('(x + 3)(x + 4)')}`,
+          steps: [
+            `Find two ${bl('numbers')} that multiply to 12 and add to 7.`,
+            `List factor pairs of 12: 1 × 12, 2 × 6, ${bl('3 × 4')}. Check sums: 3 + 4 = ${bl('7')} ✓`,
+            `The two numbers are ${bl('3')} and ${bl('4')}.`,
+            `Write the ${gr('factorised form')}: ${gr('(x + 3)(x + 4)')}.`,
+            `<strong>Check:</strong> (x + 3)(x + 4) = x² + 4x + 3x + 12 = x² + 7x + 12 ✓`,
+          ],
+        },
+        {
+          question: 'Factorise x² − 2x − 15.',
+          answer: `${gr('(x − 5)(x + 3)')}`,
+          steps: [
+            `Find two ${bl('numbers')} that multiply to −15 and add to −2.`,
+            `Since the product is negative, the numbers have opposite signs. Try ${bl('−5 and 3')}: (−5) × 3 = −15 ✓ and (−5) + 3 = ${bl('−2')} ✓`,
+            `The two numbers are ${bl('−5')} and ${bl('3')}.`,
+            `Write the ${gr('factorised form')}: ${gr('(x − 5)(x + 3)')}.`,
+            `<strong>Check:</strong> (x − 5)(x + 3) = x² + 3x − 5x − 15 = x² − 2x − 15 ✓`,
+          ],
+        },
+        {
+          question: 'Factorise 2x² + 10x + 12.',
+          answer: `${or('2')}${gr('(x + 2)(x + 3)')}`,
+          steps: [
+            `All three terms are divisible by ${or('2')} — factor out the ${or('common factor')} first: ${or('2')}(x² + 5x + 6).`,
+            `Now factorise the trinomial x² + 5x + 6: find two ${bl('numbers')} that multiply to 6 and add to 5.`,
+            `Try ${bl('2 and 3')}: 2 × 3 = 6 ✓ and 2 + 3 = ${bl('5')} ✓`,
+            `Write the ${gr('factorised trinomial')}: ${gr('(x + 2)(x + 3)')}.`,
+            `Final answer: ${or('2')}${gr('(x + 2)(x + 3)')}.`,
+            `<strong>Check:</strong> 2(x + 2)(x + 3) = 2(x² + 5x + 6) = 2x² + 10x + 12 ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to factorise trinomials of the form x squared plus bx plus c by finding two numbers that multiply to c and add to b" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Diagram showing the trinomial x² + 7x + 12 with the two numbers 3 and 4 in blue and the factorised form (x+3)(x+4) in green" />',
+    },
+  ],
+
+  topicPractice: [
+    // ── Q1 Easy — HCF common factor ──────────────────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'Factorise 8x² + 12x.',
+      answer: '4x(2x + 3)',
+      checkMode: 'auto',
+      correctAnswer: '4x(2x+3)',
+      correctAnswers: ['4x(2x+3)', '4x(2x + 3)'],
+      explanation: 'HCF of 8x² and 12x is 4x.\n8x² ÷ 4x = 2x and 12x ÷ 4x = 3.\nFactorised: 4x(2x + 3) ✓',
+    },
+
+    // ── Q2 Medium — three-term common factor ─────────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Factorise 15x³ − 10x² + 5x.',
+      answer: '5x(3x² − 2x + 1)',
+      checkMode: 'auto',
+      correctAnswer: '5x(3x²-2x+1)',
+      correctAnswers: ['5x(3x²-2x+1)', '5x(3x² - 2x + 1)', '5x(3x²−2x+1)', '5x(3x² − 2x + 1)'],
+      explanation: 'HCF of 15x³, 10x² and 5x is 5x.\n15x³ ÷ 5x = 3x², 10x² ÷ 5x = 2x, 5x ÷ 5x = 1.\nFactorised: 5x(3x² − 2x + 1) ✓',
+    },
+
+    // ── Q3 Hard — check a learner's common factor answer ─────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Sipho factorises 6x² − 9x and gets 3(2x − 3). Check his answer.',
+      answer: 'He missed an x — the correct factorisation is 3x(2x − 3), since 3x is the full common factor, not just 3.',
+      checkMode: 'self',
+    },
+
+    // ── Q4 Easy — difference of two squares ──────────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'Factorise x² − 49.',
+      answer: '(x − 7)(x + 7)',
+      checkMode: 'auto',
+      correctAnswer: '(x-7)(x+7)',
+      correctAnswers: ['(x-7)(x+7)', '(x − 7)(x + 7)', '(x+7)(x-7)', '(x + 7)(x − 7)'],
+      explanation: 'Recognise x² − 49 = x² − 7².\nDifference of squares: a² − b² = (a − b)(a + b).\nFactorised: (x − 7)(x + 7) ✓',
+    },
+
+    // ── Q5 Medium — difference of two squares with coefficient ───────────────
+    {
+      difficulty: 'Medium',
+      question: 'Factorise 4x² − 9.',
+      answer: '(2x − 3)(2x + 3)',
+      checkMode: 'auto',
+      correctAnswer: '(2x-3)(2x+3)',
+      correctAnswers: ['(2x-3)(2x+3)', '(2x − 3)(2x + 3)', '(2x+3)(2x-3)', '(2x + 3)(2x − 3)'],
+      explanation: '4x² = (2x)² and 9 = (3)².\nDifference of squares: (2x − 3)(2x + 3) ✓',
+    },
+
+    // ── Q6 Hard — check a learner's difference of squares answer ─────────────
+    {
+      difficulty: 'Hard',
+      question: 'Lerato factorises 16x² − 25y² and gets (4x − 5y)(4x + 5y). Check her answer.',
+      answer: 'She is correct — 16x² = (4x)² and 25y² = (5y)², so the difference of squares gives (4x − 5y)(4x + 5y).',
+      checkMode: 'self',
+    },
+
+    // ── Q7 Easy — trinomial with positive terms ───────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'Factorise x² + 9x + 20.',
+      answer: '(x + 4)(x + 5)',
+      checkMode: 'auto',
+      correctAnswer: '(x+4)(x+5)',
+      correctAnswers: ['(x+4)(x+5)', '(x + 4)(x + 5)', '(x+5)(x+4)', '(x + 5)(x + 4)'],
+      explanation: 'Find two numbers multiplying to 20 and adding to 9: 4 and 5.\nFactorised: (x + 4)(x + 5) ✓',
+    },
+
+    // ── Q8 Medium — trinomial with negative constant ──────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Factorise x² − 3x − 10.',
+      answer: '(x − 5)(x + 2)',
+      checkMode: 'auto',
+      correctAnswer: '(x-5)(x+2)',
+      correctAnswers: ['(x-5)(x+2)', '(x − 5)(x + 2)', '(x+2)(x-5)', '(x + 2)(x − 5)'],
+      explanation: 'Find two numbers multiplying to −10 and adding to −3: −5 and 2.\nFactorised: (x − 5)(x + 2) ✓',
+    },
+
+    // ── Q9 Hard — check a learner's trinomial answer ──────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Thabo factorises x² + x − 12 and gets (x + 4)(x − 3). Check his answer.',
+      answer: 'He is correct — 4 and −3 multiply to −12 and add to 1.',
+      checkMode: 'self',
+    },
+
+    // ── Q10 Medium — trinomial with common factor ─────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Factorise 3x² + 15x + 18.',
+      answer: '3(x + 2)(x + 3)',
+      checkMode: 'auto',
+      correctAnswer: '3(x+2)(x+3)',
+      correctAnswers: ['3(x+2)(x+3)', '3(x + 2)(x + 3)', '3(x+3)(x+2)', '3(x + 3)(x + 2)'],
+      explanation: 'Factor out 3: 3(x² + 5x + 6).\nFind two numbers multiplying to 6 and adding to 5: 2 and 3.\nFactorised: 3(x + 2)(x + 3) ✓',
+    },
+
+    // ── Q11 Hard — full factorisation with common factor shown ────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Factorise 2x² − 8x − 10 fully, showing the common factor step.',
+      answer: 'Factor out 2: 2(x² − 4x − 5). Factorise trinomial: 2(x − 5)(x + 1).',
+      checkMode: 'self',
+    },
+
+    // ── Q12 Medium — difference of two squares (larger square) ───────────────
+    {
+      difficulty: 'Medium',
+      question: 'Factorise x² − 64.',
+      answer: '(x − 8)(x + 8)',
+      checkMode: 'auto',
+      correctAnswer: '(x-8)(x+8)',
+      correctAnswers: ['(x-8)(x+8)', '(x − 8)(x + 8)', '(x+8)(x-8)', '(x + 8)(x − 8)'],
+      explanation: 'Recognise x² − 64 = x² − 8².\nDifference of squares: (x − 8)(x + 8) ✓',
+    },
+
+    // ── Q13 Hard — addition cannot use difference of squares ──────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Amahle says x² + 16 can be factorised using the difference of two squares. Is she correct? Explain.',
+      answer: 'No — the difference of two squares requires subtraction (a² − b²), but x² + 16 is an addition, so it cannot be factorised this way.',
+      checkMode: 'self',
+    },
+
+    // ── Q14 Hard — combined common factor and difference of squares ───────────
+    {
+      difficulty: 'Hard',
+      question: 'Factorise 5x² − 20 fully, identifying both the common factor and the difference of squares pattern used.',
+      answer: 'Factor out 5: 5(x² − 4). Recognise difference of squares: 5(x − 2)(x + 2).',
+      checkMode: 'self',
+    },
+
+    // ── Q15 Hard — factorise and verify by expanding ──────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Factorise x² − 5x − 24 and verify your answer by expanding it back.',
+      answer: 'Find numbers multiplying to −24 and adding to −5: −8 and 3. Factorised: (x − 8)(x + 3). Verify by expanding: x² + 3x − 8x − 24 = x² − 5x − 24 ✓',
+      checkMode: 'self',
+    },
+  ],
+
+  resultsConfig: {
+    totalMarks: 15,
+    messages: [
+      { minPercent: 100, message: 'Outstanding! You have mastered factorising algebraic expressions.' },
+      { minPercent: 75, message: 'Great work! You have a strong understanding of factorising. Review any missed questions and aim for full marks.' },
+      { minPercent: 50, message: 'Good effort, review and try again.' },
+      { minPercent: 0, message: 'Keep going, work through the guide again.' },
+    ],
+  },
+}
