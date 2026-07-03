@@ -75,7 +75,7 @@
     overflow: hidden;
     text-align: center;
     padding-top: 96px;
-    padding-bottom: 72px;
+    padding-bottom: 0;
   }
   .blob { position: absolute; border-radius: 9999px; pointer-events: none; }
   .blob-1 {
@@ -88,7 +88,7 @@
     background: radial-gradient(circle, var(--blue-200) 0%, transparent 70%);
     opacity: 0.56;
   }
-  .hero-content { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+  .hero-content { position: relative; z-index: 1; max-width: 620px; margin: 0 auto 72px; }
   .badge {
     display: inline-block;
     background: var(--blue-50);
@@ -306,7 +306,8 @@
   /* ── Final CTA ──────────────────────────────────────────── */
   .final-cta { background: var(--bg); text-align: center; }
   .final-cta h2 { color: var(--navy); font-size: 1.9rem; font-weight: 700; margin: 0 0 14px; }
-  .final-cta p.subheading { max-width: 460px; margin-left: auto; margin-right: auto; }
+  .final-cta p.subheading { max-width: 460px; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
+  .final-cta .header-cta { display: inline-flex; padding: 14px 28px; font-size: 1rem; border-radius: 12px; }
 
   /* ── Footer ─────────────────────────────────────────────── */
   footer {
@@ -523,30 +524,10 @@
 
   <!-- ── Final CTA ────────────────────────────────────────── -->
   <section class="final-cta">
-    <div class="hero-content">
-      <div class="form-state" data-form-state>
-        <h2>Don't miss launch day</h2>
-        <p class="subheading">Leave your email and we'll let you know the moment Mathly is live.</p>
-
-        <p class="error-msg">Please enter a valid email address.</p>
-
-        <form class="waitlist-form">
-          <input type="email" class="email-input" placeholder="you@example.com" required autocomplete="email" />
-          <button type="submit" class="submit-btn">Notify me</button>
-        </form>
-
-        <p class="fine-print">No spam — just one email when we launch. Unsubscribe anytime.</p>
-      </div>
-
-      <div class="success-state" data-success-state>
-        <div class="success-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 6L9 17L4 12" stroke="#15803d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h2>You're on the list!</h2>
-        <p class="subheading">We'll email you the moment Mathly launches. Thanks for your interest.</p>
-      </div>
+    <div class="wrap-narrow">
+      <h2>Don't miss launch day</h2>
+      <p class="subheading">Leave your email above and we'll let you know the moment Mathly is live.</p>
+      <a href="#join" class="header-cta">Join the waitlist</a>
     </div>
   </section>
 
