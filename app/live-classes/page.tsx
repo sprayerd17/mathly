@@ -182,7 +182,7 @@ export default function LiveClassesPage() {
                   {t.live_login_prompt_description}
                 </p>
                 <button
-                  onClick={openModal}
+                  onClick={() => openModal()}
                   className="w-full text-center font-semibold py-3 rounded-xl text-sm"
                   style={{ backgroundColor: '#1e40af', color: '#fff' }}
                 >

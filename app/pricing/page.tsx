@@ -12,7 +12,6 @@ function useTableFeatures() {
     { label: t.pricing_feature_practice_questions,     free: true,  pro: true,  guided: true  },
     { label: t.pricing_feature_answers,                free: false, pro: true,  guided: true  },
     { label: t.pricing_feature_all_topics_grades,      free: false, pro: true,  guided: true  },
-    { label: t.pricing_feature_weekly_topic_queries,   free: false, pro: false, guided: true  },
     { label: t.pricing_feature_expert_group_responses, free: false, pro: false, guided: true  },
   ]
 }

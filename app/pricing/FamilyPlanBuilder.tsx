@@ -221,7 +221,6 @@ export default function FamilyPlanBuilder() {
             {[
               t.pricing_guided_feature_everything_in_pro,
               t.pricing_guided_feature_discount_live_classes,
-              t.pricing_guided_feature_weekly_queries,
               t.pricing_guided_feature_video_explanation,
               t.pricing_guided_feature_priority_support,
               t.pricing_guided_feature_exam_packs,

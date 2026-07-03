@@ -4,7 +4,7 @@ import { use, useState, useEffect } from 'react'
 import Link from 'next/link'
 import TopicTabs from '@/app/components/TopicTabs'
 import NavAuth from '@/app/components/NavAuth'
-import { useAuth } from '@/app/providers'
+import { useAuth, getActiveChild } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 
@@ -49,7 +49,7 @@ export default function TopicPage({
   const { grade, topic } = use(params)
   const { user } = useAuth()
   const t = useTranslations()
-  const language = (user?.language ?? 'en') as 'en' | 'af'
+  const language = (user ? getActiveChild(user).language : 'en') as 'en' | 'af'
   // const FREE_TOPICS = new Set(['topic-1', 'topic-2']) // REVIEW MODE: re-enable to restore locking
   const isLocked = false
 

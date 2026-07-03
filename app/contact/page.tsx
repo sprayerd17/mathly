@@ -266,7 +266,7 @@ export default function ContactPage() {
         </section>
 
         {/* ── FAQ ─────────────────────────────────────────────────────────── */}
-        <section className="mb-14">
+        <section id="faq" className="mb-14 scroll-mt-24">
           <h2 className="text-xl font-bold mb-6" style={{ color: '#0f1f3d' }}>
             {t.contact_faq_heading}
           </h2>

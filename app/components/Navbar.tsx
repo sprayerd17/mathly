@@ -42,7 +42,7 @@ export default function Navbar() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
-  const { user, logout, openModal } = useAuth()
+  const { user, loading, logout, openModal } = useAuth()
   const t = useTranslations()
 
   const lastScrollY = useRef(0)
@@ -214,7 +214,7 @@ export default function Navbar() {
 
         {/* Auth at bottom */}
         <div className="px-5 pb-8 pt-5 border-t border-white/10">
-          {user ? (
+          {loading ? null : user ? (
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-9 h-9 rounded-full bg-[#1e40af] text-white text-sm font-bold flex items-center justify-center shrink-0">

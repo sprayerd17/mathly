@@ -25,7 +25,7 @@ const defaultTopics: Topic[] = [
     slug: 'topic-2',
     name: 'Topic 2',
     description: 'Core techniques and step-by-step methods explained clearly.',
-    free: true,
+    free: false,
   },
   {
     slug: 'topic-3',
@@ -76,7 +76,7 @@ const grade4Topics: Topic[] = [
     slug: 'addition-subtraction',
     name: 'Addition & Subtraction',
     description: 'Master column addition and subtraction with carrying and borrowing, estimating, inverse operations, mental calculations and money problems.',
-    free: true,
+    free: false,
   },
   {
     slug: 'multiplication',
@@ -199,7 +199,7 @@ const grade5Topics: Topic[] = [
     slug: 'addition-subtraction',
     name: 'Addition & Subtraction',
     description: 'Master addition and subtraction of whole numbers up to 6 digits, including column methods, estimation, inverse operations, mental strategies and multi-step word problems.',
-    free: true,
+    free: false,
   },
   {
     slug: 'multiplication',
@@ -328,7 +328,7 @@ const grade6Topics: Topic[] = [
     slug: 'addition-subtraction',
     name: 'Addition & Subtraction',
     description: 'Add and subtract whole numbers up to 9 digits, apply column methods, estimation strategies, inverse operations and multi-step word problems.',
-    free: true,
+    free: false,
   },
   {
     slug: 'multiplication',
@@ -1062,12 +1062,14 @@ export default function GradePage() {
 
   const topics = getTopics(grade)
 
-  // Only restrict after hydration, only when user is logged in and has grades set
+  // Only restrict after hydration, and only for paid plans — free accounts can
+  // browse any grade (limited to 1 topic each), paid plans get full access only
+  // to the grade(s) they're actually paying for.
   const isRestricted =
     mounted &&
     user !== null &&
-    user.grades.length > 0 &&
-    !user.grades.includes(Number(grade))
+    user.package !== 'free' &&
+    !user.children.some(c => c.grade === Number(grade))
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">

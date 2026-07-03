@@ -6,7 +6,7 @@ import { useAuth } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
 export default function NavAuth() {
-  const { user, logout, openModal } = useAuth()
+  const { user, loading, logout, openModal } = useAuth()
   const t = useTranslations()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -21,10 +21,14 @@ export default function NavAuth() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
+  if (loading) {
+    return <div className="w-9 h-9" aria-hidden="true" />
+  }
+
   if (!user) {
     return (
       <button
-        onClick={openModal}
+        onClick={() => openModal()}
         className="text-sm font-medium text-[#0f1f3d] border border-[#0f1f3d]/20 hover:border-[#1e40af] hover:text-[#1e40af] px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
       >
         Log in / Register

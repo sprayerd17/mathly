@@ -2,25 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useAuth, type Language } from '@/app/providers'
+import { useAuth, getActiveChild, type Language } from '@/app/providers'
 import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart } from '@/src/data/grade4/en/numbers-operations'
 import AIAssistant from '@/app/components/AIAssistant'
 import { useTranslations } from '@/src/i18n/useTranslations'
-
-// ─── Query constants ─────────────────────────────────────────────────────────
-
-const QUERIES_KEY        = 'mathly_queries'
-const WEEKLY_QUERIES_KEY = 'mathly_weekly_queries'
-const WEEKLY_LIMIT       = 2
-
-
-function getMondayStr(date: Date): string {
-  const d = new Date(date)
-  const day = d.getDay()
-  const diff = day === 0 ? -6 : 1 - day
-  d.setDate(d.getDate() + diff)
-  return d.toISOString().slice(0, 10)
-}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -1034,193 +1019,6 @@ function RealPractice({ data }: { data: TopicData }) {
   )
 }
 
-// ─── Query section ────────────────────────────────────────────────────────────
-
-function QuerySection({ grade, topicName, lang, sectionTitles }: { grade: string; topicName: string; lang: Language; sectionTitles?: string[] }) {
-  const t = useTranslations()
-  const dropdownOptions = [...(sectionTitles && sectionTitles.length > 0 ? sectionTitles : []), t.topic_query_other_option]
-  const [mounted, setMounted]         = useState(false)
-  const [isGuided, setIsGuided]       = useState(false)
-  const [isLoggedIn, setIsLoggedIn]   = useState(false)
-  const [open, setOpen]               = useState(false)
-  const [struggle, setStruggle]       = useState('')
-  const [note, setNote]               = useState('')
-  const [formLang, setFormLang]       = useState<Language>(lang)
-  const [submitted, setSubmitted]     = useState(false)
-  const [weeklyCount, setWeeklyCount] = useState(0)
-  const [userName, setUserName]       = useState('')
-  const [userEmail, setUserEmail]     = useState('')
-
-  useEffect(() => {
-    setMounted(true)
-    try {
-      const raw = localStorage.getItem('mathly_user')
-      if (raw) {
-        const parsed = JSON.parse(raw)
-        const pkg = (parsed.package as string | undefined)?.toLowerCase() ?? ''
-        setIsGuided(pkg === 'guided' || pkg.startsWith('family_guided'))
-        setIsLoggedIn(true)
-        setUserName(parsed.name || parsed.email || '')
-        setUserEmail(parsed.email || '')
-      }
-    } catch { /* ignore */ }
-    try {
-      const raw = localStorage.getItem(WEEKLY_QUERIES_KEY)
-      if (raw) {
-        const tracker = JSON.parse(raw)
-        if (tracker.weekStart === getMondayStr(new Date())) {
-          setWeeklyCount(tracker.count)
-        }
-      }
-    } catch { /* ignore */ }
-  }, [])
-
-  useEffect(() => { setFormLang(lang) }, [lang])
-
-  // TODO: Re-enable Guided only check before launch.
-  // if (!mounted || !isGuided) return null
-  if (!mounted || !isLoggedIn) return null
-
-  const remaining    = Math.max(0, WEEKLY_LIMIT - weeklyCount)
-  const limitReached = weeklyCount >= WEEKLY_LIMIT
-
-  function handleSubmit() {
-    if (!struggle) return
-    const query = {
-      date: new Date().toISOString().slice(0, 10),
-      grade,
-      topic: topicName,
-      specificStruggle: struggle,
-      note,
-      language: formLang,
-      userName,
-      userEmail,
-    }
-    let all: unknown[] = []
-    try { const raw = localStorage.getItem(QUERIES_KEY); if (raw) all = JSON.parse(raw) } catch { /* ignore */ }
-    all.push(query)
-    localStorage.setItem(QUERIES_KEY, JSON.stringify(all))
-    const newCount = weeklyCount + 1
-    localStorage.setItem(WEEKLY_QUERIES_KEY, JSON.stringify({ weekStart: getMondayStr(new Date()), count: newCount }))
-    setWeeklyCount(newCount)
-    setSubmitted(true)
-  }
-
-  return (
-    <div className="mt-12 pt-8 border-t border-gray-100 max-w-[720px]">
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between gap-4 text-left"
-      >
-        <div>
-          <p className="text-base font-bold" style={{ color: '#0f1f3d' }}>{t.topic_still_struggling}</p>
-          <p className="text-sm text-gray-500 mt-0.5">
-            {t.topic_submit_query_description}
-          </p>
-        </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          strokeWidth={2} stroke="currentColor"
-          className="w-5 h-5 shrink-0 transition-transform"
-          style={{ color: '#9ca3af', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-      </button>
-
-      {open && (
-        <div className="mt-5 rounded-2xl border bg-white p-6" style={{ borderColor: '#e5e7eb' }}>
-          {limitReached ? (
-            <p className="text-sm text-gray-600">
-              {t.topic_weekly_limit_reached}
-            </p>
-          ) : submitted ? (
-            <div>
-              <p className="text-sm font-semibold mb-1" style={{ color: '#15803d' }}>{t.topic_query_submitted}</p>
-              <p className="text-sm text-gray-600">
-                {t.topic_query_submitted_detail_prefix}{' '}
-                <strong>{remaining}</strong> {remaining === 1 ? t.topic_query_singular : t.topic_query_plural} {t.topic_query_submitted_detail_suffix}
-              </p>
-            </div>
-          ) : (
-            <div className="flex flex-col gap-5">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_grade_label}</p>
-                <div className="border rounded-xl px-4 py-3 text-sm bg-gray-50 text-gray-500" style={{ borderColor: '#e5e7eb' }}>
-                  {t.topic_grade_value.replace('{grade}', grade)}
-                </div>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_topic_label}</p>
-                <div className="border rounded-xl px-4 py-3 text-sm bg-gray-50 text-gray-500" style={{ borderColor: '#e5e7eb' }}>
-                  {topicName}
-                </div>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_specific_struggle_label}</p>
-                <select
-                  value={struggle}
-                  onChange={e => setStruggle(e.target.value)}
-                  className="w-full border rounded-xl px-4 py-3 text-sm bg-white"
-                  style={{ borderColor: '#d1d5db', color: struggle ? '#374151' : '#9ca3af' }}
-                >
-                  <option value="" disabled>{t.topic_struggle_select_placeholder}</option>
-                  {dropdownOptions.map(o => <option key={o} value={o}>{o}</option>)}
-                </select>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>
-                  {t.topic_note_label} <span className="font-normal normal-case" style={{ color: '#9ca3af' }}>({t.topic_optional_label})</span>
-                </p>
-                <textarea
-                  value={note}
-                  onChange={e => setNote(e.target.value.slice(0, 200))}
-                  rows={3}
-                  placeholder={t.topic_note_placeholder}
-                  className="w-full border rounded-xl px-4 py-3 text-sm resize-none focus:outline-none focus:border-[#1e40af] transition-colors"
-                  style={{ borderColor: '#d1d5db', fontFamily: 'inherit' }}
-                />
-                <p className="text-xs text-right mt-0.5" style={{ color: '#9ca3af' }}>{note.length}/200</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wide mb-1.5" style={{ color: '#6b7280' }}>{t.topic_response_language_label}</p>
-                <div
-                  className="inline-flex items-center rounded-lg overflow-hidden text-xs font-semibold"
-                  style={{ border: '1px solid #e5e7eb' }}
-                >
-                  {(['en', 'af'] as const).map(l => (
-                    <button
-                      key={l}
-                      type="button"
-                      onClick={() => setFormLang(l)}
-                      className="px-4 py-2 transition-colors"
-                      style={formLang === l
-                        ? { backgroundColor: '#1e40af', color: '#fff' }
-                        : { backgroundColor: '#fff', color: '#9ca3af' }
-                      }
-                    >
-                      {l === 'en' ? t.topic_language_english : t.topic_language_afrikaans}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <button
-                onClick={handleSubmit}
-                disabled={!struggle}
-                className="self-start px-6 py-3 rounded-xl text-sm font-semibold text-white transition-opacity disabled:opacity-40"
-                style={{ backgroundColor: '#1e40af' }}
-              >
-                {t.topic_submit_query}
-              </button>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
-
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }: Props) {
@@ -1233,7 +1031,7 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
     setMounted(true)
   }, [])
 
-  const lang: Language = user?.language ?? 'en'
+  const lang: Language = user ? getActiveChild(user).language : 'en'
 
   const TAB_LABELS: Record<Tab, string> = {
     'Study Guide': t.topic_tab_study_guide,
@@ -1311,13 +1109,9 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
           : <StudyGuide topicName={topicName} />
       )}
       {activeTab === 'Practice' && (
-        <>
-          {studyGuideData
-            ? <RealPractice data={studyGuideData} />
-            : <Practice topicName={topicName} />
-          }
-          <QuerySection grade={grade} topicName={topicName} lang={lang} sectionTitles={studyGuideData?.sections.map((s: Section) => s.title)} />
-        </>
+        studyGuideData
+          ? <RealPractice data={studyGuideData} />
+          : <Practice topicName={topicName} />
       )}
       {activeTab === 'Answers' && !studyGuideData && <Answers />}
 

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
-import { useAuth, getMaxChildren, type Language } from '@/app/providers'
+import { useAuth, getMaxChildren, LanguageCards, type Language } from '@/app/providers'
 import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
@@ -14,48 +14,36 @@ const LANGUAGE_LABELS: Record<Language, string> = {
   af: 'Afrikaans',
 }
 
+type ChildRecord = { name: string; grade: number; language: Language; languageChangeUsed: boolean }
+
 export default function ProfilePage() {
-  const { user, updateGrades, updateLanguage, openModal } = useAuth()
+  const { user, loading, updateChildren, updateActiveChild, openModal } = useAuth()
   const t = useTranslations()
 
-  const [editingGrades, setEditingGrades] = useState(false)
-  const [draftGrades, setDraftGrades] = useState<number[]>([])
+  // Singular-profile editing (used when the plan only allows 1 profile)
+  const [editingGrade, setEditingGrade] = useState(false)
+  const [draftGrade, setDraftGrade]     = useState<number>(4)
+  const [editingLang, setEditingLang]   = useState(false)
+  const [draftLang, setDraftLang]       = useState<Language>('en')
 
-  const [editingLang, setEditingLang] = useState(false)
-  const [draftLang, setDraftLang] = useState<Language>('en')
-
-  const [refCode, setRefCode]     = useState('')
   const [linkCopied, setLinkCopied] = useState(false)
   const [codeCopied, setCodeCopied] = useState(false)
 
-  const [children, setChildren]               = useState<Array<{ name: string; grade: number }>>([])
+  const [children, setChildren]               = useState<ChildRecord[]>([])
   const [editingChildIdx, setEditingChildIdx] = useState<number | null>(null)
   const [draftChildName, setDraftChildName]   = useState('')
   const [draftChildGrade, setDraftChildGrade] = useState<number>(4)
+  const [draftChildLanguage, setDraftChildLanguage] = useState<Language>('en')
   const [addingChild, setAddingChild]         = useState(false)
   const [newChildName, setNewChildName]       = useState('')
   const [newChildGrade, setNewChildGrade]     = useState<number>(4)
+  const [newChildLanguage, setNewChildLanguage] = useState<Language>('en')
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem('mathly_children')
-      if (stored) setChildren(JSON.parse(stored))
-    } catch { /* ignore */ }
+    setChildren(user?.children ?? [])
   }, [user])
 
-  useEffect(() => {
-    if (!user) return
-    const stored = localStorage.getItem('mathly_ref_code')
-    if (stored) {
-      setRefCode(stored)
-    } else {
-      const namepart = user.name.replace(/[^a-zA-Z]/g, '').toUpperCase().slice(0, 6) || 'USER'
-      const digits   = String(Math.floor(1000 + Math.random() * 9000))
-      const code     = namepart + digits
-      localStorage.setItem('mathly_ref_code', code)
-      setRefCode(code)
-    }
-  }, [user])
+  const refCode = user?.refCode ?? ''
 
   const referralUrl = `mathly.co.za/join?ref=${refCode}`
 
@@ -81,20 +69,30 @@ export default function ProfilePage() {
     a.click()
   }
 
-  function saveChildren(updated: Array<{ name: string; grade: number }>) {
-    localStorage.setItem('mathly_children', JSON.stringify(updated))
+  function saveChildren(updated: ChildRecord[]) {
     setChildren(updated)
+    updateChildren(updated)
   }
 
   function startEditChild(i: number) {
     setDraftChildName(children[i].name)
     setDraftChildGrade(children[i].grade)
+    setDraftChildLanguage(children[i].language)
     setEditingChildIdx(i)
   }
 
   function saveEditChild() {
     if (editingChildIdx === null || !draftChildName.trim()) return
-    const updated = children.map((c, i) => i === editingChildIdx ? { name: draftChildName.trim(), grade: draftChildGrade } : c)
+    const idx = editingChildIdx
+    const languageChanged = draftChildLanguage !== children[idx].language
+    const updated = children.map((c, i) => i === idx
+      ? {
+          name: draftChildName.trim(),
+          grade: draftChildGrade,
+          language: draftChildLanguage,
+          languageChangeUsed: c.languageChangeUsed || languageChanged,
+        }
+      : c)
     saveChildren(updated)
     setEditingChildIdx(null)
   }
@@ -102,39 +100,43 @@ export default function ProfilePage() {
   function startAddChild() {
     setNewChildName('')
     setNewChildGrade(4)
+    setNewChildLanguage('en')
     setAddingChild(true)
   }
 
   function saveNewChild() {
-    if (!newChildName.trim() || children.length >= 3) return
-    saveChildren([...children, { name: newChildName.trim(), grade: newChildGrade }])
+    if (!newChildName.trim() || children.length >= maxChildren) return
+    saveChildren([...children, { name: newChildName.trim(), grade: newChildGrade, language: newChildLanguage, languageChangeUsed: false }])
     setAddingChild(false)
   }
 
-  function startEditGrades() {
-    setDraftGrades([...(user?.grades ?? [])])
-    setEditingGrades(true)
+  function startEditGrade() {
+    setDraftGrade(children[0]?.grade ?? 4)
+    setEditingGrade(true)
   }
 
-  function toggleGrade(g: number) {
-    setDraftGrades((prev) =>
-      prev.includes(g) ? prev.filter((x) => x !== g) : [...prev, g]
-    )
+  function saveGrade() {
+    if (!children[0]) return
+    saveChildren(children.map((c, i) => i === 0 ? { ...c, grade: draftGrade } : c))
+    setEditingGrade(false)
   }
 
-  function saveGrades() {
-    updateGrades(draftGrades)
-    setEditingGrades(false)
-  }
-
-  function startEditLang() {
-    setDraftLang(user?.language ?? 'en')
+  function startEditLangSingular() {
+    setDraftLang(children[0]?.language ?? 'en')
     setEditingLang(true)
   }
 
-  function saveLang() {
-    updateLanguage(draftLang)
+  function saveLangSingular() {
+    if (!children[0]) return
+    const languageChanged = draftLang !== children[0].language
+    saveChildren(children.map((c, i) => i === 0
+      ? { ...c, language: draftLang, languageChangeUsed: c.languageChangeUsed || languageChanged }
+      : c))
     setEditingLang(false)
+  }
+
+  if (loading) {
+    return null
   }
 
   if (!user) {
@@ -144,7 +146,7 @@ export default function ProfilePage() {
         <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
           <p className="text-gray-500 mb-4">{t.profile_login_required}</p>
           <button
-            onClick={openModal}
+            onClick={() => openModal()}
             className="text-sm font-semibold px-5 py-2.5 rounded-lg text-white"
             style={{ backgroundColor: '#1e40af' }}
           >
@@ -155,9 +157,11 @@ export default function ProfilePage() {
     )
   }
 
-  const sortedGrades = [...user.grades].sort((a, b) => a - b)
   const maxChildren  = getMaxChildren(user.package)
   const atChildLimit = children.length >= maxChildren
+  const singularProfile = maxChildren === 1
+  const baseTier: 'free' | 'pro' | 'guided' = user.package.includes('guided') ? 'guided' : user.package.includes('pro') ? 'pro' : 'free'
+  const isFamilyPlan = user.package.startsWith('family_')
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
@@ -175,8 +179,8 @@ export default function ProfilePage() {
         >
           {/* Avatar + name + email */}
           <div
-            className="flex items-center gap-5 mb-8 pb-8"
-            style={{ borderBottom: '1px solid #f3f4f6' }}
+            className={`flex items-center gap-5 ${singularProfile ? 'mb-8 pb-8' : ''}`}
+            style={singularProfile ? { borderBottom: '1px solid #f3f4f6' } : undefined}
           >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
@@ -192,174 +196,126 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Grades section */}
-          <div className="pb-7 mb-7" style={{ borderBottom: '1px solid #f3f4f6' }}>
-            <div className="flex items-center justify-between mb-3">
-              <h2
-                className="text-xs font-bold uppercase tracking-widest"
-                style={{ color: '#6b7280' }}
-              >
-                {t.profile_my_grades_heading}
-              </h2>
-              {!editingGrades && (
-                <button
-                  onClick={startEditGrades}
-                  className="text-xs font-semibold hover:underline underline-offset-2"
-                  style={{ color: '#1e40af' }}
-                >
-                  {t.profile_edit_grades}
-                </button>
-              )}
-            </div>
+          {singularProfile && children[0] && (
+            <>
+              {/* Grade section (single profile) */}
+              <div className="pb-7 mb-7" style={{ borderBottom: '1px solid #f3f4f6' }}>
+                <div className="flex items-center justify-between mb-3">
+                  <h2
+                    className="text-xs font-bold uppercase tracking-widest"
+                    style={{ color: '#6b7280' }}
+                  >
+                    {t.profile_my_grades_heading}
+                  </h2>
+                  {!editingGrade && (
+                    <button
+                      onClick={startEditGrade}
+                      className="text-xs font-semibold hover:underline underline-offset-2"
+                      style={{ color: '#1e40af' }}
+                    >
+                      {t.profile_edit_grades}
+                    </button>
+                  )}
+                </div>
 
-            {!editingGrades ? (
-              sortedGrades.length > 0 ? (
-                <div className="flex flex-wrap gap-2">
-                  {sortedGrades.map((g) => (
+                {!editingGrade ? (
+                  <span
+                    className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
+                    style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                  >
+                    {t.profile_grade_label.replace('{grade}', String(children[0].grade))}
+                  </span>
+                ) : (
+                  <div>
+                    <select
+                      value={draftGrade}
+                      onChange={e => setDraftGrade(Number(e.target.value))}
+                      className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors bg-white mb-4"
+                    >
+                      {GRADES.map(g => (
+                        <option key={g} value={g}>{t.profile_grade_label.replace('{grade}', String(g))}</option>
+                      ))}
+                    </select>
+                    <div className="flex gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setEditingGrade(false)}
+                        className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors"
+                      >
+                        {t.profile_cancel}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={saveGrade}
+                        className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors"
+                        style={{ backgroundColor: '#1e40af' }}
+                      >
+                        {t.profile_save_changes}
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Language section (single profile) */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h2
+                    className="text-xs font-bold uppercase tracking-widest"
+                    style={{ color: '#6b7280' }}
+                  >
+                    {t.profile_language_heading}
+                  </h2>
+                  {!editingLang && !children[0].languageChangeUsed && (
+                    <button
+                      onClick={startEditLangSingular}
+                      className="text-xs font-semibold hover:underline underline-offset-2"
+                      style={{ color: '#1e40af' }}
+                    >
+                      {t.profile_edit_language}
+                    </button>
+                  )}
+                </div>
+
+                {!editingLang ? (
+                  <div>
                     <span
-                      key={g}
-                      className="text-sm font-semibold px-3 py-1.5 rounded-lg"
+                      className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
                       style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
                     >
-                      {t.profile_grade_label.replace('{grade}', String(g))}
+                      {LANGUAGE_LABELS[children[0].language]}
                     </span>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-sm text-gray-400">
-                  {t.profile_no_grades_selected}{' '}
-                  <button
-                    onClick={startEditGrades}
-                    className="font-semibold hover:underline"
-                    style={{ color: '#1e40af' }}
-                  >
-                    {t.profile_add_grades}
-                  </button>
-                </p>
-              )
-            ) : (
-              <div>
-                <p className="text-xs text-gray-500 mb-4">
-                  {t.profile_tap_grade_hint}
-                </p>
-                <div className="grid grid-cols-3 gap-2.5 mb-5">
-                  {GRADES.map((g) => {
-                    const active = draftGrades.includes(g)
-                    return (
+                    {children[0].languageChangeUsed && (
+                      <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                        {t.profile_language_change_used_note}
+                      </p>
+                    )}
+                  </div>
+                ) : (
+                  <div>
+                    <LanguageCards selected={draftLang} onSelect={setDraftLang} />
+                    <div className="flex gap-3 mt-5">
                       <button
-                        key={g}
                         type="button"
-                        onClick={() => toggleGrade(g)}
-                        className="py-3 rounded-xl text-sm font-semibold transition-all border"
-                        style={
-                          active
-                            ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
-                            : { backgroundColor: '#f8fafc', color: '#374151', borderColor: '#d1d5db' }
-                        }
+                        onClick={() => setEditingLang(false)}
+                        className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors"
                       >
-                        {t.profile_grade_label.replace('{grade}', String(g))}
+                        {t.profile_cancel}
                       </button>
-                    )
-                  })}
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setEditingGrades(false)}
-                    className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors"
-                  >
-                    {t.profile_cancel}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={saveGrades}
-                    className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors"
-                    style={{ backgroundColor: '#1e40af' }}
-                  >
-                    {t.profile_save_changes}
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Language section */}
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <h2
-                className="text-xs font-bold uppercase tracking-widest"
-                style={{ color: '#6b7280' }}
-              >
-                {t.profile_language_heading}
-              </h2>
-              {!editingLang && (
-                <button
-                  onClick={startEditLang}
-                  className="text-xs font-semibold hover:underline underline-offset-2"
-                  style={{ color: '#1e40af' }}
-                >
-                  {t.profile_edit_language}
-                </button>
-              )}
-            </div>
-
-            {!editingLang ? (
-              <span
-                className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
-                style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
-              >
-                {LANGUAGE_LABELS[user.language]}
-              </span>
-            ) : (
-              <div>
-                <div className="grid grid-cols-2 gap-3 mb-5">
-                  {(['en', 'af'] as const).map((code) => {
-                    const active = draftLang === code
-                    return (
                       <button
-                        key={code}
                         type="button"
-                        onClick={() => setDraftLang(code)}
-                        className="flex flex-col items-start gap-1 p-4 rounded-xl border text-left transition-all"
-                        style={
-                          active
-                            ? { backgroundColor: '#eff6ff', borderColor: '#1e40af', borderWidth: '2px' }
-                            : { backgroundColor: '#f8fafc', borderColor: '#d1d5db', borderWidth: '1px' }
-                        }
+                        onClick={saveLangSingular}
+                        className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors"
+                        style={{ backgroundColor: '#1e40af' }}
                       >
-                        <span
-                          className="font-bold text-sm"
-                          style={{ color: active ? '#1e40af' : '#0f1f3d' }}
-                        >
-                          {LANGUAGE_LABELS[code]}
-                        </span>
-                        <span className="text-xs text-gray-500">
-                          {code === 'en' ? t.profile_lang_desc_en : t.profile_lang_desc_af}
-                        </span>
+                        {t.profile_save_changes}
                       </button>
-                    )
-                  })}
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setEditingLang(false)}
-                    className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors"
-                  >
-                    {t.profile_cancel}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={saveLang}
-                    className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors"
-                    style={{ backgroundColor: '#1e40af' }}
-                  >
-                    {t.profile_save_changes}
-                  </button>
-                </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          )}
         </div>
 
         {/* Subscription card */}
@@ -376,15 +332,16 @@ export default function ProfilePage() {
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="font-bold text-lg" style={{ color: '#0f1f3d' }}>
-                {user.package === 'pro' ? t.profile_plan_pro : user.package === 'guided' ? t.profile_plan_guided : t.profile_plan_free}
+                {baseTier === 'pro' ? t.profile_plan_pro : baseTier === 'guided' ? t.profile_plan_guided : t.profile_plan_free}
+                {isFamilyPlan && ` · ${t.profile_my_children_heading}`}
               </p>
               <p className="text-sm text-gray-500 mt-0.5">
-                {user.package === 'free' && t.profile_plan_desc_free}
-                {user.package === 'pro' && t.profile_plan_desc_pro}
-                {user.package === 'guided' && t.profile_plan_desc_guided}
+                {baseTier === 'free' && t.profile_plan_desc_free}
+                {baseTier === 'pro' && t.profile_plan_desc_pro}
+                {baseTier === 'guided' && t.profile_plan_desc_guided}
               </p>
             </div>
-            {user.package === 'free' && (
+            {baseTier === 'free' && (
               <Link
                 href="/pricing"
                 className="shrink-0 text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
@@ -397,6 +354,7 @@ export default function ProfilePage() {
         </div>
 
         {/* My Children section */}
+        {!singularProfile && (
         <div
           className="bg-white rounded-2xl shadow-sm p-7 mt-5"
           style={{ border: '1px solid #e5e7eb' }}
@@ -426,6 +384,36 @@ export default function ProfilePage() {
               )
             )}
           </div>
+
+          {children.length > 1 && (
+            <div className="mb-5 pb-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#6b7280' }}>
+                {t.profile_active_child_heading}
+              </p>
+              <p className="text-xs text-gray-400 mb-3">
+                {t.profile_active_child_hint}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {children.map((child, i) => {
+                  const active = i === user.activeChildIndex
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => updateActiveChild(i)}
+                      className="px-4 py-2 rounded-full text-sm font-semibold border transition-all"
+                      style={
+                        active
+                          ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
+                          : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
+                      }
+                    >
+                      {child.name}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          )}
 
           {children.length === 0 && !addingChild && (
             <p className="text-sm text-gray-400">
@@ -465,6 +453,24 @@ export default function ProfilePage() {
                           ))}
                         </select>
                       </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.profile_language_heading}</label>
+                        {child.languageChangeUsed ? (
+                          <div>
+                            <span
+                              className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
+                              style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                            >
+                              {LANGUAGE_LABELS[child.language]}
+                            </span>
+                            <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                              {t.profile_language_change_used_note}
+                            </p>
+                          </div>
+                        ) : (
+                          <LanguageCards selected={draftChildLanguage} onSelect={setDraftChildLanguage} />
+                        )}
+                      </div>
                     </div>
                     <div className="flex gap-3">
                       <button
@@ -488,8 +494,20 @@ export default function ProfilePage() {
                 ) : (
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{child.name}</p>
-                      <p className="text-xs text-gray-500 mt-0.5">{t.profile_grade_label.replace('{grade}', String(child.grade))}</p>
+                      <p className="text-sm font-semibold flex items-center gap-2" style={{ color: '#0f1f3d' }}>
+                        {child.name}
+                        {i === user.activeChildIndex && children.length > 1 && (
+                          <span
+                            className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                            style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                          >
+                            {t.profile_active_child_badge}
+                          </span>
+                        )}
+                      </p>
+                      <p className="text-xs text-gray-500 mt-0.5">
+                        {t.profile_grade_label.replace('{grade}', String(child.grade))} · {LANGUAGE_LABELS[child.language]}
+                      </p>
                     </div>
                     <button
                       onClick={() => startEditChild(i)}
@@ -504,13 +522,13 @@ export default function ProfilePage() {
             ))}
           </div>
 
-          {atChildLimit && user.package === 'free' && !addingChild && editingChildIdx === null && (
+          {atChildLimit && (user.package === 'family_pro_2' || user.package === 'family_guided_2') && !addingChild && editingChildIdx === null && (
             <div
               className="mt-4 rounded-xl border p-4"
               style={{ backgroundColor: '#eff6ff', borderColor: '#bfdbfe' }}
             >
               <p className="text-sm text-gray-700 mb-3 leading-relaxed">
-                {t.profile_family_plan_upsell}
+                {t.profile_family_plan_upsell_family2}
               </p>
               <Link
                 href="/pricing"
@@ -550,6 +568,10 @@ export default function ProfilePage() {
                     ))}
                   </select>
                 </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.profile_language_heading}</label>
+                  <LanguageCards selected={newChildLanguage} onSelect={setNewChildLanguage} />
+                </div>
               </div>
               <div className="flex gap-3">
                 <button
@@ -572,6 +594,7 @@ export default function ProfilePage() {
             </div>
           )}
         </div>
+        )}
 
         {/* Referral section */}
         {/* TODO: Re-enable subscription check before launch */}
