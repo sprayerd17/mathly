@@ -171,7 +171,7 @@
   }
 
   /* Wave divider under hero */
-  .wave { position: relative; left: 0; width: 100%; line-height: 0; margin-top: -1px; }
+  .wave { position: absolute; bottom: 0; left: 0; right: 0; width: 100%; line-height: 0; }
 
   /* ── Story / About (navy section) ──────────────────────── */
   .story {
@@ -228,6 +228,20 @@
     font-weight: 600;
     font-size: 0.9rem;
   }
+  .lang-pills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .lang-pill {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 9999px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
 
   /* ── Features ───────────────────────────────────────────── */
   .features { background: var(--panel); }
@@ -274,40 +288,20 @@
   .why-card h3 { color: var(--navy); font-size: 1.05rem; font-weight: 700; margin: 0 0 10px; }
   .why-card p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.6; margin: 0; }
 
-  /* ── Founding member callout ────────────────────────────── */
+  /* ── Launch perks (urgency + referral) ──────────────────── */
   .founding {
     background: linear-gradient(135deg, var(--navy) 0%, #16305c 100%);
     color: #fff;
     text-align: center;
   }
-  .founding .wrap-narrow { }
-  .founding h2 { font-size: 1.85rem; font-weight: 700; margin: 0 0 16px; }
-  .founding p { color: #c3d1ea; line-height: 1.7; margin: 0 0 30px; font-size: 1rem; }
-  .price-cards {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
+  .founding h2 { font-size: 1.7rem; font-weight: 700; margin: 0 0 16px; }
+  .founding p { color: #c3d1ea; line-height: 1.7; margin: 0; font-size: 1rem; }
+  .perk-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.14);
+    margin: 40px auto;
+    max-width: 120px;
   }
-  .price-card {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 16px;
-    padding: 22px 28px;
-    min-width: 190px;
-    text-align: left;
-  }
-  .price-card .plan-name { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #93c5fd; margin-bottom: 10px; }
-  .price-card .plan-price { font-size: 1.6rem; font-weight: 700; color: #fff; }
-  .price-card .plan-price .was { font-size: 0.95rem; font-weight: 500; color: #8098c2; text-decoration: line-through; margin-left: 8px; }
-  .price-card .plan-note { font-size: 0.8rem; color: #a8b8d8; margin-top: 6px; }
-
-  /* ── Final CTA ──────────────────────────────────────────── */
-  .final-cta { background: var(--bg); text-align: center; }
-  .final-cta h2 { color: var(--navy); font-size: 1.9rem; font-weight: 700; margin: 0 0 14px; }
-  .final-cta p.subheading { max-width: 460px; margin-left: auto; margin-right: auto; margin-bottom: 32px; }
-  .final-cta .header-cta { display: inline-flex; padding: 14px 28px; font-size: 1rem; border-radius: 12px; }
 
   /* ── Footer ─────────────────────────────────────────────── */
   footer {
@@ -323,8 +317,6 @@
     h1 { font-size: 2.15rem; }
     .story h2 { font-size: 1.6rem; }
     .feature-grid, .why-grid { grid-template-columns: 1fr; }
-    .price-cards { flex-direction: column; align-items: center; }
-    .price-card { width: 100%; max-width: 280px; }
   }
 
   @media (max-width: 420px) {
@@ -420,7 +412,7 @@
   <!-- ── Grades covered ───────────────────────────────────── -->
   <section class="grades">
     <h2>Grade 4 to Grade 12</h2>
-    <p>Every grade, aligned to the South African CAPS curriculum.</p>
+    <p>Every grade, aligned to the South African CAPS curriculum — available in English and Afrikaans.</p>
     <div class="grade-pills">
       <span class="grade-pill">Grade 4</span>
       <span class="grade-pill">Grade 5</span>
@@ -431,6 +423,10 @@
       <span class="grade-pill">Grade 10</span>
       <span class="grade-pill">Grade 11</span>
       <span class="grade-pill">Grade 12</span>
+    </div>
+    <div class="lang-pills">
+      <span class="lang-pill">English</span>
+      <span class="lang-pill">Afrikaans</span>
     </div>
   </section>
 
@@ -499,35 +495,21 @@
     </div>
   </section>
 
-  <!-- ── Founding member callout ──────────────────────────── -->
+  <!-- ── Launch perks (urgency + referral) ──────────────────── -->
   <section class="founding">
     <div class="wrap-narrow">
-      <h2>Join now, lock in Founding Member pricing</h2>
+      <h2>Secure your spot before we launch</h2>
       <p>
-        As a thank-you for being here before launch, waitlist members will be counted among our
-        Founding Members — locking in a discounted rate for your entire first year.
+        Each plan will be capped at 100 spots when we go live. Join the waitlist and we'll
+        email you the moment Mathly launches, so you can lock in your spot before they're gone.
       </p>
-      <div class="price-cards">
-        <div class="price-card">
-          <div class="plan-name">Pro</div>
-          <div class="plan-price">R29<span class="was">R49</span></div>
-          <div class="plan-note">per month, first year</div>
-        </div>
-        <div class="price-card">
-          <div class="plan-name">Guided</div>
-          <div class="plan-price">R59<span class="was">R99</span></div>
-          <div class="plan-note">per month, first year</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Final CTA ────────────────────────────────────────── -->
-  <section class="final-cta">
-    <div class="wrap-narrow">
-      <h2>Don't miss launch day</h2>
-      <p class="subheading">Leave your email above and we'll let you know the moment Mathly is live.</p>
-      <a href="#join" class="header-cta">Join the waitlist</a>
+      <div class="perk-divider" aria-hidden="true"></div>
+      <h2>Help us grow, and we'll say thank you</h2>
+      <p>
+        Once you're in, you'll be able to refer friends and earn credit toward your own
+        subscription — refer enough, and your year could be free. It's our way of thanking
+        the people who help more South African students find Mathly.
+      </p>
     </div>
   </section>
 
