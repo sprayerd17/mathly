@@ -228,20 +228,41 @@
     font-weight: 600;
     font-size: 0.9rem;
   }
-  .lang-pills {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 22px;
-  }
-  .lang-pill {
-    background: var(--navy);
-    color: #fff;
+  /* ── Languages ──────────────────────────────────────────── */
+  .languages { background: var(--panel); text-align: center; }
+  .section-label-light {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
     border-radius: 9999px;
-    padding: 8px 20px;
-    font-weight: 600;
-    font-size: 0.85rem;
+    margin-bottom: 20px;
+    color: var(--blue);
+    border: 1px solid var(--blue-200);
+    background: var(--blue-50);
   }
+  .languages h2 { color: var(--navy); font-size: 1.85rem; font-weight: 700; margin: 0 0 12px; }
+  .languages > .wrap-narrow > p { color: var(--gray-500); margin: 0 0 36px; line-height: 1.6; }
+  .lang-cards {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .lang-card {
+    flex: 1 1 220px;
+    max-width: 260px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    border-radius: 16px;
+    padding: 26px 24px;
+    text-align: left;
+  }
+  .lang-card-title { color: var(--navy); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+  .lang-card p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.6; margin: 0; }
 
   /* ── Features ───────────────────────────────────────────── */
   .features { background: var(--panel); }
@@ -288,20 +309,20 @@
   .why-card h3 { color: var(--navy); font-size: 1.05rem; font-weight: 700; margin: 0 0 10px; }
   .why-card p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.6; margin: 0; }
 
-  /* ── Launch perks (urgency + referral) ──────────────────── */
+  /* ── Secure your spot (urgency) ─────────────────────────── */
   .founding {
     background: linear-gradient(135deg, var(--navy) 0%, #16305c 100%);
     color: #fff;
     text-align: center;
   }
-  .founding h2 { font-size: 1.7rem; font-weight: 700; margin: 0 0 16px; }
+  .founding h2 { font-size: 1.85rem; font-weight: 700; margin: 0 0 16px; }
   .founding p { color: #c3d1ea; line-height: 1.7; margin: 0; font-size: 1rem; }
-  .perk-divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.14);
-    margin: 40px auto;
-    max-width: 120px;
-  }
+
+  /* ── Referral thank-you ─────────────────────────────────── */
+  .referral { background: var(--blue-50); text-align: center; }
+  .referral-icon { font-size: 2.2rem; margin-bottom: 20px; }
+  .referral h2 { color: var(--navy); font-size: 1.85rem; font-weight: 700; margin: 0 0 16px; }
+  .referral p { color: var(--gray-500); line-height: 1.7; margin: 0; font-size: 1rem; }
 
   /* ── Footer ─────────────────────────────────────────────── */
   footer {
@@ -412,7 +433,7 @@
   <!-- ── Grades covered ───────────────────────────────────── -->
   <section class="grades">
     <h2>Grade 4 to Grade 12</h2>
-    <p>Every grade, aligned to the South African CAPS curriculum — available in English and Afrikaans.</p>
+    <p>Every grade, aligned to the South African CAPS curriculum.</p>
     <div class="grade-pills">
       <span class="grade-pill">Grade 4</span>
       <span class="grade-pill">Grade 5</span>
@@ -424,9 +445,24 @@
       <span class="grade-pill">Grade 11</span>
       <span class="grade-pill">Grade 12</span>
     </div>
-    <div class="lang-pills">
-      <span class="lang-pill">English</span>
-      <span class="lang-pill">Afrikaans</span>
+  </section>
+
+  <!-- ── Languages ────────────────────────────────────────── -->
+  <section class="languages">
+    <div class="wrap-narrow">
+      <span class="section-label-light">Learn your way</span>
+      <h2>Available in English and Afrikaans</h2>
+      <p>Every study guide, worked example, and practice question — in whichever language you think in.</p>
+      <div class="lang-cards">
+        <div class="lang-card">
+          <div class="lang-card-title">English</div>
+          <p>Full study guides and practice questions, in English.</p>
+        </div>
+        <div class="lang-card">
+          <div class="lang-card-title">Afrikaans</div>
+          <p>Volledige studiegidse en oefenvrae, in Afrikaans.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -495,7 +531,7 @@
     </div>
   </section>
 
-  <!-- ── Launch perks (urgency + referral) ──────────────────── -->
+  <!-- ── Secure your spot (urgency) ──────────────────────────── -->
   <section class="founding">
     <div class="wrap-narrow">
       <h2>Secure your spot before we launch</h2>
@@ -503,12 +539,18 @@
         Each plan will be capped at 100 spots when we go live. Join the waitlist and we'll
         email you the moment Mathly launches, so you can lock in your spot before they're gone.
       </p>
-      <div class="perk-divider" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ── Referral thank-you ──────────────────────────────────── -->
+  <section class="referral">
+    <div class="wrap-narrow">
+      <div class="referral-icon" role="img" aria-hidden="true">🤝</div>
       <h2>Help us grow, and we'll say thank you</h2>
       <p>
         Once you're in, you'll be able to refer friends and earn credit toward your own
-        subscription — refer enough, and your year could be free. It's our way of thanking
-        the people who help more South African students find Mathly.
+        subscription — refer enough, and your year could be basically free. It's our way of
+        thanking the people who help more South African students find Mathly.
       </p>
     </div>
   </section>
