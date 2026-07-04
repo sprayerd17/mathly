@@ -15,7 +15,6 @@ const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: '2D Shapes',
   grade: 7,
-  subject: 'Mathematics',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — TRIANGLES: TYPES AND PROPERTIES

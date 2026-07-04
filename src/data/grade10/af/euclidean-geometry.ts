@@ -13,7 +13,6 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Euklidiese Meetkunde',
   grade: 10,
-  subject: 'Mathematics',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — REVISING SIMILARITY AND CONGRUENCE OF TRIANGLES

@@ -239,8 +239,6 @@ export const topicData: TopicData = {
   topicPractice: [
     // ── Q1 Easy ──────────────────────────────────────────────────────────────
     {
-      id: 'q1',
-      number: 1,
       difficulty: 'Easy',
       question: 'Classify 6x+9 as a monomial, binomial or trinomial.',
       checkMode: 'auto',
@@ -250,8 +248,6 @@ export const topicData: TopicData = {
 
     // ── Q2 Easy ──────────────────────────────────────────────────────────────
     {
-      id: 'q2',
-      number: 2,
       difficulty: 'Easy',
       question: 'Identify the coefficient in 7x².',
       checkMode: 'auto',
@@ -261,8 +257,6 @@ export const topicData: TopicData = {
 
     // ── Q3 Medium ─────────────────────────────────────────────────────────────
     {
-      id: 'q3',
-      number: 3,
       difficulty: 'Medium',
       question: 'Sipho says 3x and 3x² are like terms. Is he correct? Explain.',
       checkMode: 'self',
@@ -271,8 +265,6 @@ export const topicData: TopicData = {
 
     // ── Q4 Easy ──────────────────────────────────────────────────────────────
     {
-      id: 'q4',
-      number: 4,
       difficulty: 'Easy',
       question: 'Simplify 8a+5b−3a+2b.',
       checkMode: 'auto',
@@ -282,8 +274,6 @@ export const topicData: TopicData = {
 
     // ── Q5 Medium ─────────────────────────────────────────────────────────────
     {
-      id: 'q5',
-      number: 5,
       difficulty: 'Medium',
       question: 'Multiply 5x(2x−3).',
       checkMode: 'auto',
@@ -294,8 +284,6 @@ export const topicData: TopicData = {
 
     // ── Q6 Hard ──────────────────────────────────────────────────────────────
     {
-      id: 'q6',
-      number: 6,
       difficulty: 'Hard',
       question: 'Lerato simplifies 3(2x+4)−5x and gets x+12. Check her answer.',
       checkMode: 'self',
@@ -304,8 +292,6 @@ export const topicData: TopicData = {
 
     // ── Q7 Easy ──────────────────────────────────────────────────────────────
     {
-      id: 'q7',
-      number: 7,
       difficulty: 'Easy',
       question: 'Divide 12x²÷4x.',
       checkMode: 'auto',
@@ -315,8 +301,6 @@ export const topicData: TopicData = {
 
     // ── Q8 Medium ─────────────────────────────────────────────────────────────
     {
-      id: 'q8',
-      number: 8,
       difficulty: 'Medium',
       question: 'Find the square of 2x³.',
       checkMode: 'auto',
@@ -326,8 +310,6 @@ export const topicData: TopicData = {
 
     // ── Q9 Hard ──────────────────────────────────────────────────────────────
     {
-      id: 'q9',
-      number: 9,
       difficulty: 'Hard',
       question: 'Thabo says the square root of 9x⁴ is 3x². Is he correct? Explain.',
       checkMode: 'self',
@@ -336,8 +318,6 @@ export const topicData: TopicData = {
 
     // ── Q10 Medium ────────────────────────────────────────────────────────────
     {
-      id: 'q10',
-      number: 10,
       difficulty: 'Medium',
       question: 'Evaluate 3x²−2x+1 when x=3.',
       checkMode: 'auto',
@@ -347,8 +327,6 @@ export const topicData: TopicData = {
 
     // ── Q11 Hard ─────────────────────────────────────────────────────────────
     {
-      id: 'q11',
-      number: 11,
       difficulty: 'Hard',
       question: 'Amahle says (−2x)² and −2x² are equal. Is she correct? Explain.',
       checkMode: 'self',
@@ -357,8 +335,6 @@ export const topicData: TopicData = {
 
     // ── Q12 Medium ────────────────────────────────────────────────────────────
     {
-      id: 'q12',
-      number: 12,
       difficulty: 'Medium',
       question: 'Simplify 4x(x+3)−2x².',
       checkMode: 'auto',
@@ -368,8 +344,6 @@ export const topicData: TopicData = {
 
     // ── Q13 Hard ─────────────────────────────────────────────────────────────
     {
-      id: 'q13',
-      number: 13,
       difficulty: 'Hard',
       question: 'Find the cube root of 27x⁶.',
       checkMode: 'auto',
@@ -379,8 +353,6 @@ export const topicData: TopicData = {
 
     // ── Q14 Hard ─────────────────────────────────────────────────────────────
     {
-      id: 'q14',
-      number: 14,
       difficulty: 'Hard',
       question: 'Sipho evaluates x²+4x−5 when x=−2 and gets −9. Check his answer.',
       checkMode: 'self',
@@ -389,8 +361,6 @@ export const topicData: TopicData = {
 
     // ── Q15 Hard ─────────────────────────────────────────────────────────────
     {
-      id: 'q15',
-      number: 15,
       difficulty: 'Hard',
       question: 'Lerato says dividing −18x³ by −6x gives 3x². Is she correct? Explain.',
       checkMode: 'self',

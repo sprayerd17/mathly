@@ -12,7 +12,6 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Euclidean Geometry',
   grade: 11,
-  subject: 'Mathematics',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — NECESSARY AND SUFFICIENT CONDITIONS FOR SIMILAR POLYGONS

@@ -17,7 +17,6 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Analitiese Meetkunde',
   grade: 12,
-  subject: 'Wiskunde',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — REVISION: DISTANCE, GRADIENT AND MIDPOINT FORMULAE

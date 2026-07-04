@@ -13,7 +13,6 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Euklidiese Meetkunde — Sirkels',
   grade: 12,
-  subject: 'Mathematics',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — TERMINOLOGY AND REVISION OF CIRCLE PROPERTIES

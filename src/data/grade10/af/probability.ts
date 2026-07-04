@@ -11,7 +11,6 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Waarskynlikheid',
   grade: 10,
-  subject: 'Wiskunde',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — RELATIVE FREQUENCY VS THEORETICAL PROBABILITY

@@ -494,7 +494,6 @@ export const topicData: TopicData = {
   topicPractice: [
     // ── Q1 Easy — reflection over a vertical line ────────────────────────────
     {
-      number: 1,
       difficulty: 'Easy',
       question: 'A point at (2, 4) is reflected over the line x = 6. Find the image.',
       checkMode: 'auto',
@@ -505,7 +504,6 @@ export const topicData: TopicData = {
 
     // ── Q2 Medium — reflection over a horizontal line ────────────────────────
     {
-      number: 2,
       difficulty: 'Medium',
       question: 'A point at (5, 9) is reflected over the line y = 4. Find the image.',
       checkMode: 'auto',
@@ -516,7 +514,6 @@ export const topicData: TopicData = {
 
     // ── Q3 Hard — evaluate a claim about reflection ───────────────────────────
     {
-      number: 3,
       difficulty: 'Hard',
       question: 'Sipho says reflecting a point changes its distance from the mirror line. Is he correct? Explain.',
       checkMode: 'self',
@@ -525,7 +522,6 @@ export const topicData: TopicData = {
 
     // ── Q4 Easy — basic translation ───────────────────────────────────────────
     {
-      number: 4,
       difficulty: 'Easy',
       question: 'A point at (3, 5) is translated by (2, 4). Find the new position.',
       checkMode: 'auto',
@@ -536,7 +532,6 @@ export const topicData: TopicData = {
 
     // ── Q5 Medium — translation with negative components ─────────────────────
     {
-      number: 5,
       difficulty: 'Medium',
       question: 'A point at (−3, 6) is translated by (5, −2). Find the new position.',
       checkMode: 'auto',
@@ -547,7 +542,6 @@ export const topicData: TopicData = {
 
     // ── Q6 Hard — combining two translations ──────────────────────────────────
     {
-      number: 6,
       difficulty: 'Hard',
       question: 'Lerato translates a shape by (4, −3) then again by (−1, 5). What is the net translation?',
       checkMode: 'self',
@@ -556,7 +550,6 @@ export const topicData: TopicData = {
 
     // ── Q7 Easy — quarter turn ────────────────────────────────────────────────
     {
-      number: 7,
       difficulty: 'Easy',
       question: 'How many degrees is a quarter turn?',
       checkMode: 'auto',
@@ -567,7 +560,6 @@ export const topicData: TopicData = {
 
     // ── Q8 Medium — 90° clockwise rotation ────────────────────────────────────
     {
-      number: 8,
       difficulty: 'Medium',
       question: 'A point at (4, 1) is rotated 90° clockwise around the origin using (x, y) → (y, −x). Find the new position.',
       checkMode: 'auto',
@@ -578,7 +570,6 @@ export const topicData: TopicData = {
 
     // ── Q9 Hard — 180° rotation with explanation ──────────────────────────────
     {
-      number: 9,
       difficulty: 'Hard',
       question: 'Thabo rotates a point at (−2, 3) by 180° around the origin. Find the new position and explain the rule used.',
       checkMode: 'self',
@@ -587,7 +578,6 @@ export const topicData: TopicData = {
 
     // ── Q10 Medium — 180° rotation ────────────────────────────────────────────
     {
-      number: 10,
       difficulty: 'Medium',
       question: 'A point at (6, −4) is rotated 180° around the origin. Find the new position.',
       checkMode: 'auto',
@@ -598,7 +588,6 @@ export const topicData: TopicData = {
 
     // ── Q11 Hard — evaluate a claim about rotation ────────────────────────────
     {
-      number: 11,
       difficulty: 'Hard',
       question: 'Amahle says rotation always changes the size of a shape. Is she correct? Explain.',
       checkMode: 'self',
@@ -607,7 +596,6 @@ export const topicData: TopicData = {
 
     // ── Q12 Hard — combined translation and reflection ────────────────────────
     {
-      number: 12,
       difficulty: 'Hard',
       question: "A triangle's vertex at (1, 2) is translated by (3, 1) then reflected over the line x = 8. Find the final position.",
       checkMode: 'self',

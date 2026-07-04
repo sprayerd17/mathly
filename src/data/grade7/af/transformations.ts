@@ -494,7 +494,6 @@ export const topicData: TopicData = {
   topicPractice: [
     // ── Q1 Easy — reflection over a vertical line ────────────────────────────
     {
-      number: 1,
       difficulty: 'Easy',
       question: 'ʼn Punt by (2, 4) word oor die lyn x = 6 gereflekteer. Vind die beeld.',
       checkMode: 'auto',
@@ -505,7 +504,6 @@ export const topicData: TopicData = {
 
     // ── Q2 Medium — reflection over a horizontal line ────────────────────────
     {
-      number: 2,
       difficulty: 'Medium',
       question: 'ʼn Punt by (5, 9) word oor die lyn y = 4 gereflekteer. Vind die beeld.',
       checkMode: 'auto',
@@ -516,7 +514,6 @@ export const topicData: TopicData = {
 
     // ── Q3 Hard — evaluate a claim about reflection ───────────────────────────
     {
-      number: 3,
       difficulty: 'Hard',
       question: 'Sipho sê die reflekteer van ʼn punt verander sy afstand vanaf die spieëllyn. Is hy korrek? Verduidelik.',
       checkMode: 'self',
@@ -525,7 +522,6 @@ export const topicData: TopicData = {
 
     // ── Q4 Easy — basic translation ───────────────────────────────────────────
     {
-      number: 4,
       difficulty: 'Easy',
       question: 'ʼn Punt by (3, 5) word met (2, 4) getransleer. Vind die nuwe posisie.',
       checkMode: 'auto',
@@ -536,7 +532,6 @@ export const topicData: TopicData = {
 
     // ── Q5 Medium — translation with negative components ─────────────────────
     {
-      number: 5,
       difficulty: 'Medium',
       question: 'ʼn Punt by (−3, 6) word met (5, −2) getransleer. Vind die nuwe posisie.',
       checkMode: 'auto',
@@ -547,7 +542,6 @@ export const topicData: TopicData = {
 
     // ── Q6 Hard — combining two translations ──────────────────────────────────
     {
-      number: 6,
       difficulty: 'Hard',
       question: 'Lerato transleer ʼn vorm met (4, −3) en dan weer met (−1, 5). Wat is die netto translasie?',
       checkMode: 'self',
@@ -556,7 +550,6 @@ export const topicData: TopicData = {
 
     // ── Q7 Easy — quarter turn ────────────────────────────────────────────────
     {
-      number: 7,
       difficulty: 'Easy',
       question: 'Hoeveel grade is ʼn kwartdraai?',
       checkMode: 'auto',
@@ -567,7 +560,6 @@ export const topicData: TopicData = {
 
     // ── Q8 Medium — 90° clockwise rotation ────────────────────────────────────
     {
-      number: 8,
       difficulty: 'Medium',
       question: 'ʼn Punt by (4, 1) word 90° kloksgewys om die oorsprong geroteer met (x, y) → (y, −x). Vind die nuwe posisie.',
       checkMode: 'auto',
@@ -578,7 +570,6 @@ export const topicData: TopicData = {
 
     // ── Q9 Hard — 180° rotation with explanation ──────────────────────────────
     {
-      number: 9,
       difficulty: 'Hard',
       question: 'Thabo roteer ʼn punt by (−2, 3) met 180° om die oorsprong. Vind die nuwe posisie en verduidelik die reël wat gebruik is.',
       checkMode: 'self',
@@ -587,7 +578,6 @@ export const topicData: TopicData = {
 
     // ── Q10 Medium — 180° rotation ────────────────────────────────────────────
     {
-      number: 10,
       difficulty: 'Medium',
       question: 'ʼn Punt by (6, −4) word 180° om die oorsprong geroteer. Vind die nuwe posisie.',
       checkMode: 'auto',
@@ -598,7 +588,6 @@ export const topicData: TopicData = {
 
     // ── Q11 Hard — evaluate a claim about rotation ────────────────────────────
     {
-      number: 11,
       difficulty: 'Hard',
       question: 'Amahle sê rotasie verander altyd die grootte van ʼn vorm. Is sy korrek? Verduidelik.',
       checkMode: 'self',
@@ -607,7 +596,6 @@ export const topicData: TopicData = {
 
     // ── Q12 Hard — combined translation and reflection ────────────────────────
     {
-      number: 12,
       difficulty: 'Hard',
       question: "ʼn Driehoek se hoekpunt by (1, 2) word met (3, 1) getransleer en dan oor die lyn x = 8 gereflekteer. Vind die finale posisie.",
       checkMode: 'self',

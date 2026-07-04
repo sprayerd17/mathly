@@ -622,8 +622,8 @@ function OpenQuestionCard({
               <div>
                 <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
                   <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
-                  {question.answer.includes('<') ? (
-                    <p className="text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.answer }} />
+                  {(question.answer ?? '').includes('<') ? (
+                    <p className="text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.answer ?? '' }} />
                   ) : (
                     <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{question.answer}</p>
                   )}
@@ -843,7 +843,7 @@ function RealStudyGuide({ data }: { data: TopicData }) {
 
           {(section.diagramPlaceholder || section.diagramSvg) && (
             <div style={{ marginTop: '16px' }}>
-              <DiagramPlaceholderCard label={section.diagramPlaceholder} svg={section.diagramSvg} />
+              <DiagramPlaceholderCard label={section.diagramPlaceholder ?? ''} svg={section.diagramSvg} />
             </div>
           )}
           {section.videoPlaceholder && (

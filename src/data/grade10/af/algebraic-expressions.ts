@@ -15,7 +15,6 @@ const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Algebraïese Uitdrukkings',
   grade: 10,
-  subject: 'Mathematics',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — MULTIPLYING A BINOMIAL BY A TRINOMIAL

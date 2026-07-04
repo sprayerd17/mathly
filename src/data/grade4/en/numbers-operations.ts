@@ -37,7 +37,10 @@ export type QuestionPart = {
 export type OpenQuestion = {
   difficulty: 'Easy' | 'Easy-Medium' | 'Medium' | 'Medium-Hard' | 'Hard'
   question: string
-  answer: string
+  // Required for checkMode 'self' (shown directly to the student to self-mark
+  // against); 'auto' mode grades against correctAnswer/correctAnswers instead
+  // and never renders this field, so it doesn't need to be set there.
+  answer?: string
   checkMode: 'auto' | 'self'
   correctAnswer?: string
   correctAnswers?: string[]

@@ -11,7 +11,6 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Construction of Geometric Figures',
   grade: 9,
-  subject: 'Mathematics',
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 1 — THE EXTERIOR ANGLE THEOREM
