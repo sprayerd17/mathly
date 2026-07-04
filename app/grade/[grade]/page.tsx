@@ -934,6 +934,12 @@ const grade11Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'mensuration',
+    name: 'Mensuration',
+    description: 'Apply the effect of a constant factor k on volume and surface area, solve problems involving complex combined solids with added or removed pieces, and tackle real-world capacity, painting and cost problems.',
+    free: false,
+  },
+  {
     slug: 'probability',
     name: 'Probability',
     description: 'Distinguish between independent and dependent events, apply the product rule, analyse Venn diagrams, contingency tables and tree diagrams, and use the complementary and addition rules to solve multi-step probability problems.',
