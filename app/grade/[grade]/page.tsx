@@ -928,6 +928,12 @@ const grade11Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'euclidean-geometry-circles',
+    name: 'Euclidean Geometry — Circles',
+    description: 'Learn circle terminology, prove and apply the chord-perpendicularity theorem, the angle at the centre theorem, angles in the same segment, equal chords, and the angle in a semicircle theorem with its converse.',
+    free: false,
+  },
+  {
     slug: 'probability',
     name: 'Probability',
     description: 'Distinguish between independent and dependent events, apply the product rule, analyse Venn diagrams, contingency tables and tree diagrams, and use the complementary and addition rules to solve multi-step probability problems.',
