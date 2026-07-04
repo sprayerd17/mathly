@@ -8,7 +8,6 @@ const VALID_TARGETS: PackageValue[] = [
 ]
 
 export async function POST(req: NextRequest) {
-  console.log('[diagnostic] process.version =', process.version)
   const { idToken, targetPackage, isFounding } = await req.json() as {
     idToken?: string
     targetPackage?: PackageValue
