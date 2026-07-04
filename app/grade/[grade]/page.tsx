@@ -478,6 +478,12 @@ const grade7Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'properties-of-numbers',
+    name: 'Properties of Numbers',
+    description: 'Master comprehensive divisibility rules, find the HCF and LCM of three numbers using prime factorisation, and apply HCF and LCM to fractions and real-world problems.',
+    free: false,
+  },
+  {
     slug: 'exponents',
     name: 'Exponents',
     description: 'Explore square numbers, cube numbers, square roots and cube roots, write repeated multiplication using exponential notation and apply the zero and first power rules.',
@@ -544,6 +550,12 @@ const grade7Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'construction-geometric-figures',
+    name: 'Construction of Geometric Figures',
+    description: 'Measure and draw line segments and angles accurately with a ruler and protractor, construct perpendicular and parallel lines, and construct triangles given three side lengths.',
+    free: false,
+  },
+  {
     slug: 'transformations',
     name: 'Transformations',
     description: 'Apply reflection, translation and rotation to points and shapes on a coordinate grid, describe image positions using coordinate rules, and solve multi-step transformation problems.',
@@ -575,6 +587,12 @@ const grade8Topics: Topic[] = [
     name: 'Whole Numbers',
     description: 'Apply the commutative, associative and distributive properties, explore the division property of zero, find prime factors, HCF and LCM, and solve financial problems involving ratio, profit, VAT, simple interest, hire purchase and exchange rates.',
     free: true,
+  },
+  {
+    slug: 'real-number-system',
+    name: 'Numbers and the Real Number System',
+    description: 'Meet the natural numbers, whole numbers, integers and rational numbers as nested sets, discover irrational numbers for the first time, and practise classifying given numbers into the correct set or sets.',
+    free: false,
   },
   {
     slug: 'exponents',

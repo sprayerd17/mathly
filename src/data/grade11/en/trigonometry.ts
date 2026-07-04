@@ -532,7 +532,177 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 6 — THE SINE, COSINE AND AREA RULES
+    // SECTION 6 — DERIVING THE SINE, COSINE AND AREA RULES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'proving-sine-cosine-area-rules',
+      title: 'Deriving the Sine, Cosine and Area Rules',
+      icon: '🧩',
+      explanation:
+        `<p style="margin-bottom:16px;">Before you can confidently <strong>apply</strong> the Sine Rule, Cosine Rule and Area Rule, CAPS requires that you can also <strong>derive (prove)</strong> them. Every derivation below starts the same way — by drawing a <strong>height (altitude)</strong> from one vertex of the triangle to the opposite side, which splits the triangle into two right-angled triangles. Once we have right-angled triangles, we can use ordinary right-angled trigonometry (SOH-CAHTOA) and the Theorem of Pythagoras to build each rule from scratch. We use the usual labelling convention throughout: side a is opposite angle A, side b is opposite angle B, and side c is opposite angle C.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('known sides/angles')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('derived expression (e.g. the height h)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('final proven rule')}</span>` +
+        `</div>` +
+
+        // ── Derivation 1: Area Rule ──────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">1. Deriving the Area Rule — Area = ½ab sinC</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Start with the basic area formula</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">In triangle ABC, drop a ${or('height (altitude) h')} from vertex A down to side BC (side ${bl('a')}), meeting it at point D. Since h is perpendicular to BC, the ordinary formula Area = ½ × base × height applies, using BC = ${bl('a')} as the base: Area = ½ × ${bl('a')} × ${or('h')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Express h using right-angled trigonometry</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Triangle ADC is right-angled at D, with hypotenuse AC = ${bl('b')} and angle C at vertex C. By SOH: sinC = opposite/hypotenuse = ${or('h')} / ${bl('b')}, so ${or('h = b sinC')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Substitute to complete the proof</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Substitute ${or('h = b sinC')} into Area = ½ × ${bl('a')} × ${or('h')}: Area = ½ × ${bl('a')} × ${or('b sinC')} = ${gr('½ab sinC')}. By dropping the height from a different vertex instead, the exact same reasoning gives Area = ${gr('½bc sinA')} = ${gr('½ac sinB')} — all three are equal, so use whichever matches the sides/angle you know.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Derivation 2: Sine Rule ──────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">2. Deriving the Sine Rule — a/sinA = b/sinB = c/sinC</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Write the same height two different ways</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Using the same diagram as above — height ${or('h')} dropped from A onto BC, foot at D — look at <strong>both</strong> right-angled triangles it creates. From triangle ADC (hypotenuse ${bl('b')}, angle C): ${or('h = b sinC')}. From triangle ADB (hypotenuse ${bl('c')}, angle B): ${or('h = c sinB')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Set the two expressions for h equal</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Since both expressions equal the same height: ${or('b sinC = c sinB')}. Divide both sides by (${or('sinB')} · ${or('sinC')}): ${or('b / sinB')} = ${or('c / sinC')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Extend the pattern to all three sides</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">We have shown ${gr('b/sinB = c/sinC')}. Dropping a height from a different vertex (e.g. from B onto AC) links a and c in exactly the same way, giving ${gr('a/sinA = c/sinC')}. Combining both results proves the full Sine Rule: ${gr('a/sinA = b/sinB = c/sinC')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Derivation 3: Cosine Rule ─────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">3. Deriving the Cosine Rule — a² = b² + c² − 2bc cosA</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Drop a height and label the split base</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">In triangle ABC, drop a ${or('height h')} from vertex B onto side AC (side ${bl('b')}), meeting it at D. This splits side ${bl('b')} into two segments: AD and DC. In right triangle ABD (hypotenuse AB = ${bl('c')}, angle A at vertex A): cosA = adjacent/hypotenuse = AD/${bl('c')}, so ${or('AD = c cosA')}. It follows that ${or('DC = b − c cosA')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Apply Pythagoras to both right triangles</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Triangle ABD is right-angled at D: ${or('AD² + h² = c²')}, so ${or('h² = c² − (c cosA)²')}.<br>Triangle BDC is right-angled at D, with hypotenuse BC = ${bl('a')}: ${or('DC² + h² = a²')}, so ${or('h² = a² − (b − c cosA)²')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Set the two expressions for h² equal and simplify</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Both right triangles share the same height, so: ${or('c² − (c cosA)²')} = ${or('a² − (b − c cosA)²')}.<br>Expand the bracket on the right: ${or('a² − [b² − 2bc cosA + (c cosA)²]')} = ${or('a² − b² + 2bc cosA − (c cosA)²')}.<br>The (c cosA)² terms appear on both sides and cancel, leaving: ${or('c² = a² − b² + 2bc cosA')}.<br>Rearrange to isolate a²: ${gr('a² = b² + c² − 2bc cosA')} ✓</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Note on obtuse triangles</p>` +
+        `<p style="margin:0;color:#1e3a8a;">All three derivations above assume an <strong>acute-angled</strong> triangle, so the foot of the height falls neatly inside the opposite side. If the triangle is obtuse, the same three rules still hold — the reasoning is identical, but it uses a <strong>supplementary angle</strong> (180° − angle) where the foot of the height falls outside the triangle. You do not need to reproduce the obtuse case for CAPS — just remember the rules themselves are unaffected.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'In triangle ABC, a = 6 cm, b = 9 cm and the included angle C = 70°. Use the derivation method (not the Area Rule formula directly) to find the height h dropped from vertex A onto side BC, and hence find the area of the triangle.',
+          answer: `h ≈ ${gr('8.46 cm')}; Area ≈ ${gr('25.37 cm²')}`,
+          steps: [
+            `Identify what is known: ${bl('a = 6 cm')}, ${bl('b = 9 cm')}, ${bl('C = 70°')} (two sides and the included angle).`,
+            `Drop the height ${or('h')} from vertex A onto side BC, meeting it at D. Triangle ADC is right-angled at D, with hypotenuse AC = ${bl('b = 9 cm')} and angle C = ${bl('70°')} at vertex C.`,
+            `By SOH: sinC = h / ${bl('b')}, so ${or('h = b sinC')} = ${bl('9')} × sin(${bl('70°')}) ≈ 9 × 0.9397 ≈ ${gr('8.46 cm')} ✓`,
+            `Now apply Area = ½ × base × height, using BC = ${bl('a = 6 cm')} as the base: Area = ½ × ${bl('6')} × ${gr('8.46')} ≈ ${gr('25.37 cm²')} ✓`,
+            `Notice this matches the Area Rule formula directly: ½ab sinC = ½ × 6 × 9 × sin70° ≈ 25.37 cm² — the derivation method and the formula agree.`,
+          ],
+        },
+        {
+          question: 'In triangle ABC, A = 40°, C = 75° and a = 10 cm. Use the sine rule derivation method to find the height h dropped from vertex B onto side AC, and hence find side c.',
+          answer: `h ≈ ${gr('9.66 cm')}; c ≈ ${gr('15.03 cm')}`,
+          steps: [
+            `Identify what is known: ${bl('A = 40°')}, ${bl('C = 75°')}, ${bl('a = 10 cm')}. First find B = 180° − 40° − 75° = 65°.`,
+            `Drop the height ${or('h')} from vertex B onto side AC, meeting it at D. Triangle BDC is right-angled at D, with hypotenuse BC = ${bl('a = 10 cm')} and angle C = ${bl('75°')} at vertex C.`,
+            `By SOH: sinC = h / ${bl('a')}, so ${or('h = a sinC')} = ${bl('10')} × sin(${bl('75°')}) ≈ 10 × 0.9659 ≈ ${gr('9.66 cm')} ✓`,
+            `Now look at the other right triangle, ABD, right-angled at D with hypotenuse AB = ${gr('c')} and angle A = ${bl('40°')} at vertex A: sinA = h / c, so ${or('h = c sinA')}.`,
+            `Set the two expressions for h equal: ${bl('a sinC')} = ${gr('c sinA')}, so c = (${bl('a')} × sin${bl('C')}) / sin${bl('A')} = (${bl('10')} × sin${bl('75°')}) / sin${bl('40°')} ≈ 9.659 / 0.6428 ≈ ${gr('15.03 cm')} ✓`,
+            `This is exactly the Sine Rule in action: a/sinA = c/sinC.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'In triangle ABC, a height h is dropped from vertex A onto side BC, meeting it at D. Triangle ADC is right-angled at D, with AC = 12 cm and angle C = 35°. Use right-angled trigonometry to find h.',
+          answer: 'h = AC × sinC = 12 × sin35° ≈ 12 × 0.5736 ≈ 6.88 cm',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Starting from Area = ½ × base × height, derive the formula Area = ½bc sinA for triangle ABC (dropping the height from vertex C onto side AB). Show every step.',
+          answer: 'Step 1: Drop height h from C onto AB (side c), foot at D. Area = ½ × base × height = ½ × c × h.\nStep 2: Triangle ADC is right-angled at D with hypotenuse AC = b and angle A at vertex A. sinA = h/b, so h = b sinA.\nStep 3: Substitute: Area = ½ × c × b sinA = ½bc sinA ✓',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Using the same diagram as the Cosine Rule derivation (height h from B onto AC, foot D, with AD = c cosA and DC = b − c cosA), a learner instead starts from h² = a² − (b − c cosA)² and h² = c² − (c cosA)². Show all algebraic steps to prove that a² = b² + c² − 2bc cosA.',
+          answer: 'Set the two expressions for h² equal:\nc² − (c cosA)² = a² − (b − c cosA)²\n\nExpand the bracket on the right:\nc² − (c cosA)² = a² − [b² − 2bc cosA + (c cosA)²]\nc² − (c cosA)² = a² − b² + 2bc cosA − (c cosA)²\n\nThe (c cosA)² terms cancel from both sides:\nc² = a² − b² + 2bc cosA\n\nRearrange to isolate a²:\na² = b² + c² − 2bc cosA ✓',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="A single acute triangle ABC with a height h dropped from vertex A onto side BC, foot labelled D, splitting the triangle into two right-angled triangles — sides a, b, c and angles A, B, C labelled in blue, the height h and segment expressions (like c cosA) labelled in orange, and the final derived rules (Area = ½ab sinC, a/sinA = b/sinB, a² = b² + c² − 2bc cosA) shown in green" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video deriving the Area Rule, Sine Rule and Cosine Rule from first principles, starting with a single height dropped in a triangle and showing how right-angled trigonometry and the Theorem of Pythagoras build each rule step by step" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 7 — THE SINE, COSINE AND AREA RULES (APPLYING THEM)
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sine-cosine-area-rules',
@@ -659,7 +829,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 7 — SOLVING 2D PROBLEMS USING TRIGONOMETRIC MODELS
+    // SECTION 8 — SOLVING 2D PROBLEMS USING TRIGONOMETRIC MODELS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: '2d-trig-models',
@@ -937,7 +1107,26 @@ export const topicData: TopicData = {
       explanation: 'Area = ½ × a × b × sinC = ½ × 8 × 11 × sin45° = ½ × 88 × (√2/2) ≈ 31.11 cm² ✓',
     },
 
-    // ── Q18 Hard — intersection of crossing ropes ─────────────────────────────
+    // ── Q18 Medium — deriving the height h in the Area Rule proof ────────────
+    {
+      difficulty: 'Medium',
+      question: 'In triangle ABC, a height h is dropped from vertex A onto side BC, meeting it at D. Triangle ADC is right-angled at D, with AC = 10 cm and angle C = 42°. Derive an expression for h and calculate its value.',
+      answer: '6.69 cm',
+      checkMode: 'auto',
+      correctAnswer: '6.69cm',
+      correctAnswers: ['6.69cm', '6.69 cm', '≈6.69cm', '≈ 6.69 cm', '6.7cm'],
+      explanation: 'In right triangle ADC: sinC = h/AC, so h = AC × sinC = 10 × sin42° ≈ 10 × 0.6691 ≈ 6.69 cm ✓',
+    },
+
+    // ── Q19 Hard — full cosine rule derivation ────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Starting from h² = c² − (c cosA)² and h² = a² − (b − c cosA)², show all algebraic steps to derive a² = b² + c² − 2bc cosA.',
+      answer: 'Set the two expressions equal: c² − (c cosA)² = a² − (b − c cosA)².\nExpand the right side: a² − [b² − 2bc cosA + (c cosA)²] = a² − b² + 2bc cosA − (c cosA)².\nThe (c cosA)² terms cancel from both sides, leaving c² = a² − b² + 2bc cosA.\nRearrange to isolate a²: a² = b² + c² − 2bc cosA ✓',
+      checkMode: 'self',
+    },
+
+    // ── Q20 Hard — intersection of crossing ropes ─────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Two flagpoles 20 m apart have heights 8 m and 12 m. Ropes connect the top of each to the foot of the other. Find the height of their intersection above the ground.',
@@ -945,7 +1134,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q19 Hard — surveyor two-equation setup ────────────────────────────────
+    // ── Q21 Hard — surveyor two-equation setup ────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'A surveyor measures the angle of elevation to a tower as 20° from point A, then walks 40 m closer to point B and measures 35°. Set up the two equations needed to solve for the tower\'s height, without solving fully.',
@@ -953,7 +1142,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q20 Hard — triangular field area and third side ───────────────────────
+    // ── Q22 Hard — triangular field area and third side ───────────────────────
     {
       difficulty: 'Hard',
       question: 'A triangular field has two sides of 35 m and 50 m with an included angle of 65°. Find the area of the field and the length of the third side.',
@@ -963,7 +1152,7 @@ export const topicData: TopicData = {
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 22,
     messages: [
       { minPercent: 100, message: 'Outstanding! You have mastered trigonometry.' },
       { minPercent: 75, message: 'Great work!' },
@@ -973,10 +1162,10 @@ export const topicData: TopicData = {
   },
 
   scoreMessages: [
-    { minScore: 18, message: 'Outstanding! A perfect score — you have completely mastered Grade 11 Trigonometry. Keep up the excellent work!' },
-    { minScore: 14, message: 'Excellent work! You have a very strong grasp of trigonometry. Review any missed parts and you will have it perfect.' },
-    { minScore: 10, message: 'Well done! You understand most of the content. Go back to the sections where you dropped marks and give it another go.' },
-    { minScore: 5, message: 'Good effort! Work back through the study guide and worked examples for each section, then try again.' },
+    { minScore: 20, message: 'Outstanding! A perfect score — you have completely mastered Grade 11 Trigonometry. Keep up the excellent work!' },
+    { minScore: 15, message: 'Excellent work! You have a very strong grasp of trigonometry. Review any missed parts and you will have it perfect.' },
+    { minScore: 11, message: 'Well done! You understand most of the content. Go back to the sections where you dropped marks and give it another go.' },
+    { minScore: 6, message: 'Good effort! Work back through the study guide and worked examples for each section, then try again.' },
     { minScore: 0, message: "Don't give up — trigonometry takes practice! Revisit the explanations and worked examples section by section, then try again." },
   ],
 }

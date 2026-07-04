@@ -331,10 +331,210 @@ export const topicData: TopicData = {
     },
   ],
 
+  topicPractice: [
+    // ── Q1 Easy — factorisation, simple trinomial ─────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'Los op vir x: x² − 9x + 20 = 0',
+      answer: 'x=4 of x=5',
+      checkMode: 'auto',
+      correctAnswers: ['x=4 of x=5', 'x=5 of x=4'],
+      explanation: 'Vind twee getalle wat vermenigvuldig tot 20 en optel tot −9: −4 en −5. Dus (x−4)(x−5)=0, wat x=4 of x=5 gee.',
+    },
+
+    // ── Q2 Easy — factorisation with negative constant ────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'Los op vir x: x² + 2x − 15 = 0',
+      answer: 'x=-5 of x=3',
+      checkMode: 'auto',
+      correctAnswers: ['x=-5 of x=3', 'x=3 of x=-5'],
+      explanation: 'Vind twee getalle wat vermenigvuldig tot −15 en optel tot 2: 5 en −3. Dus (x+5)(x−3)=0, wat x=−5 of x=3 gee.',
+    },
+
+    // ── Q3 Medium — factorisation with a≠1 (a×c method) ───────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Los op vir x: 2x² − x − 6 = 0',
+      answer: 'x=-3/2 of x=2',
+      checkMode: 'auto',
+      correctAnswers: ['x=-3/2 of x=2', 'x=2 of x=-3/2', 'x=-1.5 of x=2', 'x=2 of x=-1.5'],
+      explanation: 'a×c = 2×(−6) = −12. Vind twee getalle wat vermenigvuldig tot −12 en optel tot −1: −4 en 3. Splits: 2x²−4x+3x−6=0 → 2x(x−2)+3(x−2)=0 → (2x+3)(x−2)=0, wat x=−3/2 of x=2 gee.',
+    },
+
+    // ── Q4 Medium — rearrange before factorising ──────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Los op vir x: x² = 7x − 12',
+      answer: 'x=3 of x=4',
+      checkMode: 'auto',
+      correctAnswers: ['x=3 of x=4', 'x=4 of x=3'],
+      explanation: 'Herrangskik na x²−7x+12=0. Vind twee getalle wat vermenigvuldig tot 12 en optel tot −7: −3 en −4. Dus (x−3)(x−4)=0, wat x=3 of x=4 gee.',
+    },
+
+    // ── Q5 Medium — factorisation with fractional root ────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Los op vir x: 3x² + 5x − 2 = 0',
+      answer: 'x=1/3 of x=-2',
+      checkMode: 'auto',
+      correctAnswers: ['x=1/3 of x=-2', 'x=-2 of x=1/3'],
+      explanation: 'a×c = 3×(−2) = −6. Vind twee getalle wat vermenigvuldig tot −6 en optel tot 5: 6 en −1. Splits: 3x²+6x−x−2=0 → 3x(x+2)−1(x+2)=0 → (3x−1)(x+2)=0, wat x=1/3 of x=−2 gee.',
+    },
+
+    // ── Q6 Medium — quadratic formula, irrational roots ───────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Gebruik die kwadratiese formule om vir x op te los (korrek tot 2 desimale plekke): x² + 4x − 7 = 0',
+      answer: 'x≈1.32 of x≈-5.32',
+      checkMode: 'auto',
+      correctAnswers: ['x≈1.32 of x≈-5.32', 'x≈-5.32 of x≈1.32', 'x=1.32 of x=-5.32'],
+      explanation: 'a=1, b=4, c=−7. Diskriminant = 4²−4(1)(−7) = 16+28 = 44. x = (−4±√44)/2 = −2±√11. Dus x = −2+√11 ≈ 1,32 of x = −2−√11 ≈ −5,32.',
+    },
+
+    // ── Q7 Medium — quadratic formula, irrational roots (leave in surd form) ──
+    {
+      difficulty: 'Medium',
+      question: 'Los op vir x met die kwadratiese formule, en los jou antwoord in eenvoudigste wortelvorm: 2x² − 3x − 4 = 0',
+      answer: 'x=(3±√41)/4',
+      checkMode: 'self',
+    },
+
+    // ── Q8 Hard — discriminant shows no real solutions ────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Toon dat x² + 2x + 5 = 0 geen reële oplossings het nie.',
+      answer: 'Diskriminant = b²−4ac = 2²−4(1)(5) = 4−20 = −16. Aangesien die diskriminant negatief is, is die vierkantswortel van ʼn negatiewe getal nie ʼn reële getal nie, dus het hierdie vergelyking geen reële oplossings nie.',
+      checkMode: 'self',
+    },
+
+    // ── Q9 Hard — quadratic formula, irrational roots ─────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Los op vir x met die kwadratiese formule, en los jou antwoord in eenvoudigste wortelvorm: 3x² − 2x − 2 = 0',
+      answer: 'x=(1±√7)/3',
+      checkMode: 'self',
+    },
+
+    // ── Q10 Medium — discriminant shows equal roots ───────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Gebruik die diskriminant om te toon dat x² − 6x + 9 = 0 twee gelyke reële wortels het, en los dan die vergelyking op.',
+      answer: 'Diskriminant = (−6)²−4(1)(9) = 36−36 = 0, dus is daar twee gelyke reële wortels. Faktoriseer: (x−3)²=0, dus x=3.',
+      checkMode: 'self',
+    },
+
+    // ── Q11 Medium — quadratic inequality (>), roots outside ──────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Los op vir x: x² − x − 6 > 0',
+      answer: 'x<-2 of x>3',
+      checkMode: 'auto',
+      correctAnswers: ['x<-2 of x>3', 'x>3 of x<-2'],
+      explanation: 'Faktoriseer: (x−3)(x+2)>0. Kritieke waardes: x=−2 en x=3. Aangesien die parabool opwaarts oopmaak, is dit bo die x-as (positief) buite die wortels: x<−2 of x>3.',
+    },
+
+    // ── Q12 Medium — quadratic inequality (≥), between roots after rearranging ─
+    {
+      difficulty: 'Medium',
+      question: 'Los op vir x: −x² + 2x + 8 ≥ 0',
+      answer: '-2≤x≤4',
+      checkMode: 'auto',
+      correctAnswer: '-2≤x≤4',
+      explanation: 'Vermenigvuldig albei kante met −1 en keer die ongelykheidsteken om: x²−2x−8≤0. Faktoriseer: (x−4)(x+2)≤0. Kritieke waardes: x=−2 en x=4. Aangesien hierdie parabool (na omkering) opwaarts oopmaak, is dit ≤0 tussen die wortels: −2≤x≤4.',
+    },
+
+    // ── Q13 Hard — quadratic inequality (<), a≠1 ──────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Los op vir x: 2x² + 3x − 2 < 0',
+      answer: '-2<x<1/2',
+      checkMode: 'auto',
+      correctAnswer: '-2<x<1/2',
+      explanation: 'Faktoriseer: (2x−1)(x+2)<0. Kritieke waardes: x=1/2 en x=−2. Aangesien die parabool opwaarts oopmaak, is dit onder die x-as (negatief) tussen die wortels: −2<x<1/2.',
+    },
+
+    // ── Q14 Medium — quadratic inequality (≤), perfect trinomial ──────────────
+    {
+      difficulty: 'Medium',
+      question: 'Los op vir x: x² − 5x + 6 ≤ 0',
+      answer: '2≤x≤3',
+      checkMode: 'auto',
+      correctAnswer: '2≤x≤3',
+      explanation: 'Faktoriseer: (x−2)(x−3)≤0. Kritieke waardes: x=2 en x=3. Aangesien die parabool opwaarts oopmaak, is dit ≤0 tussen die wortels: 2≤x≤3.',
+    },
+
+    // ── Q15 Hard — rational inequality, strict, both critical values excluded ──
+    {
+      difficulty: 'Hard',
+      question: 'Los op vir x: (x−1)/(x+2) > 0. Onthou om enige waarde wat die noemer nul maak, uit te sluit.',
+      answer: 'x<-2 of x>1',
+      checkMode: 'auto',
+      correctAnswers: ['x<-2 of x>1', 'x>1 of x<-2'],
+      explanation: 'Kritieke waardes: x=1 (teller nul) en x=−2 (noemer nul, uitgesluit). Toetsing van die intervalle toon die uitdrukking is positief wanneer x<−2 of x>1. Let op x=−2 word uitgesluit (onbepaald) en x=1 word uitgesluit aangesien die ongelykheid streng is.',
+    },
+
+    // ── Q16 Hard — rational inequality, ≤, one boundary included ──────────────
+    {
+      difficulty: 'Hard',
+      question: 'Los op vir x: (x+3)/(x−2) ≤ 0. Onthou om enige waarde wat die noemer nul maak, uit te sluit.',
+      answer: '-3≤x<2',
+      checkMode: 'auto',
+      correctAnswer: '-3≤x<2',
+      explanation: 'Kritieke waardes: x=−3 (teller nul, ingesluit aangesien die uitdrukking daar gelyk is aan 0) en x=2 (noemer nul, moet uitgesluit word). Toetsing van die intervalle toon die uitdrukking is negatief of nul vir −3≤x<2.',
+    },
+
+    // ── Q17 Hard — rational inequality, ≥, one boundary included ──────────────
+    {
+      difficulty: 'Hard',
+      question: 'Los op vir x: (2x−1)/(x+4) ≥ 0. Verduidelik waarom x=−4 uit jou antwoord uitgesluit moet word, al lyk dit of die tekenpatroon iets anders aandui.',
+      answer: 'x<-4 of x≥1/2. x=−4 maak die noemer nul, dus is die uitdrukking daar onbepaald — dit kan nooit in die oplossingstel ingesluit word nie, ongeag die tekenpatroon aan weerskante daarvan.',
+      checkMode: 'self',
+    },
+
+    // ── Q18 Medium — simultaneous linear-quadratic, two integer solutions ─────
+    {
+      difficulty: 'Medium',
+      question: 'Los gelyktydig op vir x en y: y = x + 1 en y = x² − 1',
+      answer: 'x=2,y=3 of x=-1,y=0',
+      checkMode: 'auto',
+      correctAnswers: ['x=2,y=3 of x=-1,y=0', 'x=-1,y=0 of x=2,y=3'],
+      explanation: 'Stel x+1 = x²−1, dus x²−x−2=0, wat (x−2)(x+1)=0 gee, dus x=2 of x=−1. Vervang in y=x+1: as x=2, is y=3; as x=−1, is y=0. Kontroleer: (2)²−1=3 ✓ en (−1)²−1=0 ✓.',
+    },
+
+    // ── Q19 Medium — simultaneous linear-quadratic, two integer solutions ─────
+    {
+      difficulty: 'Medium',
+      question: 'Los gelyktydig op vir x en y: y = 2x − 3 en y = x² − 4x + 5',
+      answer: 'x=2,y=1 of x=4,y=5',
+      checkMode: 'auto',
+      correctAnswers: ['x=2,y=1 of x=4,y=5', 'x=4,y=5 of x=2,y=1'],
+      explanation: 'Stel 2x−3 = x²−4x+5, dus x²−6x+8=0, wat (x−2)(x−4)=0 gee, dus x=2 of x=4. Vervang in y=2x−3: as x=2, is y=1; as x=4, is y=5. Kontroleer: (2)²−4(2)+5=1 ✓ en (4)²−4(4)+5=5 ✓.',
+    },
+
+    // ── Q20 Hard — simultaneous linear-quadratic, irrational solutions ────────
+    {
+      difficulty: 'Hard',
+      question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: x + y = 5 en y = x² − 3x + 1',
+      answer: 'Uit die eerste vergelyking, y=5−x. Vervang: 5−x=x²−3x+1, dus x²−2x−4=0. Met die kwadratiese formule: x=(2±√20)/2=1±√5. As x=1+√5, is y=5−(1+√5)=4−√5. As x=1−√5, is y=5−(1−√5)=4+√5.',
+      checkMode: 'self',
+    },
+  ],
+
+  resultsConfig: {
+    totalMarks: 20,
+    messages: [
+      { minScore: 20, message: 'Uitstekend! ʼn Volpunt — jy het vergelykings en ongelykhede vir Graad 10 volkome bemeester. Hou so aan!' },
+      { minScore: 15, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van die inhoud. Hersien enige gemiste dele en jy sal dit perfek kry.' },
+      { minScore: 11, message: 'Goed gedaan! Jy verstaan die meeste van die inhoud. Gaan terug na die afdelings waar jy punte laat val het en probeer weer.' },
+      { minScore: 0, message: 'Moenie tou opgooi nie — elke kenner was eers ʼn beginner! Gaan deur die verduidelikings en uitgewerkte voorbeelde afdeling vir afdeling, en probeer dan weer.' },
+    ],
+  },
+
   scoreMessages: [
-    { minScore: 18, message: 'Uitstekend! ʼn Volpunt — jy het vergelykings en ongelykhede vir Graad 10 volkome bemeester. Hou so aan!' },
-    { minScore: 14, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van die inhoud. Hersien enige gemiste dele en jy sal dit perfek kry.' },
-    { minScore: 10, message: 'Goed gedaan! Jy verstaan die meeste van die inhoud. Gaan terug na die afdelings waar jy punte laat val het en probeer weer.' },
+    { minScore: 20, message: 'Uitstekend! ʼn Volpunt — jy het vergelykings en ongelykhede vir Graad 10 volkome bemeester. Hou so aan!' },
+    { minScore: 15, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van die inhoud. Hersien enige gemiste dele en jy sal dit perfek kry.' },
+    { minScore: 11, message: 'Goed gedaan! Jy verstaan die meeste van die inhoud. Gaan terug na die afdelings waar jy punte laat val het en probeer weer.' },
     { minScore: 6, message: 'Goeie poging! Werk deur die studiegids en uitgewerkte voorbeelde vir elke afdeling, en probeer dan weer.' },
     { minScore: 0, message: 'Moenie tou opgooi nie — elke kenner was eers ʼn beginner! Gaan deur die verduidelikings en uitgewerkte voorbeelde afdeling vir afdeling, en probeer dan weer.' },
   ],

@@ -266,14 +266,120 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — FREQUENCY POLYGONS
+    // SECTION 4 — HISTOGRAMS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'histograms',
+      title: 'Histograms',
+      icon: '📊',
+      explanation:
+        `<p style="margin-bottom:16px;">A <strong>histogram</strong> is a bar graph used to display <strong>grouped continuous data</strong> with equal class intervals. Unlike an ordinary bar graph, the bars of a histogram are drawn <strong>with no gaps between them</strong>, because the data is continuous — each interval flows directly into the next along the number line. The height of each bar shows the <strong>frequency</strong> of that class interval, and the interval with the tallest bar is called the <strong>modal class</strong>.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('class intervals')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('bar height / frequency')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('modal class')}</span>` +
+        `</div>` +
+
+        // ── Key terms ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key terms</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Class Interval</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Each ${bl('bar')} represents one ${bl('class interval')} of continuous data (for example 10≤x<20). The width of every bar is the same when intervals are equal.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Bar Height = Frequency</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The ${gr('height')} of each bar shows how many data values fall inside that ${bl('interval')} — read it straight off the y-axis.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Modal Class</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The ${bl('class interval')} with the ${or('tallest bar')} (highest ${gr('frequency')}) — this is the modal class of the histogram.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Construction steps ───────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Steps to construct a histogram</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${bl('Draw the axes')}</strong> — Label the x-axis with the ${bl('class intervals')} (in order, with equal width) and the y-axis with ${gr('frequency')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${gr('Draw each bar')}</strong> — For every ${bl('interval')}, draw a bar whose ${gr('height')} equals its ${gr('frequency')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${or('Leave no gaps')}</strong> — Because the data is continuous, each bar must touch the next — there is no space between consecutive bars, unlike an ordinary bar graph for categorical data.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Histograms and frequency polygons</p>` +
+        `<p style="margin:0;color:#1e3a8a;">A ${gr('frequency polygon')} (see the next section) is usually drawn by joining the ${bl('midpoints')} of the tops of the histogram's bars with straight lines. The two representations use the <strong>same data</strong> — the histogram shows it as solid ${bl('bars')}, the polygon shows it as connected points.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A histogram has bars for the intervals 0≤x<10 (frequency 4), 10≤x<20 (frequency 8), 20≤x<30 (frequency 6), 30≤x<40 (frequency 2). Describe how the histogram should be drawn and state the modal class.',
+          answer: `Four touching bars of heights ${gr('4, 8, 6, 2')}; the modal class is ${or('10≤x<20')}`,
+          steps: [
+            `Draw the x-axis showing the ${bl('class intervals')} in order: ${bl('0≤x<10')}, ${bl('10≤x<20')}, ${bl('20≤x<30')}, ${bl('30≤x<40')}, each with equal width.`,
+            `Draw the y-axis showing ${gr('frequency')}.`,
+            `Draw four bars with heights ${gr('4')}, ${gr('8')}, ${gr('6')}, ${gr('2')} respectively, with <strong>no gaps</strong> between consecutive bars since the data is continuous.`,
+            `The tallest bar is ${bl('10≤x<20')} with ${gr('frequency')} ${gr('8')}, so the <strong>modal class</strong> is ${or('10≤x<20')}.`,
+          ],
+        },
+        {
+          question: 'A histogram shows four bars with heights 5, 9, 11 and 3 for four equal intervals. How many data values does the histogram represent in total?',
+          answer: `${gr('28')} data values`,
+          steps: [
+            `The total number of data values equals the sum of all bar heights (frequencies).`,
+            `Total = ${gr('5')} + ${gr('9')} + ${gr('11')} + ${gr('3')} = ${gr('28')}.`,
+          ],
+        },
+        {
+          question: 'Explain why a histogram cannot have gaps between its bars, while a bar graph of favourite sports (soccer, netball, rugby) can.',
+          answer: 'A histogram displays continuous data, where each interval joins seamlessly onto the next, so gaps would misrepresent the data as separate, unrelated categories.',
+          steps: [
+            `A histogram represents ${bl('continuous numerical data')} grouped into intervals — the end of one interval is exactly where the next interval begins (e.g. 10≤x<20 is immediately followed by 20≤x<30).`,
+            `Because there is no true "gap" in the underlying number line between intervals, the bars must touch to correctly reflect this continuity.`,
+            `A bar graph of favourite sports displays ${bl('discrete, unrelated categories')} (soccer, netball, rugby) that have no numerical order or continuity, so gaps between bars correctly show that the categories are separate.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Histogram with four touching bars for equal class intervals labelled on the x-axis in blue, bar heights of 4 8 6 2 shown in green on the y-axis as frequency, with the tallest bar for 10 to 20 highlighted in orange as the modal class, and no gaps between any of the bars" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to draw a histogram from a grouped frequency table with equal class intervals, why the bars must touch with no gaps, and how to identify the modal class from the tallest bar" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — FREQUENCY POLYGONS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'frequency-polygons',
       title: 'Frequency Polygons',
       icon: '📈',
       explanation:
-        `<p style="margin-bottom:16px;">A <strong>frequency polygon</strong> is a line graph showing the frequency of data within each interval, created by plotting a point at the <strong>midpoint</strong> of each interval (at the height of its frequency) and connecting consecutive points with straight lines. It is useful for comparing the shape and spread of grouped data, especially when comparing two data sets on the same axes.</p>` +
+        `<p style="margin-bottom:16px;">A <strong>frequency polygon</strong> is a line graph showing the frequency of data within each interval, created by plotting a point at the <strong>midpoint</strong> of each interval (at the height of its frequency) and connecting consecutive points with straight lines. A frequency polygon is often drawn directly from a histogram — by joining the midpoints of the tops of the histogram's bars — but it can also be drawn straight from a grouped frequency table. It is useful for comparing the shape and spread of grouped data, especially when comparing two data sets on the same axes.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -307,7 +413,7 @@ export const topicData: TopicData = {
         // ── Advantage ────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Advantage over a histogram</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Two frequency polygons can be drawn on the same axes in different colours, making it easy to compare two data sets directly. Histograms overlap and become difficult to read when superimposed.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Two frequency polygons can be drawn on the same axes in different colours, making it easy to compare two data sets directly. Histograms (see the previous section) overlap and become difficult to read when superimposed, since they are made of solid bars rather than thin lines.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -343,7 +449,137 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — RANGE, PERCENTILES, QUARTILES AND INTERQUARTILE RANGE
+    // SECTION 6 — STEM-AND-LEAF DISPLAYS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'stem-and-leaf-displays',
+      title: 'Stem-and-Leaf Displays',
+      icon: '🌿',
+      explanation:
+        `<p style="margin-bottom:16px;">A <strong>stem-and-leaf display</strong> (or stem-and-leaf plot) is a way of organising numerical data that keeps every original data value visible while also showing the overall shape of the distribution. Each data value is split into a <strong>stem</strong> (the leading digit or digits) and a <strong>leaf</strong> (the last digit). The stems are written once in an ordered column, and the leaves belonging to each stem are written alongside it, ordered from smallest to largest.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('stem')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('leaf')}</span>` +
+        `</div>` +
+
+        // ── Key terms ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key terms</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Stem</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The leading digit(s) of a data value. For the value 47, the ${bl('stem')} is ${bl('4')} (representing the tens digit).</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Leaf</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The last digit of a data value. For the value 47, the ${gr('leaf')} is ${gr('7')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:4px;">Key/Legend</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Every stem-and-leaf plot needs a key, e.g. "${bl('4')} | ${gr('7')} = 47", so readers know how to reconstruct the original values.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Construction steps ───────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Steps to construct a stem-and-leaf plot</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${bl('List the stems')}</strong> — Write every possible ${bl('stem')} once, in ascending order, in a vertical column.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${gr('Attach the leaves')}</strong> — For each data value, write its ${gr('leaf')} digit next to its matching ${bl('stem')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${or('Order the leaves')}</strong> — Rewrite the ${gr('leaves')} for each ${bl('stem')} in ascending order, smallest to largest.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#64748b;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Add a key</strong> — Include a key such as "${bl('4')} | ${gr('7')} = 47" so the plot can be read correctly.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Reading measures ─────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Reading the mode, range and median from a stem-and-leaf plot</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
+        `<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:#374151;">` +
+        `<li><strong>Mode</strong> — the value (or values) that appear most often as a leaf against the same stem.</li>` +
+        `<li><strong>Range</strong> — reconstruct the smallest value (first stem, first leaf) and the largest value (last stem, last leaf), then subtract.</li>` +
+        `<li><strong>Median</strong> — since the leaves are already ordered, count inwards from both ends along the plot (row by row) to find the middle value (or average the two middle values).</li>` +
+        `</ul>` +
+        `</div>` +
+
+        // ── Back-to-back explanation ─────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Back-to-back stem-and-leaf plots</p>` +
+        `<p style="margin-bottom:16px;">A <strong>back-to-back stem-and-leaf plot</strong> compares two data sets using a single, shared column of ${bl('stems')} in the middle. The ${gr('leaves')} for one data set are written to the <strong>left</strong> of the stems (read from right to left, increasing towards the stem), and the ${gr('leaves')} for the other data set are written to the <strong>right</strong> (read left to right, increasing away from the stem). This makes it easy to compare the spread and shape of two data sets side by side.</p>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Advantage over grouped data</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Unlike a histogram or frequency polygon, which group data into intervals, a stem-and-leaf plot keeps every original data value visible. This means you can read off an exact mode, median and range instead of only an approximate modal class or median interval.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Construct a stem-and-leaf plot for the data set: 23, 31, 27, 22, 35, 29, 31, 24.',
+          answer: `Stems ${bl('2')} and ${bl('3')} with ordered ${gr('leaves')} — key: ${bl('2')} | ${gr('3')} = 23`,
+          steps: [
+            `Split each value into a ${bl('stem')} (tens digit) and ${gr('leaf')} (units digit): 23 → ${bl('2')}|${gr('3')}, 31 → ${bl('3')}|${gr('1')}, 27 → ${bl('2')}|${gr('7')}, 22 → ${bl('2')}|${gr('2')}, 35 → ${bl('3')}|${gr('5')}, 29 → ${bl('2')}|${gr('9')}, 31 → ${bl('3')}|${gr('1')}, 24 → ${bl('2')}|${gr('4')}.`,
+            `List the stems in order: ${bl('2')}, ${bl('3')}.`,
+            `Attach the leaves to each stem: ${bl('2')} | 3, 7, 2, 9, 4 and ${bl('3')} | 1, 5, 1.`,
+            `Order the leaves for each stem: ${bl('2')} | ${gr('2, 3, 4, 7, 9')} and ${bl('3')} | ${gr('1, 1, 5')}.`,
+            `Add a key: ${bl('2')} | ${gr('3')} = 23.`,
+          ],
+        },
+        {
+          question: 'Using the stem-and-leaf plot from Example 1 (2 | 2,3,4,7,9 and 3 | 1,1,5; key 2|3 = 23), find the mode, range and median.',
+          answer: `Mode = ${gr('31')}, Range = ${gr('13')}, Median = ${gr('28')}`,
+          steps: [
+            `<strong>Mode:</strong> Reading the leaves, ${gr('1')} appears twice against stem ${bl('3')} (giving 31 twice) while every other value appears only once, so the <strong>mode is 31</strong>.`,
+            `<strong>Range:</strong> The smallest value is ${bl('2')} | ${gr('2')} = 22, and the largest value is ${bl('3')} | ${gr('5')} = 35. Range = 35 − 22 = ${gr('13')}.`,
+            `<strong>Median:</strong> There are 8 values in total. Written in order using the plot: 22, 23, 24, 27, 29, 31, 31, 35. With an even count, the median is the average of the 4th and 5th values: (27 + 29) ÷ 2 = <strong>28</strong>.`,
+          ],
+        },
+        {
+          question: "Two classes wrote the same test. Class A: 12, 15, 18, 21, 23, 27. Class B: 14, 16, 19, 20, 22, 22, 28. Construct a back-to-back stem-and-leaf plot comparing them, using a shared stem column of tens digits.",
+          answer: 'A back-to-back plot with Class A leaves on the left and Class B leaves on the right of shared stems 1 and 2',
+          steps: [
+            `Split each Class A value into stem and leaf: 12 → ${bl('1')}|2, 15 → ${bl('1')}|5, 18 → ${bl('1')}|8, 21 → ${bl('2')}|1, 23 → ${bl('2')}|3, 27 → ${bl('2')}|7.`,
+            `Split each Class B value into stem and leaf: 14 → ${bl('1')}|4, 16 → ${bl('1')}|6, 19 → ${bl('1')}|9, 20 → ${bl('2')}|0, 22 → ${bl('2')}|2, 22 → ${bl('2')}|2, 28 → ${bl('2')}|8.`,
+            `Draw one shared, ordered stem column in the middle: ${bl('1')}, ${bl('2')}.`,
+            `Write Class A's leaves to the <strong>left</strong> of each stem, ordered so they increase towards the stem: stem ${bl('1')} → 8, 5, 2 | stem ${bl('2')} → 7, 3, 1.`,
+            `Write Class B's leaves to the <strong>right</strong> of each stem, ordered so they increase away from the stem: stem ${bl('1')} → 4, 6, 9 | stem ${bl('2')} → 0, 2, 2, 8.`,
+            `Full plot — Class A | Stem | Class B: "8,5,2 | ${bl('1')} | 4,6,9" and "7,3,1 | ${bl('2')} | 0,2,2,8". Key: 2|${bl('1')}|4 means Class A = 12 and Class B = 14.`,
+            `Comparing rows shows Class B has one more result (7 vs 6) and its scores are generally slightly higher and more spread out on the upper end (28 vs 27), while Class A's scores cluster a little lower.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Stem and leaf plot with a vertical column of stems in blue such as 2 and 3, ordered leaves in green written beside each stem, and a key at the bottom reading 2 vertical bar 3 equals 23, plus a second back to back stem and leaf plot example showing one classes leaves on the left and another classes leaves on the right of a shared central stem column" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to split data values into stems and leaves, build an ordered stem-and-leaf plot with a key, read off the mode range and median from it, and construct a back-to-back stem-and-leaf plot comparing two data sets" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 7 — RANGE, PERCENTILES, QUARTILES AND INTERQUARTILE RANGE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'range-percentiles-quartiles-iqr',
@@ -530,7 +766,35 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q10 Medium — frequency polygon point ─────────────────────────────────
+    // ── Q10 Easy — modal class from histogram ────────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'A histogram has bars for the intervals 0≤x<10 (frequency 4), 10≤x<20 (frequency 9), 20≤x<30 (frequency 5). Identify the modal class.',
+      answer: '10≤x<20',
+      checkMode: 'auto',
+      correctAnswer: '10≤x<20',
+      explanation: 'The modal class is the class interval with the tallest bar (highest frequency). 10≤x<20 has frequency 9, the highest of the three, so it is the modal class.',
+    },
+
+    // ── Q11 Medium — total frequency from histogram bars ─────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'A histogram has four bars with heights (frequencies) 6, 10, 8 and 4 for four equal class intervals. How many data values does the histogram represent in total?',
+      answer: '28',
+      checkMode: 'auto',
+      correctAnswer: '28',
+      explanation: 'The total number of data values equals the sum of all bar heights: 6 + 10 + 8 + 4 = 28.',
+    },
+
+    // ── Q12 Hard — why histogram bars have no gaps ───────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Thabo draws a histogram for continuous test-mark data but leaves small gaps between the bars, like an ordinary bar graph. Explain why this is incorrect.',
+      answer: 'A histogram represents continuous data where each class interval joins directly onto the next, so the bars must touch with no gaps; leaving gaps incorrectly suggests the intervals are separate, unrelated categories, as in a bar graph of discrete categories.',
+      checkMode: 'self',
+    },
+
+    // ── Q13 Medium — frequency polygon point ─────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Describe how to plot a frequency polygon point for the interval 20≤x<30 with frequency 12.',
@@ -540,7 +804,7 @@ export const topicData: TopicData = {
       explanation: 'The midpoint of 20≤x<30 is (20+30)÷2 = 25. The frequency is 12. Plot the point at coordinates (25, 12) on the graph.',
     },
 
-    // ── Q11 Hard — comparing frequency polygons ──────────────────────────────
+    // ── Q14 Hard — comparing frequency polygons ──────────────────────────────
     {
       difficulty: 'Hard',
       question: "Sipho's frequency polygon for one data set peaks higher than Lerato's polygon for a different data set, both plotted on the same axes. What does this likely indicate?",
@@ -548,7 +812,37 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q12 Easy — range ─────────────────────────────────────────────────────
+    // ── Q15 Easy — reading stems and leaves ──────────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'In a stem-and-leaf plot, stem 3 has leaves 1, 1, 4, 8, 9 (key: 3|1 = 31). List the actual data values for this stem.',
+      answer: '31, 31, 34, 38, 39',
+      checkMode: 'auto',
+      correctAnswer: '31, 31, 34, 38, 39',
+      correctAnswers: ['31, 31, 34, 38, 39', '31,31,34,38,39', '31 31 34 38 39'],
+      explanation: 'Each leaf is attached to the stem 3 (tens digit): 3|1=31, 3|1=31, 3|4=34, 3|8=38, 3|9=39.',
+    },
+
+    // ── Q16 Medium — mode, range, median from a stem-and-leaf plot ───────────
+    {
+      difficulty: 'Medium',
+      question: 'A stem-and-leaf plot shows: 5 | 1, 4, 4, 8 and 6 | 2, 5, 7, 9 (key: 5|1 = 51). Find the mode, range and median of this data set.',
+      answer: 'Mode = 54, Range = 18, Median = 60',
+      checkMode: 'auto',
+      correctAnswer: 'Mode = 54, Range = 18, Median = 60',
+      correctAnswers: ['Mode = 54, Range = 18, Median = 60', 'mode=54, range=18, median=60', '54, 18, 60'],
+      explanation: 'Data in order: 51, 54, 54, 58, 62, 65, 67, 69 (8 values). Mode = 54 (appears twice). Range = 69 − 51 = 18. Median = average of 4th and 5th values = (58 + 62) ÷ 2 = 60.',
+    },
+
+    // ── Q17 Hard — back-to-back stem-and-leaf comparison ─────────────────────
+    {
+      difficulty: 'Hard',
+      question: "A back-to-back stem-and-leaf plot compares Class A and Class B test scores using shared stems 4 and 5: Class A '8,5,2 | 4 | 0,4,6' and '7,3,1 | 5 | 2,5,5,9' for Class B (key: 2|4|0 means Class A=42, Class B=40). Compare the two classes' performance.",
+      answer: 'Class A has 6 scores (42,45,48,51,53,57) and Class B has 7 scores (40,44,46,52,55,55,59); Class B has a slightly higher maximum (59 vs 57) and more scores in the 50s, suggesting Class B performed marginally better overall, though both classes cover a similar range.',
+      checkMode: 'self',
+    },
+
+    // ── Q18 Easy — range ─────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'Find the range of the data set 22, 8, 45, 30, 12.',
@@ -558,7 +852,7 @@ export const topicData: TopicData = {
       explanation: 'Range = largest − smallest = 45 − 8 = 37.',
     },
 
-    // ── Q13 Medium — quartiles ───────────────────────────────────────────────
+    // ── Q19 Medium — quartiles ───────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Find Q1, Q2 and Q3 of the ordered data: 5, 9, 13, 17, 21, 25, 29, 33.',
@@ -569,7 +863,7 @@ export const topicData: TopicData = {
       explanation: 'Q2 (median) = (17+21)÷2 = 19. Lower half 5,9,13,17 → Q1 = (9+13)÷2 = 11. Upper half 21,25,29,33 → Q3 = (25+29)÷2 = 27.',
     },
 
-    // ── Q14 Hard — IQR and what it represents ────────────────────────────────
+    // ── Q20 Hard — IQR and what it represents ────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Using the quartiles from Q13, find the interquartile range and explain what it represents.',
@@ -577,7 +871,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q15 Hard — median equals Q2 ─────────────────────────────────────────
+    // ── Q21 Hard — median equals Q2 ─────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Thabo says the median always equals Q2. Is he correct? Explain.',
@@ -585,7 +879,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q16 Hard — small IQR relative to range ───────────────────────────────
+    // ── Q22 Hard — small IQR relative to range ───────────────────────────────
     {
       difficulty: 'Hard',
       question: 'A data set has Q1=20 and Q3=50. Find the interquartile range, then explain what a small IQR compared to the full range would suggest about the data.',
@@ -593,7 +887,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q17 Hard — approximate mean from grouped data ────────────────────────
+    // ── Q23 Hard — approximate mean from grouped data ────────────────────────
     {
       difficulty: 'Hard',
       question: 'Find the approximate mean of grouped data with intervals 10≤x<20 (freq 5), 20≤x<30 (freq 9), 30≤x<40 (freq 6), using midpoints.',
@@ -601,7 +895,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q18 Hard — calculator mean accuracy for grouped data ─────────────────
+    // ── Q24 Hard — calculator mean accuracy for grouped data ─────────────────
     {
       difficulty: 'Hard',
       question: "Lerato says a calculator's mean function gives the exact mean for grouped data. Is this always accurate? Explain.",
@@ -609,7 +903,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q19 Hard — 40th percentile in context ────────────────────────────────
+    // ── Q25 Hard — 40th percentile in context ────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Amahle finds the 40th percentile of a data set falls in the interval 25≤x<35. Explain what this means in context.',
@@ -617,7 +911,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q20 Hard — range vs IQR outlier reasoning ────────────────────────────
+    // ── Q26 Hard — range vs IQR outlier reasoning ────────────────────────────
     {
       difficulty: 'Hard',
       question: "A data set's range is 60, but its interquartile range is only 12. Sipho concludes there must be at least one outlier. Is his reasoning sound? Explain.",
@@ -627,11 +921,11 @@ export const topicData: TopicData = {
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 26,
     messages: [
-      { minScore: 20, message: 'Outstanding! You have mastered statistics.' },
-      { minScore: 15, message: 'Great work!' },
-      { minScore: 10, message: 'Good effort, review and try again.' },
+      { minScore: 26, message: 'Outstanding! You have mastered statistics.' },
+      { minScore: 20, message: 'Great work!' },
+      { minScore: 13, message: 'Good effort, review and try again.' },
       { minScore: 0, message: 'Keep going, work through the guide again.' },
     ],
   },

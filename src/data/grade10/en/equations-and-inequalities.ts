@@ -331,10 +331,210 @@ export const topicData: TopicData = {
     },
   ],
 
+  topicPractice: [
+    // ── Q1 Easy — factorisation, simple trinomial ─────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'Solve for x: x² − 9x + 20 = 0',
+      answer: 'x=4 or x=5',
+      checkMode: 'auto',
+      correctAnswers: ['x=4 or x=5', 'x=5 or x=4'],
+      explanation: 'Find two numbers that multiply to 20 and add to −9: −4 and −5. So (x−4)(x−5)=0, giving x=4 or x=5.',
+    },
+
+    // ── Q2 Easy — factorisation with negative constant ────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'Solve for x: x² + 2x − 15 = 0',
+      answer: 'x=-5 or x=3',
+      checkMode: 'auto',
+      correctAnswers: ['x=-5 or x=3', 'x=3 or x=-5'],
+      explanation: 'Find two numbers that multiply to −15 and add to 2: 5 and −3. So (x+5)(x−3)=0, giving x=−5 or x=3.',
+    },
+
+    // ── Q3 Medium — factorisation with a≠1 (a×c method) ───────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Solve for x: 2x² − x − 6 = 0',
+      answer: 'x=-3/2 or x=2',
+      checkMode: 'auto',
+      correctAnswers: ['x=-3/2 or x=2', 'x=2 or x=-3/2', 'x=-1.5 or x=2', 'x=2 or x=-1.5'],
+      explanation: 'a×c = 2×(−6) = −12. Find two numbers multiplying to −12 and adding to −1: −4 and 3. Split: 2x²−4x+3x−6=0 → 2x(x−2)+3(x−2)=0 → (2x+3)(x−2)=0, giving x=−3/2 or x=2.',
+    },
+
+    // ── Q4 Medium — rearrange before factorising ──────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Solve for x: x² = 7x − 12',
+      answer: 'x=3 or x=4',
+      checkMode: 'auto',
+      correctAnswers: ['x=3 or x=4', 'x=4 or x=3'],
+      explanation: 'Rearrange to x²−7x+12=0. Find two numbers that multiply to 12 and add to −7: −3 and −4. So (x−3)(x−4)=0, giving x=3 or x=4.',
+    },
+
+    // ── Q5 Medium — factorisation with fractional root ────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Solve for x: 3x² + 5x − 2 = 0',
+      answer: 'x=1/3 or x=-2',
+      checkMode: 'auto',
+      correctAnswers: ['x=1/3 or x=-2', 'x=-2 or x=1/3'],
+      explanation: 'a×c = 3×(−2) = −6. Find two numbers multiplying to −6 and adding to 5: 6 and −1. Split: 3x²+6x−x−2=0 → 3x(x+2)−1(x+2)=0 → (3x−1)(x+2)=0, giving x=1/3 or x=−2.',
+    },
+
+    // ── Q6 Medium — quadratic formula, irrational roots ───────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Use the quadratic formula to solve for x (correct to 2 decimal places): x² + 4x − 7 = 0',
+      answer: 'x≈1.32 or x≈-5.32',
+      checkMode: 'auto',
+      correctAnswers: ['x≈1.32 or x≈-5.32', 'x≈-5.32 or x≈1.32', 'x=1.32 or x=-5.32'],
+      explanation: 'a=1, b=4, c=−7. Discriminant = 4²−4(1)(−7) = 16+28 = 44. x = (−4±√44)/2 = −2±√11. So x = −2+√11 ≈ 1.32 or x = −2−√11 ≈ −5.32.',
+    },
+
+    // ── Q7 Medium — quadratic formula, irrational roots (leave in surd form) ──
+    {
+      difficulty: 'Medium',
+      question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: 2x² − 3x − 4 = 0',
+      answer: 'x=(3±√41)/4',
+      checkMode: 'self',
+    },
+
+    // ── Q8 Hard — discriminant shows no real solutions ────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Show that x² + 2x + 5 = 0 has no real solutions.',
+      answer: 'Discriminant = b²−4ac = 2²−4(1)(5) = 4−20 = −16. Since the discriminant is negative, the square root of a negative number is not a real number, so this equation has no real solutions.',
+      checkMode: 'self',
+    },
+
+    // ── Q9 Hard — quadratic formula, irrational roots ─────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: 3x² − 2x − 2 = 0',
+      answer: 'x=(1±√7)/3',
+      checkMode: 'self',
+    },
+
+    // ── Q10 Medium — discriminant shows equal roots ───────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Use the discriminant to show that x² − 6x + 9 = 0 has two equal real roots, then solve the equation.',
+      answer: 'Discriminant = (−6)²−4(1)(9) = 36−36 = 0, so there are two equal real roots. Factorising: (x−3)²=0, so x=3.',
+      checkMode: 'self',
+    },
+
+    // ── Q11 Medium — quadratic inequality (>), roots outside ──────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Solve for x: x² − x − 6 > 0',
+      answer: 'x<-2 or x>3',
+      checkMode: 'auto',
+      correctAnswers: ['x<-2 or x>3', 'x>3 or x<-2'],
+      explanation: 'Factorise: (x−3)(x+2)>0. Critical values: x=−2 and x=3. Since the parabola opens upward, it is above the x-axis (positive) outside the roots: x<−2 or x>3.',
+    },
+
+    // ── Q12 Medium — quadratic inequality (≥), between roots after rearranging ─
+    {
+      difficulty: 'Medium',
+      question: 'Solve for x: −x² + 2x + 8 ≥ 0',
+      answer: '-2≤x≤4',
+      checkMode: 'auto',
+      correctAnswer: '-2≤x≤4',
+      explanation: 'Multiply both sides by −1 and flip the inequality: x²−2x−8≤0. Factorise: (x−4)(x+2)≤0. Critical values: x=−2 and x=4. Since this parabola (after flipping) opens upward, it is ≤0 between the roots: −2≤x≤4.',
+    },
+
+    // ── Q13 Hard — quadratic inequality (<), a≠1 ──────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Solve for x: 2x² + 3x − 2 < 0',
+      answer: '-2<x<1/2',
+      checkMode: 'auto',
+      correctAnswer: '-2<x<1/2',
+      explanation: 'Factorise: (2x−1)(x+2)<0. Critical values: x=1/2 and x=−2. Since the parabola opens upward, it is below the x-axis (negative) between the roots: −2<x<1/2.',
+    },
+
+    // ── Q14 Medium — quadratic inequality (≤), perfect trinomial ──────────────
+    {
+      difficulty: 'Medium',
+      question: 'Solve for x: x² − 5x + 6 ≤ 0',
+      answer: '2≤x≤3',
+      checkMode: 'auto',
+      correctAnswer: '2≤x≤3',
+      explanation: 'Factorise: (x−2)(x−3)≤0. Critical values: x=2 and x=3. Since the parabola opens upward, it is ≤0 between the roots: 2≤x≤3.',
+    },
+
+    // ── Q15 Hard — rational inequality, strict, both critical values excluded ──
+    {
+      difficulty: 'Hard',
+      question: 'Solve for x: (x−1)/(x+2) > 0. Remember to exclude any value that makes the denominator zero.',
+      answer: 'x<-2 or x>1',
+      checkMode: 'auto',
+      correctAnswers: ['x<-2 or x>1', 'x>1 or x<-2'],
+      explanation: 'Critical values: x=1 (numerator zero) and x=−2 (denominator zero, excluded). Testing intervals shows the expression is positive when x<−2 or x>1. Note x=−2 is excluded (undefined) and x=1 is excluded since the inequality is strict.',
+    },
+
+    // ── Q16 Hard — rational inequality, ≤, one boundary included ──────────────
+    {
+      difficulty: 'Hard',
+      question: 'Solve for x: (x+3)/(x−2) ≤ 0. Remember to exclude any value that makes the denominator zero.',
+      answer: '-3≤x<2',
+      checkMode: 'auto',
+      correctAnswer: '-3≤x<2',
+      explanation: 'Critical values: x=−3 (numerator zero, included since the expression equals 0 there) and x=2 (denominator zero, must be excluded). Testing intervals shows the expression is negative or zero for −3≤x<2.',
+    },
+
+    // ── Q17 Hard — rational inequality, ≥, one boundary included ──────────────
+    {
+      difficulty: 'Hard',
+      question: 'Solve for x: (2x−1)/(x+4) ≥ 0. Explain why x=−4 must be excluded from your answer even though the sign pattern might suggest otherwise.',
+      answer: 'x<-4 or x≥1/2. x=−4 makes the denominator zero, so the expression is undefined there — it can never be included in the solution set, regardless of the sign pattern either side of it.',
+      checkMode: 'self',
+    },
+
+    // ── Q18 Medium — simultaneous linear-quadratic, two integer solutions ─────
+    {
+      difficulty: 'Medium',
+      question: 'Solve simultaneously for x and y: y = x + 1 and y = x² − 1',
+      answer: 'x=2,y=3 or x=-1,y=0',
+      checkMode: 'auto',
+      correctAnswers: ['x=2,y=3 or x=-1,y=0', 'x=-1,y=0 or x=2,y=3'],
+      explanation: 'Set x+1 = x²−1, so x²−x−2=0, giving (x−2)(x+1)=0, so x=2 or x=−1. Substitute into y=x+1: when x=2, y=3; when x=−1, y=0. Check: (2)²−1=3 ✓ and (−1)²−1=0 ✓.',
+    },
+
+    // ── Q19 Medium — simultaneous linear-quadratic, two integer solutions ─────
+    {
+      difficulty: 'Medium',
+      question: 'Solve simultaneously for x and y: y = 2x − 3 and y = x² − 4x + 5',
+      answer: 'x=2,y=1 or x=4,y=5',
+      checkMode: 'auto',
+      correctAnswers: ['x=2,y=1 or x=4,y=5', 'x=4,y=5 or x=2,y=1'],
+      explanation: 'Set 2x−3 = x²−4x+5, so x²−6x+8=0, giving (x−2)(x−4)=0, so x=2 or x=4. Substitute into y=2x−3: when x=2, y=1; when x=4, y=5. Check: (2)²−4(2)+5=1 ✓ and (4)²−4(4)+5=5 ✓.',
+    },
+
+    // ── Q20 Hard — simultaneous linear-quadratic, irrational solutions ────────
+    {
+      difficulty: 'Hard',
+      question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: x + y = 5 and y = x² − 3x + 1',
+      answer: 'From the first equation, y=5−x. Substitute: 5−x=x²−3x+1, so x²−2x−4=0. Using the quadratic formula: x=(2±√20)/2=1±√5. When x=1+√5, y=5−(1+√5)=4−√5. When x=1−√5, y=5−(1−√5)=4+√5.',
+      checkMode: 'self',
+    },
+  ],
+
+  resultsConfig: {
+    totalMarks: 20,
+    messages: [
+      { minScore: 20, message: 'Outstanding! A perfect score — you have completely mastered equations and inequalities for Grade 10. Keep it up!' },
+      { minScore: 15, message: 'Excellent work! You have a very strong grasp of the content. Review any missed parts and you will have it perfect.' },
+      { minScore: 11, message: 'Well done! You understand most of the content. Go back to the sections where you dropped marks and give it another go.' },
+      { minScore: 0, message: "Don't give up — every expert was once a beginner! Revisit the explanations and worked examples section by section, then try again." },
+    ],
+  },
+
   scoreMessages: [
-    { minScore: 18, message: 'Outstanding! A perfect score — you have completely mastered equations and inequalities for Grade 10. Keep it up!' },
-    { minScore: 14, message: 'Excellent work! You have a very strong grasp of the content. Review any missed parts and you will have it perfect.' },
-    { minScore: 10, message: 'Well done! You understand most of the content. Go back to the sections where you dropped marks and give it another go.' },
+    { minScore: 20, message: 'Outstanding! A perfect score — you have completely mastered equations and inequalities for Grade 10. Keep it up!' },
+    { minScore: 15, message: 'Excellent work! You have a very strong grasp of the content. Review any missed parts and you will have it perfect.' },
+    { minScore: 11, message: 'Well done! You understand most of the content. Go back to the sections where you dropped marks and give it another go.' },
     { minScore: 6, message: 'Good effort! Work back through the study guide and worked examples for each section, then try again.' },
     { minScore: 0, message: "Don't give up — every expert was once a beginner! Revisit the explanations and worked examples section by section, then try again." },
   ],

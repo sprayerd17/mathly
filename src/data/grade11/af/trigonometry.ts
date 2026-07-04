@@ -529,7 +529,177 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat stap vir stap wys hoe om die algemene oplossing van sinθ = k, cosθ = k, en tanθ = k te bepaal, insluitend die identifisering van die verwysingshoek en die skryf van die volledige algemene oplossing met n ∈ ℤ" />',
     },
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 6 — THE SINE, COSINE AND AREA RULES
+    // SECTION 6 — DERIVING THE SINE, COSINE AND AREA RULES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'proving-sine-cosine-area-rules',
+      title: 'Aflei van die Sin reël, Cos reël en Oppervlakte-reël',
+      icon: '🧩',
+      explanation:
+        `<p style="margin-bottom:16px;">Voordat jy die Sin reël, Cos reël en Oppervlakte-reël met selfvertroue kan <strong>toepas</strong>, vereis CAPS dat jy hulle ook moet kan <strong>aflei (bewys)</strong>. Elke afleiding hieronder begin op dieselfde manier — deur ʼn <strong>hoogte (loodlyn)</strong> vanaf een hoekpunt van die driehoek na die teenoorstaande sy te trek, wat die driehoek in twee reghoekige driehoeke verdeel. Sodra ons reghoekige driehoeke het, kan ons gewone reghoekige-driehoek-trigonometrie (SOH-CAHTOA) en die Stelling van Pythagoras gebruik om elke reël van voor af op te bou. Ons gebruik deurgaans die gewone merkkonvensie: sy a lê teenoor hoek A, sy b lê teenoor hoek B, en sy c lê teenoor hoek C.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('bekende sye/hoeke')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('afgeleide uitdrukking (bv. die hoogte h)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('finale bewese reël')}</span>` +
+        `</div>` +
+
+        // ── Derivation 1: Area Rule ──────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">1. Aflei van die Oppervlakte-reël — Oppervlakte = ½ab sinC</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Begin met die basiese oppervlakteformule</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">In driehoek ABC, trek ʼn ${or('hoogte (loodlyn) h')} vanaf hoekpunt A na sy BC (sy ${bl('a')}), wat dit by punt D raak. Aangesien h loodreg op BC is, geld die gewone formule Oppervlakte = ½ × basis × hoogte, met BC = ${bl('a')} as die basis: Oppervlakte = ½ × ${bl('a')} × ${or('h')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Druk h uit met behulp van reghoekige-driehoek-trigonometrie</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Driehoek ADC is reghoekig by D, met skuinssy AC = ${bl('b')} en hoek C by hoekpunt C. Volgens SOH: sinC = teenoorstaande/skuinssy = ${or('h')} / ${bl('b')}, dus ${or('h = b sinC')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Vervang om die bewys te voltooi</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Vervang ${or('h = b sinC')} in Oppervlakte = ½ × ${bl('a')} × ${or('h')}: Oppervlakte = ½ × ${bl('a')} × ${or('b sinC')} = ${gr('½ab sinC')}. Deur die hoogte vanaf ʼn ander hoekpunt te trek, gee presies dieselfde redenasie Oppervlakte = ${gr('½bc sinA')} = ${gr('½ac sinB')} — al drie is gelyk, gebruik dus watter een ook al ooreenstem met die sye/hoek wat jy ken.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Derivation 2: Sine Rule ──────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">2. Aflei van die Sin reël — a/sinA = b/sinB = c/sinC</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Skryf dieselfde hoogte op twee verskillende maniere</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Gebruik dieselfde diagram as hierbo — hoogte ${or('h')} vanaf A na BC getrek, met voetpunt D — kyk na <strong>albei</strong> reghoekige driehoeke wat dit skep. Vanuit driehoek ADC (skuinssy ${bl('b')}, hoek C): ${or('h = b sinC')}. Vanuit driehoek ADB (skuinssy ${bl('c')}, hoek B): ${or('h = c sinB')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Stel die twee uitdrukkings vir h gelyk</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Aangesien albei uitdrukkings gelyk is aan dieselfde hoogte: ${or('b sinC = c sinB')}. Deel albei kante deur (${or('sinB')} · ${or('sinC')}): ${or('b / sinB')} = ${or('c / sinC')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Brei die patroon uit na al drie sye</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Ons het getoon ${gr('b/sinB = c/sinC')}. Deur ʼn hoogte vanaf ʼn ander hoekpunt te trek (bv. vanaf B na AC), koppel dit a en c op presies dieselfde manier, wat ${gr('a/sinA = c/sinC')} gee. Deur albei resultate te kombineer bewys dit die volledige Sin reël: ${gr('a/sinA = b/sinB = c/sinC')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Derivation 3: Cosine Rule ─────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">3. Aflei van die Cos reël — a² = b² + c² − 2bc cosA</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Trek ʼn hoogte en merk die verdeelde basis</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">In driehoek ABC, trek ʼn ${or('hoogte h')} vanaf hoekpunt B na sy AC (sy ${bl('b')}), wat dit by punt D raak. Dit verdeel sy ${bl('b')} in twee segmente: AD en DC. In reghoekige driehoek ABD (skuinssy AB = ${bl('c')}, hoek A by hoekpunt A): cosA = aangrensende/skuinssy = AD/${bl('c')}, dus ${or('AD = c cosA')}. Dit volg dat ${or('DC = b − c cosA')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Pas Pythagoras toe op albei reghoekige driehoeke</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Driehoek ABD is reghoekig by D: ${or('AD² + h² = c²')}, dus ${or('h² = c² − (c cosA)²')}.<br>Driehoek BDC is reghoekig by D, met skuinssy BC = ${bl('a')}: ${or('DC² + h² = a²')}, dus ${or('h² = a² − (b − c cosA)²')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Stel die twee uitdrukkings vir h² gelyk en vereenvoudig</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Albei reghoekige driehoeke deel dieselfde hoogte, dus: ${or('c² − (c cosA)²')} = ${or('a² − (b − c cosA)²')}.<br>Vermenigvuldig die hakie aan die regterkant uit: ${or('a² − [b² − 2bc cosA + (c cosA)²]')} = ${or('a² − b² + 2bc cosA − (c cosA)²')}.<br>Die (c cosA)²-terme kom op albei kante voor en kanselleer, wat laat: ${or('c² = a² − b² + 2bc cosA')}.<br>Herrangskik om a² te isoleer: ${gr('a² = b² + c² − 2bc cosA')} ✓</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Let wel oor stomphoekige driehoeke</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Al drie afleidings hierbo neem ʼn <strong>skerphoekige</strong> driehoek aan, sodat die voetpunt van die hoogte netjies binne die teenoorstaande sy val. As die driehoek stomphoekig is, geld dieselfde drie reëls steeds — die redenasie is identies, maar dit gebruik ʼn <strong>komplementêre hoek</strong> (180° − hoek) waar die voetpunt van die hoogte buite die driehoek val. Jy hoef nie die stomphoekige geval vir CAPS te reproduseer nie — onthou net dat die reëls self onaangeraak bly.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'In driehoek ABC is a = 6 cm, b = 9 cm en die ingeslote hoek C = 70°. Gebruik die afleidingsmetode (nie die Oppervlakte-reël-formule direk nie) om die hoogte h te bepaal wat vanaf hoekpunt A na sy BC getrek word, en bepaal sodoende die oppervlakte van die driehoek.',
+          answer: `h ≈ ${gr('8,46 cm')}; Oppervlakte ≈ ${gr('25,37 cm²')}`,
+          steps: [
+            `Identifiseer wat bekend is: ${bl('a = 6 cm')}, ${bl('b = 9 cm')}, ${bl('C = 70°')} (twee sye en die ingeslote hoek).`,
+            `Trek die hoogte ${or('h')} vanaf hoekpunt A na sy BC, wat dit by punt D raak. Driehoek ADC is reghoekig by D, met skuinssy AC = ${bl('b = 9 cm')} en hoek C = ${bl('70°')} by hoekpunt C.`,
+            `Volgens SOH: sinC = h / ${bl('b')}, dus ${or('h = b sinC')} = ${bl('9')} × sin(${bl('70°')}) ≈ 9 × 0,9397 ≈ ${gr('8,46 cm')} ✓`,
+            `Pas nou Oppervlakte = ½ × basis × hoogte toe, met BC = ${bl('a = 6 cm')} as die basis: Oppervlakte = ½ × ${bl('6')} × ${gr('8,46')} ≈ ${gr('25,37 cm²')} ✓`,
+            `Let daarop dat dit ooreenstem met die Oppervlakte-reël-formule direk: ½ab sinC = ½ × 6 × 9 × sin70° ≈ 25,37 cm² — die afleidingsmetode en die formule stem ooreen.`,
+          ],
+        },
+        {
+          question: 'In driehoek ABC is A = 40°, C = 75° en a = 10 cm. Gebruik die sin reël se afleidingsmetode om die hoogte h te bepaal wat vanaf hoekpunt B na sy AC getrek word, en bepaal sodoende sy c.',
+          answer: `h ≈ ${gr('9,66 cm')}; c ≈ ${gr('15,03 cm')}`,
+          steps: [
+            `Identifiseer wat bekend is: ${bl('A = 40°')}, ${bl('C = 75°')}, ${bl('a = 10 cm')}. Bepaal eers B = 180° − 40° − 75° = 65°.`,
+            `Trek die hoogte ${or('h')} vanaf hoekpunt B na sy AC, wat dit by punt D raak. Driehoek BDC is reghoekig by D, met skuinssy BC = ${bl('a = 10 cm')} en hoek C = ${bl('75°')} by hoekpunt C.`,
+            `Volgens SOH: sinC = h / ${bl('a')}, dus ${or('h = a sinC')} = ${bl('10')} × sin(${bl('75°')}) ≈ 10 × 0,9659 ≈ ${gr('9,66 cm')} ✓`,
+            `Kyk nou na die ander reghoekige driehoek, ABD, reghoekig by D met skuinssy AB = ${gr('c')} en hoek A = ${bl('40°')} by hoekpunt A: sinA = h / c, dus ${or('h = c sinA')}.`,
+            `Stel die twee uitdrukkings vir h gelyk: ${bl('a sinC')} = ${gr('c sinA')}, dus c = (${bl('a')} × sin${bl('C')}) / sin${bl('A')} = (${bl('10')} × sin${bl('75°')}) / sin${bl('40°')} ≈ 9,659 / 0,6428 ≈ ${gr('15,03 cm')} ✓`,
+            `Dit is presies die Sin reël in aksie: a/sinA = c/sinC.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'In driehoek ABC word ʼn hoogte h vanaf hoekpunt A na sy BC getrek, en raak dit by D. Driehoek ADC is reghoekig by D, met AC = 12 cm en hoek C = 35°. Gebruik reghoekige-driehoek-trigonometrie om h te bepaal.',
+          answer: 'h = AC × sinC = 12 × sin35° ≈ 12 × 0,5736 ≈ 6,88 cm',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Begin by Oppervlakte = ½ × basis × hoogte, en lei die formule Oppervlakte = ½bc sinA vir driehoek ABC af (deur die hoogte vanaf hoekpunt C na sy AB te trek). Toon elke stap.',
+          answer: 'Stap 1: Trek hoogte h vanaf C na AB (sy c), voetpunt by D. Oppervlakte = ½ × basis × hoogte = ½ × c × h.\nStap 2: Driehoek ADC is reghoekig by D met skuinssy AC = b en hoek A by hoekpunt A. sinA = h/b, dus h = b sinA.\nStap 3: Vervang: Oppervlakte = ½ × c × b sinA = ½bc sinA ✓',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Deur dieselfde diagram as die Cos reël-afleiding te gebruik (hoogte h vanaf B na AC, voetpunt D, met AD = c cosA en DC = b − c cosA), begin ʼn leerder eerder by h² = a² − (b − c cosA)² en h² = c² − (c cosA)². Toon alle algebraïese stappe om te bewys dat a² = b² + c² − 2bc cosA.',
+          answer: 'Stel die twee uitdrukkings vir h² gelyk:\nc² − (c cosA)² = a² − (b − c cosA)²\n\nVermenigvuldig die hakie aan die regterkant uit:\nc² − (c cosA)² = a² − [b² − 2bc cosA + (c cosA)²]\nc² − (c cosA)² = a² − b² + 2bc cosA − (c cosA)²\n\nDie (c cosA)²-terme kanselleer aan albei kante:\nc² = a² − b² + 2bc cosA\n\nHerrangskik om a² te isoleer:\na² = b² + c² − 2bc cosA ✓',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="ʼn Enkele skerphoekige driehoek ABC met ʼn hoogte h vanaf hoekpunt A na sy BC getrek, voetpunt gemerk D, wat die driehoek in twee reghoekige driehoeke verdeel — sye a, b, c en hoeke A, B, C gemerk in blou, die hoogte h en segment-uitdrukkings (soos c cosA) gemerk in oranje, en die finale afgeleide reëls (Oppervlakte = ½ab sinC, a/sinA = b/sinB, a² = b² + c² − 2bc cosA) getoon in groen" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat die Oppervlakte-reël, Sin reël en Cos reël van eerste beginsels aflei, wat begin met ʼn enkele hoogte in ʼn driehoek getrek en wys hoe reghoekige-driehoek-trigonometrie en die Stelling van Pythagoras elke reël stap vir stap opbou" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 7 — THE SINE, COSINE AND AREA RULES (APPLYING THEM)
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sine-cosine-area-rules',
@@ -655,7 +825,7 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat verduidelik wanneer en hoe om die Sin reël, Cos reël en Oppervlakte-reël vir nie-reghoekige driehoeke te gebruik, met een volledig uitgewerkte voorbeeld vir elke reël" />',
     },
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 7 — SOLVING 2D PROBLEMS USING TRIGONOMETRIC MODELS
+    // SECTION 8 — SOLVING 2D PROBLEMS USING TRIGONOMETRIC MODELS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: '2d-trig-models',
@@ -932,7 +1102,26 @@ export const topicData: TopicData = {
       explanation: 'Oppervlakte = ½ × a × b × sinC = ½ × 8 × 11 × sin45° = ½ × 88 × (√2/2) ≈ 31.11 cm² ✓',
     },
 
-    // ── V18 Moeilik — kruispunt van kruisende toue ─────────────────────────────
+    // ── V18 Matig — aflei van hoogte h in die Oppervlakte-reël-bewys ─────────
+    {
+      difficulty: 'Medium',
+      question: 'In driehoek ABC word ʼn hoogte h vanaf hoekpunt A na sy BC getrek, en raak dit by D. Driehoek ADC is reghoekig by D, met AC = 10 cm en hoek C = 42°. Lei ʼn uitdrukking vir h af en bereken die waarde daarvan.',
+      answer: '6.69 cm',
+      checkMode: 'auto',
+      correctAnswer: '6.69cm',
+      correctAnswers: ['6.69cm', '6.69 cm', '≈6.69cm', '≈ 6.69 cm', '6.7cm'],
+      explanation: 'In reghoekige driehoek ADC: sinC = h/AC, dus h = AC × sinC = 10 × sin42° ≈ 10 × 0.6691 ≈ 6.69 cm ✓',
+    },
+
+    // ── V19 Moeilik — volledige cos reël-afleiding ────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Begin by h² = c² − (c cosA)² en h² = a² − (b − c cosA)², en toon alle algebraïese stappe om a² = b² + c² − 2bc cosA af te lei.',
+      answer: 'Stel die twee uitdrukkings gelyk: c² − (c cosA)² = a² − (b − c cosA)².\nVermenigvuldig die regterkant uit: a² − [b² − 2bc cosA + (c cosA)²] = a² − b² + 2bc cosA − (c cosA)².\nDie (c cosA)²-terme kanselleer aan albei kante, wat c² = a² − b² + 2bc cosA laat.\nHerrangskik om a² te isoleer: a² = b² + c² − 2bc cosA ✓',
+      checkMode: 'self',
+    },
+
+    // ── V20 Moeilik — kruispunt van kruisende toue ─────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Twee vlagpale 20 m uitmekaar het hoogtes 8 m en 12 m. Toue verbind die bopunt van elkeen met die voetpunt van die ander. Bepaal die hoogte van hul kruispunt bo die grond.',
@@ -940,7 +1129,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── V19 Moeilik — landmeter twee-vergelyking-opstelling ────────────────────────────
+    // ── V21 Moeilik — landmeter twee-vergelyking-opstelling ────────────────────────────
     {
       difficulty: 'Hard',
       question: 'ʼn Landmeter meet die hoogtehoek na ʼn toring as 20° vanaf punt A, loop dan 40 m nader na punt B en meet 35°. Stel die twee vergelykings op wat nodig is om die toring se hoogte op te los, sonder om dit volledig op te los.',
@@ -948,7 +1137,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── V20 Moeilik — driehoekige veld oppervlakte en derde sy ───────────────────────
+    // ── V22 Moeilik — driehoekige veld oppervlakte en derde sy ───────────────────────
     {
       difficulty: 'Hard',
       question: 'ʼn Driehoekige veld het twee sye van 35 m en 50 m met ʼn ingeslote hoek van 65°. Bepaal die oppervlakte van die veld en die lengte van die derde sy.',
@@ -958,7 +1147,7 @@ export const topicData: TopicData = {
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 22,
     messages: [
       { minPercent: 100, message: 'Uitstekend! Jy het trigonometrie bemeester.' },
       { minPercent: 75, message: 'Goeie werk!' },
@@ -968,10 +1157,10 @@ export const topicData: TopicData = {
   },
 
   scoreMessages: [
-    { minScore: 18, message: 'Uitstekend! ʼn Perfekte telling — jy het Graad 11 Trigonometrie heeltemal bemeester. Hou so aan met die uitstekende werk!' },
-    { minScore: 14, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van trigonometrie. Hersien enige gemiste dele en jy sal dit perfek onder die knie hê.' },
-    { minScore: 10, message: 'Goed gedaan! Jy verstaan die meeste van die inhoud. Gaan terug na die afdelings waar jy punte verloor het en probeer weer.' },
-    { minScore: 5, message: 'Goeie poging! Werk weer deur die studiegids en uitgewerkte voorbeelde vir elke afdeling, en probeer dan weer.' },
+    { minScore: 20, message: 'Uitstekend! ʼn Perfekte telling — jy het Graad 11 Trigonometrie heeltemal bemeester. Hou so aan met die uitstekende werk!' },
+    { minScore: 15, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van trigonometrie. Hersien enige gemiste dele en jy sal dit perfek onder die knie hê.' },
+    { minScore: 11, message: 'Goed gedaan! Jy verstaan die meeste van die inhoud. Gaan terug na die afdelings waar jy punte verloor het en probeer weer.' },
+    { minScore: 6, message: 'Goeie poging! Werk weer deur die studiegids en uitgewerkte voorbeelde vir elke afdeling, en probeer dan weer.' },
     { minScore: 0, message: 'Moenie tou opgooi nie — trigonometrie verg oefening! Gaan deur die verduidelikings en uitgewerkte voorbeelde afdeling vir afdeling, en probeer dan weer.' },
   ],
 }

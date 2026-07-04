@@ -266,7 +266,113 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // AFDELING 4 — FREKWENSIEPOLIGONE
+    // AFDELING 4 — HISTOGRAMME
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'histograms',
+      title: 'Histogramme',
+      icon: '📊',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Histogram</strong> is ʼn staafgrafiek wat gebruik word om <strong>gegroepeerde aaneenlopende data</strong> met gelyke klasintervalle voor te stel. Anders as ʼn gewone staafgrafiek, word die stawe van ʼn histogram <strong>sonder gapings tussen hulle</strong> geteken, omdat die data aaneenlopend is — elke interval vloei direk oor in die volgende langs die getallelyn. Die hoogte van elke staaf wys die <strong>frekwensie</strong> van daardie klasinterval, en die interval met die hoogste staaf word die <strong>modale klas</strong> genoem.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('klasintervalle')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('staafhoogte / frekwensie')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('modale klas')}</span>` +
+        `</div>` +
+
+        // ── Key terms ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelterme</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Klasinterval</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Elke ${bl('staaf')} verteenwoordig een ${bl('klasinterval')} van aaneenlopende data (byvoorbeeld 10≤x<20). Die breedte van elke staaf is dieselfde wanneer intervalle gelyk is.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Staafhoogte = Frekwensie</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die ${gr('hoogte')} van elke staaf wys hoeveel datawaardes binne daardie ${bl('interval')} val — lees dit direk van die y-as af.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Modale Klas</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die ${bl('klasinterval')} met die ${or('hoogste staaf')} (hoogste ${gr('frekwensie')}) — dit is die modale klas van die histogram.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Construction steps ───────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Stappe om ʼn histogram te konstrueer</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${bl('Teken die asse')}</strong> — Merk die x-as met die ${bl('klasintervalle')} (in volgorde, met gelyke breedte) en die y-as met ${gr('frekwensie')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${gr('Teken elke staaf')}</strong> — Teken vir elke ${bl('interval')} ʼn staaf waarvan die ${gr('hoogte')} gelyk is aan sy ${gr('frekwensie')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${or('Los geen gapings nie')}</strong> — Omdat die data aaneenlopend is, moet elke staaf die volgende raak — daar is geen spasie tussen opeenvolgende stawe nie, anders as ʼn gewone staafgrafiek vir kategoriese data.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Histogramme en frekwensiepoligone</p>` +
+        `<p style="margin:0;color:#1e3a8a;">ʼn ${gr('Frekwensiepoligoon')} (sien die volgende afdeling) word gewoonlik geteken deur die ${bl('middelpunte')} van die boonste punte van die histogram se stawe met reguit lyne te verbind. Die twee voorstellings gebruik <strong>dieselfde data</strong> — die histogram wys dit as soliede ${bl('stawe')}, die poligoon wys dit as verbindende punte.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Histogram het stawe vir die intervalle 0≤x<10 (frekwensie 4), 10≤x<20 (frekwensie 8), 20≤x<30 (frekwensie 6), 30≤x<40 (frekwensie 2). Beskryf hoe die histogram geteken moet word en gee die modale klas.',
+          answer: `Vier rakende stawe met hoogtes ${gr('4, 8, 6, 2')}; die modale klas is ${or('10≤x<20')}`,
+          steps: [
+            `Teken die x-as met die ${bl('klasintervalle')} in volgorde: ${bl('0≤x<10')}, ${bl('10≤x<20')}, ${bl('20≤x<30')}, ${bl('30≤x<40')}, elk met gelyke breedte.`,
+            `Teken die y-as met ${gr('frekwensie')}.`,
+            `Teken vier stawe met hoogtes ${gr('4')}, ${gr('8')}, ${gr('6')}, ${gr('2')} onderskeidelik, met <strong>geen gapings</strong> tussen opeenvolgende stawe nie aangesien die data aaneenlopend is.`,
+            `Die hoogste staaf is ${bl('10≤x<20')} met ${gr('frekwensie')} ${gr('8')}, dus is die <strong>modale klas</strong> ${or('10≤x<20')}.`,
+          ],
+        },
+        {
+          question: 'ʼn Histogram wys vier stawe met hoogtes 5, 9, 11 en 3 vir vier gelyke intervalle. Hoeveel datawaardes verteenwoordig die histogram in totaal?',
+          answer: `${gr('28')} datawaardes`,
+          steps: [
+            `Die totale aantal datawaardes is gelyk aan die som van al die staafhoogtes (frekwensies).`,
+            `Totaal = ${gr('5')} + ${gr('9')} + ${gr('11')} + ${gr('3')} = ${gr('28')}.`,
+          ],
+        },
+        {
+          question: 'Verduidelik waarom ʼn histogram nie gapings tussen sy stawe kan hê nie, terwyl ʼn staafgrafiek van gunsteling sportsoorte (sokker, netbal, rugby) wel kan.',
+          answer: 'ʼn Histogram vertoon aaneenlopende data, waar elke interval naatloos by die volgende aansluit, sodat gapings die data verkeerdelik as afsonderlike, onverwante kategorieë sou voorstel.',
+          steps: [
+            `ʼn Histogram verteenwoordig ${bl('aaneenlopende numeriese data')} wat in intervalle gegroepeer is — die einde van een interval is presies waar die volgende interval begin (bv. 10≤x<20 word onmiddellik gevolg deur 20≤x<30).`,
+            `Omdat daar geen werklike "gaping" op die onderliggende getallelyn tussen intervalle is nie, moet die stawe raak om hierdie kontinuïteit korrek weer te gee.`,
+            `ʼn Staafgrafiek van gunsteling sportsoorte vertoon ${bl('diskrete, onverwante kategorieë')} (sokker, netbal, rugby) wat geen numeriese volgorde of kontinuïteit het nie, sodat gapings tussen stawe korrek wys dat die kategorieë afsonderlik is.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Histogram met vier rakende stawe vir gelyke klasintervalle gemerk op die x-as in blou, staafhoogtes van 4 8 6 2 in groen op die y-as as frekwensie gewys, met die hoogste staaf vir 10 tot 20 uitgelig in oranje as die modale klas, en geen gapings tussen enige van die stawe nie" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn histogram uit ʼn gegroepeerde frekwensietabel met gelyke klasintervalle te teken, waarom die stawe moet raak sonder gapings, en hoe om die modale klas van die hoogste staaf te bepaal" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 5 — FREKWENSIEPOLIGONE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'frequency-polygons',
@@ -343,7 +449,137 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // AFDELING 5 — VARIASIEWYDTE, PERSENTIELE, KWARTIELE EN INTERKWARTIELWYDTE
+    // AFDELING 6 — STAM-EN-BLAAR-UITSTALLINGS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'stem-and-leaf-displays',
+      title: 'Stam-en-Blaar-uitstallings',
+      icon: '🌿',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Stam-en-blaar-uitstalling</strong> (of stam-en-blaar-diagram) is ʼn manier om numeriese data te organiseer wat elke oorspronklike datawaarde sigbaar hou terwyl dit ook die algehele vorm van die verspreiding wys. Elke datawaarde word verdeel in ʼn <strong>stam</strong> (die voorste syfer of syfers) en ʼn <strong>blaar</strong> (die laaste syfer). Die stamme word een keer in ʼn gerangskikte kolom geskryf, en die blare wat by elke stam hoort word langsaan geskryf, gerangskik van kleinste na grootste.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('stam')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('blaar')}</span>` +
+        `</div>` +
+
+        // ── Key terms ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelterme</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Stam</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die voorste syfer(s) van ʼn datawaarde. Vir die waarde 47 is die ${bl('stam')} ${bl('4')} (wat die tiental verteenwoordig).</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Blaar</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die laaste syfer van ʼn datawaarde. Vir die waarde 47 is die ${gr('blaar')} ${gr('7')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:4px;">Sleutel/Legende</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Elke stam-en-blaar-diagram het ʼn sleutel nodig, bv. "${bl('4')} | ${gr('7')} = 47", sodat lesers weet hoe om die oorspronklike waardes te herbou.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Construction steps ───────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Stappe om ʼn stam-en-blaar-diagram te konstrueer</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${bl('Lys die stamme')}</strong> — Skryf elke moontlike ${bl('stam')} een keer, in stygende volgorde, in ʼn vertikale kolom.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${gr('Voeg die blare by')}</strong> — Skryf vir elke datawaarde sy ${gr('blaar')}-syfer langs sy ooreenstemmende ${bl('stam')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>${or('Rangskik die blare')}</strong> — Herskryf die ${gr('blare')} vir elke ${bl('stam')} in stygende volgorde, van kleinste na grootste.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#64748b;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Voeg ʼn sleutel by</strong> — Sluit ʼn sleutel in soos "${bl('4')} | ${gr('7')} = 47" sodat die diagram korrek gelees kan word.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Reading measures ─────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die modus, variasiewydte en mediaan van ʼn stam-en-blaar-diagram aflees</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
+        `<ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:#374151;">` +
+        `<li><strong>Modus</strong> — die waarde (of waardes) wat die meeste as ʼn blaar teenoor dieselfde stam voorkom.</li>` +
+        `<li><strong>Variasiewydte</strong> — herbou die kleinste waarde (eerste stam, eerste blaar) en die grootste waarde (laaste stam, laaste blaar), en trek dan af.</li>` +
+        `<li><strong>Mediaan</strong> — aangesien die blare reeds gerangskik is, tel van albei kante af na binne toe langs die diagram (ry vir ry) om die middelste waarde te vind (of die gemiddelde van die twee middelste waardes te bereken).</li>` +
+        `</ul>` +
+        `</div>` +
+
+        // ── Back-to-back explanation ─────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Rug-aan-rug stam-en-blaar-diagramme</p>` +
+        `<p style="margin-bottom:16px;">ʼn <strong>Rug-aan-rug stam-en-blaar-diagram</strong> vergelyk twee datastelle met behulp van ʼn enkele, gedeelde kolom van ${bl('stamme')} in die middel. Die ${gr('blare')} vir een datastel word na die <strong>linkerkant</strong> van die stamme geskryf (gelees van regs na links, toenemend na die stam toe), en die ${gr('blare')} vir die ander datastel word na die <strong>regterkant</strong> geskryf (gelees van links na regs, toenemend weg van die stam af). Dit maak dit maklik om die verspreiding en vorm van twee datastelle langs mekaar te vergelyk.</p>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Voordeel bo gegroepeerde data</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Anders as ʼn histogram of frekwensiepoligoon, wat data in intervalle groepeer, hou ʼn stam-en-blaar-diagram elke oorspronklike datawaarde sigbaar. Dit beteken jy kan ʼn presiese modus, mediaan en variasiewydte aflees in plaas van slegs ʼn benaderde modale klas of mediaaninterval.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Konstrueer ʼn stam-en-blaar-diagram vir die datastel: 23, 31, 27, 22, 35, 29, 31, 24.',
+          answer: `Stamme ${bl('2')} en ${bl('3')} met gerangskikte ${gr('blare')} — sleutel: ${bl('2')} | ${gr('3')} = 23`,
+          steps: [
+            `Verdeel elke waarde in ʼn ${bl('stam')} (tiental) en ${gr('blaar')} (eenheid): 23 → ${bl('2')}|${gr('3')}, 31 → ${bl('3')}|${gr('1')}, 27 → ${bl('2')}|${gr('7')}, 22 → ${bl('2')}|${gr('2')}, 35 → ${bl('3')}|${gr('5')}, 29 → ${bl('2')}|${gr('9')}, 31 → ${bl('3')}|${gr('1')}, 24 → ${bl('2')}|${gr('4')}.`,
+            `Lys die stamme in volgorde: ${bl('2')}, ${bl('3')}.`,
+            `Voeg die blare by elke stam: ${bl('2')} | 3, 7, 2, 9, 4 en ${bl('3')} | 1, 5, 1.`,
+            `Rangskik die blare vir elke stam: ${bl('2')} | ${gr('2, 3, 4, 7, 9')} en ${bl('3')} | ${gr('1, 1, 5')}.`,
+            `Voeg ʼn sleutel by: ${bl('2')} | ${gr('3')} = 23.`,
+          ],
+        },
+        {
+          question: 'Gebruik die stam-en-blaar-diagram van Voorbeeld 1 (2 | 2,3,4,7,9 en 3 | 1,1,5; sleutel 2|3 = 23), bepaal die modus, variasiewydte en mediaan.',
+          answer: `Modus = ${gr('31')}, Variasiewydte = ${gr('13')}, Mediaan = ${gr('28')}`,
+          steps: [
+            `<strong>Modus:</strong> As jy die blare lees, kom ${gr('1')} twee keer voor teenoor stam ${bl('3')} (wat 31 twee keer gee) terwyl elke ander waarde slegs een keer voorkom, dus is die <strong>modus 31</strong>.`,
+            `<strong>Variasiewydte:</strong> Die kleinste waarde is ${bl('2')} | ${gr('2')} = 22, en die grootste waarde is ${bl('3')} | ${gr('5')} = 35. Variasiewydte = 35 − 22 = ${gr('13')}.`,
+            `<strong>Mediaan:</strong> Daar is 8 waardes in totaal. In volgorde geskryf met behulp van die diagram: 22, 23, 24, 27, 29, 31, 31, 35. Met ʼn ewe getal is die mediaan die gemiddelde van die 4de en 5de waardes: (27 + 29) ÷ 2 = <strong>28</strong>.`,
+          ],
+        },
+        {
+          question: "Twee klasse het dieselfde toets geskryf. Klas A: 12, 15, 18, 21, 23, 27. Klas B: 14, 16, 19, 20, 22, 22, 28. Konstrueer ʼn rug-aan-rug stam-en-blaar-diagram wat hulle vergelyk, met ʼn gedeelde stamkolom van tiental-syfers.",
+          answer: 'ʼn Rug-aan-rug diagram met Klas A se blare links en Klas B se blare regs van die gedeelde stamme 1 en 2',
+          steps: [
+            `Verdeel elke Klas A-waarde in stam en blaar: 12 → ${bl('1')}|2, 15 → ${bl('1')}|5, 18 → ${bl('1')}|8, 21 → ${bl('2')}|1, 23 → ${bl('2')}|3, 27 → ${bl('2')}|7.`,
+            `Verdeel elke Klas B-waarde in stam en blaar: 14 → ${bl('1')}|4, 16 → ${bl('1')}|6, 19 → ${bl('1')}|9, 20 → ${bl('2')}|0, 22 → ${bl('2')}|2, 22 → ${bl('2')}|2, 28 → ${bl('2')}|8.`,
+            `Teken een gedeelde, gerangskikte stamkolom in die middel: ${bl('1')}, ${bl('2')}.`,
+            `Skryf Klas A se blare aan die <strong>linkerkant</strong> van elke stam, gerangskik sodat hulle na die stam toe toeneem: stam ${bl('1')} → 8, 5, 2 | stam ${bl('2')} → 7, 3, 1.`,
+            `Skryf Klas B se blare aan die <strong>regterkant</strong> van elke stam, gerangskik sodat hulle weg van die stam af toeneem: stam ${bl('1')} → 4, 6, 9 | stam ${bl('2')} → 0, 2, 2, 8.`,
+            `Volledige diagram — Klas A | Stam | Klas B: "8,5,2 | ${bl('1')} | 4,6,9" en "7,3,1 | ${bl('2')} | 0,2,2,8". Sleutel: 2|${bl('1')}|4 beteken Klas A = 12 en Klas B = 14.`,
+            `As die rye vergelyk word, blyk dit dat Klas B een meer resultaat het (7 teenoor 6) en dat hul tellings oor die algemeen effens hoër en meer versprei aan die boonste kant is (28 teenoor 27), terwyl Klas A se tellings ietwat laer saamgroepeer.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Stam-en-blaar-diagram met ʼn vertikale kolom van stamme in blou soos 2 en 3, gerangskikte blare in groen langs elke stam geskryf, en ʼn sleutel onderaan wat lees 2 vertikale streep 3 is gelyk aan 23, plus ʼn tweede rug-aan-rug stam-en-blaar-diagram voorbeeld wat een klas se blare links en ʼn ander klas se blare regs van ʼn gedeelde sentrale stamkolom wys" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om datawaardes in stamme en blare te verdeel, ʼn gerangskikte stam-en-blaar-diagram met ʼn sleutel te bou, die modus, variasiewydte en mediaan daarvan af te lees, en ʼn rug-aan-rug stam-en-blaar-diagram te konstrueer wat twee datastelle vergelyk" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 7 — VARIASIEWYDTE, PERSENTIELE, KWARTIELE EN INTERKWARTIELWYDTE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'range-percentiles-quartiles-iqr',
@@ -530,7 +766,35 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Vraag 10 Medium — frekwensiepoligoonpunt ─────────────────────────────
+    // ── Vraag 10 Maklik — modale klas uit histogram ──────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'ʼn Histogram het stawe vir die intervalle 0≤x<10 (frekwensie 4), 10≤x<20 (frekwensie 9), 20≤x<30 (frekwensie 5). Identifiseer die modale klas.',
+      answer: '10≤x<20',
+      checkMode: 'auto',
+      correctAnswer: '10≤x<20',
+      explanation: 'Die modale klas is die klasinterval met die hoogste staaf (hoogste frekwensie). 10≤x<20 het frekwensie 9, die hoogste van die drie, dus is dit die modale klas.',
+    },
+
+    // ── Vraag 11 Medium — totale frekwensie uit histogramstawe ──────────────
+    {
+      difficulty: 'Medium',
+      question: 'ʼn Histogram het vier stawe met hoogtes (frekwensies) 6, 10, 8 en 4 vir vier gelyke klasintervalle. Hoeveel datawaardes verteenwoordig die histogram in totaal?',
+      answer: '28',
+      checkMode: 'auto',
+      correctAnswer: '28',
+      explanation: 'Die totale aantal datawaardes is gelyk aan die som van al die staafhoogtes: 6 + 10 + 8 + 4 = 28.',
+    },
+
+    // ── Vraag 12 Hard — waarom histogramstawe geen gapings het nie ──────────
+    {
+      difficulty: 'Hard',
+      question: 'Thabo teken ʼn histogram vir aaneenlopende toetspunt-data, maar los klein gapings tussen die stawe, soos ʼn gewone staafgrafiek. Verduidelik waarom dit verkeerd is.',
+      answer: 'ʼn Histogram verteenwoordig aaneenlopende data waar elke klasinterval direk by die volgende aansluit, dus moet die stawe raak sonder gapings; gapings los suggereer verkeerdelik dat die intervalle afsonderlike, onverwante kategorieë is, soos in ʼn staafgrafiek van diskrete kategorieë.',
+      checkMode: 'self',
+    },
+
+    // ── Vraag 13 Medium — frekwensiepoligoonpunt ─────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Beskryf hoe om ʼn frekwensiepoligoonpunt vir die interval 20≤x<30 met frekwensie 12 te plot.',
@@ -540,7 +804,7 @@ export const topicData: TopicData = {
       explanation: 'Die middelpunt van 20≤x<30 is (20+30)÷2 = 25. Die frekwensie is 12. Plot die punt by koördinate (25, 12) op die grafiek.',
     },
 
-    // ── Vraag 11 Hard — frekwensiepoligone vergelyk ──────────────────────────
+    // ── Vraag 14 Hard — frekwensiepoligone vergelyk ──────────────────────────
     {
       difficulty: 'Hard',
       question: "Sipho se frekwensiepoligoon vir een datastel piek hoër as Lerato se poligoon vir ʼn ander datastel, albei op dieselfde asse geplot. Wat dui dit waarskynlik aan?",
@@ -548,7 +812,37 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Vraag 12 Maklik — variasiewydte ───────────────────────────────────────
+    // ── Vraag 15 Maklik — stamme en blare lees ───────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'In ʼn stam-en-blaar-diagram het stam 3 blare 1, 1, 4, 8, 9 (sleutel: 3|1 = 31). Lys die werklike datawaardes vir hierdie stam.',
+      answer: '31, 31, 34, 38, 39',
+      checkMode: 'auto',
+      correctAnswer: '31, 31, 34, 38, 39',
+      correctAnswers: ['31, 31, 34, 38, 39', '31,31,34,38,39', '31 31 34 38 39'],
+      explanation: 'Elke blaar word by stam 3 (tiental) gevoeg: 3|1=31, 3|1=31, 3|4=34, 3|8=38, 3|9=39.',
+    },
+
+    // ── Vraag 16 Medium — modus, variasiewydte, mediaan uit ʼn stam-en-blaar-diagram
+    {
+      difficulty: 'Medium',
+      question: 'ʼn Stam-en-blaar-diagram wys: 5 | 1, 4, 4, 8 en 6 | 2, 5, 7, 9 (sleutel: 5|1 = 51). Bepaal die modus, variasiewydte en mediaan van hierdie datastel.',
+      answer: 'Modus = 54, Variasiewydte = 18, Mediaan = 60',
+      checkMode: 'auto',
+      correctAnswer: 'Modus = 54, Variasiewydte = 18, Mediaan = 60',
+      correctAnswers: ['Modus = 54, Variasiewydte = 18, Mediaan = 60', 'modus=54, variasiewydte=18, mediaan=60', '54, 18, 60'],
+      explanation: 'Data in volgorde: 51, 54, 54, 58, 62, 65, 67, 69 (8 waardes). Modus = 54 (kom twee keer voor). Variasiewydte = 69 − 51 = 18. Mediaan = gemiddelde van 4de en 5de waardes = (58 + 62) ÷ 2 = 60.',
+    },
+
+    // ── Vraag 17 Hard — rug-aan-rug stam-en-blaar-vergelyking ────────────────
+    {
+      difficulty: 'Hard',
+      question: "ʼn Rug-aan-rug stam-en-blaar-diagram vergelyk Klas A en Klas B se toetstellings met gedeelde stamme 4 en 5: Klas A '8,5,2 | 4 | 0,4,6' en '7,3,1 | 5 | 2,5,5,9' vir Klas B (sleutel: 2|4|0 beteken Klas A=42, Klas B=40). Vergelyk die twee klasse se prestasie.",
+      answer: 'Klas A het 6 tellings (42,45,48,51,53,57) en Klas B het 7 tellings (40,44,46,52,55,55,59); Klas B het ʼn effens hoër maksimum (59 teenoor 57) en meer tellings in die 50s, wat aandui dat Klas B oor die algemeen effens beter presteer het, alhoewel albei klasse ʼn soortgelyke omvang dek.',
+      checkMode: 'self',
+    },
+
+    // ── Vraag 18 Maklik — variasiewydte ───────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'Bepaal die variasiewydte van die datastel 22, 8, 45, 30, 12.',
@@ -558,7 +852,7 @@ export const topicData: TopicData = {
       explanation: 'Variasiewydte = grootste − kleinste = 45 − 8 = 37.',
     },
 
-    // ── Vraag 13 Medium — kwartiele ───────────────────────────────────────────
+    // ── Vraag 19 Medium — kwartiele ───────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Bepaal Q1, Q2 en Q3 van die gerangskikte data: 5, 9, 13, 17, 21, 25, 29, 33.',
@@ -569,15 +863,15 @@ export const topicData: TopicData = {
       explanation: 'Q2 (mediaan) = (17+21)÷2 = 19. Onderste helfte 5,9,13,17 → Q1 = (9+13)÷2 = 11. Boonste helfte 21,25,29,33 → Q3 = (25+29)÷2 = 27.',
     },
 
-    // ── Vraag 14 Hard — IKW en wat dit verteenwoordig ─────────────────────────
+    // ── Vraag 20 Hard — IKW en wat dit verteenwoordig ─────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Gebruik die kwartiele van Vraag 13 om die interkwartielwydte te bepaal en verduidelik wat dit verteenwoordig.',
+      question: 'Gebruik die kwartiele van Vraag 19 om die interkwartielwydte te bepaal en verduidelik wat dit verteenwoordig.',
       answer: 'IKW=27-11=16. Dit verteenwoordig die verspreiding van die middelste 50% van die data, en gee ʼn maatstaf van verspreiding wat minder deur uiterste waardes beïnvloed word as die volle variasiewydte.',
       checkMode: 'self',
     },
 
-    // ── Vraag 15 Hard — mediaan gelyk aan Q2 ─────────────────────────────────
+    // ── Vraag 21 Hard — mediaan gelyk aan Q2 ─────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Thabo sê die mediaan is altyd gelyk aan Q2. Is hy korrek? Verduidelik.',
@@ -585,7 +879,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Vraag 16 Hard — klein IKW relatief tot variasiewydte ──────────────────
+    // ── Vraag 22 Hard — klein IKW relatief tot variasiewydte ──────────────────
     {
       difficulty: 'Hard',
       question: 'ʼn Datastel het Q1=20 en Q3=50. Bepaal die interkwartielwydte, en verduidelik dan wat ʼn klein IKW in vergelyking met die volle variasiewydte oor die data sou aandui.',
@@ -593,7 +887,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Vraag 17 Hard — benaderde gemiddelde uit gegroepeerde data ───────────
+    // ── Vraag 23 Hard — benaderde gemiddelde uit gegroepeerde data ───────────
     {
       difficulty: 'Hard',
       question: 'Bepaal die benaderde gemiddelde van gegroepeerde data met intervalle 10≤x<20 (freq 5), 20≤x<30 (freq 9), 30≤x<40 (freq 6), deur middelpunte te gebruik.',
@@ -601,7 +895,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Vraag 18 Hard — akkuraatheid van sakrekenaar-gemiddelde vir gegroepeerde data
+    // ── Vraag 24 Hard — akkuraatheid van sakrekenaar-gemiddelde vir gegroepeerde data
     {
       difficulty: 'Hard',
       question: "Lerato sê ʼn sakrekenaar se gemiddelde-funksie gee die presiese gemiddelde vir gegroepeerde data. Is dit altyd akkuraat? Verduidelik.",
@@ -609,7 +903,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Vraag 19 Hard — 40ste persentiel in konteks ──────────────────────────
+    // ── Vraag 25 Hard — 40ste persentiel in konteks ──────────────────────────
     {
       difficulty: 'Hard',
       question: 'Amahle vind dat die 40ste persentiel van ʼn datastel in die interval 25≤x<35 val. Verduidelik wat dit in konteks beteken.',
@@ -617,7 +911,7 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Vraag 20 Hard — variasiewydte teenoor IKW-uitskieterredenasie ────────
+    // ── Vraag 26 Hard — variasiewydte teenoor IKW-uitskieterredenasie ────────
     {
       difficulty: 'Hard',
       question: "ʼn Datastel se variasiewydte is 60, maar sy interkwartielwydte is slegs 12. Sipho maak die gevolgtrekking dat daar minstens een uitskieter moet wees. Is sy redenasie geldig? Verduidelik.",
@@ -627,11 +921,11 @@ export const topicData: TopicData = {
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 26,
     messages: [
-      { minScore: 20, message: 'Uitstekend! Jy het statistiek bemeester.' },
-      { minScore: 15, message: 'Puik werk!' },
-      { minScore: 10, message: 'Goeie poging, gaan deur en probeer weer.' },
+      { minScore: 26, message: 'Uitstekend! Jy het statistiek bemeester.' },
+      { minScore: 20, message: 'Puik werk!' },
+      { minScore: 13, message: 'Goeie poging, gaan deur en probeer weer.' },
       { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
     ],
   },
