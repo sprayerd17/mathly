@@ -6,6 +6,7 @@ import Navbar from '@/app/components/Navbar'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { auth, db } from '@/src/lib/firebase'
 import { doc, getDoc } from 'firebase/firestore'
+import { onAuthStateChanged } from 'firebase/auth'
 
 // PayFast's browser redirect can land here before or after the server-to-server
 // ITN POST — this page never sets package itself (ITN is the only trusted
@@ -17,10 +18,9 @@ export default function PricingSuccessPage() {
   useEffect(() => {
     let cancelled = false
     let attempts = 0
+    let timeoutId: ReturnType<typeof setTimeout> | undefined
 
-    async function poll() {
-      const uid = auth.currentUser?.uid
-      if (!uid) return
+    async function poll(uid: string) {
       const snap = await getDoc(doc(db, 'users', uid))
       if (cancelled) return
       if (snap.exists() && snap.data().subscriptionStatus === 'active') {
@@ -32,11 +32,28 @@ export default function PricingSuccessPage() {
         setStatus('timeout')
         return
       }
-      setTimeout(poll, 2000)
+      timeoutId = setTimeout(() => poll(uid), 2000)
     }
 
-    poll()
-    return () => { cancelled = true }
+    // auth.currentUser is unreliable right after PayFast's external redirect
+    // back to this page — Firebase Auth hasn't finished restoring the session
+    // from storage yet, so it reads null on first render. onAuthStateChanged
+    // fires once that restore completes (or confirms there's no session).
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      unsubscribe()
+      if (cancelled) return
+      if (!user) {
+        setStatus('timeout')
+        return
+      }
+      poll(user.uid)
+    })
+
+    return () => {
+      cancelled = true
+      unsubscribe()
+      if (timeoutId) clearTimeout(timeoutId)
+    }
   }, [])
 
   return (
