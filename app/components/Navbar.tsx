@@ -30,14 +30,6 @@ function CloseIcon() {
   )
 }
 
-const logoMark = (
-  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-    <rect x="11" y="1.5" width="13" height="13" rx="1.5" transform="rotate(45 11 11)" fill="#0f1f3d" />
-    <rect x="11" y="5.5" width="7.8" height="7.8" rx="0.8" transform="rotate(45 11 11)" fill="white" />
-    <circle cx="11" cy="11" r="1.6" fill="#1e40af" />
-  </svg>
-)
-
 export default function Navbar() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -80,7 +72,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            {logoMark}
+            <img src="/logo-icon.png" width={26} height={26} alt="" aria-hidden="true" />
             <span style={{ color: '#0f1f3d', fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '1.35rem', fontWeight: 600, letterSpacing: '0.01em' }}>
               Mathly
             </span>

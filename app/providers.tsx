@@ -303,15 +303,6 @@ function AuthModal({
 
   const onRegisterStep = tab === 'register' && registerStep > 1
 
-  // ── Logo mark ─────────────────────────────────────────────────────────────
-  const logoMark = (
-    <svg width="20" height="20" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect x="11" y="1.5" width="13" height="13" rx="1.5" transform="rotate(45 11 11)" fill="#0f1f3d" />
-      <rect x="11" y="5.5" width="7.8" height="7.8" rx="0.8" transform="rotate(45 11 11)" fill="white" />
-      <circle cx="11" cy="11" r="1.6" fill="#1e40af" />
-    </svg>
-  )
-
   return (
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4"
@@ -327,7 +318,7 @@ function AuthModal({
         <div className="px-8 pt-7 pb-0 shrink-0">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              {logoMark}
+              <img src="/logo-icon.png" width={24} height={24} alt="" aria-hidden="true" />
               <span
                 style={{
                   color: '#0f1f3d',
