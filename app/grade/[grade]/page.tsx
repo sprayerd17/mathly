@@ -421,6 +421,36 @@ const grade6Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'length',
+    name: 'Length',
+    description: 'Convert between mm, cm, m and km using multi-step conversions and mixed units, apply length to scale drawings and maps, and solve real-world length problems.',
+    free: false,
+  },
+  {
+    slug: 'mass',
+    name: 'Mass',
+    description: 'Convert between mg, g, kg and t using multi-step conversions and mixed units, scale recipes and compare prices per kilogram, and solve real-world mass problems.',
+    free: false,
+  },
+  {
+    slug: 'capacity-and-volume',
+    name: 'Capacity and Volume',
+    description: 'Convert between ml, l and kl using multi-step conversions and mixed units, relate capacity to volume using the fact that 1 cm³ = 1 ml, and solve real-world capacity problems.',
+    free: false,
+  },
+  {
+    slug: 'time',
+    name: 'Time',
+    description: 'Convert between 12-hour and 24-hour time, calculate elapsed time including periods that cross midnight, and solve real-world time and timetable problems.',
+    free: false,
+  },
+  {
+    slug: 'temperature',
+    name: 'Temperature',
+    description: 'Read thermometers and understand positive and negative temperatures, compare and order temperatures including negative values, and calculate temperature differences.',
+    free: false,
+  },
+  {
     slug: 'data-handling',
     name: 'Data Handling',
     description: 'Collect and organise data in frequency tables, read and draw bar graphs and pie charts, calculate the mean, median and mode, and draw conclusions from data.',
