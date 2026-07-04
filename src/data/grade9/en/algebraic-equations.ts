@@ -1,9 +1,9 @@
 import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 
 // ─── Colour helpers (algebraic equation roles) ────────────────────────────────
-// factorised brackets / each factor / rearranging → blue   (#2563eb)
-// each solution / zero product property / factorisation → orange (#ea580c)
-// solutions (sections 2 & 3)                       → green  (#16a34a)
+// brackets / given equation / each factor / x terms / rearranging → blue   (#2563eb)
+// operation applied / zero product property / factorisation       → orange (#ea580c)
+// solution(s)                                                     → green  (#16a34a)
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
@@ -13,7 +13,232 @@ export const topicData: TopicData = {
   grade: 9,
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 1 — SOLVING EQUATIONS USING FACTORISATION
+    // SECTION 1 — SOLVING MULTI-STEP LINEAR EQUATIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'solving-multi-step-linear-equations',
+      title: 'Solving Multi-Step Linear Equations',
+      icon: '=',
+      explanation:
+        `<p style="margin-bottom:16px;">In Grade 8 you solved equations like ${bl('5x + 9 = 34')} using inverse operations. Now we extend this to equations that include ${bl('brackets')}. Before you can isolate x, you must first ${or('expand the brackets')} using the distributive property, and then ${or('combine any like terms')}.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('brackets / given equation')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('operation applied')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('solution')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Step-by-step method</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Expand')} — Multiply out any brackets using the distributive property. Watch the sign carefully when a bracket is preceded by a minus sign.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Simplify')} — Combine any like terms on the same side of the equation.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Solve')} — Use inverse operations to isolate x, exactly as you did in Grade 8.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Watch the sign when subtracting a bracket</p>` +
+        `<p style="margin:0;color:#1e3a8a;">When a bracket is preceded by a minus sign, like ${bl('−3(x − 2)')}, the minus sign multiplies into <strong>every</strong> term inside: ${or('−3(x − 2) = −3x + 6')}, not −3x − 6. Always double-check this sign.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Solve 3(x + 2) = 21.',
+          answer: `${gr('x = 5')}`,
+          steps: [
+            `${bl('Expand the bracket:')} ${or('3(x + 2) = 3x + 6')}`,
+            `The equation is now: ${or('3x + 6 = 21')}`,
+            `Subtract 6 from both sides: ${or('3x = 15')}`,
+            `Divide both sides by 3: ${gr('x = 5')}`,
+            `Check: 3(5 + 2) = 3 × 7 = 21 ✓`,
+          ],
+        },
+        {
+          question: 'Solve 5x − 3(x − 2) = 16.',
+          answer: `${gr('x = 5')}`,
+          steps: [
+            `${bl('Expand the bracket:')} ${or('−3(x − 2) = −3x + 6')} (the minus sign flips both signs inside)`,
+            `The equation is now: ${or('5x − 3x + 6 = 16')}`,
+            `Combine like terms: ${or('2x + 6 = 16')}`,
+            `Subtract 6 from both sides: ${or('2x = 10')}`,
+            `Divide both sides by 2: ${gr('x = 5')}`,
+            `Check: 5(5) − 3(5 − 2) = 25 − 3(3) = 25 − 9 = 16 ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'Solve 2(x + 3) = 16.',
+          answer: 'x = 5',
+          checkMode: 'auto',
+          correctAnswer: 'x=5',
+          correctAnswers: ['x=5', 'x = 5', '5'],
+          explanation: 'Expand: 2x + 6 = 16.\nSubtract 6: 2x = 10.\nDivide by 2: x = 5 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Solve 3(2x − 1) = 15.',
+          answer: 'x = 3',
+          checkMode: 'auto',
+          correctAnswer: 'x=3',
+          correctAnswers: ['x=3', 'x = 3', '3'],
+          explanation: 'Expand: 6x − 3 = 15.\nAdd 3: 6x = 18.\nDivide by 6: x = 3 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Solve 6(x − 2) − 2(x + 1) = 14.',
+          answer: 'x = 7',
+          checkMode: 'auto',
+          correctAnswer: 'x=7',
+          correctAnswers: ['x=7', 'x = 7', '7'],
+          explanation: 'Expand both brackets: 6x − 12 − 2x − 2 = 14.\nCombine like terms: 4x − 14 = 14.\nAdd 14: 4x = 28.\nDivide by 4: x = 7 ✓',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to expand brackets using the distributive property, combine like terms, and then solve a multi-step linear equation using inverse operations" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Step-by-step layout showing a bracketed equation being expanded with the distributive property highlighted in blue, simplified terms in orange, and the final solution in green" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 2 — VARIABLES ON BOTH SIDES AND EQUATIONS WITH FRACTIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'variables-both-sides-fractions',
+      title: 'Variables on Both Sides and Equations with Fractions',
+      icon: '=',
+      explanation:
+        `<p style="margin-bottom:16px;">Some equations have the variable ${bl('x')} on both sides. To solve these, first move all the ${bl('x')} terms to one side by adding or subtracting, then solve as usual. Other equations involve ${or('fractions')} — multiply both sides by the denominator to clear the fraction before solving.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('x terms')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('operation applied')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('solution')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Two new equation types</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Variables on Both Sides</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">For ${bl('5x + 3 = 2x + 18')}, subtract ${bl('2x')} from both sides first: ${or('3x + 3 = 18')}. Now solve as a normal two-step equation.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:6px;">Equations with Fractions</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">For ${or('(x + 4) ÷ 2 = 9')}, multiply both sides by 2 first to clear the fraction: ${or('x + 4 = 18')}. Now solve as a normal equation.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Choosing which side to move the x terms to</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Subtract the ${bl('smaller x term')} from both sides — this keeps the remaining x term ${gr('positive')}, which is easier to work with. In ${bl('5x + 3 = 2x + 18')}, subtract ${bl('2x')} (not 5x) since 2x is smaller.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Solve 5x + 3 = 2x + 18.',
+          answer: `${gr('x = 5')}`,
+          steps: [
+            `Subtract ${bl('2x')} from both sides: ${or('3x + 3 = 18')}`,
+            `Subtract 3 from both sides: ${or('3x = 15')}`,
+            `Divide both sides by 3: ${gr('x = 5')}`,
+            `Check: 5(5) + 3 = 28, and 2(5) + 18 = 28 ✓`,
+          ],
+        },
+        {
+          question: 'Solve x ÷ 3 + 2 = 7.',
+          answer: `${gr('x = 15')}`,
+          steps: [
+            `Subtract 2 from both sides: ${or('x ÷ 3 = 5')}`,
+            `Multiply both sides by 3: ${gr('x = 15')}`,
+            `Check: 15 ÷ 3 + 2 = 5 + 2 = 7 ✓`,
+          ],
+        },
+        {
+          question: 'Solve (x + 4) ÷ 2 = 9.',
+          answer: `${gr('x = 14')}`,
+          steps: [
+            `Multiply both sides by 2 to clear the fraction: ${or('x + 4 = 18')}`,
+            `Subtract 4 from both sides: ${gr('x = 14')}`,
+            `Check: (14 + 4) ÷ 2 = 18 ÷ 2 = 9 ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'Solve 4x + 5 = x + 17.',
+          answer: 'x = 4',
+          checkMode: 'auto',
+          correctAnswer: 'x=4',
+          correctAnswers: ['x=4', 'x = 4', '4'],
+          explanation: 'Subtract x from both sides: 3x + 5 = 17.\nSubtract 5: 3x = 12.\nDivide by 3: x = 4 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Solve x ÷ 4 + 3 = 8.',
+          answer: 'x = 20',
+          checkMode: 'auto',
+          correctAnswer: 'x=20',
+          correctAnswers: ['x=20', 'x = 20', '20'],
+          explanation: 'Subtract 3 from both sides: x ÷ 4 = 5.\nMultiply both sides by 4: x = 20 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Solve each of the following.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Solve 7x − 2 = 3x + 18.',
+              correctAnswer: 'x=5',
+              correctAnswers: ['x=5', 'x = 5', '5'],
+              explanation: 'Subtract 3x from both sides: 4x − 2 = 18.\nAdd 2: 4x = 20.\nDivide by 4: x = 5 ✓',
+            },
+            {
+              label: 'b) Solve (2x − 1) ÷ 3 = 5.',
+              correctAnswer: 'x=8',
+              correctAnswers: ['x=8', 'x = 8', '8'],
+              explanation: 'Multiply both sides by 3: 2x − 1 = 15.\nAdd 1: 2x = 16.\nDivide by 2: x = 8 ✓',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to solve an equation with variables on both sides by moving the smaller x term across, followed by an example clearing a fraction by multiplying both sides" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Diagram showing an equation with x terms on both sides, with the x terms highlighted in blue on each side and an arrow showing the smaller one being moved across, ending in a green solution" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — SOLVING EQUATIONS USING FACTORISATION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'solving-equations-factorisation',
@@ -111,7 +336,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — EQUATIONS OF THE FORM 'PRODUCT OF FACTORS = 0'
+    // SECTION 4 — EQUATIONS OF THE FORM 'PRODUCT OF FACTORS = 0'
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'product-of-factors-zero',
@@ -213,7 +438,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SOLVING EQUATIONS REQUIRING FACTORISATION FIRST
+    // SECTION 5 — SOLVING EQUATIONS REQUIRING FACTORISATION FIRST
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'solving-equations-factorise-first',
@@ -369,9 +594,9 @@ export const topicData: TopicData = {
     },
   ],
   scoreMessages: [
-    { minScore: 15, message: 'Outstanding! You have mastered algebraic equations.' },
-    { minScore: 11, message: 'Great work!' },
-    { minScore: 8, message: 'Good effort, review and try again.' },
+    { minScore: 22, message: 'Outstanding! You have mastered algebraic equations.' },
+    { minScore: 16, message: 'Great work!' },
+    { minScore: 11, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
 }
