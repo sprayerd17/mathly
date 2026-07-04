@@ -5,15 +5,21 @@ import Navbar from '@/app/components/Navbar'
 import Footer from '@/app/components/Footer'
 import { useAuth } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { db } from '@/src/lib/firebase'
+import { doc, getDoc, setDoc, addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
-const INTEREST_KEY = 'mathly_live_interest'
+// Local hint only — used so a guest sees their own "you're on the list" state
+// on a repeat visit from the same browser. It is never the source of truth:
+// guest signups are write-only in Firestore (see firestore.rules), so there's
+// no way to read them back. Signed-in users skip this entirely and read their
+// real entry straight from Firestore instead.
+const GUEST_INTEREST_KEY = 'mathly_live_interest_guest'
 const LESSON_GRADES = [8, 9, 10, 11, 12]
 
 type InterestEntry = {
   name: string
   email: string
   grades: number[]
-  date: string
 }
 
 export default function LiveClassesPage() {
@@ -38,59 +44,105 @@ export default function LiveClassesPage() {
     },
   ]
 
-  const [mounted, setMounted]       = useState(false)
-  const [registered, setRegistered] = useState<InterestEntry | null>(null)
-  const [selectedGrades, setSelectedGrades] = useState<number[]>([])
-  const [editing, setEditing]       = useState(false)
-  const [submitted, setSubmitted]   = useState(false)
+  const [mounted, setMounted]         = useState(false)
+  const [registered, setRegistered]   = useState<InterestEntry | null>(null)
+  const [submitting, setSubmitting]   = useState(false)
+  const [guestEditing, setGuestEditing] = useState(false)
+
+  // Guest-only form fields — signed-in users never see or need these, their
+  // name/email/grades all come from their account.
+  const [guestName, setGuestName]     = useState('')
+  const [guestEmail, setGuestEmail]   = useState('')
+  const [guestGrades, setGuestGrades] = useState<number[]>([])
+
+  // A signed-in account's grade(s) are linked automatically from every child
+  // on the account (deduplicated) — never a manual choice, since they've
+  // already told us this when they set up their profile.
+  const autoGrades = user
+    ? [...new Set(user.children.map(c => c.grade))].sort((a, b) => a - b)
+    : []
 
   useEffect(() => {
     setMounted(true)
-    if (!user) return
+    if (user) {
+      getDoc(doc(db, 'liveClassInterest', user.uid))
+        .then(snap => {
+          if (snap.exists()) {
+            const data = snap.data()
+            setRegistered({ name: data.name, email: data.email, grades: data.grades })
+          } else {
+            setRegistered(null)
+          }
+        })
+        .catch(() => {})
+      return
+    }
     try {
-      const raw = localStorage.getItem(INTEREST_KEY)
+      const raw = localStorage.getItem(GUEST_INTEREST_KEY)
       if (raw) {
-        const parsed: InterestEntry[] = JSON.parse(raw)
-        const mine = parsed.find(e => e.email === user.email) ?? null
-        if (mine) {
-          setRegistered(mine)
-          setSelectedGrades(mine.grades)
-        }
+        const parsed: InterestEntry = JSON.parse(raw)
+        setRegistered(parsed)
+        setGuestName(parsed.name)
+        setGuestEmail(parsed.email)
+        setGuestGrades(parsed.grades)
       }
     } catch { /* ignore */ }
   }, [user])
 
-  function toggleGrade(g: number) {
-    setSelectedGrades(prev =>
+  function toggleGuestGrade(g: number) {
+    setGuestGrades(prev =>
       prev.includes(g) ? prev.filter(x => x !== g) : [...prev, g].sort((a, b) => a - b)
     )
   }
 
-  function handleSubmit() {
-    if (!user || selectedGrades.length === 0) return
-    const entry: InterestEntry = {
-      name:   user.name,
-      email:  user.email,
-      grades: selectedGrades,
-      date:   new Date().toISOString().slice(0, 10),
-    }
-    let all: InterestEntry[] = []
+  async function handleSignedInJoin() {
+    if (!user || autoGrades.length === 0) return
+    setSubmitting(true)
     try {
-      const raw = localStorage.getItem(INTEREST_KEY)
-      if (raw) all = JSON.parse(raw)
-    } catch { /* ignore */ }
-    const idx = all.findIndex(e => e.email === user.email)
-    if (idx >= 0) all[idx] = entry
-    else all.push(entry)
-    localStorage.setItem(INTEREST_KEY, JSON.stringify(all))
-    setRegistered(entry)
-    setEditing(false)
-    setSubmitted(true)
+      await setDoc(doc(db, 'liveClassInterest', user.uid), {
+        name: user.name,
+        email: user.email,
+        grades: autoGrades,
+        uid: user.uid,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+      }, { merge: true })
+      setRegistered({ name: user.name, email: user.email, grades: autoGrades })
+    } catch {
+      // best-effort — stay on the confirm view so they can retry
+    } finally {
+      setSubmitting(false)
+    }
   }
 
-  const showSuccess = mounted && !!user && !!registered && !editing
-  const showForm    = mounted && !!user && (!registered || editing)
-  const showLogin   = mounted && !user
+  function startGuestEdit() {
+    setGuestEditing(true)
+  }
+
+  async function handleGuestSubmit() {
+    if (!guestName.trim() || !guestEmail.trim() || guestGrades.length === 0) return
+    setSubmitting(true)
+    const entry: InterestEntry = { name: guestName.trim(), email: guestEmail.trim(), grades: guestGrades }
+    try {
+      await addDoc(collection(db, 'liveClassInterest'), {
+        ...entry,
+        uid: null,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+      })
+      localStorage.setItem(GUEST_INTEREST_KEY, JSON.stringify(entry))
+      setRegistered(entry)
+      setGuestEditing(false)
+    } catch {
+      // best-effort — stay on the form so they can retry
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  const showSuccess = mounted && !!registered && !(!user && guestEditing)
+  const showSignedInJoin = mounted && !!user && !registered
+  const showGuestForm = mounted && !user && (!registered || guestEditing)
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
@@ -137,7 +189,7 @@ export default function LiveClassesPage() {
                     </svg>
                   </div>
                   <h2 className="text-xl font-bold mb-1" style={{ color: '#0f1f3d' }}>
-                    {submitted ? t.live_waitlist_confirmed_heading : t.live_already_registered_heading}
+                    {t.live_waitlist_confirmed_heading}
                   </h2>
                   <p className="text-sm text-gray-500">
                     {t.live_confirmation_message_prefix}{' '}
@@ -163,42 +215,99 @@ export default function LiveClassesPage() {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => { setEditing(true); setSubmitted(false) }}
-                  className="w-full text-center text-sm font-semibold py-3 rounded-xl border transition-colors hover:bg-gray-50"
-                  style={{ borderColor: '#d1d5db', color: '#374151' }}
-                >
-                  {t.live_update_grade_selection_button}
-                </button>
+                {user ? (
+                  <button
+                    onClick={handleSignedInJoin}
+                    disabled={submitting}
+                    className="w-full text-center text-sm font-semibold py-3 rounded-xl border transition-colors hover:bg-gray-50 disabled:opacity-50"
+                    style={{ borderColor: '#d1d5db', color: '#374151' }}
+                  >
+                    {t.live_refresh_grades_button}
+                  </button>
+                ) : (
+                  <button
+                    onClick={startGuestEdit}
+                    className="w-full text-center text-sm font-semibold py-3 rounded-xl border transition-colors hover:bg-gray-50"
+                    style={{ borderColor: '#d1d5db', color: '#374151' }}
+                  >
+                    {t.live_update_grade_selection_button}
+                  </button>
+                )}
               </>
 
-            ) : showLogin ? (
-              /* ── Not logged in ── */
+            ) : showSignedInJoin ? (
+              /* ── Signed in: grade(s) linked automatically, no choices ── */
               <>
                 <h2 className="text-xl font-bold mb-2" style={{ color: '#0f1f3d' }}>
                   {t.live_join_waitlist_heading}
                 </h2>
                 <p className="text-sm text-gray-500 mb-6">
-                  {t.live_login_prompt_description}
+                  {t.live_signedin_auto_grade_note}
                 </p>
+
+                <div className="mb-6">
+                  <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#6b7280' }}>
+                    {t.live_grades_interested_label}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {autoGrades.map(g => (
+                      <span
+                        key={g}
+                        className="text-sm font-bold px-4 py-2 rounded-full"
+                        style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                      >
+                        {t.dash_grade_label.replace('{grade}', String(g))}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
                 <button
-                  onClick={() => openModal()}
-                  className="w-full text-center font-semibold py-3 rounded-xl text-sm"
+                  onClick={handleSignedInJoin}
+                  disabled={submitting || autoGrades.length === 0}
+                  className="w-full font-semibold py-3 rounded-xl text-sm transition-colors disabled:opacity-50"
                   style={{ backgroundColor: '#1e40af', color: '#fff' }}
                 >
-                  {t.nav_login}
+                  {t.live_register_interest_button}
                 </button>
               </>
 
-            ) : showForm ? (
-              /* ── Grade selection form ── */
+            ) : showGuestForm ? (
+              /* ── Guest: no account yet, so show every option ── */
               <>
                 <h2 className="text-xl font-bold mb-2" style={{ color: '#0f1f3d' }}>
-                  {editing ? t.live_update_grade_selection_heading : t.live_join_waitlist_heading}
+                  {guestEditing ? t.live_update_grade_selection_heading : t.live_join_waitlist_heading}
                 </h2>
                 <p className="text-sm text-gray-500 mb-6">
                   {t.live_grade_form_description}
                 </p>
+
+                <div className="flex flex-col gap-4 mb-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      {t.live_guest_name_label}
+                    </label>
+                    <input
+                      type="text"
+                      value={guestName}
+                      onChange={e => setGuestName(e.target.value)}
+                      placeholder={t.live_guest_name_placeholder}
+                      className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                      {t.live_guest_email_label}
+                    </label>
+                    <input
+                      type="email"
+                      value={guestEmail}
+                      onChange={e => setGuestEmail(e.target.value)}
+                      placeholder={t.live_guest_email_placeholder}
+                      className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
+                    />
+                  </div>
+                </div>
 
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#6b7280' }}>
@@ -206,11 +315,11 @@ export default function LiveClassesPage() {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {LESSON_GRADES.map(g => {
-                      const active = selectedGrades.includes(g)
+                      const active = guestGrades.includes(g)
                       return (
                         <button
                           key={g}
-                          onClick={() => toggleGrade(g)}
+                          onClick={() => toggleGuestGrade(g)}
                           className="text-sm font-bold px-4 py-2 rounded-full transition-colors"
                           style={active
                             ? { backgroundColor: '#1e40af', color: '#fff' }
@@ -225,26 +334,33 @@ export default function LiveClassesPage() {
                 </div>
 
                 <button
-                  onClick={handleSubmit}
-                  disabled={selectedGrades.length === 0}
+                  onClick={handleGuestSubmit}
+                  disabled={submitting || !guestName.trim() || !guestEmail.trim() || guestGrades.length === 0}
                   className="w-full font-semibold py-3 rounded-xl text-sm transition-colors"
-                  style={selectedGrades.length > 0
+                  style={!submitting && guestName.trim() && guestEmail.trim() && guestGrades.length > 0
                     ? { backgroundColor: '#1e40af', color: '#fff' }
                     : { backgroundColor: '#e5e7eb', color: '#9ca3af', cursor: 'not-allowed' }
                   }
                 >
-                  {editing ? t.live_save_changes_button : t.live_register_interest_button}
+                  {guestEditing ? t.live_save_changes_button : t.live_register_interest_button}
                 </button>
 
-                {editing && (
+                {guestEditing && (
                   <button
-                    onClick={() => setEditing(false)}
+                    onClick={() => setGuestEditing(false)}
                     className="w-full text-center text-sm font-semibold py-2 mt-2 transition-colors"
                     style={{ color: '#6b7280' }}
                   >
                     {t.dash_cancel}
                   </button>
                 )}
+
+                <p className="text-xs text-gray-400 text-center mt-4">
+                  {t.live_guest_have_account_prompt}{' '}
+                  <button onClick={() => openModal('login')} className="font-semibold hover:underline" style={{ color: '#1e40af' }}>
+                    {t.nav_login}
+                  </button>
+                </p>
               </>
 
             ) : null}
