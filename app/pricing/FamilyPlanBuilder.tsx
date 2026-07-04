@@ -5,7 +5,7 @@ import { useTranslations } from '@/src/i18n/useTranslations'
 import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
 import { initiateCheckout } from '@/src/lib/payfast-client'
-import { FOUNDING_PRICE, FULL_PRICE, packageFromPlan, type Plan, type PlanSize } from '@/src/lib/pricing'
+import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 
 type Spots = { proTaken: number; guidedTaken: number }
 
@@ -20,21 +20,25 @@ function PlanSelect({
   founding,
   labels,
   foundingSuffix,
+  allowFree,
 }: {
-  value: Plan
-  onChange: (v: Plan) => void
+  value: Tier
+  onChange: (v: Tier) => void
   prices: Record<Plan, number>
   founding: Record<Plan, boolean>
   labels: Record<Plan, string>
   foundingSuffix: string
+  freeLabel?: string
+  allowFree?: boolean
 }) {
   return (
     <select
       value={value}
-      onChange={e => onChange(e.target.value as Plan)}
+      onChange={e => onChange(e.target.value as Tier)}
       className="border rounded-lg px-3 py-2 text-sm bg-white font-medium"
       style={{ borderColor: '#d1d5db', color: '#0f1f3d' }}
     >
+      {allowFree && <option value="free">Free — R0/month</option>}
       <option value="pro">
         {`${labels.pro} — R${prices.pro}/month${founding.pro ? ' ' + foundingSuffix : ''}`}
       </option>
@@ -62,11 +66,25 @@ export default function FamilyPlanBuilder() {
   const LABEL: Record<Plan, string> = { pro: t.dash_package_pro, guided: t.dash_package_guided }
   const [mounted, setMounted] = useState(false)
   const [spots, setSpots]     = useState<Spots>(DEFAULT_SPOTS)
+
+  // Logged-out preview — purely illustrative (clicking "claim your spot" just
+  // opens the register modal, which has its own per-child plan picker), so
+  // this stays a free-form 1-3 toggleable comparison, pro/guided only.
   const [c1, setC1]           = useState<Plan>('pro')
   const [c2On, setC2On]       = useState(false)
   const [c2, setC2]           = useState<Plan>('pro')
   const [c3On, setC3On]       = useState(false)
   const [c3, setC3]           = useState<Plan>('pro')
+
+  // Logged-in checkout — the checkout API requires childTiers to align 1:1
+  // with the account's actual children, so rows here are fixed to the real
+  // family (no add/remove), one tier picker per existing child, defaulting
+  // to whatever they're currently on.
+  const [ownTiers, setOwnTiers] = useState<Tier[]>([])
+  useEffect(() => {
+    if (user) setOwnTiers(user.childPlans)
+  }, [user])
+
   const [checkingOut, setCheckingOut]     = useState(false)
   const [checkoutError, setCheckoutError] = useState('')
 
@@ -91,45 +109,38 @@ export default function FamilyPlanBuilder() {
   }
   const founding: Record<Plan, boolean> = { pro: proFounding, guided: guidedFounding }
 
-  const persons: { label: string; plan: Plan }[] = [
-    { label: t.pricing_person_1_label, plan: c1 },
-    ...(c2On ? [{ label: t.pricing_person_2_label, plan: c2 }] : []),
-    ...(c3On ? [{ label: t.pricing_person_3_label, plan: c3 }] : []),
-  ]
-  const multiPerson   = persons.length > 1
-  const personDetails = persons.map(p => ({
-    label:         p.label,
-    plan:          p.plan,
-    isFounding:    founding[p.plan],
-    basePrice:     prices[p.plan],
-    effectivePrice: (multiPerson && !founding[p.plan])
-      ? Math.round(prices[p.plan] * 0.8)
-      : prices[p.plan],
-  }))
-  const grandTotal     = personDetails.reduce((s, p) => s + p.effectivePrice, 0)
-  const hasAnyDiscount = multiPerson && personDetails.some(p => !p.isFounding)
-  const totalSaving    = personDetails.reduce((s, p) =>
-    s + (multiPerson && !p.isFounding ? p.basePrice - p.effectivePrice : 0), 0)
+  const persons: { label: string; tier: Tier }[] = user
+    ? user.children.map((c, i) => ({ label: c.name || `Person ${i + 1}`, tier: ownTiers[i] ?? 'free' }))
+    : [
+        { label: t.pricing_person_1_label, tier: c1 },
+        ...(c2On ? [{ label: t.pricing_person_2_label, tier: c2 as Tier }] : []),
+        ...(c3On ? [{ label: t.pricing_person_3_label, tier: c3 as Tier }] : []),
+      ]
+  const multiPerson = persons.length > 1
 
-  // The Package model only represents uniform-tier families (family_pro_2 etc.)
-  // — checkout for a single subscription only makes sense when every active
-  // person picked the same tier, even though this calculator lets you compare
-  // mixed tiers for pricing purposes.
-  const allSamePlan   = persons.every(p => p.plan === persons[0].plan)
-  const chosenTier    = persons[0].plan
-  const planSize: PlanSize = persons.length === 1 ? 'solo' : persons.length === 2 ? 'family2' : 'family3'
-  const targetPackage = packageFromPlan(chosenTier, planSize)
+  const { total: grandTotal, perChild } = computeFamilyPrice(
+    persons.map(p => p.tier),
+    { pro: proFounding, guided: guidedFounding }
+  )
+  const personDetails = persons.map((p, i) => ({ label: p.label, ...perChild[i] }))
+  const paidCount = persons.filter(p => p.tier !== 'free').length
+  const hasAnyDiscount = paidCount > 1 && personDetails.some(p => p.tier !== 'free' && !p.isFounding)
+  const totalSaving = personDetails.reduce((sum, p) => {
+    if (p.tier === 'free') return sum
+    const base = p.isFounding ? FOUNDING_PRICE[p.tier] : FULL_PRICE[p.tier]
+    return sum + (paidCount > 1 && !p.isFounding ? base - p.price : 0)
+  }, 0)
 
   async function handleClaimSpot() {
     if (!user) {
       openModal('register')
       return
     }
-    if (!allSamePlan || !auth.currentUser) return
+    if (!auth.currentUser || paidCount === 0) return
     setCheckoutError('')
     setCheckingOut(true)
     try {
-      await initiateCheckout(auth.currentUser, targetPackage, founding[chosenTier])
+      await initiateCheckout(auth.currentUser, persons.map(p => p.tier), founding)
     } catch {
       // Always show the localized message — CheckoutError's own message is
       // English-only and meant for logs/debugging, not display.
@@ -147,9 +158,9 @@ export default function FamilyPlanBuilder() {
   const pMixed   = (proFounding    ? prices.pro * 2    : Math.round(prices.pro * 0.8) * 2)
                  + (guidedFounding ? prices.guided      : Math.round(prices.guided * 0.8))
 
-  function slotBadgeAndSpots(plan: Plan) {
-    if (!mounted || !founding[plan]) return null
-    const remaining = plan === 'pro' ? proRemaining : guidedRemaining
+  function slotBadgeAndSpots(tier: Tier) {
+    if (!mounted || tier === 'free' || !founding[tier]) return null
+    const remaining = tier === 'pro' ? proRemaining : guidedRemaining
     return (
       <div className="flex flex-col items-end gap-0.5">
         <FoundingBadge label={t.pricing_founding_member_badge} />
@@ -279,85 +290,117 @@ export default function FamilyPlanBuilder() {
 
         {/* Person rows */}
         <div className="mb-8">
-
-          {/* Person 1 — always required */}
-          <div
-            className="flex items-center justify-between gap-4 py-4"
-            style={{ borderBottom: '1px solid #f3f4f6' }}
-          >
-            <div className="flex items-center gap-3">
-              <span
-                className="text-xs font-bold px-2.5 py-1 rounded-full"
-                style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+          {user ? (
+            // Logged in — one row per actual child, fixed count (add a child
+            // from your profile page first if you need another slot).
+            user.children.map((child, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between gap-4 py-4"
+                style={i < user.children.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}
               >
-                {t.pricing_person_1_label}
-              </span>
-              <span className="text-xs text-gray-400">{t.pricing_required_label}</span>
-            </div>
-            <div className="flex flex-col items-end gap-1">
-              {slotBadgeAndSpots(c1)}
-              <PlanSelect value={c1} onChange={setC1} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
-            </div>
-          </div>
-
-          {/* Person 2 */}
-          <div
-            className="flex items-center justify-between gap-4 py-4"
-            style={{ borderBottom: '1px solid #f3f4f6' }}
-          >
-            <div className="flex items-center gap-3">
-              <span
-                className="text-xs font-bold px-2.5 py-1 rounded-full"
-                style={c2On
-                  ? { backgroundColor: '#dbeafe', color: '#1e40af' }
-                  : { backgroundColor: '#f3f4f6', color: '#9ca3af' }
-                }
-              >
-                {t.pricing_person_2_label}
-              </span>
-              <button
-                onClick={() => setC2On(!c2On)}
-                className="text-xs font-semibold"
-                style={{ color: c2On ? '#b91c1c' : '#1e40af' }}
-              >
-                {c2On ? t.pricing_remove_person : t.pricing_add_person}
-              </button>
-            </div>
-            {c2On && (
-              <div className="flex flex-col items-end gap-1">
-                {slotBadgeAndSpots(c2)}
-                <PlanSelect value={c2} onChange={setC2} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
+                <span
+                  className="text-xs font-bold px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                >
+                  {child.name}
+                </span>
+                <div className="flex flex-col items-end gap-1">
+                  {slotBadgeAndSpots(ownTiers[i] ?? 'free')}
+                  <PlanSelect
+                    value={ownTiers[i] ?? 'free'}
+                    onChange={tier => setOwnTiers(prev => prev.map((v, idx) => idx === i ? tier : v))}
+                    prices={prices}
+                    founding={founding}
+                    labels={LABEL}
+                    foundingSuffix={t.pricing_founding_suffix}
+                    allowFree
+                  />
+                </div>
               </div>
-            )}
-          </div>
-
-          {/* Person 3 */}
-          <div className="flex items-center justify-between gap-4 py-4">
-            <div className="flex items-center gap-3">
-              <span
-                className="text-xs font-bold px-2.5 py-1 rounded-full"
-                style={c3On
-                  ? { backgroundColor: '#dbeafe', color: '#1e40af' }
-                  : { backgroundColor: '#f3f4f6', color: '#9ca3af' }
-                }
+            ))
+          ) : (
+            <>
+              {/* Person 1 — always required */}
+              <div
+                className="flex items-center justify-between gap-4 py-4"
+                style={{ borderBottom: '1px solid #f3f4f6' }}
               >
-                {t.pricing_person_3_label}
-              </span>
-              <button
-                onClick={() => setC3On(!c3On)}
-                className="text-xs font-semibold"
-                style={{ color: c3On ? '#b91c1c' : '#1e40af' }}
-              >
-                {c3On ? t.pricing_remove_person : t.pricing_add_person}
-              </button>
-            </div>
-            {c3On && (
-              <div className="flex flex-col items-end gap-1">
-                {slotBadgeAndSpots(c3)}
-                <PlanSelect value={c3} onChange={setC3} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
+                <div className="flex items-center gap-3">
+                  <span
+                    className="text-xs font-bold px-2.5 py-1 rounded-full"
+                    style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                  >
+                    {t.pricing_person_1_label}
+                  </span>
+                  <span className="text-xs text-gray-400">{t.pricing_required_label}</span>
+                </div>
+                <div className="flex flex-col items-end gap-1">
+                  {slotBadgeAndSpots(c1)}
+                  <PlanSelect value={c1} onChange={tier => setC1(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
+                </div>
               </div>
-            )}
-          </div>
+
+              {/* Person 2 */}
+              <div
+                className="flex items-center justify-between gap-4 py-4"
+                style={{ borderBottom: '1px solid #f3f4f6' }}
+              >
+                <div className="flex items-center gap-3">
+                  <span
+                    className="text-xs font-bold px-2.5 py-1 rounded-full"
+                    style={c2On
+                      ? { backgroundColor: '#dbeafe', color: '#1e40af' }
+                      : { backgroundColor: '#f3f4f6', color: '#9ca3af' }
+                    }
+                  >
+                    {t.pricing_person_2_label}
+                  </span>
+                  <button
+                    onClick={() => setC2On(!c2On)}
+                    className="text-xs font-semibold"
+                    style={{ color: c2On ? '#b91c1c' : '#1e40af' }}
+                  >
+                    {c2On ? t.pricing_remove_person : t.pricing_add_person}
+                  </button>
+                </div>
+                {c2On && (
+                  <div className="flex flex-col items-end gap-1">
+                    {slotBadgeAndSpots(c2)}
+                    <PlanSelect value={c2} onChange={tier => setC2(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
+                  </div>
+                )}
+              </div>
+
+              {/* Person 3 */}
+              <div className="flex items-center justify-between gap-4 py-4">
+                <div className="flex items-center gap-3">
+                  <span
+                    className="text-xs font-bold px-2.5 py-1 rounded-full"
+                    style={c3On
+                      ? { backgroundColor: '#dbeafe', color: '#1e40af' }
+                      : { backgroundColor: '#f3f4f6', color: '#9ca3af' }
+                    }
+                  >
+                    {t.pricing_person_3_label}
+                  </span>
+                  <button
+                    onClick={() => setC3On(!c3On)}
+                    className="text-xs font-semibold"
+                    style={{ color: c3On ? '#b91c1c' : '#1e40af' }}
+                  >
+                    {c3On ? t.pricing_remove_person : t.pricing_add_person}
+                  </button>
+                </div>
+                {c3On && (
+                  <div className="flex flex-col items-end gap-1">
+                    {slotBadgeAndSpots(c3)}
+                    <PlanSelect value={c3} onChange={tier => setC3(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
+                  </div>
+                )}
+              </div>
+            </>
+          )}
         </div>
 
         {/* Running price summary */}
@@ -377,8 +420,8 @@ export default function FamilyPlanBuilder() {
             {personDetails.map((p, i) => (
               <div key={i}>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-500">{p.label} — {LABEL[p.plan]}</span>
-                  <span className="font-semibold" style={{ color: '#374151' }}>R{p.effectivePrice}{t.pricing_per_month}</span>
+                  <span className="text-gray-500">{p.label} — {p.tier === 'free' ? t.dash_package_free : LABEL[p.tier]}</span>
+                  <span className="font-semibold" style={{ color: '#374151' }}>R{p.price}{t.pricing_per_month}</span>
                 </div>
                 {p.isFounding && (
                   <p className="text-xs mt-0.5" style={{ color: '#1e40af' }}>
@@ -412,11 +455,6 @@ export default function FamilyPlanBuilder() {
           </div>
         </div>
 
-        {!allSamePlan && (
-          <p className="text-xs text-center mb-3" style={{ color: '#b45309' }}>
-            {t.pricing_mixed_plans_note}
-          </p>
-        )}
         {checkoutError && (
           <p className="text-xs text-center mb-3 text-red-600">
             {checkoutError}
@@ -425,7 +463,7 @@ export default function FamilyPlanBuilder() {
         <button
           type="button"
           onClick={handleClaimSpot}
-          disabled={!allSamePlan || checkingOut}
+          disabled={checkingOut || (!!user && paidCount === 0)}
           className="block w-full text-center font-semibold py-3 rounded-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ backgroundColor: '#1e40af', color: '#fff' }}
         >

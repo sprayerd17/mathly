@@ -3,17 +3,19 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
-import { useAuth, getMaxChildren, LanguageCards, type Language } from '@/app/providers'
+import { useAuth, LanguageCards, type Language, type Tier } from '@/app/providers'
 import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
 import { db } from '@/src/lib/firebase'
 
+const MAX_CHILDREN = 3
+
 type ReferralRecord = {
   referredName: string
   hasSubscribed: boolean
   creditAmount: number
-  subscribedPackage: string
+  subscribedTiers: Tier[]
   createdAt: Date | null
 }
 
@@ -27,7 +29,7 @@ const LANGUAGE_LABELS: Record<Language, string> = {
 type ChildRecord = { name: string; grade: number; language: Language; languageChangeUsed: boolean }
 
 export default function ProfilePage() {
-  const { user, loading, updateChildren, updateActiveChild, openModal } = useAuth()
+  const { user, loading, updateChildren, addChild, updateActiveChild, openModal } = useAuth()
   const t = useTranslations()
 
   // Singular-profile editing (used when the plan only allows 1 profile)
@@ -72,7 +74,7 @@ export default function ProfilePage() {
           referredName: typeof data.referredName === 'string' ? data.referredName : '',
           hasSubscribed: data.hasSubscribed === true,
           creditAmount: typeof data.creditAmount === 'number' ? data.creditAmount : 0,
-          subscribedPackage: typeof data.subscribedPackage === 'string' ? data.subscribedPackage : '',
+          subscribedTiers: Array.isArray(data.subscribedTiers) ? data.subscribedTiers : [],
           createdAt: data.createdAt instanceof Timestamp ? data.createdAt.toDate() : null,
         }
       }))
@@ -145,9 +147,11 @@ export default function ProfilePage() {
     setAddingChild(true)
   }
 
-  function saveNewChild() {
-    if (!newChildName.trim() || children.length >= maxChildren) return
-    saveChildren([...children, { name: newChildName.trim(), grade: newChildGrade, language: newChildLanguage, languageChangeUsed: false }])
+  async function saveNewChild() {
+    if (!newChildName.trim() || children.length >= MAX_CHILDREN) return
+    // Growing the family goes through a server route rather than a direct
+    // Firestore write — see app/api/family/add-child/route.ts.
+    await addChild(newChildName.trim(), newChildGrade, newChildLanguage)
     setAddingChild(false)
   }
 
@@ -198,11 +202,10 @@ export default function ProfilePage() {
     )
   }
 
-  const maxChildren  = getMaxChildren(user.package)
-  const atChildLimit = children.length >= maxChildren
-  const singularProfile = maxChildren === 1
-  const baseTier: 'free' | 'pro' | 'guided' = user.package.includes('guided') ? 'guided' : user.package.includes('pro') ? 'pro' : 'free'
-  const isFamilyPlan = user.package.startsWith('family_')
+  const atChildLimit = children.length >= MAX_CHILDREN
+  const singularProfile = children.length === 1
+  const tierLabel = (tier: Tier) => tier === 'pro' ? t.profile_plan_pro : tier === 'guided' ? t.profile_plan_guided : t.profile_plan_free
+  const tierDesc = (tier: Tier) => tier === 'pro' ? t.profile_plan_desc_pro : tier === 'guided' ? t.profile_plan_desc_guided : t.profile_plan_desc_free
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
@@ -370,38 +373,47 @@ export default function ProfilePage() {
           >
             {t.profile_my_subscription_heading}
           </h2>
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="font-bold text-lg" style={{ color: '#0f1f3d' }}>
-                {baseTier === 'pro' ? t.profile_plan_pro : baseTier === 'guided' ? t.profile_plan_guided : t.profile_plan_free}
-                {isFamilyPlan && ` · ${t.profile_my_children_heading}`}
-              </p>
-              <p className="text-sm text-gray-500 mt-0.5">
-                {baseTier === 'free' && t.profile_plan_desc_free}
-                {baseTier === 'pro' && t.profile_plan_desc_pro}
-                {baseTier === 'guided' && t.profile_plan_desc_guided}
-              </p>
-              {user.subscriptionStatus === 'pending' && (
-                <p className="text-xs font-semibold mt-2" style={{ color: '#1e40af' }}>
-                  {t.profile_subscription_pending}
-                </p>
-              )}
-              {user.subscriptionStatus === 'past_due' && (
-                <p className="text-xs font-semibold mt-2" style={{ color: '#b91c1c' }}>
-                  {t.profile_subscription_past_due}
-                </p>
-              )}
-            </div>
-            {baseTier === 'free' && (
-              <Link
-                href="/pricing"
-                className="shrink-0 text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
-                style={{ backgroundColor: '#1e40af' }}
-              >
-                {t.profile_upgrade}
-              </Link>
-            )}
+          <div className="flex flex-col gap-4">
+            {children.map((child, i) => {
+              const tier: Tier = user.childPlans[i] ?? 'free'
+              return (
+                <div
+                  key={i}
+                  className={`flex items-center justify-between gap-4 ${!singularProfile && i < children.length - 1 ? 'pb-4' : ''}`}
+                  style={!singularProfile && i < children.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}
+                >
+                  <div>
+                    {!singularProfile && (
+                      <p className="text-xs font-semibold text-gray-500 mb-0.5">{child.name}</p>
+                    )}
+                    <p className="font-bold text-lg" style={{ color: '#0f1f3d' }}>
+                      {tierLabel(tier)}
+                    </p>
+                    <p className="text-sm text-gray-500 mt-0.5">{tierDesc(tier)}</p>
+                  </div>
+                  {tier === 'free' && (
+                    <Link
+                      href="/pricing"
+                      className="shrink-0 text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
+                      style={{ backgroundColor: '#1e40af' }}
+                    >
+                      {t.profile_upgrade}
+                    </Link>
+                  )}
+                </div>
+              )
+            })}
           </div>
+          {user.subscriptionStatus === 'pending' && (
+            <p className="text-xs font-semibold mt-4" style={{ color: '#1e40af' }}>
+              {t.profile_subscription_pending}
+            </p>
+          )}
+          {user.subscriptionStatus === 'past_due' && (
+            <p className="text-xs font-semibold mt-4" style={{ color: '#b91c1c' }}>
+              {t.profile_subscription_past_due}
+            </p>
+          )}
         </div>
 
         {/* My Children section */}
@@ -572,24 +584,6 @@ export default function ProfilePage() {
               </div>
             ))}
           </div>
-
-          {atChildLimit && (user.package === 'family_pro_2' || user.package === 'family_guided_2') && !addingChild && editingChildIdx === null && (
-            <div
-              className="mt-4 rounded-xl border p-4"
-              style={{ backgroundColor: '#eff6ff', borderColor: '#bfdbfe' }}
-            >
-              <p className="text-sm text-gray-700 mb-3 leading-relaxed">
-                {t.profile_family_plan_upsell_family2}
-              </p>
-              <Link
-                href="/pricing"
-                className="inline-block text-sm font-semibold px-4 py-2 rounded-lg text-white transition-colors"
-                style={{ backgroundColor: '#1e40af' }}
-              >
-                {t.profile_upgrade}
-              </Link>
-            </div>
-          )}
 
           {addingChild && (
             <div className={`${children.length > 0 ? 'mt-3' : ''} rounded-xl border p-4`} style={{ borderColor: '#e5e7eb' }}>
@@ -809,7 +803,10 @@ export default function ProfilePage() {
                         {r.createdAt ? r.createdAt.toLocaleDateString() : '—'}
                       </span>
                       <span className="text-sm" style={{ color: '#374151' }}>
-                        {r.referredName || '—'}{r.subscribedPackage ? ` · ${r.subscribedPackage}` : ''}
+                        {r.referredName || '—'}
+                        {r.subscribedTiers.some(tr => tr !== 'free')
+                          ? ` · ${r.subscribedTiers.filter(tr => tr !== 'free').map(tierLabel).join(' + ')}`
+                          : ''}
                       </span>
                       <span className="text-sm" style={{ color: '#374151' }}>
                         {r.hasSubscribed ? `R${r.creditAmount}` : '—'}

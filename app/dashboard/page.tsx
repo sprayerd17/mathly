@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Navbar from '@/app/components/Navbar'
-import { useAuth } from '@/app/providers'
+import { useAuth, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -262,12 +262,7 @@ export default function DashboardPage() {
     if (authLoading) return
     if (!user) { router.replace('/'); return }
     setUserName(user.name || user.email || t.dash_default_student_name)
-    const pkg = user.package.toLowerCase()
-    setUserPackage(
-      pkg === 'pro'     || pkg.startsWith('family_pro')     ? 'pro'     :
-      pkg === 'guided'  || pkg.startsWith('family_guided')  ? 'guided'  :
-      'free'
-    )
+    setUserPackage(getActiveTier(user))
     setChildren(user.children)
     setActiveChildIndex(user.activeChildIndex)
     setActiveGrade(user.children[user.activeChildIndex]?.grade ?? user.children[0]?.grade ?? null)

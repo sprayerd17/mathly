@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getAdminDb } from '@/src/lib/firebase-admin'
 import { getPayfastConfig, generateSignature, verifySourceIp } from '@/src/lib/payfast'
-import type { PackageValue } from '@/src/lib/pricing'
+import type { Tier } from '@/src/lib/pricing'
 
 const OK = () => new Response(null, { status: 200 })
 
@@ -62,8 +62,7 @@ export async function POST(req: NextRequest) {
   }
 
   const uid = fields.custom_str2
-  const targetPackage = fields.custom_str1 as PackageValue | undefined
-  if (!uid || !targetPackage) {
+  if (!uid || !fields.custom_str1) {
     console.error('[payfast/notify] missing custom_str1/custom_str2', fields)
     return OK()
   }
@@ -78,10 +77,13 @@ export async function POST(req: NextRequest) {
 
   // 4. Cross-check against what checkout actually quoted this user, rather than
   // recomputing a price blindly — closes the ambiguity of not knowing whether
-  // the quoted rate was founding or full at ITN time.
-  if (userData.pendingPackage !== targetPackage) {
-    console.error('[payfast/notify] pendingPackage mismatch', {
-      uid, expected: userData.pendingPackage, received: targetPackage,
+  // the quoted rate was founding or full at ITN time. A plain string compare
+  // is enough since custom_str1 is JSON.stringify'd from the same array shape
+  // pendingChildPlans was written in at checkout time.
+  const expectedChildPlans: Tier[] | undefined = userData.pendingChildPlans
+  if (!expectedChildPlans || JSON.stringify(expectedChildPlans) !== fields.custom_str1) {
+    console.error('[payfast/notify] pendingChildPlans mismatch', {
+      uid, expected: expectedChildPlans, received: fields.custom_str1,
     })
     return OK()
   }
@@ -99,10 +101,10 @@ export async function POST(req: NextRequest) {
   }
 
   await userRef.update({
-    package: targetPackage,
+    childPlans: expectedChildPlans,
     subscriptionStatus: 'active',
     payfastToken: fields.token ?? null,
-    pendingPackage: null,
+    pendingChildPlans: null,
     pendingAmount: null,
     lastPaymentDate: new Date().toISOString(),
     lastPaymentAmount: receivedAmount,
@@ -126,7 +128,7 @@ export async function POST(req: NextRequest) {
       await referralQuery.docs[0].ref.update({
         hasSubscribed: true,
         creditAmount: receivedAmount,
-        subscribedPackage: targetPackage,
+        subscribedTiers: expectedChildPlans,
       })
     }
   }

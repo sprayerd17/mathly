@@ -20,42 +20,14 @@ import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firest
 import { auth, db } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateCheckout } from '@/src/lib/payfast-client'
+import { computeFamilyPrice, FOUNDING_PRICE, type Tier } from '@/src/lib/pricing'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type Language = 'en' | 'af'
+export type { Tier } from '@/src/lib/pricing'
 
-export type Package =
-  | 'free'
-  | 'pro'
-  | 'guided'
-  | 'family_pro_2'
-  | 'family_pro_3'
-  | 'family_guided_2'
-  | 'family_guided_3'
-
-const VALID_PACKAGES: Package[] = [
-  'free', 'pro', 'guided',
-  'family_pro_2', 'family_pro_3',
-  'family_guided_2', 'family_guided_3',
-]
-
-export function getMaxChildren(pkg: string): number {
-  if (pkg === 'family_pro_3' || pkg === 'family_guided_3') return 3
-  if (pkg === 'family_pro_2' || pkg === 'family_guided_2') return 2
-  return 1
-}
-
-// Indicative starting prices shown during signup — matches the current founding-member
-// rate on the pricing page. Not a live price feed; the user confirms actual pricing there.
-const PLAN_PRICE = { pro: 29, guided: 59 }
-
-function packageFromPlan(tier: 'free' | 'pro' | 'guided', size: 'solo' | 'family2' | 'family3'): Package {
-  if (tier === 'free') return 'free'
-  if (size === 'solo') return tier
-  if (size === 'family2') return tier === 'pro' ? 'family_pro_2' : 'family_guided_2'
-  return tier === 'pro' ? 'family_pro_3' : 'family_guided_3'
-}
+const VALID_TIERS: Tier[] = ['free', 'pro', 'guided']
 
 export type Child = {
   name: string
@@ -75,18 +47,33 @@ export type User = {
   name: string
   email: string
   initial: string
-  package: Package
+  // Index-aligned with `children` — each child's own tier, independent of
+  // the others (a family of 3 can mix Free/Pro/Guided freely). Kept as a
+  // separate top-level field rather than nested in Child so Firestore rules
+  // can protect it as a whole field, the same way `package` used to be
+  // protected — there's no clean way to lock just one sub-field of an
+  // array-of-maps element while leaving the rest (name/grade/language)
+  // freely editable.
+  childPlans: Tier[]
   children: Child[]
   refCode: string
   activeChildIndex: number
   subscriptionStatus: SubscriptionStatus
   payfastToken: string | null
-  pendingPackage: Package | null
+  pendingChildPlans: Tier[] | null
   lastPaymentDate: string | null
   lastPaymentAmount: number | null
   // Set once, server-side, by /api/referral/attach right after registration.
   // null for accounts that didn't sign up via a referral link.
   referredBy: string | null
+}
+
+// Tier of the child currently driving site-wide content access — clamped the
+// same way getActiveChild() clamps activeChildIndex, so a stale index never
+// crashes a gating check.
+export function getActiveTier(user: User): Tier {
+  const idx = Math.min(Math.max(user.activeChildIndex, 0), user.childPlans.length - 1)
+  return user.childPlans[idx] ?? 'free'
 }
 
 // Generates a referral code from the account holder's name — stable, persisted to
@@ -113,11 +100,13 @@ type AuthContextType = {
     name: string,
     email: string,
     password: string,
-    pkg: Package,
-    children: Array<{ name: string; grade: number; language: Language }>
+    childTiers: Tier[],
+    children: Array<{ name: string; grade: number; language: Language }>,
+    referredByCode?: string
   ) => Promise<void>
   logout: () => void
   updateChildren: (children: Child[]) => void
+  addChild: (name: string, grade: number, language: Language) => Promise<void>
   updateActiveChild: (index: number) => void
   openModal: (tab?: 'login' | 'register') => void
 }
@@ -207,7 +196,7 @@ function AuthModal({
     name: string,
     email: string,
     password: string,
-    pkg: Package,
+    childTiers: Tier[],
     children: Array<{ name: string; grade: number; language: Language }>,
     referredByCode?: string
   ) => Promise<void>
@@ -225,16 +214,18 @@ function AuthModal({
   const [referralCode, setReferralCode] = useState(
     () => (typeof window !== 'undefined' && sessionStorage.getItem('mathly_pending_ref')) || ''
   )
-  const [planTier, setPlanTier] = useState<'free' | 'pro' | 'guided'>('free')
   const [planSize, setPlanSize] = useState<'solo' | 'family2' | 'family3'>('solo')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [redirecting, setRedirecting] = useState(false)
-  const [regChildren, setRegChildren] = useState<Array<{ name: string; grade: number | ''; language: Language | null }>>(
-    [{ name: '', grade: '', language: null }]
+  const [regChildren, setRegChildren] = useState<Array<{ name: string; grade: number | ''; language: Language | null; tier: Tier }>>(
+    [{ name: '', grade: '', language: null, tier: 'free' }]
   )
 
-  const selectedPackage = packageFromPlan(planTier, planSize)
+  // Indicative preview only (assumes founding pricing for both tiers, same as
+  // the old PLAN_PRICE constant did) — the actual charge is always computed
+  // and verified server-side at checkout time, never trusted from here.
+  const pricePreview = computeFamilyPrice(regChildren.map(c => c.tier), { pro: true, guided: true })
 
   function switchTab(t: 'login' | 'register') {
     setTab(t)
@@ -270,9 +261,9 @@ function AuthModal({
   }
 
   function goToChildrenStep() {
-    const count = getMaxChildren(selectedPackage)
+    const count = planSize === 'family3' ? 3 : planSize === 'family2' ? 2 : 1
     setRegChildren(prev => {
-      const next = Array.from({ length: count }, (_, i) => prev[i] ?? { name: '', grade: '', language: null })
+      const next = Array.from({ length: count }, (_, i) => prev[i] ?? { name: '', grade: '', language: null, tier: 'free' as Tier })
       if (count === 1) next[0] = { ...next[0], name: name.trim() }
       return next
     })
@@ -290,6 +281,7 @@ function AuthModal({
       grade: c.grade as number,
       language: c.language as Language,
     }))
+    const childTiers = regChildren.map(c => c.tier)
     setError('')
     setSubmitting(true)
     // A paid plan means onRegister will end in a real browser navigation to
@@ -297,10 +289,10 @@ function AuthModal({
     // actually happens would flash the logged-in site underneath for a few
     // seconds first. Show a dedicated redirect screen instead and just leave
     // it up; the page is about to unload anyway.
-    const goingToCheckout = selectedPackage !== 'free'
+    const goingToCheckout = childTiers.some(t => t !== 'free')
     if (goingToCheckout) setRedirecting(true)
     try {
-      await onRegister(name.trim(), email.trim(), password, selectedPackage, children, referralCode.trim())
+      await onRegister(name.trim(), email.trim(), password, childTiers, children, referralCode.trim())
       if (!goingToCheckout) onClose()
     } catch (err) {
       setError(t[authErrorKey(err)])
@@ -497,7 +489,7 @@ function AuthModal({
           </form>
         )}
 
-        {/* ── Step 2: plan selection ─────────────────────────────────────── */}
+        {/* ── Step 2: how many people ───────────────────────────────────── */}
         {registerStep === 2 && (
           <div className="px-8 py-6">
             <h2 className="text-base font-bold mb-1" style={{ color: '#0f1f3d' }}>
@@ -507,61 +499,29 @@ function AuthModal({
               {t.auth_plan_step_subtitle}
             </p>
 
-            <div className="grid grid-cols-3 gap-2.5 mb-5">
-              {(['free', 'pro', 'guided'] as const).map(tier => {
-                const active = planTier === tier
-                const price = tier === 'free' ? 'R0' : tier === 'pro' ? `R${PLAN_PRICE.pro}${t.pricing_per_month}` : `R${PLAN_PRICE.guided}${t.pricing_per_month}`
+            <div className="grid grid-cols-3 gap-2.5">
+              {(['solo', 'family2', 'family3'] as const).map(size => {
+                const active = planSize === size
                 return (
                   <button
-                    key={tier}
+                    key={size}
                     type="button"
-                    onClick={() => setPlanTier(tier)}
-                    className="py-3 px-2 rounded-xl text-xs font-semibold transition-all border text-center flex flex-col items-center gap-0.5"
+                    onClick={() => setPlanSize(size)}
+                    className="py-3 px-2 rounded-xl text-xs font-semibold transition-all border text-center"
                     style={
                       active
-                        ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
+                        ? { backgroundColor: '#eff6ff', color: '#1e40af', borderColor: '#1e40af', borderWidth: '2px' }
                         : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
                     }
                   >
-                    <span>{tier === 'free' ? t.dash_package_free : tier === 'pro' ? t.dash_package_pro : t.dash_package_guided}</span>
-                    <span className="text-[11px] font-normal" style={{ color: active ? '#dbeafe' : '#9ca3af' }}>{price}</span>
+                    {size === 'solo' ? t.auth_plan_size_solo : size === 'family2' ? t.auth_plan_size_family2 : t.auth_plan_size_family3}
                   </button>
                 )
               })}
             </div>
-
-            {planTier === 'free' ? (
-              <p className="text-xs text-gray-400 leading-relaxed">
-                {t.auth_plan_free_note}
-              </p>
-            ) : (
-              <div>
-                <p className="text-xs font-medium text-gray-700 mb-2">{t.auth_plan_size_label}</p>
-                <div className="grid grid-cols-3 gap-2.5">
-                  {(['solo', 'family2', 'family3'] as const).map(size => {
-                    const active = planSize === size
-                    return (
-                      <button
-                        key={size}
-                        type="button"
-                        onClick={() => setPlanSize(size)}
-                        className="py-3 px-2 rounded-xl text-xs font-semibold transition-all border text-center"
-                        style={
-                          active
-                            ? { backgroundColor: '#eff6ff', color: '#1e40af', borderColor: '#1e40af', borderWidth: '2px' }
-                            : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
-                        }
-                      >
-                        {size === 'solo' ? t.auth_plan_size_solo : size === 'family2' ? t.auth_plan_size_family2 : t.auth_plan_size_family3}
-                      </button>
-                    )
-                  })}
-                </div>
-                <p className="text-xs text-gray-400 leading-relaxed mt-4">
-                  {t.auth_plan_paid_note}
-                </p>
-              </div>
-            )}
+            <p className="text-xs text-gray-400 leading-relaxed mt-4">
+              {t.auth_plan_size_note}
+            </p>
 
             <div className="flex gap-3 mt-6">
               <button
@@ -586,10 +546,10 @@ function AuthModal({
         {registerStep === 3 && (
           <div className="px-8 py-6">
             <h2 className="text-base font-bold mb-1" style={{ color: '#0f1f3d' }}>
-              {planTier === 'free' ? t.auth_children_step_title_free : t.auth_children_step_title_paid}
+              {t.auth_children_step_title}
             </h2>
             <p className="text-xs text-gray-500 mb-6">
-              {planTier === 'free' ? t.auth_children_step_subtitle_free : t.auth_children_step_subtitle_paid}
+              {t.auth_children_step_subtitle}
             </p>
 
             <div className="flex flex-col gap-6 mb-4">
@@ -639,10 +599,50 @@ function AuthModal({
                         onSelect={lang => setRegChildren(prev => prev.map((c, idx) => idx === i ? { ...c, language: lang } : c))}
                       />
                     </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                        {t.auth_child_plan_label}
+                      </label>
+                      <div className="grid grid-cols-3 gap-2">
+                        {(['free', 'pro', 'guided'] as const).map(tier => {
+                          const active = child.tier === tier
+                          const price = tier === 'free' ? 'R0' : `R${FOUNDING_PRICE[tier]}${t.pricing_per_month}`
+                          const desc = tier === 'free' ? t.profile_plan_desc_free : tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_guided
+                          return (
+                            <button
+                              key={tier}
+                              type="button"
+                              onClick={() => setRegChildren(prev => prev.map((c, idx) => idx === i ? { ...c, tier } : c))}
+                              className="py-2.5 px-2 rounded-xl text-xs font-semibold transition-all border text-center flex flex-col items-center gap-0.5"
+                              style={
+                                active
+                                  ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
+                                  : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
+                              }
+                            >
+                              <span>{tier === 'free' ? t.dash_package_free : tier === 'pro' ? t.dash_package_pro : t.dash_package_guided}</span>
+                              <span className="text-[10px] font-normal" style={{ color: active ? '#dbeafe' : '#9ca3af' }}>{price}</span>
+                            </button>
+                          )
+                        })}
+                      </div>
+                      <p className="text-[11px] text-gray-400 leading-relaxed mt-1.5">
+                        {child.tier === 'free' ? t.profile_plan_desc_free : child.tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_guided}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
+
+            {pricePreview.total > 0 && (
+              <div className="flex items-center justify-between rounded-lg px-4 py-3 mb-4" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
+                <span className="text-xs font-medium text-gray-500">{t.auth_plan_running_total_label}</span>
+                <span className="text-sm font-bold" style={{ color: '#0f1f3d' }}>
+                  R{pricePreview.total}{t.pricing_per_month}
+                </span>
+              </div>
+            )}
 
             {error && (
               <p className="text-red-600 text-xs bg-red-50 border border-red-200 rounded-lg px-3 py-2 mb-4">
@@ -679,9 +679,16 @@ function AuthModal({
 
 // ─── Provider ─────────────────────────────────────────────────────────────────
 
-function sanitizePackage(raw: unknown): Package {
+function sanitizeTier(raw: unknown): Tier {
   const lower = (raw as string | undefined)?.toLowerCase() ?? 'free'
-  return (VALID_PACKAGES as string[]).includes(lower) ? (lower as Package) : 'free'
+  return (VALID_TIERS as string[]).includes(lower) ? (lower as Tier) : 'free'
+}
+
+// Missing or wrong-length childPlans defaults to all-free rather than trying
+// to derive from anything legacy — there's no pre-existing data to migrate.
+function sanitizeChildPlans(raw: unknown, childCount: number): Tier[] {
+  const arr = Array.isArray(raw) ? raw.map(sanitizeTier) : []
+  return Array.from({ length: childCount }, (_, i) => arr[i] ?? 'free')
 }
 
 function sanitizeSubscriptionStatus(raw: unknown): SubscriptionStatus {
@@ -689,10 +696,9 @@ function sanitizeSubscriptionStatus(raw: unknown): SubscriptionStatus {
   return (VALID_SUBSCRIPTION_STATUSES as string[]).includes(lower) ? (lower as SubscriptionStatus) : 'none'
 }
 
-function sanitizePendingPackage(raw: unknown): Package | null {
-  if (raw == null) return null
-  const lower = (raw as string).toLowerCase()
-  return (VALID_PACKAGES as string[]).includes(lower) ? (lower as Package) : null
+function sanitizePendingChildPlans(raw: unknown): Tier[] | null {
+  if (raw == null || !Array.isArray(raw)) return null
+  return raw.map(sanitizeTier)
 }
 
 // A child record as it may exist in Firestore before the language fields were added.
@@ -734,13 +740,13 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     name,
     email: fbUser.email ?? data.email ?? '',
     initial: (name.charAt(0) || 'U').toUpperCase(),
-    package: sanitizePackage(data.package),
+    childPlans: sanitizeChildPlans(data.childPlans, children.length),
     children,
     refCode,
     activeChildIndex,
     subscriptionStatus: sanitizeSubscriptionStatus(data.subscriptionStatus),
     payfastToken: typeof data.payfastToken === 'string' ? data.payfastToken : null,
-    pendingPackage: sanitizePendingPackage(data.pendingPackage),
+    pendingChildPlans: sanitizePendingChildPlans(data.pendingChildPlans),
     lastPaymentDate: typeof data.lastPaymentDate === 'string' ? data.lastPaymentDate : null,
     lastPaymentAmount: typeof data.lastPaymentAmount === 'number' ? data.lastPaymentAmount : null,
     referredBy: typeof data.referredBy === 'string' ? data.referredBy : null,
@@ -777,7 +783,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     name: string,
     email: string,
     password: string,
-    pkg: Package,
+    childTiers: Tier[],
     childInputs: Array<{ name: string; grade: number; language: Language }>,
     referredByCode?: string
   ) {
@@ -785,16 +791,18 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     await updateAuthProfile(cred.user, { displayName: name })
     const children: Child[] = childInputs.map(c => ({ ...c, languageChangeUsed: false }))
     const refCode = generateRefCode(name)
-    // Every account is created free, regardless of the plan chosen in the
-    // wizard — Firestore rules only allow package:'free' on create. A paid
-    // plan is granted afterwards by the PayFast ITN webhook, never here.
+    // Every account is created all-free, regardless of the tiers chosen in
+    // the wizard — Firestore rules only allow childPlans with no paid tier
+    // on create. Paid tiers are granted afterwards by the PayFast ITN
+    // webhook, never here.
+    const freeChildPlans: Tier[] = children.map(() => 'free')
     await setDoc(doc(db, 'users', cred.user.uid), {
       name,
       email,
-      package: 'free',
+      childPlans: freeChildPlans,
       subscriptionStatus: 'none',
       payfastToken: null,
-      pendingPackage: null,
+      pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,
       children,
@@ -807,10 +815,10 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       name,
       email,
       initial: (name.charAt(0) || 'U').toUpperCase(),
-      package: 'free',
+      childPlans: freeChildPlans,
       subscriptionStatus: 'none',
       payfastToken: null,
-      pendingPackage: null,
+      pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,
       children,
@@ -838,10 +846,13 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    // Chosen a paid plan? Immediately continue into checkout instead of
-    // granting it for free. This redirects the browser to PayFast on success.
-    if (pkg !== 'free') {
-      await initiateCheckout(cred.user, pkg, true)
+    // Chosen any paid tier for any child? Immediately continue into checkout
+    // instead of granting it for free. This redirects the browser to PayFast
+    // on success. Founding pricing is hardcoded true here (matches prior
+    // behavior) — the checkout route clamps to one of the two known prices
+    // per tier regardless.
+    if (childTiers.some(t => t !== 'free')) {
+      await initiateCheckout(cred.user, childTiers, { pro: true, guided: true })
     }
   }
 
@@ -869,10 +880,28 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  // Growing the family goes through a server route rather than a direct
+  // updateDoc — childPlans is fully client-write-protected (see
+  // firestore.rules), so appending its new 'free' entry has to happen with
+  // the Admin SDK. See app/api/family/add-child/route.ts.
+  async function addChild(name: string, grade: number, language: Language) {
+    if (!user) return
+    const idToken = await auth.currentUser?.getIdToken()
+    if (!idToken) return
+    const res = await fetch('/api/family/add-child', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ idToken, name, grade, language }),
+    })
+    if (!res.ok) throw new Error('Could not add child')
+    const { children, childPlans } = await res.json()
+    setUser({ ...user, children, childPlans })
+  }
+
   return (
     <AuthContext.Provider
       value={{
-        user, loading, login, register, logout, updateChildren, updateActiveChild,
+        user, loading, login, register, logout, updateChildren, addChild, updateActiveChild,
         openModal: (tab) => { setModalInitialTab(tab ?? 'login'); setModalOpen(true) },
       }}
     >

@@ -1,20 +1,24 @@
 import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPayfastConfig, generateSignature } from '@/src/lib/payfast'
-import { priceForPackage, type PackageValue } from '@/src/lib/pricing'
+import { computeFamilyPrice, type Tier } from '@/src/lib/pricing'
 
-const VALID_TARGETS: PackageValue[] = [
-  'pro', 'guided', 'family_pro_2', 'family_pro_3', 'family_guided_2', 'family_guided_3',
-]
+const VALID_TIERS: Tier[] = ['free', 'pro', 'guided']
 
 export async function POST(req: NextRequest) {
-  const { idToken, targetPackage, isFounding } = await req.json() as {
+  const { idToken, childTiers, founding } = await req.json() as {
     idToken?: string
-    targetPackage?: PackageValue
-    isFounding?: boolean
+    childTiers?: Tier[]
+    founding?: { pro?: boolean; guided?: boolean }
   }
 
-  if (!idToken || !targetPackage || !VALID_TARGETS.includes(targetPackage)) {
+  if (
+    !idToken ||
+    !Array.isArray(childTiers) ||
+    childTiers.length === 0 ||
+    !childTiers.every(t => VALID_TIERS.includes(t)) ||
+    !childTiers.some(t => t !== 'free')
+  ) {
     return new Response('Bad request', { status: 400 })
   }
 
@@ -43,19 +47,26 @@ export async function POST(req: NextRequest) {
   const email: string = userData.email ?? ''
   const name: string = userData.name ?? ''
 
-  // Never trust a client-supplied amount — look it up server-side. `isFounding`
-  // is trusted only insofar as it selects one of exactly two known prices per
-  // plan (the real founding-spot counter is client-only today; closing that is
-  // a separate, later piece of work).
-  const amount = priceForPackage(targetPackage, Boolean(isFounding))
+  if (!Array.isArray(userData.children) || userData.children.length !== childTiers.length) {
+    return new Response('Bad request', { status: 400 })
+  }
 
-  // pendingAmount lets the ITN handler verify amount_gross against the exact
-  // rate this user was quoted, without needing to re-derive founding-vs-full
-  // status (which isn't knowable from the ITN payload alone). subscriptionStatus
-  // moves to 'pending' so the profile page can reflect "upgrade in progress"
-  // immediately, before ITN confirms.
+  // Never trust a client-supplied amount — compute it server-side. `founding`
+  // is trusted only insofar as it selects one of exactly two known prices per
+  // tier (the real founding-spot counter is client-only today; closing that
+  // is a separate, later piece of work).
+  const { total: amount } = computeFamilyPrice(childTiers, {
+    pro: Boolean(founding?.pro),
+    guided: Boolean(founding?.guided),
+  })
+
+  // pendingChildPlans/pendingAmount let the ITN handler verify the payload
+  // against exactly what this user was quoted, without needing to re-derive
+  // founding-vs-full status (which isn't knowable from the ITN payload
+  // alone). subscriptionStatus moves to 'pending' so the profile page can
+  // reflect "upgrade in progress" immediately, before ITN confirms.
   await adminDb.doc(`users/${uid}`).update({
-    pendingPackage: targetPackage,
+    pendingChildPlans: childTiers,
     pendingAmount: amount,
     subscriptionStatus: 'pending',
   })
@@ -64,10 +75,16 @@ export async function POST(req: NextRequest) {
   const notifyBase = process.env.PAYFAST_NOTIFY_BASE_URL ?? 'http://localhost:3000'
   const mPaymentId = `${uid}_${Date.now()}`
   const amountStr = amount.toFixed(2)
+  const itemName = childTiers.length === 1
+    ? `Mathly ${childTiers[0]} - Monthly`
+    : `Mathly Family (${childTiers.length} people) - Monthly`
 
   // Field order matters — PayFast's classic checkout/ITN signature concatenates
   // fields in the order given (not alphabetical, unlike their newer REST API).
-  // This exact order becomes the form's input order on submit.
+  // This exact order becomes the form's input order on submit. custom_str1
+  // carries the per-child tier selection as JSON so the ITN handler can cross-
+  // check it against pendingChildPlans — comfortably within PayFast's classic
+  // custom_strN field-length limits for up to 3 short tier names.
   const fields: Record<string, string> = {
     merchant_id: config.merchantId,
     merchant_key: config.merchantKey,
@@ -78,8 +95,8 @@ export async function POST(req: NextRequest) {
     email_address: email,
     m_payment_id: mPaymentId,
     amount: amountStr,
-    item_name: `Mathly ${targetPackage} - Monthly`,
-    custom_str1: targetPackage,
+    item_name: itemName,
+    custom_str1: JSON.stringify(childTiers),
     custom_str2: uid,
     subscription_type: '1',
     recurring_amount: amountStr,

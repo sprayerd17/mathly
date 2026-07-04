@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Navbar from '@/app/components/Navbar'
-import { useAuth, getActiveChild } from '@/app/providers'
+import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
 const ALL_GRADES = [4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -15,9 +15,11 @@ export default function SelectGradePage() {
 
   if (loading) return null
 
-  // Guests and free accounts browse any grade. Paid accounts (solo or family)
-  // only see the one grade their currently active profile has full access to.
-  const showAllGrades = !user || user.package === 'free'
+  // Guests and free accounts browse any grade. A paid active profile only
+  // sees the one grade it has full access to — this is scoped to whichever
+  // child is currently active, not the account as a whole, since tiers are
+  // independent per child.
+  const showAllGrades = !user || getActiveTier(user) === 'free'
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#f8fafc' }}>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { useAuth, getActiveTier } from '@/app/providers'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -42,18 +43,6 @@ function readUsage(): AIUsage {
 
 function writeUsage(usage: AIUsage): void {
   localStorage.setItem('mathly_ai_usage', JSON.stringify(usage))
-}
-
-function readPlan(): Plan {
-  try {
-    const stored = localStorage.getItem('mathly_user')
-    if (stored) {
-      const pkg = (JSON.parse(stored)?.package as string | undefined)?.toLowerCase()
-      if (pkg === 'pro') return 'pro'
-      if (pkg === 'guided') return 'guided'
-    }
-  } catch {}
-  return 'free'
 }
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
@@ -123,6 +112,7 @@ function TypingDots() {
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function AIAssistant({ grade }: { grade: string }) {
+  const { user } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
   const [selectedText, setSelectedText] = useState('')
   const [pendingContext, setPendingContext] = useState('')
@@ -131,15 +121,18 @@ export default function AIAssistant({ grade }: { grade: string }) {
   const [isLoading, setIsLoading] = useState(false)
   const [streamingContent, setStreamingContent] = useState<string | null>(null)
   const [usage, setUsage] = useState<AIUsage>({ month: getCurrentMonth(), count: 0 })
-  const [plan, setPlan] = useState<Plan>('free')
   const [mounted, setMounted] = useState(false)
+
+  // Usage limit is tied to the active child's own plan tier, not the account
+  // as a whole — a family can mix plans, so the assistant's allowance
+  // follows whichever profile is currently active.
+  const plan: Plan = user ? getActiveTier(user) : 'free'
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     setUsage(readUsage())
-    setPlan(readPlan())
     setMounted(true)
   }, [])
 

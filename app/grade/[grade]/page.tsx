@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import NavAuth from '@/app/components/NavAuth'
-import { useAuth } from '@/app/providers'
+import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
 type Topic = {
@@ -1062,14 +1062,16 @@ export default function GradePage() {
 
   const topics = getTopics(grade)
 
-  // Only restrict after hydration, and only for paid plans — free accounts can
-  // browse any grade (limited to 1 topic each), paid plans get full access only
-  // to the grade(s) they're actually paying for.
+  // Only restrict after hydration, and only for the active child's paid tier —
+  // free accounts can browse any grade (limited to 1 topic each), a paid
+  // child gets full access only to the grade they're actually paying for.
+  // Scoped to the active child, not "any child on the account", since tiers
+  // are now independent per child.
   const isRestricted =
     mounted &&
     user !== null &&
-    user.package !== 'free' &&
-    !user.children.some(c => c.grade === Number(grade))
+    getActiveTier(user) !== 'free' &&
+    getActiveChild(user).grade !== Number(grade)
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">

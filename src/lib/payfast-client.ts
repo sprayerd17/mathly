@@ -1,5 +1,5 @@
 import type { User as FirebaseUser } from 'firebase/auth'
-import type { PackageValue } from '@/src/lib/pricing'
+import type { Tier } from '@/src/lib/pricing'
 
 // Builds a hidden, auto-submitting form and posts it to PayFast — the standard
 // integration pattern (avoids a client-side redirect race, works without any JS
@@ -26,18 +26,20 @@ export function submitPayfastForm(action: string, fields: Record<string, string>
 export class CheckoutError extends Error {}
 
 // Shared by the pricing page's "claim your spot" button and by registration
-// (when a paid plan is chosen at signup). Redirects the browser to PayFast on
-// success — does not return normally in that case.
+// (when a paid tier is chosen for any child at signup). Redirects the browser
+// to PayFast on success — does not return normally in that case. childTiers
+// is index-aligned with the account's children, one entry per person
+// (including 'free' entries for anyone not being upgraded).
 export async function initiateCheckout(
   fbUser: FirebaseUser,
-  targetPackage: PackageValue,
-  isFounding: boolean
+  childTiers: Tier[],
+  founding: { pro: boolean; guided: boolean }
 ) {
   const idToken = await fbUser.getIdToken()
   const res = await fetch('/api/payfast/checkout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ idToken, targetPackage, isFounding }),
+    body: JSON.stringify({ idToken, childTiers, founding }),
   })
   if (!res.ok) {
     throw new CheckoutError('Could not start checkout. Please try again.')
