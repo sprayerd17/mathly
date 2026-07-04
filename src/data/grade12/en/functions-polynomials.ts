@@ -202,6 +202,11 @@ export const topicData: TopicData = {
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#92400e;margin-bottom:6px;">Testing strategy — which values to try?</p>` +
         `<p style="margin:0;color:#78350f;">For a polynomial with integer coefficients, try factors of the constant term (the number with no x). For example, if the constant term is 6, try x = ±1, ±2, ±3, ±6 until you find one that makes p(a)=0.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin-top:12px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">What CAPS actually examines here</p>` +
+        `<p style="margin:0;color:#1e3a8a;">The <strong>Factor Theorem</strong> — using p(a)=0 to identify factors — is the examinable skill, since it's the tool you'll use throughout cubic factorisation. The Remainder Theorem is introduced here mainly to explain <em>why</em> the Factor Theorem works; you won't be asked to calculate an isolated, non-zero remainder as a stand-alone exam question.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -239,11 +244,12 @@ export const topicData: TopicData = {
       openQuestions: [
         {
           difficulty: 'Easy',
-          question: 'Use the Remainder Theorem to find the remainder when p(x)=x³+x²−2x+4 is divided by (x−1).',
-          answer: '4',
+          question: 'Determine whether (x−1) is a factor of p(x)=x³+x²−2x+4 by evaluating p(1). State your conclusion.',
+          answer: 'No, (x−1) is not a factor.',
           checkMode: 'auto',
-          correctAnswer: '4',
-          explanation: 'Substitute x=1: p(1)=1+1-2+4=4.\nThe remainder is 4 ✓',
+          correctAnswer: 'No',
+          correctAnswers: ['No', 'no', 'Not a factor', 'not a factor'],
+          explanation: 'Substitute x=1: p(1)=1+1-2+4=4.\nSince p(1)=4≠0, by the Factor Theorem (x−1) is NOT a factor of p(x) ✓',
         },
         {
           difficulty: 'Medium',
@@ -534,14 +540,15 @@ export const topicData: TopicData = {
   ],
 
   topicPractice: [
-    // ── Q1 Easy — Remainder Theorem direct substitution ───────────────────────
+    // ── Q1 Easy — Factor Theorem: testing whether (x-1) is a factor ──────────
     {
       difficulty: 'Easy',
-      question: 'Use the Remainder Theorem to find the remainder when p(x)=x³−2x²+3x−1 is divided by (x−1).',
-      answer: '1',
+      question: 'Determine whether (x−1) is a factor of p(x)=x³−2x²+3x−1 by evaluating p(1). State your conclusion.',
+      answer: 'No, (x−1) is not a factor.',
       checkMode: 'auto',
-      correctAnswer: '1',
-      explanation: 'Substitute x=1: p(1)=1−2+3−1=1. The remainder is 1 ✓',
+      correctAnswer: 'No',
+      correctAnswers: ['No', 'no', 'Not a factor', 'not a factor'],
+      explanation: 'Substitute x=1: p(1)=1−2+3−1=1.\nSince p(1)=1≠0, by the Factor Theorem (x−1) is NOT a factor of p(x) ✓',
     },
 
     // ── Q2 Medium — Factor Theorem: show a factor ─────────────────────────────

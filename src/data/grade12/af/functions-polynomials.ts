@@ -202,6 +202,11 @@ export const topicData: TopicData = {
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#92400e;margin-bottom:6px;">Toetsstrategie — watter waardes om te probeer?</p>` +
         `<p style="margin:0;color:#78350f;">Vir ʼn polinoom met heelgetal-koëffisiënte, probeer faktore van die konstante term (die getal sonder x). Byvoorbeeld, as die konstante term 6 is, probeer x = ±1, ±2, ±3, ±6 totdat jy een vind wat p(a)=0 maak.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin-top:12px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Wat CAPS werklik hier eksamineer</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Die <strong>Faktorstelling</strong> — die gebruik van p(a)=0 om faktore te identifiseer — is die eksamineerbare vaardigheid, aangesien dit die instrument is wat jy dwarsdeur derdegraadse faktorisering sal gebruik. Die Resttelling word hier hoofsaaklik ingevoer om te verduidelik <em>waarom</em> die Faktorstelling werk; jy sal nie gevra word om ʼn geïsoleerde, nie-nul res as ʼn selfstandige eksamenvraag te bereken nie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -239,11 +244,12 @@ export const topicData: TopicData = {
       openQuestions: [
         {
           difficulty: 'Easy',
-          question: 'Gebruik die Resttelling om die res te vind wanneer p(x)=x³+x²−2x+4 deur (x−1) gedeel word.',
-          answer: '4',
+          question: 'Bepaal of (x−1) ʼn faktor van p(x)=x³+x²−2x+4 is deur p(1) te bereken. Gee jou gevolgtrekking.',
+          answer: 'Nee, (x−1) is nie ʼn faktor nie.',
           checkMode: 'auto',
-          correctAnswer: '4',
-          explanation: 'Vervang x=1: p(1)=1+1-2+4=4.\nDie res is 4 ✓',
+          correctAnswer: 'Nee',
+          correctAnswers: ['Nee', 'nee', 'Nie \'n faktor nie', 'nie \'n faktor nie'],
+          explanation: 'Vervang x=1: p(1)=1+1-2+4=4.\nAangesien p(1)=4≠0, is (x−1) volgens die Faktorstelling NIE ʼn faktor van p(x) nie ✓',
         },
         {
           difficulty: 'Medium',
@@ -534,14 +540,15 @@ export const topicData: TopicData = {
   ],
 
   topicPractice: [
-    // ── Q1 Easy — Remainder Theorem direct substitution ───────────────────────
+    // ── Q1 Easy — Factor Theorem: testing whether (x-1) is a factor ──────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die Resttelling om die res te vind wanneer p(x)=x³−2x²+3x−1 deur (x−1) gedeel word.',
-      answer: '1',
+      question: 'Bepaal of (x−1) ʼn faktor van p(x)=x³−2x²+3x−1 is deur p(1) te bereken. Gee jou gevolgtrekking.',
+      answer: 'Nee, (x−1) is nie ʼn faktor nie.',
       checkMode: 'auto',
-      correctAnswer: '1',
-      explanation: 'Vervang x=1: p(1)=1−2+3−1=1. Die res is 1 ✓',
+      correctAnswer: 'Nee',
+      correctAnswers: ['Nee', 'nee', 'Nie \'n faktor nie', 'nie \'n faktor nie'],
+      explanation: 'Vervang x=1: p(1)=1−2+3−1=1.\nAangesien p(1)=1≠0, is (x−1) volgens die Faktorstelling NIE ʼn faktor van p(x) nie ✓',
     },
 
     // ── Q2 Medium — Factor Theorem: show a factor ─────────────────────────────
