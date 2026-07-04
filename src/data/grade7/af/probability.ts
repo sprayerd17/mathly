@@ -98,10 +98,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the probability scale from 0 to 1 and how to list all possible outcomes of an experiment" />',
+        '<VideoPlaceholder label="Kort video wat die waarskynlikheidskaal van 0 tot 1 verduidelik en wys hoe om alle moontlike uitkomste van ʼn eksperiment te lys" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Probability scale from 0 to 1 showing impossible at 0, even chance at half, and certain at 1 with colour coded labels" />',
+        '<DiagramPlaceholder label="Waarskynlikheidskaal van 0 tot 1 wat onmoontlik by 0, ewekansig by die helfte, en seker by 1 wys, met kleurgekodeerde merkers" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -183,10 +183,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate probability as a fraction using favourable outcomes over total outcomes with worked examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om waarskynlikheid as ʼn breuk te bereken deur gunstige uitkomste oor totale uitkomste te gebruik, met uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a bag with 5 red and 3 blue marbles showing favourable outcomes highlighted in green and total outcomes in blue" />',
+        '<DiagramPlaceholder label="Diagram van ʼn sak met 5 rooi en 3 blou albasters wat gunstige uitkomste in groen uitgelig wys en totale uitkomste in blou" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -277,10 +277,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing relative frequency from an experiment to theoretical probability and showing how more trials brings the two values closer together" />',
+        '<VideoPlaceholder label="Kort video wat relatiewe frekwensie uit ʼn eksperiment vergelyk met teoretiese waarskynlikheid en wys hoe meer proewe die twee waardes nader aan mekaar bring" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table comparing relative frequency and theoretical probability for a coin flip experiment across 10 50 and 200 trials showing convergence" />',
+        '<DiagramPlaceholder label="Tabel wat relatiewe frekwensie en teoretiese waarskynlikheid vir ʼn muntstuk-opgooi-eksperiment oor 10, 50 en 200 proewe vergelyk en konvergensie wys" />',
     },
   ],
 

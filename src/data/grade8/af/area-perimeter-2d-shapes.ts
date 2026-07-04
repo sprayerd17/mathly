@@ -135,10 +135,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use the circumference and area formulas for circles using π = 3.14 with worked examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die omtrek- en oppervlakteformules vir sirkels te gebruik met π = 3,14, met uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a circle with radius labelled blue, diameter labelled red, circumference labelled green and area region labelled orange" />',
+        '<DiagramPlaceholder label="Diagram van ʼn sirkel met radius gemerk in blou, deursnee gemerk in rooi, omtrek gemerk in groen en oppervlaktegebied gemerk in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,10 +261,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to decompose an L-shape and a pentagon into rectangles and triangles to find the total area" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn L-vorm en ʼn vyfhoek in reghoeke en driehoeke te ontbind om die totale oppervlakte te vind" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A pentagon shape split into a rectangle and triangle with each section labelled with its dimensions" />',
+        '<DiagramPlaceholder label="ʼn Vyfhoekvorm verdeel in ʼn reghoek en driehoek, met elke gedeelte gemerk met sy dimensies" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -398,10 +398,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve real-life perimeter and area problems involving circles and how to convert between SI area units" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om werklike-lewe omtrek- en oppervlakteprobleme met sirkels op te los en hoe om tussen SI-oppervlakte-eenhede om te reken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a circular garden with radius labelled and a unit conversion scale from mm² to cm² to m² to km²" />',
+        '<DiagramPlaceholder label="Diagram van ʼn sirkelvormige tuin met radius gemerk en ʼn eenheidsomskakelingskaal van mm² na cm² na m² na km²" />',
     },
   ],
 

@@ -1002,6 +1002,12 @@ const grade12Topics: Topic[] = [
     description: 'Revise the five number summary and box and whisker diagrams, draw and interpret ogives, identify symmetric and skewed distributions, apply the 68-95-99.7 rule for the normal distribution, and analyse scatter plots with regression lines and correlation coefficients.',
     free: false,
   },
+  {
+    slug: 'probability',
+    name: 'Probability',
+    description: 'Apply the addition rule and complementary events, master the fundamental counting principle, calculate permutations with restrictions and repeated items, and use these counting techniques to solve combined probability problems.',
+    free: false,
+  },
 ]
 
 function getTopics(grade: string): Topic[] {

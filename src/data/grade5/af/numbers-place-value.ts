@@ -826,7 +826,7 @@ export const topicData: TopicData = {
         },
         {
           label: 'b)',
-          correctAnswer: 'yes',
+          correctAnswer: 'ja',
           explanation:
             '72 ÷ 9 = 8 presies — geen res nie.\n\n' +
             'Kontroleer: 9 × 8 = 72 ✓\n\n' +

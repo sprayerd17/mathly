@@ -95,10 +95,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide an amount in a given ratio and how to compare ratios using equivalent forms" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn bedrag in ʼn gegewe verhouding te verdeel en hoe om verhoudings te vergelyk deur ekwivalente vorme te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing R750 divided into 5 equal parts with 2 parts coloured blue for first share and 3 parts coloured red for second share" />',
+        '<DiagramPlaceholder label="Visuele voorstelling wat R750 in 5 gelyke dele verdeel wys, met 2 dele in blou vir die eerste aandeel en 3 dele in rooi vir die tweede aandeel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -179,10 +179,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate speed using the distance-time formula and how to find and compare unit rates" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om spoed met die afstand-tyd-formule te bereken en hoe om eenheidskoerse te vind en te vergelyk" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Speed triangle diagram showing Distance at the top and Speed and Time at the bottom with colour coded labels" />',
+        '<DiagramPlaceholder label="Spoed-driehoek-diagram wat Afstand bo-aan wys en Spoed en Tyd onder-aan, met kleurgekodeerde merkers" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -264,10 +264,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to set up and solve a proportion using cross multiplication with real-life examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn proporsie op te stel en op te los met kruisvermenigvuldiging, met voorbeelde uit die alledaagse lewe" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two equal fractions side by side with arrows crossing to show cross multiplication highlighted in orange" />',
+        '<DiagramPlaceholder label="Diagram wat twee gelyke breuke langs mekaar wys met pyle wat kruis om kruisvermenigvuldiging in oranje uit te lig" />',
     },
   ],
 

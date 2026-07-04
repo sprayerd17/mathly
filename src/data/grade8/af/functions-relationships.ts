@@ -103,10 +103,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute input values into an equation to find output values, and how to use inverse operations to find input values from a given output" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om insetwaardes in ʼn vergelyking te vervang om uitsetwaardes te vind, en hoe om inverse bewerkings te gebruik om insetwaardes vanaf ʼn gegewe uitset te vind" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Flow diagram showing the equation y=4x-3 with input value x in blue, the equation operation in orange, and output value y in green" />',
+        '<DiagramPlaceholder label="Vloeidiagram wat die vergelyking y=4x-3 wys met insetwaarde x in blou, die vergelykingsbewerking in oranje, en uitsetwaarde y in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -213,10 +213,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert a verbal description of a relationship into an equation, and how to find an equation from a table of values" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn verbale beskrywing van ʼn verwantskap na ʼn vergelyking om te skakel, en hoe om ʼn vergelyking uit ʼn tabel van waardes te vind" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side comparison of five equivalent forms of the relationship y=3x+5: verbal description in blue, flow diagram, table of values in green, formula, and equation in orange" />',
+        '<DiagramPlaceholder label="Newenmekaar vergelyking van vyf ekwivalente vorme van die verwantskap y=3x+5: verbale beskrywing in blou, vloeidiagram, tabel van waardes in groen, formule, en vergelyking in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -303,10 +303,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute x-values into an equation step by step and write the results as ordered pairs in a table" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om x-waardes stap vir stap in ʼn vergelyking te vervang en die resultate as geordende pare in ʼn tabel te skryf" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table of ordered pairs for y=2x-1 with x-values in blue and y-values in green, and the resulting ordered pairs in orange ready to be plotted on a Cartesian plane" />',
+        '<DiagramPlaceholder label="Tabel van geordende pare vir y=2x-1 met x-waardes in blou en y-waardes in groen, en die resulterende geordende pare in oranje gereed om op ʼn Cartesiese vlak gestip te word" />',
     },
   ],
 

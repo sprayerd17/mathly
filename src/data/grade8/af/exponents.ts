@@ -229,8 +229,8 @@ export const topicData: TopicData = {
           answer: '6.7 × 10³',
           checkMode: 'auto',
           correctAnswer: '6.7 × 10³',
-          correctAnswers: ['6.7 × 10³', '6.7 x 10³', '6.7×10³', '6.7x10^3', '6.7 × 10^3'],
-          explanation: 'Skuif die desimaal 3 plekke na links: 6 700 → 6.7\nAntwoord: 6.7 × 10³ ✓',
+          correctAnswers: ['6.7 × 10³', '6.7 x 10³', '6.7×10³', '6.7x10^3', '6.7 × 10^3', '6,7 × 10³', '6,7 x 10³', '6,7×10³', '6,7x10^3', '6,7 × 10^3'],
+          explanation: 'Skuif die desimaal 3 plekke na links: 6 700 → 6,7\nAntwoord: 6,7 × 10³ ✓',
         },
         {
           difficulty: 'Medium',
@@ -241,14 +241,14 @@ export const topicData: TopicData = {
             {
               label: 'a) 850 000',
               correctAnswer: '8.5 × 10⁵',
-              correctAnswers: ['8.5 × 10⁵', '8.5 x 10⁵', '8.5×10⁵', '8.5 × 10^5'],
-              explanation: 'Skuif die desimaal 5 plekke na links: 850 000 → 8.5\nAntwoord: 8.5 × 10⁵ ✓',
+              correctAnswers: ['8.5 × 10⁵', '8.5 x 10⁵', '8.5×10⁵', '8.5 × 10^5', '8,5 × 10⁵', '8,5 x 10⁵', '8,5×10⁵', '8,5 × 10^5'],
+              explanation: 'Skuif die desimaal 5 plekke na links: 850 000 → 8,5\nAntwoord: 8,5 × 10⁵ ✓',
             },
             {
               label: 'b) 12 000 000',
               correctAnswer: '1.2 × 10⁷',
-              correctAnswers: ['1.2 × 10⁷', '1.2 x 10⁷', '1.2×10⁷', '1.2 × 10^7'],
-              explanation: 'Skuif die desimaal 7 plekke na links: 12 000 000 → 1.2\nAntwoord: 1.2 × 10⁷ ✓',
+              correctAnswers: ['1.2 × 10⁷', '1.2 x 10⁷', '1.2×10⁷', '1.2 × 10^7', '1,2 × 10⁷', '1,2 x 10⁷', '1,2×10⁷', '1,2 × 10^7'],
+              explanation: 'Skuif die desimaal 7 plekke na links: 12 000 000 → 1,2\nAntwoord: 1,2 × 10⁷ ✓',
             },
           ],
         },
@@ -261,14 +261,14 @@ export const topicData: TopicData = {
             {
               label: 'a) Aarde na Son in wetenskaplike notasie',
               correctAnswer: '1.5 × 10⁸',
-              correctAnswers: ['1.5 × 10⁸', '1.5 x 10⁸', '1.5 × 10^8'],
-              explanation: 'Skuif die desimaal 8 plekke na links: 150 000 000 → 1.5\nAntwoord: 1.5 × 10⁸ km ✓',
+              correctAnswers: ['1.5 × 10⁸', '1.5 x 10⁸', '1.5 × 10^8', '1,5 × 10⁸', '1,5 x 10⁸', '1,5 × 10^8'],
+              explanation: 'Skuif die desimaal 8 plekke na links: 150 000 000 → 1,5\nAntwoord: 1,5 × 10⁸ km ✓',
             },
             {
               label: 'b) Hoeveel keer verder (in wetenskaplike notasie)',
               correctAnswer: '2.67 × 10⁵',
-              correctAnswers: ['2.67 × 10⁵', '2.67 x 10⁵', '≈ 2.67 × 10⁵', '2.7 × 10⁵'],
-              explanation: 'Deel: (4.0 × 10¹³) ÷ (1.5 × 10⁸)\n= (4.0 ÷ 1.5) × 10^(13−8)\n≈ 2.67 × 10⁵\nProxima Centauri is ongeveer 2.67 × 10⁵ keer verder ✓',
+              correctAnswers: ['2.67 × 10⁵', '2.67 x 10⁵', '≈ 2.67 × 10⁵', '2.7 × 10⁵', '2,67 × 10⁵', '2,67 x 10⁵', '≈ 2,67 × 10⁵', '2,7 × 10⁵'],
+              explanation: 'Deel: (4,0 × 10¹³) ÷ (1,5 × 10⁸)\n= (4,0 ÷ 1,5) × 10^(13−8)\n≈ 2,67 × 10⁵\nProxima Centauri is ongeveer 2,67 × 10⁵ keer verder ✓',
             },
           ],
         },
@@ -383,7 +383,7 @@ export const topicData: TopicData = {
             {
               label: 'a) √(9/16)',
               correctAnswer: '3/4',
-              correctAnswers: ['3/4', '0.75'],
+              correctAnswers: ['3/4', '0.75', '0,75'],
               explanation: 'Pas die wortel afsonderlik op elke deel toe.\n√9 = 3 en √16 = 4\n√(9/16) = 3/4 ✓',
             },
             {
@@ -469,8 +469,8 @@ export const topicData: TopicData = {
       answer: '6.7 × 10⁴',
       checkMode: 'auto',
       correctAnswer: '6.7 × 10⁴',
-      correctAnswers: ['6.7 × 10⁴', '6.7 x 10⁴', '6.7×10⁴', '6.7 × 10^4', '6.7x10^4'],
-      explanation: 'Skuif die desimaal 4 plekke na links: 67 000 → 6.7\nAntwoord: 6.7 × 10⁴ ✓',
+      correctAnswers: ['6.7 × 10⁴', '6.7 x 10⁴', '6.7×10⁴', '6.7 × 10^4', '6.7x10^4', '6,7 × 10⁴', '6,7 x 10⁴', '6,7×10⁴', '6,7 × 10^4', '6,7x10^4'],
+      explanation: 'Skuif die desimaal 4 plekke na links: 67 000 → 6,7\nAntwoord: 6,7 × 10⁴ ✓',
     },
 
     // ── Q6 Medium — scientific notation ──────────────────────────────────────
@@ -480,8 +480,8 @@ export const topicData: TopicData = {
       answer: '9.15 × 10⁶',
       checkMode: 'auto',
       correctAnswer: '9.15 × 10⁶',
-      correctAnswers: ['9.15 × 10⁶', '9.15 x 10⁶', '9.15×10⁶', '9.15 × 10^6'],
-      explanation: 'Skuif die desimaal 6 plekke na links: 9 150 000 → 9.15\nAntwoord: 9.15 × 10⁶ ✓',
+      correctAnswers: ['9.15 × 10⁶', '9.15 x 10⁶', '9.15×10⁶', '9.15 × 10^6', '9,15 × 10⁶', '9,15 x 10⁶', '9,15×10⁶', '9,15 × 10^6'],
+      explanation: 'Skuif die desimaal 6 plekke na links: 9 150 000 → 9,15\nAntwoord: 9,15 × 10⁶ ✓',
     },
 
     // ── Q7 Hard — check scientific notation ──────────────────────────────────
@@ -520,18 +520,19 @@ export const topicData: TopicData = {
       answer: '3/4',
       checkMode: 'auto',
       correctAnswer: '3/4',
-      correctAnswers: ['3/4', '0.75'],
+      correctAnswers: ['3/4', '0.75', '0,75'],
       explanation: 'Pas die wortel afsonderlik op die teller en noemer toe.\n√9 = 3 en √16 = 4\n√(9/16) = 3/4 ✓',
     },
 
     // ── Q11 Medium — cube of a decimal ───────────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Bereken die kubus van 0.4.',
-      answer: '0.064',
+      question: 'Bereken die kubus van 0,4.',
+      answer: '0,064',
       checkMode: 'auto',
       correctAnswer: '0.064',
-      explanation: '0.4 × 0.4 = 0.16\n0.16 × 0.4 = 0.064\nAntwoord: (0.4)³ = 0.064 ✓',
+      correctAnswers: ['0.064', '0,064'],
+      explanation: '0,4 × 0,4 = 0,16\n0,16 × 0,4 = 0,064\nAntwoord: (0,4)³ = 0,064 ✓',
     },
 
     // ── Q12 Hard — cube of negative: same result ──────────────────────────────
@@ -563,11 +564,12 @@ export const topicData: TopicData = {
     // ── Q15 Hard — square root of a decimal ──────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Vind die kwadraatwortel van 1.44.',
-      answer: '1.2',
+      question: 'Vind die kwadraatwortel van 1,44.',
+      answer: '1,2',
       checkMode: 'auto',
       correctAnswer: '1.2',
-      explanation: '1.44 = 144/100\n√(144/100) = √144 / √100 = 12/10 = 1.2\nOf: 1.2 × 1.2 = 1.44 ✓',
+      correctAnswers: ['1.2', '1,2'],
+      explanation: '1,44 = 144/100\n√(144/100) = √144 / √100 = 12/10 = 1,2\nOf: 1,2 × 1,2 = 1,44 ✓',
     },
   ],
 

@@ -244,7 +244,7 @@ export const topicData: TopicData = {
       question: 'Watter woord beskryf ʼn gebeurtenis wat nooit sal gebeur nie?',
       answer: 'onmoontlik',
       checkMode: 'auto',
-      correctAnswer: 'impossible',
+      correctAnswer: 'onmoontlik',
       explanation: 'ʼn Gebeurtenis wat nooit sal gebeur nie het ʼn waarskynlikheid van 0 en word beskryf as onmoontlik.',
     },
 
@@ -254,7 +254,7 @@ export const topicData: TopicData = {
       question: 'Watter woord beskryf ʼn gebeurtenis wat altyd sal gebeur?',
       answer: 'seker',
       checkMode: 'auto',
-      correctAnswer: 'certain',
+      correctAnswer: 'seker',
       explanation: 'ʼn Gebeurtenis wat altyd sal gebeur het ʼn waarskynlikheid van 1 en word beskryf as seker.',
     },
 

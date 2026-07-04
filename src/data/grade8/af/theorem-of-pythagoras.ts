@@ -129,10 +129,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A right-angled triangle with legs labelled 3 cm and 4 cm, and hypotenuse labelled as the unknown side c, with a small square marking the right angle" />',
+        '<DiagramPlaceholder label="ʼn Reghoekige driehoek met sye gemerk 3 cm en 4 cm, en die skuinssy gemerk as die onbekende sy c, met ʼn klein vierkantjie wat die regte hoek aandui" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply the Theorem of Pythagoras to find the hypotenuse of a right-angled triangle" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die Stelling van Pythagoras toe te pas om die skuinssy van ʼn reghoekige driehoek te vind" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -238,20 +238,20 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Thabo leun ʼn leer teen ʼn muur. Die basis van die leer is 2.5 m van die muur af, en die leer is 6 m lank. Hoe hoog teen die muur reik dit (tot 2 desimale plekke)?',
-          answer: '5.45 m',
+          question: 'Thabo leun ʼn leer teen ʼn muur. Die basis van die leer is 2,5 m van die muur af, en die leer is 6 m lank. Hoe hoog teen die muur reik dit (tot 2 desimale plekke)?',
+          answer: '5,45 m',
           checkMode: 'auto',
           correctAnswer: '5.45',
-          correctAnswers: ['5.45', '5.45m', '5.45 m'],
-          explanation: 'hoogte² = 6² − 2.5² = 36 − 6.25 = 29.75\nhoogte = √29.75 ≈ 5.45 m ✓',
+          correctAnswers: ['5.45', '5.45m', '5.45 m', '5,45', '5,45m', '5,45 m'],
+          explanation: 'hoogte² = 6² − 2,5² = 36 − 6,25 = 29,75\nhoogte = √29,75 ≈ 5,45 m ✓',
         },
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two triangles side by side — first labelled right-angled (6 cm, 8 cm, 10 cm) with tick confirming equality of squares, second labelled not right-angled (5 cm, 7 cm, 9 cm) with cross" />',
+        '<DiagramPlaceholder label="Twee driehoeke langs mekaar — eerste gemerk reghoekig (6 cm, 8 cm, 10 cm) met ʼn regmerkie wat gelykheid van kwadrate bevestig, tweede gemerk nie-reghoekig (5 cm, 7 cm, 9 cm) met ʼn kruisie" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to test whether a triangle is right-angled using the converse of the Theorem of Pythagoras" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om te toets of ʼn driehoek reghoekig is met behulp van die omgekeerde van die Stelling van Pythagoras" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -368,10 +368,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A ladder leaning against a wall forming a right-angled triangle, with the base (3 m), ladder length (7 m), and unknown height labelled" />',
+        '<DiagramPlaceholder label="ʼn Leer wat teen ʼn muur leun en ʼn reghoekige driehoek vorm, met die basis (3 m), leerlengte (7 m), en onbekende hoogte gemerk" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find a missing side of a right-angled triangle using the Theorem of Pythagoras, including surd form answers" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn ontbrekende sy van ʼn reghoekige driehoek te vind met behulp van die Stelling van Pythagoras, insluitend antwoorde in wortelvorm" />',
     },
   ],
   scoreMessages: [

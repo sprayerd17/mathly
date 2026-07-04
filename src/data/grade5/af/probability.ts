@@ -120,7 +120,7 @@ export const topicData: TopicData = {
           question: 'Watter woord beskryf die waarskynlikheid van iets wat nooit sal gebeur nie?',
           answer: 'onmoontlik',
           checkMode: 'auto',
-          correctAnswer: 'impossible',
+          correctAnswer: 'onmoontlik',
           explanation: 'Iets wat nooit sal gebeur nie het ʼn waarskynlikheid van 0. Ons beskryf dit as onmoontlik.',
         },
 
@@ -130,7 +130,7 @@ export const topicData: TopicData = {
           question: 'Watter woord beskryf die waarskynlikheid van iets wat altyd sal gebeur?',
           answer: 'seker',
           checkMode: 'auto',
-          correctAnswer: 'certain',
+          correctAnswer: 'seker',
           explanation: 'Iets wat altyd sal gebeur het ʼn waarskynlikheid van 1. Ons beskryf dit as seker.',
         },
 

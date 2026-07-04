@@ -116,10 +116,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply decimal fractions by counting decimal places and placing the decimal point correctly in the product" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke te vermenigvuldig deur desimale plekke te tel en die desimale komma korrek in die produk te plaas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing 2.45 x 3.6 with decimal places counted in orange, multiplication shown in green, and final answer in blue" />',
+        '<DiagramPlaceholder label="Diagram wat 2,45 × 3,6 wys met desimale plekke getel in oranje, vermenigvuldiging gewys in groen, en die finale antwoord in blou" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -216,10 +216,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide decimal fractions by converting the divisor to a whole number using multiplication by powers of 10" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke te deel deur die deler na ʼn heelgetal om te skakel deur met magte van 10 te vermenigvuldig" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing 4.8 divided by 0.6 with both numbers multiplied by 10 in orange, division step in blue, and final answer in green" />',
+        '<DiagramPlaceholder label="Diagram wat 4,8 gedeel deur 0,6 wys met albei getalle vermenigvuldig met 10 in oranje, delingstap in blou, en finale antwoord in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -380,10 +380,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate squares, cubes, square roots and cube roots of decimal fractions step by step" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van desimale breuke stap vir stap te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing 0.3 squared and the cube root of 0.027 with base in blue, exponent in orange, and final answer in green" />',
+        '<DiagramPlaceholder label="Diagram wat 0,3 in die kwadraat en die kubuswortel van 0,027 wys, met die grondtal in blou, eksponent in oranje, en finale antwoord in groen" />',
     },
   ],
 

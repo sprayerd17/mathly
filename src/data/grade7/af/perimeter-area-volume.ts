@@ -124,10 +124,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the perimeter of squares and rectangles using formulae" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die omtrek van vierkante en reghoeke met formules te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Labelled diagrams of a square and a rectangle showing the side length formula for perimeter with colour coded measurements" />',
+        '<DiagramPlaceholder label="Gemerkte diagramme van ʼn vierkant en ʼn reghoek wat die sylengteformule vir omtrek wys, met kleurgekodeerde metings" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -251,10 +251,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the area of squares, rectangles and triangles using formulae" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van vierkante, reghoeke en driehoeke met formules te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Labelled diagrams of a square, rectangle and triangle with colour coded length, breadth, base and height dimensions" />',
+        '<DiagramPlaceholder label="Gemerkte diagramme van ʼn vierkant, reghoek en driehoek met kleurgekodeerde lengte-, breedte-, basis- en hoogte-afmetings" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -389,7 +389,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the surface area and volume of cubes and rectangular prisms using formulae" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte en volume van kubusse en reghoekige prismas met formules te bereken" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="3D diagrams of a cube and a rectangular prism with colour coded dimensions showing all six faces for surface area and the interior for volume" />',

@@ -141,10 +141,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to investigate and extend numeric patterns, find differences and write the general rule using algebraic notation" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om numeriese patrone te ondersoek en uit te brei, verskille te vind en die algemene reël in algebraïese notasie te skryf" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a numeric pattern with terms highlighted in blue, differences in orange and the derived rule in green" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn numeriese patroon wys met terme uitgelig in blou, verskille in oranje en die afgeleide reël in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -234,10 +234,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to investigate geometric patterns using diagrams and tables and write the algebraic rule for the nth term" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om geometriese patrone met diagramme en tabelle te ondersoek en die algebraïese reël vir die nde term te skryf" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing triangular dot patterns at steps 1 to 4 with step numbers in blue, shapes in green and the algebraic rule in orange" />',
+        '<DiagramPlaceholder label="Diagram wat driehoekige puntpatrone by stappe 1 tot 4 wys met stapnommers in blou, vorms in groen en die algebraïese reël in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -372,10 +372,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to justify an algebraic rule by substituting values and comparing with actual pattern terms" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn algebraïese reël te regverdig deur waardes te vervang en met werklike patroonterme te vergelyk" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the verification process with the rule tested in blue, substitution steps in orange and confirmed results in green" />',
+        '<DiagramPlaceholder label="Diagram wat die verifikasieproses wys met die reël getoets in blou, vervangingstappe in oranje en bevestigde resultate in groen" />',
     },
   ],
   scoreMessages: [

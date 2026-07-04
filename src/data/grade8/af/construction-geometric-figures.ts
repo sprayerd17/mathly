@@ -78,10 +78,10 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step construction showing a line segment AB being bisected with compass arcs above and below, and the perpendicular bisector drawn through" />',
+        '<DiagramPlaceholder label="Stap-vir-stap konstruksie wat wys hoe ʼn lynstuk AB gehalveer word met passerboë bo en onder, en die middelloodlyn deurgetrek" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to bisect a line segment and construct a perpendicular line using compass and ruler, with compass arcs in blue, bisecting line in green and perpendicular line in orange" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn lynstuk te halveer en ʼn loodregte lyn te konstrueer met ʼn passer en liniaal, met passerboë in blou, halveerlyn in groen en loodregte lyn in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -152,10 +152,10 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step construction of an equilateral triangle with compass arcs shown; separate diagram showing construction of a 60° angle" />',
+        '<DiagramPlaceholder label="Stap-vir-stap konstruksie van ʼn gelyksydige driehoek met passerboë gewys; aparte diagram wat die konstruksie van ʼn 60°-hoek wys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to construct an equilateral triangle and a 60° angle using only compass and ruler, with compass arcs in blue, constructed shape in green and angle markings in orange" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn gelyksydige driehoek en ʼn 60°-hoek te konstrueer met slegs ʼn passer en liniaal, met passerboë in blou, gekonstrueerde vorm in groen en hoekmerke in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -223,10 +223,10 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A triangle with all three angle bisectors drawn, meeting at a single labelled incentre point" />',
+        '<DiagramPlaceholder label="ʼn Driehoek met al drie hoekhalveerders getrek, wat by ʼn enkele gemerkte binnesentrumpunt ontmoet" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to bisect all three angles of a triangle using a compass, with original angle in blue, bisector line in green and incentre in orange" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om al drie hoeke van ʼn driehoek met ʼn passer te halveer, met die oorspronklike hoek in blou, halveerlyn in groen en binnesentrum in oranje" />',
     },
   ],
 

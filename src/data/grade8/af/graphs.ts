@@ -149,10 +149,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to analyse and interpret global graphs — identifying increasing, decreasing, constant sections, and maximum and minimum points" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om globale grafieke te ontleed en te interpreteer — hoe om toenemende, afnemende, konstante gedeeltes, en maksimum- en minimumpunte te identifiseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two example global graphs — one showing speed vs time with a rising then flat line; one showing height vs time for a ball throw, rising to a peak then falling, with the maximum point marked" />',
+        '<DiagramPlaceholder label="Diagram nodig: twee voorbeeld globale grafieke — een wat spoed teenoor tyd wys met ʼn stygende lyn wat dan plat word; een wat hoogte teenoor tyd wys vir ʼn balgooi, wat styg tot ʼn hoogtepunt en dan val, met die maksimumpunt gemerk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -279,10 +279,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to plot ordered pairs on the Cartesian plane and draw a straight line through plotted points" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om geordende pare op die Cartesiese vlak te stip en ʼn reguit lyn deur die gestipte punte te trek" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: Cartesian plane showing points (1,2),(2,4),(3,6) connected by a line; a second Cartesian plane showing points (-1,3),(0,1),(1,-1) connected by a downward line" />',
+        '<DiagramPlaceholder label="Diagram nodig: Cartesiese vlak wat punte (1,2),(2,4),(3,6) verbind deur ʼn lyn wys; ʼn tweede Cartesiese vlak wat punte (-1,3),(0,1),(1,-1) verbind deur ʼn afwaartse lyn wys" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -407,10 +407,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw a global graph from a real-life description, identifying rising, falling and flat sections" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn globale grafiek uit ʼn werklike-lewe beskrywing te teken, deur stygende, dalende en plat gedeeltes te identifiseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two simple sketched graphs — one showing a tank filling (rising then flat line); one showing savings rising, a sudden drop, then rising again" />',
+        '<DiagramPlaceholder label="Diagram nodig: twee eenvoudige gesketste grafieke — een wat ʼn tenk wys wat volmaak (stygende lyn wat dan plat word); een wat spaargeld wys wat styg, skielik daal, en dan weer styg" />',
     },
   ],
   scoreMessages: [

@@ -92,10 +92,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two intersecting lines forming four angles, with one labelled 110° and the others to be calculated" />',
+        '<DiagramPlaceholder label="Diagram nodig: twee snyende lyne wat vier hoeke vorm, met een gemerk 110° en die ander wat bereken moet word" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing angle relationships formed when two lines intersect, including vertically opposite and adjacent supplementary angles" />',
+        '<VideoPlaceholder label="Kort video wat hoekverwantskappe wys wat gevorm word wanneer twee lyne sny, insluitend vertikaal-oorstaande en aangrensende supplementêre hoeke" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -171,10 +171,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two parallel lines cut by a transversal, labelling corresponding, alternate, and co-interior angle pairs" />',
+        '<DiagramPlaceholder label="Diagram nodig: twee parallelle lyne gesny deur ʼn transversaal, met ooreenkomstige, verwisselende, en ko-binnehoekpare gemerk" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining corresponding, alternate and co-interior angles formed when a transversal cuts two parallel lines" />',
+        '<VideoPlaceholder label="Kort video wat ooreenkomstige, verwisselende en ko-binnehoeke verduidelik wat gevorm word wanneer ʼn transversaal twee parallelle lyne sny" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -263,10 +263,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two parallel lines cut by a transversal showing angles x and y labelled, with given angles marked" />',
+        '<DiagramPlaceholder label="Diagram nodig: twee parallelle lyne gesny deur ʼn transversaal met hoeke x en y gemerk, en gegewe hoeke aangedui" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing multi-step geometric problem solving using corresponding, alternate and co-interior angle relationships" />',
+        '<VideoPlaceholder label="Kort video wat meerstap-meetkundige probleemoplossing wys met behulp van ooreenkomstige, verwisselende en ko-binnehoekverwantskappe" />',
     },
   ],
 

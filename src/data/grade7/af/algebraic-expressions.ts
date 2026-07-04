@@ -133,10 +133,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram labelling the parts of the algebraic expression 5x plus 3y minus 7 with arrows pointing to each term coefficient constant and variable colour coded blue for variables orange for coefficients and green for the constant" />',
+        '<DiagramPlaceholder label="Diagram wat die dele van die algebraïese uitdrukking 5x plus 3y minus 7 merk met pyle wat na elke term, koëffisiënt, konstante en veranderlike wys, kleurgekodeer blou vir veranderlikes, oranje vir koëffisiënte en groen vir die konstante" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what an algebraic expression is identifying terms coefficients and constants and showing how to evaluate an expression by substituting a value for the variable" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn algebraïese uitdrukking is, terme, koëffisiënte en konstantes identifiseer, en wys hoe om ʼn uitdrukking te bereken deur ʼn waarde vir die veranderlike te vervang" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -226,10 +226,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of the expression 3x plus 5y minus 2x plus 7y with like terms circled in matching colours blue for x terms and green for y terms showing which pairs can be combined" />',
+        '<DiagramPlaceholder label="Diagram van die uitdrukking 3x plus 5y minus 2x plus 7y met gelyksoortige terme in passende kleure omkring, blou vir x-terme en groen vir y-terme, wat wys watter pare gekombineer kan word" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between like and unlike terms using colour coding and showing why terms with different variables or different powers cannot be combined" />',
+        '<VideoPlaceholder label="Kort video wat die verskil tussen gelyksoortige en ongelyksoortige terme verduidelik met kleurkodering en wys waarom terme met verskillende veranderlikes of verskillende magte nie gekombineer kan word nie" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -368,10 +368,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of the expression 6x plus 3y minus 2x plus 5y with like terms grouped using colour coded brackets blue for x terms and green for y terms then showing the final simplified result 4x plus 8y in green" />',
+        '<DiagramPlaceholder label="Diagram van die uitdrukking 6x plus 3y minus 2x plus 5y met gelyksoortige terme gegroepeer met kleurgekodeerde hakies, blou vir x-terme en groen vir y-terme, wat dan die finale vereenvoudigde resultaat 4x plus 8y in groen wys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to simplify algebraic expressions by grouping like terms with matching colours and combining their coefficients step by step" />',
+        '<VideoPlaceholder label="Kort video wat demonstreer hoe om algebraïese uitdrukkings te vereenvoudig deur gelyksoortige terme met passende kleure te groepeer en hul koëffisiënte stap vir stap te kombineer" />',
     },
   ],
   scoreMessages: [

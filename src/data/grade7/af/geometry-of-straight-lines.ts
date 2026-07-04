@@ -147,10 +147,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video classifying acute right obtuse straight and reflex angles with examples from diagrams" />',
+        '<VideoPlaceholder label="Kort video wat skerp-, regte, stomp-, gestrekte en refleks hoeke klassifiseer met voorbeelde uit diagramme" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Five angle diagrams labelled acute right obtuse straight and reflex with colour coding acute blue right green obtuse orange reflex red" />',
+        '<DiagramPlaceholder label="Vyf hoekdiagramme gemerk skerp, reg, stomp, gestrek en refleks met kleurkodering skerp blou, reg groen, stomp oranje, refleks rooi" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -260,10 +260,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find unknown angles using angles on a straight line 180 degrees and vertically opposite angles" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om onbekende hoeke te vind deur hoeke op ʼn reguit lyn (180 grade) en vertikaal-oorstaande hoeke te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two diagrams: one showing angles on a straight line adding to 180 with given angle blue and unknown angle red, one showing two intersecting lines with vertically opposite angles highlighted green" />',
+        '<DiagramPlaceholder label="Twee diagramme: een wat hoeke op ʼn reguit lyn wys wat optel tot 180, met gegewe hoek in blou en onbekende hoek in rooi, een wat twee snydende lyne wys met vertikaal-oorstaande hoeke uitgelig in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -401,10 +401,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video identifying corresponding alternate and co-interior angles formed by a transversal cutting two parallel lines" />',
+        '<VideoPlaceholder label="Kort video wat ooreenkomstige, verwisselende en kohoeke identifiseer wat gevorm word deur ʼn transversaal wat twee parallelle lyne sny" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two parallel lines cut by a transversal with corresponding angles highlighted green co-interior angles orange parallel lines blue transversal red" />',
+        '<DiagramPlaceholder label="Diagram wat twee parallelle lyne wys gesny deur ʼn transversaal, met ooreenkomstige hoeke uitgelig in groen, kohoeke in oranje, parallelle lyne in blou, transversaal in rooi" />',
     },
   ],
 

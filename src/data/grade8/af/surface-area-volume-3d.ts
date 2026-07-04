@@ -131,10 +131,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the volume and surface area of a triangular prism using the triangular base area and the length of the prism" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die volume en oppervlakte van ʼn driehoekige prisma te vind deur die driehoekige basisoppervlakte en die lengte van die prisma te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a triangular prism labelling the triangular base, height, length and three rectangular faces with colour coded measurements" />',
+        '<DiagramPlaceholder label="Diagram van ʼn driehoekige prisma wat die driehoekige basis, hoogte, lengte en drie reghoekige vlakke merk met kleurgekodeerde metings" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -262,10 +262,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve real-life problems involving volume and capacity with SI unit conversions between cm³, m³, litres and kilolitres" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om werklike-lewe probleme met volume en kapasiteit op te los, met SI-eenheidomskakelings tussen cm³, m³, liter en kiloliter" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the chain of SI unit conversions for area, volume and capacity with multiplication and division factors labelled in orange" />',
+        '<DiagramPlaceholder label="Diagram wat die ketting van SI-eenheidomskakelings vir oppervlakte, volume en kapasiteit wys, met vermenigvuldigings- en delingsfaktore gemerk in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -431,10 +431,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how surface area scales by the square and volume scales by the cube of the scale factor, with worked comparisons using cubes and rectangular prisms" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe oppervlakte volgens die kwadraat skaleer en volume volgens die derdemag van die skaalfaktor, met uitgewerkte vergelykings met kubusse en reghoekige prismas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing a small cube and a large cube showing how surface area and volume change at different rates when all dimensions are scaled up by the same factor" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn klein kubus en ʼn groot kubus vergelyk en wys hoe oppervlakte en volume teen verskillende tempos verander wanneer al die dimensies met dieselfde faktor vergroot word" />',
     },
   ],
   scoreMessages: [

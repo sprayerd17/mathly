@@ -159,10 +159,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side comparison of a rhombus and a kite, labelling equal sides in blue, parallel sides in green, and angles in orange on each shape" />',
+        '<DiagramPlaceholder label="Newenmekaar vergelyking van ʼn ruit en ʼn vlieër, met gelyke sye gemerk in blou, parallelle sye in groen, en hoeke in oranje op elke vorm" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the formal definitions of triangles and quadrilaterals using colour-coded diagrams of equal sides, parallel sides, and angles" />',
+        '<VideoPlaceholder label="Kort video wat die formele definisies van driehoeke en vierhoeke verduidelik met kleurgekodeerde diagramme van gelyke sye, parallelle sye, en hoeke" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -267,10 +267,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two triangles of different sizes but identical angles labelled similar in orange; two identical squares labelled congruent in blue" />',
+        '<DiagramPlaceholder label="Twee driehoeke van verskillende groottes maar identiese hoeke gemerk gelykvormig in oranje; twee identiese vierkante gemerk kongruent in blou" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify congruent and similar shapes by comparing side lengths and angles, with colour-coded matching angles in green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om kongruente en gelykvormige vorms te identifiseer deur sylengtes en hoeke te vergelyk, met kleurgekodeerde ooreenstemmende hoeke in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -317,12 +317,12 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'ʼn Vlieër ABCD het AB = 3.5 cm en BC = 6 cm. Bepaal AD en DC.',
-          answer: `AD = ${bl('3.5')} cm en DC = ${bl('6')} cm`,
+          question: 'ʼn Vlieër ABCD het AB = 3,5 cm en BC = 6 cm. Bepaal AD en DC.',
+          answer: `AD = ${bl('3,5')} cm en DC = ${bl('6')} cm`,
           steps: [
             `${gr('Eienskap:')} In ʼn vlieër is daar twee pare ${gr('aangrensende gelyke sye')}.`,
             `Die twee pare gelyke aangrensende sye is: AB = AD en BC = DC.`,
-            `Aangesien ${bl('AB = 3.5 cm')}, volg dit dat AD = ${bl('3.5 cm')}.`,
+            `Aangesien ${bl('AB = 3,5 cm')}, volg dit dat AD = ${bl('3,5 cm')}.`,
             `Aangesien ${bl('BC = 6 cm')}, volg dit dat DC = ${bl('6 cm')}.`,
           ],
         },
@@ -409,10 +409,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Worked examples showing a kite ABCD with equal adjacent sides labelled in blue, two similar triangles with proportion set up, and a parallelogram with all four angles marked in orange" />',
+        '<DiagramPlaceholder label="Uitgewerkte voorbeelde wat ʼn vlieër ABCD met gelyke aangrensende sye gemerk in blou wys, twee gelykvormige driehoeke met ʼn verhouding opgestel, en ʼn parallelogram met al vier hoeke gemerk in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use known properties of quadrilaterals and similar triangles to find unknown sides and angles step by step" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om bekende eienskappe van vierhoeke en gelykvormige driehoeke te gebruik om onbekende sye en hoeke stap vir stap te vind" />',
     },
   ],
   scoreMessages: [

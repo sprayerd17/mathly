@@ -153,10 +153,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing triangle types by side and angle and how to use the angle sum rule to find missing angles including ratio problems" />',
+        '<VideoPlaceholder label="Kort video wat driehoektipes volgens sye en hoeke wys en hoe om die hoeksomreël te gebruik om ontbrekende hoeke te vind, insluitend verhoudingsprobleme" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing all six triangle types side by side — equilateral isosceles and scalene by side, and acute right-angled and obtuse-angled by angle — with angle labels" />',
+        '<DiagramPlaceholder label="Diagram wat al ses driehoektipes langs mekaar wys — gelyksydig, gelykbenig en skaleen volgens sye, en skerphoekig, reghoekig en stomphoekig volgens hoeke — met hoekmerkers" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -288,10 +288,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing quadrilateral types and their properties and how to use the 360° angle sum to find missing angles and classify shapes" />',
+        '<VideoPlaceholder label="Kort video wat vierhoektipes en hul eienskappe wys en hoe om die 360°-hoeksom te gebruik om ontbrekende hoeke te vind en vorms te klassifiseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing all six quadrilateral types — square rectangle parallelogram rhombus trapezium kite — with angle and side properties labelled" />',
+        '<DiagramPlaceholder label="Diagram wat al ses vierhoektipes wys — vierkant, reghoek, parallelogram, ruit, trapesium, vlieër — met hoek- en syeienskappe gemerk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -439,10 +439,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the parts of a circle — centre radius diameter circumference chord and arc — with labelled diagrams and worked examples" />',
+        '<VideoPlaceholder label="Kort video wat die dele van ʼn sirkel verduidelik — middelpunt, radius, deursnee, omtrek, koord en boog — met gemerkte diagramme en uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a circle with all parts clearly labelled — centre radius diameter circumference chord and arc — colour coded to match the colour key" />',
+        '<DiagramPlaceholder label="Diagram van ʼn sirkel met al die dele duidelik gemerk — middelpunt, radius, deursnee, omtrek, koord en boog — kleurgekodeer volgens die kleursleutel" />',
     },
   ],
 

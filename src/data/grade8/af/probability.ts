@@ -84,10 +84,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to list all outcomes and calculate probability using favourable outcomes divided by total outcomes" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om alle uitkomste te lys en waarskynlikheid te bereken deur gunstige uitkomste deur totale uitkomste te deel" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a bag of coloured balls with the probability formula applied step by step" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn sak gekleurde balle wys met die waarskynlikheidsformule stap vir stap toegepas" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -160,10 +160,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to predict relative frequency from theoretical probability and explain differences between predicted and actual results" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om relatiewe frekwensie vanuit teoretiese waarskynlikheid te voorspel en verskille tussen voorspelde en werklike resultate te verduidelik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing predicted frequency and actual frequency from a coin-flipping experiment showing how results vary with the number of trials" />',
+        '<DiagramPlaceholder label="Diagram wat voorspelde frekwensie en werklike frekwensie van ʼn muntstuk-opgooi-eksperiment vergelyk en wys hoe resultate wissel met die aantal proewe" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -219,10 +219,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve multi-step probability problems in real-life contexts including listing outcomes and combining independent events" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om meerstap-waarskynlikheidsprobleme in werklike-lewe kontekste op te los, insluitend die lys van uitkomste en die kombinering van onafhanklike gebeurtenisse" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a tree diagram for flipping a coin and rolling a dice to find combined probability of heads and an even number" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn boomdiagram wys vir die opgooi van ʼn muntstuk en die rol van ʼn dobbelsteen om die gekombineerde waarskynlikheid van kop en ʼn ewe getal te vind" />',
     },
   ],
 
@@ -244,7 +244,7 @@ export const topicData: TopicData = {
       answer: '1/2',
       checkMode: 'auto',
       correctAnswer: '1/2',
-      correctAnswers: ['1/2', '3/6', '0.5'],
+      correctAnswers: ['1/2', '3/6', '0.5', '0,5'],
       explanation: 'Getalle deelbaar deur 2: 2, 4, 6 — 3 gunstige uitkomste. Totaal: 6. Waarskynlikheid = 3/6 = 1/2.',
     },
 
@@ -260,17 +260,17 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Lerato gooi ʼn muntstuk 50 keer op en kry 23 koppe. Vind die relatiewe frekwensie van kop.',
-      answer: '23/50 of 0.46',
+      answer: '23/50 of 0,46',
       checkMode: 'auto',
-      correctAnswers: ['23/50', '0.46'],
-      explanation: 'Relatiewe frekwensie = aantal koppe ÷ totale opgooie = 23 ÷ 50 = 23/50 = 0.46.',
+      correctAnswers: ['23/50', '0.46', '0,46'],
+      explanation: 'Relatiewe frekwensie = aantal koppe ÷ totale opgooie = 23 ÷ 50 = 23/50 = 0,46.',
     },
 
     // ── Q5 Hard ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: "Vergelyk Lerato se relatiewe frekwensie in Vraag 4 met die teoretiese waarskynlikheid om kop te kry en verduidelik enige verskil.",
-      answer: 'Teoretiese waarskynlikheid is 0.5 (50%). Haar relatiewe frekwensie van 0.46 is naby maar effens laer, wat normale variasie is van ʼn beperkte aantal proewe.',
+      answer: 'Teoretiese waarskynlikheid is 0,5 (50%). Haar relatiewe frekwensie van 0,46 is naby maar effens laer, wat normale variasie is van ʼn beperkte aantal proewe.',
       checkMode: 'self',
     },
 
@@ -281,7 +281,7 @@ export const topicData: TopicData = {
       answer: '1/2',
       checkMode: 'auto',
       correctAnswer: '1/2',
-      correctAnswers: ['1/2', '3/6', '0.5'],
+      correctAnswers: ['1/2', '3/6', '0.5', '0,5'],
       explanation: 'Getalle kleiner as 4: 1, 2, 3 — 3 gunstige uitkomste. Totaal: 6. Waarskynlikheid = 3/6 = 1/2.',
     },
 
@@ -299,7 +299,7 @@ export const topicData: TopicData = {
       question: 'ʼn Sak het 8 groen en 12 geel albasters. Vind die waarskynlikheid om ʼn groen albaster te kies.',
       answer: '8/20 of 2/5',
       checkMode: 'auto',
-      correctAnswers: ['8/20', '2/5', '0.4'],
+      correctAnswers: ['8/20', '2/5', '0.4', '0,4'],
       explanation: 'Gunstig: 8 groen. Totaal: 8 + 12 = 20. Waarskynlikheid = 8/20 = 2/5.',
     },
 
@@ -328,7 +328,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Sipho gooi ʼn dobbelsteen 40 keer en kry presies 6 keer ʼn 2. Vind die relatiewe frekwensie en vergelyk dit met die teoretiese waarskynlikheid.',
-      answer: 'Relatiewe frekwensie = 6/40 = 0.15. Teoretiese waarskynlikheid = 1/6 ≈ 0.167. Die waardes is naby aan mekaar, wat wys dat die eksperiment redelik ooreenstem met verwagtinge.',
+      answer: 'Relatiewe frekwensie = 6/40 = 0,15. Teoretiese waarskynlikheid = 1/6 ≈ 0,167. Die waardes is naby aan mekaar, wat wys dat die eksperiment redelik ooreenstem met verwagtinge.',
       checkMode: 'self',
     },
 
@@ -346,7 +346,7 @@ export const topicData: TopicData = {
       question: 'ʼn Sak het 6 rooi, 4 blou en 10 groen balle. Vind die waarskynlikheid om ʼn bal te kies wat nie groen is nie.',
       answer: '10/20 of 1/2',
       checkMode: 'auto',
-      correctAnswers: ['10/20', '1/2', '0.5'],
+      correctAnswers: ['10/20', '1/2', '0.5', '0,5'],
       explanation: 'Nie groen nie: 6 rooi + 4 blou = 10 balle. Totaal: 6 + 4 + 10 = 20. Waarskynlikheid = 10/20 = 1/2.',
     },
 
@@ -357,7 +357,7 @@ export const topicData: TopicData = {
       answer: '1/4',
       checkMode: 'auto',
       correctAnswer: '1/4',
-      correctAnswers: ['1/4', '0.25'],
+      correctAnswers: ['1/4', '0.25', '0,25'],
       explanation: 'W(kop op eerste muntstuk) = 1/2. W(kop op tweede muntstuk) = 1/2. Onafhanklike gebeurtenisse: W(kop en kop) = 1/2 × 1/2 = 1/4.',
     },
 

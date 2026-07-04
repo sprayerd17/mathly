@@ -82,10 +82,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining conventions for writing algebraic expressions, like and unlike terms, coefficients, exponents, monomials, binomials and trinomials" />',
+        '<VideoPlaceholder label="Kort video wat konvensies vir die skryf van algebraïese uitdrukkings verduidelik, gelyksoortige en ongelyksoortige terme, koëffisiënte, eksponente, monome, binome en trinome" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram labelling the parts of an algebraic term — coefficient in blue, variable, exponent in orange — with examples of monomial, binomial and trinomial in green" />',
+        '<DiagramPlaceholder label="Diagram wat die dele van ʼn algebraïese term merk — koëffisiënt in blou, veranderlike, eksponent in oranje — met voorbeelde van monoom, binoom en trinoom in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -156,10 +156,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to add and subtract like terms, apply the distributive law when multiplying, and divide monomials by dividing coefficients and subtracting exponents" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om gelyksoortige terme op te tel en af te trek, die distributiewe wet toe te pas by vermenigvuldiging, en monome te deel deur koëffisiënte te deel en eksponente af te trek" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side worked examples of adding like terms in blue, distribution in orange and division in green" />',
+        '<DiagramPlaceholder label="Newenmekaar uitgewerkte voorbeelde van optel van gelyksoortige terme in blou, distribusie in oranje en deling in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -229,10 +229,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to square and cube algebraic terms, find square and cube roots of algebraic terms, and evaluate expressions by substitution" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese terme te kwadreer en te kubeer, vierkantswortels en kubuswortels van algebraïese terme te vind, en uitdrukkings deur vervanging te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step substitution example with x value highlighted in orange and the final answer in green" />',
+        '<DiagramPlaceholder label="Stap-vir-stap vervangingsvoorbeeld met die x-waarde uitgelig in oranje en die finale antwoord in groen" />',
     },
   ],
 

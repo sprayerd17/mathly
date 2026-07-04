@@ -322,7 +322,7 @@ export const topicData: TopicData = {
     // ── Q8 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: "Thabo het twee driehoeke wat kongruent is deur HSH, waar een driehoek 'n onbekende sy y het en die ooreenstemmende sy in die ander driehoek 9 cm is. Bepaal y.",
+      question: "Thabo het twee driehoeke wat kongruent is deur HHS, waar een driehoek 'n onbekende sy y het en die ooreenstemmende sy in die ander driehoek 9 cm is. Bepaal y.",
       answer: 'Aangesien die driehoeke kongruent is, is ooreenstemmende sye gelyk: y = 9 cm.',
       checkMode: 'self',
     },

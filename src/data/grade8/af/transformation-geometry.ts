@@ -122,10 +122,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing point (3,5) and its reflection (3,-5) across the x-axis, with a dotted line showing the reflection" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat punt (3,5) en sy refleksie (3,-5) oor die x-as wys, met ʼn stippellyn wat die refleksie aandui" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to reflect and translate points on a coordinate plane, with the x-axis in blue, y-axis in green and reflected point in orange" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om punte op ʼn koördinaatvlak te reflekteer en te transleer, met die x-as in blou, y-as in groen en gereflekteerde punt in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -242,10 +242,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A triangle with vertices (1,2),(3,2),(2,5) and its reflection in the y-axis shown side by side on a Cartesian plane" />',
+        '<DiagramPlaceholder label="ʼn Driehoek met hoekpunte (1,2),(3,2),(2,5) en sy refleksie in die y-as langs mekaar op ʼn Cartesiese vlak gewys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to reflect and rotate triangles on a coordinate plane with original triangle in blue and transformed triangle in green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om driehoeke op ʼn koördinaatvlak te reflekteer en te roteer, met die oorspronklike driehoek in blou en die getransformeerde driehoek in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -403,10 +403,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A small square and a larger square showing an enlargement by scale factor 2, with side lengths and areas labelled on each" />',
+        '<DiagramPlaceholder label="ʼn Klein vierkant en ʼn groter vierkant wat ʼn vergroting met skaalfaktor 2 wys, met sylengtes en oppervlaktes op elkeen gemerk" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate new perimeter and area after enlargement or reduction using a scale factor, with scale factor in orange, perimeter in blue and area in green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die nuwe omtrek en oppervlakte na vergroting of verkleining met ʼn skaalfaktor te bereken, met skaalfaktor in oranje, omtrek in blou en oppervlakte in groen" />',
     },
   ],
   scoreMessages: [

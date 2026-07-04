@@ -148,10 +148,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the rule of a numeric pattern including linear patterns and patterns based on square numbers" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die reël van ʼn getalpatroon te vind, insluitend lineêre patrone en patrone gebaseer op vierkantsgetalle" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Numeric pattern with terms highlighted in blue, common difference highlighted in orange, and the nth term rule written in green" />',
+        '<DiagramPlaceholder label="Getalpatroon met terme uitgelig in blou, konstante verskil uitgelig in oranje, en die nde-termreël geskryf in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -289,10 +289,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to complete a table of values using a given rule and how to find the rule from a completed table" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn tabel van waardes met ʼn gegewe reël te voltooi en hoe om die reël uit ʼn voltooide tabel te vind" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table of values with the input column highlighted in blue and the output column highlighted in green, showing the rule connecting them written in orange" />',
+        '<DiagramPlaceholder label="Tabel van waardes met die insetkolom uitgelig in blou en die uitsetkolom uitgelig in groen, wat die reël wat hulle verbind in oranje geskryf wys" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -434,10 +434,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to plot points from a table of values on a Cartesian plane and describe whether the graph is a straight line or a curve" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om punte uit ʼn tabel van waardes op ʼn Cartesiese vlak te stip en te beskryf of die grafiek ʼn reguit lyn of ʼn kromme is" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane with x-axis in blue, y-axis in green, plotted points in orange, and a straight line graph shape in red for the rule y equals 2x plus 1" />',
+        '<DiagramPlaceholder label="Cartesiese vlak met x-as in blou, y-as in groen, gestipte punte in oranje, en ʼn reguit-lyn-grafiekvorm in rooi vir die reël y is gelyk aan 2x plus 1" />',
     },
   ],
 

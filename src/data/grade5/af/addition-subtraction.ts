@@ -822,7 +822,7 @@ export const topicData: TopicData = {
         },
         {
           label: 'c) Is jou presiese antwoord naby aan jou skatting?',
-          correctAnswer: 'yes',
+          correctAnswer: 'ja',
           explanation:
             'Ja! 38 378 is naby aan 39 000.\n' +
             'Verskil: 39 000 − 38 378 = 622.\n' +

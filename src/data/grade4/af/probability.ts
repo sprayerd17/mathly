@@ -469,19 +469,19 @@ export const topicData: TopicData = {
       parts: [
         {
           label: 'a) ʼn Getal tussen 1 en 6 gooi op ʼn standaard dobbelsteen',
-          correctAnswer: 'certain',
+          correctAnswer: 'seker',
           explanation:
             'ʼn Standaard dobbelsteen het getalle 1, 2, 3, 4, 5 en 6. Elke enkele getal op die dobbelsteen is tussen 1 en 6, so dit sal altyd gebeur — dit is <strong style="color:#16a34a;">seker</strong>.',
         },
         {
           label: 'b) Dit sal in Julie in Kaapstad sneeu',
-          correctAnswer: 'unlikely',
+          correctAnswer: 'onwaarskynlik',
           explanation:
             'Kaapstad is koud en reënerig in Julie, maar sneeu is baie skaars. Dit is moontlik maar gebeur gewoonlik nie — dit is <strong style="color:#ea580c;">onwaarskynlik</strong>.',
         },
         {
           label: 'c) ʼn Muntstuk opgooi en stert kry',
-          correctAnswer: 'equally likely',
+          correctAnswer: 'ewe waarskynlik',
           explanation:
             'ʼn Regverdige muntstuk het twee kante — kop en stert. Elkeen het presies dieselfde kans om na bo te val — dit is <strong style="color:#7c3aed;">ewe waarskynlik</strong>.',
         },

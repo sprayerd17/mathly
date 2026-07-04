@@ -200,10 +200,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Column layout showing decimal addition of 14.850 and 6.347 with decimal points aligned in blue and zeros added highlighted in orange" />',
+        '<DiagramPlaceholder label="Kolomuitleg wat die desimale optelling van 14,850 en 6,347 wys, met desimale kommas in blou belyn en bygevoegde nulle uitgelig in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to add subtract multiply and divide decimal fractions with colour coded decimal points carried digits and worked examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke op te tel, af te trek, te vermenigvuldig en te deel, met kleurgekodeerde desimale kommas, oorgedraagde syfers en uitgewerkte voorbeelde" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -358,10 +358,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line showing 7.6482 positioned between 7.64 and 7.65 with the deciding digit highlighted in orange and the rounded answer marked in green" />',
+        '<DiagramPlaceholder label="Getallelyn wat 7,6482 tussen 7,64 en 7,65 posisioneer, met die beslissende syfer uitgelig in oranje en die afgeronde antwoord gemerk in groen" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to round decimals to a given number of decimal places including rounding money to the nearest cent" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om desimale af te rond tot ʼn gegewe aantal desimale plekke, insluitend die afrond van geld tot die naaste sent" />',
     },
   ],
   scoreMessages: [
