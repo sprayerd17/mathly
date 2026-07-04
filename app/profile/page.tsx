@@ -6,6 +6,16 @@ import Navbar from '@/app/components/Navbar'
 import { useAuth, getMaxChildren, LanguageCards, type Language } from '@/app/providers'
 import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
+import { db } from '@/src/lib/firebase'
+
+type ReferralRecord = {
+  referredName: string
+  hasSubscribed: boolean
+  creditAmount: number
+  subscribedPackage: string
+  createdAt: Date | null
+}
 
 const GRADES = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 
@@ -42,6 +52,37 @@ export default function ProfilePage() {
   useEffect(() => {
     setChildren(user?.children ?? [])
   }, [user])
+
+  const [referrals, setReferrals] = useState<ReferralRecord[]>([])
+
+  useEffect(() => {
+    if (!user) {
+      setReferrals([])
+      return
+    }
+    let cancelled = false
+    async function loadReferrals() {
+      const snap = await getDocs(
+        query(collection(db, 'referrals'), where('referrerUid', '==', user!.uid))
+      )
+      if (cancelled) return
+      setReferrals(snap.docs.map(d => {
+        const data = d.data()
+        return {
+          referredName: typeof data.referredName === 'string' ? data.referredName : '',
+          hasSubscribed: data.hasSubscribed === true,
+          creditAmount: typeof data.creditAmount === 'number' ? data.creditAmount : 0,
+          subscribedPackage: typeof data.subscribedPackage === 'string' ? data.subscribedPackage : '',
+          createdAt: data.createdAt instanceof Timestamp ? data.createdAt.toDate() : null,
+        }
+      }))
+    }
+    loadReferrals().catch(() => setReferrals([]))
+    return () => { cancelled = true }
+  }, [user])
+
+  const subscribedReferrals = referrals.filter(r => r.hasSubscribed)
+  const totalCredit = subscribedReferrals.reduce((sum, r) => sum + r.creditAmount, 0)
 
   const refCode = user?.refCode ?? ''
 
@@ -340,6 +381,16 @@ export default function ProfilePage() {
                 {baseTier === 'pro' && t.profile_plan_desc_pro}
                 {baseTier === 'guided' && t.profile_plan_desc_guided}
               </p>
+              {user.subscriptionStatus === 'pending' && (
+                <p className="text-xs font-semibold mt-2" style={{ color: '#1e40af' }}>
+                  {t.profile_subscription_pending}
+                </p>
+              )}
+              {user.subscriptionStatus === 'past_due' && (
+                <p className="text-xs font-semibold mt-2" style={{ color: '#b91c1c' }}>
+                  {t.profile_subscription_past_due}
+                </p>
+              )}
             </div>
             {baseTier === 'free' && (
               <Link
@@ -710,9 +761,9 @@ export default function ProfilePage() {
             {/* Referral stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
               {[
-                { label: t.profile_stat_referrals_used,   value: t.profile_stat_referrals_used_value },
-                { label: t.profile_stat_referrals_remaining, value: '12'       },
-                { label: t.profile_stat_total_credit,      value: 'R0'       },
+                { label: t.profile_stat_referrals_used,   value: `${subscribedReferrals.length} of 12` },
+                { label: t.profile_stat_referrals_remaining, value: String(Math.max(12 - subscribedReferrals.length, 0)) },
+                { label: t.profile_stat_total_credit,      value: `R${totalCredit}` },
                 { label: t.profile_stat_months_active,     value: '0'        },
               ].map(stat => (
                 <div key={stat.label} className="rounded-xl p-4 text-center" style={{ backgroundColor: '#f3f4f6' }}>
@@ -741,11 +792,41 @@ export default function ProfilePage() {
                     </span>
                   ))}
                 </div>
-                <div className="px-4 py-10 text-center">
-                  <p className="text-sm text-gray-400">
-                    {t.profile_no_referrals_yet}
-                  </p>
-                </div>
+                {referrals.length === 0 ? (
+                  <div className="px-4 py-10 text-center">
+                    <p className="text-sm text-gray-400">
+                      {t.profile_no_referrals_yet}
+                    </p>
+                  </div>
+                ) : (
+                  referrals.map((r, i) => (
+                    <div
+                      key={i}
+                      className="grid grid-cols-2 sm:grid-cols-[1fr_1fr_1fr_90px] gap-2 px-4 py-3"
+                      style={{ borderBottom: i < referrals.length - 1 ? '1px solid #f3f4f6' : undefined }}
+                    >
+                      <span className="text-sm" style={{ color: '#374151' }}>
+                        {r.createdAt ? r.createdAt.toLocaleDateString() : '—'}
+                      </span>
+                      <span className="text-sm" style={{ color: '#374151' }}>
+                        {r.referredName || '—'}{r.subscribedPackage ? ` · ${r.subscribedPackage}` : ''}
+                      </span>
+                      <span className="text-sm" style={{ color: '#374151' }}>
+                        {r.hasSubscribed ? `R${r.creditAmount}` : '—'}
+                      </span>
+                      <span
+                        className="text-xs font-semibold px-2 py-1 rounded-full self-start"
+                        style={
+                          r.hasSubscribed
+                            ? { backgroundColor: '#dcfce7', color: '#15803d' }
+                            : { backgroundColor: '#f3f4f6', color: '#6b7280' }
+                        }
+                      >
+                        {r.hasSubscribed ? 'Subscribed' : 'Signed up'}
+                      </span>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
 

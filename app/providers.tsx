@@ -19,6 +19,7 @@ import {
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore'
 import { auth, db } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { initiateCheckout } from '@/src/lib/payfast-client'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -63,6 +64,12 @@ export type Child = {
   languageChangeUsed: boolean
 }
 
+// Billing state, driven entirely by the PayFast ITN webhook (server-side) — never
+// written directly by the client. 'none' until the first successful payment.
+export type SubscriptionStatus = 'none' | 'pending' | 'active' | 'past_due' | 'cancelled'
+
+const VALID_SUBSCRIPTION_STATUSES: SubscriptionStatus[] = ['none', 'pending', 'active', 'past_due', 'cancelled']
+
 export type User = {
   uid: string
   name: string
@@ -72,6 +79,14 @@ export type User = {
   children: Child[]
   refCode: string
   activeChildIndex: number
+  subscriptionStatus: SubscriptionStatus
+  payfastToken: string | null
+  pendingPackage: Package | null
+  lastPaymentDate: string | null
+  lastPaymentAmount: number | null
+  // Set once, server-side, by /api/referral/attach right after registration.
+  // null for accounts that didn't sign up via a referral link.
+  referredBy: string | null
 }
 
 // Generates a referral code from the account holder's name — stable, persisted to
@@ -193,7 +208,8 @@ function AuthModal({
     email: string,
     password: string,
     pkg: Package,
-    children: Array<{ name: string; grade: number; language: Language }>
+    children: Array<{ name: string; grade: number; language: Language }>,
+    referredByCode?: string
   ) => Promise<void>
   initialTab?: 'login' | 'register'
 }) {
@@ -203,6 +219,12 @@ function AuthModal({
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  // Pre-filled from a /join?ref= link (see app/join/page.tsx) when present,
+  // but always shown and editable — not everyone arrives via the link, so
+  // typing a code in by hand has to work just as well.
+  const [referralCode, setReferralCode] = useState(
+    () => (typeof window !== 'undefined' && sessionStorage.getItem('mathly_pending_ref')) || ''
+  )
   const [planTier, setPlanTier] = useState<'free' | 'pro' | 'guided'>('free')
   const [planSize, setPlanSize] = useState<'solo' | 'family2' | 'family3'>('solo')
   const [error, setError] = useState('')
@@ -270,7 +292,7 @@ function AuthModal({
     setError('')
     setSubmitting(true)
     try {
-      await onRegister(name.trim(), email.trim(), password, selectedPackage, children)
+      await onRegister(name.trim(), email.trim(), password, selectedPackage, children, referralCode.trim())
       onClose()
     } catch (err) {
       setError(t[authErrorKey(err)])
@@ -405,6 +427,21 @@ function AuthModal({
                 className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
               />
             </div>
+
+            {tab === 'register' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  {t.auth_referral_code_label}
+                </label>
+                <input
+                  type="text"
+                  value={referralCode}
+                  onChange={(e) => setReferralCode(e.target.value.toUpperCase())}
+                  placeholder={t.auth_referral_code_placeholder}
+                  className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
+                />
+              </div>
+            )}
 
             {error && (
               <p className="text-red-600 text-xs bg-red-50 border border-red-200 rounded-lg px-3 py-2">
@@ -633,6 +670,17 @@ function sanitizePackage(raw: unknown): Package {
   return (VALID_PACKAGES as string[]).includes(lower) ? (lower as Package) : 'free'
 }
 
+function sanitizeSubscriptionStatus(raw: unknown): SubscriptionStatus {
+  const lower = (raw as string | undefined)?.toLowerCase() ?? 'none'
+  return (VALID_SUBSCRIPTION_STATUSES as string[]).includes(lower) ? (lower as SubscriptionStatus) : 'none'
+}
+
+function sanitizePendingPackage(raw: unknown): Package | null {
+  if (raw == null) return null
+  const lower = (raw as string).toLowerCase()
+  return (VALID_PACKAGES as string[]).includes(lower) ? (lower as Package) : null
+}
+
 // A child record as it may exist in Firestore before the language fields were added.
 function sanitizeChild(raw: unknown): Child {
   const c = (raw ?? {}) as Partial<Child>
@@ -676,6 +724,12 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     children,
     refCode,
     activeChildIndex,
+    subscriptionStatus: sanitizeSubscriptionStatus(data.subscriptionStatus),
+    payfastToken: typeof data.payfastToken === 'string' ? data.payfastToken : null,
+    pendingPackage: sanitizePendingPackage(data.pendingPackage),
+    lastPaymentDate: typeof data.lastPaymentDate === 'string' ? data.lastPaymentDate : null,
+    lastPaymentAmount: typeof data.lastPaymentAmount === 'number' ? data.lastPaymentAmount : null,
+    referredBy: typeof data.referredBy === 'string' ? data.referredBy : null,
   }
 }
 
@@ -710,16 +764,25 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     email: string,
     password: string,
     pkg: Package,
-    childInputs: Array<{ name: string; grade: number; language: Language }>
+    childInputs: Array<{ name: string; grade: number; language: Language }>,
+    referredByCode?: string
   ) {
     const cred = await createUserWithEmailAndPassword(auth, email, password)
     await updateAuthProfile(cred.user, { displayName: name })
     const children: Child[] = childInputs.map(c => ({ ...c, languageChangeUsed: false }))
     const refCode = generateRefCode(name)
+    // Every account is created free, regardless of the plan chosen in the
+    // wizard — Firestore rules only allow package:'free' on create. A paid
+    // plan is granted afterwards by the PayFast ITN webhook, never here.
     await setDoc(doc(db, 'users', cred.user.uid), {
       name,
       email,
-      package: pkg,
+      package: 'free',
+      subscriptionStatus: 'none',
+      payfastToken: null,
+      pendingPackage: null,
+      lastPaymentDate: null,
+      lastPaymentAmount: null,
       children,
       refCode,
       activeChildIndex: 0,
@@ -730,11 +793,42 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       name,
       email,
       initial: (name.charAt(0) || 'U').toUpperCase(),
-      package: pkg,
+      package: 'free',
+      subscriptionStatus: 'none',
+      payfastToken: null,
+      pendingPackage: null,
+      lastPaymentDate: null,
+      lastPaymentAmount: null,
       children,
       refCode,
       activeChildIndex: 0,
+      referredBy: null,
     })
+
+    // Was a referral code entered (typed in manually, or pre-filled from a
+    // /join?ref= link) or otherwise pending in sessionStorage? Attach it now,
+    // server-side — best-effort, an invalid/missing code or a failed request
+    // should never block registration.
+    const pendingRefCode = referredByCode?.trim() || sessionStorage.getItem('mathly_pending_ref')
+    if (pendingRefCode) {
+      sessionStorage.removeItem('mathly_pending_ref')
+      try {
+        const idToken = await cred.user.getIdToken()
+        await fetch('/api/referral/attach', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ idToken, refCode: pendingRefCode }),
+        })
+      } catch {
+        // best-effort — a missed referral attach isn't worth failing signup over
+      }
+    }
+
+    // Chosen a paid plan? Immediately continue into checkout instead of
+    // granting it for free. This redirects the browser to PayFast on success.
+    if (pkg !== 'free') {
+      await initiateCheckout(cred.user, pkg, true)
+    }
   }
 
   async function logout() {

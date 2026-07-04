@@ -2,7 +2,41 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if request.auth != null && request.auth.uid == userId;
+
+      // New accounts must always start free — paid tiers are granted only by
+      // the PayFast ITN webhook (via the Firebase Admin SDK, which bypasses
+      // these rules entirely). This closes the registration-time exploit where
+      // a client could otherwise create itself directly into a paid package.
+      allow create: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.package == 'free'
+                    && request.resource.data.subscriptionStatus == 'none';
+
+      // Billing fields are server-only from this point on — only the ITN
+      // webhook (Admin SDK) may change them. referredBy is also server-only:
+      // it's attached once, right after registration, by /api/referral/attach
+      // (Admin SDK) — never settable or overwritable by the client itself,
+      // so a user can't fake who referred them. Everything else the client
+      // already legitimately writes (children, activeChildIndex, refCode,
+      // name, initial) stays freely writable.
+      allow update: if request.auth != null && request.auth.uid == userId
+                    && !request.resource.data.diff(resource.data).affectedKeys()
+                         .hasAny(['package', 'subscriptionStatus', 'payfastToken',
+                                  'pendingPackage', 'pendingAmount',
+                                  'lastPaymentDate', 'lastPaymentAmount',
+                                  'referredBy']);
+
+      allow delete: if false;
+    }
+
+    // One record per successful referral attachment, written only by
+    // /api/referral/attach (Admin SDK) right after the referred friend
+    // registers. Deliberately a separate collection rather than exposing
+    // other users' full profiles to the referrer — a referrer can only ever
+    // read their own referral records, never the referred friend's account.
+    match /referrals/{docId} {
+      allow read: if request.auth != null && resource.data.referrerUid == request.auth.uid;
+      allow create, update, delete: if false;
     }
 
     // Waitlist signups (coming-soon page) — anyone can add their email,

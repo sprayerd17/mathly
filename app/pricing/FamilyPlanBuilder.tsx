@@ -1,15 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { useAuth } from '@/app/providers'
+import { auth } from '@/src/lib/firebase'
+import { initiateCheckout } from '@/src/lib/payfast-client'
+import { FOUNDING_PRICE, FULL_PRICE, packageFromPlan, type Plan, type PlanSize } from '@/src/lib/pricing'
 
-type Plan = 'pro' | 'guided'
 type Spots = { proTaken: number; guidedTaken: number }
 
-const FOUNDING_SPOTS                       = 100
-const FOUNDING_PRICE: Record<Plan, number> = { pro: 29, guided: 59 }
-const FULL_PRICE:     Record<Plan, number> = { pro: 49, guided: 99 }
+const FOUNDING_SPOTS = 100
 const SPOTS_KEY    = 'mathly_founding_spots'
 const DEFAULT_SPOTS: Spots = { proTaken: 33, guidedTaken: 57 }
 
@@ -58,6 +58,7 @@ function FoundingBadge({ label }: { label: string }) {
 
 export default function FamilyPlanBuilder() {
   const t = useTranslations()
+  const { user, openModal } = useAuth()
   const LABEL: Record<Plan, string> = { pro: t.dash_package_pro, guided: t.dash_package_guided }
   const [mounted, setMounted] = useState(false)
   const [spots, setSpots]     = useState<Spots>(DEFAULT_SPOTS)
@@ -66,6 +67,8 @@ export default function FamilyPlanBuilder() {
   const [c2, setC2]           = useState<Plan>('pro')
   const [c3On, setC3On]       = useState(false)
   const [c3, setC3]           = useState<Plan>('pro')
+  const [checkingOut, setCheckingOut]     = useState(false)
+  const [checkoutError, setCheckoutError] = useState('')
 
   useEffect(() => {
     setMounted(true)
@@ -107,6 +110,33 @@ export default function FamilyPlanBuilder() {
   const hasAnyDiscount = multiPerson && personDetails.some(p => !p.isFounding)
   const totalSaving    = personDetails.reduce((s, p) =>
     s + (multiPerson && !p.isFounding ? p.basePrice - p.effectivePrice : 0), 0)
+
+  // The Package model only represents uniform-tier families (family_pro_2 etc.)
+  // — checkout for a single subscription only makes sense when every active
+  // person picked the same tier, even though this calculator lets you compare
+  // mixed tiers for pricing purposes.
+  const allSamePlan   = persons.every(p => p.plan === persons[0].plan)
+  const chosenTier    = persons[0].plan
+  const planSize: PlanSize = persons.length === 1 ? 'solo' : persons.length === 2 ? 'family2' : 'family3'
+  const targetPackage = packageFromPlan(chosenTier, planSize)
+
+  async function handleClaimSpot() {
+    if (!user) {
+      openModal('register')
+      return
+    }
+    if (!allSamePlan || !auth.currentUser) return
+    setCheckoutError('')
+    setCheckingOut(true)
+    try {
+      await initiateCheckout(auth.currentUser, targetPackage, founding[chosenTier])
+    } catch {
+      // Always show the localized message — CheckoutError's own message is
+      // English-only and meant for logs/debugging, not display.
+      setCheckoutError(t.pricing_checkout_error)
+      setCheckingOut(false)
+    }
+  }
 
   const showSpots = mounted && (proFounding || guidedFounding)
 
@@ -382,13 +412,25 @@ export default function FamilyPlanBuilder() {
           </div>
         </div>
 
-        <Link
-          href="/pricing"
-          className="block w-full text-center font-semibold py-3 rounded-xl text-sm"
+        {!allSamePlan && (
+          <p className="text-xs text-center mb-3" style={{ color: '#b45309' }}>
+            {t.pricing_mixed_plans_note}
+          </p>
+        )}
+        {checkoutError && (
+          <p className="text-xs text-center mb-3 text-red-600">
+            {checkoutError}
+          </p>
+        )}
+        <button
+          type="button"
+          onClick={handleClaimSpot}
+          disabled={!allSamePlan || checkingOut}
+          className="block w-full text-center font-semibold py-3 rounded-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ backgroundColor: '#1e40af', color: '#fff' }}
         >
-          {t.pricing_claim_your_spot}
-        </Link>
+          {checkingOut ? t.pricing_checkout_redirecting : t.pricing_claim_your_spot}
+        </button>
       </div>
 
       {/* Spots remaining row */}
