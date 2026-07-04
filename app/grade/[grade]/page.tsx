@@ -140,8 +140,8 @@ const grade4Topics: Topic[] = [
   },
   {
     slug: 'transformations',
-    name: 'Transformations',
-    description: 'Learn about translation (sliding), reflection (flipping) and rotation (turning), build composite shapes and create tessellating patterns using transformations.',
+    name: 'Composite Shapes and Tessellation',
+    description: 'Build composite shapes by combining basic 2D shapes, check composite shapes for line symmetry, and explore which shapes tessellate to create repeating patterns with no gaps.',
     free: false,
   },
   {
