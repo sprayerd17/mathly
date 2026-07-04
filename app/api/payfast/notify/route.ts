@@ -30,12 +30,7 @@ export async function POST(req: NextRequest) {
   // 1. Signature check.
   const expectedSignature = generateSignature(fields, config.passphrase)
   if (!fields.signature || fields.signature !== expectedSignature) {
-    console.error('[payfast/notify] signature mismatch', {
-      received: fields.signature,
-      expected: expectedSignature,
-      rawBody,
-      fields,
-    })
+    console.error('[payfast/notify] signature mismatch', { uid: fields.custom_str2 })
     return OK()
   }
 

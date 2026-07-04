@@ -46,14 +46,17 @@ function pfUrlEncode(value: string): string {
 // concatenated in the order given, matching whatever order the caller inserted
 // them into `fields` — the checkout route's field order becomes the form's input
 // order, and the ITN route passes fields in the order received. The 'signature'
-// key itself and any empty values are always excluded from the hashed string, so
-// this same function works for both signing and verifying.
+// key itself is excluded, but — confirmed against PayFast's own reference
+// ItnValidator source — empty-valued fields are NOT dropped, they're kept as
+// `key=` with nothing after the `=`. Omitting them entirely (as an earlier
+// version of this function did) produces a signature that never matches
+// PayFast's for ITNs with unused custom_str/custom_int fields.
 export function generateSignature(fields: Record<string, string>, passphrase: string): string {
   const parts: string[] = []
   for (const [key, value] of Object.entries(fields)) {
     if (key === 'signature') continue
-    if (value === '' || value == null) continue
-    parts.push(`${key}=${pfUrlEncode(String(value).trim())}`)
+    const encoded = value ? pfUrlEncode(String(value).trim()) : ''
+    parts.push(`${key}=${encoded}`)
   }
   let str = parts.join('&')
   if (passphrase) {
