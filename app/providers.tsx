@@ -229,6 +229,7 @@ function AuthModal({
   const [planSize, setPlanSize] = useState<'solo' | 'family2' | 'family3'>('solo')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [redirecting, setRedirecting] = useState(false)
   const [regChildren, setRegChildren] = useState<Array<{ name: string; grade: number | ''; language: Language | null }>>(
     [{ name: '', grade: '', language: null }]
   )
@@ -291,11 +292,19 @@ function AuthModal({
     }))
     setError('')
     setSubmitting(true)
+    // A paid plan means onRegister will end in a real browser navigation to
+    // PayFast, which isn't instant — closing the modal before that navigation
+    // actually happens would flash the logged-in site underneath for a few
+    // seconds first. Show a dedicated redirect screen instead and just leave
+    // it up; the page is about to unload anyway.
+    const goingToCheckout = selectedPackage !== 'free'
+    if (goingToCheckout) setRedirecting(true)
     try {
       await onRegister(name.trim(), email.trim(), password, selectedPackage, children, referralCode.trim())
-      onClose()
+      if (!goingToCheckout) onClose()
     } catch (err) {
       setError(t[authErrorKey(err)])
+      setRedirecting(false)
     } finally {
       setSubmitting(false)
     }
@@ -306,7 +315,7 @@ function AuthModal({
   return (
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4"
-      onClick={onClose}
+      onClick={redirecting ? undefined : onClose}
     >
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true" />
 
@@ -314,6 +323,18 @@ function AuthModal({
         className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[85vh] overflow-hidden flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
+        {redirecting ? (
+          <div className="px-8 py-16 flex flex-col items-center text-center gap-4">
+            <div className="w-10 h-10 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#1e40af transparent #1e40af #1e40af' }} />
+            <h2 className="text-base font-bold" style={{ color: '#0f1f3d' }}>
+              {t.auth_redirecting_title}
+            </h2>
+            <p className="text-xs text-gray-500 max-w-xs">
+              {t.auth_redirecting_body}
+            </p>
+          </div>
+        ) : (
+        <>
         {/* ── Modal header ──────────────────────────────────────────────── */}
         <div className="px-8 pt-7 pb-0 shrink-0">
           <div className="flex items-center justify-between mb-6">
@@ -649,6 +670,8 @@ function AuthModal({
           </div>
         )}
         </div>
+        </>
+        )}
       </div>
     </div>
   )
