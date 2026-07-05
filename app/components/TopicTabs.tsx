@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type ReactNode } from 'react'
 import Link from 'next/link'
 import { useAuth, getActiveChild, type Language } from '@/app/providers'
 import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
@@ -806,14 +806,31 @@ function SetPractice({ sets }: { sets: PracticeSet[] }) {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {current.questions.map((q, i) => (
-          <OpenQuestionCard
-            key={`set-${activeSet}-q-${i}-${resetKeyBySet[activeSet]}`}
-            question={q}
-            index={i}
-            onResult={(partResults) => handleResult(i, partResults)}
-          />
-        ))}
+        {(() => {
+          const elements: ReactNode[] = []
+          let lastSvg: string | undefined
+          current.questions.forEach((q, i) => {
+            if (q.diagramSvg && q.diagramSvg !== lastSvg) {
+              elements.push(
+                <DiagramPlaceholderCard
+                  key={`set-${activeSet}-diagram-${i}-${resetKeyBySet[activeSet]}`}
+                  label={t.topic_diagram_label}
+                  svg={q.diagramSvg}
+                />
+              )
+            }
+            lastSvg = q.diagramSvg
+            elements.push(
+              <OpenQuestionCard
+                key={`set-${activeSet}-q-${i}-${resetKeyBySet[activeSet]}`}
+                question={q}
+                index={i}
+                onResult={(partResults) => handleResult(i, partResults)}
+              />
+            )
+          })
+          return elements
+        })()}
       </div>
 
       {allAnswered && (
