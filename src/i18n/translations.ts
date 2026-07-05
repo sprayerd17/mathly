@@ -129,6 +129,9 @@ export const translations = {
     topic_tab_answers: 'Answers',
     topic_back_to_grade: 'Back to Grade {grade}',
     topic_free_badge: 'Free',
+    topic_set_label: 'Set {number}',
+    topic_set_completed_badge: 'Completed',
+    topic_set_score_badge: '{score}/{total}',
 
     // ── Dashboard (dashboard/page.tsx) ─────────────────────────────────────
     dash_welcome_back: 'Welcome back, {name}',
@@ -675,6 +678,9 @@ export const translations = {
     topic_tab_answers: 'Antwoorde',
     topic_back_to_grade: 'Terug na Graad {grade}',
     topic_free_badge: 'Gratis',
+    topic_set_label: 'Stel {number}',
+    topic_set_completed_badge: 'Voltooi',
+    topic_set_score_badge: '{score}/{total}',
 
     // ── Dashboard (dashboard/page.tsx) ─────────────────────────────────────
     dash_welcome_back: 'Welkom terug, {name}',

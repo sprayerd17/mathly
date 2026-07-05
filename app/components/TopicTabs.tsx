@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useAuth, getActiveChild, type Language } from '@/app/providers'
-import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart } from '@/src/data/grade4/en/numbers-operations'
+import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
 import AIAssistant from '@/app/components/AIAssistant'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
@@ -720,6 +720,114 @@ function ResultsSummary({
   )
 }
 
+// ─── Set-based practice (multiple named sets, e.g. 4 sets of 25) ──────────────
+
+function SetPractice({ sets }: { sets: PracticeSet[] }) {
+  const [activeSet, setActiveSet] = useState(0)
+  const [resultsBySet, setResultsBySet] = useState<(boolean[] | null)[][]>(() =>
+    sets.map((s) => Array(s.questions.length).fill(null))
+  )
+  const [resetKeyBySet, setResetKeyBySet] = useState<number[]>(() => sets.map(() => 0))
+  const t = useTranslations()
+
+  const current = sets[activeSet]
+  const currentResults = resultsBySet[activeSet]
+  const totalMarks = current.questions.reduce(
+    (sum, q) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1),
+    0
+  )
+
+  function handleResult(qIndex: number, partResults: boolean[]) {
+    setResultsBySet((prev) => {
+      const next = prev.map((arr) => [...arr])
+      next[activeSet][qIndex] = partResults
+      return next
+    })
+  }
+
+  function handleReset() {
+    setResultsBySet((prev) => {
+      const next = prev.map((arr) => [...arr])
+      next[activeSet] = Array(current.questions.length).fill(null)
+      return next
+    })
+    setResetKeyBySet((prev) => {
+      const next = [...prev]
+      next[activeSet] = next[activeSet] + 1
+      return next
+    })
+  }
+
+  const allAnswered = currentResults.every((r) => r !== null)
+  const score = currentResults.reduce((sum, r) => sum + (r ? r.filter(Boolean).length : 0), 0)
+
+  return (
+    <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      <div>
+        <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
+        <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
+          {t.topic_practice_instructions_prefix} <strong>{t.topic_check_answer}</strong>{t.topic_practice_instructions_suffix}
+        </p>
+      </div>
+
+      {/* Set selector */}
+      <div className="flex flex-wrap gap-2">
+        {sets.map((set, i) => {
+          const setResults = resultsBySet[i]
+          const setAnswered = setResults.every((r) => r !== null)
+          const setScore = setResults.reduce((sum, r) => sum + (r ? r.filter(Boolean).length : 0), 0)
+          const setTotal = set.questions.reduce(
+            (sum, q) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1),
+            0
+          )
+          return (
+            <button
+              key={i}
+              onClick={() => setActiveSet(i)}
+              className={`px-4 py-2.5 rounded-xl text-sm font-semibold border transition-colors flex items-center gap-2 ${
+                activeSet === i
+                  ? 'border-[#1e40af] bg-blue-50 text-[#1e40af]'
+                  : 'border-gray-200 text-gray-600 hover:border-gray-300'
+              }`}
+            >
+              {set.name || t.topic_set_label.replace('{number}', String(i + 1))}
+              {setAnswered && (
+                <span
+                  className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${
+                    setScore === setTotal ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+                  }`}
+                >
+                  {t.topic_set_score_badge.replace('{score}', String(setScore)).replace('{total}', String(setTotal))}
+                </span>
+              )}
+            </button>
+          )
+        })}
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        {current.questions.map((q, i) => (
+          <OpenQuestionCard
+            key={`set-${activeSet}-q-${i}-${resetKeyBySet[activeSet]}`}
+            question={q}
+            index={i}
+            onResult={(partResults) => handleResult(i, partResults)}
+          />
+        ))}
+      </div>
+
+      {allAnswered && (
+        <ResultsSummary
+          score={score}
+          total={totalMarks}
+          onReset={handleReset}
+          customMessages={current.scoreMessages}
+        />
+      )}
+    </div>
+  )
+}
+
 // ─── Open practice ────────────────────────────────────────────────────────────
 
 function OpenPractice({
@@ -948,6 +1056,10 @@ function RealPractice({ data }: { data: TopicData }) {
   const total = data.sections.reduce((sum, s) => sum + (s.practiceQuestions?.length ?? 0), 0)
   const [answers, setAnswers] = useState<Record<string, boolean>>({})
   const t = useTranslations()
+
+  if (data.practiceSets && data.practiceSets.length > 0) {
+    return <SetPractice sets={data.practiceSets} />
+  }
 
   if (hasSectionOpenQ) return <SectionOpenPractice data={data} />
 

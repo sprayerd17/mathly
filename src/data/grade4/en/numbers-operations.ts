@@ -66,11 +66,18 @@ export type ResultsConfig = {
   messages: ResultsConfigMessage[]
 }
 
+export type PracticeSet = {
+  name: string
+  questions: OpenQuestion[]
+  scoreMessages?: ScoreMessage[]
+}
+
 export type TopicData = {
   title: string
   grade: number
   sections: Section[]
   topicPractice?: OpenQuestion[]
+  practiceSets?: PracticeSet[]
   scoreMessages?: ScoreMessage[]
   resultsConfig?: ResultsConfig
   resultsSummary?: ResultsConfig
