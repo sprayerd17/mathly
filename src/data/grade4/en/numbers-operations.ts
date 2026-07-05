@@ -135,6 +135,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -166,6 +167,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -217,6 +219,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,6 +264,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -305,6 +309,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -337,461 +342,170 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
   ],
-  topicPractice: [
+  topicPractice: [],
 
-    // ── Section 1: What Are Whole Numbers? ───────────────────────────────────
-
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 — FOUNDATIONS: PLACE VALUE, EXPANDED NOTATION & COUNTING (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'self',
-      question: 'Write three examples of whole numbers you might see in real life.',
-      answer:
-        'Any three whole numbers from real life are correct. Examples:\n' +
-        '• 15 learners in a group\n' +
-        '• 250 pages in a book\n' +
-        '• 8 goals scored in a match\n\n' +
-        'Remember: a whole number is any complete counting number starting from 0 — no fractions, no decimals.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Which of these are whole numbers? Write only the whole numbers, in the same order as the list, separated by commas:\n\n' +
-        '4,  ½,  7,  3.5,  100,  0',
-      // normalizeAnswer("4, 7, 100, 0") → strip spaces/commas → "471000"
-      correctAnswer: '471000',
-      explanation:
-        '4, 7, 100 and 0 are all whole numbers.\n\n' +
-        '• 4 ✓ — a complete counting number\n' +
-        '• ½ ✗ — a fraction, not a whole number\n' +
-        '• 7 ✓ — a complete counting number\n' +
-        '• 3.5 ✗ — a decimal, not a whole number\n' +
-        '• 100 ✓ — a complete counting number\n' +
-        '• 0 ✓ — zero is a whole number\n\n' +
-        'Answer: 4, 7, 100, 0',
-      answer: '4, 7, 100, 0',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'A shop has 1 245 red apples, 873 green apples and 12 yellow apples.\n\n' +
-        'Work out the total number of apples. Then explain why your answer is a whole number and not a fraction.',
-      answer:
-        'Total = 1 245 + 873 + 12 = 2 130\n\n' +
-        '2 130 is a whole number because you can only count complete apples — ' +
-        'there is no such thing as half an apple when counting stock. ' +
-        'The answer has no fraction or decimal part, so it is a whole number.',
-    },
-
-    // ── Section 2: Place Value ────────────────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Write the number 3 072 in expanded notation.',
-      // normalizeAnswer("3 000 + 0 + 70 + 2") → "3000+0+70+2"
-      correctAnswer: '3000+0+70+2',
-      explanation:
-        '3 072 = 3 000 + 0 + 70 + 2\n\n' +
-        '• 3 is in the Thousands column → 3 000\n' +
-        '• 0 is in the Hundreds column → 0\n' +
-        '• 7 is in the Tens column → 70\n' +
-        '• 2 is in the Units column → 2',
-      answer: '3 000 + 0 + 70 + 2',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'What is the value of the digit 6 in each of these numbers?\n\n' +
-        'a) 6 431\n' +
-        'b) 2 640\n' +
-        'c) 3 516',
-      parts: [
-        {
-          label: 'a)',
-          // 6 is in the Thousands column → 6 000 → normalized: "6000"
-          correctAnswer: '6000',
-          explanation:
-            'In 6 431, the digit 6 is in the Thousands column.\nValue = 6 × 1 000 = 6 000',
-        },
-        {
-          label: 'b)',
-          // 6 is in the Hundreds column → 600 → normalized: "600"
-          correctAnswer: '600',
-          explanation:
-            'In 2 640, the digit 6 is in the Hundreds column.\nValue = 6 × 100 = 600',
-        },
-        {
-          label: 'c)',
-          // 6 is in the Units column → 6 → normalized: "6"
-          correctAnswer: '6',
-          explanation:
-            'In 3 516, the digit 6 is in the Units column.\nValue = 6 × 1 = 6',
-        },
+      name: 'Set 1: Foundations',
+      questions: [
+        { difficulty: 'Easy', question: 'Which of these is a whole number: 8 or 3½?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: '8 is a complete counting number with no fraction part, so it is a whole number. 3½ has a fraction part, so it is not.' },
+        { difficulty: 'Easy', question: 'Write all the whole numbers between 6 and 11, separated by commas.', answer: '7, 8, 9, 10', checkMode: 'auto', correctAnswer: '78910', correctAnswers: ['78910'], explanation: '"Between" does not include 6 or 11. Counting from just after 6 up to just before 11 gives 7, 8, 9, 10.' },
+        { difficulty: 'Easy', question: 'Write the number 4 327 in expanded notation.', answer: '4 000 + 300 + 20 + 7', checkMode: 'auto', correctAnswer: '4000+300+20+7', correctAnswers: ['4000+300+20+7'], explanation: '4 is in the Thousands column (4 000), 3 is in the Hundreds column (300), 2 is in the Tens column (20), 7 is in the Units column (7).' },
+        { difficulty: 'Easy', question: 'Write the number 7 054 in expanded notation.', answer: '7 000 + 0 + 50 + 4', checkMode: 'auto', correctAnswer: '7000+0+50+4', correctAnswers: ['7000+0+50+4'], explanation: '7 000 (Thousands) + 0 (Hundreds) + 50 (Tens) + 4 (Units) = 7 054.' },
+        { difficulty: 'Easy', question: 'Write the number 3 072 in expanded notation.', answer: '3 000 + 0 + 70 + 2', checkMode: 'auto', correctAnswer: '3000+0+70+2', correctAnswers: ['3000+0+70+2'], explanation: '3 000 (Thousands) + 0 (Hundreds) + 70 (Tens) + 2 (Units) = 3 072.' },
+        { difficulty: 'Easy', question: 'Write the number 6 431 in expanded notation.', answer: '6 000 + 400 + 30 + 1', checkMode: 'auto', correctAnswer: '6000+400+30+1', correctAnswers: ['6000+400+30+1'], explanation: '6 000 (Thousands) + 400 (Hundreds) + 30 (Tens) + 1 (Units) = 6 431.' },
+        { difficulty: 'Medium', question: 'What is the value of the digit 6 in 6 431?', answer: '6 000', checkMode: 'auto', correctAnswer: '6000', correctAnswers: ['6000', '6 000'], explanation: 'The digit 6 is in the Thousands column, so its value is 6 × 1 000 = 6 000.' },
+        { difficulty: 'Medium', question: 'What is the value of the digit 6 in 2 640?', answer: '600', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600'], explanation: 'The digit 6 is in the Hundreds column, so its value is 6 × 100 = 600.' },
+        { difficulty: 'Medium', question: 'What is the value of the digit 6 in 3 516?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'The digit 6 is in the Units column, so its value is 6 × 1 = 6.' },
+        { difficulty: 'Medium', question: 'What is the value of the digit 5 in 5 872?', answer: '5 000', checkMode: 'auto', correctAnswer: '5000', correctAnswers: ['5000', '5 000'], explanation: 'The digit 5 is in the Thousands column, so its value is 5 × 1 000 = 5 000.' },
+        { difficulty: 'Medium', question: 'What is the value of the digit 9 in 6 194?', answer: '90', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90'], explanation: 'The digit 9 is in the Tens column, so its value is 9 × 10 = 90.' },
+        { difficulty: 'Medium', question: 'Write the number that has 4 thousands, 0 hundreds, 8 tens and 3 units.', answer: '4 083', checkMode: 'auto', correctAnswer: '4083', correctAnswers: ['4083', '4 083'], explanation: 'Place each digit in its column: 4 thousands, 0 hundreds, 8 tens, 3 units → 4 083.' },
+        { difficulty: 'Medium', question: 'Write the number that has 5 thousands, 2 hundreds, 1 ten and 8 units.', answer: '5 218', checkMode: 'auto', correctAnswer: '5218', correctAnswers: ['5218', '5 218'], explanation: 'Place each digit in its column: 5 thousands, 2 hundreds, 1 ten, 8 units → 5 218.' },
+        { difficulty: 'Medium', question: 'Write the number that has 9 thousands, 0 hundreds, 0 tens and 6 units.', answer: '9 006', checkMode: 'auto', correctAnswer: '9006', correctAnswers: ['9006', '9 006'], explanation: 'Place each digit in its column: 9 thousands, 0 hundreds, 0 tens, 6 units → 9 006.' },
+        { difficulty: 'Easy', question: 'Count forwards in 1s starting from 4 996. Write the next 4 numbers, separated by commas.', answer: '4 997, 4 998, 4 999, 5 000', checkMode: 'auto', correctAnswer: '4997499849995000', correctAnswers: ['4997499849995000'], explanation: 'Add 1 each time: 4 996 + 1 = 4 997, then 4 998, 4 999, 5 000.' },
+        { difficulty: 'Easy', question: 'Count forwards in 10s starting from 3 450. Write the next 4 numbers, separated by commas.', answer: '3 460, 3 470, 3 480, 3 490', checkMode: 'auto', correctAnswer: '3460347034803490', correctAnswers: ['3460347034803490'], explanation: 'Add 10 each time: 3 450 + 10 = 3 460, then 3 470, 3 480, 3 490.' },
+        { difficulty: 'Easy', question: 'Count forwards in 10s starting from 2 345. Write the next 4 numbers, separated by commas.', answer: '2 355, 2 365, 2 375, 2 385', checkMode: 'auto', correctAnswer: '2355236523752385', correctAnswers: ['2355236523752385'], explanation: 'Add 10 each time: 2 345 + 10 = 2 355, then 2 365, 2 375, 2 385.' },
+        { difficulty: 'Medium', question: 'Count forwards in 100s starting from 5 600. Write the next 5 numbers, separated by commas.', answer: '5 700, 5 800, 5 900, 6 000, 6 100', checkMode: 'auto', correctAnswer: '57005800590060006100', correctAnswers: ['57005800590060006100'], explanation: 'Add 100 each time: 5 600 + 100 = 5 700, then 5 800, 5 900, 6 000, 6 100.' },
+        { difficulty: 'Medium', question: 'Count forwards in 1 000s starting from 3 000. Write the next 4 numbers, separated by commas.', answer: '4 000, 5 000, 6 000, 7 000', checkMode: 'auto', correctAnswer: '4000500060007000', correctAnswers: ['4000500060007000'], explanation: 'Add 1 000 each time: 3 000 + 1 000 = 4 000, then 5 000, 6 000, 7 000.' },
+        { difficulty: 'Medium', question: 'Count backwards in 10s starting from 8 080. Write the next 4 numbers, separated by commas.', answer: '8 070, 8 060, 8 050, 8 040', checkMode: 'auto', correctAnswer: '8070806080508040', correctAnswers: ['8070806080508040'], explanation: 'Subtract 10 each time: 8 080 − 10 = 8 070, then 8 060, 8 050, 8 040.' },
+        { difficulty: 'Medium', question: 'Count backwards in 100s starting from 9 200. Write the next 5 numbers, separated by commas.', answer: '9 100, 9 000, 8 900, 8 800, 8 700', checkMode: 'auto', correctAnswer: '91009000890088008700', correctAnswers: ['91009000890088008700'], explanation: 'Subtract 100 each time: 9 200 − 100 = 9 100, then 9 000, 8 900, 8 800, 8 700.' },
+        { difficulty: 'Medium', question: 'Count backwards in 1 000s starting from 7 000. Write the next 5 numbers, separated by commas.', answer: '6 000, 5 000, 4 000, 3 000, 2 000', checkMode: 'auto', correctAnswer: '60005000400030002000', correctAnswers: ['60005000400030002000'], explanation: 'Subtract 1 000 each time: 7 000 − 1 000 = 6 000, then 5 000, 4 000, 3 000, 2 000.' },
+        { difficulty: 'Hard', question: 'A number pattern goes: 1 250, 1 350, 1 450 …\n\nWhat is the rule, and what are the next 2 numbers? Write the next 2 numbers separated by a comma.', answer: 'Add 100 each time. Next 2 numbers: 1 550, 1 650', checkMode: 'auto', correctAnswer: '15501650', correctAnswers: ['15501650'], explanation: 'Each number is 100 more than the one before: 1 350 − 1 250 = 100, 1 450 − 1 350 = 100. Continue: 1 450 + 100 = 1 550, 1 550 + 100 = 1 650.' },
+        { difficulty: 'Hard', question: 'Write the value of the digit 3 in 4 738, then write the value of the digit 9 in 6 194. Give your two answers separated by a comma (e.g. 30, 90).', answer: '30, 90', checkMode: 'auto', correctAnswer: '3090', correctAnswers: ['3090'], explanation: 'In 4 738, the digit 3 is in the Tens column, so its value is 3 × 10 = 30. In 6 194, the digit 9 is in the Tens column, so its value is 9 × 10 = 90.' },
+        { difficulty: 'Hard', question: 'A shop has 1 245 red apples, 873 green apples and 12 yellow apples. Work out the total number of apples.', answer: '2 130', checkMode: 'auto', correctAnswer: '2130', correctAnswers: ['2130', '2 130'], explanation: '1 245 + 873 + 12 = 2 130.' },
       ],
-      answer: 'a) 6 000\nb) 600\nc) 6',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'Write the number that has 4 thousands, 0 hundreds, 8 tens and 3 units.\n' +
-        'Then write it in expanded notation.',
-      parts: [
-        {
-          label: 'Number:',
-          // 4 083 → normalized: "4083"
-          correctAnswer: '4083',
-          explanation:
-            'Place each digit in its column:\n' +
-            '• 4 thousands → Thousands column\n' +
-            '• 0 hundreds → Hundreds column\n' +
-            '• 8 tens → Tens column\n' +
-            '• 3 units → Units column\n\n' +
-            'The number is 4 083.',
-        },
-        {
-          label: 'Expanded notation:',
-          // 4 000 + 0 + 80 + 3 → normalized: "4000+0+80+3"
-          correctAnswer: '4000+0+80+3',
-          explanation:
-            '4 083 = 4 000 + 0 + 80 + 3\n\n' +
-            '• 4 is in the Thousands column → 4 000\n' +
-            '• 0 is in the Hundreds column → 0\n' +
-            '• 8 is in the Tens column → 80\n' +
-            '• 3 is in the Units column → 3',
-        },
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You have mastered place value, expanded notation and counting.' },
+        { minScore: 19, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 13, message: 'Good effort! Revisit the place value and counting worked examples.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
-      answer: 'Number: 4 083\nExpanded: 4 000 + 0 + 80 + 3',
     },
 
-    // ── Section 3: Counting Forwards and Backwards ───────────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 — COMPARING, ORDERING & ROUNDING (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Count forwards in 10s starting from 3 450. Write the next 4 numbers, separated by commas.',
-      // "3 460, 3 470, 3 480, 3 490" → strip spaces/commas → "3460347034803490"
-      correctAnswer: '3460347034803490',
-      explanation:
-        'Counting forwards in 10s means adding 10 each time:\n' +
-        '3 450 + 10 = 3 460\n' +
-        '3 460 + 10 = 3 470\n' +
-        '3 470 + 10 = 3 480\n' +
-        '3 480 + 10 = 3 490\n\n' +
-        'Answer: 3 460, 3 470, 3 480, 3 490',
-      answer: '3 460, 3 470, 3 480, 3 490',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question: 'Count backwards in 100s starting from 7 800. Write the next 5 numbers, separated by commas.',
-      // "7 700, 7 600, 7 500, 7 400, 7 300" → strip spaces/commas → "77007600750074007300"
-      correctAnswer: '77007600750074007300',
-      explanation:
-        'Counting backwards in 100s means subtracting 100 each time:\n' +
-        '7 800 − 100 = 7 700\n' +
-        '7 700 − 100 = 7 600\n' +
-        '7 600 − 100 = 7 500\n' +
-        '7 500 − 100 = 7 400\n' +
-        '7 400 − 100 = 7 300\n\n' +
-        'Answer: 7 700, 7 600, 7 500, 7 400, 7 300',
-      answer: '7 700, 7 600, 7 500, 7 400, 7 300',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A number pattern goes: 2 000,  3 000,  4 000\n\n' +
-        'a) What is the rule? (Write: add ___ each time)\n' +
-        'b) Write the next 3 numbers, separated by commas.\n' +
-        'c) What would the 10th number in the pattern be?',
-      parts: [
-        {
-          label: 'a)',
-          // "Add 1 000 each time" → lowercase → strip spaces → "add1000eachtime"
-          correctAnswer: 'add1000eachtime',
-          explanation:
-            'Each number is 1 000 more than the one before it.\n' +
-            '2 000 + 1 000 = 3 000 ✓\n' +
-            '3 000 + 1 000 = 4 000 ✓\n\n' +
-            'Rule: add 1 000 each time.',
-        },
-        {
-          label: 'b)',
-          // "5 000, 6 000, 7 000" → strip spaces/commas → "500060007000"
-          correctAnswer: '500060007000',
-          explanation:
-            'Continue adding 1 000 each time:\n' +
-            '4 000 + 1 000 = 5 000\n' +
-            '5 000 + 1 000 = 6 000\n' +
-            '6 000 + 1 000 = 7 000\n\n' +
-            'Next 3 numbers: 5 000, 6 000, 7 000',
-        },
-        {
-          label: 'c)',
-          // "11 000" → strip spaces → "11000"
-          correctAnswer: '11000',
-          explanation:
-            'The pattern starts at 2 000 and we add 1 000 each time.\n' +
-            '1st number: 2 000\n' +
-            '2nd number: 3 000\n' +
-            '3rd number: 4 000\n' +
-            '…\n' +
-            '10th number = 2 000 + (9 × 1 000) = 2 000 + 9 000 = 11 000',
-        },
+      name: 'Set 2: Comparing, Ordering and Rounding',
+      questions: [
+        { difficulty: 'Easy', question: 'Write less than, greater than, or equal to: 3 456 and 3 654.', answer: 'less than', checkMode: 'auto', correctAnswer: 'lessthan', correctAnswers: ['lessthan'], explanation: 'Compare the hundreds digits: 3 4__ vs 3 6__. Since 4 < 6, 3 456 is less than 3 654.' },
+        { difficulty: 'Easy', question: 'Write less than, greater than, or equal to: 7 001 and 7 001.', answer: 'equal to', checkMode: 'auto', correctAnswer: 'equalto', correctAnswers: ['equalto'], explanation: 'Every digit is the same, so 7 001 = 7 001.' },
+        { difficulty: 'Easy', question: 'Write less than, greater than, or equal to: 4 299 and 4 300.', answer: 'less than', checkMode: 'auto', correctAnswer: 'lessthan', correctAnswers: ['lessthan'], explanation: '4 299 is one less than 4 300, so 4 299 is less than 4 300.' },
+        { difficulty: 'Easy', question: 'Write less than, greater than, or equal to: 9 302 and 2 087.', answer: 'greater than', checkMode: 'auto', correctAnswer: 'greaterthan', correctAnswers: ['greaterthan'], explanation: 'Compare the thousands digits: 9 vs 2. Since 9 > 2, 9 302 is greater than 2 087.' },
+        { difficulty: 'Medium', question: 'Order these numbers from smallest to biggest, separated by commas: 5 032, 4 999, 5 320, 4 909', answer: '4 909, 4 999, 5 032, 5 320', checkMode: 'auto', correctAnswer: '4909499950325320', correctAnswers: ['4909499950325320'], explanation: 'Compare thousands first: 4 909 and 4 999 (4 thousands) are smaller than 5 032 and 5 320 (5 thousands). Then compare within each pair by hundreds/tens: 4 909 < 4 999 and 5 032 < 5 320. Order: 4 909, 4 999, 5 032, 5 320.' },
+        { difficulty: 'Medium', question: 'Order these numbers from smallest to biggest, separated by commas: 3 210, 3 201, 3 021, 3 102', answer: '3 021, 3 102, 3 201, 3 210', checkMode: 'auto', correctAnswer: '3021310232013210', correctAnswers: ['3021310232013210'], explanation: 'All four numbers have 3 thousands, so compare hundreds digits next: 3 021 has 0 hundreds and 3 102 has 1 hundred — both are smaller than 3 201 and 3 210, which have 2 hundreds. Since 0 < 1, 3 021 < 3 102. Comparing 3 201 and 3 210 by tens digits: 0 < 1, so 3 201 < 3 210. Final order: 3 021, 3 102, 3 201, 3 210.' },
+        { difficulty: 'Medium', question: 'Order these numbers from smallest to biggest, separated by commas: 8 760, 8 670, 8 607, 8 076', answer: '8 076, 8 607, 8 670, 8 760', checkMode: 'auto', correctAnswer: '8076860786708760', correctAnswers: ['8076860786708760'], explanation: 'Compare hundreds digits: 8 076 has 0 hundreds (smallest). Then 8 607 has 6 hundreds, 8 670 has 6 hundreds, 8 760 has 7 hundreds. Compare 8 607 and 8 670 by tens: 0 < 7, so 8 607 < 8 670. Order: 8 076, 8 607, 8 670, 8 760.' },
+        { difficulty: 'Medium', question: 'Order these numbers from smallest to biggest, separated by commas: 6 234, 987, 6 432, 1 023', answer: '987, 1 023, 6 234, 6 432', checkMode: 'auto', correctAnswer: '987102362346432', correctAnswers: ['987102362346432'], explanation: '987 has 3 digits, so it is smallest. 1 023 has 4 digits with 1 thousand. 6 234 and 6 432 both have 6 thousands — compare hundreds: 2 < 4, so 6 234 < 6 432. Order: 987, 1 023, 6 234, 6 432.' },
+        { difficulty: 'Hard', question: 'Thabo says 3 987 is bigger than 4 001 because the digit 9 is bigger than 0. Is Thabo correct? Write yes or no.', answer: 'No', checkMode: 'auto', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: 'You must compare the highest place value first. 3 987 has 3 thousands and 4 001 has 4 thousands. Since 4 > 3, 4 001 is bigger, no matter what the other digits are.' },
+        { difficulty: 'Easy', question: 'Round 3 456 to the nearest 10.', answer: '3 460', checkMode: 'auto', correctAnswer: '3460', correctAnswers: ['3460', '3 460'], explanation: 'The units digit is 6 (≥ 5), so round up: 3 456 → 3 460.' },
+        { difficulty: 'Easy', question: 'Round 5 234 to the nearest 100.', answer: '5 200', checkMode: 'auto', correctAnswer: '5200', correctAnswers: ['5200', '5 200'], explanation: 'The tens digit is 3 (< 5), so round down: 5 234 → 5 200.' },
+        { difficulty: 'Easy', question: 'Round 7 849 to the nearest 100.', answer: '7 800', checkMode: 'auto', correctAnswer: '7800', correctAnswers: ['7800', '7 800'], explanation: 'The tens digit is 4 (< 5), so round down: 7 849 → 7 800.' },
+        { difficulty: 'Medium', question: 'Round 2 350 to the nearest 100.', answer: '2 400', checkMode: 'auto', correctAnswer: '2400', correctAnswers: ['2400', '2 400'], explanation: 'The tens digit is 5 (≥ 5), so round up: 2 350 → 2 400.' },
+        { difficulty: 'Medium', question: 'Round 6 784 to the nearest 10.', answer: '6 780', checkMode: 'auto', correctAnswer: '6780', correctAnswers: ['6780', '6 780'], explanation: 'The units digit is 4 (< 5), so round down: 6 784 → 6 780.' },
+        { difficulty: 'Medium', question: 'Round 4 763 to the nearest 100.', answer: '4 800', checkMode: 'auto', correctAnswer: '4800', correctAnswers: ['4800', '4 800'], explanation: 'The tens digit is 6 (≥ 5), so round up: 4 763 → 4 800.' },
+        { difficulty: 'Medium', question: 'Round 4 763 to the nearest 10.', answer: '4 760', checkMode: 'auto', correctAnswer: '4760', correctAnswers: ['4760', '4 760'], explanation: 'The units digit is 3 (< 5), so round down: 4 763 → 4 760.' },
+        { difficulty: 'Medium', question: 'Round 5 999 to the nearest 10.', answer: '6 000', checkMode: 'auto', correctAnswer: '6000', correctAnswers: ['6000', '6 000'], explanation: 'The units digit is 9 (≥ 5), so round up: 5 999 → 6 000 (the tens, hundreds and thousands digits all change because of carrying).' },
+        { difficulty: 'Medium', question: 'Round 1 499 to the nearest 100.', answer: '1 500', checkMode: 'auto', correctAnswer: '1500', correctAnswers: ['1500', '1 500'], explanation: 'The tens digit is 9 (≥ 5), so round up: 1 499 → 1 500.' },
+        { difficulty: 'Medium', question: 'Round 8 501 to the nearest 10.', answer: '8 500', checkMode: 'auto', correctAnswer: '8500', correctAnswers: ['8500', '8 500'], explanation: 'The units digit is 1 (< 5), so round down: 8 501 → 8 500.' },
+        { difficulty: 'Medium', question: 'Round 2 222 to the nearest 1 000.', answer: '2 000', checkMode: 'auto', correctAnswer: '2000', correctAnswers: ['2000', '2 000'], explanation: 'The hundreds digit is 2 (< 5), so round down: 2 222 → 2 000.' },
+        { difficulty: 'Medium', question: 'Round 6 666 to the nearest 1 000.', answer: '7 000', checkMode: 'auto', correctAnswer: '7000', correctAnswers: ['7000', '7 000'], explanation: 'The hundreds digit is 6 (≥ 5), so round up: 6 666 → 7 000.' },
+        { difficulty: 'Hard', question: 'Round 3 299 to the nearest 10 AND to the nearest 100. Give your two answers separated by a comma (10s answer first).', answer: '3 300, 3 300', checkMode: 'auto', correctAnswer: '33003300', correctAnswers: ['33003300'], explanation: 'Nearest 10: units digit 9 (≥ 5), round up: 3 299 → 3 300. Nearest 100: tens digit 9 (≥ 5), round up: 3 299 → 3 300. Both answers are 3 300.' },
+        { difficulty: 'Hard', question: 'A farmer has 4 763 sheep. A news report says he has approximately 4 800 sheep. Round 4 763 to the nearest 100 to check if the report is correct. Write your rounded answer.', answer: '4 800', checkMode: 'auto', correctAnswer: '4800', correctAnswers: ['4800', '4 800'], explanation: 'Tens digit is 6 (≥ 5), so round up: 4 763 → 4 800. This confirms the news report.' },
+        { difficulty: 'Hard', question: 'Which rounds to a bigger number when rounded to the nearest 100: 2 650 or 3 299? Round each first, then answer with the original number that is bigger after rounding.', answer: '3 299', checkMode: 'auto', correctAnswer: '3299', correctAnswers: ['3299', '3 299'], explanation: '2 650 rounds to 2 700. 3 299 rounds to 3 300. Since 3 300 > 2 700, the answer is 3 299.' },
+        { difficulty: 'Hard', question: 'Explain why rounding to the nearest 10 usually gives a more accurate estimate than rounding to the nearest 100.', answer: 'Rounding to the nearest 10 only changes the number by at most 5, while rounding to the nearest 100 can change the number by up to 50. Because the nearest-10 estimate stays closer to the actual number, it is usually more accurate.', checkMode: 'self' },
       ],
-      answer: 'a) Add 1 000 each time\nb) 5 000, 6 000, 7 000\nc) 11 000',
-    },
-
-    // ── Section 4: Comparing and Ordering Numbers ─────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question:
-        'Write less than, greater than, or equal to between each pair of numbers:\n\n' +
-        'a) 3 456 and 3 654\n' +
-        'b) 7 001 and 7 001\n' +
-        'c) 4 299 and 4 300',
-      parts: [
-        {
-          label: 'a)',
-          // "less than" → strip spaces → "lessthan"
-          correctAnswer: 'lessthan',
-          explanation:
-            'Compare the hundreds digits: 3 4__ vs 3 6__.\n' +
-            '4 < 6, so 3 456 is less than 3 654.\n\n' +
-            '3 456 < 3 654',
-        },
-        {
-          label: 'b)',
-          // "equal to" → strip spaces → "equalto"
-          correctAnswer: 'equalto',
-          explanation:
-            'The two numbers are identical — every digit is the same.\n\n' +
-            '7 001 = 7 001',
-        },
-        {
-          label: 'c)',
-          // "less than" → strip spaces → "lessthan"
-          correctAnswer: 'lessthan',
-          explanation:
-            'Same thousands (4) and same hundreds (2).\n' +
-            'Compare the tens digits: 4 29_ vs 4 30_.\n' +
-            '9 tens is still less than 30_ because the hundreds digit of 4 300 is one more.\n' +
-            'More simply: 4 299 is one less than 4 300.\n\n' +
-            '4 299 < 4 300',
-        },
+      scoreMessages: [
+        { minScore: 25, message: 'Excellent! You can confidently compare, order and round whole numbers.' },
+        { minScore: 19, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 13, message: 'Good effort! Revisit the comparing and rounding worked examples.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
-      answer: 'a) less than\nb) equal to\nc) less than',
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 — REAL-WORLD WORD PROBLEMS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Order these numbers from smallest to biggest. Write them separated by commas:\n\n' +
-        '5 032,  4 999,  5 320,  4 909',
-      // "4 909, 4 999, 5 032, 5 320" → strip spaces/commas → "4909499950325320"
-      correctAnswer: '4909499950325320',
-      explanation:
-        'Step 1 — Compare the thousands digits: 5, 4, 5, 4.\n' +
-        'Numbers with 4 thousands (4 999 and 4 909) are smaller than numbers with 5 thousands (5 032 and 5 320).\n\n' +
-        'Step 2 — Compare 4 909 and 4 999 (same thousands digit):\n' +
-        'Hundreds digits: 9 vs 9 — equal. Compare tens: 0 vs 9. Since 0 < 9, we have 4 909 < 4 999.\n\n' +
-        'Step 3 — Compare 5 032 and 5 320 (same thousands digit):\n' +
-        'Hundreds digits: 0 vs 3. Since 0 < 3, we have 5 032 < 5 320.\n\n' +
-        'Order from smallest to biggest: 4 909,  4 999,  5 032,  5 320',
-      answer: '4 909, 4 999, 5 032, 5 320',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Thabo says 3 987 is bigger than 4 001 because the digit 9 is bigger than 0.\n\n' +
-        'Is Thabo correct? Explain why or why not.',
-      answer:
-        'No, Thabo is not correct. 4 001 is the bigger number.\n\n' +
-        'Why: you must always compare the highest place value first — the thousands column.\n' +
-        '• 3 987 has 3 thousands.\n' +
-        '• 4 001 has 4 thousands.\n\n' +
-        'Because 4 > 3 in the thousands column, 4 001 is bigger than 3 987, no matter what the other digits are.\n\n' +
-        'Thabo\'s mistake was comparing the hundreds digit (9 vs 0) instead of the thousands digit. Always start at the highest place value.',
-    },
-
-    // ── Section 5: Rounding Off ───────────────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Round 3 456 to the nearest 10.',
-      // "3 460" → strip spaces → "3460"
-      correctAnswer: '3460',
-      explanation:
-        'Look at the units digit: 6. Because 6 ≥ 5, we round up.\n' +
-        'Add 1 to the tens digit: 5 + 1 = 6. Replace the units digit with 0.\n\n' +
-        '3 456 → 3 460',
-      answer: '3 460',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Round each of the following numbers:\n\n' +
-        'a) 7 849 to the nearest 100\n' +
-        'b) 2 350 to the nearest 100\n' +
-        'c) 6 784 to the nearest 10',
-      parts: [
-        {
-          label: 'a)',
-          // "7 800" → strip spaces → "7800"
-          correctAnswer: '7800',
-          explanation:
-            'Look at the tens digit: 4. Because 4 < 5, we round down.\n' +
-            'The hundreds digit stays as 8. Replace the tens and units with 0.\n\n' +
-            '7 849 → 7 800',
-        },
-        {
-          label: 'b)',
-          // "2 400" → strip spaces → "2400"
-          correctAnswer: '2400',
-          explanation:
-            'Look at the tens digit: 5. Because 5 ≥ 5, we round up.\n' +
-            'Add 1 to the hundreds digit: 3 + 1 = 4. Replace the tens and units with 0.\n\n' +
-            '2 350 → 2 400',
-        },
-        {
-          label: 'c)',
-          // "6 780" → strip spaces → "6780"
-          correctAnswer: '6780',
-          explanation:
-            'Look at the units digit: 4. Because 4 < 5, we round down.\n' +
-            'The tens digit stays as 8. Replace the units digit with 0.\n\n' +
-            '6 784 → 6 780',
-        },
+      name: 'Set 3: Real-World Word Problems',
+      questions: [
+        { difficulty: 'Easy', question: 'A school has 4 327 learners. Write this number in a place value table: what is the value of the digit 4?', answer: '4 000', checkMode: 'auto', correctAnswer: '4000', correctAnswers: ['4000', '4 000'], explanation: 'The digit 4 is in the Thousands column of 4 327, so its value is 4 000.' },
+        { difficulty: 'Easy', question: 'A stadium can seat 8 734 people. Round this number to the nearest 1 000 to estimate the seating capacity.', answer: '9 000', checkMode: 'auto', correctAnswer: '9000', correctAnswers: ['9000', '9 000'], explanation: 'The hundreds digit is 7 (≥ 5), so round up: 8 734 → 9 000.' },
+        { difficulty: 'Easy', question: 'Lerato has R2 087 saved and Sipho has R9 302 saved. Who has more money saved?', answer: 'Sipho', checkMode: 'auto', correctAnswer: 'Sipho', correctAnswers: ['Sipho', 'sipho'], explanation: 'Compare thousands digits: 9 302 has 9 thousands, 2 087 has 2 thousands. Since 9 > 2, Sipho has more.' },
+        { difficulty: 'Easy', question: 'A shop sold 6 235 loaves of bread. Write 6 235 in expanded notation.', answer: '6 000 + 200 + 30 + 5', checkMode: 'auto', correctAnswer: '6000+200+30+5', correctAnswers: ['6000+200+30+5'], explanation: '6 000 (Thousands) + 200 (Hundreds) + 30 (Tens) + 5 (Units) = 6 235.' },
+        { difficulty: 'Medium', question: 'A cinema has 4 200 seats and adds another 100 seats every year for the next 3 years. Write the number of seats after each of the next 3 years, separated by commas.', answer: '4 300, 4 400, 4 500', checkMode: 'auto', correctAnswer: '430044004500', correctAnswers: ['430044004500'], explanation: 'Count forwards in 100s: 4 200 + 100 = 4 300, then 4 400, then 4 500.' },
+        { difficulty: 'Medium', question: 'A charity wants to raise R5 000. They currently have R5 000 already pledged in stages of R1 000. Write the pledge total after each of the next 4 stages, starting from R5 000, separated by commas.', answer: '6 000, 7 000, 8 000, 9 000', checkMode: 'auto', correctAnswer: '6000700080009000', correctAnswers: ['6000700080009000'], explanation: 'Count forwards in 1 000s: 5 000 + 1 000 = 6 000, then 7 000, 8 000, 9 000.' },
+        { difficulty: 'Medium', question: 'Two towns have populations of 4 560 and 4 650. Which town has the smaller population?', answer: '4 560', checkMode: 'auto', correctAnswer: '4560', correctAnswers: ['4560', '4 560'], explanation: 'Compare hundreds digits: 4 560 has 5 hundreds, 4 650 has 6 hundreds. Since 5 < 6, 4 560 is smaller.' },
+        { difficulty: 'Medium', question: 'A donation drive collected 6 784 tins of food. Round this number to the nearest 10 to write in a simple report.', answer: '6 780', checkMode: 'auto', correctAnswer: '6780', correctAnswers: ['6780', '6 780'], explanation: 'The units digit is 4 (< 5), so round down: 6 784 → 6 780.' },
+        { difficulty: 'Medium', question: 'A car dealership sold 9 450 cars this year. Round this number to the nearest 1 000 for the annual report.', answer: '9 000', checkMode: 'auto', correctAnswer: '9000', correctAnswers: ['9000', '9 000'], explanation: 'The hundreds digit is 4 (< 5), so round down: 9 450 → 9 000.' },
+        { difficulty: 'Medium', question: 'Four towns have these populations: 5 234, 4 980, 5 300, 4 870. Order them from smallest to biggest, separated by commas.', answer: '4 870, 4 980, 5 234, 5 300', checkMode: 'auto', correctAnswer: '4870498052345300', correctAnswers: ['4870498052345300'], explanation: 'Towns with 4 thousands (4 870, 4 980) are smaller than towns with 5 thousands (5 234, 5 300). Compare within pairs: 4 870 < 4 980 and 5 234 < 5 300. Order: 4 870, 4 980, 5 234, 5 300.' },
+        { difficulty: 'Medium', question: 'Four schools have these numbers of learners: 7 650, 6 980, 7 200, 6 890. Order them from smallest to biggest, separated by commas.', answer: '6 890, 6 980, 7 200, 7 650', checkMode: 'auto', correctAnswer: '6890698072007650', correctAnswers: ['6890698072007650'], explanation: 'Schools with 6 thousands (6 980, 6 890) are smaller than schools with 7 thousands (7 200, 7 650). Compare within pairs: 6 890 < 6 980 and 7 200 < 7 650. Order: 6 890, 6 980, 7 200, 7 650.' },
+        { difficulty: 'Easy', question: 'A runner completed a race of 2 350 metres. Round this distance to the nearest 100 metres.', answer: '2 400', checkMode: 'auto', correctAnswer: '2400', correctAnswers: ['2400', '2 400'], explanation: 'The tens digit is 5 (≥ 5), so round up: 2 350 → 2 400.' },
+        { difficulty: 'Medium', question: 'A marble collector has marbles numbered starting at 3 125, then counts 5 more boxes in steps of 10 marbles each. Write the marble count after the first 5 boxes, separated by commas.', answer: '3 135, 3 145, 3 155, 3 165, 3 175', checkMode: 'auto', correctAnswer: '31353145315531653175', correctAnswers: ['31353145315531653175'], explanation: 'Count forwards in 10s: 3 125 + 10 = 3 135, then 3 145, 3 155, 3 165, 3 175.' },
+        { difficulty: 'Medium', question: 'A warehouse has 9 081 boxes. Write 9 081 in expanded notation.', answer: '9 000 + 0 + 80 + 1', checkMode: 'auto', correctAnswer: '9000+0+80+1', correctAnswers: ['9000+0+80+1'], explanation: '9 000 (Thousands) + 0 (Hundreds) + 80 (Tens) + 1 (Units) = 9 081.' },
+        { difficulty: 'Medium', question: 'A library has 1 406 books on one shelf. Write 1 406 in expanded notation.', answer: '1 000 + 400 + 0 + 6', checkMode: 'auto', correctAnswer: '1000+400+0+6', correctAnswers: ['1000+400+0+6'], explanation: '1 000 (Thousands) + 400 (Hundreds) + 0 (Tens) + 6 (Units) = 1 406.' },
+        { difficulty: 'Medium', question: 'A road trip covers distances marked on a number line from 0 km to 1 000 km in intervals of 100 km. A rest stop is at 650 km. Between which two marks does it fall? Write the two numbers separated by a comma.', answer: '600, 700', checkMode: 'auto', correctAnswer: '600700', correctAnswers: ['600700'], explanation: '650 falls between the 600 km mark and the 700 km mark on the number line.' },
+        { difficulty: 'Hard', question: 'A stadium counts ticket sales on a number line from 5 000 to 6 000 in intervals of 100. If a ticket count of 5 500 is reported, where does it sit on the number line? Write your answer as: halfway OR not halfway.', answer: 'halfway', checkMode: 'auto', correctAnswer: 'halfway', correctAnswers: ['halfway'], explanation: '5 000 + 6 000 = 11 000, and 11 000 ÷ 2 = 5 500, so 5 500 sits exactly halfway between 5 000 and 6 000.' },
+        { difficulty: 'Hard', question: 'A company had 4 200 customers and gains 1 000 new customers every year for 3 years. Write the customer totals after each of the 3 years, separated by commas.', answer: '5 200, 6 200, 7 200', checkMode: 'auto', correctAnswer: '520062007200', correctAnswers: ['520062007200'], explanation: 'Count forwards in 1 000s from 4 200: 4 200 + 1 000 = 5 200, then 6 200, then 7 200.' },
+        { difficulty: 'Hard', question: 'A learner has the digits 3, 0, 7 and 2. Using each digit exactly once, what is the largest 4-digit number that can be made?', answer: '7 320', checkMode: 'auto', correctAnswer: '7320', correctAnswers: ['7320', '7 320'], explanation: 'To make the largest number, arrange the digits from biggest to smallest: 7, 3, 2, 0 → 7 320.' },
+        { difficulty: 'Hard', question: 'A learner has the digits 3, 0, 7 and 2. Using each digit exactly once, what is the smallest 4-digit number that can be made (no leading zero)?', answer: '2 037', checkMode: 'auto', correctAnswer: '2037', correctAnswers: ['2037', '2 037'], explanation: 'To make the smallest number, arrange the digits from smallest to biggest, but the first digit cannot be 0. Digits in order are 0, 2, 3, 7 — swap the 0 with the next smallest non-zero digit (2) to get 2, 0, 3, 7 → 2 037.' },
+        { difficulty: 'Hard', question: 'A learner has the digits 5, 9, 1 and 4. Using each digit exactly once, what is the largest 4-digit number that can be made?', answer: '9 541', checkMode: 'auto', correctAnswer: '9541', correctAnswers: ['9541', '9 541'], explanation: 'Arrange the digits from biggest to smallest: 9, 5, 4, 1 → 9 541.' },
+        { difficulty: 'Hard', question: 'A shop has 8 062 items in stock. Write this number in expanded notation.', answer: '8 000 + 0 + 60 + 2', checkMode: 'auto', correctAnswer: '8000+0+60+2', correctAnswers: ['8000+0+60+2'], explanation: '8 000 (Thousands) + 0 (Hundreds) + 60 (Tens) + 2 (Units) = 8 062.' },
+        { difficulty: 'Hard', question: 'A school records attendance on a number line marked every 1 000 from 0 to 10 000. A special event drew 8 500 attendees. This falls exactly halfway between which two marks? Write the two numbers separated by a comma.', answer: '8 000, 9 000', checkMode: 'auto', correctAnswer: '80009000', correctAnswers: ['80009000'], explanation: '8 000 + 9 000 = 17 000, and 17 000 ÷ 2 = 8 500, so 8 500 sits exactly halfway between 8 000 and 9 000.' },
+        { difficulty: 'Hard', question: 'A farmer rounds his 4 763 sheep to the nearest 10 for a quick estimate, then compares it to the nearest 100 estimate of 4 800. What is the difference between the two rounded estimates?', answer: '40', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40'], explanation: 'Nearest 10: 4 763 → 4 760. Nearest 100: 4 763 → 4 800. Difference: 4 800 − 4 760 = 40.' },
+        { difficulty: 'Hard', question: 'A shop had 1 245 red apples, 873 green apples and 12 yellow apples. Round the total number of apples to the nearest 100.', answer: '2 100', checkMode: 'auto', correctAnswer: '2100', correctAnswers: ['2100', '2 100'], explanation: 'Total = 1 245 + 873 + 12 = 2 130. Rounding 2 130 to the nearest 100: tens digit is 3 (< 5), round down → 2 100.' },
       ],
-      answer: 'a) 7 800\nb) 2 400\nc) 6 780',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A farmer has 4 763 sheep. A news report says he has approximately 4 800 sheep.\n\n' +
-        'a) Round 4 763 to the nearest 100. Does this confirm the news report?\n' +
-        'b) Round 4 763 to the nearest 10.\n' +
-        'c) Which rounded answer is more accurate — write 4 800 or 4 760.',
-      parts: [
-        {
-          label: 'a)',
-          // "4 800" → strip spaces → "4800"
-          correctAnswer: '4800',
-          explanation:
-            'Tens digit is 6 (≥ 5), so we round up.\n' +
-            'Hundreds digit 7 + 1 = 8. Replace tens and units with 0.\n\n' +
-            '4 763 → 4 800 ✓ — yes, the news report is correct.',
-        },
-        {
-          label: 'b)',
-          // "4 760" → strip spaces → "4760"
-          correctAnswer: '4760',
-          explanation:
-            'Units digit is 3 (< 5), so we round down.\n' +
-            'The tens digit stays as 6. Replace the units digit with 0.\n\n' +
-            '4 763 → 4 760',
-        },
-        {
-          label: 'c)',
-          // "4 760" → strip spaces → "4760"
-          correctAnswer: '4760',
-          explanation:
-            '4 760 is more accurate because it is closer to the actual number 4 763.\n' +
-            '• 4 763 − 4 760 = 3 (difference of only 3)\n' +
-            '• 4 800 − 4 763 = 37 (difference of 37)\n\n' +
-            'Rounding to the nearest 10 always gives a more accurate result than rounding to the nearest 100.',
-        },
+      scoreMessages: [
+        { minScore: 25, message: 'Fantastic! You can apply place value, rounding and ordering to real-world problems.' },
+        { minScore: 19, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 13, message: 'Good effort! Revisit the worked examples and try the word problems again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
-      answer: 'a) 4 800 (yes, correct)\nb) 4 760\nc) 4 760',
     },
 
-    // ── Section 6: Representing Numbers on a Number Line ─────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — MULTI-STEP, NUMBER LINES & SELF-CHECK REASONING (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question:
-        'A number line goes from 0 to 1 000 in intervals of 100.\n\n' +
-        'Between which two numbers does 650 sit? Write the two numbers separated by a comma.',
-      // "600, 700" → strip spaces/commas → "600700"
-      correctAnswer: '600700',
-      explanation:
-        '650 is between 600 and 700.\n\n' +
-        'The interval marks are: 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1 000.\n' +
-        '650 falls between the 600 mark and the 700 mark.\n' +
-        'It is exactly halfway between them (600 + 700 = 1 300 ÷ 2 = 650).',
-      answer: '600, 700',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'self',
-      question:
-        'A number line goes from 5 000 to 6 000 in intervals of 100.\n\n' +
-        'Where would you place 5 500? Explain how you know.',
-      answer:
-        '5 500 sits exactly halfway between 5 000 and 6 000.\n\n' +
-        'How to find the halfway point:\n' +
-        'Add the two end values and divide by 2:\n' +
-        '5 000 + 6 000 = 11 000\n' +
-        '11 000 ÷ 2 = 5 500\n\n' +
-        'So 5 500 is placed right in the middle of the number line.',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A number line goes from 3 000 to 4 000 in intervals of 100.\n\n' +
-        'a) What number is halfway between 3 400 and 3 500?\n' +
-        'b) What number is three quarters of the way between 3 000 and 4 000?',
-      parts: [
-        {
-          label: 'a)',
-          // "3 450" → strip spaces → "3450"
-          correctAnswer: '3450',
-          explanation:
-            'To find the halfway point between 3 400 and 3 500:\n' +
-            'Add the two marks: 3 400 + 3 500 = 6 900\n' +
-            'Divide by 2: 6 900 ÷ 2 = 3 450\n\n' +
-            'The halfway point is 3 450.',
-        },
-        {
-          label: 'b)',
-          // "3 750" → strip spaces → "3750"
-          correctAnswer: '3750',
-          explanation:
-            'Three quarters of the way between 3 000 and 4 000:\n' +
-            'The total distance is 4 000 − 3 000 = 1 000.\n' +
-            'Three quarters of 1 000 = ¾ × 1 000 = 750.\n' +
-            'Start at 3 000 and add 750: 3 000 + 750 = 3 750.\n\n' +
-            'The answer is 3 750.',
-        },
+      name: 'Set 4: Multi-Step and Combined Problems',
+      questions: [
+        { difficulty: 'Medium', question: 'A number line goes from 3 000 to 4 000 in intervals of 100. What number is halfway between 3 400 and 3 500?', answer: '3 450', checkMode: 'auto', correctAnswer: '3450', correctAnswers: ['3450', '3 450'], explanation: 'Add the two marks: 3 400 + 3 500 = 6 900. Divide by 2: 6 900 ÷ 2 = 3 450.' },
+        { difficulty: 'Medium', question: 'A number line goes from 3 000 to 4 000 in intervals of 100. What number is three quarters of the way between 3 000 and 4 000?', answer: '3 750', checkMode: 'auto', correctAnswer: '3750', correctAnswers: ['3750', '3 750'], explanation: 'The total distance is 4 000 − 3 000 = 1 000. Three quarters of 1 000 = 750. Start at 3 000 and add 750: 3 750.' },
+        { difficulty: 'Medium', question: 'A number line goes from 4 000 to 5 000 in intervals of 100. What number is one quarter of the way between 4 000 and 5 000?', answer: '4 250', checkMode: 'auto', correctAnswer: '4250', correctAnswers: ['4250', '4 250'], explanation: 'The total distance is 5 000 − 4 000 = 1 000. One quarter of 1 000 = 250. Start at 4 000 and add 250: 4 250.' },
+        { difficulty: 'Medium', question: 'A number line goes from 7 000 to 7 500 in intervals of 100. What number is halfway between 7 200 and 7 300?', answer: '7 250', checkMode: 'auto', correctAnswer: '7250', correctAnswers: ['7250', '7 250'], explanation: 'Add the two marks: 7 200 + 7 300 = 14 500. Divide by 2: 14 500 ÷ 2 = 7 250.' },
+        { difficulty: 'Hard', question: 'Round 8 461 to the nearest 100, then work out the difference between the rounded number and the original number.', answer: 'Rounded = 8 500; Difference = 39', checkMode: 'auto', correctAnswer: '39', correctAnswers: ['39', '8500 39', '8 500; 39'], explanation: 'The tens digit is 6 (≥ 5), so round up: 8 461 → 8 500. Difference = 8 500 − 8 461 = 39.' },
+        { difficulty: 'Hard', question: 'A number has 5 thousands, 8 hundreds, 4 tens and 7 units. Write the number, then round it to the nearest 100.', answer: 'Number = 5 847; Rounded = 5 800', checkMode: 'auto', correctAnswer: '5800', correctAnswers: ['5800', '5 800', '5847 5800', '5 847; 5 800'], explanation: 'The number is 5 847. Rounding to the nearest 100: tens digit is 4 (< 5), round down → 5 800.' },
+        { difficulty: 'Hard', question: 'In the number 5 847, find the value of the thousands digit and the value of the units digit, then add them together.', answer: '5 007', checkMode: 'auto', correctAnswer: '5007', correctAnswers: ['5007', '5 007'], explanation: 'Value of thousands digit (5) = 5 000. Value of units digit (7) = 7. Sum: 5 000 + 7 = 5 007.' },
+        { difficulty: 'Hard', question: 'In the number 3 728, find the value of the hundreds digit and the value of the tens digit, then subtract the tens value from the hundreds value.', answer: '680', checkMode: 'auto', correctAnswer: '680', correctAnswers: ['680'], explanation: 'Value of hundreds digit (7) = 700. Value of tens digit (2) = 20. Difference: 700 − 20 = 680.' },
+        { difficulty: 'Hard', question: 'Order these numbers from biggest to smallest, separated by commas: 5 032, 4 999, 5 320, 4 909', answer: '5 320, 5 032, 4 999, 4 909', checkMode: 'auto', correctAnswer: '5320503249994909', correctAnswers: ['5320503249994909'], explanation: 'From the earlier smallest-to-biggest order (4 909, 4 999, 5 032, 5 320), reverse it to get biggest-to-smallest: 5 320, 5 032, 4 999, 4 909.' },
+        { difficulty: 'Hard', question: 'A number pattern starts at 2 000 and adds 1 000 each time: 2 000, 3 000, 4 000 … What would the 10th number in the pattern be?', answer: '11 000', checkMode: 'auto', correctAnswer: '11000', correctAnswers: ['11000', '11 000'], explanation: 'The 10th number = 2 000 + (9 × 1 000) = 2 000 + 9 000 = 11 000.' },
+        { difficulty: 'Hard', question: 'A number pattern starts at 1 250 and adds 100 each time. What would the 6th number in the pattern be?', answer: '1 750', checkMode: 'auto', correctAnswer: '1750', correctAnswers: ['1750', '1 750'], explanation: 'The 6th number = 1 250 + (5 × 100) = 1 250 + 500 = 1 750.' },
+        { difficulty: 'Hard', question: 'Round 6 235 to the nearest 1 000, then write the rounded number in expanded notation.', answer: '6 000 = 6 000 + 0 + 0 + 0', checkMode: 'auto', correctAnswer: '6000+0+0+0', correctAnswers: ['6000+0+0+0'], explanation: 'Rounding 6 235 to the nearest 1 000: hundreds digit is 2 (< 5), round down → 6 000. Expanded notation: 6 000 + 0 + 0 + 0.' },
+        { difficulty: 'Hard', question: 'A farmer has 4 763 sheep and a news report rounds this to the nearest 100 as 4 800. Round 4 763 to the nearest 10 as well. Which of the two rounded numbers (4 800 or the nearest-10 answer) is closer to the actual number of sheep?', answer: 'The nearest 10 answer (4 760) is closer.', checkMode: 'auto', correctAnswer: '4760', correctAnswers: ['4760', '4 760'], explanation: 'Nearest 10: 4 763 → 4 760. Compare distances: 4 763 − 4 760 = 3, while 4 800 − 4 763 = 37. Since 3 < 37, 4 760 is closer.' },
+        { difficulty: 'Hard', question: 'Explain, using place value, why 4 001 is bigger than 3 987 even though 3 987 has a 9 in the hundreds column and 4 001 has a 0 there.', answer: 'When comparing numbers, you must always compare the highest place value column first — the thousands column. 4 001 has 4 thousands while 3 987 has only 3 thousands. Since 4 is greater than 3 in the thousands column, 4 001 is bigger than 3 987 no matter what digits appear in the smaller columns. The hundreds, tens and units digits only matter when the higher columns are equal.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Explain the difference between rounding a number down and rounding a number up, using the deciding digit rule.', answer: 'To round a number, you look at the deciding digit — the digit just to the right of the column you are rounding to. If the deciding digit is 0, 1, 2, 3 or 4, you round down and the digit in the target column stays the same. If the deciding digit is 5, 6, 7, 8 or 9, you round up and you add 1 to the digit in the target column. In both cases, every digit to the right of the target column becomes 0.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Explain how you would find the halfway point between any two numbers on a number line, and use 6 000 and 7 000 as your example.', answer: 'To find the halfway point between two numbers, add them together and divide the total by 2. For 6 000 and 7 000: 6 000 + 7 000 = 13 000, and 13 000 ÷ 2 = 6 500. So 6 500 is exactly halfway between 6 000 and 7 000.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A number line goes from 0 to 1 000 in intervals of 100. Between which two numbers does 650 sit? Write the two numbers separated by a comma.', answer: '600, 700', checkMode: 'auto', correctAnswer: '600700', correctAnswers: ['600700'], explanation: 'The interval marks are 0, 100, 200 … 1 000. 650 falls between the 600 mark and the 700 mark.' },
+        { difficulty: 'Medium', question: 'Round 9 091 to the nearest 10, then to the nearest 100. Give both answers separated by a comma (nearest 10 first).', answer: '9 090, 9 100', checkMode: 'auto', correctAnswer: '90909100', correctAnswers: ['90909100'], explanation: 'Nearest 10: units digit 1 (< 5), round down → 9 090. Nearest 100: tens digit 9 (≥ 5), round up → 9 100.' },
+        { difficulty: 'Hard', question: 'Round 4 050 to the nearest 100, then to the nearest 1 000. Give both answers separated by a comma (nearest 100 first).', answer: '4 100, 4 000', checkMode: 'auto', correctAnswer: '41004000', correctAnswers: ['41004000'], explanation: 'Nearest 100: tens digit 5 (≥ 5), round up → 4 100. Nearest 1 000: hundreds digit 0 (< 5), round down → 4 000.' },
+        { difficulty: 'Hard', question: 'A number is formed with 6 thousands, 4 hundreds, 3 tens and 1 unit. Write the number, then order it against 6 234 and 6 432 from smallest to biggest (include all 3 numbers), separated by commas.', answer: '6 234, 6 431, 6 432', checkMode: 'auto', correctAnswer: '623464316432', correctAnswers: ['623464316432'], explanation: 'The new number is 6 431 (6 thousands, 4 hundreds, 3 tens, 1 unit). Compare 6 431, 6 234, 6 432: hundreds digits are 4, 2, 4 — so 6 234 (2 hundreds) is smallest. Comparing 6 431 and 6 432 (same first 3 digits, 643_), compare units: 1 < 2, so 6 431 < 6 432. Final order: 6 234, 6 431, 6 432.' },
+        { difficulty: 'Hard', question: 'A number pattern counts backwards in 100s starting from 9 200: 9 200, 9 100, 9 000 … What would the 8th number in the pattern be?', answer: '8 500', checkMode: 'auto', correctAnswer: '8500', correctAnswers: ['8500', '8 500'], explanation: 'The 8th number = 9 200 − (7 × 100) = 9 200 − 700 = 8 500.' },
+        { difficulty: 'Hard', question: 'A number pattern counts forwards in 1 000s starting from 2 000: 2 000, 3 000, 4 000 … What would the 7th number in the pattern be?', answer: '8 000', checkMode: 'auto', correctAnswer: '8000', correctAnswers: ['8000', '8 000'], explanation: 'The 7th number = 2 000 + (6 × 1 000) = 2 000 + 6 000 = 8 000.' },
+        { difficulty: 'Hard', question: 'A shop has 8 095 tins of food. Round this number to the nearest 100, then explain in one sentence why the tens digit does not change the rounding decision here.', answer: 'Rounded = 8 100', checkMode: 'auto', correctAnswer: '8100', correctAnswers: ['8100', '8 100'], explanation: 'To round to the nearest 100, we look at the tens digit, which is 9 (≥ 5), so we round up: 8 095 → 8 100. The tens digit is exactly what decides the rounding — it is the deciding digit for rounding to the nearest 100.' },
+        { difficulty: 'Hard', question: 'Explain why a 3-digit number is always smaller than a 4-digit number, using 987 and 1 023 as your example.', answer: 'A 4-digit number always has a value in the thousands column, while a 3-digit number has no thousands at all (its thousands value is 0). Since 987 has 0 thousands and 1 023 has 1 thousand, 1 023 must be bigger than 987 regardless of the other digits. In general, more digits always means a bigger whole number (assuming no leading zeros).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Round 6 789 to the nearest 1 000, then write your rounded answer in expanded notation.', answer: '7 000 = 7 000 + 0 + 0 + 0', checkMode: 'auto', correctAnswer: '7000+0+0+0', correctAnswers: ['7000+0+0+0'], explanation: 'Rounding 6 789 to the nearest 1 000: hundreds digit is 7 (≥ 5), round up → 7 000. Expanded notation: 7 000 + 0 + 0 + 0.' },
       ],
-      answer: 'a) 3 450\nb) 3 750',
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You have mastered multi-step whole number problems and number lines.' },
+        { minScore: 19, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 13, message: 'Good effort! Revisit the multi-step worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
     },
-
   ],
 }

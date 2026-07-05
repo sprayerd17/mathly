@@ -153,6 +153,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'A probability scale from impossible on the left to certain on the right with equally likely in the middle and likely and unlikely marked between them',
       videoPlaceholder:
@@ -287,6 +288,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'Three experiment diagrams side by side — a die showing faces 1 to 6, a coin showing heads and tails, and a spinner divided into 4 equal sections numbered 1 to 4',
       videoPlaceholder:
@@ -394,6 +396,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'A results table showing a coin flip experiment with 20 trials columns for heads and tails tally marks and totals comparing prediction of 10 each with actual results',
       videoPlaceholder:
@@ -455,320 +458,166 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       videoPlaceholder:
         'Short video showing how to conduct a simple probability experiment record results and compare predicted outcomes with actual outcomes',
     },
   ],
-  topicPractice: [
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 — FOUNDATIONS: CERTAIN / IMPOSSIBLE / LIKELY / UNLIKELY (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      question:
-        'Classify each event using one of these words: certain, impossible, likely, unlikely, or equally likely.',
-      answer: 'a) Certain  b) Unlikely  c) Equally likely',
-      checkMode: 'auto',
-      parts: [
-        {
-          label: 'a) Rolling a number between 1 and 6 on a standard die',
-          correctAnswer: 'certain',
-          explanation:
-            'A standard die has numbers 1, 2, 3, 4, 5 and 6. Every single number on the die is between 1 and 6, so this will always happen — it is <strong style="color:#16a34a;">certain</strong>.',
-        },
-        {
-          label: 'b) It will snow in Cape Town in July',
-          correctAnswer: 'unlikely',
-          explanation:
-            'Cape Town is cold and rainy in July but snow is very rare. It is possible but does not usually happen — it is <strong style="color:#ea580c;">unlikely</strong>.',
-        },
-        {
-          label: 'c) Flipping a coin and getting tails',
-          correctAnswer: 'equally likely',
-          explanation:
-            'A fair coin has two sides — heads and tails. Each has exactly the same chance of landing face up — this is <strong style="color:#7c3aed;">equally likely</strong>.',
-        },
+      name: 'Set 1: The Language of Probability',
+      questions: [
+        { difficulty: 'Easy', question: 'The sun will rise tomorrow morning. Classify this event.', answer: 'Certain', checkMode: 'auto', correctAnswer: 'certain', correctAnswers: ['certain'], explanation: 'This happens every single day without fail, so it is certain.' },
+        { difficulty: 'Easy', question: 'It will snow in the Sahara Desert today. Classify this event.', answer: 'Impossible', checkMode: 'auto', correctAnswer: 'impossible', correctAnswers: ['impossible'], explanation: 'The Sahara is one of the hottest places on Earth, so this can never happen.' },
+        { difficulty: 'Easy', question: 'Rolling a number less than 7 on a standard die. Classify this event.', answer: 'Certain', checkMode: 'auto', correctAnswer: 'certain', correctAnswers: ['certain'], explanation: 'A die only has 1 to 6, and every one of those numbers is less than 7, so this will always happen.' },
+        { difficulty: 'Easy', question: 'Rolling a 7 on a standard die. Classify this event.', answer: 'Impossible', checkMode: 'auto', correctAnswer: 'impossible', correctAnswers: ['impossible'], explanation: 'A standard die only has the numbers 1 to 6, so rolling a 7 can never happen.' },
+        { difficulty: 'Easy', question: 'Flipping a fair coin and getting heads or tails. Classify this event.', answer: 'Certain', checkMode: 'auto', correctAnswer: 'certain', correctAnswers: ['certain'], explanation: 'A coin only has two sides. It must land on one of them, so getting heads or tails is certain.' },
+        { difficulty: 'Easy', question: 'A fish will grow legs and walk on land. Classify this event.', answer: 'Impossible', checkMode: 'auto', correctAnswer: 'impossible', correctAnswers: ['impossible'], explanation: 'Fish cannot grow legs and walk on land — this can never happen, so it is impossible.' },
+        { difficulty: 'Easy', question: 'You will roll a 6 on your very first roll of a die. Classify this event.', answer: 'Unlikely', checkMode: 'auto', correctAnswer: 'unlikely', correctAnswers: ['unlikely'], explanation: 'A die has 6 faces and only one is a 6, so the chance is small but still possible — this is unlikely.' },
+        { difficulty: 'Easy', question: 'It will be warm in summer in South Africa. Classify this event.', answer: 'Likely', checkMode: 'auto', correctAnswer: 'likely', correctAnswers: ['likely'], explanation: 'Summer is usually warm, though not every day is exactly the same, so this is likely.' },
+        { difficulty: 'Easy', question: 'Flipping a fair coin and getting tails. Classify this event.', answer: 'Equally likely', checkMode: 'auto', correctAnswer: 'equallylikely', correctAnswers: ['equallylikely'], explanation: 'A coin has two sides with exactly the same chance of landing face up, so heads and tails are equally likely.' },
+        { difficulty: 'Easy', question: 'It will snow in Cape Town in July. Classify this event.', answer: 'Unlikely', checkMode: 'auto', correctAnswer: 'unlikely', correctAnswers: ['unlikely'], explanation: 'Cape Town is cold and rainy in July but snow is very rare — it is possible but does not usually happen, so it is unlikely.' },
+        { difficulty: 'Medium', question: 'A baby will be born somewhere in South Africa today. Classify this event.', answer: 'Certain', checkMode: 'auto', correctAnswer: 'certain', correctAnswers: ['certain'], explanation: 'Babies are born every day across South Africa without fail, so this is guaranteed to happen — it is certain.' },
+        { difficulty: 'Medium', question: 'Picking a red card from a standard deck of 52 playing cards (26 red, 26 black). Classify this event.', answer: 'Equally likely', checkMode: 'auto', correctAnswer: 'equallylikely', correctAnswers: ['equallylikely'], explanation: 'Exactly half the cards (26 out of 52) are red, giving the same chance as drawing a non-red card — this is equally likely.' },
+        { difficulty: 'Medium', question: 'Rolling an odd number on a standard die (odd numbers: 1, 3, 5; even numbers: 2, 4, 6). Classify this event.', answer: 'Equally likely', checkMode: 'auto', correctAnswer: 'equallylikely', correctAnswers: ['equallylikely'], explanation: 'There are 3 odd numbers and 3 even numbers out of 6, so rolling odd or even has exactly the same chance — equally likely.' },
+        { difficulty: 'Medium', question: 'A coin will land on its edge and balance there. Classify this event.', answer: 'Impossible', checkMode: 'auto', correctAnswer: 'impossible', correctAnswers: ['impossible'], explanation: 'A flipped coin cannot balance perfectly on its edge — for this experiment we treat it as something that cannot happen, so it is impossible.' },
+        { difficulty: 'Medium', question: 'Picking a blue marble from a bag containing 9 blue marbles and 1 red marble. Classify this event.', answer: 'Likely', checkMode: 'auto', correctAnswer: 'likely', correctAnswers: ['likely'], explanation: '9 out of 10 marbles are blue, so picking blue will probably happen — it is likely, though not 100% certain.' },
+        { difficulty: 'Medium', question: 'Picking a red marble from a bag containing 9 blue marbles and 1 red marble. Classify this event.', answer: 'Unlikely', checkMode: 'auto', correctAnswer: 'unlikely', correctAnswers: ['unlikely'], explanation: 'Only 1 out of 10 marbles is red, so picking red probably will not happen, but it is still possible — it is unlikely.' },
+        { difficulty: 'Medium', question: 'Every learner in a Grade 4 class is above the age of 100 years. Classify this event.', answer: 'Impossible', checkMode: 'auto', correctAnswer: 'impossible', correctAnswers: ['impossible'], explanation: 'Grade 4 learners are children, so none can be over 100 years old — this can never happen.' },
+        { difficulty: 'Medium', question: 'Spinning a spinner with 2 equal sections (red and blue) and landing on red. Classify this event.', answer: 'Equally likely', checkMode: 'auto', correctAnswer: 'equallylikely', correctAnswers: ['equallylikely'], explanation: 'The 2 sections are equal in size, so red and blue have exactly the same chance — equally likely.' },
+        { difficulty: 'Medium', question: 'Rolling a number greater than 10 on a standard die. Classify this event.', answer: 'Impossible', checkMode: 'auto', correctAnswer: 'impossible', correctAnswers: ['impossible'], explanation: 'A standard die only goes up to 6, so no number greater than 10 can ever be rolled.' },
+        { difficulty: 'Hard', question: 'Lerato says picking a yellow marble from a bag with 1 yellow marble and 19 red marbles is impossible. Amahle says it is unlikely. Who is correct?', answer: 'Amahle', checkMode: 'auto', correctAnswer: 'amahle', correctAnswers: ['amahle'], explanation: 'There is 1 yellow marble in the bag, so picking it is possible, just not very probable. "Impossible" means it can never happen, which is wrong here — Amahle is correct that it is unlikely.' },
+        { difficulty: 'Hard', question: 'Thabo says rolling an odd number on a die is certain. Sipho says it is equally likely (compared with rolling an even number). Who is correct?', answer: 'Sipho', checkMode: 'auto', correctAnswer: 'sipho', correctAnswers: ['sipho'], explanation: 'A die has 3 odd numbers and 3 even numbers out of 6, so odd and even are equally likely. "Certain" would mean it always happens, but sometimes you roll an even number instead, so Sipho is correct.' },
+        { difficulty: 'Hard', question: 'A bag has 5 red marbles and 0 blue marbles. Is picking a blue marble certain, impossible, likely or unlikely?', answer: 'Impossible', checkMode: 'auto', correctAnswer: 'impossible', correctAnswers: ['impossible'], explanation: 'There are no blue marbles in the bag at all, so it can never be picked — this is impossible.' },
+        { difficulty: 'Hard', question: 'A bag has 0 red marbles and 8 blue marbles. Is picking a blue marble certain, impossible, likely or unlikely?', answer: 'Certain', checkMode: 'auto', correctAnswer: 'certain', correctAnswers: ['certain'], explanation: 'Every single marble in the bag is blue, so picking blue is guaranteed — this is certain.' },
+        { difficulty: 'Hard', question: 'A spinner has 10 equal sections: 1 is green and 9 are orange. Is landing on green certain, impossible, likely or unlikely?', answer: 'Unlikely', checkMode: 'auto', correctAnswer: 'unlikely', correctAnswers: ['unlikely'], explanation: 'Only 1 out of 10 sections is green, so landing on it is possible but probably will not happen — it is unlikely.' },
+        { difficulty: 'Hard', question: 'Classify each of these using certain, impossible, likely, unlikely or equally likely, then join your three answers with commas in this order: (1) touching the sky by jumping, (2) a school day tomorrow being a Tuesday or a Wednesday if today is Monday, (3) picking a black sock from a drawer with 6 black socks and 6 white socks.', answer: 'Impossible, Certain, Equally likely', checkMode: 'auto', correctAnswer: 'impossiblecertainequallylikely', correctAnswers: ['impossiblecertainequallylikely'], explanation: '(1) You cannot touch the sky by jumping — impossible. (2) If today is Monday, tomorrow must be Tuesday, so "Tuesday or Wednesday" is guaranteed — certain. (3) 6 black and 6 white socks give the exact same chance for each colour — equally likely.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You know the language of probability inside and out.' },
+        { minScore: 19, message: 'Great work! You can confidently classify events — review any missed questions.' },
+        { minScore: 13, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 — LISTING OUTCOMES OF SIMPLE EXPERIMENTS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium',
-      question:
-        'Classify each event and explain your reasoning.\na) A baby will be born somewhere in South Africa today\nb) You will roll a 6 on your first roll of a die\nc) Picking a red card from a standard deck of cards',
-      answer:
-        'a) Certain — babies are born every day across South Africa without fail, so this is guaranteed to happen.\nb) Unlikely — a die has 6 possible outcomes and only one of them is 6, so the chance is small but not impossible.\nc) Equally likely — exactly half the cards in a standard deck (26 out of 52) are red, giving the same chance as drawing a non-red card.',
-      checkMode: 'self',
-    },
-    {
-      difficulty: 'Hard',
-      question:
-        'Thabo says rolling an odd number on a die is certain. Lerato says it is equally likely. Who is correct and why?',
-      answer:
-        'Lerato is correct. A standard die has 6 numbers: 1, 2, 3, 4, 5, 6. There are 3 odd numbers (1, 3, 5) and 3 even numbers (2, 4, 6). Rolling odd or even each has 3 chances out of 6, so the two outcomes are equally likely. "Certain" means the event will always happen — rolling an odd number does not always happen, so it cannot be certain.',
-      checkMode: 'self',
-    },
-    {
-      difficulty: 'Easy',
-      question: 'List all possible outcomes when flipping a coin.',
-      answer: 'Heads and Tails',
-      checkMode: 'auto',
-      correctAnswer: 'headstails',
-      correctAnswers: ['headstails', 'headsandtails'],
-      explanation:
-        'A coin has exactly two sides. The two possible outcomes are <strong style="color:#1e40af;">Heads</strong> and <strong style="color:#1e40af;">Tails</strong> — there are no other results.',
-    },
-    {
-      difficulty: 'Medium',
-      question: 'A spinner has 5 equal sections numbered 1 to 5.',
-      answer: 'a) 1, 2, 3, 4, 5  b) 5  c) 1, 3, 5',
-      checkMode: 'auto',
-      parts: [
-        {
-          label: 'a) List all possible outcomes.',
-          correctAnswer: '12345',
-          explanation:
-            'The spinner has 5 sections. The possible outcomes are <strong style="color:#1e40af;">1, 2, 3, 4, 5</strong>.',
-        },
-        {
-          label: 'b) How many total outcomes are there?',
-          correctAnswer: '5',
-          explanation:
-            'There are 5 sections on the spinner, so there are <strong style="color:#dc2626;">5 total outcomes</strong>.',
-        },
-        {
-          label: 'c) List the favourable outcomes for spinning an odd number.',
-          correctAnswer: '135',
-          explanation:
-            'Odd numbers on the spinner are <strong style="color:#16a34a;">1, 3 and 5</strong> — these are the 3 favourable outcomes.',
-        },
+      name: 'Set 2: Listing Outcomes',
+      questions: [
+        { difficulty: 'Easy', question: 'List all possible outcomes when flipping a coin.', answer: 'Heads, Tails', checkMode: 'auto', correctAnswer: 'headstails', correctAnswers: ['headstails', 'headsandtails'], explanation: 'A coin has exactly two sides. The two possible outcomes are Heads and Tails — there are no other results.' },
+        { difficulty: 'Easy', question: 'How many total outcomes are there when flipping a coin?', answer: '2', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2'], explanation: 'A coin has 2 sides, so there are 2 total outcomes.' },
+        { difficulty: 'Easy', question: 'List all possible outcomes when rolling a standard die.', answer: '1, 2, 3, 4, 5, 6', checkMode: 'auto', correctAnswer: '123456', correctAnswers: ['123456'], explanation: 'A standard die has 6 faces numbered 1 to 6, so those are the 6 possible outcomes.' },
+        { difficulty: 'Easy', question: 'How many total outcomes are there when rolling a standard die?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'A standard die has 6 faces, so there are 6 total outcomes.' },
+        { difficulty: 'Easy', question: 'A spinner has 3 equal sections numbered 1, 2 and 3. List all possible outcomes.', answer: '1, 2, 3', checkMode: 'auto', correctAnswer: '123', correctAnswers: ['123'], explanation: 'The spinner has 3 sections, so the outcomes are 1, 2 and 3.' },
+        { difficulty: 'Easy', question: 'A spinner has 3 equal sections numbered 1, 2 and 3. How many total outcomes are there?', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3'], explanation: 'There are 3 sections on the spinner, so there are 3 total outcomes.' },
+        { difficulty: 'Easy', question: 'A bag has 4 red marbles and 3 blue marbles. List all possible colour outcomes when picking one marble.', answer: 'Red, Blue', checkMode: 'auto', correctAnswer: 'redblue', correctAnswers: ['redblue', 'blueRed', 'bluered'], explanation: 'The bag has two colours of marble, so the outcomes are Red and Blue.' },
+        { difficulty: 'Easy', question: 'A bag has 4 red marbles and 3 blue marbles. How many total marbles are in the bag?', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: '4 red + 3 blue = 7 total marbles.' },
+        { difficulty: 'Medium', question: 'A spinner has 4 equal sections numbered 1 to 4. List the favourable outcomes for landing on an even number.', answer: '2, 4', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24'], explanation: 'Even numbers on the spinner are 2 and 4, so those are the 2 favourable outcomes.' },
+        { difficulty: 'Medium', question: 'A spinner has 4 equal sections numbered 1 to 4. List the favourable outcomes for landing on an odd number.', answer: '1, 3', checkMode: 'auto', correctAnswer: '13', correctAnswers: ['13'], explanation: 'Odd numbers on the spinner are 1 and 3, so those are the 2 favourable outcomes.' },
+        { difficulty: 'Medium', question: 'A spinner has 5 equal sections numbered 1 to 5. List all possible outcomes.', answer: '1, 2, 3, 4, 5', checkMode: 'auto', correctAnswer: '12345', correctAnswers: ['12345'], explanation: 'The spinner has 5 sections, so the outcomes are 1, 2, 3, 4 and 5.' },
+        { difficulty: 'Medium', question: 'A spinner has 5 equal sections numbered 1 to 5. List the favourable outcomes for spinning an odd number.', answer: '1, 3, 5', checkMode: 'auto', correctAnswer: '135', correctAnswers: ['135'], explanation: 'Odd numbers on the spinner are 1, 3 and 5 — these are the 3 favourable outcomes.' },
+        { difficulty: 'Medium', question: 'A bag contains 2 red, 3 blue and 1 yellow marble. List all possible colour outcomes when picking one marble.', answer: 'Red, Blue, Yellow', checkMode: 'auto', correctAnswer: 'redblueyellow', correctAnswers: ['redblueyellow', 'blueredyellow', 'redyellowblue', 'yellowredblue', 'blueyellowred', 'yellowbluered'], explanation: 'The bag has three colours of marble, so the outcomes are Red, Blue and Yellow.' },
+        { difficulty: 'Medium', question: 'A bag contains 2 red, 3 blue and 1 yellow marble. How many total marbles are in the bag?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: '2 red + 3 blue + 1 yellow = 6 total marbles.' },
+        { difficulty: 'Medium', question: 'A bag contains 2 red, 3 blue and 1 yellow marble. How many favourable outcomes are there for picking blue?', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3'], explanation: 'There are 3 blue marbles in the bag, so there are 3 favourable outcomes for picking blue.' },
+        { difficulty: 'Medium', question: 'A bag contains 2 red, 3 blue and 1 yellow marble. How many favourable outcomes are there for picking red?', answer: '2', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2'], explanation: 'There are 2 red marbles in the bag, so there are 2 favourable outcomes for picking red.' },
+        { difficulty: 'Medium', question: 'A die is rolled once. List the favourable outcomes for the event "rolling a number greater than 4".', answer: '5, 6', checkMode: 'auto', correctAnswer: '56', correctAnswers: ['56'], explanation: 'Numbers greater than 4 on a die are 5 and 6 — these are the 2 favourable outcomes.' },
+        { difficulty: 'Medium', question: 'A die is rolled once. List the favourable outcomes for the event "rolling a multiple of 3".', answer: '3, 6', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36'], explanation: 'Multiples of 3 on a die (from 1 to 6) are 3 and 6 — these are the 2 favourable outcomes.' },
+        { difficulty: 'Medium', question: 'A spinner has 6 equal sections numbered 1 to 6. How many total outcomes are there?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'There are 6 sections on the spinner, so there are 6 total outcomes.' },
+        { difficulty: 'Medium', question: 'A spinner is coloured with 4 equal sections: red, blue, green and yellow. List all possible outcomes.', answer: 'Red, Blue, Green, Yellow', checkMode: 'auto', correctAnswer: 'redbluegreenyellow', correctAnswers: ['redbluegreenyellow'], explanation: 'The spinner has 4 different coloured sections, so the outcomes are Red, Blue, Green and Yellow.' },
+        { difficulty: 'Hard', question: 'A bag has 6 marbles: 2 red and 4 blue. List the favourable outcomes (by colour and count) for picking red, written as "colour: count".', answer: 'red: 2', checkMode: 'auto', correctAnswer: 'red:2', correctAnswers: ['red:2', 'red2'], explanation: 'There are 2 red marbles out of the 6 total, so the favourable outcome for red is "red: 2".' },
+        { difficulty: 'Hard', question: 'A spinner has 8 equal sections numbered 1 to 8. List the favourable outcomes for landing on a number less than 3.', answer: '1, 2', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'Numbers less than 3 on the spinner are 1 and 2 — these are the 2 favourable outcomes.' },
+        { difficulty: 'Hard', question: 'A spinner has 8 equal sections numbered 1 to 8. How many favourable outcomes are there for landing on an even number?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4'], explanation: 'Even numbers from 1 to 8 are 2, 4, 6, 8 — that is 4 favourable outcomes.' },
+        { difficulty: 'Hard', question: 'Two coins are flipped together, one after the other. List all 4 possible outcomes as pairs (use H for heads and T for tails), separated by commas.', answer: 'HH, HT, TH, TT', checkMode: 'auto', correctAnswer: 'hhhtthtt', correctAnswers: ['hhhtthtt'], explanation: 'Each coin can be H or T. The first coin can be H or T, and for each of those the second coin can also be H or T, giving 4 combinations: HH, HT, TH, TT.' },
+        { difficulty: 'Hard', question: 'A bag has 10 marbles in total: some red and some blue. If there are 6 favourable outcomes for picking red, how many blue marbles are in the bag?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4'], explanation: 'Total marbles = 10. Red marbles = 6. Blue marbles = 10 − 6 = 4.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Excellent! You can list outcomes and favourable outcomes with confidence.' },
+        { minScore: 19, message: 'Well done! You understand outcomes well — check over any mistakes.' },
+        { minScore: 13, message: 'Good try! Go back over listing outcomes and have another go.' },
+        { minScore: 0, message: 'Keep practising — review the worked examples and try this set again.' },
       ],
     },
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 — REAL-WORLD PROBABILITY WORD PROBLEMS / PREDICTIONS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      question: 'A bag contains 2 red, 3 blue and 1 yellow marble.',
-      answer: 'a) Red, Blue, Yellow  b) 6  c) 3',
-      checkMode: 'auto',
-      parts: [
-        {
-          label: 'a) List all possible colour outcomes when picking one marble.',
-          correctAnswer: 'redblueyellow',
-          correctAnswers: [
-            'redblueyellow',
-            'blueredyellow',
-            'redyellowblue',
-            'yellowredblue',
-            'blueyellowred',
-            'yellowbluered',
-          ],
-          explanation:
-            'The bag has three colours of marble. The possible outcomes are <strong style="color:#1e40af;">Red, Blue and Yellow</strong>.',
-        },
-        {
-          label: 'b) How many total marbles are in the bag?',
-          correctAnswer: '6',
-          explanation:
-            '2 red + 3 blue + 1 yellow = <strong style="color:#dc2626;">6 total marbles</strong>.',
-        },
-        {
-          label: 'c) How many favourable outcomes are there for picking blue?',
-          correctAnswer: '3',
-          explanation:
-            'There are <strong style="color:#16a34a;">3 blue marbles</strong> in the bag, so there are 3 favourable outcomes for picking blue.',
-        },
+      name: 'Set 3: Predictions and Real-World Problems',
+      questions: [
+        { difficulty: 'Easy', question: 'A die is rolled 12 times. How many times would you predict rolling a 2?', answer: '2 times', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', '2times'], explanation: 'A die has 6 equal outcomes. Rolling a 2 is 1 out of 6. 12 ÷ 6 = 2 times.' },
+        { difficulty: 'Easy', question: 'A die is rolled 18 times. How many times would you predict rolling a 3?', answer: '3 times', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3times'], explanation: 'A die has 6 equal outcomes. Rolling a 3 is 1 out of 6. 18 ÷ 6 = 3 times.' },
+        { difficulty: 'Easy', question: 'A coin is flipped 40 times. How many times would you predict getting heads?', answer: '20 times', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20times'], explanation: 'Heads is 1 out of 2 outcomes. Half of 40 = 20 times.' },
+        { difficulty: 'Easy', question: 'A coin is flipped 60 times. How many times would you predict getting tails?', answer: '30 times', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30times'], explanation: 'Tails is 1 out of 2 outcomes. Half of 60 = 30 times.' },
+        { difficulty: 'Easy', question: 'A coin is flipped 16 times. How many times would you predict getting heads?', answer: '8 times', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8times'], explanation: 'Heads is 1 out of 2 outcomes. Half of 16 = 8 times.' },
+        { difficulty: 'Medium', question: 'A spinner has 4 equal sections coloured red, blue, green and yellow. It is spun 24 times. How many times would you predict landing on red?', answer: '6 times', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6times'], explanation: 'Red is 1 out of 4 sections. 24 ÷ 4 = 6 times.' },
+        { difficulty: 'Medium', question: 'A spinner has 6 equal sections numbered 1 to 6. It is spun 30 times. How many times would you predict landing on the number 4?', answer: '5 times', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5times'], explanation: 'Landing on 4 is 1 out of 6 sections. 30 ÷ 6 = 5 times.' },
+        { difficulty: 'Medium', question: 'A spinner has 3 equal sections coloured red, blue and green. It is spun 27 times. How many times would you predict landing on blue?', answer: '9 times', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9times'], explanation: 'Blue is 1 out of 3 sections. 27 ÷ 3 = 9 times.' },
+        { difficulty: 'Medium', question: 'A bag has 3 red marbles and 2 blue marbles. You pick a marble 25 times, replacing it each time. How many times would you predict picking red?', answer: '15 times', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15times'], explanation: 'Red is 3 out of 5 marbles. 3/5 × 25 = 15 times.' },
+        { difficulty: 'Medium', question: 'A bag has 3 red marbles and 2 blue marbles. You pick a marble 25 times, replacing it each time. How many times would you predict picking blue?', answer: '10 times', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10times'], explanation: 'Blue is 2 out of 5 marbles. 2/5 × 25 = 10 times.' },
+        { difficulty: 'Medium', question: 'A bag has 4 red marbles and 1 blue marble. You pick a marble 40 times, replacing it each time. How many times would you predict picking red?', answer: '32 times', checkMode: 'auto', correctAnswer: '32', correctAnswers: ['32', '32times'], explanation: 'Red is 4 out of 5 marbles. 4/5 × 40 = 32 times.' },
+        { difficulty: 'Medium', question: 'A bag has 2 red marbles and 3 blue marbles. You pick a marble 30 times, replacing it each time. How many times would you predict picking blue?', answer: '18 times', checkMode: 'auto', correctAnswer: '18', correctAnswers: ['18', '18times'], explanation: 'Blue is 3 out of 5 marbles. 3/5 × 30 = 18 times.' },
+        { difficulty: 'Medium', question: 'A bag has 2 red marbles and 3 blue marbles. You pick a marble 30 times, replacing it each time. How many times would you predict picking red?', answer: '12 times', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12times'], explanation: 'Red is 2 out of 5 marbles. 2/5 × 30 = 12 times.' },
+        { difficulty: 'Medium', question: 'A die is rolled 24 times. How many times would you predict rolling an even number (2, 4 or 6)?', answer: '12 times', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12times'], explanation: 'Even numbers are 3 out of 6 outcomes (half). Half of 24 = 12 times.' },
+        { difficulty: 'Medium', question: 'A die is rolled 36 times. How many times would you predict rolling an odd number (1, 3 or 5)?', answer: '18 times', checkMode: 'auto', correctAnswer: '18', correctAnswers: ['18', '18times'], explanation: 'Odd numbers are 3 out of 6 outcomes (half). Half of 36 = 18 times.' },
+        { difficulty: 'Medium', question: 'Sipho predicts he will roll an even number 10 times out of 20 rolls. He actually rolls an even number 12 times. How many more even numbers did he roll than predicted?', answer: '2 more', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', '2more'], explanation: '12 (actual) − 10 (predicted) = 2 more than predicted.' },
+        { difficulty: 'Medium', question: 'Lerato predicts she will flip heads 20 times out of 40 flips. She actually flips heads 22 times. How many more heads did she get than predicted?', answer: '2 more', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', '2more'], explanation: '22 (actual) − 20 (predicted) = 2 more than predicted.' },
+        { difficulty: 'Hard', question: 'A spinner has 5 equal sections numbered 1 to 5. It is spun 45 times. How many times would you predict landing on an odd number (1, 3 or 5)?', answer: '27 times', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27', '27times'], explanation: 'Odd numbers are 3 out of 5 sections. 3/5 × 45 = 27 times.' },
+        { difficulty: 'Hard', question: 'A spinner has 5 equal sections numbered 1 to 5. It is spun 45 times. How many times would you predict landing on an even number (2 or 4)?', answer: '18 times', checkMode: 'auto', correctAnswer: '18', correctAnswers: ['18', '18times'], explanation: 'Even numbers are 2 out of 5 sections. 2/5 × 45 = 18 times.' },
+        { difficulty: 'Hard', question: 'A die is rolled 30 times. How many times would you predict rolling a number less than 3 (that is, 1 or 2)?', answer: '10 times', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10times'], explanation: 'Numbers less than 3 are 2 out of 6 outcomes. 2/6 × 30 = 10 times.' },
+        { difficulty: 'Hard', question: 'A die is rolled 42 times. How many times would you predict rolling a number greater than 4 (that is, 5 or 6)?', answer: '14 times', checkMode: 'auto', correctAnswer: '14', correctAnswers: ['14', '14times'], explanation: 'Numbers greater than 4 are 2 out of 6 outcomes. 2/6 × 42 = 14 times.' },
+        { difficulty: 'Hard', question: 'Amahle flips a coin 50 times and gets 28 heads and 22 tails. What was the predicted number of heads?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25times'], explanation: 'Heads is 1 out of 2 outcomes. Half of 50 = 25 heads.' },
+        { difficulty: 'Hard', question: 'Amahle flips a coin 50 times and gets 28 heads and 22 tails. How many more heads than predicted did she get?', answer: '3 more', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3more'], explanation: '28 (actual) − 25 (predicted) = 3 more heads than predicted.' },
+        { difficulty: 'Hard', question: 'A spinner has 4 equal sections coloured red, blue, green and yellow. It is spun 40 times. If red comes up 13 times, what is the difference between the actual and predicted number of reds?', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3'], explanation: 'Predicted red = 1/4 × 40 = 10. Actual = 13. Difference = 13 − 10 = 3.' },
+        { difficulty: 'Hard', question: 'A bag has 3 red marbles and 1 blue marble. If you picked a marble 100 times (replacing it each time), how many times would you predict picking red?', answer: '75 times', checkMode: 'auto', correctAnswer: '75', correctAnswers: ['75', '75times'], explanation: 'Red is 3 out of 4 marbles. 3/4 × 100 = 75 times.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Fantastic! You can predict outcomes and compare them to real results with confidence.' },
+        { minScore: 19, message: 'Great job! You understand predictions well — look over any missed questions.' },
+        { minScore: 13, message: 'Good effort! Review how to calculate predictions and try again.' },
+        { minScore: 0, message: 'Keep practising — work through the study guide again before retrying.' },
       ],
     },
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — MULTI-STEP / COMBINED + SELF-CHECK REASONING (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      question: 'A bag contains 2 red, 3 blue and 1 yellow marble.',
-      answer:
-        'More likely — there are 3 blue marbles but only 2 red marbles. Blue has 3 chances out of 6 while red has only 2 chances out of 6, so picking blue is more likely than picking red.',
-      checkMode: 'self',
-      parts: [
-        {
-          label: 'd) Is picking blue more or less likely than picking red? Explain your answer.',
-          correctAnswer: '',
-          explanation: '',
-        },
+      name: 'Set 4: Multi-Step Problems and Reasoning',
+      questions: [
+        { difficulty: 'Easy', question: 'Classify this event and explain your reasoning: "Picking a black sock from a drawer with 10 black socks and 0 white socks."', answer: 'Certain — every sock in the drawer is black, so picking a black sock is guaranteed to happen every single time.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Classify this event and explain your reasoning: "Rolling a number between 1 and 6 (inclusive) on a standard die."', answer: 'Certain — a standard die only has the numbers 1 to 6, so every possible roll is between 1 and 6.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A die is rolled 60 times. How many times would you predict rolling a specific number, for example a 5?', answer: '10 times', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10times'], explanation: 'Rolling a specific number is 1 out of 6 outcomes. 60 ÷ 6 = 10 times.' },
+        { difficulty: 'Medium', question: 'A die is rolled 48 times. How many times would you predict rolling a multiple of 3 (that is, 3 or 6)?', answer: '16 times', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16times'], explanation: 'Multiples of 3 are 2 out of 6 outcomes. 2/6 × 48 = 16 times.' },
+        { difficulty: 'Medium', question: 'A spinner has 8 equal sections numbered 1 to 8. It is spun 56 times. How many times would you predict landing on a specific number, for example a 6?', answer: '7 times', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', '7times'], explanation: 'Landing on a specific number is 1 out of 8 outcomes. 56 ÷ 8 = 7 times.' },
+        { difficulty: 'Medium', question: 'A bag has 2 red and 4 blue marbles (6 total). You pick a marble 45 times, replacing it each time. How many times would you predict picking blue?', answer: '30 times', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30times'], explanation: 'Blue is 4 out of 6 marbles. 4/6 × 45 = 30 times.' },
+        { difficulty: 'Medium', question: 'A bag has 2 red and 4 blue marbles (6 total). You pick a marble 45 times, replacing it each time. How many times would you predict picking red?', answer: '15 times', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15times'], explanation: 'Red is 2 out of 6 marbles. 2/6 × 45 = 15 times.' },
+        { difficulty: 'Medium', question: 'A bag has 5 red, 3 blue and 2 yellow marbles (10 total). You pick a marble 20 times, replacing it each time. How many times would you predict picking yellow?', answer: '4 times', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4times'], explanation: 'Yellow is 2 out of 10 marbles. 2/10 × 20 = 4 times.' },
+        { difficulty: 'Medium', question: 'If you actually get 18 heads after 30 coin flips (predicted 15), is that a reasonable result? Explain your answer.', answer: 'Yes — 18 is reasonably close to the prediction of 15. The difference is only 3, which is small compared to 30 flips. Actual results vary each time an experiment is done.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'You pick red 16 times out of 20 picks from a bag with 3 red and 1 blue marble (predicted 15). Is this close to your prediction? Explain your answer.', answer: 'Yes — 16 is very close to the prediction of 15. The difference is only 1, which is small. Actual results rarely match predictions exactly; a small variation like this is completely normal.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A bag has 5 red and 3 blue marbles (8 total). You pick a marble 40 times, replacing it each time. First find the fraction of picks you would predict to be blue, then how many times out of 40 you would predict picking blue.', answer: '3/8, then 15 times', checkMode: 'auto', correctAnswer: '3/815', correctAnswers: ['3/815'], explanation: 'Blue is 3 out of 8 marbles, so the fraction is 3/8. Then 3/8 × 40 = 15 times.' },
+        { difficulty: 'Hard', question: 'A spinner has 4 equal sections coloured red, blue, green and yellow. It is spun 40 times. How many times would you predict landing on blue or green combined?', answer: '20 times', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20times'], explanation: 'Blue and green together are 2 out of 4 sections (half). 1/2 × 40 = 20 times.' },
+        { difficulty: 'Hard', question: 'Lerato flips a coin 50 times and gets 28 heads and 22 tails. If she flips the coin 50 more times, would you expect exactly 25 heads again? Explain your answer.', answer: 'No — actual results vary every time you repeat an experiment. Lerato might get 23, 26, or 28 heads on the next 50 flips. There is no guarantee of exactly 25.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'What happens to probability results as you do more and more trials? Explain your answer.', answer: 'The more trials you do, the closer the actual results get to the predicted probability. With thousands of flips, the proportion of heads would get very close to 1/2.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A bag has 2 red and 3 blue marbles (5 total). You pick a marble 30 times, replacing it each time, and get 19 blue picks. What was the predicted number of blue picks, and what is the difference between actual and predicted?', answer: '18 predicted, difference of 1', checkMode: 'auto', correctAnswer: '181', correctAnswers: ['181'], explanation: 'Predicted blue = 3/5 × 30 = 18. Actual = 19. Difference = 19 − 18 = 1.' },
+        { difficulty: 'Hard', question: 'A die is rolled 20 times. Would you predict rolling an odd number (1, 3 or 5) about 10 times? Explain your reasoning using fractions.', answer: 'Yes — odd numbers are 3 out of 6 outcomes on a die, which is exactly half. Half of 20 rolls = 10, so predicting 10 odd numbers is reasonable.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A spinner has 6 equal sections coloured 2 red, 2 blue and 2 green. It is spun 54 times. How many times would you predict landing on green?', answer: '18 times', checkMode: 'auto', correctAnswer: '18', correctAnswers: ['18', '18times'], explanation: 'Green is 2 out of 6 sections. 2/6 × 54 = 18 times.' },
+        { difficulty: 'Hard', question: 'A die is rolled 54 times. How many times would you predict rolling an even number, and how does this compare to rolling an odd number?', answer: '27 times for even, and the same 27 times for odd, since even and odd numbers are equally likely on a die.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'You spin a spinner with 4 equal sections (red, blue, green, yellow) 40 times and land on red 6 times. Was your result close to the prediction? Give the predicted value, the actual value, and the difference, separated by commas.', answer: '10, 6, 4', checkMode: 'auto', correctAnswer: '1064', correctAnswers: ['1064'], explanation: 'Predicted red = 1/4 × 40 = 10. Actual = 6. Difference = 10 − 6 = 4.' },
+        { difficulty: 'Hard', question: 'A bag has 1 red and 9 blue marbles (10 total). You pick a marble 50 times, replacing it each time. Is picking red likely or unlikely, and how many times out of 50 would you predict picking red?', answer: 'Unlikely; 5 times', checkMode: 'auto', correctAnswer: 'unlikely5', correctAnswers: ['unlikely5'], explanation: 'Only 1 out of 10 marbles is red, so it is unlikely. Predicted red = 1/10 × 50 = 5 times.' },
+        { difficulty: 'Hard', question: 'A die is rolled 18 times and a 6 is rolled 5 times. Compare the actual result to the prediction and explain whether this is reasonable.', answer: 'Predicted 6s = 1/6 × 18 = 3. Actual = 5. The difference is 2, which is a small variation for only 18 rolls, so this is a reasonable result even though it is a bit higher than predicted.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A spinner has 5 equal sections numbered 1 to 5. It is spun 100 times. How many times would you predict landing on the number 3?', answer: '20 times', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20times'], explanation: 'Landing on a specific number is 1 out of 5 outcomes. 1/5 × 100 = 20 times.' },
+        { difficulty: 'Hard', question: 'Two friends each roll a die 30 times. Thabo predicts 15 even numbers and rolls 17. Sipho predicts 15 even numbers and rolls 9. Whose actual result is closer to the prediction, and by how much?', answer: 'Thabo — his difference is 17 − 15 = 2, while Sipho\'s difference is 15 − 9 = 6. Thabo\'s result is closer by 4.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A bag has 3 red, 3 blue and 4 yellow marbles (10 total). Explain which colour is most likely to be picked and which is least likely, giving the number of favourable outcomes for each colour.', answer: 'Yellow is most likely with 4 favourable outcomes out of 10. Red and blue are equally likely to each other, each with 3 favourable outcomes out of 10, making them less likely than yellow.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A bag has 4 red, 2 blue and 2 yellow marbles (8 total). You pick a marble 32 times, replacing it each time. How many times would you predict picking red or yellow combined?', answer: '24 times', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24times'], explanation: 'Red or yellow together are 4 + 2 = 6 out of 8 marbles. 6/8 × 32 = 24 times.' },
       ],
-    },
-    {
-      difficulty: 'Easy',
-      question: 'A die is rolled 12 times. How many times would you predict rolling a 2?',
-      answer: '2 times',
-      checkMode: 'auto',
-      correctAnswer: '2',
-      correctAnswers: ['2', '2times'],
-      explanation:
-        'A die has 6 equal outcomes. Rolling a 2 is <strong>1 out of 6</strong>. 12 ÷ 6 = <strong style="color:#ea580c;">2 times</strong>.',
-    },
-    {
-      difficulty: 'Medium',
-      question: 'A coin is flipped 30 times.',
-      answer: 'a) 15 times  b) 15 times',
-      checkMode: 'auto',
-      parts: [
-        {
-          label: 'a) How many times would you predict getting heads?',
-          correctAnswer: '15',
-          correctAnswers: ['15', '15times'],
-          explanation:
-            'Heads is 1 out of 2 outcomes. Half of 30 = <strong style="color:#ea580c;">15 times</strong>.',
-        },
-        {
-          label: 'b) How many times would you predict getting tails?',
-          correctAnswer: '15',
-          correctAnswers: ['15', '15times'],
-          explanation:
-            'Tails is equally likely to heads. Half of 30 = <strong style="color:#ea580c;">15 times</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium',
-      question: 'A coin is flipped 30 times.',
-      answer:
-        'Yes — 18 is reasonably close to the prediction of 15. The difference is only 3, which is small compared to 30 flips. Actual results vary each time an experiment is done.',
-      checkMode: 'self',
-      parts: [
-        {
-          label: 'c) If you actually get 18 heads, is that a reasonable result? Explain.',
-          correctAnswer: '',
-          explanation: '',
-        },
-      ],
-    },
-    {
-      difficulty: 'Hard',
-      question:
-        'A bag has 3 red and 1 blue marble. You pick a marble 20 times, replacing it each time.',
-      answer: 'a) 3/4  b) 15 times',
-      checkMode: 'auto',
-      parts: [
-        {
-          label: 'a) What fraction of picks would you predict to be red?',
-          correctAnswer: '3/4',
-          explanation:
-            'There are 3 red out of 4 total marbles. The fraction for red is <strong style="color:#16a34a;">3/4</strong>.',
-        },
-        {
-          label: 'b) How many times out of 20 would you predict picking red?',
-          correctAnswer: '15',
-          correctAnswers: ['15', '15times'],
-          explanation:
-            '3/4 × 20 = <strong style="color:#ea580c;">15 times</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Hard',
-      question:
-        'A bag has 3 red and 1 blue marble. You pick a marble 20 times, replacing it each time.',
-      answer:
-        'Yes — 16 is very close to the prediction of 15. The difference is only 1, which is small. Actual results rarely match predictions exactly; a small variation like this is completely normal.',
-      checkMode: 'self',
-      parts: [
-        {
-          label: 'c) You actually pick red 16 times. Is this close to your prediction? Explain.',
-          correctAnswer: '',
-          explanation: '',
-        },
-      ],
-    },
-    {
-      difficulty: 'Hard',
-      question:
-        'A bag has 3 red and 1 blue marble. You pick a marble 20 times, replacing it each time.',
-      answer: '75 times',
-      checkMode: 'auto',
-      correctAnswer: '75',
-      correctAnswers: ['75', '75times'],
-      explanation:
-        '3/4 × 100 = <strong style="color:#ea580c;">75 times</strong>. The same fraction applies — 3 out of every 4 picks should be red.',
-    },
-    {
-      difficulty: 'Easy',
-      question:
-        'Sipho predicts he will roll an even number 10 times out of 20 rolls. He actually rolls an even number 12 times. How many more even numbers did he roll than predicted?',
-      answer: '2 more',
-      checkMode: 'auto',
-      correctAnswer: '2',
-      correctAnswers: ['2', '2more'],
-      explanation:
-        '12 (actual) − 10 (predicted) = <strong style="color:#dc2626;">2 more</strong> than predicted.',
-    },
-    {
-      difficulty: 'Medium',
-      question:
-        'A spinner has 4 equal sections coloured red, blue, green and yellow. It is spun 40 times.',
-      answer: 'a) 10 times  b) 20 times',
-      checkMode: 'auto',
-      parts: [
-        {
-          label: 'a) How many times would you predict landing on red?',
-          correctAnswer: '10',
-          correctAnswers: ['10', '10times'],
-          explanation:
-            'Red is 1 out of 4 sections. 1/4 × 40 = <strong style="color:#ea580c;">10 times</strong>.',
-        },
-        {
-          label: 'b) How many times would you predict landing on blue or green?',
-          correctAnswer: '20',
-          correctAnswers: ['20', '20times'],
-          explanation:
-            'Blue and green together are 2 out of 4 sections (half). 1/2 × 40 = <strong style="color:#ea580c;">20 times</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium',
-      question:
-        'A spinner has 4 equal sections coloured red, blue, green and yellow. It is spun 40 times.',
-      answer:
-        'Yes — 13 is reasonably close to the prediction of 10. The difference is 3, which is small compared to 40 spins. Actual results do not always match the prediction exactly.',
-      checkMode: 'self',
-      parts: [
-        {
-          label: 'c) If red comes up 13 times, is this a reasonable result? Explain.',
-          correctAnswer: '',
-          explanation: '',
-        },
-      ],
-    },
-    {
-      difficulty: 'Hard',
-      question: 'Lerato flips a coin 50 times and gets 28 heads and 22 tails.',
-      answer: 'a) 25  b) 3 more',
-      checkMode: 'auto',
-      parts: [
-        {
-          label: 'a) What was the predicted number of heads?',
-          correctAnswer: '25',
-          correctAnswers: ['25', '25times'],
-          explanation:
-            'Heads is 1 out of 2 outcomes. Half of 50 = <strong style="color:#ea580c;">25 heads</strong>.',
-        },
-        {
-          label: 'b) How many more heads than predicted did she get?',
-          correctAnswer: '3',
-          correctAnswers: ['3', '3more'],
-          explanation:
-            '28 (actual) − 25 (predicted) = <strong style="color:#dc2626;">3 more</strong> heads than predicted.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Hard',
-      question: 'Lerato flips a coin 50 times and gets 28 heads and 22 tails.',
-      answer:
-        'c) No — actual results vary every time you repeat an experiment. Lerato might get 23, 26, or 28 heads on the next 50 flips. There is no guarantee of exactly 25.\nd) The more trials you do, the closer the actual results get to the predicted probability. With thousands of flips, the proportion of heads would get very close to 1/2.',
-      checkMode: 'self',
-      parts: [
-        {
-          label: 'c) If she flips the coin 50 more times, would you expect exactly 25 heads again? Explain.',
-          correctAnswer: '',
-          explanation: '',
-        },
-        {
-          label: 'd) What happens to probability results as you do more and more trials?',
-          correctAnswer: '',
-          explanation: '',
-        },
+      scoreMessages: [
+        { minScore: 25, message: 'Superb! You can tackle multi-step probability problems and explain your reasoning clearly.' },
+        { minScore: 19, message: 'Well done! You have a strong grasp of combined probability problems — review any missed ones.' },
+        { minScore: 13, message: 'Good effort! Go back over the multi-step examples and try this set again.' },
+        { minScore: 0, message: 'Keep practising — revisit all four sets and the worked examples before trying again.' },
       ],
     },
   ],

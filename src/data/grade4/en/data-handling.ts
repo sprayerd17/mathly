@@ -396,336 +396,165 @@ export const topicData: TopicData = {
         'Short video showing how to read and analyse a bar graph and write sentences describing what the data shows',
     },
   ],
-  topicPractice: [
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 — TALLY MARKS: READING AND COUNTING (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy' as const,
-      question:
-        'A class survey recorded the favourite fruits of learners. Apple: 6, Banana: 9, Mango: 4, Orange: 5. How many learners were surveyed in total?',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'Total number of learners surveyed',
-          correctAnswer: '24',
-          explanation:
-            'Add all the values: 6 + 9 + 4 + 5 = <strong style="color:#16a34a;">24</strong> learners were surveyed.',
-        },
+      name: 'Set 1: Tally Marks',
+      questions: [
+        { difficulty: 'Easy', question: 'How many does ||| (three tally marks) represent?', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', 'three'], explanation: 'Each tally mark = 1. ||| = 3 ✓' },
+        { difficulty: 'Easy', question: 'How many does 𝄌 (one full group of 5) represent?', answer: '5', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', 'five'], explanation: 'A full group has 4 vertical lines crossed by a diagonal 5th line = 5 ✓' },
+        { difficulty: 'Easy', question: 'How many does 𝄌 || (one group of 5 plus 2 more) represent?', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'seven'], explanation: '5 + 2 = 7 ✓' },
+        { difficulty: 'Easy', question: 'How many does 𝄌 |||| (one group of 5 plus 4 more) represent?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', 'nine'], explanation: '5 + 4 = 9 ✓' },
+        { difficulty: 'Easy', question: 'How many does 𝄌 𝄌 (two full groups of 5) represent?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', 'ten'], explanation: '5 + 5 = 10 ✓' },
+        { difficulty: 'Easy', question: 'How many does 𝄌 𝄌 || (two groups of 5 plus 2 more) represent?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', 'twelve'], explanation: '5 + 5 + 2 = 12 ✓' },
+        { difficulty: 'Medium', question: 'How many does 𝄌 𝄌 |||| (two groups of 5 plus 4 more) represent?', answer: '14', checkMode: 'auto', correctAnswer: '14', correctAnswers: ['14', 'fourteen'], explanation: '5 + 5 + 4 = 14 ✓' },
+        { difficulty: 'Medium', question: 'How many does 𝄌 𝄌 𝄌 (three full groups of 5) represent?', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', 'fifteen'], explanation: '5 + 5 + 5 = 15 ✓' },
+        { difficulty: 'Medium', question: 'How many does 𝄌 𝄌 𝄌 ||| (three groups of 5 plus 3 more) represent?', answer: '18', checkMode: 'auto', correctAnswer: '18', correctAnswers: ['18', 'eighteen'], explanation: '5 + 5 + 5 + 3 = 18 ✓' },
+        { difficulty: 'Easy', question: 'How many does |||| (four tally marks, no group of 5 yet) represent?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'four'], explanation: 'Four separate marks with no diagonal 5th line yet = 4 ✓' },
+        { difficulty: 'Easy', question: 'A tally count has 3 full groups of 5 and 2 extra marks. What is the total?', answer: '17', checkMode: 'auto', correctAnswer: '17', correctAnswers: ['17', 'seventeen'], explanation: '3 × 5 = 15, plus 2 extra = 15 + 2 = 17 ✓' },
+        { difficulty: 'Medium', question: 'A tally count has 4 full groups of 5 and 1 extra mark. What is the total?', answer: '21', checkMode: 'auto', correctAnswer: '21', correctAnswers: ['21', 'twenty one', 'twenty-one'], explanation: '4 × 5 = 20, plus 1 extra = 20 + 1 = 21 ✓' },
+        { difficulty: 'Easy', question: 'A tally count has 2 full groups of 5 and 4 extra marks. What is the total?', answer: '14', checkMode: 'auto', correctAnswer: '14', correctAnswers: ['14', 'fourteen'], explanation: '2 × 5 = 10, plus 4 extra = 10 + 4 = 14 ✓' },
+        { difficulty: 'Medium', question: 'A tally count has 6 full groups of 5 and 0 extra marks. What is the total?', answer: '30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', 'thirty'], explanation: '6 × 5 = 30 ✓' },
+        { difficulty: 'Medium', question: 'A class recorded favourite pets using tally marks: Dogs — 𝄌 |||, Cats — 𝄌 |, Fish — ||||, Birds — 𝄌 𝄌 ||. How many learners chose Dogs?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'eight'], explanation: 'Dogs = 𝄌 ||| = 5 + 3 = 8 ✓' },
+        { difficulty: 'Medium', question: 'Using the pet data (Dogs — 𝄌 |||, Cats — 𝄌 |, Fish — ||||, Birds — 𝄌 𝄌 ||), how many learners chose Birds?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', 'twelve'], explanation: 'Birds = 𝄌 𝄌 || = 5 + 5 + 2 = 12 ✓' },
+        { difficulty: 'Medium', question: 'Using the pet data (Dogs — 8, Cats — 6, Fish — 4, Birds — 12), how many learners were surveyed in total?', answer: '30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', 'thirty'], explanation: '8 + 6 + 4 + 12 = 30 ✓' },
+        { difficulty: 'Medium', question: 'Using the pet data (Dogs — 8, Cats — 6, Fish — 4, Birds — 12), which pet is the mode (chosen most often)?', answer: 'Birds', checkMode: 'auto', correctAnswer: 'Birds', correctAnswers: ['Birds', 'birds'], explanation: 'Birds has the highest frequency, 12, so Birds is the mode ✓' },
+        { difficulty: 'Medium', question: 'Using the pet data (Dogs — 8, Cats — 6, Fish — 4, Birds — 12), which pet was chosen the least?', answer: 'Fish', checkMode: 'auto', correctAnswer: 'Fish', correctAnswers: ['Fish', 'fish'], explanation: 'Fish has the lowest frequency, 4 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the pet data (Dogs — 8, Cats — 6, Fish — 4, Birds — 12), what is the difference between the most popular and least popular pet?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'eight'], explanation: 'Most: Birds (12). Least: Fish (4). 12 − 4 = 8 ✓' },
+        { difficulty: 'Medium', question: 'A class recorded favourite colours using tally marks: Blue — 𝄌 ||, Red — 𝄌, Green — 𝄌 𝄌 |||, Yellow — ||||. How many learners chose Green?', answer: '13', checkMode: 'auto', correctAnswer: '13', correctAnswers: ['13', 'thirteen'], explanation: 'Green = 𝄌 𝄌 ||| = 5 + 5 + 3 = 13 ✓' },
+        { difficulty: 'Medium', question: 'Using the colour data (Blue — 7, Red — 5, Green — 13, Yellow — 4), how many learners were surveyed in total?', answer: '29', checkMode: 'auto', correctAnswer: '29', correctAnswers: ['29', 'twenty nine', 'twenty-nine'], explanation: '7 + 5 + 13 + 4 = 29 ✓' },
+        { difficulty: 'Medium', question: 'Using the colour data (Blue — 7, Red — 5, Green — 13, Yellow — 4), which colour is the mode?', answer: 'Green', checkMode: 'auto', correctAnswer: 'Green', correctAnswers: ['Green', 'green'], explanation: 'Green has the highest frequency, 13, so it is the mode ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the colour data (Blue — 7, Red — 5, Green — 13, Yellow — 4), what is the difference between the most popular and least popular colour?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', 'nine'], explanation: 'Most: Green (13). Least: Yellow (4). 13 − 4 = 9 ✓' },
+        { difficulty: 'Hard', question: 'Explain in your own words why tally marks are grouped in 5s instead of just being drawn as single lines.', answer: 'Grouping tally marks in 5s makes them much faster and easier to count — instead of counting every single mark one at a time, you can count in 5s (5, 10, 15 …) and then add any extra marks at the end. This reduces mistakes when there are many responses to count.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You can read and count tally marks with confidence.' },
+        { minScore: 19, message: 'Great work! Review any missed questions on grouping tallies in 5s.' },
+        { minScore: 13, message: 'Good effort! Go back to the tally marks section and try again.' },
+        { minScore: 0, message: 'Keep going — read through the tally marks explanation again and retry this set.' },
       ],
     },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 — PICTOGRAPHS: READING WITH A KEY (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy' as const,
-      question:
-        'A class voted for their favourite subjects. Maths: 7, English: 8, Science: 5, Art: 4.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) Which subject was most popular?',
-          correctAnswer: 'english',
-          explanation:
-            'English had the highest count: <strong style="color:#16a34a;">8 votes</strong>.',
-        },
-        {
-          label: 'b) Which subject was least popular?',
-          correctAnswer: 'art',
-          explanation:
-            'Art had the lowest count: <strong style="color:#16a34a;">4 votes</strong>.',
-        },
-        {
-          label: 'c) How many more learners chose Maths than Science?',
-          correctAnswer: '2',
-          explanation:
-            'Maths (7) − Science (5) = <strong style="color:#16a34a;">2</strong> more learners.',
-        },
+      name: 'Set 2: Pictographs',
+      questions: [
+        { difficulty: 'Easy', question: 'A pictograph shows favourite sports. Each symbol (★) = 2 learners. Football has 4 symbols. How many learners chose Football?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 learners'], explanation: '4 × 2 = 8 learners ✓' },
+        { difficulty: 'Easy', question: 'Using the same key (★ = 2 learners), Cricket has 3 symbols. How many learners chose Cricket?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 learners'], explanation: '3 × 2 = 6 learners ✓' },
+        { difficulty: 'Easy', question: 'Using the same key (★ = 2 learners), Swimming has 5 symbols. How many learners chose Swimming?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 learners'], explanation: '5 × 2 = 10 learners ✓' },
+        { difficulty: 'Easy', question: 'Using the same key (★ = 2 learners), Tennis has 2 symbols. How many learners chose Tennis?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 learners'], explanation: '2 × 2 = 4 learners ✓' },
+        { difficulty: 'Medium', question: 'Using the sports data (Football 8, Cricket 6, Swimming 10, Tennis 4), how many learners were surveyed in total?', answer: '28', checkMode: 'auto', correctAnswer: '28', correctAnswers: ['28', '28 learners'], explanation: '8 + 6 + 10 + 4 = 28 learners ✓' },
+        { difficulty: 'Medium', question: 'Using the sports data (Football 8, Cricket 6, Swimming 10, Tennis 4), which sport is the mode (most popular)?', answer: 'Swimming', checkMode: 'auto', correctAnswer: 'Swimming', correctAnswers: ['Swimming', 'swimming'], explanation: 'Swimming has the most symbols (5) and the highest total (10) ✓' },
+        { difficulty: 'Easy', question: 'A pictograph shows favourite pets. Each symbol (🐾) = 5 learners. Dogs has 3 symbols. How many learners chose Dogs?', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15 learners'], explanation: '3 × 5 = 15 learners ✓' },
+        { difficulty: 'Easy', question: 'Using the same key (🐾 = 5 learners), Cats has 5 symbols. How many learners chose Cats?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 learners'], explanation: '5 × 5 = 25 learners ✓' },
+        { difficulty: 'Medium', question: 'Using the same key (🐾 = 5 learners), Fish has 2 symbols. How many learners chose Fish?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 learners'], explanation: '2 × 5 = 10 learners ✓' },
+        { difficulty: 'Medium', question: 'Using the same key (🐾 = 5 learners), Birds has 4 symbols. How many learners chose Birds?', answer: '20', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20 learners'], explanation: '4 × 5 = 20 learners ✓' },
+        { difficulty: 'Medium', question: 'Using the pet data (Dogs 15, Cats 25, Fish 10, Birds 20), what is the total number of learners surveyed?', answer: '70', checkMode: 'auto', correctAnswer: '70', correctAnswers: ['70', '70 learners'], explanation: '15 + 25 + 10 + 20 = 70 learners ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the pet data (Dogs 15, Cats 25, Fish 10, Birds 20), what is the difference between the most and least popular pets?', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15'], explanation: 'Most: Cats (25). Least: Fish (10). 25 − 10 = 15 ✓' },
+        { difficulty: 'Easy', question: 'A pictograph shows cars sold each month. Each symbol (🚗) = 10 cars. January has 5 symbols. How many cars were sold in January?', answer: '50', checkMode: 'auto', correctAnswer: '50', correctAnswers: ['50', '50 cars'], explanation: '5 × 10 = 50 cars ✓' },
+        { difficulty: 'Medium', question: 'Using the same key (🚗 = 10 cars), March has 6 symbols. How many cars were sold in March?', answer: '60', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60 cars'], explanation: '6 × 10 = 60 cars ✓' },
+        { difficulty: 'Medium', question: 'Using the car data (January 50, February 30, March 60, April 40), what is the total number of cars sold over the four months?', answer: '180', checkMode: 'auto', correctAnswer: '180', correctAnswers: ['180', '180 cars'], explanation: '50 + 30 + 60 + 40 = 180 cars ✓' },
+        { difficulty: 'Medium', question: 'Using the car data (January 50, February 30, March 60, April 40), which month had the mode (highest sales)?', answer: 'March', checkMode: 'auto', correctAnswer: 'March', correctAnswers: ['March', 'march'], explanation: 'March had the most symbols (6) and the highest total (60 cars) ✓' },
+        { difficulty: 'Easy', question: 'A pictograph shows a symbol worth 4 books. If 2 full symbols and 1 half symbol are drawn, how many books does this represent?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 books'], explanation: '2 full symbols = 2 × 4 = 8. A half symbol = half of 4 = 2. 8 + 2 = 10 books ✓' },
+        { difficulty: 'Medium', question: 'A pictograph shows a symbol worth 6 books. If 2 full symbols and 1 half symbol are drawn, how many books does this represent?', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15 books'], explanation: '2 full symbols = 2 × 6 = 12. A half symbol = half of 6 = 3. 12 + 3 = 15 books ✓' },
+        { difficulty: 'Medium', question: 'A pictograph shows a symbol worth 8 books. If 2 full symbols and 1 half symbol are drawn, how many books does this represent?', answer: '20', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20 books'], explanation: '2 full symbols = 2 × 8 = 16. A half symbol = half of 8 = 4. 16 + 4 = 20 books ✓' },
+        { difficulty: 'Medium', question: 'A pictograph key is ★ = 2 learners. A category has 9 learners. How many symbols should be drawn (write as a number of full symbols and a half, e.g. "4 and a half")?', answer: '4 and a half', checkMode: 'auto', correctAnswer: '4 and a half', correctAnswers: ['4 and a half', '4.5', '4½', '4 and a half symbols'], explanation: '9 ÷ 2 = 4.5, so draw 4 full symbols (= 8 learners) and 1 half symbol (= 1 learner): 8 + 1 = 9 ✓' },
+        { difficulty: 'Easy', question: 'A pictograph key is ★ = 3 learners. A category has exactly 9 learners. How many whole symbols should be drawn?', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3 symbols'], explanation: '9 ÷ 3 = 3 whole symbols exactly, no half symbol needed ✓' },
+        { difficulty: 'Medium', question: 'A pictograph shows books read by grade. Each symbol (📚) = 4 books. Grade 3: 6 symbols, Grade 4: 4 symbols, Grade 5: 7 symbols, Grade 6: 3 symbols. How many books did Grade 5 read?', answer: '28', checkMode: 'auto', correctAnswer: '28', correctAnswers: ['28', '28 books'], explanation: '7 × 4 = 28 books ✓' },
+        { difficulty: 'Medium', question: 'Using the books-by-grade data (Grade 3: 24, Grade 4: 16, Grade 5: 28, Grade 6: 12), what is the total number of books read by all four grades?', answer: '80', checkMode: 'auto', correctAnswer: '80', correctAnswers: ['80', '80 books'], explanation: '24 + 16 + 28 + 12 = 80 books ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the books-by-grade data (Grade 3: 24, Grade 4: 16, Grade 5: 28, Grade 6: 12), how many more books did Grade 5 read than Grade 6?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 books'], explanation: 'Grade 5 (28) − Grade 6 (12) = 16 more books ✓' },
+        { difficulty: 'Hard', question: 'Explain why a pictograph key (like ★ = 2 learners) is essential for reading the graph correctly, and what could go wrong if you ignored it.', answer: 'The key tells you what one symbol is actually worth. Without checking the key, you might assume each symbol equals 1, which would give you completely wrong totals — for example, counting 5 symbols as "5 learners" instead of correctly calculating 5 × 2 = 10 learners if the key says each symbol is worth 2. Always read the key before calculating any totals from a pictograph.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You can read pictographs and use the key to calculate totals confidently.' },
+        { minScore: 19, message: 'Great work! Review any missed questions on using the key and half symbols.' },
+        { minScore: 13, message: 'Good effort! Revisit the pictographs section and try again.' },
+        { minScore: 0, message: 'Keep going — read through the pictographs explanation again and retry this set.' },
       ],
     },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 — BAR GRAPHS: READING, INTERPRETING AND WORD PROBLEMS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium' as const,
-      question:
-        'A survey of 30 learners asked how they get to school. Walk: 12, Car: 8, Bus: 5, Bicycle: 5. There are 33 learners in a different class; 15 of them walk to school.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) What fraction of the first class (30 learners) walk to school? Simplify if possible.',
-          correctAnswer: '2/5',
-          correctAnswers: ['2/5', '12/30'],
-          explanation:
-            '12 out of 30 walk. <strong>12/30</strong> — divide both by 6 → <strong style="color:#16a34a;">2/5</strong>.',
-        },
-        {
-          label: 'b) How many learners in the first class do NOT walk to school?',
-          correctAnswer: '13',
-          explanation:
-            'Car (8) + Bus (5) = <strong style="color:#16a34a;">13</strong> learners do not walk.',
-        },
-        {
-          label: 'c) What fraction of the second class (33 learners) walk to school? Simplify if possible.',
-          correctAnswer: '5/11',
-          correctAnswers: ['5/11', '15/33'],
-          explanation:
-            '15 out of 33 walk. <strong>15/33</strong> — divide both by 3 → <strong style="color:#16a34a;">5/11</strong>.',
-        },
+      name: 'Set 3: Bar Graphs',
+      questions: [
+        { difficulty: 'Easy', question: 'A bar graph shows a pet survey: Dogs 14, Cats 10, Fish 6, Birds 8. Which pet has the tallest bar?', answer: 'Dogs', checkMode: 'auto', correctAnswer: 'Dogs', correctAnswers: ['Dogs', 'dogs'], explanation: 'Dogs has the highest value, 14, so it has the tallest bar ✓' },
+        { difficulty: 'Easy', question: 'Using the pet survey (Dogs 14, Cats 10, Fish 6, Birds 8), which pet has the shortest bar?', answer: 'Fish', checkMode: 'auto', correctAnswer: 'Fish', correctAnswers: ['Fish', 'fish'], explanation: 'Fish has the lowest value, 6, so it has the shortest bar ✓' },
+        { difficulty: 'Medium', question: 'Using the pet survey (Dogs 14, Cats 10, Fish 6, Birds 8), what is the total number of learners surveyed?', answer: '38', checkMode: 'auto', correctAnswer: '38', correctAnswers: ['38', '38 learners'], explanation: '14 + 10 + 6 + 8 = 38 learners ✓' },
+        { difficulty: 'Medium', question: 'Using the pet survey (Dogs 14, Cats 10, Fish 6, Birds 8), what is the difference between the tallest and shortest bar?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'Dogs (14) − Fish (6) = 8 ✓' },
+        { difficulty: 'Medium', question: 'A bar graph shows daily temperatures: Monday 22°C, Tuesday 25°C, Wednesday 19°C, Thursday 28°C, Friday 24°C. Which day was the hottest?', answer: 'Thursday', checkMode: 'auto', correctAnswer: 'Thursday', correctAnswers: ['Thursday', 'thursday'], explanation: 'Thursday had the highest temperature, 28°C ✓' },
+        { difficulty: 'Medium', question: 'Using the temperature data (Monday 22, Tuesday 25, Wednesday 19, Thursday 28, Friday 24), which day was the coolest?', answer: 'Wednesday', checkMode: 'auto', correctAnswer: 'Wednesday', correctAnswers: ['Wednesday', 'wednesday'], explanation: 'Wednesday had the lowest temperature, 19°C ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the temperature data (22, 25, 19, 28, 24), what is the range (difference between the highest and lowest temperature)?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9°C', '9 degrees'], explanation: 'Highest (28) − Lowest (19) = 9°C ✓' },
+        { difficulty: 'Medium', question: 'Using the temperature data (22, 25, 19, 28, 24), what is the total of all five temperatures?', answer: '118', checkMode: 'auto', correctAnswer: '118', correctAnswers: ['118'], explanation: '22 + 25 + 19 + 28 + 24 = 118 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the temperature data (Monday 22°C, Thursday 28°C), how many degrees warmer was Thursday than Monday?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6°C', '6 degrees'], explanation: '28 − 22 = 6°C ✓' },
+        { difficulty: 'Easy', question: 'A bar graph shows money raised by four classes: 4A raised R450, 4B raised R620, 4C raised R380, 4D raised R550. Which class raised the most?', answer: '4B', checkMode: 'auto', correctAnswer: '4B', correctAnswers: ['4B', '4b'], explanation: '4B raised the most, R620 ✓' },
+        { difficulty: 'Easy', question: 'Using the fundraising data (4A R450, 4B R620, 4C R380, 4D R550), which class raised the least?', answer: '4C', checkMode: 'auto', correctAnswer: '4C', correctAnswers: ['4C', '4c'], explanation: '4C raised the least, R380 ✓' },
+        { difficulty: 'Medium', question: 'Using the fundraising data (4A R450, 4B R620, 4C R380, 4D R550), what was the total amount raised by all four classes?', answer: 'R2 000', checkMode: 'auto', correctAnswer: 'R2000', correctAnswers: ['R2000', 'R2 000', '2000', '2 000'], explanation: '450 + 620 + 380 + 550 = R2 000 ✓' },
+        { difficulty: 'Medium', question: 'Using the fundraising data (4B R620, 4C R380), what is the difference between the amounts raised by 4B and 4C?', answer: 'R240', checkMode: 'auto', correctAnswer: 'R240', correctAnswers: ['R240', '240'], explanation: '620 − 380 = R240 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the fundraising data (total R2 000 raised by 4 classes), what was the average amount raised per class?', answer: 'R500', checkMode: 'auto', correctAnswer: 'R500', correctAnswers: ['R500', '500'], explanation: '2 000 ÷ 4 = R500 ✓' },
+        { difficulty: 'Medium', question: 'A bar graph shows goals scored in a season: Thabo 8, Sipho 12, Lerato 6, Amahle 10, Bongani 9. Who scored the most goals?', answer: 'Sipho', checkMode: 'auto', correctAnswer: 'Sipho', correctAnswers: ['Sipho', 'sipho'], explanation: 'Sipho scored the most, 12 goals ✓' },
+        { difficulty: 'Medium', question: 'Using the goals data (Thabo 8, Sipho 12, Lerato 6, Amahle 10, Bongani 9), what is the total number of goals scored?', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45', '45 goals'], explanation: '8 + 12 + 6 + 10 + 9 = 45 goals ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the goals data (Sipho 12, Lerato 6), what is the difference between the highest and lowest scorer?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'Highest: Sipho (12). Lowest: Lerato (6). 12 − 6 = 6 ✓' },
+        { difficulty: 'Medium', question: 'A bar graph vertical axis goes from 0 to 15 in intervals of 3 (0, 3, 6, 9, 12, 15). What value does each interval step represent?', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3'], explanation: 'Each step from one number to the next is 3, so each interval represents 3 ✓' },
+        { difficulty: 'Easy', question: 'A bar graph vertical axis is scaled 0, 2, 4, 6, 8, 10. What value does each interval represent?', answer: '2', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2'], explanation: 'The scale increases by 2 each time, so each interval represents 2 ✓' },
+        { difficulty: 'Medium', question: 'A bar graph shows ice creams sold: Vanilla 18, Chocolate 24, Strawberry 12. Which flavour is the mode (most sold)?', answer: 'Chocolate', checkMode: 'auto', correctAnswer: 'Chocolate', correctAnswers: ['Chocolate', 'chocolate'], explanation: 'Chocolate has the highest bar, 24 ✓' },
+        { difficulty: 'Medium', question: 'Using the ice cream data (Vanilla 18, Chocolate 24, Strawberry 12), what is the total number of ice creams sold?', answer: '54', checkMode: 'auto', correctAnswer: '54', correctAnswers: ['54'], explanation: '18 + 24 + 12 = 54 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the ice cream data (Chocolate 24, Strawberry 12), how many more chocolate ice creams were sold than strawberry?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: '24 − 12 = 12 more chocolate ice creams ✓' },
+        { difficulty: 'Medium', question: 'A bar graph shows learners\' shoe sizes: Size 3 has 5 learners, Size 4 has 9 learners, Size 5 has 6 learners. What is the mode shoe size?', answer: 'Size 4', checkMode: 'auto', correctAnswer: 'Size 4', correctAnswers: ['Size 4', 'size4', '4'], explanation: 'Size 4 has the most learners (9), so it is the mode ✓' },
+        { difficulty: 'Medium', question: 'Using the shoe size data (Size 3: 5, Size 4: 9, Size 5: 6), how many learners were surveyed in total?', answer: '20', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20 learners'], explanation: '5 + 9 + 6 = 20 learners ✓' },
+        { difficulty: 'Hard', question: 'Explain why the scale chosen for the vertical axis of a bar graph matters, using an example of a scale that would be a poor choice for data ranging from 0 to 30.', answer: 'The scale must fit all the values neatly without the graph being too tall or too hard to read. For data from 0 to 30, a scale that counts up in 1s (0, 1, 2, 3 …) would need 30 tiny intervals, making the bars hard to compare and the graph very tall. A better scale would count up in 5s or 10s (e.g. 0, 5, 10, 15, 20, 25, 30), which fits the data neatly and makes the bars easy to read and compare.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You can read and interpret bar graphs with confidence.' },
+        { minScore: 19, message: 'Great work! Review any missed questions on comparing and calculating from bar graphs.' },
+        { minScore: 13, message: 'Good effort! Revisit the bar graphs section and try again.' },
+        { minScore: 0, message: 'Keep going — read through the bar graphs explanation again and retry this set.' },
       ],
     },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — MULTI-STEP ANALYSIS AND REASONING (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy' as const,
-      question:
-        'A pictograph shows learners\' favourite sports. Each symbol (★) = 3 learners. Football: ★★★★, Cricket: ★★, Rugby: ★★★, Swimming: ★★★★★. How many learners chose Football?',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'Number of learners who chose Football',
-          correctAnswer: '12',
-          explanation:
-            'Football has 4 symbols. <strong>4 × 3 = <span style="color:#16a34a;">12</span></strong> learners.',
-        },
+      name: 'Set 4: Analysis and Reasoning',
+      questions: [
+        { difficulty: 'Medium', question: 'A survey of 50 learners asked their favourite pet: Dog 20, Cat 15, Fish 10, Bird 5. What fraction of learners chose Dog? Simplify if possible.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '20/50'], explanation: '20 out of 50 chose Dog. 20/50 — divide both by 10 → 2/5 ✓' },
+        { difficulty: 'Medium', question: 'Using the pet data (Dog 20, Cat 15, Fish 10, Bird 5, total 50), what fraction of learners chose Cat? Simplify if possible.', answer: '3/10', checkMode: 'auto', correctAnswer: '3/10', correctAnswers: ['3/10', '15/50'], explanation: '15 out of 50 chose Cat. 15/50 — divide both by 5 → 3/10 ✓' },
+        { difficulty: 'Medium', question: 'Using the pet data (Dog 20, Bird 5), what is the difference between the number who chose Dog and the number who chose Bird?', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15'], explanation: '20 − 5 = 15 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the pet data (Dog 20, Cat 15, Fish 10, Bird 5, total 50), what fraction of learners did NOT choose Dog? Simplify if possible.', answer: '3/5', checkMode: 'auto', correctAnswer: '3/5', correctAnswers: ['3/5', '30/50'], explanation: 'Not Dog = Cat + Fish + Bird = 15 + 10 + 5 = 30. 30/50 — divide both by 10 → 3/5 ✓' },
+        { difficulty: 'Medium', question: 'A survey of 40 learners asked how they travel to school: Walk 16, Car 10, Bus 8, Bicycle 6. What fraction walk to school? Simplify if possible.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '16/40'], explanation: '16 out of 40 walk. 16/40 — divide both by 8 → 2/5 ✓' },
+        { difficulty: 'Medium', question: 'Using the transport data (Walk 16, Car 10, Bus 8, Bicycle 6, total 40), what fraction travel by car? Simplify if possible.', answer: '1/4', checkMode: 'auto', correctAnswer: '1/4', correctAnswers: ['1/4', '10/40'], explanation: '10 out of 40 travel by car. 10/40 — divide both by 10 → 1/4 ✓' },
+        { difficulty: 'Hard', question: 'Using the transport data (Walk 16, total 40), if 10 new learners join the class and 6 of them walk to school, what is the new fraction of learners who walk? Simplify if possible.', answer: '11/25', checkMode: 'auto', correctAnswer: '11/25', correctAnswers: ['11/25', '22/50'], explanation: 'New walkers: 16 + 6 = 22. New total: 40 + 10 = 50. 22/50 — divide both by 2 → 11/25 ✓' },
+        { difficulty: 'Medium', question: 'A class test was written by 40 learners: 28 passed and 12 failed. What fraction of learners passed? Simplify if possible.', answer: '7/10', checkMode: 'auto', correctAnswer: '7/10', correctAnswers: ['7/10', '28/40'], explanation: '28 out of 40 passed. 28/40 — divide both by 4 → 7/10 ✓' },
+        { difficulty: 'Medium', question: 'Using the test data (28 passed, 12 failed, total 40), what fraction of learners failed? Simplify if possible.', answer: '3/10', checkMode: 'auto', correctAnswer: '3/10', correctAnswers: ['3/10', '12/40'], explanation: '12 out of 40 failed. 12/40 — divide both by 4 → 3/10 ✓' },
+        { difficulty: 'Medium', question: 'A pictograph and a bar graph both show the same data: books read by Grade 4 learners. Which type of graph would be better for showing exact values without any half symbols?', answer: 'Bar graph', checkMode: 'auto', correctAnswer: 'Bar graph', correctAnswers: ['Bar graph', 'bar graph', 'bargraph'], explanation: 'A bar graph shows an exact height for any value, while a pictograph can only show values that are multiples of the key (needing half symbols otherwise) ✓' },
+        { difficulty: 'Medium', question: 'A frequency table shows: Red 9, Blue 14, Green 7. What is the mode colour?', answer: 'Blue', checkMode: 'auto', correctAnswer: 'Blue', correctAnswers: ['Blue', 'blue'], explanation: 'Blue has the highest frequency, 14, so it is the mode ✓' },
+        { difficulty: 'Medium', question: 'Using the colour data (Red 9, Blue 14, Green 7), what is the total number of learners surveyed?', answer: '30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30'], explanation: '9 + 14 + 7 = 30 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the colour data (Red 9, Blue 14, Green 7, total 30), what fraction of learners chose Green? Simplify if possible.', answer: '7/30', checkMode: 'auto', correctAnswer: '7/30', correctAnswers: ['7/30'], explanation: '7 out of 30 chose Green. 7 and 30 share no common factor other than 1, so 7/30 is already simplified ✓' },
+        { difficulty: 'Medium', question: 'A survey of 60 learners about favourite drinks: Juice 24, Water 20, Milk 16. What fraction chose Juice? Simplify if possible.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '24/60'], explanation: '24 out of 60 chose Juice. 24/60 — divide both by 12 → 2/5 ✓' },
+        { difficulty: 'Medium', question: 'Using the drinks data (Juice 24, Water 20, Milk 16, total 60), what is the difference between the most and least popular drink?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'Most: Juice (24). Least: Milk (16). 24 − 16 = 8 ✓' },
+        { difficulty: 'Hard', question: 'A pictograph key is ★ = 5 learners and a bar graph shows the same data with an axis scaled in 1s. A category has 17 learners. Explain which graph would represent this value more clearly and why.', answer: 'The bar graph would represent 17 more clearly, because its axis is scaled in units of 1, so the bar can be drawn at exactly 17. On the pictograph, since each symbol equals 5, 17 would need 3 full symbols (15) plus 2 more, which is not a clean half symbol (a half symbol would only represent 2.5) — this makes it awkward to show an exact value like 17 using whole or half symbols.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A class collected data on the number of siblings each learner has: 0 siblings — 6 learners, 1 sibling — 12 learners, 2 siblings — 8 learners, 3 siblings — 4 learners. How many learners were surveyed in total?', answer: '30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30'], explanation: '6 + 12 + 8 + 4 = 30 ✓' },
+        { difficulty: 'Medium', question: 'Using the siblings data (0: 6, 1: 12, 2: 8, 3: 4), what is the mode number of siblings?', answer: '1', checkMode: 'auto', correctAnswer: '1', correctAnswers: ['1', '1 sibling'], explanation: '12 learners have 1 sibling — this is the highest frequency, so 1 sibling is the mode ✓' },
+        { difficulty: 'Medium-Hard', question: 'Using the siblings data (0: 6, 1: 12, 2: 8, 3: 4, total 30), what fraction of learners have 2 or more siblings? Simplify if possible.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '12/30'], explanation: '2 siblings (8) + 3 siblings (4) = 12. 12/30 — divide both by 6 → 2/5 ✓' },
+        { difficulty: 'Medium', question: 'A pictograph shows a key of ⚽ = 4 goals. A team scored 22 goals. How many full symbols and half symbols should be drawn?', answer: '5 full symbols and a half symbol', checkMode: 'auto', correctAnswer: '5 full symbols and a half symbol', correctAnswers: ['5 full symbols and a half symbol', '5 and a half', '5.5', '5½'], explanation: '22 ÷ 4 = 5.5, so draw 5 full symbols (= 20 goals) and 1 half symbol (= 2 goals): 20 + 2 = 22 ✓' },
+        { difficulty: 'Medium', question: 'A bar graph compares rainfall in two towns for one month: Town A 85mm, Town B 63mm. What is the difference in rainfall between the two towns?', answer: '22mm', checkMode: 'auto', correctAnswer: '22mm', correctAnswers: ['22mm', '22'], explanation: '85 − 63 = 22mm ✓' },
+        { difficulty: 'Medium', question: 'Using the rainfall data (Town A 85mm, Town B 63mm), what is the combined total rainfall for both towns?', answer: '148mm', checkMode: 'auto', correctAnswer: '148mm', correctAnswers: ['148mm', '148'], explanation: '85 + 63 = 148mm ✓' },
+        { difficulty: 'Medium-Hard', question: 'A survey of 45 learners shows 27 have a cellphone and the rest do not. What fraction do NOT have a cellphone? Simplify if possible.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '18/45'], explanation: 'Without a cellphone: 45 − 27 = 18. 18/45 — divide both by 9 → 2/5 ✓' },
+        { difficulty: 'Medium', question: 'Using the cellphone data (27 have, 18 do not, total 45), what fraction of learners have a cellphone? Simplify if possible.', answer: '3/5', checkMode: 'auto', correctAnswer: '3/5', correctAnswers: ['3/5', '27/45'], explanation: '27 out of 45 have a cellphone. 27/45 — divide both by 9 → 3/5 ✓' },
+        { difficulty: 'Hard', question: 'Look back at any set of data you have analysed in this topic. Write two full sentences that describe conclusions from that data, using specific numbers (not vague words like "a lot" or "not many").', answer: 'Answers will vary depending on the data chosen. A strong answer names the specific categories and numbers involved and makes a clear comparison — for example: "Blue was the most popular colour with 14 out of 30 learners choosing it. Green was the least popular, chosen by only 7 learners, which is 7 fewer than Blue." Check that your sentences use real numbers from the data and make a clear point.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You can combine data-handling skills and reason clearly about results.' },
+        { minScore: 19, message: 'Great work! Review any missed questions on fractions and comparisons.' },
+        { minScore: 13, message: 'Good effort! Revisit the analysing and interpreting data section and try again.' },
+        { minScore: 0, message: 'Keep going — read through the whole study guide again and retry this set.' },
       ],
     },
-    {
-      difficulty: 'Easy-Medium' as const,
-      question:
-        'A pictograph shows books read last month. Each symbol (📚) = 4 books. Grade 3: 📚📚📚📚📚, Grade 4: 📚📚📚, Grade 5: 📚📚📚📚, Grade 6: 📚📚.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) How many books did Grade 3 read?',
-          correctAnswer: '20',
-          explanation:
-            'Grade 3 has 5 symbols. <strong>5 × 4 = <span style="color:#16a34a;">20</span></strong> books.',
-        },
-        {
-          label: 'b) How many books did Grade 4 read?',
-          correctAnswer: '12',
-          explanation:
-            'Grade 4 has 3 symbols. <strong>3 × 4 = <span style="color:#16a34a;">12</span></strong> books.',
-        },
-        {
-          label: 'c) How many books were read altogether by all four grades?',
-          correctAnswer: '56',
-          explanation:
-            'Total symbols: 5 + 3 + 4 + 2 = 14. <strong>14 × 4 = <span style="color:#16a34a;">56</span></strong> books.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium' as const,
-      question:
-        'A pictograph shows books borrowed from the library. Each symbol (📖) = 2 books. Grade 4: 📖📖📖📖 and a half, Grade 5: 📖📖📖📖📖📖.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) How many books did Grade 4 borrow? (Each full symbol = 2 books; half symbol = 1 book)',
-          correctAnswer: '9',
-          correctAnswers: ['9books', '9', '9 books'],
-          explanation:
-            'Grade 4 has 4 full symbols + 1 half symbol. <strong>4 × 2 + 1 = <span style="color:#16a34a;">9 books</span></strong>.',
-        },
-        {
-          label: 'b) Grade 5 borrowed 11 books. How many symbols would represent this? Write your answer in words.',
-          correctAnswer: '5andahalfsymbols',
-          correctAnswers: ['5andahalfsymbols', '5andahalf', '5 and a half', '5½', '5.5symbols', '5.5'],
-          explanation:
-            '11 ÷ 2 = <strong style="color:#16a34a;">5 and a half symbols</strong> (5 full symbols and 1 half symbol).',
-        },
-        {
-          label: 'c) Which grade borrowed more books, and by how many?',
-          correctAnswer: 'grade5read3more',
-          correctAnswers: ['grade5read3more', 'grade5readmore', 'grade5', '3more', 'grade5by3'],
-          explanation:
-            'Grade 5 has 6 symbols → 6 × 2 = 12 books. Grade 4 = 9 books. 12 − 9 = <strong style="color:#16a34a;">Grade 5 borrowed 3 more books</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Easy' as const,
-      question:
-        'A bar graph shows rainfall in mm for four months. January: 40mm, February: 60mm, March: 30mm, April: 50mm. Which month had the most rainfall?',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'Month with the most rainfall',
-          correctAnswer: 'february',
-          explanation:
-            'February had <strong style="color:#16a34a;">60mm</strong>, which is the highest value on the bar graph.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium' as const,
-      question:
-        'Using the same rainfall data — January: 40mm, February: 60mm, March: 30mm, April: 50mm.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) Which month had the least rainfall?',
-          correctAnswer: 'march',
-          explanation:
-            'March had <strong style="color:#16a34a;">30mm</strong>, the lowest bar on the graph.',
-        },
-        {
-          label: 'b) What was the total rainfall over the four months?',
-          correctAnswer: '180mm',
-          correctAnswers: ['180mm', '180'],
-          explanation:
-            '40 + 60 + 30 + 50 = <strong style="color:#16a34a;">180mm</strong>.',
-        },
-        {
-          label: 'c) How much more rain fell in February than in March?',
-          correctAnswer: '30mm',
-          correctAnswers: ['30mm', '30'],
-          explanation:
-            '60 − 30 = <strong style="color:#16a34a;">30mm</strong> more in February.',
-        },
-        {
-          label: 'd) What was the average monthly rainfall?',
-          correctAnswer: '45mm',
-          correctAnswers: ['45mm', '45'],
-          explanation:
-            'Total ÷ number of months = 180 ÷ 4 = <strong style="color:#16a34a;">45mm</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium' as const,
-      question:
-        'A bar graph shows goals scored in a season. Thabo: 8, Sipho: 12, Lerato: 6, Amahle: 10, Bongani: 9.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) Who scored the most goals?',
-          correctAnswer: 'sipho',
-          explanation:
-            'Sipho scored <strong style="color:#16a34a;">12 goals</strong>, the tallest bar.',
-        },
-        {
-          label: 'b) What is the total number of goals scored?',
-          correctAnswer: '45',
-          explanation:
-            '8 + 12 + 6 + 10 + 9 = <strong style="color:#16a34a;">45</strong> goals.',
-        },
-        {
-          label: 'c) What is the difference between the highest and lowest scorer?',
-          correctAnswer: '6',
-          explanation:
-            'Highest: Sipho (12). Lowest: Lerato (6). 12 − 6 = <strong style="color:#16a34a;">6</strong>.',
-        },
-        {
-          label: 'd) The vertical axis goes from 0 to 15 in intervals of 3. What value does each interval represent?',
-          correctAnswer: '3',
-          explanation:
-            'Each interval step on the axis represents <strong style="color:#16a34a;">3</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Easy' as const,
-      question:
-        'A survey shows 20 learners prefer summer and 12 prefer winter. How many more learners prefer summer?',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'How many more learners prefer summer',
-          correctAnswer: '8',
-          explanation:
-            '20 − 12 = <strong style="color:#16a34a;">8</strong> more learners prefer summer.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium' as const,
-      question:
-        'A class survey on favourite subjects: Maths 10, Science 6, English 8, Art 4, PE 12.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) Which subject is most popular?',
-          correctAnswer: 'pe',
-          explanation:
-            'PE has <strong style="color:#16a34a;">12 votes</strong>, the highest count.',
-        },
-        {
-          label: 'b) What fraction of learners chose Maths? Simplify if possible.',
-          correctAnswer: '1/4',
-          correctAnswers: ['1/4', '10/40'],
-          explanation:
-            'Total learners: 10 + 6 + 8 + 4 + 12 = 40. Maths: 10/40 — divide both by 10 → <strong style="color:#16a34a;">1/4</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium' as const,
-      question:
-        'A class survey on favourite subjects: Maths 10, Science 6, English 8, Art 4, PE 12.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'c) Write one sentence describing what the data shows.',
-          checkMode: 'self' as const,
-          answer:
-            'Any valid sentence is acceptable. For example: "PE is the most popular subject with 12 votes, while Art is the least popular with only 4 votes."',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium-Hard' as const,
-      question:
-        'A survey of 40 learners about transport to school: Walk 16, Car 10, Bus 8, Bicycle 6.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'a) What fraction walk to school? Simplify if possible.',
-          correctAnswer: '2/5',
-          correctAnswers: ['2/5', '16/40'],
-          explanation:
-            '16 out of 40 walk. 16/40 — divide both by 8 → <strong style="color:#16a34a;">2/5</strong>.',
-        },
-        {
-          label: 'b) What percentage take a car?',
-          correctAnswer: '25%',
-          correctAnswers: ['25%', '25'],
-          explanation:
-            '10 ÷ 40 × 100 = <strong style="color:#16a34a;">25%</strong> take a car.',
-        },
-        {
-          label: 'c) If 10 new learners join and 6 of them walk, what is the new fraction who walk? Simplify if possible.',
-          correctAnswer: '11/25',
-          correctAnswers: ['11/25', '22/50'],
-          explanation:
-            'New walkers: 16 + 6 = 22. New total: 40 + 10 = 50. 22/50 — divide both by 2 → <strong style="color:#16a34a;">11/25</strong>.',
-        },
-      ],
-    },
-    {
-      difficulty: 'Medium' as const,
-      question:
-        'A survey of 40 learners about transport to school: Walk 16, Car 10, Bus 8, Bicycle 6.',
-      answer: '',
-      checkMode: 'auto' as const,
-      parts: [
-        {
-          label: 'd) Write two sentences analysing the transport data.',
-          checkMode: 'self' as const,
-          answer:
-            'Any two valid analytical sentences are acceptable. For example: "Walking is the most common way to get to school, with 16 out of 40 learners (40%) choosing to walk. Cycling is the least common, with only 6 learners (15%) travelling by bicycle."',
-        },
-      ],
-    },
-  ],
-  scoreMessages: [
-    { minScore: 31, message: 'Perfect score! You have mastered Data Handling.' },
-    { minScore: 24, message: 'Excellent work! Review the questions you got wrong and you will have this mastered.' },
-    { minScore: 16, message: 'Good effort! Go back and read through the sections you struggled with.' },
-    { minScore: 0,  message: 'Keep going! Read through the study guide again carefully and then retry.' },
   ],
 }

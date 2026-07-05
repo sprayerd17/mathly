@@ -63,11 +63,18 @@ export type ResultsConfig = {
   messages: ResultsConfigMessage[]
 }
 
+export type PracticeSet = {
+  name: string
+  questions: OpenQuestion[]
+  scoreMessages?: ScoreMessage[]
+}
+
 export type TopicData = {
   title: string
   grade: number
   sections: Section[]
   topicPractice?: OpenQuestion[]
+  practiceSets?: PracticeSet[]
   scoreMessages?: ScoreMessage[]
   resultsConfig?: ResultsConfig
   resultsSummary?: ResultsConfig
@@ -125,6 +132,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -156,6 +164,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -207,6 +216,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -251,6 +261,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -295,6 +306,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -327,461 +339,170 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
   ],
-  topicPractice: [
+  topicPractice: [],
 
-    // ── Afdeling 1: Wat is Heelgetalle? ─────────────────────────────────────
-
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 — GRONDSLAE: PLEKWAARDE, UITGEBREIDE NOTASIE EN TEL (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'self',
-      question: 'Skryf drie voorbeelde van heelgetalle wat jy in die werklike lewe kan sien.',
-      answer:
-        'Enige drie heelgetalle uit die werklike lewe is korrek. Voorbeelde:\n' +
-        '• 15 leerders in ʼn groep\n' +
-        '• 250 bladsye in ʼn boek\n' +
-        '• 8 doele aangeteken in ʼn wedstryd\n\n' +
-        'Onthou: ʼn heelgetal is enige volledige telgetal wat by 0 begin — geen breuke, geen desimale nie.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Watter van hierdie is heelgetalle? Skryf slegs die heelgetalle, in dieselfde volgorde as die lys, geskei deur kommas:\n\n' +
-        '4,  ½,  7,  3,5,  100,  0',
-      // normalizeAnswer("4, 7, 100, 0") → strip spaces/commas → "471000"
-      correctAnswer: '471000',
-      explanation:
-        '4, 7, 100 en 0 is almal heelgetalle.\n\n' +
-        '• 4 ✓ — ʼn volledige telgetal\n' +
-        '• ½ ✗ — ʼn breuk, nie ʼn heelgetal nie\n' +
-        '• 7 ✓ — ʼn volledige telgetal\n' +
-        '• 3,5 ✗ — ʼn desimale getal, nie ʼn heelgetal nie\n' +
-        '• 100 ✓ — ʼn volledige telgetal\n' +
-        '• 0 ✓ — nul is ʼn heelgetal\n\n' +
-        'Antwoord: 4, 7, 100, 0',
-      answer: '4, 7, 100, 0',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'ʼn Winkel het 1 245 rooi appels, 873 groen appels en 12 geel appels.\n\n' +
-        'Bereken die totale aantal appels. Verduidelik dan waarom jou antwoord ʼn heelgetal is en nie ʼn breuk nie.',
-      answer:
-        'Totaal = 1 245 + 873 + 12 = 2 130\n\n' +
-        '2 130 is ʼn heelgetal omdat jy net volledige appels kan tel — ' +
-        'daar is nie so iets soos ʼn halwe appel as jy voorraad tel nie. ' +
-        'Die antwoord het geen breuk- of desimale deel nie, dus is dit ʼn heelgetal.',
-    },
-
-    // ── Afdeling 2: Plekwaarde ───────────────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Skryf die getal 3 072 in uitgebreide notasie.',
-      // normalizeAnswer("3 000 + 0 + 70 + 2") → "3000+0+70+2"
-      correctAnswer: '3000+0+70+2',
-      explanation:
-        '3 072 = 3 000 + 0 + 70 + 2\n\n' +
-        '• 3 is in die Duisende-kolom → 3 000\n' +
-        '• 0 is in die Honderde-kolom → 0\n' +
-        '• 7 is in die Tiene-kolom → 70\n' +
-        '• 2 is in die Eenhede-kolom → 2',
-      answer: '3 000 + 0 + 70 + 2',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Wat is die waarde van die syfer 6 in elk van hierdie getalle?\n\n' +
-        'a) 6 431\n' +
-        'b) 2 640\n' +
-        'c) 3 516',
-      parts: [
-        {
-          label: 'a)',
-          // 6 is in die Duisende-kolom → 6 000 → normalized: "6000"
-          correctAnswer: '6000',
-          explanation:
-            'In 6 431 is die syfer 6 in die Duisende-kolom.\nWaarde = 6 × 1 000 = 6 000',
-        },
-        {
-          label: 'b)',
-          // 6 is in die Honderde-kolom → 600 → normalized: "600"
-          correctAnswer: '600',
-          explanation:
-            'In 2 640 is die syfer 6 in die Honderde-kolom.\nWaarde = 6 × 100 = 600',
-        },
-        {
-          label: 'c)',
-          // 6 is in die Eenhede-kolom → 6 → normalized: "6"
-          correctAnswer: '6',
-          explanation:
-            'In 3 516 is die syfer 6 in die Eenhede-kolom.\nWaarde = 6 × 1 = 6',
-        },
+      name: 'Stel 1: Grondslae',
+      questions: [
+        { difficulty: 'Easy', question: 'Watter een van hierdie is ʼn heelgetal: 8 of 3½?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: '8 is ʼn volledige telgetal sonder ʼn breukdeel, dus is dit ʼn heelgetal. 3½ het ʼn breukdeel, dus is dit nie.' },
+        { difficulty: 'Easy', question: 'Skryf al die heelgetalle tussen 6 en 11, geskei deur kommas.', answer: '7, 8, 9, 10', checkMode: 'auto', correctAnswer: '78910', correctAnswers: ['78910'], explanation: '"Tussen" sluit nie 6 of 11 self in nie. Deur van net na 6 tot net voor 11 te tel, kry jy 7, 8, 9, 10.' },
+        { difficulty: 'Easy', question: 'Skryf die getal 4 327 in uitgebreide notasie.', answer: '4 000 + 300 + 20 + 7', checkMode: 'auto', correctAnswer: '4000+300+20+7', correctAnswers: ['4000+300+20+7'], explanation: '4 is in die Duisende-kolom (4 000), 3 is in die Honderde-kolom (300), 2 is in die Tiene-kolom (20), 7 is in die Eenhede-kolom (7).' },
+        { difficulty: 'Easy', question: 'Skryf die getal 7 054 in uitgebreide notasie.', answer: '7 000 + 0 + 50 + 4', checkMode: 'auto', correctAnswer: '7000+0+50+4', correctAnswers: ['7000+0+50+4'], explanation: '7 000 (Duisende) + 0 (Honderde) + 50 (Tiene) + 4 (Eenhede) = 7 054.' },
+        { difficulty: 'Easy', question: 'Skryf die getal 3 072 in uitgebreide notasie.', answer: '3 000 + 0 + 70 + 2', checkMode: 'auto', correctAnswer: '3000+0+70+2', correctAnswers: ['3000+0+70+2'], explanation: '3 000 (Duisende) + 0 (Honderde) + 70 (Tiene) + 2 (Eenhede) = 3 072.' },
+        { difficulty: 'Easy', question: 'Skryf die getal 6 431 in uitgebreide notasie.', answer: '6 000 + 400 + 30 + 1', checkMode: 'auto', correctAnswer: '6000+400+30+1', correctAnswers: ['6000+400+30+1'], explanation: '6 000 (Duisende) + 400 (Honderde) + 30 (Tiene) + 1 (Eenhede) = 6 431.' },
+        { difficulty: 'Medium', question: 'Wat is die waarde van die syfer 6 in 6 431?', answer: '6 000', checkMode: 'auto', correctAnswer: '6000', correctAnswers: ['6000', '6 000'], explanation: 'Die syfer 6 is in die Duisende-kolom, dus is sy waarde 6 × 1 000 = 6 000.' },
+        { difficulty: 'Medium', question: 'Wat is die waarde van die syfer 6 in 2 640?', answer: '600', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600'], explanation: 'Die syfer 6 is in die Honderde-kolom, dus is sy waarde 6 × 100 = 600.' },
+        { difficulty: 'Medium', question: 'Wat is die waarde van die syfer 6 in 3 516?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'Die syfer 6 is in die Eenhede-kolom, dus is sy waarde 6 × 1 = 6.' },
+        { difficulty: 'Medium', question: 'Wat is die waarde van die syfer 5 in 5 872?', answer: '5 000', checkMode: 'auto', correctAnswer: '5000', correctAnswers: ['5000', '5 000'], explanation: 'Die syfer 5 is in die Duisende-kolom, dus is sy waarde 5 × 1 000 = 5 000.' },
+        { difficulty: 'Medium', question: 'Wat is die waarde van die syfer 9 in 6 194?', answer: '90', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90'], explanation: 'Die syfer 9 is in die Tiene-kolom, dus is sy waarde 9 × 10 = 90.' },
+        { difficulty: 'Medium', question: 'Skryf die getal wat 4 duisende, 0 honderde, 8 tiene en 3 eenhede het.', answer: '4 083', checkMode: 'auto', correctAnswer: '4083', correctAnswers: ['4083', '4 083'], explanation: 'Plaas elke syfer in sy kolom: 4 duisende, 0 honderde, 8 tiene, 3 eenhede → 4 083.' },
+        { difficulty: 'Medium', question: 'Skryf die getal wat 5 duisende, 2 honderde, 1 tien en 8 eenhede het.', answer: '5 218', checkMode: 'auto', correctAnswer: '5218', correctAnswers: ['5218', '5 218'], explanation: 'Plaas elke syfer in sy kolom: 5 duisende, 2 honderde, 1 tien, 8 eenhede → 5 218.' },
+        { difficulty: 'Medium', question: 'Skryf die getal wat 9 duisende, 0 honderde, 0 tiene en 6 eenhede het.', answer: '9 006', checkMode: 'auto', correctAnswer: '9006', correctAnswers: ['9006', '9 006'], explanation: 'Plaas elke syfer in sy kolom: 9 duisende, 0 honderde, 0 tiene, 6 eenhede → 9 006.' },
+        { difficulty: 'Easy', question: 'Tel vorentoe in 1e vanaf 4 996. Skryf die volgende 4 getalle, geskei deur kommas.', answer: '4 997, 4 998, 4 999, 5 000', checkMode: 'auto', correctAnswer: '4997499849995000', correctAnswers: ['4997499849995000'], explanation: 'Tel 1 elke keer by: 4 996 + 1 = 4 997, dan 4 998, 4 999, 5 000.' },
+        { difficulty: 'Easy', question: 'Tel vorentoe in 10e vanaf 3 450. Skryf die volgende 4 getalle, geskei deur kommas.', answer: '3 460, 3 470, 3 480, 3 490', checkMode: 'auto', correctAnswer: '3460347034803490', correctAnswers: ['3460347034803490'], explanation: 'Tel 10 elke keer by: 3 450 + 10 = 3 460, dan 3 470, 3 480, 3 490.' },
+        { difficulty: 'Easy', question: 'Tel vorentoe in 10e vanaf 2 345. Skryf die volgende 4 getalle, geskei deur kommas.', answer: '2 355, 2 365, 2 375, 2 385', checkMode: 'auto', correctAnswer: '2355236523752385', correctAnswers: ['2355236523752385'], explanation: 'Tel 10 elke keer by: 2 345 + 10 = 2 355, dan 2 365, 2 375, 2 385.' },
+        { difficulty: 'Medium', question: 'Tel vorentoe in 100e vanaf 5 600. Skryf die volgende 5 getalle, geskei deur kommas.', answer: '5 700, 5 800, 5 900, 6 000, 6 100', checkMode: 'auto', correctAnswer: '57005800590060006100', correctAnswers: ['57005800590060006100'], explanation: 'Tel 100 elke keer by: 5 600 + 100 = 5 700, dan 5 800, 5 900, 6 000, 6 100.' },
+        { difficulty: 'Medium', question: 'Tel vorentoe in 1 000e vanaf 3 000. Skryf die volgende 4 getalle, geskei deur kommas.', answer: '4 000, 5 000, 6 000, 7 000', checkMode: 'auto', correctAnswer: '4000500060007000', correctAnswers: ['4000500060007000'], explanation: 'Tel 1 000 elke keer by: 3 000 + 1 000 = 4 000, dan 5 000, 6 000, 7 000.' },
+        { difficulty: 'Medium', question: 'Tel terugwaarts in 10e vanaf 8 080. Skryf die volgende 4 getalle, geskei deur kommas.', answer: '8 070, 8 060, 8 050, 8 040', checkMode: 'auto', correctAnswer: '8070806080508040', correctAnswers: ['8070806080508040'], explanation: 'Trek 10 elke keer af: 8 080 − 10 = 8 070, dan 8 060, 8 050, 8 040.' },
+        { difficulty: 'Medium', question: 'Tel terugwaarts in 100e vanaf 9 200. Skryf die volgende 5 getalle, geskei deur kommas.', answer: '9 100, 9 000, 8 900, 8 800, 8 700', checkMode: 'auto', correctAnswer: '91009000890088008700', correctAnswers: ['91009000890088008700'], explanation: 'Trek 100 elke keer af: 9 200 − 100 = 9 100, dan 9 000, 8 900, 8 800, 8 700.' },
+        { difficulty: 'Medium', question: 'Tel terugwaarts in 1 000e vanaf 7 000. Skryf die volgende 5 getalle, geskei deur kommas.', answer: '6 000, 5 000, 4 000, 3 000, 2 000', checkMode: 'auto', correctAnswer: '60005000400030002000', correctAnswers: ['60005000400030002000'], explanation: 'Trek 1 000 elke keer af: 7 000 − 1 000 = 6 000, dan 5 000, 4 000, 3 000, 2 000.' },
+        { difficulty: 'Hard', question: 'ʼn Getalpatroon gaan: 1 250, 1 350, 1 450 …\n\nWat is die reël, en wat is die volgende 2 getalle? Skryf die volgende 2 getalle geskei deur ʼn komma.', answer: 'Tel 100 elke keer by. Volgende 2 getalle: 1 550, 1 650', checkMode: 'auto', correctAnswer: '15501650', correctAnswers: ['15501650'], explanation: 'Elke getal is 100 meer as die een voor dit: 1 350 − 1 250 = 100, 1 450 − 1 350 = 100. Gaan voort: 1 450 + 100 = 1 550, 1 550 + 100 = 1 650.' },
+        { difficulty: 'Hard', question: 'Skryf die waarde van die syfer 3 in 4 738, skryf dan die waarde van die syfer 9 in 6 194. Gee jou twee antwoorde geskei deur ʼn komma (bv. 30, 90).', answer: '30, 90', checkMode: 'auto', correctAnswer: '3090', correctAnswers: ['3090'], explanation: 'In 4 738 is die syfer 3 in die Tiene-kolom, dus is sy waarde 3 × 10 = 30. In 6 194 is die syfer 9 in die Tiene-kolom, dus is sy waarde 9 × 10 = 90.' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 1 245 rooi appels, 873 groen appels en 12 geel appels. Bereken die totale aantal appels.', answer: '2 130', checkMode: 'auto', correctAnswer: '2130', correctAnswers: ['2130', '2 130'], explanation: '1 245 + 873 + 12 = 2 130.' },
       ],
-      answer: 'a) 6 000\nb) 600\nc) 6',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'Skryf die getal wat 4 duisende, 0 honderde, 8 tiene en 3 eenhede het.\n' +
-        'Skryf dit dan in uitgebreide notasie.',
-      parts: [
-        {
-          label: 'Getal:',
-          // 4 083 → normalized: "4083"
-          correctAnswer: '4083',
-          explanation:
-            'Plaas elke syfer in sy kolom:\n' +
-            '• 4 duisende → Duisende-kolom\n' +
-            '• 0 honderde → Honderde-kolom\n' +
-            '• 8 tiene → Tiene-kolom\n' +
-            '• 3 eenhede → Eenhede-kolom\n\n' +
-            'Die getal is 4 083.',
-        },
-        {
-          label: 'Uitgebreide notasie:',
-          // 4 000 + 0 + 80 + 3 → normalized: "4000+0+80+3"
-          correctAnswer: '4000+0+80+3',
-          explanation:
-            '4 083 = 4 000 + 0 + 80 + 3\n\n' +
-            '• 4 is in die Duisende-kolom → 4 000\n' +
-            '• 0 is in die Honderde-kolom → 0\n' +
-            '• 8 is in die Tiene-kolom → 80\n' +
-            '• 3 is in die Eenhede-kolom → 3',
-        },
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het plekwaarde, uitgebreide notasie en tel bemeester.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige vrae wat jy verkeerd het na en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die plekwaarde- en telvoorbeelde weer deur.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
       ],
-      answer: 'Getal: 4 083\nUitgebrei: 4 000 + 0 + 80 + 3',
     },
 
-    // ── Afdeling 3: Tel Vorentoe en Terugwaarts ──────────────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 — VERGELYK, ORDEN EN AFRONDING (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Tel vorentoe in 10e vanaf 3 450. Skryf die volgende 4 getalle, geskei deur kommas.',
-      // "3 460, 3 470, 3 480, 3 490" → strip spaces/commas → "3460347034803490"
-      correctAnswer: '3460347034803490',
-      explanation:
-        'Om vorentoe te tel in 10e beteken om 10 elke keer by te tel:\n' +
-        '3 450 + 10 = 3 460\n' +
-        '3 460 + 10 = 3 470\n' +
-        '3 470 + 10 = 3 480\n' +
-        '3 480 + 10 = 3 490\n\n' +
-        'Antwoord: 3 460, 3 470, 3 480, 3 490',
-      answer: '3 460, 3 470, 3 480, 3 490',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question: 'Tel terugwaarts in 100e vanaf 7 800. Skryf die volgende 5 getalle, geskei deur kommas.',
-      // "7 700, 7 600, 7 500, 7 400, 7 300" → strip spaces/commas → "77007600750074007300"
-      correctAnswer: '77007600750074007300',
-      explanation:
-        'Om terugwaarts te tel in 100e beteken om 100 elke keer af te trek:\n' +
-        '7 800 − 100 = 7 700\n' +
-        '7 700 − 100 = 7 600\n' +
-        '7 600 − 100 = 7 500\n' +
-        '7 500 − 100 = 7 400\n' +
-        '7 400 − 100 = 7 300\n\n' +
-        'Antwoord: 7 700, 7 600, 7 500, 7 400, 7 300',
-      answer: '7 700, 7 600, 7 500, 7 400, 7 300',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'ʼn Getalpatroon gaan: 2 000,  3 000,  4 000\n\n' +
-        'a) Wat is die reël? (Skryf: tel ___ by elke keer)\n' +
-        'b) Skryf die volgende 3 getalle, geskei deur kommas.\n' +
-        'c) Wat sal die 10de getal in die patroon wees?',
-      parts: [
-        {
-          label: 'a)',
-          // "tel 1 000 by elke keer" → lowercase → strip spaces → "tel1000byelkekeer"
-          correctAnswer: 'tel1000byelkekeer',
-          explanation:
-            'Elke getal is 1 000 meer as die een voor dit.\n' +
-            '2 000 + 1 000 = 3 000 ✓\n' +
-            '3 000 + 1 000 = 4 000 ✓\n\n' +
-            'Reël: tel 1 000 by elke keer.',
-        },
-        {
-          label: 'b)',
-          // "5 000, 6 000, 7 000" → strip spaces/commas → "500060007000"
-          correctAnswer: '500060007000',
-          explanation:
-            'Hou aan om 1 000 elke keer by te tel:\n' +
-            '4 000 + 1 000 = 5 000\n' +
-            '5 000 + 1 000 = 6 000\n' +
-            '6 000 + 1 000 = 7 000\n\n' +
-            'Volgende 3 getalle: 5 000, 6 000, 7 000',
-        },
-        {
-          label: 'c)',
-          // "11 000" → strip spaces → "11000"
-          correctAnswer: '11000',
-          explanation:
-            'Die patroon begin by 2 000 en ons tel 1 000 elke keer by.\n' +
-            '1ste getal: 2 000\n' +
-            '2de getal: 3 000\n' +
-            '3de getal: 4 000\n' +
-            '…\n' +
-            '10de getal = 2 000 + (9 × 1 000) = 2 000 + 9 000 = 11 000',
-        },
+      name: 'Stel 2: Vergelyk, Orden en Afronding',
+      questions: [
+        { difficulty: 'Easy', question: 'Skryf kleiner as, groter as, of gelyk aan: 3 456 en 3 654.', answer: 'kleiner as', checkMode: 'auto', correctAnswer: 'kleineras', correctAnswers: ['kleineras'], explanation: 'Vergelyk die honderde-syfers: 3 4__ vs 3 6__. Aangesien 4 < 6, is 3 456 kleiner as 3 654.' },
+        { difficulty: 'Easy', question: 'Skryf kleiner as, groter as, of gelyk aan: 7 001 en 7 001.', answer: 'gelyk aan', checkMode: 'auto', correctAnswer: 'gelykaan', correctAnswers: ['gelykaan'], explanation: 'Elke syfer is dieselfde, dus is 7 001 = 7 001.' },
+        { difficulty: 'Easy', question: 'Skryf kleiner as, groter as, of gelyk aan: 4 299 en 4 300.', answer: 'kleiner as', checkMode: 'auto', correctAnswer: 'kleineras', correctAnswers: ['kleineras'], explanation: '4 299 is een minder as 4 300, dus is 4 299 kleiner as 4 300.' },
+        { difficulty: 'Easy', question: 'Skryf kleiner as, groter as, of gelyk aan: 9 302 en 2 087.', answer: 'groter as', checkMode: 'auto', correctAnswer: 'groteras', correctAnswers: ['groteras'], explanation: 'Vergelyk die duisende-syfers: 9 vs 2. Aangesien 9 > 2, is 9 302 groter as 2 087.' },
+        { difficulty: 'Medium', question: 'Orden hierdie getalle van kleinste na grootste, geskei deur kommas: 5 032, 4 999, 5 320, 4 909', answer: '4 909, 4 999, 5 032, 5 320', checkMode: 'auto', correctAnswer: '4909499950325320', correctAnswers: ['4909499950325320'], explanation: 'Vergelyk eers die duisende: 4 909 en 4 999 (4 duisende) is kleiner as 5 032 en 5 320 (5 duisende). Vergelyk dan binne elke paar deur honderde/tiene: 4 909 < 4 999 en 5 032 < 5 320. Volgorde: 4 909, 4 999, 5 032, 5 320.' },
+        { difficulty: 'Medium', question: 'Orden hierdie getalle van kleinste na grootste, geskei deur kommas: 3 210, 3 201, 3 021, 3 102', answer: '3 021, 3 102, 3 201, 3 210', checkMode: 'auto', correctAnswer: '3021310232013210', correctAnswers: ['3021310232013210'], explanation: 'Al vier getalle het 3 duisende, dus vergelyk die honderde-syfers volgende: 3 021 het 0 honderde en 3 102 het 1 honderd — albei is kleiner as 3 201 en 3 210, wat 2 honderde het. Aangesien 0 < 1, is 3 021 < 3 102. Vergelyk 3 201 en 3 210 deur tiene-syfers: 0 < 1, dus is 3 201 < 3 210. Finale volgorde: 3 021, 3 102, 3 201, 3 210.' },
+        { difficulty: 'Medium', question: 'Orden hierdie getalle van kleinste na grootste, geskei deur kommas: 8 760, 8 670, 8 607, 8 076', answer: '8 076, 8 607, 8 670, 8 760', checkMode: 'auto', correctAnswer: '8076860786708760', correctAnswers: ['8076860786708760'], explanation: 'Vergelyk die honderde-syfers: 8 076 het 0 honderde (kleinste). Dan het 8 607 6 honderde, 8 670 het 6 honderde, 8 760 het 7 honderde. Vergelyk 8 607 en 8 670 deur tiene: 0 < 7, dus is 8 607 < 8 670. Volgorde: 8 076, 8 607, 8 670, 8 760.' },
+        { difficulty: 'Medium', question: 'Orden hierdie getalle van kleinste na grootste, geskei deur kommas: 6 234, 987, 6 432, 1 023', answer: '987, 1 023, 6 234, 6 432', checkMode: 'auto', correctAnswer: '987102362346432', correctAnswers: ['987102362346432'], explanation: '987 het 3 syfers, dus is dit die kleinste. 1 023 het 4 syfers met 1 duisend. 6 234 en 6 432 het albei 6 duisende — vergelyk honderde: 2 < 4, dus is 6 234 < 6 432. Volgorde: 987, 1 023, 6 234, 6 432.' },
+        { difficulty: 'Hard', question: 'Thabo sê 3 987 is groter as 4 001 omdat die syfer 9 groter as 0 is. Is Thabo korrek? Skryf ja of nee.', answer: 'Nee', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'Jy moet altyd die hoogste plekwaarde eerste vergelyk. 3 987 het 3 duisende en 4 001 het 4 duisende. Aangesien 4 > 3, is 4 001 groter, maak nie saak wat die ander syfers is nie.' },
+        { difficulty: 'Easy', question: 'Rond 3 456 af na die naaste 10.', answer: '3 460', checkMode: 'auto', correctAnswer: '3460', correctAnswers: ['3460', '3 460'], explanation: 'Die eenhede-syfer is 6 (≥ 5), dus rond ons op: 3 456 → 3 460.' },
+        { difficulty: 'Easy', question: 'Rond 5 234 af na die naaste 100.', answer: '5 200', checkMode: 'auto', correctAnswer: '5200', correctAnswers: ['5200', '5 200'], explanation: 'Die tiene-syfer is 3 (< 5), dus rond ons af: 5 234 → 5 200.' },
+        { difficulty: 'Easy', question: 'Rond 7 849 af na die naaste 100.', answer: '7 800', checkMode: 'auto', correctAnswer: '7800', correctAnswers: ['7800', '7 800'], explanation: 'Die tiene-syfer is 4 (< 5), dus rond ons af: 7 849 → 7 800.' },
+        { difficulty: 'Medium', question: 'Rond 2 350 af na die naaste 100.', answer: '2 400', checkMode: 'auto', correctAnswer: '2400', correctAnswers: ['2400', '2 400'], explanation: 'Die tiene-syfer is 5 (≥ 5), dus rond ons op: 2 350 → 2 400.' },
+        { difficulty: 'Medium', question: 'Rond 6 784 af na die naaste 10.', answer: '6 780', checkMode: 'auto', correctAnswer: '6780', correctAnswers: ['6780', '6 780'], explanation: 'Die eenhede-syfer is 4 (< 5), dus rond ons af: 6 784 → 6 780.' },
+        { difficulty: 'Medium', question: 'Rond 4 763 af na die naaste 100.', answer: '4 800', checkMode: 'auto', correctAnswer: '4800', correctAnswers: ['4800', '4 800'], explanation: 'Die tiene-syfer is 6 (≥ 5), dus rond ons op: 4 763 → 4 800.' },
+        { difficulty: 'Medium', question: 'Rond 4 763 af na die naaste 10.', answer: '4 760', checkMode: 'auto', correctAnswer: '4760', correctAnswers: ['4760', '4 760'], explanation: 'Die eenhede-syfer is 3 (< 5), dus rond ons af: 4 763 → 4 760.' },
+        { difficulty: 'Medium', question: 'Rond 5 999 af na die naaste 10.', answer: '6 000', checkMode: 'auto', correctAnswer: '6000', correctAnswers: ['6000', '6 000'], explanation: 'Die eenhede-syfer is 9 (≥ 5), dus rond ons op: 5 999 → 6 000 (die tiene-, honderde- en duisende-syfers verander almal weens oordrag).' },
+        { difficulty: 'Medium', question: 'Rond 1 499 af na die naaste 100.', answer: '1 500', checkMode: 'auto', correctAnswer: '1500', correctAnswers: ['1500', '1 500'], explanation: 'Die tiene-syfer is 9 (≥ 5), dus rond ons op: 1 499 → 1 500.' },
+        { difficulty: 'Medium', question: 'Rond 8 501 af na die naaste 10.', answer: '8 500', checkMode: 'auto', correctAnswer: '8500', correctAnswers: ['8500', '8 500'], explanation: 'Die eenhede-syfer is 1 (< 5), dus rond ons af: 8 501 → 8 500.' },
+        { difficulty: 'Medium', question: 'Rond 2 222 af na die naaste 1 000.', answer: '2 000', checkMode: 'auto', correctAnswer: '2000', correctAnswers: ['2000', '2 000'], explanation: 'Die honderde-syfer is 2 (< 5), dus rond ons af: 2 222 → 2 000.' },
+        { difficulty: 'Medium', question: 'Rond 6 666 af na die naaste 1 000.', answer: '7 000', checkMode: 'auto', correctAnswer: '7000', correctAnswers: ['7000', '7 000'], explanation: 'Die honderde-syfer is 6 (≥ 5), dus rond ons op: 6 666 → 7 000.' },
+        { difficulty: 'Hard', question: 'Rond 3 299 af na die naaste 10 EN na die naaste 100. Gee jou twee antwoorde geskei deur ʼn komma (10e-antwoord eerste).', answer: '3 300, 3 300', checkMode: 'auto', correctAnswer: '33003300', correctAnswers: ['33003300'], explanation: 'Naaste 10: eenhede-syfer 9 (≥ 5), rond op: 3 299 → 3 300. Naaste 100: tiene-syfer 9 (≥ 5), rond op: 3 299 → 3 300. Albei antwoorde is 3 300.' },
+        { difficulty: 'Hard', question: 'ʼn Boer het 4 763 skape. ʼn Nuusberig sê hy het ongeveer 4 800 skape. Rond 4 763 af na die naaste 100 om te kyk of die berig korrek is. Skryf jou afgeronde antwoord.', answer: '4 800', checkMode: 'auto', correctAnswer: '4800', correctAnswers: ['4800', '4 800'], explanation: 'Tiene-syfer is 6 (≥ 5), dus rond ons op: 4 763 → 4 800. Dit bevestig die nuusberig.' },
+        { difficulty: 'Hard', question: 'Watter een rond na ʼn groter getal af na die naaste 100: 2 650 of 3 299? Rond elkeen eers af, en antwoord dan met die oorspronklike getal wat groter is na afronding.', answer: '3 299', checkMode: 'auto', correctAnswer: '3299', correctAnswers: ['3299', '3 299'], explanation: '2 650 rond af na 2 700. 3 299 rond af na 3 300. Aangesien 3 300 > 2 700, is die antwoord 3 299.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom afronding na die naaste 10 gewoonlik ʼn meer akkurate skatting gee as afronding na die naaste 100.', answer: 'Afronding na die naaste 10 verander die getal met hoogstens 5, terwyl afronding na die naaste 100 die getal met tot 50 kan verander. Omdat die naaste-10-skatting nader aan die werklike getal bly, is dit gewoonlik meer akkuraat.', checkMode: 'self' },
       ],
-      answer: 'a) Tel 1 000 by elke keer\nb) 5 000, 6 000, 7 000\nc) 11 000',
-    },
-
-    // ── Afdeling 4: Vergelyk en Orden Getalle ────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question:
-        'Skryf kleiner as, groter as, of gelyk aan tussen elke paar getalle:\n\n' +
-        'a) 3 456 en 3 654\n' +
-        'b) 7 001 en 7 001\n' +
-        'c) 4 299 en 4 300',
-      parts: [
-        {
-          label: 'a)',
-          // "kleiner as" → strip spaces → "kleineras"
-          correctAnswer: 'kleineras',
-          explanation:
-            'Vergelyk die honderde-syfers: 3 4__ vs 3 6__.\n' +
-            '4 < 6, dus is 3 456 kleiner as 3 654.\n\n' +
-            '3 456 < 3 654',
-        },
-        {
-          label: 'b)',
-          // "gelyk aan" → strip spaces → "gelykaan"
-          correctAnswer: 'gelykaan',
-          explanation:
-            'Die twee getalle is identies — elke syfer is dieselfde.\n\n' +
-            '7 001 = 7 001',
-        },
-        {
-          label: 'c)',
-          // "kleiner as" → strip spaces → "kleineras"
-          correctAnswer: 'kleineras',
-          explanation:
-            'Dieselfde duisende (4) en dieselfde honderde (2).\n' +
-            'Vergelyk die tiene-syfers: 4 29_ vs 4 30_.\n' +
-            '9 tiene is steeds minder as 30_ omdat die honderde-syfer van 4 300 een meer is.\n' +
-            'Eenvoudiger: 4 299 is een minder as 4 300.\n\n' +
-            '4 299 < 4 300',
-        },
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy kan met selfvertroue heelgetalle vergelyk, orden en afrond.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige vrae wat jy verkeerd het na en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die vergelyking- en afrondingsvoorbeelde weer deur.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
       ],
-      answer: 'a) kleiner as\nb) gelyk aan\nc) kleiner as',
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 — WERKLIKE-LEWE WOORDPROBLEME (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Orden hierdie getalle van kleinste na grootste. Skryf hulle geskei deur kommas:\n\n' +
-        '5 032,  4 999,  5 320,  4 909',
-      // "4 909, 4 999, 5 032, 5 320" → strip spaces/commas → "4909499950325320"
-      correctAnswer: '4909499950325320',
-      explanation:
-        'Stap 1 — Vergelyk die duisende-syfers: 5, 4, 5, 4.\n' +
-        'Getalle met 4 duisende (4 999 en 4 909) is kleiner as getalle met 5 duisende (5 032 en 5 320).\n\n' +
-        'Stap 2 — Vergelyk 4 909 en 4 999 (dieselfde duisende-syfer):\n' +
-        'Honderde-syfers: 9 vs 9 — gelyk. Vergelyk tiene: 0 vs 9. Aangesien 0 < 9, is 4 909 < 4 999.\n\n' +
-        'Stap 3 — Vergelyk 5 032 en 5 320 (dieselfde duisende-syfer):\n' +
-        'Honderde-syfers: 0 vs 3. Aangesien 0 < 3, is 5 032 < 5 320.\n\n' +
-        'Volgorde van kleinste na grootste: 4 909,  4 999,  5 032,  5 320',
-      answer: '4 909, 4 999, 5 032, 5 320',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Thabo sê 3 987 is groter as 4 001 omdat die syfer 9 groter as 0 is.\n\n' +
-        'Is Thabo korrek? Verduidelik waarom of waarom nie.',
-      answer:
-        'Nee, Thabo is nie korrek nie. 4 001 is die groter getal.\n\n' +
-        'Hoekom: jy moet altyd die hoogste plekwaarde eerste vergelyk — die duisende-kolom.\n' +
-        '• 3 987 het 3 duisende.\n' +
-        '• 4 001 het 4 duisende.\n\n' +
-        'Omdat 4 > 3 in die duisende-kolom, is 4 001 groter as 3 987, maak nie saak wat die ander syfers is nie.\n\n' +
-        'Thabo se fout was om die honderde-syfer te vergelyk (9 vs 0) in plaas van die duisende-syfer. Begin altyd by die hoogste plekwaarde.',
-    },
-
-    // ── Afdeling 5: Afronding ─────────────────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Rond 3 456 af na die naaste 10.',
-      // "3 460" → strip spaces → "3460"
-      correctAnswer: '3460',
-      explanation:
-        'Kyk na die eenhede-syfer: 6. Omdat 6 ≥ 5, rond ons op.\n' +
-        'Tel 1 by die tiene-syfer: 5 + 1 = 6. Vervang die eenhede-syfer met 0.\n\n' +
-        '3 456 → 3 460',
-      answer: '3 460',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Rond elk van die volgende getalle af:\n\n' +
-        'a) 7 849 na die naaste 100\n' +
-        'b) 2 350 na die naaste 100\n' +
-        'c) 6 784 na die naaste 10',
-      parts: [
-        {
-          label: 'a)',
-          // "7 800" → strip spaces → "7800"
-          correctAnswer: '7800',
-          explanation:
-            'Kyk na die tiene-syfer: 4. Omdat 4 < 5, rond ons af.\n' +
-            'Die honderde-syfer bly as 8. Vervang die tiene en eenhede met 0.\n\n' +
-            '7 849 → 7 800',
-        },
-        {
-          label: 'b)',
-          // "2 400" → strip spaces → "2400"
-          correctAnswer: '2400',
-          explanation:
-            'Kyk na die tiene-syfer: 5. Omdat 5 ≥ 5, rond ons op.\n' +
-            'Tel 1 by die honderde-syfer: 3 + 1 = 4. Vervang die tiene en eenhede met 0.\n\n' +
-            '2 350 → 2 400',
-        },
-        {
-          label: 'c)',
-          // "6 780" → strip spaces → "6780"
-          correctAnswer: '6780',
-          explanation:
-            'Kyk na die eenhede-syfer: 4. Omdat 4 < 5, rond ons af.\n' +
-            'Die tiene-syfer bly as 8. Vervang die eenhede-syfer met 0.\n\n' +
-            '6 784 → 6 780',
-        },
+      name: 'Stel 3: Werklike-Lewe Woordprobleme',
+      questions: [
+        { difficulty: 'Easy', question: 'ʼn Skool het 4 327 leerders. Skryf hierdie getal in ʼn plekwaardetabel: wat is die waarde van die syfer 4?', answer: '4 000', checkMode: 'auto', correctAnswer: '4000', correctAnswers: ['4000', '4 000'], explanation: 'Die syfer 4 is in die Duisende-kolom van 4 327, dus is sy waarde 4 000.' },
+        { difficulty: 'Easy', question: 'ʼn Stadion kan 8 734 mense huisves. Rond hierdie getal af na die naaste 1 000 om die sitplekkapasiteit te skat.', answer: '9 000', checkMode: 'auto', correctAnswer: '9000', correctAnswers: ['9000', '9 000'], explanation: 'Die honderde-syfer is 7 (≥ 5), dus rond ons op: 8 734 → 9 000.' },
+        { difficulty: 'Easy', question: 'Lerato het R2 087 gespaar en Sipho het R9 302 gespaar. Wie het meer geld gespaar?', answer: 'Sipho', checkMode: 'auto', correctAnswer: 'Sipho', correctAnswers: ['Sipho', 'sipho'], explanation: 'Vergelyk die duisende-syfers: 9 302 het 9 duisende, 2 087 het 2 duisende. Aangesien 9 > 2, het Sipho meer.' },
+        { difficulty: 'Easy', question: 'ʼn Winkel het 6 235 brode verkoop. Skryf 6 235 in uitgebreide notasie.', answer: '6 000 + 200 + 30 + 5', checkMode: 'auto', correctAnswer: '6000+200+30+5', correctAnswers: ['6000+200+30+5'], explanation: '6 000 (Duisende) + 200 (Honderde) + 30 (Tiene) + 5 (Eenhede) = 6 235.' },
+        { difficulty: 'Medium', question: 'ʼn Bioskoop het 4 200 sitplekke en voeg elke jaar vir die volgende 3 jaar nog 100 sitplekke by. Skryf die aantal sitplekke na elk van die volgende 3 jaar, geskei deur kommas.', answer: '4 300, 4 400, 4 500', checkMode: 'auto', correctAnswer: '430044004500', correctAnswers: ['430044004500'], explanation: 'Tel vorentoe in 100e: 4 200 + 100 = 4 300, dan 4 400, dan 4 500.' },
+        { difficulty: 'Medium', question: 'ʼn Liefdadigheidsorganisasie wil R5 000 insamel. Hulle het reeds R5 000 belowe in fases van R1 000. Skryf die beloofde totaal na elk van die volgende 4 fases, begin by R5 000, geskei deur kommas.', answer: '6 000, 7 000, 8 000, 9 000', checkMode: 'auto', correctAnswer: '6000700080009000', correctAnswers: ['6000700080009000'], explanation: 'Tel vorentoe in 1 000e: 5 000 + 1 000 = 6 000, dan 7 000, 8 000, 9 000.' },
+        { difficulty: 'Medium', question: 'Twee dorpe het bevolkings van 4 560 en 4 650. Watter dorp het die kleiner bevolking?', answer: '4 560', checkMode: 'auto', correctAnswer: '4560', correctAnswers: ['4560', '4 560'], explanation: 'Vergelyk die honderde-syfers: 4 560 het 5 honderde, 4 650 het 6 honderde. Aangesien 5 < 6, is 4 560 kleiner.' },
+        { difficulty: 'Medium', question: 'ʼn Skenkingsveldtog het 6 784 blikkies kos ingesamel. Rond hierdie getal af na die naaste 10 om in ʼn eenvoudige verslag te skryf.', answer: '6 780', checkMode: 'auto', correctAnswer: '6780', correctAnswers: ['6780', '6 780'], explanation: 'Die eenhede-syfer is 4 (< 5), dus rond ons af: 6 784 → 6 780.' },
+        { difficulty: 'Medium', question: 'ʼn Motorhandelaar het hierdie jaar 9 450 motors verkoop. Rond hierdie getal af na die naaste 1 000 vir die jaarverslag.', answer: '9 000', checkMode: 'auto', correctAnswer: '9000', correctAnswers: ['9000', '9 000'], explanation: 'Die honderde-syfer is 4 (< 5), dus rond ons af: 9 450 → 9 000.' },
+        { difficulty: 'Medium', question: 'Vier dorpe het hierdie bevolkings: 5 234, 4 980, 5 300, 4 870. Orden hulle van kleinste na grootste, geskei deur kommas.', answer: '4 870, 4 980, 5 234, 5 300', checkMode: 'auto', correctAnswer: '4870498052345300', correctAnswers: ['4870498052345300'], explanation: 'Dorpe met 4 duisende (4 870, 4 980) is kleiner as dorpe met 5 duisende (5 234, 5 300). Vergelyk binne die pare: 4 870 < 4 980 en 5 234 < 5 300. Volgorde: 4 870, 4 980, 5 234, 5 300.' },
+        { difficulty: 'Medium', question: 'Vier skole het hierdie aantal leerders: 7 650, 6 980, 7 200, 6 890. Orden hulle van kleinste na grootste, geskei deur kommas.', answer: '6 890, 6 980, 7 200, 7 650', checkMode: 'auto', correctAnswer: '6890698072007650', correctAnswers: ['6890698072007650'], explanation: 'Skole met 6 duisende (6 980, 6 890) is kleiner as skole met 7 duisende (7 200, 7 650). Vergelyk binne die pare: 6 890 < 6 980 en 7 200 < 7 650. Volgorde: 6 890, 6 980, 7 200, 7 650.' },
+        { difficulty: 'Easy', question: 'ʼn Hardloper het ʼn wedloop van 2 350 meter voltooi. Rond hierdie afstand af na die naaste 100 meter.', answer: '2 400', checkMode: 'auto', correctAnswer: '2400', correctAnswers: ['2400', '2 400'], explanation: 'Die tiene-syfer is 5 (≥ 5), dus rond ons op: 2 350 → 2 400.' },
+        { difficulty: 'Medium', question: 'ʼn Albasterversamelaar se albasters begin by 3 125, en hy tel dan nog 5 bokse by in stappe van 10 albasters elk. Skryf die albastertelling na die eerste 5 bokse, geskei deur kommas.', answer: '3 135, 3 145, 3 155, 3 165, 3 175', checkMode: 'auto', correctAnswer: '31353145315531653175', correctAnswers: ['31353145315531653175'], explanation: 'Tel vorentoe in 10e: 3 125 + 10 = 3 135, dan 3 145, 3 155, 3 165, 3 175.' },
+        { difficulty: 'Medium', question: 'ʼn Pakhuis het 9 081 bokse. Skryf 9 081 in uitgebreide notasie.', answer: '9 000 + 0 + 80 + 1', checkMode: 'auto', correctAnswer: '9000+0+80+1', correctAnswers: ['9000+0+80+1'], explanation: '9 000 (Duisende) + 0 (Honderde) + 80 (Tiene) + 1 (Eenhede) = 9 081.' },
+        { difficulty: 'Medium', question: 'ʼn Biblioteek het 1 406 boeke op een rak. Skryf 1 406 in uitgebreide notasie.', answer: '1 000 + 400 + 0 + 6', checkMode: 'auto', correctAnswer: '1000+400+0+6', correctAnswers: ['1000+400+0+6'], explanation: '1 000 (Duisende) + 400 (Honderde) + 0 (Tiene) + 6 (Eenhede) = 1 406.' },
+        { difficulty: 'Medium', question: 'ʼn Padreis se afstande word op ʼn getallelyn gemerk van 0 km tot 1 000 km in intervalle van 100 km. ʼn Russtop is by 650 km. Tussen watter twee merke val dit? Skryf die twee getalle geskei deur ʼn komma.', answer: '600, 700', checkMode: 'auto', correctAnswer: '600700', correctAnswers: ['600700'], explanation: '650 val tussen die 600 km-merk en die 700 km-merk op die getallelyn.' },
+        { difficulty: 'Hard', question: 'ʼn Stadion tel kaartjieverkope op ʼn getallelyn van 5 000 tot 6 000 in intervalle van 100. As ʼn kaartjietelling van 5 500 aangemeld word, waar sit dit op die getallelyn? Skryf jou antwoord as: halfpad OF nie halfpad nie.', answer: 'halfpad', checkMode: 'auto', correctAnswer: 'halfpad', correctAnswers: ['halfpad'], explanation: '5 000 + 6 000 = 11 000, en 11 000 ÷ 2 = 5 500, dus sit 5 500 presies halfpad tussen 5 000 en 6 000.' },
+        { difficulty: 'Hard', question: 'ʼn Maatskappy het 4 200 kliënte gehad en kry 1 000 nuwe kliënte elke jaar vir 3 jaar. Skryf die kliëntetotale na elk van die 3 jaar, geskei deur kommas.', answer: '5 200, 6 200, 7 200', checkMode: 'auto', correctAnswer: '520062007200', correctAnswers: ['520062007200'], explanation: 'Tel vorentoe in 1 000e vanaf 4 200: 4 200 + 1 000 = 5 200, dan 6 200, dan 7 200.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder het die syfers 3, 0, 7 en 2. Deur elke syfer presies een keer te gebruik, wat is die grootste 4-syfergetal wat gemaak kan word?', answer: '7 320', checkMode: 'auto', correctAnswer: '7320', correctAnswers: ['7320', '7 320'], explanation: 'Om die grootste getal te maak, rangskik die syfers van grootste na kleinste: 7, 3, 2, 0 → 7 320.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder het die syfers 3, 0, 7 en 2. Deur elke syfer presies een keer te gebruik, wat is die kleinste 4-syfergetal wat gemaak kan word (geen voorloopnul nie)?', answer: '2 037', checkMode: 'auto', correctAnswer: '2037', correctAnswers: ['2037', '2 037'], explanation: 'Om die kleinste getal te maak, rangskik die syfers van kleinste na grootste, maar die eerste syfer kan nie 0 wees nie. Syfers in volgorde is 0, 2, 3, 7 — verruil die 0 met die volgende kleinste nie-nul syfer (2) om 2, 0, 3, 7 → 2 037 te kry.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder het die syfers 5, 9, 1 en 4. Deur elke syfer presies een keer te gebruik, wat is die grootste 4-syfergetal wat gemaak kan word?', answer: '9 541', checkMode: 'auto', correctAnswer: '9541', correctAnswers: ['9541', '9 541'], explanation: 'Rangskik die syfers van grootste na kleinste: 9, 5, 4, 1 → 9 541.' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 8 062 items in voorraad. Skryf hierdie getal in uitgebreide notasie.', answer: '8 000 + 0 + 60 + 2', checkMode: 'auto', correctAnswer: '8000+0+60+2', correctAnswers: ['8000+0+60+2'], explanation: '8 000 (Duisende) + 0 (Honderde) + 60 (Tiene) + 2 (Eenhede) = 8 062.' },
+        { difficulty: 'Hard', question: 'ʼn Skool hou bywoning aan op ʼn getallelyn wat elke 1 000 gemerk is van 0 tot 10 000. ʼn Spesiale gebeurtenis het 8 500 mense gelok. Dit val presies halfpad tussen watter twee merke? Skryf die twee getalle geskei deur ʼn komma.', answer: '8 000, 9 000', checkMode: 'auto', correctAnswer: '80009000', correctAnswers: ['80009000'], explanation: '8 000 + 9 000 = 17 000, en 17 000 ÷ 2 = 8 500, dus sit 8 500 presies halfpad tussen 8 000 en 9 000.' },
+        { difficulty: 'Hard', question: 'ʼn Boer rond sy 4 763 skape af na die naaste 10 vir ʼn vinnige skatting, en vergelyk dit dan met die naaste-100-skatting van 4 800. Wat is die verskil tussen die twee afgeronde skattings?', answer: '40', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40'], explanation: 'Naaste 10: 4 763 → 4 760. Naaste 100: 4 763 → 4 800. Verskil: 4 800 − 4 760 = 40.' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 1 245 rooi appels, 873 groen appels en 12 geel appels gehad. Rond die totale aantal appels af na die naaste 100.', answer: '2 100', checkMode: 'auto', correctAnswer: '2100', correctAnswers: ['2100', '2 100'], explanation: 'Totaal = 1 245 + 873 + 12 = 2 130. Om 2 130 na die naaste 100 af te rond: tiene-syfer is 3 (< 5), rond af → 2 100.' },
       ],
-      answer: 'a) 7 800\nb) 2 400\nc) 6 780',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'ʼn Boer het 4 763 skape. ʼn Nuusberig sê hy het ongeveer 4 800 skape.\n\n' +
-        'a) Rond 4 763 af na die naaste 100. Bevestig dit die nuusberig?\n' +
-        'b) Rond 4 763 af na die naaste 10.\n' +
-        'c) Watter afgeronde antwoord is meer akkuraat — skryf 4 800 of 4 760.',
-      parts: [
-        {
-          label: 'a)',
-          // "4 800" → strip spaces → "4800"
-          correctAnswer: '4800',
-          explanation:
-            'Tiene-syfer is 6 (≥ 5), dus rond ons op.\n' +
-            'Honderde-syfer 7 + 1 = 8. Vervang tiene en eenhede met 0.\n\n' +
-            '4 763 → 4 800 ✓ — ja, die nuusberig is korrek.',
-        },
-        {
-          label: 'b)',
-          // "4 760" → strip spaces → "4760"
-          correctAnswer: '4760',
-          explanation:
-            'Eenhede-syfer is 3 (< 5), dus rond ons af.\n' +
-            'Die tiene-syfer bly as 6. Vervang die eenhede-syfer met 0.\n\n' +
-            '4 763 → 4 760',
-        },
-        {
-          label: 'c)',
-          // "4 760" → strip spaces → "4760"
-          correctAnswer: '4760',
-          explanation:
-            '4 760 is meer akkuraat omdat dit nader aan die werklike getal 4 763 is.\n' +
-            '• 4 763 − 4 760 = 3 (verskil van slegs 3)\n' +
-            '• 4 800 − 4 763 = 37 (verskil van 37)\n\n' +
-            'Afronding na die naaste 10 gee altyd ʼn meer akkurate resultaat as afronding na die naaste 100.',
-        },
+      scoreMessages: [
+        { minScore: 25, message: 'Fantasties! Jy kan plekwaarde, afronding en ordening op werklike-lewe probleme toepas.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige vrae wat jy verkeerd het na en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die voorbeelde weer deur en probeer die woordprobleme weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
       ],
-      answer: 'a) 4 800 (ja, korrek)\nb) 4 760\nc) 4 760',
     },
 
-    // ── Afdeling 6: Stel Getalle voor op ʼn Getallelyn ──────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 4 — MEERSTAP-, GETALLELYN- EN SELFTOETS-REDENERING (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question:
-        'ʼn Getallelyn gaan van 0 na 1 000 in intervalle van 100.\n\n' +
-        'Tussen watter twee getalle sit 650? Skryf die twee getalle geskei deur ʼn komma.',
-      // "600, 700" → strip spaces/commas → "600700"
-      correctAnswer: '600700',
-      explanation:
-        '650 is tussen 600 en 700.\n\n' +
-        'Die intervallmerke is: 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1 000.\n' +
-        '650 val tussen die 600-merk en die 700-merk.\n' +
-        'Dit is presies halfpad tussen hulle (600 + 700 = 1 300 ÷ 2 = 650).',
-      answer: '600, 700',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'self',
-      question:
-        'ʼn Getallelyn gaan van 5 000 na 6 000 in intervalle van 100.\n\n' +
-        'Waar sou jy 5 500 plaas? Verduidelik hoe jy dit weet.',
-      answer:
-        '5 500 sit presies halfpad tussen 5 000 en 6 000.\n\n' +
-        'Hoe om die halfpadpunt te vind:\n' +
-        'Tel die twee eindwaardes bymekaar en deel deur 2:\n' +
-        '5 000 + 6 000 = 11 000\n' +
-        '11 000 ÷ 2 = 5 500\n\n' +
-        'Dus word 5 500 reg in die middel van die getallelyn geplaas.',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'ʼn Getallelyn gaan van 3 000 na 4 000 in intervalle van 100.\n\n' +
-        'a) Watter getal is halfpad tussen 3 400 en 3 500?\n' +
-        'b) Watter getal is driekwart van die pad tussen 3 000 en 4 000?',
-      parts: [
-        {
-          label: 'a)',
-          // "3 450" → strip spaces → "3450"
-          correctAnswer: '3450',
-          explanation:
-            'Om die halfpadpunt tussen 3 400 en 3 500 te vind:\n' +
-            'Tel die twee merke bymekaar: 3 400 + 3 500 = 6 900\n' +
-            'Deel deur 2: 6 900 ÷ 2 = 3 450\n\n' +
-            'Die halfpadpunt is 3 450.',
-        },
-        {
-          label: 'b)',
-          // "3 750" → strip spaces → "3750"
-          correctAnswer: '3750',
-          explanation:
-            'Driekwart van die pad tussen 3 000 en 4 000:\n' +
-            'Die totale afstand is 4 000 − 3 000 = 1 000.\n' +
-            'Driekwart van 1 000 = ¾ × 1 000 = 750.\n' +
-            'Begin by 3 000 en tel 750 by: 3 000 + 750 = 3 750.\n\n' +
-            'Die antwoord is 3 750.',
-        },
+      name: 'Stel 4: Meerstap- en Gekombineerde Probleme',
+      questions: [
+        { difficulty: 'Medium', question: 'ʼn Getallelyn gaan van 3 000 na 4 000 in intervalle van 100. Watter getal is halfpad tussen 3 400 en 3 500?', answer: '3 450', checkMode: 'auto', correctAnswer: '3450', correctAnswers: ['3450', '3 450'], explanation: 'Tel die twee merke bymekaar: 3 400 + 3 500 = 6 900. Deel deur 2: 6 900 ÷ 2 = 3 450.' },
+        { difficulty: 'Medium', question: 'ʼn Getallelyn gaan van 3 000 na 4 000 in intervalle van 100. Watter getal is driekwart van die pad tussen 3 000 en 4 000?', answer: '3 750', checkMode: 'auto', correctAnswer: '3750', correctAnswers: ['3750', '3 750'], explanation: 'Die totale afstand is 4 000 − 3 000 = 1 000. Driekwart van 1 000 = 750. Begin by 3 000 en tel 750 by: 3 750.' },
+        { difficulty: 'Medium', question: 'ʼn Getallelyn gaan van 4 000 na 5 000 in intervalle van 100. Watter getal is ʼn kwart van die pad tussen 4 000 en 5 000?', answer: '4 250', checkMode: 'auto', correctAnswer: '4250', correctAnswers: ['4250', '4 250'], explanation: 'Die totale afstand is 5 000 − 4 000 = 1 000. ʼn Kwart van 1 000 = 250. Begin by 4 000 en tel 250 by: 4 250.' },
+        { difficulty: 'Medium', question: 'ʼn Getallelyn gaan van 7 000 na 7 500 in intervalle van 100. Watter getal is halfpad tussen 7 200 en 7 300?', answer: '7 250', checkMode: 'auto', correctAnswer: '7250', correctAnswers: ['7250', '7 250'], explanation: 'Tel die twee merke bymekaar: 7 200 + 7 300 = 14 500. Deel deur 2: 14 500 ÷ 2 = 7 250.' },
+        { difficulty: 'Hard', question: 'Rond 8 461 af na die naaste 100, werk dan die verskil tussen die afgeronde getal en die oorspronklike getal uit.', answer: 'Afgerond = 8 500; Verskil = 39', checkMode: 'auto', correctAnswer: '39', correctAnswers: ['39', '8500 39', '8 500; 39'], explanation: 'Die tiene-syfer is 6 (≥ 5), dus rond ons op: 8 461 → 8 500. Verskil = 8 500 − 8 461 = 39.' },
+        { difficulty: 'Hard', question: 'ʼn Getal het 5 duisende, 8 honderde, 4 tiene en 7 eenhede. Skryf die getal, rond dit dan af na die naaste 100.', answer: 'Getal = 5 847; Afgerond = 5 800', checkMode: 'auto', correctAnswer: '5800', correctAnswers: ['5800', '5 800', '5847 5800', '5 847; 5 800'], explanation: 'Die getal is 5 847. Om na die naaste 100 af te rond: tiene-syfer is 4 (< 5), rond af → 5 800.' },
+        { difficulty: 'Hard', question: 'In die getal 5 847, vind die waarde van die duisende-syfer en die waarde van die eenhede-syfer, tel hulle dan bymekaar.', answer: '5 007', checkMode: 'auto', correctAnswer: '5007', correctAnswers: ['5007', '5 007'], explanation: 'Waarde van duisende-syfer (5) = 5 000. Waarde van eenhede-syfer (7) = 7. Som: 5 000 + 7 = 5 007.' },
+        { difficulty: 'Hard', question: 'In die getal 3 728, vind die waarde van die honderde-syfer en die waarde van die tiene-syfer, trek dan die tiene-waarde van die honderde-waarde af.', answer: '680', checkMode: 'auto', correctAnswer: '680', correctAnswers: ['680'], explanation: 'Waarde van honderde-syfer (7) = 700. Waarde van tiene-syfer (2) = 20. Verskil: 700 − 20 = 680.' },
+        { difficulty: 'Hard', question: 'Orden hierdie getalle van grootste na kleinste, geskei deur kommas: 5 032, 4 999, 5 320, 4 909', answer: '5 320, 5 032, 4 999, 4 909', checkMode: 'auto', correctAnswer: '5320503249994909', correctAnswers: ['5320503249994909'], explanation: 'Vanaf die vroeëre kleinste-na-grootste volgorde (4 909, 4 999, 5 032, 5 320), keer dit om vir grootste-na-kleinste: 5 320, 5 032, 4 999, 4 909.' },
+        { difficulty: 'Hard', question: 'ʼn Getalpatroon begin by 2 000 en tel elke keer 1 000 by: 2 000, 3 000, 4 000 … Wat sal die 10de getal in die patroon wees?', answer: '11 000', checkMode: 'auto', correctAnswer: '11000', correctAnswers: ['11000', '11 000'], explanation: 'Die 10de getal = 2 000 + (9 × 1 000) = 2 000 + 9 000 = 11 000.' },
+        { difficulty: 'Hard', question: 'ʼn Getalpatroon begin by 1 250 en tel elke keer 100 by. Wat sal die 6de getal in die patroon wees?', answer: '1 750', checkMode: 'auto', correctAnswer: '1750', correctAnswers: ['1750', '1 750'], explanation: 'Die 6de getal = 1 250 + (5 × 100) = 1 250 + 500 = 1 750.' },
+        { difficulty: 'Hard', question: 'Rond 6 235 af na die naaste 1 000, skryf dan die afgeronde getal in uitgebreide notasie.', answer: '6 000 = 6 000 + 0 + 0 + 0', checkMode: 'auto', correctAnswer: '6000+0+0+0', correctAnswers: ['6000+0+0+0'], explanation: 'Om 6 235 na die naaste 1 000 af te rond: honderde-syfer is 2 (< 5), rond af → 6 000. Uitgebreide notasie: 6 000 + 0 + 0 + 0.' },
+        { difficulty: 'Hard', question: 'ʼn Boer het 4 763 skape en ʼn nuusberig rond dit af na die naaste 100 as 4 800. Rond 4 763 ook af na die naaste 10. Watter een van die twee afgeronde getalle (4 800 of die naaste-10-antwoord) is nader aan die werklike aantal skape?', answer: 'Die naaste-10-antwoord (4 760) is nader.', checkMode: 'auto', correctAnswer: '4760', correctAnswers: ['4760', '4 760'], explanation: 'Naaste 10: 4 763 → 4 760. Vergelyk die afstande: 4 763 − 4 760 = 3, terwyl 4 800 − 4 763 = 37. Aangesien 3 < 37, is 4 760 nader.' },
+        { difficulty: 'Hard', question: 'Verduidelik, deur plekwaarde te gebruik, waarom 4 001 groter is as 3 987 al het 3 987 ʼn 9 in die honderde-kolom en 4 001 ʼn 0 daar.', answer: 'Wanneer jy getalle vergelyk, moet jy altyd eers die hoogste plekwaarde-kolom vergelyk — die duisende-kolom. 4 001 het 4 duisende terwyl 3 987 net 3 duisende het. Aangesien 4 groter as 3 in die duisende-kolom is, is 4 001 groter as 3 987, maak nie saak watter syfers in die kleiner kolomme verskyn nie. Die honderde-, tiene- en eenhede-syfers maak net saak wanneer die hoër kolomme gelyk is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Verduidelik die verskil tussen ʼn getal afrond en ʼn getal oprond, deur die bepalende-syfer-reël te gebruik.', answer: 'Om ʼn getal af te rond, kyk jy na die bepalende syfer — die syfer net regs van die kolom waarna jy afrond. As die bepalende syfer 0, 1, 2, 3 of 4 is, rond jy af en die syfer in die teikenkolom bly dieselfde. As die bepalende syfer 5, 6, 7, 8 of 9 is, rond jy op en jy tel 1 by die syfer in die teikenkolom. In albei gevalle word elke syfer regs van die teikenkolom 0.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Verduidelik hoe jy die halfpadpunt tussen enige twee getalle op ʼn getallelyn sou vind, en gebruik 6 000 en 7 000 as jou voorbeeld.', answer: 'Om die halfpadpunt tussen twee getalle te vind, tel jy hulle bymekaar en deel die totaal deur 2. Vir 6 000 en 7 000: 6 000 + 7 000 = 13 000, en 13 000 ÷ 2 = 6 500. Dus is 6 500 presies halfpad tussen 6 000 en 7 000.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Getallelyn gaan van 0 na 1 000 in intervalle van 100. Tussen watter twee getalle sit 650? Skryf die twee getalle geskei deur ʼn komma.', answer: '600, 700', checkMode: 'auto', correctAnswer: '600700', correctAnswers: ['600700'], explanation: 'Die intervalmerke is 0, 100, 200 … 1 000. 650 val tussen die 600-merk en die 700-merk.' },
+        { difficulty: 'Medium', question: 'Rond 9 091 af na die naaste 10, dan na die naaste 100. Gee albei antwoorde geskei deur ʼn komma (naaste 10 eerste).', answer: '9 090, 9 100', checkMode: 'auto', correctAnswer: '90909100', correctAnswers: ['90909100'], explanation: 'Naaste 10: eenhede-syfer 1 (< 5), rond af → 9 090. Naaste 100: tiene-syfer 9 (≥ 5), rond op → 9 100.' },
+        { difficulty: 'Hard', question: 'Rond 4 050 af na die naaste 100, dan na die naaste 1 000. Gee albei antwoorde geskei deur ʼn komma (naaste 100 eerste).', answer: '4 100, 4 000', checkMode: 'auto', correctAnswer: '41004000', correctAnswers: ['41004000'], explanation: 'Naaste 100: tiene-syfer 5 (≥ 5), rond op → 4 100. Naaste 1 000: honderde-syfer 0 (< 5), rond af → 4 000.' },
+        { difficulty: 'Hard', question: 'ʼn Getal word gevorm met 6 duisende, 4 honderde, 3 tiene en 1 eenheid. Skryf die getal, orden dit dan teenoor 6 234 en 6 432 van kleinste na grootste (sluit al 3 getalle in), geskei deur kommas.', answer: '6 234, 6 431, 6 432', checkMode: 'auto', correctAnswer: '623464316432', correctAnswers: ['623464316432'], explanation: 'Die nuwe getal is 6 431 (6 duisende, 4 honderde, 3 tiene, 1 eenheid). Vergelyk 6 431, 6 234, 6 432: honderde-syfers is 4, 2, 4 — dus is 6 234 (2 honderde) die kleinste. Deur 6 431 en 6 432 te vergelyk (dieselfde eerste 3 syfers, 643_), vergelyk eenhede: 1 < 2, dus is 6 431 < 6 432. Finale volgorde: 6 234, 6 431, 6 432.' },
+        { difficulty: 'Hard', question: 'ʼn Getalpatroon tel terugwaarts in 100e vanaf 9 200: 9 200, 9 100, 9 000 … Wat sal die 8ste getal in die patroon wees?', answer: '8 500', checkMode: 'auto', correctAnswer: '8500', correctAnswers: ['8500', '8 500'], explanation: 'Die 8ste getal = 9 200 − (7 × 100) = 9 200 − 700 = 8 500.' },
+        { difficulty: 'Hard', question: 'ʼn Getalpatroon tel vorentoe in 1 000e vanaf 2 000: 2 000, 3 000, 4 000 … Wat sal die 7de getal in die patroon wees?', answer: '8 000', checkMode: 'auto', correctAnswer: '8000', correctAnswers: ['8000', '8 000'], explanation: 'Die 7de getal = 2 000 + (6 × 1 000) = 2 000 + 6 000 = 8 000.' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 8 095 blikkies kos. Rond hierdie getal af na die naaste 100, verduidelik dan in een sin waarom die tiene-syfer hier die afrondingsbesluit beïnvloed.', answer: 'Afgerond = 8 100', checkMode: 'auto', correctAnswer: '8100', correctAnswers: ['8100', '8 100'], explanation: 'Om na die naaste 100 af te rond, kyk ons na die tiene-syfer, wat 9 is (≥ 5), dus rond ons op: 8 095 → 8 100. Die tiene-syfer is presies wat die afronding bepaal — dit is die bepalende syfer vir afronding na die naaste 100.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom ʼn 3-syfergetal altyd kleiner is as ʼn 4-syfergetal, deur 987 en 1 023 as jou voorbeeld te gebruik.', answer: 'ʼn 4-syfergetal het altyd ʼn waarde in die duisende-kolom, terwyl ʼn 3-syfergetal glad geen duisende het nie (sy duisende-waarde is 0). Aangesien 987 0 duisende het en 1 023 1 duisend het, moet 1 023 groter as 987 wees, maak nie saak wat die ander syfers is nie. Oor die algemeen beteken meer syfers altyd ʼn groter heelgetal (met die aanname van geen voorloopnulle nie).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Rond 6 789 af na die naaste 1 000, skryf dan jou afgeronde antwoord in uitgebreide notasie.', answer: '7 000 = 7 000 + 0 + 0 + 0', checkMode: 'auto', correctAnswer: '7000+0+0+0', correctAnswers: ['7000+0+0+0'], explanation: 'Om 6 789 na die naaste 1 000 af te rond: honderde-syfer is 7 (≥ 5), rond op → 7 000. Uitgebreide notasie: 7 000 + 0 + 0 + 0.' },
       ],
-      answer: 'a) 3 450\nb) 3 750',
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het meerstap-heelgetalprobleme en getallelyne bemeester.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige vrae wat jy verkeerd het na en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die meerstap-voorbeelde weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
     },
-
   ],
 }

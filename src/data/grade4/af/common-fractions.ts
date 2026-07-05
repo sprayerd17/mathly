@@ -141,6 +141,7 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
       ],
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -271,6 +272,7 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
       ],
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -394,6 +396,7 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
       ],
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ── AFDELING 4 ──────────────────────────────────────────────────────────
@@ -482,6 +485,7 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
       videoPlaceholder: 'Kort video wat wys hoe om ʼn breuk van ʼn heelgetal te vind deur eers te deel en dan te vermenigvuldig',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ── AFDELING 5 ──────────────────────────────────────────────────────────
@@ -680,425 +684,171 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
       diagramPlaceholder: 'Staafmodel wat wys dat 2/8 plus 3/8 gelyk is aan 5/8, met elke deel duidelik geëtiketteer en kleur-gekodeer',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
   ],
 
-  topicPractice: [
+  topicPractice: [],
 
-    // ── AFDELING 1: WAT IS ʼN BREUK? ───────────────────────────────────────
-
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // AFDELING 1 — FONDASIES: IDENTIFISEER EN BENOEM BREUKE (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question:
-        'ʼn Sjokoladelekker word in 6 gelyke stukke verdeel. Sipho eet 2 stukke.\n\n' +
-        'Skryf die breuk van die sjokoladelekker wat hy geëet het.',
-      answer: '2/6',
-      correctAnswer: '2/6',
-      explanation:
-        'Sipho het 2 stukke uit 6 gelyke stukke altesaam geëet.\n\n' +
-        'Die teller (boonste getal) = stukke geëet = 2.\n' +
-        'Die noemer (onderste getal) = totale gelyke stukke = 6.\n\n' +
-        'Breuk = 2/6',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Skryf die breuk vir elk van die volgende:\n\n' +
-        'a) 3 uit 8 gelyke dele is geskadueer\n' +
-        'b) 5 uit 9 gelyke dele is geskadueer\n' +
-        'c) 1 uit 4 gelyke dele is geskadueer',
-      answer: 'a) 3/8    b) 5/9    c) 1/4',
-      parts: [
-        {
-          label: 'a) 3 uit 8 gelyke dele is geskadueer',
-          correctAnswer: '3/8',
-          explanation:
-            '3 dele is geskadueer uit 8 gelyke dele.\n' +
-            'Teller = 3 (geskadueer), noemer = 8 (totale gelyke dele).\n' +
-            'Breuk = 3/8',
-        },
-        {
-          label: 'b) 5 uit 9 gelyke dele is geskadueer',
-          correctAnswer: '5/9',
-          explanation:
-            '5 dele is geskadueer uit 9 gelyke dele.\n' +
-            'Teller = 5 (geskadueer), noemer = 9 (totale gelyke dele).\n' +
-            'Breuk = 5/9',
-        },
-        {
-          label: 'c) 1 uit 4 gelyke dele is geskadueer',
-          correctAnswer: '1/4',
-          explanation:
-            '1 deel is geskadueer uit 4 gelyke dele.\n' +
-            'Teller = 1 (geskadueer), noemer = 4 (totale gelyke dele).\n' +
-            'Breuk = 1/4',
-        },
+      name: 'Afdeling 1: Fondasies',
+      questions: [
+        { difficulty: 'Easy', question: "ʼn Pizza word in 4 gelyke skywe gesny. Thabo eet 1 skyf. Watter breuk van die pizza het hy geëet?", answer: "1/4", checkMode: 'auto', correctAnswer: "1/4", explanation: "1 skyf geëet uit 4 gelyke skywe. Breuk = 1/4" },
+        { difficulty: 'Easy', question: "ʼn Sjokoladelekker het 8 gelyke stukke. Sipho eet 3 stukke. Watter breuk het hy geëet?", answer: "3/8", checkMode: 'auto', correctAnswer: "3/8", explanation: "3 stukke geëet uit 8 gelyke stukke. Breuk = 3/8" },
+        { difficulty: 'Easy', question: "ʼn Vorm is in 6 gelyke dele verdeel en 2 is geskadueer. Watter breuk is geskadueer?", answer: "2/6", checkMode: 'auto', correctAnswer: "2/6", explanation: "2 dele geskadueer uit 6 gelyke dele. Breuk = 2/6" },
+        { difficulty: 'Easy', question: "ʼn Vorm is in 5 gelyke dele verdeel en 4 is geskadueer. Watter breuk is geskadueer?", answer: "4/5", checkMode: 'auto', correctAnswer: "4/5", explanation: "4 dele geskadueer uit 5 gelyke dele. Breuk = 4/5" },
+        { difficulty: 'Easy', question: "ʼn Lemoen word in 10 gelyke segmente verdeel. Lerato gee 3 segmente weg. Watter breuk het sy weggegee?", answer: "3/10", checkMode: 'auto', correctAnswer: "3/10", explanation: "3 segmente weggegee uit 10 gelyke segmente. Breuk = 3/10" },
+        { difficulty: 'Easy', question: "ʼn Vorm is in 3 gelyke dele verdeel en 1 is geskadueer. Watter breuk is geskadueer?", answer: "1/3", checkMode: 'auto', correctAnswer: "1/3", explanation: "1 deel geskadueer uit 3 gelyke dele. Breuk = 1/3" },
+        { difficulty: 'Easy', question: "ʼn Vorm is in 8 gelyke dele verdeel en 5 is geskadueer. Watter breuk is geskadueer?", answer: "5/8", checkMode: 'auto', correctAnswer: "5/8", explanation: "5 dele geskadueer uit 8 gelyke dele. Breuk = 5/8" },
+        { difficulty: 'Easy', question: "Wat is die noemer in die breuk 3/8?", answer: "8", checkMode: 'auto', correctAnswer: "8", explanation: "Die noemer is die onderste getal. Dit vertel ons hoeveel gelyke dele die geheel in gesny is. In 3/8 is die noemer 8." },
+        { difficulty: 'Easy', question: "Wat is die teller in die breuk 5/9?", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "Die teller is die boonste getal. Dit vertel ons hoeveel gelyke dele ons het. In 5/9 is die teller 5." },
+        { difficulty: 'Easy', question: "ʼn Vorm is in 4 gelyke dele verdeel en 3 is geskadueer. Watter breuk is geskadueer?", answer: "3/4", checkMode: 'auto', correctAnswer: "3/4", explanation: "3 dele geskadueer uit 4 gelyke dele. Breuk = 3/4" },
+        { difficulty: 'Medium', question: "ʼn Vorm is in 12 gelyke dele verdeel en 7 is geskadueer. Watter breuk is geskadueer?", answer: "7/12", checkMode: 'auto', correctAnswer: "7/12", explanation: "7 dele geskadueer uit 12 gelyke dele. Breuk = 7/12" },
+        { difficulty: 'Medium', question: "ʼn Sjokoladelekker het 10 gelyke stukke. Amahle eet 6 stukke. Watter breuk van die lekker het sy geëet?", answer: "6/10", checkMode: 'auto', correctAnswer: "6/10", explanation: "6 stukke geëet uit 10 gelyke stukke. Breuk = 6/10" },
+        { difficulty: 'Medium', question: "ʼn Koek word in 6 gelyke stukke gesny. 5 stukke word geëet. Watter breuk is oor?", answer: "1/6", checkMode: 'auto', correctAnswer: "1/6", explanation: "Totale stukke = 6. Geëet = 5. Oor = 6 min 5 = 1. Breuk oor = 1/6" },
+        { difficulty: 'Medium', question: "ʼn Pizza word in 8 gelyke skywe gesny. 3 skywe word geëet. Watter breuk is oor?", answer: "5/8", checkMode: 'auto', correctAnswer: "5/8", explanation: "Totale skywe = 8. Geëet = 3. Oor = 8 min 3 = 5. Breuk oor = 5/8" },
+        { difficulty: 'Medium', question: "ʼn Sak het 10 lekkers. 4 is rooi en die res is geel. Watter breuk van die lekkers is geel?", answer: "6/10", checkMode: 'auto', correctAnswer: "6/10", explanation: "Totale lekkers = 10. Rooi = 4. Geel = 10 min 4 = 6. Breuk geel = 6/10" },
+        { difficulty: 'Medium', question: "ʼn Skinkbord het 12 muffins. 5 het versiersuiker en die res nie. Watter breuk het geen versiersuiker nie?", answer: "7/12", checkMode: 'auto', correctAnswer: "7/12", explanation: "Totale muffins = 12. Met versiersuiker = 5. Sonder versiersuiker = 12 min 5 = 7. Breuk = 7/12" },
+        { difficulty: 'Medium', question: "ʼn Fles het 20 albasters. 6 is rooi, 9 is blou en die res is groen. Watter breuk is groen?", answer: "5/20", checkMode: 'auto', correctAnswer: "5/20", explanation: "Totaal = 20. Rooi = 6, Blou = 9. Groen = 20 min 6 min 9 = 5. Breuk = 5/20" },
+        { difficulty: 'Medium', question: "ʼn Pakkie het 24 lekkers. 10 is rooi, 8 is blou en die res is groen. Watter breuk is groen?", answer: "6/24", checkMode: 'auto', correctAnswer: "6/24", explanation: "Totaal = 24. Rooi = 10, Blou = 8. Groen = 24 min 10 min 8 = 6. Breuk = 6/24" },
+        { difficulty: 'Medium', question: "ʼn Fles het 16 knopies. 5 is rooi, 6 is blou en die res is geel. Watter breuk is geel?", answer: "5/16", checkMode: 'auto', correctAnswer: "5/16", explanation: "Totaal = 16. Rooi = 5, Blou = 6. Geel = 16 min 5 min 6 = 5. Breuk = 5/16" },
+        { difficulty: 'Medium', question: "Skryf die breuk: 9 uit 20 leerders in ʼn klas dra brille.", answer: "9/20", checkMode: 'auto', correctAnswer: "9/20", explanation: "9 leerders uit 20 totale leerders dra brille. Breuk = 9/20" },
+        { difficulty: 'Hard', question: "ʼn Boer het 18 diere. 7 is koeie, 4 is skape en die res is bokke. Watter breuk van die diere is bokke?", answer: "7/18", checkMode: 'auto', correctAnswer: "7/18", explanation: "Totaal = 18. Koeie = 7, Skape = 4. Bokke = 18 min 7 min 4 = 7. Breuk = 7/18" },
+        { difficulty: 'Hard', question: "ʼn Winkel het 30 hemde. 12 is blou, 9 is rooi en die res is wit. Watter breuk is wit?", answer: "9/30", checkMode: 'auto', correctAnswer: "9/30", explanation: "Totaal = 30. Blou = 12, Rooi = 9. Wit = 30 min 12 min 9 = 9. Breuk = 9/30" },
+        { difficulty: 'Hard', question: "Amahle het 15 plakkers. Sy gee 4 vir Thabo en 3 vir Lerato. Watter breuk van haar plakkers het sy oor?", answer: "8/15", checkMode: 'auto', correctAnswer: "8/15", explanation: "Totaal = 15. Weggegee = 4 + 3 = 7. Oor = 15 min 7 = 8. Breuk oor = 8/15" },
+        { difficulty: 'Hard', question: "ʼn Boks het 25 potlode. 8 is rooi, 10 is blou en die res is groen. Watter breuk is groen?", answer: "7/25", checkMode: 'auto', correctAnswer: "7/25", explanation: "Totaal = 25. Rooi = 8, Blou = 10. Groen = 25 min 8 min 10 = 7. Breuk = 7/25" },
+        { difficulty: 'Hard', question: "Verduidelik, in jou eie woorde, wat die teller en noemer van ʼn breuk jou vertel.", answer: "Die teller (boonste getal) vertel jou hoeveel gelyke dele jy het. Die noemer (onderste getal) vertel jou hoeveel gelyke dele die geheel in verdeel is. Byvoorbeeld, in 3/8 beteken die noemer 8 dat die geheel in 8 gelyke stukke gesny is, en die teller 3 beteken ons het 3 van daardie stukke.", checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: "Uitstekend! Jy kan met selfvertroue breuke van ʼn vorm of versameling identifiseer en benoem." },
+        { minScore: 19, message: "Goeie werk! Jy verstaan tellers en noemers goed — gaan enige gemiste vrae weer deur." },
+        { minScore: 13, message: "Goeie poging! Gaan die uitgewerkte voorbeelde oor die identifisering van breuke weer deur en probeer weer." },
+        { minScore: 0, message: "Hou aan probeer — werk weer deur die studiegids en probeer hierdie afdeling weer." },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // AFDELING 2 — VERGELYK, ORDEN EN EKWIVALENTE BREUKE (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'ʼn Sak het 20 albasters. 7 is rooi, 5 is blou en die res is groen.\n\n' +
-        'a) Watter breuk is rooi?\n' +
-        'b) Watter breuk is blou?\n' +
-        'c) Watter breuk is groen?',
-      answer: 'a) 7/20    b) 5/20    c) 8/20',
-      parts: [
-        {
-          label: 'a) Breuk wat rooi is',
-          correctAnswer: '7/20',
-          explanation:
-            '7 uit 20 albasters is rooi.\n' +
-            'Breuk = 7/20',
-        },
-        {
-          label: 'b) Breuk wat blou is',
-          correctAnswer: '5/20',
-          explanation:
-            '5 uit 20 albasters is blou.\n' +
-            'Breuk = 5/20',
-        },
-        {
-          label: 'c) Breuk wat groen is',
-          correctAnswer: '8/20',
-          explanation:
-            'Totale albasters = 20. Rooi = 7, Blou = 5.\n' +
-            'Groen = 20 − 7 − 5 = 8.\n' +
-            'Breuk = 8/20',
-        },
+      name: 'Afdeling 2: Vergelyk en Ekwivalente Breuke',
+      questions: [
+        { difficulty: 'Easy', question: "Watter breuk is groter: 3/7 of 5/7?", answer: "5/7", checkMode: 'auto', correctAnswer: "5/7", explanation: "Dieselfde noemer (7), vergelyk dus die tellers. 5 is groter as 3, dus is 5/7 groter." },
+        { difficulty: 'Easy', question: "Watter breuk is groter: 1/4 of 1/8?", answer: "1/4", checkMode: 'auto', correctAnswer: "1/4", explanation: "Albei is eenheidsbreuke (teller 1). Hoe kleiner die noemer, hoe groter die breuk. 4 is kleiner as 8, dus is 1/4 groter." },
+        { difficulty: 'Easy', question: "Watter breuk is kleiner: 2/9 of 6/9?", answer: "2/9", checkMode: 'auto', correctAnswer: "2/9", explanation: "Dieselfde noemer (9), vergelyk dus die tellers. 2 is kleiner as 6, dus is 2/9 kleiner." },
+        { difficulty: 'Easy', question: "Watter breuk is kleiner: 1/3 of 1/6?", answer: "1/6", checkMode: 'auto', correctAnswer: "1/6", explanation: "Albei is eenheidsbreuke. Hoe groter die noemer, hoe kleiner die breuk. 6 is groter as 3, dus is 1/6 kleiner." },
+        { difficulty: 'Easy', question: "Vind ʼn breuk ekwivalent aan 1/2.", answer: "2/4", checkMode: 'auto', correctAnswer: "2/4", correctAnswers: ["2/4","3/6","4/8","5/10"], explanation: "Vermenigvuldig teller en noemer met dieselfde getal, bv. 1 x 2 = 2 en 2 x 2 = 4, wat 2/4 gee." },
+        { difficulty: 'Easy', question: "Vind ʼn breuk ekwivalent aan 1/3.", answer: "2/6", checkMode: 'auto', correctAnswer: "2/6", correctAnswers: ["2/6","3/9"], explanation: "Vermenigvuldig teller en noemer met dieselfde getal, bv. 1 x 2 = 2 en 3 x 2 = 6, wat 2/6 gee." },
+        { difficulty: 'Medium', question: "Orden hierdie breuke van kleinste na grootste: 4/9, 1/9, 7/9, 3/9", answer: "1/9, 3/9, 4/9, 7/9", checkMode: 'auto', correctAnswer: "1/9,3/9,4/9,7/9", correctAnswers: ["1/9,3/9,4/9,7/9","1/93/94/97/9"], explanation: "Dieselfde noemer (9), orden dus volgens tellers van kleinste na grootste: 1, 3, 4, 7. Volgorde: 1/9, 3/9, 4/9, 7/9" },
+        { difficulty: 'Medium', question: "Orden hierdie breuke van kleinste na grootste: 6/10, 2/10, 9/10, 5/10", answer: "2/10, 5/10, 6/10, 9/10", checkMode: 'auto', correctAnswer: "2/10,5/10,6/10,9/10", correctAnswers: ["2/10,5/10,6/10,9/10"], explanation: "Dieselfde noemer (10), orden dus volgens tellers: 2, 5, 6, 9. Volgorde: 2/10, 5/10, 6/10, 9/10" },
+        { difficulty: 'Medium', question: "Is 2/3 en 4/6 ekwivalent? Skryf ja of nee.", answer: "Ja", checkMode: 'auto', correctAnswer: "Ja", correctAnswers: ["Ja","ja"], explanation: "Vermenigvuldig 2/3 met 2/2: 2 x 2 = 4 en 3 x 2 = 6, wat 4/6 gee. Aangesien 4/6 = 4/6, is hulle ekwivalent." },
+        { difficulty: 'Medium', question: "Is 3/5 en 5/8 ekwivalent? Skryf ja of nee.", answer: "Nee", checkMode: 'auto', correctAnswer: "Nee", correctAnswers: ["Nee","nee"], explanation: "Daar is geen heelgetal waarmee jy beide 3 en 5 kan vermenigvuldig om 5 en 8 te kry nie, dus is hulle nie ekwivalent nie." },
+        { difficulty: 'Medium', question: "Vul die ontbrekende getal in: 1/4 = ?/12", answer: "3", checkMode: 'auto', correctAnswer: "3", explanation: "Die noemer het van 4 na 12 gegaan (4 x 3 = 12), vermenigvuldig dus ook die teller met 3: 1 x 3 = 3." },
+        { difficulty: 'Medium', question: "Vul die ontbrekende getal in: 2/5 = ?/10", answer: "4", checkMode: 'auto', correctAnswer: "4", explanation: "Die noemer het van 5 na 10 gegaan (5 x 2 = 10), vermenigvuldig dus ook die teller met 2: 2 x 2 = 4." },
+        { difficulty: 'Medium', question: "Vul die ontbrekende getal in: 1/6 = ?/12", answer: "2", checkMode: 'auto', correctAnswer: "2", explanation: "Die noemer het van 6 na 12 gegaan (6 x 2 = 12), vermenigvuldig dus ook die teller met 2: 1 x 2 = 2." },
+        { difficulty: 'Medium', question: "Vul die ontbrekende getal in: 3/8 = ?/16", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Die noemer het van 8 na 16 gegaan (8 x 2 = 16), vermenigvuldig dus ook die teller met 2: 3 x 2 = 6." },
+        { difficulty: 'Medium', question: "Vul die ontbrekende getal in: 1/5 = ?/15", answer: "3", checkMode: 'auto', correctAnswer: "3", explanation: "Die noemer het van 5 na 15 gegaan (5 x 3 = 15), vermenigvuldig dus ook die teller met 3: 1 x 3 = 3." },
+        { difficulty: 'Medium', question: "Vind twee breuke wat ekwivalent is aan 3/4.", answer: "6/8 en 9/12", checkMode: 'auto', correctAnswer: "6/8en9/12", correctAnswers: ["6/8en9/12","9/12en6/8","6/8,9/12","9/12,6/8","6/89/12","9/126/8"], explanation: "Vermenigvuldig 3/4 met 2/2 om 6/8 te kry, en met 3/3 om 9/12 te kry. Beide stel dieselfde hoeveelheid as 3/4 voor." },
+        { difficulty: 'Medium', question: "Orden hierdie breuke van grootste na kleinste: 1/2, 1/5, 1/3, 1/10", answer: "1/2, 1/3, 1/5, 1/10", checkMode: 'auto', correctAnswer: "1/2,1/3,1/5,1/10", correctAnswers: ["1/2,1/3,1/5,1/10"], explanation: "Dit is almal eenheidsbreuke, dus hoe kleiner die noemer, hoe groter die breuk. Orden van grootste na kleinste noemer gee: 1/2, 1/3, 1/5, 1/10" },
+        { difficulty: 'Hard', question: "Watter is groter: 3/4 of 5/8? Wenk: vind eers ʼn ekwivalente breuk vir 3/4 met noemer 8.", answer: "3/4", checkMode: 'auto', correctAnswer: "3/4", explanation: "3/4 = 6/8 (vermenigvuldig bo en onder met 2). Vergelyk 6/8 en 5/8 — dieselfde noemer, vergelyk dus die tellers. 6 is groter as 5, dus is 3/4 groter." },
+        { difficulty: 'Hard', question: "Watter is groter: 2/5 of 3/10? Wenk: vind eers ʼn ekwivalente breuk vir 2/5 met noemer 10.", answer: "2/5", checkMode: 'auto', correctAnswer: "2/5", explanation: "2/5 = 4/10 (vermenigvuldig bo en onder met 2). Vergelyk 4/10 en 3/10 — dieselfde noemer, vergelyk dus die tellers. 4 is groter as 3, dus is 2/5 groter." },
+        { difficulty: 'Hard', question: "Vul die ontbrekende getal in: 4/5 = ?/10", answer: "8", checkMode: 'auto', correctAnswer: "8", explanation: "Die noemer het van 5 na 10 gegaan (5 x 2 = 10), vermenigvuldig dus ook die teller met 2: 4 x 2 = 8." },
+        { difficulty: 'Hard', question: "Vul die ontbrekende getal in: 2/3 = ?/9", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Die noemer het van 3 na 9 gegaan (3 x 3 = 9), vermenigvuldig dus ook die teller met 3: 2 x 3 = 6." },
+        { difficulty: 'Hard', question: "Sipho sê 1/3 en 3/9 is ekwivalent. Is hy korrek? Verduidelik met vermenigvuldiging.", answer: "Ja, Sipho is korrek. Vermenigvuldiging van 1/3 met 3/3 gee 1 x 3 = 3 en 3 x 3 = 9, dus 1/3 = 3/9. Aangesien beide die teller en noemer met dieselfde getal (3) vermenigvuldig is, stel die breuke dieselfde hoeveelheid voor.", checkMode: 'auto', correctAnswer: "Ja", correctAnswers: ["Ja","ja"], explanation: "Vermenigvuldiging van 1/3 met 3/3 gee 3/9, dus is hulle ekwivalent." },
+        { difficulty: 'Hard', question: "Lerato sê 2/6 en 3/9 is ekwivalent omdat hulle albei vereenvoudig tot 1/3. Is sy korrek? Skryf ja of nee.", answer: "Ja", checkMode: 'auto', correctAnswer: "Ja", correctAnswers: ["Ja","ja"], explanation: "2/6 vereenvoudig tot 1/3 (deel bo en onder deur 2). 3/9 vereenvoudig ook tot 1/3 (deel bo en onder deur 3). Aangesien beide tot dieselfde breuk vereenvoudig, is hulle ekwivalent." },
+        { difficulty: 'Hard', question: "Orden hierdie breuke van kleinste na grootste: 3/4, 1/4, 1/2, 2/4", answer: "1/4, 1/2, 2/4, 3/4", checkMode: 'auto', correctAnswer: "1/4,1/2,2/4,3/4", correctAnswers: ["1/4,2/4,2/4,3/4","1/4,1/2,2/4,3/4"], explanation: "Skryf 1/2 as 2/4 sodat al die breuke noemer 4 deel: 1/4, 2/4, 2/4, 3/4. Aangesien 1/2 = 2/4, gee die ordening volgens teller (met die gelyke paar saam) van kleinste na grootste: 1/4, 1/2 (=2/4), 2/4, 3/4." },
+        { difficulty: 'Hard', question: "Verduidelik waarom 4/8 en 1/2 ekwivalente breuke is sonder om ʼn prentjie te teken.", answer: "4/8 en 1/2 is ekwivalent omdat, as jy beide die teller en noemer van 4/8 deur 4 deel, jy 1/2 kry (4 gedeel deur 4 = 1, en 8 gedeel deur 4 = 2). Om die boonste en onderste getal van ʼn breuk deur dieselfde getal te deel, verander nie die waarde nie, dus stel 4/8 en 1/2 dieselfde hoeveelheid voor.", checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: "Uitstekend! Jy het die vergelyking, ordening en vind van ekwivalente breuke bemeester." },
+        { minScore: 19, message: "Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer." },
+        { minScore: 13, message: "Goeie poging! Gaan die uitgewerkte voorbeelde oor vergelyking en ekwivalente breuke weer deur." },
+        { minScore: 0, message: "Hou aan probeer — werk weer deur die studiegids en probeer hierdie afdeling weer." },
       ],
     },
 
-    // ── AFDELING 2: VERGELYK EN ORDEN BREUKE ──────────────────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // AFDELING 3 — BREUK VAN ʼN HEELGETAL EN WOORDPROBLEME (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Watter breuk is groter?\n\n3/7  of  5/7',
-      answer: '5/7',
-      correctAnswer: '5/7',
-      explanation:
-        'Albei breuke het dieselfde noemer (7), vergelyk dus die tellers.\n\n' +
-        '5 > 3, dus is 5/7 die groter breuk.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Orden hierdie breuke van kleinste na grootste:\n\n' +
-        '4/9,  1/9,  7/9,  3/9',
-      answer: '1/9,  3/9,  4/9,  7/9',
-      correctAnswer: '1/9,3/9,4/9,7/9',
-      correctAnswers: ['1/9,3/9,4/9,7/9', '1/93/94/97/9'],
-      explanation:
-        'Al die breuke het dieselfde noemer (9), orden dus volgens die tellers van kleinste na grootste: 1, 3, 4, 7.\n\n' +
-        'Volgorde: 1/9, 3/9, 4/9, 7/9',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Watter is groter: 1/4 of 1/8?\n\n' +
-        'Verduidelik waarom sonder om ʼn prentjie te teken.',
-      answer:
-        '1/4 is groter.\n\n' +
-        'Wanneer die tellers dieselfde is (albei is 1), is die breuk met die kleiner noemer die groter breuk.\n\n' +
-        'Om iets in 4 gelyke dele te verdeel, gee groter dele as om dit in 8 gelyke dele te verdeel.\n' +
-        'Elke 1/4-stuk is dus groter as elke 1/8-stuk.',
-    },
-
-    // ── AFDELING 3: EKWIVALENTE BREUKE ─────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Vind twee breuke wat ekwivalent is aan 1/2.',
-      answer: '2/4 en 3/6',
-      correctAnswers: [
-        '2/4and3/6', '3/6and2/4',
-        '2/4,3/6',   '3/6,2/4',
-        '2/43/6',    '3/62/4',
+      name: 'Afdeling 3: Breuk van ʼn Heelgetal',
+      questions: [
+        { difficulty: 'Easy', question: "Vind 1/2 van 10.", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "Stap 1: Deel deur die noemer: 10 / 2 = 5. Stap 2: Vermenigvuldig met die teller: 5 x 1 = 5." },
+        { difficulty: 'Easy', question: "Vind 1/2 van 20.", answer: "10", checkMode: 'auto', correctAnswer: "10", explanation: "Stap 1: 20 / 2 = 10. Stap 2: 10 x 1 = 10." },
+        { difficulty: 'Easy', question: "Vind 1/4 van 20.", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "Stap 1: 20 / 4 = 5. Stap 2: 5 x 1 = 5." },
+        { difficulty: 'Easy', question: "Vind 1/3 van 18.", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Stap 1: 18 / 3 = 6. Stap 2: 6 x 1 = 6." },
+        { difficulty: 'Easy', question: "Vind 1/5 van 25.", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "Stap 1: 25 / 5 = 5. Stap 2: 5 x 1 = 5." },
+        { difficulty: 'Medium', question: "Vind 3/4 van 24.", answer: "18", checkMode: 'auto', correctAnswer: "18", explanation: "Stap 1: 24 / 4 = 6. Stap 2: 6 x 3 = 18." },
+        { difficulty: 'Medium', question: "Vind 2/5 van 25.", answer: "10", checkMode: 'auto', correctAnswer: "10", explanation: "Stap 1: 25 / 5 = 5. Stap 2: 5 x 2 = 10." },
+        { difficulty: 'Medium', question: "Vind 3/8 van 40.", answer: "15", checkMode: 'auto', correctAnswer: "15", explanation: "Stap 1: 40 / 8 = 5. Stap 2: 5 x 3 = 15." },
+        { difficulty: 'Medium', question: "Vind 2/3 van 30.", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Stap 1: 30 / 3 = 10. Stap 2: 10 x 2 = 20." },
+        { difficulty: 'Medium', question: "Vind 5/6 van 24.", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Stap 1: 24 / 6 = 4. Stap 2: 4 x 5 = 20." },
+        { difficulty: 'Medium', question: "Vind 3/10 van 50.", answer: "15", checkMode: 'auto', correctAnswer: "15", explanation: "Stap 1: 50 / 10 = 5. Stap 2: 5 x 3 = 15." },
+        { difficulty: 'Medium', question: "Vind 3/5 van 50.", answer: "30", checkMode: 'auto', correctAnswer: "30", explanation: "Stap 1: 50 / 5 = 10. Stap 2: 10 x 3 = 30." },
+        { difficulty: 'Medium', question: "ʼn Klas het 24 leerders. ʼn Kwart van hulle dra brille. Hoeveel leerders dra brille?", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Vind 1/4 van 24. Stap 1: 24 / 4 = 6. Stap 2: 6 x 1 = 6. 6 leerders dra brille." },
+        { difficulty: 'Medium', question: "ʼn Boer het 30 hoenders. Twee derdes van hulle is henne. Hoeveel henne het die boer?", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Vind 2/3 van 30. Stap 1: 30 / 3 = 10. Stap 2: 10 x 2 = 20. Die boer het 20 henne." },
+        { difficulty: 'Medium', question: "ʼn Winkel het 40 brode. Drie agtstes is die oggend verkoop. Hoeveel brode is verkoop?", answer: "15", checkMode: 'auto', correctAnswer: "15", explanation: "Vind 3/8 van 40. Stap 1: 40 / 8 = 5. Stap 2: 5 x 3 = 15. 15 brode is verkoop." },
+        { difficulty: 'Medium', question: "Thabo het R40. Hy spandeer 1/5 daarvan aan lekkers. Hoeveel geld spandeer hy?", answer: "R8", checkMode: 'auto', correctAnswer: "8", correctAnswers: ["8","R8"], explanation: "Vind 1/5 van 40. Stap 1: 40 / 5 = 8. Stap 2: 8 x 1 = 8. Hy spandeer R8." },
+        { difficulty: 'Hard', question: "ʼn Skool het 100 leerders. Drie kwarte van hulle stap skool toe. Hoeveel leerders stap skool toe?", answer: "75", checkMode: 'auto', correctAnswer: "75", explanation: "Vind 3/4 van 100. Stap 1: 100 / 4 = 25. Stap 2: 25 x 3 = 75. 75 leerders stap skool toe." },
+        { difficulty: 'Hard', question: "ʼn Plaas het 60 diere. Twee derdes is koeie en die res is bokke. Hoeveel koeie is daar?", answer: "40", checkMode: 'auto', correctAnswer: "40", explanation: "Vind 2/3 van 60. Stap 1: 60 / 3 = 20. Stap 2: 20 x 2 = 40. Daar is 40 koeie." },
+        { difficulty: 'Hard', question: "ʼn Plaas het 60 diere. Twee derdes is koeie en die res is bokke. Hoeveel bokke is daar?", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Koeie = 2/3 van 60. Stap 1: 60/3=20. Stap 2: 20x2=40 koeie. Bokke = 60 min 40 = 20." },
+        { difficulty: 'Hard', question: "ʼn Bakkery maak 80 muffins. Sewe tiendes daarvan is sjokoladegeur. Hoeveel sjokolademuffins is daar?", answer: "56", checkMode: 'auto', correctAnswer: "56", explanation: "Vind 7/10 van 80. Stap 1: 80 / 10 = 8. Stap 2: 8 x 7 = 56. Daar is 56 sjokolademuffins." },
+        { difficulty: 'Hard', question: "ʼn Netbalspan maak 40 doele in ʼn seisoen. Vyf agstes van die doele is deur Amahle aangeteken. Hoeveel doele het Amahle aangeteken?", answer: "25", checkMode: 'auto', correctAnswer: "25", explanation: "Vind 5/8 van 40. Stap 1: 40 / 8 = 5. Stap 2: 5 x 5 = 25. Amahle het 25 doele aangeteken." },
+        { difficulty: 'Hard', question: "ʼn Biblioteek het 90 boeke. Twee derdes daarvan is fiksie. Hoeveel boeke is fiksie?", answer: "60", checkMode: 'auto', correctAnswer: "60", explanation: "Vind 2/3 van 90. Stap 1: 90 / 3 = 30. Stap 2: 30 x 2 = 60. Daar is 60 fiksieboeke." },
+        { difficulty: 'Hard', question: "ʼn Watertenk hou 100 liter wanneer vol. Dit is tans 1/2 vol. Daarna word 1/4 van die volle tenk se hoeveelheid bygevoeg. Hoeveel liter is nou in die tenk?", answer: "75", checkMode: 'auto', correctAnswer: "75", explanation: "Half vol = 1/2 van 100 = 50 liter. Voeg 1/4 van 100 = 25 liter by. Totaal = 50 + 25 = 75 liter." },
+        { difficulty: 'Hard', question: "ʼn Klas van 32 leerders word gevra wat hul gunsteling sport is. Drie kwarte kies sokker en die res kies netbal. Hoeveel leerders het netbal gekies?", answer: "8", checkMode: 'auto', correctAnswer: "8", explanation: "Sokker = 3/4 van 32. Stap 1: 32/4=8. Stap 2: 8x3=24 het sokker gekies. Netbal = 32 min 24 = 8." },
+        { difficulty: 'Hard', question: "Verduidelik, in jou eie woorde, die tweestapreël vir die vind van ʼn breuk van ʼn heelgetal.", answer: "Stap 1: Deel die heelgetal deur die noemer van die breuk. Stap 2: Vermenigvuldig die resultaat met die teller van die breuk. Byvoorbeeld, om 3/4 van 24 te vind, deel eers 24 deur 4 om 6 te kry, vermenigvuldig dan 6 met 3 om 18 te kry.", checkMode: 'self' },
       ],
-      explanation:
-        'Om ekwivalente breuke te vind, vermenigvuldig die teller EN die noemer met dieselfde getal.\n\n' +
-        '1/2 × 2/2 = 2/4\n' +
-        '1/2 × 3/3 = 3/6\n\n' +
-        'Beide 2/4 en 3/6 is ekwivalent aan 1/2 omdat hulle almal dieselfde hoeveelheid voorstel.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Vul die ontbrekende getalle in:\n\n' +
-        'a) 1/3 = □/9\n' +
-        'b) 2/5 = □/10\n' +
-        'c) 3/4 = □/12',
-      answer: 'a) 3    b) 4    c) 9',
-      parts: [
-        {
-          label: 'a) 1/3 = □/9',
-          correctAnswer: '3',
-          explanation:
-            'Die noemer het van 3 na 9 gegaan. 3 × 3 = 9, dus het ons met 3 vermenigvuldig.\n' +
-            'Vermenigvuldig die teller met dieselfde getal: 1 × 3 = 3.\n' +
-            '1/3 = 3/9',
-        },
-        {
-          label: 'b) 2/5 = □/10',
-          correctAnswer: '4',
-          explanation:
-            'Die noemer het van 5 na 10 gegaan. 5 × 2 = 10, dus het ons met 2 vermenigvuldig.\n' +
-            'Vermenigvuldig die teller met dieselfde getal: 2 × 2 = 4.\n' +
-            '2/5 = 4/10',
-        },
-        {
-          label: 'c) 3/4 = □/12',
-          correctAnswer: '9',
-          explanation:
-            'Die noemer het van 4 na 12 gegaan. 4 × 3 = 12, dus het ons met 3 vermenigvuldig.\n' +
-            'Vermenigvuldig die teller met dieselfde getal: 3 × 3 = 9.\n' +
-            '3/4 = 9/12',
-        },
+      scoreMessages: [
+        { minScore: 25, message: "Uitstekend! Jy kan met selfvertroue ʼn breuk van ʼn heelgetal vind en woordprobleme oplos." },
+        { minScore: 19, message: "Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer." },
+        { minScore: 13, message: "Goeie poging! Gaan die deel-dan-vermenigvuldig uitgewerkte voorbeelde weer deur." },
+        { minScore: 0, message: "Hou aan probeer — werk weer deur die studiegids en probeer hierdie afdeling weer." },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // AFDELING 4 — MULTISTAP EN GEKOMBINEERDE PROBLEME (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Thabo sê 2/3 en 4/9 is ekwivalent. Is hy korrek?\n\n' +
-        'Wys jou berekening om dit te bewys.',
-      answer:
-        'Nee, Thabo is verkeerd.\n\n' +
-        'Stap 1: Maak die noemers dieselfde deur 2/3 met 3/3 te vermenigvuldig:\n' +
-        '2 × 3 = 6  en  3 × 3 = 9  →  2/3 = 6/9\n\n' +
-        'Stap 2: Vergelyk: 6/9 ≠ 4/9\n\n' +
-        '2/3 is ekwivalent aan 6/9, nie 4/9 nie.\n' +
-        'Dus is 2/3 en 4/9 NIE ekwivalent nie.',
-    },
-
-    // ── AFDELING 4: VIND ʼN BREUK VAN ʼN HEELGETAL ─────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Vind 1/3 van 18.',
-      answer: '6',
-      correctAnswer: '6',
-      explanation:
-        'Stap 1: Deel deur die noemer: 18 ÷ 3 = 6\n' +
-        'Stap 2: Vermenigvuldig met die teller: 6 × 1 = 6\n\n' +
-        '1/3 van 18 = 6',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Bereken die volgende:\n\n' +
-        'a) 1/4 van 32\n' +
-        'b) 2/5 van 25\n' +
-        'c) 3/8 van 40',
-      answer: 'a) 8    b) 10    c) 15',
-      parts: [
-        {
-          label: 'a) 1/4 van 32',
-          correctAnswer: '8',
-          explanation:
-            'Stap 1: Deel deur die noemer: 32 ÷ 4 = 8\n' +
-            'Stap 2: Vermenigvuldig met die teller: 8 × 1 = 8\n' +
-            '1/4 van 32 = 8',
-        },
-        {
-          label: 'b) 2/5 van 25',
-          correctAnswer: '10',
-          explanation:
-            'Stap 1: Deel deur die noemer: 25 ÷ 5 = 5\n' +
-            'Stap 2: Vermenigvuldig met die teller: 5 × 2 = 10\n' +
-            '2/5 van 25 = 10',
-        },
-        {
-          label: 'c) 3/8 van 40',
-          correctAnswer: '15',
-          explanation:
-            'Stap 1: Deel deur die noemer: 40 ÷ 8 = 5\n' +
-            'Stap 2: Vermenigvuldig met die teller: 5 × 3 = 15\n' +
-            '3/8 van 40 = 15',
-        },
+      name: 'Afdeling 4: Multistap en Gekombineerde Probleme',
+      questions: [
+        { difficulty: 'Easy', question: "Bereken: 2/7 + 3/7", answer: "5/7", checkMode: 'auto', correctAnswer: "5/7", explanation: "Dieselfde noemer (7) — hou dit. Tel tellers bymekaar: 2 + 3 = 5. Antwoord = 5/7" },
+        { difficulty: 'Easy', question: "Bereken: 3/8 + 4/8", answer: "7/8", checkMode: 'auto', correctAnswer: "7/8", explanation: "Dieselfde noemer (8) — hou dit. Tel tellers bymekaar: 3 + 4 = 7. Antwoord = 7/8" },
+        { difficulty: 'Easy', question: "Bereken: 1/5 + 2/5", answer: "3/5", checkMode: 'auto', correctAnswer: "3/5", explanation: "Dieselfde noemer (5) — hou dit. Tel tellers bymekaar: 1 + 2 = 3. Antwoord = 3/5" },
+        { difficulty: 'Easy', question: "Bereken: 1/6 + 3/6", answer: "4/6", checkMode: 'auto', correctAnswer: "4/6", explanation: "Dieselfde noemer (6) — hou dit. Tel tellers bymekaar: 1 + 3 = 4. Antwoord = 4/6" },
+        { difficulty: 'Medium', question: "Bereken: 3/10 + 4/10 + 2/10", answer: "9/10", checkMode: 'auto', correctAnswer: "9/10", explanation: "Dieselfde noemer (10) — hou dit. Tel al die tellers bymekaar: 3 + 4 + 2 = 9. Antwoord = 9/10" },
+        { difficulty: 'Medium', question: "Bereken: 2/9 + 3/9 + 1/9", answer: "6/9", checkMode: 'auto', correctAnswer: "6/9", explanation: "Dieselfde noemer (9) — hou dit. Tel al die tellers bymekaar: 2 + 3 + 1 = 6. Antwoord = 6/9" },
+        { difficulty: 'Medium', question: "Bereken: 1/8 + 2/8 + 3/8", answer: "6/8", checkMode: 'auto', correctAnswer: "6/8", explanation: "Dieselfde noemer (8) — hou dit. Tel al die tellers bymekaar: 1 + 2 + 3 = 6. Antwoord = 6/8" },
+        { difficulty: 'Medium', question: "Amahle het 2/6 van ʼn koek in die oggend geëet en 3/6 in die middag. Watter breuk van die koek het sy altesaam geëet?", answer: "5/6", checkMode: 'auto', correctAnswer: "5/6", explanation: "Tel die breuke bymekaar: 2/6 + 3/6. Dieselfde noemer, tel tellers bymekaar: 2 + 3 = 5. Sy het altesaam 5/6 geëet." },
+        { difficulty: 'Medium', question: "Amahle het 2/6 van ʼn koek in die oggend geëet en 3/6 in die middag (5/6 altesaam). Watter breuk van die koek is oor?", answer: "1/6", checkMode: 'auto', correctAnswer: "1/6", explanation: "ʼn Hele koek = 6/6. Amahle het 2/6 + 3/6 = 5/6 altesaam geëet. Oor = 6/6 min 5/6 = 1/6." },
+        { difficulty: 'Medium', question: "Sipho het 1/8 van ʼn heining Maandag geverf en 3/8 Dinsdag. Watter breuk van die heining het hy altesaam geverf?", answer: "4/8", checkMode: 'auto', correctAnswer: "4/8", explanation: "Tel die breuke bymekaar: 1/8 + 3/8. Dieselfde noemer, tel tellers bymekaar: 1 + 3 = 4. Hy het altesaam 4/8 geverf." },
+        { difficulty: 'Medium', question: "Sipho het 1/8 van ʼn heining Maandag geverf en 3/8 Dinsdag (4/8 altesaam). Watter breuk moet nog geverf word?", answer: "4/8", checkMode: 'auto', correctAnswer: "4/8", explanation: "Hele heining = 8/8. Sipho het 1/8 + 3/8 = 4/8 geverf. Oorblywend = 8/8 min 4/8 = 4/8." },
+        { difficulty: 'Medium', question: "ʼn Pizza word in 10 gelyke skywe gesny. Lerato eet 4/10 en haar broer eet 3/10. Watter breuk van die pizza het hulle saam geëet?", answer: "7/10", checkMode: 'auto', correctAnswer: "7/10", explanation: "Tel die breuke bymekaar: 4/10 + 3/10. Dieselfde noemer, tel tellers bymekaar: 4 + 3 = 7. Saam het hulle 7/10 geëet." },
+        { difficulty: 'Hard', question: "ʼn Pizza word in 10 gelyke skywe gesny. Lerato eet 4/10 en haar broer eet 3/10. Watter breuk van die pizza is oor nadat hulle albei geëet het?", answer: "3/10", checkMode: 'auto', correctAnswer: "3/10", explanation: "Saam het hulle 4/10 + 3/10 = 7/10 geëet. Hele pizza = 10/10. Oor = 10/10 min 7/10 = 3/10." },
+        { difficulty: 'Hard', question: "ʼn Skool het 32 leerders in ʼn klas. Drie kwarte kies sokker as hul gunsteling sport. Van die leerders wat sokker gekies het, speel die helfte ook krieket. Hoeveel leerders speel beide sokker en krieket?", answer: "12", checkMode: 'auto', correctAnswer: "12", explanation: "Sokkerleerders = 3/4 van 32. Stap 1: 32/4=8. Stap 2: 8x3=24 speel sokker. Die helfte van 24 speel ook krieket: 24/2=12." },
+        { difficulty: 'Hard', question: "ʼn Tenk hou 80 liter. Dit begin 3/4 vol, en dan lek 1/8 van die volle tenkkapasiteit uit. Hoeveel liter is oor in die tenk?", answer: "50", checkMode: 'auto', correctAnswer: "50", explanation: "3/4 van 80: Stap 1: 80/4=20. Stap 2: 20x3=60 liter om mee te begin. Lek = 1/8 van 80: Stap 1: 80/8=10. Stap 2: 10x1=10 liter lek uit. Oorblywend = 60 min 10 = 50 liter." },
+        { difficulty: 'Hard', question: "Thabo het 1/4 van ʼn sjokoladelekker met 12 stukke Maandag geëet, en 3/12 meer Dinsdag. Watter breuk van die lekker het hy altesaam geëet? Wenk: skryf eers 1/4 met noemer 12.", answer: "6/12", checkMode: 'auto', correctAnswer: "6/12", correctAnswers: ["6/12","1/2"], explanation: "1/4 = 3/12 (vermenigvuldig bo en onder met 3). Tel bymekaar: 3/12 + 3/12 = 6/12. Hy het altesaam 6/12 geëet." },
+        { difficulty: 'Hard', question: "ʼn Boer het 45 skape. Twee derdes is ooie en die res is ramme. Van die ooie het 1/5 lammers. Hoeveel ooie het lammers?", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Ooie = 2/3 van 45. Stap 1: 45/3=15. Stap 2: 15x2=30 ooie. Ooie met lammers = 1/5 van 30. Stap 1: 30/5=6. Stap 2: 6x1=6." },
+        { difficulty: 'Hard', question: "ʼn Resep gebruik 2/8 koppie suiker en 3/8 koppie meel, waarna 1/8 koppie ekstra suiker bygevoeg word. Watter breuk van ʼn koppie suiker word altesaam gebruik?", answer: "3/8", checkMode: 'auto', correctAnswer: "3/8", explanation: "Net die suiker: 2/8 + 1/8. Dieselfde noemer, tel tellers bymekaar: 2 + 1 = 3. Totale suiker = 3/8 koppie (die meel, 3/8, is ʼn aparte bestanddeel en word nie by die suiker getel nie)." },
+        { difficulty: 'Hard', question: "Lerato sê dat 3/4 van 24 dieselfde antwoord gee as 24 gedeel deur 4 en dan vermenigvuldig met 3. Is sy korrek? Verduidelik met die berekening.", answer: "Ja, Lerato is korrek. Om 3/4 van 24 te vind, deel jy 24 deur die noemer (4) om 6 te kry, vermenigvuldig dan met die teller (3) om 18 te kry. Dit is presies \"24 gedeel deur 4, dan vermenigvuldig met 3\", dus beskryf beide metodes dieselfde berekening en gee dieselfde antwoord, 18.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "Sipho sê dat omdat 2/4 en 1/2 ekwivalente breuke is, om 2/4 van ʼn getal te vind altyd dieselfde antwoord gee as om 1/2 van daardie getal te vind. Is hy korrek? Kontroleer met die getal 20.", answer: "Ja, Sipho is korrek. 1/2 van 20: deel 20 deur 2 om 10 te kry, vermenigvuldig met 1 om 10 te kry. 2/4 van 20: deel 20 deur 4 om 5 te kry, vermenigvuldig met 2 om 10 te kry. Albei gee 10, wat bevestig dat ekwivalente breuke van dieselfde getal altyd dieselfde antwoord gee.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "Verduidelik waarom jy breuke net direk kan optel deur die tellers by te tel wanneer die noemers dieselfde is.", answer: "Wanneer twee breuke dieselfde noemer het, is die geheel vir beide breuke in dieselfde grootte gelyke dele verdeel. Dit beteken die stukke kan eenvoudig saam getel (bygetel) word, dus hoef jy net die tellers by te tel en die noemer dieselfde te hou. As die noemers verskillend was, sou die stukke verskillende groottes wees, en om die tellers direk by te tel sou nie ʼn korrekte antwoord gee nie.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "ʼn Lint word in 12 gelyke stukke gesny. Amahle gebruik 1/12 vir ʼn strik, 4/12 vir ʼn toedraaiversiering, en 2/12 vir ʼn etiket. Watter breuk van die lint het sy altesaam gebruik?", answer: "7/12", checkMode: 'auto', correctAnswer: "7/12", explanation: "Tel die breuke bymekaar: 1/12 + 4/12 + 2/12. Dieselfde noemer, tel tellers bymekaar: 1 + 4 + 2 = 7. Sy het altesaam 7/12 gebruik." },
+        { difficulty: 'Hard', question: "ʼn Lint word in 12 gelyke stukke gesny. Amahle gebruik 1/12 vir ʼn strik, 4/12 vir ʼn toedraaiversiering, en 2/12 vir ʼn etiket (7/12 altesaam). Watter breuk van die lint het sy oor?", answer: "5/12", checkMode: 'auto', correctAnswer: "5/12", explanation: "Amahle het 1/12 + 4/12 + 2/12 = 7/12 gebruik. Hele lint = 12/12. Oor = 12/12 min 7/12 = 5/12." },
+        { difficulty: 'Hard', question: "ʼn Skool het 50 leerders in Graad 4. Twee vyfdes stap skool toe, drie tiendes fietsry, en die res word met die motor gebring. Watter breuk van die leerders word met die motor gebring? Wenk: skryf eers 2/5 met noemer 10.", answer: "3/10", checkMode: 'auto', correctAnswer: "3/10", explanation: "2/5 = 4/10 (vermenigvuldig bo en onder met 2). Stap + fietsry = 4/10 + 3/10 = 7/10. Met die motor gebring = 10/10 min 7/10 = 3/10." },
+        { difficulty: 'Hard', question: "Verduidelik hoe jy sou kontroleer of twee breuke met verskillende noemers, soos 2/3 en 5/8, ekwivalent is.", answer: "Om te kontroleer of twee breuke met verskillende noemers ekwivalent is, vind ʼn gemeenskaplike noemer deur beide breuke om te skakel sodat hulle dieselfde noemer het, en vergelyk dan die tellers. Vir 2/3 en 5/8 kan jy probeer om te sien of daar ʼn heelgetal is wat albei noemers laat ooreenstem, of beide omskakel na noemer 24 (2/3 = 16/24 en 5/8 = 15/24). Aangesien 16/24 nie gelyk is aan 15/24 nie, is die breuke nie ekwivalent nie.", checkMode: 'self' },
       ],
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'ʼn Skool het 120 leerders. Drie kwarte stap skool toe en die res kom met die bus.\n\n' +
-        'a) Hoeveel leerders stap skool toe?\n' +
-        'b) Hoeveel kom met die bus?\n' +
-        'c) Op ʼn reënerige dag kry die helfte van die busleerders ʼn saamry in plaas daarvan. Hoeveel leerders kom daardie dag met die bus?',
-      answer: 'a) 90    b) 30    c) 15',
-      parts: [
-        {
-          label: 'a) Hoeveel leerders stap skool toe?',
-          correctAnswer: '90',
-          explanation:
-            'Vind 3/4 van 120.\n' +
-            'Stap 1: Deel deur die noemer: 120 ÷ 4 = 30\n' +
-            'Stap 2: Vermenigvuldig met die teller: 30 × 3 = 90\n' +
-            '90 leerders stap skool toe.',
-        },
-        {
-          label: 'b) Hoeveel kom met die bus?',
-          correctAnswer: '30',
-          explanation:
-            'Totale leerders − stappers = busleerders.\n' +
-            '120 − 90 = 30\n' +
-            '30 leerders kom met die bus.',
-        },
-        {
-          label: 'c) Hoeveel kom op die reënerige dag met die bus?',
-          correctAnswer: '15',
-          explanation:
-            'Die helfte van die busleerders kry ʼn saamry, dus kom die helfte steeds met die bus.\n' +
-            '1/2 van 30 = 30 ÷ 2 = 15\n' +
-            '15 leerders kom op die reënerige dag met die bus.',
-        },
+      scoreMessages: [
+        { minScore: 25, message: "Uitstekend! Jy het multistap en gekombineerde breukprobleme bemeester." },
+        { minScore: 19, message: "Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer." },
+        { minScore: 13, message: "Goeie poging! Gaan die multistap uitgewerkte voorbeelde weer deur." },
+        { minScore: 0, message: "Hou aan probeer — werk weer deur die studiegids en probeer hierdie afdeling weer." },
       ],
-    },
-
-    // ── AFDELING 5: OPTEL VAN BREUKE MET DIESELFDE NOEMER ───────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Bereken:\n\n3/8 + 4/8',
-      answer: '7/8',
-      correctAnswer: '7/8',
-      explanation:
-        'Albei breuke het dieselfde noemer (8), hou dus die noemer.\n' +
-        'Tel die tellers bymekaar: 3 + 4 = 7\n\n' +
-        '3/8 + 4/8 = 7/8',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Bereken die volgende:\n\n' +
-        'a) 2/9 + 5/9\n' +
-        'b) 1/6 + 3/6 + 1/6\n' +
-        'c) 4/10 + 3/10',
-      answer: 'a) 7/9    b) 5/6    c) 7/10',
-      parts: [
-        {
-          label: 'a) 2/9 + 5/9',
-          correctAnswer: '7/9',
-          explanation:
-            'Dieselfde noemer (9) — hou dit.\n' +
-            'Tel die tellers bymekaar: 2 + 5 = 7\n' +
-            '2/9 + 5/9 = 7/9',
-        },
-        {
-          label: 'b) 1/6 + 3/6 + 1/6',
-          correctAnswer: '5/6',
-          explanation:
-            'Dieselfde noemer (6) — hou dit.\n' +
-            'Tel al die tellers bymekaar: 1 + 3 + 1 = 5\n' +
-            '1/6 + 3/6 + 1/6 = 5/6',
-        },
-        {
-          label: 'c) 4/10 + 3/10',
-          correctAnswer: '7/10',
-          explanation:
-            'Dieselfde noemer (10) — hou dit.\n' +
-            'Tel die tellers bymekaar: 4 + 3 = 7\n' +
-            '4/10 + 3/10 = 7/10',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'Lerato het 2/8 van ʼn pizza vir middagete geëet en 3/8 vir aandete. Haar broer het 1/8 vir middagete geëet.\n\n' +
-        'a) Watter breuk het Lerato altesaam geëet?\n' +
-        'b) Watter breuk het haar broer geëet?\n' +
-        'c) Watter breuk van die pizza is oor?\n' +
-        'd) Wie het meer geëet en met hoeveel?',
-      answer: 'a) 5/8    b) 1/8    c) 2/8    d) Lerato het 4/8 meer geëet',
-      parts: [
-        {
-          label: 'a) Watter breuk het Lerato altesaam geëet?',
-          correctAnswer: '5/8',
-          explanation:
-            'Lerato het 2/8 + 3/8 geëet.\n' +
-            'Dieselfde noemer (8) — tel die tellers bymekaar: 2 + 3 = 5\n' +
-            'Lerato het altesaam 5/8 geëet.',
-        },
-        {
-          label: 'b) Watter breuk het haar broer geëet?',
-          correctAnswer: '1/8',
-          explanation:
-            'Haar broer het net 1/8 vir middagete geëet.\n' +
-            'Breuk = 1/8',
-        },
-        {
-          label: 'c) Watter breuk van die pizza is oor?',
-          correctAnswer: '2/8',
-          explanation:
-            'Totaal geëet = Lerato (5/8) + broer (1/8) = 6/8\n' +
-            'Hele pizza = 8/8\n' +
-            'Oor = 8/8 − 6/8 = 2/8',
-        },
-        {
-          label: 'd) Wie het meer geëet en met hoeveel?',
-          correctAnswer: 'Lerato met 4/8',
-          correctAnswers: [
-            'Lerato met 4/8',
-            'Lerato het 4/8 meer geëet',
-            'Lerato meer met 4/8',
-            'Lerato 4/8 meer',
-            'Lerato 4/8',
-          ],
-          explanation:
-            'Vergelyk: Lerato het 5/8 geëet, broer het 1/8 geëet.\n' +
-            '5/8 − 1/8 = 4/8\n' +
-            'Lerato het 4/8 meer geëet.',
-        },
-      ],
-    },
-
-  ],
-
-  scoreMessages: [
-    {
-      minScore: 30,
-      message:
-        'Uitstekend! 30 uit 30 — jy het Gewone Breuke bemeester. Elke enkele deel was korrek. Jy behoort baie trots op jouself te wees! 🌟',
-    },
-    {
-      minScore: 24,
-      message:
-        'Uitstekende werk! Jy het ʼn sterk begrip van breuke. Gaan enige dele wat jy gemis het weer deur en jy sal binnekort volpunte kry.',
-    },
-    {
-      minScore: 18,
-      message:
-        'Goeie poging! Jy maak goeie vordering met breuke. Gaan terug oor die afdelings waar jy punte verloor het en probeer daardie vrae weer.',
-    },
-    {
-      minScore: 0,
-      message:
-        'Hou aan probeer — breuke vat oefening! Werk weer deur die studiegids, fokus op die uitgewerkte voorbeelde, en probeer dan die vrae weer. Jy kan dit doen!',
     },
   ],
 }

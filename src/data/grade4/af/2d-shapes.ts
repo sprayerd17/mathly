@@ -109,6 +109,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'Ses 2D-vorms duidelik gemerk — sirkel, driehoek, vierkant, reghoek, vyfhoek, seshoek — elkeen met sye, hoekpunte en hoeke aangedui',
       videoPlaceholder:
@@ -228,6 +229,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'Venn-diagram wat vorms sorteer in veelhoeke en nie-veelhoeke met voorbeeldvorms in elke afdeling',
     },
@@ -302,6 +304,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -360,6 +363,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'Ses regte-lewe-voorwerpe elkeen gemerk met hul 2D-vorm — ʼn munt (sirkel), ʼn toegeeteken (driehoek), ʼn venster (vierkant), ʼn deur (reghoek), ʼn heuningkoek (seshoek)',
       videoPlaceholder:
@@ -367,265 +371,167 @@ export const topicData: TopicData = {
     },
   ],
 
-  topicPractice: [
+  topicPractice: [],
 
-    // ── AFDELING 1 — Wat is 2D-vorms ───────────────────────────────────────
-
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 — GRONDSLAE: VORMS NOEM, SYE EN HOEKPUNTE TEL (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      question: 'Hoeveel sye en hoekpunte het ʼn seshoek?',
-      checkMode: 'auto',
-      answer: 'a) 6   b) 6',
-      parts: [
-        {
-          label: 'a) Aantal sye',
-          correctAnswer: '6',
-          correctAnswers: ['6', 'ses'],
-          explanation: 'ʼn Seshoek het 6 sye.',
-        },
-        {
-          label: 'b) Aantal hoekpunte',
-          correctAnswer: '6',
-          correctAnswers: ['6', 'ses'],
-          explanation: 'ʼn Seshoek het 6 hoekpunte — een by elke hoek waar twee sye ontmoet.',
-        },
+      name: 'Stel 1: Grondslae',
+      questions: [
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn driehoek?', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', 'drie'], answer: '3', explanation: 'ʼn Driehoek het 3 reguit sye.' },
+        { difficulty: 'Easy', question: 'Hoeveel hoekpunte het ʼn driehoek?', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', 'drie'], answer: '3', explanation: 'ʼn Driehoek het 3 hoekpunte — een by elke hoek waar twee sye ontmoet.' },
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn vierkant?', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'vier'], answer: '4', explanation: 'ʼn Vierkant het 4 sye, almal gelyk in lengte.' },
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn reghoek?', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'vier'], answer: '4', explanation: 'ʼn Reghoek het 4 sye, met 2 pare gelyke oorstaande sye.' },
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn vyfhoek?', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', 'vyf'], answer: '5', explanation: 'ʼn Vyfhoek het 5 reguit sye.' },
+        { difficulty: 'Easy', question: 'Hoeveel hoekpunte het ʼn vyfhoek?', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', 'vyf'], answer: '5', explanation: 'ʼn Vyfhoek het 5 hoekpunte — een by elke hoek.' },
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn seshoek?', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'ses'], answer: '6', explanation: 'ʼn Seshoek het 6 reguit sye.' },
+        { difficulty: 'Easy', question: 'Hoeveel hoekpunte het ʼn seshoek?', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'ses'], answer: '6', explanation: 'ʼn Seshoek het 6 hoekpunte — een by elke hoek.' },
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn sewehoek?', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'sewe'], answer: '7', explanation: 'ʼn Sewehoek het 7 reguit sye.' },
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn agthoek?', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'agt'], answer: '8', explanation: 'ʼn Agthoek het 8 reguit sye.' },
+        { difficulty: 'Easy', question: 'Hoeveel hoekpunte het ʼn agthoek?', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'agt'], answer: '8', explanation: 'ʼn Agthoek het 8 hoekpunte — een by elke hoek.' },
+        { difficulty: 'Easy', question: 'Hoeveel reguit sye het ʼn sirkel?', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'nul', 'geen'], answer: '0', explanation: 'ʼn Sirkel het 0 reguit sye — sy rand is een geboë lyn.' },
+        { difficulty: 'Easy', question: 'Hoeveel hoekpunte het ʼn sirkel?', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'nul', 'geen'], answer: '0', explanation: 'ʼn Sirkel het geen hoekpunte nie omdat dit geen reguit sye het wat by hoeke ontmoet nie.' },
+        { difficulty: 'Easy', question: 'Ek het 3 sye en 3 hoeke. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Driehoek', correctAnswers: ['Driehoek', 'driehoek', 'ʼn driehoek'], answer: 'Driehoek', explanation: 'ʼn Vorm met 3 sye en 3 hoeke is ʼn driehoek.' },
+        { difficulty: 'Easy', question: 'Ek het 4 gelyke sye en 4 regte hoeke. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Vierkant', correctAnswers: ['Vierkant', 'vierkant', 'ʼn vierkant'], answer: 'Vierkant', explanation: 'ʼn Vorm met 4 gelyke sye en 4 regte hoeke is ʼn vierkant.' },
+        { difficulty: 'Easy', question: 'Ek het 4 sye, 2 pare gelyke sye en 4 regte hoeke, maar ek is langer as wat ek breed is. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Reghoek', correctAnswers: ['Reghoek', 'reghoek', 'ʼn reghoek'], answer: 'Reghoek', explanation: 'ʼn Vorm met 2 pare gelyke sye, 4 regte hoeke, en ongelyke lengte en breedte is ʼn reghoek.' },
+        { difficulty: 'Easy', question: 'Ek het 5 reguit sye en 5 hoekpunte. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Vyfhoek', correctAnswers: ['Vyfhoek', 'vyfhoek', 'ʼn vyfhoek'], answer: 'Vyfhoek', explanation: 'ʼn Geslote vorm met 5 reguit sye is ʼn vyfhoek.' },
+        { difficulty: 'Easy', question: 'Ek het 6 reguit sye en 6 hoekpunte. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Seshoek', correctAnswers: ['Seshoek', 'seshoek', 'ʼn seshoek'], answer: 'Seshoek', explanation: 'ʼn Geslote vorm met 6 reguit sye is ʼn seshoek.' },
+        { difficulty: 'Easy', question: 'Ek het een geboë rand en geen reguit sye of hoeke nie. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Sirkel', correctAnswers: ['Sirkel', 'sirkel', 'ʼn sirkel'], answer: 'Sirkel', explanation: 'ʼn Vorm met een geboë rand en geen reguit sye is ʼn sirkel.' },
+        { difficulty: 'Medium', question: 'Wat noem ons ʼn geslote 2D-vorm wat heeltemal uit reguit sye bestaan?', checkMode: 'auto', correctAnswer: 'Veelhoek', correctAnswers: ['Veelhoek', 'veelhoek', 'ʼn veelhoek'], answer: 'Veelhoek', explanation: 'ʼn Geslote vorm wat slegs uit reguit sye bestaan, sonder gapings, word ʼn veelhoek genoem.' },
+        { difficulty: 'Medium', question: 'Wat is ʼn ander naam vir ʼn 4-syige vorm?', checkMode: 'auto', correctAnswer: 'Vierhoek', correctAnswers: ['Vierhoek', 'vierhoek', 'ʼn vierhoek'], answer: 'Vierhoek', explanation: 'Enige vorm met 4 sye en 4 hoekpunte word ʼn vierhoek genoem.' },
+        { difficulty: 'Medium', question: 'Hoeveel hoeke het ʼn vorm as dit 7 hoekpunte het?', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'sewe'], answer: '7', explanation: 'Die aantal hoeke in ʼn veelhoek is altyd gelyk aan die aantal hoekpunte, so 7 hoekpunte beteken 7 hoeke.' },
+        { difficulty: 'Medium', question: 'ʼn Vorm het 8 sye. Hoeveel hoekpunte het dit?', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'agt'], answer: '8', explanation: 'In enige veelhoek is die aantal hoekpunte gelyk aan die aantal sye, so 8 sye beteken 8 hoekpunte.' },
+        { difficulty: 'Medium', question: 'Wat is die grootte van ʼn regte hoek in grade?', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90', '90°', 'negentig'], answer: '90°', explanation: 'ʼn Regte hoek meet presies 90°.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het meer sye as ʼn seshoek maar minder sye as ʼn agthoek. Noem die vorm.', checkMode: 'auto', correctAnswer: 'Sewehoek', correctAnswers: ['Sewehoek', 'sewehoek', 'ʼn sewehoek'], answer: 'Sewehoek', explanation: 'ʼn Seshoek het 6 sye en ʼn agthoek het 8 sye. Die vorm met 7 sye, tussen hulle, is ʼn sewehoek.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Volpunte! Jy ken jou 2D-vorms, sye en hoekpunte deur en deur.' },
+        { minScore: 19, message: 'Uitstekende werk! Gaan die vorms wat jy verkeerd gehad het weer deur en jy sal dit bemeester.' },
+        { minScore: 13, message: 'Goeie poging! Gaan terug en hersien die aantal sye en hoekpunte vir elke vorm.' },
+        { minScore: 0, message: 'Hou aan oefen! Lees weer deur die studiegids en leer elke vorm noukeurig.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 — LASTIGER EIENSKAPPE EN IDENTIFISERING VANAF LEIDRADE (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium',
-      question:
-        'Beskryf die eienskappe van ʼn vierkant. Sluit die aantal sye, hoekpunte, hoeke in en of die sye gelyk is.',
-      checkMode: 'self',
-      answer:
-        'ʼn Vierkant het 4 gelyke sye, 4 hoekpunte en 4 regte hoeke (90°). Omdat al die sye gelyk is en al die hoeke gelyk is, is dit ʼn reëlmatige vierhoek.',
-    },
-
-    {
-      difficulty: 'Hard',
-      question:
-        'ʼn Vorm het 5 sye en 5 hoekpunte. Al die sye is gelyk en al die hoeke is gelyk.',
-      checkMode: 'auto',
-      answer: 'a) Vyfhoek   b) Reëlmatig   c) 5',
-      parts: [
-        {
-          label: 'a) Naam van hierdie vorm',
-          correctAnswer: 'Vyfhoek',
-          correctAnswers: ['Vyfhoek', 'vyfhoek', 'ʼn vyfhoek'],
-          explanation:
-            'ʼn Geslote vorm met 5 reguit sye en 5 hoekpunte is ʼn vyfhoek.',
-        },
-        {
-          label: 'b) Reëlmatige of onreëlmatige veelhoek?',
-          correctAnswer: 'Reëlmatig',
-          correctAnswers: ['Reëlmatig', 'reëlmatig', 'reëlmatige veelhoek'],
-          explanation:
-            'Omdat al 5 sye gelyk in lengte is en al 5 hoeke gelyk in grootte is, is dit ʼn reëlmatige veelhoek.',
-        },
-        {
-          label: 'c) Aantal simmetrielyne',
-          correctAnswer: '5',
-          correctAnswers: ['5', 'vyf'],
-          explanation:
-            'ʼn Reëlmatige vyfhoek het 5 simmetrielyne — een deur elke hoekpunt en die middelpunt van die oorstaande sy.',
-        },
+      name: 'Stel 2: Eienskappe en Leidrade',
+      questions: [
+        { difficulty: 'Easy', question: 'Ek het 4 sye wat almal gelyk in lengte is en 4 regte hoeke. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Vierkant', correctAnswers: ['Vierkant', 'vierkant', 'ʼn vierkant'], answer: 'Vierkant', explanation: 'Gelyke sye en regte hoeke is die eienskappe van ʼn vierkant.' },
+        { difficulty: 'Easy', question: 'Ek het 3 sye wat almal verskillende lengtes is. Watter tipe driehoek is ek?', checkMode: 'auto', correctAnswer: 'Skalene driehoek', correctAnswers: ['Skalene driehoek', 'skalene', 'ʼn skalene driehoek'], answer: 'Skalene driehoek', explanation: 'ʼn Driehoek met al 3 sye verskillende lengtes word ʼn skalene driehoek genoem.' },
+        { difficulty: 'Easy', question: 'Ek het 3 gelyke sye en 3 gelyke hoeke. Watter tipe driehoek is ek?', checkMode: 'auto', correctAnswer: 'Gelyksydige driehoek', correctAnswers: ['Gelyksydige driehoek', 'gelyksydig', 'ʼn gelyksydige driehoek'], answer: 'Gelyksydige driehoek', explanation: 'ʼn Driehoek met al 3 sye en al 3 hoeke gelyk is ʼn gelyksydige driehoek.' },
+        { difficulty: 'Easy', question: 'Ek het presies een regte hoek. Watter tipe driehoek is ek?', checkMode: 'auto', correctAnswer: 'Reghoekige driehoek', correctAnswers: ['Reghoekige driehoek', 'ʼn reghoekige driehoek'], answer: 'Reghoekige driehoek', explanation: 'ʼn Driehoek met presies een hoek van 90° word ʼn reghoekige driehoek genoem.' },
+        { difficulty: 'Easy', question: 'Hoeveel regte hoeke het ʼn reghoek?', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'vier'], answer: '4', explanation: 'ʼn Reghoek het 4 regte hoeke, een by elke hoek.' },
+        { difficulty: 'Medium', question: 'ʼn Vierhoek het al die sye gelyk, maar sy hoeke is nie regte hoeke nie. Wat is sy naam?', checkMode: 'auto', correctAnswer: 'Ruit', correctAnswers: ['Ruit', 'ruit', 'ʼn ruit'], answer: 'Ruit', explanation: 'ʼn Vierhoek met 4 gelyke sye maar hoeke wat nie noodwendig 90° is nie, is ʼn ruit.' },
+        { difficulty: 'Medium', question: 'ʼn Vierhoek het 2 pare parallelle sye en 2 pare gelyke sye, maar geen regte hoeke nie. Wat is sy naam?', checkMode: 'auto', correctAnswer: 'Parallelogram', correctAnswers: ['Parallelogram', 'parallelogram', 'ʼn parallelogram'], answer: 'Parallelogram', explanation: 'ʼn Vierhoek met 2 pare parallelle, gelyke sye (en geen regte hoeke nie) is ʼn parallelogram.' },
+        { difficulty: 'Medium', question: 'ʼn Vierhoek het presies een paar parallelle sye. Wat is sy naam?', checkMode: 'auto', correctAnswer: 'Trapesium', correctAnswers: ['Trapesium', 'trapesium', 'ʼn trapesium'], answer: 'Trapesium', explanation: 'ʼn Vierhoek met slegs een paar parallelle sye word ʼn trapesium genoem.' },
+        { difficulty: 'Medium', question: 'Watter vorm het al die sye gelyk EN al die hoeke gelyk aan 90°?', checkMode: 'auto', correctAnswer: 'Vierkant', correctAnswers: ['Vierkant', 'vierkant', 'ʼn vierkant'], answer: 'Vierkant', explanation: 'ʼn Vierkant het albei eienskappe: 4 gelyke sye en 4 regte hoeke (90° elk).' },
+        { difficulty: 'Medium', question: 'Watter vorm het 2 pare gelyke sye en 4 regte hoeke, maar sy 4 sye is nie almal gelyk nie?', checkMode: 'auto', correctAnswer: 'Reghoek', correctAnswers: ['Reghoek', 'reghoek', 'ʼn reghoek'], answer: 'Reghoek', explanation: 'ʼn Reghoek het oorstaande sye gelyk en 4 regte hoeke, maar aangrensende sye kan verskil in lengte.' },
+        { difficulty: 'Medium', question: 'Vergelyk ʼn vierkant en ʼn ruit. Watter eienskap het BEIDE vorms altyd?', checkMode: 'auto', correctAnswer: '4 gelyke sye', correctAnswers: ['4 gelyke sye', 'al die sye gelyk', 'vier gelyke sye'], answer: '4 gelyke sye', explanation: 'Beide ʼn vierkant en ʼn ruit het altyd 4 gelyke sye. ʼn Vierkant moet ook regte hoeke hê, maar ʼn ruit hoef nie.' },
+        { difficulty: 'Medium', question: 'ʼn Vorm het 5 gelyke sye en 5 gelyke hoeke. Is dit ʼn reëlmatige of onreëlmatige veelhoek?', checkMode: 'auto', correctAnswer: 'Reëlmatig', correctAnswers: ['Reëlmatig', 'reëlmatig', 'reëlmatige veelhoek'], answer: 'Reëlmatig', explanation: 'ʼn Veelhoek met al die sye en al die hoeke gelyk is ʼn reëlmatige veelhoek — in hierdie geval ʼn reëlmatige vyfhoek.' },
+        { difficulty: 'Medium', question: 'ʼn Reghoek het sye van verskillende lengtes. Is dit ʼn reëlmatige of onreëlmatige veelhoek?', checkMode: 'auto', correctAnswer: 'Onreëlmatig', correctAnswers: ['Onreëlmatig', 'onreëlmatig', 'onreëlmatige veelhoek'], answer: 'Onreëlmatig', explanation: 'Omdat nie al die sye van ʼn reghoek gelyk is nie, is dit ʼn onreëlmatige veelhoek.' },
+        { difficulty: 'Medium', question: 'Watter twee vorms het albei presies 4 sye en 4 hoekpunte: ʼn vyfhoek en ʼn reghoek, of ʼn ruit en ʼn reghoek?', checkMode: 'auto', correctAnswer: 'ʼn Ruit en ʼn reghoek', correctAnswers: ['ʼn Ruit en ʼn reghoek', 'ruit en ʼn reghoek', 'ruit en reghoek'], answer: 'ʼn Ruit en ʼn reghoek', explanation: 'ʼn Ruit en ʼn reghoek is albei vierhoeke met 4 sye en 4 hoekpunte. ʼn Vyfhoek het 5 sye, dus pas dit nie.' },
+        { difficulty: 'Medium', question: 'ʼn Driehoek het 2 gelyke sye en 2 gelyke hoeke. Watter tipe driehoek is dit?', checkMode: 'auto', correctAnswer: 'Gelykbenige driehoek', correctAnswers: ['Gelykbenige driehoek', 'gelykbenig', 'ʼn gelykbenige driehoek'], answer: 'Gelykbenige driehoek', explanation: 'ʼn Driehoek met presies 2 gelyke sye (en 2 gelyke hoeke) word ʼn gelykbenige driehoek genoem.' },
+        { difficulty: 'Medium', question: 'Hoeveel simmetrielyne het ʼn vierkant?', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'vier'], answer: '4', explanation: 'ʼn Vierkant het 4 simmetrielyne — 2 deur die middelpunte van oorstaande sye, en 2 deur oorstaande hoeke.' },
+        { difficulty: 'Medium', question: 'Hoeveel simmetrielyne het ʼn reghoek?', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', 'twee'], answer: '2', explanation: 'ʼn Reghoek het 2 simmetrielyne — een horisontaal en een vertikaal, elkeen deur die middelpunte van oorstaande sye.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het 4 sye. Twee sye is 6 cm en twee sye is 4 cm. Al die hoeke is regte hoeke. Is hierdie vorm reëlmatig of onreëlmatig?', checkMode: 'auto', correctAnswer: 'Onreëlmatig', correctAnswers: ['Onreëlmatig', 'onreëlmatig', 'onreëlmatige veelhoek'], answer: 'Onreëlmatig', explanation: 'Omdat die sye nie almal gelyk is nie (6 cm en 4 cm), is hierdie reghoek ʼn onreëlmatige veelhoek.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het 4 gelyke sye, maar sy hoeke is 60° en 120°, nie 90° nie. Wat is die naam van hierdie vorm?', checkMode: 'auto', correctAnswer: 'Ruit', correctAnswers: ['Ruit', 'ruit', 'ʼn ruit'], answer: 'Ruit', explanation: 'ʼn Vierhoek met 4 gelyke sye maar hoeke wat nie 90° is nie, is ʼn ruit, nie ʼn vierkant nie.' },
+        { difficulty: 'Hard', question: 'Watter vorm hieronder is NIE ʼn veelhoek nie: seshoek, ruit, of sirkel?', checkMode: 'auto', correctAnswer: 'Sirkel', correctAnswers: ['Sirkel', 'sirkel', 'ʼn sirkel'], answer: 'Sirkel', explanation: 'ʼn Sirkel het ʼn geboë rand, nie reguit sye nie, dus kan dit nie ʼn veelhoek wees nie. ʼn Seshoek en ruit het albei slegs reguit sye.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het presies een paar parallelle sye en die ander twee sye is nie parallel nie. Wat is sy naam?', checkMode: 'auto', correctAnswer: 'Trapesium', correctAnswers: ['Trapesium', 'trapesium', 'ʼn trapesium'], answer: 'Trapesium', explanation: 'ʼn Trapesium word gedefinieer deur presies een paar parallelle sye te hê.' },
+        { difficulty: 'Hard', question: 'Sipho sê alle vierkante is reghoeke. Is hy korrek? Skryf ja of nee.', checkMode: 'auto', correctAnswer: 'Ja', correctAnswers: ['Ja', 'ja'], answer: 'Ja', explanation: 'Ja — ʼn vierkant het 4 regte hoeke en 2 pare gelyke sye, wat aan elke eienskap van ʼn reghoek voldoen, plus al 4 sye gelyk.' },
+        { difficulty: 'Hard', question: 'Amahle sê alle reghoeke is vierkante. Is sy korrek? Skryf ja of nee.', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], answer: 'Nee', explanation: 'Nee — ʼn reghoek het net 2 pare gelyke sye nodig, nie al 4 sye gelyk nie, dus is nie elke reghoek ʼn vierkant nie.' },
+        { difficulty: 'Hard', question: 'ʼn Parallelogram en ʼn ruit het albei 2 pare parallelle sye. Watter ekstra eienskap moet ʼn ruit hê wat ʼn algemene parallelogram nie hoef te hê nie?', checkMode: 'auto', correctAnswer: 'Al 4 sye gelyk', correctAnswers: ['Al 4 sye gelyk', 'al die sye gelyk', '4 gelyke sye'], answer: 'Al 4 sye gelyk', explanation: 'ʼn Ruit is ʼn spesiale parallelogram waar al 4 sye gelyk in lengte is.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het 6 gelyke sye en 6 gelyke hoeke. Hoeveel simmetrielyne het dit?', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'ses'], answer: '6', explanation: 'ʼn Reëlmatige seshoek het 6 simmetrielyne — een deur elke paar oorstaande hoekpunte of oorstaande sye.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Volpunte! Jy kan vorms met selfvertroue vanaf hul eienskappe identifiseer.' },
+        { minScore: 19, message: 'Puik werk! ʼn Vinnige hersiening van die lastiger eienskappe sal dit volmaak maak.' },
+        { minScore: 13, message: 'Goeie poging! Hersien die eienskappe van vierhoeke soos die ruit en trapesium.' },
+        { minScore: 0, message: 'Hou aan! Lees weer noukeurig deur die eienskappe van elke vorm.' },
       ],
     },
 
-    // ── AFDELING 2 — 2D-vorms Sorteer en Klassifiseer ────────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 — SORTEER, KLASSIFISEER EN VORMS IN DIE REGTE LEWE (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      question: 'Is ʼn sirkel ʼn veelhoek? Skryf ja of nee en gee een rede.',
-      checkMode: 'self',
-      answer:
-        'Nee. ʼn Sirkel is nie ʼn veelhoek nie omdat dit ʼn geboë rand het, nie reguit sye nie. ʼn Veelhoek moet ʼn geslote vorm met slegs reguit sye wees.',
-    },
-
-    {
-      difficulty: 'Medium',
-      question:
-        'Sorteer hierdie vorms in twee groepe — vorms met regte hoeke en vorms sonder regte hoeke:\nvierkant, sirkel, driehoek, reghoek, gelyksydige driehoek, reghoekige driehoek',
-      checkMode: 'auto',
-      answer: 'a) vierkant, reghoek, reghoekige driehoek   b) sirkel, gelyksydige driehoek',
-      parts: [
-        {
-          label: 'a) Vorms met regte hoeke',
-          correctAnswer: 'vierkant, reghoek, reghoekige driehoek',
-          correctAnswers: [
-            'vierkant, reghoek, reghoekige driehoek',
-            'vierkant, reghoekige driehoek, reghoek',
-            'reghoek, vierkant, reghoekige driehoek',
-            'reghoek, reghoekige driehoek, vierkant',
-            'reghoekige driehoek, vierkant, reghoek',
-            'reghoekige driehoek, reghoek, vierkant',
-          ],
-          explanation:
-            'ʼn Vierkant het 4 regte hoeke, ʼn reghoek het 4 regte hoeke, en ʼn reghoekige driehoek het presies 1 regte hoek.',
-        },
-        {
-          label: 'b) Vorms sonder regte hoeke',
-          correctAnswer: 'sirkel, gelyksydige driehoek',
-          correctAnswers: [
-            'sirkel, gelyksydige driehoek',
-            'gelyksydige driehoek, sirkel',
-          ],
-          explanation:
-            'ʼn Sirkel het glad geen hoeke nie. ʼn Gelyksydige driehoek het drie hoeke van 60° — geeneen is ʼn regte hoek nie.',
-        },
+      name: 'Stel 3: Sorteer en die Regte Lewe',
+      questions: [
+        { difficulty: 'Easy', question: 'Is ʼn sirkel ʼn veelhoek? Skryf ja of nee.', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], answer: 'Nee', explanation: 'ʼn Sirkel het ʼn geboë rand, nie reguit sye nie, dus is dit nie ʼn veelhoek nie.' },
+        { difficulty: 'Easy', question: 'Is ʼn driehoek ʼn veelhoek? Skryf ja of nee.', checkMode: 'auto', correctAnswer: 'Ja', correctAnswers: ['Ja', 'ja'], answer: 'Ja', explanation: 'ʼn Driehoek is ʼn geslote vorm wat slegs uit reguit sye bestaan, dus is dit ʼn veelhoek.' },
+        { difficulty: 'Easy', question: 'ʼn Munt is rond sonder reguit sye. Watter 2D-vorm is dit?', checkMode: 'auto', correctAnswer: 'Sirkel', correctAnswers: ['Sirkel', 'sirkel', 'ʼn sirkel'], answer: 'Sirkel', explanation: 'ʼn Munt het ʼn geboë rand en geen hoeke nie — dit is ʼn sirkel.' },
+        { difficulty: 'Easy', question: 'ʼn Klaskamerdeur het 4 sye, 2 pare gelyke sye en 4 regte hoeke. Watter 2D-vorm is dit?', checkMode: 'auto', correctAnswer: 'Reghoek', correctAnswers: ['Reghoek', 'reghoek', 'ʼn reghoek'], answer: 'Reghoek', explanation: 'ʼn Deur met 2 pare gelyke sye en 4 regte hoeke het die vorm van ʼn reghoek.' },
+        { difficulty: 'Easy', question: 'ʼn Toegee-padteken het 3 sye en 3 hoeke. Watter 2D-vorm is dit?', checkMode: 'auto', correctAnswer: 'Driehoek', correctAnswers: ['Driehoek', 'driehoek', 'ʼn driehoek'], answer: 'Driehoek', explanation: 'ʼn Padteken met 3 sye en 3 hoeke is ʼn driehoek.' },
+        { difficulty: 'Easy', question: 'ʼn Skaakbord bestaan uit klein blokkies wat almal gelyke sye en 4 regte hoeke het. Watter 2D-vorm is elke blokkie?', checkMode: 'auto', correctAnswer: 'Vierkant', correctAnswers: ['Vierkant', 'vierkant', 'ʼn vierkant'], answer: 'Vierkant', explanation: 'Elke skaakbordblokkie het 4 gelyke sye en 4 regte hoeke — ʼn vierkant.' },
+        { difficulty: 'Easy', question: 'ʼn Heuningkoeksel het 6 gelyke sye. Watter 2D-vorm is dit?', checkMode: 'auto', correctAnswer: 'Seshoek', correctAnswers: ['Seshoek', 'seshoek', 'ʼn seshoek'], answer: 'Seshoek', explanation: 'Heuningkoekselle is 6-syige vorms — seshoeke.' },
+        { difficulty: 'Easy', question: 'ʼn Wiel het geen reguit sye of hoeke nie. Watter 2D-vorm lyk dit soos?', checkMode: 'auto', correctAnswer: 'Sirkel', correctAnswers: ['Sirkel', 'sirkel', 'ʼn sirkel'], answer: 'Sirkel', explanation: 'ʼn Wiel is rond sonder reguit sye — dit het die vorm van ʼn sirkel.' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie in veelhoeke en nie-veelhoeke: vierkant, sirkel, seshoek. Watter een is NIE ʼn veelhoek nie?', checkMode: 'auto', correctAnswer: 'Sirkel', correctAnswers: ['Sirkel', 'sirkel', 'ʼn sirkel'], answer: 'Sirkel', explanation: 'ʼn Vierkant en ʼn seshoek bestaan uit reguit sye, dus is hulle veelhoeke. ʼn Sirkel het ʼn geboë rand, dus is dit nie.' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie vorms: vierkant, reghoek, reghoekige driehoek, sirkel, gelyksydige driehoek. Watter vorms het ten minste een regte hoek?', checkMode: 'auto', correctAnswer: 'Vierkant, reghoek, reghoekige driehoek', correctAnswers: ['Vierkant, reghoek, reghoekige driehoek', 'vierkant, reghoekige driehoek, reghoek', 'reghoek, vierkant, reghoekige driehoek', 'reghoek, reghoekige driehoek, vierkant', 'reghoekige driehoek, vierkant, reghoek', 'reghoekige driehoek, reghoek, vierkant'], answer: 'Vierkant, reghoek, reghoekige driehoek', explanation: 'ʼn Vierkant en reghoek het albei 4 regte hoeke, en ʼn reghoekige driehoek het presies 1 regte hoek.' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie vorms: vierkant, gelyksydige driehoek, reghoek, skalene driehoek. Watter vorms is reëlmatige veelhoeke?', checkMode: 'auto', correctAnswer: 'Vierkant, gelyksydige driehoek', correctAnswers: ['Vierkant, gelyksydige driehoek', 'gelyksydige driehoek, vierkant'], answer: 'Vierkant, gelyksydige driehoek', explanation: 'ʼn Vierkant en ʼn gelyksydige driehoek het albei al die sye en al die hoeke gelyk, wat hulle reëlmatige veelhoeke maak.' },
+        { difficulty: 'Medium', question: 'ʼn Sokkerbal is bedek met lappies. Watter twee veelhoeke word gebruik om sy geboë oppervlak te bedek?', checkMode: 'auto', correctAnswer: 'Vyfhoeke en seshoeke', correctAnswers: ['Vyfhoeke en seshoeke', 'seshoeke en vyfhoeke', 'vyfhoek en seshoek', 'seshoek en vyfhoek'], answer: 'Vyfhoeke en seshoeke', explanation: 'Sokkerballe word tradisioneel bedek met vyfhoek- en seshoeklappies wat sonder gapings inpas.' },
+        { difficulty: 'Medium', question: 'ʼn Dakvorm en ʼn pizzasny is albei voorbeelde van watter 2D-vorm?', checkMode: 'auto', correctAnswer: 'Driehoek', correctAnswers: ['Driehoek', 'driehoek', 'ʼn driehoek'], answer: 'Driehoek', explanation: 'Beide ʼn dakvorm en ʼn pizzasny het 3 sye en 3 hoeke — ʼn driehoek.' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie in vorms met slegs reguit sye en vorms met geboë sye: driehoek, sirkel, seshoek, ovaal. Watter vorms het geboë sye?', checkMode: 'auto', correctAnswer: 'Sirkel, ovaal', correctAnswers: ['Sirkel, ovaal', 'ovaal, sirkel'], answer: 'Sirkel, ovaal', explanation: 'ʼn Sirkel en ʼn ovaal het albei geboë rande. ʼn Driehoek en seshoek het slegs reguit sye.' },
+        { difficulty: 'Medium', question: 'Thabo sê ʼn venster het die vorm van ʼn vierhoek. Is ʼn vierkantige venster ook ʼn vierhoek? Skryf ja of nee.', checkMode: 'auto', correctAnswer: 'Ja', correctAnswers: ['Ja', 'ja'], answer: 'Ja', explanation: 'Ja — ʼn vierkant het 4 sye, dus is dit ʼn tipe vierhoek net soos ʼn reghoek.' },
+        { difficulty: 'Medium', question: 'ʼn Stopteken het 8 gelyke sye. Watter 2D-vorm is dit?', checkMode: 'auto', correctAnswer: 'Agthoek', correctAnswers: ['Agthoek', 'agthoek', 'ʼn agthoek'], answer: 'Agthoek', explanation: 'ʼn Stopteken het 8 sye, wat dit ʼn agthoek maak.' },
+        { difficulty: 'Medium', question: 'ʼn Boek se voorblad het 2 pare gelyke sye en 4 regte hoeke, en dit is langer as wat dit breed is. Watter 2D-vorm is dit?', checkMode: 'auto', correctAnswer: 'Reghoek', correctAnswers: ['Reghoek', 'reghoek', 'ʼn reghoek'], answer: 'Reghoek', explanation: 'ʼn Boekomslag met hierdie eienskappe pas by ʼn reghoek.' },
+        { difficulty: 'Medium', question: 'ʼn Sny waatlemoen (die geboë skil) laat ons dink aan deel van watter 2D-vorm?', checkMode: 'auto', correctAnswer: 'Sirkel', correctAnswers: ['Sirkel', 'sirkel', 'ʼn sirkel'], answer: 'Sirkel', explanation: 'ʼn Hele waatlemoen is rond soos ʼn sirkel (ʼn sfeer in 3D), dus wys ʼn sny deel van ʼn sirkel.' },
+        { difficulty: 'Hard', question: 'Lerato sorteer vorms volgens aantal sye. Sy het ʼn vierkant en ʼn ruit in een groep. Wat het hierdie twee vorms in gemeen?', checkMode: 'self', answer: 'Beide ʼn vierkant en ʼn ruit het 4 sye en 4 hoekpunte, en albei het al 4 sye gelyk in lengte. Hulle is albei vierhoeke.' },
+        { difficulty: 'Hard', question: 'Amahle kry ʼn stopteken, ʼn sokkerbal-lappie, en ʼn pizzaboks-deksel. Pas elke voorwerp by die vormfamilie waaraan dit behoort: veelhoek of nie-veelhoek.', checkMode: 'self', answer: 'ʼn Stopteken (agthoek), ʼn sokkerbal-lappie (vyfhoek of seshoek), en ʼn pizzaboks-deksel (vierkant of reghoek) is almal veelhoeke omdat elkeen slegs uit reguit sye bestaan.' },
+        { difficulty: 'Hard', question: 'Sipho sê: "Enige vorm met 4 sye is ʼn vierkant." Verduidelik waarom dit verkeerd is, en gee een voorbeeld van ʼn 4-syige vorm wat nie ʼn vierkant is nie.', checkMode: 'self', answer: 'Sipho is verkeerd. ʼn Vorm met 4 sye word ʼn vierhoek genoem, maar nie elke vierhoek is ʼn vierkant nie. ʼn Reghoek het byvoorbeeld 4 sye en 4 regte hoeke, maar sy sye is nie almal gelyk nie, dus is dit nie ʼn vierkant nie.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom ʼn heuningkoek seshoeke gebruik eerder as sirkels om sy selle te bou.', checkMode: 'self', answer: 'Seshoeke het reguit sye wat perfek sonder gapings by mekaar inpas (hulle tesseleer), terwyl sirkels geboë is en gapings sou laat as hulle bymekaar gepak word. Seshoeke maak die doeltreffendste gebruik van spasie.' },
+        { difficulty: 'Hard', question: 'Thabo kyk na ʼn venster met 4 gelyke sye en 4 regte hoeke, en ʼn deur met 2 pare gelyke sye en 4 regte hoeke. Noem elke vorm en verduidelik die verskil tussen hulle.', checkMode: 'self', answer: 'Die venster is ʼn vierkant omdat dit 4 gelyke sye en 4 regte hoeke het. Die deur is ʼn reghoek omdat dit 2 pare gelyke sye het (nie al 4 gelyk nie) en 4 regte hoeke. Die verskil is dat ʼn vierkant al die sye dieselfde lengte het, terwyl ʼn reghoek slegs oorstaande sye gelyk het.' },
+        { difficulty: 'Hard', question: 'ʼn Vlieër-versiering het 2 pare aangrensende gelyke sye, maar die oorstaande sye is nie gelyk of parallel nie. Watter vierhoek word beskryf?', checkMode: 'auto', correctAnswer: 'Vlieër', correctAnswers: ['Vlieër', 'vlieër', 'ʼn vlieër'], answer: 'Vlieër', explanation: 'ʼn Vlieër is ʼn vierhoek met 2 pare gelyke aangrensende sye, anders as ʼn reghoek of ruit waar oorstaande sye gelyk is.' },
+        { difficulty: 'Hard', question: 'Gee een regte-lewe-voorbeeld van ʼn seshoek en verduidelik hoe jy weet dit het 6 sye.', checkMode: 'self', answer: 'ʼn Heuningkoeksel is ʼn regte-lewe-voorbeeld van ʼn seshoek. Ek weet dit het 6 sye omdat ek elke reguit rand rondom die sel kan tel, en daar is 6 daarvan wat by 6 hoekpunte ontmoet.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Volpunte! Jy kan vorms met gemak sorteer, klassifiseer en in die regte lewe raaksien.' },
+        { minScore: 19, message: 'Uitstekende werk! Gaan die sorteervrae wat jy gemis het weer deur en jy sal dit bemeester.' },
+        { minScore: 13, message: 'Goeie poging! Oefen om vorms volgens hul eienskappe te sorteer en soek vorms rondom jou.' },
+        { minScore: 0, message: 'Hou aan oefen! Gaan terug deur die sorteer- en regte-lewe-afdelings van die studiegids.' },
       ],
     },
 
-    // Vraag 6 a/b/c — outomaties nagesien
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 4 — MEERVOUDIGE STAPPE, GEKOMBINEERDE EN SELF-NAGESIENE REDENERING (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      question:
-        'ʼn Vorm het 4 sye. Twee sye is 5 cm lank en twee sye is 3 cm lank. Al die hoeke is regte hoeke.',
-      checkMode: 'auto',
-      answer: 'a) Reghoek   b) Onreëlmatig   c) 2',
-      parts: [
-        {
-          label: 'a) Naam van hierdie vorm',
-          correctAnswer: 'Reghoek',
-          correctAnswers: ['Reghoek', 'reghoek', 'ʼn reghoek'],
-          explanation:
-            'ʼn Vorm met 4 sye, 2 pare gelyke sye en 4 regte hoeke is ʼn reghoek.',
-        },
-        {
-          label: 'b) Reëlmatig of onreëlmatig?',
-          correctAnswer: 'Onreëlmatig',
-          correctAnswers: ['Onreëlmatig', 'onreëlmatig', 'onreëlmatige veelhoek'],
-          explanation:
-            'Dit is onreëlmatig omdat nie al die sye gelyk is nie — twee sye is 5 cm en twee sye is 3 cm.',
-        },
-        {
-          label: 'c) Aantal simmetrielyne',
-          correctAnswer: '2',
-          correctAnswers: ['2', 'twee'],
-          explanation:
-            'ʼn Reghoek het 2 simmetrielyne — een horisontaal en een vertikaal, elkeen wat deur die middelpunte van oorstaande sye loop.',
-        },
+      name: 'Stel 4: Gemeng en Redenering',
+      questions: [
+        { difficulty: 'Easy', question: 'ʼn Vorm het 5 sye en 5 hoekpunte. Al die sye is gelyk en al die hoeke is gelyk. Wat is die naam van hierdie vorm?', checkMode: 'auto', correctAnswer: 'Vyfhoek', correctAnswers: ['Vyfhoek', 'vyfhoek', 'ʼn vyfhoek', 'reëlmatige vyfhoek'], answer: 'Vyfhoek', explanation: 'ʼn Geslote vorm met 5 gelyke sye en 5 gelyke hoeke is ʼn reëlmatige vyfhoek.' },
+        { difficulty: 'Easy', question: 'ʼn Vorm het 4 sye. Twee sye is 5 cm lank en twee sye is 3 cm lank, en al die hoeke is regte hoeke. Wat is die naam van hierdie vorm?', checkMode: 'auto', correctAnswer: 'Reghoek', correctAnswers: ['Reghoek', 'reghoek', 'ʼn reghoek'], answer: 'Reghoek', explanation: 'ʼn Vorm met 2 pare gelyke sye en 4 regte hoeke is ʼn reghoek.' },
+        { difficulty: 'Easy', question: 'Hoeveel sye het ʼn driehoek en ʼn vierkant altesaam?', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'sewe'], answer: '7', explanation: 'ʼn Driehoek het 3 sye en ʼn vierkant het 4 sye. 3 + 4 = 7 sye altesaam.' },
+        { difficulty: 'Easy', question: 'Hoeveel hoekpunte het ʼn vyfhoek en ʼn seshoek altesaam?', checkMode: 'auto', correctAnswer: '11', correctAnswers: ['11', 'elf'], answer: '11', explanation: 'ʼn Vyfhoek het 5 hoekpunte en ʼn seshoek het 6 hoekpunte. 5 + 6 = 11 hoekpunte altesaam.' },
+        { difficulty: 'Medium', question: 'ʼn Vorm het 5 sye en 5 hoekpunte. Al die sye is gelyk en al die hoeke is gelyk. Hoeveel simmetrielyne het dit?', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', 'vyf'], answer: '5', explanation: 'ʼn Reëlmatige vyfhoek het 5 simmetrielyne — een deur elke hoekpunt en die middelpunt van die oorstaande sy.' },
+        { difficulty: 'Medium', question: 'ʼn Vorm het 4 sye. Twee sye is 5 cm lank en twee sye is 3 cm lank, en al die hoeke is regte hoeke. Is hierdie vorm reëlmatig of onreëlmatig?', checkMode: 'auto', correctAnswer: 'Onreëlmatig', correctAnswers: ['Onreëlmatig', 'onreëlmatig', 'onreëlmatige veelhoek'], answer: 'Onreëlmatig', explanation: 'Dit is onreëlmatig omdat nie al die sye gelyk is nie — twee sye is 5 cm en twee sye is 3 cm.' },
+        { difficulty: 'Medium', question: 'ʼn Vorm het 4 sye. Twee sye is 5 cm lank en twee sye is 3 cm lank, en al die hoeke is regte hoeke. Hoeveel simmetrielyne het dit?', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', 'twee'], answer: '2', explanation: 'ʼn Reghoek het 2 simmetrielyne — een horisontaal en een vertikaal, deur die middelpunte van oorstaande sye.' },
+        { difficulty: 'Medium', question: 'Vergelyk ʼn driehoek en ʼn seshoek. Hoeveel meer sye het ʼn seshoek as ʼn driehoek?', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', 'drie'], answer: '3', explanation: 'ʼn Seshoek het 6 sye en ʼn driehoek het 3 sye. 6 − 3 = 3 meer sye.' },
+        { difficulty: 'Medium', question: 'ʼn Sokkerbal het lappies wat vyfhoeke en seshoeke is. Hoeveel meer sye het ʼn seshoeklappie as ʼn vyfhoeklappie?', checkMode: 'auto', correctAnswer: '1', correctAnswers: ['1', 'een'], answer: '1', explanation: 'ʼn Seshoek het 6 sye en ʼn vyfhoek het 5 sye. 6 − 5 = 1 meer sy.' },
+        { difficulty: 'Medium', question: 'ʼn Vorm het een sy meer as ʼn reghoek maar minder sye as ʼn seshoek. Noem die vorm.', checkMode: 'auto', correctAnswer: 'Vyfhoek', correctAnswers: ['Vyfhoek', 'vyfhoek', 'ʼn vyfhoek'], answer: 'Vyfhoek', explanation: 'ʼn Reghoek het 4 sye, dus is een meer 5 sye — ʼn vyfhoek, wat minder sye het as ʼn seshoek (6).' },
+        { difficulty: 'Medium', question: 'Twee driehoeke word rand-aan-rand saamgevoeg om ʼn nuwe 4-syige vorm te vorm. Hoeveel sye het die nuwe vorm?', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'vier'], answer: '4', explanation: 'Wanneer twee driehoeke langs een rand saamgevoeg word, verdwyn daardie gedeelde rand, wat ʼn nuwe 4-syige vorm (ʼn vierhoek) laat.' },
+        { difficulty: 'Medium', question: 'ʼn Reghoek word in twee gesny langs ʼn diagonaal. Watter 2D-vorm is elke helfte?', checkMode: 'auto', correctAnswer: 'Driehoek', correctAnswers: ['Driehoek', 'driehoek', 'ʼn driehoek'], answer: 'Driehoek', explanation: 'Om ʼn reghoek langs sy diagonaal te sny, skep twee driehoeke, elkeen met 3 sye.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het 4 sye. Twee sye is 5 cm lank en twee sye is 3 cm lank, en al die hoeke is regte hoeke.\nVerduidelik wat hierdie vorm anders maak as ʼn vierkant.', checkMode: 'self', answer: 'ʼn Vierkant het al 4 sye gelyk in lengte. Hierdie vorm (ʼn reghoek) het 2 pare gelyke sye — die twee lang sye is gelyk en die twee kort sye is gelyk, maar die lang sye is langer as die kort sye.' },
+        { difficulty: 'Hard', question: 'ʼn Sokkerbal het lappies wat vyfhoeke en seshoeke is.\nVerduidelik waarom hierdie twee vorms saam gebruik word, en watter eienskap hulle in staat stel om sonder gapings by mekaar te pas.', checkMode: 'self', answer: 'Vyfhoeke en seshoeke pas perfek by mekaar om die geboë oppervlak van ʼn sokkerbal te bedek sonder gapings en sonder oorvleueling. Die vorms tesseleer, wat beteken hulle kan rand-aan-rand by mekaar inpas sonder om enige gapings te laat.' },
+        { difficulty: 'Hard', question: 'Lerato sê ʼn vierkant is net ʼn spesiale reghoek. Is sy reg? Verduidelik volledig deur die eienskappe van albei vorms te gebruik.', checkMode: 'self', answer: 'Ja, sy is reg. ʼn Reghoek het 4 sye, 4 regte hoeke en 2 pare gelyke sye. ʼn Vierkant het al hierdie selfde eienskappe, maar dit het ook al 4 sye gelyk in lengte. Dit beteken ʼn vierkant voldoen aan elke voorwaarde van ʼn reghoek, wat dit ʼn spesiale tipe reghoek maak.' },
+        { difficulty: 'Hard', question: 'Vergelyk ʼn driehoek en ʼn vyfhoek. Skryf twee ooreenkomste en twee verskille.', checkMode: 'self', answer: 'Ooreenkomste: albei is veelhoeke (geslote vorms met slegs reguit sye); albei het hoekpunte waar hul sye ontmoet. Verskille: ʼn driehoek het 3 sye terwyl ʼn vyfhoek 5 sye het; ʼn driehoek het 3 hoekpunte terwyl ʼn vyfhoek 5 hoekpunte het.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom ʼn ruit nie altyd ʼn vierkant genoem word nie, al het albei vorms 4 gelyke sye.', checkMode: 'self', answer: 'ʼn Ruit het 4 gelyke sye, maar sy hoeke hoef nie 90° te wees nie. ʼn Vierkant het ook 4 gelyke sye, maar dit moet ook 4 regte hoeke hê. Aangesien ʼn ruit hoeke kan hê wat nie 90° is nie, is dit nie altyd ʼn vierkant nie — ʼn vierkant is net ʼn spesiale tipe ruit.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm word beskryf as een met 4 sye, oorstaande sye parallel en gelyk, maar geen regte hoeke nie. Noem die vorm en verduidelik jou redenasie.', checkMode: 'self', answer: 'Die vorm is ʼn parallelogram. Dit het 2 pare parallelle, gelyke sye soos ʼn reghoek, maar omdat dit geen regte hoeke het nie, kan dit nie ʼn reghoek of vierkant wees nie — dit moet ʼn parallelogram wees (of ʼn ruit as al 4 sye ook gelyk is).' },
+        { difficulty: 'Hard', question: 'Sipho teken ʼn vorm met 4 sye waarvan slegs een paar parallel is. Watter vorm het hy geteken, en hoe verskil dit van ʼn parallelogram?', checkMode: 'self', answer: 'Sipho het ʼn trapesium geteken. Dit verskil van ʼn parallelogram omdat ʼn parallelogram 2 pare parallelle sye het, terwyl ʼn trapesium slegs 1 paar parallelle sye het.' },
+        { difficulty: 'Hard', question: 'ʼn Vyfhoek en ʼn sewehoek word vergelyk. Watter een het meer sye, en met hoeveel?', checkMode: 'auto', correctAnswer: 'Sewehoek met 2', correctAnswers: ['Sewehoek met 2', 'sewehoek, met 2', 'die sewehoek het 2 meer', 'die sewehoek met 2'], answer: 'Sewehoek met 2', explanation: 'ʼn Vyfhoek het 5 sye en ʼn sewehoek het 7 sye. 7 − 5 = 2, dus het die sewehoek 2 meer sye.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het dieselfde aantal sye as die aantal hoekpunte in ʼn agthoek. Noem die vorm.', checkMode: 'auto', correctAnswer: 'Agthoek', correctAnswers: ['Agthoek', 'agthoek', 'ʼn agthoek'], answer: 'Agthoek', explanation: 'ʼn Agthoek het 8 hoekpunte, dus is ʼn vorm met 8 sye ook ʼn agthoek.' },
+        { difficulty: 'Hard', question: 'Amahle bou ʼn patroon met slegs vierkante en gelyksydige driehoeke, rand-aan-rand sonder gapings. Verduidelik waarom hierdie kombinasie werk.', checkMode: 'self', answer: 'Vierkante en gelyksydige driehoeke het albei reguit sye van gelyke lengte, dus pas hul rande perfek by mekaar wanneer hulle langs mekaar geplaas word. Dit stel hulle in staat om te tesseleer — sonder gapings en sonder oorvleueling by mekaar te pas — en ʼn netjiese herhalende patroon te skep.' },
+        { difficulty: 'Hard', question: 'Verduidelik, met behulp van eienskappe, waarom ʼn sirkel nie as ʼn veelhoek geklassifiseer kan word nie.', checkMode: 'self', answer: 'ʼn Veelhoek moet ʼn geslote vorm wees wat heeltemal uit reguit sye bestaan wat by hoekpunte ontmoet. ʼn Sirkel het een deurlopende geboë rand met geen reguit sye en geen hoekpunte nie, dus voldoen dit nie aan die definisie van ʼn veelhoek nie.' },
+        { difficulty: 'Hard', question: 'ʼn Vorm het 4 sye, almal gelyk in lengte, en sy diagonale kruis by regte hoeke, maar sy eie hoeke is 70° en 110°. Noem hierdie vorm.', checkMode: 'auto', correctAnswer: 'Ruit', correctAnswers: ['Ruit', 'ruit', 'ʼn ruit'], answer: 'Ruit', explanation: 'ʼn Vierhoek met al 4 sye gelyk maar hoeke wat nie 90° is nie, is ʼn ruit.' },
+        { difficulty: 'Hard', question: 'Thabo sê: "Alle vierhoeke is parallelogramme." Gee een voorbeeld van ʼn vierhoek wat bewys dat hy verkeerd is, en verduidelik waarom.', checkMode: 'self', answer: 'ʼn Trapesium bewys dat Thabo verkeerd is. ʼn Trapesium is ʼn vierhoek (dit het 4 sye), maar dit het slegs een paar parallelle sye, terwyl ʼn parallelogram 2 pare parallelle sye nodig het. Dus is nie elke vierhoek ʼn parallelogram nie.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Volpunte! Jy het 2D-vorms oor elke onderwerp heen ten volle bemeester.' },
+        { minScore: 19, message: 'Uitstekende werk! Gaan die meervoudige-stap-vrae wat jy verkeerd gehad het weer deur en jy sal dit bemeester.' },
+        { minScore: 13, message: 'Goeie poging! Gaan terug en lees deur die afdelings wat jy lastig gevind het.' },
+        { minScore: 0, message: 'Hou aan! Lees weer noukeurig deur die hele studiegids en probeer dan weer.' },
       ],
     },
-
-    // Vraag 6 d — self nagesien
-    {
-      difficulty: 'Hard',
-      question:
-        'ʼn Vorm het 4 sye. Twee sye is 5 cm lank en twee sye is 3 cm lank. Al die hoeke is regte hoeke.\nd) Wat maak hierdie vorm anders as ʼn vierkant?',
-      checkMode: 'self',
-      answer:
-        'ʼn Vierkant het al 4 sye gelyk in lengte. Hierdie vorm (ʼn reghoek) het 2 pare gelyke sye — die twee lang sye is gelyk en die twee kort sye is gelyk, maar die lang sye is langer as die kort sye.',
-    },
-
-    // ── AFDELING 3 — 2D-vorms Vergelyk en Kontrasteer ──────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: 'Skryf een ooreenkoms en een verskil tussen ʼn vierkant en ʼn reghoek.',
-      checkMode: 'self',
-      answer:
-        'Ooreenkoms: albei het 4 sye, 4 hoekpunte en 4 regte hoeke.\nVerskil: ʼn vierkant het 4 gelyke sye, maar ʼn reghoek het 2 pare gelyke sye (oorstaande sye is gelyk maar aangrensende sye verskil).',
-    },
-
-    {
-      difficulty: 'Medium',
-      question:
-        'Vergelyk ʼn driehoek en ʼn vyfhoek.\na) Skryf twee ooreenkomste.\nb) Skryf twee verskille.',
-      checkMode: 'self',
-      answer:
-        'a) Ooreenkomste: albei is veelhoeke (geslote vorms met slegs reguit sye); albei het hoekpunte waar hul sye ontmoet.\nb) Verskille: ʼn driehoek het 3 sye terwyl ʼn vyfhoek 5 sye het; ʼn driehoek het 3 hoekpunte terwyl ʼn vyfhoek 5 hoekpunte het.',
-    },
-
-    {
-      difficulty: 'Hard',
-      question:
-        'Lerato sê ʼn vierkant is net ʼn spesiale reghoek. Is sy reg? Verduidelik volledig aan die hand van die eienskappe van albei vorms.',
-      checkMode: 'self',
-      answer:
-        'Ja, sy is reg. ʼn Reghoek het 4 sye, 4 regte hoeke en 2 pare gelyke sye. ʼn Vierkant het al hierdie selfde eienskappe, maar dit het ook al 4 sye gelyk in lengte. Dit beteken ʼn vierkant voldoen aan elke voorwaarde van ʼn reghoek, wat dit ʼn spesiale tipe reghoek maak.',
-    },
-
-    // ── AFDELING 4 — 2D-vorms in die Omgewing ─────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: 'Noem die 2D-vorm wat elke voorwerp die beste beskryf.',
-      checkMode: 'auto',
-      answer: 'a) Sirkel   b) Reghoek   c) Driehoek',
-      parts: [
-        {
-          label: 'a) ʼn Munt',
-          correctAnswer: 'Sirkel',
-          correctAnswers: ['Sirkel', 'sirkel', 'ʼn sirkel'],
-          explanation:
-            'ʼn Munt is rond sonder reguit sye of hoeke — dit is ʼn sirkel.',
-        },
-        {
-          label: 'b) ʼn Klaskamerdeur',
-          correctAnswer: 'Reghoek',
-          correctAnswers: ['Reghoek', 'reghoek', 'ʼn reghoek'],
-          explanation:
-            'ʼn Deur het 4 sye met 2 pare gelyke sye en 4 regte hoeke — dit is ʼn reghoek.',
-        },
-        {
-          label: 'c) ʼn Toegee-padteken',
-          correctAnswer: 'Driehoek',
-          correctAnswers: ['Driehoek', 'driehoek', 'ʼn driehoek'],
-          explanation:
-            'ʼn Toegeeteken het 3 sye en 3 hoeke — dit is ʼn driehoek.',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Medium',
-      question:
-        'Kyk rond in jou klaskamer of by die huis. Vind een regte-lewe-voorbeeld van elke vorm.\na) Vierkant\nb) Reghoek\nc) Sirkel',
-      checkMode: 'self',
-      answer:
-        'Aanvaar enige geldige regte-lewe-voorbeelde.\na) Vierkant — bv. ʼn teël, ʼn plaknota, ʼn skaakbordblokkie.\nb) Reghoek — bv. ʼn boek, ʼn deur, ʼn liniaal, ʼn skerm.\nc) Sirkel — bv. ʼn klok, ʼn munt, ʼn wiel, ʼn bord.',
-    },
-
-    // Vraag 12 a/b — outomaties nagesien
-    {
-      difficulty: 'Hard',
-      question:
-        'ʼn Sokkerbal het lappies wat vyfhoeke en seshoeke is.',
-      checkMode: 'auto',
-      answer: 'a) 5   b) 6',
-      parts: [
-        {
-          label: 'a) Hoeveel sye het ʼn vyfhoek?',
-          correctAnswer: '5',
-          correctAnswers: ['5', 'vyf'],
-          explanation: 'ʼn Vyfhoek het 5 sye.',
-        },
-        {
-          label: 'b) Hoeveel sye het ʼn seshoek?',
-          correctAnswer: '6',
-          correctAnswers: ['6', 'ses'],
-          explanation: 'ʼn Seshoek het 6 sye.',
-        },
-      ],
-    },
-
-    // Vraag 12 c/d — self nagesien
-    {
-      difficulty: 'Hard',
-      question:
-        'ʼn Sokkerbal het lappies wat vyfhoeke en seshoeke is.\nc) Waarom dink jy word hierdie twee vorms saam op ʼn sokkerbal gebruik?\nd) Watter eienskap moet die vorms hê om sonder gapings by mekaar te pas?',
-      checkMode: 'self',
-      answer:
-        'c) Vyfhoeke en seshoeke pas perfek by mekaar om die geboë oppervlak van ʼn sokkerbal te bedek sonder gapings en sonder oorvleueling.\nd) Die vorms moet teëlvorm (tesseleer) — wat beteken hulle kan rand-aan-rand by mekaar inpas sonder om enige gapings te laat.',
-    },
-
-  ],
-
-  scoreMessages: [
-    { minScore: 23, message: 'Volpunte! Jy het 2D-vorms bemeester.' },
-    { minScore: 18, message: 'Uitstekende werk! Gaan die vrae wat jy verkeerd gehad het weer deur en jy sal dit bemeester.' },
-    { minScore: 12, message: 'Goeie poging! Gaan terug en lees deur die afdelings waarmee jy gesukkel het.' },
-    { minScore: 0, message: 'Hou aan probeer! Lees weer noukeurig deur die studiegids en probeer dan weer.' },
   ],
 }

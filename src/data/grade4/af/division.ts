@@ -78,6 +78,8 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
+
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -154,6 +156,8 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
+
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -225,6 +229,8 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
+
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -388,6 +394,8 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
+
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -551,6 +559,170 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
+
+      openQuestions: [],
+    },
+  ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 — GRONDBEGINSELS: DELINGSFEITE (DEEL, GROEPEER, TAFELS) (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1: Grondbeginsels',
+      questions: [
+        { difficulty: 'Easy', question: 'Deel 20 lekkers gelyk tussen 4 vriende. Hoeveel lekkers kry elke vriend?', answer: '5', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 lekkers'], explanation: '20 ÷ 4 = 5. Elke vriend kry 5 lekkers.' },
+        { difficulty: 'Easy', question: 'Bereken: 24 ÷ 6', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: '6 × 4 = 24, dus 24 ÷ 6 = 4.' },
+        { difficulty: 'Easy', question: 'ʼn Boer verpak 36 eiers in bokse van 9. Hoeveel bokse vul hy?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 bokse'], explanation: '9 × 4 = 36, dus 36 ÷ 9 = 4 bokse.' },
+        { difficulty: 'Easy', question: 'Bereken: 42 ÷ 7', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: '7 × 6 = 42, dus 42 ÷ 7 = 6.' },
+        { difficulty: 'Easy', question: 'Bereken: 45 ÷ 5', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '5 × 9 = 45, dus 45 ÷ 5 = 9.' },
+        { difficulty: 'Medium', question: 'Gebruik jou vermenigvuldigingstafels om te bereken: 56 ÷ 8', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Dink: wat × 8 = 56? → 7 × 8 = 56. Dus 56 ÷ 8 = 7.' },
+        { difficulty: 'Medium', question: 'Gebruik jou vermenigvuldigingstafels om te bereken: 63 ÷ 7', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Dink: wat × 7 = 63? → 9 × 7 = 63. Dus 63 ÷ 7 = 9.' },
+        { difficulty: 'Medium', question: 'Gebruik jou vermenigvuldigingstafels om te bereken: 72 ÷ 9', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Dink: wat × 9 = 72? → 8 × 9 = 72. Dus 72 ÷ 9 = 8.' },
+        { difficulty: 'Medium', question: 'Gebruik jou vermenigvuldigingstafels om te bereken: 81 ÷ 9', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Dink: wat × 9 = 81? → 9 × 9 = 81. Dus 81 ÷ 9 = 9.' },
+        { difficulty: 'Medium', question: '48 leerders word in 6 gelyke spanne geplaas. Hoeveel leerders is in elke span?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 leerders'], explanation: '6 × 8 = 48, dus 48 ÷ 6 = 8 leerders per span.' },
+        { difficulty: 'Medium', question: 'Bereken: 54 ÷ 6', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '6 × 9 = 54, dus 54 ÷ 6 = 9.' },
+        { difficulty: 'Medium', question: 'Bereken: 35 ÷ 5', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: '5 × 7 = 35, dus 35 ÷ 5 = 7.' },
+        { difficulty: 'Medium', question: 'Bereken: 64 ÷ 8', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: '8 × 8 = 64, dus 64 ÷ 8 = 8.' },
+        { difficulty: 'Easy', question: '18 beskuitjies word in sakkies van 3 verpak. Hoeveel sakkies word benodig?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 sakkies'], explanation: '3 × 6 = 18, dus 18 ÷ 3 = 6 sakkies.' },
+        { difficulty: 'Easy', question: 'Bereken: 27 ÷ 3', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '3 × 9 = 27, dus 27 ÷ 3 = 9.' },
+        { difficulty: 'Easy', question: 'Bereken: 32 ÷ 4', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: '4 × 8 = 32, dus 32 ÷ 4 = 8.' },
+        { difficulty: 'Easy', question: 'Bereken: 18 ÷ 2', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '2 × 9 = 18, dus 18 ÷ 2 = 9.' },
+        { difficulty: 'Easy', question: 'Bereken: 40 ÷ 5', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: '5 × 8 = 40, dus 40 ÷ 5 = 8.' },
+        { difficulty: 'Easy', question: 'Bereken: 16 ÷ 4', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: '4 × 4 = 16, dus 16 ÷ 4 = 4.' },
+        { difficulty: 'Easy', question: 'Bereken: 28 ÷ 7', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: '7 × 4 = 28, dus 28 ÷ 7 = 4.' },
+        { difficulty: 'Medium', question: 'Gebruik die feitefamilie vir 6 × 7 = 42 om die twee verwante delingsfeite te skryf.', answer: '42 ÷ 7 = 6 en 42 ÷ 6 = 7', checkMode: 'auto', correctAnswer: '42÷7=6 en 42÷6=7', correctAnswers: ['42÷7=6 en 42÷6=7', '42/7=6 en 42/6=7', '42÷6=7 en 42÷7=6', '42/6=7 en 42/7=6'], explanation: 'Vanaf 6 × 7 = 42, is die twee delingsfeite 42 ÷ 7 = 6 en 42 ÷ 6 = 7.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling: 96 ÷ 4', answer: '24', checkMode: 'auto', correctAnswer: '24', explanation: '9 ÷ 4 = 2 r 1, bring 6 af → 16. 16 ÷ 4 = 4. Dus 96 ÷ 4 = 24.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling: 84 ÷ 4', answer: '21', checkMode: 'auto', correctAnswer: '21', explanation: '8 ÷ 4 = 2, bring 4 af → 4. 4 ÷ 4 = 1. Dus 84 ÷ 4 = 21.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling: 100 ÷ 5', answer: '20', checkMode: 'auto', correctAnswer: '20', explanation: '10 ÷ 5 = 2, bring 0 af → 0. 0 ÷ 5 = 0. Dus 100 ÷ 5 = 20.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling: 144 ÷ 6', answer: '24', checkMode: 'auto', correctAnswer: '24', explanation: '14 ÷ 6 = 2 r 2, bring 4 af → 24. 24 ÷ 6 = 4. Dus 144 ÷ 6 = 24.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy ken jou delingsfeite en vermenigvuldigingstafels baie goed.' },
+        { minScore: 19, message: 'Goeie werk! Jy is selfversekerd met delingsfeite — gaan enige gemiste vrae weer deur.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die vermenigvuldigingstafels weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 — DELING MET RESTE EN GROTER GETALLE (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2: Reste en Groter Getalle',
+      questions: [
+        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 19 ÷ 4', answer: '4 r 3', checkMode: 'auto', correctAnswer: '4r3', correctAnswers: ['4r3', '4res3', '4r03'], explanation: '4 × 4 = 16 (naaste sonder om 19 te oorskry). 19 − 16 = 3 oor. 19 ÷ 4 = 4 r 3.' },
+        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 27 ÷ 5', answer: '5 r 2', checkMode: 'auto', correctAnswer: '5r2', correctAnswers: ['5r2', '5res2'], explanation: '5 × 5 = 25 (naaste sonder om 27 te oorskry). 27 − 25 = 2 oor. 27 ÷ 5 = 5 r 2.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 38 ÷ 6', answer: '6 r 2', checkMode: 'auto', correctAnswer: '6r2', correctAnswers: ['6r2', '6res2'], explanation: '6 × 6 = 36 (naaste sonder om 38 te oorskry). 38 − 36 = 2 oor. 38 ÷ 6 = 6 r 2.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 43 ÷ 8', answer: '5 r 3', checkMode: 'auto', correctAnswer: '5r3', correctAnswers: ['5r3', '5res3'], explanation: '8 × 5 = 40 (naaste sonder om 43 te oorskry). 43 − 40 = 3 oor. 43 ÷ 8 = 5 r 3.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 29 ÷ 4', answer: '7 r 1', checkMode: 'auto', correctAnswer: '7r1', correctAnswers: ['7r1', '7res1'], explanation: '4 × 7 = 28 (naaste sonder om 29 te oorskry). 29 − 28 = 1 oor. 29 ÷ 4 = 7 r 1.' },
+        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 17 ÷ 5', answer: '3 r 2', checkMode: 'auto', correctAnswer: '3r2', correctAnswers: ['3r2', '3res2'], explanation: '5 × 3 = 15 (naaste sonder om 17 te oorskry). 17 − 15 = 2 oor. 17 ÷ 5 = 3 r 2.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 25 ÷ 6', answer: '4 r 1', checkMode: 'auto', correctAnswer: '4r1', correctAnswers: ['4r1', '4res1'], explanation: '6 × 4 = 24 (naaste sonder om 25 te oorskry). 25 − 24 = 1 oor. 25 ÷ 6 = 4 r 1.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 35 ÷ 8', answer: '4 r 3', checkMode: 'auto', correctAnswer: '4r3', correctAnswers: ['4r3', '4res3'], explanation: '8 × 4 = 32 (naaste sonder om 35 te oorskry). 35 − 32 = 3 oor. 35 ÷ 8 = 4 r 3.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 22 ÷ 3', answer: '7 r 1', checkMode: 'auto', correctAnswer: '7r1', correctAnswers: ['7r1', '7res1'], explanation: '3 × 7 = 21 (naaste sonder om 22 te oorskry). 22 − 21 = 1 oor. 22 ÷ 3 = 7 r 1.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 31 ÷ 6', answer: '5 r 1', checkMode: 'auto', correctAnswer: '5r1', correctAnswers: ['5r1', '5res1'], explanation: '6 × 5 = 30 (naaste sonder om 31 te oorskry). 31 − 30 = 1 oor. 31 ÷ 6 = 5 r 1.' },
+        { difficulty: 'Hard', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 44 ÷ 9', answer: '4 r 8', checkMode: 'auto', correctAnswer: '4r8', correctAnswers: ['4r8', '4res8'], explanation: '9 × 4 = 36 (naaste sonder om 44 te oorskry). 44 − 36 = 8 oor. 44 ÷ 9 = 4 r 8.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 50 ÷ 7', answer: '7 r 1', checkMode: 'auto', correctAnswer: '7r1', correctAnswers: ['7r1', '7res1'], explanation: '7 × 7 = 49 (naaste sonder om 50 te oorskry). 50 − 49 = 1 oor. 50 ÷ 7 = 7 r 1.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 33 ÷ 4', answer: '8 r 1', checkMode: 'auto', correctAnswer: '8r1', correctAnswers: ['8r1', '8res1'], explanation: '4 × 8 = 32 (naaste sonder om 33 te oorskry). 33 − 32 = 1 oor. 33 ÷ 4 = 8 r 1.' },
+        { difficulty: 'Hard', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 58 ÷ 9', answer: '6 r 4', checkMode: 'auto', correctAnswer: '6r4', correctAnswers: ['6r4', '6res4'], explanation: '9 × 6 = 54 (naaste sonder om 58 te oorskry). 58 − 54 = 4 oor. 58 ÷ 9 = 6 r 4.' },
+        { difficulty: 'Medium', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 47 ÷ 5', answer: '9 r 2', checkMode: 'auto', correctAnswer: '9r2', correctAnswers: ['9r2', '9res2'], explanation: '5 × 9 = 45 (naaste sonder om 47 te oorskry). 47 − 45 = 2 oor. 47 ÷ 5 = 9 r 2.' },
+        { difficulty: 'Hard', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 62 ÷ 7', answer: '8 r 6', checkMode: 'auto', correctAnswer: '8r6', correctAnswers: ['8r6', '8res6'], explanation: '7 × 8 = 56 (naaste sonder om 62 te oorskry). 62 − 56 = 6 oor. 62 ÷ 7 = 8 r 6.' },
+        { difficulty: 'Hard', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 75 ÷ 8', answer: '9 r 3', checkMode: 'auto', correctAnswer: '9r3', correctAnswers: ['9r3', '9res3'], explanation: '8 × 9 = 72 (naaste sonder om 75 te oorskry). 75 − 72 = 3 oor. 75 ÷ 8 = 9 r 3.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 91 ÷ 4', answer: '22 r 3', checkMode: 'auto', correctAnswer: '22r3', correctAnswers: ['22r3', '22res3'], explanation: '9 ÷ 4 = 2 r 1, bring 1 af → 11. 11 ÷ 4 = 2 r 3. Dus 91 ÷ 4 = 22 r 3.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 99 ÷ 7', answer: '14 r 1', checkMode: 'auto', correctAnswer: '14r1', correctAnswers: ['14r1', '14res1'], explanation: '9 ÷ 7 = 1 r 2, bring 9 af → 29. 29 ÷ 7 = 4 r 1. Dus 99 ÷ 7 = 14 r 1.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 123 ÷ 5', answer: '24 r 3', checkMode: 'auto', correctAnswer: '24r3', correctAnswers: ['24r3', '24res3'], explanation: '12 ÷ 5 = 2 r 2, bring 3 af → 23. 23 ÷ 5 = 4 r 3. Dus 123 ÷ 5 = 24 r 3.' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 156 ÷ 4', answer: '39', checkMode: 'auto', correctAnswer: '39', explanation: '15 ÷ 4 = 3 r 3, bring 6 af → 36. 36 ÷ 4 = 9. Dus 156 ÷ 4 = 39.' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 168 ÷ 7', answer: '24', checkMode: 'auto', correctAnswer: '24', explanation: '16 ÷ 7 = 2 r 2, bring 8 af → 28. 28 ÷ 7 = 4. Dus 168 ÷ 7 = 24.' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 96 ÷ 6', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: '9 ÷ 6 = 1 r 3, bring 6 af → 36. 36 ÷ 6 = 6. Dus 96 ÷ 6 = 16.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 85 ÷ 3', answer: '28 r 1', checkMode: 'auto', correctAnswer: '28r1', correctAnswers: ['28r1', '28res1'], explanation: '8 ÷ 3 = 2 r 2, bring 5 af → 25. 25 ÷ 3 = 8 r 1. Dus 85 ÷ 3 = 28 r 1.' },
+        { difficulty: 'Hard', question: 'Bereken met langdeling. Skryf slegs die finale antwoord: 137 ÷ 6', answer: '22 r 5', checkMode: 'auto', correctAnswer: '22r5', correctAnswers: ['22r5', '22res5'], explanation: '13 ÷ 6 = 2 r 1, bring 7 af → 17. 17 ÷ 6 = 2 r 5. Dus 137 ÷ 6 = 22 r 5.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het deling met reste en langdeling bemeester.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die res- en langdeling-voorbeelde weer deur.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 — DELING WOORDPROBLEME: DEEL EN GROEPEER (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3: Woordprobleme',
+      questions: [
+        { difficulty: 'Easy', question: 'ʼn Bakkery bak 72 koekies en verpak dit in bokse van 8. Hoeveel bokse vul hulle?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9 bokse'], explanation: 'Dit is ʼn groeperingsprobleem: 72 ÷ 8. Dink: 8 × 9 = 72. Die bakkery vul 9 bokse.' },
+        { difficulty: 'Easy', question: 'R150 word gelyk gedeel tussen 5 kinders. Hoeveel kry elke kind? Skryf slegs die getal sonder die R-simbool.', answer: '30', checkMode: 'auto', correctAnswer: '30', explanation: 'Dit is ʼn delingsprobleem: 150 ÷ 5 = 30. Elke kind kry R30.' },
+        { difficulty: 'Easy', question: 'ʼn Onderwyser het 64 potlode om gelyk tussen 8 leerders te deel. Hoeveel potlode kry elke leerder?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 potlode'], explanation: 'Dit is ʼn delingsprobleem: 64 ÷ 8 = 8. Elke leerder kry 8 potlode.' },
+        { difficulty: 'Easy', question: 'Lerato verpak 90 lekkers in sakkies van 6. Hoeveel sakkies vul sy?', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15 sakkies'], explanation: 'Dit is ʼn groeperingsprobleem: 90 ÷ 6 = 15 sakkies.' },
+        { difficulty: 'Medium', question: 'R84 word gelyk gedeel tussen 4 vriende. Hoeveel kry elke vriend? Skryf slegs die getal sonder die R-simbool.', answer: '21', checkMode: 'auto', correctAnswer: '21', explanation: '84 ÷ 4 = 21. Elke vriend kry R21.' },
+        { difficulty: 'Medium', question: 'ʼn Boer het 108 appels en verpak dit in bokse van 9. Hoeveel bokse vul hy?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 bokse'], explanation: '108 ÷ 9 = 12 bokse.' },
+        { difficulty: 'Medium', question: 'Sipho pluk 45 lemoene en verpak dit gelyk in 5 mandjies. Hoeveel lemoene gaan in elke mandjie?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9 lemoene'], explanation: '45 ÷ 5 = 9 lemoene per mandjie.' },
+        { difficulty: 'Medium', question: 'ʼn Bakkery bak 144 muffins en verpak dit in bokse van 6. Hoeveel bokse vul hulle?', answer: '24', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 bokse'], explanation: '144 ÷ 6 = 24 bokse.' },
+        { difficulty: 'Medium', question: 'R200 word gelyk gedeel tussen 8 leerders. Hoeveel kry elke leerder? Skryf slegs die getal sonder die R-simbool.', answer: '25', checkMode: 'auto', correctAnswer: '25', explanation: '200 ÷ 8 = 25. Elke leerder kry R25.' },
+        { difficulty: 'Medium', question: 'ʼn Boer plant 96 saadjies in 8 gelyke rye. Hoeveel saadjies is in elke ry?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 saadjies'], explanation: '96 ÷ 8 = 12 saadjies per ry.' },
+        { difficulty: 'Medium', question: 'ʼn Biblioteek het 132 boeke om gelyk op 6 rakke te rangskik. Hoeveel boeke gaan op elke rak?', answer: '22', checkMode: 'auto', correctAnswer: '22', correctAnswers: ['22', '22 boeke'], explanation: '132 ÷ 6 = 22 boeke per rak.' },
+        { difficulty: 'Easy', question: 'R63 word gelyk gedeel tussen 7 vriende. Hoeveel kry elke vriend? Skryf slegs die getal sonder die R-simbool.', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '63 ÷ 7 = 9. Elke vriend kry R9.' },
+        { difficulty: 'Easy', question: 'ʼn Onderwyser het 77 potlode om gelyk tussen 7 leerders te deel. Hoeveel potlode kry elke leerder?', answer: '11', checkMode: 'auto', correctAnswer: '11', correctAnswers: ['11', '11 potlode'], explanation: '77 ÷ 7 = 11 potlode per leerder.' },
+        { difficulty: 'Medium', question: 'Amahle het 52 lekkers om gelyk tussen 6 vriende te deel. Hoeveel lekkers kry elke vriend, en hoeveel bly oor? Skryf jou antwoord in die vorm kwosiënt r res.', answer: '8 r 4', checkMode: 'auto', correctAnswer: '8r4', correctAnswers: ['8r4', '8res4'], explanation: '6 × 8 = 48 (naaste sonder om 52 te oorskry). 52 − 48 = 4 oor. 52 ÷ 6 = 8 r 4.' },
+        { difficulty: 'Medium', question: 'ʼn Onderwyser het 39 plakkers om gelyk aan 5 leerders te gee. Hoeveel plakkers kry elke leerder, en hoeveel bly oor? Skryf jou antwoord in die vorm kwosiënt r res.', answer: '7 r 4', checkMode: 'auto', correctAnswer: '7r4', correctAnswers: ['7r4', '7res4'], explanation: '5 × 7 = 35 (naaste sonder om 39 te oorskry). 39 − 35 = 4 oor. 39 ÷ 5 = 7 r 4.' },
+        { difficulty: 'Medium', question: 'R156 word gelyk gedeel tussen 12 leerders. Hoeveel kry elke leerder? Skryf slegs die getal sonder die R-simbool.', answer: '13', checkMode: 'auto', correctAnswer: '13', explanation: '156 ÷ 12 = 13. Elke leerder kry R13.' },
+        { difficulty: 'Medium', question: 'ʼn Bouer het 200 bakstene en stapel dit in hope van 8. Hoeveel hope maak hy?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 hope'], explanation: '200 ÷ 8 = 25 hope.' },
+        { difficulty: 'Hard', question: 'ʼn Boer het 91 eiers en verpak dit in bokse van 6. Hoeveel volle bokse vul hy, en hoeveel eiers bly oor? Skryf jou antwoord in die vorm kwosiënt r res.', answer: '15 r 1', checkMode: 'auto', correctAnswer: '15r1', correctAnswers: ['15r1', '15res1'], explanation: '6 × 15 = 90 (naaste sonder om 91 te oorskry). 91 − 90 = 1 oor. 91 ÷ 6 = 15 r 1.' },
+        { difficulty: 'Medium', question: 'ʼn Skool samel R175 in en deel dit gelyk tussen 5 klasse. Hoeveel kry elke klas? Skryf slegs die getal sonder die R-simbool.', answer: '35', checkMode: 'auto', correctAnswer: '35', explanation: '175 ÷ 5 = 35. Elke klas kry R35.' },
+        { difficulty: 'Medium', question: 'ʼn Skoolsaal het 128 stoele wat gelyk in 8 rye gerangskik is. Hoeveel stoele is in elke ry?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 stoele'], explanation: '128 ÷ 8 = 16 stoele per ry.' },
+        { difficulty: 'Hard', question: 'ʼn Bakkery bak 54 koeksisters en verpak dit in bokse van 6. As elke boks vir R9 verkoop word, hoeveel bokse word gemaak? Skryf slegs die getal.', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9 bokse'], explanation: '54 ÷ 6 = 9 bokse.' },
+        { difficulty: 'Medium', question: '180 albasters word gelyk gedeel tussen 9 vriende. Hoeveel albasters kry elke vriend?', answer: '20', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20 albasters'], explanation: '180 ÷ 9 = 20 albasters per vriend.' },
+        { difficulty: 'Medium', question: 'ʼn Skool samel R120 in en verdeel dit gelyk tussen 6 liefdadigheidsorganisasies. Hoeveel kry elke organisasie? Skryf slegs die getal sonder die R-simbool.', answer: '20', checkMode: 'auto', correctAnswer: '20', explanation: '120 ÷ 6 = 20. Elke organisasie kry R20.' },
+        { difficulty: 'Easy', question: 'Thabo het 63 ballonne en verpak dit in sakkies van 7. Hoeveel sakkies vul hy?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9 sakkies'], explanation: '63 ÷ 7 = 9 sakkies.' },
+        { difficulty: 'Medium', question: 'ʼn Versamelaar het 240 seëls en plaas dit gelyk in albums van 8 seëls elk. Hoeveel albums vul sy?', answer: '30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30 albums'], explanation: '240 ÷ 8 = 30 albums.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy kan deling-woordprobleme met selfvertroue oplos.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die deel- en groeperingsvoorbeelde weer deur.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 4 — VEELSTAP EN GEKOMBINEERDE PROBLEME (25 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 4: Veelstap en Gekombineerde Probleme',
+      questions: [
+        { difficulty: 'Hard', question: 'R240 word gelyk gedeel tussen 6 vriende. Een vriend gee dan R15 aan liefdadigheid. Hoeveel het daardie vriend oor? Skryf slegs die getal sonder die R-simbool.', answer: '25', checkMode: 'auto', correctAnswer: '25', explanation: '240 ÷ 6 = 40. Elke vriend kry R40. 40 − 15 = 25. Daardie vriend het R25 oor.' },
+        { difficulty: 'Hard', question: 'ʼn Boer het 156 appels en verkoop dit in sakkies van 6. As hy elke sakkie vir R12 verkoop, hoeveel geld maak hy in totaal? Skryf slegs die getal sonder die R-simbool.', answer: '312', checkMode: 'auto', correctAnswer: '312', explanation: '156 ÷ 6 = 26 sakkies. 26 × R12 = R312.' },
+        { difficulty: 'Hard', question: '200 lekkers word gelyk gedeel tussen 8 kinders. Elke kind eet dan 3 lekkers. Hoeveel lekkers het elke kind oor?', answer: '22', checkMode: 'auto', correctAnswer: '22', correctAnswers: ['22', '22 lekkers'], explanation: '200 ÷ 8 = 25 lekkers elk. 25 − 3 = 22 lekkers oor per kind.' },
+        { difficulty: 'Hard', question: '45 leerders word in groepe van 5 geplaas. As 3 van die groepe op ʼn uitstappie gaan, hoeveel leerders gaan op die uitstappie?', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27', '27 leerders'], explanation: '45 ÷ 5 = 9 leerders per groep. 3 groepe × 9 = 27 leerders.' },
+        { difficulty: 'Hard', question: 'ʼn Boer verpak 168 eiers in bokse van 12. As elke boks vir R15 verkoop word, hoeveel geld maak hy in totaal? Skryf slegs die getal sonder die R-simbool.', answer: '210', checkMode: 'auto', correctAnswer: '210', explanation: '168 ÷ 12 = 14 bokse. 14 × R15 = R210.' },
+        { difficulty: 'Hard', question: 'ʼn Maatskappy maak R360 wins en deel dit gelyk tussen 9 werkers. Elke werker betaal dan R5 belasting. Hoeveel hou elke werker? Skryf slegs die getal sonder die R-simbool.', answer: '35', checkMode: 'auto', correctAnswer: '35', explanation: '360 ÷ 9 = 40 elk. 40 − 5 = 35. Elke werker hou R35.' },
+        { difficulty: 'Hard', question: 'ʼn Saal het 300 stoele met 4 stoele by elke tafel gerangskik. As 5 tafels dan verwyder word, hoeveel tafels bly oor?', answer: '70', checkMode: 'auto', correctAnswer: '70', correctAnswers: ['70', '70 tafels'], explanation: '300 ÷ 4 = 75 tafels. 75 − 5 = 70 tafels oor.' },
+        { difficulty: 'Hard', question: '144 lekkers word gelyk in 12 sakkies gedeel. As 3 van die sakkies weggegee word, hoeveel lekkers is in totaal weggegee?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 lekkers'], explanation: '144 ÷ 12 = 12 lekkers per sakkie. 3 sakkies × 12 = 36 lekkers weggegee.' },
+        { difficulty: 'Hard', question: '252 plakkers word gelyk in pakkies van 9 gedeel. As 4 pakkies gehou word, hoeveel pakkies word weggegee?', answer: '24', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 pakkies'], explanation: '252 ÷ 9 = 28 pakkies in totaal. 28 − 4 = 24 pakkies weggegee.' },
+        { difficulty: 'Hard', question: '420 albasters word gelyk gedeel tussen 7 vriende. Elke vriend gee dan 10 albasters aan liefdadigheid. Hoeveel albasters het elke vriend oor?', answer: '50', checkMode: 'auto', correctAnswer: '50', correctAnswers: ['50', '50 albasters'], explanation: '420 ÷ 7 = 60 albasters elk. 60 − 10 = 50 albasters oor per vriend.' },
+        { difficulty: 'Medium', question: 'Die antwoord op ʼn deling is 8, en een van die getalle in die probleem is 64. Wat is die ander getal?', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: '64 ÷ 8 = 8, dus is die ander getal ook 8.' },
+        { difficulty: 'Medium', question: 'Gebruik die feitefamilie vir 7 × 9 = 63 om die delingsfeit te skryf waar 63 deur 9 gedeel word.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: '63 ÷ 9 = 7, aangesien 9 × 7 = 63.' },
+        { difficulty: 'Hard', question: 'ʼn Skool versamel 216 boeke om gelyk tussen 8 klaskamers te deel. Gebruik langdeling om te vind hoeveel boeke elke klaskamer kry.', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: '21 ÷ 8 = 2 r 5, bring 6 af → 56. 56 ÷ 8 = 7. Dus 216 ÷ 8 = 27 boeke per klaskamer.' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 245 lemoene en verpak dit in sakkies van 7. Hoeveel sakkies vul dit?', answer: '35', checkMode: 'auto', correctAnswer: '35', correctAnswers: ['35', '35 sakkies'], explanation: '24 ÷ 7 = 3 r 3, bring 5 af → 35. 35 ÷ 7 = 5. Dus 245 ÷ 7 = 35 sakkies.' },
+        { difficulty: 'Hard', question: 'ʼn Onderwyser het 37 sjokolade om gelyk tussen 5 leerders te deel.\n\na) Hoeveel sjokolade kry elke leerder?\nb) Hoeveel sjokolade bly oor?\nc) Wat kan die onderwyser met die oorblywende sjokolade doen?', answer: 'a) 7  b) 2  c) Hou dit vir volgende keer, of gee een elk aan twee gelukkige leerders as ʼn bonus.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Skool het 58 leerders wat op ʼn uitstappie gaan. Elke kombi kan 9 leerders vervoer.\n\na) Hoeveel kombiʼs is heeltemal vol?\nb) Hoeveel leerders bly oor wat nog ʼn kombi nodig het?\nc) Hoeveel kombiʼs moet die skool in totaal bespreek om almal te vervoer?', answer: 'a) 6 kombiʼs vol  b) 4 leerders oor  c) 7 kombiʼs (6 vol plus 1 ekstra vir die oorblywende 4 leerders)', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom die res in ʼn deling altyd kleiner as die deler moet wees. Gebruik ʼn voorbeeld om jou verduideliking te ondersteun.', answer: 'As die res gelyk aan of groter as die deler was, sou dit beteken nog ʼn volle groep kan steeds gemaak word, dus sou dit nie eintlik ʼn "res" wees nie. Byvoorbeeld, in 20 ÷ 6, as ons sê die antwoord is 2 r 8, sou dit verkeerd wees omdat 8 groter as 6 is — nog ʼn groep van 6 pas binne 8. Die korrekte antwoord is 3 r 2, aangesien 6 × 3 = 18 en 20 − 18 = 2, wat kleiner as 6 is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder sê dat 56 ÷ 7 en 7 × 8 = 56 voorbeelde van dieselfde feitefamilie is. Verduidelik of die leerder korrek is, en gee die ander delingsfeit in hierdie feitefamilie.', answer: 'Die leerder is korrek. Vermenigvuldiging en deling is inverse bewerkings, dus gee 7 × 8 = 56 twee delingsfeite: 56 ÷ 7 = 8 en 56 ÷ 8 = 7. Die ander delingsfeit is 56 ÷ 8 = 7.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Verduidelik, met ʼn voorbeeld, die verskil tussen ʼn delingsprobleem en ʼn groeperingsprobleem, al gebruik altwee dieselfde delings-getalsin.', answer: 'In ʼn delingsprobleem ken jy die totaal en die aantal groepe, en jy vind hoeveel items in elke groep gaan — byvoorbeeld, om 20 lekkers tussen 4 vriende te deel beteken elke vriend kry 20 ÷ 4 = 5 lekkers. In ʼn groeperingsprobleem ken jy die totaal en die grootte van elke groep, en jy vind hoeveel groepe jy kan maak — byvoorbeeld, om 20 lekkers in sakkies van 4 te verpak beteken jy kan 20 ÷ 4 = 5 sakkies maak. Die getalsin is dieselfde, maar die betekenis van die antwoord is verskillend.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Reghoekige tuin het 180 blomme in 9 gelyke rye geplant. As 4 van die rye dan uitgegrawe word, hoeveel blomme bly in die tuin oor?', answer: '100', checkMode: 'auto', correctAnswer: '100', correctAnswers: ['100', '100 blomme'], explanation: '180 ÷ 9 = 20 blomme per ry. 9 − 4 = 5 rye bly. 5 × 20 = 100 blomme oor.' },
+        { difficulty: 'Hard', question: 'ʼn Fabriek maak 320 speelgoed en verpak dit in bokse van 8. As 15 bokse na een winkel gestuur word, hoeveel bokse bly oor vir ander winkels?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 bokse'], explanation: '320 ÷ 8 = 40 bokse in totaal. 40 − 15 = 25 bokse oor.' },
+        { difficulty: 'Hard', question: 'ʼn Koor van 72 leerders word in gelyke rye van 8 gerangskik. As 2 leerders op die dag van die konsert afwesig is, hoeveel volledige rye van 8 kan steeds gevorm word, en hoeveel leerders bly oor?', answer: '8 r 6', checkMode: 'auto', correctAnswer: '8r6', correctAnswers: ['8r6', '8res6'], explanation: '72 − 2 = 70 leerders teenwoordig. 8 × 8 = 64 (naaste sonder om 70 te oorskry). 70 − 64 = 6 oor. 70 ÷ 8 = 8 r 6.' },
+        { difficulty: 'Hard', question: 'ʼn Boer oes 275 aartappels en verpak dit in sakke van 9. Hoeveel volle sakke maak hy, en hoeveel aartappels bly oor? Skryf jou antwoord in die vorm kwosiënt r res.', answer: '30 r 5', checkMode: 'auto', correctAnswer: '30r5', correctAnswers: ['30r5', '30res5'], explanation: '27 ÷ 9 = 3, bring 5 af → 5. 5 ÷ 9 = 0 r 5. Dus 275 ÷ 9 = 30 r 5.' },
+        { difficulty: 'Hard', question: 'ʼn Skool koop 216 oefenboeke om gelyk tussen 8 klasse te deel. Gebruik langdeling om te vind hoeveel boeke elke klas kry.', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: '21 ÷ 8 = 2 r 5, bring 6 af → 56. 56 ÷ 8 = 7. Dus 216 ÷ 8 = 27 boeke per klas.' },
+        { difficulty: 'Hard', question: 'Sipho sê dat wanneer jy enige getal deur 1 deel, die antwoord altyd dieselfde as die oorspronklike getal is, en wanneer jy ʼn getal deur homself deel, die antwoord altyd 1 is. Verduidelik of hy korrek is, met twee voorbeelde.', answer: 'Sipho is korrek. Byvoorbeeld, 24 ÷ 1 = 24, want om in 1 groep te deel beteken die hele hoeveelheid bly in daardie een groep. Ook, 24 ÷ 24 = 1, want daar is presies een groep van 24 binne 24. Hierdie is nuttige delingsreëls om te onthou.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het veelstap- en gekombineerde delingsprobleme bemeester.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die veelstap-voorbeelde weer deur.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
     },
   ],
 

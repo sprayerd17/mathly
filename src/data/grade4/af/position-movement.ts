@@ -95,6 +95,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         "Eenvoudige klaskameruitleg van bo af gesien, met 'n lessenaar voor, bord agter, vensters links, deur regs met posisiewoordetikette",
       videoPlaceholder:
@@ -173,6 +174,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         "'n 4×4 rooster gemerk A tot D oor die onderkant en 1 tot 4 op teen die linkerkant, met 'n skoolikoon by C2, 'n winkelikoon by A4 en 'n parkikoon by D1",
       videoPlaceholder:
@@ -246,6 +248,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -354,314 +357,177 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         "'n Kompas wat noord, suid, oos en wes wys met pyle wat 'n kwartdraai kloksgewys van noord na oos en 'n halfdraai van suid na noord wys",
       videoPlaceholder:
         'Kort video wat volledige, half- en kwartdraaie kloksgewys en antikloksgewys wys deur \'n kompas of horlosie te gebruik',
     },
   ],
-  topicPractice: [
+  topicPractice: [],
 
-    // ── SECTION 1 — Describing Position ──────────────────────────────────────
+  practiceSets: [
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 — FOUNDATIONS: position words, simple grid references, turns
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      question:
-        "'n Bal is ___ die tafel. 'n Kat is ___ die bal. 'n Boek is ___ die kat en die bal.",
-      checkMode: 'auto',
-      answer: 'a) bo-op   b) bo   c) tussen',
-      parts: [
-        {
-          label: 'a) Die bal lê op die tafeloppervlak — watter posisiewoord pas?',
-          correctAnswer: 'bo-op',
-          correctAnswers: ['bo-op', 'boop', 'bo op'],
-          explanation: '"Bo-op" beteken direk op die oppervlak van iets — die bal is bo-op die tafel.',
-        },
-        {
-          label: 'b) Die kat sit bo-op die bal — waar is die kat in verhouding tot die bal?',
-          correctAnswer: 'bo',
-          correctAnswers: ['bo', 'bo-op', 'boop'],
-          explanation: "\"Bo\" beteken in 'n hoër posisie — die kat wat op die bal sit, is bo dit.",
-        },
-        {
-          label: 'c) Watter posisiewoord beskryf iets in die middel van twee voorwerpe?',
-          correctAnswer: 'tussen',
-          correctAnswers: ['tussen', 'in tussen', 'intussen'],
-          explanation: '"Tussen" beteken in die middel van twee dinge — die boek is tussen die kat en die bal.',
-        },
+      name: 'Stel 1: Posisiewoorde, Roosterbasiese Beginsels en Draaie',
+      questions: [
+        { difficulty: 'Easy', question: 'Die lamp is hoër op as die tafel. Watter posisiewoord beskryf die lamp?', checkMode: 'auto', answer: 'Bo', correctAnswer: 'bo', correctAnswers: ['bo'], explanation: '"Bo" beteken in \'n hoër posisie as \'n ander voorwerp.' },
+        { difficulty: 'Easy', question: 'Die mat is laer af as die stoel. Watter posisiewoord beskryf die mat?', checkMode: 'auto', answer: 'Onder', correctAnswer: 'onder', correctAnswers: ['onder'], explanation: '"Onder" beteken in \'n laer posisie as \'n ander voorwerp.' },
+        { difficulty: 'Easy', question: 'Die venster is aan die linkerkant van die muur en die deur is aan die ander kant. Watter posisiewoord beskryf die deur?', checkMode: 'auto', answer: 'Regterkant', correctAnswer: 'regterkant', correctAnswers: ['regterkant', 'regs', 'aan die regterkant'], explanation: 'As die venster aan die linkerkant is, is die deur aan die ander kant aan die regterkant.' },
+        { difficulty: 'Easy', question: '\'n Onderwyser staan en kyk na die klas. Watter posisiewoord beskryf waar die klas is in verhouding tot die onderwyser?', checkMode: 'auto', answer: 'Voor', correctAnswer: 'voor', correctAnswers: ['voor'], explanation: 'Die klas is voor die onderwyser, want die onderwyser kyk na hulle.' },
+        { difficulty: 'Easy', question: 'Die bord is aan die ander kant van die onderwyser, weg van die klas. Watter posisiewoord beskryf die bord?', checkMode: 'auto', answer: 'Agter', correctAnswer: 'agter', correctAnswers: ['agter'], explanation: 'Die bord is agter die onderwyser — aan die teenoorgestelde kant van die klas.' },
+        { difficulty: 'Easy', question: 'Die potlood is direk langs die liniaal. Watter posisiewoord beskryf dit?', checkMode: 'auto', answer: 'Langsaan', correctAnswer: 'langsaan', correctAnswers: ['langsaan'], explanation: '"Langsaan" beteken direk langs iets.' },
+        { difficulty: 'Easy', question: 'Die uitveër het die potlood aan die een kant en die pen aan die ander kant. Watter posisiewoord beskryf die uitveër?', checkMode: 'auto', answer: 'Tussen', correctAnswer: 'tussen', correctAnswers: ['tussen'], explanation: '"Tussen" beteken in die middel van twee dinge.' },
+        { difficulty: 'Easy', question: 'Die winkel is \'n kort afstand van die skool. Watter posisiewoord beskryf dit die beste?', checkMode: 'auto', answer: 'Naby', correctAnswer: 'naby', correctAnswers: ['naby'], explanation: '"Naby" beskryf iets wat \'n kort afstand weg is.' },
+        { difficulty: 'Easy', question: 'Die hospitaal is \'n lang afstand van die skool. Watter posisiewoord beskryf dit die beste?', checkMode: 'auto', answer: 'Ver', correctAnswer: 'ver', correctAnswers: ['ver'], explanation: '"Ver" beskryf iets wat \'n lang afstand weg is.' },
+        { difficulty: 'Easy', question: '\'n Bal lê direk op die oppervlak van \'n tafel. Watter posisiewoord beskryf die bal?', checkMode: 'auto', answer: 'Bo-op', correctAnswer: 'bo-op', correctAnswers: ['bo-op', 'boop', 'bo op'], explanation: '"Bo-op" beteken direk op die oppervlak van iets.' },
+        { difficulty: 'Easy', question: 'Op \'n rooster, in watter rigting loop kolomme?', checkMode: 'auto', answer: 'Van links na regs', correctAnswer: 'van links na regs', correctAnswers: ['van links na regs', 'links na regs', 'linksnaregs'], explanation: 'Kolomme loop van links na regs oor \'n rooster en word gewoonlik met letters gemerk.' },
+        { difficulty: 'Easy', question: 'Op \'n rooster, in watter rigting loop rye?', checkMode: 'auto', answer: 'Van onder na bo', correctAnswer: 'van onder na bo', correctAnswers: ['van onder na bo', 'onder na bo', 'ondernabo'], explanation: 'Rye loop van onder na bo in \'n rooster op en word gewoonlik met syfers gemerk.' },
+        { difficulty: 'Easy', question: 'In \'n roosterverwysing soos B3, watter deel kom eerste — die letter of die syfer?', checkMode: 'auto', answer: 'Letter', correctAnswer: 'letter', correctAnswers: ['letter', 'die letter'], explanation: '\'n Roosterverwysing gee altyd eers die kolomletter, dan die rynommer.' },
+        { difficulty: 'Easy', question: 'Op \'n rooster is \'n stoel by kolom B, ry 2. Wat is die roosterverwysing?', checkMode: 'auto', answer: 'B2', correctAnswer: 'B2', correctAnswers: ['B2', 'b2'], explanation: 'Die kolomletter kom eerste (B), dan die rynommer (2), wat B2 gee.' },
+        { difficulty: 'Easy', question: 'Op \'n rooster is \'n tafel by D1. In watter kolom is dit?', checkMode: 'auto', answer: 'Kolom D', correctAnswer: 'D', correctAnswers: ['D', 'd', 'kolom D'], explanation: 'In D1 kom die letter D altyd eerste en gee jou die kolom.' },
+        { difficulty: 'Easy', question: 'Op \'n rooster is \'n lamp by A4. In watter ry is dit?', checkMode: 'auto', answer: 'Ry 4', correctAnswer: '4', correctAnswers: ['4', 'vier', 'ry 4'], explanation: 'In A4 kom die syfer 4 altyd tweede en gee jou die ry.' },
+        { difficulty: 'Easy', question: 'Op \'n rooster gemerk A tot D oor die onderkant, watter kolom is die verste links?', checkMode: 'auto', answer: 'Kolom A', correctAnswer: 'A', correctAnswers: ['A', 'a', 'kolom A'], explanation: 'Kolomme word gemerk beginnend van links, so A is die linkerste kolom.' },
+        { difficulty: 'Easy', question: 'Op \'n rooster gemerk 1 tot 4 op teen die kant, watter ry is die laagste?', checkMode: 'auto', answer: 'Ry 1', correctAnswer: '1', correctAnswers: ['1', 'een', 'ry 1'], explanation: 'Rye word gemerk beginnend van onder, so ry 1 is die laagste ry.' },
+        { difficulty: 'Easy', question: '\'n Volledige draai is hoeveel grade?', checkMode: 'auto', answer: '360°', correctAnswer: '360', correctAnswers: ['360', '360 grade', '360°'], explanation: '\'n Volledige draai gaan heeltemal om, wat 360° is.' },
+        { difficulty: 'Easy', question: '\'n Halfdraai is hoeveel grade?', checkMode: 'auto', answer: '180°', correctAnswer: '180', correctAnswers: ['180', '180 grade', '180°'], explanation: '\'n Halfdraai is halfpad om \'n volledige draai: 360° ÷ 2 = 180°.' },
+        { difficulty: 'Easy', question: '\'n Kwartdraai is hoeveel grade?', checkMode: 'auto', answer: '90°', correctAnswer: '90', correctAnswers: ['90', '90 grade', '90°'], explanation: '\'n Kwartdraai is \'n kwart van \'n volledige draai: 360° ÷ 4 = 90°.' },
+        { difficulty: 'Easy', question: 'Na \'n volledige draai (360°), kyk jy in dieselfde rigting of \'n ander rigting as waar jy begin het?', checkMode: 'auto', answer: 'Dieselfde rigting', correctAnswer: 'dieselfde rigting', correctAnswers: ['dieselfde rigting', 'dieselfderigting', 'dieselfde'], explanation: '\'n Volledige draai bring jou heeltemal terug om in dieselfde rigting te kyk waarin jy begin het.' },
+        { difficulty: 'Easy', question: 'Na \'n halfdraai (180°), kyk jy in dieselfde rigting of die teenoorgestelde rigting as waar jy begin het?', checkMode: 'auto', answer: 'Teenoorgestelde rigting', correctAnswer: 'teenoorgestelde rigting', correctAnswers: ['teenoorgestelde rigting', 'teenoorgesteldeRigting', 'die teenoorgestelde rigting', 'teenoorgestelde'], explanation: '\'n Halfdraai bring jou altyd om in die presiese teenoorgestelde rigting te kyk.' },
+        { difficulty: 'Easy', question: 'Jy kyk na die noorde. Jy maak \'n halfdraai. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: '\'n Halfdraai laat jou die teenoorgestelde kant toe kyk. Die teenoorgestelde van noord is suid.' },
+        { difficulty: 'Easy', question: 'Jy kyk na die ooste. Jy maak \'n halfdraai. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Wes', correctAnswer: 'Wes', correctAnswers: ['Wes', 'wes'], explanation: '\'n Halfdraai laat jou die teenoorgestelde kant toe kyk. Die teenoorgestelde van oos is wes.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het posisiewoorde, roosterbasiese beginsels en eenvoudige draaie baasgeraak.' },
+        { minScore: 19, message: 'Goeie werk! Jy ken jou posisiewoorde en roosterverwysings goed — gaan enige verkeerde vrae na.' },
+        { minScore: 13, message: 'Goeie poging! Gaan terug oor die posisiewoord- en roosterverwysingsafdelings en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 — TRICKIER VARIANT: multi-step grid movement, clockwise vs
+    // anticlockwise turn direction
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium',
-      question:
-        "Beskryf die posisie van elke voorwerp deur ten minste twee posisiewoorde te gebruik.\na) 'n Voël wat op 'n tak sit met blare bo dit en die grond onder.\nb) 'n Toebroodjie tussen twee borde met 'n glas aan die regterkant daarvan.",
-      checkMode: 'self',
-      answer:
-        'a) Die voël is op die tak, onder die blare en bo die grond.\nb) Die toebroodjie is tussen die twee borde met die glas aan die regterkant daarvan.',
-    },
-
-    {
-      difficulty: 'Hard',
-      question:
-        "Verbeel jou 'n klaskamer met 'n bord voor, vensters aan die linkerkant, 'n deur aan die regterkant en lessenaars in die middel. Leerders sit en kyk na die bord.\na) Wat is agter die leerders?\nb) Wat is aan die regterkant van die leerders?\nc) Wat is tussen die bord en die leerders?",
-      checkMode: 'self',
-      answer:
-        'a) Die agtermuur is agter die leerders (hulle kyk vorentoe, so die agtermuur is agter hulle).\nb) Die deur is aan die regterkant van die leerders.\nc) Die lessenaars (of oop vloerspasie) is tussen die bord en die leerders.',
-    },
-
-    // ── SECTION 2 — Using a Grid to Locate Objects ────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: "Op 'n rooster is 'n biblioteek by C3.",
-      checkMode: 'auto',
-      answer: 'a) Kolom C   b) Ry 3',
-      parts: [
-        {
-          label: 'a) In watter kolom is dit?',
-          correctAnswer: 'C',
-          correctAnswers: ['C', 'c', 'kolom C', 'kolom c', 'kolomC', 'kolomc'],
-          explanation: "In 'n roosterverwysing kom die letter altyd eerste en dit gee jou die kolom. C3 is in kolom C.",
-        },
-        {
-          label: 'b) In watter ry is dit?',
-          correctAnswer: '3',
-          correctAnswers: ['3', 'drie', 'ry 3', 'ry3'],
-          explanation: "In 'n roosterverwysing kom die syfer altyd tweede en dit gee jou die ry. C3 is in ry 3.",
-        },
+      name: 'Stel 2: Multi-Stap Roosterbeweging en Draairigting',
+      questions: [
+        { difficulty: 'Medium', question: 'Op \'n rooster is die biblioteek by kolom C, ry 3. Die park is 2 kolomme na regs en 1 ry op. Wat is die park se roosterverwysing?', checkMode: 'auto', answer: 'E4', correctAnswer: 'E4', correctAnswers: ['E4', 'e4'], explanation: '2 kolomme regs vanaf C: D (1), E (2). 1 ry op vanaf 3 is 4. Die park is by E4.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n winkel by B2. \'n Hek is 3 kolomme na regs en 2 rye op vanaf die winkel. Wat is die hek se roosterverwysing?', checkMode: 'auto', answer: 'E4', correctAnswer: 'E4', correctAnswers: ['E4', 'e4'], explanation: '3 kolomme regs vanaf B: C (1), D (2), E (3). 2 rye op vanaf 2: 3 (1), 4 (2). Die hek is by E4.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n huis by D3. Wat is die roosterverwysing 1 kolom na links en 1 ry af vanaf die huis?', checkMode: 'auto', answer: 'C2', correctAnswer: 'C2', correctAnswers: ['C2', 'c2'], explanation: '1 kolom links vanaf D is C. 1 ry af vanaf 3 is 2. Die antwoord is C2.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n boom by A1. Wat is die roosterverwysing 2 kolomme na regs en 3 rye op vanaf die boom?', checkMode: 'auto', answer: 'C4', correctAnswer: 'C4', correctAnswers: ['C4', 'c4'], explanation: '2 kolomme regs vanaf A: B (1), C (2). 3 rye op vanaf 1: 2 (1), 3 (2), 4 (3). Die antwoord is C4.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n put by E5. Wat is die roosterverwysing 4 kolomme na links en 4 rye af vanaf die put?', checkMode: 'auto', answer: 'A1', correctAnswer: 'A1', correctAnswers: ['A1', 'a1'], explanation: '4 kolomme links vanaf E: D, C, B, A. 4 rye af vanaf 5: 4, 3, 2, 1. Die antwoord is A1.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n brug by C2. Vanaf die brug beweeg jy 1 kolom regs, dan 2 rye op. Wat is jou nuwe roosterverwysing?', checkMode: 'auto', answer: 'D4', correctAnswer: 'D4', correctAnswers: ['D4', 'd4'], explanation: '1 kolom regs vanaf C is D. 2 rye op vanaf 2: 3, 4. Die antwoord is D4.' },
+        { difficulty: 'Medium', question: '\'n Hek by roosterverwysing B1 beweeg 2 kolomme regs en dan 1 ry op. Wat is die nuwe posisie?', checkMode: 'auto', answer: 'D2', correctAnswer: 'D2', correctAnswers: ['D2', 'd2'], explanation: '2 kolomme regs vanaf B: C, D. 1 ry op vanaf 1 is 2. Die antwoord is D2.' },
+        { difficulty: 'Medium', question: 'Vergelyk D4 en B2 op \'n rooster — is D4 aan die regterkant van B2, aan die linkerkant van B2, of in dieselfde kolom?', checkMode: 'auto', answer: 'Aan die regterkant van B2', correctAnswer: 'aan die regterkant van B2', correctAnswers: ['aan die regterkant van b2', 'regterkant', 'aan die regterkant'], explanation: 'D kom na B wanneer kolomme van links na regs getel word, so D4 is aan die regterkant van B2.' },
+        { difficulty: 'Medium', question: 'Vergelyk A3 en A1 op \'n rooster — is A3 hoër op, laer af, of in dieselfde ry as A1?', checkMode: 'auto', answer: 'Hoër op', correctAnswer: 'hoër op', correctAnswers: ['hoer op', 'hoër op', 'hoer', 'hoër'], explanation: 'Ry 3 is bo ry 1 aangesien rye toeneem soos jy opgaan, so A3 is hoër op as A1.' },
+        { difficulty: 'Medium', question: '\'n Draai na regs vanaf \'n rigting is dieselfde as draai in watter rigting — kloksgewys of antikloksgewys?', checkMode: 'auto', answer: 'Kloksgewys', correctAnswer: 'kloksgewys', correctAnswers: ['kloksgewys'], explanation: '\'n Draai na regs is altyd dieselfde as \'n draai kloksgewys.' },
+        { difficulty: 'Medium', question: '\'n Draai na links vanaf \'n rigting is dieselfde as draai in watter rigting — kloksgewys of antikloksgewys?', checkMode: 'auto', answer: 'Antikloksgewys', correctAnswer: 'antikloksgewys', correctAnswers: ['antikloksgewys'], explanation: '\'n Draai na links is altyd dieselfde as \'n draai antikloksgewys.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die noorde. Jy maak \'n kwartdraai kloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: 'Kloksgewys vanaf noord: Noord → Oos. \'n Kwartdraai kloksgewys eindig op Oos.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die noorde. Jy maak \'n kwartdraai antikloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Wes', correctAnswer: 'Wes', correctAnswers: ['Wes', 'wes'], explanation: 'Antikloksgewys vanaf noord: Noord → Wes. \'n Kwartdraai antikloksgewys eindig op Wes.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die ooste. Jy maak \'n kwartdraai kloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: 'Kloksgewys: Noord → Oos → Suid. \'n Kwartdraai kloksgewys vanaf Oos eindig op Suid.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die ooste. Jy maak \'n kwartdraai antikloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Noord', correctAnswer: 'Noord', correctAnswers: ['Noord', 'noord'], explanation: 'Antikloksgewys vanaf oos keer die kloksgewyse volgorde om, so Oos → Noord.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die suide. Jy maak \'n kwartdraai kloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Wes', correctAnswer: 'Wes', correctAnswers: ['Wes', 'wes'], explanation: 'Kloksgewys: Oos → Suid → Wes. \'n Kwartdraai kloksgewys vanaf Suid eindig op Wes.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die suide. Jy maak \'n kwartdraai antikloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: 'Antikloksgewys vanaf suid keer die kloksgewyse volgorde om, so Suid → Oos.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die weste. Jy maak \'n kwartdraai kloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Noord', correctAnswer: 'Noord', correctAnswers: ['Noord', 'noord'], explanation: 'Kloksgewys: Suid → Wes → Noord. \'n Kwartdraai kloksgewys vanaf Wes eindig op Noord.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die weste. Jy maak \'n kwartdraai antikloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: 'Antikloksgewys vanaf wes keer die kloksgewyse volgorde om, so Wes → Suid.' },
+        { difficulty: 'Medium', question: '\'n Horlosie se minuutwyser maak \'n kwartdraai kloksgewys. Hoeveel grade het dit gedraai?', checkMode: 'auto', answer: '90°', correctAnswer: '90', correctAnswers: ['90', '90 grade', '90°'], explanation: '\'n Kwartdraai is altyd 90°, ongeag die rigting.' },
+        { difficulty: 'Medium', question: '\'n Deurhandvatsel maak \'n driekwartdraai. Hoeveel grade is dit?', checkMode: 'auto', answer: '270°', correctAnswer: '270', correctAnswers: ['270', '270 grade', '270°'], explanation: '\'n Driekwartdraai is drie kwarte van 360°: 360° × ¾ = 270°.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die noorde. Jy maak \'n driekwartdraai kloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Wes', correctAnswer: 'Wes', correctAnswers: ['Wes', 'wes'], explanation: '\'n Driekwartdraai kloksgewys (270°) vanaf Noord: Noord → Oos → Suid → Wes.' },
+        { difficulty: 'Medium', question: 'Jy kyk na die noorde. Jy maak \'n driekwartdraai antikloksgewys. In watter rigting kyk jy nou?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: '\'n Driekwartdraai antikloksgewys (270°) vanaf Noord: Noord → Wes → Suid → Oos.' },
+        { difficulty: 'Medium', question: 'Watter draai eindig met jou wat presies dieselfde rigting toe kyk as waar jy begin het — \'n volledige draai, \'n halfdraai of \'n kwartdraai?', checkMode: 'auto', answer: 'Volledige draai', correctAnswer: 'volledige draai', correctAnswers: ['volledige draai', 'volledigedraai', '\'n volledige draai'], explanation: 'Net \'n volledige draai (360°) bring jou heeltemal terug om in dieselfde rigting te kyk.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster, is beweeg "2 kolomme regs" dieselfde as beweeg "2 rye op"?', checkMode: 'auto', answer: 'Nee', correctAnswer: 'nee', correctAnswers: ['nee', 'nie dieselfde nie'], explanation: 'Kolomme beweeg links-regs terwyl rye op-af beweeg — dit is verskillende rigtings op die rooster.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het multi-stap roosterbeweging en draairigting baasgeraak.' },
+        { minScore: 19, message: 'Goeie werk! Jy verstaan kloksgewys teenoor antikloksgewys goed — gaan enige verkeerde vrae na.' },
+        { minScore: 13, message: 'Goeie poging! Oefen multi-stap roosterbewegings en draairigting, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 — FOLLOWING/GIVING DIRECTIONS word problems, real-world position
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium',
-      question:
-        "'n Rooster het hierdie voorwerpe: skool by B2, park by D4, winkel by A1.\na) Watter voorwerp is in die boonste-regse area van die rooster?\nb) Watter voorwerp is die naaste aan die onderste-linkerhoek?\nc) Watter roosterverwysing is een kolom na regs en een ry op vanaf die skool?",
-      checkMode: 'auto',
-      answer: 'a) Park by D4   b) Winkel by A1   c) C3',
-      parts: [
-        {
-          label: 'a) Watter voorwerp is in die boonste-regse area?',
-          correctAnswer: 'park',
-          correctAnswers: [
-            'park', 'Park', 'die park',
-            'park by D4', 'parkbyD4', 'parkbyd4',
-            'D4', 'd4',
-          ],
-          explanation: 'D is die regterste kolom en ry 4 is die hoogste ry — D4 is in die boonste-regse area. Die park is by D4.',
-        },
-        {
-          label: 'b) Watter voorwerp is die naaste aan die onderste-linkerhoek?',
-          correctAnswer: 'winkel',
-          correctAnswers: [
-            'winkel', 'Winkel', 'die winkel',
-            'winkel by A1', 'winkelbyA1', 'winkelbya1',
-            'A1', 'a1',
-          ],
-          explanation: 'A is die linkerste kolom en ry 1 is die laagste ry — A1 is die onderste-linkerhoek. Die winkel is by A1.',
-        },
-        {
-          label: 'c) Roosterverwysing een kolom regs en een ry op vanaf die skool (B2)',
-          correctAnswer: 'C3',
-          correctAnswers: ['C3', 'c3'],
-          explanation: 'Die skool is by B2. Een kolom regs vanaf B is C. Een ry op vanaf 2 is 3. So die antwoord is C3.',
-        },
+      name: 'Stel 3: Rigtings en Werklike-Wêreld Posisie',
+      questions: [
+        { difficulty: 'Medium', question: 'Jy kyk na die noorde. Jy word vertel om "reguit vorentoe te gaan." In watter rigting stap jy?', checkMode: 'auto', answer: 'Noord', correctAnswer: 'Noord', correctAnswers: ['Noord', 'noord'], explanation: '"Gaan reguit vorentoe" beteken beweeg voort in dieselfde rigting waarin jy reeds kyk — noord.' },
+        { difficulty: 'Medium', question: 'Thabo staan by die skoolhek en kyk na die ooste. Hy draai regs. In watter rigting kyk hy nou?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: '\'n Draai na regs is \'n kwartdraai kloksgewys. Oos → kloksgewys → Suid.' },
+        { difficulty: 'Medium', question: 'Sipho staan by die winkel en kyk na die suide. Hy draai links. In watter rigting kyk hy nou?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: '\'n Draai na links is \'n kwartdraai antikloksgewys. Suid → antikloksgewys → Oos.' },
+        { difficulty: 'Medium', question: 'Lerato stap van haar huis af, kyk na die noorde vir 3 blokke, en draai dan regs en stap 2 blokke. In watter rigting kyk sy na die draai?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: '\'n Draai na regs vanaf noord is \'n kwartdraai kloksgewys: Noord → Oos.' },
+        { difficulty: 'Medium', question: 'Amahle stap van die park af, kyk na die weste vir 4 blokke, en draai dan links. In watter rigting kyk sy na die draai?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: '\'n Draai na links vanaf wes is \'n kwartdraai antikloksgewys: Wes → Suid.' },
+        { difficulty: 'Medium', question: 'Rigtings sê: "Begin by die winkel en kyk na die noorde. Gaan reguit 2 blokke. Draai regs. Gaan reguit 1 blok." Hoeveel blokke is altesaam gestap?', checkMode: 'auto', answer: '3', correctAnswer: '3', correctAnswers: ['3', 'drie', '3 blokke'], explanation: '2 blokke + 1 blok = 3 blokke altesaam.' },
+        { difficulty: 'Medium', question: 'Rigtings sê: "Begin deur suid te kyk. Gaan reguit 3 blokke. Draai om. Gaan reguit 3 blokke." In watter rigting kyk jy aan die einde?', checkMode: 'auto', answer: 'Noord', correctAnswer: 'Noord', correctAnswers: ['Noord', 'noord'], explanation: '"Draai om" is \'n halfdraai — die teenoorgestelde van suid is noord.' },
+        { difficulty: 'Medium', question: 'Rigtings sê: "Begin deur suid te kyk. Gaan reguit 3 blokke. Draai om. Gaan reguit 3 blokke." Hoe ver is jy van jou beginpunt af?', checkMode: 'auto', answer: '0', correctAnswer: '0', correctAnswers: ['0', 'nul', 'terug by die begin', 'by die beginpunt'], explanation: 'Om 3 blokke suid te stap en dan om te draai en 3 blokke noord te stap, bring jou terug waar jy begin het.' },
+        { difficulty: 'Medium', question: 'Op \'n werklike kaart is die kliniek langsaan die skool en die winkel is tussen die skool en die kliniek. Watter gebou is in die middel?', checkMode: 'auto', answer: 'Winkel', correctAnswer: 'winkel', correctAnswers: ['winkel', 'die winkel'], explanation: '"Tussen" beteken in die middel van twee dinge — die winkel is tussen die skool en die kliniek.' },
+        { difficulty: 'Medium', question: '\'n Taxistaanplek is ver van die skool en \'n spaza-winkel is naby die skool. Watter een sal jy eerste bereik as jy van die skool af stap?', checkMode: 'auto', answer: 'Spaza-winkel', correctAnswer: 'spaza-winkel', correctAnswers: ['spaza-winkel', 'die spaza-winkel', 'spaza', 'winkel'], explanation: '"Naby" beteken \'n kort afstand weg, so die spaza-winkel sal eerste bereik word.' },
+        { difficulty: 'Medium', question: 'Jy gee rigtings: "Stap reguit vorentoe 2 blokke, draai dan regs, stap dan nog 1 blok." Iemand volg dit terwyl hulle na die weste kyk. In watter rigting kyk hulle na die draai?', checkMode: 'auto', answer: 'Noord', correctAnswer: 'Noord', correctAnswers: ['Noord', 'noord'], explanation: '\'n Draai na regs vanaf wes is \'n kwartdraai kloksgewys: Wes → Noord.' },
+        { difficulty: 'Medium', question: 'Jy gee rigtings: "Stap reguit vorentoe 2 blokke, draai dan links, stap dan nog 1 blok." Iemand volg dit terwyl hulle na die weste kyk. In watter rigting kyk hulle na die draai?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: '\'n Draai na links vanaf wes is \'n kwartdraai antikloksgewys: Wes → Suid.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster-kaart is die kliniek by kolom B, ry 4 en die skool is by kolom B, ry 1. Is hulle in dieselfde kolom of dieselfde ry?', checkMode: 'auto', answer: 'Dieselfde kolom', correctAnswer: 'dieselfde kolom', correctAnswers: ['dieselfde kolom', 'dieselfdekolom', 'kolom'], explanation: 'Albei roosterverwysings deel die letter B, so hulle is in dieselfde kolom.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster-kaart is die winkel by C2 en die park is by E2. Is hulle in dieselfde kolom of dieselfde ry?', checkMode: 'auto', answer: 'Dieselfde ry', correctAnswer: 'dieselfde ry', correctAnswers: ['dieselfde ry', 'dieselfdery', 'ry'], explanation: 'Albei roosterverwysings deel die syfer 2, so hulle is in dieselfde ry.' },
+        { difficulty: 'Medium', question: 'Rigtings van die kliniek na die mark: "Gaan reguit 4 blokke, draai regs, gaan reguit 2 blokke." As jy begin het deur noord te kyk, in watter rigting eindig jy?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: '\'n Draai na regs vanaf noord is \'n kwartdraai kloksgewys: Noord → Oos.' },
+        { difficulty: 'Medium', question: 'Om \'n stel rigtings om te keer en terug na die begin te stap, wat moet jy met links- en regsdraaie doen?', checkMode: 'auto', answer: 'Ruil hulle om', correctAnswer: 'ruil hulle om', correctAnswers: ['ruil hulle om', 'ruil om', 'keer hulle om', 'verwissel hulle'], explanation: 'Wanneer jy jou spore terugvolg, word elke linksdraai \'n regsdraai en elke regsdraai \'n linksdraai.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is die klaskamer by A2 en die kantoor is ook by A2. Wat kan jy oor hulle posisies sê?', checkMode: 'auto', answer: 'Hulle is op dieselfde plek', correctAnswer: 'hulle is op dieselfde plek', correctAnswers: ['hulle is op dieselfde plek', 'dieselfde plek', 'dieselfde posisie', 'identies'], explanation: 'Identiese roosterverwysings beteken die twee voorwerpe word beskryf as op dieselfde posisie.' },
+        { difficulty: 'Medium', question: '\'n Tuin het \'n bank tussen twee bome, met \'n dam voor die bank. Watter posisiewoord vertel jou die dam se verhouding tot die bank?', checkMode: 'auto', answer: 'Voor', correctAnswer: 'voor', correctAnswers: ['voor'], explanation: 'Die dam word beskryf as voor die bank.' },
+        { difficulty: 'Medium', question: 'Twee vriende staan rug-teen-rug. As Zanele na die noorde kyk, in watter rigting kyk die vriend agter haar?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: 'Rug-teen-rug staan beteken om na teenoorgestelde rigtings te kyk — die teenoorgestelde van noord is suid.' },
+        { difficulty: 'Medium', question: 'Volg \'n kaart: begin by die hek en kyk na die ooste, stap 2 blokke, draai regs, stap 2 blokke, draai weer regs, stap 2 blokke. In watter rigting kyk jy aan die einde?', checkMode: 'auto', answer: 'Wes', correctAnswer: 'Wes', correctAnswers: ['Wes', 'wes'], explanation: 'Oos → (draai regs) → Suid → (draai regs) → Wes. Twee kwartdraaie kloksgewys vanaf Oos eindig op Wes.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n put 3 kolomme regs en 0 rye op vanaf \'n hut by A2. Wat is die put se roosterverwysing?', checkMode: 'auto', answer: 'D2', correctAnswer: 'D2', correctAnswers: ['D2', 'd2'], explanation: '3 kolomme regs vanaf A: B, C, D. Met 0 rye op bly die ry op 2. Die antwoord is D2.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n bank 0 kolomme regs en 3 rye op vanaf \'n hek by C1. Wat is die bank se roosterverwysing?', checkMode: 'auto', answer: 'C4', correctAnswer: 'C4', correctAnswers: ['C4', 'c4'], explanation: 'Met 0 kolomme beweeg, bly die kolom op C. 3 rye op vanaf 1: 2, 3, 4. Die antwoord is C4.' },
+        { difficulty: 'Medium', question: '\'n Stel rigtings vertel jou om drie keer op \'n ry na regs te draai (drie kwartdraaie kloksgewys). As jy begin het deur noord te kyk, in watter rigting eindig jy?', checkMode: 'auto', answer: 'Wes', correctAnswer: 'Wes', correctAnswers: ['Wes', 'wes'], explanation: 'Drie kwartdraaie kloksgewys = 270°. Noord → Oos → Suid → Wes.' },
+        { difficulty: 'Medium', question: '\'n Stel rigtings vertel jou om twee keer op \'n ry na links te draai (twee kwartdraaie antikloksgewys). As jy begin het deur oos te kyk, in watter rigting eindig jy?', checkMode: 'auto', answer: 'Wes', correctAnswer: 'Wes', correctAnswers: ['Wes', 'wes'], explanation: 'Twee kwartdraaie antikloksgewys = 180° (\'n halfdraai). Die teenoorgestelde van oos is wes.' },
+        { difficulty: 'Medium', question: 'Waarom is dit belangrik om te sê in watter rigting jy kyk aan die begin van \'n stel rigtings?', checkMode: 'self', answer: 'Omdat woorde soos "draai links" of "draai regs" slegs sin maak as jy weet in watter rigting die persoon reeds kyk — sonder \'n beginrigting kan die rigtings na die verkeerde plek lei.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het rigtings volg en gee in werklike-wêreld situasies baasgeraak.' },
+        { minScore: 19, message: 'Goeie werk! Jy kan met selfvertroue deur rigting-woordvraagstukke werk — gaan enige verkeerde vrae na.' },
+        { minScore: 13, message: 'Goeie poging! Kyk weer na die rigtings-voorbeelde en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — MULTI-STEP / COMBINED PROBLEMS and explain-your-reasoning
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      question:
-        "Op 'n 5×5-rooster gemerk A tot E oor en 1 tot 5 op.",
-      checkMode: 'auto',
-      answer: 'a) C3   b) C4   c) D3',
-      parts: [
-        {
-          label: 'a) Wat is die roosterverwysing van die middelblokkie?',
-          correctAnswer: 'C3',
-          correctAnswers: ['C3', 'c3'],
-          explanation: "'n 5×5-rooster het kolomme A–E en rye 1–5. Die middelste kolom is C (3de van 5) en die middelste ry is 3 (3de van 5). Die middelblokkie is C3.",
-        },
-        {
-          label: 'b) Begin by A1, beweeg 2 kolomme regs en 3 rye op — waar is jy?',
-          correctAnswer: 'C4',
-          correctAnswers: ['C4', 'c4'],
-          explanation: 'Begin by A1. 2 kolomme regs vanaf A: B is 1 regs, C is 2 regs. 3 rye op vanaf 1: ry 2, dan 3, dan 4. Jy kom by C4 aan.',
-        },
-        {
-          label: 'c) Watter roosterverwysing is direk bo D2?',
-          correctAnswer: 'D3',
-          correctAnswers: ['D3', 'd3'],
-          explanation: '"Direk bo" beteken die kolom bly dieselfde (D) en die ry neem met 1 toe. Een ry bo ry 2 is ry 3. Die antwoord is D3.',
-        },
+      name: 'Stel 4: Multi-Stap en Gekombineerde Probleme',
+      questions: [
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n winkel by B1. As jy 2 kolomme regs en 2 rye op beweeg, kom jy by die mark. Vanaf die mark bring \'n beweging van 1 kolom links en 1 ry op jou by die biblioteek. Wat is die biblioteek se roosterverwysing?', checkMode: 'auto', answer: 'C4', correctAnswer: 'C4', correctAnswers: ['C4', 'c4'], explanation: 'Winkel B1 → 2 regs, 2 op → mark by D3. Mark D3 → 1 links, 1 op → biblioteek by C4.' },
+        { difficulty: 'Medium', question: 'Op \'n rooster is \'n hut by A1. As jy 3 kolomme regs en 1 ry op beweeg, kom jy by \'n put. Vanaf die put bring \'n beweging van 1 kolom links en 3 rye op jou by \'n boom. Wat is die boom se roosterverwysing?', checkMode: 'auto', answer: 'C5', correctAnswer: 'C5', correctAnswers: ['C5', 'c5'], explanation: 'Hut A1 → 3 regs, 1 op → put by D2. Put D2 → 1 links, 3 op → boom by C5.' },
+        { difficulty: 'Hard', question: 'Sipho begin deur noord te kyk. Hy maak hierdie draaie in volgorde: kwartdraai kloksgewys, kwartdraai kloksgewys. In watter rigting kyk hy na albei draaie?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: 'Twee kwartdraaie kloksgewys = \'n halfdraai (180°). Noord → Suid.' },
+        { difficulty: 'Hard', question: 'Zanele begin deur oos te kyk. Sy maak hierdie draaie in volgorde: halfdraai, kwartdraai antikloksgewys. In watter rigting kyk sy na albei draaie?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: 'Halfdraai vanaf Oos → Wes. Kwartdraai antikloksgewys vanaf Wes → Suid.' },
+        { difficulty: 'Hard', question: 'Amahle begin deur suid te kyk. Sy maak hierdie draaie in volgorde: kwartdraai kloksgewys, halfdraai, kwartdraai kloksgewys. In watter rigting kyk sy aan die einde?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: 'Suid → (¼ kloksgewys) → Wes → (½ draai) → Oos → (¼ kloksgewys) → Suid.' },
+        { difficulty: 'Hard', question: 'Thabo begin deur wes te kyk. Hy maak \'n driekwartdraai kloksgewys, dan \'n kwartdraai antikloksgewys. In watter rigting kyk hy aan die einde?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: 'Wes → (¾ kloksgewys, 270°) → Suid → (¼ antikloksgewys) → Oos.' },
+        { difficulty: 'Hard', question: '\'n Stel draaie tel op tot 450° kloksgewys vanaf noord. Aangesien \'n volledige draai 360° is, in watter rigting kyk jy na \'n draai van 450° kloksgewys?', checkMode: 'auto', answer: 'Oos', correctAnswer: 'Oos', correctAnswers: ['Oos', 'oos'], explanation: '450° = 360° + 90°. Die eerste 360° is \'n volledige draai terug na noord, en die oorblywende 90° kloksgewys neem jou na oos.' },
+        { difficulty: 'Hard', question: 'Op \'n rooster is die winkel by A1 en die skool by D4. As jy slegs regs of op kan beweeg, hoeveel tree (regs + op) altesaam vat dit om van die winkel na die skool te kom?', checkMode: 'auto', answer: '6', correctAnswer: '6', correctAnswers: ['6', 'ses', '6 tree'], explanation: '3 kolomme regs (A→D) + 3 rye op (1→4) = 6 tree altesaam.' },
+        { difficulty: 'Hard', question: 'Op \'n rooster is die biblioteek by B1 en die park by E5. As jy slegs regs of op kan beweeg, hoeveel tree (regs + op) altesaam vat dit om van die biblioteek na die park te kom?', checkMode: 'auto', answer: '7', correctAnswer: '7', correctAnswers: ['7', 'sewe', '7 tree'], explanation: '3 kolomme regs (B→E) + 4 rye op (1→5) = 7 tree altesaam.' },
+        { difficulty: 'Hard', question: '\'n Robot by roosterverwysing C2 volg hierdie instruksies: beweeg 2 regs, beweeg 1 op, beweeg 1 links, beweeg 2 op. Wat is sy finale roosterverwysing?', checkMode: 'auto', answer: 'D5', correctAnswer: 'D5', correctAnswers: ['D5', 'd5'], explanation: 'C2 → 2 regs → E2 → 1 op → E3 → 1 links → D3 → 2 op → D5.' },
+        { difficulty: 'Hard', question: '\'n Robot by roosterverwysing A1 volg hierdie instruksies: beweeg 3 regs, beweeg 2 op, beweeg 1 links, beweeg 1 af. Wat is sy finale roosterverwysing?', checkMode: 'auto', answer: 'C2', correctAnswer: 'C2', correctAnswers: ['C2', 'c2'], explanation: 'A1 → 3 regs → D1 → 2 op → D3 → 1 links → C3 → 1 af → C2.' },
+        { difficulty: 'Hard', question: 'Rigtings van die huis af: "Kyk na die noorde. Stap 3 blokke. Draai regs. Stap 2 blokke. Draai regs. Stap 3 blokke." In watter rigting kyk jy aan die einde?', checkMode: 'auto', answer: 'Suid', correctAnswer: 'Suid', correctAnswers: ['Suid', 'suid'], explanation: 'Noord → (draai regs) → Oos → (draai regs) → Suid. Twee kwartdraaie kloksgewys neem jou van Noord na Suid.' },
+        { difficulty: 'Hard', question: 'Deur dieselfde rigtings te gebruik ("Kyk na die noorde. Stap 3 blokke. Draai regs. Stap 2 blokke. Draai regs. Stap 3 blokke."), hoe ver noord van die begin af is jy aan die einde (netto blokke noord)?', checkMode: 'auto', answer: '0', correctAnswer: '0', correctAnswers: ['0', 'nul'], explanation: 'Jy stap 3 blokke noord, dan 2 blokke oos (geen noord/suid-verandering nie), dan 3 blokke suid. 3 noord − 3 suid = 0 netto blokke noord.' },
+        { difficulty: 'Hard', question: '\'n Vorm word \'n kwartdraai kloksgewys gedraai, dan nog \'n kwartdraai kloksgewys, dan nog \'n kwartdraai kloksgewys. Watter enkele draai het dieselfde algehele effek?', checkMode: 'auto', answer: 'Driekwartdraai kloksgewys', correctAnswer: 'driekwartdraai kloksgewys', correctAnswers: ['driekwartdraai kloksgewys', 'driekwartdraaikloksgewys', '270 graad-draai kloksgewys', '270° kloksgewys'], explanation: 'Drie kwartdraaie kloksgewys = 90° × 3 = 270°, wat dieselfde is as een driekwartdraai kloksgewys.' },
+        { difficulty: 'Hard', question: '\'n Vorm word \'n halfdraai gedraai, dan nog \'n halfdraai. Watter enkele draai het dieselfde algehele effek?', checkMode: 'auto', answer: 'Volledige draai', correctAnswer: 'volledige draai', correctAnswers: ['volledige draai', 'volledigedraai', '\'n volledige draai', '360 graad-draai', '360°'], explanation: 'Twee halfdraaie = 180° + 180° = 360°, wat dieselfde is as een volledige draai (kyk weer in die oorspronklike rigting).' },
+        { difficulty: 'Hard', question: 'Verduidelik, in jou eie woorde, waarom \'n kwartdraai kloksgewys vanaf noord oos gee, deur die horlosiegesig-idee te gebruik (12, 3, 6, 9-uur posisies).', checkMode: 'self', answer: 'As noord by die 12-uur posisie op \'n horlosiegesig is, beweeg jy deur kloksgewys (die rigting waarin horlosiewysers beweeg) \'n kwartdraai na die 3-uur posisie, wat oos is. Die kloksgewyse volgorde is Noord (12) → Oos (3) → Suid (6) → Wes (9) → terug na Noord (12).' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom om na regs te draai en dan weer na regs te draai dieselfde is as \'n halfdraai te maak.', checkMode: 'self', answer: 'Elke regsdraai is \'n kwartdraai kloksgewys, wat 90° is. Twee kwartdraaie kloksgewys agtermekaar tel op tot 90° + 90° = 180°, en 180° is presies wat \'n halfdraai is, so die twee gekombineerde draaie het dieselfde effek as een halfdraai.' },
+        { difficulty: 'Hard', question: 'Verduidelik hoe jy die roosterverwysing van \'n punt sou vind wat 2 kolomme regs en 3 rye op vanaf B2 is, deur jou stappe te wys.', checkMode: 'self', answer: 'Begin by kolom B en beweeg 2 kolomme na regs: B → C (1) → D (2), so die nuwe kolom is D. Begin by ry 2 en beweeg 3 rye op: 2 → 3 (1) → 4 (2) → 5 (3), so die nuwe ry is 5. Deur die nuwe kolom en ry te kombineer, kry jy die roosterverwysing D5.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom "draai links" en "draai regs" tot verskillende finale rigtings kan lei, al is albei kwartdraaie.', checkMode: 'self', answer: 'Albei draaie is 90°, maar hulle draai in teenoorgestelde rotasierigtings — draai regs is kloksgewys en draai links is antikloksgewys. Omdat kloksgewys en antikloksgewys in teenoorgestelde volgordes om die kompas beweeg (N→O→S→W teenoor N→W→S→O), eindig \'n kwartdraai links en \'n kwartdraai regs vanaf dieselfde beginrigting in verskillende, teenoorgestelde rigtings.' },
+        { difficulty: 'Hard', question: 'Op \'n rooster is punt P by C3. Punt Q is 2 kolomme links en 2 rye af vanaf P. Is Q op \'n geldige posisie op \'n rooster gemerk A tot E en 1 tot 5? Verduidelik jou redenasie.', checkMode: 'self', answer: 'Deur 2 kolomme na links vanaf C te beweeg, kry jy A (C → B → A), en deur 2 rye af vanaf 3 te beweeg, kry jy 1 (3 → 2 → 1). So Q is by A1, wat \'n geldige posisie is omdat A binne die A–E kolomreeks is en 1 binne die 1–5 ryreeks is.' },
+        { difficulty: 'Hard', question: '\'n Duif vlieg vanaf D2, 3 kolomme links en 1 ry op, om by punt R te kom. Is R \'n geldige posisie op \'n rooster gemerk A tot D en 1 tot 4? Verduidelik jou redenasie.', checkMode: 'self', answer: 'Deur 3 kolomme na links vanaf D te beweeg, kry jy A (D → C → B → A), en deur 1 ry op vanaf 2 te beweeg, kry jy 3. So R is by A3, wat geldig is omdat A binne die A–D reeks is en 3 binne die 1–4 reeks is.' },
+        { difficulty: 'Hard', question: 'Lerato beweer dat \'n kwartdraai kloksgewys en \'n kwartdraai antikloksgewys altyd in dieselfde rigting eindig. Is sy reg? Verduidelik jou redenasie met \'n voorbeeld.', checkMode: 'self', answer: 'Lerato is nie reg nie. As jy noord toe begin kyk, gee \'n kwartdraai kloksgewys oos, maar \'n kwartdraai antikloksgewys gee wes — dit is verskillende (trouens teenoorgestelde) rigtings. Die twee draaie gee slegs dieselfde algehele resultaat as jy albei draaie een na die ander doen (kloksgewys dan antikloksgewys), want hulle sal mekaar ophef, maar as enkele, aparte draaie vanaf dieselfde begin wys hulle in verskillende rigtings.' },
+        { difficulty: 'Hard', question: 'Thabo sê \'n halfdraai is altyd dieselfde as twee kwartdraaie in dieselfde rotasierigting. Is hy reg? Verduidelik jou redenasie.', checkMode: 'self', answer: 'Thabo is reg. \'n Kwartdraai is 90°, so twee kwartdraaie in dieselfde rigting (albei kloksgewys of albei antikloksgewys) tel op tot 90° + 90° = 180°, wat presies die grootte van \'n halfdraai is. Die finale kykrigting sal ooreenstem met \'n halfdraai se resultaat — die presiese teenoorgestelde van die beginrigting.' },
+        { difficulty: 'Hard', question: 'Beskryf op \'n rooster twee verskillende roetes (met slegs regs- en op-bewegings) vanaf A1 na C3, en verduidelik waarom albei dieselfde totale aantal tree gebruik.', checkMode: 'self', answer: '\'n Roete: beweeg eers 2 tree na regs (A1 → B1 → C1), dan 2 tree op (C1 → C2 → C3). \'n Ander roete: beweeg eers 2 tree op (A1 → A2 → A3), dan 2 tree na regs (A3 → B3 → C3). Albei roetes gebruik 2 regs-bewegings en 2 op-bewegings, wat 4 tree altesaam gee ongeag die volgorde, want die totale afstand regs en op wat nodig is, verander nie — slegs die volgorde van die bewegings verander.' },
+        { difficulty: 'Hard', question: '\'n Speletjiekarakter wat noord toe kyk, beweeg deur hierdie volgorde: kwartdraai kloksgewys, kwartdraai kloksgewys, kwartdraai kloksgewys, kwartdraai kloksgewys. Verduidelik wat met die rigting gebeur waarin die karakter kyk en waarom.', checkMode: 'self', answer: 'Elke kwartdraai kloksgewys is 90°, so vier daarvan tel op tot 90° × 4 = 360°, wat \'n volledige draai is. Dit beteken die karakter eindig weer noord toe te kyk — dieselfde rigting waarin dit begin het — omdat \'n volledige draai jou altyd terugbring na jou oorspronklike rigting.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het multi-stap en gekombineerde posisie- en bewegingsprobleme baasgeraak.' },
+        { minScore: 19, message: 'Goeie werk! Jy kan met selfvertroue roosterbewegings en draaie kombineer — gaan enige verkeerde vrae na.' },
+        { minScore: 13, message: 'Goeie poging! Kyk weer na die multi-stap voorbeelde en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
-    // ── SECTION 3 — Giving and Following Directions ───────────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: "Jy staan by 'n winkel en kyk na die noorde. Jy draai regs. In watter rigting kyk jy nou?",
-      checkMode: 'auto',
-      answer: 'Oos',
-      correctAnswer: 'Oos',
-      correctAnswers: ['Oos', 'oos'],
-      explanation: "'n Draai na regs vanaf noord is 'n kwartdraai kloksgewys. Noord → kloksgewys → Oos.",
-    },
-
-    {
-      difficulty: 'Medium',
-      question:
-        'Volg hierdie rigtings vanaf die skool:\nBegin deur noord te kyk. Gaan reguit 3 blokke. Draai links. Gaan 2 blokke. Draai regs. Gaan 1 blok.',
-      checkMode: 'auto',
-      answer: 'a) 6 blokke   b) Noord   c) 4 blokke noord en 2 blokke wes van die skool',
-      parts: [
-        {
-          label: 'a) Hoeveel blokke het jy altesaam gereis?',
-          correctAnswer: '6',
-          correctAnswers: ['6', 'ses', '6 blokke', '6blokke'],
-          explanation: '3 blokke noord + 2 blokke wes + 1 blok noord = 6 blokke altesaam.',
-        },
-        {
-          label: 'b) In watter rigting kyk jy aan die einde?',
-          correctAnswer: 'Noord',
-          correctAnswers: ['Noord', 'noord'],
-          explanation: 'Jy het begin deur noord te kyk. Draai links → kyk wes. Draai regs vanaf wes → kyk weer noord. Jy eindig deur noord te kyk.',
-        },
-        {
-          label: 'c) Beskryf jou finale posisie in verhouding tot die skool',
-          correctAnswer: '4 blokke noord en 2 blokke wes van die skool',
-          correctAnswers: [
-            '4 blokke noord en 2 blokke wes van die skool',
-            '4blokkenoorden2blokkewesvandieskool',
-            '2 blokke wes en 4 blokke noord van die skool',
-            '2blokkewesen4blokkenoordvandieskool',
-            '4 blokke noord, 2 blokke wes',
-            '2 blokke wes, 4 blokke noord',
-          ],
-          explanation: 'Jy het 3 noord gegaan, dan 2 wes, dan 1 noord. Totaal: 4 blokke noord en 2 blokke wes van die skool.',
-        },
-      ],
-    },
-
-    // Q9a — self mark
-    {
-      difficulty: 'Hard',
-      question:
-        "Skryf stap-vir-stap-rigtings van 'n winkel by A1 na 'n park by D4 op 'n rooster. Jy mag slegs regs of op beweeg.\na) Skryf die rigtings neer.",
-      checkMode: 'self',
-      answer:
-        'Enige geldige kombinasie van regs- en op-bewegings wat van A1 na D4 kom.\nKortste roete: beweeg 3 tree regs (A→B→C→D), dan 3 tree op (ry 1→2→3→4).\nOf enige mengsel soos: 1 regs, 2 op, 2 regs, 1 op, 0 regs, 2 op — solank die totaal 3 regs en 3 op is.',
-    },
-
-    // Q9b/c/d — auto checked
-    {
-      difficulty: 'Hard',
-      question:
-        "Om van 'n winkel by A1 na 'n park by D4 op 'n rooster te beweeg, slegs regs of op.",
-      checkMode: 'auto',
-      answer: 'b) 3 tree regs   c) 3 tree op   d) 6 tree altesaam',
-      parts: [
-        {
-          label: 'b) Hoeveel tree na regs neem jy?',
-          correctAnswer: '3',
-          correctAnswers: ['3', 'drie', '3 tree', '3tree'],
-          explanation: 'Kolom A na kolom D: A→B (1), B→C (2), C→D (3). Jy beweeg 3 kolomme na regs.',
-        },
-        {
-          label: 'c) Hoeveel tree op neem jy?',
-          correctAnswer: '3',
-          correctAnswers: ['3', 'drie', '3 tree', '3tree'],
-          explanation: 'Ry 1 na ry 4: 1→2 (1), 2→3 (2), 3→4 (3). Jy beweeg 3 rye op.',
-        },
-        {
-          label: 'd) Wat is die totale aantal tree?',
-          correctAnswer: '6',
-          correctAnswers: ['6', 'ses', '6 tree', '6tree'],
-          explanation: '3 tree regs + 3 tree op = 6 tree altesaam.',
-        },
-      ],
-    },
-
-    // ── SECTION 4 — Turns and Movement ────────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: "Thabo kyk na die noorde. Hy maak 'n halfdraai. In watter rigting kyk hy nou?",
-      checkMode: 'auto',
-      answer: 'Suid',
-      correctAnswer: 'Suid',
-      correctAnswers: ['Suid', 'suid'],
-      explanation: "'n Halfdraai is 180°. Die teenoorgestelde van noord is suid. Thabo kyk nou na die suide.",
-    },
-
-    {
-      difficulty: 'Medium',
-      question: 'Lerato kyk na die ooste.',
-      checkMode: 'auto',
-      answer: 'a) Suid   b) Noord   c) Oos',
-      parts: [
-        {
-          label: 'a) Na \'n kwartdraai kloksgewys, in watter rigting kyk sy?',
-          correctAnswer: 'Suid',
-          correctAnswers: ['Suid', 'suid'],
-          explanation: 'Kwartdraai kloksgewys vanaf oos: Oos → kloksgewys 90° → Suid.',
-        },
-        {
-          label: 'b) Na \'n kwartdraai antikloksgewys, in watter rigting kyk sy?',
-          correctAnswer: 'Noord',
-          correctAnswers: ['Noord', 'noord'],
-          explanation: 'Kwartdraai antikloksgewys vanaf oos: Oos → antikloksgewys 90° → Noord.',
-        },
-        {
-          label: 'c) Na \'n volledige draai, in watter rigting kyk sy?',
-          correctAnswer: 'Oos',
-          correctAnswers: ['Oos', 'oos'],
-          explanation: "'n Volledige draai is 360° — jy eindig deur presies dieselfde rigting te kyk waarin jy begin het. Lerato kyk oos.",
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      question:
-        'Sipho begin deur noord te kyk. Hy maak hierdie draaie in volgorde: kwartdraai kloksgewys, halfdraai, kwartdraai antikloksgewys.',
-      checkMode: 'auto',
-      answer: 'a) Oos   b) Wes   c) Suid   d) 360 grade',
-      parts: [
-        {
-          label: 'a) Na die eerste draai (kwartdraai kloksgewys), in watter rigting kyk hy?',
-          correctAnswer: 'Oos',
-          correctAnswers: ['Oos', 'oos'],
-          explanation: 'Kwartdraai kloksgewys vanaf noord: Noord → Oos.',
-        },
-        {
-          label: 'b) Na die tweede draai (halfdraai vanaf oos), in watter rigting kyk hy?',
-          correctAnswer: 'Wes',
-          correctAnswers: ['Wes', 'wes'],
-          explanation: 'Halfdraai (180°) vanaf oos: die teenoorgestelde van oos is wes.',
-        },
-        {
-          label: 'c) Na die derde draai (kwartdraai antikloksgewys vanaf wes), in watter rigting kyk hy?',
-          correctAnswer: 'Suid',
-          correctAnswers: ['Suid', 'suid'],
-          explanation: 'Kwartdraai antikloksgewys vanaf wes: Wes → antikloksgewys 90° → Suid.',
-        },
-        {
-          label: 'd) Hoeveel grade het hy altesaam gedraai?',
-          correctAnswer: '360',
-          correctAnswers: ['360', '360 grade', '360grade', 'drie honderd en sestig', '360°'],
-          explanation: 'Kwartdraai (90°) + halfdraai (180°) + kwartdraai (90°) = 90 + 180 + 90 = 360 grade altesaam.',
-        },
-      ],
-    },
-
-  ],
-
-  scoreMessages: [
-    { minScore: 29, message: 'Volpunte! Jy het Posisie en Beweging baasgeraak.' },
-    { minScore: 22, message: 'Uitstekende werk! Gaan die vrae wat jy verkeerd gehad het na en jy sal dit baasraak.' },
-    { minScore: 15, message: 'Goeie poging! Gaan terug en lees deur die afdelings waarmee jy gesukkel het.' },
-    { minScore: 0, message: 'Hou aan! Lees weer noukeurig deur die studiegids en probeer dan weer.' },
   ],
 }

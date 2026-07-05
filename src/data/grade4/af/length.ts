@@ -109,6 +109,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'Vier voorwerpe getoon met hul metings — ʼn muntstuk gemerk in mm, ʼn potlood gemerk in cm, ʼn deur gemerk in m en ʼn padteken gemerk in km',
       videoPlaceholder:
@@ -211,6 +212,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'ʼn Liniaal wat sentimetermerke toon met ʼn potlood daarlangs geplaas van nul tot 17 cm duidelik gemerk',
       videoPlaceholder:
@@ -315,6 +317,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       diagramPlaceholder:
         'ʼn Omskakelingsleer wat mm, cm, m, km van onder na bo toon met vermenigvuldig-pyle wat afgaan en deel-pyle wat opgaan en die omskakelingsfaktore gemerk',
     },
@@ -386,6 +389,7 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
     },
     // ─────────────────────────────────────────────────────────────────────────
     // AFDELING 5 — WOORDPROBLEME MET LENGTE
@@ -472,329 +476,171 @@ export const topicData: TopicData = {
         },
       ],
       practiceQuestions: [],
+      openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om woordprobleme oor lengte op te los deur sleutelwoorde te identifiseer en die korrekte bewerking te kies',
     },
   ],
-  topicPractice: [
 
-    // ── AFDELING 1 — Lengte-eenhede ───────────────────────────────────────────
-
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 — GRONDSLAE: BASIESE EENHEID-OMSKAKELINGS (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      question: 'Watter eenheid sou jy gebruik om elk van die volgende te meet?',
-      checkMode: 'auto',
-      answer: 'a) Millimeter (mm)   b) Meter (m)   c) Kilometer (km)',
-      parts: [
-        {
-          label: 'a) Die lengte van jou vingernael',
-          correctAnswer: 'mm',
-          correctAnswers: ['mm', 'millimeter', 'millimeters'],
-          explanation: 'ʼn Vingernael is ʼn baie klein lengte — millimeter (mm) word gebruik vir baie klein metings soos die dikte van ʼn muntstuk of ʼn vingernael.',
-        },
-        {
-          label: 'b) Die hoogte van ʼn deur',
-          correctAnswer: 'm',
-          correctAnswers: ['m', 'meter', 'meters'],
-          explanation: 'ʼn Deur is ʼn medium-lengte (omtrent 2 m hoog) — meter (m) word gebruik vir kamers, deure en geboue.',
-        },
-        {
-          label: 'c) Die afstand van Durban na Kaapstad',
-          correctAnswer: 'km',
-          correctAnswers: ['km', 'kilometer', 'kilometers'],
-          explanation: 'Durban na Kaapstad is ʼn baie lang afstand — kilometer (km) word gebruik vir afstande tussen dorpe en stede.',
-        },
+      name: 'Stel 1: Grondslae',
+      questions: [
+        { difficulty: 'Easy', question: 'Skakel 50 mm om na cm.', answer: '5 cm', checkMode: 'auto', correctAnswer: '5cm', correctAnswers: ['5cm', '5', '5 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 50 ÷ 10 = 5 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 30 mm om na cm.', answer: '3 cm', checkMode: 'auto', correctAnswer: '3cm', correctAnswers: ['3cm', '3', '3 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 30 ÷ 10 = 3 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 80 mm om na cm.', answer: '8 cm', checkMode: 'auto', correctAnswer: '8cm', correctAnswers: ['8cm', '8', '8 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 80 ÷ 10 = 8 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 40 mm om na cm.', answer: '4 cm', checkMode: 'auto', correctAnswer: '4cm', correctAnswers: ['4cm', '4', '4 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 40 ÷ 10 = 4 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 7 cm om na mm.', answer: '70 mm', checkMode: 'auto', correctAnswer: '70mm', correctAnswers: ['70mm', '70', '70 mm'], explanation: 'Om cm na mm om te skakel, vermenigvuldig met 10. 7 × 10 = 70 mm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 9 cm om na mm.', answer: '90 mm', checkMode: 'auto', correctAnswer: '90mm', correctAnswers: ['90mm', '90', '90 mm'], explanation: 'Om cm na mm om te skakel, vermenigvuldig met 10. 9 × 10 = 90 mm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 2 cm om na mm.', answer: '20 mm', checkMode: 'auto', correctAnswer: '20mm', correctAnswers: ['20mm', '20', '20 mm'], explanation: 'Om cm na mm om te skakel, vermenigvuldig met 10. 2 × 10 = 20 mm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 11 cm om na mm.', answer: '110 mm', checkMode: 'auto', correctAnswer: '110mm', correctAnswers: ['110mm', '110', '110 mm'], explanation: 'Om cm na mm om te skakel, vermenigvuldig met 10. 11 × 10 = 110 mm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 120 mm om na cm.', answer: '12 cm', checkMode: 'auto', correctAnswer: '12cm', correctAnswers: ['12cm', '12', '12 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 120 ÷ 10 = 12 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 200 mm om na cm.', answer: '20 cm', checkMode: 'auto', correctAnswer: '20cm', correctAnswers: ['20cm', '20', '20 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 200 ÷ 10 = 20 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 14 cm om na mm.', answer: '140 mm', checkMode: 'auto', correctAnswer: '140mm', correctAnswers: ['140mm', '140', '140 mm'], explanation: 'Om cm na mm om te skakel, vermenigvuldig met 10. 14 × 10 = 140 mm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 500 cm om na m.', answer: '5 m', checkMode: 'auto', correctAnswer: '5m', correctAnswers: ['5m', '5', '5 m'], explanation: 'Om cm na m om te skakel, deel deur 100. 500 ÷ 100 = 5 m ✓' },
+        { difficulty: 'Easy', question: 'Skakel 700 cm om na m.', answer: '7 m', checkMode: 'auto', correctAnswer: '7m', correctAnswers: ['7m', '7', '7 m'], explanation: 'Om cm na m om te skakel, deel deur 100. 700 ÷ 100 = 7 m ✓' },
+        { difficulty: 'Easy', question: 'Skakel 100 cm om na m.', answer: '1 m', checkMode: 'auto', correctAnswer: '1m', correctAnswers: ['1m', '1', '1 m'], explanation: 'Om cm na m om te skakel, deel deur 100. 100 ÷ 100 = 1 m ✓' },
+        { difficulty: 'Easy', question: 'Skakel 900 cm om na m.', answer: '9 m', checkMode: 'auto', correctAnswer: '9m', correctAnswers: ['9m', '9', '9 m'], explanation: 'Om cm na m om te skakel, deel deur 100. 900 ÷ 100 = 9 m ✓' },
+        { difficulty: 'Easy', question: 'Skakel 400 cm om na m.', answer: '4 m', checkMode: 'auto', correctAnswer: '4m', correctAnswers: ['4m', '4', '4 m'], explanation: 'Om cm na m om te skakel, deel deur 100. 400 ÷ 100 = 4 m ✓' },
+        { difficulty: 'Easy', question: 'Skakel 3 m om na cm.', answer: '300 cm', checkMode: 'auto', correctAnswer: '300cm', correctAnswers: ['300cm', '300', '300 cm'], explanation: 'Om m na cm om te skakel, vermenigvuldig met 100. 3 × 100 = 300 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 8 m om na cm.', answer: '800 cm', checkMode: 'auto', correctAnswer: '800cm', correctAnswers: ['800cm', '800', '800 cm'], explanation: 'Om m na cm om te skakel, vermenigvuldig met 100. 8 × 100 = 800 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 6 m om na cm.', answer: '600 cm', checkMode: 'auto', correctAnswer: '600cm', correctAnswers: ['600cm', '600', '600 cm'], explanation: 'Om m na cm om te skakel, vermenigvuldig met 100. 6 × 100 = 600 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 2 000 m om na km.', answer: '2 km', checkMode: 'auto', correctAnswer: '2km', correctAnswers: ['2km', '2', '2 km'], explanation: 'Om m na km om te skakel, deel deur 1 000. 2 000 ÷ 1 000 = 2 km ✓' },
+        { difficulty: 'Easy', question: 'Skakel 5 000 m om na km.', answer: '5 km', checkMode: 'auto', correctAnswer: '5km', correctAnswers: ['5km', '5', '5 km'], explanation: 'Om m na km om te skakel, deel deur 1 000. 5 000 ÷ 1 000 = 5 km ✓' },
+        { difficulty: 'Easy', question: 'Skakel 1 000 m om na km.', answer: '1 km', checkMode: 'auto', correctAnswer: '1km', correctAnswers: ['1km', '1', '1 km'], explanation: 'Om m na km om te skakel, deel deur 1 000. 1 000 ÷ 1 000 = 1 km ✓' },
+        { difficulty: 'Easy', question: 'Skakel 4 km om na m.', answer: '4 000 m', checkMode: 'auto', correctAnswer: '4000m', correctAnswers: ['4000m', '4000', '4 000m', '4000 m', '4 000 m'], explanation: 'Om km na m om te skakel, vermenigvuldig met 1 000. 4 × 1 000 = 4 000 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 9 km om na m.', answer: '9 000 m', checkMode: 'auto', correctAnswer: '9000m', correctAnswers: ['9000m', '9000', '9 000m', '9000 m', '9 000 m'], explanation: 'Om km na m om te skakel, vermenigvuldig met 1 000. 9 × 1 000 = 9 000 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 7 000 m om na km.', answer: '7 km', checkMode: 'auto', correctAnswer: '7km', correctAnswers: ['7km', '7', '7 km'], explanation: 'Om m na km om te skakel, deel deur 1 000. 7 000 ÷ 1 000 = 7 km ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het die basiese omskakelings tussen mm, cm, m en km bemeester.' },
+        { minScore: 19, message: 'Goeie werk! Jy is seker van die basiese beginsels — gaan enige gemiste vrae weer deur.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die omskakelingsreëltabel weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 — MOEILIKER VARIANTE: MEERSTAP-OMSKAKELINGS EN VERGELYKINGS (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Medium',
-      question: 'Skryf die korrekte omskakelingsfeite.',
-      checkMode: 'auto',
-      answer: 'a) 10   b) 100   c) 1 000',
-      parts: [
-        {
-          label: 'a) Hoeveel mm is in 1 cm?',
-          correctAnswer: '10',
-          correctAnswers: ['10', 'tien'],
-          explanation: 'Daar is 10 mm in 1 cm. Om cm na mm om te skakel, vermenigvuldig jy met 10, en om mm na cm om te skakel, deel jy deur 10.',
-        },
-        {
-          label: 'b) Hoeveel cm is in 1 m?',
-          correctAnswer: '100',
-          correctAnswers: ['100', 'een honderd', 'honderd'],
-          explanation: 'Daar is 100 cm in 1 m. Om m na cm om te skakel, vermenigvuldig jy met 100, en om cm na m om te skakel, deel jy deur 100.',
-        },
-        {
-          label: 'c) Hoeveel m is in 1 km?',
-          correctAnswer: '1000',
-          correctAnswers: ['1000', '1 000', 'een duisend', 'duisend'],
-          explanation: 'Daar is 1 000 m in 1 km. Om km na m om te skakel, vermenigvuldig jy met 1 000, en om m na km om te skakel, deel jy deur 1 000.',
-        },
+      name: 'Stel 2: Meerstap-omskakelings en Vergelykings',
+      questions: [
+        { difficulty: 'Medium', question: 'Skakel 2 000 mm om na m.', answer: '2 m', checkMode: 'auto', correctAnswer: '2m', correctAnswers: ['2m', '2', '2 m'], explanation: 'Daar is 1 000 mm in 1 m. 2 000 ÷ 1 000 = 2 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 5 000 mm om na m.', answer: '5 m', checkMode: 'auto', correctAnswer: '5m', correctAnswers: ['5m', '5', '5 m'], explanation: 'Daar is 1 000 mm in 1 m. 5 000 ÷ 1 000 = 5 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 3 500 mm om na cm.', answer: '350 cm', checkMode: 'auto', correctAnswer: '350cm', correctAnswers: ['350cm', '350', '350 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 3 500 ÷ 10 = 350 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 4 200 mm om na cm.', answer: '420 cm', checkMode: 'auto', correctAnswer: '420cm', correctAnswers: ['420cm', '420', '420 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 4 200 ÷ 10 = 420 cm ✓' },
+        { difficulty: 'Easy', question: 'Skakel 450 mm om na cm.', answer: '45 cm', checkMode: 'auto', correctAnswer: '45cm', correctAnswers: ['45cm', '45', '45 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 450 ÷ 10 = 45 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 650 mm om na cm.', answer: '65 cm', checkMode: 'auto', correctAnswer: '65cm', correctAnswers: ['65cm', '65', '65 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 650 ÷ 10 = 65 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 1 250 mm om na cm.', answer: '125 cm', checkMode: 'auto', correctAnswer: '125cm', correctAnswers: ['125cm', '125', '125 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 1 250 ÷ 10 = 125 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 1 750 mm om na cm.', answer: '175 cm', checkMode: 'auto', correctAnswer: '175cm', correctAnswers: ['175cm', '175', '175 cm'], explanation: 'Om mm na cm om te skakel, deel deur 10. 1 750 ÷ 10 = 175 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 200 cm om na m.', answer: '2 m', checkMode: 'auto', correctAnswer: '2m', correctAnswers: ['2m', '2', '2 m'], explanation: 'Om cm na m om te skakel, deel deur 100. 200 ÷ 100 = 2 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 350 cm om na m.', answer: '3 m 50 cm', checkMode: 'auto', correctAnswer: '3m50cm', correctAnswers: ['3m50cm', '3 m50cm', '350cm', '350'], explanation: '350 cm = 300 cm + 50 cm = 3 m 50 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 550 cm om na m.', answer: '5 m 50 cm', checkMode: 'auto', correctAnswer: '5m50cm', correctAnswers: ['5m50cm', '5 m50cm', '550cm', '550'], explanation: '550 cm = 500 cm + 50 cm = 5 m 50 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 750 cm om na m.', answer: '7 m 50 cm', checkMode: 'auto', correctAnswer: '7m50cm', correctAnswers: ['7m50cm', '7 m50cm', '750cm', '750'], explanation: '750 cm = 700 cm + 50 cm = 7 m 50 cm ✓' },
+        { difficulty: 'Medium', question: 'Skakel 1 500 m om na km.', answer: '1 km 500 m', checkMode: 'auto', correctAnswer: '1km500m', correctAnswers: ['1km500m', '1 km500m', '1500m', '1500'], explanation: '1 500 m = 1 000 m + 500 m = 1 km 500 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 2 500 m om na km.', answer: '2 km 500 m', checkMode: 'auto', correctAnswer: '2km500m', correctAnswers: ['2km500m', '2 km500m', '2500m', '2500'], explanation: '2 500 m = 2 000 m + 500 m = 2 km 500 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 4 500 m om na km.', answer: '4 km 500 m', checkMode: 'auto', correctAnswer: '4km500m', correctAnswers: ['4km500m', '4 km500m', '4500m', '4500'], explanation: '4 500 m = 4 000 m + 500 m = 4 km 500 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 850 m om na km. Gee jou antwoord met km en m.', answer: '0 km 850 m', checkMode: 'auto', correctAnswer: '0km850m', correctAnswers: ['0km850m', '0 km850m', '850m', '850'], explanation: '850 m is minder as 1 000 m, dus is dit 0 km 850 m — nog nie ʼn volle kilometer nie ✓' },
+        { difficulty: 'Hard', question: 'Skakel 1 250 m om na km en m.', answer: '1 km 250 m', checkMode: 'auto', correctAnswer: '1km250m', correctAnswers: ['1km250m', '1 km250m', '1250m', '1250'], explanation: '1 250 m = 1 000 m + 250 m = 1 km 250 m ✓' },
+        { difficulty: 'Medium', question: 'Skakel 1 km 500 m om na m.', answer: '1 500 m', checkMode: 'auto', correctAnswer: '1500m', correctAnswers: ['1500m', '1500', '1 500m', '1500 m', '1 500 m'], explanation: '1 km 500 m = 1 000 m + 500 m = 1 500 m ✓' },
+        { difficulty: 'Hard', question: 'Skakel 1 km 750 m om na m.', answer: '1 750 m', checkMode: 'auto', correctAnswer: '1750m', correctAnswers: ['1750m', '1750', '1 750m', '1750 m', '1 750 m'], explanation: '1 km 750 m = 1 000 m + 750 m = 1 750 m ✓' },
+        { difficulty: 'Hard', question: 'Skakel 2 km 750 m om na m.', answer: '2 750 m', checkMode: 'auto', correctAnswer: '2750m', correctAnswers: ['2750m', '2750', '2 750m', '2750 m', '2 750 m'], explanation: '2 km 750 m = 2 000 m + 750 m = 2 750 m ✓' },
+        { difficulty: 'Medium', question: 'Wat is langer: 300 cm of 3 m 50 cm? Skryf jou antwoord in die gemengde vorm (m en cm).', answer: '3 m 50 cm', checkMode: 'auto', correctAnswer: '3m50cm', correctAnswers: ['3m50cm', '3 m50cm', '350cm', '350'], explanation: '300 cm = 3 m. Aangesien 3 m 50 cm groter as 3 m is, is 3 m 50 cm langer ✓' },
+        { difficulty: 'Medium', question: 'Wat is langer: 2 500 m of 2 km? Skryf jou antwoord met sy eenheid.', answer: '2 500 m', checkMode: 'auto', correctAnswer: '2500m', correctAnswers: ['2500m', '2500', '2 500m', '2500 m', '2 500 m'], explanation: '2 500 m = 2 km 500 m. Aangesien dit groter as 2 km is, is 2 500 m langer ✓' },
+        { difficulty: 'Medium', question: 'Wat is langer: 50 mm of 4 cm? Skryf jou antwoord met sy eenheid.', answer: '50 mm', checkMode: 'auto', correctAnswer: '50mm', correctAnswers: ['50mm', '50', '50 mm'], explanation: '50 mm = 5 cm. Aangesien 5 cm groter as 4 cm is, is 50 mm langer ✓' },
+        { difficulty: 'Hard', question: 'Wat is korter: 1 200 m of 1 km 500 m? Skryf jou antwoord met sy eenheid.', answer: '1 200 m', checkMode: 'auto', correctAnswer: '1200m', correctAnswers: ['1200m', '1200', '1 200m', '1200 m', '1 200 m'], explanation: '1 200 m = 1 km 200 m. Aangesien dit kleiner as 1 km 500 m is, is 1 200 m korter ✓' },
+        { difficulty: 'Hard', question: 'Wat is korter: 999 mm of 1 m? Skryf jou antwoord met sy eenheid.', answer: '999 mm', checkMode: 'auto', correctAnswer: '999mm', correctAnswers: ['999mm', '999', '999 mm'], explanation: '1 m = 1 000 mm. Aangesien 999 mm kleiner as 1 000 mm is, is 999 mm korter ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy kan met selfvertroue meerstap-omskakelings hanteer en lengtes in verskillende eenhede vergelyk.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die omskakelingsreëls weer deur en oefen om na ʼn gemeenskaplike eenheid om te skakel voordat jy vergelyk.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 — REALISTIESE LENGTES SKAT EN WOORDPROBLEME (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      question: 'Thabo sê ʼn klaskamer is omtrent 8 mm breed. Lerato sê dit is omtrent 8 m breed. Wie is korrek en waarom?',
-      checkMode: 'self',
-      answer: 'Lerato is korrek. ʼn Klaskamer is ʼn groot ruimte en word in meter gemeet. 8 mm is kleiner as 1 cm, wat veels te klein is vir ʼn klaskamer. 8 m is ʼn realistiese breedte vir ʼn klaskamer.',
-    },
-
-    // ── AFDELING 2 — Skat en Meet Lengte ───────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: 'ʼn Potlood word met ʼn liniaal gemeet. Die nulmerk word aan een punt geplaas en die meting aan die ander punt lees 16. Wat is die lengte van die potlood in cm?',
-      checkMode: 'auto',
-      answer: '16 cm',
-      correctAnswer: '16cm',
-      correctAnswers: ['16cm', '16'],
-      explanation: 'Wanneer die liniaal 16 lees met die nul aan een punt, is die potlood 16 cm lank. Sluit altyd die eenheid in — die antwoord is 16 cm.',
-    },
-
-    {
-      difficulty: 'Medium',
-      question: 'Skryf vir elke voorwerp of jy dit met ʼn liniaal of ʼn meetlint sou meet. Gee ʼn redelike skatting van sy lengte.',
-      checkMode: 'self',
-      answer: 'a) Liniaal — ʼn boek is omtrent 20 cm breed (enige skatting tussen 15 cm en 30 cm is redelik)   b) Meetlint — ʼn swembad is omtrent 25 m lank (enige skatting tussen 15 m en 50 m is redelik)',
-    },
-
-    {
-      difficulty: 'Hard',
-      question: 'ʼn Leerder meet ʼn tafel en kry 120. ʼn Ander leerder meet dieselfde tafel en kry 1 m 20 cm.',
-      checkMode: 'auto',
-      answer: 'a) Ja   b) Sentimeter (cm)   c) 1 200 mm',
-      parts: [
-        {
-          label: 'a) Is hierdie twee metings dieselfde lengte?',
-          correctAnswer: 'ja',
-          correctAnswers: ['ja', 'Ja', 'hulleisdieselfde', 'dieselfde'],
-          explanation: '120 cm = 1 m 20 cm. Hulle is presies dieselfde lengte, net op verskillende maniere geskryf.',
-        },
-        {
-          label: 'b) Watter eenheid het die eerste leerder gebruik?',
-          correctAnswer: 'cm',
-          correctAnswers: ['cm', 'sentimeter', 'sentimeters'],
-          explanation: 'Die eerste leerder het 120 sonder ʼn eenheidsetiket geskryf, maar aangesien 120 cm = 1 m 20 cm, moet die eenheid sentimeter (cm) wees.',
-        },
-        {
-          label: 'c) Wat sou die meting in mm wees?',
-          correctAnswer: '1200mm',
-          correctAnswers: ['1200mm', '1200', '1 200mm', '1200 mm', '1200millimeter', '1200millimeters'],
-          explanation: 'Om cm na mm om te skakel, vermenigvuldig met 10. 120 cm × 10 = 1 200 mm.',
-        },
+      name: 'Stel 3: Skat en Woordprobleme',
+      questions: [
+        { difficulty: 'Easy', question: 'Watter eenheid sou jy gebruik om die lengte van ʼn potlood te meet: mm, cm, m of km?', answer: 'cm', checkMode: 'auto', correctAnswer: 'cm', correctAnswers: ['cm', 'sentimeter', 'sentimeters'], explanation: 'ʼn Potlood is ʼn klein voorwerp, die beste gemeet in sentimeter (cm) ✓' },
+        { difficulty: 'Easy', question: 'Watter eenheid sou jy gebruik om die hoogte van ʼn huis te meet: mm, cm, m of km?', answer: 'm', checkMode: 'auto', correctAnswer: 'm', correctAnswers: ['m', 'meter', 'meters'], explanation: 'ʼn Huis is ʼn medium-tot-groot struktuur, die beste gemeet in meter (m) ✓' },
+        { difficulty: 'Easy', question: 'Watter eenheid sou jy gebruik om die afstand tussen twee dorpe te meet: mm, cm, m of km?', answer: 'km', checkMode: 'auto', correctAnswer: 'km', correctAnswers: ['km', 'kilometer', 'kilometers'], explanation: 'Die afstand tussen dorpe is baie lank, die beste gemeet in kilometer (km) ✓' },
+        { difficulty: 'Easy', question: 'Watter eenheid sou jy gebruik om die dikte van ʼn muntstuk te meet: mm, cm, m of km?', answer: 'mm', checkMode: 'auto', correctAnswer: 'mm', correctAnswers: ['mm', 'millimeter', 'millimeters'], explanation: 'ʼn Muntstuk is baie dun, die beste gemeet in millimeter (mm) ✓' },
+        { difficulty: 'Easy', question: 'ʼn Liniaal is ʼn goeie skatting vir watter lengte: die breedte van ʼn boek (≈ 20 cm) of die lengte van ʼn sokkerveld (≈ 100 m)?', answer: 'Die breedte van ʼn boek', checkMode: 'auto', correctAnswer: 'diebreedtevanʼnboek', correctAnswers: ['diebreedtevanʼnboek', 'boek', 'breedte van ʼn boek', 'die breedte van ʼn boek', 'die breedte van n boek'], explanation: 'ʼn Liniaal (30 cm) is ʼn goeie verwysing vir voorwerpe van omtrent 20-30 cm, soos ʼn boek. ʼn Sokkerveld is veels te lank vir ʼn liniaal-gebaseerde skatting ✓' },
+        { difficulty: 'Medium', question: 'Skat die lengte van ʼn volwassene se voet. Kies die mees redelike skatting: 3 cm, 25 cm of 3 m.', answer: '25 cm', checkMode: 'auto', correctAnswer: '25cm', correctAnswers: ['25cm', '25', '25 cm'], explanation: 'ʼn Volwasse voet is omtrent so lank soos ʼn potlood en ʼn bietjie meer — ongeveer 25 cm is realisties. 3 cm is te klein en 3 m is veels te groot ✓' },
+        { difficulty: 'Medium', question: 'Skat die hoogte van ʼn dubbelverdieping-huis. Kies die mees redelike skatting: 6 cm, 60 cm of 6 m.', answer: '6 m', checkMode: 'auto', correctAnswer: '6m', correctAnswers: ['6m', '6', '6 m'], explanation: 'ʼn Dubbelverdieping-huis is baie hoër as ʼn persoon — omtrent 6 m is realisties. 6 cm en 60 cm is veels te klein ✓' },
+        { difficulty: 'Medium', question: 'Skat die breedte van ʼn klaskamerdeur. Kies die mees redelike skatting: 8 mm, 8 cm of 80 cm.', answer: '80 cm', checkMode: 'auto', correctAnswer: '80cm', correctAnswers: ['80cm', '80', '80 cm'], explanation: 'ʼn Deur moet breed genoeg wees vir ʼn persoon om deur te loop — omtrent 80 cm is realisties. 8 mm en 8 cm is veels te klein ✓' },
+        { difficulty: 'Medium', question: 'Skat die lengte van ʼn skoolbus. Kies die mees redelike skatting: 10 cm, 1 m of 10 m.', answer: '10 m', checkMode: 'auto', correctAnswer: '10m', correctAnswers: ['10m', '10', '10 m'], explanation: 'ʼn Skoolbus is ʼn groot voertuig — omtrent 10 m is realisties. 10 cm en 1 m is veels te klein ✓' },
+        { difficulty: 'Medium', question: 'Skat die afstand wat jy in omtrent 12 minute kan loop. Kies die mees redelike skatting: 1 m, 100 m of 1 km.', answer: '1 km', checkMode: 'auto', correctAnswer: '1km', correctAnswers: ['1km', '1', '1 km'], explanation: 'Om vir ongeveer 10-12 minute te loop, dek jy ongeveer 1 km — dit stem ooreen met die verwysingsfeit vir ʼn kilometer ✓' },
+        { difficulty: 'Easy', question: 'ʼn Lint is 2 m 30 cm lank. ʼn Ander lint is 1 m 45 cm lank. Wat is die totale lengte van albei linte?', answer: '3 m 75 cm', checkMode: 'auto', correctAnswer: '3m75cm', correctAnswers: ['3m75cm', '3 m75cm', '375cm', '375'], explanation: 'Tel die cm op: 30 + 45 = 75 cm. Tel die m op: 2 + 1 = 3 m. Totaal: 3 m 75 cm ✓' },
+        { difficulty: 'Medium', question: 'ʼn Tuinpad is 5 m lank. ʼn Ander pad langs dit is 3 m 50 cm lank. Wat is die totale lengte van albei paaie in cm?', answer: '850 cm', checkMode: 'auto', correctAnswer: '850cm', correctAnswers: ['850cm', '850', '850 cm'], explanation: '5 m = 500 cm en 3 m 50 cm = 350 cm. Totaal: 500 + 350 = 850 cm ✓' },
+        { difficulty: 'Medium', question: 'ʼn Tou is 8 m lank. Sipho sny 2 m 40 cm af. Hoeveel tou is oor, in die gemengde vorm (m en cm)?', answer: '5 m 60 cm', checkMode: 'auto', correctAnswer: '5m60cm', correctAnswers: ['5m60cm', '5 m60cm', '560cm', '560'], explanation: '8 m = 800 cm. 800 cm − 240 cm = 560 cm = 5 m 60 cm ✓' },
+        { difficulty: 'Medium', question: 'ʼn Reghoekige tuinheining het 4 gelyke kante, elk 6 m lank. Wat is die totale lengte heining wat nodig is?', answer: '24 m', checkMode: 'auto', correctAnswer: '24m', correctAnswers: ['24m', '24', '24 m'], explanation: '"Totale" beteken tel al 4 kante op: 6 + 6 + 6 + 6 = 24 m (of 4 × 6 = 24 m) ✓' },
+        { difficulty: 'Medium', question: 'ʼn Reghoekige tuin is 10 m lank en 7 m breed. Wat is die omtrek van die tuin?', answer: '34 m', checkMode: 'auto', correctAnswer: '34m', correctAnswers: ['34m', '34', '34 m'], explanation: 'Omtrek = 2 × (lengte + breedte) = 2 × (10 + 7) = 2 × 17 = 34 m ✓' },
+        { difficulty: 'Medium', question: 'ʼn Hardloopbaan is 400 m lank. As ʼn atleet 4 rondtes hardloop, hoe ver hardloop sy altesaam? Gee jou antwoord in meter.', answer: '1 600 m', checkMode: 'auto', correctAnswer: '1600m', correctAnswers: ['1600m', '1600', '1 600m', '1600 m', '1 600 m'], explanation: '400 m × 4 = 1 600 m ✓' },
+        { difficulty: 'Medium', question: 'ʼn Draad wat 250 cm lank is, word in 5 gelyke stukke gesny. Hoe lank is elke stuk?', answer: '50 cm', checkMode: 'auto', correctAnswer: '50cm', correctAnswers: ['50cm', '50', '50 cm'], explanation: '"Gelyke stukke" beteken deel: 250 ÷ 5 = 50 cm ✓' },
+        { difficulty: 'Medium', question: 'ʼn Muur moet 3 m hoog wees. As elke baksteen 25 cm hoog is en die bakstene direk bo-op mekaar gestapel word, hoeveel bakstene word benodig?', answer: '12 bakstene', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 bakstene', '12bakstene'], explanation: '3 m = 300 cm. Deel deur die hoogte van een baksteen: 300 ÷ 25 = 12 bakstene ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leer moet ʼn totale hoogte van 2 m 50 cm bereik, gemaak van twee dele wat aanmekaar gesit word: een deel is 1 m 75 cm. Hoe lank moet die tweede deel wees?', answer: '75 cm', checkMode: 'auto', correctAnswer: '75cm', correctAnswers: ['75cm', '75', '75 cm'], explanation: '2 m 50 cm = 250 cm en 1 m 75 cm = 175 cm. 250 − 175 = 75 cm ✓' },
+        { difficulty: 'Hard', question: 'ʼn Plank hout is 6 m lank. Dit word in 3 gelyke stukke gesny. Hoe lank is elke stuk?', answer: '2 m', checkMode: 'auto', correctAnswer: '2m', correctAnswers: ['2m', '2', '2 m'], explanation: '"Gelyke stukke" beteken deel: 6 ÷ 3 = 2 m ✓' },
+        { difficulty: 'Hard', question: 'Drie linte meet 1 m 20 cm, 1 m 35 cm en 1 m 45 cm. Wat is hulle gekombineerde lengte in meter?', answer: '4 m', checkMode: 'auto', correctAnswer: '4m', correctAnswers: ['4m', '4', '4 m'], explanation: 'Tel die cm op: 20 + 35 + 45 = 100 cm = 1 m. Tel die m op: 1 + 1 + 1 + 1 (oorgedra) = 4 m. Totaal: 4 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Klaskamer is 9 m lank en 6 m breed. Wat is die omtrek van die klaskamer?', answer: '30 m', checkMode: 'auto', correctAnswer: '30m', correctAnswers: ['30m', '30', '30 m'], explanation: 'Omtrek = 2 × (lengte + breedte) = 2 × (9 + 6) = 2 × 15 = 30 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Wandelpad is 12 km lank. ʼn Wandelaar het reeds 7 km 500 m geloop. Hoeveel verder moet sy nog loop?', answer: '4 km 500 m', checkMode: 'auto', correctAnswer: '4km500m', correctAnswers: ['4km500m', '4 km500m', '4500m', '4500'], explanation: '"Hoeveel verder" beteken trek af: 12 km − 7 km 500 m = 4 km 500 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder loop 1 km 500 m skool toe en daarna nog 2 km 300 m om ʼn vriend te besoek. Wat is die totale afstand geloop?', answer: '3 km 800 m', checkMode: 'auto', correctAnswer: '3km800m', correctAnswers: ['3km800m', '3 km800m', '3800m', '3800'], explanation: '"Totaal" beteken tel op: 1 km 500 m + 2 km 300 m = 3 km 800 m ✓' },
+        { difficulty: 'Hard', question: 'Skat die hoogte van ʼn skoolbank in cm, en verduidelik watter werklike-lewe voorwerp jy as verwysing gebruik het om jou skatting te maak.', answer: 'ʼn Skoolbank is omtrent 70-75 cm hoog. ʼn Redelike verwysing is jou eie hoogte wanneer jy sit, of die hoogte van ʼn klaskamerdeur (omtrent 2 m) vergeleke met die bank (ongeveer ʼn derde van daardie hoogte).', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy kan met selfvertroue realistiese lengtes skat en werklike-lewe lengte-woordprobleme oplos.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die verwysingslengtes en woordprobleem-sleutelwoorde weer deur.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
-    // ── AFDELING 3 — Omskakeling Tussen Lengte-eenhede ────────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 4 — MEERSTAP / GEKOMBINEERDE PROBLEME (25 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      question: 'Skakel die volgende om.',
-      checkMode: 'auto',
-      answer: 'a) 3 cm   b) 40 mm',
-      parts: [
-        {
-          label: 'a) 30 mm = ___ cm',
-          correctAnswer: '3cm',
-          correctAnswers: ['3cm', '3', '3 cm'],
-          explanation: 'Om mm na cm om te skakel, deel deur 10. 30 ÷ 10 = 3 cm.',
-        },
-        {
-          label: 'b) 4 cm = ___ mm',
-          correctAnswer: '40mm',
-          correctAnswers: ['40mm', '40', '40 mm'],
-          explanation: 'Om cm na mm om te skakel, vermenigvuldig met 10. 4 × 10 = 40 mm.',
-        },
+      name: 'Stel 4: Meerstap- en Gekombineerde Probleme',
+      questions: [
+        { difficulty: 'Medium', question: 'ʼn Bouer het 3 planke wat elk 1 m 50 cm meet. Wat is die totale lengte van die 3 planke, in die gemengde vorm (m en cm)?', answer: '4 m 50 cm', checkMode: 'auto', correctAnswer: '4m50cm', correctAnswers: ['4m50cm', '4 m50cm', '450cm', '450'], explanation: '3 × 1 m 50 cm = 3 × 150 cm = 450 cm = 4 m 50 cm ✓' },
+        { difficulty: 'Medium', question: 'ʼn 20 m heining het ʼn paal elke 2 m geplant, insluitend een paal aan elke punt. Hoeveel pale word benodig?', answer: '11 pale', checkMode: 'auto', correctAnswer: '11', correctAnswers: ['11', '11 pale', '11pale'], explanation: 'Aantal gapings = 20 ÷ 2 = 10. Aangesien ʼn paal aan albei punte nodig is, pale = gapings + 1 = 10 + 1 = 11 ✓' },
+        { difficulty: 'Medium', question: 'ʼn 500 cm lint word in 4 stukke van 75 cm elk gesny. Hoeveel lint is oor?', answer: '200 cm', checkMode: 'auto', correctAnswer: '200cm', correctAnswers: ['200cm', '200', '200 cm', '2m', '2 m'], explanation: '4 stukke gebruik: 4 × 75 = 300 cm. Oor: 500 − 300 = 200 cm ✓' },
+        { difficulty: 'Hard', question: 'ʼn Boom is 3 m 50 cm hoog. ʼn Parkeerterrein-ingang het ʼn hoogtebeperking van 3 m. Met hoeveel sentimeter is die boom te hoog om onder die ingang deur te pas?', answer: '50 cm', checkMode: 'auto', correctAnswer: '50cm', correctAnswers: ['50cm', '50', '50 cm'], explanation: '"Met hoeveel" beteken trek af: 3 m 50 cm − 3 m = 50 cm ✓' },
+        { difficulty: 'Hard', question: 'ʼn Tou van 15 m word in gelyke stukke van 3 m elk gesny. Hoeveel stukke word gemaak?', answer: '5 stukke', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 stukke', '5stukke'], explanation: '"Gelyke stukke" beteken deel: 15 ÷ 3 = 5 stukke ✓' },
+        { difficulty: 'Hard', question: 'ʼn Stapel van 20 identiese boeke is 40 cm hoog. Hoe dik is elke boek?', answer: '2 cm', checkMode: 'auto', correctAnswer: '2cm', correctAnswers: ['2cm', '2', '2 cm'], explanation: 'Deel die totale hoogte deur die aantal boeke: 40 ÷ 20 = 2 cm ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leer bereik 2 m 50 cm teen ʼn muur met een deel, plus nog 1 m 75 cm met ʼn tweede deel. Wat is die totale hoogte bereik, in die gemengde vorm (m en cm)?', answer: '4 m 25 cm', checkMode: 'auto', correctAnswer: '4m25cm', correctAnswers: ['4m25cm', '4 m25cm', '425cm', '425'], explanation: '2 m 50 cm = 250 cm en 1 m 75 cm = 175 cm. Totaal: 250 + 175 = 425 cm = 4 m 25 cm ✓' },
+        { difficulty: 'Hard', question: 'ʼn Plank hout van 6 m lank word in 3 stukke van 2 m elk gesny. As elke stuk dan in twee gesny word, hoe lank is elke finale stuk?', answer: '1 m', checkMode: 'auto', correctAnswer: '1m', correctAnswers: ['1m', '1', '1 m'], explanation: 'Eerste snit: 6 ÷ 3 = 2 m stukke. Tweede snit: 2 ÷ 2 = 1 m finale stukke ✓' },
+        { difficulty: 'Hard', question: 'ʼn Motor ry 3 km 200 m, en dan nog ʼn verdere 1 km 800 m. Hoeveel verder het die motor op die eerste been gery as op die tweede been?', answer: '1 km 400 m', checkMode: 'auto', correctAnswer: '1km400m', correctAnswers: ['1km400m', '1 km400m', '1400m', '1400'], explanation: '"Hoeveel verder" beteken trek af: 3 km 200 m − 1 km 800 m = 1 km 400 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Reghoekige landerye meet 30 m by 20 m. As ʼn boer een keer heeltemal om die landerye loop, hoe ver loop hy?', answer: '100 m', checkMode: 'auto', correctAnswer: '100m', correctAnswers: ['100m', '100', '100 m'], explanation: 'Omtrek = 2 × (30 + 20) = 2 × 50 = 100 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Muur is 250 cm hoog. Dit moet opgebou word tot 4 m. Hoeveel meer sentimeter moet dit nog groei?', answer: '150 cm', checkMode: 'auto', correctAnswer: '150cm', correctAnswers: ['150cm', '150', '150 cm', '1.5m', '1.5 m', '1,5m', '1,5 m'], explanation: '4 m = 400 cm. 400 − 250 = 150 cm ✓' },
+        { difficulty: 'Hard', question: 'ʼn Fietsryer ry 4 km oos, en draai dan om nog 3 km verder oos te ry. Hoe ver oos van die begin is die fietsryer nou?', answer: '7 km', checkMode: 'auto', correctAnswer: '7km', correctAnswers: ['7km', '7', '7 km'], explanation: 'Albei afstande is in dieselfde rigting, dus tel op: 4 km + 3 km = 7 km ✓' },
+        { difficulty: 'Hard', question: 'ʼn Lint van 1 m 80 cm word gelyk tussen 3 vriende gedeel. Hoeveel lint kry elke vriend, in cm?', answer: '60 cm', checkMode: 'auto', correctAnswer: '60cm', correctAnswers: ['60cm', '60', '60 cm'], explanation: '1 m 80 cm = 180 cm. Gelyk gedeel: 180 ÷ 3 = 60 cm ✓' },
+        { difficulty: 'Hard', question: 'Twee stukke tou meet 2 m 25 cm en 3 m 40 cm. Wat is die verskil in hulle lengtes?', answer: '1 m 15 cm', checkMode: 'auto', correctAnswer: '1m15cm', correctAnswers: ['1m15cm', '115cm', '1 m 15 cm', '1m 15cm', '1.15m', '1,15m'], explanation: 'Trek cm af: 40 − 25 = 15 cm. Trek m af: 3 − 2 = 1 m. Verskil: 1 m 15 cm ✓' },
+        { difficulty: 'Hard', question: 'ʼn Skool het ʼn 2 km wandelroete. As ʼn leerder die roete 3 keer loop, hoeveel meter het sy altesaam geloop?', answer: '6 000 m', checkMode: 'auto', correctAnswer: '6000m', correctAnswers: ['6000m', '6000', '6 000m', '6000 m', '6 000 m', '6km', '6 km'], explanation: '2 km = 2 000 m. 3 rondtes: 2 000 × 3 = 6 000 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Prentraam benodig ʼn houtrand. Die raam is 40 cm by 30 cm. Wat is die totale lengte hout wat nodig is om heeltemal om die raam te gaan?', answer: '140 cm', checkMode: 'auto', correctAnswer: '140cm', correctAnswers: ['140cm', '140', '140 cm', '1.4m', '1.4 m', '1,4m', '1,4 m'], explanation: 'Omtrek = 2 × (40 + 30) = 2 × 70 = 140 cm ✓' },
+        { difficulty: 'Hard', question: 'ʼn Afleweringsbestelwa ry 850 m na ʼn winkel, en dan nog ʼn verdere 1 250 m na ʼn tweede winkel. Wat is die totale afstand gery, in km en m?', answer: '2 km 100 m', checkMode: 'auto', correctAnswer: '2km100m', correctAnswers: ['2km100m', '2 km100m', '2100m', '2100'], explanation: 'Totale afstand: 850 + 1 250 = 2 100 m = 2 km 100 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Tuinier het 18 m randwerk. Hy gebruik 6 m 50 cm om een blombedding en 4 m 25 cm om ʼn ander. Hoeveel randwerk het hy oor?', answer: '7 m 25 cm', checkMode: 'auto', correctAnswer: '7m25cm', correctAnswers: ['7m25cm', '725cm', '7 m 25 cm', '7m 25cm', '7.25m', '7,25m'], explanation: 'Totaal gebruik: 6 m 50 cm + 4 m 25 cm = 10 m 75 cm. Oor: 18 m − 10 m 75 cm = 7 m 25 cm ✓' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom dit belangrik is om twee lengtes na dieselfde eenheid om te skakel voordat jy hulle optel of aftrek. Gebruik ʼn voorbeeld in jou verduideliking.', answer: 'Jy moet eers na dieselfde eenheid omskakel omdat die getalle net dieselfde beteken sodra die eenhede ooreenstem — byvoorbeeld, om 2 m en 50 cm direk op te tel as "2 + 50 = 52" is verkeerd, maar om 2 m eers na 200 cm om te skakel gee 200 + 50 = 250 cm, wat die korrekte totaal is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo sê dat 1 500 mm langer is as 1 m 40 cm. Is hy korrek? Wys jou werk deur albei na dieselfde eenheid om te skakel.', answer: 'Ja, Thabo is korrek. Skakel albei om na sentimeter: 1 500 mm ÷ 10 = 150 cm, en 1 m 40 cm = 140 cm. Aangesien 150 cm groter as 140 cm is, is 1 500 mm inderdaad langer.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Reghoekige groentetuin is 12 m lank en 5 m breed. ʼn Heining is nodig om die hele tuin, plus een ekstra lengte heining reguit oor die middel (parallel aan die breedte) om dit in twee te verdeel. Hoeveel heining word altesaam benodig?', answer: '39 m', checkMode: 'auto', correctAnswer: '39m', correctAnswers: ['39m', '39', '39 m'], explanation: 'Omtrek = 2 × (12 + 5) = 34 m. Ekstra verdelende heining (parallel aan die breedte) = 5 m. Totaal = 34 + 5 = 39 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Draadheining benodig pale elke 5 m langs ʼn reguit 40 m heininglyn, met ʼn paal aan elke punt. As elke paal R85 kos, wat is die totale koste van die pale?', answer: 'R765', checkMode: 'auto', correctAnswer: '765', correctAnswers: ['765', 'R765'], explanation: 'Aantal pale: (40 ÷ 5) + 1 = 9 pale. Totale koste: 9 × R85 = R765 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Aflosspan hardloop ʼn totale afstand van 1 km 200 m, gelyk verdeel tussen 4 hardlopers. Hoe ver hardloop elke hardloper, in meter?', answer: '300 m', checkMode: 'auto', correctAnswer: '300m', correctAnswers: ['300m', '300', '300 m'], explanation: '1 km 200 m = 1 200 m. Gelyk gedeel: 1 200 ÷ 4 = 300 m ✓' },
+        { difficulty: 'Hard', question: 'ʼn Bouer benodig 5 stukke pyp, elk 1 m 60 cm lank, gesny uit een lang pyp. Wat is die minimum totale lengte pyp benodig, in meter?', answer: '8 m', checkMode: 'auto', correctAnswer: '8m', correctAnswers: ['8m', '8', '8 m'], explanation: '5 × 1 m 60 cm = 5 × 160 cm = 800 cm = 8 m ✓' },
+        { difficulty: 'Hard', question: 'Verduidelik hoe jy sonder ʼn sakrekenaar sou nagaan of 3 500 cm meer of minder is as 3 km 400 m. Beskryf jou metode in woorde.', answer: 'Skakel albei lengtes na dieselfde eenheid om, soos meter. 3 500 cm ÷ 100 = 35 m, en 3 km 400 m = 3 400 m. Deur 35 m met 3 400 m te vergelyk, wys dit dat 3 500 cm baie minder is as 3 km 400 m.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Uitstekend! Jy het meerstap- en gekombineerde lengteprobleme bemeester.' },
+        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 13, message: 'Goeie poging! Gaan die meerstap-voorbeelde oor optel, aftrek en omskakeling van lengte weer deur.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
-
-    {
-      difficulty: 'Medium',
-      question: 'Skakel die volgende om.',
-      checkMode: 'auto',
-      answer: 'a) 2,5 m   b) 300 cm   c) 4,5 km   d) 2 000 m',
-      parts: [
-        {
-          label: 'a) 250 cm = ___ m',
-          correctAnswer: '2.5m',
-          correctAnswers: ['2.5m', '2.5', '2.5 m', '2,5m', '2,5'],
-          explanation: 'Om cm na m om te skakel, deel deur 100. 250 ÷ 100 = 2,5 m.',
-        },
-        {
-          label: 'b) 3 m = ___ cm',
-          correctAnswer: '300cm',
-          correctAnswers: ['300cm', '300', '300 cm'],
-          explanation: 'Om m na cm om te skakel, vermenigvuldig met 100. 3 × 100 = 300 cm.',
-        },
-        {
-          label: 'c) 4 500 m = ___ km',
-          correctAnswer: '4.5km',
-          correctAnswers: ['4.5km', '4.5', '4.5 km', '4,5km', '4,5'],
-          explanation: 'Om m na km om te skakel, deel deur 1 000. 4 500 ÷ 1 000 = 4,5 km.',
-        },
-        {
-          label: 'd) 2 km = ___ m',
-          correctAnswer: '2000m',
-          correctAnswers: ['2000m', '2000', '2 000m', '2000 m', '2 000 m'],
-          explanation: 'Om km na m om te skakel, vermenigvuldig met 1 000. 2 × 1 000 = 2 000 m.',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      question: 'Sipho sê 3 500 cm is meer as 3 km. Is hy korrek? Wys jou werk deur albei metings na dieselfde eenheid om te skakel.',
-      checkMode: 'self',
-      answer: 'Nee, Sipho is verkeerd. Skakel albei na meter om: 3 500 cm ÷ 100 = 35 m. 3 km × 1 000 = 3 000 m. Aangesien 35 m baie minder as 3 000 m is, is 3 500 cm veels kleiner as 3 km.',
-    },
-
-    // ── AFDELING 4 — Bereken met Lengte ──────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: 'Tel die volgende lengtes op: 1 m 30 cm + 2 m 45 cm',
-      checkMode: 'auto',
-      answer: '3 m 75 cm',
-      correctAnswer: '3m75cm',
-      correctAnswers: ['3m75cm', '3 m75cm', '375cm', '375'],
-      explanation: 'Tel die cm op: 30 + 45 = 75 cm. Tel die m op: 1 + 2 = 3 m. Antwoord: 3 m 75 cm.',
-    },
-
-    {
-      difficulty: 'Medium',
-      question: 'Bereken die volgende.',
-      checkMode: 'auto',
-      answer: 'a) 7 m 15 cm   b) 3 m 15 cm   c) 1 m 65 cm',
-      parts: [
-        {
-          label: 'a) 4 m 60 cm + 2 m 55 cm',
-          correctAnswer: '7m15cm',
-          correctAnswers: ['7m15cm', '715cm', '7 m 15 cm', '7m 15cm'],
-          explanation: 'Tel cm op: 60 + 55 = 115 cm = 1 m 15 cm. Tel m op: 4 + 2 + 1 (oorgedra) = 7 m. Antwoord: 7 m 15 cm.',
-        },
-        {
-          label: 'b) 5 m 30 cm − 2 m 15 cm',
-          correctAnswer: '3m15cm',
-          correctAnswers: ['3m15cm', '315cm', '3 m 15 cm', '3m 15cm'],
-          explanation: 'Trek cm af: 30 − 15 = 15 cm. Trek m af: 5 − 2 = 3 m. Antwoord: 3 m 15 cm.',
-        },
-        {
-          label: 'c) 3 m 10 cm − 1 m 45 cm',
-          correctAnswer: '1m65cm',
-          correctAnswers: ['1m65cm', '165cm', '1 m 65 cm', '1m 65cm'],
-          explanation: 'Ons kan nie 45 van 10 aftrek nie, dus leen ons 1 m: 2 m 110 cm − 1 m 45 cm. Trek cm af: 110 − 45 = 65 cm. Trek m af: 2 − 1 = 1 m. Antwoord: 1 m 65 cm.',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      question: 'ʼn Bouer het ʼn plank hout wat 6 m lank is. Hy sny twee stukke af — een wat 1 m 75 cm is en ʼn ander wat 2 m 40 cm is.',
-      checkMode: 'auto',
-      answer: 'a) 4 m 15 cm   b) 1 m 85 cm',
-      parts: [
-        {
-          label: 'a) Wat is die totale lengte van die twee stukke wat afgesny is?',
-          correctAnswer: '4m15cm',
-          correctAnswers: ['4m15cm', '415cm', '4 m 15 cm', '4m 15cm'],
-          explanation: 'Tel die twee stukke op: 1 m 75 cm + 2 m 40 cm. Tel cm op: 75 + 40 = 115 cm = 1 m 15 cm. Tel m op: 1 + 2 + 1 (oorgedra) = 4 m. Totaal afgesny: 4 m 15 cm.',
-        },
-        {
-          label: 'b) Hoeveel hout is oor?',
-          correctAnswer: '1m85cm',
-          correctAnswers: ['1m85cm', '185cm', '1 m 85 cm', '1m 85cm'],
-          explanation: '6 m − 4 m 15 cm. Skryf 6 m as 5 m 100 cm (leen 1 m). Trek cm af: 100 − 15 = 85 cm. Trek m af: 5 − 4 = 1 m. Hout oor: 1 m 85 cm.',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      question: 'ʼn Bouer het ʼn plank hout wat 6 m lank is. Hy sny 1 m 75 cm en 2 m 40 cm af, wat 1 m 85 cm laat oorbly. Hy het nog een stuk van 1 m 50 cm nodig.',
-      checkMode: 'self',
-      answer: 'Ja, hy het genoeg hout. Hy het 1 m 85 cm oor en het slegs 1 m 50 cm nodig. Aangesien 1 m 85 cm > 1 m 50 cm, is daar genoeg hout oor.',
-    },
-
-    // ── AFDELING 5 — Woordprobleme met Lengte ─────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      question: 'ʼn Lint is 3 m 50 cm lank. ʼn Ander lint is 2 m 20 cm lank. Wat is die totale lengte van albei linte?',
-      checkMode: 'auto',
-      answer: '5 m 70 cm',
-      correctAnswer: '5m70cm',
-      correctAnswers: ['5m70cm', '5 m70cm', '570cm', '570'],
-      explanation: 'Tel die cm op: 50 + 20 = 70 cm. Tel die m op: 3 + 2 = 5 m. Totale lengte: 5 m 70 cm.',
-    },
-
-    {
-      difficulty: 'Medium',
-      question: 'ʼn Skoolbaan is 400 m lank. Thabo hardloop 3 keer daar rond.',
-      checkMode: 'auto',
-      answer: 'a) 1 200 m   b) 1,2 km   c) 800 m',
-      parts: [
-        {
-          label: 'a) Hoe ver hardloop Thabo altesaam?',
-          correctAnswer: '1200m',
-          correctAnswers: ['1200m', '1200', '1 200m', '1200 m', '1 200 m'],
-          explanation: '400 m × 3 = 1 200 m. Thabo hardloop altesaam 1 200 m.',
-        },
-        {
-          label: 'b) Hoeveel km is dit?',
-          correctAnswer: '1.2km',
-          correctAnswers: ['1.2km', '1.2', '1.2 km', '1,2km', '1,2'],
-          explanation: 'Om m na km om te skakel, deel deur 1 000. 1 200 ÷ 1 000 = 1,2 km.',
-        },
-        {
-          label: 'c) Hy wil altesaam 2 km hardloop. Hoeveel meer meter moet hy nog hardloop?',
-          correctAnswer: '800m',
-          correctAnswers: ['800m', '800', '800 m'],
-          explanation: '2 km = 2 000 m. 2 000 − 1 200 = 800 m. Thabo moet nog 800 m hardloop.',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      question: 'Drie leerders meet die hoogte van ʼn muur. Sipho meet 2 m 45 cm. Lerato meet 245 cm. Thabo meet 2 450 mm.',
-      checkMode: 'auto',
-      answer: 'a) Almal is gelyk aan 245 cm   b) Ja   c) 55 cm',
-      parts: [
-        {
-          label: 'a) Wat is al drie metings gelyk aan wanneer dit na cm omgeskakel word?',
-          correctAnswer: '245cm',
-          correctAnswers: ['245cm', '245', '245 cm'],
-          explanation: 'Sipho: 2 m 45 cm = 200 + 45 = 245 cm. Lerato: reeds in cm = 245 cm. Thabo: 2 450 mm ÷ 10 = 245 cm. Al drie is gelyk aan 245 cm.',
-        },
-        {
-          label: 'b) Is al drie metings dieselfde?',
-          correctAnswer: 'ja',
-          correctAnswers: ['ja', 'Ja', 'dieselfde', 'hulleisdieselfde'],
-          explanation: 'Ja — 2 m 45 cm = 245 cm = 2 450 mm. Hulle is presies dieselfde lengte, in verskillende eenhede geskryf.',
-        },
-        {
-          label: 'c) Die muur moet 3 m hoog wees. Hoeveel hoër moet dit wees? Gee jou antwoord in cm.',
-          correctAnswer: '55cm',
-          correctAnswers: ['55cm', '55', '55 cm'],
-          explanation: '3 m = 300 cm. 300 − 245 = 55 cm. Die muur moet 55 cm hoër wees.',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      question: 'Die muur is 245 cm hoog en moet 3 m (300 cm) bereik, dus is 55 cm meer nodig. Elke baksteen is 8 cm hoog. Hoeveel meer bakstene word benodig om 3 m te bereik? Wys jou werk.',
-      checkMode: 'self',
-      answer: '7 bakstene. Deel 55 cm deur 8 cm: 55 ÷ 8 = 6,875. Aangesien jy nie ʼn gedeelte van ʼn baksteen kan gebruik nie, rond op na die volgende heelgetal: 7 bakstene word benodig.',
-    },
-
-  ],
-  scoreMessages: [
-    { minScore: 34, message: 'Volpunte! Uitstekende werk — jy het al die aspekte van lengte vir Graad 4 bemeester!' },
-    { minScore: 26, message: 'Uitstekende werk! Jy het ʼn sterk begrip van lengte. Gaan enige vrae wat jy lastig gevind het, weer deur en jy sal ten volle gereed wees.' },
-    { minScore: 17, message: 'Goeie poging! Jy verstaan die basiese beginsels van lengte. Gaan weer deur die afdelings oor die omskakeling van eenhede en berekening met lengte om jou vaardighede te versterk.' },
-    { minScore: 0, message: 'Hou aan probeer! Lengte kan aanvanklik lastig wees. Lees die studiemateriaal weer versigtig deur en probeer dan die vrae weer — jy kan dit doen!' },
   ],
 }

@@ -137,6 +137,7 @@ export const topicData: TopicData = {
       videoPlaceholder: 'Short video showing the difference between repeating and growing geometric patterns with real life examples',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -304,6 +305,7 @@ export const topicData: TopicData = {
       videoPlaceholder: 'Short video showing how to find the rule in a geometric pattern and extend it correctly',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -453,6 +455,7 @@ export const topicData: TopicData = {
       diagramPlaceholder: 'Two rows — top row showing colour pattern red blue green repeating, bottom row showing shape pattern circle circle square triangle repeating',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -571,6 +574,7 @@ export const topicData: TopicData = {
       videoPlaceholder: 'Short video showing real life examples of tessellating patterns and explaining why some shapes tessellate and others do not',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -660,6 +664,7 @@ export const topicData: TopicData = {
       diagramPlaceholder: 'Three images side by side showing a honeycomb pattern, a brick wall pattern and a Ndebele geometric wall painting pattern',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -755,521 +760,172 @@ export const topicData: TopicData = {
       videoPlaceholder: 'Short video showing how to design and describe your own geometric pattern step by step',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
   ],
 
-  topicPractice: [
 
-    // ── SECTION 1: WHAT IS A GEOMETRIC PATTERN? ──────────────────────────────
+  practiceSets: [
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 — REPEATING PATTERNS: IDENTIFYING THE NTH SHAPE (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Is this a repeating or growing pattern?\n\ncircle, square, circle, square, circle, square',
-      answer: 'Repeating',
-      correctAnswer: 'Repeating',
-      correctAnswers: ['Repeating', 'repeating', 'repeat', 'repeating pattern'],
-      explanation:
-        'The same sequence — circle, square — comes back over and over without growing.\n' +
-        'When the same group repeats, it is called a repeating pattern.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Describe the pattern and find the next two terms:\n\n' +
-        '1 dot, 3 dots, 5 dots, 7 dots, …\n\n' +
-        'a) Is this repeating or growing?\n' +
-        'b) What is the rule?\n' +
-        'c) What are the next two terms?',
-      answer: 'a) Growing    b) Add 2 dots each time    c) 9 dots, 11 dots',
-      parts: [
-        {
-          label: 'a) Is this repeating or growing?',
-          correctAnswer: 'Growing',
-          correctAnswers: ['Growing', 'growing', 'growing pattern'],
-          explanation:
-            'The number of dots increases each time: 1, 3, 5, 7 …\n' +
-            'Because the amounts get bigger, this is a growing pattern.',
-        },
-        {
-          label: 'b) What is the rule?',
-          correctAnswer: 'Add 2 dots each time',
-          correctAnswers: [
-            'Add 2 dots each time', 'add 2 dots each time',
-            'Add 2', 'add 2', '+2', 'plus 2', 'plus2',
-            'add 2 each time', 'Add 2 each time',
-          ],
-          explanation:
-            'Find the difference between consecutive terms:\n' +
-            '3 − 1 = 2,  5 − 3 = 2,  7 − 5 = 2\n' +
-            'Rule: add 2 dots each time.',
-        },
-        {
-          label: 'c) What are the next two terms?',
-          correctAnswer: '9dots11dots',
-          correctAnswers: [
-            '9dots11dots', '9 dots11 dots', '9dot11dot',
-            '9,11', '911',
-          ],
-          explanation:
-            'Apply the rule (add 2) twice from the last known term:\n' +
-            '7 + 2 = 9 dots\n' +
-            '9 + 2 = 11 dots',
-        },
+      name: 'Set 1: Repeating Patterns',
+      questions: [
+        { difficulty: 'Easy', question: 'A pattern repeats: circle, square, circle, square, circle, square, …\n\nWhat is the 4th shape?', answer: 'Square', checkMode: 'auto', correctAnswer: 'Square', correctAnswers: ['Square', 'square'], explanation: 'The repeating unit is: circle, square — 2 shapes per unit.\n4 ÷ 2 = 2 remainder 0. A remainder of 0 means it is the last shape in the unit, which is square.' },
+        { difficulty: 'Easy', question: 'A pattern repeats: circle, square, circle, square, circle, square, …\n\nWhat is the 7th shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 2.\n7 ÷ 2 = 3 remainder 1.\nRemainder 1 → the 1st shape in the unit, which is circle.' },
+        { difficulty: 'Easy', question: 'A pattern repeats: triangle, circle, triangle, circle, triangle, circle, …\n\nWhat is the 10th shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 2 (triangle, circle).\n10 ÷ 2 = 5 remainder 0.\nRemainder 0 → the last shape in the unit, which is circle.' },
+        { difficulty: 'Easy', question: 'A pattern repeats: circle, square, triangle, circle, square, triangle, …\n\nWhat is the 6th shape?', answer: 'Triangle', checkMode: 'auto', correctAnswer: 'Triangle', correctAnswers: ['Triangle', 'triangle'], explanation: 'Unit length = 3 (circle, square, triangle).\n6 ÷ 3 = 2 remainder 0.\nRemainder 0 → the last shape in the unit, which is triangle.' },
+        { difficulty: 'Easy', question: 'A pattern repeats: circle, square, triangle, circle, square, triangle, …\n\nWhat is the 9th shape?', answer: 'Triangle', checkMode: 'auto', correctAnswer: 'Triangle', correctAnswers: ['Triangle', 'triangle'], explanation: 'Unit length = 3.\n9 ÷ 3 = 3 remainder 0.\nRemainder 0 → the last shape in the unit, which is triangle.' },
+        { difficulty: 'Medium', question: 'A pattern repeats: circle, square, triangle, circle, square, triangle, …\n\nWhat is the 14th shape?', answer: 'Square', checkMode: 'auto', correctAnswer: 'Square', correctAnswers: ['Square', 'square'], explanation: 'Unit length = 3.\n14 ÷ 3 = 4 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is square.' },
+        { difficulty: 'Easy', question: 'A pattern of beads repeats: red, blue, green, red, blue, green, …\n\nWhat colour is the 8th bead?', answer: 'Blue', checkMode: 'auto', correctAnswer: 'Blue', correctAnswers: ['Blue', 'blue'], explanation: 'Unit length = 3 (red, blue, green).\n8 ÷ 3 = 2 remainder 2.\nRemainder 2 → the 2nd colour in the unit, which is blue.' },
+        { difficulty: 'Medium', question: 'A pattern of beads repeats: red, blue, green, red, blue, green, …\n\nWhat colour is the 11th bead?', answer: 'Blue', checkMode: 'auto', correctAnswer: 'Blue', correctAnswers: ['Blue', 'blue'], explanation: 'Unit length = 3.\n11 ÷ 3 = 3 remainder 2.\nRemainder 2 → the 2nd colour in the unit, which is blue.' },
+        { difficulty: 'Medium', question: 'A pattern of beads repeats: red, blue, green, red, blue, green, …\n\nWhat colour is the 16th bead?', answer: 'Red', checkMode: 'auto', correctAnswer: 'Red', correctAnswers: ['Red', 'red'], explanation: 'Unit length = 3.\n16 ÷ 3 = 5 remainder 1.\nRemainder 1 → the 1st colour in the unit, which is red.' },
+        { difficulty: 'Medium', question: 'A pattern repeats: circle, circle, triangle, square, circle, circle, triangle, square, …\n\nWhat is the 10th shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 4 (circle, circle, triangle, square).\n10 ÷ 4 = 2 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is circle.' },
+        { difficulty: 'Medium', question: 'A pattern repeats: circle, circle, triangle, square, circle, circle, triangle, square, …\n\nWhat is the 13th shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 4.\n13 ÷ 4 = 3 remainder 1.\nRemainder 1 → the 1st shape in the unit, which is circle.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: circle, circle, triangle, square, circle, circle, triangle, square, …\n\nWhat is the 18th shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 4.\n18 ÷ 4 = 4 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is circle.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: circle, circle, triangle, square, circle, circle, triangle, square, …\n\nWhat is the 22nd shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 4.\n22 ÷ 4 = 5 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is circle.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: star, star, moon, sun, cloud, star, star, moon, sun, cloud, …\n\nWhat is the 12th shape?', answer: 'Star', checkMode: 'auto', correctAnswer: 'Star', correctAnswers: ['Star', 'star'], explanation: 'Unit length = 5 (star, star, moon, sun, cloud).\n12 ÷ 5 = 2 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is star.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: star, star, moon, sun, cloud, star, star, moon, sun, cloud, …\n\nWhat is the 17th shape?', answer: 'Star', checkMode: 'auto', correctAnswer: 'Star', correctAnswers: ['Star', 'star'], explanation: 'Unit length = 5.\n17 ÷ 5 = 3 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is star.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: star, star, moon, sun, cloud, star, star, moon, sun, cloud, …\n\nWhat is the 23rd shape?', answer: 'Moon', checkMode: 'auto', correctAnswer: 'Moon', correctAnswers: ['Moon', 'moon'], explanation: 'Unit length = 5.\n23 ÷ 5 = 4 remainder 3.\nRemainder 3 → the 3rd shape in the unit, which is moon.' },
+        { difficulty: 'Easy', question: 'A pattern of flags repeats: red, yellow, red, yellow, red, yellow, …\n\nWhat colour is the 15th flag?', answer: 'Red', checkMode: 'auto', correctAnswer: 'Red', correctAnswers: ['Red', 'red'], explanation: 'Unit length = 2 (red, yellow).\n15 ÷ 2 = 7 remainder 1.\nRemainder 1 → the 1st colour in the unit, which is red.' },
+        { difficulty: 'Easy', question: 'A pattern of flags repeats: red, yellow, red, yellow, red, yellow, …\n\nWhat colour is the 20th flag?', answer: 'Yellow', checkMode: 'auto', correctAnswer: 'Yellow', correctAnswers: ['Yellow', 'yellow'], explanation: 'Unit length = 2.\n20 ÷ 2 = 10 remainder 0.\nRemainder 0 → the last colour in the unit, which is yellow.' },
+        { difficulty: 'Medium', question: 'A pattern repeats: triangle, triangle, square, triangle, triangle, square, …\n\nWhat is the 19th shape?', answer: 'Triangle', checkMode: 'auto', correctAnswer: 'Triangle', correctAnswers: ['Triangle', 'triangle'], explanation: 'Unit length = 3 (triangle, triangle, square).\n19 ÷ 3 = 6 remainder 1.\nRemainder 1 → the 1st shape in the unit, which is triangle.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: triangle, triangle, square, triangle, triangle, square, …\n\nWhat is the 25th shape?', answer: 'Triangle', checkMode: 'auto', correctAnswer: 'Triangle', correctAnswers: ['Triangle', 'triangle'], explanation: 'Unit length = 3.\n25 ÷ 3 = 8 remainder 1.\nRemainder 1 → the 1st shape in the unit, which is triangle.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: circle, square, triangle, star, circle, square, triangle, star, …\n\nWhat is the 30th shape?', answer: 'Square', checkMode: 'auto', correctAnswer: 'Square', correctAnswers: ['Square', 'square'], explanation: 'Unit length = 4 (circle, square, triangle, star).\n30 ÷ 4 = 7 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is square.' },
+        { difficulty: 'Medium', question: 'A pattern of ribbons repeats: blue, green, yellow, blue, green, yellow, …\n\nWhat colour is the 27th ribbon?', answer: 'Yellow', checkMode: 'auto', correctAnswer: 'Yellow', correctAnswers: ['Yellow', 'yellow'], explanation: 'Unit length = 3 (blue, green, yellow).\n27 ÷ 3 = 9 remainder 0.\nRemainder 0 → the last colour in the unit, which is yellow.' },
+        { difficulty: 'Medium', question: 'A pattern of ribbons repeats: blue, green, yellow, blue, green, yellow, …\n\nWhat colour is the 21st ribbon?', answer: 'Yellow', checkMode: 'auto', correctAnswer: 'Yellow', correctAnswers: ['Yellow', 'yellow'], explanation: 'Unit length = 3.\n21 ÷ 3 = 7 remainder 0.\nRemainder 0 → the last colour in the unit, which is yellow.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: square, circle, circle, triangle, square, circle, circle, triangle, …\n\nWhat is the 24th shape?', answer: 'Triangle', checkMode: 'auto', correctAnswer: 'Triangle', correctAnswers: ['Triangle', 'triangle'], explanation: 'Unit length = 4 (square, circle, circle, triangle).\n24 ÷ 4 = 6 remainder 0.\nRemainder 0 → the last shape in the unit, which is triangle.' },
+        { difficulty: 'Easy-Medium', question: 'A pattern repeats: circle, square, triangle, star, moon, circle, square, triangle, star, moon, …\n\nWhat is the 5th shape?', answer: 'Moon', checkMode: 'auto', correctAnswer: 'Moon', correctAnswers: ['Moon', 'moon'], explanation: 'Unit length = 5 (circle, square, triangle, star, moon).\n5 ÷ 5 = 1 remainder 0.\nRemainder 0 → the last shape in the unit, which is moon.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You have mastered spotting shapes in a repeating pattern.' },
+        { minScore: 19, message: 'Great work! You are confident finding the nth shape in a pattern — review any missed questions.' },
+        { minScore: 13, message: 'Good effort! Go back over dividing by the unit length and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 — GROWING AND SHRINKING PATTERNS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A pattern starts with 1 triangle and adds 3 triangles each time.\n\n' +
-        'a) How many triangles are in the 5th term?\n' +
-        'b) How many triangles are in the 8th term?\n' +
-        'c) Which term has 22 triangles?',
-      answer: 'a) 13    b) 22    c) 8th term',
-      parts: [
-        {
-          label: 'a) How many triangles in the 5th term?',
-          correctAnswer: '13',
-          explanation:
-            'Term 1 = 1 triangle. Add 3 each time:\n' +
-            'Term 2 = 1 + 3 = 4\n' +
-            'Term 3 = 4 + 3 = 7\n' +
-            'Term 4 = 7 + 3 = 10\n' +
-            'Term 5 = 10 + 3 = 13',
-        },
-        {
-          label: 'b) How many triangles in the 8th term?',
-          correctAnswer: '22',
-          explanation:
-            'Continue the pattern from Term 5 (13):\n' +
-            'Term 6 = 13 + 3 = 16\n' +
-            'Term 7 = 16 + 3 = 19\n' +
-            'Term 8 = 19 + 3 = 22',
-        },
-        {
-          label: 'c) Which term has 22 triangles?',
-          correctAnswer: '8th term',
-          correctAnswers: ['8th term', '8', 'term 8', 'eighth', 'eighth term'],
-          explanation:
-            'From part b) we found Term 8 = 22 triangles.\n' +
-            'You can also use the formula: Term n = 1 + (n − 1) × 3\n' +
-            '22 = 1 + (n − 1) × 3  →  21 = (n − 1) × 3  →  n − 1 = 7  →  n = 8',
-        },
+      name: 'Set 2: Growing and Shrinking Patterns',
+      questions: [
+        { difficulty: 'Easy', question: 'A growing pattern uses 1 dot in step 1, 3 dots in step 2, 5 dots in step 3, 7 dots in step 4, …\n\nFollowing this rule, how many dots are in step 6?', answer: '11', checkMode: 'auto', correctAnswer: '11', correctAnswers: ['11', '11 dots'], explanation: 'The rule is add 2 dots each time.\nStep 4 = 7, Step 5 = 7 + 2 = 9, Step 6 = 9 + 2 = 11 dots.' },
+        { difficulty: 'Easy', question: 'A growing pattern uses 2 squares in step 1, 4 squares in step 2, 6 squares in step 3, 8 squares in step 4, …\n\nHow many squares are in step 7?', answer: '14', checkMode: 'auto', correctAnswer: '14', correctAnswers: ['14', '14 squares'], explanation: 'The rule is add 2 squares each time.\nStep 4 = 8, Step 5 = 10, Step 6 = 12, Step 7 = 14 squares.' },
+        { difficulty: 'Easy', question: 'A growing pattern uses 3 triangles in step 1, 6 triangles in step 2, 9 triangles in step 3, …\n\nHow many triangles are in step 5?', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15 triangles'], explanation: 'The rule is add 3 triangles each time.\nStep 3 = 9, Step 4 = 12, Step 5 = 15 triangles.' },
+        { difficulty: 'Easy', question: 'A growing pattern uses 2 circles in step 1, 5 circles in step 2, 8 circles in step 3, …\n\nHow many circles are in step 6?', answer: '17', checkMode: 'auto', correctAnswer: '17', correctAnswers: ['17', '17 circles'], explanation: 'The rule is add 3 circles each time.\nStep 3 = 8, Step 4 = 11, Step 5 = 14, Step 6 = 17 circles.' },
+        { difficulty: 'Medium', question: 'A staircase pattern has 1 square in row 1, 2 squares in row 2, 3 squares in row 3, and so on.\n\nHow many squares are there in total after 6 rows?', answer: '21', checkMode: 'auto', correctAnswer: '21', correctAnswers: ['21', '21 squares'], explanation: 'Add up all the rows from 1 to 6:\n1 + 2 + 3 + 4 + 5 + 6 = 21 squares.' },
+        { difficulty: 'Medium', question: 'A staircase pattern has 1 square in row 1, 2 squares in row 2, 3 squares in row 3, and so on.\n\nHow many squares are there in total after 7 rows?', answer: '28', checkMode: 'auto', correctAnswer: '28', correctAnswers: ['28', '28 squares'], explanation: 'Add up all the rows from 1 to 7:\n1 + 2 + 3 + 4 + 5 + 6 + 7 = 28 squares.' },
+        { difficulty: 'Easy', question: 'A growing pattern uses 4 stars in step 1, 8 stars in step 2, 12 stars in step 3, …\n\nHow many stars are in step 5?', answer: '20', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20 stars'], explanation: 'The rule is add 4 stars each time.\nStep 3 = 12, Step 4 = 16, Step 5 = 20 stars.' },
+        { difficulty: 'Medium', question: 'A growing pattern uses 5 tiles in step 1, 10 tiles in step 2, 15 tiles in step 3, …\n\nHow many tiles are in step 6?', answer: '30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30 tiles'], explanation: 'The rule is add 5 tiles each time.\nStep 3 = 15, Step 4 = 20, Step 5 = 25, Step 6 = 30 tiles.' },
+        { difficulty: 'Medium', question: 'A shrinking pattern uses 20 counters in step 1, 17 counters in step 2, 14 counters in step 3, …\n\nHow many counters are in step 5?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 counters'], explanation: 'The rule is subtract 3 counters each time.\nStep 3 = 14, Step 4 = 11, Step 5 = 8 counters.' },
+        { difficulty: 'Medium', question: 'A shrinking pattern uses 30 blocks in step 1, 25 blocks in step 2, 20 blocks in step 3, …\n\nHow many blocks are in step 6?', answer: '5', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 blocks'], explanation: 'The rule is subtract 5 blocks each time.\nStep 3 = 20, Step 4 = 15, Step 5 = 10, Step 6 = 5 blocks.' },
+        { difficulty: 'Medium', question: 'A growing pattern uses 1 shape in step 1, 4 shapes in step 2, 7 shapes in step 3, 10 shapes in step 4, …\n\nWhich step has 22 shapes?', answer: 'Step 8', checkMode: 'auto', correctAnswer: 'Step 8', correctAnswers: ['Step 8', 'step 8', '8', 'eighth', '8th', '8th step'], explanation: 'The rule is add 3 shapes each time.\nStep 4 = 10, Step 5 = 13, Step 6 = 16, Step 7 = 19, Step 8 = 22 shapes. ✓' },
+        { difficulty: 'Medium', question: 'A growing pattern uses 2 shapes in step 1, 6 shapes in step 2, 10 shapes in step 3, 14 shapes in step 4, …\n\nWhich step has 26 shapes?', answer: 'Step 7', checkMode: 'auto', correctAnswer: 'Step 7', correctAnswers: ['Step 7', 'step 7', '7', 'seventh', '7th', '7th step'], explanation: 'The rule is add 4 shapes each time.\nStep 4 = 14, Step 5 = 18, Step 6 = 22, Step 7 = 26 shapes. ✓' },
+        { difficulty: 'Hard', question: 'A staircase pattern has 1 square in row 1, 2 squares in row 2, 3 squares in row 3, and so on.\n\nHow many squares are there in total after 8 rows?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 squares'], explanation: 'Add up all the rows from 1 to 8:\n1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36 squares.' },
+        { difficulty: 'Hard', question: 'A staircase pattern has 1 square in row 1, 2 squares in row 2, 3 squares in row 3, and so on.\n\nHow many squares are there in total after 9 rows?', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45', '45 squares'], explanation: 'Add up all the rows from 1 to 9:\n1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45 squares.' },
+        { difficulty: 'Medium', question: 'A growing pattern uses 3 shapes in step 1, 7 shapes in step 2, 11 shapes in step 3, …\n\nHow many shapes are in step 7?', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27', '27 shapes'], explanation: 'The rule is add 4 shapes each time.\nStep 3 = 11, Step 4 = 15, Step 5 = 19, Step 6 = 23, Step 7 = 27 shapes.' },
+        { difficulty: 'Hard', question: 'A growing pattern uses 6 shapes in step 1, 11 shapes in step 2, 16 shapes in step 3, …\n\nHow many shapes are in step 8?', answer: '41', checkMode: 'auto', correctAnswer: '41', correctAnswers: ['41', '41 shapes'], explanation: 'The rule is add 5 shapes each time.\nStep 3 = 16, Step 4 = 21, Step 5 = 26, Step 6 = 31, Step 7 = 36, Step 8 = 41 shapes.' },
+        { difficulty: 'Hard', question: 'A growing pattern uses 1 shape in step 1, 4 shapes in step 2, 7 shapes in step 3, …\n\nHow many shapes are in step 9?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 shapes'], explanation: 'The rule is add 3 shapes each time.\nStep 3 = 7, Step 4 = 10, Step 5 = 13, Step 6 = 16, Step 7 = 19, Step 8 = 22, Step 9 = 25 shapes.' },
+        { difficulty: 'Medium', question: 'A doubling pattern uses 2 dots in step 1, 4 dots in step 2, 8 dots in step 3, 16 dots in step 4, …\n\nHow many dots are in step 5?', answer: '32', checkMode: 'auto', correctAnswer: '32', correctAnswers: ['32', '32 dots'], explanation: 'The rule is double the number of dots each time.\nStep 4 = 16, Step 5 = 16 × 2 = 32 dots.' },
+        { difficulty: 'Hard', question: 'A doubling pattern uses 2 dots in step 1, 4 dots in step 2, 8 dots in step 3, 16 dots in step 4, 32 dots in step 5, …\n\nHow many dots are in step 6?', answer: '64', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64', '64 dots'], explanation: 'The rule is double the number of dots each time.\nStep 5 = 32, Step 6 = 32 × 2 = 64 dots.' },
+        { difficulty: 'Hard', question: 'A staircase pattern has 1 square in row 1, 2 squares in row 2, 3 squares in row 3, and so on.\n\nHow many squares are there in total after 10 rows?', answer: '55', checkMode: 'auto', correctAnswer: '55', correctAnswers: ['55', '55 squares'], explanation: 'Add up all the rows from 1 to 10:\n1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55 squares.' },
+        { difficulty: 'Hard', question: 'A growing pattern uses 5 shapes in step 1, 9 shapes in step 2, 13 shapes in step 3, …\n\nWhich step has 33 shapes?', answer: 'Step 8', checkMode: 'auto', correctAnswer: 'Step 8', correctAnswers: ['Step 8', 'step 8', '8', 'eighth', '8th', '8th step'], explanation: 'The rule is add 4 shapes each time.\nStep 3 = 13, Step 4 = 17, Step 5 = 21, Step 6 = 25, Step 7 = 29, Step 8 = 33 shapes. ✓' },
+        { difficulty: 'Medium', question: 'A shrinking pattern uses 24 beads in step 1, 20 beads in step 2, 16 beads in step 3, …\n\nHow many beads are in step 6?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 beads'], explanation: 'The rule is subtract 4 beads each time.\nStep 3 = 16, Step 4 = 12, Step 5 = 8, Step 6 = 4 beads.' },
+        { difficulty: 'Medium', question: 'A shrinking pattern uses 40 counters in step 1, 35 counters in step 2, 30 counters in step 3, …\n\nHow many counters are in step 7?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 counters'], explanation: 'The rule is subtract 5 counters each time.\nStep 3 = 30, Step 4 = 25, Step 5 = 20, Step 6 = 15, Step 7 = 10 counters.' },
+        { difficulty: 'Hard', question: 'A growing pattern uses 2 shapes in step 1, 7 shapes in step 2, 12 shapes in step 3, …\n\nWhich step has 47 shapes?', answer: 'Step 10', checkMode: 'auto', correctAnswer: 'Step 10', correctAnswers: ['Step 10', 'step 10', '10', 'tenth', '10th', '10th step'], explanation: 'The rule is add 5 shapes each time.\nStep 3 = 12, Step 4 = 17, Step 5 = 22, Step 6 = 27, Step 7 = 32, Step 8 = 37, Step 9 = 42, Step 10 = 47 shapes. ✓' },
+        { difficulty: 'Hard', question: 'A staircase pattern has 1 square in row 1, 2 squares in row 2, 3 squares in row 3, and so on.\n\nHow many squares are there in total after 12 rows?', answer: '78', checkMode: 'auto', correctAnswer: '78', correctAnswers: ['78', '78 squares'], explanation: 'Add up all the rows from 1 to 12:\n1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 = 78 squares.' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You have mastered growing and shrinking patterns.' },
+        { minScore: 19, message: 'Great work! You can confidently find the rule and apply it — review any missed questions.' },
+        { minScore: 13, message: 'Good effort! Practise finding the difference between steps and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
 
-    // ── SECTION 2: EXTENDING GEOMETRIC PATTERNS ──────────────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 — TESSELLATION AND REAL-WORLD PATTERN PROBLEMS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'A pattern shows: 2 squares, 4 squares, 6 squares, 8 squares.\n\nHow many squares are in the next term?',
-      answer: '10',
-      correctAnswer: '10',
-      correctAnswers: ['10', '10 squares'],
-      explanation:
-        'Find the rule: 4 − 2 = 2, 6 − 4 = 2, 8 − 6 = 2.\n' +
-        'Rule: add 2 squares each time.\n' +
-        'Next term = 8 + 2 = 10 squares.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'A staircase pattern has 1 square in row 1, 2 squares in row 2, 3 squares in row 3, and so on.\n\n' +
-        'a) How many squares are in row 6?\n' +
-        'b) How many squares are there in total after 5 rows?',
-      answer: 'a) 6    b) 15',
-      parts: [
-        {
-          label: 'a) How many squares in row 6?',
-          correctAnswer: '6',
-          correctAnswers: ['6', '6 squares'],
-          explanation:
-            'The rule is: the row number equals the number of squares in that row.\n' +
-            'Row 1 = 1,  Row 2 = 2,  Row 3 = 3 …\n' +
-            'Row 6 = 6 squares.',
-        },
-        {
-          label: 'b) Total squares after 5 rows?',
-          correctAnswer: '15',
-          correctAnswers: ['15', '15 squares'],
-          explanation:
-            'Add up all rows from 1 to 5:\n' +
-            '1 + 2 + 3 + 4 + 5 = 15 squares.',
-        },
+      name: 'Set 3: Tessellation and Real-World Patterns',
+      questions: [
+        { difficulty: 'Easy', question: 'Does a square tessellate? Write yes or no.', answer: 'Yes', checkMode: 'auto', correctAnswer: 'Yes', correctAnswers: ['Yes', 'yes'], explanation: 'Squares have straight edges that fit together with no gaps and no overlaps. Yes, squares tessellate.' },
+        { difficulty: 'Easy', question: 'Does a circle tessellate? Write yes or no.', answer: 'No', checkMode: 'auto', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: 'Circles have curved edges that always leave gaps when placed next to each other. No, circles do not tessellate.' },
+        { difficulty: 'Easy', question: 'Does an equilateral triangle tessellate? Write yes or no.', answer: 'Yes', checkMode: 'auto', correctAnswer: 'Yes', correctAnswers: ['Yes', 'yes'], explanation: 'Triangles have straight edges that fit together with no gaps. Yes, triangles tessellate.' },
+        { difficulty: 'Medium', question: 'Each angle of a square is 90°. How many squares meet at each point in a tessellating pattern?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 squares'], explanation: 'For tessellation, angles at a point must add up to 360°.\n360° ÷ 90° = 4 squares.' },
+        { difficulty: 'Medium', question: 'Each angle of an equilateral triangle is 60°. How many triangles meet at each point in a tessellating pattern?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 triangles'], explanation: 'For tessellation, angles at a point must add up to 360°.\n360° ÷ 60° = 6 triangles.' },
+        { difficulty: 'Medium', question: 'Each angle of a regular hexagon is 120°. How many hexagons meet at each point in a tessellating pattern?', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3 hexagons'], explanation: 'For tessellation, angles at a point must add up to 360°.\n360° ÷ 120° = 3 hexagons.' },
+        { difficulty: 'Easy', question: 'A bathroom floor is tiled with square tiles in 4 rows of 5 tiles each. How many tiles are used in total?', answer: '20', checkMode: 'auto', correctAnswer: '20', correctAnswers: ['20', '20 tiles'], explanation: '4 rows × 5 tiles = 20 tiles.' },
+        { difficulty: 'Easy', question: 'A wall is tiled with square tiles in 6 rows of 7 tiles each. How many tiles are used in total?', answer: '42', checkMode: 'auto', correctAnswer: '42', correctAnswers: ['42', '42 tiles'], explanation: '6 rows × 7 tiles = 42 tiles.' },
+        { difficulty: 'Medium', question: 'A patio is paved with square paving stones in 8 rows of 9 stones each. How many paving stones are used in total?', answer: '72', checkMode: 'auto', correctAnswer: '72', correctAnswers: ['72', '72 paving stones', '72 stones'], explanation: '8 rows × 9 stones = 72 paving stones.' },
+        { difficulty: 'Medium', question: 'A kitchen floor is tiled with square tiles in 10 rows of 6 tiles each. How many tiles are used in total?', answer: '60', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60 tiles'], explanation: '10 rows × 6 tiles = 60 tiles.' },
+        { difficulty: 'Easy', question: 'A brick wall has bricks laid in 3 rows of 12 bricks each. How many bricks are used in total?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 bricks'], explanation: '3 rows × 12 bricks = 36 bricks.' },
+        { difficulty: 'Medium', question: 'A chessboard-style grid has 5 rows of 5 squares each. How many squares are there in total?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 squares'], explanation: '5 rows × 5 squares = 25 squares.' },
+        { difficulty: 'Medium', question: 'A honeycomb section has 7 rows of 8 hexagonal cells each. How many cells are there in total?', answer: '56', checkMode: 'auto', correctAnswer: '56', correctAnswers: ['56', '56 cells'], explanation: '7 rows × 8 cells = 56 cells.' },
+        { difficulty: 'Medium', question: 'A window has rectangular panes arranged in 9 rows of 4 panes each. How many panes are there in total?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 panes'], explanation: '9 rows × 4 panes = 36 panes.' },
+        { difficulty: 'Medium', question: 'A fence has posts arranged in 12 rows of 3 posts each. How many posts are there in total?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 posts'], explanation: '12 rows × 3 posts = 36 posts.' },
+        { difficulty: 'Easy', question: 'A beaded bracelet has beads that repeat: red, blue, green. If there are 18 beads in total and the pattern divides evenly, how many red beads are there?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 beads', '6 red beads'], explanation: 'Unit length = 3 (red, blue, green). 18 ÷ 3 = 6 complete units, so there are 6 red beads.' },
+        { difficulty: 'Medium', question: 'A beaded necklace has beads that repeat: circle, circle, square, triangle (unit length 4). If there are 24 beads in total and the pattern divides evenly, how many complete units are there?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 units'], explanation: 'Unit length = 4. 24 ÷ 4 = 6 complete units.' },
+        { difficulty: 'Hard', question: 'Lerato is tiling a floor with regular hexagon tiles. Each hexagon has an interior angle of 120°. Do the hexagons tessellate? Write yes or no.', answer: 'Yes', checkMode: 'auto', correctAnswer: 'Yes', correctAnswers: ['Yes', 'yes'], explanation: '360° ÷ 120° = 3 (a whole number), so hexagons fit perfectly around every point. Yes, they tessellate.' },
+        { difficulty: 'Hard', question: 'Amahle is tiling a floor with regular pentagon tiles. Each pentagon has an interior angle of 108°. Do the pentagons tessellate on their own? Write yes or no.', answer: 'No', checkMode: 'auto', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: '360° ÷ 108° = 3.33…, which is not a whole number, so pentagons leave gaps and do not tessellate on their own.' },
+        { difficulty: 'Medium', question: 'A Ndebele wall painting uses a repeating pattern of 4 colours around a border. If the border has 32 shapes and the pattern divides evenly, how many shapes are there of each colour?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 shapes'], explanation: 'Unit length = 4 colours. 32 ÷ 4 = 8 shapes of each colour.' },
+        { difficulty: 'Easy', question: 'Thabo sees floor tiles arranged in 6 rows of 6 tiles. How many tiles are on the floor in total?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 tiles'], explanation: '6 rows × 6 tiles = 36 tiles.' },
+        { difficulty: 'Medium', question: 'Sipho is building a brick path using a repeating pattern of 3 colours of brick. If the path has 27 bricks and the pattern divides evenly, how many bricks are there of each colour?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9 bricks'], explanation: 'Unit length = 3 colours. 27 ÷ 3 = 9 bricks of each colour.' },
+        { difficulty: 'Hard', question: 'A tiler wants to use regular octagons (interior angle 135°) to tile a floor by themselves. Will regular octagons tessellate on their own? Write yes or no.', answer: 'No', checkMode: 'auto', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: '360° ÷ 135° = 2.67…, which is not a whole number, so regular octagons leave gaps and cannot tessellate on their own.' },
+        { difficulty: 'Medium', question: 'Why does a rectangle tessellate but a circle does not? Give one reason.', answer: 'A rectangle has straight edges that fit flush against each other with no gaps, while a circle has curved edges that always leave gaps when placed next to each other.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Explain why the angles around a meeting point must add up to exactly 360° for a shape to tessellate.', answer: '360° is a full turn all the way around a single point. If the angles of the shapes meeting at that point add up to exactly 360°, they fill all the space around the point with nothing left over — no gaps and no overlaps. If they add up to less than 360°, there are gaps; if more, the shapes overlap.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You have mastered tessellation and real-world pattern problems.' },
+        { minScore: 19, message: 'Great work! You understand tessellating shapes and pattern word problems — review any missed questions.' },
+        { minScore: 13, message: 'Good effort! Revisit the tessellation worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — MULTI-STEP, COMBINED AND SELF-CHECK QUESTIONS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A pattern of squares grows as follows:\n' +
-        'Term 1: 3 squares,  Term 2: 5 squares,  Term 3: 7 squares, …\n\n' +
-        'a) What is the rule?\n' +
-        'b) How many squares are in term 6?\n' +
-        'c) Which term has 19 squares?',
-      answer: 'a) Add 2 each time    b) 13    c) Term 9',
-      parts: [
-        {
-          label: 'a) What is the rule?',
-          correctAnswer: 'Add 2 each time',
-          correctAnswers: [
-            'Add 2 each time', 'add 2 each time',
-            'Add 2', 'add 2', '+2', 'plus 2', 'plus2',
-          ],
-          explanation:
-            'Find the difference between consecutive terms:\n' +
-            '5 − 3 = 2,  7 − 5 = 2\n' +
-            'Rule: add 2 each time.',
-        },
-        {
-          label: 'b) How many squares in term 6?',
-          correctAnswer: '13',
-          correctAnswers: ['13', '13 squares'],
-          explanation:
-            'Continue from Term 3 (7 squares), adding 2 each time:\n' +
-            'Term 4 = 7 + 2 = 9\n' +
-            'Term 5 = 9 + 2 = 11\n' +
-            'Term 6 = 11 + 2 = 13 squares.',
-        },
-        {
-          label: 'c) Which term has 19 squares?',
-          correctAnswer: 'Term 9',
-          correctAnswers: ['Term 9', 'term 9', '9', 'ninth', '9th term', 'term9'],
-          explanation:
-            'Continue the pattern:\n' +
-            'Term 7 = 13 + 2 = 15\n' +
-            'Term 8 = 15 + 2 = 17\n' +
-            'Term 9 = 17 + 2 = 19 ✓',
-        },
+      name: 'Set 4: Multi-Step and Combined Problems',
+      questions: [
+        { difficulty: 'Easy', question: 'Is this pattern repeating or growing?\n\ncircle, square, circle, square, circle, square', answer: 'Repeating', checkMode: 'auto', correctAnswer: 'Repeating', correctAnswers: ['Repeating', 'repeating'], explanation: 'The same group — circle, square — comes back over and over without changing in number. This is a repeating pattern.' },
+        { difficulty: 'Easy', question: 'Is this pattern repeating or growing?\n\n2 dots, 5 dots, 8 dots, 11 dots', answer: 'Growing', checkMode: 'auto', correctAnswer: 'Growing', correctAnswers: ['Growing', 'growing'], explanation: 'The number of dots increases each time: 2, 5, 8, 11. This is a growing pattern.' },
+        { difficulty: 'Medium', question: 'A pattern repeats: circle, square, triangle, star (unit length 4).\n\nWhat is the 27th shape?', answer: 'Triangle', checkMode: 'auto', correctAnswer: 'Triangle', correctAnswers: ['Triangle', 'triangle'], explanation: 'Unit length = 4.\n27 ÷ 4 = 6 remainder 3.\nRemainder 3 → the 3rd shape in the unit, which is triangle.' },
+        { difficulty: 'Medium', question: 'A staircase pattern has 1 square in row 1, 2 squares in row 2, and so on. How many squares are there in total after 15 rows?', answer: '120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120', '120 squares'], explanation: 'Add up all the rows from 1 to 15:\n1 + 2 + 3 + … + 15 = 120 squares.' },
+        { difficulty: 'Medium', question: 'A growing pattern uses 4 shapes in step 1, 9 shapes in step 2, 14 shapes in step 3, …\n\nWhich step has 49 shapes?', answer: 'Step 10', checkMode: 'auto', correctAnswer: 'Step 10', correctAnswers: ['Step 10', 'step 10', '10', 'tenth', '10th', '10th step'], explanation: 'The rule is add 5 shapes each time.\nStep 3 = 14, Step 4 = 19, Step 5 = 24, Step 6 = 29, Step 7 = 34, Step 8 = 39, Step 9 = 44, Step 10 = 49 shapes. ✓' },
+        { difficulty: 'Medium', question: 'A growing pattern uses 3 triangles in step 1, 6 triangles in step 2, 9 triangles in step 3, …\n\nHow many triangles are in step 12?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 triangles'], explanation: 'The rule is add 3 triangles each time, so step n = 3 × n.\nStep 12 = 3 × 12 = 36 triangles.' },
+        { difficulty: 'Medium', question: 'A pattern repeats: star, star, moon, sun, cloud (unit length 5).\n\nWhat is the 33rd shape?', answer: 'Moon', checkMode: 'auto', correctAnswer: 'Moon', correctAnswers: ['Moon', 'moon'], explanation: 'Unit length = 5.\n33 ÷ 5 = 6 remainder 3.\nRemainder 3 → the 3rd shape in the unit, which is moon.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: circle, square, triangle (unit length 3).\n\nWhat is the 100th shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 3.\n100 ÷ 3 = 33 remainder 1.\nRemainder 1 → the 1st shape in the unit, which is circle.' },
+        { difficulty: 'Hard', question: 'A pattern repeats: circle, circle, triangle, square (unit length 4).\n\nWhat is the 50th shape?', answer: 'Circle', checkMode: 'auto', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: 'Unit length = 4.\n50 ÷ 4 = 12 remainder 2.\nRemainder 2 → the 2nd shape in the unit, which is circle.' },
+        { difficulty: 'Medium', question: 'A doubling pattern uses 3 dots in step 1, 6 dots in step 2, 12 dots in step 3, 24 dots in step 4, …\n\nHow many dots are in step 5?', answer: '48', checkMode: 'auto', correctAnswer: '48', correctAnswers: ['48', '48 dots'], explanation: 'The rule is double the number of dots each time.\nStep 4 = 24, Step 5 = 24 × 2 = 48 dots.' },
+        { difficulty: 'Hard', question: 'A growing pattern uses 2 shapes in step 1, 6 shapes in step 2, 10 shapes in step 3, …\n\nWhich step has 50 shapes?', answer: 'Step 13', checkMode: 'auto', correctAnswer: 'Step 13', correctAnswers: ['Step 13', 'step 13', '13', 'thirteenth', '13th', '13th step'], explanation: 'The rule is add 4 shapes each time.\nStep 3 = 10, Step 4 = 14, Step 5 = 18, Step 6 = 22, Step 7 = 26, Step 8 = 30, Step 9 = 34, Step 10 = 38, Step 11 = 42, Step 12 = 46, Step 13 = 50 shapes. ✓' },
+        { difficulty: 'Easy', question: 'Does a rectangle tessellate? Write yes or no.', answer: 'Yes', checkMode: 'auto', correctAnswer: 'Yes', correctAnswers: ['Yes', 'yes'], explanation: 'Rectangles have straight edges that fit together with no gaps. Yes, rectangles tessellate.' },
+        { difficulty: 'Medium', question: 'A pattern shows: 5 shapes, 5 shapes, 5 shapes, 5 shapes, …\n\nIs this a repeating pattern, a growing pattern, or neither? Explain your answer.', answer: 'Neither — the number of shapes stays exactly the same every time (5, 5, 5, 5), so it is not growing. It is also not a repeating pattern in the usual sense because there is only one term that repeats, rather than a sequence of different shapes cycling through a unit.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Describe, in your own words, the rule for this pattern: 1 square, 4 squares, 7 squares, 10 squares, …', answer: 'The rule is: start with 1 square and add 3 squares each time to get the next term.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A pattern repeats: red, red, blue, red, red, blue, …\n\nIs this pattern repeating or growing? What is the unit length?', answer: 'a) Repeating    b) Unit length 3', parts: [ { label: 'a) Repeating or growing?', correctAnswer: 'Repeating', correctAnswers: ['Repeating', 'repeating'], explanation: 'The same group of colours (red, red, blue) comes back over and over without changing in number.' }, { label: 'b) What is the unit length?', correctAnswer: '3', correctAnswers: ['3', 'three'], explanation: 'The repeating group is red, red, blue — 3 colours per unit.' } ], checkMode: 'auto' },
+        { difficulty: 'Hard', question: 'A growing pattern and a repeating pattern both start with 2 shapes. After 4 steps, which type of pattern usually has more shapes — growing or repeating? Explain why.', answer: 'A growing pattern usually has more shapes after several steps, because it keeps adding more shapes each time. A repeating pattern keeps the same small group of shapes cycling, so the amount used in each cycle does not increase — only the position in the pattern changes.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Explain the difference between a repeating pattern and a growing pattern, and give one real-life example of each.', answer: 'A repeating pattern uses the same sequence of shapes, colours or objects over and over without changing in number — for example, tiles on a floor arranged in the same colour order again and again. A growing pattern increases in number or size at each step — for example, a staircase where each step has one more brick than the step before it.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A pattern repeats: yellow, green, yellow, green, yellow, green, …\n\na) What is the unit length?\nb) What colour is the 13th shape?', answer: 'a) 2    b) Yellow', parts: [ { label: 'a) What is the unit length?', correctAnswer: '2', correctAnswers: ['2', 'two'], explanation: 'The repeating group is yellow, green — 2 colours per unit.' }, { label: 'b) What colour is the 13th shape?', correctAnswer: 'Yellow', correctAnswers: ['Yellow', 'yellow'], explanation: 'Unit length = 2. 13 ÷ 2 = 6 remainder 1. Remainder 1 → the 1st colour, which is yellow.' } ], checkMode: 'auto' },
+        { difficulty: 'Medium', question: 'A growing pattern uses 2 shapes in step 1 and adds 4 shapes each time.\n\na) How many shapes are in step 4?\nb) How many shapes are in step 6?', answer: 'a) 14    b) 22', parts: [ { label: 'a) How many shapes in step 4?', correctAnswer: '14', correctAnswers: ['14', '14 shapes'], explanation: 'Step 1 = 2. Step 2 = 6. Step 3 = 10. Step 4 = 14 shapes.' }, { label: 'b) How many shapes in step 6?', correctAnswer: '22', correctAnswers: ['22', '22 shapes'], explanation: 'Continue from Step 4 (14): Step 5 = 18. Step 6 = 22 shapes.' } ], checkMode: 'auto' },
+        { difficulty: 'Hard', question: 'Design a repeating pattern using 3 different shapes. Write the rule and the first 9 terms.', answer: 'Any valid repeating pattern using 3 different shapes is correct.\n\nChecklist:\n• Uses exactly 3 different shapes\n• The same sequence repeats exactly\n• The first 9 terms are written (3 full repeats of the unit)\n• The rule is clearly stated\n\nExample: circle, square, triangle, circle, square, triangle, circle, square, triangle\nRule: repeat circle, square, triangle over and over.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A pattern repeats: circle, square, triangle, circle, square, triangle, …\n\na) What is the unit length?\nb) What is the 40th shape?\nc) Is a triangle used at position 40? Explain.', answer: 'a) 3    b) circle    c) No', parts: [ { label: 'a) What is the unit length?', correctAnswer: '3', correctAnswers: ['3', 'three'], explanation: 'The repeating group is circle, square, triangle — 3 shapes per unit.' }, { label: 'b) What is the 40th shape?', correctAnswer: 'Circle', correctAnswers: ['Circle', 'circle'], explanation: '40 ÷ 3 = 13 remainder 1. Remainder 1 → the 1st shape, which is circle.' }, { label: 'c) Is a triangle used at position 40? Explain.', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: 'The 40th shape is circle, not triangle, because the remainder is 1 (not 0), so position 40 lands on the 1st shape in the unit.' } ], checkMode: 'auto' },
+        { difficulty: 'Medium', question: 'Look at this growing pattern: 1 square, 3 squares, 6 squares, 10 squares, …\n\nIs the rule "add the same number each time"? Explain your answer.', answer: 'No — the amount added is not the same each time. From 1 to 3 you add 2, from 3 to 6 you add 3, and from 6 to 10 you add 4. The amount being added itself increases by 1 each time, so this pattern grows faster than a simple "add the same number" pattern.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A pattern of coloured tiles repeats every 6 tiles: red, red, blue, blue, green, green.\n\nWhat colour is the 29th tile?', answer: 'Green', checkMode: 'auto', correctAnswer: 'Green', correctAnswers: ['Green', 'green'], explanation: 'Unit length = 6.\n29 ÷ 6 = 4 remainder 5.\nRemainder 5 → the 5th item in the unit (red, red, blue, blue, green, green), which is green.' },
+        { difficulty: 'Easy', question: 'A garden path uses paving stones in a growing pattern: 2 stones in row 1, 4 stones in row 2, 6 stones in row 3.\n\nHow many stones are in row 5?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 stones'], explanation: 'The rule is add 2 stones each time.\nRow 3 = 6, Row 4 = 8, Row 5 = 10 stones.' },
+        { difficulty: 'Medium', question: 'Look at this pattern: circle, square, circle, square, circle, square, …\n\nIs this pattern an example of tessellation, a repeating pattern, or both? Explain your answer.', answer: 'It is a repeating pattern because the same two shapes (circle, square) keep coming back in the same order. It is not necessarily an example of tessellation, because tessellation is about shapes fitting together with no gaps and no overlaps when tiling a surface — this pattern is just a sequence, and whether the shapes tessellate depends on whether circles and squares are actually being fitted together edge to edge (circles alone would not tessellate).', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: 'Outstanding! You have mastered multi-step and combined geometric pattern problems.' },
+        { minScore: 19, message: 'Great work! You can confidently combine ideas about patterns — review any missed questions.' },
+        { minScore: 13, message: 'Good effort! Revisit the multi-step worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
 
-    // ── SECTION 3: PATTERNS THAT CHANGE COLOUR OR SHAPE ──────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'A pattern goes: red, blue, red, blue, red, blue, …\n\nWhat colour is the 9th shape?',
-      answer: 'Red',
-      correctAnswer: 'Red',
-      correctAnswers: ['Red', 'red'],
-      explanation:
-        'The repeating unit is: red, blue — 2 colours per unit.\n' +
-        'Divide the position by the unit length: 9 ÷ 2 = 4 remainder 1.\n' +
-        'Remainder 1 → the 1st colour in the unit, which is red.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'A pattern goes: circle, square, triangle, circle, square, triangle, …\n\n' +
-        'a) What is the repeating unit?\n' +
-        'b) What is the 11th shape?\n' +
-        'c) What is the 20th shape?',
-      answer: 'a) circle, square, triangle    b) square    c) square',
-      parts: [
-        {
-          label: 'a) What is the repeating unit?',
-          correctAnswer: 'circlesquaretriangle',
-          correctAnswers: [
-            'circlesquaretriangle',
-            'circle square triangle',
-            'circle,square,triangle',
-          ],
-          explanation:
-            'The group that repeats is: circle, square, triangle — 3 shapes per unit.',
-        },
-        {
-          label: 'b) What is the 11th shape?',
-          correctAnswer: 'square',
-          correctAnswers: ['square', 'Square'],
-          explanation:
-            'Unit length = 3.\n' +
-            '11 ÷ 3 = 3 remainder 2.\n' +
-            'Remainder 2 → the 2nd shape in the unit.\n' +
-            'Unit: circle (1st), square (2nd), triangle (3rd).\n\n' +
-            'The 2nd shape is square.\n\n' +
-            'Verify by listing: 1-circle, 2-square, 3-triangle, 4-circle, 5-square, 6-triangle, 7-circle, 8-square, 9-triangle, 10-circle, 11-square ✓',
-        },
-        {
-          label: 'c) What is the 20th shape?',
-          correctAnswer: 'square',
-          correctAnswers: ['square', 'Square'],
-          explanation:
-            'Unit length = 3.\n' +
-            '20 ÷ 3 = 6 remainder 2.\n' +
-            'Remainder 2 → the 2nd shape in the unit = square.\n\n' +
-            'Verify: 18-triangle, 19-circle, 20-square ✓',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A colour pattern goes: red, red, blue, green, red, red, blue, green, …\n\n' +
-        'a) What is the repeating unit?\n' +
-        'b) What colour is the 15th shape?\n' +
-        'c) What colour is the 22nd shape?',
-      answer: 'a) red, red, blue, green    b) blue    c) red',
-      parts: [
-        {
-          label: 'a) What is the repeating unit?',
-          correctAnswer: 'redredbluegreen',
-          correctAnswers: [
-            'redredbluegreen',
-            'red red blue green',
-            'red,red,blue,green',
-          ],
-          explanation:
-            'The group that repeats is: red, red, blue, green — 4 colours per unit.',
-        },
-        {
-          label: 'b) What colour is the 15th shape?',
-          correctAnswer: 'blue',
-          correctAnswers: ['blue', 'Blue'],
-          explanation:
-            'Unit length = 4.\n' +
-            '15 ÷ 4 = 3 remainder 3.\n' +
-            'Remainder 3 → the 3rd colour in the unit.\n' +
-            'Unit: red (1st), red (2nd), blue (3rd), green (4th).\n\n' +
-            'The 3rd colour is blue.\n\n' +
-            'Verify: 12-green, 13-red, 14-red, 15-blue ✓',
-        },
-        {
-          label: 'c) What colour is the 22nd shape?',
-          correctAnswer: 'red',
-          correctAnswers: ['red', 'Red'],
-          explanation:
-            'Unit length = 4.\n' +
-            '22 ÷ 4 = 5 remainder 2.\n' +
-            'Remainder 2 → the 2nd colour in the unit = red.\n\n' +
-            'Verify: 20-green, 21-red, 22-red ✓',
-        },
-      ],
-    },
-
-    // ── SECTION 4: TESSELLATING PATTERNS ─────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'self',
-      question: 'Does a square tessellate? Write yes or no and give one reason.',
-      answer:
-        'Yes — squares tessellate.\n\n' +
-        'Reason: squares have straight edges that fit together perfectly with no gaps and no overlaps. The four 90° corners meet at every point, and 4 × 90° = 360°.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'self',
-      question:
-        'Name two shapes that tessellate and two shapes that do not tessellate.\n' +
-        'Explain why circles do not tessellate.',
-      answer:
-        'Shapes that tessellate: squares and triangles (also rectangles and regular hexagons).\n\n' +
-        'Shapes that do not tessellate: circles and regular pentagons.\n\n' +
-        'Why circles do not tessellate: circles have curved edges that cannot fit flush against each other. This always leaves gaps between the circles, so they cannot cover a surface completely.',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A bathroom floor is being tiled with regular hexagons. Each angle of a regular hexagon is 120°.\n\n' +
-        'a) How many hexagons meet at each point?\n' +
-        'b) Do the angles add up correctly for tessellation?\n' +
-        'c) Will the hexagons tessellate?',
-      answer: 'a) 3    b) Yes, 3 × 120° = 360°    c) Yes',
-      parts: [
-        {
-          label: 'a) How many hexagons meet at each point?',
-          correctAnswer: '3',
-          correctAnswers: ['3', 'three', '3 hexagons'],
-          explanation:
-            'For tessellation the angles at each meeting point must add up to 360°.\n' +
-            'Each angle = 120°.\n' +
-            '360° ÷ 120° = 3.\n' +
-            'So 3 hexagons meet at each point.',
-        },
-        {
-          label: 'b) Do the angles add up correctly for tessellation?',
-          correctAnswer: 'Yes',
-          correctAnswers: ['Yes', 'yes', 'yes 3x120=360', 'yes 3×120=360'],
-          explanation:
-            'Check: 3 × 120° = 360°.\n' +
-            '360° is exactly the full rotation around a point, so yes — the angles add up correctly.',
-        },
-        {
-          label: 'c) Will the hexagons tessellate?',
-          correctAnswer: 'Yes',
-          correctAnswers: ['Yes', 'yes'],
-          explanation:
-            'Because 3 hexagons fit perfectly around every meeting point (3 × 120° = 360°) with no gaps and no overlaps, regular hexagons tessellate. This is why honeycombs are made of hexagons!',
-        },
-      ],
-    },
-
-    // ── SECTION 5: GEOMETRIC PATTERNS IN REAL LIFE ───────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'self',
-      question: 'Name two places in real life where you can see a tessellating pattern.',
-      answer:
-        'Any two valid real-life examples are correct.\n\n' +
-        'Examples include:\n' +
-        '• Bathroom floor tiles\n' +
-        '• Brick walls\n' +
-        '• A honeycomb\n' +
-        '• A chessboard\n' +
-        '• Window panes\n' +
-        '• A paved footpath',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'self',
-      question:
-        'Look at a brick wall pattern. Answer the following:\n\n' +
-        'a) What shape are the bricks?\n' +
-        'b) Why is a brick wall considered a tessellating pattern?\n' +
-        'c) What would happen if the bricks were circles instead of rectangles?',
-      answer:
-        'a) The bricks are rectangles.\n\n' +
-        'b) A brick wall is a tessellating pattern because the bricks fit together with no gaps and no overlaps — they cover the surface completely.\n\n' +
-        'c) If the bricks were circles there would be gaps between them because circles have curved edges that cannot fit flush against each other. The wall would not hold together and would fall apart.',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Ndebele wall paintings use geometric patterns.\n\n' +
-        'a) Name two geometric shapes commonly used in these patterns.\n' +
-        'b) Why do you think geometric shapes are used rather than curved shapes?\n' +
-        'c) How is this an example of a tessellating pattern?',
-      answer:
-        'a) Any two valid geometric shapes are correct — for example: squares, rectangles, triangles, diamonds (rhombuses).\n\n' +
-        'b) Geometric shapes have straight edges that fit together easily without leaving gaps. They are also easier to paint neatly in rows and grids, and they create bold, clear patterns.\n\n' +
-        'c) The geometric shapes in Ndebele paintings fit together with straight edges that leave no gaps — this is what makes them tessellating patterns. The same arrangement of shapes repeats across the whole wall.',
-    },
-
-    // ── SECTION 6: CREATING YOUR OWN GEOMETRIC PATTERN ───────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'self',
-      question:
-        'Create a repeating pattern using two different shapes.\n\n' +
-        'Write the first 6 terms and state the rule.',
-      answer:
-        'Any valid repeating pattern using two shapes is correct.\n\n' +
-        'Checklist:\n' +
-        '• Uses at least two different shapes\n' +
-        '• The same sequence repeats exactly\n' +
-        '• At least 6 terms are written\n' +
-        '• The rule is clearly stated\n\n' +
-        'Example: circle, square, circle, square, circle, square\n' +
-        'Rule: repeat circle, square over and over.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Create a growing pattern starting with 2 shapes and adding 3 each time.\n\n' +
-        'a) Write the first 5 terms.\n' +
-        'b) What is the rule?\n' +
-        'c) How many shapes are in the 8th term?',
-      answer: 'a) 2, 5, 8, 11, 14    b) Add 3 each time    c) 23',
-      parts: [
-        {
-          label: 'a) Write the first 5 terms',
-          correctAnswer: '2,5,8,11,14',
-          correctAnswers: ['2,5,8,11,14', '2581114'],
-          explanation:
-            'Start at 2, add 3 each time:\n' +
-            'Term 1 = 2\n' +
-            'Term 2 = 2 + 3 = 5\n' +
-            'Term 3 = 5 + 3 = 8\n' +
-            'Term 4 = 8 + 3 = 11\n' +
-            'Term 5 = 11 + 3 = 14\n\n' +
-            'First 5 terms: 2, 5, 8, 11, 14',
-        },
-        {
-          label: 'b) What is the rule?',
-          correctAnswer: 'Add 3 each time',
-          correctAnswers: [
-            'Add 3 each time', 'add 3 each time',
-            'Add 3', 'add 3', '+3', 'plus 3', 'plus3',
-          ],
-          explanation:
-            'Find the difference between consecutive terms:\n' +
-            '5 − 2 = 3,  8 − 5 = 3,  11 − 8 = 3.\n' +
-            'Rule: add 3 each time.',
-        },
-        {
-          label: 'c) How many shapes are in the 8th term?',
-          correctAnswer: '23',
-          correctAnswers: ['23', '23 shapes'],
-          explanation:
-            'Continue from Term 5 (14), adding 3 each time:\n' +
-            'Term 6 = 14 + 3 = 17\n' +
-            'Term 7 = 17 + 3 = 20\n' +
-            'Term 8 = 20 + 3 = 23',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Design your own geometric pattern that could be used to tile a floor.\n\n' +
-        'a) Which shape or shapes will you use?\n' +
-        'b) Write the rule for your pattern.\n' +
-        'c) Explain why your chosen shape or shapes will tessellate.\n' +
-        'd) How many tiles would you need for 5 rows of 6 tiles each?',
-      answer:
-        'a) Any valid tessellating shape is correct — for example: squares, rectangles, triangles, or regular hexagons.\n\n' +
-        'b) Any clear rule is correct — for example: "repeat the same square in a grid" or "alternate between two triangle orientations."\n\n' +
-        'c) A valid tessellating explanation must mention that the chosen shape has straight edges that fit together with no gaps and no overlaps, and that the angles at each meeting point add up to 360°.\n\n' +
-        'd) 5 rows × 6 tiles = 30 tiles.',
-    },
-
-  ],
-
-  scoreMessages: [
-    {
-      minScore: 33,
-      message:
-        'Outstanding! 33 out of 33 — you have mastered Geometric Patterns completely. Every single part was correct. Excellent work! 🌟',
-    },
-    {
-      minScore: 27,
-      message:
-        'Excellent work! You have a strong understanding of geometric patterns. Review the parts you missed and you will be at full marks.',
-    },
-    {
-      minScore: 20,
-      message:
-        'Good effort! You are making solid progress with geometric patterns. Go back over the sections where you lost marks and try those questions again.',
-    },
-    {
-      minScore: 0,
-      message:
-        'Keep going — geometric patterns take practice! Work through the study guide again, focus on the worked examples, and then give the questions another try. You can do it!',
-    },
   ],
 }

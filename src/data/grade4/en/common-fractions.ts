@@ -141,6 +141,7 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
       ],
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -271,6 +272,7 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
       ],
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -394,6 +396,7 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
       ],
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ── SECTION 4 ──────────────────────────────────────────────────────────
@@ -482,6 +485,7 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
       videoPlaceholder: 'Short video showing how to find a fraction of a whole number using divide then multiply',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
 
     // ── SECTION 5 ──────────────────────────────────────────────────────────
@@ -680,425 +684,171 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
       diagramPlaceholder: 'Bar model showing 2/8 plus 3/8 equals 5/8 with each part clearly labelled and colour coded',
 
       practiceQuestions: [],
+      openQuestions: [],
     },
   ],
 
-  topicPractice: [
+  topicPractice: [],
 
-    // ── SECTION 1: WHAT IS A FRACTION? ───────────────────────────────────────
-
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 — FOUNDATIONS: IDENTIFYING AND NAMING FRACTIONS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question:
-        'A chocolate bar is divided into 6 equal pieces. Sipho eats 2 pieces.\n\n' +
-        'Write the fraction of the chocolate bar he ate.',
-      answer: '2/6',
-      correctAnswer: '2/6',
-      explanation:
-        'Sipho ate 2 pieces out of 6 equal pieces total.\n\n' +
-        'The numerator (top number) = pieces eaten = 2.\n' +
-        'The denominator (bottom number) = total equal pieces = 6.\n\n' +
-        'Fraction = 2/6',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Write the fraction for each of the following:\n\n' +
-        'a) 3 out of 8 equal parts are shaded\n' +
-        'b) 5 out of 9 equal parts are shaded\n' +
-        'c) 1 out of 4 equal parts are shaded',
-      answer: 'a) 3/8    b) 5/9    c) 1/4',
-      parts: [
-        {
-          label: 'a) 3 out of 8 equal parts are shaded',
-          correctAnswer: '3/8',
-          explanation:
-            '3 parts are shaded out of 8 equal parts.\n' +
-            'Numerator = 3 (shaded), denominator = 8 (total equal parts).\n' +
-            'Fraction = 3/8',
-        },
-        {
-          label: 'b) 5 out of 9 equal parts are shaded',
-          correctAnswer: '5/9',
-          explanation:
-            '5 parts are shaded out of 9 equal parts.\n' +
-            'Numerator = 5 (shaded), denominator = 9 (total equal parts).\n' +
-            'Fraction = 5/9',
-        },
-        {
-          label: 'c) 1 out of 4 equal parts are shaded',
-          correctAnswer: '1/4',
-          explanation:
-            '1 part is shaded out of 4 equal parts.\n' +
-            'Numerator = 1 (shaded), denominator = 4 (total equal parts).\n' +
-            'Fraction = 1/4',
-        },
+      name: 'Set 1: Foundations',
+      questions: [
+        { difficulty: 'Easy', question: "A pizza is cut into 4 equal slices. Thabo eats 1 slice. What fraction of the pizza did he eat?", answer: "1/4", checkMode: 'auto', correctAnswer: "1/4", explanation: "1 slice eaten out of 4 equal slices. Fraction = 1/4" },
+        { difficulty: 'Easy', question: "A chocolate bar has 8 equal pieces. Sipho eats 3 pieces. What fraction did he eat?", answer: "3/8", checkMode: 'auto', correctAnswer: "3/8", explanation: "3 pieces eaten out of 8 equal pieces. Fraction = 3/8" },
+        { difficulty: 'Easy', question: "A shape is divided into 6 equal parts and 2 are shaded. What fraction is shaded?", answer: "2/6", checkMode: 'auto', correctAnswer: "2/6", explanation: "2 parts shaded out of 6 equal parts. Fraction = 2/6" },
+        { difficulty: 'Easy', question: "A shape is divided into 5 equal parts and 4 are shaded. What fraction is shaded?", answer: "4/5", checkMode: 'auto', correctAnswer: "4/5", explanation: "4 parts shaded out of 5 equal parts. Fraction = 4/5" },
+        { difficulty: 'Easy', question: "An orange is split into 10 equal segments. Lerato gives away 3 segments. What fraction did she give away?", answer: "3/10", checkMode: 'auto', correctAnswer: "3/10", explanation: "3 segments given away out of 10 equal segments. Fraction = 3/10" },
+        { difficulty: 'Easy', question: "A shape is divided into 3 equal parts and 1 is shaded. What fraction is shaded?", answer: "1/3", checkMode: 'auto', correctAnswer: "1/3", explanation: "1 part shaded out of 3 equal parts. Fraction = 1/3" },
+        { difficulty: 'Easy', question: "A shape is divided into 8 equal parts and 5 are shaded. What fraction is shaded?", answer: "5/8", checkMode: 'auto', correctAnswer: "5/8", explanation: "5 parts shaded out of 8 equal parts. Fraction = 5/8" },
+        { difficulty: 'Easy', question: "What is the denominator in the fraction 3/8?", answer: "8", checkMode: 'auto', correctAnswer: "8", explanation: "The denominator is the bottom number. It tells us how many equal parts the whole is cut into. In 3/8 the denominator is 8." },
+        { difficulty: 'Easy', question: "What is the numerator in the fraction 5/9?", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "The numerator is the top number. It tells us how many equal parts we have. In 5/9 the numerator is 5." },
+        { difficulty: 'Easy', question: "A shape is divided into 4 equal parts and 3 are shaded. What fraction is shaded?", answer: "3/4", checkMode: 'auto', correctAnswer: "3/4", explanation: "3 parts shaded out of 4 equal parts. Fraction = 3/4" },
+        { difficulty: 'Medium', question: "A shape is divided into 12 equal parts and 7 are shaded. What fraction is shaded?", answer: "7/12", checkMode: 'auto', correctAnswer: "7/12", explanation: "7 parts shaded out of 12 equal parts. Fraction = 7/12" },
+        { difficulty: 'Medium', question: "A chocolate bar has 10 equal pieces. Amahle eats 6 pieces. What fraction of the bar did she eat?", answer: "6/10", checkMode: 'auto', correctAnswer: "6/10", explanation: "6 pieces eaten out of 10 equal pieces. Fraction = 6/10" },
+        { difficulty: 'Medium', question: "A cake is cut into 6 equal slices. 5 slices are eaten. What fraction is left?", answer: "1/6", checkMode: 'auto', correctAnswer: "1/6", explanation: "Total slices = 6. Eaten = 5. Left = 6 minus 5 = 1. Fraction left = 1/6" },
+        { difficulty: 'Medium', question: "A pizza is cut into 8 equal slices. 3 slices are eaten. What fraction is left?", answer: "5/8", checkMode: 'auto', correctAnswer: "5/8", explanation: "Total slices = 8. Eaten = 3. Left = 8 minus 3 = 5. Fraction left = 5/8" },
+        { difficulty: 'Medium', question: "A bag has 10 sweets. 4 are red and the rest are yellow. What fraction of the sweets are yellow?", answer: "6/10", checkMode: 'auto', correctAnswer: "6/10", explanation: "Total sweets = 10. Red = 4. Yellow = 10 minus 4 = 6. Fraction yellow = 6/10" },
+        { difficulty: 'Medium', question: "A tray has 12 muffins. 5 have icing and the rest do not. What fraction have no icing?", answer: "7/12", checkMode: 'auto', correctAnswer: "7/12", explanation: "Total muffins = 12. With icing = 5. Without icing = 12 minus 5 = 7. Fraction = 7/12" },
+        { difficulty: 'Medium', question: "A jar has 20 marbles. 6 are red, 9 are blue and the rest are green. What fraction are green?", answer: "5/20", checkMode: 'auto', correctAnswer: "5/20", explanation: "Total = 20. Red = 6, Blue = 9. Green = 20 minus 6 minus 9 = 5. Fraction = 5/20" },
+        { difficulty: 'Medium', question: "A packet has 24 sweets. 10 are red, 8 are blue and the rest are green. What fraction are green?", answer: "6/24", checkMode: 'auto', correctAnswer: "6/24", explanation: "Total = 24. Red = 10, Blue = 8. Green = 24 minus 10 minus 8 = 6. Fraction = 6/24" },
+        { difficulty: 'Medium', question: "A jar has 16 counters. 5 are red, 6 are blue and the rest are yellow. What fraction are yellow?", answer: "5/16", checkMode: 'auto', correctAnswer: "5/16", explanation: "Total = 16. Red = 5, Blue = 6. Yellow = 16 minus 5 minus 6 = 5. Fraction = 5/16" },
+        { difficulty: 'Medium', question: "Write the fraction: 9 out of 20 learners in a class wear glasses.", answer: "9/20", checkMode: 'auto', correctAnswer: "9/20", explanation: "9 learners out of 20 total learners wear glasses. Fraction = 9/20" },
+        { difficulty: 'Hard', question: "A farmer has 18 animals. 7 are cows, 4 are sheep and the rest are goats. What fraction of the animals are goats?", answer: "7/18", checkMode: 'auto', correctAnswer: "7/18", explanation: "Total = 18. Cows = 7, Sheep = 4. Goats = 18 minus 7 minus 4 = 7. Fraction = 7/18" },
+        { difficulty: 'Hard', question: "A shop has 30 shirts. 12 are blue, 9 are red and the rest are white. What fraction are white?", answer: "9/30", checkMode: 'auto', correctAnswer: "9/30", explanation: "Total = 30. Blue = 12, Red = 9. White = 30 minus 12 minus 9 = 9. Fraction = 9/30" },
+        { difficulty: 'Hard', question: "Amahle has 15 stickers. She gives 4 to Thabo and 3 to Lerato. What fraction of her stickers does she have left?", answer: "8/15", checkMode: 'auto', correctAnswer: "8/15", explanation: "Total = 15. Given away = 4 + 3 = 7. Left = 15 minus 7 = 8. Fraction left = 8/15" },
+        { difficulty: 'Hard', question: "A box has 25 pencils. 8 are red, 10 are blue and the rest are green. What fraction are green?", answer: "7/25", checkMode: 'auto', correctAnswer: "7/25", explanation: "Total = 25. Red = 8, Blue = 10. Green = 25 minus 8 minus 10 = 7. Fraction = 7/25" },
+        { difficulty: 'Hard', question: "Explain, in your own words, what the numerator and denominator of a fraction tell you.", answer: "The numerator (top number) tells you how many equal parts you have. The denominator (bottom number) tells you how many equal parts the whole was divided into. For example, in 3/8, the denominator 8 means the whole is cut into 8 equal pieces, and the numerator 3 means we have 3 of those pieces.", checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: "Outstanding! You can confidently identify and name fractions of a shape or set." },
+        { minScore: 19, message: "Great work! You understand numerators and denominators well — review any missed questions." },
+        { minScore: 13, message: "Good effort! Revisit the worked examples on identifying fractions and try again." },
+        { minScore: 0, message: "Keep going — work through the study guide again and retry this set." },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 — COMPARING, ORDERING AND EQUIVALENT FRACTIONS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A bag has 20 marbles. 7 are red, 5 are blue and the rest are green.\n\n' +
-        'a) What fraction are red?\n' +
-        'b) What fraction are blue?\n' +
-        'c) What fraction are green?',
-      answer: 'a) 7/20    b) 5/20    c) 8/20',
-      parts: [
-        {
-          label: 'a) Fraction that are red',
-          correctAnswer: '7/20',
-          explanation:
-            '7 out of 20 marbles are red.\n' +
-            'Fraction = 7/20',
-        },
-        {
-          label: 'b) Fraction that are blue',
-          correctAnswer: '5/20',
-          explanation:
-            '5 out of 20 marbles are blue.\n' +
-            'Fraction = 5/20',
-        },
-        {
-          label: 'c) Fraction that are green',
-          correctAnswer: '8/20',
-          explanation:
-            'Total marbles = 20. Red = 7, Blue = 5.\n' +
-            'Green = 20 − 7 − 5 = 8.\n' +
-            'Fraction = 8/20',
-        },
+      name: 'Set 2: Comparing and Equivalent Fractions',
+      questions: [
+        { difficulty: 'Easy', question: "Which fraction is bigger: 3/7 or 5/7?", answer: "5/7", checkMode: 'auto', correctAnswer: "5/7", explanation: "Same denominator (7), so compare numerators. 5 is greater than 3, so 5/7 is bigger." },
+        { difficulty: 'Easy', question: "Which fraction is bigger: 1/4 or 1/8?", answer: "1/4", checkMode: 'auto', correctAnswer: "1/4", explanation: "Both are unit fractions (numerator 1). The smaller the denominator, the bigger the fraction. 4 is less than 8, so 1/4 is bigger." },
+        { difficulty: 'Easy', question: "Which fraction is smaller: 2/9 or 6/9?", answer: "2/9", checkMode: 'auto', correctAnswer: "2/9", explanation: "Same denominator (9), so compare numerators. 2 is less than 6, so 2/9 is smaller." },
+        { difficulty: 'Easy', question: "Which fraction is smaller: 1/3 or 1/6?", answer: "1/6", checkMode: 'auto', correctAnswer: "1/6", explanation: "Both are unit fractions. The bigger the denominator, the smaller the fraction. 6 is greater than 3, so 1/6 is smaller." },
+        { difficulty: 'Easy', question: "Find a fraction equivalent to 1/2.", answer: "2/4", checkMode: 'auto', correctAnswer: "2/4", correctAnswers: ["2/4","3/6","4/8","5/10"], explanation: "Multiply numerator and denominator by the same number, e.g. 1 x 2 = 2 and 2 x 2 = 4, giving 2/4." },
+        { difficulty: 'Easy', question: "Find a fraction equivalent to 1/3.", answer: "2/6", checkMode: 'auto', correctAnswer: "2/6", correctAnswers: ["2/6","3/9"], explanation: "Multiply numerator and denominator by the same number, e.g. 1 x 2 = 2 and 3 x 2 = 6, giving 2/6." },
+        { difficulty: 'Medium', question: "Order these fractions from smallest to biggest: 4/9, 1/9, 7/9, 3/9", answer: "1/9, 3/9, 4/9, 7/9", checkMode: 'auto', correctAnswer: "1/9,3/9,4/9,7/9", correctAnswers: ["1/9,3/9,4/9,7/9","1/93/94/97/9"], explanation: "Same denominator (9), so order by numerators from smallest to biggest: 1, 3, 4, 7. Order: 1/9, 3/9, 4/9, 7/9" },
+        { difficulty: 'Medium', question: "Order these fractions from smallest to biggest: 6/10, 2/10, 9/10, 5/10", answer: "2/10, 5/10, 6/10, 9/10", checkMode: 'auto', correctAnswer: "2/10,5/10,6/10,9/10", correctAnswers: ["2/10,5/10,6/10,9/10"], explanation: "Same denominator (10), so order by numerators: 2, 5, 6, 9. Order: 2/10, 5/10, 6/10, 9/10" },
+        { difficulty: 'Medium', question: "Are 2/3 and 4/6 equivalent? Write yes or no.", answer: "Yes", checkMode: 'auto', correctAnswer: "Yes", correctAnswers: ["Yes","yes"], explanation: "Multiply 2/3 by 2/2: 2 x 2 = 4 and 3 x 2 = 6, giving 4/6. Since 4/6 = 4/6, they are equivalent." },
+        { difficulty: 'Medium', question: "Are 3/5 and 5/8 equivalent? Write yes or no.", answer: "No", checkMode: 'auto', correctAnswer: "No", correctAnswers: ["No","no"], explanation: "There is no whole number you can multiply both 3 and 5 by to get 5 and 8, so they are not equivalent." },
+        { difficulty: 'Medium', question: "Fill in the missing number: 1/4 = ?/12", answer: "3", checkMode: 'auto', correctAnswer: "3", explanation: "The denominator went from 4 to 12 (4 x 3 = 12), so multiply the numerator by 3 too: 1 x 3 = 3." },
+        { difficulty: 'Medium', question: "Fill in the missing number: 2/5 = ?/10", answer: "4", checkMode: 'auto', correctAnswer: "4", explanation: "The denominator went from 5 to 10 (5 x 2 = 10), so multiply the numerator by 2 too: 2 x 2 = 4." },
+        { difficulty: 'Medium', question: "Fill in the missing number: 1/6 = ?/12", answer: "2", checkMode: 'auto', correctAnswer: "2", explanation: "The denominator went from 6 to 12 (6 x 2 = 12), so multiply the numerator by 2 too: 1 x 2 = 2." },
+        { difficulty: 'Medium', question: "Fill in the missing number: 3/8 = ?/16", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "The denominator went from 8 to 16 (8 x 2 = 16), so multiply the numerator by 2 too: 3 x 2 = 6." },
+        { difficulty: 'Medium', question: "Fill in the missing number: 1/5 = ?/15", answer: "3", checkMode: 'auto', correctAnswer: "3", explanation: "The denominator went from 5 to 15 (5 x 3 = 15), so multiply the numerator by 3 too: 1 x 3 = 3." },
+        { difficulty: 'Medium', question: "Find two fractions that are equivalent to 3/4.", answer: "6/8 and 9/12", checkMode: 'auto', correctAnswer: "6/8and9/12", correctAnswers: ["6/8and9/12","9/12and6/8","6/8,9/12","9/12,6/8","6/89/12","9/126/8"], explanation: "Multiply 3/4 by 2/2 to get 6/8, and by 3/3 to get 9/12. Both represent the same amount as 3/4." },
+        { difficulty: 'Medium', question: "Order these fractions from biggest to smallest: 1/2, 1/5, 1/3, 1/10", answer: "1/2, 1/3, 1/5, 1/10", checkMode: 'auto', correctAnswer: "1/2,1/3,1/5,1/10", correctAnswers: ["1/2,1/3,1/5,1/10"], explanation: "These are all unit fractions, so the smaller the denominator, the bigger the fraction. Order from biggest to smallest denominator gives: 1/2, 1/3, 1/5, 1/10" },
+        { difficulty: 'Hard', question: "Which is bigger: 3/4 or 5/8? Hint: first find an equivalent fraction for 3/4 with denominator 8.", answer: "3/4", checkMode: 'auto', correctAnswer: "3/4", explanation: "3/4 = 6/8 (multiply top and bottom by 2). Compare 6/8 and 5/8 — same denominator, so compare numerators. 6 is greater than 5, so 3/4 is bigger." },
+        { difficulty: 'Hard', question: "Which is bigger: 2/5 or 3/10? Hint: first find an equivalent fraction for 2/5 with denominator 10.", answer: "2/5", checkMode: 'auto', correctAnswer: "2/5", explanation: "2/5 = 4/10 (multiply top and bottom by 2). Compare 4/10 and 3/10 — same denominator, so compare numerators. 4 is greater than 3, so 2/5 is bigger." },
+        { difficulty: 'Hard', question: "Fill in the missing number: 4/5 = ?/10", answer: "8", checkMode: 'auto', correctAnswer: "8", explanation: "The denominator went from 5 to 10 (5 x 2 = 10), so multiply the numerator by 2 too: 4 x 2 = 8." },
+        { difficulty: 'Hard', question: "Fill in the missing number: 2/3 = ?/9", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "The denominator went from 3 to 9 (3 x 3 = 9), so multiply the numerator by 3 too: 2 x 3 = 6." },
+        { difficulty: 'Hard', question: "Sipho says 1/3 and 3/9 are equivalent. Is he correct? Explain using multiplication.", answer: "Yes, Sipho is correct. Multiplying 1/3 by 3/3 gives 1 x 3 = 3 and 3 x 3 = 9, so 1/3 = 3/9. Since both the numerator and denominator were multiplied by the same number (3), the fractions represent the same amount.", checkMode: 'auto', correctAnswer: "Yes", correctAnswers: ["Yes","yes"], explanation: "Multiplying 1/3 by 3/3 gives 3/9, so they are equivalent." },
+        { difficulty: 'Hard', question: "Lerato says 2/6 and 3/9 are equivalent because they both simplify to 1/3. Is she correct? Write yes or no.", answer: "Yes", checkMode: 'auto', correctAnswer: "Yes", correctAnswers: ["Yes","yes"], explanation: "2/6 simplifies to 1/3 (divide top and bottom by 2). 3/9 also simplifies to 1/3 (divide top and bottom by 3). Since both simplify to the same fraction, they are equivalent." },
+        { difficulty: 'Hard', question: "Order these fractions from smallest to biggest: 3/4, 1/4, 1/2, 2/4", answer: "1/4, 1/2, 2/4, 3/4", checkMode: 'auto', correctAnswer: "1/4,1/2,2/4,3/4", correctAnswers: ["1/4,2/4,2/4,3/4","1/4,1/2,2/4,3/4"], explanation: "Rewrite 1/2 as 2/4 so all fractions share denominator 4: 1/4, 2/4, 2/4, 3/4. Since 1/2 = 2/4, ordering by numerator (with the equal pair together) from smallest to biggest gives 1/4, 1/2 (=2/4), 2/4, 3/4." },
+        { difficulty: 'Hard', question: "Explain why 4/8 and 1/2 are equivalent fractions without drawing a picture.", answer: "4/8 and 1/2 are equivalent because if you divide both the numerator and denominator of 4/8 by 4, you get 1/2 (4 divided by 4 = 1, and 8 divided by 4 = 2). Dividing the top and bottom of a fraction by the same number does not change its value, so 4/8 and 1/2 represent the same amount.", checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 25, message: "Outstanding! You have mastered comparing, ordering and finding equivalent fractions." },
+        { minScore: 19, message: "Great work! Review any missed questions and try again." },
+        { minScore: 13, message: "Good effort! Revisit the worked examples on comparing and equivalent fractions." },
+        { minScore: 0, message: "Keep going — work through the study guide again and retry this set." },
       ],
     },
 
-    // ── SECTION 2: COMPARING AND ORDERING FRACTIONS ──────────────────────────
-
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 — FRACTION OF A WHOLE NUMBER AND WORD PROBLEMS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Which fraction is bigger?\n\n3/7  or  5/7',
-      answer: '5/7',
-      correctAnswer: '5/7',
-      explanation:
-        'Both fractions have the same denominator (7), so compare the numerators.\n\n' +
-        '5 > 3, so 5/7 is the bigger fraction.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Order these fractions from smallest to biggest:\n\n' +
-        '4/9,  1/9,  7/9,  3/9',
-      answer: '1/9,  3/9,  4/9,  7/9',
-      correctAnswer: '1/9,3/9,4/9,7/9',
-      correctAnswers: ['1/9,3/9,4/9,7/9', '1/93/94/97/9'],
-      explanation:
-        'All fractions have the same denominator (9), so order by the numerators from smallest to biggest: 1, 3, 4, 7.\n\n' +
-        'Order: 1/9, 3/9, 4/9, 7/9',
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Which is bigger: 1/4 or 1/8?\n\n' +
-        'Explain why without drawing a picture.',
-      answer:
-        '1/4 is bigger.\n\n' +
-        'When the numerators are the same (both are 1), the fraction with the smaller denominator is the bigger fraction.\n\n' +
-        'Dividing something into 4 equal parts gives larger parts than dividing it into 8 equal parts.\n' +
-        'So each 1/4 piece is bigger than each 1/8 piece.',
-    },
-
-    // ── SECTION 3: EQUIVALENT FRACTIONS ─────────────────────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Find two fractions that are equivalent to 1/2.',
-      answer: '2/4 and 3/6',
-      correctAnswers: [
-        '2/4and3/6', '3/6and2/4',
-        '2/4,3/6',   '3/6,2/4',
-        '2/43/6',    '3/62/4',
+      name: 'Set 3: Fraction of a Whole Number',
+      questions: [
+        { difficulty: 'Easy', question: "Find 1/2 of 10.", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "Step 1: Divide by the denominator: 10 / 2 = 5. Step 2: Multiply by the numerator: 5 x 1 = 5." },
+        { difficulty: 'Easy', question: "Find 1/2 of 20.", answer: "10", checkMode: 'auto', correctAnswer: "10", explanation: "Step 1: 20 / 2 = 10. Step 2: 10 x 1 = 10." },
+        { difficulty: 'Easy', question: "Find 1/4 of 20.", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "Step 1: 20 / 4 = 5. Step 2: 5 x 1 = 5." },
+        { difficulty: 'Easy', question: "Find 1/3 of 18.", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Step 1: 18 / 3 = 6. Step 2: 6 x 1 = 6." },
+        { difficulty: 'Easy', question: "Find 1/5 of 25.", answer: "5", checkMode: 'auto', correctAnswer: "5", explanation: "Step 1: 25 / 5 = 5. Step 2: 5 x 1 = 5." },
+        { difficulty: 'Medium', question: "Find 3/4 of 24.", answer: "18", checkMode: 'auto', correctAnswer: "18", explanation: "Step 1: 24 / 4 = 6. Step 2: 6 x 3 = 18." },
+        { difficulty: 'Medium', question: "Find 2/5 of 25.", answer: "10", checkMode: 'auto', correctAnswer: "10", explanation: "Step 1: 25 / 5 = 5. Step 2: 5 x 2 = 10." },
+        { difficulty: 'Medium', question: "Find 3/8 of 40.", answer: "15", checkMode: 'auto', correctAnswer: "15", explanation: "Step 1: 40 / 8 = 5. Step 2: 5 x 3 = 15." },
+        { difficulty: 'Medium', question: "Find 2/3 of 30.", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Step 1: 30 / 3 = 10. Step 2: 10 x 2 = 20." },
+        { difficulty: 'Medium', question: "Find 5/6 of 24.", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Step 1: 24 / 6 = 4. Step 2: 4 x 5 = 20." },
+        { difficulty: 'Medium', question: "Find 3/10 of 50.", answer: "15", checkMode: 'auto', correctAnswer: "15", explanation: "Step 1: 50 / 10 = 5. Step 2: 5 x 3 = 15." },
+        { difficulty: 'Medium', question: "Find 3/5 of 50.", answer: "30", checkMode: 'auto', correctAnswer: "30", explanation: "Step 1: 50 / 5 = 10. Step 2: 10 x 3 = 30." },
+        { difficulty: 'Medium', question: "A class has 24 learners. One quarter of them wear glasses. How many learners wear glasses?", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Find 1/4 of 24. Step 1: 24 / 4 = 6. Step 2: 6 x 1 = 6. 6 learners wear glasses." },
+        { difficulty: 'Medium', question: "A farmer has 30 chickens. Two thirds of them are hens. How many hens does the farmer have?", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Find 2/3 of 30. Step 1: 30 / 3 = 10. Step 2: 10 x 2 = 20. The farmer has 20 hens." },
+        { difficulty: 'Medium', question: "A shop has 40 loaves of bread. Three eighths were sold in the morning. How many loaves were sold?", answer: "15", checkMode: 'auto', correctAnswer: "15", explanation: "Find 3/8 of 40. Step 1: 40 / 8 = 5. Step 2: 5 x 3 = 15. 15 loaves were sold." },
+        { difficulty: 'Medium', question: "Thabo has R40. He spends 1/5 of it on sweets. How much money does he spend?", answer: "R8", checkMode: 'auto', correctAnswer: "8", correctAnswers: ["8","R8"], explanation: "Find 1/5 of 40. Step 1: 40 / 5 = 8. Step 2: 8 x 1 = 8. He spends R8." },
+        { difficulty: 'Hard', question: "A school has 100 learners. Three quarters of them walk to school. How many learners walk to school?", answer: "75", checkMode: 'auto', correctAnswer: "75", explanation: "Find 3/4 of 100. Step 1: 100 / 4 = 25. Step 2: 25 x 3 = 75. 75 learners walk to school." },
+        { difficulty: 'Hard', question: "A farm has 60 animals. Two thirds are cows and the rest are goats. How many cows are there?", answer: "40", checkMode: 'auto', correctAnswer: "40", explanation: "Find 2/3 of 60. Step 1: 60 / 3 = 20. Step 2: 20 x 2 = 40. There are 40 cows." },
+        { difficulty: 'Hard', question: "A farm has 60 animals. Two thirds are cows and the rest are goats. How many goats are there?", answer: "20", checkMode: 'auto', correctAnswer: "20", explanation: "Cows = 2/3 of 60. Step 1: 60/3=20. Step 2: 20x2=40 cows. Goats = 60 minus 40 = 20." },
+        { difficulty: 'Hard', question: "A bakery makes 80 cupcakes. Seven tenths of them are chocolate flavoured. How many chocolate cupcakes are there?", answer: "56", checkMode: 'auto', correctAnswer: "56", explanation: "Find 7/10 of 80. Step 1: 80 / 10 = 8. Step 2: 8 x 7 = 56. There are 56 chocolate cupcakes." },
+        { difficulty: 'Hard', question: "A netball team scores 40 goals in a season. Five eighths of the goals were scored by Amahle. How many goals did Amahle score?", answer: "25", checkMode: 'auto', correctAnswer: "25", explanation: "Find 5/8 of 40. Step 1: 40 / 8 = 5. Step 2: 5 x 5 = 25. Amahle scored 25 goals." },
+        { difficulty: 'Hard', question: "A library has 90 books. Two thirds of them are fiction. How many books are fiction?", answer: "60", checkMode: 'auto', correctAnswer: "60", explanation: "Find 2/3 of 90. Step 1: 90 / 3 = 30. Step 2: 30 x 2 = 60. There are 60 fiction books." },
+        { difficulty: 'Hard', question: "A water tank holds 100 litres when full. It is currently 1/2 full. Then 1/4 of the full tank amount is added. How many litres are in the tank now?", answer: "75", checkMode: 'auto', correctAnswer: "75", explanation: "Half full = 1/2 of 100 = 50 litres. Add 1/4 of 100 = 25 litres. Total = 50 + 25 = 75 litres." },
+        { difficulty: 'Hard', question: "A class of 32 learners is asked what their favourite sport is. Three quarters choose soccer and the rest choose netball. How many learners chose netball?", answer: "8", checkMode: 'auto', correctAnswer: "8", explanation: "Soccer = 3/4 of 32. Step 1: 32/4=8. Step 2: 8x3=24 chose soccer. Netball = 32 minus 24 = 8." },
+        { difficulty: 'Hard', question: "Explain, in your own words, the two-step rule for finding a fraction of a whole number.", answer: "Step 1: Divide the whole number by the denominator of the fraction. Step 2: Multiply the result by the numerator of the fraction. For example, to find 3/4 of 24, first divide 24 by 4 to get 6, then multiply 6 by 3 to get 18.", checkMode: 'self' },
       ],
-      explanation:
-        'To find equivalent fractions, multiply the numerator AND denominator by the same number.\n\n' +
-        '1/2 × 2/2 = 2/4\n' +
-        '1/2 × 3/3 = 3/6\n\n' +
-        'Both 2/4 and 3/6 are equivalent to 1/2 because they all represent the same amount.',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Fill in the missing numbers:\n\n' +
-        'a) 1/3 = □/9\n' +
-        'b) 2/5 = □/10\n' +
-        'c) 3/4 = □/12',
-      answer: 'a) 3    b) 4    c) 9',
-      parts: [
-        {
-          label: 'a) 1/3 = □/9',
-          correctAnswer: '3',
-          explanation:
-            'The denominator went from 3 to 9. 3 × 3 = 9, so we multiplied by 3.\n' +
-            'Multiply the numerator by the same number: 1 × 3 = 3.\n' +
-            '1/3 = 3/9',
-        },
-        {
-          label: 'b) 2/5 = □/10',
-          correctAnswer: '4',
-          explanation:
-            'The denominator went from 5 to 10. 5 × 2 = 10, so we multiplied by 2.\n' +
-            'Multiply the numerator by the same number: 2 × 2 = 4.\n' +
-            '2/5 = 4/10',
-        },
-        {
-          label: 'c) 3/4 = □/12',
-          correctAnswer: '9',
-          explanation:
-            'The denominator went from 4 to 12. 4 × 3 = 12, so we multiplied by 3.\n' +
-            'Multiply the numerator by the same number: 3 × 3 = 9.\n' +
-            '3/4 = 9/12',
-        },
+      scoreMessages: [
+        { minScore: 25, message: "Outstanding! You can confidently find a fraction of a whole number and solve word problems." },
+        { minScore: 19, message: "Great work! Review any missed questions and try again." },
+        { minScore: 13, message: "Good effort! Revisit the divide-then-multiply worked examples." },
+        { minScore: 0, message: "Keep going — work through the study guide again and retry this set." },
       ],
     },
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — MULTI-STEP AND COMBINED PROBLEMS (25 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
     {
-      difficulty: 'Hard',
-      checkMode: 'self',
-      question:
-        'Thabo says 2/3 and 4/9 are equivalent. Is he correct?\n\n' +
-        'Show your working to prove it.',
-      answer:
-        'No, Thabo is incorrect.\n\n' +
-        'Step 1: Make the denominators the same by multiplying 2/3 by 3/3:\n' +
-        '2 × 3 = 6  and  3 × 3 = 9  →  2/3 = 6/9\n\n' +
-        'Step 2: Compare: 6/9 ≠ 4/9\n\n' +
-        '2/3 is equivalent to 6/9, not 4/9.\n' +
-        'So 2/3 and 4/9 are NOT equivalent.',
-    },
-
-    // ── SECTION 4: FINDING A FRACTION OF A WHOLE NUMBER ─────────────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Find 1/3 of 18.',
-      answer: '6',
-      correctAnswer: '6',
-      explanation:
-        'Step 1: Divide by the denominator: 18 ÷ 3 = 6\n' +
-        'Step 2: Multiply by the numerator: 6 × 1 = 6\n\n' +
-        '1/3 of 18 = 6',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Calculate the following:\n\n' +
-        'a) 1/4 of 32\n' +
-        'b) 2/5 of 25\n' +
-        'c) 3/8 of 40',
-      answer: 'a) 8    b) 10    c) 15',
-      parts: [
-        {
-          label: 'a) 1/4 of 32',
-          correctAnswer: '8',
-          explanation:
-            'Step 1: Divide by the denominator: 32 ÷ 4 = 8\n' +
-            'Step 2: Multiply by the numerator: 8 × 1 = 8\n' +
-            '1/4 of 32 = 8',
-        },
-        {
-          label: 'b) 2/5 of 25',
-          correctAnswer: '10',
-          explanation:
-            'Step 1: Divide by the denominator: 25 ÷ 5 = 5\n' +
-            'Step 2: Multiply by the numerator: 5 × 2 = 10\n' +
-            '2/5 of 25 = 10',
-        },
-        {
-          label: 'c) 3/8 of 40',
-          correctAnswer: '15',
-          explanation:
-            'Step 1: Divide by the denominator: 40 ÷ 8 = 5\n' +
-            'Step 2: Multiply by the numerator: 5 × 3 = 15\n' +
-            '3/8 of 40 = 15',
-        },
+      name: 'Set 4: Multi-Step and Combined Problems',
+      questions: [
+        { difficulty: 'Easy', question: "Calculate: 2/7 + 3/7", answer: "5/7", checkMode: 'auto', correctAnswer: "5/7", explanation: "Same denominator (7) — keep it. Add numerators: 2 + 3 = 5. Answer = 5/7" },
+        { difficulty: 'Easy', question: "Calculate: 3/8 + 4/8", answer: "7/8", checkMode: 'auto', correctAnswer: "7/8", explanation: "Same denominator (8) — keep it. Add numerators: 3 + 4 = 7. Answer = 7/8" },
+        { difficulty: 'Easy', question: "Calculate: 1/5 + 2/5", answer: "3/5", checkMode: 'auto', correctAnswer: "3/5", explanation: "Same denominator (5) — keep it. Add numerators: 1 + 2 = 3. Answer = 3/5" },
+        { difficulty: 'Easy', question: "Calculate: 1/6 + 3/6", answer: "4/6", checkMode: 'auto', correctAnswer: "4/6", explanation: "Same denominator (6) — keep it. Add numerators: 1 + 3 = 4. Answer = 4/6" },
+        { difficulty: 'Medium', question: "Calculate: 3/10 + 4/10 + 2/10", answer: "9/10", checkMode: 'auto', correctAnswer: "9/10", explanation: "Same denominator (10) — keep it. Add all numerators: 3 + 4 + 2 = 9. Answer = 9/10" },
+        { difficulty: 'Medium', question: "Calculate: 2/9 + 3/9 + 1/9", answer: "6/9", checkMode: 'auto', correctAnswer: "6/9", explanation: "Same denominator (9) — keep it. Add all numerators: 2 + 3 + 1 = 6. Answer = 6/9" },
+        { difficulty: 'Medium', question: "Calculate: 1/8 + 2/8 + 3/8", answer: "6/8", checkMode: 'auto', correctAnswer: "6/8", explanation: "Same denominator (8) — keep it. Add all numerators: 1 + 2 + 3 = 6. Answer = 6/8" },
+        { difficulty: 'Medium', question: "Amahle ate 2/6 of a cake in the morning and 3/6 in the afternoon. What fraction of the cake did she eat altogether?", answer: "5/6", checkMode: 'auto', correctAnswer: "5/6", explanation: "Add the fractions: 2/6 + 3/6. Same denominator, add numerators: 2 + 3 = 5. She ate 5/6 altogether." },
+        { difficulty: 'Medium', question: "Amahle ate 2/6 of a cake in the morning and 3/6 in the afternoon (5/6 altogether). What fraction of the cake is left?", answer: "1/6", checkMode: 'auto', correctAnswer: "1/6", explanation: "A whole cake = 6/6. Amahle ate 2/6 + 3/6 = 5/6 altogether. Left over = 6/6 minus 5/6 = 1/6." },
+        { difficulty: 'Medium', question: "Sipho painted 1/8 of a fence on Monday and 3/8 on Tuesday. What fraction of the fence has he painted in total?", answer: "4/8", checkMode: 'auto', correctAnswer: "4/8", explanation: "Add the fractions: 1/8 + 3/8. Same denominator, add numerators: 1 + 3 = 4. He painted 4/8 in total." },
+        { difficulty: 'Medium', question: "Sipho painted 1/8 of a fence on Monday and 3/8 on Tuesday (4/8 in total). What fraction still needs to be painted?", answer: "4/8", checkMode: 'auto', correctAnswer: "4/8", explanation: "Whole fence = 8/8. Sipho has painted 1/8 + 3/8 = 4/8. Remaining = 8/8 minus 4/8 = 4/8." },
+        { difficulty: 'Medium', question: "A pizza is cut into 10 equal slices. Lerato eats 4/10 and her brother eats 3/10. What fraction of the pizza did they eat together?", answer: "7/10", checkMode: 'auto', correctAnswer: "7/10", explanation: "Add the fractions: 4/10 + 3/10. Same denominator, add numerators: 4 + 3 = 7. Together they ate 7/10." },
+        { difficulty: 'Hard', question: "A pizza is cut into 10 equal slices. Lerato eats 4/10 and her brother eats 3/10. What fraction of the pizza is left over after they have both eaten?", answer: "3/10", checkMode: 'auto', correctAnswer: "3/10", explanation: "Together they ate 4/10 + 3/10 = 7/10. Whole pizza = 10/10. Left over = 10/10 minus 7/10 = 3/10." },
+        { difficulty: 'Hard', question: "A school has 32 learners in a class. Three quarters choose soccer as their favourite sport. Of the learners who chose soccer, half also play cricket. How many learners play both soccer and cricket?", answer: "12", checkMode: 'auto', correctAnswer: "12", explanation: "Soccer learners = 3/4 of 32. Step 1: 32/4=8. Step 2: 8x3=24 play soccer. Half of 24 also play cricket: 24/2=12." },
+        { difficulty: 'Hard', question: "A tank holds 80 litres. It starts 3/4 full, then 1/8 of the full tank capacity leaks out. How many litres are left in the tank?", answer: "50", checkMode: 'auto', correctAnswer: "50", explanation: "3/4 of 80: Step 1: 80/4=20. Step 2: 20x3=60 litres to start. Leak = 1/8 of 80: Step 1: 80/8=10. Step 2: 10x1=10 litres leak out. Remaining = 60 minus 10 = 50 litres." },
+        { difficulty: 'Hard', question: "Thabo ate 1/4 of a chocolate bar with 12 pieces on Monday, and 3/12 more on Tuesday. What fraction of the bar has he eaten in total? Hint: rewrite 1/4 with denominator 12 first.", answer: "6/12", checkMode: 'auto', correctAnswer: "6/12", correctAnswers: ["6/12","1/2"], explanation: "1/4 = 3/12 (multiply top and bottom by 3). Add: 3/12 + 3/12 = 6/12. He has eaten 6/12 in total." },
+        { difficulty: 'Hard', question: "A farmer has 45 sheep. Two thirds are ewes and the rest are rams. Of the ewes, 1/5 have lambs. How many ewes have lambs?", answer: "6", checkMode: 'auto', correctAnswer: "6", explanation: "Ewes = 2/3 of 45. Step 1: 45/3=15. Step 2: 15x2=30 ewes. Ewes with lambs = 1/5 of 30. Step 1: 30/5=6. Step 2: 6x1=6." },
+        { difficulty: 'Hard', question: "A recipe uses 2/8 cup of sugar and 3/8 cup of flour, then 1/8 cup more sugar is added. What fraction of a cup of sugar is used in total?", answer: "3/8", checkMode: 'auto', correctAnswer: "3/8", explanation: "Sugar only: 2/8 + 1/8. Same denominator, add numerators: 2 + 1 = 3. Total sugar = 3/8 cup (the flour, 3/8, is a separate ingredient and is not added to the sugar)." },
+        { difficulty: 'Hard', question: "Lerato says that 3/4 of 24 gives the same answer as 24 divided by 4 and then multiplied by 3. Is she correct? Explain using the calculation.", answer: "Yes, Lerato is correct. To find 3/4 of 24, you divide 24 by the denominator (4) to get 6, then multiply by the numerator (3) to get 18. This is exactly \"24 divided by 4, then multiplied by 3\", so both methods describe the same calculation and give the same answer, 18.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "Sipho says that because 2/4 and 1/2 are equivalent fractions, finding 2/4 of a number always gives the same answer as finding 1/2 of that number. Is he correct? Check using the number 20.", answer: "Yes, Sipho is correct. 1/2 of 20: divide 20 by 2 to get 10, multiply by 1 to get 10. 2/4 of 20: divide 20 by 4 to get 5, multiply by 2 to get 10. Both give 10, confirming that equivalent fractions of the same number always give the same answer.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "Explain why you can only add fractions directly by adding the numerators when the denominators are the same.", answer: "When two fractions have the same denominator, the whole has been divided into the same size of equal parts for both fractions. This means the pieces can simply be counted together (added), so you only need to add the numerators and keep the denominator the same. If the denominators were different, the pieces would be different sizes, and adding the numerators directly would not give a correct answer.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "A ribbon is cut into 12 equal pieces. Amahle uses 1/12 for a bow, 4/12 for a wrapping decoration, and 2/12 for a label. What fraction of the ribbon has she used in total?", answer: "7/12", checkMode: 'auto', correctAnswer: "7/12", explanation: "Add the fractions: 1/12 + 4/12 + 2/12. Same denominator, add numerators: 1 + 4 + 2 = 7. She has used 7/12 in total." },
+        { difficulty: 'Hard', question: "A ribbon is cut into 12 equal pieces. Amahle uses 1/12 for a bow, 4/12 for a wrapping decoration, and 2/12 for a label (7/12 in total). What fraction of the ribbon does she have left?", answer: "5/12", checkMode: 'auto', correctAnswer: "5/12", explanation: "Amahle used 1/12 + 4/12 + 2/12 = 7/12. Whole ribbon = 12/12. Left over = 12/12 minus 7/12 = 5/12." },
+        { difficulty: 'Hard', question: "A school has 50 learners in Grade 4. Two fifths walk to school, three tenths cycle, and the rest are dropped off by car. What fraction of learners are dropped off by car? Hint: rewrite 2/5 with denominator 10 first.", answer: "3/10", checkMode: 'auto', correctAnswer: "3/10", explanation: "2/5 = 4/10 (multiply top and bottom by 2). Walk + cycle = 4/10 + 3/10 = 7/10. Dropped off by car = 10/10 minus 7/10 = 3/10." },
+        { difficulty: 'Hard', question: "Explain how you would check whether two fractions with different denominators, such as 2/3 and 5/8, are equivalent.", answer: "To check if two fractions with different denominators are equivalent, find a common denominator by converting both fractions so they have the same denominator, then compare the numerators. For 2/3 and 5/8, one way is to try multiplying to see if there is a whole number that makes both denominators match, or to convert both to have denominator 24 (2/3 = 16/24 and 5/8 = 15/24). Since 16/24 does not equal 15/24, the fractions are not equivalent.", checkMode: 'self' },
       ],
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'A school has 120 learners. Three quarters walk to school and the rest come by bus.\n\n' +
-        'a) How many learners walk to school?\n' +
-        'b) How many come by bus?\n' +
-        'c) On a rainy day half of the bus learners get a lift instead. How many learners come by bus on that day?',
-      answer: 'a) 90    b) 30    c) 15',
-      parts: [
-        {
-          label: 'a) How many learners walk to school?',
-          correctAnswer: '90',
-          explanation:
-            'Find 3/4 of 120.\n' +
-            'Step 1: Divide by the denominator: 120 ÷ 4 = 30\n' +
-            'Step 2: Multiply by the numerator: 30 × 3 = 90\n' +
-            '90 learners walk to school.',
-        },
-        {
-          label: 'b) How many come by bus?',
-          correctAnswer: '30',
-          explanation:
-            'Total learners − walkers = bus learners.\n' +
-            '120 − 90 = 30\n' +
-            '30 learners come by bus.',
-        },
-        {
-          label: 'c) How many come by bus on the rainy day?',
-          correctAnswer: '15',
-          explanation:
-            'Half of the bus learners get a lift, so half still come by bus.\n' +
-            '1/2 of 30 = 30 ÷ 2 = 15\n' +
-            '15 learners come by bus on the rainy day.',
-        },
+      scoreMessages: [
+        { minScore: 25, message: "Outstanding! You have mastered multi-step and combined fraction problems." },
+        { minScore: 19, message: "Great work! Review any missed questions and try again." },
+        { minScore: 13, message: "Good effort! Revisit the multi-step worked examples." },
+        { minScore: 0, message: "Keep going — work through the study guide again and retry this set." },
       ],
-    },
-
-    // ── SECTION 5: ADDING FRACTIONS WITH THE SAME DENOMINATOR ───────────────
-
-    {
-      difficulty: 'Easy',
-      checkMode: 'auto',
-      question: 'Calculate:\n\n3/8 + 4/8',
-      answer: '7/8',
-      correctAnswer: '7/8',
-      explanation:
-        'Both fractions have the same denominator (8), so keep the denominator.\n' +
-        'Add the numerators: 3 + 4 = 7\n\n' +
-        '3/8 + 4/8 = 7/8',
-    },
-
-    {
-      difficulty: 'Medium',
-      checkMode: 'auto',
-      question:
-        'Calculate the following:\n\n' +
-        'a) 2/9 + 5/9\n' +
-        'b) 1/6 + 3/6 + 1/6\n' +
-        'c) 4/10 + 3/10',
-      answer: 'a) 7/9    b) 5/6    c) 7/10',
-      parts: [
-        {
-          label: 'a) 2/9 + 5/9',
-          correctAnswer: '7/9',
-          explanation:
-            'Same denominator (9) — keep it.\n' +
-            'Add numerators: 2 + 5 = 7\n' +
-            '2/9 + 5/9 = 7/9',
-        },
-        {
-          label: 'b) 1/6 + 3/6 + 1/6',
-          correctAnswer: '5/6',
-          explanation:
-            'Same denominator (6) — keep it.\n' +
-            'Add all numerators: 1 + 3 + 1 = 5\n' +
-            '1/6 + 3/6 + 1/6 = 5/6',
-        },
-        {
-          label: 'c) 4/10 + 3/10',
-          correctAnswer: '7/10',
-          explanation:
-            'Same denominator (10) — keep it.\n' +
-            'Add numerators: 4 + 3 = 7\n' +
-            '4/10 + 3/10 = 7/10',
-        },
-      ],
-    },
-
-    {
-      difficulty: 'Hard',
-      checkMode: 'auto',
-      question:
-        'Lerato ate 2/8 of a pizza for lunch and 3/8 for dinner. Her brother ate 1/8 for lunch.\n\n' +
-        'a) What fraction did Lerato eat altogether?\n' +
-        'b) What fraction did her brother eat?\n' +
-        'c) What fraction of the pizza is left?\n' +
-        'd) Who ate more and by how much?',
-      answer: 'a) 5/8    b) 1/8    c) 2/8    d) Lerato ate more by 4/8',
-      parts: [
-        {
-          label: 'a) What fraction did Lerato eat altogether?',
-          correctAnswer: '5/8',
-          explanation:
-            'Lerato ate 2/8 + 3/8.\n' +
-            'Same denominator (8) — add numerators: 2 + 3 = 5\n' +
-            'Lerato ate 5/8 altogether.',
-        },
-        {
-          label: 'b) What fraction did her brother eat?',
-          correctAnswer: '1/8',
-          explanation:
-            'Her brother only ate 1/8 for lunch.\n' +
-            'Fraction = 1/8',
-        },
-        {
-          label: 'c) What fraction of the pizza is left?',
-          correctAnswer: '2/8',
-          explanation:
-            'Total eaten = Lerato (5/8) + brother (1/8) = 6/8\n' +
-            'Whole pizza = 8/8\n' +
-            'Left over = 8/8 − 6/8 = 2/8',
-        },
-        {
-          label: 'd) Who ate more and by how much?',
-          correctAnswer: 'Lerato by 4/8',
-          correctAnswers: [
-            'Lerato by 4/8',
-            'Lerato ate more by 4/8',
-            'Lerato more by 4/8',
-            'Lerato 4/8 more',
-            'Lerato 4/8',
-          ],
-          explanation:
-            'Compare: Lerato ate 5/8, brother ate 1/8.\n' +
-            '5/8 − 1/8 = 4/8\n' +
-            'Lerato ate more by 4/8.',
-        },
-      ],
-    },
-
-  ],
-
-  scoreMessages: [
-    {
-      minScore: 30,
-      message:
-        'Outstanding! 30 out of 30 — you have mastered Common Fractions. Every single part was correct. You should be very proud of yourself! 🌟',
-    },
-    {
-      minScore: 24,
-      message:
-        'Excellent work! You have a strong understanding of fractions. Review any parts you missed and you will be at full marks in no time.',
-    },
-    {
-      minScore: 18,
-      message:
-        'Good effort! You are making solid progress with fractions. Go back over the sections where you lost marks and try those questions again.',
-    },
-    {
-      minScore: 0,
-      message:
-        'Keep going — fractions take practice! Work through the study guide again, focus on the worked examples, and then give the questions another try. You can do it!',
     },
   ],
 }
