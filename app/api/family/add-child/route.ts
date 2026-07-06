@@ -46,17 +46,19 @@ export async function POST(req: NextRequest) {
   const userData = userSnap.data()!
   const children = Array.isArray(userData.children) ? userData.children : []
   const childPlans = Array.isArray(userData.childPlans) ? userData.childPlans : []
+  const freeSessionClaimed = Array.isArray(userData.freeSessionClaimed) ? userData.freeSessionClaimed : []
 
   if (children.length >= MAX_CHILDREN) {
     return new Response('Child limit reached', { status: 400 })
   }
 
   const newChildren = [...children, { name: name.trim(), grade, language, languageChangeUsed: false }]
-  // childPlans may be shorter than children if it predates this field —
-  // pad with 'free' rather than trusting its length matches exactly.
+  // childPlans/freeSessionClaimed may be shorter than children if they predate
+  // that field — pad rather than trusting length matches exactly.
   const newChildPlans = [...Array.from({ length: children.length }, (_, i) => childPlans[i] ?? 'free'), 'free']
+  const newFreeSessionClaimed = [...Array.from({ length: children.length }, (_, i) => freeSessionClaimed[i] === true), false]
 
-  await userRef.update({ children: newChildren, childPlans: newChildPlans })
+  await userRef.update({ children: newChildren, childPlans: newChildPlans, freeSessionClaimed: newFreeSessionClaimed })
 
   return Response.json({ children: newChildren, childPlans: newChildPlans })
 }

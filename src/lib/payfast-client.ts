@@ -47,3 +47,27 @@ export async function initiateCheckout(
   const { action, fields } = await res.json()
   submitPayfastForm(action, fields)
 }
+
+// Once-off payment for a live-session booking (live-classes page). Every
+// account's first-ever session booking is free — the server confirms it
+// instantly with no PayFast round trip, signalled by { free: true } instead
+// of { action, fields }. For every booking after that, the server prices it
+// from the session type and the active child's tier, and the browser is
+// redirected to PayFast (does not return normally in that case). Throws
+// CheckoutError with the server's reason ('Session is full', 'Already
+// booked', …) so the page can react specifically.
+export async function initiateSessionBooking(fbUser: FirebaseUser, sessionId: string): Promise<{ free: boolean }> {
+  const idToken = await fbUser.getIdToken()
+  const res = await fetch('/api/sessions/book', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken, sessionId }),
+  })
+  if (!res.ok) {
+    throw new CheckoutError(await res.text().catch(() => 'Could not start booking.'))
+  }
+  const data = await res.json()
+  if (data.free) return { free: true }
+  submitPayfastForm(data.action, data.fields)
+  return { free: false }
+}

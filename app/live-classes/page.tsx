@@ -7,6 +7,9 @@ import { useAuth } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { db } from '@/src/lib/firebase'
 import { doc, getDoc, setDoc, addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import SessionsBoard from './SessionsBoard'
+import RequestLessonCard from './RequestLessonCard'
+import type { PublicSession } from '@/src/lib/sessions'
 
 // Local hint only — used so a guest sees their own "you're on the list" state
 // on a repeat visit from the same browser. It is never the source of truth:
@@ -48,6 +51,18 @@ export default function LiveClassesPage() {
   const [registered, setRegistered]   = useState<InterestEntry | null>(null)
   const [submitting, setSubmitting]   = useState(false)
   const [guestEditing, setGuestEditing] = useState(false)
+
+  // Upcoming bookable sessions — served sanitized by the server (the
+  // sessions collection itself is closed to client reads). While this is
+  // empty the page keeps its pre-launch shape: waitlist card + coming soon.
+  const [sessions, setSessions] = useState<PublicSession[]>([])
+  useEffect(() => {
+    fetch('/api/sessions/list')
+      .then(r => r.json())
+      .then(d => setSessions(Array.isArray(d.sessions) ? d.sessions : []))
+      .catch(() => {})
+  }, [])
+  const hasSessions = sessions.length > 0
 
   // Guest-only form fields — signed-in users never see or need these, their
   // name/email/grades all come from their account.
@@ -154,9 +169,11 @@ export default function LiveClassesPage() {
         <section className="pt-20 pb-14 px-6 text-center" style={{ backgroundColor: '#0f1f3d' }}>
           <div
             className="inline-block text-xs font-bold px-3 py-1.5 rounded-full mb-5"
-            style={{ backgroundColor: '#fef3c7', color: '#92400e' }}
+            style={hasSessions
+              ? { backgroundColor: '#dcfce7', color: '#15803d' }
+              : { backgroundColor: '#fef3c7', color: '#92400e' }}
           >
-            {t.live_coming_soon_badge}
+            {hasSessions ? t.live_open_badge : t.live_coming_soon_badge}
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-white">
             {t.live_hero_heading}
@@ -164,15 +181,24 @@ export default function LiveClassesPage() {
           <p className="text-lg max-w-xl mx-auto mb-6" style={{ color: '#93c5fd' }}>
             {t.live_hero_subheading}
           </p>
-          <div
-            className="inline-block text-sm font-semibold px-4 py-2 rounded-full"
-            style={{ backgroundColor: '#1e40af', color: '#ffffff' }}
-          >
-            {t.live_first_session_free_banner}
-          </div>
+          {!hasSessions && (
+            <div
+              className="inline-block text-sm font-semibold px-4 py-2 rounded-full"
+              style={{ backgroundColor: '#1e40af', color: '#ffffff' }}
+            >
+              {t.live_first_session_free_banner}
+            </div>
+          )}
         </section>
 
-        {/* Registration card */}
+        {/* Bookable sessions (once any are published) */}
+        {hasSessions && <SessionsBoard sessions={sessions} />}
+
+        {/* Request a specific lesson — always available, this is the demand signal */}
+        <RequestLessonCard />
+
+        {/* Pre-launch interest card — replaced by the sessions board once bookings open */}
+        {!hasSessions && (
         <section className="px-6 py-14 max-w-lg mx-auto">
           <div className="bg-white rounded-2xl shadow-sm p-8" style={{ border: '1px solid #e5e7eb' }}>
 
@@ -366,6 +392,7 @@ export default function LiveClassesPage() {
             ) : null}
           </div>
         </section>
+        )}
 
         {/* What to expect */}
         <section className="px-6 pb-20 max-w-3xl mx-auto">
@@ -385,9 +412,11 @@ export default function LiveClassesPage() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-center text-gray-400">
-            {t.live_launch_info_text}
-          </p>
+          {!hasSessions && (
+            <p className="text-sm text-center text-gray-400">
+              {t.live_launch_info_text}
+            </p>
+          )}
         </section>
 
       </main>

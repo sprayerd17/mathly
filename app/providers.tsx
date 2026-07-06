@@ -66,6 +66,12 @@ export type User = {
   // Set once, server-side, by /api/referral/attach right after registration.
   // null for accounts that didn't sign up via a referral link.
   referredBy: string | null
+  // Index-aligned with `children` — each child gets exactly one free live-
+  // session booking ever (of either format), to lower the barrier to trying
+  // a session at all. A given index flips true server-side, by
+  // /api/sessions/book, the first time that child claims it. Same
+  // whole-field-lock reasoning as childPlans above.
+  freeSessionClaimed: boolean[]
 }
 
 // Tier of the child currently driving site-wide content access — clamped the
@@ -691,6 +697,14 @@ function sanitizeChildPlans(raw: unknown, childCount: number): Tier[] {
   return Array.from({ length: childCount }, (_, i) => arr[i] ?? 'free')
 }
 
+// Missing or wrong-length freeSessionClaimed defaults to all-unclaimed —
+// same reasoning as childPlans, and correct for accounts created before this
+// field existed (nobody has claimed anything yet).
+function sanitizeFreeSessionClaimed(raw: unknown, childCount: number): boolean[] {
+  const arr = Array.isArray(raw) ? raw.map(v => v === true) : []
+  return Array.from({ length: childCount }, (_, i) => arr[i] ?? false)
+}
+
 function sanitizeSubscriptionStatus(raw: unknown): SubscriptionStatus {
   const lower = (raw as string | undefined)?.toLowerCase() ?? 'none'
   return (VALID_SUBSCRIPTION_STATUSES as string[]).includes(lower) ? (lower as SubscriptionStatus) : 'none'
@@ -750,6 +764,7 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     lastPaymentDate: typeof data.lastPaymentDate === 'string' ? data.lastPaymentDate : null,
     lastPaymentAmount: typeof data.lastPaymentAmount === 'number' ? data.lastPaymentAmount : null,
     referredBy: typeof data.referredBy === 'string' ? data.referredBy : null,
+    freeSessionClaimed: sanitizeFreeSessionClaimed(data.freeSessionClaimed, children.length),
   }
 }
 
@@ -825,6 +840,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       refCode,
       activeChildIndex: 0,
       referredBy: null,
+      freeSessionClaimed: children.map(() => false),
     })
 
     // Was a referral code entered (typed in manually, or pre-filled from a
