@@ -539,161 +539,139 @@ export const topicData: TopicData = {
   practiceSets: [
 
     // ═══════════════════════════════════════════════════════════════════════
-    // STEL 1 — TAFELS EN DIREKTE VERMENIGVULDIGING (25 Vrae)
+    // STEL 1 (20 Vrae) — 6 vaardigheidsblokke
     // ═══════════════════════════════════════════════════════════════════════
     {
-      name: 'Stel 1: Tafels en Direkte Vermenigvuldiging',
+      name: 'Stel 1',
       questions: [
-        { difficulty: 'Easy', question: 'Bereken: 3 × 5', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15'], explanation: '3 × 5 = 15. Tel in 5e vir 3 stappe: 5, 10, 15 ✓' },
+        // Blok 1 — Tafels Vlotheid (0-3, Easy)
         { difficulty: 'Easy', question: 'Bereken: 4 × 6', answer: '24', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24'], explanation: '4 × 6 = 24. Tel in 6e vir 4 stappe: 6, 12, 18, 24 ✓' },
         { difficulty: 'Easy', question: 'Bereken: 7 × 8', answer: '56', checkMode: 'auto', correctAnswer: '56', correctAnswers: ['56'], explanation: '7 × 8 = 56 ✓' },
         { difficulty: 'Easy', question: 'Bereken: 9 × 9', answer: '81', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81'], explanation: '9 × 9 = 81 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 6 × 7', answer: '42', checkMode: 'auto', correctAnswer: '42', correctAnswers: ['42'], explanation: '6 × 7 = 42 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 8 × 8', answer: '64', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64'], explanation: '8 × 8 = 64 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 5 × 9', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45'], explanation: '5 × 9 = 45. Tel in 5e vir 9 stappe: 5, 10, 15, 20, 25, 30, 35, 40, 45 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 7 × 7', answer: '49', checkMode: 'auto', correctAnswer: '49', correctAnswers: ['49'], explanation: '7 × 7 = 49 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 4 × 9', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36'], explanation: '4 × 9 = 36 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 6 × 8', answer: '48', checkMode: 'auto', correctAnswer: '48', correctAnswers: ['48'], explanation: '6 × 8 = 48 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 3 × 9', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27'], explanation: '3 × 9 = 27. Tel in 3e vir 9 stappe: 3, 6, 9, 12, 15, 18, 21, 24, 27 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 8 × 9', answer: '72', checkMode: 'auto', correctAnswer: '72', correctAnswers: ['72'], explanation: '8 × 9 = 72 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 9 × 10', answer: '90', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90'], explanation: '9 × 10 = 90 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 7 × 10', answer: '70', checkMode: 'auto', correctAnswer: '70', correctAnswers: ['70'], explanation: '7 × 10 = 70 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 10 × 10', answer: '100', checkMode: 'auto', correctAnswer: '100', correctAnswers: ['100'], explanation: '10 × 10 = 100 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 12 × 5', answer: '60', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60'], explanation: '12 × 5 = 60. Dink daaraan as 10 × 5 + 2 × 5 = 50 + 10 = 60 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 12 × 7', answer: '84', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84'], explanation: '12 × 7 = 84. Dink: 10 × 7 + 2 × 7 = 70 + 14 = 84 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 12 × 8', answer: '96', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96'], explanation: '12 × 8 = 96. Dink: 10 × 8 + 2 × 8 = 80 + 16 = 96 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 12 × 9', answer: '108', checkMode: 'auto', correctAnswer: '108', correctAnswers: ['108'], explanation: '12 × 9 = 108. Dink: 10 × 9 + 2 × 9 = 90 + 18 = 108 ✓' },
-        { difficulty: 'Hard', question: 'Bereken: 12 × 12', answer: '144', checkMode: 'auto', correctAnswer: '144', correctAnswers: ['144'], explanation: '12 × 12 = 144. Dink: 10 × 12 + 2 × 12 = 120 + 24 = 144 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 11 × 6', answer: '66', checkMode: 'auto', correctAnswer: '66', correctAnswers: ['66'], explanation: '11 × 6 = 66. Dink: 10 × 6 + 1 × 6 = 60 + 6 = 66 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 11 × 9', answer: '99', checkMode: 'auto', correctAnswer: '99', correctAnswers: ['99'], explanation: '11 × 9 = 99. Dink: 10 × 9 + 1 × 9 = 90 + 9 = 99 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 6 × 6', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36'], explanation: '6 × 6 = 36 ✓' },
-        { difficulty: 'Medium', question: 'Vul die ontbrekende getal in: 9 × ___ = 63', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: 'Tel in 9e totdat jy 63 bereik: 9, 18, 27, 36, 45, 54, 63 — dit is 7 stappe, dus 9 × 7 = 63 ✓' },
-        { difficulty: 'Medium', question: 'Vul die ontbrekende getal in: ___ × 7 = 56', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: '8 × 7 = 56, dus is die ontbrekende getal 8 ✓' },
-      ],
-      scoreMessages: [
-        { minScore: 25, message: 'Uitstekend! Jy ken jou tafels en direkte vermenigvuldigingsfeite baie goed.' },
-        { minScore: 19, message: 'Goeie werk! Jy is selfversekerd met vermenigvuldiging — gaan enige gemiste vrae weer deur.' },
-        { minScore: 13, message: 'Goeie poging! Oefen jou tafels ʼn bietjie meer en probeer weer.' },
-        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
-      ],
-    },
+        { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: 9 × ___ = 63', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: 'Tel in 9e totdat jy 63 bereik: 9, 18, 27, 36, 45, 54, 63 — dit is 7 stappe, dus 9 × 7 = 63 ✓' },
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // STEL 2 — 2-SYFERVERMENIGVULDIGING, FAKTORE EN SKATTING (25 Vrae)
-    // ═══════════════════════════════════════════════════════════════════════
-    {
-      name: 'Stel 2: 2-Syfervermenigvuldiging, Faktore en Skatting',
-      questions: [
-        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 23 × 3', answer: '69', checkMode: 'auto', correctAnswer: '69', correctAnswers: ['69'], explanation: 'Eenhede: 3 × 3 = 9. Tiene: 2 × 3 = 6.\nAntwoord: 69 ✓' },
-        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 42 × 2', answer: '84', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84'], explanation: 'Eenhede: 2 × 2 = 4. Tiene: 4 × 2 = 8.\nAntwoord: 84 ✓' },
+        // Blok 2 — Kolomvermenigvuldiging (4-7, Easy-Medium)
         { difficulty: 'Easy', question: 'Bereken met die kolommetode: 34 × 2', answer: '68', checkMode: 'auto', correctAnswer: '68', correctAnswers: ['68'], explanation: 'Eenhede: 4 × 2 = 8. Tiene: 3 × 2 = 6.\nAntwoord: 68 ✓' },
         { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 47 × 3', answer: '141', checkMode: 'auto', correctAnswer: '141', correctAnswers: ['141'], explanation: 'Eenhede: 7 × 3 = 21. Skryf 1, skuif 2.\nTiene: 4 × 3 = 12, plus geskuifde 2 = 14. Skryf 4 in tiene, 1 in honderde.\nAntwoord: 141 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 64 × 9', answer: '576', checkMode: 'auto', correctAnswer: '576', correctAnswers: ['576'], explanation: 'Eenhede: 4 × 9 = 36. Skryf 6, skuif 3.\nTiene: 6 × 9 = 54, plus geskuifde 3 = 57. Skryf 7 in tiene, 5 in honderde.\nAntwoord: 576 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken 53 × 4 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: eenhede-kolom 3 × 4 = 12, hulle het 2 geskryf en 1 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 5 × 4 = 20, plus geskuifde 1 = 21. Finale antwoord: 212', checkMode: 'self' },
+
+        // Blok 3 — Skatting en Redelikheid (8-10, Medium)
+        { difficulty: 'Medium', question: 'Skat 48 × 6 deur 48 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 300 (50 × 6). Presies: 288', checkMode: 'auto', correctAnswer: '288', correctAnswers: ['288', '300 288', 'Skatting 300 Presies 288'], explanation: '48 rond op na 50, dus die skatting is 50 × 6 = 300. Presies: eenhede 8 × 6 = 48, skryf 8 skuif 4; tiene 4 × 6 = 24, plus geskuifde 4 = 28. Presiese antwoord: 288, wat naby aan die skatting van 300 is ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder skat 62 × 5 deur 62 na 60 af te rond, en kry 300. Hulle presiese antwoord kom uit op 310. Is 310 ʼn redelike antwoord? Verduidelik hoe jy weet.', answer: 'Ja, 310 is redelik — dit is baie naby aan die skatting van 300, dus maak dit sin as die presiese antwoord op 62 × 5.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sonder om enige van hulle heeltemal uit te werk, watter een is groter: 6 × 14 of 9 × 9? Verduidelik hoe jy dit kan sien deur afronding of skatting te gebruik.', answer: '6 × 14 is groter. Skatting: 6 × 14 is naby aan 6 × 15 = 90, terwyl 9 × 9 = 81. Dus is 6 × 14 (wat gelyk is aan 84) groter as 9 × 9 (81).', checkMode: 'self' },
+
+        // Blok 4 — Faktore en Buigsame Strategieë (11-13, Medium)
+        { difficulty: 'Easy', question: 'Breek 12 in twee faktore en gebruik hulle om te bereken: 3 × 12', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36'], explanation: '12 = 6 × 2, dus 3 × 12 = 3 × 6 × 2 = 18 × 2 = 36 ✓' },
+        { difficulty: 'Medium', question: 'Breek 15 in twee faktore en gebruik hulle om te bereken: 8 × 15', answer: '120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120'], explanation: '15 = 5 × 3, dus 8 × 15 = 8 × 5 × 3 = 40 × 3 = 120 ✓' },
+        { difficulty: 'Medium', question: 'Sou jy vir die berekening 6 × 18 liewer 18 in faktore breek (6 × 9 × 2) of die kolommetode gebruik? Kies ʼn strategie en verduidelik waarom dit hierdie spesifieke produk pas.', answer: 'Albei strategieë werk, maar om 18 in 9 × 2 te breek is vinnig omdat 6 × 9 = 54 ʼn bekende feit is, en dan verdubbel na 108 is maklik. Die kolommetode werk ook goed aangesien 18 ʼn 2-syfergetal is, maar die faktormetode vermy heeltemal enige skuif hier.', checkMode: 'self' },
+
+        // Blok 5 — Woordprobleme in Verskeie Kontekste (14-16, Medium)
+        { difficulty: 'Medium', question: 'ʼn Netbalspan het 12 spelers. As 7 spanne aan ʼn toernooi deelneem, hoeveel spelers neem altesaam deel?', answer: '84 spelers', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84', '84 spelers'], explanation: '7 × 12 = 84 spelers ✓' },
+        { difficulty: 'Medium', question: 'ʼn Minibustaxi kan 15 passasiers vervoer. Hoeveel meer passasiers kan 6 taxi\'s vervoer as 4 taxi\'s?', answer: '30 meer passasiers', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30 meer passasiers'], explanation: '6 × 15 = 90 en 4 × 15 = 60. 90 − 60 = 30 meer passasiers ✓' },
+        { difficulty: 'Medium', question: 'Klas A bestel 6 bokse van 15 potlode elk vir die jaar. Klas B bestel 5 bokse van 18 potlode elk. Watter klas het meer potlode bestel, en met hoeveel?', answer: 'Geeneen nie — albei klasse het presies dieselfde aantal potlode bestel (90 elk).', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'hulle is gelyk', 'geeneen nie, hulle is gelyk', 'dieselfde'], explanation: 'Klas A: 6 × 15 = 90 potlode. Klas B: 5 × 18 = 90 potlode. Albei klasse het presies dieselfde aantal potlode bestel — 90 elk ✓' },
+
+        // Blok 6 — Foutopsporing en Regverdig-jou-Redenasie (17-19, Hard)
+        { difficulty: 'Hard', question: 'Sipho sê 6 × 23 = 148. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Sipho is verkeerd. 6 × 23 = 138, nie 148 nie. (Eenhede: 3 × 6 = 18, skryf 8 skuif 1. Tiene: 2 × 6 = 12, plus geskuifde 1 = 13, wat 138 gee.)', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Boer het 8 rye van 14 kool. ʼn Haelstorm vernietig 2 volle rye. Hoeveel kool bly regop staan?', answer: '84 kool', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84', '84 kool'], explanation: 'Stap 1: Totale kool = 8 × 14 = 112.\nStap 2: Kool vernietig = 2 × 14 = 28.\nStap 3: Kool oor = 112 − 28 = 84 kool ✓' },
+        { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom 6 × 8 dieselfde antwoord as 8 × 6 gee.', answer: 'Vermenigvuldiging kan in enige volgorde gedoen word — dit word die kommutatiewe eienskap genoem. 6 groepe van 8 en 8 groepe van 6 bevat albei presies dieselfde totale aantal items (48), net anders gerangskik, dus is die antwoord altyd dieselfde ongeag in watter volgorde jy vermenigvuldig.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, woordprobleme en redenasie bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 Vrae) — 6 vaardigheidsblokke
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Tafels Vlotheid (0-3, Easy)
+        { difficulty: 'Easy', question: 'Bereken: 5 × 9', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45'], explanation: '5 × 9 = 45. Tel in 5e vir 9 stappe: 5, 10, 15, 20, 25, 30, 35, 40, 45 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: 6 × 7', answer: '42', checkMode: 'auto', correctAnswer: '42', correctAnswers: ['42'], explanation: '6 × 7 = 42 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: 12 × 8', answer: '96', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96'], explanation: '12 × 8 = 96. Dink: 10 × 8 + 2 × 8 = 80 + 16 = 96 ✓' },
+        { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: ___ × 7 = 56', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: '8 × 7 = 56, dus is die ontbrekende getal 8 ✓' },
+
+        // Blok 2 — Kolomvermenigvuldiging (4-7, Easy-Medium)
+        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 42 × 2', answer: '84', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84'], explanation: 'Eenhede: 2 × 2 = 4. Tiene: 4 × 2 = 8.\nAntwoord: 84 ✓' },
         { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 56 × 4', answer: '224', checkMode: 'auto', correctAnswer: '224', correctAnswers: ['224'], explanation: 'Eenhede: 6 × 4 = 24. Skryf 4, skuif 2.\nTiene: 5 × 4 = 20, plus geskuifde 2 = 22. Skryf 2 in tiene, 2 in honderde.\nAntwoord: 224 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 32 × 8', answer: '256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256'], explanation: 'Eenhede: 2 × 8 = 16. Skryf 6, skuif 1.\nTiene: 3 × 8 = 24, plus geskuifde 1 = 25. Skryf 5 in tiene, 2 in honderde.\nAntwoord: 256 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken 76 × 3 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: eenhede-kolom 6 × 3 = 18, hulle het 8 geskryf en 1 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 7 × 3 = 21, plus geskuifde 1 = 22. Finale antwoord: 228', checkMode: 'self' },
+
+        // Blok 3 — Skatting en Redelikheid (8-10, Medium)
+        { difficulty: 'Medium', question: 'Skat 75 × 8 deur 75 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 640 (80 × 8). Presies: 600', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600', '640 600', 'Skatting 640 Presies 600'], explanation: '75 rond op na 80, dus die skatting is 80 × 8 = 640. Presies: eenhede 5 × 8 = 40, skryf 0 skuif 4; tiene 7 × 8 = 56, plus geskuifde 4 = 60. Presiese antwoord: 600, wat naby aan die skatting van 640 is ✓' },
+        { difficulty: 'Medium', question: 'Twee leerders skat 39 × 7. Bongani rond 39 af na 40 en kry 280. Zanele rond 39 af na 35 (nie die naaste 10 nie) en kry 245. Wie se skatting volg die korrekte afrondingsreël, en waarom?', answer: 'Bongani se skatting is korrek — 39 rond af na die naaste 10, wat 40 is, nie 35 nie. Zanele het nie na die naaste 10 korrek afgerond nie, dus is haar skatting van 245 nie ʼn geldige skatting vir hierdie metode nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sonder om enige van hulle heeltemal uit te werk, watter een is groter: 7 × 13 of 8 × 11? Verduidelik hoe jy dit kan sien deur afronding of skatting te gebruik.', answer: '7 × 13 is groter. As jy 13 effens afrond en 11 effens oprond, land albei naby 12, so vergelyk eerder die eerste faktore: 7 is naby aan 8, maar 13 is heelwat groter as 11, dus wen die produk met 13 (91) van die produk met 11 (88).', checkMode: 'self' },
+
+        // Blok 4 — Faktore en Buigsame Strategieë (11-13, Medium)
+        { difficulty: 'Easy', question: 'Breek 16 in twee faktore en gebruik hulle om te bereken: 5 × 16', answer: '80', checkMode: 'auto', correctAnswer: '80', correctAnswers: ['80'], explanation: '16 = 8 × 2, dus 5 × 16 = 5 × 8 × 2 = 40 × 2 = 80 ✓' },
+        { difficulty: 'Medium', question: 'Breek 14 in twee faktore en gebruik hulle om te bereken: 9 × 14', answer: '126', checkMode: 'auto', correctAnswer: '126', correctAnswers: ['126'], explanation: '14 = 7 × 2, dus 9 × 14 = 9 × 7 × 2 = 63 × 2 = 126 ✓' },
+        { difficulty: 'Medium', question: 'Sou jy vir die berekening 4 × 25 liewer 25 in faktore breek (4 × 5 × 5) of die kolommetode gebruik? Kies ʼn strategie en verduidelik waarom dit hierdie spesifieke produk pas.', answer: 'Om 25 in 5 × 5 te breek is hier baie vinniger, want 4 × 5 = 20 is ʼn maklike bekende feit, en 20 × 5 = 100. Die kolommetode sou steeds werk, maar behels meer skryfwerk en skuif sonder ekstra voordeel.', checkMode: 'self' },
+
+        // Blok 5 — Woordprobleme in Verskeie Kontekste (14-16, Medium)
+        { difficulty: 'Medium', question: 'ʼn Spazawinkel hou koeldrank in kratte van 24 blikkies. As die eienaar 5 kratte het, hoeveel blikkies koeldrank het die winkel altesaam?', answer: '120 blikkies', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120', '120 blikkies'], explanation: '5 × 24 = 120 blikkies ✓' },
+        { difficulty: 'Medium', question: 'ʼn Bokboer het 9 kampe met 13 bokke in elke kamp. Hoeveel minder bokke sou die boer hê as 3 van die kampe eerder leeg was?', answer: '39 minder bokke', checkMode: 'auto', correctAnswer: '39', correctAnswers: ['39', '39 minder bokke'], explanation: '9 × 13 = 117 bokke met alle kampe vol. As 3 kampe leeg was, verwyder dit 3 × 13 = 39 bokke, dus sou daar 39 minder bokke wees ✓' },
+        { difficulty: 'Medium', question: 'ʼn Taxistaanplek het 7 minibusse wat elk 16 passasiers vervoer. ʼn Tweede staanplek het 8 minibusse wat elk 14 passasiers vervoer. Watter staanplek vervoer meer passasiers, en met hoeveel?', answer: 'Geeneen nie — albei staanplekke vervoer presies dieselfde aantal passasiers (112 elk).', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'hulle is gelyk', 'geeneen nie, hulle is gelyk', 'dieselfde'], explanation: 'Eerste staanplek: 7 × 16 = 112 passasiers. Tweede staanplek: 8 × 14 = 112 passasiers. Albei staanplekke vervoer presies dieselfde aantal — 112 passasiers elk ✓' },
+
+        // Blok 6 — Foutopsporing en Regverdig-jou-Redenasie (17-19, Hard)
+        { difficulty: 'Hard', question: 'Thabo sê 9 × 36 = 314. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Thabo is verkeerd. 9 × 36 = 324, nie 314 nie. (Eenhede: 6 × 9 = 54, skryf 4 skuif 5. Tiene: 3 × 9 = 27, plus geskuifde 5 = 32, wat 324 gee.)', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Skryfbehoeftewinkel koop 7 bokse penne, elk met 12 penne, teen R4 per pen. Wat is die totale koste?', answer: 'R336', checkMode: 'auto', correctAnswer: '336', correctAnswers: ['336', 'R336'], explanation: 'Stap 1: 7 × 12 = 84 penne.\nStap 2: 84 × 4 = R336 ✓' },
+        { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom dit help om te skat voordat jy bereken om jou antwoord te kontroleer.', answer: 'Deur die getalle eers af te rond, kry jy vinnig ʼn benaderde antwoord. Nadat jy die presiese antwoord uitgewerk het, wys die vergelyking met die skatting of die presiese antwoord redelik is. As die presiese antwoord baie ver van die skatting af is, is dit ʼn teken dat daar waarskynlik ʼn fout iewers in die berekening gemaak is.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, woordprobleme en redenasie bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 Vrae) — 6 vaardigheidsblokke
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Tafels Vlotheid (0-3, Easy)
+        { difficulty: 'Easy', question: 'Bereken: 8 × 8', answer: '64', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64'], explanation: '8 × 8 = 64 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: 3 × 9', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27'], explanation: '3 × 9 = 27. Tel in 3e vir 9 stappe: 3, 6, 9, 12, 15, 18, 21, 24, 27 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: 11 × 6', answer: '66', checkMode: 'auto', correctAnswer: '66', correctAnswers: ['66'], explanation: '11 × 6 = 66. Dink: 10 × 6 + 1 × 6 = 60 + 6 = 66 ✓' },
+        { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: ___ × 6 = 42', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: 'Tel in 6e totdat jy 42 bereik: 6, 12, 18, 24, 30, 36, 42 — dit is 7 stappe, dus 7 × 6 = 42 ✓' },
+
+        // Blok 2 — Kolomvermenigvuldiging (4-7, Easy-Medium)
+        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 23 × 3', answer: '69', checkMode: 'auto', correctAnswer: '69', correctAnswers: ['69'], explanation: 'Eenhede: 3 × 3 = 9. Tiene: 2 × 3 = 6.\nAntwoord: 69 ✓' },
         { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 67 × 4', answer: '268', checkMode: 'auto', correctAnswer: '268', correctAnswers: ['268'], explanation: 'Eenhede: 7 × 4 = 28. Skryf 8, skuif 2.\nTiene: 6 × 4 = 24, plus geskuifde 2 = 26. Skryf 6 in tiene, 2 in honderde.\nAntwoord: 268 ✓' },
         { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 45 × 6', answer: '270', checkMode: 'auto', correctAnswer: '270', correctAnswers: ['270'], explanation: 'Eenhede: 5 × 6 = 30. Skryf 0, skuif 3.\nTiene: 4 × 6 = 24, plus geskuifde 3 = 27. Skryf 7 in tiene, 2 in honderde.\nAntwoord: 270 ✓' },
-        { difficulty: 'Hard', question: 'Bereken met die kolommetode en wys jou skuif: 32 × 8', answer: '256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256'], explanation: 'Eenhede: 2 × 8 = 16. Skryf 6, skuif 1.\nTiene: 3 × 8 = 24, plus geskuifde 1 = 25. Skryf 5 in tiene, 2 in honderde.\nAntwoord: 256 ✓' },
-        { difficulty: 'Hard', question: 'Bereken met die kolommetode en wys jou skuif: 64 × 9', answer: '576', checkMode: 'auto', correctAnswer: '576', correctAnswers: ['576'], explanation: 'Eenhede: 4 × 9 = 36. Skryf 6, skuif 3.\nTiene: 6 × 9 = 54, plus geskuifde 3 = 57. Skryf 7 in tiene, 5 in honderde.\nAntwoord: 576 ✓' },
-        { difficulty: 'Hard', question: 'Bereken met die kolommetode en wys jou skuif: 92 × 4', answer: '368', checkMode: 'auto', correctAnswer: '368', correctAnswers: ['368'], explanation: 'Eenhede: 2 × 4 = 8. Geen skuif nodig nie.\nTiene: 9 × 4 = 36. Skryf 6 in tiene, 3 in honderde.\nAntwoord: 368 ✓' },
-        { difficulty: 'Easy', question: 'Breek 12 in twee faktore en gebruik hulle om te bereken: 3 × 12', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36'], explanation: '12 = 6 × 2, dus 3 × 12 = 3 × 6 × 2 = 18 × 2 = 36 ✓' },
-        { difficulty: 'Medium', question: 'Breek 16 in twee faktore en gebruik hulle om te bereken: 5 × 16', answer: '80', checkMode: 'auto', correctAnswer: '80', correctAnswers: ['80'], explanation: '16 = 8 × 2, dus 5 × 16 = 5 × 8 × 2 = 40 × 2 = 80 ✓' },
-        { difficulty: 'Medium', question: 'Breek 18 in twee faktore en gebruik hulle om te bereken: 4 × 18', answer: '72', checkMode: 'auto', correctAnswer: '72', correctAnswers: ['72'], explanation: '18 = 9 × 2, dus 4 × 18 = 4 × 9 × 2 = 36 × 2 = 72 ✓' },
-        { difficulty: 'Medium', question: 'Breek 14 in twee faktore en gebruik hulle om te bereken: 6 × 14', answer: '84', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84'], explanation: '14 = 7 × 2, dus 6 × 14 = 6 × 7 × 2 = 42 × 2 = 84 ✓' },
-        { difficulty: 'Medium', question: 'Breek 15 in twee faktore en gebruik hulle om te bereken: 8 × 15', answer: '120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120'], explanation: '15 = 5 × 3, dus 8 × 15 = 8 × 5 × 3 = 40 × 3 = 120 ✓' },
-        { difficulty: 'Hard', question: 'Breek 16 in twee faktore en gebruik hulle om te bereken: 7 × 16', answer: '112', checkMode: 'auto', correctAnswer: '112', correctAnswers: ['112'], explanation: '16 = 8 × 2, dus 7 × 16 = 7 × 8 × 2 = 56 × 2 = 112 ✓' },
-        { difficulty: 'Hard', question: 'Breek 14 in twee faktore en gebruik hulle om te bereken: 9 × 14', answer: '126', checkMode: 'auto', correctAnswer: '126', correctAnswers: ['126'], explanation: '14 = 7 × 2, dus 9 × 14 = 9 × 7 × 2 = 63 × 2 = 126 ✓' },
-        { difficulty: 'Easy', question: 'Skat 29 × 3 deur eers 29 af te rond na die naaste 10. Skryf slegs die skatting.', answer: '90', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90'], explanation: '29 rond op na 30. Skatting: 30 × 3 = 90 ✓' },
-        { difficulty: 'Easy', question: 'Wat is die presiese antwoord op 29 × 3?', answer: '87', checkMode: 'auto', correctAnswer: '87', correctAnswers: ['87'], explanation: 'Eenhede: 9 × 3 = 27. Skryf 7, skuif 2.\nTiene: 2 × 3 = 6, plus geskuifde 2 = 8.\nAntwoord: 87 (naby aan die skatting van 90) ✓' },
-        { difficulty: 'Medium', question: 'Skat 48 × 6 deur eers 48 af te rond na die naaste 10. Skryf slegs die skatting.', answer: '300', checkMode: 'auto', correctAnswer: '300', correctAnswers: ['300'], explanation: '48 rond op na 50. Skatting: 50 × 6 = 300 ✓' },
-        { difficulty: 'Medium', question: 'Wat is die presiese antwoord op 48 × 6?', answer: '288', checkMode: 'auto', correctAnswer: '288', correctAnswers: ['288'], explanation: 'Eenhede: 8 × 6 = 48. Skryf 8, skuif 4.\nTiene: 4 × 6 = 24, plus geskuifde 4 = 28.\nAntwoord: 288 (naby aan die skatting van 300) ✓' },
-        { difficulty: 'Medium', question: 'Skat 75 × 8 deur eers 75 af te rond na die naaste 10. Skryf slegs die skatting.', answer: '640', checkMode: 'auto', correctAnswer: '640', correctAnswers: ['640'], explanation: '75 rond op na 80. Skatting: 80 × 8 = 640 ✓' },
-        { difficulty: 'Medium', question: 'Wat is die presiese antwoord op 75 × 8?', answer: '600', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600'], explanation: 'Eenhede: 5 × 8 = 40. Skryf 0, skuif 4.\nTiene: 7 × 8 = 56, plus geskuifde 4 = 60.\nAntwoord: 600 (naby aan die skatting van 640) ✓' },
-        { difficulty: 'Hard', question: 'Skat 53 × 7 deur eers 53 af te rond na die naaste 10, en bereken dan die presiese antwoord. Skryf slegs die presiese antwoord.', answer: '371', checkMode: 'auto', correctAnswer: '371', correctAnswers: ['371'], explanation: 'Skatting: 53 rond af na 50, dus 50 × 7 = 350.\nPresies: Eenhede 3 × 7 = 21, skryf 1 skuif 2. Tiene 5 × 7 = 35, plus geskuifde 2 = 37.\nPresiese antwoord: 371 (naby aan die skatting van 350) ✓' },
-        { difficulty: 'Hard', question: 'Skat 86 × 5 deur eers 86 af te rond na die naaste 10, en bereken dan die presiese antwoord. Skryf slegs die presiese antwoord.', answer: '430', checkMode: 'auto', correctAnswer: '430', correctAnswers: ['430'], explanation: 'Skatting: 86 rond af na 90, dus 90 × 5 = 450.\nPresies: Eenhede 6 × 5 = 30, skryf 0 skuif 3. Tiene 8 × 5 = 40, plus geskuifde 3 = 43.\nPresiese antwoord: 430 (naby aan die skatting van 450) ✓' },
-      ],
-      scoreMessages: [
-        { minScore: 25, message: 'Uitstekend! Jy het 2-syfervermenigvuldiging, faktore en skatting bemeester.' },
-        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
-        { minScore: 13, message: 'Goeie poging! Gaan die kolommetode en faktor-voorbeelde weer deur.' },
-        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
-      ],
-    },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken 84 × 6 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: eenhede-kolom 4 × 6 = 24, hulle het 4 geskryf en 2 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 8 × 6 = 48, plus geskuifde 2 = 50. Finale antwoord: 504', checkMode: 'self' },
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // STEL 3 — WERKLIKE-LEWE WOORDPROBLEME (25 Vrae)
-    // ═══════════════════════════════════════════════════════════════════════
-    {
-      name: 'Stel 3: Werklike-Lewe Woordprobleme',
-      questions: [
-        { difficulty: 'Easy', question: 'ʼn Klaskamer het 6 rye lessenaars met 7 lessenaars in elke ry. Hoeveel lessenaars is daar altesaam?', answer: '42 lessenaars', checkMode: 'auto', correctAnswer: '42', correctAnswers: ['42', '42 lessenaars'], explanation: '6 × 7 = 42 lessenaars ✓' },
-        { difficulty: 'Easy', question: 'ʼn Sak het 5 appels. Daar is 8 sakke. Hoeveel appels is daar altesaam?', answer: '40 appels', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40', '40 appels'], explanation: '8 × 5 = 40 appels ✓' },
-        { difficulty: 'Easy', question: 'ʼn Boks het 6 potlode. Daar is 9 bokse. Hoeveel potlode is daar altesaam?', answer: '54 potlode', checkMode: 'auto', correctAnswer: '54', correctAnswers: ['54', '54 potlode'], explanation: '9 × 6 = 54 potlode ✓' },
-        { difficulty: 'Easy', question: 'ʼn Rak hou 8 boeke. Daar is 7 rakke. Hoeveel boeke is daar altesaam?', answer: '56 boeke', checkMode: 'auto', correctAnswer: '56', correctAnswers: ['56', '56 boeke'], explanation: '7 × 8 = 56 boeke ✓' },
-        { difficulty: 'Medium', question: 'ʼn Pak het 12 eiers. Daar is 4 pakke. Hoeveel eiers is daar altesaam?', answer: '48 eiers', checkMode: 'auto', correctAnswer: '48', correctAnswers: ['48', '48 eiers'], explanation: '4 × 12 = 48 eiers ✓' },
-        { difficulty: 'Medium', question: 'ʼn Span het 11 spelers. Daar is 5 spanne. Hoeveel spelers is daar altesaam?', answer: '55 spelers', checkMode: 'auto', correctAnswer: '55', correctAnswers: ['55', '55 spelers'], explanation: '5 × 11 = 55 spelers ✓' },
-        { difficulty: 'Medium', question: 'ʼn Bus vervoer 45 leerders. Daar is 3 busse. Hoeveel leerders is daar altesaam?', answer: '135 leerders', checkMode: 'auto', correctAnswer: '135', correctAnswers: ['135', '135 leerders'], explanation: '3 × 45 = 135 leerders ✓' },
-        { difficulty: 'Medium', question: 'ʼn Boks hou 24 lemoene. Daar is 6 bokse. Hoeveel lemoene is daar altesaam?', answer: '144 lemoene', checkMode: 'auto', correctAnswer: '144', correctAnswers: ['144', '144 lemoene'], explanation: '6 × 24 = 144 lemoene ✓' },
-        { difficulty: 'Medium', question: 'ʼn Kratjie hou 15 bottels. Daar is 9 kratjies. Hoeveel bottels is daar altesaam?', answer: '135 bottels', checkMode: 'auto', correctAnswer: '135', correctAnswers: ['135', '135 bottels'], explanation: '9 × 15 = 135 bottels ✓' },
-        { difficulty: 'Medium', question: 'ʼn Pakkie het 18 lekkers. Daar is 7 pakkies. Hoeveel lekkers is daar altesaam?', answer: '126 lekkers', checkMode: 'auto', correctAnswer: '126', correctAnswers: ['126', '126 lekkers'], explanation: '7 × 18 = 126 lekkers ✓' },
-        { difficulty: 'Easy', question: 'ʼn Tafel het 6 stoele. Daar is 12 tafels. Hoeveel stoele is daar altesaam?', answer: '72 stoele', checkMode: 'auto', correctAnswer: '72', correctAnswers: ['72', '72 stoele'], explanation: '12 × 6 = 72 stoele ✓' },
-        { difficulty: 'Medium', question: 'ʼn Klas het 27 leerders. Daar is 8 klasse. Hoeveel leerders is daar altesaam?', answer: '216 leerders', checkMode: 'auto', correctAnswer: '216', correctAnswers: ['216', '216 leerders'], explanation: '8 × 27 = 216 leerders ✓' },
-        { difficulty: 'Medium', question: '5 boere besit elkeen 34 skape. Hoeveel skape besit hulle altesaam?', answer: '170 skape', checkMode: 'auto', correctAnswer: '170', correctAnswers: ['170', '170 skape'], explanation: '5 × 34 = 170 skape ✓' },
-        { difficulty: 'Hard', question: 'ʼn Vragmotor vervoer 48 bokse. Daar is 6 vragmotors. Hoeveel bokse is daar altesaam?', answer: '288 bokse', checkMode: 'auto', correctAnswer: '288', correctAnswers: ['288', '288 bokse'], explanation: '6 × 48 = 288 bokse ✓' },
-        { difficulty: 'Medium', question: 'ʼn Ry het 16 sitplekke. Daar is 9 rye. Hoeveel sitplekke is daar altesaam?', answer: '144 sitplekke', checkMode: 'auto', correctAnswer: '144', correctAnswers: ['144', '144 sitplekke'], explanation: '9 × 16 = 144 sitplekke ✓' },
-        { difficulty: 'Medium', question: 'ʼn Rak hou 23 blikkies. Daar is 4 rakke. Hoeveel blikkies is daar altesaam?', answer: '92 blikkies', checkMode: 'auto', correctAnswer: '92', correctAnswers: ['92', '92 blikkies'], explanation: '4 × 23 = 92 blikkies ✓' },
-        { difficulty: 'Medium', question: 'ʼn Mandjie hou 19 mango\'s. Daar is 7 mandjies. Hoeveel mango\'s is daar altesaam?', answer: '133 mango\'s', checkMode: 'auto', correctAnswer: '133', correctAnswers: ['133', "133 mango's"], explanation: '7 × 19 = 133 mango\'s ✓' },
-        { difficulty: 'Hard', question: 'ʼn Watertenk hou 65 liter. Daar is 3 tenks. Hoeveel liter water is daar altesaam?', answer: '195 liter', checkMode: 'auto', correctAnswer: '195', correctAnswers: ['195', '195 liter'], explanation: '3 × 65 = 195 liter ✓' },
-        { difficulty: 'Medium', question: 'ʼn Pakkie het 14 biskuits. Daar is 8 pakkies. Hoeveel biskuits is daar altesaam?', answer: '112 biskuits', checkMode: 'auto', correctAnswer: '112', correctAnswers: ['112', '112 biskuits'], explanation: '8 × 14 = 112 biskuits ✓' },
-        { difficulty: 'Hard', question: 'ʼn Afleweringswa vervoer 36 pakkies. Daar is 6 waens. Hoeveel pakkies is daar altesaam?', answer: '216 pakkies', checkMode: 'auto', correctAnswer: '216', correctAnswers: ['216', '216 pakkies'], explanation: '6 × 36 = 216 pakkies ✓' },
-        { difficulty: 'Medium', question: 'ʼn Bondel het 8 stokkies. Daar is 9 bondels. Hoeveel stokkies is daar altesaam?', answer: '72 stokkies', checkMode: 'auto', correctAnswer: '72', correctAnswers: ['72', '72 stokkies'], explanation: '9 × 8 = 72 stokkies ✓' },
-        { difficulty: 'Hard', question: 'ʼn Boks hou 42 teëls. Daar is 5 bokse. Hoeveel teëls is daar altesaam?', answer: '210 teëls', checkMode: 'auto', correctAnswer: '210', correctAnswers: ['210', '210 teëls'], explanation: '5 × 42 = 210 teëls ✓' },
-        { difficulty: 'Easy', question: 'ʼn Boer plant 9 bome in elke ry. Daar is 4 rye. Hoeveel bome plant die boer altesaam?', answer: '36 bome', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 bome'], explanation: '4 × 9 = 36 bome ✓' },
-        { difficulty: 'Easy', question: 'Elkeen van 7 vriende het 6 albasters. Hoeveel albasters het hulle altesaam?', answer: '42 albasters', checkMode: 'auto', correctAnswer: '42', correctAnswers: ['42', '42 albasters'], explanation: '7 × 6 = 42 albasters ✓' },
-        { difficulty: 'Medium', question: 'ʼn Pak het 13 plakkers. Daar is 9 pakke. Hoeveel plakkers is daar altesaam?', answer: '117 plakkers', checkMode: 'auto', correctAnswer: '117', correctAnswers: ['117', '117 plakkers'], explanation: '9 × 13 = 117 plakkers ✓' },
-      ],
-      scoreMessages: [
-        { minScore: 25, message: 'Uitstekend! Jy kan vermenigvuldiging met selfvertroue op werklike-lewe-probleme toepas.' },
-        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
-        { minScore: 13, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur.' },
-        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
-      ],
-    },
+        // Blok 3 — Skatting en Redelikheid (8-10, Medium)
+        { difficulty: 'Medium', question: 'Skat 53 × 7 deur 53 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 350 (50 × 7). Presies: 371', checkMode: 'auto', correctAnswer: '371', correctAnswers: ['371', '350 371', 'Skatting 350 Presies 371'], explanation: '53 rond af na 50, dus die skatting is 50 × 7 = 350. Presies: eenhede 3 × 7 = 21, skryf 1 skuif 2; tiene 5 × 7 = 35, plus geskuifde 2 = 37. Presiese antwoord: 371, wat naby aan die skatting van 350 is ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder skat 41 × 9 deur 41 na 40 af te rond, en kry 360. Hulle presiese antwoord kom uit op 369. Is 369 ʼn redelike antwoord? Verduidelik hoe jy weet.', answer: 'Ja, 369 is redelik — dit is baie naby aan die skatting van 360, dus maak dit sin as die presiese antwoord op 41 × 9.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sonder om enige van hulle heeltemal uit te werk, watter een is groter: 5 × 19 of 8 × 12? Verduidelik hoe jy dit kan sien deur afronding of skatting te gebruik.', answer: '8 × 12 is groter, alhoewel die twee baie naby aan mekaar is. As jy 19 oprond na 20, kry jy ʼn skatting van 5 × 20 = 100 vir die eerste produk, terwyl 8 × 12 reeds naby daaraan is op ongeveer 96 — omdat die skatting vir 5 × 19 opgerond is, is die ware waarde (95) selfs nader aan 96, en 8 × 12 (96) wen net-net.', checkMode: 'self' },
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // STEL 4 — MULTI-STAP EN GEKOMBINEERDE PROBLEME (25 Vrae)
-    // ═══════════════════════════════════════════════════════════════════════
-    {
-      name: 'Stel 4: Multi-Stap en Gekombineerde Probleme',
-      questions: [
-        { difficulty: 'Medium', question: 'ʼn Winkel het 4 bokse penne met 8 penne in elke boks. Elke pen kos R3. Wat is die totale koste van al die penne?', answer: 'R96', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96', 'R96'], explanation: 'Stap 1: 4 × 8 = 32 penne.\nStap 2: 32 × 3 = R96 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Winkel het 6 pakke sjokolade met 9 sjokolades in elke pak. Elke sjokolade kos R2. Wat is die totale koste van al die sjokolades?', answer: 'R108', checkMode: 'auto', correctAnswer: '108', correctAnswers: ['108', 'R108'], explanation: 'Stap 1: 6 × 9 = 54 sjokolades.\nStap 2: 54 × 2 = R108 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Biblioteek het 3 rakke met 12 boeke elk en 2 rakke met 15 boeke elk. Hoeveel boeke is daar in totaal?', answer: '66 boeke', checkMode: 'auto', correctAnswer: '66', correctAnswers: ['66', '66 boeke'], explanation: 'Stap 1: 3 × 12 = 36 boeke.\nStap 2: 2 × 15 = 30 boeke.\nStap 3: 36 + 30 = 66 boeke ✓' },
-        { difficulty: 'Medium', question: 'ʼn Skool het 5 klasse met 24 leerders elk en 3 klasse met 18 leerders elk. Hoeveel leerders is daar in totaal?', answer: '174 leerders', checkMode: 'auto', correctAnswer: '174', correctAnswers: ['174', '174 leerders'], explanation: 'Stap 1: 5 × 24 = 120 leerders.\nStap 2: 3 × 18 = 54 leerders.\nStap 3: 120 + 54 = 174 leerders ✓' },
-        { difficulty: 'Hard', question: 'ʼn Boer het 7 rye bome met 16 bome in elke ry. ʼn Storm vernietig 3 volle rye. Hoeveel bome bly regop staan?', answer: '64 bome', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64', '64 bome'], explanation: 'Stap 1: Totale bome = 7 × 16 = 112.\nStap 2: Bome vernietig = 3 × 16 = 48.\nStap 3: Bome oor = 112 − 48 = 64 bome ✓' },
-        { difficulty: 'Medium', question: 'Skat 68 × 7 deur 68 af te rond na die naaste 10, en bereken dan die presiese antwoord. Skryf slegs die presiese antwoord.', answer: '476', checkMode: 'auto', correctAnswer: '476', correctAnswers: ['476'], explanation: 'Skatting: 68 rond af na 70, dus 70 × 7 = 490.\nPresies: Eenhede 8 × 7 = 56, skryf 6 skuif 5. Tiene 6 × 7 = 42, plus geskuifde 5 = 47.\nPresiese antwoord: 476 (naby aan die skatting van 490) ✓' },
-        { difficulty: 'Medium', question: 'ʼn Winkel bestel 9 bokse met 34 appels in elke boks, en skat eers deur 34 af te rond na die naaste 10. Wat is die presiese totale aantal appels?', answer: '306 appels', checkMode: 'auto', correctAnswer: '306', correctAnswers: ['306', '306 appels'], explanation: 'Skatting: 34 rond af na 30, dus 9 × 30 = 270.\nPresies: 9 × 34 = 306 appels (naby aan die skatting van 270) ✓' },
-        { difficulty: 'Medium', question: 'ʼn Winkel koop 4 bokse skoene. Elke boks kos R125. Wat is die totale koste?', answer: 'R500', checkMode: 'auto', correctAnswer: '500', correctAnswers: ['500', 'R500'], explanation: '4 × 125 = 500. Dink: 4 × 100 = 400, 4 × 25 = 100, 400 + 100 = R500 ✓' },
-        { difficulty: 'Easy', question: 'ʼn Groentetuin word in 12 rye geplant, met 12 plante in elke ry. Hoeveel plante is daar altesaam?', answer: '144 plante', checkMode: 'auto', correctAnswer: '144', correctAnswers: ['144', '144 plante'], explanation: '12 × 12 = 144 plante ✓' },
-        { difficulty: 'Medium', question: 'ʼn Boer het 8 rye van 9 mielieplante en voeg 4 meer rye van 9 mielieplante by. Hoeveel mielieplante is daar in totaal?', answer: '108 plante', checkMode: 'auto', correctAnswer: '108', correctAnswers: ['108', '108 plante'], explanation: 'Totale rye = 8 + 4 = 12 rye.\n12 × 9 = 108 plante ✓' },
-        { difficulty: 'Hard', question: 'ʼn Verkoper het 6 mandjies van 15 mango\'s elk. 2 mango\'s in elke mandjie word sleg en word weggegooi. Hoeveel goeie mango\'s bly oor in totaal?', answer: '78 mango\'s', checkMode: 'auto', correctAnswer: '78', correctAnswers: ['78', "78 mango's"], explanation: 'Stap 1: Goeie mango\'s per mandjie = 15 − 2 = 13.\nStap 2: 6 × 13 = 78 mango\'s ✓' },
-        { difficulty: 'Medium', question: 'Skat 45 × 6 deur 45 af te rond na die naaste 10, en bereken dan die presiese antwoord. Skryf slegs die presiese antwoord.', answer: '270', checkMode: 'auto', correctAnswer: '270', correctAnswers: ['270'], explanation: 'Skatting: 45 rond af na 50, dus 50 × 6 = 300.\nPresies: Eenhede 5 × 6 = 30, skryf 0 skuif 3. Tiene 4 × 6 = 24, plus geskuifde 3 = 27.\nPresiese antwoord: 270 (naby aan die skatting van 300) ✓' },
-        { difficulty: 'Hard', question: 'ʼn Maatskappy het 5 afleweringswaens wat elk 40 bokse vervoer, en voeg 2 meer waens by wat ook elk 40 bokse vervoer. Hoeveel bokse kan al die waens altesaam vervoer?', answer: '280 bokse', checkMode: 'auto', correctAnswer: '280', correctAnswers: ['280', '280 bokse'], explanation: 'Totale waens = 5 + 2 = 7 waens.\n7 × 40 = 280 bokse ✓' },
-        { difficulty: 'Medium', question: 'Bereken 96 × 5 met enige metode wat jy verkies. Skryf slegs die finale antwoord.', answer: '480', checkMode: 'auto', correctAnswer: '480', correctAnswers: ['480'], explanation: '96 × 5 = 480. Dink: 100 × 5 = 500, trek dan 4 × 5 = 20 af: 500 − 20 = 480 ✓' },
-        { difficulty: 'Hard', question: 'Breek 16 in faktore 8 × 2 om 8 × 16 te bereken. Skryf slegs die finale antwoord.', answer: '128', checkMode: 'auto', correctAnswer: '128', correctAnswers: ['128'], explanation: '8 × 16 = 8 × 8 × 2 = 64 × 2 = 128 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Fabriek vervaardig 250 speelgoed per dag. Hoeveel speelgoed vervaardig dit in 4 dae?', answer: '1000 speelgoed', checkMode: 'auto', correctAnswer: '1000', correctAnswers: ['1000', '1 000', '1000 speelgoed', '1 000 speelgoed'], explanation: '250 × 4 = 1 000 speelgoed ✓' },
-        { difficulty: 'Hard', question: 'Sipho sê 6 × 23 = 148. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Sipho is verkeerd. 6 × 23 = 138, nie 148 nie. (Eenhede: 3 × 6 = 18, skryf 8 skuif 1. Tiene: 2 × 6 = 12, plus geskuifde 1 = 13, wat 138 gee.)', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Thabo sê 9 × 36 = 314. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Thabo is verkeerd. 9 × 36 = 324, nie 314 nie. (Eenhede: 6 × 9 = 54, skryf 4 skuif 5. Tiene: 3 × 9 = 27, plus geskuifde 5 = 32, wat 324 gee.)', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Lerato sê 7 × 18 = 133. Gebruik ʼn korrekte metode om te kontroleer of sy reg is. Wys al jou werk.', answer: 'Lerato is verkeerd. 7 × 18 = 126, nie 133 nie. (Eenhede: 8 × 7 = 56, skryf 6 skuif 5. Tiene: 1 × 7 = 7, plus geskuifde 5 = 12, wat 126 gee.)', checkMode: 'self' },
+        // Blok 4 — Faktore en Buigsame Strategieë (11-13, Medium)
+        { difficulty: 'Easy', question: 'Breek 18 in twee faktore en gebruik hulle om te bereken: 4 × 18', answer: '72', checkMode: 'auto', correctAnswer: '72', correctAnswers: ['72'], explanation: '18 = 9 × 2, dus 4 × 18 = 4 × 9 × 2 = 36 × 2 = 72 ✓' },
+        { difficulty: 'Medium', question: 'Breek 16 in twee faktore en gebruik hulle om te bereken: 7 × 16', answer: '112', checkMode: 'auto', correctAnswer: '112', correctAnswers: ['112'], explanation: '16 = 8 × 2, dus 7 × 16 = 7 × 8 × 2 = 56 × 2 = 112 ✓' },
+        { difficulty: 'Medium', question: 'Sou jy vir die berekening 3 × 45 liewer 45 in faktore breek (3 × 9 × 5) of die kolommetode gebruik? Kies ʼn strategie en verduidelik waarom dit hierdie spesifieke produk pas.', answer: 'Die kolommetode is waarskynlik makliker hier, want 45 breek nie in twee baie eenvoudige klein faktore nie (9 × 5 moet steeds twee keer met 3 vermenigvuldig word). Om 45 × 3 in kolomme te skryf en net een keer te skuif is vinnig en direk.', checkMode: 'self' },
+
+        // Blok 5 — Woordprobleme in Verskeie Kontekste (14-16, Medium)
+        { difficulty: 'Medium', question: 'ʼn Sokkerafrigter koop nuwe drag vir die span: 8 bokse kouse met 12 pare in elke boks. Hoeveel pare kouse het die afrigter altesaam gekoop?', answer: '96 pare', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96', '96 pare'], explanation: '8 × 12 = 96 pare kouse ✓' },
+        { difficulty: 'Medium', question: 'ʼn Sitrusboer pak lemoene in kratte van 18. Hoeveel meer lemoene word in 9 kratte gepak as in 6 kratte?', answer: '54 meer lemoene', checkMode: 'auto', correctAnswer: '54', correctAnswers: ['54', '54 meer lemoene'], explanation: '9 × 18 = 162 en 6 × 18 = 108. 162 − 108 = 54 meer lemoene ✓' },
+        { difficulty: 'Medium', question: 'Roete A-busse maak 6 ritte per dag met 17 passasiers elk. Roete B-busse maak 7 ritte per dag met 15 passasiers elk. Watter roete vervoer meer passasiers per dag, en met hoeveel?', answer: 'Roete B vervoer meer, met 3.', checkMode: 'auto', correctAnswer: 'RoeteBmet3', correctAnswers: ['Roete B met 3', 'Roete B, met 3', '3 meer'], explanation: 'Roete A: 6 × 17 = 102 passasiers. Roete B: 7 × 15 = 105 passasiers. Roete B vervoer meer passasiers, met 105 − 102 = 3 ✓' },
+
+        // Blok 6 — Foutopsporing en Regverdig-jou-Redenasie (17-19, Hard)
         { difficulty: 'Hard', question: 'Amahle sê 12 × 11 = 142. Gebruik ʼn korrekte metode om te kontroleer of sy reg is. Wys al jou werk.', answer: 'Amahle is verkeerd. 12 × 11 = 132, nie 142 nie. (Dink: 12 × 10 = 120, plus 12 × 1 = 12, wat 120 + 12 = 132 gee.)', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Verduidelik in jou eie woorde waarom 6 × 8 dieselfde antwoord as 8 × 6 gee.', answer: 'Vermenigvuldiging kan in enige volgorde gedoen word — dit word die kommutatiewe eienskap genoem. 6 groepe van 8 en 8 groepe van 6 bevat albei presies dieselfde totale aantal items (48), net anders gerangskik, dus is die antwoord altyd dieselfde ongeag in watter volgorde jy vermenigvuldig.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Verduidelik in jou eie woorde waarom dit help om te skat voordat jy bereken om jou antwoord te kontroleer.', answer: 'Deur die getalle eers af te rond, kry jy vinnig ʼn benaderde antwoord. Nadat jy die presiese antwoord uitgewerk het, wys die vergelyking met die skatting of die presiese antwoord redelik is. As die presiese antwoord baie ver van die skatting af is, is dit ʼn teken dat daar waarskynlik ʼn fout iewers in die berekening gemaak is.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ʼn Skool het 4 klasse van 28 leerders en 2 klasse van 19 leerders. Hoeveel leerders is daar in totaal?', answer: '150 leerders', checkMode: 'auto', correctAnswer: '150', correctAnswers: ['150', '150 leerders'], explanation: 'Stap 1: 4 × 28 = 112 leerders.\nStap 2: 2 × 19 = 38 leerders.\nStap 3: 112 + 38 = 150 leerders ✓' },
-        { difficulty: 'Hard', question: 'ʼn Skryfbehoeftewinkel koop 9 bokse penne, elk met 12 penne, teen R4 per pen. Wat is die totale koste?', answer: 'R432', checkMode: 'auto', correctAnswer: '432', correctAnswers: ['432', 'R432'], explanation: 'Stap 1: 9 × 12 = 108 penne.\nStap 2: 108 × 4 = R432 ✓' },
-        { difficulty: 'Hard', question: '3 boere begin elkeen met 45 hoenders. Elke boer verkoop 15 hoenders. Hoeveel hoenders het al 3 boere saam oor?', answer: '90 hoenders', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90', '90 hoenders'], explanation: 'Stap 1: Hoenders oor per boer = 45 − 15 = 30.\nStap 2: 3 × 30 = 90 hoenders ✓' },
+        { difficulty: 'Hard', question: '4 vissers begin elkeen die dag met 38 visse in hulle vangs. Elke visser verkoop 14 visse by die mark. Hoeveel visse het al 4 vissers saam oor?', answer: '96 visse', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96', '96 visse'], explanation: 'Stap 1: Visse oor per visser = 38 − 14 = 24.\nStap 2: 4 × 24 = 96 visse ✓' },
+        { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom om 15 in 5 × 3 te breek en stap vir stap te vermenigvuldig presies dieselfde antwoord gee as om direk met 15 te vermenigvuldig.', answer: 'Om 15 in 5 × 3 te breek verander nie sy waarde nie — 5 × 3 is steeds 15. Dus is om met 5 en dan met 3 te vermenigvuldig dieselfde totale hoeveelheid vermenigvuldiging as om met 15 in een stap te vermenigvuldig, net verdeel in twee makliker kleiner stappe. Die volgorde en groepering van die vermenigvuldiging kan verander, maar die finale produk bly dieselfde.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 25, message: 'Uitstekend! Jy het multi-stap en gekombineerde vermenigvuldigingsprobleme bemeester.' },
-        { minScore: 19, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
-        { minScore: 13, message: 'Goeie poging! Gaan die multi-stap-voorbeelde weer deur.' },
+        { minScore: 20, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, woordprobleme en redenasie bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

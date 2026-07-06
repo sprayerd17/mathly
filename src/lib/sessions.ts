@@ -26,6 +26,16 @@ export const SESSION_DEFAULT_SPOTS: Record<SessionType, number> = {
 
 export const GUIDED_SESSION_DISCOUNT = 0.2
 
+// Booking a spot doesn't require immediate payment — it holds the spot as a
+// 'reserved' booking with a payment deadline. Inside this many hours of the
+// session starting, there's no time left to defer: booking goes straight to
+// PayFast instead (same as the old always-immediate-payment behaviour).
+export const DEPOSIT_HOURS_BEFORE_START = 48
+
+export function depositDeadlineFor(startsAt: Date): Date {
+  return new Date(startsAt.getTime() - DEPOSIT_HOURS_BEFORE_START * 60 * 60 * 1000)
+}
+
 // A child on the Guided tier books at 20% off; everyone else pays full price.
 export function sessionPriceFor(type: SessionType, tier: Tier): number {
   const base = SESSION_PRICE[type]

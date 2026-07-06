@@ -5,17 +5,26 @@ import { collection, getDocs, query, where, addDoc, serverTimestamp } from 'fire
 import { auth, db } from '@/src/lib/firebase'
 import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
-import { initiateSessionBooking, CheckoutError } from '@/src/lib/payfast-client'
+import { initiateSessionBooking, initiatePayReservation, cancelReservation, CheckoutError } from '@/src/lib/payfast-client'
 import { sessionPriceFor, type PublicSession } from '@/src/lib/sessions'
 
-type MyBooking = { sessionId: string; childName: string; meetLink: string }
+type MyBooking = {
+  bookingId: string
+  sessionId: string
+  childName: string
+  meetLink: string
+  status: 'paid' | 'reserved'
+  depositDeadline: string | null
+}
 
 // The bookable-sessions board: upcoming published sessions (served sanitized
 // by /api/sessions/list — the sessions collection itself is closed to
-// clients), each with a Book button that goes through PayFast. Full lessons
-// offer "join the waitlist" instead, which lands in lessonRequests — the same
-// collection the request-a-lesson form below writes to, so the dashboard sees
-// all demand in one place.
+// clients), each with a Book button that either holds the spot as an unpaid
+// reservation (more than 48h out) or goes straight through PayFast (within
+// 48h) — see /api/sessions/book. Full lessons offer "join the waitlist"
+// instead, which lands in lessonRequests — the same collection the
+// request-a-lesson form below writes to, so the dashboard sees all demand in
+// one place.
 export default function SessionsBoard({ sessions }: { sessions: PublicSession[] }) {
   const { user, openModal } = useAuth()
   const t = useTranslations()
@@ -25,6 +34,8 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
   const [bookingError, setBookingError] = useState<{ id: string; message: string } | null>(null)
   const [waitlisted, setWaitlisted] = useState<Set<string>>(new Set())
   const [banner, setBanner] = useState<'success' | 'cancelled' | null>(null)
+  const [reservedBanner, setReservedBanner] = useState<string | null>(null)
+  const [cancelling, setCancelling] = useState<string | null>(null)
   // Optimistic flip the instant a free booking is confirmed — user.freeSessionClaimed
   // itself only refreshes on next sign-in/reload, so without this a second card
   // on the same page view would still (wrongly) offer the active child another
@@ -47,17 +58,21 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
     }
   }, [])
 
-  // The user's own paid bookings — powers "Booked ✓" state and the Meet link.
+  // The user's own paid + reserved bookings — powers "Booked ✓" / "Reserved,
+  // pay by …" state and the Meet link.
   async function refreshMyBookings(uid: string) {
     const snap = await getDocs(query(
       collection(db, 'bookings'),
       where('uid', '==', uid),
-      where('status', '==', 'paid'),
+      where('status', 'in', ['paid', 'reserved']),
     ))
     setMyBookings(snap.docs.map(d => ({
+      bookingId: d.id,
       sessionId: d.data().sessionId ?? '',
       childName: d.data().childName ?? '',
       meetLink: d.data().meetLink ?? '',
+      status: d.data().status === 'paid' ? 'paid' as const : 'reserved' as const,
+      depositDeadline: d.data().depositDeadline ?? null,
     })))
   }
   useEffect(() => {
@@ -83,12 +98,16 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
     setBookingId(session.id)
     try {
       const result = await initiateSessionBooking(auth.currentUser!, session.id)
-      if (result.free) {
+      if ('free' in result && result.free) {
         // Free bookings are confirmed instantly server-side — no PayFast
         // redirect happens, so pull the real (now-paid) booking doc rather
         // than navigating away.
         setFreeClaimedThisVisit(true)
         await refreshMyBookings(user.uid)
+        setBookingId(null)
+      } else if ('reserved' in result && result.reserved) {
+        await refreshMyBookings(user.uid)
+        setReservedBanner(session.id)
         setBookingId(null)
       }
       // Otherwise the browser is already navigating to PayFast.
@@ -99,6 +118,31 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
         : t.live_error_generic
       setBookingError({ id: session.id, message })
       setBookingId(null)
+    }
+  }
+
+  async function payForReservation(b: MyBooking) {
+    setBookingError(null)
+    setBookingId(b.sessionId)
+    try {
+      await initiatePayReservation(auth.currentUser!, b.bookingId)
+      // Browser is now navigating to PayFast.
+    } catch {
+      setBookingError({ id: b.sessionId, message: t.live_error_generic })
+      setBookingId(null)
+    }
+  }
+
+  async function cancelMyReservation(b: MyBooking) {
+    if (!user) return
+    setCancelling(b.bookingId)
+    try {
+      await cancelReservation(auth.currentUser!, b.bookingId)
+      await refreshMyBookings(user.uid)
+    } catch {
+      // best-effort — leave the reservation in place so they can retry
+    } finally {
+      setCancelling(null)
     }
   }
 
@@ -140,7 +184,12 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
       <h2 className="text-2xl font-bold mb-2" style={{ color: '#0f1f3d' }}>
         {t.live_upcoming_heading}
       </h2>
-      <p className="text-sm text-gray-500 mb-8">{t.live_upcoming_subheading}</p>
+      <p className="text-sm text-gray-500 mb-4">{t.live_upcoming_subheading}</p>
+
+      {/* Explains the book-now-pay-later workflow */}
+      <div className="rounded-xl px-5 py-4 mb-8 text-sm leading-relaxed" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe', color: '#1e3a8a' }}>
+        {t.live_how_booking_works_text}
+      </div>
 
       <div className="flex flex-col gap-5">
         {sessions.map(s => {
@@ -155,6 +204,9 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
             s.language === 'af' ? 'af-ZA' : 'en-ZA',
             { weekday: 'long', day: 'numeric', month: 'long' },
           )
+          const deadlineLabel = booked?.status === 'reserved' && booked.depositDeadline
+            ? new Date(booked.depositDeadline).toLocaleString(s.language === 'af' ? 'af-ZA' : 'en-ZA', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+            : null
 
           return (
             <div key={s.id} className="bg-white rounded-2xl shadow-sm p-6" style={{ border: '1px solid #e5e7eb' }}>
@@ -188,6 +240,12 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
                 {isLesson ? t.live_type_lesson_detail : t.live_type_crash_detail}
               </p>
 
+              {reservedBanner === s.id && booked?.status === 'reserved' && (
+                <div className="rounded-lg px-4 py-3 mb-4 text-xs font-medium" style={{ backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }}>
+                  {t.live_reservation_held_note.replace('{deadline}', deadlineLabel ?? '')}
+                </div>
+              )}
+
               <div className="flex flex-wrap items-center justify-between gap-3 border-t pt-4" style={{ borderColor: '#f3f4f6' }}>
                 <div>
                   <p className="text-xl font-bold" style={{ color: '#0f1f3d' }}>
@@ -210,17 +268,22 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
                   {isFree && (
                     <p className="text-xs font-semibold mt-0.5" style={{ color: '#15803d' }}>{t.live_first_session_free_note}</p>
                   )}
-                  {spotsLeft !== null && !isFull && (
+                  {booked?.status === 'reserved' && deadlineLabel && (
+                    <p className="text-xs font-semibold mt-0.5" style={{ color: '#b45309' }}>
+                      {t.live_pay_by_label.replace('{deadline}', deadlineLabel)}
+                    </p>
+                  )}
+                  {!booked && spotsLeft !== null && !isFull && (
                     <p className="text-xs font-semibold mt-0.5" style={{ color: spotsLeft <= 3 ? '#b45309' : '#6b7280' }}>
                       {t.live_spots_left.replace('{count}', String(spotsLeft)).replace('{total}', String(s.spots))}
                     </p>
                   )}
-                  {isFull && (
+                  {!booked && isFull && (
                     <p className="text-xs font-semibold mt-0.5" style={{ color: '#b91c1c' }}>{t.live_full_label}</p>
                   )}
                 </div>
 
-                {booked ? (
+                {booked?.status === 'paid' ? (
                   <div className="text-right">
                     <span className="inline-block text-sm font-bold px-4 py-2 rounded-xl" style={{ backgroundColor: '#dcfce7', color: '#15803d' }}>
                       {t.live_booked_badge.replace('{child}', booked.childName)}
@@ -236,6 +299,25 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
                         {t.live_meet_link_label}
                       </a>
                     )}
+                  </div>
+                ) : booked?.status === 'reserved' ? (
+                  <div className="flex flex-col items-end gap-1.5">
+                    <button
+                      onClick={() => payForReservation(booked)}
+                      disabled={bookingId === s.id}
+                      className="text-sm font-bold px-5 py-2 rounded-xl text-white transition-colors disabled:opacity-60"
+                      style={{ backgroundColor: '#1e40af' }}
+                    >
+                      {bookingId === s.id ? t.live_book_button_busy : t.live_pay_now_button}
+                    </button>
+                    <button
+                      onClick={() => cancelMyReservation(booked)}
+                      disabled={cancelling === booked.bookingId}
+                      className="text-xs font-semibold hover:underline"
+                      style={{ color: '#6b7280' }}
+                    >
+                      {cancelling === booked.bookingId ? t.live_cancelling_label : t.live_cancel_reservation_button}
+                    </button>
                   </div>
                 ) : isFull ? (
                   waitlisted.has(s.id) ? (

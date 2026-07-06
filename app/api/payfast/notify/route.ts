@@ -167,7 +167,10 @@ export async function POST(req: NextRequest) {
       paidAt: new Date().toISOString(),
       meetLink: session?.meetLink ?? '',
     })
-    if (session) {
+    // A 'reserved' booking already incremented bookedCount the moment the
+    // spot was held — only a fresh 'pending' (immediate-checkout) booking
+    // still needs it counted now that payment actually arrived.
+    if (session && booking.status !== 'reserved') {
       await sessionRef.update({ bookedCount: FieldValue.increment(1) })
     }
     await logItn(adminDb, fields, 'complete', null, 'session')
@@ -222,7 +225,15 @@ export async function POST(req: NextRequest) {
       return OK()
     }
     if (fields.payment_status !== 'COMPLETE') {
-      await userRef.update({ subscriptionStatus: 'past_due' })
+      // Only stamp pastDueSince the moment an account FIRST goes past_due —
+      // resetting it on every retry would keep pushing the dunning clock
+      // back and the account would never actually progress through it.
+      await userRef.update({
+        subscriptionStatus: 'past_due',
+        ...(userData.subscriptionStatus !== 'past_due'
+          ? { pastDueSince: new Date().toISOString(), dunningStage: 0 }
+          : {}),
+      })
       await logItn(adminDb, fields, 'failed', 'payment_not_complete', 'renewal')
       if (userData.email) {
         const mail = paymentFailedEmail({ name: userData.name ?? '' })
@@ -239,6 +250,8 @@ export async function POST(req: NextRequest) {
       subscriptionStatus: 'active',
       lastPaymentDate: new Date().toISOString(),
       lastPaymentAmount: receivedAmount,
+      pastDueSince: null,
+      dunningStage: null,
     })
     await logItn(adminDb, fields, 'complete', null, 'renewal')
     if (userData.email) {
@@ -269,7 +282,12 @@ export async function POST(req: NextRequest) {
 
   // All checks passed.
   if (fields.payment_status !== 'COMPLETE') {
-    await userRef.update({ subscriptionStatus: 'past_due' })
+    await userRef.update({
+      subscriptionStatus: 'past_due',
+      ...(userData.subscriptionStatus !== 'past_due'
+        ? { pastDueSince: new Date().toISOString(), dunningStage: 0 }
+        : {}),
+    })
     await logItn(adminDb, fields, 'failed', 'payment_not_complete', 'signup')
     if (userData.email) {
       const mail = paymentFailedEmail({ name: userData.name ?? '' })
@@ -287,6 +305,8 @@ export async function POST(req: NextRequest) {
     pendingAmount: null,
     lastPaymentDate: new Date().toISOString(),
     lastPaymentAmount: receivedAmount,
+    pastDueSince: null,
+    dunningStage: null,
   })
 
   // Founding seats are only consumed once the money actually arrives — the

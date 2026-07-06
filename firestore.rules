@@ -34,12 +34,16 @@ service cloud.firestore {
       // child, server-side, by /api/sessions/book the first time that child
       // claims its one free live-session booking — never client-settable,
       // same reasoning as the billing fields above.
+      // pastDueSince/dunningStage drive the dunning cron's follow-up cadence
+      // for failed renewals — same server-only reasoning as the other
+      // billing fields.
       allow update: if request.auth != null && request.auth.uid == userId
                     && !request.resource.data.diff(resource.data).affectedKeys()
                          .hasAny(['childPlans', 'subscriptionStatus', 'payfastToken',
                                   'pendingChildPlans', 'pendingFounding', 'pendingAmount',
                                   'lastPaymentDate', 'lastPaymentAmount',
-                                  'referredBy', 'freeSessionClaimed']);
+                                  'referredBy', 'freeSessionClaimed',
+                                  'pastDueSince', 'dunningStage']);
 
       allow delete: if false;
     }

@@ -48,15 +48,17 @@ export async function initiateCheckout(
   submitPayfastForm(action, fields)
 }
 
-// Once-off payment for a live-session booking (live-classes page). Every
-// account's first-ever session booking is free — the server confirms it
-// instantly with no PayFast round trip, signalled by { free: true } instead
-// of { action, fields }. For every booking after that, the server prices it
-// from the session type and the active child's tier, and the browser is
-// redirected to PayFast (does not return normally in that case). Throws
-// CheckoutError with the server's reason ('Session is full', 'Already
+// Books a spot on a live session (live-classes page). Three possible
+// outcomes, distinguished by the response shape (no PayFast redirect
+// happens in the first two cases):
+//   { free: true }               — this child's one-ever free session, confirmed instantly
+//   { reserved: true, ... }      — more than 48h before the session: spot held, pay later
+//   otherwise                    — within 48h: no time to defer, redirected to PayFast now
+// Throws CheckoutError with the server's reason ('Session is full', 'Already
 // booked', …) so the page can react specifically.
-export async function initiateSessionBooking(fbUser: FirebaseUser, sessionId: string): Promise<{ free: boolean }> {
+export async function initiateSessionBooking(fbUser: FirebaseUser, sessionId: string): Promise<
+  { free: true } | { reserved: true; bookingId: string; depositDeadline: string } | { free: false; reserved: false }
+> {
   const idToken = await fbUser.getIdToken()
   const res = await fetch('/api/sessions/book', {
     method: 'POST',
@@ -68,6 +70,37 @@ export async function initiateSessionBooking(fbUser: FirebaseUser, sessionId: st
   }
   const data = await res.json()
   if (data.free) return { free: true }
+  if (data.reserved) return { reserved: true, bookingId: data.bookingId, depositDeadline: data.depositDeadline }
   submitPayfastForm(data.action, data.fields)
-  return { free: false }
+  return { free: false, reserved: false }
+}
+
+// Pays an existing reservation before its deposit deadline — same booking
+// doc, no new one created. Redirects to PayFast on success.
+export async function initiatePayReservation(fbUser: FirebaseUser, bookingId: string) {
+  const idToken = await fbUser.getIdToken()
+  const res = await fetch('/api/sessions/pay-reservation', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken, bookingId }),
+  })
+  if (!res.ok) {
+    throw new CheckoutError(await res.text().catch(() => 'Could not start payment.'))
+  }
+  const { action, fields } = await res.json()
+  submitPayfastForm(action, fields)
+}
+
+// Cancels the caller's own unpaid reservation — no payment was made, so
+// there's nothing to refund, just releases the held spot.
+export async function cancelReservation(fbUser: FirebaseUser, bookingId: string): Promise<void> {
+  const idToken = await fbUser.getIdToken()
+  const res = await fetch('/api/sessions/cancel-reservation', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken, bookingId }),
+  })
+  if (!res.ok) {
+    throw new CheckoutError(await res.text().catch(() => 'Could not cancel the reservation.'))
+  }
 }

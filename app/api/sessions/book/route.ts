@@ -2,16 +2,24 @@ import { NextRequest } from 'next/server'
 import { FieldValue } from 'firebase-admin/firestore'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPayfastConfig, generateSignature } from '@/src/lib/payfast'
-import { sessionPriceFor, type SessionType } from '@/src/lib/sessions'
-import { bookingConfirmedEmail, sendEmail } from '@/src/lib/email'
+import { sessionPriceFor, depositDeadlineFor, type SessionType } from '@/src/lib/sessions'
+import { bookingConfirmedEmail, reservationHeldEmail, sendEmail } from '@/src/lib/email'
 import type { Tier } from '@/src/lib/pricing'
 
-// Books the signed-in account's ACTIVE child onto a live session as a
-// once-off PayFast payment (unlike the subscription checkout). The price is
-// computed server-side from the session type and the child's tier (Guided
-// gets 20% off) — the client sends only a session id. The booking starts as
-// 'pending' and holds no spot; the ITN webhook flips it to 'paid' and
-// increments the session's bookedCount once the money actually arrives.
+// Books the signed-in account's ACTIVE child onto a live session.
+//
+// More than 48h before the session starts: this holds the spot as a
+// 'reserved' booking with no payment yet — bookedCount increments right
+// away since the spot really is taken. The student has until
+// depositDeadline (session start − 48h) to pay via /api/sessions/pay-
+// reservation or cancel it themselves via /api/sessions/cancel-reservation.
+// A cron sweep (app/api/cron/expire-reservations) frees any reservation that
+// reaches its deadline unpaid.
+//
+// Within 48h of the session: there's no time left to defer, so this goes
+// straight to PayFast, same as the old always-immediate-payment behaviour —
+// the booking starts 'pending' and holds no spot; the ITN webhook flips it
+// to 'paid' and increments bookedCount once the money actually arrives.
 //
 // Exception: every CHILD gets exactly one free session ever (lowers the
 // barrier to trying a session at all, regardless of tier) — freeSessionClaimed
@@ -41,9 +49,10 @@ export async function POST(req: NextRequest) {
     return new Response('Unauthorized', { status: 401 })
   }
 
+  const sessionRef = adminDb.doc(`sessions/${sessionId}`)
   const [userSnap, sessionSnap] = await Promise.all([
     adminDb.doc(`users/${uid}`).get(),
-    adminDb.doc(`sessions/${sessionId}`).get(),
+    sessionRef.get(),
   ])
   if (!userSnap.exists) return new Response('User not found', { status: 404 })
   if (!sessionSnap.exists) return new Response('Session not found', { status: 404 })
@@ -59,7 +68,9 @@ export async function POST(req: NextRequest) {
     return new Response('Session already started', { status: 409 })
   }
 
-  // Capacity — spots of 0 means uncapped (crash courses).
+  // Capacity — spots of 0 means uncapped (crash courses). bookedCount
+  // reflects reserved + paid bookings; 'pending' (mid-immediate-checkout)
+  // ones don't count until confirmed, same as always.
   const spots = typeof session.spots === 'number' ? session.spots : 0
   const bookedCount = typeof session.bookedCount === 'number' ? session.bookedCount : 0
   if (spots > 0 && bookedCount >= spots) {
@@ -73,14 +84,15 @@ export async function POST(req: NextRequest) {
   if (!child) return new Response('No child profile on account', { status: 409 })
   const tier: Tier = childPlans[idx] ?? 'free'
 
-  // One paid seat per child per session.
+  // One held seat (paid or still-reserved) per child per session.
   const existing = await adminDb.collection('bookings')
     .where('sessionId', '==', sessionId)
     .where('uid', '==', uid)
-    .where('status', '==', 'paid')
-    .limit(5)
     .get()
-  if (existing.docs.some(d => d.data().childName === child.name)) {
+  if (existing.docs.some(d => {
+    const b = d.data()
+    return b.childName === child.name && (b.status === 'paid' || b.status === 'reserved')
+  })) {
     return new Response('Already booked', { status: 409 })
   }
 
@@ -121,7 +133,7 @@ export async function POST(req: NextRequest) {
         createdAt: FieldValue.serverTimestamp(),
       })
       tx.update(userRef, { freeSessionClaimed: updatedClaimed })
-      tx.update(adminDb.doc(`sessions/${sessionId}`), { bookedCount: FieldValue.increment(1) })
+      tx.update(sessionRef, { bookedCount: FieldValue.increment(1) })
     }).catch(async err => {
       // Lost the race to another concurrent request — fall through to a
       // normal paid booking instead of failing the request outright.
@@ -151,6 +163,54 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  const depositDeadline = depositDeadlineFor(startsAt)
+  const withinDepositWindow = depositDeadline.getTime() <= Date.now()
+
+  // ── More than 48h out: reserve the spot, no payment yet ──────────────────
+  if (!withinDepositWindow) {
+    const bookingRef = adminDb.collection('bookings').doc()
+    let full = false
+    await adminDb.runTransaction(async tx => {
+      const freshSession = await tx.get(sessionRef)
+      const freshSpots = typeof freshSession.data()?.spots === 'number' ? freshSession.data()!.spots : 0
+      const freshBooked = typeof freshSession.data()?.bookedCount === 'number' ? freshSession.data()!.bookedCount : 0
+      if (freshSpots > 0 && freshBooked >= freshSpots) {
+        full = true
+        return
+      }
+      tx.set(bookingRef, {
+        sessionId,
+        uid,
+        childName: child.name ?? '',
+        name: userData.name ?? '',
+        email: userData.email ?? '',
+        grade: typeof session.grade === 'number' ? session.grade : null,
+        amount,
+        status: 'reserved',
+        depositDeadline: depositDeadline.toISOString(),
+        meetLink: '',
+        createdAt: FieldValue.serverTimestamp(),
+      })
+      tx.update(sessionRef, { bookedCount: FieldValue.increment(1) })
+    })
+    if (full) return new Response('Session is full', { status: 409 })
+
+    if (userData.email) {
+      const mail = reservationHeldEmail({
+        name: userData.name ?? '',
+        childName: child.name ?? '',
+        topic: session.topic ?? '',
+        date: session.date ?? '',
+        time: session.time ?? '',
+        amount,
+        depositDeadline: depositDeadline.toISOString(),
+      })
+      await sendEmail(userData.email, mail.subject, mail.html, mail.from)
+    }
+    return Response.json({ reserved: true, bookingId: bookingRef.id, depositDeadline: depositDeadline.toISOString() })
+  }
+
+  // ── Within 48h: no time to defer, straight to PayFast ─────────────────────
   const bookingRef = await adminDb.collection('bookings').add({
     sessionId,
     uid,

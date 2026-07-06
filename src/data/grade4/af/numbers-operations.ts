@@ -43,6 +43,11 @@ export type OpenQuestion = {
   correctAnswers?: string[]
   explanation?: string
   parts?: QuestionPart[]
+  // Raw inline SVG markup. When consecutive questions in a practice set share
+  // the exact same diagramSvg string, the UI renders it once as a shared
+  // "exam style" diagram above that run of questions instead of repeating it
+  // per question card.
+  diagramSvg?: string
 }
 
 export type ScoreMessage = {
