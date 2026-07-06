@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { db } from '@/src/lib/firebase'
 import Navbar from '@/app/components/Navbar'
 import FAQAccordion from '@/app/components/FAQAccordion'
 import { useTranslations } from '@/src/i18n/useTranslations'
@@ -15,8 +17,6 @@ const CONTACT_REQ_TYPES: { value: string; labelKey: string }[] = [
   { value: 'General Suggestion',     labelKey: 'contact_req_type_general_suggestion' },
   { value: 'Other',                  labelKey: 'topic_query_other_option' },
 ]
-const REQUESTS_KEY      = 'mathly_requests'
-
 const EMPTY_FORM = {
   name:        '',
   email:       '',
@@ -64,25 +64,36 @@ function ClockIcon() {
 
 export default function ContactPage() {
   const t = useTranslations()
-  const [form, setForm]           = useState(EMPTY_FORM)
-  const [submitted, setSubmitted] = useState(false)
+  const [form, setForm]             = useState(EMPTY_FORM)
+  const [submitted, setSubmitted]   = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
   function f<K extends keyof typeof EMPTY_FORM>(key: K, val: typeof EMPTY_FORM[K]) {
     setForm(prev => ({ ...prev, [key]: val }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  // Requests land in the Firestore `requests` collection (create-only for
+  // clients, see firestore.rules) so the admin dashboard can see them —
+  // previously they only lived in this browser's localStorage.
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    const newReq = {
-      ...form,
-      id:     crypto.randomUUID(),
-      date:   new Date().toISOString().slice(0, 10),
-      status: 'unreviewed' as const,
+    if (submitting) return
+    setSubmitting(true)
+    setSubmitError(false)
+    try {
+      await addDoc(collection(db, 'requests'), {
+        ...form,
+        status:    'unreviewed',
+        createdAt: serverTimestamp(),
+      })
+      setSubmitted(true)
+      setForm(EMPTY_FORM)
+    } catch {
+      setSubmitError(true)
+    } finally {
+      setSubmitting(false)
     }
-    const existing = JSON.parse(localStorage.getItem(REQUESTS_KEY) ?? '[]')
-    localStorage.setItem(REQUESTS_KEY, JSON.stringify([...existing, newReq]))
-    setSubmitted(true)
-    setForm(EMPTY_FORM)
   }
 
   return (
@@ -254,9 +265,19 @@ export default function ContactPage() {
                 />
               </div>
 
+              {submitError && (
+                <div
+                  className="rounded-xl px-6 py-4 text-sm font-medium"
+                  style={{ backgroundColor: '#fee2e2', color: '#b91c1c', border: '1px solid #fecaca' }}
+                >
+                  {t.contact_submit_error_message}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-colors"
+                disabled={submitting}
+                className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-60"
                 style={{ backgroundColor: '#1e40af' }}
               >
                 {t.contact_submit_request_button}

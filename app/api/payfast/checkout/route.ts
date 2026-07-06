@@ -52,21 +52,36 @@ export async function POST(req: NextRequest) {
   }
 
   // Never trust a client-supplied amount — compute it server-side. `founding`
-  // is trusted only insofar as it selects one of exactly two known prices per
-  // tier (the real founding-spot counter is client-only today; closing that
-  // is a separate, later piece of work).
-  const { total: amount } = computeFamilyPrice(childTiers, {
-    pro: Boolean(founding?.pro),
-    guided: Boolean(founding?.guided),
-  })
+  // selects one of exactly two known prices per tier, and is checked against
+  // the persistent spots counter (settings/founding, maintained by the ITN
+  // webhook and the admin dashboard) so a client can't claim a founding price
+  // once the spots are gone. Totals unset (doc missing / total <= 0) means
+  // the window is open-ended — don't enforce.
+  const wantsFounding = { pro: Boolean(founding?.pro), guided: Boolean(founding?.guided) }
+  if (wantsFounding.pro || wantsFounding.guided) {
+    const foundingSnap = await adminDb.doc('settings/founding').get()
+    const f = foundingSnap.exists ? foundingSnap.data()! : {}
+    for (const plan of ['pro', 'guided'] as const) {
+      const total = typeof f[`${plan}Total`] === 'number' ? f[`${plan}Total`] : 0
+      const used = typeof f[`${plan}Used`] === 'number' ? f[`${plan}Used`] : 0
+      if (wantsFounding[plan] && total > 0 && used >= total) {
+        return new Response('Founding spots sold out', { status: 409 })
+      }
+    }
+  }
+
+  const { total: amount } = computeFamilyPrice(childTiers, wantsFounding)
 
   // pendingChildPlans/pendingAmount let the ITN handler verify the payload
   // against exactly what this user was quoted, without needing to re-derive
   // founding-vs-full status (which isn't knowable from the ITN payload
-  // alone). subscriptionStatus moves to 'pending' so the profile page can
-  // reflect "upgrade in progress" immediately, before ITN confirms.
+  // alone). pendingFounding records which tiers were quoted at founding
+  // price so the ITN handler can consume founding spots only once payment
+  // actually completes. subscriptionStatus moves to 'pending' so the profile
+  // page can reflect "upgrade in progress" immediately, before ITN confirms.
   await adminDb.doc(`users/${uid}`).update({
     pendingChildPlans: childTiers,
+    pendingFounding: wantsFounding,
     pendingAmount: amount,
     subscriptionStatus: 'pending',
   })
