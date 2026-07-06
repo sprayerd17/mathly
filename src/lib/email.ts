@@ -92,3 +92,33 @@ export function paymentFailedEmail(opts: { name: string }) {
     `),
   }
 }
+
+export function sessionReminderEmail(opts: {
+  name: string
+  childName: string
+  topic: string
+  date: string
+  time: string
+  durationMins: number
+  meetLink: string
+  window: '24h' | '1h'
+}) {
+  const whenPhrase = opts.window === '24h' ? 'tomorrow' : 'in about an hour'
+  return {
+    subject: opts.window === '24h'
+      ? `Reminder: ${opts.topic} is tomorrow`
+      : `Starting soon: ${opts.topic}`,
+    html: wrap(`
+      <p>Hi ${opts.name},</p>
+      <p><strong>${opts.childName}</strong>'s live session is ${whenPhrase}:</p>
+      <div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin:16px 0">
+        <p style="margin:0;font-weight:bold">${opts.topic}</p>
+        <p style="margin:6px 0 0;font-size:14px;color:#475569">${opts.date} at ${opts.time} · ${opts.durationMins} minutes</p>
+        ${opts.meetLink
+          ? `<p style="margin:12px 0 0"><a href="${opts.meetLink}" style="color:#1e40af;font-weight:bold">Join on Google Meet</a></p>`
+          : `<p style="margin:12px 0 0;font-size:13px;color:#475569">The Google Meet link will appear on your live-classes page shortly before the session.</p>`}
+      </div>
+      <p style="font-size:14px">${opts.window === '1h' ? 'See you shortly!' : 'See you tomorrow!'}</p>
+    `),
+  }
+}

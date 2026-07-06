@@ -99,6 +99,13 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    // Frozen monthly metrics snapshots, written only by the dashboard's
+    // scheduled cron (Admin SDK, shared-secret auth — see
+    // mathly-dashboard/app/api/cron/metrics-snapshot).
+    match /metricsSnapshots/{docId} {
+      allow read, write: if false;
+    }
+
     // Live sessions scheduled from the admin dashboard. Fully closed to
     // clients: session docs carry the Google Meet link, the teacher's private
     // notes and attendance — none of which may leak. The public listing is
