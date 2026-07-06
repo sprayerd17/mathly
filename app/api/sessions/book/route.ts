@@ -145,7 +145,7 @@ export async function POST(req: NextRequest) {
           amount: 0,
           meetLink: session.meetLink ?? '',
         })
-        await sendEmail(userData.email, mail.subject, mail.html)
+        await sendEmail(userData.email, mail.subject, mail.html, mail.from)
       }
       return Response.json({ free: true, ok: true })
     }

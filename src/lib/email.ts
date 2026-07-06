@@ -3,10 +3,12 @@
 // no-op, so the whole app keeps working before email is configured.
 // Server-only — called from API routes (Admin SDK side), never the client.
 
-const FROM = 'Mathly <payments@mathly.co.za>'
+const FROM_CLASSES = 'Mathly <classes@mathly.co.za>'
+const FROM_PAYMENTS = 'Mathly <payments@mathly.co.za>'
+const FROM_WELCOME = 'Mathly <welcome@mathly.co.za>'
 const OWNER = process.env.OWNER_ALERT_EMAIL ?? 'divanbosman06@gmail.com'
 
-export async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
+export async function sendEmail(to: string, subject: string, html: string, from: string): Promise<boolean> {
   const key = process.env.RESEND_API_KEY
   if (!key || !to) return false
   try {
@@ -16,7 +18,7 @@ export async function sendEmail(to: string, subject: string, html: string): Prom
         Authorization: `Bearer ${key}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ from: FROM, to: [to], subject, html }),
+      body: JSON.stringify({ from, to: [to], subject, html }),
     })
     if (!res.ok) {
       console.error('[email] Resend rejected send', res.status, await res.text().catch(() => ''))
@@ -30,7 +32,7 @@ export async function sendEmail(to: string, subject: string, html: string): Prom
 }
 
 export function sendOwnerAlert(subject: string, html: string) {
-  return sendEmail(OWNER, subject, html)
+  return sendEmail(OWNER, subject, html, FROM_CLASSES)
 }
 
 // ── Templates ───────────────────────────────────────────────────────────────
@@ -40,7 +42,7 @@ const wrap = (body: string) => `
 <div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#0f1f3d">
   <p style="font-size:20px;font-weight:bold;margin:0 0 20px">Mathly</p>
   ${body}
-  <p style="font-size:12px;color:#9ca3af;margin-top:28px">Mathly · Extra maths, made simple. Questions? Reply to this email or write to mathlyweb@outlook.com.</p>
+  <p style="font-size:12px;color:#9ca3af;margin-top:28px">Mathly · Extra maths, made simple. Questions? Reply to this email or write to support@mathly.co.za.</p>
 </div>`
 
 export function bookingConfirmedEmail(opts: {
@@ -54,6 +56,7 @@ export function bookingConfirmedEmail(opts: {
   meetLink: string
 }) {
   return {
+    from: FROM_CLASSES,
     subject: `You're booked: ${opts.topic} (${opts.date} at ${opts.time})`,
     html: wrap(`
       <p>Hi ${opts.name},</p>
@@ -73,6 +76,7 @@ export function bookingConfirmedEmail(opts: {
 
 export function paymentReceiptEmail(opts: { name: string; amount: number; item: string }) {
   return {
+    from: FROM_PAYMENTS,
     subject: `Payment received — R${opts.amount.toFixed(2)}`,
     html: wrap(`
       <p>Hi ${opts.name},</p>
@@ -84,6 +88,7 @@ export function paymentReceiptEmail(opts: { name: string; amount: number; item: 
 
 export function paymentFailedEmail(opts: { name: string }) {
   return {
+    from: FROM_PAYMENTS,
     subject: 'Your Mathly payment didn\'t go through',
     html: wrap(`
       <p>Hi ${opts.name},</p>
@@ -105,6 +110,7 @@ export function sessionReminderEmail(opts: {
 }) {
   const whenPhrase = opts.window === '24h' ? 'tomorrow' : 'in about an hour'
   return {
+    from: FROM_CLASSES,
     subject: opts.window === '24h'
       ? `Reminder: ${opts.topic} is tomorrow`
       : `Starting soon: ${opts.topic}`,
@@ -119,6 +125,18 @@ export function sessionReminderEmail(opts: {
           : `<p style="margin:12px 0 0;font-size:13px;color:#475569">The Google Meet link will appear on your live-classes page shortly before the session.</p>`}
       </div>
       <p style="font-size:14px">${opts.window === '1h' ? 'See you shortly!' : 'See you tomorrow!'}</p>
+    `),
+  }
+}
+
+export function welcomeEmail(opts: { name: string }) {
+  return {
+    from: FROM_WELCOME,
+    subject: 'Welcome to Mathly!',
+    html: wrap(`
+      <p>Hi ${opts.name},</p>
+      <p>Thanks for signing up — your account is ready to go.</p>
+      <p style="font-size:14px">Head back to your dashboard any time to pick up where you left off. If you have any questions getting started, just reply to this email.</p>
     `),
   }
 }

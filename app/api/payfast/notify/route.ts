@@ -183,7 +183,7 @@ export async function POST(req: NextRequest) {
         amount: booking.amount,
         meetLink: session.meetLink ?? '',
       })
-      await sendEmail(booking.email, mail.subject, mail.html)
+      await sendEmail(booking.email, mail.subject, mail.html, mail.from)
     }
     return OK()
   }
@@ -226,7 +226,7 @@ export async function POST(req: NextRequest) {
       await logItn(adminDb, fields, 'failed', 'payment_not_complete', 'renewal')
       if (userData.email) {
         const mail = paymentFailedEmail({ name: userData.name ?? '' })
-        await sendEmail(userData.email, mail.subject, mail.html)
+        await sendEmail(userData.email, mail.subject, mail.html, mail.from)
       }
       return OK()
     }
@@ -243,7 +243,7 @@ export async function POST(req: NextRequest) {
     await logItn(adminDb, fields, 'complete', null, 'renewal')
     if (userData.email) {
       const mail = paymentReceiptEmail({ name: userData.name ?? '', amount: receivedAmount, item: fields.item_name ?? 'Mathly subscription' })
-      await sendEmail(userData.email, mail.subject, mail.html)
+      await sendEmail(userData.email, mail.subject, mail.html, mail.from)
     }
     return OK()
   }
@@ -273,7 +273,7 @@ export async function POST(req: NextRequest) {
     await logItn(adminDb, fields, 'failed', 'payment_not_complete', 'signup')
     if (userData.email) {
       const mail = paymentFailedEmail({ name: userData.name ?? '' })
-      await sendEmail(userData.email, mail.subject, mail.html)
+      await sendEmail(userData.email, mail.subject, mail.html, mail.from)
     }
     return OK()
   }
@@ -332,7 +332,7 @@ export async function POST(req: NextRequest) {
   await logItn(adminDb, fields, 'complete', null, 'signup')
   if (userData.email) {
     const mail = paymentReceiptEmail({ name: userData.name ?? '', amount: receivedAmount, item: fields.item_name ?? 'Mathly subscription' })
-    await sendEmail(userData.email, mail.subject, mail.html)
+    await sendEmail(userData.email, mail.subject, mail.html, mail.from)
   }
   return OK()
 }

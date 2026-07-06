@@ -862,6 +862,18 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       }
     }
 
+    // Best-effort welcome email — never block registration on it.
+    try {
+      const idToken = await cred.user.getIdToken()
+      await fetch('/api/auth/welcome-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken }),
+      })
+    } catch {
+      // best-effort — a missed welcome email isn't worth failing signup over
+    }
+
     // Chosen any paid tier for any child? Immediately continue into checkout
     // instead of granting it for free. This redirects the browser to PayFast
     // on success. Founding pricing is hardcoded true here (matches prior

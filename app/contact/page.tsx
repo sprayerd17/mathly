@@ -117,10 +117,10 @@ export default function ContactPage() {
           <div className="flex items-center gap-3 text-[#1e40af]">
             <EmailIcon />
             <a
-              href="mailto:mathlyweb@outlook.com"
+              href="mailto:hello@mathly.co.za"
               className="text-sm font-semibold hover:underline"
             >
-              mathlyweb@outlook.com
+              hello@mathly.co.za
             </a>
           </div>
         </div>

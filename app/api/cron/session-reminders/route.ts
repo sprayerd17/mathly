@@ -72,7 +72,7 @@ export async function GET(req: NextRequest) {
           meetLink: booking.meetLink ?? session.meetLink ?? '',
           window: windowKey,
         })
-        const ok = await sendEmail(booking.email, mail.subject, mail.html)
+        const ok = await sendEmail(booking.email, mail.subject, mail.html, mail.from)
         // Mark sent even if Resend isn't configured yet — prevents a burst of
         // reminders the moment a key finally gets added weeks late for a
         // session that already happened.
