@@ -48,22 +48,29 @@ export async function initiateCheckout(
   submitPayfastForm(action, fields)
 }
 
-// Books a spot on a live session (live-classes page). Three possible
-// outcomes, distinguished by the response shape (no PayFast redirect
-// happens in the first two cases):
+// Books a spot on a live session (live-classes page). The student picks the
+// intent explicitly via two separate buttons:
+//   'reserve'  — hold the spot, no payment yet (only offered >48h before start)
+//   'pay_now'  — pay immediately via PayFast, any time before the session
+// Three possible response shapes (no PayFast redirect happens in the first
+// two cases):
 //   { free: true }               — this child's one-ever free session, confirmed instantly
-//   { reserved: true, ... }      — more than 48h before the session: spot held, pay later
-//   otherwise                    — within 48h: no time to defer, redirected to PayFast now
+//   { reserved: true, ... }      — 'reserve' succeeded: spot held, pay later
+//   otherwise                    — 'pay_now': redirected to PayFast now
 // Throws CheckoutError with the server's reason ('Session is full', 'Already
 // booked', …) so the page can react specifically.
-export async function initiateSessionBooking(fbUser: FirebaseUser, sessionId: string): Promise<
+export async function initiateSessionBooking(
+  fbUser: FirebaseUser,
+  sessionId: string,
+  intent: 'reserve' | 'pay_now',
+): Promise<
   { free: true } | { reserved: true; bookingId: string; depositDeadline: string } | { free: false; reserved: false }
 > {
   const idToken = await fbUser.getIdToken()
   const res = await fetch('/api/sessions/book', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ idToken, sessionId }),
+    body: JSON.stringify({ idToken, sessionId, intent }),
   })
   if (!res.ok) {
     throw new CheckoutError(await res.text().catch(() => 'Could not start booking.'))
