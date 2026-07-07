@@ -6,7 +6,7 @@ import { auth, db } from '@/src/lib/firebase'
 import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateSessionBooking, initiatePayReservation, cancelReservation, CheckoutError } from '@/src/lib/payfast-client'
-import { sessionPriceFor, type PublicSession } from '@/src/lib/sessions'
+import { sessionPriceFor, depositDeadlineFor, type PublicSession } from '@/src/lib/sessions'
 
 type MyBooking = {
   bookingId: string
@@ -31,6 +31,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
 
   const [myBookings, setMyBookings] = useState<MyBooking[]>([])
   const [bookingId, setBookingId] = useState<string | null>(null)
+  const [bookingIntent, setBookingIntent] = useState<'reserve' | 'pay_now' | null>(null)
   const [bookingError, setBookingError] = useState<{ id: string; message: string } | null>(null)
   const [waitlisted, setWaitlisted] = useState<Set<string>>(new Set())
   const [banner, setBanner] = useState<'success' | 'cancelled' | null>(null)
@@ -89,15 +90,16 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
     return map
   }, [myBookings])
 
-  async function book(session: PublicSession) {
+  async function book(session: PublicSession, intent: 'reserve' | 'pay_now') {
     if (!user) {
       openModal('login')
       return
     }
     setBookingError(null)
     setBookingId(session.id)
+    setBookingIntent(intent)
     try {
-      const result = await initiateSessionBooking(auth.currentUser!, session.id)
+      const result = await initiateSessionBooking(auth.currentUser!, session.id, intent)
       if ('free' in result && result.free) {
         // Free bookings are confirmed instantly server-side — no PayFast
         // redirect happens, so pull the real (now-paid) booking doc rather
@@ -105,10 +107,12 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
         setFreeClaimedThisVisit(true)
         await refreshMyBookings(user.uid)
         setBookingId(null)
+        setBookingIntent(null)
       } else if ('reserved' in result && result.reserved) {
         await refreshMyBookings(user.uid)
         setReservedBanner(session.id)
         setBookingId(null)
+        setBookingIntent(null)
       }
       // Otherwise the browser is already navigating to PayFast.
     } catch (err) {
@@ -118,6 +122,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
         : t.live_error_generic
       setBookingError({ id: session.id, message })
       setBookingId(null)
+      setBookingIntent(null)
     }
   }
 
@@ -200,10 +205,15 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
           const price = user ? sessionPriceFor(s.type, activeTier) : s.price
           const discounted = user && activeTier === 'guided'
           const isFree = freeSessionAvailable && !booked
-          const dateLabel = new Date(`${s.date}T${s.time || '00:00'}:00`).toLocaleDateString(
+          const startsAt = new Date(`${s.date}T${s.time || '00:00'}:00`)
+          const dateLabel = startsAt.toLocaleDateString(
             s.language === 'af' ? 'af-ZA' : 'en-ZA',
             { weekday: 'long', day: 'numeric', month: 'long' },
           )
+          // "Save my spot" only makes sense if there's still runway to pay
+          // before the deposit deadline — inside 48h of the session, only
+          // "Complete payment" is offered.
+          const canReserve = depositDeadlineFor(startsAt).getTime() > Date.now()
           const deadlineLabel = booked?.status === 'reserved' && booked.depositDeadline
             ? new Date(booked.depositDeadline).toLocaleString(s.language === 'af' ? 'af-ZA' : 'en-ZA', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
             : null
@@ -333,21 +343,58 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
                       {t.live_join_waitlist_button}
                     </button>
                   )
-                ) : (
+                ) : !user ? (
                   <button
-                    onClick={() => book(s)}
+                    onClick={() => book(s, 'reserve')}
+                    className="text-sm font-bold px-6 py-2.5 rounded-xl text-white transition-colors disabled:opacity-60"
+                    style={{ backgroundColor: '#1e40af' }}
+                  >
+                    {t.live_login_to_book_button}
+                  </button>
+                ) : isFree ? (
+                  <button
+                    onClick={() => book(s, 'reserve')}
                     disabled={bookingId === s.id}
                     className="text-sm font-bold px-6 py-2.5 rounded-xl text-white transition-colors disabled:opacity-60"
                     style={{ backgroundColor: '#1e40af' }}
                   >
-                    {bookingId === s.id
-                      ? t.live_book_button_busy
-                      : !user
-                        ? t.live_login_to_book_button
-                        : isFree
-                          ? t.live_book_free_button.replace('{child}', activeChild?.name ?? '')
-                          : t.live_book_button.replace('{child}', activeChild?.name ?? '')}
+                    {bookingId === s.id ? t.live_book_button_busy : t.live_book_free_button.replace('{child}', activeChild?.name ?? '')}
                   </button>
+                ) : (
+                  <div className="flex flex-col items-end gap-1.5">
+                    <div className="flex flex-wrap justify-end gap-2">
+                      {canReserve && (
+                        <button
+                          onClick={() => book(s, 'reserve')}
+                          disabled={bookingId === s.id}
+                          className="text-sm font-bold px-4 py-2.5 rounded-xl border transition-colors disabled:opacity-60 hover:bg-gray-50"
+                          style={{ borderColor: '#1e40af', color: '#1e40af' }}
+                        >
+                          {bookingId === s.id && bookingIntent === 'reserve'
+                            ? t.live_book_button_busy
+                            : t.live_save_spot_button.replace('{child}', activeChild?.name ?? '')}
+                        </button>
+                      )}
+                      <button
+                        onClick={() => book(s, 'pay_now')}
+                        disabled={bookingId === s.id}
+                        className="text-sm font-bold px-4 py-2.5 rounded-xl text-white transition-colors disabled:opacity-60"
+                        style={{ backgroundColor: '#1e40af' }}
+                      >
+                        {bookingId === s.id && bookingIntent === 'pay_now'
+                          ? t.live_book_button_busy
+                          : t.live_book_pay_now_button.replace('{child}', activeChild?.name ?? '')}
+                      </button>
+                    </div>
+                    {!canReserve && (
+                      <p className="text-[11px] font-medium text-right max-w-[240px]" style={{ color: '#b45309' }}>
+                        {t.live_within_48h_note}
+                      </p>
+                    )}
+                    <p className="text-[11px] text-right max-w-[240px] leading-snug" style={{ color: '#9ca3af' }}>
+                      {t.live_pay_disclaimer}
+                    </p>
+                  </div>
                 )}
               </div>
 

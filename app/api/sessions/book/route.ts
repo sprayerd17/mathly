@@ -6,32 +6,38 @@ import { sessionPriceFor, depositDeadlineFor, type SessionType } from '@/src/lib
 import { bookingConfirmedEmail, reservationHeldEmail, sendEmail } from '@/src/lib/email'
 import type { Tier } from '@/src/lib/pricing'
 
-// Books the signed-in account's ACTIVE child onto a live session.
+// Books the signed-in account's ACTIVE child onto a live session. The
+// student explicitly chooses how via `intent`, offered as two separate
+// buttons on the live-classes page:
 //
-// More than 48h before the session starts: this holds the spot as a
-// 'reserved' booking with no payment yet — bookedCount increments right
-// away since the spot really is taken. The student has until
-// depositDeadline (session start − 48h) to pay via /api/sessions/pay-
-// reservation or cancel it themselves via /api/sessions/cancel-reservation.
-// A cron sweep (app/api/cron/expire-reservations) frees any reservation that
-// reaches its deadline unpaid.
+// intent 'reserve' — holds the spot as a 'reserved' booking with no payment
+// yet — bookedCount increments right away since the spot really is taken.
+// The student has until depositDeadline (session start − 48h) to pay via
+// /api/sessions/pay-reservation or cancel it themselves via
+// /api/sessions/cancel-reservation. A cron sweep
+// (app/api/cron/expire-reservations) frees any reservation that reaches its
+// deadline unpaid. Only available more than 48h before the session starts —
+// there'd be no runway left to pay otherwise.
 //
-// Within 48h of the session: there's no time left to defer, so this goes
-// straight to PayFast, same as the old always-immediate-payment behaviour —
-// the booking starts 'pending' and holds no spot; the ITN webhook flips it
-// to 'paid' and increments bookedCount once the money actually arrives.
+// intent 'pay_now' — always goes straight to PayFast, any time before the
+// session starts, for anyone who'd rather commit immediately instead of
+// holding a reservation. The booking starts 'pending' and holds no spot;
+// the ITN webhook flips it to 'paid' and increments bookedCount once the
+// money actually arrives.
 //
 // Exception: every CHILD gets exactly one free session ever (lowers the
 // barrier to trying a session at all, regardless of tier) — freeSessionClaimed
 // is index-aligned with children, same as childPlans. That booking skips
 // PayFast entirely — it's confirmed instantly, server-side, since there's no
-// payment to verify.
+// payment to verify, regardless of which button was clicked.
 export async function POST(req: NextRequest) {
-  const { idToken, sessionId } = await req.json().catch(() => ({})) as {
+  const { idToken, sessionId, intent } = await req.json().catch(() => ({})) as {
     idToken?: string
     sessionId?: string
+    intent?: string
   }
   if (!idToken || !sessionId) return new Response('Bad request', { status: 400 })
+  if (intent !== 'reserve' && intent !== 'pay_now') return new Response('Bad request: invalid intent', { status: 400 })
 
   let adminDb, adminAuth
   try {
@@ -166,8 +172,12 @@ export async function POST(req: NextRequest) {
   const depositDeadline = depositDeadlineFor(startsAt)
   const withinDepositWindow = depositDeadline.getTime() <= Date.now()
 
-  // ── More than 48h out: reserve the spot, no payment yet ──────────────────
-  if (!withinDepositWindow) {
+  if (intent === 'reserve' && withinDepositWindow) {
+    return new Response('Too close to the session start to reserve — pay now instead.', { status: 409 })
+  }
+
+  // ── "Save my spot": reserve, no payment yet ──────────────────────────────
+  if (intent === 'reserve') {
     const bookingRef = adminDb.collection('bookings').doc()
     let full = false
     await adminDb.runTransaction(async tx => {
@@ -210,7 +220,7 @@ export async function POST(req: NextRequest) {
     return Response.json({ reserved: true, bookingId: bookingRef.id, depositDeadline: depositDeadline.toISOString() })
   }
 
-  // ── Within 48h: no time to defer, straight to PayFast ─────────────────────
+  // ── "Complete payment": straight to PayFast, any time before the session ──
   const bookingRef = await adminDb.collection('bookings').add({
     sessionId,
     uid,
