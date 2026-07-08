@@ -1,6 +1,6 @@
 import Navbar from '@/app/components/Navbar'
 
-const LAST_UPDATED = '8 July 2026'
+const LAST_UPDATED = '9 July 2026'
 
 function Section({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
@@ -73,8 +73,9 @@ export default function PrivacyPage() {
             <li>to keep the service secure and working as intended.</li>
           </ul>
           <p>
-            We do not sell your personal information, and we do not use tracking cookies, advertising
-            pixels, or analytics scripts on the site.
+            We do not sell your personal information, and the main Mathly app does not use tracking
+            cookies, advertising pixels, or analytics scripts. Our separate pre-launch waitlist page does
+            use Google Analytics — see Section 7 for details.
           </p>
         </Section>
 
@@ -86,6 +87,7 @@ export default function PrivacyPage() {
             <li><strong>Resend</strong> — sends transactional emails on our behalf (booking confirmations, receipts, reminders).</li>
             <li><strong>Anthropic</strong> — processes the text of questions sent to the AI maths assistant, without your name, email, or grade attached.</li>
             <li><strong>Google Meet</strong> — used to host live tutoring sessions; the meeting link is shared with you by email.</li>
+            <li><strong>Google Analytics</strong> — used only on our pre-launch waitlist page to measure anonymised visit statistics; see Section 7.</li>
           </ul>
           <p>
             We do not share your information with third parties for their own marketing purposes.
@@ -103,11 +105,27 @@ export default function PrivacyPage() {
 
         <Section heading="7. Cookies and local storage">
           <p>
-            Mathly does not use advertising or analytics tracking cookies. Our login system uses standard
-            authentication session storage to keep you signed in. We also store a small amount of
-            non-sensitive information in your browser (such as your AI assistant usage count for the
-            month, or in-progress form data) purely so the site works correctly — this stays on your
-            device and is not sent to any third-party tracker.
+            The main Mathly app does not use advertising or analytics tracking cookies. Our login system
+            uses standard authentication session storage to keep you signed in. We also store a small
+            amount of non-sensitive information in your browser (such as your AI assistant usage count
+            for the month, or in-progress form data) purely so the site works correctly — this stays on
+            your device and is not sent to any third-party tracker.
+          </p>
+          <p>
+            Our standalone pre-launch waitlist page uses <strong>Google Analytics</strong> to measure how
+            many people visit it before launch. Google Analytics uses cookies and similar technology to
+            recognise your browser and collect anonymised, aggregate visit statistics (such as page views
+            and general location). This is separate from your Mathly account and is not linked to your
+            name, email, or any account data. You can opt out of Google Analytics tracking generally using
+            a browser extension such as Google's own{' '}
+            <a
+              href="https://tools.google.com/dlpage/gaoptout"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#1e40af', fontWeight: 600 }}
+            >
+              Analytics Opt-out Browser Add-on
+            </a>.
           </p>
         </Section>
 
