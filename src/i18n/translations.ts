@@ -314,7 +314,9 @@ export const translations = {
     footer_subscription_plans: 'Subscription Plans',
     footer_earn_free_access_heading: 'Earn Free Access',
     footer_how_to_get_mathly_free: 'How to get Mathly free',
-    footer_copyright: '© 2025 Mathly. All rights reserved.',
+    footer_copyright: '© {year} Mathly. All rights reserved.',
+    footer_terms: 'Terms & Conditions',
+    footer_privacy: 'Privacy Policy',
 
     // ── Homepage (page.tsx) ─────────────────────────────────────────────────
     home_hero_badge: 'From R49/month · Cancel anytime',
@@ -420,7 +422,7 @@ export const translations = {
     live_coming_soon_badge: 'Coming Soon',
     live_hero_heading: 'Live group classes are coming to Mathly',
     live_hero_subheading: 'Small groups, one topic at a time, run by qualified maths educators.',
-    live_first_session_free_banner: 'First session free for everyone on the waitlist',
+    live_first_session_free_banner: 'First session free for paid subscribers',
     live_waitlist_confirmed_heading: "You're on the waitlist!",
     live_already_registered_heading: "You're already registered",
     live_confirmation_message_prefix: 'We will email you at',
@@ -911,7 +913,9 @@ export const translations = {
     footer_subscription_plans: 'Intekenpakkette',
     footer_earn_free_access_heading: 'Verdien Gratis Toegang',
     footer_how_to_get_mathly_free: 'Hoe om Mathly gratis te kry',
-    footer_copyright: '© 2025 Mathly. Alle regte voorbehou.',
+    footer_copyright: '© {year} Mathly. Alle regte voorbehou.',
+    footer_terms: 'Bepalings en Voorwaardes',
+    footer_privacy: 'Privaatheidsbeleid',
 
     // ── Homepage (page.tsx) ─────────────────────────────────────────────────
     home_hero_badge: 'Van R49/maand · Kanselleer enige tyd',
@@ -1017,7 +1021,7 @@ export const translations = {
     live_coming_soon_badge: 'Binnekort',
     live_hero_heading: 'Lewendige groepklasse kom binnekort na Mathly',
     live_hero_subheading: 'Klein groepe, een onderwerp op \'n slag, aangebied deur gekwalifiseerde wiskunde-opvoeders.',
-    live_first_session_free_banner: 'Eerste sessie gratis vir almal op die waglys',
+    live_first_session_free_banner: 'Eerste sessie gratis vir betalende intekenaars',
     live_waitlist_confirmed_heading: 'Jy is op die waglys!',
     live_already_registered_heading: 'Jy is reeds geregistreer',
     live_confirmation_message_prefix: 'Ons sal jou by',

@@ -46,7 +46,9 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
 
   const activeChild = user ? getActiveChild(user) : null
   const activeTier = user ? getActiveTier(user) : 'free'
+  // Free-tier children never get a free session — see app/api/sessions/book/route.ts.
   const freeSessionAvailable = !!user
+    && activeTier !== 'free'
     && user.freeSessionClaimed[user.activeChildIndex] !== true
     && !freeClaimedThisVisit
 

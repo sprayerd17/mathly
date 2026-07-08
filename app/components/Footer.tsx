@@ -89,10 +89,21 @@ export default function Footer() {
         </div>
 
         {/* Divider + Copyright bar */}
-        <div className="mt-12 border-t pt-6" style={{ borderColor: "#1e3560" }}>
+        <div
+          className="mt-12 border-t pt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+          style={{ borderColor: "#1e3560" }}
+        >
           <p className="text-sm" style={{ color: "#a8b8d8" }}>
-            {t.footer_copyright}
+            {t.footer_copyright.replace("{year}", String(new Date().getFullYear()))}
           </p>
+          <div className="flex gap-4">
+            <Link href="/terms" className={linkClass} style={linkStyle}>
+              {t.footer_terms}
+            </Link>
+            <Link href="/privacy" className={linkClass} style={linkStyle}>
+              {t.footer_privacy}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -25,11 +25,13 @@ import type { Tier } from '@/src/lib/pricing'
 // the ITN webhook flips it to 'paid' and increments bookedCount once the
 // money actually arrives.
 //
-// Exception: every CHILD gets exactly one free session ever (lowers the
-// barrier to trying a session at all, regardless of tier) — freeSessionClaimed
-// is index-aligned with children, same as childPlans. That booking skips
-// PayFast entirely — it's confirmed instantly, server-side, since there's no
-// payment to verify, regardless of which button was clicked.
+// Exception: every PAID child (Pro or Guided) gets exactly one free session
+// ever — freeSessionClaimed is index-aligned with children, same as
+// childPlans. That booking skips PayFast entirely — it's confirmed instantly,
+// server-side, since there's no payment to verify, regardless of which
+// button was clicked. Free-tier children never qualify: a Free account costs
+// nothing to create, so offering a free session to every Free child would
+// let anyone farm unlimited free sessions with throwaway email addresses.
 export async function POST(req: NextRequest) {
   const { idToken, sessionId, intent } = await req.json().catch(() => ({})) as {
     idToken?: string
@@ -105,7 +107,7 @@ export async function POST(req: NextRequest) {
   const type: SessionType = session.type === 'crash' ? 'crash' : 'lesson'
   const amount = sessionPriceFor(type, tier)
   const freeSessionClaimed: boolean[] = Array.isArray(userData.freeSessionClaimed) ? userData.freeSessionClaimed : []
-  const claimingFreeSession = freeSessionClaimed[idx] !== true
+  const claimingFreeSession = tier !== 'free' && freeSessionClaimed[idx] !== true
 
   if (claimingFreeSession) {
     const bookingRef = adminDb.collection('bookings').doc()
