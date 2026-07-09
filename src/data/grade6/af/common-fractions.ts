@@ -838,6 +838,121 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
   ],
+
+  practiceSets: [
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Vereenvoudig 18/24 tot sy laagste terme.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', explanation: 'GGF van 18 en 24 is 6.\n18 ÷ 6 = 3. 24 ÷ 6 = 4.\nAntwoord: 3/4 ✓' },
+        { difficulty: 'Easy', question: 'Skryf drie breuke wat ekwivalent is aan 3/4.', answer: 'Enige drie korrekte ekwivalente breuke soos 6/8, 9/12, 12/16.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 20/30 tot sy laagste terme.', answer: '2/3', checkMode: 'auto', correctAnswer: '2/3', explanation: 'GGF van 20 en 30 is 10.\n20 ÷ 10 = 2. 30 ÷ 10 = 3.\nAntwoord: 2/3 ✓' },
+        { difficulty: 'Easy', question: 'Karabo vereenvoudig 42/56 en kry 6/8. Het sy die laagste terme bereik? Verduidelik jou antwoord.', answer: 'Nee — 6/8 kan nog verder vereenvoudig word. Die GGF van 6 en 8 is 2, dus 6/8 = 3/4. Die volledig vereenvoudigde breuk is 3/4, nie 6/8 nie.', checkMode: 'self' },
+
+        { difficulty: 'Easy-Medium', question: 'Watter is groter — 3/8 of 2/5?', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', explanation: 'LGV van 8 en 5 = 40.\n3/8 = 15/40. 2/5 = 16/40.\nAangesien 16 > 15, is 2/5 > 3/8.' },
+        { difficulty: 'Easy-Medium', question: 'Orden hierdie breuke van kleinste na grootste: 1/2, 3/5, 7/10, 2/3.', answer: '1/2, 3/5, 2/3, 7/10', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Thabo het 3/8 van ʼn sjokoladestaaf geëet en Sipho het 5/12 van ʼn identiese staaf geëet. Wie het meer geëet?', answer: 'Sipho het meer geëet', checkMode: 'auto', correctAnswer: 'Sipho', correctAnswers: ['Sipho', 'Sipho het meer geëet'], explanation: 'LGV van 8 en 12 = 24.\n3/8 = 9/24. 5/12 = 10/24.\nAangesien 10 > 9, het Sipho meer geëet.' },
+        { difficulty: 'Medium', question: 'Nomvula sê 5/9 is groter as 3/7 net omdat 5 groter as 3 is. Is haar redenasie korrek? Verduidelik.', answer: 'Nee — jy kan nie net tellers vergelyk tensy die noemers dieselfde is nie. Met die LGV van 63: 5/9 = 35/63 en 3/7 = 27/63. Aangesien 35 > 27, is 5/9 wel groter, maar Nomvula se redenasie was verkeerd — dit het toevallig gewerk.', checkMode: 'self' },
+
+        { difficulty: 'Medium', question: 'Bereken 2/9 + 1/6.', answer: '7/18', checkMode: 'auto', correctAnswer: '7/18', explanation: 'LGV van 9 en 6 = 18.\n2/9 = 4/18. 1/6 = 3/18.\n4/18 + 3/18 = 7/18 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 5/6 − 3/10.', answer: '8/15', checkMode: 'auto', correctAnswer: '8/15', explanation: 'LGV van 6 en 10 = 30.\n5/6 = 25/30. 3/10 = 9/30.\n25/30 − 9/30 = 16/30 = 8/15 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 5/6 + 3/4. Gee jou antwoord as ʼn gemengde getal.', answer: '1 en 7/12', checkMode: 'auto', correctAnswer: '1 en 7/12', correctAnswers: ['1 en 7/12', '1 7/12'], explanation: 'LGV van 6 en 4 = 12.\n5/6 = 10/12. 3/4 = 9/12.\n10/12 + 9/12 = 19/12.\n19 ÷ 12 = 1 res 7.\nAntwoord: 1 en 7/12 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skilder het 7/8 van ʼn blik blou verf en gebruik 5/12 van ʼn blik op ʼn heining. Hoeveel verf is oor?', answer: '11/24 van ʼn blik', checkMode: 'auto', correctAnswer: '11/24', correctAnswers: ['11/24', '11/24 van ʼn blik'], explanation: 'LGV van 8 en 12 = 24.\n7/8 = 21/24. 5/12 = 10/24.\n21/24 − 10/24 = 11/24 van ʼn blik ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Skakel 4 en 3/7 om na ʼn onegte breuk.', answer: '31/7', checkMode: 'auto', correctAnswer: '31/7', explanation: 'Vermenigvuldig die heelgetal met die noemer: 4 × 7 = 28.\nTel die teller by: 28 + 3 = 31.\nHou die noemer: 7.\nAntwoord: 31/7 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 29/6 om na ʼn gemengde getal.', answer: '4 en 5/6', checkMode: 'auto', correctAnswer: '4 en 5/6', correctAnswers: ['4 en 5/6', '4 5/6'], explanation: 'Deel 29 deur 6: 6 × 4 = 24. Res: 29 − 24 = 5.\nAntwoord: 4 en 5/6 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 47/9 om na ʼn gemengde getal, en skakel dan 5 en 2/3 om na ʼn onegte breuk.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 47/9 as ʼn gemengde getal', correctAnswer: '5 en 2/9', correctAnswers: ['5 en 2/9', '5 2/9'], explanation: 'Deel 47 deur 9: 9 × 5 = 45. Res: 47 − 45 = 2.\nAntwoord: 5 en 2/9 ✓' },
+          { label: 'b) 5 en 2/3 as ʼn onegte breuk', correctAnswer: '17/3', explanation: 'Vermenigvuldig: 5 × 3 = 15. Tel die teller by: 15 + 2 = 17. Hou die noemer: 3.\nAntwoord: 17/3 ✓' },
+        ] },
+        { difficulty: 'Medium-Hard', question: 'ʼn Resep het 1 en 1/2 koppies meel vir die basis nodig en 2 en 2/3 koppies vir die versiering. Hoeveel koppies meel is altesaam nodig?', answer: '4 en 1/6 koppies', checkMode: 'auto', correctAnswer: '4 en 1/6', correctAnswers: ['4 en 1/6', '4 1/6', '4 en 1/6 koppies'], explanation: 'Skakel om: 1 en 1/2 = 3/2. 2 en 2/3 = 8/3.\nLGV van 2 en 3 = 6.\n3/2 = 9/6. 8/3 = 16/6.\n9/6 + 16/6 = 25/6.\n25 ÷ 6 = 4 res 1.\nAntwoord: 4 en 1/6 koppies ✓' },
+
+        { difficulty: 'Hard', question: 'Bereken 5/6 × 12.', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Vermenigvuldig die teller: 5 × 12 = 60.\nDeel deur die noemer: 60 ÷ 6 = 10.\nAntwoord: 10 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 64 brode. Dit verkoop 3/8 daarvan voor middagete. Hoeveel brode is verkoop?', answer: '24 brode', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 brode'], explanation: 'Deel deur die noemer: 64 ÷ 8 = 8.\nVermenigvuldig met die teller: 8 × 3 = 24.\nAntwoord: 24 brode ✓' },
+        { difficulty: 'Hard', question: 'Bereken 4/9 × 3/8. Gee jou antwoord in eenvoudigste vorm.', answer: '1/6', checkMode: 'auto', correctAnswer: '1/6', explanation: 'Vermenigvuldig die tellers: 4 × 3 = 12.\nVermenigvuldig die noemers: 9 × 8 = 72.\nResultaat: 12/72.\nVereenvoudig met GGF 12: 12 ÷ 12 = 1, 72 ÷ 12 = 6.\nAntwoord: 1/6 ✓' },
+        { difficulty: 'Hard', question: 'Lindiwe begin met 60 lekkers. Sy gee 1/3 daarvan vir haar broer, en gee dan 2/5 van wat oorbly vir haar suster. Hoeveel lekkers het Lindiwe oor?', answer: '24 lekkers', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 lekkers'], explanation: '1/3 van 60 = 20, dus na sy vir haar broer gee het sy 60 − 20 = 40 lekkers oor.\n2/5 van 40 = 16, dus na sy vir haar suster gee het sy 40 − 16 = 24 lekkers oor ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het ekwivalente breuke, vergelyking, bewerkings en vermenigvuldiging van breuke bemeester.' },
+        { minScore: 15, message: 'Puik werk! Jy is selfversekerd met gewone breuke — gaan enige gemiste vrae na en probeer nog ʼn stel.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Vereenvoudig 28/35 tot sy laagste terme.', answer: '4/5', checkMode: 'auto', correctAnswer: '4/5', explanation: 'GGF van 28 en 35 is 7.\n28 ÷ 7 = 4. 35 ÷ 7 = 5.\nAntwoord: 4/5 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 45/60 tot sy laagste terme.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', explanation: 'GGF van 45 en 60 is 15.\n45 ÷ 15 = 3. 60 ÷ 15 = 4.\nAntwoord: 3/4 ✓' },
+        { difficulty: 'Easy', question: 'Watter van hierdie breuke is reeds in sy eenvoudigste vorm — 6/10, 16/24, of 5/9?', answer: '5/9', checkMode: 'auto', correctAnswer: '5/9', explanation: 'GGF van 6 en 10 is 2 (nie eenvoudigste nie). GGF van 16 en 24 is 8 (nie eenvoudigste nie). GGF van 5 en 9 is 1, dus 5/9 is reeds in sy eenvoudigste vorm ✓' },
+        { difficulty: 'Easy', question: 'Boitumelo vereenvoudig 36/48 en kry 9/12. Is dit die laagste terme? Indien nie, vereenvoudig dit volledig.', answer: 'Nee — die GGF van 9 en 12 is 3, dus 9/12 = 3/4. Die volledig vereenvoudigde breuk is 3/4.', checkMode: 'self' },
+
+        { difficulty: 'Easy-Medium', question: 'Watter is groter — 5/9 of 7/12?', answer: '7/12', checkMode: 'auto', correctAnswer: '7/12', explanation: 'LGV van 9 en 12 = 36.\n5/9 = 20/36. 7/12 = 21/36.\nAangesien 21 > 20, is 7/12 > 5/9.' },
+        { difficulty: 'Easy-Medium', question: 'Orden hierdie breuke van grootste na kleinste: 3/8, 5/12, 2/3, 7/24.', answer: '2/3, 5/12, 3/8, 7/24', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Amahle loop 5/6 van ʼn kilometer skool toe en Kagiso loop 7/9 van ʼn kilometer. Wie loop verder?', answer: 'Amahle loop verder', checkMode: 'auto', correctAnswer: 'Amahle', correctAnswers: ['Amahle', 'Amahle loop verder'], explanation: 'LGV van 6 en 9 = 18.\n5/6 = 15/18. 7/9 = 14/18.\nAangesien 15 > 14, loop Amahle verder.' },
+        { difficulty: 'Medium', question: 'Amahle spandeer 3/4 van ʼn uur aan huiswerk en Kagiso spandeer 5/8 van ʼn uur. Wie spandeer langer aan huiswerk? Wys jou werk met ʼn gemene noemer.', answer: 'Amahle spandeer langer', checkMode: 'auto', correctAnswer: 'Amahle', correctAnswers: ['Amahle', 'Amahle spandeer langer'], explanation: 'LGV van 4 en 8 = 8.\n3/4 = 6/8. 5/8 = 5/8.\nAangesien 6 > 5, spandeer Amahle langer.' },
+
+        { difficulty: 'Medium', question: 'Bereken 3/10 + 2/15.', answer: '13/30', checkMode: 'auto', correctAnswer: '13/30', explanation: 'LGV van 10 en 15 = 30.\n3/10 = 9/30. 2/15 = 4/30.\n9/30 + 4/30 = 13/30 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 7/9 − 5/12.', answer: '13/36', checkMode: 'auto', correctAnswer: '13/36', explanation: 'LGV van 9 en 12 = 36.\n7/9 = 28/36. 5/12 = 15/36.\n28/36 − 15/36 = 13/36 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 7/9 + 5/6. Gee jou antwoord as ʼn gemengde getal.', answer: '1 en 11/18', checkMode: 'auto', correctAnswer: '1 en 11/18', correctAnswers: ['1 en 11/18', '1 11/18'], explanation: 'LGV van 9 en 6 = 18.\n7/9 = 14/18. 5/6 = 15/18.\n14/18 + 15/18 = 29/18.\n29 ÷ 18 = 1 res 11.\nAntwoord: 1 en 11/18 ✓' },
+        { difficulty: 'Medium', question: 'Op ʼn staptog loop Tumi 3/10 van die roete voor ontbyt en ʼn verdere 3/8 van die roete na ontbyt. Watter gedeelte van die roete het sy altesaam geloop?', answer: '27/40', checkMode: 'auto', correctAnswer: '27/40', explanation: 'LGV van 10 en 8 = 40.\n3/10 = 12/40. 3/8 = 15/40.\n12/40 + 15/40 = 27/40 ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Skakel 5 en 2/9 om na ʼn onegte breuk.', answer: '47/9', checkMode: 'auto', correctAnswer: '47/9', explanation: 'Vermenigvuldig die heelgetal met die noemer: 5 × 9 = 45.\nTel die teller by: 45 + 2 = 47.\nHou die noemer: 9.\nAntwoord: 47/9 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 38/7 om na ʼn gemengde getal.', answer: '5 en 3/7', checkMode: 'auto', correctAnswer: '5 en 3/7', correctAnswers: ['5 en 3/7', '5 3/7'], explanation: 'Deel 38 deur 7: 7 × 5 = 35. Res: 38 − 35 = 3.\nAntwoord: 5 en 3/7 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Tumelo sê die omskakeling van 4 en 2/5 na ʼn onegte breuk gee 20/5, want hy het net die heelgetal met die noemer vermenigvuldig. Wat het hy vergeet, en wat is die korrekte antwoord?', answer: 'Hy het vergeet om die teller by te tel na die vermenigvuldiging. Korrekte werk: 4 × 5 = 20, tel dan die teller 2 by om 22 te kry. Die korrekte antwoord is 22/5, nie 20/5 nie.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Stuk tou is 3 en 1/4 meter lank en ʼn ander stuk is 2 en 5/6 meter lank. As hulle end-tot-end aanmekaar gesit word, wat is die totale lengte?', answer: '6 en 1/12 meter', checkMode: 'auto', correctAnswer: '6 en 1/12', correctAnswers: ['6 en 1/12', '6 1/12', '6 en 1/12 meter'], explanation: 'Skakel om: 3 en 1/4 = 13/4. 2 en 5/6 = 17/6.\nLGV van 4 en 6 = 12.\n13/4 = 39/12. 17/6 = 34/12.\n39/12 + 34/12 = 73/12.\n73 ÷ 12 = 6 res 1.\nAntwoord: 6 en 1/12 meter ✓' },
+
+        { difficulty: 'Hard', question: 'Bereken 7/8 × 16.', answer: '14', checkMode: 'auto', correctAnswer: '14', explanation: 'Vermenigvuldig die teller: 7 × 16 = 112.\nDeel deur die noemer: 112 ÷ 8 = 14.\nAntwoord: 14 ✓' },
+        { difficulty: 'Hard', question: 'Vind 5/6 van 72 leerders wat Graad 6-leerlinge by ʼn skool is. Hoeveel leerders is dit?', answer: '60 leerders', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60 leerders'], explanation: 'Deel deur die noemer: 72 ÷ 6 = 12.\nVermenigvuldig met die teller: 12 × 5 = 60.\nAntwoord: 60 leerders ✓' },
+        { difficulty: 'Hard', question: 'Bereken 5/6 × 3/10. Gee jou antwoord in eenvoudigste vorm.', answer: '1/4', checkMode: 'auto', correctAnswer: '1/4', explanation: 'Vermenigvuldig die tellers: 5 × 3 = 15.\nVermenigvuldig die noemers: 6 × 10 = 60.\nResultaat: 15/60.\nVereenvoudig met GGF 15: 15 ÷ 15 = 1, 60 ÷ 15 = 4.\nAntwoord: 1/4 ✓' },
+        { difficulty: 'Hard', question: 'Priya het 80 plakkers. Sy gebruik 2/5 daarvan om ʼn kaart te versier, en gee dan 1/4 van wat oorbly vir ʼn vriendin. Hoeveel plakkers het Priya oor?', answer: '36 plakkers', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 plakkers'], explanation: '2/5 van 80 = 32, dus na sy die kaart versier het sy 80 − 32 = 48 plakkers oor.\n1/4 van 48 = 12, dus na sy vir haar vriendin gee het sy 48 − 12 = 36 plakkers oor ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het ekwivalente breuke, vergelyking, bewerkings en vermenigvuldiging van breuke bemeester.' },
+        { minScore: 15, message: 'Puik werk! Jy is selfversekerd met gewone breuke — gaan enige gemiste vrae na en probeer nog ʼn stel.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Vereenvoudig 24/32 tot sy laagste terme.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', explanation: 'GGF van 24 en 32 is 8.\n24 ÷ 8 = 3. 32 ÷ 8 = 4.\nAntwoord: 3/4 ✓' },
+        { difficulty: 'Easy', question: 'Skryf drie breuke wat ekwivalent is aan 4/5.', answer: 'Enige drie korrekte ekwivalente breuke soos 8/10, 12/15, 16/20.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Watter van hierdie breuke is reeds in sy eenvoudigste vorm — 7/10, 8/12, of 9/16?', answer: '7/10 en 9/16', checkMode: 'auto', correctAnswer: '7/10 en 9/16', correctAnswers: ['7/10 en 9/16', '7/10, 9/16', '9/16 en 7/10'], explanation: 'GGF van 7 en 10 is 1 (eenvoudigste). GGF van 8 en 12 is 4 (nie eenvoudigste nie — vereenvoudig na 2/3). GGF van 9 en 16 is 1 (eenvoudigste).\nAntwoord: 7/10 en 9/16 is albei reeds in eenvoudigste vorm ✓' },
+        { difficulty: 'Easy', question: 'Refilwe vereenvoudig 48/64 in een stap en kry 12/16. Is dit die laagste terme? Indien nie, vereenvoudig dit volledig.', answer: 'Nee — die GGF van 12 en 16 is 4, dus 12/16 = 3/4. Die volledig vereenvoudigde breuk is 3/4.', checkMode: 'self' },
+
+        { difficulty: 'Easy-Medium', question: 'Watter is groter — 4/7 of 5/9?', answer: '4/7', checkMode: 'auto', correctAnswer: '4/7', explanation: 'LGV van 7 en 9 = 63.\n4/7 = 36/63. 5/9 = 35/63.\nAangesien 36 > 35, is 4/7 > 5/9.' },
+        { difficulty: 'Easy-Medium', question: 'Orden hierdie breuke van kleinste na grootste: 5/8, 7/12, 3/4, 11/24.', answer: '11/24, 7/12, 5/8, 3/4', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Zanele het 3/5 van ʼn pizza geëet en Karabo het 7/10 van ʼn identiese pizza geëet. Wie het meer geëet?', answer: 'Karabo het meer geëet', checkMode: 'auto', correctAnswer: 'Karabo', correctAnswers: ['Karabo', 'Karabo het meer geëet'], explanation: 'LGV van 5 en 10 = 10.\n3/5 = 6/10. 7/10 = 7/10.\nAangesien 7 > 6, het Karabo meer geëet.' },
+        { difficulty: 'Medium', question: 'Thandiwe beweer dat 5/6 kleiner as 13/15 moet wees net omdat 6 kleiner as 15 is. Is haar redenasie geldig? Vergelyk die twee breuke behoorlik en verduidelik.', answer: 'Nee — om net noemers te vergelyk sê niks oor ʼn breuk se grootte nie. Met die LGV van 30: 5/6 = 25/30 en 13/15 = 26/30. Aangesien 25 < 26, is 5/6 wel kleiner, maar Thandiwe se metode was nie geldig nie — dit moet met ʼn gemene noemer bevestig word, nie net deur noemers te vergelyk nie.', checkMode: 'self' },
+
+        { difficulty: 'Medium', question: 'Bereken 5/12 + 3/8.', answer: '19/24', checkMode: 'auto', correctAnswer: '19/24', explanation: 'LGV van 12 en 8 = 24.\n5/12 = 10/24. 3/8 = 9/24.\n10/24 + 9/24 = 19/24 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 11/15 − 3/10.', answer: '13/30', checkMode: 'auto', correctAnswer: '13/30', explanation: 'LGV van 15 en 10 = 30.\n11/15 = 22/30. 3/10 = 9/30.\n22/30 − 9/30 = 13/30 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 11/12 + 5/8. Gee jou antwoord as ʼn gemengde getal.', answer: '1 en 13/24', checkMode: 'auto', correctAnswer: '1 en 13/24', correctAnswers: ['1 en 13/24', '1 13/24'], explanation: 'LGV van 12 en 8 = 24.\n11/12 = 22/24. 5/8 = 15/24.\n22/24 + 15/24 = 37/24.\n37 ÷ 24 = 1 res 13.\nAntwoord: 1 en 13/24 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Fietsryer het 5/6 van haar waterbottel vol voor ʼn wedloop en drink 1/4 van ʼn bottel gedurende die eerste rondte. Hoeveel water is oor in die bottel?', answer: '7/12 van ʼn bottel', checkMode: 'auto', correctAnswer: '7/12', correctAnswers: ['7/12', '7/12 van ʼn bottel'], explanation: 'LGV van 6 en 4 = 12.\n5/6 = 10/12. 1/4 = 3/12.\n10/12 − 3/12 = 7/12 van ʼn bottel ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Skakel 6 en 3/8 om na ʼn onegte breuk.', answer: '51/8', checkMode: 'auto', correctAnswer: '51/8', explanation: 'Vermenigvuldig die heelgetal met die noemer: 6 × 8 = 48.\nTel die teller by: 48 + 3 = 51.\nHou die noemer: 8.\nAntwoord: 51/8 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 33/5 om na ʼn gemengde getal.', answer: '6 en 3/5', checkMode: 'auto', correctAnswer: '6 en 3/5', correctAnswers: ['6 en 3/5', '6 3/5'], explanation: 'Deel 33 deur 5: 5 × 6 = 30. Res: 33 − 30 = 3.\nAntwoord: 6 en 3/5 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 52/7 om na ʼn gemengde getal, en skakel dan 8 en 3/5 om na ʼn onegte breuk.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 52/7 as ʼn gemengde getal', correctAnswer: '7 en 3/7', correctAnswers: ['7 en 3/7', '7 3/7'], explanation: 'Deel 52 deur 7: 7 × 7 = 49. Res: 52 − 49 = 3.\nAntwoord: 7 en 3/7 ✓' },
+          { label: 'b) 8 en 3/5 as ʼn onegte breuk', correctAnswer: '43/5', explanation: 'Vermenigvuldig: 8 × 5 = 40. Tel die teller by: 40 + 3 = 43. Hou die noemer: 5.\nAntwoord: 43/5 ✓' },
+        ] },
+        { difficulty: 'Medium-Hard', question: 'ʼn Resep het 2 en 1/3 koppies suiker vir die koek nodig en 1 en 3/4 koppies vir die versiersel. Hoeveel koppies suiker is altesaam nodig?', answer: '4 en 1/12 koppies', checkMode: 'auto', correctAnswer: '4 en 1/12', correctAnswers: ['4 en 1/12', '4 1/12', '4 en 1/12 koppies'], explanation: 'Skakel om: 2 en 1/3 = 7/3. 1 en 3/4 = 7/4.\nLGV van 3 en 4 = 12.\n7/3 = 28/12. 7/4 = 21/12.\n28/12 + 21/12 = 49/12.\n49 ÷ 12 = 4 res 1.\nAntwoord: 4 en 1/12 koppies ✓' },
+
+        { difficulty: 'Hard', question: 'Vind 7/12 van 84 leerders wat aan ʼn skoolsportdag deelgeneem het. Hoeveel leerders is dit?', answer: '49 leerders', checkMode: 'auto', correctAnswer: '49', correctAnswers: ['49', '49 leerders'], explanation: 'Deel deur die noemer: 84 ÷ 12 = 7.\nVermenigvuldig met die teller: 7 × 7 = 49.\nAntwoord: 49 leerders ✓' },
+        { difficulty: 'Hard', question: 'Bereken 3/8 × 4/9. Gee jou antwoord in eenvoudigste vorm.', answer: '1/6', checkMode: 'auto', correctAnswer: '1/6', explanation: 'Vermenigvuldig die tellers: 3 × 4 = 12.\nVermenigvuldig die noemers: 8 × 9 = 72.\nResultaat: 12/72.\nVereenvoudig met GGF 12: 12 ÷ 12 = 1, 72 ÷ 12 = 6.\nAntwoord: 1/6 ✓' },
+        { difficulty: 'Hard', question: 'Bongani het 96 albasters. Hy gee 3/8 daarvan vir sy neef, en gee dan 1/3 van wat oorbly vir sy vriend. Hoeveel albasters het Bongani oor?', answer: '40 albasters', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40', '40 albasters'], explanation: '3/8 van 96 = 36, dus na hy vir sy neef gee het hy 96 − 36 = 60 albasters oor.\n1/3 van 60 = 20, dus na hy vir sy vriend gee het hy 60 − 20 = 40 albasters oor ✓' },
+        { difficulty: 'Hard', question: 'Sibusiso sê om "5/6 van 90" te vind is nie dieselfde as om "5/6 × 90" te bereken nie, want "van" en "×" is verskillende woorde. Is hy korrek? Verduidelik en gee die waarde.', answer: 'Nee, Sibusiso is verkeerd — die woord "van" tussen ʼn breuk en ʼn getal beteken altyd vermenigvuldig, dus "5/6 van 90" en "5/6 × 90" gee presies dieselfde resultaat. 5/6 × 90 = 450 ÷ 6 = 75, dus 5/6 van 90 = 75.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het ekwivalente breuke, vergelyking, bewerkings en vermenigvuldiging van breuke bemeester.' },
+        { minScore: 15, message: 'Puik werk! Jy is selfversekerd met gewone breuke — gaan enige gemiste vrae na en probeer nog ʼn stel.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 15,
     messages: [

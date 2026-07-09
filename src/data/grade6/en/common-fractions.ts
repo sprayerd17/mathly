@@ -839,6 +839,120 @@ export const topicData: TopicData = {
     },
   ],
 
+  practiceSets: [
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Simplify 18/24 to its lowest terms.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', explanation: 'HCF of 18 and 24 is 6.\n18 ÷ 6 = 3. 24 ÷ 6 = 4.\nAnswer: 3/4 ✓' },
+        { difficulty: 'Easy', question: 'Write three fractions equivalent to 3/4.', answer: 'Any three correct equivalent fractions such as 6/8, 9/12, 12/16.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Simplify 20/30 to its lowest terms.', answer: '2/3', checkMode: 'auto', correctAnswer: '2/3', explanation: 'HCF of 20 and 30 is 10.\n20 ÷ 10 = 2. 30 ÷ 10 = 3.\nAnswer: 2/3 ✓' },
+        { difficulty: 'Easy', question: 'Karabo simplifies 42/56 and gets 6/8. Has she reached the lowest terms? Explain your answer.', answer: 'No — 6/8 can still be simplified. The HCF of 6 and 8 is 2, so 6/8 = 3/4. The fully simplified fraction is 3/4, not 6/8.', checkMode: 'self' },
+
+        { difficulty: 'Easy-Medium', question: 'Which is greater — 3/8 or 2/5?', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', explanation: 'LCM of 8 and 5 = 40.\n3/8 = 15/40. 2/5 = 16/40.\nSince 16 > 15, 2/5 > 3/8.' },
+        { difficulty: 'Easy-Medium', question: 'Order these fractions from smallest to biggest: 1/2, 3/5, 7/10, 2/3.', answer: '1/2, 3/5, 2/3, 7/10', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Thabo ate 3/8 of a chocolate bar and Sipho ate 5/12 of an identical bar. Who ate more?', answer: 'Sipho ate more', checkMode: 'auto', correctAnswer: 'Sipho', correctAnswers: ['Sipho', 'Sipho ate more'], explanation: 'LCM of 8 and 12 = 24.\n3/8 = 9/24. 5/12 = 10/24.\nSince 10 > 9, Sipho ate more.' },
+        { difficulty: 'Medium', question: 'Nomvula says that 5/9 is bigger than 3/7 because 5 is bigger than 3. Is her reasoning correct? Explain.', answer: 'No — you cannot compare numerators alone unless the denominators are the same. Using the LCM of 63: 5/9 = 35/63 and 3/7 = 27/63. Since 35 > 27, 5/9 is indeed bigger, but Nomvula’s reasoning was wrong — it only worked by coincidence.', checkMode: 'self' },
+
+        { difficulty: 'Medium', question: 'Calculate 2/9 + 1/6.', answer: '7/18', checkMode: 'auto', correctAnswer: '7/18', explanation: 'LCM of 9 and 6 = 18.\n2/9 = 4/18. 1/6 = 3/18.\n4/18 + 3/18 = 7/18 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 5/6 − 3/10.', answer: '8/15', checkMode: 'auto', correctAnswer: '8/15', explanation: 'LCM of 6 and 10 = 30.\n5/6 = 25/30. 3/10 = 9/30.\n25/30 − 9/30 = 16/30 = 8/15 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 5/6 + 3/4. Give your answer as a mixed number.', answer: '1 and 7/12', checkMode: 'auto', correctAnswer: '1 and 7/12', correctAnswers: ['1 and 7/12', '1 7/12'], explanation: 'LCM of 6 and 4 = 12.\n5/6 = 10/12. 3/4 = 9/12.\n10/12 + 9/12 = 19/12.\n19 ÷ 12 = 1 remainder 7.\nAnswer: 1 and 7/12 ✓' },
+        { difficulty: 'Medium', question: 'A painter has 7/8 of a tin of blue paint and uses 5/12 of a tin on a fence. How much paint is left?', answer: '11/24 of a tin', checkMode: 'auto', correctAnswer: '11/24', correctAnswers: ['11/24', '11/24 of a tin'], explanation: 'LCM of 8 and 12 = 24.\n7/8 = 21/24. 5/12 = 10/24.\n21/24 − 10/24 = 11/24 of a tin ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Convert 4 and 3/7 to an improper fraction.', answer: '31/7', checkMode: 'auto', correctAnswer: '31/7', explanation: 'Multiply the whole number by the denominator: 4 × 7 = 28.\nAdd the numerator: 28 + 3 = 31.\nKeep the denominator: 7.\nAnswer: 31/7 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Convert 29/6 to a mixed number.', answer: '4 and 5/6', checkMode: 'auto', correctAnswer: '4 and 5/6', correctAnswers: ['4 and 5/6', '4 5/6'], explanation: 'Divide 29 by 6: 6 × 4 = 24. Remainder: 29 − 24 = 5.\nAnswer: 4 and 5/6 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Convert 47/9 to a mixed number, then convert 5 and 2/3 to an improper fraction.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 47/9 as a mixed number', correctAnswer: '5 and 2/9', correctAnswers: ['5 and 2/9', '5 2/9'], explanation: 'Divide 47 by 9: 9 × 5 = 45. Remainder: 47 − 45 = 2.\nAnswer: 5 and 2/9 ✓' },
+          { label: 'b) 5 and 2/3 as an improper fraction', correctAnswer: '17/3', explanation: 'Multiply: 5 × 3 = 15. Add the numerator: 15 + 2 = 17. Keep the denominator: 3.\nAnswer: 17/3 ✓' },
+        ] },
+        { difficulty: 'Medium-Hard', question: 'A recipe needs 1 and 1/2 cups of flour for the base and 2 and 2/3 cups for the topping. How many cups of flour are needed in total?', answer: '4 and 1/6 cups', checkMode: 'auto', correctAnswer: '4 and 1/6', correctAnswers: ['4 and 1/6', '4 1/6', '4 and 1/6 cups'], explanation: 'Convert: 1 and 1/2 = 3/2. 2 and 2/3 = 8/3.\nLCM of 2 and 3 = 6.\n3/2 = 9/6. 8/3 = 16/6.\n9/6 + 16/6 = 25/6.\n25 ÷ 6 = 4 remainder 1.\nAnswer: 4 and 1/6 cups ✓' },
+
+        { difficulty: 'Hard', question: 'Calculate 5/6 × 12.', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Multiply the numerator: 5 × 12 = 60.\nDivide by the denominator: 60 ÷ 6 = 10.\nAnswer: 10 ✓' },
+        { difficulty: 'Hard', question: 'A shop has 64 loaves of bread. It sells 3/8 of them before lunch. How many loaves were sold?', answer: '24 loaves', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 loaves'], explanation: 'Divide by the denominator: 64 ÷ 8 = 8.\nMultiply by the numerator: 8 × 3 = 24.\nAnswer: 24 loaves ✓' },
+        { difficulty: 'Hard', question: 'Calculate 4/9 × 3/8. Give your answer in its simplest form.', answer: '1/6', checkMode: 'auto', correctAnswer: '1/6', explanation: 'Multiply the numerators: 4 × 3 = 12.\nMultiply the denominators: 9 × 8 = 72.\nResult: 12/72.\nSimplify using HCF 12: 12 ÷ 12 = 1, 72 ÷ 12 = 6.\nAnswer: 1/6 ✓' },
+        { difficulty: 'Hard', question: 'Lindiwe starts with 60 sweets. She gives 1/3 of them to her brother, then gives 2/5 of what remains to her sister. How many sweets does Lindiwe have left?', answer: '24 sweets', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 sweets'], explanation: '1/3 of 60 = 20, so after giving to her brother she has 60 − 20 = 40 sweets left.\n2/5 of 40 = 16, so after giving to her sister she has 40 − 16 = 24 sweets left ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered equivalent fractions, comparing, operations and multiplying fractions.' },
+        { minScore: 15, message: 'Great work! You are confident with common fractions — review any missed questions and try another set.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Simplify 28/35 to its lowest terms.', answer: '4/5', checkMode: 'auto', correctAnswer: '4/5', explanation: 'HCF of 28 and 35 is 7.\n28 ÷ 7 = 4. 35 ÷ 7 = 5.\nAnswer: 4/5 ✓' },
+        { difficulty: 'Easy', question: 'Simplify 45/60 to its lowest terms.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', explanation: 'HCF of 45 and 60 is 15.\n45 ÷ 15 = 3. 60 ÷ 15 = 4.\nAnswer: 3/4 ✓' },
+        { difficulty: 'Easy', question: 'Which of these fractions is already in its simplest form — 6/10, 16/24, or 5/9?', answer: '5/9', checkMode: 'auto', correctAnswer: '5/9', explanation: 'HCF of 6 and 10 is 2 (not simplest). HCF of 16 and 24 is 8 (not simplest). HCF of 5 and 9 is 1, so 5/9 is already in its simplest form ✓' },
+        { difficulty: 'Easy', question: 'Boitumelo simplifies 36/48 and gets 9/12. Is this the lowest terms? If not, simplify it fully.', answer: 'No — the HCF of 9 and 12 is 3, so 9/12 = 3/4. The fully simplified fraction is 3/4.', checkMode: 'self' },
+
+        { difficulty: 'Easy-Medium', question: 'Which is greater — 5/9 or 7/12?', answer: '7/12', checkMode: 'auto', correctAnswer: '7/12', explanation: 'LCM of 9 and 12 = 36.\n5/9 = 20/36. 7/12 = 21/36.\nSince 21 > 20, 7/12 > 5/9.' },
+        { difficulty: 'Easy-Medium', question: 'Order these fractions from biggest to smallest: 3/8, 5/12, 2/3, 7/24.', answer: '2/3, 5/12, 3/8, 7/24', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Amahle walks 5/6 of a kilometre to school and Kagiso walks 7/9 of a kilometre. Who walks further?', answer: 'Amahle walks further', checkMode: 'auto', correctAnswer: 'Amahle', correctAnswers: ['Amahle', 'Amahle walks further'], explanation: 'LCM of 6 and 9 = 18.\n5/6 = 15/18. 7/9 = 14/18.\nSince 15 > 14, Amahle walks further.' },
+        { difficulty: 'Medium', question: 'Given that Amahle spends 3/4 of an hour on homework and Kagiso spends 5/8 of an hour, who spends longer on homework? Show your working using a common denominator.', answer: 'Amahle spends longer', checkMode: 'auto', correctAnswer: 'Amahle', correctAnswers: ['Amahle', 'Amahle spends longer'], explanation: 'LCM of 4 and 8 = 8.\n3/4 = 6/8. 5/8 = 5/8.\nSince 6 > 5, Amahle spends longer.' },
+
+        { difficulty: 'Medium', question: 'Calculate 3/10 + 2/15.', answer: '13/30', checkMode: 'auto', correctAnswer: '13/30', explanation: 'LCM of 10 and 15 = 30.\n3/10 = 9/30. 2/15 = 4/30.\n9/30 + 4/30 = 13/30 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 7/9 − 5/12.', answer: '13/36', checkMode: 'auto', correctAnswer: '13/36', explanation: 'LCM of 9 and 12 = 36.\n7/9 = 28/36. 5/12 = 15/36.\n28/36 − 15/36 = 13/36 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 7/9 + 5/6. Give your answer as a mixed number.', answer: '1 and 11/18', checkMode: 'auto', correctAnswer: '1 and 11/18', correctAnswers: ['1 and 11/18', '1 11/18'], explanation: 'LCM of 9 and 6 = 18.\n7/9 = 14/18. 5/6 = 15/18.\n14/18 + 15/18 = 29/18.\n29 ÷ 18 = 1 remainder 11.\nAnswer: 1 and 11/18 ✓' },
+        { difficulty: 'Medium', question: 'On a hike, Tumi walks 3/10 of the route before breakfast and a further 3/8 of the route after breakfast. What fraction of the route has she walked in total?', answer: '27/40', checkMode: 'auto', correctAnswer: '27/40', explanation: 'LCM of 10 and 8 = 40.\n3/10 = 12/40. 3/8 = 15/40.\n12/40 + 15/40 = 27/40 ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Convert 5 and 2/9 to an improper fraction.', answer: '47/9', checkMode: 'auto', correctAnswer: '47/9', explanation: 'Multiply the whole number by the denominator: 5 × 9 = 45.\nAdd the numerator: 45 + 2 = 47.\nKeep the denominator: 9.\nAnswer: 47/9 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Convert 38/7 to a mixed number.', answer: '5 and 3/7', checkMode: 'auto', correctAnswer: '5 and 3/7', correctAnswers: ['5 and 3/7', '5 3/7'], explanation: 'Divide 38 by 7: 7 × 5 = 35. Remainder: 38 − 35 = 3.\nAnswer: 5 and 3/7 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Boy says that converting 4 and 2/5 to an improper fraction gives 20/5, because he only multiplied the whole number by the denominator. What did he forget, and what is the correct answer?', answer: 'He forgot to add the numerator after multiplying. Correct working: 4 × 5 = 20, then add the numerator 2 to get 22. The correct answer is 22/5, not 20/5.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'A piece of rope is 3 and 1/4 metres long and another piece is 2 and 5/6 metres long. If they are joined end to end, what is the total length?', answer: '6 and 1/12 metres', checkMode: 'auto', correctAnswer: '6 and 1/12', correctAnswers: ['6 and 1/12', '6 1/12', '6 and 1/12 metres'], explanation: 'Convert: 3 and 1/4 = 13/4. 2 and 5/6 = 17/6.\nLCM of 4 and 6 = 12.\n13/4 = 39/12. 17/6 = 34/12.\n39/12 + 34/12 = 73/12.\n73 ÷ 12 = 6 remainder 1.\nAnswer: 6 and 1/12 metres ✓' },
+
+        { difficulty: 'Hard', question: 'Calculate 7/8 × 16.', answer: '14', checkMode: 'auto', correctAnswer: '14', explanation: 'Multiply the numerator: 7 × 16 = 112.\nDivide by the denominator: 112 ÷ 8 = 14.\nAnswer: 14 ✓' },
+        { difficulty: 'Hard', question: 'Find 5/6 of 72 learners who are Grade 6 pupils in a school. How many learners is that?', answer: '60 learners', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60 learners'], explanation: 'Divide by the denominator: 72 ÷ 6 = 12.\nMultiply by the numerator: 12 × 5 = 60.\nAnswer: 60 learners ✓' },
+        { difficulty: 'Hard', question: 'Calculate 5/6 × 3/10. Give your answer in its simplest form.', answer: '1/4', checkMode: 'auto', correctAnswer: '1/4', explanation: 'Multiply the numerators: 5 × 3 = 15.\nMultiply the denominators: 6 × 10 = 60.\nResult: 15/60.\nSimplify using HCF 15: 15 ÷ 15 = 1, 60 ÷ 15 = 4.\nAnswer: 1/4 ✓' },
+        { difficulty: 'Hard', question: 'Given 80 stickers, Priya uses 2/5 of them to decorate a card, then gives 1/4 of what remains to a friend. How many stickers does Priya have left?', answer: '36 stickers', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 stickers'], explanation: '2/5 of 80 = 32, so after decorating the card she has 80 − 32 = 48 stickers left.\n1/4 of 48 = 12, so after giving to her friend she has 48 − 12 = 36 stickers left ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered equivalent fractions, comparing, operations and multiplying fractions.' },
+        { minScore: 15, message: 'Great work! You are confident with common fractions — review any missed questions and try another set.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Simplify 24/32 to its lowest terms.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', explanation: 'HCF of 24 and 32 is 8.\n24 ÷ 8 = 3. 32 ÷ 8 = 4.\nAnswer: 3/4 ✓' },
+        { difficulty: 'Easy', question: 'Write three fractions equivalent to 4/5.', answer: 'Any three correct equivalent fractions such as 8/10, 12/15, 16/20.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Which of these fractions is already in its simplest form — 7/10, 8/12, or 9/16?', answer: '7/10 and 9/16', checkMode: 'auto', correctAnswer: '7/10 and 9/16', correctAnswers: ['7/10 and 9/16', '7/10, 9/16', '9/16 and 7/10'], explanation: 'HCF of 7 and 10 is 1 (simplest). HCF of 8 and 12 is 4 (not simplest — simplifies to 2/3). HCF of 9 and 16 is 1 (simplest).\nAnswer: 7/10 and 9/16 are both already in simplest form ✓' },
+        { difficulty: 'Easy', question: 'Refilwe simplifies 48/64 in one step and gets 12/16. Is this the lowest terms? If not, simplify it fully.', answer: 'No — the HCF of 12 and 16 is 4, so 12/16 = 3/4. The fully simplified fraction is 3/4.', checkMode: 'self' },
+
+        { difficulty: 'Easy-Medium', question: 'Which is greater — 4/7 or 5/9?', answer: '4/7', checkMode: 'auto', correctAnswer: '4/7', explanation: 'LCM of 7 and 9 = 63.\n4/7 = 36/63. 5/9 = 35/63.\nSince 36 > 35, 4/7 > 5/9.' },
+        { difficulty: 'Easy-Medium', question: 'Order these fractions from smallest to biggest: 5/8, 7/12, 3/4, 11/24.', answer: '11/24, 7/12, 5/8, 3/4', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Zanele ate 3/5 of a pizza and Karabo ate 7/10 of an identical pizza. Who ate more?', answer: 'Karabo ate more', checkMode: 'auto', correctAnswer: 'Karabo', correctAnswers: ['Karabo', 'Karabo ate more'], explanation: 'LCM of 5 and 10 = 10.\n3/5 = 6/10. 7/10 = 7/10.\nSince 7 > 6, Karabo ate more.' },
+        { difficulty: 'Medium', question: 'Thandiwe claims that 5/6 must be smaller than 13/15 simply because 6 is smaller than 15. Is her reasoning valid? Compare the two fractions properly and explain.', answer: 'No — comparing denominators alone tells you nothing about a fraction’s size. Using the LCM of 30: 5/6 = 25/30 and 13/15 = 26/30. Since 25 < 26, 5/6 is indeed smaller, but Thandiwe’s method was not valid — it must be checked using a common denominator, not just by comparing denominators.', checkMode: 'self' },
+
+        { difficulty: 'Medium', question: 'Calculate 5/12 + 3/8.', answer: '19/24', checkMode: 'auto', correctAnswer: '19/24', explanation: 'LCM of 12 and 8 = 24.\n5/12 = 10/24. 3/8 = 9/24.\n10/24 + 9/24 = 19/24 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 11/15 − 3/10.', answer: '13/30', checkMode: 'auto', correctAnswer: '13/30', explanation: 'LCM of 15 and 10 = 30.\n11/15 = 22/30. 3/10 = 9/30.\n22/30 − 9/30 = 13/30 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 11/12 + 5/8. Give your answer as a mixed number.', answer: '1 and 13/24', checkMode: 'auto', correctAnswer: '1 and 13/24', correctAnswers: ['1 and 13/24', '1 13/24'], explanation: 'LCM of 12 and 8 = 24.\n11/12 = 22/24. 5/8 = 15/24.\n22/24 + 15/24 = 37/24.\n37 ÷ 24 = 1 remainder 13.\nAnswer: 1 and 13/24 ✓' },
+        { difficulty: 'Medium', question: 'A cyclist has 5/6 of her water bottle full before a race and drinks 1/4 of a bottle during the first lap. How much water is left in the bottle?', answer: '7/12 of a bottle', checkMode: 'auto', correctAnswer: '7/12', correctAnswers: ['7/12', '7/12 of a bottle'], explanation: 'LCM of 6 and 4 = 12.\n5/6 = 10/12. 1/4 = 3/12.\n10/12 − 3/12 = 7/12 of a bottle ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Convert 6 and 3/8 to an improper fraction.', answer: '51/8', checkMode: 'auto', correctAnswer: '51/8', explanation: 'Multiply the whole number by the denominator: 6 × 8 = 48.\nAdd the numerator: 48 + 3 = 51.\nKeep the denominator: 8.\nAnswer: 51/8 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Convert 33/5 to a mixed number.', answer: '6 and 3/5', checkMode: 'auto', correctAnswer: '6 and 3/5', correctAnswers: ['6 and 3/5', '6 3/5'], explanation: 'Divide 33 by 5: 5 × 6 = 30. Remainder: 33 − 30 = 3.\nAnswer: 6 and 3/5 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Convert 52/7 to a mixed number, then convert 8 and 3/5 to an improper fraction.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 52/7 as a mixed number', correctAnswer: '7 and 3/7', correctAnswers: ['7 and 3/7', '7 3/7'], explanation: 'Divide 52 by 7: 7 × 7 = 49. Remainder: 52 − 49 = 3.\nAnswer: 7 and 3/7 ✓' },
+          { label: 'b) 8 and 3/5 as an improper fraction', correctAnswer: '43/5', explanation: 'Multiply: 8 × 5 = 40. Add the numerator: 40 + 3 = 43. Keep the denominator: 5.\nAnswer: 43/5 ✓' },
+        ] },
+        { difficulty: 'Medium-Hard', question: 'A recipe needs 2 and 1/3 cups of sugar for the cake and 1 and 3/4 cups for the icing. How many cups of sugar are needed in total?', answer: '4 and 1/12 cups', checkMode: 'auto', correctAnswer: '4 and 1/12', correctAnswers: ['4 and 1/12', '4 1/12', '4 and 1/12 cups'], explanation: 'Convert: 2 and 1/3 = 7/3. 1 and 3/4 = 7/4.\nLCM of 3 and 4 = 12.\n7/3 = 28/12. 7/4 = 21/12.\n28/12 + 21/12 = 49/12.\n49 ÷ 12 = 4 remainder 1.\nAnswer: 4 and 1/12 cups ✓' },
+
+        { difficulty: 'Hard', question: 'Find 7/12 of 84 learners who took part in a school sports day. How many learners is that?', answer: '49 learners', checkMode: 'auto', correctAnswer: '49', correctAnswers: ['49', '49 learners'], explanation: 'Divide by the denominator: 84 ÷ 12 = 7.\nMultiply by the numerator: 7 × 7 = 49.\nAnswer: 49 learners ✓' },
+        { difficulty: 'Hard', question: 'Calculate 3/8 × 4/9. Give your answer in its simplest form.', answer: '1/6', checkMode: 'auto', correctAnswer: '1/6', explanation: 'Multiply the numerators: 3 × 4 = 12.\nMultiply the denominators: 8 × 9 = 72.\nResult: 12/72.\nSimplify using HCF 12: 12 ÷ 12 = 1, 72 ÷ 12 = 6.\nAnswer: 1/6 ✓' },
+        { difficulty: 'Hard', question: 'Given 96 marbles, Bongani gives 3/8 of them to his cousin, then gives 1/3 of what remains to his friend. How many marbles does Bongani have left?', answer: '40 marbles', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40', '40 marbles'], explanation: '3/8 of 96 = 36, so after giving to his cousin he has 96 − 36 = 60 marbles left.\n1/3 of 60 = 20, so after giving to his friend he has 60 − 20 = 40 marbles left ✓' },
+        { difficulty: 'Hard', question: 'Sibusiso says finding "5/6 of 90" is not the same as calculating "5/6 × 90" because "of" and "×" are different words. Is he correct? Explain and give the value.', answer: 'No, Sibusiso is incorrect — the word "of" placed between a fraction and a number always means multiply, so "5/6 of 90" and "5/6 × 90" give exactly the same result. 5/6 × 90 = 450 ÷ 6 = 75, so 5/6 of 90 = 75.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered equivalent fractions, comparing, operations and multiplying fractions.' },
+        { minScore: 15, message: 'Great work! You are confident with common fractions — review any missed questions and try another set.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 15,
     messages: [
