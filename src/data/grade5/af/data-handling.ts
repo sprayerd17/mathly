@@ -744,6 +744,629 @@ export const topicData: TopicData = {
 
   topicPractice: [],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // ── Data Insamel en Organiseer (0-3) ────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Nomvula vra 12 leerders hoe hulle skool toe reis. Sy skryf neer: loop, taxi, loop, motor, loop, taxi, motor, loop, taxi, loop, motor, loop. Hoeveel leerders het gesê hulle loop skool toe?',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6'],
+          explanation: 'Tel elke keer wat "loop" in die lys voorkom: loop, loop, loop, loop, loop, loop = 6 leerders loop skool toe.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Telmerktabel wys die aantal leerders wat elke troeteldier gekies het: Hond = ⁙| (6), Kat = |||| (4), Voël = ||| (3). Wat is die totale aantal leerders wat gevra is?',
+          checkMode: 'auto',
+          correctAnswer: '13',
+          correctAnswers: ['13'],
+          explanation: 'Tel die frekwensies bymekaar: 6 + 4 + 3 = 13 leerders is gevra.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'In ʼn telmerktabel word een groep van 5 telmerke plus 2 ekstra enkelmerke langs "Druiwe" geteken. Watter frekwensie moet vir druiwe neergeskryf word?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'ʼn Volle groep van 5 telmerke is gelyk aan 5. As 2 ekstra enkelmerke bygetel word: 5 + 2 = 7.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Verduidelik waarom elke vyfde telmerk deur die vorige vier merke getrek word in plaas daarvan om net nog ʼn reguit lyn te wees.',
+          answer: 'Deur die vyfde merk as ʼn skuinslyn deur die ander vier te trek, word die telmerke in groepe van 5 georganiseer. Dit maak dit baie vinniger om ʼn groot aantal telmerke aan die einde te tel — jy kan in 5e tel en dan enige ekstra enkelmerke bytel, in plaas daarvan om elke merk een vir een te tel.',
+          checkMode: 'self',
+        },
+
+        // ── Staafgrafieke (4-7) — DIAGRAM BLOK ──────────────────────────────
+        // Gedeelde staafgrafiek: "Gunsteling Troeteldiere van Graad 5 Leerders"
+        // Kategorieë (x-as): Honde, Katte, Visse, Voëls
+        // Waardes (y-as, Aantal Leerders): Honde = 12, Katte = 9, Visse = 4, Voëls = 7
+        // Skaal: tel in 2e van 0 tot 12
+        {
+          difficulty: 'Easy',
+          question: 'Volgens die staafgrafiek hierbo getiteld "Gunsteling Troeteldiere van Graad 5 Leerders", wat Honde = 12, Katte = 9, Visse = 4 en Voëls = 7 leerders wys, hoeveel leerders het Visse as hul gunsteling troeteldier gekies?',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4'],
+          explanation: 'As jy die hoogte van die Visse-staaf op die grafiek lees, bereik dit 4 op die skaal. Dus het 4 leerders Visse gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Troeteldiere</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Honde</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Katte</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Visse</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Voëls</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Volgens die staafgrafiek hierbo, watter troeteldier is deur meer leerders gekies: Katte of Voëls?',
+          checkMode: 'auto',
+          correctAnswer: 'Katte',
+          correctAnswers: ['Katte', 'katte'],
+          explanation: 'Katte = 9 leerders en Voëls = 7 leerders. Aangesien 9 groter is as 7, is Katte deur meer leerders gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Troeteldiere</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Honde</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Katte</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Visse</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Voëls</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die staafgrafiek hierbo, hoeveel meer leerders het Honde gekies as Visse?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'Honde = 12 en Visse = 4. Die verskil is 12 − 4 = 8 meer leerders het Honde as Visse gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Troeteldiere</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Honde</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Katte</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Visse</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Voëls</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die staafgrafiek hierbo, hoeveel leerders altesaam het Katte of Voëls as hul gunsteling troeteldier gekies?',
+          checkMode: 'auto',
+          correctAnswer: '16',
+          correctAnswers: ['16'],
+          explanation: 'Katte = 9 en Voëls = 7. Tel dit bymekaar: 9 + 7 = 16 leerders het Katte of Voëls gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Troeteldiere</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Honde</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Katte</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Visse</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Voëls</text></svg>',
+        },
+
+        // ── Prentgrafieke (8-11) — DIAGRAM BLOK ─────────────────────────────
+        // Gedeelde prentgrafiek: "Boeke Gelees Gedurende die Week"
+        // Sleutel: 1 boeksimbool = 2 boeke
+        // Rye: Maandag = 5 simbole (10 boeke), Dinsdag = 3 simbole (6 boeke),
+        //      Woensdag = 2 en ʼn half simbole (5 boeke), Donderdag = 4 simbole (8 boeke)
+        {
+          difficulty: 'Medium',
+          question: 'Die prentgrafiek hierbo, "Boeke Gelees Gedurende die Week", het ʼn sleutel waar 1 boeksimbool = 2 boeke. Maandag wys 5 simbole. Hoeveel boeke is op Maandag gelees?',
+          checkMode: 'auto',
+          correctAnswer: '10',
+          correctAnswers: ['10'],
+          explanation: 'Elke simbool verteenwoordig 2 boeke. Maandag het 5 simbole, dus 5 × 2 = 10 boeke is op Maandag gelees.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Boeke Gelees Gedurende die Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 boeke</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Maandag</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Dinsdag</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Woensdag</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Donderdag</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, Woensdag wys 2 volle simbole en 1 half simbool. Hoeveel boeke is op Woensdag gelees?',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5'],
+          explanation: '2 volle simbole = 2 × 2 = 4 boeke. ʼn Half simbool = die helfte van 2 = 1 boek. Totaal: 4 + 1 = 5 boeke is op Woensdag gelees.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Boeke Gelees Gedurende die Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 boeke</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Maandag</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Dinsdag</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Woensdag</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Donderdag</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, Dinsdag wys 3 simbole en Donderdag wys 4 simbole. Hoeveel meer boeke is op Donderdag as op Dinsdag gelees?',
+          checkMode: 'auto',
+          correctAnswer: '2',
+          correctAnswers: ['2'],
+          explanation: 'Dinsdag: 3 × 2 = 6 boeke. Donderdag: 4 × 2 = 8 boeke. Verskil: 8 − 6 = 2 meer boeke is op Donderdag gelees.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Boeke Gelees Gedurende die Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 boeke</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Maandag</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Dinsdag</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Woensdag</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Donderdag</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, hoeveel boeke is altesaam op Maandag en Donderdag saam gelees?',
+          checkMode: 'auto',
+          correctAnswer: '18',
+          correctAnswers: ['18'],
+          explanation: 'Maandag = 5 × 2 = 10 boeke. Donderdag = 4 × 2 = 8 boeke. Totaal: 10 + 8 = 18 boeke.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Boeke Gelees Gedurende die Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 boeke</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Maandag</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Dinsdag</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Woensdag</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Donderdag</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+
+        // ── Gemiddelde, Mediaan en Modus (12-15) ────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Vind die modus van hierdie datastel: 4, 7, 4, 9, 4, 2.',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4'],
+          explanation: 'Tel hoe gereeld elke waarde voorkom: 4 kom 3 keer voor, 7 kom 1 keer voor, 9 kom 1 keer voor, 2 kom 1 keer voor. Aangesien 4 die meeste voorkom, is die modus 4.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vind die mediaan van hierdie datastel: 11, 4, 8, 15, 6.',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'Rangskik eers die waardes van kleinste na grootste: 4, 6, 8, 11, 15. Daar is 5 waardes, dus is die middelste (3de) waarde die mediaan: 8.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vind die gemiddelde van hierdie datastel: 9, 14, 7, 10.',
+          checkMode: 'auto',
+          correctAnswer: '10',
+          correctAnswers: ['10'],
+          explanation: 'Tel al die waardes bymekaar: 9 + 14 + 7 + 10 = 40. Daar is 4 waardes, dus is die gemiddelde 40 ÷ 4 = 10.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Datastel is: 3, 8, 5, 12. Het hierdie datastel ʼn modus? Verduidelik jou antwoord.',
+          answer: 'Nee, hierdie datastel het nie ʼn modus nie. Elke waarde (3, 8, 5, en 12) kom presies een keer voor, dus kom geen waarde meer gereeld voor as ʼn ander nie. Daar is geen enkele waarde wat "die meeste" voorkom nie, dus is daar geen modus vir hierdie datastel nie.',
+          checkMode: 'self',
+        },
+
+        // ── Data Interpreteer — enkelstap-redenering (16-17) ────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Opname oor gunsteling roomysgeure gee hierdie resultate: Vanielje kom 9 keer voor, Sjokolade kom 6 keer voor, Aarbei kom 9 keer voor. Zanele sê die modus is 9. Verduidelik wat verkeerd is met Zanele se stelling en gee die korrekte modus(se).',
+          answer: 'Zanele is verkeerd. Die modus moet die datawaarde wees wat die meeste voorkom — in hierdie geval ʼn geursnaam, nie ʼn frekwensie nie. Vanielje en Aarbei kom albei 9 keer voor, wat die hoogste frekwensie is, dus is albei modusse. Die korrekte antwoord is dat hierdie datastel twee modusse het: Vanielje en Aarbei (dit is bimodaal). Die getal 9 is die frekwensie, nie die modus self nie.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Klas A het ʼn gemiddelde toetstelling van 68 aangeteken en Klas B het ʼn gemiddelde toetstelling van 74 aangeteken. Wat vertel die vergelyking van hierdie twee gemiddeldes ons oor die twee klasse se prestasie?',
+          checkMode: 'auto',
+          correctAnswer: 'Klas B het gemiddeld beter presteer as Klas A',
+          correctAnswers: ['Klas B het gemiddeld beter presteer as Klas A', 'Klas B het gemiddeld beter gedoen', 'Klas B het ʼn hoër gemiddelde gehad'],
+          explanation: 'Die gemiddelde gee die gemiddelde telling vir elke klas. Aangesien 74 groter is as 68, was Klas B se gemiddelde telling hoër, dus het Klas B gemiddeld beter as Klas A in hierdie toets presteer.',
+        },
+
+        // ── Data Interpreteer — multi-stap toepassing en breuke (18-19) ─────
+        {
+          difficulty: 'Hard',
+          question: 'Nomvula doen ʼn opname onder 20 leerders oor hul gunsteling skoolklub. 8 kies Sokkerklub, 5 kies Skaakklub, en die res kies Leesklub. Hoeveel leerders het Leesklub gekies, en watter breuk van die hele groep is dit?',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Hoeveel leerders het Leesklub gekies?',
+              correctAnswer: '7',
+              correctAnswers: ['7'],
+              explanation: '20 − 8 − 5 = 7 leerders het Leesklub gekies.',
+            },
+            {
+              label: 'b) Watter breuk van die 20 leerders het Leesklub gekies?',
+              correctAnswer: '7/20',
+              correctAnswers: ['7/20'],
+              explanation: '7 uit 20 leerders het Leesklub gekies, wat die breuk 7/20 gee. Hierdie breuk kan nie verder vereenvoudig word nie, aangesien 7 en 20 geen gemeenskaplike faktore anders as 1 deel nie.',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Leerder skryf die aantal plakkers wat elke dag van Maandag tot Vrydag versamel is neer: 6, 9, 4, 7, 9. Sy bereken die gemiddelde deur al vyf getalle bymekaar te tel en deur 4 te deel, en kry ʼn antwoord van 8,75. Is haar berekening korrek? Indien nie, vind die korrekte gemiddelde.',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'Haar berekening is verkeerd — sy het deur 4 gedeel in plaas van 5, want daar is 5 datawaardes (Maandag tot Vrydag), nie 4 nie. Die korrekte totaal is 6 + 9 + 4 + 7 + 9 = 35. Die korrekte gemiddelde is 35 ÷ 5 = 7, nie 8,75 nie.',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 1 — jy het telmerktabelle, staafgrafieke, prentgrafieke en gemiddelde, mediaan en modus heeltemal baasgeraak. Puik werk!' },
+        { minScore: 15, message: 'Puik werk op Stel 1! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
+        { minScore: 10, message: 'Goeie poging op Stel 1! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
+        { minScore: 0, message: "Hou aan oefen met Stel 1 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // ── Data Insamel en Organiseer (0-3) ────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Thabo vra 14 klasmaats wat hul gunsteling seisoen is. Hy skryf neer: somer, winter, somer, lente, somer, winter, somer, lente, winter, somer, lente, somer, winter, somer. Hoeveel klasmaats het somer gekies?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'Tel elke keer wat "somer" voorkom: somer, somer, somer, somer, somer, somer, somer = 7 klasmaats het somer gekies.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Telmerktabel wys die aantal leerders wat elke drankie gekies het: Sap = ⁙||| (8), Water = ⁙ (5), Melk = || (2). Wat is die totale aantal leerders wat gevra is?',
+          checkMode: 'auto',
+          correctAnswer: '15',
+          correctAnswers: ['15'],
+          explanation: 'Tel die frekwensies bymekaar: 8 + 5 + 2 = 15 leerders is gevra.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'In ʼn telmerktabel word twee volle groepe van 5 telmerke plus 1 ekstra enkelmerk langs "Lemoene" geteken. Watter frekwensie moet vir lemoene neergeskryf word?',
+          checkMode: 'auto',
+          correctAnswer: '11',
+          correctAnswers: ['11'],
+          explanation: 'Twee volle groepe van 5 telmerke is gelyk aan 5 + 5 = 10. As 1 ekstra enkelmerk bygetel word: 10 + 1 = 11.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Leerder het ʼn telmerktabel voltooi en die frekwensies tel op tot 27, maar sy het 30 mense opgeneem. Wat moet sy doen, en waarom?',
+          answer: 'Sy moet teruggaan en haar telmerke en frekwensies weer tel, want die totale frekwensie moet altyd ooreenstem met die totale aantal mense wat opgeneem is. Aangesien 27 nie gelyk is aan 30 nie, het sy êrens ʼn fout gemaak — sy het óf sommige telmerke verkeerd getel, óf ʼn verkeerde frekwensie neergeskryf, óf 3 van die antwoorde nie aangeteken nie. Om versigtig weer te tel sal haar help om die fout te vind en reg te maak sodat die totaal ooreenstem met 30.',
+          checkMode: 'self',
+        },
+
+        // ── Staafgrafieke (4-7) — DIAGRAM BLOK ──────────────────────────────
+        // Gedeelde staafgrafiek: "Gunsteling Sapgeure"
+        // Kategorieë (x-as): Lemoen, Appel, Druif, Mango
+        // Waardes (y-as, Aantal Leerders): Lemoen = 14, Appel = 10, Druif = 6, Mango = 8
+        // Skaal: tel in 2e van 0 tot 14
+        {
+          difficulty: 'Easy',
+          question: 'Volgens die staafgrafiek hierbo getiteld "Gunsteling Sapgeure", wat Lemoen = 14, Appel = 10, Druif = 6 en Mango = 8 leerders wys, hoeveel leerders het Druif as hul gunsteling sapgeur gekies?',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6'],
+          explanation: 'As jy die hoogte van die Druif-staaf op die grafiek lees, bereik dit 6 op die skaal. Dus het 6 leerders Druif gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Sapgeure</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Lemoen</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Appel</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Druif</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Volgens die staafgrafiek hierbo, watter geur is deur minder leerders gekies: Appel of Mango?',
+          checkMode: 'auto',
+          correctAnswer: 'Mango',
+          correctAnswers: ['Mango', 'mango'],
+          explanation: 'Appel = 10 leerders en Mango = 8 leerders. Aangesien 8 kleiner is as 10, is Mango deur minder leerders gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Sapgeure</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Lemoen</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Appel</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Druif</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die staafgrafiek hierbo, hoeveel meer leerders het Lemoen gekies as Druif?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'Lemoen = 14 en Druif = 6. Die verskil is 14 − 6 = 8 meer leerders het Lemoen as Druif gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Sapgeure</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Lemoen</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Appel</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Druif</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die staafgrafiek hierbo, hoeveel leerders altesaam het Appel of Mango as hul gunsteling sapgeur gekies?',
+          checkMode: 'auto',
+          correctAnswer: '18',
+          correctAnswers: ['18'],
+          explanation: 'Appel = 10 en Mango = 8. Tel dit bymekaar: 10 + 8 = 18 leerders het Appel of Mango gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Sapgeure</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Lemoen</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Appel</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Druif</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+
+        // ── Prentgrafieke (8-11) — DIAGRAM BLOK ─────────────────────────────
+        // Gedeelde prentgrafiek: "Plakkers Versamel Hierdie Kwartaal"
+        // Sleutel: 1 stersimbool = 4 plakkers
+        // Rye: Ayanda = 5 simbole (20 plakkers), Zanele = 3 simbole (12 plakkers),
+        //      Kabelo = 2 en ʼn half simbole (10 plakkers), Naledi = 4 simbole (16 plakkers)
+        {
+          difficulty: 'Medium',
+          question: 'Die prentgrafiek hierbo, "Plakkers Versamel Hierdie Kwartaal", het ʼn sleutel waar 1 stersimbool = 4 plakkers. Ayanda wys 5 simbole. Hoeveel plakkers het Ayanda versamel?',
+          checkMode: 'auto',
+          correctAnswer: '20',
+          correctAnswers: ['20'],
+          explanation: 'Elke simbool verteenwoordig 4 plakkers. Ayanda het 5 simbole, dus 5 × 4 = 20 plakkers.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="10.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Plakkers Versamel Hierdie Kwartaal</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 plakkers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, Kabelo wys 2 volle simbole en 1 half simbool. Hoeveel plakkers het Kabelo versamel?',
+          checkMode: 'auto',
+          correctAnswer: '10',
+          correctAnswers: ['10'],
+          explanation: '2 volle simbole = 2 × 4 = 8 plakkers. ʼn Half simbool = die helfte van 4 = 2 plakkers. Totaal: 8 + 2 = 10 plakkers.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="10.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Plakkers Versamel Hierdie Kwartaal</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 plakkers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, Zanele wys 3 simbole en Naledi wys 4 simbole. Hoeveel meer plakkers het Naledi as Zanele versamel?',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4'],
+          explanation: 'Zanele: 3 × 4 = 12 plakkers. Naledi: 4 × 4 = 16 plakkers. Verskil: 16 − 12 = 4 meer plakkers deur Naledi versamel.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="10.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Plakkers Versamel Hierdie Kwartaal</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 plakkers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, hoeveel plakkers is altesaam deur Ayanda en Naledi saam versamel?',
+          checkMode: 'auto',
+          correctAnswer: '36',
+          correctAnswers: ['36'],
+          explanation: 'Ayanda = 5 × 4 = 20 plakkers. Naledi = 4 × 4 = 16 plakkers. Totaal: 20 + 16 = 36 plakkers.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="10.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Plakkers Versamel Hierdie Kwartaal</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 plakkers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+
+        // ── Gemiddelde, Mediaan en Modus (12-15) ────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Vind die modus van hierdie datastel: 5, 3, 5, 8, 5, 1.',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5'],
+          explanation: 'Tel hoe gereeld elke waarde voorkom: 5 kom 3 keer voor, 3 kom 1 keer voor, 8 kom 1 keer voor, 1 kom 1 keer voor. Aangesien 5 die meeste voorkom, is die modus 5.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vind die mediaan van hierdie datastel: 22, 9, 14, 17, 3.',
+          checkMode: 'auto',
+          correctAnswer: '14',
+          correctAnswers: ['14'],
+          explanation: 'Rangskik eers die waardes van kleinste na grootste: 3, 9, 14, 17, 22. Daar is 5 waardes, dus is die middelste (3de) waarde die mediaan: 14.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vind die gemiddelde van hierdie datastel: 12, 18, 15, 9, 6.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12'],
+          explanation: 'Tel al die waardes bymekaar: 12 + 18 + 15 + 9 + 6 = 60. Daar is 5 waardes, dus is die gemiddelde 60 ÷ 5 = 12.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Datastel is: 7, 2, 9, 4. Het hierdie datastel ʼn modus? Verduidelik jou antwoord.',
+          answer: 'Nee, hierdie datastel het nie ʼn modus nie. Elke waarde (7, 2, 9, en 4) kom presies een keer voor, dus kom geen waarde meer gereeld voor as ʼn ander nie. Aangesien geen enkele waarde meer gereeld voorkom as die res nie, het hierdie datastel geen modus nie.',
+          checkMode: 'self',
+        },
+
+        // ── Data Interpreteer — enkelstap-redenering (16-17) ────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Opname oor gunsteling vrugte gee hierdie resultate: Appel kom 8 keer voor, Piesang kom 5 keer voor, Naartjie kom 8 keer voor. Kagiso sê die modus van hierdie datastel is ʼn enkele waarde. Verduidelik wat verkeerd is met Kagiso se stelling en gee die korrekte modus(se).',
+          answer: 'Kagiso is verkeerd. Appel en Naartjie kom albei 8 keer voor, wat die hoogste frekwensie in die datastel is, dus is albei vrugte modusse — nie net een nie. Hierdie datastel is bimodaal, wat beteken dit het twee modusse: Appel en Naartjie. ʼn Datastel kan meer as een modus hê wanneer twee of meer waardes gelyk staan vir die hoogste frekwensie.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Span X het ʼn gemiddelde van 6 doele per wedstryd aangeteken en Span Y het ʼn gemiddelde van 4 doele per wedstryd oor ʼn seisoen aangeteken. Wat vertel die vergelyking van hierdie twee gemiddeldes ons oor die twee spanne se doelaantekening?',
+          checkMode: 'auto',
+          correctAnswer: 'Span X het gemiddeld meer doele aangeteken as Span Y',
+          correctAnswers: ['Span X het gemiddeld meer doele aangeteken as Span Y', 'Span X het gemiddeld meer aangeteken', 'Span X het ʼn hoër gemiddelde gehad'],
+          explanation: 'Die gemiddelde gee die gemiddelde aantal doele per wedstryd vir elke span. Aangesien 6 groter is as 4, was Span X se gemiddelde hoër, dus het Span X gemiddeld meer doele per wedstryd as Span Y hierdie seisoen aangeteken.',
+        },
+
+        // ── Data Interpreteer — multi-stap toepassing en breuke (18-19) ─────
+        {
+          difficulty: 'Hard',
+          question: 'Thabo doen ʼn opname onder 25 leerders oor hul gunsteling sport om te speel. 10 kies Krieket, 8 kies Sokker, en die res kies Tennis. Hoeveel leerders het Tennis gekies, en watter breuk van die hele groep is dit?',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Hoeveel leerders het Tennis gekies?',
+              correctAnswer: '7',
+              correctAnswers: ['7'],
+              explanation: '25 − 10 − 8 = 7 leerders het Tennis gekies.',
+            },
+            {
+              label: 'b) Watter breuk van die 25 leerders het Tennis gekies?',
+              correctAnswer: '7/25',
+              correctAnswers: ['7/25'],
+              explanation: '7 uit 25 leerders het Tennis gekies, wat die breuk 7/25 gee. Hierdie breuk kan nie verder vereenvoudig word nie, aangesien 7 en 25 geen gemeenskaplike faktore anders as 1 deel nie.',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Winkel skryf die aantal brode wat elke dag van Maandag tot Vrydag verkoop is neer: 12, 15, 9, 18, 6. ʼn Leerder sê die mediaan is 9, omdat 9 derde in die oorspronklike lys geskryf is. Is die leerder korrek? Indien nie, vind die korrekte mediaan.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12'],
+          explanation: 'Die leerder is verkeerd. Om die mediaan te vind, moet die waardes eers van kleinste na grootste gerangskik word: 6, 9, 12, 15, 18. Eers dan word die middelste waarde gevind — die 3de waarde in hierdie gerangskikte lys is 12, nie 9 nie. Die leerder het die fout gemaak om die oorspronklike, ongerangskikte posisie te gebruik in plaas van eers te sorteer.',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 2 — jy het telmerktabelle, staafgrafieke, prentgrafieke en gemiddelde, mediaan en modus heeltemal baasgeraak. Puik werk!' },
+        { minScore: 15, message: 'Puik werk op Stel 2! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
+        { minScore: 10, message: 'Goeie poging op Stel 2! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
+        { minScore: 0, message: "Hou aan oefen met Stel 2 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // ── Data Insamel en Organiseer (0-3) ────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Amahle vra 15 klasmaats wat hul gunsteling stokperdjie is. Sy skryf neer: lees, teken, lees, speletjies, lees, teken, speletjies, lees, teken, lees, speletjies, lees, teken, lees, speletjies. Hoeveel klasmaats het lees gekies?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'Tel elke keer wat "lees" voorkom: lees, lees, lees, lees, lees, lees, lees = 7 klasmaats het lees gekies.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Telmerktabel wys die aantal leerders wat elke vervoermetode gekies het: Bus = ⁙|| (7), Taxi = ⁙ (5), Fiets = ||| (3). Wat is die totale aantal leerders wat gevra is?',
+          checkMode: 'auto',
+          correctAnswer: '15',
+          correctAnswers: ['15'],
+          explanation: 'Tel die frekwensies bymekaar: 7 + 5 + 3 = 15 leerders is gevra.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'In ʼn telmerktabel word drie volle groepe van 5 telmerke langs "Geel" geteken. Watter frekwensie moet vir geel neergeskryf word?',
+          checkMode: 'auto',
+          correctAnswer: '15',
+          correctAnswers: ['15'],
+          explanation: 'Drie volle groepe van 5 telmerke is gelyk aan 5 + 5 + 5 = 15. Aangesien daar geen ekstra enkelmerke is nie, is die frekwensie 15.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Leerder wil die oogkleur van almal in haar klas met telmerke aanteken. Beskryf die stappe wat sy moet volg om ʼn volledige telmerk- en frekwensietabel op te stel.',
+          answer: 'Eers moet sy al die verskillende oogkleure wat in die klas voorkom as ry-opskrifte lys (byvoorbeeld, bruin, blou, groen). Dan moet sy een leerder op ʼn slag deur die klas gaan en een telmerk in die korrekte ry maak vir elke leerder se oogkleur, en onthou om die vyfde merk deur die vorige vier in elke groep te trek. Sodra almal aangeteken is, moet sy die telmerke in elke ry tel en die frekwensie (die totale telling) langs elke kleur neerskryf. Laastens moet sy al die frekwensies bymekaar tel en kontroleer dat die totaal ooreenstem met die aantal leerders in die klas.',
+          checkMode: 'self',
+        },
+
+        // ── Staafgrafieke (4-7) — DIAGRAM BLOK ──────────────────────────────
+        // Gedeelde staafgrafiek: "Gunsteling Skoolvakke"
+        // Kategorieë (x-as): Wiskunde, Engels, Wetenskap, Kuns
+        // Waardes (y-as, Aantal Leerders): Wiskunde = 15, Engels = 11, Wetenskap = 8, Kuns = 6
+        // Skaal: tel in 3e van 0 tot 15
+        {
+          difficulty: 'Easy',
+          question: 'Volgens die staafgrafiek hierbo getiteld "Gunsteling Skoolvakke", wat Wiskunde = 15, Engels = 11, Wetenskap = 8 en Kuns = 6 leerders wys, hoeveel leerders het Wetenskap as hul gunstelingvak gekies?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'As jy die hoogte van die Wetenskap-staaf op die grafiek lees, bereik dit 8 op die skaal. Dus het 8 leerders Wetenskap gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Skoolvakke</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wisk.</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Eng.</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wet.</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Kuns</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Volgens die staafgrafiek hierbo, watter vak is deur meer leerders gekies: Engels of Kuns?',
+          checkMode: 'auto',
+          correctAnswer: 'Engels',
+          correctAnswers: ['Engels', 'engels'],
+          explanation: 'Engels = 11 leerders en Kuns = 6 leerders. Aangesien 11 groter is as 6, is Engels deur meer leerders gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Skoolvakke</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wisk.</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Eng.</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wet.</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Kuns</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die staafgrafiek hierbo, hoeveel meer leerders het Wiskunde gekies as Kuns?',
+          checkMode: 'auto',
+          correctAnswer: '9',
+          correctAnswers: ['9'],
+          explanation: 'Wiskunde = 15 en Kuns = 6. Die verskil is 15 − 6 = 9 meer leerders het Wiskunde as Kuns gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Skoolvakke</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wisk.</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Eng.</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wet.</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Kuns</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die staafgrafiek hierbo, hoeveel leerders altesaam het Engels of Wetenskap as hul gunstelingvak gekies?',
+          checkMode: 'auto',
+          correctAnswer: '19',
+          correctAnswers: ['19'],
+          explanation: 'Engels = 11 en Wetenskap = 8. Tel dit bymekaar: 11 + 8 = 19 leerders het Engels of Wetenskap gekies.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Skoolvakke</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wisk.</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Eng.</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wet.</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Kuns</text></svg>',
+        },
+
+        // ── Prentgrafieke (8-11) — DIAGRAM BLOK ─────────────────────────────
+        // Gedeelde prentgrafiek: "Stemme vir Klas-sportdag Spanname"
+        // Sleutel: 1 trofeesimbool = 10 stemme
+        // Rye: Span A = 3 en ʼn half simbole (35 stemme), Span B = 2 simbole (20 stemme),
+        //      Span C = 4 simbole (40 stemme), Span D = 1 en ʼn half simbole (15 stemme)
+        {
+          difficulty: 'Medium',
+          question: 'Die prentgrafiek hierbo, "Stemme vir Klas-sportdag Spanname", het ʼn sleutel waar 1 trofeesimbool = 10 stemme. Span C wys 4 simbole. Hoeveel stemme het Span C ontvang?',
+          checkMode: 'auto',
+          correctAnswer: '40',
+          correctAnswers: ['40'],
+          explanation: 'Elke simbool verteenwoordig 10 stemme. Span C het 4 simbole, dus 4 × 10 = 40 stemme.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stemme vir Sportdag Spanname</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 stemme</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Span A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Span B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Span C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Span D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, Span A wys 3 volle simbole en 1 half simbool. Hoeveel stemme het Span A ontvang?',
+          checkMode: 'auto',
+          correctAnswer: '35',
+          correctAnswers: ['35'],
+          explanation: '3 volle simbole = 3 × 10 = 30 stemme. ʼn Half simbool = die helfte van 10 = 5 stemme. Totaal: 30 + 5 = 35 stemme.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stemme vir Sportdag Spanname</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 stemme</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Span A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Span B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Span C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Span D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, Span B wys 2 simbole en Span D wys 1 en ʼn half simbole. Hoeveel meer stemme het Span B as Span D ontvang?',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5'],
+          explanation: 'Span B: 2 × 10 = 20 stemme. Span D: 1 volle simbool (10) + half simbool (5) = 15 stemme. Verskil: 20 − 15 = 5 meer stemme vir Span B.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stemme vir Sportdag Spanname</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 stemme</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Span A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Span B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Span C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Span D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Volgens die prentgrafiek hierbo, hoeveel stemme is altesaam vir Span A en Span C saam uitgebring?',
+          checkMode: 'auto',
+          correctAnswer: '75',
+          correctAnswers: ['75'],
+          explanation: 'Span A = 35 stemme. Span C = 4 × 10 = 40 stemme. Totaal: 35 + 40 = 75 stemme.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stemme vir Sportdag Spanname</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 stemme</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Span A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Span B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Span C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Span D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+
+        // ── Gemiddelde, Mediaan en Modus (12-15) ────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Vind die modus van hierdie datastel: 6, 2, 6, 10, 6, 4.',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6'],
+          explanation: 'Tel hoe gereeld elke waarde voorkom: 6 kom 3 keer voor, 2 kom 1 keer voor, 10 kom 1 keer voor, 4 kom 1 keer voor. Aangesien 6 die meeste voorkom, is die modus 6.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vind die mediaan van hierdie datastel: 19, 7, 12, 25, 4.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12'],
+          explanation: 'Rangskik eers die waardes van kleinste na grootste: 4, 7, 12, 19, 25. Daar is 5 waardes, dus is die middelste (3de) waarde die mediaan: 12.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vind die gemiddelde van hierdie datastel: 8, 13, 6, 9.',
+          checkMode: 'auto',
+          correctAnswer: '9',
+          correctAnswers: ['9'],
+          explanation: 'Tel al die waardes bymekaar: 8 + 13 + 6 + 9 = 36. Daar is 4 waardes, dus is die gemiddelde 36 ÷ 4 = 9.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Datastel is: 5, 11, 3, 9. Het hierdie datastel ʼn modus? Verduidelik jou antwoord.',
+          answer: 'Nee, hierdie datastel het nie ʼn modus nie. Elke waarde (5, 11, 3, en 9) kom presies een keer voor, dus kom geen waarde meer gereeld voor as ʼn ander nie. Omdat geen enkele waarde meer herhaal as die ander nie, het hierdie datastel geen modus nie.',
+          checkMode: 'self',
+        },
+
+        // ── Data Interpreteer — enkelstap-redenering (16-17) ────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Opname oor gunsteling kleure gee hierdie resultate: Blou kom 10 keer voor, Rooi kom 6 keer voor, Groen kom 10 keer voor. Sipho sê die modus is Rooi, omdat Rooi die tweede kleur in die resultate gelys is. Verduidelik wat verkeerd is met Sipho se stelling en gee die korrekte modus(se).',
+          answer: 'Sipho is verkeerd. Die modus word gevind deur te kyk watter waarde die hoogste frekwensie het, nie deur die volgorde waarin waardes gelys is nie. Rooi kom slegs 6 keer voor, wat die laagste frekwensie hier is, dus kan dit nie die modus wees nie. Blou en Groen kom albei 10 keer voor, wat die hoogste frekwensie is, dus is albei modusse. Hierdie datastel is bimodaal, met modusse Blou en Groen.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Bakkery A het ʼn gemiddelde van 42 brode per dag verkoop aangeteken en Bakkery B het ʼn gemiddelde van 50 brode per dag verkoop oor ʼn maand aangeteken. Wat vertel die vergelyking van hierdie twee gemiddeldes ons oor die twee bakkerye se verkope?',
+          checkMode: 'auto',
+          correctAnswer: 'Bakkery B het gemiddeld meer brode verkoop as Bakkery A',
+          correctAnswers: ['Bakkery B het gemiddeld meer brode verkoop as Bakkery A', 'Bakkery B het gemiddeld meer verkoop', 'Bakkery B het ʼn hoër gemiddelde gehad'],
+          explanation: 'Die gemiddelde gee die gemiddelde aantal brode wat per dag vir elke bakkery verkoop is. Aangesien 50 groter is as 42, was Bakkery B se gemiddelde hoër, dus het Bakkery B gemiddeld meer brode per dag as Bakkery A daardie maand verkoop.',
+        },
+
+        // ── Data Interpreteer — multi-stap toepassing en breuke (18-19) ─────
+        {
+          difficulty: 'Hard',
+          question: 'Amahle doen ʼn opname onder 32 leerders oor hul gunsteling troeteldier. 14 kies Honde, 10 kies Katte, en die res kies Voëls. Hoeveel leerders het Voëls gekies, en watter breuk van die hele groep is dit? Gee die breuk in sy eenvoudigste vorm.',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Hoeveel leerders het Voëls gekies?',
+              correctAnswer: '8',
+              correctAnswers: ['8'],
+              explanation: '32 − 14 − 10 = 8 leerders het Voëls gekies.',
+            },
+            {
+              label: 'b) Watter breuk van die 32 leerders het Voëls gekies, in eenvoudigste vorm?',
+              correctAnswer: '1/4',
+              correctAnswers: ['1/4', '8/32'],
+              explanation: '8 uit 32 leerders het Voëls gekies, wat die breuk 8/32 gee. Deur beide die teller en noemer deur 8 te deel: 8 ÷ 8 = 1 en 32 ÷ 8 = 4, dus is die eenvoudigste vorm 1/4.',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Snoepiewinkel skryf die aantal pasteie wat elke dag van Maandag tot Vrydag verkoop is neer: 10, 14, 8, 16, 7. ʼn Leerder bereken die gemiddelde as (10 + 14 + 8 + 16 + 7) ÷ 6 en kry ʼn antwoord wat nie ʼn heelgetal is nie. Verduidelik die fout en vind die korrekte gemiddelde.',
+          checkMode: 'auto',
+          correctAnswer: '11',
+          correctAnswers: ['11'],
+          explanation: 'Die fout is om deur 6 te deel in plaas van 5 — daar is slegs 5 datawaardes (Maandag tot Vrydag). Die korrekte totaal is 10 + 14 + 8 + 16 + 7 = 55. Die korrekte gemiddelde is 55 ÷ 5 = 11.',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 3 — jy het telmerktabelle, staafgrafieke, prentgrafieke en gemiddelde, mediaan en modus heeltemal baasgeraak. Puik werk!' },
+        { minScore: 15, message: 'Puik werk op Stel 3! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
+        { minScore: 10, message: 'Goeie poging op Stel 3! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
+        { minScore: 0, message: "Hou aan oefen met Stel 3 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 15,
     messages: [

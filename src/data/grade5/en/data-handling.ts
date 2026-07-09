@@ -744,6 +744,629 @@ export const topicData: TopicData = {
 
   topicPractice: [],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // ── Collecting & Organising Data (0-3) ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Nomvula asks 12 learners how they travel to school. She records: walk, taxi, walk, car, walk, taxi, car, walk, taxi, walk, car, walk. How many learners said they walk to school?',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6'],
+          explanation: 'Count each time "walk" appears in the list: walk, walk, walk, walk, walk, walk = 6 learners walk to school.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'A tally table shows the number of learners who chose each pet: Dog = ⁙| (6), Cat = |||| (4), Bird = ||| (3). What is the total number of learners who were asked?',
+          checkMode: 'auto',
+          correctAnswer: '13',
+          correctAnswers: ['13'],
+          explanation: 'Add the frequencies: 6 + 4 + 3 = 13 learners were asked.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'In a tally table, one group of 5 tally marks plus 2 more single marks are drawn next to "Grapes". What frequency should be written for grapes?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'A full group of 5 tally marks equals 5. Adding 2 more single marks gives 5 + 2 = 7.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Explain why every fifth tally mark is drawn crossing through the previous four marks instead of just being another straight line.',
+          answer: 'Drawing the fifth mark as a diagonal line across the other four groups the tallies into sets of 5. This makes it much faster to count a large number of tally marks at the end — you can count in 5s and then add any extra single marks, instead of counting every single mark one by one.',
+          checkMode: 'self',
+        },
+
+        // ── Bar Graphs (4-7) — DIAGRAM BLOCK ────────────────────────────────
+        // Shared bar graph: "Favourite Pets of Grade 5 Learners"
+        // Categories (x-axis): Dogs, Cats, Fish, Birds
+        // Values (y-axis, Number of Learners): Dogs = 12, Cats = 9, Fish = 4, Birds = 7
+        // Scale: counts in 2s from 0 to 12
+        {
+          difficulty: 'Easy',
+          question: 'Using the bar graph above titled "Favourite Pets of Grade 5 Learners", which shows Dogs = 12, Cats = 9, Fish = 4 and Birds = 7 learners, how many learners chose Fish as their favourite pet?',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4'],
+          explanation: 'Reading the height of the Fish bar on the graph, it reaches 4 on the scale. So 4 learners chose Fish.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Pets — Grade 5</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Dogs</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Cats</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Fish</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Birds</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Using the bar graph above, which pet was chosen by more learners: Cats or Birds?',
+          checkMode: 'auto',
+          correctAnswer: 'Cats',
+          correctAnswers: ['Cats', 'cats'],
+          explanation: 'Cats = 9 learners and Birds = 7 learners. Since 9 is greater than 7, Cats was chosen by more learners.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Pets — Grade 5</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Dogs</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Cats</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Fish</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Birds</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the bar graph above, how many more learners chose Dogs than chose Fish?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'Dogs = 12 and Fish = 4. The difference is 12 − 4 = 8 more learners chose Dogs than Fish.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Pets — Grade 5</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Dogs</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Cats</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Fish</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Birds</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the bar graph above, how many learners in total chose Cats or Birds as their favourite pet?',
+          checkMode: 'auto',
+          correctAnswer: '16',
+          correctAnswers: ['16'],
+          explanation: 'Cats = 9 and Birds = 7. Adding these together: 9 + 7 = 16 learners chose Cats or Birds.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Pets — Grade 5</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Dogs</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Cats</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Fish</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Birds</text></svg>',
+        },
+
+        // ── Pictographs (8-11) — DIAGRAM BLOCK ──────────────────────────────
+        // Shared pictograph: "Books Read During the Week"
+        // Key: 1 book symbol = 2 books
+        // Rows: Monday = 5 symbols (10 books), Tuesday = 3 symbols (6 books),
+        //       Wednesday = 2 and a half symbols (5 books), Thursday = 4 symbols (8 books)
+        {
+          difficulty: 'Medium',
+          question: 'The pictograph above, "Books Read During the Week", has a key where 1 book symbol = 2 books. Monday shows 5 symbols. How many books were read on Monday?',
+          checkMode: 'auto',
+          correctAnswer: '10',
+          correctAnswers: ['10'],
+          explanation: 'Each symbol represents 2 books. Monday has 5 symbols, so 5 × 2 = 10 books were read on Monday.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Books Read During the Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 books</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Monday</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Tuesday</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Wednesday</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Thursday</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, Wednesday shows 2 full symbols and 1 half symbol. How many books were read on Wednesday?',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5'],
+          explanation: '2 full symbols = 2 × 2 = 4 books. A half symbol = half of 2 = 1 book. Total: 4 + 1 = 5 books were read on Wednesday.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Books Read During the Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 books</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Monday</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Tuesday</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Wednesday</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Thursday</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, Tuesday shows 3 symbols and Thursday shows 4 symbols. How many more books were read on Thursday than on Tuesday?',
+          checkMode: 'auto',
+          correctAnswer: '2',
+          correctAnswers: ['2'],
+          explanation: 'Tuesday: 3 × 2 = 6 books. Thursday: 4 × 2 = 8 books. Difference: 8 − 6 = 2 more books were read on Thursday.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Books Read During the Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 books</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Monday</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Tuesday</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Wednesday</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Thursday</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, how many books were read in total on Monday and Thursday combined?',
+          checkMode: 'auto',
+          correctAnswer: '18',
+          correctAnswers: ['18'],
+          explanation: 'Monday = 5 × 2 = 10 books. Thursday = 4 × 2 = 8 books. Total: 10 + 8 = 18 books.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Books Read During the Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 books</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Monday</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Tuesday</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Wednesday</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Thursday</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+
+        // ── Mean, Median and Mode (12-15) ───────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Find the mode of this data set: 4, 7, 4, 9, 4, 2.',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4'],
+          explanation: 'Count how often each value appears: 4 appears 3 times, 7 appears once, 9 appears once, 2 appears once. Since 4 appears most often, the mode is 4.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the median of this data set: 11, 4, 8, 15, 6.',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'First arrange the values from smallest to biggest: 4, 6, 8, 11, 15. There are 5 values, so the middle (3rd) value is the median: 8.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the mean of this data set: 9, 14, 7, 10.',
+          checkMode: 'auto',
+          correctAnswer: '10',
+          correctAnswers: ['10'],
+          explanation: 'Add all the values: 9 + 14 + 7 + 10 = 40. There are 4 values, so the mean is 40 ÷ 4 = 10.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A data set is: 3, 8, 5, 12. Does this data set have a mode? Explain your answer.',
+          answer: 'No, this data set does not have a mode. Every value (3, 8, 5, and 12) appears exactly once, so no value occurs more often than any other. There is no single value that appears "most often", so there is no mode for this data set.',
+          checkMode: 'self',
+        },
+
+        // ── Interpreting Data — single-step reasoning (16-17) ───────────────
+        {
+          difficulty: 'Medium',
+          question: 'A survey of favourite ice-cream flavours gives these results: Vanilla appears 9 times, Chocolate appears 6 times, Strawberry appears 9 times. Zanele says the mode is 9. Explain what is wrong with Zanele\'s statement and give the correct mode(s).',
+          answer: 'Zanele is wrong. The mode must be the data value that appears most often — in this case a flavour name, not a frequency. Vanilla and Strawberry both appear 9 times, which is the highest frequency, so both are modes. The correct answer is that this data set has two modes: Vanilla and Strawberry (it is bimodal). The number 9 is the frequency, not the mode itself.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Class A recorded a mean test score of 68 and Class B recorded a mean test score of 74. What does comparing these two means tell us about the two classes\' performance?',
+          checkMode: 'auto',
+          correctAnswer: 'Class B performed better on average than Class A',
+          correctAnswers: ['Class B performed better on average than Class A', 'Class B did better on average', 'Class B had a higher average'],
+          explanation: 'The mean gives the average score for each class. Since 74 is greater than 68, Class B\'s average score was higher, so on average Class B performed better than Class A on this test.',
+        },
+
+        // ── Interpreting Data — multi-step application & fractions (18-19) ──
+        {
+          difficulty: 'Hard',
+          question: 'Nomvula surveys 20 learners about their favourite school subject. 8 choose Soccer Club, 5 choose Chess Club, and the rest choose Reading Club. How many learners chose Reading Club, and what fraction of the whole group is this?',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) How many learners chose Reading Club?',
+              correctAnswer: '7',
+              correctAnswers: ['7'],
+              explanation: '20 − 8 − 5 = 7 learners chose Reading Club.',
+            },
+            {
+              label: 'b) What fraction of the 20 learners chose Reading Club?',
+              correctAnswer: '7/20',
+              correctAnswers: ['7/20'],
+              explanation: '7 out of 20 learners chose Reading Club, giving the fraction 7/20. This fraction cannot be simplified further since 7 and 20 share no common factors other than 1.',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A learner records the number of stickers collected each day from Monday to Friday: 6, 9, 4, 7, 9. She calculates the mean by adding all five numbers and dividing by 4, getting an answer of 8.75. Is her calculation correct? If not, find the correct mean.',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'Her calculation is incorrect — she divided by 4 instead of 5, since there are 5 data values (Monday to Friday), not 4. The correct total is 6 + 9 + 4 + 7 + 9 = 35. The correct mean is 35 ÷ 5 = 7, not 8.75.',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! A perfect score on Set 1 — you have completely mastered tally tables, bar graphs, pictographs and mean, median and mode. Superb work!' },
+        { minScore: 15, message: 'Great work on Set 1! You have a strong grasp of data handling. Look back at any questions you missed to make it perfect.' },
+        { minScore: 10, message: 'Good effort on Set 1! You understand a lot of this section. Revisit the worked examples for the parts that gave you trouble.' },
+        { minScore: 0, message: "Keep practising Set 1 — data handling takes practice to master. Go back through the explanations and worked examples, then try again." },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // ── Collecting & Organising Data (0-3) ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Thabo asks 14 classmates what their favourite season is. He records: summer, winter, summer, spring, summer, winter, summer, spring, winter, summer, spring, summer, winter, summer. How many classmates chose summer?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'Count each time "summer" appears: summer, summer, summer, summer, summer, summer, summer = 7 classmates chose summer.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'A tally table shows the number of learners who chose each drink: Juice = ⁙||| (8), Water = ⁙ (5), Milk = || (2). What is the total number of learners who were asked?',
+          checkMode: 'auto',
+          correctAnswer: '15',
+          correctAnswers: ['15'],
+          explanation: 'Add the frequencies: 8 + 5 + 2 = 15 learners were asked.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'In a tally table, two full groups of 5 tally marks plus 1 more single mark are drawn next to "Oranges". What frequency should be written for oranges?',
+          checkMode: 'auto',
+          correctAnswer: '11',
+          correctAnswers: ['11'],
+          explanation: 'Two full groups of 5 tally marks equal 5 + 5 = 10. Adding 1 more single mark gives 10 + 1 = 11.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'A learner has completed a tally table and the frequencies add up to 27, but she surveyed 30 people. What should she do, and why?',
+          answer: 'She should go back and recount her tally marks and frequencies, because the total frequency must always match the total number of people surveyed. Since 27 does not equal 30, she has made a mistake somewhere — either she miscounted some tally marks, wrote down a wrong frequency, or missed recording 3 of the responses. Recounting carefully will help her find and fix the error so the total matches 30.',
+          checkMode: 'self',
+        },
+
+        // ── Bar Graphs (4-7) — DIAGRAM BLOCK ────────────────────────────────
+        // Shared bar graph: "Favourite Juice Flavours"
+        // Categories (x-axis): Orange, Apple, Grape, Mango
+        // Values (y-axis, Number of Learners): Orange = 14, Apple = 10, Grape = 6, Mango = 8
+        // Scale: counts in 2s from 0 to 14
+        {
+          difficulty: 'Easy',
+          question: 'Using the bar graph above titled "Favourite Juice Flavours", which shows Orange = 14, Apple = 10, Grape = 6 and Mango = 8 learners, how many learners chose Grape as their favourite juice flavour?',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6'],
+          explanation: 'Reading the height of the Grape bar on the graph, it reaches 6 on the scale. So 6 learners chose Grape.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Juice Flavours</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Orange</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Apple</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Grape</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Using the bar graph above, which flavour was chosen by fewer learners: Apple or Mango?',
+          checkMode: 'auto',
+          correctAnswer: 'Mango',
+          correctAnswers: ['Mango', 'mango'],
+          explanation: 'Apple = 10 learners and Mango = 8 learners. Since 8 is less than 10, Mango was chosen by fewer learners.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Juice Flavours</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Orange</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Apple</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Grape</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the bar graph above, how many more learners chose Orange than chose Grape?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'Orange = 14 and Grape = 6. The difference is 14 − 6 = 8 more learners chose Orange than Grape.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Juice Flavours</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Orange</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Apple</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Grape</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the bar graph above, how many learners in total chose Apple or Mango as their favourite juice flavour?',
+          checkMode: 'auto',
+          correctAnswer: '18',
+          correctAnswers: ['18'],
+          explanation: 'Apple = 10 and Mango = 8. Adding these together: 10 + 8 = 18 learners chose Apple or Mango.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Juice Flavours</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Orange</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Apple</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Grape</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
+        },
+
+        // ── Pictographs (8-11) — DIAGRAM BLOCK ──────────────────────────────
+        // Shared pictograph: "Stickers Collected This Term"
+        // Key: 1 star symbol = 4 stickers
+        // Rows: Ayanda = 5 symbols (20 stickers), Zanele = 3 symbols (12 stickers),
+        //       Kabelo = 2 and a half symbols (10 stickers), Naledi = 4 symbols (16 stickers)
+        {
+          difficulty: 'Medium',
+          question: 'The pictograph above, "Stickers Collected This Term", has a key where 1 star symbol = 4 stickers. Ayanda shows 5 symbols. How many stickers did Ayanda collect?',
+          checkMode: 'auto',
+          correctAnswer: '20',
+          correctAnswers: ['20'],
+          explanation: 'Each symbol represents 4 stickers. Ayanda has 5 symbols, so 5 × 4 = 20 stickers.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stickers Collected This Term</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 stickers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, Kabelo shows 2 full symbols and 1 half symbol. How many stickers did Kabelo collect?',
+          checkMode: 'auto',
+          correctAnswer: '10',
+          correctAnswers: ['10'],
+          explanation: '2 full symbols = 2 × 4 = 8 stickers. A half symbol = half of 4 = 2 stickers. Total: 8 + 2 = 10 stickers.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stickers Collected This Term</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 stickers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, Zanele shows 3 symbols and Naledi shows 4 symbols. How many more stickers did Naledi collect than Zanele?',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4'],
+          explanation: 'Zanele: 3 × 4 = 12 stickers. Naledi: 4 × 4 = 16 stickers. Difference: 16 − 12 = 4 more stickers collected by Naledi.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stickers Collected This Term</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 stickers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, how many stickers were collected in total by Ayanda and Naledi combined?',
+          checkMode: 'auto',
+          correctAnswer: '36',
+          correctAnswers: ['36'],
+          explanation: 'Ayanda = 5 × 4 = 20 stickers. Naledi = 4 × 4 = 16 stickers. Total: 20 + 16 = 36 stickers.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stickers Collected This Term</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 stickers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
+        },
+
+        // ── Mean, Median and Mode (12-15) ───────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Find the mode of this data set: 5, 3, 5, 8, 5, 1.',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5'],
+          explanation: 'Count how often each value appears: 5 appears 3 times, 3 appears once, 8 appears once, 1 appears once. Since 5 appears most often, the mode is 5.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the median of this data set: 22, 9, 14, 17, 3.',
+          checkMode: 'auto',
+          correctAnswer: '14',
+          correctAnswers: ['14'],
+          explanation: 'First arrange the values from smallest to biggest: 3, 9, 14, 17, 22. There are 5 values, so the middle (3rd) value is the median: 14.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the mean of this data set: 12, 18, 15, 9, 6.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12'],
+          explanation: 'Add all the values: 12 + 18 + 15 + 9 + 6 = 60. There are 5 values, so the mean is 60 ÷ 5 = 12.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A data set is: 7, 2, 9, 4. Does this data set have a mode? Explain your answer.',
+          answer: 'No, this data set does not have a mode. Every value (7, 2, 9, and 4) appears exactly once, so no value occurs more often than any other. Since no single value appears more frequently than the rest, this data set has no mode.',
+          checkMode: 'self',
+        },
+
+        // ── Interpreting Data — single-step reasoning (16-17) ───────────────
+        {
+          difficulty: 'Medium',
+          question: 'A survey of favourite fruit gives these results: Apple appears 8 times, Banana appears 5 times, Naartjie appears 8 times. Kagiso says the mode of this data set is a single value. Explain what is wrong with Kagiso\'s statement and give the correct mode(s).',
+          answer: 'Kagiso is wrong. Apple and Naartjie both appear 8 times, which is the highest frequency in the data set, so both fruits are modes — not just one. This data set is bimodal, meaning it has two modes: Apple and Naartjie. A data set can have more than one mode when two or more values tie for the highest frequency.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Team X recorded a mean of 6 goals per match and Team Y recorded a mean of 4 goals per match over a season. What does comparing these two means tell us about the two teams\' scoring?',
+          checkMode: 'auto',
+          correctAnswer: 'Team X scored more goals on average than Team Y',
+          correctAnswers: ['Team X scored more goals on average than Team Y', 'Team X scored more on average', 'Team X had a higher average'],
+          explanation: 'The mean gives the average number of goals per match for each team. Since 6 is greater than 4, Team X\'s average was higher, so on average Team X scored more goals per match than Team Y this season.',
+        },
+
+        // ── Interpreting Data — multi-step application & fractions (18-19) ──
+        {
+          difficulty: 'Hard',
+          question: 'Thabo surveys 25 learners about their favourite sport to play. 10 choose Cricket, 8 choose Soccer, and the rest choose Tennis. How many learners chose Tennis, and what fraction of the whole group is this?',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) How many learners chose Tennis?',
+              correctAnswer: '7',
+              correctAnswers: ['7'],
+              explanation: '25 − 10 − 8 = 7 learners chose Tennis.',
+            },
+            {
+              label: 'b) What fraction of the 25 learners chose Tennis?',
+              correctAnswer: '7/25',
+              correctAnswers: ['7/25'],
+              explanation: '7 out of 25 learners chose Tennis, giving the fraction 7/25. This fraction cannot be simplified further since 7 and 25 share no common factors other than 1.',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A shop records the number of loaves of bread sold each day from Monday to Friday: 12, 15, 9, 18, 6. The median is found by a learner who says it is 9, because 9 is written third in the original list. Is the learner correct? If not, find the correct median.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12'],
+          explanation: 'The learner is incorrect. To find the median, the values must first be arranged from smallest to biggest: 6, 9, 12, 15, 18. Only then is the middle value found — the 3rd value in this ordered list is 12, not 9. The learner made the mistake of using the original, unordered position instead of sorting first.',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! A perfect score on Set 2 — you have completely mastered tally tables, bar graphs, pictographs and mean, median and mode. Superb work!' },
+        { minScore: 15, message: 'Great work on Set 2! You have a strong grasp of data handling. Look back at any questions you missed to make it perfect.' },
+        { minScore: 10, message: 'Good effort on Set 2! You understand a lot of this section. Revisit the worked examples for the parts that gave you trouble.' },
+        { minScore: 0, message: "Keep practising Set 2 — data handling takes practice to master. Go back through the explanations and worked examples, then try again." },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // ── Collecting & Organising Data (0-3) ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Amahle asks 15 classmates what their favourite hobby is. She records: reading, drawing, reading, gaming, reading, drawing, gaming, reading, drawing, reading, gaming, reading, drawing, reading, gaming. How many classmates chose reading?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7'],
+          explanation: 'Count each time "reading" appears: reading, reading, reading, reading, reading, reading, reading = 7 classmates chose reading.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'A tally table shows the number of learners who chose each transport method: Bus = ⁙|| (7), Taxi = ⁙ (5), Bicycle = ||| (3). What is the total number of learners who were asked?',
+          checkMode: 'auto',
+          correctAnswer: '15',
+          correctAnswers: ['15'],
+          explanation: 'Add the frequencies: 7 + 5 + 3 = 15 learners were asked.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'In a tally table, three full groups of 5 tally marks are drawn next to "Yellow". What frequency should be written for yellow?',
+          checkMode: 'auto',
+          correctAnswer: '15',
+          correctAnswers: ['15'],
+          explanation: 'Three full groups of 5 tally marks equal 5 + 5 + 5 = 15. Since there are no extra single marks, the frequency is 15.',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'A learner wants to record the eye colour of everyone in her class using tally marks. Describe the steps she should follow to build a complete tally and frequency table.',
+          answer: 'First, she should list all the different eye colours that appear in the class as row headings (for example, brown, blue, green). Then she should go through the class one learner at a time and make one tally mark in the correct row for each learner\'s eye colour, remembering to cross the fifth mark through the previous four in each group. Once everyone has been recorded, she should count the tally marks in each row and write the frequency (the total count) next to each colour. Finally, she should add up all the frequencies and check that the total matches the number of learners in the class.',
+          checkMode: 'self',
+        },
+
+        // ── Bar Graphs (4-7) — DIAGRAM BLOCK ────────────────────────────────
+        // Shared bar graph: "Favourite School Subjects"
+        // Categories (x-axis): Maths, English, Science, Art
+        // Values (y-axis, Number of Learners): Maths = 15, English = 11, Science = 8, Art = 6
+        // Scale: counts in 3s from 0 to 15
+        {
+          difficulty: 'Easy',
+          question: 'Using the bar graph above titled "Favourite School Subjects", which shows Maths = 15, English = 11, Science = 8 and Art = 6 learners, how many learners chose Science as their favourite subject?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8'],
+          explanation: 'Reading the height of the Science bar on the graph, it reaches 8 on the scale. So 8 learners chose Science.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite School Subjects</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Maths</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">English</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Science</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Art</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Using the bar graph above, which subject was chosen by more learners: English or Art?',
+          checkMode: 'auto',
+          correctAnswer: 'English',
+          correctAnswers: ['English', 'english'],
+          explanation: 'English = 11 learners and Art = 6 learners. Since 11 is greater than 6, English was chosen by more learners.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite School Subjects</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Maths</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">English</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Science</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Art</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the bar graph above, how many more learners chose Maths than chose Art?',
+          checkMode: 'auto',
+          correctAnswer: '9',
+          correctAnswers: ['9'],
+          explanation: 'Maths = 15 and Art = 6. The difference is 15 − 6 = 9 more learners chose Maths than Art.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite School Subjects</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Maths</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">English</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Science</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Art</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the bar graph above, how many learners in total chose English or Science as their favourite subject?',
+          checkMode: 'auto',
+          correctAnswer: '19',
+          correctAnswers: ['19'],
+          explanation: 'English = 11 and Science = 8. Adding these together: 11 + 8 = 19 learners chose English or Science.',
+          diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite School Subjects</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Maths</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">English</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Science</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Art</text></svg>',
+        },
+
+        // ── Pictographs (8-11) — DIAGRAM BLOCK ──────────────────────────────
+        // Shared pictograph: "Votes for Class Sports Day Team Names"
+        // Key: 1 trophy symbol = 10 votes
+        // Rows: Team A = 3 and a half symbols (35 votes), Team B = 2 symbols (20 votes),
+        //       Team C = 4 symbols (40 votes), Team D = 1 and a half symbols (15 votes)
+        {
+          difficulty: 'Medium',
+          question: 'The pictograph above, "Votes for Class Sports Day Team Names", has a key where 1 trophy symbol = 10 votes. Team C shows 4 symbols. How many votes did Team C receive?',
+          checkMode: 'auto',
+          correctAnswer: '40',
+          correctAnswers: ['40'],
+          explanation: 'Each symbol represents 10 votes. Team C has 4 symbols, so 4 × 10 = 40 votes.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Votes for Sports Day Team Names</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 votes</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Team A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Team B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Team C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Team D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, Team A shows 3 full symbols and 1 half symbol. How many votes did Team A receive?',
+          checkMode: 'auto',
+          correctAnswer: '35',
+          correctAnswers: ['35'],
+          explanation: '3 full symbols = 3 × 10 = 30 votes. A half symbol = half of 10 = 5 votes. Total: 30 + 5 = 35 votes.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Votes for Sports Day Team Names</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 votes</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Team A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Team B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Team C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Team D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, Team B shows 2 symbols and Team D shows 1 and a half symbols. How many more votes did Team B receive than Team D?',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5'],
+          explanation: 'Team B: 2 × 10 = 20 votes. Team D: 1 full symbol (10) + half symbol (5) = 15 votes. Difference: 20 − 15 = 5 more votes for Team B.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Votes for Sports Day Team Names</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 votes</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Team A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Team B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Team C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Team D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the pictograph above, how many votes were cast in total for Team A and Team C combined?',
+          checkMode: 'auto',
+          correctAnswer: '75',
+          correctAnswers: ['75'],
+          explanation: 'Team A = 35 votes. Team C = 4 × 10 = 40 votes. Total: 35 + 40 = 75 votes.',
+          diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Votes for Sports Day Team Names</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 votes</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Team A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Team B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Team C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Team D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
+        },
+
+        // ── Mean, Median and Mode (12-15) ───────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Find the mode of this data set: 6, 2, 6, 10, 6, 4.',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6'],
+          explanation: 'Count how often each value appears: 6 appears 3 times, 2 appears once, 10 appears once, 4 appears once. Since 6 appears most often, the mode is 6.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the median of this data set: 19, 7, 12, 25, 4.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12'],
+          explanation: 'First arrange the values from smallest to biggest: 4, 7, 12, 19, 25. There are 5 values, so the middle (3rd) value is the median: 12.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the mean of this data set: 8, 13, 6, 9.',
+          checkMode: 'auto',
+          correctAnswer: '9',
+          correctAnswers: ['9'],
+          explanation: 'Add all the values: 8 + 13 + 6 + 9 = 36. There are 4 values, so the mean is 36 ÷ 4 = 9.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A data set is: 5, 11, 3, 9. Does this data set have a mode? Explain your answer.',
+          answer: 'No, this data set does not have a mode. Every value (5, 11, 3, and 9) appears exactly once, so no value occurs more often than any other. Because no single value repeats more than the others, this data set has no mode.',
+          checkMode: 'self',
+        },
+
+        // ── Interpreting Data — single-step reasoning (16-17) ───────────────
+        {
+          difficulty: 'Medium',
+          question: 'A survey of favourite colours gives these results: Blue appears 10 times, Red appears 6 times, Green appears 10 times. Sipho says the mode is Red, because Red was the second colour listed in the results. Explain what is wrong with Sipho\'s statement and give the correct mode(s).',
+          answer: 'Sipho is wrong. The mode is found by looking at which value has the highest frequency, not by the order in which values were listed. Red only appears 6 times, which is the lowest frequency here, so it cannot be the mode. Blue and Green both appear 10 times, which is the highest frequency, so both are modes. This data set is bimodal, with modes Blue and Green.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Bakery A recorded a mean of 42 loaves sold per day and Bakery B recorded a mean of 50 loaves sold per day over a month. What does comparing these two means tell us about the two bakeries\' sales?',
+          checkMode: 'auto',
+          correctAnswer: 'Bakery B sold more loaves on average than Bakery A',
+          correctAnswers: ['Bakery B sold more loaves on average than Bakery A', 'Bakery B sold more on average', 'Bakery B had a higher average'],
+          explanation: 'The mean gives the average number of loaves sold per day for each bakery. Since 50 is greater than 42, Bakery B\'s average was higher, so on average Bakery B sold more loaves per day than Bakery A that month.',
+        },
+
+        // ── Interpreting Data — multi-step application & fractions (18-19) ──
+        {
+          difficulty: 'Hard',
+          question: 'Amahle surveys 32 learners about their favourite pet. 14 choose Dogs, 10 choose Cats, and the rest choose Birds. How many learners chose Birds, and what fraction of the whole group is this? Give the fraction in its simplest form.',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) How many learners chose Birds?',
+              correctAnswer: '8',
+              correctAnswers: ['8'],
+              explanation: '32 − 14 − 10 = 8 learners chose Birds.',
+            },
+            {
+              label: 'b) What fraction of the 32 learners chose Birds, in simplest form?',
+              correctAnswer: '1/4',
+              correctAnswers: ['1/4', '8/32'],
+              explanation: '8 out of 32 learners chose Birds, giving the fraction 8/32. Dividing both the numerator and denominator by 8: 8 ÷ 8 = 1 and 32 ÷ 8 = 4, so the simplest form is 1/4.',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A tuck shop records the number of pies sold each day from Monday to Friday: 10, 14, 8, 16, 7. A learner calculates the mean as (10 + 14 + 8 + 16 + 7) ÷ 6 and gets an answer that is not a whole number. Explain the mistake and find the correct mean.',
+          checkMode: 'auto',
+          correctAnswer: '11',
+          correctAnswers: ['11'],
+          explanation: 'The mistake is dividing by 6 instead of 5 — there are only 5 data values (Monday to Friday). The correct total is 10 + 14 + 8 + 16 + 7 = 55. The correct mean is 55 ÷ 5 = 11.',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! A perfect score on Set 3 — you have completely mastered tally tables, bar graphs, pictographs and mean, median and mode. Superb work!' },
+        { minScore: 15, message: 'Great work on Set 3! You have a strong grasp of data handling. Look back at any questions you missed to make it perfect.' },
+        { minScore: 10, message: 'Good effort on Set 3! You understand a lot of this section. Revisit the worked examples for the parts that gave you trouble.' },
+        { minScore: 0, message: "Keep practising Set 3 — data handling takes practice to master. Go back through the explanations and worked examples, then try again." },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 15,
     messages: [
