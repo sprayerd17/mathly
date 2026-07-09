@@ -996,4 +996,115 @@ export const topicData: TopicData = {
       },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 0-3 Breuk van 'n groep/heelgetal | 4-7 Ekwivalente breuke &
+    // vereenvoudig | 8-11 Vergelyk/orden | 12-14 Optel/aftrek dieselfde
+    // noemer | 15-16 Gemengde getalle & onegte breuke |
+    // 17-19 Meerstap-woordprobleme, foutopsporing, saamvattende vraag
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Vind 3/5 van 45.', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27'], explanation: 'Deel deur die noemer: 45 ÷ 5 = 9. Vermenigvuldig met die teller: 9 × 3 = 27.' },
+        { difficulty: 'Easy', question: 'ʼn Winkel het 72 brode. 5/9 van die brode is bruinbrood. Hoeveel brode is bruinbrood?', answer: '40', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40'], explanation: 'Deel deur die noemer: 72 ÷ 9 = 8. Vermenigvuldig met die teller: 8 × 5 = 40.' },
+        { difficulty: 'Easy', question: 'Beantwoord elke deel.\na) Vind 2/7 van 84\nb) Vind 7/12 van 96', answer: 'a) 24  b) 56', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '24' }, { label: 'b)', correctAnswer: '56' } ] },
+        { difficulty: 'Easy', question: 'ʼn Klas het 88 plakkers om te deel. 4/11 van die plakkers is goue sterre. Hoeveel plakkers is goue sterre?', answer: '32', checkMode: 'auto', correctAnswer: '32', correctAnswers: ['32'], explanation: 'Deel deur die noemer: 88 ÷ 11 = 8. Vermenigvuldig met die teller: 8 × 4 = 32.' },
+        { difficulty: 'Easy-Medium', question: 'Vind ʼn ekwivalente breuk vir 2/3 deur die teller en noemer met 4 te vermenigvuldig.', answer: '8/12', checkMode: 'auto', correctAnswer: '8/12', correctAnswers: ['8/12'], explanation: 'Vermenigvuldig albei getalle met 4: 2 × 4 = 8, en 3 × 4 = 12, dus 2/3 = 8/12.' },
+        { difficulty: 'Easy-Medium', question: 'Vul die ontbrekende teller in: 3/7 = ?/28', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: '7 × 4 = 28, dus vermenigvuldig die teller ook met 4: 3 × 4 = 12.' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 16/24 tot sy eenvoudigste vorm.', answer: '2/3', checkMode: 'auto', correctAnswer: '2/3', correctAnswers: ['2/3'], explanation: 'Die grootste gemene faktor van 16 en 24 is 8. Deel albei deur 8: 16 ÷ 8 = 2, 24 ÷ 8 = 3, dit gee 2/3.' },
+        { difficulty: 'Medium', question: 'Zinhle sê 8/12 en 10/15 is ekwivalente breuke. Is sy korrek? Wys jou werk deur albei breuke te vereenvoudig.', answer: 'Ja, albei vereenvoudig tot 2/3', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: 3/5 of 5/8?', answer: '5/8', checkMode: 'auto', correctAnswer: '5/8', correctAnswers: ['5/8'], explanation: 'LGN van 5 en 8 is 40. 3/5 = 24/40 en 5/8 = 25/40. Aangesien 25 > 24, is 5/8 groter.' },
+        { difficulty: 'Medium', question: 'Orden hierdie breuke van kleinste na grootste: 3/5, 7/10, 2/3', answer: '3/5, 2/3, 7/10', checkMode: 'auto', correctAnswer: '3/5,2/3,7/10', correctAnswers: ['3/5,2/3,7/10', '3/5, 2/3, 7/10'], explanation: 'LGN van 5, 10 en 3 is 30. 3/5 = 18/30, 7/10 = 21/30, 2/3 = 20/30. Orden volgens teller: 18 < 20 < 21, dus 3/5, 2/3, 7/10.' },
+        { difficulty: 'Medium', question: 'Vergelyk 5/6 en 7/9. Watter breuk is groter?', answer: '5/6', checkMode: 'auto', correctAnswer: '5/6', correctAnswers: ['5/6'], explanation: 'LGN van 6 en 9 is 18. 5/6 = 15/18 en 7/9 = 14/18. Aangesien 15 > 14, is 5/6 groter.' },
+        { difficulty: 'Medium', question: 'Orden hierdie breuke van kleinste na grootste: 5/9, 2/3, 7/12', answer: '5/9, 7/12, 2/3', checkMode: 'auto', correctAnswer: '5/9,7/12,2/3', correctAnswers: ['5/9,7/12,2/3', '5/9, 7/12, 2/3'], explanation: 'LGN van 9, 3 en 12 is 36. 5/9 = 20/36, 2/3 = 24/36, 7/12 = 21/36. Orden volgens teller: 20 < 21 < 24, dus 5/9, 7/12, 2/3.' },
+        { difficulty: 'Medium', question: 'Bereken 5/9 + 2/9.', answer: '7/9', checkMode: 'auto', correctAnswer: '7/9', correctAnswers: ['7/9'], explanation: 'Dieselfde noemer, dus tel die tellers bymekaar: 5 + 2 = 7. Hou die noemer: 7/9.' },
+        { difficulty: 'Medium', question: 'Bereken 7/8 − 3/8.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '4/8'], explanation: 'Dieselfde noemer, dus trek die tellers af: 7 − 3 = 4, dit gee 4/8. Vereenvoudig deur deur 4 te deel: 4/8 = 1/2.' },
+        { difficulty: 'Medium', question: 'Bereken 5/12 − 2/12 + 4/12.', answer: '7/12', checkMode: 'auto', correctAnswer: '7/12', correctAnswers: ['7/12'], explanation: 'Werk van links na regs met die tellers: 5 − 2 = 3, dan 3 + 4 = 7. Hou die noemer: 7/12.' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 3 2/5 om na ʼn onegte breuk.', answer: '17/5', checkMode: 'auto', correctAnswer: '17/5', correctAnswers: ['17/5'], explanation: 'Vermenigvuldig die heelgetal met die noemer: 3 × 5 = 15. Tel die teller by: 15 + 2 = 17. Hou die noemer: 17/5.' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 29/8 om na ʼn gemengde getal.', answer: '3 5/8', checkMode: 'auto', correctAnswer: '3 5/8', correctAnswers: ['3 5/8', '35/8', '3-5/8'], explanation: 'Deel die teller deur die noemer: 29 ÷ 8 = 3 res 5. Die kwosiënt 3 is die heelgetal, en die res 5 word die nuwe teller: 3 5/8.' },
+        { difficulty: 'Hard', question: 'Sam het R360 in sy beursie. Hy spandeer 2/5 daarvan aan ʼn boek en 1/4 daarvan aan ʼn speletjie. Hoeveel geld het hy oor?', answer: 'R126', checkMode: 'auto', correctAnswer: '126', correctAnswers: ['126', 'R126'], explanation: 'Boek: 360 ÷ 5 × 2 = R144. Speletjie: 360 ÷ 4 × 1 = R90. Totaal spandeer: 144 + 90 = R234. Oor: 360 − 234 = R126.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder sê 1/4 + 1/4 = 2/8, want "jy tel die bo- en ondergetalle bymekaar." Is die leerder korrek? Verduidelik die fout en gee die korrekte antwoord.', answer: 'Nee — wanneer die noemers reeds dieselfde is, tel jy net die tellers bymekaar en hou die noemer dieselfde. 1/4 + 1/4 = 2/4 = 1/2, nie 2/8 nie. Om die noemers ook by te tel, tel jy die dele van die geheel dubbel.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Skool het 40 leerders in ʼn klas. 3/8 van hulle stap skool toe en 1/5 van hulle fiets. Die res kom per bus.\na) Hoeveel leerders stap?\nb) Hoeveel leerders fiets?\nc) Hoeveel leerders kom per bus?\nd) Watter breuk van die klas kom per bus?', answer: 'a) 15  b) 8  c) 17  d) 17/40', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '15' }, { label: 'b)', correctAnswer: '8' }, { label: 'c)', correctAnswer: '17' }, { label: 'd)', correctAnswer: '17/40' } ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het breuke van groepe, ekwivalente breuke, vergelyking, optel, aftrek en gemengde getalle bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklaaiuit as Stel 1, nuwe bewoording/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Vind 4/9 van 54.', answer: '24', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24'], explanation: 'Deel deur die noemer: 54 ÷ 9 = 6. Vermenigvuldig met die teller: 6 × 4 = 24.' },
+        { difficulty: 'Easy', question: 'ʼn Boer het 90 hoenders. 3/10 van hulle is hane. Hoeveel hane is daar?', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27'], explanation: 'Deel deur die noemer: 90 ÷ 10 = 9. Vermenigvuldig met die teller: 9 × 3 = 27.' },
+        { difficulty: 'Easy', question: 'Beantwoord elke deel.\na) Vind 5/6 van 96\nb) Vind 2/11 van 110', answer: 'a) 80  b) 20', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '80' }, { label: 'b)', correctAnswer: '20' } ] },
+        { difficulty: 'Easy', question: 'ʼn Koor het 120 lede. 7/12 van hulle is sopraan. Hoeveel sopane is in die koor?', answer: '70', checkMode: 'auto', correctAnswer: '70', correctAnswers: ['70'], explanation: 'Deel deur die noemer: 120 ÷ 12 = 10. Vermenigvuldig met die teller: 10 × 7 = 70.' },
+        { difficulty: 'Easy-Medium', question: 'Vind ʼn ekwivalente breuk vir 3/4 deur die teller en noemer met 5 te vermenigvuldig.', answer: '15/20', checkMode: 'auto', correctAnswer: '15/20', correctAnswers: ['15/20'], explanation: 'Vermenigvuldig albei getalle met 5: 3 × 5 = 15, en 4 × 5 = 20, dus 3/4 = 15/20.' },
+        { difficulty: 'Easy-Medium', question: 'Vul die ontbrekende teller in: 5/6 = ?/42', answer: '35', checkMode: 'auto', correctAnswer: '35', correctAnswers: ['35'], explanation: '6 × 7 = 42, dus vermenigvuldig die teller ook met 7: 5 × 7 = 35.' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 21/28 tot sy eenvoudigste vorm.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', correctAnswers: ['3/4'], explanation: 'Die grootste gemene faktor van 21 en 28 is 7. Deel albei deur 7: 21 ÷ 7 = 3, 28 ÷ 7 = 4, dit gee 3/4.' },
+        { difficulty: 'Medium', question: 'Karabo sê 15/18 en 20/24 is ekwivalente breuke. Is hy korrek? Wys jou werk deur albei breuke te vereenvoudig.', answer: 'Ja, albei vereenvoudig tot 5/6', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: 5/8 of 7/12?', answer: '5/8', checkMode: 'auto', correctAnswer: '5/8', correctAnswers: ['5/8'], explanation: 'LGN van 8 en 12 is 24. 5/8 = 15/24 en 7/12 = 14/24. Aangesien 15 > 14, is 5/8 groter.' },
+        { difficulty: 'Medium', question: 'Orden hierdie breuke van kleinste na grootste: 1/3, 5/12, 3/8', answer: '1/3, 3/8, 5/12', checkMode: 'auto', correctAnswer: '1/3,3/8,5/12', correctAnswers: ['1/3,3/8,5/12', '1/3, 3/8, 5/12'], explanation: 'LGN van 3, 12 en 8 is 24. 1/3 = 8/24, 5/12 = 10/24, 3/8 = 9/24. Orden volgens teller: 8 < 9 < 10, dus 1/3, 3/8, 5/12.' },
+        { difficulty: 'Medium', question: 'Vergelyk 7/10 en 5/8. Watter breuk is groter?', answer: '7/10', checkMode: 'auto', correctAnswer: '7/10', correctAnswers: ['7/10'], explanation: 'LGN van 10 en 8 is 40. 7/10 = 28/40 en 5/8 = 25/40. Aangesien 28 > 25, is 7/10 groter.' },
+        { difficulty: 'Medium', question: 'Orden hierdie breuke van kleinste na grootste: 3/4, 5/6, 7/12', answer: '7/12, 3/4, 5/6', checkMode: 'auto', correctAnswer: '7/12,3/4,5/6', correctAnswers: ['7/12,3/4,5/6', '7/12, 3/4, 5/6'], explanation: 'LGN van 4, 6 en 12 is 12. 3/4 = 9/12, 5/6 = 10/12, 7/12 bly 7/12. Orden volgens teller: 7 < 9 < 10, dus 7/12, 3/4, 5/6.' },
+        { difficulty: 'Medium', question: 'Bereken 3/7 + 2/7.', answer: '5/7', checkMode: 'auto', correctAnswer: '5/7', correctAnswers: ['5/7'], explanation: 'Dieselfde noemer, dus tel die tellers bymekaar: 3 + 2 = 5. Hou die noemer: 5/7.' },
+        { difficulty: 'Medium', question: 'Bereken 9/10 − 4/10.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '5/10'], explanation: 'Dieselfde noemer, dus trek die tellers af: 9 − 4 = 5, dit gee 5/10. Vereenvoudig deur deur 5 te deel: 5/10 = 1/2.' },
+        { difficulty: 'Medium', question: 'Bereken 7/9 − 2/9 + 3/9.', answer: '8/9', checkMode: 'auto', correctAnswer: '8/9', correctAnswers: ['8/9'], explanation: 'Werk van links na regs met die tellers: 7 − 2 = 5, dan 5 + 3 = 8. Hou die noemer: 8/9.' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 4 3/7 om na ʼn onegte breuk.', answer: '31/7', checkMode: 'auto', correctAnswer: '31/7', correctAnswers: ['31/7'], explanation: 'Vermenigvuldig die heelgetal met die noemer: 4 × 7 = 28. Tel die teller by: 28 + 3 = 31. Hou die noemer: 31/7.' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 35/6 om na ʼn gemengde getal.', answer: '5 5/6', checkMode: 'auto', correctAnswer: '5 5/6', correctAnswers: ['5 5/6', '55/6', '5-5/6'], explanation: 'Deel die teller deur die noemer: 35 ÷ 6 = 5 res 5. Die kwosiënt 5 is die heelgetal, en die res 5 word die nuwe teller: 5 5/6.' },
+        { difficulty: 'Hard', question: 'Palesa het R450 gespaar. Sy spandeer 1/3 daarvan aan skoene en 2/9 daarvan aan kos. Hoeveel geld het sy oor?', answer: 'R200', checkMode: 'auto', correctAnswer: '200', correctAnswers: ['200', 'R200'], explanation: 'Skoene: 450 ÷ 3 × 1 = R150. Kos: 450 ÷ 9 × 2 = R100. Totaal spandeer: 150 + 100 = R250. Oor: 450 − 250 = R200.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder trek 5/6 − 1/6 af en skryf die antwoord as 4/0, en sê "die noemers kanselleer uit wanneer hulle dieselfde is." Is dit korrek? Verduidelik die fout en gee die korrekte antwoord.', answer: 'Nee — die noemer verdwyn nie en word nie nul nie. Wanneer die noemers dieselfde is, word slegs die tellers afgetrek, en die noemer bly dieselfde. 5/6 − 1/6 = 4/6, wat vereenvoudig tot 2/3.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Sak het 48 albasters. 1/3 van hulle is rooi en 1/4 van hulle is blou. Die res is groen.\na) Hoeveel albasters is rooi?\nb) Hoeveel albasters is blou?\nc) Hoeveel albasters is groen?\nd) Watter breuk van die albasters is groen?', answer: 'a) 16  b) 12  c) 20  d) 5/12', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '16' }, { label: 'b)', correctAnswer: '12' }, { label: 'c)', correctAnswer: '20' }, { label: 'd)', correctAnswer: '5/12' } ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue met breuke van groepe, ekwivalente breuke, vergelyking, optel, aftrek en gemengde getalle werk.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklaaiuit, meer werklike kontekste + redenering
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Vind 5/7 van 84.', answer: '60', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60'], explanation: 'Deel deur die noemer: 84 ÷ 7 = 12. Vermenigvuldig met die teller: 12 × 5 = 60.' },
+        { difficulty: 'Easy', question: 'ʼn Netbaltoernooi het 110 spelers geregistreer. 4/11 van hulle speel as verdedigers. Hoeveel verdedigers is daar?', answer: '40', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40'], explanation: 'Deel deur die noemer: 110 ÷ 11 = 10. Vermenigvuldig met die teller: 10 × 4 = 40.' },
+        { difficulty: 'Easy', question: 'Beantwoord elke deel.\na) Vind 3/8 van 144\nb) Vind 7/9 van 108', answer: 'a) 54  b) 84', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '54' }, { label: 'b)', correctAnswer: '84' } ] },
+        { difficulty: 'Easy', question: 'ʼn Groentetuin het 132 plante. 5/12 van die plante is tamaties. Hoeveel tamatieplante is daar?', answer: '55', checkMode: 'auto', correctAnswer: '55', correctAnswers: ['55'], explanation: 'Deel deur die noemer: 132 ÷ 12 = 11. Vermenigvuldig met die teller: 11 × 5 = 55.' },
+        { difficulty: 'Easy-Medium', question: 'Vind ʼn ekwivalente breuk vir 4/5 deur die teller en noemer met 3 te vermenigvuldig.', answer: '12/15', checkMode: 'auto', correctAnswer: '12/15', correctAnswers: ['12/15'], explanation: 'Vermenigvuldig albei getalle met 3: 4 × 3 = 12, en 5 × 3 = 15, dus 4/5 = 12/15.' },
+        { difficulty: 'Easy-Medium', question: 'Vul die ontbrekende teller in: 2/9 = ?/54', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: '9 × 6 = 54, dus vermenigvuldig die teller ook met 6: 2 × 6 = 12.' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 18/45 tot sy eenvoudigste vorm.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5'], explanation: 'Die grootste gemene faktor van 18 en 45 is 9. Deel albei deur 9: 18 ÷ 9 = 2, 45 ÷ 9 = 5, dit gee 2/5.' },
+        { difficulty: 'Medium', question: 'Boitumelo sê 12/16 en 15/20 is ekwivalente breuke. Is sy korrek? Wys jou werk deur albei breuke te vereenvoudig.', answer: 'Ja, albei vereenvoudig tot 3/4', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: 4/9 of 5/12?', answer: '4/9', checkMode: 'auto', correctAnswer: '4/9', correctAnswers: ['4/9'], explanation: 'LGN van 9 en 12 is 36. 4/9 = 16/36 en 5/12 = 15/36. Aangesien 16 > 15, is 4/9 groter.' },
+        { difficulty: 'Medium', question: 'Orden hierdie breuke van kleinste na grootste: 2/5, 3/8, 7/10', answer: '3/8, 2/5, 7/10', checkMode: 'auto', correctAnswer: '3/8,2/5,7/10', correctAnswers: ['3/8,2/5,7/10', '3/8, 2/5, 7/10'], explanation: 'LGN van 5, 8 en 10 is 40. 2/5 = 16/40, 3/8 = 15/40, 7/10 = 28/40. Orden volgens teller: 15 < 16 < 28, dus 3/8, 2/5, 7/10.' },
+        { difficulty: 'Medium', question: 'Vergelyk 7/9 en 5/6. Watter breuk is groter?', answer: '5/6', checkMode: 'auto', correctAnswer: '5/6', correctAnswers: ['5/6'], explanation: 'LGN van 9 en 6 is 18. 7/9 = 14/18 en 5/6 = 15/18. Aangesien 15 > 14, is 5/6 groter.' },
+        { difficulty: 'Medium', question: 'Orden hierdie breuke van kleinste na grootste: 3/4, 5/6, 2/3', answer: '2/3, 3/4, 5/6', checkMode: 'auto', correctAnswer: '2/3,3/4,5/6', correctAnswers: ['2/3,3/4,5/6', '2/3, 3/4, 5/6'], explanation: 'LGN van 4, 6 en 3 is 12. 3/4 = 9/12, 5/6 = 10/12, 2/3 = 8/12. Orden volgens teller: 8 < 9 < 10, dus 2/3, 3/4, 5/6.' },
+        { difficulty: 'Medium', question: 'Bereken 4/11 + 5/11.', answer: '9/11', checkMode: 'auto', correctAnswer: '9/11', correctAnswers: ['9/11'], explanation: 'Dieselfde noemer, dus tel die tellers bymekaar: 4 + 5 = 9. Hou die noemer: 9/11.' },
+        { difficulty: 'Medium', question: 'Bereken 11/12 − 5/12.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '6/12'], explanation: 'Dieselfde noemer, dus trek die tellers af: 11 − 5 = 6, dit gee 6/12. Vereenvoudig deur deur 6 te deel: 6/12 = 1/2.' },
+        { difficulty: 'Medium', question: 'Bereken 6/10 − 2/10 + 5/10, en gee jou antwoord in eenvoudigste vorm.', answer: '9/10', checkMode: 'auto', correctAnswer: '9/10', correctAnswers: ['9/10'], explanation: 'Werk van links na regs met die tellers: 6 − 2 = 4, dan 4 + 5 = 9. Hou die noemer: 9/10, wat reeds in eenvoudigste vorm is.' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 5 2/3 om na ʼn onegte breuk.', answer: '17/3', checkMode: 'auto', correctAnswer: '17/3', correctAnswers: ['17/3'], explanation: 'Vermenigvuldig die heelgetal met die noemer: 5 × 3 = 15. Tel die teller by: 15 + 2 = 17. Hou die noemer: 17/3.' },
+        { difficulty: 'Medium-Hard', question: 'Skakel 42/8 om na ʼn gemengde getal, en vereenvoudig die breukdeel.', answer: '5 1/4', checkMode: 'auto', correctAnswer: '5 1/4', correctAnswers: ['5 1/4', '51/4', '5-1/4'], explanation: 'Deel die teller deur die noemer: 42 ÷ 8 = 5 res 2, dit gee 5 2/8. Vereenvoudig 2/8 deur deur 2 te deel: 2 ÷ 2 = 1, 8 ÷ 2 = 4, dus die finale antwoord is 5 1/4.' },
+        { difficulty: 'Hard', question: 'Ayanda het 96 lekkers. Sy gee 3/8 daarvan vir Amara en 1/6 daarvan vir Zola. Hoeveel lekkers hou Ayanda vir haarself?', answer: '44', checkMode: 'auto', correctAnswer: '44', correctAnswers: ['44'], explanation: 'Vir Amara: 96 ÷ 8 × 3 = 36. Vir Zola: 96 ÷ 6 × 1 = 16. Totaal weggegee: 36 + 16 = 52. Oor: 96 − 52 = 44 lekkers.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder vergelyk 2/3 en 3/5 en sê "3/5 moet groter wees, want 3 is groter as 2." Is dit korrek? Verduidelik die fout en gee die korrekte vergelyking met ʼn gemene noemer.', answer: 'Nee — jy kan nie breuke net deur na die tellers te kyk vergelyk wanneer die noemers verskillend is nie. LGN van 3 en 5 is 15: 2/3 = 10/15 en 3/5 = 9/15. Aangesien 10 > 9, is 2/3 eintlik groter as 3/5.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thandiwe kry ʼn R600 maandelikse sakgeld. Sy spandeer 1/4 daarvan aan lugtyd en 1/3 daarvan aan data. Sy spaar die res.\na) Hoeveel spandeer sy aan lugtyd?\nb) Hoeveel spandeer sy aan data?\nc) Hoeveel spaar sy?\nd) Watter breuk van haar sakgeld spaar sy, in eenvoudigste vorm?', answer: 'a) R150  b) R200  c) R250  d) 5/12', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '150' }, { label: 'b)', correctAnswer: '200' }, { label: 'c)', correctAnswer: '250' }, { label: 'd)', correctAnswer: '5/12' } ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantasties! Jy kan breuke van groepe, ekwivalente breuke, vergelyking, optel, aftrek en gemengde getalle op werklike probleme toepas.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer die woordprobleme weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

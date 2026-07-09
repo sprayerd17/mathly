@@ -553,6 +553,157 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to sort 3D objects by their properties including rolling stacking and sliding and explaining why curved surfaces allow rolling while flat faces allow stacking" />',
     },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-3 Naming/identifying | 4-8 Counting F/E/V | 9-11 Curved surfaces |
+    // 12-15 Sorting/comparing | 16-17 Error-spotting | 18-19 Multi-step application
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'A dice has 6 identical square faces. What 3D object is it?', answer: 'cube', checkMode: 'auto', correctAnswer: 'cube', correctAnswers: ['cube', 'a cube'], explanation: 'A cube has 6 identical square faces, 12 edges and 8 vertices — exactly like a dice.' },
+        { difficulty: 'Easy', question: 'A cereal box is longer than it is wide, with rectangular faces. What 3D object is it?', answer: 'rectangular prism', checkMode: 'auto', correctAnswer: 'rectangularprism', correctAnswers: ['rectangularprism', 'a rectangular prism'], explanation: 'A cereal box has 6 rectangular faces where opposite faces are equal — this is a rectangular prism.' },
+        { difficulty: 'Easy', question: 'A tin of baked beans is round with straight sides and flat circular ends. Name this 3D object.', answer: 'cylinder', checkMode: 'auto', correctAnswer: 'cylinder', correctAnswers: ['cylinder', 'a cylinder'], explanation: 'A tin has 2 flat circular faces joined by 1 curved surface — this is a cylinder.' },
+        { difficulty: 'Easy', question: 'An ice-cream cone has one flat circular top and comes to a point at the bottom. Name this 3D object.', answer: 'cone', checkMode: 'auto', correctAnswer: 'cone', correctAnswers: ['cone', 'a cone'], explanation: 'A cone has 1 flat circular face, 1 curved surface and comes to a point called the apex.' },
+        { difficulty: 'Easy', question: 'How many faces does a cube have?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'A cube has 6 flat square faces — top, bottom, front, back, left and right.' },
+        { difficulty: 'Easy-Medium', question: 'How many edges does a rectangular prism have?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'A rectangular prism has 12 edges — 4 on the top face, 4 on the bottom face and 4 vertical edges joining them.' },
+        { difficulty: 'Medium', question: 'A triangular prism has how many faces, edges and vertices?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Faces', correctAnswer: '5', correctAnswers: ['5'], explanation: 'A triangular prism has 2 triangular end faces and 3 rectangular side faces: 2 + 3 = 5 faces.' },
+          { label: 'b) Edges', correctAnswer: '9', correctAnswers: ['9'], explanation: '3 edges on each triangular end (3 + 3 = 6) plus 3 edges connecting the two ends = 9 edges.' },
+          { label: 'c) Vertices', correctAnswer: '6', correctAnswers: ['6'], explanation: '3 vertices on each triangular end: 3 + 3 = 6 vertices.' },
+        ] },
+        { difficulty: 'Medium', question: 'A square pyramid has how many faces, edges and vertices?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Faces', correctAnswer: '5', correctAnswers: ['5'], explanation: 'A square pyramid has 1 square base and 4 triangular faces: 1 + 4 = 5 faces.' },
+          { label: 'b) Edges', correctAnswer: '8', correctAnswers: ['8'], explanation: '4 edges around the square base plus 4 edges running up to the apex = 8 edges.' },
+          { label: 'c) Vertices', correctAnswer: '5', correctAnswers: ['5'], explanation: '4 vertices around the base plus 1 vertex at the apex = 5 vertices.' },
+        ] },
+        { difficulty: 'Medium', question: 'How many vertices does a triangular pyramid have?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4'], explanation: 'A triangular pyramid has 3 vertices around its triangular base plus 1 at the apex: 3 + 1 = 4 vertices.' },
+        { difficulty: 'Medium', question: 'A packing crate is shaped like a rectangular prism. How many vertices does the crate have?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'A rectangular prism has 8 vertices — 4 corners on the top face and 4 corners on the bottom face.' },
+        { difficulty: 'Medium', question: 'A cylinder (like a tin can) has how many flat faces and how many edges?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Flat faces', correctAnswer: '2', correctAnswers: ['2'], explanation: 'A cylinder has 2 flat circular faces, one on top and one on the bottom.' },
+          { label: 'b) Edges', correctAnswer: '2', correctAnswers: ['2'], explanation: 'A cylinder has 2 edges — the circles where each flat face meets the curved surface.' },
+        ] },
+        { difficulty: 'Medium', question: 'How many curved surfaces does a cone have, and how many flat faces?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Curved surfaces', correctAnswer: '1', correctAnswers: ['1'], explanation: 'A cone has exactly 1 curved surface sloping from the base up to the apex.' },
+          { label: 'b) Flat faces', correctAnswer: '1', correctAnswers: ['1'], explanation: 'A cone has 1 flat circular face at its base.' },
+        ] },
+        { difficulty: 'Medium', question: 'A sphere, like a soccer ball, has how many flat faces?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'none', 'no flat faces'], explanation: 'A sphere is perfectly round with only a curved surface — it has 0 flat faces, 0 edges and 0 vertices.' },
+        { difficulty: 'Medium', question: 'Look at a cube and a rectangular prism side by side. Explain one property they share and one way they are different.', answer: 'Shared: both have 6 faces, 12 edges and 8 vertices, and both faces meet at right angles. Different: a cube has 6 identical square faces, while a rectangular prism has rectangular faces that are not all the same size — opposite faces are equal in pairs, not all six.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sort these objects into two groups — can roll and cannot roll: sphere, cube, cone, rectangular prism, cylinder.', answer: 'Can roll: sphere, cone, cylinder (they have a curved surface). Cannot roll: cube, rectangular prism (they have only flat faces).', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A shop assistant is stacking boxes. Which of these can be stacked easily and which cannot — rectangular prism, sphere, square pyramid, cylinder? Explain why.', answer: 'The rectangular prism and cylinder can stack easily because they have flat faces on top and bottom. The square pyramid is hard to stack because it comes to a point at the apex. The sphere cannot stack at all because its whole surface is curved.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Karabo says: 'A cone and a cylinder are the same shape because both have a circular face and a curved surface.' Is Karabo correct? Explain using the number of flat faces and whether each object has an apex.", answer: 'Karabo is only partly correct. It is true that both a cone and a cylinder have a curved surface and at least one circular flat face. But a cylinder has 2 circular flat faces while a cone has only 1. A cone also comes to a point called the apex, but a cylinder has no apex — its two circular faces are the same size all the way up. So the two shapes are related but not the same.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "A student claims: 'A square pyramid and a cube both have 8 vertices, so they must have the same number of edges too.' Is this claim correct? Explain using the actual edge counts.", answer: 'This claim is incorrect. A square pyramid does not have 8 vertices — it has only 5 (4 around the base plus the apex). A cube has 8 vertices and 12 edges, while a square pyramid has 5 vertices and only 8 edges. Having a different number of vertices already shows the two shapes are not built the same way, and their edge counts (12 versus 8) are different too.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Zinhle is building a model house from a rectangular prism for the walls and a square pyramid for the roof. How many vertices are there in total across both parts, and how many of those vertices touch where the roof meets the walls?', answer: 'The rectangular prism has 8 vertices and the square pyramid has 5 vertices, so there are 8 + 5 = 13 vertices in total across the two solids. Where the roof sits on the walls, the 4 base vertices of the pyramid line up with the 4 top vertices of the prism, so 4 vertices touch at the join (the pyramid\'s apex does not touch the walls).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A gift shop sells items shaped like a cylinder (tin of sweets) and a cone (party hat). The shopkeeper wants to stack them in a display, but only the tin can be stacked safely. Explain why the cylinder can stack but the cone cannot, using their faces and apex.', answer: 'The cylinder has 2 flat circular faces of equal size — one on top and one on the bottom — so another cylinder or flat object can sit steadily on top of it. The cone only has 1 flat circular face at its base, and the opposite end is the apex, a single point. Because a point cannot support weight or provide a flat resting surface, nothing can be stacked stably on top of a cone standing on its base.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered naming, counting and comparing 3D objects like a pro.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh phrasing/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'A chocolate box has two triangular ends and three rectangular sides. What 3D object is it?', answer: 'triangular prism', checkMode: 'auto', correctAnswer: 'triangularprism', correctAnswers: ['triangularprism', 'a triangular prism'], explanation: 'A triangular prism has 2 identical triangular faces at each end and 3 rectangular faces joining them.' },
+        { difficulty: 'Easy', question: 'The Egyptian pyramids have a square base and four triangular sides that meet at a point. Name this 3D object.', answer: 'square pyramid', checkMode: 'auto', correctAnswer: 'squarepyramid', correctAnswers: ['squarepyramid', 'a square pyramid'], explanation: 'A square pyramid has a square base and 4 triangular faces that meet at the apex, just like the Egyptian pyramids.' },
+        { difficulty: 'Easy', question: 'A soccer ball is perfectly round with no flat faces at all. Name this 3D object.', answer: 'sphere', checkMode: 'auto', correctAnswer: 'sphere', correctAnswers: ['sphere', 'a sphere'], explanation: 'A sphere is perfectly round with only 1 curved surface and no flat faces, edges or vertices.' },
+        { difficulty: 'Easy', question: 'A tetrahedron toy has 4 triangular faces, including its base. Name this 3D object.', answer: 'triangular pyramid', checkMode: 'auto', correctAnswer: 'triangularpyramid', correctAnswers: ['triangularpyramid', 'a triangular pyramid', 'tetrahedron', 'a tetrahedron'], explanation: 'A triangular pyramid (also called a tetrahedron) has a triangular base and 3 triangular side faces that meet at the apex.' },
+        { difficulty: 'Easy', question: 'How many vertices does a cube have?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'A cube has 8 vertices — 4 on the top face and 4 on the bottom face.' },
+        { difficulty: 'Easy-Medium', question: 'How many faces does a rectangular prism have?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'A rectangular prism has 6 rectangular faces — top, bottom, front, back, left and right.' },
+        { difficulty: 'Medium', question: 'A cube has how many faces, edges and vertices?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Faces', correctAnswer: '6', correctAnswers: ['6'], explanation: 'A cube has 6 identical square faces.' },
+          { label: 'b) Edges', correctAnswer: '12', correctAnswers: ['12'], explanation: 'A cube has 12 edges — 4 on top, 4 on the bottom and 4 vertical edges.' },
+          { label: 'c) Vertices', correctAnswer: '8', correctAnswers: ['8'], explanation: 'A cube has 8 vertices — 4 on top and 4 on the bottom.' },
+        ] },
+        { difficulty: 'Medium', question: 'A triangular pyramid has how many faces, edges and vertices?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Faces', correctAnswer: '4', correctAnswers: ['4'], explanation: 'A triangular pyramid has 1 triangular base and 3 triangular side faces: 1 + 3 = 4 faces.' },
+          { label: 'b) Edges', correctAnswer: '6', correctAnswers: ['6'], explanation: '3 edges around the base plus 3 edges running up to the apex = 6 edges.' },
+          { label: 'c) Vertices', correctAnswer: '4', correctAnswers: ['4'], explanation: '3 vertices around the base plus 1 vertex at the apex = 4 vertices.' },
+        ] },
+        { difficulty: 'Medium', question: 'How many edges does a triangular prism have?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9'], explanation: 'A triangular prism has 3 edges on each triangular end (3 + 3 = 6) plus 3 edges connecting the two ends: 6 + 3 = 9 edges.' },
+        { difficulty: 'Medium', question: 'A shoebox is shaped like a rectangular prism. How many edges does the shoebox have?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'A rectangular prism has 12 edges — 4 on the top, 4 on the bottom and 4 vertical edges joining them.' },
+        { difficulty: 'Medium', question: 'A party hat is shaped like a cone. How many vertices does it have, and how many edges?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Vertices', correctAnswer: '0', correctAnswers: ['0', 'none', 'no vertices'], explanation: 'A cone has no true vertices — its apex is a point but it is not formed by straight edges meeting, so it is not counted as a vertex.' },
+          { label: 'b) Edges', correctAnswer: '1', correctAnswers: ['1'], explanation: 'A cone has 1 curved edge — the circle where the flat base meets the curved surface.' },
+        ] },
+        { difficulty: 'Medium', question: 'How many circular flat faces does a cylinder have, compared to a cone?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Cylinder', correctAnswer: '2', correctAnswers: ['2'], explanation: 'A cylinder has 2 circular flat faces, one at each end.' },
+          { label: 'b) Cone', correctAnswer: '1', correctAnswers: ['1'], explanation: 'A cone has only 1 circular flat face, at its base.' },
+        ] },
+        { difficulty: 'Medium', question: 'A globe is a model of a sphere. How many edges does a sphere have?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'none', 'no edges'], explanation: 'A sphere has no flat faces at all, so there are no edges where faces could meet — it has 0 edges.' },
+        { difficulty: 'Medium', question: 'Compare a triangular prism and a triangular pyramid. Explain how their number of faces is different and why.', answer: 'A triangular prism has 5 faces (2 triangular ends and 3 rectangular sides), while a triangular pyramid has only 4 faces (1 triangular base and 3 triangular sides). The prism has an extra face because it has two identical triangular ends joined by rectangles, whereas the pyramid only has one triangular base and its sides taper to a single point at the apex instead of a second base.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sort these objects into two groups — can stack and cannot stack easily: cylinder, sphere, cone, rectangular prism.', answer: 'Can stack: cylinder and rectangular prism, because they have flat faces on top and bottom that can support another object. Cannot stack easily: sphere (curved all over, nothing to balance on) and cone (comes to a point at the apex, so it is very unstable to stack on).', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A toy company is designing building blocks. Which shapes would work best for stacking — cube, sphere, cone, cylinder? Explain your choice.', answer: 'The cube and cylinder work best for stacking because they both have flat faces on top and bottom that sit evenly on top of each other. The sphere would roll away and cannot stack because its whole surface is curved. The cone is unstable because it only has one flat face — its apex cannot support anything placed on top.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Thandi says: 'A rectangular prism and a cube are completely different shapes because a cube is a square and a rectangular prism is a rectangle.' Is Thandi correct? Explain using the properties of each 3D object.", answer: "Thandi is not quite correct. First, a cube and a rectangular prism are both 3D objects, not 2D shapes like a square or rectangle. More importantly, a cube is actually a special type of rectangular prism — it has 6 faces, 12 edges and 8 vertices just like a rectangular prism, but all of its faces happen to be equal squares instead of general rectangles. So they share the same face, edge and vertex counts; the only difference is that a cube's faces are all identical squares.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "A student claims: 'Every 3D object with an apex is a pyramid.' Is this claim true? Use a cone as a counter-example in your explanation.", answer: 'This claim is false. A cone also has an apex — the point where its curved surface comes to a point — but a cone is not a pyramid. A pyramid is made of flat triangular faces and straight edges meeting at the apex, while a cone has a curved surface and no straight edges at all. So having an apex is not enough to make something a pyramid; the faces must also be flat and triangular.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A market stall sorts fruit into a cone-shaped paper bag and stacks tins shaped like cylinders behind it. If one cylinder tin has 2 edges and the cone bag has 1 edge, how many edges are there in total for 3 identical cylinder tins and 1 cone bag, and which shape contributes more edges overall?', answer: 'Each cylinder has 2 edges, so 3 cylinders contribute 3 × 2 = 6 edges. The cone bag contributes 1 edge. In total there are 6 + 1 = 7 edges. The cylinders contribute more edges overall (6 edges) compared to the single cone (1 edge).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A bakery packs a triangular-prism-shaped box of pastries and places a sphere-shaped orange on top for the display. Explain, using properties of faces, why the orange will not stay balanced on top of the box.', answer: 'The triangular prism box has flat rectangular and triangular faces, so its top surface is flat and could support a flat-faced object. However, a sphere has no flat faces at all — its entire surface is curved. With no flat area to make contact with the box, the round orange has nothing to rest evenly on, so it will roll off instead of staying balanced.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Excellent! You can confidently name and describe every kind of 3D object.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, more real-world contexts + reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'A brick used for building a wall has 6 flat rectangular faces, and opposite faces are equal in pairs. What 3D object is it?', answer: 'rectangular prism', checkMode: 'auto', correctAnswer: 'rectangularprism', correctAnswers: ['rectangularprism', 'a rectangular prism'], explanation: 'A brick has 6 rectangular faces with opposite faces equal in pairs — this is a rectangular prism.' },
+        { difficulty: 'Easy', question: 'A drum used in a school band is round, with straight sides and two flat circular ends. Name this 3D object.', answer: 'cylinder', checkMode: 'auto', correctAnswer: 'cylinder', correctAnswers: ['cylinder', 'a cylinder'], explanation: 'A drum has 2 flat circular faces joined by 1 curved surface — this is a cylinder.' },
+        { difficulty: 'Easy', question: "A wizard's hat has a circular brim area and narrows to a sharp point. Name this 3D object.", answer: 'cone', checkMode: 'auto', correctAnswer: 'cone', correctAnswers: ['cone', 'a cone'], explanation: 'A cone has 1 flat circular face, 1 curved surface and comes to a point at the apex.' },
+        { difficulty: 'Easy', question: 'A Rubik\'s cube has 6 identical square faces that can twist. What 3D object is it?', answer: 'cube', checkMode: 'auto', correctAnswer: 'cube', correctAnswers: ['cube', 'a cube'], explanation: 'A Rubik\'s cube has 6 identical square faces, 12 edges and 8 vertices — it is a cube.' },
+        { difficulty: 'Easy', question: 'How many flat faces does a sphere have?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'none', 'no flat faces'], explanation: 'A sphere is perfectly round with only a curved surface, so it has 0 flat faces.' },
+        { difficulty: 'Easy-Medium', question: 'How many edges does a square pyramid have?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'A square pyramid has 4 edges around its square base plus 4 edges running up to the apex: 4 + 4 = 8 edges.' },
+        { difficulty: 'Medium', question: 'A rectangular prism has how many faces, edges and vertices?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Faces', correctAnswer: '6', correctAnswers: ['6'], explanation: 'A rectangular prism has 6 rectangular faces.' },
+          { label: 'b) Edges', correctAnswer: '12', correctAnswers: ['12'], explanation: 'A rectangular prism has 12 edges — 4 on the top, 4 on the bottom and 4 vertical edges.' },
+          { label: 'c) Vertices', correctAnswer: '8', correctAnswers: ['8'], explanation: 'A rectangular prism has 8 vertices — 4 on the top face and 4 on the bottom face.' },
+        ] },
+        { difficulty: 'Medium', question: 'A square pyramid model has how many vertices, and how many of them are the apex?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Total vertices', correctAnswer: '5', correctAnswers: ['5'], explanation: 'A square pyramid has 4 vertices around the square base plus 1 apex: 4 + 1 = 5 vertices.' },
+          { label: 'b) Apex vertices', correctAnswer: '1', correctAnswers: ['1'], explanation: 'There is exactly 1 apex — the single point where all 4 triangular faces meet.' },
+        ] },
+        { difficulty: 'Medium', question: 'How many faces does a triangular pyramid have in total, counting its base?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4'], explanation: 'A triangular pyramid has 1 triangular base plus 3 triangular side faces: 1 + 3 = 4 faces.' },
+        { difficulty: 'Medium', question: 'A chocolate box shaped like a triangular prism has how many vertices?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'A triangular prism has 3 vertices on each triangular end: 3 + 3 = 6 vertices.' },
+        { difficulty: 'Medium', question: 'A birthday party hat (a cone) has how many edges in total?', answer: '1', checkMode: 'auto', correctAnswer: '1', correctAnswers: ['1'], explanation: 'A cone has just 1 curved edge — the circle where its flat circular base meets the curved surface running up to the apex.' },
+        { difficulty: 'Medium', question: 'A tin of paint (a cylinder) and an ice-cream cone are compared. How many curved surfaces does each object have?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Cylinder', correctAnswer: '1', correctAnswers: ['1'], explanation: 'A cylinder has exactly 1 curved surface joining its two circular faces.' },
+          { label: 'b) Cone', correctAnswer: '1', correctAnswers: ['1'], explanation: 'A cone also has exactly 1 curved surface sloping from its base to the apex.' },
+        ] },
+        { difficulty: 'Medium', question: 'A basketball is shaped like a sphere. How many vertices and how many edges does it have?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Vertices', correctAnswer: '0', correctAnswers: ['0', 'none'], explanation: 'A sphere has no flat faces or straight edges, so it has 0 vertices.' },
+          { label: 'b) Edges', correctAnswer: '0', correctAnswers: ['0', 'none'], explanation: 'A sphere has no flat faces meeting anywhere, so it has 0 edges.' },
+        ] },
+        { difficulty: 'Medium', question: 'Compare a cone and a square pyramid. Explain what they have in common and what makes them different.', answer: 'Both a cone and a square pyramid come to a single point at the top called the apex, and both have exactly one base. However, a square pyramid is made entirely of flat faces (1 square base and 4 flat triangular sides) joined by straight edges, while a cone has a curved surface joining its 1 circular base to the apex, with no straight edges at all.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sort these shop items into can roll and cannot roll: a tin (cylinder), a cereal box (rectangular prism), a ball (sphere), a tent shape (triangular prism).', answer: 'Can roll: the tin (cylinder) and the ball (sphere), because both have a curved surface. Cannot roll: the cereal box (rectangular prism) and the tent shape (triangular prism), because both are made only of flat faces.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A market vendor wants to display fruit. Would a sphere-shaped melon or a cone-shaped paper packet be easier to stack in a pile? Explain your reasoning using their faces.', answer: 'The cone-shaped paper packet would be slightly easier to place down (it has 1 flat circular face it can rest on), but it still cannot be stacked on top of another cone because its apex is a single point. The sphere-shaped melon has no flat faces at all, so it cannot be stacked or rested against anything without rolling away. Overall, neither stacks well, but the cone can at least stand upright on its flat base, while the sphere cannot rest still on its own.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Bongani claims: 'A triangular prism has more vertices than a square pyramid, so it must also have more faces.' Is Bongani correct? Use the actual face and vertex counts to explain.", answer: 'Bongani is only half right. A triangular prism does have more vertices (6) than a square pyramid (5), so the first part is true. However, the second part is false: a triangular prism has 5 faces, and a square pyramid also has 5 faces — they are equal, not different. Having more vertices does not automatically mean a shape has more faces.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "A student says: 'A cylinder cannot be a prism because prisms only have flat faces and a cylinder has a curved surface.' Is this statement correct? Explain using the definition of a prism.", answer: 'This statement is correct. A prism, by definition, is a 3D object with two identical flat bases and flat rectangular side faces joined by straight edges. A cylinder has 2 flat circular bases, but instead of flat rectangular sides it has 1 continuous curved surface with no straight edges connecting the bases. Because a true prism must have all flat faces, a cylinder does not meet the definition of a prism, even though it does have two identical flat ends like a prism does.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A factory packs 2 square pyramids and 1 triangular pyramid into a box for a geometry kit. What is the total number of vertices in the box, and how many of those vertices are apex points?', answer: 'Each square pyramid has 5 vertices, so 2 square pyramids contribute 2 × 5 = 10 vertices. The triangular pyramid has 4 vertices, contributing 4 more. In total there are 10 + 4 = 14 vertices in the box. Of these, each pyramid contributes exactly 1 apex vertex, so there are 2 + 1 = 3 apex points in total.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A construction worker is choosing a shape for a water tank: a cylinder or a cone, both open at one flat circular face for filling. Explain, using the number of flat faces and curved surfaces of each shape, why the cylinder is the more practical choice for storing a large amount of water.', answer: 'A cylinder has 2 flat circular faces of equal size joined by 1 curved surface, giving it the same width from top to bottom — this means it holds a large, evenly distributed volume of water and stays stable on its flat base. A cone has only 1 flat circular face and narrows to a single point at the apex, so most of its volume is concentrated near the wide opening and it becomes unstable and impractical to store large amounts of water as it tapers to nothing at the bottom (or top, if inverted). The cylinder\'s two equal flat faces make it far more practical for consistent water storage.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantastic! You can apply your knowledge of 3D objects to real-world situations with confidence.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try the word problems again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
+
   scoreMessages: [
     { minScore: 5, message: 'Outstanding! A perfect score — you have completely mastered 3D objects for Grade 5. Keep it up!' },
     { minScore: 4, message: 'Excellent work! You have a very strong grasp of 3D objects. Review any missed parts and you will have it perfect.' },

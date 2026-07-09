@@ -996,4 +996,115 @@ export const topicData: TopicData = {
       },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-3 Fraction of a group/whole number | 4-7 Equivalent fractions
+    // & simplifying | 8-11 Comparing/ordering | 12-14 Add/subtract same
+    // denominator | 15-16 Mixed numbers & improper fractions |
+    // 17-19 Multi-step word problems, error-spotting, capstone
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Find 3/5 of 45.', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27'], explanation: 'Divide by the denominator: 45 ÷ 5 = 9. Multiply by the numerator: 9 × 3 = 27.' },
+        { difficulty: 'Easy', question: 'A shop has 72 loaves of bread. 5/9 of the loaves are brown bread. How many loaves are brown bread?', answer: '40', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40'], explanation: 'Divide by the denominator: 72 ÷ 9 = 8. Multiply by the numerator: 8 × 5 = 40.' },
+        { difficulty: 'Easy', question: 'Answer each part.\na) Find 2/7 of 84\nb) Find 7/12 of 96', answer: 'a) 24  b) 56', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '24' }, { label: 'b)', correctAnswer: '56' } ] },
+        { difficulty: 'Easy', question: 'A class has 88 stickers to share. 4/11 of the stickers are gold stars. How many stickers are gold stars?', answer: '32', checkMode: 'auto', correctAnswer: '32', correctAnswers: ['32'], explanation: 'Divide by the denominator: 88 ÷ 11 = 8. Multiply by the numerator: 8 × 4 = 32.' },
+        { difficulty: 'Easy-Medium', question: 'Find an equivalent fraction to 2/3 by multiplying the numerator and denominator by 4.', answer: '8/12', checkMode: 'auto', correctAnswer: '8/12', correctAnswers: ['8/12'], explanation: 'Multiply both numbers by 4: 2 × 4 = 8, and 3 × 4 = 12, so 2/3 = 8/12.' },
+        { difficulty: 'Easy-Medium', question: 'Fill in the missing numerator: 3/7 = ?/28', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: '7 × 4 = 28, so multiply the numerator by 4 too: 3 × 4 = 12.' },
+        { difficulty: 'Medium', question: 'Simplify 16/24 to its lowest terms.', answer: '2/3', checkMode: 'auto', correctAnswer: '2/3', correctAnswers: ['2/3'], explanation: 'The highest common factor of 16 and 24 is 8. Divide both by 8: 16 ÷ 8 = 2, 24 ÷ 8 = 3, giving 2/3.' },
+        { difficulty: 'Medium', question: 'Zinhle says 8/12 and 10/15 are equivalent fractions. Is she correct? Show your working by simplifying both fractions.', answer: 'Yes, both simplify to 2/3', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is bigger: 3/5 or 5/8?', answer: '5/8', checkMode: 'auto', correctAnswer: '5/8', correctAnswers: ['5/8'], explanation: 'LCD of 5 and 8 is 40. 3/5 = 24/40 and 5/8 = 25/40. Since 25 > 24, 5/8 is bigger.' },
+        { difficulty: 'Medium', question: 'Order these fractions from smallest to biggest: 3/5, 7/10, 2/3', answer: '3/5, 2/3, 7/10', checkMode: 'auto', correctAnswer: '3/5,2/3,7/10', correctAnswers: ['3/5,2/3,7/10', '3/5, 2/3, 7/10'], explanation: 'LCD of 5, 10 and 3 is 30. 3/5 = 18/30, 7/10 = 21/30, 2/3 = 20/30. Ordering by numerator: 18 < 20 < 21, so 3/5, 2/3, 7/10.' },
+        { difficulty: 'Medium', question: 'Compare 5/6 and 7/9. Which fraction is bigger?', answer: '5/6', checkMode: 'auto', correctAnswer: '5/6', correctAnswers: ['5/6'], explanation: 'LCD of 6 and 9 is 18. 5/6 = 15/18 and 7/9 = 14/18. Since 15 > 14, 5/6 is bigger.' },
+        { difficulty: 'Medium', question: 'Order these fractions from smallest to biggest: 5/9, 2/3, 7/12', answer: '5/9, 7/12, 2/3', checkMode: 'auto', correctAnswer: '5/9,7/12,2/3', correctAnswers: ['5/9,7/12,2/3', '5/9, 7/12, 2/3'], explanation: 'LCD of 9, 3 and 12 is 36. 5/9 = 20/36, 2/3 = 24/36, 7/12 = 21/36. Ordering by numerator: 20 < 21 < 24, so 5/9, 7/12, 2/3.' },
+        { difficulty: 'Medium', question: 'Calculate 5/9 + 2/9.', answer: '7/9', checkMode: 'auto', correctAnswer: '7/9', correctAnswers: ['7/9'], explanation: 'Same denominator, so add the numerators: 5 + 2 = 7. Keep the denominator: 7/9.' },
+        { difficulty: 'Medium', question: 'Calculate 7/8 − 3/8.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '4/8'], explanation: 'Same denominator, so subtract the numerators: 7 − 3 = 4, giving 4/8. Simplify by dividing by 4: 4/8 = 1/2.' },
+        { difficulty: 'Medium', question: 'Calculate 5/12 − 2/12 + 4/12.', answer: '7/12', checkMode: 'auto', correctAnswer: '7/12', correctAnswers: ['7/12'], explanation: 'Work left to right with the numerators: 5 − 2 = 3, then 3 + 4 = 7. Keep the denominator: 7/12.' },
+        { difficulty: 'Medium-Hard', question: 'Convert 3 2/5 to an improper fraction.', answer: '17/5', checkMode: 'auto', correctAnswer: '17/5', correctAnswers: ['17/5'], explanation: 'Multiply the whole number by the denominator: 3 × 5 = 15. Add the numerator: 15 + 2 = 17. Keep the denominator: 17/5.' },
+        { difficulty: 'Medium-Hard', question: 'Convert 29/8 to a mixed number.', answer: '3 5/8', checkMode: 'auto', correctAnswer: '3 5/8', correctAnswers: ['3 5/8', '35/8', '3-5/8'], explanation: 'Divide the numerator by the denominator: 29 ÷ 8 = 3 remainder 5. The quotient 3 is the whole number, and the remainder 5 becomes the new numerator: 3 5/8.' },
+        { difficulty: 'Hard', question: 'Sam has R360 in his wallet. He spends 2/5 of it on a book and 1/4 of it on a game. How much money does he have left?', answer: 'R126', checkMode: 'auto', correctAnswer: '126', correctAnswers: ['126', 'R126'], explanation: 'Book: 360 ÷ 5 × 2 = R144. Game: 360 ÷ 4 × 1 = R90. Total spent: 144 + 90 = R234. Left over: 360 − 234 = R126.' },
+        { difficulty: 'Hard', question: 'A learner says 1/4 + 1/4 = 2/8, because "you add the tops and the bottoms." Is the learner correct? Explain the mistake and give the correct answer.', answer: 'No — when denominators are already the same, you only add the numerators and keep the denominator the same. 1/4 + 1/4 = 2/4 = 1/2, not 2/8. Adding the denominators as well double-counts how many parts the whole is split into.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A school has 40 learners in a class. 3/8 of them walk to school and 1/5 of them cycle. The rest come by bus.\na) How many learners walk?\nb) How many learners cycle?\nc) How many learners come by bus?\nd) What fraction of the class comes by bus?', answer: 'a) 15  b) 8  c) 17  d) 17/40', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '15' }, { label: 'b)', correctAnswer: '8' }, { label: 'c)', correctAnswer: '17' }, { label: 'd)', correctAnswer: '17/40' } ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered fractions of groups, equivalent fractions, comparing, adding, subtracting and mixed numbers.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh phrasing/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Find 4/9 of 54.', answer: '24', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24'], explanation: 'Divide by the denominator: 54 ÷ 9 = 6. Multiply by the numerator: 6 × 4 = 24.' },
+        { difficulty: 'Easy', question: 'A farmer has 90 chickens. 3/10 of them are roosters. How many roosters are there?', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27'], explanation: 'Divide by the denominator: 90 ÷ 10 = 9. Multiply by the numerator: 9 × 3 = 27.' },
+        { difficulty: 'Easy', question: 'Answer each part.\na) Find 5/6 of 96\nb) Find 2/11 of 110', answer: 'a) 80  b) 20', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '80' }, { label: 'b)', correctAnswer: '20' } ] },
+        { difficulty: 'Easy', question: 'A choir has 120 members. 7/12 of them are sopranos. How many sopranos are in the choir?', answer: '70', checkMode: 'auto', correctAnswer: '70', correctAnswers: ['70'], explanation: 'Divide by the denominator: 120 ÷ 12 = 10. Multiply by the numerator: 10 × 7 = 70.' },
+        { difficulty: 'Easy-Medium', question: 'Find an equivalent fraction to 3/4 by multiplying the numerator and denominator by 5.', answer: '15/20', checkMode: 'auto', correctAnswer: '15/20', correctAnswers: ['15/20'], explanation: 'Multiply both numbers by 5: 3 × 5 = 15, and 4 × 5 = 20, so 3/4 = 15/20.' },
+        { difficulty: 'Easy-Medium', question: 'Fill in the missing numerator: 5/6 = ?/42', answer: '35', checkMode: 'auto', correctAnswer: '35', correctAnswers: ['35'], explanation: '6 × 7 = 42, so multiply the numerator by 7 too: 5 × 7 = 35.' },
+        { difficulty: 'Medium', question: 'Simplify 21/28 to its lowest terms.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', correctAnswers: ['3/4'], explanation: 'The highest common factor of 21 and 28 is 7. Divide both by 7: 21 ÷ 7 = 3, 28 ÷ 7 = 4, giving 3/4.' },
+        { difficulty: 'Medium', question: 'Karabo says 15/18 and 20/24 are equivalent fractions. Is he correct? Show your working by simplifying both fractions.', answer: 'Yes, both simplify to 5/6', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is bigger: 5/8 or 7/12?', answer: '5/8', checkMode: 'auto', correctAnswer: '5/8', correctAnswers: ['5/8'], explanation: 'LCD of 8 and 12 is 24. 5/8 = 15/24 and 7/12 = 14/24. Since 15 > 14, 5/8 is bigger.' },
+        { difficulty: 'Medium', question: 'Order these fractions from smallest to biggest: 1/3, 5/12, 3/8', answer: '1/3, 3/8, 5/12', checkMode: 'auto', correctAnswer: '1/3,3/8,5/12', correctAnswers: ['1/3,3/8,5/12', '1/3, 3/8, 5/12'], explanation: 'LCD of 3, 12 and 8 is 24. 1/3 = 8/24, 5/12 = 10/24, 3/8 = 9/24. Ordering by numerator: 8 < 9 < 10, so 1/3, 3/8, 5/12.' },
+        { difficulty: 'Medium', question: 'Compare 7/10 and 5/8. Which fraction is bigger?', answer: '7/10', checkMode: 'auto', correctAnswer: '7/10', correctAnswers: ['7/10'], explanation: 'LCD of 10 and 8 is 40. 7/10 = 28/40 and 5/8 = 25/40. Since 28 > 25, 7/10 is bigger.' },
+        { difficulty: 'Medium', question: 'Order these fractions from smallest to biggest: 3/4, 5/6, 7/12', answer: '7/12, 3/4, 5/6', checkMode: 'auto', correctAnswer: '7/12,3/4,5/6', correctAnswers: ['7/12,3/4,5/6', '7/12, 3/4, 5/6'], explanation: 'LCD of 4, 6 and 12 is 12. 3/4 = 9/12, 5/6 = 10/12, 7/12 stays 7/12. Ordering by numerator: 7 < 9 < 10, so 7/12, 3/4, 5/6.' },
+        { difficulty: 'Medium', question: 'Calculate 3/7 + 2/7.', answer: '5/7', checkMode: 'auto', correctAnswer: '5/7', correctAnswers: ['5/7'], explanation: 'Same denominator, so add the numerators: 3 + 2 = 5. Keep the denominator: 5/7.' },
+        { difficulty: 'Medium', question: 'Calculate 9/10 − 4/10.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '5/10'], explanation: 'Same denominator, so subtract the numerators: 9 − 4 = 5, giving 5/10. Simplify by dividing by 5: 5/10 = 1/2.' },
+        { difficulty: 'Medium', question: 'Calculate 7/9 − 2/9 + 3/9.', answer: '8/9', checkMode: 'auto', correctAnswer: '8/9', correctAnswers: ['8/9'], explanation: 'Work left to right with the numerators: 7 − 2 = 5, then 5 + 3 = 8. Keep the denominator: 8/9.' },
+        { difficulty: 'Medium-Hard', question: 'Convert 4 3/7 to an improper fraction.', answer: '31/7', checkMode: 'auto', correctAnswer: '31/7', correctAnswers: ['31/7'], explanation: 'Multiply the whole number by the denominator: 4 × 7 = 28. Add the numerator: 28 + 3 = 31. Keep the denominator: 31/7.' },
+        { difficulty: 'Medium-Hard', question: 'Convert 35/6 to a mixed number.', answer: '5 5/6', checkMode: 'auto', correctAnswer: '5 5/6', correctAnswers: ['5 5/6', '55/6', '5-5/6'], explanation: 'Divide the numerator by the denominator: 35 ÷ 6 = 5 remainder 5. The quotient 5 is the whole number, and the remainder 5 becomes the new numerator: 5 5/6.' },
+        { difficulty: 'Hard', question: 'Palesa has R450 saved. She spends 1/3 of it on shoes and 2/9 of it on food. How much money does she have left?', answer: 'R200', checkMode: 'auto', correctAnswer: '200', correctAnswers: ['200', 'R200'], explanation: 'Shoes: 450 ÷ 3 × 1 = R150. Food: 450 ÷ 9 × 2 = R100. Total spent: 150 + 100 = R250. Left over: 450 − 250 = R200.' },
+        { difficulty: 'Hard', question: 'A learner subtracts 5/6 − 1/6 and writes the answer as 4/0, saying "the denominators cancel out when they are the same." Is this correct? Explain the mistake and give the correct answer.', answer: 'No — the denominator does not disappear or become zero. When denominators are the same, only the numerators are subtracted, and the denominator stays the same. 5/6 − 1/6 = 4/6, which simplifies to 2/3.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A bag has 48 marbles. 1/3 of them are red and 1/4 of them are blue. The rest are green.\na) How many marbles are red?\nb) How many marbles are blue?\nc) How many marbles are green?\nd) What fraction of the marbles are green?', answer: 'a) 16  b) 12  c) 20  d) 5/12', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '16' }, { label: 'b)', correctAnswer: '12' }, { label: 'c)', correctAnswer: '20' }, { label: 'd)', correctAnswer: '5/12' } ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Excellent! You can confidently work with fractions of groups, equivalent fractions, comparing, adding, subtracting and mixed numbers.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, more real-world contexts + reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Find 5/7 of 84.', answer: '60', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60'], explanation: 'Divide by the denominator: 84 ÷ 7 = 12. Multiply by the numerator: 12 × 5 = 60.' },
+        { difficulty: 'Easy', question: 'A netball tournament has 110 players registered. 4/11 of them play as defenders. How many defenders are there?', answer: '40', checkMode: 'auto', correctAnswer: '40', correctAnswers: ['40'], explanation: 'Divide by the denominator: 110 ÷ 11 = 10. Multiply by the numerator: 10 × 4 = 40.' },
+        { difficulty: 'Easy', question: 'Answer each part.\na) Find 3/8 of 144\nb) Find 7/9 of 108', answer: 'a) 54  b) 84', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '54' }, { label: 'b)', correctAnswer: '84' } ] },
+        { difficulty: 'Easy', question: 'A vegetable garden has 132 plants. 5/12 of the plants are tomatoes. How many tomato plants are there?', answer: '55', checkMode: 'auto', correctAnswer: '55', correctAnswers: ['55'], explanation: 'Divide by the denominator: 132 ÷ 12 = 11. Multiply by the numerator: 11 × 5 = 55.' },
+        { difficulty: 'Easy-Medium', question: 'Find an equivalent fraction to 4/5 by multiplying the numerator and denominator by 3.', answer: '12/15', checkMode: 'auto', correctAnswer: '12/15', correctAnswers: ['12/15'], explanation: 'Multiply both numbers by 3: 4 × 3 = 12, and 5 × 3 = 15, so 4/5 = 12/15.' },
+        { difficulty: 'Easy-Medium', question: 'Fill in the missing numerator: 2/9 = ?/54', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: '9 × 6 = 54, so multiply the numerator by 6 too: 2 × 6 = 12.' },
+        { difficulty: 'Medium', question: 'Simplify 18/45 to its lowest terms.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5'], explanation: 'The highest common factor of 18 and 45 is 9. Divide both by 9: 18 ÷ 9 = 2, 45 ÷ 9 = 5, giving 2/5.' },
+        { difficulty: 'Medium', question: 'Boitumelo says 12/16 and 15/20 are equivalent fractions. Is she correct? Show your working by simplifying both fractions.', answer: 'Yes, both simplify to 3/4', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is bigger: 4/9 or 5/12?', answer: '4/9', checkMode: 'auto', correctAnswer: '4/9', correctAnswers: ['4/9'], explanation: 'LCD of 9 and 12 is 36. 4/9 = 16/36 and 5/12 = 15/36. Since 16 > 15, 4/9 is bigger.' },
+        { difficulty: 'Medium', question: 'Order these fractions from smallest to biggest: 2/5, 3/8, 7/10', answer: '3/8, 2/5, 7/10', checkMode: 'auto', correctAnswer: '3/8,2/5,7/10', correctAnswers: ['3/8,2/5,7/10', '3/8, 2/5, 7/10'], explanation: 'LCD of 5, 8 and 10 is 40. 2/5 = 16/40, 3/8 = 15/40, 7/10 = 28/40. Ordering by numerator: 15 < 16 < 28, so 3/8, 2/5, 7/10.' },
+        { difficulty: 'Medium', question: 'Compare 7/9 and 5/6. Which fraction is bigger?', answer: '5/6', checkMode: 'auto', correctAnswer: '5/6', correctAnswers: ['5/6'], explanation: 'LCD of 9 and 6 is 18. 7/9 = 14/18 and 5/6 = 15/18. Since 15 > 14, 5/6 is bigger.' },
+        { difficulty: 'Medium', question: 'Order these fractions from smallest to biggest: 3/4, 5/6, 2/3', answer: '2/3, 3/4, 5/6', checkMode: 'auto', correctAnswer: '2/3,3/4,5/6', correctAnswers: ['2/3,3/4,5/6', '2/3, 3/4, 5/6'], explanation: 'LCD of 4, 6 and 3 is 12. 3/4 = 9/12, 5/6 = 10/12, 2/3 = 8/12. Ordering by numerator: 8 < 9 < 10, so 2/3, 3/4, 5/6.' },
+        { difficulty: 'Medium', question: 'Calculate 4/11 + 5/11.', answer: '9/11', checkMode: 'auto', correctAnswer: '9/11', correctAnswers: ['9/11'], explanation: 'Same denominator, so add the numerators: 4 + 5 = 9. Keep the denominator: 9/11.' },
+        { difficulty: 'Medium', question: 'Calculate 11/12 − 5/12.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '6/12'], explanation: 'Same denominator, so subtract the numerators: 11 − 5 = 6, giving 6/12. Simplify by dividing by 6: 6/12 = 1/2.' },
+        { difficulty: 'Medium', question: 'Calculate 6/10 − 2/10 + 5/10, and give your answer in simplest form.', answer: '9/10', checkMode: 'auto', correctAnswer: '9/10', correctAnswers: ['9/10'], explanation: 'Work left to right with the numerators: 6 − 2 = 4, then 4 + 5 = 9. Keep the denominator: 9/10, which is already in simplest form.' },
+        { difficulty: 'Medium-Hard', question: 'Convert 5 2/3 to an improper fraction.', answer: '17/3', checkMode: 'auto', correctAnswer: '17/3', correctAnswers: ['17/3'], explanation: 'Multiply the whole number by the denominator: 5 × 3 = 15. Add the numerator: 15 + 2 = 17. Keep the denominator: 17/3.' },
+        { difficulty: 'Medium-Hard', question: 'Convert 42/8 to a mixed number, and simplify the fraction part.', answer: '5 1/4', checkMode: 'auto', correctAnswer: '5 1/4', correctAnswers: ['5 1/4', '51/4', '5-1/4'], explanation: 'Divide the numerator by the denominator: 42 ÷ 8 = 5 remainder 2, giving 5 2/8. Simplify 2/8 by dividing by 2: 2 ÷ 2 = 1, 8 ÷ 2 = 4, so the final answer is 5 1/4.' },
+        { difficulty: 'Hard', question: 'Ayanda has 96 sweets. She gives 3/8 of them to Amara and 1/6 of them to Zola. How many sweets does Ayanda keep for herself?', answer: '44', checkMode: 'auto', correctAnswer: '44', correctAnswers: ['44'], explanation: 'To Amara: 96 ÷ 8 × 3 = 36. To Zola: 96 ÷ 6 × 1 = 16. Total given away: 36 + 16 = 52. Kept: 96 − 52 = 44 sweets.' },
+        { difficulty: 'Hard', question: 'A learner compares 2/3 and 3/5 and says "3/5 must be bigger because 3 is bigger than 2." Is this correct? Explain the mistake and give the correct comparison using a common denominator.', answer: 'No — you cannot compare fractions just by looking at the numerators when the denominators are different. LCD of 3 and 5 is 15: 2/3 = 10/15 and 3/5 = 9/15. Since 10 > 9, 2/3 is actually bigger than 3/5.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thandiwe gets a R600 monthly allowance. She spends 1/4 of it on airtime and 1/3 of it on data. She saves the rest.\na) How much does she spend on airtime?\nb) How much does she spend on data?\nc) How much does she save?\nd) What fraction of her allowance does she save, in simplest form?', answer: 'a) R150  b) R200  c) R250  d) 5/12', checkMode: 'auto', parts: [ { label: 'a)', correctAnswer: '150' }, { label: 'b)', correctAnswer: '200' }, { label: 'c)', correctAnswer: '250' }, { label: 'd)', correctAnswer: '5/12' } ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantastic! You can apply fractions of groups, equivalent fractions, comparing, adding, subtracting and mixed numbers to real-world problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try the word problems again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }
