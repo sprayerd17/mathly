@@ -540,6 +540,162 @@ export const topicData: TopicData = {
     },
 
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Verhoudings skryf en vereenvoudig (0-3, Maklik)
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 48:36.', answer: '4:3', checkMode: 'auto', correctAnswer: '4:3', correctAnswers: ['4:3'], explanation: 'GGF van 48 en 36 is 12.\n48 ÷ 12 = 4 en 36 ÷ 12 = 3.\nVereenvoudigde verhouding = 4:3 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Vrugtebak het 24 rooi appels en 16 groen appels. Skryf die verhouding van rooi appels tot groen appels in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 24 en 16 is 8.\n24 ÷ 8 = 3 en 16 ÷ 8 = 2.\nVerhouding van rooi tot groen = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Koor het 15 sopraanstemme, 10 altstemme en 5 tenoorstemme. Zinhle wil die verhouding van sopraanstemme tot altstemme tot tenoorstemme hê. Skryf hierdie verhouding in eenvoudigste vorm, en verduidelik waarom die volgorde waarin sy dit lys, belangrik is.', answer: 'Sopraanstemme tot altstemme tot tenoorstemme = 15:10:5. GGF van 15, 10 en 5 is 5, dus die vereenvoudigde verhouding is 3:2:1. Die volgorde is belangrik omdat elke posisie in die verhouding vir ʼn spesifieke groep staan — as dit in ʼn ander volgorde geskryf word (soos 10:15:5), sou dit altstemme tot sopraanstemme tot tenoorstemme beskryf, wat ʼn ander vergelyking is.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'ʼn Leerder vereenvoudig 60:24 deur net die eerste getal deur 12 te deel, en skryf die antwoord as "5:24". Verduidelik die fout en gee die korrekte vereenvoudigde verhouding.', answer: 'Die leerder het slegs die eerste term deur die GGF gedeel en die tweede term onveranderd gelaat. Albei dele van ʼn verhouding moet deur dieselfde GGF gedeel word. GGF van 60 en 24 is 12, dus 60 ÷ 12 = 5 en 24 ÷ 12 = 2. Die korrekte vereenvoudigde verhouding is 5:2, nie 5:24 nie.', checkMode: 'self' },
+
+        // Blok 2 — Ekwivalente verhoudings (4-7, Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Is 3:7 en 15:35 ekwivalente verhoudings?', answer: 'ja', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja', 'Ja', 'JA'], explanation: 'Vermenigvuldig altwee dele van 3:7 met 5: 3 × 5 = 15 en 7 × 5 = 35.\nDus 15:35 = 3:7.\nJa, hulle is ekwivalente verhoudings ✓' },
+        { difficulty: 'Medium', question: 'ʼn Pannekoekresep gebruik meel en melk in die verhouding 4:9. As ʼn groter mengsel 36 koppies melk gebruik, hoeveel koppies meel is nodig?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 koppies'], explanation: 'Verhouding meel:melk = 4:9.\nSkaalfaktor = 36 ÷ 9 = 4.\nMeel = 4 × 4 = 16 koppies ✓' },
+        { difficulty: 'Medium', question: 'Watter van hierdie verhoudings is ekwivalent aan 3:8 — 9:24 of 9:16?', answer: '9:24', checkMode: 'auto', correctAnswer: '9:24', correctAnswers: ['9:24', 'net 9:24'], explanation: 'Toets 9:24: 9 ÷ 3 = 3 en 24 ÷ 3 = 8, dus 9:24 = 3:8 ✓\nToets 9:16: 9 ÷ 3 = 3 maar 16 ÷ 3 is nie ʼn heelgetal nie, dus 9:16 ≠ 3:8.\n9:24 is ekwivalent aan 3:8 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder kontroleer of 5:9 en 8:12 ekwivalent is deur 3 by altwee dele van 5:9 te tel om 8:12 te kry, en kom tot die gevolgtrekking dat hulle ekwivalent is. Is hierdie redenasie korrek? Verduidelik.', answer: 'Nee, hierdie redenasie is verkeerd. Ekwivalente verhoudings word gevind deur altwee dele met dieselfde getal te vermenigvuldig of te deel, nie deur dieselfde getal by altwee dele te tel nie. As dit korrek getoets word: 8 ÷ 5 = 1,6 terwyl 12 ÷ 9 = 1,33, wat verskillend is, dus 5:9 en 8:12 is nie eintlik ekwivalente verhoudings nie.', checkMode: 'self' },
+
+        // Blok 3 — ʼn Bedrag in ʼn gegewe verhouding verdeel (8-11, Medium)
+        { difficulty: 'Medium', question: 'Verdeel R560 in die verhouding 3:4.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Eerste aandeel', correctAnswer: 'R240', correctAnswers: ['R240', '240'], explanation: 'Totale dele = 3 + 4 = 7.\nEen deel = R560 ÷ 7 = R80.\nEerste aandeel = 3 × R80 = R240 ✓' },
+          { label: 'b) Tweede aandeel', correctAnswer: 'R320', correctAnswers: ['R320', '320'], explanation: 'Totale dele = 3 + 4 = 7.\nEen deel = R560 ÷ 7 = R80.\nTweede aandeel = 4 × R80 = R320 ✓\nKontroleer: R240 + R320 = R560 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Nomvula, Karabo en Ayanda verdeel 900 plakkers in die verhouding 1:2:3. Hoeveel plakkers kry elke persoon?', answer: '', checkMode: 'auto', parts: [
+          { label: "a) Nomvula se plakkers", correctAnswer: '150', correctAnswers: ['150'], explanation: 'Totale dele = 1 + 2 + 3 = 6.\nEen deel = 900 ÷ 6 = 150.\nNomvula = 1 × 150 = 150 ✓' },
+          { label: "b) Karabo se plakkers", correctAnswer: '300', correctAnswers: ['300'], explanation: 'Totale dele = 1 + 2 + 3 = 6.\nEen deel = 900 ÷ 6 = 150.\nKarabo = 2 × 150 = 300 ✓' },
+          { label: "c) Ayanda se plakkers", correctAnswer: '450', correctAnswers: ['450'], explanation: 'Totale dele = 1 + 2 + 3 = 6.\nEen deel = 900 ÷ 6 = 150.\nAyanda = 3 × 150 = 450 ✓\nKontroleer: 150 + 300 + 450 = 900 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Twee vriende verdeel ʼn sak albasters in die verhouding 3:5. Die vriend met die kleiner aandeel kry 45 albasters. Hoeveel albasters was daar altesaam in die sak?', answer: '120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120'], explanation: 'Die kleiner aandeel stem ooreen met die "3"-deel van die verhouding.\nEen deel = 45 ÷ 3 = 15.\nTotale dele = 3 + 5 = 8.\nTotale albasters = 8 × 15 = 120 ✓' },
+        { difficulty: 'Medium', question: 'ʼn 250 m-tou word in twee stukke gesny in die verhouding 2:3. Palesa kontroleer haar antwoord deur die twee stukke weer bymekaar te tel. Wat behoort die twee stukke te meet, en werk haar kontrole?', answer: '100 m en 150 m. Kontroleer: 100 + 150 = 250 m, wat ooreenstem met die oorspronklike lengte, dus werk die kontrole.', checkMode: 'self' },
+
+        // Blok 4 — Koerse en eenheidskoerse (12-15, Medium)
+        { difficulty: 'Medium', question: 'ʼn Trein ry 336 km in 4 uur. Wat is sy spoed in km per uur?', answer: '84 km/h', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84', '84km/h', '84 km/h', '84km per uur', '84 km per uur'], explanation: 'Spoed = afstand ÷ tyd.\n336 ÷ 4 = 84 km/h ✓' },
+        { difficulty: 'Medium', question: 'Verduidelik die verskil tussen ʼn verhouding en ʼn koers, met ʼn voorbeeld van elk.', answer: 'ʼn Verhouding vergelyk twee hoeveelhede van dieselfde soort en het geen eenhede nie, bv. 3 seuns tot 5 meisies is 3:5. ʼn Koers vergelyk twee hoeveelhede van verskillende soorte en het altyd eenhede, bv. 84 km per uur vergelyk afstand (km) met tyd (ure).', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Winkel verkoop sap teen R63 vir 7 liter by een stalletjie, en R70 vir 8 liter by ʼn ander stalletjie. Watter stalletjie het die goedkoopste prys per liter?', answer: 'tweede stalletjie', checkMode: 'auto', correctAnswer: 'tweede stalletjie', correctAnswers: ['tweede stalletjie', 'die tweede stalletjie', 'tweede', 'stalletjie 2'], explanation: 'Eerste stalletjie: R63 ÷ 7 = R9 per liter.\nTweede stalletjie: R70 ÷ 8 = R8,75 per liter.\nR8,75 is minder as R9, dus het die tweede stalletjie die goedkoopste prys per liter ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken ʼn eenheidskoers vir ʼn motor wat 180 km in 4 uur ry deur 4 ÷ 180 te bereken, en kry 0,0222 uur per km. Verduidelik wat verkeerd gegaan het en gee die korrekte eenheidskoers in km per uur.', answer: 'Die leerder het tyd deur afstand gedeel in plaas van afstand deur tyd, wat ure per km gee in plaas van km per uur. Die korrekte eenheidskoers is afstand ÷ tyd = 180 ÷ 4 = 45 km per uur.', checkMode: 'self' },
+
+        // Blok 5 — Koersprobleme oplos (16-19, Moeilik)
+        { difficulty: 'Hard', question: 'ʼn Waterslang vul ʼn plonsbad teen ʼn koers van 9 liter per minuut. Hoeveel water is in die bad na 6 minute?', answer: '54 liter', checkMode: 'auto', correctAnswer: '54', correctAnswers: ['54', '54 liter', '54L'], explanation: 'Ons ken die eenheidskoers (9 liter per minuut) en die hoeveelheid (6 minute). Ons moet die totaal vind, dus vermenigvuldig: 9 × 6 = 54 liter ✓' },
+        { difficulty: 'Hard', question: 'Katlego verdien geld teen ʼn koers van R12 per uur. Voordat jy besluit om te vermenigvuldig of te deel, identifiseer wat gegee is en wat gevind moet word as sy wil weet hoeveel ure sy moet werk om R180 te verdien.', answer: 'Gegee: die eenheidskoers (R12 per uur) en die totale bedrag om te verdien (R180). Nodig: die aantal ure (die hoeveelheid). Aangesien die totaal en die koers bekend is, deel ons: 180 ÷ 12 = 15 uur.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sizwe ry 100 km teen 50 km per uur, en dan nog 80 km teen 40 km per uur. Wat is die totale tyd vir sy reis?', answer: '4 uur', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 uur', '4h', '4 ure'], explanation: 'Tyd vir eerste deel: 100 ÷ 50 = 2 uur.\nTyd vir tweede deel: 80 ÷ 40 = 2 uur.\nTotale tyd = 2 + 2 = 4 uur ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder verdien R216 deur teen ʼn koers van R18 per uur te werk, en bereken die aantal ure gewerk as 216 × 18 = 3 888 uur. Verduidelik die fout en gee die korrekte aantal ure.', answer: 'Die leerder het vermenigvuldig in plaas van gedeel. Wanneer jy die totaal verdien en die eenheidskoers ken, deel jy die totaal deur die koers om die hoeveelheid (ure) te vind, nie vermenigvuldig nie. Die korrekte berekening is 216 ÷ 18 = 12 uur.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het verhoudings, ekwivalente verhoudings, verdeling volgens ʼn verhouding en koersprobleme baasgeraak.' },
+        { minScore: 15, message: 'Goeie werk! Jy is redelik seker van die meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die vereenvoudiging van verhoudings en eenheidskoerse weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Verhoudings skryf en vereenvoudig (0-3, Maklik)
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 32:24.', answer: '4:3', checkMode: 'auto', correctAnswer: '4:3', correctAnswers: ['4:3'], explanation: 'GGF van 32 en 24 is 8.\n32 ÷ 8 = 4 en 24 ÷ 8 = 3.\nVereenvoudigde verhouding = 4:3 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Tuin het 18 roosbome en 30 laventelbossies. Skryf die verhouding van roosbome tot laventelbossies in eenvoudigste vorm.', answer: '3:5', checkMode: 'auto', correctAnswer: '3:5', correctAnswers: ['3:5'], explanation: 'GGF van 18 en 30 is 6.\n18 ÷ 6 = 3 en 30 ÷ 6 = 5.\nVerhouding van roos tot lavendel = 3:5 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Vrugtemandjie het 8 appels, 5 pere en 3 piesangs. Skryf die verhouding van piesangs tot appels tot pere (in daardie volgorde).', answer: '3:8:5', checkMode: 'auto', correctAnswer: '3:8:5', correctAnswers: ['3:8:5'], explanation: 'Die gevraagde volgorde is piesangs, dan appels, dan pere.\nPiesangs = 3, appels = 8, pere = 5.\nVerhouding = 3:8:5 ✓ (dit kan nie verder vereenvoudig word nie aangesien die GGF van 3, 8 en 5 gelyk is aan 1)' },
+        { difficulty: 'Easy', question: 'ʼn Leerder vereenvoudig 55:33 en sê die GGF is 5, wat ʼn antwoord van 11:6,6 gee. Verduidelik die fout en gee die korrekte vereenvoudigde verhouding.', answer: 'Die leerder het die verkeerde GGF gebruik. Die GGF van 55 en 33 is eintlik 11, nie 5 nie. Deel korrek: 55 ÷ 11 = 5 en 33 ÷ 11 = 3, wat die korrekte vereenvoudigde verhouding van 5:3 gee.', checkMode: 'self' },
+
+        // Blok 2 — Ekwivalente verhoudings (4-7, Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Is 5:6 en 20:24 ekwivalente verhoudings?', answer: 'ja', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja', 'Ja', 'JA'], explanation: 'Vermenigvuldig altwee dele van 5:6 met 4: 5 × 4 = 20 en 6 × 4 = 24.\nDus 20:24 = 5:6.\nJa, hulle is ekwivalente verhoudings ✓' },
+        { difficulty: 'Medium', question: 'ʼn Verfmengsel gebruik blou en wit verf in die verhouding 4:7. As ʼn groter lot 28 liter wit verf gebruik, hoeveel liter blou verf is nodig?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 liter'], explanation: 'Verhouding blou:wit = 4:7.\nSkaalfaktor = 28 ÷ 7 = 4.\nBlou verf = 4 × 4 = 16 liter ✓' },
+        { difficulty: 'Medium', question: 'Watter van hierdie verhoudings is ekwivalent aan 12:18 — 2:3 of 3:4?', answer: '2:3', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', 'net 2:3'], explanation: 'GGF van 12 en 18 is 6.\n12 ÷ 6 = 2 en 18 ÷ 6 = 3, dus vereenvoudig 12:18 na 2:3.\n2:3 is ekwivalent aan 12:18 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder kontroleer of 4:5 en 7:8 ekwivalent is deur 3 by altwee dele van 4:5 te tel om 7:8 te kry, en kom tot die gevolgtrekking dat hulle ekwivalent is. Is dit korrek? Verduidelik.', answer: 'Nee, dit is verkeerd. Ekwivalente verhoudings moet gevorm word deur altwee dele met dieselfde getal te vermenigvuldig of te deel, nie deur dieselfde getal by elke deel te tel nie. As dit korrek getoets word, is 7 ÷ 4 = 1,75 terwyl 8 ÷ 5 = 1,6, wat nie gelyk is nie, dus is 4:5 en 7:8 nie ekwivalente verhoudings nie.', checkMode: 'self' },
+
+        // Blok 3 — ʼn Bedrag in ʼn gegewe verhouding verdeel (8-11, Medium)
+        { difficulty: 'Medium', question: 'Verdeel R720 in die verhouding 5:4.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Eerste aandeel', correctAnswer: 'R400', correctAnswers: ['R400', '400'], explanation: 'Totale dele = 5 + 4 = 9.\nEen deel = R720 ÷ 9 = R80.\nEerste aandeel = 5 × R80 = R400 ✓' },
+          { label: 'b) Tweede aandeel', correctAnswer: 'R320', correctAnswers: ['R320', '320'], explanation: 'Totale dele = 5 + 4 = 9.\nEen deel = R720 ÷ 9 = R80.\nTweede aandeel = 4 × R80 = R320 ✓\nKontroleer: R400 + R320 = R720 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Bongani, Thandiwe en Musa verdeel 900 lekkers in die verhouding 1:2:3. Hoeveel lekkers kry elke persoon?', answer: '', checkMode: 'auto', parts: [
+          { label: "a) Bongani se lekkers", correctAnswer: '150', correctAnswers: ['150'], explanation: 'Totale dele = 1 + 2 + 3 = 6.\nEen deel = 900 ÷ 6 = 150.\nBongani = 1 × 150 = 150 ✓' },
+          { label: "b) Thandiwe se lekkers", correctAnswer: '300', correctAnswers: ['300'], explanation: 'Totale dele = 1 + 2 + 3 = 6.\nEen deel = 900 ÷ 6 = 150.\nThandiwe = 2 × 150 = 300 ✓' },
+          { label: "c) Musa se lekkers", correctAnswer: '450', correctAnswers: ['450'], explanation: 'Totale dele = 1 + 2 + 3 = 6.\nEen deel = 900 ÷ 6 = 150.\nMusa = 3 × 150 = 450 ✓\nKontroleer: 150 + 300 + 450 = 900 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Twee neefs/niggies verdeel ʼn stapel ruilkaarte in die verhouding 5:3. Die een met die kleiner aandeel kry 36 kaarte. Hoeveel kaarte was daar altesaam in die stapel?', answer: '96', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96'], explanation: 'Die kleiner aandeel stem ooreen met die "3"-deel van die verhouding.\nEen deel = 36 ÷ 3 = 12.\nTotale dele = 5 + 3 = 8.\nTotale kaarte = 8 × 12 = 96 ✓' },
+        { difficulty: 'Medium', question: 'ʼn 250 m-lengte heiningdraad word in twee stukke gesny in die verhouding 2:3. Thabiso kontroleer sy antwoord deur die twee stukke weer bymekaar te tel. Wat behoort die twee stukke te meet, en werk sy kontrole?', answer: '100 m en 150 m. Kontroleer: 100 + 150 = 250 m, wat ooreenstem met die oorspronklike lengte, dus werk die kontrole.', checkMode: 'self' },
+
+        // Blok 4 — Koerse en eenheidskoerse (12-15, Medium)
+        { difficulty: 'Medium', question: 'ʼn Afleweringsbestelwa ry 420 km in 6 uur. Wat is sy gemiddelde spoed in km per uur?', answer: '70 km/h', checkMode: 'auto', correctAnswer: '70', correctAnswers: ['70', '70km/h', '70 km/h', '70km per uur', '70 km per uur'], explanation: 'Spoed = afstand ÷ tyd.\n420 ÷ 6 = 70 km/h ✓' },
+        { difficulty: 'Medium', question: 'Verduidelik, met ʼn voorbeeld, waarom ʼn koers eenhede het maar ʼn verhouding nie.', answer: 'ʼn Verhouding vergelyk twee hoeveelhede van dieselfde soort, dus is die eenhede aan albei kante dieselfde en kanselleer hulle uit — byvoorbeeld die vergelyking van 6 seuns tot 9 meisies gee 6:9, sonder eenhede. ʼn Koers vergelyk twee hoeveelhede van verskillende soorte, dus kan die eenhede nie kanselleer nie — byvoorbeeld 70 km per uur vergelyk kilometer met ure, dus moet die antwoord met eenhede geskryf word.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Winkel verkoop kookolie teen R84 vir ʼn 4 liter bottel, en R150 vir ʼn 6 liter bottel. Watter bottel bied die goedkoopste prys per liter?', answer: 'eerste bottel', checkMode: 'auto', correctAnswer: 'eerste bottel', correctAnswers: ['eerste bottel', 'die eerste bottel', 'eerste', 'bottel 1', '4 liter bottel'], explanation: 'Eerste bottel: R84 ÷ 4 = R21 per liter.\nTweede bottel: R150 ÷ 6 = R25 per liter.\nR21 is minder as R25, dus het die 4 liter bottel die goedkoopste prys per liter ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken ʼn eenheidskoers vir ʼn oefenlogboek-afstand van 150 km wat in 2 uur afgelê is, deur 2 ÷ 150 te bereken, en kry 0,0133 uur per km. Verduidelik wat verkeerd gegaan het en gee die korrekte eenheidskoers in km per uur.', answer: 'Die leerder het tyd deur afstand gedeel in plaas van afstand deur tyd, wat ure per km gee in plaas van km per uur. Die korrekte eenheidskoers is afstand ÷ tyd = 150 ÷ 2 = 75 km per uur.', checkMode: 'self' },
+
+        // Blok 5 — Koersprobleme oplos (16-19, Moeilik)
+        { difficulty: 'Hard', question: 'ʼn Tuinsproeier stort water teen ʼn koers van 9 liter per minuut. Hoeveel water word na 6 minute gestort?', answer: '54 liter', checkMode: 'auto', correctAnswer: '54', correctAnswers: ['54', '54 liter', '54L'], explanation: 'Ons ken die eenheidskoers (9 liter per minuut) en die hoeveelheid (6 minute). Ons moet die totaal vind, dus vermenigvuldig: 9 × 6 = 54 liter ✓' },
+        { difficulty: 'Hard', question: 'Nandi verdien geld teen ʼn koers van R10 per uur. Voordat jy besluit om te vermenigvuldig of te deel, identifiseer wat gegee is en wat gevind moet word as sy wil weet hoeveel ure sy moet werk om R150 te verdien.', answer: 'Gegee: die eenheidskoers (R10 per uur) en die totale bedrag om te verdien (R150). Nodig: die aantal ure (die hoeveelheid). Aangesien die totaal en die koers bekend is, deel ons: 150 ÷ 10 = 15 uur.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Mpho ry 100 km teen 50 km per uur, en dan nog 80 km teen 40 km per uur op ʼn ander pad. Wat is die totale tyd vir haar reis?', answer: '4 uur', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 uur', '4h', '4 ure'], explanation: 'Tyd vir eerste deel: 100 ÷ 50 = 2 uur.\nTyd vir tweede deel: 80 ÷ 40 = 2 uur.\nTotale tyd = 2 + 2 = 4 uur ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder verdien R180 deur teen ʼn koers van R12 per uur te werk, en bereken die aantal ure gewerk as 180 × 12 = 2 160 uur. Verduidelik die fout en gee die korrekte aantal ure.', answer: 'Die leerder het vermenigvuldig in plaas van gedeel. Wanneer jy die totaal verdien en die eenheidskoers ken, deel jy die totaal deur die koers om die hoeveelheid (ure) te vind, nie vermenigvuldig nie. Die korrekte berekening is 180 ÷ 12 = 15 uur.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het verhoudings, ekwivalente verhoudings, verdeling volgens ʼn verhouding en koersprobleme baasgeraak.' },
+        { minScore: 15, message: 'Goeie werk! Jy is redelik seker van die meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die vereenvoudiging van verhoudings en eenheidskoerse weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Verhoudings skryf en vereenvoudig (0-3, Maklik)
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 36:24.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 36 en 24 is 12.\n36 ÷ 12 = 3 en 24 ÷ 12 = 2.\nVereenvoudigde verhouding = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Parkeerterrein het 21 klein motors en 14 bakkies. Skryf die verhouding van klein motors tot bakkies in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 21 en 14 is 7.\n21 ÷ 7 = 3 en 14 ÷ 7 = 2.\nVerhouding van klein motors tot bakkies = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 72:48:24.', answer: '3:2:1', checkMode: 'auto', correctAnswer: '3:2:1', correctAnswers: ['3:2:1'], explanation: 'GGF van 72, 48 en 24 is 24.\n72 ÷ 24 = 3, 48 ÷ 24 = 2, 24 ÷ 24 = 1.\nVereenvoudigde verhouding = 3:2:1 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Leerder vereenvoudig 40:16 deur net die eerste getal deur 8 te deel, en skryf die antwoord as "5:16". Verduidelik die fout en gee die korrekte vereenvoudigde verhouding.', answer: 'Die leerder het slegs die eerste term deur die GGF gedeel en die tweede term onveranderd gelaat. Albei dele van ʼn verhouding moet deur dieselfde GGF gedeel word. GGF van 40 en 16 is 8, dus 40 ÷ 8 = 5 en 16 ÷ 8 = 2. Die korrekte vereenvoudigde verhouding is 5:2, nie 5:16 nie.', checkMode: 'self' },
+
+        // Blok 2 — Ekwivalente verhoudings (4-7, Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Is 2:9 en 6:27 ekwivalente verhoudings?', answer: 'ja', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja', 'Ja', 'JA'], explanation: 'Vermenigvuldig altwee dele van 2:9 met 3: 2 × 3 = 6 en 9 × 3 = 27.\nDus 6:27 = 2:9.\nJa, hulle is ekwivalente verhoudings ✓' },
+        { difficulty: 'Medium', question: 'ʼn Limonaderesep gebruik suurlemoensap en water in die verhouding 3:5. As ʼn groter beker 45 koppies water gebruik, hoeveel koppies suurlemoensap is nodig?', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27', '27 koppies'], explanation: 'Verhouding sap:water = 3:5.\nSkaalfaktor = 45 ÷ 5 = 9.\nSuurlemoensap = 3 × 9 = 27 koppies ✓' },
+        { difficulty: 'Medium', question: 'Watter van hierdie verhoudings is ekwivalent aan 16:20 — 4:5 of 5:6?', answer: '4:5', checkMode: 'auto', correctAnswer: '4:5', correctAnswers: ['4:5', 'net 4:5'], explanation: 'GGF van 16 en 20 is 4.\n16 ÷ 4 = 4 en 20 ÷ 4 = 5, dus vereenvoudig 16:20 na 4:5.\n4:5 is ekwivalent aan 16:20 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder kontroleer of 6:7 en 9:10 ekwivalent is deur 3 by altwee dele van 6:7 te tel om 9:10 te kry, en kom tot die gevolgtrekking dat hulle ekwivalent is. Is hierdie redenasie korrek? Verduidelik.', answer: 'Nee, hierdie redenasie is verkeerd. Ekwivalente verhoudings word gevind deur altwee dele met dieselfde getal te vermenigvuldig of te deel, nie deur dieselfde getal by altwee dele te tel nie. As dit korrek getoets word: 9 ÷ 6 = 1,5 terwyl 10 ÷ 7 ≈ 1,43, wat verskillend is, dus is 6:7 en 9:10 nie eintlik ekwivalente verhoudings nie.', checkMode: 'self' },
+
+        // Blok 3 — ʼn Bedrag in ʼn gegewe verhouding verdeel (8-11, Medium)
+        { difficulty: 'Medium', question: 'Verdeel R720 in die verhouding 5:7.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Eerste aandeel', correctAnswer: 'R300', correctAnswers: ['R300', '300'], explanation: 'Totale dele = 5 + 7 = 12.\nEen deel = R720 ÷ 12 = R60.\nEerste aandeel = 5 × R60 = R300 ✓' },
+          { label: 'b) Tweede aandeel', correctAnswer: 'R420', correctAnswers: ['R420', '420'], explanation: 'Totale dele = 5 + 7 = 12.\nEen deel = R720 ÷ 12 = R60.\nTweede aandeel = 7 × R60 = R420 ✓\nKontroleer: R300 + R420 = R720 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Lindiwe, Sipho en Refilwe verdeel 1 200 lugtyd-punte in die verhouding 2:3:5. Hoeveel punte kry elke persoon?', answer: '', checkMode: 'auto', parts: [
+          { label: "a) Lindiwe se punte", correctAnswer: '240', correctAnswers: ['240'], explanation: 'Totale dele = 2 + 3 + 5 = 10.\nEen deel = 1 200 ÷ 10 = 120.\nLindiwe = 2 × 120 = 240 ✓' },
+          { label: "b) Sipho se punte", correctAnswer: '360', correctAnswers: ['360'], explanation: 'Totale dele = 2 + 3 + 5 = 10.\nEen deel = 1 200 ÷ 10 = 120.\nSipho = 3 × 120 = 360 ✓' },
+          { label: "c) Refilwe se punte", correctAnswer: '600', correctAnswers: ['600'], explanation: 'Totale dele = 2 + 3 + 5 = 10.\nEen deel = 1 200 ÷ 10 = 120.\nRefilwe = 5 × 120 = 600 ✓\nKontroleer: 240 + 360 + 600 = 1 200 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Boks potlode word tussen twee klaskamers verdeel in die verhouding 2:7. Die klaskamer met die groter aandeel kry 84 potlode. Hoeveel potlode was daar altesaam in die boks?', answer: '108', checkMode: 'auto', correctAnswer: '108', correctAnswers: ['108'], explanation: 'Die groter aandeel stem ooreen met die "7"-deel van die verhouding.\nEen deel = 84 ÷ 7 = 12.\nTotale dele = 2 + 7 = 9.\nTotale potlode = 9 × 12 = 108 ✓' },
+        { difficulty: 'Medium', question: 'ʼn 480 cm-lint word in twee stukke gesny in die verhouding 3:5. Anele kontroleer haar antwoord deur die twee stukke weer bymekaar te tel. Wat behoort die twee stukke te meet, en werk haar kontrole?', answer: '180 cm en 300 cm. Kontroleer: 180 + 300 = 480 cm, wat ooreenstem met die oorspronklike lengte, dus werk die kontrole.', checkMode: 'self' },
+
+        // Blok 4 — Koerse en eenheidskoerse (12-15, Medium)
+        { difficulty: 'Medium', question: 'ʼn Bus ry 195 km in 3 uur. Wat is sy spoed in km per uur?', answer: '65 km/h', checkMode: 'auto', correctAnswer: '65', correctAnswers: ['65', '65km/h', '65 km/h', '65km per uur', '65 km per uur'], explanation: 'Spoed = afstand ÷ tyd.\n195 ÷ 3 = 65 km/h ✓' },
+        { difficulty: 'Medium', question: 'Verduidelik die verskil tussen ʼn verhouding en ʼn koers, met ʼn oorspronklike voorbeeld van elk uit die alledaagse lewe.', answer: 'ʼn Verhouding vergelyk twee hoeveelhede van dieselfde soort en het geen eenhede nie — byvoorbeeld, in ʼn klas van 30 leerders met 18 meisies en 12 seuns, is die verhouding van meisies tot seuns 18:12, wat vereenvoudig na 3:2. ʼn Koers vergelyk twee hoeveelhede van verskillende soorte en het eenhede — byvoorbeeld, ʼn drukker wat 40 bladsye in 5 minute druk, het ʼn koers van 8 bladsye per minuut.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Appelliewe kos R56 vir 8 kg by een marksalletjie, en R64 vir 10 kg by ʼn ander. Watter stalletjie het die goedkoopste prys per kilogram?', answer: 'tweede stalletjie', checkMode: 'auto', correctAnswer: 'tweede stalletjie', correctAnswers: ['tweede stalletjie', 'die tweede stalletjie', 'tweede', 'stalletjie 2'], explanation: 'Eerste stalletjie: R56 ÷ 8 = R7 per kg.\nTweede stalletjie: R64 ÷ 10 = R6,40 per kg.\nR6,40 is minder as R7, dus het die tweede stalletjie die goedkoopste prys per kilogram ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken ʼn eenheidskoers vir ʼn fietsryer wat 240 km in 5 uur aflê, deur 5 ÷ 240 te bereken, en kry 0,0208 uur per km. Verduidelik wat verkeerd gegaan het en gee die korrekte eenheidskoers in km per uur.', answer: 'Die leerder het tyd deur afstand gedeel in plaas van afstand deur tyd, wat ure per km gee in plaas van km per uur. Die korrekte eenheidskoers is afstand ÷ tyd = 240 ÷ 5 = 48 km per uur.', checkMode: 'self' },
+
+        // Blok 5 — Koersprobleme oplos (16-19, Moeilik)
+        { difficulty: 'Hard', question: 'ʼn Waterpomp vul ʼn tenk teen ʼn koers van 15 liter per minuut. Hoeveel water is in die tenk na 9 minute?', answer: '135 liter', checkMode: 'auto', correctAnswer: '135', correctAnswers: ['135', '135 liter', '135L'], explanation: 'Ons ken die eenheidskoers (15 liter per minuut) en die hoeveelheid (9 minute). Ons moet die totaal vind, dus vermenigvuldig: 15 × 9 = 135 liter ✓' },
+        { difficulty: 'Hard', question: 'Tumelo verdien geld teen ʼn koers van R14 per uur. Voordat jy besluit om te vermenigvuldig of te deel, identifiseer wat gegee is en wat gevind moet word as hy wil weet hoeveel ure hy moet werk om R210 te verdien.', answer: 'Gegee: die eenheidskoers (R14 per uur) en die totale bedrag om te verdien (R210). Nodig: die aantal ure (die hoeveelheid). Aangesien die totaal en die koers bekend is, deel ons: 210 ÷ 14 = 15 uur.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Zanele ry 150 km teen 75 km per uur, en dan nog 60 km teen 30 km per uur op ʼn grondpad. Wat is die totale tyd vir haar reis?', answer: '4 uur', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 uur', '4h', '4 ure'], explanation: 'Tyd vir eerste deel: 150 ÷ 75 = 2 uur.\nTyd vir tweede deel: 60 ÷ 30 = 2 uur.\nTotale tyd = 2 + 2 = 4 uur ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder verdien R150 deur teen ʼn koers van R15 per uur te werk, en bereken die aantal ure gewerk as 150 × 15 = 2 250 uur. Verduidelik die fout en gee die korrekte aantal ure.', answer: 'Die leerder het vermenigvuldig in plaas van gedeel. Wanneer jy die totaal verdien en die eenheidskoers ken, deel jy die totaal deur die koers om die hoeveelheid (ure) te vind, nie vermenigvuldig nie. Die korrekte berekening is 150 ÷ 15 = 10 uur.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het verhoudings, ekwivalente verhoudings, verdeling volgens ʼn verhouding en koersprobleme baasgeraak.' },
+        { minScore: 15, message: 'Goeie werk! Jy is redelik seker van die meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die vereenvoudiging van verhoudings en eenheidskoerse weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 12,
     messages: [

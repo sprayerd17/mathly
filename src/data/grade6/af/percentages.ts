@@ -718,4 +718,152 @@ export const topicData: TopicData = {
     { minScore: 3, message: 'Goeie poging! Werk weer deur die studiegids en uitgewerkte voorbeelde vir elke afdeling, en probeer dan weer.' },
     { minScore: 0, message: "Moenie moed opgee nie — elke kenner was eers ʼn beginner! Gaan deur die verduidelikings en uitgewerkte voorbeelde afdeling vir afdeling, en probeer dan weer." },
   ],
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // OEFENSTELLE — 3 stelle × 20 vrae
+  // Bloklayout per stel: 0-3 betekenis van persentasie/basiese omskakeling (Maklik) |
+  // 4-6 breuk<->persentasie algemeen (Maklik-Medium) | 7-9 persentasie<->breuk/
+  // desimale breuk met vereenvoudiging/presisie (Medium) | 10-13 vind ʼn persentasie
+  // van ʼn bedrag (Medium) | 14-16 persentasietoename/-afname enkelstap
+  // (Medium-Moeilik) | 17-19 multistap- en vergelykende persentasievraagstukke (Moeilik)
+  // ═══════════════════════════════════════════════════════════════════════════
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: "Wat beteken die woord 'persent'?", answer: "'Persent' beteken 'uit 100'. So beteken 45% dus 45 uit elke 100 dele.", checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Skryf 20% as ʼn breuk in eenvoudigste vorm.', answer: '1/5', checkMode: 'auto', correctAnswer: '1/5', correctAnswers: ['1/5'], explanation: '20% = 20/100. GGF van 20 en 100 is 20. 20 ÷ 20 = 1, 100 ÷ 20 = 5. Antwoord: 1/5 ✓' },
+        { difficulty: 'Easy', question: 'Skakel elk van die volgende om.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Skryf 0,6 as ʼn persentasie.', correctAnswer: '60%', correctAnswers: ['60%', '60'], explanation: 'Vermenigvuldig met 100: 0,6 × 100 = 60. Antwoord: 60% ✓' },
+          { label: 'b) Skryf 75% as ʼn desimale breuk.', correctAnswer: '0.75', correctAnswers: ['0.75', '0,75'], explanation: 'Deel deur 100: 75 ÷ 100 = 0,75. Antwoord: 0,75 ✓' },
+          { label: 'c) Skryf 75% as ʼn breuk in eenvoudigste vorm.', correctAnswer: '3/4', correctAnswers: ['3/4'], explanation: '75% = 75/100. GGF van 75 en 100 is 25. 75 ÷ 25 = 3, 100 ÷ 25 = 4. Antwoord: 3/4 ✓' },
+        ] },
+        { difficulty: 'Easy', question: "Karabo sê 10% as ʼn breuk is 10/100 en dit is reeds in eenvoudigste vorm. Is sy korrek? Verduidelik.", answer: 'Nee — 10/100 vereenvoudig verder na 1/10, aangesien die GGF van 10 en 100 gelyk is aan 10. Sy het vergeet om te vereenvoudig.', checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 9/20 om na ʼn persentasie.', answer: '45%', checkMode: 'auto', correctAnswer: '45%', correctAnswers: ['45%', '45'], explanation: 'Deel die teller deur die noemer: 9 ÷ 20 = 0,45. Vermenigvuldig met 100: 0,45 × 100 = 45. Antwoord: 45% ✓' },
+        { difficulty: 'Medium', question: "In ʼn speltoets uit 20 spel Amahle 17 woorde korrek. Watter persentasie het sy behaal?", answer: '85%', checkMode: 'auto', correctAnswer: '85%', correctAnswers: ['85%', '85'], explanation: 'Skryf as ʼn breuk: 17/20. Deel: 17 ÷ 20 = 0,85. Vermenigvuldig met 100: 85. Antwoord: 85% ✓' },
+        { difficulty: 'Medium', question: 'Watter een is groter: 3/8 of 40%? Wys jou berekening.', answer: '40%', checkMode: 'auto', correctAnswer: '40%', correctAnswers: ['40%', '40'], explanation: 'Skakel 3/8 om na ʼn persentasie: 3 ÷ 8 = 0,375, ×100 = 37,5%. Vergelyk 37,5% met 40%: 40% is groter. Antwoord: 40% ✓' },
+        { difficulty: 'Medium', question: 'Skakel 64% om na ʼn breuk in eenvoudigste vorm.', answer: '16/25', checkMode: 'auto', correctAnswer: '16/25', correctAnswers: ['16/25'], explanation: '64% = 64/100. GGF van 64 en 100 is 4. 64 ÷ 4 = 16, 100 ÷ 4 = 25. Antwoord: 16/25 ✓' },
+        { difficulty: 'Medium', question: "Bongani vereenvoudig 56% na ʼn breuk. Hy skryf 56/100 = 28/50 en stop daar, en sê dit is die eenvoudigste vorm. Is hy korrek?", answer: 'Nee — 28/50 kan nog verder vereenvoudig word. Die GGF van 56 en 100 is eintlik 4, dus 56/100 = 14/25 in eenvoudigste vorm. Bongani het slegs een keer deur 2 gedeel en te vroeg gestop.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Beantwoord elke deel.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Skakel 0,045 om na ʼn persentasie.', correctAnswer: '4.5%', correctAnswers: ['4.5%', '4.5', '4,5%', '4,5'], explanation: 'Vermenigvuldig met 100: 0,045 × 100 = 4,5. Antwoord: 4,5% ✓' },
+          { label: 'b) Skakel 92% om na ʼn breuk in eenvoudigste vorm.', correctAnswer: '23/25', correctAnswers: ['23/25'], explanation: '92% = 92/100. GGF van 92 en 100 is 4. 92 ÷ 4 = 23, 100 ÷ 4 = 25. Antwoord: 23/25 ✓' },
+          { label: 'c) Skakel 6,5% om na ʼn desimale breuk.', correctAnswer: '0.065', correctAnswers: ['0.065', '0,065'], explanation: 'Deel deur 100: 6,5 ÷ 100 = 0,065. Antwoord: 0,065 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Snoepiewinkel verkoop koeldrank vir R12. As BTW 15% by die prys voeg, hoeveel ekstra moet ʼn leerder betaal?', answer: 'R1,80', checkMode: 'auto', correctAnswer: 'R1.80', correctAnswers: ['R1.80', '1.80', 'R1,80', '1,80'], explanation: 'Vind 15% van R12: 0,15 × 12 = 1,80. Antwoord: R1,80 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die 10%-opboumetode om 45% van R640 te vind.', answer: 'R288', checkMode: 'auto', correctAnswer: 'R288', correctAnswers: ['R288', '288'], explanation: '10% van 640 = 64. 45% = 4 × 10% + 5%. 4 × 64 = 256. 5% = helfte van 64 = 32. 256 + 32 = 288. Antwoord: R288 ✓' },
+        { difficulty: 'Medium', question: "ʼn Leerder werk 15% van R640 uit deur die opboumetode: 'Aangesien 10% gelyk is aan 64, moet 15% dus 64 + 6 = 70 wees.' Wat het verkeerd gegaan?", answer: "Die leerder het 6 bygetel in plaas van die helfte van 64. 5% is die helfte van 10%, dus is 5% van 640 gelyk aan 32, nie 6 nie. Die korrekte antwoord is 64 + 32 = R96, nie R70 nie.", checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter een is meer: 30% van R450 of 40% van R320?', answer: '30% van R450', checkMode: 'auto', correctAnswer: '30% van R450', correctAnswers: ['30% van R450', '30% van 450', 'R135', '135'], explanation: '30% van R450 = 0,30 × 450 = R135. 40% van R320 = 0,40 × 320 = R128. R135 is meer as R128, dus is 30% van R450 meer.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Winkel verhoog die prys van ʼn skooltas met 12%. Die oorspronklike prys is R650. Wat is die nuwe prys?', answer: 'R728', checkMode: 'auto', correctAnswer: 'R728', correctAnswers: ['R728', '728'], explanation: 'Vind 12% van R650: 0,12 × 650 = 78. Tel by die oorspronklike: 650 + 78 = 728. Antwoord: R728 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Paar skoene kos R560. Die winkel bied ʼn 25%-korting tydens ʼn uitverkoping. Wat is die verkoopprys?', answer: 'R420', checkMode: 'auto', correctAnswer: 'R420', correctAnswers: ['R420', '420'], explanation: 'Vind 25% van R560: 0,25 × 560 = 140. Trek af van die oorspronklike: 560 − 140 = 420. Antwoord: R420 ✓' },
+        { difficulty: 'Hard', question: "Thabo werk uit dat ʼn R380-baadjie met ʼn 30%-korting 380 + 114 = R494 behoort te kos. Watter fout het hy gemaak, en wat is die korrekte verkoopprys?", answer: "Thabo het die korting bygetel in plaas daarvan om dit af te trek — ʼn korting laat die prys daal, nie styg nie. Die korrekte verkoopprys is 380 − 114 = R266.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "ʼn Fiets kos R1 800. Dit is in ʼn uitverkoping met ʼn 20%-korting.\n\na) Wat is die kortingsbedrag?\nb) Wat is die finale verkoopprys?", answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kortingsbedrag', correctAnswer: 'R360', correctAnswers: ['R360', '360'], explanation: 'Vind 20% van R1 800: 0,20 × 1 800 = 360. Antwoord: R360 ✓' },
+          { label: 'b) Finale verkoopprys', correctAnswer: 'R1440', correctAnswers: ['R1440', 'R1 440', '1440', '1 440'], explanation: 'Verkoopprys = 1 800 − 360 = 1 440. Antwoord: R1 440 ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'Twee klasse skryf verskillende toetse. Klas A behaal 24 uit 30, en Klas B behaal 5 uit 6. Watter klas het ʼn hoër persentasie behaal?', answer: 'Klas B', checkMode: 'auto', correctAnswer: 'Klas B', correctAnswers: ['Klas B', 'B'], explanation: 'Klas A: 24 ÷ 30 = 0,8 = 80%. Klas B: 5 ÷ 6 = 0,8333... ≈ 83,3%. Klas B het ʼn hoër persentasie behaal.' },
+        { difficulty: 'Hard', question: "ʼn Winkel adverteer 'Kry nog ʼn ekstra 10% af op reeds-verminderde pryse!' ʼn Trui is reeds met 20% verminder vanaf R500. ʼn Leerder beweer die totale besparing is 30% van die oorspronklike prys. Is dit korrek? Verduidelik.", answer: "Nee. Na ʼn 20%-korting word R500 R400 (500 − 100). ʼn Verdere 10% af R400 is R40, wat die finale prys R360 maak. Die totale besparing is 500 − 360 = R140, wat 28% van die oorspronklike prys is, nie 30% nie. Opeenvolgende persentasies kan nie sommer bygetel word nie, want die tweede persentasie word van ʼn kleiner, reeds-verminderde bedrag afgetrek.", checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het ʼn baie stewige begrip van persentasies.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan terug na die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklayout as Stel 1, vars bewoording/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: "Voltooi die sin: 45% beteken 45 uit elke ___ dele.", answer: '100', checkMode: 'auto', correctAnswer: '100', correctAnswers: ['100'], explanation: "'Persent' beteken 'uit 100', dus beteken 45% 45 uit elke 100 dele." },
+        { difficulty: 'Easy', question: 'Skryf 50% as ʼn breuk in eenvoudigste vorm.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2'], explanation: '50% = 50/100. GGF van 50 en 100 is 50. 50 ÷ 50 = 1, 100 ÷ 50 = 2. Antwoord: 1/2 ✓' },
+        { difficulty: 'Easy', question: 'Voltooi elke omskakeling.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Skryf 0,9 as ʼn persentasie.', correctAnswer: '90%', correctAnswers: ['90%', '90'], explanation: 'Vermenigvuldig met 100: 0,9 × 100 = 90. Antwoord: 90% ✓' },
+          { label: 'b) Skryf 20% as ʼn desimale breuk.', correctAnswer: '0.2', correctAnswers: ['0.2', '0.20', '0,2', '0,20'], explanation: 'Deel deur 100: 20 ÷ 100 = 0,2. Antwoord: 0,2 ✓' },
+          { label: 'c) Skryf 20% as ʼn breuk in eenvoudigste vorm.', correctAnswer: '1/5', correctAnswers: ['1/5'], explanation: '20% = 20/100. GGF van 20 en 100 is 20. 20 ÷ 20 = 1, 100 ÷ 20 = 5. Antwoord: 1/5 ✓' },
+        ] },
+        { difficulty: 'Easy', question: "Zanele skakel 4/10 om na ʼn persentasie deur te skryf 4 ÷ 10 = 40, en sê toe die antwoord is 40. Watter fout het sy gemaak?", answer: "Sy het die laaste stap vergeet. Na deling is 4 ÷ 10 = 0,4, en sy moet nog met 100 vermenigvuldig om 40% te kry. Om net '40' te skryf sonder die persentasieteken — en die vermenigvuldig-met-100-stap oor te slaan — lei tot verwarring. Die korrekte antwoord is 40%.", checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 13/40 om na ʼn persentasie.', answer: '32.5%', checkMode: 'auto', correctAnswer: '32.5%', correctAnswers: ['32.5%', '32.5', '32,5%', '32,5'], explanation: 'Deel: 13 ÷ 40 = 0,325. Vermenigvuldig met 100: 32,5. Antwoord: 32,5% ✓' },
+        { difficulty: 'Medium', question: "Tydens ʼn sokkerwedstryd keer ʼn doelwagter 13 uit 16 skote. Watter persentasie van die skote het hy gekeer?", answer: '81.25%', checkMode: 'auto', correctAnswer: '81.25%', correctAnswers: ['81.25%', '81.25', '81,25%', '81,25'], explanation: 'Skryf as ʼn breuk: 13/16. Deel: 13 ÷ 16 = 0,8125. Vermenigvuldig met 100: 81,25. Antwoord: 81,25% ✓' },
+        { difficulty: 'Medium', question: 'Rangskik hierdie van klein na groot: 1/4, 30%, 0,2', answer: '0,2, 1/4, 30%', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Skakel 85% om na ʼn breuk in eenvoudigste vorm.', answer: '17/20', checkMode: 'auto', correctAnswer: '17/20', correctAnswers: ['17/20'], explanation: '85% = 85/100. GGF van 85 en 100 is 5. 85 ÷ 5 = 17, 100 ÷ 5 = 20. Antwoord: 17/20 ✓' },
+        { difficulty: 'Medium', question: "Lindiwe sê 0,5% is dieselfde as 0,5 as ʼn desimale breuk, dus skryf sy 0,5% = 0,5. Is sy korrek? Verduidelik.", answer: "Nee — sy het verkeerd gedeel. Om ʼn persentasie na ʼn desimale breuk om te skakel, deel deur 100: 0,5 ÷ 100 = 0,005, nie 0,5 nie. Lindiwe het die desimale komma verkeerd geplaas.", checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Beantwoord elke deel.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Skakel 0,008 om na ʼn persentasie.', correctAnswer: '0.8%', correctAnswers: ['0.8%', '0.8', '0,8%', '0,8'], explanation: 'Vermenigvuldig met 100: 0,008 × 100 = 0,8. Antwoord: 0,8% ✓' },
+          { label: 'b) Skakel 36% om na ʼn breuk in eenvoudigste vorm.', correctAnswer: '9/25', correctAnswers: ['9/25'], explanation: '36% = 36/100. GGF van 36 en 100 is 4. 36 ÷ 4 = 9, 100 ÷ 4 = 25. Antwoord: 9/25 ✓' },
+          { label: 'c) Skakel 115% om na ʼn desimale breuk.', correctAnswer: '1.15', correctAnswers: ['1.15', '1,15'], explanation: 'Deel deur 100: 115 ÷ 100 = 1,15. Antwoord: 1,15 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Skool het 250 leerders. 72% van hulle besit ʼn selfoon. Hoeveel leerders besit ʼn selfoon?', answer: '180', checkMode: 'auto', correctAnswer: '180', correctAnswers: ['180'], explanation: 'Vind 72% van 250: 0,72 × 250 = 180. Antwoord: 180 leerders ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die 10%-opboumetode om 15% van R820 te vind.', answer: 'R123', checkMode: 'auto', correctAnswer: 'R123', correctAnswers: ['R123', '123'], explanation: '10% van 820 = 82. 5% = helfte van 82 = 41. 15% = 10% + 5% = 82 + 41 = 123. Antwoord: R123 ✓' },
+        { difficulty: 'Medium', question: "ʼn Leerder bereken 30% van R900 met die opboumetode: 'Aangesien 10% gelyk is aan 90, is 30% dus 90 + 90 = 180.' Is die finale antwoord korrek, en indien nie, waar is die fout?", answer: "Nee, die antwoord is verkeerd. 30% is 3 x 10%, dus behoort dit 90 + 90 + 90 = 270 te wees, nie 90 + 90 = 180 nie. Die leerder het slegs twee stelle van 10% bygetel in plaas van drie.", checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter een is meer: 45% van R220 of 40% van R250?', answer: '40% van R250', checkMode: 'auto', correctAnswer: '40% van R250', correctAnswers: ['40% van R250', '40% van 250', 'R100', '100'], explanation: '45% van R220 = 0,45 × 220 = R99. 40% van R250 = 0,40 × 250 = R100. R100 is meer as R99, dus is 40% van R250 meer.' },
+        { difficulty: 'Medium-Hard', question: 'Sipho verdien R6 200 per maand. Hy kry ʼn 5%-salarisverhoging. Wat is sy nuwe salaris?', answer: 'R6510', checkMode: 'auto', correctAnswer: 'R6510', correctAnswers: ['R6510', 'R6 510', '6510', '6 510'], explanation: 'Vind 5% van R6 200: 0,05 × 6 200 = 310. Tel by die oorspronklike: 6 200 + 310 = 6 510. Antwoord: R6 510 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Selfoon kos R2 800. Tydens ʼn uitverkoping word die prys met 15% verminder. Wat is die verkoopprys?', answer: 'R2380', checkMode: 'auto', correctAnswer: 'R2380', correctAnswers: ['R2380', 'R2 380', '2380', '2 380'], explanation: 'Vind 15% van R2 800: 0,15 × 2 800 = 420. Trek af van die oorspronklike: 2 800 − 420 = 2 380. Antwoord: R2 380 ✓' },
+        { difficulty: 'Hard', question: "Nomvula sê ʼn skootrekenaar wat met 6% in prys styg vanaf R6 400 kos nou R384. Wat het verkeerd gegaan, en wat is die korrekte nuwe prys?", answer: "Nomvula het die toenamebedrag (R384) gegee in plaas van die nuwe totale prys. Sy moes R384 by die oorspronklike R6 400 tel. Die korrekte nuwe prys is 6 400 + 384 = R6 784.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "Lerato verdien R7 200 per maand en kry ʼn 12,5%-verhoging.\n\na) Wat is haar nuwe maandelikse salaris?\nb) As sy 1/4 van haar nuwe salaris aan huur bestee, hoeveel is dit?", answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Nuwe maandelikse salaris', correctAnswer: 'R8100', correctAnswers: ['R8100', 'R8 100', '8100', '8 100'], explanation: 'Vind 12,5% van R7 200: 0,125 × 7 200 = 900. Nuwe salaris = 7 200 + 900 = 8 100. Antwoord: R8 100 ✓' },
+          { label: 'b) Bedrag aan huur bestee', correctAnswer: 'R2025', correctAnswers: ['R2025', 'R2 025', '2025', '2 025'], explanation: '1/4 van R8 100 = 8 100 ÷ 4 = 2 025. Antwoord: R2 025 ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'Twee winkels verkoop dieselfde boek. Winkel A verkoop 18 uit 24 eksemplare in ʼn week, en Winkel B verkoop 21 uit 30 eksemplare. Watter winkel het ʼn hoër persentasie van sy voorraad verkoop?', answer: 'Winkel A', checkMode: 'auto', correctAnswer: 'Winkel A', correctAnswers: ['Winkel A', 'A'], explanation: 'Winkel A: 18 ÷ 24 = 0,75 = 75%. Winkel B: 21 ÷ 30 = 0,7 = 70%. Winkel A het ʼn hoër persentasie van sy voorraad verkoop.' },
+        { difficulty: 'Hard', question: "ʼn Winkel bied 'nog ʼn ekstra 10% af' bo-op ʼn reeds-geadverteerde 20%-korting op ʼn R500-baadjie. ʼn Kliënt beweer dit beteken die baadjie is altesaam 30% goedkoper. Is die kliënt korrek? Verduidelik met syfers.", answer: "Nee. Eerste korting: 20% van R500 = R100, dus daal die prys na R400. Tweede korting: 10% van R400 = R40, dus is die finale prys R360. Totale besparing = 500 − 360 = R140, wat 28% van die oorspronklike prys is, nie 30% nie. Jy kan nie opeenvolgende persentasies sommer bytel nie, want die tweede korting geld op die reeds-verminderde prys, nie op die oorspronklike prys nie.", checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue met persentasies in werklike kontekste werk.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan terug na die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklayout, meer werklike kontekste + redenering
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: "ʼn Plakkaat wys '25% van leerders stap skool toe.' Wat beteken die 25% in hierdie sin?", answer: '25 uit elke 100 leerders stap skool toe.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Skryf 75% as ʼn breuk in eenvoudigste vorm.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', correctAnswers: ['3/4'], explanation: '75% = 75/100. GGF van 75 en 100 is 25. 75 ÷ 25 = 3, 100 ÷ 25 = 4. Antwoord: 3/4 ✓' },
+        { difficulty: 'Easy', question: 'Voltooi elke omskakeling.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Skryf 0,35 as ʼn persentasie.', correctAnswer: '35%', correctAnswers: ['35%', '35'], explanation: 'Vermenigvuldig met 100: 0,35 × 100 = 35. Antwoord: 35% ✓' },
+          { label: 'b) Skryf 10% as ʼn desimale breuk.', correctAnswer: '0.1', correctAnswers: ['0.1', '0.10', '0,1', '0,10'], explanation: 'Deel deur 100: 10 ÷ 100 = 0,1. Antwoord: 0,1 ✓' },
+          { label: 'c) Skryf 10% as ʼn breuk in eenvoudigste vorm.', correctAnswer: '1/10', correctAnswers: ['1/10'], explanation: '10% = 10/100. GGF van 10 en 100 is 10. 10 ÷ 10 = 1, 100 ÷ 10 = 10. Antwoord: 1/10 ✓' },
+        ] },
+        { difficulty: 'Easy', question: "Gegewe dat 30% = 0,3 = 3/10, sê ʼn leerder 30% moet ook gelyk wees aan 3/100 omdat persent 'oor 100' beteken. Is dit korrek? Verduidelik.", answer: "Nee — die breuk 30/100 vereenvoudig na 3/10, nie 3/100 nie. Die leerder het die teller deur 10 gedeel sonder om ook die noemer deur 10 te deel, wat die waarde van die breuk verander.", checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 11/20 om na ʼn persentasie.', answer: '55%', checkMode: 'auto', correctAnswer: '55%', correctAnswers: ['55%', '55'], explanation: 'Deel: 11 ÷ 20 = 0,55. Vermenigvuldig met 100: 55. Antwoord: 55% ✓' },
+        { difficulty: 'Medium', question: "Uit 40 leerders in ʼn klas het 27 die skool se sportdag bygewoon. Watter persentasie van die klas het bygewoon?", answer: '67.5%', checkMode: 'auto', correctAnswer: '67.5%', correctAnswers: ['67.5%', '67.5', '67,5%', '67,5'], explanation: 'Skryf as ʼn breuk: 27/40. Deel: 27 ÷ 40 = 0,675. Vermenigvuldig met 100: 67,5. Antwoord: 67,5% ✓' },
+        { difficulty: 'Medium', question: 'Watter een is groter: 7/20 of 30%? Wys jou berekening.', answer: '7/20', checkMode: 'auto', correctAnswer: '7/20', correctAnswers: ['7/20', '35%'], explanation: 'Skakel 7/20 om na ʼn persentasie: 7 ÷ 20 = 0,35, ×100 = 35%. Vergelyk 35% met 30%: 35% is groter. Antwoord: 7/20 ✓' },
+        { difficulty: 'Medium', question: 'Skakel 44% om na ʼn breuk in eenvoudigste vorm.', answer: '11/25', checkMode: 'auto', correctAnswer: '11/25', correctAnswers: ['11/25'], explanation: '44% = 44/100. GGF van 44 en 100 is 4. 44 ÷ 4 = 11, 100 ÷ 4 = 25. Antwoord: 11/25 ✓' },
+        { difficulty: 'Medium', question: "Kagiso vereenvoudig 48% deur teller en noemer deur 6 te deel, en kry 8/16,67, waarna hy sê die breuk kan nie verder vereenvoudig word nie. Wat is die werklike fout, en wat is die korrekte eenvoudigste vorm?", answer: "6 is nie ʼn gemene faktor van 48 en 100 nie (100 ÷ 6 is nie ʼn heelgetal nie), dus was dit ongeldig om deur 6 te deel. Die korrekte GGF van 48 en 100 is 4. 48 ÷ 4 = 12, 100 ÷ 4 = 25, dus is die eenvoudigste vorm 12/25.", checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Beantwoord elke deel.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Skakel 0,0625 om na ʼn persentasie.', correctAnswer: '6.25%', correctAnswers: ['6.25%', '6.25', '6,25%', '6,25'], explanation: 'Vermenigvuldig met 100: 0,0625 × 100 = 6,25. Antwoord: 6,25% ✓' },
+          { label: 'b) Skakel 88% om na ʼn breuk in eenvoudigste vorm.', correctAnswer: '22/25', correctAnswers: ['22/25'], explanation: '88% = 88/100. GGF van 88 en 100 is 4. 88 ÷ 4 = 22, 100 ÷ 4 = 25. Antwoord: 22/25 ✓' },
+          { label: 'c) Skakel 0,9% om na ʼn desimale breuk.', correctAnswer: '0.009', correctAnswers: ['0.009', '0,009'], explanation: 'Deel deur 100: 0,9 ÷ 100 = 0,009. Antwoord: 0,009 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Snoepiewinkel bestel 1 200 sapboksies. 25% daarvan is appelgeur. Hoeveel appelgeur-sapboksies is bestel?', answer: '300', checkMode: 'auto', correctAnswer: '300', correctAnswers: ['300'], explanation: 'Vind 25% van 1 200: 0,25 × 1 200 = 300. Antwoord: 300 sapboksies ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die 10%-opboumetode om 65% van R480 te vind.', answer: 'R312', checkMode: 'auto', correctAnswer: 'R312', correctAnswers: ['R312', '312'], explanation: '10% van 480 = 48. 65% = 6 × 10% + 5%. 6 × 48 = 288. 5% = helfte van 48 = 24. 288 + 24 = 312. Antwoord: R312 ✓' },
+        { difficulty: 'Medium', question: "ʼn Leerder vind 25% van R840 met die opboumetode: 'Aangesien 10% gelyk is aan 84, is 25% dus 84 + 84 = 168, plus ʼn bietjie meer.' Sy rond dit af na R168 as haar finale antwoord. Wat is verkeerd met hierdie redenasie, en wat is die korrekte antwoord?", answer: "84 + 84 gee slegs 20% (twee stelle van 10%), nie 25% nie — sy het nog 5% nodig, wat die helfte van 84 = 42 is. Die korrekte antwoord is 84 + 84 + 42 = R210, nie R168 nie.", checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter een is meer: 8% van R950 of 12% van R650?', answer: '12% van R650', checkMode: 'auto', correctAnswer: '12% van R650', correctAnswers: ['12% van R650', '12% van 650', 'R78', '78'], explanation: '8% van R950 = 0,08 × 950 = R76. 12% van R650 = 0,12 × 650 = R78. R78 is meer as R76, dus is 12% van R650 meer.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Skootrekenaar kos R6 400. Die prys word met 6% verhoog weens nuwe invoerkoste. Wat is die nuwe prys?', answer: 'R6784', checkMode: 'auto', correctAnswer: 'R6784', correctAnswers: ['R6784', 'R6 784', '6784', '6 784'], explanation: 'Vind 6% van R6 400: 0,06 × 6 400 = 384. Tel by die oorspronklike: 6 400 + 384 = 6 784. Antwoord: R6 784 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Hemp kos R380. Dit word met 30% verminder tydens ʼn einde-van-seisoen-uitverkoping. Wat is die verkoopprys?', answer: 'R266', checkMode: 'auto', correctAnswer: 'R266', correctAnswers: ['R266', '266'], explanation: 'Vind 30% van R380: 0,30 × 380 = 114. Trek af van die oorspronklike: 380 − 114 = 266. Antwoord: R266 ✓' },
+        { difficulty: 'Hard', question: "Sizwe sê sy maandelikse salaris van R9 500 met ʼn 10%-verhoging is nou R950. Watter fout het hy gemaak, en wat is die korrekte nuwe salaris?", answer: "Sizwe het die toenamebedrag (R950) genoem in plaas van die nuwe totale salaris. Hy moes die toename by die oorspronklike salaris tel. Die korrekte nuwe salaris is 9 500 + 950 = R10 450.", checkMode: 'self' },
+        { difficulty: 'Hard', question: "ʼn Meubelwinkel verkoop ʼn rusbank vir R7 500 met ʼn 20%-korting vir ʼn naweekuitverkoping.\n\na) Wat is die kortingsbedrag?\nb) Wat is die finale verkoopprys?", answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kortingsbedrag', correctAnswer: 'R1500', correctAnswers: ['R1500', 'R1 500', '1500', '1 500'], explanation: 'Vind 20% van R7 500: 0,20 × 7 500 = 1 500. Antwoord: R1 500 ✓' },
+          { label: 'b) Finale verkoopprys', correctAnswer: 'R6000', correctAnswers: ['R6000', 'R6 000', '6000', '6 000'], explanation: 'Verkoopprys = 7 500 − 1 500 = 6 000. Antwoord: R6 000 ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'Twee plase rapporteer hulle mielie-oes as ʼn persentasie van die verwagte opbrengs. Plaas A oes 34 uit 40 verwagte ton, en Plaas B oes 56 uit 70 verwagte ton. Watter plaas het ʼn hoër persentasie van sy verwagte opbrengs behaal?', answer: 'Plaas A', checkMode: 'auto', correctAnswer: 'Plaas A', correctAnswers: ['Plaas A', 'A'], explanation: 'Plaas A: 34 ÷ 40 = 0,85 = 85%. Plaas B: 56 ÷ 70 = 0,8 = 80%. Plaas A het ʼn hoër persentasie van sy verwagte opbrengs behaal.' },
+        { difficulty: 'Hard', question: "ʼn Sportwinkel adverteer '20% af, plus nog ʼn ekstra 10% af vir lidkaarthouers' op hardloopskoene wat oorspronklik R900 kos. ʼn Lidkaarthouer beweer sy sal slegs 70% van die oorspronklike prys betaal, dit wil sê R630. Is sy korrek? Verduidelik met syfers, en gee aan wat sy werklik betaal.", answer: "Nee. Eerste korting: 20% van R900 = R180, dus daal die prys na R720. Tweede korting: 10% van R720 = R72, dus is die finale prys R720 − 72 = R648. Dit is nie dieselfde as om 70% van R900 (R630) te betaal nie, want die tweede 10% word op die reeds-verminderde R720 bereken, nie op die oorspronklike R900 nie. Die opeenvolgende kortings gee ʼn kleiner totale besparing as om eenvoudig 20% + 10% by te tel.", checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantasties! Jy kan persentasies met selfvertroue op werklike vraagstukke toepas.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan terug na die uitgewerkte voorbeelde en probeer die woordprobleme weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

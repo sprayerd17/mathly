@@ -563,6 +563,164 @@ export const topicData: TopicData = {
     },
   ],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 0-3 Getalpatrone enkelbewerking | 4-6 Getalpatrone twee bewerkings |
+    // 7-10 Geometriese lineêre patrone (tabelle/verskille) | 11-13 Kwadratiese + verre stap |
+    // 14-16 Inset-uitset vind reël/voltooi | 17-19 Inset-uitset terugwerk/topvraag
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Vind die volgende term in die patroon: 6, 11, 16, 21, 26, ?', answer: '31', checkMode: 'auto', correctAnswer: '31', correctAnswers: ['31'], explanation: 'Die reël is tel elke keer 5 by.\n26 + 5 = 31 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Watertenk begin met 200 liter en verloor 20 liter elke dag deur verdamping: 200, 180, 160, 140. Hoeveel liter sal daar die volgende dag oor wees?', answer: '120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120', '120 liter', '120 l'], explanation: 'Die reël is trek elke keer 20 af.\n140 − 20 = 120 liter ✓' },
+        { difficulty: 'Easy', question: 'Skryf die reël vir hierdie patroon in woorde: 5, 9, 13, 17.', answer: 'Tel elke keer 4 by.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'ʼn Stuk materiaal 96 m lank word in 8 gelyke stukke gesny vir ʼn naaldwerkklas. Hoe lank is elke stuk?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 m', '12m'], explanation: '96 ÷ 8 = 12. Elke stuk is 12 m lank ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vind die ontbrekende term: 7, ?, 17, 22.', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'Kontroleer die bekende verskil: 22 − 17 = 5, dus is die reël tel elke keer 5 by.\n7 + 5 = 12. Kontroleer: 17 − 12 = 5 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Patroon volg die reël "vermenigvuldig met 2, tel dan 1 by", en begin by 2: 2, 5, 11, 23. Wat is die volgende term?', answer: '47', checkMode: 'auto', correctAnswer: '47', correctAnswers: ['47'], explanation: 'Pas die reël toe op 23: 23 × 2 = 46, tel dan 1 by: 46 + 1 = 47 ✓' },
+        { difficulty: 'Medium', question: 'Vind die reël vir hierdie patroon, en beskryf albei bewerkings in volgorde: 4, 9, 19, 39.', answer: 'Vermenigvuldig elke keer met 2, tel dan 1 by.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Katlego sê die reël vir die patroon 3, 8, 18, 38 is "vermenigvuldig met 2" omdat 3 × 2 = 6 naby aan 8 is. Hy het net die eerste paar getoets. Is sy reël korrek? Gee die korrekte reël.', answer: 'Katlego is verkeerd — hy het net die eerste paar getoets, en 3 × 2 = 6, nie 8 nie, dus werk selfs daardie paar nie regtig met ʼn eenvoudige ×2-reël nie. As al die terme getoets word, sien ʼn mens die patroon verdubbel en tel dan 2 by elke keer: 3 × 2 + 2 = 8 ✓, 8 × 2 + 2 = 18 ✓, 18 × 2 + 2 = 38 ✓. Die korrekte reël is "vermenigvuldig met 2, tel dan 2 by".', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Teëlpatroon word in woorde beskryf: stap 1 het 3 teëls, stap 2 het 5 teëls, stap 3 het 7 teëls. Voltooi die tabel van waardes vir stappe 1 tot 4, en skryf dan die reël neer.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Aantal teëls by stap 4', correctAnswer: '9', explanation: 'Die verskil tussen opeenvolgende waardes is altyd 2, dus is stap 4 = 7 + 2 = 9.' },
+          { label: 'b) Reël (waarde = a × stap + b)', correctAnswer: 'waarde = 2 × stap + 1', correctAnswers: ['waarde = 2 × stap + 1', '2 x stap + 1', '2n+1', '2 × n + 1', '2n + 1'], explanation: 'ʼn Konstante verskil van 2 beteken die reël vermenigvuldig die stapnommer met 2. Kontroleer: 2 × 1 + 1 = 3 ✓, 2 × 2 + 1 = 5 ✓, 2 × 3 + 1 = 7 ✓. Reël: waarde = 2 × stap + 1.' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Vuurhoutjiepatroon groei soos volg: stap 1 gebruik 6 vuurhoutjies, stap 2 gebruik 11 vuurhoutjies, stap 3 gebruik 16 vuurhoutjies. Hoeveel vuurhoutjies word vir stap 7 benodig?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 vuurhoutjies'], explanation: 'Die verskille is elke keer 5, dus is die reël waarde = 5 × stap + 1. Kontroleer: 5 × 1 + 1 = 6 ✓, 5 × 2 + 1 = 11 ✓.\nStap 7: 5 × 7 + 1 = 35 + 1 = 36 vuurhoutjies ✓' },
+        { difficulty: 'Medium', question: 'ʼn Heining word met pale en rale gebou. Pale benodig: stap 1 = 2, stap 2 = 3, stap 3 = 4. Hoeveel pale word vir stap 12 benodig, en wat is die reël?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Reël', correctAnswer: 'pale = stap + 1', correctAnswers: ['pale = stap + 1', 'stap + 1', 'n + 1', 'pale = n + 1'], explanation: 'Elke stap voeg 1 meer paal by as die stapnommer. Kontroleer: 1 + 1 = 2 ✓, 2 + 1 = 3 ✓, 3 + 1 = 4 ✓.' },
+          { label: 'b) Pale benodig vir stap 12', correctAnswer: '13', explanation: 'Vervang stap = 12: 12 + 1 = 13 pale.' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Patroon van vierkante groei soos volg: stap 1 = 1 vierkant, stap 2 = 4 vierkante, stap 3 = 9 vierkante. Hoeveel vierkante is in stap 6?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36'], explanation: 'Die patroon volg waarde = stap², aangesien 1 = 1², 4 = 2², 9 = 3².\nStap 6: 6² = 6 × 6 = 36 vierkante ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Stapel stoele groei met 3 stoele per ry, en begin met 2 stoele in ry 1: ry 1 = 2, ry 2 = 5, ry 3 = 8. Sipho hou aan om 3 herhaaldelik by te tel om ry 50 te vind, wat lank vat. Wys ʼn vinniger manier om die aantal stoele in ry 50 te vind, en gee die antwoord.', answer: 'Sipho gebruik ʼn ondoeltreffende metode — om herhaaldelik 3 by te tel tot by ry 50 beteken hy moet 49 optellings met die hand doen. ʼn Vinniger manier is om die reël te vind en dit direk te vervang. Die reël is stoele = 3 × ry − 1 (kontroleer: 3 × 1 − 1 = 2 ✓, 3 × 2 − 1 = 5 ✓, 3 × 3 − 1 = 8 ✓). Vir ry 50: 3 × 50 − 1 = 150 − 1 = 149 stoele. Om die reël te gebruik is baie vinniger as om 3 nege-en-veertig keer by te tel.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Patroon volg die reël waarde = 4 × stap + 3. Watter stapnommer bereik eerste ʼn waarde van minstens 95?', answer: '23', checkMode: 'auto', correctAnswer: '23', correctAnswers: ['23'], explanation: 'Stel op: 4 × stap + 3 ≥ 95, dus 4 × stap ≥ 92, wat stap ≥ 23 gee.\nKontroleer: stap 22 gee 4 × 22 + 3 = 91 (te klein). Stap 23 gee 4 × 23 + 3 = 95 ✓. Stap 23 is die eerste om minstens 95 te bereik.' },
+        { difficulty: 'Medium-Hard', question: 'Vind die reël vir hierdie inset-uitsettabel.\n\nInset:  3,  5,  7,  9\nUitset: 13, 19, 25, 31', answer: 'uitset = 3 × inset + 4', checkMode: 'auto', correctAnswer: 'uitset = 3 × inset + 4', correctAnswers: ['uitset = 3 × inset + 4', 'uitset = 3 x inset + 4', '3 × inset + 4', '3 x inset + 4', '3n + 4'], explanation: 'Verskille in uitset: 19 − 13 = 6, 25 − 19 = 6, 6 ÷ (5−3) = 3, probeer dus uitset = 3 × inset + b.\n3 × 3 = 9, 13 − 9 = 4. Reël: uitset = 3 × inset + 4.\nKontroleer: 3 × 5 + 4 = 19 ✓, 3 × 7 + 4 = 25 ✓, 3 × 9 + 4 = 31 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Loodgieter vra ʼn uitroepfooi plus ʼn uurlikse tarief volgens die reël: koste = 12 × ure + 50. Voltooi die tabel vir 1, 2, 3 en 5 ure.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Koste vir 1 uur', correctAnswer: '62', explanation: '12 × 1 + 50 = 12 + 50 = 62' },
+          { label: 'b) Koste vir 3 ure', correctAnswer: '86', explanation: '12 × 3 + 50 = 36 + 50 = 86' },
+          { label: 'c) Koste vir 5 ure', correctAnswer: '110', explanation: '12 × 5 + 50 = 60 + 50 = 110' },
+        ] },
+        { difficulty: 'Hard', question: 'Thandiwe beweer die reël vir hierdie tabel is uitset = 3 × inset + 1, omdat dit vir die eerste paar werk.\n\nInset:  2,  4,  6\nUitset: 7, 15, 23\n\nToets haar reël teen elke paar. Is sy korrek?', answer: 'Thandiwe is verkeerd. Kontroleer: 3 × 2 + 1 = 7 ✓ (werk vir die eerste paar), maar 3 × 4 + 1 = 13, nie 15 nie ✗. Die reël geld nie vir die tweede paar nie, dus is dit verkeerd al het dit eers reg gelyk. Die werklike reël is uitset = 4 × inset − 1 (kontroleer: 4 × 2 − 1 = 7 ✓, 4 × 4 − 1 = 15 ✓, 4 × 6 − 1 = 23 ✓). Dit wys waarom ʼn reël teen elke paar getoets moet word, nie net die eerste een nie, voordat dit vertrou kan word.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Gebruik die reël: uitset = 7 × inset − 5. Watter inset gee ʼn uitset van 58?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9'], explanation: 'Stel op: 7 × inset − 5 = 58.\nTel 5 by albei kante: 7 × inset = 63.\nDeel deur 7: inset = 63 ÷ 7 = 9.\nKontroleer: 7 × 9 − 5 = 63 − 5 = 58 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Tabel het insette 2, 4, 6 wat uitsette 11, 19, 27 gee. Vind eers die reël, en gebruik dit dan om die inset te vind wat ʼn uitset van 51 gee.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Reël', correctAnswer: 'uitset = 4 × inset + 3', correctAnswers: ['uitset = 4 × inset + 3', 'uitset = 4 x inset + 3', '4 × inset + 3', '4 x inset + 3', '4n + 3'], explanation: 'Verskille: 19 − 11 = 8 oor ʼn gaping van 2 insette, dus 8 ÷ 2 = 4. Probeer uitset = 4 × inset + b: 4 × 2 = 8, 11 − 8 = 3. Reël: uitset = 4 × inset + 3. Kontroleer: 4 × 4 + 3 = 19 ✓, 4 × 6 + 3 = 27 ✓.' },
+          { label: 'b) Inset vir uitset 51', correctAnswer: '12', explanation: 'Stel op: 4 × inset + 3 = 51. Trek 3 af: 4 × inset = 48. Deel deur 4: inset = 12. Kontroleer: 4 × 12 + 3 = 51 ✓.' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Patroon het terme 6, 11, 16, 21 (reël: 5 × termnommer + 1).\n\na) Wat is die 30ste term?\nb) ʼn Verwante inset-uitsettabel gebruik dieselfde reël as ʼn "uitset = 5 × inset + 1"-masjien. Watter inset gee ʼn uitset van 91?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 30ste term', correctAnswer: '151', explanation: '5 × 30 + 1 = 150 + 1 = 151.' },
+          { label: 'b) Inset vir uitset 91', correctAnswer: '18', explanation: 'Stel op: 5 × inset + 1 = 91. Trek 1 af: 5 × inset = 90. Deel deur 5: inset = 18. Kontroleer: 5 × 18 + 1 = 91 ✓.' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het getalpatrone, geometriese patrone en inset-uitsettabelle bemeester — ʼn volpunt!' },
+        { minScore: 15, message: 'Puik werk! Jy het ʼn sterk begrip van patrone en funksies. Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor reëls en tabelle weer deur, en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer. Jy sal dit kry!' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklegplan as Stel 1, vars bewoording/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Vind die volgende term in die patroon: 8, 15, 22, 29, 36, ?', answer: '43', checkMode: 'auto', correctAnswer: '43', correctAnswers: ['43'], explanation: 'Die reël is tel elke keer 7 by.\n36 + 7 = 43 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Kampeerterrein begin met 150 liter gas en gebruik elke dag 15 liter: 150, 135, 120, 105. Hoeveel liter sal die volgende dag oor wees?', answer: '90', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90', '90 liter', '90 l'], explanation: 'Die reël is trek elke keer 15 af.\n105 − 15 = 90 liter ✓' },
+        { difficulty: 'Easy', question: 'Skryf die reël vir hierdie patroon in woorde: 6, 14, 22, 30.', answer: 'Tel elke keer 8 by.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'ʼn Rol lint 180 cm lank word in 4 gelyke stukke gesny vir geskenkverpakking. Hoe lank is elke stuk?', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45', '45 cm', '45cm'], explanation: '180 ÷ 4 = 45. Elke stuk is 45 cm lank ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vind die ontbrekende term: 9, ?, 21, 27.', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15'], explanation: 'Kontroleer die bekende verskil: 27 − 21 = 6, dus is die reël tel elke keer 6 by.\n9 + 6 = 15. Kontroleer: 21 − 15 = 6 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Patroon volg die reël "vermenigvuldig met 2, tel dan 2 by", en begin by 1: 1, 4, 10, 22. Wat is die volgende term?', answer: '46', checkMode: 'auto', correctAnswer: '46', correctAnswers: ['46'], explanation: 'Pas die reël toe op 22: 22 × 2 = 44, tel dan 2 by: 44 + 2 = 46 ✓' },
+        { difficulty: 'Medium', question: 'Vind die reël vir hierdie patroon, en beskryf albei bewerkings in volgorde: 6, 15, 33, 69.', answer: 'Vermenigvuldig elke keer met 2, tel dan 3 by.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Zanele sê die reël vir die patroon 2, 5, 14, 41 is "tel 3 by" omdat 2 + 3 = 5. Sy het net die eerste paar getoets. Is haar reël korrek? Gee die korrekte reël.', answer: 'Zanele is verkeerd — sy het net die eerste paar getoets. Wanneer die volgende paar getoets word, faal haar reël: 5 + 3 = 8, nie 14 nie. Die patroon vermenigvuldig eintlik elke keer met 3 en trek dan 1 af: 2 × 3 − 1 = 5 ✓, 5 × 3 − 1 = 14 ✓, 14 × 3 − 1 = 41 ✓. Die korrekte reël is "vermenigvuldig met 3, trek dan 1 af".', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Kolletjiepatroon word in woorde beskryf: stap 1 het 4 kolletjies, stap 2 het 7 kolletjies, stap 3 het 10 kolletjies. Voltooi die tabel van waardes vir stappe 1 tot 4, en skryf dan die reël neer.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Aantal kolletjies by stap 4', correctAnswer: '13', explanation: 'Die verskil tussen opeenvolgende waardes is altyd 3, dus is stap 4 = 10 + 3 = 13.' },
+          { label: 'b) Reël (waarde = a × stap + b)', correctAnswer: 'waarde = 3 × stap + 1', correctAnswers: ['waarde = 3 × stap + 1', '3 x stap + 1', '3n+1', '3 × n + 1', '3n + 1'], explanation: 'ʼn Konstante verskil van 3 beteken die reël vermenigvuldig die stapnommer met 3. Kontroleer: 3 × 1 + 1 = 4 ✓, 3 × 2 + 1 = 7 ✓, 3 × 3 + 1 = 10 ✓. Reël: waarde = 3 × stap + 1.' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Heiningraalpatroon groei soos volg: stap 1 gebruik 5 rale, stap 2 gebruik 9 rale, stap 3 gebruik 13 rale. Hoeveel rale word vir stap 14 benodig?', answer: '57', checkMode: 'auto', correctAnswer: '57', correctAnswers: ['57', '57 rale'], explanation: 'Die verskille is elke keer 4, dus is die reël waarde = 4 × stap + 1. Kontroleer: 4 × 1 + 1 = 5 ✓, 4 × 2 + 1 = 9 ✓.\nStap 14: 4 × 14 + 1 = 56 + 1 = 57 rale ✓' },
+        { difficulty: 'Medium', question: 'ʼn Geteëlde patio groei met dieselfde hoeveelheid elke stap. Teëls benodig: stap 7 = 19, stap 10 = 25. Wat is die konstante verskil per stap, en hoeveel teëls word vir stap 8 benodig?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Verskil per stap', correctAnswer: '2', explanation: 'Van stap 7 tot stap 10 is 3 stappe, en teëls styg van 19 na 25, ʼn toename van 6. 6 ÷ 3 = 2 teëls per stap.' },
+          { label: 'b) Teëls benodig vir stap 8', correctAnswer: '21', explanation: 'Stap 8 is een stap na stap 7: 19 + 2 = 21 teëls.' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Patroon van vierkante groei soos volg: stap 1 = 1 vierkant, stap 2 = 4 vierkante, stap 3 = 9 vierkante. Hoeveel vierkante is in stap 7?', answer: '49', checkMode: 'auto', correctAnswer: '49', correctAnswers: ['49'], explanation: 'Die patroon volg waarde = stap², aangesien 1 = 1², 4 = 2², 9 = 3².\nStap 7: 7² = 7 × 7 = 49 vierkante ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Ry tuinpaadklippe groei met 3 klippe per stap, en begin met 3 klippe by stap 1: stap 1 = 3, stap 2 = 6, stap 3 = 9. Bongani hou aan om 3 herhaaldelik by te tel om stap 40 te vind, wat lank vat. Wys ʼn vinniger manier om die aantal klippe in stap 40 te vind, en gee die antwoord.', answer: 'Bongani gebruik ʼn ondoeltreffende metode — om herhaaldelik 3 by te tel tot by stap 40 beteken hy moet 39 optellings met die hand doen. ʼn Vinniger manier is om die reël te vind en dit direk te vervang. Die reël is klippe = 3 × stap (kontroleer: 3 × 1 = 3 ✓, 3 × 2 = 6 ✓, 3 × 3 = 9 ✓). Vir stap 40: 3 × 40 = 120 klippe. Om die reël te gebruik is baie vinniger as om 3 nege-en-dertig keer by te tel.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Patroon volg die reël waarde = 5 × stap + 2. Watter stapnommer bereik eerste ʼn waarde van minstens 127?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25'], explanation: 'Stel op: 5 × stap + 2 ≥ 127, dus 5 × stap ≥ 125, wat stap ≥ 25 gee.\nKontroleer: stap 24 gee 5 × 24 + 2 = 122 (te klein). Stap 25 gee 5 × 25 + 2 = 127 ✓. Stap 25 is die eerste om minstens 127 te bereik.' },
+        { difficulty: 'Medium-Hard', question: 'Vind die reël vir hierdie inset-uitsettabel.\n\nInset:  1,  3,  5,  7\nUitset: 6, 16, 26, 36', answer: 'uitset = 5 × inset + 1', checkMode: 'auto', correctAnswer: 'uitset = 5 × inset + 1', correctAnswers: ['uitset = 5 × inset + 1', 'uitset = 5 x inset + 1', '5 × inset + 1', '5 x inset + 1', '5n + 1'], explanation: 'Verskille in uitset: 16 − 6 = 10, oor ʼn gaping van 2 insette, dus 10 ÷ 2 = 5. Probeer uitset = 5 × inset + b.\n5 × 1 = 5, 6 − 5 = 1. Reël: uitset = 5 × inset + 1.\nKontroleer: 5 × 3 + 1 = 16 ✓, 5 × 5 + 1 = 26 ✓, 5 × 7 + 1 = 36 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Taxi vra ʼn basiese tarief plus ʼn tarief per kilometer volgens die reël: fooi = 9 × km + 15. Voltooi die tabel vir 2, 4 en 7 km.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Fooi vir 2 km', correctAnswer: '33', explanation: '9 × 2 + 15 = 18 + 15 = 33' },
+          { label: 'b) Fooi vir 4 km', correctAnswer: '51', explanation: '9 × 4 + 15 = 36 + 15 = 51' },
+          { label: 'c) Fooi vir 7 km', correctAnswer: '78', explanation: '9 × 7 + 15 = 63 + 15 = 78' },
+        ] },
+        { difficulty: 'Hard', question: 'Mpho beweer die reël vir hierdie tabel is uitset = 4 × inset + 4, omdat dit vir die eerste paar werk.\n\nInset:  3,  5,  7\nUitset: 16, 26, 36\n\nToets sy reël teen elke paar. Is hy korrek?', answer: 'Mpho is verkeerd. Kontroleer: 4 × 3 + 4 = 16 ✓ (werk vir die eerste paar), maar 4 × 5 + 4 = 24, nie 26 nie ✗. Die reël geld nie vir die tweede paar nie, dus is dit verkeerd al het dit eers reg gelyk. Die werklike reël is uitset = 5 × inset + 1 (kontroleer: 5 × 3 + 1 = 16 ✓, 5 × 5 + 1 = 26 ✓, 5 × 7 + 1 = 36 ✓). Dit wys waarom ʼn reël teen elke paar in die tabel getoets moet word, nie net die eerste een nie, voordat dit vertrou kan word.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Gebruik die reël: uitset = 6 × inset − 4. Watter inset gee ʼn uitset van 44?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'Stel op: 6 × inset − 4 = 44.\nTel 4 by albei kante: 6 × inset = 48.\nDeel deur 6: inset = 48 ÷ 6 = 8.\nKontroleer: 6 × 8 − 4 = 48 − 4 = 44 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Tabel het insette 2, 4, 6 wat uitsette 9, 17, 25 gee. Vind eers die reël, en gebruik dit dan om die inset te vind wat ʼn uitset van 41 gee.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Reël', correctAnswer: 'uitset = 4 × inset + 1', correctAnswers: ['uitset = 4 × inset + 1', 'uitset = 4 x inset + 1', '4 × inset + 1', '4 x inset + 1', '4n + 1'], explanation: 'Verskille: 17 − 9 = 8 oor ʼn gaping van 2 insette, dus 8 ÷ 2 = 4. Probeer uitset = 4 × inset + b: 4 × 2 = 8, 9 − 8 = 1. Reël: uitset = 4 × inset + 1. Kontroleer: 4 × 4 + 1 = 17 ✓, 4 × 6 + 1 = 25 ✓.' },
+          { label: 'b) Inset vir uitset 41', correctAnswer: '10', explanation: 'Stel op: 4 × inset + 1 = 41. Trek 1 af: 4 × inset = 40. Deel deur 4: inset = 10. Kontroleer: 4 × 10 + 1 = 41 ✓.' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Patroon het terme 8, 13, 18, 23 (reël: 5 × termnommer + 3).\n\na) Wat is die 25ste term?\nb) ʼn Verwante inset-uitsettabel gebruik dieselfde reël as ʼn "uitset = 5 × inset + 3"-masjien. Watter inset gee ʼn uitset van 78?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 25ste term', correctAnswer: '128', explanation: '5 × 25 + 3 = 125 + 3 = 128.' },
+          { label: 'b) Inset vir uitset 78', correctAnswer: '15', explanation: 'Stel op: 5 × inset + 3 = 78. Trek 3 af: 5 × inset = 75. Deel deur 5: inset = 15. Kontroleer: 5 × 15 + 3 = 78 ✓.' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het getalpatrone, geometriese patrone en inset-uitsettabelle bemeester — ʼn volpunt!' },
+        { minScore: 15, message: 'Puik werk! Jy het ʼn sterk begrip van patrone en funksies. Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor reëls en tabelle weer deur, en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer. Jy sal dit kry!' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklegplan as Stel 1 en 2, vars bewoording/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Vind die volgende term in die patroon: 10, 17, 24, 31, 38, ?', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45'], explanation: 'Die reël is tel elke keer 7 by.\n38 + 7 = 45 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Blok ys wat 120 g weeg, smelt teen ʼn tempo van 15 g elke uur: 120, 105, 90, 75. Hoeveel gram sal na die volgende uur oor wees?', answer: '60', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60 g', '60g'], explanation: 'Die reël is trek elke keer 15 af.\n75 − 15 = 60 gram ✓' },
+        { difficulty: 'Easy', question: 'Skryf die reël vir hierdie patroon in woorde: 7, 13, 19, 25.', answer: 'Tel elke keer 6 by.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'ʼn Stuk tou 144 m lank word in 6 gelyke stukke gesny vir ʼn skoolsportdag. Hoe lank is elke stuk?', answer: '24', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 m', '24m'], explanation: '144 ÷ 6 = 24. Elke stuk is 24 m lank ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vind die ontbrekende term: 4, ?, 20, 28.', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'Kontroleer die bekende verskil: 28 − 20 = 8, dus is die reël tel elke keer 8 by.\n4 + 8 = 12. Kontroleer: 20 − 12 = 8 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Patroon volg die reël "vermenigvuldig met 2, tel dan 2 by", en begin by 3: 3, 8, 18, 38. Wat is die volgende term?', answer: '78', checkMode: 'auto', correctAnswer: '78', correctAnswers: ['78'], explanation: 'Pas die reël toe op 38: 38 × 2 = 76, tel dan 2 by: 76 + 2 = 78 ✓' },
+        { difficulty: 'Medium', question: 'Vind die reël vir hierdie patroon, en beskryf albei bewerkings in volgorde: 4, 11, 25, 53.', answer: 'Vermenigvuldig elke keer met 2, tel dan 3 by.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Given sê die reël vir die patroon 4, 10, 28, 82 is "tel 6 by" omdat 4 + 6 = 10. Hy het net die eerste paar getoets. Is sy reël korrek? Gee die korrekte reël.', answer: 'Given is verkeerd — hy het net die eerste paar getoets. Wanneer die volgende paar getoets word, faal sy reël: 10 + 6 = 16, nie 28 nie. Die patroon vermenigvuldig eintlik elke keer met 3 en trek dan 2 af: 4 × 3 − 2 = 10 ✓, 10 × 3 − 2 = 28 ✓, 28 × 3 − 2 = 82 ✓. Die korrekte reël is "vermenigvuldig met 3, trek dan 2 af".', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Kolletjiepatroon word in woorde beskryf: stap 1 het 3 kolletjies, stap 2 het 7 kolletjies, stap 3 het 11 kolletjies. Voltooi die tabel van waardes vir stappe 1 tot 4, en skryf dan die reël neer.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Aantal kolletjies by stap 4', correctAnswer: '15', explanation: 'Die verskil tussen opeenvolgende waardes is altyd 4, dus is stap 4 = 11 + 4 = 15.' },
+          { label: 'b) Reël (waarde = a × stap + b)', correctAnswer: 'waarde = 4 × stap − 1', correctAnswers: ['waarde = 4 × stap − 1', 'waarde = 4 x stap - 1', '4 × stap − 1', '4n-1', '4n − 1', '4 × n − 1'], explanation: 'ʼn Konstante verskil van 4 beteken die reël vermenigvuldig die stapnommer met 4. Kontroleer: 4 × 1 − 1 = 3 ✓, 4 × 2 − 1 = 7 ✓, 4 × 3 − 1 = 11 ✓. Reël: waarde = 4 × stap − 1.' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Heiningraalpatroon groei soos volg: stap 1 gebruik 5 rale, stap 2 gebruik 8 rale, stap 3 gebruik 11 rale. Hoeveel rale word vir stap 16 benodig?', answer: '50', checkMode: 'auto', correctAnswer: '50', correctAnswers: ['50', '50 rale'], explanation: 'Die verskille is elke keer 3, dus is die reël waarde = 3 × stap + 2. Kontroleer: 3 × 1 + 2 = 5 ✓, 3 × 2 + 2 = 8 ✓.\nStap 16: 3 × 16 + 2 = 48 + 2 = 50 rale ✓' },
+        { difficulty: 'Medium', question: 'ʼn Geteëlde patio groei met dieselfde hoeveelheid elke stap. Teëls benodig: stap 8 = 29, stap 13 = 49. Wat is die konstante verskil per stap, en hoeveel teëls word vir stap 9 benodig?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Verskil per stap', correctAnswer: '4', explanation: 'Van stap 8 tot stap 13 is 5 stappe, en teëls styg van 29 na 49, ʼn toename van 20. 20 ÷ 5 = 4 teëls per stap.' },
+          { label: 'b) Teëls benodig vir stap 9', correctAnswer: '33', explanation: 'Stap 9 is een stap na stap 8: 29 + 4 = 33 teëls.' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Patroon van vierkante groei soos volg: stap 1 = 1 vierkant, stap 2 = 4 vierkante, stap 3 = 9 vierkante. Hoeveel vierkante is in stap 8?', answer: '64', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64'], explanation: 'Die patroon volg waarde = stap², aangesien 1 = 1², 4 = 2², 9 = 3².\nStap 8: 8² = 8 × 8 = 64 vierkante ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Ry tuinpaadklippe groei met 4 klippe per stap, en begin met 3 klippe by stap 1: stap 1 = 3, stap 2 = 7, stap 3 = 11. Palesa hou aan om 4 herhaaldelik by te tel om stap 60 te vind, wat lank vat. Wys ʼn vinniger manier om die aantal klippe in stap 60 te vind, en gee die antwoord.', answer: 'Palesa gebruik ʼn ondoeltreffende metode — om herhaaldelik 4 by te tel tot by stap 60 beteken sy moet 59 optellings met die hand doen. ʼn Vinniger manier is om die reël te vind en dit direk te vervang. Die reël is klippe = 4 × stap − 1 (kontroleer: 4 × 1 − 1 = 3 ✓, 4 × 2 − 1 = 7 ✓, 4 × 3 − 1 = 11 ✓). Vir stap 60: 4 × 60 − 1 = 240 − 1 = 239 klippe. Om die reël te gebruik is baie vinniger as om 4 nege-en-vyftig keer by te tel.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Patroon volg die reël waarde = 6 × stap + 1. Watter stapnommer bereik eerste ʼn waarde van minstens 155?', answer: '26', checkMode: 'auto', correctAnswer: '26', correctAnswers: ['26'], explanation: 'Stel op: 6 × stap + 1 ≥ 155, dus 6 × stap ≥ 154, wat stap ≥ 25,67 gee, so stap moet 26 wees.\nKontroleer: stap 25 gee 6 × 25 + 1 = 151 (te klein). Stap 26 gee 6 × 26 + 1 = 157 ✓. Stap 26 is die eerste om minstens 155 te bereik.' },
+        { difficulty: 'Medium-Hard', question: 'Vind die reël vir hierdie inset-uitsettabel.\n\nInset:  2,  4,  6,  8\nUitset: 11, 21, 31, 41', answer: 'uitset = 5 × inset + 1', checkMode: 'auto', correctAnswer: 'uitset = 5 × inset + 1', correctAnswers: ['uitset = 5 × inset + 1', 'uitset = 5 x inset + 1', '5 × inset + 1', '5 x inset + 1', '5n + 1'], explanation: 'Verskille in uitset: 21 − 11 = 10, oor ʼn gaping van 2 insette, dus 10 ÷ 2 = 5. Probeer uitset = 5 × inset + b.\n5 × 2 = 10, 11 − 10 = 1. Reël: uitset = 5 × inset + 1.\nKontroleer: 5 × 4 + 1 = 21 ✓, 5 × 6 + 1 = 31 ✓, 5 × 8 + 1 = 41 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Toergids vra ʼn basiese fooi plus ʼn tarief per persoon volgens die reël: koste = 10 × mense + 18. Voltooi die tabel vir 2, 5 en 9 mense.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Koste vir 2 mense', correctAnswer: '38', explanation: '10 × 2 + 18 = 20 + 18 = 38' },
+          { label: 'b) Koste vir 5 mense', correctAnswer: '68', explanation: '10 × 5 + 18 = 50 + 18 = 68' },
+          { label: 'c) Koste vir 9 mense', correctAnswer: '108', explanation: '10 × 9 + 18 = 90 + 18 = 108' },
+        ] },
+        { difficulty: 'Hard', question: 'Refilwe beweer die reël vir hierdie tabel is uitset = 4 × inset + 1, omdat dit vir die eerste paar werk.\n\nInset:  2,  4,  6\nUitset: 9, 19, 29\n\nToets haar reël teen elke paar. Is sy korrek?', answer: 'Refilwe is verkeerd. Kontroleer: 4 × 2 + 1 = 9 ✓ (werk vir die eerste paar), maar 4 × 4 + 1 = 17, nie 19 nie ✗. Die reël geld nie vir die tweede of derde paar nie, dus is dit verkeerd al het dit eers reg gelyk. Die werklike reël is uitset = 5 × inset − 1 (kontroleer: 5 × 2 − 1 = 9 ✓, 5 × 4 − 1 = 19 ✓, 5 × 6 − 1 = 29 ✓). Dit wys waarom ʼn reël teen elke paar getoets moet word, nie net die eerste een nie, voordat dit vertrou kan word.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Gebruik die reël: uitset = 4 × inset − 9. Watter inset gee ʼn uitset van 19?', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: 'Stel op: 4 × inset − 9 = 19.\nTel 9 by albei kante: 4 × inset = 28.\nDeel deur 4: inset = 28 ÷ 4 = 7.\nKontroleer: 4 × 7 − 9 = 28 − 9 = 19 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Tabel het insette 3, 5, 7 wat uitsette 16, 26, 36 gee. Vind eers die reël, en gebruik dit dan om die inset te vind wat ʼn uitset van 56 gee.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Reël', correctAnswer: 'uitset = 5 × inset + 1', correctAnswers: ['uitset = 5 × inset + 1', 'uitset = 5 x inset + 1', '5 × inset + 1', '5 x inset + 1', '5n + 1'], explanation: 'Verskille: 26 − 16 = 10 oor ʼn gaping van 2 insette, dus 10 ÷ 2 = 5. Probeer uitset = 5 × inset + b: 5 × 3 = 15, 16 − 15 = 1. Reël: uitset = 5 × inset + 1. Kontroleer: 5 × 5 + 1 = 26 ✓, 5 × 7 + 1 = 36 ✓.' },
+          { label: 'b) Inset vir uitset 56', correctAnswer: '11', explanation: 'Stel op: 5 × inset + 1 = 56. Trek 1 af: 5 × inset = 55. Deel deur 5: inset = 11. Kontroleer: 5 × 11 + 1 = 56 ✓.' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Patroon het terme 4, 10, 16, 22 (reël: 6 × termnommer − 2).\n\na) Wat is die 40ste term?\nb) ʼn Verwante inset-uitsettabel gebruik dieselfde reël as ʼn "uitset = 6 × inset − 2"-masjien. Watter inset gee ʼn uitset van 70?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 40ste term', correctAnswer: '238', explanation: '6 × 40 − 2 = 240 − 2 = 238.' },
+          { label: 'b) Inset vir uitset 70', correctAnswer: '12', explanation: 'Stel op: 6 × inset − 2 = 70. Tel 2 by: 6 × inset = 72. Deel deur 6: inset = 12. Kontroleer: 6 × 12 − 2 = 70 ✓.' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het getalpatrone, geometriese patrone en inset-uitsettabelle bemeester — ʼn volpunt!' },
+        { minScore: 15, message: 'Puik werk! Jy het ʼn sterk begrip van patrone en funksies. Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor reëls en tabelle weer deur, en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer. Jy sal dit kry!' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 12,
     messages: [

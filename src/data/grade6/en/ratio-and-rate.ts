@@ -540,6 +540,162 @@ export const topicData: TopicData = {
     },
 
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Writing and Simplifying Ratios (0-3, Easy)
+        { difficulty: 'Easy', question: 'Simplify the ratio 48:36.', answer: '4:3', checkMode: 'auto', correctAnswer: '4:3', correctAnswers: ['4:3'], explanation: 'HCF of 48 and 36 is 12.\n48 ÷ 12 = 4 and 36 ÷ 12 = 3.\nSimplified ratio = 4:3 ✓' },
+        { difficulty: 'Easy', question: 'A fruit bowl has 24 red apples and 16 green apples. Write the ratio of red apples to green apples in simplest form.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'HCF of 24 and 16 is 8.\n24 ÷ 8 = 3 and 16 ÷ 8 = 2.\nRatio of red to green = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'A choir has 15 sopranos, 10 altos and 5 tenors. Zinhle wants the ratio of sopranos to altos to tenors. Write this ratio in simplest form, and explain why the order she lists them in matters.', answer: 'Sopranos to altos to tenors = 15:10:5. HCF of 15, 10 and 5 is 5, so the simplified ratio is 3:2:1. The order matters because each position in the ratio stands for a specific group — writing it in a different order (like 10:15:5) would describe altos to sopranos to tenors instead, which is a different comparison.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'A learner simplifies 60:24 by dividing only the first number by 12, writing the answer as "5:24". Explain the mistake and give the correct simplified ratio.', answer: 'The learner only divided the first term by the HCF and left the second term unchanged. Both parts of a ratio must be divided by the same HCF. HCF of 60 and 24 is 12, so 60 ÷ 12 = 5 and 24 ÷ 12 = 2. The correct simplified ratio is 5:2, not 5:24.', checkMode: 'self' },
+
+        // Block 2 — Equivalent Ratios (4-7, Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Are 3:7 and 15:35 equivalent ratios?', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes', 'YES'], explanation: 'Multiply both parts of 3:7 by 5: 3 × 5 = 15 and 7 × 5 = 35.\nSo 15:35 = 3:7.\nYes, they are equivalent ratios ✓' },
+        { difficulty: 'Medium', question: 'A pancake recipe uses flour and milk in the ratio 4:9. If a bigger batch uses 36 cups of milk, how many cups of flour are needed?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 cups'], explanation: 'Ratio flour:milk = 4:9.\nScale factor = 36 ÷ 9 = 4.\nFlour = 4 × 4 = 16 cups ✓' },
+        { difficulty: 'Medium', question: 'Which of these ratios is equivalent to 3:8 — 9:24 or 9:16?', answer: '9:24', checkMode: 'auto', correctAnswer: '9:24', correctAnswers: ['9:24', '9:24 only'], explanation: 'Test 9:24: 9 ÷ 3 = 3 and 24 ÷ 3 = 8, so 9:24 = 3:8 ✓\nTest 9:16: 9 ÷ 3 = 3 but 16 ÷ 3 is not a whole number, so 9:16 ≠ 3:8.\n9:24 is equivalent to 3:8 ✓' },
+        { difficulty: 'Medium', question: 'A student checks if 5:9 and 8:12 are equivalent by adding 3 to both parts of 5:9 to get 8:12, and concludes they are equivalent. Is this reasoning correct? Explain.', answer: 'No, this reasoning is incorrect. Equivalent ratios are found by multiplying or dividing both parts by the same number, not by adding the same number to both parts. Testing properly: 5:9 would need to be multiplied by the same factor on both sides to equal 8:12, but 8 ÷ 5 = 1.6 while 12 ÷ 9 = 1.33, which are different, so 5:9 and 8:12 are not actually equivalent ratios.', checkMode: 'self' },
+
+        // Block 3 — Dividing an Amount in a Given Ratio (8-11, Medium)
+        { difficulty: 'Medium', question: 'Divide R560 in the ratio 3:4.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) First share', correctAnswer: 'R240', correctAnswers: ['R240', '240'], explanation: 'Total parts = 3 + 4 = 7.\nOne part = R560 ÷ 7 = R80.\nFirst share = 3 × R80 = R240 ✓' },
+          { label: 'b) Second share', correctAnswer: 'R320', correctAnswers: ['R320', '320'], explanation: 'Total parts = 3 + 4 = 7.\nOne part = R560 ÷ 7 = R80.\nSecond share = 4 × R80 = R320 ✓\nCheck: R240 + R320 = R560 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Nomvula, Karabo and Ayanda share 900 stickers in the ratio 1:2:3. How many stickers does each person get?', answer: '', checkMode: 'auto', parts: [
+          { label: "a) Nomvula's stickers", correctAnswer: '150', correctAnswers: ['150'], explanation: 'Total parts = 1 + 2 + 3 = 6.\nOne part = 900 ÷ 6 = 150.\nNomvula = 1 × 150 = 150 ✓' },
+          { label: "b) Karabo's stickers", correctAnswer: '300', correctAnswers: ['300'], explanation: 'Total parts = 1 + 2 + 3 = 6.\nOne part = 900 ÷ 6 = 150.\nKarabo = 2 × 150 = 300 ✓' },
+          { label: "c) Ayanda's stickers", correctAnswer: '450', correctAnswers: ['450'], explanation: 'Total parts = 1 + 2 + 3 = 6.\nOne part = 900 ÷ 6 = 150.\nAyanda = 3 × 150 = 450 ✓\nCheck: 150 + 300 + 450 = 900 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Two friends split a bag of marbles in the ratio 3:5. The friend with the smaller share receives 45 marbles. How many marbles were in the bag altogether?', answer: '120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120'], explanation: 'The smaller share corresponds to the "3" part of the ratio.\nOne part = 45 ÷ 3 = 15.\nTotal parts = 3 + 5 = 8.\nTotal marbles = 8 × 15 = 120 ✓' },
+        { difficulty: 'Medium', question: 'A 250 m rope is cut into two pieces in the ratio 2:3. Palesa checks her answer by adding the two pieces back together. What should the two pieces measure, and does her check work?', answer: '100 m and 150 m. Check: 100 + 150 = 250 m, which matches the original length, so the check works.', checkMode: 'self' },
+
+        // Block 4 — Rates and Unit Rates (12-15, Medium)
+        { difficulty: 'Medium', question: 'A train travels 336 km in 4 hours. What is its speed in km per hour?', answer: '84 km/h', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84', '84km/h', '84 km/h', '84km per hour', '84 km per hour'], explanation: 'Speed = distance ÷ time.\n336 ÷ 4 = 84 km/h ✓' },
+        { difficulty: 'Medium', question: 'Explain the difference between a ratio and a rate, using an example of each.', answer: 'A ratio compares two quantities of the same kind and has no units, e.g. 3 boys to 5 girls is 3:5. A rate compares two quantities of different kinds and always has units, e.g. 84 km per hour compares distance (km) to time (hours).', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A shop sells juice at R63 for 7 litres at one store, and R70 for 8 litres at another store. Which store has the cheaper price per litre?', answer: 'second store', checkMode: 'auto', correctAnswer: 'second store', correctAnswers: ['second store', 'the second store', 'second', 'store 2'], explanation: 'First store: R63 ÷ 7 = R9 per litre.\nSecond store: R70 ÷ 8 = R8.75 per litre.\nR8.75 is less than R9, so the second store has the cheaper price per litre ✓' },
+        { difficulty: 'Medium', question: 'A learner calculates a unit rate for a car travelling 180 km in 4 hours by computing 4 ÷ 180 and getting 0.0222 hours per km. Explain what went wrong and give the correct unit rate in km per hour.', answer: 'The learner divided time by distance instead of distance by time, which gives hours per km instead of km per hour. The correct unit rate is distance ÷ time = 180 ÷ 4 = 45 km per hour.', checkMode: 'self' },
+
+        // Block 5 — Solving Rate Problems (16-19, Hard)
+        { difficulty: 'Hard', question: 'A hosepipe fills a paddling pool at a rate of 9 litres per minute. How much water is in the pool after 6 minutes?', answer: '54 litres', checkMode: 'auto', correctAnswer: '54', correctAnswers: ['54', '54 litres', '54L', '54 liters'], explanation: 'We know the unit rate (9 litres per minute) and the quantity (6 minutes). We need the total, so multiply: 9 × 6 = 54 litres ✓' },
+        { difficulty: 'Hard', question: 'Katlego earns money at a rate of R12 per hour. Before choosing to multiply or divide, identify what is given and what needs to be found if she wants to know how many hours she must work to earn R180.', answer: 'Given: the unit rate (R12 per hour) and the total amount to earn (R180). Needed: the number of hours (the quantity). Since the total and the rate are known, we divide: 180 ÷ 12 = 15 hours.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sizwe drives 100 km at 50 km per hour, then a further 80 km at 40 km per hour. What is the total time for his journey?', answer: '4 hours', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 hours', '4h', '4 hrs'], explanation: 'Time for first leg: 100 ÷ 50 = 2 hours.\nTime for second leg: 80 ÷ 40 = 2 hours.\nTotal time = 2 + 2 = 4 hours ✓' },
+        { difficulty: 'Hard', question: 'A student earns R216 working at a rate of R18 per hour, and calculates the number of hours worked as 216 × 18 = 3 888 hours. Explain the mistake and give the correct number of hours.', answer: 'The student multiplied instead of dividing. When you know the total earned and the unit rate, you divide the total by the rate to find the quantity (hours), not multiply. The correct calculation is 216 ÷ 18 = 12 hours.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered ratios, equivalent ratios, dividing in a ratio and rate problems.' },
+        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 10, message: 'Good effort! Revisit simplifying ratios and unit rates, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Writing and Simplifying Ratios (0-3, Easy)
+        { difficulty: 'Easy', question: 'Simplify the ratio 32:24.', answer: '4:3', checkMode: 'auto', correctAnswer: '4:3', correctAnswers: ['4:3'], explanation: 'HCF of 32 and 24 is 8.\n32 ÷ 8 = 4 and 24 ÷ 8 = 3.\nSimplified ratio = 4:3 ✓' },
+        { difficulty: 'Easy', question: 'A garden has 18 rose bushes and 30 lavender bushes. Write the ratio of rose bushes to lavender bushes in simplest form.', answer: '3:5', checkMode: 'auto', correctAnswer: '3:5', correctAnswers: ['3:5'], explanation: 'HCF of 18 and 30 is 6.\n18 ÷ 6 = 3 and 30 ÷ 6 = 5.\nRatio of rose to lavender = 3:5 ✓' },
+        { difficulty: 'Easy', question: 'A fruit basket has 8 apples, 5 pears and 3 bananas. Write the ratio of bananas to apples to pears (in that order).', answer: '3:8:5', checkMode: 'auto', correctAnswer: '3:8:5', correctAnswers: ['3:8:5'], explanation: 'The order requested is bananas, then apples, then pears.\nBananas = 3, apples = 8, pears = 5.\nRatio = 3:8:5 ✓ (this cannot be simplified further since HCF of 3, 8 and 5 is 1)' },
+        { difficulty: 'Easy', question: 'A learner simplifies 55:33 and says the HCF is 5, giving an answer of 11:6.6. Explain the mistake and give the correct simplified ratio.', answer: 'The learner used the wrong HCF. The HCF of 55 and 33 is actually 11, not 5. Dividing correctly: 55 ÷ 11 = 5 and 33 ÷ 11 = 3, giving the correct simplified ratio of 5:3.', checkMode: 'self' },
+
+        // Block 2 — Equivalent Ratios (4-7, Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Are 5:6 and 20:24 equivalent ratios?', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes', 'YES'], explanation: 'Multiply both parts of 5:6 by 4: 5 × 4 = 20 and 6 × 4 = 24.\nSo 20:24 = 5:6.\nYes, they are equivalent ratios ✓' },
+        { difficulty: 'Medium', question: 'A paint mixture uses blue and white paint in the ratio 4:7. If a larger batch uses 28 litres of white paint, how many litres of blue paint are needed?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 litres', '16L'], explanation: 'Ratio blue:white = 4:7.\nScale factor = 28 ÷ 7 = 4.\nBlue paint = 4 × 4 = 16 litres ✓' },
+        { difficulty: 'Medium', question: 'Which of these ratios is equivalent to 12:18 — 2:3 or 3:4?', answer: '2:3', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', '2:3 only'], explanation: 'HCF of 12 and 18 is 6.\n12 ÷ 6 = 2 and 18 ÷ 6 = 3, so 12:18 simplifies to 2:3.\n2:3 is equivalent to 12:18 ✓' },
+        { difficulty: 'Medium', question: 'A student checks if 4:5 and 7:8 are equivalent by adding 3 to both parts of 4:5 to get 7:8, and concludes they are equivalent. Is this correct? Explain.', answer: 'No, this is incorrect. Equivalent ratios must be formed by multiplying or dividing both parts by the same number, not adding the same number to each part. Testing properly, 7 ÷ 4 = 1.75 while 8 ÷ 5 = 1.6, which are not equal, so 4:5 and 7:8 are not equivalent ratios.', checkMode: 'self' },
+
+        // Block 3 — Dividing an Amount in a Given Ratio (8-11, Medium)
+        { difficulty: 'Medium', question: 'Divide R720 in the ratio 5:4.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) First share', correctAnswer: 'R400', correctAnswers: ['R400', '400'], explanation: 'Total parts = 5 + 4 = 9.\nOne part = R720 ÷ 9 = R80.\nFirst share = 5 × R80 = R400 ✓' },
+          { label: 'b) Second share', correctAnswer: 'R320', correctAnswers: ['R320', '320'], explanation: 'Total parts = 5 + 4 = 9.\nOne part = R720 ÷ 9 = R80.\nSecond share = 4 × R80 = R320 ✓\nCheck: R400 + R320 = R720 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Bongani, Thandiwe and Musa share 900 sweets in the ratio 1:2:3. How many sweets does each person get?', answer: '', checkMode: 'auto', parts: [
+          { label: "a) Bongani's sweets", correctAnswer: '150', correctAnswers: ['150'], explanation: 'Total parts = 1 + 2 + 3 = 6.\nOne part = 900 ÷ 6 = 150.\nBongani = 1 × 150 = 150 ✓' },
+          { label: "b) Thandiwe's sweets", correctAnswer: '300', correctAnswers: ['300'], explanation: 'Total parts = 1 + 2 + 3 = 6.\nOne part = 900 ÷ 6 = 150.\nThandiwe = 2 × 150 = 300 ✓' },
+          { label: "c) Musa's sweets", correctAnswer: '450', correctAnswers: ['450'], explanation: 'Total parts = 1 + 2 + 3 = 6.\nOne part = 900 ÷ 6 = 150.\nMusa = 3 × 150 = 450 ✓\nCheck: 150 + 300 + 450 = 900 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Two cousins split a stack of trading cards in the ratio 5:3. The cousin with the smaller share receives 36 cards. How many cards were in the stack altogether?', answer: '96', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96'], explanation: 'The smaller share corresponds to the "3" part of the ratio.\nOne part = 36 ÷ 3 = 12.\nTotal parts = 5 + 3 = 8.\nTotal cards = 8 × 12 = 96 ✓' },
+        { difficulty: 'Medium', question: 'A 250 m length of fencing wire is cut into two pieces in the ratio 2:3. Thabiso checks his answer by adding the two pieces back together. What should the two pieces measure, and does his check work?', answer: '100 m and 150 m. Check: 100 + 150 = 250 m, which matches the original length, so the check works.', checkMode: 'self' },
+
+        // Block 4 — Rates and Unit Rates (12-15, Medium)
+        { difficulty: 'Medium', question: 'A delivery van travels 420 km in 6 hours. What is its average speed in km per hour?', answer: '70 km/h', checkMode: 'auto', correctAnswer: '70', correctAnswers: ['70', '70km/h', '70 km/h', '70km per hour', '70 km per hour'], explanation: 'Speed = distance ÷ time.\n420 ÷ 6 = 70 km/h ✓' },
+        { difficulty: 'Medium', question: 'Explain, using an example, why a rate has units but a ratio does not.', answer: 'A ratio compares two quantities of the same kind, so the units are the same on both sides and cancel out — for example comparing 6 boys to 9 girls gives 6:9, with no units. A rate compares two quantities of different kinds, so the units cannot cancel — for example 70 km per hour compares kilometres to hours, so the answer must be written with units.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A shop sells cooking oil at R84 for a 4 litre bottle, and R150 for a 6 litre bottle. Which bottle offers the cheaper price per litre?', answer: 'first bottle', checkMode: 'auto', correctAnswer: 'first bottle', correctAnswers: ['first bottle', 'the first bottle', 'first', 'bottle 1', '4 litre bottle'], explanation: 'First bottle: R84 ÷ 4 = R21 per litre.\nSecond bottle: R150 ÷ 6 = R25 per litre.\nR21 is less than R25, so the 4 litre bottle has the cheaper price per litre ✓' },
+        { difficulty: 'Medium', question: 'A learner calculates a unit rate for a runner covering 150 km in 2 hours (a training log distance) by computing 2 ÷ 150 and getting 0.0133 hours per km. Explain what went wrong and give the correct unit rate in km per hour.', answer: 'The learner divided time by distance instead of distance by time, which gives hours per km instead of km per hour. The correct unit rate is distance ÷ time = 150 ÷ 2 = 75 km per hour.', checkMode: 'self' },
+
+        // Block 5 — Solving Rate Problems (16-19, Hard)
+        { difficulty: 'Hard', question: 'A garden sprinkler releases water at a rate of 9 litres per minute. How much water is released after 6 minutes?', answer: '54 litres', checkMode: 'auto', correctAnswer: '54', correctAnswers: ['54', '54 litres', '54L', '54 liters'], explanation: 'We know the unit rate (9 litres per minute) and the quantity (6 minutes). We need the total, so multiply: 9 × 6 = 54 litres ✓' },
+        { difficulty: 'Hard', question: 'Nandi earns money at a rate of R10 per hour. Before choosing to multiply or divide, identify what is given and what needs to be found if she wants to know how many hours she must work to earn R150.', answer: 'Given: the unit rate (R10 per hour) and the total amount to earn (R150). Needed: the number of hours (the quantity). Since the total and the rate are known, we divide: 150 ÷ 10 = 15 hours.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Mpho drives 100 km at 50 km per hour, then a further 80 km at 40 km per hour on a different road. What is the total time for her journey?', answer: '4 hours', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 hours', '4h', '4 hrs'], explanation: 'Time for first leg: 100 ÷ 50 = 2 hours.\nTime for second leg: 80 ÷ 40 = 2 hours.\nTotal time = 2 + 2 = 4 hours ✓' },
+        { difficulty: 'Hard', question: 'A student earns R180 working at a rate of R12 per hour, and calculates the number of hours worked as 180 × 12 = 2 160 hours. Explain the mistake and give the correct number of hours.', answer: 'The student multiplied instead of dividing. When you know the total earned and the unit rate, you divide the total by the rate to find the quantity (hours), not multiply. The correct calculation is 180 ÷ 12 = 15 hours.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered ratios, equivalent ratios, dividing in a ratio and rate problems.' },
+        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 10, message: 'Good effort! Revisit simplifying ratios and unit rates, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Writing and Simplifying Ratios (0-3, Easy)
+        { difficulty: 'Easy', question: 'Simplify the ratio 36:24.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'HCF of 36 and 24 is 12.\n36 ÷ 12 = 3 and 24 ÷ 12 = 2.\nSimplified ratio = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'A parking lot has 21 small cars and 14 bakkies. Write the ratio of small cars to bakkies in simplest form.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'HCF of 21 and 14 is 7.\n21 ÷ 7 = 3 and 14 ÷ 7 = 2.\nRatio of small cars to bakkies = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'Simplify the ratio 72:48:24.', answer: '3:2:1', checkMode: 'auto', correctAnswer: '3:2:1', correctAnswers: ['3:2:1'], explanation: 'HCF of 72, 48 and 24 is 24.\n72 ÷ 24 = 3, 48 ÷ 24 = 2, 24 ÷ 24 = 1.\nSimplified ratio = 3:2:1 ✓' },
+        { difficulty: 'Easy', question: 'A learner simplifies 40:16 by dividing only the first number by 8, writing the answer as "5:16". Explain the mistake and give the correct simplified ratio.', answer: 'The learner only divided the first term by the HCF and left the second term unchanged. Both parts of a ratio must be divided by the same HCF. HCF of 40 and 16 is 8, so 40 ÷ 8 = 5 and 16 ÷ 8 = 2. The correct simplified ratio is 5:2, not 5:16.', checkMode: 'self' },
+
+        // Block 2 — Equivalent Ratios (4-7, Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Are 2:9 and 6:27 equivalent ratios?', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes', 'YES'], explanation: 'Multiply both parts of 2:9 by 3: 2 × 3 = 6 and 9 × 3 = 27.\nSo 6:27 = 2:9.\nYes, they are equivalent ratios ✓' },
+        { difficulty: 'Medium', question: 'A lemonade recipe uses lemon juice and water in the ratio 3:5. If a bigger jug uses 45 cups of water, how many cups of lemon juice are needed?', answer: '27', checkMode: 'auto', correctAnswer: '27', correctAnswers: ['27', '27 cups'], explanation: 'Ratio juice:water = 3:5.\nScale factor = 45 ÷ 5 = 9.\nLemon juice = 3 × 9 = 27 cups ✓' },
+        { difficulty: 'Medium', question: 'Which of these ratios is equivalent to 16:20 — 4:5 or 5:6?', answer: '4:5', checkMode: 'auto', correctAnswer: '4:5', correctAnswers: ['4:5', '4:5 only'], explanation: 'HCF of 16 and 20 is 4.\n16 ÷ 4 = 4 and 20 ÷ 4 = 5, so 16:20 simplifies to 4:5.\n4:5 is equivalent to 16:20 ✓' },
+        { difficulty: 'Medium', question: 'A student checks if 6:7 and 9:10 are equivalent by adding 3 to both parts of 6:7 to get 9:10, and concludes they are equivalent. Is this reasoning correct? Explain.', answer: 'No, this reasoning is incorrect. Equivalent ratios are found by multiplying or dividing both parts by the same number, not by adding the same number to both parts. Testing properly: 9 ÷ 6 = 1.5 while 10 ÷ 7 ≈ 1.43, which are different, so 6:7 and 9:10 are not actually equivalent ratios.', checkMode: 'self' },
+
+        // Block 3 — Dividing an Amount in a Given Ratio (8-11, Medium)
+        { difficulty: 'Medium', question: 'Divide R720 in the ratio 5:7.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) First share', correctAnswer: 'R300', correctAnswers: ['R300', '300'], explanation: 'Total parts = 5 + 7 = 12.\nOne part = R720 ÷ 12 = R60.\nFirst share = 5 × R60 = R300 ✓' },
+          { label: 'b) Second share', correctAnswer: 'R420', correctAnswers: ['R420', '420'], explanation: 'Total parts = 5 + 7 = 12.\nOne part = R720 ÷ 12 = R60.\nSecond share = 7 × R60 = R420 ✓\nCheck: R300 + R420 = R720 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Lindiwe, Sipho and Refilwe share 1 200 airtime points in the ratio 2:3:5. How many points does each person get?', answer: '', checkMode: 'auto', parts: [
+          { label: "a) Lindiwe's points", correctAnswer: '240', correctAnswers: ['240'], explanation: 'Total parts = 2 + 3 + 5 = 10.\nOne part = 1 200 ÷ 10 = 120.\nLindiwe = 2 × 120 = 240 ✓' },
+          { label: "b) Sipho's points", correctAnswer: '360', correctAnswers: ['360'], explanation: 'Total parts = 2 + 3 + 5 = 10.\nOne part = 1 200 ÷ 10 = 120.\nSipho = 3 × 120 = 360 ✓' },
+          { label: "c) Refilwe's points", correctAnswer: '600', correctAnswers: ['600'], explanation: 'Total parts = 2 + 3 + 5 = 10.\nOne part = 1 200 ÷ 10 = 120.\nRefilwe = 5 × 120 = 600 ✓\nCheck: 240 + 360 + 600 = 1 200 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'A box of pencils is divided between two classrooms in the ratio 2:7. The classroom with the larger share receives 84 pencils. How many pencils were in the box altogether?', answer: '108', checkMode: 'auto', correctAnswer: '108', correctAnswers: ['108'], explanation: 'The larger share corresponds to the "7" part of the ratio.\nOne part = 84 ÷ 7 = 12.\nTotal parts = 2 + 7 = 9.\nTotal pencils = 9 × 12 = 108 ✓' },
+        { difficulty: 'Medium', question: 'A 480 cm ribbon is cut into two pieces in the ratio 3:5. Anele checks her answer by adding the two pieces back together. What should the two pieces measure, and does her check work?', answer: '180 cm and 300 cm. Check: 180 + 300 = 480 cm, which matches the original length, so the check works.', checkMode: 'self' },
+
+        // Block 4 — Rates and Unit Rates (12-15, Medium)
+        { difficulty: 'Medium', question: 'A bus travels 195 km in 3 hours. What is its speed in km per hour?', answer: '65 km/h', checkMode: 'auto', correctAnswer: '65', correctAnswers: ['65', '65km/h', '65 km/h', '65km per hour', '65 km per hour'], explanation: 'Speed = distance ÷ time.\n195 ÷ 3 = 65 km/h ✓' },
+        { difficulty: 'Medium', question: 'Explain the difference between a ratio and a rate, giving an original example of each from daily life.', answer: 'A ratio compares two quantities of the same kind and has no units — for example, in a class of 30 learners with 18 girls and 12 boys, the ratio of girls to boys is 18:12, which simplifies to 3:2. A rate compares two quantities of different kinds and has units — for example, a printer that prints 40 pages in 5 minutes has a rate of 8 pages per minute.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Mangoes cost R56 for 8 kg at one market stall, and R64 for 10 kg at another. Which stall has the cheaper price per kilogram?', answer: 'second stall', checkMode: 'auto', correctAnswer: 'second stall', correctAnswers: ['second stall', 'the second stall', 'second', 'stall 2'], explanation: 'First stall: R56 ÷ 8 = R7 per kg.\nSecond stall: R64 ÷ 10 = R6.40 per kg.\nR6.40 is less than R7, so the second stall has the cheaper price per kilogram ✓' },
+        { difficulty: 'Medium', question: 'A learner calculates a unit rate for a cyclist covering 240 km in 5 hours by computing 5 ÷ 240 and getting 0.0208 hours per km. Explain what went wrong and give the correct unit rate in km per hour.', answer: 'The learner divided time by distance instead of distance by time, which gives hours per km instead of km per hour. The correct unit rate is distance ÷ time = 240 ÷ 5 = 48 km per hour.', checkMode: 'self' },
+
+        // Block 5 — Solving Rate Problems (16-19, Hard)
+        { difficulty: 'Hard', question: 'A water pump fills a tank at a rate of 15 litres per minute. How much water is in the tank after 9 minutes?', answer: '135 litres', checkMode: 'auto', correctAnswer: '135', correctAnswers: ['135', '135 litres', '135L', '135 liters'], explanation: 'We know the unit rate (15 litres per minute) and the quantity (9 minutes). We need the total, so multiply: 15 × 9 = 135 litres ✓' },
+        { difficulty: 'Hard', question: 'Tumelo earns money at a rate of R14 per hour. Before choosing to multiply or divide, identify what is given and what needs to be found if he wants to know how many hours he must work to earn R210.', answer: 'Given: the unit rate (R14 per hour) and the total amount to earn (R210). Needed: the number of hours (the quantity). Since the total and the rate are known, we divide: 210 ÷ 14 = 15 hours.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Zanele drives 150 km at 75 km per hour, then a further 60 km at 30 km per hour on a gravel road. What is the total time for her journey?', answer: '4 hours', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4 hours', '4h', '4 hrs'], explanation: 'Time for first leg: 150 ÷ 75 = 2 hours.\nTime for second leg: 60 ÷ 30 = 2 hours.\nTotal time = 2 + 2 = 4 hours ✓' },
+        { difficulty: 'Hard', question: 'A student earns R150 working at a rate of R15 per hour, and calculates the number of hours worked as 150 × 15 = 2 250 hours. Explain the mistake and give the correct number of hours.', answer: 'The student multiplied instead of dividing. When you know the total earned and the unit rate, you divide the total by the rate to find the quantity (hours), not multiply. The correct calculation is 150 ÷ 15 = 10 hours.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered ratios, equivalent ratios, dividing in a ratio and rate problems.' },
+        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 10, message: 'Good effort! Revisit simplifying ratios and unit rates, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 12,
     messages: [

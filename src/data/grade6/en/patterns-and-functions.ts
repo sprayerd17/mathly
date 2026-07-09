@@ -563,6 +563,164 @@ export const topicData: TopicData = {
     },
   ],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-3 Numeric single-operation | 4-6 Numeric two-operation |
+    // 7-10 Geometric linear (tables/differences) | 11-13 Quadratic + far-step |
+    // 14-16 Input-output find rule/complete | 17-19 Input-output backwards/capstone
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Find the next term in the pattern: 6, 11, 16, 21, 26, ?', answer: '31', checkMode: 'auto', correctAnswer: '31', correctAnswers: ['31'], explanation: 'The rule is add 5 each time.\n26 + 5 = 31 ✓' },
+        { difficulty: 'Easy', question: 'A water tank starts with 200 litres and loses 20 litres every day through evaporation: 200, 180, 160, 140. How many litres will be left on the next day?', answer: '120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120', '120 litres', '120 l'], explanation: 'The rule is subtract 20 each time.\n140 − 20 = 120 litres ✓' },
+        { difficulty: 'Easy', question: 'State the rule for this pattern in words: 5, 9, 13, 17.', answer: 'Add 4 each time.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'A piece of fabric 96 m long is cut into 8 equal pieces for a sewing class. How long is each piece?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 m', '12m'], explanation: '96 ÷ 8 = 12. Each piece is 12 m long ✓' },
+        { difficulty: 'Easy-Medium', question: 'Find the missing term: 7, ?, 17, 22.', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'Check the known difference: 22 − 17 = 5, so the rule is add 5 each time.\n7 + 5 = 12. Check: 17 − 12 = 5 ✓' },
+        { difficulty: 'Medium', question: 'A pattern follows the rule "multiply by 2, then add 1", starting at 2: 2, 5, 11, 23. What is the next term?', answer: '47', checkMode: 'auto', correctAnswer: '47', correctAnswers: ['47'], explanation: 'Apply the rule to 23: 23 × 2 = 46, then 46 + 1 = 47 ✓' },
+        { difficulty: 'Medium', question: 'Find the rule for this pattern, describing both operations in order: 4, 9, 19, 39.', answer: 'Multiply by 2, then add 1 each time.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Katlego says the rule for the pattern 3, 8, 18, 38 is "multiply by 2" because 3 × 2 = 6 is close to 8. He only checked the first pair. Is his rule correct? Give the correct rule.', answer: 'Katlego is incorrect — he only checked the first pair, and 3 × 2 = 6, not 8, so even that pair does not truly work with a simple ×2 rule. Testing all terms shows the pattern doubles and adds 2 each time: 3 × 2 + 2 = 8 ✓, 8 × 2 + 2 = 18 ✓, 18 × 2 + 2 = 38 ✓. The correct rule is "multiply by 2, then add 2".', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A pattern of tiles is described in words: step 1 has 3 tiles, step 2 has 5 tiles, step 3 has 7 tiles. Complete the table of values for steps 1 to 4, then state the rule.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Number of tiles at step 4', correctAnswer: '9', explanation: 'The difference between consecutive values is always 2, so step 4 = 7 + 2 = 9.' },
+          { label: 'b) Rule (value = a × step + b)', correctAnswer: 'value = 2 × step + 1', correctAnswers: ['value = 2 × step + 1', '2 x step + 1', '2n+1', '2 × n + 1', '2n + 1'], explanation: 'Constant difference of 2 means the rule multiplies the step number by 2. Check: 2 × 1 + 1 = 3 ✓, 2 × 2 + 1 = 5 ✓, 2 × 3 + 1 = 7 ✓. Rule: value = 2 × step + 1.' },
+        ] },
+        { difficulty: 'Medium', question: 'A matchstick pattern grows as follows: step 1 uses 6 matches, step 2 uses 11 matches, step 3 uses 16 matches. How many matches are needed for step 7?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '36 matches'], explanation: 'Differences are 5 each time, so the rule is value = 5 × step + 1. Check: 5 × 1 + 1 = 6 ✓, 5 × 2 + 1 = 11 ✓.\nStep 7: 5 × 7 + 1 = 35 + 1 = 36 matches ✓' },
+        { difficulty: 'Medium', question: 'A fence is built with poles and rails. Poles needed: step 1 = 2, step 2 = 3, step 3 = 4. How many poles are needed for step 12, and what is the rule?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Rule', correctAnswer: 'poles = step + 1', correctAnswers: ['poles = step + 1', 'step + 1', 'n + 1', 'poles = n + 1'], explanation: 'Each step adds 1 more pole than the step number. Check: 1 + 1 = 2 ✓, 2 + 1 = 3 ✓, 3 + 1 = 4 ✓.' },
+          { label: 'b) Poles needed for step 12', correctAnswer: '13', explanation: 'Substitute step = 12: 12 + 1 = 13 poles.' },
+        ] },
+        { difficulty: 'Medium', question: 'A pattern of squares grows as: step 1 = 1 square, step 2 = 4 squares, step 3 = 9 squares. How many squares are in step 6?', answer: '36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36'], explanation: 'The pattern follows value = step², since 1 = 1², 4 = 2², 9 = 3².\nStep 6: 6² = 6 × 6 = 36 squares ✓' },
+        { difficulty: 'Medium-Hard', question: 'A stack of chairs grows by 3 chairs per row, starting with 2 chairs in row 1: row 1 = 2, row 2 = 5, row 3 = 8. Sipho continues adding 3 over and over by hand to find row 50, which takes him a long time. Show a faster way to find the number of chairs in row 50, and give the answer.', answer: 'Sipho is using an inefficient method — repeatedly adding 3 to reach row 50 means doing 49 additions by hand. A faster way is to find the rule and substitute directly. The rule is chairs = 3 × row − 1 (check: 3 × 1 − 1 = 2 ✓, 3 × 2 − 1 = 5 ✓, 3 × 3 − 1 = 8 ✓). For row 50: 3 × 50 − 1 = 150 − 1 = 149 chairs. Substituting into the rule is far quicker than adding 3 forty-nine times.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'A pattern follows the rule value = 4 × step + 3. Which step number first gives a value of at least 95?', answer: '23', checkMode: 'auto', correctAnswer: '23', correctAnswers: ['23'], explanation: 'Set up: 4 × step + 3 ≥ 95, so 4 × step ≥ 92, giving step ≥ 23.\nCheck: step 22 gives 4 × 22 + 3 = 91 (too small). Step 23 gives 4 × 23 + 3 = 95 ✓. Step 23 is the first to reach at least 95.' },
+        { difficulty: 'Medium-Hard', question: 'Find the rule for this input-output table.\n\nInput:  3,  5,  7,  9\nOutput: 13, 19, 25, 31', answer: 'output = 3 × input + 4', checkMode: 'auto', correctAnswer: 'output = 3 × input + 4', correctAnswers: ['output = 3 × input + 4', 'output = 3 x input + 4', '3 × input + 4', '3 x input + 4', '3n + 4'], explanation: 'Differences in output: 19 − 13 = 6, 25 − 19 = 6, 6 ÷ (5−3) = 3, so try output = 3 × input + b.\n3 × 3 = 9, 13 − 9 = 4. Rule: output = 3 × input + 4.\nCheck: 3 × 5 + 4 = 19 ✓, 3 × 7 + 4 = 25 ✓, 3 × 9 + 4 = 31 ✓' },
+        { difficulty: 'Medium-Hard', question: 'A plumber charges a call-out fee plus an hourly rate using the rule: cost = 12 × hours + 50. Complete the table for 1, 2, 3 and 5 hours.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Cost for 1 hour', correctAnswer: '62', explanation: '12 × 1 + 50 = 12 + 50 = 62' },
+          { label: 'b) Cost for 3 hours', correctAnswer: '86', explanation: '12 × 3 + 50 = 36 + 50 = 86' },
+          { label: 'c) Cost for 5 hours', correctAnswer: '110', explanation: '12 × 5 + 50 = 60 + 50 = 110' },
+        ] },
+        { difficulty: 'Hard', question: 'Thandiwe claims the rule for this table is output = 3 × input + 1, because it works for the first pair.\n\nInput:  2,  4,  6\nOutput: 7, 15, 23\n\nCheck her rule against every pair. Is she correct?', answer: 'Thandiwe is incorrect. Check: 3 × 2 + 1 = 7 ✓ (works for the first pair), but 3 × 4 + 1 = 13, not 15 ✗. The rule does not hold for the second pair, so it is wrong even though it looked correct at first. The actual rule is output = 4 × input − 1 (check: 4 × 2 − 1 = 7 ✓, 4 × 4 − 1 = 15 ✓, 4 × 6 − 1 = 23 ✓). This shows why a rule must be tested against every pair, not just the first one, before it can be trusted.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Using the rule: output = 7 × input − 5, which input gives an output of 58?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9'], explanation: 'Set up: 7 × input − 5 = 58.\nAdd 5 to both sides: 7 × input = 63.\nDivide by 7: input = 63 ÷ 7 = 9.\nCheck: 7 × 9 − 5 = 63 − 5 = 58 ✓' },
+        { difficulty: 'Hard', question: 'A table has inputs 2, 4, 6 giving outputs 11, 19, 27. First find the rule, then use it to find the input that gives an output of 51.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Rule', correctAnswer: 'output = 4 × input + 3', correctAnswers: ['output = 4 × input + 3', 'output = 4 x input + 3', '4 × input + 3', '4 x input + 3', '4n + 3'], explanation: 'Differences: 19 − 11 = 8 over a gap of 2 inputs, so 8 ÷ 2 = 4. Try output = 4 × input + b: 4 × 2 = 8, 11 − 8 = 3. Rule: output = 4 × input + 3. Check: 4 × 4 + 3 = 19 ✓, 4 × 6 + 3 = 27 ✓.' },
+          { label: 'b) Input for output 51', correctAnswer: '12', explanation: 'Set up: 4 × input + 3 = 51. Subtract 3: 4 × input = 48. Divide by 4: input = 12. Check: 4 × 12 + 3 = 51 ✓.' },
+        ] },
+        { difficulty: 'Hard', question: 'A pattern has terms 6, 11, 16, 21 (rule: 5 × term number + 1).\n\na) What is the 30th term?\nb) A related input-output table uses the same rule as an "output = 5 × input + 1" machine. What input gives an output of 91?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 30th term', correctAnswer: '151', explanation: '5 × 30 + 1 = 150 + 1 = 151.' },
+          { label: 'b) Input for output 91', correctAnswer: '18', explanation: 'Set up: 5 × input + 1 = 91. Subtract 1: 5 × input = 90. Divide by 5: input = 18. Check: 5 × 18 + 1 = 91 ✓.' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered numeric patterns, geometric patterns, and input-output tables — a perfect score!' },
+        { minScore: 15, message: 'Great work! You have a strong grasp of patterns and functions. Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on rules and tables, then try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set. You will get there!' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh phrasing/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Find the next term in the pattern: 8, 15, 22, 29, 36, ?', answer: '43', checkMode: 'auto', correctAnswer: '43', correctAnswers: ['43'], explanation: 'The rule is add 7 each time.\n36 + 7 = 43 ✓' },
+        { difficulty: 'Easy', question: 'A campsite starts with 150 litres of gas and uses 15 litres every day: 150, 135, 120, 105. How many litres will be left on the next day?', answer: '90', checkMode: 'auto', correctAnswer: '90', correctAnswers: ['90', '90 litres', '90 l'], explanation: 'The rule is subtract 15 each time.\n105 − 15 = 90 litres ✓' },
+        { difficulty: 'Easy', question: 'State the rule for this pattern in words: 6, 14, 22, 30.', answer: 'Add 8 each time.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'A roll of ribbon 180 cm long is cut into 4 equal pieces for gift wrapping. How long is each piece?', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45', '45 cm', '45cm'], explanation: '180 ÷ 4 = 45. Each piece is 45 cm long ✓' },
+        { difficulty: 'Easy-Medium', question: 'Find the missing term: 9, ?, 21, 27.', answer: '15', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15'], explanation: 'Check the known difference: 27 − 21 = 6, so the rule is add 6 each time.\n9 + 6 = 15. Check: 21 − 15 = 6 ✓' },
+        { difficulty: 'Medium', question: 'A pattern follows the rule "multiply by 2, then add 2", starting at 1: 1, 4, 10, 22. What is the next term?', answer: '46', checkMode: 'auto', correctAnswer: '46', correctAnswers: ['46'], explanation: 'Apply the rule to 22: 22 × 2 = 44, then 44 + 2 = 46 ✓' },
+        { difficulty: 'Medium', question: 'Find the rule for this pattern, describing both operations in order: 6, 15, 33, 69.', answer: 'Multiply by 2, then add 3 each time.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Zanele says the rule for the pattern 2, 5, 14, 41 is "add 3" because 2 + 3 = 5. She only checked the first pair. Is her rule correct? Give the correct rule.', answer: 'Zanele is incorrect — she only checked the first pair. Testing the next pair breaks her rule: 5 + 3 = 8, not 14. The pattern actually triples and subtracts 1 each time: 2 × 3 − 1 = 5 ✓, 5 × 3 − 1 = 14 ✓, 14 × 3 − 1 = 41 ✓. The correct rule is "multiply by 3, then subtract 1".', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A pattern of dots is described in words: step 1 has 4 dots, step 2 has 7 dots, step 3 has 10 dots. Complete the table of values for steps 1 to 4, then state the rule.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Number of dots at step 4', correctAnswer: '13', explanation: 'The difference between consecutive values is always 3, so step 4 = 10 + 3 = 13.' },
+          { label: 'b) Rule (value = a × step + b)', correctAnswer: 'value = 3 × step + 1', correctAnswers: ['value = 3 × step + 1', '3 x step + 1', '3n+1', '3 × n + 1', '3n + 1'], explanation: 'Constant difference of 3 means the rule multiplies the step number by 3. Check: 3 × 1 + 1 = 4 ✓, 3 × 2 + 1 = 7 ✓, 3 × 3 + 1 = 10 ✓. Rule: value = 3 × step + 1.' },
+        ] },
+        { difficulty: 'Medium', question: 'A fence-rail pattern grows as follows: step 1 uses 5 rails, step 2 uses 9 rails, step 3 uses 13 rails. How many rails are needed for step 14?', answer: '57', checkMode: 'auto', correctAnswer: '57', correctAnswers: ['57', '57 rails'], explanation: 'Differences are 4 each time, so the rule is value = 4 × step + 1. Check: 4 × 1 + 1 = 5 ✓, 4 × 2 + 1 = 9 ✓.\nStep 14: 4 × 14 + 1 = 56 + 1 = 57 rails ✓' },
+        { difficulty: 'Medium', question: 'A tiled patio grows by the same amount each step. Tiles needed: step 7 = 19, step 10 = 25. What is the constant difference per step, and how many tiles are needed for step 8?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Difference per step', correctAnswer: '2', explanation: 'From step 7 to step 10 is 3 steps, and tiles increase from 19 to 25, a rise of 6. 6 ÷ 3 = 2 tiles per step.' },
+          { label: 'b) Tiles needed for step 8', correctAnswer: '21', explanation: 'Step 8 is one step after step 7: 19 + 2 = 21 tiles.' },
+        ] },
+        { difficulty: 'Medium', question: 'A pattern of squares grows as: step 1 = 1 square, step 2 = 4 squares, step 3 = 9 squares. How many squares are in step 7?', answer: '49', checkMode: 'auto', correctAnswer: '49', correctAnswers: ['49'], explanation: 'The pattern follows value = step², since 1 = 1², 4 = 2², 9 = 3².\nStep 7: 7² = 7 × 7 = 49 squares ✓' },
+        { difficulty: 'Medium', question: 'A row of garden path stones grows by 3 stones per step, starting with 3 stones in step 1: step 1 = 3, step 2 = 6, step 3 = 9. Bongani keeps adding 3 over and over to find step 40, which takes a long time. Show a faster way to find the number of stones in step 40, and give the answer.', answer: 'Bongani is using an inefficient method — repeatedly adding 3 to reach step 40 means doing 39 additions by hand. A faster way is to find the rule and substitute directly. The rule is stones = 3 × step (check: 3 × 1 = 3 ✓, 3 × 2 = 6 ✓, 3 × 3 = 9 ✓). For step 40: 3 × 40 = 120 stones. Substituting into the rule is far quicker than adding 3 thirty-nine times.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'A pattern follows the rule value = 5 × step + 2. Which step number first gives a value of at least 127?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25'], explanation: 'Set up: 5 × step + 2 ≥ 127, so 5 × step ≥ 125, giving step ≥ 25.\nCheck: step 24 gives 5 × 24 + 2 = 122 (too small). Step 25 gives 5 × 25 + 2 = 127 ✓. Step 25 is the first to reach at least 127.' },
+        { difficulty: 'Medium-Hard', question: 'Find the rule for this input-output table.\n\nInput:  1,  3,  5,  7\nOutput: 6, 16, 26, 36', answer: 'output = 5 × input + 1', checkMode: 'auto', correctAnswer: 'output = 5 × input + 1', correctAnswers: ['output = 5 × input + 1', 'output = 5 x input + 1', '5 × input + 1', '5 x input + 1', '5n + 1'], explanation: 'Differences in output: 16 − 6 = 10, over a gap of 2 inputs, so 10 ÷ 2 = 5. Try output = 5 × input + b.\n5 × 1 = 5, 6 − 5 = 1. Rule: output = 5 × input + 1.\nCheck: 5 × 3 + 1 = 16 ✓, 5 × 5 + 1 = 26 ✓, 5 × 7 + 1 = 36 ✓' },
+        { difficulty: 'Medium-Hard', question: 'A taxi charges a base fare plus a per-kilometre rate using the rule: fare = 9 × km + 15. Complete the table for 2, 4 and 7 km.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Fare for 2 km', correctAnswer: '33', explanation: '9 × 2 + 15 = 18 + 15 = 33' },
+          { label: 'b) Fare for 4 km', correctAnswer: '51', explanation: '9 × 4 + 15 = 36 + 15 = 51' },
+          { label: 'c) Fare for 7 km', correctAnswer: '78', explanation: '9 × 7 + 15 = 63 + 15 = 78' },
+        ] },
+        { difficulty: 'Hard', question: 'Mpho claims the rule for this table is output = 4 × input + 4, because it works for the first pair.\n\nInput:  3,  5,  7\nOutput: 16, 26, 36\n\nCheck his rule against every pair. Is he correct?', answer: 'Mpho is incorrect. Check: 4 × 3 + 4 = 16 ✓ (works for the first pair), but 4 × 5 + 4 = 24, not 26 ✗. The rule does not hold for the second pair, so it is wrong even though it looked correct at first. The actual rule is output = 5 × input + 1 (check: 5 × 3 + 1 = 16 ✓, 5 × 5 + 1 = 26 ✓, 5 × 7 + 1 = 36 ✓). This shows why a rule must be tested against every pair in the table, not just the first one, before it can be trusted.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Using the rule: output = 6 × input − 4, which input gives an output of 44?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'Set up: 6 × input − 4 = 44.\nAdd 4 to both sides: 6 × input = 48.\nDivide by 6: input = 48 ÷ 6 = 8.\nCheck: 6 × 8 − 4 = 48 − 4 = 44 ✓' },
+        { difficulty: 'Hard', question: 'A table has inputs 2, 4, 6 giving outputs 9, 17, 25. First find the rule, then use it to find the input that gives an output of 41.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Rule', correctAnswer: 'output = 4 × input + 1', correctAnswers: ['output = 4 × input + 1', 'output = 4 x input + 1', '4 × input + 1', '4 x input + 1', '4n + 1'], explanation: 'Differences: 17 − 9 = 8 over a gap of 2 inputs, so 8 ÷ 2 = 4. Try output = 4 × input + b: 4 × 2 = 8, 9 − 8 = 1. Rule: output = 4 × input + 1. Check: 4 × 4 + 1 = 17 ✓, 4 × 6 + 1 = 25 ✓.' },
+          { label: 'b) Input for output 41', correctAnswer: '10', explanation: 'Set up: 4 × input + 1 = 41. Subtract 1: 4 × input = 40. Divide by 4: input = 10. Check: 4 × 10 + 1 = 41 ✓.' },
+        ] },
+        { difficulty: 'Hard', question: 'A pattern has terms 8, 13, 18, 23 (rule: 5 × term number + 3).\n\na) What is the 25th term?\nb) A related input-output table uses the same rule as an "output = 5 × input + 3" machine. What input gives an output of 78?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 25th term', correctAnswer: '128', explanation: '5 × 25 + 3 = 125 + 3 = 128.' },
+          { label: 'b) Input for output 78', correctAnswer: '15', explanation: 'Set up: 5 × input + 3 = 78. Subtract 3: 5 × input = 75. Divide by 5: input = 15. Check: 5 × 15 + 3 = 78 ✓.' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered numeric patterns, geometric patterns, and input-output tables — a perfect score!' },
+        { minScore: 15, message: 'Great work! You have a strong grasp of patterns and functions. Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on rules and tables, then try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set. You will get there!' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout as Sets 1 and 2, fresh phrasing/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Find the next term in the pattern: 10, 17, 24, 31, 38, ?', answer: '45', checkMode: 'auto', correctAnswer: '45', correctAnswers: ['45'], explanation: 'The rule is add 7 each time.\n38 + 7 = 45 ✓' },
+        { difficulty: 'Easy', question: 'A block of ice weighing 120 g melts at a rate of 15 g every hour: 120, 105, 90, 75. How many grams will be left after the next hour?', answer: '60', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60 g', '60g'], explanation: 'The rule is subtract 15 each time.\n75 − 15 = 60 grams ✓' },
+        { difficulty: 'Easy', question: 'State the rule for this pattern in words: 7, 13, 19, 25.', answer: 'Add 6 each time.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'A piece of rope 144 m long is cut into 6 equal pieces for a school sports day. How long is each piece?', answer: '24', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 m', '24m'], explanation: '144 ÷ 6 = 24. Each piece is 24 m long ✓' },
+        { difficulty: 'Easy-Medium', question: 'Find the missing term: 4, ?, 20, 28.', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'Check the known difference: 28 − 20 = 8, so the rule is add 8 each time.\n4 + 8 = 12. Check: 20 − 12 = 8 ✓' },
+        { difficulty: 'Medium', question: 'A pattern follows the rule "multiply by 2, then add 2", starting at 3: 3, 8, 18, 38. What is the next term?', answer: '78', checkMode: 'auto', correctAnswer: '78', correctAnswers: ['78'], explanation: 'Apply the rule to 38: 38 × 2 = 76, then 76 + 2 = 78 ✓' },
+        { difficulty: 'Medium', question: 'Find the rule for this pattern, describing both operations in order: 4, 11, 25, 53.', answer: 'Multiply by 2, then add 3 each time.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Given says the rule for the pattern 4, 10, 28, 82 is "add 6" because 4 + 6 = 10. He only checked the first pair. Is his rule correct? Give the correct rule.', answer: 'Given is incorrect — he only checked the first pair. Testing the next pair breaks his rule: 10 + 6 = 16, not 28. The pattern actually triples and subtracts 2 each time: 4 × 3 − 2 = 10 ✓, 10 × 3 − 2 = 28 ✓, 28 × 3 − 2 = 82 ✓. The correct rule is "multiply by 3, then subtract 2".', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A pattern of dots is described in words: step 1 has 3 dots, step 2 has 7 dots, step 3 has 11 dots. Complete the table of values for steps 1 to 4, then state the rule.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Number of dots at step 4', correctAnswer: '15', explanation: 'The difference between consecutive values is always 4, so step 4 = 11 + 4 = 15.' },
+          { label: 'b) Rule (value = a × step + b)', correctAnswer: 'value = 4 × step − 1', correctAnswers: ['value = 4 × step − 1', 'value = 4 x step - 1', '4 × step − 1', '4n-1', '4n − 1', '4 × n − 1'], explanation: 'Constant difference of 4 means the rule multiplies the step number by 4. Check: 4 × 1 − 1 = 3 ✓, 4 × 2 − 1 = 7 ✓, 4 × 3 − 1 = 11 ✓. Rule: value = 4 × step − 1.' },
+        ] },
+        { difficulty: 'Medium', question: 'A fence-rail pattern grows as follows: step 1 uses 5 rails, step 2 uses 8 rails, step 3 uses 11 rails. How many rails are needed for step 16?', answer: '50', checkMode: 'auto', correctAnswer: '50', correctAnswers: ['50', '50 rails'], explanation: 'Differences are 3 each time, so the rule is value = 3 × step + 2. Check: 3 × 1 + 2 = 5 ✓, 3 × 2 + 2 = 8 ✓.\nStep 16: 3 × 16 + 2 = 48 + 2 = 50 rails ✓' },
+        { difficulty: 'Medium', question: 'A tiled patio grows by the same amount each step. Tiles needed: step 8 = 29, step 13 = 49. What is the constant difference per step, and how many tiles are needed for step 9?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Difference per step', correctAnswer: '4', explanation: 'From step 8 to step 13 is 5 steps, and tiles increase from 29 to 49, a rise of 20. 20 ÷ 5 = 4 tiles per step.' },
+          { label: 'b) Tiles needed for step 9', correctAnswer: '33', explanation: 'Step 9 is one step after step 8: 29 + 4 = 33 tiles.' },
+        ] },
+        { difficulty: 'Medium', question: 'A pattern of squares grows as: step 1 = 1 square, step 2 = 4 squares, step 3 = 9 squares. How many squares are in step 8?', answer: '64', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64'], explanation: 'The pattern follows value = step², since 1 = 1², 4 = 2², 9 = 3².\nStep 8: 8² = 8 × 8 = 64 squares ✓' },
+        { difficulty: 'Medium', question: 'A row of garden path stones grows by 4 stones per step, starting with 3 stones in step 1: step 1 = 3, step 2 = 7, step 3 = 11. Palesa keeps adding 4 over and over to find step 60, which takes a long time. Show a faster way to find the number of stones in step 60, and give the answer.', answer: 'Palesa is using an inefficient method — repeatedly adding 4 to reach step 60 means doing 59 additions by hand. A faster way is to find the rule and substitute directly. The rule is stones = 4 × step − 1 (check: 4 × 1 − 1 = 3 ✓, 4 × 2 − 1 = 7 ✓, 4 × 3 − 1 = 11 ✓). For step 60: 4 × 60 − 1 = 240 − 1 = 239 stones. Substituting into the rule is far quicker than adding 4 fifty-nine times.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'A pattern follows the rule value = 6 × step + 1. Which step number first gives a value of at least 155?', answer: '26', checkMode: 'auto', correctAnswer: '26', correctAnswers: ['26'], explanation: 'Set up: 6 × step + 1 ≥ 155, so 6 × step ≥ 154, giving step ≥ 25.67, so step must be 26.\nCheck: step 25 gives 6 × 25 + 1 = 151 (too small). Step 26 gives 6 × 26 + 1 = 157 ✓. Step 26 is the first to reach at least 155.' },
+        { difficulty: 'Medium-Hard', question: 'Find the rule for this input-output table.\n\nInput:  2,  4,  6,  8\nOutput: 11, 21, 31, 41', answer: 'output = 5 × input + 1', checkMode: 'auto', correctAnswer: 'output = 5 × input + 1', correctAnswers: ['output = 5 × input + 1', 'output = 5 x input + 1', '5 × input + 1', '5 x input + 1', '5n + 1'], explanation: 'Differences in output: 21 − 11 = 10, over a gap of 2 inputs, so 10 ÷ 2 = 5. Try output = 5 × input + b.\n5 × 2 = 10, 11 − 10 = 1. Rule: output = 5 × input + 1.\nCheck: 5 × 4 + 1 = 21 ✓, 5 × 6 + 1 = 31 ✓, 5 × 8 + 1 = 41 ✓' },
+        { difficulty: 'Medium-Hard', question: 'A tour guide charges a base fee plus a per-person rate using the rule: cost = 10 × people + 18. Complete the table for 2, 5 and 9 people.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Cost for 2 people', correctAnswer: '38', explanation: '10 × 2 + 18 = 20 + 18 = 38' },
+          { label: 'b) Cost for 5 people', correctAnswer: '68', explanation: '10 × 5 + 18 = 50 + 18 = 68' },
+          { label: 'c) Cost for 9 people', correctAnswer: '108', explanation: '10 × 9 + 18 = 90 + 18 = 108' },
+        ] },
+        { difficulty: 'Hard', question: 'Refilwe claims the rule for this table is output = 4 × input + 1, because it works for the first pair.\n\nInput:  2,  4,  6\nOutput: 9, 19, 29\n\nCheck her rule against every pair. Is she correct?', answer: 'Refilwe is incorrect. Check: 4 × 2 + 1 = 9 ✓ (works for the first pair), but 4 × 4 + 1 = 17, not 19 ✗. The rule does not hold for the second or third pair, so it is wrong even though it looked correct at first. The actual rule is output = 5 × input − 1 (check: 5 × 2 − 1 = 9 ✓, 5 × 4 − 1 = 19 ✓, 5 × 6 − 1 = 29 ✓). This shows why a rule must be tested against every pair, not just the first one, before it can be trusted.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Using the rule: output = 4 × input − 9, which input gives an output of 19?', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: 'Set up: 4 × input − 9 = 19.\nAdd 9 to both sides: 4 × input = 28.\nDivide by 4: input = 28 ÷ 4 = 7.\nCheck: 4 × 7 − 9 = 28 − 9 = 19 ✓' },
+        { difficulty: 'Hard', question: 'A table has inputs 3, 5, 7 giving outputs 16, 26, 36. First find the rule, then use it to find the input that gives an output of 56.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Rule', correctAnswer: 'output = 5 × input + 1', correctAnswers: ['output = 5 × input + 1', 'output = 5 x input + 1', '5 × input + 1', '5 x input + 1', '5n + 1'], explanation: 'Differences: 26 − 16 = 10 over a gap of 2 inputs, so 10 ÷ 2 = 5. Try output = 5 × input + b: 5 × 3 = 15, 16 − 15 = 1. Rule: output = 5 × input + 1. Check: 5 × 5 + 1 = 26 ✓, 5 × 7 + 1 = 36 ✓.' },
+          { label: 'b) Input for output 56', correctAnswer: '11', explanation: 'Set up: 5 × input + 1 = 56. Subtract 1: 5 × input = 55. Divide by 5: input = 11. Check: 5 × 11 + 1 = 56 ✓.' },
+        ] },
+        { difficulty: 'Hard', question: 'A pattern has terms 4, 10, 16, 22 (rule: 6 × term number − 2).\n\na) What is the 40th term?\nb) A related input-output table uses the same rule as an "output = 6 × input − 2" machine. What input gives an output of 70?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) 40th term', correctAnswer: '238', explanation: '6 × 40 − 2 = 240 − 2 = 238.' },
+          { label: 'b) Input for output 70', correctAnswer: '12', explanation: 'Set up: 6 × input − 2 = 70. Add 2: 6 × input = 72. Divide by 6: input = 12. Check: 6 × 12 − 2 = 70 ✓.' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered numeric patterns, geometric patterns, and input-output tables — a perfect score!' },
+        { minScore: 15, message: 'Great work! You have a strong grasp of patterns and functions. Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on rules and tables, then try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set. You will get there!' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 12,
     messages: [

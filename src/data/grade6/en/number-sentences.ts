@@ -400,6 +400,139 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to translate word problems into equations using a variable then solve and check with three worked examples" />',
     },
   ],
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Understanding equations, variables, checking solutions (Easy) — positions 0-3
+        { difficulty: 'Easy', question: 'Is the number sentence 8 + 6 = 15 true or false?', answer: 'false', checkMode: 'auto', correctAnswer: 'false', correctAnswers: ['false', 'no'], explanation: 'Calculate the left side: 8 + 6 = 14.\nIs 14 = 15? No.\nThe number sentence is false.' },
+        { difficulty: 'Easy', question: 'In the equation x + 12 = 30, name the variable, the known values, and identify what the equals sign shows.', answer: 'The variable is x. The known values are 12 and 30. The equals sign shows that x + 12 has the same value as 30 — both sides balance.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Zanele has some pocket money. Is m = 40 a solution to m − 15 = 25? Show your substitution check.', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes'], explanation: 'Substitute m = 40 into m − 15 = 25.\n40 − 15 = 25 ✓\nBoth sides equal 25, so m = 40 is a solution.' },
+        { difficulty: 'Easy', question: 'Thabo says x = 9 is a solution to 4x + 3 = 39 — is he correct? Show your check.', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes'], explanation: 'Substitute x = 9 into 4x + 3 = 39.\n4 × 9 + 3 = 36 + 3 = 39 ✓\nThabo is correct — both sides equal 39.' },
+
+        // Block 2 — Translating word problems into equations, not solving (Easy-Medium) — positions 4-7
+        { difficulty: 'Easy', question: 'Write an equation for this problem — do not solve it: a number increased by 18 gives 42.', answer: 'n + 18 = 42', checkMode: 'auto', correctAnswer: 'n + 18 = 42', correctAnswers: ['n + 18 = 42', 'n+18=42', '18 + n = 42', '18+n=42'], explanation: 'Let n be the unknown number.\n"Increased by" means add.\nn + 18 = 42' },
+        { difficulty: 'Easy-Medium', question: 'Kagiso buys marbles at R3 each. Write an equation (do not solve) for the total cost, T, of buying k marbles.', answer: 'T = 3k', checkMode: 'auto', correctAnswer: 'T = 3k', correctAnswers: ['T = 3k', 't=3k', '3k = T', '3k=t'], explanation: '"At R3 each" means multiply.\nCost = price per marble × number of marbles\nT = 3k' },
+        { difficulty: 'Medium', question: 'Which equation matches this story — Lindiwe has some sports score points. She loses 20 points in a penalty and now has 65 points.\n\nA) p − 20 = 65\nB) p + 20 = 65\nC) 20 − p = 65\n\nWrite only "A", "B", or "C".', answer: 'A', checkMode: 'auto', correctAnswer: 'a', correctAnswers: ['a', 'A'], explanation: '"Loses" means subtract from her starting points p.\nStarting points minus 20 equals 65: p − 20 = 65\nThis matches equation A.' },
+        { difficulty: 'Medium', question: 'A learner writes the equation 8 + w = 40 for this problem: "Nomvula shares 40 sweets equally among 8 friends. How many does each friend get?" Explain what is wrong with this equation.', answer: 'The equation is wrong because the problem describes sharing (division), not addition. "Shares equally among 8 friends" means the total of 40 should be divided by 8, not added to 8. The correct equation is 40 ÷ 8 = w, or equivalently 8w = 40.', checkMode: 'self' },
+
+        // Block 3 — Solving one-step equations with inverse operations (Medium) — positions 8-11
+        { difficulty: 'Medium', question: 'Solve x + 29 = 64.', answer: '35', checkMode: 'auto', correctAnswer: '35', explanation: 'Inverse of adding 29 is subtracting 29.\nx + 29 − 29 = 64 − 29\nx = 35\nCheck: 35 + 29 = 64 ✓' },
+        { difficulty: 'Medium', question: 'Solve 9m = 117. What inverse operation did you use, and why?', answer: 'm = 13. I used division because m is multiplied by 9, and dividing by 9 is the inverse operation that undoes multiplication and isolates m. 117 ÷ 9 = 13. Check: 9 × 13 = 117 ✓', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A student solves x − 37 = 48 by subtracting 37 from both sides, getting x = 11. Explain the error and give the correct answer.', answer: 'The student used the wrong inverse operation. Since 37 is being subtracted from x, the inverse is addition, not subtraction. Adding 37 to both sides gives x = 48 + 37 = 85. Check: 85 − 37 = 48 ✓. The student\'s answer of 11 is incorrect because subtracting 37 again does not undo the original subtraction.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A vendor sells apples in bags of 6. Bongani claims that if 6b = 102, then b = 18. Is Bongani correct? Show your check.', answer: 'no', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No'], explanation: 'Divide both sides by 6: b = 102 ÷ 6 = 17.\nCheck Bongani\'s claim: 6 × 18 = 108, not 102, so his answer is wrong.\nBongani is incorrect; the correct answer is b = 17. Check: 6 × 17 = 102 ✓' },
+
+        // Block 4 — Solving two-step equations using reverse-BODMAS order (Medium-Hard) — positions 12-15
+        { difficulty: 'Medium', question: 'Solve 4x + 7 = 59.', answer: '13', checkMode: 'auto', correctAnswer: '13', explanation: 'Step 1 — Undo the addition: subtract 7 from both sides.\n4x + 7 − 7 = 59 − 7\n4x = 52\nStep 2 — Undo the multiplication: divide both sides by 4.\n4x ÷ 4 = 52 ÷ 4\nx = 13\nCheck: 4 × 13 + 7 = 52 + 7 = 59 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Zinhle thinks of a number. She multiplies it by 6 and subtracts 13, giving an answer of 71. What is her number?', answer: '14', checkMode: 'auto', correctAnswer: '14', explanation: 'Let the number be n.\nEquation: 6n − 13 = 71\nStep 1: add 13 to both sides → 6n = 84\nStep 2: divide both sides by 6 → n = 14\nCheck: 6 × 14 − 13 = 84 − 13 = 71 ✓' },
+        { difficulty: 'Medium-Hard', question: 'A student solves 5x − 8 = 32 by first dividing both sides by 5, getting x − 8 = 6.4, then adding 8 to get x = 14.4. Explain the mistake in this order of operations and solve correctly.', answer: 'The mistake is undoing the operations in the wrong order. Since 5x − 8 = 32 was built by first multiplying by 5, then subtracting 8, we must undo subtraction first (add 8 to both sides), then undo multiplication (divide by 5) — not the other way round. Correct method: 5x − 8 + 8 = 32 + 8, so 5x = 40, then x = 40 ÷ 5 = 8. Check: 5 × 8 − 8 = 40 − 8 = 32 ✓', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Which of these two equations has the larger solution?\n\nA) 3x + 4 = 25\nB) 2x + 9 = 31\n\nWrite only "A" or "B".', answer: 'B', checkMode: 'auto', correctAnswer: 'b', correctAnswers: ['b', 'B'], explanation: 'A) 3x + 4 = 25 → 3x = 21 → x = 7\nB) 2x + 9 = 31 → 2x = 22 → x = 11\n11 > 7, so equation B has the larger solution.' },
+
+        // Block 5 — Multi-step and combined-unknown word problems (Hard) — positions 16-19
+        { difficulty: 'Hard', question: 'Sipho starts with some money. He spends R145 on shoes and R90 on a shirt, then his uncle gives him R60. He ends up with R210. How much did he start with?', answer: 'Let s = starting amount.\ns − 145 − 90 + 60 = 210\ns − 175 = 210\ns = 385\nSipho started with R385.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Amahle and Kagiso share 150 stamps. Amahle has 15 more than twice as many stamps as Kagiso. How many stamps does each have?', answer: 'Let Kagiso have k stamps. Amahle has 2k + 15.\nk + 2k + 15 = 150\n3k + 15 = 150\n3k = 135\nk = 45\nKagiso has 45 stamps and Amahle has 2 × 45 + 15 = 105 stamps.\nCheck: 45 + 105 = 150 ✓', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A tutor earns the same amount for every lesson she teaches. After teaching 8 lessons in a week she has earned R376. How much does she earn per lesson?', answer: '47', checkMode: 'auto', correctAnswer: '47', explanation: 'Let r = rate per lesson.\nEquation: 8r = 376\nDivide both sides by 8: r = 376 ÷ 8 = 47\nCheck: 8 × 47 = 376 ✓\nShe earns R47 per lesson.' },
+        { difficulty: 'Hard', question: 'Lerato says that x = 12 is the solution to 5x − 20 = 40. Show a full substitution check and explain whether she is correct.', answer: 'Substitute x = 12 into 5x − 20 = 40.\n5 × 12 − 20 = 60 − 20 = 40\nThe left side equals 40 and the right side is 40, so both sides are equal. Lerato is correct — x = 12 is the solution.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered equations, inverse operations, and solving word problems with number sentences.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on two-step equations or word problems and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on inverse operations and reverse-BODMAS order, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Understanding equations, variables, checking solutions (Easy) — positions 0-3
+        { difficulty: 'Easy', question: 'Is the number sentence 9 × 7 = 64 true or false?', answer: 'false', checkMode: 'auto', correctAnswer: 'false', correctAnswers: ['false', 'no'], explanation: 'Calculate the left side: 9 × 7 = 63.\nIs 63 = 64? No.\nThe number sentence is false.' },
+        { difficulty: 'Easy', question: 'In the equation 5y − 8 = 32, name the variable and the two known values.', answer: 'The variable is y. The known values are 8 and 32.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Sipho scored some goals this season. Is g = 14 a solution to g + 6 = 20?', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes'], explanation: 'Substitute g = 14 into g + 6 = 20.\n14 + 6 = 20 ✓\nBoth sides equal 20, so g = 14 is a solution.' },
+        { difficulty: 'Easy', question: 'Precious says x = 6 is a solution to 8x − 9 = 40 — is she correct? Show your check.', answer: 'no', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No'], explanation: 'Substitute x = 6 into 8x − 9 = 40.\n8 × 6 − 9 = 48 − 9 = 39\nIs 39 = 40? No.\nPrecious is not correct — x = 6 is not a solution.' },
+
+        // Block 2 — Translating word problems into equations, not solving (Easy-Medium) — positions 4-7
+        { difficulty: 'Easy', question: 'Write an equation for this problem — do not solve it: a number decreased by 25 gives 60.', answer: 'n − 25 = 60', checkMode: 'auto', correctAnswer: 'n - 25 = 60', correctAnswers: ['n - 25 = 60', 'n-25=60', 'n − 25 = 60'], explanation: 'Let n be the unknown number.\n"Decreased by" means subtract.\nn − 25 = 60' },
+        { difficulty: 'Easy-Medium', question: 'A stadium has s seats shared equally among 12 sections, with 45 seats in each section. Write an equation (do not solve) linking s to the sections.', answer: 's ÷ 12 = 45', checkMode: 'auto', correctAnswer: 's ÷ 12 = 45', correctAnswers: ['s ÷ 12 = 45', 's/12=45', 's÷12=45'], explanation: '"Shared equally among 12" means divide by 12.\nTotal seats ÷ number of sections = seats per section\ns ÷ 12 = 45' },
+        { difficulty: 'Medium', question: 'Which equation matches this story — Thandiwe had some airtime. She bought more airtime worth R35 and now has R120 worth in total.\n\nA) a − 35 = 120\nB) a + 35 = 120\nC) 35a = 120\n\nWrite only "A", "B", or "C".', answer: 'B', checkMode: 'auto', correctAnswer: 'b', correctAnswers: ['b', 'B'], explanation: '"Bought more" means add to her starting airtime a.\nStarting airtime plus 35 equals 120: a + 35 = 120\nThis matches equation B.' },
+        { difficulty: 'Medium', question: 'A learner writes the equation p − 9 = 63 for this problem: "A shop sells pencils at R9 each. The total for a class order is R63. How many pencils were bought?" Explain what is wrong with this equation.', answer: 'The equation is wrong because the problem describes a price per item (multiplication), not subtraction. "At R9 each" means the total cost equals R9 multiplied by the number of pencils, p. The correct equation is 9p = 63.', checkMode: 'self' },
+
+        // Block 3 — Solving one-step equations with inverse operations (Medium) — positions 8-11
+        { difficulty: 'Medium', question: 'Solve y − 46 = 58.', answer: '104', checkMode: 'auto', correctAnswer: '104', explanation: 'Inverse of subtracting 46 is adding 46.\ny − 46 + 46 = 58 + 46\ny = 104\nCheck: 104 − 46 = 58 ✓' },
+        { difficulty: 'Medium', question: 'Solve p ÷ 9 = 23. What inverse operation did you use, and why?', answer: 'p = 207. I used multiplication because p is divided by 9, and multiplying by 9 is the inverse operation that undoes division and isolates p. 23 × 9 = 207. Check: 207 ÷ 9 = 23 ✓', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A student solves 7x = 154 by dividing only the left side by 7, getting x = 22 but writing the right side still as 154. Explain the error in this reasoning even though the final numeric answer is correct.', answer: 'Although x = 22 happens to be numerically correct (154 ÷ 7 = 22), the method described is flawed reasoning — you must divide BOTH sides of the equation by 7 to keep it balanced, not just isolate the left side while ignoring the right side. Writing it correctly: 7x ÷ 7 = 154 ÷ 7, so x = 22. Doing it any other way risks errors in equations where the arithmetic is less obvious.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A farmer packs oranges into crates of 8. Nkosana claims that if 8c = 152, then c = 19. Is Nkosana correct? Show your check.', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes'], explanation: 'Divide both sides by 8: c = 152 ÷ 8 = 19.\nCheck: 8 × 19 = 152 ✓\nNkosana is correct.' },
+
+        // Block 4 — Solving two-step equations using reverse-BODMAS order (Medium-Hard) — positions 12-15
+        { difficulty: 'Medium', question: 'Solve 6x − 14 = 58.', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Step 1 — Undo the subtraction: add 14 to both sides.\n6x − 14 + 14 = 58 + 14\n6x = 72\nStep 2 — Undo the multiplication: divide both sides by 6.\n6x ÷ 6 = 72 ÷ 6\nx = 12\nCheck: 6 × 12 − 14 = 72 − 14 = 58 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bongiwe thinks of a number. She multiplies it by 12 and subtracts 27, giving an answer of 105. What is her number?', answer: '11', checkMode: 'auto', correctAnswer: '11', explanation: 'Let the number be n.\nEquation: 12n − 27 = 105\nStep 1: add 27 to both sides → 12n = 132\nStep 2: divide both sides by 12 → n = 11\nCheck: 12 × 11 − 27 = 132 − 27 = 105 ✓' },
+        { difficulty: 'Medium-Hard', question: 'A student solves 3x + 15 = 60 by first dividing both sides by 3, getting x + 15 = 20, then subtracting 15 to get x = 5. Explain the mistake in this order of operations and solve correctly.', answer: 'The mistake is undoing the operations in the wrong order — dividing 60 by 3 does not correctly divide the whole right side because 15 was added AFTER the multiplication, so it cannot simply be divided along with the 3x term. The correct method is to undo addition first: subtract 15 from both sides to get 3x = 45, then divide by 3 to get x = 15. Check: 3 × 15 + 15 = 45 + 15 = 60 ✓', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Which of these two equations has the larger solution?\n\nA) 4x − 6 = 34\nB) 5x − 8 = 37\n\nWrite only "A" or "B".', answer: 'A', checkMode: 'auto', correctAnswer: 'a', correctAnswers: ['a', 'A'], explanation: 'A) 4x − 6 = 34 → 4x = 40 → x = 10\nB) 5x − 8 = 37 → 5x = 45 → x = 9\n10 > 9, so equation A has the larger solution.' },
+
+        // Block 5 — Multi-step and combined-unknown word problems (Hard) — positions 16-19
+        { difficulty: 'Hard', question: 'Nomsa starts with some money saved. She earns R220 doing chores and R85 from a birthday gift, then spends R150 on a gift for a friend. She ends up with R430. How much did she start with?', answer: 'Let s = starting amount.\ns + 220 + 85 − 150 = 430\ns + 155 = 430\ns = 275\nNomsa started with R275.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thulani and Refilwe share 96 marbles. Thulani has 3 times as many marbles as Refilwe. How many marbles does each have?', answer: 'Let Refilwe have r marbles. Thulani has 3r.\nr + 3r = 96\n4r = 96\nr = 24\nRefilwe has 24 marbles and Thulani has 3 × 24 = 72 marbles.\nCheck: 24 + 72 = 96 ✓', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A delivery driver earns the same amount for every parcel delivered. After delivering parcels for 6 days he has earned R2 748. If he delivers the same number of parcels\' worth of pay each day, how much does he earn per day?', answer: '458', checkMode: 'auto', correctAnswer: '458', explanation: 'Let r = earnings per day.\nEquation: 6r = 2 748\nDivide both sides by 6: r = 2 748 ÷ 6 = 458\nCheck: 6 × 458 = 2 748 ✓\nHe earns R458 per day.' },
+        { difficulty: 'Hard', question: 'Kagiso says that x = 15 is the solution to 3x − 25 = 20. Show a full substitution check and explain whether he is correct.', answer: 'Substitute x = 15 into 3x − 25 = 20.\n3 × 15 − 25 = 45 − 25 = 20\nThe left side equals 20 and the right side is 20, so both sides are equal. Kagiso is correct — x = 15 is the solution.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered equations, inverse operations, and solving word problems with number sentences.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on two-step equations or word problems and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on inverse operations and reverse-BODMAS order, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Understanding equations, variables, checking solutions (Easy) — positions 0-3
+        { difficulty: 'Easy', question: 'Is the number sentence 72 ÷ 8 = 9 true or false?', answer: 'true', checkMode: 'auto', correctAnswer: 'true', correctAnswers: ['true', 'yes'], explanation: 'Calculate the left side: 72 ÷ 8 = 9.\nIs 9 = 9? Yes.\nThe number sentence is true.' },
+        { difficulty: 'Easy', question: 'In the equation 7t + 4 = 60, name the variable and describe what the equals sign shows.', answer: 'The variable is t. The equals sign shows that the expression 7t + 4 has exactly the same value as 60 — the two sides are balanced.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Mpho has some marbles. Is m = 22 a solution to m − 9 = 13?', answer: 'yes', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes'], explanation: 'Substitute m = 22 into m − 9 = 13.\n22 − 9 = 13 ✓\nBoth sides equal 13, so m = 22 is a solution.' },
+        { difficulty: 'Easy', question: 'Karabo says x = 5 is a solution to 6x + 8 = 40 — is he correct? Show your check.', answer: 'no', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No'], explanation: 'Substitute x = 5 into 6x + 8 = 40.\n6 × 5 + 8 = 30 + 8 = 38\nIs 38 = 40? No.\nKarabo is not correct — x = 5 is not a solution.' },
+
+        // Block 2 — Translating word problems into equations, not solving (Easy-Medium) — positions 4-7
+        { difficulty: 'Easy', question: 'Write an equation for this problem — do not solve it: a number multiplied by 7 gives 84.', answer: '7n = 84', checkMode: 'auto', correctAnswer: '7n = 84', correctAnswers: ['7n = 84', '7n=84', 'n × 7 = 84', 'n x 7 = 84'], explanation: 'Let n be the unknown number.\n"Multiplied by 7" means multiply.\n7n = 84' },
+        { difficulty: 'Easy-Medium', question: 'Palesa buys a jacket at R450 and pays a deposit of R120 in cash, then pays the rest, b, by card. Write an equation (do not solve) linking the deposit and the remaining balance to the total.', answer: '120 + b = 450', checkMode: 'auto', correctAnswer: '120 + b = 450', correctAnswers: ['120 + b = 450', '120+b=450', 'b + 120 = 450', 'b+120=450'], explanation: 'The deposit plus the remaining balance equals the total price.\n120 + b = 450' },
+        { difficulty: 'Medium', question: 'Which equation matches this story — Vusi had a number of goals scored this season. He then scored 5 more goals in the final match, giving him 23 goals in total.\n\nA) g − 5 = 23\nB) 5g = 23\nC) g + 5 = 23\n\nWrite only "A", "B", or "C".', answer: 'C', checkMode: 'auto', correctAnswer: 'c', correctAnswers: ['c', 'C'], explanation: '"Scored 5 more" means add 5 to his starting goals g.\nStarting goals plus 5 equals 23: g + 5 = 23\nThis matches equation C.' },
+        { difficulty: 'Medium', question: 'A learner writes the equation d + 6 = 90 for this problem: "A total of 90 cupcakes are shared equally among 6 classes. How many does each class get, d?" Explain what is wrong with this equation.', answer: 'The equation is wrong because the problem describes sharing equally (division), not addition. "Shared equally among 6 classes" means the total of 90 should be divided by 6. The correct equation is 90 ÷ 6 = d, or equivalently 6d = 90.', checkMode: 'self' },
+
+        // Block 3 — Solving one-step equations with inverse operations (Medium) — positions 8-11
+        { difficulty: 'Medium', question: 'Solve x + 68 = 121.', answer: '53', checkMode: 'auto', correctAnswer: '53', explanation: 'Inverse of adding 68 is subtracting 68.\nx + 68 − 68 = 121 − 68\nx = 53\nCheck: 53 + 68 = 121 ✓' },
+        { difficulty: 'Medium', question: 'Solve 11n = 132. What inverse operation did you use, and why?', answer: 'n = 12. I used division because n is multiplied by 11, and dividing by 11 is the inverse operation that undoes multiplication and isolates n. 132 ÷ 11 = 12. Check: 11 × 12 = 132 ✓', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A student solves x ÷ 7 = 15 by dividing both sides by 7 again, getting x = 15 ÷ 7. Explain the error and give the correct answer.', answer: 'The student used the wrong inverse operation. Since x is being divided by 7, the inverse is multiplication, not further division. Multiplying both sides by 7 gives x = 15 × 7 = 105. Check: 105 ÷ 7 = 15 ✓. Dividing again moves further away from isolating x rather than undoing the division.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A school packs learners into buses of 45 seats. Ayanda claims that if 45b = 405, then b = 8. Is Ayanda correct? Show your check.', answer: 'no', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No'], explanation: 'Divide both sides by 45: b = 405 ÷ 45 = 9.\nCheck: 45 × 9 = 405 ✓, but 45 × 8 = 360 ≠ 405.\nAyanda is not correct — the correct answer is b = 9.' },
+
+        // Block 4 — Solving two-step equations using reverse-BODMAS order (Medium-Hard) — positions 12-15
+        { difficulty: 'Medium', question: 'Solve 8x + 37 = 133.', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Step 1 — Undo the addition: subtract 37 from both sides.\n8x + 37 − 37 = 133 − 37\n8x = 96\nStep 2 — Undo the multiplication: divide both sides by 8.\n8x ÷ 8 = 96 ÷ 8\nx = 12\nCheck: 8 × 12 + 37 = 96 + 37 = 133 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Ntombi thinks of a number. She multiplies it by 15 and subtracts 48, giving an answer of 192. What is her number?', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Let the number be n.\nEquation: 15n − 48 = 192\nStep 1: add 48 to both sides → 15n = 240\nStep 2: divide both sides by 15 → n = 16\nCheck: 15 × 16 − 48 = 240 − 48 = 192 ✓' },
+        { difficulty: 'Medium-Hard', question: 'A student solves 9x − 18 = 63 by first subtracting 18 from 63 (instead of adding), getting 9x = 45 and then x = 5. Explain the mistake in this order of operations and solve correctly.', answer: 'The mistake is using the wrong inverse operation — since 18 is subtracted on the left side, we must ADD 18 to both sides to undo it, not subtract 18 again. Correct method: 9x − 18 + 18 = 63 + 18, so 9x = 81, then x = 81 ÷ 9 = 9. Check: 9 × 9 − 18 = 81 − 18 = 63 ✓', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Which of these two equations has the larger solution?\n\nA) 6x + 5 = 41\nB) 4x + 3 = 39\n\nWrite only "A" or "B".', answer: 'B', checkMode: 'auto', correctAnswer: 'b', correctAnswers: ['b', 'B'], explanation: 'A) 6x + 5 = 41 → 6x = 36 → x = 6\nB) 4x + 3 = 39 → 4x = 36 → x = 9\n9 > 6, so equation B has the larger solution.' },
+
+        // Block 5 — Multi-step and combined-unknown word problems (Hard) — positions 16-19
+        { difficulty: 'Hard', question: 'Lindiwe starts with some airtime credit. She uses R65 on calls and R40 on data, then buys a further R100 of airtime. She ends up with R95 of credit. How much did she start with?', answer: 'Let s = starting amount.\ns − 65 − 40 + 100 = 95\ns − 5 = 95\ns = 100\nLindiwe started with R100.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sibusiso and Andile share 200 stickers. Sibusiso has 20 more than twice as many stickers as Andile. How many stickers does each have?', answer: 'Let Andile have a stickers. Sibusiso has 2a + 20.\na + 2a + 20 = 200\n3a + 20 = 200\n3a = 180\na = 60\nAndile has 60 stickers and Sibusiso has 2 × 60 + 20 = 140 stickers.\nCheck: 60 + 140 = 200 ✓', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A car wash team earns the same amount for every car washed. After washing cars for 9 days, the team has earned R3 411. How much does the team earn per day?', answer: '379', checkMode: 'auto', correctAnswer: '379', explanation: 'Let r = earnings per day.\nEquation: 9r = 3 411\nDivide both sides by 9: r = 3 411 ÷ 9 = 379\nCheck: 9 × 379 = 3 411 ✓\nThe team earns R379 per day.' },
+        { difficulty: 'Hard', question: 'Thandeka says that x = 18 is the solution to 4x − 27 = 45. Show a full substitution check and explain whether she is correct.', answer: 'Substitute x = 18 into 4x − 27 = 45.\n4 × 18 − 27 = 72 − 27 = 45\nThe left side equals 45 and the right side is 45, so both sides are equal. Thandeka is correct — x = 18 is the solution.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered equations, inverse operations, and solving word problems with number sentences.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on two-step equations or word problems and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on inverse operations and reverse-BODMAS order, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
   topicPractice: [
     // ── Q1 Easy — check a solution by substitution ───────────────────────────
     {
