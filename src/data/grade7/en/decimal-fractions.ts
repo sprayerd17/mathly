@@ -363,4 +363,147 @@ export const topicData: TopicData = {
     { minScore: 6, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 1-4 Addition & subtraction | 5-8 Multiplication | 9-11 Division
+    // | 12-15 Converting decimals/fractions/percentages | 16-17 Rounding
+    // | 18-20 Word problems, error-spotting & multi-step reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Addition & subtraction of decimals (1-4)
+        { difficulty: 'Easy', question: 'Calculate 8.45 + 3.72.', answer: '12.17', checkMode: 'auto', correctAnswer: '12.17', explanation: 'Line up decimal points: 8.45 + 3.72.\n8.45 + 3.72 = 12.17 ✓' },
+        { difficulty: 'Easy', question: 'Calculate 12.6 - 4.85.', answer: '7.75', checkMode: 'auto', correctAnswer: '7.75', explanation: 'Line up decimal points: 12.60 - 4.85 (add a zero so both have 2 decimal places).\n12.60 - 4.85 = 7.75 ✓' },
+        { difficulty: 'Easy-Medium', question: 'A plank of wood is 23.75 m long. Another plank is 8.4 m long. What is the total length if the two planks are joined end to end?', answer: '32.15 m', checkMode: 'auto', correctAnswer: '32.15', correctAnswers: ['32.15', '32.15m', '32.15 m'], explanation: 'Line up decimal points: 23.75 + 8.40 (add a zero so both have 2 decimal places).\n23.75 + 8.40 = 32.15 m ✓' },
+        { difficulty: 'Medium', question: 'Calculate 15.3 - 2.678.', answer: '12.622', checkMode: 'auto', correctAnswer: '12.622', explanation: 'Line up decimal points: 15.300 - 2.678 (add zeros so both have 3 decimal places).\n15.300 - 2.678 = 12.622 ✓' },
+
+        // Block 2 — Multiplication of decimals (5-8)
+        { difficulty: 'Medium', question: 'Calculate 4.6 × 3.2.', answer: '14.72', checkMode: 'auto', correctAnswer: '14.72', explanation: 'Ignore decimal points: 46 × 32 = 1 472.\nCount decimal places: 4.6 has 1, 3.2 has 1. Total = 2.\nPlace decimal point 2 places from the right in 1 472: 14.72 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.7 × 0.8.', answer: '0.56', checkMode: 'auto', correctAnswer: '0.56', explanation: 'Ignore decimal points: 7 × 8 = 56.\nCount decimal places: 0.7 has 1, 0.8 has 1. Total = 2.\nPlace decimal point 2 places from the right in 56: 0.56 ✓' },
+        { difficulty: 'Easy-Medium', question: 'A ribbon costs R12.50 per metre. What is the cost of 4 metres of ribbon?', answer: 'R50.00', checkMode: 'auto', correctAnswer: 'R50.00', correctAnswers: ['R50.00', '50.00', 'R50', '50'], explanation: 'Multiply: R12.50 × 4.\nIgnore the decimal point: 1 250 × 4 = 5 000.\nDecimal places: 12.50 has 2. Place decimal point 2 places from the right: 50.00 = R50.00 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 2.34 × 1.5.', answer: '3.51', checkMode: 'auto', correctAnswer: '3.51', explanation: 'Ignore decimal points: 234 × 15 = 3 510.\nCount decimal places: 2.34 has 2, 1.5 has 1. Total = 3.\nPlace decimal point 3 places from the right in 3 510: 3.510 = 3.51 ✓' },
+
+        // Block 3 — Division of decimals (9-11)
+        { difficulty: 'Medium', question: 'Calculate 96.3 ÷ 3.', answer: '32.1', checkMode: 'auto', correctAnswer: '32.1', explanation: 'Divide, keeping the decimal point in position.\n96 ÷ 3 = 32. Bring down 3 → 3 ÷ 3 = 1.\nAnswer: 32.1. Check: 32.1 × 3 = 96.3 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.72 ÷ 8.', answer: '0.09', checkMode: 'auto', correctAnswer: '0.09', explanation: 'Divide, keeping the decimal point in position.\n0.72 ÷ 8: 72 ÷ 8 = 9, and 0.72 has 2 decimal places, so the answer has 2 decimal places.\nAnswer: 0.09. Check: 0.09 × 8 = 0.72 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 6.4 ÷ 100.', answer: '0.064', checkMode: 'auto', correctAnswer: '0.064', explanation: 'Dividing by 100 moves the decimal point 2 places to the left.\n6.4 ÷ 100: move the decimal point 2 places left → 0.064 ✓' },
+
+        // Block 4 — Converting decimals, fractions & percentages (12-15)
+        { difficulty: 'Medium', question: 'Write 0.75 as a fraction in simplest form and as a percentage.', answer: '3/4 and 75%', checkMode: 'auto', correctAnswer: '3/475%', correctAnswers: ['3/475%', '3/4,75%', '3/4 75%'], explanation: '0.75 = 75/100. Simplify by dividing top and bottom by 25: 75/100 = 3/4.\nAs a percentage, multiply by 100: 0.75 × 100 = 75% ✓' },
+        { difficulty: 'Medium', question: 'Write 3/5 as a decimal and as a percentage.', answer: '0.6 and 60%', checkMode: 'auto', correctAnswer: '0.660%', correctAnswers: ['0.660%', '0.6,60%', '0.6 60%'], explanation: 'Convert to tenths: 3/5 = 6/10 = 0.6.\nAs a percentage, multiply by 100: 0.6 × 100 = 60% ✓' },
+        { difficulty: 'Medium', question: 'Write 42% as a decimal and as a fraction in simplest form.', answer: '0.42 and 21/50', checkMode: 'auto', correctAnswer: '0.4221/50', correctAnswers: ['0.4221/50', '0.42,21/50', '0.42 21/50'], explanation: 'To write a percentage as a decimal, divide by 100: 42% = 0.42.\nAs a fraction: 42/100. Simplify by dividing top and bottom by 2: 42/100 = 21/50 ✓' },
+        { difficulty: 'Medium', question: 'Order these decimals from smallest to biggest: 0.6, 0.09, 0.45, 0.3', answer: '0.09, 0.3, 0.45, 0.6', checkMode: 'auto', correctAnswer: '0.09,0.3,0.45,0.6', correctAnswers: ['0.09,0.3,0.45,0.6', '0.09, 0.3, 0.45, 0.6'], explanation: 'Compare tenths first: 0.09 has 0 tenths (smallest). Then 0.3 (3 tenths), 0.45 (4 tenths), 0.6 (6 tenths).\nOrder: 0.09, 0.3, 0.45, 0.6 ✓' },
+
+        // Block 5 — Rounding to a given number of decimal places (16-17)
+        { difficulty: 'Medium', question: 'Round 5.678 to 2 decimal places.', answer: '5.68', checkMode: 'auto', correctAnswer: '5.68', explanation: 'Digit being rounded: 7 (hundredths).\nDeciding digit: 8 (thousandths). Since 8 ≥ 5, round up.\n7 becomes 8. Answer: 5.68 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Round 12.045 to 2 decimal places.', answer: '12.05', checkMode: 'auto', correctAnswer: '12.05', explanation: 'Digit being rounded: 4 (hundredths).\nDeciding digit: 5 (thousandths). Since 5 ≥ 5, round up.\n4 becomes 5. Answer: 12.05 ✓' },
+
+        // Block 6 — Word problems, error-spotting & multi-step reasoning (18-20)
+        { difficulty: 'Hard', question: 'Thabo buys 2.5 kg of apples at R18.60 per kg and 1.2 kg of bananas at R14.50 per kg. What is the total cost of the fruit?', answer: 'R63.90', checkMode: 'auto', correctAnswer: 'R63.90', correctAnswers: ['R63.90', '63.90', 'R63.9', '63.9'], explanation: 'Apples: 2.5 × R18.60 = R46.50.\nBananas: 1.2 × R14.50 = R17.40.\nTotal: R46.50 + R17.40 = R63.90 ✓' },
+        { difficulty: 'Hard', question: 'A student calculates 4.2 × 3 and writes the answer as 1.26. Explain the mistake and give the correct answer.', answer: 'The student placed the decimal point incorrectly. Ignoring the decimal point, 42 × 3 = 126. Since 4.2 has 1 decimal place and 3 has 0 decimal places, the total is 1 decimal place, so the decimal point goes 1 place from the right: 12.6, not 1.26.', checkMode: 'self', explanation: '42 × 3 = 126. Total decimal places = 1. Correct answer: 12.6.' },
+        { difficulty: 'Hard', question: 'Naledi earns R450.80 doing weekend jobs. She spends a quarter of it on a gift and saves the rest. How much does she save?', answer: 'R338.10', checkMode: 'auto', correctAnswer: 'R338.10', correctAnswers: ['R338.10', '338.10', 'R338.1', '338.1'], explanation: 'A quarter of R450.80: R450.80 ÷ 4 = R112.70.\nAmount saved: R450.80 − R112.70 = R338.10 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered all operations with decimal fractions.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit the decimal point rules, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Addition & subtraction of decimals (1-4)
+        { difficulty: 'Easy', question: 'Calculate 6.28 + 5.9.', answer: '12.18', checkMode: 'auto', correctAnswer: '12.18', explanation: 'Line up decimal points: 6.28 + 5.90 (add a zero so both have 2 decimal places).\n6.28 + 5.90 = 12.18 ✓' },
+        { difficulty: 'Easy', question: 'Calculate 18.4 - 6.75.', answer: '11.65', checkMode: 'auto', correctAnswer: '11.65', explanation: 'Line up decimal points: 18.40 - 6.75 (add a zero so both have 2 decimal places).\n18.40 - 6.75 = 11.65 ✓' },
+        { difficulty: 'Easy-Medium', question: 'A hiking trail has two sections: one is 14.6 km long and the other is 9.35 km long. What is the total length of the trail?', answer: '23.95 km', checkMode: 'auto', correctAnswer: '23.95', correctAnswers: ['23.95', '23.95km', '23.95 km'], explanation: 'Line up decimal points: 14.60 + 9.35 (add a zero so both have 2 decimal places).\n14.60 + 9.35 = 23.95 km ✓' },
+        { difficulty: 'Medium', question: 'Calculate 20.5 - 8.436.', answer: '12.064', checkMode: 'auto', correctAnswer: '12.064', explanation: 'Line up decimal points: 20.500 - 8.436 (add zeros so both have 3 decimal places).\n20.500 - 8.436 = 12.064 ✓' },
+
+        // Block 2 — Multiplication of decimals (5-8)
+        { difficulty: 'Medium', question: 'Calculate 3.8 × 2.6.', answer: '9.88', checkMode: 'auto', correctAnswer: '9.88', explanation: 'Ignore decimal points: 38 × 26 = 988.\nCount decimal places: 3.8 has 1, 2.6 has 1. Total = 2.\nPlace decimal point 2 places from the right in 988: 9.88 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.6 × 0.9.', answer: '0.54', checkMode: 'auto', correctAnswer: '0.54', explanation: 'Ignore decimal points: 6 × 9 = 54.\nCount decimal places: 0.6 has 1, 0.9 has 1. Total = 2.\nPlace decimal point 2 places from the right in 54: 0.54 ✓' },
+        { difficulty: 'Easy-Medium', question: 'A notebook costs R15.50. What is the cost of 3 notebooks?', answer: 'R46.50', checkMode: 'auto', correctAnswer: 'R46.50', correctAnswers: ['R46.50', '46.50', 'R46.5', '46.5'], explanation: 'Multiply: R15.50 × 3.\nIgnore the decimal point: 1 550 × 3 = 4 650.\nDecimal places: 15.50 has 2. Place decimal point 2 places from the right: 46.50 = R46.50 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 4.12 × 2.5.', answer: '10.3', checkMode: 'auto', correctAnswer: '10.3', correctAnswers: ['10.3', '10.30'], explanation: 'Ignore decimal points: 412 × 25 = 10 300.\nCount decimal places: 4.12 has 2, 2.5 has 1. Total = 3.\nPlace decimal point 3 places from the right in 10 300: 10.300 = 10.3 ✓' },
+
+        // Block 3 — Division of decimals (9-11)
+        { difficulty: 'Medium', question: 'Calculate 84.5 ÷ 5.', answer: '16.9', checkMode: 'auto', correctAnswer: '16.9', explanation: 'Divide, keeping the decimal point in position.\n84 ÷ 5 = 16 remainder 4. Bring down 5 → 45 ÷ 5 = 9.\nAnswer: 16.9. Check: 16.9 × 5 = 84.5 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.64 ÷ 8.', answer: '0.08', checkMode: 'auto', correctAnswer: '0.08', explanation: 'Divide, keeping the decimal point in position.\n0.64 ÷ 8: 64 ÷ 8 = 8, and 0.64 has 2 decimal places, so the answer has 2 decimal places.\nAnswer: 0.08. Check: 0.08 × 8 = 0.64 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 8.3 ÷ 1 000.', answer: '0.0083', checkMode: 'auto', correctAnswer: '0.0083', explanation: 'Dividing by 1 000 moves the decimal point 3 places to the left.\n8.3 ÷ 1 000: move the decimal point 3 places left → 0.0083 ✓' },
+
+        // Block 4 — Converting decimals, fractions & percentages (12-15)
+        { difficulty: 'Medium', question: 'Write 0.25 as a fraction in simplest form and as a percentage.', answer: '1/4 and 25%', checkMode: 'auto', correctAnswer: '1/425%', correctAnswers: ['1/425%', '1/4,25%', '1/4 25%'], explanation: '0.25 = 25/100. Simplify by dividing top and bottom by 25: 25/100 = 1/4.\nAs a percentage, multiply by 100: 0.25 × 100 = 25% ✓' },
+        { difficulty: 'Medium', question: 'Write 7/10 as a decimal and as a percentage.', answer: '0.7 and 70%', checkMode: 'auto', correctAnswer: '0.770%', correctAnswers: ['0.770%', '0.7,70%', '0.7 70%'], explanation: '7/10 means 7 tenths, so 7/10 = 0.7.\nAs a percentage, multiply by 100: 0.7 × 100 = 70% ✓' },
+        { difficulty: 'Medium', question: 'Write 65% as a decimal and as a fraction in simplest form.', answer: '0.65 and 13/20', checkMode: 'auto', correctAnswer: '0.6513/20', correctAnswers: ['0.6513/20', '0.65,13/20', '0.65 13/20'], explanation: 'To write a percentage as a decimal, divide by 100: 65% = 0.65.\nAs a fraction: 65/100. Simplify by dividing top and bottom by 5: 65/100 = 13/20 ✓' },
+        { difficulty: 'Medium', question: 'Order these decimals from smallest to biggest: 0.8, 0.15, 0.55, 0.4', answer: '0.15, 0.4, 0.55, 0.8', checkMode: 'auto', correctAnswer: '0.15,0.4,0.55,0.8', correctAnswers: ['0.15,0.4,0.55,0.8', '0.15, 0.4, 0.55, 0.8'], explanation: 'Compare tenths first: 0.15 has 1 tenth (smallest). Then 0.4 (4 tenths), 0.55 (5 tenths), 0.8 (8 tenths).\nOrder: 0.15, 0.4, 0.55, 0.8 ✓' },
+
+        // Block 5 — Rounding to a given number of decimal places (16-17)
+        { difficulty: 'Medium', question: 'Round 6.783 to 2 decimal places.', answer: '6.78', checkMode: 'auto', correctAnswer: '6.78', explanation: 'Digit being rounded: 8 (hundredths).\nDeciding digit: 3 (thousandths). Since 3 ≤ 4, round down.\n8 stays as 8. Answer: 6.78 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Round 9.076 to 2 decimal places.', answer: '9.08', checkMode: 'auto', correctAnswer: '9.08', explanation: 'Digit being rounded: 7 (hundredths).\nDeciding digit: 6 (thousandths). Since 6 ≥ 5, round up.\n7 becomes 8. Answer: 9.08 ✓' },
+
+        // Block 6 — Word problems, error-spotting & multi-step reasoning (18-20)
+        { difficulty: 'Hard', question: 'Zanele buys 3.5 kg of oranges at R16.40 per kg and 0.8 kg of grapes at R32.50 per kg. What is the total cost of the fruit?', answer: 'R83.40', checkMode: 'auto', correctAnswer: 'R83.40', correctAnswers: ['R83.40', '83.40', 'R83.4', '83.4'], explanation: 'Oranges: 3.5 × R16.40 = R57.40.\nGrapes: 0.8 × R32.50 = R26.00.\nTotal: R57.40 + R26.00 = R83.40 ✓' },
+        { difficulty: 'Hard', question: 'A student calculates 5.3 × 4 and writes the answer as 2.12. Explain the mistake and give the correct answer.', answer: 'The student placed the decimal point incorrectly. Ignoring the decimal point, 53 × 4 = 212. Since 5.3 has 1 decimal place and 4 has 0 decimal places, the total is 1 decimal place, so the decimal point goes 1 place from the right: 21.2, not 2.12.', checkMode: 'self', explanation: '53 × 4 = 212. Total decimal places = 1. Correct answer: 21.2.' },
+        { difficulty: 'Hard', question: 'Sipho earns R360.40 from a part-time job. He spends a fifth of it on data and saves the rest. How much does he save?', answer: 'R288.32', checkMode: 'auto', correctAnswer: 'R288.32', correctAnswers: ['R288.32', '288.32'], explanation: 'A fifth of R360.40: R360.40 ÷ 5 = R72.08.\nAmount saved: R360.40 − R72.08 = R288.32 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered all operations with decimal fractions.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit the decimal point rules, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Addition & subtraction of decimals (1-4)
+        { difficulty: 'Easy', question: 'Calculate 9.36 + 4.8.', answer: '14.16', checkMode: 'auto', correctAnswer: '14.16', explanation: 'Line up decimal points: 9.36 + 4.80 (add a zero so both have 2 decimal places).\n9.36 + 4.80 = 14.16 ✓' },
+        { difficulty: 'Easy', question: 'Calculate 15.7 - 5.65.', answer: '10.05', checkMode: 'auto', correctAnswer: '10.05', explanation: 'Line up decimal points: 15.70 - 5.65 (add a zero so both have 2 decimal places).\n15.70 - 5.65 = 10.05 ✓' },
+        { difficulty: 'Easy-Medium', question: 'A fence is built in two sections: one is 21.4 m long and the other is 6.85 m long. What is the total length of the fence?', answer: '28.25 m', checkMode: 'auto', correctAnswer: '28.25', correctAnswers: ['28.25', '28.25m', '28.25 m'], explanation: 'Line up decimal points: 21.40 + 6.85 (add a zero so both have 2 decimal places).\n21.40 + 6.85 = 28.25 m ✓' },
+        { difficulty: 'Medium', question: 'Calculate 18.2 - 3.549.', answer: '14.651', checkMode: 'auto', correctAnswer: '14.651', explanation: 'Line up decimal points: 18.200 - 3.549 (add zeros so both have 3 decimal places).\n18.200 - 3.549 = 14.651 ✓' },
+
+        // Block 2 — Multiplication of decimals (5-8)
+        { difficulty: 'Medium', question: 'Calculate 5.4 × 3.3.', answer: '17.82', checkMode: 'auto', correctAnswer: '17.82', explanation: 'Ignore decimal points: 54 × 33 = 1 782.\nCount decimal places: 5.4 has 1, 3.3 has 1. Total = 2.\nPlace decimal point 2 places from the right in 1 782: 17.82 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.5 × 0.7.', answer: '0.35', checkMode: 'auto', correctAnswer: '0.35', explanation: 'Ignore decimal points: 5 × 7 = 35.\nCount decimal places: 0.5 has 1, 0.7 has 1. Total = 2.\nPlace decimal point 2 places from the right in 35: 0.35 ✓' },
+        { difficulty: 'Easy-Medium', question: 'A metre of fabric costs R22.50. What is the cost of 4 metres of fabric?', answer: 'R90.00', checkMode: 'auto', correctAnswer: 'R90.00', correctAnswers: ['R90.00', '90.00', 'R90', '90'], explanation: 'Multiply: R22.50 × 4.\nIgnore the decimal point: 2 250 × 4 = 9 000.\nDecimal places: 22.50 has 2. Place decimal point 2 places from the right: 90.00 = R90.00 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 3.16 × 1.5.', answer: '4.74', checkMode: 'auto', correctAnswer: '4.74', correctAnswers: ['4.74', '4.740'], explanation: 'Ignore decimal points: 316 × 15 = 4 740.\nCount decimal places: 3.16 has 2, 1.5 has 1. Total = 3.\nPlace decimal point 3 places from the right in 4 740: 4.740 = 4.74 ✓' },
+
+        // Block 3 — Division of decimals (9-11)
+        { difficulty: 'Medium', question: 'Calculate 63.6 ÷ 4.', answer: '15.9', checkMode: 'auto', correctAnswer: '15.9', explanation: 'Divide, keeping the decimal point in position.\n63 ÷ 4 = 15 remainder 3. Bring down 6 → 36 ÷ 4 = 9.\nAnswer: 15.9. Check: 15.9 × 4 = 63.6 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.81 ÷ 9.', answer: '0.09', checkMode: 'auto', correctAnswer: '0.09', explanation: 'Divide, keeping the decimal point in position.\n0.81 ÷ 9: 81 ÷ 9 = 9, and 0.81 has 2 decimal places, so the answer has 2 decimal places.\nAnswer: 0.09. Check: 0.09 × 9 = 0.81 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 9.2 ÷ 100.', answer: '0.092', checkMode: 'auto', correctAnswer: '0.092', explanation: 'Dividing by 100 moves the decimal point 2 places to the left.\n9.2 ÷ 100: move the decimal point 2 places left → 0.092 ✓' },
+
+        // Block 4 — Converting decimals, fractions & percentages (12-15)
+        { difficulty: 'Medium', question: 'Write 0.6 as a fraction in simplest form and as a percentage.', answer: '3/5 and 60%', checkMode: 'auto', correctAnswer: '3/560%', correctAnswers: ['3/560%', '3/5,60%', '3/5 60%'], explanation: '0.6 = 6/10. Simplify by dividing top and bottom by 2: 6/10 = 3/5.\nAs a percentage, multiply by 100: 0.6 × 100 = 60% ✓' },
+        { difficulty: 'Medium', question: 'Write 9/20 as a decimal and as a percentage.', answer: '0.45 and 45%', checkMode: 'auto', correctAnswer: '0.4545%', correctAnswers: ['0.4545%', '0.45,45%', '0.45 45%'], explanation: 'Convert to hundredths: 9/20 = 45/100 = 0.45.\nAs a percentage, multiply by 100: 0.45 × 100 = 45% ✓' },
+        { difficulty: 'Medium', question: 'Write 8% as a decimal and as a fraction in simplest form.', answer: '0.08 and 2/25', checkMode: 'auto', correctAnswer: '0.082/25', correctAnswers: ['0.082/25', '0.08,2/25', '0.08 2/25'], explanation: 'To write a percentage as a decimal, divide by 100: 8% = 0.08.\nAs a fraction: 8/100. Simplify by dividing top and bottom by 4: 8/100 = 2/25 ✓' },
+        { difficulty: 'Medium', question: 'Order these decimals from smallest to biggest: 0.72, 0.07, 0.5, 0.35', answer: '0.07, 0.35, 0.5, 0.72', checkMode: 'auto', correctAnswer: '0.07,0.35,0.5,0.72', correctAnswers: ['0.07,0.35,0.5,0.72', '0.07, 0.35, 0.5, 0.72'], explanation: 'Compare tenths first: 0.07 has 0 tenths (smallest). Then 0.35 (3 tenths), 0.5 (5 tenths), 0.72 (7 tenths).\nOrder: 0.07, 0.35, 0.5, 0.72 ✓' },
+
+        // Block 5 — Rounding to a given number of decimal places (16-17)
+        { difficulty: 'Medium', question: 'Round 8.347 to 2 decimal places.', answer: '8.35', checkMode: 'auto', correctAnswer: '8.35', explanation: 'Digit being rounded: 4 (hundredths).\nDeciding digit: 7 (thousandths). Since 7 ≥ 5, round up.\n4 becomes 5. Answer: 8.35 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Round 14.095 to 2 decimal places.', answer: '14.10', checkMode: 'auto', correctAnswer: '14.10', correctAnswers: ['14.10', '14.1'], explanation: 'Digit being rounded: 9 (hundredths).\nDeciding digit: 5 (thousandths). Since 5 ≥ 5, round up.\n9 + 1 = 10 — write 0, carry 1 to the tenths: 0 + 1 = 1.\nAnswer: 14.10 ✓' },
+
+        // Block 6 — Word problems, error-spotting & multi-step reasoning (18-20)
+        { difficulty: 'Hard', question: 'Bongani buys 4.5 kg of potatoes at R11.20 per kg and 1.5 kg of onions at R19.60 per kg. What is the total cost of the vegetables?', answer: 'R79.80', checkMode: 'auto', correctAnswer: 'R79.80', correctAnswers: ['R79.80', '79.80', 'R79.8', '79.8'], explanation: 'Potatoes: 4.5 × R11.20 = R50.40.\nOnions: 1.5 × R19.60 = R29.40.\nTotal: R50.40 + R29.40 = R79.80 ✓' },
+        { difficulty: 'Hard', question: 'A student calculates 6.4 × 3 and writes the answer as 1.92. Explain the mistake and give the correct answer.', answer: 'The student placed the decimal point incorrectly. Ignoring the decimal point, 64 × 3 = 192. Since 6.4 has 1 decimal place and 3 has 0 decimal places, the total is 1 decimal place, so the decimal point goes 1 place from the right: 19.2, not 1.92.', checkMode: 'self', explanation: '64 × 3 = 192. Total decimal places = 1. Correct answer: 19.2.' },
+        { difficulty: 'Hard', question: 'Amahle earns R520.50 from selling crafts. She spends a tenth of it on materials for the next batch and saves the rest. How much does she save?', answer: 'R468.45', checkMode: 'auto', correctAnswer: 'R468.45', correctAnswers: ['R468.45', '468.45'], explanation: 'A tenth of R520.50: R520.50 ÷ 10 = R52.05.\nAmount saved: R520.50 − R52.05 = R468.45 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered all operations with decimal fractions.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit the decimal point rules, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

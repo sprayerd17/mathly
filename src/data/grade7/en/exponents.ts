@@ -401,4 +401,114 @@ export const topicData: TopicData = {
       { minPercent: 0, message: 'Keep going, work through the guide again.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 1-3 Notation (base/exponent, writing exponential form) |
+    // 4-7 Evaluating powers | 8-11 Laws of exponents (multiply/divide same base) |
+    // 12-14 Exponents of 0 and 1 | 15-17 Comparing/ordering | 18-20 Word problems
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'In the expression 6⁴, which number is the base and which is the exponent?', answer: 'Base = 6, exponent = 4', checkMode: 'auto', correctAnswer: 'base6exponent4', correctAnswers: ['base6exponent4', 'base=6exponent=4', '6base4exponent'], explanation: 'The base is the number being multiplied by itself (6), and the exponent is the small raised number showing how many times to multiply it (4).' },
+        { difficulty: 'Easy', question: 'Write 8 × 8 × 8 × 8 × 8 using exponential notation.', answer: '8⁵', checkMode: 'auto', correctAnswer: '8^5', correctAnswers: ['8^5', '8⁵'], explanation: 'There are 5 eights multiplied together, so this is written as 8⁵ (base 8, exponent 5).' },
+        { difficulty: 'Easy-Medium', question: 'Thabo writes 4 × 4 × 4 as 4 × 3. Explain why this is incorrect and give the correct exponential form.', answer: '4 × 3 means 4 multiplied by 3, not 4 multiplied by itself 3 times. The correct form is 4³.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate 7².', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: '7² = 7 × 7 = 49.' },
+        { difficulty: 'Easy', question: 'Calculate 2⁷.', answer: '128', checkMode: 'auto', correctAnswer: '128', explanation: '2⁷ = 2×2×2×2×2×2×2 = 128.' },
+        { difficulty: 'Medium', question: 'Calculate 3⁵.', answer: '243', checkMode: 'auto', correctAnswer: '243', explanation: '3⁵ = 3×3×3×3×3 = 243.' },
+        { difficulty: 'Medium', question: 'Palesa says 4⁴ = 16 because she calculated 4 × 4. Explain her mistake and give the correct answer.', answer: 'She only multiplied 4 by itself once (which gives 4²), but the exponent is 4, so 4 must be multiplied by itself 4 times: 4⁴ = 4×4×4×4 = 256.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Simplify 3⁴ × 3² using the laws of exponents. Leave your answer as a power of 3, then evaluate it.', answer: '3⁶ = 729', checkMode: 'auto', correctAnswer: '729', correctAnswers: ['729', '3^6=729', '3⁶=729'], explanation: 'Same base, so add the exponents: 3⁴ × 3² = 3^(4+2) = 3⁶ = 729.' },
+        { difficulty: 'Medium', question: 'Simplify 5⁶ ÷ 5² using the laws of exponents. Leave your answer as a power of 5, then evaluate it.', answer: '5⁴ = 625', checkMode: 'auto', correctAnswer: '625', correctAnswers: ['625', '5^4=625', '5⁴=625'], explanation: 'Same base, so subtract the exponents: 5⁶ ÷ 5² = 5^(6−2) = 5⁴ = 625.' },
+        { difficulty: 'Medium-Hard', question: 'Kagiso simplifies 2³ × 2⁵ as 2¹⁵, saying "you multiply the exponents." Is he correct? Explain and give the correct simplified answer.', answer: 'No — when multiplying powers with the same base, you add the exponents, not multiply them. 2³ × 2⁵ = 2^(3+5) = 2⁸ = 256, not 2¹⁵.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Simplify 4⁵ ÷ 4³ × 4¹, giving your answer as a single power of 4.', answer: '4³', checkMode: 'auto', correctAnswer: '4^3', correctAnswers: ['4^3', '4³', '64'], explanation: 'Work left to right: 4⁵ ÷ 4³ = 4^(5−3) = 4². Then 4² × 4¹ = 4^(2+1) = 4³.' },
+        { difficulty: 'Easy', question: 'Calculate 9⁰.', answer: '1', checkMode: 'auto', correctAnswer: '1', explanation: 'Any non-zero number raised to the power of 0 equals 1, so 9⁰ = 1.' },
+        { difficulty: 'Easy', question: 'Calculate 15¹.', answer: '15', checkMode: 'auto', correctAnswer: '15', explanation: 'Any number raised to the power of 1 equals itself, so 15¹ = 15.' },
+        { difficulty: 'Medium', question: 'Bongani says 0⁰ and 5⁰ must both equal 1 "because anything to the power of 0 is 1, no exceptions." Explain why this reasoning is flawed.', answer: 'The rule that a number to the power of 0 equals 1 applies to non-zero bases only. 0⁰ is a special case that is not simply 1 by the standard rule — the rule n⁰ = 1 requires n ≠ 0.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is greater: 2⁶ or 4³? Show your working.', answer: 'They are equal — both equal 64.', checkMode: 'auto', correctAnswer: 'equal', correctAnswers: ['equal', 'theyareequal', 'neither'], explanation: '2⁶ = 64 and 4³ = 64, so the two values are equal.' },
+        { difficulty: 'Medium', question: 'Order these from smallest to largest: 3³, 2⁵, 5², separated by commas.', answer: '5², 3³, 2⁵', checkMode: 'auto', correctAnswer: '5²3³2⁵', correctAnswers: ['5²,3³,2⁵', '5^2,3^3,2^5', '25,27,32'], explanation: '3³ = 27, 2⁵ = 32, 5² = 25. Ordering the values smallest to largest: 25, 27, 32 which is 5², 3³, 2⁵.' },
+        { difficulty: 'Medium-Hard', question: 'Zinhle claims 10³ is bigger than 3¹⁰ because "10 is a much bigger number than 3." Is she correct? Show the actual values to support your answer.', answer: 'No — 10³ = 1 000 but 3¹⁰ = 59 049, so 3¹⁰ is far bigger. A larger base does not always give a larger result; the exponent matters a lot too.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A square tile pattern has 6 tiles along each side of a square arrangement. How many tiles are there in total? Write your answer using exponential notation and then evaluate it.', answer: '6² = 36 tiles', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '6^2=36', '6²=36'], explanation: 'A square arrangement with 6 tiles per side has 6 × 6 = 6² = 36 tiles in total.' },
+        { difficulty: 'Medium-Hard', question: 'A cube-shaped storage box is built from small cubes, with 5 small cubes fitting along each edge. How many small cubes fill the box? Write your answer using exponential notation and then evaluate it.', answer: '5³ = 125 small cubes', checkMode: 'auto', correctAnswer: '125', correctAnswers: ['125', '5^3=125', '5³=125'], explanation: 'A cube with 5 small cubes along each edge holds 5 × 5 × 5 = 5³ = 125 small cubes.' },
+        { difficulty: 'Hard', question: 'A colony of bacteria doubles every hour, starting from 1 bacterium. Write an exponential expression for the number of bacteria after 8 hours, and calculate the total.', answer: '2⁸ = 256 bacteria', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', '2^8=256', '2⁸=256'], explanation: 'Doubling every hour from 1 bacterium for 8 hours gives 2⁸ = 256 bacteria.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered exponent notation and the laws of exponents.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'In the expression 9³, which number is the base and which is the exponent?', answer: 'Base = 9, exponent = 3', checkMode: 'auto', correctAnswer: 'base9exponent3', correctAnswers: ['base9exponent3', 'base=9exponent=3', '9base3exponent'], explanation: 'The base is the number being multiplied by itself (9), and the exponent is the small raised number showing how many times to multiply it (3).' },
+        { difficulty: 'Easy', question: 'Write 5 × 5 × 5 × 5 using exponential notation.', answer: '5⁴', checkMode: 'auto', correctAnswer: '5^4', correctAnswers: ['5^4', '5⁴'], explanation: 'There are 4 fives multiplied together, so this is written as 5⁴ (base 5, exponent 4).' },
+        { difficulty: 'Easy-Medium', question: 'Naledi writes 6 × 6 × 6 × 6 as 6 × 4. Explain why this is incorrect and give the correct exponential form.', answer: '6 × 4 means 6 multiplied by 4, not 6 multiplied by itself 4 times. The correct form is 6⁴.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate 8².', answer: '64', checkMode: 'auto', correctAnswer: '64', explanation: '8² = 8 × 8 = 64.' },
+        { difficulty: 'Easy', question: 'Calculate 4⁴.', answer: '256', checkMode: 'auto', correctAnswer: '256', explanation: '4⁴ = 4×4×4×4 = 256.' },
+        { difficulty: 'Medium', question: 'Calculate 6³.', answer: '216', checkMode: 'auto', correctAnswer: '216', explanation: '6³ = 6×6×6 = 216.' },
+        { difficulty: 'Medium', question: 'Sipho says 3⁵ = 15 because he calculated 3 × 5. Explain his mistake and give the correct answer.', answer: 'He multiplied the base by the exponent instead of multiplying the base by itself 5 times. 3⁵ = 3×3×3×3×3 = 243.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Simplify 4² × 4³ using the laws of exponents. Leave your answer as a power of 4, then evaluate it.', answer: '4⁵ = 1 024', checkMode: 'auto', correctAnswer: '1024', correctAnswers: ['1024', '4^5=1024', '4⁵=1024'], explanation: 'Same base, so add the exponents: 4² × 4³ = 4^(2+3) = 4⁵ = 1 024.' },
+        { difficulty: 'Medium', question: 'Simplify 6⁷ ÷ 6⁴ using the laws of exponents. Leave your answer as a power of 6, then evaluate it.', answer: '6³ = 216', checkMode: 'auto', correctAnswer: '216', correctAnswers: ['216', '6^3=216', '6³=216'], explanation: 'Same base, so subtract the exponents: 6⁷ ÷ 6⁴ = 6^(7−4) = 6³ = 216.' },
+        { difficulty: 'Medium-Hard', question: 'Amahle simplifies 5³ × 5³ as 5⁹, saying "you add the two base numbers as an exponent." Is she correct? Explain and give the correct simplified answer.', answer: 'No — you add the exponents (3 and 3), not create a new exponent from something else. 5³ × 5³ = 5^(3+3) = 5⁶ = 15 625, not 5⁹.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Simplify 8⁴ ÷ 8² × 8¹, giving your answer as a single power of 8.', answer: '8³', checkMode: 'auto', correctAnswer: '8^3', correctAnswers: ['8^3', '8³', '512'], explanation: 'Work left to right: 8⁴ ÷ 8² = 8^(4−2) = 8². Then 8² × 8¹ = 8^(2+1) = 8³.' },
+        { difficulty: 'Easy', question: 'Calculate 12⁰.', answer: '1', checkMode: 'auto', correctAnswer: '1', explanation: 'Any non-zero number raised to the power of 0 equals 1, so 12⁰ = 1.' },
+        { difficulty: 'Easy', question: 'Calculate 23¹.', answer: '23', checkMode: 'auto', correctAnswer: '23', explanation: 'Any number raised to the power of 1 equals itself, so 23¹ = 23.' },
+        { difficulty: 'Medium', question: 'Lerato says n⁰ always equals 1 for every number n, including n = 0. Explain why this reasoning is flawed.', answer: 'The rule n⁰ = 1 only applies when n is not zero. 0⁰ is a special case and is not automatically equal to 1 like other numbers to the power of 0.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is greater: 3⁴ or 9²? Show your working.', answer: 'They are equal — both equal 81.', checkMode: 'auto', correctAnswer: 'equal', correctAnswers: ['equal', 'theyareequal', 'neither'], explanation: '3⁴ = 81 and 9² = 81, so the two values are equal.' },
+        { difficulty: 'Medium', question: 'Order these from smallest to largest: 4³, 2⁶, 8², separated by commas.', answer: '4³, 8², 2⁶', checkMode: 'auto', correctAnswer: '4³8²2⁶', correctAnswers: ['4³,8²,2⁶', '4^3,8^2,2^6', '64,64,64'], explanation: '4³ = 64, 2⁶ = 64, 8² = 64. All three values are equal, so any order listing them is acceptable, e.g. 4³, 8², 2⁶.' },
+        { difficulty: 'Medium-Hard', question: 'Sibusiso claims 5⁴ is bigger than 4⁵ because "5 is a bigger base than 4." Is he correct? Show the actual values to support your answer.', answer: 'No — 5⁴ = 625 but 4⁵ = 1 024, so 4⁵ is bigger. A larger base does not always give a larger result; the exponent matters a lot too.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A square garden bed has 7 plants growing along each side of a square arrangement. How many plants are there in total? Write your answer using exponential notation and then evaluate it.', answer: '7² = 49 plants', checkMode: 'auto', correctAnswer: '49', correctAnswers: ['49', '7^2=49', '7²=49'], explanation: 'A square arrangement with 7 plants per side has 7 × 7 = 7² = 49 plants in total.' },
+        { difficulty: 'Medium-Hard', question: 'A cube-shaped display of boxes is stacked so that 4 boxes fit along each edge of the cube. How many boxes make up the display? Write your answer using exponential notation and then evaluate it.', answer: '4³ = 64 boxes', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64', '4^3=64', '4³=64'], explanation: 'A cube with 4 boxes along each edge holds 4 × 4 × 4 = 4³ = 64 boxes.' },
+        { difficulty: 'Hard', question: 'A social media post is shared by 3 people, and each of those people shares it with 3 new people, and this pattern continues. Write an exponential expression for the number of new people who see the post after 6 rounds of sharing, and calculate the total.', answer: '3⁶ = 729 people', checkMode: 'auto', correctAnswer: '729', correctAnswers: ['729', '3^6=729', '3⁶=729'], explanation: 'Tripling at each of 6 rounds starting from 1 gives 3⁶ = 729 people.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered exponent notation and the laws of exponents.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout as Set 1/2, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'In the expression 11³, which number is the base and which is the exponent?', answer: 'Base = 11, exponent = 3', checkMode: 'auto', correctAnswer: 'base11exponent3', correctAnswers: ['base11exponent3', 'base=11exponent=3', '11base3exponent'], explanation: 'The base is the number being multiplied by itself (11), and the exponent is the small raised number showing how many times to multiply it (3).' },
+        { difficulty: 'Easy', question: 'Write 2 × 2 × 2 × 2 × 2 × 2 × 2 × 2 using exponential notation.', answer: '2⁸', checkMode: 'auto', correctAnswer: '2^8', correctAnswers: ['2^8', '2⁸'], explanation: 'There are 8 twos multiplied together, so this is written as 2⁸ (base 2, exponent 8).' },
+        { difficulty: 'Easy-Medium', question: 'Mpho writes 9 × 9 × 9 as 9 × 3. Explain why this is incorrect and give the correct exponential form.', answer: '9 × 3 means 9 multiplied by 3, not 9 multiplied by itself 3 times. The correct form is 9³.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate 6².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: '6² = 6 × 6 = 36.' },
+        { difficulty: 'Easy', question: 'Calculate 3⁴.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: '3⁴ = 3×3×3×3 = 81.' },
+        { difficulty: 'Medium', question: 'Calculate 2⁸.', answer: '256', checkMode: 'auto', correctAnswer: '256', explanation: '2⁸ = 2×2×2×2×2×2×2×2 = 256.' },
+        { difficulty: 'Medium', question: 'Ayanda says 2⁵ = 10 because she calculated 2 × 5. Explain her mistake and give the correct answer.', answer: 'She multiplied the base by the exponent instead of multiplying the base by itself 5 times. 2⁵ = 2×2×2×2×2 = 32.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Simplify 2³ × 2⁵ using the laws of exponents. Leave your answer as a power of 2, then evaluate it.', answer: '2⁸ = 256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', '2^8=256', '2⁸=256'], explanation: 'Same base, so add the exponents: 2³ × 2⁵ = 2^(3+5) = 2⁸ = 256.' },
+        { difficulty: 'Medium', question: 'Simplify 9⁵ ÷ 9³ using the laws of exponents. Leave your answer as a power of 9, then evaluate it.', answer: '9² = 81', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '9^2=81', '9²=81'], explanation: 'Same base, so subtract the exponents: 9⁵ ÷ 9³ = 9^(5−3) = 9² = 81.' },
+        { difficulty: 'Medium-Hard', question: 'Thandeka simplifies 7⁵ ÷ 7³ as 7^(5×3), saying "division means you multiply the exponents." Is she correct? Explain and give the correct simplified answer.', answer: 'No — when dividing powers with the same base, you subtract the exponents, not multiply them. 7⁵ ÷ 7³ = 7^(5−3) = 7² = 49, not 7^(5×3).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Simplify 11³ ÷ 11¹ × 11², giving your answer as a single power of 11.', answer: '11⁴', checkMode: 'auto', correctAnswer: '11^4', correctAnswers: ['11^4', '11⁴', '14641'], explanation: 'Work left to right: 11³ ÷ 11¹ = 11^(3−1) = 11². Then 11² × 11² = 11^(2+2) = 11⁴.' },
+        { difficulty: 'Easy', question: 'Calculate 20⁰.', answer: '1', checkMode: 'auto', correctAnswer: '1', explanation: 'Any non-zero number raised to the power of 0 equals 1, so 20⁰ = 1.' },
+        { difficulty: 'Easy', question: 'Calculate 37¹.', answer: '37', checkMode: 'auto', correctAnswer: '37', explanation: 'Any number raised to the power of 1 equals itself, so 37¹ = 37.' },
+        { difficulty: 'Medium', question: 'Karabo says 8⁰ must equal 8 because "raising to a power just gives back the base when nothing else is happening." Explain why this reasoning is flawed.', answer: 'Raising to the power of 0 does not give back the base — it always equals 1 (for a non-zero base), because it represents multiplying by the base zero times. 8⁰ = 1, not 8.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is greater: 4³ or 2⁶? Show your working.', answer: 'They are equal — both equal 64.', checkMode: 'auto', correctAnswer: 'equal', correctAnswers: ['equal', 'theyareequal', 'neither'], explanation: '4³ = 64 and 2⁶ = 64, so the two values are equal.' },
+        { difficulty: 'Medium', question: 'Order these from smallest to largest: 2⁴, 3³, 5², separated by commas.', answer: '5², 2⁴, 3³', checkMode: 'auto', correctAnswer: '5²2⁴3³', correctAnswers: ['5²,2⁴,3³', '5^2,2^4,3^3', '25,16,27'], explanation: '2⁴ = 16, 3³ = 27, 5² = 25. Ordering the values smallest to largest: 16, 25, 27 which is 2⁴, 5², 3³.' },
+        { difficulty: 'Medium-Hard', question: 'Nomvula claims 6³ is bigger than 3⁶ because "6 is a much bigger base than 3." Is she correct? Show the actual values to support your answer.', answer: 'No — 6³ = 216 but 3⁶ = 729, so 3⁶ is far bigger. A larger base does not always give a larger result; the exponent matters a lot too.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'A square patio has 9 tiles laid along each side of a square arrangement. How many tiles are there in total? Write your answer using exponential notation and then evaluate it.', answer: '9² = 81 tiles', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '9^2=81', '9²=81'], explanation: 'A square arrangement with 9 tiles per side has 9 × 9 = 9² = 81 tiles in total.' },
+        { difficulty: 'Medium-Hard', question: 'A cube-shaped gift box is packed with small cubes, with 6 small cubes fitting along each edge. How many small cubes fill the box? Write your answer using exponential notation and then evaluate it.', answer: '6³ = 216 small cubes', checkMode: 'auto', correctAnswer: '216', correctAnswers: ['216', '6^3=216', '6³=216'], explanation: 'A cube with 6 small cubes along each edge holds 6 × 6 × 6 = 6³ = 216 small cubes.' },
+        { difficulty: 'Hard', question: 'A chain message is sent to 2 people, and each of those people forwards it to 2 new people, and this pattern continues. Write an exponential expression for the number of new people who receive the message after 10 rounds of forwarding, and calculate the total.', answer: '2¹⁰ = 1 024 people', checkMode: 'auto', correctAnswer: '1024', correctAnswers: ['1024', '2^10=1024', '2¹⁰=1024'], explanation: 'Doubling at each of 10 rounds starting from 1 gives 2¹⁰ = 1 024 people.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered exponent notation and the laws of exponents.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

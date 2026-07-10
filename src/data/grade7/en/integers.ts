@@ -515,4 +515,115 @@ export const topicData: TopicData = {
       { minPercent: 0, message: 'Keep going, work through the guide again.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 1-4 Addition/subtraction of integers | 5-8 Multiplication/division
+    // (sign rules) | 9-12 Order of operations (BODMAS) with mixed integers |
+    // 13-15 Ordering/comparing integers | 16-18 Real-world word problems
+    // (temperature, altitude, bank balance) | 19-20 Multi-step/error-spotting
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Calculate −12 + 8.', answer: '-4', checkMode: 'auto', correctAnswer: '-4', explanation: 'Different signs: subtract the smaller value from the larger. 12 − 8 = 4. Keep the sign of the larger value (−12), so the answer is negative. Answer: −4.' },
+        { difficulty: 'Easy', question: 'Calculate 15 + (−23).', answer: '-8', checkMode: 'auto', correctAnswer: '-8', explanation: 'Different signs: subtract the smaller value from the larger. 23 − 15 = 8. Keep the sign of the larger value (−23), so the answer is negative. Answer: −8.' },
+        { difficulty: 'Medium', question: 'Calculate −9 − (−14).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Subtracting a negative becomes adding a positive: −9 − (−14) = −9 + 14. Different signs: 14 − 9 = 5. Keep the sign of the larger value (14), so the answer is positive. Answer: 5.' },
+        { difficulty: 'Medium', question: 'Thabo calculates −6 − 10 and says the answer is −4. Is he correct? Explain and give the correct answer.', answer: 'No — both numbers are negative (same sign), so we add the values and keep the negative sign: −6 − 10 = −16, not −4.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate −8 × 7.', answer: '-56', checkMode: 'auto', correctAnswer: '-56', explanation: 'Different signs (−8 and +7) give a negative answer. 8 × 7 = 56. Answer: −56.' },
+        { difficulty: 'Easy', question: 'Calculate −63 ÷ (−9).', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Same signs (both negative) give a positive answer. 63 ÷ 9 = 7. Answer: 7.' },
+        { difficulty: 'Medium', question: 'Calculate −5 × (−6).', answer: '30', checkMode: 'auto', correctAnswer: '30', explanation: 'Same signs (both negative) give a positive answer. 5 × 6 = 30. Answer: 30.' },
+        { difficulty: 'Medium', question: 'Calculate 42 ÷ (−6).', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Different signs (+42 and −6) give a negative answer. 42 ÷ 6 = 7. Answer: −7.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate −3 × 4 + 5.', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Multiplication before addition: −3 × 4 = −12. Then −12 + 5 = −7.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate 20 − 3 × (−4).', answer: '32', checkMode: 'auto', correctAnswer: '32', explanation: 'Multiplication before subtraction: 3 × (−4) = −12. Then 20 − (−12) = 20 + 12 = 32.' },
+        { difficulty: 'Medium-Hard', question: 'Use the correct order of operations to calculate (−6 + 2) × (−3).', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Brackets first: −6 + 2 = −4. Then −4 × (−3) = 12 (same signs → positive).' },
+        { difficulty: 'Hard', question: 'Use the correct order of operations to calculate −10 + 6 × (−2) − 3.', answer: '-25', checkMode: 'auto', correctAnswer: '-25', explanation: 'Multiplication first: 6 × (−2) = −12. Then work left to right: −10 + (−12) = −22, and −22 − 3 = −25.' },
+        { difficulty: 'Medium', question: 'Order these integers from smallest to biggest: −8, 3, −15, 0, −1.', answer: '−15, −8, −1, 0, 3', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is greater: −17 or −21?', answer: '-17', checkMode: 'auto', correctAnswer: '-17', explanation: '−17 is closer to zero (further right) on the number line than −21, so −17 is the greater integer.' },
+        { difficulty: 'Medium-Hard', question: 'Karabo says −40 is greater than −25 because 40 is greater than 25. Is he correct? Explain.', answer: 'No — on a number line, −40 is further left than −25, so −40 is actually smaller than −25. A bigger digit on a negative number makes it smaller, not greater.', checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'The temperature overnight was −4°C. By midday it had risen by 9°C. What was the midday temperature?', answer: '5°C', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5°c', '5c'], explanation: 'Start at −4°C and rise by 9°C: −4 + 9 = 5. The midday temperature was 5°C.' },
+        { difficulty: 'Medium', question: 'A diver is swimming at a depth of 85 m below sea level, written as −85 m. She rises 32 m towards the surface. What is her new position, as an integer?', answer: '-53', checkMode: 'auto', correctAnswer: '-53', explanation: 'Rising towards the surface means adding to the depth: −85 + 32 = −53. Her new position is −53 m.' },
+        { difficulty: 'Medium', question: 'Zanele\'s bank account is overdrawn by R450, written as −R450. She deposits R320. What is her new balance?', answer: '-R130', checkMode: 'auto', correctAnswer: '-130', correctAnswers: ['-130', '-r130'], explanation: 'Add the deposit to the balance: −450 + 320 = −130. Her new balance is −R130 (still overdrawn by R130).' },
+        { difficulty: 'Hard', question: 'Calculate −5 × (−3 + 8) ÷ 5.', answer: '-5', checkMode: 'auto', correctAnswer: '-5', explanation: 'Brackets first: −3 + 8 = 5. Then −5 × 5 = −25 (different signs → negative). Finally −25 ÷ 5 = −5.' },
+        { difficulty: 'Hard', question: 'Zola calculates −2 × 5 − (−6) and says the answer is 16. Is she correct? Show the correct working.', answer: 'No — first −2 × 5 = −10 (different signs → negative). Then −10 − (−6) = −10 + 6 = −4, not 16.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered integer operations, order of operations, and real-world integer problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Calculate −18 + 11.', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Different signs: subtract the smaller value from the larger. 18 − 11 = 7. Keep the sign of the larger value (−18), so the answer is negative. Answer: −7.' },
+        { difficulty: 'Easy', question: 'Calculate 24 + (−37).', answer: '-13', checkMode: 'auto', correctAnswer: '-13', explanation: 'Different signs: subtract the smaller value from the larger. 37 − 24 = 13. Keep the sign of the larger value (−37), so the answer is negative. Answer: −13.' },
+        { difficulty: 'Medium', question: 'Calculate −13 − (−19).', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Subtracting a negative becomes adding a positive: −13 − (−19) = −13 + 19. Different signs: 19 − 13 = 6. Keep the sign of the larger value (19), so the answer is positive. Answer: 6.' },
+        { difficulty: 'Medium', question: 'Naledi calculates −8 − 15 and says the answer is −7. Is she correct? Explain and give the correct answer.', answer: 'No — both numbers are negative (same sign), so we add the values and keep the negative sign: −8 − 15 = −23, not −7.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate −9 × 6.', answer: '-54', checkMode: 'auto', correctAnswer: '-54', explanation: 'Different signs (−9 and +6) give a negative answer. 9 × 6 = 54. Answer: −54.' },
+        { difficulty: 'Easy', question: 'Calculate −72 ÷ (−8).', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Same signs (both negative) give a positive answer. 72 ÷ 8 = 9. Answer: 9.' },
+        { difficulty: 'Medium', question: 'Calculate −7 × (−4).', answer: '28', checkMode: 'auto', correctAnswer: '28', explanation: 'Same signs (both negative) give a positive answer. 7 × 4 = 28. Answer: 28.' },
+        { difficulty: 'Medium', question: 'Calculate 54 ÷ (−9).', answer: '-6', checkMode: 'auto', correctAnswer: '-6', explanation: 'Different signs (+54 and −9) give a negative answer. 54 ÷ 9 = 6. Answer: −6.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate −4 × 5 + 6.', answer: '-14', checkMode: 'auto', correctAnswer: '-14', explanation: 'Multiplication before addition: −4 × 5 = −20. Then −20 + 6 = −14.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate 18 − 4 × (−3).', answer: '30', checkMode: 'auto', correctAnswer: '30', explanation: 'Multiplication before subtraction: 4 × (−3) = −12. Then 18 − (−12) = 18 + 12 = 30.' },
+        { difficulty: 'Medium-Hard', question: 'Use the correct order of operations to calculate (−8 + 3) × (−2).', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Brackets first: −8 + 3 = −5. Then −5 × (−2) = 10 (same signs → positive).' },
+        { difficulty: 'Hard', question: 'Use the correct order of operations to calculate −9 + 5 × (−3) − 4.', answer: '-28', checkMode: 'auto', correctAnswer: '-28', explanation: 'Multiplication first: 5 × (−3) = −15. Then work left to right: −9 + (−15) = −24, and −24 − 4 = −28.' },
+        { difficulty: 'Medium', question: 'Order these integers from smallest to biggest: −6, 5, −19, 0, −2.', answer: '−19, −6, −2, 0, 5', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is greater: −23 or −14?', answer: '-14', checkMode: 'auto', correctAnswer: '-14', explanation: '−14 is closer to zero (further right) on the number line than −23, so −14 is the greater integer.' },
+        { difficulty: 'Medium-Hard', question: 'Zanele says −55 is greater than −38 because 55 is greater than 38. Is she correct? Explain.', answer: 'No — on a number line, −55 is further left than −38, so −55 is actually smaller than −38. A bigger digit on a negative number makes it smaller, not greater.', checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'The temperature overnight was −6°C. By midday it had risen by 15°C. What was the midday temperature?', answer: '9°C', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9°c', '9c'], explanation: 'Start at −6°C and rise by 15°C: −6 + 15 = 9. The midday temperature was 9°C.' },
+        { difficulty: 'Medium', question: 'A submarine is cruising at a depth of 120 m below sea level, written as −120 m. It rises 45 m towards the surface. What is its new position, as an integer?', answer: '-75', checkMode: 'auto', correctAnswer: '-75', explanation: 'Rising towards the surface means adding to the depth: −120 + 45 = −75. Its new position is −75 m.' },
+        { difficulty: 'Medium', question: 'Bongani\'s bank account is overdrawn by R600, written as −R600. He deposits R250. What is his new balance?', answer: '-R350', checkMode: 'auto', correctAnswer: '-350', correctAnswers: ['-350', '-r350'], explanation: 'Add the deposit to the balance: −600 + 250 = −350. His new balance is −R350 (still overdrawn by R350).' },
+        { difficulty: 'Hard', question: 'Calculate −4 × (−2 + 9) ÷ 7.', answer: '-4', checkMode: 'auto', correctAnswer: '-4', explanation: 'Brackets first: −2 + 9 = 7. Then −4 × 7 = −28 (different signs → negative). Finally −28 ÷ 7 = −4.' },
+        { difficulty: 'Hard', question: 'Bongi calculates −3 × 4 − (−8) and says the answer is −20. Is she correct? Show the correct working.', answer: 'No — first −3 × 4 = −12 (different signs → negative). Then −12 − (−8) = −12 + 8 = −4, not −20.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered integer operations, order of operations, and real-world integer problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout as Set 1/2, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Calculate −25 + 17.', answer: '-8', checkMode: 'auto', correctAnswer: '-8', explanation: 'Different signs: subtract the smaller value from the larger. 25 − 17 = 8. Keep the sign of the larger value (−25), so the answer is negative. Answer: −8.' },
+        { difficulty: 'Easy', question: 'Calculate 19 + (−26).', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Different signs: subtract the smaller value from the larger. 26 − 19 = 7. Keep the sign of the larger value (−26), so the answer is negative. Answer: −7.' },
+        { difficulty: 'Medium', question: 'Calculate −11 − (−20).', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Subtracting a negative becomes adding a positive: −11 − (−20) = −11 + 20. Different signs: 20 − 11 = 9. Keep the sign of the larger value (20), so the answer is positive. Answer: 9.' },
+        { difficulty: 'Medium', question: 'Sipho calculates −7 − 12 and says the answer is −5. Is he correct? Explain and give the correct answer.', answer: 'No — both numbers are negative (same sign), so we add the values and keep the negative sign: −7 − 12 = −19, not −5.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate −11 × 5.', answer: '-55', checkMode: 'auto', correctAnswer: '-55', explanation: 'Different signs (−11 and +5) give a negative answer. 11 × 5 = 55. Answer: −55.' },
+        { difficulty: 'Easy', question: 'Calculate −84 ÷ (−7).', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Same signs (both negative) give a positive answer. 84 ÷ 7 = 12. Answer: 12.' },
+        { difficulty: 'Medium', question: 'Calculate −8 × (−9).', answer: '72', checkMode: 'auto', correctAnswer: '72', explanation: 'Same signs (both negative) give a positive answer. 8 × 9 = 72. Answer: 72.' },
+        { difficulty: 'Medium', question: 'Calculate 63 ÷ (−7).', answer: '-9', checkMode: 'auto', correctAnswer: '-9', explanation: 'Different signs (+63 and −7) give a negative answer. 63 ÷ 7 = 9. Answer: −9.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate −6 × 3 + 7.', answer: '-11', checkMode: 'auto', correctAnswer: '-11', explanation: 'Multiplication before addition: −6 × 3 = −18. Then −18 + 7 = −11.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate 25 − 5 × (−2).', answer: '35', checkMode: 'auto', correctAnswer: '35', explanation: 'Multiplication before subtraction: 5 × (−2) = −10. Then 25 − (−10) = 25 + 10 = 35.' },
+        { difficulty: 'Medium-Hard', question: 'Use the correct order of operations to calculate (−9 + 4) × (−4).', answer: '20', checkMode: 'auto', correctAnswer: '20', explanation: 'Brackets first: −9 + 4 = −5. Then −5 × (−4) = 20 (same signs → positive).' },
+        { difficulty: 'Hard', question: 'Use the correct order of operations to calculate −8 + 7 × (−3) − 5.', answer: '-34', checkMode: 'auto', correctAnswer: '-34', explanation: 'Multiplication first: 7 × (−3) = −21. Then work left to right: −8 + (−21) = −29, and −29 − 5 = −34.' },
+        { difficulty: 'Medium', question: 'Order these integers from smallest to biggest: −10, 2, −17, 0, −4.', answer: '−17, −10, −4, 0, 2', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Which is greater: −31 or −12?', answer: '-12', checkMode: 'auto', correctAnswer: '-12', explanation: '−12 is closer to zero (further right) on the number line than −31, so −12 is the greater integer.' },
+        { difficulty: 'Medium-Hard', question: 'Mpho says −62 is greater than −29 because 62 is greater than 29. Is he correct? Explain.', answer: 'No — on a number line, −62 is further left than −29, so −62 is actually smaller than −29. A bigger digit on a negative number makes it smaller, not greater.', checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'The temperature overnight was −8°C. By midday it had risen by 21°C. What was the midday temperature?', answer: '13°C', checkMode: 'auto', correctAnswer: '13', correctAnswers: ['13', '13°c', '13c'], explanation: 'Start at −8°C and rise by 21°C: −8 + 21 = 13. The midday temperature was 13°C.' },
+        { difficulty: 'Medium', question: 'A diver is swimming at a depth of 60 m below sea level, written as −60 m. She descends a further 25 m. What is her new position, as an integer?', answer: '-85', checkMode: 'auto', correctAnswer: '-85', explanation: 'Descending further means subtracting from the depth: −60 − 25 = −85. Her new position is −85 m.' },
+        { difficulty: 'Medium', question: 'Tumi\'s bank account is overdrawn by R310, written as −R310. He withdraws a further R140. What is his new balance?', answer: '-R450', checkMode: 'auto', correctAnswer: '-450', correctAnswers: ['-450', '-r450'], explanation: 'Subtract the further withdrawal from the balance: −310 − 140 = −450. His new balance is −R450 (overdrawn by R450).' },
+        { difficulty: 'Hard', question: 'Calculate −6 × (−4 + 10) ÷ 4.', answer: '-9', checkMode: 'auto', correctAnswer: '-9', explanation: 'Brackets first: −4 + 10 = 6. Then −6 × 6 = −36 (different signs → negative). Finally −36 ÷ 4 = −9.' },
+        { difficulty: 'Hard', question: 'Tumi calculates −5 × 6 − (−10) and says the answer is −40. Is he correct? Show the correct working.', answer: 'No — first −5 × 6 = −30 (different signs → negative). Then −30 − (−10) = −30 + 10 = −20, not −40.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered integer operations, order of operations, and real-world integer problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

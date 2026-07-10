@@ -401,4 +401,114 @@ export const topicData: TopicData = {
       { minPercent: 0, message: 'Hou aan, werk weer deur die studiegids.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 1-3 Notasie (grondgetal/eksponent, skryf eksponensiële vorm) |
+    // 4-7 Evalueer magte | 8-11 Eksponentwette (vermenigvuldig/deel dieselfde grondgetal) |
+    // 12-14 Eksponente 0 en 1 | 15-17 Vergelyk/orden | 18-20 Woordprobleme
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'In die uitdrukking 6⁴, watter getal is die grondgetal en watter is die eksponent?', answer: 'Grondgetal = 6, eksponent = 4', checkMode: 'auto', correctAnswer: 'grondgetal6eksponent4', correctAnswers: ['grondgetal6eksponent4', 'grondgetal=6eksponent=4', '6grondgetal4eksponent'], explanation: 'Die grondgetal is die getal wat met homself vermenigvuldig word (6), en die eksponent is die klein verhoogde getal wat wys hoeveel keer om dit te vermenigvuldig (4).' },
+        { difficulty: 'Easy', question: 'Skryf 8 × 8 × 8 × 8 × 8 in eksponensiële notasie.', answer: '8⁵', checkMode: 'auto', correctAnswer: '8^5', correctAnswers: ['8^5', '8⁵'], explanation: 'Daar is 5 agte wat met mekaar vermenigvuldig word, dus word dit geskryf as 8⁵ (grondgetal 8, eksponent 5).' },
+        { difficulty: 'Easy-Medium', question: 'Thabo skryf 4 × 4 × 4 as 4 × 3. Verduidelik waarom dit verkeerd is en gee die korrekte eksponensiële vorm.', answer: '4 × 3 beteken 4 vermenigvuldig met 3, nie 4 drie keer met homself vermenigvuldig nie. Die korrekte vorm is 4³.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken 7².', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: '7² = 7 × 7 = 49.' },
+        { difficulty: 'Easy', question: 'Bereken 2⁷.', answer: '128', checkMode: 'auto', correctAnswer: '128', explanation: '2⁷ = 2×2×2×2×2×2×2 = 128.' },
+        { difficulty: 'Medium', question: 'Bereken 3⁵.', answer: '243', checkMode: 'auto', correctAnswer: '243', explanation: '3⁵ = 3×3×3×3×3 = 243.' },
+        { difficulty: 'Medium', question: 'Palesa sê 4⁴ = 16 want sy het 4 × 4 bereken. Verduidelik haar fout en gee die korrekte antwoord.', answer: 'Sy het 4 net een keer met homself vermenigvuldig (wat 4² gee), maar die eksponent is 4, dus moet 4 vier keer met homself vermenigvuldig word: 4⁴ = 4×4×4×4 = 256.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 3⁴ × 3² deur die eksponentwette te gebruik. Laat jou antwoord as ʼn mag van 3, en evalueer dit dan.', answer: '3⁶ = 729', checkMode: 'auto', correctAnswer: '729', correctAnswers: ['729', '3^6=729', '3⁶=729'], explanation: 'Dieselfde grondgetal, dus tel die eksponente op: 3⁴ × 3² = 3^(4+2) = 3⁶ = 729.' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 5⁶ ÷ 5² deur die eksponentwette te gebruik. Laat jou antwoord as ʼn mag van 5, en evalueer dit dan.', answer: '5⁴ = 625', checkMode: 'auto', correctAnswer: '625', correctAnswers: ['625', '5^4=625', '5⁴=625'], explanation: 'Dieselfde grondgetal, dus trek die eksponente af: 5⁶ ÷ 5² = 5^(6−2) = 5⁴ = 625.' },
+        { difficulty: 'Medium-Hard', question: 'Kagiso vereenvoudig 2³ × 2⁵ as 2¹⁵, en sê "jy vermenigvuldig die eksponente." Is hy korrek? Verduidelik en gee die korrekte vereenvoudigde antwoord.', answer: 'Nee — wanneer jy magte met dieselfde grondgetal vermenigvuldig, tel jy die eksponente op, jy vermenigvuldig hulle nie. 2³ × 2⁵ = 2^(3+5) = 2⁸ = 256, nie 2¹⁵ nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 4⁵ ÷ 4³ × 4¹, en gee jou antwoord as ʼn enkele mag van 4.', answer: '4³', checkMode: 'auto', correctAnswer: '4^3', correctAnswers: ['4^3', '4³', '64'], explanation: 'Werk van links na regs: 4⁵ ÷ 4³ = 4^(5−3) = 4². Dan 4² × 4¹ = 4^(2+1) = 4³.' },
+        { difficulty: 'Easy', question: 'Bereken 9⁰.', answer: '1', checkMode: 'auto', correctAnswer: '1', explanation: 'Enige nie-nul getal tot die mag 0 is gelyk aan 1, dus 9⁰ = 1.' },
+        { difficulty: 'Easy', question: 'Bereken 15¹.', answer: '15', checkMode: 'auto', correctAnswer: '15', explanation: 'Enige getal tot die mag 1 is gelyk aan homself, dus 15¹ = 15.' },
+        { difficulty: 'Medium', question: 'Bongani sê 0⁰ en 5⁰ moet altwee gelyk wees aan 1 "want enigiets tot die mag 0 is 1, sonder uitsonderings." Verduidelik waarom hierdie redenasie foutief is.', answer: 'Die reël dat ʼn getal tot die mag 0 gelyk is aan 1, geld net vir nie-nul grondgetalle. 0⁰ is ʼn spesiale geval en is nie outomaties gelyk aan 1 soos ander getalle tot die mag 0 nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: 2⁶ of 4³? Wys jou werk.', answer: 'Hulle is gelyk — altwee is gelyk aan 64.', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'hulleisgelyk', 'nieteen'], explanation: '2⁶ = 64 en 4³ = 64, dus is die twee waardes gelyk.' },
+        { difficulty: 'Medium', question: 'Orden hierdie van kleinste na grootste: 3³, 2⁵, 5², geskei deur kommas.', answer: '5², 3³, 2⁵', checkMode: 'auto', correctAnswer: '5²3³2⁵', correctAnswers: ['5²,3³,2⁵', '5^2,3^3,2^5', '25,27,32'], explanation: '3³ = 27, 2⁵ = 32, 5² = 25. Die waardes van kleinste na grootste geordend: 25, 27, 32 wat 5², 3³, 2⁵ is.' },
+        { difficulty: 'Medium-Hard', question: 'Zinhle beweer 10³ is groter as 3¹⁰ want "10 is ʼn baie groter getal as 3." Is sy korrek? Wys die werklike waardes om jou antwoord te ondersteun.', answer: 'Nee — 10³ = 1 000 maar 3¹⁰ = 59 049, dus is 3¹⁰ baie groter. ʼn Groter grondgetal gee nie altyd ʼn groter resultaat nie; die eksponent maak ook baie saak.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Vierkantige teëlpatroon het 6 teëls langs elke kant van ʼn vierkantige rangskikking. Hoeveel teëls is daar in totaal? Skryf jou antwoord in eksponensiële notasie en evalueer dit dan.', answer: '6² = 36 teëls', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '6^2=36', '6²=36'], explanation: 'ʼn Vierkantige rangskikking met 6 teëls per kant het 6 × 6 = 6² = 36 teëls in totaal.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Kubusvormige opbergboks word gebou uit klein kubusse, met 5 klein kubusse wat langs elke rand pas. Hoeveel klein kubusse vul die boks? Skryf jou antwoord in eksponensiële notasie en evalueer dit dan.', answer: '5³ = 125 klein kubusse', checkMode: 'auto', correctAnswer: '125', correctAnswers: ['125', '5^3=125', '5³=125'], explanation: 'ʼn Kubus met 5 klein kubusse langs elke rand bevat 5 × 5 × 5 = 5³ = 125 klein kubusse.' },
+        { difficulty: 'Hard', question: 'ʼn Kolonie bakterieë verdubbel elke uur, beginnende met 1 bakterie. Skryf ʼn eksponensiële uitdrukking vir die aantal bakterieë na 8 uur, en bereken die totaal.', answer: '2⁸ = 256 bakterieë', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', '2^8=256', '2⁸=256'], explanation: 'Verdubbeling elke uur vanaf 1 bakterie vir 8 uur gee 2⁸ = 256 bakterieë.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het eksponensiële notasie en die eksponentwette bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde blokindeling as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'In die uitdrukking 9³, watter getal is die grondgetal en watter is die eksponent?', answer: 'Grondgetal = 9, eksponent = 3', checkMode: 'auto', correctAnswer: 'grondgetal9eksponent3', correctAnswers: ['grondgetal9eksponent3', 'grondgetal=9eksponent=3', '9grondgetal3eksponent'], explanation: 'Die grondgetal is die getal wat met homself vermenigvuldig word (9), en die eksponent is die klein verhoogde getal wat wys hoeveel keer om dit te vermenigvuldig (3).' },
+        { difficulty: 'Easy', question: 'Skryf 5 × 5 × 5 × 5 in eksponensiële notasie.', answer: '5⁴', checkMode: 'auto', correctAnswer: '5^4', correctAnswers: ['5^4', '5⁴'], explanation: 'Daar is 4 vywe wat met mekaar vermenigvuldig word, dus word dit geskryf as 5⁴ (grondgetal 5, eksponent 4).' },
+        { difficulty: 'Easy-Medium', question: 'Naledi skryf 6 × 6 × 6 × 6 as 6 × 4. Verduidelik waarom dit verkeerd is en gee die korrekte eksponensiële vorm.', answer: '6 × 4 beteken 6 vermenigvuldig met 4, nie 6 vier keer met homself vermenigvuldig nie. Die korrekte vorm is 6⁴.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken 8².', answer: '64', checkMode: 'auto', correctAnswer: '64', explanation: '8² = 8 × 8 = 64.' },
+        { difficulty: 'Easy', question: 'Bereken 4⁴.', answer: '256', checkMode: 'auto', correctAnswer: '256', explanation: '4⁴ = 4×4×4×4 = 256.' },
+        { difficulty: 'Medium', question: 'Bereken 6³.', answer: '216', checkMode: 'auto', correctAnswer: '216', explanation: '6³ = 6×6×6 = 216.' },
+        { difficulty: 'Medium', question: 'Sipho sê 3⁵ = 15 want hy het 3 × 5 bereken. Verduidelik sy fout en gee die korrekte antwoord.', answer: 'Hy het die grondgetal met die eksponent vermenigvuldig in plaas daarvan om die grondgetal 5 keer met homself te vermenigvuldig. 3⁵ = 3×3×3×3×3 = 243.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 4² × 4³ deur die eksponentwette te gebruik. Laat jou antwoord as ʼn mag van 4, en evalueer dit dan.', answer: '4⁵ = 1 024', checkMode: 'auto', correctAnswer: '1024', correctAnswers: ['1024', '4^5=1024', '4⁵=1024'], explanation: 'Dieselfde grondgetal, dus tel die eksponente op: 4² × 4³ = 4^(2+3) = 4⁵ = 1 024.' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 6⁷ ÷ 6⁴ deur die eksponentwette te gebruik. Laat jou antwoord as ʼn mag van 6, en evalueer dit dan.', answer: '6³ = 216', checkMode: 'auto', correctAnswer: '216', correctAnswers: ['216', '6^3=216', '6³=216'], explanation: 'Dieselfde grondgetal, dus trek die eksponente af: 6⁷ ÷ 6⁴ = 6^(7−4) = 6³ = 216.' },
+        { difficulty: 'Medium-Hard', question: 'Amahle vereenvoudig 5³ × 5³ as 5⁹, en sê "jy tel die twee grondgetalle op as ʼn eksponent." Is sy korrek? Verduidelik en gee die korrekte vereenvoudigde antwoord.', answer: 'Nee — jy tel die eksponente op (3 en 3), jy skep nie ʼn nuwe eksponent van iets anders nie. 5³ × 5³ = 5^(3+3) = 5⁶ = 15 625, nie 5⁹ nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 8⁴ ÷ 8² × 8¹, en gee jou antwoord as ʼn enkele mag van 8.', answer: '8³', checkMode: 'auto', correctAnswer: '8^3', correctAnswers: ['8^3', '8³', '512'], explanation: 'Werk van links na regs: 8⁴ ÷ 8² = 8^(4−2) = 8². Dan 8² × 8¹ = 8^(2+1) = 8³.' },
+        { difficulty: 'Easy', question: 'Bereken 12⁰.', answer: '1', checkMode: 'auto', correctAnswer: '1', explanation: 'Enige nie-nul getal tot die mag 0 is gelyk aan 1, dus 12⁰ = 1.' },
+        { difficulty: 'Easy', question: 'Bereken 23¹.', answer: '23', checkMode: 'auto', correctAnswer: '23', explanation: 'Enige getal tot die mag 1 is gelyk aan homself, dus 23¹ = 23.' },
+        { difficulty: 'Medium', question: 'Lerato sê n⁰ is altyd gelyk aan 1 vir elke getal n, insluitend n = 0. Verduidelik waarom hierdie redenasie foutief is.', answer: 'Die reël n⁰ = 1 geld net wanneer n nie nul is nie. 0⁰ is ʼn spesiale geval en is nie outomaties gelyk aan 1 soos ander getalle tot die mag 0 nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: 3⁴ of 9²? Wys jou werk.', answer: 'Hulle is gelyk — altwee is gelyk aan 81.', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'hulleisgelyk', 'nieteen'], explanation: '3⁴ = 81 en 9² = 81, dus is die twee waardes gelyk.' },
+        { difficulty: 'Medium', question: 'Orden hierdie van kleinste na grootste: 4³, 2⁶, 8², geskei deur kommas.', answer: '4³, 8², 2⁶', checkMode: 'auto', correctAnswer: '4³8²2⁶', correctAnswers: ['4³,8²,2⁶', '4^3,8^2,2^6', '64,64,64'], explanation: '4³ = 64, 2⁶ = 64, 8² = 64. Al drie waardes is gelyk, so enige volgorde wat hulle lys is aanvaarbaar, byvoorbeeld 4³, 8², 2⁶.' },
+        { difficulty: 'Medium-Hard', question: 'Sibusiso beweer 5⁴ is groter as 4⁵ want "5 is ʼn groter grondgetal as 4." Is hy korrek? Wys die werklike waardes om jou antwoord te ondersteun.', answer: 'Nee — 5⁴ = 625 maar 4⁵ = 1 024, dus is 4⁵ groter. ʼn Groter grondgetal gee nie altyd ʼn groter resultaat nie; die eksponent maak ook baie saak.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Vierkantige tuinbedding het 7 plante wat langs elke kant van ʼn vierkantige rangskikking groei. Hoeveel plante is daar in totaal? Skryf jou antwoord in eksponensiële notasie en evalueer dit dan.', answer: '7² = 49 plante', checkMode: 'auto', correctAnswer: '49', correctAnswers: ['49', '7^2=49', '7²=49'], explanation: 'ʼn Vierkantige rangskikking met 7 plante per kant het 7 × 7 = 7² = 49 plante in totaal.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Kubusvormige uitstalling van bokse word so gestapel dat 4 bokse langs elke rand van die kubus pas. Hoeveel bokse maak die uitstalling op? Skryf jou antwoord in eksponensiële notasie en evalueer dit dan.', answer: '4³ = 64 bokse', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64', '4^3=64', '4³=64'], explanation: 'ʼn Kubus met 4 bokse langs elke rand bevat 4 × 4 × 4 = 4³ = 64 bokse.' },
+        { difficulty: 'Hard', question: 'ʼn Sosiale media-plasing word deur 3 mense gedeel, en elkeen van daardie mense deel dit met 3 nuwe mense, en hierdie patroon gaan voort. Skryf ʼn eksponensiële uitdrukking vir die aantal nuwe mense wat die plasing sien na 6 rondtes van deel, en bereken die totaal.', answer: '3⁶ = 729 mense', checkMode: 'auto', correctAnswer: '729', correctAnswers: ['729', '3^6=729', '3⁶=729'], explanation: 'Verdrievoudiging by elk van 6 rondtes, beginnende met 1, gee 3⁶ = 729 mense.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het eksponensiële notasie en die eksponentwette bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde blokindeling as Stel 1/2, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'In die uitdrukking 11³, watter getal is die grondgetal en watter is die eksponent?', answer: 'Grondgetal = 11, eksponent = 3', checkMode: 'auto', correctAnswer: 'grondgetal11eksponent3', correctAnswers: ['grondgetal11eksponent3', 'grondgetal=11eksponent=3', '11grondgetal3eksponent'], explanation: 'Die grondgetal is die getal wat met homself vermenigvuldig word (11), en die eksponent is die klein verhoogde getal wat wys hoeveel keer om dit te vermenigvuldig (3).' },
+        { difficulty: 'Easy', question: 'Skryf 2 × 2 × 2 × 2 × 2 × 2 × 2 × 2 in eksponensiële notasie.', answer: '2⁸', checkMode: 'auto', correctAnswer: '2^8', correctAnswers: ['2^8', '2⁸'], explanation: 'Daar is 8 twees wat met mekaar vermenigvuldig word, dus word dit geskryf as 2⁸ (grondgetal 2, eksponent 8).' },
+        { difficulty: 'Easy-Medium', question: 'Mpho skryf 9 × 9 × 9 as 9 × 3. Verduidelik waarom dit verkeerd is en gee die korrekte eksponensiële vorm.', answer: '9 × 3 beteken 9 vermenigvuldig met 3, nie 9 drie keer met homself vermenigvuldig nie. Die korrekte vorm is 9³.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken 6².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: '6² = 6 × 6 = 36.' },
+        { difficulty: 'Easy', question: 'Bereken 3⁴.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: '3⁴ = 3×3×3×3 = 81.' },
+        { difficulty: 'Medium', question: 'Bereken 2⁸.', answer: '256', checkMode: 'auto', correctAnswer: '256', explanation: '2⁸ = 2×2×2×2×2×2×2×2 = 256.' },
+        { difficulty: 'Medium', question: 'Ayanda sê 2⁵ = 10 want sy het 2 × 5 bereken. Verduidelik haar fout en gee die korrekte antwoord.', answer: 'Sy het die grondgetal met die eksponent vermenigvuldig in plaas daarvan om die grondgetal 5 keer met homself te vermenigvuldig. 2⁵ = 2×2×2×2×2 = 32.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 2³ × 2⁵ deur die eksponentwette te gebruik. Laat jou antwoord as ʼn mag van 2, en evalueer dit dan.', answer: '2⁸ = 256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', '2^8=256', '2⁸=256'], explanation: 'Dieselfde grondgetal, dus tel die eksponente op: 2³ × 2⁵ = 2^(3+5) = 2⁸ = 256.' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 9⁵ ÷ 9³ deur die eksponentwette te gebruik. Laat jou antwoord as ʼn mag van 9, en evalueer dit dan.', answer: '9² = 81', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '9^2=81', '9²=81'], explanation: 'Dieselfde grondgetal, dus trek die eksponente af: 9⁵ ÷ 9³ = 9^(5−3) = 9² = 81.' },
+        { difficulty: 'Medium-Hard', question: 'Thandeka vereenvoudig 7⁵ ÷ 7³ as 7^(5×3), en sê "deling beteken jy vermenigvuldig die eksponente." Is sy korrek? Verduidelik en gee die korrekte vereenvoudigde antwoord.', answer: 'Nee — wanneer jy magte met dieselfde grondgetal deel, trek jy die eksponente af, jy vermenigvuldig hulle nie. 7⁵ ÷ 7³ = 7^(5−3) = 7² = 49, nie 7^(5×3) nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 11³ ÷ 11¹ × 11², en gee jou antwoord as ʼn enkele mag van 11.', answer: '11⁴', checkMode: 'auto', correctAnswer: '11^4', correctAnswers: ['11^4', '11⁴', '14641'], explanation: 'Werk van links na regs: 11³ ÷ 11¹ = 11^(3−1) = 11². Dan 11² × 11² = 11^(2+2) = 11⁴.' },
+        { difficulty: 'Easy', question: 'Bereken 20⁰.', answer: '1', checkMode: 'auto', correctAnswer: '1', explanation: 'Enige nie-nul getal tot die mag 0 is gelyk aan 1, dus 20⁰ = 1.' },
+        { difficulty: 'Easy', question: 'Bereken 37¹.', answer: '37', checkMode: 'auto', correctAnswer: '37', explanation: 'Enige getal tot die mag 1 is gelyk aan homself, dus 37¹ = 37.' },
+        { difficulty: 'Medium', question: 'Karabo sê 8⁰ moet gelyk wees aan 8 want "om tot ʼn mag te verhef gee net die grondgetal terug wanneer niks anders gebeur nie." Verduidelik waarom hierdie redenasie foutief is.', answer: 'Om tot die mag 0 te verhef gee nie die grondgetal terug nie — dit is altyd gelyk aan 1 (vir ʼn nie-nul grondgetal), want dit verteenwoordig vermenigvuldiging met die grondgetal nul keer. 8⁰ = 1, nie 8 nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: 4³ of 2⁶? Wys jou werk.', answer: 'Hulle is gelyk — altwee is gelyk aan 64.', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'hulleisgelyk', 'nieteen'], explanation: '4³ = 64 en 2⁶ = 64, dus is die twee waardes gelyk.' },
+        { difficulty: 'Medium', question: 'Orden hierdie van kleinste na grootste: 2⁴, 3³, 5², geskei deur kommas.', answer: '5², 2⁴, 3³', checkMode: 'auto', correctAnswer: '5²2⁴3³', correctAnswers: ['5²,2⁴,3³', '5^2,2^4,3^3', '25,16,27'], explanation: '2⁴ = 16, 3³ = 27, 5² = 25. Die waardes van kleinste na grootste geordend: 16, 25, 27 wat 2⁴, 5², 3³ is.' },
+        { difficulty: 'Medium-Hard', question: 'Nomvula beweer 6³ is groter as 3⁶ want "6 is ʼn baie groter grondgetal as 3." Is sy korrek? Wys die werklike waardes om jou antwoord te ondersteun.', answer: 'Nee — 6³ = 216 maar 3⁶ = 729, dus is 3⁶ baie groter. ʼn Groter grondgetal gee nie altyd ʼn groter resultaat nie; die eksponent maak ook baie saak.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Vierkantige binnehof het 9 teëls wat langs elke kant van ʼn vierkantige rangskikking gelê is. Hoeveel teëls is daar in totaal? Skryf jou antwoord in eksponensiële notasie en evalueer dit dan.', answer: '9² = 81 teëls', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '9^2=81', '9²=81'], explanation: 'ʼn Vierkantige rangskikking met 9 teëls per kant het 9 × 9 = 9² = 81 teëls in totaal.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Kubusvormige geskenkboks word met klein kubusse gepak, met 6 klein kubusse wat langs elke rand pas. Hoeveel klein kubusse vul die boks? Skryf jou antwoord in eksponensiële notasie en evalueer dit dan.', answer: '6³ = 216 klein kubusse', checkMode: 'auto', correctAnswer: '216', correctAnswers: ['216', '6^3=216', '6³=216'], explanation: 'ʼn Kubus met 6 klein kubusse langs elke rand bevat 6 × 6 × 6 = 6³ = 216 klein kubusse.' },
+        { difficulty: 'Hard', question: 'ʼn Kettingboodskap word aan 2 mense gestuur, en elkeen van daardie mense stuur dit aan na 2 nuwe mense, en hierdie patroon gaan voort. Skryf ʼn eksponensiële uitdrukking vir die aantal nuwe mense wat die boodskap na 10 rondtes van aanstuur ontvang, en bereken die totaal.', answer: '2¹⁰ = 1 024 mense', checkMode: 'auto', correctAnswer: '1024', correctAnswers: ['1024', '2^10=1024', '2¹⁰=1024'], explanation: 'Verdubbeling by elk van 10 rondtes, beginnende met 1, gee 2¹⁰ = 1 024 mense.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het eksponensiële notasie en die eksponentwette bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

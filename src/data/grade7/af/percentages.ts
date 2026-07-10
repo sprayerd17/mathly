@@ -359,4 +359,175 @@ export const topicData: TopicData = {
     { minScore: 6, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan probeer, werk weer deur die gids.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 1-3 Omskakeling %/breuke/desimale | 4-7 Vind ʼn % van ʼn bedrag |
+    // 8-10 Een hoeveelheid as ʼn % van ʼn ander | 11-14 %-toename en -afname |
+    // 15-18 Korting/opslag woordprobleme (Rand-kontekste) | 19-20 Multi-stap /
+    // foutopsporing
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Omskakeling tussen persentasies, breuke en desimale (0-2)
+        { difficulty: 'Easy', question: 'Skryf 7/8 as ʼn persentasie.', answer: '87,5%', checkMode: 'auto', correctAnswer: '87,5%', correctAnswers: ['87,5%', '87,5', '87.5%', '87.5'], explanation: 'Deel die teller deur die noemer, en vermenigvuldig dan met 100.\n7 ÷ 8 = 0,875. 0,875 × 100 = 87,5%. ✓' },
+        { difficulty: 'Easy', question: 'Skryf 0,35 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '35%, 7/20', checkMode: 'auto', correctAnswer: '35%,7/20', correctAnswers: ['35%,7/20', '35,7/20', '35% en 7/20', '35, 7/20'], explanation: 'Persentasie: vermenigvuldig met 100. 0,35 × 100 = 35%.\nBreuk: 0,35 = 35/100. GGF van 35 en 100 is 5, dus 35/100 = 7/20. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Resep gebruik 18/25 van ʼn sak meel. Skryf hierdie hoeveelheid as ʼn persentasie en as ʼn desimale breuk.', answer: '72%, 0,72', checkMode: 'auto', correctAnswer: '72%,0,72', correctAnswers: ['72%,0,72', '72,0,72', '72% en 0,72', '72%,0.72'], explanation: 'Persentasie: 18 ÷ 25 = 0,72, en dan 0,72 × 100 = 72%.\nDesimale breuk: 18 ÷ 25 = 0,72 direk. ✓' },
+
+        // Blok 2 — Vind ʼn persentasie van ʼn bedrag (3-6)
+        { difficulty: 'Easy', question: 'Bereken 35% van 480.', answer: '168', checkMode: 'auto', correctAnswer: '168', explanation: 'Skakel 35% om na ʼn desimale breuk: 35 ÷ 100 = 0,35.\nVermenigvuldig: 0,35 × 480 = 168. ✓' },
+        { difficulty: 'Easy', question: 'ʼn Graad het 950 leerders in totaal. 8% van hulle bespeel ʼn musiekinstrument. Hoeveel leerders bespeel ʼn instrument?', answer: '76', checkMode: 'auto', correctAnswer: '76', explanation: 'Bereken 8% van 950: 0,08 × 950 = 76 leerders. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Stadion het 650 sitplekke in die westelike pawiljoen. Vir ʼn skoolatletiekdag word 62% van die sitplekke gevul. Hoeveel sitplekke word gevul?', answer: '403', checkMode: 'auto', correctAnswer: '403', explanation: 'Bereken 62% van 650: 0,62 × 650 = 403 sitplekke. ✓' },
+        { difficulty: 'Medium', question: 'Zinhle het R220 gespaar. Sy spandeer 45% daarvan aan ʼn verjaardaggeskenk. Hoeveel geld spandeer sy, en hoeveel het sy oor?', answer: 'Gespandeer = R99, oor = R121', checkMode: 'auto', correctAnswer: '99,121', correctAnswers: ['99,121', 'R99,R121', 'R99, R121', '99, 121'], explanation: 'Bedrag gespandeer: 45% van 220 = 0,45 × 220 = R99.\nBedrag oor: 220 − 99 = R121. ✓' },
+
+        // Blok 3 — Een hoeveelheid as ʼn persentasie van ʼn ander (7-9)
+        { difficulty: 'Easy', question: 'Skryf 45 as ʼn persentasie van 60.', answer: '75%', checkMode: 'auto', correctAnswer: '75%', correctAnswers: ['75%', '75'], explanation: 'Skryf as ʼn breuk en vermenigvuldig met 100: (45 ÷ 60) × 100 = 0,75 × 100 = 75%. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Boer plant 840 saailinge, en 126 daarvan groei nie. Watter persentasie van die saailinge het nie gegroei nie?', answer: '15%', checkMode: 'auto', correctAnswer: '15%', correctAnswers: ['15%', '15'], explanation: 'Persentasie wat nie gegroei het nie = (126 ÷ 840) × 100 = 0,15 × 100 = 15%. ✓' },
+        { difficulty: 'Medium', question: 'Sipho behaal 19 uit 25 in ʼn speltoets, en Amahle behaal 34 uit 40 in dieselfde toets. Wie se persentasiepunt is hoër, en met hoeveel persentasiepunte?', answer: 'Amahle s\'n is hoër, met 9 persentasiepunte', checkMode: 'auto', correctAnswer: 'Amahle,9', correctAnswers: ['Amahle,9', 'amahle,9', 'Amahle met 9', 'Amahle, 9'], explanation: 'Sipho: (19 ÷ 25) × 100 = 76%.\nAmahle: (34 ÷ 40) × 100 = 85%.\nAmahle se punt is hoër: 85% − 76% = 9 persentasiepunte. ✓' },
+
+        // Blok 4 — Persentasietoename en -afname (10-13)
+        { difficulty: 'Easy', question: 'Thabo se maandelikse salaris van R14 500 styg met 9%. Bereken sy nuwe salaris.', answer: 'R15 805', checkMode: 'auto', correctAnswer: 'R15805', correctAnswers: ['R15805', '15805', 'R15 805', '15 805'], explanation: 'Bereken 9% van R14 500: 0,09 × 14 500 = R1 305.\nNuwe salaris: 14 500 + 1 305 = R15 805. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Gesin betaal R3 200 huur per maand. Die verhuurder verhoog die huur met 7,5%. Bereken die nuwe maandelikse huur.', answer: 'R3 440', checkMode: 'auto', correctAnswer: 'R3440', correctAnswers: ['R3440', '3440', 'R3 440', '3 440'], explanation: 'Bereken 7,5% van R3 200: 0,075 × 3 200 = R240.\nNuwe huur: 3 200 + 240 = R3 440. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Klein dorpie het ʼn bevolking van 5 200 mense. Oor vyf jaar groei die bevolking met 18%. Bereken die nuwe bevolking.', answer: '6 136', checkMode: 'auto', correctAnswer: '6136', correctAnswers: ['6136', '6 136'], explanation: 'Bereken 18% van 5 200: 0,18 × 5 200 = 936.\nNuwe bevolking: 5 200 + 936 = 6 136 mense. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Fiets wat oorspronklik R2 400 kos, word met 15% afgeslaan. Bereken die verkoopprys.', answer: 'R2 040', checkMode: 'auto', correctAnswer: 'R2040', correctAnswers: ['R2040', '2040', 'R2 040', '2 040'], explanation: 'Bereken 15% van R2 400: 0,15 × 2 400 = R360.\nVerkoopprys: 2 400 − 360 = R2 040. ✓' },
+
+        // Blok 5 — Korting/opslag woordprobleme, Rand-kontekste (14-17)
+        { difficulty: 'Easy-Medium', question: 'ʼn Paar hardloopskoene kos R899 by ʼn sportwinkel. Tydens ʼn uitverkoping trek die winkel 20% af. Bereken die kortingsbedrag en die verkoopprys.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kortingsbedrag', correctAnswer: 'R179,80', correctAnswers: ['R179,80', '179,80', 'R179.80', '179.80', 'R179,8', '179,8'], explanation: 'Korting = 20% van R899: 0,20 × 899 = R179,80 ✓' },
+          { label: 'b) Verkoopprys', correctAnswer: 'R719,20', correctAnswers: ['R719,20', '719,20', 'R719.20', '719.20', 'R719,2', '719,2'], explanation: 'Verkoopprys = 899 − 179,80 = R719,20 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Skooluitstappie kos gewoonlik R560 per leerder. Weens stygende brandstofkoste verhoog die busmaatskappy sy prys met 8%. Bereken die nuwe koste per leerder.', answer: 'R604,80', checkMode: 'auto', correctAnswer: 'R604,80', correctAnswers: ['R604,80', '604,80', 'R604.80', '604.80', 'R604,8', '604,8'], explanation: 'Bereken 8% van R560: 0,08 × 560 = R44,80.\nNuwe prys: 560 + 44,80 = R604,80. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Spazawinkel koop ʼn kissie sap vir R120 en verhoog die prys met 40% opslag om aan kliënte te verkoop. Bereken die opslagbedrag en die verkoopprys.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Opslagbedrag', correctAnswer: 'R48', correctAnswers: ['R48', '48'], explanation: 'Opslag = 40% van R120: 0,40 × 120 = R48 ✓' },
+          { label: 'b) Verkoopprys', correctAnswer: 'R168', correctAnswers: ['R168', '168'], explanation: 'Verkoopprys = 120 + 48 = R168 ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Restaurantrekening kom tot R250 voordat ʼn diensfooi van 15% bygevoeg word. Bereken die totale bedrag wat die kliënt moet betaal, die diensfooi ingesluit.', answer: 'R287,50', checkMode: 'auto', correctAnswer: 'R287,50', correctAnswers: ['R287,50', '287,50', 'R287.50', '287.50', 'R287,5', '287,5'], explanation: 'Bereken 15% van R250: 0,15 × 250 = R37,50.\nTotaal = 250 + 37,50 = R287,50. ✓' },
+
+        // Blok 6 — Multi-stap / foutopsporing (18-19)
+        { difficulty: 'Hard', question: 'ʼn Baadjie kos R800. Die winkel verhoog eers die prys met 10%, en ʼn week later plaas hulle dit op ʼn uitverkoping teen 10% af van die nuwe prys. Bereken die finale prys, en sê of dit dieselfde is as die oorspronklike R800.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Finale prys', correctAnswer: 'R792', correctAnswers: ['R792', '792'], explanation: 'Na die 10%-toename: 800 × 1,10 = R880.\nNa die 10%-afname op die nuwe prys: 880 × 0,90 = R792. ✓' },
+          { label: 'b) Is die finale prys dieselfde as die oorspronklike R800?', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'R792 is R8 minder as R800 — ʼn persentasietoename gevolg deur dieselfde persentasieafname gee nie die oorspronklike bedrag terug nie, want die tweede persentasie word op ʼn ander (groter) basis bereken. ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Luidspreker kos R400. Lerato sê: "Die winkel het dit met 20% afgeslaan na R320, en dit toe met 20% verhoog terug na R384, dus is dit R16 goedkoper as die oorspronklike prys — maar dit moet ʼn fout wees, want ʼn afname van 20% en ʼn toename van 20% behoort mekaar op te hef." Het Lerato reg dat dit ʼn fout moet wees? Verduidelik.', answer: 'Nee, Lerato is verkeerd dat dit ʼn fout is — die berekening R320 en dan R384 is korrek. ʼn Afname van 20% en ʼn toename van 20% hef nie mekaar op nie, want dit is persentasies van verskillende bedrae: die afname is 20% van R400 (R80), maar die toename is 20% van die kleiner R320 (R64), dus eindig die finale prys laer as die oorspronklike.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting- en toenameprobleme.' },
+        { minScore: 15, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde blokindeling as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Omskakeling tussen persentasies, breuke en desimale (0-2)
+        { difficulty: 'Easy', question: 'Skryf 5/8 as ʼn persentasie.', answer: '62,5%', checkMode: 'auto', correctAnswer: '62,5%', correctAnswers: ['62,5%', '62,5', '62.5%', '62.5'], explanation: 'Deel die teller deur die noemer, en vermenigvuldig dan met 100.\n5 ÷ 8 = 0,625. 0,625 × 100 = 62,5%. ✓' },
+        { difficulty: 'Easy', question: 'Skryf 0,28 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '28%, 7/25', checkMode: 'auto', correctAnswer: '28%,7/25', correctAnswers: ['28%,7/25', '28,7/25', '28% en 7/25', '28, 7/25'], explanation: 'Persentasie: vermenigvuldig met 100. 0,28 × 100 = 28%.\nBreuk: 0,28 = 28/100. GGF van 28 en 100 is 4, dus 28/100 = 7/25. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Tenk word tot 11/20 van sy kapasiteit gevul. Skryf hierdie hoeveelheid as ʼn persentasie en as ʼn desimale breuk.', answer: '55%, 0,55', checkMode: 'auto', correctAnswer: '55%,0,55', correctAnswers: ['55%,0,55', '55,0,55', '55% en 0,55', '55%,0.55'], explanation: 'Persentasie: 11 ÷ 20 = 0,55, en dan 0,55 × 100 = 55%.\nDesimale breuk: 11 ÷ 20 = 0,55 direk. ✓' },
+
+        // Blok 2 — Vind ʼn persentasie van ʼn bedrag (3-6)
+        { difficulty: 'Easy', question: 'Bereken 45% van 520.', answer: '234', checkMode: 'auto', correctAnswer: '234', explanation: 'Skakel 45% om na ʼn desimale breuk: 45 ÷ 100 = 0,45.\nVermenigvuldig: 0,45 × 520 = 234. ✓' },
+        { difficulty: 'Easy', question: 'ʼn Biblioteek het 725 boeke in sy fiksie-afdeling. 16% daarvan is tans uitgeleen. Hoeveel fiksieboeke is uitgeleen?', answer: '116', checkMode: 'auto', correctAnswer: '116', explanation: 'Bereken 16% van 725: 0,16 × 725 = 116 boeke. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Konsertsaal het 1 150 kaartjies beskikbaar. Vir ʼn uitverkochte show word 6% vir VIP-gaste gereserveer. Hoeveel kaartjies word vir VIP-gaste gereserveer?', answer: '69', checkMode: 'auto', correctAnswer: '69', explanation: 'Bereken 6% van 1 150: 0,06 × 1 150 = 69 kaartjies. ✓' },
+        { difficulty: 'Medium', question: 'Bongani het R250 in sy beursie. Hy spandeer 72% daarvan aan ʼn sokkertrui. Hoeveel geld spandeer hy, en hoeveel het hy oor?', answer: 'Gespandeer = R180, oor = R70', checkMode: 'auto', correctAnswer: '180,70', correctAnswers: ['180,70', 'R180,R70', 'R180, R70', '180, 70'], explanation: 'Bedrag gespandeer: 72% van 250 = 0,72 × 250 = R180.\nBedrag oor: 250 − 180 = R70. ✓' },
+
+        // Blok 3 — Een hoeveelheid as ʼn persentasie van ʼn ander (7-9)
+        { difficulty: 'Easy', question: 'Skryf 36 as ʼn persentasie van 48.', answer: '75%', checkMode: 'auto', correctAnswer: '75%', correctAnswers: ['75%', '75'], explanation: 'Skryf as ʼn breuk en vermenigvuldig met 100: (36 ÷ 48) × 100 = 0,75 × 100 = 75%. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Fabriek vervaardig 900 items in ʼn lot, en 153 daarvan word as defek gevind. Watter persentasie van die lot is defek?', answer: '17%', checkMode: 'auto', correctAnswer: '17%', correctAnswers: ['17%', '17'], explanation: 'Persentasie defek = (153 ÷ 900) × 100 = 0,17 × 100 = 17%. ✓' },
+        { difficulty: 'Medium', question: 'Naledi behaal 21 uit 28 in ʼn wetenskapkwis, en Kagiso behaal 39 uit 52 in dieselfde kwis. Wie se persentasiepunt is hoër, en met hoeveel persentasiepunte?', answer: 'Nie een nie — hulle het dieselfde persentasie behaal', checkMode: 'auto', correctAnswer: 'dieselfde', correctAnswers: ['dieselfde', 'nie een nie', 'gelyk', 'hulle is gelyk'], explanation: 'Naledi: (21 ÷ 28) × 100 = 75%.\nKagiso: (39 ÷ 52) × 100 = 75%.\nAlbei het presies 75% behaal — hulle persentasies is gelyk, al is die rou punte verskillend. ✓' },
+
+        // Blok 4 — Persentasietoename en -afname (10-13)
+        { difficulty: 'Easy', question: 'Naledi se maandelikse salaris van R18 800 styg met 6%. Bereken haar nuwe salaris.', answer: 'R19 928', checkMode: 'auto', correctAnswer: 'R19928', correctAnswers: ['R19928', '19928', 'R19 928', '19 928'], explanation: 'Bereken 6% van R18 800: 0,06 × 18 800 = R1 128.\nNuwe salaris: 18 800 + 1 128 = R19 928. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Selfoondatabundel kos R250 per maand. Die netwerk verhoog die prys met 4%. Bereken die nuwe maandelikse prys.', answer: 'R260', checkMode: 'auto', correctAnswer: 'R260', correctAnswers: ['R260', '260'], explanation: 'Bereken 4% van R250: 0,04 × 250 = R10.\nNuwe prys: 250 + 10 = R260. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Naweekmark het gewoonlik 850 besoekers. Weens slegte weer daal die opkoms met 12%. Bereken die nuwe opkoms.', answer: '748', checkMode: 'auto', correctAnswer: '748', explanation: 'Bereken 12% van 850: 0,12 × 850 = 102.\nNuwe opkoms: 850 − 102 = 748 besoekers. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Slimfoon wat oorspronklik R6 200 kos, word met 20% afgeslaan. Bereken die verkoopprys.', answer: 'R4 960', checkMode: 'auto', correctAnswer: 'R4960', correctAnswers: ['R4960', '4960', 'R4 960', '4 960'], explanation: 'Bereken 20% van R6 200: 0,20 × 6 200 = R1 240.\nVerkoopprys: 6 200 − 1 240 = R4 960. ✓' },
+
+        // Blok 5 — Korting/opslag woordprobleme, Rand-kontekste (14-17)
+        { difficulty: 'Easy-Medium', question: 'ʼn Paar jeans kos R650 by ʼn kledingwinkel. Tydens ʼn uitverkoping trek die winkel 30% af. Bereken die kortingsbedrag en die verkoopprys.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kortingsbedrag', correctAnswer: 'R195', correctAnswers: ['R195', '195'], explanation: 'Korting = 30% van R650: 0,30 × 650 = R195 ✓' },
+          { label: 'b) Verkoopprys', correctAnswer: 'R455', correctAnswers: ['R455', '455'], explanation: 'Verkoopprys = 650 − 195 = R455 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Skryfbehoeftepak kos gewoonlik R84 aan die begin van die jaar. Weens hoër papierkoste verhoog die verskaffer die prys met 5%. Bereken die nuwe koste van die pak.', answer: 'R88,20', checkMode: 'auto', correctAnswer: 'R88,20', correctAnswers: ['R88,20', '88,20', 'R88.20', '88.20', 'R88,2', '88,2'], explanation: 'Bereken 5% van R84: 0,05 × 84 = R4,20.\nNuwe prys: 84 + 4,20 = R88,20. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Spazawinkel koop ʼn boks lekkers vir R80 en verhoog die prys met 60% opslag om aan kliënte te verkoop. Bereken die opslagbedrag en die verkoopprys.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Opslagbedrag', correctAnswer: 'R48', correctAnswers: ['R48', '48'], explanation: 'Opslag = 60% van R80: 0,60 × 80 = R48 ✓' },
+          { label: 'b) Verkoopprys', correctAnswer: 'R128', correctAnswers: ['R128', '128'], explanation: 'Verkoopprys = 80 + 48 = R128 ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Hardewarerekening kom tot R340 voordat ʼn afleweringsfooi van 15% bygevoeg word. Bereken die totale bedrag wat die kliënt moet betaal, die afleweringsfooi ingesluit.', answer: 'R391', checkMode: 'auto', correctAnswer: 'R391', correctAnswers: ['R391', '391'], explanation: 'Bereken 15% van R340: 0,15 × 340 = R51.\nTotaal = 340 + 51 = R391. ✓' },
+
+        // Blok 6 — Multi-stap / foutopsporing (18-19)
+        { difficulty: 'Hard', question: 'ʼn Televisie kos R1 500. Die winkel verhoog eers die prys met 20%, en ʼn maand later plaas hulle dit op ʼn uitverkoping teen 15% af van die nuwe prys. Bereken die finale prys, en sê of dit dieselfde is as die oorspronklike R1 500.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Finale prys', correctAnswer: 'R1 530', correctAnswers: ['R1 530', 'R1530', '1530', '1 530'], explanation: 'Na die 20%-toename: 1 500 × 1,20 = R1 800.\nNa die 15%-afname op die nuwe prys: 1 800 × 0,85 = R1 530. ✓' },
+          { label: 'b) Is die finale prys dieselfde as die oorspronklike R1 500?', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'R1 530 is R30 meer as R1 500 — die twee persentasies is op verskillende basisbedrae toegepas, dus hef hulle nie mekaar op nie. ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Ketellapper kos R600. Thabo sê: "Die winkel het dit met 25% afgeslaan na R450, en dit toe met 25% verhoog terug na R562,50, dus is dit R37,50 meer as die oorspronklike prys — maar dit moet ʼn fout wees, want ʼn afname van 25% en ʼn toename van 25% behoort mekaar op te hef." Het Thabo reg dat dit ʼn fout moet wees? Verduidelik.', answer: 'Nee, Thabo is verkeerd dat dit ʼn fout is — die berekening R450 en dan R562,50 is korrek. ʼn Afname van 25% en ʼn toename van 25% hef nie mekaar op nie, want dit is persentasies van verskillende bedrae: die afname is 25% van R600 (R150), maar die toename is 25% van die kleiner R450 (R112,50), dus is die finale prys steeds laer as wat ʼn mens sou verwag, al is dit hoër as die afgeslane prys.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting- en toenameprobleme.' },
+        { minScore: 15, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde blokindeling as Stel 1 en Stel 2, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Omskakeling tussen persentasies, breuke en desimale (0-2)
+        { difficulty: 'Easy', question: 'Skryf 9/16 as ʼn persentasie.', answer: '56,25%', checkMode: 'auto', correctAnswer: '56,25%', correctAnswers: ['56,25%', '56,25', '56.25%', '56.25'], explanation: 'Deel die teller deur die noemer, en vermenigvuldig dan met 100.\n9 ÷ 16 = 0,5625. 0,5625 × 100 = 56,25%. ✓' },
+        { difficulty: 'Easy', question: 'Skryf 0,62 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '62%, 31/50', checkMode: 'auto', correctAnswer: '62%,31/50', correctAnswers: ['62%,31/50', '62,31/50', '62% en 31/50', '62, 31/50'], explanation: 'Persentasie: vermenigvuldig met 100. 0,62 × 100 = 62%.\nBreuk: 0,62 = 62/100. GGF van 62 en 100 is 2, dus 62/100 = 31/50. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Waterbottel word tot 7/20 van sy kapasiteit gevul. Skryf hierdie hoeveelheid as ʼn persentasie en as ʼn desimale breuk.', answer: '35%, 0,35', checkMode: 'auto', correctAnswer: '35%,0,35', correctAnswers: ['35%,0,35', '35,0,35', '35% en 0,35', '35%,0.35'], explanation: 'Persentasie: 7 ÷ 20 = 0,35, en dan 0,35 × 100 = 35%.\nDesimale breuk: 7 ÷ 20 = 0,35 direk. ✓' },
+
+        // Blok 2 — Vind ʼn persentasie van ʼn bedrag (3-6)
+        { difficulty: 'Easy', question: 'Bereken 28% van 650.', answer: '182', checkMode: 'auto', correctAnswer: '182', explanation: 'Skakel 28% om na ʼn desimale breuk: 28 ÷ 100 = 0,28.\nVermenigvuldig: 0,28 × 650 = 182. ✓' },
+        { difficulty: 'Easy', question: 'ʼn Skool het 850 leerders in totaal. 18% van hulle fiets skool toe. Hoeveel leerders fiets skool toe?', answer: '153', checkMode: 'auto', correctAnswer: '153', explanation: 'Bereken 18% van 850: 0,18 × 850 = 153 leerders. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Pakhuis stoor 1 300 bokse. Vir ʼn voorraadopname word 9% van die bokse oopgemaak en geïnspekteer. Hoeveel bokse word geïnspekteer?', answer: '117', checkMode: 'auto', correctAnswer: '117', explanation: 'Bereken 9% van 1 300: 0,09 × 1 300 = 117 bokse. ✓' },
+        { difficulty: 'Medium', question: 'Kagiso het R375 gespaar. Hy spandeer 64% daarvan aan ʼn paar oorfone. Hoeveel geld spandeer hy, en hoeveel het hy oor?', answer: 'Gespandeer = R240, oor = R135', checkMode: 'auto', correctAnswer: '240,135', correctAnswers: ['240,135', 'R240,R135', 'R240, R135', '240, 135'], explanation: 'Bedrag gespandeer: 64% van 375 = 0,64 × 375 = R240.\nBedrag oor: 375 − 240 = R135. ✓' },
+
+        // Blok 3 — Een hoeveelheid as ʼn persentasie van ʼn ander (7-9)
+        { difficulty: 'Easy', question: 'Skryf 56 as ʼn persentasie van 80.', answer: '70%', checkMode: 'auto', correctAnswer: '70%', correctAnswers: ['70%', '70'], explanation: 'Skryf as ʼn breuk en vermenigvuldig met 100: (56 ÷ 80) × 100 = 0,70 × 100 = 70%. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Afleweringsmaatskappy hanteer 275 pakkies op ʼn dag, en 88 daarvan word voor middagete afgelewer. Watter persentasie van pakkies word voor middagete afgelewer?', answer: '32%', checkMode: 'auto', correctAnswer: '32%', correctAnswers: ['32%', '32'], explanation: 'Persentasie voor middagete = (88 ÷ 275) × 100 = 0,32 × 100 = 32%. ✓' },
+        { difficulty: 'Medium', question: 'Amahle behaal 39 uit 52 in ʼn geografietoets, en Sipho behaal 34 uit 40 in dieselfde toets. Wie se persentasiepunt is hoër, en met hoeveel persentasiepunte?', answer: 'Sipho s\'n is hoër, met 10 persentasiepunte', checkMode: 'auto', correctAnswer: 'Sipho,10', correctAnswers: ['Sipho,10', 'sipho,10', 'Sipho met 10', 'Sipho, 10'], explanation: 'Amahle: (39 ÷ 52) × 100 = 75%.\nSipho: (34 ÷ 40) × 100 = 85%.\nSipho se punt is hoër: 85% − 75% = 10 persentasiepunte. ✓' },
+
+        // Blok 4 — Persentasietoename en -afname (10-13)
+        { difficulty: 'Easy', question: 'Kagiso se maandelikse salaris van R21 000 styg met 5,5%. Bereken sy nuwe salaris.', answer: 'R22 155', checkMode: 'auto', correctAnswer: 'R22155', correctAnswers: ['R22155', '22155', 'R22 155', '22 155'], explanation: 'Bereken 5,5% van R21 000: 0,055 × 21 000 = R1 155.\nNuwe salaris: 21 000 + 1 155 = R22 155. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Huishouding se elektrisiteitsrekening is gewoonlik R980 per maand. Na ʼn tarieftoename styg die rekening met 9%. Bereken die nuwe maandelikse rekening.', answer: 'R1 068,20', checkMode: 'auto', correctAnswer: 'R1068,20', correctAnswers: ['R1068,20', '1068,20', 'R1 068,20', '1 068,20', 'R1068.20', 'R1 068.20'], explanation: 'Bereken 9% van R980: 0,09 × 980 = R88,20.\nNuwe rekening: 980 + 88,20 = R1 068,20. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Gimnasium het 650 lede. Oor die winter maande daal die ledetal met 8%. Bereken die nuwe ledetal.', answer: '598', checkMode: 'auto', correctAnswer: '598', explanation: 'Bereken 8% van 650: 0,08 × 650 = 52.\nNuwe ledetal: 650 − 52 = 598 lede. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Tablet wat oorspronklik R4 800 kos, word met 35% afgeslaan. Bereken die verkoopprys.', answer: 'R3 120', checkMode: 'auto', correctAnswer: 'R3120', correctAnswers: ['R3120', '3120', 'R3 120', '3 120'], explanation: 'Bereken 35% van R4 800: 0,35 × 4 800 = R1 680.\nVerkoopprys: 4 800 − 1 680 = R3 120. ✓' },
+
+        // Blok 5 — Korting/opslag woordprobleme, Rand-kontekste (14-17)
+        { difficulty: 'Easy-Medium', question: 'ʼn Winterbaadjie kos R1 200 by ʼn kledingwinkel. Tydens ʼn uitverkoping trek die winkel 25% af. Bereken die kortingsbedrag en die verkoopprys.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kortingsbedrag', correctAnswer: 'R300', correctAnswers: ['R300', '300'], explanation: 'Korting = 25% van R1 200: 0,25 × 1 200 = R300 ✓' },
+          { label: 'b) Verkoopprys', correctAnswer: 'R900', correctAnswers: ['R900', '900'], explanation: 'Verkoopprys = 1 200 − 300 = R900 ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Taxirit van die huis na die skool kos gewoonlik R45. Weens stygende petrolpryse verhoog die rit met 10%. Bereken die nuwe rit.', answer: 'R49,50', checkMode: 'auto', correctAnswer: 'R49,50', correctAnswers: ['R49,50', '49,50', 'R49.50', '49.50', 'R49,5', '49,5'], explanation: 'Bereken 10% van R45: 0,10 × 45 = R4,50.\nNuwe rit: 45 + 4,50 = R49,50. ✓' },
+        { difficulty: 'Medium', question: 'ʼn Spazawinkel koop ʼn kissie blikkieskos vir R150 en verhoog die prys met 50% opslag om aan kliënte te verkoop. Bereken die opslagbedrag en die verkoopprys.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Opslagbedrag', correctAnswer: 'R75', correctAnswers: ['R75', '75'], explanation: 'Opslag = 50% van R150: 0,50 × 150 = R75 ✓' },
+          { label: 'b) Verkoopprys', correctAnswer: 'R225', correctAnswers: ['R225', '225'], explanation: 'Verkoopprys = 150 + 75 = R225 ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Spysenieringsrekening kom tot R560 voordat ʼn diensfooi van 15% bygevoeg word. Bereken die totale bedrag wat die kliënt moet betaal, die diensfooi ingesluit.', answer: 'R644', checkMode: 'auto', correctAnswer: 'R644', correctAnswers: ['R644', '644'], explanation: 'Bereken 15% van R560: 0,15 × 560 = R84.\nTotaal = 560 + 84 = R644. ✓' },
+
+        // Blok 6 — Multi-stap / foutopsporing (18-19)
+        { difficulty: 'Hard', question: 'ʼn Mikrogolfoond kos R2 000. Die winkel verlaag eers die prys met 10% vir ʼn uitverkoping, en ʼn maand later verhoog hulle die uitverkoopprys met 10%. Bereken die finale prys, en sê of dit dieselfde is as die oorspronklike R2 000.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Finale prys', correctAnswer: 'R1 980', correctAnswers: ['R1 980', 'R1980', '1980', '1 980'], explanation: 'Na die 10%-afname: 2 000 × 0,90 = R1 800.\nNa die 10%-toename op die uitverkoopprys: 1 800 × 1,10 = R1 980. ✓' },
+          { label: 'b) Is die finale prys dieselfde as die oorspronklike R2 000?', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'R1 980 is R20 minder as R2 000 — die twee persentasies is op verskillende basisbedrae toegepas, dus hef hulle nie mekaar op nie. ✓' },
+        ] },
+        { difficulty: 'Hard', question: 'ʼn Paar sonbrille kos R350. Naledi sê: "Die winkel het die prys met 40% verhoog na R490, en dit toe met 40% verlaag terug na R294, dus is dit R56 goedkoper as die oorspronklike prys — maar dit moet ʼn fout wees, want ʼn toename van 40% en ʼn afname van 40% behoort mekaar op te hef." Het Naledi reg dat dit ʼn fout moet wees? Verduidelik.', answer: 'Nee, Naledi is verkeerd dat dit ʼn fout is — die berekening R490 en dan R294 is korrek. ʼn Toename van 40% en ʼn afname van 40% hef nie mekaar op nie, want dit is persentasies van verskillende bedrae: die toename is 40% van R350 (R140), maar die afname is 40% van die groter R490 (R196), dus eindig die finale prys laer as die oorspronklike R350.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting- en toenameprobleme.' },
+        { minScore: 15, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

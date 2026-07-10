@@ -515,4 +515,115 @@ export const topicData: TopicData = {
       { minPercent: 0, message: 'Hou aan, werk weer deur die gids.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 1-4 Optel/aftrek van heelgetalle | 5-8 Vermenigvuldiging/deling
+    // (tekenreëls) | 9-12 Bewerkingsvolgorde (BODMAS) met gemengde heelgetalle |
+    // 13-15 Orden/vergelyk heelgetalle | 16-18 Woordprobleme uit die alledaagse
+    // lewe (temperatuur, hoogte, bankbalans) | 19-20 Multi-stap/foutopsporing
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Bereken −12 + 8.', answer: '-4', checkMode: 'auto', correctAnswer: '-4', explanation: 'Verskillende tekens: trek die kleiner waarde van die groter af. 12 − 8 = 4. Hou die teken van die groter waarde (−12), dus is die antwoord negatief. Antwoord: −4.' },
+        { difficulty: 'Easy', question: 'Bereken 15 + (−23).', answer: '-8', checkMode: 'auto', correctAnswer: '-8', explanation: 'Verskillende tekens: trek die kleiner waarde van die groter af. 23 − 15 = 8. Hou die teken van die groter waarde (−23), dus is die antwoord negatief. Antwoord: −8.' },
+        { difficulty: 'Medium', question: 'Bereken −9 − (−14).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Aftrek van ʼn negatiewe getal word optel van ʼn positiewe getal: −9 − (−14) = −9 + 14. Verskillende tekens: 14 − 9 = 5. Hou die teken van die groter waarde (14), dus is die antwoord positief. Antwoord: 5.' },
+        { difficulty: 'Medium', question: 'Thabo bereken −6 − 10 en sê die antwoord is −4. Is hy korrek? Verduidelik en gee die korrekte antwoord.', answer: 'Nee — albei getalle is negatief (dieselfde teken), dus tel ons die waardes bymekaar en hou die negatiewe teken: −6 − 10 = −16, nie −4 nie.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken −8 × 7.', answer: '-56', checkMode: 'auto', correctAnswer: '-56', explanation: 'Verskillende tekens (−8 en +7) gee ʼn negatiewe antwoord. 8 × 7 = 56. Antwoord: −56.' },
+        { difficulty: 'Easy', question: 'Bereken −63 ÷ (−9).', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Dieselfde tekens (albei negatief) gee ʼn positiewe antwoord. 63 ÷ 9 = 7. Antwoord: 7.' },
+        { difficulty: 'Medium', question: 'Bereken −5 × (−6).', answer: '30', checkMode: 'auto', correctAnswer: '30', explanation: 'Dieselfde tekens (albei negatief) gee ʼn positiewe antwoord. 5 × 6 = 30. Antwoord: 30.' },
+        { difficulty: 'Medium', question: 'Bereken 42 ÷ (−6).', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Verskillende tekens (+42 en −6) gee ʼn negatiewe antwoord. 42 ÷ 6 = 7. Antwoord: −7.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsvolgorde om −3 × 4 + 5 te bereken.', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Vermenigvuldiging voor optelling: −3 × 4 = −12. Dan −12 + 5 = −7.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsvolgorde om 20 − 3 × (−4) te bereken.', answer: '32', checkMode: 'auto', correctAnswer: '32', explanation: 'Vermenigvuldiging voor aftrekking: 3 × (−4) = −12. Dan 20 − (−12) = 20 + 12 = 32.' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die korrekte bewerkingsvolgorde om (−6 + 2) × (−3) te bereken.', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Hakies eerste: −6 + 2 = −4. Dan −4 × (−3) = 12 (dieselfde tekens → positief).' },
+        { difficulty: 'Hard', question: 'Gebruik die korrekte bewerkingsvolgorde om −10 + 6 × (−2) − 3 te bereken.', answer: '-25', checkMode: 'auto', correctAnswer: '-25', explanation: 'Vermenigvuldiging eerste: 6 × (−2) = −12. Werk dan van links na regs: −10 + (−12) = −22, en −22 − 3 = −25.' },
+        { difficulty: 'Medium', question: 'Orden hierdie heelgetalle van kleinste na grootste: −8, 3, −15, 0, −1.', answer: '−15, −8, −1, 0, 3', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: −17 of −21?', answer: '-17', checkMode: 'auto', correctAnswer: '-17', explanation: '−17 is nader aan nul (verder regs) op die getallelyn as −21, dus is −17 die groter heelgetal.' },
+        { difficulty: 'Medium-Hard', question: 'Karabo sê −40 is groter as −25 omdat 40 groter as 25 is. Is hy korrek? Verduidelik.', answer: 'Nee — op ʼn getallelyn is −40 verder links as −25, dus is −40 eintlik kleiner as −25. ʼn Groter syfer by ʼn negatiewe getal maak dit kleiner, nie groter nie.', checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'Die temperatuur die nag was −4°C. Teen middagete het dit met 9°C gestyg. Wat was die middagete-temperatuur?', answer: '5°C', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5°c', '5c'], explanation: 'Begin by −4°C en styg met 9°C: −4 + 9 = 5. Die middagete-temperatuur was 5°C.' },
+        { difficulty: 'Medium', question: 'ʼn Duiker swem op ʼn diepte van 85 m onder seespieël, geskryf as −85 m. Sy styg 32 m na die oppervlak toe. Wat is haar nuwe posisie, as ʼn heelgetal?', answer: '-53', checkMode: 'auto', correctAnswer: '-53', explanation: 'Om na die oppervlak te styg beteken jy tel by die diepte: −85 + 32 = −53. Haar nuwe posisie is −53 m.' },
+        { difficulty: 'Medium', question: 'Zanele se bankrekening is R450 in die rooi, geskryf as −R450. Sy maak ʼn deposito van R320. Wat is haar nuwe balans?', answer: '-R130', checkMode: 'auto', correctAnswer: '-130', correctAnswers: ['-130', '-r130'], explanation: 'Tel die deposito by die balans: −450 + 320 = −130. Haar nuwe balans is −R130 (steeds R130 in die rooi).' },
+        { difficulty: 'Hard', question: 'Bereken −5 × (−3 + 8) ÷ 5.', answer: '-5', checkMode: 'auto', correctAnswer: '-5', explanation: 'Hakies eerste: −3 + 8 = 5. Dan −5 × 5 = −25 (verskillende tekens → negatief). Laastens −25 ÷ 5 = −5.' },
+        { difficulty: 'Hard', question: 'Zola bereken −2 × 5 − (−6) en sê die antwoord is 16. Is sy korrek? Wys die korrekte werk.', answer: 'Nee — eerste −2 × 5 = −10 (verskillende tekens → negatief). Dan −10 − (−6) = −10 + 6 = −4, nie 16 nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het heelgetalbewerkings, bewerkingsvolgorde en werklike-lewe heelgetalprobleme bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklaaiuit as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Bereken −18 + 11.', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Verskillende tekens: trek die kleiner waarde van die groter af. 18 − 11 = 7. Hou die teken van die groter waarde (−18), dus is die antwoord negatief. Antwoord: −7.' },
+        { difficulty: 'Easy', question: 'Bereken 24 + (−37).', answer: '-13', checkMode: 'auto', correctAnswer: '-13', explanation: 'Verskillende tekens: trek die kleiner waarde van die groter af. 37 − 24 = 13. Hou die teken van die groter waarde (−37), dus is die antwoord negatief. Antwoord: −13.' },
+        { difficulty: 'Medium', question: 'Bereken −13 − (−19).', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Aftrek van ʼn negatiewe getal word optel van ʼn positiewe getal: −13 − (−19) = −13 + 19. Verskillende tekens: 19 − 13 = 6. Hou die teken van die groter waarde (19), dus is die antwoord positief. Antwoord: 6.' },
+        { difficulty: 'Medium', question: 'Naledi bereken −8 − 15 en sê die antwoord is −7. Is sy korrek? Verduidelik en gee die korrekte antwoord.', answer: 'Nee — albei getalle is negatief (dieselfde teken), dus tel ons die waardes bymekaar en hou die negatiewe teken: −8 − 15 = −23, nie −7 nie.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken −9 × 6.', answer: '-54', checkMode: 'auto', correctAnswer: '-54', explanation: 'Verskillende tekens (−9 en +6) gee ʼn negatiewe antwoord. 9 × 6 = 54. Antwoord: −54.' },
+        { difficulty: 'Easy', question: 'Bereken −72 ÷ (−8).', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Dieselfde tekens (albei negatief) gee ʼn positiewe antwoord. 72 ÷ 8 = 9. Antwoord: 9.' },
+        { difficulty: 'Medium', question: 'Bereken −7 × (−4).', answer: '28', checkMode: 'auto', correctAnswer: '28', explanation: 'Dieselfde tekens (albei negatief) gee ʼn positiewe antwoord. 7 × 4 = 28. Antwoord: 28.' },
+        { difficulty: 'Medium', question: 'Bereken 54 ÷ (−9).', answer: '-6', checkMode: 'auto', correctAnswer: '-6', explanation: 'Verskillende tekens (+54 en −9) gee ʼn negatiewe antwoord. 54 ÷ 9 = 6. Antwoord: −6.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsvolgorde om −4 × 5 + 6 te bereken.', answer: '-14', checkMode: 'auto', correctAnswer: '-14', explanation: 'Vermenigvuldiging voor optelling: −4 × 5 = −20. Dan −20 + 6 = −14.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsvolgorde om 18 − 4 × (−3) te bereken.', answer: '30', checkMode: 'auto', correctAnswer: '30', explanation: 'Vermenigvuldiging voor aftrekking: 4 × (−3) = −12. Dan 18 − (−12) = 18 + 12 = 30.' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die korrekte bewerkingsvolgorde om (−8 + 3) × (−2) te bereken.', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Hakies eerste: −8 + 3 = −5. Dan −5 × (−2) = 10 (dieselfde tekens → positief).' },
+        { difficulty: 'Hard', question: 'Gebruik die korrekte bewerkingsvolgorde om −9 + 5 × (−3) − 4 te bereken.', answer: '-28', checkMode: 'auto', correctAnswer: '-28', explanation: 'Vermenigvuldiging eerste: 5 × (−3) = −15. Werk dan van links na regs: −9 + (−15) = −24, en −24 − 4 = −28.' },
+        { difficulty: 'Medium', question: 'Orden hierdie heelgetalle van kleinste na grootste: −6, 5, −19, 0, −2.', answer: '−19, −6, −2, 0, 5', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: −23 of −14?', answer: '-14', checkMode: 'auto', correctAnswer: '-14', explanation: '−14 is nader aan nul (verder regs) op die getallelyn as −23, dus is −14 die groter heelgetal.' },
+        { difficulty: 'Medium-Hard', question: 'Zanele sê −55 is groter as −38 omdat 55 groter as 38 is. Is sy korrek? Verduidelik.', answer: 'Nee — op ʼn getallelyn is −55 verder links as −38, dus is −55 eintlik kleiner as −38. ʼn Groter syfer by ʼn negatiewe getal maak dit kleiner, nie groter nie.', checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'Die temperatuur die nag was −6°C. Teen middagete het dit met 15°C gestyg. Wat was die middagete-temperatuur?', answer: '9°C', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9°c', '9c'], explanation: 'Begin by −6°C en styg met 15°C: −6 + 15 = 9. Die middagete-temperatuur was 9°C.' },
+        { difficulty: 'Medium', question: 'ʼn Duikboot vaar op ʼn diepte van 120 m onder seespieël, geskryf as −120 m. Dit styg 45 m na die oppervlak toe. Wat is sy nuwe posisie, as ʼn heelgetal?', answer: '-75', checkMode: 'auto', correctAnswer: '-75', explanation: 'Om na die oppervlak te styg beteken jy tel by die diepte: −120 + 45 = −75. Sy nuwe posisie is −75 m.' },
+        { difficulty: 'Medium', question: 'Bongani se bankrekening is R600 in die rooi, geskryf as −R600. Hy maak ʼn deposito van R250. Wat is sy nuwe balans?', answer: '-R350', checkMode: 'auto', correctAnswer: '-350', correctAnswers: ['-350', '-r350'], explanation: 'Tel die deposito by die balans: −600 + 250 = −350. Sy nuwe balans is −R350 (steeds R350 in die rooi).' },
+        { difficulty: 'Hard', question: 'Bereken −4 × (−2 + 9) ÷ 7.', answer: '-4', checkMode: 'auto', correctAnswer: '-4', explanation: 'Hakies eerste: −2 + 9 = 7. Dan −4 × 7 = −28 (verskillende tekens → negatief). Laastens −28 ÷ 7 = −4.' },
+        { difficulty: 'Hard', question: 'Bongi bereken −3 × 4 − (−8) en sê die antwoord is −20. Is sy korrek? Wys die korrekte werk.', answer: 'Nee — eerste −3 × 4 = −12 (verskillende tekens → negatief). Dan −12 − (−8) = −12 + 8 = −4, nie −20 nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het heelgetalbewerkings, bewerkingsvolgorde en werklike-lewe heelgetalprobleme bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklaaiuit as Stel 1/2, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Bereken −25 + 17.', answer: '-8', checkMode: 'auto', correctAnswer: '-8', explanation: 'Verskillende tekens: trek die kleiner waarde van die groter af. 25 − 17 = 8. Hou die teken van die groter waarde (−25), dus is die antwoord negatief. Antwoord: −8.' },
+        { difficulty: 'Easy', question: 'Bereken 19 + (−26).', answer: '-7', checkMode: 'auto', correctAnswer: '-7', explanation: 'Verskillende tekens: trek die kleiner waarde van die groter af. 26 − 19 = 7. Hou die teken van die groter waarde (−26), dus is die antwoord negatief. Antwoord: −7.' },
+        { difficulty: 'Medium', question: 'Bereken −11 − (−20).', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Aftrek van ʼn negatiewe getal word optel van ʼn positiewe getal: −11 − (−20) = −11 + 20. Verskillende tekens: 20 − 11 = 9. Hou die teken van die groter waarde (20), dus is die antwoord positief. Antwoord: 9.' },
+        { difficulty: 'Medium', question: 'Sipho bereken −7 − 12 en sê die antwoord is −5. Is hy korrek? Verduidelik en gee die korrekte antwoord.', answer: 'Nee — albei getalle is negatief (dieselfde teken), dus tel ons die waardes bymekaar en hou die negatiewe teken: −7 − 12 = −19, nie −5 nie.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken −11 × 5.', answer: '-55', checkMode: 'auto', correctAnswer: '-55', explanation: 'Verskillende tekens (−11 en +5) gee ʼn negatiewe antwoord. 11 × 5 = 55. Antwoord: −55.' },
+        { difficulty: 'Easy', question: 'Bereken −84 ÷ (−7).', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Dieselfde tekens (albei negatief) gee ʼn positiewe antwoord. 84 ÷ 7 = 12. Antwoord: 12.' },
+        { difficulty: 'Medium', question: 'Bereken −8 × (−9).', answer: '72', checkMode: 'auto', correctAnswer: '72', explanation: 'Dieselfde tekens (albei negatief) gee ʼn positiewe antwoord. 8 × 9 = 72. Antwoord: 72.' },
+        { difficulty: 'Medium', question: 'Bereken 63 ÷ (−7).', answer: '-9', checkMode: 'auto', correctAnswer: '-9', explanation: 'Verskillende tekens (+63 en −7) gee ʼn negatiewe antwoord. 63 ÷ 7 = 9. Antwoord: −9.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsvolgorde om −6 × 3 + 7 te bereken.', answer: '-11', checkMode: 'auto', correctAnswer: '-11', explanation: 'Vermenigvuldiging voor optelling: −6 × 3 = −18. Dan −18 + 7 = −11.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsvolgorde om 25 − 5 × (−2) te bereken.', answer: '35', checkMode: 'auto', correctAnswer: '35', explanation: 'Vermenigvuldiging voor aftrekking: 5 × (−2) = −10. Dan 25 − (−10) = 25 + 10 = 35.' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die korrekte bewerkingsvolgorde om (−9 + 4) × (−4) te bereken.', answer: '20', checkMode: 'auto', correctAnswer: '20', explanation: 'Hakies eerste: −9 + 4 = −5. Dan −5 × (−4) = 20 (dieselfde tekens → positief).' },
+        { difficulty: 'Hard', question: 'Gebruik die korrekte bewerkingsvolgorde om −8 + 7 × (−3) − 5 te bereken.', answer: '-34', checkMode: 'auto', correctAnswer: '-34', explanation: 'Vermenigvuldiging eerste: 7 × (−3) = −21. Werk dan van links na regs: −8 + (−21) = −29, en −29 − 5 = −34.' },
+        { difficulty: 'Medium', question: 'Orden hierdie heelgetalle van kleinste na grootste: −10, 2, −17, 0, −4.', answer: '−17, −10, −4, 0, 2', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Watter is groter: −31 of −12?', answer: '-12', checkMode: 'auto', correctAnswer: '-12', explanation: '−12 is nader aan nul (verder regs) op die getallelyn as −31, dus is −12 die groter heelgetal.' },
+        { difficulty: 'Medium-Hard', question: 'Mpho sê −62 is groter as −29 omdat 62 groter as 29 is. Is hy korrek? Verduidelik.', answer: 'Nee — op ʼn getallelyn is −62 verder links as −29, dus is −62 eintlik kleiner as −29. ʼn Groter syfer by ʼn negatiewe getal maak dit kleiner, nie groter nie.', checkMode: 'self' },
+        { difficulty: 'Easy-Medium', question: 'Die temperatuur die nag was −8°C. Teen middagete het dit met 21°C gestyg. Wat was die middagete-temperatuur?', answer: '13°C', checkMode: 'auto', correctAnswer: '13', correctAnswers: ['13', '13°c', '13c'], explanation: 'Begin by −8°C en styg met 21°C: −8 + 21 = 13. Die middagete-temperatuur was 13°C.' },
+        { difficulty: 'Medium', question: 'ʼn Duiker swem op ʼn diepte van 60 m onder seespieël, geskryf as −60 m. Sy daal ʼn verdere 25 m. Wat is haar nuwe posisie, as ʼn heelgetal?', answer: '-85', checkMode: 'auto', correctAnswer: '-85', explanation: 'Om verder te daal beteken jy trek af van die diepte: −60 − 25 = −85. Haar nuwe posisie is −85 m.' },
+        { difficulty: 'Medium', question: 'Tumi se bankrekening is R310 in die rooi, geskryf as −R310. Hy trek ʼn verdere R140 uit. Wat is sy nuwe balans?', answer: '-R450', checkMode: 'auto', correctAnswer: '-450', correctAnswers: ['-450', '-r450'], explanation: 'Trek die verdere onttrekking van die balans af: −310 − 140 = −450. Sy nuwe balans is −R450 (R450 in die rooi).' },
+        { difficulty: 'Hard', question: 'Bereken −6 × (−4 + 10) ÷ 4.', answer: '-9', checkMode: 'auto', correctAnswer: '-9', explanation: 'Hakies eerste: −4 + 10 = 6. Dan −6 × 6 = −36 (verskillende tekens → negatief). Laastens −36 ÷ 4 = −9.' },
+        { difficulty: 'Hard', question: 'Tumi bereken −5 × 6 − (−10) en sê die antwoord is −40. Is hy korrek? Wys die korrekte werk.', answer: 'Nee — eerste −5 × 6 = −30 (verskillende tekens → negatief). Dan −30 − (−10) = −30 + 10 = −20, nie −40 nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het heelgetalbewerkings, bewerkingsvolgorde en werklike-lewe heelgetalprobleme bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

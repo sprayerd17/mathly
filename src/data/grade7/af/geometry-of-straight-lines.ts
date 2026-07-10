@@ -539,4 +539,673 @@ export const topicData: TopicData = {
     { minScore: 6, message: 'Goeie poging! Werk weer deur die studiegids en uitgewerkte voorbeelde vir elke afdeling, en probeer dan weer.' },
     { minScore: 0, message: 'Moenie tou opgooi nie — elke kenner was eers ʼn beginner! Gaan weer deur die verduidelikings en uitgewerkte voorbeelde afdeling vir afdeling, en probeer dan weer.' },
   ],
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // OEFENSTELLE — 3 parallelle vorme, 20 vrae elk
+  // Bloklaaiuit (dieselfde relatiewe posisie in elke stel):
+  //   0-2   Hoeke op ʼn reguit lyn (supplementêr, tel op tot 180°)
+  //   3-6   Hoeke rondom ʼn punt (tel op tot 360°) en vertikaal-oorstaande hoeke
+  //   7-8   Komplementêre hoeke (tel op tot 90°)
+  //   9-12  Ooreenkomstige en verwisselende hoeke met parallelle lyne
+  //   13-16 Kohoeke met parallelle lyne
+  //   17-19 Multi-stap redenering wat verskeie hoekverwantskappe kombineer
+  // ═══════════════════════════════════════════════════════════════════════
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // ── Blok 1: Hoeke op ʼn reguit lyn (0-2) ───────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'In die diagram lê hoeke A en B op ʼn reguit lyn, soos getoon. Hoek A = 125°. Bepaal die grootte van hoek B.',
+          checkMode: 'auto',
+          correctAnswer: '55',
+          correctAnswers: ['55', '55°'],
+          explanation: 'Hoeke op ʼn reguit lyn is supplementêr — hulle tel op tot 180°.\nHoek B = 180° − 125° = 55°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="150" x2="205" y2="150" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="150" x2="150" y2="30" stroke="#0f1f3d" stroke-width="2"/><path d="M 60 150 A 55 55 0 0 1 129 100" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="60" y="105" font-size="15" font-weight="700" fill="#2563eb">125°</text><path d="M 145 150 A 32 32 0 0 0 132 121" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="150" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="150" r="2.5" fill="#0f1f3d"/><text x="10" y="145" font-size="12" fill="#374151">A</text><text x="195" y="145" font-size="12" fill="#374151">B</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Drie hoeke ontmoet op ʼn reguit lyn, soos getoon. Hulle is 42°, 58° en x. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '80',
+          correctAnswers: ['80', '80°'],
+          explanation: 'Hoeke op ʼn reguit lyn tel op tot 180°.\nx = 180° − 42° − 58° = 180° − 100° = 80°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="150" x2="210" y2="150" stroke="#0f1f3d" stroke-width="2"/><line x1="100" y1="150" x2="163" y2="47" stroke="#0f1f3d" stroke-width="2"/><line x1="100" y1="150" x2="55" y2="35" stroke="#0f1f3d" stroke-width="2"/><path d="M 138 150 A 38 38 0 0 0 124 117" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="140" y="132" font-size="14" font-weight="700" fill="#2563eb">42°</text><path d="M 72 150 A 38 38 0 0 1 92 116" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="50" y="132" font-size="14" font-weight="700" fill="#2563eb">58°</text><path d="M 118 116 A 38 38 0 0 1 122 116" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="105" y="100" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="100" cy="150" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee hoeke op ʼn reguit lyn is in die verhouding 2 : 3. Bepaal die grootte van elke hoek.',
+          checkMode: 'auto',
+          correctAnswer: '72 and 108',
+          correctAnswers: ['72 and 108', '72° and 108°', '108 and 72', '108° and 72°', '72 en 108', '108 en 72'],
+          explanation: 'Hoeke op ʼn reguit lyn tel op tot 180°. Totale dele = 2 + 3 = 5.\nEen deel = 180° ÷ 5 = 36°.\nHoeke: 2 × 36° = 72° en 3 × 36° = 108°. Toets: 72° + 108° = 180° ✓',
+        },
+
+        // ── Blok 2: Hoeke rondom ʼn punt & vertikaal-oorstaande (3-6) ─────
+        {
+          difficulty: 'Easy',
+          question: 'Twee reguit lyne sny mekaar by ʼn punt, soos getoon. Een van die hoeke wat gevorm word, is 47°. Bepaal die grootte van die hoek wat vertikaal-oorstaande daaraan is.',
+          checkMode: 'auto',
+          correctAnswer: '47',
+          correctAnswers: ['47', '47°'],
+          explanation: 'Vertikaal-oorstaande hoeke is altyd gelyk.\nVertikaal-oorstaande hoek = 47°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="45" y1="30" x2="175" y2="160" stroke="#0f1f3d" stroke-width="2"/><line x1="175" y1="30" x2="45" y2="160" stroke="#0f1f3d" stroke-width="2"/><path d="M 110 55 A 40 40 0 0 1 133 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="112" y="48" font-size="15" font-weight="700" fill="#2563eb">47°</text><path d="M 110 135 A 40 40 0 0 1 87 118" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="95" y="150" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee reguit lyne sny mekaar by ʼn punt. Een van die hoeke wat gevorm word, is 47°. Bepaal die grootte van die twee hoeke wat aangrensend daaraan is op die reguit lyn.',
+          checkMode: 'auto',
+          correctAnswer: '133',
+          correctAnswers: ['133', '133°'],
+          explanation: 'Aangrensende hoeke op ʼn reguit lyn is supplementêr.\nAangrensende hoek = 180° − 47° = 133°. Albei aangrensende hoeke is gelyk aan 133°.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vier hoeke ontmoet by ʼn punt, soos getoon. Hulle is 90°, 85°, 95° en x. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '90',
+          correctAnswers: ['90', '90°'],
+          explanation: 'Hoeke rondom ʼn punt tel op tot 360°.\nx = 360° − 90° − 85° − 95° = 360° − 270° = 90°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="110" y1="95" x2="200" y2="95" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="110" y2="15" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="30" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="45" y2="155" stroke="#0f1f3d" stroke-width="2"/><path d="M 140 95 A 30 30 0 0 0 110 65" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="122" y="80" font-size="12" font-weight="700" fill="#2563eb">90°</text><path d="M 110 65 A 30 30 0 0 0 60 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="65" y="58" font-size="12" font-weight="700" fill="#2563eb">85°</text><path d="M 60 72 A 30 30 0 0 0 70 121" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="40" y="100" font-size="12" font-weight="700" fill="#2563eb">95°</text><path d="M 70 121 A 30 30 0 0 0 140 95" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="98" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Ses gelyke hoeke ontmoet by ʼn enkele punt en verdeel die volle draai eweredig. Wat is die grootte van elke hoek?',
+          checkMode: 'auto',
+          correctAnswer: '60',
+          correctAnswers: ['60', '60°'],
+          explanation: 'Hoeke rondom ʼn punt tel op tot 360°. Met 6 gelyke hoeke is elkeen 360° ÷ 6 = 60°.',
+        },
+
+        // ── Blok 3: Komplementêre hoeke (7-8) ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Twee hoeke is komplementêr. Een van die hoeke is 34°. Bepaal die grootte van die ander hoek.',
+          checkMode: 'auto',
+          correctAnswer: '56',
+          correctAnswers: ['56', '56°'],
+          explanation: 'Komplementêre hoeke tel op tot 90°.\nAnder hoek = 90° − 34° = 56°.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee komplementêre hoeke is gelyk aan mekaar. Bepaal die grootte van elke hoek.',
+          checkMode: 'auto',
+          correctAnswer: '45',
+          correctAnswers: ['45', '45°'],
+          explanation: 'Komplementêre hoeke tel op tot 90°. As die twee hoeke gelyk is, is elkeen 90° ÷ 2 = 45°.',
+        },
+
+        // ── Blok 4: Ooreenkomstige en verwisselende hoeke (9-12) ───────────
+        {
+          difficulty: 'Easy',
+          question: 'Lyne PQ en RS is parallel en word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 73°. Bepaal die grootte van sy ooreenkomstige hoek.',
+          checkMode: 'auto',
+          correctAnswer: '73',
+          correctAnswers: ['73', '73°'],
+          explanation: 'Ooreenkomstige hoeke wat deur ʼn transversaal gevorm word wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 73°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 95 55 A 26 26 0 0 1 108 34" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="98" y="40" font-size="14" font-weight="700" fill="#2563eb">73°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">P</text><text x="195" y="45" font-size="11" fill="#374151">Q</text><text x="10" y="135" font-size="11" fill="#374151">R</text><text x="195" y="135" font-size="11" fill="#374151">S</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 108°. Bepaal die grootte van sy verwisselende hoek.',
+          checkMode: 'auto',
+          correctAnswer: '108',
+          correctAnswers: ['108', '108°'],
+          explanation: 'Verwisselende hoeke wat deur ʼn transversaal gevorm word wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 108°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">108°</text><path d="M 141 145 A 28 28 0 0 0 124 122" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="118" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">P</text><text x="195" y="45" font-size="11" fill="#374151">Q</text><text x="10" y="135" font-size="11" fill="#374151">R</text><text x="195" y="135" font-size="11" fill="#374151">S</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ooreenkomstige hoek is 3x en die ander ooreenkomstige hoek is 63°. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '21',
+          correctAnswers: ['21'],
+          explanation: 'Ooreenkomstige hoeke is gelyk: 3x = 63°.\nx = 63° ÷ 3 = 21°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 95 55 A 26 26 0 0 1 108 34" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="90" y="40" font-size="14" font-weight="700" fill="#2563eb">3x°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="150" y="130" font-size="14" font-weight="700" fill="#2563eb">63°</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Musa sê: "As twee parallelle lyne deur ʼn transversaal gesny word, kan ʼn verwisselende hoek en sy ooreenstemmende ooreenkomstige hoek nooit gelyk aan mekaar wees nie." Is Musa korrek? Verduidelik, met ʼn hoek van 55° as voorbeeld.',
+          answer: 'Nee — Musa is verkeerd. As een hoek 55° is, is beide die ooreenkomstige hoek en die verwisselende hoek wat daarmee gevorm word, ook 55°, want ooreenkomstige hoeke is gelyk en verwisselende hoeke is gelyk. Trouens, die ooreenkomstige hoek en die verwisselende hoek in hierdie situasie is ook gelyk aan mekaar (albei 55°), aangesien hulle by dieselfde kruisingspunt op die tweede parallelle lyn gevorm word.',
+          checkMode: 'self',
+        },
+
+        // ── Blok 5: Kohoeke (13-16) ────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een kohoek is 115°. Bepaal die grootte van die ander kohoek.',
+          checkMode: 'auto',
+          correctAnswer: '65',
+          correctAnswers: ['65', '65°'],
+          explanation: 'Kohoeke is supplementêr — hulle tel op tot 180°.\nAnder hoek = 180° − 115° = 65°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">115°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">P</text><text x="195" y="45" font-size="11" fill="#374151">Q</text><text x="10" y="135" font-size="11" fill="#374151">R</text><text x="195" y="135" font-size="11" fill="#374151">S</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Leer rus so dat dit ʼn transversaal oor twee parallelle sporte van ʼn rakraamwerk vorm. Die kohoek aan een kant is 72°. Bepaal die kohoek aan dieselfde kant van die transversaal tussen die ander paar.',
+          checkMode: 'auto',
+          correctAnswer: '108',
+          correctAnswers: ['108', '108°'],
+          explanation: 'Kohoeke tussen parallelle lyne is supplementêr.\nAnder hoek = 180° − 72° = 108°.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Een kohoek is (2x + 10)° en die ander is (x + 20)°.\na) Skryf ʼn vergelyking met behulp van die kohoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke kohoek.',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vergelyking',
+              correctAnswer: '2x+10+x+20=180',
+              correctAnswers: ['2x+10+x+20=180', '3x+30=180', '(2x+10)+(x+20)=180'],
+              explanation: 'Kohoeke is supplementêr: (2x + 10) + (x + 20) = 180.',
+            },
+            {
+              label: 'b) Waarde van x',
+              correctAnswer: '50',
+              explanation: '3x + 30 = 180 → 3x = 150 → x = 50.',
+            },
+            {
+              label: 'c) Elke kohoek',
+              correctAnswer: '110 and 70',
+              correctAnswers: ['110 and 70', '110° and 70°', '70 and 110', '110 en 70', '70 en 110'],
+              explanation: '2(50) + 10 = 110°; 50 + 20 = 70°. Toets: 110° + 70° = 180° ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Palesa sê: "Kohoeke is altyd gelyk, net soos ooreenkomstige hoeke." Is sy korrek? Gebruik ʼn kohoek van 99° as voorbeeld om te verduidelik.',
+          answer: 'Nee — Palesa is verkeerd. Kohoeke is supplementêr, nie gelyk nie — hulle tel op tot 180°. As een kohoek 99° is, is die ander 180° − 99° = 81°, nie 99° nie. Ooreenkomstige hoeke is gelyk, maar kohoeke is nie.',
+          checkMode: 'self',
+        },
+
+        // ── Blok 6: Multi-stap redenering (17-19) ──────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. ʼn Hoek gevorm waar die transversaal die eerste lyn kruis, is 115°. Bepaal die kohoek op die tweede lyn, en bepaal dan die hoek wat vertikaal-oorstaande aan daardie kohoek is.',
+          checkMode: 'auto',
+          correctAnswer: '65',
+          correctAnswers: ['65', '65°'],
+          explanation: 'Stap 1: Die kohoek is supplementêr tot 115°: 180° − 115° = 65°.\nStap 2: Die hoek wat vertikaal-oorstaande aan hierdie 65°-hoek is, is daaraan gelyk (vertikaal-oorstaande hoeke is gelyk): 65°.\nFinale antwoord: 65°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">115°</text><path d="M 133 145 A 26 26 0 0 1 121 168" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="105" y="178" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Twee reguit lyne sny mekaar by punt O, soos getoon. Een van die hoeke wat gevorm word, hoek P, is 63°. Hoek P en hoek Q is vertikaal-oorstaande. Hoek Q en hoek R lê saam op ʼn reguit lyn. Bepaal die grootte van hoek R.',
+          checkMode: 'auto',
+          correctAnswer: '117',
+          correctAnswers: ['117', '117°'],
+          explanation: 'Stap 1: Hoek Q is vertikaal-oorstaande aan hoek P, dus Q = 63° (vertikaal-oorstaande hoeke is gelyk).\nStap 2: Q en R lê op ʼn reguit lyn, dus Q + R = 180°.\nR = 180° − 63° = 117°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="45" y1="25" x2="175" y2="165" stroke="#0f1f3d" stroke-width="2"/><line x1="175" y1="25" x2="45" y2="165" stroke="#0f1f3d" stroke-width="2"/><path d="M 110 55 A 40 40 0 0 1 133 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="112" y="48" font-size="14" font-weight="700" fill="#2563eb">P = 63°</text><path d="M 110 135 A 40 40 0 0 1 87 118" fill="none" stroke="#374151" stroke-width="1.5"/><text x="95" y="150" font-size="12" font-weight="700" fill="#374151">Q</text><path d="M 87 118 A 40 40 0 0 1 70 95" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="40" y="130" font-size="15" font-weight="700" fill="#ea580c">R = ?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Dakspar het twee balke wat ʼn horisontale balk ontmoet, en vorm kohoeke aan weerskante van ʼn ondersteuningstut wat as transversaal tussen twee parallelle sparlyne optree. Een kohoek is 3x en die ander is (2x + 10)°.\na) Skryf ʼn vergelyking met behulp van die kohoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vergelyking',
+              correctAnswer: '3x+2x+10=180',
+              correctAnswers: ['3x+2x+10=180', '5x+10=180', '3x+(2x+10)=180'],
+              explanation: 'Kohoeke is supplementêr: 3x + (2x + 10) = 180.',
+            },
+            {
+              label: 'b) Waarde van x',
+              correctAnswer: '34',
+              explanation: '5x + 10 = 180 → 5x = 170 → x = 34.',
+            },
+            {
+              label: 'c) Elke hoek',
+              correctAnswer: '102 and 78',
+              correctAnswers: ['102 and 78', '102° and 78°', '78 and 102', '102 en 78', '78 en 102'],
+              explanation: '3(34) = 102°; 2(34) + 10 = 78°. Toets: 102° + 78° = 180° ✓',
+            },
+          ],
+        },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het reguit-lyn-, punt-, komplementêre en parallelle-lyn-hoekverwantskappe bemeester.' },
+        { minScore: 14, message: 'Uitstekende werk! Gaan weer deur enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan weer deur die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklaaiuit as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // ── Blok 1: Hoeke op ʼn reguit lyn (0-2) ───────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'In die diagram lê hoeke C en D op ʼn reguit lyn, soos getoon. Hoek C = 97°. Bepaal die grootte van hoek D.',
+          checkMode: 'auto',
+          correctAnswer: '83',
+          correctAnswers: ['83', '83°'],
+          explanation: 'Hoeke op ʼn reguit lyn is supplementêr — hulle tel op tot 180°.\nHoek D = 180° − 97° = 83°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="150" x2="205" y2="150" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="150" x2="119" y2="25" stroke="#0f1f3d" stroke-width="2"/><path d="M 65 150 A 50 50 0 0 1 111 100" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="65" y="110" font-size="15" font-weight="700" fill="#2563eb">97°</text><path d="M 145 150 A 32 32 0 0 0 121 122" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="150" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="150" r="2.5" fill="#0f1f3d"/><text x="10" y="145" font-size="12" fill="#374151">C</text><text x="195" y="145" font-size="12" fill="#374151">D</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Drie hoeke ontmoet op ʼn reguit lyn, soos getoon. Hulle is 35°, 75° en x. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '70',
+          correctAnswers: ['70', '70°'],
+          explanation: 'Hoeke op ʼn reguit lyn tel op tot 180°.\nx = 180° − 35° − 75° = 180° − 110° = 70°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="150" x2="210" y2="150" stroke="#0f1f3d" stroke-width="2"/><line x1="100" y1="150" x2="178" y2="90" stroke="#0f1f3d" stroke-width="2"/><line x1="100" y1="150" x2="55" y2="35" stroke="#0f1f3d" stroke-width="2"/><path d="M 148 150 A 38 38 0 0 0 137 121" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="150" y="135" font-size="14" font-weight="700" fill="#2563eb">35°</text><path d="M 72 150 A 38 38 0 0 1 92 116" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="48" y="132" font-size="14" font-weight="700" fill="#2563eb">75°</text><path d="M 109 117 A 38 38 0 0 1 127 121" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="105" y="100" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="100" cy="150" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee hoeke op ʼn reguit lyn is (2x + 10)° en (3x − 10)°. Bepaal die waarde van x, en die grootte van elke hoek.',
+          checkMode: 'auto',
+          correctAnswer: 'x=36; 82 and 98',
+          correctAnswers: ['x=36; 82 and 98', 'x=36, 82° en 98°', '36; 82 and 98', '82 and 98', 'x=36; 82 en 98'],
+          explanation: 'Hoeke op ʼn reguit lyn tel op tot 180°: (2x + 10) + (3x − 10) = 180.\n5x = 180 → x = 36.\nHoeke: 2(36) + 10 = 82° en 3(36) − 10 = 98°. Toets: 82° + 98° = 180° ✓',
+        },
+
+        // ── Blok 2: Hoeke rondom ʼn punt & vertikaal-oorstaande (3-6) ─────
+        {
+          difficulty: 'Easy',
+          question: 'Twee reguit lyne sny mekaar by ʼn punt, soos getoon. Een van die hoeke wat gevorm word, is 132°. Bepaal die grootte van die hoek wat vertikaal-oorstaande daaraan is.',
+          checkMode: 'auto',
+          correctAnswer: '132',
+          correctAnswers: ['132', '132°'],
+          explanation: 'Vertikaal-oorstaande hoeke is altyd gelyk.\nVertikaal-oorstaande hoek = 132°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="45" y1="30" x2="175" y2="160" stroke="#0f1f3d" stroke-width="2"/><line x1="175" y1="30" x2="45" y2="160" stroke="#0f1f3d" stroke-width="2"/><path d="M 110 55 A 40 40 0 0 1 133 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="112" y="48" font-size="15" font-weight="700" fill="#2563eb">132°</text><path d="M 110 135 A 40 40 0 0 1 87 118" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="95" y="150" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee reguit lyne sny mekaar by ʼn punt. Een van die hoeke wat gevorm word, is 132°. Bepaal die grootte van die twee hoeke wat aangrensend daaraan is op die reguit lyn.',
+          checkMode: 'auto',
+          correctAnswer: '48',
+          correctAnswers: ['48', '48°'],
+          explanation: 'Aangrensende hoeke op ʼn reguit lyn is supplementêr.\nAangrensende hoek = 180° − 132° = 48°. Albei aangrensende hoeke is gelyk aan 48°.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vier hoeke ontmoet by ʼn punt, soos getoon. Hulle is 100°, 75°, 110° en x. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '75',
+          correctAnswers: ['75', '75°'],
+          explanation: 'Hoeke rondom ʼn punt tel op tot 360°.\nx = 360° − 100° − 75° − 110° = 360° − 285° = 75°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="110" y1="95" x2="200" y2="95" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="110" y2="15" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="30" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="45" y2="155" stroke="#0f1f3d" stroke-width="2"/><path d="M 140 95 A 30 30 0 0 0 110 65" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="122" y="80" font-size="12" font-weight="700" fill="#2563eb">100°</text><path d="M 110 65 A 30 30 0 0 0 60 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="60" y="58" font-size="12" font-weight="700" fill="#2563eb">75°</text><path d="M 60 72 A 30 30 0 0 0 70 121" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="35" y="100" font-size="12" font-weight="700" fill="#2563eb">110°</text><path d="M 70 121 A 30 30 0 0 0 140 95" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="98" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Agt gelyke hoeke ontmoet by ʼn enkele punt en verdeel die volle draai eweredig. Wat is die grootte van elke hoek?',
+          checkMode: 'auto',
+          correctAnswer: '45',
+          correctAnswers: ['45', '45°'],
+          explanation: 'Hoeke rondom ʼn punt tel op tot 360°. Met 8 gelyke hoeke is elkeen 360° ÷ 8 = 45°.',
+        },
+
+        // ── Blok 3: Komplementêre hoeke (7-8) ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Twee hoeke is komplementêr. Een van die hoeke is 27°. Bepaal die grootte van die ander hoek.',
+          checkMode: 'auto',
+          correctAnswer: '63',
+          correctAnswers: ['63', '63°'],
+          explanation: 'Komplementêre hoeke tel op tot 90°.\nAnder hoek = 90° − 27° = 63°.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee komplementêre hoeke is in die verhouding 1 : 2. Bepaal die grootte van elke hoek.',
+          checkMode: 'auto',
+          correctAnswer: '30 and 60',
+          correctAnswers: ['30 and 60', '30° and 60°', '60 and 30', '60° and 30°', '30 en 60', '60 en 30'],
+          explanation: 'Komplementêre hoeke tel op tot 90°. Totale dele = 1 + 2 = 3.\nEen deel = 90° ÷ 3 = 30°.\nHoeke: 1 × 30° = 30° en 2 × 30° = 60°. Toets: 30° + 60° = 90° ✓',
+        },
+
+        // ── Blok 4: Ooreenkomstige en verwisselende hoeke (9-12) ───────────
+        {
+          difficulty: 'Easy',
+          question: 'Lyne EF en GH is parallel en word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 84°. Bepaal die grootte van sy ooreenkomstige hoek.',
+          checkMode: 'auto',
+          correctAnswer: '84',
+          correctAnswers: ['84', '84°'],
+          explanation: 'Ooreenkomstige hoeke wat deur ʼn transversaal gevorm word wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 84°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 95 55 A 26 26 0 0 1 108 34" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="98" y="40" font-size="14" font-weight="700" fill="#2563eb">84°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">E</text><text x="195" y="45" font-size="11" fill="#374151">F</text><text x="10" y="135" font-size="11" fill="#374151">G</text><text x="195" y="135" font-size="11" fill="#374151">H</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 126°. Bepaal die grootte van sy verwisselende hoek.',
+          checkMode: 'auto',
+          correctAnswer: '126',
+          correctAnswers: ['126', '126°'],
+          explanation: 'Verwisselende hoeke wat deur ʼn transversaal gevorm word wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 126°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">126°</text><path d="M 141 145 A 28 28 0 0 0 124 122" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="118" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">E</text><text x="195" y="45" font-size="11" fill="#374151">F</text><text x="10" y="135" font-size="11" fill="#374151">G</text><text x="195" y="135" font-size="11" fill="#374151">H</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ooreenkomstige hoek is 4x en die ander ooreenkomstige hoek is 124°. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '31',
+          correctAnswers: ['31'],
+          explanation: 'Ooreenkomstige hoeke is gelyk: 4x = 124°.\nx = 124° ÷ 4 = 31°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 95 55 A 26 26 0 0 1 108 34" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="90" y="40" font-size="14" font-weight="700" fill="#2563eb">4x°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="150" y="130" font-size="14" font-weight="700" fill="#2563eb">124°</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Bongani sê: "Verwisselende hoeke en ooreenkomstige hoeke is eintlik net verskillende name vir presies dieselfde paar hoeke." Is hy korrek? Verduidelik die verskil met behulp van ʼn diagram van twee parallelle lyne wat deur ʼn transversaal gesny word.',
+          answer: 'Nee — Bongani is verkeerd. Ooreenkomstige hoeke is in dieselfde posisie by elke kruising (bv. albei boaan-regs), aan dieselfde kant van die transversaal. Verwisselende hoeke is aan teenoorgestelde kante van die transversaal, tussen die parallelle lyne (en vorm ʼn Z-vorm). Dit is verskillende pare hoeke, al is albei tipes gelyk aan mekaar wanneer die lyne parallel is.',
+          checkMode: 'self',
+        },
+
+        // ── Blok 5: Kohoeke (13-16) ────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een kohoek is 128°. Bepaal die grootte van die ander kohoek.',
+          checkMode: 'auto',
+          correctAnswer: '52',
+          correctAnswers: ['52', '52°'],
+          explanation: 'Kohoeke is supplementêr — hulle tel op tot 180°.\nAnder hoek = 180° − 128° = 52°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">128°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">E</text><text x="195" y="45" font-size="11" fill="#374151">F</text><text x="10" y="135" font-size="11" fill="#374151">G</text><text x="195" y="135" font-size="11" fill="#374151">H</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Pad het twee parallelle baanmerke wat deur ʼn diagonale draaibaanlyn gesny word, wat as transversaal optree. Die kohoek aan een kant is 47°. Bepaal die kohoek aan dieselfde kant van die transversaal tussen die ander paar.',
+          checkMode: 'auto',
+          correctAnswer: '133',
+          correctAnswers: ['133', '133°'],
+          explanation: 'Kohoeke tussen parallelle lyne is supplementêr.\nAnder hoek = 180° − 47° = 133°.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Een kohoek is (3x − 5)° en die ander is (x + 25)°.\na) Skryf ʼn vergelyking met behulp van die kohoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke kohoek.',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vergelyking',
+              correctAnswer: '3x-5+x+25=180',
+              correctAnswers: ['3x-5+x+25=180', '4x+20=180', '(3x-5)+(x+25)=180'],
+              explanation: 'Kohoeke is supplementêr: (3x − 5) + (x + 25) = 180.',
+            },
+            {
+              label: 'b) Waarde van x',
+              correctAnswer: '40',
+              explanation: '4x + 20 = 180 → 4x = 160 → x = 40.',
+            },
+            {
+              label: 'c) Elke kohoek',
+              correctAnswer: '115 and 65',
+              correctAnswers: ['115 and 65', '115° and 65°', '65 and 115', '115 en 65', '65 en 115'],
+              explanation: '3(40) − 5 = 115°; 40 + 25 = 65°. Toets: 115° + 65° = 180° ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Thandi sê: "As ʼn kohoek 152° is, moet die ander kohoek ook stomp wees, want kohoeke is altyd dieselfde tipe." Is sy korrek? Verduidelik, met 152° as die gegewe hoek.',
+          answer: 'Nee — Thandi is verkeerd. Kohoeke is supplementêr (hulle tel op tot 180°), nie dieselfde tipe nie. As een kohoek 152° is, is die ander 180° − 152° = 28°, wat skerp is, nie stomp nie. Wanneer een kohoek stomp is, is die ander altyd skerp (tensy albei 90° is).',
+          checkMode: 'self',
+        },
+
+        // ── Blok 6: Multi-stap redenering (17-19) ──────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. ʼn Hoek gevorm waar die transversaal die eerste lyn kruis, is 100°. Bepaal die kohoek op die tweede lyn, en bepaal dan die hoek wat vertikaal-oorstaande aan daardie kohoek is.',
+          checkMode: 'auto',
+          correctAnswer: '80',
+          correctAnswers: ['80', '80°'],
+          explanation: 'Stap 1: Die kohoek is supplementêr tot 100°: 180° − 100° = 80°.\nStap 2: Die hoek wat vertikaal-oorstaande aan hierdie 80°-hoek is, is daaraan gelyk: 80°.\nFinale antwoord: 80°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">100°</text><path d="M 133 145 A 26 26 0 0 1 121 168" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="105" y="178" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Twee reguit lyne sny mekaar by punt O, soos getoon. Een van die hoeke wat gevorm word, hoek P, is 77°. Hoek P en hoek Q is vertikaal-oorstaande. Hoek Q en hoek R lê saam op ʼn reguit lyn. Bepaal die grootte van hoek R.',
+          checkMode: 'auto',
+          correctAnswer: '103',
+          correctAnswers: ['103', '103°'],
+          explanation: 'Stap 1: Hoek Q is vertikaal-oorstaande aan hoek P, dus Q = 77° (vertikaal-oorstaande hoeke is gelyk).\nStap 2: Q en R lê op ʼn reguit lyn, dus Q + R = 180°.\nR = 180° − 77° = 103°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="45" y1="25" x2="175" y2="165" stroke="#0f1f3d" stroke-width="2"/><line x1="175" y1="25" x2="45" y2="165" stroke="#0f1f3d" stroke-width="2"/><path d="M 110 55 A 40 40 0 0 1 133 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="112" y="48" font-size="14" font-weight="700" fill="#2563eb">P = 77°</text><path d="M 110 135 A 40 40 0 0 1 87 118" fill="none" stroke="#374151" stroke-width="1.5"/><text x="95" y="150" font-size="12" font-weight="700" fill="#374151">Q</text><path d="M 87 118 A 40 40 0 0 1 70 95" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="40" y="130" font-size="15" font-weight="700" fill="#ea580c">R = ?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Boekrakstut word oor twee parallelle rakke vasgemaak en tree op as transversaal. Die ooreenkomstige hoek op die boonste rak is 132°. Bepaal die kohoek op die onderste rak wat aan dieselfde kant van die transversaal lê as hierdie ooreenkomstige hoek.',
+          checkMode: 'auto',
+          correctAnswer: '48',
+          correctAnswers: ['48', '48°'],
+          explanation: 'Stap 1: Die ooreenkomstige hoek op die onderste rak is gelyk aan die gegewe hoek (ooreenkomstige hoeke is gelyk): 132°.\nStap 2: Hierdie 132°-hoek en die kohoek aan dieselfde kant is supplementêr: 180° − 132° = 48°.\nFinale antwoord: 48°.',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy kan reguit-lyn-, punt-, komplementêre en parallelle-lyn-hoekverwantskappe met selfvertroue toepas.' },
+        { minScore: 14, message: 'Goeie werk! Gaan weer deur enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan weer deur die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklaaiuit, meer werklike kontekste + redenering
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // ── Blok 1: Hoeke op ʼn reguit lyn (0-2) ───────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'In die diagram lê hoeke E en F op ʼn reguit lyn, soos getoon. Hoek E = 118°. Bepaal die grootte van hoek F.',
+          checkMode: 'auto',
+          correctAnswer: '62',
+          correctAnswers: ['62', '62°'],
+          explanation: 'Hoeke op ʼn reguit lyn is supplementêr — hulle tel op tot 180°.\nHoek F = 180° − 118° = 62°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="150" x2="205" y2="150" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="150" x2="140" y2="27" stroke="#0f1f3d" stroke-width="2"/><path d="M 62 150 A 52 52 0 0 1 122 101" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="62" y="108" font-size="15" font-weight="700" fill="#2563eb">118°</text><path d="M 145 150 A 32 32 0 0 0 128 122" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="150" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="150" r="2.5" fill="#0f1f3d"/><text x="10" y="145" font-size="12" fill="#374151">E</text><text x="195" y="145" font-size="12" fill="#374151">F</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Drie hoeke ontmoet op ʼn reguit lyn, soos getoon. Hulle is 30°, 90° en x. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '60',
+          correctAnswers: ['60', '60°'],
+          explanation: 'Hoeke op ʼn reguit lyn tel op tot 180°.\nx = 180° − 30° − 90° = 180° − 120° = 60°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="150" x2="210" y2="150" stroke="#0f1f3d" stroke-width="2"/><line x1="100" y1="150" x2="196" y2="130" stroke="#0f1f3d" stroke-width="2"/><line x1="100" y1="150" x2="55" y2="35" stroke="#0f1f3d" stroke-width="2"/><path d="M 152 150 A 32 32 0 0 0 149 138" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="155" y="145" font-size="14" font-weight="700" fill="#2563eb">30°</text><path d="M 72 150 A 38 38 0 0 1 92 116" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="48" y="132" font-size="14" font-weight="700" fill="#2563eb">90°</text><path d="M 100 112 A 38 38 0 0 1 138 141" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="105" y="100" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="100" cy="150" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee hoeke op ʼn reguit lyn is in die verhouding 1 : 5. Bepaal die grootte van elke hoek.',
+          checkMode: 'auto',
+          correctAnswer: '30 and 150',
+          correctAnswers: ['30 and 150', '30° and 150°', '150 and 30', '150° and 30°', '30 en 150', '150 en 30'],
+          explanation: 'Hoeke op ʼn reguit lyn tel op tot 180°. Totale dele = 1 + 5 = 6.\nEen deel = 180° ÷ 6 = 30°.\nHoeke: 1 × 30° = 30° en 5 × 30° = 150°. Toets: 30° + 150° = 180° ✓',
+        },
+
+        // ── Blok 2: Hoeke rondom ʼn punt & vertikaal-oorstaande (3-6) ─────
+        {
+          difficulty: 'Easy',
+          question: 'Twee reguit lyne sny mekaar by ʼn punt, soos getoon. Een van die hoeke wat gevorm word, is 78°. Bepaal die grootte van die hoek wat vertikaal-oorstaande daaraan is.',
+          checkMode: 'auto',
+          correctAnswer: '78',
+          correctAnswers: ['78', '78°'],
+          explanation: 'Vertikaal-oorstaande hoeke is altyd gelyk.\nVertikaal-oorstaande hoek = 78°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="45" y1="30" x2="175" y2="160" stroke="#0f1f3d" stroke-width="2"/><line x1="175" y1="30" x2="45" y2="160" stroke="#0f1f3d" stroke-width="2"/><path d="M 110 55 A 40 40 0 0 1 133 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="112" y="48" font-size="15" font-weight="700" fill="#2563eb">78°</text><path d="M 110 135 A 40 40 0 0 1 87 118" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="95" y="150" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee reguit lyne sny mekaar by ʼn punt. Een van die hoeke wat gevorm word, is 78°. Bepaal die grootte van die twee hoeke wat aangrensend daaraan is op die reguit lyn.',
+          checkMode: 'auto',
+          correctAnswer: '102',
+          correctAnswers: ['102', '102°'],
+          explanation: 'Aangrensende hoeke op ʼn reguit lyn is supplementêr.\nAangrensende hoek = 180° − 78° = 102°. Albei aangrensende hoeke is gelyk aan 102°.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vier hoeke ontmoet by ʼn punt, soos getoon. Hulle is 65°, 95°, 120° en x. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '80',
+          correctAnswers: ['80', '80°'],
+          explanation: 'Hoeke rondom ʼn punt tel op tot 360°.\nx = 360° − 65° − 95° − 120° = 360° − 280° = 80°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="110" y1="95" x2="200" y2="95" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="110" y2="15" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="30" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="95" x2="45" y2="155" stroke="#0f1f3d" stroke-width="2"/><path d="M 140 95 A 30 30 0 0 0 110 65" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="122" y="80" font-size="12" font-weight="700" fill="#2563eb">65°</text><path d="M 110 65 A 30 30 0 0 0 60 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="65" y="58" font-size="12" font-weight="700" fill="#2563eb">95°</text><path d="M 60 72 A 30 30 0 0 0 70 121" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="35" y="100" font-size="12" font-weight="700" fill="#2563eb">120°</text><path d="M 70 121 A 30 30 0 0 0 140 95" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="98" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'ʼn Verkeersirkel het 5 paaie eweredig rondom sy middelpunt gespasieer, wat die volle draai in 5 gelyke hoeke verdeel. Wat is die grootte van elke hoek?',
+          checkMode: 'auto',
+          correctAnswer: '72',
+          correctAnswers: ['72', '72°'],
+          explanation: 'Hoeke rondom ʼn punt tel op tot 360°. Met 5 gelyke hoeke is elkeen 360° ÷ 5 = 72°.',
+        },
+
+        // ── Blok 3: Komplementêre hoeke (7-8) ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Twee hoeke is komplementêr. Een van die hoeke is 52°. Bepaal die grootte van die ander hoek.',
+          checkMode: 'auto',
+          correctAnswer: '38',
+          correctAnswers: ['38', '38°'],
+          explanation: 'Komplementêre hoeke tel op tot 90°.\nAnder hoek = 90° − 52° = 38°.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee komplementêre hoeke is x en 2x. Bepaal die waarde van x en die grootte van elke hoek.',
+          checkMode: 'auto',
+          correctAnswer: 'x=30; 30 and 60',
+          correctAnswers: ['x=30; 30 and 60', 'x=30, 30° en 60°', '30; 30 and 60', '30 and 60', 'x=30; 30 en 60'],
+          explanation: 'Komplementêre hoeke tel op tot 90°: x + 2x = 90.\n3x = 90 → x = 30.\nHoeke: 30° en 2(30°) = 60°. Toets: 30° + 60° = 90° ✓',
+        },
+
+        // ── Blok 4: Ooreenkomstige en verwisselende hoeke (9-12) ───────────
+        {
+          difficulty: 'Easy',
+          question: 'Lyne JK en LM is parallel en word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 96°. Bepaal die grootte van sy ooreenkomstige hoek.',
+          checkMode: 'auto',
+          correctAnswer: '96',
+          correctAnswers: ['96', '96°'],
+          explanation: 'Ooreenkomstige hoeke wat deur ʼn transversaal gevorm word wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 96°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 95 55 A 26 26 0 0 1 108 34" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="98" y="40" font-size="14" font-weight="700" fill="#2563eb">96°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">J</text><text x="195" y="45" font-size="11" fill="#374151">K</text><text x="10" y="135" font-size="11" fill="#374151">L</text><text x="195" y="135" font-size="11" fill="#374151">M</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 61°. Bepaal die grootte van sy verwisselende hoek.',
+          checkMode: 'auto',
+          correctAnswer: '61',
+          correctAnswers: ['61', '61°'],
+          explanation: 'Verwisselende hoeke wat deur ʼn transversaal gevorm word wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 61°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">61°</text><path d="M 141 145 A 28 28 0 0 0 124 122" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="118" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">J</text><text x="195" y="45" font-size="11" fill="#374151">K</text><text x="10" y="135" font-size="11" fill="#374151">L</text><text x="195" y="135" font-size="11" fill="#374151">M</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ooreenkomstige hoek is 5x en die ander ooreenkomstige hoek is 115°. Bepaal die waarde van x.',
+          checkMode: 'auto',
+          correctAnswer: '23',
+          correctAnswers: ['23'],
+          explanation: 'Ooreenkomstige hoeke is gelyk: 5x = 115°.\nx = 115° ÷ 5 = 23°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 95 55 A 26 26 0 0 1 108 34" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="90" y="40" font-size="14" font-weight="700" fill="#2563eb">5x°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="150" y="130" font-size="14" font-weight="700" fill="#2563eb">115°</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Sindiso beweer: "Ooreenkomstige hoeke is slegs gelyk as die transversaal die parallelle lyne teen presies 90° sny." Is hy korrek? Gebruik ʼn hoek van 142° om jou antwoord te verduidelik.',
+          answer: 'Nee — Sindiso is verkeerd. Ooreenkomstige hoeke is gelyk wanneer die twee lyne wat gesny word parallel is, ongeag watter hoek die transversaal met hulle vorm. As een hoek byvoorbeeld 142° is, is sy ooreenkomstige hoek ook 142°, selfs al is die transversaal nie loodreg op die parallelle lyne nie.',
+          checkMode: 'self',
+        },
+
+        // ── Blok 5: Kohoeke (13-16) ────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een kohoek is 101°. Bepaal die grootte van die ander kohoek.',
+          checkMode: 'auto',
+          correctAnswer: '79',
+          correctAnswers: ['79', '79°'],
+          explanation: 'Kohoeke is supplementêr — hulle tel op tot 180°.\nAnder hoek = 180° − 101° = 79°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 87 55 A 28 28 0 0 1 104 78" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">101°</text><path d="M 149 145 A 26 26 0 0 1 162 124" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/><text x="10" y="45" font-size="11" fill="#374151">J</text><text x="195" y="45" font-size="11" fill="#374151">K</text><text x="10" y="135" font-size="11" fill="#374151">L</text><text x="195" y="135" font-size="11" fill="#374151">M</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Vensterraam het twee parallelle horisontale stawe wat deur ʼn diagonale steunstaaf gesny word, wat as transversaal optree. Die kohoek aan een kant is 66°. Bepaal die kohoek aan dieselfde kant van die transversaal tussen die ander paar.',
+          checkMode: 'auto',
+          correctAnswer: '114',
+          correctAnswers: ['114', '114°'],
+          explanation: 'Kohoeke tussen parallelle lyne is supplementêr.\nAnder hoek = 180° − 66° = 114°.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Een kohoek is (2x + 30)° en die ander is 2x°.\na) Skryf ʼn vergelyking met behulp van die kohoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke kohoek.',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vergelyking',
+              correctAnswer: '2x+30+2x=180',
+              correctAnswers: ['2x+30+2x=180', '4x+30=180', '(2x+30)+2x=180'],
+              explanation: 'Kohoeke is supplementêr: (2x + 30) + 2x = 180.',
+            },
+            {
+              label: 'b) Waarde van x',
+              correctAnswer: '37,5',
+              correctAnswers: ['37,5', '37.5'],
+              explanation: '4x + 30 = 180 → 4x = 150 → x = 37,5.',
+            },
+            {
+              label: 'c) Elke kohoek',
+              correctAnswer: '105 and 75',
+              correctAnswers: ['105 and 75', '105° and 75°', '75 and 105', '105 en 75', '75 en 105'],
+              explanation: '2(37,5) + 30 = 105°; 2(37,5) = 75°. Toets: 105° + 75° = 180° ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Karabo sê: "ʼn Hoek van 88° en ʼn kohoek van 92° kan nie albei waar wees nie, want 88° en 92° is amper gelyk, nie supplementêr nie." Is sy korrek? Wys ʼn toets met optelling.',
+          answer: 'Nee — Karabo is verkeerd. 88° en 92° IS supplementêr, want 88° + 92° = 180°. Twee hoeke wat na aan mekaar in grootte is, verhoed nie dat hulle op tot 180° kan optel nie — die kohoek-reël vereis net dat die twee hoeke op tot 180° optel, nie dat hulle baie verskillend van mekaar lyk nie.',
+          checkMode: 'self',
+        },
+
+        // ── Blok 6: Multi-stap redenering (17-19) ──────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. ʼn Hoek gevorm waar die transversaal die eerste lyn kruis, het ʼn verwisselende hoek van 74° op die tweede lyn. Bepaal die kohoek wat aan dieselfde kant van die transversaal lê as hierdie verwisselende hoek, tussen die twee parallelle lyne.',
+          checkMode: 'auto',
+          correctAnswer: '106',
+          correctAnswers: ['106', '106°'],
+          explanation: 'Stap 1: Die verwisselende hoek is gelyk aan die oorspronklike hoek (verwisselende hoeke is gelyk): 74°.\nStap 2: Die kohoek aan dieselfde kant as hierdie 74°-hoek is daartoe supplementêr: 180° − 74° = 106°.\nFinale antwoord: 106°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 149 145 A 26 26 0 0 1 136 168" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="150" y="178" font-size="14" font-weight="700" fill="#2563eb">74°</text><path d="M 87 55 A 26 26 0 0 0 66 68" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="55" y="85" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Twee reguit lyne sny mekaar by punt O, soos getoon. Een van die hoeke wat gevorm word, hoek P, is 48°. Hoek P en hoek Q is vertikaal-oorstaande. Hoek Q en hoek R lê saam op ʼn reguit lyn. Bepaal die grootte van hoek R.',
+          checkMode: 'auto',
+          correctAnswer: '132',
+          correctAnswers: ['132', '132°'],
+          explanation: 'Stap 1: Hoek Q is vertikaal-oorstaande aan hoek P, dus Q = 48° (vertikaal-oorstaande hoeke is gelyk).\nStap 2: Q en R lê op ʼn reguit lyn, dus Q + R = 180°.\nR = 180° − 48° = 132°.',
+          diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="45" y1="25" x2="175" y2="165" stroke="#0f1f3d" stroke-width="2"/><line x1="175" y1="25" x2="45" y2="165" stroke="#0f1f3d" stroke-width="2"/><path d="M 110 55 A 40 40 0 0 1 133 72" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="112" y="48" font-size="14" font-weight="700" fill="#2563eb">P = 48°</text><path d="M 110 135 A 40 40 0 0 1 87 118" fill="none" stroke="#374151" stroke-width="1.5"/><text x="95" y="150" font-size="12" font-weight="700" fill="#374151">Q</text><path d="M 87 118 A 40 40 0 0 1 70 95" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="40" y="130" font-size="15" font-weight="700" fill="#ea580c">R = ?</text><circle cx="110" cy="95" r="2.5" fill="#0f1f3d"/></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Padmerke wys twee parallelle baanlyne wat deur ʼn diagonale samevoegingslyn gesny word, wat as transversaal optree. Een kohoek is 4x en die ander is (2x + 30)°.\na) Skryf ʼn vergelyking met behulp van die kohoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vergelyking',
+              correctAnswer: '4x+2x+30=180',
+              correctAnswers: ['4x+2x+30=180', '6x+30=180', '4x+(2x+30)=180'],
+              explanation: 'Kohoeke is supplementêr: 4x + (2x + 30) = 180.',
+            },
+            {
+              label: 'b) Waarde van x',
+              correctAnswer: '25',
+              explanation: '6x + 30 = 180 → 6x = 150 → x = 25.',
+            },
+            {
+              label: 'c) Elke hoek',
+              correctAnswer: '100 and 80',
+              correctAnswers: ['100 and 80', '100° and 80°', '80 and 100', '100 en 80', '80 en 100'],
+              explanation: '4(25) = 100°; 2(25) + 30 = 80°. Toets: 100° + 80° = 180° ✓',
+            },
+          ],
+        },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Fantasties! Jy kan reguit-lyn-, punt-, komplementêre en parallelle-lyn-hoekverwantskappe op werklike probleme toepas.' },
+        { minScore: 14, message: 'Goeie werk! Gaan weer deur enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan weer deur die uitgewerkte voorbeelde en probeer die woordprobleme weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }
