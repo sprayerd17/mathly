@@ -416,4 +416,157 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Good effort! Review the worked examples and try again.' },
     { minScore: 0, message: 'Keep going — work through the guide again and you will get there.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1 (0-2):   Sign rules — multiplication and division of integers
+    // Block 2 (3-5):   Squares, cubes and roots of integers
+    // Block 3 (6-7):   Combining roots/powers in one calculation
+    // Block 4 (8-11):  BODMAS multi-step calculations
+    // Block 5 (12-14): Distributive property
+    // Block 6 (15-16): Additive and multiplicative inverses
+    // Block 7 (17-19): Real-life multi-step problems / error-spotting / reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Sign rules: multiplication and division (Easy)
+        { difficulty: 'Easy', question: 'Calculate −7 × (−8).', checkMode: 'auto', correctAnswer: '56', answer: '56', explanation: 'Negative × negative = positive.\n−7 × (−8) = 56 ✓' },
+        { difficulty: 'Easy', question: 'Calculate −54 ÷ 6.', checkMode: 'auto', correctAnswer: '-9', correctAnswers: ['-9', '−9'], answer: '−9', explanation: 'Negative ÷ positive = negative.\n−54 ÷ 6 = −9 ✓' },
+        { difficulty: 'Easy', question: 'Calculate −9 × 7.', checkMode: 'auto', correctAnswer: '-63', correctAnswers: ['-63', '−63'], answer: '−63', explanation: 'Negative × positive = negative.\n−9 × 7 = −63 ✓' },
+
+        // Block 2 — Squares, cubes and roots of integers (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Calculate −6².', checkMode: 'auto', correctAnswer: '-36', correctAnswers: ['-36', '−36'], answer: '−36', explanation: '−6² means −(6²), so only the 6 is squared.\n−6² = −(36) = −36 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Calculate (−6)².', checkMode: 'auto', correctAnswer: '36', answer: '36', explanation: 'The brackets mean the whole −6 is squared.\n(−6)² = (−6) × (−6) = 36 ✓' },
+        { difficulty: 'Medium', question: 'Calculate (−3)³.', checkMode: 'auto', correctAnswer: '-27', correctAnswers: ['-27', '−27'], answer: '−27', explanation: 'An odd power of a negative number stays negative.\n(−3)³ = (−3)(−3)(−3) = −27 ✓' },
+
+        // Block 3 — Combining roots and powers (Medium)
+        { difficulty: 'Medium', question: 'Calculate √64 + ∛(−27).', checkMode: 'auto', correctAnswer: '5', answer: '5', explanation: '√64 = 8 (positive square root).\n∛(−27) = −3 (negative cube root, since (−3)³ = −27).\n8 + (−3) = 5 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −8² + (−3)³.', checkMode: 'auto', correctAnswer: '-91', correctAnswers: ['-91', '−91'], answer: '−91', explanation: '−8² = −(64) = −64 (only the 8 is squared).\n(−3)³ = −27.\n−64 + (−27) = −91 ✓' },
+
+        // Block 4 — BODMAS multi-step calculations (Medium)
+        { difficulty: 'Medium', question: 'Calculate √36 − (−5)².', checkMode: 'auto', correctAnswer: '-19', correctAnswers: ['-19', '−19'], answer: '−19', explanation: '√36 = 6.\n(−5)² = 25 (even power of a negative is positive).\n6 − 25 = −19 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −40 ÷ (−8) + (−2)³.', checkMode: 'auto', correctAnswer: '-3', correctAnswers: ['-3', '−3'], answer: '−3', explanation: 'Division first: −40 ÷ (−8) = 5.\n(−2)³ = −8.\n5 + (−8) = −3 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −3² × (−2)².', checkMode: 'auto', correctAnswer: '-36', correctAnswers: ['-36', '−36'], answer: '−36', explanation: '−3² = −(9) = −9 (only the 3 is squared).\n(−2)² = 4.\n−9 × 4 = −36 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −18 + (−7) × 3 − (−10).', checkMode: 'auto', correctAnswer: '-29', correctAnswers: ['-29', '−29'], answer: '−29', explanation: 'Multiplication first: (−7) × 3 = −21.\n−18 + (−21) − (−10) = −18 − 21 + 10 = −29 ✓' },
+
+        // Block 5 — Distributive property (Medium)
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate −5(9 − 4).', checkMode: 'auto', correctAnswer: '-25', correctAnswers: ['-25', '−25'], answer: '−25', explanation: '−5(9 − 4) = (−5 × 9) − (−5 × 4) = −45 − (−20) = −45 + 20 = −25 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate −5(−8 + 3).', checkMode: 'auto', correctAnswer: '25', answer: '25', explanation: '−5(−8 + 3) = (−5 × −8) + (−5 × 3) = 40 + (−15) = 25 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate 6(−4 + 7).', checkMode: 'auto', correctAnswer: '18', answer: '18', explanation: '6(−4 + 7) = (6 × −4) + (6 × 7) = −24 + 42 = 18 ✓' },
+
+        // Block 6 — Additive and multiplicative inverses (Medium)
+        { difficulty: 'Medium', question: 'Find the additive inverse of −23.', checkMode: 'auto', correctAnswer: '23', answer: '23', explanation: 'The additive inverse is the number that sums to 0.\n−23 + 23 = 0, so the additive inverse of −23 is 23 ✓' },
+        { difficulty: 'Medium', question: 'Find the multiplicative inverse of −8.', checkMode: 'auto', correctAnswer: '-1/8', correctAnswers: ['-1/8', '−1/8'], answer: '−1/8', explanation: 'The multiplicative inverse is the number that multiplies to give 1.\n−8 × (−1/8) = 1, so the multiplicative inverse of −8 is −1/8 ✓' },
+
+        // Block 7 — Real-life multi-step problems / error-spotting / reasoning (Hard)
+        { difficulty: 'Hard', question: 'Find two integers whose sum is −2 and whose product is −35.', answer: '5 and −7, since 5 + (−7) = −2 and 5 × (−7) = −35.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Zinhle says −3² − (−4)³ = −55. Is she correct? Show the correct working.', answer: 'No — −3² = −9 (only the 3 is squared) and (−4)³ = −64. So −3² − (−4)³ = −9 − (−64) = −9 + 64 = 55, not −55. Zinhle likely squared the whole −3 by mistake.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Karabo's account balance changes by −95, then +140, then −15 over three months. Find her total change.", answer: 'R30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', 'R30'], explanation: '−95 + 140 + (−15).\n−95 + 140 = 45. Then 45 − 15 = 30.\nKarabo\'s balance increased by R30 overall ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered calculations with integers.' },
+        { minScore: 14, message: 'Great work! Review any missed questions on BODMAS or inverses and try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples on squares, cubes and roots, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Sign rules: multiplication and division (Easy)
+        { difficulty: 'Easy', question: 'Calculate −6 × (−9).', checkMode: 'auto', correctAnswer: '54', answer: '54', explanation: 'Negative × negative = positive.\n−6 × (−9) = 54 ✓' },
+        { difficulty: 'Easy', question: 'Calculate −48 ÷ 8.', checkMode: 'auto', correctAnswer: '-6', correctAnswers: ['-6', '−6'], answer: '−6', explanation: 'Negative ÷ positive = negative.\n−48 ÷ 8 = −6 ✓' },
+        { difficulty: 'Easy', question: 'Calculate −8 × 6.', checkMode: 'auto', correctAnswer: '-48', correctAnswers: ['-48', '−48'], answer: '−48', explanation: 'Negative × positive = negative.\n−8 × 6 = −48 ✓' },
+
+        // Block 2 — Squares, cubes and roots of integers (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Calculate −4².', checkMode: 'auto', correctAnswer: '-16', correctAnswers: ['-16', '−16'], answer: '−16', explanation: '−4² means −(4²), so only the 4 is squared.\n−4² = −(16) = −16 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Calculate (−4)².', checkMode: 'auto', correctAnswer: '16', answer: '16', explanation: 'The brackets mean the whole −4 is squared.\n(−4)² = (−4) × (−4) = 16 ✓' },
+        { difficulty: 'Medium', question: 'Calculate (−5)³.', checkMode: 'auto', correctAnswer: '-125', correctAnswers: ['-125', '−125'], answer: '−125', explanation: 'An odd power of a negative number stays negative.\n(−5)³ = (−5)(−5)(−5) = −125 ✓' },
+
+        // Block 3 — Combining roots and powers (Medium)
+        { difficulty: 'Medium', question: 'Calculate √81 + ∛(−125).', checkMode: 'auto', correctAnswer: '4', answer: '4', explanation: '√81 = 9 (positive square root).\n∛(−125) = −5 (negative cube root, since (−5)³ = −125).\n9 + (−5) = 4 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −6² + (−4)³.', checkMode: 'auto', correctAnswer: '-100', correctAnswers: ['-100', '−100'], answer: '−100', explanation: '−6² = −(36) = −36 (only the 6 is squared).\n(−4)³ = −64.\n−36 + (−64) = −100 ✓' },
+
+        // Block 4 — BODMAS multi-step calculations (Medium)
+        { difficulty: 'Medium', question: 'Calculate √49 − (−6)².', checkMode: 'auto', correctAnswer: '-29', correctAnswers: ['-29', '−29'], answer: '−29', explanation: '√49 = 7.\n(−6)² = 36 (even power of a negative is positive).\n7 − 36 = −29 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −45 ÷ (−9) + (−3)³.', checkMode: 'auto', correctAnswer: '-22', correctAnswers: ['-22', '−22'], answer: '−22', explanation: 'Division first: −45 ÷ (−9) = 5.\n(−3)³ = −27.\n5 + (−27) = −22 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −4² × (−3)².', checkMode: 'auto', correctAnswer: '-144', correctAnswers: ['-144', '−144'], answer: '−144', explanation: '−4² = −(16) = −16 (only the 4 is squared).\n(−3)² = 9.\n−16 × 9 = −144 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −22 + (−6) × 4 − (−12).', checkMode: 'auto', correctAnswer: '-34', correctAnswers: ['-34', '−34'], answer: '−34', explanation: 'Multiplication first: (−6) × 4 = −24.\n−22 + (−24) − (−12) = −22 − 24 + 12 = −34 ✓' },
+
+        // Block 5 — Distributive property (Medium)
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate −4(7 − 6).', checkMode: 'auto', correctAnswer: '-4', correctAnswers: ['-4', '−4'], answer: '−4', explanation: '−4(7 − 6) = (−4 × 7) − (−4 × 6) = −28 − (−24) = −28 + 24 = −4 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate −6(−5 + 2).', checkMode: 'auto', correctAnswer: '18', answer: '18', explanation: '−6(−5 + 2) = (−6 × −5) + (−6 × 2) = 30 + (−12) = 18 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate 7(−3 + 8).', checkMode: 'auto', correctAnswer: '35', answer: '35', explanation: '7(−3 + 8) = (7 × −3) + (7 × 8) = −21 + 56 = 35 ✓' },
+
+        // Block 6 — Additive and multiplicative inverses (Medium)
+        { difficulty: 'Medium', question: 'Find the additive inverse of −31.', checkMode: 'auto', correctAnswer: '31', answer: '31', explanation: 'The additive inverse is the number that sums to 0.\n−31 + 31 = 0, so the additive inverse of −31 is 31 ✓' },
+        { difficulty: 'Medium', question: 'Find the multiplicative inverse of −10.', checkMode: 'auto', correctAnswer: '-1/10', correctAnswers: ['-1/10', '−1/10'], answer: '−1/10', explanation: 'The multiplicative inverse is the number that multiplies to give 1.\n−10 × (−1/10) = 1, so the multiplicative inverse of −10 is −1/10 ✓' },
+
+        // Block 7 — Real-life multi-step problems / error-spotting / reasoning (Hard)
+        { difficulty: 'Hard', question: 'Find two integers whose sum is 1 and whose product is −42.', answer: '7 and −6, since 7 + (−6) = 1 and 7 × (−6) = −42.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bandile says −4² − (−3)³ = −5. Is he correct? Show the correct working.', answer: 'No — −4² = −16 (only the 4 is squared) and (−3)³ = −27. So −4² − (−3)³ = −16 − (−27) = −16 + 27 = 11, not −5. Bandile likely squared the whole −4 by mistake.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Naledi's account balance changes by −130, then +210, then −25 over three months. Find her total change.", answer: 'R55', checkMode: 'auto', correctAnswer: '55', correctAnswers: ['55', 'R55'], explanation: '−130 + 210 + (−25).\n−130 + 210 = 80. Then 80 − 25 = 55.\nNaledi\'s balance increased by R55 overall ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered calculations with integers.' },
+        { minScore: 14, message: 'Great work! Review any missed questions on BODMAS or inverses and try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples on squares, cubes and roots, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Sign rules: multiplication and division (Easy)
+        { difficulty: 'Easy', question: 'Calculate −5 × (−12).', checkMode: 'auto', correctAnswer: '60', answer: '60', explanation: 'Negative × negative = positive.\n−5 × (−12) = 60 ✓' },
+        { difficulty: 'Easy', question: 'Calculate −72 ÷ 9.', checkMode: 'auto', correctAnswer: '-8', correctAnswers: ['-8', '−8'], answer: '−8', explanation: 'Negative ÷ positive = negative.\n−72 ÷ 9 = −8 ✓' },
+        { difficulty: 'Easy', question: 'Calculate −6 × 11.', checkMode: 'auto', correctAnswer: '-66', correctAnswers: ['-66', '−66'], answer: '−66', explanation: 'Negative × positive = negative.\n−6 × 11 = −66 ✓' },
+
+        // Block 2 — Squares, cubes and roots of integers (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Calculate −7².', checkMode: 'auto', correctAnswer: '-49', correctAnswers: ['-49', '−49'], answer: '−49', explanation: '−7² means −(7²), so only the 7 is squared.\n−7² = −(49) = −49 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Calculate (−7)².', checkMode: 'auto', correctAnswer: '49', answer: '49', explanation: 'The brackets mean the whole −7 is squared.\n(−7)² = (−7) × (−7) = 49 ✓' },
+        { difficulty: 'Medium', question: 'Calculate (−4)³.', checkMode: 'auto', correctAnswer: '-64', correctAnswers: ['-64', '−64'], answer: '−64', explanation: 'An odd power of a negative number stays negative.\n(−4)³ = (−4)(−4)(−4) = −64 ✓' },
+
+        // Block 3 — Combining roots and powers (Medium)
+        { difficulty: 'Medium', question: 'Calculate √100 + ∛(−64).', checkMode: 'auto', correctAnswer: '6', answer: '6', explanation: '√100 = 10 (positive square root).\n∛(−64) = −4 (negative cube root, since (−4)³ = −64).\n10 + (−4) = 6 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −9² + (−2)³.', checkMode: 'auto', correctAnswer: '-89', correctAnswers: ['-89', '−89'], answer: '−89', explanation: '−9² = −(81) = −81 (only the 9 is squared).\n(−2)³ = −8.\n−81 + (−8) = −89 ✓' },
+
+        // Block 4 — BODMAS multi-step calculations (Medium)
+        { difficulty: 'Medium', question: 'Calculate √64 − (−4)².', checkMode: 'auto', correctAnswer: '-8', correctAnswers: ['-8', '−8'], answer: '−8', explanation: '√64 = 8.\n(−4)² = 16 (even power of a negative is positive).\n8 − 16 = −8 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −60 ÷ (−12) + (−2)⁴.', checkMode: 'auto', correctAnswer: '21', answer: '21', explanation: 'Division first: −60 ÷ (−12) = 5.\n(−2)⁴ = 16 (even power of a negative is positive).\n5 + 16 = 21 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −2² × (−5)².', checkMode: 'auto', correctAnswer: '-100', correctAnswers: ['-100', '−100'], answer: '−100', explanation: '−2² = −(4) = −4 (only the 2 is squared).\n(−5)² = 25.\n−4 × 25 = −100 ✓' },
+        { difficulty: 'Medium', question: 'Calculate −27 + (−5) × 6 − (−14).', checkMode: 'auto', correctAnswer: '-43', correctAnswers: ['-43', '−43'], answer: '−43', explanation: 'Multiplication first: (−5) × 6 = −30.\n−27 + (−30) − (−14) = −27 − 30 + 14 = −43 ✓' },
+
+        // Block 5 — Distributive property (Medium)
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate −3(11 − 4).', checkMode: 'auto', correctAnswer: '-21', correctAnswers: ['-21', '−21'], answer: '−21', explanation: '−3(11 − 4) = (−3 × 11) − (−3 × 4) = −33 − (−12) = −33 + 12 = −21 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate −8(−3 + 5).', checkMode: 'auto', correctAnswer: '-16', correctAnswers: ['-16', '−16'], answer: '−16', explanation: '−8(−3 + 5) = (−8 × −3) + (−8 × 5) = 24 + (−40) = −16 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate 9(−2 + 6).', checkMode: 'auto', correctAnswer: '36', answer: '36', explanation: '9(−2 + 6) = (9 × −2) + (9 × 6) = −18 + 54 = 36 ✓' },
+
+        // Block 6 — Additive and multiplicative inverses (Medium)
+        { difficulty: 'Medium', question: 'Find the additive inverse of −42.', checkMode: 'auto', correctAnswer: '42', answer: '42', explanation: 'The additive inverse is the number that sums to 0.\n−42 + 42 = 0, so the additive inverse of −42 is 42 ✓' },
+        { difficulty: 'Medium', question: 'Find the multiplicative inverse of −12.', checkMode: 'auto', correctAnswer: '-1/12', correctAnswers: ['-1/12', '−1/12'], answer: '−1/12', explanation: 'The multiplicative inverse is the number that multiplies to give 1.\n−12 × (−1/12) = 1, so the multiplicative inverse of −12 is −1/12 ✓' },
+
+        // Block 7 — Real-life multi-step problems / error-spotting / reasoning (Hard)
+        { difficulty: 'Hard', question: 'Find two integers whose sum is −4 and whose product is −60.', answer: '6 and −10, since 6 + (−10) = −4 and 6 × (−10) = −60.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sizwe says −5² − (−2)³ = −33. Is he correct? Show the correct working.', answer: 'No — −5² = −25 (only the 5 is squared) and (−2)³ = −8. So −5² − (−2)³ = −25 − (−8) = −25 + 8 = −17, not −33. Sizwe likely made a sign error subtracting a negative.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Palesa's account balance changes by −150, then +260, then −45 over three months. Find her total change.", answer: 'R65', checkMode: 'auto', correctAnswer: '65', correctAnswers: ['65', 'R65'], explanation: '−150 + 260 + (−45).\n−150 + 260 = 110. Then 110 − 45 = 65.\nPalesa\'s balance increased by R65 overall ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered calculations with integers.' },
+        { minScore: 14, message: 'Great work! Review any missed questions on BODMAS or inverses and try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples on squares, cubes and roots, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

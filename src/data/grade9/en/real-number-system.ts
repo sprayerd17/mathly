@@ -369,4 +369,150 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Good effort! Review the study guide and try again.' },
     { minScore: 0, message: 'Keep going — work through the guide again and you will get there.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1 (0-2):   Classify a number — list all sets it belongs to
+    // Block 2 (3-5):   Rational or irrational? (decimals and square roots)
+    // Block 3 (6-9):   Identify the irrational number in a list
+    // Block 4 (10-12): Convert a recurring decimal to a fraction
+    // Block 5 (13-15): Order a set of real numbers
+    // Block 6 (16-19): True/false reasoning about number-set properties
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Classify a number (Easy)
+        { difficulty: 'Easy', question: 'Classify the number 9. List all the number sets it belongs to.', checkMode: 'self', answer: 'Natural number, whole number, integer, rational number.', explanation: '9 is a positive counting number, so it is natural, whole, an integer, and can be written as 9/1, so it is also rational.' },
+        { difficulty: 'Easy', question: 'Classify the number −14. List all the number sets it belongs to.', checkMode: 'self', answer: 'Integer, rational number (not natural, not whole).', explanation: '−14 is negative, so it cannot be natural or whole. It is an integer, and since it can be written as −14/1, it is also rational.' },
+        { difficulty: 'Easy', question: 'Classify the number 0. List all the number sets it belongs to.', checkMode: 'self', answer: 'Whole number, integer, rational number (not natural).', explanation: '0 is not a natural number (natural numbers start at 1), but it is a whole number, an integer, and rational since it can be written as 0/1.' },
+
+        // Block 2 — Rational or irrational? (Easy/Medium)
+        { difficulty: 'Easy', question: 'Is 0.8 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], answer: 'rational', explanation: '0.8 is a terminating decimal — it can be written as 4/5, so it is rational.' },
+        { difficulty: 'Easy', question: 'Is √36 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], answer: 'rational', explanation: '√36 = 6, since 6 × 6 = 36. 36 is a perfect square, so its square root is a whole number and therefore rational.' },
+        { difficulty: 'Medium', question: 'Is √13 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', correctAnswers: ['irrational'], answer: 'irrational', explanation: '13 is not a perfect square (3² = 9 and 4² = 16), so √13 cannot be simplified to a whole number. Its decimal expansion is non-terminating and non-repeating, so it is irrational.' },
+
+        // Block 3 — Identify the irrational number in a list (Medium/Hard)
+        { difficulty: 'Medium', question: 'Which of these numbers is irrational: 7, √21, 3/5, √25?', checkMode: 'auto', correctAnswer: '√21', correctAnswers: ['√21', 'sqrt21', '√(21)'], answer: '√21', explanation: '7 is an integer (rational), 3/5 is already a fraction (rational), √25 = 5 (rational). 21 is not a perfect square, so √21 is irrational.' },
+        { difficulty: 'Medium', question: 'Which of these numbers is irrational: √49, −6, π, 0.25?', checkMode: 'auto', correctAnswer: 'π', correctAnswers: ['π', 'pi'], answer: 'π', explanation: '√49 = 7 (rational), −6 is an integer (rational), 0.25 is a terminating decimal (rational). π is non-terminating and non-repeating, so it is irrational.' },
+        { difficulty: 'Hard', question: 'Zinhle lists 4/9, √50, 8, and 1.6 and says √50 is the only irrational number. Is she correct?', checkMode: 'self', answer: 'Yes, she is correct.', explanation: '4/9 is a fraction (rational), 8 is an integer (rational), 1.6 is a terminating decimal (rational). 50 is not a perfect square, so √50 is irrational. Zinhle is correct.' },
+        { difficulty: 'Hard', question: 'Explain why √64 belongs with the rational numbers even though it contains a square root sign.', checkMode: 'self', answer: '√64 = 8, which is a whole number, so it is rational.', explanation: 'Even though the expression √64 looks like it might be irrational, 64 is a perfect square (8 × 8 = 64), so √64 simplifies exactly to 8 — a whole number, which is rational. Only square roots of non-perfect squares are irrational.' },
+
+        // Block 4 — Convert a recurring decimal to a fraction (Medium/Hard)
+        { difficulty: 'Medium', question: 'Convert 0.777... (7 recurring) to a fraction.', checkMode: 'auto', correctAnswer: '7/9', correctAnswers: ['7/9'], answer: '7/9', explanation: 'Let x = 0.777...\n10x = 7.777...\n10x − x = 7.777... − 0.777...\n9x = 7\nx = 7/9' },
+        { difficulty: 'Medium', question: 'Convert 0.454545... (45 recurring) to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '5/11', correctAnswers: ['5/11', '45/99'], answer: '5/11', explanation: 'Let x = 0.454545...\n100x = 45.454545...\n100x − x = 45.454545... − 0.454545...\n99x = 45\nx = 45/99 = 5/11 (dividing by the HCF, 9)' },
+        { difficulty: 'Hard', question: 'Convert 0.1666... (6 recurring) to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '1/6', correctAnswers: ['1/6'], answer: '1/6', explanation: 'Let x = 0.1666...\n10x = 1.666...\n100x = 16.666...\n100x − 10x = 16.666... − 1.666...\n90x = 15\nx = 15/90 = 1/6 (dividing by the HCF, 15)' },
+
+        // Block 5 — Order a set of real numbers (Hard)
+        { difficulty: 'Hard', question: 'Arrange these numbers from smallest to largest: −3, √2, 0.5, −1.5, √9.', checkMode: 'auto', correctAnswer: '−3, −1.5, 0.5, √2, √9', correctAnswers: ['−3, −1.5, 0.5, √2, √9', '-3, -1.5, 0.5, √2, √9'], answer: '−3, −1.5, 0.5, √2, √9', explanation: '√2 ≈ 1.41 and √9 = 3. Ordering: −3 < −1.5 < 0.5 < √2 (≈1.41) < √9 (=3).' },
+        { difficulty: 'Hard', question: 'Arrange these numbers from largest to smallest: 4, −2, π, −4.5, 0.', checkMode: 'auto', correctAnswer: '4, π, 0, −2, −4.5', correctAnswers: ['4, π, 0, −2, −4.5', '4, π, 0, -2, -4.5'], answer: '4, π, 0, −2, −4.5', explanation: 'π ≈ 3.14. Comparing 4 and π: 4 > 3.14, so 4 is largest. Ordering from largest to smallest: 4 > π (≈3.14) > 0 > −2 > −4.5.' },
+        { difficulty: 'Hard', question: 'Given the numbers √17, 4, −√1, 3.9 and −5, arrange them from smallest to largest.', checkMode: 'auto', correctAnswer: '−5, −√1, 3.9, 4, √17', correctAnswers: ['−5, −√1, 3.9, 4, √17', '-5, -√1, 3.9, 4, √17', '-5, -1, 3.9, 4, √17'], answer: '−5, −√1, 3.9, 4, √17', explanation: '−√1 = −1. √17 ≈ 4.12. Ordering: −5 < −1 < 3.9 < 4 < √17 (≈4.12).' },
+
+        // Block 6 — True/false reasoning about number-set properties (Hard)
+        { difficulty: 'Hard', question: 'True or false: the sum of a rational number and an irrational number is always irrational.', checkMode: 'auto', correctAnswer: 'true', correctAnswers: ['true'], answer: 'true', explanation: 'True. If you could write a rational number plus an irrational number as a fraction, then subtracting the rational part would mean the irrational number is also a fraction — a contradiction. So the sum is always irrational.' },
+        { difficulty: 'Hard', question: 'True or false: every integer is a rational number.', checkMode: 'auto', correctAnswer: 'true', correctAnswers: ['true'], answer: 'true', explanation: 'True. Any integer n can be written as the fraction n/1, so every integer satisfies the definition of a rational number.' },
+        { difficulty: 'Hard', question: 'Karabo says √2 + √2 = 2√2, and since he added two irrational numbers, the answer must be irrational. Is he correct?', checkMode: 'self', answer: 'Yes, he is correct.', explanation: '√2 + √2 = 2√2. Since √2 is irrational, multiplying it by the rational number 2 keeps it irrational (2√2 cannot be written as an exact fraction). Karabo is correct, but note this does not mean adding two irrationals is always irrational — it depends on the numbers, as √5 − √5 = 0 shows.' },
+        { difficulty: 'Hard', question: 'Thandeka says 0.3333... is irrational because the digits never stop. Explain why she is wrong.', checkMode: 'self', answer: 'She is wrong — 0.3333... is rational because it repeats in a pattern.', explanation: 'A decimal is only irrational if it is non-terminating AND non-repeating. 0.3333... does not terminate, but it does repeat (the digit 3 repeats forever), so it can be written as the fraction 1/3. It is rational.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered classifying and ordering real numbers.' },
+        { minScore: 14, message: 'Great work! Review any missed questions on recurring decimals or ordering, then try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples on rational and irrational numbers, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Classify a number (Easy)
+        { difficulty: 'Easy', question: 'Classify the number 15. List all the number sets it belongs to.', checkMode: 'self', answer: 'Natural number, whole number, integer, rational number.', explanation: '15 is a positive counting number, so it is natural, whole, an integer, and can be written as 15/1, so it is also rational.' },
+        { difficulty: 'Easy', question: 'Classify the number −20. List all the number sets it belongs to.', checkMode: 'self', answer: 'Integer, rational number (not natural, not whole).', explanation: '−20 is negative, so it cannot be natural or whole. It is an integer, and since it can be written as −20/1, it is also rational.' },
+        { difficulty: 'Easy', question: 'Classify the number −1. List all the number sets it belongs to.', checkMode: 'self', answer: 'Integer, rational number (not natural, not whole).', explanation: '−1 is negative, so it cannot be natural or whole. It is an integer, and since it can be written as −1/1, it is also rational.' },
+
+        // Block 2 — Rational or irrational? (Easy/Medium)
+        { difficulty: 'Easy', question: 'Is 0.45 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], answer: 'rational', explanation: '0.45 is a terminating decimal — it can be written as 9/20, so it is rational.' },
+        { difficulty: 'Easy', question: 'Is √64 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], answer: 'rational', explanation: '√64 = 8, since 8 × 8 = 64. 64 is a perfect square, so its square root is a whole number and therefore rational.' },
+        { difficulty: 'Medium', question: 'Is √19 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', correctAnswers: ['irrational'], answer: 'irrational', explanation: '19 is not a perfect square (4² = 16 and 5² = 25), so √19 cannot be simplified to a whole number. Its decimal expansion is non-terminating and non-repeating, so it is irrational.' },
+
+        // Block 3 — Identify the irrational number in a list (Medium/Hard)
+        { difficulty: 'Medium', question: 'Which of these numbers is irrational: √30, 9, 2/3, √100?', checkMode: 'auto', correctAnswer: '√30', correctAnswers: ['√30', 'sqrt30', '√(30)'], answer: '√30', explanation: '9 is an integer (rational), 2/3 is already a fraction (rational), √100 = 10 (rational). 30 is not a perfect square, so √30 is irrational.' },
+        { difficulty: 'Medium', question: 'Which of these numbers is irrational: √81, −11, 22/7, √2?', checkMode: 'auto', correctAnswer: '√2', correctAnswers: ['√2', 'sqrt2', '√(2)'], answer: '√2', explanation: '√81 = 9 (rational), −11 is an integer (rational), 22/7 is already a fraction (rational). 2 is not a perfect square, so √2 is irrational.' },
+        { difficulty: 'Hard', question: 'Mpho lists 5/6, √45, −3, and 2.4 and says √45 is the only irrational number. Is she correct?', checkMode: 'self', answer: 'Yes, she is correct.', explanation: '5/6 is a fraction (rational), −3 is an integer (rational), 2.4 is a terminating decimal (rational). 45 is not a perfect square, so √45 is irrational. Mpho is correct.' },
+        { difficulty: 'Hard', question: 'Explain why √100 belongs with the rational numbers even though it contains a square root sign.', checkMode: 'self', answer: '√100 = 10, which is a whole number, so it is rational.', explanation: 'Even though the expression √100 looks like it might be irrational, 100 is a perfect square (10 × 10 = 100), so √100 simplifies exactly to 10 — a whole number, which is rational. Only square roots of non-perfect squares are irrational.' },
+
+        // Block 4 — Convert a recurring decimal to a fraction (Medium/Hard)
+        { difficulty: 'Medium', question: 'Convert 0.888... (8 recurring) to a fraction.', checkMode: 'auto', correctAnswer: '8/9', correctAnswers: ['8/9'], answer: '8/9', explanation: 'Let x = 0.888...\n10x = 8.888...\n10x − x = 8.888... − 0.888...\n9x = 8\nx = 8/9' },
+        { difficulty: 'Medium', question: 'Convert 0.272727... (27 recurring) to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '3/11', correctAnswers: ['3/11', '27/99'], answer: '3/11', explanation: 'Let x = 0.272727...\n100x = 27.272727...\n100x − x = 27.272727... − 0.272727...\n99x = 27\nx = 27/99 = 3/11 (dividing by the HCF, 9)' },
+        { difficulty: 'Hard', question: 'Convert 0.2333... (3 recurring) to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '7/30', correctAnswers: ['7/30'], answer: '7/30', explanation: 'Let x = 0.2333...\n10x = 2.333...\n100x = 23.333...\n100x − 10x = 23.333... − 2.333...\n90x = 21\nx = 21/90 = 7/30 (dividing by the HCF, 3)' },
+
+        // Block 5 — Order a set of real numbers (Hard)
+        { difficulty: 'Hard', question: 'Arrange these numbers from smallest to largest: 3, −√5, 2.25, −3, √1.', checkMode: 'auto', correctAnswer: '−3, −√5, √1, 2.25, 3', correctAnswers: ['−3, −√5, √1, 2.25, 3', '-3, -√5, √1, 2.25, 3', '-3, -√5, 1, 2.25, 3'], answer: '−3, −√5, √1, 2.25, 3', explanation: '√5 ≈ 2.24, so −√5 ≈ −2.24. √1 = 1. Ordering: −3 < −√5 (≈−2.24) < √1 (=1) < 2.25 < 3.' },
+        { difficulty: 'Hard', question: 'Arrange these numbers from largest to smallest: 5, −6, √8, 0.9, −2.', checkMode: 'auto', correctAnswer: '5, √8, 0.9, −2, −6', correctAnswers: ['5, √8, 0.9, −2, −6', '5, √8, 0.9, -2, -6'], answer: '5, √8, 0.9, −2, −6', explanation: '√8 ≈ 2.83. Ordering from largest to smallest: 5 > √8 (≈2.83) > 0.9 > −2 > −6.' },
+        { difficulty: 'Hard', question: 'Given the numbers √99, 10, −√9, 8.7 and −6, arrange them from smallest to largest.', checkMode: 'auto', correctAnswer: '−6, −√9, 8.7, √99, 10', correctAnswers: ['−6, −√9, 8.7, √99, 10', '-6, -√9, 8.7, √99, 10', '-6, -3, 8.7, √99, 10'], answer: '−6, −√9, 8.7, √99, 10', explanation: '−√9 = −3. √99 ≈ 9.95. Ordering: −6 < −3 < 8.7 < √99 (≈9.95) < 10.' },
+
+        // Block 6 — True/false reasoning about number-set properties (Hard)
+        { difficulty: 'Hard', question: 'True or false: all rational numbers are integers.', checkMode: 'auto', correctAnswer: 'false', correctAnswers: ['false'], answer: 'false', explanation: 'False. Rational numbers include fractions like 1/2 that are not integers. All integers are rational, but not all rational numbers are integers.' },
+        { difficulty: 'Hard', question: 'True or false: the product of two irrational numbers is always irrational.', checkMode: 'auto', correctAnswer: 'false', correctAnswers: ['false'], answer: 'false', explanation: 'False. For example, √2 × √2 = 2, which is rational, even though both factors were irrational.' },
+        { difficulty: 'Hard', question: 'Prakash says every terminating decimal is irrational because it has digits after the decimal point. Is he correct?', checkMode: 'self', answer: 'No, he is incorrect.', explanation: 'A terminating decimal always ends after a finite number of digits and can be written as a fraction (e.g. 0.5 = 1/2), which makes it rational. Having digits after the decimal point does not make a number irrational — only non-terminating, non-repeating decimals are irrational.' },
+        { difficulty: 'Hard', question: 'Ayanda says √9 + √16 must be irrational because both numbers have square root signs. Explain why she is wrong.', checkMode: 'self', answer: 'She is wrong — √9 + √16 = 3 + 4 = 7, which is rational.', explanation: 'Having a square root sign does not automatically make a number irrational. 9 and 16 are both perfect squares, so √9 = 3 and √16 = 4, both whole numbers. Their sum, 7, is rational.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered classifying and ordering real numbers.' },
+        { minScore: 14, message: 'Great work! Review any missed questions on recurring decimals or ordering, then try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples on rational and irrational numbers, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Classify a number (Easy)
+        { difficulty: 'Easy', question: 'Classify the number 20. List all the number sets it belongs to.', checkMode: 'self', answer: 'Natural number, whole number, integer, rational number.', explanation: '20 is a positive counting number, so it is natural, whole, an integer, and can be written as 20/1, so it is also rational.' },
+        { difficulty: 'Easy', question: 'Classify the number −8. List all the number sets it belongs to.', checkMode: 'self', answer: 'Integer, rational number (not natural, not whole).', explanation: '−8 is negative, so it cannot be natural or whole. It is an integer, and since it can be written as −8/1, it is also rational.' },
+        { difficulty: 'Easy', question: 'Classify the number −100. List all the number sets it belongs to.', checkMode: 'self', answer: 'Integer, rational number (not natural, not whole).', explanation: '−100 is negative, so it cannot be natural or whole. It is an integer, and since it can be written as −100/1, it is also rational.' },
+
+        // Block 2 — Rational or irrational? (Easy/Medium)
+        { difficulty: 'Easy', question: 'Is 0.125 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], answer: 'rational', explanation: '0.125 is a terminating decimal — it can be written as 1/8, so it is rational.' },
+        { difficulty: 'Easy', question: 'Is √81 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], answer: 'rational', explanation: '√81 = 9, since 9 × 9 = 81. 81 is a perfect square, so its square root is a whole number and therefore rational.' },
+        { difficulty: 'Medium', question: 'Is √23 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', correctAnswers: ['irrational'], answer: 'irrational', explanation: '23 is not a perfect square (4² = 16 and 5² = 25), so √23 cannot be simplified to a whole number. Its decimal expansion is non-terminating and non-repeating, so it is irrational.' },
+
+        // Block 3 — Identify the irrational number in a list (Medium/Hard)
+        { difficulty: 'Medium', question: 'Which of these numbers is irrational: √40, 11, 5/8, √121?', checkMode: 'auto', correctAnswer: '√40', correctAnswers: ['√40', 'sqrt40', '√(40)'], answer: '√40', explanation: '11 is an integer (rational), 5/8 is already a fraction (rational), √121 = 11 (rational). 40 is not a perfect square, so √40 is irrational.' },
+        { difficulty: 'Medium', question: 'Which of these numbers is irrational: √144, −9, 7/9, √6?', checkMode: 'auto', correctAnswer: '√6', correctAnswers: ['√6', 'sqrt6', '√(6)'], answer: '√6', explanation: '√144 = 12 (rational), −9 is an integer (rational), 7/9 is already a fraction (rational). 6 is not a perfect square, so √6 is irrational.' },
+        { difficulty: 'Hard', question: 'Sizwe lists 3/7, √28, −5, and 4.8 and says √28 is the only irrational number. Is he correct?', checkMode: 'self', answer: 'Yes, he is correct.', explanation: '3/7 is a fraction (rational), −5 is an integer (rational), 4.8 is a terminating decimal (rational). 28 is not a perfect square, so √28 is irrational. Sizwe is correct.' },
+        { difficulty: 'Hard', question: 'Explain why √144 belongs with the rational numbers even though it contains a square root sign.', checkMode: 'self', answer: '√144 = 12, which is a whole number, so it is rational.', explanation: 'Even though the expression √144 looks like it might be irrational, 144 is a perfect square (12 × 12 = 144), so √144 simplifies exactly to 12 — a whole number, which is rational. Only square roots of non-perfect squares are irrational.' },
+
+        // Block 4 — Convert a recurring decimal to a fraction (Medium/Hard)
+        { difficulty: 'Medium', question: 'Convert 0.111... (1 recurring) to a fraction.', checkMode: 'auto', correctAnswer: '1/9', correctAnswers: ['1/9'], answer: '1/9', explanation: 'Let x = 0.111...\n10x = 1.111...\n10x − x = 1.111... − 0.111...\n9x = 1\nx = 1/9' },
+        { difficulty: 'Medium', question: 'Convert 0.636363... (63 recurring) to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '7/11', correctAnswers: ['7/11', '63/99'], answer: '7/11', explanation: 'Let x = 0.636363...\n100x = 63.636363...\n100x − x = 63.636363... − 0.636363...\n99x = 63\nx = 63/99 = 7/11 (dividing by the HCF, 9)' },
+        { difficulty: 'Hard', question: 'Convert 0.484848... (48 recurring) to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '16/33', correctAnswers: ['16/33', '48/99'], answer: '16/33', explanation: 'Let x = 0.484848...\n100x = 48.484848...\n100x − x = 48.484848... − 0.484848...\n99x = 48\nx = 48/99 = 16/33 (dividing by the HCF, 3)' },
+
+        // Block 5 — Order a set of real numbers (Hard)
+        { difficulty: 'Hard', question: 'Arrange these numbers from smallest to largest: −1, √7, −√4, 3.5, 0.', checkMode: 'auto', correctAnswer: '−√4, −1, 0, √7, 3.5', correctAnswers: ['−√4, −1, 0, √7, 3.5', '-√4, -1, 0, √7, 3.5', '-2, -1, 0, √7, 3.5'], answer: '−√4, −1, 0, √7, 3.5', explanation: '−√4 = −2. √7 ≈ 2.65. Comparing √7 and 3.5: 2.65 < 3.5. Ordering: −2 < −1 < 0 < √7 (≈2.65) < 3.5.' },
+        { difficulty: 'Hard', question: 'Arrange these numbers from largest to smallest: 6, −7, √20, 1.2, −4.', checkMode: 'auto', correctAnswer: '6, √20, 1.2, −4, −7', correctAnswers: ['6, √20, 1.2, −4, −7', '6, √20, 1.2, -4, -7'], answer: '6, √20, 1.2, −4, −7', explanation: '√20 ≈ 4.47. Ordering from largest to smallest: 6 > √20 (≈4.47) > 1.2 > −4 > −7.' },
+        { difficulty: 'Hard', question: 'Given the numbers √80, 9, −√1, 6.5 and −7, arrange them from smallest to largest.', checkMode: 'auto', correctAnswer: '−7, −√1, 6.5, √80, 9', correctAnswers: ['−7, −√1, 6.5, √80, 9', '-7, -√1, 6.5, √80, 9', '-7, -1, 6.5, √80, 9'], answer: '−7, −√1, 6.5, √80, 9', explanation: '−√1 = −1. √80 ≈ 8.94. Ordering: −7 < −1 < 6.5 < √80 (≈8.94) < 9.' },
+
+        // Block 6 — True/false reasoning about number-set properties (Hard)
+        { difficulty: 'Hard', question: 'True or false: zero is a natural number.', checkMode: 'auto', correctAnswer: 'false', correctAnswers: ['false'], answer: 'false', explanation: 'False. Natural numbers start counting from 1. Zero is a whole number, but it is not a natural number.' },
+        { difficulty: 'Hard', question: 'True or false: every whole number is an integer.', checkMode: 'auto', correctAnswer: 'true', correctAnswers: ['true'], answer: 'true', explanation: 'True. The whole numbers (0, 1, 2, 3, ...) are all included within the integers, which also contain the negative whole numbers.' },
+        { difficulty: 'Hard', question: 'Nomvula says √4 must be irrational because it has a square root sign in it. Is she correct?', checkMode: 'self', answer: 'No, she is incorrect.', explanation: '√4 = 2, because 2 × 2 = 4. 4 is a perfect square, so √4 simplifies exactly to the whole number 2, which is rational. A square root sign alone does not make a number irrational.' },
+        { difficulty: 'Hard', question: 'Lindiwe says π − π = 0, and since both terms were irrational, she expected an irrational answer. Explain why the result is actually rational.', checkMode: 'self', answer: '0 is rational, even though π is irrational.', explanation: 'Subtracting an irrational number from itself always cancels out to exactly 0, which is rational. This shows that combining two irrational numbers does not always give an irrational result — it depends on the specific numbers involved.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered classifying and ordering real numbers.' },
+        { minScore: 14, message: 'Great work! Review any missed questions on recurring decimals or ordering, then try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples on rational and irrational numbers, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

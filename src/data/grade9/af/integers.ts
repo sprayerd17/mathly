@@ -416,4 +416,157 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde en probeer weer.' },
     { minScore: 0, message: 'Hou aan — werk weer deur die gids en jy sal daar uitkom.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blok 1 (0-2):   Tekenreëls — vermenigvuldiging en deling van heelgetalle
+    // Blok 2 (3-5):   Kwadrate, kubusse en wortels van heelgetalle
+    // Blok 3 (6-7):   Kombinasie van wortels/magte in een berekening
+    // Blok 4 (8-11):  BODMAS meerstap-berekeninge
+    // Blok 5 (12-14): Distributiewe eienskap
+    // Blok 6 (15-16): Additiewe en vermenigvuldigende inverse
+    // Blok 7 (17-19): Werklike-lewe meerstap-probleme / foutopsporing / redenering
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Tekenreëls: vermenigvuldiging en deling (Easy)
+        { difficulty: 'Easy', question: 'Bereken −7 × (−8).', checkMode: 'auto', correctAnswer: '56', answer: '56', explanation: 'Negatief × negatief = positief.\n−7 × (−8) = 56 ✓' },
+        { difficulty: 'Easy', question: 'Bereken −54 ÷ 6.', checkMode: 'auto', correctAnswer: '-9', correctAnswers: ['-9', '−9'], answer: '−9', explanation: 'Negatief ÷ positief = negatief.\n−54 ÷ 6 = −9 ✓' },
+        { difficulty: 'Easy', question: 'Bereken −9 × 7.', checkMode: 'auto', correctAnswer: '-63', correctAnswers: ['-63', '−63'], answer: '−63', explanation: 'Negatief × positief = negatief.\n−9 × 7 = −63 ✓' },
+
+        // Blok 2 — Kwadrate, kubusse en wortels van heelgetalle (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Bereken −6².', checkMode: 'auto', correctAnswer: '-36', correctAnswers: ['-36', '−36'], answer: '−36', explanation: '−6² beteken −(6²), dus word slegs die 6 gekwadreer.\n−6² = −(36) = −36 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken (−6)².', checkMode: 'auto', correctAnswer: '36', answer: '36', explanation: 'Die hakies beteken die hele −6 word gekwadreer.\n(−6)² = (−6) × (−6) = 36 ✓' },
+        { difficulty: 'Medium', question: 'Bereken (−3)³.', checkMode: 'auto', correctAnswer: '-27', correctAnswers: ['-27', '−27'], answer: '−27', explanation: 'ʼn Onewe mag van ʼn negatiewe getal bly negatief.\n(−3)³ = (−3)(−3)(−3) = −27 ✓' },
+
+        // Blok 3 — Kombinasie van wortels en magte (Medium)
+        { difficulty: 'Medium', question: 'Bereken √64 + ∛(−27).', checkMode: 'auto', correctAnswer: '5', answer: '5', explanation: '√64 = 8 (positiewe vierkantswortel).\n∛(−27) = −3 (negatiewe kubuswortel, aangesien (−3)³ = −27).\n8 + (−3) = 5 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −8² + (−3)³.', checkMode: 'auto', correctAnswer: '-91', correctAnswers: ['-91', '−91'], answer: '−91', explanation: '−8² = −(64) = −64 (slegs die 8 word gekwadreer).\n(−3)³ = −27.\n−64 + (−27) = −91 ✓' },
+
+        // Blok 4 — BODMAS meerstap-berekeninge (Medium)
+        { difficulty: 'Medium', question: 'Bereken √36 − (−5)².', checkMode: 'auto', correctAnswer: '-19', correctAnswers: ['-19', '−19'], answer: '−19', explanation: '√36 = 6.\n(−5)² = 25 (ewe mag van ʼn negatiewe getal is positief).\n6 − 25 = −19 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −40 ÷ (−8) + (−2)³.', checkMode: 'auto', correctAnswer: '-3', correctAnswers: ['-3', '−3'], answer: '−3', explanation: 'Deling eerste: −40 ÷ (−8) = 5.\n(−2)³ = −8.\n5 + (−8) = −3 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −3² × (−2)².', checkMode: 'auto', correctAnswer: '-36', correctAnswers: ['-36', '−36'], answer: '−36', explanation: '−3² = −(9) = −9 (slegs die 3 word gekwadreer).\n(−2)² = 4.\n−9 × 4 = −36 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −18 + (−7) × 3 − (−10).', checkMode: 'auto', correctAnswer: '-29', correctAnswers: ['-29', '−29'], answer: '−29', explanation: 'Vermenigvuldiging eerste: (−7) × 3 = −21.\n−18 + (−21) − (−10) = −18 − 21 + 10 = −29 ✓' },
+
+        // Blok 5 — Distributiewe eienskap (Medium)
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om −5(9 − 4) te bereken.', checkMode: 'auto', correctAnswer: '-25', correctAnswers: ['-25', '−25'], answer: '−25', explanation: '−5(9 − 4) = (−5 × 9) − (−5 × 4) = −45 − (−20) = −45 + 20 = −25 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om −5(−8 + 3) te bereken.', checkMode: 'auto', correctAnswer: '25', answer: '25', explanation: '−5(−8 + 3) = (−5 × −8) + (−5 × 3) = 40 + (−15) = 25 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 6(−4 + 7) te bereken.', checkMode: 'auto', correctAnswer: '18', answer: '18', explanation: '6(−4 + 7) = (6 × −4) + (6 × 7) = −24 + 42 = 18 ✓' },
+
+        // Blok 6 — Additiewe en vermenigvuldigende inverse (Medium)
+        { difficulty: 'Medium', question: 'Vind die additiewe inverse van −23.', checkMode: 'auto', correctAnswer: '23', answer: '23', explanation: 'Die additiewe inverse is die getal wat tot 0 optel.\n−23 + 23 = 0, dus is die additiewe inverse van −23 gelyk aan 23 ✓' },
+        { difficulty: 'Medium', question: 'Vind die vermenigvuldigende inverse van −8.', checkMode: 'auto', correctAnswer: '-1/8', correctAnswers: ['-1/8', '−1/8'], answer: '−1/8', explanation: 'Die vermenigvuldigende inverse is die getal waarmee jy vermenigvuldig om 1 te kry.\n−8 × (−1/8) = 1, dus is die vermenigvuldigende inverse van −8 gelyk aan −1/8 ✓' },
+
+        // Blok 7 — Werklike-lewe meerstap-probleme / foutopsporing / redenering (Hard)
+        { difficulty: 'Hard', question: 'Vind twee heelgetalle waarvan die som −2 is en die produk −35 is.', answer: '5 en −7, aangesien 5 + (−7) = −2 en 5 × (−7) = −35.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Zinhle sê −3² − (−4)³ = −55. Is sy korrek? Wys die korrekte berekening.', answer: 'Nee — −3² = −9 (slegs die 3 word gekwadreer) en (−4)³ = −64. Dus is −3² − (−4)³ = −9 − (−64) = −9 + 64 = 55, nie −55 nie. Zinhle het waarskynlik die hele −3 per ongeluk gekwadreer.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Karabo se rekeningsaldo verander met −95, dan +140, dan −15 oor drie maande. Vind haar totale verandering.", answer: 'R30', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', 'R30'], explanation: '−95 + 140 + (−15).\n−95 + 140 = 45. Dan 45 − 15 = 30.\nKarabo se saldo het met R30 toegeneem in totaal ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het berekeninge met heelgetalle baasgeraak.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige vrae wat jy verkeerd gehad het oor BODMAS of inverse en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor kwadrate, kubusse en wortels, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Tekenreëls: vermenigvuldiging en deling (Easy)
+        { difficulty: 'Easy', question: 'Bereken −6 × (−9).', checkMode: 'auto', correctAnswer: '54', answer: '54', explanation: 'Negatief × negatief = positief.\n−6 × (−9) = 54 ✓' },
+        { difficulty: 'Easy', question: 'Bereken −48 ÷ 8.', checkMode: 'auto', correctAnswer: '-6', correctAnswers: ['-6', '−6'], answer: '−6', explanation: 'Negatief ÷ positief = negatief.\n−48 ÷ 8 = −6 ✓' },
+        { difficulty: 'Easy', question: 'Bereken −8 × 6.', checkMode: 'auto', correctAnswer: '-48', correctAnswers: ['-48', '−48'], answer: '−48', explanation: 'Negatief × positief = negatief.\n−8 × 6 = −48 ✓' },
+
+        // Blok 2 — Kwadrate, kubusse en wortels van heelgetalle (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Bereken −4².', checkMode: 'auto', correctAnswer: '-16', correctAnswers: ['-16', '−16'], answer: '−16', explanation: '−4² beteken −(4²), dus word slegs die 4 gekwadreer.\n−4² = −(16) = −16 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken (−4)².', checkMode: 'auto', correctAnswer: '16', answer: '16', explanation: 'Die hakies beteken die hele −4 word gekwadreer.\n(−4)² = (−4) × (−4) = 16 ✓' },
+        { difficulty: 'Medium', question: 'Bereken (−5)³.', checkMode: 'auto', correctAnswer: '-125', correctAnswers: ['-125', '−125'], answer: '−125', explanation: 'ʼn Onewe mag van ʼn negatiewe getal bly negatief.\n(−5)³ = (−5)(−5)(−5) = −125 ✓' },
+
+        // Blok 3 — Kombinasie van wortels en magte (Medium)
+        { difficulty: 'Medium', question: 'Bereken √81 + ∛(−125).', checkMode: 'auto', correctAnswer: '4', answer: '4', explanation: '√81 = 9 (positiewe vierkantswortel).\n∛(−125) = −5 (negatiewe kubuswortel, aangesien (−5)³ = −125).\n9 + (−5) = 4 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −6² + (−4)³.', checkMode: 'auto', correctAnswer: '-100', correctAnswers: ['-100', '−100'], answer: '−100', explanation: '−6² = −(36) = −36 (slegs die 6 word gekwadreer).\n(−4)³ = −64.\n−36 + (−64) = −100 ✓' },
+
+        // Blok 4 — BODMAS meerstap-berekeninge (Medium)
+        { difficulty: 'Medium', question: 'Bereken √49 − (−6)².', checkMode: 'auto', correctAnswer: '-29', correctAnswers: ['-29', '−29'], answer: '−29', explanation: '√49 = 7.\n(−6)² = 36 (ewe mag van ʼn negatiewe getal is positief).\n7 − 36 = −29 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −45 ÷ (−9) + (−3)³.', checkMode: 'auto', correctAnswer: '-22', correctAnswers: ['-22', '−22'], answer: '−22', explanation: 'Deling eerste: −45 ÷ (−9) = 5.\n(−3)³ = −27.\n5 + (−27) = −22 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −4² × (−3)².', checkMode: 'auto', correctAnswer: '-144', correctAnswers: ['-144', '−144'], answer: '−144', explanation: '−4² = −(16) = −16 (slegs die 4 word gekwadreer).\n(−3)² = 9.\n−16 × 9 = −144 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −22 + (−6) × 4 − (−12).', checkMode: 'auto', correctAnswer: '-34', correctAnswers: ['-34', '−34'], answer: '−34', explanation: 'Vermenigvuldiging eerste: (−6) × 4 = −24.\n−22 + (−24) − (−12) = −22 − 24 + 12 = −34 ✓' },
+
+        // Blok 5 — Distributiewe eienskap (Medium)
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om −4(7 − 6) te bereken.', checkMode: 'auto', correctAnswer: '-4', correctAnswers: ['-4', '−4'], answer: '−4', explanation: '−4(7 − 6) = (−4 × 7) − (−4 × 6) = −28 − (−24) = −28 + 24 = −4 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om −6(−5 + 2) te bereken.', checkMode: 'auto', correctAnswer: '18', answer: '18', explanation: '−6(−5 + 2) = (−6 × −5) + (−6 × 2) = 30 + (−12) = 18 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 7(−3 + 8) te bereken.', checkMode: 'auto', correctAnswer: '35', answer: '35', explanation: '7(−3 + 8) = (7 × −3) + (7 × 8) = −21 + 56 = 35 ✓' },
+
+        // Blok 6 — Additiewe en vermenigvuldigende inverse (Medium)
+        { difficulty: 'Medium', question: 'Vind die additiewe inverse van −31.', checkMode: 'auto', correctAnswer: '31', answer: '31', explanation: 'Die additiewe inverse is die getal wat tot 0 optel.\n−31 + 31 = 0, dus is die additiewe inverse van −31 gelyk aan 31 ✓' },
+        { difficulty: 'Medium', question: 'Vind die vermenigvuldigende inverse van −10.', checkMode: 'auto', correctAnswer: '-1/10', correctAnswers: ['-1/10', '−1/10'], answer: '−1/10', explanation: 'Die vermenigvuldigende inverse is die getal waarmee jy vermenigvuldig om 1 te kry.\n−10 × (−1/10) = 1, dus is die vermenigvuldigende inverse van −10 gelyk aan −1/10 ✓' },
+
+        // Blok 7 — Werklike-lewe meerstap-probleme / foutopsporing / redenering (Hard)
+        { difficulty: 'Hard', question: 'Vind twee heelgetalle waarvan die som 1 is en die produk −42 is.', answer: '7 en −6, aangesien 7 + (−6) = 1 en 7 × (−6) = −42.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bandile sê −4² − (−3)³ = −5. Is hy korrek? Wys die korrekte berekening.', answer: 'Nee — −4² = −16 (slegs die 4 word gekwadreer) en (−3)³ = −27. Dus is −4² − (−3)³ = −16 − (−27) = −16 + 27 = 11, nie −5 nie. Bandile het waarskynlik die hele −4 per ongeluk gekwadreer.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Naledi se rekeningsaldo verander met −130, dan +210, dan −25 oor drie maande. Vind haar totale verandering.", answer: 'R55', checkMode: 'auto', correctAnswer: '55', correctAnswers: ['55', 'R55'], explanation: '−130 + 210 + (−25).\n−130 + 210 = 80. Dan 80 − 25 = 55.\nNaledi se saldo het met R55 toegeneem in totaal ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het berekeninge met heelgetalle baasgeraak.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige vrae wat jy verkeerd gehad het oor BODMAS of inverse en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor kwadrate, kubusse en wortels, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Tekenreëls: vermenigvuldiging en deling (Easy)
+        { difficulty: 'Easy', question: 'Bereken −5 × (−12).', checkMode: 'auto', correctAnswer: '60', answer: '60', explanation: 'Negatief × negatief = positief.\n−5 × (−12) = 60 ✓' },
+        { difficulty: 'Easy', question: 'Bereken −72 ÷ 9.', checkMode: 'auto', correctAnswer: '-8', correctAnswers: ['-8', '−8'], answer: '−8', explanation: 'Negatief ÷ positief = negatief.\n−72 ÷ 9 = −8 ✓' },
+        { difficulty: 'Easy', question: 'Bereken −6 × 11.', checkMode: 'auto', correctAnswer: '-66', correctAnswers: ['-66', '−66'], answer: '−66', explanation: 'Negatief × positief = negatief.\n−6 × 11 = −66 ✓' },
+
+        // Blok 2 — Kwadrate, kubusse en wortels van heelgetalle (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Bereken −7².', checkMode: 'auto', correctAnswer: '-49', correctAnswers: ['-49', '−49'], answer: '−49', explanation: '−7² beteken −(7²), dus word slegs die 7 gekwadreer.\n−7² = −(49) = −49 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken (−7)².', checkMode: 'auto', correctAnswer: '49', answer: '49', explanation: 'Die hakies beteken die hele −7 word gekwadreer.\n(−7)² = (−7) × (−7) = 49 ✓' },
+        { difficulty: 'Medium', question: 'Bereken (−4)³.', checkMode: 'auto', correctAnswer: '-64', correctAnswers: ['-64', '−64'], answer: '−64', explanation: 'ʼn Onewe mag van ʼn negatiewe getal bly negatief.\n(−4)³ = (−4)(−4)(−4) = −64 ✓' },
+
+        // Blok 3 — Kombinasie van wortels en magte (Medium)
+        { difficulty: 'Medium', question: 'Bereken √100 + ∛(−64).', checkMode: 'auto', correctAnswer: '6', answer: '6', explanation: '√100 = 10 (positiewe vierkantswortel).\n∛(−64) = −4 (negatiewe kubuswortel, aangesien (−4)³ = −64).\n10 + (−4) = 6 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −9² + (−2)³.', checkMode: 'auto', correctAnswer: '-89', correctAnswers: ['-89', '−89'], answer: '−89', explanation: '−9² = −(81) = −81 (slegs die 9 word gekwadreer).\n(−2)³ = −8.\n−81 + (−8) = −89 ✓' },
+
+        // Blok 4 — BODMAS meerstap-berekeninge (Medium)
+        { difficulty: 'Medium', question: 'Bereken √64 − (−4)².', checkMode: 'auto', correctAnswer: '-8', correctAnswers: ['-8', '−8'], answer: '−8', explanation: '√64 = 8.\n(−4)² = 16 (ewe mag van ʼn negatiewe getal is positief).\n8 − 16 = −8 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −60 ÷ (−12) + (−2)⁴.', checkMode: 'auto', correctAnswer: '21', answer: '21', explanation: 'Deling eerste: −60 ÷ (−12) = 5.\n(−2)⁴ = 16 (ewe mag van ʼn negatiewe getal is positief).\n5 + 16 = 21 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −2² × (−5)².', checkMode: 'auto', correctAnswer: '-100', correctAnswers: ['-100', '−100'], answer: '−100', explanation: '−2² = −(4) = −4 (slegs die 2 word gekwadreer).\n(−5)² = 25.\n−4 × 25 = −100 ✓' },
+        { difficulty: 'Medium', question: 'Bereken −27 + (−5) × 6 − (−14).', checkMode: 'auto', correctAnswer: '-43', correctAnswers: ['-43', '−43'], answer: '−43', explanation: 'Vermenigvuldiging eerste: (−5) × 6 = −30.\n−27 + (−30) − (−14) = −27 − 30 + 14 = −43 ✓' },
+
+        // Blok 5 — Distributiewe eienskap (Medium)
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om −3(11 − 4) te bereken.', checkMode: 'auto', correctAnswer: '-21', correctAnswers: ['-21', '−21'], answer: '−21', explanation: '−3(11 − 4) = (−3 × 11) − (−3 × 4) = −33 − (−12) = −33 + 12 = −21 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om −8(−3 + 5) te bereken.', checkMode: 'auto', correctAnswer: '-16', correctAnswers: ['-16', '−16'], answer: '−16', explanation: '−8(−3 + 5) = (−8 × −3) + (−8 × 5) = 24 + (−40) = −16 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 9(−2 + 6) te bereken.', checkMode: 'auto', correctAnswer: '36', answer: '36', explanation: '9(−2 + 6) = (9 × −2) + (9 × 6) = −18 + 54 = 36 ✓' },
+
+        // Blok 6 — Additiewe en vermenigvuldigende inverse (Medium)
+        { difficulty: 'Medium', question: 'Vind die additiewe inverse van −42.', checkMode: 'auto', correctAnswer: '42', answer: '42', explanation: 'Die additiewe inverse is die getal wat tot 0 optel.\n−42 + 42 = 0, dus is die additiewe inverse van −42 gelyk aan 42 ✓' },
+        { difficulty: 'Medium', question: 'Vind die vermenigvuldigende inverse van −12.', checkMode: 'auto', correctAnswer: '-1/12', correctAnswers: ['-1/12', '−1/12'], answer: '−1/12', explanation: 'Die vermenigvuldigende inverse is die getal waarmee jy vermenigvuldig om 1 te kry.\n−12 × (−1/12) = 1, dus is die vermenigvuldigende inverse van −12 gelyk aan −1/12 ✓' },
+
+        // Blok 7 — Werklike-lewe meerstap-probleme / foutopsporing / redenering (Hard)
+        { difficulty: 'Hard', question: 'Vind twee heelgetalle waarvan die som −4 is en die produk −60 is.', answer: '6 en −10, aangesien 6 + (−10) = −4 en 6 × (−10) = −60.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sizwe sê −5² − (−2)³ = −33. Is hy korrek? Wys die korrekte berekening.', answer: 'Nee — −5² = −25 (slegs die 5 word gekwadreer) en (−2)³ = −8. Dus is −5² − (−2)³ = −25 − (−8) = −25 + 8 = −17, nie −33 nie. Sizwe het waarskynlik ʼn tekenfout gemaak toe hy ʼn negatiewe getal afgetrek het.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "Palesa se rekeningsaldo verander met −150, dan +260, dan −45 oor drie maande. Vind haar totale verandering.", answer: 'R65', checkMode: 'auto', correctAnswer: '65', correctAnswers: ['65', 'R65'], explanation: '−150 + 260 + (−45).\n−150 + 260 = 110. Dan 110 − 45 = 65.\nPalesa se saldo het met R65 toegeneem in totaal ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het berekeninge met heelgetalle baasgeraak.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige vrae wat jy verkeerd gehad het oor BODMAS of inverse en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor kwadrate, kubusse en wortels, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

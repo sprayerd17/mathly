@@ -445,4 +445,150 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging! Hersien die afdelings en uitgewerkte voorbeelde, en probeer dan weer.' },
     { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids afdeling vir afdeling, en probeer dan weer.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae) — geen diagramme nie, suiwer woordprobleem/numeriese inhoud
+    // Blok 1 (0-2):   Verhoudings tot eenvoudigste vorm vereenvoudig
+    // Blok 2 (3-6):   ʼn Bedrag in ʼn gegewe verhouding verdeel
+    // Blok 3 (7-10):  Direkte proporsie woordprobleme
+    // Blok 4 (11-13): Indirekte (omgekeerde) proporsie woordprobleme
+    // Blok 5 (14-16): Koersprobleme (eenheidskoers, spoed/afstand/tyd)
+    // Blok 6 (17-19): Skaal/kaart-probleme en ʼn gekombineerde multi-stap probleem
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Verhoudings vereenvoudig (Easy)
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 24 : 36 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', '2 : 3'], answer: '2 : 3', explanation: 'GGF van 24 en 36 is 12.\n24 ÷ 12 = 2 en 36 ÷ 12 = 3.\nEenvoudigste vorm: 2 : 3' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 18 : 42 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3:7', correctAnswers: ['3:7', '3 : 7'], answer: '3 : 7', explanation: 'GGF van 18 en 42 is 6.\n18 ÷ 6 = 3 en 42 ÷ 6 = 7.\nEenvoudigste vorm: 3 : 7' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 150 : 90 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '5:3', correctAnswers: ['5:3', '5 : 3'], answer: '5 : 3', explanation: 'GGF van 150 en 90 is 30.\n150 ÷ 30 = 5 en 90 ÷ 30 = 3.\nEenvoudigste vorm: 5 : 3' },
+
+        // Blok 2 — ʼn Bedrag in ʼn gegewe verhouding verdeel (Medium)
+        { difficulty: 'Medium', question: 'Verdeel R360 tussen Thabo en Lerato in die verhouding 4 : 5. Vind Thabo se deel.', checkMode: 'auto', correctAnswer: 'R160', correctAnswers: ['R160', '160'], answer: 'R160', explanation: 'Totale dele = 4 + 5 = 9.\nWaarde van 1 deel = 360 ÷ 9 = R40.\nThabo se deel = 4 × R40 = R160' },
+        { difficulty: 'Medium', question: 'Verdeel R600 tussen drie vriende in die verhouding 2 : 3 : 5. Vind die grootste deel.', checkMode: 'auto', correctAnswer: 'R300', correctAnswers: ['R300', '300'], answer: 'R300', explanation: 'Totale dele = 2 + 3 + 5 = 10.\nWaarde van 1 deel = 600 ÷ 10 = R60.\nGrootste deel = 5 × R60 = R300' },
+        { difficulty: 'Medium', question: 'Verdeel R200 tussen Sipho en Amahle in die verhouding 3 : 5. Vind Amahle se deel.', checkMode: 'auto', correctAnswer: 'R125', correctAnswers: ['R125', '125'], answer: 'R125', explanation: 'Totale dele = 3 + 5 = 8.\nWaarde van 1 deel = 200 ÷ 8 = R25.\nAmahle se deel = 5 × R25 = R125' },
+        { difficulty: 'Medium', question: 'ʼn Klas van 40 leerders word in twee groepe verdeel in die verhouding seuns tot meisies van 3 : 5. Hoeveel meisies is in die klas?', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 meisies'], answer: '25', explanation: 'Totale dele = 3 + 5 = 8.\nWaarde van 1 deel = 40 ÷ 8 = 5.\nMeisies = 5 × 5 = 25' },
+
+        // Blok 3 — Direkte proporsie woordprobleme (Medium/Hard)
+        { difficulty: 'Medium', question: 'As 5 kg rys R85 kos, vind die koste van 8 kg deur direkte proporsie te gebruik.', checkMode: 'auto', correctAnswer: 'R136', correctAnswers: ['R136', '136'], answer: 'R136', explanation: 'Stel gelyke verhoudings op: 5/85 = 8/x.\nKruisvermenigvuldig: 5x = 8 × 85 = 680.\nx = 680 ÷ 5 = 136.\nKoste = R136 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skool koop 12 handboeke vir R540. Gebruik direkte proporsie om die koste van 20 handboeke te vind.', checkMode: 'auto', correctAnswer: 'R900', correctAnswers: ['R900', '900'], answer: 'R900', explanation: 'Stel gelyke verhoudings op: 12/540 = 20/x.\nKruisvermenigvuldig: 12x = 20 × 540 = 10 800.\nx = 10 800 ÷ 12 = 900.\nKoste = R900 ✓' },
+        { difficulty: 'Hard', question: 'Die wisselkoers is 6 Amerikaanse dollar vir R114. Gebruik direkte proporsie om te vind hoeveel rand 15 Amerikaanse dollar werd is.', checkMode: 'auto', correctAnswer: 'R285', correctAnswers: ['R285', '285'], answer: 'R285', explanation: 'Stel gelyke verhoudings op: 6/114 = 15/x.\nKruisvermenigvuldig: 6x = 15 × 114 = 1 710.\nx = 1 710 ÷ 6 = 285.\nWaarde = R285 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Resep gebruik 400 g meel vir elke 250 ml melk. Gebruik direkte proporsie om te vind hoeveel meel benodig word vir 625 ml melk.', checkMode: 'auto', correctAnswer: '1000g', correctAnswers: ['1000g', '1000', '1 000g', '1 000 g', '1kg', '1 kg'], answer: '1 000 g', explanation: 'Stel gelyke verhoudings op: 250/400 = 625/x.\nKruisvermenigvuldig: 250x = 625 × 400 = 250 000.\nx = 250 000 ÷ 250 = 1 000.\nMeel benodig = 1 000 g ✓' },
+
+        // Blok 4 — Indirekte (omgekeerde) proporsie woordprobleme (Hard)
+        { difficulty: 'Hard', question: '4 werkers kan ʼn muur in 18 dae bou. Hoeveel dae sal 6 werkers neem, met die aanname van omgekeerde proporsie?', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 dae'], answer: '12 dae', explanation: 'x₁y₁ = x₂y₂.\n4 × 18 = 6 × y₂.\n72 = 6y₂.\ny₂ = 72 ÷ 6 = 12 dae ✓' },
+        { difficulty: 'Hard', question: 'ʼn Motor ry teen 90 km/h en neem 4 uur vir ʼn reis. Vind die tyd geneem as dit teen 60 km/h ry.', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 uur'], answer: '6 uur', explanation: 'x₁y₁ = x₂y₂.\n90 × 4 = 60 × y₂.\n360 = 60y₂.\ny₂ = 360 ÷ 60 = 6 uur ✓' },
+        { difficulty: 'Hard', question: '10 krane vul ʼn tenk in 8 uur. Hoe lank sal 16 krane neem, met die aanname van omgekeerde proporsie?', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 uur'], answer: '5 uur', explanation: 'x₁y₁ = x₂y₂.\n10 × 8 = 16 × y₂.\n80 = 16y₂.\ny₂ = 80 ÷ 16 = 5 uur ✓' },
+
+        // Blok 5 — Koersprobleme (Hard)
+        { difficulty: 'Hard', question: 'ʼn Winkel verkoop 12 identiese items vir R156. Vind die prys van een item (die eenheidskoers).', checkMode: 'auto', correctAnswer: 'R13', correctAnswers: ['R13', '13'], answer: 'R13', explanation: 'Eenheidskoers = totale koste ÷ aantal items.\n156 ÷ 12 = 13.\nPrys per item = R13 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Motor ry teen ʼn konstante spoed van 72 km/h vir 3,5 uur. Vind die afstand afgelê.', checkMode: 'auto', correctAnswer: '252', correctAnswers: ['252', '252km', '252 km'], answer: '252 km', explanation: 'Afstand = spoed × tyd.\nAfstand = 72 × 3,5 = 252 km ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder tik 210 woorde in 3,5 minute teen ʼn konstante tempo. Hoe lank sal dit neem om 480 woorde teen dieselfde tempo te tik?', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 minute'], answer: '8 minute', explanation: 'Tempo = 210 ÷ 3,5 = 60 woorde per minuut.\nTyd vir 480 woorde = 480 ÷ 60 = 8 minute ✓' },
+
+        // Blok 6 — Skaal/kaart-probleme en gekombineerde multi-stap (Hard)
+        { difficulty: 'Hard', question: 'ʼn Kaart het ʼn skaal van 1 : 50 000. Die afstand tussen twee dorpe op die kaart is 6 cm. Vind die werklike afstand in km.', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3km', '3 km'], answer: '3 km', explanation: 'Werklike afstand = 6 × 50 000 = 300 000 cm.\nSkakel om na km: 300 000 ÷ 100 000 = 3 km ✓' },
+        { difficulty: 'Hard', question: 'ʼn Kaart het ʼn skaal van 1 : 20 000. Twee landmerke is 3 km uit mekaar in werklikheid. Vind die afstand tussen hulle op die kaart, in cm.', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15cm', '15 cm'], answer: '15 cm', explanation: 'Skakel 3 km om na cm: 3 × 100 000 = 300 000 cm.\nKaartafstand = 300 000 ÷ 20 000 = 15 cm ✓' },
+        { difficulty: 'Hard', question: 'Sement, sand en klip word in die verhouding 1 : 2 : 3 gemeng om 240 kg beton te maak. Vind die massa sand benodig. As die werk opgeskaal word na 3 keer die lotgrootte, vind die nuwe massa sand benodig.', answer: 'Totale dele = 1 + 2 + 3 = 6.\nWaarde van 1 deel = 240 ÷ 6 = 40 kg.\nSand (2 dele) = 2 × 40 = 80 kg.\nOpgeskaalde totaal = 240 × 3 = 720 kg, so sand skaal op dieselfde manier: 80 × 3 = 240 kg.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het verhouding, verdeling, proporsie, koers en skaal-probleme bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor omgekeerde proporsie of skaal na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor direkte en indirekte proporsie weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Verhoudings vereenvoudig (Easy)
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 28 : 42 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', '2 : 3'], answer: '2 : 3', explanation: 'GGF van 28 en 42 is 14.\n28 ÷ 14 = 2 en 42 ÷ 14 = 3.\nEenvoudigste vorm: 2 : 3' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 20 : 45 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '4:9', correctAnswers: ['4:9', '4 : 9'], answer: '4 : 9', explanation: 'GGF van 20 en 45 is 5.\n20 ÷ 5 = 4 en 45 ÷ 5 = 9.\nEenvoudigste vorm: 4 : 9' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 126 : 84 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2', '3 : 2'], answer: '3 : 2', explanation: 'GGF van 126 en 84 is 42.\n126 ÷ 42 = 3 en 84 ÷ 42 = 2.\nEenvoudigste vorm: 3 : 2' },
+
+        // Blok 2 — ʼn Bedrag in ʼn gegewe verhouding verdeel (Medium)
+        { difficulty: 'Medium', question: 'Verdeel R280 tussen Sipho en Naledi in die verhouding 3 : 4. Vind Sipho se deel.', checkMode: 'auto', correctAnswer: 'R120', correctAnswers: ['R120', '120'], answer: 'R120', explanation: 'Totale dele = 3 + 4 = 7.\nWaarde van 1 deel = 280 ÷ 7 = R40.\nSipho se deel = 3 × R40 = R120' },
+        { difficulty: 'Medium', question: 'Verdeel R450 tussen drie liefdadigheidsorganisasies in die verhouding 1 : 2 : 2. Vind die waarde van elk van die twee gelyke (groter) dele.', checkMode: 'auto', correctAnswer: 'R180', correctAnswers: ['R180', '180'], answer: 'R180', explanation: 'Totale dele = 1 + 2 + 2 = 5.\nWaarde van 1 deel = 450 ÷ 5 = R90.\nElke groter deel = 2 × R90 = R180' },
+        { difficulty: 'Medium', question: 'Verdeel R336 tussen Buhle en Kagiso in die verhouding 4 : 3. Vind Buhle se deel.', checkMode: 'auto', correctAnswer: 'R192', correctAnswers: ['R192', '192'], answer: 'R192', explanation: 'Totale dele = 4 + 3 = 7.\nWaarde van 1 deel = 336 ÷ 7 = R48.\nBuhle se deel = 4 × R48 = R192' },
+        { difficulty: 'Medium', question: 'ʼn Plaas het 1 050 hoenders en eende in die verhouding 3 : 4. Hoeveel eende is op die plaas?', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600', '600 eende'], answer: '600', explanation: 'Totale dele = 3 + 4 = 7.\nWaarde van 1 deel = 1 050 ÷ 7 = 150.\nEende = 4 × 150 = 600' },
+
+        // Blok 3 — Direkte proporsie woordprobleme (Medium/Hard)
+        { difficulty: 'Medium', question: 'As 4 kg rys R76 kos, vind die koste van 9 kg deur direkte proporsie te gebruik.', checkMode: 'auto', correctAnswer: 'R171', correctAnswers: ['R171', '171'], answer: 'R171', explanation: 'Stel gelyke verhoudings op: 4/76 = 9/x.\nKruisvermenigvuldig: 4x = 9 × 76 = 684.\nx = 684 ÷ 4 = 171.\nKoste = R171 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skool koop 15 handboeke vir R675. Gebruik direkte proporsie om die koste van 24 handboeke te vind.', checkMode: 'auto', correctAnswer: 'R1080', correctAnswers: ['R1080', '1080', 'R1 080', '1 080'], answer: 'R1 080', explanation: 'Stel gelyke verhoudings op: 15/675 = 24/x.\nKruisvermenigvuldig: 15x = 24 × 675 = 16 200.\nx = 16 200 ÷ 15 = 1 080.\nKoste = R1 080 ✓' },
+        { difficulty: 'Hard', question: 'Die wisselkoers is 8 Amerikaanse dollar vir R152. Gebruik direkte proporsie om te vind hoeveel rand 20 Amerikaanse dollar werd is.', checkMode: 'auto', correctAnswer: 'R380', correctAnswers: ['R380', '380'], answer: 'R380', explanation: 'Stel gelyke verhoudings op: 8/152 = 20/x.\nKruisvermenigvuldig: 8x = 20 × 152 = 3 040.\nx = 3 040 ÷ 8 = 380.\nWaarde = R380 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Resep gebruik 480 g meel vir elke 300 ml melk. Gebruik direkte proporsie om te vind hoeveel meel benodig word vir 750 ml melk.', checkMode: 'auto', correctAnswer: '1200g', correctAnswers: ['1200g', '1200', '1 200g', '1 200 g', '1,2kg'], answer: '1 200 g', explanation: 'Stel gelyke verhoudings op: 300/480 = 750/x.\nKruisvermenigvuldig: 300x = 750 × 480 = 360 000.\nx = 360 000 ÷ 300 = 1 200.\nMeel benodig = 1 200 g ✓' },
+
+        // Blok 4 — Indirekte (omgekeerde) proporsie woordprobleme (Hard)
+        { difficulty: 'Hard', question: '6 werkers kan ʼn muur in 15 dae bou. Hoeveel dae sal 9 werkers neem, met die aanname van omgekeerde proporsie?', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 dae'], answer: '10 dae', explanation: 'x₁y₁ = x₂y₂.\n6 × 15 = 9 × y₂.\n90 = 9y₂.\ny₂ = 90 ÷ 9 = 10 dae ✓' },
+        { difficulty: 'Hard', question: 'ʼn Motor ry teen 80 km/h en neem 6 uur vir ʼn reis. Vind die tyd geneem as dit teen 96 km/h ry.', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 uur'], answer: '5 uur', explanation: 'x₁y₁ = x₂y₂.\n80 × 6 = 96 × y₂.\n480 = 96y₂.\ny₂ = 480 ÷ 96 = 5 uur ✓' },
+        { difficulty: 'Hard', question: '12 krane vul ʼn tenk in 9 uur. Hoe lank sal 18 krane neem, met die aanname van omgekeerde proporsie?', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 uur'], answer: '6 uur', explanation: 'x₁y₁ = x₂y₂.\n12 × 9 = 18 × y₂.\n108 = 18y₂.\ny₂ = 108 ÷ 18 = 6 uur ✓' },
+
+        // Blok 5 — Koersprobleme (Hard)
+        { difficulty: 'Hard', question: 'ʼn Winkel verkoop 12 identiese items vir R204. Vind die prys van een item (die eenheidskoers).', checkMode: 'auto', correctAnswer: 'R17', correctAnswers: ['R17', '17'], answer: 'R17', explanation: 'Eenheidskoers = totale koste ÷ aantal items.\n204 ÷ 12 = 17.\nPrys per item = R17 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Motor ry teen ʼn konstante spoed van 84 km/h vir 2,5 uur. Vind die afstand afgelê.', checkMode: 'auto', correctAnswer: '210', correctAnswers: ['210', '210km', '210 km'], answer: '210 km', explanation: 'Afstand = spoed × tyd.\nAfstand = 84 × 2,5 = 210 km ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder tik 180 woorde in 3 minute teen ʼn konstante tempo. Hoe lank sal dit neem om 420 woorde teen dieselfde tempo te tik?', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', '7 minute'], answer: '7 minute', explanation: 'Tempo = 180 ÷ 3 = 60 woorde per minuut.\nTyd vir 420 woorde = 420 ÷ 60 = 7 minute ✓' },
+
+        // Blok 6 — Skaal/kaart-probleme en gekombineerde multi-stap (Hard)
+        { difficulty: 'Hard', question: 'ʼn Kaart het ʼn skaal van 1 : 25 000. Die afstand tussen twee dorpe op die kaart is 8 cm. Vind die werklike afstand in km.', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', '2km', '2 km'], answer: '2 km', explanation: 'Werklike afstand = 8 × 25 000 = 200 000 cm.\nSkakel om na km: 200 000 ÷ 100 000 = 2 km ✓' },
+        { difficulty: 'Hard', question: 'ʼn Kaart het ʼn skaal van 1 : 40 000. Twee landmerke is 6 km uit mekaar in werklikheid. Vind die afstand tussen hulle op die kaart, in cm.', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15cm', '15 cm'], answer: '15 cm', explanation: 'Skakel 6 km om na cm: 6 × 100 000 = 600 000 cm.\nKaartafstand = 600 000 ÷ 40 000 = 15 cm ✓' },
+        { difficulty: 'Hard', question: 'Rooi, blou en geel verf word in die verhouding 2 : 3 : 5 gemeng om 300 L van ʼn spesiale kleur te maak. Vind die volume blou verf benodig. As die lot opgeskaal word na 2 keer die grootte, vind die nuwe volume blou verf benodig.', answer: 'Totale dele = 2 + 3 + 5 = 10.\nWaarde van 1 deel = 300 ÷ 10 = 30 L.\nBlou verf (3 dele) = 3 × 30 = 90 L.\nOpgeskaalde totaal = 300 × 2 = 600 L, so blou verf skaal op dieselfde manier: 90 × 2 = 180 L.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het verhouding, verdeling, proporsie, koers en skaal-probleme bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor omgekeerde proporsie of skaal na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor direkte en indirekte proporsie weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Verhoudings vereenvoudig (Easy)
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 32 : 48 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', '2 : 3'], answer: '2 : 3', explanation: 'GGF van 32 en 48 is 16.\n32 ÷ 16 = 2 en 48 ÷ 16 = 3.\nEenvoudigste vorm: 2 : 3' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 27 : 63 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3:7', correctAnswers: ['3:7', '3 : 7'], answer: '3 : 7', explanation: 'GGF van 27 en 63 is 9.\n27 ÷ 9 = 3 en 63 ÷ 9 = 7.\nEenvoudigste vorm: 3 : 7' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 180 : 120 tot sy eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2', '3 : 2'], answer: '3 : 2', explanation: 'GGF van 180 en 120 is 60.\n180 ÷ 60 = 3 en 120 ÷ 60 = 2.\nEenvoudigste vorm: 3 : 2' },
+
+        // Blok 2 — ʼn Bedrag in ʼn gegewe verhouding verdeel (Medium)
+        { difficulty: 'Medium', question: 'Verdeel R420 tussen Amahle en Thabo in die verhouding 5 : 7. Vind Amahle se deel.', checkMode: 'auto', correctAnswer: 'R175', correctAnswers: ['R175', '175'], answer: 'R175', explanation: 'Totale dele = 5 + 7 = 12.\nWaarde van 1 deel = 420 ÷ 12 = R35.\nAmahle se deel = 5 × R35 = R175' },
+        { difficulty: 'Medium', question: 'Verdeel R360 tussen drie neefs/niggies in die verhouding 2 : 3 : 4. Vind die kleinste deel.', checkMode: 'auto', correctAnswer: 'R80', correctAnswers: ['R80', '80'], answer: 'R80', explanation: 'Totale dele = 2 + 3 + 4 = 9.\nWaarde van 1 deel = 360 ÷ 9 = R40.\nKleinste deel = 2 × R40 = R80' },
+        { difficulty: 'Medium', question: 'Verdeel R440 tussen Lerato en Sipho in die verhouding 3 : 8. Vind Sipho se deel.', checkMode: 'auto', correctAnswer: 'R320', correctAnswers: ['R320', '320'], answer: 'R320', explanation: 'Totale dele = 3 + 8 = 11.\nWaarde van 1 deel = 440 ÷ 11 = R40.\nSipho se deel = 8 × R40 = R320' },
+        { difficulty: 'Medium', question: 'ʼn Tuin het 725 rosebosse en struike in die verhouding 3 : 2. Hoeveel rosebosse is daar?', checkMode: 'auto', correctAnswer: '435', correctAnswers: ['435', '435 rosebosse'], answer: '435', explanation: 'Totale dele = 3 + 2 = 5.\nWaarde van 1 deel = 725 ÷ 5 = 145.\nRosebosse = 3 × 145 = 435' },
+
+        // Blok 3 — Direkte proporsie woordprobleme (Medium/Hard)
+        { difficulty: 'Medium', question: 'As 6 kg rys R108 kos, vind die koste van 10 kg deur direkte proporsie te gebruik.', checkMode: 'auto', correctAnswer: 'R180', correctAnswers: ['R180', '180'], answer: 'R180', explanation: 'Stel gelyke verhoudings op: 6/108 = 10/x.\nKruisvermenigvuldig: 6x = 10 × 108 = 1 080.\nx = 1 080 ÷ 6 = 180.\nKoste = R180 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skool koop 18 handboeke vir R720. Gebruik direkte proporsie om die koste van 25 handboeke te vind.', checkMode: 'auto', correctAnswer: 'R1000', correctAnswers: ['R1000', '1000', 'R1 000', '1 000'], answer: 'R1 000', explanation: 'Stel gelyke verhoudings op: 18/720 = 25/x.\nKruisvermenigvuldig: 18x = 25 × 720 = 18 000.\nx = 18 000 ÷ 18 = 1 000.\nKoste = R1 000 ✓' },
+        { difficulty: 'Hard', question: 'Die wisselkoers is 5 Amerikaanse dollar vir R95. Gebruik direkte proporsie om te vind hoeveel rand 18 Amerikaanse dollar werd is.', checkMode: 'auto', correctAnswer: 'R342', correctAnswers: ['R342', '342'], answer: 'R342', explanation: 'Stel gelyke verhoudings op: 5/95 = 18/x.\nKruisvermenigvuldig: 5x = 18 × 95 = 1 710.\nx = 1 710 ÷ 5 = 342.\nWaarde = R342 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Resep gebruik 320 g meel vir elke 200 ml melk. Gebruik direkte proporsie om te vind hoeveel meel benodig word vir 550 ml melk.', checkMode: 'auto', correctAnswer: '880g', correctAnswers: ['880g', '880', '880 g'], answer: '880 g', explanation: 'Stel gelyke verhoudings op: 200/320 = 550/x.\nKruisvermenigvuldig: 200x = 550 × 320 = 176 000.\nx = 176 000 ÷ 200 = 880.\nMeel benodig = 880 g ✓' },
+
+        // Blok 4 — Indirekte (omgekeerde) proporsie woordprobleme (Hard)
+        { difficulty: 'Hard', question: '8 werkers kan ʼn muur in 21 dae bou. Hoeveel dae sal 12 werkers neem, met die aanname van omgekeerde proporsie?', checkMode: 'auto', correctAnswer: '14', correctAnswers: ['14', '14 dae'], answer: '14 dae', explanation: 'x₁y₁ = x₂y₂.\n8 × 21 = 12 × y₂.\n168 = 12y₂.\ny₂ = 168 ÷ 12 = 14 dae ✓' },
+        { difficulty: 'Hard', question: 'ʼn Motor ry teen 75 km/h en neem 8 uur vir ʼn reis. Vind die tyd geneem as dit teen 60 km/h ry.', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 uur'], answer: '10 uur', explanation: 'x₁y₁ = x₂y₂.\n75 × 8 = 60 × y₂.\n600 = 60y₂.\ny₂ = 600 ÷ 60 = 10 uur ✓' },
+        { difficulty: 'Hard', question: '15 krane vul ʼn tenk in 6 uur. Hoe lank sal 9 krane neem, met die aanname van omgekeerde proporsie?', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 uur'], answer: '10 uur', explanation: 'x₁y₁ = x₂y₂.\n15 × 6 = 9 × y₂.\n90 = 9y₂.\ny₂ = 90 ÷ 9 = 10 uur ✓' },
+
+        // Blok 5 — Koersprobleme (Hard)
+        { difficulty: 'Hard', question: 'ʼn Winkel verkoop 15 identiese items vir R270. Vind die prys van een item (die eenheidskoers).', checkMode: 'auto', correctAnswer: 'R18', correctAnswers: ['R18', '18'], answer: 'R18', explanation: 'Eenheidskoers = totale koste ÷ aantal items.\n270 ÷ 15 = 18.\nPrys per item = R18 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Motor ry teen ʼn konstante spoed van 96 km/h vir 1,75 uur. Vind die afstand afgelê.', checkMode: 'auto', correctAnswer: '168', correctAnswers: ['168', '168km', '168 km'], answer: '168 km', explanation: 'Afstand = spoed × tyd.\nAfstand = 96 × 1,75 = 168 km ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder tik 240 woorde in 4 minute teen ʼn konstante tempo. Hoe lank sal dit neem om 540 woorde teen dieselfde tempo te tik?', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9 minute'], answer: '9 minute', explanation: 'Tempo = 240 ÷ 4 = 60 woorde per minuut.\nTyd vir 540 woorde = 540 ÷ 60 = 9 minute ✓' },
+
+        // Blok 6 — Skaal/kaart-probleme en gekombineerde multi-stap (Hard)
+        { difficulty: 'Hard', question: 'ʼn Kaart het ʼn skaal van 1 : 200 000. Die afstand tussen twee dorpe op die kaart is 4,5 cm. Vind die werklike afstand in km.', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9km', '9 km'], answer: '9 km', explanation: 'Werklike afstand = 4,5 × 200 000 = 900 000 cm.\nSkakel om na km: 900 000 ÷ 100 000 = 9 km ✓' },
+        { difficulty: 'Hard', question: 'ʼn Kaart het ʼn skaal van 1 : 100 000. Twee landmerke is 8 km uit mekaar in werklikheid. Vind die afstand tussen hulle op die kaart, in cm.', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8cm', '8 cm'], answer: '8 cm', explanation: 'Skakel 8 km om na cm: 8 × 100 000 = 800 000 cm.\nKaartafstand = 800 000 ÷ 100 000 = 8 cm ✓' },
+        { difficulty: 'Hard', question: 'Lemoen-, appel- en mangosap word in die verhouding 3 : 4 : 5 gemeng om 360 L van ʼn vrugtemengsel te maak. Vind die volume appelsap benodig. As die lot opgeskaal word na 4 keer die grootte, vind die nuwe volume appelsap benodig.', answer: 'Totale dele = 3 + 4 + 5 = 12.\nWaarde van 1 deel = 360 ÷ 12 = 30 L.\nAppelsap (4 dele) = 4 × 30 = 120 L.\nOpgeskaalde totaal = 360 × 4 = 1 440 L, so appelsap skaal op dieselfde manier: 120 × 4 = 480 L.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het verhouding, verdeling, proporsie, koers en skaal-probleme bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor omgekeerde proporsie of skaal na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor direkte en indirekte proporsie weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

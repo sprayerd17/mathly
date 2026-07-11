@@ -369,4 +369,150 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging! Hersien die studiegids en probeer weer.' },
     { minScore: 0, message: 'Hou aan — werk weer deur die gids en jy sal dit kry.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blok 1 (0-2):   Klassifiseer ʼn getal — lys al die versamelings
+    // Blok 2 (3-5):   Rasionaal of irrasionaal? (desimale en vierkantswortels)
+    // Blok 3 (6-9):   Identifiseer die irrasionale getal in ʼn lys
+    // Blok 4 (10-12): Skryf ʼn herhalende desimaal as ʼn breuk
+    // Blok 5 (13-15): Rangskik ʼn stel reële getalle
+    // Blok 6 (16-19): Waar/onwaar-redenasie oor eienskappe van getalversamelings
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Klassifiseer ʼn getal (Easy)
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 9. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, hele getal, heelgetal, rasionale getal.', explanation: '9 is ʼn positiewe teltal, dus is dit natuurlik, ʼn hele getal, ʼn heelgetal, en kan as 9/1 geskryf word, dus is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −14. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−14 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −14/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 0. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Hele getal, heelgetal, rasionale getal (nie ʼn natuurlike getal nie).', explanation: '0 is nie ʼn natuurlike getal nie (natuurlike getalle begin by 1), maar dit is ʼn hele getal, ʼn heelgetal, en rasionaal aangesien dit as 0/1 geskryf kan word.' },
+
+        // Blok 2 — Rasionaal of irrasionaal? (Easy/Medium)
+        { difficulty: 'Easy', question: 'Is 0,8 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '0,8 is ʼn eindigende desimaal — dit kan as 4/5 geskryf word, dus is dit rasionaal.' },
+        { difficulty: 'Easy', question: 'Is √36 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√36 = 6, aangesien 6 × 6 = 36. 36 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn hele getal en daarom rasionaal.' },
+        { difficulty: 'Medium', question: 'Is √13 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '13 is nie ʼn volkome vierkant nie (3² = 9 en 4² = 16), dus kan √13 nie tot ʼn hele getal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
+
+        // Blok 3 — Identifiseer die irrasionale getal in ʼn lys (Medium/Hard)
+        { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: 7, √21, 3/5, √25?', checkMode: 'auto', correctAnswer: '√21', correctAnswers: ['√21', 'sqrt21', '√(21)'], answer: '√21', explanation: '7 is ʼn heelgetal (rasionaal), 3/5 is reeds ʼn breuk (rasionaal), √25 = 5 (rasionaal). 21 is nie ʼn volkome vierkant nie, dus is √21 irrasionaal.' },
+        { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √49, −6, π, 0,25?', checkMode: 'auto', correctAnswer: 'π', correctAnswers: ['π', 'pi'], answer: 'π', explanation: '√49 = 7 (rasionaal), −6 is ʼn heelgetal (rasionaal), 0,25 is ʼn eindigende desimaal (rasionaal). π is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
+        { difficulty: 'Hard', question: 'Zinhle lys 4/9, √50, 8, en 1,6 en sê √50 is die enigste irrasionale getal. Is sy korrek?', checkMode: 'self', answer: 'Ja, sy is korrek.', explanation: '4/9 is ʼn breuk (rasionaal), 8 is ʼn heelgetal (rasionaal), 1,6 is ʼn eindigende desimaal (rasionaal). 50 is nie ʼn volkome vierkant nie, dus is √50 irrasionaal. Zinhle is korrek.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom √64 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√64 = 8, wat ʼn hele getal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √64 asof dit irrasionaal kan wees, is 64 ʼn volkome vierkant (8 × 8 = 64), dus vereenvoudig √64 presies tot 8 — ʼn hele getal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
+
+        // Blok 4 — Skryf ʼn herhalende desimaal as ʼn breuk (Medium/Hard)
+        { difficulty: 'Medium', question: 'Skryf 0,777... (7 herhalend) as ʼn breuk.', checkMode: 'auto', correctAnswer: '7/9', correctAnswers: ['7/9'], answer: '7/9', explanation: 'Laat x = 0,777...\n10x = 7,777...\n10x − x = 7,777... − 0,777...\n9x = 7\nx = 7/9' },
+        { difficulty: 'Medium', question: 'Skryf 0,454545... (45 herhalend) as ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '5/11', correctAnswers: ['5/11', '45/99'], answer: '5/11', explanation: 'Laat x = 0,454545...\n100x = 45,454545...\n100x − x = 45,454545... − 0,454545...\n99x = 45\nx = 45/99 = 5/11 (deur die GGD, 9, te deel)' },
+        { difficulty: 'Hard', question: 'Skryf 0,1666... (6 herhalend) as ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '1/6', correctAnswers: ['1/6'], answer: '1/6', explanation: 'Laat x = 0,1666...\n10x = 1,666...\n100x = 16,666...\n100x − 10x = 16,666... − 1,666...\n90x = 15\nx = 15/90 = 1/6 (deur die GGD, 15, te deel)' },
+
+        // Blok 5 — Rangskik ʼn stel reële getalle (Hard)
+        { difficulty: 'Hard', question: 'Rangskik hierdie getalle van kleinste na grootste: −3, √2, 0,5, −1,5, √9.', checkMode: 'auto', correctAnswer: '−3, −1,5, 0,5, √2, √9', correctAnswers: ['−3, −1,5, 0,5, √2, √9', '-3, -1,5, 0,5, √2, √9'], answer: '−3, −1,5, 0,5, √2, √9', explanation: '√2 ≈ 1,41 en √9 = 3. Rangorde: −3 < −1,5 < 0,5 < √2 (≈1,41) < √9 (=3).' },
+        { difficulty: 'Hard', question: 'Rangskik hierdie getalle van grootste na kleinste: 4, −2, π, −4,5, 0.', checkMode: 'auto', correctAnswer: '4, π, 0, −2, −4,5', correctAnswers: ['4, π, 0, −2, −4,5', '4, π, 0, -2, -4,5'], answer: '4, π, 0, −2, −4,5', explanation: 'π ≈ 3,14. As ons 4 en π vergelyk: 4 > 3,14, dus is 4 die grootste. Rangorde van grootste na kleinste: 4 > π (≈3,14) > 0 > −2 > −4,5.' },
+        { difficulty: 'Hard', question: 'Gegee die getalle √17, 4, −√1, 3,9 en −5, rangskik hulle van kleinste na grootste.', checkMode: 'auto', correctAnswer: '−5, −√1, 3,9, 4, √17', correctAnswers: ['−5, −√1, 3,9, 4, √17', '-5, -√1, 3,9, 4, √17', '-5, -1, 3,9, 4, √17'], answer: '−5, −√1, 3,9, 4, √17', explanation: '−√1 = −1. √17 ≈ 4,12. Rangorde: −5 < −1 < 3,9 < 4 < √17 (≈4,12).' },
+
+        // Blok 6 — Waar/onwaar-redenasie oor eienskappe van getalversamelings (Hard)
+        { difficulty: 'Hard', question: 'Waar of onwaar: die som van ʼn rasionale getal en ʼn irrasionale getal is altyd irrasionaal.', checkMode: 'auto', correctAnswer: 'waar', correctAnswers: ['waar'], answer: 'waar', explanation: 'Waar. As jy ʼn rasionale getal plus ʼn irrasionale getal as ʼn breuk kon skryf, sou die aftrekking van die rasionale deel beteken dat die irrasionale getal ook ʼn breuk is — ʼn teenstrydigheid. Die som is dus altyd irrasionaal.' },
+        { difficulty: 'Hard', question: 'Waar of onwaar: elke heelgetal is ʼn rasionale getal.', checkMode: 'auto', correctAnswer: 'waar', correctAnswers: ['waar'], answer: 'waar', explanation: 'Waar. Enige heelgetal n kan as die breuk n/1 geskryf word, dus voldoen elke heelgetal aan die definisie van ʼn rasionale getal.' },
+        { difficulty: 'Hard', question: 'Karabo sê √2 + √2 = 2√2, en aangesien hy twee irrasionale getalle bygetel het, moet die antwoord irrasionaal wees. Is hy korrek?', checkMode: 'self', answer: 'Ja, hy is korrek.', explanation: '√2 + √2 = 2√2. Aangesien √2 irrasionaal is, bly dit irrasionaal wanneer dit met die rasionale getal 2 vermenigvuldig word (2√2 kan nie as ʼn presiese breuk geskryf word nie). Karabo is korrek, maar let daarop dat dit nie beteken dat die optelling van twee irrasionale getalle altyd irrasionaal is nie — dit hang van die spesifieke getalle af, soos √5 − √5 = 0 wys.' },
+        { difficulty: 'Hard', question: 'Thandeka sê 0,3333... is irrasionaal omdat die syfers nooit ophou nie. Verduidelik waarom sy verkeerd is.', checkMode: 'self', answer: 'Sy is verkeerd — 0,3333... is rasionaal omdat dit in ʼn patroon herhaal.', explanation: 'ʼn Desimaal is slegs irrasionaal as dit nie-eindigend EN nie-herhalend is. 0,3333... eindig nie, maar dit herhaal wel (die syfer 3 herhaal vir ewig), dus kan dit as die breuk 1/3 geskryf word. Dit is rasionaal.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die klassifisering en rangskikking van reële getalle bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae oor herhalende desimale of rangskikking en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor rasionale en irrasionale getalle weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Klassifiseer ʼn getal (Easy)
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 15. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, hele getal, heelgetal, rasionale getal.', explanation: '15 is ʼn positiewe teltal, dus is dit natuurlik, ʼn hele getal, ʼn heelgetal, en kan as 15/1 geskryf word, dus is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −20. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−20 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −20/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −1. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−1 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −1/1 geskryf kan word, is dit ook rasionaal.' },
+
+        // Blok 2 — Rasionaal of irrasionaal? (Easy/Medium)
+        { difficulty: 'Easy', question: 'Is 0,45 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '0,45 is ʼn eindigende desimaal — dit kan as 9/20 geskryf word, dus is dit rasionaal.' },
+        { difficulty: 'Easy', question: 'Is √64 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√64 = 8, aangesien 8 × 8 = 64. 64 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn hele getal en daarom rasionaal.' },
+        { difficulty: 'Medium', question: 'Is √19 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '19 is nie ʼn volkome vierkant nie (4² = 16 en 5² = 25), dus kan √19 nie tot ʼn hele getal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
+
+        // Blok 3 — Identifiseer die irrasionale getal in ʼn lys (Medium/Hard)
+        { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √30, 9, 2/3, √100?', checkMode: 'auto', correctAnswer: '√30', correctAnswers: ['√30', 'sqrt30', '√(30)'], answer: '√30', explanation: '9 is ʼn heelgetal (rasionaal), 2/3 is reeds ʼn breuk (rasionaal), √100 = 10 (rasionaal). 30 is nie ʼn volkome vierkant nie, dus is √30 irrasionaal.' },
+        { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √81, −11, 22/7, √2?', checkMode: 'auto', correctAnswer: '√2', correctAnswers: ['√2', 'sqrt2', '√(2)'], answer: '√2', explanation: '√81 = 9 (rasionaal), −11 is ʼn heelgetal (rasionaal), 22/7 is reeds ʼn breuk (rasionaal). 2 is nie ʼn volkome vierkant nie, dus is √2 irrasionaal.' },
+        { difficulty: 'Hard', question: 'Mpho lys 5/6, √45, −3, en 2,4 en sê √45 is die enigste irrasionale getal. Is sy korrek?', checkMode: 'self', answer: 'Ja, sy is korrek.', explanation: '5/6 is ʼn breuk (rasionaal), −3 is ʼn heelgetal (rasionaal), 2,4 is ʼn eindigende desimaal (rasionaal). 45 is nie ʼn volkome vierkant nie, dus is √45 irrasionaal. Mpho is korrek.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom √100 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√100 = 10, wat ʼn hele getal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √100 asof dit irrasionaal kan wees, is 100 ʼn volkome vierkant (10 × 10 = 100), dus vereenvoudig √100 presies tot 10 — ʼn hele getal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
+
+        // Blok 4 — Skryf ʼn herhalende desimaal as ʼn breuk (Medium/Hard)
+        { difficulty: 'Medium', question: 'Skryf 0,888... (8 herhalend) as ʼn breuk.', checkMode: 'auto', correctAnswer: '8/9', correctAnswers: ['8/9'], answer: '8/9', explanation: 'Laat x = 0,888...\n10x = 8,888...\n10x − x = 8,888... − 0,888...\n9x = 8\nx = 8/9' },
+        { difficulty: 'Medium', question: 'Skryf 0,272727... (27 herhalend) as ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3/11', correctAnswers: ['3/11', '27/99'], answer: '3/11', explanation: 'Laat x = 0,272727...\n100x = 27,272727...\n100x − x = 27,272727... − 0,272727...\n99x = 27\nx = 27/99 = 3/11 (deur die GGD, 9, te deel)' },
+        { difficulty: 'Hard', question: 'Skryf 0,2333... (3 herhalend) as ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '7/30', correctAnswers: ['7/30'], answer: '7/30', explanation: 'Laat x = 0,2333...\n10x = 2,333...\n100x = 23,333...\n100x − 10x = 23,333... − 2,333...\n90x = 21\nx = 21/90 = 7/30 (deur die GGD, 3, te deel)' },
+
+        // Blok 5 — Rangskik ʼn stel reële getalle (Hard)
+        { difficulty: 'Hard', question: 'Rangskik hierdie getalle van kleinste na grootste: 3, −√5, 2,25, −3, √1.', checkMode: 'auto', correctAnswer: '−3, −√5, √1, 2,25, 3', correctAnswers: ['−3, −√5, √1, 2,25, 3', '-3, -√5, √1, 2,25, 3', '-3, -√5, 1, 2,25, 3'], answer: '−3, −√5, √1, 2,25, 3', explanation: '√5 ≈ 2,24, dus −√5 ≈ −2,24. √1 = 1. Rangorde: −3 < −√5 (≈−2,24) < √1 (=1) < 2,25 < 3.' },
+        { difficulty: 'Hard', question: 'Rangskik hierdie getalle van grootste na kleinste: 5, −6, √8, 0,9, −2.', checkMode: 'auto', correctAnswer: '5, √8, 0,9, −2, −6', correctAnswers: ['5, √8, 0,9, −2, −6', '5, √8, 0,9, -2, -6'], answer: '5, √8, 0,9, −2, −6', explanation: '√8 ≈ 2,83. Rangorde van grootste na kleinste: 5 > √8 (≈2,83) > 0,9 > −2 > −6.' },
+        { difficulty: 'Hard', question: 'Gegee die getalle √99, 10, −√9, 8,7 en −6, rangskik hulle van kleinste na grootste.', checkMode: 'auto', correctAnswer: '−6, −√9, 8,7, √99, 10', correctAnswers: ['−6, −√9, 8,7, √99, 10', '-6, -√9, 8,7, √99, 10', '-6, -3, 8,7, √99, 10'], answer: '−6, −√9, 8,7, √99, 10', explanation: '−√9 = −3. √99 ≈ 9,95. Rangorde: −6 < −3 < 8,7 < √99 (≈9,95) < 10.' },
+
+        // Blok 6 — Waar/onwaar-redenasie oor eienskappe van getalversamelings (Hard)
+        { difficulty: 'Hard', question: 'Waar of onwaar: alle rasionale getalle is heelgetalle.', checkMode: 'auto', correctAnswer: 'onwaar', correctAnswers: ['onwaar'], answer: 'onwaar', explanation: 'Onwaar. Rasionale getalle sluit breuke soos 1/2 in wat nie heelgetalle is nie. Alle heelgetalle is rasionaal, maar nie alle rasionale getalle is heelgetalle nie.' },
+        { difficulty: 'Hard', question: 'Waar of onwaar: die produk van twee irrasionale getalle is altyd irrasionaal.', checkMode: 'auto', correctAnswer: 'onwaar', correctAnswers: ['onwaar'], answer: 'onwaar', explanation: 'Onwaar. Byvoorbeeld, √2 × √2 = 2, wat rasionaal is, alhoewel albei faktore irrasionaal was.' },
+        { difficulty: 'Hard', question: 'Prakash sê elke eindigende desimaal is irrasionaal omdat dit syfers ná die desimaalkomma het. Is hy korrek?', checkMode: 'self', answer: 'Nee, hy is verkeerd.', explanation: 'ʼn Eindigende desimaal eindig altyd na ʼn eindige aantal syfers en kan as ʼn breuk geskryf word (bv. 0,5 = 1/2), wat dit rasionaal maak. Syfers ná die desimaalkomma maak nie ʼn getal irrasionaal nie — slegs nie-eindigende, nie-herhalende desimale is irrasionaal.' },
+        { difficulty: 'Hard', question: 'Ayanda sê √9 + √16 moet irrasionaal wees omdat albei getalle vierkantsworteltekens het. Verduidelik waarom sy verkeerd is.', checkMode: 'self', answer: 'Sy is verkeerd — √9 + √16 = 3 + 4 = 7, wat rasionaal is.', explanation: 'ʼn Vierkantswortelteken maak nie outomaties ʼn getal irrasionaal nie. 9 en 16 is albei volkome vierkante, dus is √9 = 3 en √16 = 4, albei hele getalle. Hul som, 7, is rasionaal.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die klassifisering en rangskikking van reële getalle bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae oor herhalende desimale of rangskikking en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor rasionale en irrasionale getalle weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Klassifiseer ʼn getal (Easy)
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 20. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, hele getal, heelgetal, rasionale getal.', explanation: '20 is ʼn positiewe teltal, dus is dit natuurlik, ʼn hele getal, ʼn heelgetal, en kan as 20/1 geskryf word, dus is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −8. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−8 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −8/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −100. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−100 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −100/1 geskryf kan word, is dit ook rasionaal.' },
+
+        // Blok 2 — Rasionaal of irrasionaal? (Easy/Medium)
+        { difficulty: 'Easy', question: 'Is 0,125 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '0,125 is ʼn eindigende desimaal — dit kan as 1/8 geskryf word, dus is dit rasionaal.' },
+        { difficulty: 'Easy', question: 'Is √81 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√81 = 9, aangesien 9 × 9 = 81. 81 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn hele getal en daarom rasionaal.' },
+        { difficulty: 'Medium', question: 'Is √23 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '23 is nie ʼn volkome vierkant nie (4² = 16 en 5² = 25), dus kan √23 nie tot ʼn hele getal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
+
+        // Blok 3 — Identifiseer die irrasionale getal in ʼn lys (Medium/Hard)
+        { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √40, 11, 5/8, √121?', checkMode: 'auto', correctAnswer: '√40', correctAnswers: ['√40', 'sqrt40', '√(40)'], answer: '√40', explanation: '11 is ʼn heelgetal (rasionaal), 5/8 is reeds ʼn breuk (rasionaal), √121 = 11 (rasionaal). 40 is nie ʼn volkome vierkant nie, dus is √40 irrasionaal.' },
+        { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √144, −9, 7/9, √6?', checkMode: 'auto', correctAnswer: '√6', correctAnswers: ['√6', 'sqrt6', '√(6)'], answer: '√6', explanation: '√144 = 12 (rasionaal), −9 is ʼn heelgetal (rasionaal), 7/9 is reeds ʼn breuk (rasionaal). 6 is nie ʼn volkome vierkant nie, dus is √6 irrasionaal.' },
+        { difficulty: 'Hard', question: 'Sizwe lys 3/7, √28, −5, en 4,8 en sê √28 is die enigste irrasionale getal. Is hy korrek?', checkMode: 'self', answer: 'Ja, hy is korrek.', explanation: '3/7 is ʼn breuk (rasionaal), −5 is ʼn heelgetal (rasionaal), 4,8 is ʼn eindigende desimaal (rasionaal). 28 is nie ʼn volkome vierkant nie, dus is √28 irrasionaal. Sizwe is korrek.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom √144 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√144 = 12, wat ʼn hele getal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √144 asof dit irrasionaal kan wees, is 144 ʼn volkome vierkant (12 × 12 = 144), dus vereenvoudig √144 presies tot 12 — ʼn hele getal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
+
+        // Blok 4 — Skryf ʼn herhalende desimaal as ʼn breuk (Medium/Hard)
+        { difficulty: 'Medium', question: 'Skryf 0,111... (1 herhalend) as ʼn breuk.', checkMode: 'auto', correctAnswer: '1/9', correctAnswers: ['1/9'], answer: '1/9', explanation: 'Laat x = 0,111...\n10x = 1,111...\n10x − x = 1,111... − 0,111...\n9x = 1\nx = 1/9' },
+        { difficulty: 'Medium', question: 'Skryf 0,636363... (63 herhalend) as ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '7/11', correctAnswers: ['7/11', '63/99'], answer: '7/11', explanation: 'Laat x = 0,636363...\n100x = 63,636363...\n100x − x = 63,636363... − 0,636363...\n99x = 63\nx = 63/99 = 7/11 (deur die GGD, 9, te deel)' },
+        { difficulty: 'Hard', question: 'Skryf 0,484848... (48 herhalend) as ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '16/33', correctAnswers: ['16/33', '48/99'], answer: '16/33', explanation: 'Laat x = 0,484848...\n100x = 48,484848...\n100x − x = 48,484848... − 0,484848...\n99x = 48\nx = 48/99 = 16/33 (deur die GGD, 3, te deel)' },
+
+        // Blok 5 — Rangskik ʼn stel reële getalle (Hard)
+        { difficulty: 'Hard', question: 'Rangskik hierdie getalle van kleinste na grootste: −1, √7, −√4, 3,5, 0.', checkMode: 'auto', correctAnswer: '−√4, −1, 0, √7, 3,5', correctAnswers: ['−√4, −1, 0, √7, 3,5', '-√4, -1, 0, √7, 3,5', '-2, -1, 0, √7, 3,5'], answer: '−√4, −1, 0, √7, 3,5', explanation: '−√4 = −2. √7 ≈ 2,65. As ons √7 en 3,5 vergelyk: 2,65 < 3,5. Rangorde: −2 < −1 < 0 < √7 (≈2,65) < 3,5.' },
+        { difficulty: 'Hard', question: 'Rangskik hierdie getalle van grootste na kleinste: 6, −7, √20, 1,2, −4.', checkMode: 'auto', correctAnswer: '6, √20, 1,2, −4, −7', correctAnswers: ['6, √20, 1,2, −4, −7', '6, √20, 1,2, -4, -7'], answer: '6, √20, 1,2, −4, −7', explanation: '√20 ≈ 4,47. Rangorde van grootste na kleinste: 6 > √20 (≈4,47) > 1,2 > −4 > −7.' },
+        { difficulty: 'Hard', question: 'Gegee die getalle √80, 9, −√1, 6,5 en −7, rangskik hulle van kleinste na grootste.', checkMode: 'auto', correctAnswer: '−7, −√1, 6,5, √80, 9', correctAnswers: ['−7, −√1, 6,5, √80, 9', '-7, -√1, 6,5, √80, 9', '-7, -1, 6,5, √80, 9'], answer: '−7, −√1, 6,5, √80, 9', explanation: '−√1 = −1. √80 ≈ 8,94. Rangorde: −7 < −1 < 6,5 < √80 (≈8,94) < 9.' },
+
+        // Blok 6 — Waar/onwaar-redenasie oor eienskappe van getalversamelings (Hard)
+        { difficulty: 'Hard', question: 'Waar of onwaar: nul is ʼn natuurlike getal.', checkMode: 'auto', correctAnswer: 'onwaar', correctAnswers: ['onwaar'], answer: 'onwaar', explanation: 'Onwaar. Natuurlike getalle begin tel by 1. Nul is ʼn hele getal, maar dit is nie ʼn natuurlike getal nie.' },
+        { difficulty: 'Hard', question: 'Waar of onwaar: elke hele getal is ʼn heelgetal.', checkMode: 'auto', correctAnswer: 'waar', correctAnswers: ['waar'], answer: 'waar', explanation: 'Waar. Die hele getalle (0, 1, 2, 3, ...) is almal binne die heelgetalle ingesluit, wat ook die negatiewe hele getalle bevat.' },
+        { difficulty: 'Hard', question: 'Nomvula sê √4 moet irrasionaal wees omdat dit ʼn vierkantswortelteken het. Is sy korrek?', checkMode: 'self', answer: 'Nee, sy is verkeerd.', explanation: '√4 = 2, want 2 × 2 = 4. 4 is ʼn volkome vierkant, dus vereenvoudig √4 presies tot die hele getal 2, wat rasionaal is. ʼn Vierkantswortelteken alleen maak nie ʼn getal irrasionaal nie.' },
+        { difficulty: 'Hard', question: 'Lindiwe sê π − π = 0, en aangesien albei terme irrasionaal was, het sy ʼn irrasionale antwoord verwag. Verduidelik waarom die resultaat eintlik rasionaal is.', checkMode: 'self', answer: '0 is rasionaal, al is π irrasionaal.', explanation: 'Om ʼn irrasionale getal van homself af te trek, kanselleer dit altyd presies na 0, wat rasionaal is. Dit wys dat die kombinasie van twee irrasionale getalle nie altyd ʼn irrasionale resultaat gee nie — dit hang af van die spesifieke getalle betrokke.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die klassifisering en rangskikking van reële getalle bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae oor herhalende desimale of rangskikking en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor rasionale en irrasionale getalle weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

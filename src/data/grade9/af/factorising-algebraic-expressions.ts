@@ -421,4 +421,157 @@ export const topicData: TopicData = {
       { minPercent: 0, message: 'Hou aan, werk weer deur die studiegids.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blok 1 (0-1):   Gemeenskaplike faktor — twee-term monoom GGF
+    // Blok 2 (2-3):   Gemeenskaplike faktor — drie-term (ingesluit kubies)
+    // Blok 3 (4-6):   Verskil van twee kwadrate — basies (x² − n²)
+    // Blok 4 (7-9):   Verskil van twee kwadrate — met koëffisiënte
+    // Blok 5 (10-12): Trinoom x² + bx + c — positiewe/eenvoudige konstante
+    // Blok 6 (13-15): Trinoom x² + bx + c — negatiewe konstante
+    // Blok 7 (16-19): Trinoom met gemeenskaplike faktor + foutopsporing
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Gemeenskaplike faktor, twee-term (Easy)
+        { difficulty: 'Easy', question: 'Faktoriseer 10x² + 15x.', checkMode: 'auto', correctAnswer: '5x(2x+3)', correctAnswers: ['5x(2x+3)', '5x(2x + 3)'], answer: '5x(2x + 3)', explanation: 'GGF van 10x² en 15x is 5x.\n10x² ÷ 5x = 2x en 15x ÷ 5x = 3.\nGefaktoriseer: 5x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 6x³ − 18x².', checkMode: 'auto', correctAnswer: '6x²(x-3)', correctAnswers: ['6x²(x-3)', '6x²(x - 3)', '6x^2(x-3)', '6x^2(x - 3)'], answer: '6x²(x − 3)', explanation: 'GGF van 6x³ en 18x² is 6x².\n6x³ ÷ 6x² = x en 18x² ÷ 6x² = 3.\nGefaktoriseer: 6x²(x − 3) ✓' },
+
+        // Blok 2 — Gemeenskaplike faktor, drie-term / kubies (Easy-Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer 4x³ + 8x² − 12x.', checkMode: 'auto', correctAnswer: '4x(x²+2x-3)', correctAnswers: ['4x(x²+2x-3)', '4x(x² + 2x - 3)', '4x(x²+2x−3)', '4x(x² + 2x − 3)', '4x(x^2+2x-3)', '4x(x^2 + 2x - 3)'], answer: '4x(x² + 2x − 3)', explanation: 'GGF van 4x³, 8x² en 12x is 4x.\n4x³ ÷ 4x = x², 8x² ÷ 4x = 2x, 12x ÷ 4x = 3.\nGefaktoriseer: 4x(x² + 2x − 3) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 9a²b + 6ab².', checkMode: 'auto', correctAnswer: '3ab(3a+2b)', correctAnswers: ['3ab(3a+2b)', '3ab(3a + 2b)'], answer: '3ab(3a + 2b)', explanation: 'GGF van 9a²b en 6ab² is 3ab.\n9a²b ÷ 3ab = 3a en 6ab² ÷ 3ab = 2b.\nGefaktoriseer: 3ab(3a + 2b) ✓' },
+
+        // Blok 3 — Verskil van twee kwadrate, basies (Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 81.', checkMode: 'auto', correctAnswer: '(x-9)(x+9)', correctAnswers: ['(x-9)(x+9)', '(x − 9)(x + 9)', '(x+9)(x-9)', '(x + 9)(x − 9)'], answer: '(x − 9)(x + 9)', explanation: 'Herken x² − 81 = x² − 9².\nVerskil van kwadrate: (x − 9)(x + 9) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 121.', checkMode: 'auto', correctAnswer: '(x-11)(x+11)', correctAnswers: ['(x-11)(x+11)', '(x − 11)(x + 11)', '(x+11)(x-11)', '(x + 11)(x − 11)'], answer: '(x − 11)(x + 11)', explanation: 'Herken x² − 121 = x² − 11².\nVerskil van kwadrate: (x − 11)(x + 11) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 16x² − 1.', checkMode: 'auto', correctAnswer: '(4x-1)(4x+1)', correctAnswers: ['(4x-1)(4x+1)', '(4x − 1)(4x + 1)', '(4x+1)(4x-1)', '(4x + 1)(4x − 1)'], answer: '(4x − 1)(4x + 1)', explanation: '16x² = (4x)² en 1 = (1)².\nVerskil van kwadrate: (4x − 1)(4x + 1) ✓' },
+
+        // Blok 4 — Verskil van twee kwadrate, met koëffisiënte (Medium/Hard)
+        { difficulty: 'Medium', question: 'Faktoriseer 9x² − 25.', checkMode: 'auto', correctAnswer: '(3x-5)(3x+5)', correctAnswers: ['(3x-5)(3x+5)', '(3x − 5)(3x + 5)', '(3x+5)(3x-5)', '(3x + 5)(3x − 5)'], answer: '(3x − 5)(3x + 5)', explanation: '9x² = (3x)² en 25 = (5)².\nVerskil van kwadrate: (3x − 5)(3x + 5) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 25x² − 4y².', checkMode: 'auto', correctAnswer: '(5x-2y)(5x+2y)', correctAnswers: ['(5x-2y)(5x+2y)', '(5x − 2y)(5x + 2y)', '(5x+2y)(5x-2y)', '(5x + 2y)(5x − 2y)'], answer: '(5x − 2y)(5x + 2y)', explanation: '25x² = (5x)² en 4y² = (2y)².\nVerskil van kwadrate: (5x − 2y)(5x + 2y) ✓' },
+        { difficulty: 'Hard', question: 'Lindiwe faktoriseer 36x² − 49 en kry (6x − 7)(6x + 7). Kontroleer haar antwoord.', answer: 'Sy is korrek — 36x² = (6x)² en 49 = (7)², so die verskil van kwadrate gee (6x − 7)(6x + 7).', checkMode: 'self' },
+
+        // Blok 5 — Trinoom x² + bx + c, positiewe/eenvoudige konstante (Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer x² + 10x + 24.', checkMode: 'auto', correctAnswer: '(x+4)(x+6)', correctAnswers: ['(x+4)(x+6)', '(x + 4)(x + 6)', '(x+6)(x+4)', '(x + 6)(x + 4)'], answer: '(x + 4)(x + 6)', explanation: 'Vind twee getalle wat vermenigvuldig na 24 en optel na 10: 4 en 6.\nGefaktoriseer: (x + 4)(x + 6) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² + 11x + 18.', checkMode: 'auto', correctAnswer: '(x+2)(x+9)', correctAnswers: ['(x+2)(x+9)', '(x + 2)(x + 9)', '(x+9)(x+2)', '(x + 9)(x + 2)'], answer: '(x + 2)(x + 9)', explanation: 'Vind twee getalle wat vermenigvuldig na 18 en optel na 11: 2 en 9.\nGefaktoriseer: (x + 2)(x + 9) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 7x + 12.', checkMode: 'auto', correctAnswer: '(x-3)(x-4)', correctAnswers: ['(x-3)(x-4)', '(x − 3)(x − 4)', '(x-4)(x-3)', '(x − 4)(x − 3)'], answer: '(x − 3)(x − 4)', explanation: 'Vind twee getalle wat vermenigvuldig na 12 en optel na −7: −3 en −4.\nGefaktoriseer: (x − 3)(x − 4) ✓' },
+
+        // Blok 6 — Trinoom x² + bx + c, negatiewe konstante (Medium/Hard)
+        { difficulty: 'Medium-Hard', question: 'Faktoriseer x² − 4x − 21.', checkMode: 'auto', correctAnswer: '(x-7)(x+3)', correctAnswers: ['(x-7)(x+3)', '(x − 7)(x + 3)', '(x+3)(x-7)', '(x + 3)(x − 7)'], answer: '(x − 7)(x + 3)', explanation: 'Vind twee getalle wat vermenigvuldig na −21 en optel na −4: −7 en 3.\nGefaktoriseer: (x − 7)(x + 3) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Faktoriseer x² + 2x − 24.', checkMode: 'auto', correctAnswer: '(x+6)(x-4)', correctAnswers: ['(x+6)(x-4)', '(x + 6)(x − 4)', '(x-4)(x+6)', '(x − 4)(x + 6)'], answer: '(x + 6)(x − 4)', explanation: 'Vind twee getalle wat vermenigvuldig na −24 en optel na 2: 6 en −4.\nGefaktoriseer: (x + 6)(x − 4) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer x² − x − 30.', checkMode: 'auto', correctAnswer: '(x-6)(x+5)', correctAnswers: ['(x-6)(x+5)', '(x − 6)(x + 5)', '(x+5)(x-6)', '(x + 5)(x − 6)'], answer: '(x − 6)(x + 5)', explanation: 'Vind twee getalle wat vermenigvuldig na −30 en optel na −1: −6 en 5.\nGefaktoriseer: (x − 6)(x + 5) ✓' },
+
+        // Blok 7 — Trinoom met gemeenskaplike faktor + foutopsporing (Hard)
+        { difficulty: 'Hard', question: 'Faktoriseer 2x² + 14x + 24 volledig.', checkMode: 'auto', correctAnswer: '2(x+3)(x+4)', correctAnswers: ['2(x+3)(x+4)', '2(x + 3)(x + 4)', '2(x+4)(x+3)', '2(x + 4)(x + 3)'], answer: '2(x + 3)(x + 4)', explanation: 'Faktoriseer 2 uit: 2(x² + 7x + 12).\nVind twee getalle wat vermenigvuldig na 12 en optel na 7: 3 en 4.\nGefaktoriseer: 2(x + 3)(x + 4) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 3x² − 3x − 18 volledig.', checkMode: 'auto', correctAnswer: '3(x-3)(x+2)', correctAnswers: ['3(x-3)(x+2)', '3(x − 3)(x + 2)', '3(x+2)(x-3)', '3(x + 2)(x − 3)'], answer: '3(x − 3)(x + 2)', explanation: 'Faktoriseer 3 uit: 3(x² − x − 6).\nVind twee getalle wat vermenigvuldig na −6 en optel na −1: −3 en 2.\nGefaktoriseer: 3(x − 3)(x + 2) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 4x² − 16 volledig, en identifiseer die gemeenskaplike faktor en die patroon wat gebruik is.', answer: 'Faktoriseer 4 uit: 4(x² − 4). Herken verskil van kwadrate: 4(x − 2)(x + 2).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Karabo faktoriseer x² − 5x − 14 en kry (x − 2)(x + 7). Kontroleer sy antwoord.', answer: 'Hy is verkeerd — alhoewel (−2)(7) = −14, is die som −2 + 7 = 5, nie −5 nie. Die korrekte faktorisering is (x − 7)(x + 2), aangesien (−7)(2) = −14 en −7 + 2 = −5.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het faktorisering van gemeenskaplike faktore, verskille van kwadrate en trinome bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor trinome of verskil van kwadrate weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGF en faktorisering van trinome weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Gemeenskaplike faktor, twee-term (Easy)
+        { difficulty: 'Easy', question: 'Faktoriseer 14x² + 21x.', checkMode: 'auto', correctAnswer: '7x(2x+3)', correctAnswers: ['7x(2x+3)', '7x(2x + 3)'], answer: '7x(2x + 3)', explanation: 'GGF van 14x² en 21x is 7x.\n14x² ÷ 7x = 2x en 21x ÷ 7x = 3.\nGefaktoriseer: 7x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 8x³ − 20x².', checkMode: 'auto', correctAnswer: '4x²(2x-5)', correctAnswers: ['4x²(2x-5)', '4x²(2x − 5)', '4x^2(2x-5)', '4x^2(2x − 5)'], answer: '4x²(2x − 5)', explanation: 'GGF van 8x³ en 20x² is 4x².\n8x³ ÷ 4x² = 2x en 20x² ÷ 4x² = 5.\nGefaktoriseer: 4x²(2x − 5) ✓' },
+
+        // Blok 2 — Gemeenskaplike faktor, drie-term / kubies (Easy-Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer 6x³ + 9x² − 15x.', checkMode: 'auto', correctAnswer: '3x(2x²+3x-5)', correctAnswers: ['3x(2x²+3x-5)', '3x(2x² + 3x - 5)', '3x(2x²+3x−5)', '3x(2x² + 3x − 5)', '3x(2x^2+3x-5)', '3x(2x^2 + 3x - 5)'], answer: '3x(2x² + 3x − 5)', explanation: 'GGF van 6x³, 9x² en 15x is 3x.\n6x³ ÷ 3x = 2x², 9x² ÷ 3x = 3x, 15x ÷ 3x = 5.\nGefaktoriseer: 3x(2x² + 3x − 5) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 12a²b + 8ab².', checkMode: 'auto', correctAnswer: '4ab(3a+2b)', correctAnswers: ['4ab(3a+2b)', '4ab(3a + 2b)'], answer: '4ab(3a + 2b)', explanation: 'GGF van 12a²b en 8ab² is 4ab.\n12a²b ÷ 4ab = 3a en 8ab² ÷ 4ab = 2b.\nGefaktoriseer: 4ab(3a + 2b) ✓' },
+
+        // Blok 3 — Verskil van twee kwadrate, basies (Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 36.', checkMode: 'auto', correctAnswer: '(x-6)(x+6)', correctAnswers: ['(x-6)(x+6)', '(x − 6)(x + 6)', '(x+6)(x-6)', '(x + 6)(x − 6)'], answer: '(x − 6)(x + 6)', explanation: 'Herken x² − 36 = x² − 6².\nVerskil van kwadrate: (x − 6)(x + 6) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 100.', checkMode: 'auto', correctAnswer: '(x-10)(x+10)', correctAnswers: ['(x-10)(x+10)', '(x − 10)(x + 10)', '(x+10)(x-10)', '(x + 10)(x − 10)'], answer: '(x − 10)(x + 10)', explanation: 'Herken x² − 100 = x² − 10².\nVerskil van kwadrate: (x − 10)(x + 10) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 9x² − 1.', checkMode: 'auto', correctAnswer: '(3x-1)(3x+1)', correctAnswers: ['(3x-1)(3x+1)', '(3x − 1)(3x + 1)', '(3x+1)(3x-1)', '(3x + 1)(3x − 1)'], answer: '(3x − 1)(3x + 1)', explanation: '9x² = (3x)² en 1 = (1)².\nVerskil van kwadrate: (3x − 1)(3x + 1) ✓' },
+
+        // Blok 4 — Verskil van twee kwadrate, met koëffisiënte (Medium/Hard)
+        { difficulty: 'Medium', question: 'Faktoriseer 16x² − 49.', checkMode: 'auto', correctAnswer: '(4x-7)(4x+7)', correctAnswers: ['(4x-7)(4x+7)', '(4x − 7)(4x + 7)', '(4x+7)(4x-7)', '(4x + 7)(4x − 7)'], answer: '(4x − 7)(4x + 7)', explanation: '16x² = (4x)² en 49 = (7)².\nVerskil van kwadrate: (4x − 7)(4x + 7) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 4x² − 9y².', checkMode: 'auto', correctAnswer: '(2x-3y)(2x+3y)', correctAnswers: ['(2x-3y)(2x+3y)', '(2x − 3y)(2x + 3y)', '(2x+3y)(2x-3y)', '(2x + 3y)(2x − 3y)'], answer: '(2x − 3y)(2x + 3y)', explanation: '4x² = (2x)² en 9y² = (3y)².\nVerskil van kwadrate: (2x − 3y)(2x + 3y) ✓' },
+        { difficulty: 'Hard', question: 'Thandi faktoriseer 64x² − 81 en kry (8x − 9)(8x + 9). Kontroleer haar antwoord.', answer: 'Sy is korrek — 64x² = (8x)² en 81 = (9)², so die verskil van kwadrate gee (8x − 9)(8x + 9).', checkMode: 'self' },
+
+        // Blok 5 — Trinoom x² + bx + c, positiewe/eenvoudige konstante (Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer x² + 9x + 14.', checkMode: 'auto', correctAnswer: '(x+2)(x+7)', correctAnswers: ['(x+2)(x+7)', '(x + 2)(x + 7)', '(x+7)(x+2)', '(x + 7)(x + 2)'], answer: '(x + 2)(x + 7)', explanation: 'Vind twee getalle wat vermenigvuldig na 14 en optel na 9: 2 en 7.\nGefaktoriseer: (x + 2)(x + 7) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² + 13x + 40.', checkMode: 'auto', correctAnswer: '(x+5)(x+8)', correctAnswers: ['(x+5)(x+8)', '(x + 5)(x + 8)', '(x+8)(x+5)', '(x + 8)(x + 5)'], answer: '(x + 5)(x + 8)', explanation: 'Vind twee getalle wat vermenigvuldig na 40 en optel na 13: 5 en 8.\nGefaktoriseer: (x + 5)(x + 8) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 9x + 20.', checkMode: 'auto', correctAnswer: '(x-4)(x-5)', correctAnswers: ['(x-4)(x-5)', '(x − 4)(x − 5)', '(x-5)(x-4)', '(x − 5)(x − 4)'], answer: '(x − 4)(x − 5)', explanation: 'Vind twee getalle wat vermenigvuldig na 20 en optel na −9: −4 en −5.\nGefaktoriseer: (x − 4)(x − 5) ✓' },
+
+        // Blok 6 — Trinoom x² + bx + c, negatiewe konstante (Medium/Hard)
+        { difficulty: 'Medium-Hard', question: 'Faktoriseer x² − 3x − 40.', checkMode: 'auto', correctAnswer: '(x-8)(x+5)', correctAnswers: ['(x-8)(x+5)', '(x − 8)(x + 5)', '(x+5)(x-8)', '(x + 5)(x − 8)'], answer: '(x − 8)(x + 5)', explanation: 'Vind twee getalle wat vermenigvuldig na −40 en optel na −3: −8 en 5.\nGefaktoriseer: (x − 8)(x + 5) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Faktoriseer x² + 4x − 21.', checkMode: 'auto', correctAnswer: '(x+7)(x-3)', correctAnswers: ['(x+7)(x-3)', '(x + 7)(x − 3)', '(x-3)(x+7)', '(x − 3)(x + 7)'], answer: '(x + 7)(x − 3)', explanation: 'Vind twee getalle wat vermenigvuldig na −21 en optel na 4: 7 en −3.\nGefaktoriseer: (x + 7)(x − 3) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer x² − 2x − 35.', checkMode: 'auto', correctAnswer: '(x-7)(x+5)', correctAnswers: ['(x-7)(x+5)', '(x − 7)(x + 5)', '(x+5)(x-7)', '(x + 5)(x − 7)'], answer: '(x − 7)(x + 5)', explanation: 'Vind twee getalle wat vermenigvuldig na −35 en optel na −2: −7 en 5.\nGefaktoriseer: (x − 7)(x + 5) ✓' },
+
+        // Blok 7 — Trinoom met gemeenskaplike faktor + foutopsporing (Hard)
+        { difficulty: 'Hard', question: 'Faktoriseer 3x² + 21x + 30 volledig.', checkMode: 'auto', correctAnswer: '3(x+2)(x+5)', correctAnswers: ['3(x+2)(x+5)', '3(x + 2)(x + 5)', '3(x+5)(x+2)', '3(x + 5)(x + 2)'], answer: '3(x + 2)(x + 5)', explanation: 'Faktoriseer 3 uit: 3(x² + 7x + 10).\nVind twee getalle wat vermenigvuldig na 10 en optel na 7: 2 en 5.\nGefaktoriseer: 3(x + 2)(x + 5) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 2x² − 2x − 24 volledig.', checkMode: 'auto', correctAnswer: '2(x-4)(x+3)', correctAnswers: ['2(x-4)(x+3)', '2(x − 4)(x + 3)', '2(x+3)(x-4)', '2(x + 3)(x − 4)'], answer: '2(x − 4)(x + 3)', explanation: 'Faktoriseer 2 uit: 2(x² − x − 12).\nVind twee getalle wat vermenigvuldig na −12 en optel na −1: −4 en 3.\nGefaktoriseer: 2(x − 4)(x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 5x² − 45 volledig, en identifiseer die gemeenskaplike faktor en die patroon wat gebruik is.', answer: 'Faktoriseer 5 uit: 5(x² − 9). Herken verskil van kwadrate: 5(x − 3)(x + 3).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Naledi faktoriseer x² − 6x − 16 en kry (x − 2)(x + 8). Kontroleer haar antwoord.', answer: 'Sy is verkeerd — alhoewel (−2)(8) = −16, is die som −2 + 8 = 6, nie −6 nie. Die korrekte faktorisering is (x − 8)(x + 2), aangesien (−8)(2) = −16 en −8 + 2 = −6.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het faktorisering van gemeenskaplike faktore, verskille van kwadrate en trinome bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor trinome of verskil van kwadrate weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGF en faktorisering van trinome weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Gemeenskaplike faktor, twee-term (Easy)
+        { difficulty: 'Easy', question: 'Faktoriseer 12x² + 18x.', checkMode: 'auto', correctAnswer: '6x(2x+3)', correctAnswers: ['6x(2x+3)', '6x(2x + 3)'], answer: '6x(2x + 3)', explanation: 'GGF van 12x² en 18x is 6x.\n12x² ÷ 6x = 2x en 18x ÷ 6x = 3.\nGefaktoriseer: 6x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 10x³ − 15x².', checkMode: 'auto', correctAnswer: '5x²(2x-3)', correctAnswers: ['5x²(2x-3)', '5x²(2x − 3)', '5x^2(2x-3)', '5x^2(2x − 3)'], answer: '5x²(2x − 3)', explanation: 'GGF van 10x³ en 15x² is 5x².\n10x³ ÷ 5x² = 2x en 15x² ÷ 5x² = 3.\nGefaktoriseer: 5x²(2x − 3) ✓' },
+
+        // Blok 2 — Gemeenskaplike faktor, drie-term / kubies (Easy-Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer 8x³ + 12x² − 20x.', checkMode: 'auto', correctAnswer: '4x(2x²+3x-5)', correctAnswers: ['4x(2x²+3x-5)', '4x(2x² + 3x - 5)', '4x(2x²+3x−5)', '4x(2x² + 3x − 5)', '4x(2x^2+3x-5)', '4x(2x^2 + 3x - 5)'], answer: '4x(2x² + 3x − 5)', explanation: 'GGF van 8x³, 12x² en 20x is 4x.\n8x³ ÷ 4x = 2x², 12x² ÷ 4x = 3x, 20x ÷ 4x = 5.\nGefaktoriseer: 4x(2x² + 3x − 5) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 15a²b + 10ab².', checkMode: 'auto', correctAnswer: '5ab(3a+2b)', correctAnswers: ['5ab(3a+2b)', '5ab(3a + 2b)'], answer: '5ab(3a + 2b)', explanation: 'GGF van 15a²b en 10ab² is 5ab.\n15a²b ÷ 5ab = 3a en 10ab² ÷ 5ab = 2b.\nGefaktoriseer: 5ab(3a + 2b) ✓' },
+
+        // Blok 3 — Verskil van twee kwadrate, basies (Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 16.', checkMode: 'auto', correctAnswer: '(x-4)(x+4)', correctAnswers: ['(x-4)(x+4)', '(x − 4)(x + 4)', '(x+4)(x-4)', '(x + 4)(x − 4)'], answer: '(x − 4)(x + 4)', explanation: 'Herken x² − 16 = x² − 4².\nVerskil van kwadrate: (x − 4)(x + 4) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 144.', checkMode: 'auto', correctAnswer: '(x-12)(x+12)', correctAnswers: ['(x-12)(x+12)', '(x − 12)(x + 12)', '(x+12)(x-12)', '(x + 12)(x − 12)'], answer: '(x − 12)(x + 12)', explanation: 'Herken x² − 144 = x² − 12².\nVerskil van kwadrate: (x − 12)(x + 12) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 25x² − 1.', checkMode: 'auto', correctAnswer: '(5x-1)(5x+1)', correctAnswers: ['(5x-1)(5x+1)', '(5x − 1)(5x + 1)', '(5x+1)(5x-1)', '(5x + 1)(5x − 1)'], answer: '(5x − 1)(5x + 1)', explanation: '25x² = (5x)² en 1 = (1)².\nVerskil van kwadrate: (5x − 1)(5x + 1) ✓' },
+
+        // Blok 4 — Verskil van twee kwadrate, met koëffisiënte (Medium/Hard)
+        { difficulty: 'Medium', question: 'Faktoriseer 49x² − 9.', checkMode: 'auto', correctAnswer: '(7x-3)(7x+3)', correctAnswers: ['(7x-3)(7x+3)', '(7x − 3)(7x + 3)', '(7x+3)(7x-3)', '(7x + 3)(7x − 3)'], answer: '(7x − 3)(7x + 3)', explanation: '49x² = (7x)² en 9 = (3)².\nVerskil van kwadrate: (7x − 3)(7x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 9x² − 16y².', checkMode: 'auto', correctAnswer: '(3x-4y)(3x+4y)', correctAnswers: ['(3x-4y)(3x+4y)', '(3x − 4y)(3x + 4y)', '(3x+4y)(3x-4y)', '(3x + 4y)(3x − 4y)'], answer: '(3x − 4y)(3x + 4y)', explanation: '9x² = (3x)² en 16y² = (4y)².\nVerskil van kwadrate: (3x − 4y)(3x + 4y) ✓' },
+        { difficulty: 'Hard', question: 'Mpho faktoriseer 100x² − 121 en kry (10x − 11)(10x + 11). Kontroleer sy antwoord.', answer: 'Hy is korrek — 100x² = (10x)² en 121 = (11)², so die verskil van kwadrate gee (10x − 11)(10x + 11).', checkMode: 'self' },
+
+        // Blok 5 — Trinoom x² + bx + c, positiewe/eenvoudige konstante (Medium)
+        { difficulty: 'Medium', question: 'Faktoriseer x² + 8x + 15.', checkMode: 'auto', correctAnswer: '(x+3)(x+5)', correctAnswers: ['(x+3)(x+5)', '(x + 3)(x + 5)', '(x+5)(x+3)', '(x + 5)(x + 3)'], answer: '(x + 3)(x + 5)', explanation: 'Vind twee getalle wat vermenigvuldig na 15 en optel na 8: 3 en 5.\nGefaktoriseer: (x + 3)(x + 5) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² + 12x + 35.', checkMode: 'auto', correctAnswer: '(x+5)(x+7)', correctAnswers: ['(x+5)(x+7)', '(x + 5)(x + 7)', '(x+7)(x+5)', '(x + 7)(x + 5)'], answer: '(x + 5)(x + 7)', explanation: 'Vind twee getalle wat vermenigvuldig na 35 en optel na 12: 5 en 7.\nGefaktoriseer: (x + 5)(x + 7) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 8x + 15.', checkMode: 'auto', correctAnswer: '(x-3)(x-5)', correctAnswers: ['(x-3)(x-5)', '(x − 3)(x − 5)', '(x-5)(x-3)', '(x − 5)(x − 3)'], answer: '(x − 3)(x − 5)', explanation: 'Vind twee getalle wat vermenigvuldig na 15 en optel na −8: −3 en −5.\nGefaktoriseer: (x − 3)(x − 5) ✓' },
+
+        // Blok 6 — Trinoom x² + bx + c, negatiewe konstante (Medium/Hard)
+        { difficulty: 'Medium-Hard', question: 'Faktoriseer x² − 4x − 32.', checkMode: 'auto', correctAnswer: '(x-8)(x+4)', correctAnswers: ['(x-8)(x+4)', '(x − 8)(x + 4)', '(x+4)(x-8)', '(x + 4)(x − 8)'], answer: '(x − 8)(x + 4)', explanation: 'Vind twee getalle wat vermenigvuldig na −32 en optel na −4: −8 en 4.\nGefaktoriseer: (x − 8)(x + 4) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Faktoriseer x² + 3x − 28.', checkMode: 'auto', correctAnswer: '(x+7)(x-4)', correctAnswers: ['(x+7)(x-4)', '(x + 7)(x − 4)', '(x-4)(x+7)', '(x − 4)(x + 7)'], answer: '(x + 7)(x − 4)', explanation: 'Vind twee getalle wat vermenigvuldig na −28 en optel na 3: 7 en −4.\nGefaktoriseer: (x + 7)(x − 4) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer x² − 3x − 18.', checkMode: 'auto', correctAnswer: '(x-6)(x+3)', correctAnswers: ['(x-6)(x+3)', '(x − 6)(x + 3)', '(x+3)(x-6)', '(x + 3)(x − 6)'], answer: '(x − 6)(x + 3)', explanation: 'Vind twee getalle wat vermenigvuldig na −18 en optel na −3: −6 en 3.\nGefaktoriseer: (x − 6)(x + 3) ✓' },
+
+        // Blok 7 — Trinoom met gemeenskaplike faktor + foutopsporing (Hard)
+        { difficulty: 'Hard', question: 'Faktoriseer 4x² + 20x + 24 volledig.', checkMode: 'auto', correctAnswer: '4(x+2)(x+3)', correctAnswers: ['4(x+2)(x+3)', '4(x + 2)(x + 3)', '4(x+3)(x+2)', '4(x + 3)(x + 2)'], answer: '4(x + 2)(x + 3)', explanation: 'Faktoriseer 4 uit: 4(x² + 5x + 6).\nVind twee getalle wat vermenigvuldig na 6 en optel na 5: 2 en 3.\nGefaktoriseer: 4(x + 2)(x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 3x² − 6x − 45 volledig.', checkMode: 'auto', correctAnswer: '3(x-5)(x+3)', correctAnswers: ['3(x-5)(x+3)', '3(x − 5)(x + 3)', '3(x+3)(x-5)', '3(x + 3)(x − 5)'], answer: '3(x − 5)(x + 3)', explanation: 'Faktoriseer 3 uit: 3(x² − 2x − 15).\nVind twee getalle wat vermenigvuldig na −15 en optel na −2: −5 en 3.\nGefaktoriseer: 3(x − 5)(x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer 6x² − 24 volledig, en identifiseer die gemeenskaplike faktor en die patroon wat gebruik is.', answer: 'Faktoriseer 6 uit: 6(x² − 4). Herken verskil van kwadrate: 6(x − 2)(x + 2).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo faktoriseer x² − 7x − 18 en kry (x − 2)(x + 9). Kontroleer sy antwoord.', answer: 'Hy is verkeerd — alhoewel (−2)(9) = −18, is die som −2 + 9 = 7, nie −7 nie. Die korrekte faktorisering is (x − 9)(x + 2), aangesien (−9)(2) = −18 en −9 + 2 = −7.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het faktorisering van gemeenskaplike faktore, verskille van kwadrate en trinome bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor trinome of verskil van kwadrate weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGF en faktorisering van trinome weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

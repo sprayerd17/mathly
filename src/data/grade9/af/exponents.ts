@@ -409,4 +409,144 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die studiegids.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Negatiewe eksponent → resiprook (V1-4)
+        { difficulty: 'Easy', question: 'Vereenvoudig 2⁻⁴.', answer: '1/16', checkMode: 'auto', correctAnswer: '1/16', explanation: 'Pas a⁻ᵏ = 1/aᵏ toe:\n2⁻⁴ = 1/2⁴ = 1/16 ✓' },
+        { difficulty: 'Easy', question: 'Skryf 5⁻³ as ʼn breuk in eenvoudigste vorm.', answer: '1/125', checkMode: 'auto', correctAnswer: '1/125', explanation: 'Pas die negatiewe-eksponentreël toe:\n5⁻³ = 1/5³ = 1/125 ✓' },
+        { difficulty: 'Easy', question: 'Wat is die waarde van 10⁻²?', answer: '1/100', checkMode: 'auto', correctAnswer: '1/100', correctAnswers: ['1/100', '0,01'], explanation: '10⁻² = 1/10² = 1/100 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 6⁻² en gee jou antwoord as ʼn breuk.', answer: '1/36', checkMode: 'auto', correctAnswer: '1/36', explanation: '6⁻² = 1/6² = 1/36 ✓' },
+
+        // Blok 2 — Vermenigvuldigingswet met negatiewe eksponente (V5-7)
+        { difficulty: 'Medium', question: 'Vereenvoudig 3⁵ × 3⁻².', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n3⁵ × 3⁻² = 3^(5 + (−2)) = 3³ = 27 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 2⁻³ × 2⁷.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n2⁻³ × 2⁷ = 2^(−3 + 7) = 2⁴ = 16 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 6⁴ × 6⁻⁶, en gee jou antwoord as ʼn breuk.', answer: '1/36', checkMode: 'auto', correctAnswer: '1/36', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n6⁴ × 6⁻⁶ = 6^(4 + (−6)) = 6⁻² = 1/6² = 1/36 ✓' },
+
+        // Blok 3 — Delingswet met negatiewe eksponente (V8-10)
+        { difficulty: 'Medium', question: 'Vereenvoudig 5² ÷ 5⁻³.', answer: '3125', checkMode: 'auto', correctAnswer: '3125', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n5² ÷ 5⁻³ = 5^(2 − (−3)) = 5⁵ = 3125 ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die waarde van 7⁻² ÷ 7⁻⁵.', answer: '343', checkMode: 'auto', correctAnswer: '343', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n7⁻² ÷ 7⁻⁵ = 7^(−2 − (−5)) = 7³ = 343 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻¹ ÷ 3², en gee jou antwoord as ʼn breuk.', answer: '1/27', checkMode: 'auto', correctAnswer: '1/27', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n3⁻¹ ÷ 3² = 3^(−1 − 2) = 3⁻³ = 1/27 ✓' },
+
+        // Blok 4 — Mag van ʼn mag met negatiewe eksponente (V11-13)
+        { difficulty: 'Medium', question: 'Vereenvoudig (6⁻²)².', answer: '1/1296', checkMode: 'auto', correctAnswer: '1/1296', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(6⁻²)² = 6^(−2 × 2) = 6⁻⁴ = 1/1296 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig (5⁻¹)⁻³.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(5⁻¹)⁻³ = 5^(−1 × −3) = 5³ = 125 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (3²)⁻², en gee jou antwoord as ʼn breuk.', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(3²)⁻² = 3^(2 × −2) = 3⁻⁴ = 1/81 ✓' },
+
+        // Blok 5 — Wetenskaplike notasie met negatiewe eksponente (V14-16)
+        { difficulty: 'Easy', question: 'Skryf 0,00052 in wetenskaplike notasie.', answer: '5,2 × 10⁻⁴', checkMode: 'auto', correctAnswer: '5,2 × 10⁻⁴', correctAnswers: ['5,2 × 10⁻⁴', '5,2×10⁻⁴', '5,2x10⁻⁴', '5,2 x 10⁻⁴', '5,2e-4'], explanation: 'Skuif die desimaal 4 plekke na regs: 0,00052 → 5,2\nNa regs skuif → negatiewe eksponent van −4\nAntwoord: 5,2 × 10⁻⁴ ✓' },
+        { difficulty: 'Medium', question: 'Skryf 0,0000078 in wetenskaplike notasie.', answer: '7,8 × 10⁻⁶', checkMode: 'auto', correctAnswer: '7,8 × 10⁻⁶', correctAnswers: ['7,8 × 10⁻⁶', '7,8×10⁻⁶', '7,8x10⁻⁶', '7,8 x 10⁻⁶', '7,8e-6'], explanation: 'Skuif die desimaal 6 plekke na regs: 0,0000078 → 7,8\nNa regs skuif → negatiewe eksponent van −6\nAntwoord: 7,8 × 10⁻⁶ ✓' },
+        { difficulty: 'Hard', question: 'Zanele skryf 0,000416 in wetenskaplike notasie as 4,16 × 10⁻⁴. Kontroleer haar antwoord.', answer: 'Korrek — deur die desimaal 4 plekke na regs te skuif vanaf 0,000416 kry jy 4,16, wat 4,16 × 10⁻⁴ bevestig.', checkMode: 'self' },
+
+        // Blok 6 — Gekombineerde wette, meerstap- en werklike-lewe-probleme (V17-20)
+        { difficulty: 'Hard', question: 'Vereenvoudig 2⁷ × 2⁻⁴ ÷ 2².', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n2⁷ × 2⁻⁴ = 2^(7 + (−4)) = 2³\n2³ ÷ 2² = 2^(3 − 2) = 2¹ = 2 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Huidsel het ʼn massa van 3 × 10⁻⁸ gram. Bepaal die totale massa van 5 huidselle in wetenskaplike notasie.', answer: '1,5 × 10⁻⁷ gram', checkMode: 'auto', correctAnswer: '1,5 × 10⁻⁷ gram', correctAnswers: ['1,5 × 10⁻⁷ gram', '1,5×10⁻⁷ gram', '1,5x10⁻⁷ gram', '1,5e-7 gram', '1,5 × 10⁻⁷'], explanation: 'Vermenigvuldig: 5 × (3 × 10⁻⁸) = 15 × 10⁻⁸\nPas aan na wetenskaplike notasie: 15 × 10⁻⁸ = 1,5 × 10¹ × 10⁻⁸ = 1,5 × 10⁻⁷ gram ✓' },
+        { difficulty: 'Hard', question: 'Karabo sê 4⁻¹ × 4⁰ × 4³ vereenvoudig tot 4². Is hy korrek? Verduidelik.', answer: 'Ja — deur die eksponente bymekaar te tel kry jy −1 + 0 + 3 = 2, dus 4⁻¹ × 4⁰ × 4³ = 4² = 16.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 10⁻³ × 10⁶ ÷ 10².', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n10⁻³ × 10⁶ = 10^(−3 + 6) = 10³\n10³ ÷ 10² = 10^(3 − 2) = 10¹ = 10 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het heelgetal-eksponente en wetenskaplike notasie bemeester.' },
+        { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — gaan enige gemiste vrae weer deur.' },
+        { minScore: 9, message: 'Goeie poging! Gaan negatiewe eksponente en die wette van eksponente weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Negatiewe eksponent → resiprook (V1-4)
+        { difficulty: 'Easy', question: 'Vereenvoudig 8⁻².', answer: '1/64', checkMode: 'auto', correctAnswer: '1/64', explanation: 'Pas a⁻ᵏ = 1/aᵏ toe:\n8⁻² = 1/8² = 1/64 ✓' },
+        { difficulty: 'Easy', question: 'Skryf 4⁻⁴ as ʼn breuk in eenvoudigste vorm.', answer: '1/256', checkMode: 'auto', correctAnswer: '1/256', explanation: 'Pas die negatiewe-eksponentreël toe:\n4⁻⁴ = 1/4⁴ = 1/256 ✓' },
+        { difficulty: 'Easy', question: 'Wat is die waarde van 3⁻³?', answer: '1/27', checkMode: 'auto', correctAnswer: '1/27', explanation: '3⁻³ = 1/3³ = 1/27 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 9⁻² en gee jou antwoord as ʼn breuk.', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: '9⁻² = 1/9² = 1/81 ✓' },
+
+        // Blok 2 — Vermenigvuldigingswet met negatiewe eksponente (V5-7)
+        { difficulty: 'Medium', question: 'Vereenvoudig 4⁶ × 4⁻⁴.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n4⁶ × 4⁻⁴ = 4^(6 + (−4)) = 4² = 16 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 3⁻² × 3⁶.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n3⁻² × 3⁶ = 3^(−2 + 6) = 3⁴ = 81 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 5³ × 5⁻⁶, en gee jou antwoord as ʼn breuk.', answer: '1/125', checkMode: 'auto', correctAnswer: '1/125', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n5³ × 5⁻⁶ = 5^(3 + (−6)) = 5⁻³ = 1/5³ = 1/125 ✓' },
+
+        // Blok 3 — Delingswet met negatiewe eksponente (V8-10)
+        { difficulty: 'Medium', question: 'Vereenvoudig 9¹ ÷ 9⁻³.', answer: '6561', checkMode: 'auto', correctAnswer: '6561', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n9¹ ÷ 9⁻³ = 9^(1 − (−3)) = 9⁴ = 6561 ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die waarde van 6⁻¹ ÷ 6⁻⁴.', answer: '216', checkMode: 'auto', correctAnswer: '216', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n6⁻¹ ÷ 6⁻⁴ = 6^(−1 − (−4)) = 6³ = 216 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 2⁻² ÷ 2³, en gee jou antwoord as ʼn breuk.', answer: '1/32', checkMode: 'auto', correctAnswer: '1/32', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n2⁻² ÷ 2³ = 2^(−2 − 3) = 2⁻⁵ = 1/32 ✓' },
+
+        // Blok 4 — Mag van ʼn mag met negatiewe eksponente (V11-13)
+        { difficulty: 'Medium', question: 'Vereenvoudig (3⁻²)².', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(3⁻²)² = 3^(−2 × 2) = 3⁻⁴ = 1/81 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig (2⁻¹)⁻⁴.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(2⁻¹)⁻⁴ = 2^(−1 × −4) = 2⁴ = 16 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (4²)⁻², en gee jou antwoord as ʼn breuk.', answer: '1/256', checkMode: 'auto', correctAnswer: '1/256', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(4²)⁻² = 4^(2 × −2) = 4⁻⁴ = 1/256 ✓' },
+
+        // Blok 5 — Wetenskaplike notasie met negatiewe eksponente (V14-16)
+        { difficulty: 'Easy', question: 'Skryf 0,0000031 in wetenskaplike notasie.', answer: '3,1 × 10⁻⁶', checkMode: 'auto', correctAnswer: '3,1 × 10⁻⁶', correctAnswers: ['3,1 × 10⁻⁶', '3,1×10⁻⁶', '3,1x10⁻⁶', '3,1 x 10⁻⁶', '3,1e-6'], explanation: 'Skuif die desimaal 6 plekke na regs: 0,0000031 → 3,1\nNa regs skuif → negatiewe eksponent van −6\nAntwoord: 3,1 × 10⁻⁶ ✓' },
+        { difficulty: 'Medium', question: 'Skryf 0,0000091 in wetenskaplike notasie.', answer: '9,1 × 10⁻⁶', checkMode: 'auto', correctAnswer: '9,1 × 10⁻⁶', correctAnswers: ['9,1 × 10⁻⁶', '9,1×10⁻⁶', '9,1x10⁻⁶', '9,1 x 10⁻⁶', '9,1e-6'], explanation: 'Skuif die desimaal 6 plekke na regs: 0,0000091 → 9,1\nNa regs skuif → negatiewe eksponent van −6\nAntwoord: 9,1 × 10⁻⁶ ✓' },
+        { difficulty: 'Hard', question: 'Thabo skryf 0,000029 in wetenskaplike notasie as 2,9 × 10⁻⁵. Kontroleer sy antwoord.', answer: 'Korrek — deur die desimaal 5 plekke na regs te skuif vanaf 0,000029 kry jy 2,9, wat 2,9 × 10⁻⁵ bevestig.', checkMode: 'self' },
+
+        // Blok 6 — Gekombineerde wette, meerstap- en werklike-lewe-probleme (V17-20)
+        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻² × 3⁵ ÷ 3⁻¹.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n3⁻² × 3⁵ = 3^(−2 + 5) = 3³\n3³ ÷ 3⁻¹ = 3^(3 − (−1)) = 3⁴ = 81 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Bakterium het ʼn massa van 6 × 10⁻¹¹ gram. Bepaal die totale massa van 3 bakterieë in wetenskaplike notasie.', answer: '1,8 × 10⁻¹⁰ gram', checkMode: 'auto', correctAnswer: '1,8 × 10⁻¹⁰ gram', correctAnswers: ['1,8 × 10⁻¹⁰ gram', '1,8×10⁻¹⁰ gram', '1,8x10⁻¹⁰ gram', '1,8e-10 gram', '1,8 × 10⁻¹⁰'], explanation: 'Vermenigvuldig: 3 × (6 × 10⁻¹¹) = 18 × 10⁻¹¹\nPas aan na wetenskaplike notasie: 18 × 10⁻¹¹ = 1,8 × 10¹ × 10⁻¹¹ = 1,8 × 10⁻¹⁰ gram ✓' },
+        { difficulty: 'Hard', question: 'Amahle sê 6⁻² × 6⁵ is gelyk aan 216. Is sy korrek? Verduidelik.', answer: 'Ja — deur die eksponente bymekaar te tel kry jy −2 + 5 = 3, dus 6⁻² × 6⁵ = 6³ = 216.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 5⁻² × 5⁴ ÷ 5⁻¹.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n5⁻² × 5⁴ = 5^(−2 + 4) = 5²\n5² ÷ 5⁻¹ = 5^(2 − (−1)) = 5³ = 125 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het heelgetal-eksponente en wetenskaplike notasie bemeester.' },
+        { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — gaan enige gemiste vrae weer deur.' },
+        { minScore: 9, message: 'Goeie poging! Gaan negatiewe eksponente en die wette van eksponente weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Negatiewe eksponent → resiprook (V1-4)
+        { difficulty: 'Easy', question: 'Vereenvoudig 10⁻³.', answer: '1/1000', checkMode: 'auto', correctAnswer: '1/1000', correctAnswers: ['1/1000', '0,001'], explanation: 'Pas a⁻ᵏ = 1/aᵏ toe:\n10⁻³ = 1/10³ = 1/1000 ✓' },
+        { difficulty: 'Easy', question: 'Skryf 2⁻⁶ as ʼn breuk in eenvoudigste vorm.', answer: '1/64', checkMode: 'auto', correctAnswer: '1/64', explanation: 'Pas die negatiewe-eksponentreël toe:\n2⁻⁶ = 1/2⁶ = 1/64 ✓' },
+        { difficulty: 'Easy', question: 'Wat is die waarde van 5⁻²?', answer: '1/25', checkMode: 'auto', correctAnswer: '1/25', explanation: '5⁻² = 1/5² = 1/25 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 6⁻³ en gee jou antwoord as ʼn breuk.', answer: '1/216', checkMode: 'auto', correctAnswer: '1/216', explanation: '6⁻³ = 1/6³ = 1/216 ✓' },
+
+        // Blok 2 — Vermenigvuldigingswet met negatiewe eksponente (V5-7)
+        { difficulty: 'Medium', question: 'Vereenvoudig 7⁻³ × 7⁻¹.', answer: '1/2401', checkMode: 'auto', correctAnswer: '1/2401', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n7⁻³ × 7⁻¹ = 7^(−3 + (−1)) = 7⁻⁴ = 1/7⁴ = 1/2401 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 2⁵ × 2⁻⁸.', answer: '1/8', checkMode: 'auto', correctAnswer: '1/8', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n2⁵ × 2⁻⁸ = 2^(5 + (−8)) = 2⁻³ = 1/2³ = 1/8 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 9⁻¹ × 9⁻², en gee jou antwoord as ʼn breuk.', answer: '1/729', checkMode: 'auto', correctAnswer: '1/729', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n9⁻¹ × 9⁻² = 9^(−1 + (−2)) = 9⁻³ = 1/9³ = 1/729 ✓' },
+
+        // Blok 3 — Delingswet met negatiewe eksponente (V8-10)
+        { difficulty: 'Medium', question: 'Vereenvoudig 9² ÷ 9⁻¹.', answer: '729', checkMode: 'auto', correctAnswer: '729', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n9² ÷ 9⁻¹ = 9^(2 − (−1)) = 9³ = 729 ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die waarde van 7³ ÷ 7⁻².', answer: '16807', checkMode: 'auto', correctAnswer: '16807', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n7³ ÷ 7⁻² = 7^(3 − (−2)) = 7⁵ = 16807 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻³ ÷ 3⁻¹, en gee jou antwoord as ʼn breuk.', answer: '1/9', checkMode: 'auto', correctAnswer: '1/9', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n3⁻³ ÷ 3⁻¹ = 3^(−3 − (−1)) = 3⁻² = 1/9 ✓' },
+
+        // Blok 4 — Mag van ʼn mag met negatiewe eksponente (V11-13)
+        { difficulty: 'Medium', question: 'Vereenvoudig (6⁻¹)⁻².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(6⁻¹)⁻² = 6^(−1 × −2) = 6² = 36 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig (10⁻²)².', answer: '1/10000', checkMode: 'auto', correctAnswer: '1/10000', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(10⁻²)² = 10^(−2 × 2) = 10⁻⁴ = 1/10000 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (5⁻²)⁻¹, en gee jou antwoord as ʼn heelgetal.', answer: '25', checkMode: 'auto', correctAnswer: '25', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(5⁻²)⁻¹ = 5^(−2 × −1) = 5² = 25 ✓' },
+
+        // Blok 5 — Wetenskaplike notasie met negatiewe eksponente (V14-16)
+        { difficulty: 'Easy', question: 'Skryf 0,000000605 in wetenskaplike notasie.', answer: '6,05 × 10⁻⁷', checkMode: 'auto', correctAnswer: '6,05 × 10⁻⁷', correctAnswers: ['6,05 × 10⁻⁷', '6,05×10⁻⁷', '6,05x10⁻⁷', '6,05 x 10⁻⁷', '6,05e-7'], explanation: 'Skuif die desimaal 7 plekke na regs: 0,000000605 → 6,05\nNa regs skuif → negatiewe eksponent van −7\nAntwoord: 6,05 × 10⁻⁷ ✓' },
+        { difficulty: 'Medium', question: 'Skryf 0,0000004 in wetenskaplike notasie.', answer: '4 × 10⁻⁷', checkMode: 'auto', correctAnswer: '4 × 10⁻⁷', correctAnswers: ['4 × 10⁻⁷', '4×10⁻⁷', '4x10⁻⁷', '4 x 10⁻⁷', '4e-7', '4,0 × 10⁻⁷'], explanation: 'Skuif die desimaal 7 plekke na regs: 0,0000004 → 4\nNa regs skuif → negatiewe eksponent van −7\nAntwoord: 4 × 10⁻⁷ ✓' },
+        { difficulty: 'Hard', question: 'Lerato skryf 0,000625 in wetenskaplike notasie as 6,25 × 10⁻⁴. Kontroleer haar antwoord.', answer: 'Korrek — deur die desimaal 4 plekke na regs te skuif vanaf 0,000625 kry jy 6,25, wat 6,25 × 10⁻⁴ bevestig.', checkMode: 'self' },
+
+        // Blok 6 — Gekombineerde wette, meerstap- en werklike-lewe-probleme (V17-20)
+        { difficulty: 'Hard', question: 'Vereenvoudig 7² × 7⁻³ ÷ 7⁻².', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n7² × 7⁻³ = 7^(2 + (−3)) = 7⁻¹\n7⁻¹ ÷ 7⁻² = 7^(−1 − (−2)) = 7¹ = 7 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Haar het ʼn breedte van 8 × 10⁻⁵ meter. Bepaal die gesamentlike breedte van 200 hare langs mekaar geplaas, in wetenskaplike notasie.', answer: '1,6 × 10⁻² meter', checkMode: 'auto', correctAnswer: '1,6 × 10⁻² meter', correctAnswers: ['1,6 × 10⁻² meter', '1,6×10⁻² meter', '1,6x10⁻² meter', '1,6e-2 meter', '1,6 × 10⁻²', '1,6 × 10⁻² m'], explanation: 'Vermenigvuldig: 200 × (8 × 10⁻⁵) = 1600 × 10⁻⁵\nPas aan na wetenskaplike notasie: 1600 × 10⁻⁵ = 1,6 × 10³ × 10⁻⁵ = 1,6 × 10⁻² meter ✓' },
+        { difficulty: 'Hard', question: 'Sipho sê 2⁻⁴ × 2⁶ is gelyk aan 4. Is hy korrek? Verduidelik.', answer: 'Ja — deur die eksponente bymekaar te tel kry jy −4 + 6 = 2, dus 2⁻⁴ × 2⁶ = 2² = 4.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 6⁻³ × 6⁷ ÷ 6².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n6⁻³ × 6⁷ = 6^(−3 + 7) = 6⁴\n6⁴ ÷ 6² = 6^(4 − 2) = 6² = 36 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het heelgetal-eksponente en wetenskaplike notasie bemeester.' },
+        { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — gaan enige gemiste vrae weer deur.' },
+        { minScore: 9, message: 'Goeie poging! Gaan negatiewe eksponente en die wette van eksponente weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

@@ -445,4 +445,150 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Good effort! Review the sections and worked examples, then try again.' },
     { minScore: 0, message: 'Keep going! Work through the study guide again section by section, then give it another try.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs) — no diagrams, pure word-problem/numeric content
+    // Block 1 (0-2):   Simplifying ratios to simplest form
+    // Block 2 (3-6):   Sharing an amount in a given ratio
+    // Block 3 (7-10):  Direct proportion word problems
+    // Block 4 (11-13): Indirect (inverse) proportion word problems
+    // Block 5 (14-16): Rate problems (unit rate, speed/distance/time)
+    // Block 6 (17-19): Scale/map problems and a combined multi-step problem
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Simplifying ratios (Easy)
+        { difficulty: 'Easy', question: 'Simplify the ratio 24 : 36 to its simplest form.', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', '2 : 3'], answer: '2 : 3', explanation: 'HCF of 24 and 36 is 12.\n24 ÷ 12 = 2 and 36 ÷ 12 = 3.\nSimplest form: 2 : 3' },
+        { difficulty: 'Easy', question: 'Simplify the ratio 18 : 42 to its simplest form.', checkMode: 'auto', correctAnswer: '3:7', correctAnswers: ['3:7', '3 : 7'], answer: '3 : 7', explanation: 'HCF of 18 and 42 is 6.\n18 ÷ 6 = 3 and 42 ÷ 6 = 7.\nSimplest form: 3 : 7' },
+        { difficulty: 'Easy', question: 'Simplify the ratio 150 : 90 to its simplest form.', checkMode: 'auto', correctAnswer: '5:3', correctAnswers: ['5:3', '5 : 3'], answer: '5 : 3', explanation: 'HCF of 150 and 90 is 30.\n150 ÷ 30 = 5 and 90 ÷ 30 = 3.\nSimplest form: 5 : 3' },
+
+        // Block 2 — Sharing an amount in a given ratio (Medium)
+        { difficulty: 'Medium', question: 'Share R360 between Thabo and Lerato in the ratio 4 : 5. Find Thabo\'s share.', checkMode: 'auto', correctAnswer: 'R160', correctAnswers: ['R160', '160'], answer: 'R160', explanation: 'Total parts = 4 + 5 = 9.\nValue of 1 part = 360 ÷ 9 = R40.\nThabo\'s share = 4 × R40 = R160' },
+        { difficulty: 'Medium', question: 'Share R600 between three friends in the ratio 2 : 3 : 5. Find the largest share.', checkMode: 'auto', correctAnswer: 'R300', correctAnswers: ['R300', '300'], answer: 'R300', explanation: 'Total parts = 2 + 3 + 5 = 10.\nValue of 1 part = 600 ÷ 10 = R60.\nLargest share = 5 × R60 = R300' },
+        { difficulty: 'Medium', question: 'Share R200 between Sipho and Amahle in the ratio 3 : 5. Find Amahle\'s share.', checkMode: 'auto', correctAnswer: 'R125', correctAnswers: ['R125', '125'], answer: 'R125', explanation: 'Total parts = 3 + 5 = 8.\nValue of 1 part = 200 ÷ 8 = R25.\nAmahle\'s share = 5 × R25 = R125' },
+        { difficulty: 'Medium', question: 'A class of 40 learners is split into two groups in the ratio of boys to girls of 3 : 5. How many girls are in the class?', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 girls'], answer: '25', explanation: 'Total parts = 3 + 5 = 8.\nValue of 1 part = 40 ÷ 8 = 5.\nGirls = 5 × 5 = 25' },
+
+        // Block 3 — Direct proportion word problems (Medium/Hard)
+        { difficulty: 'Medium', question: 'If 5 kg of rice costs R85, find the cost of 8 kg using direct proportion.', checkMode: 'auto', correctAnswer: 'R136', correctAnswers: ['R136', '136'], answer: 'R136', explanation: 'Set up equal ratios: 5/85 = 8/x.\nCross multiply: 5x = 8 × 85 = 680.\nx = 680 ÷ 5 = 136.\nCost = R136 ✓' },
+        { difficulty: 'Medium', question: 'A school buys 12 textbooks for R540. Using direct proportion, find the cost of 20 textbooks.', checkMode: 'auto', correctAnswer: 'R900', correctAnswers: ['R900', '900'], answer: 'R900', explanation: 'Set up equal ratios: 12/540 = 20/x.\nCross multiply: 12x = 20 × 540 = 10 800.\nx = 10 800 ÷ 12 = 900.\nCost = R900 ✓' },
+        { difficulty: 'Hard', question: 'The exchange rate is 6 US dollars for R114. Using direct proportion, find how many rand 15 US dollars is worth.', checkMode: 'auto', correctAnswer: 'R285', correctAnswers: ['R285', '285'], answer: 'R285', explanation: 'Set up equal ratios: 6/114 = 15/x.\nCross multiply: 6x = 15 × 114 = 1 710.\nx = 1 710 ÷ 6 = 285.\nValue = R285 ✓' },
+        { difficulty: 'Hard', question: 'A recipe uses 400 g of flour for every 250 ml of milk. Using direct proportion, find how much flour is needed for 625 ml of milk.', checkMode: 'auto', correctAnswer: '1000g', correctAnswers: ['1000g', '1000', '1 000g', '1 000 g', '1kg', '1 kg'], answer: '1 000 g', explanation: 'Set up equal ratios: 250/400 = 625/x.\nCross multiply: 250x = 625 × 400 = 250 000.\nx = 250 000 ÷ 250 = 1 000.\nFlour needed = 1 000 g ✓' },
+
+        // Block 4 — Indirect (inverse) proportion word problems (Hard)
+        { difficulty: 'Hard', question: '4 workers can build a wall in 18 days. How many days would 6 workers take, assuming inverse proportion?', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 days'], answer: '12 days', explanation: 'x₁y₁ = x₂y₂.\n4 × 18 = 6 × y₂.\n72 = 6y₂.\ny₂ = 72 ÷ 6 = 12 days ✓' },
+        { difficulty: 'Hard', question: 'A car travels at 90 km/h and takes 4 hours for a trip. Find the time taken if it travels at 60 km/h instead.', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 hours'], answer: '6 hours', explanation: 'x₁y₁ = x₂y₂.\n90 × 4 = 60 × y₂.\n360 = 60y₂.\ny₂ = 360 ÷ 60 = 6 hours ✓' },
+        { difficulty: 'Hard', question: '10 taps fill a tank in 8 hours. How long would 16 taps take, assuming inverse proportion?', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 hours'], answer: '5 hours', explanation: 'x₁y₁ = x₂y₂.\n10 × 8 = 16 × y₂.\n80 = 16y₂.\ny₂ = 80 ÷ 16 = 5 hours ✓' },
+
+        // Block 5 — Rate problems (Hard)
+        { difficulty: 'Hard', question: 'A shop sells 12 identical items for R156. Find the price of one item (the unit rate).', checkMode: 'auto', correctAnswer: 'R13', correctAnswers: ['R13', '13'], answer: 'R13', explanation: 'Unit rate = total cost ÷ number of items.\n156 ÷ 12 = 13.\nPrice per item = R13 ✓' },
+        { difficulty: 'Hard', question: 'A car travels at a constant speed of 72 km/h for 3.5 hours. Find the distance travelled.', checkMode: 'auto', correctAnswer: '252', correctAnswers: ['252', '252km', '252 km'], answer: '252 km', explanation: 'Distance = speed × time.\nDistance = 72 × 3.5 = 252 km ✓' },
+        { difficulty: 'Hard', question: 'A learner types 210 words in 3.5 minutes at a constant rate. How long would it take to type 480 words at the same rate?', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 minutes', '8 min'], answer: '8 minutes', explanation: 'Rate = 210 ÷ 3.5 = 60 words per minute.\nTime for 480 words = 480 ÷ 60 = 8 minutes ✓' },
+
+        // Block 6 — Scale/map problems and combined multi-step (Hard)
+        { difficulty: 'Hard', question: 'A map has a scale of 1 : 50 000. The distance between two towns on the map is 6 cm. Find the real distance in km.', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3km', '3 km'], answer: '3 km', explanation: 'Real distance = 6 × 50 000 = 300 000 cm.\nConvert to km: 300 000 ÷ 100 000 = 3 km ✓' },
+        { difficulty: 'Hard', question: 'A map has a scale of 1 : 20 000. Two landmarks are 3 km apart in real life. Find the distance between them on the map, in cm.', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15cm', '15 cm'], answer: '15 cm', explanation: 'Convert 3 km to cm: 3 × 100 000 = 300 000 cm.\nMap distance = 300 000 ÷ 20 000 = 15 cm ✓' },
+        { difficulty: 'Hard', question: 'Cement, sand and stone are mixed in the ratio 1 : 2 : 3 to make 240 kg of concrete. Find the mass of sand needed. If the job is scaled up to 3 times the batch size, find the new mass of sand needed.', answer: 'Total parts = 1 + 2 + 3 = 6.\nValue of 1 part = 240 ÷ 6 = 40 kg.\nSand (2 parts) = 2 × 40 = 80 kg.\nScaled batch total = 240 × 3 = 720 kg, so sand scales the same way: 80 × 3 = 240 kg.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered ratio, sharing, proportion, rate and scale problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on inverse proportion or scale, then try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on direct and indirect proportion, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Simplifying ratios (Easy)
+        { difficulty: 'Easy', question: 'Simplify the ratio 28 : 42 to its simplest form.', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', '2 : 3'], answer: '2 : 3', explanation: 'HCF of 28 and 42 is 14.\n28 ÷ 14 = 2 and 42 ÷ 14 = 3.\nSimplest form: 2 : 3' },
+        { difficulty: 'Easy', question: 'Simplify the ratio 20 : 45 to its simplest form.', checkMode: 'auto', correctAnswer: '4:9', correctAnswers: ['4:9', '4 : 9'], answer: '4 : 9', explanation: 'HCF of 20 and 45 is 5.\n20 ÷ 5 = 4 and 45 ÷ 5 = 9.\nSimplest form: 4 : 9' },
+        { difficulty: 'Easy', question: 'Simplify the ratio 126 : 84 to its simplest form.', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2', '3 : 2'], answer: '3 : 2', explanation: 'HCF of 126 and 84 is 42.\n126 ÷ 42 = 3 and 84 ÷ 42 = 2.\nSimplest form: 3 : 2' },
+
+        // Block 2 — Sharing an amount in a given ratio (Medium)
+        { difficulty: 'Medium', question: 'Share R280 between Sipho and Naledi in the ratio 3 : 4. Find Sipho\'s share.', checkMode: 'auto', correctAnswer: 'R120', correctAnswers: ['R120', '120'], answer: 'R120', explanation: 'Total parts = 3 + 4 = 7.\nValue of 1 part = 280 ÷ 7 = R40.\nSipho\'s share = 3 × R40 = R120' },
+        { difficulty: 'Medium', question: 'Share R450 between three charities in the ratio 1 : 2 : 2. Find the value of each of the two equal (larger) shares.', checkMode: 'auto', correctAnswer: 'R180', correctAnswers: ['R180', '180'], answer: 'R180', explanation: 'Total parts = 1 + 2 + 2 = 5.\nValue of 1 part = 450 ÷ 5 = R90.\nEach larger share = 2 × R90 = R180' },
+        { difficulty: 'Medium', question: 'Share R336 between Buhle and Kagiso in the ratio 4 : 3. Find Buhle\'s share.', checkMode: 'auto', correctAnswer: 'R192', correctAnswers: ['R192', '192'], answer: 'R192', explanation: 'Total parts = 4 + 3 = 7.\nValue of 1 part = 336 ÷ 7 = R48.\nBuhle\'s share = 4 × R48 = R192' },
+        { difficulty: 'Medium', question: 'A farm has 1 050 chickens and ducks in the ratio 3 : 4. How many ducks are on the farm?', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600', '600 ducks'], answer: '600', explanation: 'Total parts = 3 + 4 = 7.\nValue of 1 part = 1 050 ÷ 7 = 150.\nDucks = 4 × 150 = 600' },
+
+        // Block 3 — Direct proportion word problems (Medium/Hard)
+        { difficulty: 'Medium', question: 'If 4 kg of rice costs R76, find the cost of 9 kg using direct proportion.', checkMode: 'auto', correctAnswer: 'R171', correctAnswers: ['R171', '171'], answer: 'R171', explanation: 'Set up equal ratios: 4/76 = 9/x.\nCross multiply: 4x = 9 × 76 = 684.\nx = 684 ÷ 4 = 171.\nCost = R171 ✓' },
+        { difficulty: 'Medium', question: 'A school buys 15 textbooks for R675. Using direct proportion, find the cost of 24 textbooks.', checkMode: 'auto', correctAnswer: 'R1080', correctAnswers: ['R1080', '1080', 'R1 080', '1 080'], answer: 'R1 080', explanation: 'Set up equal ratios: 15/675 = 24/x.\nCross multiply: 15x = 24 × 675 = 16 200.\nx = 16 200 ÷ 15 = 1 080.\nCost = R1 080 ✓' },
+        { difficulty: 'Hard', question: 'The exchange rate is 8 US dollars for R152. Using direct proportion, find how many rand 20 US dollars is worth.', checkMode: 'auto', correctAnswer: 'R380', correctAnswers: ['R380', '380'], answer: 'R380', explanation: 'Set up equal ratios: 8/152 = 20/x.\nCross multiply: 8x = 20 × 152 = 3 040.\nx = 3 040 ÷ 8 = 380.\nValue = R380 ✓' },
+        { difficulty: 'Hard', question: 'A recipe uses 480 g of flour for every 300 ml of milk. Using direct proportion, find how much flour is needed for 750 ml of milk.', checkMode: 'auto', correctAnswer: '1200g', correctAnswers: ['1200g', '1200', '1 200g', '1 200 g', '1.2kg', '1,2kg'], answer: '1 200 g', explanation: 'Set up equal ratios: 300/480 = 750/x.\nCross multiply: 300x = 750 × 480 = 360 000.\nx = 360 000 ÷ 300 = 1 200.\nFlour needed = 1 200 g ✓' },
+
+        // Block 4 — Indirect (inverse) proportion word problems (Hard)
+        { difficulty: 'Hard', question: '6 workers can build a wall in 15 days. How many days would 9 workers take, assuming inverse proportion?', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 days'], answer: '10 days', explanation: 'x₁y₁ = x₂y₂.\n6 × 15 = 9 × y₂.\n90 = 9y₂.\ny₂ = 90 ÷ 9 = 10 days ✓' },
+        { difficulty: 'Hard', question: 'A car travels at 80 km/h and takes 6 hours for a trip. Find the time taken if it travels at 96 km/h instead.', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 hours'], answer: '5 hours', explanation: 'x₁y₁ = x₂y₂.\n80 × 6 = 96 × y₂.\n480 = 96y₂.\ny₂ = 480 ÷ 96 = 5 hours ✓' },
+        { difficulty: 'Hard', question: '12 taps fill a tank in 9 hours. How long would 18 taps take, assuming inverse proportion?', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6 hours'], answer: '6 hours', explanation: 'x₁y₁ = x₂y₂.\n12 × 9 = 18 × y₂.\n108 = 18y₂.\ny₂ = 108 ÷ 18 = 6 hours ✓' },
+
+        // Block 5 — Rate problems (Hard)
+        { difficulty: 'Hard', question: 'A shop sells 12 identical items for R204. Find the price of one item (the unit rate).', checkMode: 'auto', correctAnswer: 'R17', correctAnswers: ['R17', '17'], answer: 'R17', explanation: 'Unit rate = total cost ÷ number of items.\n204 ÷ 12 = 17.\nPrice per item = R17 ✓' },
+        { difficulty: 'Hard', question: 'A car travels at a constant speed of 84 km/h for 2.5 hours. Find the distance travelled.', checkMode: 'auto', correctAnswer: '210', correctAnswers: ['210', '210km', '210 km'], answer: '210 km', explanation: 'Distance = speed × time.\nDistance = 84 × 2.5 = 210 km ✓' },
+        { difficulty: 'Hard', question: 'A learner types 180 words in 3 minutes at a constant rate. How long would it take to type 420 words at the same rate?', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', '7 minutes', '7 min'], answer: '7 minutes', explanation: 'Rate = 180 ÷ 3 = 60 words per minute.\nTime for 420 words = 420 ÷ 60 = 7 minutes ✓' },
+
+        // Block 6 — Scale/map problems and combined multi-step (Hard)
+        { difficulty: 'Hard', question: 'A map has a scale of 1 : 25 000. The distance between two towns on the map is 8 cm. Find the real distance in km.', checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', '2km', '2 km'], answer: '2 km', explanation: 'Real distance = 8 × 25 000 = 200 000 cm.\nConvert to km: 200 000 ÷ 100 000 = 2 km ✓' },
+        { difficulty: 'Hard', question: 'A map has a scale of 1 : 40 000. Two landmarks are 6 km apart in real life. Find the distance between them on the map, in cm.', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15cm', '15 cm'], answer: '15 cm', explanation: 'Convert 6 km to cm: 6 × 100 000 = 600 000 cm.\nMap distance = 600 000 ÷ 40 000 = 15 cm ✓' },
+        { difficulty: 'Hard', question: 'Red, blue and yellow paint are mixed in the ratio 2 : 3 : 5 to make 300 L of a special colour. Find the volume of blue paint needed. If the batch is scaled up to 2 times the size, find the new volume of blue paint needed.', answer: 'Total parts = 2 + 3 + 5 = 10.\nValue of 1 part = 300 ÷ 10 = 30 L.\nBlue paint (3 parts) = 3 × 30 = 90 L.\nScaled batch total = 300 × 2 = 600 L, so blue paint scales the same way: 90 × 2 = 180 L.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered ratio, sharing, proportion, rate and scale problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on inverse proportion or scale, then try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on direct and indirect proportion, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Simplifying ratios (Easy)
+        { difficulty: 'Easy', question: 'Simplify the ratio 32 : 48 to its simplest form.', checkMode: 'auto', correctAnswer: '2:3', correctAnswers: ['2:3', '2 : 3'], answer: '2 : 3', explanation: 'HCF of 32 and 48 is 16.\n32 ÷ 16 = 2 and 48 ÷ 16 = 3.\nSimplest form: 2 : 3' },
+        { difficulty: 'Easy', question: 'Simplify the ratio 27 : 63 to its simplest form.', checkMode: 'auto', correctAnswer: '3:7', correctAnswers: ['3:7', '3 : 7'], answer: '3 : 7', explanation: 'HCF of 27 and 63 is 9.\n27 ÷ 9 = 3 and 63 ÷ 9 = 7.\nSimplest form: 3 : 7' },
+        { difficulty: 'Easy', question: 'Simplify the ratio 180 : 120 to its simplest form.', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2', '3 : 2'], answer: '3 : 2', explanation: 'HCF of 180 and 120 is 60.\n180 ÷ 60 = 3 and 120 ÷ 60 = 2.\nSimplest form: 3 : 2' },
+
+        // Block 2 — Sharing an amount in a given ratio (Medium)
+        { difficulty: 'Medium', question: 'Share R420 between Amahle and Thabo in the ratio 5 : 7. Find Amahle\'s share.', checkMode: 'auto', correctAnswer: 'R175', correctAnswers: ['R175', '175'], answer: 'R175', explanation: 'Total parts = 5 + 7 = 12.\nValue of 1 part = 420 ÷ 12 = R35.\nAmahle\'s share = 5 × R35 = R175' },
+        { difficulty: 'Medium', question: 'Share R360 between three cousins in the ratio 2 : 3 : 4. Find the smallest share.', checkMode: 'auto', correctAnswer: 'R80', correctAnswers: ['R80', '80'], answer: 'R80', explanation: 'Total parts = 2 + 3 + 4 = 9.\nValue of 1 part = 360 ÷ 9 = R40.\nSmallest share = 2 × R40 = R80' },
+        { difficulty: 'Medium', question: 'Share R440 between Lerato and Sipho in the ratio 3 : 8. Find Sipho\'s share.', checkMode: 'auto', correctAnswer: 'R320', correctAnswers: ['R320', '320'], answer: 'R320', explanation: 'Total parts = 3 + 8 = 11.\nValue of 1 part = 440 ÷ 11 = R40.\nSipho\'s share = 8 × R40 = R320' },
+        { difficulty: 'Medium', question: 'A garden has 725 rose bushes and shrubs in the ratio 3 : 2. How many rose bushes are there?', checkMode: 'auto', correctAnswer: '435', correctAnswers: ['435', '435 rose bushes'], answer: '435', explanation: 'Total parts = 3 + 2 = 5.\nValue of 1 part = 725 ÷ 5 = 145.\nRose bushes = 3 × 145 = 435' },
+
+        // Block 3 — Direct proportion word problems (Medium/Hard)
+        { difficulty: 'Medium', question: 'If 6 kg of rice costs R108, find the cost of 10 kg using direct proportion.', checkMode: 'auto', correctAnswer: 'R180', correctAnswers: ['R180', '180'], answer: 'R180', explanation: 'Set up equal ratios: 6/108 = 10/x.\nCross multiply: 6x = 10 × 108 = 1 080.\nx = 1 080 ÷ 6 = 180.\nCost = R180 ✓' },
+        { difficulty: 'Medium', question: 'A school buys 18 textbooks for R720. Using direct proportion, find the cost of 25 textbooks.', checkMode: 'auto', correctAnswer: 'R1000', correctAnswers: ['R1000', '1000', 'R1 000', '1 000'], answer: 'R1 000', explanation: 'Set up equal ratios: 18/720 = 25/x.\nCross multiply: 18x = 25 × 720 = 18 000.\nx = 18 000 ÷ 18 = 1 000.\nCost = R1 000 ✓' },
+        { difficulty: 'Hard', question: 'The exchange rate is 5 US dollars for R95. Using direct proportion, find how many rand 18 US dollars is worth.', checkMode: 'auto', correctAnswer: 'R342', correctAnswers: ['R342', '342'], answer: 'R342', explanation: 'Set up equal ratios: 5/95 = 18/x.\nCross multiply: 5x = 18 × 95 = 1 710.\nx = 1 710 ÷ 5 = 342.\nValue = R342 ✓' },
+        { difficulty: 'Hard', question: 'A recipe uses 320 g of flour for every 200 ml of milk. Using direct proportion, find how much flour is needed for 550 ml of milk.', checkMode: 'auto', correctAnswer: '880g', correctAnswers: ['880g', '880', '880 g'], answer: '880 g', explanation: 'Set up equal ratios: 200/320 = 550/x.\nCross multiply: 200x = 550 × 320 = 176 000.\nx = 176 000 ÷ 200 = 880.\nFlour needed = 880 g ✓' },
+
+        // Block 4 — Indirect (inverse) proportion word problems (Hard)
+        { difficulty: 'Hard', question: '8 workers can build a wall in 21 days. How many days would 12 workers take, assuming inverse proportion?', checkMode: 'auto', correctAnswer: '14', correctAnswers: ['14', '14 days'], answer: '14 days', explanation: 'x₁y₁ = x₂y₂.\n8 × 21 = 12 × y₂.\n168 = 12y₂.\ny₂ = 168 ÷ 12 = 14 days ✓' },
+        { difficulty: 'Hard', question: 'A car travels at 75 km/h and takes 8 hours for a trip. Find the time taken if it travels at 60 km/h instead.', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 hours'], answer: '10 hours', explanation: 'x₁y₁ = x₂y₂.\n75 × 8 = 60 × y₂.\n600 = 60y₂.\ny₂ = 600 ÷ 60 = 10 hours ✓' },
+        { difficulty: 'Hard', question: '15 taps fill a tank in 6 hours. How long would 9 taps take, assuming inverse proportion?', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 hours'], answer: '10 hours', explanation: 'x₁y₁ = x₂y₂.\n15 × 6 = 9 × y₂.\n90 = 9y₂.\ny₂ = 90 ÷ 9 = 10 hours ✓' },
+
+        // Block 5 — Rate problems (Hard)
+        { difficulty: 'Hard', question: 'A shop sells 15 identical items for R270. Find the price of one item (the unit rate).', checkMode: 'auto', correctAnswer: 'R18', correctAnswers: ['R18', '18'], answer: 'R18', explanation: 'Unit rate = total cost ÷ number of items.\n270 ÷ 15 = 18.\nPrice per item = R18 ✓' },
+        { difficulty: 'Hard', question: 'A car travels at a constant speed of 96 km/h for 1.75 hours. Find the distance travelled.', checkMode: 'auto', correctAnswer: '168', correctAnswers: ['168', '168km', '168 km'], answer: '168 km', explanation: 'Distance = speed × time.\nDistance = 96 × 1.75 = 168 km ✓' },
+        { difficulty: 'Hard', question: 'A learner types 240 words in 4 minutes at a constant rate. How long would it take to type 540 words at the same rate?', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9 minutes', '9 min'], answer: '9 minutes', explanation: 'Rate = 240 ÷ 4 = 60 words per minute.\nTime for 540 words = 540 ÷ 60 = 9 minutes ✓' },
+
+        // Block 6 — Scale/map problems and combined multi-step (Hard)
+        { difficulty: 'Hard', question: 'A map has a scale of 1 : 200 000. The distance between two towns on the map is 4.5 cm. Find the real distance in km.', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9', '9km', '9 km'], answer: '9 km', explanation: 'Real distance = 4.5 × 200 000 = 900 000 cm.\nConvert to km: 900 000 ÷ 100 000 = 9 km ✓' },
+        { difficulty: 'Hard', question: 'A map has a scale of 1 : 100 000. Two landmarks are 8 km apart in real life. Find the distance between them on the map, in cm.', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8cm', '8 cm'], answer: '8 cm', explanation: 'Convert 8 km to cm: 8 × 100 000 = 800 000 cm.\nMap distance = 800 000 ÷ 100 000 = 8 cm ✓' },
+        { difficulty: 'Hard', question: 'Orange, apple and mango juice are mixed in the ratio 3 : 4 : 5 to make 360 L of a fruit blend. Find the volume of apple juice needed. If the batch is scaled up to 4 times the size, find the new volume of apple juice needed.', answer: 'Total parts = 3 + 4 + 5 = 12.\nValue of 1 part = 360 ÷ 12 = 30 L.\nApple juice (4 parts) = 4 × 30 = 120 L.\nScaled batch total = 360 × 4 = 1 440 L, so apple juice scales the same way: 120 × 4 = 480 L.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered ratio, sharing, proportion, rate and scale problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on inverse proportion or scale, then try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on direct and indirect proportion, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

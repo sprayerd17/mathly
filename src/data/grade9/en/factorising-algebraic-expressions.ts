@@ -421,4 +421,157 @@ export const topicData: TopicData = {
       { minPercent: 0, message: 'Keep going, work through the guide again.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1 (0-1):   Common factor — two-term monomial HCF
+    // Block 2 (2-3):   Common factor — three-term (incl. cubic)
+    // Block 3 (4-6):   Difference of two squares — basic (x² − n²)
+    // Block 4 (7-9):   Difference of two squares — with coefficients
+    // Block 5 (10-12): Trinomial x² + bx + c — positive/simple constant
+    // Block 6 (13-15): Trinomial x² + bx + c — negative constant
+    // Block 7 (16-19): Trinomial with common factor + error-spotting
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Common factor, two-term (Easy)
+        { difficulty: 'Easy', question: 'Factorise 10x² + 15x.', checkMode: 'auto', correctAnswer: '5x(2x+3)', correctAnswers: ['5x(2x+3)', '5x(2x + 3)'], answer: '5x(2x + 3)', explanation: 'HCF of 10x² and 15x is 5x.\n10x² ÷ 5x = 2x and 15x ÷ 5x = 3.\nFactorised: 5x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Factorise 6x³ − 18x².', checkMode: 'auto', correctAnswer: '6x²(x-3)', correctAnswers: ['6x²(x-3)', '6x²(x - 3)', '6x^2(x-3)', '6x^2(x - 3)'], answer: '6x²(x − 3)', explanation: 'HCF of 6x³ and 18x² is 6x².\n6x³ ÷ 6x² = x and 18x² ÷ 6x² = 3.\nFactorised: 6x²(x − 3) ✓' },
+
+        // Block 2 — Common factor, three-term / cubic (Easy-Medium)
+        { difficulty: 'Medium', question: 'Factorise 4x³ + 8x² − 12x.', checkMode: 'auto', correctAnswer: '4x(x²+2x-3)', correctAnswers: ['4x(x²+2x-3)', '4x(x² + 2x - 3)', '4x(x²+2x−3)', '4x(x² + 2x − 3)', '4x(x^2+2x-3)', '4x(x^2 + 2x - 3)'], answer: '4x(x² + 2x − 3)', explanation: 'HCF of 4x³, 8x² and 12x is 4x.\n4x³ ÷ 4x = x², 8x² ÷ 4x = 2x, 12x ÷ 4x = 3.\nFactorised: 4x(x² + 2x − 3) ✓' },
+        { difficulty: 'Medium', question: 'Factorise 9a²b + 6ab².', checkMode: 'auto', correctAnswer: '3ab(3a+2b)', correctAnswers: ['3ab(3a+2b)', '3ab(3a + 2b)'], answer: '3ab(3a + 2b)', explanation: 'HCF of 9a²b and 6ab² is 3ab.\n9a²b ÷ 3ab = 3a and 6ab² ÷ 3ab = 2b.\nFactorised: 3ab(3a + 2b) ✓' },
+
+        // Block 3 — Difference of two squares, basic (Medium)
+        { difficulty: 'Medium', question: 'Factorise x² − 81.', checkMode: 'auto', correctAnswer: '(x-9)(x+9)', correctAnswers: ['(x-9)(x+9)', '(x − 9)(x + 9)', '(x+9)(x-9)', '(x + 9)(x − 9)'], answer: '(x − 9)(x + 9)', explanation: 'Recognise x² − 81 = x² − 9².\nDifference of squares: (x − 9)(x + 9) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 121.', checkMode: 'auto', correctAnswer: '(x-11)(x+11)', correctAnswers: ['(x-11)(x+11)', '(x − 11)(x + 11)', '(x+11)(x-11)', '(x + 11)(x − 11)'], answer: '(x − 11)(x + 11)', explanation: 'Recognise x² − 121 = x² − 11².\nDifference of squares: (x − 11)(x + 11) ✓' },
+        { difficulty: 'Medium', question: 'Factorise 16x² − 1.', checkMode: 'auto', correctAnswer: '(4x-1)(4x+1)', correctAnswers: ['(4x-1)(4x+1)', '(4x − 1)(4x + 1)', '(4x+1)(4x-1)', '(4x + 1)(4x − 1)'], answer: '(4x − 1)(4x + 1)', explanation: '16x² = (4x)² and 1 = (1)².\nDifference of squares: (4x − 1)(4x + 1) ✓' },
+
+        // Block 4 — Difference of two squares, with coefficients (Medium/Hard)
+        { difficulty: 'Medium', question: 'Factorise 9x² − 25.', checkMode: 'auto', correctAnswer: '(3x-5)(3x+5)', correctAnswers: ['(3x-5)(3x+5)', '(3x − 5)(3x + 5)', '(3x+5)(3x-5)', '(3x + 5)(3x − 5)'], answer: '(3x − 5)(3x + 5)', explanation: '9x² = (3x)² and 25 = (5)².\nDifference of squares: (3x − 5)(3x + 5) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 25x² − 4y².', checkMode: 'auto', correctAnswer: '(5x-2y)(5x+2y)', correctAnswers: ['(5x-2y)(5x+2y)', '(5x − 2y)(5x + 2y)', '(5x+2y)(5x-2y)', '(5x + 2y)(5x − 2y)'], answer: '(5x − 2y)(5x + 2y)', explanation: '25x² = (5x)² and 4y² = (2y)².\nDifference of squares: (5x − 2y)(5x + 2y) ✓' },
+        { difficulty: 'Hard', question: 'Lindiwe factorises 36x² − 49 and gets (6x − 7)(6x + 7). Check her answer.', answer: 'She is correct — 36x² = (6x)² and 49 = (7)², so the difference of squares gives (6x − 7)(6x + 7).', checkMode: 'self' },
+
+        // Block 5 — Trinomial x² + bx + c, positive/simple constant (Medium)
+        { difficulty: 'Medium', question: 'Factorise x² + 10x + 24.', checkMode: 'auto', correctAnswer: '(x+4)(x+6)', correctAnswers: ['(x+4)(x+6)', '(x + 4)(x + 6)', '(x+6)(x+4)', '(x + 6)(x + 4)'], answer: '(x + 4)(x + 6)', explanation: 'Find two numbers multiplying to 24 and adding to 10: 4 and 6.\nFactorised: (x + 4)(x + 6) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² + 11x + 18.', checkMode: 'auto', correctAnswer: '(x+2)(x+9)', correctAnswers: ['(x+2)(x+9)', '(x + 2)(x + 9)', '(x+9)(x+2)', '(x + 9)(x + 2)'], answer: '(x + 2)(x + 9)', explanation: 'Find two numbers multiplying to 18 and adding to 11: 2 and 9.\nFactorised: (x + 2)(x + 9) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 7x + 12.', checkMode: 'auto', correctAnswer: '(x-3)(x-4)', correctAnswers: ['(x-3)(x-4)', '(x − 3)(x − 4)', '(x-4)(x-3)', '(x − 4)(x − 3)'], answer: '(x − 3)(x − 4)', explanation: 'Find two numbers multiplying to 12 and adding to −7: −3 and −4.\nFactorised: (x − 3)(x − 4) ✓' },
+
+        // Block 6 — Trinomial x² + bx + c, negative constant (Medium/Hard)
+        { difficulty: 'Medium-Hard', question: 'Factorise x² − 4x − 21.', checkMode: 'auto', correctAnswer: '(x-7)(x+3)', correctAnswers: ['(x-7)(x+3)', '(x − 7)(x + 3)', '(x+3)(x-7)', '(x + 3)(x − 7)'], answer: '(x − 7)(x + 3)', explanation: 'Find two numbers multiplying to −21 and adding to −4: −7 and 3.\nFactorised: (x − 7)(x + 3) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Factorise x² + 2x − 24.', checkMode: 'auto', correctAnswer: '(x+6)(x-4)', correctAnswers: ['(x+6)(x-4)', '(x + 6)(x − 4)', '(x-4)(x+6)', '(x − 4)(x + 6)'], answer: '(x + 6)(x − 4)', explanation: 'Find two numbers multiplying to −24 and adding to 2: 6 and −4.\nFactorised: (x + 6)(x − 4) ✓' },
+        { difficulty: 'Hard', question: 'Factorise x² − x − 30.', checkMode: 'auto', correctAnswer: '(x-6)(x+5)', correctAnswers: ['(x-6)(x+5)', '(x − 6)(x + 5)', '(x+5)(x-6)', '(x + 5)(x − 6)'], answer: '(x − 6)(x + 5)', explanation: 'Find two numbers multiplying to −30 and adding to −1: −6 and 5.\nFactorised: (x − 6)(x + 5) ✓' },
+
+        // Block 7 — Trinomial with common factor + error-spotting (Hard)
+        { difficulty: 'Hard', question: 'Factorise 2x² + 14x + 24 fully.', checkMode: 'auto', correctAnswer: '2(x+3)(x+4)', correctAnswers: ['2(x+3)(x+4)', '2(x + 3)(x + 4)', '2(x+4)(x+3)', '2(x + 4)(x + 3)'], answer: '2(x + 3)(x + 4)', explanation: 'Factor out 2: 2(x² + 7x + 12).\nFind two numbers multiplying to 12 and adding to 7: 3 and 4.\nFactorised: 2(x + 3)(x + 4) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 3x² − 3x − 18 fully.', checkMode: 'auto', correctAnswer: '3(x-3)(x+2)', correctAnswers: ['3(x-3)(x+2)', '3(x − 3)(x + 2)', '3(x+2)(x-3)', '3(x + 2)(x − 3)'], answer: '3(x − 3)(x + 2)', explanation: 'Factor out 3: 3(x² − x − 6).\nFind two numbers multiplying to −6 and adding to −1: −3 and 2.\nFactorised: 3(x − 3)(x + 2) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 4x² − 16 fully, identifying the common factor and the pattern used.', answer: 'Factor out 4: 4(x² − 4). Recognise difference of squares: 4(x − 2)(x + 2).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Karabo factorises x² − 5x − 14 and gets (x − 2)(x + 7). Check his answer.', answer: 'He is incorrect — although (−2)(7) = −14, the sum −2 + 7 = 5, not −5. The correct factorisation is (x − 7)(x + 2), since (−7)(2) = −14 and −7 + 2 = −5.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered factorising common factors, differences of squares and trinomials.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on trinomials or difference of squares and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on finding the HCF and factorising trinomials, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Common factor, two-term (Easy)
+        { difficulty: 'Easy', question: 'Factorise 14x² + 21x.', checkMode: 'auto', correctAnswer: '7x(2x+3)', correctAnswers: ['7x(2x+3)', '7x(2x + 3)'], answer: '7x(2x + 3)', explanation: 'HCF of 14x² and 21x is 7x.\n14x² ÷ 7x = 2x and 21x ÷ 7x = 3.\nFactorised: 7x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Factorise 8x³ − 20x².', checkMode: 'auto', correctAnswer: '4x²(2x-5)', correctAnswers: ['4x²(2x-5)', '4x²(2x − 5)', '4x^2(2x-5)', '4x^2(2x − 5)'], answer: '4x²(2x − 5)', explanation: 'HCF of 8x³ and 20x² is 4x².\n8x³ ÷ 4x² = 2x and 20x² ÷ 4x² = 5.\nFactorised: 4x²(2x − 5) ✓' },
+
+        // Block 2 — Common factor, three-term / cubic (Easy-Medium)
+        { difficulty: 'Medium', question: 'Factorise 6x³ + 9x² − 15x.', checkMode: 'auto', correctAnswer: '3x(2x²+3x-5)', correctAnswers: ['3x(2x²+3x-5)', '3x(2x² + 3x - 5)', '3x(2x²+3x−5)', '3x(2x² + 3x − 5)', '3x(2x^2+3x-5)', '3x(2x^2 + 3x - 5)'], answer: '3x(2x² + 3x − 5)', explanation: 'HCF of 6x³, 9x² and 15x is 3x.\n6x³ ÷ 3x = 2x², 9x² ÷ 3x = 3x, 15x ÷ 3x = 5.\nFactorised: 3x(2x² + 3x − 5) ✓' },
+        { difficulty: 'Medium', question: 'Factorise 12a²b + 8ab².', checkMode: 'auto', correctAnswer: '4ab(3a+2b)', correctAnswers: ['4ab(3a+2b)', '4ab(3a + 2b)'], answer: '4ab(3a + 2b)', explanation: 'HCF of 12a²b and 8ab² is 4ab.\n12a²b ÷ 4ab = 3a and 8ab² ÷ 4ab = 2b.\nFactorised: 4ab(3a + 2b) ✓' },
+
+        // Block 3 — Difference of two squares, basic (Medium)
+        { difficulty: 'Medium', question: 'Factorise x² − 36.', checkMode: 'auto', correctAnswer: '(x-6)(x+6)', correctAnswers: ['(x-6)(x+6)', '(x − 6)(x + 6)', '(x+6)(x-6)', '(x + 6)(x − 6)'], answer: '(x − 6)(x + 6)', explanation: 'Recognise x² − 36 = x² − 6².\nDifference of squares: (x − 6)(x + 6) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 100.', checkMode: 'auto', correctAnswer: '(x-10)(x+10)', correctAnswers: ['(x-10)(x+10)', '(x − 10)(x + 10)', '(x+10)(x-10)', '(x + 10)(x − 10)'], answer: '(x − 10)(x + 10)', explanation: 'Recognise x² − 100 = x² − 10².\nDifference of squares: (x − 10)(x + 10) ✓' },
+        { difficulty: 'Medium', question: 'Factorise 9x² − 1.', checkMode: 'auto', correctAnswer: '(3x-1)(3x+1)', correctAnswers: ['(3x-1)(3x+1)', '(3x − 1)(3x + 1)', '(3x+1)(3x-1)', '(3x + 1)(3x − 1)'], answer: '(3x − 1)(3x + 1)', explanation: '9x² = (3x)² and 1 = (1)².\nDifference of squares: (3x − 1)(3x + 1) ✓' },
+
+        // Block 4 — Difference of two squares, with coefficients (Medium/Hard)
+        { difficulty: 'Medium', question: 'Factorise 16x² − 49.', checkMode: 'auto', correctAnswer: '(4x-7)(4x+7)', correctAnswers: ['(4x-7)(4x+7)', '(4x − 7)(4x + 7)', '(4x+7)(4x-7)', '(4x + 7)(4x − 7)'], answer: '(4x − 7)(4x + 7)', explanation: '16x² = (4x)² and 49 = (7)².\nDifference of squares: (4x − 7)(4x + 7) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 4x² − 9y².', checkMode: 'auto', correctAnswer: '(2x-3y)(2x+3y)', correctAnswers: ['(2x-3y)(2x+3y)', '(2x − 3y)(2x + 3y)', '(2x+3y)(2x-3y)', '(2x + 3y)(2x − 3y)'], answer: '(2x − 3y)(2x + 3y)', explanation: '4x² = (2x)² and 9y² = (3y)².\nDifference of squares: (2x − 3y)(2x + 3y) ✓' },
+        { difficulty: 'Hard', question: 'Thandi factorises 64x² − 81 and gets (8x − 9)(8x + 9). Check her answer.', answer: 'She is correct — 64x² = (8x)² and 81 = (9)², so the difference of squares gives (8x − 9)(8x + 9).', checkMode: 'self' },
+
+        // Block 5 — Trinomial x² + bx + c, positive/simple constant (Medium)
+        { difficulty: 'Medium', question: 'Factorise x² + 9x + 14.', checkMode: 'auto', correctAnswer: '(x+2)(x+7)', correctAnswers: ['(x+2)(x+7)', '(x + 2)(x + 7)', '(x+7)(x+2)', '(x + 7)(x + 2)'], answer: '(x + 2)(x + 7)', explanation: 'Find two numbers multiplying to 14 and adding to 9: 2 and 7.\nFactorised: (x + 2)(x + 7) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² + 13x + 40.', checkMode: 'auto', correctAnswer: '(x+5)(x+8)', correctAnswers: ['(x+5)(x+8)', '(x + 5)(x + 8)', '(x+8)(x+5)', '(x + 8)(x + 5)'], answer: '(x + 5)(x + 8)', explanation: 'Find two numbers multiplying to 40 and adding to 13: 5 and 8.\nFactorised: (x + 5)(x + 8) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 9x + 20.', checkMode: 'auto', correctAnswer: '(x-4)(x-5)', correctAnswers: ['(x-4)(x-5)', '(x − 4)(x − 5)', '(x-5)(x-4)', '(x − 5)(x − 4)'], answer: '(x − 4)(x − 5)', explanation: 'Find two numbers multiplying to 20 and adding to −9: −4 and −5.\nFactorised: (x − 4)(x − 5) ✓' },
+
+        // Block 6 — Trinomial x² + bx + c, negative constant (Medium/Hard)
+        { difficulty: 'Medium-Hard', question: 'Factorise x² − 3x − 40.', checkMode: 'auto', correctAnswer: '(x-8)(x+5)', correctAnswers: ['(x-8)(x+5)', '(x − 8)(x + 5)', '(x+5)(x-8)', '(x + 5)(x − 8)'], answer: '(x − 8)(x + 5)', explanation: 'Find two numbers multiplying to −40 and adding to −3: −8 and 5.\nFactorised: (x − 8)(x + 5) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Factorise x² + 4x − 21.', checkMode: 'auto', correctAnswer: '(x+7)(x-3)', correctAnswers: ['(x+7)(x-3)', '(x + 7)(x − 3)', '(x-3)(x+7)', '(x − 3)(x + 7)'], answer: '(x + 7)(x − 3)', explanation: 'Find two numbers multiplying to −21 and adding to 4: 7 and −3.\nFactorised: (x + 7)(x − 3) ✓' },
+        { difficulty: 'Hard', question: 'Factorise x² − 2x − 35.', checkMode: 'auto', correctAnswer: '(x-7)(x+5)', correctAnswers: ['(x-7)(x+5)', '(x − 7)(x + 5)', '(x+5)(x-7)', '(x + 5)(x − 7)'], answer: '(x − 7)(x + 5)', explanation: 'Find two numbers multiplying to −35 and adding to −2: −7 and 5.\nFactorised: (x − 7)(x + 5) ✓' },
+
+        // Block 7 — Trinomial with common factor + error-spotting (Hard)
+        { difficulty: 'Hard', question: 'Factorise 3x² + 21x + 30 fully.', checkMode: 'auto', correctAnswer: '3(x+2)(x+5)', correctAnswers: ['3(x+2)(x+5)', '3(x + 2)(x + 5)', '3(x+5)(x+2)', '3(x + 5)(x + 2)'], answer: '3(x + 2)(x + 5)', explanation: 'Factor out 3: 3(x² + 7x + 10).\nFind two numbers multiplying to 10 and adding to 7: 2 and 5.\nFactorised: 3(x + 2)(x + 5) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 2x² − 2x − 24 fully.', checkMode: 'auto', correctAnswer: '2(x-4)(x+3)', correctAnswers: ['2(x-4)(x+3)', '2(x − 4)(x + 3)', '2(x+3)(x-4)', '2(x + 3)(x − 4)'], answer: '2(x − 4)(x + 3)', explanation: 'Factor out 2: 2(x² − x − 12).\nFind two numbers multiplying to −12 and adding to −1: −4 and 3.\nFactorised: 2(x − 4)(x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 5x² − 45 fully, identifying the common factor and the pattern used.', answer: 'Factor out 5: 5(x² − 9). Recognise difference of squares: 5(x − 3)(x + 3).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Naledi factorises x² − 6x − 16 and gets (x − 2)(x + 8). Check her answer.', answer: 'She is incorrect — although (−2)(8) = −16, the sum −2 + 8 = 6, not −6. The correct factorisation is (x − 8)(x + 2), since (−8)(2) = −16 and −8 + 2 = −6.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered factorising common factors, differences of squares and trinomials.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on trinomials or difference of squares and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on finding the HCF and factorising trinomials, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Common factor, two-term (Easy)
+        { difficulty: 'Easy', question: 'Factorise 12x² + 18x.', checkMode: 'auto', correctAnswer: '6x(2x+3)', correctAnswers: ['6x(2x+3)', '6x(2x + 3)'], answer: '6x(2x + 3)', explanation: 'HCF of 12x² and 18x is 6x.\n12x² ÷ 6x = 2x and 18x ÷ 6x = 3.\nFactorised: 6x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Factorise 10x³ − 15x².', checkMode: 'auto', correctAnswer: '5x²(2x-3)', correctAnswers: ['5x²(2x-3)', '5x²(2x − 3)', '5x^2(2x-3)', '5x^2(2x − 3)'], answer: '5x²(2x − 3)', explanation: 'HCF of 10x³ and 15x² is 5x².\n10x³ ÷ 5x² = 2x and 15x² ÷ 5x² = 3.\nFactorised: 5x²(2x − 3) ✓' },
+
+        // Block 2 — Common factor, three-term / cubic (Easy-Medium)
+        { difficulty: 'Medium', question: 'Factorise 8x³ + 12x² − 20x.', checkMode: 'auto', correctAnswer: '4x(2x²+3x-5)', correctAnswers: ['4x(2x²+3x-5)', '4x(2x² + 3x - 5)', '4x(2x²+3x−5)', '4x(2x² + 3x − 5)', '4x(2x^2+3x-5)', '4x(2x^2 + 3x - 5)'], answer: '4x(2x² + 3x − 5)', explanation: 'HCF of 8x³, 12x² and 20x is 4x.\n8x³ ÷ 4x = 2x², 12x² ÷ 4x = 3x, 20x ÷ 4x = 5.\nFactorised: 4x(2x² + 3x − 5) ✓' },
+        { difficulty: 'Medium', question: 'Factorise 15a²b + 10ab².', checkMode: 'auto', correctAnswer: '5ab(3a+2b)', correctAnswers: ['5ab(3a+2b)', '5ab(3a + 2b)'], answer: '5ab(3a + 2b)', explanation: 'HCF of 15a²b and 10ab² is 5ab.\n15a²b ÷ 5ab = 3a and 10ab² ÷ 5ab = 2b.\nFactorised: 5ab(3a + 2b) ✓' },
+
+        // Block 3 — Difference of two squares, basic (Medium)
+        { difficulty: 'Medium', question: 'Factorise x² − 16.', checkMode: 'auto', correctAnswer: '(x-4)(x+4)', correctAnswers: ['(x-4)(x+4)', '(x − 4)(x + 4)', '(x+4)(x-4)', '(x + 4)(x − 4)'], answer: '(x − 4)(x + 4)', explanation: 'Recognise x² − 16 = x² − 4².\nDifference of squares: (x − 4)(x + 4) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 144.', checkMode: 'auto', correctAnswer: '(x-12)(x+12)', correctAnswers: ['(x-12)(x+12)', '(x − 12)(x + 12)', '(x+12)(x-12)', '(x + 12)(x − 12)'], answer: '(x − 12)(x + 12)', explanation: 'Recognise x² − 144 = x² − 12².\nDifference of squares: (x − 12)(x + 12) ✓' },
+        { difficulty: 'Medium', question: 'Factorise 25x² − 1.', checkMode: 'auto', correctAnswer: '(5x-1)(5x+1)', correctAnswers: ['(5x-1)(5x+1)', '(5x − 1)(5x + 1)', '(5x+1)(5x-1)', '(5x + 1)(5x − 1)'], answer: '(5x − 1)(5x + 1)', explanation: '25x² = (5x)² and 1 = (1)².\nDifference of squares: (5x − 1)(5x + 1) ✓' },
+
+        // Block 4 — Difference of two squares, with coefficients (Medium/Hard)
+        { difficulty: 'Medium', question: 'Factorise 49x² − 9.', checkMode: 'auto', correctAnswer: '(7x-3)(7x+3)', correctAnswers: ['(7x-3)(7x+3)', '(7x − 3)(7x + 3)', '(7x+3)(7x-3)', '(7x + 3)(7x − 3)'], answer: '(7x − 3)(7x + 3)', explanation: '49x² = (7x)² and 9 = (3)².\nDifference of squares: (7x − 3)(7x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 9x² − 16y².', checkMode: 'auto', correctAnswer: '(3x-4y)(3x+4y)', correctAnswers: ['(3x-4y)(3x+4y)', '(3x − 4y)(3x + 4y)', '(3x+4y)(3x-4y)', '(3x + 4y)(3x − 4y)'], answer: '(3x − 4y)(3x + 4y)', explanation: '9x² = (3x)² and 16y² = (4y)².\nDifference of squares: (3x − 4y)(3x + 4y) ✓' },
+        { difficulty: 'Hard', question: 'Mpho factorises 100x² − 121 and gets (10x − 11)(10x + 11). Check his answer.', answer: 'He is correct — 100x² = (10x)² and 121 = (11)², so the difference of squares gives (10x − 11)(10x + 11).', checkMode: 'self' },
+
+        // Block 5 — Trinomial x² + bx + c, positive/simple constant (Medium)
+        { difficulty: 'Medium', question: 'Factorise x² + 8x + 15.', checkMode: 'auto', correctAnswer: '(x+3)(x+5)', correctAnswers: ['(x+3)(x+5)', '(x + 3)(x + 5)', '(x+5)(x+3)', '(x + 5)(x + 3)'], answer: '(x + 3)(x + 5)', explanation: 'Find two numbers multiplying to 15 and adding to 8: 3 and 5.\nFactorised: (x + 3)(x + 5) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² + 12x + 35.', checkMode: 'auto', correctAnswer: '(x+5)(x+7)', correctAnswers: ['(x+5)(x+7)', '(x + 5)(x + 7)', '(x+7)(x+5)', '(x + 7)(x + 5)'], answer: '(x + 5)(x + 7)', explanation: 'Find two numbers multiplying to 35 and adding to 12: 5 and 7.\nFactorised: (x + 5)(x + 7) ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 8x + 15.', checkMode: 'auto', correctAnswer: '(x-3)(x-5)', correctAnswers: ['(x-3)(x-5)', '(x − 3)(x − 5)', '(x-5)(x-3)', '(x − 5)(x − 3)'], answer: '(x − 3)(x − 5)', explanation: 'Find two numbers multiplying to 15 and adding to −8: −3 and −5.\nFactorised: (x − 3)(x − 5) ✓' },
+
+        // Block 6 — Trinomial x² + bx + c, negative constant (Medium/Hard)
+        { difficulty: 'Medium-Hard', question: 'Factorise x² − 4x − 32.', checkMode: 'auto', correctAnswer: '(x-8)(x+4)', correctAnswers: ['(x-8)(x+4)', '(x − 8)(x + 4)', '(x+4)(x-8)', '(x + 4)(x − 8)'], answer: '(x − 8)(x + 4)', explanation: 'Find two numbers multiplying to −32 and adding to −4: −8 and 4.\nFactorised: (x − 8)(x + 4) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Factorise x² + 3x − 28.', checkMode: 'auto', correctAnswer: '(x+7)(x-4)', correctAnswers: ['(x+7)(x-4)', '(x + 7)(x − 4)', '(x-4)(x+7)', '(x − 4)(x + 7)'], answer: '(x + 7)(x − 4)', explanation: 'Find two numbers multiplying to −28 and adding to 3: 7 and −4.\nFactorised: (x + 7)(x − 4) ✓' },
+        { difficulty: 'Hard', question: 'Factorise x² − 3x − 18.', checkMode: 'auto', correctAnswer: '(x-6)(x+3)', correctAnswers: ['(x-6)(x+3)', '(x − 6)(x + 3)', '(x+3)(x-6)', '(x + 3)(x − 6)'], answer: '(x − 6)(x + 3)', explanation: 'Find two numbers multiplying to −18 and adding to −3: −6 and 3.\nFactorised: (x − 6)(x + 3) ✓' },
+
+        // Block 7 — Trinomial with common factor + error-spotting (Hard)
+        { difficulty: 'Hard', question: 'Factorise 4x² + 20x + 24 fully.', checkMode: 'auto', correctAnswer: '4(x+2)(x+3)', correctAnswers: ['4(x+2)(x+3)', '4(x + 2)(x + 3)', '4(x+3)(x+2)', '4(x + 3)(x + 2)'], answer: '4(x + 2)(x + 3)', explanation: 'Factor out 4: 4(x² + 5x + 6).\nFind two numbers multiplying to 6 and adding to 5: 2 and 3.\nFactorised: 4(x + 2)(x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 3x² − 6x − 45 fully.', checkMode: 'auto', correctAnswer: '3(x-5)(x+3)', correctAnswers: ['3(x-5)(x+3)', '3(x − 5)(x + 3)', '3(x+3)(x-5)', '3(x + 3)(x − 5)'], answer: '3(x − 5)(x + 3)', explanation: 'Factor out 3: 3(x² − 2x − 15).\nFind two numbers multiplying to −15 and adding to −2: −5 and 3.\nFactorised: 3(x − 5)(x + 3) ✓' },
+        { difficulty: 'Hard', question: 'Factorise 6x² − 24 fully, identifying the common factor and the pattern used.', answer: 'Factor out 6: 6(x² − 4). Recognise difference of squares: 6(x − 2)(x + 2).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo factorises x² − 7x − 18 and gets (x − 2)(x + 9). Check his answer.', answer: 'He is incorrect — although (−2)(9) = −18, the sum −2 + 9 = 7, not −7. The correct factorisation is (x − 9)(x + 2), since (−9)(2) = −18 and −9 + 2 = −7.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered factorising common factors, differences of squares and trinomials.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on trinomials or difference of squares and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on finding the HCF and factorising trinomials, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

@@ -441,4 +441,151 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging — gaan die studiegids na en probeer die vrae weer.' },
     { minScore: 0, message: 'Hou aan — werk noukeurig deur die gids en let op elke uitgewerkte voorbeeld.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blok 1 (0-2):   Vereenvoudiging — vermenigvuldig/deel monome met
+    //                 meer as een veranderlike en meervoudige eksponente
+    // Blok 2 (3-6):   Binoom × binoom uitbrei (algemene FOIL)
+    // Blok 3 (7-10):  Kwadraat van ʼn binoom en verskil van twee kwadrate
+    // Blok 4 (11-13): Substitusie met negatiewe/breukwaardes
+    // Blok 5 (14-16): Algebraïese breuke — die KGV (kleinste gemene veelvoud) vind
+    // Blok 6 (17-19): Multi-stap vereenvoudiging / foutopsporing
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Vereenvoudiging met meer komplekse eksponentreëls (Easy)
+        { difficulty: 'Easy', question: 'Vereenvoudig 3x²y × 4xy².', checkMode: 'auto', correctAnswer: '12x³y³', correctAnswers: ['12x³y³', '12x^3y^3'], answer: '12x³y³', explanation: 'Vermenigvuldig koëffisiënte: 3 × 4 = 12.\nTel eksponente van x bymekaar: x² × x = x³.\nTel eksponente van y bymekaar: y × y² = y³.\nAntwoord: 12x³y³' },
+        { difficulty: 'Easy', question: 'Vereenvoudig (−2a³b²)(5ab³).', checkMode: 'auto', correctAnswer: '-10a⁴b⁵', correctAnswers: ['-10a⁴b⁵', '−10a⁴b⁵', '-10a^4b^5', '−10a^4b^5'], answer: '−10a⁴b⁵', explanation: 'Vermenigvuldig koëffisiënte: −2 × 5 = −10.\nTel eksponente van a bymekaar: a³ × a = a⁴.\nTel eksponente van b bymekaar: b² × b³ = b⁵.\nAntwoord: −10a⁴b⁵' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 24x⁵y³ ÷ 6x²y.', checkMode: 'auto', correctAnswer: '4x³y²', correctAnswers: ['4x³y²', '4x^3y^2'], answer: '4x³y²', explanation: 'Deel koëffisiënte: 24 ÷ 6 = 4.\nTrek eksponente van x van mekaar af: x⁵ ÷ x² = x³.\nTrek eksponente van y van mekaar af: y³ ÷ y = y².\nAntwoord: 4x³y²' },
+
+        // Blok 2 — Binoom × binoom uitbrei (algemene FOIL) (Medium/Hard)
+        { difficulty: 'Medium', question: 'Brei (x + 4)(x + 9) uit.', checkMode: 'auto', correctAnswer: 'x²+13x+36', correctAnswers: ['x²+13x+36', 'x^2+13x+36', 'x² + 13x + 36'], answer: 'x² + 13x + 36', explanation: 'FOIL: Eerste: x·x = x². Buite: x·9 = 9x. Binne: 4·x = 4x. Laaste: 4·9 = 36.\nVoeg saam: x² + 9x + 4x + 36 = x² + 13x + 36' },
+        { difficulty: 'Medium', question: 'Brei (2x − 3)(x + 7) uit.', checkMode: 'auto', correctAnswer: '2x²+11x-21', correctAnswers: ['2x²+11x-21', '2x²+11x−21', '2x^2+11x-21', '2x^2+11x−21'], answer: '2x² + 11x − 21', explanation: 'FOIL: Eerste: 2x·x = 2x². Buite: 2x·7 = 14x. Binne: −3·x = −3x. Laaste: −3·7 = −21.\nVoeg saam: 2x² + 14x − 3x − 21 = 2x² + 11x − 21' },
+        { difficulty: 'Hard', question: 'ʼn Rugbyveld-uitbreiding word gemodelleer deur (3x + 2)(2x − 5) vierkante meter, waar x in meter gemeet word. Brei hierdie uitdrukking volledig uit.', checkMode: 'auto', correctAnswer: '6x²-11x-10', correctAnswers: ['6x²-11x-10', '6x²−11x−10', '6x^2-11x-10', '6x^2−11x−10'], answer: '6x² − 11x − 10', explanation: 'FOIL: Eerste: 3x·2x = 6x². Buite: 3x·(−5) = −15x. Binne: 2·2x = 4x. Laaste: 2·(−5) = −10.\nVoeg saam: 6x² − 15x + 4x − 10 = 6x² − 11x − 10' },
+        { difficulty: 'Hard', question: 'Buhle brei (x − 6)(x − 8) uit en kry x² − 14x − 48. Kontroleer haar werk en verbeter dit indien nodig.', answer: 'Sy het ʼn tekenfout by die laaste term gemaak. FOIL: Eerste: x·x = x². Buite: x·(−8) = −8x. Binne: −6·x = −6x. Laaste: (−6)(−8) = +48 (twee negatiewe getalle vermenigvuldig tot ʼn positiewe getal), nie −48 nie.\nVoeg saam: x² − 8x − 6x + 48 = x² − 14x + 48. Die korrekte uitbreiding is x² − 14x + 48.', checkMode: 'self' },
+
+        // Blok 3 — Kwadraat van ʼn binoom en verskil van twee kwadrate (Medium/Hard)
+        { difficulty: 'Medium', question: 'Brei (x + 7)² uit deur die spesiale patroon te gebruik.', checkMode: 'auto', correctAnswer: 'x²+14x+49', correctAnswers: ['x²+14x+49', 'x^2+14x+49'], answer: 'x² + 14x + 49', explanation: 'Gebruik (a + b)² = a² + 2ab + b² met a = x, b = 7.\nx² + 2(x)(7) + 7² = x² + 14x + 49' },
+        { difficulty: 'Medium', question: 'Brei (2x − 5)² uit deur die spesiale patroon te gebruik.', checkMode: 'auto', correctAnswer: '4x²-20x+25', correctAnswers: ['4x²-20x+25', '4x²−20x+25', '4x^2-20x+25', '4x^2−20x+25'], answer: '4x² − 20x + 25', explanation: 'Gebruik (a − b)² = a² − 2ab + b² met a = 2x, b = 5.\n(2x)² − 2(2x)(5) + 5² = 4x² − 20x + 25' },
+        { difficulty: 'Hard', question: 'ʼn Vierkantige binneplaas het sye van lengte (x − 9) m, langs ʼn tweede vierkantige binneplaas met sye (x + 9) m. Brei (x − 9)(x + 9) uit om die patroon tussen die twee te vind.', checkMode: 'auto', correctAnswer: 'x²-81', correctAnswers: ['x²-81', 'x²−81', 'x^2-81', 'x^2−81'], answer: 'x² − 81', explanation: 'Dit is die verskil-van-twee-kwadrate-patroon: (a − b)(a + b) = a² − b².\nHier is a = x, b = 9, so x² − 9² = x² − 81.' },
+        { difficulty: 'Hard', question: 'Kagiso sê (x + 4)(x − 4) en (x + 4)² gee dieselfde antwoord omdat albei die getal 4 bevat. Verduidelik waarom hy verkeerd is, en gee albei uitbreidings.', answer: 'Hy is verkeerd — hierdie gebruik verskillende patrone. (x + 4)(x − 4) is die verskil van twee kwadrate: x² − 16. (x + 4)² is die kwadraat van ʼn binoom: x² + 8x + 16. Die twee resultate verskil met die middelste term 8x, aangesien een uitdrukking ʼn "+4, −4" paar het (middelste terme kanselleer) en die ander dieselfde "+4" twee keer kwadreer (middelste terme tel op).', checkMode: 'self' },
+
+        // Blok 4 — Substitusie met negatiewe/breukwaardes (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Evalueer 2x² − 3x + 1 wanneer x = −3.', checkMode: 'auto', correctAnswer: '28', answer: '28', explanation: 'Vervang x = −3: 2(−3)² − 3(−3) + 1.\n(−3)² = 9, so 2(9) = 18. Ook −3(−3) = +9.\n18 + 9 + 1 = 28' },
+        { difficulty: 'Medium-Hard', question: 'Evalueer 3(x − 2)² wanneer x = −1.', checkMode: 'auto', correctAnswer: '27', answer: '27', explanation: 'Vervang x = −1: 3(−1 − 2)² = 3(−3)².\n(−3)² = 9, so 3(9) = 27.' },
+        { difficulty: 'Medium-Hard', question: 'Evalueer 4x² − 2y wanneer x = ½ en y = −2.', checkMode: 'auto', correctAnswer: '5', answer: '5', explanation: 'Vervang x = ½, y = −2: 4(½)² − 2(−2).\n(½)² = ¼, so 4(¼) = 1. Ook −2(−2) = +4.\n1 + 4 = 5' },
+
+        // Blok 5 — Algebraïese breuke met KGV (Hard)
+        { difficulty: 'Hard', question: 'Vereenvoudig x/2 + x/5 deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '7x/10', correctAnswers: ['7x/10', '7x÷10'], answer: '7x/10', explanation: 'Die KGV van 2 en 5 is 10.\nx/2 = 5x/10 en x/5 = 2x/10.\nTel op: 5x/10 + 2x/10 = 7x/10' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 2/x + 3/x² deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '(2x+3)/x²', correctAnswers: ['(2x+3)/x²', '(2x+3)/x^2', '2x+3/x²', '2x+3/x^2'], answer: '(2x + 3)/x²', explanation: 'Die KGV van x en x² is x².\n2/x = 2x/x² en 3/x² bly 3/x².\nTel op: 2x/x² + 3/x² = (2x + 3)/x²' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 5/(2x) − 1/(3x) deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '13/(6x)', correctAnswers: ['13/(6x)', '13/6x'], answer: '13/(6x)', explanation: 'Die KGV van 2x en 3x is 6x.\n5/(2x) = 15/(6x) en 1/(3x) = 2/(6x).\nTrek af: 15/(6x) − 2/(6x) = 13/(6x)' },
+
+        // Blok 6 — Multi-stap vereenvoudiging / foutopsporing (Hard)
+        { difficulty: 'Hard', question: 'Brei uit en vereenvoudig (x + 3)(x + 2) + 2x.', checkMode: 'auto', correctAnswer: 'x²+7x+6', correctAnswers: ['x²+7x+6', 'x^2+7x+6'], answer: 'x² + 7x + 6', explanation: 'Brei eers uit: (x + 3)(x + 2) = x² + 2x + 3x + 6 = x² + 5x + 6.\nTel die oorblywende term by: x² + 5x + 6 + 2x.\nVoeg gelyksoortige terme saam: 5x + 2x = 7x.\nAntwoord: x² + 7x + 6' },
+        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x + 6)² = x² + 36. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadreer van ʼn binoom lewer altyd ʼn trinoom op: (x + 6)² = x² + 2(x)(6) + 6² = x² + 12x + 36, nie x² + 36 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Evalueer (x + 3)(x − 2) wanneer x = −1, en wys of jy eers uitbrei of eers vervang.', answer: 'Albei metodes werk. Direkte vervanging: (−1 + 3)(−1 − 2) = (2)(−3) = −6.\nEers uitbrei: (x + 3)(x − 2) = x² + x − 6, en dan x = −1 vervang: 1 − 1 − 6 = −6. Albei metodes gee −6.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het vereenvoudiging, uitbreiding en substitusie in algebraïese uitdrukkings bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor binoomprodukte of algebraïese breuke na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor FOIL en die kwadraat van ʼn binoom weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Vereenvoudiging met meer komplekse eksponentreëls (Easy)
+        { difficulty: 'Easy', question: 'Vereenvoudig 4x²y × 3xy³.', checkMode: 'auto', correctAnswer: '12x³y⁴', correctAnswers: ['12x³y⁴', '12x^3y^4'], answer: '12x³y⁴', explanation: 'Vermenigvuldig koëffisiënte: 4 × 3 = 12.\nTel eksponente van x bymekaar: x² × x = x³.\nTel eksponente van y bymekaar: y × y³ = y⁴.\nAntwoord: 12x³y⁴' },
+        { difficulty: 'Easy', question: 'Vereenvoudig (−3a²b⁴)(4a³b).', checkMode: 'auto', correctAnswer: '-12a⁵b⁵', correctAnswers: ['-12a⁵b⁵', '−12a⁵b⁵', '-12a^5b^5', '−12a^5b^5'], answer: '−12a⁵b⁵', explanation: 'Vermenigvuldig koëffisiënte: −3 × 4 = −12.\nTel eksponente van a bymekaar: a² × a³ = a⁵.\nTel eksponente van b bymekaar: b⁴ × b = b⁵.\nAntwoord: −12a⁵b⁵' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 30x⁶y² ÷ 5x³y.', checkMode: 'auto', correctAnswer: '6x³y', correctAnswers: ['6x³y', '6x^3y'], answer: '6x³y', explanation: 'Deel koëffisiënte: 30 ÷ 5 = 6.\nTrek eksponente van x van mekaar af: x⁶ ÷ x³ = x³.\nTrek eksponente van y van mekaar af: y² ÷ y = y.\nAntwoord: 6x³y' },
+
+        // Blok 2 — Binoom × binoom uitbrei (algemene FOIL) (Medium/Hard)
+        { difficulty: 'Medium', question: 'Brei (x + 5)(x + 7) uit.', checkMode: 'auto', correctAnswer: 'x²+12x+35', correctAnswers: ['x²+12x+35', 'x^2+12x+35', 'x² + 12x + 35'], answer: 'x² + 12x + 35', explanation: 'FOIL: Eerste: x·x = x². Buite: x·7 = 7x. Binne: 5·x = 5x. Laaste: 5·7 = 35.\nVoeg saam: x² + 7x + 5x + 35 = x² + 12x + 35' },
+        { difficulty: 'Medium', question: 'Brei (3x − 2)(x + 4) uit.', checkMode: 'auto', correctAnswer: '3x²+10x-8', correctAnswers: ['3x²+10x-8', '3x²+10x−8', '3x^2+10x-8', '3x^2+10x−8'], answer: '3x² + 10x − 8', explanation: 'FOIL: Eerste: 3x·x = 3x². Buite: 3x·4 = 12x. Binne: −2·x = −2x. Laaste: −2·4 = −8.\nVoeg saam: 3x² + 12x − 2x − 8 = 3x² + 10x − 8' },
+        { difficulty: 'Hard', question: 'ʼn Groentetuin-uitbreiding word gemodelleer deur (2x + 5)(3x − 4) vierkante meter, waar x in meter gemeet word. Brei hierdie uitdrukking volledig uit.', checkMode: 'auto', correctAnswer: '6x²+7x-20', correctAnswers: ['6x²+7x-20', '6x²+7x−20', '6x^2+7x-20', '6x^2+7x−20'], answer: '6x² + 7x − 20', explanation: 'FOIL: Eerste: 2x·3x = 6x². Buite: 2x·(−4) = −8x. Binne: 5·3x = 15x. Laaste: 5·(−4) = −20.\nVoeg saam: 6x² − 8x + 15x − 20 = 6x² + 7x − 20' },
+        { difficulty: 'Hard', question: 'Sibusiso brei (x − 7)(x − 9) uit en kry x² − 16x − 63. Kontroleer sy werk en verbeter dit indien nodig.', answer: 'Hy het ʼn tekenfout by die laaste term gemaak. FOIL: Eerste: x·x = x². Buite: x·(−9) = −9x. Binne: −7·x = −7x. Laaste: (−7)(−9) = +63 (twee negatiewe getalle vermenigvuldig tot ʼn positiewe getal), nie −63 nie.\nVoeg saam: x² − 9x − 7x + 63 = x² − 16x + 63. Die korrekte uitbreiding is x² − 16x + 63.', checkMode: 'self' },
+
+        // Blok 3 — Kwadraat van ʼn binoom en verskil van twee kwadrate (Medium/Hard)
+        { difficulty: 'Medium', question: 'Brei (x + 8)² uit deur die spesiale patroon te gebruik.', checkMode: 'auto', correctAnswer: 'x²+16x+64', correctAnswers: ['x²+16x+64', 'x^2+16x+64'], answer: 'x² + 16x + 64', explanation: 'Gebruik (a + b)² = a² + 2ab + b² met a = x, b = 8.\nx² + 2(x)(8) + 8² = x² + 16x + 64' },
+        { difficulty: 'Medium', question: 'Brei (3x − 4)² uit deur die spesiale patroon te gebruik.', checkMode: 'auto', correctAnswer: '9x²-24x+16', correctAnswers: ['9x²-24x+16', '9x²−24x+16', '9x^2-24x+16', '9x^2−24x+16'], answer: '9x² − 24x + 16', explanation: 'Gebruik (a − b)² = a² − 2ab + b² met a = 3x, b = 4.\n(3x)² − 2(3x)(4) + 4² = 9x² − 24x + 16. Die laaste term bly positief omdat (−4)² = +16.' },
+        { difficulty: 'Hard', question: 'ʼn Vierkantige landerye het sye van lengte (x − 10) m, langs ʼn tweede vierkantige landerye met sye (x + 10) m. Brei (x − 10)(x + 10) uit om die patroon tussen die twee te vind.', checkMode: 'auto', correctAnswer: 'x²-100', correctAnswers: ['x²-100', 'x²−100', 'x^2-100', 'x^2−100'], answer: 'x² − 100', explanation: 'Dit is die verskil-van-twee-kwadrate-patroon: (a − b)(a + b) = a² − b².\nHier is a = x, b = 10, so x² − 10² = x² − 100.' },
+        { difficulty: 'Hard', question: 'Naledi sê (x + 5)(x − 5) en (x + 5)² gee dieselfde antwoord omdat albei die getal 5 bevat. Verduidelik waarom sy verkeerd is, en gee albei uitbreidings.', answer: 'Sy is verkeerd — hierdie gebruik verskillende patrone. (x + 5)(x − 5) is die verskil van twee kwadrate: x² − 25. (x + 5)² is die kwadraat van ʼn binoom: x² + 10x + 25. Die twee resultate verskil met die middelste term 10x, aangesien een uitdrukking ʼn "+5, −5" paar het (middelste terme kanselleer) en die ander dieselfde "+5" twee keer kwadreer (middelste terme tel op).', checkMode: 'self' },
+
+        // Blok 4 — Substitusie met negatiewe/breukwaardes (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Evalueer 2x² − 5x + 3 wanneer x = −4.', checkMode: 'auto', correctAnswer: '55', answer: '55', explanation: 'Vervang x = −4: 2(−4)² − 5(−4) + 3.\n(−4)² = 16, so 2(16) = 32. Ook −5(−4) = +20.\n32 + 20 + 3 = 55' },
+        { difficulty: 'Medium-Hard', question: 'Evalueer 2(x − 3)² wanneer x = −2.', checkMode: 'auto', correctAnswer: '50', answer: '50', explanation: 'Vervang x = −2: 2(−2 − 3)² = 2(−5)².\n(−5)² = 25, so 2(25) = 50.' },
+        { difficulty: 'Medium-Hard', question: 'Evalueer 9x² − 3y wanneer x = ⅓ en y = −3.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: 'Vervang x = ⅓, y = −3: 9(⅓)² − 3(−3).\n(⅓)² = 1/9, so 9(1/9) = 1. Ook −3(−3) = +9.\n1 + 9 = 10' },
+
+        // Blok 5 — Algebraïese breuke met KGV (Hard)
+        { difficulty: 'Hard', question: 'Vereenvoudig x/3 + x/4 deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '7x/12', correctAnswers: ['7x/12', '7x÷12'], answer: '7x/12', explanation: 'Die KGV van 3 en 4 is 12.\nx/3 = 4x/12 en x/4 = 3x/12.\nTel op: 4x/12 + 3x/12 = 7x/12' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 5/x + 2/x² deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '(5x+2)/x²', correctAnswers: ['(5x+2)/x²', '(5x+2)/x^2', '5x+2/x²', '5x+2/x^2'], answer: '(5x + 2)/x²', explanation: 'Die KGV van x en x² is x².\n5/x = 5x/x² en 2/x² bly 2/x².\nTel op: 5x/x² + 2/x² = (5x + 2)/x²' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 3/(2x) − 1/(4x) deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '5/(4x)', correctAnswers: ['5/(4x)', '5/4x'], answer: '5/(4x)', explanation: 'Die KGV van 2x en 4x is 4x.\n3/(2x) = 6/(4x) en 1/(4x) bly 1/(4x).\nTrek af: 6/(4x) − 1/(4x) = 5/(4x)' },
+
+        // Blok 6 — Multi-stap vereenvoudiging / foutopsporing (Hard)
+        { difficulty: 'Hard', question: 'Brei uit en vereenvoudig (x + 4)(x + 1) + 3x.', checkMode: 'auto', correctAnswer: 'x²+8x+4', correctAnswers: ['x²+8x+4', 'x^2+8x+4'], answer: 'x² + 8x + 4', explanation: 'Brei eers uit: (x + 4)(x + 1) = x² + x + 4x + 4 = x² + 5x + 4.\nTel die oorblywende term by: x² + 5x + 4 + 3x.\nVoeg gelyksoortige terme saam: 5x + 3x = 8x.\nAntwoord: x² + 8x + 4' },
+        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x − 5)² = x² − 25. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadreer van ʼn binoom lewer altyd ʼn trinoom op: (x − 5)² = x² − 2(x)(5) + 5² = x² − 10x + 25, nie x² − 25 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Evalueer (x + 5)(x − 3) wanneer x = −2, en wys of jy eers uitbrei of eers vervang.', answer: 'Albei metodes werk. Direkte vervanging: (−2 + 5)(−2 − 3) = (3)(−5) = −15.\nEers uitbrei: (x + 5)(x − 3) = x² + 2x − 15, en dan x = −2 vervang: 4 − 4 − 15 = −15. Albei metodes gee −15.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het vereenvoudiging, uitbreiding en substitusie in algebraïese uitdrukkings bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor binoomprodukte of algebraïese breuke na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor FOIL en die kwadraat van ʼn binoom weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Vereenvoudiging met meer komplekse eksponentreëls (Easy)
+        { difficulty: 'Easy', question: 'Vereenvoudig 5x²y × 2xy³.', checkMode: 'auto', correctAnswer: '10x³y⁴', correctAnswers: ['10x³y⁴', '10x^3y^4'], answer: '10x³y⁴', explanation: 'Vermenigvuldig koëffisiënte: 5 × 2 = 10.\nTel eksponente van x bymekaar: x² × x = x³.\nTel eksponente van y bymekaar: y × y³ = y⁴.\nAntwoord: 10x³y⁴' },
+        { difficulty: 'Easy', question: 'Vereenvoudig (−4a³b)(3a²b⁴).', checkMode: 'auto', correctAnswer: '-12a⁵b⁵', correctAnswers: ['-12a⁵b⁵', '−12a⁵b⁵', '-12a^5b^5', '−12a^5b^5'], answer: '−12a⁵b⁵', explanation: 'Vermenigvuldig koëffisiënte: −4 × 3 = −12.\nTel eksponente van a bymekaar: a³ × a² = a⁵.\nTel eksponente van b bymekaar: b × b⁴ = b⁵.\nAntwoord: −12a⁵b⁵' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 36x⁵y⁴ ÷ 9x²y².', checkMode: 'auto', correctAnswer: '4x³y²', correctAnswers: ['4x³y²', '4x^3y^2'], answer: '4x³y²', explanation: 'Deel koëffisiënte: 36 ÷ 9 = 4.\nTrek eksponente van x van mekaar af: x⁵ ÷ x² = x³.\nTrek eksponente van y van mekaar af: y⁴ ÷ y² = y².\nAntwoord: 4x³y²' },
+
+        // Blok 2 — Binoom × binoom uitbrei (algemene FOIL) (Medium/Hard)
+        { difficulty: 'Medium', question: 'Brei (x + 6)(x + 8) uit.', checkMode: 'auto', correctAnswer: 'x²+14x+48', correctAnswers: ['x²+14x+48', 'x^2+14x+48', 'x² + 14x + 48'], answer: 'x² + 14x + 48', explanation: 'FOIL: Eerste: x·x = x². Buite: x·8 = 8x. Binne: 6·x = 6x. Laaste: 6·8 = 48.\nVoeg saam: x² + 8x + 6x + 48 = x² + 14x + 48' },
+        { difficulty: 'Medium', question: 'Brei (4x − 1)(x + 5) uit.', checkMode: 'auto', correctAnswer: '4x²+19x-5', correctAnswers: ['4x²+19x-5', '4x²+19x−5', '4x^2+19x-5', '4x^2+19x−5'], answer: '4x² + 19x − 5', explanation: 'FOIL: Eerste: 4x·x = 4x². Buite: 4x·5 = 20x. Binne: −1·x = −x. Laaste: −1·5 = −5.\nVoeg saam: 4x² + 20x − x − 5 = 4x² + 19x − 5' },
+        { difficulty: 'Hard', question: 'ʼn Gemeenskapsaal-uitbreiding word gemodelleer deur (2x + 3)(3x − 7) vierkante meter, waar x in meter gemeet word. Brei hierdie uitdrukking volledig uit.', checkMode: 'auto', correctAnswer: '6x²-5x-21', correctAnswers: ['6x²-5x-21', '6x²−5x−21', '6x^2-5x-21', '6x^2−5x−21'], answer: '6x² − 5x − 21', explanation: 'FOIL: Eerste: 2x·3x = 6x². Buite: 2x·(−7) = −14x. Binne: 3·3x = 9x. Laaste: 3·(−7) = −21.\nVoeg saam: 6x² − 14x + 9x − 21 = 6x² − 5x − 21' },
+        { difficulty: 'Hard', question: 'Zanele brei (x − 5)(x − 11) uit en kry x² − 16x − 55. Kontroleer haar werk en verbeter dit indien nodig.', answer: 'Sy het ʼn tekenfout by die laaste term gemaak. FOIL: Eerste: x·x = x². Buite: x·(−11) = −11x. Binne: −5·x = −5x. Laaste: (−5)(−11) = +55 (twee negatiewe getalle vermenigvuldig tot ʼn positiewe getal), nie −55 nie.\nVoeg saam: x² − 11x − 5x + 55 = x² − 16x + 55. Die korrekte uitbreiding is x² − 16x + 55.', checkMode: 'self' },
+
+        // Blok 3 — Kwadraat van ʼn binoom en verskil van twee kwadrate (Medium/Hard)
+        { difficulty: 'Medium', question: 'Brei (x + 9)² uit deur die spesiale patroon te gebruik.', checkMode: 'auto', correctAnswer: 'x²+18x+81', correctAnswers: ['x²+18x+81', 'x^2+18x+81'], answer: 'x² + 18x + 81', explanation: 'Gebruik (a + b)² = a² + 2ab + b² met a = x, b = 9.\nx² + 2(x)(9) + 9² = x² + 18x + 81' },
+        { difficulty: 'Medium', question: 'Brei (2x − 7)² uit deur die spesiale patroon te gebruik.', checkMode: 'auto', correctAnswer: '4x²-28x+49', correctAnswers: ['4x²-28x+49', '4x²−28x+49', '4x^2-28x+49', '4x^2−28x+49'], answer: '4x² − 28x + 49', explanation: 'Gebruik (a − b)² = a² − 2ab + b² met a = 2x, b = 7.\n(2x)² − 2(2x)(7) + 7² = 4x² − 28x + 49' },
+        { difficulty: 'Hard', question: 'ʼn Vierkantige kavel het sye van lengte (x − 6) m, langs ʼn tweede vierkantige kavel met sye (x + 6) m. Brei (x − 6)(x + 6) uit om die patroon tussen die twee te vind.', checkMode: 'auto', correctAnswer: 'x²-36', correctAnswers: ['x²-36', 'x²−36', 'x^2-36', 'x^2−36'], answer: 'x² − 36', explanation: 'Dit is die verskil-van-twee-kwadrate-patroon: (a − b)(a + b) = a² − b².\nHier is a = x, b = 6, so x² − 6² = x² − 36.' },
+        { difficulty: 'Hard', question: 'Bongani sê (x + 3)(x − 3) en (x + 3)² gee dieselfde antwoord omdat albei die getal 3 bevat. Verduidelik waarom hy verkeerd is, en gee albei uitbreidings.', answer: 'Hy is verkeerd — hierdie gebruik verskillende patrone. (x + 3)(x − 3) is die verskil van twee kwadrate: x² − 9. (x + 3)² is die kwadraat van ʼn binoom: x² + 6x + 9. Die twee resultate verskil met die middelste term 6x, aangesien een uitdrukking ʼn "+3, −3" paar het (middelste terme kanselleer) en die ander dieselfde "+3" twee keer kwadreer (middelste terme tel op).', checkMode: 'self' },
+
+        // Blok 4 — Substitusie met negatiewe/breukwaardes (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Evalueer 3x² − 4x + 2 wanneer x = −2.', checkMode: 'auto', correctAnswer: '22', answer: '22', explanation: 'Vervang x = −2: 3(−2)² − 4(−2) + 2.\n(−2)² = 4, so 3(4) = 12. Ook −4(−2) = +8.\n12 + 8 + 2 = 22' },
+        { difficulty: 'Medium-Hard', question: 'Evalueer 4(x − 1)² wanneer x = −1.', checkMode: 'auto', correctAnswer: '16', answer: '16', explanation: 'Vervang x = −1: 4(−1 − 1)² = 4(−2)².\n(−2)² = 4, so 4(4) = 16.' },
+        { difficulty: 'Medium-Hard', question: 'Evalueer 4x² − 3y wanneer x = ½ en y = −3.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: 'Vervang x = ½, y = −3: 4(½)² − 3(−3).\n(½)² = ¼, so 4(¼) = 1. Ook −3(−3) = +9.\n1 + 9 = 10' },
+
+        // Blok 5 — Algebraïese breuke met KGV (Hard)
+        { difficulty: 'Hard', question: 'Vereenvoudig x/2 + x/3 deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '5x/6', correctAnswers: ['5x/6', '5x÷6'], answer: '5x/6', explanation: 'Die KGV van 2 en 3 is 6.\nx/2 = 3x/6 en x/3 = 2x/6.\nTel op: 3x/6 + 2x/6 = 5x/6' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 3/x + 4/x² deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '(3x+4)/x²', correctAnswers: ['(3x+4)/x²', '(3x+4)/x^2', '3x+4/x²', '3x+4/x^2'], answer: '(3x + 4)/x²', explanation: 'Die KGV van x en x² is x².\n3/x = 3x/x² en 4/x² bly 4/x².\nTel op: 3x/x² + 4/x² = (3x + 4)/x²' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 7/(3x) − 1/(6x) deur albei breuke met ʼn gemeenskaplike noemer te skryf.', checkMode: 'auto', correctAnswer: '13/(6x)', correctAnswers: ['13/(6x)', '13/6x'], answer: '13/(6x)', explanation: 'Die KGV van 3x en 6x is 6x.\n7/(3x) = 14/(6x) en 1/(6x) bly 1/(6x).\nTrek af: 14/(6x) − 1/(6x) = 13/(6x)' },
+
+        // Blok 6 — Multi-stap vereenvoudiging / foutopsporing (Hard)
+        { difficulty: 'Hard', question: 'Brei uit en vereenvoudig (x + 2)(x + 5) + 4x.', checkMode: 'auto', correctAnswer: 'x²+11x+10', correctAnswers: ['x²+11x+10', 'x^2+11x+10'], answer: 'x² + 11x + 10', explanation: 'Brei eers uit: (x + 2)(x + 5) = x² + 5x + 2x + 10 = x² + 7x + 10.\nTel die oorblywende term by: x² + 7x + 10 + 4x.\nVoeg gelyksoortige terme saam: 7x + 4x = 11x.\nAntwoord: x² + 11x + 10' },
+        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x − 4)² = x² − 16. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadreer van ʼn binoom lewer altyd ʼn trinoom op: (x − 4)² = x² − 2(x)(4) + 4² = x² − 8x + 16, nie x² − 16 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Evalueer (x + 4)(x − 1) wanneer x = −3, en wys of jy eers uitbrei of eers vervang.', answer: 'Albei metodes werk. Direkte vervanging: (−3 + 4)(−3 − 1) = (1)(−4) = −4.\nEers uitbrei: (x + 4)(x − 1) = x² + 3x − 4, en dan x = −3 vervang: 9 − 9 − 4 = −4. Albei metodes gee −4.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het vereenvoudiging, uitbreiding en substitusie in algebraïese uitdrukkings bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor binoomprodukte of algebraïese breuke na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor FOIL en die kwadraat van ʼn binoom weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }
