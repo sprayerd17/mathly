@@ -484,4 +484,150 @@ export const topicData: TopicData = {
       { minPercent: 0, message: 'Hou so aan, werk weer deur die gids.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Block A — Quadratic formula (positions 0-2)
+        { difficulty: 'Easy', question: 'Los op vir x deur die kwadratiese formule te gebruik: x² + 2x − 8 = 0', answer: 'x=2 of x=-4', checkMode: 'auto', correctAnswers: ['x=2 or x=-4', 'x=-4 or x=2', 'x=2 of x=-4', 'x=-4 of x=2', '2 of -4', '-4 of 2'], explanation: 'a=1, b=2, c=−8. Diskriminant = 4 − 4(1)(−8) = 4 + 32 = 36.\nx = (−2 ± 6) / 2.\nx = 2 of x = −4 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik: 2x² + 3x − 5 = 0', answer: 'x=1 of x=-5/2', checkMode: 'auto', correctAnswers: ['x=1 or x=-5/2', 'x=-5/2 or x=1', 'x=1 of x=-5/2', 'x=-5/2 of x=1', 'x=1 of x=-2,5', 'x=-2,5 of x=1'], explanation: 'a=2, b=3, c=−5. Diskriminant = 9 − 4(2)(−5) = 9 + 40 = 49.\nx = (−3 ± 7) / 4.\nx = 1 of x = −5/2 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik: 3x² − 2x − 8 = 0', answer: 'x=2 of x=-4/3', checkMode: 'auto', correctAnswers: ['x=2 or x=-4/3', 'x=-4/3 or x=2', 'x=2 of x=-4/3', 'x=-4/3 of x=2'], explanation: 'a=3, b=−2, c=−8. Diskriminant = 4 − 4(3)(−8) = 4 + 96 = 100.\nx = (2 ± 10) / 6.\nx = 2 of x = −4/3 ✓' },
+
+        // Block B — Quadratic formula, surd-form answers (positions 3-4)
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² − 4x − 3 = 0', answer: 'x=2+√7 of x=2-√7', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: 2x² + 3x − 5 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=2, b=3, c=−5. Diskriminant = 9 − 4(2)(−5) = 49, wat ʼn positiewe volkome vierkant is, dus is daar twee verskillende rasionale wortels.\nx = (−3 ± 7) / 4.\nx = 1 of x = −5/2.', checkMode: 'self' },
+
+        // Block C — Surd equations with extraneous-root checks (positions 5-7)
+        { difficulty: 'Medium', question: 'Los op vir x: √(2x + 3) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Kwadreer albei kante: 2x + 3 = x².\nHerrangskik: x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0, dus x = 3 of x = −1.\nToets x = 3: √(2(3)+3) = √9 = 3 = 3 ✓ geldig.\nToets x = −1: √(2(−1)+3) = √1 = 1 ≠ −1, dus is x = −1 buitenstaander (verwerp).\nOplossing: x = 3 alleen.' },
+        { difficulty: 'Medium', question: 'Los op vir x: √(3x + 4) = x, en toets vir buitenstaander-wortels.', answer: 'x=4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Kwadreer albei kante: 3x + 4 = x².\nHerrangskik: x² − 3x − 4 = 0 → (x − 4)(x + 1) = 0, dus x = 4 of x = −1.\nToets x = 4: √(3(4)+4) = √16 = 4 = 4 ✓ geldig.\nToets x = −1: √(3(−1)+4) = √1 = 1 ≠ −1, dus is x = −1 buitenstaander (verwerp).\nOplossing: x = 4 alleen.' },
+        { difficulty: 'Hard', question: 'Los op vir x: √(x + 7) = x − 5, en toets versigtig vir buitenstaander-wortels.', answer: 'Kwadreer albei kante: x + 7 = (x − 5)² = x² − 10x + 25.\nHerrangskik: x² − 11x + 18 = 0 → (x − 9)(x − 2) = 0, dus x = 9 of x = 2.\nToets x = 9: √16 = 4 en 9 − 5 = 4 ✓ geldig.\nToets x = 2: √9 = 3 maar 2 − 5 = −3, en 3 ≠ −3, dus is x = 2 buitenstaander (verwerp — die vierkantswortel kan nooit gelyk wees aan ʼn negatiewe getal nie).\nOplossing: x = 9 alleen.', checkMode: 'self' },
+
+        // Block D — Exponential equations (positions 8-10)
+        { difficulty: 'Easy', question: 'Los op vir x: 2^x = 32', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Skryf 32 as ʼn mag van 2: 32 = 2⁵.\nDus 2^x = 2⁵, wat beteken x = 5 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: 2^(x+1) = 64', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Skryf 64 as ʼn mag van 2: 64 = 2⁶.\nDus 2^(x+1) = 2⁶, wat beteken x + 1 = 6, dus x = 5 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2^(2x) − 5 · 2^x + 4 = 0', answer: 'x=0 of x=2', checkMode: 'auto', correctAnswers: ['x=0 or x=2', 'x=2 or x=0', 'x=0 of x=2', 'x=2 of x=0'], explanation: 'Laat y = 2^x, dus 2^(2x) = y². Die vergelyking word y² − 5y + 4 = 0.\nFaktoriseer: (y − 1)(y − 4) = 0, dus y = 1 of y = 4.\nVervang terug: 2^x = 1 → x = 0. &nbsp; 2^x = 4 = 2² → x = 2.\nOplossing: x = 0 of x = 2 ✓' },
+
+        // Block E — Quadratic inequalities (positions 11-13)
+        { difficulty: 'Easy', question: 'Los op vir x: x² − 25 ≥ 0', answer: 'x≤-5 of x≥5', checkMode: 'auto', correctAnswers: ['x≤-5 or x≥5', 'x<=-5 or x>=5', 'x≥5 or x≤-5', 'x≤-5 of x≥5', 'x≥5 of x≤-5'], explanation: 'Kritieke waardes: x² − 25 = 0 → x = −5 of x = 5.\nAangesien die uitdrukking ʼn opwaartse parabool is, is dit ≥ 0 buite die wortels (eindpunte ingesluit aangesien ≥).\nOplossing: x ≤ −5 of x ≥ 5.' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² − x − 12 ≤ 0', answer: '-3≤x≤4', checkMode: 'auto', correctAnswer: '-3≤x≤4', correctAnswers: ['-3≤x≤4', '-3 <= x <= 4', '[-3,4]'], explanation: 'Kritieke waardes: (x − 4)(x + 3) = 0 → x = 4 of x = −3.\nAangesien die parabool opwaarts oopmaak, is dit ≤ 0 tussen die wortels (eindpunte ingesluit aangesien ≤).\nOplossing: −3 ≤ x ≤ 4.' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x² − x − 6 > 0', answer: 'x<-3/2 of x>2', checkMode: 'auto', correctAnswers: ['x<-3/2 or x>2', 'x>2 or x<-3/2', 'x<-1,5 of x>2', 'x<-3/2 of x>2', 'x>2 of x<-3/2'], explanation: 'Faktoriseer: (2x + 3)(x − 2) > 0. Kritieke waardes: x = −3/2 of x = 2.\nAangesien die parabool opwaarts oopmaak, is dit > 0 buite die wortels (eindpunte uitgesluit aangesien streng).\nOplossing: x < −3/2 of x > 2.' },
+
+        // Block F — Simultaneous linear-quadratic systems (positions 14-16)
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = 2x − 1 en y = x² − 4', answer: 'x=3,y=5 of x=-1,y=-3', checkMode: 'auto', correctAnswers: ['x=3,y=5 or x=-1,y=-3', 'x=-1,y=-3 or x=3,y=5', 'x=3,y=5 of x=-1,y=-3', 'x=-1,y=-3 of x=3,y=5'], explanation: 'Stel 2x − 1 = x² − 4, dus x² − 2x − 3 = 0.\nFaktoriseer: (x − 3)(x + 1) = 0, dus x = 3 of x = −1.\nWanneer x = 3: y = 2(3) − 1 = 5. Wanneer x = −1: y = 2(−1) − 1 = −3.\nToets: 3² − 4 = 5 ✓ en (−1)² − 4 = −3 ✓' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en laat jou antwoorde in eenvoudigste wortelvorm: y = x + 3 en y = x² − x − 2', answer: 'Vervang die eerste vergelyking in die tweede: x + 3 = x² − x − 2.\nHerrangskik: x² − 2x − 5 = 0.\nDeur die kwadratiese formule te gebruik: x = (2 ± √(4 + 20)) / 2 = (2 ± √24) / 2 = 1 ± √6.\nWanneer x = 1 + √6: y = (1 + √6) + 3 = 4 + √6. Wanneer x = 1 − √6: y = (1 − √6) + 3 = 4 − √6.\nOplossingspunte: (1 + √6 ; 4 + √6) en (1 − √6 ; 4 − √6).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: y = x + 6 en y = x² + 2x', answer: 'x=-3,y=3 of x=2,y=8', checkMode: 'auto', correctAnswers: ['x=-3,y=3 or x=2,y=8', 'x=2,y=8 or x=-3,y=3', 'x=-3,y=3 of x=2,y=8', 'x=2,y=8 of x=-3,y=3'], explanation: 'Stel x + 6 = x² + 2x, dus x² + x − 6 = 0.\nFaktoriseer: (x + 3)(x − 2) = 0, dus x = −3 of x = 2.\nWanneer x = −3: y = −3 + 6 = 3. Wanneer x = 2: y = 2 + 6 = 8.\nToets: (−3)² + 2(−3) = 9 − 6 = 3 ✓ en (2)² + 2(2) = 4 + 4 = 8 ✓' },
+
+        // Block G — Conceptual reasoning questions (positions 17-19)
+        { difficulty: 'Hard', question: 'Thabo los √(x − 2) = −3 op en sê daar is geen oplossing nie. Is hy korrek? Verduidelik.', answer: 'Ja, Thabo is korrek. Die vierkantswortelsimbool dui altyd die nie-negatiewe vierkantswortel aan, dus kan √(x − 2) nooit gelyk wees aan ʼn negatiewe getal soos −3 nie. Kwadrering van albei kante sou x − 2 = 9 gee, dus x = 11, maar vervanging terug gee √9 = 3, nie −3 nie, wat bevestig dat dit ʼn buitenstaander-oplossing is en die vergelyking werklik geen oplossing het nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Amahle sê die vergelyking 3^(2x) − 4 · 3^x + 3 = 0 kan nie opgelos word nie omdat dit nie ʼn normale kwadratiese vergelyking is nie. Wys haar metode om dit op te los en vind x.', answer: 'Laat y = 3^x, dus 3^(2x) = y². Die vergelyking word y² − 4y + 3 = 0.\nFaktoriseer: (y − 1)(y − 3) = 0, dus y = 1 of y = 3.\nVervang terug: 3^x = 1 → x = 0. &nbsp; 3^x = 3 → x = 1.\nOplossing: x = 0 of x = 1.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho los x² − x − 12 ≤ 0 op en skryf sy finale antwoord as x ≤ 4. Verduidelik wat verkeerd is met sy antwoord en gee die korrekte oplossing.', answer: 'Sipho mis ʼn deel van die oplossing — ʼn kwadratiese ongelykheid van hierdie tipe word tussen die twee kritieke waardes begrens, nie net onder die groter een nie. Die kritieke waardes is x = 4 en x = −3 (uit (x − 4)(x + 3) = 0). Aangesien die parabool opwaarts oopmaak, is die uitdrukking slegs ≤ 0 tussen die wortels. Die korrekte oplossing is −3 ≤ x ≤ 4.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die kwadratiese formule, wortelvergelykings, eksponensiële vergelykings, kwadratiese ongelykhede, en gelyktydige stelsels bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae oor wortelvergelykings of kwadratiese ongelykhede en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Gaan deur die uitgewerkte voorbeelde oor die kwadratiese formule en gelyktydige stelsels, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Block A — Quadratic formula (positions 0-2)
+        { difficulty: 'Easy', question: 'Los op vir x deur die kwadratiese formule te gebruik: x² + 3x − 10 = 0', answer: 'x=2 of x=-5', checkMode: 'auto', correctAnswers: ['x=2 or x=-5', 'x=-5 or x=2', 'x=2 of x=-5', 'x=-5 of x=2', '2 of -5', '-5 of 2'], explanation: 'a=1, b=3, c=−10. Diskriminant = 9 − 4(1)(−10) = 9 + 40 = 49.\nx = (−3 ± 7) / 2.\nx = 2 of x = −5 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik: 3x² + 2x − 8 = 0', answer: 'x=4/3 of x=-2', checkMode: 'auto', correctAnswers: ['x=4/3 or x=-2', 'x=-2 or x=4/3', 'x=4/3 of x=-2', 'x=-2 of x=4/3'], explanation: 'a=3, b=2, c=−8. Diskriminant = 4 − 4(3)(−8) = 4 + 96 = 100.\nx = (−2 ± 10) / 6.\nx = 4/3 of x = −2 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik: 2x² − x − 6 = 0', answer: 'x=2 of x=-3/2', checkMode: 'auto', correctAnswers: ['x=2 or x=-3/2', 'x=-3/2 or x=2', 'x=2 of x=-3/2', 'x=-3/2 of x=2'], explanation: 'a=2, b=−1, c=−6. Diskriminant = 1 − 4(2)(−6) = 1 + 48 = 49.\nx = (1 ± 7) / 4.\nx = 2 of x = −3/2 ✓' },
+
+        // Block B — Quadratic formula, surd-form answers (positions 3-4)
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² − 2x − 9 = 0', answer: 'x=1+√10 of x=1-√10', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: 3x² − 2x − 8 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=3, b=−2, c=−8. Diskriminant = 4 − 4(3)(−8) = 100, wat ʼn positiewe volkome vierkant is, dus is daar twee verskillende rasionale wortels.\nx = (2 ± 10) / 6.\nx = 2 of x = −4/3.', checkMode: 'self' },
+
+        // Block C — Surd equations with extraneous-root checks (positions 5-7)
+        { difficulty: 'Medium', question: 'Los op vir x: √(x + 6) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Kwadreer albei kante: x + 6 = x².\nHerrangskik: x² − x − 6 = 0 → (x − 3)(x + 2) = 0, dus x = 3 of x = −2.\nToets x = 3: √(3+6) = √9 = 3 = 3 ✓ geldig.\nToets x = −2: √(−2+6) = √4 = 2 ≠ −2, dus is x = −2 buitenstaander (verwerp).\nOplossing: x = 3 alleen.' },
+        { difficulty: 'Medium', question: 'Los op vir x: √(4x + 5) = x, en toets vir buitenstaander-wortels.', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Kwadreer albei kante: 4x + 5 = x².\nHerrangskik: x² − 4x − 5 = 0 → (x − 5)(x + 1) = 0, dus x = 5 of x = −1.\nToets x = 5: √(4(5)+5) = √25 = 5 = 5 ✓ geldig.\nToets x = −1: √(4(−1)+5) = √1 = 1 ≠ −1, dus is x = −1 buitenstaander (verwerp).\nOplossing: x = 5 alleen.' },
+        { difficulty: 'Hard', question: 'Los op vir x: √(x + 6) = x − 6, en toets versigtig vir buitenstaander-wortels.', answer: 'Kwadreer albei kante: x + 6 = (x − 6)² = x² − 12x + 36.\nHerrangskik: x² − 13x + 30 = 0 → (x − 10)(x − 3) = 0, dus x = 10 of x = 3.\nToets x = 10: √16 = 4 en 10 − 6 = 4 ✓ geldig.\nToets x = 3: √9 = 3 maar 3 − 6 = −3, en 3 ≠ −3, dus is x = 3 buitenstaander (verwerp — die vierkantswortel kan nooit gelyk wees aan ʼn negatiewe getal nie).\nOplossing: x = 10 alleen.', checkMode: 'self' },
+
+        // Block D — Exponential equations (positions 8-10)
+        { difficulty: 'Easy', question: 'Los op vir x: 3^x = 81', answer: 'x=4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Skryf 81 as ʼn mag van 3: 81 = 3⁴.\nDus 3^x = 3⁴, wat beteken x = 4 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: 3^(x-1) = 27', answer: 'x=4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Skryf 27 as ʼn mag van 3: 27 = 3³.\nDus 3^(x−1) = 3³, wat beteken x − 1 = 3, dus x = 4 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 3^(2x) − 4 · 3^x + 3 = 0', answer: 'x=0 of x=1', checkMode: 'auto', correctAnswers: ['x=0 or x=1', 'x=1 or x=0', 'x=0 of x=1', 'x=1 of x=0'], explanation: 'Laat y = 3^x, dus 3^(2x) = y². Die vergelyking word y² − 4y + 3 = 0.\nFaktoriseer: (y − 1)(y − 3) = 0, dus y = 1 of y = 3.\nVervang terug: 3^x = 1 → x = 0. &nbsp; 3^x = 3 → x = 1.\nOplossing: x = 0 of x = 1 ✓' },
+
+        // Block E — Quadratic inequalities (positions 11-13)
+        { difficulty: 'Easy', question: 'Los op vir x: x² − 36 ≥ 0', answer: 'x≤-6 of x≥6', checkMode: 'auto', correctAnswers: ['x≤-6 or x≥6', 'x<=-6 or x>=6', 'x≥6 or x≤-6', 'x≤-6 of x≥6', 'x≥6 of x≤-6'], explanation: 'Kritieke waardes: x² − 36 = 0 → x = −6 of x = 6.\nAangesien die uitdrukking ʼn opwaartse parabool is, is dit ≥ 0 buite die wortels (eindpunte ingesluit aangesien ≥).\nOplossing: x ≤ −6 of x ≥ 6.' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² − 2x − 15 ≤ 0', answer: '-3≤x≤5', checkMode: 'auto', correctAnswer: '-3≤x≤5', correctAnswers: ['-3≤x≤5', '-3 <= x <= 5', '[-3,5]'], explanation: 'Kritieke waardes: (x − 5)(x + 3) = 0 → x = 5 of x = −3.\nAangesien die parabool opwaarts oopmaak, is dit ≤ 0 tussen die wortels (eindpunte ingesluit aangesien ≤).\nOplossing: −3 ≤ x ≤ 5.' },
+        { difficulty: 'Hard', question: 'Los op vir x: 3x² + x − 4 > 0', answer: 'x<-4/3 of x>1', checkMode: 'auto', correctAnswers: ['x<-4/3 or x>1', 'x>1 or x<-4/3', 'x<-4/3 of x>1', 'x>1 of x<-4/3'], explanation: 'Faktoriseer: (3x + 4)(x − 1) > 0. Kritieke waardes: x = −4/3 of x = 1.\nAangesien die parabool opwaarts oopmaak, is dit > 0 buite die wortels (eindpunte uitgesluit aangesien streng).\nOplossing: x < −4/3 of x > 1.' },
+
+        // Block F — Simultaneous linear-quadratic systems (positions 14-16)
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = 3x − 2 en y = x² − 2x − 2', answer: 'x=0,y=-2 of x=5,y=13', checkMode: 'auto', correctAnswers: ['x=0,y=-2 or x=5,y=13', 'x=5,y=13 or x=0,y=-2', 'x=0,y=-2 of x=5,y=13', 'x=5,y=13 of x=0,y=-2'], explanation: 'Stel 3x − 2 = x² − 2x − 2, dus x² − 5x = 0.\nFaktoriseer: x(x − 5) = 0, dus x = 0 of x = 5.\nWanneer x = 0: y = 3(0) − 2 = −2. Wanneer x = 5: y = 3(5) − 2 = 13.\nToets: 0² − 2(0) − 2 = −2 ✓ en 5² − 2(5) − 2 = 13 ✓' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en laat jou antwoorde in eenvoudigste wortelvorm: y = x + 2 en y = x² − 3x − 4', answer: 'Vervang die eerste vergelyking in die tweede: x + 2 = x² − 3x − 4.\nHerrangskik: x² − 4x − 6 = 0.\nDeur die kwadratiese formule te gebruik: x = (4 ± √(16 + 24)) / 2 = (4 ± √40) / 2 = 2 ± √10.\nWanneer x = 2 + √10: y = (2 + √10) + 2 = 4 + √10. Wanneer x = 2 − √10: y = (2 − √10) + 2 = 4 − √10.\nOplossingspunte: (2 + √10 ; 4 + √10) en (2 − √10 ; 4 − √10).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: y = 4x − 3 en y = x² − x − 3', answer: 'x=0,y=-3 of x=5,y=17', checkMode: 'auto', correctAnswers: ['x=0,y=-3 or x=5,y=17', 'x=5,y=17 or x=0,y=-3', 'x=0,y=-3 of x=5,y=17', 'x=5,y=17 of x=0,y=-3'], explanation: 'Stel 4x − 3 = x² − x − 3, dus x² − 5x = 0.\nFaktoriseer: x(x − 5) = 0, dus x = 0 of x = 5.\nWanneer x = 0: y = 4(0) − 3 = −3. Wanneer x = 5: y = 4(5) − 3 = 17.\nToets: 0² − 0 − 3 = −3 ✓ en 5² − 5 − 3 = 17 ✓' },
+
+        // Block G — Conceptual reasoning questions (positions 17-19)
+        { difficulty: 'Hard', question: 'Lerato los √(x − 3) = −4 op en sê daar is geen oplossing nie. Is sy korrek? Verduidelik.', answer: 'Ja, Lerato is korrek. Die vierkantswortelsimbool dui altyd die nie-negatiewe vierkantswortel aan, dus kan √(x − 3) nooit gelyk wees aan ʼn negatiewe getal soos −4 nie. Kwadrering van albei kante sou x − 3 = 16 gee, dus x = 19, maar vervanging terug gee √16 = 4, nie −4 nie, wat bevestig dat dit ʼn buitenstaander-oplossing is en die vergelyking werklik geen oplossing het nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho sê die vergelyking 2^(2x) − 6 · 2^x + 8 = 0 kan nie opgelos word nie omdat dit nie ʼn normale kwadratiese vergelyking is nie. Wys sy metode om dit op te los en vind x.', answer: 'Laat y = 2^x, dus 2^(2x) = y². Die vergelyking word y² − 6y + 8 = 0.\nFaktoriseer: (y − 2)(y − 4) = 0, dus y = 2 of y = 4.\nVervang terug: 2^x = 2 → x = 1. &nbsp; 2^x = 4 → x = 2.\nOplossing: x = 1 of x = 2.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Amahle los x² − 2x − 15 ≤ 0 op en skryf haar finale antwoord as x ≤ 5. Verduidelik wat verkeerd is met haar antwoord en gee die korrekte oplossing.', answer: 'Amahle mis ʼn deel van die oplossing — ʼn kwadratiese ongelykheid van hierdie tipe word tussen die twee kritieke waardes begrens, nie net onder die groter een nie. Die kritieke waardes is x = 5 en x = −3 (uit (x − 5)(x + 3) = 0). Aangesien die parabool opwaarts oopmaak, is die uitdrukking slegs ≤ 0 tussen die wortels. Die korrekte oplossing is −3 ≤ x ≤ 5.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die kwadratiese formule, wortelvergelykings, eksponensiële vergelykings, kwadratiese ongelykhede, en gelyktydige stelsels bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae oor wortelvergelykings of kwadratiese ongelykhede en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Gaan deur die uitgewerkte voorbeelde oor die kwadratiese formule en gelyktydige stelsels, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Block A — Quadratic formula (positions 0-2)
+        { difficulty: 'Easy', question: 'Los op vir x deur die kwadratiese formule te gebruik: x² + x − 6 = 0', answer: 'x=2 of x=-3', checkMode: 'auto', correctAnswers: ['x=2 or x=-3', 'x=-3 or x=2', 'x=2 of x=-3', 'x=-3 of x=2', '2 of -3', '-3 of 2'], explanation: 'a=1, b=1, c=−6. Diskriminant = 1 − 4(1)(−6) = 1 + 24 = 25.\nx = (−1 ± 5) / 2.\nx = 2 of x = −3 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik: 4x² − 3x − 1 = 0', answer: 'x=1 of x=-1/4', checkMode: 'auto', correctAnswers: ['x=1 or x=-1/4', 'x=-1/4 or x=1', 'x=1 of x=-1/4', 'x=-1/4 of x=1', 'x=1 of x=-0,25', 'x=-0,25 of x=1'], explanation: 'a=4, b=−3, c=−1. Diskriminant = 9 − 4(4)(−1) = 9 + 16 = 25.\nx = (3 ± 5) / 8.\nx = 1 of x = −1/4 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik: 2x² + 5x − 3 = 0', answer: 'x=1/2 of x=-3', checkMode: 'auto', correctAnswers: ['x=1/2 or x=-3', 'x=-3 or x=1/2', 'x=1/2 of x=-3', 'x=-3 of x=1/2', 'x=0,5 of x=-3', 'x=-3 of x=0,5'], explanation: 'a=2, b=5, c=−3. Diskriminant = 25 − 4(2)(−3) = 25 + 24 = 49.\nx = (−5 ± 7) / 4.\nx = 1/2 of x = −3 ✓' },
+
+        // Block B — Quadratic formula, surd-form answers (positions 3-4)
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² + 2x − 7 = 0', answer: 'x=-1+2√2 of x=-1-2√2', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: 2x² − x − 6 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=2, b=−1, c=−6. Diskriminant = 1 − 4(2)(−6) = 49, wat ʼn positiewe volkome vierkant is, dus is daar twee verskillende rasionale wortels.\nx = (1 ± 7) / 4.\nx = 2 of x = −3/2.', checkMode: 'self' },
+
+        // Block C — Surd equations with extraneous-root checks (positions 5-7)
+        { difficulty: 'Medium', question: 'Los op vir x: √(x + 2) = x', answer: 'x=2', checkMode: 'auto', correctAnswer: 'x=2', correctAnswers: ['x=2', 'x = 2', '2'], explanation: 'Kwadreer albei kante: x + 2 = x².\nHerrangskik: x² − x − 2 = 0 → (x − 2)(x + 1) = 0, dus x = 2 of x = −1.\nToets x = 2: √(2+2) = √4 = 2 = 2 ✓ geldig.\nToets x = −1: √(−1+2) = √1 = 1 ≠ −1, dus is x = −1 buitenstaander (verwerp).\nOplossing: x = 2 alleen.' },
+        { difficulty: 'Medium', question: 'Los op vir x: √(6x + 7) = x, en toets vir buitenstaander-wortels.', answer: 'x=7', checkMode: 'auto', correctAnswer: 'x=7', correctAnswers: ['x=7', 'x = 7', '7'], explanation: 'Kwadreer albei kante: 6x + 7 = x².\nHerrangskik: x² − 6x − 7 = 0 → (x − 7)(x + 1) = 0, dus x = 7 of x = −1.\nToets x = 7: √(6(7)+7) = √49 = 7 = 7 ✓ geldig.\nToets x = −1: √(6(−1)+7) = √1 = 1 ≠ −1, dus is x = −1 buitenstaander (verwerp).\nOplossing: x = 7 alleen.' },
+        { difficulty: 'Hard', question: 'Los op vir x: √(x + 8) = x − 4, en toets versigtig vir buitenstaander-wortels.', answer: 'Kwadreer albei kante: x + 8 = (x − 4)² = x² − 8x + 16.\nHerrangskik: x² − 9x + 8 = 0 → (x − 8)(x − 1) = 0, dus x = 8 of x = 1.\nToets x = 8: √16 = 4 en 8 − 4 = 4 ✓ geldig.\nToets x = 1: √9 = 3 maar 1 − 4 = −3, en 3 ≠ −3, dus is x = 1 buitenstaander (verwerp — die vierkantswortel kan nooit gelyk wees aan ʼn negatiewe getal nie).\nOplossing: x = 8 alleen.', checkMode: 'self' },
+
+        // Block D — Exponential equations (positions 8-10)
+        { difficulty: 'Easy', question: 'Los op vir x: 5^x = 125', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 125 as ʼn mag van 5: 125 = 5³.\nDus 5^x = 5³, wat beteken x = 3 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: 5^(x+2) = 625', answer: 'x=2', checkMode: 'auto', correctAnswer: 'x=2', correctAnswers: ['x=2', 'x = 2', '2'], explanation: 'Skryf 625 as ʼn mag van 5: 625 = 5⁴.\nDus 5^(x+2) = 5⁴, wat beteken x + 2 = 4, dus x = 2 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2^(2x) − 6 · 2^x + 8 = 0', answer: 'x=1 of x=2', checkMode: 'auto', correctAnswers: ['x=1 or x=2', 'x=2 or x=1', 'x=1 of x=2', 'x=2 of x=1'], explanation: 'Laat y = 2^x, dus 2^(2x) = y². Die vergelyking word y² − 6y + 8 = 0.\nFaktoriseer: (y − 2)(y − 4) = 0, dus y = 2 of y = 4.\nVervang terug: 2^x = 2 → x = 1. &nbsp; 2^x = 4 → x = 2.\nOplossing: x = 1 of x = 2 ✓' },
+
+        // Block E — Quadratic inequalities (positions 11-13)
+        { difficulty: 'Easy', question: 'Los op vir x: x² − 49 ≥ 0', answer: 'x≤-7 of x≥7', checkMode: 'auto', correctAnswers: ['x≤-7 or x≥7', 'x<=-7 or x>=7', 'x≥7 or x≤-7', 'x≤-7 of x≥7', 'x≥7 of x≤-7'], explanation: 'Kritieke waardes: x² − 49 = 0 → x = −7 of x = 7.\nAangesien die uitdrukking ʼn opwaartse parabool is, is dit ≥ 0 buite die wortels (eindpunte ingesluit aangesien ≥).\nOplossing: x ≤ −7 of x ≥ 7.' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² − 3x − 10 ≤ 0', answer: '-2≤x≤5', checkMode: 'auto', correctAnswer: '-2≤x≤5', correctAnswers: ['-2≤x≤5', '-2 <= x <= 5', '[-2,5]'], explanation: 'Kritieke waardes: (x − 5)(x + 2) = 0 → x = 5 of x = −2.\nAangesien die parabool opwaarts oopmaak, is dit ≤ 0 tussen die wortels (eindpunte ingesluit aangesien ≤).\nOplossing: −2 ≤ x ≤ 5.' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x² + 3x − 5 > 0', answer: 'x<-5/2 of x>1', checkMode: 'auto', correctAnswers: ['x<-5/2 or x>1', 'x>1 or x<-5/2', 'x<-5/2 of x>1', 'x>1 of x<-5/2'], explanation: 'Faktoriseer: (2x + 5)(x − 1) > 0. Kritieke waardes: x = −5/2 of x = 1.\nAangesien die parabool opwaarts oopmaak, is dit > 0 buite die wortels (eindpunte uitgesluit aangesien streng).\nOplossing: x < −5/2 of x > 1.' },
+
+        // Block F — Simultaneous linear-quadratic systems (positions 14-16)
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = 4x − 5 en y = x² − x − 5', answer: 'x=0,y=-5 of x=5,y=15', checkMode: 'auto', correctAnswers: ['x=0,y=-5 or x=5,y=15', 'x=5,y=15 or x=0,y=-5', 'x=0,y=-5 of x=5,y=15', 'x=5,y=15 of x=0,y=-5'], explanation: 'Stel 4x − 5 = x² − x − 5, dus x² − 5x = 0.\nFaktoriseer: x(x − 5) = 0, dus x = 0 of x = 5.\nWanneer x = 0: y = 4(0) − 5 = −5. Wanneer x = 5: y = 4(5) − 5 = 15.\nToets: 0² − 0 − 5 = −5 ✓ en 5² − 5 − 5 = 15 ✓' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en laat jou antwoorde in eenvoudigste wortelvorm: y = x + 4 en y = x² − 2x − 3', answer: 'Vervang die eerste vergelyking in die tweede: x + 4 = x² − 2x − 3.\nHerrangskik: x² − 3x − 7 = 0.\nDeur die kwadratiese formule te gebruik: x = (3 ± √(9 + 28)) / 2 = (3 ± √37) / 2.\nWanneer x = (3 + √37)/2: y = (3 + √37)/2 + 4 = (11 + √37)/2. Wanneer x = (3 − √37)/2: y = (3 − √37)/2 + 4 = (11 − √37)/2.\nOplossingspunte: ((3 + √37)/2 ; (11 + √37)/2) en ((3 − √37)/2 ; (11 − √37)/2).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: y = x − 5 en y = x² − 6x + 1', answer: 'x=6,y=1 of x=1,y=-4', checkMode: 'auto', correctAnswers: ['x=6,y=1 or x=1,y=-4', 'x=1,y=-4 or x=6,y=1', 'x=6,y=1 of x=1,y=-4', 'x=1,y=-4 of x=6,y=1'], explanation: 'Stel x − 5 = x² − 6x + 1, dus x² − 7x + 6 = 0.\nFaktoriseer: (x − 6)(x − 1) = 0, dus x = 6 of x = 1.\nWanneer x = 6: y = 6 − 5 = 1. Wanneer x = 1: y = 1 − 5 = −4.\nToets: 6² − 6(6) + 1 = 1 ✓ en 1² − 6(1) + 1 = −4 ✓' },
+
+        // Block G — Conceptual reasoning questions (positions 17-19)
+        { difficulty: 'Hard', question: 'Sipho los √(x − 5) = −2 op en sê daar is geen oplossing nie. Is hy korrek? Verduidelik.', answer: 'Ja, Sipho is korrek. Die vierkantswortelsimbool dui altyd die nie-negatiewe vierkantswortel aan, dus kan √(x − 5) nooit gelyk wees aan ʼn negatiewe getal soos −2 nie. Kwadrering van albei kante sou x − 5 = 4 gee, dus x = 9, maar vervanging terug gee √4 = 2, nie −2 nie, wat bevestig dat dit ʼn buitenstaander-oplossing is en die vergelyking werklik geen oplossing het nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato sê die vergelyking 3^(2x) − 4 · 3^x + 3 = 0 kan nie opgelos word nie omdat dit nie ʼn normale kwadratiese vergelyking is nie. Wys haar metode om dit op te los en vind x.', answer: 'Laat y = 3^x, dus 3^(2x) = y². Die vergelyking word y² − 4y + 3 = 0.\nFaktoriseer: (y − 1)(y − 3) = 0, dus y = 1 of y = 3.\nVervang terug: 3^x = 1 → x = 0. &nbsp; 3^x = 3 → x = 1.\nOplossing: x = 0 of x = 1.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Amahle los x² − 3x − 10 ≤ 0 op en skryf haar finale antwoord as x ≤ 5. Verduidelik wat verkeerd is met haar antwoord en gee die korrekte oplossing.', answer: 'Amahle mis ʼn deel van die oplossing — ʼn kwadratiese ongelykheid van hierdie tipe word tussen die twee kritieke waardes begrens, nie net onder die groter een nie. Die kritieke waardes is x = 5 en x = −2 (uit (x − 5)(x + 2) = 0). Aangesien die parabool opwaarts oopmaak, is die uitdrukking slegs ≤ 0 tussen die wortels. Die korrekte oplossing is −2 ≤ x ≤ 5.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die kwadratiese formule, wortelvergelykings, eksponensiële vergelykings, kwadratiese ongelykhede, en gelyktydige stelsels bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae oor wortelvergelykings of kwadratiese ongelykhede en probeer weer.' },
+        { minScore: 9, message: 'Goeie poging! Gaan deur die uitgewerkte voorbeelde oor die kwadratiese formule en gelyktydige stelsels, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

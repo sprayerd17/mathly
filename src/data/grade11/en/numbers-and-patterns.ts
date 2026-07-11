@@ -675,4 +675,150 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs) — Quadratic number patterns
+    // Block 1 (0-2):   Find the next term using first/second differences
+    // Block 2 (3-5):   State the second difference and find a
+    // Block 3 (6-9):   Derive the full general term Tₙ = an² + bn + c
+    // Block 4 (10-12): Evaluate a specific term (beyond the given terms)
+    // Block 5 (13-15): Solve for n given Tₙ
+    // Block 6 (16-19): Hard — combined/reverse and verification problems
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Next term via first/second differences (Easy)
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 2, 9, 20, 35.', checkMode: 'auto', correctAnswer: '54', answer: '54', explanation: 'First differences: 7,11,15. Second differences: 4,4 (constant). Next first difference: 15+4=19. Next term: 35+19=54.' },
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 1, 5, 13, 25.', checkMode: 'auto', correctAnswer: '41', answer: '41', explanation: 'First differences: 4,8,12. Second differences: 4,4 (constant). Next first difference: 12+4=16. Next term: 25+16=41.' },
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 6, 13, 24, 39.', checkMode: 'auto', correctAnswer: '58', answer: '58', explanation: 'First differences: 7,11,15. Second differences: 4,4 (constant). Next first difference: 15+4=19. Next term: 39+19=58.' },
+
+        // Block 2 — Second difference and value of a (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'For the pattern 2, 9, 20, 35, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 and 2', correctAnswers: ['4 and 2', 'second difference=4, a=2', '4, a=2', 'second difference 4, a 2'], answer: 'Second difference = 4, a = 2', explanation: 'First differences: 7,11,15. Second differences: 4,4 — constant second difference is 4. Since 2a = second difference, a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'For the pattern 1, 5, 13, 25, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 and 2', correctAnswers: ['4 and 2', 'second difference=4, a=2', '4, a=2', 'second difference 4, a 2'], answer: 'Second difference = 4, a = 2', explanation: 'First differences: 4,8,12. Second differences: 4,4 — constant second difference is 4. Since 2a = second difference, a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'For the pattern 3, 12, 27, 48, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '6 and 3', correctAnswers: ['6 and 3', 'second difference=6, a=3', '6, a=3', 'second difference 6, a 3'], answer: 'Second difference = 6, a = 3', explanation: 'First differences: 9,15,21. Second differences: 6,6 — constant second difference is 6. Since 2a = second difference, a = 6÷2 = 3.' },
+
+        // Block 3 — Derive full general term Tₙ = an² + bn + c (Medium)
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 6, 13, 24, 39.', checkMode: 'auto', correctAnswer: '2n²+n+3', correctAnswers: ['2n²+n+3', 'Tₙ=2n²+n+3', '2n^2+n+3', 'T_n=2n^2+n+3', 'Tn=2n²+n+3'], answer: 'Tₙ = 2n² + n + 3', explanation: 'First differences: 7,11,15. Second differences: 4,4. a=2. T₁=6: 2+b+c=6→b+c=4. T₂=13: 8+2b+c=13→2b+c=5. Subtract: b=1. c=4-1=3. Rule: Tₙ=2n²+n+3. Check: T₁=2+1+3=6✓, T₄=32+4+3=39✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 1, 5, 13, 25.', checkMode: 'auto', correctAnswer: '2n²-2n+1', correctAnswers: ['2n²-2n+1', 'Tₙ=2n²-2n+1', '2n^2-2n+1', 'T_n=2n^2-2n+1', 'Tn=2n²-2n+1'], answer: 'Tₙ = 2n² − 2n + 1', explanation: 'First differences: 4,8,12. Second differences: 4,4. a=2. T₁=1: 2+b+c=1→b+c=-1. T₂=5: 8+2b+c=5→2b+c=-3. Subtract: b=-2. c=-1-(-2)=1. Rule: Tₙ=2n²-2n+1. Check: T₁=2-2+1=1✓, T₄=32-8+1=25✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 3, 12, 27, 48.', checkMode: 'auto', correctAnswer: '3n²', correctAnswers: ['3n²', 'Tₙ=3n²', '3n^2', 'T_n=3n^2', 'Tn=3n²'], answer: 'Tₙ = 3n²', explanation: 'First differences: 9,15,21. Second differences: 6,6. a=3. T₁=3: 3+b+c=3→b+c=0. T₂=12: 12+2b+c=12→2b+c=0. Subtract: b=0. c=0-0=0. Rule: Tₙ=3n². Check: T₁=3✓, T₄=3(16)=48✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 2, 10, 24, 44.', checkMode: 'auto', correctAnswer: '3n²-n', correctAnswers: ['3n²-n', 'Tₙ=3n²-n', '3n^2-n', 'T_n=3n^2-n', 'Tn=3n²-n'], answer: 'Tₙ = 3n² − n', explanation: 'First differences: 8,14,20. Second differences: 6,6. a=3. T₁=2: 3+b+c=2→b+c=-1. T₂=10: 12+2b+c=10→2b+c=-2. Subtract: b=-1. c=-1-(-1)=0. Rule: Tₙ=3n²-n. Check: T₁=3-1=2✓, T₄=48-4=44✓.' },
+
+        // Block 4 — Evaluate a specific term beyond the given terms (Medium)
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 3, 12, 27, 48. Find the 6th term.', checkMode: 'auto', correctAnswer: '108', answer: '108', explanation: 'First differences: 9,15,21. Second differences: 6,6. a=3, and T₁=3 gives b=0, c=0, so Tₙ=3n². T₆=3(36)=108.' },
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 6, 13, 24, 39. Find the 7th term.', checkMode: 'auto', correctAnswer: '108', answer: '108', explanation: 'Rule: Tₙ=2n²+n+3 (derived from second difference 4, a=2, b=1, c=3). T₇=2(49)+7+3=98+10=108.' },
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 2, 10, 24, 44. Find the 6th term.', checkMode: 'auto', correctAnswer: '102', answer: '102', explanation: 'Rule: Tₙ=3n²-n (derived from second difference 6, a=3, b=-1, c=0). T₆=3(36)-6=108-6=102.' },
+
+        // Block 5 — Solve for n given Tₙ (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 3n² − n. Find the value of n for which Tₙ = 184.', checkMode: 'auto', correctAnswer: '8', answer: '8', explanation: '3n²-n=184 → 3n²-n-184=0. Using the quadratic formula: n=(1±√(1+2208))/6=(1±47)/6. n=48/6=8 (rejecting the negative root n=-23/3). Check: 3(64)-8=192-8=184 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 2n² + n + 3. Find the value of n for which Tₙ = 108.', checkMode: 'auto', correctAnswer: '7', answer: '7', explanation: '2n²+n+3=108 → 2n²+n-105=0. Using the quadratic formula: n=(-1±√(1+840))/4=(-1±29)/4. n=28/4=7 (rejecting the negative root n=-30/4). Check: 2(49)+7+3=98+10=108 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 3n². Find the value of n for which Tₙ = 300.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '3n²=300 → n²=100 → n=10 (rejecting the negative root n=-10, since n must be a positive term number). Check: 3(100)=300 ✓.' },
+
+        // Block 6 — Hard: combined/reverse and verification problems
+        { difficulty: 'Hard', question: "A theatre's row seating pattern (seats in row n) is 5, 14, 29, 50. Find the nth term rule and use it to predict the number of seats in row 20.", checkMode: 'auto', correctAnswer: '1202', answer: '1202', explanation: 'First differences: 9,15,21. Second differences: 6,6. a=3. T₁=5: 3+b+c=5→b+c=2. T₂=14: 12+2b+c=14→2b+c=2. Subtract: b=0. c=2. Rule: Tₙ=3n²+2. T₂₀=3(400)+2=1200+2=1202.' },
+        { difficulty: 'Hard', question: 'Thabo derives the rule Tₙ = 2n² − n + 1 for the pattern 2, 7, 16, 29 and checks it by finding T₅. Sipho says T₅ should be 52. Verify whether Sipho is correct.', answer: 'T₅=2(25)-5+1=50-5+1=46. The pattern\'s established second difference is 4, so the next first difference after 13 is 17, giving T₅=29+17=46. Sipho is incorrect — the correct value is 46, not 52.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato says every pattern with a constant second difference of 4 must have nth term Tₙ = 2n² + bn + c for some b and c, and that a can never be anything other than 2 in that case. Is she correct? Explain.', answer: 'Yes, for the value of a — since 2a always equals the constant second difference, a second difference of 4 forces a=2 in every such pattern. However b and c can vary between different patterns sharing the same second difference, so the patterns themselves are not identical, only their a-value.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A quadratic pattern has Tₙ = 3n² − n and a linear pattern has Uₙ = 20n − 25. Find the value(s) of n for which Tₙ = Uₙ, given that n must be a positive integer.', answer: '3n²-n=20n-25 → 3n²-21n+25=0... testing small positive integers: n=1: T=2,U=-5 (no). n=2: T=10,U=15 (no). n=3: T=24,U=35 (no). Using the quadratic formula on 3n²-21n+25=0 gives non-integer roots (n≈1.48 or n≈5.52), so there is no positive integer n where Tₙ=Uₙ exactly; the closest integer check confirms no exact match.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered quadratic number patterns.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on second differences or the general term and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on deriving Tₙ = an² + bn + c, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Next term via first/second differences (Easy)
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 3, 10, 21, 36.', checkMode: 'auto', correctAnswer: '55', answer: '55', explanation: 'First differences: 7,11,15. Second differences: 4,4 (constant). Next first difference: 15+4=19. Next term: 36+19=55.' },
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 2, 6, 14, 26.', checkMode: 'auto', correctAnswer: '42', answer: '42', explanation: 'First differences: 4,8,12. Second differences: 4,4 (constant). Next first difference: 12+4=16. Next term: 26+16=42.' },
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 7, 14, 25, 40.', checkMode: 'auto', correctAnswer: '59', answer: '59', explanation: 'First differences: 7,11,15. Second differences: 4,4 (constant). Next first difference: 15+4=19. Next term: 40+19=59.' },
+
+        // Block 2 — Second difference and value of a (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'For the pattern 3, 10, 21, 36, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 and 2', correctAnswers: ['4 and 2', 'second difference=4, a=2', '4, a=2', 'second difference 4, a 2'], answer: 'Second difference = 4, a = 2', explanation: 'First differences: 7,11,15. Second differences: 4,4 — constant second difference is 4. Since 2a = second difference, a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'For the pattern 2, 6, 14, 26, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 and 2', correctAnswers: ['4 and 2', 'second difference=4, a=2', '4, a=2', 'second difference 4, a 2'], answer: 'Second difference = 4, a = 2', explanation: 'First differences: 4,8,12. Second differences: 4,4 — constant second difference is 4. Since 2a = second difference, a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'For the pattern 5, 15, 31, 53, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '6 and 3', correctAnswers: ['6 and 3', 'second difference=6, a=3', '6, a=3', 'second difference 6, a 3'], answer: 'Second difference = 6, a = 3', explanation: 'First differences: 10,16,22. Second differences: 6,6 — constant second difference is 6. Since 2a = second difference, a = 6÷2 = 3.' },
+
+        // Block 3 — Derive full general term Tₙ = an² + bn + c (Medium)
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 7, 14, 25, 40.', checkMode: 'auto', correctAnswer: '2n²+n+4', correctAnswers: ['2n²+n+4', 'Tₙ=2n²+n+4', '2n^2+n+4', 'T_n=2n^2+n+4', 'Tn=2n²+n+4'], answer: 'Tₙ = 2n² + n + 4', explanation: 'First differences: 7,11,15. Second differences: 4,4. a=2. T₁=7: 2+b+c=7→b+c=5. T₂=14: 8+2b+c=14→2b+c=6. Subtract: b=1. c=5-1=4. Rule: Tₙ=2n²+n+4. Check: T₁=2+1+4=7✓, T₄=32+4+4=40✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 3, 10, 21, 36.', checkMode: 'auto', correctAnswer: '2n²+n', correctAnswers: ['2n²+n', 'Tₙ=2n²+n', '2n^2+n', 'T_n=2n^2+n', 'Tn=2n²+n'], answer: 'Tₙ = 2n² + n', explanation: 'First differences: 7,11,15. Second differences: 4,4. a=2. T₁=3: 2+b+c=3→b+c=1. T₂=10: 8+2b+c=10→2b+c=2. Subtract: b=1. c=1-1=0. Rule: Tₙ=2n²+n. Check: T₁=2+1=3✓, T₄=32+4=36✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 2, 6, 14, 26.', checkMode: 'auto', correctAnswer: '2n²-2n+2', correctAnswers: ['2n²-2n+2', 'Tₙ=2n²-2n+2', '2n^2-2n+2', 'T_n=2n^2-2n+2', 'Tn=2n²-2n+2'], answer: 'Tₙ = 2n² − 2n + 2', explanation: 'First differences: 4,8,12. Second differences: 4,4. a=2. T₁=2: 2+b+c=2→b+c=0. T₂=6: 8+2b+c=6→2b+c=-2. Subtract: b=-2. c=0-(-2)=2. Rule: Tₙ=2n²-2n+2. Check: T₁=2-2+2=2✓, T₄=32-8+2=26✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 1, 9, 23, 43.', checkMode: 'auto', correctAnswer: '3n²-n-1', correctAnswers: ['3n²-n-1', 'Tₙ=3n²-n-1', '3n^2-n-1', 'T_n=3n^2-n-1', 'Tn=3n²-n-1'], answer: 'Tₙ = 3n² − n − 1', explanation: 'First differences: 8,14,20. Second differences: 6,6. a=3. T₁=1: 3+b+c=1→b+c=-2. T₂=9: 12+2b+c=9→2b+c=-3. Subtract: b=-1. c=-2-(-1)=-1. Rule: Tₙ=3n²-n-1. Check: T₁=3-1-1=1✓, T₄=48-4-1=43✓.' },
+
+        // Block 4 — Evaluate a specific term beyond the given terms (Medium)
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 5, 15, 31, 53. Find the 7th term.', checkMode: 'auto', correctAnswer: '155', answer: '155', explanation: 'Rule: Tₙ=3n²+n+1 (second difference 6, a=3, b=1, c=1). T₇=3(49)+7+1=147+8=155.' },
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 7, 14, 25, 40. Find the 6th term.', checkMode: 'auto', correctAnswer: '82', answer: '82', explanation: 'Rule: Tₙ=2n²+n+4 (second difference 4, a=2, b=1, c=4). T₆=2(36)+6+4=72+10=82.' },
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 1, 9, 23, 43. Find the 6th term.', checkMode: 'auto', correctAnswer: '101', answer: '101', explanation: 'Rule: Tₙ=3n²-n-1 (second difference 6, a=3, b=-1, c=-1). T₆=3(36)-6-1=108-7=101.' },
+
+        // Block 5 — Solve for n given Tₙ (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 3n² − n − 1. Find the value of n for which Tₙ = 233.', checkMode: 'auto', correctAnswer: '9', answer: '9', explanation: '3n²-n-1=233 → 3n²-n-234=0. Using the quadratic formula: n=(1±√(1+2808))/6=(1±53)/6. n=54/6=9 (rejecting the negative root n=-26/3). Check: 3(81)-9-1=243-10=233 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 2n² + n + 4. Find the value of n for which Tₙ = 214.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '2n²+n+4=214 → 2n²+n-210=0. Using the quadratic formula: n=(-1±√(1+1680))/4=(-1±41)/4. n=40/4=10 (rejecting the negative root n=-42/4). Check: 2(100)+10+4=200+14=214 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 2n² + n. Find the value of n for which Tₙ = 210.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '2n²+n=210 → 2n²+n-210=0. Using the quadratic formula: n=(-1±√(1+1680))/4=(-1±41)/4. n=40/4=10 (rejecting the negative root n=-42/4). Check: 2(100)+10=200+10=210 ✓.' },
+
+        // Block 6 — Hard: combined/reverse and verification problems
+        { difficulty: 'Hard', question: "A hall's row seating pattern (seats in row n) is 6, 15, 30, 51. Find the nth term rule and use it to predict the number of seats in row 15.", checkMode: 'auto', correctAnswer: '678', answer: '678', explanation: 'First differences: 9,15,21. Second differences: 6,6. a=3. T₁=6: 3+b+c=6→b+c=3. T₂=15: 12+2b+c=15→2b+c=3. Subtract: b=0. c=3. Rule: Tₙ=3n²+3. T₁₅=3(225)+3=675+3=678.' },
+        { difficulty: 'Hard', question: 'Amahle derives the rule Tₙ = 2n² − n for the pattern 1, 6, 15, 28 and checks it by finding T₅. Bongani says T₅ should be 44. Verify whether Bongani is correct.', answer: 'T₅=2(25)-5=50-5=45. The pattern\'s established second difference is 4, so the next first difference after 13 is 17, giving T₅=28+17=45. Bongani is incorrect — the correct value is 45, not 44.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho says every pattern with a constant second difference of 6 must have nth term Tₙ = 3n² + bn + c for some b and c, and that a can never be anything other than 3 in that case. Is he correct? Explain.', answer: 'Yes, for the value of a — since 2a always equals the constant second difference, a second difference of 6 forces a=3 in every such pattern. However b and c can vary between different patterns sharing the same second difference, so the patterns themselves are not identical, only their a-value.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A quadratic pattern has Tₙ = 2n² + n and a linear pattern has Uₙ = 15n − 12. Find the value(s) of n for which Tₙ = Uₙ, given that n must be a positive integer.', answer: '2n²+n=15n-12 → 2n²-14n+12=0 → n²-7n+6=0 → (n-1)(n-6)=0 → n=1 or n=6. Check n=1: T=3, U=3 ✓. Check n=6: T=78, U=78 ✓. Both n=1 and n=6 satisfy Tₙ=Uₙ.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered quadratic number patterns.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on second differences or the general term and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on deriving Tₙ = an² + bn + c, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Next term via first/second differences (Easy)
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 4, 11, 22, 37.', checkMode: 'auto', correctAnswer: '56', answer: '56', explanation: 'First differences: 7,11,15. Second differences: 4,4 (constant). Next first difference: 15+4=19. Next term: 37+19=56.' },
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 3, 7, 15, 27.', checkMode: 'auto', correctAnswer: '43', answer: '43', explanation: 'First differences: 4,8,12. Second differences: 4,4 (constant). Next first difference: 12+4=16. Next term: 27+16=43.' },
+        { difficulty: 'Easy', question: 'Find the next term in the quadratic pattern 8, 15, 26, 41.', checkMode: 'auto', correctAnswer: '60', answer: '60', explanation: 'First differences: 7,11,15. Second differences: 4,4 (constant). Next first difference: 15+4=19. Next term: 41+19=60.' },
+
+        // Block 2 — Second difference and value of a (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'For the pattern 4, 11, 22, 37, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 and 2', correctAnswers: ['4 and 2', 'second difference=4, a=2', '4, a=2', 'second difference 4, a 2'], answer: 'Second difference = 4, a = 2', explanation: 'First differences: 7,11,15. Second differences: 4,4 — constant second difference is 4. Since 2a = second difference, a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'For the pattern 3, 7, 15, 27, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 and 2', correctAnswers: ['4 and 2', 'second difference=4, a=2', '4, a=2', 'second difference 4, a 2'], answer: 'Second difference = 4, a = 2', explanation: 'First differences: 4,8,12. Second differences: 4,4 — constant second difference is 4. Since 2a = second difference, a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'For the pattern 4, 13, 28, 49, find the constant second difference and the value of a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '6 and 3', correctAnswers: ['6 and 3', 'second difference=6, a=3', '6, a=3', 'second difference 6, a 3'], answer: 'Second difference = 6, a = 3', explanation: 'First differences: 9,15,21. Second differences: 6,6 — constant second difference is 6. Since 2a = second difference, a = 6÷2 = 3.' },
+
+        // Block 3 — Derive full general term Tₙ = an² + bn + c (Medium)
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 8, 15, 26, 41.', checkMode: 'auto', correctAnswer: '2n²+n+5', correctAnswers: ['2n²+n+5', 'Tₙ=2n²+n+5', '2n^2+n+5', 'T_n=2n^2+n+5', 'Tn=2n²+n+5'], answer: 'Tₙ = 2n² + n + 5', explanation: 'First differences: 7,11,15. Second differences: 4,4. a=2. T₁=8: 2+b+c=8→b+c=6. T₂=15: 8+2b+c=15→2b+c=7. Subtract: b=1. c=6-1=5. Rule: Tₙ=2n²+n+5. Check: T₁=2+1+5=8✓, T₄=32+4+5=41✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 4, 11, 22, 37.', checkMode: 'auto', correctAnswer: '2n²+n+1', correctAnswers: ['2n²+n+1', 'Tₙ=2n²+n+1', '2n^2+n+1', 'T_n=2n^2+n+1', 'Tn=2n²+n+1'], answer: 'Tₙ = 2n² + n + 1', explanation: 'First differences: 7,11,15. Second differences: 4,4. a=2. T₁=4: 2+b+c=4→b+c=2. T₂=11: 8+2b+c=11→2b+c=3. Subtract: b=1. c=2-1=1. Rule: Tₙ=2n²+n+1. Check: T₁=2+1+1=4✓, T₄=32+4+1=37✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 3, 7, 15, 27.', checkMode: 'auto', correctAnswer: '2n²-2n+3', correctAnswers: ['2n²-2n+3', 'Tₙ=2n²-2n+3', '2n^2-2n+3', 'T_n=2n^2-2n+3', 'Tn=2n²-2n+3'], answer: 'Tₙ = 2n² − 2n + 3', explanation: 'First differences: 4,8,12. Second differences: 4,4. a=2. T₁=3: 2+b+c=3→b+c=1. T₂=7: 8+2b+c=7→2b+c=-1. Subtract: b=-2. c=1-(-2)=3. Rule: Tₙ=2n²-2n+3. Check: T₁=2-2+3=3✓, T₄=32-8+3=27✓.' },
+        { difficulty: 'Medium', question: 'Find the nth term of the quadratic pattern 3, 11, 25, 45.', checkMode: 'auto', correctAnswer: '3n²-n+1', correctAnswers: ['3n²-n+1', 'Tₙ=3n²-n+1', '3n^2-n+1', 'T_n=3n^2-n+1', 'Tn=3n²-n+1'], answer: 'Tₙ = 3n² − n + 1', explanation: 'First differences: 8,14,20. Second differences: 6,6. a=3. T₁=3: 3+b+c=3→b+c=0. T₂=11: 12+2b+c=11→2b+c=-1. Subtract: b=-1. c=0-(-1)=1. Rule: Tₙ=3n²-n+1. Check: T₁=3-1+1=3✓, T₄=48-4+1=45✓.' },
+
+        // Block 4 — Evaluate a specific term beyond the given terms (Medium)
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 4, 13, 28, 49. Find the 6th term.', checkMode: 'auto', correctAnswer: '109', answer: '109', explanation: 'Rule: Tₙ=3n²+1 (second difference 6, a=3, b=0, c=1). T₆=3(36)+1=108+1=109.' },
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 8, 15, 26, 41. Find the 7th term.', checkMode: 'auto', correctAnswer: '110', answer: '110', explanation: 'Rule: Tₙ=2n²+n+5 (second difference 4, a=2, b=1, c=5). T₇=2(49)+7+5=98+12=110.' },
+        { difficulty: 'Medium', question: 'A quadratic pattern begins 3, 11, 25, 45. Find the 6th term.', checkMode: 'auto', correctAnswer: '103', answer: '103', explanation: 'Rule: Tₙ=3n²-n+1 (second difference 6, a=3, b=-1, c=1). T₆=3(36)-6+1=108-5=103.' },
+
+        // Block 5 — Solve for n given Tₙ (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 3n² − n + 1. Find the value of n for which Tₙ = 291.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '3n²-n+1=291 → 3n²-n-290=0. Using the quadratic formula: n=(1±√(1+3480))/6=(1±59)/6. n=60/6=10 (rejecting the negative root n=-29/3). Check: 3(100)-10+1=300-9=291 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 2n² + n + 5. Find the value of n for which Tₙ = 215.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '2n²+n+5=215 → 2n²+n-210=0. Using the quadratic formula: n=(-1±√(1+1680))/4=(-1±41)/4. n=40/4=10 (rejecting the negative root n=-42/4). Check: 2(100)+10+5=200+15=215 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'The nth term of a pattern is Tₙ = 2n² + n + 1. Find the value of n for which Tₙ = 172.', checkMode: 'auto', correctAnswer: '9', answer: '9', explanation: '2n²+n+1=172 → 2n²+n-171=0. Using the quadratic formula: n=(-1±√(1+1368))/4=(-1±37)/4. n=36/4=9 (rejecting the negative root n=-38/4). Check: 2(81)+9+1=162+10=172 ✓.' },
+
+        // Block 6 — Hard: combined/reverse and verification problems
+        { difficulty: 'Hard', question: "A stadium's row seating pattern (seats in row n) is 7, 16, 31, 52. Find the nth term rule and use it to predict the number of seats in row 12.", checkMode: 'auto', correctAnswer: '436', answer: '436', explanation: 'First differences: 9,15,21. Second differences: 6,6. a=3. T₁=7: 3+b+c=7→b+c=4. T₂=16: 12+2b+c=16→2b+c=4. Subtract: b=0. c=4. Rule: Tₙ=3n²+4. T₁₂=3(144)+4=432+4=436.' },
+        { difficulty: 'Hard', question: 'Bongani derives the rule Tₙ = 2n² − n + 3 for the pattern 4, 9, 18, 31 and checks it by finding T₅. Amahle says T₅ should be 50. Verify whether Amahle is correct.', answer: 'T₅=2(25)-5+3=50-5+3=48. The pattern\'s established second difference is 4, so the next first difference after 13 is 17, giving T₅=31+17=48. Amahle is incorrect — the correct value is 48, not 50.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato says every pattern with a constant second difference of 6 must have nth term Tₙ = 3n² + bn + c for some b and c, and that b and c must also always be the same across all such patterns. Is she correct? Explain.', answer: 'She is only partly correct — the value of a is always 3 when the second difference is 6 (since 2a=6), but b and c depend on the actual first terms of each specific pattern and can differ between patterns that share the same second difference.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A quadratic pattern has Tₙ = 3n² − n + 1 and a linear pattern has Uₙ = 22n − 20. Find the value(s) of n for which Tₙ = Uₙ, given that n must be a positive integer.', answer: '3n²-n+1=22n-20 → 3n²-23n+21=0. Using the quadratic formula: n=(23±√(529-252))/6=(23±√277)/6. Since √277 is not a perfect square, there is no positive integer n where Tₙ=Uₙ exactly.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered quadratic number patterns.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on second differences or the general term and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on deriving Tₙ = an² + bn + c, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

@@ -675,4 +675,150 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae) — Kwadratiese getalpatrone
+    // Blok 1 (0-2):   Vind die volgende term met eerste/tweede verskille
+    // Blok 2 (3-5):   Bepaal die tweede verskil en vind a
+    // Blok 3 (6-9):   Lei die volledige algemene term Tₙ = an² + bn + c af
+    // Blok 4 (10-12): Evalueer 'n spesifieke term (buite die gegewe terme)
+    // Blok 5 (13-15): Los op vir n gegewe Tₙ
+    // Blok 6 (16-19): Moeilik — gekombineerde/omgekeerde en verifikasieprobleme
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Volgende term met eerste/tweede verskille (Maklik)
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 2, 9, 20, 35.', checkMode: 'auto', correctAnswer: '54', answer: '54', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 15+4=19. Volgende term: 35+19=54.' },
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 1, 5, 13, 25.', checkMode: 'auto', correctAnswer: '41', answer: '41', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 12+4=16. Volgende term: 25+16=41.' },
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 6, 13, 24, 39.', checkMode: 'auto', correctAnswer: '58', answer: '58', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 15+4=19. Volgende term: 39+19=58.' },
+
+        // Blok 2 — Tweede verskil en waarde van a (Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 2, 9, 20, 35 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 en 2', correctAnswers: ['4 en 2', 'tweede verskil=4, a=2', '4, a=2', 'tweede verskil 4, a 2'], answer: 'Tweede verskil = 4, a = 2', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 — konstante tweede verskil is 4. Aangesien 2a = tweede verskil, is a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 1, 5, 13, 25 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 en 2', correctAnswers: ['4 en 2', 'tweede verskil=4, a=2', '4, a=2', 'tweede verskil 4, a 2'], answer: 'Tweede verskil = 4, a = 2', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4 — konstante tweede verskil is 4. Aangesien 2a = tweede verskil, is a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 3, 12, 27, 48 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '6 en 3', correctAnswers: ['6 en 3', 'tweede verskil=6, a=3', '6, a=3', 'tweede verskil 6, a 3'], answer: 'Tweede verskil = 6, a = 3', explanation: 'Eerste verskille: 9,15,21. Tweede verskille: 6,6 — konstante tweede verskil is 6. Aangesien 2a = tweede verskil, is a = 6÷2 = 3.' },
+
+        // Blok 3 — Lei die volledige algemene term Tₙ = an² + bn + c af (Medium)
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 6, 13, 24, 39.', checkMode: 'auto', correctAnswer: '2n²+n+3', correctAnswers: ['2n²+n+3', 'Tₙ=2n²+n+3', '2n^2+n+3', 'T_n=2n^2+n+3', 'Tn=2n²+n+3'], answer: 'Tₙ = 2n² + n + 3', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4. a=2. T₁=6: 2+b+c=6→b+c=4. T₂=13: 8+2b+c=13→2b+c=5. Trek af: b=1. c=4-1=3. Reël: Tₙ=2n²+n+3. Kontroleer: T₁=2+1+3=6✓, T₄=32+4+3=39✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 1, 5, 13, 25.', checkMode: 'auto', correctAnswer: '2n²-2n+1', correctAnswers: ['2n²-2n+1', 'Tₙ=2n²-2n+1', '2n^2-2n+1', 'T_n=2n^2-2n+1', 'Tn=2n²-2n+1'], answer: 'Tₙ = 2n² − 2n + 1', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4. a=2. T₁=1: 2+b+c=1→b+c=-1. T₂=5: 8+2b+c=5→2b+c=-3. Trek af: b=-2. c=-1-(-2)=1. Reël: Tₙ=2n²-2n+1. Kontroleer: T₁=2-2+1=1✓, T₄=32-8+1=25✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 3, 12, 27, 48.', checkMode: 'auto', correctAnswer: '3n²', correctAnswers: ['3n²', 'Tₙ=3n²', '3n^2', 'T_n=3n^2', 'Tn=3n²'], answer: 'Tₙ = 3n²', explanation: 'Eerste verskille: 9,15,21. Tweede verskille: 6,6. a=3. T₁=3: 3+b+c=3→b+c=0. T₂=12: 12+2b+c=12→2b+c=0. Trek af: b=0. c=0-0=0. Reël: Tₙ=3n². Kontroleer: T₁=3✓, T₄=3(16)=48✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 2, 10, 24, 44.', checkMode: 'auto', correctAnswer: '3n²-n', correctAnswers: ['3n²-n', 'Tₙ=3n²-n', '3n^2-n', 'T_n=3n^2-n', 'Tn=3n²-n'], answer: 'Tₙ = 3n² − n', explanation: 'Eerste verskille: 8,14,20. Tweede verskille: 6,6. a=3. T₁=2: 3+b+c=2→b+c=-1. T₂=10: 12+2b+c=10→2b+c=-2. Trek af: b=-1. c=-1-(-1)=0. Reël: Tₙ=3n²-n. Kontroleer: T₁=3-1=2✓, T₄=48-4=44✓.' },
+
+        // Blok 4 — Evalueer 'n spesifieke term buite die gegewe terme (Medium)
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 3, 12, 27, 48. Vind die 6de term.", checkMode: 'auto', correctAnswer: '108', answer: '108', explanation: 'Eerste verskille: 9,15,21. Tweede verskille: 6,6. a=3, en T₁=3 gee b=0, c=0, dus Tₙ=3n². T₆=3(36)=108.' },
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 6, 13, 24, 39. Vind die 7de term.", checkMode: 'auto', correctAnswer: '108', answer: '108', explanation: 'Reël: Tₙ=2n²+n+3 (afgelei van tweede verskil 4, a=2, b=1, c=3). T₇=2(49)+7+3=98+10=108.' },
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 2, 10, 24, 44. Vind die 6de term.", checkMode: 'auto', correctAnswer: '102', answer: '102', explanation: 'Reël: Tₙ=3n²-n (afgelei van tweede verskil 6, a=3, b=-1, c=0). T₆=3(36)-6=108-6=102.' },
+
+        // Blok 5 — Los op vir n gegewe Tₙ (Medium-Moeilik)
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 3n² − n. Vind die waarde van n waarvoor Tₙ = 184.', checkMode: 'auto', correctAnswer: '8', answer: '8', explanation: '3n²-n=184 → 3n²-n-184=0. Deur die kwadratiese formule te gebruik: n=(1±√(1+2208))/6=(1±47)/6. n=48/6=8 (die negatiewe wortel n=-23/3 word verwerp). Kontroleer: 3(64)-8=192-8=184 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 2n² + n + 3. Vind die waarde van n waarvoor Tₙ = 108.', checkMode: 'auto', correctAnswer: '7', answer: '7', explanation: '2n²+n+3=108 → 2n²+n-105=0. Deur die kwadratiese formule te gebruik: n=(-1±√(1+840))/4=(-1±29)/4. n=28/4=7 (die negatiewe wortel n=-30/4 word verwerp). Kontroleer: 2(49)+7+3=98+10=108 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 3n². Vind die waarde van n waarvoor Tₙ = 300.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '3n²=300 → n²=100 → n=10 (die negatiewe wortel n=-10 word verwerp, aangesien n ʼn positiewe termnommer moet wees). Kontroleer: 3(100)=300 ✓.' },
+
+        // Blok 6 — Moeilik: gekombineerde/omgekeerde en verifikasieprobleme
+        { difficulty: 'Hard', question: "ʼn Teater se ry-sitplekpatroon (sitplekke in ry n) is 5, 14, 29, 50. Vind die n-de term reël en gebruik dit om die aantal sitplekke in ry 20 te voorspel.", checkMode: 'auto', correctAnswer: '1202', answer: '1202', explanation: 'Eerste verskille: 9,15,21. Tweede verskille: 6,6. a=3. T₁=5: 3+b+c=5→b+c=2. T₂=14: 12+2b+c=14→2b+c=2. Trek af: b=0. c=2. Reël: Tₙ=3n²+2. T₂₀=3(400)+2=1200+2=1202.' },
+        { difficulty: 'Hard', question: 'Thabo lei die reël Tₙ = 2n² − n + 1 af vir die patroon 2, 7, 16, 29 en kontroleer dit deur T₅ te vind. Sipho sê T₅ behoort 52 te wees. Verifieer of Sipho korrek is.', answer: 'T₅=2(25)-5+1=50-5+1=46. Die patroon se gevestigde tweede verskil is 4, dus is die volgende eerste verskil na 13 gelyk aan 17, wat T₅=29+17=46 gee. Sipho is verkeerd — die korrekte waarde is 46, nie 52 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato sê elke patroon met ʼn konstante tweede verskil van 4 moet n-de term Tₙ = 2n² + bn + c hê vir sekere b en c, en dat a nooit iets anders as 2 kan wees in daardie geval nie. Is sy korrek? Verduidelik.', answer: 'Ja, wat die waarde van a betref — aangesien 2a altyd gelyk is aan die konstante tweede verskil, dwing ʼn tweede verskil van 4 a=2 af in elke sodanige patroon. b en c kan egter verskil tussen verskillende patrone met dieselfde tweede verskil, dus is die patrone self nie identies nie, slegs hul a-waarde.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Kwadratiese patroon het Tₙ = 3n² − n en ʼn liniêre patroon het Uₙ = 20n − 25. Vind die waarde(s) van n waarvoor Tₙ = Uₙ, gegewe dat n ʼn positiewe heelgetal moet wees.', answer: '3n²-n=20n-25 → 3n²-21n+25=0... deur klein positiewe heelgetalle te toets: n=1: T=2,U=-5 (nee). n=2: T=10,U=15 (nee). n=3: T=24,U=35 (nee). Deur die kwadratiese formule op 3n²-21n+25=0 toe te pas, kry ons nie-heelgetal wortels (n≈1,48 of n≈5,52), dus is daar geen positiewe heelgetal n waarvoor Tₙ=Uₙ presies is nie; die naaste heelgetal-toets bevestig geen presiese ooreenkoms nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het kwadratiese getalpatrone bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor tweede verskille of die algemene term en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die aflei van Tₙ = an² + bn + c weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Volgende term met eerste/tweede verskille (Maklik)
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 3, 10, 21, 36.', checkMode: 'auto', correctAnswer: '55', answer: '55', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 15+4=19. Volgende term: 36+19=55.' },
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 2, 6, 14, 26.', checkMode: 'auto', correctAnswer: '42', answer: '42', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 12+4=16. Volgende term: 26+16=42.' },
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 7, 14, 25, 40.', checkMode: 'auto', correctAnswer: '59', answer: '59', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 15+4=19. Volgende term: 40+19=59.' },
+
+        // Blok 2 — Tweede verskil en waarde van a (Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 3, 10, 21, 36 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 en 2', correctAnswers: ['4 en 2', 'tweede verskil=4, a=2', '4, a=2', 'tweede verskil 4, a 2'], answer: 'Tweede verskil = 4, a = 2', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 — konstante tweede verskil is 4. Aangesien 2a = tweede verskil, is a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 2, 6, 14, 26 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 en 2', correctAnswers: ['4 en 2', 'tweede verskil=4, a=2', '4, a=2', 'tweede verskil 4, a 2'], answer: 'Tweede verskil = 4, a = 2', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4 — konstante tweede verskil is 4. Aangesien 2a = tweede verskil, is a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 5, 15, 31, 53 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '6 en 3', correctAnswers: ['6 en 3', 'tweede verskil=6, a=3', '6, a=3', 'tweede verskil 6, a 3'], answer: 'Tweede verskil = 6, a = 3', explanation: 'Eerste verskille: 10,16,22. Tweede verskille: 6,6 — konstante tweede verskil is 6. Aangesien 2a = tweede verskil, is a = 6÷2 = 3.' },
+
+        // Blok 3 — Lei die volledige algemene term Tₙ = an² + bn + c af (Medium)
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 7, 14, 25, 40.', checkMode: 'auto', correctAnswer: '2n²+n+4', correctAnswers: ['2n²+n+4', 'Tₙ=2n²+n+4', '2n^2+n+4', 'T_n=2n^2+n+4', 'Tn=2n²+n+4'], answer: 'Tₙ = 2n² + n + 4', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4. a=2. T₁=7: 2+b+c=7→b+c=5. T₂=14: 8+2b+c=14→2b+c=6. Trek af: b=1. c=5-1=4. Reël: Tₙ=2n²+n+4. Kontroleer: T₁=2+1+4=7✓, T₄=32+4+4=40✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 3, 10, 21, 36.', checkMode: 'auto', correctAnswer: '2n²+n', correctAnswers: ['2n²+n', 'Tₙ=2n²+n', '2n^2+n', 'T_n=2n^2+n', 'Tn=2n²+n'], answer: 'Tₙ = 2n² + n', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4. a=2. T₁=3: 2+b+c=3→b+c=1. T₂=10: 8+2b+c=10→2b+c=2. Trek af: b=1. c=1-1=0. Reël: Tₙ=2n²+n. Kontroleer: T₁=2+1=3✓, T₄=32+4=36✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 2, 6, 14, 26.', checkMode: 'auto', correctAnswer: '2n²-2n+2', correctAnswers: ['2n²-2n+2', 'Tₙ=2n²-2n+2', '2n^2-2n+2', 'T_n=2n^2-2n+2', 'Tn=2n²-2n+2'], answer: 'Tₙ = 2n² − 2n + 2', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4. a=2. T₁=2: 2+b+c=2→b+c=0. T₂=6: 8+2b+c=6→2b+c=-2. Trek af: b=-2. c=0-(-2)=2. Reël: Tₙ=2n²-2n+2. Kontroleer: T₁=2-2+2=2✓, T₄=32-8+2=26✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 1, 9, 23, 43.', checkMode: 'auto', correctAnswer: '3n²-n-1', correctAnswers: ['3n²-n-1', 'Tₙ=3n²-n-1', '3n^2-n-1', 'T_n=3n^2-n-1', 'Tn=3n²-n-1'], answer: 'Tₙ = 3n² − n − 1', explanation: 'Eerste verskille: 8,14,20. Tweede verskille: 6,6. a=3. T₁=1: 3+b+c=1→b+c=-2. T₂=9: 12+2b+c=9→2b+c=-3. Trek af: b=-1. c=-2-(-1)=-1. Reël: Tₙ=3n²-n-1. Kontroleer: T₁=3-1-1=1✓, T₄=48-4-1=43✓.' },
+
+        // Blok 4 — Evalueer 'n spesifieke term buite die gegewe terme (Medium)
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 5, 15, 31, 53. Vind die 7de term.", checkMode: 'auto', correctAnswer: '155', answer: '155', explanation: 'Reël: Tₙ=3n²+n+1 (tweede verskil 6, a=3, b=1, c=1). T₇=3(49)+7+1=147+8=155.' },
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 7, 14, 25, 40. Vind die 6de term.", checkMode: 'auto', correctAnswer: '82', answer: '82', explanation: 'Reël: Tₙ=2n²+n+4 (tweede verskil 4, a=2, b=1, c=4). T₆=2(36)+6+4=72+10=82.' },
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 1, 9, 23, 43. Vind die 6de term.", checkMode: 'auto', correctAnswer: '101', answer: '101', explanation: 'Reël: Tₙ=3n²-n-1 (tweede verskil 6, a=3, b=-1, c=-1). T₆=3(36)-6-1=108-7=101.' },
+
+        // Blok 5 — Los op vir n gegewe Tₙ (Medium-Moeilik)
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 3n² − n − 1. Vind die waarde van n waarvoor Tₙ = 233.', checkMode: 'auto', correctAnswer: '9', answer: '9', explanation: '3n²-n-1=233 → 3n²-n-234=0. Deur die kwadratiese formule te gebruik: n=(1±√(1+2808))/6=(1±53)/6. n=54/6=9 (die negatiewe wortel n=-26/3 word verwerp). Kontroleer: 3(81)-9-1=243-10=233 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 2n² + n + 4. Vind die waarde van n waarvoor Tₙ = 214.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '2n²+n+4=214 → 2n²+n-210=0. Deur die kwadratiese formule te gebruik: n=(-1±√(1+1680))/4=(-1±41)/4. n=40/4=10 (die negatiewe wortel n=-42/4 word verwerp). Kontroleer: 2(100)+10+4=200+14=214 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 2n² + n. Vind die waarde van n waarvoor Tₙ = 210.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '2n²+n=210 → 2n²+n-210=0. Deur die kwadratiese formule te gebruik: n=(-1±√(1+1680))/4=(-1±41)/4. n=40/4=10 (die negatiewe wortel n=-42/4 word verwerp). Kontroleer: 2(100)+10=200+10=210 ✓.' },
+
+        // Blok 6 — Moeilik: gekombineerde/omgekeerde en verifikasieprobleme
+        { difficulty: 'Hard', question: "ʼn Saal se ry-sitplekpatroon (sitplekke in ry n) is 6, 15, 30, 51. Vind die n-de term reël en gebruik dit om die aantal sitplekke in ry 15 te voorspel.", checkMode: 'auto', correctAnswer: '678', answer: '678', explanation: 'Eerste verskille: 9,15,21. Tweede verskille: 6,6. a=3. T₁=6: 3+b+c=6→b+c=3. T₂=15: 12+2b+c=15→2b+c=3. Trek af: b=0. c=3. Reël: Tₙ=3n²+3. T₁₅=3(225)+3=675+3=678.' },
+        { difficulty: 'Hard', question: 'Amahle lei die reël Tₙ = 2n² − n af vir die patroon 1, 6, 15, 28 en kontroleer dit deur T₅ te vind. Bongani sê T₅ behoort 44 te wees. Verifieer of Bongani korrek is.', answer: 'T₅=2(25)-5=50-5=45. Die patroon se gevestigde tweede verskil is 4, dus is die volgende eerste verskil na 13 gelyk aan 17, wat T₅=28+17=45 gee. Bongani is verkeerd — die korrekte waarde is 45, nie 44 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho sê elke patroon met ʼn konstante tweede verskil van 6 moet n-de term Tₙ = 3n² + bn + c hê vir sekere b en c, en dat a nooit iets anders as 3 kan wees in daardie geval nie. Is hy korrek? Verduidelik.', answer: 'Ja, wat die waarde van a betref — aangesien 2a altyd gelyk is aan die konstante tweede verskil, dwing ʼn tweede verskil van 6 a=3 af in elke sodanige patroon. b en c kan egter verskil tussen verskillende patrone met dieselfde tweede verskil, dus is die patrone self nie identies nie, slegs hul a-waarde.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Kwadratiese patroon het Tₙ = 2n² + n en ʼn liniêre patroon het Uₙ = 15n − 12. Vind die waarde(s) van n waarvoor Tₙ = Uₙ, gegewe dat n ʼn positiewe heelgetal moet wees.', answer: '2n²+n=15n-12 → 2n²-14n+12=0 → n²-7n+6=0 → (n-1)(n-6)=0 → n=1 of n=6. Kontroleer n=1: T=3, U=3 ✓. Kontroleer n=6: T=78, U=78 ✓. Beide n=1 en n=6 voldoen aan Tₙ=Uₙ.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het kwadratiese getalpatrone bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor tweede verskille of die algemene term en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die aflei van Tₙ = an² + bn + c weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Volgende term met eerste/tweede verskille (Maklik)
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 4, 11, 22, 37.', checkMode: 'auto', correctAnswer: '56', answer: '56', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 15+4=19. Volgende term: 37+19=56.' },
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 3, 7, 15, 27.', checkMode: 'auto', correctAnswer: '43', answer: '43', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 12+4=16. Volgende term: 27+16=43.' },
+        { difficulty: 'Easy', question: 'Vind die volgende term in die kwadratiese patroon 8, 15, 26, 41.', checkMode: 'auto', correctAnswer: '60', answer: '60', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 (konstant). Volgende eerste verskil: 15+4=19. Volgende term: 41+19=60.' },
+
+        // Blok 2 — Tweede verskil en waarde van a (Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 4, 11, 22, 37 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 en 2', correctAnswers: ['4 en 2', 'tweede verskil=4, a=2', '4, a=2', 'tweede verskil 4, a 2'], answer: 'Tweede verskil = 4, a = 2', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4 — konstante tweede verskil is 4. Aangesien 2a = tweede verskil, is a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 3, 7, 15, 27 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '4 en 2', correctAnswers: ['4 en 2', 'tweede verskil=4, a=2', '4, a=2', 'tweede verskil 4, a 2'], answer: 'Tweede verskil = 4, a = 2', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4 — konstante tweede verskil is 4. Aangesien 2a = tweede verskil, is a = 4÷2 = 2.' },
+        { difficulty: 'Easy-Medium', question: 'Vind vir die patroon 4, 13, 28, 49 die konstante tweede verskil en die waarde van a in Tₙ = an² + bn + c.', checkMode: 'auto', correctAnswer: '6 en 3', correctAnswers: ['6 en 3', 'tweede verskil=6, a=3', '6, a=3', 'tweede verskil 6, a 3'], answer: 'Tweede verskil = 6, a = 3', explanation: 'Eerste verskille: 9,15,21. Tweede verskille: 6,6 — konstante tweede verskil is 6. Aangesien 2a = tweede verskil, is a = 6÷2 = 3.' },
+
+        // Blok 3 — Lei die volledige algemene term Tₙ = an² + bn + c af (Medium)
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 8, 15, 26, 41.', checkMode: 'auto', correctAnswer: '2n²+n+5', correctAnswers: ['2n²+n+5', 'Tₙ=2n²+n+5', '2n^2+n+5', 'T_n=2n^2+n+5', 'Tn=2n²+n+5'], answer: 'Tₙ = 2n² + n + 5', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4. a=2. T₁=8: 2+b+c=8→b+c=6. T₂=15: 8+2b+c=15→2b+c=7. Trek af: b=1. c=6-1=5. Reël: Tₙ=2n²+n+5. Kontroleer: T₁=2+1+5=8✓, T₄=32+4+5=41✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 4, 11, 22, 37.', checkMode: 'auto', correctAnswer: '2n²+n+1', correctAnswers: ['2n²+n+1', 'Tₙ=2n²+n+1', '2n^2+n+1', 'T_n=2n^2+n+1', 'Tn=2n²+n+1'], answer: 'Tₙ = 2n² + n + 1', explanation: 'Eerste verskille: 7,11,15. Tweede verskille: 4,4. a=2. T₁=4: 2+b+c=4→b+c=2. T₂=11: 8+2b+c=11→2b+c=3. Trek af: b=1. c=2-1=1. Reël: Tₙ=2n²+n+1. Kontroleer: T₁=2+1+1=4✓, T₄=32+4+1=37✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 3, 7, 15, 27.', checkMode: 'auto', correctAnswer: '2n²-2n+3', correctAnswers: ['2n²-2n+3', 'Tₙ=2n²-2n+3', '2n^2-2n+3', 'T_n=2n^2-2n+3', 'Tn=2n²-2n+3'], answer: 'Tₙ = 2n² − 2n + 3', explanation: 'Eerste verskille: 4,8,12. Tweede verskille: 4,4. a=2. T₁=3: 2+b+c=3→b+c=1. T₂=7: 8+2b+c=7→2b+c=-1. Trek af: b=-2. c=1-(-2)=3. Reël: Tₙ=2n²-2n+3. Kontroleer: T₁=2-2+3=3✓, T₄=32-8+3=27✓.' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die kwadratiese patroon 3, 11, 25, 45.', checkMode: 'auto', correctAnswer: '3n²-n+1', correctAnswers: ['3n²-n+1', 'Tₙ=3n²-n+1', '3n^2-n+1', 'T_n=3n^2-n+1', 'Tn=3n²-n+1'], answer: 'Tₙ = 3n² − n + 1', explanation: 'Eerste verskille: 8,14,20. Tweede verskille: 6,6. a=3. T₁=3: 3+b+c=3→b+c=0. T₂=11: 12+2b+c=11→2b+c=-1. Trek af: b=-1. c=0-(-1)=1. Reël: Tₙ=3n²-n+1. Kontroleer: T₁=3-1+1=3✓, T₄=48-4+1=45✓.' },
+
+        // Blok 4 — Evalueer 'n spesifieke term buite die gegewe terme (Medium)
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 4, 13, 28, 49. Vind die 6de term.", checkMode: 'auto', correctAnswer: '109', answer: '109', explanation: 'Reël: Tₙ=3n²+1 (tweede verskil 6, a=3, b=0, c=1). T₆=3(36)+1=108+1=109.' },
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 8, 15, 26, 41. Vind die 7de term.", checkMode: 'auto', correctAnswer: '110', answer: '110', explanation: 'Reël: Tₙ=2n²+n+5 (tweede verskil 4, a=2, b=1, c=5). T₇=2(49)+7+5=98+12=110.' },
+        { difficulty: 'Medium', question: "'n Kwadratiese patroon begin 3, 11, 25, 45. Vind die 6de term.", checkMode: 'auto', correctAnswer: '103', answer: '103', explanation: 'Reël: Tₙ=3n²-n+1 (tweede verskil 6, a=3, b=-1, c=1). T₆=3(36)-6+1=108-5=103.' },
+
+        // Blok 5 — Los op vir n gegewe Tₙ (Medium-Moeilik)
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 3n² − n + 1. Vind die waarde van n waarvoor Tₙ = 291.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '3n²-n+1=291 → 3n²-n-290=0. Deur die kwadratiese formule te gebruik: n=(1±√(1+3480))/6=(1±59)/6. n=60/6=10 (die negatiewe wortel n=-29/3 word verwerp). Kontroleer: 3(100)-10+1=300-9=291 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 2n² + n + 5. Vind die waarde van n waarvoor Tₙ = 215.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '2n²+n+5=215 → 2n²+n-210=0. Deur die kwadratiese formule te gebruik: n=(-1±√(1+1680))/4=(-1±41)/4. n=40/4=10 (die negatiewe wortel n=-42/4 word verwerp). Kontroleer: 2(100)+10+5=200+15=215 ✓.' },
+        { difficulty: 'Medium-Hard', question: 'Die n-de term van ʼn patroon is Tₙ = 2n² + n + 1. Vind die waarde van n waarvoor Tₙ = 172.', checkMode: 'auto', correctAnswer: '9', answer: '9', explanation: '2n²+n+1=172 → 2n²+n-171=0. Deur die kwadratiese formule te gebruik: n=(-1±√(1+1368))/4=(-1±37)/4. n=36/4=9 (die negatiewe wortel n=-38/4 word verwerp). Kontroleer: 2(81)+9+1=162+10=172 ✓.' },
+
+        // Blok 6 — Moeilik: gekombineerde/omgekeerde en verifikasieprobleme
+        { difficulty: 'Hard', question: "ʼn Stadion se ry-sitplekpatroon (sitplekke in ry n) is 7, 16, 31, 52. Vind die n-de term reël en gebruik dit om die aantal sitplekke in ry 12 te voorspel.", checkMode: 'auto', correctAnswer: '436', answer: '436', explanation: 'Eerste verskille: 9,15,21. Tweede verskille: 6,6. a=3. T₁=7: 3+b+c=7→b+c=4. T₂=16: 12+2b+c=16→2b+c=4. Trek af: b=0. c=4. Reël: Tₙ=3n²+4. T₁₂=3(144)+4=432+4=436.' },
+        { difficulty: 'Hard', question: 'Bongani lei die reël Tₙ = 2n² − n + 3 af vir die patroon 4, 9, 18, 31 en kontroleer dit deur T₅ te vind. Amahle sê T₅ behoort 50 te wees. Verifieer of Amahle korrek is.', answer: 'T₅=2(25)-5+3=50-5+3=48. Die patroon se gevestigde tweede verskil is 4, dus is die volgende eerste verskil na 13 gelyk aan 17, wat T₅=31+17=48 gee. Amahle is verkeerd — die korrekte waarde is 48, nie 50 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato sê elke patroon met ʼn konstante tweede verskil van 6 moet n-de term Tₙ = 3n² + bn + c hê vir sekere b en c, en dat b en c ook altyd dieselfde moet wees oor alle sodanige patrone. Is sy korrek? Verduidelik.', answer: 'Sy is slegs gedeeltelik korrek — die waarde van a is altyd 3 wanneer die tweede verskil 6 is (aangesien 2a=6), maar b en c hang af van die werklike eerste terme van elke spesifieke patroon en kan verskil tussen patrone wat dieselfde tweede verskil deel.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Kwadratiese patroon het Tₙ = 3n² − n + 1 en ʼn liniêre patroon het Uₙ = 22n − 20. Vind die waarde(s) van n waarvoor Tₙ = Uₙ, gegewe dat n ʼn positiewe heelgetal moet wees.', answer: '3n²-n+1=22n-20 → 3n²-23n+21=0. Deur die kwadratiese formule te gebruik: n=(23±√(529-252))/6=(23±√277)/6. Aangesien √277 nie ʼn volkome vierkant is nie, is daar geen positiewe heelgetal n waarvoor Tₙ=Uₙ presies is nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het kwadratiese getalpatrone bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor tweede verskille of die algemene term en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die aflei van Tₙ = an² + bn + c weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

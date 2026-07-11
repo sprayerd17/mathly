@@ -736,4 +736,159 @@ export const topicData: TopicData = {
     { minScore: 9, message: 'Good effort! Work back through the study guide and worked examples for each section, then try again.' },
     { minScore: 0, message: "Don't give up — every expert was once a beginner! Revisit the explanations and worked examples section by section, then try again." },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs) — no diagrams, pure formula/word-problem content
+    // Block 1 (0-3):   Nominal → effective rate conversion
+    // Block 2 (4-6):   Effective → nominal rate conversion
+    // Block 3 (7-10):  Straight-line depreciation
+    // Block 4 (11-14): Reducing-balance depreciation
+    // Block 5 (15-16): Comparing depreciation methods
+    // Block 6 (17-19): Combined multi-step problems
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Nominal → effective rate conversion (Easy, Easy, Medium, Medium)
+        { difficulty: 'Easy', question: 'A bank offers a nominal interest rate of 12% p.a. compounded monthly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '12.68', correctAnswers: ['12.68%', '12.68', '12.7%', '12.7'], answer: '12.68%', explanation: 'i_eff = (1 + 0.12/12)^12 − 1 = (1.01)^12 − 1 = 1.126825 − 1 = 12.68% ✓' },
+        { difficulty: 'Easy', question: 'A savings account pays 8% p.a. compounded quarterly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '8.24', correctAnswers: ['8.24%', '8.24', '8.2%', '8.2'], answer: '8.24%', explanation: 'i_eff = (1 + 0.08/4)^4 − 1 = (1.02)^4 − 1 = 1.082432 − 1 = 8.24% ✓' },
+        { difficulty: 'Medium', question: 'A loan carries a nominal interest rate of 15% p.a. compounded monthly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '16.08', correctAnswers: ['16.08%', '16.08', '16.1%', '16.1'], answer: '16.08%', explanation: 'i_eff = (1 + 0.15/12)^12 − 1 = (1.0125)^12 − 1 = 1.160755 − 1 = 16.08% ✓' },
+        { difficulty: 'Medium', question: 'A credit card charges 18% p.a. compounded quarterly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '19.25', correctAnswers: ['19.25%', '19.25', '19.3%', '19.3'], answer: '19.25%', explanation: 'i_eff = (1 + 0.18/4)^4 − 1 = (1.045)^4 − 1 = 1.192519 − 1 = 19.25% ✓' },
+
+        // Block 2 — Effective → nominal rate conversion (Medium, Medium, Hard)
+        { difficulty: 'Medium', question: 'An effective annual interest rate of 13% is quoted. Determine the equivalent nominal annual rate if interest is compounded monthly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '12.28', correctAnswers: ['12.28%', '12.28', '12.3%', '12.3'], answer: '12.28%', explanation: '1.13 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1.13 = 1.010237\ni_nom = 12 × 0.010237 = 12.28% ✓' },
+        { difficulty: 'Medium', question: 'An effective annual interest rate of 9% is quoted. Determine the equivalent nominal annual rate if interest is compounded quarterly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '8.71', correctAnswers: ['8.71%', '8.71', '8.7%', '8.7'], answer: '8.71%', explanation: '1.09 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1.09 = 1.021783\ni_nom = 4 × 0.021783 = 8.71% ✓' },
+        { difficulty: 'Hard', question: 'A bank advertises an effective annual interest rate of 20%. Determine the equivalent nominal annual rate compounded monthly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '18.37', correctAnswers: ['18.37%', '18.37', '18.4%', '18.4'], answer: '18.37%', explanation: '1.20 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1.20 = 1.015310\ni_nom = 12 × 0.015310 = 18.37% ✓' },
+
+        // Block 3 — Straight-line depreciation (Easy, Medium, Medium, Hard)
+        { difficulty: 'Easy', question: 'A washing machine worth R15,000 depreciates at 15% p.a. on the straight-line method. Calculate its value after 3 years.', checkMode: 'auto', correctAnswer: '8250', correctAnswers: ['R8250', 'R8 250', '8250', '8 250'], answer: 'R8 250', explanation: 'A = P(1 − ni) = 15 000(1 − 3 × 0.15) = 15 000(0.55) = R8 250 ✓' },
+        { difficulty: 'Medium', question: 'A tractor worth R250,000 depreciates at 10% p.a. on the straight-line method. Calculate its book value after 6 years.', checkMode: 'auto', correctAnswer: '100000', correctAnswers: ['R100000', 'R100 000', '100000', '100 000'], answer: 'R100 000', explanation: 'A = 250 000(1 − 6 × 0.10) = 250 000(0.40) = R100 000 ✓' },
+        { difficulty: 'Medium', question: 'Equipment worth R20,000 depreciates on the straight-line method to R12,000 after 4 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10%', '10', '10.00%', '10.0%'], answer: '10%', explanation: '12 000 = 20 000(1 − 4i)\n0.6 = 1 − 4i → 4i = 0.4 → i = 0.10 = 10% ✓' },
+        { difficulty: 'Hard', question: 'A generator worth R340,000 depreciates at 12% p.a. on the straight-line method. Calculate its book value after 5 years.', checkMode: 'auto', correctAnswer: '136000', correctAnswers: ['R136000', 'R136 000', '136000', '136 000'], answer: 'R136 000', explanation: 'A = 340 000(1 − 5 × 0.12) = 340 000(0.40) = R136 000 ✓' },
+
+        // Block 4 — Reducing-balance depreciation (Easy, Medium, Medium, Hard)
+        { difficulty: 'Easy', question: 'A forklift worth R90,000 depreciates at 20% p.a. on the reducing-balance method. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '46080', correctAnswers: ['R46080', 'R46 080', '46080', '46 080', 'R46080.00', 'R46 080.00'], answer: 'R46 080', explanation: 'A = P(1 − i)ⁿ = 90 000(0.80)³ = 90 000 × 0.512 = R46 080 ✓' },
+        { difficulty: 'Medium', question: 'A bus worth R150,000 depreciates at 15% p.a. on the reducing-balance method. Calculate its value after 5 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '66556', correctAnswers: ['R66556', 'R66 556', '66556', '66 556', 'R66555.80', 'R66555.8', 'R66 555.80'], answer: 'R66 555.80', explanation: 'A = 150 000(0.85)⁵ = 150 000 × 0.443705 ≈ R66 555.80 ✓' },
+        { difficulty: 'Medium', question: 'A printer worth R40,000 depreciates on the reducing-balance method to R23,000 after 4 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '12.92', correctAnswers: ['12.92%', '12.92', '12.9%', '12.9'], answer: '12.92%', explanation: '23 000 = 40 000(1 − i)⁴\n0.575 = (1 − i)⁴\n1 − i = ⁴√0.575 = 0.870798\ni = 1 − 0.870798 = 0.129202 = 12.92% ✓' },
+        { difficulty: 'Hard', question: 'A crane worth R220,000 depreciates at 18% p.a. on the reducing-balance method. After how many full years will it first be worth less than R90,000?', checkMode: 'auto', correctAnswer: '5', explanation: '90 000 = 220 000(0.82)ⁿ\n0.409091 = (0.82)ⁿ\nn = log(0.409091) ÷ log(0.82) = 4.50 → round up to 5 full years.\nCheck: 220 000 × (0.82)⁵ ≈ R81 025 < R90 000 ✓' },
+
+        // Block 5 — Comparing depreciation methods (Medium, Hard)
+        { difficulty: 'Medium', question: 'A vehicle worth R40,000 depreciates at 15% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '2565', correctAnswers: ['R2565', 'R2 565', '2565', '2 565', 'R2565.00', 'R2 565.00'], answer: 'R2 565', explanation: 'Straight-line: 40 000(1 − 3 × 0.15) = 40 000(0.55) = R22 000.\nReducing-balance: 40 000(0.85)³ = 40 000 × 0.614125 ≈ R24 565.\nDifference = R24 565 − R22 000 = R2 565 ✓' },
+        { difficulty: 'Hard', question: 'A machine worth R60,000 depreciates at 18% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 4 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '10327', correctAnswers: ['R10327', 'R10 327', '10327', '10 327', 'R10327.31', 'R10 327.31'], answer: 'R10 327.31', explanation: 'Straight-line: 60 000(1 − 4 × 0.18) = 60 000(0.28) = R16 800.\nReducing-balance: 60 000(0.82)⁴ = 60 000 × 0.452122 ≈ R27 127.31.\nDifference ≈ R27 127.31 − R16 800 = R10 327.31 ✓' },
+
+        // Block 6 — Combined multi-step problems (Easy, Medium, Hard)
+        { difficulty: 'Easy', question: 'A truck worth R120,000 depreciates on the reducing-balance method at 20% p.a. for the first 2 years, then the rate changes to 10% p.a. for 1 more year. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '69120', correctAnswers: ['R69120', 'R69 120', '69120', '69 120', 'R69120.00', 'R69 120.00'], answer: 'R69 120', explanation: 'Phase 1 (2 years at 20%): A₁ = 120 000 × (0.80)² = 120 000 × 0.64 = R76 800.\nPhase 2 (1 year at 10%): A₂ = 76 800 × 0.90 = R69 120 ✓' },
+        { difficulty: 'Medium', question: 'R25,000 is invested at 10% p.a. compounded monthly. Convert this to the effective annual rate, then use it to calculate the value of the investment after 2 years, compounded annually at that effective rate (to the nearest rand).', checkMode: 'auto', correctAnswer: '30510', correctAnswers: ['R30510', 'R30 510', '30510', '30 510', 'R30509.77', 'R30 509.77'], answer: 'R30 509.77', explanation: 'i_eff = (1 + 0.10/12)^12 − 1 = 0.104713 = 10.4713%.\nA = 25 000(1.104713)² = 25 000 × 1.220391 ≈ R30 509.77 ✓' },
+        { difficulty: 'Hard', question: 'A machine worth R150,000 depreciates at 20% p.a. on the reducing-balance method.\n\na) After how many full years will its value first drop below R50,000?\nb) Calculate its book value at the end of that year (to the nearest rand).', checkMode: 'auto', parts: [
+          { label: 'a) Full years until value first drops below R50 000', correctAnswer: '5', explanation: '50 000 = 150 000(0.80)ⁿ\n0.333333 = (0.80)ⁿ\nn = log(0.333333) ÷ log(0.80) = 4.92 → round up to 5 full years ✓' },
+          { label: 'b) Book value at the end of that year (R)', correctAnswer: '49152', correctAnswers: ['R49152', 'R49 152', '49152', '49 152', 'R49152.00', 'R49 152.00'], explanation: 'A = 150 000 × (0.80)⁵ = 150 000 × 0.32768 = R49 152 ✓' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have fully mastered nominal/effective rates and depreciation methods.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on the combined multi-step problems, then try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on each depreciation method, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Nominal → effective rate conversion (Easy, Easy, Medium, Medium)
+        { difficulty: 'Easy', question: 'A bank offers a nominal interest rate of 14% p.a. compounded monthly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '14.93', correctAnswers: ['14.93%', '14.93', '14.9%', '14.9'], answer: '14.93%', explanation: 'i_eff = (1 + 0.14/12)^12 − 1 = (1.011667)^12 − 1 = 1.149342 − 1 = 14.93% ✓' },
+        { difficulty: 'Easy', question: 'A savings account pays 6% p.a. compounded quarterly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '6.14', correctAnswers: ['6.14%', '6.14', '6.1%', '6.1'], answer: '6.14%', explanation: 'i_eff = (1 + 0.06/4)^4 − 1 = (1.015)^4 − 1 = 1.061364 − 1 = 6.14% ✓' },
+        { difficulty: 'Medium', question: 'A loan carries a nominal interest rate of 20% p.a. compounded monthly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '21.94', correctAnswers: ['21.94%', '21.94', '21.9%', '21.9'], answer: '21.94%', explanation: 'i_eff = (1 + 0.20/12)^12 − 1 = (1.016667)^12 − 1 = 1.219391 − 1 = 21.94% ✓' },
+        { difficulty: 'Medium', question: 'A credit card charges 16% p.a. compounded quarterly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '16.99', correctAnswers: ['16.99%', '16.99', '17.0%', '17%'], answer: '16.99%', explanation: 'i_eff = (1 + 0.16/4)^4 − 1 = (1.04)^4 − 1 = 1.169859 − 1 = 16.99% ✓' },
+
+        // Block 2 — Effective → nominal rate conversion (Medium, Medium, Hard)
+        { difficulty: 'Medium', question: 'An effective annual interest rate of 16% is quoted. Determine the equivalent nominal annual rate if interest is compounded monthly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '14.93', correctAnswers: ['14.93%', '14.93', '14.9%', '14.9'], answer: '14.93%', explanation: '1.16 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1.16 = 1.012445\ni_nom = 12 × 0.012445 = 14.93% ✓' },
+        { difficulty: 'Medium', question: 'An effective annual interest rate of 10% is quoted. Determine the equivalent nominal annual rate if interest is compounded quarterly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '9.65', correctAnswers: ['9.65%', '9.65', '9.6%', '9.6'], answer: '9.65%', explanation: '1.10 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1.10 = 1.024114\ni_nom = 4 × 0.024114 = 9.65% ✓' },
+        { difficulty: 'Hard', question: 'A bank advertises an effective annual interest rate of 25%. Determine the equivalent nominal annual rate compounded monthly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '22.52', correctAnswers: ['22.52%', '22.52', '22.5%', '22.5'], answer: '22.52%', explanation: '1.25 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1.25 = 1.018768\ni_nom = 12 × 0.018768 = 22.52% ✓' },
+
+        // Block 3 — Straight-line depreciation (Easy, Medium, Medium, Hard)
+        { difficulty: 'Easy', question: 'A fridge worth R18,000 depreciates at 20% p.a. on the straight-line method. Calculate its value after 3 years.', checkMode: 'auto', correctAnswer: '7200', correctAnswers: ['R7200', 'R7 200', '7200', '7 200'], answer: 'R7 200', explanation: 'A = 18 000(1 − 3 × 0.20) = 18 000(0.40) = R7 200 ✓' },
+        { difficulty: 'Medium', question: 'A delivery van worth R280,000 depreciates at 8% p.a. on the straight-line method. Calculate its book value after 7 years.', checkMode: 'auto', correctAnswer: '123200', correctAnswers: ['R123200', 'R123 200', '123200', '123 200'], answer: 'R123 200', explanation: 'A = 280 000(1 − 7 × 0.08) = 280 000(0.44) = R123 200 ✓' },
+        { difficulty: 'Medium', question: 'Equipment worth R32,000 depreciates on the straight-line method to R18,800 after 5 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '8.25', correctAnswers: ['8.25%', '8.25', '8.3%', '8.3'], answer: '8.25%', explanation: '18 800 = 32 000(1 − 5i)\n0.5875 = 1 − 5i → 5i = 0.4125 → i = 0.0825 = 8.25% ✓' },
+        { difficulty: 'Hard', question: 'A bulldozer worth R400,000 depreciates at 15% p.a. on the straight-line method. Calculate its book value after 4 years.', checkMode: 'auto', correctAnswer: '160000', correctAnswers: ['R160000', 'R160 000', '160000', '160 000'], answer: 'R160 000', explanation: 'A = 400 000(1 − 4 × 0.15) = 400 000(0.40) = R160 000 ✓' },
+
+        // Block 4 — Reducing-balance depreciation (Easy, Medium, Medium, Hard)
+        { difficulty: 'Easy', question: 'A photocopier worth R60,000 depreciates at 25% p.a. on the reducing-balance method. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '25313', correctAnswers: ['R25313', 'R25 313', '25313', '25 313', 'R25312.50', 'R25 312.50'], answer: 'R25 312.50', explanation: 'A = 60 000(0.75)³ = 60 000 × 0.421875 = R25 312.50 ✓' },
+        { difficulty: 'Medium', question: 'A minibus worth R175,000 depreciates at 12% p.a. on the reducing-balance method. Calculate its value after 6 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '81271', correctAnswers: ['R81271', 'R81 271', '81271', '81 271', 'R81270.72', 'R81 270.72'], answer: 'R81 270.72', explanation: 'A = 175 000(0.88)⁶ = 175 000 × 0.464404 ≈ R81 270.72 ✓' },
+        { difficulty: 'Medium', question: 'A camera worth R55,000 depreciates on the reducing-balance method to R28,000 after 5 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '12.63', correctAnswers: ['12.63%', '12.63', '12.6%', '12.6'], answer: '12.63%', explanation: '28 000 = 55 000(1 − i)⁵\n0.509091 = (1 − i)⁵\n1 − i = ⁵√0.509091 = 0.873693\ni = 1 − 0.873693 = 0.126307 = 12.63% ✓' },
+        { difficulty: 'Hard', question: 'An excavator worth R400,000 depreciates at 20% p.a. on the reducing-balance method. After how many full years will it first be worth less than R120,000?', checkMode: 'auto', correctAnswer: '6', explanation: '120 000 = 400 000(0.80)ⁿ\n0.30 = (0.80)ⁿ\nn = log(0.30) ÷ log(0.80) = 5.40 → round up to 6 full years.\nCheck: 400 000 × (0.80)⁶ ≈ R104 858 < R120 000 ✓' },
+
+        // Block 5 — Comparing depreciation methods (Medium, Hard)
+        { difficulty: 'Medium', question: 'A vehicle worth R60,000 depreciates at 18% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 4 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '10327', correctAnswers: ['R10327', 'R10 327', '10327', '10 327', 'R10327.31', 'R10 327.31'], answer: 'R10 327.31', explanation: 'Straight-line: 60 000(1 − 4 × 0.18) = 60 000(0.28) = R16 800.\nReducing-balance: 60 000(0.82)⁴ = 60 000 × 0.452122 ≈ R27 127.31.\nDifference ≈ R27 127.31 − R16 800 = R10 327.31 ✓' },
+        { difficulty: 'Hard', question: 'A machine worth R80,000 depreciates at 15% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 5 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '15496', correctAnswers: ['R15496', 'R15 496', '15496', '15 496', 'R15496.42', 'R15 496.42'], answer: 'R15 496.42', explanation: 'Straight-line: 80 000(1 − 5 × 0.15) = 80 000(0.25) = R20 000.\nReducing-balance: 80 000(0.85)⁵ = 80 000 × 0.443705 ≈ R35 496.42.\nDifference ≈ R35 496.42 − R20 000 = R15 496.42 ✓' },
+
+        // Block 6 — Combined multi-step problems (Easy, Medium, Hard)
+        { difficulty: 'Easy', question: 'A bus worth R200,000 depreciates on the reducing-balance method at 25% p.a. for the first 2 years, then the rate changes to 15% p.a. for 1 more year. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '95625', correctAnswers: ['R95625', 'R95 625', '95625', '95 625', 'R95625.00', 'R95 625.00'], answer: 'R95 625', explanation: 'Phase 1 (2 years at 25%): A₁ = 200 000 × (0.75)² = 200 000 × 0.5625 = R112 500.\nPhase 2 (1 year at 15%): A₂ = 112 500 × 0.85 = R95 625 ✓' },
+        { difficulty: 'Medium', question: 'R30,000 is invested at 12% p.a. compounded quarterly. Convert this to the effective annual rate, then use it to calculate the value of the investment after 3 years, compounded annually at that effective rate (to the nearest rand).', checkMode: 'auto', correctAnswer: '42773', correctAnswers: ['R42773', 'R42 773', '42773', '42 773', 'R42772.83', 'R42 772.83'], answer: 'R42 772.83', explanation: 'i_eff = (1 + 0.12/4)^4 − 1 = 0.125509 = 12.5509%.\nA = 30 000(1.125509)³ = 30 000 × 1.425761 ≈ R42 772.83 ✓' },
+        { difficulty: 'Hard', question: 'A machine worth R180,000 depreciates at 15% p.a. on the reducing-balance method.\n\na) After how many full years will its value first drop below R70,000?\nb) Calculate its book value at the end of that year (to the nearest rand).', checkMode: 'auto', parts: [
+          { label: 'a) Full years until value first drops below R70 000', correctAnswer: '6', explanation: '70 000 = 180 000(0.85)ⁿ\n0.388889 = (0.85)ⁿ\nn = log(0.388889) ÷ log(0.85) = 5.81 → round up to 6 full years ✓' },
+          { label: 'b) Book value at the end of that year (R)', correctAnswer: '67887', correctAnswers: ['R67887', 'R67 887', '67887', '67 887', 'R67886.91', 'R67 886.91'], explanation: 'A = 180 000 × (0.85)⁶ = 180 000 × 0.377150 ≈ R67 886.91 ✓' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have fully mastered nominal/effective rates and depreciation methods.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on the combined multi-step problems, then try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on each depreciation method, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Nominal → effective rate conversion (Easy, Easy, Medium, Medium)
+        { difficulty: 'Easy', question: 'A bank offers a nominal interest rate of 13% p.a. compounded monthly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '13.80', correctAnswers: ['13.80%', '13.80', '13.8%', '13.8'], answer: '13.80%', explanation: 'i_eff = (1 + 0.13/12)^12 − 1 = (1.010833)^12 − 1 = 1.138032 − 1 = 13.80% ✓' },
+        { difficulty: 'Easy', question: 'A savings account pays 7% p.a. compounded quarterly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '7.19', correctAnswers: ['7.19%', '7.19', '7.2%', '7.2'], answer: '7.19%', explanation: 'i_eff = (1 + 0.07/4)^4 − 1 = (1.0175)^4 − 1 = 1.071859 − 1 = 7.19% ✓' },
+        { difficulty: 'Medium', question: 'A loan carries a nominal interest rate of 22% p.a. compounded monthly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '24.36', correctAnswers: ['24.36%', '24.36', '24.4%', '24.4'], answer: '24.36%', explanation: 'i_eff = (1 + 0.22/12)^12 − 1 = (1.018333)^12 − 1 = 1.243597 − 1 = 24.36% ✓' },
+        { difficulty: 'Medium', question: 'A credit card charges 20% p.a. compounded quarterly. Calculate the effective annual interest rate (to 2 decimal places).', checkMode: 'auto', correctAnswer: '21.55', correctAnswers: ['21.55%', '21.55', '21.6%', '21.6'], answer: '21.55%', explanation: 'i_eff = (1 + 0.20/4)^4 − 1 = (1.05)^4 − 1 = 1.215506 − 1 = 21.55% ✓' },
+
+        // Block 2 — Effective → nominal rate conversion (Medium, Medium, Hard)
+        { difficulty: 'Medium', question: 'An effective annual interest rate of 14% is quoted. Determine the equivalent nominal annual rate if interest is compounded monthly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '13.17', correctAnswers: ['13.17%', '13.17', '13.2%', '13.2'], answer: '13.17%', explanation: '1.14 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1.14 = 1.010979\ni_nom = 12 × 0.010979 = 13.17% ✓' },
+        { difficulty: 'Medium', question: 'An effective annual interest rate of 11% is quoted. Determine the equivalent nominal annual rate if interest is compounded quarterly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '10.57', correctAnswers: ['10.57%', '10.57', '10.6%', '10.6'], answer: '10.57%', explanation: '1.11 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1.11 = 1.026433\ni_nom = 4 × 0.026433 = 10.57% ✓' },
+        { difficulty: 'Hard', question: 'A bank advertises an effective annual interest rate of 18%. Determine the equivalent nominal annual rate compounded monthly (to 2 decimal places).', checkMode: 'auto', correctAnswer: '16.67', correctAnswers: ['16.67%', '16.67', '16.7%', '16.7'], answer: '16.67%', explanation: '1.18 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1.18 = 1.013889\ni_nom = 12 × 0.013889 = 16.67% ✓' },
+
+        // Block 3 — Straight-line depreciation (Easy, Medium, Medium, Hard)
+        { difficulty: 'Easy', question: 'A dishwasher worth R22,000 depreciates at 25% p.a. on the straight-line method. Calculate its value after 2 years.', checkMode: 'auto', correctAnswer: '11000', correctAnswers: ['R11000', 'R11 000', '11000', '11 000'], answer: 'R11 000', explanation: 'A = 22 000(1 − 2 × 0.25) = 22 000(0.50) = R11 000 ✓' },
+        { difficulty: 'Medium', question: 'A cement mixer worth R320,000 depreciates at 9% p.a. on the straight-line method. Calculate its book value after 8 years.', checkMode: 'auto', correctAnswer: '89600', correctAnswers: ['R89600', 'R89 600', '89600', '89 600'], answer: 'R89 600', explanation: 'A = 320 000(1 − 8 × 0.09) = 320 000(0.28) = R89 600 ✓' },
+        { difficulty: 'Medium', question: 'Equipment worth R45,000 depreciates on the straight-line method to R27,000 after 4 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10%', '10', '10.00%', '10.0%'], answer: '10%', explanation: '27 000 = 45 000(1 − 4i)\n0.6 = 1 − 4i → 4i = 0.4 → i = 0.10 = 10% ✓' },
+        { difficulty: 'Hard', question: 'A boat worth R500,000 depreciates at 18% p.a. on the straight-line method. Calculate its book value after 3 years.', checkMode: 'auto', correctAnswer: '230000', correctAnswers: ['R230000', 'R230 000', '230000', '230 000'], answer: 'R230 000', explanation: 'A = 500 000(1 − 3 × 0.18) = 500 000(0.46) = R230 000 ✓' },
+
+        // Block 4 — Reducing-balance depreciation (Easy, Medium, Medium, Hard)
+        { difficulty: 'Easy', question: 'A drone worth R70,000 depreciates at 18% p.a. on the reducing-balance method. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '38596', correctAnswers: ['R38596', 'R38 596', '38596', '38 596', 'R38595.76', 'R38 595.76'], answer: 'R38 595.76', explanation: 'A = 70 000(0.82)³ = 70 000 × 0.551368 ≈ R38 595.76 ✓' },
+        { difficulty: 'Medium', question: 'A tour bus worth R195,000 depreciates at 14% p.a. on the reducing-balance method. Calculate its value after 6 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '78891', correctAnswers: ['R78891', 'R78 891', '78891', '78 891', 'R78890.61', 'R78 890.61'], answer: 'R78 890.61', explanation: 'A = 195 000(0.86)⁶ = 195 000 × 0.404567 ≈ R78 890.61 ✓' },
+        { difficulty: 'Medium', question: 'A laptop worth R65,000 depreciates on the reducing-balance method to R30,000 after 5 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '14.33', correctAnswers: ['14.33%', '14.33', '14.3%', '14.3'], answer: '14.33%', explanation: '30 000 = 65 000(1 − i)⁵\n0.461538 = (1 − i)⁵\n1 − i = ⁵√0.461538 = 0.856725\ni = 1 − 0.856725 = 0.143275 = 14.33% ✓' },
+        { difficulty: 'Hard', question: 'A yacht worth R600,000 depreciates at 22% p.a. on the reducing-balance method. After how many full years will it first be worth less than R150,000?', checkMode: 'auto', correctAnswer: '6', explanation: '150 000 = 600 000(0.78)ⁿ\n0.25 = (0.78)ⁿ\nn = log(0.25) ÷ log(0.78) = 5.58 → round up to 6 full years.\nCheck: 600 000 × (0.78)⁶ ≈ R136 962 < R150 000 ✓' },
+
+        // Block 5 — Comparing depreciation methods (Medium, Hard)
+        { difficulty: 'Medium', question: 'A delivery bike worth R50,000 depreciates at 20% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '5600', correctAnswers: ['R5600', 'R5 600', '5600', '5 600', 'R5600.00', 'R5 600.00'], answer: 'R5 600', explanation: 'Straight-line: 50 000(1 − 3 × 0.20) = 50 000(0.40) = R20 000.\nReducing-balance: 50 000(0.80)³ = 50 000 × 0.512 = R25 600.\nDifference = R25 600 − R20 000 = R5 600 ✓' },
+        { difficulty: 'Hard', question: 'A forklift worth R100,000 depreciates at 16% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 6 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '31130', correctAnswers: ['R31130', 'R31 130', '31130', '31 130', 'R31129.80', 'R31 129.80'], answer: 'R31 129.80', explanation: 'Straight-line: 100 000(1 − 6 × 0.16) = 100 000(0.04) = R4 000.\nReducing-balance: 100 000(0.84)⁶ = 100 000 × 0.351298 ≈ R35 129.80.\nDifference ≈ R35 129.80 − R4 000 = R31 129.80 ✓' },
+
+        // Block 6 — Combined multi-step problems (Easy, Medium, Hard)
+        { difficulty: 'Easy', question: 'A truck worth R160,000 depreciates on the reducing-balance method at 18% p.a. for the first 2 years, then the rate changes to 12% p.a. for 1 more year. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '94674', correctAnswers: ['R94674', 'R94 674', '94674', '94 674', 'R94673.92', 'R94 673.92'], answer: 'R94 673.92', explanation: 'Phase 1 (2 years at 18%): A₁ = 160 000 × (0.82)² = 160 000 × 0.6724 = R107 584.\nPhase 2 (1 year at 12%): A₂ = 107 584 × 0.88 ≈ R94 673.92 ✓' },
+        { difficulty: 'Medium', question: 'R45,000 is invested at 9% p.a. compounded monthly. Convert this to the effective annual rate, then use it to calculate the value of the investment after 2 years, compounded annually at that effective rate (to the nearest rand).', checkMode: 'auto', correctAnswer: '53839', correctAnswers: ['R53839', 'R53 839', '53839', '53 839', 'R53838.61', 'R53 838.61'], answer: 'R53 838.61', explanation: 'i_eff = (1 + 0.09/12)^12 − 1 = 0.093807 = 9.3807%.\nA = 45 000(1.093807)² = 45 000 × 1.196410 ≈ R53 838.61 ✓' },
+        { difficulty: 'Hard', question: 'A machine worth R210,000 depreciates at 12% p.a. on the reducing-balance method.\n\na) After how many full years will its value first drop below R90,000?\nb) Calculate its book value at the end of that year (to the nearest rand).', checkMode: 'auto', parts: [
+          { label: 'a) Full years until value first drops below R90 000', correctAnswer: '7', explanation: '90 000 = 210 000(0.88)ⁿ\n0.428571 = (0.88)ⁿ\nn = log(0.428571) ÷ log(0.88) = 6.63 → round up to 7 full years ✓' },
+          { label: 'b) Book value at the end of that year (R)', correctAnswer: '85822', correctAnswers: ['R85822', 'R85 822', '85822', '85 822', 'R85821.88', 'R85 821.88'], explanation: 'A = 210 000 × (0.88)⁷ = 210 000 × 0.408676 ≈ R85 821.88 ✓' },
+        ] },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have fully mastered nominal/effective rates and depreciation methods.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on the combined multi-step problems, then try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on each depreciation method, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

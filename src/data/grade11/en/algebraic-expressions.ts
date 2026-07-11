@@ -462,4 +462,150 @@ export const topicData: TopicData = {
       { minScore: 0, message: 'Keep going, work through the guide again.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1 (0-2):   Complete the square, a = 1
+    // Block 2 (3-5):   Complete the square, a ≠ 1
+    // Block 3 (6-8):   Minimum/maximum value via completing the square
+    // Block 4 (9-11):  Turning point / optimisation word problem / peer check
+    // Block 5 (12-15): Simplify a single algebraic fraction (binomial denominator)
+    // Block 6 (16-19): Add/subtract algebraic fractions with binomial denominators
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Complete the square, a = 1 (Easy/Medium)
+        { difficulty: 'Easy', question: 'Write x²+10x+18 in completed square form.', checkMode: 'auto', correctAnswer: '(x+5)²−7', correctAnswers: ['(x+5)²−7', '(x+5)^2−7', '(x+5)²-7', '(x+5)^2-7'], answer: '(x+5)²−7', explanation: 'Half of 10 is 5; 5²=25.\nAdd and subtract 25: x²+10x+25−25+18 = (x+5)²−7 ✓' },
+        { difficulty: 'Easy', question: 'Write x²−8x+9 in completed square form.', checkMode: 'auto', correctAnswer: '(x−4)²−7', correctAnswers: ['(x−4)²−7', '(x-4)²-7', '(x−4)^2−7', '(x-4)^2-7'], answer: '(x−4)²−7', explanation: 'Half of −8 is −4; (−4)²=16.\nAdd and subtract 16: x²−8x+16−16+9 = (x−4)²−7 ✓' },
+        { difficulty: 'Medium', question: 'Write x²+2x−11 in completed square form.', checkMode: 'auto', correctAnswer: '(x+1)²−12', correctAnswers: ['(x+1)²−12', '(x+1)^2−12', '(x+1)²-12', '(x+1)^2-12'], answer: '(x+1)²−12', explanation: 'Half of 2 is 1; 1²=1.\nAdd and subtract 1: x²+2x+1−1−11 = (x+1)²−12 ✓' },
+
+        // Block 2 — Complete the square, a ≠ 1 (Medium)
+        { difficulty: 'Medium', question: 'Write 2x²+8x+5 in completed square form.', checkMode: 'auto', correctAnswer: '2(x+2)²−3', correctAnswers: ['2(x+2)²−3', '2(x+2)^2−3', '2(x+2)²-3', '2(x+2)^2-3'], answer: '2(x+2)²−3', explanation: 'Factor out 2: 2(x²+4x)+5.\nComplete the square inside: half of 4 is 2, 2²=4. 2(x²+4x+4−4)+5 = 2(x+2)²−8+5 = 2(x+2)²−3 ✓' },
+        { difficulty: 'Medium', question: 'Write 3x²−12x+7 in completed square form.', checkMode: 'auto', correctAnswer: '3(x−2)²−5', correctAnswers: ['3(x−2)²−5', '3(x-2)²-5', '3(x−2)^2−5', '3(x-2)^2-5'], answer: '3(x−2)²−5', explanation: 'Factor out 3: 3(x²−4x)+7.\nComplete the square inside: half of −4 is −2, (−2)²=4. 3(x²−4x+4−4)+7 = 3(x−2)²−12+7 = 3(x−2)²−5 ✓' },
+        { difficulty: 'Medium', question: 'Write −2x²+8x−3 in completed square form.', checkMode: 'auto', correctAnswer: '−2(x−2)²+5', correctAnswers: ['−2(x−2)²+5', '-2(x-2)²+5', '−2(x−2)^2+5', '-2(x-2)^2+5'], answer: '−2(x−2)²+5', explanation: 'Factor out −2: −2(x²−4x)−3.\nComplete the square inside: half of −4 is −2, (−2)²=4. −2(x²−4x+4−4)−3 = −2(x−2)²+8−3 = −2(x−2)²+5 ✓' },
+
+        // Block 3 — Minimum/maximum value via completing the square (Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the minimum value of x²−14x+53.', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4'], answer: '4', explanation: 'x²−14x+53 = (x−7)²−49+53 = (x−7)²+4.\nSince a=1>0, minimum value is 4, at x=7 ✓' },
+        { difficulty: 'Medium', question: 'Find the maximum value of −x²+4x+2.', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], answer: '6', explanation: '−x²+4x+2 = −(x²−4x)+2 = −(x²−4x+4−4)+2 = −(x−2)²+4+2 = −(x−2)²+6.\nSince a=−1<0, maximum value is 6, at x=2 ✓' },
+        { difficulty: 'Hard', question: 'Find the minimum value of 2x²−8x+15.', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], answer: '7', explanation: '2x²−8x+15 = 2(x²−4x)+15 = 2(x²−4x+4−4)+15 = 2(x−2)²−8+15 = 2(x−2)²+7.\nMinimum value is 7, at x=2 ✓' },
+
+        // Block 4 — Turning point / optimisation word problem / peer check (Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the turning point of y = x²+8x+9 using completing the square.', checkMode: 'auto', correctAnswer: '(−4,−7)', correctAnswers: ['(−4,−7)', '(-4,-7)', '(−4, −7)', '(-4, -7)'], answer: '(−4, −7)', explanation: 'x²+8x+9 = (x+4)²−16+9 = (x+4)²−7.\nTurning point: x=−4, y=−7. Coordinates: (−4, −7) ✓' },
+        { difficulty: 'Hard', question: 'A farmer has 16 m of fencing to enclose a rectangular area against a barn wall on one side. Let the two equal sides (perpendicular to the wall) be x metres. Find the maximum possible area.', answer: 'Let perpendicular sides = x. Parallel side = 16−2x.\nArea = x(16−2x) = −2x²+16x = −2(x−4)²+32.\nMaximum area = 32 m² when x = 4 m.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Zanele says the minimum value of 2(x+3)²−9 is −9, occurring at x=−3. Is she correct? Explain.', answer: 'Yes — in the form a(x+p)²+q with a=2>0, the minimum value is q=−9, occurring where the squared term is zero, i.e. x=−3.', checkMode: 'self' },
+
+        // Block 5 — Simplify a single algebraic fraction (binomial denominator) (Hard)
+        { difficulty: 'Hard', question: 'Simplify (x²−36) / (x+6).', checkMode: 'auto', correctAnswer: 'x−6', correctAnswers: ['x−6', 'x-6'], answer: 'x−6', explanation: 'Factorise numerator: x²−36 = (x−6)(x+6).\nCancel (x+6): x−6, where x ≠ −6 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x²−64) / (x−8).', checkMode: 'auto', correctAnswer: 'x+8', correctAnswers: ['x+8'], answer: 'x+8', explanation: 'Factorise numerator: x²−64 = (x−8)(x+8).\nCancel (x−8): x+8, where x ≠ 8 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x²−x−12) / (x−4).', checkMode: 'auto', correctAnswer: 'x+3', correctAnswers: ['x+3'], answer: 'x+3', explanation: 'Factorise numerator: x²−x−12 = (x−4)(x+3).\nCancel (x−4): x+3, where x ≠ 4 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x+5)/(x²−25) − 1/(x−5).', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0'], answer: '0', explanation: 'Factorise: x²−25 = (x−5)(x+5). First fraction becomes (x+5)/[(x−5)(x+5)] = 1/(x−5).\nSubtract: 1/(x−5) − 1/(x−5) = 0, where x ≠ ±5 ✓' },
+
+        // Block 6 — Add/subtract algebraic fractions with binomial denominators (Hard)
+        { difficulty: 'Hard', question: 'Calculate 2/(x+3) + 5/(x−1), showing the LCM and combination steps.', answer: 'LCM = (x+3)(x−1).\nCombine: [2(x−1) + 5(x+3)] / [(x+3)(x−1)] = (2x−2+5x+15) / [(x+3)(x−1)] = (7x+13) / [(x+3)(x−1)].', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Calculate 3/(x−2) + 2/(x+4), showing the LCM and combination steps.', answer: 'LCM = (x−2)(x+4).\nCombine: [3(x+4) + 2(x−2)] / [(x−2)(x+4)] = (3x+12+2x−4) / [(x−2)(x+4)] = (5x+8) / [(x−2)(x+4)].', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Simplify (x+6)/(x²−36) + 1/(x−6).', checkMode: 'auto', correctAnswer: '2/(x−6)', correctAnswers: ['2/(x−6)', '2/(x-6)'], answer: '2/(x−6)', explanation: 'Factorise denominator: x²−36 = (x−6)(x+6).\nFirst fraction: (x+6)/[(x−6)(x+6)] = 1/(x−6).\nAdd: 1/(x−6) + 1/(x−6) = 2/(x−6), where x ≠ ±6 ✓' },
+        { difficulty: 'Hard', question: 'Sipho simplifies 4/(x−4) − 1/(x+2) and gets (3x+12)/[(x−4)(x+2)]. Check his answer.', answer: 'Combine: [4(x+2) − 1(x−4)] / [(x−4)(x+2)] = (4x+8−x+4) / [(x−4)(x+2)] = (3x+12) / [(x−4)(x+2)]. He is correct.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered completing the square and algebraic fractions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on completing the square or algebraic fractions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on completing the square and simplifying fractions, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Complete the square, a = 1 (Easy/Medium)
+        { difficulty: 'Easy', question: 'Write x²+12x+20 in completed square form.', checkMode: 'auto', correctAnswer: '(x+6)²−16', correctAnswers: ['(x+6)²−16', '(x+6)^2−16', '(x+6)²-16', '(x+6)^2-16'], answer: '(x+6)²−16', explanation: 'Half of 12 is 6; 6²=36.\nAdd and subtract 36: x²+12x+36−36+20 = (x+6)²−16 ✓' },
+        { difficulty: 'Easy', question: 'Write x²−6x−2 in completed square form.', checkMode: 'auto', correctAnswer: '(x−3)²−11', correctAnswers: ['(x−3)²−11', '(x-3)²-11', '(x−3)^2−11', '(x-3)^2-11'], answer: '(x−3)²−11', explanation: 'Half of −6 is −3; (−3)²=9.\nAdd and subtract 9: x²−6x+9−9−2 = (x−3)²−11 ✓' },
+        { difficulty: 'Medium', question: 'Write x²+4x−9 in completed square form.', checkMode: 'auto', correctAnswer: '(x+2)²−13', correctAnswers: ['(x+2)²−13', '(x+2)^2−13', '(x+2)²-13', '(x+2)^2-13'], answer: '(x+2)²−13', explanation: 'Half of 4 is 2; 2²=4.\nAdd and subtract 4: x²+4x+4−4−9 = (x+2)²−13 ✓' },
+
+        // Block 2 — Complete the square, a ≠ 1 (Medium)
+        { difficulty: 'Medium', question: 'Write 2x²−12x+13 in completed square form.', checkMode: 'auto', correctAnswer: '2(x−3)²−5', correctAnswers: ['2(x−3)²−5', '2(x-3)²-5', '2(x−3)^2−5', '2(x-3)^2-5'], answer: '2(x−3)²−5', explanation: 'Factor out 2: 2(x²−6x)+13.\nComplete the square inside: half of −6 is −3, (−3)²=9. 2(x²−6x+9−9)+13 = 2(x−3)²−18+13 = 2(x−3)²−5 ✓' },
+        { difficulty: 'Medium', question: 'Write 4x²+16x+9 in completed square form.', checkMode: 'auto', correctAnswer: '4(x+2)²−7', correctAnswers: ['4(x+2)²−7', '4(x+2)^2−7', '4(x+2)²-7', '4(x+2)^2-7'], answer: '4(x+2)²−7', explanation: 'Factor out 4: 4(x²+4x)+9.\nComplete the square inside: half of 4 is 2, 2²=4. 4(x²+4x+4−4)+9 = 4(x+2)²−16+9 = 4(x+2)²−7 ✓' },
+        { difficulty: 'Medium', question: 'Write −3x²+18x−4 in completed square form.', checkMode: 'auto', correctAnswer: '−3(x−3)²+23', correctAnswers: ['−3(x−3)²+23', '-3(x-3)²+23', '−3(x−3)^2+23', '-3(x-3)^2+23'], answer: '−3(x−3)²+23', explanation: 'Factor out −3: −3(x²−6x)−4.\nComplete the square inside: half of −6 is −3, (−3)²=9. −3(x²−6x+9−9)−4 = −3(x−3)²+27−4 = −3(x−3)²+23 ✓' },
+
+        // Block 3 — Minimum/maximum value via completing the square (Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the minimum value of x²−10x+28.', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3'], answer: '3', explanation: 'x²−10x+28 = (x−5)²−25+28 = (x−5)²+3.\nSince a=1>0, minimum value is 3, at x=5 ✓' },
+        { difficulty: 'Medium', question: 'Find the maximum value of −x²+6x−1.', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], answer: '8', explanation: '−x²+6x−1 = −(x²−6x)−1 = −(x²−6x+9−9)−1 = −(x−3)²+9−1 = −(x−3)²+8.\nSince a=−1<0, maximum value is 8, at x=3 ✓' },
+        { difficulty: 'Hard', question: 'Find the minimum value of 3x²+12x+10.', checkMode: 'auto', correctAnswer: '−2', correctAnswers: ['−2', '-2'], answer: '−2', explanation: '3x²+12x+10 = 3(x²+4x)+10 = 3(x²+4x+4−4)+10 = 3(x+2)²−12+10 = 3(x+2)²−2.\nMinimum value is −2, at x=−2 ✓' },
+
+        // Block 4 — Turning point / optimisation word problem / peer check (Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the turning point of y = x²−12x+32 using completing the square.', checkMode: 'auto', correctAnswer: '(6,−4)', correctAnswers: ['(6,−4)', '(6,-4)', '(6, −4)', '(6, -4)'], answer: '(6, −4)', explanation: 'x²−12x+32 = (x−6)²−36+32 = (x−6)²−4.\nTurning point: x=6, y=−4. Coordinates: (6, −4) ✓' },
+        { difficulty: 'Hard', question: 'A farmer has 24 m of fencing to enclose a rectangular area against a barn wall on one side. Let the two equal sides (perpendicular to the wall) be x metres. Find the maximum possible area.', answer: 'Let perpendicular sides = x. Parallel side = 24−2x.\nArea = x(24−2x) = −2x²+24x = −2(x−6)²+72.\nMaximum area = 72 m² when x = 6 m.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo says the maximum value of −3(x−1)²+8 is 8, occurring at x=1. Is he correct? Explain.', answer: 'Yes — in the form a(x−p)²+q with a=−3<0, the maximum value is q=8, occurring where the squared term is zero, i.e. x=1.', checkMode: 'self' },
+
+        // Block 5 — Simplify a single algebraic fraction (binomial denominator) (Hard)
+        { difficulty: 'Hard', question: 'Simplify (x²−4) / (x−2).', checkMode: 'auto', correctAnswer: 'x+2', correctAnswers: ['x+2'], answer: 'x+2', explanation: 'Factorise numerator: x²−4 = (x−2)(x+2).\nCancel (x−2): x+2, where x ≠ 2 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x²−100) / (x+10).', checkMode: 'auto', correctAnswer: 'x−10', correctAnswers: ['x−10', 'x-10'], answer: 'x−10', explanation: 'Factorise numerator: x²−100 = (x−10)(x+10).\nCancel (x+10): x−10, where x ≠ −10 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x²+x−20) / (x+5).', checkMode: 'auto', correctAnswer: 'x−4', correctAnswers: ['x−4', 'x-4'], answer: 'x−4', explanation: 'Factorise numerator: x²+x−20 = (x+5)(x−4).\nCancel (x+5): x−4, where x ≠ −5 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x+7)/(x²−49) − 1/(x−7).', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0'], answer: '0', explanation: 'Factorise: x²−49 = (x−7)(x+7). First fraction becomes (x+7)/[(x−7)(x+7)] = 1/(x−7).\nSubtract: 1/(x−7) − 1/(x−7) = 0, where x ≠ ±7 ✓' },
+
+        // Block 6 — Add/subtract algebraic fractions with binomial denominators (Hard)
+        { difficulty: 'Hard', question: 'Calculate 4/(x+1) + 1/(x−3), showing the LCM and combination steps.', answer: 'LCM = (x+1)(x−3).\nCombine: [4(x−3) + 1(x+1)] / [(x+1)(x−3)] = (4x−12+x+1) / [(x+1)(x−3)] = (5x−11) / [(x+1)(x−3)].', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Calculate 2/(x−5) + 3/(x+2), showing the LCM and combination steps.', answer: 'LCM = (x−5)(x+2).\nCombine: [2(x+2) + 3(x−5)] / [(x−5)(x+2)] = (2x+4+3x−15) / [(x−5)(x+2)] = (5x−11) / [(x−5)(x+2)].', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Simplify (x+4)/(x²−16) + 1/(x−4).', checkMode: 'auto', correctAnswer: '2/(x−4)', correctAnswers: ['2/(x−4)', '2/(x-4)'], answer: '2/(x−4)', explanation: 'Factorise denominator: x²−16 = (x−4)(x+4).\nFirst fraction: (x+4)/[(x−4)(x+4)] = 1/(x−4).\nAdd: 1/(x−4) + 1/(x−4) = 2/(x−4), where x ≠ ±4 ✓' },
+        { difficulty: 'Hard', question: 'Amahle simplifies 5/(x−3) − 2/(x+2) and gets (3x+16)/[(x−3)(x+2)]. Check her answer.', answer: 'Combine: [5(x+2) − 2(x−3)] / [(x−3)(x+2)] = (5x+10−2x+6) / [(x−3)(x+2)] = (3x+16) / [(x−3)(x+2)]. She is correct.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered completing the square and algebraic fractions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on completing the square or algebraic fractions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on completing the square and simplifying fractions, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Complete the square, a = 1 (Easy/Medium)
+        { difficulty: 'Easy', question: 'Write x²+14x+25 in completed square form.', checkMode: 'auto', correctAnswer: '(x+7)²−24', correctAnswers: ['(x+7)²−24', '(x+7)^2−24', '(x+7)²-24', '(x+7)^2-24'], answer: '(x+7)²−24', explanation: 'Half of 14 is 7; 7²=49.\nAdd and subtract 49: x²+14x+49−49+25 = (x+7)²−24 ✓' },
+        { difficulty: 'Easy', question: 'Write x²−10x+3 in completed square form.', checkMode: 'auto', correctAnswer: '(x−5)²−22', correctAnswers: ['(x−5)²−22', '(x-5)²-22', '(x−5)^2−22', '(x-5)^2-22'], answer: '(x−5)²−22', explanation: 'Half of −10 is −5; (−5)²=25.\nAdd and subtract 25: x²−10x+25−25+3 = (x−5)²−22 ✓' },
+        { difficulty: 'Medium', question: 'Write x²+6x−17 in completed square form.', checkMode: 'auto', correctAnswer: '(x+3)²−26', correctAnswers: ['(x+3)²−26', '(x+3)^2−26', '(x+3)²-26', '(x+3)^2-26'], answer: '(x+3)²−26', explanation: 'Half of 6 is 3; 3²=9.\nAdd and subtract 9: x²+6x+9−9−17 = (x+3)²−26 ✓' },
+
+        // Block 2 — Complete the square, a ≠ 1 (Medium)
+        { difficulty: 'Medium', question: 'Write 2x²−4x−9 in completed square form.', checkMode: 'auto', correctAnswer: '2(x−1)²−11', correctAnswers: ['2(x−1)²−11', '2(x-1)²-11', '2(x−1)^2−11', '2(x-1)^2-11'], answer: '2(x−1)²−11', explanation: 'Factor out 2: 2(x²−2x)−9.\nComplete the square inside: half of −2 is −1, (−1)²=1. 2(x²−2x+1−1)−9 = 2(x−1)²−2−9 = 2(x−1)²−11 ✓' },
+        { difficulty: 'Medium', question: 'Write 3x²+6x−1 in completed square form.', checkMode: 'auto', correctAnswer: '3(x+1)²−4', correctAnswers: ['3(x+1)²−4', '3(x+1)^2−4', '3(x+1)²-4', '3(x+1)^2-4'], answer: '3(x+1)²−4', explanation: 'Factor out 3: 3(x²+2x)−1.\nComplete the square inside: half of 2 is 1, 1²=1. 3(x²+2x+1−1)−1 = 3(x+1)²−3−1 = 3(x+1)²−4 ✓' },
+        { difficulty: 'Medium', question: 'Write −2x²−8x+1 in completed square form.', checkMode: 'auto', correctAnswer: '−2(x+2)²+9', correctAnswers: ['−2(x+2)²+9', '-2(x+2)²+9', '−2(x+2)^2+9', '-2(x+2)^2+9'], answer: '−2(x+2)²+9', explanation: 'Factor out −2: −2(x²+4x)+1.\nComplete the square inside: half of 4 is 2, 2²=4. −2(x²+4x+4−4)+1 = −2(x+2)²+8+1 = −2(x+2)²+9 ✓' },
+
+        // Block 3 — Minimum/maximum value via completing the square (Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the minimum value of x²+4x−3.', checkMode: 'auto', correctAnswer: '−7', correctAnswers: ['−7', '-7'], answer: '−7', explanation: 'x²+4x−3 = (x+2)²−4−3 = (x+2)²−7.\nSince a=1>0, minimum value is −7, at x=−2 ✓' },
+        { difficulty: 'Medium', question: 'Find the maximum value of −x²+8x−5.', checkMode: 'auto', correctAnswer: '11', correctAnswers: ['11'], answer: '11', explanation: '−x²+8x−5 = −(x²−8x)−5 = −(x²−8x+16−16)−5 = −(x−4)²+16−5 = −(x−4)²+11.\nSince a=−1<0, maximum value is 11, at x=4 ✓' },
+        { difficulty: 'Hard', question: 'Find the minimum value of 2x²+4x+9.', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], answer: '7', explanation: '2x²+4x+9 = 2(x²+2x)+9 = 2(x²+2x+1−1)+9 = 2(x+1)²−2+9 = 2(x+1)²+7.\nMinimum value is 7, at x=−1 ✓' },
+
+        // Block 4 — Turning point / optimisation word problem / peer check (Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the turning point of y = x²+6x−7 using completing the square.', checkMode: 'auto', correctAnswer: '(−3,−16)', correctAnswers: ['(−3,−16)', '(-3,-16)', '(−3, −16)', '(-3, -16)'], answer: '(−3, −16)', explanation: 'x²+6x−7 = (x+3)²−9−7 = (x+3)²−16.\nTurning point: x=−3, y=−16. Coordinates: (−3, −16) ✓' },
+        { difficulty: 'Hard', question: 'A farmer has 32 m of fencing to enclose a rectangular area against a barn wall on one side. Let the two equal sides (perpendicular to the wall) be x metres. Find the maximum possible area.', answer: 'Let perpendicular sides = x. Parallel side = 32−2x.\nArea = x(32−2x) = −2x²+32x = −2(x−8)²+128.\nMaximum area = 128 m² when x = 8 m.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato says every quadratic ax²+bx+c with a≠0 can be completed to the square, regardless of whether b²−4ac is a perfect square. Is she correct? Explain.', answer: 'Yes — completing the square is a purely algebraic process (factor out a, halve and square the coefficient of x) that works for any quadratic, independent of whether it factorises neatly.', checkMode: 'self' },
+
+        // Block 5 — Simplify a single algebraic fraction (binomial denominator) (Hard)
+        { difficulty: 'Hard', question: 'Simplify (x²−1) / (x−1).', checkMode: 'auto', correctAnswer: 'x+1', correctAnswers: ['x+1'], answer: 'x+1', explanation: 'Factorise numerator: x²−1 = (x−1)(x+1).\nCancel (x−1): x+1, where x ≠ 1 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x²−81) / (x+9).', checkMode: 'auto', correctAnswer: 'x−9', correctAnswers: ['x−9', 'x-9'], answer: 'x−9', explanation: 'Factorise numerator: x²−81 = (x−9)(x+9).\nCancel (x+9): x−9, where x ≠ −9 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x²−2x−15) / (x−5).', checkMode: 'auto', correctAnswer: 'x+3', correctAnswers: ['x+3'], answer: 'x+3', explanation: 'Factorise numerator: x²−2x−15 = (x−5)(x+3).\nCancel (x−5): x+3, where x ≠ 5 ✓' },
+        { difficulty: 'Hard', question: 'Simplify (x+2)/(x²−4) − 1/(x−2).', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0'], answer: '0', explanation: 'Factorise: x²−4 = (x−2)(x+2). First fraction becomes (x+2)/[(x−2)(x+2)] = 1/(x−2).\nSubtract: 1/(x−2) − 1/(x−2) = 0, where x ≠ ±2 ✓' },
+
+        // Block 6 — Add/subtract algebraic fractions with binomial denominators (Hard)
+        { difficulty: 'Hard', question: 'Calculate 5/(x+2) + 3/(x−4), showing the LCM and combination steps.', answer: 'LCM = (x+2)(x−4).\nCombine: [5(x−4) + 3(x+2)] / [(x+2)(x−4)] = (5x−20+3x+6) / [(x+2)(x−4)] = (8x−14) / [(x+2)(x−4)].', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Calculate 1/(x−6) + 4/(x+3), showing the LCM and combination steps.', answer: 'LCM = (x−6)(x+3).\nCombine: [1(x+3) + 4(x−6)] / [(x−6)(x+3)] = (x+3+4x−24) / [(x−6)(x+3)] = (5x−21) / [(x−6)(x+3)].', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Simplify (x+8)/(x²−64) + 1/(x−8).', checkMode: 'auto', correctAnswer: '2/(x−8)', correctAnswers: ['2/(x−8)', '2/(x-8)'], answer: '2/(x−8)', explanation: 'Factorise denominator: x²−64 = (x−8)(x+8).\nFirst fraction: (x+8)/[(x−8)(x+8)] = 1/(x−8).\nAdd: 1/(x−8) + 1/(x−8) = 2/(x−8), where x ≠ ±8 ✓' },
+        { difficulty: 'Hard', question: 'Bongani simplifies 3/(x+4) − 2/(x−1) and gets (x−11)/[(x+4)(x−1)]. Check his answer.', answer: 'Combine: [3(x−1) − 2(x+4)] / [(x+4)(x−1)] = (3x−3−2x−8) / [(x+4)(x−1)] = (x−11) / [(x+4)(x−1)]. He is correct.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered completing the square and algebraic fractions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on completing the square or algebraic fractions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on completing the square and simplifying fractions, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }
