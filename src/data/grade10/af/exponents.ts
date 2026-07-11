@@ -505,6 +505,123 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Getallelyn ingezoem op √20 tussen 4 en 5 wat die desimale benadering 4.47213 wys met die afgeronde antwoord 4.47 in groen gemerk" />',
     },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 Vrae)
+    // Blokke: 0-2 Produk/kwosiëntwet | 3-5 Mag van ʼn mag/produk |
+    // 6-9 Negatiewe eksponente → positiewe vorm | 10-13 Nul-eksponent & gemengde vereenvoudiging |
+    // 14-16 Rasionale/breuk-eksponente | 17-19 Eenvoudige eksponensiale vergelykings & kroonvraag
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Vereenvoudig x⁶ · x².', answer: 'x⁸', checkMode: 'auto', correctAnswer: 'x⁸', explanation: 'Tel die eksponente bymekaar: x⁶ · x² = x⁶⁺² = x⁸ ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig x⁹ ÷ x⁴.', answer: 'x⁵', checkMode: 'auto', correctAnswer: 'x⁵', explanation: 'Trek die eksponente van mekaar af: x⁹ ÷ x⁴ = x⁹⁻⁴ = x⁵ ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig a⁵ · a⁻².', answer: 'a³', checkMode: 'auto', correctAnswer: 'a³', explanation: 'Tel die eksponente bymekaar: a⁵ · a⁻² = a⁵⁺⁽⁻²⁾ = a³ ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig (x³)⁴.', answer: 'x¹²', checkMode: 'auto', correctAnswer: 'x¹²', explanation: 'Vermenigvuldig die eksponente: (x³)⁴ = x³ˣ⁴ = x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vereenvoudig (2x²)³.', answer: '8x⁶', checkMode: 'auto', correctAnswer: '8x⁶', explanation: 'Pas die mag toe op elke faktor: 2³ · (x²)³ = 8 · x⁶ = 8x⁶ ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vereenvoudig (3a²b)².', answer: '9a⁴b²', checkMode: 'auto', correctAnswer: '9a⁴b²', explanation: 'Pas die mag toe op elke faktor: 3² · (a²)² · b² = 9 · a⁴ · b² = 9a⁴b² ✓' },
+        { difficulty: 'Medium', question: 'Skryf x⁻⁴ met ʼn positiewe eksponent.', answer: '1/x⁴', checkMode: 'auto', correctAnswer: '1/x⁴', explanation: 'ʼn Negatiewe eksponent beteken die resiprook: x⁻⁴ = 1/x⁴ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (2x⁻³)⁻¹ en skryf met ʼn positiewe eksponent.', answer: 'x³/2', checkMode: 'auto', correctAnswer: 'x³/2', explanation: 'Pas die mag toe op elke faktor: 2⁻¹ · (x⁻³)⁻¹ = (1/2) · x³ = x³/2 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (x⁻²y³) ÷ (x³y⁻¹) en skryf met slegs positiewe eksponente.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terme: x⁻² ÷ x³ = x⁻²⁻³ = x⁻⁵.\ny-terme: y³ ÷ y⁻¹ = y³⁻⁽⁻¹⁾ = y⁴.\nHerskryf: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (4a⁻²b)⁻² en skryf met slegs positiewe eksponente.', answer: 'a⁴/(16b²)', checkMode: 'auto', correctAnswer: 'a⁴/(16b²)', correctAnswers: ['a⁴/(16b²)', 'a⁴/16b²'], explanation: 'Pas die mag toe op elke faktor: 4⁻² · (a⁻²)⁻² · b⁻² = (1/16) · a⁴ · b⁻² = a⁴/(16b²) ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 5x⁰.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Enige nie-nul grondgetal tot die mag 0 is gelyk aan 1: 5x⁰ = 5 × 1 = 5 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (x²y⁰) ÷ x⁻¹.', answer: 'x³', checkMode: 'auto', correctAnswer: 'x³', explanation: 'y⁰ = 1, dus is dit x² ÷ x⁻¹ = x²⁻⁽⁻¹⁾ = x³ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (3x²)⁰ + 2.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Enigiets (nie-nul) tot die mag 0 is 1: (3x²)⁰ = 1. Dus 1 + 2 = 3 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (2a³b⁻²)² ÷ (a⁻¹b) en skryf met slegs positiewe eksponente.', answer: '4a⁷/b⁵', checkMode: 'auto', correctAnswer: '4a⁷/b⁵', explanation: '(2a³b⁻²)² = 4a⁶b⁻⁴.\nDeel deur a⁻¹b: 4a⁶⁻⁽⁻¹⁾b⁻⁴⁻¹ = 4a⁷b⁻⁵ = 4a⁷/b⁵ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 16^(1/2).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'ʼn Mag van 1/2 beteken die vierkantswortel: 16^(1/2) = √16 = 4 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 27^(1/3).', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'ʼn Mag van 1/3 beteken die derdemagswortel: 27^(1/3) = ∛27 = 3, aangesien 3³ = 27 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 8^(2/3).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'Neem eers die derdemagswortel, dan die kwadraat: 8^(2/3) = (∛8)² = 2² = 4 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 32.', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Skryf 32 as ʼn mag van 2: 32 = 2⁵. Aangesien die grondgetalle gelyk is, is x = 5 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 3^(2x) = 9.', answer: 'x=1', checkMode: 'auto', correctAnswer: 'x=1', correctAnswers: ['x=1', 'x = 1', '1'], explanation: 'Skryf 9 as ʼn mag van 3: 9 = 3². Dus 3^(2x) = 3² beteken 2x = 2, wat x = 1 gee ✓' },
+        { difficulty: 'Hard', question: 'Zanele sê x⁻² is altyd negatief weens die minus-teken in die eksponent. Is sy korrek? Verduidelik, deur x=3 as voorbeeld te gebruik.', answer: 'Nee — ʼn negatiewe eksponent beteken die resiprook, nie ʼn negatiewe waarde nie. Vir x=3: x⁻²=3⁻²=1/3²=1/9, wat ʼn positiewe breuk is. Die minus-teken in die eksponent beteken jy moet die resiprook neem, dit maak nie die resultaat negatief nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het eksponente oor elke vaardigheid in hierdie stel bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Jy is selfversekerd met eksponente — hersien enige gemiste vrae en probeer nog ʼn stel.' },
+        { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 Vrae)
+    // Blokke: 0-2 Produk/kwosiëntwet | 3-5 Mag van ʼn mag/produk |
+    // 6-9 Negatiewe eksponente → positiewe vorm | 10-13 Nul-eksponent & gemengde vereenvoudiging |
+    // 14-16 Rasionale/breuk-eksponente | 17-19 Eenvoudige eksponensiale vergelykings & kroonvraag
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Vereenvoudig x⁷ · x³.', answer: 'x¹⁰', checkMode: 'auto', correctAnswer: 'x¹⁰', explanation: 'Tel die eksponente bymekaar: x⁷ · x³ = x⁷⁺³ = x¹⁰ ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig x¹¹ ÷ x⁵.', answer: 'x⁶', checkMode: 'auto', correctAnswer: 'x⁶', explanation: 'Trek die eksponente van mekaar af: x¹¹ ÷ x⁵ = x¹¹⁻⁵ = x⁶ ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig b⁴ · b⁻³.', answer: 'b', checkMode: 'auto', correctAnswer: 'b', correctAnswers: ['b', 'b¹'], explanation: 'Tel die eksponente bymekaar: b⁴ · b⁻³ = b⁴⁺⁽⁻³⁾ = b¹ = b ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig (x²)⁶.', answer: 'x¹²', checkMode: 'auto', correctAnswer: 'x¹²', explanation: 'Vermenigvuldig die eksponente: (x²)⁶ = x²ˣ⁶ = x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vereenvoudig (3x³)².', answer: '9x⁶', checkMode: 'auto', correctAnswer: '9x⁶', explanation: 'Pas die mag toe op elke faktor: 3² · (x³)² = 9 · x⁶ = 9x⁶ ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vereenvoudig (2a³b²)³.', answer: '8a⁹b⁶', checkMode: 'auto', correctAnswer: '8a⁹b⁶', explanation: 'Pas die mag toe op elke faktor: 2³ · (a³)³ · (b²)³ = 8 · a⁹ · b⁶ = 8a⁹b⁶ ✓' },
+        { difficulty: 'Medium', question: 'Skryf x⁻⁵ met ʼn positiewe eksponent.', answer: '1/x⁵', checkMode: 'auto', correctAnswer: '1/x⁵', explanation: 'ʼn Negatiewe eksponent beteken die resiprook: x⁻⁵ = 1/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (3x⁻²)⁻¹ en skryf met ʼn positiewe eksponent.', answer: 'x²/3', checkMode: 'auto', correctAnswer: 'x²/3', explanation: 'Pas die mag toe op elke faktor: 3⁻¹ · (x⁻²)⁻¹ = (1/3) · x² = x²/3 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (x⁻³y²) ÷ (x²y⁻²) en skryf met slegs positiewe eksponente.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terme: x⁻³ ÷ x² = x⁻³⁻² = x⁻⁵.\ny-terme: y² ÷ y⁻² = y²⁻⁽⁻²⁾ = y⁴.\nHerskryf: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (2a⁻³b)⁻² en skryf met slegs positiewe eksponente.', answer: 'a⁶/(4b²)', checkMode: 'auto', correctAnswer: 'a⁶/(4b²)', correctAnswers: ['a⁶/(4b²)', 'a⁶/4b²'], explanation: 'Pas die mag toe op elke faktor: 2⁻² · (a⁻³)⁻² · b⁻² = (1/4) · a⁶ · b⁻² = a⁶/(4b²) ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 7x⁰.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Enige nie-nul grondgetal tot die mag 0 is gelyk aan 1: 7x⁰ = 7 × 1 = 7 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (a³b⁰) ÷ a⁻².', answer: 'a⁵', checkMode: 'auto', correctAnswer: 'a⁵', explanation: 'b⁰ = 1, dus is dit a³ ÷ a⁻² = a³⁻⁽⁻²⁾ = a⁵ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (5x³)⁰ + 6.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Enigiets (nie-nul) tot die mag 0 is 1: (5x³)⁰ = 1. Dus 1 + 6 = 7 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (3a²b⁻³)² ÷ (a⁻¹b) en skryf met slegs positiewe eksponente.', answer: '9a⁵/b⁷', checkMode: 'auto', correctAnswer: '9a⁵/b⁷', explanation: '(3a²b⁻³)² = 9a⁴b⁻⁶.\nDeel deur a⁻¹b: 9a⁴⁻⁽⁻¹⁾b⁻⁶⁻¹ = 9a⁵b⁻⁷ = 9a⁵/b⁷ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 25^(1/2).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'ʼn Mag van 1/2 beteken die vierkantswortel: 25^(1/2) = √25 = 5 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 64^(1/3).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'ʼn Mag van 1/3 beteken die derdemagswortel: 64^(1/3) = ∛64 = 4, aangesien 4³ = 64 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 4^(3/2).', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Neem eers die vierkantswortel, dan die derde mag: 4^(3/2) = (√4)³ = 2³ = 8 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 8.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 8 as ʼn mag van 2: 8 = 2³. Aangesien die grondgetalle gelyk is, is x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 5ˣ = 125.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 125 as ʼn mag van 5: 125 = 5³. Aangesien die grondgetalle gelyk is, is x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Bongani sê 9^(1/2) is dieselfde as 9÷2. Is hy korrek? Verduidelik wat die eksponent 1/2 werklik beteken en gee die korrekte waarde.', answer: 'Nee — ʼn eksponent van 1/2 beteken die vierkantswortel, nie deling deur 2 nie. 9^(1/2)=√9=3, nie 4,5 nie (wat 9÷2 is). Breuk-eksponente verteenwoordig wortels: die noemer van die breuk wys watter wortel jy moet neem.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het eksponente oor elke vaardigheid in hierdie stel bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Jy is selfversekerd met eksponente — hersien enige gemiste vrae en probeer nog ʼn stel.' },
+        { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 Vrae)
+    // Blokke: 0-2 Produk/kwosiëntwet | 3-5 Mag van ʼn mag/produk |
+    // 6-9 Negatiewe eksponente → positiewe vorm | 10-13 Nul-eksponent & gemengde vereenvoudiging |
+    // 14-16 Rasionale/breuk-eksponente | 17-19 Eenvoudige eksponensiale vergelykings & kroonvraag
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Vereenvoudig x⁵ · x⁴.', answer: 'x⁹', checkMode: 'auto', correctAnswer: 'x⁹', explanation: 'Tel die eksponente bymekaar: x⁵ · x⁴ = x⁵⁺⁴ = x⁹ ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig x¹⁰ ÷ x⁶.', answer: 'x⁴', checkMode: 'auto', correctAnswer: 'x⁴', explanation: 'Trek die eksponente van mekaar af: x¹⁰ ÷ x⁶ = x¹⁰⁻⁶ = x⁴ ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig a⁶ · a⁻⁴.', answer: 'a²', checkMode: 'auto', correctAnswer: 'a²', explanation: 'Tel die eksponente bymekaar: a⁶ · a⁻⁴ = a⁶⁺⁽⁻⁴⁾ = a² ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig (x⁴)³.', answer: 'x¹²', checkMode: 'auto', correctAnswer: 'x¹²', explanation: 'Vermenigvuldig die eksponente: (x⁴)³ = x⁴ˣ³ = x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vereenvoudig (2x⁴)³.', answer: '8x¹²', checkMode: 'auto', correctAnswer: '8x¹²', explanation: 'Pas die mag toe op elke faktor: 2³ · (x⁴)³ = 8 · x¹² = 8x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Vereenvoudig (3a b²)³.', answer: '27a³b⁶', checkMode: 'auto', correctAnswer: '27a³b⁶', explanation: 'Pas die mag toe op elke faktor: 3³ · a³ · (b²)³ = 27 · a³ · b⁶ = 27a³b⁶ ✓' },
+        { difficulty: 'Medium', question: 'Skryf x⁻⁶ met ʼn positiewe eksponent.', answer: '1/x⁶', checkMode: 'auto', correctAnswer: '1/x⁶', explanation: 'ʼn Negatiewe eksponent beteken die resiprook: x⁻⁶ = 1/x⁶ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (5x⁻²)⁻¹ en skryf met ʼn positiewe eksponent.', answer: 'x²/5', checkMode: 'auto', correctAnswer: 'x²/5', explanation: 'Pas die mag toe op elke faktor: 5⁻¹ · (x⁻²)⁻¹ = (1/5) · x² = x²/5 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (x⁻⁴y³) ÷ (x¹y⁻¹) en skryf met slegs positiewe eksponente.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terme: x⁻⁴ ÷ x¹ = x⁻⁴⁻¹ = x⁻⁵.\ny-terme: y³ ÷ y⁻¹ = y³⁻⁽⁻¹⁾ = y⁴.\nHerskryf: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (3a⁻²b)⁻² en skryf met slegs positiewe eksponente.', answer: 'a⁴/(9b²)', checkMode: 'auto', correctAnswer: 'a⁴/(9b²)', correctAnswers: ['a⁴/(9b²)', 'a⁴/9b²'], explanation: 'Pas die mag toe op elke faktor: 3⁻² · (a⁻²)⁻² · b⁻² = (1/9) · a⁴ · b⁻² = a⁴/(9b²) ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 9x⁰.', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Enige nie-nul grondgetal tot die mag 0 is gelyk aan 1: 9x⁰ = 9 × 1 = 9 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (b⁴c⁰) ÷ b⁻³.', answer: 'b⁷', checkMode: 'auto', correctAnswer: 'b⁷', explanation: 'c⁰ = 1, dus is dit b⁴ ÷ b⁻³ = b⁴⁻⁽⁻³⁾ = b⁷ ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (7x⁵)⁰ + 4.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Enigiets (nie-nul) tot die mag 0 is 1: (7x⁵)⁰ = 1. Dus 1 + 4 = 5 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig (2a³b⁻²)³ ÷ (a⁻¹b) en skryf met slegs positiewe eksponente.', answer: '8a¹⁰/b⁷', checkMode: 'auto', correctAnswer: '8a¹⁰/b⁷', explanation: '(2a³b⁻²)³ = 8a⁹b⁻⁶.\nDeel deur a⁻¹b: 8a⁹⁻⁽⁻¹⁾b⁻⁶⁻¹ = 8a¹⁰b⁻⁷ = 8a¹⁰/b⁷ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 36^(1/2).', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'ʼn Mag van 1/2 beteken die vierkantswortel: 36^(1/2) = √36 = 6 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 125^(1/3).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'ʼn Mag van 1/3 beteken die derdemagswortel: 125^(1/3) = ∛125 = 5, aangesien 5³ = 125 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 9^(3/2).', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: 'Neem eers die vierkantswortel, dan die derde mag: 9^(3/2) = (√9)³ = 3³ = 27 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 64.', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Skryf 64 as ʼn mag van 2: 64 = 2⁶. Aangesien die grondgetalle gelyk is, is x = 6 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 4ˣ = 64.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 64 as ʼn mag van 4: 64 = 4³ (4×4×4=64). Aangesien die grondgetalle gelyk is, is x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Thabo sê (x³)² en x^(3²) gee dieselfde antwoord. Is hy korrek? Vereenvoudig altwee uitdrukkings om te toets.', answer: 'Nee — (x³)² gebruik die mag-van-ʼn-mag-wet: vermenigvuldig die eksponente, wat x⁶ gee. Maar x^(3²) beteken x tot die mag 3², wat x⁹ is. Hierdie is verskillend (x⁶ ≠ x⁹), dus is Thabo verkeerd. Die hakieplasing verander die betekenis van die uitdrukking.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het eksponente oor elke vaardigheid in hierdie stel bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Jy is selfversekerd met eksponente — hersien enige gemiste vrae en probeer nog ʼn stel.' },
+        { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
+
   scoreMessages: [
     { minScore: 14, message: 'Uitstekend! ʼn Volmaakte telling — jy het eksponente en wortelvorme vir Graad 10 volkome bemeester. Hou so aan!' },
     { minScore: 11, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van hierdie onderwerp. Hersien enige gemiste dele en jy sal dit volmaak hê.' },

@@ -505,6 +505,123 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Number line zoomed in on √20 between 4 and 5 showing the decimal approximation 4.47213 with the rounded answer 4.47 marked in green" />',
     },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-2 Product/quotient law | 3-5 Power of a power/product |
+    // 6-9 Negative exponents → positive form | 10-13 Zero exponent & mixed simplifying |
+    // 14-16 Rational/fractional exponents | 17-19 Simple exponential equations & capstone
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Simplify x⁶ · x².', answer: 'x⁸', checkMode: 'auto', correctAnswer: 'x⁸', explanation: 'Add the exponents: x⁶ · x² = x⁶⁺² = x⁸ ✓' },
+        { difficulty: 'Easy', question: 'Simplify x⁹ ÷ x⁴.', answer: 'x⁵', checkMode: 'auto', correctAnswer: 'x⁵', explanation: 'Subtract the exponents: x⁹ ÷ x⁴ = x⁹⁻⁴ = x⁵ ✓' },
+        { difficulty: 'Easy', question: 'Simplify a⁵ · a⁻².', answer: 'a³', checkMode: 'auto', correctAnswer: 'a³', explanation: 'Add the exponents: a⁵ · a⁻² = a⁵⁺⁽⁻²⁾ = a³ ✓' },
+        { difficulty: 'Easy', question: 'Simplify (x³)⁴.', answer: 'x¹²', checkMode: 'auto', correctAnswer: 'x¹²', explanation: 'Multiply the exponents: (x³)⁴ = x³ˣ⁴ = x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Simplify (2x²)³.', answer: '8x⁶', checkMode: 'auto', correctAnswer: '8x⁶', explanation: 'Apply the power to each factor: 2³ · (x²)³ = 8 · x⁶ = 8x⁶ ✓' },
+        { difficulty: 'Easy-Medium', question: 'Simplify (3a²b)².', answer: '9a⁴b²', checkMode: 'auto', correctAnswer: '9a⁴b²', explanation: 'Apply the power to each factor: 3² · (a²)² · b² = 9 · a⁴ · b² = 9a⁴b² ✓' },
+        { difficulty: 'Medium', question: 'Write x⁻⁴ with a positive exponent.', answer: '1/x⁴', checkMode: 'auto', correctAnswer: '1/x⁴', explanation: 'A negative exponent means the reciprocal: x⁻⁴ = 1/x⁴ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (2x⁻³)⁻¹ and write with a positive exponent.', answer: 'x³/2', checkMode: 'auto', correctAnswer: 'x³/2', correctAnswers: ['x³/2', 'x³/2'], explanation: 'Apply the power to each factor: 2⁻¹ · (x⁻³)⁻¹ = (1/2) · x³ = x³/2 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (x⁻²y³) ÷ (x³y⁻¹) and write with positive exponents only.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terms: x⁻² ÷ x³ = x⁻²⁻³ = x⁻⁵.\ny-terms: y³ ÷ y⁻¹ = y³⁻⁽⁻¹⁾ = y⁴.\nRewrite: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (4a⁻²b)⁻² and write with positive exponents only.', answer: 'a⁴/(16b²)', checkMode: 'auto', correctAnswer: 'a⁴/(16b²)', correctAnswers: ['a⁴/(16b²)', 'a⁴/16b²'], explanation: 'Apply the power to each factor: 4⁻² · (a⁻²)⁻² · b⁻² = (1/16) · a⁴ · b⁻² = a⁴/(16b²) ✓' },
+        { difficulty: 'Medium', question: 'Simplify 5x⁰.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Any non-zero base to the power 0 equals 1: 5x⁰ = 5 × 1 = 5 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (x²y⁰) ÷ x⁻¹.', answer: 'x³', checkMode: 'auto', correctAnswer: 'x³', explanation: 'y⁰ = 1, so this is x² ÷ x⁻¹ = x²⁻⁽⁻¹⁾ = x³ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (3x²)⁰ + 2.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Anything (non-zero) to the power 0 is 1: (3x²)⁰ = 1. So 1 + 2 = 3 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (2a³b⁻²)² ÷ (a⁻¹b) and write with positive exponents only.', answer: '4a⁷/b⁵', checkMode: 'auto', correctAnswer: '4a⁷/b⁵', explanation: '(2a³b⁻²)² = 4a⁶b⁻⁴.\nDivide by a⁻¹b: 4a⁶⁻⁽⁻¹⁾b⁻⁴⁻¹ = 4a⁷b⁻⁵ = 4a⁷/b⁵ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 16^(1/2).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'A power of 1/2 means the square root: 16^(1/2) = √16 = 4 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 27^(1/3).', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'A power of 1/3 means the cube root: 27^(1/3) = ∛27 = 3, since 3³ = 27 ✓' },
+        { difficulty: 'Hard', question: 'Evaluate 8^(2/3).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'Take the cube root first, then square: 8^(2/3) = (∛8)² = 2² = 4 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 2ˣ = 32.', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Write 32 as a power of 2: 32 = 2⁵. Since the bases are equal, x = 5 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 3^(2x) = 9.', answer: 'x=1', checkMode: 'auto', correctAnswer: 'x=1', correctAnswers: ['x=1', 'x = 1', '1'], explanation: 'Write 9 as a power of 3: 9 = 3². So 3^(2x) = 3² means 2x = 2, giving x = 1 ✓' },
+        { difficulty: 'Hard', question: 'Zanele says x⁻² is always negative because of the minus sign in the exponent. Is she correct? Explain, using x=3 as an example.', answer: 'No — a negative exponent means the reciprocal, not a negative value. For x=3: x⁻²=3⁻²=1/3²=1/9, which is a positive fraction. The negative sign in the exponent tells us to take the reciprocal, it does not make the result negative.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered exponents across every skill in this set.' },
+        { minScore: 14, message: 'Great work! You are confident with exponents — review any missed questions and try another set.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // Blocks: 0-2 Product/quotient law | 3-5 Power of a power/product |
+    // 6-9 Negative exponents → positive form | 10-13 Zero exponent & mixed simplifying |
+    // 14-16 Rational/fractional exponents | 17-19 Simple exponential equations & capstone
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Simplify x⁷ · x³.', answer: 'x¹⁰', checkMode: 'auto', correctAnswer: 'x¹⁰', explanation: 'Add the exponents: x⁷ · x³ = x⁷⁺³ = x¹⁰ ✓' },
+        { difficulty: 'Easy', question: 'Simplify x¹¹ ÷ x⁵.', answer: 'x⁶', checkMode: 'auto', correctAnswer: 'x⁶', explanation: 'Subtract the exponents: x¹¹ ÷ x⁵ = x¹¹⁻⁵ = x⁶ ✓' },
+        { difficulty: 'Easy', question: 'Simplify b⁴ · b⁻³.', answer: 'b', checkMode: 'auto', correctAnswer: 'b', correctAnswers: ['b', 'b¹'], explanation: 'Add the exponents: b⁴ · b⁻³ = b⁴⁺⁽⁻³⁾ = b¹ = b ✓' },
+        { difficulty: 'Easy', question: 'Simplify (x²)⁶.', answer: 'x¹²', checkMode: 'auto', correctAnswer: 'x¹²', explanation: 'Multiply the exponents: (x²)⁶ = x²ˣ⁶ = x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Simplify (3x³)².', answer: '9x⁶', checkMode: 'auto', correctAnswer: '9x⁶', explanation: 'Apply the power to each factor: 3² · (x³)² = 9 · x⁶ = 9x⁶ ✓' },
+        { difficulty: 'Easy-Medium', question: 'Simplify (2a³b²)³.', answer: '8a⁹b⁶', checkMode: 'auto', correctAnswer: '8a⁹b⁶', explanation: 'Apply the power to each factor: 2³ · (a³)³ · (b²)³ = 8 · a⁹ · b⁶ = 8a⁹b⁶ ✓' },
+        { difficulty: 'Medium', question: 'Write x⁻⁵ with a positive exponent.', answer: '1/x⁵', checkMode: 'auto', correctAnswer: '1/x⁵', explanation: 'A negative exponent means the reciprocal: x⁻⁵ = 1/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (3x⁻²)⁻¹ and write with a positive exponent.', answer: 'x²/3', checkMode: 'auto', correctAnswer: 'x²/3', explanation: 'Apply the power to each factor: 3⁻¹ · (x⁻²)⁻¹ = (1/3) · x² = x²/3 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (x⁻³y²) ÷ (x²y⁻²) and write with positive exponents only.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terms: x⁻³ ÷ x² = x⁻³⁻² = x⁻⁵.\ny-terms: y² ÷ y⁻² = y²⁻⁽⁻²⁾ = y⁴.\nRewrite: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (2a⁻³b)⁻² and write with positive exponents only.', answer: 'a⁶/(4b²)', checkMode: 'auto', correctAnswer: 'a⁶/(4b²)', correctAnswers: ['a⁶/(4b²)', 'a⁶/4b²'], explanation: 'Apply the power to each factor: 2⁻² · (a⁻³)⁻² · b⁻² = (1/4) · a⁶ · b⁻² = a⁶/(4b²) ✓' },
+        { difficulty: 'Medium', question: 'Simplify 7x⁰.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Any non-zero base to the power 0 equals 1: 7x⁰ = 7 × 1 = 7 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (a³b⁰) ÷ a⁻².', answer: 'a⁵', checkMode: 'auto', correctAnswer: 'a⁵', explanation: 'b⁰ = 1, so this is a³ ÷ a⁻² = a³⁻⁽⁻²⁾ = a⁵ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (5x³)⁰ + 6.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Anything (non-zero) to the power 0 is 1: (5x³)⁰ = 1. So 1 + 6 = 7 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (3a²b⁻³)² ÷ (a⁻¹b) and write with positive exponents only.', answer: '9a⁵/b⁷', checkMode: 'auto', correctAnswer: '9a⁵/b⁷', explanation: '(3a²b⁻³)² = 9a⁴b⁻⁶.\nDivide by a⁻¹b: 9a⁴⁻⁽⁻¹⁾b⁻⁶⁻¹ = 9a⁵b⁻⁷ = 9a⁵/b⁷ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 25^(1/2).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'A power of 1/2 means the square root: 25^(1/2) = √25 = 5 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 64^(1/3).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'A power of 1/3 means the cube root: 64^(1/3) = ∛64 = 4, since 4³ = 64 ✓' },
+        { difficulty: 'Hard', question: 'Evaluate 4^(3/2).', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Take the square root first, then cube: 4^(3/2) = (√4)³ = 2³ = 8 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 2ˣ = 8.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Write 8 as a power of 2: 8 = 2³. Since the bases are equal, x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 5ˣ = 125.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Write 125 as a power of 5: 125 = 5³. Since the bases are equal, x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Bongani says 9^(1/2) is the same as 9÷2. Is he correct? Explain what the exponent 1/2 actually means and give the correct value.', answer: 'No — an exponent of 1/2 means the square root, not division by 2. 9^(1/2)=√9=3, not 4.5 (which is 9÷2). Fractional exponents represent roots: the denominator of the fraction tells you which root to take.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered exponents across every skill in this set.' },
+        { minScore: 14, message: 'Great work! You are confident with exponents — review any missed questions and try another set.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // Blocks: 0-2 Product/quotient law | 3-5 Power of a power/product |
+    // 6-9 Negative exponents → positive form | 10-13 Zero exponent & mixed simplifying |
+    // 14-16 Rational/fractional exponents | 17-19 Simple exponential equations & capstone
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Simplify x⁵ · x⁴.', answer: 'x⁹', checkMode: 'auto', correctAnswer: 'x⁹', explanation: 'Add the exponents: x⁵ · x⁴ = x⁵⁺⁴ = x⁹ ✓' },
+        { difficulty: 'Easy', question: 'Simplify x¹⁰ ÷ x⁶.', answer: 'x⁴', checkMode: 'auto', correctAnswer: 'x⁴', explanation: 'Subtract the exponents: x¹⁰ ÷ x⁶ = x¹⁰⁻⁶ = x⁴ ✓' },
+        { difficulty: 'Easy', question: 'Simplify a⁶ · a⁻⁴.', answer: 'a²', checkMode: 'auto', correctAnswer: 'a²', explanation: 'Add the exponents: a⁶ · a⁻⁴ = a⁶⁺⁽⁻⁴⁾ = a² ✓' },
+        { difficulty: 'Easy', question: 'Simplify (x⁴)³.', answer: 'x¹²', checkMode: 'auto', correctAnswer: 'x¹²', explanation: 'Multiply the exponents: (x⁴)³ = x⁴ˣ³ = x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Simplify (2x⁴)³.', answer: '8x¹²', checkMode: 'auto', correctAnswer: '8x¹²', explanation: 'Apply the power to each factor: 2³ · (x⁴)³ = 8 · x¹² = 8x¹² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Simplify (3a b²)³.', answer: '27a³b⁶', checkMode: 'auto', correctAnswer: '27a³b⁶', explanation: 'Apply the power to each factor: 3³ · a³ · (b²)³ = 27 · a³ · b⁶ = 27a³b⁶ ✓' },
+        { difficulty: 'Medium', question: 'Write x⁻⁶ with a positive exponent.', answer: '1/x⁶', checkMode: 'auto', correctAnswer: '1/x⁶', explanation: 'A negative exponent means the reciprocal: x⁻⁶ = 1/x⁶ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (5x⁻²)⁻¹ and write with a positive exponent.', answer: 'x²/5', checkMode: 'auto', correctAnswer: 'x²/5', explanation: 'Apply the power to each factor: 5⁻¹ · (x⁻²)⁻¹ = (1/5) · x² = x²/5 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (x⁻⁴y³) ÷ (x¹y⁻¹) and write with positive exponents only.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terms: x⁻⁴ ÷ x¹ = x⁻⁴⁻¹ = x⁻⁵.\ny-terms: y³ ÷ y⁻¹ = y³⁻⁽⁻¹⁾ = y⁴.\nRewrite: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (3a⁻²b)⁻² and write with positive exponents only.', answer: 'a⁴/(9b²)', checkMode: 'auto', correctAnswer: 'a⁴/(9b²)', correctAnswers: ['a⁴/(9b²)', 'a⁴/9b²'], explanation: 'Apply the power to each factor: 3⁻² · (a⁻²)⁻² · b⁻² = (1/9) · a⁴ · b⁻² = a⁴/(9b²) ✓' },
+        { difficulty: 'Medium', question: 'Simplify 9x⁰.', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Any non-zero base to the power 0 equals 1: 9x⁰ = 9 × 1 = 9 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (b⁴c⁰) ÷ b⁻³.', answer: 'b⁷', checkMode: 'auto', correctAnswer: 'b⁷', explanation: 'c⁰ = 1, so this is b⁴ ÷ b⁻³ = b⁴⁻⁽⁻³⁾ = b⁷ ✓' },
+        { difficulty: 'Medium', question: 'Simplify (7x⁵)⁰ + 4.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Anything (non-zero) to the power 0 is 1: (7x⁵)⁰ = 1. So 1 + 4 = 5 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (2a³b⁻²)³ ÷ (a⁻¹b) and write with positive exponents only.', answer: '8a¹⁰/b⁷', checkMode: 'auto', correctAnswer: '8a¹⁰/b⁷', explanation: '(2a³b⁻²)³ = 8a⁹b⁻⁶.\nDivide by a⁻¹b: 8a⁹⁻⁽⁻¹⁾b⁻⁶⁻¹ = 8a¹⁰b⁻⁷ = 8a¹⁰/b⁷ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 36^(1/2).', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'A power of 1/2 means the square root: 36^(1/2) = √36 = 6 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 125^(1/3).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'A power of 1/3 means the cube root: 125^(1/3) = ∛125 = 5, since 5³ = 125 ✓' },
+        { difficulty: 'Hard', question: 'Evaluate 9^(3/2).', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: 'Take the square root first, then cube: 9^(3/2) = (√9)³ = 3³ = 27 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 2ˣ = 64.', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Write 64 as a power of 2: 64 = 2⁶. Since the bases are equal, x = 6 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 4ˣ = 64.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Write 64 as a power of 4: 64 = 4³ (4×4×4=64). Since the bases are equal, x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Thabo says (x³)² and x^(3²) give the same answer. Is he correct? Simplify both expressions to check.', answer: 'No — (x³)² uses the power-of-a-power law: multiply the exponents, giving x⁶. But x^(3²) means x raised to 3², which is x⁹. These are different (x⁶ ≠ x⁹), so Thabo is incorrect. The bracket placement changes the meaning of the expression.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered exponents across every skill in this set.' },
+        { minScore: 14, message: 'Great work! You are confident with exponents — review any missed questions and try another set.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
+
   scoreMessages: [
     { minScore: 14, message: 'Outstanding! A perfect score — you have completely mastered exponents and surds for Grade 10. Keep it up!' },
     { minScore: 11, message: 'Excellent work! You have a very strong grasp of this topic. Review any missed parts and you will have it perfect.' },

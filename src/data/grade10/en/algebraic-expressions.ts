@@ -722,4 +722,150 @@ export const topicData: TopicData = {
       { minScore: 0, message: 'Keep going, work through the guide again.' },
     ],
   },
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1 (0-2):   Expand binomial × trinomial
+    // Block 2 (3-5):   Factorise trinomial (a = 1)
+    // Block 3 (6-9):   Factorise trinomial (a ≠ 1) — a×c method
+    // Block 4 (10-12): Factorise by grouping in pairs
+    // Block 5 (13-15): Simplify a single algebraic fraction (factor & cancel)
+    // Block 6 (16-19): Add/subtract algebraic fractions with LCM / multi-step / error-spotting
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Expand binomial × trinomial (Easy)
+        { difficulty: 'Easy', question: 'Expand (x + 1)(x² + 2x + 3).', checkMode: 'auto', correctAnswer: 'x³+3x²+5x+3', correctAnswers: ['x³+3x²+5x+3', 'x^3+3x^2+5x+3'], answer: 'x³ + 3x² + 5x + 3', explanation: 'Distribute x: x³+2x²+3x. Distribute +1: x²+2x+3. Combine: x³+(2+1)x²+(3+2)x+3 = x³+3x²+5x+3.' },
+        { difficulty: 'Easy', question: 'Expand (x + 4)(x² − 3x + 2).', checkMode: 'auto', correctAnswer: 'x³+x²-10x+8', correctAnswers: ['x³+x²-10x+8', 'x³+x²−10x+8', 'x^3+x^2-10x+8', 'x^3+x^2−10x+8'], answer: 'x³ + x² − 10x + 8', explanation: 'Distribute x: x³-3x²+2x. Distribute +4: 4x²-12x+8. Combine: x³+(-3+4)x²+(2-12)x+8 = x³+x²-10x+8.' },
+        { difficulty: 'Medium', question: 'Expand (2x − 1)(x² + 3x − 4).', checkMode: 'auto', correctAnswer: '2x³+5x²-11x+4', correctAnswers: ['2x³+5x²-11x+4', '2x³+5x²−11x+4', '2x^3+5x^2-11x+4', '2x^3+5x^2−11x+4'], answer: '2x³ + 5x² − 11x + 4', explanation: 'Distribute 2x: 2x³+6x²-8x. Distribute -1: -x²-3x+4. Combine: 2x³+(6-1)x²+(-8-3)x+4 = 2x³+5x²-11x+4.' },
+
+        // Block 2 — Factorise trinomial a = 1 (Easy/Medium)
+        { difficulty: 'Easy', question: 'Factorise x² + 9x + 20.', checkMode: 'auto', correctAnswer: '(x+4)(x+5)', correctAnswers: ['(x+4)(x+5)', '(x+5)(x+4)'], answer: '(x + 4)(x + 5)', explanation: 'Find two numbers multiplying to 20 and adding to 9: 4 and 5. Answer: (x+4)(x+5). Check: x²+5x+4x+20 = x²+9x+20 ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 4x − 21.', checkMode: 'auto', correctAnswer: '(x-7)(x+3)', correctAnswers: ['(x-7)(x+3)', '(x+3)(x-7)'], answer: '(x − 7)(x + 3)', explanation: 'Find two numbers multiplying to -21 and adding to -4: -7 and 3. Answer: (x-7)(x+3). Check: x²+3x-7x-21 = x²-4x-21 ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 13x + 40.', checkMode: 'auto', correctAnswer: '(x-8)(x-5)', correctAnswers: ['(x-8)(x-5)', '(x-5)(x-8)'], answer: '(x − 8)(x − 5)', explanation: 'Find two numbers multiplying to 40 and adding to -13: -8 and -5. Answer: (x-8)(x-5). Check: x²-5x-8x+40 = x²-13x+40 ✓' },
+
+        // Block 3 — Factorise trinomial a ≠ 1, a×c method (Medium)
+        { difficulty: 'Medium', question: 'Factorise 2x² + 9x + 4.', checkMode: 'auto', correctAnswer: '(x+4)(2x+1)', correctAnswers: ['(x+4)(2x+1)', '(2x+1)(x+4)'], answer: '(2x + 1)(x + 4)', explanation: 'a×c = 2×4 = 8. Numbers multiplying to 8, adding to 9: 8 and 1. Split: 2x²+8x+x+4. Group: 2x(x+4)+1(x+4) = (2x+1)(x+4).' },
+        { difficulty: 'Medium', question: 'Factorise 3x² − 5x − 2.', checkMode: 'auto', correctAnswer: '(x-2)(3x+1)', correctAnswers: ['(x-2)(3x+1)', '(3x+1)(x-2)'], answer: '(3x + 1)(x − 2)', explanation: 'a×c = 3×(-2) = -6. Numbers multiplying to -6, adding to -5: -6 and 1. Split: 3x²-6x+x-2. Group: 3x(x-2)+1(x-2) = (3x+1)(x-2).' },
+        { difficulty: 'Medium', question: 'Factorise 4x² − 4x − 3.', checkMode: 'auto', correctAnswer: '(2x-3)(2x+1)', correctAnswers: ['(2x-3)(2x+1)', '(2x+1)(2x-3)'], answer: '(2x − 3)(2x + 1)', explanation: 'a×c = 4×(-3) = -12. Numbers multiplying to -12, adding to -4: -6 and 2. Split: 4x²-6x+2x-3. Group: 2x(2x-3)+1(2x-3) = (2x-3)(2x+1).' },
+        { difficulty: 'Hard', question: 'Factorise 6x² + 7x − 3.', checkMode: 'auto', correctAnswer: '(2x+3)(3x-1)', correctAnswers: ['(2x+3)(3x-1)', '(3x-1)(2x+3)'], answer: '(2x + 3)(3x − 1)', explanation: 'a×c = 6×(-3) = -18. Numbers multiplying to -18, adding to 7: 9 and -2. Split: 6x²+9x-2x-3. Group: 3x(2x+3)-1(2x+3) = (2x+3)(3x-1).' },
+
+        // Block 4 — Factorise by grouping in pairs (Medium/Hard)
+        { difficulty: 'Medium', question: 'Factorise by grouping: 4x² + 12x + 3x + 9.', checkMode: 'auto', correctAnswer: '(x+3)(4x+3)', correctAnswers: ['(x+3)(4x+3)', '(4x+3)(x+3)'], answer: '(x + 3)(4x + 3)', explanation: 'Group: (4x²+12x)+(3x+9). Factor each pair: 4x(x+3)+3(x+3). Common binomial: (x+3)(4x+3).' },
+        { difficulty: 'Medium', question: 'Factorise by grouping: ax + 3a + bx + 3b.', checkMode: 'auto', correctAnswer: '(a+b)(x+3)', correctAnswers: ['(a+b)(x+3)', '(x+3)(a+b)'], answer: '(a + b)(x + 3)', explanation: 'Group: (ax+3a)+(bx+3b). Factor each pair: a(x+3)+b(x+3). Common binomial: (a+b)(x+3).' },
+        { difficulty: 'Hard', question: 'Factorise x³ + 2x² − 9x − 18 fully.', checkMode: 'auto', correctAnswer: '(x-3)(x+2)(x+3)', correctAnswers: ['(x-3)(x+2)(x+3)', '(x+2)(x-3)(x+3)', '(x+2)(x+3)(x-3)', '(x+3)(x+2)(x-3)', '(x+3)(x-3)(x+2)', '(x-3)(x+3)(x+2)'], answer: '(x − 3)(x + 3)(x + 2)', explanation: 'Group: (x³+2x²)+(-9x-18). Factor: x²(x+2)-9(x+2). Common binomial: (x+2)(x²-9). Recognise x²-9 as a difference of squares: (x-3)(x+3). Final: (x+2)(x-3)(x+3).' },
+
+        // Block 5 — Simplify a single algebraic fraction (Hard)
+        { difficulty: 'Hard', question: 'Simplify (10x² + 15x) / 5x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x+3', correctAnswers: ['2x+3', '2x + 3'], answer: '2x + 3', explanation: 'Factor the numerator: 10x²+15x = 5x(2x+3). Cancel the common factor 5x: 2x+3 (x ≠ 0).' },
+        { difficulty: 'Hard', question: 'Simplify (6x² − 9x) / 3x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x-3', correctAnswers: ['2x-3', '2x − 3'], answer: '2x − 3', explanation: 'Factor the numerator: 6x²-9x = 3x(2x-3). Cancel the common factor 3x: 2x-3 (x ≠ 0).' },
+        { difficulty: 'Hard', question: 'Simplify (x² + 7x) / x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: 'x+7', correctAnswers: ['x+7', 'x + 7'], answer: 'x + 7', explanation: 'Factor the numerator: x²+7x = x(x+7). Cancel the common factor x: x+7 (x ≠ 0).' },
+
+        // Block 6 — Add/subtract fractions with LCM / multi-step / error-spotting (Hard)
+        { difficulty: 'Hard', question: 'Calculate 3/x + 4/(2x) &nbsp;(x ≠ 0), simplifying fully.', checkMode: 'auto', correctAnswer: '5/x', correctAnswers: ['5/x'], answer: '5/x', explanation: 'LCM of x and 2x is 2x. Convert: 6/(2x)+4/(2x) = 10/(2x). Simplify: 10/(2x) = 5/x.' },
+        { difficulty: 'Hard', question: 'Calculate 5/x² − 3/x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '(5-3x)/x²', correctAnswers: ['(5-3x)/x²', '(5−3x)/x²', '(5-3x)/x^2', '(5−3x)/x^2'], answer: '(5 − 3x)/x²', explanation: 'LCM of x² and x is x². 5/x² already has the LCM denominator. Convert 3/x = 3x/x². Combine: (5-3x)/x².' },
+        { difficulty: 'Hard', question: 'Calculate 2/(3x) + 1/(4x) &nbsp;(x ≠ 0), simplifying fully.', checkMode: 'auto', correctAnswer: '11/(12x)', correctAnswers: ['11/(12x)', '11/12x'], answer: '11/(12x)', explanation: 'LCM of 3x and 4x is 12x. Convert: 8/(12x)+3/(12x) = 11/(12x).' },
+        { difficulty: 'Hard', question: 'Simplify fully: (x² − 9)/(x + 3) &nbsp;(x ≠ −3).', checkMode: 'auto', correctAnswer: 'x-3', correctAnswers: ['x-3', 'x − 3'], answer: 'x − 3', explanation: 'Recognise x²-9 as a difference of squares: x²-9 = (x-3)(x+3). Write the fraction as (x-3)(x+3)/(x+3) and cancel (x+3): x-3.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered expanding, factorising and simplifying algebraic expressions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on the a×c method or algebraic fractions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on factorising and grouping, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Expand binomial × trinomial (Easy)
+        { difficulty: 'Easy', question: 'Expand (x + 2)(x² + x + 4).', checkMode: 'auto', correctAnswer: 'x³+3x²+6x+8', correctAnswers: ['x³+3x²+6x+8', 'x^3+3x^2+6x+8'], answer: 'x³ + 3x² + 6x + 8', explanation: 'Distribute x: x³+x²+4x. Distribute +2: 2x²+2x+8. Combine: x³+(1+2)x²+(4+2)x+8 = x³+3x²+6x+8.' },
+        { difficulty: 'Easy', question: 'Expand (x + 5)(x² − 2x + 1).', checkMode: 'auto', correctAnswer: 'x³+3x²-9x+5', correctAnswers: ['x³+3x²-9x+5', 'x³+3x²−9x+5', 'x^3+3x^2-9x+5', 'x^3+3x^2−9x+5'], answer: 'x³ + 3x² − 9x + 5', explanation: 'Distribute x: x³-2x²+x. Distribute +5: 5x²-10x+5. Combine: x³+(-2+5)x²+(1-10)x+5 = x³+3x²-9x+5.' },
+        { difficulty: 'Medium', question: 'Expand (3x − 2)(x² + x − 5).', checkMode: 'auto', correctAnswer: '3x³+x²-17x+10', correctAnswers: ['3x³+x²-17x+10', '3x³+x²−17x+10', '3x^3+x^2-17x+10', '3x^3+x^2−17x+10'], answer: '3x³ + x² − 17x + 10', explanation: 'Distribute 3x: 3x³+3x²-15x. Distribute -2: -2x²-2x+10. Combine: 3x³+(3-2)x²+(-15-2)x+10 = 3x³+x²-17x+10.' },
+
+        // Block 2 — Factorise trinomial a = 1 (Easy/Medium)
+        { difficulty: 'Easy', question: 'Factorise x² + 10x + 21.', checkMode: 'auto', correctAnswer: '(x+3)(x+7)', correctAnswers: ['(x+3)(x+7)', '(x+7)(x+3)'], answer: '(x + 3)(x + 7)', explanation: 'Find two numbers multiplying to 21 and adding to 10: 3 and 7. Answer: (x+3)(x+7). Check: x²+7x+3x+21 = x²+10x+21 ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 2x − 24.', checkMode: 'auto', correctAnswer: '(x-6)(x+4)', correctAnswers: ['(x-6)(x+4)', '(x+4)(x-6)'], answer: '(x − 6)(x + 4)', explanation: 'Find two numbers multiplying to -24 and adding to -2: -6 and 4. Answer: (x-6)(x+4). Check: x²+4x-6x-24 = x²-2x-24 ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 12x + 35.', checkMode: 'auto', correctAnswer: '(x-7)(x-5)', correctAnswers: ['(x-7)(x-5)', '(x-5)(x-7)'], answer: '(x − 7)(x − 5)', explanation: 'Find two numbers multiplying to 35 and adding to -12: -7 and -5. Answer: (x-7)(x-5). Check: x²-5x-7x+35 = x²-12x+35 ✓' },
+
+        // Block 3 — Factorise trinomial a ≠ 1, a×c method (Medium)
+        { difficulty: 'Medium', question: 'Factorise 2x² + 11x + 5.', checkMode: 'auto', correctAnswer: '(x+5)(2x+1)', correctAnswers: ['(x+5)(2x+1)', '(2x+1)(x+5)'], answer: '(2x + 1)(x + 5)', explanation: 'a×c = 2×5 = 10. Numbers multiplying to 10, adding to 11: 10 and 1. Split: 2x²+10x+x+5. Group: 2x(x+5)+1(x+5) = (2x+1)(x+5).' },
+        { difficulty: 'Medium', question: 'Factorise 3x² + 2x − 8.', checkMode: 'auto', correctAnswer: '(x+2)(3x-4)', correctAnswers: ['(x+2)(3x-4)', '(3x-4)(x+2)'], answer: '(3x − 4)(x + 2)', explanation: 'a×c = 3×(-8) = -24. Numbers multiplying to -24, adding to 2: 6 and -4. Split: 3x²+6x-4x-8. Group: 3x(x+2)-4(x+2) = (3x-4)(x+2).' },
+        { difficulty: 'Medium', question: 'Factorise 4x² + 4x − 3.', checkMode: 'auto', correctAnswer: '(2x-1)(2x+3)', correctAnswers: ['(2x-1)(2x+3)', '(2x+3)(2x-1)'], answer: '(2x − 1)(2x + 3)', explanation: 'a×c = 4×(-3) = -12. Numbers multiplying to -12, adding to 4: 6 and -2. Split: 4x²+6x-2x-3. Group: 2x(2x+3)-1(2x+3) = (2x-1)(2x+3).' },
+        { difficulty: 'Hard', question: 'Factorise 6x² − 13x + 6.', checkMode: 'auto', correctAnswer: '(2x-3)(3x-2)', correctAnswers: ['(2x-3)(3x-2)', '(3x-2)(2x-3)'], answer: '(2x − 3)(3x − 2)', explanation: 'a×c = 6×6 = 36. Numbers multiplying to 36, adding to -13: -9 and -4. Split: 6x²-9x-4x+6. Group: 3x(2x-3)-2(2x-3) = (2x-3)(3x-2).' },
+
+        // Block 4 — Factorise by grouping in pairs (Medium/Hard)
+        { difficulty: 'Medium', question: 'Factorise by grouping: 3x² + 15x + 2x + 10.', checkMode: 'auto', correctAnswer: '(x+5)(3x+2)', correctAnswers: ['(x+5)(3x+2)', '(3x+2)(x+5)'], answer: '(x + 5)(3x + 2)', explanation: 'Group: (3x²+15x)+(2x+10). Factor each pair: 3x(x+5)+2(x+5). Common binomial: (x+5)(3x+2).' },
+        { difficulty: 'Medium', question: 'Factorise by grouping: 2ax − 2ay + bx − by.', checkMode: 'auto', correctAnswer: '(2a+b)(x-y)', correctAnswers: ['(2a+b)(x-y)', '(x-y)(2a+b)'], answer: '(2a + b)(x − y)', explanation: 'Group: (2ax-2ay)+(bx-by). Factor each pair: 2a(x-y)+b(x-y). Common binomial: (2a+b)(x-y).' },
+        { difficulty: 'Hard', question: 'Factorise x³ + 5x² − 4x − 20 fully.', checkMode: 'auto', correctAnswer: '(x-2)(x+2)(x+5)', correctAnswers: ['(x-2)(x+2)(x+5)', '(x+2)(x-2)(x+5)', '(x+2)(x+5)(x-2)', '(x+5)(x+2)(x-2)', '(x+5)(x-2)(x+2)', '(x-2)(x+5)(x+2)'], answer: '(x − 2)(x + 2)(x + 5)', explanation: 'Group: (x³+5x²)+(-4x-20). Factor: x²(x+5)-4(x+5). Common binomial: (x+5)(x²-4). Recognise x²-4 as a difference of squares: (x-2)(x+2). Final: (x+5)(x-2)(x+2).' },
+
+        // Block 5 — Simplify a single algebraic fraction (Hard)
+        { difficulty: 'Hard', question: 'Simplify (12x² + 8x) / 4x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '3x+2', correctAnswers: ['3x+2', '3x + 2'], answer: '3x + 2', explanation: 'Factor the numerator: 12x²+8x = 4x(3x+2). Cancel the common factor 4x: 3x+2 (x ≠ 0).' },
+        { difficulty: 'Hard', question: 'Simplify (10x² − 15x) / 5x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x-3', correctAnswers: ['2x-3', '2x − 3'], answer: '2x − 3', explanation: 'Factor the numerator: 10x²-15x = 5x(2x-3). Cancel the common factor 5x: 2x-3 (x ≠ 0).' },
+        { difficulty: 'Hard', question: 'Simplify (x² + 9x) / x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: 'x+9', correctAnswers: ['x+9', 'x + 9'], answer: 'x + 9', explanation: 'Factor the numerator: x²+9x = x(x+9). Cancel the common factor x: x+9 (x ≠ 0).' },
+
+        // Block 6 — Add/subtract fractions with LCM / multi-step / error-spotting (Hard)
+        { difficulty: 'Hard', question: 'Calculate 5/x + 3/(2x) &nbsp;(x ≠ 0), simplifying fully.', checkMode: 'auto', correctAnswer: '13/(2x)', correctAnswers: ['13/(2x)', '13/2x'], answer: '13/(2x)', explanation: 'LCM of x and 2x is 2x. Convert: 10/(2x)+3/(2x) = 13/(2x).' },
+        { difficulty: 'Hard', question: 'Calculate 7/x² − 2/x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '(7-2x)/x²', correctAnswers: ['(7-2x)/x²', '(7−2x)/x²', '(7-2x)/x^2', '(7−2x)/x^2'], answer: '(7 − 2x)/x²', explanation: 'LCM of x² and x is x². 7/x² already has the LCM denominator. Convert 2/x = 2x/x². Combine: (7-2x)/x².' },
+        { difficulty: 'Hard', question: 'Calculate 3/(2x) + 1/(5x) &nbsp;(x ≠ 0), simplifying fully.', checkMode: 'auto', correctAnswer: '17/(10x)', correctAnswers: ['17/(10x)', '17/10x'], answer: '17/(10x)', explanation: 'LCM of 2x and 5x is 10x. Convert: 15/(10x)+2/(10x) = 17/(10x).' },
+        { difficulty: 'Hard', question: 'Simplify fully: (x² − 16)/(x + 4) &nbsp;(x ≠ −4).', checkMode: 'auto', correctAnswer: 'x-4', correctAnswers: ['x-4', 'x − 4'], answer: 'x − 4', explanation: 'Recognise x²-16 as a difference of squares: x²-16 = (x-4)(x+4). Write the fraction as (x-4)(x+4)/(x+4) and cancel (x+4): x-4.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered expanding, factorising and simplifying algebraic expressions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on the a×c method or algebraic fractions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on factorising and grouping, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Expand binomial × trinomial (Easy)
+        { difficulty: 'Easy', question: 'Expand (x + 3)(x² + x + 2).', checkMode: 'auto', correctAnswer: 'x³+4x²+5x+6', correctAnswers: ['x³+4x²+5x+6', 'x^3+4x^2+5x+6'], answer: 'x³ + 4x² + 5x + 6', explanation: 'Distribute x: x³+x²+2x. Distribute +3: 3x²+3x+6. Combine: x³+(1+3)x²+(2+3)x+6 = x³+4x²+5x+6.' },
+        { difficulty: 'Easy', question: 'Expand (x + 6)(x² − 4x + 3).', checkMode: 'auto', correctAnswer: 'x³+2x²-21x+18', correctAnswers: ['x³+2x²-21x+18', 'x³+2x²−21x+18', 'x^3+2x^2-21x+18', 'x^3+2x^2−21x+18'], answer: 'x³ + 2x² − 21x + 18', explanation: 'Distribute x: x³-4x²+3x. Distribute +6: 6x²-24x+18. Combine: x³+(-4+6)x²+(3-24)x+18 = x³+2x²-21x+18.' },
+        { difficulty: 'Medium', question: 'Expand (2x + 3)(x² − 2x − 3).', checkMode: 'auto', correctAnswer: '2x³-x²-12x-9', correctAnswers: ['2x³-x²-12x-9', '2x³−x²−12x−9', '2x^3-x^2-12x-9', '2x^3−x^2−12x−9'], answer: '2x³ − x² − 12x − 9', explanation: 'Distribute 2x: 2x³-4x²-6x. Distribute +3: 3x²-6x-9. Combine: 2x³+(-4+3)x²+(-6-6)x-9 = 2x³-x²-12x-9.' },
+
+        // Block 2 — Factorise trinomial a = 1 (Easy/Medium)
+        { difficulty: 'Easy', question: 'Factorise x² + 11x + 18.', checkMode: 'auto', correctAnswer: '(x+2)(x+9)', correctAnswers: ['(x+2)(x+9)', '(x+9)(x+2)'], answer: '(x + 2)(x + 9)', explanation: 'Find two numbers multiplying to 18 and adding to 11: 2 and 9. Answer: (x+2)(x+9). Check: x²+9x+2x+18 = x²+11x+18 ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 5x − 14.', checkMode: 'auto', correctAnswer: '(x-7)(x+2)', correctAnswers: ['(x-7)(x+2)', '(x+2)(x-7)'], answer: '(x − 7)(x + 2)', explanation: 'Find two numbers multiplying to -14 and adding to -5: -7 and 2. Answer: (x-7)(x+2). Check: x²+2x-7x-14 = x²-5x-14 ✓' },
+        { difficulty: 'Medium', question: 'Factorise x² − 14x + 45.', checkMode: 'auto', correctAnswer: '(x-9)(x-5)', correctAnswers: ['(x-9)(x-5)', '(x-5)(x-9)'], answer: '(x − 9)(x − 5)', explanation: 'Find two numbers multiplying to 45 and adding to -14: -9 and -5. Answer: (x-9)(x-5). Check: x²-5x-9x+45 = x²-14x+45 ✓' },
+
+        // Block 3 — Factorise trinomial a ≠ 1, a×c method (Medium)
+        { difficulty: 'Medium', question: 'Factorise 2x² + 7x + 3.', checkMode: 'auto', correctAnswer: '(x+3)(2x+1)', correctAnswers: ['(x+3)(2x+1)', '(2x+1)(x+3)'], answer: '(2x + 1)(x + 3)', explanation: 'a×c = 2×3 = 6. Numbers multiplying to 6, adding to 7: 6 and 1. Split: 2x²+6x+x+3. Group: 2x(x+3)+1(x+3) = (2x+1)(x+3).' },
+        { difficulty: 'Medium', question: 'Factorise 3x² − 7x − 6.', checkMode: 'auto', correctAnswer: '(x-3)(3x+2)', correctAnswers: ['(x-3)(3x+2)', '(3x+2)(x-3)'], answer: '(3x + 2)(x − 3)', explanation: 'a×c = 3×(-6) = -18. Numbers multiplying to -18, adding to -7: -9 and 2. Split: 3x²-9x+2x-6. Group: 3x(x-3)+2(x-3) = (3x+2)(x-3).' },
+        { difficulty: 'Medium', question: 'Factorise 4x² − 9x + 2.', checkMode: 'auto', correctAnswer: '(x-2)(4x-1)', correctAnswers: ['(x-2)(4x-1)', '(4x-1)(x-2)'], answer: '(x − 2)(4x − 1)', explanation: 'a×c = 4×2 = 8. Numbers multiplying to 8, adding to -9: -8 and -1. Split: 4x²-8x-x+2. Group: 4x(x-2)-1(x-2) = (x-2)(4x-1).' },
+        { difficulty: 'Hard', question: 'Factorise 6x² + 5x − 6.', checkMode: 'auto', correctAnswer: '(2x+3)(3x-2)', correctAnswers: ['(2x+3)(3x-2)', '(3x-2)(2x+3)'], answer: '(2x + 3)(3x − 2)', explanation: 'a×c = 6×(-6) = -36. Numbers multiplying to -36, adding to 5: 9 and -4. Split: 6x²+9x-4x-6. Group: 3x(2x+3)-2(2x+3) = (2x+3)(3x-2).' },
+
+        // Block 4 — Factorise by grouping in pairs (Medium/Hard)
+        { difficulty: 'Medium', question: 'Factorise by grouping: 2x² + 10x + 3x + 15.', checkMode: 'auto', correctAnswer: '(x+5)(2x+3)', correctAnswers: ['(x+5)(2x+3)', '(2x+3)(x+5)'], answer: '(x + 5)(2x + 3)', explanation: 'Group: (2x²+10x)+(3x+15). Factor each pair: 2x(x+5)+3(x+5). Common binomial: (x+5)(2x+3).' },
+        { difficulty: 'Medium', question: 'Factorise by grouping: 3px − 3py + qx − qy.', checkMode: 'auto', correctAnswer: '(3p+q)(x-y)', correctAnswers: ['(3p+q)(x-y)', '(x-y)(3p+q)'], answer: '(3p + q)(x − y)', explanation: 'Group: (3px-3py)+(qx-qy). Factor each pair: 3p(x-y)+q(x-y). Common binomial: (3p+q)(x-y).' },
+        { difficulty: 'Hard', question: 'Factorise x³ − 3x² − 25x + 75 fully.', checkMode: 'auto', correctAnswer: '(x-3)(x-5)(x+5)', correctAnswers: ['(x-3)(x-5)(x+5)', '(x-5)(x-3)(x+5)', '(x-5)(x+5)(x-3)', '(x+5)(x-5)(x-3)', '(x+5)(x-3)(x-5)', '(x-3)(x+5)(x-5)'], answer: '(x − 3)(x − 5)(x + 5)', explanation: 'Group: (x³-3x²)+(-25x+75). Factor: x²(x-3)-25(x-3). Common binomial: (x-3)(x²-25). Recognise x²-25 as a difference of squares: (x-5)(x+5). Final: (x-3)(x-5)(x+5).' },
+
+        // Block 5 — Simplify a single algebraic fraction (Hard)
+        { difficulty: 'Hard', question: 'Simplify (14x² + 21x) / 7x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x+3', correctAnswers: ['2x+3', '2x + 3'], answer: '2x + 3', explanation: 'Factor the numerator: 14x²+21x = 7x(2x+3). Cancel the common factor 7x: 2x+3 (x ≠ 0).' },
+        { difficulty: 'Hard', question: 'Simplify (8x² − 12x) / 4x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x-3', correctAnswers: ['2x-3', '2x − 3'], answer: '2x − 3', explanation: 'Factor the numerator: 8x²-12x = 4x(2x-3). Cancel the common factor 4x: 2x-3 (x ≠ 0).' },
+        { difficulty: 'Hard', question: 'Simplify (x² + 5x) / x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: 'x+5', correctAnswers: ['x+5', 'x + 5'], answer: 'x + 5', explanation: 'Factor the numerator: x²+5x = x(x+5). Cancel the common factor x: x+5 (x ≠ 0).' },
+
+        // Block 6 — Add/subtract fractions with LCM / multi-step / error-spotting (Hard)
+        { difficulty: 'Hard', question: 'Calculate 4/x + 5/(2x) &nbsp;(x ≠ 0), simplifying fully.', checkMode: 'auto', correctAnswer: '13/(2x)', correctAnswers: ['13/(2x)', '13/2x'], answer: '13/(2x)', explanation: 'LCM of x and 2x is 2x. Convert: 8/(2x)+5/(2x) = 13/(2x).' },
+        { difficulty: 'Hard', question: 'Calculate 3/x² − 2/x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '(3-2x)/x²', correctAnswers: ['(3-2x)/x²', '(3−2x)/x²', '(3-2x)/x^2', '(3−2x)/x^2'], answer: '(3 − 2x)/x²', explanation: 'LCM of x² and x is x². 3/x² already has the LCM denominator. Convert 2/x = 2x/x². Combine: (3-2x)/x².' },
+        { difficulty: 'Hard', question: 'Calculate 5/(3x) + 1/(2x) &nbsp;(x ≠ 0), simplifying fully.', checkMode: 'auto', correctAnswer: '13/(6x)', correctAnswers: ['13/(6x)', '13/6x'], answer: '13/(6x)', explanation: 'LCM of 3x and 2x is 6x. Convert: 10/(6x)+3/(6x) = 13/(6x).' },
+        { difficulty: 'Hard', question: 'Simplify fully: (x² − 25)/(x + 5) &nbsp;(x ≠ −5).', checkMode: 'auto', correctAnswer: 'x-5', correctAnswers: ['x-5', 'x − 5'], answer: 'x − 5', explanation: 'Recognise x²-25 as a difference of squares: x²-25 = (x-5)(x+5). Write the fraction as (x-5)(x+5)/(x+5) and cancel (x+5): x-5.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered expanding, factorising and simplifying algebraic expressions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on the a×c method or algebraic fractions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on factorising and grouping, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

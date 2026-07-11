@@ -484,4 +484,150 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1 (0-2):   Classify a number as rational or irrational
+    // Block 2 (3-5):   Convert a terminating decimal to a fraction
+    // Block 3 (6-8):   Convert a recurring decimal to a fraction
+    // Block 4 (9-11):  Non-real numbers — does x² = k have a real solution?
+    // Block 5 (12-15): Linear number pattern — next term, nth term rule, specific term, find n
+    // Block 6 (16-19): Hard — real-life pattern word problems, repeating-cycle problems, verification
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Classify rational or irrational (Easy)
+        { difficulty: 'Easy', question: 'Is √49 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', answer: 'rational', explanation: '√49 = 7, which is an integer. It can be written as 7/1, a fraction of two integers, so it is rational ✓' },
+        { difficulty: 'Easy', question: 'Is √10 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', answer: 'irrational', explanation: '10 is not a perfect square, so √10 cannot be written as a whole number. Its decimal form never terminates or recurs, so it is irrational ✓' },
+        { difficulty: 'Easy', question: 'Is 0.45 (a terminating decimal) rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', answer: 'rational', explanation: 'A terminating decimal can always be written as a fraction of two integers (0.45 = 9/20), so it is rational ✓' },
+
+        // Block 2 — Convert terminating decimal to fraction (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Convert 0.45 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '9/20', answer: '9/20', explanation: '0.45 = 45/100. HCF of 45 and 100 is 5. Dividing both by 5: 45 ÷ 5 = 9, 100 ÷ 5 = 20. So 0.45 = 9/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Convert 0.36 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '9/25', answer: '9/25', explanation: '0.36 = 36/100. HCF of 36 and 100 is 4. Dividing both by 4: 36 ÷ 4 = 9, 100 ÷ 4 = 25. So 0.36 = 9/25 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Convert 0.15 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '3/20', answer: '3/20', explanation: '0.15 = 15/100. HCF of 15 and 100 is 5. Dividing both by 5: 15 ÷ 5 = 3, 100 ÷ 5 = 20. So 0.15 = 3/20 ✓' },
+
+        // Block 3 — Convert recurring decimal to fraction (Medium)
+        { difficulty: 'Medium', question: 'Convert the recurring decimal 0.777... to a fraction.', checkMode: 'auto', correctAnswer: '7/9', answer: '7/9', explanation: 'Let x = 0.777... Multiply both sides by 10: 10x = 7.777... Subtract the original: 9x = 7. So x = 7/9 ✓' },
+        { difficulty: 'Medium', question: 'Convert 0.1666... (repeating from the 6) to a fraction.', checkMode: 'auto', correctAnswer: '1/6', answer: '1/6', explanation: 'Let x = 0.1666... Then 10x = 1.666... and 100x = 16.666... Subtracting: 100x − 10x = 15, so 90x = 15, x = 15/90 = 1/6 ✓' },
+        { difficulty: 'Medium', question: 'Convert 0.363636... (repeating) to a fraction.', checkMode: 'auto', correctAnswer: '4/11', answer: '4/11', explanation: 'Let x = 0.363636... Then 100x = 36.363636... Subtracting: 100x − x = 36, so 99x = 36, x = 36/99 = 4/11 ✓' },
+
+        // Block 4 — Non-real numbers (Easy-Medium / Medium)
+        { difficulty: 'Easy-Medium', question: 'Does x² = 36 have a real solution?', checkMode: 'auto', correctAnswer: 'yes', answer: 'yes', explanation: 'x = ±√36 = ±6. Both 6 and −6 are real numbers, so x² = 36 has two real solutions ✓' },
+        { difficulty: 'Medium', question: 'Does x² = −81 have a real solution?', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No', 'no real solution', 'No real solution'], answer: 'no', explanation: 'Squaring any real number always gives a non-negative result. x² = −81 has no real solution because the square root of a negative number is not real ✓' },
+        { difficulty: 'Medium', question: 'How many real solutions does x² + 49 = 0 have?', checkMode: 'auto', correctAnswer: '0', answer: '0', explanation: 'x² + 49 = 0 means x² = −49. No real number squared gives a negative result, so there are 0 real solutions ✓' },
+
+        // Block 5 — Linear number pattern (Medium-Hard)
+        { difficulty: 'Medium', question: 'Find the next term in the pattern 7, 12, 17, 22.', checkMode: 'auto', correctAnswer: '27', answer: '27', explanation: 'Common difference = 12 − 7 = 5. Each term increases by 5. Next term: 22 + 5 = 27 ✓' },
+        { difficulty: 'Medium', question: 'Find the nth term of the pattern 4, 9, 14, 19.', checkMode: 'auto', correctAnswer: 'Tₙ=5n-1', correctAnswers: ['Tₙ=5n-1', 'Tₙ = 5n - 1', '5n-1', '5n - 1'], answer: 'Tₙ = 5n − 1', explanation: 'Common difference = 5. General form: Tₙ = 5n + c. Substituting T₁ = 4: 5(1) + c = 4, so c = −1. Rule: Tₙ = 5n − 1 ✓' },
+        { difficulty: 'Medium-Hard', question: "Sipho's pattern is 4, 9, 14, 19. Find the 25th term.", checkMode: 'auto', correctAnswer: '124', answer: '124', explanation: 'Common difference = 5. Tₙ = 5n − 1 (from the rule above). T₂₅ = 5(25) − 1 = 125 − 1 = 124 ✓' },
+        { difficulty: 'Hard', question: 'A pattern has nth term Tₙ=7n-3. Find which term number gives a value of 95.', checkMode: 'auto', correctAnswer: '14', answer: '14', explanation: '7n − 3 = 95. 7n = 98. n = 14. The 14th term equals 95 ✓' },
+
+        // Block 6 — Hard: real-life pattern problems, repeating cycles, self-check verification
+        { difficulty: 'Hard', question: "Lerato's savings (in rand) at the end of each week form the pattern 150, 280, 410, 540. Find the rule and predict her savings at the end of week 12.", checkMode: 'auto', correctAnswer: '1580', answer: '1580', explanation: 'Common difference = 130. Tₙ = 130n + c. T₁: 130(1) + c = 150, c = 20. Rule: Tₙ = 130n + 20. T₁₂ = 130(12) + 20 = 1560 + 20 = R1580 ✓' },
+        { difficulty: 'Hard', question: 'If the pattern ALGEBRAALGEBRAALGEBRA... continues, what is the 100th letter?', checkMode: 'auto', correctAnswer: 'L', answer: 'L', explanation: 'The repeating block ALGEBRA has 7 letters. 100 ÷ 7 = 14 remainder 2. The 2nd letter of ALGEBRA is L. The 100th letter is L ✓' },
+        { difficulty: 'Hard', question: 'Amahle says every terminating decimal is rational, but every recurring decimal is irrational. Is she correct? Explain.', answer: 'No — both terminating and recurring decimals are rational, because both can be written as a fraction a/b of two integers. Only decimals that never terminate or recur (like π) are irrational.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo says x²=64 and x²=-64 both have two real solutions. Verify whether this is true for each equation.', answer: 'x²=64: x=±8, both real, so two real solutions. x²=-64: would need x=±√(-64), but no real number squared gives a negative result, so no real solutions exist. Thabo is only correct for x²=64.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered numbers and patterns.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on decimals or number patterns and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on converting decimals and finding the nth term, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Classify rational or irrational (Easy)
+        { difficulty: 'Easy', question: 'Is √81 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', answer: 'rational', explanation: '√81 = 9, which is an integer. It can be written as 9/1, a fraction of two integers, so it is rational ✓' },
+        { difficulty: 'Easy', question: 'Is √2 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', answer: 'irrational', explanation: '2 is not a perfect square, so √2 cannot be written as a whole number. Its decimal form never terminates or recurs, so it is irrational ✓' },
+        { difficulty: 'Easy', question: 'Is 0.72 (a terminating decimal) rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', answer: 'rational', explanation: 'A terminating decimal can always be written as a fraction of two integers (0.72 = 18/25), so it is rational ✓' },
+
+        // Block 2 — Convert terminating decimal to fraction (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Convert 0.64 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '16/25', answer: '16/25', explanation: '0.64 = 64/100. HCF of 64 and 100 is 4. Dividing both by 4: 64 ÷ 4 = 16, 100 ÷ 4 = 25. So 0.64 = 16/25 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Convert 0.85 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '17/20', answer: '17/20', explanation: '0.85 = 85/100. HCF of 85 and 100 is 5. Dividing both by 5: 85 ÷ 5 = 17, 100 ÷ 5 = 20. So 0.85 = 17/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Convert 0.55 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '11/20', answer: '11/20', explanation: '0.55 = 55/100. HCF of 55 and 100 is 5. Dividing both by 5: 55 ÷ 5 = 11, 100 ÷ 5 = 20. So 0.55 = 11/20 ✓' },
+
+        // Block 3 — Convert recurring decimal to fraction (Medium)
+        { difficulty: 'Medium', question: 'Convert the recurring decimal 0.444... to a fraction.', checkMode: 'auto', correctAnswer: '4/9', answer: '4/9', explanation: 'Let x = 0.444... Multiply both sides by 10: 10x = 4.444... Subtract the original: 9x = 4. So x = 4/9 ✓' },
+        { difficulty: 'Medium', question: 'Convert 0.4166... (repeating from the 6) to a fraction.', checkMode: 'auto', correctAnswer: '5/12', answer: '5/12', explanation: 'Let x = 0.4166... Then 10x = 4.166... and 100x = 41.666... Subtracting: 100x − 10x = 37.5, so 90x = 37.5, x = 37.5/90 = 5/12 ✓' },
+        { difficulty: 'Medium', question: 'Convert 0.727272... (repeating) to a fraction.', checkMode: 'auto', correctAnswer: '8/11', answer: '8/11', explanation: 'Let x = 0.727272... Then 100x = 72.727272... Subtracting: 100x − x = 72, so 99x = 72, x = 72/99 = 8/11 ✓' },
+
+        // Block 4 — Non-real numbers (Easy-Medium / Medium)
+        { difficulty: 'Easy-Medium', question: 'Does x² = 144 have a real solution?', checkMode: 'auto', correctAnswer: 'yes', answer: 'yes', explanation: 'x = ±√144 = ±12. Both 12 and −12 are real numbers, so x² = 144 has two real solutions ✓' },
+        { difficulty: 'Medium', question: 'Does x² = −121 have a real solution?', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No', 'no real solution', 'No real solution'], answer: 'no', explanation: 'Squaring any real number always gives a non-negative result. x² = −121 has no real solution because the square root of a negative number is not real ✓' },
+        { difficulty: 'Medium', question: 'How many real solutions does x² + 25 = 0 have?', checkMode: 'auto', correctAnswer: '0', answer: '0', explanation: 'x² + 25 = 0 means x² = −25. No real number squared gives a negative result, so there are 0 real solutions ✓' },
+
+        // Block 5 — Linear number pattern (Medium-Hard)
+        { difficulty: 'Medium', question: 'Find the next term in the pattern 5, 11, 17, 23.', checkMode: 'auto', correctAnswer: '29', answer: '29', explanation: 'Common difference = 11 − 5 = 6. Each term increases by 6. Next term: 23 + 6 = 29 ✓' },
+        { difficulty: 'Medium', question: 'Find the nth term of the pattern 6, 13, 20, 27.', checkMode: 'auto', correctAnswer: 'Tₙ=7n-1', correctAnswers: ['Tₙ=7n-1', 'Tₙ = 7n - 1', '7n-1', '7n - 1'], answer: 'Tₙ = 7n − 1', explanation: 'Common difference = 7. General form: Tₙ = 7n + c. Substituting T₁ = 6: 7(1) + c = 6, so c = −1. Rule: Tₙ = 7n − 1 ✓' },
+        { difficulty: 'Medium-Hard', question: "Lerato's pattern is 6, 13, 20, 27. Find the 30th term.", checkMode: 'auto', correctAnswer: '209', answer: '209', explanation: 'Common difference = 7. Tₙ = 7n − 1 (from the rule above). T₃₀ = 7(30) − 1 = 210 − 1 = 209 ✓' },
+        { difficulty: 'Hard', question: 'A pattern has nth term Tₙ=8n-6. Find which term number gives a value of 90.', checkMode: 'auto', correctAnswer: '12', answer: '12', explanation: '8n − 6 = 90. 8n = 96. n = 12. The 12th term equals 90 ✓' },
+
+        // Block 6 — Hard: real-life pattern problems, repeating cycles, self-check verification
+        { difficulty: 'Hard', question: "Thabo's savings (in rand) at the end of each week form the pattern 175, 320, 465, 610. Find the rule and predict his savings at the end of week 10.", checkMode: 'auto', correctAnswer: '1480', answer: '1480', explanation: 'Common difference = 145. Tₙ = 145n + c. T₁: 145(1) + c = 175, c = 30. Rule: Tₙ = 145n + 30. T₁₀ = 145(10) + 30 = 1450 + 30 = R1480 ✓' },
+        { difficulty: 'Hard', question: 'If the pattern PATTERNPATTERNPATTERN... continues, what is the 130th letter?', checkMode: 'auto', correctAnswer: 'T', answer: 'T', explanation: 'The repeating block PATTERN has 7 letters. 130 ÷ 7 = 18 remainder 4. The 4th letter of PATTERN is T. The 130th letter is T ✓' },
+        { difficulty: 'Hard', question: 'Sipho says every recurring decimal can be converted to a fraction, but π cannot. Is he correct? Explain.', answer: 'Yes — recurring decimals are, by definition, rational and can always be expressed as a/b. π is irrational: its decimal never terminates or recurs, so it cannot be written as an exact fraction of two integers.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Amahle says x²=49 and x²=-49 both have two real solutions. Verify whether this is true for each equation.', answer: 'x²=49: x=±7, both real, so two real solutions. x²=-49: would need x=±√(-49), but no real number squared gives a negative result, so no real solutions exist. Amahle is only correct for x²=49.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered numbers and patterns.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on decimals or number patterns and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on converting decimals and finding the nth term, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Classify rational or irrational (Easy)
+        { difficulty: 'Easy', question: 'Is √121 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', answer: 'rational', explanation: '√121 = 11, which is an integer. It can be written as 11/1, a fraction of two integers, so it is rational ✓' },
+        { difficulty: 'Easy', question: 'Is √3 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', answer: 'irrational', explanation: '3 is not a perfect square, so √3 cannot be written as a whole number. Its decimal form never terminates or recurs, so it is irrational ✓' },
+        { difficulty: 'Easy', question: 'Is 0.28 (a terminating decimal) rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', answer: 'rational', explanation: 'A terminating decimal can always be written as a fraction of two integers (0.28 = 7/25), so it is rational ✓' },
+
+        // Block 2 — Convert terminating decimal to fraction (Easy-Medium)
+        { difficulty: 'Easy-Medium', question: 'Convert 0.35 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '7/20', answer: '7/20', explanation: '0.35 = 35/100. HCF of 35 and 100 is 5. Dividing both by 5: 35 ÷ 5 = 7, 100 ÷ 5 = 20. So 0.35 = 7/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Convert 0.65 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '13/20', answer: '13/20', explanation: '0.65 = 65/100. HCF of 65 and 100 is 5. Dividing both by 5: 65 ÷ 5 = 13, 100 ÷ 5 = 20. So 0.65 = 13/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Convert 0.125 to a fraction in simplest form.', checkMode: 'auto', correctAnswer: '1/8', answer: '1/8', explanation: '0.125 = 125/1000. HCF of 125 and 1000 is 125. Dividing both by 125: 125 ÷ 125 = 1, 1000 ÷ 125 = 8. So 0.125 = 1/8 ✓' },
+
+        // Block 3 — Convert recurring decimal to fraction (Medium)
+        { difficulty: 'Medium', question: 'Convert the recurring decimal 0.555... to a fraction.', checkMode: 'auto', correctAnswer: '5/9', answer: '5/9', explanation: 'Let x = 0.555... Multiply both sides by 10: 10x = 5.555... Subtract the original: 9x = 5. So x = 5/9 ✓' },
+        { difficulty: 'Medium', question: 'Convert 0.91666... (repeating from the 6) to a fraction.', checkMode: 'auto', correctAnswer: '11/12', answer: '11/12', explanation: 'Let x = 0.91666... Then 10x = 9.1666... and 100x = 91.666... Subtracting: 100x − 10x = 82.5, so 90x = 82.5, x = 82.5/90 = 11/12 ✓' },
+        { difficulty: 'Medium', question: 'Convert 0.636363... (repeating) to a fraction.', checkMode: 'auto', correctAnswer: '7/11', answer: '7/11', explanation: 'Let x = 0.636363... Then 100x = 63.636363... Subtracting: 100x − x = 63, so 99x = 63, x = 63/99 = 7/11 ✓' },
+
+        // Block 4 — Non-real numbers (Easy-Medium / Medium)
+        { difficulty: 'Easy-Medium', question: 'Does x² = 169 have a real solution?', checkMode: 'auto', correctAnswer: 'yes', answer: 'yes', explanation: 'x = ±√169 = ±13. Both 13 and −13 are real numbers, so x² = 169 has two real solutions ✓' },
+        { difficulty: 'Medium', question: 'Does x² = −100 have a real solution?', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No', 'no real solution', 'No real solution'], answer: 'no', explanation: 'Squaring any real number always gives a non-negative result. x² = −100 has no real solution because the square root of a negative number is not real ✓' },
+        { difficulty: 'Medium', question: 'How many real solutions does x² + 64 = 0 have?', checkMode: 'auto', correctAnswer: '0', answer: '0', explanation: 'x² + 64 = 0 means x² = −64. No real number squared gives a negative result, so there are 0 real solutions ✓' },
+
+        // Block 5 — Linear number pattern (Medium-Hard)
+        { difficulty: 'Medium', question: 'Find the next term in the pattern 9, 15, 21, 27.', checkMode: 'auto', correctAnswer: '33', answer: '33', explanation: 'Common difference = 15 − 9 = 6. Each term increases by 6. Next term: 27 + 6 = 33 ✓' },
+        { difficulty: 'Medium', question: 'Find the nth term of the pattern 3, 8, 13, 18.', checkMode: 'auto', correctAnswer: 'Tₙ=5n-2', correctAnswers: ['Tₙ=5n-2', 'Tₙ = 5n - 2', '5n-2', '5n - 2'], answer: 'Tₙ = 5n − 2', explanation: 'Common difference = 5. General form: Tₙ = 5n + c. Substituting T₁ = 3: 5(1) + c = 3, so c = −2. Rule: Tₙ = 5n − 2 ✓' },
+        { difficulty: 'Medium-Hard', question: "Amahle's pattern is 3, 8, 13, 18. Find the 40th term.", checkMode: 'auto', correctAnswer: '198', answer: '198', explanation: 'Common difference = 5. Tₙ = 5n − 2 (from the rule above). T₄₀ = 5(40) − 2 = 200 − 2 = 198 ✓' },
+        { difficulty: 'Hard', question: 'A pattern has nth term Tₙ=6n+7. Find which term number gives a value of 97.', checkMode: 'auto', correctAnswer: '15', answer: '15', explanation: '6n + 7 = 97. 6n = 90. n = 15. The 15th term equals 97 ✓' },
+
+        // Block 6 — Hard: real-life pattern problems, repeating cycles, self-check verification
+        { difficulty: 'Hard', question: "Sipho's savings (in rand) at the end of each week form the pattern 210, 305, 400, 495. Find the rule and predict his savings at the end of week 15.", checkMode: 'auto', correctAnswer: '1540', answer: '1540', explanation: 'Common difference = 95. Tₙ = 95n + c. T₁: 95(1) + c = 210, c = 115. Rule: Tₙ = 95n + 115. T₁₅ = 95(15) + 115 = 1425 + 115 = R1540 ✓' },
+        { difficulty: 'Hard', question: 'If the pattern NUMBERNUMBERNUMBER... continues, what is the 245th letter?', checkMode: 'auto', correctAnswer: 'E', answer: 'E', explanation: 'The repeating block NUMBER has 6 letters. 245 ÷ 6 = 40 remainder 5. The 5th letter of NUMBER is E. The 245th letter is E ✓' },
+        { difficulty: 'Hard', question: 'Lerato says 0.125 is irrational because it has three decimal places, and 0.363636... is also irrational because it never ends. Is she correct? Explain.', answer: 'No — 0.125 is a terminating decimal, so it is rational (0.125 = 1/8). And 0.363636... is a recurring decimal, which is also rational (it equals 4/11), even though its digits never stop. Only non-terminating, non-recurring decimals like π are irrational.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bongani says x²=100 and x²=-100 both have two real solutions. Verify whether this is true for each equation.', answer: 'x²=100: x=±10, both real, so two real solutions. x²=-100: would need x=±√(-100), but no real number squared gives a negative result, so no real solutions exist. Bongani is only correct for x²=100.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered numbers and patterns.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on decimals or number patterns and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on converting decimals and finding the nth term, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

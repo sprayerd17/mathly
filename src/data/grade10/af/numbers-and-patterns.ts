@@ -484,4 +484,150 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blok 1 (0-2):   Klassifiseer 'n getal as rasionaal of irrasionaal
+    // Blok 2 (3-5):   Skakel 'n eindigende desimaal om na 'n breuk
+    // Blok 3 (6-8):   Skakel 'n herhalende desimaal om na 'n breuk
+    // Blok 4 (9-11):  Nie-reële getalle — het x² = k 'n reële oplossing?
+    // Blok 5 (12-15): Liniêre getalpatroon — volgende term, n-de term reël, spesifieke term, vind n
+    // Blok 6 (16-19): Moeilik — werklike-lewe patroonprobleme, herhalende siklusse, verifikasie
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Klassifiseer rasionaal of irrasionaal (Maklik)
+        { difficulty: 'Easy', question: 'Is √49 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: '√49 = 7, wat ʼn heelgetal is. Dit kan as 7/1 geskryf word, ʼn breuk van twee heelgetalle, dus is dit rasionaal ✓' },
+        { difficulty: 'Easy', question: 'Is √10 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', answer: 'irrasionaal', explanation: '10 is nie ʼn volkome vierkant nie, dus kan √10 nie as ʼn heelgetal geskryf word nie. Sy desimale vorm eindig of herhaal nooit nie, dus is dit irrasionaal ✓' },
+        { difficulty: 'Easy', question: 'Is 0,45 (ʼn eindigende desimaal) rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: 'ʼn Eindigende desimaal kan altyd as ʼn breuk van twee heelgetalle geskryf word (0,45 = 9/20), dus is dit rasionaal ✓' },
+
+        // Blok 2 — Skakel eindigende desimaal om na breuk (Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,45 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '9/20', answer: '9/20', explanation: '0,45 = 45/100. Die GGF van 45 en 100 is 5. As ons albei deur 5 deel: 45 ÷ 5 = 9, 100 ÷ 5 = 20. Dus 0,45 = 9/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,36 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '9/25', answer: '9/25', explanation: '0,36 = 36/100. Die GGF van 36 en 100 is 4. As ons albei deur 4 deel: 36 ÷ 4 = 9, 100 ÷ 4 = 25. Dus 0,36 = 9/25 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,15 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3/20', answer: '3/20', explanation: '0,15 = 15/100. Die GGF van 15 en 100 is 5. As ons albei deur 5 deel: 15 ÷ 5 = 3, 100 ÷ 5 = 20. Dus 0,15 = 3/20 ✓' },
+
+        // Blok 3 — Skakel herhalende desimaal om na breuk (Medium)
+        { difficulty: 'Medium', question: 'Skakel die herhalende desimaal 0,777... om na ʼn breuk.', checkMode: 'auto', correctAnswer: '7/9', answer: '7/9', explanation: 'Laat x = 0,777... Vermenigvuldig altwee kante met 10: 10x = 7,777... Trek die oorspronklike af: 9x = 7. Dus x = 7/9 ✓' },
+        { difficulty: 'Medium', question: 'Skakel 0,1666... (herhalend vanaf die 6) om na ʼn breuk.', checkMode: 'auto', correctAnswer: '1/6', answer: '1/6', explanation: 'Laat x = 0,1666... Dan 10x = 1,666... en 100x = 16,666... Trek af: 100x − 10x = 15, dus 90x = 15, x = 15/90 = 1/6 ✓' },
+        { difficulty: 'Medium', question: 'Skakel 0,363636... (herhalend) om na ʼn breuk.', checkMode: 'auto', correctAnswer: '4/11', answer: '4/11', explanation: 'Laat x = 0,363636... Dan 100x = 36,363636... Trek af: 100x − x = 36, dus 99x = 36, x = 36/99 = 4/11 ✓' },
+
+        // Blok 4 — Nie-reële getalle (Maklik-Medium / Medium)
+        { difficulty: 'Easy-Medium', question: 'Het x² = 36 ʼn reële oplossing?', checkMode: 'auto', correctAnswer: 'ja', answer: 'ja', explanation: 'x = ±√36 = ±6. Beide 6 en −6 is reële getalle, dus het x² = 36 twee reële oplossings ✓' },
+        { difficulty: 'Medium', question: 'Het x² = −81 ʼn reële oplossing?', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee', 'Nee', 'geen reële oplossing', 'Geen reële oplossing'], answer: 'nee', explanation: 'Om enige reële getal in die kwadraat te bring, gee altyd ʼn nie-negatiewe resultaat. x² = −81 het geen reële oplossing nie omdat die vierkantswortel van ʼn negatiewe getal nie reëel is nie ✓' },
+        { difficulty: 'Medium', question: 'Hoeveel reële oplossings het x² + 49 = 0?', checkMode: 'auto', correctAnswer: '0', answer: '0', explanation: 'x² + 49 = 0 beteken x² = −49. Geen reële getal in die kwadraat gee ʼn negatiewe resultaat nie, dus is daar 0 reële oplossings ✓' },
+
+        // Blok 5 — Liniêre getalpatroon (Medium-Moeilik)
+        { difficulty: 'Medium', question: 'Vind die volgende term in die patroon 7, 12, 17, 22.', checkMode: 'auto', correctAnswer: '27', answer: '27', explanation: 'Gemeenskaplike verskil = 12 − 7 = 5. Elke term neem met 5 toe. Volgende term: 22 + 5 = 27 ✓' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die patroon 4, 9, 14, 19.', checkMode: 'auto', correctAnswer: 'Tₙ=5n-1', correctAnswers: ['Tₙ=5n-1', 'Tₙ = 5n - 1', '5n-1', '5n - 1'], answer: 'Tₙ = 5n − 1', explanation: 'Gemeenskaplike verskil = 5. Algemene vorm: Tₙ = 5n + c. Deur T₁ = 4 te vervang: 5(1) + c = 4, dus c = −1. Reël: Tₙ = 5n − 1 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Sipho se patroon is 4, 9, 14, 19. Vind die 25ste term.', checkMode: 'auto', correctAnswer: '124', answer: '124', explanation: 'Gemeenskaplike verskil = 5. Tₙ = 5n − 1 (van die reël hierbo). T₂₅ = 5(25) − 1 = 125 − 1 = 124 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Patroon het n-de term Tₙ=7n-3. Vind watter termnommer ʼn waarde van 95 gee.', checkMode: 'auto', correctAnswer: '14', answer: '14', explanation: '7n − 3 = 95. 7n = 98. n = 14. Die 14de term is gelyk aan 95 ✓' },
+
+        // Blok 6 — Moeilik: werklike-lewe patroonprobleme, herhalende siklusse, self-verifikasie
+        { difficulty: 'Hard', question: "Lerato se spaargeld (in rand) aan die einde van elke week vorm die patroon 150, 280, 410, 540. Vind die reël en voorspel haar spaargeld aan die einde van week 12.", checkMode: 'auto', correctAnswer: '1580', answer: '1580', explanation: 'Gemeenskaplike verskil = 130. Tₙ = 130n + c. T₁: 130(1) + c = 150, c = 20. Reël: Tₙ = 130n + 20. T₁₂ = 130(12) + 20 = 1560 + 20 = R1580 ✓' },
+        { difficulty: 'Hard', question: 'As die patroon ALGEBRAALGEBRAALGEBRA... voortduur, wat is die 100ste letter?', checkMode: 'auto', correctAnswer: 'L', answer: 'L', explanation: 'Die herhalende blok ALGEBRA het 7 letters. 100 ÷ 7 = 14 res 2. Die 2de letter van ALGEBRA is L. Die 100ste letter is L ✓' },
+        { difficulty: 'Hard', question: 'Amahle sê elke eindigende desimaal is rasionaal, maar elke herhalende desimaal is irrasionaal. Is sy korrek? Verduidelik.', answer: 'Nee — beide eindigende en herhalende desimale is rasionaal, want beide kan as ʼn breuk a/b van twee heelgetalle geskryf word. Slegs desimale wat nooit eindig of herhaal nie (soos π) is irrasionaal.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo sê x²=64 en x²=-64 het altwee twee reële oplossings. Verifieer of dit waar is vir elke vergelyking.', answer: 'x²=64: x=±8, altwee reëel, dus twee reële oplossings. x²=-64: sou x=±√(-64) benodig, maar geen reële getal in die kwadraat gee ʼn negatiewe resultaat nie, dus bestaan daar geen reële oplossings nie. Thabo is slegs korrek vir x²=64.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het getalle en patrone bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor desimale of getalpatrone en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die omskakeling van desimale en die vind van die n-de term weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Klassifiseer rasionaal of irrasionaal (Maklik)
+        { difficulty: 'Easy', question: 'Is √81 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: '√81 = 9, wat ʼn heelgetal is. Dit kan as 9/1 geskryf word, ʼn breuk van twee heelgetalle, dus is dit rasionaal ✓' },
+        { difficulty: 'Easy', question: 'Is √2 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', answer: 'irrasionaal', explanation: '2 is nie ʼn volkome vierkant nie, dus kan √2 nie as ʼn heelgetal geskryf word nie. Sy desimale vorm eindig of herhaal nooit nie, dus is dit irrasionaal ✓' },
+        { difficulty: 'Easy', question: 'Is 0,72 (ʼn eindigende desimaal) rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: 'ʼn Eindigende desimaal kan altyd as ʼn breuk van twee heelgetalle geskryf word (0,72 = 18/25), dus is dit rasionaal ✓' },
+
+        // Blok 2 — Skakel eindigende desimaal om na breuk (Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,64 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '16/25', answer: '16/25', explanation: '0,64 = 64/100. Die GGF van 64 en 100 is 4. As ons albei deur 4 deel: 64 ÷ 4 = 16, 100 ÷ 4 = 25. Dus 0,64 = 16/25 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,85 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '17/20', answer: '17/20', explanation: '0,85 = 85/100. Die GGF van 85 en 100 is 5. As ons albei deur 5 deel: 85 ÷ 5 = 17, 100 ÷ 5 = 20. Dus 0,85 = 17/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,55 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '11/20', answer: '11/20', explanation: '0,55 = 55/100. Die GGF van 55 en 100 is 5. As ons albei deur 5 deel: 55 ÷ 5 = 11, 100 ÷ 5 = 20. Dus 0,55 = 11/20 ✓' },
+
+        // Blok 3 — Skakel herhalende desimaal om na breuk (Medium)
+        { difficulty: 'Medium', question: 'Skakel die herhalende desimaal 0,444... om na ʼn breuk.', checkMode: 'auto', correctAnswer: '4/9', answer: '4/9', explanation: 'Laat x = 0,444... Vermenigvuldig altwee kante met 10: 10x = 4,444... Trek die oorspronklike af: 9x = 4. Dus x = 4/9 ✓' },
+        { difficulty: 'Medium', question: 'Skakel 0,4166... (herhalend vanaf die 6) om na ʼn breuk.', checkMode: 'auto', correctAnswer: '5/12', answer: '5/12', explanation: 'Laat x = 0,4166... Dan 10x = 4,166... en 100x = 41,666... Trek af: 100x − 10x = 37,5, dus 90x = 37,5, x = 37,5/90 = 5/12 ✓' },
+        { difficulty: 'Medium', question: 'Skakel 0,727272... (herhalend) om na ʼn breuk.', checkMode: 'auto', correctAnswer: '8/11', answer: '8/11', explanation: 'Laat x = 0,727272... Dan 100x = 72,727272... Trek af: 100x − x = 72, dus 99x = 72, x = 72/99 = 8/11 ✓' },
+
+        // Blok 4 — Nie-reële getalle (Maklik-Medium / Medium)
+        { difficulty: 'Easy-Medium', question: 'Het x² = 144 ʼn reële oplossing?', checkMode: 'auto', correctAnswer: 'ja', answer: 'ja', explanation: 'x = ±√144 = ±12. Beide 12 en −12 is reële getalle, dus het x² = 144 twee reële oplossings ✓' },
+        { difficulty: 'Medium', question: 'Het x² = −121 ʼn reële oplossing?', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee', 'Nee', 'geen reële oplossing', 'Geen reële oplossing'], answer: 'nee', explanation: 'Om enige reële getal in die kwadraat te bring, gee altyd ʼn nie-negatiewe resultaat. x² = −121 het geen reële oplossing nie omdat die vierkantswortel van ʼn negatiewe getal nie reëel is nie ✓' },
+        { difficulty: 'Medium', question: 'Hoeveel reële oplossings het x² + 25 = 0?', checkMode: 'auto', correctAnswer: '0', answer: '0', explanation: 'x² + 25 = 0 beteken x² = −25. Geen reële getal in die kwadraat gee ʼn negatiewe resultaat nie, dus is daar 0 reële oplossings ✓' },
+
+        // Blok 5 — Liniêre getalpatroon (Medium-Moeilik)
+        { difficulty: 'Medium', question: 'Vind die volgende term in die patroon 5, 11, 17, 23.', checkMode: 'auto', correctAnswer: '29', answer: '29', explanation: 'Gemeenskaplike verskil = 11 − 5 = 6. Elke term neem met 6 toe. Volgende term: 23 + 6 = 29 ✓' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die patroon 6, 13, 20, 27.', checkMode: 'auto', correctAnswer: 'Tₙ=7n-1', correctAnswers: ['Tₙ=7n-1', 'Tₙ = 7n - 1', '7n-1', '7n - 1'], answer: 'Tₙ = 7n − 1', explanation: 'Gemeenskaplike verskil = 7. Algemene vorm: Tₙ = 7n + c. Deur T₁ = 6 te vervang: 7(1) + c = 6, dus c = −1. Reël: Tₙ = 7n − 1 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Lerato se patroon is 6, 13, 20, 27. Vind die 30ste term.', checkMode: 'auto', correctAnswer: '209', answer: '209', explanation: 'Gemeenskaplike verskil = 7. Tₙ = 7n − 1 (van die reël hierbo). T₃₀ = 7(30) − 1 = 210 − 1 = 209 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Patroon het n-de term Tₙ=8n-6. Vind watter termnommer ʼn waarde van 90 gee.', checkMode: 'auto', correctAnswer: '12', answer: '12', explanation: '8n − 6 = 90. 8n = 96. n = 12. Die 12de term is gelyk aan 90 ✓' },
+
+        // Blok 6 — Moeilik: werklike-lewe patroonprobleme, herhalende siklusse, self-verifikasie
+        { difficulty: 'Hard', question: 'Thabo se spaargeld (in rand) aan die einde van elke week vorm die patroon 175, 320, 465, 610. Vind die reël en voorspel sy spaargeld aan die einde van week 10.', checkMode: 'auto', correctAnswer: '1480', answer: '1480', explanation: 'Gemeenskaplike verskil = 145. Tₙ = 145n + c. T₁: 145(1) + c = 175, c = 30. Reël: Tₙ = 145n + 30. T₁₀ = 145(10) + 30 = 1450 + 30 = R1480 ✓' },
+        { difficulty: 'Hard', question: 'As die patroon PATTERNPATTERNPATTERN... voortduur, wat is die 130ste letter?', checkMode: 'auto', correctAnswer: 'T', answer: 'T', explanation: 'Die herhalende blok PATTERN het 7 letters. 130 ÷ 7 = 18 res 4. Die 4de letter van PATTERN is T. Die 130ste letter is T ✓' },
+        { difficulty: 'Hard', question: 'Sipho sê elke herhalende desimaal kan na ʼn breuk omgeskakel word, maar π kan nie. Is hy korrek? Verduidelik.', answer: 'Ja — herhalende desimale is per definisie rasionaal en kan altyd as a/b uitgedruk word. π is irrasionaal: sy desimaal eindig of herhaal nooit nie, dus kan dit nie as ʼn presiese breuk van twee heelgetalle geskryf word nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Amahle sê x²=49 en x²=-49 het altwee twee reële oplossings. Verifieer of dit waar is vir elke vergelyking.', answer: 'x²=49: x=±7, altwee reëel, dus twee reële oplossings. x²=-49: sou x=±√(-49) benodig, maar geen reële getal in die kwadraat gee ʼn negatiewe resultaat nie, dus bestaan daar geen reële oplossings nie. Amahle is slegs korrek vir x²=49.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het getalle en patrone bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor desimale of getalpatrone en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die omskakeling van desimale en die vind van die n-de term weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Klassifiseer rasionaal of irrasionaal (Maklik)
+        { difficulty: 'Easy', question: 'Is √121 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: '√121 = 11, wat ʼn heelgetal is. Dit kan as 11/1 geskryf word, ʼn breuk van twee heelgetalle, dus is dit rasionaal ✓' },
+        { difficulty: 'Easy', question: 'Is √3 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', answer: 'irrasionaal', explanation: '3 is nie ʼn volkome vierkant nie, dus kan √3 nie as ʼn heelgetal geskryf word nie. Sy desimale vorm eindig of herhaal nooit nie, dus is dit irrasionaal ✓' },
+        { difficulty: 'Easy', question: 'Is 0,28 (ʼn eindigende desimaal) rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: 'ʼn Eindigende desimaal kan altyd as ʼn breuk van twee heelgetalle geskryf word (0,28 = 7/25), dus is dit rasionaal ✓' },
+
+        // Blok 2 — Skakel eindigende desimaal om na breuk (Maklik-Medium)
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,35 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '7/20', answer: '7/20', explanation: '0,35 = 35/100. Die GGF van 35 en 100 is 5. As ons albei deur 5 deel: 35 ÷ 5 = 7, 100 ÷ 5 = 20. Dus 0,35 = 7/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,65 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '13/20', answer: '13/20', explanation: '0,65 = 65/100. Die GGF van 65 en 100 is 5. As ons albei deur 5 deel: 65 ÷ 5 = 13, 100 ÷ 5 = 20. Dus 0,65 = 13/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,125 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '1/8', answer: '1/8', explanation: '0,125 = 125/1000. Die GGF van 125 en 1000 is 125. As ons albei deur 125 deel: 125 ÷ 125 = 1, 1000 ÷ 125 = 8. Dus 0,125 = 1/8 ✓' },
+
+        // Blok 3 — Skakel herhalende desimaal om na breuk (Medium)
+        { difficulty: 'Medium', question: 'Skakel die herhalende desimaal 0,555... om na ʼn breuk.', checkMode: 'auto', correctAnswer: '5/9', answer: '5/9', explanation: 'Laat x = 0,555... Vermenigvuldig altwee kante met 10: 10x = 5,555... Trek die oorspronklike af: 9x = 5. Dus x = 5/9 ✓' },
+        { difficulty: 'Medium', question: 'Skakel 0,91666... (herhalend vanaf die 6) om na ʼn breuk.', checkMode: 'auto', correctAnswer: '11/12', answer: '11/12', explanation: 'Laat x = 0,91666... Dan 10x = 9,1666... en 100x = 91,666... Trek af: 100x − 10x = 82,5, dus 90x = 82,5, x = 82,5/90 = 11/12 ✓' },
+        { difficulty: 'Medium', question: 'Skakel 0,636363... (herhalend) om na ʼn breuk.', checkMode: 'auto', correctAnswer: '7/11', answer: '7/11', explanation: 'Laat x = 0,636363... Dan 100x = 63,636363... Trek af: 100x − x = 63, dus 99x = 63, x = 63/99 = 7/11 ✓' },
+
+        // Blok 4 — Nie-reële getalle (Maklik-Medium / Medium)
+        { difficulty: 'Easy-Medium', question: 'Het x² = 169 ʼn reële oplossing?', checkMode: 'auto', correctAnswer: 'ja', answer: 'ja', explanation: 'x = ±√169 = ±13. Beide 13 en −13 is reële getalle, dus het x² = 169 twee reële oplossings ✓' },
+        { difficulty: 'Medium', question: 'Het x² = −100 ʼn reële oplossing?', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee', 'Nee', 'geen reële oplossing', 'Geen reële oplossing'], answer: 'nee', explanation: 'Om enige reële getal in die kwadraat te bring, gee altyd ʼn nie-negatiewe resultaat. x² = −100 het geen reële oplossing nie omdat die vierkantswortel van ʼn negatiewe getal nie reëel is nie ✓' },
+        { difficulty: 'Medium', question: 'Hoeveel reële oplossings het x² + 64 = 0?', checkMode: 'auto', correctAnswer: '0', answer: '0', explanation: 'x² + 64 = 0 beteken x² = −64. Geen reële getal in die kwadraat gee ʼn negatiewe resultaat nie, dus is daar 0 reële oplossings ✓' },
+
+        // Blok 5 — Liniêre getalpatroon (Medium-Moeilik)
+        { difficulty: 'Medium', question: 'Vind die volgende term in die patroon 9, 15, 21, 27.', checkMode: 'auto', correctAnswer: '33', answer: '33', explanation: 'Gemeenskaplike verskil = 15 − 9 = 6. Elke term neem met 6 toe. Volgende term: 27 + 6 = 33 ✓' },
+        { difficulty: 'Medium', question: 'Vind die n-de term van die patroon 3, 8, 13, 18.', checkMode: 'auto', correctAnswer: 'Tₙ=5n-2', correctAnswers: ['Tₙ=5n-2', 'Tₙ = 5n - 2', '5n-2', '5n - 2'], answer: 'Tₙ = 5n − 2', explanation: 'Gemeenskaplike verskil = 5. Algemene vorm: Tₙ = 5n + c. Deur T₁ = 3 te vervang: 5(1) + c = 3, dus c = −2. Reël: Tₙ = 5n − 2 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Amahle se patroon is 3, 8, 13, 18. Vind die 40ste term.', checkMode: 'auto', correctAnswer: '198', answer: '198', explanation: 'Gemeenskaplike verskil = 5. Tₙ = 5n − 2 (van die reël hierbo). T₄₀ = 5(40) − 2 = 200 − 2 = 198 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Patroon het n-de term Tₙ=6n+7. Vind watter termnommer ʼn waarde van 97 gee.', checkMode: 'auto', correctAnswer: '15', answer: '15', explanation: '6n + 7 = 97. 6n = 90. n = 15. Die 15de term is gelyk aan 97 ✓' },
+
+        // Blok 6 — Moeilik: werklike-lewe patroonprobleme, herhalende siklusse, self-verifikasie
+        { difficulty: 'Hard', question: 'Sipho se spaargeld (in rand) aan die einde van elke week vorm die patroon 210, 305, 400, 495. Vind die reël en voorspel sy spaargeld aan die einde van week 15.', checkMode: 'auto', correctAnswer: '1540', answer: '1540', explanation: 'Gemeenskaplike verskil = 95. Tₙ = 95n + c. T₁: 95(1) + c = 210, c = 115. Reël: Tₙ = 95n + 115. T₁₅ = 95(15) + 115 = 1425 + 115 = R1540 ✓' },
+        { difficulty: 'Hard', question: 'As die patroon NUMBERNUMBERNUMBER... voortduur, wat is die 245ste letter?', checkMode: 'auto', correctAnswer: 'E', answer: 'E', explanation: 'Die herhalende blok NUMBER het 6 letters. 245 ÷ 6 = 40 res 5. Die 5de letter van NUMBER is E. Die 245ste letter is E ✓' },
+        { difficulty: 'Hard', question: 'Lerato sê 0,125 is irrasionaal omdat dit drie desimale plekke het, en 0,363636... is ook irrasionaal omdat dit nooit eindig nie. Is sy korrek? Verduidelik.', answer: 'Nee — 0,125 is ʼn eindigende desimaal, dus is dit rasionaal (0,125 = 1/8). En 0,363636... is ʼn herhalende desimaal, wat ook rasionaal is (dit is gelyk aan 4/11), al hou die syfers nooit op nie. Slegs desimale wat nooit eindig of herhaal nie, soos π, is irrasionaal.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bongani sê x²=100 en x²=-100 het altwee twee reële oplossings. Verifieer of dit waar is vir elke vergelyking.', answer: 'x²=100: x=±10, altwee reëel, dus twee reële oplossings. x²=-100: sou x=±√(-100) benodig, maar geen reële getal in die kwadraat gee ʼn negatiewe resultaat nie, dus bestaan daar geen reële oplossings nie. Bongani is slegs korrek vir x²=100.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het getalle en patrone bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor desimale of getalpatrone en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die omskakeling van desimale en die vind van die n-de term weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }
