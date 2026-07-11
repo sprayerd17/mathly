@@ -470,4 +470,150 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1: Order of operations / BODMAS (Q1-4)
+    // Block 2: Properties of operations (Q5-8)
+    // Block 3: Error-spotting / critique (Q9-11)
+    // Block 4: Multi-step word problems (Q12-15)
+    // Block 5: Large-number multi-step calculations (Q16-18)
+    // Block 6: Mixed / applied reasoning (Q19-20)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Order of operations / BODMAS
+        { difficulty: 'Easy', question: 'Calculate: 8 + 6 × 5', answer: '38', checkMode: 'auto', correctAnswer: '38', explanation: 'Multiplication before addition: 6 × 5 = 30, then 8 + 30 = 38 ✓' },
+        { difficulty: 'Easy', question: 'Calculate: (14 − 6) × 3 + 7', answer: '31', checkMode: 'auto', correctAnswer: '31', explanation: 'Brackets first: 14 − 6 = 8. Then multiply: 8 × 3 = 24. Then add: 24 + 7 = 31 ✓' },
+        { difficulty: 'Medium', question: 'Calculate: 40 − 24 ÷ 4 + 2 × 3', answer: '40', checkMode: 'auto', correctAnswer: '40', explanation: 'Division and multiplication first: 24 ÷ 4 = 6 and 2 × 3 = 6. Then work left to right: 40 − 6 + 6 = 34 + 6 = 40 ✓' },
+        { difficulty: 'Medium', question: 'Calculate: 3² + 4 × 5', answer: '29', checkMode: 'auto', correctAnswer: '29', explanation: 'Powers first: 3² = 9. Then multiplication: 4 × 5 = 20. Then add: 9 + 20 = 29 ✓' },
+
+        // Block 2 — Properties of operations
+        { difficulty: 'Easy', question: 'Use the distributive property to write 8 × (50 + 3) as two separate products, then calculate the answer.', answer: '(8×50)+(8×3) = 400+24 = 424', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Use the associative property to calculate (7 × 25) × 4 by regrouping to make the calculation easier. What is the answer?', answer: '700', checkMode: 'auto', correctAnswer: '700', explanation: 'Associative property lets us regroup: 7 × (25 × 4) = 7 × 100 = 700. Calculating the original way also gives (7 × 25) × 4 = 175 × 4 = 700 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate 12 × (20 − 3).', answer: '204', checkMode: 'auto', correctAnswer: '204', explanation: 'Distribute: 12 × (20 − 3) = (12 × 20) − (12 × 3) = 240 − 36 = 204 ✓' },
+        { difficulty: 'Medium', question: 'Nomvula says 25 × (8 + 2) gives the same answer whether she calculates the brackets first or uses the distributive property. Show both methods and state the answer.', answer: 'Brackets first: 25×(8+2)=25×10=250. Distributive: (25×8)+(25×2)=200+50=250. Both give 250, so Nomvula is correct.', checkMode: 'self' },
+
+        // Block 3 — Error-spotting / critique
+        { difficulty: 'Medium', question: 'Zanele calculates 6 + 4 × 2 by working left to right and gets (6+4) × 2 = 20. What is the correct answer, and what did she do wrong?', answer: '14. She should have done multiplication before addition: 6+4×2 = 6+8 = 14, not added first.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bongani calculates 30 − (10 − 4) by ignoring the brackets and writing 30 − 10 − 4 = 16. What is the correct answer?', answer: '24', checkMode: 'auto', correctAnswer: '24', explanation: 'Brackets must be evaluated first: 10 − 4 = 6, then 30 − 6 = 24. Bongani\'s method of removing the brackets is incorrect ✓' },
+        { difficulty: 'Hard', question: 'Kagiso says 5 × (6 + 4) is the same as 5 × 6 + 4. Calculate both expressions and explain whether he is correct.', answer: '5×(6+4)=5×10=50. 5×6+4=30+4=34. They are not equal, so Kagiso is incorrect — the brackets change which numbers are multiplied.', checkMode: 'self' },
+
+        // Block 4 — Multi-step word problems
+        { difficulty: 'Easy', question: 'Thabo buys 4 packs of apples with 12 apples in each pack. He eats 9 apples. How many apples does he have left?', answer: '39', checkMode: 'auto', correctAnswer: '39', explanation: 'Total apples = 4 × 12 = 48. Apples left = 48 − 9 = 39 ✓' },
+        { difficulty: 'Medium', question: 'A cinema sells 45 child tickets at R15 each and 12 adult tickets at R25 each. What is the total amount collected?', answer: 'R975', checkMode: 'auto', correctAnswer: 'R975', correctAnswers: ['R975', '975'], explanation: 'Child tickets: 45 × R15 = R675. Adult tickets: 12 × R25 = R300. Total = R675 + R300 = R975 ✓' },
+        { difficulty: 'Medium', question: 'A stationery shop has 6 boxes of 24 pencils. The shop sells 38 pencils. How many pencils are left?', answer: '106', checkMode: 'auto', correctAnswer: '106', explanation: 'Total pencils = 6 × 24 = 144. Pencils left = 144 − 38 = 106 ✓' },
+        { difficulty: 'Hard', question: 'A school hires 8 buses that each carry 54 learners, and 3 minibuses that each carry 29 learners, for a trip. How many learners can travel in total?', answer: '519', checkMode: 'auto', correctAnswer: '519', explanation: 'Buses: 8 × 54 = 432. Minibuses: 3 × 29 = 87. Total = 432 + 87 = 519 ✓' },
+
+        // Block 5 — Large-number multi-step calculations
+        { difficulty: 'Medium', question: 'A factory produces 4 500 items on Monday and Tuesday combined at the same daily rate, plus a separate batch of 3 200 items already in stock. If it produced 4 500 items per day for those two days, calculate: 3 200 + 4 500 × 2.', answer: '12200', checkMode: 'auto', correctAnswer: '12200', correctAnswers: ['12200', '12 200'], explanation: 'Multiplication first: 4 500 × 2 = 9 000. Then add: 3 200 + 9 000 = 12 200 ✓' },
+        { difficulty: 'Hard', question: 'A farmer harvests 1 250 kg of maize per hectare from 8 hectares, then sells 3 600 kg at the local market. How many kilograms of maize remain?', answer: '6400', checkMode: 'auto', correctAnswer: '6400', correctAnswers: ['6400', '6 400'], explanation: 'Total harvested = 1 250 × 8 = 10 000 kg. Remaining = 10 000 − 3 600 = 6 400 kg ✓' },
+        { difficulty: 'Hard', question: 'A municipality starts the year with 15 000 households connected to water. It connects an extra 2 400 households every year for the next 5 years. Calculate the total number of connected households after 5 years, and show your working using the correct order of operations.', answer: '15000+2400×5. Multiplication first: 2400×5=12000. Then add: 15000+12000=27000 households.', checkMode: 'self' },
+
+        // Block 6 — Mixed / applied reasoning
+        { difficulty: 'Medium', question: 'A learner says 6 × (3 + 2) gives the same result as 6 × 3 + 6 × 2. Calculate both sides and state whether this shows the distributive property is true here.', answer: '6×(3+2)=6×5=30. 6×3+6×2=18+12=30. Both equal 30, confirming the distributive property.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Calculate 3 × (120 − 45) + 18 using the correct order of operations, and show each step.', answer: '243', checkMode: 'auto', correctAnswer: '243', explanation: 'Brackets first: 120 − 45 = 75. Then multiply: 3 × 75 = 225. Then add: 225 + 18 = 243 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered order of operations and the properties of whole numbers.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit BODMAS and the distributive property, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Order of operations / BODMAS
+        { difficulty: 'Easy', question: 'Calculate: 9 + 7 × 4', answer: '37', checkMode: 'auto', correctAnswer: '37', explanation: 'Multiplication before addition: 7 × 4 = 28, then 9 + 28 = 37 ✓' },
+        { difficulty: 'Easy', question: 'Calculate: (18 − 9) × 4 + 5', answer: '41', checkMode: 'auto', correctAnswer: '41', explanation: 'Brackets first: 18 − 9 = 9. Then multiply: 9 × 4 = 36. Then add: 36 + 5 = 41 ✓' },
+        { difficulty: 'Medium', question: 'Calculate: 50 − 36 ÷ 6 + 3 × 4', answer: '56', checkMode: 'auto', correctAnswer: '56', explanation: 'Division and multiplication first: 36 ÷ 6 = 6 and 3 × 4 = 12. Then work left to right: 50 − 6 + 12 = 44 + 12 = 56 ✓' },
+        { difficulty: 'Medium', question: 'Calculate: 4² + 5 × 6', answer: '46', checkMode: 'auto', correctAnswer: '46', explanation: 'Powers first: 4² = 16. Then multiplication: 5 × 6 = 30. Then add: 16 + 30 = 46 ✓' },
+
+        // Block 2 — Properties of operations
+        { difficulty: 'Easy', question: 'Use the distributive property to write 6 × (40 + 7) as two separate products, then calculate the answer.', answer: '(6×40)+(6×7) = 240+42 = 282', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Use the associative property to calculate (4 × 50) × 6 by regrouping to make the calculation easier. What is the answer?', answer: '1200', checkMode: 'auto', correctAnswer: '1200', correctAnswers: ['1200', '1 200'], explanation: 'Associative property lets us regroup: 4 × (50 × 6) = 4 × 300 = 1 200. Calculating the original way also gives (4 × 50) × 6 = 200 × 6 = 1 200 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate 15 × (30 − 2).', answer: '420', checkMode: 'auto', correctAnswer: '420', explanation: 'Distribute: 15 × (30 − 2) = (15 × 30) − (15 × 2) = 450 − 30 = 420 ✓' },
+        { difficulty: 'Medium', question: 'Sipho says 30 × (6 + 4) gives the same answer whether he calculates the brackets first or uses the distributive property. Show both methods and state the answer.', answer: 'Brackets first: 30×(6+4)=30×10=300. Distributive: (30×6)+(30×4)=180+120=300. Both give 300, so Sipho is correct.', checkMode: 'self' },
+
+        // Block 3 — Error-spotting / critique
+        { difficulty: 'Medium', question: 'Amahle calculates 5 + 6 × 3 by working left to right and gets (5+6) × 3 = 33. What is the correct answer, and what did she do wrong?', answer: '23. She should have done multiplication before addition: 5+6×3 = 5+18 = 23, not added first.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Lindiwe calculates 50 − (12 − 7) by ignoring the brackets and writing 50 − 12 − 7 = 31. What is the correct answer?', answer: '45', checkMode: 'auto', correctAnswer: '45', explanation: 'Brackets must be evaluated first: 12 − 7 = 5, then 50 − 5 = 45. Lindiwe\'s method of removing the brackets is incorrect ✓' },
+        { difficulty: 'Hard', question: 'Tumelo says 7 × (4 + 5) is the same as 7 × 4 + 5. Calculate both expressions and explain whether he is correct.', answer: '7×(4+5)=7×9=63. 7×4+5=28+5=33. They are not equal, so Tumelo is incorrect — the brackets change which numbers are multiplied.', checkMode: 'self' },
+
+        // Block 4 — Multi-step word problems
+        { difficulty: 'Easy', question: 'Lerato buys 5 packs of apples with 14 apples in each pack. She eats 11 apples. How many apples does she have left?', answer: '59', checkMode: 'auto', correctAnswer: '59', explanation: 'Total apples = 5 × 14 = 70. Apples left = 70 − 11 = 59 ✓' },
+        { difficulty: 'Medium', question: 'A theatre sells 38 child tickets at R18 each and 15 adult tickets at R22 each. What is the total amount collected?', answer: 'R1014', checkMode: 'auto', correctAnswer: 'R1014', correctAnswers: ['R1014', '1014', 'R1 014', '1 014'], explanation: 'Child tickets: 38 × R18 = R684. Adult tickets: 15 × R22 = R330. Total = R684 + R330 = R1 014 ✓' },
+        { difficulty: 'Medium', question: 'A stationery shop has 9 boxes of 18 pens. The shop sells 47 pens. How many pens are left?', answer: '115', checkMode: 'auto', correctAnswer: '115', explanation: 'Total pens = 9 × 18 = 162. Pens left = 162 − 47 = 115 ✓' },
+        { difficulty: 'Hard', question: 'A school hires 6 buses that each carry 63 learners, and 4 minibuses that each carry 35 learners, for a trip. How many learners can travel in total?', answer: '518', checkMode: 'auto', correctAnswer: '518', explanation: 'Buses: 6 × 63 = 378. Minibuses: 4 × 35 = 140. Total = 378 + 140 = 518 ✓' },
+
+        // Block 5 — Large-number multi-step calculations
+        { difficulty: 'Medium', question: 'A warehouse already has 2 900 items in stock and receives 5 200 more items per delivery for 2 deliveries. Calculate: 2 900 + 5 200 × 2.', answer: '13300', checkMode: 'auto', correctAnswer: '13300', correctAnswers: ['13300', '13 300'], explanation: 'Multiplication first: 5 200 × 2 = 10 400. Then add: 2 900 + 10 400 = 13 300 ✓' },
+        { difficulty: 'Hard', question: 'A farmer harvests 1 800 kg of maize per hectare from 6 hectares, then sells 4 200 kg at the local market. How many kilograms of maize remain?', answer: '6600', checkMode: 'auto', correctAnswer: '6600', correctAnswers: ['6600', '6 600'], explanation: 'Total harvested = 1 800 × 6 = 10 800 kg. Remaining = 10 800 − 4 200 = 6 600 kg ✓' },
+        { difficulty: 'Hard', question: 'A municipality starts the year with 22 000 households connected to electricity. It connects an extra 3 100 households every year for the next 4 years. Calculate the total number of connected households after 4 years, and show your working using the correct order of operations.', answer: '22000+3100×4. Multiplication first: 3100×4=12400. Then add: 22000+12400=34400 households.', checkMode: 'self' },
+
+        // Block 6 — Mixed / applied reasoning
+        { difficulty: 'Medium', question: 'A learner says 8 × (5 + 3) gives the same result as 8 × 5 + 8 × 3. Calculate both sides and state whether this shows the distributive property is true here.', answer: '8×(5+3)=8×8=64. 8×5+8×3=40+24=64. Both equal 64, confirming the distributive property.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Calculate 4 × (85 − 29) + 25 using the correct order of operations, and show each step.', answer: '249', checkMode: 'auto', correctAnswer: '249', explanation: 'Brackets first: 85 − 29 = 56. Then multiply: 4 × 56 = 224. Then add: 224 + 25 = 249 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered order of operations and the properties of whole numbers.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit BODMAS and the distributive property, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Order of operations / BODMAS
+        { difficulty: 'Easy', question: 'Calculate: 7 + 9 × 6', answer: '61', checkMode: 'auto', correctAnswer: '61', explanation: 'Multiplication before addition: 9 × 6 = 54, then 7 + 54 = 61 ✓' },
+        { difficulty: 'Easy', question: 'Calculate: (20 − 11) × 5 + 9', answer: '54', checkMode: 'auto', correctAnswer: '54', explanation: 'Brackets first: 20 − 11 = 9. Then multiply: 9 × 5 = 45. Then add: 45 + 9 = 54 ✓' },
+        { difficulty: 'Medium', question: 'Calculate: 60 − 45 ÷ 9 + 4 × 5', answer: '75', checkMode: 'auto', correctAnswer: '75', explanation: 'Division and multiplication first: 45 ÷ 9 = 5 and 4 × 5 = 20. Then work left to right: 60 − 5 + 20 = 55 + 20 = 75 ✓' },
+        { difficulty: 'Medium', question: 'Calculate: 5² + 6 × 4', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: 'Powers first: 5² = 25. Then multiplication: 6 × 4 = 24. Then add: 25 + 24 = 49 ✓' },
+
+        // Block 2 — Properties of operations
+        { difficulty: 'Easy', question: 'Use the distributive property to write 9 × (60 + 4) as two separate products, then calculate the answer.', answer: '(9×60)+(9×4) = 540+36 = 576', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Use the associative property to calculate (5 × 20) × 9 by regrouping to make the calculation easier. What is the answer?', answer: '900', checkMode: 'auto', correctAnswer: '900', explanation: 'Associative property lets us regroup: 5 × (20 × 9) = 5 × 180 = 900. Calculating the original way also gives (5 × 20) × 9 = 100 × 9 = 900 ✓' },
+        { difficulty: 'Medium', question: 'Use the distributive property to calculate 18 × (40 − 3).', answer: '666', checkMode: 'auto', correctAnswer: '666', explanation: 'Distribute: 18 × (40 − 3) = (18 × 40) − (18 × 3) = 720 − 54 = 666 ✓' },
+        { difficulty: 'Medium', question: 'Naledi says 40 × (5 + 3) gives the same answer whether she calculates the brackets first or uses the distributive property. Show both methods and state the answer.', answer: 'Brackets first: 40×(5+3)=40×8=320. Distributive: (40×5)+(40×3)=200+120=320. Both give 320, so Naledi is correct.', checkMode: 'self' },
+
+        // Block 3 — Error-spotting / critique
+        { difficulty: 'Medium', question: 'Palesa calculates 8 + 3 × 7 by working left to right and gets (8+3) × 7 = 77. What is the correct answer, and what did she do wrong?', answer: '29. She should have done multiplication before addition: 8+3×7 = 8+21 = 29, not added first.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Mpho calculates 45 − (15 − 6) by ignoring the brackets and writing 45 − 15 − 6 = 24. What is the correct answer?', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Brackets must be evaluated first: 15 − 6 = 9, then 45 − 9 = 36. Mpho\'s method of removing the brackets is incorrect ✓' },
+        { difficulty: 'Hard', question: 'Katlego says 9 × (3 + 6) is the same as 9 × 3 + 6. Calculate both expressions and explain whether he is correct.', answer: '9×(3+6)=9×9=81. 9×3+6=27+6=33. They are not equal, so Katlego is incorrect — the brackets change which numbers are multiplied.', checkMode: 'self' },
+
+        // Block 4 — Multi-step word problems
+        { difficulty: 'Easy', question: 'Zinhle buys 6 packs of apples with 15 apples in each pack. She eats 13 apples. How many apples does she have left?', answer: '77', checkMode: 'auto', correctAnswer: '77', explanation: 'Total apples = 6 × 15 = 90. Apples left = 90 − 13 = 77 ✓' },
+        { difficulty: 'Medium', question: 'A cinema sells 52 child tickets at R12 each and 20 adult tickets at R17 each. What is the total amount collected?', answer: 'R964', checkMode: 'auto', correctAnswer: 'R964', correctAnswers: ['R964', '964'], explanation: 'Child tickets: 52 × R12 = R624. Adult tickets: 20 × R17 = R340. Total = R624 + R340 = R964 ✓' },
+        { difficulty: 'Medium', question: 'A bookshop has 7 boxes of 32 books. The shop sells 56 books. How many books are left?', answer: '168', checkMode: 'auto', correctAnswer: '168', explanation: 'Total books = 7 × 32 = 224. Books left = 224 − 56 = 168 ✓' },
+        { difficulty: 'Hard', question: 'A school hires 5 buses that each carry 84 learners, and 6 minibuses that each carry 41 learners, for a trip. How many learners can travel in total?', answer: '666', checkMode: 'auto', correctAnswer: '666', explanation: 'Buses: 5 × 84 = 420. Minibuses: 6 × 41 = 246. Total = 420 + 246 = 666 ✓' },
+
+        // Block 5 — Large-number multi-step calculations
+        { difficulty: 'Medium', question: 'A warehouse already has 4 100 items in stock and receives 3 700 more items per delivery for 2 deliveries. Calculate: 4 100 + 3 700 × 2.', answer: '11500', checkMode: 'auto', correctAnswer: '11500', correctAnswers: ['11500', '11 500'], explanation: 'Multiplication first: 3 700 × 2 = 7 400. Then add: 4 100 + 7 400 = 11 500 ✓' },
+        { difficulty: 'Hard', question: 'A farmer harvests 2 100 kg of maize per hectare from 5 hectares, then sells 3 800 kg at the local market. How many kilograms of maize remain?', answer: '6700', checkMode: 'auto', correctAnswer: '6700', correctAnswers: ['6700', '6 700'], explanation: 'Total harvested = 2 100 × 5 = 10 500 kg. Remaining = 10 500 − 3 800 = 6 700 kg ✓' },
+        { difficulty: 'Hard', question: 'A municipality starts the year with 18 500 households connected to water. It connects an extra 2 600 households every year for the next 6 years. Calculate the total number of connected households after 6 years, and show your working using the correct order of operations.', answer: '18500+2600×6. Multiplication first: 2600×6=15600. Then add: 18500+15600=34100 households.', checkMode: 'self' },
+
+        // Block 6 — Mixed / applied reasoning
+        { difficulty: 'Medium', question: 'A learner says 9 × (6 + 2) gives the same result as 9 × 6 + 9 × 2. Calculate both sides and state whether this shows the distributive property is true here.', answer: '9×(6+2)=9×8=72. 9×6+9×2=54+18=72. Both equal 72, confirming the distributive property.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Calculate 5 × (96 − 38) + 30 using the correct order of operations, and show each step.', answer: '320', checkMode: 'auto', correctAnswer: '320', explanation: 'Brackets first: 96 − 38 = 58. Then multiply: 5 × 58 = 290. Then add: 290 + 30 = 320 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered order of operations and the properties of whole numbers.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit BODMAS and the distributive property, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

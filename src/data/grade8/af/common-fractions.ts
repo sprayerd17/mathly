@@ -403,4 +403,155 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk deur die gids weer.' },
   ],
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // OEFENSTELLE — 3 stelle × 20 vrae
+  // Bloklayout per stel: 0-2 gemengde bewerkings & bewerkingsvolgorde met breuke
+  // (Medium/Moeilik) | 3-5 kwadrate, kubusse en wortels van breuke gekombineer met
+  // ander bewerkings (Medium-Moeilik/Moeilik) | 6-9 deling deur breuke en gemengde
+  // getalle met die resiprook, ingesluit gekombineer met eksponente (Medium-
+  // Moeilik/Moeilik) | 10-13 groeperings- en delingsvraagstukke met gemengde
+  // getalle (Medium-Moeilik/Moeilik) | 14-16 multi-stap vraagstukke met gemengde
+  // getalle / multi-bewerking redenasie (Moeilik) | 17-19 foutopsporing, kritiek
+  // en vergelyking/rangskikking (Moeilik)
+  // ═══════════════════════════════════════════════════════════════════════════
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1: gemengde bewerkings / bewerkingsvolgorde (V1-3)
+        { difficulty: 'Medium', question: 'Bereken 2/3 + 1/4 × 2/5, deur die korrekte bewerkingsvolgorde te gebruik.', answer: '23/30', checkMode: 'auto', correctAnswer: '23/30', correctAnswers: ['23/30'], explanation: 'Stap 1: Vermenigvuldiging voor optelling: 1/4 × 2/5 = 2/20 = 1/10.\nStap 2: Vind die LGV van 3 en 10: LGV = 30. Skakel om: 2/3 = 20/30, 1/10 = 3/30.\nStap 3: Tel die tellers bymekaar: 20 + 3 = 23.\nAntwoord: 23/30 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (3/4 − 1/2) × 2/5 + 1/10.', answer: '1/5', checkMode: 'auto', correctAnswer: '1/5', correctAnswers: ['1/5'], explanation: 'Stap 1: Werk eers die hakie uit: 3/4 − 1/2 = 3/4 − 2/4 = 1/4.\nStap 2: Vermenigvuldig: 1/4 × 2/5 = 2/20 = 1/10.\nStap 3: Tel by: 1/10 + 1/10 = 2/10 = 1/5.\nAntwoord: 1/5 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 1/2 van (3/4 + 1/8), en trek dan 1/4 af.', answer: '3/16', checkMode: 'auto', correctAnswer: '3/16', correctAnswers: ['3/16'], explanation: 'Stap 1: Werk die hakie uit: 3/4 + 1/8 = 6/8 + 1/8 = 7/8.\nStap 2: "1/2 van" beteken vermenigvuldig: 1/2 × 7/8 = 7/16.\nStap 3: Trek af: 7/16 − 1/4 = 7/16 − 4/16 = 3/16.\nAntwoord: 3/16 ✓' },
+
+        // Blok 2: kwadrate, kubusse en wortels van breuke gekombineer met ander bewerkings (V4-6)
+        { difficulty: 'Medium-Hard', question: 'Bereken (2/3)² + 1/3.', answer: '7/9', checkMode: 'auto', correctAnswer: '7/9', correctAnswers: ['7/9'], explanation: 'Stap 1: Kwadreer die breuk: (2/3)² = 4/9.\nStap 2: Vind die LGV van 9 en 3: LGV = 9. Skakel om: 1/3 = 3/9.\nStap 3: Tel die tellers bymekaar: 4 + 3 = 7.\nAntwoord: 7/9 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken √(9/16) × 2/3.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2'], explanation: 'Stap 1: Vind die vierkantswortel: √(9/16) = √9/√16 = 3/4.\nStap 2: Vermenigvuldig: 3/4 × 2/3 = 6/12.\nStap 3: Vereenvoudig deur beide deur 6 te deel: 1/2.\nAntwoord: 1/2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (1/2)³ + (3/4)².', answer: '11/16', checkMode: 'auto', correctAnswer: '11/16', correctAnswers: ['11/16'], explanation: 'Stap 1: Kubeer die eerste breuk: (1/2)³ = 1/8.\nStap 2: Kwadreer die tweede breuk: (3/4)² = 9/16.\nStap 3: Vind die LGV van 8 en 16: LGV = 16. Skakel om: 1/8 = 2/16.\nStap 4: Tel die tellers bymekaar: 2 + 9 = 11.\nAntwoord: 11/16 ✓' },
+
+        // Blok 3: deling deur breuke/gemengde getalle met die resiprook, ingesluit eksponente (V7-10)
+        { difficulty: 'Medium', question: 'Bereken 5/6 ÷ 2/3.', answer: '1 en 1/4', checkMode: 'auto', correctAnswer: '1 and 1/4', correctAnswers: ['1 and 1/4', '1 en 1/4', '1 1/4', '5/4'], explanation: 'Stap 1: Vermenigvuldig met die resiprook van 2/3, wat 3/2 is: 5/6 × 3/2.\nStap 2: Vermenigvuldig die tellers: 5 × 3 = 15. Vermenigvuldig die noemers: 6 × 2 = 12.\nStap 3: Resultaat: 15/12. Vereenvoudig deur beide deur 3 te deel: 5/4.\nAntwoord: 1 en 1/4 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 2 en 1/4 ÷ 3/8.', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'Stap 1: Skakel om na ʼn onegte breuk: 2 en 1/4 = 9/4.\nStap 2: Vermenigvuldig met die resiprook van 3/8, wat 8/3 is: 9/4 × 8/3.\nStap 3: Vermenigvuldig die tellers: 9 × 8 = 72. Vermenigvuldig die noemers: 4 × 3 = 12.\nStap 4: Resultaat: 72/12 = 6.\nAntwoord: 6 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 3/5 ÷ (1/2)².', answer: '2 en 2/5', checkMode: 'auto', correctAnswer: '2 and 2/5', correctAnswers: ['2 and 2/5', '2 en 2/5', '2 2/5', '12/5'], explanation: 'Stap 1: Werk eers die mag uit: (1/2)² = 1/4.\nStap 2: Deel: 3/5 ÷ 1/4 = 3/5 × 4/1 = 12/5.\nStap 3: Skakel om na ʼn gemengde getal: 12 ÷ 5 = 2 res 2.\nAntwoord: 2 en 2/5 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 4 ÷ 2/3 − 1/3, deur die korrekte bewerkingsvolgorde te gebruik.', answer: '5 en 2/3', checkMode: 'auto', correctAnswer: '5 and 2/3', correctAnswers: ['5 and 2/3', '5 en 2/3', '5 2/3', '17/3'], explanation: 'Stap 1: Deling voor aftrekking: 4 ÷ 2/3 = 4 × 3/2 = 12/2 = 6.\nStap 2: Trek af: 6 − 1/3 = 18/3 − 1/3 = 17/3.\nStap 3: Skakel om na ʼn gemengde getal: 17 ÷ 3 = 5 res 2.\nAntwoord: 5 en 2/3 ✓' },
+
+        // Blok 4: groeperings- en delingsvraagstukke met gemengde getalle (V11-14)
+        { difficulty: 'Medium-Hard', question: 'ʼn Bouer het 7 en 1/2 m pyp en sny dit in stukke van 5/6 m elk. Hoeveel volle stukke kan hy sny?', answer: '9', checkMode: 'auto', correctAnswer: '9', correctAnswers: ['9'], explanation: 'Stap 1: Skakel 7 en 1/2 om na ʼn onegte breuk: 15/2.\nStap 2: Deel: 15/2 ÷ 5/6 = 15/2 × 6/5 = 90/10 = 9.\nAntwoord: 9 volle stukke ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Watertenk wat 7/8 van sy kapasiteit hou, word gelykop onder 5 huishoudings verdeel. Watter breukdeel van die tenk ontvang elke huishouding?', answer: '7/40', checkMode: 'auto', correctAnswer: '7/40', correctAnswers: ['7/40'], explanation: 'Stap 1: Skryf 5 as 5/1, sodat die resiprook 1/5 is.\nStap 2: Deel: 7/8 ÷ 5 = 7/8 × 1/5 = 7/40.\nAntwoord: 7/40 van die tenk ✓' },
+        { difficulty: 'Hard', question: 'ʼn Boer het 9 en 3/4 kg rys en pak dit in sakke van 3/8 kg elk. Hoeveel volle sakke kan sy pak?', answer: '26', checkMode: 'auto', correctAnswer: '26', correctAnswers: ['26'], explanation: 'Stap 1: Skakel 9 en 3/4 om na ʼn onegte breuk: 39/4.\nStap 2: Deel: 39/4 ÷ 3/8 = 39/4 × 8/3 = 312/12 = 26.\nAntwoord: 26 volle sakke ✓' },
+        { difficulty: 'Hard', question: 'ʼn Vader laat 5/6 van sy plaas na, om gelykop onder sy 4 kinders verdeel te word. Watter breukdeel van die hele plaas erf elke kind?', answer: '5/24', checkMode: 'auto', correctAnswer: '5/24', correctAnswers: ['5/24'], explanation: 'Stap 1: Skryf 4 as 4/1, sodat die resiprook 1/4 is.\nStap 2: Deel: 5/6 ÷ 4 = 5/6 × 1/4 = 5/24.\nAntwoord: 5/24 van die plaas ✓' },
+
+        // Blok 5: multi-stap vraagstukke met gemengde getalle / multi-bewerking redenasie (V15-17)
+        { difficulty: 'Hard', question: 'ʼn Tenk is 3/4 vol. Gedurende die dag word 2/5 van die water in die tenk gebruik. Watter breukdeel van die hele tenk is nog oor aan die einde van die dag?', answer: '9/20', checkMode: 'auto', correctAnswer: '9/20', correctAnswers: ['9/20'], explanation: 'Stap 1: Vind die breukdeel wat gebruik is: 3/4 × 2/5 = 6/20 = 3/10.\nStap 2: Trek af van die beginhoeveelheid: 3/4 − 3/10. Vind die LGV van 4 en 10: LGV = 20. Skakel om: 3/4 = 15/20, 3/10 = 6/20.\nStap 3: Trek die tellers af: 15 − 6 = 9.\nAntwoord: 9/20 van die hele tenk ✓' },
+        { difficulty: 'Hard', question: 'Zinhle verdien R240 vir ʼn naweekwerkie. Sy spandeer 1/3 daarvan aan data, en spandeer dan 1/4 van wat oorbly aan vervoer. Hoeveel geld het sy nog oor?', answer: 'R120', checkMode: 'auto', correctAnswer: '120', correctAnswers: ['120', 'R120'], explanation: 'Stap 1: Datakoste: 1/3 × R240 = R80. Oorblywend: R240 − R80 = R160.\nStap 2: Vervoerkoste: 1/4 × R160 = R40. Oorblywend: R160 − R40 = R120.\nAntwoord: R120 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Resep gebruik 2/3 koppie suiker per bondel beskuitjies. Palesa maak 1 en 1/2 bondels, en voeg dan ʼn ekstra 1/4 koppie suiker vir ʼn versiering by. Hoeveel suiker gebruik sy altesaam?', answer: '1 en 1/4 koppies', checkMode: 'auto', correctAnswer: '1 and 1/4', correctAnswers: ['1 and 1/4', '1 en 1/4', '1 1/4', '5/4', '1 en 1/4 koppies'], explanation: 'Stap 1: Suiker vir die bondels: 2/3 × 1 en 1/2 = 2/3 × 3/2 = 6/6 = 1.\nStap 2: Tel die versiering by: 1 + 1/4 = 1 en 1/4.\nAntwoord: 1 en 1/4 koppies ✓' },
+
+        // Blok 6: foutopsporing, kritiek en vergelyking/rangskikking (V18-20)
+        { difficulty: 'Hard', question: 'Bongani sê 2/3 ÷ 1/6 = 1/9, omdat hy die eerste breuk omgedraai het in plaas van die tweede. Wat is die korrekte antwoord?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4'], explanation: 'Stap 1: Om deur ʼn breuk te deel, draai die tweede breuk (1/6) om, nie die eerste nie: resiprook van 1/6 is 6/1.\nStap 2: Vermenigvuldig: 2/3 × 6/1 = 12/3 = 4.\nAntwoord: 4 ✓ (Bongani het die fout gemaak om die verkeerde breuk om te draai.)' },
+        { difficulty: 'Hard', question: 'Is 3/4 ÷ 1/2 gelyk aan 3/4 × 2? Bereken albei en verduidelik hoekom of hoekom nie.', answer: 'Ja — albei is gelyk aan 3/2 (1 en 1/2), want om deur 1/2 te deel is dieselfde as om met sy resiprook te vermenigvuldig, wat 2 is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Rangskik hierdie van kleinste na grootste: 5/8, √(1/4) + 1/4, (1/2)² + 1/4.', answer: '1/2, 5/8, 3/4', checkMode: 'auto', correctAnswer: '1/2, 5/8, 3/4', correctAnswers: ['1/2, 5/8, 3/4', '1/2; 5/8; 3/4'], explanation: 'Stap 1: Bereken elkeen: 5/8 bly soos dit is. √(1/4) + 1/4 = 1/2 + 1/4 = 3/4. (1/2)² + 1/4 = 1/4 + 1/4 = 1/2.\nStap 2: Vergelyk 5/8, 3/4 en 1/2 met 24stes: 1/2 = 12/24, 5/8 = 15/24, 3/4 = 18/24.\nStap 3: Rangskik: 1/2 < 5/8 < 3/4.\nAntwoord: 1/2, 5/8, 3/4 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het ʼn baie stewige begrip van Graad 8 gewone breuke.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 8, message: 'Goeie poging! Gaan terug na die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklayout as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1: gemengde bewerkings / bewerkingsvolgorde (V1-3)
+        { difficulty: 'Medium', question: 'Bereken 3/5 + 1/2 × 2/3, deur die korrekte bewerkingsvolgorde te gebruik.', answer: '14/15', checkMode: 'auto', correctAnswer: '14/15', correctAnswers: ['14/15'], explanation: 'Stap 1: Vermenigvuldiging voor optelling: 1/2 × 2/3 = 2/6 = 1/3.\nStap 2: Vind die LGV van 5 en 3: LGV = 15. Skakel om: 3/5 = 9/15, 1/3 = 5/15.\nStap 3: Tel die tellers bymekaar: 9 + 5 = 14.\nAntwoord: 14/15 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (5/6 − 1/3) × 3/4 + 1/8.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2'], explanation: 'Stap 1: Werk eers die hakie uit: 5/6 − 1/3 = 5/6 − 2/6 = 3/6 = 1/2.\nStap 2: Vermenigvuldig: 1/2 × 3/4 = 3/8.\nStap 3: Tel by: 3/8 + 1/8 = 4/8 = 1/2.\nAntwoord: 1/2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 1/3 van (2/3 + 1/6), en trek dan 1/6 af.', answer: '1/9', checkMode: 'auto', correctAnswer: '1/9', correctAnswers: ['1/9'], explanation: 'Stap 1: Werk die hakie uit: 2/3 + 1/6 = 4/6 + 1/6 = 5/6.\nStap 2: "1/3 van" beteken vermenigvuldig: 1/3 × 5/6 = 5/18.\nStap 3: Trek af: 5/18 − 1/6 = 5/18 − 3/18 = 2/18 = 1/9.\nAntwoord: 1/9 ✓' },
+
+        // Blok 2: kwadrate, kubusse en wortels van breuke gekombineer met ander bewerkings (V4-6)
+        { difficulty: 'Medium-Hard', question: 'Bereken (3/5)² + 1/5.', answer: '14/25', checkMode: 'auto', correctAnswer: '14/25', correctAnswers: ['14/25'], explanation: 'Stap 1: Kwadreer die breuk: (3/5)² = 9/25.\nStap 2: Vind die LGV van 25 en 5: LGV = 25. Skakel om: 1/5 = 5/25.\nStap 3: Tel die tellers bymekaar: 9 + 5 = 14.\nAntwoord: 14/25 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken √(4/9) × 3/4.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2'], explanation: 'Stap 1: Vind die vierkantswortel: √(4/9) = √4/√9 = 2/3.\nStap 2: Vermenigvuldig: 2/3 × 3/4 = 6/12.\nStap 3: Vereenvoudig deur beide deur 6 te deel: 1/2.\nAntwoord: 1/2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (1/3)³ + (2/3)².', answer: '13/27', checkMode: 'auto', correctAnswer: '13/27', correctAnswers: ['13/27'], explanation: 'Stap 1: Kubeer die eerste breuk: (1/3)³ = 1/27.\nStap 2: Kwadreer die tweede breuk: (2/3)² = 4/9.\nStap 3: Vind die LGV van 27 en 9: LGV = 27. Skakel om: 4/9 = 12/27.\nStap 4: Tel die tellers bymekaar: 1 + 12 = 13.\nAntwoord: 13/27 ✓' },
+
+        // Blok 3: deling deur breuke/gemengde getalle met die resiprook, ingesluit eksponente (V7-10)
+        { difficulty: 'Medium', question: 'Bereken 7/9 ÷ 2/3.', answer: '1 en 1/6', checkMode: 'auto', correctAnswer: '1 and 1/6', correctAnswers: ['1 and 1/6', '1 en 1/6', '1 1/6', '7/6'], explanation: 'Stap 1: Vermenigvuldig met die resiprook van 2/3, wat 3/2 is: 7/9 × 3/2.\nStap 2: Vermenigvuldig die tellers: 7 × 3 = 21. Vermenigvuldig die noemers: 9 × 2 = 18.\nStap 3: Resultaat: 21/18. Vereenvoudig deur beide deur 3 te deel: 7/6.\nAntwoord: 1 en 1/6 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 3 en 1/3 ÷ 5/9.', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'Stap 1: Skakel om na ʼn onegte breuk: 3 en 1/3 = 10/3.\nStap 2: Vermenigvuldig met die resiprook van 5/9, wat 9/5 is: 10/3 × 9/5.\nStap 3: Vermenigvuldig die tellers: 10 × 9 = 90. Vermenigvuldig die noemers: 3 × 5 = 15.\nStap 4: Resultaat: 90/15 = 6.\nAntwoord: 6 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 5/8 ÷ (1/2)².', answer: '2 en 1/2', checkMode: 'auto', correctAnswer: '2 and 1/2', correctAnswers: ['2 and 1/2', '2 en 1/2', '2 1/2', '5/2'], explanation: 'Stap 1: Werk eers die mag uit: (1/2)² = 1/4.\nStap 2: Deel: 5/8 ÷ 1/4 = 5/8 × 4/1 = 20/8 = 5/2.\nStap 3: Skakel om na ʼn gemengde getal: 5 ÷ 2 = 2 res 1.\nAntwoord: 2 en 1/2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 6 ÷ 3/4 − 1/2, deur die korrekte bewerkingsvolgorde te gebruik.', answer: '7 en 1/2', checkMode: 'auto', correctAnswer: '7 and 1/2', correctAnswers: ['7 and 1/2', '7 en 1/2', '7 1/2', '15/2'], explanation: 'Stap 1: Deling voor aftrekking: 6 ÷ 3/4 = 6 × 4/3 = 24/3 = 8.\nStap 2: Trek af: 8 − 1/2 = 16/2 − 1/2 = 15/2.\nStap 3: Skakel om na ʼn gemengde getal: 15 ÷ 2 = 7 res 1.\nAntwoord: 7 en 1/2 ✓' },
+
+        // Blok 4: groeperings- en delingsvraagstukke met gemengde getalle (V11-14)
+        { difficulty: 'Medium-Hard', question: 'ʼn Elektrisiën het 8 en 1/4 m kabel en sny dit in stukke van 3/8 m elk. Hoeveel volle stukke kan hy sny?', answer: '22', checkMode: 'auto', correctAnswer: '22', correctAnswers: ['22'], explanation: 'Stap 1: Skakel 8 en 1/4 om na ʼn onegte breuk: 33/4.\nStap 2: Deel: 33/4 ÷ 3/8 = 33/4 × 8/3 = 264/12 = 22.\nAntwoord: 22 volle stukke ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Stuk grond van 5/6 van ʼn hektaar word gelykop onder 4 boere verdeel. Watter breukdeel van ʼn hektaar ontvang elke boer?', answer: '5/24', checkMode: 'auto', correctAnswer: '5/24', correctAnswers: ['5/24'], explanation: 'Stap 1: Skryf 4 as 4/1, sodat die resiprook 1/4 is.\nStap 2: Deel: 5/6 ÷ 4 = 5/6 × 1/4 = 5/24.\nAntwoord: 5/24 van ʼn hektaar ✓' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 11 en 1/4 kg suiker en pak dit in sakke van 5/8 kg elk. Hoeveel volle sakke kan dit pak?', answer: '18', checkMode: 'auto', correctAnswer: '18', correctAnswers: ['18'], explanation: 'Stap 1: Skakel 11 en 1/4 om na ʼn onegte breuk: 45/4.\nStap 2: Deel: 45/4 ÷ 5/8 = 45/4 × 8/5 = 360/20 = 18.\nAntwoord: 18 volle sakke ✓' },
+        { difficulty: 'Hard', question: 'ʼn Moeder laat 7/10 van haar tuin na, om gelykop onder haar 3 kinders verdeel te word. Watter breukdeel van die hele tuin erf elke kind?', answer: '7/30', checkMode: 'auto', correctAnswer: '7/30', correctAnswers: ['7/30'], explanation: 'Stap 1: Skryf 3 as 3/1, sodat die resiprook 1/3 is.\nStap 2: Deel: 7/10 ÷ 3 = 7/10 × 1/3 = 7/30.\nAntwoord: 7/30 van die tuin ✓' },
+
+        // Blok 5: multi-stap vraagstukke met gemengde getalle / multi-bewerking redenasie (V15-17)
+        { difficulty: 'Hard', question: 'ʼn Tenk is 5/6 vol. Gedurende die dag word 3/5 van die water in die tenk gebruik. Watter breukdeel van die hele tenk is nog oor aan die einde van die dag?', answer: '1/3', checkMode: 'auto', correctAnswer: '1/3', correctAnswers: ['1/3'], explanation: 'Stap 1: Vind die breukdeel wat gebruik is: 5/6 × 3/5 = 15/30 = 1/2.\nStap 2: Trek af van die beginhoeveelheid: 5/6 − 1/2. Vind die LGV van 6 en 2: LGV = 6. Skakel om: 1/2 = 3/6.\nStap 3: Trek die tellers af: 5 − 3 = 2, wat 2/6 = 1/3 gee.\nAntwoord: 1/3 van die hele tenk ✓' },
+        { difficulty: 'Hard', question: 'Thabiso verdien R360 met tuinwerk. Hy spandeer 1/4 daarvan aan huur, en spandeer dan 1/3 van wat oorbly aan kos. Hoeveel geld het hy nog oor?', answer: 'R180', checkMode: 'auto', correctAnswer: '180', correctAnswers: ['180', 'R180'], explanation: 'Stap 1: Huurkoste: 1/4 × R360 = R90. Oorblywend: R360 − R90 = R270.\nStap 2: Koskoste: 1/3 × R270 = R90. Oorblywend: R270 − R90 = R180.\nAntwoord: R180 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Resep gebruik 3/4 koppie melk per bondel pannekoeke. Naledi maak 1 en 1/3 bondels, en voeg dan ʼn ekstra 1/6 koppie melk by om die deeg dunner te maak. Hoeveel melk gebruik sy altesaam?', answer: '1 en 1/6 koppies', checkMode: 'auto', correctAnswer: '1 and 1/6', correctAnswers: ['1 and 1/6', '1 en 1/6', '1 1/6', '7/6', '1 en 1/6 koppies'], explanation: 'Stap 1: Melk vir die bondels: 3/4 × 1 en 1/3 = 3/4 × 4/3 = 12/12 = 1.\nStap 2: Tel die ekstra by: 1 + 1/6 = 1 en 1/6.\nAntwoord: 1 en 1/6 koppies ✓' },
+
+        // Blok 6: foutopsporing, kritiek en vergelyking/rangskikking (V18-20)
+        { difficulty: 'Hard', question: 'Nomsa sê 3/5 ÷ 1/10 = 1/6, omdat sy die eerste breuk omgedraai het in plaas van die tweede. Wat is die korrekte antwoord?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'Stap 1: Om deur ʼn breuk te deel, draai die tweede breuk (1/10) om, nie die eerste nie: resiprook van 1/10 is 10/1.\nStap 2: Vermenigvuldig: 3/5 × 10/1 = 30/5 = 6.\nAntwoord: 6 ✓ (Nomsa het die fout gemaak om die verkeerde breuk om te draai.)' },
+        { difficulty: 'Hard', question: 'Is 5/6 ÷ 1/3 gelyk aan 5/6 × 3? Bereken albei en verduidelik hoekom of hoekom nie.', answer: 'Ja — albei is gelyk aan 5/2 (2 en 1/2), want om deur 1/3 te deel is dieselfde as om met sy resiprook te vermenigvuldig, wat 3 is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Rangskik hierdie van kleinste na grootste: 7/12, √(1/9) + 1/3, (1/3)² + 1/3.', answer: '4/9, 7/12, 2/3', checkMode: 'auto', correctAnswer: '4/9, 7/12, 2/3', correctAnswers: ['4/9, 7/12, 2/3', '4/9; 7/12; 2/3'], explanation: 'Stap 1: Bereken elkeen: 7/12 bly soos dit is. √(1/9) + 1/3 = 1/3 + 1/3 = 2/3. (1/3)² + 1/3 = 1/9 + 1/3 = 1/9 + 3/9 = 4/9.\nStap 2: Vergelyk 7/12, 2/3 en 4/9 met 36stes: 7/12 = 21/36, 2/3 = 24/36, 4/9 = 16/36.\nStap 3: Rangskik: 4/9 < 7/12 < 2/3.\nAntwoord: 4/9, 7/12, 2/3 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het ʼn baie stewige begrip van Graad 8 gewone breuke.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 8, message: 'Goeie poging! Gaan terug na die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklayout as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1: gemengde bewerkings / bewerkingsvolgorde (V1-3)
+        { difficulty: 'Medium', question: 'Bereken 5/6 + 1/3 × 3/8, deur die korrekte bewerkingsvolgorde te gebruik.', answer: '23/24', checkMode: 'auto', correctAnswer: '23/24', correctAnswers: ['23/24'], explanation: 'Stap 1: Vermenigvuldiging voor optelling: 1/3 × 3/8 = 3/24 = 1/8.\nStap 2: Vind die LGV van 6 en 8: LGV = 24. Skakel om: 5/6 = 20/24, 1/8 = 3/24.\nStap 3: Tel die tellers bymekaar: 20 + 3 = 23.\nAntwoord: 23/24 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (7/8 − 1/4) × 2/5 + 1/4.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2'], explanation: 'Stap 1: Werk eers die hakie uit: 7/8 − 1/4 = 7/8 − 2/8 = 5/8.\nStap 2: Vermenigvuldig: 5/8 × 2/5 = 10/40 = 1/4.\nStap 3: Tel by: 1/4 + 1/4 = 2/4 = 1/2.\nAntwoord: 1/2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 1/4 van (2/5 + 3/10), en trek dan 1/8 af.', answer: '1/20', checkMode: 'auto', correctAnswer: '1/20', correctAnswers: ['1/20'], explanation: 'Stap 1: Werk die hakie uit: 2/5 + 3/10 = 4/10 + 3/10 = 7/10.\nStap 2: "1/4 van" beteken vermenigvuldig: 1/4 × 7/10 = 7/40.\nStap 3: Trek af: 7/40 − 1/8 = 7/40 − 5/40 = 2/40 = 1/20.\nAntwoord: 1/20 ✓' },
+
+        // Blok 2: kwadrate, kubusse en wortels van breuke gekombineer met ander bewerkings (V4-6)
+        { difficulty: 'Medium-Hard', question: 'Bereken (4/5)² − 1/5.', answer: '11/25', checkMode: 'auto', correctAnswer: '11/25', correctAnswers: ['11/25'], explanation: 'Stap 1: Kwadreer die breuk: (4/5)² = 16/25.\nStap 2: Vind die LGV van 25 en 5: LGV = 25. Skakel om: 1/5 = 5/25.\nStap 3: Trek die tellers af: 16 − 5 = 11.\nAntwoord: 11/25 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken √(16/25) × 5/8.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2'], explanation: 'Stap 1: Vind die vierkantswortel: √(16/25) = √16/√25 = 4/5.\nStap 2: Vermenigvuldig: 4/5 × 5/8 = 20/40.\nStap 3: Vereenvoudig deur beide deur 20 te deel: 1/2.\nAntwoord: 1/2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken (1/4)³ + (3/4)².', answer: '37/64', checkMode: 'auto', correctAnswer: '37/64', correctAnswers: ['37/64'], explanation: 'Stap 1: Kubeer die eerste breuk: (1/4)³ = 1/64.\nStap 2: Kwadreer die tweede breuk: (3/4)² = 9/16.\nStap 3: Vind die LGV van 64 en 16: LGV = 64. Skakel om: 9/16 = 36/64.\nStap 4: Tel die tellers bymekaar: 1 + 36 = 37.\nAntwoord: 37/64 ✓' },
+
+        // Blok 3: deling deur breuke/gemengde getalle met die resiprook, ingesluit eksponente (V7-10)
+        { difficulty: 'Medium', question: 'Bereken 5/7 ÷ 2/7.', answer: '2 en 1/2', checkMode: 'auto', correctAnswer: '2 and 1/2', correctAnswers: ['2 and 1/2', '2 en 1/2', '2 1/2', '5/2'], explanation: 'Stap 1: Vermenigvuldig met die resiprook van 2/7, wat 7/2 is: 5/7 × 7/2.\nStap 2: Vermenigvuldig die tellers: 5 × 7 = 35. Vermenigvuldig die noemers: 7 × 2 = 14.\nStap 3: Resultaat: 35/14. Vereenvoudig deur beide deur 7 te deel: 5/2.\nAntwoord: 2 en 1/2 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 4 en 1/2 ÷ 3/5.', answer: '7 en 1/2', checkMode: 'auto', correctAnswer: '7 and 1/2', correctAnswers: ['7 and 1/2', '7 en 1/2', '7 1/2', '15/2'], explanation: 'Stap 1: Skakel om na ʼn onegte breuk: 4 en 1/2 = 9/2.\nStap 2: Vermenigvuldig met die resiprook van 3/5, wat 5/3 is: 9/2 × 5/3.\nStap 3: Vermenigvuldig die tellers: 9 × 5 = 45. Vermenigvuldig die noemers: 2 × 3 = 6.\nStap 4: Resultaat: 45/6. Vereenvoudig deur beide deur 3 te deel: 15/2.\nStap 5: Skakel om na ʼn gemengde getal: 15 ÷ 2 = 7 res 1.\nAntwoord: 7 en 1/2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 7/10 ÷ (1/2)².', answer: '2 en 4/5', checkMode: 'auto', correctAnswer: '2 and 4/5', correctAnswers: ['2 and 4/5', '2 en 4/5', '2 4/5', '14/5'], explanation: 'Stap 1: Werk eers die mag uit: (1/2)² = 1/4.\nStap 2: Deel: 7/10 ÷ 1/4 = 7/10 × 4/1 = 28/10 = 14/5.\nStap 3: Skakel om na ʼn gemengde getal: 14 ÷ 5 = 2 res 4.\nAntwoord: 2 en 4/5 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 8 ÷ 4/5 − 3/5, deur die korrekte bewerkingsvolgorde te gebruik.', answer: '9 en 2/5', checkMode: 'auto', correctAnswer: '9 and 2/5', correctAnswers: ['9 and 2/5', '9 en 2/5', '9 2/5', '47/5'], explanation: 'Stap 1: Deling voor aftrekking: 8 ÷ 4/5 = 8 × 5/4 = 40/4 = 10.\nStap 2: Trek af: 10 − 3/5 = 50/5 − 3/5 = 47/5.\nStap 3: Skakel om na ʼn gemengde getal: 47 ÷ 5 = 9 res 2.\nAntwoord: 9 en 2/5 ✓' },
+
+        // Blok 4: groeperings- en delingsvraagstukke met gemengde getalle (V11-14)
+        { difficulty: 'Medium-Hard', question: 'ʼn Kleremaakster het 6 en 2/3 m materiaal en sny dit in stukke van 5/9 m elk. Hoeveel volle stukke kan sy sny?', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12'], explanation: 'Stap 1: Skakel 6 en 2/3 om na ʼn onegte breuk: 20/3.\nStap 2: Deel: 20/3 ÷ 5/9 = 20/3 × 9/5 = 180/15 = 12.\nAntwoord: 12 volle stukke ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Koek wat 9/10 van ʼn geheel is, word gelykop onder 6 gaste verdeel. Watter breukdeel van die hele koek ontvang elke gas?', answer: '3/20', checkMode: 'auto', correctAnswer: '3/20', correctAnswers: ['3/20'], explanation: 'Stap 1: Skryf 6 as 6/1, sodat die resiprook 1/6 is.\nStap 2: Deel: 9/10 ÷ 6 = 9/10 × 1/6 = 9/60.\nStap 3: Vereenvoudig deur beide deur 3 te deel: 3/20.\nAntwoord: 3/20 van die hele koek ✓' },
+        { difficulty: 'Hard', question: 'ʼn Bakkery het 13 en 1/2 kg meel en pak dit in sakke van 3/4 kg elk. Hoeveel volle sakke kan dit pak?', answer: '18', checkMode: 'auto', correctAnswer: '18', correctAnswers: ['18'], explanation: 'Stap 1: Skakel 13 en 1/2 om na ʼn onegte breuk: 27/2.\nStap 2: Deel: 27/2 ÷ 3/4 = 27/2 × 4/3 = 108/6 = 18.\nAntwoord: 18 volle sakke ✓' },
+        { difficulty: 'Hard', question: 'ʼn Oupa laat 5/8 van sy boord na, om gelykop onder sy 5 seuns verdeel te word. Watter breukdeel van die hele boord erf elke seun?', answer: '1/8', checkMode: 'auto', correctAnswer: '1/8', correctAnswers: ['1/8'], explanation: 'Stap 1: Skryf 5 as 5/1, sodat die resiprook 1/5 is.\nStap 2: Deel: 5/8 ÷ 5 = 5/8 × 1/5 = 5/40.\nStap 3: Vereenvoudig deur beide deur 5 te deel: 1/8.\nAntwoord: 1/8 van die hele boord ✓' },
+
+        // Blok 5: multi-stap vraagstukke met gemengde getalle / multi-bewerking redenasie (V15-17)
+        { difficulty: 'Hard', question: 'ʼn Tenk is 7/8 vol. Gedurende die dag word 2/7 van die water in die tenk gebruik. Watter breukdeel van die hele tenk is nog oor aan die einde van die dag?', answer: '5/8', checkMode: 'auto', correctAnswer: '5/8', correctAnswers: ['5/8'], explanation: 'Stap 1: Vind die breukdeel wat gebruik is: 7/8 × 2/7 = 14/56 = 1/4.\nStap 2: Trek af van die beginhoeveelheid: 7/8 − 1/4 = 7/8 − 2/8 = 5/8.\nAntwoord: 5/8 van die hele tenk ✓' },
+        { difficulty: 'Hard', question: 'Katlego verdien R450 met vakansiewerk. Hy spandeer 1/5 daarvan aan vervoer, en spandeer dan 1/3 van wat oorbly aan kos. Hoeveel geld het hy nog oor?', answer: 'R240', checkMode: 'auto', correctAnswer: '240', correctAnswers: ['240', 'R240'], explanation: 'Stap 1: Vervoerkoste: 1/5 × R450 = R90. Oorblywend: R450 − R90 = R360.\nStap 2: Koskoste: 1/3 × R360 = R120. Oorblywend: R360 − R120 = R240.\nAntwoord: R240 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Resep gebruik 5/6 koppie meel per bondel broodrolletjies. Aisha maak 1 en 1/5 bondels, en voeg dan ʼn ekstra 1/3 koppie meel vir uitstrooiing by. Hoeveel meel gebruik sy altesaam?', answer: '1 en 1/3 koppies', checkMode: 'auto', correctAnswer: '1 and 1/3', correctAnswers: ['1 and 1/3', '1 en 1/3', '1 1/3', '4/3', '1 en 1/3 koppies'], explanation: 'Stap 1: Meel vir die bondels: 5/6 × 1 en 1/5 = 5/6 × 6/5 = 30/30 = 1.\nStap 2: Tel die ekstra by: 1 + 1/3 = 1 en 1/3.\nAntwoord: 1 en 1/3 koppies ✓' },
+
+        // Blok 6: foutopsporing, kritiek en vergelyking/rangskikking (V18-20)
+        { difficulty: 'Hard', question: 'Vusi sê 4/5 ÷ 1/10 = 2/25, omdat hy die eerste breuk omgedraai het in plaas van die tweede. Wat is die korrekte antwoord?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'Stap 1: Om deur ʼn breuk te deel, draai die tweede breuk (1/10) om, nie die eerste nie: resiprook van 1/10 is 10/1.\nStap 2: Vermenigvuldig: 4/5 × 10/1 = 40/5 = 8.\nAntwoord: 8 ✓ (Vusi het die fout gemaak om die verkeerde breuk om te draai.)' },
+        { difficulty: 'Hard', question: 'Is 2/3 ÷ 1/4 gelyk aan 2/3 × 4? Bereken albei en verduidelik hoekom of hoekom nie.', answer: 'Ja — albei is gelyk aan 8/3 (2 en 2/3), want om deur 1/4 te deel is dieselfde as om met sy resiprook te vermenigvuldig, wat 4 is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Rangskik hierdie van kleinste na grootste: 5/16, √(1/16) + 1/4, (1/2)² + 1/8.', answer: '5/16, 3/8, 1/2', checkMode: 'auto', correctAnswer: '5/16, 3/8, 1/2', correctAnswers: ['5/16, 3/8, 1/2', '5/16; 3/8; 1/2'], explanation: 'Stap 1: Bereken elkeen: 5/16 bly soos dit is. √(1/16) + 1/4 = 1/4 + 1/4 = 1/2. (1/2)² + 1/8 = 1/4 + 1/8 = 2/8 + 1/8 = 3/8.\nStap 2: Vergelyk 5/16, 1/2 en 3/8 met 16des: 5/16 bly, 1/2 = 8/16, 3/8 = 6/16.\nStap 3: Rangskik: 5/16 < 3/8 < 1/2.\nAntwoord: 5/16, 3/8, 1/2 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het ʼn baie stewige begrip van Graad 8 gewone breuke.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 8, message: 'Goeie poging! Gaan terug na die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

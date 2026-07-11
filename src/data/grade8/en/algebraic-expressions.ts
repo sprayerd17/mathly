@@ -384,4 +384,150 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Block 1 (0-2): Simplifying with multiple variables/exponents
+    // Block 2 (3-6): Expanding brackets (distributive law)
+    // Block 3 (7-10): Factorising using a common factor
+    // Block 4 (11-14): Substitution with negative/fractional values
+    // Block 5 (15-17): Multi-step simplification combining several skills
+    // Block 6 (18-19): Error-spotting / critique
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Simplifying with multiple variables/exponents (Easy)
+        { difficulty: 'Easy', question: 'Simplify 5x²+3x−2x²+4x.', checkMode: 'auto', correctAnswer: '3x²+7x', correctAnswers: ['3x²+7x', '3x^2+7x', '7x+3x²'], answer: '3x²+7x', explanation: 'Group like terms: (5x²−2x²)+(3x+4x).\n5x²−2x²=3x² and 3x+4x=7x.\nAnswer: 3x²+7x' },
+        { difficulty: 'Easy', question: 'Simplify 6xy+4x−2xy+x.', checkMode: 'auto', correctAnswer: '4xy+5x', correctAnswers: ['4xy+5x', '5x+4xy'], answer: '4xy+5x', explanation: 'Group like terms: (6xy−2xy)+(4x+x).\n6xy−2xy=4xy and 4x+x=5x.\nAnswer: 4xy+5x' },
+        { difficulty: 'Easy', question: 'Simplify 4a²b+3ab−2a²b.', checkMode: 'auto', correctAnswer: '2a²b+3ab', correctAnswers: ['2a²b+3ab', '2a^2b+3ab', '3ab+2a²b'], answer: '2a²b+3ab', explanation: 'Only the a²b terms are like terms: 4a²b−2a²b=2a²b.\n3ab has a different exponent on a, so it cannot be combined.\nAnswer: 2a²b+3ab' },
+
+        // Block 2 — Expanding brackets, distributive law (Medium)
+        { difficulty: 'Medium', question: 'Expand 3x(2x+5).', checkMode: 'auto', correctAnswer: '6x²+15x', correctAnswers: ['6x²+15x', '6x^2+15x'], answer: '6x²+15x', explanation: 'Multiply 3x by each term inside the brackets.\n(3x)(2x)=6x² and (3x)(5)=15x.\nAnswer: 6x²+15x' },
+        { difficulty: 'Medium', question: 'Expand −4x(x−3).', checkMode: 'auto', correctAnswer: '-4x²+12x', correctAnswers: ['-4x²+12x', '−4x²+12x', '-4x^2+12x'], answer: '−4x²+12x', explanation: 'Multiply −4x by each term inside the brackets.\n(−4x)(x)=−4x² and (−4x)(−3)=+12x.\nAnswer: −4x²+12x' },
+        { difficulty: 'Medium', question: 'Expand and simplify 2(3x+4)+5x.', checkMode: 'auto', correctAnswer: '11x+8', correctAnswers: ['11x+8', '8+11x'], answer: '11x+8', explanation: 'Expand the brackets: 2(3x+4)=6x+8.\nAdd the remaining term: 6x+8+5x.\nCombine like terms: 6x+5x=11x.\nAnswer: 11x+8' },
+        { difficulty: 'Medium', question: 'A rectangular table has length (x+6) cm and width 3 cm. Write an expression for its area, and expand it.', checkMode: 'auto', correctAnswer: '3x+18', correctAnswers: ['3x+18', '18+3x'], answer: 'Area = 3(x+6) = 3x+18', explanation: 'Area of a rectangle = length × width = 3(x+6).\nExpand: (3)(x)+(3)(6)=3x+18.\nAnswer: 3x+18' },
+
+        // Block 3 — Factorising using a common factor (Medium)
+        { difficulty: 'Medium', question: 'Factorise 6x+9 fully.', checkMode: 'auto', correctAnswer: '3(2x+3)', correctAnswers: ['3(2x+3)'], answer: '3(2x+3)', explanation: 'The HCF of 6 and 9 is 3.\nDivide each term by 3: 6x÷3=2x and 9÷3=3.\nAnswer: 3(2x+3)' },
+        { difficulty: 'Medium', question: 'Factorise 8x²+12x fully.', checkMode: 'auto', correctAnswer: '4x(2x+3)', correctAnswers: ['4x(2x+3)'], answer: '4x(2x+3)', explanation: 'The HCF of the coefficients 8 and 12 is 4, and both terms share a factor of x.\nDivide each term by 4x: 8x²÷4x=2x and 12x÷4x=3.\nAnswer: 4x(2x+3)' },
+        { difficulty: 'Medium', question: 'Factorise 15xy−10x fully.', checkMode: 'auto', correctAnswer: '5x(3y-2)', correctAnswers: ['5x(3y-2)', '5x(3y−2)'], answer: '5x(3y−2)', explanation: 'The HCF of 15 and 10 is 5, and both terms share a factor of x.\nDivide each term by 5x: 15xy÷5x=3y and 10x÷5x=2.\nAnswer: 5x(3y−2)' },
+        { difficulty: 'Medium', question: 'A student factorises 12x+18 and writes 6(2x+3). Check whether this is fully factorised and correct.', checkMode: 'self', answer: 'Correct and fully factorised. Checking: 6(2x)=12x and 6(3)=18, so the product is right. The HCF of 12 and 18 is 6, and 2x and 3 share no further common factor, so 6(2x+3) is the fully factorised form.' },
+
+        // Block 4 — Substitution with negative/fractional values (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Evaluate 3x²−2x when x=−2.', checkMode: 'auto', correctAnswer: '16', answer: '16', explanation: 'Substitute x=−2: 3(−2)²−2(−2).\n(−2)²=4, so 3(4)=12. Also −2(−2)=+4.\n12+4=16' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 2x+5y when x=0.5 and y=−3.', checkMode: 'auto', correctAnswer: '-14', correctAnswers: ['-14', '−14'], answer: '−14', explanation: 'Substitute x=0.5 and y=−3: 2(0.5)+5(−3).\n2(0.5)=1 and 5(−3)=−15.\n1−15=−14' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate x²−3x+4 when x=−1.', checkMode: 'auto', correctAnswer: '8', answer: '8', explanation: 'Substitute x=−1: (−1)²−3(−1)+4.\n(−1)²=1 and −3(−1)=+3.\n1+3+4=8' },
+        { difficulty: 'Medium-Hard', question: 'The cost in rand to rent a paddleboard is C=6h+12, where h is the number of hours. Find the cost when h=2.5 hours.', checkMode: 'auto', correctAnswer: '27', answer: '27', explanation: 'Substitute h=2.5: C=6(2.5)+12.\n6(2.5)=15, so C=15+12=27.\nThe cost is R27.' },
+
+        // Block 5 — Multi-step simplification combining several skills (Hard)
+        { difficulty: 'Hard', question: 'Simplify 3x(x+2)−5x.', checkMode: 'auto', correctAnswer: '3x²+x', correctAnswers: ['3x²+x', '3x^2+x', 'x+3x²'], answer: '3x²+x', explanation: 'Expand first: 3x(x+2)=3x²+6x.\nSubtract 5x: 3x²+6x−5x.\nCombine like terms: 6x−5x=x.\nAnswer: 3x²+x' },
+        { difficulty: 'Hard', question: 'Simplify 4x+8+2x, then factorise the result fully.', checkMode: 'auto', correctAnswer: '2(3x+4)', correctAnswers: ['2(3x+4)'], answer: '2(3x+4)', explanation: 'Simplify first: 4x+8+2x=6x+8.\nFactorise: the HCF of 6 and 8 is 2.\nDivide each term by 2: 6x÷2=3x and 8÷2=4.\nAnswer: 2(3x+4)' },
+        { difficulty: 'Hard', question: 'Expand and simplify 2(x+3)+3(x−1).', checkMode: 'auto', correctAnswer: '5x+3', correctAnswers: ['5x+3', '3+5x'], answer: '5x+3', explanation: 'Expand each bracket: 2(x+3)=2x+6 and 3(x−1)=3x−3.\nAdd: 2x+6+3x−3.\nCombine like terms: (2x+3x)+(6−3)=5x+3.\nAnswer: 5x+3' },
+
+        // Block 6 — Error-spotting / critique (Hard)
+        { difficulty: 'Hard', question: 'A student expands 5x(2x−3) and writes 10x−15. Find the error and give the correct answer.', checkMode: 'self', answer: 'The student forgot to multiply the x in 2x by the x in 5x, and dropped the x from the second term. The correct expansion is (5x)(2x)=10x² and (5x)(−3)=−15x, giving 10x²−15x, not 10x−15.' },
+        { difficulty: 'Hard', question: 'A student substitutes x=−3 into x²+2x and gets −3. Check the working and give the correct answer.', checkMode: 'self', answer: 'The student made an error, likely by treating (−3)² as −9 instead of +9. The correct working is (−3)²+2(−3)=9−6=3, so the correct answer is 3, not −3.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered simplifying, expanding, factorising and substitution.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on expanding brackets or factorising and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on the distributive law and substitution, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Simplifying with multiple variables/exponents (Easy)
+        { difficulty: 'Easy', question: 'Simplify 7x²+2x−3x²+5x.', checkMode: 'auto', correctAnswer: '4x²+7x', correctAnswers: ['4x²+7x', '4x^2+7x', '7x+4x²'], answer: '4x²+7x', explanation: 'Group like terms: (7x²−3x²)+(2x+5x).\n7x²−3x²=4x² and 2x+5x=7x.\nAnswer: 4x²+7x' },
+        { difficulty: 'Easy', question: 'Simplify 5xy+6x−3xy+2x.', checkMode: 'auto', correctAnswer: '2xy+8x', correctAnswers: ['2xy+8x', '8x+2xy'], answer: '2xy+8x', explanation: 'Group like terms: (5xy−3xy)+(6x+2x).\n5xy−3xy=2xy and 6x+2x=8x.\nAnswer: 2xy+8x' },
+        { difficulty: 'Easy', question: 'Simplify 6a²b+2ab−3a²b.', checkMode: 'auto', correctAnswer: '3a²b+2ab', correctAnswers: ['3a²b+2ab', '3a^2b+2ab', '2ab+3a²b'], answer: '3a²b+2ab', explanation: 'Only the a²b terms are like terms: 6a²b−3a²b=3a²b.\n2ab has a different exponent on a, so it cannot be combined.\nAnswer: 3a²b+2ab' },
+
+        // Block 2 — Expanding brackets, distributive law (Medium)
+        { difficulty: 'Medium', question: 'Expand 4x(3x+2).', checkMode: 'auto', correctAnswer: '12x²+8x', correctAnswers: ['12x²+8x', '12x^2+8x'], answer: '12x²+8x', explanation: 'Multiply 4x by each term inside the brackets.\n(4x)(3x)=12x² and (4x)(2)=8x.\nAnswer: 12x²+8x' },
+        { difficulty: 'Medium', question: 'Expand −5x(x−2).', checkMode: 'auto', correctAnswer: '-5x²+10x', correctAnswers: ['-5x²+10x', '−5x²+10x', '-5x^2+10x'], answer: '−5x²+10x', explanation: 'Multiply −5x by each term inside the brackets.\n(−5x)(x)=−5x² and (−5x)(−2)=+10x.\nAnswer: −5x²+10x' },
+        { difficulty: 'Medium', question: 'Expand and simplify 3(2x+5)+4x.', checkMode: 'auto', correctAnswer: '10x+15', correctAnswers: ['10x+15', '15+10x'], answer: '10x+15', explanation: 'Expand the brackets: 3(2x+5)=6x+15.\nAdd the remaining term: 6x+15+4x.\nCombine like terms: 6x+4x=10x.\nAnswer: 10x+15' },
+        { difficulty: 'Medium', question: 'A classroom poster has length 4 cm and width (x+8) cm. Write an expression for its area, and expand it.', checkMode: 'auto', correctAnswer: '4x+32', correctAnswers: ['4x+32', '32+4x'], answer: 'Area = 4(x+8) = 4x+32', explanation: 'Area of a rectangle = length × width = 4(x+8).\nExpand: (4)(x)+(4)(8)=4x+32.\nAnswer: 4x+32' },
+
+        // Block 3 — Factorising using a common factor (Medium)
+        { difficulty: 'Medium', question: 'Factorise 8x+12 fully.', checkMode: 'auto', correctAnswer: '4(2x+3)', correctAnswers: ['4(2x+3)'], answer: '4(2x+3)', explanation: 'The HCF of 8 and 12 is 4.\nDivide each term by 4: 8x÷4=2x and 12÷4=3.\nAnswer: 4(2x+3)' },
+        { difficulty: 'Medium', question: 'Factorise 10x²+15x fully.', checkMode: 'auto', correctAnswer: '5x(2x+3)', correctAnswers: ['5x(2x+3)'], answer: '5x(2x+3)', explanation: 'The HCF of the coefficients 10 and 15 is 5, and both terms share a factor of x.\nDivide each term by 5x: 10x²÷5x=2x and 15x÷5x=3.\nAnswer: 5x(2x+3)' },
+        { difficulty: 'Medium', question: 'Factorise 21xy−14x fully.', checkMode: 'auto', correctAnswer: '7x(3y-2)', correctAnswers: ['7x(3y-2)', '7x(3y−2)'], answer: '7x(3y−2)', explanation: 'The HCF of 21 and 14 is 7, and both terms share a factor of x.\nDivide each term by 7x: 21xy÷7x=3y and 14x÷7x=2.\nAnswer: 7x(3y−2)' },
+        { difficulty: 'Medium', question: 'A student factorises 20x+30 and writes 5(4x+6). Check whether this is fully factorised.', checkMode: 'self', answer: 'Not fully factorised. Checking the product: 5(4x)=20x and 5(6)=30, so the multiplication is correct, but 4x and 6 still share a common factor of 2. The HCF of 20 and 30 is actually 10, so the fully factorised form is 10(2x+3).' },
+
+        // Block 4 — Substitution with negative/fractional values (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Evaluate 4x²−3x when x=−2.', checkMode: 'auto', correctAnswer: '22', answer: '22', explanation: 'Substitute x=−2: 4(−2)²−3(−2).\n(−2)²=4, so 4(4)=16. Also −3(−2)=+6.\n16+6=22' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 3x+4y when x=0.5 and y=−2.', checkMode: 'auto', correctAnswer: '-6.5', correctAnswers: ['-6.5', '−6.5'], answer: '−6.5', explanation: 'Substitute x=0.5 and y=−2: 3(0.5)+4(−2).\n3(0.5)=1.5 and 4(−2)=−8.\n1.5−8=−6.5' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate x²−4x+2 when x=−1.', checkMode: 'auto', correctAnswer: '7', answer: '7', explanation: 'Substitute x=−1: (−1)²−4(−1)+2.\n(−1)²=1 and −4(−1)=+4.\n1+4+2=7' },
+        { difficulty: 'Medium-Hard', question: 'The cost in rand to rent a kayak is C=8h+15, where h is the number of hours. Find the cost when h=1.5 hours.', checkMode: 'auto', correctAnswer: '27', answer: '27', explanation: 'Substitute h=1.5: C=8(1.5)+15.\n8(1.5)=12, so C=12+15=27.\nThe cost is R27.' },
+
+        // Block 5 — Multi-step simplification combining several skills (Hard)
+        { difficulty: 'Hard', question: 'Simplify 4x(x+3)−7x.', checkMode: 'auto', correctAnswer: '4x²+5x', correctAnswers: ['4x²+5x', '4x^2+5x', '5x+4x²'], answer: '4x²+5x', explanation: 'Expand first: 4x(x+3)=4x²+12x.\nSubtract 7x: 4x²+12x−7x.\nCombine like terms: 12x−7x=5x.\nAnswer: 4x²+5x' },
+        { difficulty: 'Hard', question: 'Simplify 6x+9+3x, then factorise the result fully.', checkMode: 'auto', correctAnswer: '9(x+1)', correctAnswers: ['9(x+1)'], answer: '9(x+1)', explanation: 'Simplify first: 6x+9+3x=9x+9.\nFactorise: the HCF of 9 and 9 is 9.\nDivide each term by 9: 9x÷9=x and 9÷9=1.\nAnswer: 9(x+1)' },
+        { difficulty: 'Hard', question: 'Expand and simplify 3(x+2)+2(x−4).', checkMode: 'auto', correctAnswer: '5x-2', correctAnswers: ['5x-2', '5x−2'], answer: '5x−2', explanation: 'Expand each bracket: 3(x+2)=3x+6 and 2(x−4)=2x−8.\nAdd: 3x+6+2x−8.\nCombine like terms: (3x+2x)+(6−8)=5x−2.\nAnswer: 5x−2' },
+
+        // Block 6 — Error-spotting / critique (Hard)
+        { difficulty: 'Hard', question: 'A student expands 4x(3x−2) and writes 12x−8. Find the error and give the correct answer.', checkMode: 'self', answer: 'The student forgot to multiply the x in 3x by the x in 4x, and dropped the x from the second term. The correct expansion is (4x)(3x)=12x² and (4x)(−2)=−8x, giving 12x²−8x, not 12x−8.' },
+        { difficulty: 'Hard', question: 'A student substitutes x=−4 into x²+3x and gets −4. Check the working and give the correct answer.', checkMode: 'self', answer: 'The student made an error, likely by treating (−4)² as −16 instead of +16. The correct working is (−4)²+3(−4)=16−12=4, so the correct answer is 4, not −4.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered simplifying, expanding, factorising and substitution.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on expanding brackets or factorising and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on the distributive law and substitution, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Simplifying with multiple variables/exponents (Easy)
+        { difficulty: 'Easy', question: 'Simplify 8x²+4x−5x²+3x.', checkMode: 'auto', correctAnswer: '3x²+7x', correctAnswers: ['3x²+7x', '3x^2+7x', '7x+3x²'], answer: '3x²+7x', explanation: 'Group like terms: (8x²−5x²)+(4x+3x).\n8x²−5x²=3x² and 4x+3x=7x.\nAnswer: 3x²+7x' },
+        { difficulty: 'Easy', question: 'Simplify 4xy+7x−2xy+3x.', checkMode: 'auto', correctAnswer: '2xy+10x', correctAnswers: ['2xy+10x', '10x+2xy'], answer: '2xy+10x', explanation: 'Group like terms: (4xy−2xy)+(7x+3x).\n4xy−2xy=2xy and 7x+3x=10x.\nAnswer: 2xy+10x' },
+        { difficulty: 'Easy', question: 'Simplify 5a²b+4ab−3a²b.', checkMode: 'auto', correctAnswer: '2a²b+4ab', correctAnswers: ['2a²b+4ab', '2a^2b+4ab', '4ab+2a²b'], answer: '2a²b+4ab', explanation: 'Only the a²b terms are like terms: 5a²b−3a²b=2a²b.\n4ab has a different exponent on a, so it cannot be combined.\nAnswer: 2a²b+4ab' },
+
+        // Block 2 — Expanding brackets, distributive law (Medium)
+        { difficulty: 'Medium', question: 'Expand 5x(2x+3).', checkMode: 'auto', correctAnswer: '10x²+15x', correctAnswers: ['10x²+15x', '10x^2+15x'], answer: '10x²+15x', explanation: 'Multiply 5x by each term inside the brackets.\n(5x)(2x)=10x² and (5x)(3)=15x.\nAnswer: 10x²+15x' },
+        { difficulty: 'Medium', question: 'Expand −3x(x−5).', checkMode: 'auto', correctAnswer: '-3x²+15x', correctAnswers: ['-3x²+15x', '−3x²+15x', '-3x^2+15x'], answer: '−3x²+15x', explanation: 'Multiply −3x by each term inside the brackets.\n(−3x)(x)=−3x² and (−3x)(−5)=+15x.\nAnswer: −3x²+15x' },
+        { difficulty: 'Medium', question: 'Expand and simplify 4(2x+3)+3x.', checkMode: 'auto', correctAnswer: '11x+12', correctAnswers: ['11x+12', '12+11x'], answer: '11x+12', explanation: 'Expand the brackets: 4(2x+3)=8x+12.\nAdd the remaining term: 8x+12+3x.\nCombine like terms: 8x+3x=11x.\nAnswer: 11x+12' },
+        { difficulty: 'Medium', question: 'A rectangular garden bed is 5 m wide and (x+7) m long. Write an expression for its area, and expand it.', checkMode: 'auto', correctAnswer: '5x+35', correctAnswers: ['5x+35', '35+5x'], answer: 'Area = 5(x+7) = 5x+35', explanation: 'Area of a rectangle = length × width = 5(x+7).\nExpand: (5)(x)+(5)(7)=5x+35.\nAnswer: 5x+35' },
+
+        // Block 3 — Factorising using a common factor (Medium)
+        { difficulty: 'Medium', question: 'Factorise 9x+15 fully.', checkMode: 'auto', correctAnswer: '3(3x+5)', correctAnswers: ['3(3x+5)'], answer: '3(3x+5)', explanation: 'The HCF of 9 and 15 is 3.\nDivide each term by 3: 9x÷3=3x and 15÷3=5.\nAnswer: 3(3x+5)' },
+        { difficulty: 'Medium', question: 'Factorise 12x²+18x fully.', checkMode: 'auto', correctAnswer: '6x(2x+3)', correctAnswers: ['6x(2x+3)'], answer: '6x(2x+3)', explanation: 'The HCF of the coefficients 12 and 18 is 6, and both terms share a factor of x.\nDivide each term by 6x: 12x²÷6x=2x and 18x÷6x=3.\nAnswer: 6x(2x+3)' },
+        { difficulty: 'Medium', question: 'Factorise 24xy−16x fully.', checkMode: 'auto', correctAnswer: '8x(3y-2)', correctAnswers: ['8x(3y-2)', '8x(3y−2)'], answer: '8x(3y−2)', explanation: 'The HCF of 24 and 16 is 8, and both terms share a factor of x.\nDivide each term by 8x: 24xy÷8x=3y and 16x÷8x=2.\nAnswer: 8x(3y−2)' },
+        { difficulty: 'Medium', question: 'A student factorises 16x+24 and writes 4(4x+6). Check whether this is fully factorised.', checkMode: 'self', answer: 'Not fully factorised. Checking the product: 4(4x)=16x and 4(6)=24, so the multiplication is correct, but 4x and 6 still share a common factor of 2. The HCF of 16 and 24 is actually 8, so the fully factorised form is 8(2x+3).' },
+
+        // Block 4 — Substitution with negative/fractional values (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Evaluate 2x²−5x when x=−3.', checkMode: 'auto', correctAnswer: '33', answer: '33', explanation: 'Substitute x=−3: 2(−3)²−5(−3).\n(−3)²=9, so 2(9)=18. Also −5(−3)=+15.\n18+15=33' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate 4x+3y when x=0.5 and y=−4.', checkMode: 'auto', correctAnswer: '-10', correctAnswers: ['-10', '−10'], answer: '−10', explanation: 'Substitute x=0.5 and y=−4: 4(0.5)+3(−4).\n4(0.5)=2 and 3(−4)=−12.\n2−12=−10' },
+        { difficulty: 'Medium-Hard', question: 'Evaluate x²−5x+3 when x=−1.', checkMode: 'auto', correctAnswer: '9', answer: '9', explanation: 'Substitute x=−1: (−1)²−5(−1)+3.\n(−1)²=1 and −5(−1)=+5.\n1+5+3=9' },
+        { difficulty: 'Medium-Hard', question: 'The cost in rand to rent a bicycle is C=10h+20, where h is the number of hours. Find the cost when h=3.5 hours.', checkMode: 'auto', correctAnswer: '55', answer: '55', explanation: 'Substitute h=3.5: C=10(3.5)+20.\n10(3.5)=35, so C=35+20=55.\nThe cost is R55.' },
+
+        // Block 5 — Multi-step simplification combining several skills (Hard)
+        { difficulty: 'Hard', question: 'Simplify 5x(x+1)−4x.', checkMode: 'auto', correctAnswer: '5x²+x', correctAnswers: ['5x²+x', '5x^2+x', 'x+5x²'], answer: '5x²+x', explanation: 'Expand first: 5x(x+1)=5x²+5x.\nSubtract 4x: 5x²+5x−4x.\nCombine like terms: 5x−4x=x.\nAnswer: 5x²+x' },
+        { difficulty: 'Hard', question: 'Simplify 5x+10+3x, then factorise the result fully.', checkMode: 'auto', correctAnswer: '2(4x+5)', correctAnswers: ['2(4x+5)'], answer: '2(4x+5)', explanation: 'Simplify first: 5x+10+3x=8x+10.\nFactorise: the HCF of 8 and 10 is 2.\nDivide each term by 2: 8x÷2=4x and 10÷2=5.\nAnswer: 2(4x+5)' },
+        { difficulty: 'Hard', question: 'Expand and simplify 4(x+1)+2(x−5).', checkMode: 'auto', correctAnswer: '6x-6', correctAnswers: ['6x-6', '6x−6'], answer: '6x−6', explanation: 'Expand each bracket: 4(x+1)=4x+4 and 2(x−5)=2x−10.\nAdd: 4x+4+2x−10.\nCombine like terms: (4x+2x)+(4−10)=6x−6.\nAnswer: 6x−6' },
+
+        // Block 6 — Error-spotting / critique (Hard)
+        { difficulty: 'Hard', question: 'A student expands 6x(2x−5) and writes 12x−30. Find the error and give the correct answer.', checkMode: 'self', answer: 'The student forgot to multiply the x in 2x by the x in 6x, and dropped the x from the second term. The correct expansion is (6x)(2x)=12x² and (6x)(−5)=−30x, giving 12x²−30x, not 12x−30.' },
+        { difficulty: 'Hard', question: 'A student substitutes x=−5 into x²+4x and gets −5. Check the working and give the correct answer.', checkMode: 'self', answer: 'The student made an error, likely by treating (−5)² as −25 instead of +25. The correct working is (−5)²+4(−5)=25−20=5, so the correct answer is 5, not −5.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered simplifying, expanding, factorising and substitution.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on expanding brackets or factorising and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on the distributive law and substitution, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

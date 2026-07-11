@@ -407,4 +407,116 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Good effort — review the sections where you lost marks and try again.' },
     { minScore: 0, message: 'Keep going — work through the guide again section by section, then try again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 1-4 Multi-step mixed operations with integers | 5-8 Integers
+    // combined with exponents (squares/cubes of negatives) | 9-12 Order of
+    // operations (BODMAS) with brackets, integers and exponents | 13-15 Roots
+    // of integers combined with other operations | 16-18 Real-world multi-step
+    // word problems | 19-20 Error-spotting / multi-step reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Medium', question: 'Calculate −14 + (−9) × 3.', answer: '-41', checkMode: 'auto', correctAnswer: '-41', explanation: 'Multiplication before addition: −9 × 3 = −27 (different signs → negative). Then −14 + (−27) = −41.' },
+        { difficulty: 'Medium', question: 'Calculate 30 − (−6) × 4.', answer: '54', checkMode: 'auto', correctAnswer: '54', explanation: 'Multiplication before subtraction: −6 × 4 = −24. Then 30 − (−24) = 30 + 24 = 54.' },
+        { difficulty: 'Medium', question: 'Calculate −18 − (−7) + (−5).', answer: '-16', checkMode: 'auto', correctAnswer: '-16', explanation: 'Work left to right. Step 1: −18 − (−7) = −18 + 7 = −11. Step 2: −11 + (−5) = −16.' },
+        { difficulty: 'Medium-Hard', question: 'Palesa calculates −12 − 8 × 3 and gets −60, working left to right. Is she correct? Explain and give the correct answer.', answer: 'No — multiplication must be done before subtraction: 8 × 3 = 24, so −12 − 8 × 3 = −12 − 24 = −36, not −60.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate (−4)².', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: '(−4)² = (−4) × (−4). Same signs → positive. 4 × 4 = 16. Answer: 16.' },
+        { difficulty: 'Easy', question: 'Calculate (−3)³.', answer: '-27', checkMode: 'auto', correctAnswer: '-27', explanation: '(−3)³ = (−3) × (−3) × (−3) = 9 × (−3) = −27 (an odd power of a negative number is negative).' },
+        { difficulty: 'Medium', question: 'Calculate (−2)² − (−3)³.', answer: '31', checkMode: 'auto', correctAnswer: '31', explanation: 'Step 1: (−2)² = 4. Step 2: (−3)³ = −27. Step 3: 4 − (−27) = 4 + 27 = 31.' },
+        { difficulty: 'Hard', question: 'Calculate −5² + (−2)³.', answer: '-33', checkMode: 'auto', correctAnswer: '-33', explanation: 'No brackets around −5, so the exponent applies first: 5² = 25, then −5² = −25. Next (−2)³ = −8. Finally −25 + (−8) = −33.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate 4 × (−3) + (−2)².', answer: '-8', checkMode: 'auto', correctAnswer: '-8', explanation: 'Exponents and multiplication before addition. Step 1: 4 × (−3) = −12. Step 2: (−2)² = 4. Step 3: −12 + 4 = −8.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate (−6 + 2)² − 10.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Brackets first: −6 + 2 = −4. Then the exponent: (−4)² = 16. Finally 16 − 10 = 6.' },
+        { difficulty: 'Medium-Hard', question: 'Use the correct order of operations to calculate −3 × (4 − (−2)).', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Brackets first: 4 − (−2) = 4 + 2 = 6. Then −3 × 6 = −18 (different signs → negative).' },
+        { difficulty: 'Hard', question: 'Use the correct order of operations to calculate (10 − (−2)) ÷ (−3) + (−4)².', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Brackets first: 10 − (−2) = 12. Then division: 12 ÷ (−3) = −4. Then the exponent: (−4)² = 16. Finally −4 + 16 = 12.' },
+        { difficulty: 'Medium', question: 'Calculate √81 + (−3)³.', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Step 1: √81 = 9 (since 9 × 9 = 81). Step 2: (−3)³ = −27. Step 3: 9 + (−27) = −18.' },
+        { difficulty: 'Hard', question: 'Calculate ∛(−27) − (−5)².', answer: '-28', checkMode: 'auto', correctAnswer: '-28', explanation: 'Step 1: ∛(−27) = −3 (since (−3) × (−3) × (−3) = −27). Step 2: (−5)² = 25. Step 3: −3 − 25 = −28.' },
+        { difficulty: 'Hard', question: 'Calculate (−2)³ × √16.', answer: '-32', checkMode: 'auto', correctAnswer: '-32', explanation: 'Step 1: (−2)³ = −8. Step 2: √16 = 4. Step 3: −8 × 4 = −32 (different signs → negative).' },
+        { difficulty: 'Medium', question: 'The temperature at a weather station was −7°C. It dropped a further 5°C overnight, then rose 9°C by mid-morning. What was the temperature by mid-morning?', answer: '-3°C', checkMode: 'auto', correctAnswer: '-3', correctAnswers: ['-3', '-3°c', '-3c'], explanation: 'Start at −7°C, drop 5°C: −7 − 5 = −12°C. Then rise 9°C: −12 + 9 = −3°C.' },
+        { difficulty: 'Medium-Hard', question: 'A hiker starts at an elevation of −240 m (below sea level). She climbs 85 m, then climbs a further 60 m. What is her final elevation, as an integer?', answer: '-95', checkMode: 'auto', correctAnswer: '-95', explanation: 'Start at −240 m. Climb 85 m: −240 + 85 = −155 m. Climb a further 60 m: −155 + 60 = −95 m.' },
+        { difficulty: 'Medium-Hard', question: "Kagiso's account is overdrawn by R680, written as −R680. He deposits R250, then withdraws a further R90. What is his new balance?", answer: '-R520', checkMode: 'auto', correctAnswer: '-520', correctAnswers: ['-520', '-r520'], explanation: 'Start at −680. Deposit 250: −680 + 250 = −430. Withdraw 90: −430 − 90 = −520. New balance: −R520.' },
+        { difficulty: 'Hard', question: 'Calculate the correct value of −2 × (−6 + 4) − (−3)².', answer: '-5', checkMode: 'auto', correctAnswer: '-5', explanation: 'Brackets first: −6 + 4 = −2. Then multiplication: −2 × (−2) = 4. Then the exponent: (−3)² = 9. Finally 4 − 9 = −5.' },
+        { difficulty: 'Hard', question: 'Refilwe calculates (−3)² + (−2)³ × (−1) and gets −11, saying the exponents cancel out before multiplying. Is she correct? Show the correct working.', answer: 'No — first apply exponents: (−3)² = 9 and (−2)³ = −8. Then multiply: −8 × (−1) = 8. Finally 9 + 8 = 17, not −11.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered multi-step integer operations, exponents, roots and order of operations.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Medium', question: 'Calculate −17 + (−6) × 5.', answer: '-47', checkMode: 'auto', correctAnswer: '-47', explanation: 'Multiplication before addition: −6 × 5 = −30 (different signs → negative). Then −17 + (−30) = −47.' },
+        { difficulty: 'Medium', question: 'Calculate 25 − (−8) × 3.', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: 'Multiplication before subtraction: −8 × 3 = −24. Then 25 − (−24) = 25 + 24 = 49.' },
+        { difficulty: 'Medium', question: 'Calculate −21 − (−9) + (−6).', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Work left to right. Step 1: −21 − (−9) = −21 + 9 = −12. Step 2: −12 + (−6) = −18.' },
+        { difficulty: 'Medium-Hard', question: 'Bandile calculates −15 − 6 × 4 and gets −84, working left to right. Is he correct? Explain and give the correct answer.', answer: 'No — multiplication must be done before subtraction: 6 × 4 = 24, so −15 − 6 × 4 = −15 − 24 = −39, not −84.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate (−6)².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: '(−6)² = (−6) × (−6). Same signs → positive. 6 × 6 = 36. Answer: 36.' },
+        { difficulty: 'Easy', question: 'Calculate (−4)³.', answer: '-64', checkMode: 'auto', correctAnswer: '-64', explanation: '(−4)³ = (−4) × (−4) × (−4) = 16 × (−4) = −64 (an odd power of a negative number is negative).' },
+        { difficulty: 'Medium', question: 'Calculate (−3)² − (−2)³.', answer: '17', checkMode: 'auto', correctAnswer: '17', explanation: 'Step 1: (−3)² = 9. Step 2: (−2)³ = −8. Step 3: 9 − (−8) = 9 + 8 = 17.' },
+        { difficulty: 'Hard', question: 'Calculate −6² + (−3)³.', answer: '-63', checkMode: 'auto', correctAnswer: '-63', explanation: 'No brackets around −6, so the exponent applies first: 6² = 36, then −6² = −36. Next (−3)³ = −27. Finally −36 + (−27) = −63.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate 5 × (−2) + (−3)².', answer: '-1', checkMode: 'auto', correctAnswer: '-1', explanation: 'Exponents and multiplication before addition. Step 1: 5 × (−2) = −10. Step 2: (−3)² = 9. Step 3: −10 + 9 = −1.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate (−7 + 3)² − 12.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'Brackets first: −7 + 3 = −4. Then the exponent: (−4)² = 16. Finally 16 − 12 = 4.' },
+        { difficulty: 'Medium-Hard', question: 'Use the correct order of operations to calculate −4 × (5 − (−3)).', answer: '-32', checkMode: 'auto', correctAnswer: '-32', explanation: 'Brackets first: 5 − (−3) = 5 + 3 = 8. Then −4 × 8 = −32 (different signs → negative).' },
+        { difficulty: 'Hard', question: 'Use the correct order of operations to calculate (18 − (−6)) ÷ (−4) + (−3)².', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Brackets first: 18 − (−6) = 24. Then division: 24 ÷ (−4) = −6. Then the exponent: (−3)² = 9. Finally −6 + 9 = 3.' },
+        { difficulty: 'Medium', question: 'Calculate √64 + (−2)³.', answer: '0', checkMode: 'auto', correctAnswer: '0', explanation: 'Step 1: √64 = 8 (since 8 × 8 = 64). Step 2: (−2)³ = −8. Step 3: 8 + (−8) = 0.' },
+        { difficulty: 'Hard', question: 'Calculate ∛(−8) − (−4)².', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Step 1: ∛(−8) = −2 (since (−2) × (−2) × (−2) = −8). Step 2: (−4)² = 16. Step 3: −2 − 16 = −18.' },
+        { difficulty: 'Hard', question: 'Calculate (−3)³ × √9.', answer: '-81', checkMode: 'auto', correctAnswer: '-81', explanation: 'Step 1: (−3)³ = −27. Step 2: √9 = 3. Step 3: −27 × 3 = −81 (different signs → negative).' },
+        { difficulty: 'Medium', question: 'The temperature at a weather station was −9°C. It dropped a further 6°C overnight, then rose 14°C by mid-morning. What was the temperature by mid-morning?', answer: '-1°C', checkMode: 'auto', correctAnswer: '-1', correctAnswers: ['-1', '-1°c', '-1c'], explanation: 'Start at −9°C, drop 6°C: −9 − 6 = −15°C. Then rise 14°C: −15 + 14 = −1°C.' },
+        { difficulty: 'Medium-Hard', question: 'A hiker starts at an elevation of −310 m (below sea level). She climbs 120 m, then climbs a further 45 m. What is her final elevation, as an integer?', answer: '-145', checkMode: 'auto', correctAnswer: '-145', explanation: 'Start at −310 m. Climb 120 m: −310 + 120 = −190 m. Climb a further 45 m: −190 + 45 = −145 m.' },
+        { difficulty: 'Medium-Hard', question: "Naledi's account is overdrawn by R540, written as −R540. She deposits R300, then withdraws a further R120. What is her new balance?", answer: '-R360', checkMode: 'auto', correctAnswer: '-360', correctAnswers: ['-360', '-r360'], explanation: 'Start at −540. Deposit 300: −540 + 300 = −240. Withdraw 120: −240 − 120 = −360. New balance: −R360.' },
+        { difficulty: 'Hard', question: 'Calculate the correct value of −3 × (−8 + 5) − (−2)².', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Brackets first: −8 + 5 = −3. Then multiplication: −3 × (−3) = 9. Then the exponent: (−2)² = 4. Finally 9 − 4 = 5.' },
+        { difficulty: 'Hard', question: 'Sibusiso calculates (−4)² + (−3)³ × (−1) and gets 13, saying the exponents cancel out before multiplying. Is he correct? Show the correct working.', answer: 'No — first apply exponents: (−4)² = 16 and (−3)³ = −27. Then multiply: −27 × (−1) = 27. Finally 16 + 27 = 43, not 13.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered multi-step integer operations, exponents, roots and order of operations.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout as Set 1/2, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Medium', question: 'Calculate −20 + (−8) × 3.', answer: '-44', checkMode: 'auto', correctAnswer: '-44', explanation: 'Multiplication before addition: −8 × 3 = −24 (different signs → negative). Then −20 + (−24) = −44.' },
+        { difficulty: 'Medium', question: 'Calculate 18 − (−9) × 5.', answer: '63', checkMode: 'auto', correctAnswer: '63', explanation: 'Multiplication before subtraction: −9 × 5 = −45. Then 18 − (−45) = 18 + 45 = 63.' },
+        { difficulty: 'Medium', question: 'Calculate −14 − (−8) + (−11).', answer: '-17', checkMode: 'auto', correctAnswer: '-17', explanation: 'Work left to right. Step 1: −14 − (−8) = −14 + 8 = −6. Step 2: −6 + (−11) = −17.' },
+        { difficulty: 'Medium-Hard', question: 'Ayanda calculates −9 − 7 × 5 and gets −80, working left to right. Is she correct? Explain and give the correct answer.', answer: 'No — multiplication must be done before subtraction: 7 × 5 = 35, so −9 − 7 × 5 = −9 − 35 = −44, not −80.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Calculate (−7)².', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: '(−7)² = (−7) × (−7). Same signs → positive. 7 × 7 = 49. Answer: 49.' },
+        { difficulty: 'Easy', question: 'Calculate (−5)³.', answer: '-125', checkMode: 'auto', correctAnswer: '-125', explanation: '(−5)³ = (−5) × (−5) × (−5) = 25 × (−5) = −125 (an odd power of a negative number is negative).' },
+        { difficulty: 'Medium', question: 'Calculate (−4)² − (−2)³.', answer: '24', checkMode: 'auto', correctAnswer: '24', explanation: 'Step 1: (−4)² = 16. Step 2: (−2)³ = −8. Step 3: 16 − (−8) = 16 + 8 = 24.' },
+        { difficulty: 'Hard', question: 'Calculate −4² + (−3)³.', answer: '-43', checkMode: 'auto', correctAnswer: '-43', explanation: 'No brackets around −4, so the exponent applies first: 4² = 16, then −4² = −16. Next (−3)³ = −27. Finally −16 + (−27) = −43.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate 6 × (−3) + (−4)².', answer: '-2', checkMode: 'auto', correctAnswer: '-2', explanation: 'Exponents and multiplication before addition. Step 1: 6 × (−3) = −18. Step 2: (−4)² = 16. Step 3: −18 + 16 = −2.' },
+        { difficulty: 'Medium', question: 'Use the correct order of operations to calculate (−5 + 1)² − 8.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Brackets first: −5 + 1 = −4. Then the exponent: (−4)² = 16. Finally 16 − 8 = 8.' },
+        { difficulty: 'Medium-Hard', question: 'Use the correct order of operations to calculate −5 × (6 − (−1)).', answer: '-35', checkMode: 'auto', correctAnswer: '-35', explanation: 'Brackets first: 6 − (−1) = 6 + 1 = 7. Then −5 × 7 = −35 (different signs → negative).' },
+        { difficulty: 'Hard', question: 'Use the correct order of operations to calculate (14 − (−4)) ÷ (−3) + (−5)².', answer: '19', checkMode: 'auto', correctAnswer: '19', explanation: 'Brackets first: 14 − (−4) = 18. Then division: 18 ÷ (−3) = −6. Then the exponent: (−5)² = 25. Finally −6 + 25 = 19.' },
+        { difficulty: 'Medium', question: 'Calculate √100 + (−4)³.', answer: '-54', checkMode: 'auto', correctAnswer: '-54', explanation: 'Step 1: √100 = 10 (since 10 × 10 = 100). Step 2: (−4)³ = −64. Step 3: 10 + (−64) = −54.' },
+        { difficulty: 'Hard', question: 'Calculate ∛(−64) − (−3)².', answer: '-13', checkMode: 'auto', correctAnswer: '-13', explanation: 'Step 1: ∛(−64) = −4 (since (−4) × (−4) × (−4) = −64). Step 2: (−3)² = 9. Step 3: −4 − 9 = −13.' },
+        { difficulty: 'Hard', question: 'Calculate (−1)³ × √25.', answer: '-5', checkMode: 'auto', correctAnswer: '-5', explanation: 'Step 1: (−1)³ = −1. Step 2: √25 = 5. Step 3: −1 × 5 = −5 (different signs → negative).' },
+        { difficulty: 'Medium', question: 'The temperature at a weather station was −11°C. It dropped a further 4°C overnight, then rose 19°C by mid-morning. What was the temperature by mid-morning?', answer: '4°C', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4°c', '4c'], explanation: 'Start at −11°C, drop 4°C: −11 − 4 = −15°C. Then rise 19°C: −15 + 19 = 4°C.' },
+        { difficulty: 'Medium-Hard', question: 'A hiker starts at an elevation of −180 m (below sea level). She climbs 95 m, then climbs a further 40 m. What is her final elevation, as an integer?', answer: '-45', checkMode: 'auto', correctAnswer: '-45', explanation: 'Start at −180 m. Climb 95 m: −180 + 95 = −85 m. Climb a further 40 m: −85 + 40 = −45 m.' },
+        { difficulty: 'Medium-Hard', question: "Thandeka's account is overdrawn by R415, written as −R415. She deposits R275, then withdraws a further R160. What is her new balance?", answer: '-R300', checkMode: 'auto', correctAnswer: '-300', correctAnswers: ['-300', '-r300'], explanation: 'Start at −415. Deposit 275: −415 + 275 = −140. Withdraw 160: −140 − 160 = −300. New balance: −R300.' },
+        { difficulty: 'Hard', question: 'Calculate the correct value of −4 × (−9 + 6) − (−5)².', answer: '-13', checkMode: 'auto', correctAnswer: '-13', explanation: 'Brackets first: −9 + 6 = −3. Then multiplication: −4 × (−3) = 12. Then the exponent: (−5)² = 25. Finally 12 − 25 = −13.' },
+        { difficulty: 'Hard', question: 'Katlego calculates (−2)² + (−4)³ × (−1) and gets −18, saying the exponents cancel out before multiplying. Is he correct? Show the correct working.', answer: 'No — first apply exponents: (−2)² = 4 and (−4)³ = −64. Then multiply: −64 × (−1) = 64. Finally 4 + 64 = 68, not −18.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered multi-step integer operations, exponents, roots and order of operations.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

@@ -396,4 +396,148 @@ export const topicData: TopicData = {
     { minScore: 5, message: 'Good effort! Go back over the study guide, especially the classification checklist, and try again.' },
     { minScore: 0, message: 'Keep practising — work through the guide again, focusing on the difference between rational and irrational numbers.' },
   ],
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-3 Classifying numbers by type (N/N0/Z/Q) | 4-7 Rational vs
+    // irrational from decimals (terminating/repeating vs non-repeating) |
+    // 8-11 Surds — rational or irrational | 12-14 Full multi-set
+    // classification | 15-17 Comparing/ordering across the hierarchy |
+    // 18-19 Error-spotting / multi-step reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Classifying numbers by type (N / N0 / Z / Q)
+        { difficulty: 'Easy', question: 'Is 12 a natural number?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes'], explanation: '12 is a positive counting number, so it belongs to the natural numbers (N). ✓' },
+        { difficulty: 'Easy', question: 'Is −8 a natural number? Answer yes or no.', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no'], explanation: 'Natural numbers are the positive counting numbers {1, 2, 3, ...}. −8 is negative, so it is NOT a natural number. ✓' },
+        { difficulty: 'Easy', question: 'Which set does 0 belong to that natural numbers (N) do not include: whole numbers (N0) or integers only?', checkMode: 'auto', correctAnswer: 'whole numbers', correctAnswers: ['whole numbers', 'N0', 'whole numbers (N0)'], explanation: 'Whole numbers (N0) are the natural numbers plus 0: {0, 1, 2, 3, ...}. Natural numbers start counting at 1, so 0 is in N0 but not in N. ✓' },
+        { difficulty: 'Easy', question: 'Is −5 an integer?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes'], explanation: 'Integers (Z) include all whole numbers together with their negatives: {..., −2, −1, 0, 1, 2, ...}. −5 fits this definition. ✓' },
+
+        // Block 2 — Rational vs irrational from decimals (terminating/repeating vs non-repeating)
+        { difficulty: 'Easy-Medium', question: 'Is 0.375 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: '0.375 is a terminating decimal (it stops), so it can be written as an exact fraction: 0.375 = 3/8. This makes it rational. ✓' },
+        { difficulty: 'Easy-Medium', question: 'The decimal 0.454545... repeats the pair "45" forever. Is this number rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: 'A decimal that repeats in a clear pattern forever is still rational, even though it never technically ends. 0.454545... = 5/11, so it is rational. ✓' },
+        { difficulty: 'Easy-Medium', question: 'A number has the decimal value 0.12112111211112..., where the number of 1s between each 2 keeps increasing. Is this number rational or irrational? Explain your reasoning.', checkMode: 'self', answer: 'Irrational. The decimal never terminates and, although it has some structure, the digits never settle into a fixed repeating pattern (the gaps of 1s keep growing), so it cannot be written as an exact fraction.' },
+        { difficulty: 'Medium', question: 'Sipho says every decimal that "goes on forever" must be irrational. Explain why this is not always true, using 0.222... as an example.', checkMode: 'self', answer: 'Sipho is incorrect. A decimal is only irrational if it goes on forever WITHOUT ever repeating in a pattern. 0.222... goes on forever, but the digit 2 repeats every time, so it is actually rational — it equals 2/9. Only non-terminating, non-repeating decimals are irrational.' },
+
+        // Block 3 — Surds: rational or irrational
+        { difficulty: 'Medium', question: 'Is √16 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: '16 is a perfect square (4 × 4 = 16), so √16 = 4, a whole number. This makes it rational. ✓' },
+        { difficulty: 'Medium', question: 'Is √17 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', correctAnswers: ['irrational'], explanation: '17 is not a perfect square (the nearest perfect squares are 16 and 25), so √17 cannot be simplified to a whole number. Its decimal, 4.1231056..., is non-terminating and non-repeating, so it is irrational. ✓' },
+        { difficulty: 'Medium', question: 'Classify √49: is it rational or irrational, and what does it simplify to?', checkMode: 'self', answer: 'Rational. 49 is a perfect square (7 × 7 = 49), so √49 = 7, which is a whole number and therefore rational.' },
+        { difficulty: 'Medium-Hard', question: 'Between √40 and √50, one is closer to being irrational-looking than the other, but classify BOTH numbers as rational or irrational, showing your reasoning for each.', checkMode: 'self', answer: 'Both are irrational. 40 is not a perfect square (between 36 = 6² and 49 = 7²), so √40 = 6.3245553... is non-terminating and non-repeating. 50 is also not a perfect square (between 49 = 7² and 64 = 8²), so √50 = 7.0710678... is also non-terminating and non-repeating. Neither simplifies to a whole number, so both are irrational.' },
+
+        // Block 4 — Full multi-set classification
+        { difficulty: 'Medium', question: 'Classify the number 14 into every set it belongs to (N, N0, Z, Q, or irrational).', checkMode: 'auto', correctAnswer: 'N, N0, Z and Q', correctAnswers: ['N, N0, Z and Q', 'N, N0, Z, Q'], explanation: '14 is a positive whole counting number with no fraction part, so it belongs to N, N0, Z and Q. ✓' },
+        { difficulty: 'Medium', question: 'Classify √81 into every set it belongs to (N, N0, Z, Q, or irrational).', checkMode: 'auto', correctAnswer: 'N, N0, Z and Q', correctAnswers: ['N, N0, Z and Q', 'N, N0, Z, Q'], explanation: '81 is a perfect square (9 × 9 = 81), so √81 = 9. Since 9 is a positive whole number, it belongs to N, N0, Z and Q. ✓' },
+        { difficulty: 'Medium-Hard', question: 'A number line shows −7, 0, 5/8, √29 and 20. Sort each number into every set it belongs to (N, N0, Z, Q, irrational), and explain why √29 does not fit into any of N, N0, Z or Q.', checkMode: 'self', answer: '−7: Z, Q. 0: N0, Z, Q. 5/8: Q only. 20: N, N0, Z, Q. √29 is irrational because 29 is not a perfect square (between 25 = 5² and 36 = 6²), so its decimal, 5.3851648..., never terminates or repeats — it therefore does not belong to N, N0, Z or Q at all.' },
+
+        // Block 5 — Comparing / ordering across the hierarchy
+        { difficulty: 'Medium', question: 'Which is greater: √17 or 4? Explain how you know without a calculator.', checkMode: 'self', answer: '√17 is greater than 4. Since 16 < 17, we know √16 < √17, and √16 = 4, so √17 must be greater than 4 (in fact √17 ≈ 4.12).' },
+        { difficulty: 'Medium', question: 'Arrange these numbers from smallest to largest: √25, 4.9, √16, 5.1.', checkMode: 'auto', correctAnswer: '√16, 4.9, √25, 5.1', correctAnswers: ['√16, 4.9, √25, 5.1', 'sqrt16, 4.9, sqrt25, 5.1'], explanation: '√16 = 4, 4.9 = 4.9, √25 = 5, 5.1 = 5.1. Ordering the values 4, 4.9, 5, 5.1 from smallest to largest gives √16, 4.9, √25, 5.1. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Place √10 and 3.5 in order from smallest to largest, showing how you compared them.', checkMode: 'self', answer: '√10, 3.5. √10 ≈ 3.1622776..., which is less than 3.5, since 3.1622776 < 3.5. So the order from smallest to largest is √10, then 3.5.' },
+
+        // Block 6 — Error-spotting / multi-step reasoning
+        { difficulty: 'Hard', question: 'Ayesha says √64 is irrational because it has a square root sign in front of it. Is she correct? Explain what she has misunderstood.', checkMode: 'self', answer: 'No, Ayesha is incorrect. Having a square root sign does not automatically make a number irrational — you must check whether the number under the root is a perfect square. 64 is a perfect square (8 × 8 = 64), so √64 = 8, a whole number, which is rational. Ayesha has confused "contains a root sign" with "is irrational".' },
+        { difficulty: 'Hard', question: 'A learner classifies the number 6/3 as "rational only, not an integer, because it is written as a fraction". Identify the error in this reasoning and give the full, correct classification.', checkMode: 'self', answer: 'The error is that the learner did not simplify the fraction first. 6/3 simplifies to 2, which is a whole positive number. So 6/3 actually belongs to N, N0, Z and Q — not just Q. Always simplify a fraction before classifying it, since its simplified form may reveal it belongs to more sets than it first appears to.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered classifying numbers across the real number system.' },
+        { minScore: 14, message: 'Great work! You understand most of the number sets — review anything you missed and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the classification checklist and the rational/irrational decimal test, then try again.' },
+        { minScore: 0, message: 'Keep practising — work through the study guide again, focusing on perfect squares and the decimal test.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Classifying numbers by type (N / N0 / Z / Q)
+        { difficulty: 'Easy', question: 'Is 25 a natural number?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes'], explanation: '25 is a positive counting number, so it belongs to the natural numbers (N). ✓' },
+        { difficulty: 'Easy', question: 'Is −11 a whole number? Answer yes or no.', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no'], explanation: 'Whole numbers (N0) are {0, 1, 2, 3, ...} — they cannot be negative. −11 is negative, so it is NOT a whole number. ✓' },
+        { difficulty: 'Easy', question: 'Name the smallest set (N, N0 or Z) that the number 0 belongs to.', checkMode: 'auto', correctAnswer: 'N0', correctAnswers: ['N0', 'whole numbers', 'N zero'], explanation: '0 is not in N (counting starts at 1), but it is included in the whole numbers (N0) by definition, so N0 is the smallest set containing 0. ✓' },
+        { difficulty: 'Easy', question: 'Is −20 an integer?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes'], explanation: 'Integers (Z) include all whole numbers together with their negatives, so −20 fits this definition. ✓' },
+
+        // Block 2 — Rational vs irrational from decimals
+        { difficulty: 'Easy-Medium', question: 'Is 0.65 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: '0.65 is a terminating decimal, so it can be written as an exact fraction: 0.65 = 13/20. This makes it rational. ✓' },
+        { difficulty: 'Easy-Medium', question: 'The decimal 0.363636... repeats the pair "36" forever. Is this number rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: 'A decimal that repeats in a clear pattern forever is still rational. 0.363636... = 4/11, so it is rational. ✓' },
+        { difficulty: 'Easy-Medium', question: 'A number has the decimal value 0.20200200020002..., where the number of zeros between each 2 keeps increasing. Is this number rational or irrational? Explain your reasoning.', checkMode: 'self', answer: 'Irrational. Although the decimal has a visible pattern of sorts, the digits never settle into a FIXED repeating block — the gaps of zeros keep growing — so it never terminates and never truly repeats, meaning it cannot be written as an exact fraction.' },
+        { difficulty: 'Medium', question: 'Lindiwe says a decimal is only rational if it stops completely. Explain why this is not the full picture, using 0.777... as an example.', checkMode: 'self', answer: 'Lindiwe is incorrect. A decimal is rational if it terminates OR repeats in a pattern forever. 0.777... never stops, but the digit 7 repeats every time, so it is rational — it equals 7/9. Only decimals that neither terminate nor repeat are irrational.' },
+
+        // Block 3 — Surds: rational or irrational
+        { difficulty: 'Medium', question: 'Is √25 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: '25 is a perfect square (5 × 5 = 25), so √25 = 5, a whole number. This makes it rational. ✓' },
+        { difficulty: 'Medium', question: 'Is √29 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', correctAnswers: ['irrational'], explanation: '29 is not a perfect square (the nearest perfect squares are 25 and 36), so √29 cannot be simplified to a whole number. Its decimal, 5.3851648..., is non-terminating and non-repeating, so it is irrational. ✓' },
+        { difficulty: 'Medium', question: 'Classify √144: is it rational or irrational, and what does it simplify to?', checkMode: 'self', answer: 'Rational. 144 is a perfect square (12 × 12 = 144), so √144 = 12, which is a whole number and therefore rational.' },
+        { difficulty: 'Medium-Hard', question: 'Classify BOTH √64 and √70 as rational or irrational, showing your reasoning for each.', checkMode: 'self', answer: '√64 is rational: 64 is a perfect square (8 × 8 = 64), so √64 = 8, a whole number. √70 is irrational: 70 is not a perfect square (between 64 = 8² and 81 = 9²), so √70 = 8.3666002... is non-terminating and non-repeating.' },
+
+        // Block 4 — Full multi-set classification
+        { difficulty: 'Medium', question: 'Classify the number 23 into every set it belongs to (N, N0, Z, Q, or irrational).', checkMode: 'auto', correctAnswer: 'N, N0, Z and Q', correctAnswers: ['N, N0, Z and Q', 'N, N0, Z, Q'], explanation: '23 is a positive whole counting number with no fraction part, so it belongs to N, N0, Z and Q. ✓' },
+        { difficulty: 'Medium', question: 'Classify √100 into every set it belongs to (N, N0, Z, Q, or irrational).', checkMode: 'auto', correctAnswer: 'N, N0, Z and Q', correctAnswers: ['N, N0, Z and Q', 'N, N0, Z, Q'], explanation: '100 is a perfect square (10 × 10 = 100), so √100 = 10. Since 10 is a positive whole number, it belongs to N, N0, Z and Q. ✓' },
+        { difficulty: 'Medium-Hard', question: 'A number line shows −9, 0, 3/7, √50 and 15. Sort each number into every set it belongs to (N, N0, Z, Q, irrational), and explain why √50 does not fit into any of N, N0, Z or Q.', checkMode: 'self', answer: '−9: Z, Q. 0: N0, Z, Q. 3/7: Q only. 15: N, N0, Z, Q. √50 is irrational because 50 is not a perfect square (between 49 = 7² and 64 = 8²), so its decimal, 7.0710678..., never terminates or repeats — it therefore does not belong to N, N0, Z or Q at all.' },
+
+        // Block 5 — Comparing / ordering across the hierarchy
+        { difficulty: 'Medium', question: 'Which is smaller: √29 or 5? Explain how you know without a calculator.', checkMode: 'self', answer: '5 is smaller than √29. Since 25 < 29, we know √25 < √29, and √25 = 5, so 5 must be smaller than √29 (in fact √29 ≈ 5.39).' },
+        { difficulty: 'Medium', question: 'Arrange these numbers from smallest to largest: √36, 5.9, √49, 6.2.', checkMode: 'auto', correctAnswer: '5.9, √36, 6.2, √49', correctAnswers: ['5.9, √36, 6.2, √49', '5.9, sqrt36, 6.2, sqrt49'], explanation: '√36 = 6, 5.9 = 5.9, √49 = 7, 6.2 = 6.2. Ordering the values 5.9, 6, 6.2, 7 from smallest to largest gives 5.9, √36 (6), 6.2, √49 (7). ✓' },
+        { difficulty: 'Medium-Hard', question: 'Place √11 and 3.4 in order from smallest to largest, showing how you compared them.', checkMode: 'self', answer: '√11, 3.4. √11 ≈ 3.3166247..., which is less than 3.4, since 3.3166 < 3.4. So the order from smallest to largest is √11, then 3.4.' },
+
+        // Block 6 — Error-spotting / multi-step reasoning
+        { difficulty: 'Hard', question: 'Themba says √121 is irrational because it has a square root sign in front of it. Is he correct? Explain what he has misunderstood.', checkMode: 'self', answer: 'No, Themba is incorrect. Having a square root sign does not automatically make a number irrational — you must check whether the number under the root is a perfect square. 121 is a perfect square (11 × 11 = 121), so √121 = 11, a whole number, which is rational. Themba has confused "contains a root sign" with "is irrational".' },
+        { difficulty: 'Hard', question: 'A learner classifies the number 12/4 as "rational only, not an integer, because it is written as a fraction". Identify the error in this reasoning and give the full, correct classification.', checkMode: 'self', answer: 'The error is that the learner did not simplify the fraction first. 12/4 simplifies to 3, which is a whole positive number. So 12/4 actually belongs to N, N0, Z and Q — not just Q. Always simplify a fraction before classifying it, since its simplified form may reveal it belongs to more sets than it first appears to.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Excellent! You can confidently classify numbers across the real number system.' },
+        { minScore: 14, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the classification checklist and the rational/irrational decimal test, then try again.' },
+        { minScore: 0, message: 'Keep practising — work through the study guide again, focusing on perfect squares and the decimal test.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, more real-world contexts + reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Classifying numbers by type (N / N0 / Z / Q)
+        { difficulty: 'Easy', question: 'Is 40 a natural number?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes'], explanation: '40 is a positive counting number, so it belongs to the natural numbers (N). ✓' },
+        { difficulty: 'Easy', question: 'Is −3 a natural number? Answer yes or no.', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no'], explanation: 'Natural numbers are the positive counting numbers {1, 2, 3, ...}. −3 is negative, so it is NOT a natural number. ✓' },
+        { difficulty: 'Easy', question: 'A temperature reading of 0°C is recorded on a thermometer. Which set(s) — N, N0, Z, Q — does the number 0 belong to?', checkMode: 'auto', correctAnswer: 'N0, Z and Q', correctAnswers: ['N0, Z and Q', 'N0, Z, Q'], explanation: '0 is not in N (counting starts at 1), but it is in N0 by definition, it is an integer, and it can be written as 0/1, so it is in Q too. So 0 belongs to N0, Z and Q. ✓' },
+        { difficulty: 'Easy', question: 'Is −14 an integer?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes'], explanation: 'Integers (Z) include all whole numbers together with their negatives, so −14 fits this definition. ✓' },
+
+        // Block 2 — Rational vs irrational from decimals
+        { difficulty: 'Easy-Medium', question: 'Is 0.425 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: '0.425 is a terminating decimal, so it can be written as an exact fraction: 0.425 = 17/40. This makes it rational. ✓' },
+        { difficulty: 'Easy-Medium', question: 'The decimal 0.222... repeats the digit 2 forever. Is this number rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: 'A decimal that repeats in a clear pattern forever is still rational. 0.222... = 2/9, so it is rational. ✓' },
+        { difficulty: 'Easy-Medium', question: 'A number has the decimal value 0.30300300030000300003..., where the number of zeros between each 3 keeps increasing by one each time. Is this number rational or irrational? Explain your reasoning.', checkMode: 'self', answer: 'Irrational. Even though there is some visible structure, the digits never lock into a FIXED block that repeats identically forever — the gaps keep growing — so the decimal never terminates and never truly repeats, meaning it cannot be written as an exact fraction.' },
+        { difficulty: 'Medium', question: 'Bongani says a decimal must be irrational if it has more than 10 digits after the decimal point. Explain why this reasoning is flawed, using the repeating example 0.583583583... .', checkMode: 'self', answer: 'Bongani is incorrect. The LENGTH of a decimal does not decide whether it is rational or irrational — what matters is whether it terminates or repeats in a pattern. 0.583583583... has many digits, but the block "583" repeats forever, so it is rational (it equals 583/999). A decimal is only irrational if it goes on forever with no repeating pattern at all, regardless of how many digits are shown.' },
+
+        // Block 3 — Surds: rational or irrational
+        { difficulty: 'Medium', question: 'Is √169 rational or irrational?', checkMode: 'auto', correctAnswer: 'rational', correctAnswers: ['rational'], explanation: '169 is a perfect square (13 × 13 = 169), so √169 = 13, a whole number. This makes it rational. ✓' },
+        { difficulty: 'Medium', question: 'Is √90 rational or irrational?', checkMode: 'auto', correctAnswer: 'irrational', correctAnswers: ['irrational'], explanation: '90 is not a perfect square (the nearest perfect squares are 81 and 100), so √90 cannot be simplified to a whole number. Its decimal, 9.4868329..., is non-terminating and non-repeating, so it is irrational. ✓' },
+        { difficulty: 'Medium', question: 'Classify √196: is it rational or irrational, and what does it simplify to?', checkMode: 'self', answer: 'Rational. 196 is a perfect square (14 × 14 = 196), so √196 = 14, which is a whole number and therefore rational.' },
+        { difficulty: 'Medium-Hard', question: 'Classify BOTH √121 and √130 as rational or irrational, showing your reasoning for each.', checkMode: 'self', answer: '√121 is rational: 121 is a perfect square (11 × 11 = 121), so √121 = 11, a whole number. √130 is irrational: 130 is not a perfect square (between 121 = 11² and 144 = 12²), so √130 = 11.4017542... is non-terminating and non-repeating.' },
+
+        // Block 4 — Full multi-set classification
+        { difficulty: 'Medium', question: 'Classify the number 31 into every set it belongs to (N, N0, Z, Q, or irrational).', checkMode: 'auto', correctAnswer: 'N, N0, Z and Q', correctAnswers: ['N, N0, Z and Q', 'N, N0, Z, Q'], explanation: '31 is a positive whole counting number with no fraction part, so it belongs to N, N0, Z and Q. ✓' },
+        { difficulty: 'Medium', question: 'Classify √225 into every set it belongs to (N, N0, Z, Q, or irrational).', checkMode: 'auto', correctAnswer: 'N, N0, Z and Q', correctAnswers: ['N, N0, Z and Q', 'N, N0, Z, Q'], explanation: '225 is a perfect square (15 × 15 = 225), so √225 = 15. Since 15 is a positive whole number, it belongs to N, N0, Z and Q. ✓' },
+        { difficulty: 'Medium-Hard', question: 'A number line shows −12, 0, 7/9, √110 and 18. Sort each number into every set it belongs to (N, N0, Z, Q, irrational), and explain why √110 does not fit into any of N, N0, Z or Q.', checkMode: 'self', answer: '−12: Z, Q. 0: N0, Z, Q. 7/9: Q only. 18: N, N0, Z, Q. √110 is irrational because 110 is not a perfect square (between 100 = 10² and 121 = 11²), so its decimal, 10.4880885..., never terminates or repeats — it therefore does not belong to N, N0, Z or Q at all.' },
+
+        // Block 5 — Comparing / ordering across the hierarchy
+        { difficulty: 'Medium', question: 'Which is greater: √40 or 6? Explain how you know without a calculator.', checkMode: 'self', answer: '√40 is greater than 6. Since 36 < 40, we know √36 < √40, and √36 = 6, so √40 must be greater than 6 (in fact √40 ≈ 6.32).' },
+        { difficulty: 'Medium', question: 'Arrange these numbers from smallest to largest: √100, 9.8, √81, 10.3.', checkMode: 'auto', correctAnswer: '√81, 9.8, √100, 10.3', correctAnswers: ['√81, 9.8, √100, 10.3', 'sqrt81, 9.8, sqrt100, 10.3'], explanation: '√100 = 10, 9.8 = 9.8, √81 = 9, 10.3 = 10.3. Ordering the values 10, 9.8, 9, 10.3 from smallest to largest gives √81 (9), 9.8, √100 (10), 10.3. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Place √17 and 4.2 in order from smallest to largest, showing how you compared them.', checkMode: 'self', answer: '√17, 4.2. √17 ≈ 4.1231056..., which is less than 4.2, since 4.1231 < 4.2. So the order from smallest to largest is √17, then 4.2.' },
+
+        // Block 6 — Error-spotting / multi-step reasoning
+        { difficulty: 'Hard', question: 'Naledi says √225 is irrational because it has a square root sign in front of it. Is she correct? Explain what she has misunderstood.', checkMode: 'self', answer: 'No, Naledi is incorrect. Having a square root sign does not automatically make a number irrational — you must check whether the number under the root is a perfect square. 225 is a perfect square (15 × 15 = 225), so √225 = 15, a whole number, which is rational. Naledi has confused "contains a root sign" with "is irrational".' },
+        { difficulty: 'Hard', question: 'A learner classifies the number 20/5 as "rational only, not an integer, because it is written as a fraction". Identify the error in this reasoning and give the full, correct classification.', checkMode: 'self', answer: 'The error is that the learner did not simplify the fraction first. 20/5 simplifies to 4, which is a whole positive number. So 20/5 actually belongs to N, N0, Z and Q — not just Q. Always simplify a fraction before classifying it, since its simplified form may reveal it belongs to more sets than it first appears to.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Superb! You have a deep, reliable understanding of the real number system.' },
+        { minScore: 14, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the classification checklist and the rational/irrational decimal test, then try again.' },
+        { minScore: 0, message: 'Keep practising — work through the study guide again, focusing on perfect squares and the decimal test.' },
+      ],
+    },
+  ],
 }

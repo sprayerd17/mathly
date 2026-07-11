@@ -393,4 +393,142 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan probeer, werk deur die gids weer.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 1-4 Multi-stap gemengde bewerkings | 5-8 Vermenigvuldiging &
+    // deling van desimale breuke deur desimale breuke | 9-12 Kwadrate, kubusse
+    // & wortels | 13-16 Omskakeling desimaal/breuk/persentasie | 17-20
+    // Woordprobleme & foutopsporing
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Multi-stap gemengde bewerkings met desimale breuke (1-4)
+        { difficulty: 'Medium', question: 'Bereken 12,5 + 3,6 × 2,4, deur die korrekte volgorde van bewerkings toe te pas.', answer: '21,14', checkMode: 'auto', correctAnswer: '21.14', correctAnswers: ['21.14', '21,14'], explanation: 'Vermenigvuldiging voor optelling: 3,6 × 2,4 = 8,64\n12,5 + 8,64 = 21,14 ✓' },
+        { difficulty: 'Medium', question: 'Bereken (8,4 - 2,9) × 1,5.', answer: '8,25', checkMode: 'auto', correctAnswer: '8.25', correctAnswers: ['8.25', '8,25'], explanation: 'Hakies eerste: 8,4 − 2,9 = 5,5\n5,5 × 1,5 = 8,25 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 15,6 ÷ 1,2 + 3,5 × 2.', answer: '20', checkMode: 'auto', correctAnswer: '20', explanation: 'Deling en vermenigvuldiging voor optelling:\n15,6 ÷ 1,2 = 13\n3,5 × 2 = 7\n13 + 7 = 20 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 2,5 × 0,4 + 6,3 ÷ 0,9.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Vermenigvuldiging en deling voor optelling:\n2,5 × 0,4 = 1\n6,3 ÷ 0,9 = 7\n1 + 7 = 8 ✓' },
+
+        // Blok 2 — Vermenigvuldiging & deling van desimale breuke deur desimale breuke (5-8)
+        { difficulty: 'Medium', question: 'Bereken 3,6 × 0,24.', answer: '0,864', checkMode: 'auto', correctAnswer: '0.864', correctAnswers: ['0.864', '0,864'], explanation: 'Vermenigvuldig sonder die desimale kommas: 36 × 24 = 864.\nTel desimale plekke: 3,6 het 1, 0,24 het 2. Totaal = 3.\nPlaas die desimale komma 3 plekke van regs af: 0,864 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 0,84 ÷ 0,12.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Die deler 0,12 het 2 desimale plekke. Vermenigvuldig albei met 100: 84 ÷ 12 = 7 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 5,4 × 1,25.', answer: '6,75', checkMode: 'auto', correctAnswer: '6.75', correctAnswers: ['6.75', '6,75'], explanation: 'Vermenigvuldig sonder die desimale kommas: 54 × 125 = 6 750.\nTel desimale plekke: 5,4 het 1, 1,25 het 2. Totaal = 3.\nPlaas die desimale komma 3 plekke van regs af: 6,750 = 6,75 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 9,36 ÷ 0,78.', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Die deler 0,78 het 2 desimale plekke. Vermenigvuldig albei met 100: 936 ÷ 78 = 12 ✓' },
+
+        // Blok 3 — Kwadrate, kubusse & wortels van desimale breuke (9-12)
+        { difficulty: 'Medium', question: 'Bereken 0,7².', answer: '0,49', checkMode: 'auto', correctAnswer: '0.49', correctAnswers: ['0.49', '0,49'], explanation: '0,7² = 0,7 × 0,7 = 0,49 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 0,2³.', answer: '0,008', checkMode: 'auto', correctAnswer: '0.008', correctAnswers: ['0.008', '0,008'], explanation: '0,2³ = 0,2 × 0,2 × 0,2\n0,2 × 0,2 = 0,04\n0,04 × 0,2 = 0,008 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Vind die vierkantswortel van 0,49.', answer: '0,7', checkMode: 'auto', correctAnswer: '0.7', correctAnswers: ['0.7', '0,7'], explanation: '√0,49 = 0,7, aangesien 0,7 × 0,7 = 0,49 ✓' },
+        { difficulty: 'Hard', question: 'Vind die kubuswortel van 0,008.', answer: '0,2', checkMode: 'auto', correctAnswer: '0.2', correctAnswers: ['0.2', '0,2'], explanation: '∛0,008 = 0,2, aangesien 0,2 × 0,2 × 0,2 = 0,008 ✓' },
+
+        // Blok 4 — Omskakeling van desimale breuke, breuke & persentasies (13-16)
+        { difficulty: 'Medium', question: 'Skryf 0,375 as ʼn breuk in eenvoudigste vorm.', answer: '3/8', checkMode: 'auto', correctAnswer: '3/8', explanation: '0,375 = 375/1000. Deel bo en onder deur 125: 375/1000 = 3/8 ✓' },
+        { difficulty: 'Medium', question: 'Skryf 5/8 as ʼn desimale breuk.', answer: '0,625', checkMode: 'auto', correctAnswer: '0.625', correctAnswers: ['0.625', '0,625'], explanation: '5 ÷ 8 = 0,625 (aangesien 5/8 = 625/1000) ✓' },
+        { difficulty: 'Medium', question: 'Skryf 7/8 as ʼn persentasie.', answer: '87,5%', checkMode: 'auto', correctAnswer: '87.5%', correctAnswers: ['87.5%', '87.5', '87,5%', '87,5'], explanation: '7/8 = 0,875. Vermenigvuldig met 100: 0,875 × 100 = 87,5% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Rangskik hierdie desimale breuke van kleinste na grootste: 0,55, 0,5, 0,505, 0,45', answer: '0,45, 0,5, 0,505, 0,55', checkMode: 'auto', correctAnswer: '0.45,0.5,0.505,0.55', correctAnswers: ['0.45,0.5,0.505,0.55', '0.45, 0.5, 0.505, 0.55', '0,45,0,5,0,505,0,55', '0,45, 0,5, 0,505, 0,55'], explanation: 'Vergelyk plek vir plek: 0,45 (4 tiendes) is die kleinste, dan 0,5 = 0,500, dan 0,505, dan 0,55 = 0,550 is die grootste.\nVolgorde: 0,45, 0,5, 0,505, 0,55 ✓' },
+
+        // Blok 5 — Woordprobleme, foutopsporing & multi-stap redenering (17-20)
+        { difficulty: 'Hard', question: 'ʼn Motor gebruik 6,4 liter petrol per 100 km. Die tenk begin met 45,5 liter. Hoeveel liter is oor na ʼn reis van 350 km?', answer: '23,1 liter', checkMode: 'auto', correctAnswer: '23.1', correctAnswers: ['23.1', '23,1', '23.1 liter', '23,1 liter', '23.1liter', '23,1liter'], explanation: 'Petrol gebruik: 6,4 × 350 ÷ 100 = 22,4 liter.\nPetrol oor: 45,5 − 22,4 = 23,1 liter ✓' },
+        { difficulty: 'Hard', question: 'ʼn Kliënt koop 2,5 kg rys teen R14,60 per kg, 1,8 kg suiker teen R12,40 per kg, en 0,75 kg botter teen R64 per kg. Sy betaal met ʼn R200-noot. Hoeveel kleingeld kry sy?', answer: 'R93,18', checkMode: 'auto', correctAnswer: 'R93.18', correctAnswers: ['R93.18', '93.18', 'R93,18', '93,18'], explanation: 'Rys: 2,5 × R14,60 = R36,50\nSuiker: 1,8 × R12,40 = R22,32\nBotter: 0,75 × R64 = R48,00\nTotaal: R36,50 + R22,32 + R48,00 = R106,82\nKleingeld: R200 − R106,82 = R93,18 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder bereken 0,6 ÷ 0,03 en skryf die antwoord as 0,2. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die leerder het verkeerd gedeel. Die deler 0,03 het 2 desimale plekke, dus vermenigvuldig albei getalle met 100: 0,6 × 100 = 60 en 0,03 × 100 = 3. Dan 60 ÷ 3 = 20, nie 0,2 nie.', checkMode: 'self', explanation: '0,6 ÷ 0,03: vermenigvuldig albei met 100 → 60 ÷ 3 = 20. Korrekte antwoord: 20.' },
+        { difficulty: 'Hard', question: 'Vier stukke pyp meet 2,4 m, 3,15 m, 2,85 m en 3,6 m. Wat is die gemiddelde lengte van die stukke?', answer: '3 m', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3m', '3 m', '3.0', '3,0', '3.00', '3,00'], explanation: 'Som: 2,4 + 3,15 + 2,85 + 3,6 = 12 m\nGemiddelde: 12 ÷ 4 = 3 m ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het Graad 8 desimale breuke bemeester.' },
+        { minScore: 14, message: 'Uitstekende werk! Jy is seker van die meeste hiervan — hersien enige gemiste vrae.' },
+        { minScore: 9, message: 'Goeie poging! Hersien die reëls vir desimale breuke, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Multi-stap gemengde bewerkings met desimale breuke (1-4)
+        { difficulty: 'Medium', question: 'Bereken 18,4 + 2,5 × 3,6, deur die korrekte volgorde van bewerkings toe te pas.', answer: '27,4', checkMode: 'auto', correctAnswer: '27.4', correctAnswers: ['27.4', '27,4'], explanation: 'Vermenigvuldiging voor optelling: 2,5 × 3,6 = 9\n18,4 + 9 = 27,4 ✓' },
+        { difficulty: 'Medium', question: 'Bereken (9,6 - 4,7) × 2,5.', answer: '12,25', checkMode: 'auto', correctAnswer: '12.25', correctAnswers: ['12.25', '12,25'], explanation: 'Hakies eerste: 9,6 − 4,7 = 4,9\n4,9 × 2,5 = 12,25 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 24,8 ÷ 0,8 + 4,5 × 3.', answer: '44,5', checkMode: 'auto', correctAnswer: '44.5', correctAnswers: ['44.5', '44,5'], explanation: 'Deling en vermenigvuldiging voor optelling:\n24,8 ÷ 0,8 = 31\n4,5 × 3 = 13,5\n31 + 13,5 = 44,5 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 3,5 × 0,6 + 8,4 ÷ 1,2.', answer: '9,1', checkMode: 'auto', correctAnswer: '9.1', correctAnswers: ['9.1', '9,1'], explanation: 'Vermenigvuldiging en deling voor optelling:\n3,5 × 0,6 = 2,1\n8,4 ÷ 1,2 = 7\n2,1 + 7 = 9,1 ✓' },
+
+        // Blok 2 — Vermenigvuldiging & deling van desimale breuke deur desimale breuke (5-8)
+        { difficulty: 'Medium', question: 'Bereken 4,8 × 0,35.', answer: '1,68', checkMode: 'auto', correctAnswer: '1.68', correctAnswers: ['1.68', '1,68'], explanation: 'Vermenigvuldig sonder die desimale kommas: 48 × 35 = 1 680.\nTel desimale plekke: 4,8 het 1, 0,35 het 2. Totaal = 3.\nPlaas die desimale komma 3 plekke van regs af: 1,680 = 1,68 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 0,96 ÷ 0,16.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Die deler 0,16 het 2 desimale plekke. Vermenigvuldig albei met 100: 96 ÷ 16 = 6 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 6,2 × 1,5.', answer: '9,3', checkMode: 'auto', correctAnswer: '9.3', correctAnswers: ['9.3', '9,3'], explanation: 'Vermenigvuldig sonder die desimale kommas: 62 × 15 = 930.\nTel desimale plekke: 6,2 het 1, 1,5 het 1. Totaal = 2.\nPlaas die desimale komma 2 plekke van regs af: 9,30 = 9,3 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 12,42 ÷ 0,69.', answer: '18', checkMode: 'auto', correctAnswer: '18', explanation: 'Die deler 0,69 het 2 desimale plekke. Vermenigvuldig albei met 100: 1 242 ÷ 69 = 18 ✓' },
+
+        // Blok 3 — Kwadrate, kubusse & wortels van desimale breuke (9-12)
+        { difficulty: 'Medium', question: 'Bereken 0,9².', answer: '0,81', checkMode: 'auto', correctAnswer: '0.81', correctAnswers: ['0.81', '0,81'], explanation: '0,9² = 0,9 × 0,9 = 0,81 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 0,3³.', answer: '0,027', checkMode: 'auto', correctAnswer: '0.027', correctAnswers: ['0.027', '0,027'], explanation: '0,3³ = 0,3 × 0,3 × 0,3\n0,3 × 0,3 = 0,09\n0,09 × 0,3 = 0,027 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Vind die vierkantswortel van 0,81.', answer: '0,9', checkMode: 'auto', correctAnswer: '0.9', correctAnswers: ['0.9', '0,9'], explanation: '√0,81 = 0,9, aangesien 0,9 × 0,9 = 0,81 ✓' },
+        { difficulty: 'Hard', question: 'Vind die kubuswortel van 0,064.', answer: '0,4', checkMode: 'auto', correctAnswer: '0.4', correctAnswers: ['0.4', '0,4'], explanation: '∛0,064 = 0,4, aangesien 0,4 × 0,4 × 0,4 = 0,064 ✓' },
+
+        // Blok 4 — Omskakeling van desimale breuke, breuke & persentasies (13-16)
+        { difficulty: 'Medium', question: 'Skryf 0,125 as ʼn breuk in eenvoudigste vorm.', answer: '1/8', checkMode: 'auto', correctAnswer: '1/8', explanation: '0,125 = 125/1000. Deel bo en onder deur 125: 125/1000 = 1/8 ✓' },
+        { difficulty: 'Medium', question: 'Skryf 3/8 as ʼn desimale breuk.', answer: '0,375', checkMode: 'auto', correctAnswer: '0.375', correctAnswers: ['0.375', '0,375'], explanation: '3 ÷ 8 = 0,375 (aangesien 3/8 = 375/1000) ✓' },
+        { difficulty: 'Medium', question: 'Skryf 9/40 as ʼn persentasie.', answer: '22,5%', checkMode: 'auto', correctAnswer: '22.5%', correctAnswers: ['22.5%', '22.5', '22,5%', '22,5'], explanation: '9/40 = 0,225. Vermenigvuldig met 100: 0,225 × 100 = 22,5% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Rangskik hierdie desimale breuke van kleinste na grootste: 0,72, 0,7, 0,702, 0,27', answer: '0,27, 0,7, 0,702, 0,72', checkMode: 'auto', correctAnswer: '0.27,0.7,0.702,0.72', correctAnswers: ['0.27,0.7,0.702,0.72', '0.27, 0.7, 0.702, 0.72', '0,27,0,7,0,702,0,72', '0,27, 0,7, 0,702, 0,72'], explanation: 'Vergelyk plek vir plek: 0,27 (2 tiendes) is die kleinste, dan 0,7 = 0,700, dan 0,702, dan 0,72 = 0,720 is die grootste.\nVolgorde: 0,27, 0,7, 0,702, 0,72 ✓' },
+
+        // Blok 5 — Woordprobleme, foutopsporing & multi-stap redenering (17-20)
+        { difficulty: 'Hard', question: 'ʼn Motor gebruik 7,2 liter petrol per 100 km. Die tenk begin met 38,4 liter. Hoeveel liter is oor na ʼn reis van 250 km?', answer: '20,4 liter', checkMode: 'auto', correctAnswer: '20.4', correctAnswers: ['20.4', '20,4', '20.4 liter', '20,4 liter', '20.4liter', '20,4liter'], explanation: 'Petrol gebruik: 7,2 × 250 ÷ 100 = 18 liter.\nPetrol oor: 38,4 − 18 = 20,4 liter ✓' },
+        { difficulty: 'Hard', question: 'ʼn Kliënt koop 1,6 kg meel teen R16,80 per kg, 2,4 kg appels teen R18,50 per kg, en 0,5 kg kaas teen R89,40 per kg. Sy betaal met ʼn R150-noot. Hoeveel kleingeld kry sy?', answer: 'R34,02', checkMode: 'auto', correctAnswer: 'R34.02', correctAnswers: ['R34.02', '34.02', 'R34,02', '34,02'], explanation: 'Meel: 1,6 × R16,80 = R26,88\nAppels: 2,4 × R18,50 = R44,40\nKaas: 0,5 × R89,40 = R44,70\nTotaal: R26,88 + R44,40 + R44,70 = R115,98\nKleingeld: R150 − R115,98 = R34,02 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder bereken 0,8 ÷ 0,04 en skryf die antwoord as 0,2. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die leerder het verkeerd gedeel. Die deler 0,04 het 2 desimale plekke, dus vermenigvuldig albei getalle met 100: 0,8 × 100 = 80 en 0,04 × 100 = 4. Dan 80 ÷ 4 = 20, nie 0,2 nie.', checkMode: 'self', explanation: '0,8 ÷ 0,04: vermenigvuldig albei met 100 → 80 ÷ 4 = 20. Korrekte antwoord: 20.' },
+        { difficulty: 'Hard', question: 'Vier stukke pyp meet 4,2 m, 3,65 m, 4,85 m en 3,3 m. Wat is die gemiddelde lengte van die stukke?', answer: '4 m', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4m', '4 m', '4.0', '4,0', '4.00', '4,00'], explanation: 'Som: 4,2 + 3,65 + 4,85 + 3,3 = 16 m\nGemiddelde: 16 ÷ 4 = 4 m ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het Graad 8 desimale breuke bemeester.' },
+        { minScore: 14, message: 'Uitstekende werk! Jy is seker van die meeste hiervan — hersien enige gemiste vrae.' },
+        { minScore: 9, message: 'Goeie poging! Hersien die reëls vir desimale breuke, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Multi-stap gemengde bewerkings met desimale breuke (1-4)
+        { difficulty: 'Medium', question: 'Bereken 22,6 + 4,2 × 1,8, deur die korrekte volgorde van bewerkings toe te pas.', answer: '30,16', checkMode: 'auto', correctAnswer: '30.16', correctAnswers: ['30.16', '30,16'], explanation: 'Vermenigvuldiging voor optelling: 4,2 × 1,8 = 7,56\n22,6 + 7,56 = 30,16 ✓' },
+        { difficulty: 'Medium', question: 'Bereken (7,8 - 3,6) × 3,5.', answer: '14,7', checkMode: 'auto', correctAnswer: '14.7', correctAnswers: ['14.7', '14,7'], explanation: 'Hakies eerste: 7,8 − 3,6 = 4,2\n4,2 × 3,5 = 14,7 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 33,6 ÷ 1,4 + 2,8 × 4.', answer: '35,2', checkMode: 'auto', correctAnswer: '35.2', correctAnswers: ['35.2', '35,2'], explanation: 'Deling en vermenigvuldiging voor optelling:\n33,6 ÷ 1,4 = 24\n2,8 × 4 = 11,2\n24 + 11,2 = 35,2 ✓' },
+        { difficulty: 'Hard', question: 'Bereken 4,5 × 0,8 + 5,4 ÷ 0,6.', answer: '12,6', checkMode: 'auto', correctAnswer: '12.6', correctAnswers: ['12.6', '12,6'], explanation: 'Vermenigvuldiging en deling voor optelling:\n4,5 × 0,8 = 3,6\n5,4 ÷ 0,6 = 9\n3,6 + 9 = 12,6 ✓' },
+
+        // Blok 2 — Vermenigvuldiging & deling van desimale breuke deur desimale breuke (5-8)
+        { difficulty: 'Medium', question: 'Bereken 2,7 × 0,45.', answer: '1,215', checkMode: 'auto', correctAnswer: '1.215', correctAnswers: ['1.215', '1,215'], explanation: 'Vermenigvuldig sonder die desimale kommas: 27 × 45 = 1 215.\nTel desimale plekke: 2,7 het 1, 0,45 het 2. Totaal = 3.\nPlaas die desimale komma 3 plekke van regs af: 1,215 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 0,72 ÷ 0,09.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Die deler 0,09 het 2 desimale plekke. Vermenigvuldig albei met 100: 72 ÷ 9 = 8 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 8,4 × 1,25.', answer: '10,5', checkMode: 'auto', correctAnswer: '10.5', correctAnswers: ['10.5', '10,5'], explanation: 'Vermenigvuldig sonder die desimale kommas: 84 × 125 = 10 500.\nTel desimale plekke: 8,4 het 1, 1,25 het 2. Totaal = 3.\nPlaas die desimale komma 3 plekke van regs af: 10,500 = 10,5 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken 14,72 ÷ 0,92.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Die deler 0,92 het 2 desimale plekke. Vermenigvuldig albei met 100: 1 472 ÷ 92 = 16 ✓' },
+
+        // Blok 3 — Kwadrate, kubusse & wortels van desimale breuke (9-12)
+        { difficulty: 'Medium', question: 'Bereken 0,8².', answer: '0,64', checkMode: 'auto', correctAnswer: '0.64', correctAnswers: ['0.64', '0,64'], explanation: '0,8² = 0,8 × 0,8 = 0,64 ✓' },
+        { difficulty: 'Medium', question: 'Bereken 0,5³.', answer: '0,125', checkMode: 'auto', correctAnswer: '0.125', correctAnswers: ['0.125', '0,125'], explanation: '0,5³ = 0,5 × 0,5 × 0,5\n0,5 × 0,5 = 0,25\n0,25 × 0,5 = 0,125 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Vind die vierkantswortel van 0,36.', answer: '0,6', checkMode: 'auto', correctAnswer: '0.6', correctAnswers: ['0.6', '0,6'], explanation: '√0,36 = 0,6, aangesien 0,6 × 0,6 = 0,36 ✓' },
+        { difficulty: 'Hard', question: 'Vind die kubuswortel van 0,027.', answer: '0,3', checkMode: 'auto', correctAnswer: '0.3', correctAnswers: ['0.3', '0,3'], explanation: '∛0,027 = 0,3, aangesien 0,3 × 0,3 × 0,3 = 0,027 ✓' },
+
+        // Blok 4 — Omskakeling van desimale breuke, breuke & persentasies (13-16)
+        { difficulty: 'Medium', question: 'Skryf 0,875 as ʼn breuk in eenvoudigste vorm.', answer: '7/8', checkMode: 'auto', correctAnswer: '7/8', explanation: '0,875 = 875/1000. Deel bo en onder deur 125: 875/1000 = 7/8 ✓' },
+        { difficulty: 'Medium', question: 'Skryf 7/20 as ʼn desimale breuk.', answer: '0,35', checkMode: 'auto', correctAnswer: '0.35', correctAnswers: ['0.35', '0,35'], explanation: '7 ÷ 20 = 0,35 (aangesien 7/20 = 35/100) ✓' },
+        { difficulty: 'Medium', question: 'Skryf 11/25 as ʼn persentasie.', answer: '44%', checkMode: 'auto', correctAnswer: '44%', correctAnswers: ['44%', '44'], explanation: '11/25 = 44/100 = 0,44. Vermenigvuldig met 100: 0,44 × 100 = 44% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Rangskik hierdie desimale breuke van kleinste na grootste: 0,63, 0,6, 0,603, 0,36', answer: '0,36, 0,6, 0,603, 0,63', checkMode: 'auto', correctAnswer: '0.36,0.6,0.603,0.63', correctAnswers: ['0.36,0.6,0.603,0.63', '0.36, 0.6, 0.603, 0.63', '0,36,0,6,0,603,0,63', '0,36, 0,6, 0,603, 0,63'], explanation: 'Vergelyk plek vir plek: 0,36 (3 tiendes) is die kleinste, dan 0,6 = 0,600, dan 0,603, dan 0,63 = 0,630 is die grootste.\nVolgorde: 0,36, 0,6, 0,603, 0,63 ✓' },
+
+        // Blok 5 — Woordprobleme, foutopsporing & multi-stap redenering (17-20)
+        { difficulty: 'Hard', question: 'ʼn Motor gebruik 5,6 liter petrol per 100 km. Die tenk begin met 42,8 liter. Hoeveel liter is oor na ʼn reis van 400 km?', answer: '20,4 liter', checkMode: 'auto', correctAnswer: '20.4', correctAnswers: ['20.4', '20,4', '20.4 liter', '20,4 liter', '20.4liter', '20,4liter'], explanation: 'Petrol gebruik: 5,6 × 400 ÷ 100 = 22,4 liter.\nPetrol oor: 42,8 − 22,4 = 20,4 liter ✓' },
+        { difficulty: 'Hard', question: 'ʼn Kliënt koop 3,2 kg aartappels teen R9,80 per kg, 1,4 kg tamaties teen R22,60 per kg, en 0,6 kg kaas teen R95,50 per kg. Sy betaal met ʼn R180-noot. Hoeveel kleingeld kry sy?', answer: 'R59,70', checkMode: 'auto', correctAnswer: 'R59.70', correctAnswers: ['R59.70', '59.70', 'R59,70', '59,70'], explanation: 'Aartappels: 3,2 × R9,80 = R31,36\nTamaties: 1,4 × R22,60 = R31,64\nKaas: 0,6 × R95,50 = R57,30\nTotaal: R31,36 + R31,64 + R57,30 = R120,30\nKleingeld: R180 − R120,30 = R59,70 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Leerder bereken 0,9 ÷ 0,03 en skryf die antwoord as 0,3. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die leerder het verkeerd gedeel. Die deler 0,03 het 2 desimale plekke, dus vermenigvuldig albei getalle met 100: 0,9 × 100 = 90 en 0,03 × 100 = 3. Dan 90 ÷ 3 = 30, nie 0,3 nie.', checkMode: 'self', explanation: '0,9 ÷ 0,03: vermenigvuldig albei met 100 → 90 ÷ 3 = 30. Korrekte antwoord: 30.' },
+        { difficulty: 'Hard', question: 'Vier stukke pyp meet 5,4 m, 4,15 m, 3,85 m en 4,6 m. Wat is die gemiddelde lengte van die stukke?', answer: '4,5 m', checkMode: 'auto', correctAnswer: '4.5', correctAnswers: ['4.5', '4,5', '4.5m', '4,5m', '4.5 m', '4,5 m', '4.50', '4,50'], explanation: 'Som: 5,4 + 4,15 + 3,85 + 4,6 = 18 m\nGemiddelde: 18 ÷ 4 = 4,5 m ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het Graad 8 desimale breuke bemeester.' },
+        { minScore: 14, message: 'Uitstekende werk! Jy is seker van die meeste hiervan — hersien enige gemiste vrae.' },
+        { minScore: 9, message: 'Goeie poging! Hersien die reëls vir desimale breuke, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

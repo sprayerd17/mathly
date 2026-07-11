@@ -407,4 +407,116 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging — hersien die afdelings waar jy punte verloor het en probeer weer.' },
     { minScore: 0, message: 'Hou aan — werk weer deur die gids afdeling vir afdeling, en probeer dan weer.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 1-4 Meerstap gemengde bewerkings met heelgetalle | 5-8 Heelgetalle
+    // gekombineer met eksponente (kwadrate/kubusse van negatiewe getalle) |
+    // 9-12 Bewerkingsorde (BODMAS) met hakies, heelgetalle en eksponente |
+    // 13-15 Wortels van heelgetalle gekombineer met ander bewerkings |
+    // 16-18 Werklike-lewe meerstapvraagstukke | 19-20 Foutopsporing / meerstap-redenering
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Medium', question: 'Bereken −14 + (−9) × 3.', answer: '-41', checkMode: 'auto', correctAnswer: '-41', explanation: 'Vermenigvuldiging voor optelling: −9 × 3 = −27 (verskillende tekens → negatief). Dan −14 + (−27) = −41.' },
+        { difficulty: 'Medium', question: 'Bereken 30 − (−6) × 4.', answer: '54', checkMode: 'auto', correctAnswer: '54', explanation: 'Vermenigvuldiging voor aftrekking: −6 × 4 = −24. Dan 30 − (−24) = 30 + 24 = 54.' },
+        { difficulty: 'Medium', question: 'Bereken −18 − (−7) + (−5).', answer: '-16', checkMode: 'auto', correctAnswer: '-16', explanation: 'Werk van links na regs. Stap 1: −18 − (−7) = −18 + 7 = −11. Stap 2: −11 + (−5) = −16.' },
+        { difficulty: 'Medium-Hard', question: 'Palesa bereken −12 − 8 × 3 en kry −60, deur van links na regs te werk. Is sy korrek? Verduidelik en gee die korrekte antwoord.', answer: 'Nee — vermenigvuldiging moet voor aftrekking gedoen word: 8 × 3 = 24, dus −12 − 8 × 3 = −12 − 24 = −36, nie −60 nie.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken (−4)².', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: '(−4)² = (−4) × (−4). Dieselfde tekens → positief. 4 × 4 = 16. Antwoord: 16.' },
+        { difficulty: 'Easy', question: 'Bereken (−3)³.', answer: '-27', checkMode: 'auto', correctAnswer: '-27', explanation: '(−3)³ = (−3) × (−3) × (−3) = 9 × (−3) = −27 (ʼn onewe mag van ʼn negatiewe getal is negatief).' },
+        { difficulty: 'Medium', question: 'Bereken (−2)² − (−3)³.', answer: '31', checkMode: 'auto', correctAnswer: '31', explanation: 'Stap 1: (−2)² = 4. Stap 2: (−3)³ = −27. Stap 3: 4 − (−27) = 4 + 27 = 31.' },
+        { difficulty: 'Hard', question: 'Bereken −5² + (−2)³.', answer: '-33', checkMode: 'auto', correctAnswer: '-33', explanation: 'Geen hakies om −5 nie, dus geld die eksponent eerste: 5² = 25, dan −5² = −25. Volgende (−2)³ = −8. Laastens −25 + (−8) = −33.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsorde om 4 × (−3) + (−2)² te bereken.', answer: '-8', checkMode: 'auto', correctAnswer: '-8', explanation: 'Eksponente en vermenigvuldiging voor optelling. Stap 1: 4 × (−3) = −12. Stap 2: (−2)² = 4. Stap 3: −12 + 4 = −8.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsorde om (−6 + 2)² − 10 te bereken.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Hakies eerste: −6 + 2 = −4. Dan die eksponent: (−4)² = 16. Laastens 16 − 10 = 6.' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die korrekte bewerkingsorde om −3 × (4 − (−2)) te bereken.', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Hakies eerste: 4 − (−2) = 4 + 2 = 6. Dan −3 × 6 = −18 (verskillende tekens → negatief).' },
+        { difficulty: 'Hard', question: 'Gebruik die korrekte bewerkingsorde om (10 − (−2)) ÷ (−3) + (−4)² te bereken.', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Hakies eerste: 10 − (−2) = 12. Dan deling: 12 ÷ (−3) = −4. Dan die eksponent: (−4)² = 16. Laastens −4 + 16 = 12.' },
+        { difficulty: 'Medium', question: 'Bereken √81 + (−3)³.', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Stap 1: √81 = 9 (aangesien 9 × 9 = 81). Stap 2: (−3)³ = −27. Stap 3: 9 + (−27) = −18.' },
+        { difficulty: 'Hard', question: 'Bereken ∛(−27) − (−5)².', answer: '-28', checkMode: 'auto', correctAnswer: '-28', explanation: 'Stap 1: ∛(−27) = −3 (aangesien (−3) × (−3) × (−3) = −27). Stap 2: (−5)² = 25. Stap 3: −3 − 25 = −28.' },
+        { difficulty: 'Hard', question: 'Bereken (−2)³ × √16.', answer: '-32', checkMode: 'auto', correctAnswer: '-32', explanation: 'Stap 1: (−2)³ = −8. Stap 2: √16 = 4. Stap 3: −8 × 4 = −32 (verskillende tekens → negatief).' },
+        { difficulty: 'Medium', question: 'Die temperatuur by ʼn weerstasie was −7°C. Dit het snags nog ʼn verdere 5°C gedaal, en toe teen mid-oggend 9°C gestyg. Wat was die temperatuur teen mid-oggend?', answer: '-3°C', checkMode: 'auto', correctAnswer: '-3', correctAnswers: ['-3', '-3°c', '-3c'], explanation: 'Begin by −7°C, daal 5°C: −7 − 5 = −12°C. Styg dan 9°C: −12 + 9 = −3°C.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Wandelaar begin op ʼn hoogte van −240 m (onder seespieël). Sy klim 85 m, en klim daarna nog ʼn verdere 60 m. Wat is haar finale hoogte, as ʼn heelgetal?', answer: '-95', checkMode: 'auto', correctAnswer: '-95', explanation: 'Begin by −240 m. Klim 85 m: −240 + 85 = −155 m. Klim ʼn verdere 60 m: −155 + 60 = −95 m.' },
+        { difficulty: 'Medium-Hard', question: 'Kagiso se rekening is R680 oorgetrek, geskryf as −R680. Hy maak ʼn deposito van R250, en trek dan nog ʼn verdere R90 uit. Wat is sy nuwe balans?', answer: '-R520', checkMode: 'auto', correctAnswer: '-520', correctAnswers: ['-520', '-r520'], explanation: 'Begin by −680. Deposito 250: −680 + 250 = −430. Onttrekking 90: −430 − 90 = −520. Nuwe balans: −R520.' },
+        { difficulty: 'Hard', question: 'Bereken die korrekte waarde van −2 × (−6 + 4) − (−3)².', answer: '-5', checkMode: 'auto', correctAnswer: '-5', explanation: 'Hakies eerste: −6 + 4 = −2. Dan vermenigvuldiging: −2 × (−2) = 4. Dan die eksponent: (−3)² = 9. Laastens 4 − 9 = −5.' },
+        { difficulty: 'Hard', question: 'Refilwe bereken (−3)² + (−2)³ × (−1) en kry −11, en sê die eksponente kanselleer mekaar voor die vermenigvuldiging. Is sy korrek? Wys die korrekte werk.', answer: 'Nee — pas eers die eksponente toe: (−3)² = 9 en (−2)³ = −8. Vermenigvuldig dan: −8 × (−1) = 8. Laastens 9 + 8 = 17, nie −11 nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het meerstap heelgetalbewerkings, eksponente, wortels en bewerkingsorde baasgeraak.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklegging as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Medium', question: 'Bereken −17 + (−6) × 5.', answer: '-47', checkMode: 'auto', correctAnswer: '-47', explanation: 'Vermenigvuldiging voor optelling: −6 × 5 = −30 (verskillende tekens → negatief). Dan −17 + (−30) = −47.' },
+        { difficulty: 'Medium', question: 'Bereken 25 − (−8) × 3.', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: 'Vermenigvuldiging voor aftrekking: −8 × 3 = −24. Dan 25 − (−24) = 25 + 24 = 49.' },
+        { difficulty: 'Medium', question: 'Bereken −21 − (−9) + (−6).', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Werk van links na regs. Stap 1: −21 − (−9) = −21 + 9 = −12. Stap 2: −12 + (−6) = −18.' },
+        { difficulty: 'Medium-Hard', question: 'Bandile bereken −15 − 6 × 4 en kry −84, deur van links na regs te werk. Is hy korrek? Verduidelik en gee die korrekte antwoord.', answer: 'Nee — vermenigvuldiging moet voor aftrekking gedoen word: 6 × 4 = 24, dus −15 − 6 × 4 = −15 − 24 = −39, nie −84 nie.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken (−6)².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: '(−6)² = (−6) × (−6). Dieselfde tekens → positief. 6 × 6 = 36. Antwoord: 36.' },
+        { difficulty: 'Easy', question: 'Bereken (−4)³.', answer: '-64', checkMode: 'auto', correctAnswer: '-64', explanation: '(−4)³ = (−4) × (−4) × (−4) = 16 × (−4) = −64 (ʼn onewe mag van ʼn negatiewe getal is negatief).' },
+        { difficulty: 'Medium', question: 'Bereken (−3)² − (−2)³.', answer: '17', checkMode: 'auto', correctAnswer: '17', explanation: 'Stap 1: (−3)² = 9. Stap 2: (−2)³ = −8. Stap 3: 9 − (−8) = 9 + 8 = 17.' },
+        { difficulty: 'Hard', question: 'Bereken −6² + (−3)³.', answer: '-63', checkMode: 'auto', correctAnswer: '-63', explanation: 'Geen hakies om −6 nie, dus geld die eksponent eerste: 6² = 36, dan −6² = −36. Volgende (−3)³ = −27. Laastens −36 + (−27) = −63.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsorde om 5 × (−2) + (−3)² te bereken.', answer: '-1', checkMode: 'auto', correctAnswer: '-1', explanation: 'Eksponente en vermenigvuldiging voor optelling. Stap 1: 5 × (−2) = −10. Stap 2: (−3)² = 9. Stap 3: −10 + 9 = −1.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsorde om (−7 + 3)² − 12 te bereken.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'Hakies eerste: −7 + 3 = −4. Dan die eksponent: (−4)² = 16. Laastens 16 − 12 = 4.' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die korrekte bewerkingsorde om −4 × (5 − (−3)) te bereken.', answer: '-32', checkMode: 'auto', correctAnswer: '-32', explanation: 'Hakies eerste: 5 − (−3) = 5 + 3 = 8. Dan −4 × 8 = −32 (verskillende tekens → negatief).' },
+        { difficulty: 'Hard', question: 'Gebruik die korrekte bewerkingsorde om (18 − (−6)) ÷ (−4) + (−3)² te bereken.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Hakies eerste: 18 − (−6) = 24. Dan deling: 24 ÷ (−4) = −6. Dan die eksponent: (−3)² = 9. Laastens −6 + 9 = 3.' },
+        { difficulty: 'Medium', question: 'Bereken √64 + (−2)³.', answer: '0', checkMode: 'auto', correctAnswer: '0', explanation: 'Stap 1: √64 = 8 (aangesien 8 × 8 = 64). Stap 2: (−2)³ = −8. Stap 3: 8 + (−8) = 0.' },
+        { difficulty: 'Hard', question: 'Bereken ∛(−8) − (−4)².', answer: '-18', checkMode: 'auto', correctAnswer: '-18', explanation: 'Stap 1: ∛(−8) = −2 (aangesien (−2) × (−2) × (−2) = −8). Stap 2: (−4)² = 16. Stap 3: −2 − 16 = −18.' },
+        { difficulty: 'Hard', question: 'Bereken (−3)³ × √9.', answer: '-81', checkMode: 'auto', correctAnswer: '-81', explanation: 'Stap 1: (−3)³ = −27. Stap 2: √9 = 3. Stap 3: −27 × 3 = −81 (verskillende tekens → negatief).' },
+        { difficulty: 'Medium', question: 'Die temperatuur by ʼn weerstasie was −9°C. Dit het snags nog ʼn verdere 6°C gedaal, en toe teen mid-oggend 14°C gestyg. Wat was die temperatuur teen mid-oggend?', answer: '-1°C', checkMode: 'auto', correctAnswer: '-1', correctAnswers: ['-1', '-1°c', '-1c'], explanation: 'Begin by −9°C, daal 6°C: −9 − 6 = −15°C. Styg dan 14°C: −15 + 14 = −1°C.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Wandelaar begin op ʼn hoogte van −310 m (onder seespieël). Sy klim 120 m, en klim daarna nog ʼn verdere 45 m. Wat is haar finale hoogte, as ʼn heelgetal?', answer: '-145', checkMode: 'auto', correctAnswer: '-145', explanation: 'Begin by −310 m. Klim 120 m: −310 + 120 = −190 m. Klim ʼn verdere 45 m: −190 + 45 = −145 m.' },
+        { difficulty: 'Medium-Hard', question: 'Naledi se rekening is R540 oorgetrek, geskryf as −R540. Sy maak ʼn deposito van R300, en trek dan nog ʼn verdere R120 uit. Wat is haar nuwe balans?', answer: '-R360', checkMode: 'auto', correctAnswer: '-360', correctAnswers: ['-360', '-r360'], explanation: 'Begin by −540. Deposito 300: −540 + 300 = −240. Onttrekking 120: −240 − 120 = −360. Nuwe balans: −R360.' },
+        { difficulty: 'Hard', question: 'Bereken die korrekte waarde van −3 × (−8 + 5) − (−2)².', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Hakies eerste: −8 + 5 = −3. Dan vermenigvuldiging: −3 × (−3) = 9. Dan die eksponent: (−2)² = 4. Laastens 9 − 4 = 5.' },
+        { difficulty: 'Hard', question: 'Sibusiso bereken (−4)² + (−3)³ × (−1) en kry 13, en sê die eksponente kanselleer mekaar voor die vermenigvuldiging. Is hy korrek? Wys die korrekte werk.', answer: 'Nee — pas eers die eksponente toe: (−4)² = 16 en (−3)³ = −27. Vermenigvuldig dan: −27 × (−1) = 27. Laastens 16 + 27 = 43, nie 13 nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het meerstap heelgetalbewerkings, eksponente, wortels en bewerkingsorde baasgeraak.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklegging as Stel 1/2, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Medium', question: 'Bereken −20 + (−8) × 3.', answer: '-44', checkMode: 'auto', correctAnswer: '-44', explanation: 'Vermenigvuldiging voor optelling: −8 × 3 = −24 (verskillende tekens → negatief). Dan −20 + (−24) = −44.' },
+        { difficulty: 'Medium', question: 'Bereken 18 − (−9) × 5.', answer: '63', checkMode: 'auto', correctAnswer: '63', explanation: 'Vermenigvuldiging voor aftrekking: −9 × 5 = −45. Dan 18 − (−45) = 18 + 45 = 63.' },
+        { difficulty: 'Medium', question: 'Bereken −14 − (−8) + (−11).', answer: '-17', checkMode: 'auto', correctAnswer: '-17', explanation: 'Werk van links na regs. Stap 1: −14 − (−8) = −14 + 8 = −6. Stap 2: −6 + (−11) = −17.' },
+        { difficulty: 'Medium-Hard', question: 'Ayanda bereken −9 − 7 × 5 en kry −80, deur van links na regs te werk. Is sy korrek? Verduidelik en gee die korrekte antwoord.', answer: 'Nee — vermenigvuldiging moet voor aftrekking gedoen word: 7 × 5 = 35, dus −9 − 7 × 5 = −9 − 35 = −44, nie −80 nie.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken (−7)².', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: '(−7)² = (−7) × (−7). Dieselfde tekens → positief. 7 × 7 = 49. Antwoord: 49.' },
+        { difficulty: 'Easy', question: 'Bereken (−5)³.', answer: '-125', checkMode: 'auto', correctAnswer: '-125', explanation: '(−5)³ = (−5) × (−5) × (−5) = 25 × (−5) = −125 (ʼn onewe mag van ʼn negatiewe getal is negatief).' },
+        { difficulty: 'Medium', question: 'Bereken (−4)² − (−2)³.', answer: '24', checkMode: 'auto', correctAnswer: '24', explanation: 'Stap 1: (−4)² = 16. Stap 2: (−2)³ = −8. Stap 3: 16 − (−8) = 16 + 8 = 24.' },
+        { difficulty: 'Hard', question: 'Bereken −4² + (−3)³.', answer: '-43', checkMode: 'auto', correctAnswer: '-43', explanation: 'Geen hakies om −4 nie, dus geld die eksponent eerste: 4² = 16, dan −4² = −16. Volgende (−3)³ = −27. Laastens −16 + (−27) = −43.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsorde om 6 × (−3) + (−4)² te bereken.', answer: '-2', checkMode: 'auto', correctAnswer: '-2', explanation: 'Eksponente en vermenigvuldiging voor optelling. Stap 1: 6 × (−3) = −18. Stap 2: (−4)² = 16. Stap 3: −18 + 16 = −2.' },
+        { difficulty: 'Medium', question: 'Gebruik die korrekte bewerkingsorde om (−5 + 1)² − 8 te bereken.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Hakies eerste: −5 + 1 = −4. Dan die eksponent: (−4)² = 16. Laastens 16 − 8 = 8.' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die korrekte bewerkingsorde om −5 × (6 − (−1)) te bereken.', answer: '-35', checkMode: 'auto', correctAnswer: '-35', explanation: 'Hakies eerste: 6 − (−1) = 6 + 1 = 7. Dan −5 × 7 = −35 (verskillende tekens → negatief).' },
+        { difficulty: 'Hard', question: 'Gebruik die korrekte bewerkingsorde om (14 − (−4)) ÷ (−3) + (−5)² te bereken.', answer: '19', checkMode: 'auto', correctAnswer: '19', explanation: 'Hakies eerste: 14 − (−4) = 18. Dan deling: 18 ÷ (−3) = −6. Dan die eksponent: (−5)² = 25. Laastens −6 + 25 = 19.' },
+        { difficulty: 'Medium', question: 'Bereken √100 + (−4)³.', answer: '-54', checkMode: 'auto', correctAnswer: '-54', explanation: 'Stap 1: √100 = 10 (aangesien 10 × 10 = 100). Stap 2: (−4)³ = −64. Stap 3: 10 + (−64) = −54.' },
+        { difficulty: 'Hard', question: 'Bereken ∛(−64) − (−3)².', answer: '-13', checkMode: 'auto', correctAnswer: '-13', explanation: 'Stap 1: ∛(−64) = −4 (aangesien (−4) × (−4) × (−4) = −64). Stap 2: (−3)² = 9. Stap 3: −4 − 9 = −13.' },
+        { difficulty: 'Hard', question: 'Bereken (−1)³ × √25.', answer: '-5', checkMode: 'auto', correctAnswer: '-5', explanation: 'Stap 1: (−1)³ = −1. Stap 2: √25 = 5. Stap 3: −1 × 5 = −5 (verskillende tekens → negatief).' },
+        { difficulty: 'Medium', question: 'Die temperatuur by ʼn weerstasie was −11°C. Dit het snags nog ʼn verdere 4°C gedaal, en toe teen mid-oggend 19°C gestyg. Wat was die temperatuur teen mid-oggend?', answer: '4°C', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4°c', '4c'], explanation: 'Begin by −11°C, daal 4°C: −11 − 4 = −15°C. Styg dan 19°C: −15 + 19 = 4°C.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Wandelaar begin op ʼn hoogte van −180 m (onder seespieël). Sy klim 95 m, en klim daarna nog ʼn verdere 40 m. Wat is haar finale hoogte, as ʼn heelgetal?', answer: '-45', checkMode: 'auto', correctAnswer: '-45', explanation: 'Begin by −180 m. Klim 95 m: −180 + 95 = −85 m. Klim ʼn verdere 40 m: −85 + 40 = −45 m.' },
+        { difficulty: 'Medium-Hard', question: 'Thandeka se rekening is R415 oorgetrek, geskryf as −R415. Sy maak ʼn deposito van R275, en trek dan nog ʼn verdere R160 uit. Wat is haar nuwe balans?', answer: '-R300', checkMode: 'auto', correctAnswer: '-300', correctAnswers: ['-300', '-r300'], explanation: 'Begin by −415. Deposito 275: −415 + 275 = −140. Onttrekking 160: −140 − 160 = −300. Nuwe balans: −R300.' },
+        { difficulty: 'Hard', question: 'Bereken die korrekte waarde van −4 × (−9 + 6) − (−5)².', answer: '-13', checkMode: 'auto', correctAnswer: '-13', explanation: 'Hakies eerste: −9 + 6 = −3. Dan vermenigvuldiging: −4 × (−3) = 12. Dan die eksponent: (−5)² = 25. Laastens 12 − 25 = −13.' },
+        { difficulty: 'Hard', question: 'Katlego bereken (−2)² + (−4)³ × (−1) en kry −18, en sê die eksponente kanselleer mekaar voor die vermenigvuldiging. Is hy korrek? Wys die korrekte werk.', answer: 'Nee — pas eers die eksponente toe: (−2)² = 4 en (−4)³ = −64. Vermenigvuldig dan: −64 × (−1) = 64. Laastens 4 + 64 = 68, nie −18 nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het meerstap heelgetalbewerkings, eksponente, wortels en bewerkingsorde baasgeraak.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

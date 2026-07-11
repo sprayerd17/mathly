@@ -470,4 +470,150 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die studiegids.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blok 1: Bewerkingsvolgorde / BODMAS (V1-4)
+    // Blok 2: Eienskappe van bewerkings (V5-8)
+    // Blok 3: Foutopsporing / kritiek (V9-11)
+    // Blok 4: Meerstap-woordprobleme (V12-15)
+    // Blok 5: Groot-getal meerstap-berekeninge (V16-18)
+    // Blok 6: Gemengde / toegepaste redenasie (V19-20)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Bewerkingsvolgorde / BODMAS
+        { difficulty: 'Easy', question: 'Bereken: 8 + 6 × 5', answer: '38', checkMode: 'auto', correctAnswer: '38', explanation: 'Vermenigvuldiging voor optelling: 6 × 5 = 30, dan 8 + 30 = 38 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: (14 − 6) × 3 + 7', answer: '31', checkMode: 'auto', correctAnswer: '31', explanation: 'Hakies eerste: 14 − 6 = 8. Vermenigvuldig dan: 8 × 3 = 24. Tel dan by: 24 + 7 = 31 ✓' },
+        { difficulty: 'Medium', question: 'Bereken: 40 − 24 ÷ 4 + 2 × 3', answer: '40', checkMode: 'auto', correctAnswer: '40', explanation: 'Deling en vermenigvuldiging eerste: 24 ÷ 4 = 6 en 2 × 3 = 6. Werk dan van links na regs: 40 − 6 + 6 = 34 + 6 = 40 ✓' },
+        { difficulty: 'Medium', question: 'Bereken: 3² + 4 × 5', answer: '29', checkMode: 'auto', correctAnswer: '29', explanation: 'Magte eerste: 3² = 9. Vermenigvuldig dan: 4 × 5 = 20. Tel dan by: 9 + 20 = 29 ✓' },
+
+        // Blok 2 — Eienskappe van bewerkings
+        { difficulty: 'Easy', question: 'Gebruik die distributiewe eienskap om 8 × (50 + 3) as twee afsonderlike produkte te skryf, en bereken dan die antwoord.', answer: '(8×50)+(8×3) = 400+24 = 424', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Gebruik die assosiatiewe eienskap om (7 × 25) × 4 te bereken deur te hergroepeer om die berekening makliker te maak. Wat is die antwoord?', answer: '700', checkMode: 'auto', correctAnswer: '700', explanation: 'Die assosiatiewe eienskap laat ons hergroepeer: 7 × (25 × 4) = 7 × 100 = 700. Die oorspronklike volgorde gee ook (7 × 25) × 4 = 175 × 4 = 700 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 12 × (20 − 3) te bereken.', answer: '204', checkMode: 'auto', correctAnswer: '204', explanation: 'Versprei: 12 × (20 − 3) = (12 × 20) − (12 × 3) = 240 − 36 = 204 ✓' },
+        { difficulty: 'Medium', question: 'Nomvula sê 25 × (8 + 2) gee dieselfde antwoord of sy die hakies eerste bereken of die distributiewe eienskap gebruik. Wys albei metodes en gee die antwoord.', answer: 'Hakies eerste: 25×(8+2)=25×10=250. Distributief: (25×8)+(25×2)=200+50=250. Albei gee 250, so Nomvula is korrek.', checkMode: 'self' },
+
+        // Blok 3 — Foutopsporing / kritiek
+        { difficulty: 'Medium', question: 'Zanele bereken 6 + 4 × 2 deur van links na regs te werk en kry (6+4) × 2 = 20. Wat is die korrekte antwoord, en wat het sy verkeerd gedoen?', answer: '14. Sy moes vermenigvuldiging voor optelling gedoen het: 6+4×2 = 6+8 = 14, nie eers optel nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bongani bereken 30 − (10 − 4) deur die hakies te ignoreer en skryf 30 − 10 − 4 = 16. Wat is die korrekte antwoord?', answer: '24', checkMode: 'auto', correctAnswer: '24', explanation: 'Hakies moet eerste bereken word: 10 − 4 = 6, dan 30 − 6 = 24. Bongani se metode om die hakies te verwyder is verkeerd ✓' },
+        { difficulty: 'Hard', question: 'Kagiso sê 5 × (6 + 4) is dieselfde as 5 × 6 + 4. Bereken albei uitdrukkings en verduidelik of hy korrek is.', answer: '5×(6+4)=5×10=50. 5×6+4=30+4=34. Hulle is nie gelyk nie, so Kagiso is verkeerd — die hakies verander watter getalle vermenigvuldig word.', checkMode: 'self' },
+
+        // Blok 4 — Meerstap-woordprobleme
+        { difficulty: 'Easy', question: 'Thabo koop 4 pakkies appels met 12 appels in elke pakkie. Hy eet 9 appels. Hoeveel appels het hy oor?', answer: '39', checkMode: 'auto', correctAnswer: '39', explanation: 'Totale appels = 4 × 12 = 48. Appels oor = 48 − 9 = 39 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Bioskoop verkoop 45 kinderkaartjies teen R15 elk en 12 volwasse kaartjies teen R25 elk. Wat is die totale bedrag ingesamel?', answer: 'R975', checkMode: 'auto', correctAnswer: 'R975', correctAnswers: ['R975', '975'], explanation: 'Kinderkaartjies: 45 × R15 = R675. Volwasse kaartjies: 12 × R25 = R300. Totaal = R675 + R300 = R975 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skryfbehoeftewinkel het 6 bokse van 24 potlode. Die winkel verkoop 38 potlode. Hoeveel potlode is oor?', answer: '106', checkMode: 'auto', correctAnswer: '106', explanation: 'Totale potlode = 6 × 24 = 144. Potlode oor = 144 − 38 = 106 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Skool huur 8 busse wat elk 54 leerders vervoer, en 3 minibusse wat elk 29 leerders vervoer, vir ʼn uitstappie. Hoeveel leerders kan altesaam vervoer word?', answer: '519', checkMode: 'auto', correctAnswer: '519', explanation: 'Busse: 8 × 54 = 432. Minibusse: 3 × 29 = 87. Totaal = 432 + 87 = 519 ✓' },
+
+        // Blok 5 — Groot-getal meerstap-berekeninge
+        { difficulty: 'Medium', question: 'ʼn Pakhuis het reeds 3 200 items in voorraad en ontvang 4 500 meer items per lewering vir 2 leverings. Bereken: 3 200 + 4 500 × 2.', answer: '12200', checkMode: 'auto', correctAnswer: '12200', correctAnswers: ['12200', '12 200'], explanation: 'Vermenigvuldiging eerste: 4 500 × 2 = 9 000. Tel dan by: 3 200 + 9 000 = 12 200 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Boer oes 1 250 kg mielies per hektaar van 8 hektaar, en verkoop dan 3 600 kg by die plaaslike mark. Hoeveel kilogram mielies bly oor?', answer: '6400', checkMode: 'auto', correctAnswer: '6400', correctAnswers: ['6400', '6 400'], explanation: 'Totaal geoes = 1 250 × 8 = 10 000 kg. Oorblywend = 10 000 − 3 600 = 6 400 kg ✓' },
+        { difficulty: 'Hard', question: 'ʼn Munisipaliteit begin die jaar met 15 000 huishoudings met waterverbindings. Dit koppel elke jaar ʼn ekstra 2 400 huishoudings aan vir die volgende 5 jaar. Bereken die totale aantal gekoppelde huishoudings na 5 jaar, en wys jou werk deur die korrekte bewerkingsvolgorde te gebruik.', answer: '15000+2400×5. Vermenigvuldiging eerste: 2400×5=12000. Tel dan by: 15000+12000=27000 huishoudings.', checkMode: 'self' },
+
+        // Blok 6 — Gemengde / toegepaste redenasie
+        { difficulty: 'Medium', question: 'ʼn Leerder sê 6 × (3 + 2) gee dieselfde resultaat as 6 × 3 + 6 × 2. Bereken albei kante en sê of dit die distributiewe eienskap hier bevestig.', answer: '6×(3+2)=6×5=30. 6×3+6×2=18+12=30. Albei is gelyk aan 30, wat die distributiewe eienskap bevestig.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bereken 3 × (120 − 45) + 18 deur die korrekte bewerkingsvolgorde te gebruik, en wys elke stap.', answer: '243', checkMode: 'auto', correctAnswer: '243', explanation: 'Hakies eerste: 120 − 45 = 75. Vermenigvuldig dan: 3 × 75 = 225. Tel dan by: 225 + 18 = 243 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van hele getalle bemeester.' },
+        { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — hersien enige vrae wat jy verkeerd gehad het.' },
+        { minScore: 9, message: 'Goeie poging! Hersien BODMAS en die distributiewe eienskap, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Bewerkingsvolgorde / BODMAS
+        { difficulty: 'Easy', question: 'Bereken: 9 + 7 × 4', answer: '37', checkMode: 'auto', correctAnswer: '37', explanation: 'Vermenigvuldiging voor optelling: 7 × 4 = 28, dan 9 + 28 = 37 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: (18 − 9) × 4 + 5', answer: '41', checkMode: 'auto', correctAnswer: '41', explanation: 'Hakies eerste: 18 − 9 = 9. Vermenigvuldig dan: 9 × 4 = 36. Tel dan by: 36 + 5 = 41 ✓' },
+        { difficulty: 'Medium', question: 'Bereken: 50 − 36 ÷ 6 + 3 × 4', answer: '56', checkMode: 'auto', correctAnswer: '56', explanation: 'Deling en vermenigvuldiging eerste: 36 ÷ 6 = 6 en 3 × 4 = 12. Werk dan van links na regs: 50 − 6 + 12 = 44 + 12 = 56 ✓' },
+        { difficulty: 'Medium', question: 'Bereken: 4² + 5 × 6', answer: '46', checkMode: 'auto', correctAnswer: '46', explanation: 'Magte eerste: 4² = 16. Vermenigvuldig dan: 5 × 6 = 30. Tel dan by: 16 + 30 = 46 ✓' },
+
+        // Blok 2 — Eienskappe van bewerkings
+        { difficulty: 'Easy', question: 'Gebruik die distributiewe eienskap om 6 × (40 + 7) as twee afsonderlike produkte te skryf, en bereken dan die antwoord.', answer: '(6×40)+(6×7) = 240+42 = 282', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Gebruik die assosiatiewe eienskap om (4 × 50) × 6 te bereken deur te hergroepeer om die berekening makliker te maak. Wat is die antwoord?', answer: '1200', checkMode: 'auto', correctAnswer: '1200', correctAnswers: ['1200', '1 200'], explanation: 'Die assosiatiewe eienskap laat ons hergroepeer: 4 × (50 × 6) = 4 × 300 = 1 200. Die oorspronklike volgorde gee ook (4 × 50) × 6 = 200 × 6 = 1 200 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 15 × (30 − 2) te bereken.', answer: '420', checkMode: 'auto', correctAnswer: '420', explanation: 'Versprei: 15 × (30 − 2) = (15 × 30) − (15 × 2) = 450 − 30 = 420 ✓' },
+        { difficulty: 'Medium', question: 'Sipho sê 30 × (6 + 4) gee dieselfde antwoord of hy die hakies eerste bereken of die distributiewe eienskap gebruik. Wys albei metodes en gee die antwoord.', answer: 'Hakies eerste: 30×(6+4)=30×10=300. Distributief: (30×6)+(30×4)=180+120=300. Albei gee 300, so Sipho is korrek.', checkMode: 'self' },
+
+        // Blok 3 — Foutopsporing / kritiek
+        { difficulty: 'Medium', question: 'Amahle bereken 5 + 6 × 3 deur van links na regs te werk en kry (5+6) × 3 = 33. Wat is die korrekte antwoord, en wat het sy verkeerd gedoen?', answer: '23. Sy moes vermenigvuldiging voor optelling gedoen het: 5+6×3 = 5+18 = 23, nie eers optel nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Lindiwe bereken 50 − (12 − 7) deur die hakies te ignoreer en skryf 50 − 12 − 7 = 31. Wat is die korrekte antwoord?', answer: '45', checkMode: 'auto', correctAnswer: '45', explanation: 'Hakies moet eerste bereken word: 12 − 7 = 5, dan 50 − 5 = 45. Lindiwe se metode om die hakies te verwyder is verkeerd ✓' },
+        { difficulty: 'Hard', question: 'Tumelo sê 7 × (4 + 5) is dieselfde as 7 × 4 + 5. Bereken albei uitdrukkings en verduidelik of hy korrek is.', answer: '7×(4+5)=7×9=63. 7×4+5=28+5=33. Hulle is nie gelyk nie, so Tumelo is verkeerd — die hakies verander watter getalle vermenigvuldig word.', checkMode: 'self' },
+
+        // Blok 4 — Meerstap-woordprobleme
+        { difficulty: 'Easy', question: 'Lerato koop 5 pakkies appels met 14 appels in elke pakkie. Sy eet 11 appels. Hoeveel appels het sy oor?', answer: '59', checkMode: 'auto', correctAnswer: '59', explanation: 'Totale appels = 5 × 14 = 70. Appels oor = 70 − 11 = 59 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Teater verkoop 38 kinderkaartjies teen R18 elk en 15 volwasse kaartjies teen R22 elk. Wat is die totale bedrag ingesamel?', answer: 'R1014', checkMode: 'auto', correctAnswer: 'R1014', correctAnswers: ['R1014', '1014', 'R1 014', '1 014'], explanation: 'Kinderkaartjies: 38 × R18 = R684. Volwasse kaartjies: 15 × R22 = R330. Totaal = R684 + R330 = R1 014 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skryfbehoeftewinkel het 9 bokse van 18 penne. Die winkel verkoop 47 penne. Hoeveel penne is oor?', answer: '115', checkMode: 'auto', correctAnswer: '115', explanation: 'Totale penne = 9 × 18 = 162. Penne oor = 162 − 47 = 115 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Skool huur 6 busse wat elk 63 leerders vervoer, en 4 minibusse wat elk 35 leerders vervoer, vir ʼn uitstappie. Hoeveel leerders kan altesaam vervoer word?', answer: '518', checkMode: 'auto', correctAnswer: '518', explanation: 'Busse: 6 × 63 = 378. Minibusse: 4 × 35 = 140. Totaal = 378 + 140 = 518 ✓' },
+
+        // Blok 5 — Groot-getal meerstap-berekeninge
+        { difficulty: 'Medium', question: 'ʼn Pakhuis het reeds 2 900 items in voorraad en ontvang 5 200 meer items per lewering vir 2 leverings. Bereken: 2 900 + 5 200 × 2.', answer: '13300', checkMode: 'auto', correctAnswer: '13300', correctAnswers: ['13300', '13 300'], explanation: 'Vermenigvuldiging eerste: 5 200 × 2 = 10 400. Tel dan by: 2 900 + 10 400 = 13 300 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Boer oes 1 800 kg mielies per hektaar van 6 hektaar, en verkoop dan 4 200 kg by die plaaslike mark. Hoeveel kilogram mielies bly oor?', answer: '6600', checkMode: 'auto', correctAnswer: '6600', correctAnswers: ['6600', '6 600'], explanation: 'Totaal geoes = 1 800 × 6 = 10 800 kg. Oorblywend = 10 800 − 4 200 = 6 600 kg ✓' },
+        { difficulty: 'Hard', question: 'ʼn Munisipaliteit begin die jaar met 22 000 huishoudings met elektrisiteitverbindings. Dit koppel elke jaar ʼn ekstra 3 100 huishoudings aan vir die volgende 4 jaar. Bereken die totale aantal gekoppelde huishoudings na 4 jaar, en wys jou werk deur die korrekte bewerkingsvolgorde te gebruik.', answer: '22000+3100×4. Vermenigvuldiging eerste: 3100×4=12400. Tel dan by: 22000+12400=34400 huishoudings.', checkMode: 'self' },
+
+        // Blok 6 — Gemengde / toegepaste redenasie
+        { difficulty: 'Medium', question: 'ʼn Leerder sê 8 × (5 + 3) gee dieselfde resultaat as 8 × 5 + 8 × 3. Bereken albei kante en sê of dit die distributiewe eienskap hier bevestig.', answer: '8×(5+3)=8×8=64. 8×5+8×3=40+24=64. Albei is gelyk aan 64, wat die distributiewe eienskap bevestig.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bereken 4 × (85 − 29) + 25 deur die korrekte bewerkingsvolgorde te gebruik, en wys elke stap.', answer: '249', checkMode: 'auto', correctAnswer: '249', explanation: 'Hakies eerste: 85 − 29 = 56. Vermenigvuldig dan: 4 × 56 = 224. Tel dan by: 224 + 25 = 249 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van hele getalle bemeester.' },
+        { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — hersien enige vrae wat jy verkeerd gehad het.' },
+        { minScore: 9, message: 'Goeie poging! Hersien BODMAS en die distributiewe eienskap, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Bewerkingsvolgorde / BODMAS
+        { difficulty: 'Easy', question: 'Bereken: 7 + 9 × 6', answer: '61', checkMode: 'auto', correctAnswer: '61', explanation: 'Vermenigvuldiging voor optelling: 9 × 6 = 54, dan 7 + 54 = 61 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: (20 − 11) × 5 + 9', answer: '54', checkMode: 'auto', correctAnswer: '54', explanation: 'Hakies eerste: 20 − 11 = 9. Vermenigvuldig dan: 9 × 5 = 45. Tel dan by: 45 + 9 = 54 ✓' },
+        { difficulty: 'Medium', question: 'Bereken: 60 − 45 ÷ 9 + 4 × 5', answer: '75', checkMode: 'auto', correctAnswer: '75', explanation: 'Deling en vermenigvuldiging eerste: 45 ÷ 9 = 5 en 4 × 5 = 20. Werk dan van links na regs: 60 − 5 + 20 = 55 + 20 = 75 ✓' },
+        { difficulty: 'Medium', question: 'Bereken: 5² + 6 × 4', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: 'Magte eerste: 5² = 25. Vermenigvuldig dan: 6 × 4 = 24. Tel dan by: 25 + 24 = 49 ✓' },
+
+        // Blok 2 — Eienskappe van bewerkings
+        { difficulty: 'Easy', question: 'Gebruik die distributiewe eienskap om 9 × (60 + 4) as twee afsonderlike produkte te skryf, en bereken dan die antwoord.', answer: '(9×60)+(9×4) = 540+36 = 576', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Gebruik die assosiatiewe eienskap om (5 × 20) × 9 te bereken deur te hergroepeer om die berekening makliker te maak. Wat is die antwoord?', answer: '900', checkMode: 'auto', correctAnswer: '900', explanation: 'Die assosiatiewe eienskap laat ons hergroepeer: 5 × (20 × 9) = 5 × 180 = 900. Die oorspronklike volgorde gee ook (5 × 20) × 9 = 100 × 9 = 900 ✓' },
+        { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 18 × (40 − 3) te bereken.', answer: '666', checkMode: 'auto', correctAnswer: '666', explanation: 'Versprei: 18 × (40 − 3) = (18 × 40) − (18 × 3) = 720 − 54 = 666 ✓' },
+        { difficulty: 'Medium', question: 'Naledi sê 40 × (5 + 3) gee dieselfde antwoord of sy die hakies eerste bereken of die distributiewe eienskap gebruik. Wys albei metodes en gee die antwoord.', answer: 'Hakies eerste: 40×(5+3)=40×8=320. Distributief: (40×5)+(40×3)=200+120=320. Albei gee 320, so Naledi is korrek.', checkMode: 'self' },
+
+        // Blok 3 — Foutopsporing / kritiek
+        { difficulty: 'Medium', question: 'Palesa bereken 8 + 3 × 7 deur van links na regs te werk en kry (8+3) × 7 = 77. Wat is die korrekte antwoord, en wat het sy verkeerd gedoen?', answer: '29. Sy moes vermenigvuldiging voor optelling gedoen het: 8+3×7 = 8+21 = 29, nie eers optel nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Mpho bereken 45 − (15 − 6) deur die hakies te ignoreer en skryf 45 − 15 − 6 = 24. Wat is die korrekte antwoord?', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Hakies moet eerste bereken word: 15 − 6 = 9, dan 45 − 9 = 36. Mpho se metode om die hakies te verwyder is verkeerd ✓' },
+        { difficulty: 'Hard', question: 'Katlego sê 9 × (3 + 6) is dieselfde as 9 × 3 + 6. Bereken albei uitdrukkings en verduidelik of hy korrek is.', answer: '9×(3+6)=9×9=81. 9×3+6=27+6=33. Hulle is nie gelyk nie, so Katlego is verkeerd — die hakies verander watter getalle vermenigvuldig word.', checkMode: 'self' },
+
+        // Blok 4 — Meerstap-woordprobleme
+        { difficulty: 'Easy', question: 'Zinhle koop 6 pakkies appels met 15 appels in elke pakkie. Sy eet 13 appels. Hoeveel appels het sy oor?', answer: '77', checkMode: 'auto', correctAnswer: '77', explanation: 'Totale appels = 6 × 15 = 90. Appels oor = 90 − 13 = 77 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Bioskoop verkoop 52 kinderkaartjies teen R12 elk en 20 volwasse kaartjies teen R17 elk. Wat is die totale bedrag ingesamel?', answer: 'R964', checkMode: 'auto', correctAnswer: 'R964', correctAnswers: ['R964', '964'], explanation: 'Kinderkaartjies: 52 × R12 = R624. Volwasse kaartjies: 20 × R17 = R340. Totaal = R624 + R340 = R964 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Boekwinkel het 7 bokse van 32 boeke. Die winkel verkoop 56 boeke. Hoeveel boeke is oor?', answer: '168', checkMode: 'auto', correctAnswer: '168', explanation: 'Totale boeke = 7 × 32 = 224. Boeke oor = 224 − 56 = 168 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Skool huur 5 busse wat elk 84 leerders vervoer, en 6 minibusse wat elk 41 leerders vervoer, vir ʼn uitstappie. Hoeveel leerders kan altesaam vervoer word?', answer: '666', checkMode: 'auto', correctAnswer: '666', explanation: 'Busse: 5 × 84 = 420. Minibusse: 6 × 41 = 246. Totaal = 420 + 246 = 666 ✓' },
+
+        // Blok 5 — Groot-getal meerstap-berekeninge
+        { difficulty: 'Medium', question: 'ʼn Pakhuis het reeds 4 100 items in voorraad en ontvang 3 700 meer items per lewering vir 2 leverings. Bereken: 4 100 + 3 700 × 2.', answer: '11500', checkMode: 'auto', correctAnswer: '11500', correctAnswers: ['11500', '11 500'], explanation: 'Vermenigvuldiging eerste: 3 700 × 2 = 7 400. Tel dan by: 4 100 + 7 400 = 11 500 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Boer oes 2 100 kg mielies per hektaar van 5 hektaar, en verkoop dan 3 800 kg by die plaaslike mark. Hoeveel kilogram mielies bly oor?', answer: '6700', checkMode: 'auto', correctAnswer: '6700', correctAnswers: ['6700', '6 700'], explanation: 'Totaal geoes = 2 100 × 5 = 10 500 kg. Oorblywend = 10 500 − 3 800 = 6 700 kg ✓' },
+        { difficulty: 'Hard', question: 'ʼn Munisipaliteit begin die jaar met 18 500 huishoudings met waterverbindings. Dit koppel elke jaar ʼn ekstra 2 600 huishoudings aan vir die volgende 6 jaar. Bereken die totale aantal gekoppelde huishoudings na 6 jaar, en wys jou werk deur die korrekte bewerkingsvolgorde te gebruik.', answer: '18500+2600×6. Vermenigvuldiging eerste: 2600×6=15600. Tel dan by: 18500+15600=34100 huishoudings.', checkMode: 'self' },
+
+        // Blok 6 — Gemengde / toegepaste redenasie
+        { difficulty: 'Medium', question: 'ʼn Leerder sê 9 × (6 + 2) gee dieselfde resultaat as 9 × 6 + 9 × 2. Bereken albei kante en sê of dit die distributiewe eienskap hier bevestig.', answer: '9×(6+2)=9×8=72. 9×6+9×2=54+18=72. Albei is gelyk aan 72, wat die distributiewe eienskap bevestig.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bereken 5 × (96 − 38) + 30 deur die korrekte bewerkingsvolgorde te gebruik, en wys elke stap.', answer: '320', checkMode: 'auto', correctAnswer: '320', explanation: 'Hakies eerste: 96 − 38 = 58. Vermenigvuldig dan: 5 × 58 = 290. Tel dan by: 290 + 30 = 320 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van hele getalle bemeester.' },
+        { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — hersien enige vrae wat jy verkeerd gehad het.' },
+        { minScore: 9, message: 'Goeie poging! Hersien BODMAS en die distributiewe eienskap, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

@@ -387,4 +387,141 @@ export const topicData: TopicData = {
     { minScore: 8, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 1-4 Multi-step mixed operations | 5-8 Multiplying & dividing
+    // decimals by decimals | 9-12 Squares, cubes & roots | 13-16 Converting
+    // decimals/fractions/percentages | 17-20 Word problems & error-spotting
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Multi-step mixed operations with decimals (1-4)
+        { difficulty: 'Medium', question: 'Calculate 12.5 + 3.6 × 2.4, applying the correct order of operations.', answer: '21.14', checkMode: 'auto', correctAnswer: '21.14', explanation: 'Multiplication before addition: 3.6 × 2.4 = 8.64\n12.5 + 8.64 = 21.14 ✓' },
+        { difficulty: 'Medium', question: 'Calculate (8.4 - 2.9) × 1.5.', answer: '8.25', checkMode: 'auto', correctAnswer: '8.25', explanation: 'Brackets first: 8.4 − 2.9 = 5.5\n5.5 × 1.5 = 8.25 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Calculate 15.6 ÷ 1.2 + 3.5 × 2.', answer: '20', checkMode: 'auto', correctAnswer: '20', explanation: 'Division and multiplication before addition:\n15.6 ÷ 1.2 = 13\n3.5 × 2 = 7\n13 + 7 = 20 ✓' },
+        { difficulty: 'Hard', question: 'Calculate 2.5 × 0.4 + 6.3 ÷ 0.9.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Multiplication and division before addition:\n2.5 × 0.4 = 1\n6.3 ÷ 0.9 = 7\n1 + 7 = 8 ✓' },
+
+        // Block 2 — Multiplying & dividing decimals by decimals (5-8)
+        { difficulty: 'Medium', question: 'Calculate 3.6 × 0.24.', answer: '0.864', checkMode: 'auto', correctAnswer: '0.864', explanation: 'Ignore decimal points: 36 × 24 = 864.\nCount decimal places: 3.6 has 1, 0.24 has 2. Total = 3.\nPlace decimal point 3 places from the right: 0.864 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.84 ÷ 0.12.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Divisor 0.12 has 2 decimal places. Multiply both by 100: 84 ÷ 12 = 7 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 5.4 × 1.25.', answer: '6.75', checkMode: 'auto', correctAnswer: '6.75', explanation: 'Ignore decimal points: 54 × 125 = 6 750.\nCount decimal places: 5.4 has 1, 1.25 has 2. Total = 3.\nPlace decimal point 3 places from the right: 6.750 = 6.75 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Calculate 9.36 ÷ 0.78.', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Divisor 0.78 has 2 decimal places. Multiply both by 100: 936 ÷ 78 = 12 ✓' },
+
+        // Block 3 — Squares, cubes & roots of decimals (9-12)
+        { difficulty: 'Medium', question: 'Calculate 0.7².', answer: '0.49', checkMode: 'auto', correctAnswer: '0.49', explanation: '0.7² = 0.7 × 0.7 = 0.49 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.2³.', answer: '0.008', checkMode: 'auto', correctAnswer: '0.008', explanation: '0.2³ = 0.2 × 0.2 × 0.2\n0.2 × 0.2 = 0.04\n0.04 × 0.2 = 0.008 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the square root of 0.49.', answer: '0.7', checkMode: 'auto', correctAnswer: '0.7', explanation: '√0.49 = 0.7, since 0.7 × 0.7 = 0.49 ✓' },
+        { difficulty: 'Hard', question: 'Find the cube root of 0.008.', answer: '0.2', checkMode: 'auto', correctAnswer: '0.2', explanation: '∛0.008 = 0.2, since 0.2 × 0.2 × 0.2 = 0.008 ✓' },
+
+        // Block 4 — Converting decimals, fractions & percentages (13-16)
+        { difficulty: 'Medium', question: 'Write 0.375 as a fraction in simplest form.', answer: '3/8', checkMode: 'auto', correctAnswer: '3/8', explanation: '0.375 = 375/1000. Divide top and bottom by 125: 375/1000 = 3/8 ✓' },
+        { difficulty: 'Medium', question: 'Write 5/8 as a decimal.', answer: '0.625', checkMode: 'auto', correctAnswer: '0.625', explanation: '5 ÷ 8 = 0.625 (since 5/8 = 625/1000) ✓' },
+        { difficulty: 'Medium', question: 'Write 7/8 as a percentage.', answer: '87.5%', checkMode: 'auto', correctAnswer: '87.5%', correctAnswers: ['87.5%', '87.5', '87,5%'], explanation: '7/8 = 0.875. Multiply by 100: 0.875 × 100 = 87.5% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Order these decimals from smallest to biggest: 0.55, 0.5, 0.505, 0.45', answer: '0.45, 0.5, 0.505, 0.55', checkMode: 'auto', correctAnswer: '0.45,0.5,0.505,0.55', correctAnswers: ['0.45,0.5,0.505,0.55', '0.45, 0.5, 0.505, 0.55'], explanation: 'Compare place by place: 0.45 (4 tenths) is smallest, then 0.5 = 0.500, then 0.505, then 0.55 = 0.550 is biggest.\nOrder: 0.45, 0.5, 0.505, 0.55 ✓' },
+
+        // Block 5 — Word problems, error-spotting & multi-step reasoning (17-20)
+        { difficulty: 'Hard', question: "A car uses 6.4 litres of petrol per 100 km. The tank starts with 45.5 litres. How many litres are left after a trip of 350 km?", answer: '23.1 litres', checkMode: 'auto', correctAnswer: '23.1', correctAnswers: ['23.1', '23.1 litres', '23.1litres', '23.1 l', '23.1l'], explanation: 'Fuel used: 6.4 × 350 ÷ 100 = 22.4 litres.\nFuel remaining: 45.5 − 22.4 = 23.1 litres ✓' },
+        { difficulty: 'Hard', question: 'A shopper buys 2.5 kg of rice at R14.60 per kg, 1.8 kg of sugar at R12.40 per kg, and 0.75 kg of butter at R64 per kg. She pays with a R200 note. How much change does she get?', answer: 'R93.18', checkMode: 'auto', correctAnswer: 'R93.18', correctAnswers: ['R93.18', '93.18'], explanation: 'Rice: 2.5 × R14.60 = R36.50\nSugar: 1.8 × R12.40 = R22.32\nButter: 0.75 × R64 = R48.00\nTotal: R36.50 + R22.32 + R48.00 = R106.82\nChange: R200 − R106.82 = R93.18 ✓' },
+        { difficulty: 'Hard', question: 'A student calculates 0.6 ÷ 0.03 and writes the answer as 0.2. Explain the mistake and give the correct answer.', answer: 'The student divided incorrectly. The divisor 0.03 has 2 decimal places, so multiply both numbers by 100: 0.6 × 100 = 60 and 0.03 × 100 = 3. Then 60 ÷ 3 = 20, not 0.2.', checkMode: 'self', explanation: '0.6 ÷ 0.03: multiply both by 100 → 60 ÷ 3 = 20. Correct answer: 20.' },
+        { difficulty: 'Hard', question: 'Four offcuts of pipe measure 2.4 m, 3.15 m, 2.85 m and 3.6 m. What is the average (mean) length of the offcuts?', answer: '3 m', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', '3m', '3 m', '3.0', '3.00'], explanation: 'Sum: 2.4 + 3.15 + 2.85 + 3.6 = 12 m\nAverage: 12 ÷ 4 = 3 m ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered Grade 8 decimal fractions.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit the rules for decimals, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Multi-step mixed operations with decimals (1-4)
+        { difficulty: 'Medium', question: 'Calculate 18.4 + 2.5 × 3.6, applying the correct order of operations.', answer: '27.4', checkMode: 'auto', correctAnswer: '27.4', explanation: 'Multiplication before addition: 2.5 × 3.6 = 9\n18.4 + 9 = 27.4 ✓' },
+        { difficulty: 'Medium', question: 'Calculate (9.6 - 4.7) × 2.5.', answer: '12.25', checkMode: 'auto', correctAnswer: '12.25', explanation: 'Brackets first: 9.6 − 4.7 = 4.9\n4.9 × 2.5 = 12.25 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Calculate 24.8 ÷ 0.8 + 4.5 × 3.', answer: '44.5', checkMode: 'auto', correctAnswer: '44.5', explanation: 'Division and multiplication before addition:\n24.8 ÷ 0.8 = 31\n4.5 × 3 = 13.5\n31 + 13.5 = 44.5 ✓' },
+        { difficulty: 'Hard', question: 'Calculate 3.5 × 0.6 + 8.4 ÷ 1.2.', answer: '9.1', checkMode: 'auto', correctAnswer: '9.1', explanation: 'Multiplication and division before addition:\n3.5 × 0.6 = 2.1\n8.4 ÷ 1.2 = 7\n2.1 + 7 = 9.1 ✓' },
+
+        // Block 2 — Multiplying & dividing decimals by decimals (5-8)
+        { difficulty: 'Medium', question: 'Calculate 4.8 × 0.35.', answer: '1.68', checkMode: 'auto', correctAnswer: '1.68', explanation: 'Ignore decimal points: 48 × 35 = 1 680.\nCount decimal places: 4.8 has 1, 0.35 has 2. Total = 3.\nPlace decimal point 3 places from the right: 1.680 = 1.68 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.96 ÷ 0.16.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Divisor 0.16 has 2 decimal places. Multiply both by 100: 96 ÷ 16 = 6 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 6.2 × 1.5.', answer: '9.3', checkMode: 'auto', correctAnswer: '9.3', explanation: 'Ignore decimal points: 62 × 15 = 930.\nCount decimal places: 6.2 has 1, 1.5 has 1. Total = 2.\nPlace decimal point 2 places from the right: 9.30 = 9.3 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Calculate 12.42 ÷ 0.69.', answer: '18', checkMode: 'auto', correctAnswer: '18', explanation: 'Divisor 0.69 has 2 decimal places. Multiply both by 100: 1 242 ÷ 69 = 18 ✓' },
+
+        // Block 3 — Squares, cubes & roots of decimals (9-12)
+        { difficulty: 'Medium', question: 'Calculate 0.9².', answer: '0.81', checkMode: 'auto', correctAnswer: '0.81', explanation: '0.9² = 0.9 × 0.9 = 0.81 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.3³.', answer: '0.027', checkMode: 'auto', correctAnswer: '0.027', explanation: '0.3³ = 0.3 × 0.3 × 0.3\n0.3 × 0.3 = 0.09\n0.09 × 0.3 = 0.027 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the square root of 0.81.', answer: '0.9', checkMode: 'auto', correctAnswer: '0.9', explanation: '√0.81 = 0.9, since 0.9 × 0.9 = 0.81 ✓' },
+        { difficulty: 'Hard', question: 'Find the cube root of 0.064.', answer: '0.4', checkMode: 'auto', correctAnswer: '0.4', explanation: '∛0.064 = 0.4, since 0.4 × 0.4 × 0.4 = 0.064 ✓' },
+
+        // Block 4 — Converting decimals, fractions & percentages (13-16)
+        { difficulty: 'Medium', question: 'Write 0.125 as a fraction in simplest form.', answer: '1/8', checkMode: 'auto', correctAnswer: '1/8', explanation: '0.125 = 125/1000. Divide top and bottom by 125: 125/1000 = 1/8 ✓' },
+        { difficulty: 'Medium', question: 'Write 3/8 as a decimal.', answer: '0.375', checkMode: 'auto', correctAnswer: '0.375', explanation: '3 ÷ 8 = 0.375 (since 3/8 = 375/1000) ✓' },
+        { difficulty: 'Medium', question: 'Write 9/40 as a percentage.', answer: '22.5%', checkMode: 'auto', correctAnswer: '22.5%', correctAnswers: ['22.5%', '22.5', '22,5%'], explanation: '9/40 = 0.225. Multiply by 100: 0.225 × 100 = 22.5% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Order these decimals from smallest to biggest: 0.72, 0.7, 0.702, 0.27', answer: '0.27, 0.7, 0.702, 0.72', checkMode: 'auto', correctAnswer: '0.27,0.7,0.702,0.72', correctAnswers: ['0.27,0.7,0.702,0.72', '0.27, 0.7, 0.702, 0.72'], explanation: 'Compare place by place: 0.27 (2 tenths) is smallest, then 0.7 = 0.700, then 0.702, then 0.72 = 0.720 is biggest.\nOrder: 0.27, 0.7, 0.702, 0.72 ✓' },
+
+        // Block 5 — Word problems, error-spotting & multi-step reasoning (17-20)
+        { difficulty: 'Hard', question: 'A car uses 7.2 litres of petrol per 100 km. The tank starts with 38.4 litres. How many litres are left after a trip of 250 km?', answer: '20.4 litres', checkMode: 'auto', correctAnswer: '20.4', correctAnswers: ['20.4', '20.4 litres', '20.4litres', '20.4 l', '20.4l'], explanation: 'Fuel used: 7.2 × 250 ÷ 100 = 18 litres.\nFuel remaining: 38.4 − 18 = 20.4 litres ✓' },
+        { difficulty: 'Hard', question: 'A shopper buys 1.6 kg of flour at R16.80 per kg, 2.4 kg of apples at R18.50 per kg, and 0.5 kg of cheese at R89.40 per kg. She pays with a R150 note. How much change does she get?', answer: 'R34.02', checkMode: 'auto', correctAnswer: 'R34.02', correctAnswers: ['R34.02', '34.02'], explanation: 'Flour: 1.6 × R16.80 = R26.88\nApples: 2.4 × R18.50 = R44.40\nCheese: 0.5 × R89.40 = R44.70\nTotal: R26.88 + R44.40 + R44.70 = R115.98\nChange: R150 − R115.98 = R34.02 ✓' },
+        { difficulty: 'Hard', question: 'A student calculates 0.8 ÷ 0.04 and writes the answer as 0.2. Explain the mistake and give the correct answer.', answer: 'The student divided incorrectly. The divisor 0.04 has 2 decimal places, so multiply both numbers by 100: 0.8 × 100 = 80 and 0.04 × 100 = 4. Then 80 ÷ 4 = 20, not 0.2.', checkMode: 'self', explanation: '0.8 ÷ 0.04: multiply both by 100 → 80 ÷ 4 = 20. Correct answer: 20.' },
+        { difficulty: 'Hard', question: 'Four offcuts of pipe measure 4.2 m, 3.65 m, 4.85 m and 3.3 m. What is the average (mean) length of the offcuts?', answer: '4 m', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', '4m', '4 m', '4.0', '4.00'], explanation: 'Sum: 4.2 + 3.65 + 4.85 + 3.3 = 16 m\nAverage: 16 ÷ 4 = 4 m ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered Grade 8 decimal fractions.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit the rules for decimals, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Multi-step mixed operations with decimals (1-4)
+        { difficulty: 'Medium', question: 'Calculate 22.6 + 4.2 × 1.8, applying the correct order of operations.', answer: '30.16', checkMode: 'auto', correctAnswer: '30.16', explanation: 'Multiplication before addition: 4.2 × 1.8 = 7.56\n22.6 + 7.56 = 30.16 ✓' },
+        { difficulty: 'Medium', question: 'Calculate (7.8 - 3.6) × 3.5.', answer: '14.7', checkMode: 'auto', correctAnswer: '14.7', explanation: 'Brackets first: 7.8 − 3.6 = 4.2\n4.2 × 3.5 = 14.7 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Calculate 33.6 ÷ 1.4 + 2.8 × 4.', answer: '35.2', checkMode: 'auto', correctAnswer: '35.2', explanation: 'Division and multiplication before addition:\n33.6 ÷ 1.4 = 24\n2.8 × 4 = 11.2\n24 + 11.2 = 35.2 ✓' },
+        { difficulty: 'Hard', question: 'Calculate 4.5 × 0.8 + 5.4 ÷ 0.6.', answer: '12.6', checkMode: 'auto', correctAnswer: '12.6', explanation: 'Multiplication and division before addition:\n4.5 × 0.8 = 3.6\n5.4 ÷ 0.6 = 9\n3.6 + 9 = 12.6 ✓' },
+
+        // Block 2 — Multiplying & dividing decimals by decimals (5-8)
+        { difficulty: 'Medium', question: 'Calculate 2.7 × 0.45.', answer: '1.215', checkMode: 'auto', correctAnswer: '1.215', explanation: 'Ignore decimal points: 27 × 45 = 1 215.\nCount decimal places: 2.7 has 1, 0.45 has 2. Total = 3.\nPlace decimal point 3 places from the right: 1.215 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.72 ÷ 0.09.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Divisor 0.09 has 2 decimal places. Multiply both by 100: 72 ÷ 9 = 8 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 8.4 × 1.25.', answer: '10.5', checkMode: 'auto', correctAnswer: '10.5', explanation: 'Ignore decimal points: 84 × 125 = 10 500.\nCount decimal places: 8.4 has 1, 1.25 has 2. Total = 3.\nPlace decimal point 3 places from the right: 10.500 = 10.5 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Calculate 14.72 ÷ 0.92.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Divisor 0.92 has 2 decimal places. Multiply both by 100: 1 472 ÷ 92 = 16 ✓' },
+
+        // Block 3 — Squares, cubes & roots of decimals (9-12)
+        { difficulty: 'Medium', question: 'Calculate 0.8².', answer: '0.64', checkMode: 'auto', correctAnswer: '0.64', explanation: '0.8² = 0.8 × 0.8 = 0.64 ✓' },
+        { difficulty: 'Medium', question: 'Calculate 0.5³.', answer: '0.125', checkMode: 'auto', correctAnswer: '0.125', explanation: '0.5³ = 0.5 × 0.5 × 0.5\n0.5 × 0.5 = 0.25\n0.25 × 0.5 = 0.125 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the square root of 0.36.', answer: '0.6', checkMode: 'auto', correctAnswer: '0.6', explanation: '√0.36 = 0.6, since 0.6 × 0.6 = 0.36 ✓' },
+        { difficulty: 'Hard', question: 'Find the cube root of 0.027.', answer: '0.3', checkMode: 'auto', correctAnswer: '0.3', explanation: '∛0.027 = 0.3, since 0.3 × 0.3 × 0.3 = 0.027 ✓' },
+
+        // Block 4 — Converting decimals, fractions & percentages (13-16)
+        { difficulty: 'Medium', question: 'Write 0.875 as a fraction in simplest form.', answer: '7/8', checkMode: 'auto', correctAnswer: '7/8', explanation: '0.875 = 875/1000. Divide top and bottom by 125: 875/1000 = 7/8 ✓' },
+        { difficulty: 'Medium', question: 'Write 7/20 as a decimal.', answer: '0.35', checkMode: 'auto', correctAnswer: '0.35', explanation: '7 ÷ 20 = 0.35 (since 7/20 = 35/100) ✓' },
+        { difficulty: 'Medium', question: 'Write 11/25 as a percentage.', answer: '44%', checkMode: 'auto', correctAnswer: '44%', correctAnswers: ['44%', '44'], explanation: '11/25 = 44/100 = 0.44. Multiply by 100: 0.44 × 100 = 44% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Order these decimals from smallest to biggest: 0.63, 0.6, 0.603, 0.36', answer: '0.36, 0.6, 0.603, 0.63', checkMode: 'auto', correctAnswer: '0.36,0.6,0.603,0.63', correctAnswers: ['0.36,0.6,0.603,0.63', '0.36, 0.6, 0.603, 0.63'], explanation: 'Compare place by place: 0.36 (3 tenths) is smallest, then 0.6 = 0.600, then 0.603, then 0.63 = 0.630 is biggest.\nOrder: 0.36, 0.6, 0.603, 0.63 ✓' },
+
+        // Block 5 — Word problems, error-spotting & multi-step reasoning (17-20)
+        { difficulty: 'Hard', question: 'A car uses 5.6 litres of petrol per 100 km. The tank starts with 42.8 litres. How many litres are left after a trip of 400 km?', answer: '20.4 litres', checkMode: 'auto', correctAnswer: '20.4', correctAnswers: ['20.4', '20.4 litres', '20.4litres', '20.4 l', '20.4l'], explanation: 'Fuel used: 5.6 × 400 ÷ 100 = 22.4 litres.\nFuel remaining: 42.8 − 22.4 = 20.4 litres ✓' },
+        { difficulty: 'Hard', question: 'A shopper buys 3.2 kg of potatoes at R9.80 per kg, 1.4 kg of tomatoes at R22.60 per kg, and 0.6 kg of cheese at R95.50 per kg. She pays with a R180 note. How much change does she get?', answer: 'R59.70', checkMode: 'auto', correctAnswer: 'R59.70', correctAnswers: ['R59.70', '59.70'], explanation: 'Potatoes: 3.2 × R9.80 = R31.36\nTomatoes: 1.4 × R22.60 = R31.64\nCheese: 0.6 × R95.50 = R57.30\nTotal: R31.36 + R31.64 + R57.30 = R120.30\nChange: R180 − R120.30 = R59.70 ✓' },
+        { difficulty: 'Hard', question: 'A student calculates 0.9 ÷ 0.03 and writes the answer as 0.3. Explain the mistake and give the correct answer.', answer: 'The student divided incorrectly. The divisor 0.03 has 2 decimal places, so multiply both numbers by 100: 0.9 × 100 = 90 and 0.03 × 100 = 3. Then 90 ÷ 3 = 30, not 0.3.', checkMode: 'self', explanation: '0.9 ÷ 0.03: multiply both by 100 → 90 ÷ 3 = 30. Correct answer: 30.' },
+        { difficulty: 'Hard', question: 'Four offcuts of pipe measure 5.4 m, 4.15 m, 3.85 m and 4.6 m. What is the average (mean) length of the offcuts?', answer: '4.5 m', checkMode: 'auto', correctAnswer: '4.5', correctAnswers: ['4.5', '4.5m', '4.5 m', '4.50'], explanation: 'Sum: 5.4 + 4.15 + 3.85 + 4.6 = 18 m\nAverage: 18 ÷ 4 = 4.5 m ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Outstanding! You have mastered Grade 8 decimal fractions.' },
+        { minScore: 14, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 9, message: 'Good effort! Revisit the rules for decimals, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

@@ -396,4 +396,149 @@ export const topicData: TopicData = {
     { minScore: 5, message: 'Goeie poging! Gaan weer deur die studiegids, veral die klassifikasie-kontrolelys, en probeer weer.' },
     { minScore: 0, message: 'Hou aan oefen — werk weer deur die gids, met fokus op die verskil tussen rasionale en irrasionale getalle.' },
   ],
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 0-3 Klassifisering van getalle volgens tipe (N/N0/Z/Q) | 4-7
+    // Rasionaal vs irrasionaal vanaf desimale (eindigend/herhalend vs
+    // nie-herhalend) | 8-11 Wortelgetalle — rasionaal of irrasionaal |
+    // 12-14 Volledige multi-versameling klassifikasie | 15-17
+    // Vergelyking/rangskikking oor die hiërargie | 18-19 Foutopsporing /
+    // multi-stap redenasie
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Klassifisering van getalle volgens tipe (N / N0 / Z / Q)
+        { difficulty: 'Easy', question: 'Is 12 ʼn natuurlike getal?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja'], explanation: '12 is ʼn positiewe teltal, dus behoort dit aan die natuurlike getalle (N). ✓' },
+        { difficulty: 'Easy', question: 'Is −8 ʼn natuurlike getal? Antwoord ja of nee.', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee'], explanation: 'Natuurlike getalle is die positiewe teltalle {1, 2, 3, ...}. −8 is negatief, dus is dit NIE ʼn natuurlike getal nie. ✓' },
+        { difficulty: 'Easy', question: 'Aan watter versameling behoort 0 wat natuurlike getalle (N) nie insluit nie: hele getalle (N0) of slegs heelgetalle?', checkMode: 'auto', correctAnswer: 'hele getalle', correctAnswers: ['hele getalle', 'N0', 'hele getalle (N0)'], explanation: 'Hele getalle (N0) is die natuurlike getalle plus 0: {0, 1, 2, 3, ...}. Natuurlike getalle begin by 1 tel, dus is 0 in N0 maar nie in N nie. ✓' },
+        { difficulty: 'Easy', question: 'Is −5 ʼn heelgetal?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja'], explanation: 'Heelgetalle (Z) sluit al die hele getalle saam met hul negatiewe in: {..., −2, −1, 0, 1, 2, ...}. −5 pas hierdie definisie. ✓' },
+
+        // Blok 2 — Rasionaal vs irrasionaal vanaf desimale (eindigend/herhalend vs nie-herhalend)
+        { difficulty: 'Easy-Medium', question: 'Is 0,375 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: '0,375 is ʼn eindigende desimaal (dit stop), dus kan dit as ʼn presiese breuk geskryf word: 0,375 = 3/8. Dit maak dit rasionaal. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Die desimaal 0,454545... herhaal die paar "45" vir ewig. Is hierdie getal rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: 'ʼn Desimaal wat in ʼn duidelike patroon vir ewig herhaal, is steeds rasionaal, al eindig dit nooit tegnies nie. 0,454545... = 5/11, dus is dit rasionaal. ✓' },
+        { difficulty: 'Easy-Medium', question: 'ʼn Getal het die desimale waarde 0,12112111211112..., waar die aantal 1\'e tussen elke 2 al hoe meer word. Is hierdie getal rasionaal of irrasionaal? Verduidelik jou redenasie.', checkMode: 'self', answer: 'Irrasionaal. Die desimaal eindig nooit nie en, alhoewel dit ʼn mate van struktuur het, sluit die syfers nooit in ʼn vaste herhalende patroon in nie (die gapings van 1\'e word al hoe groter), dus kan dit nie as ʼn presiese breuk geskryf word nie.' },
+        { difficulty: 'Medium', question: 'Sipho sê elke desimaal wat "vir ewig voortgaan" moet irrasionaal wees. Verduidelik waarom dit nie altyd waar is nie, deur 0,222... as voorbeeld te gebruik.', checkMode: 'self', answer: 'Sipho is verkeerd. ʼn Desimaal is slegs irrasionaal as dit vir ewig voortgaan SONDER om ooit in ʼn patroon te herhaal. 0,222... gaan vir ewig voort, maar die syfer 2 herhaal elke keer, dus is dit eintlik rasionaal — dit is gelyk aan 2/9. Slegs nie-eindigende, nie-herhalende desimale is irrasionaal.' },
+
+        // Blok 3 — Wortelgetalle: rasionaal of irrasionaal
+        { difficulty: 'Medium', question: 'Is √16 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: '16 is ʼn volkome vierkant (4 × 4 = 16), dus √16 = 4, ʼn hele getal. Dit maak dit rasionaal. ✓' },
+        { difficulty: 'Medium', question: 'Is √17 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], explanation: '17 is nie ʼn volkome vierkant nie (die naaste volkome vierkante is 16 en 25), dus kan √17 nie na ʼn hele getal vereenvoudig word nie. Sy desimaal, 4,1231056..., is nie-eindigend en nie-herhalend, dus is dit irrasionaal. ✓' },
+        { difficulty: 'Medium', question: 'Klassifiseer √49: is dit rasionaal of irrasionaal, en waarna vereenvoudig dit?', checkMode: 'self', answer: 'Rasionaal. 49 is ʼn volkome vierkant (7 × 7 = 49), dus √49 = 7, wat ʼn hele getal is en dus rasionaal.' },
+        { difficulty: 'Medium-Hard', question: 'Tussen √40 en √50 lyk een meer "irrasionaal" as die ander, maar klassifiseer BEIDE getalle as rasionaal of irrasionaal, en toon jou redenasie vir elkeen.', checkMode: 'self', answer: 'Albei is irrasionaal. 40 is nie ʼn volkome vierkant nie (tussen 36 = 6² en 49 = 7²), dus √40 = 6,3245553... is nie-eindigend en nie-herhalend. 50 is ook nie ʼn volkome vierkant nie (tussen 49 = 7² en 64 = 8²), dus √50 = 7,0710678... is ook nie-eindigend en nie-herhalend. Geeneen vereenvoudig na ʼn hele getal nie, dus is albei irrasionaal.' },
+
+        // Blok 4 — Volledige multi-versameling klassifikasie
+        { difficulty: 'Medium', question: 'Klassifiseer die getal 14 in elke versameling waaraan dit behoort (N, N0, Z, Q, of irrasionaal).', checkMode: 'auto', correctAnswer: 'N, N0, Z en Q', correctAnswers: ['N, N0, Z en Q', 'N, N0, Z, Q'], explanation: '14 is ʼn positiewe hele teltal sonder ʼn breukdeel, dus behoort dit aan N, N0, Z en Q. ✓' },
+        { difficulty: 'Medium', question: 'Klassifiseer √81 in elke versameling waaraan dit behoort (N, N0, Z, Q, of irrasionaal).', checkMode: 'auto', correctAnswer: 'N, N0, Z en Q', correctAnswers: ['N, N0, Z en Q', 'N, N0, Z, Q'], explanation: '81 is ʼn volkome vierkant (9 × 9 = 81), dus √81 = 9. Aangesien 9 ʼn positiewe hele getal is, behoort dit aan N, N0, Z en Q. ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Getallelyn toon −7, 0, 5/8, √29 en 20. Sorteer elke getal in elke versameling waaraan dit behoort (N, N0, Z, Q, irrasionaal), en verduidelik waarom √29 in geeneen van N, N0, Z of Q pas nie.', checkMode: 'self', answer: '−7: Z, Q. 0: N0, Z, Q. 5/8: slegs Q. 20: N, N0, Z, Q. √29 is irrasionaal omdat 29 nie ʼn volkome vierkant is nie (tussen 25 = 5² en 36 = 6²), dus eindig of herhaal sy desimaal, 5,3851648..., nooit nie — dus behoort dit glad nie aan N, N0, Z of Q nie.' },
+
+        // Blok 5 — Vergelyking / rangskikking oor die hiërargie
+        { difficulty: 'Medium', question: 'Wat is groter: √17 of 4? Verduidelik hoe jy dit weet sonder ʼn sakrekenaar.', checkMode: 'self', answer: '√17 is groter as 4. Aangesien 16 < 17, weet ons √16 < √17, en √16 = 4, dus moet √17 groter as 4 wees (in werklikheid √17 ≈ 4,12).' },
+        { difficulty: 'Medium', question: 'Rangskik hierdie getalle van kleinste na grootste: √25, 4,9, √16, 5,1.', checkMode: 'auto', correctAnswer: '√16, 4,9, √25, 5,1', correctAnswers: ['√16, 4,9, √25, 5,1', 'sqrt16, 4,9, sqrt25, 5,1'], explanation: '√16 = 4, 4,9 = 4,9, √25 = 5, 5,1 = 5,1. Die rangskikking van die waardes 4, 4,9, 5, 5,1 van kleinste na grootste gee √16, 4,9, √25, 5,1. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Plaas √10 en 3,5 in volgorde van kleinste na grootste, en toon hoe jy hulle vergelyk het.', checkMode: 'self', answer: '√10, 3,5. √10 ≈ 3,1622776..., wat kleiner is as 3,5, aangesien 3,1622776 < 3,5. Dus is die volgorde van kleinste na grootste √10, dan 3,5.' },
+
+        // Blok 6 — Foutopsporing / multi-stap redenasie
+        { difficulty: 'Hard', question: 'Ayesha sê √64 is irrasionaal omdat dit ʼn vierkantswortelteken voor het. Is sy korrek? Verduidelik wat sy verkeerd verstaan het.', checkMode: 'self', answer: 'Nee, Ayesha is verkeerd. ʼn Vierkantswortelteken maak ʼn getal nie outomaties irrasionaal nie — jy moet kontroleer of die getal onder die wortel ʼn volkome vierkant is. 64 is ʼn volkome vierkant (8 × 8 = 64), dus √64 = 8, ʼn hele getal, wat rasionaal is. Ayesha het "bevat ʼn wortelteken" met "is irrasionaal" verwar.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder klassifiseer die getal 6/3 as "slegs rasionaal, nie ʼn heelgetal nie, omdat dit as ʼn breuk geskryf is". Identifiseer die fout in hierdie redenasie en gee die volledige, korrekte klassifikasie.', checkMode: 'self', answer: 'Die fout is dat die leerder nie eers die breuk vereenvoudig het nie. 6/3 vereenvoudig na 2, wat ʼn positiewe hele getal is. Dus behoort 6/3 eintlik aan N, N0, Z en Q — nie net Q nie. Vereenvoudig altyd ʼn breuk voordat jy dit klassifiseer, aangesien die vereenvoudigde vorm kan wys dat dit aan meer versamelings behoort as wat dit aanvanklik lyk.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die klassifisering van getalle oor die reële getallestelsel bemeester.' },
+        { minScore: 14, message: 'Goeie werk! Jy verstaan die meeste van die getalversamelings — hersien enigiets wat jy gemis het en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die klassifikasie-kontrolelys en die rasionaal/irrasionaal-desimaaltoets, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan oefen — werk weer deur die studiegids, met fokus op volkome vierkante en die desimaaltoets.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde blokstruktuur as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Klassifisering van getalle volgens tipe (N / N0 / Z / Q)
+        { difficulty: 'Easy', question: 'Is 25 ʼn natuurlike getal?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja'], explanation: '25 is ʼn positiewe teltal, dus behoort dit aan die natuurlike getalle (N). ✓' },
+        { difficulty: 'Easy', question: 'Is −11 ʼn hele getal? Antwoord ja of nee.', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee'], explanation: 'Hele getalle (N0) is {0, 1, 2, 3, ...} — hulle kan nie negatief wees nie. −11 is negatief, dus is dit NIE ʼn hele getal nie. ✓' },
+        { difficulty: 'Easy', question: 'Noem die kleinste versameling (N, N0 of Z) waaraan die getal 0 behoort.', checkMode: 'auto', correctAnswer: 'N0', correctAnswers: ['N0', 'hele getalle', 'N nul'], explanation: '0 is nie in N nie (tel begin by 1), maar dit word by definisie by die hele getalle (N0) ingesluit, dus is N0 die kleinste versameling wat 0 bevat. ✓' },
+        { difficulty: 'Easy', question: 'Is −20 ʼn heelgetal?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja'], explanation: 'Heelgetalle (Z) sluit al die hele getalle saam met hul negatiewe in, dus pas −20 hierdie definisie. ✓' },
+
+        // Blok 2 — Rasionaal vs irrasionaal vanaf desimale
+        { difficulty: 'Easy-Medium', question: 'Is 0,65 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: '0,65 is ʼn eindigende desimaal, dus kan dit as ʼn presiese breuk geskryf word: 0,65 = 13/20. Dit maak dit rasionaal. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Die desimaal 0,363636... herhaal die paar "36" vir ewig. Is hierdie getal rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: 'ʼn Desimaal wat in ʼn duidelike patroon vir ewig herhaal, is steeds rasionaal. 0,363636... = 4/11, dus is dit rasionaal. ✓' },
+        { difficulty: 'Easy-Medium', question: 'ʼn Getal het die desimale waarde 0,20200200020002..., waar die aantal nulle tussen elke 2 al hoe meer word. Is hierdie getal rasionaal of irrasionaal? Verduidelik jou redenasie.', checkMode: 'self', answer: 'Irrasionaal. Alhoewel die desimaal ʼn mate van sigbare patroon het, sluit die syfers nooit in ʼn VASTE herhalende blok in nie — die gapings van nulle word al hoe groter — dus eindig dit nooit en herhaal dit ook nooit werklik nie, wat beteken dit kan nie as ʼn presiese breuk geskryf word nie.' },
+        { difficulty: 'Medium', question: 'Lindiwe sê ʼn desimaal is slegs rasionaal as dit heeltemal stop. Verduidelik waarom dit nie die volle prentjie is nie, deur 0,777... as voorbeeld te gebruik.', checkMode: 'self', answer: 'Lindiwe is verkeerd. ʼn Desimaal is rasionaal as dit eindig OF vir ewig in ʼn patroon herhaal. 0,777... stop nooit nie, maar die syfer 7 herhaal elke keer, dus is dit rasionaal — dit is gelyk aan 7/9. Slegs desimale wat nòg eindig nòg herhaal, is irrasionaal.' },
+
+        // Blok 3 — Wortelgetalle: rasionaal of irrasionaal
+        { difficulty: 'Medium', question: 'Is √25 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: '25 is ʼn volkome vierkant (5 × 5 = 25), dus √25 = 5, ʼn hele getal. Dit maak dit rasionaal. ✓' },
+        { difficulty: 'Medium', question: 'Is √29 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], explanation: '29 is nie ʼn volkome vierkant nie (die naaste volkome vierkante is 25 en 36), dus kan √29 nie na ʼn hele getal vereenvoudig word nie. Sy desimaal, 5,3851648..., is nie-eindigend en nie-herhalend, dus is dit irrasionaal. ✓' },
+        { difficulty: 'Medium', question: 'Klassifiseer √144: is dit rasionaal of irrasionaal, en waarna vereenvoudig dit?', checkMode: 'self', answer: 'Rasionaal. 144 is ʼn volkome vierkant (12 × 12 = 144), dus √144 = 12, wat ʼn hele getal is en dus rasionaal.' },
+        { difficulty: 'Medium-Hard', question: 'Klassifiseer BEIDE √64 en √70 as rasionaal of irrasionaal, en toon jou redenasie vir elkeen.', checkMode: 'self', answer: '√64 is rasionaal: 64 is ʼn volkome vierkant (8 × 8 = 64), dus √64 = 8, ʼn hele getal. √70 is irrasionaal: 70 is nie ʼn volkome vierkant nie (tussen 64 = 8² en 81 = 9²), dus √70 = 8,3666002... is nie-eindigend en nie-herhalend.' },
+
+        // Blok 4 — Volledige multi-versameling klassifikasie
+        { difficulty: 'Medium', question: 'Klassifiseer die getal 23 in elke versameling waaraan dit behoort (N, N0, Z, Q, of irrasionaal).', checkMode: 'auto', correctAnswer: 'N, N0, Z en Q', correctAnswers: ['N, N0, Z en Q', 'N, N0, Z, Q'], explanation: '23 is ʼn positiewe hele teltal sonder ʼn breukdeel, dus behoort dit aan N, N0, Z en Q. ✓' },
+        { difficulty: 'Medium', question: 'Klassifiseer √100 in elke versameling waaraan dit behoort (N, N0, Z, Q, of irrasionaal).', checkMode: 'auto', correctAnswer: 'N, N0, Z en Q', correctAnswers: ['N, N0, Z en Q', 'N, N0, Z, Q'], explanation: '100 is ʼn volkome vierkant (10 × 10 = 100), dus √100 = 10. Aangesien 10 ʼn positiewe hele getal is, behoort dit aan N, N0, Z en Q. ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Getallelyn toon −9, 0, 3/7, √50 en 15. Sorteer elke getal in elke versameling waaraan dit behoort (N, N0, Z, Q, irrasionaal), en verduidelik waarom √50 in geeneen van N, N0, Z of Q pas nie.', checkMode: 'self', answer: '−9: Z, Q. 0: N0, Z, Q. 3/7: slegs Q. 15: N, N0, Z, Q. √50 is irrasionaal omdat 50 nie ʼn volkome vierkant is nie (tussen 49 = 7² en 64 = 8²), dus eindig of herhaal sy desimaal, 7,0710678..., nooit nie — dus behoort dit glad nie aan N, N0, Z of Q nie.' },
+
+        // Blok 5 — Vergelyking / rangskikking oor die hiërargie
+        { difficulty: 'Medium', question: 'Wat is kleiner: √29 of 5? Verduidelik hoe jy dit weet sonder ʼn sakrekenaar.', checkMode: 'self', answer: '5 is kleiner as √29. Aangesien 25 < 29, weet ons √25 < √29, en √25 = 5, dus moet 5 kleiner as √29 wees (in werklikheid √29 ≈ 5,39).' },
+        { difficulty: 'Medium', question: 'Rangskik hierdie getalle van kleinste na grootste: √36, 5,9, √49, 6,2.', checkMode: 'auto', correctAnswer: '5,9, √36, 6,2, √49', correctAnswers: ['5,9, √36, 6,2, √49', '5,9, sqrt36, 6,2, sqrt49'], explanation: '√36 = 6, 5,9 = 5,9, √49 = 7, 6,2 = 6,2. Die rangskikking van die waardes 5,9, 6, 6,2, 7 van kleinste na grootste gee 5,9, √36 (6), 6,2, √49 (7). ✓' },
+        { difficulty: 'Medium-Hard', question: 'Plaas √11 en 3,4 in volgorde van kleinste na grootste, en toon hoe jy hulle vergelyk het.', checkMode: 'self', answer: '√11, 3,4. √11 ≈ 3,3166247..., wat kleiner is as 3,4, aangesien 3,3166 < 3,4. Dus is die volgorde van kleinste na grootste √11, dan 3,4.' },
+
+        // Blok 6 — Foutopsporing / multi-stap redenasie
+        { difficulty: 'Hard', question: 'Themba sê √121 is irrasionaal omdat dit ʼn vierkantswortelteken voor het. Is hy korrek? Verduidelik wat hy verkeerd verstaan het.', checkMode: 'self', answer: 'Nee, Themba is verkeerd. ʼn Vierkantswortelteken maak ʼn getal nie outomaties irrasionaal nie — jy moet kontroleer of die getal onder die wortel ʼn volkome vierkant is. 121 is ʼn volkome vierkant (11 × 11 = 121), dus √121 = 11, ʼn hele getal, wat rasionaal is. Themba het "bevat ʼn wortelteken" met "is irrasionaal" verwar.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder klassifiseer die getal 12/4 as "slegs rasionaal, nie ʼn heelgetal nie, omdat dit as ʼn breuk geskryf is". Identifiseer die fout in hierdie redenasie en gee die volledige, korrekte klassifikasie.', checkMode: 'self', answer: 'Die fout is dat die leerder nie eers die breuk vereenvoudig het nie. 12/4 vereenvoudig na 3, wat ʼn positiewe hele getal is. Dus behoort 12/4 eintlik aan N, N0, Z en Q — nie net Q nie. Vereenvoudig altyd ʼn breuk voordat jy dit klassifiseer, aangesien die vereenvoudigde vorm kan wys dat dit aan meer versamelings behoort as wat dit aanvanklik lyk.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy kan getalle met selfvertroue oor die reële getallestelsel klassifiseer.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enigiets wat jy gemis het en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die klassifikasie-kontrolelys en die rasionaal/irrasionaal-desimaaltoets, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan oefen — werk weer deur die studiegids, met fokus op volkome vierkante en die desimaaltoets.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde blokstruktuur, meer werklike-wêreld kontekste + redenasie
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Klassifisering van getalle volgens tipe (N / N0 / Z / Q)
+        { difficulty: 'Easy', question: 'Is 40 ʼn natuurlike getal?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja'], explanation: '40 is ʼn positiewe teltal, dus behoort dit aan die natuurlike getalle (N). ✓' },
+        { difficulty: 'Easy', question: 'Is −3 ʼn natuurlike getal? Antwoord ja of nee.', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee'], explanation: 'Natuurlike getalle is die positiewe teltalle {1, 2, 3, ...}. −3 is negatief, dus is dit NIE ʼn natuurlike getal nie. ✓' },
+        { difficulty: 'Easy', question: 'ʼn Temperatuurlesing van 0°C word op ʼn termometer aangeteken. Aan watter versameling(s) — N, N0, Z, Q — behoort die getal 0?', checkMode: 'auto', correctAnswer: 'N0, Z en Q', correctAnswers: ['N0, Z en Q', 'N0, Z, Q'], explanation: '0 is nie in N nie (tel begin by 1), maar dit is in N0 by definisie, dit is ʼn heelgetal, en dit kan as 0/1 geskryf word, dus is dit ook in Q. Dus behoort 0 aan N0, Z en Q. ✓' },
+        { difficulty: 'Easy', question: 'Is −14 ʼn heelgetal?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja'], explanation: 'Heelgetalle (Z) sluit al die hele getalle saam met hul negatiewe in, dus pas −14 hierdie definisie. ✓' },
+
+        // Blok 2 — Rasionaal vs irrasionaal vanaf desimale
+        { difficulty: 'Easy-Medium', question: 'Is 0,425 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: '0,425 is ʼn eindigende desimaal, dus kan dit as ʼn presiese breuk geskryf word: 0,425 = 17/40. Dit maak dit rasionaal. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Die desimaal 0,222... herhaal die syfer 2 vir ewig. Is hierdie getal rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: 'ʼn Desimaal wat in ʼn duidelike patroon vir ewig herhaal, is steeds rasionaal. 0,222... = 2/9, dus is dit rasionaal. ✓' },
+        { difficulty: 'Easy-Medium', question: 'ʼn Getal het die desimale waarde 0,30300300030000300003..., waar die aantal nulle tussen elke 3 elke keer met een toeneem. Is hierdie getal rasionaal of irrasionaal? Verduidelik jou redenasie.', checkMode: 'self', answer: 'Irrasionaal. Alhoewel daar ʼn mate van sigbare struktuur is, sluit die syfers nooit in ʼn VASTE blok wat identies vir ewig herhaal nie — die gapings word al hoe groter — dus eindig die desimaal nooit en herhaal dit ook nooit werklik nie, wat beteken dit kan nie as ʼn presiese breuk geskryf word nie.' },
+        { difficulty: 'Medium', question: 'Bongani sê ʼn desimaal moet irrasionaal wees as dit meer as 10 syfers na die desimale punt het. Verduidelik waarom hierdie redenasie foutief is, deur die herhalende voorbeeld 0,583583583... te gebruik.', checkMode: 'self', answer: 'Bongani is verkeerd. Die LENGTE van ʼn desimaal bepaal nie of dit rasionaal of irrasionaal is nie — wat saak maak, is of dit eindig of in ʼn patroon herhaal. 0,583583583... het baie syfers, maar die blok "583" herhaal vir ewig, dus is dit rasionaal (dit is gelyk aan 583/999). ʼn Desimaal is slegs irrasionaal as dit vir ewig voortgaan sonder enige herhalende patroon, ongeag hoeveel syfers gewys word.' },
+
+        // Blok 3 — Wortelgetalle: rasionaal of irrasionaal
+        { difficulty: 'Medium', question: 'Is √169 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], explanation: '169 is ʼn volkome vierkant (13 × 13 = 169), dus √169 = 13, ʼn hele getal. Dit maak dit rasionaal. ✓' },
+        { difficulty: 'Medium', question: 'Is √90 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], explanation: '90 is nie ʼn volkome vierkant nie (die naaste volkome vierkante is 81 en 100), dus kan √90 nie na ʼn hele getal vereenvoudig word nie. Sy desimaal, 9,4868329..., is nie-eindigend en nie-herhalend, dus is dit irrasionaal. ✓' },
+        { difficulty: 'Medium', question: 'Klassifiseer √196: is dit rasionaal of irrasionaal, en waarna vereenvoudig dit?', checkMode: 'self', answer: 'Rasionaal. 196 is ʼn volkome vierkant (14 × 14 = 196), dus √196 = 14, wat ʼn hele getal is en dus rasionaal.' },
+        { difficulty: 'Medium-Hard', question: 'Klassifiseer BEIDE √121 en √130 as rasionaal of irrasionaal, en toon jou redenasie vir elkeen.', checkMode: 'self', answer: '√121 is rasionaal: 121 is ʼn volkome vierkant (11 × 11 = 121), dus √121 = 11, ʼn hele getal. √130 is irrasionaal: 130 is nie ʼn volkome vierkant nie (tussen 121 = 11² en 144 = 12²), dus √130 = 11,4017542... is nie-eindigend en nie-herhalend.' },
+
+        // Blok 4 — Volledige multi-versameling klassifikasie
+        { difficulty: 'Medium', question: 'Klassifiseer die getal 31 in elke versameling waaraan dit behoort (N, N0, Z, Q, of irrasionaal).', checkMode: 'auto', correctAnswer: 'N, N0, Z en Q', correctAnswers: ['N, N0, Z en Q', 'N, N0, Z, Q'], explanation: '31 is ʼn positiewe hele teltal sonder ʼn breukdeel, dus behoort dit aan N, N0, Z en Q. ✓' },
+        { difficulty: 'Medium', question: 'Klassifiseer √225 in elke versameling waaraan dit behoort (N, N0, Z, Q, of irrasionaal).', checkMode: 'auto', correctAnswer: 'N, N0, Z en Q', correctAnswers: ['N, N0, Z en Q', 'N, N0, Z, Q'], explanation: '225 is ʼn volkome vierkant (15 × 15 = 225), dus √225 = 15. Aangesien 15 ʼn positiewe hele getal is, behoort dit aan N, N0, Z en Q. ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Getallelyn toon −12, 0, 7/9, √110 en 18. Sorteer elke getal in elke versameling waaraan dit behoort (N, N0, Z, Q, irrasionaal), en verduidelik waarom √110 in geeneen van N, N0, Z of Q pas nie.', checkMode: 'self', answer: '−12: Z, Q. 0: N0, Z, Q. 7/9: slegs Q. 18: N, N0, Z, Q. √110 is irrasionaal omdat 110 nie ʼn volkome vierkant is nie (tussen 100 = 10² en 121 = 11²), dus eindig of herhaal sy desimaal, 10,4880885..., nooit nie — dus behoort dit glad nie aan N, N0, Z of Q nie.' },
+
+        // Blok 5 — Vergelyking / rangskikking oor die hiërargie
+        { difficulty: 'Medium', question: 'Wat is groter: √40 of 6? Verduidelik hoe jy dit weet sonder ʼn sakrekenaar.', checkMode: 'self', answer: '√40 is groter as 6. Aangesien 36 < 40, weet ons √36 < √40, en √36 = 6, dus moet √40 groter as 6 wees (in werklikheid √40 ≈ 6,32).' },
+        { difficulty: 'Medium', question: 'Rangskik hierdie getalle van kleinste na grootste: √100, 9,8, √81, 10,3.', checkMode: 'auto', correctAnswer: '√81, 9,8, √100, 10,3', correctAnswers: ['√81, 9,8, √100, 10,3', 'sqrt81, 9,8, sqrt100, 10,3'], explanation: '√100 = 10, 9,8 = 9,8, √81 = 9, 10,3 = 10,3. Die rangskikking van die waardes 10, 9,8, 9, 10,3 van kleinste na grootste gee √81 (9), 9,8, √100 (10), 10,3. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Plaas √17 en 4,2 in volgorde van kleinste na grootste, en toon hoe jy hulle vergelyk het.', checkMode: 'self', answer: '√17, 4,2. √17 ≈ 4,1231056..., wat kleiner is as 4,2, aangesien 4,1231 < 4,2. Dus is die volgorde van kleinste na grootste √17, dan 4,2.' },
+
+        // Blok 6 — Foutopsporing / multi-stap redenasie
+        { difficulty: 'Hard', question: 'Naledi sê √225 is irrasionaal omdat dit ʼn vierkantswortelteken voor het. Is sy korrek? Verduidelik wat sy verkeerd verstaan het.', checkMode: 'self', answer: 'Nee, Naledi is verkeerd. ʼn Vierkantswortelteken maak ʼn getal nie outomaties irrasionaal nie — jy moet kontroleer of die getal onder die wortel ʼn volkome vierkant is. 225 is ʼn volkome vierkant (15 × 15 = 225), dus √225 = 15, ʼn hele getal, wat rasionaal is. Naledi het "bevat ʼn wortelteken" met "is irrasionaal" verwar.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder klassifiseer die getal 20/5 as "slegs rasionaal, nie ʼn heelgetal nie, omdat dit as ʼn breuk geskryf is". Identifiseer die fout in hierdie redenasie en gee die volledige, korrekte klassifikasie.', checkMode: 'self', answer: 'Die fout is dat die leerder nie eers die breuk vereenvoudig het nie. 20/5 vereenvoudig na 4, wat ʼn positiewe hele getal is. Dus behoort 20/5 eintlik aan N, N0, Z en Q — nie net Q nie. Vereenvoudig altyd ʼn breuk voordat jy dit klassifiseer, aangesien die vereenvoudigde vorm kan wys dat dit aan meer versamelings behoort as wat dit aanvanklik lyk.' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Manjifiek! Jy het ʼn diep, betroubare begrip van die reële getallestelsel.' },
+        { minScore: 14, message: 'Goeie werk! Hersien enigiets wat jy gemis het en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die klassifikasie-kontrolelys en die rasionaal/irrasionaal-desimaaltoets, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan oefen — werk weer deur die studiegids, met fokus op volkome vierkante en die desimaaltoets.' },
+      ],
+    },
+  ],
 }
