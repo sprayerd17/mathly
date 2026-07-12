@@ -162,7 +162,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide a cubic polynomial by a linear factor using polynomial long division with colour coded quotient terms and subtraction steps" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke polinoom deur ʼn lineêre faktor te deel deur polinoom-langdeling te gebruik, met kleurgekodeerde kwosiëntterme en aftrekkingstappe" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -292,7 +292,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the Remainder Theorem and Factor Theorem with colour coded test value substitutions and factor conclusions for cubic polynomials" />',
+        '<VideoPlaceholder label="Kort video wat die Resttheorema en Faktorstelling verduidelik met kleurgekodeerde toetswaarde-vervangings en faktorgevolgtrekkings vir kubieke polinome" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -430,7 +430,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to fully factorise a cubic polynomial by finding a linear factor using the Factor Theorem then dividing and factorising the quadratic quotient" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke polinoom volledig te faktoriseer deur eers ʼn lineêre faktor met die Faktorstelling te vind, en dan die kwadratiese kwosiënt te deel en te faktoriseer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -487,7 +487,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve a cubic equation by fully factorising using the Factor Theorem and long division then applying the zero product property to find all three roots" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke vergelyking op te los deur dit volledig te faktoriseer met die Faktorstelling en langdeling, en dan die nul-produk-eienskap toe te pas om al drie wortels te vind" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -535,7 +535,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to sketch a cubic graph by finding x-intercepts from the factorised form the y-intercept by substituting x=0 and the curve direction from the sign of the leading coefficient" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke grafiek te skets deur die x-afsnitte uit die gefaktoriseerde vorm te vind, die y-afsnit deur x=0 te vervang, en die rigting van die kurwe uit die teken van die leidende koëffisiënt" />',
     },
   ],
 
@@ -702,7 +702,7 @@ export const topicData: TopicData = {
       answer: 'x=3, x=1/2, x=−2',
       checkMode: 'auto',
       correctAnswer: 'x=3, x=1/2, x=-2',
-      correctAnswers: ['x=3, x=1/2, x=-2', 'x=3, x=0.5, x=-2', '3; 1/2; -2', '3, 1/2, -2'],
+      correctAnswers: ['x=3, x=1/2, x=-2', 'x=3, x=0,5, x=-2', '3; 1/2; -2', '3, 1/2, -2'],
       explanation: '(x−3)(2x−1)(x+2)=0.\nx−3=0 → x=3; 2x−1=0 → x=½; x+2=0 → x=−2 ✓',
     },
 
@@ -785,7 +785,7 @@ export const topicData: TopicData = {
 
         { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 3x² − 22x + 24 = 0, gegee dat (x+4) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: 'x=-4, x=1, x=6', correctAnswers: ['x=-4, x=1, x=6', 'x=1, x=6, x=-4', '-4; 1; 6', '-4, 1, 6'], explanation: '(x+4)(x²−7x+6)=0 → (x+4)(x−1)(x−6)=0.\nx+4=0 → x=−4; x−1=0 → x=1; x−6=0 → x=6 ✓' },
         { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 4x² − 11x − 6 = 0, deur jou faktorisering van die vorige vraag te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=6, x=-1', correctAnswers: ['x=6, x=-1', 'x=-1, x=6', '6; -1', '6, -1'], explanation: '(x−6)(x+1)²=0.\nx−6=0 → x=6; (x+1)²=0 → x=−1 (ʼn herhaalde wortel, dus slegs twee verskillende oplossings) ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2x³ − 3x² − 11x + 6 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=1/2, x=-2, x=3', correctAnswers: ['x=1/2, x=-2, x=3', 'x=-2, x=1/2, x=3', '1/2; -2; 3', '0.5, -2, 3'], explanation: '(2x−1)(x−3)(x+2)=0.\n2x−1=0 → x=½; x−3=0 → x=3; x+2=0 → x=−2 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x³ − 3x² − 11x + 6 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=1/2, x=-2, x=3', correctAnswers: ['x=1/2, x=-2, x=3', 'x=-2, x=1/2, x=3', '1/2; -2; 3', '0,5, -2, 3'], explanation: '(2x−1)(x−3)(x+2)=0.\n2x−1=0 → x=½; x−3=0 → x=3; x+2=0 → x=−2 ✓' },
         { difficulty: 'Hard', question: 'Gegee p(x)=x³+ax²+bx+18, en dat p(1)=0 en p(−3)=0, vind a en b, en los dan p(x)=0 volledig op.', answer: '', checkMode: 'auto', correctAnswer: 'a=-4, b=-15; x=1, x=-3, x=6', correctAnswers: ['a=-4, b=-15; x=1, x=-3, x=6', 'a=-4 b=-15 x=1 x=-3 x=6'], explanation: 'p(1)=1+a+b+18=0 → a+b=−19.\np(−3)=−27+9a−3b+18=0 → 9a−3b=9 → 3a−b=3.\nTel die twee vergelykings op (a+b=−19) en (3a−b=3): 4a=−16 → a=−4, dus b=−15.\np(x)=x³−4x²−15x+18=(x−1)(x+3)(x−6). Oplossings: x=1, x=−3, x=6 ✓' },
 
         { difficulty: 'Hard', question: 'ʼn Derdegraadse grafiek word beskryf deur y=x³+4x²−15x−18=(x+6)(x−3)(x+1). Gee die x-afsnitte, die y-afsnit, en die algemene vorm (stygend of dalend van links na regs).', answer: '', checkMode: 'auto', correctAnswer: 'x=-6, x=3, x=-1; y=-18; styg van links na regs', correctAnswers: ['x=-6, x=3, x=-1; y=-18; styg van links na regs', 'x=-6,x=-1,x=3; y-afsnit=-18; styg'], explanation: 'x-afsnitte: (x+6)=0 → x=−6; (x−3)=0 → x=3; (x+1)=0 → x=−1.\ny-afsnit: y=(6)(−3)(1)=−18.\nAangesien die voorste koëffisiënt positief is (x³-term), styg die grafiek van onder-links na bo-regs ✓' },
@@ -831,9 +831,9 @@ export const topicData: TopicData = {
           { label: 'b) Volledige faktorisering van p(x)', correctAnswer: '(x-4)(x+2)²', correctAnswers: ['(x-4)(x+2)²', '(x-4)(x+2)^2', '(x-4)(x+2)(x+2)'], explanation: 'Deel x³−12x−16 deur (x−4): kwosiënt = x²+4x+4 = (x+2)².\nVolledige faktorisering: (x−4)(x+2)² ✓' },
         ]},
 
-        { difficulty: 'Medium-Hard', question: 'Los op vir x: 2x³ + 7x² − 5x − 4 = 0, gegee dat (2x+1) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1/2, x=1, x=-4', correctAnswers: ['x=-1/2, x=1, x=-4', 'x=1, x=-4, x=-1/2', '-1/2; 1; -4', '-0.5, 1, -4'], explanation: '(2x+1)(x²+3x−4)=0 → (2x+1)(x−1)(x+4)=0.\n2x+1=0 → x=−½; x−1=0 → x=1; x+4=0 → x=−4 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 2x³ + 7x² − 5x − 4 = 0, gegee dat (2x+1) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1/2, x=1, x=-4', correctAnswers: ['x=-1/2, x=1, x=-4', 'x=1, x=-4, x=-1/2', '-1/2; 1; -4', '-0,5, 1, -4'], explanation: '(2x+1)(x²+3x−4)=0 → (2x+1)(x−1)(x+4)=0.\n2x+1=0 → x=−½; x−1=0 → x=1; x+4=0 → x=−4 ✓' },
         { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 12x − 16 = 0, deur jou faktorisering van die vorige vraag te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=4, x=-2', correctAnswers: ['x=4, x=-2', 'x=-2, x=4', '4; -2', '4, -2'], explanation: '(x−4)(x+2)²=0.\nx−4=0 → x=4; (x+2)²=0 → x=−2 (ʼn herhaalde wortel, dus slegs twee verskillende oplossings) ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2x³ + x² − 13x − 6 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1/2, x=2, x=-3', correctAnswers: ['x=-1/2, x=2, x=-3', 'x=2, x=-3, x=-1/2', '-1/2; 2; -3', '-0.5, 2, -3'], explanation: '(2x+1)(x−2)(x+3)=0.\n2x+1=0 → x=−½; x−2=0 → x=2; x+3=0 → x=−3 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x³ + x² − 13x − 6 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1/2, x=2, x=-3', correctAnswers: ['x=-1/2, x=2, x=-3', 'x=2, x=-3, x=-1/2', '-1/2; 2; -3', '-0,5, 2, -3'], explanation: '(2x+1)(x−2)(x+3)=0.\n2x+1=0 → x=−½; x−2=0 → x=2; x+3=0 → x=−3 ✓' },
         { difficulty: 'Hard', question: 'Gegee p(x)=x³+ax²+bx−24, en dat p(−1)=0 en p(6)=0, vind a en b, en los dan p(x)=0 volledig op.', answer: '', checkMode: 'auto', correctAnswer: 'a=-1, b=-26; x=-1, x=6, x=-4', correctAnswers: ['a=-1, b=-26; x=-1, x=6, x=-4', 'a=-1 b=-26 x=-1 x=6 x=-4'], explanation: 'p(−1)=−1+a−b−24=0 → a−b=25.\np(6)=216+36a+6b−24=0 → 36a+6b=−192 → 6a+b=−32.\nTel die twee vergelykings op (a−b=25) en (6a+b=−32): 7a=−7 → a=−1, dus b=−26.\np(x)=x³−x²−26x−24=(x+1)(x−6)(x+4). Oplossings: x=−1, x=6, x=−4 ✓' },
 
         { difficulty: 'Hard', question: 'ʼn Derdegraadse grafiek word beskryf deur y=x³+2x²−11x−12=(x−3)(x+1)(x+4). Gee die x-afsnitte, die y-afsnit, en die algemene vorm (stygend of dalend van links na regs).', answer: '', checkMode: 'auto', correctAnswer: 'x=3, x=-1, x=-4; y=-12; styg van links na regs', correctAnswers: ['x=3, x=-1, x=-4; y=-12; styg van links na regs', 'x=3,x=-1,x=-4; y-afsnit=-12; styg'], explanation: 'x-afsnitte: (x−3)=0 → x=3; (x+1)=0 → x=−1; (x+4)=0 → x=−4.\ny-afsnit: y=(−3)(1)(4)=−12.\nAangesien die voorste koëffisiënt positief is (x³-term), styg die grafiek van onder-links na bo-regs ✓' },
@@ -882,7 +882,7 @@ export const topicData: TopicData = {
 
         { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 5x² − 8x + 12 = 0, gegee dat (x−6) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: 'x=6, x=1, x=-2', correctAnswers: ['x=6, x=1, x=-2', 'x=1, x=-2, x=6', '6; 1; -2', '6, 1, -2'], explanation: '(x−6)(x²+x−2)=0 → (x−6)(x−1)(x+2)=0.\nx−6=0 → x=6; x−1=0 → x=1; x+2=0 → x=−2 ✓' },
         { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 5x² + 3x + 9 = 0, deur jou faktorisering van die vorige vraag te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1, x=3', correctAnswers: ['x=-1, x=3', 'x=3, x=-1', '-1; 3', '-1, 3'], explanation: '(x+1)(x−3)²=0.\nx+1=0 → x=−1; (x−3)²=0 → x=3 (ʼn herhaalde wortel, dus slegs twee verskillende oplossings) ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2x³ + 7x² − 7x − 12 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=3/2, x=-1, x=-4', correctAnswers: ['x=3/2, x=-1, x=-4', 'x=-1, x=-4, x=3/2', '3/2; -1; -4', '1.5, -1, -4'], explanation: '(2x−3)(x+1)(x+4)=0.\n2x−3=0 → x=1½; x+1=0 → x=−1; x+4=0 → x=−4 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x³ + 7x² − 7x − 12 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=3/2, x=-1, x=-4', correctAnswers: ['x=3/2, x=-1, x=-4', 'x=-1, x=-4, x=3/2', '3/2; -1; -4', '1,5, -1, -4'], explanation: '(2x−3)(x+1)(x+4)=0.\n2x−3=0 → x=1½; x+1=0 → x=−1; x+4=0 → x=−4 ✓' },
         { difficulty: 'Hard', question: 'Gegee p(x)=x³+ax²+bx−18, en dat p(2)=0 en p(−1)=0, vind a en b, en los dan p(x)=0 volledig op.', answer: '', checkMode: 'auto', correctAnswer: 'a=8, b=-11; x=2, x=-1, x=-9', correctAnswers: ['a=8, b=-11; x=2, x=-1, x=-9', 'a=8 b=-11 x=2 x=-1 x=-9'], explanation: 'p(2)=8+4a+2b−18=0 → 4a+2b=10 → 2a+b=5.\np(−1)=−1+a−b−18=0 → a−b=19.\nTel die twee vergelykings op (2a+b=5) en (a−b=19): 3a=24 → a=8, dus b=−11.\np(x)=x³+8x²−11x−18=(x−2)(x+1)(x+9). Oplossings: x=2, x=−1, x=−9 ✓' },
 
         { difficulty: 'Hard', question: 'ʼn Derdegraadse grafiek word beskryf deur y=x³−4x²−7x+10=(x+2)(x−1)(x−5). Gee die x-afsnitte, die y-afsnit, en die algemene vorm (stygend of dalend van links na regs).', answer: '', checkMode: 'auto', correctAnswer: 'x=-2, x=1, x=5; y=10; styg van links na regs', correctAnswers: ['x=-2, x=1, x=5; y=10; styg van links na regs', 'x=-2,x=1,x=5; y-afsnit=10; styg'], explanation: 'x-afsnitte: (x+2)=0 → x=−2; (x−1)=0 → x=1; (x−5)=0 → x=5.\ny-afsnit: y=(2)(−1)(−5)=10.\nAangesien die voorste koëffisiënt positief is (x³-term), styg die grafiek van onder-links na bo-regs ✓' },

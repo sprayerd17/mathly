@@ -112,10 +112,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing four representations of a function: a formula, a table of values, a Cartesian graph, and a written description — with arrows linking each representation to the others" />',
+        '<DiagramPlaceholder label="Diagram wat vier voorstellings van ʼn funksie wys: ʼn formule, ʼn tabel van waardes, ʼn Cartesiese grafiek, en ʼn geskrewe beskrywing — met pyle wat elke voorstelling aan die ander koppel" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what a function is, how to identify functions from tables and graphs, and how to convert between the four representations" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn funksie is, hoe om funksies uit tabelle en grafieke te identifiseer, en hoe om tussen die vier voorstellings om te skakel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -192,10 +192,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing the line y=3x−4 plotted through points (0,−4) and (2,2) with the gradient labelled in blue and the y-intercept labelled in orange" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat die lyn y=3x−4 geteken deur punte (0,−4) en (2,2) wys, met die gradiënt in blou gemerk en die y-afsnit in oranje gemerk" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify the gradient and y-intercept of a linear function, find two points, and sketch the straight-line graph" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die gradiënt en y-afsnit van ʼn lineêre funksie te identifiseer, twee punte te vind, en die reguitlyngrafiek te teken" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -284,10 +284,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side Cartesian planes showing: (left) y=x²−4 with turning point (0,−4) and x-intercepts (−2,0) and (2,0) labelled in blue; (right) y=x² and y=4x² on the same axes showing the width difference in green" />',
+        '<DiagramPlaceholder label="Cartesiese vlakke langs mekaar wat wys: (links) y=x²−4 met draaipunt (0,−4) en x-afsnitte (−2,0) en (2,0) in blou gemerk; (regs) y=x² en y=4x² op dieselfde asse wat die breedteverskil in groen wys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to sketch a quadratic function by finding the turning point and plotting symmetric pairs of points, and how changing a and q affects the parabola" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kwadratiese funksie te teken deur die draaipunt te vind en simmetriese paare punte te merk, en hoe die verandering van a en q die parabool beïnvloed" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -361,10 +361,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing the graph of y=3/x+2 with both branches of the hyperbola drawn in blue, the vertical asymptote at x=0 shown as a red dashed line, and the horizontal asymptote at y=2 shown as an orange dashed line" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat die grafiek van y=3/x+2 wys met albei takke van die hiperbool in blou geteken, die vertikale asimptoot by x=0 as ʼn rooi kortstreeplyn, en die horisontale asimptoot by y=2 as ʼn oranje kortstreeplyn" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the hyperbolic function y=a/x+q — how to identify the vertical and horizontal asymptotes, which quadrants the branches occupy based on the sign of a, and how to sketch the graph" />',
+        '<VideoPlaceholder label="Kort video wat die hiperboliese funksie y=a/x+q verduidelik — hoe om die vertikale en horisontale asimptote te identifiseer, watter kwadrante die takke beslaan op grond van die teken van a, en hoe om die grafiek te teken" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -444,7 +444,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Cartesian plane showing y=3ˣ rising steeply in blue (exponential growth) and y=(1/3)ˣ falling steeply in blue (exponential decay), with the horizontal asymptote at y=0 shown as an orange dashed line and the y-intercept at (0,1) marked in green" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the exponential function y=a·bˣ+q — how to identify growth vs decay from the base b, find the horizontal asymptote and y-intercept, and how changing q shifts the graph" />',
+        '<VideoPlaceholder label="Kort video wat die eksponensiële funksie y=a·bˣ+q verduidelik — hoe om groei teenoor verval van die grondtal b te onderskei, die horisontale asimptoot en y-afsnit te vind, en hoe die verandering van q die grafiek verskuif" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -516,12 +516,12 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'ʼn Bevolking groei volgens P = 1000(1.05)ᵗ. Vind die bevolking na 5 jaar.',
+          question: 'ʼn Bevolking groei volgens P = 1000(1,05)ᵗ. Vind die bevolking na 5 jaar.',
           answer: `P ≈ ${gr('1 276')}`,
           steps: [
-            `Identifiseer die ${bl('bekende waardes')}: aanvangsbevolking = ${bl('1 000')}, groeibasis = ${bl('1.05')}, tyd = ${bl('t = 5')} jaar.`,
-            `Vervang in die formule: P = ${bl('1 000')} × (${bl('1.05')})⁵.`,
-            `Bereken: (1.05)⁵ ≈ 1.2763, dus P ≈ 1 000 × 1.2763 ≈ 1 276.`,
+            `Identifiseer die ${bl('bekende waardes')}: aanvangsbevolking = ${bl('1 000')}, groeibasis = ${bl('1,05')}, tyd = ${bl('t = 5')} jaar.`,
+            `Vervang in die formule: P = ${bl('1 000')} × (${bl('1,05')})⁵.`,
+            `Bereken: (1,05)⁵ ≈ 1,2763, dus P ≈ 1 000 × 1,2763 ≈ 1 276.`,
             `${gr('Finale antwoord')}: Die bevolking na 5 jaar is ongeveer ${gr('1 276')} (afgerond na die naaste heel getal).`,
           ],
         },
@@ -535,7 +535,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Three side-by-side sketches: (1) the line y=2x+5 with known points (0,5) and (2,9) marked in blue; (2) the parabola y=4x²−3 with turning point (0,−3) and the point (1,1) marked in blue; (3) an exponential growth curve for P=1000(1.05)ᵗ with the point at t=5 marked in green" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video walking through problem-solving strategies for prescribed functions — how to read a graph to identify parameters, substitute known points to find unknowns, and verify the final equation" />',
+        '<VideoPlaceholder label="Kort video wat probleemoplossingstrategieë vir voorgeskrewe funksies deurwerk — hoe om ʼn grafiek te lees om parameters te identifiseer, bekende punte te vervang om onbekendes te vind, en die finale vergelyking te verifieer" />',
     },
   ],
 
@@ -619,8 +619,8 @@ export const topicData: TopicData = {
     // ── Q9 Hard — compare widths of two parabolas ─────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Vergelyk die breedte van y=2x² en y=0.5x². Verduidelik watter een nouer is.',
-      answer: 'y=2x² is nouer, aangesien |2|>|0.5|, wat die parabool steiler/nouer maak.',
+      question: 'Vergelyk die breedte van y=2x² en y=0,5x². Verduidelik watter een nouer is.',
+      answer: 'y=2x² is nouer, aangesien |2|>|0,5|, wat die parabool steiler/nouer maak.',
       checkMode: 'self',
     },
 
@@ -701,11 +701,11 @@ export const topicData: TopicData = {
     // ── Q18 Hard — exponential population growth calculation ──────────────────
     {
       difficulty: 'Hard',
-      question: 'ʼn Bevolking groei volgens P=500(1.08)ᵗ. Vind die bevolking na 6 jaar, afgerond na die naaste heel getal.',
+      question: 'ʼn Bevolking groei volgens P=500(1,08)ᵗ. Vind die bevolking na 6 jaar, afgerond na die naaste heel getal.',
       answer: '793',
       checkMode: 'auto',
       correctAnswer: '793',
-      explanation: 'P=500(1.08)⁶=500×1.58687...≈793.',
+      explanation: 'P=500(1,08)⁶=500×1,58687...≈793.',
     },
 
     // ── Q19 Hard — relate two quadratics by reflection ───────────────────────

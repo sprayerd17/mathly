@@ -101,10 +101,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between similar and congruent triangles using matching angles and proportional sides with colour coded diagrams" />',
+        '<VideoPlaceholder label="Kort video wat die verskil tussen gelykvormige en kongruente driehoeke verduidelik deur ooreenstemmende hoeke en proporsionele sye te gebruik, met kleurgekodeerde diagramme" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side by side diagram showing two similar triangles with matching angles highlighted blue and proportional sides labelled orange versus two congruent triangles with identical sides highlighted green" />',
+        '<DiagramPlaceholder label="Diagram wat twee gelykvormige driehoeke langs mekaar wys met ooreenstemmende hoeke in blou en eweredige sye in oranje gemerk, teenoor twee kongruente driehoeke met identiese sye in groen gemerk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -171,7 +171,7 @@ export const topicData: TopicData = {
           steps: [
             `${bl('Eienskap wat getoets word:')} Is die diagonale van elke parallelogram gelyk in lengte?`,
             `Teken ʼn algemene parallelogram (bv. een met hoeke 60° en 120°) en meet albei diagonale. Die twee diagonale sal oor die algemeen ${re('verskillende lengtes')} hê.`,
-            `${re('Teenvoorbeeld:')} ʼn Parallelogram met hoekpunte by (0,0), (4,0), (5,2), (1,2) het diagonale met lengte √29 ≈ 5.39 en √13 ≈ 3.61 — hulle is NIE gelyk nie.`,
+            `${re('Teenvoorbeeld:')} ʼn Parallelogram met hoekpunte by (0,0), (4,0), (5,2), (1,2) het diagonale met lengte √29 ≈ 5,39 en √13 ≈ 3,61 — hulle is NIE gelyk nie.`,
             `<strong>Gevolgtrekking:</strong> ${re('Die vermoede word weerlê.')} ʼn Enkele teenvoorbeeld is voldoende. (Let wel: ʼn reghoek is ʼn spesiale parallelogram waarvan die diagonale WEL gelyk is — maar dit maak nie die algemene vermoede waar nie.)`,
           ],
         },
@@ -204,10 +204,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video investigating the properties of special quadrilaterals including sides angles and diagonals with colour coded proof steps and counter-examples" />',
+        '<VideoPlaceholder label="Kort video wat die eienskappe van spesiale vierhoeke ondersoek, insluitend sye, hoeke en diagonale, met kleurgekodeerde bewysstappe en teenvoorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Hierarchy diagram showing the relationships between special quadrilaterals from parallelogram down to rectangle rhombus and square with key properties labelled blue and counter-examples highlighted red" />',
+        '<DiagramPlaceholder label="Hiërargie-diagram wat die verwantskappe tussen spesiale vierhoeke wys, van parallelogram af tot by reghoek, ruit en vierkant, met sleuteleienskappe in blou gemerk en teenvoorbeelde in rooi uitgelig" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -289,10 +289,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how standard and alternative definitions of special quadrilaterals are proven to be equivalent using geometric reasoning" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik hoe standaard- en alternatiewe definisies van spesiale vierhoeke as ekwivalent bewys word deur geometriese redenering" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a rhombus with the standard definition labelled blue and the alternative diagonal bisecting at right angles definition labelled orange with proof connecting them labelled green" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn ruit wys met die standaarddefinisie in blou gemerk en die alternatiewe definisie (diagonale wat mekaar teen regte hoeke halveer) in oranje gemerk, met die bewys wat hulle verbind in groen aangedui" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -350,7 +350,7 @@ export const topicData: TopicData = {
           steps: [
             `${bl('Vermoede gestel:')} Alle vierhoeke met een paar parallelle sye (trapesiums) het gelyke diagonale.`,
             `${or('Toetsproses:')} Teken ʼn algemene (nie-gelykbenige) trapesium ABCD waar AB ∥ CD maar AD ≠ BC. Meet albei diagonale AC en BD.`,
-            `${re('Teenvoorbeeld:')} Trapesium met A(0,0), B(6,0), C(5,3), D(1,3). Diagonaal AC = √(25+9) = √34 ≈ 5.83. Diagonaal BD = √(25+9) = ... kom ons herbereken: BD van (6,0) na (1,3) = √(25+9) = √34. Probeer eerder D(2,3): AC van (0,0) na (5,3) = √34 ≈ 5.83; BD van (6,0) na (2,3) = √(16+9) = 5. Hierdie is ongelyk.`,
+            `${re('Teenvoorbeeld:')} Trapesium met A(0,0), B(6,0), C(5,3), D(1,3). Diagonaal AC = √(25+9) = √34 ≈ 5,83. Diagonaal BD = √(25+9) = ... kom ons herbereken: BD van (6,0) na (1,3) = √(25+9) = √34. Probeer eerder D(2,3): AC van (0,0) na (5,3) = √34 ≈ 5,83; BD van (6,0) na (2,3) = √(16+9) = 5. Hierdie is ongelyk.`,
             `ʼn Algemene (skalene) trapesium het ${re('ongelyke diagonale')}, wat ʼn duidelike teenvoorbeeld verskaf.`,
             `<strong>Gevolgtrekking:</strong> ${re('Die vermoede word weerlê.')} Slegs ʼn gelykbenige trapesium (waar die nie-parallelle sye gelyk is) het gelyke diagonale — dit is ʼn spesiale geval, nie die algemene reël nie.`,
           ],
@@ -373,10 +373,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to state test and either prove or disprove geometric conjectures about quadrilaterals using counter-examples and logical proofs" />',
+        '<VideoPlaceholder label="Kort video wat demonstreer hoe om geometriese vermoedens oor vierhoeke te stel, te toets en óf te bewys óf te weerlê deur teenvoorbeelde en logiese bewyse te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a conjecture stated in blue tested with examples in orange leading to either a counter-example highlighted red or a formal proof highlighted green" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn vermoede in blou gestel wys, getoets met voorbeelde in oranje, wat lei tot óf ʼn teenvoorbeeld in rooi uitgelig óf ʼn formele bewys in groen uitgelig" />',
     },
   ],
 
@@ -607,7 +607,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "Thandiwe sê 'ʼn vierhoek met een paar oorstaande hoeke gelyk is altyd ʼn parallelogram'. Vind ʼn teenvoorbeeld om dit te weerlê.", answer: 'ʼn Vlieër het tipies presies een paar oorstaande hoeke gelyk (die hoeke tussen die ongelyke sye), maar sy ander paar oorstaande hoeke is gewoonlik ongelyk, en sy sye is nie albei pare parallel nie — dus voldoen ʼn vlieër aan die een-paar-gelyke-hoeke-voorwaarde sonder om ʼn parallelogram te wees, wat die vermoede weerlê.', checkMode: 'self' },
 
         // Blok 6 — Gelykvormige driehoek eweredige sye (Medium/Hard/Hard)
-        { difficulty: 'Medium', question: 'Driehoek ABC is gelykvormig aan driehoek DEF, met AB wat met DE ooreenstem en BC wat met EF ooreenstem. AB = 6 cm, BC = 9 cm, en DE = 9 cm. Bepaal die lengte van EF.', checkMode: 'auto', correctAnswer: '13.5cm', correctAnswers: ['13.5cm', '13,5cm', '13,5 cm', '13.5 cm', '13,5', '13.5'], answer: '13,5 cm', explanation: 'Die skaalfaktor van driehoek ABC na driehoek DEF = DE ÷ AB = 9 ÷ 6 = 1,5\nEF = BC × 1,5 = 9 × 1,5 = 13,5 cm', diagramSvg: '<svg viewBox="0 0 330 170" xmlns="http://www.w3.org/2000/svg"><polygon points="30,140 120,140 70,40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="20" y="150" font-size="12" fill="#374151" font-weight="600">A</text><text x="124" y="150" font-size="12" fill="#374151" font-weight="600">B</text><text x="68" y="34" font-size="12" fill="#374151" font-weight="600">C</text><text x="75" y="158" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><text x="109" y="90" font-size="13" fill="#2563eb" font-weight="700" text-anchor="start">9 cm</text><polygon points="190,140 300,140 235,40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="180" y="150" font-size="12" fill="#374151" font-weight="600">D</text><text x="304" y="150" font-size="12" fill="#374151" font-weight="600">E</text><text x="233" y="34" font-size="12" fill="#374151" font-weight="600">F</text><text x="245" y="158" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">9 cm</text><text x="281.5" y="90" font-size="13" fill="#ea580c" font-weight="700" text-anchor="start">?</text></svg>' },
+        { difficulty: 'Medium', question: 'Driehoek ABC is gelykvormig aan driehoek DEF, met AB wat met DE ooreenstem en BC wat met EF ooreenstem. AB = 6 cm, BC = 9 cm, en DE = 9 cm. Bepaal die lengte van EF.', checkMode: 'auto', correctAnswer: '13,5cm', correctAnswers: ['13.5cm', '13,5cm', '13,5 cm', '13.5 cm', '13,5', '13.5'], answer: '13,5 cm', explanation: 'Die skaalfaktor van driehoek ABC na driehoek DEF = DE ÷ AB = 9 ÷ 6 = 1,5\nEF = BC × 1,5 = 9 × 1,5 = 13,5 cm', diagramSvg: '<svg viewBox="0 0 330 170" xmlns="http://www.w3.org/2000/svg"><polygon points="30,140 120,140 70,40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="20" y="150" font-size="12" fill="#374151" font-weight="600">A</text><text x="124" y="150" font-size="12" fill="#374151" font-weight="600">B</text><text x="68" y="34" font-size="12" fill="#374151" font-weight="600">C</text><text x="75" y="158" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><text x="109" y="90" font-size="13" fill="#2563eb" font-weight="700" text-anchor="start">9 cm</text><polygon points="190,140 300,140 235,40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="180" y="150" font-size="12" fill="#374151" font-weight="600">D</text><text x="304" y="150" font-size="12" fill="#374151" font-weight="600">E</text><text x="233" y="34" font-size="12" fill="#374151" font-weight="600">F</text><text x="245" y="158" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">9 cm</text><text x="281.5" y="90" font-size="13" fill="#ea580c" font-weight="700" text-anchor="start">?</text></svg>' },
         { difficulty: 'Hard', question: 'Twee gelykvormige driehoeke het ooreenstemmende sye in die verhouding 3 : 7. As die omtrek van die kleiner driehoek 24 cm is, bepaal die omtrek van die groter driehoek.', checkMode: 'auto', correctAnswer: '56cm', correctAnswers: ['56cm', '56 cm', '56'], answer: '56 cm', explanation: 'Die verhouding van omtrekke is gelyk aan die verhouding van ooreenstemmende sye, 3 : 7.\nGroter omtrek = 24 × (7 ÷ 3) = 56 cm' },
         { difficulty: 'Hard', question: 'Twee gelykvormige driehoeke het oppervlaktes in die verhouding 4 : 81. Bepaal die verhouding van hulle ooreenstemmende sylengtes.', answer: 'Aangesien die oppervlakteverhouding gelyk is aan die kwadraat van die syverhouding, is die syverhouding = √4 : √81 = 2 : 9.', checkMode: 'self' },
       ],

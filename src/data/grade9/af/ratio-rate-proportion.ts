@@ -124,10 +124,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to set up and solve direct proportion problems using equal ratios and cross multiplication" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om direkte eweredigheidsprobleme op te stel en op te los met behulp van gelyke verhoudings en kruisvermenigvuldiging" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two quantities in direct proportion with a table of values and a straight-line graph through the origin" />',
+        '<DiagramPlaceholder label="Diagram wat twee hoeveelhede in direkte eweredigheid wys, met ʼn tabel van waardes en ʼn reguitlyngrafiek deur die oorsprong" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -254,10 +254,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify and solve inverse proportion problems using the constant product method" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om omgekeerde eweredigheidsprobleme te identifiseer en op te los met behulp van die konstante-produk-metode" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing direct and inverse proportion with tables and graphs — straight line through origin for direct, curve for inverse" />',
+        '<DiagramPlaceholder label="Diagram wat direkte en omgekeerde eweredigheid vergelyk met tabelle en grafieke — reguit lyn deur die oorsprong vir direk, kromme vir omgekeerd" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -383,7 +383,7 @@ export const topicData: TopicData = {
           question: 'Lerato belê R4 000 teen 6% saamgestelde rente per jaar. Vind die bedrag na 2 jaar.',
           answer: 'R4 494,40',
           checkMode: 'auto',
-          correctAnswer: 'R4494.40',
+          correctAnswer: 'R4494,40',
           correctAnswers: ['R4494.40', '4494.40', 'R4 494.40', 'R4494,40'],
           explanation: 'Na jaar 1: 4 000 × 1,06 = 4 240.\nNa jaar 2: 4 240 × 1,06 = 4 494,40.\nBedrag = R4 494,40 ✓',
         },
@@ -432,10 +432,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate commission, total rental costs and compound interest step by step with worked examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om kommissie, totale huurkoste en saamgestelde rente stap vir stap te bereken met uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing simple interest (constant growth) and compound interest (growing total each year) over multiple years" />',
+        '<DiagramPlaceholder label="Diagram wat enkelvoudige rente (konstante groei) en saamgestelde rente (groeiende totaal elke jaar) oor verskeie jare vergelyk" />',
     },
   ],
 

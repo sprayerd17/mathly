@@ -81,7 +81,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the AA and SSS proportionality conditions for similar triangles with colour coded angle and side matching" />',
+        '<VideoPlaceholder label="Kort video wat die HH- en SSS-eweredigheidsvoorwaardes vir gelykvormige driehoeke verduidelik, met kleurgekodeerde hoek- en syooreenstemming" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -129,12 +129,12 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'In driehoek ABC is MN ∥ BC, met AM = 4 cm, MB = 6 cm en AN = 5 cm. Bepaal NC.',
-          answer: `NC = ${or('7.5')} cm`,
+          answer: `NC = ${or('7,5')} cm`,
           steps: [
             `Aangesien ${or('MN ∥ BC')}, geld volgens die Eweredigheidstelling: ${gr('AM/MB = AN/NC')}`,
             `Vervang die bekende waardes: ${gr('4/6 = 5/NC')}`,
             `Kruisvermenigvuldig: ${gr('4 × NC = 5 × 6 = 30')}`,
-            `Los op: NC = ${or('30/4 = 7.5')} cm ✓`,
+            `Los op: NC = ${or('30/4 = 7,5')} cm ✓`,
           ],
         },
         {
@@ -164,7 +164,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the Proportionality Theorem and Midpoint Theorem with colour coded parallel lines and side ratios in a triangle" />',
+        '<VideoPlaceholder label="Kort video wat die Eweredigheidstelling en die Middelpuntstelling verduidelik, met kleurgekodeerde ewewydige lyne en syverhoudings in ʼn driehoek" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -226,11 +226,11 @@ export const topicData: TopicData = {
         },
         {
           question: 'Lerato het twee driehoeke met sye 6, 8, 10 en 9, 12, 15. Bevestig dat hulle gelykvormig is met behulp van die eweredige-sye-metode.',
-          answer: `Ja — die driehoeke is gelykvormig volgens ${or('SSS-eweredigheid')} (verhouding = 1.5)`,
+          answer: `Ja — die driehoeke is gelykvormig volgens ${or('SSS-eweredigheid')} (verhouding = 1,5)`,
           steps: [
             `Skryf die verhoudings van ooreenstemmende sye neer (pas kleinste by kleinste, grootste by grootste):<br>${or('9/6')}, &nbsp; ${or('12/8')}, &nbsp; ${or('15/10')}`,
-            `Bereken elke verhouding:<br>${or('9/6 = 1.5')}, &nbsp; ${or('12/8 = 1.5')}, &nbsp; ${or('15/10 = 1.5')}`,
-            `Al drie verhoudings is gelyk: ${or('1.5 = 1.5 = 1.5')} ✓`,
+            `Bereken elke verhouding:<br>${or('9/6 = 1,5')}, &nbsp; ${or('12/8 = 1,5')}, &nbsp; ${or('15/10 = 1,5')}`,
+            `Al drie verhoudings is gelyk: ${or('1,5 = 1,5 = 1,5')} ✓`,
             `<strong>Gevolgtrekking:</strong> Aangesien al die ooreenstemmende ${or('syverhoudings')} gelyk is, is die driehoeke gelykvormig volgens die SSS-eweredigheidsvoorwaarde. ✓`,
           ],
         },
@@ -241,7 +241,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video proving that equiangular triangles are similar using the Proportionality Theorem and verifying similarity via the SSS proportionality condition" />',
+        '<VideoPlaceholder label="Kort video wat bewys dat gelykhoekige driehoeke gelykvormig is deur die Eweredigheidstelling te gebruik, en wat gelykvormigheid via die SSS-eweredigheidsvoorwaarde bevestig" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -319,7 +319,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video proving the Theorem of Pythagoras using similar triangles formed by the altitude to the hypotenuse, with colour coded right-angled triangle, altitude, and smaller similar triangles" />',
+        '<VideoPlaceholder label="Kort video wat die Stelling van Pythagoras bewys met behulp van gelykvormige driehoeke gevorm deur die hoogtelyn na die skuinssy, met ʼn kleurgekodeerde reghoekige driehoek, hoogtelyn, en kleiner gelykvormige driehoeke" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -390,11 +390,11 @@ export const topicData: TopicData = {
         },
         {
           question: 'Driehoek ABC het DE ewewydig aan BC, met AD = 4 cm, DB = 6 cm, en AE = 5 cm. Bepaal EC, en stel dan watter voorwaarde jou metode regverdig.',
-          answer: `EC = ${re('7.5')} cm, geregverdig deur die ${gr('Eweredigheidstelling')}`,
+          answer: `EC = ${re('7,5')} cm, geregverdig deur die ${gr('Eweredigheidstelling')}`,
           steps: [
             `Aangesien ${gr('DE ∥ BC')}, is die ${gr('Eweredigheidstelling')} van toepassing: ${bl('AD')} / ${bl('DB')} = ${bl('AE')} / ${re('EC')}.`,
             `Vervang die bekende waardes: ${bl('4')} / ${bl('6')} = ${bl('5')} / ${re('EC')}.`,
-            `Kruisvermenigvuldig: ${re('EC')} = ${bl('5')} × ${bl('6')} / ${bl('4')} = ${re('7.5')} cm.`,
+            `Kruisvermenigvuldig: ${re('EC')} = ${bl('5')} × ${bl('6')} / ${bl('4')} = ${re('7,5')} cm.`,
             `<strong>Regverdiging:</strong> Dit is geldig volgens die ${gr('Eweredigheidstelling')} — aangesien ${gr('DE ∥ BC')}, verdeel die lyn wat ewewydig aan een sy van die driehoek is, die ander twee sye (AB en AC) in dieselfde verhouding. ✓`,
           ],
         },
@@ -405,7 +405,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video solving similarity problems — perimeter and area scaling, and applying the Proportionality Theorem — with colour coded known measurements, unknown measurements, and similarity conditions" />',
+        '<VideoPlaceholder label="Kort video wat gelykvormigheidsprobleme oplos — omtrek- en oppervlakteskalering, en die toepassing van die Eweredigheidstelling — met kleurgekodeerde bekende metings, onbekende metings, en gelykvormigheidsvoorwaardes" />',
     },
   ],
   topicPractice: [
@@ -424,11 +424,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Twee driehoeke het sye 4, 6, 8 en 10, 15, 20. Bevestig gelykvormigheid met behulp van syverhoudings.',
-      answer: 'verhoudings is 2.5, 2.5, 2.5 — gelyk, dus gelykvormig',
+      answer: 'verhoudings is 2,5, 2,5, 2,5 — gelyk, dus gelykvormig',
       checkMode: 'auto',
       correctAnswer: 'gelykvormig',
       correctAnswers: ['gelykvormig', 'ja, gelykvormig', 'ja'],
-      explanation: '10/4 = 2.5, 15/6 = 2.5, 20/8 = 2.5. Al drie verhoudings is gelyk aan 2.5, wat bevestig dat die driehoeke gelykvormig is volgens SSS-eweredigheid.',
+      explanation: '10/4 = 2,5, 15/6 = 2,5, 20/8 = 2,5. Al drie verhoudings is gelyk aan 2,5, wat bevestig dat die driehoeke gelykvormig is volgens SSS-eweredigheid.',
     },
 
     // ── Q3 Hard ───────────────────────────────────────────────────────────────
@@ -443,11 +443,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'In ʼn driehoek is MN ewewydig aan BC, met AM = 3 cm, MB = 5 cm, AN = 4 cm. Bepaal NC.',
-      answer: '6.67 cm',
+      answer: '6,67 cm',
       checkMode: 'auto',
-      correctAnswer: '6.67 cm',
+      correctAnswer: '6,67 cm',
       correctAnswers: ['6.67 cm', '6.67', '6⅔ cm', '20/3 cm', '20/3'],
-      explanation: 'Volgens die Eweredigheidstelling: AM/MB = AN/NC. Dus 3/5 = 4/NC. Kruisvermenigvuldig: 3 × NC = 20. NC = 20/3 ≈ 6.67 cm.',
+      explanation: 'Volgens die Eweredigheidstelling: AM/MB = AN/NC. Dus 3/5 = 4/NC. Kruisvermenigvuldig: 3 × NC = 20. NC = 20/3 ≈ 6,67 cm.',
     },
 
     // ── Q5 Medium ─────────────────────────────────────────────────────────────
@@ -663,8 +663,8 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Tumi sê as twee driehoeke albei ʼn 90°-hoek het, moet hulle gelykvormig wees. Is hy korrek? Verduidelik met behulp van ʼn teenvoorbeeld.', answer: 'Nee — ʼn reghoekige driehoek met hoeke 90°, 30°, 60° en ʼn reghoekige driehoek met hoeke 90°, 45°, 45° bevat albei ʼn 90°-hoek, maar hulle ander twee hoeke is heeltemal verskillend, dus is die driehoeke nie gelykvormig nie. ʼn Enkele ooreenstemmende hoek is nie genoeg nie; die HH-voorwaarde vereis twee pare ooreenstemmende hoeke.', checkMode: 'self' },
 
         // Blok 2 — Eweredigheidstelling (Easy/Medium/Hard)
-        { difficulty: 'Easy', question: 'In driehoek ABC is MN ewewydig aan BC, met M op AB en N op AC. AM = 5 cm, MB = 8 cm en AN = 6 cm. Bepaal NC.', checkMode: 'auto', correctAnswer: '9.6cm', correctAnswers: ['9.6cm', '9.6 cm', '9,6 cm', '9.6', '9,6'], answer: '9,6 cm', explanation: 'Aangesien MN ∥ BC, geld volgens die Eweredigheidstelling: AM/MB = AN/NC. Dus 5/8 = 6/NC. Kruisvermenigvuldig: 5 × NC = 48. NC = 9,6 cm.', diagramSvg: '<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg"><polygon points="150,28 35,210 265,210" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="105.8" y1="98.0" x2="194.2" y2="98.0" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 135.0,214.2 L 142.0,210.0 L 135.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,214.2 L 158.0,210.0 L 151.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 135.0,102.2 L 142.0,98.0 L 135.0,93.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,102.2 L 158.0,98.0 L 151.0,93.8" fill="none" stroke="#ea580c" stroke-width="2"/><text x="150" y="18" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">A</text><text x="21" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">B</text><text x="279" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">C</text><text x="89.8" y="101" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">M</text><text x="210.2" y="101" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">N</text><text x="103.9" y="63" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">5 cm</text><text x="46.4" y="154" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">8 cm</text><text x="196.1" y="63" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><text x="247.6" y="154" font-size="15" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg>'  },
-        { difficulty: 'Medium', question: 'In driehoek PQR is ST ewewydig aan QR, met S op PQ en T op PR. PS = 4 cm, SQ = 9 cm en PT = 6 cm. Bepaal TR.', checkMode: 'auto', correctAnswer: '13.5cm', correctAnswers: ['13.5cm', '13.5 cm', '13,5 cm', '13.5', '13,5'], answer: '13,5 cm', explanation: 'Aangesien ST ∥ QR, geld volgens die Eweredigheidstelling: PS/SQ = PT/TR. Dus 4/9 = 6/TR. Kruisvermenigvuldig: 4 × TR = 54. TR = 13,5 cm.', diagramSvg: '<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg"><polygon points="150,28 35,210 265,210" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="114.6" y1="84.0" x2="185.4" y2="84.0" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 135.0,214.2 L 142.0,210.0 L 135.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,214.2 L 158.0,210.0 L 151.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 135.0,88.2 L 142.0,84.0 L 135.0,79.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,88.2 L 158.0,84.0 L 151.0,79.8" fill="none" stroke="#ea580c" stroke-width="2"/><text x="150" y="18" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">P</text><text x="21" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">Q</text><text x="279" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">R</text><text x="98.6" y="87" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">S</text><text x="201.4" y="87" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">T</text><text x="108.3" y="56" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">4 cm</text><text x="50.8" y="147" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">9 cm</text><text x="191.7" y="56" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><text x="243.2" y="147" font-size="15" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg>'  },
+        { difficulty: 'Easy', question: 'In driehoek ABC is MN ewewydig aan BC, met M op AB en N op AC. AM = 5 cm, MB = 8 cm en AN = 6 cm. Bepaal NC.', checkMode: 'auto', correctAnswer: '9,6cm', correctAnswers: ['9.6cm', '9.6 cm', '9,6 cm', '9.6', '9,6'], answer: '9,6 cm', explanation: 'Aangesien MN ∥ BC, geld volgens die Eweredigheidstelling: AM/MB = AN/NC. Dus 5/8 = 6/NC. Kruisvermenigvuldig: 5 × NC = 48. NC = 9,6 cm.', diagramSvg: '<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg"><polygon points="150,28 35,210 265,210" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="105.8" y1="98.0" x2="194.2" y2="98.0" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 135.0,214.2 L 142.0,210.0 L 135.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,214.2 L 158.0,210.0 L 151.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 135.0,102.2 L 142.0,98.0 L 135.0,93.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,102.2 L 158.0,98.0 L 151.0,93.8" fill="none" stroke="#ea580c" stroke-width="2"/><text x="150" y="18" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">A</text><text x="21" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">B</text><text x="279" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">C</text><text x="89.8" y="101" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">M</text><text x="210.2" y="101" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">N</text><text x="103.9" y="63" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">5 cm</text><text x="46.4" y="154" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">8 cm</text><text x="196.1" y="63" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><text x="247.6" y="154" font-size="15" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg>'  },
+        { difficulty: 'Medium', question: 'In driehoek PQR is ST ewewydig aan QR, met S op PQ en T op PR. PS = 4 cm, SQ = 9 cm en PT = 6 cm. Bepaal TR.', checkMode: 'auto', correctAnswer: '13,5cm', correctAnswers: ['13.5cm', '13.5 cm', '13,5 cm', '13.5', '13,5'], answer: '13,5 cm', explanation: 'Aangesien ST ∥ QR, geld volgens die Eweredigheidstelling: PS/SQ = PT/TR. Dus 4/9 = 6/TR. Kruisvermenigvuldig: 4 × TR = 54. TR = 13,5 cm.', diagramSvg: '<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg"><polygon points="150,28 35,210 265,210" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="114.6" y1="84.0" x2="185.4" y2="84.0" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 135.0,214.2 L 142.0,210.0 L 135.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,214.2 L 158.0,210.0 L 151.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 135.0,88.2 L 142.0,84.0 L 135.0,79.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,88.2 L 158.0,84.0 L 151.0,79.8" fill="none" stroke="#ea580c" stroke-width="2"/><text x="150" y="18" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">P</text><text x="21" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">Q</text><text x="279" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">R</text><text x="98.6" y="87" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">S</text><text x="201.4" y="87" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">T</text><text x="108.3" y="56" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">4 cm</text><text x="50.8" y="147" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">9 cm</text><text x="191.7" y="56" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><text x="243.2" y="147" font-size="15" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg>'  },
         { difficulty: 'Hard', question: 'In driehoek ABC is DE ewewydig aan BC, met D op AB en E op AC. AD = 8 cm, DB = 10 cm en AE = 12 cm. Bepaal EC, en gebruik dit dan om die verhouding AE:AC te bepaal.', answer: 'Volgens die Eweredigheidstelling: AD/DB = AE/EC. Dus 8/10 = 12/EC. Kruisvermenigvuldig: 8 × EC = 120, dus EC = 15 cm. AC = AE + EC = 12 + 15 = 27 cm. Verhouding AE:AC = 12:27 = 4:9.', checkMode: 'self', diagramSvg: '<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg"><polygon points="150,28 35,210 265,210" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="98.9" y1="108.9" x2="201.1" y2="108.9" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 135.0,214.2 L 142.0,210.0 L 135.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,214.2 L 158.0,210.0 L 151.0,205.8" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 135.0,113.1 L 142.0,108.9 L 135.0,104.7" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 151.0,113.1 L 158.0,108.9 L 151.0,104.7" fill="none" stroke="#ea580c" stroke-width="2"/><text x="150" y="18" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">A</text><text x="21" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">B</text><text x="279" y="226" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">C</text><text x="82.9" y="111.9" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">D</text><text x="217.1" y="111.9" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">E</text><text x="100.4" y="68.4" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">8 cm</text><text x="42.9" y="159.4" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">10 cm</text><text x="199.6" y="68.4" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">12 cm</text><text x="251.1" y="159.4" font-size="15" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg>'  },
 
         // Blok 3 — Middelpuntstelling (Easy/Medium/Hard)

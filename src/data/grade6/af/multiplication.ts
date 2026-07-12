@@ -177,7 +177,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Long multiplication layout showing 3 456 multiplied by 24 with the units row in blue showing 13 824 the tens row in green with orange placeholder zero showing 69 120 and the final addition in red giving 82 944" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a large number by a 2-digit number using long multiplication with colour coded steps for units blue tens green placeholder zero orange and final addition red" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn groot getal met ʼn 2-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, plekhouernul in oranje en die finale optelling in rooi" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -278,7 +278,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Long multiplication layout showing 2 345 multiplied by 123 with the units row in blue showing 7 035 the tens row in green with one red placeholder zero showing 46 900 the hundreds row in orange with two red placeholder zeros showing 234 500 and the final addition in purple giving 288 435" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a large number by a 3-digit number using long multiplication with colour coded steps for units blue tens green hundreds orange placeholder zeros red and final answer purple" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn groot getal met ʼn 3-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, honderdes in oranje, plekhouernulle in rooi en die finale antwoord in pers" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -398,7 +398,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Three rows showing number times 10 with one orange zero appended, number times 100 with two orange zeros appended, and number times 1 000 with three orange zeros appended, plus a fourth row showing a multiple like 300 split into blue non-zero digit 3 times orange 100 with two zeros added" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply by 10 100 and 1 000 by adding orange zeros and how to multiply by multiples like 20 300 and 4 000 by first multiplying the blue non-zero digit then adding all orange zeros" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om met 10, 100 en 1 000 te vermenigvuldig deur oranje nulle by te voeg, en hoe om met veelvoude soos 20, 300 en 4 000 te vermenigvuldig deur eers die blou nie-nul-syfer te vermenigvuldig en dan al die oranje nulle by te voeg" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -531,7 +531,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Three worked examples side by side: first showing 4 876 rounded in orange to 5 000 and 32 rounded in orange to 30 with blue estimate of 150 000, second showing 345 times 24 with partial products 1 380 and 6 900 in blue adding to exact answer in green R8 280 and estimate check 300 times 25 equals 7 500 in blue, third showing 125 times 365 split into three rows with partial products in blue adding to exact answer in green 45 625 km" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to estimate a multiplication answer by rounding numbers in orange then multiplying to get the estimate in blue and comparing to the exact answer in green, followed by two word problems solved by identifying key words in red" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vermenigvuldigingsantwoord te skat deur getalle in oranje af te rond en dan te vermenigvuldig om die skatting in blou te kry, en dit met die presiese antwoord in groen te vergelyk, gevolg deur twee woordprobleme opgelos deur sleutelwoorde in rooi te identifiseer" />',
     },
   ],
   practiceSets: [

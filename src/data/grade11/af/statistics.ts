@@ -219,13 +219,13 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Bepaal die standaardafwyking van: 4, 8, 6, 10, 2 (gemiddelde = 6).',
-          answer: `${gr('Standaardafwyking')} = √8 ≈ ${gr('2.83')}`,
+          answer: `${gr('Standaardafwyking')} = √8 ≈ ${gr('2,83')}`,
           steps: [
             `Die gemiddelde word gegee as 6. Bepaal elke ${bl('afwyking vanaf die gemiddelde')}: 4 − 6 = ${bl('−2')}, 8 − 6 = ${bl('2')}, 6 − 6 = ${bl('0')}, 10 − 6 = ${bl('4')}, 2 − 6 = ${bl('−4')}.`,
             `${or('Kwadreer elke afwyking')}: (−2)² = ${or('4')}, 2² = ${or('4')}, 0² = ${or('0')}, 4² = ${or('16')}, (−4)² = ${or('16')}.`,
             `Som van ${or('kwadratiese afwykings')} = 4 + 4 + 0 + 16 + 16 = ${or('40')}.`,
             `Variansie = ${or('40')} ÷ 5 = 8.`,
-            `${gr('Standaardafwyking')} = √8 ≈ ${gr('2.83')}.`,
+            `${gr('Standaardafwyking')} = √8 ≈ ${gr('2,83')}.`,
           ],
         },
         {
@@ -238,12 +238,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'Gebruik ʼn sakrekenaar (Casio fx-82-reeks) om die standaardafwyking van: 12, 15, 18, 20, 25 te bepaal.',
-          answer: `${gr('Standaardafwyking')} ≈ ${gr('4.45')}`,
+          answer: `${gr('Standaardafwyking')} ≈ ${gr('4,45')}`,
           steps: [
             `Druk <strong>[MODE]</strong> → kies <strong>[STAT]</strong> → kies <strong>[1-VAR]</strong> om enkelveranderlike statistiekmodus te betree.`,
             `Voer elke waarde gevolg deur <strong>[=]</strong> in: 12 [=], 15 [=], 18 [=], 20 [=], 25 [=].`,
             `Druk <strong>[AC]</strong>, dan <strong>[SHIFT][1]</strong> (STAT-kieslys). Blaai na <strong>Var</strong> en kies <strong>xσn</strong> vir die populasiestandaardafwyking. Druk <strong>[=]</strong>.`,
-            `Die sakrekenaar wys ${gr('≈ 4.45')} — dit is die ${gr('standaardafwyking')} van die datastel.`,
+            `Die sakrekenaar wys ${gr('≈ 4,45')} — dit is die ${gr('standaardafwyking')} van die datastel.`,
           ],
         },
       ],
@@ -650,10 +650,10 @@ export const topicPractice = [
   {
     difficulty: 'Easy',
     question: 'Bepaal die standaardafwyking van: 2, 4, 6, 8, 10 (gemiddelde = 6).',
-    answer: '2.83',
+    answer: '2,83',
     checkMode: 'auto',
-    correctAnswer: '2.83',
-    explanation: 'Afwykings: −4, −2, 0, 2, 4. Kwadratiese afwykings: 16, 4, 0, 4, 16. Som = 40. Variansie = 40 ÷ 5 = 8. Standaardafwyking = √8 ≈ 2.83.',
+    correctAnswer: '2,83',
+    explanation: 'Afwykings: −4, −2, 0, 2, 4. Kwadratiese afwykings: 16, 4, 0, 4, 16. Som = 40. Variansie = 40 ÷ 5 = 8. Standaardafwyking = √8 ≈ 2,83.',
   },
 
   // V9 — Medium ─────────────────────────────────────────────────────────────────
@@ -679,7 +679,7 @@ export const topicPractice = [
   {
     difficulty: 'Hard',
     question: 'Gebruik jou antwoord van V10 (variansie = 18), bepaal die standaardafwyking.',
-    answer: '√18 ≈ 4.24.',
+    answer: '√18 ≈ 4,24.',
     checkMode: 'self',
   },
 
@@ -743,18 +743,18 @@ export const topicPractice = [
       },
       {
         label: 'Q1 =',
-        correctAnswer: '6.5',
-        explanation: 'n = 10. Q1 is by posisie n/4 = 2.5, dus Q1 = gemiddelde van 2de en 3de waardes = (5 + 8) ÷ 2 = 6.5.',
+        correctAnswer: '6,5',
+        explanation: 'n = 10. Q1 is by posisie n/4 = 2,5, dus Q1 = gemiddelde van 2de en 3de waardes = (5 + 8) ÷ 2 = 6,5.',
       },
       {
         label: 'Mediaan =',
-        correctAnswer: '15.5',
-        explanation: 'n = 10 (ewe). Mediaan = gemiddelde van 5de en 6de waardes = (14 + 17) ÷ 2 = 15.5.',
+        correctAnswer: '15,5',
+        explanation: 'n = 10 (ewe). Mediaan = gemiddelde van 5de en 6de waardes = (14 + 17) ÷ 2 = 15,5.',
       },
       {
         label: 'Q3 =',
-        correctAnswer: '21.5',
-        explanation: 'Q3 is by posisie 3n/4 = 7.5, dus Q3 = gemiddelde van 7de en 8ste waardes = (20 + 23) ÷ 2 = 21.5.',
+        correctAnswer: '21,5',
+        explanation: 'Q3 is by posisie 3n/4 = 7,5, dus Q3 = gemiddelde van 7de en 8ste waardes = (20 + 23) ÷ 2 = 21,5.',
       },
       {
         label: 'Maksimum =',

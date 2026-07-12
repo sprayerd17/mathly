@@ -196,26 +196,26 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Waarom wetenskaplike notasie?</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Om 3 200 000 as ${gr('3.2 × 10⁶')} te skryf is kompak en maklik om te vergelyk. Wetenskaplikes gebruik dit vir afstande, massas en hoeveelhede wat baie groottordes strek.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Om 3 200 000 as ${gr('3,2 × 10⁶')} te skryf is kompak en maklik om te vergelyk. Wetenskaplikes gebruik dit vir afstande, massas en hoeveelhede wat baie groottordes strek.</p>` +
         `</div>`,
 
       workedExamples: [
         {
           question: 'Skryf 45 000 in wetenskaplike notasie.',
-          answer: `${gr('4.5 × 10')}<sup>${or('4')}</sup>`,
+          answer: `${gr('4,5 × 10')}<sup>${or('4')}</sup>`,
           steps: [
-            `${bl('Skuif die desimale punt')} 4 plekke na links totdat een nie-nul syfer daarvoor oorbly: 45 000 → ${bl('4.5')}`,
+            `${bl('Skuif die desimale punt')} 4 plekke na links totdat een nie-nul syfer daarvoor oorbly: 45 000 → ${bl('4,5')}`,
             `Die desimaal het ${or('4')} plekke geskuif, dus is die ${or('mag van 10')} ${or('10')}<sup>${or('4')}</sup>.`,
-            `Skryf die ${gr('finale vorm')}: ${gr('4.5 × 10')}<sup>${or('4')}</sup>`,
+            `Skryf die ${gr('finale vorm')}: ${gr('4,5 × 10')}<sup>${or('4')}</sup>`,
           ],
         },
         {
           question: 'Skryf 3 200 000 in wetenskaplike notasie.',
-          answer: `${gr('3.2 × 10')}<sup>${or('6')}</sup>`,
+          answer: `${gr('3,2 × 10')}<sup>${or('6')}</sup>`,
           steps: [
-            `${bl('Skuif die desimale punt')} 6 plekke na links totdat een nie-nul syfer daarvoor oorbly: 3 200 000 → ${bl('3.2')}`,
+            `${bl('Skuif die desimale punt')} 6 plekke na links totdat een nie-nul syfer daarvoor oorbly: 3 200 000 → ${bl('3,2')}`,
             `Die desimaal het ${or('6')} plekke geskuif, dus is die ${or('mag van 10')} ${or('10')}<sup>${or('6')}</sup>.`,
-            `Skryf die ${gr('finale vorm')}: ${gr('3.2 × 10')}<sup>${or('6')}</sup>`,
+            `Skryf die ${gr('finale vorm')}: ${gr('3,2 × 10')}<sup>${or('6')}</sup>`,
           ],
         },
       ],
@@ -226,9 +226,9 @@ export const topicData: TopicData = {
         {
           difficulty: 'Easy',
           question: 'Skryf 6 700 in wetenskaplike notasie.',
-          answer: '6.7 × 10³',
+          answer: '6,7 × 10³',
           checkMode: 'auto',
-          correctAnswer: '6.7 × 10³',
+          correctAnswer: '6,7 × 10³',
           correctAnswers: ['6.7 × 10³', '6.7 x 10³', '6.7×10³', '6.7x10^3', '6.7 × 10^3', '6,7 × 10³', '6,7 x 10³', '6,7×10³', '6,7x10^3', '6,7 × 10^3'],
           explanation: 'Skuif die desimaal 3 plekke na links: 6 700 → 6,7\nAntwoord: 6,7 × 10³ ✓',
         },
@@ -240,13 +240,13 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) 850 000',
-              correctAnswer: '8.5 × 10⁵',
+              correctAnswer: '8,5 × 10⁵',
               correctAnswers: ['8.5 × 10⁵', '8.5 x 10⁵', '8.5×10⁵', '8.5 × 10^5', '8,5 × 10⁵', '8,5 x 10⁵', '8,5×10⁵', '8,5 × 10^5'],
               explanation: 'Skuif die desimaal 5 plekke na links: 850 000 → 8,5\nAntwoord: 8,5 × 10⁵ ✓',
             },
             {
               label: 'b) 12 000 000',
-              correctAnswer: '1.2 × 10⁷',
+              correctAnswer: '1,2 × 10⁷',
               correctAnswers: ['1.2 × 10⁷', '1.2 x 10⁷', '1.2×10⁷', '1.2 × 10^7', '1,2 × 10⁷', '1,2 x 10⁷', '1,2×10⁷', '1,2 × 10^7'],
               explanation: 'Skuif die desimaal 7 plekke na links: 12 000 000 → 1,2\nAntwoord: 1,2 × 10⁷ ✓',
             },
@@ -254,19 +254,19 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Die afstand van die Aarde na die Son is ongeveer 150 000 000 km.\n\na) Skryf hierdie afstand in wetenskaplike notasie.\nb) Die afstand van die Aarde na Proxima Centauri is ongeveer 4.0 × 10¹³ km. Hoeveel keer verder is Proxima Centauri as die Son? (Skryf jou antwoord in wetenskaplike notasie.)',
+          question: 'Die afstand van die Aarde na die Son is ongeveer 150 000 000 km.\n\na) Skryf hierdie afstand in wetenskaplike notasie.\nb) Die afstand van die Aarde na Proxima Centauri is ongeveer 4,0 × 10¹³ km. Hoeveel keer verder is Proxima Centauri as die Son? (Skryf jou antwoord in wetenskaplike notasie.)',
           answer: '',
           checkMode: 'auto',
           parts: [
             {
               label: 'a) Aarde na Son in wetenskaplike notasie',
-              correctAnswer: '1.5 × 10⁸',
+              correctAnswer: '1,5 × 10⁸',
               correctAnswers: ['1.5 × 10⁸', '1.5 x 10⁸', '1.5 × 10^8', '1,5 × 10⁸', '1,5 x 10⁸', '1,5 × 10^8'],
               explanation: 'Skuif die desimaal 8 plekke na links: 150 000 000 → 1,5\nAntwoord: 1,5 × 10⁸ km ✓',
             },
             {
               label: 'b) Hoeveel keer verder (in wetenskaplike notasie)',
-              correctAnswer: '2.67 × 10⁵',
+              correctAnswer: '2,67 × 10⁵',
               correctAnswers: ['2.67 × 10⁵', '2.67 x 10⁵', '≈ 2.67 × 10⁵', '2.7 × 10⁵', '2,67 × 10⁵', '2,67 x 10⁵', '≈ 2,67 × 10⁵', '2,7 × 10⁵'],
               explanation: 'Deel: (4,0 × 10¹³) ÷ (1,5 × 10⁸)\n= (4,0 ÷ 1,5) × 10^(13−8)\n≈ 2,67 × 10⁵\nProxima Centauri is ongeveer 2,67 × 10⁵ keer verder ✓',
             },
@@ -352,13 +352,13 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Bereken die kubus van 0.5.',
-          answer: `${bl('0.5')}³ = ${gr('0.125')}`,
+          question: 'Bereken die kubus van 0,5.',
+          answer: `${bl('0,5')}³ = ${gr('0,125')}`,
           steps: [
-            `Skryf 0.5 as ʼn ${bl('breuk')}: ${bl('0.5')} = ${bl('1/2')}`,
+            `Skryf 0,5 as ʼn ${bl('breuk')}: ${bl('0,5')} = ${bl('1/2')}`,
             `Kubus die breuk: (${bl('1/2')})³ = ${bl('1³/2³')} = ${bl('1/8')}`,
-            `Skakel terug na ʼn desimaal: ${bl('1/8')} = ${gr('0.125')}`,
-            `Alternatiewelik: ${bl('0.5')} × ${bl('0.5')} × ${bl('0.5')} = 0.25 × 0.5 = ${gr('0.125')} ✓`,
+            `Skakel terug na ʼn desimaal: ${bl('1/8')} = ${gr('0,125')}`,
+            `Alternatiewelik: ${bl('0,5')} × ${bl('0,5')} × ${bl('0,5')} = 0,25 × 0,5 = ${gr('0,125')} ✓`,
           ],
         },
       ],
@@ -466,9 +466,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Skryf 67 000 in wetenskaplike notasie.',
-      answer: '6.7 × 10⁴',
+      answer: '6,7 × 10⁴',
       checkMode: 'auto',
-      correctAnswer: '6.7 × 10⁴',
+      correctAnswer: '6,7 × 10⁴',
       correctAnswers: ['6.7 × 10⁴', '6.7 x 10⁴', '6.7×10⁴', '6.7 × 10^4', '6.7x10^4', '6,7 × 10⁴', '6,7 x 10⁴', '6,7×10⁴', '6,7 × 10^4', '6,7x10^4'],
       explanation: 'Skuif die desimaal 4 plekke na links: 67 000 → 6,7\nAntwoord: 6,7 × 10⁴ ✓',
     },
@@ -477,9 +477,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Skryf 9 150 000 in wetenskaplike notasie.',
-      answer: '9.15 × 10⁶',
+      answer: '9,15 × 10⁶',
       checkMode: 'auto',
-      correctAnswer: '9.15 × 10⁶',
+      correctAnswer: '9,15 × 10⁶',
       correctAnswers: ['9.15 × 10⁶', '9.15 x 10⁶', '9.15×10⁶', '9.15 × 10^6', '9,15 × 10⁶', '9,15 x 10⁶', '9,15×10⁶', '9,15 × 10^6'],
       explanation: 'Skuif die desimaal 6 plekke na links: 9 150 000 → 9,15\nAntwoord: 9,15 × 10⁶ ✓',
     },
@@ -487,8 +487,8 @@ export const topicData: TopicData = {
     // ── Q7 Hard — check scientific notation ──────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Lerato skakel 520 000 om na wetenskaplike notasie en kry 5.2 × 10⁵. Kontroleer haar antwoord.',
-      answer: 'Korrek — deur die desimaal 5 plekke na links te skuif kry jy 5.2 × 10⁵.',
+      question: 'Lerato skakel 520 000 om na wetenskaplike notasie en kry 5,2 × 10⁵. Kontroleer haar antwoord.',
+      answer: 'Korrek — deur die desimaal 5 plekke na links te skuif kry jy 5,2 × 10⁵.',
       checkMode: 'self',
     },
 
@@ -530,7 +530,7 @@ export const topicData: TopicData = {
       question: 'Bereken die kubus van 0,4.',
       answer: '0,064',
       checkMode: 'auto',
-      correctAnswer: '0.064',
+      correctAnswer: '0,064',
       correctAnswers: ['0.064', '0,064'],
       explanation: '0,4 × 0,4 = 0,16\n0,16 × 0,4 = 0,064\nAntwoord: (0,4)³ = 0,064 ✓',
     },
@@ -567,7 +567,7 @@ export const topicData: TopicData = {
       question: 'Vind die kwadraatwortel van 1,44.',
       answer: '1,2',
       checkMode: 'auto',
-      correctAnswer: '1.2',
+      correctAnswer: '1,2',
       correctAnswers: ['1.2', '1,2'],
       explanation: '1,44 = 144/100\n√(144/100) = √144 / √100 = 12/10 = 1,2\nOf: 1,2 × 1,2 = 1,44 ✓',
     },
@@ -618,8 +618,8 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Bereken (−4)² + √36, en bereken dan −4² − ∛(−64). Wys alle werk vir albei.', answer: '(−4)² + √36 = 22, en −4² − ∛(−64) = −12', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (−4)² + √36', correctAnswer: '22', explanation: '(−4)² = (−4) × (−4) = 16\n√36 = 6\n16 + 6 = 22 ✓' }, { label: 'b) −4² − ∛(−64)', correctAnswer: '-12', correctAnswers: ['-12', '−12'], explanation: '−4² = −(4²) = −16\n∛(−64) = −4 (aangesien (−4)³ = −64)\n−16 − (−4) = −16 + 4 = −12 ✓' } ] },
         { difficulty: 'Medium', question: 'Vind die kwadraatwortel van 16/25.', answer: '4/5', checkMode: 'auto', correctAnswer: '4/5', correctAnswers: ['4/5', '0.8', '0,8'], explanation: 'Pas die wortel afsonderlik op die teller en noemer toe.\n√16 = 4 en √25 = 5\n√(16/25) = 4/5 ✓' },
         { difficulty: 'Medium', question: 'Vind die kubuswortel van 27/64.', answer: '3/4', checkMode: 'auto', correctAnswer: '3/4', correctAnswers: ['3/4', '0.75', '0,75'], explanation: 'Pas die kubuswortel afsonderlik op die teller en noemer toe.\n∛27 = 3 en ∛64 = 4\n∛(27/64) = 3/4 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Bereken die kubus van 0,3, en vind dan die kwadraatwortel van 2,25. Wys alle werk.', answer: '(0,3)³ = 0,027, en √2,25 = 1,5', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (0,3)³', correctAnswer: '0.027', correctAnswers: ['0.027', '0,027'], explanation: '0,3 × 0,3 = 0,09\n0,09 × 0,3 = 0,027\nAntwoord: (0,3)³ = 0,027 ✓' }, { label: 'b) √2,25', correctAnswer: '1.5', correctAnswers: ['1.5', '1,5'], explanation: '2,25 = 225/100\n√(225/100) = √225 / √100 = 15/10 = 1,5\nOf: 1,5 × 1,5 = 2,25 ✓' } ] },
-        { difficulty: 'Easy', question: 'Skryf 123 000 in wetenskaplike notasie.', answer: '1.23 × 10⁵', checkMode: 'auto', correctAnswer: '1.23 × 10⁵', correctAnswers: ['1.23 × 10⁵', '1.23 x 10⁵', '1.23×10⁵', '1.23 × 10^5', '1.23x10^5', '1,23 × 10⁵', '1,23 x 10⁵', '1,23×10⁵', '1,23 × 10^5', '1,23x10^5'], explanation: 'Skuif die desimaal 5 plekke na links: 123 000 → 1,23\nAntwoord: 1,23 × 10⁵ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken die kubus van 0,3, en vind dan die kwadraatwortel van 2,25. Wys alle werk.', answer: '(0,3)³ = 0,027, en √2,25 = 1,5', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (0,3)³', correctAnswer: '0,027', correctAnswers: ['0.027', '0,027'], explanation: '0,3 × 0,3 = 0,09\n0,09 × 0,3 = 0,027\nAntwoord: (0,3)³ = 0,027 ✓' }, { label: 'b) √2,25', correctAnswer: '1,5', correctAnswers: ['1.5', '1,5'], explanation: '2,25 = 225/100\n√(225/100) = √225 / √100 = 15/10 = 1,5\nOf: 1,5 × 1,5 = 2,25 ✓' } ] },
+        { difficulty: 'Easy', question: 'Skryf 123 000 in wetenskaplike notasie.', answer: '1,23 × 10⁵', checkMode: 'auto', correctAnswer: '1,23 × 10⁵', correctAnswers: ['1.23 × 10⁵', '1.23 x 10⁵', '1.23×10⁵', '1.23 × 10^5', '1.23x10^5', '1,23 × 10⁵', '1,23 x 10⁵', '1,23×10⁵', '1,23 × 10^5', '1,23x10^5'], explanation: 'Skuif die desimaal 5 plekke na links: 123 000 → 1,23\nAntwoord: 1,23 × 10⁵ ✓' },
         { difficulty: 'Medium', question: 'Skryf 900 000 000 in wetenskaplike notasie.', answer: '9 × 10⁸', checkMode: 'auto', correctAnswer: '9 × 10⁸', correctAnswers: ['9 × 10⁸', '9 x 10⁸', '9×10⁸', '9 × 10^8', '9.0 × 10⁸', '9,0 × 10⁸'], explanation: 'Skuif die desimaal 8 plekke na links: 900 000 000 → 9\nAntwoord: 9 × 10⁸ ✓' },
         { difficulty: 'Hard', question: 'ʼn Stadsbiblioteek hou ongeveer 300 000 000 (3,0 × 10⁸) bladsye dokumente in totaal, gestoor in lêers van 24 000 (2,4 × 10⁴) bladsye elk. Skryf albei hoeveelhede in wetenskaplike notasie, en bereken dan hoeveel lêers benodig word.', answer: '3,0 × 10⁸ bladsye, 2,4 × 10⁴ bladsye per lêer, 12 500 lêers', checkMode: 'auto', correctAnswer: '12500', correctAnswers: ['12500', '12 500', '1.25 × 10⁴', '1.25×10⁴', '1,25 × 10⁴', '1,25×10⁴'], explanation: 'Deel: (3,0 × 10⁸) ÷ (2,4 × 10⁴)\n= (3,0 ÷ 2,4) × 10^(8−4)\n= 1,25 × 10⁴ = 12 500 lêers ✓' },
       ],
@@ -653,8 +653,8 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Bereken (−3)² + √64, en bereken dan −3² − ∛(−27). Wys alle werk vir albei.', answer: '(−3)² + √64 = 17, en −3² − ∛(−27) = −6', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (−3)² + √64', correctAnswer: '17', explanation: '(−3)² = (−3) × (−3) = 9\n√64 = 8\n9 + 8 = 17 ✓' }, { label: 'b) −3² − ∛(−27)', correctAnswer: '-6', correctAnswers: ['-6', '−6'], explanation: '−3² = −(3²) = −9\n∛(−27) = −3 (aangesien (−3)³ = −27)\n−9 − (−3) = −9 + 3 = −6 ✓' } ] },
         { difficulty: 'Medium', question: 'Vind die kwadraatwortel van 25/49.', answer: '5/7', checkMode: 'auto', correctAnswer: '5/7', explanation: 'Pas die wortel afsonderlik op die teller en noemer toe.\n√25 = 5 en √49 = 7\n√(25/49) = 5/7 ✓' },
         { difficulty: 'Medium', question: 'Vind die kubuswortel van 64/125.', answer: '4/5', checkMode: 'auto', correctAnswer: '4/5', correctAnswers: ['4/5', '0.8', '0,8'], explanation: 'Pas die kubuswortel afsonderlik op die teller en noemer toe.\n∛64 = 4 en ∛125 = 5\n∛(64/125) = 4/5 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Bereken die kubus van 0,2, en vind dan die kwadraatwortel van 1,69. Wys alle werk.', answer: '(0,2)³ = 0,008, en √1,69 = 1,3', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (0,2)³', correctAnswer: '0.008', correctAnswers: ['0.008', '0,008'], explanation: '0,2 × 0,2 = 0,04\n0,04 × 0,2 = 0,008\nAntwoord: (0,2)³ = 0,008 ✓' }, { label: 'b) √1,69', correctAnswer: '1.3', correctAnswers: ['1.3', '1,3'], explanation: '1,69 = 169/100\n√(169/100) = √169 / √100 = 13/10 = 1,3\nOf: 1,3 × 1,3 = 1,69 ✓' } ] },
-        { difficulty: 'Easy', question: 'Skryf 67 000 in wetenskaplike notasie.', answer: '6.7 × 10⁴', checkMode: 'auto', correctAnswer: '6.7 × 10⁴', correctAnswers: ['6.7 × 10⁴', '6.7 x 10⁴', '6.7×10⁴', '6.7 × 10^4', '6.7x10^4', '6,7 × 10⁴', '6,7 x 10⁴', '6,7×10⁴', '6,7 × 10^4', '6,7x10^4'], explanation: 'Skuif die desimaal 4 plekke na links: 67 000 → 6,7\nAntwoord: 6,7 × 10⁴ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken die kubus van 0,2, en vind dan die kwadraatwortel van 1,69. Wys alle werk.', answer: '(0,2)³ = 0,008, en √1,69 = 1,3', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (0,2)³', correctAnswer: '0,008', correctAnswers: ['0.008', '0,008'], explanation: '0,2 × 0,2 = 0,04\n0,04 × 0,2 = 0,008\nAntwoord: (0,2)³ = 0,008 ✓' }, { label: 'b) √1,69', correctAnswer: '1,3', correctAnswers: ['1.3', '1,3'], explanation: '1,69 = 169/100\n√(169/100) = √169 / √100 = 13/10 = 1,3\nOf: 1,3 × 1,3 = 1,69 ✓' } ] },
+        { difficulty: 'Easy', question: 'Skryf 67 000 in wetenskaplike notasie.', answer: '6,7 × 10⁴', checkMode: 'auto', correctAnswer: '6,7 × 10⁴', correctAnswers: ['6.7 × 10⁴', '6.7 x 10⁴', '6.7×10⁴', '6.7 × 10^4', '6.7x10^4', '6,7 × 10⁴', '6,7 x 10⁴', '6,7×10⁴', '6,7 × 10^4', '6,7x10^4'], explanation: 'Skuif die desimaal 4 plekke na links: 67 000 → 6,7\nAntwoord: 6,7 × 10⁴ ✓' },
         { difficulty: 'Medium', question: 'Skryf 5 000 000 000 in wetenskaplike notasie.', answer: '5 × 10⁹', checkMode: 'auto', correctAnswer: '5 × 10⁹', correctAnswers: ['5 × 10⁹', '5 x 10⁹', '5×10⁹', '5 × 10^9', '5.0 × 10⁹', '5,0 × 10⁹'], explanation: 'Skuif die desimaal 9 plekke na links: 5 000 000 000 → 5\nAntwoord: 5 × 10⁹ ✓' },
         { difficulty: 'Hard', question: 'ʼn Selfoonvervaardiger vervaardig ongeveer 480 000 000 (4,8 × 10⁸) komponente per jaar, verpak in bokse van 160 000 (1,6 × 10⁵) komponente elk. Skryf albei hoeveelhede in wetenskaplike notasie, en bereken dan hoeveel bokse per jaar benodig word.', answer: '4,8 × 10⁸ komponente, 1,6 × 10⁵ per boks, 3 000 bokse', checkMode: 'auto', correctAnswer: '3000', correctAnswers: ['3000', '3 000', '3.0 × 10³', '3.0×10³', '3,0 × 10³', '3,0×10³'], explanation: 'Deel: (4,8 × 10⁸) ÷ (1,6 × 10⁵)\n= (4,8 ÷ 1,6) × 10^(8−5)\n= 3,0 × 10³ = 3 000 bokse ✓' },
       ],
@@ -688,9 +688,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Bereken (−6)² + √81, en bereken dan −6² − ∛(−216). Wys alle werk vir albei.', answer: '(−6)² + √81 = 45, en −6² − ∛(−216) = −30', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (−6)² + √81', correctAnswer: '45', explanation: '(−6)² = (−6) × (−6) = 36\n√81 = 9\n36 + 9 = 45 ✓' }, { label: 'b) −6² − ∛(−216)', correctAnswer: '-30', correctAnswers: ['-30', '−30'], explanation: '−6² = −(6²) = −36\n∛(−216) = −6 (aangesien (−6)³ = −216)\n−36 − (−6) = −36 + 6 = −30 ✓' } ] },
         { difficulty: 'Medium', question: 'Vind die kwadraatwortel van 36/121.', answer: '6/11', checkMode: 'auto', correctAnswer: '6/11', explanation: 'Pas die wortel afsonderlik op die teller en noemer toe.\n√36 = 6 en √121 = 11\n√(36/121) = 6/11 ✓' },
         { difficulty: 'Medium', question: 'Vind die kubuswortel van 125/216.', answer: '5/6', checkMode: 'auto', correctAnswer: '5/6', explanation: 'Pas die kubuswortel afsonderlik op die teller en noemer toe.\n∛125 = 5 en ∛216 = 6\n∛(125/216) = 5/6 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Bereken die vierkant van 0,7, en vind dan die kwadraatwortel van 6,25. Wys alle werk.', answer: '(0,7)² = 0,49, en √6,25 = 2,5', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (0,7)²', correctAnswer: '0.49', correctAnswers: ['0.49', '0,49'], explanation: '0,7 × 0,7 = 0,49\nAntwoord: (0,7)² = 0,49 ✓' }, { label: 'b) √6,25', correctAnswer: '2.5', correctAnswers: ['2.5', '2,5'], explanation: '6,25 = 625/100\n√(625/100) = √625 / √100 = 25/10 = 2,5\nOf: 2,5 × 2,5 = 6,25 ✓' } ] },
-        { difficulty: 'Easy', question: 'Skryf 890 000 in wetenskaplike notasie.', answer: '8.9 × 10⁵', checkMode: 'auto', correctAnswer: '8.9 × 10⁵', correctAnswers: ['8.9 × 10⁵', '8.9 x 10⁵', '8.9×10⁵', '8.9 × 10^5', '8.9x10^5', '8,9 × 10⁵', '8,9 x 10⁵', '8,9×10⁵', '8,9 × 10^5', '8,9x10^5'], explanation: 'Skuif die desimaal 5 plekke na links: 890 000 → 8,9\nAntwoord: 8,9 × 10⁵ ✓' },
-        { difficulty: 'Medium', question: 'Skryf 72 000 000 in wetenskaplike notasie.', answer: '7.2 × 10⁷', checkMode: 'auto', correctAnswer: '7.2 × 10⁷', correctAnswers: ['7.2 × 10⁷', '7.2 x 10⁷', '7.2×10⁷', '7.2 × 10^7', '7,2 × 10⁷', '7,2 x 10⁷', '7,2×10⁷', '7,2 × 10^7'], explanation: 'Skuif die desimaal 7 plekke na links: 72 000 000 → 7,2\nAntwoord: 7,2 × 10⁷ ✓' },
+        { difficulty: 'Medium-Hard', question: 'Bereken die vierkant van 0,7, en vind dan die kwadraatwortel van 6,25. Wys alle werk.', answer: '(0,7)² = 0,49, en √6,25 = 2,5', checkMode: 'auto', correctAnswer: '', parts: [ { label: 'a) (0,7)²', correctAnswer: '0,49', correctAnswers: ['0.49', '0,49'], explanation: '0,7 × 0,7 = 0,49\nAntwoord: (0,7)² = 0,49 ✓' }, { label: 'b) √6,25', correctAnswer: '2,5', correctAnswers: ['2.5', '2,5'], explanation: '6,25 = 625/100\n√(625/100) = √625 / √100 = 25/10 = 2,5\nOf: 2,5 × 2,5 = 6,25 ✓' } ] },
+        { difficulty: 'Easy', question: 'Skryf 890 000 in wetenskaplike notasie.', answer: '8,9 × 10⁵', checkMode: 'auto', correctAnswer: '8,9 × 10⁵', correctAnswers: ['8.9 × 10⁵', '8.9 x 10⁵', '8.9×10⁵', '8.9 × 10^5', '8.9x10^5', '8,9 × 10⁵', '8,9 x 10⁵', '8,9×10⁵', '8,9 × 10^5', '8,9x10^5'], explanation: 'Skuif die desimaal 5 plekke na links: 890 000 → 8,9\nAntwoord: 8,9 × 10⁵ ✓' },
+        { difficulty: 'Medium', question: 'Skryf 72 000 000 in wetenskaplike notasie.', answer: '7,2 × 10⁷', checkMode: 'auto', correctAnswer: '7,2 × 10⁷', correctAnswers: ['7.2 × 10⁷', '7.2 x 10⁷', '7.2×10⁷', '7.2 × 10^7', '7,2 × 10⁷', '7,2 x 10⁷', '7,2×10⁷', '7,2 × 10^7'], explanation: 'Skuif die desimaal 7 plekke na links: 72 000 000 → 7,2\nAntwoord: 7,2 × 10⁷ ✓' },
         { difficulty: 'Hard', question: 'ʼn Nasionale datasentrum verwerk ongeveer 6 600 000 000 (6,6 × 10⁹) rekords per jaar, in bondels van 300 000 (3,0 × 10⁵) rekords elk. Skryf albei hoeveelhede in wetenskaplike notasie, en bereken dan hoeveel bondels per jaar verwerk word.', answer: '6,6 × 10⁹ rekords, 3,0 × 10⁵ per bondel, 22 000 bondels', checkMode: 'auto', correctAnswer: '22000', correctAnswers: ['22000', '22 000', '2.2 × 10⁴', '2.2×10⁴', '2,2 × 10⁴', '2,2×10⁴'], explanation: 'Deel: (6,6 × 10⁹) ÷ (3,0 × 10⁵)\n= (6,6 ÷ 3,0) × 10^(9−5)\n= 2,2 × 10⁴ = 22 000 bondels ✓' },
       ],
       scoreMessages: [

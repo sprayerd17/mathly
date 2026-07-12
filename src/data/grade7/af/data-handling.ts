@@ -262,9 +262,9 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Gemiddelde',
-              correctAnswer: '11.33',
+              correctAnswer: '11,33',
               correctAnswers: ['11.33', '11⅓', '102/9', '34/3'],
-              explanation: 'Som: 3+7+7+8+12+15+15+15+20 = 102\nAantal waardes: 9\nGemiddelde: 102 ÷ 9 ≈ 11.33 ✓',
+              explanation: 'Som: 3+7+7+8+12+15+15+15+20 = 102\nAantal waardes: 9\nGemiddelde: 102 ÷ 9 ≈ 11,33 ✓',
             },
             {
               label: 'b) Mediaan',
@@ -291,27 +291,27 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Gemiddelde',
-              correctAnswer: '16.6',
+              correctAnswer: '16,6',
               correctAnswers: ['16.6', '16.60'],
-              explanation: 'Som: 16+17+15+18+17+16+19+17+15+16 = 166\nGemiddelde: 166 ÷ 10 = 16.6 ✓',
+              explanation: 'Som: 16+17+15+18+17+16+19+17+15+16 = 166\nGemiddelde: 166 ÷ 10 = 16,6 ✓',
             },
             {
               label: 'a) Mediaan',
-              correctAnswer: '16.5',
+              correctAnswer: '16,5',
               correctAnswers: ['16.5'],
-              explanation: 'Gerangskik: 15, 15, 16, 16, 16, 17, 17, 17, 18, 19\n10 waardes → gemiddeld van 5de en 6de: (16+17)÷2 = 16.5 ✓',
+              explanation: 'Gerangskik: 15, 15, 16, 16, 16, 17, 17, 17, 18, 19\n10 waardes → gemiddeld van 5de en 6de: (16+17)÷2 = 16,5 ✓',
             },
             {
               label: 'a) Modus',
-              correctAnswer: '16 and 17',
+              correctAnswer: '16 en 17',
               correctAnswers: ['16 and 17', '16, 17', '17 and 16', '16 en 17', '17 en 16'],
               explanation: '16 kom 3 keer voor; 17 kom 3 keer voor. Albei is modusse (bimodaal). ✓',
             },
             {
               label: 'c) Nuwe gemiddelde nadat ʼn speler van 30 jaar aansluit',
-              correctAnswer: '17.8',
+              correctAnswer: '17,8',
               correctAnswers: ['17.8'],
-              explanation: 'Nuwe som: 166 + 30 = 196\nNuwe aantal waardes: 11\nNuwe gemiddelde: 196 ÷ 11 ≈ 17.8\nDie gemiddelde het merkbaar toegeneem omdat 30 ʼn uitskieter is — baie groter as al die ander waardes. ✓',
+              explanation: 'Nuwe som: 166 + 30 = 196\nNuwe aantal waardes: 11\nNuwe gemiddelde: 196 ÷ 11 ≈ 17,8\nDie gemiddelde het merkbaar toegeneem omdat 30 ʼn uitskieter is — baie groter as al die ander waardes. ✓',
             },
           ],
         },
@@ -416,8 +416,8 @@ export const topicData: TopicData = {
           answer: `${or('35%')} van 80 = ${gr('28')} leerders verkies netbal`,
           steps: [
             `Identifiseer die persentasie vir netbal: ${or('35%')}`,
-            `Skakel die persentasie om na ʼn desimaal: ${or('35%')} = ${or('0.35')}`,
-            `Vermenigvuldig met die totale aantal leerders: ${or('0.35')} × 80 = ${gr('28')}`,
+            `Skakel die persentasie om na ʼn desimaal: ${or('35%')} = ${or('0,35')}`,
+            `Vermenigvuldig met die totale aantal leerders: ${or('0,35')} × 80 = ${gr('28')}`,
             `<strong>Antwoord:</strong> ${gr('28')} leerders verkies netbal ✓`,
           ],
         },
@@ -432,7 +432,7 @@ export const topicData: TopicData = {
           answer: '30',
           checkMode: 'auto',
           correctAnswer: '30',
-          explanation: '60% van 50 = 0.60 × 50 = 30 leerders verkies Wiskunde ✓',
+          explanation: '60% van 50 = 0,60 × 50 = 30 leerders verkies Wiskunde ✓',
         },
         {
           difficulty: 'Medium',
@@ -442,7 +442,7 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) In watter maand het seuns die meeste gelees?',
-              correctAnswer: 'February',
+              correctAnswer: 'Februarie',
               correctAnswers: ['February', 'Februarie'],
               explanation: 'Seuns: Jan 12, Feb 18, Mrt 16, Apr 11. Die hoogste waarde is 18 in Februarie. ✓',
             },
@@ -453,7 +453,7 @@ export const topicData: TopicData = {
             },
             {
               label: 'c) Watter groep het oor die algemeen meer boeke gelees? (tik "seuns" of "dogters")',
-              correctAnswer: 'girls',
+              correctAnswer: 'dogters',
               correctAnswers: ['girls', 'dogters'],
               explanation: 'Seuns totaal: 12+18+16+11 = 57\nDogters totaal: 15+14+20+13 = 62\nDogters het oor die algemeen meer boeke gelees (62 > 57). ✓',
             },
@@ -479,7 +479,7 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Watter vak het die grootste skyf?',
-              correctAnswer: 'Mathematics',
+              correctAnswer: 'Wiskunde',
               correctAnswers: ['Mathematics', 'Wiskunde'],
               explanation: 'Wiskunde het 70 leerders (35%) — die hoogste telling, dus het dit die grootste skyf. ✓',
             },
@@ -487,11 +487,11 @@ export const topicData: TopicData = {
               label: 'c) Hoek vir die Wiskunde-skyf (in grade)',
               correctAnswer: '126',
               correctAnswers: ['126', '126°'],
-              explanation: 'Hoek = persentasie × 360° = 0.35 × 360° = 126° ✓',
+              explanation: 'Hoek = persentasie × 360° = 0,35 × 360° = 126° ✓',
             },
             {
               label: 'd) Is die opskrif akkuraat? (tik "ja" of "nee")',
-              correctAnswer: 'no',
+              correctAnswer: 'nee',
               correctAnswers: ['no', 'nee'],
               explanation: 'Nee — slegs 35% (70 uit 200) verkies Wiskunde, nie 70% nie. Die opskrif is onakkuraat en misleidend. ✓',
             },
@@ -595,7 +595,7 @@ export const topicData: TopicData = {
       answer: '30',
       checkMode: 'auto',
       correctAnswer: '30',
-      explanation: '25% van 120 = 0.25 × 120 = 30 ✓',
+      explanation: '25% van 120 = 0,25 × 120 = 30 ✓',
     },
 
     // ── Q11 Hard — double bar graph interpretation ──────────────────────────

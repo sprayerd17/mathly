@@ -137,10 +137,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a ruler with mm and cm marked, a door with metres, and a road with kilometres — each unit colour coded blue cm green m orange km red" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn liniaal met mm en cm gemerk wys, ʼn deur met meter, en ʼn pad met kilometer — elke eenheid kleurgekodeer blou cm groen m oranje km rooi" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the four units of length mm cm m and km with real-life examples showing when to use each unit" />',
+        '<VideoPlaceholder label="Kort video wat die vier eenhede van lengte mm cm m en km verduidelik met werklike-lewe-voorbeelde wat wys wanneer om elke eenheid te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -252,9 +252,9 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Skakel 250cm om na meter.',
-          answer: '2.5m',
+          answer: '2,5m',
           checkMode: 'auto',
-          correctAnswer: '2.5m',
+          correctAnswer: '2,5m',
           correctAnswers: ['2.5m', '2,5m', '2.5', '2,5'],
           explanation: 'Ons skakel van ʼn kleiner eenheid (cm) na ʼn groter eenheid (m) om, dus deel ons. 100cm = 1m. 250 ÷ 100 = 2,5. Antwoord: 2,5m ✓',
         },
@@ -269,10 +269,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the conversion chain mm cm m km with multiply arrows going left to right smaller to larger and divide arrows going right to left larger to smaller colour coded green for multiply red for divide orange for conversion facts" />',
+        '<DiagramPlaceholder label="Diagram wat die omskakelingsketting mm cm m km wys met vermenigvuldig-pyle wat van links na regs gaan kleiner na groter en deel-pyle wat van regs na links gaan groter na kleiner, kleurgekodeer groen vir vermenigvuldig rooi vir deel oranje vir omskakelingsfeite" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert between mm cm m and km using multiply and divide with three worked examples colour coded green for multiply red for divide orange for conversion facts blue for answers" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tussen mm cm m en km om te skakel deur te vermenigvuldig en te deel, met drie uitgewerkte voorbeelde kleurgekodeer groen vir vermenigvuldig rooi vir deel oranje vir omskakelingsfeite blou vir antwoorde" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -364,9 +364,9 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'ʼn Boek eindig halfpad tussen die 18cm- en 19cm-merke op ʼn liniaal. Hoe lank is die boek?',
-          answer: '18.5cm',
+          answer: '18,5cm',
           checkMode: 'auto',
-          correctAnswer: '18.5cm',
+          correctAnswer: '18,5cm',
           correctAnswers: ['18.5cm', '18,5cm', '18.5', '18,5'],
           explanation: 'Die boek eindig tussen 18cm en 19cm. Halfpad tussen 18 en 19 is 18,5. Antwoord: 18,5cm ✓',
         },
@@ -381,10 +381,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a ruler with an object placed from zero to 24cm, starting point highlighted in blue, ending point in green, and measurement labelled in orange" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn liniaal met ʼn voorwerp geplaas vanaf nul tot 24cm wys, beginpunt uitgelig in blou, eindpunt in groen, en meting geëtiketteer in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use a ruler correctly, starting from zero, reading the ending point, and recording the measurement with the correct unit" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn liniaal korrek te gebruik, deur by nul te begin, die eindpunt te lees, en die meting met die korrekte eenheid neer te skryf" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -502,10 +502,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two length calculations — one subtraction problem with unit conversion highlighted in blue and the subtraction step in red, one addition problem with centimetre overflow converted to metres, final answers in orange" />',
+        '<DiagramPlaceholder label="Diagram wat twee lengteberekenings wys — een aftrekkingsprobleem met eenheidsomskakeling uitgelig in blou en die aftrekkingstap in rooi, een optellingsprobleem met sentimeter-oorloop omgeskakel na meter, finale antwoorde in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to add and subtract lengths with different units by converting first then calculating, with colour coded steps — conversion blue addition green subtraction red answer orange" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om lengtes met verskillende eenhede op te tel en af te trek deur eers om te skakel en dan te bereken, met kleurgekodeerde stappe — omskakeling blou, optelling groen, aftrekking rooi, antwoord oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -607,10 +607,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a labelled rectangle with sides 8cm and 5cm and a square with sides 12m, all side lengths highlighted in blue and the perimeter answer shown in orange" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn geëtiketteerde reghoek met sye 8cm en 5cm en ʼn vierkant met sye 12m wys, alle sylengtes uitgelig in blou en die omtrekantwoord getoon in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to find the perimeter of a rectangle and a square by adding all side lengths, with sides colour coded blue, addition green and perimeter answer orange" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik hoe om die omtrek van ʼn reghoek en ʼn vierkant te bereken deur al die sylengtes op te tel, met sye kleurgekodeer blou, optelling groen en omtrekantwoord oranje" />',
     },
   ],
   practiceSets: [

@@ -125,12 +125,12 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Lerato het 3½ meter lint. Sy gebruik 40% daarvan vir een geskenk en ¼ van die oorblyfsel vir ʼn tweede geskenk. Hoeveel lint bly oor?',
-          answer: gr('1.575 m'),
+          answer: gr('1,575 m'),
           steps: [
-            `${or('40% van 3.5 m:')} 0.4 × 3.5 = ${or('1.4 m')} gebruik vir die eerste geskenk.`,
-            `${bl('Oorblyfsel:')} 3.5 − 1.4 = ${bl('2.1 m')}.`,
-            `${bl('¼ van 2.1 m:')} 2.1 ÷ 4 = ${bl('0.525 m')} gebruik vir die tweede geskenk.`,
-            `${gr('Oor:')} 2.1 − 0.525 = ${gr('1.575 m')}.`,
+            `${or('40% van 3,5 m:')} 0,4 × 3,5 = ${or('1,4 m')} gebruik vir die eerste geskenk.`,
+            `${bl('Oorblyfsel:')} 3,5 − 1,4 = ${bl('2,1 m')}.`,
+            `${bl('¼ van 2,1 m:')} 2,1 ÷ 4 = ${bl('0,525 m')} gebruik vir die tweede geskenk.`,
+            `${gr('Oor:')} 2,1 − 0,525 = ${gr('1,575 m')}.`,
           ],
         },
         {

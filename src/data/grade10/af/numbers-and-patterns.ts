@@ -187,10 +187,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line showing rational numbers (terminating and recurring decimals as fractions) alongside irrational numbers such as π and √2 to contrast the two sets" />',
+        '<DiagramPlaceholder label="Getallelyn wat rasionale getalle (eindigende en herhalende desimale as breuke) langs irrasionale getalle soos π en √2 wys om die twee versamelings te kontrasteer" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert a terminating decimal and a recurring decimal to fraction form a over b using the algebraic method" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn eindigende desimaal en ʼn herhalende desimaal na breukvorm a oor b om te skakel deur die algebraïese metode te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -297,10 +297,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number system diagram showing Real numbers containing Rational and Irrational subsets, with Complex numbers as the outer set that includes non-real numbers" />',
+        '<DiagramPlaceholder label="Getallestelseldiagram wat wys hoe Reële getalle die Rasionale en Irrasionale substelle bevat, met Komplekse getalle as die buitenste versameling wat nie-reële getalle insluit" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining why squaring a real number can never give a negative result and what it means for an equation to have no real solution" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik waarom die kwadraat van ʼn reële getal nooit ʼn negatiewe resultaat kan gee nie, en wat dit beteken vir ʼn vergelyking om geen reële oplossing te hê nie" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -463,10 +463,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table showing a linear pattern with term numbers n and term values T-n, arrows indicating the constant common difference between consecutive terms, and the general term formula T-n equals dn plus c labelled" />',
+        '<DiagramPlaceholder label="Tabel wat ʼn liniêre patroon wys met termnommers n en termwaardes Tₙ, pyle wat die konstante gemeenskaplike verskil tussen opeenvolgende terme aandui, en die algemene-termformule Tₙ gelyk aan dn plus c gemerk" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the common difference, set up the general term formula T-n equals dn plus c, and use it to calculate any specific term in a linear number pattern" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die gemeenskaplike verskil te vind, die algemene-termformule Tₙ gelyk aan dn plus c op te stel, en dit te gebruik om enige spesifieke term in ʼn liniêre getalpatroon te bereken" />',
     },
   ],
   resultsConfig: {

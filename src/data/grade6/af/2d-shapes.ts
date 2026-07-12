@@ -200,7 +200,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to classify triangles by their sides and angles and how to find a missing angle using the 180 degree rule" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik hoe om driehoeke volgens hul sye en hoeke te klassifiseer en hoe om ʼn ontbrekende hoek met die 180-grade-reël te vind" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -349,7 +349,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Diagrams showing six types of quadrilaterals — square, rectangle, parallelogram, rhombus, trapezium and kite — each labelled with equal sides in blue, parallel sides in green, and angle values in orange" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the properties of different quadrilaterals and how to find a missing angle using the 360 degree rule" />',
+        '<VideoPlaceholder label="Kort video wat die eienskappe van verskillende vierhoeke verduidelik en hoe om ʼn ontbrekende hoek met die 360-grade-reël te vind" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -491,7 +491,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Diagrams showing a triangle, quadrilateral, pentagon and hexagon with their interior angles labelled in red and the angle sum shown in green" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to find the sum of interior angles using the formula (number of sides minus 2) times 180 degrees with worked examples" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik hoe om die som van binnehoeke te vind met die formule (aantal sye min 2) maal 180 grade, met uitgewerkte voorbeelde" />',
     },
   ],
   resultsConfig: {

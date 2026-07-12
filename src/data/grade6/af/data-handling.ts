@@ -558,7 +558,7 @@ export const topicPractice = [
     checkMode: 'auto',
     correctAnswer: '50%',
     correctAnswers: ['50%', '50'],
-    explanation: 'Grade ÷ 360 × 100 = %\n180 ÷ 360 × 100 = 0.5 × 100 = 50% ✓\nʼn Skyf van 180° is presies die helfte van die sirkel.',
+    explanation: 'Grade ÷ 360 × 100 = %\n180 ÷ 360 × 100 = 0,5 × 100 = 50% ✓\nʼn Skyf van 180° is presies die helfte van die sirkel.',
   },
 
   // ── Q9 Hard — calculating number of items from pie chart ─────────────────

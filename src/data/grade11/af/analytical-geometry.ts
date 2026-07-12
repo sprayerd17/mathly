@@ -95,10 +95,10 @@ export const topicData: TopicData = {
         },
         {
           question: 'Gegewe A(2, 5) en B(3, 1), bepaal die middelpunt van AB.',
-          answer: `M = ${or('(2.5, 3)')}`,
+          answer: `M = ${or('(2,5, 3)')}`,
           steps: [
             `Vervang in M = ((${bl('x₁')} + ${bl('x₂')}) / 2, (${gr('y₁')} + ${gr('y₂')}) / 2).`,
-            `Bereken: M = ((${bl('2')} + ${bl('3')}) / 2, (${gr('5')} + ${gr('1')}) / 2) = ${or('(2.5, 3)')}`,
+            `Bereken: M = ((${bl('2')} + ${bl('3')}) / 2, (${gr('5')} + ${gr('1')}) / 2) = ${or('(2,5, 3)')}`,
           ],
         },
       ],
@@ -166,10 +166,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: Cartesian plane showing points A and B plotted, with a dashed right-angle triangle between them illustrating the horizontal and vertical distance used in the distance formula, and the midpoint M marked between A and B]" />',
+        '<DiagramPlaceholder label="[Diagram nodig: Cartesiese vlak wat punte A en B geplot wys, met ʼn stippel-regte-hoek-driehoek tussen hulle wat die horisontale en vertikale afstand illustreer wat in die afstandsformule gebruik word, en die middelpunt M gemerk tussen A en B]" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising the distance, gradient and midpoint formulas with worked examples on the Cartesian plane" />',
+        '<VideoPlaceholder label="Kort video wat die afstand-, gradiënt- en middelpuntformules hersien met uitgewerkte voorbeelde op die Cartesiese vlak" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -304,10 +304,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: Cartesian plane showing the two given points plotted, the line drawn through both, and the resulting equation labelled next to the line, with the y-intercept marked where relevant]" />',
+        '<DiagramPlaceholder label="[Diagram nodig: Cartesiese vlak wat die twee gegewe punte geplot wys, die lyn deur albei getrek, en die gevolglike vergelyking langs die lyn gemerk, met die y-afsnit aangedui waar relevant]" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the equation of a straight line through two points using the gradient formula and point-slope form" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die vergelyking van ʼn reguit lyn deur twee punte te vind deur die gradiëntformule en punt-gradiëntvorm te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -431,10 +431,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: Cartesian plane showing two parallel lines with matching gradient triangles drawn alongside each, and a separate diagram showing two perpendicular lines meeting at a right angle with their gradient triangles drawn to show the negative reciprocal relationship]" />',
+        '<DiagramPlaceholder label="[Diagram nodig: Cartesiese vlak wat twee parallelle lyne wys met ooreenstemmende gradiëntdriehoeke langs elkeen geteken, en ʼn aparte diagram wat twee loodregte lyne wys wat by ʼn regte hoek ontmoet met hul gradiëntdriehoeke geteken om die negatiewe-resiprook-verhouding te wys]" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the parallel and perpendicular gradient rules and showing how to find the equation of a line through a given point using each rule" />',
+        '<VideoPlaceholder label="Kort video wat die parallel- en loodregte-gradiëntreëls verduidelik en wys hoe om die vergelyking van ʼn lyn deur ʼn gegewe punt te vind met elke reël" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -484,29 +484,29 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 1.5.',
-          answer: `θ = ${or('56.31°')}`,
+          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 1,5.',
+          answer: `θ = ${or('56,31°')}`,
           steps: [
-            `Vervang in ${bl('m')} = tan ${or('θ')}: tan ${or('θ')} = ${bl('1.5')}.`,
-            `Bereken ${or('θ')} = tan⁻¹(${bl('1.5')}) = ${or('56.31°')}.`,
-            `Aangesien die gradiënt positief is, is hierdie hoek reeds korrek: ${or('θ = 56.31°')}.`,
+            `Vervang in ${bl('m')} = tan ${or('θ')}: tan ${or('θ')} = ${bl('1,5')}.`,
+            `Bereken ${or('θ')} = tan⁻¹(${bl('1,5')}) = ${or('56,31°')}.`,
+            `Aangesien die gradiënt positief is, is hierdie hoek reeds korrek: ${or('θ = 56,31°')}.`,
           ],
         },
         {
-          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −0.84.',
-          answer: `θ = ${or('140.0°')}`,
+          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −0,84.',
+          answer: `θ = ${or('140,0°')}`,
           steps: [
-            `Vervang in ${bl('m')} = tan ${or('θ')}: tan ${or('θ')} = ${bl('−0.84')}.`,
-            `Bereken die sakrekenaarwaarde: tan⁻¹(${bl('−0.84')}) = ${or('−40.0°')}.`,
-            `Aangesien die gradiënt negatief is, lê die ware inklinasie tussen 90° en 180°, dus ${re('tel ons 180° by')}: ${or('θ')} = ${or('−40.0°')} ${re('+ 180°')} = ${or('140.0°')}.`,
+            `Vervang in ${bl('m')} = tan ${or('θ')}: tan ${or('θ')} = ${bl('−0,84')}.`,
+            `Bereken die sakrekenaarwaarde: tan⁻¹(${bl('−0,84')}) = ${or('−40,0°')}.`,
+            `Aangesien die gradiënt negatief is, lê die ware inklinasie tussen 90° en 180°, dus ${re('tel ons 180° by')}: ${or('θ')} = ${or('−40,0°')} ${re('+ 180°')} = ${or('140,0°')}.`,
           ],
         },
         {
           question: 'Vind die gradiënt van ʼn lyn met inklinasie θ = 120°.',
-          answer: `m = ${bl('−1.73')}`,
+          answer: `m = ${bl('−1,73')}`,
           steps: [
             `Vervang in ${bl('m')} = tan ${or('θ')}: ${bl('m')} = tan(${or('120°')}).`,
-            `Bereken: ${bl('m')} = ${bl('−1.73')} (afgerond tot 2 desimale plekke).`,
+            `Bereken: ${bl('m')} = ${bl('−1,73')} (afgerond tot 2 desimale plekke).`,
             `Let op dat dit negatief is, wat ooreenstem met ʼn inklinasie groter as 90°.`,
           ],
         },
@@ -529,16 +529,16 @@ export const topicData: TopicData = {
         // ── Q14 Medium — inclination with positive decimal gradient ──────────
         {
           difficulty: 'Medium',
-          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0.5774, afgerond tot een desimale plek.',
-          answer: 'θ = tan⁻¹(0.5774) ≈ 30.0°',
+          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0,5774, afgerond tot een desimale plek.',
+          answer: 'θ = tan⁻¹(0,5774) ≈ 30,0°',
           checkMode: 'self',
         },
 
         // ── Q15 Medium — inclination with negative gradient ──────────────────
         {
           difficulty: 'Medium',
-          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −1.19, afgerond tot een desimale plek.',
-          answer: 'θ = tan⁻¹(−1.19) ≈ −49.9°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −49.9° + 180° = 130.1°',
+          question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −1,19, afgerond tot een desimale plek.',
+          answer: 'θ = tan⁻¹(−1,19) ≈ −49,9°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −49,9° + 180° = 130,1°',
           checkMode: 'self',
         },
 
@@ -546,16 +546,16 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 150°, afgerond tot twee desimale plekke.',
-          answer: 'm = tan(150°) = −tan(30°) ≈ −0.58',
+          answer: 'm = tan(150°) = −tan(30°) ≈ −0,58',
           checkMode: 'self',
         },
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: Cartesian plane showing a line with inclination angle θ marked at the point where the line crosses the x-axis, anti-clockwise from the positive x-axis, for both a positive-gradient example and a negative-gradient example side by side]" />',
+        '<DiagramPlaceholder label="[Diagram nodig: Cartesiese vlak wat ʼn lyn wys met inklinasiehoek θ gemerk by die punt waar die lyn die x-as kruis, anti-kloksgewys gemeet vanaf die positiewe x-as, vir beide ʼn positiewe-gradiënt-voorbeeld en ʼn negatiewe-gradiënt-voorbeeld langs mekaar]" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the inclination of a line, the formula m = tan θ, and the +180° correction for negative gradients" />',
+        '<VideoPlaceholder label="Kort video wat die inklinasie van ʼn lyn verduidelik, die formule m = tan θ, en die +180°-regstelling vir negatiewe gradiënte" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -609,13 +609,13 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Gegewe A(−3, 1), B(2, 4) en C(5, −2), bepaal die grootte van hoek BAC.',
-          answer: `∠BAC ≈ ${bl('51.52°')}`,
+          answer: `∠BAC ≈ ${bl('51,52°')}`,
           steps: [
             `Bereken die gradiënt van AB: ${re('m₁ = (4 − 1)/(2 − (−3)) = 3/5')}.`,
             `Bereken die gradiënt van AC: ${ye('m₂ = (−2 − 1)/(5 − (−3)) = −3/8')}.`,
-            `Vind die inklinasie van AB: ${re('θ₁ = tan⁻¹(3/5) = 30.96°')}.`,
-            `Vind die inklinasie van AC: tan⁻¹(−3/8) = −20.56°. Aangesien die gradiënt negatief is, tel ons 180° by: ${ye('θ₂ = 159.44°')}.`,
-            `Bereken hoek BAC = 180° − 159.44° + 30.96° = ${bl('51.52°')}.`,
+            `Vind die inklinasie van AB: ${re('θ₁ = tan⁻¹(3/5) = 30,96°')}.`,
+            `Vind die inklinasie van AC: tan⁻¹(−3/8) = −20,56°. Aangesien die gradiënt negatief is, tel ons 180° by: ${ye('θ₂ = 159,44°')}.`,
+            `Bereken hoek BAC = 180° − 159,44° + 30,96° = ${bl('51,52°')}.`,
           ],
         },
         {
@@ -677,7 +677,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Gegewe A(−2, 3), B(3, 3) en C(3, −2), bepaal die grootte van hoek ABC, afgerond tot een desimale plek.',
-          answer: 'Gradiënt van BA: m₁ = (3 − 3)/(−2 − 3) = 0 (horisontaal). Gradiënt van BC: m₂ = (−2 − 3)/(3 − 3) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90.0°.',
+          answer: 'Gradiënt van BA: m₁ = (3 − 3)/(−2 − 3) = 0 (horisontaal). Gradiënt van BC: m₂ = (−2 − 3)/(3 − 3) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90,0°.',
           checkMode: 'self',
         },
 
@@ -715,10 +715,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: Cartesian plane showing the full triangle formed by the three given points, all three vertices labelled, the relevant angle marked at the vertex in question, and dashed gradient triangles on each side as needed]" />',
+        '<DiagramPlaceholder label="[Diagram nodig: Cartesiese vlak wat die volledige driehoek gevorm deur die drie gegewe punte wys, al drie hoekpunte gemerk, die relevante hoek by die betrokke hoekpunt gemerk, en stippel-gradiëntdriehoeke op elke sy soos nodig]" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to combine distance, gradient, midpoint, and inclination to solve mixed Analytical Geometry problems involving triangles" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om afstand, gradiënt, middelpunt en inklinasie te kombineer om gemengde Analitiese Meetkunde-probleme met driehoeke op te los" />',
     },
   ],
 
@@ -756,10 +756,10 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Vind die vergelyking van die lyn deur (4, 1) loodreg aan y = -1/3x - 2.', checkMode: 'auto', correctAnswer: 'y = 3x - 11', correctAnswers: ['y = 3x - 11', 'y=3x-11', 'y = 3x − 11', 'y=3x−11'], answer: 'y = 3x - 11', explanation: 'Gradiënt van die gegewe lyn: m₁ = −1/3.\nLoodregte gradiënt: m₂ = 3.\nVervang (4, 1): y − 1 = 3(x − 4) → y − 1 = 3x − 12 → y = 3x − 11 ✓' },
 
         // Block 4 — Inklinasie van 'n lyn
-        { difficulty: 'Easy', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0.5774, afgerond tot die naaste graad.', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30°', '30 grade'], answer: '30', explanation: 'tan θ = 0.5774 → θ = tan⁻¹(0.5774) ≈ 30°. Die gradiënt is positief, dus is geen regstelling nodig nie. θ ≈ 30° ✓' },
-        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0.7002, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(0.7002) ≈ 35°', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −0.5774, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(−0.5774) ≈ −30°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −30° + 180° = 150°', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 65°, afgerond tot twee desimale plekke.', answer: 'm = tan(65°) ≈ 2.14', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0,5774, afgerond tot die naaste graad.', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30°', '30 grade'], answer: '30', explanation: 'tan θ = 0,5774 → θ = tan⁻¹(0,5774) ≈ 30°. Die gradiënt is positief, dus is geen regstelling nodig nie. θ ≈ 30° ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0,7002, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(0,7002) ≈ 35°', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −0,5774, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(−0,5774) ≈ −30°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −30° + 180° = 150°', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 65°, afgerond tot twee desimale plekke.', answer: 'm = tan(65°) ≈ 2,14', checkMode: 'self' },
 
         // Block 5 — Regte hoek / gelykbenige driehoek bewyse
         { difficulty: 'Medium', question: 'Gegewe A(0, 0), B(5, 0) en C(5, 4), bewys dat driehoek ABC reghoekig is by B.', answer: 'Gradiënt van AB: m₁ = (0 − 0)/(5 − 0) = 0 (horisontaal). Gradiënt van BC: m₂ = (4 − 0)/(5 − 5) = onbepaald (vertikaal). ʼn Horisontale lyn is loodreg op ʼn vertikale lyn, dus AB ⊥ BC. Daarom is driehoek ABC reghoekig by B. ✓', checkMode: 'self' },
@@ -767,8 +767,8 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'P(1, 1), Q(5, 1) en R(5, 5) is op die Cartesiese vlak geplot en vorm driehoek PQR. Gegewe dat PQ = 4 en QR = 4, bereken PR en bepaal dus of driehoek PQR gelykbenig is.', answer: 'PR = √[(5 − 1)² + (5 − 1)²] = √[16 + 16] = √32 = 4√2\nAangesien PQ = QR = 4 en PR = 4√2, is presies twee sye gelyk. Driehoek PQR is gelykbenig. ✓', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 146 146" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="138" x2="26" y2="26" /><line x1="42" y1="138" x2="42" y2="26" /><line x1="58" y1="138" x2="58" y2="26" /><line x1="74" y1="138" x2="74" y2="26" /><line x1="90" y1="138" x2="90" y2="26" /><line x1="106" y1="138" x2="106" y2="26" /><line x1="122" y1="138" x2="122" y2="26" /><line x1="138" y1="138" x2="138" y2="26" /><line x1="26" y1="138" x2="138" y2="138" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="122" x2="138" y2="122" /><line x1="42" y1="138" x2="42" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="134" text-anchor="middle">-1</text><text x="58" y="134" text-anchor="middle">1</text><text x="74" y="134" text-anchor="middle">2</text><text x="90" y="134" text-anchor="middle">3</text><text x="106" y="134" text-anchor="middle">4</text><text x="122" y="134" text-anchor="middle">5</text><text x="138" y="134" text-anchor="middle">6</text><text x="34" y="141" text-anchor="end">-1</text><text x="34" y="125" text-anchor="end">0</text><text x="34" y="109" text-anchor="end">1</text><text x="34" y="93" text-anchor="end">2</text><text x="34" y="77" text-anchor="end">3</text><text x="34" y="61" text-anchor="end">4</text><text x="34" y="45" text-anchor="end">5</text><text x="34" y="29" text-anchor="end">6</text></g><polygon points="58,106 122,106 122,42" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="58" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="64" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(1,1)</text><text x="116" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">Q(5,1)</text><text x="116" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">R(5,5)</text></svg>` },
 
         // Block 6 — Hoek by 'n hoekpunt via inklinasie
-        { difficulty: 'Hard', question: 'Gegewe A(−2, 2), B(3, 2) en C(3, −2), bepaal die grootte van hoek ABC, afgerond tot een desimale plek.', answer: 'Gradiënt van BA: m₁ = (2 − 2)/(−2 − 3) = 0 (horisontaal). Gradiënt van BC: m₂ = (−2 − 2)/(3 − 3) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90.0°.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'A(−2, 2), B(3, 2) en C(3, −2) is op die Cartesiese vlak geplot en vorm driehoek ABC met ʼn regte hoek by B. Gegewe dat AB = 5 en BC = 4, bereken die lengte van AC.', checkMode: 'auto', correctAnswer: '√41', correctAnswers: ['√41', 'sqrt(41)', '6.40', '6.4'], answer: '√41', explanation: 'AC = √[(3 − (−2))² + (−2 − 2)²] = √[25 + 16] = √41 ≈ 6.40 ✓', diagramSvg: `<svg viewBox="0 0 146 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="138" y1="122" x2="138" y2="26" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="74" x2="138" y2="74" /><line x1="74" y1="122" x2="74" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="86" text-anchor="middle">-3</text><text x="42" y="86" text-anchor="middle">-2</text><text x="58" y="86" text-anchor="middle">-1</text><text x="90" y="86" text-anchor="middle">1</text><text x="106" y="86" text-anchor="middle">2</text><text x="122" y="86" text-anchor="middle">3</text><text x="138" y="86" text-anchor="middle">4</text><text x="66" y="125" text-anchor="end">-3</text><text x="66" y="109" text-anchor="end">-2</text><text x="66" y="93" text-anchor="end">-1</text><text x="66" y="77" text-anchor="end">0</text><text x="66" y="61" text-anchor="end">1</text><text x="66" y="45" text-anchor="end">2</text><text x="66" y="29" text-anchor="end">3</text></g><polygon points="42,42 122,42 122,106" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">A(-2,2)</text><text x="116" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">B(3,2)</text><text x="116" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">C(3,-2)</text></svg>` },
+        { difficulty: 'Hard', question: 'Gegewe A(−2, 2), B(3, 2) en C(3, −2), bepaal die grootte van hoek ABC, afgerond tot een desimale plek.', answer: 'Gradiënt van BA: m₁ = (2 − 2)/(−2 − 3) = 0 (horisontaal). Gradiënt van BC: m₂ = (−2 − 2)/(3 − 3) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90,0°.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A(−2, 2), B(3, 2) en C(3, −2) is op die Cartesiese vlak geplot en vorm driehoek ABC met ʼn regte hoek by B. Gegewe dat AB = 5 en BC = 4, bereken die lengte van AC.', checkMode: 'auto', correctAnswer: '√41', correctAnswers: ['√41', 'sqrt(41)', '6.40', '6.4'], answer: '√41', explanation: 'AC = √[(3 − (−2))² + (−2 − 2)²] = √[25 + 16] = √41 ≈ 6,40 ✓', diagramSvg: `<svg viewBox="0 0 146 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="138" y1="122" x2="138" y2="26" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="74" x2="138" y2="74" /><line x1="74" y1="122" x2="74" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="86" text-anchor="middle">-3</text><text x="42" y="86" text-anchor="middle">-2</text><text x="58" y="86" text-anchor="middle">-1</text><text x="90" y="86" text-anchor="middle">1</text><text x="106" y="86" text-anchor="middle">2</text><text x="122" y="86" text-anchor="middle">3</text><text x="138" y="86" text-anchor="middle">4</text><text x="66" y="125" text-anchor="end">-3</text><text x="66" y="109" text-anchor="end">-2</text><text x="66" y="93" text-anchor="end">-1</text><text x="66" y="77" text-anchor="end">0</text><text x="66" y="61" text-anchor="end">1</text><text x="66" y="45" text-anchor="end">2</text><text x="66" y="29" text-anchor="end">3</text></g><polygon points="42,42 122,42 122,106" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">A(-2,2)</text><text x="116" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">B(3,2)</text><text x="116" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">C(3,-2)</text></svg>` },
       ],
       scoreMessages: [
         { minScore: 17, message: 'Uitstekend! Jy het lyne, gradiënte, inklinasie en driehoekbewyse bemeester. Uitstekende werk!' },
@@ -802,10 +802,10 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Vind die vergelyking van die lyn deur (2, 5) loodreg aan y = 2/5x + 1.', checkMode: 'auto', correctAnswer: 'y = -5/2x + 10', correctAnswers: ['y = -5/2x + 10', 'y=-5/2x+10', 'y = −5/2x + 10', 'y=−5/2x+10'], answer: 'y = -5/2x + 10', explanation: 'Gradiënt van die gegewe lyn: m₁ = 2/5.\nLoodregte gradiënt: m₂ = −5/2.\nVervang (2, 5): y − 5 = −5/2(x − 2) → y − 5 = −5/2x + 5 → y = −5/2x + 10 ✓' },
 
         // Block 4 — Inklinasie van 'n lyn
-        { difficulty: 'Easy', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 1.7321, afgerond tot die naaste graad.', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60°', '60 grade'], answer: '60', explanation: 'tan θ = 1.7321 → θ = tan⁻¹(1.7321) ≈ 60°. Die gradiënt is positief, dus is geen regstelling nodig nie. θ ≈ 60° ✓' },
-        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0.3640, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(0.3640) ≈ 20°', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −2.9042, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(−2.9042) ≈ −71°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −71° + 180° = 109°', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 40°, afgerond tot twee desimale plekke.', answer: 'm = tan(40°) ≈ 0.84', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 1,7321, afgerond tot die naaste graad.', checkMode: 'auto', correctAnswer: '60', correctAnswers: ['60', '60°', '60 grade'], answer: '60', explanation: 'tan θ = 1,7321 → θ = tan⁻¹(1,7321) ≈ 60°. Die gradiënt is positief, dus is geen regstelling nodig nie. θ ≈ 60° ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0,3640, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(0,3640) ≈ 20°', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −2,9042, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(−2,9042) ≈ −71°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −71° + 180° = 109°', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 40°, afgerond tot twee desimale plekke.', answer: 'm = tan(40°) ≈ 0,84', checkMode: 'self' },
 
         // Block 5 — Regte hoek / gelykbenige driehoek bewyse
         { difficulty: 'Medium', question: 'Gegewe A(0, 0), B(6, 0) en C(6, 3), bewys dat driehoek ABC reghoekig is by B.', answer: 'Gradiënt van AB: m₁ = (0 − 0)/(6 − 0) = 0 (horisontaal). Gradiënt van BC: m₂ = (3 − 0)/(6 − 6) = onbepaald (vertikaal). ʼn Horisontale lyn is loodreg op ʼn vertikale lyn, dus AB ⊥ BC. Daarom is driehoek ABC reghoekig by B. ✓', checkMode: 'self' },
@@ -813,8 +813,8 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'P(2, 2), Q(6, 2) en R(6, 6) is op die Cartesiese vlak geplot en vorm driehoek PQR. Gegewe dat PQ = 4 en QR = 4, bereken PR en bepaal dus of driehoek PQR gelykbenig is.', answer: 'PR = √[(6 − 2)² + (6 − 2)²] = √[16 + 16] = √32 = 4√2\nAangesien PQ = QR = 4 en PR = 4√2, is presies twee sye gelyk. Driehoek PQR is gelykbenig. ✓', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 162 162" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="154" x2="26" y2="26" /><line x1="42" y1="154" x2="42" y2="26" /><line x1="58" y1="154" x2="58" y2="26" /><line x1="74" y1="154" x2="74" y2="26" /><line x1="90" y1="154" x2="90" y2="26" /><line x1="106" y1="154" x2="106" y2="26" /><line x1="122" y1="154" x2="122" y2="26" /><line x1="138" y1="154" x2="138" y2="26" /><line x1="154" y1="154" x2="154" y2="26" /><line x1="26" y1="154" x2="154" y2="154" /><line x1="26" y1="138" x2="154" y2="138" /><line x1="26" y1="122" x2="154" y2="122" /><line x1="26" y1="106" x2="154" y2="106" /><line x1="26" y1="90" x2="154" y2="90" /><line x1="26" y1="74" x2="154" y2="74" /><line x1="26" y1="58" x2="154" y2="58" /><line x1="26" y1="42" x2="154" y2="42" /><line x1="26" y1="26" x2="154" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="138" x2="154" y2="138" /><line x1="42" y1="154" x2="42" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="150" text-anchor="middle">-1</text><text x="58" y="150" text-anchor="middle">1</text><text x="74" y="150" text-anchor="middle">2</text><text x="90" y="150" text-anchor="middle">3</text><text x="106" y="150" text-anchor="middle">4</text><text x="122" y="150" text-anchor="middle">5</text><text x="138" y="150" text-anchor="middle">6</text><text x="154" y="150" text-anchor="middle">7</text><text x="34" y="157" text-anchor="end">-1</text><text x="34" y="141" text-anchor="end">0</text><text x="34" y="125" text-anchor="end">1</text><text x="34" y="109" text-anchor="end">2</text><text x="34" y="93" text-anchor="end">3</text><text x="34" y="77" text-anchor="end">4</text><text x="34" y="61" text-anchor="end">5</text><text x="34" y="45" text-anchor="end">6</text><text x="34" y="29" text-anchor="end">7</text></g><polygon points="74,106 138,106 138,42" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="74" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="138" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="138" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="80" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(2,2)</text><text x="132" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">Q(6,2)</text><text x="132" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">R(6,6)</text></svg>` },
 
         // Block 6 — Hoek by 'n hoekpunt via inklinasie
-        { difficulty: 'Hard', question: 'Gegewe A(−1, 3), B(4, 3) en C(4, −1), bepaal die grootte van hoek ABC, afgerond tot een desimale plek.', answer: 'Gradiënt van BA: m₁ = (3 − 3)/(−1 − 4) = 0 (horisontaal). Gradiënt van BC: m₂ = (−1 − 3)/(4 − 4) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90.0°.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'A(−1, 3), B(4, 3) en C(4, −1) is op die Cartesiese vlak geplot en vorm driehoek ABC met ʼn regte hoek by B. Gegewe dat AB = 5 en BC = 4, bereken die lengte van AC.', checkMode: 'auto', correctAnswer: '√41', correctAnswers: ['√41', 'sqrt(41)', '6.40', '6.4'], answer: '√41', explanation: 'AC = √[(4 − (−1))² + (−1 − 3)²] = √[25 + 16] = √41 ≈ 6.40 ✓', diagramSvg: `<svg viewBox="0 0 146 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="138" y1="122" x2="138" y2="26" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="90" x2="138" y2="90" /><line x1="58" y1="122" x2="58" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="102" text-anchor="middle">-2</text><text x="42" y="102" text-anchor="middle">-1</text><text x="74" y="102" text-anchor="middle">1</text><text x="90" y="102" text-anchor="middle">2</text><text x="106" y="102" text-anchor="middle">3</text><text x="122" y="102" text-anchor="middle">4</text><text x="138" y="102" text-anchor="middle">5</text><text x="50" y="125" text-anchor="end">-2</text><text x="50" y="109" text-anchor="end">-1</text><text x="50" y="93" text-anchor="end">0</text><text x="50" y="77" text-anchor="end">1</text><text x="50" y="61" text-anchor="end">2</text><text x="50" y="45" text-anchor="end">3</text><text x="50" y="29" text-anchor="end">4</text></g><polygon points="42,42 122,42 122,106" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">A(-1,3)</text><text x="116" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">B(4,3)</text><text x="116" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">C(4,-1)</text></svg>` },
+        { difficulty: 'Hard', question: 'Gegewe A(−1, 3), B(4, 3) en C(4, −1), bepaal die grootte van hoek ABC, afgerond tot een desimale plek.', answer: 'Gradiënt van BA: m₁ = (3 − 3)/(−1 − 4) = 0 (horisontaal). Gradiënt van BC: m₂ = (−1 − 3)/(4 − 4) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90,0°.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A(−1, 3), B(4, 3) en C(4, −1) is op die Cartesiese vlak geplot en vorm driehoek ABC met ʼn regte hoek by B. Gegewe dat AB = 5 en BC = 4, bereken die lengte van AC.', checkMode: 'auto', correctAnswer: '√41', correctAnswers: ['√41', 'sqrt(41)', '6.40', '6.4'], answer: '√41', explanation: 'AC = √[(4 − (−1))² + (−1 − 3)²] = √[25 + 16] = √41 ≈ 6,40 ✓', diagramSvg: `<svg viewBox="0 0 146 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="138" y1="122" x2="138" y2="26" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="90" x2="138" y2="90" /><line x1="58" y1="122" x2="58" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="102" text-anchor="middle">-2</text><text x="42" y="102" text-anchor="middle">-1</text><text x="74" y="102" text-anchor="middle">1</text><text x="90" y="102" text-anchor="middle">2</text><text x="106" y="102" text-anchor="middle">3</text><text x="122" y="102" text-anchor="middle">4</text><text x="138" y="102" text-anchor="middle">5</text><text x="50" y="125" text-anchor="end">-2</text><text x="50" y="109" text-anchor="end">-1</text><text x="50" y="93" text-anchor="end">0</text><text x="50" y="77" text-anchor="end">1</text><text x="50" y="61" text-anchor="end">2</text><text x="50" y="45" text-anchor="end">3</text><text x="50" y="29" text-anchor="end">4</text></g><polygon points="42,42 122,42 122,106" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">A(-1,3)</text><text x="116" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">B(4,3)</text><text x="116" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">C(4,-1)</text></svg>` },
       ],
       scoreMessages: [
         { minScore: 17, message: 'Uitstekend! Jy het lyne, gradiënte, inklinasie en driehoekbewyse bemeester. Uitstekende werk!' },
@@ -848,10 +848,10 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Vind die vergelyking van die lyn deur (3, 2) loodreg aan y = 3/4x + 5.', checkMode: 'auto', correctAnswer: 'y = -4/3x + 6', correctAnswers: ['y = -4/3x + 6', 'y=-4/3x+6', 'y = −4/3x + 6', 'y=−4/3x+6'], answer: 'y = -4/3x + 6', explanation: 'Gradiënt van die gegewe lyn: m₁ = 3/4.\nLoodregte gradiënt: m₂ = −4/3.\nVervang (3, 2): y − 2 = −4/3(x − 3) → y − 2 = −4/3x + 4 → y = −4/3x + 6 ✓' },
 
         // Block 4 — Inklinasie van 'n lyn
-        { difficulty: 'Easy', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0.5, afgerond tot twee desimale plekke.', checkMode: 'auto', correctAnswer: '26.57', correctAnswers: ['26.57', '26.57°', '26.6', '26.6°'], answer: '26.57', explanation: 'tan θ = 0.5 → θ = tan⁻¹(0.5) ≈ 26.57°. Die gradiënt is positief, dus is geen regstelling nodig nie. θ ≈ 26.57° ✓' },
-        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 1.1918, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(1.1918) ≈ 50°', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −0.2679, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(−0.2679) ≈ −15°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −15° + 180° = 165°', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 104°, afgerond tot twee desimale plekke.', answer: 'm = tan(104°) ≈ −4.01', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 0,5, afgerond tot twee desimale plekke.', checkMode: 'auto', correctAnswer: '26,57', correctAnswers: ['26.57', '26.57°', '26.6', '26.6°'], answer: '26,57', explanation: 'tan θ = 0,5 → θ = tan⁻¹(0,5) ≈ 26,57°. Die gradiënt is positief, dus is geen regstelling nodig nie. θ ≈ 26,57° ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = 1,1918, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(1,1918) ≈ 50°', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bepaal die inklinasie van ʼn lyn met gradiënt m = −0,2679, afgerond tot die naaste graad.', answer: 'θ = tan⁻¹(−0,2679) ≈ −15°. Aangesien die gradiënt negatief is, tel ons 180° by: θ = −15° + 180° = 165°', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 104°, afgerond tot twee desimale plekke.', answer: 'm = tan(104°) ≈ −4,01', checkMode: 'self' },
 
         // Block 5 — Regte hoek / gelykbenige driehoek bewyse
         { difficulty: 'Medium', question: 'Gegewe A(0, 0), B(4, 0) en C(4, 6), bewys dat driehoek ABC reghoekig is by B.', answer: 'Gradiënt van AB: m₁ = (0 − 0)/(4 − 0) = 0 (horisontaal). Gradiënt van BC: m₂ = (6 − 0)/(4 − 4) = onbepaald (vertikaal). ʼn Horisontale lyn is loodreg op ʼn vertikale lyn, dus AB ⊥ BC. Daarom is driehoek ABC reghoekig by B. ✓', checkMode: 'self' },
@@ -859,8 +859,8 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'P(0, 0), Q(4, 0) en R(4, 4) is op die Cartesiese vlak geplot en vorm driehoek PQR. Gegewe dat PQ = 4 en QR = 4, bereken PR en bepaal dus of driehoek PQR gelykbenig is.', answer: 'PR = √[(4 − 0)² + (4 − 0)²] = √[16 + 16] = √32 = 4√2\nAangesien PQ = QR = 4 en PR = 4√2, is presies twee sye gelyk. Driehoek PQR is gelykbenig. ✓', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="26" y1="122" x2="122" y2="122" /><line x1="26" y1="106" x2="122" y2="106" /><line x1="26" y1="90" x2="122" y2="90" /><line x1="26" y1="74" x2="122" y2="74" /><line x1="26" y1="58" x2="122" y2="58" /><line x1="26" y1="42" x2="122" y2="42" /><line x1="26" y1="26" x2="122" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="106" x2="122" y2="106" /><line x1="42" y1="122" x2="42" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="118" text-anchor="middle">-1</text><text x="58" y="118" text-anchor="middle">1</text><text x="74" y="118" text-anchor="middle">2</text><text x="90" y="118" text-anchor="middle">3</text><text x="106" y="118" text-anchor="middle">4</text><text x="122" y="118" text-anchor="middle">5</text><text x="34" y="125" text-anchor="end">-1</text><text x="34" y="109" text-anchor="end">0</text><text x="34" y="93" text-anchor="end">1</text><text x="34" y="77" text-anchor="end">2</text><text x="34" y="61" text-anchor="end">3</text><text x="34" y="45" text-anchor="end">4</text><text x="34" y="29" text-anchor="end">5</text></g><polygon points="42,106 106,106 106,42" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="42" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="106" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="106" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(0,0)</text><text x="100" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">Q(4,0)</text><text x="100" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">R(4,4)</text></svg>` },
 
         // Block 6 — Hoek by 'n hoekpunt via inklinasie
-        { difficulty: 'Hard', question: 'Gegewe A(−3, 1), B(2, 1) en C(2, −3), bepaal die grootte van hoek ABC, afgerond tot een desimale plek.', answer: 'Gradiënt van BA: m₁ = (1 − 1)/(−3 − 2) = 0 (horisontaal). Gradiënt van BC: m₂ = (−3 − 1)/(2 − 2) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90.0°.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'A(−3, 1), B(2, 1) en C(2, −3) is op die Cartesiese vlak geplot en vorm driehoek ABC met ʼn regte hoek by B. Gegewe dat AB = 5 en BC = 4, bereken die lengte van AC.', checkMode: 'auto', correctAnswer: '√41', correctAnswers: ['√41', 'sqrt(41)', '6.40', '6.4'], answer: '√41', explanation: 'AC = √[(2 − (−3))² + (−3 − 1)²] = √[25 + 16] = √41 ≈ 6.40 ✓', diagramSvg: `<svg viewBox="0 0 146 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="138" y1="122" x2="138" y2="26" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="58" x2="138" y2="58" /><line x1="90" y1="122" x2="90" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="70" text-anchor="middle">-4</text><text x="42" y="70" text-anchor="middle">-3</text><text x="58" y="70" text-anchor="middle">-2</text><text x="74" y="70" text-anchor="middle">-1</text><text x="106" y="70" text-anchor="middle">1</text><text x="122" y="70" text-anchor="middle">2</text><text x="138" y="70" text-anchor="middle">3</text><text x="82" y="125" text-anchor="end">-4</text><text x="82" y="109" text-anchor="end">-3</text><text x="82" y="93" text-anchor="end">-2</text><text x="82" y="77" text-anchor="end">-1</text><text x="82" y="61" text-anchor="end">0</text><text x="82" y="45" text-anchor="end">1</text><text x="82" y="29" text-anchor="end">2</text></g><polygon points="42,42 122,42 122,106" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">A(-3,1)</text><text x="116" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">B(2,1)</text><text x="116" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">C(2,-3)</text></svg>` },
+        { difficulty: 'Hard', question: 'Gegewe A(−3, 1), B(2, 1) en C(2, −3), bepaal die grootte van hoek ABC, afgerond tot een desimale plek.', answer: 'Gradiënt van BA: m₁ = (1 − 1)/(−3 − 2) = 0 (horisontaal). Gradiënt van BC: m₂ = (−3 − 1)/(2 − 2) = onbepaald (vertikaal). Aangesien BA horisontaal is en BC vertikaal is, is BA ⊥ BC. Daarom is hoek ABC = 90,0°.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A(−3, 1), B(2, 1) en C(2, −3) is op die Cartesiese vlak geplot en vorm driehoek ABC met ʼn regte hoek by B. Gegewe dat AB = 5 en BC = 4, bereken die lengte van AC.', checkMode: 'auto', correctAnswer: '√41', correctAnswers: ['√41', 'sqrt(41)', '6.40', '6.4'], answer: '√41', explanation: 'AC = √[(2 − (−3))² + (−3 − 1)²] = √[25 + 16] = √41 ≈ 6,40 ✓', diagramSvg: `<svg viewBox="0 0 146 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="138" y1="122" x2="138" y2="26" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="58" x2="138" y2="58" /><line x1="90" y1="122" x2="90" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="70" text-anchor="middle">-4</text><text x="42" y="70" text-anchor="middle">-3</text><text x="58" y="70" text-anchor="middle">-2</text><text x="74" y="70" text-anchor="middle">-1</text><text x="106" y="70" text-anchor="middle">1</text><text x="122" y="70" text-anchor="middle">2</text><text x="138" y="70" text-anchor="middle">3</text><text x="82" y="125" text-anchor="end">-4</text><text x="82" y="109" text-anchor="end">-3</text><text x="82" y="93" text-anchor="end">-2</text><text x="82" y="77" text-anchor="end">-1</text><text x="82" y="61" text-anchor="end">0</text><text x="82" y="45" text-anchor="end">1</text><text x="82" y="29" text-anchor="end">2</text></g><polygon points="42,42 122,42 122,106" fill="none" stroke="#0f1f3d" stroke-width="1.5" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">A(-3,1)</text><text x="116" y="56" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">B(2,1)</text><text x="116" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="end">C(2,-3)</text></svg>` },
       ],
       scoreMessages: [
         { minScore: 17, message: 'Uitstekend! Jy het lyne, gradiënte, inklinasie en driehoekbewyse bemeester. Uitstekende werk!' },

@@ -132,7 +132,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify and classify acute right obtuse straight reflex angles and revolutions with examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om skerp, regte, stomp, gestrekte en refleks hoeke, asook omwentelinge, te identifiseer en te klassifiseer met voorbeelde" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram showing all six angle types side by side with their degree ranges and colour coded labels" />',
@@ -239,7 +239,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to place a protractor on a vertex align the baseline and read the correct scale to measure an angle" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn gradeboog op ʼn hoekpunt te plaas, die basislyn te belyn en die korrekte skaal te lees om ʼn hoek te meet" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram of a protractor showing the vertex centre point the baseline and the two scales with the correct reading highlighted in orange" />',
@@ -344,7 +344,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use the angle sum on a straight line 180 degrees and around a point 360 degrees to find unknown angles" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die hoeksom op ʼn reguit lyn (180 grade) en rondom ʼn punt (360 grade) te gebruik om onbekende hoeke te vind" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Two diagrams side by side showing angles on a straight line summing to 180 degrees and angles around a point summing to 360 degrees with known angles blue and unknown angle red" />',

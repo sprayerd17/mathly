@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the full mass conversion chain from tonnes to kilograms to grams to milligrams, demonstrating how to jump two steps at once and how to convert a decimal kilogram measurement into mixed kg and g units" />',
+        '<VideoPlaceholder label="Kort video wat die volle omskakelingsketting vir massa van ton na kilogram na gram na milligram wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale kilogrammeting na gemengde kg- en g-eenhede om te skakel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -237,7 +237,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to scale a recipe up using a scale factor, followed by an example comparing the price per kilogram of two different package sizes to find the better value" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn resep op te skaal met ʼn skaalfaktor, gevolg deur ʼn voorbeeld wat die prys per kilogram van twee verskillende pakgroottes vergelyk om die beter waarde te vind" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -286,7 +286,7 @@ export const topicData: TopicData = {
           question: 'ʼn Geskenkmandjie bevat ʼn 900 g-boks tee, ʼn 1,1 kg-fles konfyt, en ʼn 600 g-sak koffie. Vind die totale massa, in kg.',
           answer: '2,6 kg',
           checkMode: 'auto',
-          correctAnswer: '2.6',
+          correctAnswer: '2,6',
           correctAnswers: ['2.6', '2,6', '2.6kg', '2,6kg'],
           explanation: '900 g = 0,9 kg, 600 g = 0,6 kg.\n0,9 + 1,1 + 0,6 = 2,6 kg ✓',
         },
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-step real-world mass word problem, converting between units before adding, subtracting, multiplying or dividing to reach the final answer" />',
+        '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor massa uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar opgetel, afgetrek, vermenigvuldig of gedeel word om die finale antwoord te kry" />',
     },
   ],
 

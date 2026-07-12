@@ -73,7 +73,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between theoretical probability and relative frequency, showing how relative frequency approaches theoretical probability as trials increase" />',
+        '<VideoPlaceholder label="Kort video wat die verskil tussen teoretiese waarskynlikheid en relatiewe frekwensie verduidelik, en wys hoe relatiewe frekwensie na teoretiese waarskynlikheid neig namate proewe toeneem" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -128,10 +128,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Venn diagram with two overlapping circles labelled Maths and Science, showing 10 in Maths only, 7 in Science only, 8 in the overlap, and 5 outside both circles" />',
+        '<DiagramPlaceholder label="Venn-diagram met twee oorvleuelende sirkels gemerk Wiskunde en Wetenskap, wat 10 slegs in Wiskunde, 7 slegs in Wetenskap, 8 in die oorvleueling, en 5 buite albei sirkels wys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw and use a Venn diagram to find probabilities of compound events including intersection, union, and complement" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn Venn-diagram te teken en te gebruik om waarskynlikhede van saamgestelde gebeurtenisse te vind, insluitend deursnit, unie en komplement" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -196,10 +196,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two non-overlapping regions labelled event A (blue) and not A (orange) within a sample space rectangle, with P(A) + P(not A) = 1 highlighted in green" />',
+        '<DiagramPlaceholder label="Diagram wat twee nie-oorvleuelende streke wys, gemerk gebeurtenis A (blou) en nie-A (oranje), binne ʼn steekproefruimte-reghoek, met P(A) + P(nie-A) = 1 uitgelig in groen" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining mutually exclusive and complementary events with dice and everyday examples, and showing how to use the complementary rule" />',
+        '<VideoPlaceholder label="Kort video wat wedersyds uitsluitende en komplementêre gebeurtenisse verduidelik met dobbelsteen- en alledaagse voorbeelde, en wys hoe om die komplementêre reël te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -262,10 +262,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Three-circle Venn diagram for drugs A, B, and C study showing all intersection regions labelled with their values, demonstrating the general addition rule for three events" />',
+        '<DiagramPlaceholder label="Drie-sirkel-Venn-diagram vir ʼn studie oor geneesmiddels A, B en C wat al die deursnitstreke met hul waardes gemerk wys, wat die algemene optellingsreël vir drie gebeurtenisse demonstreer" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video deriving and applying the general addition rule for probability, with examples involving two events and a three-circle Venn diagram" />',
+        '<VideoPlaceholder label="Kort video wat die algemene optellingsreël vir waarskynlikheid aflei en toepas, met voorbeelde wat twee gebeurtenisse en ʼn drie-sirkel-Venn-diagram behels" />',
     },
   ],
 
@@ -335,7 +335,7 @@ export const topicData: TopicData = {
       question: "Is 'om ʼn hartkaart te trek' en 'om ʼn skopkaart te trek' uit ʼn pak kaarte wedersyds uitsluitend?",
       answer: 'Ja',
       checkMode: 'auto',
-      correctAnswer: 'yes',
+      correctAnswer: 'ja',
       correctAnswers: ['yes', 'Yes', 'YES', 'ja', 'Ja', 'JA'],
       explanation: 'ʼn Kaart kan nie terselfdertyd ʼn hart en ʼn skop wees nie — dit is verskillende sportsoorte sonder oorvleueling, dus is die gebeurtenisse wedersyds uitsluitend. ✓',
     },
@@ -354,7 +354,7 @@ export const topicData: TopicData = {
       question: 'As W(reën) = 0,35, vind W(geen reën nie).',
       answer: '0,65',
       checkMode: 'auto',
-      correctAnswer: '0.65',
+      correctAnswer: '0,65',
       correctAnswers: ['0.65', '0,65'],
       explanation: 'Met die komplementêre reël: W(geen reën nie) = 1 − W(reën) = 1 − 0,35 = 0,65 ✓',
     },
@@ -373,7 +373,7 @@ export const topicData: TopicData = {
       question: 'W(A) = 0,4, W(B) = 0,3, W(A en B) = 0,1. Vind W(A of B).',
       answer: '0,6',
       checkMode: 'auto',
-      correctAnswer: '0.6',
+      correctAnswer: '0,6',
       correctAnswers: ['0.6', '0,6'],
       explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,4 + 0,3 − 0,1 = 0,6 ✓',
     },
@@ -400,7 +400,7 @@ export const topicData: TopicData = {
       question: 'In ʼn groep is W(hou van sokker) = 0,55, W(hou van rugby) = 0,4, W(hou van albei) = 0,2. Vind W(hou van sokker of rugby).',
       answer: '0,75',
       checkMode: 'auto',
-      correctAnswer: '0.75',
+      correctAnswer: '0,75',
       correctAnswers: ['0.75', '0,75'],
       explanation: 'W(sokker of rugby) = W(sokker) + W(rugby) − W(albei) = 0,55 + 0,4 − 0,2 = 0,75 ✓',
     },
@@ -483,17 +483,17 @@ export const topicData: TopicData = {
         // Block 3 — Wedersyds uitsluitende gebeurtenisse (Medium)
         { difficulty: 'Medium', question: "Is 'om ʼn ruitkaart te trek' en 'om ʼn klawerkaart te trek' uit ʼn standaardpak kaarte wedersyds uitsluitend? Verduidelik.", answer: 'Ja — ʼn kaart kan nie terselfdertyd ʼn ruit en ʼn klawer wees nie, aangesien dit verskillende sportsoorte sonder oorvleueling is, dus is die gebeurtenisse wedersyds uitsluitend.', checkMode: 'self' },
         { difficulty: 'Medium', question: "Thabo sê 'om ʼn veelvoud van 3 te gooi' en 'om ʼn ewe getal te gooi' met ʼn dobbelsteen is wedersyds uitsluitend. Is hy korrek? Verduidelik.", answer: 'Nee — die getal 6 is beide ʼn veelvoud van 3 én ʼn ewe getal, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie wedersyds uitsluitend nie.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Sak bevat gekleurde knoppies. W(trek rooi) = 0,3 en W(trek blou) = 0,45, en om rooi te trek en om blou te trek is wedersyds uitsluitende gebeurtenisse. Vind W(trek rooi of blou).', checkMode: 'auto', correctAnswer: '0.75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is W(A en B) = 0, dus W(rooi of blou) = W(rooi) + W(blou) = 0,3 + 0,45 = 0,75.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Sak bevat gekleurde knoppies. W(trek rooi) = 0,3 en W(trek blou) = 0,45, en om rooi te trek en om blou te trek is wedersyds uitsluitende gebeurtenisse. Vind W(trek rooi of blou).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is W(A en B) = 0, dus W(rooi of blou) = W(rooi) + W(blou) = 0,3 + 0,45 = 0,75.' },
 
         // Block 4 — Komplementêre gebeurtenisse (Medium)
-        { difficulty: 'Medium', question: 'W(ʼn aflewering kom laat aan) = 0,24. Vind W(die aflewering kom nie laat aan nie).', checkMode: 'auto', correctAnswer: '0.76', correctAnswers: ['0.76', '0,76'], answer: '0,76', explanation: 'Met die komplementêre reël: W(nie laat nie) = 1 − W(laat) = 1 − 0,24 = 0,76.' },
+        { difficulty: 'Medium', question: 'W(ʼn aflewering kom laat aan) = 0,24. Vind W(die aflewering kom nie laat aan nie).', checkMode: 'auto', correctAnswer: '0,76', correctAnswers: ['0.76', '0,76'], answer: '0,76', explanation: 'Met die komplementêre reël: W(nie laat nie) = 1 − W(laat) = 1 − 0,24 = 0,76.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 16 albasters, waarvan 6 groen is. Een albaster word lukraak getrek. Vind W(nie groen nie).', checkMode: 'auto', correctAnswer: '5/8', correctAnswers: ['5/8', '10/16'], answer: '5/8', explanation: 'W(groen) = 6/16 = 3/8. W(nie groen nie) = 1 − 3/8 = 5/8.' },
         { difficulty: 'Medium-Hard', question: "Lindiwe sê komplementêre gebeurtenisse en wedersyds uitsluitende gebeurtenisse beteken presies dieselfde ding. Is sy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — wedersyds uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (W(A en B) = 0). Komplementêre gebeurtenisse moet wedersyds uitsluitend wees EN moet saam die hele steekproefruimte dek (W(A) + W(B) = 1). Elke komplementêre paar is wedersyds uitsluitend, maar nie elke wedersyds uitsluitende paar is komplementêr nie.', checkMode: 'self' },
 
         // Block 5 — Algemene optellingsreël (Medium-Hard)
-        { difficulty: 'Medium-Hard', question: 'W(A) = 0,5, W(B) = 0,35, en W(A en B) = 0,15. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0.7', correctAnswers: ['0.7', '0,7'], answer: '0,7', explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,5 + 0,35 − 0,15 = 0,7.' },
-        { difficulty: 'Medium-Hard', question: 'W(A) = 0,4, W(B) = 0,45, en A en B is wedersyds uitsluitend. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0.85', correctAnswers: ['0.85', '0,85'], answer: '0,85', explanation: 'Aangesien hulle wedersyds uitsluitend is, is W(A en B) = 0. W(A of B) = 0,4 + 0,45 − 0 = 0,85.' },
-        { difficulty: 'Hard', question: 'In ʼn groep leerders is W(speel skaak) = 0,6, W(speel dambord) = 0,5, en W(speel albei) = 0,25. Vind W(speel skaak of dambord).', checkMode: 'auto', correctAnswer: '0.85', correctAnswers: ['0.85', '0,85'], answer: '0,85', explanation: 'W(skaak of dambord) = W(skaak) + W(dambord) − W(albei) = 0,6 + 0,5 − 0,25 = 0,85.' },
+        { difficulty: 'Medium-Hard', question: 'W(A) = 0,5, W(B) = 0,35, en W(A en B) = 0,15. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0,7', correctAnswers: ['0.7', '0,7'], answer: '0,7', explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,5 + 0,35 − 0,15 = 0,7.' },
+        { difficulty: 'Medium-Hard', question: 'W(A) = 0,4, W(B) = 0,45, en A en B is wedersyds uitsluitend. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0,85', correctAnswers: ['0.85', '0,85'], answer: '0,85', explanation: 'Aangesien hulle wedersyds uitsluitend is, is W(A en B) = 0. W(A of B) = 0,4 + 0,45 − 0 = 0,85.' },
+        { difficulty: 'Hard', question: 'In ʼn groep leerders is W(speel skaak) = 0,6, W(speel dambord) = 0,5, en W(speel albei) = 0,25. Vind W(speel skaak of dambord).', checkMode: 'auto', correctAnswer: '0,85', correctAnswers: ['0.85', '0,85'], answer: '0,85', explanation: 'W(skaak of dambord) = W(skaak) + W(dambord) − W(albei) = 0,6 + 0,5 − 0,25 = 0,85.' },
         { difficulty: 'Hard', question: 'Sipho bereken W(A) = 0,65, W(B) = 0,55, W(A en B) = 0,4, en kry W(A of B) = 1,2. Verduidelik waarom hierdie resultaat verkeerd moet wees en vind die korrekte waarde.', answer: 'ʼn Waarskynlikheid kan nooit 1 oorskry nie, aangesien dit ʼn verhouding van die hele steekproefruimte verteenwoordig. Sy fout was waarskynlik dat hy vergeet het om die oorvleueling af te trek, of verkeerd opgetel het. Die korrekte waarde is W(A of B) = 0,65 + 0,55 − 0,4 = 0,8, wat geldig is aangesien dit tussen 0 en 1 lê.', checkMode: 'self' },
 
         // Block 6 — Gekombineerde meerstap-waarskynlikheid (Hard)
@@ -529,17 +529,17 @@ export const topicData: TopicData = {
         // Block 3 — Wedersyds uitsluitende gebeurtenisse (Medium)
         { difficulty: 'Medium', question: "Is 'om ʼn Heer te trek' en 'om ʼn Vrou te trek' uit ʼn standaardpak kaarte wedersyds uitsluitend? Verduidelik.", answer: 'Ja — ʼn kaart kan nie terselfdertyd ʼn Heer en ʼn Vrou wees nie, aangesien dit verskillende range sonder oorvleueling is, dus is die gebeurtenisse wedersyds uitsluitend.', checkMode: 'self' },
         { difficulty: 'Medium', question: "Naledi sê 'om ʼn getal kleiner as 5 te gooi' en 'om ʼn getal groter as 3 te gooi' met ʼn dobbelsteen is wedersyds uitsluitend. Is sy korrek? Verduidelik.", answer: 'Nee — die getal 4 is beide kleiner as 5 én groter as 3, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie wedersyds uitsluitend nie.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Wentelwiel land op gekleurde afdelings. W(land op geel) = 0,35 en W(land op groen) = 0,4, en om op geel te land en om op groen te land is wedersyds uitsluitende gebeurtenisse. Vind W(land op geel of groen).', checkMode: 'auto', correctAnswer: '0.75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is W(A en B) = 0, dus W(geel of groen) = W(geel) + W(groen) = 0,35 + 0,4 = 0,75.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Wentelwiel land op gekleurde afdelings. W(land op geel) = 0,35 en W(land op groen) = 0,4, en om op geel te land en om op groen te land is wedersyds uitsluitende gebeurtenisse. Vind W(land op geel of groen).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is W(A en B) = 0, dus W(geel of groen) = W(geel) + W(groen) = 0,35 + 0,4 = 0,75.' },
 
         // Block 4 — Komplementêre gebeurtenisse (Medium)
-        { difficulty: 'Medium', question: 'W(ʼn vlug vertrek betyds) = 0,42. Vind W(die vlug vertrek nie betyds nie).', checkMode: 'auto', correctAnswer: '0.58', correctAnswers: ['0.58', '0,58'], answer: '0,58', explanation: 'Met die komplementêre reël: W(nie betyds nie) = 1 − W(betyds) = 1 − 0,42 = 0,58.' },
+        { difficulty: 'Medium', question: 'W(ʼn vlug vertrek betyds) = 0,42. Vind W(die vlug vertrek nie betyds nie).', checkMode: 'auto', correctAnswer: '0,58', correctAnswers: ['0.58', '0,58'], answer: '0,58', explanation: 'Met die komplementêre reël: W(nie betyds nie) = 1 − W(betyds) = 1 − 0,42 = 0,58.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 18 albasters, waarvan 7 geel is. Een albaster word lukraak getrek. Vind W(nie geel nie).', checkMode: 'auto', correctAnswer: '11/18', answer: '11/18', explanation: 'W(geel) = 7/18. W(nie geel nie) = 1 − 7/18 = 11/18.' },
         { difficulty: 'Medium-Hard', question: "Kagiso sê komplementêre gebeurtenisse en wedersyds uitsluitende gebeurtenisse beteken presies dieselfde ding. Is hy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — wedersyds uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (W(A en B) = 0). Komplementêre gebeurtenisse moet wedersyds uitsluitend wees EN moet saam die hele steekproefruimte dek (W(A) + W(B) = 1). Elke komplementêre paar is wedersyds uitsluitend, maar nie elke wedersyds uitsluitende paar is komplementêr nie.', checkMode: 'self' },
 
         // Block 5 — Algemene optellingsreël (Medium-Hard)
-        { difficulty: 'Medium-Hard', question: 'W(A) = 0,45, W(B) = 0,3, en W(A en B) = 0,1. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0.65', correctAnswers: ['0.65', '0,65'], answer: '0,65', explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,45 + 0,3 − 0,1 = 0,65.' },
-        { difficulty: 'Medium-Hard', question: 'W(A) = 0,35, W(B) = 0,55, en A en B is wedersyds uitsluitend. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0.9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle wedersyds uitsluitend is, is W(A en B) = 0. W(A of B) = 0,35 + 0,55 − 0 = 0,9.' },
-        { difficulty: 'Hard', question: 'In ʼn groep leerders is W(speel hokkie) = 0,7, W(speel tennis) = 0,4, en W(speel albei) = 0,3. Vind W(speel hokkie of tennis).', checkMode: 'auto', correctAnswer: '0.8', correctAnswers: ['0.8', '0,8'], answer: '0,8', explanation: 'W(hokkie of tennis) = W(hokkie) + W(tennis) − W(albei) = 0,7 + 0,4 − 0,3 = 0,8.' },
+        { difficulty: 'Medium-Hard', question: 'W(A) = 0,45, W(B) = 0,3, en W(A en B) = 0,1. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0,65', correctAnswers: ['0.65', '0,65'], answer: '0,65', explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,45 + 0,3 − 0,1 = 0,65.' },
+        { difficulty: 'Medium-Hard', question: 'W(A) = 0,35, W(B) = 0,55, en A en B is wedersyds uitsluitend. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle wedersyds uitsluitend is, is W(A en B) = 0. W(A of B) = 0,35 + 0,55 − 0 = 0,9.' },
+        { difficulty: 'Hard', question: 'In ʼn groep leerders is W(speel hokkie) = 0,7, W(speel tennis) = 0,4, en W(speel albei) = 0,3. Vind W(speel hokkie of tennis).', checkMode: 'auto', correctAnswer: '0,8', correctAnswers: ['0.8', '0,8'], answer: '0,8', explanation: 'W(hokkie of tennis) = W(hokkie) + W(tennis) − W(albei) = 0,7 + 0,4 − 0,3 = 0,8.' },
         { difficulty: 'Hard', question: 'Lerato bereken W(A) = 0,55, W(B) = 0,5, W(A en B) = 0,3, en kry W(A of B) = 1,05. Verduidelik waarom hierdie resultaat verkeerd moet wees en vind die korrekte waarde.', answer: 'ʼn Waarskynlikheid kan nooit 1 oorskry nie, aangesien dit ʼn verhouding van die hele steekproefruimte verteenwoordig. Haar fout was waarskynlik dat sy vergeet het om die oorvleueling af te trek, of verkeerd opgetel het. Die korrekte waarde is W(A of B) = 0,55 + 0,5 − 0,3 = 0,75, wat geldig is aangesien dit tussen 0 en 1 lê.', checkMode: 'self' },
 
         // Block 6 — Gekombineerde meerstap-waarskynlikheid (Hard)
@@ -575,17 +575,17 @@ export const topicData: TopicData = {
         // Block 3 — Wedersyds uitsluitende gebeurtenisse (Medium)
         { difficulty: 'Medium', question: "Is 'om ʼn 1 te gooi' en 'om ʼn 6 te gooi' met ʼn enkele dobbelsteengooi wedersyds uitsluitend? Verduidelik.", answer: 'Ja — ʼn enkele dobbelsteengooi kan slegs een getal op ʼn keer wys, dus kan om ʼn 1 en om ʼn 6 te kry nie saam gebeur nie, wat beteken die gebeurtenisse is wedersyds uitsluitend.', checkMode: 'self' },
         { difficulty: 'Medium', question: "Sipho sê 'om ʼn rooi kaart te trek' en 'om ʼn prentkaart (Boer, Vrou, Heer) te trek' uit ʼn pak is wedersyds uitsluitend. Is hy korrek? Verduidelik.", answer: 'Nee — ʼn rooi prentkaart (soos die Vrou van Harte) is beide rooi ÉN ʼn prentkaart, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie wedersyds uitsluitend nie.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Opnamekategorie word aan elke kliënt toegeken. W(verkies aanlyn inkopies) = 0,4 en W(verkies in-winkel inkopies) = 0,5, en hierdie is wedersyds uitsluitende gebeurtenisse. Vind W(verkies aanlyn of in-winkel inkopies).', checkMode: 'auto', correctAnswer: '0.9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is W(A en B) = 0, dus W(aanlyn of in-winkel) = W(aanlyn) + W(in-winkel) = 0,4 + 0,5 = 0,9.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Opnamekategorie word aan elke kliënt toegeken. W(verkies aanlyn inkopies) = 0,4 en W(verkies in-winkel inkopies) = 0,5, en hierdie is wedersyds uitsluitende gebeurtenisse. Vind W(verkies aanlyn of in-winkel inkopies).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is W(A en B) = 0, dus W(aanlyn of in-winkel) = W(aanlyn) + W(in-winkel) = 0,4 + 0,5 = 0,9.' },
 
         // Block 4 — Komplementêre gebeurtenisse (Medium)
-        { difficulty: 'Medium', question: 'W(ʼn drukker vashaak tydens ʼn drukwerk) = 0,18. Vind W(die drukker haak nie vas nie).', checkMode: 'auto', correctAnswer: '0.82', correctAnswers: ['0.82', '0,82'], answer: '0,82', explanation: 'Met die komplementêre reël: W(nie vashaak nie) = 1 − W(vashaak) = 1 − 0,18 = 0,82.' },
+        { difficulty: 'Medium', question: 'W(ʼn drukker vashaak tydens ʼn drukwerk) = 0,18. Vind W(die drukker haak nie vas nie).', checkMode: 'auto', correctAnswer: '0,82', correctAnswers: ['0.82', '0,82'], answer: '0,82', explanation: 'Met die komplementêre reël: W(nie vashaak nie) = 1 − W(vashaak) = 1 − 0,18 = 0,82.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 20 albasters, waarvan 9 pers is. Een albaster word lukraak getrek. Vind W(nie pers nie).', checkMode: 'auto', correctAnswer: '11/20', answer: '11/20', explanation: 'W(pers) = 9/20. W(nie pers nie) = 1 − 9/20 = 11/20.' },
         { difficulty: 'Medium-Hard', question: "Thabo sê komplementêre gebeurtenisse en wedersyds uitsluitende gebeurtenisse beteken presies dieselfde ding. Is hy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — wedersyds uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (W(A en B) = 0). Komplementêre gebeurtenisse moet wedersyds uitsluitend wees EN moet saam die hele steekproefruimte dek (W(A) + W(B) = 1). Elke komplementêre paar is wedersyds uitsluitend, maar nie elke wedersyds uitsluitende paar is komplementêr nie.', checkMode: 'self' },
 
         // Block 5 — Algemene optellingsreël (Medium-Hard)
-        { difficulty: 'Medium-Hard', question: 'W(A) = 0,55, W(B) = 0,3, en W(A en B) = 0,2. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0.65', correctAnswers: ['0.65', '0,65'], answer: '0,65', explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,55 + 0,3 − 0,2 = 0,65.' },
-        { difficulty: 'Medium-Hard', question: 'W(A) = 0,3, W(B) = 0,6, en A en B is wedersyds uitsluitend. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0.9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle wedersyds uitsluitend is, is W(A en B) = 0. W(A of B) = 0,3 + 0,6 − 0 = 0,9.' },
-        { difficulty: 'Hard', question: 'In ʼn groep leerders is W(speel basketbal) = 0,65, W(speel netbal-volleybal) = 0,45, en W(speel albei) = 0,35. Vind W(speel basketbal of volleybal).', checkMode: 'auto', correctAnswer: '0.75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'W(basketbal of volleybal) = W(basketbal) + W(volleybal) − W(albei) = 0,65 + 0,45 − 0,35 = 0,75.' },
+        { difficulty: 'Medium-Hard', question: 'W(A) = 0,55, W(B) = 0,3, en W(A en B) = 0,2. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0,65', correctAnswers: ['0.65', '0,65'], answer: '0,65', explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,55 + 0,3 − 0,2 = 0,65.' },
+        { difficulty: 'Medium-Hard', question: 'W(A) = 0,3, W(B) = 0,6, en A en B is wedersyds uitsluitend. Vind W(A of B).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle wedersyds uitsluitend is, is W(A en B) = 0. W(A of B) = 0,3 + 0,6 − 0 = 0,9.' },
+        { difficulty: 'Hard', question: 'In ʼn groep leerders is W(speel basketbal) = 0,65, W(speel netbal-volleybal) = 0,45, en W(speel albei) = 0,35. Vind W(speel basketbal of volleybal).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'W(basketbal of volleybal) = W(basketbal) + W(volleybal) − W(albei) = 0,65 + 0,45 − 0,35 = 0,75.' },
         { difficulty: 'Hard', question: 'Zanele bereken W(A) = 0,6, W(B) = 0,5, W(A en B) = 0,35, en kry W(A of B) = 1,1. Verduidelik waarom hierdie resultaat verkeerd moet wees en vind die korrekte waarde.', answer: 'ʼn Waarskynlikheid kan nooit 1 oorskry nie, aangesien dit ʼn verhouding van die hele steekproefruimte verteenwoordig. Haar fout was waarskynlik dat sy vergeet het om die oorvleueling af te trek, of verkeerd opgetel het. Die korrekte waarde is W(A of B) = 0,6 + 0,5 − 0,35 = 0,75, wat geldig is aangesien dit tussen 0 en 1 lê.', checkMode: 'self' },
 
         // Block 6 — Gekombineerde meerstap-waarskynlikheid (Hard)

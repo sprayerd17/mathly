@@ -113,10 +113,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining non-real numbers and how to identify equations with no real solutions using the discriminant" />',
+        '<VideoPlaceholder label="Kort video wat nie-reële getalle verduidelik en wys hoe om vergelykings met geen reële oplossings te identifiseer deur die diskriminant te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of the number system showing real numbers on the number line and indicating that non-real solutions fall outside it, with examples of equations producing each type" />',
+        '<DiagramPlaceholder label="Diagram van die getallestelsel wat reële getalle op die getallelyn wys en aandui dat nie-reële oplossings daarbuite val, met voorbeelde van vergelykings wat elke tipe lewer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -237,10 +237,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating rational exponents, the connection between fractional powers and roots, and applying exponent laws with fractional exponents" />',
+        '<VideoPlaceholder label="Kort video wat rasionale eksponente demonstreer, die verband tussen breukmagte en wortels, en die toepassing van eksponentwette met breukeksponente" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing the rational exponent x to the p over q equals the qth root of x to the p, with colour coded numerator power and denominator root index" />',
+        '<DiagramPlaceholder label="Visuele voorstelling wat wys hoe die rasionale eksponent x tot die mag p oor q gelyk is aan die q-de wortel van x tot die p, met kleurgekodeerde teller (mag) en noemer (wortelindeks)" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -380,10 +380,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to simplify surds and then add, subtract, multiply, and rationalise the denominator when dividing surds" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om wortelvorme te vereenvoudig en dan op te tel, af te trek, te vermenigvuldig, en die noemer te rasionaliseer wanneer wortelvorme gedeel word" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step by step diagram showing surd simplification into like surds for addition, multiplication under the root, and rationalising the denominator with colour coded steps" />',
+        '<DiagramPlaceholder label="Stap-vir-stap-diagram wat wortelvormvereenvoudiging na eendersoortige wortelvorme wys vir optelling, vermenigvuldiging onder die wortel, en rasionalisering van die noemer, met kleurgekodeerde stappe" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -482,13 +482,13 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Minimum lengte',
-              correctAnswer: '24.2',
+              correctAnswer: '24,2',
               correctAnswers: ['24.2', '24.2cm', '24.2 cm', '24,2', '24,2cm', '24,2 cm'],
               explanation: 'Minimum = 24,5 − 0,3 = 24,2 cm.',
             },
             {
               label: 'b) Maksimum lengte',
-              correctAnswer: '24.8',
+              correctAnswer: '24,8',
               correctAnswers: ['24.8', '24.8cm', '24.8 cm', '24,8', '24,8cm', '24,8 cm'],
               explanation: 'Maksimum = 24,5 + 0,3 = 24,8 cm.',
             },
@@ -505,10 +505,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining error margins, how to calculate minimum and maximum values from a measurement with a stated tolerance, and how to find the range of possible areas" />',
+        '<VideoPlaceholder label="Kort video wat foutmarges verduidelik, hoe om die minimum en maksimum waardes van ʼn meting met ʼn gegewe toleransie te bereken, en hoe om die interval van moontlike oppervlaktes te vind" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line diagram showing a measured value with error margin, minimum and maximum endpoints of the range colour coded, and a rectangle example with both dimensions labelled with tolerances" />',
+        '<DiagramPlaceholder label="Getallelyndiagram wat ʼn gemete waarde met foutmarge wys, met die minimum- en maksimum-eindpunte van die interval kleurgekodeer, en ʼn reghoekvoorbeeld met albei afmetings gemerk met toleransies" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -662,10 +662,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the nth term of a quadratic number pattern using first and second differences, then setting up and solving simultaneous equations for a, b and c" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die n-de term van ʼn kwadratiese getalpatroon te vind deur eerste en tweede verskille te gebruik, en dan gelyktydige vergelykings vir a, b en c op te stel en op te los" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a number pattern with first differences colour coded blue and second differences colour coded orange beneath, leading to the quadratic rule shown in green" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn getalpatroon wys met eerste verskille kleurgekodeer in blou en tweede verskille kleurgekodeer in oranje daaronder, wat lei tot die kwadratiese reël in groen" />',
     },
   ],
 

@@ -145,7 +145,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Long division layout showing 4 896 divided by 12 with each step colour coded — dividend in blue divisor in red quotient in green remainder in orange" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing step by step long division of a 4-digit number by a 2-digit number with colour coded steps" />',
+        '<VideoPlaceholder label="Kort video wat stap vir stap langdeling van ʼn 4-syfergetal deur ʼn 2-syfergetal wys, met kleurgekodeerde stappe" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -247,7 +247,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Three worked examples showing the same remainder expressed three ways — as a whole number remainder in orange, as a fraction in blue, and as a decimal in green" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide and express the remainder as a whole number remainder, as a fraction, and as a decimal with colour coded worked examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om te deel en die res uit te druk as ʼn heelgetal-res, as ʼn breuk, en as ʼn desimaal, met kleurgekodeerde uitgewerkte voorbeelde" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Three worked examples showing division by multiples of 10 and 100 — zeros removed highlighted in orange, division steps in blue, final answers in green" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the mental method for dividing by multiples of 10 and 100 by splitting the divisor into its non-zero digit and power of 10" />',
+        '<VideoPlaceholder label="Kort video wat die hoofrekene-metode wys vir deling deur veelvoude van 10 en 100 deur die deler in sy nie-nul-syfer en mag van 10 te verdeel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -448,7 +448,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Three word problem scenarios showing key words highlighted in orange, division working in blue, remainder decision in red, and final answer in green" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve division word problems by identifying key words, performing the division, and deciding what to do with the remainder" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om delingswoordprobleme op te los deur sleutelwoorde te identifiseer, die deling uit te voer, en te besluit wat om met die res te doen" />',
     },
   ],
 

@@ -153,10 +153,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute input values into an equation to find outputs, and how to solve an equation backwards to find the input when the output is given" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om intreewaardes in ʼn vergelyking te vervang om uittree te vind, en hoe om ʼn vergelyking agteruit op te los om die intree te vind wanneer die uittree gegee is" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Flow diagram showing an input x arrow passing through an equation rule box to produce output y, illustrating substitution in both directions" />',
+        '<DiagramPlaceholder label="Vloeidiagram wat ʼn intree-x-pyl wys wat deur ʼn vergelykingsreël-blokkie beweeg om uittree-y te produseer, wat vervanging in albei rigtings illustreer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -288,10 +288,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to move between verbal descriptions, tables, equations and straight-line graphs, reading gradient and y-intercept from each form" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tussen verbale beskrywings, tabelle, vergelykings en reguitlyngrafieke te beweeg, en gradiënt en y-afsnit uit elke vorm te lees" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a Cartesian plane showing the line y=3x+2, with the y-intercept at (0,2) clearly marked and the gradient illustrated with a rise/run triangle" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn Cartesiese vlak wat die lyn y=3x+2 wys, met die y-afsnit by (0,2) duidelik gemerk en die gradiënt geïllustreer met ʼn opgaan/aanloop-driehoek" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -441,10 +441,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute x-values into an equation to build a table of ordered pairs and then plot those points on a Cartesian plane" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van geordende pare te bou en dan daardie punte op ʼn Cartesiese vlak te plot" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a Cartesian plane with points (-1,7),(0,5),(1,3),(2,1) plotted and connected by a straight line" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn Cartesiese vlak met punte (-1,7),(0,5),(1,3),(2,1) geplot en verbind deur ʼn reguit lyn" />',
     },
   ],
 

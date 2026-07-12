@@ -282,7 +282,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'ʼn Trapesium het hoeke by die basis van 72° en 108°. Die twee nie-parallelle sye vorm hoeke bo-aan.\n\na) Waartoe tel die basishoeke op? Wat bevestig dit oor die basis?\nb) Bepaal die twee bo-hoeke as een bo-hoek 15° meer as die ander is.',
-          answer: 'a) 72°+108°=180° — bevestig dat die basissye parallel is (ko-binnehoeke)\nb) Laat die hoeke x en x+15° wees: 2x+15=180, x=82.5°, die bo-hoeke is 82.5° en 97.5°',
+          answer: 'a) 72°+108°=180° — bevestig dat die basissye parallel is (ko-binnehoeke)\nb) Laat die hoeke x en x+15° wees: 2x+15=180, x=82,5°, die bo-hoeke is 82,5° en 97,5°',
           checkMode: 'self',
         },
       ],
@@ -415,7 +415,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Sirkel het ʼn radius van 7 cm.\n\na) Skryf die deursnee neer.\nb) Die omtrek word bereken met O = π × deursnee. Gebruik π ≈ 3.14 en bereken die omtrek.\nc) ʼn Boog is die helfte van die omtrek. Wat is die lengte van hierdie boog?',
+          question: 'ʼn Sirkel het ʼn radius van 7 cm.\n\na) Skryf die deursnee neer.\nb) Die omtrek word bereken met O = π × deursnee. Gebruik π ≈ 3,14 en bereken die omtrek.\nc) ʼn Boog is die helfte van die omtrek. Wat is die lengte van hierdie boog?',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -425,14 +425,14 @@ export const topicData: TopicData = {
               explanation: 'Deursnee = 2 × 7 = 14 cm ✓',
             },
             {
-              label: 'b) Omtrek (gebruik π ≈ 3.14)',
-              correctAnswer: '43.96',
-              explanation: 'O = π × deursnee = 3.14 × 14 = 43.96 cm ✓',
+              label: 'b) Omtrek (gebruik π ≈ 3,14)',
+              correctAnswer: '43,96',
+              explanation: 'O = π × deursnee = 3,14 × 14 = 43,96 cm ✓',
             },
             {
               label: 'c) Lengte van die helfte van die omtrek (boog)',
-              correctAnswer: '21.98',
-              explanation: 'Helfte omtrek = 43.96 ÷ 2 = 21.98 cm ✓',
+              correctAnswer: '21,98',
+              explanation: 'Helfte omtrek = 43,96 ÷ 2 = 21,98 cm ✓',
             },
           ],
         },

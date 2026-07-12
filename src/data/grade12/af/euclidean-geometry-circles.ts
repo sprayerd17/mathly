@@ -171,7 +171,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a visual overview of all key circle terms labelled on a circle — radius, chord, tangent, arc, cyclic quadrilateral — and demonstrating the angle at centre equals twice the angle at circumference" />',
+        '<VideoPlaceholder label="Kort video wat \'n visuele oorsig gee van al die sleutel sirkelterme gemerk op \'n sirkel — radius, koord, raaklyn, boog, koordevierhoek — en wys dat die hoek by die middelpunt gelyk is aan twee keer die hoek by die omtrek" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -311,7 +311,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a chord with the perpendicular from the centre bisecting it — labelling the two equal half-chords and the right-angled triangle used for Pythagoras calculations" />',
+        '<VideoPlaceholder label="Kort video wat ʼn koord met die loodlyn vanaf die middelpunt wat dit halveer, wys — met die twee gelyke halfkoorde en die reghoekige driehoek wat vir Pythagoras-berekeninge gebruik word, gemerk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -467,7 +467,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing diagrams for all three angle theorems — angle at centre twice angle at circumference, equal angles in same segment, and angle in a semicircle — with each relevant angle highlighted in its colour" />',
+        '<VideoPlaceholder label="Kort video wat diagramme vir al drie hoekstellings wys — hoek by die middelpunt is twee keer die hoek by die omtrek, gelyke hoeke in dieselfde segment, en hoek in ʼn halfsirkel — met elke relevante hoek in sy kleur uitgelig" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -544,7 +544,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a labelled cyclic quadrilateral ABCD with opposite angle pairs highlighted in blue and orange, and an exterior angle highlighted in green, demonstrating both theorems" />',
+        '<VideoPlaceholder label="Kort video wat ʼn gemerkte koordevierhoek ABCD wys met teenoorstaande hoekpare in blou en oranje uitgelig, en ʼn buitehoek in groen uitgelig, wat albei stellings demonstreer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -637,7 +637,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a tangent touching a circle — labelling the tangent line in green, the radius at the contact point in blue, equal tangent segments from an external point, and the tangent-chord angle in orange with the matching alternate segment angle" />',
+        '<VideoPlaceholder label="Kort video wat ʼn raaklyn aan ʼn sirkel wys — met die raaklyn in groen, die radius by die raakpunt in blou, gelyke raaklynsegmente vanaf ʼn eksterne punt, en die raaklyn-koord hoek in oranje met die ooreenstemmende alternerende segmenthoek, gemerk" />',
     },
   ],
 
@@ -645,7 +645,7 @@ export const topicData: TopicData = {
     // ── Q1 Easy — angle at circumference (major arc) ─────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram om die hoek ACB te bepaal wat by C op die hoofboog onderspan word.\n\n[DIAGRAM: A circle with centre O and radius 10 cm. Points A, B, C and D lie on the circumference. Angle AOB = 140° at the centre. C is on the major arc. D is on the minor arc. M is the midpoint of chord AB with OM perpendicular to AB. Chord AB = 12 cm.]',
+      question: 'Gebruik die diagram om die hoek ACB te bepaal wat by C op die hoofboog onderspan word.\n\n[DIAGRAM: ʼn Sirkel met middelpunt O en radius 10 cm. Punte A, B, C en D lê op die omtrek. Hoek AOB = 140° by die middelpunt. C is op die hoofboog. D is op die kleinboog. M is die middelpunt van koord AB met OM loodreg op AB. Koord AB = 12 cm.]',
       answer: '70°',
       checkMode: 'auto',
       correctAnswer: '70',
@@ -688,7 +688,7 @@ export const topicData: TopicData = {
     // ── Q6 Easy — opposite angles of cyclic quadrilateral ────────────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram om hoek BCD te bepaal.\n\n[DIAGRAM: Cyclic quadrilateral ABCD inscribed in a circle. Angle DAB = 95°. Angle ABC = 80°. Side AB extended beyond B to point E forming exterior angle CBE.]',
+      question: 'Gebruik die diagram om hoek BCD te bepaal.\n\n[DIAGRAM: Koordevierhoek ABCD ingeskryf in ʼn sirkel. Hoek DAB = 95°. Hoek ABC = 80°. Sy AB verleng verby B na punt E wat buitehoek CBE vorm.]',
       answer: '85°',
       checkMode: 'auto',
       correctAnswer: '85',
@@ -726,7 +726,7 @@ export const topicData: TopicData = {
     // ── Q10 Easy — equal tangent segments ────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram om PB te bepaal as PA = 9 cm.\n\n[DIAGRAM: A circle with external point P. Tangents PA and PB are drawn from P touching the circle at A and B respectively. Chord AB is drawn. Angle APB = 50°. Point C is on the major arc AB.]',
+      question: 'Gebruik die diagram om PB te bepaal as PA = 9 cm.\n\n[DIAGRAM: ʼn Sirkel met eksterne punt P. Raaklyne PA en PB word vanaf P getrek en raak die sirkel onderskeidelik by A en B. Koord AB word getrek. Hoek APB = 50°. Punt C is op die hoofboog AB.]',
       answer: '9 cm',
       checkMode: 'auto',
       correctAnswer: '9',

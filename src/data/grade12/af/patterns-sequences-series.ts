@@ -91,7 +91,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining arithmetic sequences, the general term formula Tₙ = a + (n−1)d, and how to find any term using worked examples" />',
+        '<VideoPlaceholder label="Kort video wat rekenkundige rye, die algemene-term-formule Tₙ = a + (n−1)d, en hoe om enige term te vind met uitgewerkte voorbeelde verduidelik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -173,7 +173,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining geometric sequences, the general term formula Tₙ = a · rⁿ⁻¹, and how to find any term using worked examples" />',
+        '<VideoPlaceholder label="Kort video wat meetkundige rye, die algemene-term-formule Tₙ = a · rⁿ⁻¹, en hoe om enige term te vind met uitgewerkte voorbeelde verduidelik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining sigma notation, how to read and evaluate a sigma expression, and how to convert a written sum into sigma notation" />',
+        '<VideoPlaceholder label="Kort video wat sigmanotasie verduidelik, hoe om ʼn sigma-uitdrukking te lees en te evalueer, en hoe om ʼn geskrewe som na sigmanotasie om te skakel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -373,7 +373,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the sum of an arithmetic series using Sₙ = n/2[2a + (n−1)d] and Sₙ = n/2(a + l), with worked examples including finding n from the sum" />',
+        '<VideoPlaceholder label="Kort video wat die som van ʼn rekenkundige reeks verduidelik deur Sₙ = n/2[2a + (n−1)d] en Sₙ = n/2(a + l) te gebruik, met uitgewerkte voorbeelde insluitend hoe om n vanaf die som te vind" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -470,7 +470,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the sum of a geometric series using Sₙ = a(rⁿ−1)/(r−1) and the sum to infinity S∞ = a/(1−r), including the convergence condition and divergent series" />',
+        '<VideoPlaceholder label="Kort video wat die som van ʼn meetkundige reeks verduidelik deur Sₙ = a(rⁿ−1)/(r−1) en die som tot oneindig S∞ = a/(1−r) te gebruik, insluitend die konvergensievoorwaarde en divergente reekse" />',
     },
   ],
   topicPractice: [

@@ -322,7 +322,7 @@ export const topicData: TopicData = {
           question: 'ʼn R900-item word met 15% afgeslaan, en dan word BTW van 15% op die nuwe prys bygetel. Bereken die finale prys.',
           answer: 'R879,75',
           checkMode: 'auto',
-          correctAnswer: 'R879.75',
+          correctAnswer: 'R879,75',
           correctAnswers: ['R879.75', '879.75', 'R879,75'],
           explanation: 'Afslag: 900 × 0,15 = 135. Nuwe prys = 900 − 135 = 765.\nBTW: 765 × 0,15 = 114,75. Finale prys = 765 + 114,75 = R879,75 ✓',
         },

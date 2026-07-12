@@ -119,10 +119,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the algebraic rule for numeric patterns by calculating first and second differences and testing formulas" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die algebraïese reël vir numeriese patrone te vind deur eerste en tweede verskille te bereken en formules te toets" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a numeric pattern sequence with first differences (orange) and second differences highlighted, leading to an algebraic rule (green)" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn numeriese patroonry wys met eerste verskille (oranje) en tweede verskille uitgelig, wat lei tot ʼn algebraïese reël (groen)" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -232,10 +232,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to move between diagram, table and algebraic representations of the same pattern, with a worked example for pentagonal numbers" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tussen diagram-, tabel- en algebraïese voorstellings van dieselfde patroon te beweeg, met ʼn uitgewerkte voorbeeld vir vyfhoekgetalle" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a growing square dot pattern showing steps 1 through 4, with dots arranged to visually confirm n² for each step" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn groeiende vierkant-kolpatroon wat stappe 1 tot 4 wys, met kolle gerangskik om n² vir elke stap visueel te bevestig" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -345,10 +345,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to verify an algebraic rule by substitution and how to solve real-life pattern problems by identifying the rule and making predictions" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn algebraïese reël deur substitusie te verifieer en hoe om werklike-lewe patroonprobleme op te los deur die reël te identifiseer en voorspellings te maak" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the stacked chairs pattern for steps 1 through 4, with legs counted and the rule legs=3n+1 annotated" />',
+        '<DiagramPlaceholder label="Diagram wat die gestapelde-stoele-patroon vir stappe 1 tot 4 wys, met bene getel en die reël bene=3n+1 aangedui" />',
     },
   ],
 

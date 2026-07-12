@@ -175,7 +175,7 @@ export const topicData: TopicData = {
           steps: [
             `Los die verwante vergelyking op: x² − 5x + 6 = 0. Faktoriseer: (x − 2)(x − 3) = 0.<br>${bl('Kritieke waardes:')} x = ${bl('2')} of x = ${bl('3')}`,
             `Die kritieke waardes verdeel die getallelyn in drie intervalle: x &lt; 2, &nbsp;2 &lt; x &lt; 3, &nbsp;x &gt; 3.`,
-            `${or('Toets elke interval:')}<br>• x &lt; 2: toets x = 0 → (0)² − 5(0) + 6 = 6 &gt; 0 &nbsp;${or('positief ✓')}<br>• 2 &lt; x &lt; 3: toets x = 2.5 → (2.5)² − 5(2.5) + 6 = −0.25 &lt; 0 &nbsp;${or('negatief')}<br>• x &gt; 3: toets x = 4 → (4)² − 5(4) + 6 = 2 &gt; 0 &nbsp;${or('positief ✓')}`,
+            `${or('Toets elke interval:')}<br>• x &lt; 2: toets x = 0 → (0)² − 5(0) + 6 = 6 &gt; 0 &nbsp;${or('positief ✓')}<br>• 2 &lt; x &lt; 3: toets x = 2,5 → (2,5)² − 5(2,5) + 6 = −0,25 &lt; 0 &nbsp;${or('negatief')}<br>• x &gt; 3: toets x = 4 → (4)² − 5(4) + 6 = 2 &gt; 0 &nbsp;${or('positief ✓')}`,
             `Ons benodig die uitdrukking &gt; 0. Die ongelykheid is streng, dus word die eindpunte x = 2 en x = 3 uitgesluit.<br><strong>Oplossing:</strong> ${gr('x < 2 of x > 3')}`,
           ],
         },
@@ -444,10 +444,10 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Los gelyktydig op: y = 3x − 4 en y = 2x² − 6x − 9, en vind albei snypunte.',
-      answer: 'x = 5, y = 11  of  x = −½, y = −5.5',
+      answer: 'x = 5, y = 11  of  x = −½, y = −5,5',
       checkMode: 'auto',
       correctAnswers: ['x=5 or x=-1/2', 'x = 5 or x = -1/2', 'x=5 or x=-0.5', '(5,11) and (-0.5,-5.5)', '(5,11) and (-1/2,-5.5)'],
-      explanation: 'Vervang y = 3x − 4 in y = 2x² − 6x − 9:\n3x − 4 = 2x² − 6x − 9\n2x² − 9x − 5 = 0 → (2x + 1)(x − 5) = 0\nx = 5 of x = −½\nOoreenstemmende y-waardes: y = 11 of y = −5.5.',
+      explanation: 'Vervang y = 3x − 4 in y = 2x² − 6x − 9:\n3x − 4 = 2x² − 6x − 9\n2x² − 9x − 5 = 0 → (2x + 1)(x − 5) = 0\nx = 5 of x = −½\nOoreenstemmende y-waardes: y = 11 of y = −5,5.',
     },
 
     // ── Q18 Hard — nature of inequality solutions ────────────────────────────
@@ -470,7 +470,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'ʼn Reghoekige tuin het lengte (x + 4) en breedte (x − 2), met ʼn oppervlakte groter as 35 m². Vind die moontlike reeks x-waardes, gegewe dat x > 2 sodat die afmetings sinvol is.',
-      answer: '(x + 4)(x − 2) > 35\nx² + 2x − 8 > 35\nx² + 2x − 43 > 0\nDeur die kwadratiese formule te gebruik: x = (−2 ± √(4 + 172)) / 2 = (−2 ± √176) / 2 = −1 ± √44.\nKritieke waardes: x ≈ −7.63 of x ≈ 5.63.\nAangesien x > 2, is die oplossing x > −1 + √44 (ongeveer x > 5.63).',
+      answer: '(x + 4)(x − 2) > 35\nx² + 2x − 8 > 35\nx² + 2x − 43 > 0\nDeur die kwadratiese formule te gebruik: x = (−2 ± √(4 + 172)) / 2 = (−2 ± √176) / 2 = −1 ± √44.\nKritieke waardes: x ≈ −7,63 of x ≈ 5,63.\nAangesien x > 2, is die oplossing x > −1 + √44 (ongeveer x > 5,63).',
       checkMode: 'self',
     },
   ],

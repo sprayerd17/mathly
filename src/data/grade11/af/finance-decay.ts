@@ -139,7 +139,7 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Jaarlikse waardeverminderingskoers (%)',
-              correctAnswer: '8.33',
+              correctAnswer: '8,33',
               correctAnswers: ['8.33%', '8.33', '8.3%', '8.3'],
               explanation: 'i = 8 000 / 96 000 = 0,0833 = 8,33% p.j. ✓',
             },
@@ -159,9 +159,9 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the straight-line depreciation formula A = P(1 − ni) applied step by step with colour-coded variables" />',
+        '<VideoPlaceholder label="Kort video wat die reguitlyn-waardeverminderingsformule A = P(1 − ni) stap vir stap toepas, met kleurgekodeerde veranderlikes" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a straight downward-sloping line graph of value (y-axis) against time in years (x-axis), showing equal vertical drops between each year mark" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn reguit afwaarts-hellende lyngrafiek van waarde (y-as) teenoor tyd in jare (x-as), wat gelyke vertikale dalings tussen elke jaarmerk wys" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -277,7 +277,7 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) ʼn Rekenaar verminder in waarde van R25 000 tot R6 250 in 4 jaar volgens die verminderende-balans-metode. Vind i (as ʼn persentasie).',
-              correctAnswer: '29.29',
+              correctAnswer: '29,29',
               correctAnswers: ['29.29%', '29.29', '29.3%', '29.3'],
               explanation: 'P = 25 000, A = 6 250, n = 4\n6 250 = 25 000(1 − i)⁴\n0,25 = (1 − i)⁴\n1 − i = ⁴√0,25 = 0,7071 → i = 0,2929 = 29,29% p.j. ✓',
             },
@@ -305,9 +305,9 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the reducing-balance depreciation formula A = P(1 − i)^n applied step by step, including a logarithm example to find n" />',
+        '<VideoPlaceholder label="Kort video wat die verminderende-balans-waardeverminderingsformule A = P(1 − i)^n stap vir stap toepas, insluitend ʼn logaritme-voorbeeld om n te vind" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a curved downward-sloping graph of value against time, steep at first and flattening out, shown alongside the straight-line graph from Section 1 for visual contrast" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn geboë afwaarts-hellende grafiek van waarde teenoor tyd, steil aan die begin en later platter, langs die reguitlyn-grafiek van Afdeling 1 vir visuele kontras" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -421,7 +421,7 @@ export const topicData: TopicData = {
               label: 'b) Verminderende-balans-waarde (R)',
               correctAnswer: '9830',
               correctAnswers: ['R9830', 'R9 830', '9830', '9 830', '9830.4', 'R9830.4', 'R9 830.40'],
-              explanation: 'A = 24 000(0,80)⁴ = 24 000 × 0,4096 = R9 830.40 ✓',
+              explanation: 'A = 24 000(0,80)⁴ = 24 000 × 0,4096 = R9 830,40 ✓',
             },
             {
               label: 'c) Verskil tussen die twee waardes (R)',
@@ -439,7 +439,7 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Jare met reguitlyn (10% p.j.)',
-              correctAnswer: '7.5',
+              correctAnswer: '7,5',
               correctAnswers: ['7.5', '7.5 jaar', '7½'],
               explanation: '50 000 = 200 000(1 − n × 0,10)\n0,25 = 1 − 0,10n → 0,10n = 0,75 → n = 7,5 jaar ✓',
             },
@@ -459,9 +459,9 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing straight-line and reducing-balance depreciation side by side with the same asset, rate, and time period" />',
+        '<VideoPlaceholder label="Kort video wat reguitlyn- en verminderende-balans-waardevermindering langs mekaar vergelyk vir dieselfde bate, koers, en tydperk" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: both the straight-line and reducing-balance graphs plotted on the same set of axes for the same starting value, with the point where the reducing-balance curve sits above the straight line clearly marked" />',
+        '<DiagramPlaceholder label="Diagram benodig: albei die reguitlyn- en verminderende-balans-grafieke geteken op dieselfde stel asse vir dieselfde beginwaarde, met die punt waar die verminderende-balans-kromme bo die reguit lyn lê duidelik gemerk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -551,7 +551,7 @@ export const topicData: TopicData = {
           question: 'ʼn Bank bied 9% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (gee jou antwoord as ʼn persentasie tot 2 desimale plekke).',
           answer: '9,38%',
           checkMode: 'auto',
-          correctAnswer: '9.38',
+          correctAnswer: '9,38',
           correctAnswers: ['9.38%', '9.38', '9.4%', '9.4'],
           explanation: 'i_nom = 0,09, m = 12\ni_eff = (1 + 0,09/12)^12 − 1 = (1,0075)^12 − 1 = 1,09381 − 1 = 9,38% ✓',
         },
@@ -563,13 +563,13 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) ʼn Spaarrekening betaal 18% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (%).',
-              correctAnswer: '19.25',
+              correctAnswer: '19,25',
               correctAnswers: ['19.25%', '19.25', '19.3%', '19.3'],
               explanation: 'i_eff = (1 + 0,18/4)^4 − 1 = (1,045)^4 − 1 = 1,19252 − 1 = 19,25% ✓',
             },
             {
               label: 'b) ʼn Effektiewe jaarlikse koers van 15% is ekwivalent aan watter nominale koers, maandeliks saamgestel (%)? Gee jou antwoord tot 2 desimale plekke.',
-              correctAnswer: '14.06',
+              correctAnswer: '14,06',
               correctAnswers: ['14.06%', '14.06', '14.1%', '14.1'],
               explanation: '0,15 = (1 + i_nom/12)^12 − 1\n1,15 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,15 = 1,01172\ni_nom = 12 × 0,01172 = 14,06% ✓',
             },
@@ -583,13 +583,13 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Bereken die effektiewe jaarlikse koers indien kwartaalliks saamgestel (%).',
-              correctAnswer: '12.55',
+              correctAnswer: '12,55',
               correctAnswers: ['12.55%', '12.55', '12.6%', '12.6'],
               explanation: 'i_eff = (1 + 0,12/4)^4 − 1 = (1,03)^4 − 1 = 1,12551 − 1 = 12,55% ✓',
             },
             {
               label: 'b) Bereken die effektiewe jaarlikse koers indien maandeliks saamgestel (%).',
-              correctAnswer: '12.68',
+              correctAnswer: '12,68',
               correctAnswers: ['12.68%', '12.68', '12.7%', '12.7'],
               explanation: 'i_eff = (1 + 0,12/12)^12 − 1 = (1,01)^12 − 1 = 1,12683 − 1 = 12,68% ✓',
             },
@@ -604,9 +604,9 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the nominal-to-effective rate formula applied step by step with monthly, quarterly and daily compounding examples" />',
+        '<VideoPlaceholder label="Kort video wat die nominale-na-effektiewe-koersformule stap vir stap toepas, met voorbeelde van maandelikse, kwartaallikse en daaglikse samestelling" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a simple comparison bar or line showing the same nominal rate compounded at different frequencies (annually, monthly, daily) converging toward a slightly higher effective rate, to illustrate that more frequent compounding increases the effective rate" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn eenvoudige vergelykende staaf- of lyngrafiek wat dieselfde nominale koers teen verskillende samestellingsfrekwensies (jaarliks, maandeliks, daagliks) wys wat na ʼn effens hoër effektiewe koers konvergeer, om te illustreer dat meer gereelde samestelling die effektiewe koers verhoog" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -723,9 +723,9 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-phase finance problem step by step, showing how to handle a rate change and a mid-period withdrawal" />',
+        '<VideoPlaceholder label="Kort video wat stap vir stap deur ʼn multi-fase-finansiëleprobleem werk, wat wys hoe om ʼn koersverandering en ʼn onttrekking halfpad deur die tydperk te hanteer" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a timeline showing the multi-stage scenario from Example 2, with markers at 18 months (rate change), 24 months (withdrawal), and 48 months (final value), so the sequence of events is visually clear" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn tydlyn wat die multi-fase-scenario van Voorbeeld 2 wys, met merkers by 18 maande (koersverandering), 24 maande (onttrekking), en 48 maande (finale waarde), sodat die volgorde van gebeure visueel duidelik is" />',
     },
   ],
 
@@ -751,15 +751,15 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Nominale → effektiewe koers-omskakeling (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'ʼn Bank bied ʼn nominale rentekoers van 12% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12.68', correctAnswers: ['12,68%', '12,68', '12.68%', '12.68', '12,7%', '12,7', '12.7%', '12.7'], answer: '12,68%', explanation: 'i_eff = (1 + 0,12/12)^12 − 1 = (1,01)^12 − 1 = 1,126825 − 1 = 12,68% ✓' },
-        { difficulty: 'Easy', question: 'ʼn Spaarrekening betaal 8% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '8.24', correctAnswers: ['8,24%', '8,24', '8.24%', '8.24', '8,2%', '8,2', '8.2%', '8.2'], answer: '8,24%', explanation: 'i_eff = (1 + 0,08/4)^4 − 1 = (1,02)^4 − 1 = 1,082432 − 1 = 8,24% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Lening dra ʼn nominale rentekoers van 15% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '16.08', correctAnswers: ['16,08%', '16,08', '16.08%', '16.08', '16,1%', '16,1', '16.1%', '16.1'], answer: '16,08%', explanation: 'i_eff = (1 + 0,15/12)^12 − 1 = (1,0125)^12 − 1 = 1,160755 − 1 = 16,08% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Kredietkaart hef 18% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '19.25', correctAnswers: ['19,25%', '19,25', '19.25%', '19.25', '19,3%', '19,3', '19.3%', '19.3'], answer: '19,25%', explanation: 'i_eff = (1 + 0,18/4)^4 − 1 = (1,045)^4 − 1 = 1,192519 − 1 = 19,25% ✓' },
+        { difficulty: 'Easy', question: 'ʼn Bank bied ʼn nominale rentekoers van 12% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12,68', correctAnswers: ['12,68%', '12,68', '12.68%', '12.68', '12,7%', '12,7', '12.7%', '12.7'], answer: '12,68%', explanation: 'i_eff = (1 + 0,12/12)^12 − 1 = (1,01)^12 − 1 = 1,126825 − 1 = 12,68% ✓' },
+        { difficulty: 'Easy', question: 'ʼn Spaarrekening betaal 8% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '8,24', correctAnswers: ['8,24%', '8,24', '8.24%', '8.24', '8,2%', '8,2', '8.2%', '8.2'], answer: '8,24%', explanation: 'i_eff = (1 + 0,08/4)^4 − 1 = (1,02)^4 − 1 = 1,082432 − 1 = 8,24% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Lening dra ʼn nominale rentekoers van 15% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '16,08', correctAnswers: ['16,08%', '16,08', '16.08%', '16.08', '16,1%', '16,1', '16.1%', '16.1'], answer: '16,08%', explanation: 'i_eff = (1 + 0,15/12)^12 − 1 = (1,0125)^12 − 1 = 1,160755 − 1 = 16,08% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Kredietkaart hef 18% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '19,25', correctAnswers: ['19,25%', '19,25', '19.25%', '19.25', '19,3%', '19,3', '19.3%', '19.3'], answer: '19,25%', explanation: 'i_eff = (1 + 0,18/4)^4 − 1 = (1,045)^4 − 1 = 1,192519 − 1 = 19,25% ✓' },
 
         // Blok 2 — Effektiewe → nominale koers-omskakeling (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 13% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente maandeliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12.28', correctAnswers: ['12,28%', '12,28', '12.28%', '12.28', '12,3%', '12,3', '12.3%', '12.3'], answer: '12,28%', explanation: '1,13 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,13 = 1,010237\ni_nom = 12 × 0,010237 = 12,28% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 9% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente kwartaalliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '8.71', correctAnswers: ['8,71%', '8,71', '8.71%', '8.71', '8,7%', '8,7', '8.7%', '8.7'], answer: '8,71%', explanation: '1,09 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1,09 = 1,021783\ni_nom = 4 × 0,021783 = 8,71% ✓' },
-        { difficulty: 'Hard', question: 'ʼn Bank adverteer ʼn effektiewe jaarlikse rentekoers van 20%. Bepaal die ekwivalente nominale jaarlikse koers, maandeliks saamgestel (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '18.37', correctAnswers: ['18,37%', '18,37', '18.37%', '18.37', '18,4%', '18,4', '18.4%', '18.4'], answer: '18,37%', explanation: '1,20 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,20 = 1,015310\ni_nom = 12 × 0,015310 = 18,37% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 13% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente maandeliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12,28', correctAnswers: ['12,28%', '12,28', '12.28%', '12.28', '12,3%', '12,3', '12.3%', '12.3'], answer: '12,28%', explanation: '1,13 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,13 = 1,010237\ni_nom = 12 × 0,010237 = 12,28% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 9% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente kwartaalliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '8,71', correctAnswers: ['8,71%', '8,71', '8.71%', '8.71', '8,7%', '8,7', '8.7%', '8.7'], answer: '8,71%', explanation: '1,09 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1,09 = 1,021783\ni_nom = 4 × 0,021783 = 8,71% ✓' },
+        { difficulty: 'Hard', question: 'ʼn Bank adverteer ʼn effektiewe jaarlikse rentekoers van 20%. Bepaal die ekwivalente nominale jaarlikse koers, maandeliks saamgestel (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '18,37', correctAnswers: ['18,37%', '18,37', '18.37%', '18.37', '18,4%', '18,4', '18.4%', '18.4'], answer: '18,37%', explanation: '1,20 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,20 = 1,015310\ni_nom = 12 × 0,015310 = 18,37% ✓' },
 
         // Blok 3 — Reguitlyn-waardevermindering (Easy, Medium, Medium, Hard)
         { difficulty: 'Easy', question: 'ʼn Wasmasjien ter waarde van R15 000 verminder in waarde teen 15% p.j. volgens die reguitlynmetode. Bereken die waarde na 3 jaar.', checkMode: 'auto', correctAnswer: '8250', correctAnswers: ['R8250', 'R8 250', '8250', '8 250'], answer: 'R8 250', explanation: 'A = P(1 − ni) = 15 000(1 − 3 × 0,15) = 15 000(0,55) = R8 250 ✓' },
@@ -770,7 +770,7 @@ export const topicData: TopicData = {
         // Blok 4 — Verminderende-balans-waardevermindering (Easy, Medium, Medium, Hard)
         { difficulty: 'Easy', question: 'ʼn Vurkhyser ter waarde van R90 000 verminder in waarde teen 20% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 3 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '46080', correctAnswers: ['R46080', 'R46 080', '46080', '46 080', 'R46080,00', 'R46 080,00'], answer: 'R46 080', explanation: 'A = P(1 − i)ⁿ = 90 000(0,80)³ = 90 000 × 0,512 = R46 080 ✓' },
         { difficulty: 'Medium', question: 'ʼn Bus ter waarde van R150 000 verminder in waarde teen 15% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 5 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '66556', correctAnswers: ['R66556', 'R66 556', '66556', '66 556', 'R66555,80', 'R66555,8', 'R66 555,80'], answer: 'R66 555,80', explanation: 'A = 150 000(0,85)⁵ = 150 000 × 0,443705 ≈ R66 555,80 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Drukker ter waarde van R40 000 verminder volgens die verminderende-balans-metode tot R23 000 na 4 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12.92', correctAnswers: ['12,92%', '12,92', '12.92%', '12.92', '12,9%', '12,9', '12.9%', '12.9'], answer: '12,92%', explanation: '23 000 = 40 000(1 − i)⁴\n0,575 = (1 − i)⁴\n1 − i = ⁴√0,575 = 0,870798\ni = 1 − 0,870798 = 0,129202 = 12,92% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Drukker ter waarde van R40 000 verminder volgens die verminderende-balans-metode tot R23 000 na 4 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12,92', correctAnswers: ['12,92%', '12,92', '12.92%', '12.92', '12,9%', '12,9', '12.9%', '12.9'], answer: '12,92%', explanation: '23 000 = 40 000(1 − i)⁴\n0,575 = (1 − i)⁴\n1 − i = ⁴√0,575 = 0,870798\ni = 1 − 0,870798 = 0,129202 = 12,92% ✓' },
         { difficulty: 'Hard', question: 'ʼn Hyskraan ter waarde van R220 000 verminder in waarde teen 18% p.j. volgens die verminderende-balans-metode. Na hoeveel volle jare sal dit die eerste keer minder as R90 000 werd wees?', checkMode: 'auto', correctAnswer: '5', explanation: '90 000 = 220 000(0,82)ⁿ\n0,409091 = (0,82)ⁿ\nn = log(0,409091) ÷ log(0,82) = 4,50 → rond na bo af na 5 volle jare.\nKontroleer: 220 000 × (0,82)⁵ ≈ R81 025 < R90 000 ✓' },
 
         // Blok 5 — Vergelyking van waardeverminderingsmetodes (Medium, Hard)
@@ -800,26 +800,26 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok 1 — Nominale → effektiewe koers-omskakeling (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'ʼn Bank bied ʼn nominale rentekoers van 14% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '14.93', correctAnswers: ['14,93%', '14,93', '14.93%', '14.93', '14,9%', '14,9', '14.9%', '14.9'], answer: '14,93%', explanation: 'i_eff = (1 + 0,14/12)^12 − 1 = (1,011667)^12 − 1 = 1,149342 − 1 = 14,93% ✓' },
-        { difficulty: 'Easy', question: 'ʼn Spaarrekening betaal 6% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '6.14', correctAnswers: ['6,14%', '6,14', '6.14%', '6.14', '6,1%', '6,1', '6.1%', '6.1'], answer: '6,14%', explanation: 'i_eff = (1 + 0,06/4)^4 − 1 = (1,015)^4 − 1 = 1,061364 − 1 = 6,14% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Lening dra ʼn nominale rentekoers van 20% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '21.94', correctAnswers: ['21,94%', '21,94', '21.94%', '21.94', '21,9%', '21,9', '21.9%', '21.9'], answer: '21,94%', explanation: 'i_eff = (1 + 0,20/12)^12 − 1 = (1,016667)^12 − 1 = 1,219391 − 1 = 21,94% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Kredietkaart hef 16% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '16.99', correctAnswers: ['16,99%', '16,99', '16.99%', '16.99', '17,0%', '17%', '17,0'], answer: '16,99%', explanation: 'i_eff = (1 + 0,16/4)^4 − 1 = (1,04)^4 − 1 = 1,169859 − 1 = 16,99% ✓' },
+        { difficulty: 'Easy', question: 'ʼn Bank bied ʼn nominale rentekoers van 14% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '14,93', correctAnswers: ['14,93%', '14,93', '14.93%', '14.93', '14,9%', '14,9', '14.9%', '14.9'], answer: '14,93%', explanation: 'i_eff = (1 + 0,14/12)^12 − 1 = (1,011667)^12 − 1 = 1,149342 − 1 = 14,93% ✓' },
+        { difficulty: 'Easy', question: 'ʼn Spaarrekening betaal 6% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '6,14', correctAnswers: ['6,14%', '6,14', '6.14%', '6.14', '6,1%', '6,1', '6.1%', '6.1'], answer: '6,14%', explanation: 'i_eff = (1 + 0,06/4)^4 − 1 = (1,015)^4 − 1 = 1,061364 − 1 = 6,14% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Lening dra ʼn nominale rentekoers van 20% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '21,94', correctAnswers: ['21,94%', '21,94', '21.94%', '21.94', '21,9%', '21,9', '21.9%', '21.9'], answer: '21,94%', explanation: 'i_eff = (1 + 0,20/12)^12 − 1 = (1,016667)^12 − 1 = 1,219391 − 1 = 21,94% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Kredietkaart hef 16% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '16,99', correctAnswers: ['16,99%', '16,99', '16.99%', '16.99', '17,0%', '17%', '17,0'], answer: '16,99%', explanation: 'i_eff = (1 + 0,16/4)^4 − 1 = (1,04)^4 − 1 = 1,169859 − 1 = 16,99% ✓' },
 
         // Blok 2 — Effektiewe → nominale koers-omskakeling (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 16% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente maandeliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '14.93', correctAnswers: ['14,93%', '14,93', '14.93%', '14.93', '14,9%', '14,9', '14.9%', '14.9'], answer: '14,93%', explanation: '1,16 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,16 = 1,012445\ni_nom = 12 × 0,012445 = 14,93% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 10% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente kwartaalliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '9.65', correctAnswers: ['9,65%', '9,65', '9.65%', '9.65', '9,6%', '9,6', '9.6%', '9.6'], answer: '9,65%', explanation: '1,10 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1,10 = 1,024114\ni_nom = 4 × 0,024114 = 9,65% ✓' },
-        { difficulty: 'Hard', question: 'ʼn Bank adverteer ʼn effektiewe jaarlikse rentekoers van 25%. Bepaal die ekwivalente nominale jaarlikse koers, maandeliks saamgestel (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '22.52', correctAnswers: ['22,52%', '22,52', '22.52%', '22.52', '22,5%', '22,5', '22.5%', '22.5'], answer: '22,52%', explanation: '1,25 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,25 = 1,018768\ni_nom = 12 × 0,018768 = 22,52% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 16% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente maandeliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '14,93', correctAnswers: ['14,93%', '14,93', '14.93%', '14.93', '14,9%', '14,9', '14.9%', '14.9'], answer: '14,93%', explanation: '1,16 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,16 = 1,012445\ni_nom = 12 × 0,012445 = 14,93% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 10% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente kwartaalliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '9,65', correctAnswers: ['9,65%', '9,65', '9.65%', '9.65', '9,6%', '9,6', '9.6%', '9.6'], answer: '9,65%', explanation: '1,10 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1,10 = 1,024114\ni_nom = 4 × 0,024114 = 9,65% ✓' },
+        { difficulty: 'Hard', question: 'ʼn Bank adverteer ʼn effektiewe jaarlikse rentekoers van 25%. Bepaal die ekwivalente nominale jaarlikse koers, maandeliks saamgestel (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '22,52', correctAnswers: ['22,52%', '22,52', '22.52%', '22.52', '22,5%', '22,5', '22.5%', '22.5'], answer: '22,52%', explanation: '1,25 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,25 = 1,018768\ni_nom = 12 × 0,018768 = 22,52% ✓' },
 
         // Blok 3 — Reguitlyn-waardevermindering (Easy, Medium, Medium, Hard)
         { difficulty: 'Easy', question: 'ʼn Yskas ter waarde van R18 000 verminder in waarde teen 20% p.j. volgens die reguitlynmetode. Bereken die waarde na 3 jaar.', checkMode: 'auto', correctAnswer: '7200', correctAnswers: ['R7200', 'R7 200', '7200', '7 200'], answer: 'R7 200', explanation: 'A = 18 000(1 − 3 × 0,20) = 18 000(0,40) = R7 200 ✓' },
         { difficulty: 'Medium', question: 'ʼn Afleweringsvoertuig ter waarde van R280 000 verminder in waarde teen 8% p.j. volgens die reguitlynmetode. Bereken die boekwaarde na 7 jaar.', checkMode: 'auto', correctAnswer: '123200', correctAnswers: ['R123200', 'R123 200', '123200', '123 200'], answer: 'R123 200', explanation: 'A = 280 000(1 − 7 × 0,08) = 280 000(0,44) = R123 200 ✓' },
-        { difficulty: 'Medium', question: 'Toerusting ter waarde van R32 000 verminder volgens die reguitlynmetode tot R18 800 na 5 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '8.25', correctAnswers: ['8,25%', '8,25', '8.25%', '8.25', '8,3%', '8,3', '8.3%', '8.3'], answer: '8,25%', explanation: '18 800 = 32 000(1 − 5i)\n0,5875 = 1 − 5i → 5i = 0,4125 → i = 0,0825 = 8,25% ✓' },
+        { difficulty: 'Medium', question: 'Toerusting ter waarde van R32 000 verminder volgens die reguitlynmetode tot R18 800 na 5 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '8,25', correctAnswers: ['8,25%', '8,25', '8.25%', '8.25', '8,3%', '8,3', '8.3%', '8.3'], answer: '8,25%', explanation: '18 800 = 32 000(1 − 5i)\n0,5875 = 1 − 5i → 5i = 0,4125 → i = 0,0825 = 8,25% ✓' },
         { difficulty: 'Hard', question: 'ʼn Stootskraper ter waarde van R400 000 verminder in waarde teen 15% p.j. volgens die reguitlynmetode. Bereken die boekwaarde na 4 jaar.', checkMode: 'auto', correctAnswer: '160000', correctAnswers: ['R160000', 'R160 000', '160000', '160 000'], answer: 'R160 000', explanation: 'A = 400 000(1 − 4 × 0,15) = 400 000(0,40) = R160 000 ✓' },
 
         // Blok 4 — Verminderende-balans-waardevermindering (Easy, Medium, Medium, Hard)
         { difficulty: 'Easy', question: 'ʼn Fotostaatmasjien ter waarde van R60 000 verminder in waarde teen 25% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 3 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '25313', correctAnswers: ['R25313', 'R25 313', '25313', '25 313', 'R25312,50', 'R25 312,50'], answer: 'R25 312,50', explanation: 'A = 60 000(0,75)³ = 60 000 × 0,421875 = R25 312,50 ✓' },
         { difficulty: 'Medium', question: 'ʼn Minibus ter waarde van R175 000 verminder in waarde teen 12% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 6 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '81271', correctAnswers: ['R81271', 'R81 271', '81271', '81 271', 'R81270,72', 'R81 270,72'], answer: 'R81 270,72', explanation: 'A = 175 000(0,88)⁶ = 175 000 × 0,464404 ≈ R81 270,72 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Kamera ter waarde van R55 000 verminder volgens die verminderende-balans-metode tot R28 000 na 5 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12.63', correctAnswers: ['12,63%', '12,63', '12.63%', '12.63', '12,6%', '12,6', '12.6%', '12.6'], answer: '12,63%', explanation: '28 000 = 55 000(1 − i)⁵\n0,509091 = (1 − i)⁵\n1 − i = ⁵√0,509091 = 0,873693\ni = 1 − 0,873693 = 0,126307 = 12,63% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Kamera ter waarde van R55 000 verminder volgens die verminderende-balans-metode tot R28 000 na 5 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12,63', correctAnswers: ['12,63%', '12,63', '12.63%', '12.63', '12,6%', '12,6', '12.6%', '12.6'], answer: '12,63%', explanation: '28 000 = 55 000(1 − i)⁵\n0,509091 = (1 − i)⁵\n1 − i = ⁵√0,509091 = 0,873693\ni = 1 − 0,873693 = 0,126307 = 12,63% ✓' },
         { difficulty: 'Hard', question: 'ʼn Gruistrekker ter waarde van R400 000 verminder in waarde teen 20% p.j. volgens die verminderende-balans-metode. Na hoeveel volle jare sal dit die eerste keer minder as R120 000 werd wees?', checkMode: 'auto', correctAnswer: '6', explanation: '120 000 = 400 000(0,80)ⁿ\n0,30 = (0,80)ⁿ\nn = log(0,30) ÷ log(0,80) = 5,40 → rond na bo af na 6 volle jare.\nKontroleer: 400 000 × (0,80)⁶ ≈ R104 858 < R120 000 ✓' },
 
         // Blok 5 — Vergelyking van waardeverminderingsmetodes (Medium, Hard)
@@ -849,15 +849,15 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok 1 — Nominale → effektiewe koers-omskakeling (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'ʼn Bank bied ʼn nominale rentekoers van 13% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '13.80', correctAnswers: ['13,80%', '13,80', '13.80%', '13.80', '13,8%', '13,8', '13.8%', '13.8'], answer: '13,80%', explanation: 'i_eff = (1 + 0,13/12)^12 − 1 = (1,010833)^12 − 1 = 1,138032 − 1 = 13,80% ✓' },
-        { difficulty: 'Easy', question: 'ʼn Spaarrekening betaal 7% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '7.19', correctAnswers: ['7,19%', '7,19', '7.19%', '7.19', '7,2%', '7,2', '7.2%', '7.2'], answer: '7,19%', explanation: 'i_eff = (1 + 0,07/4)^4 − 1 = (1,0175)^4 − 1 = 1,071859 − 1 = 7,19% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Lening dra ʼn nominale rentekoers van 22% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '24.36', correctAnswers: ['24,36%', '24,36', '24.36%', '24.36', '24,4%', '24,4', '24.4%', '24.4'], answer: '24,36%', explanation: 'i_eff = (1 + 0,22/12)^12 − 1 = (1,018333)^12 − 1 = 1,243597 − 1 = 24,36% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Kredietkaart hef 20% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '21.55', correctAnswers: ['21,55%', '21,55', '21.55%', '21.55', '21,6%', '21,6', '21.6%', '21.6'], answer: '21,55%', explanation: 'i_eff = (1 + 0,20/4)^4 − 1 = (1,05)^4 − 1 = 1,215506 − 1 = 21,55% ✓' },
+        { difficulty: 'Easy', question: 'ʼn Bank bied ʼn nominale rentekoers van 13% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '13,80', correctAnswers: ['13,80%', '13,80', '13.80%', '13.80', '13,8%', '13,8', '13.8%', '13.8'], answer: '13,80%', explanation: 'i_eff = (1 + 0,13/12)^12 − 1 = (1,010833)^12 − 1 = 1,138032 − 1 = 13,80% ✓' },
+        { difficulty: 'Easy', question: 'ʼn Spaarrekening betaal 7% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '7,19', correctAnswers: ['7,19%', '7,19', '7.19%', '7.19', '7,2%', '7,2', '7.2%', '7.2'], answer: '7,19%', explanation: 'i_eff = (1 + 0,07/4)^4 − 1 = (1,0175)^4 − 1 = 1,071859 − 1 = 7,19% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Lening dra ʼn nominale rentekoers van 22% p.j. maandeliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '24,36', correctAnswers: ['24,36%', '24,36', '24.36%', '24.36', '24,4%', '24,4', '24.4%', '24.4'], answer: '24,36%', explanation: 'i_eff = (1 + 0,22/12)^12 − 1 = (1,018333)^12 − 1 = 1,243597 − 1 = 24,36% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Kredietkaart hef 20% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '21,55', correctAnswers: ['21,55%', '21,55', '21.55%', '21.55', '21,6%', '21,6', '21.6%', '21.6'], answer: '21,55%', explanation: 'i_eff = (1 + 0,20/4)^4 − 1 = (1,05)^4 − 1 = 1,215506 − 1 = 21,55% ✓' },
 
         // Blok 2 — Effektiewe → nominale koers-omskakeling (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 14% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente maandeliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '13.17', correctAnswers: ['13,17%', '13,17', '13.17%', '13.17', '13,2%', '13,2', '13.2%', '13.2'], answer: '13,17%', explanation: '1,14 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,14 = 1,010979\ni_nom = 12 × 0,010979 = 13,17% ✓' },
-        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 11% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente kwartaalliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '10.57', correctAnswers: ['10,57%', '10,57', '10.57%', '10.57', '10,6%', '10,6', '10.6%', '10.6'], answer: '10,57%', explanation: '1,11 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1,11 = 1,026433\ni_nom = 4 × 0,026433 = 10,57% ✓' },
-        { difficulty: 'Hard', question: 'ʼn Bank adverteer ʼn effektiewe jaarlikse rentekoers van 18%. Bepaal die ekwivalente nominale jaarlikse koers, maandeliks saamgestel (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '16.67', correctAnswers: ['16,67%', '16,67', '16.67%', '16.67', '16,7%', '16,7', '16.7%', '16.7'], answer: '16,67%', explanation: '1,18 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,18 = 1,013889\ni_nom = 12 × 0,013889 = 16,67% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 14% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente maandeliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '13,17', correctAnswers: ['13,17%', '13,17', '13.17%', '13.17', '13,2%', '13,2', '13.2%', '13.2'], answer: '13,17%', explanation: '1,14 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,14 = 1,010979\ni_nom = 12 × 0,010979 = 13,17% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Effektiewe jaarlikse rentekoers van 11% word genoem. Bepaal die ekwivalente nominale jaarlikse koers as rente kwartaalliks saamgestel word (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '10,57', correctAnswers: ['10,57%', '10,57', '10.57%', '10.57', '10,6%', '10,6', '10.6%', '10.6'], answer: '10,57%', explanation: '1,11 = (1 + i_nom/4)^4\n1 + i_nom/4 = ⁴√1,11 = 1,026433\ni_nom = 4 × 0,026433 = 10,57% ✓' },
+        { difficulty: 'Hard', question: 'ʼn Bank adverteer ʼn effektiewe jaarlikse rentekoers van 18%. Bepaal die ekwivalente nominale jaarlikse koers, maandeliks saamgestel (tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '16,67', correctAnswers: ['16,67%', '16,67', '16.67%', '16.67', '16,7%', '16,7', '16.7%', '16.7'], answer: '16,67%', explanation: '1,18 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,18 = 1,013889\ni_nom = 12 × 0,013889 = 16,67% ✓' },
 
         // Blok 3 — Reguitlyn-waardevermindering (Easy, Medium, Medium, Hard)
         { difficulty: 'Easy', question: 'ʼn Skottelgoedwasser ter waarde van R22 000 verminder in waarde teen 25% p.j. volgens die reguitlynmetode. Bereken die waarde na 2 jaar.', checkMode: 'auto', correctAnswer: '11000', correctAnswers: ['R11000', 'R11 000', '11000', '11 000'], answer: 'R11 000', explanation: 'A = 22 000(1 − 2 × 0,25) = 22 000(0,50) = R11 000 ✓' },
@@ -868,7 +868,7 @@ export const topicData: TopicData = {
         // Blok 4 — Verminderende-balans-waardevermindering (Easy, Medium, Medium, Hard)
         { difficulty: 'Easy', question: 'ʼn Dromvliegtuig (drone) ter waarde van R70 000 verminder in waarde teen 18% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 3 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '38596', correctAnswers: ['R38596', 'R38 596', '38596', '38 596', 'R38595,76', 'R38 595,76'], answer: 'R38 595,76', explanation: 'A = 70 000(0,82)³ = 70 000 × 0,551368 ≈ R38 595,76 ✓' },
         { difficulty: 'Medium', question: 'ʼn Toerbus ter waarde van R195 000 verminder in waarde teen 14% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 6 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '78891', correctAnswers: ['R78891', 'R78 891', '78891', '78 891', 'R78890,61', 'R78 890,61'], answer: 'R78 890,61', explanation: 'A = 195 000(0,86)⁶ = 195 000 × 0,404567 ≈ R78 890,61 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Skootrekenaar ter waarde van R65 000 verminder volgens die verminderende-balans-metode tot R30 000 na 5 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '14.33', correctAnswers: ['14,33%', '14,33', '14.33%', '14.33', '14,3%', '14,3', '14.3%', '14.3'], answer: '14,33%', explanation: '30 000 = 65 000(1 − i)⁵\n0,461538 = (1 − i)⁵\n1 − i = ⁵√0,461538 = 0,856725\ni = 1 − 0,856725 = 0,143275 = 14,33% ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skootrekenaar ter waarde van R65 000 verminder volgens die verminderende-balans-metode tot R30 000 na 5 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '14,33', correctAnswers: ['14,33%', '14,33', '14.33%', '14.33', '14,3%', '14,3', '14.3%', '14.3'], answer: '14,33%', explanation: '30 000 = 65 000(1 − i)⁵\n0,461538 = (1 − i)⁵\n1 − i = ⁵√0,461538 = 0,856725\ni = 1 − 0,856725 = 0,143275 = 14,33% ✓' },
         { difficulty: 'Hard', question: 'ʼn Jag ter waarde van R600 000 verminder in waarde teen 22% p.j. volgens die verminderende-balans-metode. Na hoeveel volle jare sal dit die eerste keer minder as R150 000 werd wees?', checkMode: 'auto', correctAnswer: '6', explanation: '150 000 = 600 000(0,78)ⁿ\n0,25 = (0,78)ⁿ\nn = log(0,25) ÷ log(0,78) = 5,58 → rond na bo af na 6 volle jare.\nKontroleer: 600 000 × (0,78)⁶ ≈ R136 962 < R150 000 ✓' },
 
         // Blok 5 — Vergelyking van waardeverminderingsmetodes (Medium, Hard)

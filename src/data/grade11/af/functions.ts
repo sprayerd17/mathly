@@ -67,7 +67,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how the parameter p shifts quadratic graphs horizontally, using y=x² and y=(x+3)² as shown in the diagram" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik hoe die parameter p kwadratiese grafieke horisontaal skuif, met y=x² en y=(x+3)² soos in die diagram gewys" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -125,7 +125,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how the parameter p shifts the vertical asymptote of a hyperbolic function, comparing y=1/x and y=1/(x-2) using the diagram" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe die parameter p die vertikale asimptoot van ʼn hiperboliese funksie skuif, deur y=1/x en y=1/(x-2) met behulp van die diagram te vergelyk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -182,7 +182,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing y=2^x and y=2^(x+2) to show how p shifts exponential graphs, and explaining how k affects the growth rate" />',
+        '<VideoPlaceholder label="Kort video wat y=2^x en y=2^(x+2) vergelyk om te wys hoe p eksponensiële grafieke skuif, en wat verduidelik hoe k die groeitempo beïnvloed" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -260,7 +260,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the equation of a hyperbola from a graph using asymptotes and a known point, matching the diagram in the study guide" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die vergelyking van ʼn hiperbool uit ʼn grafiek te vind deur asimptote en ʼn bekende punt te gebruik, wat ooreenstem met die diagram in die studiegids" />',
     },
   ],
 

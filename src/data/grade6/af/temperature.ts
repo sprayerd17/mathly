@@ -133,7 +133,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a thermometer as a vertical number line, with zero degrees marked in red, positive temperatures shown climbing upward in orange, and negative temperatures shown going downward in blue" />',
+        '<VideoPlaceholder label="Kort video wat ʼn termometer as ʼn vertikale getallelyn wys, met nul grade in rooi gemerk, positiewe temperature wat opwaarts in oranje styg, en negatiewe temperature wat afwaarts in blou daal" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram of a vertical thermometer scale from minus 10 to 40 degrees Celsius, with 0 degrees marked in red, water freezing and boiling points labelled, and the mercury level shown at a sample temperature" />',
@@ -234,7 +234,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing pairs of negative temperatures on a number line, showing that the temperature closer to zero is always warmer even though its number after the minus sign is smaller" />',
+        '<VideoPlaceholder label="Kort video wat pare negatiewe temperature op ʼn getallelyn vergelyk, en wys dat die temperatuur nader aan nul altyd warmer is, selfs al is die getal na die minusteken kleiner" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -346,7 +346,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to find the difference between two temperatures on a number line, including a case that crosses zero by adding the distance below zero to the distance above zero" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die verskil tussen twee temperature op ʼn getallelyn te vind, insluitend ʼn geval wat oor nul beweeg deur die afstand onder nul by die afstand bo nul te tel" />',
     },
   ],
 

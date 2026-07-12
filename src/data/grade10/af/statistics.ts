@@ -660,7 +660,7 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Gebruik Q1 = 9 en Q3 = 23.5 uit Voorbeeld 2 om die interkwartielwydte te bepaal.',
+          question: 'Gebruik Q1 = 9 en Q3 = 23,5 uit Voorbeeld 2 om die interkwartielwydte te bepaal.',
           answer: `${or('IKW')} = ${or('14.5')}`,
           steps: [
             `${or('IKW')} = ${bl('Q3')} − ${bl('Q1')} = ${bl('23.5')} − ${bl('9')} = ${or('14.5')}.`,
@@ -845,10 +845,10 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Gebruik die data van Vraag 1 (intervalle 0≤x<5 freq 3, 5≤x<10 freq 7, 10≤x<15 freq 2), bepaal die benaderde gemiddelde.',
-      answer: '6.92',
+      answer: '6,92',
       checkMode: 'auto',
-      correctAnswer: '6.92',
-      explanation: 'Middelpunte: 2.5, 7.5, 12.5. Σ(middelpunt × freq) = (2.5×3)+(7.5×7)+(12.5×2) = 7.5+52.5+25 = 85. Totale freq = 12. Gemiddelde = 85÷12 ≈ 6.92.',
+      correctAnswer: '6,92',
+      explanation: 'Middelpunte: 2,5, 7,5, 12,5. Σ(middelpunt × freq) = (2,5×3)+(7,5×7)+(12,5×2) = 7,5+52,5+25 = 85. Totale freq = 12. Gemiddelde = 85÷12 ≈ 6,92.',
     },
 
     // ── Vraag 3 Hard — eindpunte teenoor middelpunte ─────────────────────────
@@ -1041,7 +1041,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Bepaal die benaderde gemiddelde van gegroepeerde data met intervalle 10≤x<20 (freq 5), 20≤x<30 (freq 9), 30≤x<40 (freq 6), deur middelpunte te gebruik.',
-      answer: 'Middelpunte: 15,25,35. Som=(15×5)+(25×9)+(35×6)=75+225+210=510. Totale frekwensie=20. Gemiddelde=510÷20=25.5.',
+      answer: 'Middelpunte: 15,25,35. Som=(15×5)+(25×9)+(35×6)=75+225+210=510. Totale frekwensie=20. Gemiddelde=510÷20=25,5.',
       checkMode: 'self',
     },
 

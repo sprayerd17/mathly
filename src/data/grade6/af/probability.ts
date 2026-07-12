@@ -108,7 +108,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the probability scale from 0 to 1 with everyday examples of impossible unlikely equally likely likely and certain events" />',
+        '<VideoPlaceholder label="Kort video wat die waarskynlikheidskaal van 0 tot 1 verduidelik met alledaagse voorbeelde van onmoontlike, onwaarskynlike, ewe waarskynlike, waarskynlike en sekere gebeurtenisse" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Probability scale from 0 to 1 showing impossible red unlikely orange equally likely yellow likely blue and certain green positions" />',
@@ -169,7 +169,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to write probability as a fraction using favourable outcomes over total outcomes with worked examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om waarskynlikheid as ʼn breuk te skryf deur gunstige uitkomste oor totale uitkomste te gebruik, met uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram showing a bag with 4 red and 6 blue balls labelling favourable outcomes green and total outcomes blue with the probability fraction orange" />',
@@ -230,7 +230,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to list all outcomes for single and combined events and use them to calculate probability" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om al die uitkomste vir enkel- en saamgestelde gebeurtenisse te lys en dit te gebruik om waarskynlikheid te bereken" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram showing a sample space table for flipping a coin and rolling a dice with all 12 outcomes listed outcomes blue favourable outcomes green total orange" />',

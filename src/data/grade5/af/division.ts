@@ -662,7 +662,7 @@ export const topicData: TopicData = {
             },
             {
               label: 'c) Bedrag in rand en sent',
-              correctAnswer: 'R208.33',
+              correctAnswer: 'R208,33',
               correctAnswers: ['R208.33', '208.33', 'R208,33', '208,33'],
               explanation: 'Res-breuk: 2 ÷ 6 = 0,333... ≈ 0,33 (na die naaste sent).\nElke vriend kry R208 + R0,33 = R208,33.',
             },
@@ -782,13 +782,13 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) As 2 werkers afwesig is en die geld tussen die oorblywende werkers verdeel word, hoeveel ontvang elke werker?',
-              correctAnswer: 'R345.60',
+              correctAnswer: 'R345,60',
               correctAnswers: ['R345.60', '345.60', 'R345,60', '345,60', 'R345.6', '345.6'],
               explanation: 'Oorblywende werkers: 12 − 2 = 10.\n3 456 ÷ 10 = 345,6 → R345,60 (deling deur 10 skuif die desimale punt een plek).\nAntwoord: R345,60 per werker ✓',
             },
             {
               label: 'c) Hoeveel meer kry elke werker in scenario b in vergelyking met scenario a?',
-              correctAnswer: 'R57.60',
+              correctAnswer: 'R57,60',
               correctAnswers: ['R57.60', '57.60', 'R57,60', '57,60', 'R57.6', '57.6'],
               explanation: 'Verskil: R345,60 − R288,00 = R57,60.\nElke werker ontvang R57,60 meer in scenario b ✓',
             },

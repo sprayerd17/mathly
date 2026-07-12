@@ -205,10 +205,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A reference chart listing the divisibility rules for 2, 3, 4, 5, 6, 8, 9, 10 and 11, with the rule in purple, the digits being tested (last digit, last two digits, digit sum, alternating sum) highlighted in teal, and worked examples for 4 131, 3 124 and 5 148 showing the conclusion in red" />',
+        '<DiagramPlaceholder label="ʼn Verwysingskaart wat die deelbaarheidsreëls vir 2, 3, 4, 5, 6, 8, 9, 10 en 11 lys, met die reël in pers, die syfers wat getoets word (laaste syfer, laaste twee syfers, syfersom, alternerende som) uitgelig in turkoois, en uitgewerkte voorbeelde vir 4 131, 3 124 en 5 148 wat die gevolgtrekking in rooi wys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating each divisibility rule with a worked number, including why the digit-sum rule works for 3 and 9 and why the alternating-sum rule works for 11" />',
+        '<VideoPlaceholder label="Kort video wat elke deelbaarheidsreël demonstreer met ʼn uitgewerkte getal, insluitend waarom die syfersom-reël werk vir 3 en 9 en waarom die alternerende-som-reël werk vir 11" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -397,10 +397,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Three prime factorisation trees side by side for 24, 36 and 60, with the three numbers in blue, prime factors shared across all three circled in red, and the final HCF and LCM answers in orange" />',
+        '<DiagramPlaceholder label="Drie priemfaktoriseringsbome langs mekaar vir 24, 36 en 60, met die drie getalle in blou, priemfaktore wat almal deel omkring in rooi, en die finale GGD- en KGV-antwoorde in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to extend the HCF and LCM prime factorisation method from two numbers to three numbers, with colour coded shared prime factors and highest/lowest powers" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die GGD- en KGV-priemfaktoriseringsmetode van twee getalle na drie getalle uit te brei, met kleurgekodeerde gedeelde priemfaktore en hoogste/laagste magte" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -554,10 +554,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A fraction bar diagram showing 1/4, 1/6 and 1/9 converted to equivalent fractions over the LCD of 36 in green, alongside a bakery hamper diagram showing 48, 72 and 96 cupcakes in blue being split into 24 equal boxes using the HCF shown in orange" />',
+        '<DiagramPlaceholder label="ʼn Breukstaafdiagram wat 1/4, 1/6 en 1/9 wys omgeskakel na ekwivalente breuke oor die KGV van 36 in groen, saam met ʼn bakkery-mandjiediagram wat 48, 72 en 96 muffins in blou wys wat in 24 gelyke boksies verdeel word met die GGD in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use the LCM as the lowest common denominator to add fractions, and how to solve HCF/LCM word problems involving three quantities such as packing hampers and coinciding flashing lights" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die KGV as die laagste gemeenskaplike noemer te gebruik om breuke op te tel, en hoe om GGD/KGV-woordprobleme met drie hoeveelhede op te los, soos die pak van mandjies en saamvallende flikkerende ligte" />',
     },
   ],
   resultsConfig: {

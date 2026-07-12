@@ -94,7 +94,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating the fold test for lines of symmetry, showing how to check vertical, horizontal and diagonal lines, and why a rectangle\'s diagonal fails the test while a square\'s diagonal passes it" />',
+        '<VideoPlaceholder label="Kort video wat die voutoets vir simmetrielyne demonstreer, met hoe om vertikale, horisontale en diagonale lyne te toets, en waarom ʼn reghoek se diagonaal die toets faal terwyl ʼn vierkant se diagonaal dit slaag" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -205,7 +205,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing the diagonals of a square, rhombus, rectangle, parallelogram and kite, showing which diagonals are lines of symmetry and linking this to each shape\'s equal-side properties" />',
+        '<VideoPlaceholder label="Kort video wat die diagonale van ʼn vierkant, ruit, reghoek, parallelogram en vlieër vergelyk, met watter diagonale simmetrielyne is en hoe dit met elke vorm se gelyke-sye-eienskappe verband hou" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -279,7 +279,7 @@ export const topicData: TopicData = {
           checkMode: 'auto',
           parts: [
             { label: 'a) Afstand onder die lyn vir die punt wat 4 cm bo was', correctAnswer: '4', correctAnswers: ['4', '4cm', '4 cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees, maar aan die teenoorgestelde kant: 4 cm onder die lyn.' },
-            { label: 'b) Afstand onder die lyn vir die punt wat 1,5 cm bo was', correctAnswer: '1.5', correctAnswers: ['1.5', '1,5', '1.5cm', '1,5cm', '1.5 cm', '1,5 cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees, maar aan die teenoorgestelde kant: 1,5 cm onder die lyn.' },
+            { label: 'b) Afstand onder die lyn vir die punt wat 1,5 cm bo was', correctAnswer: '1,5', correctAnswers: ['1.5', '1,5', '1.5cm', '1,5cm', '1.5 cm', '1,5 cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees, maar aan die teenoorgestelde kant: 1,5 cm onder die lyn.' },
           ],
         },
         {
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to complete a symmetrical shape by measuring distances from the line of symmetry and reflecting points to the opposite side, including an example with a diagonal line of symmetry" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn simmetriese vorm te voltooi deur afstande vanaf die simmetrielyn te meet en punte na die teenoorgestelde kant te weerspieël, met ʼn voorbeeld van ʼn diagonale simmetrielyn" />',
     },
   ],
 
@@ -317,7 +317,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Vierkant, ʼn ruit, en ʼn nie-vierkantige reghoek word vergelyk. Watter van hierdie drie vorms het diagonale wat NIE simmetrielyne is nie?', checkMode: 'auto', correctAnswer: 'reghoek', correctAnswers: ['reghoek', 'die reghoek', 'nie-vierkantige reghoek'], explanation: 'ʼn Reghoek (wat nie ʼn vierkant is nie) het ongelyke aangrensende sye, dus skep sy diagonale nie spieëlbeeld-helftes nie. Beide die vierkant en die ruit het al 4 sye gelyk, dus is albei van hul diagonale simmetrielyne.' },
         { difficulty: 'Medium', question: 'Die helfte van ʼn simmetriese vorm is geteken met ʼn vertikale simmetrielyn. ʼn Hoekpunt op die gegewe helfte is 5 cm van die lyn. Hoe ver van die lyn moet die ooreenstemmende hoekpunt op die ontbrekende helfte geteken word?', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5cm', '5 cm'], explanation: 'Vir die twee helftes om ware spieëlbeelde te wees, moet die ooreenstemmende punt presies dieselfde afstand van die simmetrielyn wees: 5 cm, aan die teenoorgestelde kant.' },
         { difficulty: 'Medium', question: 'Die helfte van ʼn simmetriese vorm is geteken met ʼn horisontale simmetrielyn. ʼn Punt op die gegewe helfte is 2,5 cm bo die lyn, en ʼn ander is 6 cm bo die lyn. Hoe ver onder die lyn moet die twee ooreenstemmende punte op die voltooide helfte geteken word?', answer: '', checkMode: 'auto', parts: [
-          { label: 'a) Afstand onder die lyn vir die punt 2,5 cm bo', correctAnswer: '2.5', correctAnswers: ['2.5', '2,5', '2.5cm', '2,5cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees: 2,5 cm onder.' },
+          { label: 'a) Afstand onder die lyn vir die punt 2,5 cm bo', correctAnswer: '2,5', correctAnswers: ['2.5', '2,5', '2.5cm', '2,5cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees: 2,5 cm onder.' },
           { label: 'b) Afstand onder die lyn vir die punt 6 cm bo', correctAnswer: '6', correctAnswers: ['6', '6cm', '6 cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees: 6 cm onder.' },
         ] },
         { difficulty: 'Medium', question: 'ʼn Leerder voltooi die helfte van ʼn simmetriese vorm, maar teken die ooreenstemmende punt op ʼn ander afstand van die simmetrielyn as die oorspronklike punt. Sal die voltooide vorm werklik simmetries wees? Verduidelik.', answer: 'Nee, die voltooide vorm sal nie werklik simmetries wees nie. Vir ʼn vorm om ʼn ware simmetrielyn te hê, moet elke punt op die een helfte presies dieselfde afstand van die lyn wees as sy ooreenstemmende punt op die ander helfte. As die afstande verskil, sal die vou van die vorm langs daardie lyn nie die twee helftes presies bo-op mekaar laat val nie, dus sal die vorm nie simmetries wees nie.', checkMode: 'self' },
@@ -356,7 +356,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Die helfte van ʼn simmetriese vorm is geteken met ʼn vertikale simmetrielyn. ʼn Hoekpunt op die gegewe helfte is 7 cm van die lyn. Hoe ver van die lyn moet die ooreenstemmende hoekpunt op die ontbrekende helfte geteken word?', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', '7cm', '7 cm'], explanation: 'Die ooreenstemmende punt moet presies dieselfde afstand van die simmetrielyn wees: 7 cm, aan die teenoorgestelde kant.' },
         { difficulty: 'Medium', question: 'Die helfte van ʼn simmetriese vorm is geteken met ʼn horisontale simmetrielyn. ʼn Punt op die gegewe helfte is 1 cm bo die lyn, en ʼn ander is 4,5 cm bo die lyn. Hoe ver onder die lyn moet die twee ooreenstemmende punte op die voltooide helfte geteken word?', answer: '', checkMode: 'auto', parts: [
           { label: 'a) Afstand onder die lyn vir die punt 1 cm bo', correctAnswer: '1', correctAnswers: ['1', '1cm', '1 cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees: 1 cm onder.' },
-          { label: 'b) Afstand onder die lyn vir die punt 4,5 cm bo', correctAnswer: '4.5', correctAnswers: ['4.5', '4,5', '4.5cm', '4,5cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees: 4,5 cm onder.' },
+          { label: 'b) Afstand onder die lyn vir die punt 4,5 cm bo', correctAnswer: '4,5', correctAnswers: ['4.5', '4,5', '4.5cm', '4,5cm'], explanation: 'Die ooreenstemmende punt moet dieselfde afstand van die lyn wees: 4,5 cm onder.' },
         ] },
         { difficulty: 'Medium', question: 'ʼn Leerder voltooi die helfte van ʼn simmetriese vorm, maar skuif per ongeluk elke punt 1 cm nader aan die simmetrielyn as wat dit moet wees. Sal die voltooide vorm ʼn ware simmetrielyn langs daardie lyn hê? Verduidelik.', answer: 'Nee, die voltooide vorm sal nie ʼn ware simmetrielyn langs daardie lyn hê nie. Alhoewel die algemene buitelyn dalk soortgelyk lyk, moet elke punt presies dieselfde afstand van die lyn wees as sy ooreenstemmende punt op die ander helfte. Om al die punte 1 cm te skuif, beteken hulle is nie meer dieselfde afstand van die lyn as die oorspronklike punte nie, dus sal die vou van die vorm nie die twee helftes presies bo-op mekaar laat val nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Leerder beweer: "ʼn Ruit en ʼn vierkant is basies dieselfde vorm, dus moet hulle dieselfde aantal simmetrielyne hê." Verduidelik waarom dit verkeerd is, met verwysing na hul hoeke.', answer: 'Dit is verkeerd. Alhoewel beide ʼn ruit en ʼn vierkant 4 gelyke sye het, het ʼn vierkant addisioneel al 4 hoeke gelyk aan 90°, terwyl ʼn ruit dit nie het nie (tensy dit toevallig ook ʼn vierkant is). Hierdie ekstra eienskap gee die vierkant 2 meer simmetrielyne — die vertikale en horisontale middellyne — bo en behalwe die 2 diagonale simmetrielyne wat albei vorms deel weens hul gelyke sye. Dus het ʼn vierkant 4 simmetrielyne in totaal, terwyl ʼn ruit net 2 het. Gelyke sye alleen waarborg nie dieselfde aantal simmetrielyne nie; die hoeke maak ook saak.', checkMode: 'self' },

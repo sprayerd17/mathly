@@ -99,10 +99,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Grid showing columns and rows with a position marked at column 2 row 3 and a compass rose showing North South East West" />',
+        '<DiagramPlaceholder label="Rooster wat kolomme en rye wys met ʼn posisie gemerk by kolom 2 ry 3 en ʼn kompasroos wat Noord Suid Oos Wes wys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to describe position using direction words grid coordinates and compass directions" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om posisie te beskryf deur rigtingwoorde, roosterkoördinate en kompasrigtings te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -196,10 +196,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Grid showing horizontal axis labelled 1 to 5 and vertical axis labelled 1 to 5 with a star marked at position (3, 4) and three dots forming a horizontal line at row 2" />',
+        '<DiagramPlaceholder label="Rooster wat die horisontale as geëtiketteer 1 tot 5 en die vertikale as geëtiketteer 1 tot 5 wys, met ʼn ster gemerk by posisie (3, 4) en drie kolle wat ʼn horisontale lyn by ry 2 vorm" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read and plot positions on a grid by going across first then up with examples at (3, 4) and a horizontal line at row 2" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om posisies op ʼn rooster te lees en te plot deur eers oor te gaan en dan op te gaan, met voorbeelde by (3, 4) en ʼn horisontale lyn by ry 2" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -295,10 +295,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Grid showing a path from starting position (2, 1) moving 3 steps right then 2 steps up to ending position (5, 3) with arrows and colour coded steps" />',
+        '<DiagramPlaceholder label="Rooster wat ʼn pad wys vanaf beginposisie (2, 1) wat 3 stappe regs dan 2 stappe op beweeg na eindposisie (5, 3) met pyle en kleurgekodeerde stappe" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to follow movement instructions on a grid using horizontal and vertical steps with compass direction examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om bewegingsinstruksies op ʼn rooster te volg deur horisontale en vertikale stappe te gebruik met kompasrigting-voorbeelde" />',
     },
   ],
   topicPractice: [

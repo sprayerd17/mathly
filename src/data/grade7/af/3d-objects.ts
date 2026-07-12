@@ -141,7 +141,7 @@ export const topicData: TopicData = {
       title: 'Volume',
       icon: '📦',
       explanation:
-        `<p style="margin-bottom:16px;">Volume is die <strong>hoeveelheid spasie wat ʼn 3D-voorwerp inneem</strong>, gemeet in kubieke eenhede (cm³, m³). Vir ʼn reghoekige prisma, ${gr('Volume')} = ${bl('lengte')} × ${bl('breedte')} × ${bl('hoogte')}. Vir ʼn silinder, ${gr('Volume')} = π × ${bl('radius')}² × ${bl('hoogte')}, waar π ongeveer 3.14 is.</p>` +
+        `<p style="margin-bottom:16px;">Volume is die <strong>hoeveelheid spasie wat ʼn 3D-voorwerp inneem</strong>, gemeet in kubieke eenhede (cm³, m³). Vir ʼn reghoekige prisma, ${gr('Volume')} = ${bl('lengte')} × ${bl('breedte')} × ${bl('hoogte')}. Vir ʼn silinder, ${gr('Volume')} = π × ${bl('radius')}² × ${bl('hoogte')}, waar π ongeveer 3,14 is.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -162,7 +162,7 @@ export const topicData: TopicData = {
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:8px;">Silinder</p>` +
         `<p style="font-size:15px;font-weight:700;color:#374151;margin-bottom:4px;">${gr('V')} = π × ${bl('r')}² × ${bl('h')}</p>` +
-        `<p style="color:#6b7280;font-size:13px;margin:0;">Gebruik π ≈ 3.14. Kwadreer die ${bl('radius')}, vermenigvuldig dan met π en ${bl('hoogte')}.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Gebruik π ≈ 3,14. Kwadreer die ${bl('radius')}, vermenigvuldig dan met π en ${bl('hoogte')}.</p>` +
         `</div>` +
 
         `</div>` +
@@ -184,14 +184,14 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Vind die volume van ʼn silinder met radius 3 cm en hoogte 10 cm. Gebruik π = 3.14.',
-          answer: `${or('Volume = 282.6 cm³')}`,
+          question: 'Vind die volume van ʼn silinder met radius 3 cm en hoogte 10 cm. Gebruik π = 3,14.',
+          answer: `${or('Volume = 282,6 cm³')}`,
           steps: [
             `Skryf die formule neer: ${gr('V')} = π × ${bl('r')}² × ${bl('h')}`,
-            `Vervang die waardes: π = 3.14, ${bl('r')} = ${bl('3')}, ${bl('h')} = ${bl('10')}<br>${gr('V')} = 3.14 × ${bl('3')}² × ${bl('10')}`,
+            `Vervang die waardes: π = 3,14, ${bl('r')} = ${bl('3')}, ${bl('h')} = ${bl('10')}<br>${gr('V')} = 3,14 × ${bl('3')}² × ${bl('10')}`,
             `Bereken die kwadraat: ${bl('3')}² = ${bl('9')}`,
-            `Vermenigvuldig stap vir stap: 3.14 × ${bl('9')} = 28.26, dan 28.26 × ${bl('10')} = ${or('282.6')}`,
-            `<strong>Antwoord:</strong> ${gr('V')} = ${or('282.6 cm³')}`,
+            `Vermenigvuldig stap vir stap: 3,14 × ${bl('9')} = 28,26, dan 28,26 × ${bl('10')} = ${or('282,6')}`,
+            `<strong>Antwoord:</strong> ${gr('V')} = ${or('282,6 cm³')}`,
           ],
         },
       ],
@@ -232,23 +232,23 @@ export const topicData: TopicData = {
         // ── V7 Medium — silinder volume ───────────────────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Vind die volume van ʼn silinder met radius 4 cm en hoogte 9 cm. Gebruik π = 3.14.',
-          answer: '452.16 cm³',
+          question: 'Vind die volume van ʼn silinder met radius 4 cm en hoogte 9 cm. Gebruik π = 3,14.',
+          answer: '452,16 cm³',
           checkMode: 'auto',
-          correctAnswer: '452.16',
-          correctAnswers: ['452.16', '452.16cm³', '452.16 cm³'],
-          explanation: 'V = π × r² × h\n= 3.14 × 4² × 9\n= 3.14 × 16 × 9\n= 3.14 × 144\n= 452.16 cm³',
+          correctAnswer: '452,16',
+          correctAnswers: ['452.16', '452.16cm³', '452.16 cm³', '452,16', '452,16cm³', '452,16 cm³'],
+          explanation: 'V = π × r² × h\n= 3,14 × 4² × 9\n= 3,14 × 16 × 9\n= 3,14 × 144\n= 452,16 cm³',
         },
 
         // ── V8 Hard — silinder-tenk woordprobleem ─────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'ʼn Watertenk is ʼn silinder met radius 2 m en hoogte 5 m. Vind sy volume tot die naaste heelgetal. Gebruik π = 3.14.',
+          question: 'ʼn Watertenk is ʼn silinder met radius 2 m en hoogte 5 m. Vind sy volume tot die naaste heelgetal. Gebruik π = 3,14.',
           answer: '63 m³',
           checkMode: 'auto',
           correctAnswer: '63',
           correctAnswers: ['63', '63m³', '63 m³'],
-          explanation: 'V = π × r² × h\n= 3.14 × 2² × 5\n= 3.14 × 4 × 5\n= 3.14 × 20\n= 62.8 m³\nAfgerond tot die naaste heelgetal: 63 m³',
+          explanation: 'V = π × r² × h\n= 3,14 × 2² × 5\n= 3,14 × 4 × 5\n= 3,14 × 20\n= 62,8 m³\nAfgerond tot die naaste heelgetal: 63 m³',
         },
 
         // ── V10 Hard — inpakprobleem ────────────────────────────────────────────
@@ -262,12 +262,12 @@ export const topicData: TopicData = {
         // ── V11 Medium — silinder volume ──────────────────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Vind die volume van ʼn silinder met radius 5 cm en hoogte 12 cm. Gebruik π = 3.14.',
+          question: 'Vind die volume van ʼn silinder met radius 5 cm en hoogte 12 cm. Gebruik π = 3,14.',
           answer: '942 cm³',
           checkMode: 'auto',
           correctAnswer: '942',
           correctAnswers: ['942', '942cm³', '942 cm³'],
-          explanation: 'V = π × r² × h\n= 3.14 × 5² × 12\n= 3.14 × 25 × 12\n= 3.14 × 300\n= 942 cm³',
+          explanation: 'V = π × r² × h\n= 3,14 × 5² × 12\n= 3,14 × 25 × 12\n= 3,14 × 300\n= 942 cm³',
         },
 
         // ── V12 Hard — dieselfde volume verskillende oppervlakte ─────────────────

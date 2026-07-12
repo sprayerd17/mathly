@@ -119,10 +119,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing common 2D shapes — square rectangle triangle and circle — each labelled with the number of sides in orange and corners in green" />',
+        '<DiagramPlaceholder label="Diagram wat algemene 2D-vorms wys — vierkant, reghoek, driehoek en sirkel — elkeen geëtiketteer met die aantal sye in oranje en hoekpunte in groen" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing 2D shapes showing how to identify sides and corners and describe common shapes like squares rectangles triangles and circles" />',
+        '<VideoPlaceholder label="Kort video wat 2D-vorms bekendstel en wys hoe om sye en hoekpunte te identifiseer en algemene vorms soos vierkante, reghoeke, driehoeke en sirkels te beskryf" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -195,10 +195,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the three types of triangles — equilateral with 3 equal sides in green isosceles with 2 equal sides in green and 1 different side in red scalene with all sides in red — each labelled with side lengths" />',
+        '<DiagramPlaceholder label="Diagram wat die drie soorte driehoeke wys — gelyksydig met 3 gelyke sye in groen, gelykbenig met 2 gelyke sye in groen en 1 ander sy in rooi, ongelyksydig met al die sye in rooi — elkeen geëtiketteer met sylengtes" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the three types of triangles — equilateral isosceles and scalene — and how to identify each by counting equal sides" />',
+        '<VideoPlaceholder label="Kort video wat die drie soorte driehoeke verduidelik — gelyksydig, gelykbenig en ongelyksydig — en hoe om elkeen te identifiseer deur gelyke sye te tel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -285,10 +285,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing five types of quadrilaterals — square rectangle rhombus parallelogram and trapezium — with equal sides marked in green and right angles marked in orange" />',
+        '<DiagramPlaceholder label="Diagram wat vyf soorte vierhoeke wys — vierkant, reghoek, ruit, parallelogram en trapesium — met gelyke sye gemerk in groen en regte hoeke gemerk in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the five types of quadrilaterals and how to identify each by checking equal sides and right angles" />',
+        '<VideoPlaceholder label="Kort video wat die vyf soorte vierhoeke verduidelik en hoe om elkeen te identifiseer deur gelyke sye en regte hoeke te kyk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -368,10 +368,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a circle with the centre marked in orange the radius labelled in blue the diameter labelled in red and the circumference labelled in green" />',
+        '<DiagramPlaceholder label="Diagram van ʼn sirkel met die middelpunt gemerk in oranje, die radius geëtiketteer in blou, die deursnee geëtiketteer in rooi en die omtrek geëtiketteer in groen" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing circles and explaining the centre radius diameter and circumference with examples of finding the diameter from the radius and vice versa" />',
+        '<VideoPlaceholder label="Kort video wat sirkels bekendstel en die middelpunt, radius, deursnee en omtrek verduidelik met voorbeelde van hoe om die deursnee vanaf die radius te bereken en andersom" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -454,10 +454,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing five 2D shapes — triangle square rectangle rhombus and pentagon — sorted into groups by number of sides with right angles marked in orange and side counts in green" />',
+        '<DiagramPlaceholder label="Diagram wat vyf 2D-vorms wys — driehoek, vierkant, reghoek, ruit en vyfhoek — gesorteer in groepe volgens die aantal sye, met regte hoeke gemerk in oranje en syaantalle in groen" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to sort and compare 2D shapes by their properties — number of sides right angles equal sides and lines of symmetry" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om 2D-vorms volgens hul eienskappe te sorteer en te vergelyk — aantal sye, regte hoeke, gelyke sye en simmetrielyne" />',
     },
   ],
   topicPractice: [

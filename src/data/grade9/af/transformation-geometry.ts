@@ -129,10 +129,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: a Cartesian plane showing the diagonal line y=x, with point (3,7) and its reflection (7,3) marked on either side of the line]" />',
+        '<DiagramPlaceholder label="[Diagram benodig: ʼn Cartesiese vlak wat die diagonale lyn y=x wys, met punt (3,7) en sy spieëlbeeld (7,3) gemerk aan weerskante van die lyn]" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to reflect a point and a simple figure in the line y=x by swapping coordinates" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn punt en ʼn eenvoudige figuur in die lyn y=x te spieël deur koördinate om te ruil" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -246,10 +246,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing transformation examples: reflection in x-axis, y-axis, line y=x, and a translation, with original and image points colour coded" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat transformasievoorbeelde wys: spieëling in die x-as, y-as, lyn y=x, en ʼn translasie, met oorspronklike punte en beeldpunte kleurgekodeer" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify a transformation by comparing original and image coordinates" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn transformasie te identifiseer deur oorspronklike en beeldkoördinate te vergelyk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -376,10 +376,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: a small triangle with vertices (2,3),(4,3),(3,6) and a larger enlarged triangle with vertices (4,6),(8,6),(6,12), both shown on the same Cartesian plane radiating from the origin]" />',
+        '<DiagramPlaceholder label="[Diagram benodig: ʼn klein driehoek met hoekpunte (2,3),(4,3),(3,6) en ʼn groter vergrote driehoek met hoekpunte (4,6),(8,6),(6,12), albei getoon op dieselfde Cartesiese vlak wat vanaf die oorsprong uitstraal]" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to enlarge and reduce a shape using a scale factor from the origin on a Cartesian plane" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vorm te vergroot en te verklein met behulp van ʼn skaalfaktor vanaf die oorsprong op ʼn Cartesiese vlak" />',
     },
   ],
 

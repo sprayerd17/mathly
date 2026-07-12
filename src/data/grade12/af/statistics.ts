@@ -77,14 +77,14 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Bepaal die vyfgetalopsomming van: 5, 9, 12, 15, 18, 22, 27, 31, 38.',
-          answer: `${bl('Min = 5')}, ${or('Q1 = 10.5')}, ${gr('Mediaan = 18')}, ${or('Q3 = 29')}, ${bl('Maks = 38')}`,
+          answer: `${bl('Min = 5')}, ${or('Q1 = 10,5')}, ${gr('Mediaan = 18')}, ${or('Q3 = 29')}, ${bl('Maks = 38')}`,
           steps: [
             'Rangskik in stygende volgorde: 5, 9, 12, 15, 18, 22, 27, 31, 38 (reeds gerangskik). Daar is 9 waardes.',
             `${bl('Minimum')} = ${bl('5')} (die kleinste waarde). ${bl('Maksimum')} = ${bl('38')} (die grootste waarde).`,
             `${gr('Mediaan')} = ${gr('18')} — die 5de waarde in ʼn stel van 9 is die middelste waarde.`,
-            `Onderste helfte (waardes onder die mediaan): 5, 9, 12, 15. ${or('Q1')} = mediaan van onderste helfte = (9 + 12) ÷ 2 = ${or('10.5')}.`,
+            `Onderste helfte (waardes onder die mediaan): 5, 9, 12, 15. ${or('Q1')} = mediaan van onderste helfte = (9 + 12) ÷ 2 = ${or('10,5')}.`,
             `Boonste helfte (waardes bo die mediaan): 22, 27, 31, 38. ${or('Q3')} = mediaan van boonste helfte = (27 + 31) ÷ 2 = ${or('29')}.`,
-            `<strong>Vyfgetalopsomming:</strong> ${bl('Min = 5')}, ${or('Q1 = 10.5')}, ${gr('Mediaan = 18')}, ${or('Q3 = 29')}, ${bl('Maks = 38')}.`,
+            `<strong>Vyfgetalopsomming:</strong> ${bl('Min = 5')}, ${or('Q1 = 10,5')}, ${gr('Mediaan = 18')}, ${or('Q3 = 29')}, ${bl('Maks = 38')}.`,
           ],
         },
         {
@@ -193,17 +193,17 @@ export const topicData: TopicData = {
       title: 'Die Normaalverspreiding',
       icon: '🔔',
       explanation:
-        `<p style="margin-bottom:16px;">Die <strong>normaalverspreiding</strong> is ʼn volkome simmetriese klokvormige verspreiding waar die ${bl('gemiddelde')}, ${or('mediaan')} en modus almal gelyk is en in die middel lê. Dit volg die <strong>68-95-99.7-reël</strong>: ongeveer ${gr('68%')} van die data val binne ${gr('1 standaardafwyking')} van die gemiddelde (tussen μ − σ en μ + σ), ${or('95%')} binne ${or('2 standaardafwykings')}, en ${re('99.7%')} binne ${re('3 standaardafwykings')}. Hierdie reël stel ons in staat om die persentasie data wat in enige gegewe interval om die gemiddelde val, te bereken.</p>` +
+        `<p style="margin-bottom:16px;">Die <strong>normaalverspreiding</strong> is ʼn volkome simmetriese klokvormige verspreiding waar die ${bl('gemiddelde')}, ${or('mediaan')} en modus almal gelyk is en in die middel lê. Dit volg die <strong>68-95-99,7-reël</strong>: ongeveer ${gr('68%')} van die data val binne ${gr('1 standaardafwyking')} van die gemiddelde (tussen μ − σ en μ + σ), ${or('95%')} binne ${or('2 standaardafwykings')}, en ${re('99,7%')} binne ${re('3 standaardafwykings')}. Hierdie reël stel ons in staat om die persentasie data wat in enige gegewe interval om die gemiddelde val, te bereken.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gemiddeldesentrum (μ)')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('1 standaardafwyking — 68%')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('2 standaardafwykings — 95%')}</span>` +
-        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('3 standaardafwykings — 99.7%')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('3 standaardafwykings — 99,7%')}</span>` +
         `</div>` +
 
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die 68-95-99.7-reël</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die 68-95-99,7-reël</p>` +
         `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
@@ -218,14 +218,14 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
-        `<p style="margin:0;font-size:14px;">${re('99.7%')} van die data val binne ${re('3 standaardafwykings')} van die gemiddelde: tussen ${bl('μ')} − ${re('3σ')} en ${bl('μ')} + ${re('3σ')}.</p>` +
+        `<p style="margin:0;font-size:14px;">${re('99,7%')} van die data val binne ${re('3 standaardafwykings')} van die gemiddelde: tussen ${bl('μ')} − ${re('3σ')} en ${bl('μ')} + ${re('3σ')}.</p>` +
         `</div>` +
 
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Simmetrie gebruik om buitenste persentasies te vind</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Aangesien die normaalverspreiding simmetries is om die ${bl('gemiddelde')}, word die persentasie buite ʼn gegewe band gelykop tussen die twee sterte verdeel. Byvoorbeeld, 5% val buite 2 standaardafwykings — dus val 2.5% bo μ + 2σ en 2.5% val onder μ − 2σ.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Aangesien die normaalverspreiding simmetries is om die ${bl('gemiddelde')}, word die persentasie buite ʼn gegewe band gelykop tussen die twee sterte verdeel. Byvoorbeeld, 5% val buite 2 standaardafwykings — dus val 2,5% bo μ + 2σ en 2,5% val onder μ − 2σ.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -235,28 +235,28 @@ export const topicData: TopicData = {
           steps: [
             `Identifiseer die grense: 157 = 165 − 8 = ${bl('μ')} − ${gr('σ')} en 173 = 165 + 8 = ${bl('μ')} + ${gr('σ')}.`,
             `Hierdie grense is presies ${gr('1 standaardafwyking')} van die gemiddelde aan elke kant.`,
-            `Volgens die 68-95-99.7-reël val ongeveer ${gr('68%')} van die data binne 1 standaardafwyking van die gemiddelde.`,
+            `Volgens die 68-95-99,7-reël val ongeveer ${gr('68%')} van die data binne 1 standaardafwyking van die gemiddelde.`,
             `<strong>Antwoord:</strong> Ongeveer ${gr('68%')} van leerders het ʼn lengte tussen 157 cm en 173 cm.`,
           ],
         },
         {
           question: 'Gebruik dieselfde verspreiding (gemiddelde 165 cm, standaardafwyking 8 cm), bepaal die persentasie leerders langer as 181 cm.',
-          answer: `Ongeveer ${or('2.5%')} van leerders`,
+          answer: `Ongeveer ${or('2,5%')} van leerders`,
           steps: [
             `Bepaal hoeveel standaardafwykings 181 cm van die gemiddelde is: 181 = 165 + 2 × 8 = ${bl('μ')} + ${or('2σ')}.`,
-            `Volgens die 68-95-99.7-reël val ${or('95%')} van die data binne ${or('2 standaardafwykings')} van die gemiddelde.`,
+            `Volgens die 68-95-99,7-reël val ${or('95%')} van die data binne ${or('2 standaardafwykings')} van die gemiddelde.`,
             `Daarom val ${or('5%')} buite 2 standaardafwykings (in albei sterte gesamentlik).`,
-            `Aangesien die verspreiding simmetries is, val 5% ÷ 2 = ${or('2.5%')} bo ${bl('μ')} + ${or('2σ')}.`,
-            `<strong>Antwoord:</strong> Ongeveer ${or('2.5%')} van leerders is langer as 181 cm.`,
+            `Aangesien die verspreiding simmetries is, val 5% ÷ 2 = ${or('2,5%')} bo ${bl('μ')} + ${or('2σ')}.`,
+            `<strong>Antwoord:</strong> Ongeveer ${or('2,5%')} van leerders is langer as 181 cm.`,
           ],
         },
         {
           question: 'Lerato sê dat in ʼn normaalverspreiding, feitlik al die data binne 3 standaardafwykings van die gemiddelde val. Is sy korrek?',
           answer: `Ja — Lerato is ${re('korrek')}`,
           steps: [
-            `Volgens die 68-95-99.7-reël val ${re('99.7%')} van die data binne ${re('3 standaardafwykings')} van die gemiddelde (tussen ${bl('μ')} − ${re('3σ')} en ${bl('μ')} + ${re('3σ')}).`,
-            `Slegs 0.3% van die data val buite 3 standaardafwykings — ʼn uiters klein gedeelte.`,
-            `<strong>Antwoord:</strong> Ja — Lerato is korrek. ${re('Feitlik al')} die data (99.7%) in ʼn normaalverspreiding val binne 3 standaardafwykings, wat haar stelling effektief korrek maak vir praktiese doeleindes.`,
+            `Volgens die 68-95-99,7-reël val ${re('99,7%')} van die data binne ${re('3 standaardafwykings')} van die gemiddelde (tussen ${bl('μ')} − ${re('3σ')} en ${bl('μ')} + ${re('3σ')}).`,
+            `Slegs 0,3% van die data val buite 3 standaardafwykings — ʼn uiters klein gedeelte.`,
+            `<strong>Antwoord:</strong> Ja — Lerato is korrek. ${re('Feitlik al')} die data (99,7%) in ʼn normaalverspreiding val binne 3 standaardafwykings, wat haar stelling effektief korrek maak vir praktiese doeleindes.`,
           ],
         },
       ],
@@ -266,7 +266,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die normaalverspreiding en die 68-95-99.7-reël verduidelik met uitgewerkte voorbeelde wat gebruik maak van standaardafwykingintervalle" />',
+        '<VideoPlaceholder label="Kort video wat die normaalverspreiding en die 68-95-99,7-reël verduidelik met uitgewerkte voorbeelde wat gebruik maak van standaardafwykingintervalle" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -356,7 +356,7 @@ export const topicData: TopicData = {
       title: 'Spreidingsdiagramme, Kleinste-kwadrate-regressielyn en Korrelasiekoëffisiënt',
       icon: '📉',
       explanation:
-        `<p style="margin-bottom:16px;">ʼn <strong>Spreidingsdiagram</strong> vertoon bivariaatdata (twee verwante veranderlikes) as punte, wat ons in staat stel om neigings visueel te identifiseer. Die <strong>kleinste-kwadrate-${bl('regressielyn')}</strong> (lyn van beste passing) het die vergelyking y = a + bx, waar ${bl('b')} = gradiënt en ${bl('a')} = y-afsnit. Hierdie lyn minimeer die som van die kwadrate van die vertikale afstande van elke punt na die lyn. Die <strong>korrelasiekoëffisiënt ${or('r')}</strong> meet die sterkte en rigting van die lineêre verband: ${or('r')} = 1 is volmaakte ${gr('positiewe korrelasie')}, ${or('r')} = −1 is volmaakte ${re('negatiewe korrelasie')}, ${or('r')} = 0 beteken geen lineêre korrelasie nie. Waardes tussen 0.75 en 1 (of −1 en −0.75) dui op sterk korrelasie, 0.5 tot 0.75 op matige korrelasie, en onder 0.5 op swak korrelasie. Op die Casio fx-82-reeks: gaan na STAT-modus, kies A+BX (lineêre regressie), voer x- en y-waardes in, en gaan dan na die regressiekieslys om ${bl('a')}, ${bl('b')} en ${or('r')} te vind.</p>` +
+        `<p style="margin-bottom:16px;">ʼn <strong>Spreidingsdiagram</strong> vertoon bivariaatdata (twee verwante veranderlikes) as punte, wat ons in staat stel om neigings visueel te identifiseer. Die <strong>kleinste-kwadrate-${bl('regressielyn')}</strong> (lyn van beste passing) het die vergelyking y = a + bx, waar ${bl('b')} = gradiënt en ${bl('a')} = y-afsnit. Hierdie lyn minimeer die som van die kwadrate van die vertikale afstande van elke punt na die lyn. Die <strong>korrelasiekoëffisiënt ${or('r')}</strong> meet die sterkte en rigting van die lineêre verband: ${or('r')} = 1 is volmaakte ${gr('positiewe korrelasie')}, ${or('r')} = −1 is volmaakte ${re('negatiewe korrelasie')}, ${or('r')} = 0 beteken geen lineêre korrelasie nie. Waardes tussen 0,75 en 1 (of −1 en −0,75) dui op sterk korrelasie, 0,5 tot 0,75 op matige korrelasie, en onder 0,5 op swak korrelasie. Op die Casio fx-82-reeks: gaan na STAT-modus, kies A+BX (lineêre regressie), voer x- en y-waardes in, en gaan dan na die regressiekieslys om ${bl('a')}, ${bl('b')} en ${or('r')} te vind.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -393,34 +393,34 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'ʼn Spreidingsdiagram wys ure gestudeer teenoor toetstellings wat in ʼn redelik reguit lyn styg, met r = 0.89. Beskryf die verband.',
-          answer: `${or('r')} = 0.89 dui op ʼn ${gr('sterk positiewe lineêre korrelasie')}`,
+          question: 'ʼn Spreidingsdiagram wys ure gestudeer teenoor toetstellings wat in ʼn redelik reguit lyn styg, met r = 0,89. Beskryf die verband.',
+          answer: `${or('r')} = 0,89 dui op ʼn ${gr('sterk positiewe lineêre korrelasie')}`,
           steps: [
-            `Identifiseer die ${or('r')}-waarde: ${or('r')} = ${or('0.89')}.`,
+            `Identifiseer die ${or('r')}-waarde: ${or('r')} = ${or('0,89')}.`,
             `Bepaal die rigting: ${or('r')} is ${gr('positief')} — namate ure gestudeer toeneem, neig toetstellings om toe te neem.`,
-            `Bepaal die sterkte: ${or('r')} = 0.89 lê tussen 0.75 en 1, wat op ʼn ${gr('sterk')} lineêre korrelasie dui.`,
-            `<strong>Gevolgtrekking:</strong> ${or('r')} = 0.89 dui op ʼn ${gr('sterk positiewe lineêre korrelasie')} — namate ure gestudeer toeneem, neig toetstellings om teen ʼn konstante koers toe te neem.`,
+            `Bepaal die sterkte: ${or('r')} = 0,89 lê tussen 0,75 en 1, wat op ʼn ${gr('sterk')} lineêre korrelasie dui.`,
+            `<strong>Gevolgtrekking:</strong> ${or('r')} = 0,89 dui op ʼn ${gr('sterk positiewe lineêre korrelasie')} — namate ure gestudeer toeneem, neig toetstellings om teen ʼn konstante koers toe te neem.`,
           ],
         },
         {
-          question: 'Lerato het bivariaatdata en vind regressielyn y = 15 + 4.2x en korrelasiekoëffisiënt r = 0.93. Voorspel y wanneer x = 10.',
-          answer: `y = ${bl('57')}; die voorspelling is betroubaar aangesien ${or('r')} = 0.93 naby 1 is`,
+          question: 'Lerato het bivariaatdata en vind regressielyn y = 15 + 4,2x en korrelasiekoëffisiënt r = 0,93. Voorspel y wanneer x = 10.',
+          answer: `y = ${bl('57')}; die voorspelling is betroubaar aangesien ${or('r')} = 0,93 naby 1 is`,
           steps: [
-            `Skryf die ${bl('regressielyn')} neer: y = ${bl('15')} + ${bl('4.2')}x.`,
-            `Vervang x = 10: y = 15 + 4.2 × 10 = 15 + 42 = ${bl('57')}.`,
-            `Kontroleer betroubaarheid met ${or('r')}: ${or('r')} = ${or('0.93')} lê tussen 0.75 en 1 — dit is ʼn ${gr('sterk positiewe')} korrelasie.`,
+            `Skryf die ${bl('regressielyn')} neer: y = ${bl('15')} + ${bl('4,2')}x.`,
+            `Vervang x = 10: y = 15 + 4,2 × 10 = 15 + 42 = ${bl('57')}.`,
+            `Kontroleer betroubaarheid met ${or('r')}: ${or('r')} = ${or('0,93')} lê tussen 0,75 en 1 — dit is ʼn ${gr('sterk positiewe')} korrelasie.`,
             `Aangesien ${or('r')} naby 1 is en x = 10 binne die datareeks val, is hierdie voorspelling ${gr('betroubaar')}.`,
             `<strong>Antwoord:</strong> y = ${bl('57')}.`,
           ],
         },
         {
-          question: 'Thabo bereken r = −0.3 vir sy datastel. Beskryf wat dit beteken.',
-          answer: `${or('r')} = −0.3 dui op ʼn ${re('swak negatiewe lineêre korrelasie')} — die lineêre model pas swak`,
+          question: 'Thabo bereken r = −0,3 vir sy datastel. Beskryf wat dit beteken.',
+          answer: `${or('r')} = −0,3 dui op ʼn ${re('swak negatiewe lineêre korrelasie')} — die lineêre model pas swak`,
           steps: [
-            `Identifiseer die ${or('r')}-waarde: ${or('r')} = ${or('−0.3')}.`,
+            `Identifiseer die ${or('r')}-waarde: ${or('r')} = ${or('−0,3')}.`,
             `Bepaal die rigting: ${or('r')} is ${re('negatief')} — daar is ʼn geringe neiging vir y om af te neem namate x toeneem.`,
-            `Bepaal die sterkte: |${or('r')}| = 0.3 is onder 0.5, wat op ʼn ${re('swak')} lineêre korrelasie dui.`,
-            `<strong>Gevolgtrekking:</strong> ${or('r')} = −0.3 dui op ʼn ${re('swak negatiewe lineêre korrelasie')} — daar is ʼn geringe neiging vir y om af te neem namate x toeneem, maar die verband is baie onbetroubaar en die ${bl('regressielyn')} pas swak by hierdie data.`,
+            `Bepaal die sterkte: |${or('r')}| = 0,3 is onder 0,5, wat op ʼn ${re('swak')} lineêre korrelasie dui.`,
+            `<strong>Gevolgtrekking:</strong> ${or('r')} = −0,3 dui op ʼn ${re('swak negatiewe lineêre korrelasie')} — daar is ʼn geringe neiging vir y om af te neem namate x toeneem, maar die verband is baie onbetroubaar en die ${bl('regressielyn')} pas swak by hierdie data.`,
           ],
         },
       ],
@@ -490,7 +490,7 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       correctAnswer: '68%',
       correctAnswers: ['68%', '68'],
-      explanation: '60 = μ − σ = 70 − 10 en 80 = μ + σ = 70 + 10. Volgens die 68-95-99.7-reël val 68% van die data binne 1 standaardafwyking van die gemiddelde.',
+      explanation: '60 = μ − σ = 70 − 10 en 80 = μ + σ = 70 + 10. Volgens die 68-95-99,7-reël val 68% van die data binne 1 standaardafwyking van die gemiddelde.',
     },
 
     // ── V7 Medium — 95%-reël vanaf normaalverspreiding ────────────────────────
@@ -501,14 +501,14 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       correctAnswer: '95%',
       correctAnswers: ['95%', '95'],
-      explanation: '50 = μ − 2σ = 70 − 20 en 90 = μ + 2σ = 70 + 20. Volgens die 68-95-99.7-reël val 95% van die data binne 2 standaardafwykings van die gemiddelde.',
+      explanation: '50 = μ − 2σ = 70 − 20 en 90 = μ + 2σ = 70 + 20. Volgens die 68-95-99,7-reël val 95% van die data binne 2 standaardafwykings van die gemiddelde.',
     },
 
     // ── V8 Moeilik — persentasie bo 2 SA ─────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Gebruik die diagram, bepaal die persentasie van die data wat bo 90 val.\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
-      answer: '95% val binne 2 standaardafwykings (50 tot 90). 5% val daarbuite. Volgens simmetrie val 2.5% bo 90.',
+      answer: '95% val binne 2 standaardafwykings (50 tot 90). 5% val daarbuite. Volgens simmetrie val 2,5% bo 90.',
       checkMode: 'self',
     },
 
@@ -553,29 +553,29 @@ export const topicData: TopicData = {
     // ── V13 Medium — beskryf korrelasiekoëffisiënt ────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'ʼn Spreidingsdiagram wys r=0.92. Beskryf die korrelasie.',
+      question: 'ʼn Spreidingsdiagram wys r=0,92. Beskryf die korrelasie.',
       answer: 'sterk positiewe lineêre korrelasie',
       checkMode: 'auto',
       correctAnswer: 'sterk positiewe lineêre korrelasie',
       correctAnswers: ['sterk positiewe lineêre korrelasie', 'sterk positiewe korrelasie'],
-      explanation: 'r = 0.92 lê tussen 0.75 en 1, wat op ʼn sterk positiewe lineêre korrelasie dui — namate x toeneem, neig y om teen ʼn konstante koers toe te neem.',
+      explanation: 'r = 0,92 lê tussen 0,75 en 1, wat op ʼn sterk positiewe lineêre korrelasie dui — namate x toeneem, neig y om teen ʼn konstante koers toe te neem.',
     },
 
     // ── V14 Maklik — voorspel y vanaf regressielyn ────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'ʼn Regressielyn is y=8+3.5x. Bepaal y wanneer x=6.',
+      question: 'ʼn Regressielyn is y=8+3,5x. Bepaal y wanneer x=6.',
       answer: '29',
       checkMode: 'auto',
       correctAnswer: '29',
-      explanation: 'y = 8 + 3.5(6) = 8 + 21 = 29',
+      explanation: 'y = 8 + 3,5(6) = 8 + 21 = 29',
     },
 
     // ── V15 Moeilik — voorspel en kommentaar oor betroubaarheid ───────────────
     {
       difficulty: 'Hard',
-      question: 'Thabo het ʼn regressielyn y=50−2.3x en r=−0.88. Voorspel y wanneer x=15 en lewer kommentaar oor die betroubaarheid.',
-      answer: 'y = 50 − 2.3(15) = 50 − 34.5 = 15.5. Aangesien r = −0.88 op ʼn sterk negatiewe korrelasie dui, is die voorspelling betroubaar mits x=15 binne die oorspronklike datareeks val.',
+      question: 'Thabo het ʼn regressielyn y=50−2,3x en r=−0,88. Voorspel y wanneer x=15 en lewer kommentaar oor die betroubaarheid.',
+      answer: 'y = 50 − 2,3(15) = 50 − 34,5 = 15,5. Aangesien r = −0,88 op ʼn sterk negatiewe korrelasie dui, is die voorspelling betroubaar mits x=15 binne die oorspronklike datareeks val.',
       checkMode: 'self',
     },
 
@@ -615,7 +615,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'ʼn Datastel het gemiddelde=78 en standaardafwyking=6, normaal verdeel. Bepaal die waarskynlikheid dat ʼn ewekansig gekose waarde tussen 66 en 90 lê.',
-      answer: '66 = 78 − 2(6) = μ − 2σ en 90 = 78 + 2(6) = μ + 2σ. Volgens die 68-95-99.7-reël val 95% van die data binne 2 standaardafwykings. Waarskynlikheid ≈ 0.95.',
+      answer: '66 = 78 − 2(6) = μ − 2σ en 90 = 78 + 2(6) = μ + 2σ. Volgens die 68-95-99,7-reël val 95% van die data binne 2 standaardafwykings. Waarskynlikheid ≈ 0,95.',
       checkMode: 'self',
     },
   ],
@@ -687,66 +687,66 @@ export const topicData: TopicData = {
         // ── Blok B: r interpreteer (V4–7) ───────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0.95. Is dit ʼn positiewe of negatiewe korrelasie?',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0,95. Is dit ʼn positiewe of negatiewe korrelasie?',
           answer: 'Positief',
           checkMode: 'auto',
           correctAnswer: 'positief',
           correctAnswers: ['positief', 'positiewe korrelasie'],
-          explanation: 'Aangesien r = 0.95 groter as 0 is, is die korrelasie positief — namate x toeneem, neig y ook om toe te neem.',
+          explanation: 'Aangesien r = 0,95 groter as 0 is, is die korrelasie positief — namate x toeneem, neig y ook om toe te neem.',
         },
         {
           difficulty: 'Easy-Medium',
-          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0.82. Beskryf die sterkte van hierdie korrelasie.',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0,82. Beskryf die sterkte van hierdie korrelasie.',
           answer: 'Sterk (positiewe) korrelasie',
           checkMode: 'auto',
           correctAnswer: 'sterk',
           correctAnswers: ['sterk', 'sterk korrelasie', 'sterk positiewe korrelasie'],
-          explanation: 'r = 0.82 lê tussen 0.75 en 1, wat op ʼn sterk lineêre korrelasie dui.',
+          explanation: 'r = 0,82 lê tussen 0,75 en 1, wat op ʼn sterk lineêre korrelasie dui.',
         },
         {
           difficulty: 'Medium',
-          question: 'Twee datastelle het korrelasiekoëffisiënte r = 0.4 en r = −0.9. Watter een wys die sterker lineêre verband?',
-          answer: 'Die datastel met r = −0.9',
+          question: 'Twee datastelle het korrelasiekoëffisiënte r = 0,4 en r = −0,9. Watter een wys die sterker lineêre verband?',
+          answer: 'Die datastel met r = −0,9',
           checkMode: 'auto',
-          correctAnswer: 'r=-0.9',
-          correctAnswers: ['r = -0.9', '-0.9', 'die een met r=-0.9', 'r=-0.9'],
-          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0.9| = 0.9 is groter as |0.4| = 0.4, dus wys r = −0.9 die sterker (negatiewe) lineêre verband.',
+          correctAnswer: 'r=-0,9',
+          correctAnswers: ['r = -0,9', 'r = -0.9', '-0,9', '-0.9', 'die een met r=-0,9', 'die een met r=-0.9', 'r=-0,9', 'r=-0.9'],
+          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0,9| = 0,9 is groter as |0,4| = 0,4, dus wys r = −0,9 die sterker (negatiewe) lineêre verband.',
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Spreidingsdiagram van roomys-verkope (x) teenoor daaglikse temperatuur (y) het r = 0.05. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
+          question: 'ʼn Spreidingsdiagram van roomys-verkope (x) teenoor daaglikse temperatuur (y) het r = 0,05. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
           answer: 'Daar is min tot geen lineêre korrelasie tussen die veranderlikes nie',
           checkMode: 'auto',
           correctAnswer: 'geenlineerekorrelasie',
           correctAnswers: ['geen lineêre korrelasie', 'min tot geen korrelasie', 'geen korrelasie', 'baie swak korrelasie'],
-          explanation: 'r = 0.05 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
+          explanation: 'r = 0,05 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
         },
 
         // ── Blok C: regressielynvoorspelling (V8–10) ────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Die kleinste-kwadrate-regressielyn vir ure gestudeer (x) teenoor toetspunt (y) is y = 12 + 2.5x. Voorspel die toetspunt vir ʼn leerder wat 8 ure studeer.',
+          question: 'Die kleinste-kwadrate-regressielyn vir ure gestudeer (x) teenoor toetspunt (y) is y = 12 + 2,5x. Voorspel die toetspunt vir ʼn leerder wat 8 ure studeer.',
           answer: '32',
           checkMode: 'auto',
           correctAnswer: '32',
-          explanation: 'y = 12 + 2.5(8) = 12 + 20 = 32.',
+          explanation: 'y = 12 + 2,5(8) = 12 + 20 = 32.',
         },
         {
           difficulty: 'Medium',
-          question: 'Met dieselfde regressielyn y = 12 + 2.5x, het ʼn leerder wat werklik 8 ure gestudeer het, 35 in die toets behaal. Bepaal die residu (werklike y − voorspelde y) vir hierdie leerder.',
+          question: 'Met dieselfde regressielyn y = 12 + 2,5x, het ʼn leerder wat werklik 8 ure gestudeer het, 35 in die toets behaal. Bepaal die residu (werklike y − voorspelde y) vir hierdie leerder.',
           answer: '3',
           checkMode: 'auto',
           correctAnswer: '3',
-          explanation: 'Voorspelde y = 12 + 2.5(8) = 32. Residu = werklik − voorspel = 35 − 32 = 3.',
+          explanation: 'Voorspelde y = 12 + 2,5(8) = 32. Residu = werklik − voorspel = 35 − 32 = 3.',
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Regressielyn vir afstand afgelê (x, in km) teenoor brandstof gebruik (y, in liter) is y = 1.5 + 0.08x. Voorspel die brandstofgebruik vir ʼn rit van 200 km.',
-          answer: '17.5 liter',
+          question: 'ʼn Regressielyn vir afstand afgelê (x, in km) teenoor brandstof gebruik (y, in liter) is y = 1,5 + 0,08x. Voorspel die brandstofgebruik vir ʼn rit van 200 km.',
+          answer: '17,5 liter',
           checkMode: 'auto',
-          correctAnswer: '17.5',
+          correctAnswer: '17,5',
           correctAnswers: ['17.5', '17.5 liter', '17,5'],
-          explanation: 'y = 1.5 + 0.08(200) = 1.5 + 16 = 17.5 liter.',
+          explanation: 'y = 1,5 + 0,08(200) = 1,5 + 16 = 17,5 liter.',
         },
 
         // ── Blok D: residue (V11–13) ────────────────────────────────────────
@@ -760,12 +760,12 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium-Hard',
-          question: 'ʼn Regressielyn is y = 40 − 1.5x. Vir x = 10 is die werklike waargenome waarde y = 22. Bereken die residu en stel vas of die werklike punt bo of onder die regressielyn lê.',
+          question: 'ʼn Regressielyn is y = 40 − 1,5x. Vir x = 10 is die werklike waargenome waarde y = 22. Bereken die residu en stel vas of die werklike punt bo of onder die regressielyn lê.',
           answer: 'Residu = −3; die punt lê onder die regressielyn',
           checkMode: 'auto',
           correctAnswer: '-3onder',
           correctAnswers: ['-3, onder', '-3 onder', 'residu -3 onder die lyn'],
-          explanation: 'Voorspelde y = 40 − 1.5(10) = 40 − 15 = 25. Residu = werklik − voorspel = 22 − 25 = −3. ʼn Negatiewe residu beteken die werklike punt lê onder die regressielyn.',
+          explanation: 'Voorspelde y = 40 − 1,5(10) = 40 − 15 = 25. Residu = werklik − voorspel = 22 − 25 = −3. ʼn Negatiewe residu beteken die werklike punt lê onder die regressielyn.',
         },
         {
           difficulty: 'Hard',
@@ -777,48 +777,48 @@ export const topicData: TopicData = {
         // ── Blok E: gekombineerde voorspelling + betroubaarheid (V14–16) ────
         {
           difficulty: 'Medium',
-          question: 'ʼn Regressielyn vir ure ekstra onderrig (x) teenoor verbetering in toetspunt (y, uit 100) is y = 20 + 1.8x, met korrelasiekoëffisiënt r = 0.93. Voorspel die verbetering in toetspunt vir ʼn leerder wat 15 ure onderrig ontvang.',
+          question: 'ʼn Regressielyn vir ure ekstra onderrig (x) teenoor verbetering in toetspunt (y, uit 100) is y = 20 + 1,8x, met korrelasiekoëffisiënt r = 0,93. Voorspel die verbetering in toetspunt vir ʼn leerder wat 15 ure onderrig ontvang.',
           answer: '47',
           checkMode: 'auto',
           correctAnswer: '47',
-          explanation: 'y = 20 + 1.8(15) = 20 + 27 = 47.',
+          explanation: 'y = 20 + 1,8(15) = 20 + 27 = 47.',
         },
         {
           difficulty: 'Medium-Hard',
-          question: 'Met die regressielyn y = 20 + 1.8x en korrelasiekoëffisiënt r = 0.93, het ʼn datapunt by x = 15 ʼn werklike y-waarde van 50. Bereken die residu en lewer kommentaar oor of r = 0.93 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
-          answer: 'Residu = 3. Aangesien r = 0.93 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
+          question: 'Met die regressielyn y = 20 + 1,8x en korrelasiekoëffisiënt r = 0,93, het ʼn datapunt by x = 15 ʼn werklike y-waarde van 50. Bereken die residu en lewer kommentaar oor of r = 0,93 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
+          answer: 'Residu = 3. Aangesien r = 0,93 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Tweede datastel het regressielyn y = 20 + 1.8x maar korrelasiekoëffisiënt r = 0.21. Sipho gebruik hierdie lyn om y te voorspel wanneer x = 15, en kry y = 47, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0.93. Is hy korrek? Verduidelik.',
-          answer: 'Nee — alhoewel die berekening y = 47 wiskundig korrek is, dui r = 0.21 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0.93, wat ʼn sterk lineêre patroon toon.',
+          question: 'ʼn Tweede datastel het regressielyn y = 20 + 1,8x maar korrelasiekoëffisiënt r = 0,21. Sipho gebruik hierdie lyn om y te voorspel wanneer x = 15, en kry y = 47, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0,93. Is hy korrek? Verduidelik.',
+          answer: 'Nee — alhoewel die berekening y = 47 wiskundig korrek is, dui r = 0,21 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0,93, wat ʼn sterk lineêre patroon toon.',
           checkMode: 'self',
         },
 
         // ── Blok F: regressielyn-eienskappe / ekstrapolasie / kousaliteit (V17–20) ──
         {
           difficulty: 'Medium-Hard',
-          question: 'ʼn Datastel van ure gestudeer (x) het x-waardes wat wissel van 1 tot 10. Die regressielyn is y = 12 + 2.5x. Thabo wil hierdie lyn gebruik om die toetspunt te voorspel vir ʼn leerder wat 40 ure gestudeer het. Verduidelik waarom hierdie voorspelling onbetroubaar sou wees.',
+          question: 'ʼn Datastel van ure gestudeer (x) het x-waardes wat wissel van 1 tot 10. Die regressielyn is y = 12 + 2,5x. Thabo wil hierdie lyn gebruik om die toetspunt te voorspel vir ʼn leerder wat 40 ure gestudeer het. Verduidelik waarom hierdie voorspelling onbetroubaar sou wees.',
           answer: 'x = 40 lê ver buite die oorspronklike datareeks (1 tot 10). Om die regressielyn te gebruik om waardes ver buite die reeks van die oorspronklike data te voorspel, staan bekend as ekstrapolasie, en dit is onbetroubaar omdat daar geen bewys is dat die lineêre neiging buite die waargenome data voortduur nie.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Datastel van ure gestudeer (x) teenoor toetspunt (y) het gemiddelde x̄ = 5.5 ure en gemiddelde ȳ = 51.75 punte. Lerato sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (5.5, 51.75) gaan. Is sy korrek? Verduidelik.',
+          question: 'ʼn Datastel van ure gestudeer (x) teenoor toetspunt (y) het gemiddelde x̄ = 5,5 ure en gemiddelde ȳ = 51,75 punte. Lerato sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (5,5; 51,75) gaan. Is sy korrek? Verduidelik.',
           answer: 'Ja — die kleinste-kwadrate-regressielyn gaan altyd deur die gemiddeldepunt (x̄, ȳ) van die data. Dit is ʼn wiskundige eienskap van hoe die lyn bereken word.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0.88) tussen die aantal brandweerwaens wat na ʼn brand gestuur word en die hoeveelheid skade wat veroorsaak word. Sy maak die gevolgtrekking dat brandweerwaens meer skade veroorsaak. Verduidelik die fout in haar redenasie.',
+          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0,88) tussen die aantal brandweerwaens wat na ʼn brand gestuur word en die hoeveelheid skade wat veroorsaak word. Sy maak die gevolgtrekking dat brandweerwaens meer skade veroorsaak. Verduidelik die fout in haar redenasie.',
           answer: 'Korrelasie beteken nie kousaliteit nie. ʼn Waarskynlike verduideliking is ʼn derde (verwarrende) veranderlike — die grootte van die brand. Groter brande veroorsaak meer skade EN vereis meer brandweerwaens om gestuur te word, wat die korrelasie skep sonder dat die brandweerwaens die skade veroorsaak.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 2), (2, 8), (3, 18), (4, 32), (5, 50) wat ʼn duidelike geboë (U-vormige) patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0.98. Amahle sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is sy korrek? Verduidelik.',
-          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0.98 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
+          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 2), (2, 8), (3, 18), (4, 32), (5, 50) wat ʼn duidelike geboë (U-vormige) patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0,98. Amahle sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is sy korrek? Verduidelik.',
+          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0,98 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
           checkMode: 'self',
         },
       ],
@@ -871,67 +871,67 @@ export const topicData: TopicData = {
         // ── Blok B: r interpreteer (V4–7) ───────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0.78. Is dit ʼn positiewe of negatiewe korrelasie?',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0,78. Is dit ʼn positiewe of negatiewe korrelasie?',
           answer: 'Negatief',
           checkMode: 'auto',
           correctAnswer: 'negatief',
           correctAnswers: ['negatief', 'negatiewe korrelasie'],
-          explanation: 'Aangesien r = −0.78 kleiner as 0 is, is die korrelasie negatief — namate x toeneem, neig y om af te neem.',
+          explanation: 'Aangesien r = −0,78 kleiner as 0 is, is die korrelasie negatief — namate x toeneem, neig y om af te neem.',
         },
         {
           difficulty: 'Easy-Medium',
-          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0.6. Beskryf die sterkte van hierdie korrelasie.',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0,6. Beskryf die sterkte van hierdie korrelasie.',
           answer: 'Matige (negatiewe) korrelasie',
           checkMode: 'auto',
           correctAnswer: 'matig',
           correctAnswers: ['matig', 'matige korrelasie', 'matige negatiewe korrelasie'],
-          explanation: '|r| = 0.6 lê tussen 0.5 en 0.75, wat op ʼn matige lineêre korrelasie dui.',
+          explanation: '|r| = 0,6 lê tussen 0,5 en 0,75, wat op ʼn matige lineêre korrelasie dui.',
         },
         {
           difficulty: 'Medium',
-          question: 'Twee datastelle het korrelasiekoëffisiënte r = −0.85 en r = 0.3. Watter een wys die sterker lineêre verband?',
-          answer: 'Die datastel met r = −0.85',
+          question: 'Twee datastelle het korrelasiekoëffisiënte r = −0,85 en r = 0,3. Watter een wys die sterker lineêre verband?',
+          answer: 'Die datastel met r = −0,85',
           checkMode: 'auto',
-          correctAnswer: 'r=-0.85',
-          correctAnswers: ['r = -0.85', '-0.85', 'die een met r=-0.85', 'r=-0.85'],
-          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0.85| = 0.85 is groter as |0.3| = 0.3, dus wys r = −0.85 die sterker (negatiewe) lineêre verband.',
+          correctAnswer: 'r=-0,85',
+          correctAnswers: ['r = -0,85', 'r = -0.85', '-0,85', '-0.85', 'die een met r=-0,85', 'die een met r=-0.85', 'r=-0,85', 'r=-0.85'],
+          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0,85| = 0,85 is groter as |0,3| = 0,3, dus wys r = −0,85 die sterker (negatiewe) lineêre verband.',
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Spreidingsdiagram van skoengrootte (x) teenoor maandelikse inkomste (y) het r = 0.02. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
+          question: 'ʼn Spreidingsdiagram van skoengrootte (x) teenoor maandelikse inkomste (y) het r = 0,02. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
           answer: 'Daar is min tot geen lineêre korrelasie tussen die veranderlikes nie',
           checkMode: 'auto',
           correctAnswer: 'geenlineerekorrelasie',
           correctAnswers: ['geen lineêre korrelasie', 'min tot geen korrelasie', 'geen korrelasie', 'baie swak korrelasie'],
-          explanation: 'r = 0.02 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
+          explanation: 'r = 0,02 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
         },
 
         // ── Blok C: regressielynvoorspelling (V8–10) ────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Die kleinste-kwadrate-regressielyn vir advertensies uitgesaai (x) teenoor weeklikse verkope in honderde rand (y) is y = 8 + 3.2x. Voorspel die weeklikse verkope (in honderde rand) wanneer 9 advertensies uitgesaai word.',
-          answer: '36.8',
+          question: 'Die kleinste-kwadrate-regressielyn vir advertensies uitgesaai (x) teenoor weeklikse verkope in honderde rand (y) is y = 8 + 3,2x. Voorspel die weeklikse verkope (in honderde rand) wanneer 9 advertensies uitgesaai word.',
+          answer: '36,8',
           checkMode: 'auto',
-          correctAnswer: '36.8',
+          correctAnswer: '36,8',
           correctAnswers: ['36.8', '36,8'],
-          explanation: 'y = 8 + 3.2(9) = 8 + 28.8 = 36.8 (honderde rand).',
+          explanation: 'y = 8 + 3,2(9) = 8 + 28,8 = 36,8 (honderde rand).',
         },
         {
           difficulty: 'Medium',
-          question: 'Met dieselfde regressielyn y = 8 + 3.2x, het ʼn winkel wat werklik 9 advertensies uitgesaai het, weeklikse verkope van 40 (honderde rand) gehad. Bepaal die residu (werklike y − voorspelde y) vir hierdie winkel.',
-          answer: '3.2',
+          question: 'Met dieselfde regressielyn y = 8 + 3,2x, het ʼn winkel wat werklik 9 advertensies uitgesaai het, weeklikse verkope van 40 (honderde rand) gehad. Bepaal die residu (werklike y − voorspelde y) vir hierdie winkel.',
+          answer: '3,2',
           checkMode: 'auto',
-          correctAnswer: '3.2',
+          correctAnswer: '3,2',
           correctAnswers: ['3.2', '3,2'],
-          explanation: 'Voorspelde y = 8 + 3.2(9) = 36.8. Residu = werklik − voorspel = 40 − 36.8 = 3.2.',
+          explanation: 'Voorspelde y = 8 + 3,2(9) = 36,8. Residu = werklik − voorspel = 40 − 36,8 = 3,2.',
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Regressielyn vir erfgrootte in m² (x) teenoor huisprys in duisende rand (y) is y = 300 + 0.6x. Voorspel die huisprys vir ʼn erf van 250 m².',
+          question: 'ʼn Regressielyn vir erfgrootte in m² (x) teenoor huisprys in duisende rand (y) is y = 300 + 0,6x. Voorspel die huisprys vir ʼn erf van 250 m².',
           answer: '450 (duisend rand)',
           checkMode: 'auto',
           correctAnswer: '450',
-          explanation: 'y = 300 + 0.6(250) = 300 + 150 = 450 (duisend rand).',
+          explanation: 'y = 300 + 0,6(250) = 300 + 150 = 450 (duisend rand).',
         },
 
         // ── Blok D: residue (V11–13) ────────────────────────────────────────
@@ -962,7 +962,7 @@ export const topicData: TopicData = {
         // ── Blok E: gekombineerde voorspelling + betroubaarheid (V14–16) ────
         {
           difficulty: 'Medium',
-          question: 'ʼn Regressielyn vir aantal werknemers opgelei (x) teenoor maandelikse uitsettoename (y, in eenhede) is y = 100 + 4x, met korrelasiekoëffisiënt r = 0.89. Voorspel die uitsettoename wanneer 6 werknemers opgelei word.',
+          question: 'ʼn Regressielyn vir aantal werknemers opgelei (x) teenoor maandelikse uitsettoename (y, in eenhede) is y = 100 + 4x, met korrelasiekoëffisiënt r = 0,89. Voorspel die uitsettoename wanneer 6 werknemers opgelei word.',
           answer: '124',
           checkMode: 'auto',
           correctAnswer: '124',
@@ -970,40 +970,40 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium-Hard',
-          question: 'Met die regressielyn y = 100 + 4x en korrelasiekoëffisiënt r = 0.89, het ʼn datapunt by x = 6 ʼn werklike y-waarde van 130. Bereken die residu en lewer kommentaar oor of r = 0.89 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
-          answer: 'Residu = 6. Aangesien r = 0.89 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
+          question: 'Met die regressielyn y = 100 + 4x en korrelasiekoëffisiënt r = 0,89, het ʼn datapunt by x = 6 ʼn werklike y-waarde van 130. Bereken die residu en lewer kommentaar oor of r = 0,89 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
+          answer: 'Residu = 6. Aangesien r = 0,89 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Tweede datastel het regressielyn y = 100 + 4x maar korrelasiekoëffisiënt r = 0.15. Nomvula gebruik hierdie lyn om y te voorspel wanneer x = 6, en kry y = 124, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0.89. Is sy korrek? Verduidelik.',
-          answer: 'Nee — alhoewel die berekening y = 124 wiskundig korrek is, dui r = 0.15 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0.89, wat ʼn sterk lineêre patroon toon.',
+          question: 'ʼn Tweede datastel het regressielyn y = 100 + 4x maar korrelasiekoëffisiënt r = 0,15. Nomvula gebruik hierdie lyn om y te voorspel wanneer x = 6, en kry y = 124, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0,89. Is sy korrek? Verduidelik.',
+          answer: 'Nee — alhoewel die berekening y = 124 wiskundig korrek is, dui r = 0,15 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0,89, wat ʼn sterk lineêre patroon toon.',
           checkMode: 'self',
         },
 
         // ── Blok F: regressielyn-eienskappe / ekstrapolasie / kousaliteit (V17–20) ──
         {
           difficulty: 'Medium-Hard',
-          question: 'ʼn Datastel van advertensies uitgesaai (x) het x-waardes wat wissel van 1 tot 10. Die regressielyn is y = 8 + 3.2x. Kabelo wil hierdie lyn gebruik om weeklikse verkope te voorspel vir ʼn winkel wat 60 advertensies uitsaai. Verduidelik waarom hierdie voorspelling onbetroubaar sou wees.',
+          question: 'ʼn Datastel van advertensies uitgesaai (x) het x-waardes wat wissel van 1 tot 10. Die regressielyn is y = 8 + 3,2x. Kabelo wil hierdie lyn gebruik om weeklikse verkope te voorspel vir ʼn winkel wat 60 advertensies uitsaai. Verduidelik waarom hierdie voorspelling onbetroubaar sou wees.',
           answer: 'x = 60 lê ver buite die oorspronklike datareeks (1 tot 10). Om die regressielyn te gebruik om waardes ver buite die reeks van die oorspronklike data te voorspel, staan bekend as ekstrapolasie, en dit is onbetroubaar omdat daar geen bewys is dat die lineêre neiging buite die waargenome data voortduur nie.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Datastel van advertensies uitgesaai (x) teenoor weeklikse verkope (y) het gemiddelde x̄ = 4 advertensies en gemiddelde ȳ = 20.8 (honderde rand). Aisha sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (4, 20.8) gaan. Is sy korrek? Verduidelik.',
+          question: 'ʼn Datastel van advertensies uitgesaai (x) teenoor weeklikse verkope (y) het gemiddelde x̄ = 4 advertensies en gemiddelde ȳ = 20,8 (honderde rand). Aisha sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (4; 20,8) gaan. Is sy korrek? Verduidelik.',
           answer: 'Ja — die kleinste-kwadrate-regressielyn gaan altyd deur die gemiddeldepunt (x̄, ȳ) van die data. Dit is ʼn wiskundige eienskap van hoe die lyn bereken word.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0.91) tussen maandelikse roomys-verkope en die aantal verdrinkingsvoorvalle by strande. Hy maak die gevolgtrekking dat roomys verdrinking veroorsaak. Verduidelik die fout in sy redenasie.',
+          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0,91) tussen maandelikse roomys-verkope en die aantal verdrinkingsvoorvalle by strande. Hy maak die gevolgtrekking dat roomys verdrinking veroorsaak. Verduidelik die fout in sy redenasie.',
           answer: 'Korrelasie beteken nie kousaliteit nie. ʼn Waarskynlike verduideliking is ʼn derde (verwarrende) veranderlike — warm weer. Warm weer verhoog beide roomys-verkope EN die aantal mense wat swem (en dus verdrinkingsrisiko), wat die korrelasie skep sonder dat roomys verdrinking veroorsaak.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 3), (2, 10), (3, 21), (4, 36), (5, 55) wat ʼn duidelike geboë (U-vormige) patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0.97. Kagiso sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is hy korrek? Verduidelik.',
-          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0.97 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
+          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 3), (2, 10), (3, 21), (4, 36), (5, 55) wat ʼn duidelike geboë (U-vormige) patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0,97. Kagiso sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is hy korrek? Verduidelik.',
+          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0,97 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
           checkMode: 'self',
         },
       ],
@@ -1056,65 +1056,65 @@ export const topicData: TopicData = {
         // ── Blok B: r interpreteer (V4–7) ───────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0.97. Is dit ʼn positiewe of negatiewe korrelasie?',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0,97. Is dit ʼn positiewe of negatiewe korrelasie?',
           answer: 'Negatief',
           checkMode: 'auto',
           correctAnswer: 'negatief',
           correctAnswers: ['negatief', 'negatiewe korrelasie'],
-          explanation: 'Aangesien r = −0.97 kleiner as 0 is, is die korrelasie negatief — namate x toeneem, neig y om af te neem.',
+          explanation: 'Aangesien r = −0,97 kleiner as 0 is, is die korrelasie negatief — namate x toeneem, neig y om af te neem.',
         },
         {
           difficulty: 'Easy-Medium',
-          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0.68. Beskryf die sterkte van hierdie korrelasie.',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0,68. Beskryf die sterkte van hierdie korrelasie.',
           answer: 'Matige (positiewe) korrelasie',
           checkMode: 'auto',
           correctAnswer: 'matig',
           correctAnswers: ['matig', 'matige korrelasie', 'matige positiewe korrelasie'],
-          explanation: 'r = 0.68 lê tussen 0.5 en 0.75, wat op ʼn matige lineêre korrelasie dui.',
+          explanation: 'r = 0,68 lê tussen 0,5 en 0,75, wat op ʼn matige lineêre korrelasie dui.',
         },
         {
           difficulty: 'Medium',
-          question: 'Twee datastelle het korrelasiekoëffisiënte r = 0.55 en r = −0.97. Watter een wys die sterker lineêre verband?',
-          answer: 'Die datastel met r = −0.97',
+          question: 'Twee datastelle het korrelasiekoëffisiënte r = 0,55 en r = −0,97. Watter een wys die sterker lineêre verband?',
+          answer: 'Die datastel met r = −0,97',
           checkMode: 'auto',
-          correctAnswer: 'r=-0.97',
-          correctAnswers: ['r = -0.97', '-0.97', 'die een met r=-0.97', 'r=-0.97'],
-          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0.97| = 0.97 is groter as |0.55| = 0.55, dus wys r = −0.97 die sterker (negatiewe) lineêre verband.',
+          correctAnswer: 'r=-0,97',
+          correctAnswers: ['r = -0,97', 'r = -0.97', '-0,97', '-0.97', 'die een met r=-0,97', 'die een met r=-0.97', 'r=-0,97', 'r=-0.97'],
+          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0,97| = 0,97 is groter as |0,55| = 0,55, dus wys r = −0,97 die sterker (negatiewe) lineêre verband.',
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Spreidingsdiagram van ʼn persoon se geboortemaand (x) teenoor hulle lengte (y) het r = −0.03. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
+          question: 'ʼn Spreidingsdiagram van ʼn persoon se geboortemaand (x) teenoor hulle lengte (y) het r = −0,03. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
           answer: 'Daar is min tot geen lineêre korrelasie tussen die veranderlikes nie',
           checkMode: 'auto',
           correctAnswer: 'geenlineerekorrelasie',
           correctAnswers: ['geen lineêre korrelasie', 'min tot geen korrelasie', 'geen korrelasie', 'baie swak korrelasie'],
-          explanation: 'r = −0.03 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
+          explanation: 'r = −0,03 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
         },
 
         // ── Blok C: regressielynvoorspelling (V8–10) ────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Die kleinste-kwadrate-regressielyn vir oefenure per week (x) teenoor kompetisietelling uit 100 (y) is y = 15 + 1.6x. Voorspel die kompetisietelling vir ʼn atleet wat 20 ure per week oefen.',
+          question: 'Die kleinste-kwadrate-regressielyn vir oefenure per week (x) teenoor kompetisietelling uit 100 (y) is y = 15 + 1,6x. Voorspel die kompetisietelling vir ʼn atleet wat 20 ure per week oefen.',
           answer: '47',
           checkMode: 'auto',
           correctAnswer: '47',
-          explanation: 'y = 15 + 1.6(20) = 15 + 32 = 47.',
+          explanation: 'y = 15 + 1,6(20) = 15 + 32 = 47.',
         },
         {
           difficulty: 'Medium',
-          question: 'Met dieselfde regressielyn y = 15 + 1.6x, het ʼn atleet wat werklik 20 ure geoefen het, 52 in die kompetisie behaal. Bepaal die residu (werklike y − voorspelde y) vir hierdie atleet.',
+          question: 'Met dieselfde regressielyn y = 15 + 1,6x, het ʼn atleet wat werklik 20 ure geoefen het, 52 in die kompetisie behaal. Bepaal die residu (werklike y − voorspelde y) vir hierdie atleet.',
           answer: '5',
           checkMode: 'auto',
           correctAnswer: '5',
-          explanation: 'Voorspelde y = 15 + 1.6(20) = 47. Residu = werklik − voorspel = 52 − 47 = 5.',
+          explanation: 'Voorspelde y = 15 + 1,6(20) = 47. Residu = werklik − voorspel = 52 − 47 = 5.',
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Regressielyn vir temperatuur in °C (x) teenoor koeldrank-verkope in liter (y) is y = 40 + 5.5x. Voorspel die koeldrank-verkope wanneer die temperatuur 28°C is.',
+          question: 'ʼn Regressielyn vir temperatuur in °C (x) teenoor koeldrank-verkope in liter (y) is y = 40 + 5,5x. Voorspel die koeldrank-verkope wanneer die temperatuur 28°C is.',
           answer: '194 liter',
           checkMode: 'auto',
           correctAnswer: '194',
-          explanation: 'y = 40 + 5.5(28) = 40 + 154 = 194 liter.',
+          explanation: 'y = 40 + 5,5(28) = 40 + 154 = 194 liter.',
         },
 
         // ── Blok D: residue (V11–13) ────────────────────────────────────────
@@ -1145,7 +1145,7 @@ export const topicData: TopicData = {
         // ── Blok E: gekombineerde voorspelling + betroubaarheid (V14–16) ────
         {
           difficulty: 'Medium',
-          question: 'ʼn Regressielyn vir ure sonlig per dag (x) teenoor plantgroei in mm (y) is y = 50 + 6x, met korrelasiekoëffisiënt r = 0.87. Voorspel die plantgroei vir 7 ure sonlig per dag.',
+          question: 'ʼn Regressielyn vir ure sonlig per dag (x) teenoor plantgroei in mm (y) is y = 50 + 6x, met korrelasiekoëffisiënt r = 0,87. Voorspel die plantgroei vir 7 ure sonlig per dag.',
           answer: '92',
           checkMode: 'auto',
           correctAnswer: '92',
@@ -1153,14 +1153,14 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium-Hard',
-          question: 'Met die regressielyn y = 50 + 6x en korrelasiekoëffisiënt r = 0.87, het ʼn datapunt by x = 7 ʼn werklike y-waarde van 85. Bereken die residu en lewer kommentaar oor of r = 0.87 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
-          answer: 'Residu = −7. Aangesien r = 0.87 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
+          question: 'Met die regressielyn y = 50 + 6x en korrelasiekoëffisiënt r = 0,87, het ʼn datapunt by x = 7 ʼn werklike y-waarde van 85. Bereken die residu en lewer kommentaar oor of r = 0,87 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
+          answer: 'Residu = −7. Aangesien r = 0,87 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Tweede datastel het regressielyn y = 50 + 6x maar korrelasiekoëffisiënt r = 0.18. Thandiwe gebruik hierdie lyn om y te voorspel wanneer x = 7, en kry y = 92, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0.87. Is sy korrek? Verduidelik.',
-          answer: 'Nee — alhoewel die berekening y = 92 wiskundig korrek is, dui r = 0.18 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0.87, wat ʼn sterk lineêre patroon toon.',
+          question: 'ʼn Tweede datastel het regressielyn y = 50 + 6x maar korrelasiekoëffisiënt r = 0,18. Thandiwe gebruik hierdie lyn om y te voorspel wanneer x = 7, en kry y = 92, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0,87. Is sy korrek? Verduidelik.',
+          answer: 'Nee — alhoewel die berekening y = 92 wiskundig korrek is, dui r = 0,18 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0,87, wat ʼn sterk lineêre patroon toon.',
           checkMode: 'self',
         },
 
@@ -1173,20 +1173,20 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Datastel van oefenure (x) teenoor kompetisietelling (y) het gemiddelde x̄ = 11 ure en gemiddelde ȳ = 32.6. Karabo sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (11, 32.6) gaan. Is hy korrek? Verduidelik.',
+          question: 'ʼn Datastel van oefenure (x) teenoor kompetisietelling (y) het gemiddelde x̄ = 11 ure en gemiddelde ȳ = 32,6. Karabo sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (11; 32,6) gaan. Is hy korrek? Verduidelik.',
           answer: 'Ja — die kleinste-kwadrate-regressielyn gaan altyd deur die gemiddeldepunt (x̄, ȳ) van die data. Dit is ʼn wiskundige eienskap van hoe die lyn bereken word.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0.94) tussen die aantal brandweermanne by ʼn toneel en die hoeveelheid sigbare rook. Sy maak die gevolgtrekking dat meer brandweermanne meer rook veroorsaak. Verduidelik die fout in haar redenasie.',
+          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0,94) tussen die aantal brandweermanne by ʼn toneel en die hoeveelheid sigbare rook. Sy maak die gevolgtrekking dat meer brandweermanne meer rook veroorsaak. Verduidelik die fout in haar redenasie.',
           answer: 'Korrelasie beteken nie kousaliteit nie. ʼn Waarskynlike verduideliking is ʼn derde (verwarrende) veranderlike — die grootte/intensiteit van die brand. ʼn Groter, meer intense brand produseer meer rook EN vereis meer brandweermanne om gestuur te word, wat die korrelasie skep sonder dat die brandweermanne die rook veroorsaak.',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 4), (2, 15), (3, 32), (4, 55), (5, 84) wat ʼn duidelike geboë patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0.96. Boitumelo sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is sy korrek? Verduidelik.',
-          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0.96 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
+          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 4), (2, 15), (3, 32), (4, 55), (5, 84) wat ʼn duidelike geboë patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0,96. Boitumelo sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is sy korrek? Verduidelik.',
+          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0,96 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
           checkMode: 'self',
         },
       ],

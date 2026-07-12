@@ -84,7 +84,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between dependent and independent events with coin, dice and ball-drawing examples, and demonstrating the product rule" />',
+        '<VideoPlaceholder label="Kort video wat die verskil tussen afhanklike en onafhanklike gebeurtenisse verduidelik met muntstuk-, dobbelsteen- en bal-trek-voorbeelde, en die produkreël demonstreer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -161,10 +161,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Venn diagram with two overlapping circles (Plays Sport 15, overlap 8, Plays Music 10, neither 7) and a tree diagram showing two draws without replacement from a bag of 5 red and 3 blue balls with adjusted second-branch probabilities" />',
+        '<DiagramPlaceholder label="Venndiagram met twee oorvleuelende sirkels (Speel Sport 15, oorvleueling 8, Speel Musiek 10, geen 7) en ʼn boomdiagram wat twee trekkings sonder vervanging uit ʼn sak van 5 rooi en 3 blou balle wys met aangepaste tweede-tak-waarskynlikhede" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to use a Venn diagram and a tree diagram to organise and solve probability problems involving dependent events" />',
+        '<VideoPlaceholder label="Kort video wat demonstreer hoe om ʼn Venndiagram en ʼn boomdiagram te gebruik om waarskynlikheidsprobleme met afhanklike gebeurtenisse te organiseer en op te los" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -249,10 +249,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two-way contingency table: rows are Male (30 passed, 10 failed, total 40) and Female (39 passed, 21 failed, total 60), columns are Passed and Failed, with grand total 100" />',
+        '<DiagramPlaceholder label="Tweerigting-tabel: rye is Manlik (30 geslaag, 10 gedruip, totaal 40) en Vroulik (39 geslaag, 21 gedruip, totaal 60), kolomme is Geslaag en Gedruip, met groottotaal 100" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to combine the product rule, addition rule and complementary rule to solve multi-step probability problems, including reading a contingency table to test for independence" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die produkreël, optellingsreël en komplementêre reël te kombineer om meerstap-waarskynlikheidsprobleme op te los, insluitend die lees van ʼn tweerigting-tabel om vir onafhanklikheid te toets" />',
     },
   ],
 
@@ -263,7 +263,7 @@ export const topicData: TopicData = {
       question: 'ʼn Muntstuk word opgegooi en ʼn dobbelsteen word gegooi. Is hierdie onafhanklike gebeurtenisse?',
       answer: 'ja',
       checkMode: 'auto',
-      correctAnswer: 'yes',
+      correctAnswer: 'ja',
       correctAnswers: ['yes', 'Yes', 'ja', 'Ja'],
       explanation: 'Die uitkoms van die muntstukgooi het geen uitwerking op die dobbelsteengooi nie — dit is heeltemal aparte proefnemings. Dit is onafhanklike gebeurtenisse.',
     },
@@ -274,7 +274,7 @@ export const topicData: TopicData = {
       question: 'ʼn Sak het 6 rooi en 4 blou balle. Twee word sonder vervanging getrek. Is die trekkings onafhanklik?',
       answer: 'nee',
       checkMode: 'auto',
-      correctAnswer: 'no',
+      correctAnswer: 'nee',
       correctAnswers: ['no', 'No', 'nee', 'Nee'],
       explanation: 'Om sonder vervanging te trek verminder die totale aantal balle, dus hang die waarskynlikheid van die tweede trekking af van wat eerste getrek is — die gebeurtenisse is afhanklik.',
     },
@@ -291,9 +291,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'W(A) = 0,3, W(B) = 0,4, en A en B is onafhanklik. Vind W(A en B).',
-      answer: '0.12',
+      answer: '0,12',
       checkMode: 'auto',
-      correctAnswer: '0.12',
+      correctAnswer: '0,12',
       explanation: 'Pas die produkreël vir onafhanklike gebeurtenisse toe: W(A en B) = W(A) × W(B) = 0,3 × 0,4 = 0,12.',
     },
 
@@ -373,9 +373,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'W(A) = 0,5, W(B) = 0,3, W(A en B) = 0,15. Vind W(A of B).',
-      answer: '0.65',
+      answer: '0,65',
       checkMode: 'auto',
-      correctAnswer: '0.65',
+      correctAnswer: '0,65',
       explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,5 + 0,3 − 0,15 = 0,65.',
     },
 
@@ -455,14 +455,14 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Afhanklike vs onafhanklike gebeurtenisse (Easy-Medium)
-        { difficulty: 'Easy', question: 'ʼn Wieletjie word gedraai en ʼn muntstuk word opgegooi. Is hierdie onafhanklike gebeurtenisse?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes', 'ja', 'Ja'], answer: 'ja', explanation: 'Die uitkoms van die wieletjie het geen uitwerking op die muntstukgooi nie — die twee proefnemings is heeltemal apart. Dit is onafhanklike gebeurtenisse.' },
-        { difficulty: 'Easy', question: 'ʼn Boks het 10 sjokolades. Zanele eet een sjokolade, en eet dan ʼn tweede sjokolade sonder om die eerste terug te sit. Is hierdie twee keuses onafhanklik?', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No', 'nee', 'Nee'], answer: 'nee', explanation: 'Om die eerste sjokolade te eet verminder die totale aantal sjokolades beskikbaar, dus hang die waarskynlikheid van die tipe van die tweede sjokolade af van wat eerste geëet is — die gebeurtenisse is afhanklik.' },
+        { difficulty: 'Easy', question: 'ʼn Wieletjie word gedraai en ʼn muntstuk word opgegooi. Is hierdie onafhanklike gebeurtenisse?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['yes', 'Yes', 'ja', 'Ja'], answer: 'ja', explanation: 'Die uitkoms van die wieletjie het geen uitwerking op die muntstukgooi nie — die twee proefnemings is heeltemal apart. Dit is onafhanklike gebeurtenisse.' },
+        { difficulty: 'Easy', question: 'ʼn Boks het 10 sjokolades. Zanele eet een sjokolade, en eet dan ʼn tweede sjokolade sonder om die eerste terug te sit. Is hierdie twee keuses onafhanklik?', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['no', 'No', 'nee', 'Nee'], answer: 'nee', explanation: 'Om die eerste sjokolade te eet verminder die totale aantal sjokolades beskikbaar, dus hang die waarskynlikheid van die tipe van die tweede sjokolade af van wat eerste geëet is — die gebeurtenisse is afhanklik.' },
         { difficulty: 'Medium', question: 'Kagiso sê as twee gebeurtenisse na mekaar in tyd plaasvind, moet hulle afhanklik wees. Is hy korrek? Verduidelik met behulp van ʼn voorbeeld.', answer: 'Nee — die volgorde waarin gebeurtenisse plaasvind het niks te doen met of hulle afhanklik is nie. Wat werklik bepaal of gebeurtenisse afhanklik is, is of die uitkoms van die eerste gebeurtenis die waarskynlikheid van die tweede verander. ʼn Muntstuk word byvoorbeeld opgegooi en dan word ʼn dobbelsteen gegooi — hulle vind na mekaar plaas, maar die muntstukuitkoms beïnvloed die dobbelsteenwaarskynlikhede glad nie, dus is hulle steeds onafhanklik al vind hulle in volgorde plaas.', checkMode: 'self' },
 
         // Blok 2 — Produkreël vir onafhanklike gebeurtenisse (Easy-Medium)
-        { difficulty: 'Easy', question: 'W(A) = 0,6, W(B) = 0,35, en A en B is onafhanklik. Vind W(A en B).', checkMode: 'auto', correctAnswer: '0.21', answer: '0,21', explanation: 'Pas die produkreël vir onafhanklike gebeurtenisse toe: W(A en B) = W(A) × W(B) = 0,6 × 0,35 = 0,21.' },
+        { difficulty: 'Easy', question: 'W(A) = 0,6, W(B) = 0,35, en A en B is onafhanklik. Vind W(A en B).', checkMode: 'auto', correctAnswer: '0,21', answer: '0,21', explanation: 'Pas die produkreël vir onafhanklike gebeurtenisse toe: W(A en B) = W(A) × W(B) = 0,6 × 0,35 = 0,21.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 5 rooi en 7 blou albasters. Palesa trek ʼn albaster, noteer die kleur, sit dit terug, en trek dan weer. Vind W(albei trekkings is rooi).', checkMode: 'auto', correctAnswer: '25/144', answer: '25/144', explanation: 'Omdat die albaster teruggesit word, is die twee trekkings onafhanklik, elk met W(rooi) = 5/12. W(albei rooi) = 5/12 × 5/12 = 25/144.' },
-        { difficulty: 'Medium', question: 'ʼn Fabrieksmasjien het ʼn waarskynlikheid van 0,9 om ʼn nie-defektiewe item op enige lopie te vervaardig, onafhanklik van ander lopies. Vind die waarskynlikheid dat die volgende 2 items albei nie-defektief is.', checkMode: 'auto', correctAnswer: '0.81', answer: '0,81', explanation: 'Aangesien die lopies onafhanklik is: W(albei nie-defektief) = 0,9 × 0,9 = 0,81.' },
+        { difficulty: 'Medium', question: 'ʼn Fabrieksmasjien het ʼn waarskynlikheid van 0,9 om ʼn nie-defektiewe item op enige lopie te vervaardig, onafhanklik van ander lopies. Vind die waarskynlikheid dat die volgende 2 items albei nie-defektief is.', checkMode: 'auto', correctAnswer: '0,81', answer: '0,81', explanation: 'Aangesien die lopies onafhanklik is: W(albei nie-defektief) = 0,9 × 0,9 = 0,81.' },
 
         // Blok 3 — Venndiagram met algebraïese versamelingsnotasie (Medium-Hard) [DIAGRAM LATER]
         { difficulty: 'Medium', question: 'ʼn Venndiagram wys versamelings A en B binne ʼn steekproefruimte S van 45 leerders: n(A) = 26 leerders speel sport, n(B) = 17 leerders speel musiek, n(A ∩ B) = 9 doen albei. Vind n(A slegs), die aantal wat sport speel maar nie musiek nie.', checkMode: 'auto', correctAnswer: '17', answer: '17', explanation: 'n(A slegs) = n(A) − n(A ∩ B) = 26 − 9 = 17.', diagramSvg: '<svg viewBox="0 0 320 250" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="290" height="170" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="160" y="12" font-size="13" fill="#0f1f3d" text-anchor="middle" font-weight="700">S = 45</text><circle cx="130" cy="105" r="75" fill="none" stroke="#2563eb" stroke-width="2.5"/><circle cx="205" cy="105" r="75" fill="none" stroke="#ea580c" stroke-width="2.5"/><text x="85" y="45" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">A (Sport)</text><text x="250" y="45" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">B (Musiek)</text><text x="167" y="110" font-size="15" fill="#16a34a" font-weight="700" text-anchor="middle">n(A∩B) = 9</text><text x="160" y="218" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">n(A) = 26</text><text x="160" y="238" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">n(B) = 17</text></svg>' },
@@ -501,14 +501,14 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok 1 — Afhanklike vs onafhanklike gebeurtenisse (Easy-Medium)
-        { difficulty: 'Easy', question: 'ʼn Dobbelsteen word gegooi en ʼn wieletjie word gedraai. Is hierdie onafhanklike gebeurtenisse?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes', 'ja', 'Ja'], answer: 'ja', explanation: 'Die uitkoms van die dobbelsteengooi het geen uitwerking op die wieletjie nie — die twee proefnemings is heeltemal apart. Dit is onafhanklike gebeurtenisse.' },
-        { difficulty: 'Easy', question: 'ʼn Laai het 12 sokkies. Thabo haal een sokkie uit, en haal dan ʼn tweede sokkie uit sonder om die eerste terug te sit. Is hierdie twee keuses onafhanklik?', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No', 'nee', 'Nee'], answer: 'nee', explanation: 'Om die eerste sokkie te verwyder verminder die totale aantal sokkies beskikbaar, dus hang die waarskynlikheid van die kleur van die tweede sokkie af van wat eerste verwyder is — die gebeurtenisse is afhanklik.' },
+        { difficulty: 'Easy', question: 'ʼn Dobbelsteen word gegooi en ʼn wieletjie word gedraai. Is hierdie onafhanklike gebeurtenisse?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['yes', 'Yes', 'ja', 'Ja'], answer: 'ja', explanation: 'Die uitkoms van die dobbelsteengooi het geen uitwerking op die wieletjie nie — die twee proefnemings is heeltemal apart. Dit is onafhanklike gebeurtenisse.' },
+        { difficulty: 'Easy', question: 'ʼn Laai het 12 sokkies. Thabo haal een sokkie uit, en haal dan ʼn tweede sokkie uit sonder om die eerste terug te sit. Is hierdie twee keuses onafhanklik?', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['no', 'No', 'nee', 'Nee'], answer: 'nee', explanation: 'Om die eerste sokkie te verwyder verminder die totale aantal sokkies beskikbaar, dus hang die waarskynlikheid van die kleur van die tweede sokkie af van wat eerste verwyder is — die gebeurtenisse is afhanklik.' },
         { difficulty: 'Medium', question: 'Naledi sê as twee gebeurtenisse verskillende voorwerpe behels (soos ʼn muntstuk en ʼn dobbelsteen), moet hulle onafhanklik wees. Is sy korrek? Verduidelik met behulp van ʼn voorbeeld.', answer: 'Nie noodwendig nie — die gebruik van verskillende voorwerpe maak onafhanklikheid waarskynlik in eenvoudige gevalle, maar wat werklik onafhanklikheid bepaal, is of die uitkoms van die een gebeurtenis die waarskynlikheid van die ander verander, nie bloot of verskillende voorwerpe betrokke is nie. As twee leerders byvoorbeeld elkeen ʼn naam uit DIESELFDE hoed trek sonder vervanging, trek verskillende mense, maar die gebeurtenisse is steeds afhanklik omdat die eerste trekking verander wat oorbly vir die tweede.', checkMode: 'self' },
 
         // Blok 2 — Produkreël vir onafhanklike gebeurtenisse (Easy-Medium)
-        { difficulty: 'Easy', question: 'W(A) = 0,7, W(B) = 0,25, en A en B is onafhanklik. Vind W(A en B).', checkMode: 'auto', correctAnswer: '0.175', answer: '0,175', explanation: 'Pas die produkreël vir onafhanklike gebeurtenisse toe: W(A en B) = W(A) × W(B) = 0,7 × 0,25 = 0,175.' },
+        { difficulty: 'Easy', question: 'W(A) = 0,7, W(B) = 0,25, en A en B is onafhanklik. Vind W(A en B).', checkMode: 'auto', correctAnswer: '0,175', answer: '0,175', explanation: 'Pas die produkreël vir onafhanklike gebeurtenisse toe: W(A en B) = W(A) × W(B) = 0,7 × 0,25 = 0,175.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 6 groen en 4 geel albasters. Amahle trek ʼn albaster, noteer die kleur, sit dit terug, en trek dan weer. Vind W(albei trekkings is groen).', checkMode: 'auto', correctAnswer: '9/25', answer: '9/25', explanation: 'Omdat die albaster teruggesit word, is die twee trekkings onafhanklik, elk met W(groen) = 6/10 = 3/5. W(albei groen) = 3/5 × 3/5 = 9/25.' },
-        { difficulty: 'Medium', question: 'ʼn Masjien het ʼn waarskynlikheid van 0,8 om ʼn nie-defektiewe item op enige lopie te vervaardig, onafhanklik van ander lopies. Vind die waarskynlikheid dat die volgende 2 items albei nie-defektief is.', checkMode: 'auto', correctAnswer: '0.64', answer: '0,64', explanation: 'Aangesien die lopies onafhanklik is: W(albei nie-defektief) = 0,8 × 0,8 = 0,64.' },
+        { difficulty: 'Medium', question: 'ʼn Masjien het ʼn waarskynlikheid van 0,8 om ʼn nie-defektiewe item op enige lopie te vervaardig, onafhanklik van ander lopies. Vind die waarskynlikheid dat die volgende 2 items albei nie-defektief is.', checkMode: 'auto', correctAnswer: '0,64', answer: '0,64', explanation: 'Aangesien die lopies onafhanklik is: W(albei nie-defektief) = 0,8 × 0,8 = 0,64.' },
 
         // Blok 3 — Venndiagram met algebraïese versamelingsnotasie (Medium-Hard) [DIAGRAM LATER]
         { difficulty: 'Medium', question: 'ʼn Venndiagram wys versamelings A en B binne ʼn steekproefruimte S van 50 leerders: n(A) = 24 leerders lees boeke, n(B) = 19 leerders speel videospeletjies, n(A ∩ B) = 11 doen albei. Vind n(A slegs), die aantal wat boeke lees maar nie videospeletjies speel nie.', checkMode: 'auto', correctAnswer: '13', answer: '13', explanation: 'n(A slegs) = n(A) − n(A ∩ B) = 24 − 11 = 13.', diagramSvg: '<svg viewBox="0 0 320 250" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="290" height="170" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="160" y="12" font-size="13" fill="#0f1f3d" text-anchor="middle" font-weight="700">S = 50</text><circle cx="130" cy="105" r="75" fill="none" stroke="#2563eb" stroke-width="2.5"/><circle cx="205" cy="105" r="75" fill="none" stroke="#ea580c" stroke-width="2.5"/><text x="85" y="45" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">A (Lees)</text><text x="250" y="45" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">B (Speletjies)</text><text x="167" y="110" font-size="15" fill="#16a34a" font-weight="700" text-anchor="middle">n(A∩B) = 11</text><text x="160" y="218" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">n(A) = 24</text><text x="160" y="238" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">n(B) = 19</text></svg>' },
@@ -547,14 +547,14 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok 1 — Afhanklike vs onafhanklike gebeurtenisse (Easy-Medium)
-        { difficulty: 'Easy', question: 'ʼn Muntstuk word opgegooi en ʼn wieletjie word gedraai. Is hierdie onafhanklike gebeurtenisse?', checkMode: 'auto', correctAnswer: 'yes', correctAnswers: ['yes', 'Yes', 'ja', 'Ja'], answer: 'ja', explanation: 'Die uitkoms van die muntstukgooi het geen uitwerking op die wieletjie nie — die twee proefnemings is heeltemal apart. Dit is onafhanklike gebeurtenisse.' },
-        { difficulty: 'Easy', question: 'ʼn Fles het 15 lekkers. Bongani haal een lekker uit, en haal dan ʼn tweede lekker uit sonder om die eerste terug te sit. Is hierdie twee keuses onafhanklik?', checkMode: 'auto', correctAnswer: 'no', correctAnswers: ['no', 'No', 'nee', 'Nee'], answer: 'nee', explanation: 'Om die eerste lekker te verwyder verminder die totale aantal lekkers beskikbaar, dus hang die waarskynlikheid van die geur van die tweede lekker af van wat eerste verwyder is — die gebeurtenisse is afhanklik.' },
+        { difficulty: 'Easy', question: 'ʼn Muntstuk word opgegooi en ʼn wieletjie word gedraai. Is hierdie onafhanklike gebeurtenisse?', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['yes', 'Yes', 'ja', 'Ja'], answer: 'ja', explanation: 'Die uitkoms van die muntstukgooi het geen uitwerking op die wieletjie nie — die twee proefnemings is heeltemal apart. Dit is onafhanklike gebeurtenisse.' },
+        { difficulty: 'Easy', question: 'ʼn Fles het 15 lekkers. Bongani haal een lekker uit, en haal dan ʼn tweede lekker uit sonder om die eerste terug te sit. Is hierdie twee keuses onafhanklik?', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['no', 'No', 'nee', 'Nee'], answer: 'nee', explanation: 'Om die eerste lekker te verwyder verminder die totale aantal lekkers beskikbaar, dus hang die waarskynlikheid van die geur van die tweede lekker af van wat eerste verwyder is — die gebeurtenisse is afhanklik.' },
         { difficulty: 'Medium', question: 'Sipho sê om ʼn item terug te sit nadat dit getrek is, maak twee trekkings altyd onafhanklik. Is hy korrek? Verduidelik.', answer: 'Ja — as ʼn item na elke trekking teruggesit word, is die steekproefruimte presies dieselfde vir elke trekking, dus kan die uitkoms van die eerste trekking nie die waarskynlikhede van die tweede trekking beïnvloed nie. Vervanging is presies wat onafhanklikheid herstel; dit is die gebrek aan vervanging wat afhanklike gebeurtenisse skep deur die steekproefruimte te verander.', checkMode: 'self' },
 
         // Blok 2 — Produkreël vir onafhanklike gebeurtenisse (Easy-Medium)
-        { difficulty: 'Easy', question: 'W(A) = 0,45, W(B) = 0,8, en A en B is onafhanklik. Vind W(A en B).', checkMode: 'auto', correctAnswer: '0.36', answer: '0,36', explanation: 'Pas die produkreël vir onafhanklike gebeurtenisse toe: W(A en B) = W(A) × W(B) = 0,45 × 0,8 = 0,36.' },
+        { difficulty: 'Easy', question: 'W(A) = 0,45, W(B) = 0,8, en A en B is onafhanklik. Vind W(A en B).', checkMode: 'auto', correctAnswer: '0,36', answer: '0,36', explanation: 'Pas die produkreël vir onafhanklike gebeurtenisse toe: W(A en B) = W(A) × W(B) = 0,45 × 0,8 = 0,36.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 4 oranje en 5 pers albasters. Kagiso trek ʼn albaster, noteer die kleur, sit dit terug, en trek dan weer. Vind W(albei trekkings is oranje).', checkMode: 'auto', correctAnswer: '16/81', answer: '16/81', explanation: 'Omdat die albaster teruggesit word, is die twee trekkings onafhanklik, elk met W(oranje) = 4/9. W(albei oranje) = 4/9 × 4/9 = 16/81.' },
-        { difficulty: 'Medium', question: 'ʼn Masjien het ʼn waarskynlikheid van 0,85 om ʼn nie-defektiewe item op enige lopie te vervaardig, onafhanklik van ander lopies. Vind die waarskynlikheid dat die volgende 2 items albei nie-defektief is.', checkMode: 'auto', correctAnswer: '0.7225', answer: '0,7225', explanation: 'Aangesien die lopies onafhanklik is: W(albei nie-defektief) = 0,85 × 0,85 = 0,7225.' },
+        { difficulty: 'Medium', question: 'ʼn Masjien het ʼn waarskynlikheid van 0,85 om ʼn nie-defektiewe item op enige lopie te vervaardig, onafhanklik van ander lopies. Vind die waarskynlikheid dat die volgende 2 items albei nie-defektief is.', checkMode: 'auto', correctAnswer: '0,7225', answer: '0,7225', explanation: 'Aangesien die lopies onafhanklik is: W(albei nie-defektief) = 0,85 × 0,85 = 0,7225.' },
 
         // Blok 3 — Venndiagram met algebraïese versamelingsnotasie (Medium-Hard) [DIAGRAM LATER]
         { difficulty: 'Medium', question: 'ʼn Venndiagram wys versamelings A en B binne ʼn steekproefruimte S van 40 leerders: n(A) = 20 leerders studeer Kuns, n(B) = 15 leerders studeer Drama, n(A ∩ B) = 7 doen albei. Vind n(A slegs), die aantal wat Kuns studeer maar nie Drama nie.', checkMode: 'auto', correctAnswer: '13', answer: '13', explanation: 'n(A slegs) = n(A) − n(A ∩ B) = 20 − 7 = 13.', diagramSvg: '<svg viewBox="0 0 320 250" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="290" height="170" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="160" y="12" font-size="13" fill="#0f1f3d" text-anchor="middle" font-weight="700">S = 40</text><circle cx="130" cy="105" r="75" fill="none" stroke="#2563eb" stroke-width="2.5"/><circle cx="205" cy="105" r="75" fill="none" stroke="#ea580c" stroke-width="2.5"/><text x="85" y="45" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">A (Kuns)</text><text x="250" y="45" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">B (Drama)</text><text x="167" y="110" font-size="15" fill="#16a34a" font-weight="700" text-anchor="middle">n(A∩B) = 7</text><text x="160" y="218" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">n(A) = 20</text><text x="160" y="238" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">n(B) = 15</text></svg>' },

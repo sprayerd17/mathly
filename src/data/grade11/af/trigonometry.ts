@@ -475,19 +475,19 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Bepaal die algemene oplossing van sinθ = 0.5.',
+          question: 'Bepaal die algemene oplossing van sinθ = 0,5.',
           answer: `θ = ${or('30°')} + ${gr('360°n')} of θ = ${or('150°')} + ${gr('360°n')}, ${gr('n ∈ ℤ')}`,
           steps: [
-            `Soos in die diagram getoon, is sinθ = 0.5 by beide ${or('30°')} en ${or('150°')} binne een omwenteling.`,
+            `Soos in die diagram getoon, is sinθ = 0,5 by beide ${or('30°')} en ${or('150°')} binne een omwenteling.`,
             `Verwysingshoek = ${or('30°')}.`,
             `<strong>Algemene oplossing:</strong> θ = ${or('30°')} + ${gr('360°n')} of θ = ${or('150°')} + ${gr('360°n')}, ${gr('n ∈ ℤ')} ✓`,
           ],
         },
         {
-          question: 'Bepaal die algemene oplossing van cosθ = −0.5.',
+          question: 'Bepaal die algemene oplossing van cosθ = −0,5.',
           answer: `θ = ${or('±120°')} + ${gr('360°n')}, ${gr('n ∈ ℤ')}`,
           steps: [
-            `Verwysingshoek = cos⁻¹(0.5) = ${or('60°')}.`,
+            `Verwysingshoek = cos⁻¹(0,5) = ${or('60°')}.`,
             `Aangesien cosθ negatief is, lê die oplossings in Kwadrante 2 en 3 van die sirkel.`,
             `Algemene oplossing: θ = 180° − ${or('60°')} + ${gr('360°n')} of θ = 180° + ${or('60°')} + ${gr('360°n')}, kompak geskryf as θ = ${or('±120°')} + ${gr('360°n')}, ${gr('n ∈ ℤ')} ✓`,
           ],
@@ -751,34 +751,34 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'In driehoek ABC is A = 40°, B = 65°, en a = 10 cm. Bepaal sy b met behulp van die Sin reël.',
-          answer: `b ≈ ${gr('14.1 cm')}`,
+          answer: `b ≈ ${gr('14,1 cm')}`,
           steps: [
             `Identifiseer wat bekend is: ${bl('A = 40°')}, ${bl('B = 65°')}, ${bl('a = 10 cm')}.`,
             `Ons het ʼn ooreenstemmende paar (${bl('a')} teenoor ${bl('A')}) en benodig ${gr('b')}, dus pas die ${or('Sin reël')} toe: ${or('a / sinA = b / sinB')}.`,
             `Vervang: ${bl('10')} / sin(${bl('40°')}) = ${gr('b')} / sin(${bl('65°')}).`,
             `Los op vir ${gr('b')}: ${gr('b')} = ${bl('10')} × sin(${bl('65°')}) / sin(${bl('40°')}).`,
-            `Bereken: ${gr('b')} = 10 × 0.9063 / 0.6428 ≈ ${gr('14.1 cm')} ✓`,
+            `Bereken: ${gr('b')} = 10 × 0,9063 / 0,6428 ≈ ${gr('14,1 cm')} ✓`,
           ],
         },
         {
           question: 'In driehoek ABC is b = 8 cm, c = 10 cm, en A = 50°. Bepaal sy a met behulp van die Cos reël.',
-          answer: `a ≈ ${gr('7.82 cm')}`,
+          answer: `a ≈ ${gr('7,82 cm')}`,
           steps: [
             `Identifiseer wat bekend is: ${bl('b = 8 cm')}, ${bl('c = 10 cm')}, ${bl('A = 50°')} (twee sye en die ingeslote hoek → SHS).`,
             `Pas die ${or('Cos reël')} toe: ${or('a² = b² + c² − 2bc · cosA')}.`,
             `Vervang: ${gr('a²')} = ${bl('8²')} + ${bl('10²')} − 2(${bl('8')})(${bl('10')}) × cos(${bl('50°')}).`,
-            `Bereken: ${gr('a²')} = 64 + 100 − 160 × 0.6428 = 164 − 102.85 ≈ 61.15.`,
-            `Trek die vierkantswortel: ${gr('a')} = √61.15 ≈ ${gr('7.82 cm')} ✓`,
+            `Bereken: ${gr('a²')} = 64 + 100 − 160 × 0,6428 = 164 − 102,85 ≈ 61,15.`,
+            `Trek die vierkantswortel: ${gr('a')} = √61,15 ≈ ${gr('7,82 cm')} ✓`,
           ],
         },
         {
           question: 'Bepaal die oppervlakte van driehoek ABC waar a = 6 cm, b = 9 cm, en die ingeslote hoek C = 70°.',
-          answer: `Oppervlakte ≈ ${gr('25.38 cm²')}`,
+          answer: `Oppervlakte ≈ ${gr('25,38 cm²')}`,
           steps: [
             `Identifiseer wat bekend is: ${bl('a = 6 cm')}, ${bl('b = 9 cm')}, ${bl('C = 70°')} (twee sye en die ingeslote hoek).`,
             `Pas die ${or('Oppervlakte-reël')} toe: ${or('Oppervlakte = ½ · a · b · sinC')}.`,
             `Vervang: Oppervlakte = ½ × ${bl('6')} × ${bl('9')} × sin(${bl('70°')}).`,
-            `Bereken: Oppervlakte = ½ × 54 × 0.9397 = 27 × 0.9397 ≈ ${gr('25.38 cm²')} ✓`,
+            `Bereken: Oppervlakte = ½ × 54 × 0,9397 = 27 × 0,9397 ≈ ${gr('25,38 cm²')} ✓`,
           ],
         },
       ],
@@ -789,7 +789,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Easy',
           question: 'In driehoek PQR is P = 55°, Q = 72°, en sy p = 12 cm. Gebruik die Sin reël om sy q te bepaal. Rond jou antwoord af tot een desimale plek.',
-          answer: 'p/sinP = q/sinQ\n12/sin55° = q/sin72°\nq = 12 × sin72°/sin55° = 12 × 0.9511/0.8192 ≈ 13.9 cm ✓',
+          answer: 'p/sinP = q/sinQ\n12/sin55° = q/sin72°\nq = 12 × sin72°/sin55° = 12 × 0,9511/0,8192 ≈ 13,9 cm ✓',
           checkMode: 'self',
         },
         {
@@ -801,12 +801,12 @@ export const topicData: TopicData = {
             {
               label: 'a) In △ABC is b = 5 cm, c = 7 cm, A = 60°. Bepaal a² (presiese waarde):',
               correctAnswer: '39',
-              explanation: 'Cos reël: a² = b² + c² − 2bc·cosA\n= 25 + 49 − 2(5)(7)cos60°\n= 74 − 70 × 0.5\n= 74 − 35\n= 39 ✓',
+              explanation: 'Cos reël: a² = b² + c² − 2bc·cosA\n= 25 + 49 − 2(5)(7)cos60°\n= 74 − 70 × 0,5\n= 74 − 35\n= 39 ✓',
             },
             {
               label: 'b) Oppervlakte van △ABC met sye 4 cm, 7 cm en ingeslote hoek 30° (presiese waarde in cm²):',
               correctAnswer: '7',
-              explanation: 'Oppervlakte = ½ × 4 × 7 × sin30°\n= ½ × 28 × 0.5\n= 7 cm² ✓',
+              explanation: 'Oppervlakte = ½ × 4 × 7 × sin30°\n= ½ × 28 × 0,5\n= 7 cm² ✓',
             },
           ],
         },
@@ -883,27 +883,27 @@ export const topicData: TopicData = {
         },
         {
           question: 'ʼn Landmeter staan by punt A en meet die hoogtehoek na die bopunt van ʼn toring as 25°. Sy loop 50 m nader (nou by punt B) en meet die nuwe hoogtehoek as 40°. Bepaal die hoogte van die toring.',
-          answer: `Toringhoogte h ≈ ${gr('34.8 m')}`,
+          answer: `Toringhoogte h ≈ ${gr('34,8 m')}`,
           steps: [
             `Laat die toringhoogte = h en die horisontale afstand van B na die basis van die toring = d. Die landmeter begin by A, wat ${bl('50 m')} verder van die basis af is as B.`,
             `Vanaf B (hoogtehoek ${bl('40°')}): ${or('tan 40° = h / d')}, dus ${or('h = d · tan 40°')}.`,
             `Vanaf A (hoogtehoek ${bl('25°')}): ${or('tan 25° = h / (d + 50)')}, dus ${or('h = (d + 50) · tan 25°')}.`,
             `Stel die twee uitdrukkings vir h gelyk: ${or('d · tan 40° = (d + 50) · tan 25°')}.`,
             `Vermenigvuldig uit en versamel d-terme: ${or('d · tan 40° − d · tan 25° = 50 · tan 25°')}, dus ${or('d(tan 40° − tan 25°) = 50 · tan 25°')}.`,
-            `Los op vir d: ${or('d = 50 · tan 25° / (tan 40° − tan 25°)')} ≈ ${or('50 × 0.4663 / (0.8391 − 0.4663)')} ≈ ${or('23.315 / 0.3728')} ≈ ${or('62.5 m')}.`,
-            `Vervang terug: h = ${or('d · tan 40°')} ≈ ${or('62.5 × 0.8391')} ≈ ${gr('34.8 m')} ✓`,
+            `Los op vir d: ${or('d = 50 · tan 25° / (tan 40° − tan 25°)')} ≈ ${or('50 × 0,4663 / (0,8391 − 0,4663)')} ≈ ${or('23,315 / 0,3728')} ≈ ${or('62,5 m')}.`,
+            `Vervang terug: h = ${or('d · tan 40°')} ≈ ${or('62,5 × 0,8391')} ≈ ${gr('34,8 m')} ✓`,
           ],
         },
         {
           question: 'In ʼn driehoekige stuk grond is twee sye 45 m en 60 m met ʼn ingeslote hoek van 55°. Bepaal die oppervlakte van die stuk grond en die lengte van die derde sy.',
-          answer: `Oppervlakte ≈ ${gr('1106.7 m²')}; derde sy ≈ ${gr('50.28 m')}`,
+          answer: `Oppervlakte ≈ ${gr('1106,7 m²')}; derde sy ≈ ${gr('50,28 m')}`,
           steps: [
             `Merk die driehoek: die twee bekende sye is ${bl('b = 45 m')} en ${bl('c = 60 m')}, en die ingeslote hoek is ${bl('A = 55°')}.`,
             `Pas die ${or('Oppervlakte-reël')} toe: ${or('Oppervlakte = ½ · b · c · sin A')} = ½ × ${bl('45')} × ${bl('60')} × sin(${bl('55°')}).`,
-            `Bereken: ${or('Oppervlakte')} = ½ × 2700 × 0.8192 = ${or('1350 × 0.8192')} ≈ ${gr('1106.7 m²')} ✓`,
+            `Bereken: ${or('Oppervlakte')} = ½ × 2700 × 0,8192 = ${or('1350 × 0,8192')} ≈ ${gr('1106,7 m²')} ✓`,
             `Pas die ${or('Cos reël')} toe om sy a te bepaal: ${or('a² = b² + c² − 2bc · cos A')}.`,
-            `Vervang: ${or('a²')} = ${bl('45²')} + ${bl('60²')} − 2 × ${bl('45')} × ${bl('60')} × cos(${bl('55°')}) = ${or('2025')} + ${or('3600')} − ${or('5400 × 0.5736')} ≈ ${or('5625 − 3097')} = ${or('2528')}.`,
-            `Trek die vierkantswortel: a = √${or('2528')} ≈ ${gr('50.28 m')} ✓`,
+            `Vervang: ${or('a²')} = ${bl('45²')} + ${bl('60²')} − 2 × ${bl('45')} × ${bl('60')} × cos(${bl('55°')}) = ${or('2025')} + ${or('3600')} − ${or('5400 × 0,5736')} ≈ ${or('5625 − 3097')} = ${or('2528')}.`,
+            `Trek die vierkantswortel: a = √${or('2528')} ≈ ${gr('50,28 m')} ✓`,
           ],
         },
       ],
@@ -913,26 +913,26 @@ export const topicData: TopicData = {
       openQuestions: [
         {
           difficulty: 'Easy',
-          question: 'ʼn Leer leun teen ʼn vertikale muur. Die onderpunt van die leer is 2.5 m van die basis van die muur af en die leer maak ʼn hoek van 70° met die grond.\n\na) Hoe hoog teen die muur reik die leer?\nb) Hoe lank is die leer?',
-          answer: 'a) hoogte = 2.5 × tan 70° ≈ 6.87 m\nb) lengte = 2.5 / cos 70° ≈ 7.31 m',
+          question: 'ʼn Leer leun teen ʼn vertikale muur. Die onderpunt van die leer is 2,5 m van die basis van die muur af en die leer maak ʼn hoek van 70° met die grond.\n\na) Hoe hoog teen die muur reik die leer?\nb) Hoe lank is die leer?',
+          answer: 'a) hoogte = 2,5 × tan 70° ≈ 6,87 m\nb) lengte = 2,5 / cos 70° ≈ 7,31 m',
           checkMode: 'self',
         },
         {
           difficulty: 'Medium',
           question: 'Twee skepe vertrek gelyktydig vanaf ʼn hawe. Skip A vaar op ʼn koers van 040° vir 30 km en Skip B vaar op ʼn koers van 115° vir 45 km.\n\nBepaal die afstand tussen die twee skepe.',
-          answer: 'Die hoek tussen die twee rigtings = 115° − 40° = 75°.\nCos reël: d² = 30² + 45² − 2(30)(45)cos75°\n= 900 + 2025 − 2700 × 0.2588\n= 2925 − 699\n= 2226\nd = √2226 ≈ 47.2 km ✓',
+          answer: 'Die hoek tussen die twee rigtings = 115° − 40° = 75°.\nCos reël: d² = 30² + 45² − 2(30)(45)cos75°\n= 900 + 2025 − 2700 × 0,2588\n= 2925 − 699\n= 2226\nd = √2226 ≈ 47,2 km ✓',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
           question: 'Punte A, B en C is op gelyke grond. Vanaf A is die koers na B 060° en die koers na C 130°. AB = 80 m en AC = 110 m.\n\na) Bepaal hoek BAC.\nb) Bepaal BC met behulp van die Cos reël.\nc) Bepaal die oppervlakte van driehoek ABC.',
-          answer: 'a) Hoek BAC = 130° − 60° = 70°\n\nb) BC² = AB² + AC² − 2(AB)(AC)cos(BAC)\n= 80² + 110² − 2(80)(110)cos70°\n= 6400 + 12100 − 17600 × 0.3420\n= 18500 − 6019\n= 12481\nBC = √12481 ≈ 111.7 m\n\nc) Oppervlakte = ½ × AB × AC × sin(BAC)\n= ½ × 80 × 110 × sin70°\n= ½ × 8800 × 0.9397\n≈ 4134.7 m²',
+          answer: 'a) Hoek BAC = 130° − 60° = 70°\n\nb) BC² = AB² + AC² − 2(AB)(AC)cos(BAC)\n= 80² + 110² − 2(80)(110)cos70°\n= 6400 + 12100 − 17600 × 0,3420\n= 18500 − 6019\n= 12481\nBC = √12481 ≈ 111,7 m\n\nc) Oppervlakte = ½ × AB × AC × sin(BAC)\n= ½ × 80 × 110 × sin70°\n= ½ × 8800 × 0,9397\n≈ 4134,7 m²',
           checkMode: 'self',
         },
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Drie sub-diagramme langs mekaar: (1) twee vlagpale 30 m uitmekaar met kruisende toue en kruishoogte h gemerk in blou, tussentydse verhouding in oranje, antwoord 6 m in groen; (2) landmeter-scenario met toring, hoeke 25° en 40° in blou, afstand d in oranje, hoogte h ≈ 34.8 m in groen; (3) driehoekige stuk grond met sye 45 m en 60 m en hoek 55° in blou, oppervlakte- en derde-sy-berekeninge in oranje, finale antwoorde in groen" />',
+        '<DiagramPlaceholder label="Drie sub-diagramme langs mekaar: (1) twee vlagpale 30 m uitmekaar met kruisende toue en kruishoogte h gemerk in blou, tussentydse verhouding in oranje, antwoord 6 m in groen; (2) landmeter-scenario met toring, hoeke 25° en 40° in blou, afstand d in oranje, hoogte h ≈ 34,8 m in groen; (3) driehoekige stuk grond met sye 45 m en 60 m en hoek 55° in blou, oppervlakte- en derde-sy-berekeninge in oranje, finale antwoorde in groen" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat deur multi-stap-2D-trigonometrieprobleme stap — die kruishoogte van kruisende toue, die hoogtehoek-toring-probleem gelyktydig opgelos, en die driehoekige stuk grond met die Oppervlakte- en Cos reël" />',
@@ -1121,7 +1121,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Sipho sê sin 60° = 2 × sin 30°. Is hy korrek? Verduidelik.',
-      answer: 'Nee — sin 60° = √3/2 ≈ 0.866, terwyl 2 × sin 30° = 2 × 0.5 = 1. Hulle is nie gelyk nie.',
+      answer: 'Nee — sin 60° = √3/2 ≈ 0,866, terwyl 2 × sin 30° = 2 × 0,5 = 1. Hulle is nie gelyk nie.',
       checkMode: 'self',
     },
 
@@ -1223,18 +1223,18 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'In driehoek ABC is A = 35°, B = 70°, a = 12 cm. Bepaal sy b met die Sin reël.',
-      answer: '19.95 cm',
+      answer: '19,95 cm',
       checkMode: 'auto',
-      correctAnswer: '19.95cm',
+      correctAnswer: '19,95cm',
       correctAnswers: ['19.95cm', '19.95 cm', '≈19.95cm', '≈ 19.95 cm', '19.9cm', '20cm'],
-      explanation: 'Sin reël: a/sinA = b/sinB\n12/sin35° = b/sin70°\nb = 12 × sin70°/sin35° = 12 × 0.9397/0.5736 ≈ 19.95 cm ✓',
+      explanation: 'Sin reël: a/sinA = b/sinB\n12/sin35° = b/sin70°\nb = 12 × sin70°/sin35° = 12 × 0,9397/0,5736 ≈ 19,95 cm ✓',
     },
 
     // ── V16 Moeilik — Cos reël ────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'In driehoek ABC is b = 7 cm, c = 9 cm, A = 60°. Bepaal sy a met die Cos reël.',
-      answer: 'a² = 49 + 81 − 2(7)(9)cos60° = 130 − 63 = 67. a ≈ 8.19 cm.',
+      answer: 'a² = 49 + 81 − 2(7)(9)cos60° = 130 − 63 = 67. a ≈ 8,19 cm.',
       checkMode: 'self',
     },
 
@@ -1242,22 +1242,22 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Bepaal die oppervlakte van ʼn driehoek met sye a = 8 cm, b = 11 cm, en ingeslote hoek C = 45°.',
-      answer: '31.11 cm²',
+      answer: '31,11 cm²',
       checkMode: 'auto',
-      correctAnswer: '31.11cm²',
+      correctAnswer: '31,11cm²',
       correctAnswers: ['31.11cm²', '31.11 cm²', '≈31.11cm²', '≈ 31.11 cm²', '31.1cm²'],
-      explanation: 'Oppervlakte = ½ × a × b × sinC = ½ × 8 × 11 × sin45° = ½ × 88 × (√2/2) ≈ 31.11 cm² ✓',
+      explanation: 'Oppervlakte = ½ × a × b × sinC = ½ × 8 × 11 × sin45° = ½ × 88 × (√2/2) ≈ 31,11 cm² ✓',
     },
 
     // ── V18 Matig — aflei van hoogte h in die Oppervlakte-reël-bewys ─────────
     {
       difficulty: 'Medium',
       question: 'In driehoek ABC word ʼn hoogte h vanaf hoekpunt A na sy BC getrek, en raak dit by D. Driehoek ADC is reghoekig by D, met AC = 10 cm en hoek C = 42°. Lei ʼn uitdrukking vir h af en bereken die waarde daarvan.',
-      answer: '6.69 cm',
+      answer: '6,69 cm',
       checkMode: 'auto',
-      correctAnswer: '6.69cm',
+      correctAnswer: '6,69cm',
       correctAnswers: ['6.69cm', '6.69 cm', '≈6.69cm', '≈ 6.69 cm', '6.7cm'],
-      explanation: 'In reghoekige driehoek ADC: sinC = h/AC, dus h = AC × sinC = 10 × sin42° ≈ 10 × 0.6691 ≈ 6.69 cm ✓',
+      explanation: 'In reghoekige driehoek ADC: sinC = h/AC, dus h = AC × sinC = 10 × sin42° ≈ 10 × 0,6691 ≈ 6,69 cm ✓',
     },
 
     // ── V19 Moeilik — volledige cos reël-afleiding ────────────────────────────
@@ -1272,7 +1272,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Twee vlagpale 20 m uitmekaar het hoogtes 8 m en 12 m. Toue verbind die bopunt van elkeen met die voetpunt van die ander. Bepaal die hoogte van hul kruispunt bo die grond.',
-      answer: 'Kruishoogte = 8 × 12 / (8 + 12) = 96/20 = 4.8 m.',
+      answer: 'Kruishoogte = 8 × 12 / (8 + 12) = 96/20 = 4,8 m.',
       checkMode: 'self',
     },
 
@@ -1288,7 +1288,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'ʼn Driehoekige veld het twee sye van 35 m en 50 m met ʼn ingeslote hoek van 65°. Bepaal die oppervlakte van die veld en die lengte van die derde sy.',
-      answer: 'Oppervlakte = ½(35)(50)sin65° ≈ 792.6 m². Derde sy: sy² = 35² + 50² − 2(35)(50)cos65° ≈ 1225 + 2500 − 1478.4 = 2246.6. sy ≈ 47.4 m.',
+      answer: 'Oppervlakte = ½(35)(50)sin65° ≈ 792,6 m². Derde sy: sy² = 35² + 50² − 2(35)(50)cos65° ≈ 1225 + 2500 − 1478,4 = 2246,6. sy ≈ 47,4 m.',
       checkMode: 'self',
     },
   ],

@@ -113,10 +113,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to expand brackets using the distributive property, combine like terms, and then solve a multi-step linear equation using inverse operations" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om hakies uit te brei deur die distributiewe eienskap te gebruik, gelyksoortige terme saam te voeg, en dan ʼn veelstap-lineêre vergelyking met inverse bewerkings op te los" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step layout showing a bracketed equation being expanded with the distributive property highlighted in blue, simplified terms in orange, and the final solution in green" />',
+        '<DiagramPlaceholder label="Stap-vir-stap uitleg wat wys hoe ʼn vergelyking met hakies uitgebrei word met die distributiewe eienskap uitgelig in blou, vereenvoudigde terme in oranje, en die finale oplossing in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -231,10 +231,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve an equation with variables on both sides by moving the smaller x term across, followed by an example clearing a fraction by multiplying both sides" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vergelyking met veranderlikes aan albei kante op te los deur die kleiner x-term oor te skuif, gevolg deur ʼn voorbeeld wat ʼn breuk uitklaar deur albei kante te vermenigvuldig" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing an equation with x terms on both sides, with the x terms highlighted in blue on each side and an arrow showing the smaller one being moved across, ending in a green solution" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn vergelyking met x-terme aan albei kante wys, met die x-terme uitgelig in blou aan elke kant en ʼn pyl wat wys hoe die kleiner een oorgeskuif word, wat eindig in ʼn groen oplossing" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

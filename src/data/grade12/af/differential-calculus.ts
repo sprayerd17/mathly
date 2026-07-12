@@ -132,7 +132,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what a limit is, how to recognise an indeterminate form, and how to evaluate limits by factorising" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn limiet is, hoe om ʼn onbepaalde vorm te herken, en hoe om limiete deur faktorisering te bereken" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating differentiation from first principles for f(x) = x² and f(x) = x³ step by step" />',
+        '<VideoPlaceholder label="Kort video wat differensiasie vanuit eerste beginsels vir f(x) = x² en f(x) = x³ stap vir stap demonstreer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -391,7 +391,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply the constant, power, constant multiple, and sum/difference rules to differentiate polynomials and simplified rational expressions" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die konstante-, mag-, konstante-veelvoud- en som/verskil-reëls toe te pas om polinome en vereenvoudigde rasionale uitdrukkings te differensieer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -509,7 +509,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the equation of a tangent to a curve using differentiation and the point-slope formula" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die vergelyking van ʼn raaklyn aan ʼn kurwe te vind deur gebruik te maak van differensiasie en die punt-gradiënt formule" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -578,7 +578,7 @@ export const topicData: TopicData = {
           answer: `Plaaslike maksimum by ${or('(1, 2)')}, plaaslike minimum by ${or('(−1, −2)')}; ${bl('x-afsnitte')} by x = 0, x = √3, x = −√3`,
           steps: [
             `<strong>y-afsnit:</strong> f(0) = 0. y-afsnit: (0, 0).`,
-            `<strong>${bl('x-afsnitte')}:</strong> −x³ + 3x = ${bl('−x(x² − 3)')} = 0. Dus ${bl('x = 0')}, ${bl('x = √3')} ≈ 1.73, en ${bl('x = −√3')} ≈ −1.73.`,
+            `<strong>${bl('x-afsnitte')}:</strong> −x³ + 3x = ${bl('−x(x² − 3)')} = 0. Dus ${bl('x = 0')}, ${bl('x = √3')} ≈ 1,73, en ${bl('x = −√3')} ≈ −1,73.`,
             `<strong>Differensieer:</strong> f'(x) = −3x² + 3 = ${or('−3(x² − 1)')}.`,
             `<strong>${or('Stilstandspunte')}:</strong> f'(x) = 0 → x² = 1 → ${or('x = ±1')}. f(1) = −1 + 3 = ${or('2')}, f(−1) = 1 − 3 = ${or('−2')}.`,
             `<strong>Klassifiseer:</strong> f'(0) = 3 > 0, f'(2) = −9 < 0, dus ${or('x = 1 is ʼn plaaslike maksimum (2)')}. f'(−2) = −9 < 0, f'(0) = 3 > 0, dus ${or('x = −1 is ʼn plaaslike minimum (−2)')}.`,
@@ -594,7 +594,7 @@ export const topicData: TopicData = {
         // ── Q13 Hard — interpret increasing/decreasing from a diagram ──────────
         {
           difficulty: 'Hard',
-          question: '<DiagramPlaceholder label="A cubic curve with x-intercepts at x=−2, x=1, x=3, a local maximum between x=−2 and x=1, and a local minimum between x=1 and x=3, with a positive leading coefficient" />\nGebruik die diagram en beskryf die intervalle waar die funksie toenemend is en waar dit afnemend is.',
+          question: '<DiagramPlaceholder label="ʼn Kubieke kurwe met x-afsnitte by x=−2, x=1, x=3, ʼn lokale maksimum tussen x=−2 en x=1, en ʼn lokale minimum tussen x=1 en x=3, met ʼn positiewe leidende koëffisiënt" />\nGebruik die diagram en beskryf die intervalle waar die funksie toenemend is en waar dit afnemend is.',
           answer: 'Die funksie neem toe vir x < (plaaslike maksimum se x-waarde) en x > (plaaslike minimum se x-waarde), en neem af tussen die plaaslike maksimum en plaaslike minimum — verwys na die werklike draaipunt-x-waardes op die diagram vir presiese intervalle.',
           checkMode: 'self',
         },
@@ -617,7 +617,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to find intercepts, stationary points, and sketch a cubic function step by step" />',
+        '<VideoPlaceholder label="Kort video wat demonstreer hoe om afsnitte en stilstandspunte te vind en ʼn kubieke funksie stap vir stap te skets" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -690,14 +690,14 @@ export const topicData: TopicData = {
         },
         {
           question: 'ʼn Silindriese blik moet ʼn volume van 500 cm³ hê. Vind die radius wat die totale oppervlakte minimeer.',
-          answer: `Optimale radius ≈ ${gr('4.30 cm')}`,
+          answer: `Optimale radius ≈ ${gr('4,30 cm')}`,
           steps: [
             `<strong>${bl('Beperking')}:</strong> Volume V = πr²h = ${bl('500')}, dus h = ${bl('500 / (πr²)')}.`,
             `<strong>${or('Doelfunksie')}:</strong> Oppervlakte S = 2πr² + 2πrh = 2πr² + 2πr · ${bl('500/(πr²)')} = ${or('2πr² + 1000/r')}.`,
             `<strong>Differensieer:</strong> dS/dr = 4πr − 1000/r².`,
-            `<strong>${gr('Kritieke punt')}:</strong> Stel dS/dr = 0 → 4πr = 1000/r² → 4πr³ = 1000 → r³ = 1000/(4π) ≈ 79.58 → ${gr('r ≈ 4.30 cm')}.`,
+            `<strong>${gr('Kritieke punt')}:</strong> Stel dS/dr = 0 → 4πr = 1000/r² → 4πr³ = 1000 → r³ = 1000/(4π) ≈ 79,58 → ${gr('r ≈ 4,30 cm')}.`,
             `<strong>Verifieer minimum:</strong> Die tweede afgeleide d²S/dr² = 4π + 2000/r³ > 0, wat ʼn minimum bevestig.`,
-            `<strong>Antwoord:</strong> Die radius wat die oppervlakte minimeer is ${gr('r ≈ 4.30 cm')} ✓`,
+            `<strong>Antwoord:</strong> Die radius wat die oppervlakte minimeer is ${gr('r ≈ 4,30 cm')} ✓`,
           ],
         },
       ],
@@ -725,7 +725,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Amahle wil ʼn oop boks maak van ʼn 20 cm by 20 cm stuk karton deur gelyke vierkante uit elke hoek te sny en die kante op te vou. Vind die grootte van die vierkant wat gesny moet word om die volume te maksimeer.',
-          answer: 'Laat die snygrootte = x. Volume = x(20−2x)² = x(400−80x+4x²) = 400x−80x²+4x³. dV/dx = 400−160x+12x² = 0. Deel deur 4: 3x²−40x+100 = 0. x = (40±√(1600−1200))/6 = (40±20)/6. x = 10/3 ≈ 3.33 cm of x = 10 (verwerp aangesien 2x = 20 geen basis laat nie). x ≈ 3.33 cm.',
+          answer: 'Laat die snygrootte = x. Volume = x(20−2x)² = x(400−80x+4x²) = 400x−80x²+4x³. dV/dx = 400−160x+12x² = 0. Deel deur 4: 3x²−40x+100 = 0. x = (40±√(1600−1200))/6 = (40±20)/6. x = 10/3 ≈ 3,33 cm of x = 10 (verwerp aangesien 2x = 20 geen basis laat nie). x ≈ 3,33 cm.',
           checkMode: 'self',
         },
 
@@ -747,7 +747,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating optimisation using calculus — fencing problem and falling object worked through step by step" />',
+        '<VideoPlaceholder label="Kort video wat optimering met behulp van differensiaalrekene demonstreer — die heiningprobleem en die vallende voorwerp word stap vir stap uitgewerk" />',
     },
   ],
 

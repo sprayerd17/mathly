@@ -103,10 +103,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the units of time in order from smallest to largest — seconds blue, minutes green, hours orange, days red — with the conversion numbers between each unit" />',
+        '<DiagramPlaceholder label="Diagram wat die tydeenhede in volgorde van kleinste na grootste wys — sekondes blou, minute groen, ure oranje, dae rooi — met die omskakelingsgetalle tussen elke eenheid" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the units of time and how to convert between them by multiplying or dividing with colour coded units" />',
+        '<VideoPlaceholder label="Kort video wat die tydeenhede verduidelik en hoe om tussen hulle om te skakel deur te vermenigvuldig of te deel met kleurgekodeerde eenhede" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -195,10 +195,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of an analogue clock showing the short hour hand in blue pointing to 4 and the long minute hand in green pointing to 6, with the time 4:30 labelled" />',
+        '<DiagramPlaceholder label="Diagram van ʼn analoë horlosie wat die kort uurwyster in blou na 4 wys en die lang minuutwyster in groen na 6 wys, met die tyd 4:30 geëtiketteer" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read time on an analogue clock using the blue hour hand and the green minute hand, and how am and pm are used" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tyd op ʼn analoë horlosie te lees deur die blou uurwyster en die groen minuutwyster te gebruik, en hoe vm en nm gebruik word" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,10 +291,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a number line counting up from start time 3:30 pm in blue to 4:30 pm with a 1 hour step in green then to end time 5:10 pm in red with a 40 minute step in green and total 1 hour 40 minutes labelled in orange" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn getallelyn wys wat optel vanaf begintyd 3:30 nm in blou tot 4:30 nm met ʼn 1 uur-stap in groen, dan tot eindtyd 5:10 nm in rooi met ʼn 40 minuut-stap in groen en totaal 1 uur 40 minute geëtiketteer in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate elapsed time by counting up from the start time in blue to the end time in red using hour and minute steps in green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om verstreke tyd te bereken deur van die begintyd in blou tot die eindtyd in rooi op te tel deur ure en minute stappe in groen te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -376,10 +376,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a March calendar with the 1st highlighted in blue as Monday and the 15th highlighted in orange, and a school timetable showing Maths at 8:00 am in green lasting 45 minutes in red with English starting at 8:45 am in green" />',
+        '<DiagramPlaceholder label="Diagram van ʼn Maartkalender met die 1ste uitgelig in blou as Maandag en die 15de uitgelig in oranje, en ʼn skoolrooster wat Wiskunde om 8:00 vm in groen wys wat 45 minute in rooi duur met Engels wat om 8:45 vm in groen begin" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read a calendar to find the day a date falls on and how to use a timetable to find start and end times using colour coded days blue dates orange times green and duration red" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kalender te lees om die dag te vind waarop ʼn datum val en hoe om ʼn rooster te gebruik om begin- en eindtye te vind deur kleurgekodeerde dae blou, datums oranje, tye groen en duur rooi te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -471,10 +471,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a timeline for Amahle\'s journey: start time 7:15 am in blue, step 1 plus 25 minutes walking in green reaching 7:40, step 2 plus 10 minutes waiting in green reaching 7:50, step 3 plus 35 minutes bus ride in green reaching end time 8:25 am in red" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn tydlyn vir Amahle se reis wys: begintyd 7:15 vm in blou, stap 1 plus 25 minute stap in groen wat 7:40 bereik, stap 2 plus 10 minute wag in groen wat 7:50 bereik, stap 3 plus 35 minute busrit in groen wat eindtyd 8:25 vm in rooi bereik" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve time problems in context by counting forward from the start time in blue through each step in green to reach the end time in red and reading off the total in orange" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tydprobleme in konteks op te los deur van die begintyd in blou deur elke stap in groen vorentoe te tel om die eindtyd in rooi te bereik en die totaal in oranje af te lees" />',
     },
   ],
   topicPractice: [

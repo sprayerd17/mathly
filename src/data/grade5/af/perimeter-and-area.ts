@@ -118,10 +118,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a rectangle with side lengths labelled in blue and the perimeter calculation written out in green and orange" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn reghoek wys met sylengtes geëtiketteer in blou en die omtrekberekening uitgeskryf in groen en oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the perimeter of a rectangle and a square by adding all side lengths with colour coded steps" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die omtrek van ʼn reghoek en ʼn vierkant te bereken deur al die sylengtes op te tel met kleurgekodeerde stappe" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -230,10 +230,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a rectangle with length labelled in blue and width labelled in red with the area formula and answer written in green and orange" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn reghoek wys met lengte geëtiketteer in blou en breedte geëtiketteer in rooi, met die oppervlakteformule en antwoord uitgeskryf in groen en oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the area of a rectangle and a square by multiplying length by width with colour coded steps" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn reghoek en ʼn vierkant te bereken deur lengte met breedte te vermenigvuldig met kleurgekodeerde stappe" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -327,10 +327,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side by side diagram of a long thin rectangle and a square showing that the rectangle has a bigger perimeter in blue but a smaller area in red with units of length in green and square units in orange" />',
+        '<DiagramPlaceholder label="Diagram langs mekaar van ʼn lang dun reghoek en ʼn vierkant wat wys dat die reghoek ʼn groter omtrek in blou het maar ʼn kleiner oppervlakte in rooi, met lengte-eenhede in groen en vierkante eenhede in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the difference between perimeter and area using the frame and picture analogy with colour coded examples in blue red green and orange" />',
+        '<VideoPlaceholder label="Kort video wat die verskil tussen omtrek en oppervlakte verduidelik deur die raam-en-prent-analogie te gebruik met kleurgekodeerde voorbeelde in blou, rooi, groen en oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -428,10 +428,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing an L-shaped room split into Rectangle A labelled in blue and Rectangle B labelled in green with the total area written in orange" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn L-vormige kamer wys wat verdeel is in Reghoek A geëtiketteer in blou en Reghoek B geëtiketteer in groen, met die totale oppervlakte uitgeskryf in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the area of an irregular shape by splitting it into smaller rectangles calculating each area separately and adding them together with colour coded steps" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn onreëlmatige vorm te bereken deur dit in kleiner reghoeke te verdeel, elke oppervlakte apart te bereken en dit bymekaar te tel met kleurgekodeerde stappe" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -552,10 +552,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a rectangle with perimeter highlighted in blue around the outside and area shaded in red on the inside with the answer written in green for a real life word problem" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn reghoek wys met omtrek uitgelig in blou rondom die buitekant en oppervlakte geskakeer in rooi binne-in, met die antwoord uitgeskryf in groen vir ʼn werklike-lewe-woordprobleem" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to decide between perimeter and area when solving real life problems with colour coded worked examples in blue red and green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tussen omtrek en oppervlakte te besluit wanneer werklike-lewe-probleme opgelos word met kleurgekodeerde uitgewerkte voorbeelde in blou, rooi en groen" />',
     },
   ],
   resultsConfig: {

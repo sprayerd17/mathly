@@ -77,10 +77,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the Exterior Angle Theorem and showing how an exterior angle of a triangle equals the sum of the two remote interior angles" />',
+        '<VideoPlaceholder label="Kort video wat die Buitehoekstelling verduidelik en wys hoe ʼn buitehoek van ʼn driehoek gelyk is aan die som van die twee oorstaande binnehoeke" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a triangle with one side extended to show an exterior angle, with the two remote interior angles clearly labelled and the exterior angle marked" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn driehoek met een sy verleng om ʼn buitehoek te wys, met die twee oorstaande binnehoeke duidelik gemerk en die buitehoek aangedui" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -146,10 +146,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video investigating the diagonals of rectangles, squares, parallelograms, rhombi and kites — comparing length, bisection and perpendicularity" />',
+        '<VideoPlaceholder label="Kort video wat die diagonale van reghoeke, vierkante, parallelogramme, ruite en vliers ondersoek — en lengte, halvering en loodregtheid vergelyk" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: side-by-side constructions of a rectangle and a rhombus, each with both diagonals drawn, labelling whether they are equal, bisecting, or perpendicular" />',
+        '<DiagramPlaceholder label="Diagram benodig: konstruksies van ʼn reghoek en ʼn ruit langs mekaar, elk met beide diagonale geteken, gemerk om aan te dui of hulle gelyk, halverend, of loodreg is" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -221,10 +221,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide polygons into triangles from one vertex and use this to confirm the interior angle sum formula" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om veelhoeke vanaf een hoekpunt in driehoeke te verdeel en dit te gebruik om die binnehoeksom-formule te bevestig" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a hexagon with diagonals drawn from one vertex, dividing it into 4 triangles, each triangle shaded a different colour" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn seshoek met diagonale vanaf een hoekpunt geteken, wat dit in 4 driehoeke verdeel, elke driehoek in ʼn ander kleur geskadu" />',
     },
   ],
 

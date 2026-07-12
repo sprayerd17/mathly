@@ -307,10 +307,10 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'ʼn Staafgrafiek het ʼn skaal wat in 5e opgaan. Die staaf vir Maandag bereik halfpad tussen 15 en 20. Watter waarde wys die Maandag-staaf?',
-          answer: '17.5',
+          answer: '17,5',
           checkMode: 'auto',
-          correctAnswer: '17.5',
-          explanation: 'Halfpad tussen 15 en 20: (15 + 20) ÷ 2 = 35 ÷ 2 = 17.5.',
+          correctAnswer: '17,5',
+          explanation: 'Halfpad tussen 15 en 20: (15 + 20) ÷ 2 = 35 ÷ 2 = 17,5.',
         },
       ],
 
@@ -726,9 +726,9 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Watter persentasie verkies lees?',
-              correctAnswer: '37.5%',
+              correctAnswer: '37,5%',
               correctAnswers: ['37.5%', '37.5'],
-              explanation: '15 uit 40 verkies lees.\nPersentasie = (15 ÷ 40) × 100 = 37.5%.',
+              explanation: '15 uit 40 verkies lees.\nPersentasie = (15 ÷ 40) × 100 = 37,5%.',
             },
           ],
         },

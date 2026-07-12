@@ -62,7 +62,7 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Bepaal die afstand tussen P(2,5) en Q(7,1).',
-          answer: `${or('afstand')} = √41 ≈ ${or('6.40 eenhede')}`,
+          answer: `${or('afstand')} = √41 ≈ ${or('6,40 eenhede')}`,
           steps: [
             `Skryf die koördinate neer: ${bl('x₁')} = ${bl('2')}, ${gr('y₁')} = ${gr('5')}, ${bl('x₂')} = ${bl('7')}, ${gr('y₂')} = ${gr('1')}.`,
             `Pas die formule toe: ${or('afstand')} = √[(${bl('x₂')}−${bl('x₁')})² + (${gr('y₂')}−${gr('y₁')})²]`,
@@ -70,7 +70,7 @@ export const topicData: TopicData = {
             `Bereken die verskille: = √[(${bl('5')})² + (${gr('−4')})²]`,
             `Kwadreer die verskille: = √[${bl('25')} + ${gr('16')}]`,
             `Tel op: = √41`,
-            `<strong>Antwoord:</strong> ${or('afstand')} = √41 ≈ ${or('6.40 eenhede')} ✓`,
+            `<strong>Antwoord:</strong> ${or('afstand')} = √41 ≈ ${or('6,40 eenhede')} ✓`,
           ],
         },
         {
@@ -92,10 +92,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing points P(2,5) and Q(7,1) with the right-angled triangle formed by the horizontal and vertical differences colour coded blue and green, hypotenuse labelled as distance √41 in orange" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat punte P(2,5) en Q(7,1) wys met die reghoekige driehoek gevorm deur die horisontale en vertikale verskille, kleurgekodeer in blou en groen, skuinssy gemerk as afstand √41 in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how the distance formula is derived from the Theorem of Pythagoras, with a worked example on the Cartesian plane colour coding x-coordinates blue y-coordinates green and the final distance orange" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik hoe die afstandsformule van die Stelling van Pythagoras afgelei word, met ʼn uitgewerkte voorbeeld op die Cartesiese vlak, kleurgekodeer met x-koördinate in blou, y-koördinate in groen en die finale afstand in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -180,10 +180,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing two parallel lines with equal gradients labelled in green and two perpendicular lines with gradients multiplying to −1 labelled in orange, gradient calculation shown in blue" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat twee parallelle lyne met gelyke gradiënte in groen gemerk wys, en twee loodregte lyne waarvan die gradiënte vermenigvuldig tot −1 in oranje gemerk, gradiëntberekening in blou getoon" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the gradient of a line and how to identify parallel lines by equal gradients and perpendicular lines by negative reciprocal gradients" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die gradiënt van ʼn lyn te bereken en hoe om parallelle lyne aan gelyke gradiënte en loodregte lyne aan negatiewe resiproke gradiënte te herken" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -250,10 +250,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing segment CD with C(4,6) and D(10,2) and midpoint M(7,4) marked halfway between them, averaged x-coordinate shown in blue and averaged y-coordinate in green, midpoint result in orange" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat segment CD met C(4,6) en D(10,2) wys, met middelpunt M(7,4) halfpad tussen hulle gemerk, gemiddelde x-koördinaat in blou en gemiddelde y-koördinaat in groen getoon, middelpuntresultaat in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply the midpoint formula and how to work backwards to find an unknown endpoint when the midpoint is given" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die middelpuntformule toe te pas en hoe om agteruit te werk om ʼn onbekende eindpunt te vind wanneer die middelpunt gegee is" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -339,10 +339,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing quadrilateral PQRS with P(2,5) Q(3,1) R(0,-5) S(-1,-1), diagonals PR and QS drawn with their lengths labelled in orange to show PQRS is a parallelogram but not a rectangle, midpoints shown in blue and conclusion in green" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat vierhoek PQRS met P(2,5) Q(3,1) R(0,-5) S(-1,-1) wys, met diagonale PR en QS geteken en hul lengtes in oranje gemerk om te wys dat PQRS ʼn parallelogram maar nie ʼn reghoek is nie, middelpunte in blou en gevolgtrekking in groen getoon" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to combine the distance midpoint and gradient formulas to prove geometric properties of quadrilaterals on the Cartesian plane" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die afstands-, middelpunt- en gradiëntformules te kombineer om geometriese eienskappe van vierhoeke op die Cartesiese vlak te bewys" />',
     },
   ],
 
@@ -491,18 +491,18 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Vierhoek PQRS het P(1,1), Q(5,1), R(5,4), S(1,4). Bepaal die middelpunt van diagonaal PR.',
-      answer: '(3,2.5)',
+      answer: '(3;2,5)',
       checkMode: 'auto',
-      correctAnswer: '(3,2.5)',
+      correctAnswer: '(3;2,5)',
       correctAnswers: ['(3,2.5)', '(3, 2.5)', '3,2.5'],
-      explanation: 'Middelpunt van PR = ((1 + 5) / 2 , (1 + 4) / 2) = (3, 2.5) ✓',
+      explanation: 'Middelpunt van PR = ((1 + 5) / 2 , (1 + 4) / 2) = (3; 2,5) ✓',
     },
 
     // ── Q17 Hard — midpoints of both diagonals to prove parallelogram ─────────
     {
       difficulty: 'Hard',
       question: 'Gebruik PQRS van V16 met P(1,1), Q(5,1), R(5,4), S(1,4), bepaal die middelpunt van diagonaal QS en bepaal of PQRS ʼn parallelogram is.',
-      answer: 'Middelpunt van QS=((5+1)/2,(1+4)/2)=(3,2.5). Aangesien beide diagonale dieselfde middelpunt deel, is PQRS ʼn parallelogram.',
+      answer: 'Middelpunt van QS=((5+1)/2,(1+4)/2)=(3;2,5). Aangesien beide diagonale dieselfde middelpunt deel, is PQRS ʼn parallelogram.',
       checkMode: 'self',
     },
 
@@ -583,7 +583,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (0,1) en (4,9). ʼn Tweede lyn gaan deur (−1,2) en (1,6). Bepaal of die twee lyne parallel is, en wys jou werk.', answer: 'Gradiënt 1 = (9-1)/(4-0) = 8/4 = 2. Gradiënt 2 = (6-2)/(1-(-1)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne parallel.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Lyn het gradiënt 2/3. ʼn Tweede lyn gaan deur (0,0) en (2,−3). Bepaal of die twee lyne loodreg is, en wys jou werk.', answer: 'Gradiënt van tweede lyn = (-3-0)/(2-0) = -3/2. Produk van gradiënte = (2/3)×(-3/2) = -1. Aangesien die produk van die gradiënte -1 is, is die lyne loodreg.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Gegewe A(1,2) en B(7,10), bereken die afstand AB en die middelpunt van AB, en wys albei berekeninge.', answer: 'Afstand AB = √[(7-1)²+(10-2)²] = √[36+64] = √100 = 10. Middelpunt = ((1+7)/2 , (2+10)/2) = (4,6).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(1,1), B(5,1) en C(6,4). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((1+6)/2 , (1+4)/2) = (3.5, 2.5). Laat D=(x,y): (5+x)/2=3.5 gee x=2. (1+y)/2=2.5 gee y=4. Dus D=(2,4).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(1,1), B(5,1) en C(6,4). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((1+6)/2 , (1+4)/2) = (3,5; 2,5). Laat D=(x,y): (5+x)/2=3,5 gee x=2. (1+y)/2=2,5 gee y=4. Dus D=(2,4).', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Die punte P(0,0), Q(4,0), R(4,3) en S(0,3) word op die Cartesiese vlak getoon en vorm vierhoek PQRS. Bewys dat PQRS ʼn reghoek is deur die lengtes van sy diagonale te vergelyk.', answer: 'Diagonaal PR = √[(4-0)²+(3-0)²] = √[16+9] = √25 = 5. Diagonaal QS = √[(0-4)²+(3-0)²] = √[16+9] = √25 = 5. Aangesien PR = QS, is die diagonale gelyk in lengte, dus is PQRS ʼn reghoek.', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 148 132" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="106" x2="26" y2="26" /><line x1="42" y1="106" x2="42" y2="26" /><line x1="58" y1="106" x2="58" y2="26" /><line x1="74" y1="106" x2="74" y2="26" /><line x1="90" y1="106" x2="90" y2="26" /><line x1="106" y1="106" x2="106" y2="26" /><line x1="122" y1="106" x2="122" y2="26" /><line x1="26" y1="106" x2="122" y2="106" /><line x1="26" y1="90" x2="122" y2="90" /><line x1="26" y1="74" x2="122" y2="74" /><line x1="26" y1="58" x2="122" y2="58" /><line x1="26" y1="42" x2="122" y2="42" /><line x1="26" y1="26" x2="122" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="90" x2="122" y2="90" /><line x1="42" y1="106" x2="42" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="102" text-anchor="middle">-1</text><text x="58" y="102" text-anchor="middle">1</text><text x="74" y="102" text-anchor="middle">2</text><text x="90" y="102" text-anchor="middle">3</text><text x="106" y="102" text-anchor="middle">4</text><text x="122" y="102" text-anchor="middle">5</text><text x="34" y="109" text-anchor="end">-1</text><text x="34" y="77" text-anchor="end">1</text><text x="34" y="61" text-anchor="end">2</text><text x="34" y="45" text-anchor="end">3</text><text x="34" y="29" text-anchor="end">4</text><text x="34" y="102" text-anchor="end">0</text></g><path d="M 42 90 L 106 90 L 106 42 L 42 42 Z" fill="none" stroke="#0f1f3d" stroke-width="2" /><line x1="42" y1="90" x2="106" y2="42" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" /><line x1="106" y1="90" x2="42" y2="42" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" /><circle cx="42" cy="90" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="106" cy="90" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="106" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="82" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(0,0)</text><text x="112" y="82" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">Q(4,0)</text><text x="112" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">R(4,3)</text><text x="48" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">S(0,3)</text></svg>` },
       ],
       scoreMessages: [
@@ -629,7 +629,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (1,2) en (5,10). ʼn Tweede lyn gaan deur (−2,0) en (0,4). Bepaal of die twee lyne parallel is, en wys jou werk.', answer: 'Gradiënt 1 = (10-2)/(5-1) = 8/4 = 2. Gradiënt 2 = (4-0)/(0-(-2)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne parallel.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Lyn het gradiënt 3/4. ʼn Tweede lyn gaan deur (0,0) en (3,−4). Bepaal of die twee lyne loodreg is, en wys jou werk.', answer: 'Gradiënt van tweede lyn = (-4-0)/(3-0) = -4/3. Produk van gradiënte = (3/4)×(-4/3) = -1. Aangesien die produk van die gradiënte -1 is, is die lyne loodreg.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Gegewe A(2,3) en B(8,11), bereken die afstand AB en die middelpunt van AB, en wys albei berekeninge.', answer: 'Afstand AB = √[(8-2)²+(11-3)²] = √[36+64] = √100 = 10. Middelpunt = ((2+8)/2 , (3+11)/2) = (5,7).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(2,2), B(6,2) en C(7,5). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((2+7)/2 , (2+5)/2) = (4.5, 3.5). Laat D=(x,y): (6+x)/2=4.5 gee x=3. (2+y)/2=3.5 gee y=5. Dus D=(3,5).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(2,2), B(6,2) en C(7,5). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((2+7)/2 , (2+5)/2) = (4,5; 3,5). Laat D=(x,y): (6+x)/2=4,5 gee x=3. (2+y)/2=3,5 gee y=5. Dus D=(3,5).', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Die punte P(0,0), Q(5,0), R(5,2) en S(0,2) word op die Cartesiese vlak getoon en vorm vierhoek PQRS. Bewys dat PQRS ʼn reghoek is deur die lengtes van sy diagonale te vergelyk.', answer: 'Diagonaal PR = √[(5-0)²+(2-0)²] = √[25+4] = √29. Diagonaal QS = √[(0-5)²+(2-0)²] = √[25+4] = √29. Aangesien PR = QS, is die diagonale gelyk in lengte, dus is PQRS ʼn reghoek.', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 164 116" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="90" x2="26" y2="26" /><line x1="42" y1="90" x2="42" y2="26" /><line x1="58" y1="90" x2="58" y2="26" /><line x1="74" y1="90" x2="74" y2="26" /><line x1="90" y1="90" x2="90" y2="26" /><line x1="106" y1="90" x2="106" y2="26" /><line x1="122" y1="90" x2="122" y2="26" /><line x1="138" y1="90" x2="138" y2="26" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="74" x2="138" y2="74" /><line x1="42" y1="90" x2="42" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="86" text-anchor="middle">-1</text><text x="58" y="86" text-anchor="middle">1</text><text x="74" y="86" text-anchor="middle">2</text><text x="90" y="86" text-anchor="middle">3</text><text x="106" y="86" text-anchor="middle">4</text><text x="122" y="86" text-anchor="middle">5</text><text x="138" y="86" text-anchor="middle">6</text><text x="34" y="93" text-anchor="end">-1</text><text x="34" y="61" text-anchor="end">1</text><text x="34" y="45" text-anchor="end">2</text><text x="34" y="29" text-anchor="end">3</text><text x="34" y="86" text-anchor="end">0</text></g><path d="M 42 74 L 122 74 L 122 42 L 42 42 Z" fill="none" stroke="#0f1f3d" stroke-width="2" /><line x1="42" y1="74" x2="122" y2="42" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" /><line x1="122" y1="74" x2="42" y2="42" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" /><circle cx="42" cy="74" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="74" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="66" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(0,0)</text><text x="128" y="66" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">Q(5,0)</text><text x="128" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">R(5,2)</text><text x="48" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">S(0,2)</text></svg>` },
       ],
       scoreMessages: [
@@ -675,7 +675,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (2,1) en (6,9). ʼn Tweede lyn gaan deur (−1,−2) en (1,2). Bepaal of die twee lyne parallel is, en wys jou werk.', answer: 'Gradiënt 1 = (9-1)/(6-2) = 8/4 = 2. Gradiënt 2 = (2-(-2))/(1-(-1)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne parallel.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Lyn het gradiënt 5/2. ʼn Tweede lyn gaan deur (0,0) en (5,−2). Bepaal of die twee lyne loodreg is, en wys jou werk.', answer: 'Gradiënt van tweede lyn = (-2-0)/(5-0) = -2/5. Produk van gradiënte = (5/2)×(-2/5) = -1. Aangesien die produk van die gradiënte -1 is, is die lyne loodreg.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Gegewe A(3,4) en B(9,12), bereken die afstand AB en die middelpunt van AB, en wys albei berekeninge.', answer: 'Afstand AB = √[(9-3)²+(12-4)²] = √[36+64] = √100 = 10. Middelpunt = ((3+9)/2 , (4+12)/2) = (6,8).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(3,3), B(7,3) en C(8,6). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((3+8)/2 , (3+6)/2) = (5.5, 4.5). Laat D=(x,y): (7+x)/2=5.5 gee x=4. (3+y)/2=4.5 gee y=6. Dus D=(4,6).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(3,3), B(7,3) en C(8,6). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((3+8)/2 , (3+6)/2) = (5,5; 4,5). Laat D=(x,y): (7+x)/2=5,5 gee x=4. (3+y)/2=4,5 gee y=6. Dus D=(4,6).', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Die punte P(0,0), Q(6,0), R(6,4) en S(0,4) word op die Cartesiese vlak getoon en vorm vierhoek PQRS. Bewys dat PQRS ʼn reghoek is deur die lengtes van sy diagonale te vergelyk.', answer: 'Diagonaal PR = √[(6-0)²+(4-0)²] = √[36+16] = √52 = 2√13. Diagonaal QS = √[(0-6)²+(4-0)²] = √[36+16] = √52 = 2√13. Aangesien PR = QS, is die diagonale gelyk in lengte, dus is PQRS ʼn reghoek.', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 180 148" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="122" x2="26" y2="26" /><line x1="42" y1="122" x2="42" y2="26" /><line x1="58" y1="122" x2="58" y2="26" /><line x1="74" y1="122" x2="74" y2="26" /><line x1="90" y1="122" x2="90" y2="26" /><line x1="106" y1="122" x2="106" y2="26" /><line x1="122" y1="122" x2="122" y2="26" /><line x1="138" y1="122" x2="138" y2="26" /><line x1="154" y1="122" x2="154" y2="26" /><line x1="26" y1="122" x2="154" y2="122" /><line x1="26" y1="106" x2="154" y2="106" /><line x1="26" y1="90" x2="154" y2="90" /><line x1="26" y1="74" x2="154" y2="74" /><line x1="26" y1="58" x2="154" y2="58" /><line x1="26" y1="42" x2="154" y2="42" /><line x1="26" y1="26" x2="154" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="106" x2="154" y2="106" /><line x1="42" y1="122" x2="42" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="118" text-anchor="middle">-1</text><text x="58" y="118" text-anchor="middle">1</text><text x="74" y="118" text-anchor="middle">2</text><text x="90" y="118" text-anchor="middle">3</text><text x="106" y="118" text-anchor="middle">4</text><text x="122" y="118" text-anchor="middle">5</text><text x="138" y="118" text-anchor="middle">6</text><text x="154" y="118" text-anchor="middle">7</text><text x="34" y="125" text-anchor="end">-1</text><text x="34" y="93" text-anchor="end">1</text><text x="34" y="77" text-anchor="end">2</text><text x="34" y="61" text-anchor="end">3</text><text x="34" y="45" text-anchor="end">4</text><text x="34" y="29" text-anchor="end">5</text><text x="34" y="118" text-anchor="end">0</text></g><path d="M 42 106 L 138 106 L 138 42 L 42 42 Z" fill="none" stroke="#0f1f3d" stroke-width="2" /><line x1="42" y1="106" x2="138" y2="42" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" /><line x1="138" y1="106" x2="42" y2="42" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3" /><circle cx="42" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="138" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="138" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="42" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(0,0)</text><text x="144" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">Q(6,0)</text><text x="144" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">R(6,4)</text><text x="48" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">S(0,4)</text></svg>` },
       ],
       scoreMessages: [

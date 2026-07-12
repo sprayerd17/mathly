@@ -143,7 +143,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to convert between 12-hour am/pm time and 24-hour time, showing both the morning case which stays the same and the afternoon case which adds 12 to the hour" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tussen 12-uur vm./nm.-tyd en 24-uur-tyd om te skakel, met beide die oggendgeval wat dieselfde bly en die middaggeval waar 12 by die uur getel word" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram of a 24-hour timeline from 00:00 to 23:59, with the am section highlighted in green from 00:00 to 11:59 and the pm section highlighted in red from 12:00 to 23:59, showing matching 12-hour times underneath" />',
@@ -258,7 +258,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to calculate elapsed time by counting up in stages, including a case where the time period crosses midnight into the next day" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om verstreke tyd te bereken deur in stadiums op te tel, insluitend ʼn geval waar die tydperk oor middernag na die volgende dag strek" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -357,7 +357,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-step real-world time word problem combining a timetable, elapsed time and a subtracted break, ending with a final arrival or finishing time" />',
+        '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor tyd uit die regte lewe deurwerk, met ʼn rooster, verstreke tyd en ʼn afgetrekte pouse, wat eindig met ʼn finale aankoms- of afsluitingstyd" />',
     },
   ],
 

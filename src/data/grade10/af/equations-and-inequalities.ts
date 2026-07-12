@@ -386,7 +386,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Gebruik die kwadratiese formule om vir x op te los (korrek tot 2 desimale plekke): x² + 4x − 7 = 0',
-      answer: 'x≈1.32 of x≈-5.32',
+      answer: 'x≈1,32 of x≈-5,32',
       checkMode: 'auto',
       correctAnswers: ['x≈1.32 of x≈-5.32', 'x≈-5.32 of x≈1.32', 'x=1.32 of x=-5.32'],
       explanation: 'a=1, b=4, c=−7. Diskriminant = 4²−4(1)(−7) = 16+28 = 44. x = (−4±√44)/2 = −2±√11. Dus x = −2+√11 ≈ 1,32 of x = −2−√11 ≈ −5,32.',

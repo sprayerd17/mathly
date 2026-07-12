@@ -130,7 +130,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the full capacity conversion chain from kilolitres to litres to millilitres, demonstrating how to jump two steps at once and how to convert a decimal litre measurement into mixed litre and millilitre units" />',
+        '<VideoPlaceholder label="Kort video wat die volle omskakelingsketting vir inhoud van kiloliter na liter na milliliter wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale litermeting na gemengde liter- en milliliter-eenhede om te skakel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -253,7 +253,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a cube of exactly 1 cubic centimetre being filled with exactly 1 millilitre of water, then demonstrating how to find the capacity of a rectangular tank by first calculating its volume" />',
+        '<VideoPlaceholder label="Kort video wat ʼn kubus van presies 1 kubieke sentimeter wys wat met presies 1 milliliter water gevul word, en dan wys hoe om die inhoud van ʼn reghoekige tenk te vind deur eers sy volume te bereken" />',
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram showing a small 1cm cube next to a measuring cylinder with 1ml marked, with an arrow and equals sign connecting them to show 1 cm cubed equals 1 ml" />',
@@ -355,7 +355,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-step real-world capacity word problem, converting between units before dividing to share a quantity equally or find a filling rate" />',
+        '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor inhoud uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar gedeel word om ʼn hoeveelheid gelyk te verdeel of ʼn vultempo te vind" />',
     },
   ],
 

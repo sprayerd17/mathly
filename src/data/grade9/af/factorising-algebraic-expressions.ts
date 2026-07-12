@@ -83,10 +83,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the HCF of algebraic terms and factor it out of an expression" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die GGF van algebraïese terme te vind en dit uit ʼn uitdrukking te faktoriseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing 6x² + 9x with HCF 3x in blue factored out to give 3x(2x+3) with the remaining expression in green" />',
+        '<DiagramPlaceholder label="Diagram wat 6x² + 9x wys, met GGF 3x in blou uitgefaktoriseer om 3x(2x+3) te gee, met die oorblywende uitdrukking in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -164,10 +164,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to recognise and factorise a difference of two squares using the pattern a squared minus b squared equals (a minus b)(a plus b)" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn verskil van twee kwadrate te herken en te faktoriseer deur die patroon a kwadraat minus b kwadraat is gelyk aan (a minus b)(a plus b) te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing x² minus 25 with first square in blue and second square in orange giving factorised form (x minus 5)(x plus 5) in green" />',
+        '<DiagramPlaceholder label="Diagram wat x² minus 25 wys, met die eerste kwadraat in blou en die tweede kwadraat in oranje, wat die gefaktoriseerde vorm (x minus 5)(x plus 5) in groen gee" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -259,10 +259,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to factorise trinomials of the form x squared plus bx plus c by finding two numbers that multiply to c and add to b" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om trinome van die vorm x kwadraat plus bx plus c te faktoriseer deur twee getalle te vind wat vermenigvuldig na c en optel na b" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the trinomial x² + 7x + 12 with the two numbers 3 and 4 in blue and the factorised form (x+3)(x+4) in green" />',
+        '<DiagramPlaceholder label="Diagram wat die trinoom x² + 7x + 12 wys, met die twee getalle 3 en 4 in blou en die gefaktoriseerde vorm (x+3)(x+4) in groen" />',
     },
   ],
 

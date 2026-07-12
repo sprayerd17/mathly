@@ -119,10 +119,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Nested Venn-style diagram showing natural numbers inside whole numbers, inside integers, inside rational numbers, with irrational numbers as a separate circle, all inside the real number system" />',
+        '<DiagramPlaceholder label="Geneste Venn-tipe diagram wat natuurlike getalle binne hele getalle, binne heelgetalle, binne rasionale getalle wys, met irrasionale getalle as ʼn aparte sirkel, alles binne die reële getallestelsel" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the real number system and how to classify numbers as natural, whole, integer, rational or irrational" />',
+        '<VideoPlaceholder label="Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, heelgetal, geheel, rasionaal of irrasionaal te klassifiseer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -241,10 +241,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing examples of terminating decimals, repeating decimals and non-repeating non-terminating decimals, illustrating which are rational and which are irrational" />',
+        '<DiagramPlaceholder label="Diagram wat voorbeelde van eindigende desimale, herhalende desimale en nie-herhalende nie-eindigende desimale wys, wat illustreer watter rasionaal en watter irrasionaal is" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify rational and irrational numbers including how to test decimals and square roots" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om rasionale en irrasionale getalle te identifiseer, insluitend hoe om desimale en vierkantswortels te toets" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -357,10 +357,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table showing the results of adding, subtracting and multiplying rational and irrational numbers with examples of each combination" />',
+        '<DiagramPlaceholder label="Tabel wat die resultate van optel, aftrek en vermenigvuldig van rasionale en irrasionale getalle wys, met voorbeelde van elke kombinasie" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing examples of operations involving rational and irrational numbers and how to classify the results" />',
+        '<VideoPlaceholder label="Kort video wat voorbeelde wys van bewerkings met rasionale en irrasionale getalle en hoe om die resultate te klassifiseer" />',
     },
   ],
   scoreMessages: [

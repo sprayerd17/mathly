@@ -75,12 +75,12 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Skets y = 3 · (0.5)ˣ − 2 deur die horisontale asimptoot en y-afsnit te vind.',
+          question: 'Skets y = 3 · (0,5)ˣ − 2 deur die horisontale asimptoot en y-afsnit te vind.',
           answer: `${re('Horisontale asimptoot: y = −2')}; y-afsnit: (0, 1); die grafiek ${or('verval')} soos x toeneem`,
           steps: [
             `${re('Horisontale asimptoot:')} q = −2, dus is die asimptoot die lyn <strong>y = −2</strong>.`,
-            `<strong>y-afsnit:</strong> Stel x = 0 → y = 3 · (0.5)⁰ − 2 = 3 · 1 − 2 = <strong>1</strong>. Die grafiek gaan deur die punt (0, 1).`,
-            `<strong>Gedrag:</strong> Aangesien b = 0.5 en ${or('0 < 0.5 < 1')}, ${or('verval')} die funksie — die grafiek daal soos x toeneem en nader y = −2 van bo af.`,
+            `<strong>y-afsnit:</strong> Stel x = 0 → y = 3 · (0,5)⁰ − 2 = 3 · 1 − 2 = <strong>1</strong>. Die grafiek gaan deur die punt (0, 1).`,
+            `<strong>Gedrag:</strong> Aangesien b = 0,5 en ${or('0 < 0,5 < 1')}, ${or('verval')} die funksie — die grafiek daal soos x toeneem en nader y = −2 van bo af.`,
           ],
         },
         {
@@ -99,7 +99,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising the exponential function y = a times b to the power x plus q, showing how to identify the horizontal asymptote, y-intercept, and whether the graph grows or decays" />',
+        '<VideoPlaceholder label="Kort video wat die eksponensiële funksie y = a maal b tot die mag x plus q hersien, en wys hoe om die horisontale asimptoot, y-afsnit, en of die grafiek groei of verval, te identifiseer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -193,7 +193,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the definition of a logarithm and how to convert freely between logarithmic form and exponential form" />',
+        '<VideoPlaceholder label="Kort video wat die definisie van \'n logaritme verduidelik en hoe om vrylik tussen logaritmiese vorm en eksponensiële vorm om te skakel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -277,11 +277,11 @@ export const topicData: TopicData = {
         },
         {
           question: 'Sipho gebruik ʼn sakrekenaar om log₅20 te bereken. Gebruik die formule vir verandering van basis.',
-          answer: `${re('log₅20')} ≈ 1.861`,
+          answer: `${re('log₅20')} ≈ 1,861`,
           steps: [
             `${re('Formule vir verandering van basis:')} log<sub>5</sub>20 = log(20) / log(5).`,
-            `Met ʼn sakrekenaar: log(20) ≈ 1.301 en log(5) ≈ 0.699.`,
-            `Antwoord: 1.301 / 0.699 ≈ <strong>1.861</strong>.`,
+            `Met ʼn sakrekenaar: log(20) ≈ 1,301 en log(5) ≈ 0,699.`,
+            `Antwoord: 1,301 / 0,699 ≈ <strong>1,861</strong>.`,
           ],
         },
       ],
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating all four logarithm laws — product, quotient, power, and change of base — with worked examples for each" />',
+        '<VideoPlaceholder label="Kort video wat al vier logaritmewette demonstreer — produk, kwosiënt, mag, en verandering van grondtal — met uitgewerkte voorbeelde vir elkeen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -323,11 +323,11 @@ export const topicData: TopicData = {
         },
         {
           question: 'Los op vir x: 3ˣ = 20.',
-          answer: `${gr('x ≈ 2.727')}`,
+          answer: `${gr('x ≈ 2,727')}`,
           steps: [
             `${or('Neem log van albei kante:')} log(3<sup>x</sup>) = log(20).`,
             `${or('Deur die magswet te gebruik:')} x · log 3 = log 20.`,
-            `${gr('x = log 20 / log 3 ≈ 2.727')}.`,
+            `${gr('x = log 20 / log 3 ≈ 2,727')}.`,
           ],
         },
         {
@@ -348,7 +348,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video solving logarithmic and exponential equations — converting between forms, applying log laws, and checking for invalid solutions" />',
+        '<VideoPlaceholder label="Kort video wat logaritmiese en eksponensiële vergelykings oplos — deur tussen vorms om te skakel, logwette toe te pas, en vir ongeldige oplossings te toets" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -381,10 +381,10 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Lerato vergelyk y = log₂x met y = log₀.₅x. Beskryf die verskil.',
-          answer: `y = log₀.₅x is ${gr('afnemend')} (anders as die ${gr('toenemende')} y = log₂x); albei deel dieselfde ${re('vertikale asimptoot (x = 0)')} en dieselfde ${bl('punt (1, 0)')}`,
+          question: 'Lerato vergelyk y = log₂x met y = log₀,₅x. Beskryf die verskil.',
+          answer: `y = log₀,₅x is ${gr('afnemend')} (anders as die ${gr('toenemende')} y = log₂x); albei deel dieselfde ${re('vertikale asimptoot (x = 0)')} en dieselfde ${bl('punt (1, 0)')}`,
           steps: [
-            `Aangesien 0.5 &lt; 1, is y = log<sub>0.5</sub>x ʼn ${gr('afnemende funksie')} — anders as die ${gr('toenemende')} y = log<sub>2</sub>x.`,
+            `Aangesien 0,5 &lt; 1, is y = log<sub>0,5</sub>x ʼn ${gr('afnemende funksie')} — anders as die ${gr('toenemende')} y = log<sub>2</sub>x.`,
             `Albei grafieke deel dieselfde ${re('vertikale asimptoot (x = 0)')} en dieselfde ${bl('sleutelpunt (1, 0)')}.`,
           ],
         },
@@ -395,7 +395,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video sketching the graph of y equals log base a of x — identifying the vertical asymptote, key points, and comparing increasing versus decreasing cases" />',
+        '<VideoPlaceholder label="Kort video wat die grafiek van y is gelyk aan log tot die grondtal a van x skets — deur die vertikale asimptoot en sleutelpunte te identifiseer, en stygende teenoor dalende gevalle te vergelyk" />',
     },
   ],
 
@@ -425,7 +425,7 @@ export const topicData: TopicData = {
     // ── Q2 Medium ────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Vind die horisontale asimptoot van y = 5 · (0.4)ˣ − 1, en gee aan of die funksie groei of verval.',
+      question: 'Vind die horisontale asimptoot van y = 5 · (0,4)ˣ − 1, en gee aan of die funksie groei of verval.',
       answer: '',
       checkMode: 'auto',
       parts: [
@@ -439,7 +439,7 @@ export const topicData: TopicData = {
           label: 'b) Groei of verval:',
           correctAnswer: 'verval',
           correctAnswers: ['verval', 'verval nie'],
-          explanation: 'Aangesien b = 0.4 en 0 < 0.4 < 1, verval die funksie soos x toeneem.',
+          explanation: 'Aangesien b = 0,4 en 0 < 0,4 < 1, verval die funksie soos x toeneem.',
         },
       ],
     },
@@ -524,7 +524,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Gebruik die formule vir verandering van basis om log₇ 50 tot 3 desimale plekke te bereken.',
-      answer: 'log₇ 50 = log(50) / log(7) ≈ 1.699 / 0.845 ≈ 2.011.',
+      answer: 'log₇ 50 = log(50) / log(7) ≈ 1,699 / 0,845 ≈ 2,011.',
       checkMode: 'self',
     },
 
@@ -543,11 +543,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Los op vir x: 2ˣ = 15. Gee jou antwoord tot 3 desimale plekke.',
-      answer: 'x ≈ 3.907',
+      answer: 'x ≈ 3,907',
       checkMode: 'auto',
-      correctAnswer: '3.907',
-      correctAnswers: ['3.907', '≈3.907', 'x=3.907', 'x ≈ 3.907'],
-      explanation: 'Neem log van albei kante: x · log 2 = log 15. x = log 15 / log 2 ≈ 1.176 / 0.301 ≈ 3.907.',
+      correctAnswer: '3,907',
+      correctAnswers: ['3,907', '≈3,907', 'x=3,907', 'x ≈ 3,907'],
+      explanation: 'Neem log van albei kante: x · log 2 = log 15. x = log 15 / log 2 ≈ 1,176 / 0,301 ≈ 3,907.',
     },
 
     // ── Q14 Hard ─────────────────────────────────────────────────────────────
@@ -583,8 +583,8 @@ export const topicData: TopicData = {
     // ── Q17 Hard ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Lerato sê y = log₀.₃ x is ʼn toenemende funksie. Is sy korrek? Verduidelik.',
-      answer: 'Nee — aangesien die basis 0.3 tussen 0 en 1 is, is dit ʼn afnemende funksie, nie toenemend nie.',
+      question: 'Lerato sê y = log₀,₃ x is ʼn toenemende funksie. Is sy korrek? Verduidelik.',
+      answer: 'Nee — aangesien die basis 0,3 tussen 0 en 1 is, is dit ʼn afnemende funksie, nie toenemend nie.',
       checkMode: 'self',
     },
 
@@ -642,8 +642,8 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Los op vir x: log x + log(x − 8) = log 20.', answer: 'x = 10 (x = −2 word verwerp)', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', 'x=10', 'x = 10'], explanation: 'Kombineer: log(x(x − 8)) = log 20, dus x(x − 8) = 20. Vermenigvuldig uit: x² − 8x − 20 = 0. Faktoriseer: (x − 10)(x + 2) = 0, dus x = 10 of x = −2. Aangesien die log van ʼn negatiewe getal onbepaald is, word x = −2 verwerp, wat x = 10 laat. ✓' },
         { difficulty: 'Medium', question: 'Los op vir x: log(x²) = 2, en oorweeg albei moontlike oplossings.', answer: 'x = ±10', checkMode: 'auto', correctAnswer: '±10', correctAnswers: ['±10', '+-10', '10 en -10', '-10 en 10', 'x=±10'], explanation: 'x² = 10² = 100, dus x = ±10 (albei is geldig aangesien x² altyd positief is, ongeag die teken van x). ✓' },
 
-        { difficulty: 'Medium-Hard', question: 'Los op vir x: 2ˣ = 50. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 5.644', checkMode: 'auto', correctAnswer: '5.644', correctAnswers: ['5.644', '≈5.644', 'x=5.644', 'x ≈ 5.644'], explanation: 'Neem log van albei kante: x · log 2 = log 50. x = log 50 / log 2 ≈ 1.699 / 0.301 ≈ 5.644. ✓' },
-        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₆ 200 tot 3 desimale plekke te bereken.', answer: 'log₆ 200 ≈ 2.957', checkMode: 'auto', correctAnswer: '2.957', correctAnswers: ['2.957', '≈2.957'], explanation: 'log₆ 200 = log(200) / log(6) ≈ 2.301 / 0.778 ≈ 2.957. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 2ˣ = 50. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 5,644', checkMode: 'auto', correctAnswer: '5,644', correctAnswers: ['5,644', '≈5,644', 'x=5,644', 'x ≈ 5,644'], explanation: 'Neem log van albei kante: x · log 2 = log 50. x = log 50 / log 2 ≈ 1,699 / 0,301 ≈ 5,644. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₆ 200 tot 3 desimale plekke te bereken.', answer: 'log₆ 200 ≈ 2,957', checkMode: 'auto', correctAnswer: '2,957', correctAnswers: ['2,957', '≈2,957'], explanation: 'log₆ 200 = log(200) / log(6) ≈ 2,301 / 0,778 ≈ 2,957. ✓' },
         { difficulty: 'Medium-Hard', question: 'Los op vir x: log₂(x − 1) + log₂ 3 = log₂ 18.', answer: 'x = 7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x=7', 'x = 7'], explanation: 'Kombineer: log₂(3(x − 1)) = log₂ 18, dus 3(x − 1) = 18. x − 1 = 6, x = 7. Kontroleer: x − 1 = 6 > 0, dus geldig. ✓' },
 
         { difficulty: 'Hard', question: 'Vind die inverse van f(x) = log₅ x, en verduidelik waarom dit sin maak gegewe die verwantskap tussen eksponensiële en logaritmiese funksies.', answer: 'f⁻¹(x) = 5ˣ. Dit maak sin aangesien logaritmiese en eksponensiële funksies per definisie inverses van mekaar is — om tussen log- en eksponensiële vorm om te skakel, is dieselfde bewerking as om die inverse te vind.', checkMode: 'self' },
@@ -680,15 +680,15 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Los op vir x: log₂ x = 7.', answer: 'x = 128', checkMode: 'auto', correctAnswer: '128', correctAnswers: ['128', 'x=128', 'x = 128'], explanation: 'Skakel om na eksponensiële vorm: x = 2⁷ = 128. ✓' },
         { difficulty: 'Medium', question: 'Los op vir x: log₂(x + 6) = 4.', answer: 'x = 10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', 'x=10', 'x = 10'], explanation: 'Skakel om na eksponensiële vorm: x + 6 = 2⁴ = 16. x = 16 − 6 = 10. ✓' },
         { difficulty: 'Medium', question: 'Los op vir x: log x + log(x − 4) = log 12.', answer: 'x = 6 (x = −2 word verwerp)', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x=6', 'x = 6'], explanation: 'Kombineer: log(x(x − 4)) = log 12, dus x(x − 4) = 12. Vermenigvuldig uit: x² − 4x − 12 = 0. Faktoriseer: (x − 6)(x + 2) = 0, dus x = 6 of x = −2. Aangesien die log van ʼn negatiewe getal onbepaald is, word x = −2 verwerp, wat x = 6 laat. ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: log(x²) = 3, en oorweeg albei moontlike oplossings, tot 3 desimale plekke waar nodig.', answer: 'x = ±31.623', checkMode: 'auto', correctAnswer: '±31.623', correctAnswers: ['±31.623', '+-31.623', '31.623 en -31.623', '-31.623 en 31.623', 'x=±31.623'], explanation: 'x² = 10³ = 1000, dus x = ±√1000 ≈ ±31.623 (albei is geldig aangesien x² altyd positief is, ongeag die teken van x). ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log(x²) = 3, en oorweeg albei moontlike oplossings, tot 3 desimale plekke waar nodig.', answer: 'x = ±31,623', checkMode: 'auto', correctAnswer: '±31,623', correctAnswers: ['±31,623', '+-31,623', '31,623 en -31,623', '-31,623 en 31,623', 'x=±31,623'], explanation: 'x² = 10³ = 1000, dus x = ±√1000 ≈ ±31,623 (albei is geldig aangesien x² altyd positief is, ongeag die teken van x). ✓' },
 
-        { difficulty: 'Medium-Hard', question: 'Los op vir x: 3ˣ = 40. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 3.358', checkMode: 'auto', correctAnswer: '3.358', correctAnswers: ['3.358', '≈3.358', 'x=3.358', 'x ≈ 3.358'], explanation: 'Neem log van albei kante: x · log 3 = log 40. x = log 40 / log 3 ≈ 1.602 / 0.477 ≈ 3.358. ✓' },
-        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₄ 60 tot 3 desimale plekke te bereken.', answer: 'log₄ 60 ≈ 2.953', checkMode: 'auto', correctAnswer: '2.953', correctAnswers: ['2.953', '≈2.953'], explanation: 'log₄ 60 = log(60) / log(4) ≈ 1.778 / 0.602 ≈ 2.953. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 3ˣ = 40. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 3,358', checkMode: 'auto', correctAnswer: '3,358', correctAnswers: ['3,358', '≈3,358', 'x=3,358', 'x ≈ 3,358'], explanation: 'Neem log van albei kante: x · log 3 = log 40. x = log 40 / log 3 ≈ 1,602 / 0,477 ≈ 3,358. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₄ 60 tot 3 desimale plekke te bereken.', answer: 'log₄ 60 ≈ 2,953', checkMode: 'auto', correctAnswer: '2,953', correctAnswers: ['2,953', '≈2,953'], explanation: 'log₄ 60 = log(60) / log(4) ≈ 1,778 / 0,602 ≈ 2,953. ✓' },
         { difficulty: 'Medium-Hard', question: 'Los op vir x: log₂(x − 2) + log₂ 5 = log₂ 25.', answer: 'x = 7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x=7', 'x = 7'], explanation: 'Kombineer: log₂(5(x − 2)) = log₂ 25, dus 5(x − 2) = 25. x − 2 = 5, x = 7. Kontroleer: x − 2 = 5 > 0, dus geldig. ✓' },
 
         { difficulty: 'Hard', question: 'Vind die inverse van f(x) = log₇ x, en verduidelik waarom dit sin maak gegewe die verwantskap tussen eksponensiële en logaritmiese funksies.', answer: 'f⁻¹(x) = 7ˣ. Dit maak sin aangesien logaritmiese en eksponensiële funksies per definisie inverses van mekaar is — om tussen log- en eksponensiële vorm om te skakel, is dieselfde bewerking as om die inverse te vind.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Die grafiek van g(x) = 4ˣ het horisontale asimptoot y = 0 en gaan deur (0, 1) en (1, 4). Gee die vertikale asimptoot en twee sleutelpunte van g⁻¹(x) = log₄ x.', answer: 'Aangesien g⁻¹ g oor die lyn y = x spieël, word elke punt (a, b) op g die punt (b, a) op g⁻¹, en die horisontale asimptoot y = 0 word die vertikale asimptoot x = 0. Dus het g⁻¹(x) = log₄ x ʼn vertikale asimptoot x = 0, en gaan dit deur (1, 0) en (4, 1).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Lerato sê dat omdat f(x) = (0.5)ˣ ʼn afnemende funksie is, sy inverse f⁻¹(x) = log₀.₅ x ook afnemend moet wees. Is sy korrek? Verduidelik deur gebruik te maak van die feit dat om ʼn grafiek oor y = x te spieël, of dit toeneem of afneem, behou.', answer: 'Ja, Lerato is korrek. Om ʼn afnemende grafiek oor die lyn y = x te spieël, lewer nog ʼn afnemende grafiek (spieëling ruil die rolle van die x- en y-asse om, maar keer nie die afnemende tendens om nie). Aangesien f(x) = (0.5)ˣ vir alle x afneem, neem sy inverse f⁻¹(x) = log₀.₅ x ook vir alle x > 0 af.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato sê dat omdat f(x) = (0,5)ˣ ʼn afnemende funksie is, sy inverse f⁻¹(x) = log₀,₅ x ook afnemend moet wees. Is sy korrek? Verduidelik deur gebruik te maak van die feit dat om ʼn grafiek oor y = x te spieël, of dit toeneem of afneem, behou.', answer: 'Ja, Lerato is korrek. Om ʼn afnemende grafiek oor die lyn y = x te spieël, lewer nog ʼn afnemende grafiek (spieëling ruil die rolle van die x- en y-asse om, maar keer nie die afnemende tendens om nie). Aangesien f(x) = (0,5)ˣ vir alle x afneem, neem sy inverse f⁻¹(x) = log₀,₅ x ook vir alle x > 0 af.', checkMode: 'self' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy kan vol vertroue omskakel tussen vorms, logwette toepas, en log- en eksponensiële vergelykings oplos.' },
@@ -722,8 +722,8 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Los op vir x: log x + log(x − 6) = log 16.', answer: 'x = 8 (x = −2 word verwerp)', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'x=8', 'x = 8'], explanation: 'Kombineer: log(x(x − 6)) = log 16, dus x(x − 6) = 16. Vermenigvuldig uit: x² − 6x − 16 = 0. Faktoriseer: (x − 8)(x + 2) = 0, dus x = 8 of x = −2. Aangesien die log van ʼn negatiewe getal onbepaald is, word x = −2 verwerp, wat x = 8 laat. ✓' },
         { difficulty: 'Medium', question: 'Los op vir x: log(x²) = 6, en oorweeg albei moontlike oplossings.', answer: 'x = ±1000', checkMode: 'auto', correctAnswer: '±1000', correctAnswers: ['±1000', '+-1000', '1000 en -1000', '-1000 en 1000', 'x=±1000'], explanation: 'x² = 10⁶ = 1 000 000, dus x = ±1000 (albei is geldig aangesien x² altyd positief is, ongeag die teken van x). ✓' },
 
-        { difficulty: 'Medium-Hard', question: 'Los op vir x: 5ˣ = 70. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 2.640', checkMode: 'auto', correctAnswer: '2.640', correctAnswers: ['2.640', '2.64', '≈2.640', 'x=2.640', 'x ≈ 2.640'], explanation: 'Neem log van albei kante: x · log 5 = log 70. x = log 70 / log 5 ≈ 1.845 / 0.699 ≈ 2.640. ✓' },
-        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₉ 150 tot 3 desimale plekke te bereken.', answer: 'log₉ 150 ≈ 2.280', checkMode: 'auto', correctAnswer: '2.280', correctAnswers: ['2.280', '2.28', '≈2.280'], explanation: 'log₉ 150 = log(150) / log(9) ≈ 2.176 / 0.954 ≈ 2.280. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 5ˣ = 70. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 2,640', checkMode: 'auto', correctAnswer: '2,640', correctAnswers: ['2,640', '2,64', '≈2,640', 'x=2,640', 'x ≈ 2,640'], explanation: 'Neem log van albei kante: x · log 5 = log 70. x = log 70 / log 5 ≈ 1,845 / 0,699 ≈ 2,640. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₉ 150 tot 3 desimale plekke te bereken.', answer: 'log₉ 150 ≈ 2,280', checkMode: 'auto', correctAnswer: '2,280', correctAnswers: ['2,280', '2,28', '≈2,280'], explanation: 'log₉ 150 = log(150) / log(9) ≈ 2,176 / 0,954 ≈ 2,280. ✓' },
         { difficulty: 'Medium-Hard', question: 'Los op vir x: log₃(x − 1) + log₃ 4 = log₃ 20.', answer: 'x = 6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x=6', 'x = 6'], explanation: 'Kombineer: log₃(4(x − 1)) = log₃ 20, dus 4(x − 1) = 20. x − 1 = 5, x = 6. Kontroleer: x − 1 = 5 > 0, dus geldig. ✓' },
 
         { difficulty: 'Hard', question: 'Vind die inverse van f(x) = log₆ x, en verduidelik waarom dit sin maak gegewe die verwantskap tussen eksponensiële en logaritmiese funksies.', answer: 'f⁻¹(x) = 6ˣ. Dit maak sin aangesien logaritmiese en eksponensiële funksies per definisie inverses van mekaar is — om tussen log- en eksponensiële vorm om te skakel, is dieselfde bewerking as om die inverse te vind.', checkMode: 'self' },

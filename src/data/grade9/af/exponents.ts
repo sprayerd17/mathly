@@ -38,7 +38,7 @@ export const topicData: TopicData = {
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;text-align:center;">` +
-        `<p style="font-size:1.05em;font-weight:700;color:#374151;margin:0;">${or('5⁻¹')} = ${bl('1/5')} = ${gr('0.2')}</p>` +
+        `<p style="font-size:1.05em;font-weight:700;color:#374151;margin:0;">${or('5⁻¹')} = ${bl('1/5')} = ${gr('0,2')}</p>` +
         `</div>` +
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;text-align:center;">` +
@@ -161,21 +161,21 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Skryf 0.00045 in wetenskaplike notasie.',
-          answer: `0.00045 = ${gr('4.5 × 10⁻⁴')}`,
+          question: 'Skryf 0,00045 in wetenskaplike notasie.',
+          answer: `0,00045 = ${gr('4,5 × 10⁻⁴')}`,
           steps: [
-            `${bl('Skuif die desimale punt na regs')} totdat jy ʼn getal tussen 1 en 10 kry: 0.00045 → 4.5 (${bl('4 plekke na regs')} geskuif)`,
+            `${bl('Skuif die desimale punt na regs')} totdat jy ʼn getal tussen 1 en 10 kry: 0,00045 → 4,5 (${bl('4 plekke na regs')} geskuif)`,
             `Aangesien ons die desimaal na regs geskuif het, is die eksponent ${or('negatief')}: die eksponent is ${or('−4')}`,
-            `<strong>Antwoord:</strong> 0.00045 = ${gr('4.5 × 10⁻⁴')} ✓`,
+            `<strong>Antwoord:</strong> 0,00045 = ${gr('4,5 × 10⁻⁴')} ✓`,
           ],
         },
         {
-          question: 'Sipho skryf 0.0072 in wetenskaplike notasie as 7.2 × 10⁻³. Kontroleer sy antwoord.',
-          answer: `${gr('7.2 × 10⁻³')} is korrek`,
+          question: 'Sipho skryf 0,0072 in wetenskaplike notasie as 7,2 × 10⁻³. Kontroleer sy antwoord.',
+          answer: `${gr('7,2 × 10⁻³')} is korrek`,
           steps: [
-            `${bl('Skuif die desimale punt na regs')} vanaf 0.0072 totdat jy ʼn getal tussen 1 en 10 kry: 0.0072 → 7.2 (${bl('3 plekke na regs')} geskuif)`,
+            `${bl('Skuif die desimale punt na regs')} vanaf 0,0072 totdat jy ʼn getal tussen 1 en 10 kry: 0,0072 → 7,2 (${bl('3 plekke na regs')} geskuif)`,
             `Aangesien ons die desimaal na regs geskuif het, is die eksponent ${or('negatief')}: die eksponent is ${or('−3')}`,
-            `Sipho het ${gr('7.2 × 10⁻³')} geskryf — dit stem ooreen. Sy antwoord is ${gr('korrek')} ✓`,
+            `Sipho het ${gr('7,2 × 10⁻³')} geskryf — dit stem ooreen. Sy antwoord is ${gr('korrek')} ✓`,
           ],
         },
       ],
@@ -186,30 +186,30 @@ export const topicData: TopicData = {
         // ── Q4 Easy ──────────────────────────────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'Skryf 0.0036 in wetenskaplike notasie.',
-          answer: '3.6 × 10⁻³',
+          question: 'Skryf 0,0036 in wetenskaplike notasie.',
+          answer: '3,6 × 10⁻³',
           checkMode: 'auto',
-          correctAnswer: '3.6 × 10⁻³',
+          correctAnswer: '3,6 × 10⁻³',
           correctAnswers: ['3.6 × 10⁻³', '3.6×10⁻³', '3.6x10⁻³', '3.6 x 10⁻³', '3.6e-3'],
-          explanation: 'Skuif die desimaal 3 plekke na regs: 0.0036 → 3.6\nNa regs skuif → negatiewe eksponent van −3\nAntwoord: 3.6 × 10⁻³ ✓',
+          explanation: 'Skuif die desimaal 3 plekke na regs: 0,0036 → 3,6\nNa regs skuif → negatiewe eksponent van −3\nAntwoord: 3,6 × 10⁻³ ✓',
         },
 
         // ── Q5 Medium ─────────────────────────────────────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Skryf 0.000089 in wetenskaplike notasie.',
-          answer: '8.9 × 10⁻⁵',
+          question: 'Skryf 0,000089 in wetenskaplike notasie.',
+          answer: '8,9 × 10⁻⁵',
           checkMode: 'auto',
-          correctAnswer: '8.9 × 10⁻⁵',
+          correctAnswer: '8,9 × 10⁻⁵',
           correctAnswers: ['8.9 × 10⁻⁵', '8.9×10⁻⁵', '8.9x10⁻⁵', '8.9 x 10⁻⁵', '8.9e-5'],
-          explanation: 'Skuif die desimaal 5 plekke na regs: 0.000089 → 8.9\nNa regs skuif → negatiewe eksponent van −5\nAntwoord: 8.9 × 10⁻⁵ ✓',
+          explanation: 'Skuif die desimaal 5 plekke na regs: 0,000089 → 8,9\nNa regs skuif → negatiewe eksponent van −5\nAntwoord: 8,9 × 10⁻⁵ ✓',
         },
 
         // ── Q6 Hard ───────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Lerato skakel 0.00056 om na wetenskaplike notasie en kry 5.6 × 10⁻⁴. Kontroleer haar antwoord.',
-          answer: 'Korrek — deur die desimaal 4 plekke na regs te skuif vanaf 0.00056 kry jy 5.6, wat 5.6 × 10⁻⁴ bevestig.',
+          question: 'Lerato skakel 0,00056 om na wetenskaplike notasie en kry 5,6 × 10⁻⁴. Kontroleer haar antwoord.',
+          answer: 'Korrek — deur die desimaal 4 plekke na regs te skuif vanaf 0,00056 kry jy 5,6, wat 5,6 × 10⁻⁴ bevestig.',
           checkMode: 'self',
         },
       ],
@@ -340,11 +340,11 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'ʼn Bakterium het ʼn massa van 3 × 10⁻¹² gram. Bepaal die totale massa van 4 bakterieë in wetenskaplike notasie.',
-          answer: '1.2 × 10⁻¹¹ gram',
+          answer: '1,2 × 10⁻¹¹ gram',
           checkMode: 'auto',
-          correctAnswer: '1.2 × 10⁻¹¹ gram',
+          correctAnswer: '1,2 × 10⁻¹¹ gram',
           correctAnswers: ['1.2 × 10⁻¹¹ gram', '1.2×10⁻¹¹ gram', '1.2x10⁻¹¹ gram', '1.2e-11 gram', '1.2 × 10⁻¹¹'],
-          explanation: 'Vermenigvuldig: 4 × (3 × 10⁻¹²) = 12 × 10⁻¹²\nPas aan na wetenskaplike notasie: 12 × 10⁻¹² = 1.2 × 10¹ × 10⁻¹² = 1.2 × 10⁻¹¹ gram ✓',
+          explanation: 'Vermenigvuldig: 4 × (3 × 10⁻¹²) = 12 × 10⁻¹²\nPas aan na wetenskaplike notasie: 12 × 10⁻¹² = 1,2 × 10¹ × 10⁻¹² = 1,2 × 10⁻¹¹ gram ✓',
         },
 
         // ── Q11 Medium ────────────────────────────────────────────────────────

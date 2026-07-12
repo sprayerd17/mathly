@@ -88,10 +88,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the four minimum conditions for congruent triangles — SSS, SAS, AAS and RHS — with visual examples" />',
+        '<VideoPlaceholder label="Kort video wat die vier minimum voorwaardes vir kongruente driehoeke verduidelik — SSS, SHS, HHS en R.S. — met visuele voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two triangles side by side showing matching sides/angles for each congruency condition — SSS, SAS, AAS, RHS — labelled clearly" />',
+        '<DiagramPlaceholder label="Diagram benodig: twee driehoeke langs mekaar wat ooreenstemmende sye/hoeke vir elke kongruensievoorwaarde wys — SSS, SHS, HHS, R.S. — duidelik gemerk" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -160,10 +160,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the two minimum conditions for similar triangles — AA and SSS proportionality — with visual examples" />',
+        '<VideoPlaceholder label="Kort video wat die twee minimum voorwaardes vir gelykvormige driehoeke verduidelik — HH en SSS-eweredigheid — met visuele voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two pairs of similar triangles showing equal angles and proportional sides labelled with their ratios" />',
+        '<DiagramPlaceholder label="Diagram benodig: twee pare gelykvormige driehoeke wat gelyke hoeke en eweredige sye wys, gemerk met hulle verhoudings" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -246,10 +246,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve geometric problems using congruency and similarity conditions with step-by-step justifications" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om geometriese probleme op te los deur kongruensie- en gelykvormigheidsvoorwaardes te gebruik, met stap-vir-stap regverdigings" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: labelled diagrams showing similar and congruent triangle pairs with known and unknown sides/angles marked" />',
+        '<DiagramPlaceholder label="Diagram benodig: gemerkte diagramme wat gelykvormige en kongruente driehoekpare wys met bekende en onbekende sye/hoeke aangedui" />',
     },
   ],
 
@@ -316,7 +316,7 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       correctAnswer: '15cm',
       correctAnswers: ['15cm', '15 cm', '15'],
-      explanation: 'Deur die verhouding 2 : 5 te gebruik, is die groter sy = 6 × (5 ÷ 2) = 6 × 2.5 = 15 cm.',
+      explanation: 'Deur die verhouding 2 : 5 te gebruik, is die groter sy = 6 × (5 ÷ 2) = 6 × 2,5 = 15 cm.',
     },
 
     // ── Q8 Hard ───────────────────────────────────────────────────────────────

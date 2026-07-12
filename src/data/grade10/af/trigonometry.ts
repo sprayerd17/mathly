@@ -149,7 +149,7 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Los op vir θ (0° ≤ θ ≤ 90°): sin θ = 0.6.',
+          question: 'Los op vir θ (0° ≤ θ ≤ 90°): sin θ = 0,6.',
           answer: `θ ≈ ${re('36.87°')}`,
           steps: [
             `Ons is gegee ${gr('sin')}&nbsp;θ = ${bl('0.6')} en moet die ${re('onbekende')} hoek θ bepaal.`,
@@ -524,21 +524,21 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'In ʼn reghoekige driehoek is hoek A = 90°, met teenoorstaande sy 6 cm en aangrensende sy 8 cm tot hoek B. Bepaal tan B.',
-      answer: '0.75',
+      answer: '0,75',
       checkMode: 'auto',
-      correctAnswer: '0.75',
-      explanation: 'tan B = teenoorstaande / aangrensende = 6 / 8 = 0.75 ✓',
+      correctAnswer: '0,75',
+      explanation: 'tan B = teenoorstaande / aangrensende = 6 / 8 = 0,75 ✓',
     },
 
     // ── V2 Matig ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'ʼn Reghoekige driehoek het skuinssy 20 cm en ʼn hoek van 50°. Bepaal die lengte van die sy teenoor die hoek.',
-      answer: '15.32 cm',
+      answer: '15,32 cm',
       checkMode: 'auto',
-      correctAnswer: '15.32',
+      correctAnswer: '15,32',
       correctAnswers: ['15.32', '15.32cm', '15.32 cm'],
-      explanation: 'sin 50° = teenoorstaande / skuinssy\nteenoorstaande = 20 × sin 50° = 20 × 0.766 ≈ 15.32 cm ✓',
+      explanation: 'sin 50° = teenoorstaande / skuinssy\nteenoorstaande = 20 × sin 50° = 20 × 0,766 ≈ 15,32 cm ✓',
     },
 
     // ── V3 Moeilik ───────────────────────────────────────────────────────────────
@@ -552,30 +552,30 @@ export const topicData: TopicData = {
     // ── V4 Maklik ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Los op vir θ (0° ≤ θ ≤ 90°): cos θ = 0.5.',
+      question: 'Los op vir θ (0° ≤ θ ≤ 90°): cos θ = 0,5.',
       answer: '60°',
       checkMode: 'auto',
       correctAnswer: '60',
       correctAnswers: ['60', '60°'],
-      explanation: 'θ = cos⁻¹(0.5) = 60° ✓',
+      explanation: 'θ = cos⁻¹(0,5) = 60° ✓',
     },
 
     // ── V5 Matig ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'ʼn Reghoekige driehoek het aangrensende sy 12 cm en skuinssy 13 cm. Bepaal die hoek aanliggend aan hierdie sye.',
-      answer: '22.62°',
+      answer: '22,62°',
       checkMode: 'auto',
-      correctAnswer: '22.62',
+      correctAnswer: '22,62',
       correctAnswers: ['22.62', '22.62°'],
-      explanation: 'cos θ = aangrensende / skuinssy = 12 / 13\nθ = cos⁻¹(12/13) ≈ 22.62° ✓',
+      explanation: 'cos θ = aangrensende / skuinssy = 12 / 13\nθ = cos⁻¹(12/13) ≈ 22,62° ✓',
     },
 
     // ── V6 Moeilik ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Los op vir θ: tan θ = 2.5, en verifieer jou antwoord met ʼn sakrekenaar-toets.',
-      answer: 'θ = tan⁻¹(2.5) ≈ 68.2°. Toets: tan(68.2°) ≈ 2.5 ✓.',
+      question: 'Los op vir θ: tan θ = 2,5, en verifieer jou antwoord met ʼn sakrekenaar-toets.',
+      answer: 'θ = tan⁻¹(2,5) ≈ 68,2°. Toets: tan(68,2°) ≈ 2,5 ✓.',
       checkMode: 'self',
     },
 
@@ -593,7 +593,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Gebruik die punt (6, 8) uit V7 en bepaal sin θ en cos θ.',
-      answer: 'sin θ = 8/10 = 0.8. cos θ = 6/10 = 0.6.',
+      answer: 'sin θ = 8/10 = 0,8. cos θ = 6/10 = 0,6.',
       checkMode: 'self',
     },
 
@@ -656,29 +656,29 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Vanaf ʼn punt 40 m van ʼn gebou se basis is die hoogtehoek na die bopunt 30°. Bepaal die gebou se hoogte.',
-      answer: '23.09 m',
+      answer: '23,09 m',
       checkMode: 'auto',
-      correctAnswer: '23.09',
+      correctAnswer: '23,09',
       correctAnswers: ['23.09', '23.09m', '23.09 m'],
-      explanation: 'tan 30° = hoogte / 40\nhoogte = 40 × tan 30° = 40 × 0.5774 ≈ 23.09 m ✓',
+      explanation: 'tan 30° = hoogte / 40\nhoogte = 40 × tan 30° = 40 × 0,5774 ≈ 23,09 m ✓',
     },
 
     // ── V16 Matig ────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'ʼn Persoon staan op ʼn 25 m krans en sien ʼn boot teen ʼn dieptehoek van 15°. Bepaal die afstand na die boot.',
-      answer: '93.30 m',
+      answer: '93,30 m',
       checkMode: 'auto',
-      correctAnswer: '93.30',
+      correctAnswer: '93,30',
       correctAnswers: ['93.30', '93.30m', '93.30 m', '93.3', '93.3m', '93.3 m'],
-      explanation: 'tan 15° = 25 / afstand\nafstand = 25 / tan 15° = 25 / 0.2679 ≈ 93.30 m ✓',
+      explanation: 'tan 15° = 25 / afstand\nafstand = 25 / tan 15° = 25 / 0,2679 ≈ 93,30 m ✓',
     },
 
     // ── V17 Moeilik ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Twee geboue is 25 m van mekaar af. Vanaf die bopunt van die 12 m gebou is die hoogtehoek na die bopunt van die hoër een 30°. Bepaal die hoogte van die hoër gebou.',
-      answer: 'Hoogteverskil = 25 × tan 30° ≈ 14.43 m. Totale hoogte = 12 + 14.43 ≈ 26.43 m.',
+      answer: 'Hoogteverskil = 25 × tan 30° ≈ 14,43 m. Totale hoogte = 12 + 14,43 ≈ 26,43 m.',
       checkMode: 'self',
     },
 
@@ -694,18 +694,18 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'ʼn Leer leun teen ʼn muur en maak ʼn hoek van 65° met die grond. As die onderpunt van die leer 2 m van die muur af is, bepaal die leer se lengte.',
-      answer: '4.73 m',
+      answer: '4,73 m',
       checkMode: 'auto',
-      correctAnswer: '4.73',
+      correctAnswer: '4,73',
       correctAnswers: ['4.73', '4.73m', '4.73 m'],
-      explanation: 'cos 65° = aangrensende / skuinssy = 2 / leerlengte\nlengte = 2 / cos 65° = 2 / 0.4226 ≈ 4.73 m ✓',
+      explanation: 'cos 65° = aangrensende / skuinssy = 2 / leerlengte\nlengte = 2 / cos 65° = 2 / 0,4226 ≈ 4,73 m ✓',
     },
 
     // ── V20 Moeilik ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'ʼn Landmeter staan 80 m van die basis van ʼn toring af en meet die hoogtehoek na die bopunt as 28°. Sy loop dan 20 m nader en meet die nuwe hoogtehoek. Bepaal die nuwe hoek.',
-      answer: 'Oorspronklike hoogte = 80 × tan 28° ≈ 42.55 m. Nuwe afstand = 60 m. Nuwe hoek = tan⁻¹(42.55/60) ≈ 35.36°.',
+      answer: 'Oorspronklike hoogte = 80 × tan 28° ≈ 42,55 m. Nuwe afstand = 60 m. Nuwe hoek = tan⁻¹(42,55/60) ≈ 35,36°.',
       checkMode: 'self',
     },
   ],

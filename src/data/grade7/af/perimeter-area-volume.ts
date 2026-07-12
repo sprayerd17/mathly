@@ -392,7 +392,7 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte en volume van kubusse en reghoekige prismas met formules te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="3D diagrams of a cube and a rectangular prism with colour coded dimensions showing all six faces for surface area and the interior for volume" />',
+        '<DiagramPlaceholder label="3D-diagramme van ʼn kubus en ʼn reghoekige prisma met kleurgekodeerde dimensies wat al ses vlakke vir oppervlakte en die binnekant vir volume wys" />',
     },
   ],
 

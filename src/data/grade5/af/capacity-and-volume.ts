@@ -106,10 +106,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a container with its full capacity labelled in blue and the current volume of liquid inside labelled in green with the conversion 1 000 ml equals 1 litre shown" />',
+        '<DiagramPlaceholder label="Diagram wat ʼn houer wys met sy volle kapasiteit geëtiketteer in blou en die huidige volume vloeistof binne-in geëtiketteer in groen, met die omskakeling 1 000 ml is gelyk aan 1 liter getoon" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between capacity and volume and how to use millilitres and litres for different amounts of liquid" />',
+        '<VideoPlaceholder label="Kort video wat die verskil tussen kapasiteit en volume verduidelik en hoe om milliliter en liter vir verskillende hoeveelhede vloeistof te gebruik" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -193,10 +193,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the conversion relationship between millilitres and litres with an arrow labelled multiply by 1 000 going from litres to millilitres in green and an arrow labelled divide by 1 000 going from millilitres to litres in red with the conversion fact 1 000 ml equals 1 l shown in orange" />',
+        '<DiagramPlaceholder label="Diagram wat die omskakelingsverhouding tussen milliliter en liter wys met ʼn pyl geëtiketteer vermenigvuldig met 1 000 wat van liter na milliliter gaan in groen en ʼn pyl geëtiketteer deel deur 1 000 wat van milliliter na liter gaan in rooi, met die omskakelingsfeit 1 000 ml is gelyk aan 1 l getoon in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert between millilitres and litres by multiplying by 1 000 when going to a smaller unit and dividing by 1 000 when going to a larger unit with worked examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om tussen milliliter en liter om te skakel deur met 1 000 te vermenigvuldig wanneer na ʼn kleiner eenheid oorgeskakel word en deur 1 000 te deel wanneer na ʼn groter eenheid oorgeskakel word, met uitgewerkte voorbeelde" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -273,10 +273,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a measuring jug showing scale markings in blue water level in green and the reading in orange with an example of reading between marks at the halfway point" />',
+        '<DiagramPlaceholder label="Diagram van ʼn maatbeker wat skaalmerke in blou, watervlak in groen en die lesing in oranje wys, met ʼn voorbeeld van hoe om tussen merke by die halfpadpunt te lees" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read a measuring jug by identifying scale markings counting spaces and reading at eye level from the bottom of the liquid curve" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn maatbeker te lees deur skaalmerke te identifiseer, spasies te tel en op oogvlak vanaf die onderkant van die vloeistofkurwe te lees" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -363,10 +363,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two containers being combined with addition in green and a container with liquid removed shown with subtraction in red the conversion step highlighted in blue and the final answer labelled in orange" />',
+        '<DiagramPlaceholder label="Diagram wat twee houers wys wat saamgevoeg word met optelling in groen en ʼn houer waaruit vloeistof verwyder is wat aftrekking in rooi wys, die omskakelingstap uitgelig in blou en die finale antwoord geëtiketteer in oranje" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to add and subtract volumes by first converting to the same unit then calculating and writing the answer with the correct unit" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om volumes op te tel en af te trek deur eers na dieselfde eenheid om te skakel, dan te bereken en die antwoord met die korrekte eenheid neer te skryf" />',
     },
   ],
   topicPractice: [
@@ -410,9 +410,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Skakel 3750ml na liter om.',
-      answer: '3.75l',
+      answer: '3,75l',
       checkMode: 'auto',
-      correctAnswer: '3.75l',
+      correctAnswer: '3,75l',
       correctAnswers: ['3.75l', '3,75l', '3.75', '3,75', '3.75 l', '3,75 l'],
     },
 

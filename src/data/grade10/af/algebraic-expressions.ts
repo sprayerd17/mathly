@@ -129,10 +129,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a binomial by a trinomial using distribution with colour coded first term blue and second term orange then combining like terms green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn binoom met ʼn trinoom te vermenigvuldig deur distribusie te gebruik, kleurgekodeer met die eerste term blou en die tweede term oranje, en dan gelyksoortige terme groen saamgevoeg" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Distribution diagram for (x+2)(x²+3x−5) showing six arrows from each binomial term to each trinomial term colour coded blue for x and orange for 2" />',
+        '<DiagramPlaceholder label="Distribusiediagram vir (x+2)(x²+3x−5) wat ses pyle wys van elke binoomterm na elke trinoomterm, kleurgekodeer blou vir x en oranje vir 2" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -270,10 +270,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to factorise trinomials using the sum-product method for a=1 and the a×c method for a≠1 with colour coded a×c value orange and split terms blue" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om trinome te faktoriseer deur die som-produk-metode te gebruik vir a=1 en die a×c-metode vir a≠1, kleurgekodeer met die a×c-waarde oranje en gesplitste terme blou" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Factor grid for 3x²+11x+6 showing a×c product orange, the two split numbers, split terms blue, and the resulting factored brackets green" />',
+        '<DiagramPlaceholder label="Faktorrooster vir 3x²+11x+6 wat die a×c-produk oranje wys, die twee gesplitste getalle, gesplitste terme blou, en die resulterende gefaktoriseerde hakies groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -384,10 +384,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to factorise a four-term expression by grouping in pairs with first pair colour coded red and second pair purple and common binomial green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vierterm-uitdrukking te faktoriseer deur in pare te groepeer, met die eerste paar kleurgekodeer rooi en die tweede paar pers, en die gemeenskaplike binoom groen" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Grouping diagram for x³+3x²−4x−12 showing the first pair red, second pair purple, factored groups, and the resulting common binomial factor green" />',
+        '<DiagramPlaceholder label="Groeperingsdiagram vir x³+3x²−4x−12 wat die eerste paar rooi, tweede paar pers, gefaktoriseerde groepe, en die resulterende gemeenskaplike binoomfaktor groen wys" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -509,10 +509,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to simplify add and subtract algebraic fractions with monomial denominators using LCM colour coded orange with converted fractions blue and simplified answer green" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese breuke met monoomnoemers te vereenvoudig, optel en aftrek deur die KGV te gebruik, kleurgekodeer oranje, met omgeskakelde breuke blou en die vereenvoudigde antwoord groen" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Fraction addition diagram for 3/x + 5/2x showing LCM orange, converted equivalent fractions blue, and the final simplified answer green" />',
+        '<DiagramPlaceholder label="Breukoptellingdiagram vir 3/x + 5/2x wat die KGV oranje, omgeskakelde ekwivalente breuke blou, en die finale vereenvoudigde antwoord groen wys" />',
     },
   ],
 

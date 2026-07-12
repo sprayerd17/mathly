@@ -296,7 +296,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Irrasionale getal</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Kan nie as a/b geskryf word nie. Desimaal hou vir ewig aan sonder om te herhaal. Voorbeeld: √2 = 1.41421356…</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Kan nie as a/b geskryf word nie. Desimaal hou vir ewig aan sonder om te herhaal. Voorbeeld: √2 = 1,41421356…</p>` +
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
@@ -317,7 +317,7 @@ export const topicData: TopicData = {
           answer: `${re('√2 is irrasionaal')}`,
           steps: [
             `Vra: kan √2 as ʼn presiese breuk a/b geskryf word (heelgetalle, b ≠ 0)? As dit kon, sou dit ${bl('rasionaal')} wees.`,
-            `√2 ≈ 1.41421356… — die desimaal hou vir ewig aan sonder enige herhalende blok. Dit is die bepalende eienskap van ʼn ${re('irrasionale')} getal.`,
+            `√2 ≈ 1,41421356… — die desimaal hou vir ewig aan sonder enige herhalende blok. Dit is die bepalende eienskap van ʼn ${re('irrasionale')} getal.`,
             `Aangesien 2 nie ʼn ${gr('volkome vierkant')} is nie, kan √2 nie gelyk wees aan ʼn heelgetal of ʼn presiese breuk nie. <strong>Daarom is √2 ${re('irrasionaal')}.</strong> ✓`,
           ],
         },
@@ -354,7 +354,7 @@ export const topicData: TopicData = {
               label: 'a) √7 is:',
               correctAnswer: 'irrasionaal',
               correctAnswers: ['irrasionaal', 'Irrasionaal'],
-              explanation: '7 is nie ʼn volkome vierkant nie (2²=4, 3²=9 — geen heelgetal se vierkant is 7 nie). √7 ≈ 2.6457… hou aan sonder om te herhaal, dus is dit irrasionaal. ✓',
+              explanation: '7 is nie ʼn volkome vierkant nie (2²=4, 3²=9 — geen heelgetal se vierkant is 7 nie). √7 ≈ 2,6457… hou aan sonder om te herhaal, dus is dit irrasionaal. ✓',
             },
             {
               label: 'b) √100 is:',
@@ -367,7 +367,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Drie getalle word gegee: √5, √81, √11.\n\na) Watter is irrasionaal? Gee ʼn rede vir elk.\nb) Watter is rasionaal? Skryf hul presiese waarde.\nc) Plaas al drie op ʼn getallelyn en wys hul benaderde posisie.',
-          answer: 'a) √5 ≈ 2.236… (irrasionaal — 5 is nie ʼn volkome vierkant nie)\n   √11 ≈ 3.317… (irrasionaal — 11 is nie ʼn volkome vierkant nie)\nb) √81 = 9 (rasionaal — 81 = 9², ʼn volkome vierkant)\nc) Getallelyn: √5 ≈ 2.2, √81 = 9, √11 ≈ 3.3',
+          answer: 'a) √5 ≈ 2,236… (irrasionaal — 5 is nie ʼn volkome vierkant nie)\n   √11 ≈ 3,317… (irrasionaal — 11 is nie ʼn volkome vierkant nie)\nb) √81 = 9 (rasionaal — 81 = 9², ʼn volkome vierkant)\nc) Getallelyn: √5 ≈ 2,2, √81 = 9, √11 ≈ 3,3',
           checkMode: 'self',
         },
       ],
@@ -423,22 +423,22 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Rond √20 af tot 2 desimale plekke.',
-          answer: `${gr('4.47')}`,
+          answer: `${gr('4,47')}`,
           steps: [
             `Skryf die ${bl('presiese wortelvorm')}: ${bl('√20')}.`,
-            `Bereken die ${or('desimale benadering')}: ${or('√20 ≈ 4.47213…')}`,
-            `Identifiseer die afrondingsposisie (2 desimale plekke): 4.47|213… Die beslissende syfer is 2 — minder as 5, dus rond af.`,
-            `<strong>Antwoord:</strong> ${gr('4.47')} (korrek tot 2 desimale plekke) ✓`,
+            `Bereken die ${or('desimale benadering')}: ${or('√20 ≈ 4,47213…')}`,
+            `Identifiseer die afrondingsposisie (2 desimale plekke): 4,47|213… Die beslissende syfer is 2 — minder as 5, dus rond af.`,
+            `<strong>Antwoord:</strong> ${gr('4,47')} (korrek tot 2 desimale plekke) ✓`,
           ],
         },
         {
           question: 'Thabo bereken die diagonaal van ʼn vierkant met sy 5 cm as √50 cm. Rond dit af tot 1 desimale plek.',
-          answer: `${gr('7.1')} cm`,
+          answer: `${gr('7,1')} cm`,
           steps: [
             `Skryf die ${bl('presiese wortelvorm')}: ${bl('√50')} cm.`,
-            `Bereken die ${or('desimale benadering')}: ${or('√50 ≈ 7.0710678…')}`,
-            `Identifiseer die afrondingsposisie (1 desimale plek): 7.0|710… Die beslissende syfer is 7 — 5 of meer, dus rond op.`,
-            `<strong>Antwoord:</strong> ${gr('7.1')} cm (korrek tot 1 desimale plek) ✓`,
+            `Bereken die ${or('desimale benadering')}: ${or('√50 ≈ 7,0710678…')}`,
+            `Identifiseer die afrondingsposisie (1 desimale plek): 7,0|710… Die beslissende syfer is 7 — 5 of meer, dus rond op.`,
+            `<strong>Antwoord:</strong> ${gr('7,1')} cm (korrek tot 1 desimale plek) ✓`,
           ],
         },
       ],
@@ -449,10 +449,10 @@ export const topicData: TopicData = {
         {
           difficulty: 'Easy',
           question: 'Rond √6 af tot 2 desimale plekke.',
-          answer: '2.45',
+          answer: '2,45',
           checkMode: 'auto',
-          correctAnswer: '2.45',
-          explanation: '√6 ≈ 2.449489… Die beslissende syfer by posisie 3 is 9 ≥ 5, dus rond die tweede desimale plek op: 2.45 ✓',
+          correctAnswer: '2,45',
+          explanation: '√6 ≈ 2,449489… Die beslissende syfer by posisie 3 is 9 ≥ 5, dus rond die tweede desimale plek op: 2,45 ✓',
         },
         {
           difficulty: 'Medium',
@@ -462,13 +462,13 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Rond √17 af tot 1 desimale plek =',
-              correctAnswer: '4.1',
-              explanation: '√17 ≈ 4.1231… Die beslissende syfer is 2 < 5, dus rond af: 4.1 ✓',
+              correctAnswer: '4,1',
+              explanation: '√17 ≈ 4,1231… Die beslissende syfer is 2 < 5, dus rond af: 4,1 ✓',
             },
             {
               label: 'b) Rond √99 af tot 2 desimale plekke =',
-              correctAnswer: '9.95',
-              explanation: '√99 ≈ 9.94987… Die beslissende syfer by posisie 3 is 9 ≥ 5, dus rond op: 9.95 ✓',
+              correctAnswer: '9,95',
+              explanation: '√99 ≈ 9,94987… Die beslissende syfer by posisie 3 is 9 ≥ 5, dus rond op: 9,95 ✓',
             },
           ],
         },
@@ -491,9 +491,9 @@ export const topicData: TopicData = {
             },
             {
               label: 'c) Lengte van een sy afgerond tot 2 dp (cm) =',
-              correctAnswer: '3.46',
+              correctAnswer: '3,46',
               correctAnswers: ['3.46', '3.46 cm'],
-              explanation: '2√3 ≈ 2 × 1.73205… = 3.46410… Die beslissende syfer is 4 < 5, dus rond af: 3.46 cm ✓',
+              explanation: '2√3 ≈ 2 × 1,73205… = 3,46410… Die beslissende syfer is 4 < 5, dus rond af: 3,46 cm ✓',
             },
           ],
         },
@@ -502,7 +502,7 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys wanneer om presiese wortelvorm teenoor desimale benadering te gebruik en hoe om irrasionale getalle tot ʼn gegewe aantal desimale plekke af te rond" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn ingezoem op √20 tussen 4 en 5 wat die desimale benadering 4.47213 wys met die afgeronde antwoord 4.47 in groen gemerk" />',
+        '<DiagramPlaceholder label="Getallelyn ingezoem op √20 tussen 4 en 5 wat die desimale benadering 4,47213 wys met die afgeronde antwoord 4,47 in groen gemerk" />',
     },
   ],
 
@@ -758,27 +758,27 @@ export const topicPractice = [
   {
     difficulty: 'Easy',
     question: 'Rond √18 af tot 2 desimale plekke.',
-    answer: '4.24',
+    answer: '4,24',
     checkMode: 'auto',
-    correctAnswer: '4.24',
-    explanation: '√18 ≈ 4.2426… Die beslissende syfer by posisie 3 is 2 < 5, dus rond af: 4.24 ✓',
+    correctAnswer: '4,24',
+    explanation: '√18 ≈ 4,2426… Die beslissende syfer by posisie 3 is 2 < 5, dus rond af: 4,24 ✓',
   },
 
   // ── Q15 Medium — round a surd to 1 dp ─────────────────────────────────────
   {
     difficulty: 'Medium',
     question: 'Rond √63 af tot 1 desimale plek.',
-    answer: '7.9',
+    answer: '7,9',
     checkMode: 'auto',
-    correctAnswer: '7.9',
-    explanation: '√63 ≈ 7.9372… Die beslissende syfer by posisie 2 is 3 < 5, dus rond af: 7.9 ✓',
+    correctAnswer: '7,9',
+    explanation: '√63 ≈ 7,9372… Die beslissende syfer by posisie 2 is 3 < 5, dus rond af: 7,9 ✓',
   },
 
   // ── Q16 Hard — real-world rounding ────────────────────────────────────────
   {
     difficulty: 'Hard',
     question: "ʼn Reghoek se diagonaal is √32 cm. Rond dit af tot 2 desimale plekke en verduidelik wanneer hierdie afronding nodig sou wees.",
-    answer: "√32≈5.6568... Afgerond tot 5.66 cm. Afronding is nodig vir praktiese, werklike-lewe-metings soos die sny van materiaal, waar presiese wortelvorm nie bruikbaar is nie.",
+    answer: "√32≈5,6568... Afgerond tot 5,66 cm. Afronding is nodig vir praktiese, werklike-lewe-metings soos die sny van materiaal, waar presiese wortelvorm nie bruikbaar is nie.",
     checkMode: 'self',
   },
 
@@ -812,7 +812,7 @@ export const topicPractice = [
   {
     difficulty: 'Hard',
     question: 'Vereenvoudig √200 en rond jou antwoord af tot 2 desimale plekke, en wys beide die presiese en benaderde vorme.',
-    answer: '√200=√(100×2)=10√2 (presiese vorm). 10√2≈14.14 (afgerond tot 2 desimale plekke).',
+    answer: '√200=√(100×2)=10√2 (presiese vorm). 10√2≈14,14 (afgerond tot 2 desimale plekke).',
     checkMode: 'self',
   },
 ]

@@ -122,10 +122,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side layout showing x²+6x+5 transforming step by step into completed square form (x+3)²−4, with factored coefficient in blue, completed square term in orange and constant in green" />',
+        '<DiagramPlaceholder label="Langs-mekaar-uitleg wat wys hoe x²+6x+5 stap vir stap omskep word na voltooide vierkantvorm (x+3)²−4, met die uitgefaktoriseerde koëffisiënt in blou, die voltooide vierkantterm in oranje en die konstante in groen" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to complete the square for quadratics with a=1 and a≠1, showing each step colour coded" />',
+        '<VideoPlaceholder label="Kort video wat demonstreer hoe om die vierkant te voltooi vir kwadratiese uitdrukkings met a=1 en a≠1, met elke stap kleurgekodeer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -245,10 +245,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Parabola sketches side by side: one opening upward (a>0) with minimum at turning point labelled q in green and x-value in orange; one opening downward (a<0) with maximum labelled similarly" />',
+        '<DiagramPlaceholder label="Paraboolsketse langs mekaar: een wat opwaarts oopmaak (a>0) met die minimum by die draaipunt gemerk as q in groen en die x-waarde in oranje; een wat afwaarts oopmaak (a<0) met die maksimum eenders gemerk" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read the minimum or maximum value and its x-position directly from a completed square form, including an applied fencing word problem" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die minimum- of maksimumwaarde en die x-posisie daarvan direk uit ʼn voltooide vierkantvorm af te lees, met ʼn toegepaste omheiningswoordprobleem" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -446,10 +446,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step layout for 2/(x+1) + 3/(x−2) showing factorised forms in blue, LCM in orange and combined simplified numerator in green" />',
+        '<DiagramPlaceholder label="Stap-vir-stap-uitleg vir 2/(x+1) + 3/(x−2) wat gefaktoriseerde vorms in blou, die KGV in oranje en die gekombineerde vereenvoudigde teller in groen wys" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to simplify algebraic fractions with binomial denominators: factorising, finding the LCM, combining numerators and cancelling common factors" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese breuke met binoomnoemers te vereenvoudig: faktorisering, die KGV vind, tellers kombineer en gemeenskaplike faktore kanselleer" />',
     },
   ],
 

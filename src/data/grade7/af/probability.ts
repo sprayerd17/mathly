@@ -253,21 +253,21 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Thabo gooi ʼn muntstuk 50 keer op en kry 28 keer kop. Vind die relatiewe frekwensie van kop en vergelyk dit met die teoretiese waarskynlikheid.',
-          answer: `${or('Relatiewe frekwensie')} = ${or('0.56')}; ${bl('Teoretiese waarskynlikheid')} = ${bl('0.5')} — naby maar nie gelyk nie`,
+          answer: `${or('Relatiewe frekwensie')} = ${or('0,56')}; ${bl('Teoretiese waarskynlikheid')} = ${bl('0,5')} — naby maar nie gelyk nie`,
           steps: [
-            `Bereken die ${or('relatiewe frekwensie')}: aantal koppe ÷ ${gr('totale proewe')} = 28 ÷ ${gr('50')} = ${or('0.56')}.`,
-            `Bereken die ${bl('teoretiese waarskynlikheid')}: ʼn regverdige muntstuk het 1 gunstige uitkoms (kop) uit 2 totale uitkomste → ${bl('W(kop)')} = 1 ÷ 2 = ${bl('0.5')}.`,
-            `Vergelyk: ${or('0.56')} teenoor ${bl('0.5')}. Die ${or('relatiewe frekwensie')} is naby aan, maar nie presies gelyk aan, die ${bl('teoretiese waarskynlikheid')} nie.`,
-            `<strong>Antwoord:</strong> Dit word verwag met ʼn beperkte ${gr('aantal proewe')} (${gr('50')}). Met baie meer opgooie sou die ${or('relatiewe frekwensie')} nader aan ${bl('0.5')} beweeg.`,
+            `Bereken die ${or('relatiewe frekwensie')}: aantal koppe ÷ ${gr('totale proewe')} = 28 ÷ ${gr('50')} = ${or('0,56')}.`,
+            `Bereken die ${bl('teoretiese waarskynlikheid')}: ʼn regverdige muntstuk het 1 gunstige uitkoms (kop) uit 2 totale uitkomste → ${bl('W(kop)')} = 1 ÷ 2 = ${bl('0,5')}.`,
+            `Vergelyk: ${or('0,56')} teenoor ${bl('0,5')}. Die ${or('relatiewe frekwensie')} is naby aan, maar nie presies gelyk aan, die ${bl('teoretiese waarskynlikheid')} nie.`,
+            `<strong>Antwoord:</strong> Dit word verwag met ʼn beperkte ${gr('aantal proewe')} (${gr('50')}). Met baie meer opgooie sou die ${or('relatiewe frekwensie')} nader aan ${bl('0,5')} beweeg.`,
           ],
         },
         {
           question: 'Amahle gooi ʼn dobbelsteen 60 keer en kry presies 8 keer ʼn 6. Vind die relatiewe frekwensie en vergelyk dit met die teoretiese waarskynlikheid.',
-          answer: `${or('Relatiewe frekwensie')} = ${or('2/15 ≈ 0.133')}; ${bl('Teoretiese waarskynlikheid')} = ${bl('1/6 ≈ 0.167')} — waardes is naby aan mekaar`,
+          answer: `${or('Relatiewe frekwensie')} = ${or('2/15 ≈ 0,133')}; ${bl('Teoretiese waarskynlikheid')} = ${bl('1/6 ≈ 0,167')} — waardes is naby aan mekaar`,
           steps: [
-            `Bereken die ${or('relatiewe frekwensie')}: 8 ÷ ${gr('60')} = ${or('2/15')} ≈ ${or('0.133')}.`,
-            `Bereken die ${bl('teoretiese waarskynlikheid')}: 1 gunstige uitkoms (ʼn 6 gooi) uit 6 totale uitkomste → ${bl('W(6)')} = ${bl('1/6')} ≈ ${bl('0.167')}.`,
-            `Vergelyk: ${or('0.133')} teenoor ${bl('0.167')}. Die waardes is naby aan mekaar, wat wys dat die eksperiment redelik ooreenstem met die verwagte waarskynlikheid.`,
+            `Bereken die ${or('relatiewe frekwensie')}: 8 ÷ ${gr('60')} = ${or('2/15')} ≈ ${or('0,133')}.`,
+            `Bereken die ${bl('teoretiese waarskynlikheid')}: 1 gunstige uitkoms (ʼn 6 gooi) uit 6 totale uitkomste → ${bl('W(6)')} = ${bl('1/6')} ≈ ${bl('0,167')}.`,
+            `Vergelyk: ${or('0,133')} teenoor ${bl('0,167')}. Die waardes is naby aan mekaar, wat wys dat die eksperiment redelik ooreenstem met die verwagte waarskynlikheid.`,
             `<strong>Antwoord:</strong> Die klein verskil is normaal vir ${gr('60')} proewe. Die ${or('relatiewe frekwensie')} van ${or('2/15')} is redelik naby aan die ${bl('teoretiese waarskynlikheid')} van ${bl('1/6')}, wat bevestig dat die dobbelsteen regverdig lyk.`,
           ],
         },
@@ -291,8 +291,8 @@ export const topicData: TopicData = {
       question: 'Lys alle moontlike uitkomste wanneer ʼn muntstuk opgegooi word.',
       answer: 'kop, stert',
       checkMode: 'auto',
-      correctAnswer: 'heads, tails',
-      correctAnswers: ['heads, tails', 'heads and tails', 'tails, heads', 'tails and heads'],
+      correctAnswer: 'kop, stert',
+      correctAnswers: ['heads, tails', 'heads and tails', 'tails, heads', 'tails and heads', 'kop, stert', 'kop en stert', 'stert, kop', 'stert en kop'],
       explanation: 'ʼn Muntstuk het twee kante: kop en stert. Daar is altesaam 2 moontlike uitkomste.',
     },
 
@@ -361,7 +361,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Lerato gooi ʼn muntstuk 40 keer op en kry 24 keer kop. Vind die relatiewe frekwensie van kop en vergelyk dit met die teoretiese waarskynlikheid.',
-      answer: 'Relatiewe frekwensie = 24/40 = 0.6. Teoretiese waarskynlikheid = 0.5. Die resultaat is hoër as verwag, maar aanvaarbaar met ʼn beperkte aantal proewe.',
+      answer: 'Relatiewe frekwensie = 24/40 = 0,6. Teoretiese waarskynlikheid = 0,5. Die resultaat is hoër as verwag, maar aanvaarbaar met ʼn beperkte aantal proewe.',
       checkMode: 'self',
     },
 

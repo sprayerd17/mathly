@@ -122,10 +122,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a monomial by a polynomial using the distributive law with step-by-step colour coded examples" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn monoom met ʼn polinoom te vermenigvuldig deur die distributiewe wet te gebruik, met stap-vir-stap kleurgekodeerde voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the distributive law applied to 3x(2x²+5x−4) with arrows from the distributed term in blue to each multiplication in orange and the final expression in green" />',
+        '<DiagramPlaceholder label="Diagram wat die distributiewe wet toegepas op 3x(2x²+5x−4) wys, met pyle vanaf die gedistribueerde term in blou na elke vermenigvuldiging in oranje en die finale uitdrukking in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -236,10 +236,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide a polynomial by a monomial by splitting each term and applying the exponent subtraction rule" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn polinoom deur ʼn monoom te deel deur elke term te skei en die eksponent-aftrekkingsreël toe te pas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing (15x³+10x²−5x)÷5x split into three separate fractions with the divisor in blue each division step in orange and the final expression in green" />',
+        '<DiagramPlaceholder label="Diagram wat (15x³+10x²−5x)÷5x wys, opgedeel in drie afsonderlike breuke met die deler in blou, elke delingstap in oranje en die finale uitdrukking in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -428,10 +428,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply two binomials using FOIL and how to expand the square of a binomial using the special patterns with colour coded steps" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om twee binome te vermenigvuldig deur die FOIL-metode te gebruik en hoe om die kwadraat van ʼn binoom uit te brei met die spesiale patrone, met kleurgekodeerde stappe" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing FOIL method for (x+3)(x+5) with first term in blue outer and inner terms in orange last term in green and final answer in red alongside the square of a binomial pattern" />',
+        '<DiagramPlaceholder label="Diagram wat die FOIL-metode vir (x+3)(x+5) wys, met die eerste terme in blou, buitenste en binneste terme in oranje, laaste terme in groen en die finale antwoord in rooi, langs die kwadraat-van-ʼn-binoom-patroon" />',
     },
   ],
 

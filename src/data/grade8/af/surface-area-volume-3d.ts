@@ -236,7 +236,7 @@ export const topicData: TopicData = {
           question: 'ʼn Reghoekige tenk is 1,5 m by 1 m by 0,8 m. Vind die volume daarvan in kubieke meter.',
           answer: '1,2 m³',
           checkMode: 'auto',
-          correctAnswer: '1.2',
+          correctAnswer: '1,2',
           correctAnswers: ['1.2', '1.2m³', '1.2 m³', '1,2', '1,2m³', '1,2 m³'],
           explanation: 'Volume = 1,5 × 1 × 0,8 = 1,2 m³ ✓',
         },

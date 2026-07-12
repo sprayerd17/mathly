@@ -154,10 +154,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising vertically opposite, adjacent, corresponding, alternate and co-interior angle relationships with parallel lines and transversals" />',
+        '<VideoPlaceholder label="Kort video wat vertikaal-oorstaande, aangrensende, ooreenkomstige, verwisselende en ko-binnehoekverwantskappe met parallelle lyne en transversale hersien" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two parallel lines cut by a transversal with all five angle relationships labelled and colour coded" />',
+        '<DiagramPlaceholder label="Diagram wat twee parallelle lyne gesny deur ʼn transversaal wys, met al vyf hoekverwantskappe gemerk en kleurgekodeer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -322,10 +322,10 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to combine multiple angle relationships to solve complex geometry problems step by step" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om verskeie hoekverhoudings te kombineer om komplekse geometrie-probleme stap vir stap op te los" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two parallel lines cut by two transversals with multiple angle relationships labelled and colour coded" />',
+        '<DiagramPlaceholder label="Diagram wat twee parallelle lyne gesny deur twee transversale wys, met verskeie hoekverwantskappe gemerk en kleurgekodeer" />',
     },
   ],
   scoreMessages: [

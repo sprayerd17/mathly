@@ -106,7 +106,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Visual showing a ratio of red to blue marbles with the HCF highlighted and the step by step simplification from 12:8 to 3:2" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what a ratio is, how to write it using a colon, and how to simplify a ratio by dividing by the HCF" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn verhouding is, hoe om dit met ʼn dubbelpunt te skryf, en hoe om ʼn verhouding te vereenvoudig deur die GGF te deel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -203,7 +203,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Visual showing equivalent ratios as scaled rows (2:3 and 8:12) alongside a bar model for dividing R240 in the ratio 3:5 with each part labelled R30" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to check if two ratios are equivalent and how to divide an amount in a ratio using the total parts method with a worked R1 800 three-way split example" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om te toets of twee verhoudings ekwivalent is, en hoe om ʼn bedrag in ʼn verhouding te verdeel met die totale-dele-metode, met ʼn uitgewerkte R1 800 drierigting-verdelingsvoorbeeld" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -277,12 +277,12 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Appels kos R24.50 vir 5 kg. Wat is die prys per kilogram?',
-          answer: `Appels kos ${gr('R4.90 per kilogram')}`,
+          question: 'Appels kos R24,50 vir 5 kg. Wat is die prys per kilogram?',
+          answer: `Appels kos ${gr('R4,90 per kilogram')}`,
           steps: [
             `Prys ${or('per')} ${re('kg')} = ${bl('totale koste')} ÷ ${re('kg')}.`,
-            `${bl('24.50')} ÷ ${re('5')} = ${gr('R4.90')}.`,
-            `Appels kos ${gr('R4.90')} ${or('per')} ${re('kilogram')}.`,
+            `${bl('24,50')} ÷ ${re('5')} = ${gr('R4,90')}.`,
+            `Appels kos ${gr('R4,90')} ${or('per')} ${re('kilogram')}.`,
           ],
         },
       ],
@@ -295,7 +295,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Visual showing a rate as two quantities of different kinds — for example a car travelling 240 km in 3 hours with arrows pointing to the unit rate of 80 km per hour" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what a rate is, how it differs from a ratio, what per means, and how to calculate a unit rate by dividing the first quantity by the second" />',
+        '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn koers is, hoe dit van ʼn verhouding verskil, wat per beteken, en hoe om ʼn eenheidskoers te bereken deur die eerste hoeveelheid deur die tweede te deel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -362,12 +362,12 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Thabo koop 7 kg rys teen R8.50 per kg. Hy koop ook 3 kg suiker teen R12.40 per kg. Wat is die totale koste?',
-          answer: `Die totale koste is ${pu('R96.70')}`,
+          question: 'Thabo koop 7 kg rys teen R8,50 per kg. Hy koop ook 3 kg suiker teen R12,40 per kg. Wat is die totale koste?',
+          answer: `Die totale koste is ${pu('R96,70')}`,
           steps: [
-            `Koste van rys: ${gr('vermenigvuldig')} ${or('7')} × ${bl('R8.50')} = R59.50.`,
-            `Koste van suiker: ${gr('vermenigvuldig')} ${or('3')} × ${bl('R12.40')} = R37.20.`,
-            `${pu('Totaal')}: R59.50 + R37.20 = ${pu('R96.70')}.`,
+            `Koste van rys: ${gr('vermenigvuldig')} ${or('7')} × ${bl('R8,50')} = R59,50.`,
+            `Koste van suiker: ${gr('vermenigvuldig')} ${or('3')} × ${bl('R12,40')} = R37,20.`,
+            `${pu('Totaal')}: R59,50 + R37,20 = ${pu('R96,70')}.`,
           ],
         },
       ],
@@ -380,7 +380,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Visual showing two rate problems side by side — one multiplying unit rate by quantity to get the total and one dividing the total by the unit rate to get the quantity" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve rate problems by identifying what is given and what is needed then choosing to multiply or divide using the unit rate" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om koersprobleme op te los deur te identifiseer wat gegee is en wat benodig word, en dan te kies om met die eenheidskoers te vermenigvuldig of te deel" />',
     },
   ],
   topicPractice: [

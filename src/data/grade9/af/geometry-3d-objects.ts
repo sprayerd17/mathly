@@ -101,10 +101,10 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing the 5 Platonic solids and comparing them to spheres and cylinders highlighting curved surfaces" />',
+        '<VideoPlaceholder label="Kort video wat die 5 Platoniese vaste liggame bekendstel en dit vergelyk met sfere en silinders, met die klem op geboë oppervlaktes" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a sphere and a cylinder shown alongside the 5 Platonic solids, highlighting the curved surfaces that distinguish them" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn sfeer en ʼn silinder langs die 5 Platoniese vaste liggame getoon, met die geboë oppervlaktes wat hulle onderskei uitgelig" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -141,7 +141,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Sleutelformule</p>` +
-        `<p style="margin:0;color:#9a3412;">${or('Omtrek')} = 2 × π × r &nbsp;(gebruik π ≈ 3.14). Wanneer hierdie reghoek omvou, moet sy lengte presies ooreenstem met die sirkel se ${or('omtrek')} sodat die rande belyn.</p>` +
+        `<p style="margin:0;color:#9a3412;">${or('Omtrek')} = 2 × π × r &nbsp;(gebruik π ≈ 3,14). Wanneer hierdie reghoek omvou, moet sy lengte presies ooreenstem met die sirkel se ${or('omtrek')} sodat die rande belyn.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -156,10 +156,10 @@ export const topicData: TopicData = {
         },
         {
           question: 'Lerato het ʼn silinder met radius 4 cm en hoogte 10 cm. Vind die afmetings van die reghoekige deel van sy net.',
-          answer: `${gr('Reghoek')} breedte = 10 cm; lengte = ${or('omtrek')} = 25.12 cm`,
+          answer: `${gr('Reghoek')} breedte = 10 cm; lengte = ${or('omtrek')} = 25,12 cm`,
           steps: [
             `${gr('Reghoek')} breedte = hoogte van silinder = <strong>10 cm</strong>.`,
-            `${gr('Reghoek')} lengte = ${or('omtrek')} = 2 × π × r = 2 × 3.14 × 4 = <strong>25.12 cm</strong>.`,
+            `${gr('Reghoek')} lengte = ${or('omtrek')} = 2 × π × r = 2 × 3,14 × 4 = <strong>25,12 cm</strong>.`,
           ],
         },
       ],
@@ -167,10 +167,10 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the net of a cylinder — two circles and a rectangle — and how it folds to form the 3D solid" />',
+        '<VideoPlaceholder label="Kort video wat die net van ʼn silinder wys — twee sirkels en ʼn reghoek — en hoe dit vou om die 3D-voorwerp te vorm" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a cylinder\'s net shown flat — two circles and a rectangle — with an arrow showing how the rectangle wraps around to connect the two circles when folded" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn silinder se net plat getoon — twee sirkels en ʼn reghoek — met ʼn pyl wat wys hoe die reghoek omvou om die twee sirkels te verbind wanneer dit gevou word" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -232,10 +232,10 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing and classifying 3D objects by faces edges and vertices and explaining when Euler\'s formula applies" />',
+        '<VideoPlaceholder label="Kort video wat 3D-voorwerpe vergelyk en klassifiseer volgens vlakke, rande en hoekpunte, en verduidelik wanneer Euler se formule van toepassing is" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a comparison table showing Platonic solids, prisms, pyramids, spheres and cylinders side by side with their faces edges vertices and Euler formula applicability" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn vergelykingstabel wat Platoniese vaste liggame, prismas, piramides, sfere en silinders langs mekaar wys met hulle vlakke, rande, hoekpunte en of Euler se formule van toepassing is" />',
     },
   ],
 
@@ -278,7 +278,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'ʼn Silinder het radius 5 cm en hoogte 12 cm. Vind die afmetings van die reghoekige deel van sy net (tot 2 desimale plekke).',
-      answer: 'Breedte = hoogte = 12 cm. Lengte = omtrek = 2 × 3.14 × 5 = 31.4 cm.',
+      answer: 'Breedte = hoogte = 12 cm. Lengte = omtrek = 2 × 3,14 × 5 = 31,4 cm.',
       checkMode: 'self',
     },
 
@@ -329,9 +329,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'ʼn Silinder het radius 3 cm en hoogte 8 cm. Vind die omtrek van sy sirkelvormige eindes (tot 2 desimale plekke).',
-      answer: '18.84cm',
+      answer: '18,84cm',
       checkMode: 'auto',
-      correctAnswer: '18.84cm',
+      correctAnswer: '18,84cm',
     },
 
     // ── Q12 Hard ──────────────────────────────────────────────────────────────
@@ -354,7 +354,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Vind die afmetings van die netreghoek vir ʼn silinder met deursnee 14 cm en hoogte 20 cm (tot 2 desimale plekke).',
-      answer: 'Radius = 7 cm. Breedte = hoogte = 20 cm. Lengte = omtrek = 2 × 3.14 × 7 = 43.96 cm.',
+      answer: 'Radius = 7 cm. Breedte = hoogte = 20 cm. Lengte = omtrek = 2 × 3,14 × 7 = 43,96 cm.',
       checkMode: 'self',
     },
 

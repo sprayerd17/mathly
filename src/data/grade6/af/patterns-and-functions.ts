@@ -132,7 +132,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Number line or table showing the three worked example patterns with differences marked in red between consecutive terms and missing terms highlighted in green" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the rule in a numeric pattern and use it to extend the sequence and fill in missing terms" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die reël in ʼn numeriese patroon te vind en dit te gebruik om die ry uit te brei en ontbrekende terme in te vul" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -258,7 +258,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Three-column visual showing step 1 step 2 step 3 for each of the three geometric patterns — squares triangles and match shapes — with tables of values below each pattern and differences marked between the pattern values" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to build a table of values from a geometric pattern find the rule using differences and use the rule to predict any step" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn waardetabel van ʼn geometriese patroon op te stel, die reël met verskille te vind, en die reël te gebruik om enige stap te voorspel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -387,7 +387,7 @@ export const topicData: TopicData = {
         '<DiagramPlaceholder label="Function machine diagram showing an input entering a box labelled with the rule and an output coming out the other side, alongside a colour-coded input-output table with blue input values and green output values" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the rule for an input-output table by testing different operations and how to use the rule to find unknown inputs and outputs" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om die reël vir ʼn inset-uitsettabel te vind deur verskillende bewerkings te toets, en hoe om die reël te gebruik om onbekende insette en uitsette te vind" />',
     },
   ],
   topicPractice: [

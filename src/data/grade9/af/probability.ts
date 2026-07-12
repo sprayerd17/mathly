@@ -81,10 +81,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to set up and use a two-way table to list all outcomes of a compound event and calculate probability" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn tweerigtingtabel op te stel en te gebruik om al die uitkomste van ʼn saamgestelde gebeurtenis te lys en waarskynlikheid te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a two-way table with coin flip outcomes (heads/tails) as rows and dice outcomes (1-6) as columns, with all 12 combinations shown in the grid" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn tweerigtingtabel met muntgooi-uitkomste (kop/stert) as rye en dobbelsteen-uitkomste (1-6) as kolomme, met al 12 kombinasies in die rooster getoon" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -157,10 +157,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw a tree diagram for a compound event and multiply probabilities along branch paths" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn boomdiagram vir ʼn saamgestelde gebeurtenis te teken en waarskynlikhede langs taklane te vermenigvuldig" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a tree diagram showing two coin flips, with branches for heads and tails at each stage, and probabilities labelled on each branch leading to four final outcomes" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn boomdiagram wat twee muntgooie wys, met takke vir kop en stert by elke stadium, en waarskynlikhede op elke tak gemerk wat na vier finale uitkomste lei" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -232,10 +232,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to predict relative frequency for compound events and compare with theoretical probability, explaining natural variation" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om relatiewe frekwensie vir saamgestelde gebeurtenisse te voorspel en met teoretiese waarskynlikheid te vergelyk, en natuurlike variasie te verduidelik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a comparison showing predicted frequency versus actual frequency for a two-coin flip experiment over multiple trials, illustrating how results converge with more trials" />',
+        '<DiagramPlaceholder label="Diagram benodig: ʼn vergelyking wat voorspelde frekwensie teenoor werklike frekwensie vir ʼn twee-muntgooi-eksperiment oor verskeie proewe wys, wat illustreer hoe resultate met meer proewe konvergeer" />',
     },
   ],
 

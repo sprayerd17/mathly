@@ -127,10 +127,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Nested boxes diagram showing natural numbers inside whole numbers, inside integers, inside rational numbers, labelled N, N0, Z and Q" />',
+        '<DiagramPlaceholder label="Geneste-blokke-diagram wat natuurlike getalle binne heelgetalle, binne gehele getalle, binne rasionale getalle wys, gemerk N, N0, Z en Q" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing natural numbers, whole numbers, integers and rational numbers and showing how each set fits inside the next" />',
+        '<VideoPlaceholder label="Kort video wat natuurlike getalle, heelgetalle, gehele getalle en rasionale getalle bekendstel en wys hoe elke versameling binne die volgende pas" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,10 +261,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing perfect squares like 4, 9, 16, 25 whose square roots are rational whole numbers, against non-perfect squares like 2, 3, 5, 7 whose square roots are irrational" />',
+        '<DiagramPlaceholder label="Diagram wat volkome vierkante soos 4, 9, 16, 25 waarvan die vierkantswortels rasionale heelgetalle is, vergelyk met nie-volkome vierkante soos 2, 3, 5, 7 waarvan die vierkantswortels irrasionaal is" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing irrational numbers for the first time, using pi and square roots of non-perfect squares as examples" />',
+        '<VideoPlaceholder label="Kort video wat irrasionale getalle vir die eerste keer bekendstel, met pi en vierkantswortels van nie-volkome vierkante as voorbeelde" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -375,10 +375,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Sorting diagram or flowchart showing a list of example numbers being sorted step by step into N, N0, Z, Q or irrational using the classification checklist" />',
+        '<DiagramPlaceholder label="Sorteerdiagram of vloeikaart wat ʼn lys voorbeeldgetalle stap vir stap in N, N0, Z, Q of irrasionaal sorteer deur die klassifikasie-kontrolelys te gebruik" />',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through several examples of classifying given numbers into natural, whole, integer, rational or irrational" />',
+        '<VideoPlaceholder label="Kort video wat verskeie voorbeelde deurwerk van die klassifisering van gegewe getalle in natuurlik, heel, geheel, rasionaal of irrasionaal" />',
     },
   ],
   resultsConfig: {
