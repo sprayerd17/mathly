@@ -202,6 +202,101 @@ export const topicData: TopicData = {
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram wat die enkelvoudige-rente-formule wys met hoofsom in blou, koers in oranje, tyd in groen en rente verdien in rooi, plus die totale bedrag berekening" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 3 — WINS, VERLIES, BEGROTINGS EN REKENINGE
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'profit-loss-budgets-accounts',
+      title: 'Wins, Verlies, Begrotings en Rekeninge',
+      icon: '%',
+      explanation:
+        `<p style="margin-bottom:16px;">Alledaagse geldbesluite gebruik dieselfde persentasievaardighede in nuwe kontekste: bepaal of ʼn besigheid ʼn <strong>wins</strong> of ʼn <strong>verlies</strong> gemaak het, ʼn <strong>begroting</strong> beplan sodat uitgawes nie inkomste oorskry nie, ʼn <strong>rekening</strong>-staat nagaan, en ʼn <strong>lening</strong> verstaan.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('kosprys / inkomste')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('persentasie gevind')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('wins / saldo')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('verlies / uitgawe')}</span>` +
+        `</div>` +
+
+        // ── Profit and loss ──────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Wins en verlies</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.05em;font-weight:700;color:#374151;margin:0 0 6px 0;">${gr('Wins')} = ${or('Verkoopprys')} − ${bl('Kosprys')} &nbsp;&nbsp;|&nbsp;&nbsp; ${re('Verlies')} = ${bl('Kosprys')} − ${or('Verkoopprys')}</p>` +
+        `<p style="font-size:0.88em;color:#6b7280;margin:0;">ʼn Persentasiewins of -verlies word altyd op die ${bl('kosprys')} bereken (wat die verkoper oorspronklik betaal het).</p>` +
+        `</div>` +
+
+        // ── Key terms ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelterme</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Begroting</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">ʼn Plan van verwagte ${gr('inkomste')} en ${re('uitgawes')} oor ʼn tydperk, gebruik om te verseker dat uitgawes nie inkomste oorskry nie.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Rekening</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">ʼn Rekord van geld verskuldig of betaal oor tyd, bv. ʼn winkelrekening of nutsdiensrekening, dikwels maandeliks gefaktureer.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Lening</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Geld wat geleen word en terugbetaal moet word, gewoonlik met enkelvoudige rente bygevoeg, oor ʼn ooreengekome tydperk.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Saldo</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${gr('Inkomste')} minus ${re('uitgawes')}. ʼn Positiewe saldo beteken geld is oor; ʼn negatiewe saldo beteken oorbesteding.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Persentasiewins of -verlies</p>` +
+        `<p style="margin:0;color:#1e3a8a;">% wins = (${gr('Wins')} ÷ ${bl('Kosprys')}) × 100. % verlies = (${re('Verlies')} ÷ ${bl('Kosprys')}) × 100. Deel altyd deur die <strong>kosprys</strong>, nooit die verkoopprys nie.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Spazawinkel koop ʼn boks aartappelskyfies vir R80 (kosprys) en verkoop dit vir R100 (verkoopprys). Bereken die wins en die persentasiewins.',
+          answer: `Wins = R${gr('20')}, persentasiewins = ${gr('25%')}`,
+          steps: [
+            `Wins = ${or('Verkoopprys')} − ${bl('Kosprys')} = ${or('100')} − ${bl('80')} = ${gr('20')}`,
+            `% wins = (${gr('Wins')} ÷ ${bl('Kosprys')}) × 100 = (${gr('20')} ÷ ${bl('80')}) × 100 = ${gr('25%')}`,
+            `<strong>Wins = R${gr('20')}, persentasiewins = ${gr('25%')}</strong>`,
+          ],
+        },
+        {
+          question: 'ʼn Handelaar koop ʼn baadjie vir R450 (kosprys) en, weens ʼn skeur in die naat, moet dit vir R360 (verkoopprys) verkoop word. Bereken die verlies en die persentasieverlies.',
+          answer: `Verlies = R${re('90')}, persentasieverlies = ${re('20%')}`,
+          steps: [
+            `Verlies = ${bl('Kosprys')} − ${or('Verkoopprys')} = ${bl('450')} − ${or('360')} = ${re('90')}`,
+            `% verlies = (${re('Verlies')} ÷ ${bl('Kosprys')}) × 100 = (${re('90')} ÷ ${bl('450')}) × 100 = ${re('20%')}`,
+            `<strong>Verlies = R${re('90')}, persentasieverlies = ${re('20%')}</strong>`,
+          ],
+        },
+        {
+          question: 'Lindiwe begroot R4 500 maandelikse inkomste. Haar uitgawes is: huur R2 200, kos R950, vervoer R600 en lugtyd R150. Bereken haar totale uitgawes en haar saldo.',
+          answer: `Totale uitgawes = R${re('3 900')}, saldo = R${gr('600')}`,
+          steps: [
+            `Totale ${re('uitgawes')} = 2 200 + 950 + 600 + 150 = ${re('3 900')}`,
+            `Saldo = ${gr('Inkomste')} − ${re('Uitgawes')} = ${bl('4 500')} − ${re('3 900')} = ${gr('600')}`,
+            `<strong>Totale uitgawes = R${re('3 900')}, saldo = R${gr('600')}</strong> (geld oor)`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om wins en verlies op die kosprys te bereken, en hoe om ʼn eenvoudige begroting op te stel deur totale uitgawes van inkomste af te trek" />',
+    },
   ],
 
   topicPractice: [
@@ -341,10 +436,65 @@ export const topicData: TopicData = {
       correctAnswers: ['R17400', '17400', 'R17 400', '17 400'],
       explanation: 'ER = 12 000 × 0,09 × 5 = R5 400\nTotaal = 12 000 + 5 400 = R17 400 ✓',
     },
+
+    // ── V13 Maklik — wins en persentasiewins ────────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'ʼn Smous koop ʼn boks lemoene vir R150 (kosprys) en verkoop dit vir R210 (verkoopprys). Bereken die wins en die persentasiewins.',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        { label: 'a) Wins', correctAnswer: 'R60', correctAnswers: ['R60', '60'], explanation: 'Wins = Verkoopprys − Kosprys = 210 − 150 = R60 ✓' },
+        { label: 'b) Persentasiewins', correctAnswer: '40%', correctAnswers: ['40%', '40'], explanation: '% wins = (Wins ÷ Kosprys) × 100 = (60 ÷ 150) × 100 = 40% ✓' },
+      ],
+    },
+
+    // ── V14 Medium — verlies en persentasieverlies ─────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'ʼn Winkel koop ʼn verwarmer vir R680 (kosprys). Omdat dit verlede seisoen se model is, word dit vir R544 (verkoopprys) verkoop. Bereken die verlies en die persentasieverlies.',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        { label: 'a) Verlies', correctAnswer: 'R136', correctAnswers: ['R136', '136'], explanation: 'Verlies = Kosprys − Verkoopprys = 680 − 544 = R136 ✓' },
+        { label: 'b) Persentasieverlies', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% verlies = (Verlies ÷ Kosprys) × 100 = (136 ÷ 680) × 100 = 20% ✓' },
+      ],
+    },
+
+    // ── V15 Medium — begrotingsaldo ────────────────────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Bongani het ʼn maandelikse inkomste van R6 000. Sy begrote uitgawes is: huur R2 500, kos R1 200, vervoer R800 en ander koste R300. Bereken sy totale uitgawes en sy saldo.',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        { label: 'a) Totale uitgawes', correctAnswer: 'R4 800', correctAnswers: ['R4800', '4800', 'R4 800', '4 800'], explanation: 'Totale uitgawes = 2 500 + 1 200 + 800 + 300 = R4 800 ✓' },
+        { label: 'b) Saldo', correctAnswer: 'R1 200', correctAnswers: ['R1200', '1200', 'R1 200', '1 200'], explanation: 'Saldo = Inkomste − Uitgawes = 6 000 − 4 800 = R1 200 ✓' },
+      ],
+    },
+
+    // ── V16 Moeilik — rekeningsaldo ─────────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: "Zinhle se kleresrekening wys ʼn openingsaldo verskuldig van R450. Gedurende die maand koop sy R320 nuwe items op rekening, en maak sy ʼn betaling van R200 teenoor die rekening. Bereken die sluitingsaldo verskuldig.",
+      answer: 'R570',
+      checkMode: 'auto',
+      correctAnswer: 'R570',
+      correctAnswers: ['R570', '570'],
+      explanation: 'Sluitingsaldo = Openingsaldo + Aankope − Betaling = 450 + 320 − 200 = R570 ✓',
+    },
+
+    // ── V17 Moeilik — leningredenering ───────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Sipho neem ʼn lening van R5 000 teen 8% enkelvoudige rente per jaar, terug te betaal oor 2 jaar. Hy sê hy hoef net R5 000 terug te betaal, aangesien dit is wat hy geleen het. Is hy korrek? Verduidelik, en gee die totale terugbetaling.',
+      answer: 'Nee — ʼn lening moet met rente bygevoeg terugbetaal word. ER = 5 000 × 0,08 × 2 = R800, dus is die totale terugbetaling R5 000 + R800 = R5 800, nie R5 000 nie.',
+      checkMode: 'self',
+    },
   ],
 
   resultsConfig: {
-    totalMarks: 12,
+    totalMarks: 17,
     messages: [
       { minPercent: 100, message: 'Uitstekend! Jy het persentasies bemeester.' },
       { minPercent: 75, message: 'Goeie werk!' },
@@ -354,19 +504,19 @@ export const topicData: TopicData = {
   },
 
   scoreMessages: [
-    { minScore: 12, message: 'Uitstekend! Jy het persentasies bemeester.' },
-    { minScore: 9, message: 'Goeie werk!' },
-    { minScore: 6, message: 'Goeie poging, hersien en probeer weer.' },
+    { minScore: 17, message: 'Uitstekend! Jy het persentasies bemeester.' },
+    { minScore: 12, message: 'Goeie werk!' },
+    { minScore: 8, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan probeer, werk weer deur die gids.' },
   ],
 
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
-    // STEL 1 (20 vrae)
+    // STEL 1 (24 vrae)
     // Blokke: 1-3 Omskakeling %/breuke/desimale | 4-7 Vind ʼn % van ʼn bedrag |
     // 8-10 Een hoeveelheid as ʼn % van ʼn ander | 11-14 %-toename en -afname |
     // 15-18 Korting/opslag woordprobleme (Rand-kontekste) | 19-20 Multi-stap /
-    // foutopsporing
+    // foutopsporing | 21-24 Wins, verlies, begrotings en rekeninge
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Stel 1',
@@ -411,17 +561,32 @@ export const topicData: TopicData = {
           { label: 'b) Is die finale prys dieselfde as die oorspronklike R800?', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'R792 is R8 minder as R800 — ʼn persentasietoename gevolg deur dieselfde persentasieafname gee nie die oorspronklike bedrag terug nie, want die tweede persentasie word op ʼn ander (groter) basis bereken. ✓' },
         ] },
         { difficulty: 'Hard', question: 'ʼn Luidspreker kos R400. Lerato sê: "Die winkel het dit met 20% afgeslaan na R320, en dit toe met 20% verhoog terug na R384, dus is dit R16 goedkoper as die oorspronklike prys — maar dit moet ʼn fout wees, want ʼn afname van 20% en ʼn toename van 20% behoort mekaar op te hef." Het Lerato reg dat dit ʼn fout moet wees? Verduidelik.', answer: 'Nee, Lerato is verkeerd dat dit ʼn fout is — die berekening R320 en dan R384 is korrek. ʼn Afname van 20% en ʼn toename van 20% hef nie mekaar op nie, want dit is persentasies van verskillende bedrae: die afname is 20% van R400 (R80), maar die toename is 20% van die kleiner R320 (R64), dus eindig die finale prys laer as die oorspronklike.', checkMode: 'self' },
+
+        // Blok 7 — Wins, verlies, begrotings en rekeninge (20-23)
+        { difficulty: 'Easy-Medium', question: 'ʼn Smous koop ʼn kissie tamaties vir R320 (kosprys) en verkoop dit vir R400 (verkoopprys). Bereken die wins en die persentasiewins.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Wins', correctAnswer: 'R80', correctAnswers: ['R80', '80'], explanation: 'Wins = Verkoopprys − Kosprys = 400 − 320 = R80 ✓' },
+          { label: 'b) Persentasiewins', correctAnswer: '25%', correctAnswers: ['25%', '25'], explanation: '% wins = (Wins ÷ Kosprys) × 100 = (80 ÷ 320) × 100 = 25% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Winkel koop ʼn waaier vir R560 (kosprys). Aan die einde van die winter word dit vir R448 (verkoopprys) verkoop. Bereken die verlies en die persentasieverlies.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Verlies', correctAnswer: 'R112', correctAnswers: ['R112', '112'], explanation: 'Verlies = Kosprys − Verkoopprys = 560 − 448 = R112 ✓' },
+          { label: 'b) Persentasieverlies', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% verlies = (Verlies ÷ Kosprys) × 100 = (112 ÷ 560) × 100 = 20% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Thandeka het ʼn maandelikse inkomste van R5 200. Haar begrote uitgawes is: huur R1 800, kos R900, vervoer R500 en ander koste R200. Bereken haar totale uitgawes en haar saldo.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Totale uitgawes', correctAnswer: 'R3 400', correctAnswers: ['R3400', '3400', 'R3 400', '3 400'], explanation: 'Totale uitgawes = 1 800 + 900 + 500 + 200 = R3 400 ✓' },
+          { label: 'b) Saldo', correctAnswer: 'R1 800', correctAnswers: ['R1800', '1800', 'R1 800', '1 800'], explanation: 'Saldo = Inkomste − Uitgawes = 5 200 − 3 400 = R1 800 ✓' },
+        ] },
+        { difficulty: 'Hard', question: "Kagiso se selfoonrekening wys ʼn openingsaldo verskuldig van R380. Gedurende die maand voeg hy R150 ekstra data by die rekening, en maak hy ʼn betaling van R230. Bereken die sluitingsaldo verskuldig.", answer: 'R300', checkMode: 'auto', correctAnswer: 'R300', correctAnswers: ['R300', '300'], explanation: 'Sluitingsaldo = Openingsaldo + Aankope − Betaling = 380 + 150 − 230 = R300 ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting- en toenameprobleme.' },
-        { minScore: 15, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
+        { minScore: 24, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting-, wins/verlies- en begrotingsprobleme.' },
+        { minScore: 18, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 12, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
     // ═══════════════════════════════════════════════════════════════════════
-    // STEL 2 (20 vrae) — dieselfde blokindeling as Stel 1, vars getalle/kontekste
+    // STEL 2 (24 vrae) — dieselfde blokindeling as Stel 1, vars getalle/kontekste
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Stel 2',
@@ -466,17 +631,32 @@ export const topicData: TopicData = {
           { label: 'b) Is die finale prys dieselfde as die oorspronklike R1 500?', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'R1 530 is R30 meer as R1 500 — die twee persentasies is op verskillende basisbedrae toegepas, dus hef hulle nie mekaar op nie. ✓' },
         ] },
         { difficulty: 'Hard', question: 'ʼn Ketellapper kos R600. Thabo sê: "Die winkel het dit met 25% afgeslaan na R450, en dit toe met 25% verhoog terug na R562,50, dus is dit R37,50 meer as die oorspronklike prys — maar dit moet ʼn fout wees, want ʼn afname van 25% en ʼn toename van 25% behoort mekaar op te hef." Het Thabo reg dat dit ʼn fout moet wees? Verduidelik.', answer: 'Nee, Thabo is verkeerd dat dit ʼn fout is — die berekening R450 en dan R562,50 is korrek. ʼn Afname van 25% en ʼn toename van 25% hef nie mekaar op nie, want dit is persentasies van verskillende bedrae: die afname is 25% van R600 (R150), maar die toename is 25% van die kleiner R450 (R112,50), dus is die finale prys steeds laer as wat ʼn mens sou verwag, al is dit hoër as die afgeslane prys.', checkMode: 'self' },
+
+        // Blok 7 — Wins, verlies, begrotings en rekeninge (20-23)
+        { difficulty: 'Easy-Medium', question: 'ʼn Smous koop ʼn kis piesangs vir R240 (kosprys) en verkoop dit vir R300 (verkoopprys). Bereken die wins en die persentasiewins.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Wins', correctAnswer: 'R60', correctAnswers: ['R60', '60'], explanation: 'Wins = Verkoopprys − Kosprys = 300 − 240 = R60 ✓' },
+          { label: 'b) Persentasiewins', correctAnswer: '25%', correctAnswers: ['25%', '25'], explanation: '% wins = (Wins ÷ Kosprys) × 100 = (60 ÷ 240) × 100 = 25% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Winkel koop ʼn stel tuinstoele vir R720 (kosprys). Omdat die bokse beskadig is, word dit vir R612 (verkoopprys) verkoop. Bereken die verlies en die persentasieverlies.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Verlies', correctAnswer: 'R108', correctAnswers: ['R108', '108'], explanation: 'Verlies = Kosprys − Verkoopprys = 720 − 612 = R108 ✓' },
+          { label: 'b) Persentasieverlies', correctAnswer: '15%', correctAnswers: ['15%', '15'], explanation: '% verlies = (Verlies ÷ Kosprys) × 100 = (108 ÷ 720) × 100 = 15% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Naledi het ʼn maandelikse inkomste van R4 800. Haar begrote uitgawes is: huur R1 600, kos R750, vervoer R450 en ander koste R100. Bereken haar totale uitgawes en haar saldo.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Totale uitgawes', correctAnswer: 'R2 900', correctAnswers: ['R2900', '2900', 'R2 900', '2 900'], explanation: 'Totale uitgawes = 1 600 + 750 + 450 + 100 = R2 900 ✓' },
+          { label: 'b) Saldo', correctAnswer: 'R1 900', correctAnswers: ['R1900', '1900', 'R1 900', '1 900'], explanation: 'Saldo = Inkomste − Uitgawes = 4 800 − 2 900 = R1 900 ✓' },
+        ] },
+        { difficulty: 'Hard', question: "Amahle se meubelrekening wys ʼn openingsaldo verskuldig van R500. Gedurende die maand koop sy R180 ekstra items op rekening, en maak sy ʼn betaling van R280. Bereken die sluitingsaldo verskuldig.", answer: 'R400', checkMode: 'auto', correctAnswer: 'R400', correctAnswers: ['R400', '400'], explanation: 'Sluitingsaldo = Openingsaldo + Aankope − Betaling = 500 + 180 − 280 = R400 ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting- en toenameprobleme.' },
-        { minScore: 15, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
+        { minScore: 24, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting-, wins/verlies- en begrotingsprobleme.' },
+        { minScore: 18, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 12, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
 
     // ═══════════════════════════════════════════════════════════════════════
-    // STEL 3 (20 vrae) — dieselfde blokindeling as Stel 1 en Stel 2, vars getalle/kontekste
+    // STEL 3 (24 vrae) — dieselfde blokindeling as Stel 1 en Stel 2, vars getalle/kontekste
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Stel 3',
@@ -521,11 +701,26 @@ export const topicData: TopicData = {
           { label: 'b) Is die finale prys dieselfde as die oorspronklike R2 000?', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'R1 980 is R20 minder as R2 000 — die twee persentasies is op verskillende basisbedrae toegepas, dus hef hulle nie mekaar op nie. ✓' },
         ] },
         { difficulty: 'Hard', question: 'ʼn Paar sonbrille kos R350. Naledi sê: "Die winkel het die prys met 40% verhoog na R490, en dit toe met 40% verlaag terug na R294, dus is dit R56 goedkoper as die oorspronklike prys — maar dit moet ʼn fout wees, want ʼn toename van 40% en ʼn afname van 40% behoort mekaar op te hef." Het Naledi reg dat dit ʼn fout moet wees? Verduidelik.', answer: 'Nee, Naledi is verkeerd dat dit ʼn fout is — die berekening R490 en dan R294 is korrek. ʼn Toename van 40% en ʼn afname van 40% hef nie mekaar op nie, want dit is persentasies van verskillende bedrae: die toename is 40% van R350 (R140), maar die afname is 40% van die groter R490 (R196), dus eindig die finale prys laer as die oorspronklike R350.', checkMode: 'self' },
+
+        // Blok 7 — Wins, verlies, begrotings en rekeninge (20-23)
+        { difficulty: 'Easy-Medium', question: 'ʼn Smous koop ʼn lading skoolsakke vir R410 (kosprys) en verkoop dit vir R492 (verkoopprys). Bereken die wins en die persentasiewins.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Wins', correctAnswer: 'R82', correctAnswers: ['R82', '82'], explanation: 'Wins = Verkoopprys − Kosprys = 492 − 410 = R82 ✓' },
+          { label: 'b) Persentasiewins', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% wins = (Wins ÷ Kosprys) × 100 = (82 ÷ 410) × 100 = 20% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'ʼn Winkel koop ʼn stel patio-sambrele vir R850 (kosprys). Omdat die seisoen verby is, word dit vir R680 (verkoopprys) verkoop. Bereken die verlies en die persentasieverlies.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Verlies', correctAnswer: 'R170', correctAnswers: ['R170', '170'], explanation: 'Verlies = Kosprys − Verkoopprys = 850 − 680 = R170 ✓' },
+          { label: 'b) Persentasieverlies', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% verlies = (Verlies ÷ Kosprys) × 100 = (170 ÷ 850) × 100 = 20% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Kagiso het ʼn maandelikse inkomste van R7 500. Sy begrote uitgawes is: huur R3 000, kos R1 400, vervoer R700 en ander koste R400. Bereken sy totale uitgawes en sy saldo.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Totale uitgawes', correctAnswer: 'R5 500', correctAnswers: ['R5500', '5500', 'R5 500', '5 500'], explanation: 'Totale uitgawes = 3 000 + 1 400 + 700 + 400 = R5 500 ✓' },
+          { label: 'b) Saldo', correctAnswer: 'R2 000', correctAnswers: ['R2000', '2000', 'R2 000', '2 000'], explanation: 'Saldo = Inkomste − Uitgawes = 7 500 − 5 500 = R2 000 ✓' },
+        ] },
+        { difficulty: 'Hard', question: "Sipho se hardewarerekening wys ʼn openingsaldo verskuldig van R600. Gedurende die maand koop hy R250 ekstra gereedskap op rekening, en maak hy ʼn betaling van R350. Bereken die sluitingsaldo verskuldig.", answer: 'R500', checkMode: 'auto', correctAnswer: 'R500', correctAnswers: ['R500', '500'], explanation: 'Sluitingsaldo = Openingsaldo + Aankope − Betaling = 600 + 250 − 350 = R500 ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting- en toenameprobleme.' },
-        { minScore: 15, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
+        { minScore: 24, message: 'Uitstekend! Jy het persentasies bemeester, van omskakelings tot werklike-wêreld korting-, wins/verlies- en begrotingsprobleme.' },
+        { minScore: 18, message: 'Goeie werk! Jy is seker van meeste hiervan — gaan gemiste vrae weer deur.' },
+        { minScore: 12, message: 'Goeie poging! Gaan die studiegids se afdelings oor persentasies weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

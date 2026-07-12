@@ -202,6 +202,101 @@ export const topicData: TopicData = {
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram showing the simple interest formula with principal in blue, rate in orange, time in green and interest earned in red, plus the total amount calculation" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — PROFIT, LOSS, BUDGETS AND ACCOUNTS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'profit-loss-budgets-accounts',
+      title: 'Profit, Loss, Budgets and Accounts',
+      icon: '%',
+      explanation:
+        `<p style="margin-bottom:16px;">Everyday money decisions use the same percentage skills in new contexts: working out whether a business made a <strong>profit</strong> or a <strong>loss</strong>, planning a <strong>budget</strong> so that spending does not exceed income, checking an <strong>account</strong> statement, and understanding a <strong>loan</strong>.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('cost price / income')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('percentage found')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('profit / balance')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('loss / expense')}</span>` +
+        `</div>` +
+
+        // ── Profit and loss ──────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Profit and loss</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.05em;font-weight:700;color:#374151;margin:0 0 6px 0;">${gr('Profit')} = ${or('Selling price')} − ${bl('Cost price')} &nbsp;&nbsp;|&nbsp;&nbsp; ${re('Loss')} = ${bl('Cost price')} − ${or('Selling price')}</p>` +
+        `<p style="font-size:0.88em;color:#6b7280;margin:0;">A percentage profit or loss is always calculated on the ${bl('cost price')} (what the seller originally paid).</p>` +
+        `</div>` +
+
+        // ── Key terms ────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key terms</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Budget</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A plan of expected ${gr('income')} and ${re('expenses')} over a period of time, used to check that spending does not exceed income.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Account</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A record of money owed or paid over time, e.g. a store account or utility account, often billed monthly.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Loan</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Money borrowed that must be repaid, usually with simple interest added, over an agreed period of time.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Balance</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${gr('Income')} minus ${re('expenses')}. A positive balance means money is left over; a negative balance means overspending.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Percentage profit or loss</p>` +
+        `<p style="margin:0;color:#1e3a8a;">% profit = (${gr('Profit')} ÷ ${bl('Cost price')}) × 100. % loss = (${re('Loss')} ÷ ${bl('Cost price')}) × 100. Always divide by the <strong>cost price</strong>, never the selling price.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A spaza shop buys a box of chips for R80 (cost price) and sells it for R100 (selling price). Find the profit and the percentage profit.',
+          answer: `Profit = R${gr('20')}, percentage profit = ${gr('25%')}`,
+          steps: [
+            `Profit = ${or('Selling price')} − ${bl('Cost price')} = ${or('100')} − ${bl('80')} = ${gr('20')}`,
+            `% profit = (${gr('Profit')} ÷ ${bl('Cost price')}) × 100 = (${gr('20')} ÷ ${bl('80')}) × 100 = ${gr('25%')}`,
+            `<strong>Profit = R${gr('20')}, percentage profit = ${gr('25%')}</strong>`,
+          ],
+        },
+        {
+          question: 'A trader buys a jacket for R450 (cost price) and, due to a torn seam, has to sell it for R360 (selling price). Find the loss and the percentage loss.',
+          answer: `Loss = R${re('90')}, percentage loss = ${re('20%')}`,
+          steps: [
+            `Loss = ${bl('Cost price')} − ${or('Selling price')} = ${bl('450')} − ${or('360')} = ${re('90')}`,
+            `% loss = (${re('Loss')} ÷ ${bl('Cost price')}) × 100 = (${re('90')} ÷ ${bl('450')}) × 100 = ${re('20%')}`,
+            `<strong>Loss = R${re('90')}, percentage loss = ${re('20%')}</strong>`,
+          ],
+        },
+        {
+          question: 'Lindiwe budgets R4 500 monthly income. Her expenses are: rent R2 200, food R950, transport R600 and airtime R150. Find her total expenses and her balance.',
+          answer: `Total expenses = R${re('3 900')}, balance = R${gr('600')}`,
+          steps: [
+            `Total ${re('expenses')} = 2 200 + 950 + 600 + 150 = ${re('3 900')}`,
+            `Balance = ${gr('Income')} − ${re('Expenses')} = ${bl('4 500')} − ${re('3 900')} = ${gr('600')}`,
+            `<strong>Total expenses = R${re('3 900')}, balance = R${gr('600')}</strong> (money left over)`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to calculate profit and loss on the cost price, and how to draw up a simple budget by subtracting total expenses from income" />',
+    },
   ],
 
   topicPractice: [
@@ -341,10 +436,65 @@ export const topicData: TopicData = {
       correctAnswers: ['R17400', '17400', 'R17 400', '17 400'],
       explanation: 'SI = 12 000 × 0.09 × 5 = R5 400\nTotal = 12 000 + 5 400 = R17 400 ✓',
     },
+
+    // ── Q13 Easy — profit and percentage profit ───────────────────────────────
+    {
+      difficulty: 'Easy',
+      question: 'A vendor buys a box of oranges for R150 (cost price) and sells it for R210 (selling price). Find the profit and the percentage profit.',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        { label: 'a) Profit', correctAnswer: 'R60', correctAnswers: ['R60', '60'], explanation: 'Profit = Selling price − Cost price = 210 − 150 = R60 ✓' },
+        { label: 'b) Percentage profit', correctAnswer: '40%', correctAnswers: ['40%', '40'], explanation: '% profit = (Profit ÷ Cost price) × 100 = (60 ÷ 150) × 100 = 40% ✓' },
+      ],
+    },
+
+    // ── Q14 Medium — loss and percentage loss ─────────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'A shop buys a heater for R680 (cost price). Because it is last season\'s model, it is sold for R544 (selling price). Find the loss and the percentage loss.',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        { label: 'a) Loss', correctAnswer: 'R136', correctAnswers: ['R136', '136'], explanation: 'Loss = Cost price − Selling price = 680 − 544 = R136 ✓' },
+        { label: 'b) Percentage loss', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% loss = (Loss ÷ Cost price) × 100 = (136 ÷ 680) × 100 = 20% ✓' },
+      ],
+    },
+
+    // ── Q15 Medium — budget balance ────────────────────────────────────────────
+    {
+      difficulty: 'Medium',
+      question: 'Bongani has a monthly income of R6 000. His budgeted expenses are: rent R2 500, food R1 200, transport R800 and other costs R300. Find his total expenses and his balance.',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        { label: 'a) Total expenses', correctAnswer: 'R4 800', correctAnswers: ['R4800', '4800', 'R4 800', '4 800'], explanation: 'Total expenses = 2 500 + 1 200 + 800 + 300 = R4 800 ✓' },
+        { label: 'b) Balance', correctAnswer: 'R1 200', correctAnswers: ['R1200', '1200', 'R1 200', '1 200'], explanation: 'Balance = Income − Expenses = 6 000 − 4 800 = R1 200 ✓' },
+      ],
+    },
+
+    // ── Q16 Hard — account balance ─────────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: "Zinhle's clothing account shows an opening balance owed of R450. During the month she buys R320 of new items on account, and makes a payment of R200 towards the account. Find the closing balance owed.",
+      answer: 'R570',
+      checkMode: 'auto',
+      correctAnswer: 'R570',
+      correctAnswers: ['R570', '570'],
+      explanation: 'Closing balance = Opening balance + Purchases − Payment = 450 + 320 − 200 = R570 ✓',
+    },
+
+    // ── Q17 Hard — loan reasoning ───────────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'Sipho takes out a loan of R5 000 at 8% simple interest per year, to be repaid over 2 years. He says he only needs to repay R5 000 since that is what he borrowed. Is he correct? Explain, and state the total repayment.',
+      answer: 'No — a loan must be repaid with interest added. SI = 5 000 × 0.08 × 2 = R800, so the total repayment is R5 000 + R800 = R5 800, not R5 000.',
+      checkMode: 'self',
+    },
   ],
 
   resultsConfig: {
-    totalMarks: 12,
+    totalMarks: 17,
     messages: [
       { minPercent: 100, message: 'Outstanding! You have mastered percentages.' },
       { minPercent: 75, message: 'Great work!' },
@@ -354,19 +504,19 @@ export const topicData: TopicData = {
   },
 
   scoreMessages: [
-    { minScore: 12, message: 'Outstanding! You have mastered percentages.' },
-    { minScore: 9, message: 'Great work!' },
-    { minScore: 6, message: 'Good effort, review and try again.' },
+    { minScore: 17, message: 'Outstanding! You have mastered percentages.' },
+    { minScore: 12, message: 'Great work!' },
+    { minScore: 8, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
 
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
-    // SET 1 (20 Qs)
+    // SET 1 (24 Qs)
     // Blocks: 1-3 Converting % / fractions / decimals | 4-7 Finding a % of an
     // amount | 8-10 Expressing one quantity as a % of another | 11-14 % increase
     // and decrease | 15-18 Discount / markup word problems (Rand contexts) |
-    // 19-20 Multi-step / error-spotting
+    // 19-20 Multi-step / error-spotting | 21-24 Profit, loss, budgets and accounts
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Set 1',
@@ -411,17 +561,32 @@ export const topicData: TopicData = {
           { label: 'b) Is the final price the same as the original R800?', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: 'R792 is R8 less than R800 — a percentage increase followed by the same percentage decrease does not return to the original amount, because the second percentage is calculated on a different (larger) base. ✓' },
         ] },
         { difficulty: 'Hard', question: 'A speaker costs R400. Lerato says: "The shop discounted it by 20% to R320, then increased it by 20% back to R384, so it is R16 cheaper than the original price — but that must be a mistake, since a 20% decrease and a 20% increase should cancel out." Is Lerato right that it must be a mistake? Explain.', answer: 'No, Lerato is wrong that it is a mistake — the calculation R320 and then R384 is correct. A 20% decrease and a 20% increase do not cancel out because they are percentages of different amounts: the decrease is 20% of R400 (R80), but the increase is 20% of the smaller R320 (R64), so the final price is lower than the original.', checkMode: 'self' },
+
+        // Block 7 — Profit, loss, budgets and accounts (20-23)
+        { difficulty: 'Easy-Medium', question: 'A vendor buys a bag of mielies for R320 (cost price) and sells it for R400 (selling price). Find the profit and the percentage profit.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Profit', correctAnswer: 'R80', correctAnswers: ['R80', '80'], explanation: 'Profit = Selling price − Cost price = 400 − 320 = R80 ✓' },
+          { label: 'b) Percentage profit', correctAnswer: '25%', correctAnswers: ['25%', '25'], explanation: '% profit = (Profit ÷ Cost price) × 100 = (80 ÷ 320) × 100 = 25% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'A shop buys a fan for R560 (cost price). At the end of winter it is sold for R448 (selling price). Find the loss and the percentage loss.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Loss', correctAnswer: 'R112', correctAnswers: ['R112', '112'], explanation: 'Loss = Cost price − Selling price = 560 − 448 = R112 ✓' },
+          { label: 'b) Percentage loss', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% loss = (Loss ÷ Cost price) × 100 = (112 ÷ 560) × 100 = 20% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Thandeka has a monthly income of R5 200. Her budgeted expenses are: rent R1 800, food R900, transport R500 and other costs R200. Find her total expenses and her balance.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Total expenses', correctAnswer: 'R3 400', correctAnswers: ['R3400', '3400', 'R3 400', '3 400'], explanation: 'Total expenses = 1 800 + 900 + 500 + 200 = R3 400 ✓' },
+          { label: 'b) Balance', correctAnswer: 'R1 800', correctAnswers: ['R1800', '1800', 'R1 800', '1 800'], explanation: 'Balance = Income − Expenses = 5 200 − 3 400 = R1 800 ✓' },
+        ] },
+        { difficulty: 'Hard', question: "Kagiso's cellphone account shows an opening balance owed of R380. During the month he adds R150 of extra data to the account, and makes a payment of R230. Find the closing balance owed.", answer: 'R300', checkMode: 'auto', correctAnswer: 'R300', correctAnswers: ['R300', '300'], explanation: 'Closing balance = Opening balance + Purchases − Payment = 380 + 150 − 230 = R300 ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have mastered percentages, from conversions through to real-world discount and increase problems.' },
-        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the study guide sections on percentages, then try again.' },
+        { minScore: 24, message: 'Outstanding! You have mastered percentages, from conversions through to real-world discount, profit/loss and budgeting problems.' },
+        { minScore: 18, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 12, message: 'Good effort! Revisit the study guide sections on percentages, then try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
 
     // ═══════════════════════════════════════════════════════════════════════
-    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers/contexts
+    // SET 2 (24 Qs) — same block layout as Set 1, fresh numbers/contexts
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Set 2',
@@ -466,17 +631,32 @@ export const topicData: TopicData = {
           { label: 'b) Is the final price the same as the original R1 500?', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: 'R1 530 is R30 more than R1 500 — the two percentages were applied to different base amounts, so they do not cancel out. ✓' },
         ] },
         { difficulty: 'Hard', question: 'A blender costs R600. Thabo says: "The shop discounted it by 25% to R450, then increased it by 25% back to R562.50, so it is R37.50 more than the original price — but that must be a mistake, since a 25% decrease and a 25% increase should cancel out." Is Thabo right that it must be a mistake? Explain.', answer: 'No, Thabo is wrong that it is a mistake — the calculation R450 and then R562.50 is correct. A 25% decrease and a 25% increase do not cancel out because they are percentages of different amounts: the decrease is 25% of R600 (R150), but the increase is 25% of the smaller R450 (R112.50), so the final price is lower than R600 would suggest at first glance, though still above the discounted price.', checkMode: 'self' },
+
+        // Block 7 — Profit, loss, budgets and accounts (20-23)
+        { difficulty: 'Easy-Medium', question: 'A vendor buys a crate of tomatoes for R240 (cost price) and sells it for R300 (selling price). Find the profit and the percentage profit.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Profit', correctAnswer: 'R60', correctAnswers: ['R60', '60'], explanation: 'Profit = Selling price − Cost price = 300 − 240 = R60 ✓' },
+          { label: 'b) Percentage profit', correctAnswer: '25%', correctAnswers: ['25%', '25'], explanation: '% profit = (Profit ÷ Cost price) × 100 = (60 ÷ 240) × 100 = 25% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'A shop buys a set of garden chairs for R720 (cost price). Because the boxes are damaged, they are sold for R612 (selling price). Find the loss and the percentage loss.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Loss', correctAnswer: 'R108', correctAnswers: ['R108', '108'], explanation: 'Loss = Cost price − Selling price = 720 − 612 = R108 ✓' },
+          { label: 'b) Percentage loss', correctAnswer: '15%', correctAnswers: ['15%', '15'], explanation: '% loss = (Loss ÷ Cost price) × 100 = (108 ÷ 720) × 100 = 15% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Naledi has a monthly income of R4 800. Her budgeted expenses are: rent R1 600, food R750, transport R450 and other costs R100. Find her total expenses and her balance.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Total expenses', correctAnswer: 'R2 900', correctAnswers: ['R2900', '2900', 'R2 900', '2 900'], explanation: 'Total expenses = 1 600 + 750 + 450 + 100 = R2 900 ✓' },
+          { label: 'b) Balance', correctAnswer: 'R1 900', correctAnswers: ['R1900', '1900', 'R1 900', '1 900'], explanation: 'Balance = Income − Expenses = 4 800 − 2 900 = R1 900 ✓' },
+        ] },
+        { difficulty: 'Hard', question: "Amahle's furniture account shows an opening balance owed of R500. During the month she buys R180 of extra items on account, and makes a payment of R280. Find the closing balance owed.", answer: 'R400', checkMode: 'auto', correctAnswer: 'R400', correctAnswers: ['R400', '400'], explanation: 'Closing balance = Opening balance + Purchases − Payment = 500 + 180 − 280 = R400 ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have mastered percentages, from conversions through to real-world discount and increase problems.' },
-        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the study guide sections on percentages, then try again.' },
+        { minScore: 24, message: 'Outstanding! You have mastered percentages, from conversions through to real-world discount, profit/loss and budgeting problems.' },
+        { minScore: 18, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 12, message: 'Good effort! Revisit the study guide sections on percentages, then try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
 
     // ═══════════════════════════════════════════════════════════════════════
-    // SET 3 (20 Qs) — same block layout as Set 1 and Set 2, fresh numbers/contexts
+    // SET 3 (24 Qs) — same block layout as Set 1 and Set 2, fresh numbers/contexts
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Set 3',
@@ -521,11 +701,26 @@ export const topicData: TopicData = {
           { label: 'b) Is the final price the same as the original R2 000?', correctAnswer: 'No', correctAnswers: ['No', 'no'], explanation: 'R1 980 is R20 less than R2 000 — the two percentages were applied to different base amounts, so they do not cancel out. ✓' },
         ] },
         { difficulty: 'Hard', question: 'A pair of sunglasses costs R350. Naledi says: "The shop increased the price by 40% to R490, then decreased it by 40% back to R294, so it is R56 cheaper than the original price — but that must be a mistake, since a 40% increase and a 40% decrease should cancel out." Is Naledi right that it must be a mistake? Explain.', answer: 'No, Naledi is wrong that it is a mistake — the calculation R490 and then R294 is correct. A 40% increase and a 40% decrease do not cancel out because they are percentages of different amounts: the increase is 40% of R350 (R140), but the decrease is 40% of the larger R490 (R196), so the final price ends up lower than the original R350.', checkMode: 'self' },
+
+        // Block 7 — Profit, loss, budgets and accounts (20-23)
+        { difficulty: 'Easy-Medium', question: 'A vendor buys a batch of school bags for R410 (cost price) and sells it for R492 (selling price). Find the profit and the percentage profit.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Profit', correctAnswer: 'R82', correctAnswers: ['R82', '82'], explanation: 'Profit = Selling price − Cost price = 492 − 410 = R82 ✓' },
+          { label: 'b) Percentage profit', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% profit = (Profit ÷ Cost price) × 100 = (82 ÷ 410) × 100 = 20% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'A shop buys a set of patio umbrellas for R850 (cost price). Because the season has ended, they are sold for R680 (selling price). Find the loss and the percentage loss.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Loss', correctAnswer: 'R170', correctAnswers: ['R170', '170'], explanation: 'Loss = Cost price − Selling price = 850 − 680 = R170 ✓' },
+          { label: 'b) Percentage loss', correctAnswer: '20%', correctAnswers: ['20%', '20'], explanation: '% loss = (Loss ÷ Cost price) × 100 = (170 ÷ 850) × 100 = 20% ✓' },
+        ] },
+        { difficulty: 'Medium', question: 'Kagiso has a monthly income of R7 500. His budgeted expenses are: rent R3 000, food R1 400, transport R700 and other costs R400. Find his total expenses and his balance.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Total expenses', correctAnswer: 'R5 500', correctAnswers: ['R5500', '5500', 'R5 500', '5 500'], explanation: 'Total expenses = 3 000 + 1 400 + 700 + 400 = R5 500 ✓' },
+          { label: 'b) Balance', correctAnswer: 'R2 000', correctAnswers: ['R2000', '2000', 'R2 000', '2 000'], explanation: 'Balance = Income − Expenses = 7 500 − 5 500 = R2 000 ✓' },
+        ] },
+        { difficulty: 'Hard', question: "Sipho's hardware account shows an opening balance owed of R600. During the month he buys R250 of extra tools on account, and makes a payment of R350. Find the closing balance owed.", answer: 'R500', checkMode: 'auto', correctAnswer: 'R500', correctAnswers: ['R500', '500'], explanation: 'Closing balance = Opening balance + Purchases − Payment = 600 + 250 − 350 = R500 ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have mastered percentages, from conversions through to real-world discount and increase problems.' },
-        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the study guide sections on percentages, then try again.' },
+        { minScore: 24, message: 'Outstanding! You have mastered percentages, from conversions through to real-world discount, profit/loss and budgeting problems.' },
+        { minScore: 18, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 12, message: 'Good effort! Revisit the study guide sections on percentages, then try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
