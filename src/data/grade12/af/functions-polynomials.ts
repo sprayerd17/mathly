@@ -747,6 +747,157 @@ export const topicData: TopicData = {
     },
   ],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 Vrae)
+    // Blokke: 0-2 Faktorstelling-toets (Maklik) | 3-6 Deling/kwosiënt gegee ʼn faktor (Maklik-Medium) |
+    // 7-9 Volledige faktorisering, heelgetal voorste koëffisiënt (Medium) | 10-12 Volledige faktorisering, voorste koëffisiënt 2 (Medium) |
+    // 13-16 Derdegraadse vergelykings oplos (Medium-Moeilik) | 17-19 Derdegraadse afsnitte/vorm (Moeilik, party gemerk vir diagramme)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Bepaal of (x+1) ʼn faktor van p(x)=x³−6x²+5x+12 is deur p(−1) te bereken. Gee jou gevolgtrekking.', answer: '', checkMode: 'auto', correctAnswer: '0, ja dit is ʼn faktor', correctAnswers: ['0, ja dit is ʼn faktor', 'ja', 'Ja', '0', 'ja, dit is ʼn faktor'], explanation: 'p(−1)=(−1)³−6(−1)²+5(−1)+12=−1−6−5+12=0.\nAangesien p(−1)=0, is (x+1) volgens die Faktorstelling WEL ʼn faktor van p(x) ✓' },
+        { difficulty: 'Easy', question: 'Bepaal of (x−1) ʼn faktor van p(x)=x³+2x²−5x−6 is deur p(1) te bereken. Gee jou gevolgtrekking.', answer: '', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee', 'Nie ʼn faktor nie', 'nie ʼn faktor nie'], explanation: 'p(1)=1+2−5−6=−8.\nAangesien p(1)=−8≠0, is (x−1) volgens die Faktorstelling NIE ʼn faktor van p(x) nie ✓' },
+        { difficulty: 'Easy', question: 'Toon dat (x−1) ʼn faktor van p(x)=x³+6x²+3x−10 is deur p(1) te bereken.', answer: '0', checkMode: 'auto', correctAnswer: '0', explanation: 'p(1)=1+6+3−10=0.\nAangesien p(1)=0, is (x−1) ʼn faktor van p(x) volgens die Faktorstelling ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Deel x³−2x²−5x+6 deur (x−3) deur langdeling te gebruik. Gee die kwosiënt.', answer: '', checkMode: 'auto', correctAnswer: 'x²+x-2', correctAnswers: ['x²+x-2', 'x^2+x-2'], explanation: 'x³÷x=x². x²(x−3)=x³−3x². Trek af: x²−5x+6.\nx²÷x=x. x(x−3)=x²−3x. Trek af: −2x+6.\n−2x÷x=−2. −2(x−3)=−2x+6. Trek af: 0.\nKwosiënt: x²+x−2 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Deel x³−31x−30 deur (x+1) deur langdeling te gebruik. Gee die kwosiënt.', answer: '', checkMode: 'auto', correctAnswer: 'x²-x-30', correctAnswers: ['x²-x-30', 'x^2-x-30'], explanation: 'Herskryf as x³+0x²−31x−30 sodat die kolomme belyn bly.\nx³÷x=x². x²(x+1)=x³+x². Trek af: −x²−31x−30.\n−x²÷x=−x. −x(x+1)=−x²−x. Trek af: −30x−30.\n−30x÷x=−30. −30(x+1)=−30x−30. Trek af: 0.\nKwosiënt: x²−x−30 ✓' },
+        { difficulty: 'Medium', question: 'Deel x³+x²−14x−24 deur (x+2) deur langdeling te gebruik. Gee die kwosiënt en die res.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kwosiënt', correctAnswer: 'x²-x-12', correctAnswers: ['x²-x-12', 'x^2-x-12'], explanation: 'x³÷x=x². x²(x+2)=x³+2x². Trek af: −x²−14x−24.\n−x²÷x=−x. −x(x+2)=−x²−2x. Trek af: −12x−24.\n−12x÷x=−12. −12(x+2)=−12x−24. Trek af: 0.\nKwosiënt: x²−x−12 ✓' },
+          { label: 'b) Res', correctAnswer: '0', explanation: 'Die res is 0, wat bevestig dat (x+2) ʼn faktor van x³+x²−14x−24 is.' },
+        ]},
+        { difficulty: 'Medium', question: 'Deel x³−2x²−29x+30 deur (x−1) deur langdeling te gebruik. Gee die kwosiënt en die res.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kwosiënt', correctAnswer: 'x²-x-30', correctAnswers: ['x²-x-30', 'x^2-x-30'], explanation: 'x³÷x=x². x²(x−1)=x³−x². Trek af: −x²−29x+30.\n−x²÷x=−x. −x(x−1)=−x²+x. Trek af: −30x+30.\n−30x÷x=−30. −30(x−1)=−30x+30. Trek af: 0.\nKwosiënt: x²−x−30 ✓' },
+          { label: 'b) Res', correctAnswer: '0', explanation: 'Die res is 0, wat bevestig dat (x−1) ʼn faktor van x³−2x²−29x+30 is.' },
+        ]},
+
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 6x² + 11x − 6 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x-1)(x-2)(x-3)', correctAnswers: ['(x-1)(x-2)(x-3)', '(x-1)(x-3)(x-2)', '(x-2)(x-3)(x-1)'], explanation: 'Toets x=1: 1−6+11−6=0 ✓. Dus is (x−1) ʼn faktor.\nDeel: kwosiënt = x²−5x+6 = (x−2)(x−3).\nVolledige faktorisering: (x−1)(x−2)(x−3) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ + 4x² − 11x − 30 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x+5)(x-3)(x+2)', correctAnswers: ['(x+5)(x-3)(x+2)', '(x+5)(x+2)(x-3)', '(x-3)(x+2)(x+5)'], explanation: 'Toets x=−5: −125+100+55−30=0 ✓. Dus is (x+5) ʼn faktor.\nDeel: kwosiënt = x²−x−6 = (x−3)(x+2).\nVolledige faktorisering: (x+5)(x−3)(x+2) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 4x² − 15x + 18 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x-6)(x-1)(x+3)', correctAnswers: ['(x-6)(x-1)(x+3)', '(x-6)(x+3)(x-1)', '(x-1)(x+3)(x-6)'], explanation: 'Toets x=6: 216−144−90+18=0 ✓. Dus is (x−6) ʼn faktor.\nDeel: kwosiënt = x²+2x−3 = (x−1)(x+3).\nVolledige faktorisering: (x−6)(x−1)(x+3) ✓' },
+
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = 2x³ − 3x² − 11x + 6 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(2x-1)(x+2)(x-3)', correctAnswers: ['(2x-1)(x+2)(x-3)', '(2x-1)(x-3)(x+2)', '(x+2)(x-3)(2x-1)'], explanation: 'Toets x=½: 2(⅛)−3(¼)−11(½)+6=¼−¾−5½+6=0 ✓. Dus is (2x−1) ʼn faktor.\nDeel: kwosiënt = x²−x−6 = (x−3)(x+2).\nVolledige faktorisering: (2x−1)(x−3)(x+2) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 3x² − 22x + 24 volledig, gegee dat (x+4) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: '(x+4)(x-1)(x-6)', correctAnswers: ['(x+4)(x-1)(x-6)', '(x+4)(x-6)(x-1)', '(x-1)(x-6)(x+4)'], explanation: 'Deel x³−3x²−22x+24 deur (x+4): kwosiënt = x²−7x+6 = (x−1)(x−6).\nVolledige faktorisering: (x+4)(x−1)(x−6) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gegee p(x) = x³ − 4x² − 11x − 6:\n\na) Toon dat (x−6) ʼn faktor van p(x) is.\nb) Faktoriseer p(x) volledig.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Toon (x − 6) is ʼn faktor', correctAnswer: '0', explanation: 'p(6)=216−144−66−6=0.\nAangesien p(6)=0, is (x−6) ʼn faktor volgens die Faktorstelling ✓' },
+          { label: 'b) Volledige faktorisering van p(x)', correctAnswer: '(x-6)(x+1)²', correctAnswers: ['(x-6)(x+1)²', '(x-6)(x+1)^2', '(x-6)(x+1)(x+1)'], explanation: 'Deel x³−4x²−11x−6 deur (x−6): kwosiënt = x²+2x+1 = (x+1)².\nVolledige faktorisering: (x−6)(x+1)² ✓' },
+        ]},
+
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 3x² − 22x + 24 = 0, gegee dat (x+4) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: 'x=-4, x=1, x=6', correctAnswers: ['x=-4, x=1, x=6', 'x=1, x=6, x=-4', '-4; 1; 6', '-4, 1, 6'], explanation: '(x+4)(x²−7x+6)=0 → (x+4)(x−1)(x−6)=0.\nx+4=0 → x=−4; x−1=0 → x=1; x−6=0 → x=6 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 4x² − 11x − 6 = 0, deur jou faktorisering van die vorige vraag te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=6, x=-1', correctAnswers: ['x=6, x=-1', 'x=-1, x=6', '6; -1', '6, -1'], explanation: '(x−6)(x+1)²=0.\nx−6=0 → x=6; (x+1)²=0 → x=−1 (ʼn herhaalde wortel, dus slegs twee verskillende oplossings) ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x³ − 3x² − 11x + 6 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=1/2, x=-2, x=3', correctAnswers: ['x=1/2, x=-2, x=3', 'x=-2, x=1/2, x=3', '1/2; -2; 3', '0.5, -2, 3'], explanation: '(2x−1)(x−3)(x+2)=0.\n2x−1=0 → x=½; x−3=0 → x=3; x+2=0 → x=−2 ✓' },
+        { difficulty: 'Hard', question: 'Gegee p(x)=x³+ax²+bx+18, en dat p(1)=0 en p(−3)=0, vind a en b, en los dan p(x)=0 volledig op.', answer: '', checkMode: 'auto', correctAnswer: 'a=-4, b=-15; x=1, x=-3, x=6', correctAnswers: ['a=-4, b=-15; x=1, x=-3, x=6', 'a=-4 b=-15 x=1 x=-3 x=6'], explanation: 'p(1)=1+a+b+18=0 → a+b=−19.\np(−3)=−27+9a−3b+18=0 → 9a−3b=9 → 3a−b=3.\nTel die twee vergelykings op (a+b=−19) en (3a−b=3): 4a=−16 → a=−4, dus b=−15.\np(x)=x³−4x²−15x+18=(x−1)(x+3)(x−6). Oplossings: x=1, x=−3, x=6 ✓' },
+
+        { difficulty: 'Hard', question: 'ʼn Derdegraadse grafiek word beskryf deur y=x³+4x²−15x−18=(x+6)(x−3)(x+1). Gee die x-afsnitte, die y-afsnit, en die algemene vorm (stygend of dalend van links na regs).', answer: '', checkMode: 'auto', correctAnswer: 'x=-6, x=3, x=-1; y=-18; styg van links na regs', correctAnswers: ['x=-6, x=3, x=-1; y=-18; styg van links na regs', 'x=-6,x=-1,x=3; y-afsnit=-18; styg'], explanation: 'x-afsnitte: (x+6)=0 → x=−6; (x−3)=0 → x=3; (x+1)=0 → x=−1.\ny-afsnit: y=(6)(−3)(1)=−18.\nAangesien die voorste koëffisiënt positief is (x³-term), styg die grafiek van onder-links na bo-regs ✓' },
+        { difficulty: 'Hard', question: '[DIAGRAM: ʼn Derdegraadse grafiek sny die x-as by x=−2, x=1 en x=5, het ʼn positiewe voorste koëffisiënt, en sny die y-as by y=10] Gebruik die sketch om die vergelyking van die derdegraadse funksie in gefaktoriseerde vorm y=(x+2)(x−1)(x−5) te skryf, en verifieer dan dat die y-afsnit met die diagram ooreenstem.', answer: '', checkMode: 'auto', correctAnswer: 'y=10, stem ooreen', correctAnswers: ['y=10, stem ooreen', '10', 'y-afsnit is 10, wat met die diagram ooreenstem'], explanation: 'Vervang x=0 in y=(x+2)(x−1)(x−5): y=(2)(−1)(−5)=10.\nDit stem ooreen met die y-afsnit van 10 wat in die diagram getoon word, wat die vergelyking bevestig ✓' },
+        { difficulty: 'Hard', question: 'Sipho teken y=(x−4)(x+2)(x+1) en beweer dat die grafiek die x-as by x=−1 raak (maar nie sny nie). Is hy korrek? Verduidelik, en gee dan al drie x-afsnitte en die y-afsnit.', answer: '', checkMode: 'auto', correctAnswer: 'Nee, sny by al drie; x=4,-2,-1; y=-8', correctAnswers: ['Nee, sny by al drie; x=4,-2,-1; y=-8', 'Nee; x=4, x=-2, x=-1; y-afsnit=-8'], explanation: 'Sipho is verkeerd — al drie faktore (x−4), (x+2) en (x+1) is verskillend met multiplisiteit 1, dus SNY die grafiek die x-as by al drie afsnitte, ook by x=−1.\nx-afsnitte: x=4, x=−2, x=−1.\ny-afsnit: y=(−4)(2)(1)=−8 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy het die Faktorstelling, derdegraadse faktorisering, vergelykings oplos en derdegraadse grafieke teken bemeester.' },
+        { minScore: 14, message: 'Puik werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 8, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 Vrae) — dieselfde bloklegging as Stel 1, vars getalle
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Bepaal of (x−2) ʼn faktor van p(x)=x³+4x²−7x−10 is deur p(2) te bereken. Gee jou gevolgtrekking.', answer: '', checkMode: 'auto', correctAnswer: '0, ja dit is ʼn faktor', correctAnswers: ['0, ja dit is ʼn faktor', 'ja', 'Ja', '0', 'ja, dit is ʼn faktor'], explanation: 'p(2)=8+16−14−10=0.\nAangesien p(2)=0, is (x−2) volgens die Faktorstelling WEL ʼn faktor van p(x) ✓' },
+        { difficulty: 'Easy', question: 'Bepaal of (x−1) ʼn faktor van p(x)=x³+4x²+x−6 is deur p(1) te bereken. Gee jou gevolgtrekking.', answer: '', checkMode: 'auto', correctAnswer: '0, ja dit is ʼn faktor', correctAnswers: ['0, ja dit is ʼn faktor', 'ja', 'Ja', '0', 'ja, dit is ʼn faktor'], explanation: 'p(1)=1+4+1−6=0.\nAangesien p(1)=0, is (x−1) volgens die Faktorstelling WEL ʼn faktor van p(x) ✓' },
+        { difficulty: 'Easy', question: 'Toon dat (x+3) ʼn faktor van p(x)=x³+4x²+x−6 is deur p(−3) te bereken.', answer: '0', checkMode: 'auto', correctAnswer: '0', explanation: 'p(−3)=−27+36−3−6=0.\nAangesien p(−3)=0, is (x+3) ʼn faktor van p(x) volgens die Faktorstelling ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Deel x³+x²−14x−24 deur (x+2) deur langdeling te gebruik. Gee die kwosiënt.', answer: '', checkMode: 'auto', correctAnswer: 'x²-x-12', correctAnswers: ['x²-x-12', 'x^2-x-12'], explanation: 'x³÷x=x². x²(x+2)=x³+2x². Trek af: −x²−14x−24.\n−x²÷x=−x. −x(x+2)=−x²−2x. Trek af: −12x−24.\n−12x÷x=−12. −12(x+2)=−12x−24. Trek af: 0.\nKwosiënt: x²−x−12 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Deel x³−2x²−29x+30 deur (x−1) deur langdeling te gebruik. Gee die kwosiënt.', answer: '', checkMode: 'auto', correctAnswer: 'x²-x-30', correctAnswers: ['x²-x-30', 'x^2-x-30'], explanation: 'x³÷x=x². x²(x−1)=x³−x². Trek af: −x²−29x+30.\n−x²÷x=−x. −x(x−1)=−x²+x. Trek af: −30x+30.\n−30x÷x=−30. −30(x−1)=−30x+30. Trek af: 0.\nKwosiënt: x²−x−30 ✓' },
+        { difficulty: 'Medium', question: 'Deel x³+5x²−2x−24 deur (x+3) deur langdeling te gebruik. Gee die kwosiënt en die res.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kwosiënt', correctAnswer: 'x²+2x-8', correctAnswers: ['x²+2x-8', 'x^2+2x-8'], explanation: 'x³÷x=x². x²(x+3)=x³+3x². Trek af: 2x²−2x−24.\n2x²÷x=2x. 2x(x+3)=2x²+6x. Trek af: −8x−24.\n−8x÷x=−8. −8(x+3)=−8x−24. Trek af: 0.\nKwosiënt: x²+2x−8 ✓' },
+          { label: 'b) Res', correctAnswer: '0', explanation: 'Die res is 0, wat bevestig dat (x+3) ʼn faktor van x³+5x²−2x−24 is.' },
+        ]},
+        { difficulty: 'Medium', question: 'Deel x³−2x²−13x−10 deur (x−5) deur langdeling te gebruik. Gee die kwosiënt en die res.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kwosiënt', correctAnswer: 'x²+3x+2', correctAnswers: ['x²+3x+2', 'x^2+3x+2'], explanation: 'x³÷x=x². x²(x−5)=x³−5x². Trek af: 3x²−13x−10.\n3x²÷x=3x. 3x(x−5)=3x²−15x. Trek af: 2x−10.\n2x÷x=2. 2(x−5)=2x−10. Trek af: 0.\nKwosiënt: x²+3x+2 ✓' },
+          { label: 'b) Res', correctAnswer: '0', explanation: 'Die res is 0, wat bevestig dat (x−5) ʼn faktor van x³−2x²−13x−10 is.' },
+        ]},
+
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ + 3x² − 6x − 8 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x+1)(x-2)(x+4)', correctAnswers: ['(x+1)(x-2)(x+4)', '(x+1)(x+4)(x-2)', '(x-2)(x+4)(x+1)'], explanation: 'Toets x=−1: −1+3+6−8=0 ✓. Dus is (x+1) ʼn faktor.\nDeel: kwosiënt = x²+2x−8 = (x−2)(x+4).\nVolledige faktorisering: (x+1)(x−2)(x+4) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 13x − 12 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x+1)(x+3)(x-4)', correctAnswers: ['(x+1)(x+3)(x-4)', '(x+1)(x-4)(x+3)', '(x-4)(x+3)(x+1)'], explanation: 'Toets x=−1: −1+13−12=0 ✓. Dus is (x+1) ʼn faktor.\nDeel: kwosiënt = x²−x−12 = (x−4)(x+3).\nVolledige faktorisering: (x+1)(x−4)(x+3) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ + 2x² − 11x − 12 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x-3)(x+1)(x+4)', correctAnswers: ['(x-3)(x+1)(x+4)', '(x-3)(x+4)(x+1)', '(x+1)(x+4)(x-3)'], explanation: 'Toets x=3: 27+18−33−12=0 ✓. Dus is (x−3) ʼn faktor.\nDeel: kwosiënt = x²+5x+4 = (x+1)(x+4).\nVolledige faktorisering: (x−3)(x+1)(x+4) ✓' },
+
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = 2x³ + x² − 13x − 6 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(2x+1)(x-2)(x+3)', correctAnswers: ['(2x+1)(x-2)(x+3)', '(2x+1)(x+3)(x-2)', '(x-2)(x+3)(2x+1)'], explanation: 'Toets x=−½: 2(−⅛)+¼−13(−½)−6=−¼+¼+6½−6=0 ✓. Dus is (2x+1) ʼn faktor.\nDeel: kwosiënt = x²−x−6 = (x−3)(x+2).\nVolledige faktorisering: (2x+1)(x−3)(x+2) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 4x² − 15x + 18 volledig, gegee dat (x−6) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: '(x-6)(x-1)(x+3)', correctAnswers: ['(x-6)(x-1)(x+3)', '(x-6)(x+3)(x-1)', '(x-1)(x+3)(x-6)'], explanation: 'Deel x³−4x²−15x+18 deur (x−6): kwosiënt = x²+2x−3 = (x−1)(x+3).\nVolledige faktorisering: (x−6)(x−1)(x+3) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gegee p(x) = x³ − 12x − 16:\n\na) Toon dat (x−4) ʼn faktor van p(x) is.\nb) Faktoriseer p(x) volledig.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Toon (x − 4) is ʼn faktor', correctAnswer: '0', explanation: 'p(4)=64−48−16=0.\nAangesien p(4)=0, is (x−4) ʼn faktor volgens die Faktorstelling ✓' },
+          { label: 'b) Volledige faktorisering van p(x)', correctAnswer: '(x-4)(x+2)²', correctAnswers: ['(x-4)(x+2)²', '(x-4)(x+2)^2', '(x-4)(x+2)(x+2)'], explanation: 'Deel x³−12x−16 deur (x−4): kwosiënt = x²+4x+4 = (x+2)².\nVolledige faktorisering: (x−4)(x+2)² ✓' },
+        ]},
+
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 2x³ + 7x² − 5x − 4 = 0, gegee dat (2x+1) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1/2, x=1, x=-4', correctAnswers: ['x=-1/2, x=1, x=-4', 'x=1, x=-4, x=-1/2', '-1/2; 1; -4', '-0.5, 1, -4'], explanation: '(2x+1)(x²+3x−4)=0 → (2x+1)(x−1)(x+4)=0.\n2x+1=0 → x=−½; x−1=0 → x=1; x+4=0 → x=−4 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 12x − 16 = 0, deur jou faktorisering van die vorige vraag te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=4, x=-2', correctAnswers: ['x=4, x=-2', 'x=-2, x=4', '4; -2', '4, -2'], explanation: '(x−4)(x+2)²=0.\nx−4=0 → x=4; (x+2)²=0 → x=−2 (ʼn herhaalde wortel, dus slegs twee verskillende oplossings) ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x³ + x² − 13x − 6 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1/2, x=2, x=-3', correctAnswers: ['x=-1/2, x=2, x=-3', 'x=2, x=-3, x=-1/2', '-1/2; 2; -3', '-0.5, 2, -3'], explanation: '(2x+1)(x−2)(x+3)=0.\n2x+1=0 → x=−½; x−2=0 → x=2; x+3=0 → x=−3 ✓' },
+        { difficulty: 'Hard', question: 'Gegee p(x)=x³+ax²+bx−24, en dat p(−1)=0 en p(6)=0, vind a en b, en los dan p(x)=0 volledig op.', answer: '', checkMode: 'auto', correctAnswer: 'a=-1, b=-26; x=-1, x=6, x=-4', correctAnswers: ['a=-1, b=-26; x=-1, x=6, x=-4', 'a=-1 b=-26 x=-1 x=6 x=-4'], explanation: 'p(−1)=−1+a−b−24=0 → a−b=25.\np(6)=216+36a+6b−24=0 → 36a+6b=−192 → 6a+b=−32.\nTel die twee vergelykings op (a−b=25) en (6a+b=−32): 7a=−7 → a=−1, dus b=−26.\np(x)=x³−x²−26x−24=(x+1)(x−6)(x+4). Oplossings: x=−1, x=6, x=−4 ✓' },
+
+        { difficulty: 'Hard', question: 'ʼn Derdegraadse grafiek word beskryf deur y=x³+2x²−11x−12=(x−3)(x+1)(x+4). Gee die x-afsnitte, die y-afsnit, en die algemene vorm (stygend of dalend van links na regs).', answer: '', checkMode: 'auto', correctAnswer: 'x=3, x=-1, x=-4; y=-12; styg van links na regs', correctAnswers: ['x=3, x=-1, x=-4; y=-12; styg van links na regs', 'x=3,x=-1,x=-4; y-afsnit=-12; styg'], explanation: 'x-afsnitte: (x−3)=0 → x=3; (x+1)=0 → x=−1; (x+4)=0 → x=−4.\ny-afsnit: y=(−3)(1)(4)=−12.\nAangesien die voorste koëffisiënt positief is (x³-term), styg die grafiek van onder-links na bo-regs ✓' },
+        { difficulty: 'Hard', question: '[DIAGRAM: ʼn Derdegraadse grafiek sny die x-as by x=1, x=−6 en x=2, het ʼn positiewe voorste koëffisiënt, en sny die y-as by y=12] Gebruik die sketch om die vergelyking van die derdegraadse funksie in gefaktoriseerde vorm y=(x−1)(x+6)(x−2) te skryf, en verifieer dan dat die y-afsnit met die diagram ooreenstem.', answer: '', checkMode: 'auto', correctAnswer: 'y=12, stem ooreen', correctAnswers: ['y=12, stem ooreen', '12', 'y-afsnit is 12, wat met die diagram ooreenstem'], explanation: 'Vervang x=0 in y=(x−1)(x+6)(x−2): y=(−1)(6)(−2)=12.\nDit stem ooreen met die y-afsnit van 12 wat in die diagram getoon word, wat die vergelyking bevestig ✓' },
+        { difficulty: 'Hard', question: 'Lerato teken y=(x+1)(x−6)(x+2) en beweer dat die grafiek die x-as by x=−1 raak (maar nie sny nie). Is sy korrek? Verduidelik, en gee dan al drie x-afsnitte en die y-afsnit.', answer: '', checkMode: 'auto', correctAnswer: 'Nee, sny by al drie; x=-1,6,-2; y=-12', correctAnswers: ['Nee, sny by al drie; x=-1,6,-2; y=-12', 'Nee; x=-1, x=6, x=-2; y-afsnit=-12'], explanation: 'Lerato is verkeerd — al drie faktore (x+1), (x−6) en (x+2) is verskillend met multiplisiteit 1, dus SNY die grafiek die x-as by al drie afsnitte, ook by x=−1.\nx-afsnitte: x=−1, x=6, x=−2.\ny-afsnit: y=(1)(−6)(2)=−12 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Uitstekend! Jy kan die Faktorstelling, derdegraadse faktorisering, vergelykings oplos en grafieklees met selfvertroue toepas.' },
+        { minScore: 14, message: 'Puik werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 8, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 Vrae) — dieselfde bloklegging, vars getalle
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Bepaal of (x−4) ʼn faktor van p(x)=x³−4x²−20x+48 is deur p(4) te bereken. Gee jou gevolgtrekking.', answer: '', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee', 'Nie ʼn faktor nie', 'nie ʼn faktor nie'], explanation: 'p(4)=64−64−80+48=−32.\nAangesien p(4)=−32≠0, is (x−4) volgens die Faktorstelling NIE ʼn faktor van p(x) nie ✓' },
+        { difficulty: 'Easy', question: 'Toon dat (x+4) ʼn faktor van p(x)=x³−4x²−20x+48 is deur p(−4) te bereken.', answer: '0', checkMode: 'auto', correctAnswer: '0', explanation: 'p(−4)=−64−64+80+48=0.\nAangesien p(−4)=0, is (x+4) ʼn faktor van p(x) volgens die Faktorstelling ✓' },
+        { difficulty: 'Easy', question: 'Bepaal of (x−3) ʼn faktor van p(x)=x³−7x−6 is deur p(3) te bereken. Gee jou gevolgtrekking.', answer: '', checkMode: 'auto', correctAnswer: '0, ja dit is ʼn faktor', correctAnswers: ['0, ja dit is ʼn faktor', 'ja', 'Ja', '0', 'ja, dit is ʼn faktor'], explanation: 'p(3)=27−21−6=0.\nAangesien p(3)=0, is (x−3) volgens die Faktorstelling WEL ʼn faktor van p(x) ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Deel x³−2x²−13x−10 deur (x−5) deur langdeling te gebruik. Gee die kwosiënt.', answer: '', checkMode: 'auto', correctAnswer: 'x²+3x+2', correctAnswers: ['x²+3x+2', 'x^2+3x+2'], explanation: 'x³÷x=x². x²(x−5)=x³−5x². Trek af: 3x²−13x−10.\n3x²÷x=3x. 3x(x−5)=3x²−15x. Trek af: 2x−10.\n2x÷x=2. 2(x−5)=2x−10. Trek af: 0.\nKwosiënt: x²+3x+2 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Deel x³+5x²−2x−24 deur (x+3) deur langdeling te gebruik. Gee die kwosiënt.', answer: '', checkMode: 'auto', correctAnswer: 'x²+2x-8', correctAnswers: ['x²+2x-8', 'x^2+2x-8'], explanation: 'x³÷x=x². x²(x+3)=x³+3x². Trek af: 2x²−2x−24.\n2x²÷x=2x. 2x(x+3)=2x²+6x. Trek af: −8x−24.\n−8x÷x=−8. −8(x+3)=−8x−24. Trek af: 0.\nKwosiënt: x²+2x−8 ✓' },
+        { difficulty: 'Medium', question: 'Deel x³+6x²+3x−10 deur (x−1) deur langdeling te gebruik. Gee die kwosiënt en die res.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kwosiënt', correctAnswer: 'x²+7x+10', correctAnswers: ['x²+7x+10', 'x^2+7x+10'], explanation: 'x³÷x=x². x²(x−1)=x³−x². Trek af: 7x²+3x−10.\n7x²÷x=7x. 7x(x−1)=7x²−7x. Trek af: 10x−10.\n10x÷x=10. 10(x−1)=10x−10. Trek af: 0.\nKwosiënt: x²+7x+10 ✓' },
+          { label: 'b) Res', correctAnswer: '0', explanation: 'Die res is 0, wat bevestig dat (x−1) ʼn faktor van x³+6x²+3x−10 is.' },
+        ]},
+        { difficulty: 'Medium', question: 'Deel x³+x²−22x−40 deur (x+2) deur langdeling te gebruik. Gee die kwosiënt en die res.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Kwosiënt', correctAnswer: 'x²-x-20', correctAnswers: ['x²-x-20', 'x^2-x-20'], explanation: 'x³÷x=x². x²(x+2)=x³+2x². Trek af: −x²−22x−40.\n−x²÷x=−x. −x(x+2)=−x²−2x. Trek af: −20x−40.\n−20x÷x=−20. −20(x+2)=−20x−40. Trek af: 0.\nKwosiënt: x²−x−20 ✓' },
+          { label: 'b) Res', correctAnswer: '0', explanation: 'Die res is 0, wat bevestig dat (x+2) ʼn faktor van x³+x²−22x−40 is.' },
+        ]},
+
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 4x² − 19x − 14 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x-7)(x+2)(x+1)', correctAnswers: ['(x-7)(x+2)(x+1)', '(x-7)(x+1)(x+2)', '(x+2)(x+1)(x-7)'], explanation: 'Toets x=7: 343−196−133−14=0 ✓. Dus is (x−7) ʼn faktor.\nDeel: kwosiënt = x²+3x+2 = (x+1)(x+2).\nVolledige faktorisering: (x−7)(x+1)(x+2) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ + x² − 22x − 40 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x+2)(x-5)(x+4)', correctAnswers: ['(x+2)(x-5)(x+4)', '(x+2)(x+4)(x-5)', '(x-5)(x+4)(x+2)'], explanation: 'Toets x=−2: −8+4+44−40=0 ✓. Dus is (x+2) ʼn faktor.\nDeel: kwosiënt = x²−x−20 = (x−5)(x+4).\nVolledige faktorisering: (x+2)(x−5)(x+4) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 4x² − 7x + 10 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(x+2)(x-1)(x-5)', correctAnswers: ['(x+2)(x-1)(x-5)', '(x+2)(x-5)(x-1)', '(x-1)(x-5)(x+2)'], explanation: 'Toets x=−2: −8−16+14+10=0 ✓. Dus is (x+2) ʼn faktor.\nDeel: kwosiënt = x²−6x+5 = (x−1)(x−5).\nVolledige faktorisering: (x+2)(x−1)(x−5) ✓' },
+
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = 2x³ + 7x² − 7x − 12 volledig.', answer: '', checkMode: 'auto', correctAnswer: '(2x-3)(x+1)(x+4)', correctAnswers: ['(2x-3)(x+1)(x+4)', '(2x-3)(x+4)(x+1)', '(x+1)(x+4)(2x-3)'], explanation: 'Toets x=1½: 2(1½)³+7(1½)²−7(1½)−12=2(3⅜)+7(2¼)−10½−12=6¾+15¾−10½−12=0 ✓. Dus is (2x−3) ʼn faktor.\nDeel: kwosiënt = x²+5x+4 = (x+1)(x+4).\nVolledige faktorisering: (2x−3)(x+1)(x+4) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer p(x) = x³ − 2x² − 21x − 18 volledig, gegee dat (x−6) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: '(x-6)(x+3)(x+1)', correctAnswers: ['(x-6)(x+3)(x+1)', '(x-6)(x+1)(x+3)', '(x+3)(x+1)(x-6)'], explanation: 'Deel x³−2x²−21x−18 deur (x−6): kwosiënt = x²+4x+3 = (x+1)(x+3).\nVolledige faktorisering: (x−6)(x+1)(x+3) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gegee p(x) = x³ − 5x² + 3x + 9:\n\na) Toon dat (x+1) ʼn faktor van p(x) is.\nb) Faktoriseer p(x) volledig.', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Toon (x + 1) is ʼn faktor', correctAnswer: '0', explanation: 'p(−1)=−1−5−3+9=0.\nAangesien p(−1)=0, is (x+1) ʼn faktor volgens die Faktorstelling ✓' },
+          { label: 'b) Volledige faktorisering van p(x)', correctAnswer: '(x+1)(x-3)²', correctAnswers: ['(x+1)(x-3)²', '(x+1)(x-3)^2', '(x+1)(x-3)(x-3)'], explanation: 'Deel x³−5x²+3x+9 deur (x+1): kwosiënt = x²−6x+9 = (x−3)².\nVolledige faktorisering: (x+1)(x−3)² ✓' },
+        ]},
+
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 5x² − 8x + 12 = 0, gegee dat (x−6) ʼn faktor is.', answer: '', checkMode: 'auto', correctAnswer: 'x=6, x=1, x=-2', correctAnswers: ['x=6, x=1, x=-2', 'x=1, x=-2, x=6', '6; 1; -2', '6, 1, -2'], explanation: '(x−6)(x²+x−2)=0 → (x−6)(x−1)(x+2)=0.\nx−6=0 → x=6; x−1=0 → x=1; x+2=0 → x=−2 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: x³ − 5x² + 3x + 9 = 0, deur jou faktorisering van die vorige vraag te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=-1, x=3', correctAnswers: ['x=-1, x=3', 'x=3, x=-1', '-1; 3', '-1, 3'], explanation: '(x+1)(x−3)²=0.\nx+1=0 → x=−1; (x−3)²=0 → x=3 (ʼn herhaalde wortel, dus slegs twee verskillende oplossings) ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2x³ + 7x² − 7x − 12 = 0, deur jou faktorisering van V11 te gebruik.', answer: '', checkMode: 'auto', correctAnswer: 'x=3/2, x=-1, x=-4', correctAnswers: ['x=3/2, x=-1, x=-4', 'x=-1, x=-4, x=3/2', '3/2; -1; -4', '1.5, -1, -4'], explanation: '(2x−3)(x+1)(x+4)=0.\n2x−3=0 → x=1½; x+1=0 → x=−1; x+4=0 → x=−4 ✓' },
+        { difficulty: 'Hard', question: 'Gegee p(x)=x³+ax²+bx−18, en dat p(2)=0 en p(−1)=0, vind a en b, en los dan p(x)=0 volledig op.', answer: '', checkMode: 'auto', correctAnswer: 'a=8, b=-11; x=2, x=-1, x=-9', correctAnswers: ['a=8, b=-11; x=2, x=-1, x=-9', 'a=8 b=-11 x=2 x=-1 x=-9'], explanation: 'p(2)=8+4a+2b−18=0 → 4a+2b=10 → 2a+b=5.\np(−1)=−1+a−b−18=0 → a−b=19.\nTel die twee vergelykings op (2a+b=5) en (a−b=19): 3a=24 → a=8, dus b=−11.\np(x)=x³+8x²−11x−18=(x−2)(x+1)(x+9). Oplossings: x=2, x=−1, x=−9 ✓' },
+
+        { difficulty: 'Hard', question: 'ʼn Derdegraadse grafiek word beskryf deur y=x³−4x²−7x+10=(x+2)(x−1)(x−5). Gee die x-afsnitte, die y-afsnit, en die algemene vorm (stygend of dalend van links na regs).', answer: '', checkMode: 'auto', correctAnswer: 'x=-2, x=1, x=5; y=10; styg van links na regs', correctAnswers: ['x=-2, x=1, x=5; y=10; styg van links na regs', 'x=-2,x=1,x=5; y-afsnit=10; styg'], explanation: 'x-afsnitte: (x+2)=0 → x=−2; (x−1)=0 → x=1; (x−5)=0 → x=5.\ny-afsnit: y=(2)(−1)(−5)=10.\nAangesien die voorste koëffisiënt positief is (x³-term), styg die grafiek van onder-links na bo-regs ✓' },
+        { difficulty: 'Hard', question: '[DIAGRAM: ʼn Derdegraadse grafiek sny die x-as by x=6, x=−3 en x=−1, het ʼn positiewe voorste koëffisiënt, en sny die y-as by y=−18] Gebruik die sketch om die vergelyking van die derdegraadse funksie in gefaktoriseerde vorm y=(x−6)(x+3)(x+1) te skryf, en verifieer dan dat die y-afsnit met die diagram ooreenstem.', answer: '', checkMode: 'auto', correctAnswer: 'y=-18, stem ooreen', correctAnswers: ['y=-18, stem ooreen', '-18', 'y-afsnit is -18, wat met die diagram ooreenstem'], explanation: 'Vervang x=0 in y=(x−6)(x+3)(x+1): y=(−6)(3)(1)=−18.\nDit stem ooreen met die y-afsnit van −18 wat in die diagram getoon word, wat die vergelyking bevestig ✓' },
+        { difficulty: 'Hard', question: 'Thabo teken y=(x−4)(x+1)(x−1) en beweer dat die grafiek die x-as by x=−1 raak (maar nie sny nie). Is hy korrek? Verduidelik, en gee dan al drie x-afsnitte en die y-afsnit.', answer: '', checkMode: 'auto', correctAnswer: 'Nee, sny by al drie; x=4,-1,1; y=4', correctAnswers: ['Nee, sny by al drie; x=4,-1,1; y=4', 'Nee; x=4, x=-1, x=1; y-afsnit=4'], explanation: 'Thabo is verkeerd — al drie faktore (x−4), (x+1) en (x−1) is verskillend met multiplisiteit 1, dus SNY die grafiek die x-as by al drie afsnitte, ook by x=−1.\nx-afsnitte: x=4, x=−1, x=1.\ny-afsnit: y=(−4)(1)(−1)=4 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Fantasties! Jy kan die Faktorstelling, derdegraadse faktorisering, vergelykings oplos en grafieksketse met selfvertroue toepas.' },
+        { minScore: 14, message: 'Puik werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 8, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 20,
     messages: [

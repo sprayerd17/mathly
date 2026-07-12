@@ -626,4 +626,576 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  // ═════════════════════════════════════════════════════════════════════════
+  // PRACTICE SETS — bivariate data: scatter plots, least squares regression
+  // line (y = a + bx), correlation coefficient r, residuals.
+  // Phase 1 (content only): questions that will eventually carry a scatter
+  // plot diagram are phrased self-contained — every coordinate pair or
+  // regression detail needed is stated in the question text itself. No
+  // diagramSvg fields are added in this phase.
+  //
+  // Skill block layout (repeats in each of the 3 sets, Easy → Hard):
+  //   Block A (Q1–3)   Reading/plotting scatter plot points, identifying
+  //                     independent/dependent variable
+  //   Block B (Q4–7)   Interpreting correlation strength/direction from r
+  //   Block C (Q8–10)  Using a given regression line to predict y from x
+  //   Block D (Q11–13) Residuals (actual y − predicted y)
+  //   Block E (Q14–16) Combined prediction + reliability judgement using r
+  //   Block F (Q17–20) Regression line properties, extrapolation danger,
+  //                     comparing correlations, correlation vs causation
+  // ═════════════════════════════════════════════════════════════════════════
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // ── Block A: reading scatter plot points / variables (Q1–3) ────────
+        {
+          difficulty: 'Easy',
+          question: 'A scatter plot compares the number of hours a learner studies (x) and their test mark out of 100 (y). Which variable is the independent variable?',
+          answer: 'Hours studied (x)',
+          checkMode: 'auto',
+          correctAnswer: 'hoursstudied',
+          correctAnswers: ['hours studied', 'hours studied (x)', 'x', 'hours'],
+          explanation: 'The independent variable is the one we control or choose — hours studied — plotted on the x-axis. The test mark depends on it, so it is the dependent variable (y).',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">20</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">40</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">60</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">80</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">100</text><circle cx="115" cy="201" r="4" fill="#2563eb"/><circle cx="145" cy="168" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="235" cy="108.6" r="4" fill="#2563eb"/><circle cx="295" cy="66.8" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Hours studied (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Test mark (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Two data points on a scatter plot of hours studied (x) vs test mark (y) are plotted at (4, 68) and (7, 74). Which learner studied for more hours, and by how many more hours?',
+          answer: 'The learner at (7, 74) studied more, by 3 hours',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          correctAnswers: ['3', '3 hours', '(7,74) by 3 hours'],
+          explanation: 'The x-values (hours studied) are 4 and 7. The learner at (7, 74) studied more, and the difference is 7 − 4 = 3 hours.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">20</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">40</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">60</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">80</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">100</text><circle cx="175" cy="95.4" r="4" fill="#2563eb"/><circle cx="265" cy="82.2" r="4" fill="#2563eb"/><text x="175" y="83.4" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(4, 68)</text><text x="265" y="70.2" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(7, 74)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Hours studied (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Test mark (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'A scatter plot shows the points (2, 20), (3, 35), (5, 55), (6, 62), (8, 81) for hours studied (x) vs test mark (y). As x increases across these points, what happens to y?',
+          answer: 'y increases as x increases',
+          checkMode: 'auto',
+          correctAnswer: 'yincreases',
+          correctAnswers: ['y increases', 'increases', 'y increases as x increases'],
+          explanation: 'Reading the points in order of increasing x (2, 3, 5, 6, 8), the y-values also increase (20, 35, 55, 62, 81) — the points trend upward, suggesting a positive relationship.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">20</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">40</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">60</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">80</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">100</text><circle cx="115" cy="201" r="4" fill="#2563eb"/><circle cx="145" cy="168" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="235" cy="108.6" r="4" fill="#2563eb"/><circle cx="295" cy="66.8" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Hours studied (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Test mark (y)</text></svg>',
+        },
+
+        // ── Block B: interpreting r (Q4–7) ──────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'A data set has correlation coefficient r = 0.95. Is this a positive or negative correlation?',
+          answer: 'Positive',
+          checkMode: 'auto',
+          correctAnswer: 'positive',
+          correctAnswers: ['positive', 'positive correlation'],
+          explanation: 'Since r = 0.95 is greater than 0, the correlation is positive — as x increases, y tends to increase.',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'A data set has correlation coefficient r = 0.82. Describe the strength of this correlation.',
+          answer: 'Strong (positive) correlation',
+          checkMode: 'auto',
+          correctAnswer: 'strong',
+          correctAnswers: ['strong', 'strong correlation', 'strong positive correlation'],
+          explanation: 'r = 0.82 lies between 0.75 and 1, which indicates a strong linear correlation.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Two data sets have correlation coefficients r = 0.4 and r = −0.9. Which one shows the stronger linear relationship?',
+          answer: 'The data set with r = −0.9',
+          checkMode: 'auto',
+          correctAnswer: 'r=-0.9',
+          correctAnswers: ['r = -0.9', '-0.9', 'the one with r=-0.9', 'r=-0.9'],
+          explanation: 'Strength is measured by the size of r regardless of sign. |−0.9| = 0.9 is greater than |0.4| = 0.4, so r = −0.9 shows the stronger (negative) linear relationship.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A scatter plot of ice cream sales (x) vs daily temperature (y) has r = 0.05. What does this suggest about the linear relationship between the variables?',
+          answer: 'There is little to no linear correlation between the variables',
+          checkMode: 'auto',
+          correctAnswer: 'nolinearcorrelation',
+          correctAnswers: ['no linear correlation', 'little to no correlation', 'no correlation', 'very weak correlation'],
+          explanation: 'r = 0.05 is very close to 0, indicating almost no linear relationship between the two variables.',
+        },
+
+        // ── Block C: regression line prediction (Q8–10) ─────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'The least squares regression line for hours studied (x) vs test mark (y) is y = 12 + 2.5x. Predict the test mark for a learner who studies for 8 hours.',
+          answer: '32',
+          checkMode: 'auto',
+          correctAnswer: '32',
+          explanation: 'y = 12 + 2.5(8) = 12 + 20 = 32.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the same regression line y = 12 + 2.5x, a learner who actually studied for 8 hours scored 35 in the test. Find the residual (actual y − predicted y) for this learner.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'Predicted y = 12 + 2.5(8) = 32. Residual = actual − predicted = 35 − 32 = 3.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A regression line for distance travelled (x, in km) vs fuel used (y, in litres) is y = 1.5 + 0.08x. Predict the fuel used for a trip of 200 km.',
+          answer: '17.5 litres',
+          checkMode: 'auto',
+          correctAnswer: '17.5',
+          correctAnswers: ['17.5', '17.5 litres', '17,5'],
+          explanation: 'y = 1.5 + 0.08(200) = 1.5 + 16 = 17.5 litres.',
+        },
+
+        // ── Block D: residuals (Q11–13) ──────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'A regression line is y = 5 + 3x. For x = 6, the actual observed value is y = 27. Calculate the residual.',
+          answer: '4',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          explanation: 'Predicted y = 5 + 3(6) = 5 + 18 = 23. Residual = actual − predicted = 27 − 23 = 4.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'A regression line is y = 40 − 1.5x. For x = 10, the actual observed value is y = 22. Calculate the residual and state whether the actual point lies above or below the regression line.',
+          answer: 'Residual = −3; the point lies below the regression line',
+          checkMode: 'auto',
+          correctAnswer: '-3below',
+          correctAnswers: ['-3, below', '-3 below', 'residual -3 below the line'],
+          explanation: 'Predicted y = 40 − 1.5(10) = 40 − 15 = 25. Residual = actual − predicted = 22 − 25 = −3. A negative residual means the actual point lies below the regression line.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Zanele says that a residual of 0 means the regression line is a perfect fit for the entire data set. Is she correct? Explain.',
+          answer: 'No — a residual of 0 only means that one particular point lies exactly on the line. Other points in the data set can still have large residuals, so the overall fit must be judged using all residuals (or r), not a single point.',
+          checkMode: 'self',
+        },
+
+        // ── Block E: combined prediction + reliability (Q14–16) ─────────────
+        {
+          difficulty: 'Medium',
+          question: 'A regression line for hours of extra tutoring (x) vs improvement in test mark (y, out of 100) is y = 20 + 1.8x, with correlation coefficient r = 0.93. Predict the improvement in test mark for a learner who receives 15 hours of tutoring.',
+          answer: '47',
+          checkMode: 'auto',
+          correctAnswer: '47',
+          explanation: 'y = 20 + 1.8(15) = 20 + 27 = 47.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Using the regression line y = 20 + 1.8x and correlation coefficient r = 0.93, a data point at x = 15 has an actual y-value of 50. Calculate the residual and comment on whether r = 0.93 suggests this regression line is generally reliable for prediction.',
+          answer: 'Residual = 3. Since r = 0.93 is close to 1, this indicates a strong positive correlation, so the regression line is generally a reliable model for prediction.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A second data set has regression line y = 20 + 1.8x but correlation coefficient r = 0.21. Sipho uses this line to predict y when x = 15, getting y = 47, and claims this prediction is just as trustworthy as one from a data set with r = 0.93. Is he correct? Explain.',
+          answer: 'No — even though the calculation y = 47 is arithmetically correct, r = 0.21 indicates a very weak linear correlation, meaning the data points are widely scattered around the line. The prediction is far less reliable than one made using a data set with r = 0.93, which shows a strong linear pattern.',
+          checkMode: 'self',
+        },
+
+        // ── Block F: regression line properties / extrapolation / causation (Q17–20) ──
+        {
+          difficulty: 'Medium-Hard',
+          question: 'A data set of hours studied (x) has x-values ranging from 1 to 10. The regression line is y = 12 + 2.5x. Thabo wants to use this line to predict the test mark for a learner who studied for 40 hours. Explain why this prediction would be unreliable.',
+          answer: 'x = 40 is far outside the original data range (1 to 10). Using the regression line to predict values far beyond the range of the original data is called extrapolation, and it is unreliable because there is no evidence the linear trend continues beyond the observed data.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A data set of hours studied (x) vs test mark (y) has mean x̄ = 5.5 hours and mean ȳ = 51.75 marks. Lerato says the least squares regression line for this data must pass through the point (5.5, 51.75). Is she correct? Explain.',
+          answer: 'Yes — the least squares regression line always passes through the mean point (x̄, ȳ) of the data. This is a mathematical property of how the line is calculated.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A researcher finds a strong positive correlation (r = 0.88) between the number of fire engines sent to a fire and the amount of damage caused. She concludes that fire engines cause more damage. Explain the flaw in her reasoning.',
+          answer: 'Correlation does not imply causation. A likely explanation is a third (confounding) variable — the size of the fire. Bigger fires cause more damage AND require more fire engines to be sent, which creates the correlation without the fire engines causing the damage.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A scatter plot of x vs y shows the points (1, 2), (2, 8), (3, 18), (4, 32), (5, 50) forming a clear curved (U-shaped) pattern, not a straight line. The correlation coefficient is calculated as r = 0.98. Amahle says this high r value proves a straight line is the best model for this data. Is she correct? Explain.',
+          answer: 'No — r measures only the strength of a LINEAR relationship. Even though r = 0.98 is close to 1, the scatter plot clearly shows a curved (non-linear) pattern. A straight line would not be an appropriate model here despite the high r value; always check the scatter plot shape, not just r.',
+          checkMode: 'self',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered scatter plots, regression lines and correlation.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers/contexts
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // ── Block A: reading scatter plot points / variables (Q1–3) ────────
+        {
+          difficulty: 'Easy',
+          question: 'A scatter plot compares the number of adverts a shop runs per week (x) and its weekly sales in rand (y). Which variable is the dependent variable?',
+          answer: 'Weekly sales (y)',
+          checkMode: 'auto',
+          correctAnswer: 'weeklysales',
+          correctAnswers: ['weekly sales', 'weekly sales (y)', 'y', 'sales'],
+          explanation: 'The dependent variable is the one that responds to changes in the other variable — weekly sales depends on the number of adverts run, so it is plotted on the y-axis.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="130" y1="25" x2="130" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="205" y1="25" x2="205" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="280" y1="25" x2="280" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="190" x2="355" y2="190" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="135" x2="355" y2="135" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="80" x2="355" y2="80" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="130" y1="245" x2="130" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="130" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="280" y1="245" x2="280" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="280" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="190" x2="55" y2="190" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="194" font-size="11" fill="#374151" text-anchor="end">5000</text><line x1="50" y1="135" x2="55" y2="135" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="139" font-size="11" fill="#374151" text-anchor="end">10000</text><line x1="50" y1="80" x2="55" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="84" font-size="11" fill="#374151" text-anchor="end">15000</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">20000</text><circle cx="92.5" cy="190" r="4" fill="#2563eb"/><circle cx="130" cy="162.5" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="242.5" cy="96.5" r="4" fill="#2563eb"/><circle cx="317.5" cy="58" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Adverts run per week (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Weekly sales (R) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Two data points on a scatter plot of adverts run (x) vs weekly sales in rand (y) are plotted at (6, 14 200) and (6, 15 900). These two shops ran the same number of adverts — what is the difference in their weekly sales?',
+          answer: 'R1 700',
+          checkMode: 'auto',
+          correctAnswer: '1700',
+          correctAnswers: ['1700', 'R1700', 'R1 700'],
+          explanation: 'Both points have x = 6 adverts. The difference in the y-values (sales) is 15 900 − 14 200 = R1 700.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="130" y1="25" x2="130" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="205" y1="25" x2="205" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="280" y1="25" x2="280" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="190" x2="355" y2="190" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="135" x2="355" y2="135" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="80" x2="355" y2="80" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="130" y1="245" x2="130" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="130" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="280" y1="245" x2="280" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="280" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="190" x2="55" y2="190" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="194" font-size="11" fill="#374151" text-anchor="end">5000</text><line x1="50" y1="135" x2="55" y2="135" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="139" font-size="11" fill="#374151" text-anchor="end">10000</text><line x1="50" y1="80" x2="55" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="84" font-size="11" fill="#374151" text-anchor="end">15000</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">20000</text><circle cx="280" cy="88.8" r="4" fill="#2563eb"/><circle cx="280" cy="70.1" r="4" fill="#2563eb"/><text x="280" y="104.8" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(6, 14 200)</text><text x="280" y="58.1" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(6, 15 900)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Adverts run per week (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Weekly sales (R) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'A scatter plot shows the points (1, 5 000), (2, 7 500), (4, 11 000), (5, 13 500), (7, 17 000) for adverts run (x) vs weekly sales (y). As x increases across these points, what happens to y?',
+          answer: 'y increases as x increases',
+          checkMode: 'auto',
+          correctAnswer: 'yincreases',
+          correctAnswers: ['y increases', 'increases', 'y increases as x increases'],
+          explanation: 'Reading the points in order of increasing x (1, 2, 4, 5, 7), the y-values also increase (5000, 7500, 11000, 13500, 17000) — the points trend upward, suggesting a positive relationship.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="130" y1="25" x2="130" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="205" y1="25" x2="205" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="280" y1="25" x2="280" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="190" x2="355" y2="190" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="135" x2="355" y2="135" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="80" x2="355" y2="80" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="130" y1="245" x2="130" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="130" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="280" y1="245" x2="280" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="280" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="190" x2="55" y2="190" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="194" font-size="11" fill="#374151" text-anchor="end">5000</text><line x1="50" y1="135" x2="55" y2="135" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="139" font-size="11" fill="#374151" text-anchor="end">10000</text><line x1="50" y1="80" x2="55" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="84" font-size="11" fill="#374151" text-anchor="end">15000</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">20000</text><circle cx="92.5" cy="190" r="4" fill="#2563eb"/><circle cx="130" cy="162.5" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="242.5" cy="96.5" r="4" fill="#2563eb"/><circle cx="317.5" cy="58" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Adverts run per week (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Weekly sales (R) (y)</text></svg>',
+        },
+
+        // ── Block B: interpreting r (Q4–7) ──────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'A data set has correlation coefficient r = −0.78. Is this a positive or negative correlation?',
+          answer: 'Negative',
+          checkMode: 'auto',
+          correctAnswer: 'negative',
+          correctAnswers: ['negative', 'negative correlation'],
+          explanation: 'Since r = −0.78 is less than 0, the correlation is negative — as x increases, y tends to decrease.',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'A data set has correlation coefficient r = −0.6. Describe the strength of this correlation.',
+          answer: 'Moderate (negative) correlation',
+          checkMode: 'auto',
+          correctAnswer: 'moderate',
+          correctAnswers: ['moderate', 'moderate correlation', 'moderate negative correlation'],
+          explanation: '|r| = 0.6 lies between 0.5 and 0.75, which indicates a moderate linear correlation.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Two data sets have correlation coefficients r = −0.85 and r = 0.3. Which one shows the stronger linear relationship?',
+          answer: 'The data set with r = −0.85',
+          checkMode: 'auto',
+          correctAnswer: 'r=-0.85',
+          correctAnswers: ['r = -0.85', '-0.85', 'the one with r=-0.85', 'r=-0.85'],
+          explanation: 'Strength is measured by the size of r regardless of sign. |−0.85| = 0.85 is greater than |0.3| = 0.3, so r = −0.85 shows the stronger (negative) linear relationship.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A scatter plot of shoe size (x) vs monthly income (y) has r = 0.02. What does this suggest about the linear relationship between the variables?',
+          answer: 'There is little to no linear correlation between the variables',
+          checkMode: 'auto',
+          correctAnswer: 'nolinearcorrelation',
+          correctAnswers: ['no linear correlation', 'little to no correlation', 'no correlation', 'very weak correlation'],
+          explanation: 'r = 0.02 is very close to 0, indicating almost no linear relationship between the two variables.',
+        },
+
+        // ── Block C: regression line prediction (Q8–10) ─────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'The least squares regression line for adverts run (x) vs weekly sales in hundreds of rand (y) is y = 8 + 3.2x. Predict the weekly sales (in hundreds of rand) when 9 adverts are run.',
+          answer: '36.8',
+          checkMode: 'auto',
+          correctAnswer: '36.8',
+          correctAnswers: ['36.8', '36,8'],
+          explanation: 'y = 8 + 3.2(9) = 8 + 28.8 = 36.8 (hundreds of rand).',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the same regression line y = 8 + 3.2x, a shop that actually ran 9 adverts had weekly sales of 40 (hundreds of rand). Find the residual (actual y − predicted y) for this shop.',
+          answer: '3.2',
+          checkMode: 'auto',
+          correctAnswer: '3.2',
+          correctAnswers: ['3.2', '3,2'],
+          explanation: 'Predicted y = 8 + 3.2(9) = 36.8. Residual = actual − predicted = 40 − 36.8 = 3.2.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A regression line for plot size in m² (x) vs house price in thousands of rand (y) is y = 300 + 0.6x. Predict the house price for a plot of 250 m².',
+          answer: '450 (thousand rand)',
+          checkMode: 'auto',
+          correctAnswer: '450',
+          explanation: 'y = 300 + 0.6(250) = 300 + 150 = 450 (thousand rand).',
+        },
+
+        // ── Block D: residuals (Q11–13) ──────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'A regression line is y = 10 + 4x. For x = 5, the actual observed value is y = 33. Calculate the residual.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'Predicted y = 10 + 4(5) = 10 + 20 = 30. Residual = actual − predicted = 33 − 30 = 3.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'A regression line is y = 60 − 2x. For x = 12, the actual observed value is y = 33. Calculate the residual and state whether the actual point lies above or below the regression line.',
+          answer: 'Residual = −3; the point lies below the regression line',
+          checkMode: 'auto',
+          correctAnswer: '-3below',
+          correctAnswers: ['-3, below', '-3 below', 'residual -3 below the line'],
+          explanation: 'Predicted y = 60 − 2(12) = 60 − 24 = 36. Residual = actual − predicted = 33 − 36 = −3. A negative residual means the actual point lies below the regression line.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Bongani says that if most residuals in a data set are close to zero, the regression line must have r close to 1. Is he correct? Explain.',
+          answer: 'Yes, broadly correct — small residuals mean the observed points lie close to the regression line, which is exactly what a strong correlation (|r| close to 1) describes. Large, scattered residuals would instead indicate a weak correlation (|r| close to 0).',
+          checkMode: 'self',
+        },
+
+        // ── Block E: combined prediction + reliability (Q14–16) ─────────────
+        {
+          difficulty: 'Medium',
+          question: 'A regression line for number of employees trained (x) vs monthly output increase (y, in units) is y = 100 + 4x, with correlation coefficient r = 0.89. Predict the output increase when 6 employees are trained.',
+          answer: '124',
+          checkMode: 'auto',
+          correctAnswer: '124',
+          explanation: 'y = 100 + 4(6) = 100 + 24 = 124.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Using the regression line y = 100 + 4x and correlation coefficient r = 0.89, a data point at x = 6 has an actual y-value of 130. Calculate the residual and comment on whether r = 0.89 suggests this regression line is generally reliable for prediction.',
+          answer: 'Residual = 6. Since r = 0.89 is close to 1, this indicates a strong positive correlation, so the regression line is generally a reliable model for prediction.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A second data set has regression line y = 100 + 4x but correlation coefficient r = 0.15. Nomvula uses this line to predict y when x = 6, getting y = 124, and claims this prediction is just as trustworthy as one from a data set with r = 0.89. Is she correct? Explain.',
+          answer: 'No — even though the calculation y = 124 is arithmetically correct, r = 0.15 indicates a very weak linear correlation, meaning the data points are widely scattered around the line. The prediction is far less reliable than one made using a data set with r = 0.89, which shows a strong linear pattern.',
+          checkMode: 'self',
+        },
+
+        // ── Block F: regression line properties / extrapolation / causation (Q17–20) ──
+        {
+          difficulty: 'Medium-Hard',
+          question: 'A data set of adverts run (x) has x-values ranging from 1 to 10. The regression line is y = 8 + 3.2x. Kabelo wants to use this line to predict weekly sales for a shop that runs 60 adverts. Explain why this prediction would be unreliable.',
+          answer: 'x = 60 is far outside the original data range (1 to 10). Using the regression line to predict values far beyond the range of the original data is called extrapolation, and it is unreliable because there is no evidence the linear trend continues beyond the observed data.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A data set of adverts run (x) vs weekly sales (y) has mean x̄ = 4 adverts and mean ȳ = 20.8 (hundreds of rand). Aisha says the least squares regression line for this data must pass through the point (4, 20.8). Is she correct? Explain.',
+          answer: 'Yes — the least squares regression line always passes through the mean point (x̄, ȳ) of the data. This is a mathematical property of how the line is calculated.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A researcher finds a strong positive correlation (r = 0.91) between monthly ice cream sales and the number of drowning incidents at beaches. He concludes that ice cream causes drowning. Explain the flaw in his reasoning.',
+          answer: 'Correlation does not imply causation. A likely explanation is a third (confounding) variable — hot weather. Hot weather increases both ice cream sales AND the number of people swimming (and therefore drowning risk), which creates the correlation without ice cream causing drowning.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A scatter plot of x vs y shows the points (1, 3), (2, 10), (3, 21), (4, 36), (5, 55) forming a clear curved (U-shaped) pattern, not a straight line. The correlation coefficient is calculated as r = 0.97. Kagiso says this high r value proves a straight line is the best model for this data. Is he correct? Explain.',
+          answer: 'No — r measures only the strength of a LINEAR relationship. Even though r = 0.97 is close to 1, the scatter plot clearly shows a curved (non-linear) pattern. A straight line would not be an appropriate model here despite the high r value; always check the scatter plot shape, not just r.',
+          checkMode: 'self',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Excellent! You can confidently interpret scatter plots, regression lines and correlation.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, more real-world contexts + reasoning
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // ── Block A: reading scatter plot points / variables (Q1–3) ────────
+        {
+          difficulty: 'Easy',
+          question: 'A scatter plot compares a car\'s age in years (x) and its resale value in thousands of rand (y). Which variable is the independent variable?',
+          answer: 'Age of the car (x)',
+          checkMode: 'auto',
+          correctAnswer: 'age',
+          correctAnswers: ['age', 'age of the car', 'age of the car (x)', 'x'],
+          explanation: 'The independent variable is the one we control or choose — the car\'s age — plotted on the x-axis. The resale value depends on it, so it is the dependent variable (y).',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">50</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">100</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">150</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">200</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">250</text><circle cx="85" cy="51.4" r="4" fill="#2563eb"/><circle cx="115" cy="69" r="4" fill="#2563eb"/><circle cx="175" cy="99.8" r="4" fill="#2563eb"/><circle cx="235" cy="130.6" r="4" fill="#2563eb"/><circle cx="295" cy="161.4" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Car age (years) (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Resale value (R\'000) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Two data points on a scatter plot of car age in years (x) vs resale value in thousands of rand (y) are plotted at (5, 140) and (9, 95). Which car has the higher resale value, and by how much (in thousands of rand)?',
+          answer: 'The 5-year-old car, by 45 (thousand rand)',
+          checkMode: 'auto',
+          correctAnswer: '45',
+          correctAnswers: ['45', '5 year old car by 45', 'the car at (5,140) by 45'],
+          explanation: 'The y-values (resale value) are 140 and 95. The car at (5, 140) has the higher resale value, and the difference is 140 − 95 = 45 (thousand rand).',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">50</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">100</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">150</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">200</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">250</text><circle cx="205" cy="121.8" r="4" fill="#2563eb"/><circle cx="325" cy="161.4" r="4" fill="#2563eb"/><text x="205" y="109.8" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(5, 140)</text><text x="325" y="149.4" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(9, 95)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Car age (years) (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Resale value (R\'000) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'A scatter plot shows the points (1, 220), (2, 200), (4, 165), (6, 130), (8, 95) for car age in years (x) vs resale value in thousands of rand (y). As x increases across these points, what happens to y?',
+          answer: 'y decreases as x increases',
+          checkMode: 'auto',
+          correctAnswer: 'ydecreases',
+          correctAnswers: ['y decreases', 'decreases', 'y decreases as x increases'],
+          explanation: 'Reading the points in order of increasing x (1, 2, 4, 6, 8), the y-values decrease (220, 200, 165, 130, 95) — the points trend downward, suggesting a negative relationship.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">50</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">100</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">150</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">200</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">250</text><circle cx="85" cy="51.4" r="4" fill="#2563eb"/><circle cx="115" cy="69" r="4" fill="#2563eb"/><circle cx="175" cy="99.8" r="4" fill="#2563eb"/><circle cx="235" cy="130.6" r="4" fill="#2563eb"/><circle cx="295" cy="161.4" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Car age (years) (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Resale value (R\'000) (y)</text></svg>',
+        },
+
+        // ── Block B: interpreting r (Q4–7) ──────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'A data set has correlation coefficient r = −0.97. Is this a positive or negative correlation?',
+          answer: 'Negative',
+          checkMode: 'auto',
+          correctAnswer: 'negative',
+          correctAnswers: ['negative', 'negative correlation'],
+          explanation: 'Since r = −0.97 is less than 0, the correlation is negative — as x increases, y tends to decrease.',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'A data set has correlation coefficient r = 0.68. Describe the strength of this correlation.',
+          answer: 'Moderate (positive) correlation',
+          checkMode: 'auto',
+          correctAnswer: 'moderate',
+          correctAnswers: ['moderate', 'moderate correlation', 'moderate positive correlation'],
+          explanation: 'r = 0.68 lies between 0.5 and 0.75, which indicates a moderate linear correlation.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Two data sets have correlation coefficients r = 0.55 and r = −0.97. Which one shows the stronger linear relationship?',
+          answer: 'The data set with r = −0.97',
+          checkMode: 'auto',
+          correctAnswer: 'r=-0.97',
+          correctAnswers: ['r = -0.97', '-0.97', 'the one with r=-0.97', 'r=-0.97'],
+          explanation: 'Strength is measured by the size of r regardless of sign. |−0.97| = 0.97 is greater than |0.55| = 0.55, so r = −0.97 shows the stronger (negative) linear relationship.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A scatter plot of a person\'s birth month (x) vs their height (y) has r = −0.03. What does this suggest about the linear relationship between the variables?',
+          answer: 'There is little to no linear correlation between the variables',
+          checkMode: 'auto',
+          correctAnswer: 'nolinearcorrelation',
+          correctAnswers: ['no linear correlation', 'little to no correlation', 'no correlation', 'very weak correlation'],
+          explanation: 'r = −0.03 is very close to 0, indicating almost no linear relationship between the two variables.',
+        },
+
+        // ── Block C: regression line prediction (Q8–10) ─────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'The least squares regression line for practice hours per week (x) vs competition score out of 100 (y) is y = 15 + 1.6x. Predict the competition score for an athlete who practises 20 hours per week.',
+          answer: '47',
+          checkMode: 'auto',
+          correctAnswer: '47',
+          explanation: 'y = 15 + 1.6(20) = 15 + 32 = 47.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the same regression line y = 15 + 1.6x, an athlete who actually practised 20 hours scored 52 in competition. Find the residual (actual y − predicted y) for this athlete.',
+          answer: '5',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          explanation: 'Predicted y = 15 + 1.6(20) = 47. Residual = actual − predicted = 52 − 47 = 5.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A regression line for temperature in °C (x) vs cold drink sales in litres (y) is y = 40 + 5.5x. Predict the cold drink sales when the temperature is 28°C.',
+          answer: '194 litres',
+          checkMode: 'auto',
+          correctAnswer: '194',
+          explanation: 'y = 40 + 5.5(28) = 40 + 154 = 194 litres.',
+        },
+
+        // ── Block D: residuals (Q11–13) ──────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'A regression line is y = 8 + 6x. For x = 4, the actual observed value is y = 35. Calculate the residual.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'Predicted y = 8 + 6(4) = 8 + 24 = 32. Residual = actual − predicted = 35 − 32 = 3.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'A regression line is y = 220 − 8x. For x = 15, the actual observed value is y = 92. Calculate the residual and state whether the actual point lies above or below the regression line.',
+          answer: 'Residual = −8; the point lies below the regression line',
+          checkMode: 'auto',
+          correctAnswer: '-8below',
+          correctAnswers: ['-8, below', '-8 below', 'residual -8 below the line'],
+          explanation: 'Predicted y = 220 − 8(15) = 220 − 120 = 100. Residual = actual − predicted = 92 − 100 = −8. A negative residual means the actual point lies below the regression line.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Precious says that residuals can never be negative, since a residual just measures a "distance" from the line. Is she correct? Explain.',
+          answer: 'No — a residual is calculated as actual y minus predicted y, so it can be positive (point above the line), negative (point below the line), or zero (point exactly on the line). Only the size (absolute value) of the residual represents a distance; the sign tells you the direction.',
+          checkMode: 'self',
+        },
+
+        // ── Block E: combined prediction + reliability (Q14–16) ─────────────
+        {
+          difficulty: 'Medium',
+          question: 'A regression line for hours of sunlight per day (x) vs plant growth in mm (y) is y = 50 + 6x, with correlation coefficient r = 0.87. Predict the plant growth for 7 hours of sunlight per day.',
+          answer: '92',
+          checkMode: 'auto',
+          correctAnswer: '92',
+          explanation: 'y = 50 + 6(7) = 50 + 42 = 92.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Using the regression line y = 50 + 6x and correlation coefficient r = 0.87, a data point at x = 7 has an actual y-value of 85. Calculate the residual and comment on whether r = 0.87 suggests this regression line is generally reliable for prediction.',
+          answer: 'Residual = −7. Since r = 0.87 is close to 1, this indicates a strong positive correlation, so the regression line is generally a reliable model for prediction.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A second data set has regression line y = 50 + 6x but correlation coefficient r = 0.18. Thandiwe uses this line to predict y when x = 7, getting y = 92, and claims this prediction is just as trustworthy as one from a data set with r = 0.87. Is she correct? Explain.',
+          answer: 'No — even though the calculation y = 92 is arithmetically correct, r = 0.18 indicates a very weak linear correlation, meaning the data points are widely scattered around the line. The prediction is far less reliable than one made using a data set with r = 0.87, which shows a strong linear pattern.',
+          checkMode: 'self',
+        },
+
+        // ── Block F: regression line properties / extrapolation / causation (Q17–20) ──
+        {
+          difficulty: 'Medium-Hard',
+          question: 'A data set of car age in years (x) has x-values ranging from 1 to 10. The regression line is y = 220 − 8x. Given that resale value cannot be negative, explain why using this line to predict resale value for a 40-year-old car would be unreliable.',
+          answer: 'x = 40 is far outside the original data range (1 to 10). Using the regression line to predict values far beyond the range of the original data is called extrapolation, and it is unreliable — indeed, y = 220 − 8(40) = −100, a negative resale value, which is impossible and shows the linear trend cannot continue indefinitely.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A data set of practice hours (x) vs competition score (y) has mean x̄ = 11 hours and mean ȳ = 32.6. Karabo says the least squares regression line for this data must pass through the point (11, 32.6). Is he correct? Explain.',
+          answer: 'Yes — the least squares regression line always passes through the mean point (x̄, ȳ) of the data. This is a mathematical property of how the line is calculated.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A researcher finds a strong positive correlation (r = 0.94) between the number of firefighters at a scene and the amount of smoke visible. She concludes that having more firefighters causes more smoke. Explain the flaw in her reasoning.',
+          answer: 'Correlation does not imply causation. A likely explanation is a third (confounding) variable — the size/intensity of the fire. A bigger, more intense fire produces more smoke AND requires more firefighters to be sent, which creates the correlation without the firefighters causing the smoke.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A scatter plot of x vs y shows the points (1, 4), (2, 15), (3, 32), (4, 55), (5, 84) forming a clear curved pattern, not a straight line. The correlation coefficient is calculated as r = 0.96. Boitumelo says this high r value proves a straight line is the best model for this data. Is she correct? Explain.',
+          answer: 'No — r measures only the strength of a LINEAR relationship. Even though r = 0.96 is close to 1, the scatter plot clearly shows a curved (non-linear) pattern. A straight line would not be an appropriate model here despite the high r value; always check the scatter plot shape, not just r.',
+          checkMode: 'self',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantastic! You can apply scatter plots, regression lines and correlation to real-world problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try the word problems again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

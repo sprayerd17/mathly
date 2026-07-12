@@ -750,6 +750,131 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video demonstrating optimisation using calculus — fencing problem and falling object worked through step by step" />',
     },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-2 First principles (Easy) | 3-6 Power rule differentiation (Easy-Medium) |
+    // 7-10 Equation of a tangent (Medium) | 11-13 Stationary points (Medium-Hard) |
+    // 14-16 Curve-sketching feature identification (Hard) | 17-19 Optimisation word problems (Hard)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = x² from first principles.", answer: "f'(x) = 2x", checkMode: 'auto', correctAnswer: '2x', correctAnswers: ['2x', "f'(x)=2x", "f'(x) = 2x"], explanation: "f'(x) = lim(h→0) [(x+h)²−x²]/h = lim(h→0) [2xh+h²]/h = lim(h→0) (2x+h) = 2x ✓" },
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = 5x + 2 from first principles.", answer: "f'(x) = 5", checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', "f'(x)=5", "f'(x) = 5"], explanation: "f'(x) = lim(h→0) [(5(x+h)+2)−(5x+2)]/h = lim(h→0) 5h/h = lim(h→0) 5 = 5 ✓" },
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = x² − 4x from first principles.", answer: "f'(x) = 2x − 4", checkMode: 'auto', correctAnswer: '2x-4', correctAnswers: ['2x-4', '2x − 4', '2x-4', "f'(x)=2x-4"], explanation: "f(x+h) = (x+h)²−4(x+h) = x²+2xh+h²−4x−4h. Subtract f(x): 2xh+h²−4h. Divide by h: 2x+h−4. As h→0: 2x−4 ✓" },
+
+        { difficulty: 'Easy', question: 'Differentiate f(x) = 4x³ − 2x² + 6x − 5.', answer: "f'(x) = 12x² − 4x + 6", checkMode: 'auto', correctAnswer: '12x²-4x+6', correctAnswers: ['12x²-4x+6', '12x^2-4x+6', '12x² − 4x + 6', '12x^2 - 4x + 6'], explanation: 'Apply the power rule to each term: d/dx(4x³)=12x², d/dx(−2x²)=−4x, d/dx(6x)=6, d/dx(−5)=0. f\'(x)=12x²−4x+6 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Differentiate f(x) = (x² + 5)/x by simplifying first.', answer: "f'(x) = 1 − 5/x²", checkMode: 'auto', correctAnswer: '1-5/x²', correctAnswers: ['1-5/x²', '1-5/x^2', '1 − 5/x²', '1 - 5/x^2'], explanation: 'Simplify: (x²+5)/x = x+5x⁻¹. Differentiate: d/dx(x)=1, d/dx(5x⁻¹)=−5x⁻². f\'(x)=1−5x⁻²=1−5/x² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Differentiate f(x) = (2x + 1)(x − 4).', answer: "f'(x) = 4x − 7", checkMode: 'auto', correctAnswer: '4x-7', correctAnswers: ['4x-7', '4x − 7'], explanation: 'Expand first: (2x+1)(x−4) = 2x²−8x+x−4 = 2x²−7x−4. Differentiate: f\'(x)=4x−7 ✓' },
+        { difficulty: 'Medium', question: 'Differentiate f(x) = (4x − 3)², expanding first.', answer: "f'(x) = 32x − 24", checkMode: 'auto', correctAnswer: '32x-24', correctAnswers: ['32x-24', '32x − 24'], explanation: 'Expand: (4x−3)² = 16x²−24x+9. Differentiate: f\'(x) = 32x−24 ✓' },
+
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x² at the point (2, 4).', answer: 'y = 4x − 4', checkMode: 'auto', correctAnswer: 'y=4x-4', correctAnswers: ['y=4x-4', 'y = 4x - 4', 'y=4x−4', '4x-4'], explanation: "f'(x)=2x. f'(2)=4. Gradient m=4. Tangent: y−4=4(x−2) → y=4x−8+4=4x−4 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x³ − 3x at x = 2.', answer: 'y = 9x − 16', checkMode: 'auto', correctAnswer: 'y=9x-16', correctAnswers: ['y=9x-16', 'y = 9x - 16', 'y=9x−16'], explanation: "f(2)=8−6=2. Point (2,2). f'(x)=3x²−3. f'(2)=12−3=9. Tangent: y−2=9(x−2) → y=9x−18+2=9x−16 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = 2x² − 5x + 1 at the point where x = 1.', answer: 'y = −x − 1', checkMode: 'auto', correctAnswer: 'y=-x-1', correctAnswers: ['y=-x-1', 'y = -x - 1', 'y=−x−1'], explanation: "f(1)=2−5+1=−2. Point (1,−2). f'(x)=4x−5. f'(1)=4−5=−1. Tangent: y−(−2)=−1(x−1) → y=−x+1−2=−x−1 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x³ + 2x at x = −1.', answer: 'y = 5x + 2', checkMode: 'auto', correctAnswer: 'y=5x+2', correctAnswers: ['y=5x+2', 'y = 5x + 2'], explanation: "f(−1)=−1−2=−3. Point (−1,−3). f'(x)=3x²+2. f'(−1)=3+2=5. Tangent: y−(−3)=5(x+1) → y=5x+5−3=5x+2 ✓" },
+
+        { difficulty: 'Medium-Hard', question: 'Find the stationary points of y = 2x³ − 3x² − 12x and classify each as a local maximum or minimum.', answer: 'Local max at (−1, 7), local min at (2, −20)', checkMode: 'self', explanation: "f'(x)=6x²−6x−12=6(x²−x−2)=6(x−2)(x+1)=0. x=2 or x=−1. f(−1)=−2−3+12=7 (local max). f(2)=16−12−24=−20 (local min)." },
+        { difficulty: 'Medium-Hard', question: 'Sipho says every stationary point of a cubic function must be either a local maximum or a local minimum. Is he correct? Explain.', answer: 'Not necessarily — a cubic can also have a stationary point of inflection, where f\'(x) = 0 but the sign of f\'(x) does not change on either side, so the point is neither a maximum nor a minimum.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Determine the x-values of the stationary points of y = x³ − 3x² and use a sign table for f\'(x) to classify each as a local maximum or minimum.', answer: 'x = 0 (local max), x = 2 (local min)', checkMode: 'self', explanation: "f'(x)=3x²−6x=3x(x−2)=0. x=0 or x=2. f'(−1)=9>0, f'(1)=−3<0, so x=0 is a local max. f'(3)=9>0, so x=2 is a local min." },
+
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has stationary points at x = −1 and x = 3, a y-intercept of 2, and a positive leading coefficient. State whether the function is increasing or decreasing on the interval −1 < x < 3, and describe the end behaviour of the graph.', answer: 'The function is decreasing on −1 < x < 3 (between a local maximum at x=−1 and a local minimum at x=3). Since the leading coefficient is positive, the graph rises to the right and falls to the left.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has x-intercepts at x = −2, x = 1 and x = 4, and a negative leading coefficient. State the sign of f(x) for x < −2, and describe the end behaviour of the graph.', answer: 'For x < −2, f(x) is positive (the graph is above the x-axis before the first root, since with a negative leading coefficient the graph rises to the left). The graph falls to the right and rises to the left.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has a local maximum at (−2, 10) and a local minimum at (1, −5), with no other stationary points. State the interval(s) on which f(x) is increasing.', answer: 'f(x) is increasing for x < −2 and for x > 1 (everywhere except between the local maximum and local minimum, where it is decreasing).', checkMode: 'self' },
+
+        { difficulty: 'Hard', question: 'A farmer has 80 m of fencing to enclose a rectangular area against a straight wall (no fencing needed on the wall side). Find the dimensions that maximise the enclosed area, and state the maximum area.', answer: 'Dimensions: 20 m by 40 m, maximum area = 800 m²', checkMode: 'self', explanation: 'Let the two perpendicular sides each have length x. Parallel side = 80−2x. A = x(80−2x) = 80x−2x². dA/dx = 80−4x = 0. x = 20. Parallel side = 40. Maximum area = 20×40 = 800 m².' },
+        { difficulty: 'Hard', question: 'The height of a ball above the ground (in metres) after t seconds is h(t) = −5t² + 30t + 3. Find the maximum height reached and the time at which it occurs.', answer: 'Maximum height = 48 m at t = 3 seconds', checkMode: 'self', explanation: "h'(t)=−10t+30=0. t=3. h(3)=−45+90+3=48 m." },
+        { difficulty: 'Hard', question: 'Thabo wants to make an open box from a 24 cm by 24 cm sheet of cardboard by cutting equal squares from each corner and folding up the sides. Find the size of the square that must be cut to maximise the volume of the box, and state the maximum volume.', answer: 'Square size = 4 cm, maximum volume = 1024 cm³', checkMode: 'self', explanation: 'Let cut size = x. Volume V = x(24−2x)² = 4x³−96x²+576x. dV/dx = 12x²−192x+576 = 0. Divide by 12: x²−16x+48=0. (x−4)(x−12)=0. x=4 or x=12 (rejected, side would be 0). V(4) = 4(16)² = 4×256 = 1024 cm³.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered differential calculus — first principles, differentiation rules, tangents, curve sketching and optimisation.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = 3x² from first principles.", answer: "f'(x) = 6x", checkMode: 'auto', correctAnswer: '6x', correctAnswers: ['6x', "f'(x)=6x", "f'(x) = 6x"], explanation: "f'(x) = lim(h→0) [3(x+h)²−3x²]/h = lim(h→0) [6xh+3h²]/h = lim(h→0) (6x+3h) = 6x ✓" },
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = 2x − 7 from first principles.", answer: "f'(x) = 2", checkMode: 'auto', correctAnswer: '2', correctAnswers: ['2', "f'(x)=2", "f'(x) = 2"], explanation: "f'(x) = lim(h→0) [(2(x+h)−7)−(2x−7)]/h = lim(h→0) 2h/h = lim(h→0) 2 = 2 ✓" },
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = x² + 2x from first principles.", answer: "f'(x) = 2x + 2", checkMode: 'auto', correctAnswer: '2x+2', correctAnswers: ['2x+2', '2x + 2', "f'(x)=2x+2"], explanation: "f(x+h) = (x+h)²+2(x+h) = x²+2xh+h²+2x+2h. Subtract f(x): 2xh+h²+2h. Divide by h: 2x+h+2. As h→0: 2x+2 ✓" },
+
+        { difficulty: 'Easy', question: 'Differentiate f(x) = 3x³ − 5x² + 4x − 2.', answer: "f'(x) = 9x² − 10x + 4", checkMode: 'auto', correctAnswer: '9x²-10x+4', correctAnswers: ['9x²-10x+4', '9x^2-10x+4', '9x² − 10x + 4', '9x^2 - 10x + 4'], explanation: 'Apply the power rule to each term: d/dx(3x³)=9x², d/dx(−5x²)=−10x, d/dx(4x)=4, d/dx(−2)=0. f\'(x)=9x²−10x+4 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Differentiate f(x) = (x² + 7)/x by simplifying first.', answer: "f'(x) = 1 − 7/x²", checkMode: 'auto', correctAnswer: '1-7/x²', correctAnswers: ['1-7/x²', '1-7/x^2', '1 − 7/x²', '1 - 7/x^2'], explanation: 'Simplify: (x²+7)/x = x+7x⁻¹. Differentiate: d/dx(x)=1, d/dx(7x⁻¹)=−7x⁻². f\'(x)=1−7x⁻²=1−7/x² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Differentiate f(x) = (3x − 2)(x + 5).', answer: "f'(x) = 6x + 13", checkMode: 'auto', correctAnswer: '6x+13', correctAnswers: ['6x+13', '6x + 13'], explanation: 'Expand first: (3x−2)(x+5) = 3x²+15x−2x−10 = 3x²+13x−10. Differentiate: f\'(x)=6x+13 ✓' },
+        { difficulty: 'Medium', question: 'Differentiate f(x) = (2x − 5)², expanding first.', answer: "f'(x) = 8x − 20", checkMode: 'auto', correctAnswer: '8x-20', correctAnswers: ['8x-20', '8x − 20'], explanation: 'Expand: (2x−5)² = 4x²−20x+25. Differentiate: f\'(x) = 8x−20 ✓' },
+
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x² at the point (4, 16).', answer: 'y = 8x − 16', checkMode: 'auto', correctAnswer: 'y=8x-16', correctAnswers: ['y=8x-16', 'y = 8x - 16', 'y=8x−16'], explanation: "f'(x)=2x. f'(4)=8. Gradient m=8. Tangent: y−16=8(x−4) → y=8x−32+16=8x−16 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x³ − 2x at x = 2.', answer: 'y = 10x − 16', checkMode: 'auto', correctAnswer: 'y=10x-16', correctAnswers: ['y=10x-16', 'y = 10x - 16', 'y=10x−16'], explanation: "f(2)=8−4=4. Point (2,4). f'(x)=3x²−2. f'(2)=12−2=10. Tangent: y−4=10(x−2) → y=10x−20+4=10x−16 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = 3x² − 4x + 2 at the point where x = 1.', answer: 'y = 2x − 1', checkMode: 'auto', correctAnswer: 'y=2x-1', correctAnswers: ['y=2x-1', 'y = 2x - 1'], explanation: "f(1)=3−4+2=1. Point (1,1). f'(x)=6x−4. f'(1)=6−4=2. Tangent: y−1=2(x−1) → y=2x−2+1=2x−1 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x³ − 3x at x = −2.', answer: 'y = 9x + 16', checkMode: 'auto', correctAnswer: 'y=9x+16', correctAnswers: ['y=9x+16', 'y = 9x + 16'], explanation: "f(−2)=−8+6=−2. Point (−2,−2). f'(x)=3x²−3. f'(−2)=12−3=9. Tangent: y−(−2)=9(x+2) → y=9x+18−2=9x+16 ✓" },
+
+        { difficulty: 'Medium-Hard', question: 'Find the stationary points of y = x³ − 3x² − 9x and classify each as a local maximum or minimum.', answer: 'Local max at (−1, 5), local min at (3, −27)', checkMode: 'self', explanation: "f'(x)=3x²−6x−9=3(x²−2x−3)=3(x−3)(x+1)=0. x=3 or x=−1. f(−1)=−1−3+9=5 (local max). f(3)=27−27−27=−27 (local min)." },
+        { difficulty: 'Medium-Hard', question: 'Lerato says a stationary point can only occur where a graph has a local maximum or minimum. Is she correct? Explain, referring to a stationary point of inflection.', answer: 'Not necessarily — at a stationary point of inflection, f\'(x) = 0 but f\'(x) does not change sign on either side of that point, so it is neither a local maximum nor a local minimum, even though it is still a stationary point.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Determine the x-values of the stationary points of y = x³ − 6x² and use a sign table for f\'(x) to classify each as a local maximum or minimum.', answer: 'x = 0 (local max), x = 4 (local min)', checkMode: 'self', explanation: "f'(x)=3x²−12x=3x(x−4)=0. x=0 or x=4. f'(−1)=15>0, f'(1)=−9<0, so x=0 is a local max. f'(5)=15>0, so x=4 is a local min." },
+
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has stationary points at x = −2 and x = 1, a y-intercept of −3, and a positive leading coefficient. State whether the function is increasing or decreasing on the interval −2 < x < 1, and describe the end behaviour of the graph.', answer: 'The function is decreasing on −2 < x < 1 (between a local maximum at x=−2 and a local minimum at x=1). Since the leading coefficient is positive, the graph rises to the right and falls to the left.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has x-intercepts at x = −3, x = 2 and x = 5, and a positive leading coefficient. State the sign of f(x) for x > 5, and describe the end behaviour of the graph.', answer: 'For x > 5, f(x) is positive (the graph is above the x-axis after the last root, since with a positive leading coefficient the graph rises to the right). The graph rises to the right and falls to the left.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has a local maximum at (−1, 8) and a local minimum at (2, −4), with no other stationary points. State the interval(s) on which f(x) is decreasing.', answer: 'f(x) is decreasing for −1 < x < 2 (between the local maximum and the local minimum).', checkMode: 'self' },
+
+        { difficulty: 'Hard', question: 'A farmer has 100 m of fencing to enclose a rectangular area against a straight wall (no fencing needed on the wall side). Find the dimensions that maximise the enclosed area, and state the maximum area.', answer: 'Dimensions: 25 m by 50 m, maximum area = 1250 m²', checkMode: 'self', explanation: 'Let the two perpendicular sides each have length x. Parallel side = 100−2x. A = x(100−2x) = 100x−2x². dA/dx = 100−4x = 0. x = 25. Parallel side = 50. Maximum area = 25×50 = 1250 m².' },
+        { difficulty: 'Hard', question: 'The height of a ball above the ground (in metres) after t seconds is h(t) = −5t² + 40t + 2. Find the maximum height reached and the time at which it occurs.', answer: 'Maximum height = 82 m at t = 4 seconds', checkMode: 'self', explanation: "h'(t)=−10t+40=0. t=4. h(4)=−80+160+2=82 m." },
+        { difficulty: 'Hard', question: 'Amahle wants to make an open box from an 18 cm by 18 cm sheet of cardboard by cutting equal squares from each corner and folding up the sides. Find the size of the square that must be cut to maximise the volume of the box, and state the maximum volume.', answer: 'Square size = 3 cm, maximum volume = 432 cm³', checkMode: 'self', explanation: 'Let cut size = x. Volume V = x(18−2x)² = 4x³−72x²+324x. dV/dx = 12x²−144x+324 = 0. Divide by 12: x²−12x+27=0. (x−3)(x−9)=0. x=3 or x=9 (rejected, side would be 0). V(3) = 3(12)² = 3×144 = 432 cm³.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Excellent! You can confidently work with first principles, differentiation rules, tangents, curve sketching and optimisation.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, fresh numbers, slightly harder mix
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = 4x² from first principles.", answer: "f'(x) = 8x", checkMode: 'auto', correctAnswer: '8x', correctAnswers: ['8x', "f'(x)=8x", "f'(x) = 8x"], explanation: "f'(x) = lim(h→0) [4(x+h)²−4x²]/h = lim(h→0) [8xh+4h²]/h = lim(h→0) (8x+4h) = 8x ✓" },
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = 6x − 1 from first principles.", answer: "f'(x) = 6", checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', "f'(x)=6", "f'(x) = 6"], explanation: "f'(x) = lim(h→0) [(6(x+h)−1)−(6x−1)]/h = lim(h→0) 6h/h = lim(h→0) 6 = 6 ✓" },
+        { difficulty: 'Easy', question: "Find f'(x) for f(x) = x² + 5x from first principles.", answer: "f'(x) = 2x + 5", checkMode: 'auto', correctAnswer: '2x+5', correctAnswers: ['2x+5', '2x + 5', "f'(x)=2x+5"], explanation: "f(x+h) = (x+h)²+5(x+h) = x²+2xh+h²+5x+5h. Subtract f(x): 2xh+h²+5h. Divide by h: 2x+h+5. As h→0: 2x+5 ✓" },
+
+        { difficulty: 'Easy', question: 'Differentiate f(x) = 6x³ − 4x² + 2x − 8.', answer: "f'(x) = 18x² − 8x + 2", checkMode: 'auto', correctAnswer: '18x²-8x+2', correctAnswers: ['18x²-8x+2', '18x^2-8x+2', '18x² − 8x + 2', '18x^2 - 8x + 2'], explanation: 'Apply the power rule to each term: d/dx(6x³)=18x², d/dx(−4x²)=−8x, d/dx(2x)=2, d/dx(−8)=0. f\'(x)=18x²−8x+2 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Differentiate f(x) = (x² + 9)/x by simplifying first.', answer: "f'(x) = 1 − 9/x²", checkMode: 'auto', correctAnswer: '1-9/x²', correctAnswers: ['1-9/x²', '1-9/x^2', '1 − 9/x²', '1 - 9/x^2'], explanation: 'Simplify: (x²+9)/x = x+9x⁻¹. Differentiate: d/dx(x)=1, d/dx(9x⁻¹)=−9x⁻². f\'(x)=1−9x⁻²=1−9/x² ✓' },
+        { difficulty: 'Easy-Medium', question: 'Differentiate f(x) = (5x + 2)(x − 3).', answer: "f'(x) = 10x − 13", checkMode: 'auto', correctAnswer: '10x-13', correctAnswers: ['10x-13', '10x − 13'], explanation: 'Expand first: (5x+2)(x−3) = 5x²−15x+2x−6 = 5x²−13x−6. Differentiate: f\'(x)=10x−13 ✓' },
+        { difficulty: 'Medium', question: 'Differentiate f(x) = (3x − 1)², expanding first.', answer: "f'(x) = 18x − 6", checkMode: 'auto', correctAnswer: '18x-6', correctAnswers: ['18x-6', '18x − 6'], explanation: 'Expand: (3x−1)² = 9x²−6x+1. Differentiate: f\'(x) = 18x−6 ✓' },
+
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x² at the point (−1, 1).', answer: 'y = −2x − 1', checkMode: 'auto', correctAnswer: 'y=-2x-1', correctAnswers: ['y=-2x-1', 'y = -2x - 1', 'y=−2x−1'], explanation: "f'(x)=2x. f'(−1)=−2. Gradient m=−2. Tangent: y−1=−2(x+1) → y=−2x−2+1=−2x−1 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x³ − 4x at x = 1.', answer: 'y = −x − 2', checkMode: 'auto', correctAnswer: 'y=-x-2', correctAnswers: ['y=-x-2', 'y = -x - 2', 'y=−x−2'], explanation: "f(1)=1−4=−3. Point (1,−3). f'(x)=3x²−4. f'(1)=3−4=−1. Tangent: y−(−3)=−1(x−1) → y=−x+1−3=−x−2 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = 2x² + x − 3 at the point where x = 2.', answer: 'y = 9x − 11', checkMode: 'auto', correctAnswer: 'y=9x-11', correctAnswers: ['y=9x-11', 'y = 9x - 11', 'y=9x−11'], explanation: "f(2)=8+2−3=7. Point (2,7). f'(x)=4x+1. f'(2)=8+1=9. Tangent: y−7=9(x−2) → y=9x−18+7=9x−11 ✓" },
+        { difficulty: 'Medium', question: 'Find the equation of the tangent to y = x³ + 3x at x = −1.', answer: 'y = 6x + 2', checkMode: 'auto', correctAnswer: 'y=6x+2', correctAnswers: ['y=6x+2', 'y = 6x + 2'], explanation: "f(−1)=−1−3=−4. Point (−1,−4). f'(x)=3x²+3. f'(−1)=3+3=6. Tangent: y−(−4)=6(x+1) → y=6x+6−4=6x+2 ✓" },
+
+        { difficulty: 'Medium-Hard', question: 'Find the stationary points of y = 2x³ + 3x² − 12x and classify each as a local maximum or minimum.', answer: 'Local max at (−2, 20), local min at (1, −7)', checkMode: 'self', explanation: "f'(x)=6x²+6x−12=6(x²+x−2)=6(x+2)(x−1)=0. x=−2 or x=1. f(−2)=−16+12+24=20 (local max). f(1)=2+3−12=−7 (local min)." },
+        { difficulty: 'Medium-Hard', question: 'Amahle says the graph of y=f(x) cannot have a stationary point where the curve is neither increasing nor decreasing on either side. Is she correct? Explain, referring to a stationary point of inflection.', answer: 'She is incorrect — at a stationary point of inflection, f\'(x)=0 and the sign of f\'(x) is the same immediately before and after the point (both positive or both negative), so the function keeps increasing (or decreasing) through the stationary point rather than turning.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Determine the x-values of the stationary points of y = x³ − 12x and use a sign table for f\'(x) to classify each as a local maximum or minimum.', answer: 'x = −2 (local max), x = 2 (local min)', checkMode: 'self', explanation: "f'(x)=3x²−12=3(x−2)(x+2)=0. x=−2 or x=2. f'(−3)=15>0, f'(0)=−12<0, so x=−2 is a local max. f'(3)=15>0, so x=2 is a local min." },
+
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has stationary points at x = −3 and x = 0, a y-intercept of 4, and a negative leading coefficient. State whether the function is increasing or decreasing on the interval −3 < x < 0, and describe the end behaviour of the graph.', answer: 'The function is increasing on −3 < x < 0 (between a local minimum at x=−3 and a local maximum at x=0, since the leading coefficient is negative, which reverses the usual max/min order compared to a positive leading coefficient). The graph falls to the right and rises to the left.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has x-intercepts at x = −4, x = 1 and x = 3, and a negative leading coefficient. State the sign of f(x) for x > 3, and describe the end behaviour of the graph.', answer: 'For x > 3, f(x) is negative (the graph is below the x-axis after the last root, since with a negative leading coefficient the graph falls to the right). The graph falls to the right and rises to the left.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A cubic graph y = f(x) has a local minimum at (−2, −6) and a local maximum at (2, 6), with no other stationary points. State the interval(s) on which f(x) is increasing.', answer: 'f(x) is increasing for −2 < x < 2 (between the local minimum and the local maximum).', checkMode: 'self' },
+
+        { difficulty: 'Hard', question: 'A farmer has 120 m of fencing to enclose a rectangular area against a straight wall (no fencing needed on the wall side). Find the dimensions that maximise the enclosed area, and state the maximum area.', answer: 'Dimensions: 30 m by 60 m, maximum area = 1800 m²', checkMode: 'self', explanation: 'Let the two perpendicular sides each have length x. Parallel side = 120−2x. A = x(120−2x) = 120x−2x². dA/dx = 120−4x = 0. x = 30. Parallel side = 60. Maximum area = 30×60 = 1800 m².' },
+        { difficulty: 'Hard', question: 'The height of a ball above the ground (in metres) after t seconds is h(t) = −5t² + 50t + 4. Find the maximum height reached and the time at which it occurs.', answer: 'Maximum height = 129 m at t = 5 seconds', checkMode: 'self', explanation: "h'(t)=−10t+50=0. t=5. h(5)=−125+250+4=129 m." },
+        { difficulty: 'Hard', question: 'Lerato wants to make an open box from a 30 cm by 30 cm sheet of cardboard by cutting equal squares from each corner and folding up the sides. Find the size of the square that must be cut to maximise the volume of the box, and state the maximum volume.', answer: 'Square size = 5 cm, maximum volume = 2000 cm³', checkMode: 'self', explanation: 'Let cut size = x. Volume V = x(30−2x)² = 4x³−120x²+900x. dV/dx = 12x²−240x+900 = 0. Divide by 12: x²−20x+75=0. (x−5)(x−15)=0. x=5 or x=15 (rejected, side would be 0). V(5) = 5(20)² = 5×400 = 2000 cm³.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantastic! You can apply differentiation, tangents, curve sketching and optimisation to a wide range of problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
+
   scoreMessages: [
     { minScore: 20, message: 'Outstanding! You have mastered differential calculus.' },
     { minScore: 15, message: 'Great work!' },

@@ -1,4 +1,4 @@
-import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
+import type { TopicData, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
 
 // ─── Colour helpers ───────────────────────────────────────────────────────────
 // blue   → individual events / given probabilities / known values      (#2563eb)
@@ -531,4 +531,145 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan probeer, werk deur die gids weer deur.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae) — telbeginsel → permutasies → beperkings →
+    // herhaalde items → kombinasies → gekombineerde tel-en-waarskynlikheid
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Fundamentele telbeginsel (V1–V3, Maklik)
+        { difficulty: 'Easy', question: "'n Klerewinkel verkoop 4 baadjies, 5 hemde en 3 pare skoene. Hoeveel verskillende baadjie-hemp-skoen-drag-kombinasies kan saamgestel word?", checkMode: 'auto', correctAnswer: '60', explanation: 'Pas die telbeginsel toe: 4 × 5 × 3 = 60 drag-kombinasies ✓' },
+        { difficulty: 'Easy', question: "'n 3-syferkode word gevorm deur syfers van 1 tot 7 te kies, sonder om enige syfer te herhaal. Hoeveel verskillende kodes is moontlik?", checkMode: 'auto', correctAnswer: '210', explanation: 'Eerste syfer: 7 keuses. Tweede syfer: 6 oorblywende. Derde syfer: 5 oorblywende. 7 × 6 × 5 = 210 ✓' },
+        { difficulty: 'Easy', question: "'n Nommerplaat het die vorm: 2 letters (A–Z, geen herhaling nie) gevolg deur 4 syfers (0–9, geen herhaling nie). Hoeveel nommerplate is moontlik?", checkMode: 'self', answer: 'Letters: 26 × 25 = 650. Syfers: 10 × 9 × 8 × 7 = 5040. Totaal = 650 × 5040 = 3 276 000.' },
+
+        // Blok 2 — Permutasies, alles verskillende voorwerpe (V4–V6, Maklik/Matig)
+        { difficulty: 'Easy', question: "Op hoeveel verskillende maniere kan 7 verskillende skilderye in 'n ry aan 'n galerymuur gehang word?", checkMode: 'auto', correctAnswer: '5040', explanation: '7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040 ✓' },
+        { difficulty: 'Medium', question: "'n Wedloop het 9 hardlopers. Op hoeveel verskillende maniere kan 1ste, 2de, 3de en 4de plek toegeken word (met die aanname van geen gelykop-eindes nie)?", checkMode: 'auto', correctAnswer: '3024', explanation: '1ste plek: 9 keuses. 2de: 8 oorblywende. 3de: 7 oorblywende. 4de: 6 oorblywende. 9 × 8 × 7 × 6 = 3024 ✓' },
+        { difficulty: 'Medium', question: "Op hoeveel verskillende maniere kan 8 verskillende boeke op 'n rak gerangskik word?", checkMode: 'auto', correctAnswer: '40320', correctAnswers: ['40320', '40 320'], explanation: '8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40 320 ✓' },
+
+        // Blok 3 — Permutasies met beperkings (V7–V10, Matig)
+        { difficulty: 'Medium', question: "6 mense, insluitend Zanele en Bongani, word in 'n ry gerangskik. Op hoeveel maniere kan dit gedoen word as Zanele en Bongani saam moet sit?", checkMode: 'auto', correctAnswer: '240', explanation: 'Behandel Zanele en Bongani as een blok: nou is daar 5 "items" (blok + 4 ander) om te rangskik = 5! = 120. Vermenigvuldig met die 2! = 2 maniere om hulle binne die blok te rangskik. Totaal = 120 × 2 = 240 ✓' },
+        { difficulty: 'Medium', question: "7 mense word in 'n ry gerangskik. Op hoeveel maniere kan dit gedoen word as twee spesifieke mense, Xolani en Palesa, NIE langs mekaar sit nie?", checkMode: 'auto', correctAnswer: '3600', explanation: 'Totale rangskikkings van 7 mense: 7! = 5040. Rangskikkings met Xolani en Palesa saam: behandel as een blok, 6! × 2! = 720 × 2 = 1440. Rangskikkings uitmekaar = totaal − saam = 5040 − 1440 = 3600 ✓' },
+        { difficulty: 'Medium', question: "6 mense word in 'n ry gerangskik. Een spesifieke persoon, Thabo, mag slegs aan een van die punte van die ry sit. Op hoeveel maniere kan die groep gerangskik word?", checkMode: 'auto', correctAnswer: '240', explanation: 'Thabo het 2 keuses (linkerkantste of regterkantste punt). Die oorblywende 5 mense vul die ander 5 sitplekke op 5! = 120 maniere. Totaal = 2 × 120 = 240 ✓' },
+        { difficulty: 'Medium', question: "'n Groep van 3 dokters en 4 verpleegsters word in 'n ry vir 'n foto gerangskik. Op hoeveel maniere kan hulle gerangskik word as al die dokters saam moet staan EN al die verpleegsters saam moet staan?", checkMode: 'self', answer: 'Behandel die dokters as een blok en die verpleegsters as een blok: 2 blokke kan op 2! = 2 maniere gerangskik word. Binne die dokterblok: 3! = 6 maniere. Binne die verpleegsterblok: 4! = 24 maniere. Totaal = 2 × 6 × 24 = 288.' },
+
+        // Blok 4 — Permutasies met herhaalde items (V11–V13, Matig/Moeilik)
+        { difficulty: 'Medium', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "PENCIL".', checkMode: 'auto', correctAnswer: '720', explanation: 'Al 6 letters van PENCIL is verskillend, so rangskikkings = 6! = 720 ✓' },
+        { difficulty: 'Hard', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "GEOMETRY".', checkMode: 'auto', correctAnswer: '20160', explanation: 'GEOMETRY het 8 letters met E wat twee keer herhaal (al die ander kom net een keer voor). Rangskikkings = 8! ÷ 2! = 40 320 ÷ 2 = 20 160 ✓' },
+        { difficulty: 'Hard', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "STATISTICS".', checkMode: 'self', answer: 'STATISTICS het 10 letters: S(3), T(3), A(1), I(2), C(1). Rangskikkings = 10! ÷ (3! × 3! × 2!) = 3 628 800 ÷ (6 × 6 × 2) = 3 628 800 ÷ 72 = 50 400.' },
+
+        // Blok 5 — Kombinasies (V14–V17, Moeilik)
+        { difficulty: 'Hard', question: "'n Span moet 4 lede kies uit 'n groep van 11 kandidate, waar die volgorde van keuse nie saak maak nie. Op hoeveel maniere kan die span gekies word?", checkMode: 'auto', correctAnswer: '330', explanation: 'Volgorde maak nie saak nie, so gebruik kombinasies: C(11,4) = 11! ÷ (4! × 7!) = 330 ✓' },
+        { difficulty: 'Hard', question: "'n Skoolkomitee benodig 3 seuns gekies uit 6 seuns EN 2 meisies gekies uit 5 meisies. Op hoeveel maniere kan die komitee gevorm word?", checkMode: 'auto', correctAnswer: '200', explanation: 'C(6,3) = 20 maniere om die seuns te kies. C(5,2) = 10 maniere om die meisies te kies. Volgens die telbeginsel, totaal = 20 × 10 = 200 ✓' },
+        { difficulty: 'Hard', question: "Op hoeveel maniere kan 'n stel van 6 kaarte uit 'n stel van 14 verskillende kaarte gekies word?", checkMode: 'auto', correctAnswer: '3003', explanation: 'Volgorde maak nie saak nie, so gebruik kombinasies: C(14,6) = 14! ÷ (6! × 8!) = 3003 ✓' },
+        { difficulty: 'Hard', question: "'n Komitee van 4 mense word gekies uit 'n groep van 8 mans en 6 vrouens (14 mense in totaal). Bepaal die aantal maniere om die komitee te kies as dit TEN MINSTE een vrou moet insluit.", checkMode: 'self', answer: 'Totale maniere om enige 4 uit 14 te kies: C(14,4) = 1001. Maniere om 4 met geen vrouens (almal mans) te kies: C(8,4) = 70. Ten minste een vrou = totaal − geen vrouens = 1001 − 70 = 931.' },
+
+        // Blok 6 — Gekombineerde telbeginsel en waarskynlikheid (V18–V20, Moeilik)
+        { difficulty: 'Hard', question: "5 mense, insluitend 'n getroude paar, sit lukraak in 'n ry van 5 stoele. Bepaal die waarskynlikheid dat die getroude paar saam sit.", checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '0,4', '0.4'], explanation: 'Totale rangskikkings: 5! = 120. Gunstige (paar saam): behandel as een blok, 4! × 2! = 24 × 2 = 48. P = 48 ÷ 120 = 2/5 ✓' },
+        { difficulty: 'Hard', question: 'Die letters van die woord "LEVEL" word in \'n lukrake volgorde gerangskik. Bepaal die waarskynlikheid dat die rangskikking met die letter L begin ÉN eindig.', checkMode: 'auto', correctAnswer: '1/10', correctAnswers: ['1/10', '3/30', '0,1', '0.1'], explanation: 'LEVEL het 5 letters met L wat twee keer herhaal en E wat twee keer herhaal, so totale rangskikkings = 5! ÷ (2! × 2!) = 120 ÷ 4 = 30. Gunstige: vas L in die eerste en laaste posisie, rangskik dan E, V, E (3 letters, E herhaal twee keer) in die middelste 3 posisies: 3! ÷ 2! = 3. P = 3 ÷ 30 = 1/10 ✓' },
+        { difficulty: 'Hard', question: "'n Wagwoord word gevorm deur 4 verskillende letters uit A–Z te rangskik, sonder om enige letter te herhaal. Bepaal die waarskynlikheid dat die wagwoord met 'n vokaal (A, E, I, O of U) begin.", checkMode: 'self', answer: 'Totale wagwoorde: 26 × 25 × 24 × 23 = 358 800. Gunstige (begin met \'n vokaal): eerste letter het 5 keuses (vokale), dan 25 × 24 × 23 oorblywende letters = 5 × 25 × 24 × 23 = 69 000. P = 69 000 ÷ 358 800 = 5/26 ≈ 0,192.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het teltegnieke en permutasies bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Jy is seker van die meeste hiervan — hersien enige gemiste vrae.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die telbeginsel- en permutasie-afdelings, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer deur en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Fundamentele telbeginsel (V1–V3, Maklik)
+        { difficulty: 'Easy', question: "'n Restaurant bied 3 soppe, 4 hoofgeregte en 5 nageregte aan. Hoeveel verskillende sop-hoofgereg-nagereg-etes kan gemaak word?", checkMode: 'auto', correctAnswer: '60', explanation: 'Pas die telbeginsel toe: 3 × 4 × 5 = 60 etes ✓' },
+        { difficulty: 'Easy', question: "'n 4-syferkode word gevorm deur syfers van 1 tot 9 te kies, sonder om enige syfer te herhaal. Hoeveel verskillende kodes is moontlik?", checkMode: 'auto', correctAnswer: '3024', explanation: 'Eerste syfer: 9 keuses. Tweede: 8 oorblywende. Derde: 7 oorblywende. Vierde: 6 oorblywende. 9 × 8 × 7 × 6 = 3024 ✓' },
+        { difficulty: 'Easy', question: "'n Nommerplaat het die vorm: 3 letters (A–Z, geen herhaling nie) gevolg deur 3 syfers (0–9, geen herhaling nie). Hoeveel nommerplate is moontlik?", checkMode: 'self', answer: 'Letters: 26 × 25 × 24 = 15 600. Syfers: 10 × 9 × 8 = 720. Totaal = 15 600 × 720 = 11 232 000.' },
+
+        // Blok 2 — Permutasies, alles verskillende voorwerpe (V4–V6, Maklik/Matig)
+        { difficulty: 'Easy', question: "Op hoeveel verskillende maniere kan 6 verskillende versierings in 'n ry op 'n kaggelrak gerangskik word?", checkMode: 'auto', correctAnswer: '720', explanation: '6! = 6 × 5 × 4 × 3 × 2 × 1 = 720 ✓' },
+        { difficulty: 'Medium', question: "'n Wedloop het 10 spurters. Op hoeveel verskillende maniere kan 1ste, 2de en 3de plek (die podium) toegeken word, met die aanname van geen gelykop-eindes nie?", checkMode: 'auto', correctAnswer: '720', explanation: '1ste plek: 10 keuses. 2de: 9 oorblywende. 3de: 8 oorblywende. 10 × 9 × 8 = 720 ✓' },
+        { difficulty: 'Medium', question: "Op hoeveel verskillende maniere kan 9 verskillende lêers in 'n stapel gepak word?", checkMode: 'auto', correctAnswer: '362880', correctAnswers: ['362880', '362 880'], explanation: '9! = 9 × 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 362 880 ✓' },
+
+        // Blok 3 — Permutasies met beperkings (V7–V10, Matig)
+        { difficulty: 'Medium', question: "7 mense word in 'n ry gerangskik. Op hoeveel maniere kan dit gedoen word as 3 spesifieke mense saam moet sit?", checkMode: 'auto', correctAnswer: '720', explanation: 'Behandel die 3 spesifieke mense as een blok: nou is daar 5 "items" (blok + 4 ander) om te rangskik = 5! = 120. Vermenigvuldig met die 3! = 6 maniere om hulle binne die blok te rangskik. Totaal = 120 × 6 = 720 ✓' },
+        { difficulty: 'Medium', question: "6 mense word in 'n ry gerangskik. Op hoeveel maniere kan dit gedoen word as twee spesifieke mense, Karabo en Naledi, NIE langs mekaar sit nie?", checkMode: 'auto', correctAnswer: '480', explanation: 'Totale rangskikkings van 6 mense: 6! = 720. Rangskikkings met Karabo en Naledi saam: behandel as een blok, 5! × 2! = 120 × 2 = 240. Rangskikkings uitmekaar = totaal − saam = 720 − 240 = 480 ✓' },
+        { difficulty: 'Medium', question: "7 mense word in 'n ry gerangskik. Een spesifieke persoon, Lindiwe, mag slegs aan een van die punte van die ry sit. Op hoeveel maniere kan die groep gerangskik word?", checkMode: 'auto', correctAnswer: '1440', explanation: 'Lindiwe het 2 keuses (linkerkantste of regterkantste punt). Die oorblywende 6 mense vul die ander 6 sitplekke op 6! = 720 maniere. Totaal = 2 × 720 = 1440 ✓' },
+        { difficulty: 'Medium', question: "'n Groep van 4 Zoeloe-dansers en 3 Sotho-dansers word in 'n ry vir 'n foto gerangskik. Op hoeveel maniere kan hulle gerangskik word as al die Zoeloe-dansers saam moet staan EN al die Sotho-dansers saam moet staan?", checkMode: 'self', answer: 'Behandel die Zoeloe-dansers as een blok en die Sotho-dansers as een blok: 2 blokke kan op 2! = 2 maniere gerangskik word. Binne die Zoeloe-blok: 4! = 24 maniere. Binne die Sotho-blok: 3! = 6 maniere. Totaal = 2 × 24 × 6 = 288.' },
+
+        // Blok 4 — Permutasies met herhaalde items (V11–V13, Matig/Moeilik)
+        { difficulty: 'Medium', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "NUMBER".', checkMode: 'auto', correctAnswer: '720', explanation: 'Al 6 letters van NUMBER is verskillend, so rangskikkings = 6! = 720 ✓' },
+        { difficulty: 'Hard', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "CHEESE".', checkMode: 'auto', correctAnswer: '120', explanation: 'CHEESE het 6 letters met E wat 3 keer herhaal (al die ander kom net een keer voor). Rangskikkings = 6! ÷ 3! = 720 ÷ 6 = 120 ✓' },
+        { difficulty: 'Hard', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "ENGINEERING".', checkMode: 'self', answer: 'ENGINEERING het 11 letters: E(3), N(3), G(2), I(2), R(1). Rangskikkings = 11! ÷ (3! × 3! × 2! × 2!) = 39 916 800 ÷ (6 × 6 × 2 × 2) = 39 916 800 ÷ 144 = 277 200.' },
+
+        // Blok 5 — Kombinasies (V14–V17, Moeilik)
+        { difficulty: 'Hard', question: "'n Span moet 5 lede kies uit 'n groep van 12 kandidate, waar die volgorde van keuse nie saak maak nie. Op hoeveel maniere kan die span gekies word?", checkMode: 'auto', correctAnswer: '792', explanation: 'Volgorde maak nie saak nie, so gebruik kombinasies: C(12,5) = 12! ÷ (5! × 7!) = 792 ✓' },
+        { difficulty: 'Hard', question: "'n Stapklub benodig 2 leiers gekies uit 5 senior lede EN 3 helpers gekies uit 6 junior lede. Op hoeveel maniere kan hierdie groep gevorm word?", checkMode: 'auto', correctAnswer: '200', explanation: 'C(5,2) = 10 maniere om die leiers te kies. C(6,3) = 20 maniere om die helpers te kies. Volgens die telbeginsel, totaal = 10 × 20 = 200 ✓' },
+        { difficulty: 'Hard', question: "Op hoeveel maniere kan 'n stel van 4 kaarte uit 'n stel van 13 verskillende kaarte gekies word?", checkMode: 'auto', correctAnswer: '715', explanation: 'Volgorde maak nie saak nie, so gebruik kombinasies: C(13,4) = 13! ÷ (4! × 9!) = 715 ✓' },
+        { difficulty: 'Hard', question: "'n Sportspan van 5 spelers word gekies uit 'n groep van 7 seuns en 5 meisies (12 mense in totaal). Bepaal die aantal maniere om die span te kies as dit TEN MINSTE een seun moet insluit.", checkMode: 'self', answer: 'Totale maniere om enige 5 uit 12 te kies: C(12,5) = 792. Maniere om 5 met geen seuns (almal meisies) te kies: C(5,5) = 1. Ten minste een seun = totaal − geen seuns = 792 − 1 = 791.' },
+
+        // Blok 6 — Gekombineerde telbeginsel en waarskynlikheid (V18–V20, Moeilik)
+        { difficulty: 'Hard', question: "6 mense, insluitend twee vriende, sit lukraak in 'n ry van 6 stoele. Bepaal die waarskynlikheid dat die twee vriende NIE saam sit nie.", checkMode: 'auto', correctAnswer: '2/3', correctAnswers: ['2/3', '480/720', '0,667', '0.667', '≈2/3', '≈0,667', '≈0.667'], explanation: 'Totale rangskikkings: 6! = 720. Saam (as een blok): 5! × 2! = 120 × 2 = 240. Uitmekaar = 720 − 240 = 480. P(uitmekaar) = 480 ÷ 720 = 2/3 ✓' },
+        { difficulty: 'Hard', question: 'Die letters van die woord "NOON" word in \'n lukrake volgorde gerangskik. Bepaal die waarskynlikheid dat die rangskikking met die letter N begin.', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '3/6', '0,5', '0.5'], explanation: 'NOON het 4 letters met N wat twee keer herhaal en O wat twee keer herhaal, so totale rangskikkings = 4! ÷ (2! × 2!) = 24 ÷ 4 = 6. Gunstige: vas N in die eerste posisie, rangskik dan O, O, N (3 letters, O herhaal twee keer) in die oorblywende posisies: 3! ÷ 2! = 3. P = 3 ÷ 6 = 1/2 ✓' },
+        { difficulty: 'Hard', question: "'n PIN word gevorm deur 5 verskillende syfers uit 0–9 te rangskik, sonder om enige syfer te herhaal. Bepaal die waarskynlikheid dat die PIN met die syfer 0 eindig.", checkMode: 'self', answer: 'Totale PIN\'s: 10 × 9 × 8 × 7 × 6 = 30 240. Gunstige (eindig met 0): laaste syfer is vas as 0 (1 manier), dan word die eerste 4 syfers uit die oorblywende 9 syfers sonder herhaling gekies = 9 × 8 × 7 × 6 = 3024. P = 3024 ÷ 30 240 = 1/10 = 0,1.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het teltegnieke en permutasies bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Jy is seker van die meeste hiervan — hersien enige gemiste vrae.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die telbeginsel- en permutasie-afdelings, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer deur en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Fundamentele telbeginsel (V1–V3, Maklik)
+        { difficulty: 'Easy', question: "'n Kafee bied 5 voorgeregte, 3 hoofgeregte en 4 drankies aan. Hoeveel verskillende voorgereg-hoofgereg-drankie-kombinasies kan gemaak word?", checkMode: 'auto', correctAnswer: '60', explanation: 'Pas die telbeginsel toe: 5 × 3 × 4 = 60 kombinasies ✓' },
+        { difficulty: 'Easy', question: "'n 3-letterkode word gevorm deur letters uit 'n stel van 8 verskillende letters te kies, sonder om enige letter te herhaal. Hoeveel verskillende kodes is moontlik?", checkMode: 'auto', correctAnswer: '336', explanation: 'Eerste letter: 8 keuses. Tweede: 7 oorblywende. Derde: 6 oorblywende. 8 × 7 × 6 = 336 ✓' },
+        { difficulty: 'Easy', question: "'n Nommerplaat het die vorm: 2 letters (A–Z, geen herhaling nie) gevolg deur 5 syfers (0–9, geen herhaling nie). Hoeveel nommerplate is moontlik?", checkMode: 'self', answer: 'Letters: 26 × 25 = 650. Syfers: 10 × 9 × 8 × 7 × 6 = 30 240. Totaal = 650 × 30 240 = 19 656 000.' },
+
+        // Blok 2 — Permutasies, alles verskillende voorwerpe (V4–V6, Maklik/Matig)
+        { difficulty: 'Easy', question: "Op hoeveel verskillende maniere kan 8 verskillende trofeë in 'n ry op 'n rak gerangskik word?", checkMode: 'auto', correctAnswer: '40320', correctAnswers: ['40320', '40 320'], explanation: '8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40 320 ✓' },
+        { difficulty: 'Medium', question: "'n Krieketspan van 11 spelers moet 'n kolfvolgorde kies vir slegs die eerste 5 posisies. Op hoeveel verskillende maniere kan dit gedoen word?", checkMode: 'auto', correctAnswer: '55440', correctAnswers: ['55440', '55 440'], explanation: '1ste posisie: 11 keuses. 2de: 10 oorblywende. 3de: 9 oorblywende. 4de: 8 oorblywende. 5de: 7 oorblywende. 11 × 10 × 9 × 8 × 7 = 55 440 ✓' },
+        { difficulty: 'Medium', question: "Op hoeveel verskillende maniere kan 10 verskillende speelkaarte in 'n ry gerangskik word?", checkMode: 'auto', correctAnswer: '3628800', correctAnswers: ['3628800', '3 628 800'], explanation: '10! = 10 × 9 × 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 3 628 800 ✓' },
+
+        // Blok 3 — Permutasies met beperkings (V7–V10, Matig)
+        { difficulty: 'Medium', question: "8 mense word in 'n ry gerangskik. Op hoeveel maniere kan dit gedoen word as twee spesifieke mense, Musa en Refilwe, saam moet sit?", checkMode: 'auto', correctAnswer: '10080', correctAnswers: ['10080', '10 080'], explanation: 'Behandel Musa en Refilwe as een blok: nou is daar 7 "items" (blok + 6 ander) om te rangskik = 7! = 5040. Vermenigvuldig met die 2! = 2 maniere om hulle binne die blok te rangskik. Totaal = 5040 × 2 = 10 080 ✓' },
+        { difficulty: 'Medium', question: "8 mense word in 'n ry gerangskik. Op hoeveel maniere kan dit gedoen word as twee spesifieke mense, Tumi en Sibongile, NIE langs mekaar sit nie?", checkMode: 'auto', correctAnswer: '30240', correctAnswers: ['30240', '30 240'], explanation: 'Totale rangskikkings van 8 mense: 8! = 40 320. Rangskikkings met Tumi en Sibongile saam: behandel as een blok, 7! × 2! = 5040 × 2 = 10 080. Rangskikkings uitmekaar = totaal − saam = 40 320 − 10 080 = 30 240 ✓' },
+        { difficulty: 'Medium', question: "5 mense word in 'n ry gerangskik. Een spesifieke persoon, Katlego, mag slegs aan een van die punte van die ry sit. Op hoeveel maniere kan die groep gerangskik word?", checkMode: 'auto', correctAnswer: '48', explanation: 'Katlego het 2 keuses (linkerkantste of regterkantste punt). Die oorblywende 4 mense vul die ander 4 sitplekke op 4! = 24 maniere. Totaal = 2 × 24 = 48 ✓' },
+        { difficulty: 'Medium', question: "'n Koor van 5 sopraanstemme en 4 altstemme word in 'n ry vir 'n foto gerangskik. Op hoeveel maniere kan hulle gerangskik word as al die sopraanstemme saam moet staan EN al die altstemme saam moet staan?", checkMode: 'self', answer: 'Behandel die sopraanstemme as een blok en die altstemme as een blok: 2 blokke kan op 2! = 2 maniere gerangskik word. Binne die sopraanblok: 5! = 120 maniere. Binne die altblok: 4! = 24 maniere. Totaal = 2 × 120 × 24 = 5760.' },
+
+        // Blok 4 — Permutasies met herhaalde items (V11–V13, Matig/Moeilik)
+        { difficulty: 'Medium', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "FILTER".', checkMode: 'auto', correctAnswer: '720', explanation: 'Al 6 letters van FILTER is verskillend, so rangskikkings = 6! = 720 ✓' },
+        { difficulty: 'Hard', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "BUBBLE".', checkMode: 'auto', correctAnswer: '120', explanation: 'BUBBLE het 6 letters met B wat 3 keer herhaal (al die ander kom net een keer voor). Rangskikkings = 6! ÷ 3! = 720 ÷ 6 = 120 ✓' },
+        { difficulty: 'Hard', question: 'Bepaal die aantal verskillende rangskikkings van die letters in die woord "ASSASSIN".', checkMode: 'self', answer: 'ASSASSIN het 8 letters: S(4), A(2), I(1), N(1). Rangskikkings = 8! ÷ (4! × 2!) = 40 320 ÷ (24 × 2) = 40 320 ÷ 48 = 840.' },
+
+        // Blok 5 — Kombinasies (V14–V17, Moeilik)
+        { difficulty: 'Hard', question: "'n Span moet 6 lede kies uit 'n groep van 13 kandidate, waar die volgorde van keuse nie saak maak nie. Op hoeveel maniere kan die span gekies word?", checkMode: 'auto', correctAnswer: '1716', explanation: 'Volgorde maak nie saak nie, so gebruik kombinasies: C(13,6) = 13! ÷ (6! × 7!) = 1716 ✓' },
+        { difficulty: 'Hard', question: "'n Fles bevat 7 rooi albasters en 4 blou albasters, almal verskillend in grootte. 'n Steekproef van 4 rooi albasters EN 2 blou albasters moet gekies word. Op hoeveel maniere kan hierdie steekproef gekies word?", checkMode: 'auto', correctAnswer: '210', explanation: 'C(7,4) = 35 maniere om die rooi albasters te kies. C(4,2) = 6 maniere om die blou albasters te kies. Volgens die telbeginsel, totaal = 35 × 6 = 210 ✓' },
+        { difficulty: 'Hard', question: "Op hoeveel maniere kan 'n groep van 5 vrywilligers uit 15 verskillende aansoekers gekies word?", checkMode: 'auto', correctAnswer: '3003', explanation: 'Volgorde maak nie saak nie, so gebruik kombinasies: C(15,5) = 15! ÷ (5! × 10!) = 3003 ✓' },
+        { difficulty: 'Hard', question: "'n Besprekingspaneel van 4 mense word gekies uit 'n groep van 6 onderwysers en 5 ouers (11 mense in totaal). Bepaal die aantal maniere om die paneel te kies as dit TEN MINSTE een onderwyser moet insluit.", checkMode: 'self', answer: 'Totale maniere om enige 4 uit 11 te kies: C(11,4) = 330. Maniere om 4 met geen onderwysers (almal ouers) te kies: C(5,4) = 5. Ten minste een onderwyser = totaal − geen onderwysers = 330 − 5 = 325.' },
+
+        // Blok 6 — Gekombineerde telbeginsel en waarskynlikheid (V18–V20, Moeilik)
+        { difficulty: 'Hard', question: "7 mense, insluitend 'n getroude paar, sit lukraak in 'n ry van 7 stoele. Bepaal die waarskynlikheid dat die getroude paar saam sit.", checkMode: 'auto', correctAnswer: '2/7', correctAnswers: ['2/7', '1440/5040', '0,286', '0.286', '≈2/7', '≈0,286', '≈0.286'], explanation: 'Totale rangskikkings: 7! = 5040. Gunstige (paar saam): behandel as een blok, 6! × 2! = 720 × 2 = 1440. P = 1440 ÷ 5040 = 2/7 ✓' },
+        { difficulty: 'Hard', question: 'Die letters van die woord "RADAR" word in \'n lukrake volgorde gerangskik. Bepaal die waarskynlikheid dat die rangskikking met die letter D begin.', checkMode: 'auto', correctAnswer: '1/5', correctAnswers: ['1/5', '6/30', '0,2', '0.2'], explanation: 'RADAR het 5 letters met R wat twee keer herhaal en A wat twee keer herhaal, so totale rangskikkings = 5! ÷ (2! × 2!) = 120 ÷ 4 = 30. Gunstige: vas D in die eerste posisie, rangskik dan R, A, A, R (4 letters, R herhaal twee keer en A herhaal twee keer) in die oorblywende posisies: 4! ÷ (2! × 2!) = 6. P = 6 ÷ 30 = 1/5 ✓' },
+        { difficulty: 'Hard', question: "'n Slotkode word gevorm deur 4 verskillende syfers uit 0–9 te rangskik, sonder om enige syfer te herhaal. Bepaal die waarskynlikheid dat die kode met 'n ewe syfer eindig.", checkMode: 'self', answer: 'Totale kodes: 10 × 9 × 8 × 7 = 5040. Gunstige (eindig met \'n ewe syfer): die laaste syfer het 5 keuses (0, 2, 4, 6 of 8), dan word die eerste 3 syfers uit die oorblywende 9 syfers sonder herhaling gekies = 9 × 8 × 7 = 504, wat 5 × 504 = 2520 gee. P = 2520 ÷ 5040 = 1/2 = 0,5.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het teltegnieke en permutasies bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Jy is seker van die meeste hiervan — hersien enige gemiste vrae.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die telbeginsel- en permutasie-afdelings, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan probeer — werk deur die studiegids weer deur en probeer hierdie stel weer.' },
+      ],
+    },
+  ] satisfies PracticeSet[],
 }

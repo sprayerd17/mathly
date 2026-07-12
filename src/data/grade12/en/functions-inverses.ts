@@ -585,4 +585,136 @@ export const topicData: TopicData = {
     { minScore: 30, message: 'Good effort! Work back through the study guide and worked examples for each section, then try again.' },
     { minScore: 0, message: "Don't give up — every expert was once a beginner! Revisit the explanations and worked examples section by section, then try again." },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-3 Inverse of a linear function (Easy) | 4-7 Inverse of an exponential
+    // function as a log (Easy-Medium) | 8-11 Inverse of a restricted quadratic (Medium) |
+    // 12-15 Domain restriction reasoning (Medium-Hard) | 16-19 Function-inverse
+    // relationship: point swap, reflection, domain/range swap, composition (Hard)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = 6x + 2.', answer: 'f⁻¹(x) = (x − 2) / 6', checkMode: 'auto', correctAnswer: '(x-2)/6', correctAnswers: ['(x-2)/6', '(x − 2)/6', '(x-2) / 6', 'x/6 - 1/3'], explanation: 'Step 1: Write y = 6x + 2.\nStep 2: Swap x and y: x = 6y + 2.\nStep 3: Solve for y: x − 2 = 6y → y = (x − 2)/6.\nSo f⁻¹(x) = (x − 2)/6 ✓' },
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = −4x + 8.', answer: 'f⁻¹(x) = (8 − x) / 4', checkMode: 'auto', correctAnswer: '(8-x)/4', correctAnswers: ['(8-x)/4', '(8 − x)/4', '2-x/4', '2 - x/4'], explanation: 'Step 1: Write y = −4x + 8.\nStep 2: Swap x and y: x = −4y + 8.\nStep 3: Solve for y: x − 8 = −4y → y = (8 − x)/4.\nSo f⁻¹(x) = (8 − x)/4 ✓' },
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = 3x − 9.', answer: 'f⁻¹(x) = (x + 9) / 3', checkMode: 'auto', correctAnswer: '(x+9)/3', correctAnswers: ['(x+9)/3', '(x + 9)/3', 'x/3 + 3'], explanation: 'Step 1: Write y = 3x − 9.\nStep 2: Swap x and y: x = 3y − 9.\nStep 3: Solve for y: x + 9 = 3y → y = (x + 9)/3.\nSo f⁻¹(x) = (x + 9)/3 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Find the inverse of f(x) = ½x + 5.', answer: 'f⁻¹(x) = 2x − 10', checkMode: 'auto', correctAnswer: '2x-10', correctAnswers: ['2x-10', '2x − 10', '2(x-5)', '2(x − 5)'], explanation: 'Step 1: Write y = ½x + 5.\nStep 2: Swap x and y: x = ½y + 5.\nStep 3: Solve for y: x − 5 = ½y → y = 2x − 10.\nSo f⁻¹(x) = 2x − 10 ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Find the inverse of f(x) = 5ˣ.', answer: 'f⁻¹(x) = log₅x', checkMode: 'auto', correctAnswer: 'log₅x', correctAnswers: ['log₅x', 'log5(x)', 'log_5(x)', 'log_5 x', 'log₅ x'], explanation: 'Step 1: Write y = 5ˣ.\nStep 2: Swap x and y: x = 5ʸ.\nStep 3: Convert to logarithmic form: y = log₅x.\nSo f⁻¹(x) = log₅x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = 10ˣ.', answer: 'f⁻¹(x) = log x', checkMode: 'auto', correctAnswer: 'log x', correctAnswers: ['log x', 'logx', 'log₁₀x', 'log_10(x)', 'log(x)'], explanation: 'Step 1: Write y = 10ˣ.\nStep 2: Swap x and y: x = 10ʸ.\nStep 3: Convert to logarithmic form: y = log₁₀x, usually written simply as log x.\nSo f⁻¹(x) = log x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = log₃x.', answer: 'f⁻¹(x) = 3ˣ', checkMode: 'auto', correctAnswer: '3ˣ', correctAnswers: ['3ˣ', '3^x'], explanation: 'Step 1: Write y = log₃x.\nStep 2: Swap x and y: x = log₃y.\nStep 3: Convert to exponential form: 3ˣ = y.\nSo f⁻¹(x) = 3ˣ ✓' },
+        { difficulty: 'Medium', question: 'If f(x) = log₄x, find f⁻¹(x) and then evaluate f⁻¹(3).', answer: '', checkMode: 'auto', parts: [
+          { label: 'f⁻¹(x) =', correctAnswer: '4ˣ', correctAnswers: ['4ˣ', '4^x'], explanation: 'Swap x and y in y = log₄x: x = log₄y. Convert to exponential form: y = 4ˣ. So f⁻¹(x) = 4ˣ.' },
+          { label: 'f⁻¹(3) =', correctAnswer: '64', correctAnswers: ['64'], explanation: 'f⁻¹(3) = 4³ = 64. ✓' },
+        ]},
+
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = x² for x ≥ 0.', answer: 'f⁻¹(x) = √x', checkMode: 'auto', correctAnswer: '√x', correctAnswers: ['√x', 'sqrt(x)'], explanation: 'Step 1: Write y = x² for x ≥ 0.\nStep 2: Swap x and y: x = y².\nStep 3: Solve for y: y = ±√x. Since the original domain was x ≥ 0, the outputs of f⁻¹ must satisfy y ≥ 0, so take the positive root: f⁻¹(x) = √x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = x² − 4 for x ≥ 0.', answer: 'f⁻¹(x) = √(x + 4)', checkMode: 'auto', correctAnswer: '√(x+4)', correctAnswers: ['√(x+4)', 'sqrt(x+4)', '√(x + 4)'], explanation: 'Step 1: Write y = x² − 4 for x ≥ 0.\nStep 2: Swap x and y: x = y² − 4.\nStep 3: Solve for y: y² = x + 4 → y = ±√(x + 4). Since x ≥ 0 originally, take the positive root: f⁻¹(x) = √(x + 4) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the inverse of f(x) = x² + 1 for x ≤ 0.', answer: 'f⁻¹(x) = −√(x − 1)', checkMode: 'auto', correctAnswer: '-√(x-1)', correctAnswers: ['-√(x-1)', '−√(x − 1)', '-sqrt(x-1)'], explanation: 'Step 1: Write y = x² + 1 for x ≤ 0.\nStep 2: Swap x and y: x = y² + 1.\nStep 3: Solve for y: y² = x − 1 → y = ±√(x − 1). Since x ≤ 0 originally, take the negative root: f⁻¹(x) = −√(x − 1) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the inverse of f(x) = 2x² for x ≥ 0.', answer: 'f⁻¹(x) = √(x / 2)', checkMode: 'auto', correctAnswer: '√(x/2)', correctAnswers: ['√(x/2)', 'sqrt(x/2)'], explanation: 'Step 1: Write y = 2x² for x ≥ 0.\nStep 2: Swap x and y: x = 2y².\nStep 3: Solve for y: y² = x/2 → y = ±√(x/2). Since x ≥ 0 originally, take the positive root: f⁻¹(x) = √(x/2) ✓' },
+
+        { difficulty: 'Hard', question: 'Explain why f(x) = x² must have its domain restricted before it can have an inverse function.', answer: 'f(x) = x² is many-to-one — for example f(2) = f(−2) = 4 — so it fails the horizontal line test. Its full inverse relation y = ±√x fails the vertical line test, so it is not a function unless the domain of f is restricted to make f one-to-one.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Determine the smallest domain restriction (of the form x ≥ 0) that makes f(x) = x² − 6 one-to-one, then find f⁻¹(x) for that restriction.', answer: 'Restrict to x ≥ 0. Then f⁻¹(x) = √(x + 6).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A student says the inverse of f(x) = x² + 2 for x ≤ 0 is f⁻¹(x) = √(x − 2). Is this correct? Explain and give the correct inverse.', answer: 'No — since the original domain was x ≤ 0, the outputs of f⁻¹ must be ≤ 0, so the negative root must be used. The correct inverse is f⁻¹(x) = −√(x − 2).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Explain why restricting f(x) = x² to x ≥ 0 gives the inverse y = +√x, while restricting it to x ≤ 0 gives the inverse y = −√x.', answer: 'The sign of the root in the inverse must match the restricted domain of the original function, because the range of the inverse equals the domain of the original function. Restricting to x ≥ 0 means f⁻¹ must output values ≥ 0, so the positive root is used; restricting to x ≤ 0 means f⁻¹ must output values ≤ 0, so the negative root is used.', checkMode: 'self' },
+
+        { difficulty: 'Hard', question: 'The point (3, 11) lies on f(x) = 3x + 2. State the corresponding point that must lie on f⁻¹.', answer: '(11, 3)', checkMode: 'auto', correctAnswer: '(11,3)', correctAnswers: ['(11,3)', '(11, 3)'], explanation: 'If (a, b) lies on f, then (b, a) lies on f⁻¹, since the inverse swaps inputs and outputs. So (3, 11) on f gives (11, 3) on f⁻¹. ✓' },
+        { difficulty: 'Hard', question: 'f(x) = 3x − 2 is sketched together with f⁻¹ on the same axes, both reflected across the line y = x. The line f passes through the points (0, −2) and (2, 4). Find the equation of f⁻¹.', answer: 'f⁻¹(x) = (x + 2) / 3', checkMode: 'auto', correctAnswer: '(x+2)/3', correctAnswers: ['(x+2)/3', '(x + 2)/3'], explanation: 'Swap x and y in y = 3x − 2: x = 3y − 2. Solve for y: x + 2 = 3y → y = (x + 2)/3. Check with the reflected points: (0, −2) on f swaps to (−2, 0) on f⁻¹, and (2, 4) on f swaps to (4, 2) on f⁻¹ — both satisfy y = (x + 2)/3. So f⁻¹(x) = (x + 2)/3 ✓' },
+        { difficulty: 'Hard', question: 'A function f has domain x ≥ 3 and range y ≥ 0. State the domain and range of f⁻¹.', answer: 'Domain of f⁻¹ is x ≥ 0, and range of f⁻¹ is y ≥ 3.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Find the inverse of f(x) = 4x − 1, then verify your answer by showing that f(f⁻¹(x)) = x.', answer: 'f⁻¹(x) = (x + 1)/4. Check: f(f⁻¹(x)) = 4·(x + 1)/4 − 1 = (x + 1) − 1 = x ✓.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered finding and reasoning about inverse functions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = 7x − 3.', answer: 'f⁻¹(x) = (x + 3) / 7', checkMode: 'auto', correctAnswer: '(x+3)/7', correctAnswers: ['(x+3)/7', '(x + 3)/7'], explanation: 'Step 1: Write y = 7x − 3.\nStep 2: Swap x and y: x = 7y − 3.\nStep 3: Solve for y: x + 3 = 7y → y = (x + 3)/7.\nSo f⁻¹(x) = (x + 3)/7 ✓' },
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = −2x + 10.', answer: 'f⁻¹(x) = (10 − x) / 2', checkMode: 'auto', correctAnswer: '(10-x)/2', correctAnswers: ['(10-x)/2', '(10 − x)/2', '5-x/2', '5 - x/2'], explanation: 'Step 1: Write y = −2x + 10.\nStep 2: Swap x and y: x = −2y + 10.\nStep 3: Solve for y: x − 10 = −2y → y = (10 − x)/2.\nSo f⁻¹(x) = (10 − x)/2 ✓' },
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = 4x − 1.', answer: 'f⁻¹(x) = (x + 1) / 4', checkMode: 'auto', correctAnswer: '(x+1)/4', correctAnswers: ['(x+1)/4', '(x + 1)/4'], explanation: 'Step 1: Write y = 4x − 1.\nStep 2: Swap x and y: x = 4y − 1.\nStep 3: Solve for y: x + 1 = 4y → y = (x + 1)/4.\nSo f⁻¹(x) = (x + 1)/4 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Find the inverse of f(x) = ⅓x − 2.', answer: 'f⁻¹(x) = 3x + 6', checkMode: 'auto', correctAnswer: '3x+6', correctAnswers: ['3x+6', '3x + 6', '3(x+2)', '3(x + 2)'], explanation: 'Step 1: Write y = ⅓x − 2.\nStep 2: Swap x and y: x = ⅓y − 2.\nStep 3: Solve for y: x + 2 = ⅓y → y = 3x + 6.\nSo f⁻¹(x) = 3x + 6 ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Find the inverse of f(x) = 2ˣ.', answer: 'f⁻¹(x) = log₂x', checkMode: 'auto', correctAnswer: 'log₂x', correctAnswers: ['log₂x', 'log2(x)', 'log_2(x)', 'log_2 x', 'log₂ x'], explanation: 'Step 1: Write y = 2ˣ.\nStep 2: Swap x and y: x = 2ʸ.\nStep 3: Convert to logarithmic form: y = log₂x.\nSo f⁻¹(x) = log₂x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = 6ˣ.', answer: 'f⁻¹(x) = log₆x', checkMode: 'auto', correctAnswer: 'log₆x', correctAnswers: ['log₆x', 'log6(x)', 'log_6(x)', 'log_6 x', 'log₆ x'], explanation: 'Step 1: Write y = 6ˣ.\nStep 2: Swap x and y: x = 6ʸ.\nStep 3: Convert to logarithmic form: y = log₆x.\nSo f⁻¹(x) = log₆x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = log₅x.', answer: 'f⁻¹(x) = 5ˣ', checkMode: 'auto', correctAnswer: '5ˣ', correctAnswers: ['5ˣ', '5^x'], explanation: 'Step 1: Write y = log₅x.\nStep 2: Swap x and y: x = log₅y.\nStep 3: Convert to exponential form: 5ˣ = y.\nSo f⁻¹(x) = 5ˣ ✓' },
+        { difficulty: 'Medium', question: 'If f(x) = log₂x, find f⁻¹(x) and then evaluate f⁻¹(4).', answer: '', checkMode: 'auto', parts: [
+          { label: 'f⁻¹(x) =', correctAnswer: '2ˣ', correctAnswers: ['2ˣ', '2^x'], explanation: 'Swap x and y in y = log₂x: x = log₂y. Convert to exponential form: y = 2ˣ. So f⁻¹(x) = 2ˣ.' },
+          { label: 'f⁻¹(4) =', correctAnswer: '16', correctAnswers: ['16'], explanation: 'f⁻¹(4) = 2⁴ = 16. ✓' },
+        ]},
+
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = x² for x ≤ 0.', answer: 'f⁻¹(x) = −√x', checkMode: 'auto', correctAnswer: '-√x', correctAnswers: ['-√x', '−√x', '-sqrt(x)'], explanation: 'Step 1: Write y = x² for x ≤ 0.\nStep 2: Swap x and y: x = y².\nStep 3: Solve for y: y = ±√x. Since the original domain was x ≤ 0, the outputs of f⁻¹ must satisfy y ≤ 0, so take the negative root: f⁻¹(x) = −√x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = x² − 9 for x ≥ 0.', answer: 'f⁻¹(x) = √(x + 9)', checkMode: 'auto', correctAnswer: '√(x+9)', correctAnswers: ['√(x+9)', 'sqrt(x+9)', '√(x + 9)'], explanation: 'Step 1: Write y = x² − 9 for x ≥ 0.\nStep 2: Swap x and y: x = y² − 9.\nStep 3: Solve for y: y² = x + 9 → y = ±√(x + 9). Since x ≥ 0 originally, take the positive root: f⁻¹(x) = √(x + 9) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the inverse of f(x) = x² + 5 for x ≤ 0.', answer: 'f⁻¹(x) = −√(x − 5)', checkMode: 'auto', correctAnswer: '-√(x-5)', correctAnswers: ['-√(x-5)', '−√(x − 5)', '-sqrt(x-5)'], explanation: 'Step 1: Write y = x² + 5 for x ≤ 0.\nStep 2: Swap x and y: x = y² + 5.\nStep 3: Solve for y: y² = x − 5 → y = ±√(x − 5). Since x ≤ 0 originally, take the negative root: f⁻¹(x) = −√(x − 5) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the inverse of f(x) = 3x² for x ≥ 0.', answer: 'f⁻¹(x) = √(x / 3)', checkMode: 'auto', correctAnswer: '√(x/3)', correctAnswers: ['√(x/3)', 'sqrt(x/3)'], explanation: 'Step 1: Write y = 3x² for x ≥ 0.\nStep 2: Swap x and y: x = 3y².\nStep 3: Solve for y: y² = x/3 → y = ±√(x/3). Since x ≥ 0 originally, take the positive root: f⁻¹(x) = √(x/3) ✓' },
+
+        { difficulty: 'Hard', question: 'Explain why f(x) = x² + 4 must have its domain restricted before it can have an inverse function.', answer: 'f(x) = x² + 4 is many-to-one — for example f(1) = f(−1) = 5 — so it fails the horizontal line test. Its full inverse relation fails the vertical line test, so it is not a function unless the domain of f is restricted to make f one-to-one.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Determine the smallest domain restriction (of the form x ≥ 0) that makes f(x) = x² − 10 one-to-one, then find f⁻¹(x) for that restriction.', answer: 'Restrict to x ≥ 0. Then f⁻¹(x) = √(x + 10).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A student says the inverse of f(x) = x² + 7 for x ≤ 0 is f⁻¹(x) = √(x − 7). Is this correct? Explain and give the correct inverse.', answer: 'No — since the original domain was x ≤ 0, the outputs of f⁻¹ must be ≤ 0, so the negative root must be used. The correct inverse is f⁻¹(x) = −√(x − 7).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Two students restrict f(x) = x² differently — one to x ≥ 0 and the other to x ≤ 0 — before finding the inverse. Explain why they end up with different signs in front of the square root in f⁻¹.', answer: 'The sign of the root in the inverse must match the restricted domain of the original function, because the range of the inverse equals the domain of the original function. Restricting to x ≥ 0 forces f⁻¹ to output values ≥ 0 (positive root); restricting to x ≤ 0 forces f⁻¹ to output values ≤ 0 (negative root).', checkMode: 'self' },
+
+        { difficulty: 'Hard', question: 'The point (5, 17) lies on f(x) = 3x + 2. State the corresponding point that must lie on f⁻¹.', answer: '(17, 5)', checkMode: 'auto', correctAnswer: '(17,5)', correctAnswers: ['(17,5)', '(17, 5)'], explanation: 'If (a, b) lies on f, then (b, a) lies on f⁻¹, since the inverse swaps inputs and outputs. So (5, 17) on f gives (17, 5) on f⁻¹. ✓' },
+        { difficulty: 'Hard', question: 'f(x) = 2x − 6 is sketched together with f⁻¹ on the same axes, both reflected across the line y = x. The line f passes through the points (0, −6) and (3, 0). Find the equation of f⁻¹.', answer: 'f⁻¹(x) = (x + 6) / 2', checkMode: 'auto', correctAnswer: '(x+6)/2', correctAnswers: ['(x+6)/2', '(x + 6)/2'], explanation: 'Swap x and y in y = 2x − 6: x = 2y − 6. Solve for y: x + 6 = 2y → y = (x + 6)/2. Check with the reflected points: (0, −6) on f swaps to (−6, 0) on f⁻¹, and (3, 0) on f swaps to (0, 3) on f⁻¹ — both satisfy y = (x + 6)/2. So f⁻¹(x) = (x + 6)/2 ✓' },
+        { difficulty: 'Hard', question: 'A function f has domain x ≥ −1 and range y ≥ 4. State the domain and range of f⁻¹.', answer: 'Domain of f⁻¹ is x ≥ 4, and range of f⁻¹ is y ≥ −1.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Find the inverse of f(x) = 5x + 3, then verify your answer by showing that f(f⁻¹(x)) = x.', answer: 'f⁻¹(x) = (x − 3)/5. Check: f(f⁻¹(x)) = 5·(x − 3)/5 + 3 = (x − 3) + 3 = x ✓.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Excellent! You can confidently find and reason about inverse functions.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, fresh numbers
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = 8x + 4.', answer: 'f⁻¹(x) = (x − 4) / 8', checkMode: 'auto', correctAnswer: '(x-4)/8', correctAnswers: ['(x-4)/8', '(x − 4)/8'], explanation: 'Step 1: Write y = 8x + 4.\nStep 2: Swap x and y: x = 8y + 4.\nStep 3: Solve for y: x − 4 = 8y → y = (x − 4)/8.\nSo f⁻¹(x) = (x − 4)/8 ✓' },
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = −5x + 15.', answer: 'f⁻¹(x) = (15 − x) / 5', checkMode: 'auto', correctAnswer: '(15-x)/5', correctAnswers: ['(15-x)/5', '(15 − x)/5', '3-x/5', '3 - x/5'], explanation: 'Step 1: Write y = −5x + 15.\nStep 2: Swap x and y: x = −5y + 15.\nStep 3: Solve for y: x − 15 = −5y → y = (15 − x)/5.\nSo f⁻¹(x) = (15 − x)/5 ✓' },
+        { difficulty: 'Easy', question: 'Find the inverse of f(x) = 2x − 7.', answer: 'f⁻¹(x) = (x + 7) / 2', checkMode: 'auto', correctAnswer: '(x+7)/2', correctAnswers: ['(x+7)/2', '(x + 7)/2'], explanation: 'Step 1: Write y = 2x − 7.\nStep 2: Swap x and y: x = 2y − 7.\nStep 3: Solve for y: x + 7 = 2y → y = (x + 7)/2.\nSo f⁻¹(x) = (x + 7)/2 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Find the inverse of f(x) = ¼x + 3.', answer: 'f⁻¹(x) = 4x − 12', checkMode: 'auto', correctAnswer: '4x-12', correctAnswers: ['4x-12', '4x − 12', '4(x-3)', '4(x − 3)'], explanation: 'Step 1: Write y = ¼x + 3.\nStep 2: Swap x and y: x = ¼y + 3.\nStep 3: Solve for y: x − 3 = ¼y → y = 4x − 12.\nSo f⁻¹(x) = 4x − 12 ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Find the inverse of f(x) = 8ˣ.', answer: 'f⁻¹(x) = log₈x', checkMode: 'auto', correctAnswer: 'log₈x', correctAnswers: ['log₈x', 'log8(x)', 'log_8(x)', 'log_8 x', 'log₈ x'], explanation: 'Step 1: Write y = 8ˣ.\nStep 2: Swap x and y: x = 8ʸ.\nStep 3: Convert to logarithmic form: y = log₈x.\nSo f⁻¹(x) = log₈x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = 7ˣ.', answer: 'f⁻¹(x) = log₇x', checkMode: 'auto', correctAnswer: 'log₇x', correctAnswers: ['log₇x', 'log7(x)', 'log_7(x)', 'log_7 x', 'log₇ x'], explanation: 'Step 1: Write y = 7ˣ.\nStep 2: Swap x and y: x = 7ʸ.\nStep 3: Convert to logarithmic form: y = log₇x.\nSo f⁻¹(x) = log₇x ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = log x (base 10).', answer: 'f⁻¹(x) = 10ˣ', checkMode: 'auto', correctAnswer: '10ˣ', correctAnswers: ['10ˣ', '10^x'], explanation: 'Step 1: Write y = log₁₀x.\nStep 2: Swap x and y: x = log₁₀y.\nStep 3: Convert to exponential form: 10ˣ = y.\nSo f⁻¹(x) = 10ˣ ✓' },
+        { difficulty: 'Medium', question: 'If f(x) = log₃x, find f⁻¹(x) and then evaluate f⁻¹(2).', answer: '', checkMode: 'auto', parts: [
+          { label: 'f⁻¹(x) =', correctAnswer: '3ˣ', correctAnswers: ['3ˣ', '3^x'], explanation: 'Swap x and y in y = log₃x: x = log₃y. Convert to exponential form: y = 3ˣ. So f⁻¹(x) = 3ˣ.' },
+          { label: 'f⁻¹(2) =', correctAnswer: '9', correctAnswers: ['9'], explanation: 'f⁻¹(2) = 3² = 9. ✓' },
+        ]},
+
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = x² − 1 for x ≥ 0.', answer: 'f⁻¹(x) = √(x + 1)', checkMode: 'auto', correctAnswer: '√(x+1)', correctAnswers: ['√(x+1)', 'sqrt(x+1)', '√(x + 1)'], explanation: 'Step 1: Write y = x² − 1 for x ≥ 0.\nStep 2: Swap x and y: x = y² − 1.\nStep 3: Solve for y: y² = x + 1 → y = ±√(x + 1). Since x ≥ 0 originally, take the positive root: f⁻¹(x) = √(x + 1) ✓' },
+        { difficulty: 'Medium', question: 'Find the inverse of f(x) = x² − 16 for x ≥ 0.', answer: 'f⁻¹(x) = √(x + 16)', checkMode: 'auto', correctAnswer: '√(x+16)', correctAnswers: ['√(x+16)', 'sqrt(x+16)', '√(x + 16)'], explanation: 'Step 1: Write y = x² − 16 for x ≥ 0.\nStep 2: Swap x and y: x = y² − 16.\nStep 3: Solve for y: y² = x + 16 → y = ±√(x + 16). Since x ≥ 0 originally, take the positive root: f⁻¹(x) = √(x + 16) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the inverse of f(x) = x² + 3 for x ≤ 0.', answer: 'f⁻¹(x) = −√(x − 3)', checkMode: 'auto', correctAnswer: '-√(x-3)', correctAnswers: ['-√(x-3)', '−√(x − 3)', '-sqrt(x-3)'], explanation: 'Step 1: Write y = x² + 3 for x ≤ 0.\nStep 2: Swap x and y: x = y² + 3.\nStep 3: Solve for y: y² = x − 3 → y = ±√(x − 3). Since x ≤ 0 originally, take the negative root: f⁻¹(x) = −√(x − 3) ✓' },
+        { difficulty: 'Medium-Hard', question: 'Find the inverse of f(x) = 5x² for x ≥ 0.', answer: 'f⁻¹(x) = √(x / 5)', checkMode: 'auto', correctAnswer: '√(x/5)', correctAnswers: ['√(x/5)', 'sqrt(x/5)'], explanation: 'Step 1: Write y = 5x² for x ≥ 0.\nStep 2: Swap x and y: x = 5y².\nStep 3: Solve for y: y² = x/5 → y = ±√(x/5). Since x ≥ 0 originally, take the positive root: f⁻¹(x) = √(x/5) ✓' },
+
+        { difficulty: 'Hard', question: 'Explain why f(x) = x² − 2 must have its domain restricted before it can have an inverse function.', answer: 'f(x) = x² − 2 is many-to-one — for example f(1) = f(−1) = −1 — so it fails the horizontal line test. Its full inverse relation fails the vertical line test, so it is not a function unless the domain of f is restricted to make f one-to-one.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Determine the smallest domain restriction (of the form x ≥ 0) that makes f(x) = x² − 3 one-to-one, then find f⁻¹(x) for that restriction.', answer: 'Restrict to x ≥ 0. Then f⁻¹(x) = √(x + 3).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A student says the inverse of f(x) = x² + 9 for x ≤ 0 is f⁻¹(x) = √(x − 9). Is this correct? Explain and give the correct inverse.', answer: 'No — since the original domain was x ≤ 0, the outputs of f⁻¹ must be ≤ 0, so the negative root must be used. The correct inverse is f⁻¹(x) = −√(x − 9).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A parabola f(x) = x² can be restricted to either x ≥ 0 or x ≤ 0 to create an inverse function. Explain how the choice of restriction determines the sign used in f⁻¹.', answer: 'The sign of the root in the inverse must match the restricted domain of the original function, because the range of the inverse equals the domain of the original function. Restricting to x ≥ 0 forces f⁻¹ to output values ≥ 0 (positive root); restricting to x ≤ 0 forces f⁻¹ to output values ≤ 0 (negative root).', checkMode: 'self' },
+
+        { difficulty: 'Hard', question: 'The point (4, 9) lies on f(x) = 2x + 1. State the corresponding point that must lie on f⁻¹.', answer: '(9, 4)', checkMode: 'auto', correctAnswer: '(9,4)', correctAnswers: ['(9,4)', '(9, 4)'], explanation: 'If (a, b) lies on f, then (b, a) lies on f⁻¹, since the inverse swaps inputs and outputs. So (4, 9) on f gives (9, 4) on f⁻¹. ✓' },
+        { difficulty: 'Hard', question: 'f(x) = 4x − 8 is sketched together with f⁻¹ on the same axes, both reflected across the line y = x. The line f passes through the points (0, −8) and (2, 0). Find the equation of f⁻¹.', answer: 'f⁻¹(x) = (x + 8) / 4', checkMode: 'auto', correctAnswer: '(x+8)/4', correctAnswers: ['(x+8)/4', '(x + 8)/4'], explanation: 'Swap x and y in y = 4x − 8: x = 4y − 8. Solve for y: x + 8 = 4y → y = (x + 8)/4. Check with the reflected points: (0, −8) on f swaps to (−8, 0) on f⁻¹, and (2, 0) on f swaps to (0, 2) on f⁻¹ — both satisfy y = (x + 8)/4. So f⁻¹(x) = (x + 8)/4 ✓' },
+        { difficulty: 'Hard', question: 'A function f has domain x ≥ 2 and range y ≥ −5. State the domain and range of f⁻¹.', answer: 'Domain of f⁻¹ is x ≥ −5, and range of f⁻¹ is y ≥ 2.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Find the inverse of f(x) = 6x − 2, then verify your answer by showing that f(f⁻¹(x)) = x.', answer: 'f⁻¹(x) = (x + 2)/6. Check: f(f⁻¹(x)) = 6·(x + 2)/6 − 2 = (x + 2) − 2 = x ✓.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantastic! You can apply inverse function skills — linear, exponential, and restricted quadratic — to a wide range of problems.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
 }

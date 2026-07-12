@@ -613,6 +613,132 @@ export const topicData: TopicData = {
     },
   ],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // Blocks: 0-2 Convert exp<->log form (Easy) | 3-5 Evaluate a log using the
+    // definition (Easy-Medium) | 6-9 Log laws — product/quotient/power (Medium) |
+    // 10-13 Solve log equations (Medium) | 14-16 Solve exponential equations /
+    // change of base (Medium-Hard) | 17-19 Inverse relationship & graph features (Hard)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Convert log₂ 32 = 5 to exponential form.', answer: '2⁵ = 32', checkMode: 'auto', correctAnswer: '2^5=32', correctAnswers: ['2^5=32', '2⁵=32', '2^5 = 32', '2⁵ = 32'], explanation: 'log₂ 32 = 5 means the base 2 must be raised to the power 5 to give 32: 2⁵ = 32. ✓' },
+        { difficulty: 'Easy', question: 'Convert 7² = 49 to logarithmic form.', answer: 'log₇ 49 = 2', checkMode: 'auto', correctAnswer: 'log7(49)=2', correctAnswers: ['log7(49)=2', 'log7 49=2', 'log_7(49)=2'], explanation: '7² = 49 means log₇ 49 = 2. ✓' },
+        { difficulty: 'Easy', question: 'Convert log₄ x = 3 to exponential form.', answer: 'x = 4³', checkMode: 'auto', correctAnswer: 'x=4^3', correctAnswers: ['x=4^3', 'x=4³', '4^3', '4³', '64', 'x=64'], explanation: 'log₄ x = 3 means x = 4³ (which equals 64). ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₂ 64.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Ask: to what power must 2 be raised to get 64? 2⁶ = 64, so log₂ 64 = 6. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₆ 36.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Ask: to what power must 6 be raised to get 36? 6² = 36, so log₆ 36 = 2. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₇ 343.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Ask: to what power must 7 be raised to get 343? 7³ = 343, so log₇ 343 = 3. ✓' },
+
+        { difficulty: 'Medium', question: 'Simplify log₂(16 × 8) using the product law.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Product law: log₂(16 × 8) = log₂ 16 + log₂ 8 = 4 + 3 = 7. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₂(128 ÷ 16) using the quotient law.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Quotient law: log₂(128 ÷ 16) = log₂ 128 − log₂ 16 = 7 − 4 = 3. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₂(32²) using the power law.', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Power law: log₂(32²) = 2 · log₂ 32 = 2 × 5 = 10. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₃(9 × 27) − log₃ 3 using the product and quotient laws.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'log₃(9 × 27) = log₃ 9 + log₃ 27 = 2 + 3 = 5. Then 5 − log₃ 3 = 5 − 1 = 4. ✓' },
+
+        { difficulty: 'Medium', question: 'Solve for x: log₂ x = 6.', answer: 'x = 64', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64', 'x=64', 'x = 64'], explanation: 'Convert to exponential form: x = 2⁶ = 64. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log₃(x + 5) = 3.', answer: 'x = 22', checkMode: 'auto', correctAnswer: '22', correctAnswers: ['22', 'x=22', 'x = 22'], explanation: 'Convert to exponential form: x + 5 = 3³ = 27. x = 27 − 5 = 22. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log x + log(x − 8) = log 20.', answer: 'x = 10 (x = −2 is rejected)', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', 'x=10', 'x = 10'], explanation: 'Combine: log(x(x − 8)) = log 20, so x(x − 8) = 20. Expand: x² − 8x − 20 = 0. Factorise: (x − 10)(x + 2) = 0, so x = 10 or x = −2. Since log of a negative number is undefined, x = −2 is rejected, leaving x = 10. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log(x²) = 2, considering both possible solutions.', answer: 'x = ±10', checkMode: 'auto', correctAnswer: '±10', correctAnswers: ['±10', '+-10', '10 and -10', '-10 and 10', 'x=±10'], explanation: 'x² = 10² = 100, so x = ±10 (both are valid since x² is positive regardless of the sign of x). ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Solve for x: 2ˣ = 50. Give your answer to 3 decimal places.', answer: 'x ≈ 5.644', checkMode: 'auto', correctAnswer: '5.644', correctAnswers: ['5.644', '≈5.644', 'x=5.644', 'x ≈ 5.644'], explanation: 'Take log of both sides: x · log 2 = log 50. x = log 50 / log 2 ≈ 1.699 / 0.301 ≈ 5.644. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Use the change of base formula to evaluate log₆ 200 to 3 decimal places.', answer: 'log₆ 200 ≈ 2.957', checkMode: 'auto', correctAnswer: '2.957', correctAnswers: ['2.957', '≈2.957'], explanation: 'log₆ 200 = log(200) / log(6) ≈ 2.301 / 0.778 ≈ 2.957. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Solve for x: log₂(x − 1) + log₂ 3 = log₂ 18.', answer: 'x = 7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x=7', 'x = 7'], explanation: 'Combine: log₂(3(x − 1)) = log₂ 18, so 3(x − 1) = 18. x − 1 = 6, x = 7. Check: x − 1 = 6 > 0, so valid. ✓' },
+
+        { difficulty: 'Hard', question: 'Find the inverse of f(x) = log₅ x, and explain why this makes sense given the relationship between exponential and logarithmic functions.', answer: 'f⁻¹(x) = 5ˣ. This makes sense since logarithmic and exponential functions are inverses of each other by definition — converting between log and exponential form is the same operation as finding the inverse.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'The graph of g(x) = 3ˣ has horizontal asymptote y = 0 and passes through (0, 1) and (1, 3). State the vertical asymptote and two key points of g⁻¹(x) = log₃ x.', answer: 'Since g⁻¹ reflects g across the line y = x, every point (a, b) on g becomes (b, a) on g⁻¹, and the horizontal asymptote y = 0 becomes the vertical asymptote x = 0. So g⁻¹(x) = log₃ x has vertical asymptote x = 0, and passes through (1, 0) and (3, 1).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho says that because f(x) = 2ˣ is an increasing function, its inverse f⁻¹(x) = log₂ x must also be increasing. Is he correct? Explain using the fact that reflecting a graph across y = x preserves whether it increases or decreases.', answer: 'Yes, Sipho is correct. Reflecting an increasing graph across the line y = x produces another increasing graph (reflection swaps the x- and y-axes roles but does not reverse the increasing trend). Since f(x) = 2ˣ increases for all x, its inverse f⁻¹(x) = log₂ x also increases for all x > 0.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered converting between forms, log laws, and solving log and exponential equations.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Convert log₃ 243 = 5 to exponential form.', answer: '3⁵ = 243', checkMode: 'auto', correctAnswer: '3^5=243', correctAnswers: ['3^5=243', '3⁵=243', '3^5 = 243', '3⁵ = 243'], explanation: 'log₃ 243 = 5 means the base 3 must be raised to the power 5 to give 243: 3⁵ = 243. ✓' },
+        { difficulty: 'Easy', question: 'Convert 8² = 64 to logarithmic form.', answer: 'log₈ 64 = 2', checkMode: 'auto', correctAnswer: 'log8(64)=2', correctAnswers: ['log8(64)=2', 'log8 64=2', 'log_8(64)=2'], explanation: '8² = 64 means log₈ 64 = 2. ✓' },
+        { difficulty: 'Easy', question: 'Convert log₅ x = 4 to exponential form.', answer: 'x = 5⁴', checkMode: 'auto', correctAnswer: 'x=5^4', correctAnswers: ['x=5^4', 'x=5⁴', '5^4', '5⁴', '625', 'x=625'], explanation: 'log₅ x = 4 means x = 5⁴ (which equals 625). ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₃ 243.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Ask: to what power must 3 be raised to get 243? 3⁵ = 243, so log₃ 243 = 5. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₉ 81.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Ask: to what power must 9 be raised to get 81? 9² = 81, so log₉ 81 = 2. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₄ 64.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Ask: to what power must 4 be raised to get 64? 4³ = 64, so log₄ 64 = 3. ✓' },
+
+        { difficulty: 'Medium', question: 'Simplify log₃(27 × 9) using the product law.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Product law: log₃(27 × 9) = log₃ 27 + log₃ 9 = 3 + 2 = 5. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₃(243 ÷ 27) using the quotient law.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Quotient law: log₃(243 ÷ 27) = log₃ 243 − log₃ 27 = 5 − 3 = 2. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₃(9³) using the power law.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Power law: log₃(9³) = 3 · log₃ 9 = 3 × 2 = 6. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₂(8 × 16) − log₂ 4 using the product and quotient laws.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'log₂(8 × 16) = log₂ 8 + log₂ 16 = 3 + 4 = 7. Then 7 − log₂ 4 = 7 − 2 = 5. ✓' },
+
+        { difficulty: 'Medium', question: 'Solve for x: log₂ x = 7.', answer: 'x = 128', checkMode: 'auto', correctAnswer: '128', correctAnswers: ['128', 'x=128', 'x = 128'], explanation: 'Convert to exponential form: x = 2⁷ = 128. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log₂(x + 6) = 4.', answer: 'x = 10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', 'x=10', 'x = 10'], explanation: 'Convert to exponential form: x + 6 = 2⁴ = 16. x = 16 − 6 = 10. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log x + log(x − 4) = log 12.', answer: 'x = 6 (x = −2 is rejected)', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x=6', 'x = 6'], explanation: 'Combine: log(x(x − 4)) = log 12, so x(x − 4) = 12. Expand: x² − 4x − 12 = 0. Factorise: (x − 6)(x + 2) = 0, so x = 6 or x = −2. Since log of a negative number is undefined, x = −2 is rejected, leaving x = 6. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log(x²) = 3, considering both possible solutions, to 3 decimal places where needed.', answer: 'x = ±31.623', checkMode: 'auto', correctAnswer: '±31.623', correctAnswers: ['±31.623', '+-31.623', '31.623 and -31.623', '-31.623 and 31.623', 'x=±31.623'], explanation: 'x² = 10³ = 1000, so x = ±√1000 ≈ ±31.623 (both are valid since x² is positive regardless of the sign of x). ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Solve for x: 3ˣ = 40. Give your answer to 3 decimal places.', answer: 'x ≈ 3.358', checkMode: 'auto', correctAnswer: '3.358', correctAnswers: ['3.358', '≈3.358', 'x=3.358', 'x ≈ 3.358'], explanation: 'Take log of both sides: x · log 3 = log 40. x = log 40 / log 3 ≈ 1.602 / 0.477 ≈ 3.358. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Use the change of base formula to evaluate log₄ 60 to 3 decimal places.', answer: 'log₄ 60 ≈ 2.953', checkMode: 'auto', correctAnswer: '2.953', correctAnswers: ['2.953', '≈2.953'], explanation: 'log₄ 60 = log(60) / log(4) ≈ 1.778 / 0.602 ≈ 2.953. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Solve for x: log₂(x − 2) + log₂ 5 = log₂ 25.', answer: 'x = 7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x=7', 'x = 7'], explanation: 'Combine: log₂(5(x − 2)) = log₂ 25, so 5(x − 2) = 25. x − 2 = 5, x = 7. Check: x − 2 = 5 > 0, so valid. ✓' },
+
+        { difficulty: 'Hard', question: 'Find the inverse of f(x) = log₇ x, and explain why this makes sense given the relationship between exponential and logarithmic functions.', answer: 'f⁻¹(x) = 7ˣ. This makes sense since logarithmic and exponential functions are inverses of each other by definition — converting between log and exponential form is the same operation as finding the inverse.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'The graph of g(x) = 4ˣ has horizontal asymptote y = 0 and passes through (0, 1) and (1, 4). State the vertical asymptote and two key points of g⁻¹(x) = log₄ x.', answer: 'Since g⁻¹ reflects g across the line y = x, every point (a, b) on g becomes (b, a) on g⁻¹, and the horizontal asymptote y = 0 becomes the vertical asymptote x = 0. So g⁻¹(x) = log₄ x has vertical asymptote x = 0, and passes through (1, 0) and (4, 1).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato says that because f(x) = (0.5)ˣ is a decreasing function, its inverse f⁻¹(x) = log₀.₅ x must also be decreasing. Is she correct? Explain using the fact that reflecting a graph across y = x preserves whether it increases or decreases.', answer: 'Yes, Lerato is correct. Reflecting a decreasing graph across the line y = x produces another decreasing graph (reflection swaps the x- and y-axes roles but does not reverse the decreasing trend). Since f(x) = (0.5)ˣ decreases for all x, its inverse f⁻¹(x) = log₀.₅ x also decreases for all x > 0.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Excellent! You can confidently convert between forms, apply log laws, and solve log and exponential equations.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, fresh numbers, more graph-reading emphasis
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Convert log₂ 128 = 7 to exponential form.', answer: '2⁷ = 128', checkMode: 'auto', correctAnswer: '2^7=128', correctAnswers: ['2^7=128', '2⁷=128', '2^7 = 128', '2⁷ = 128'], explanation: 'log₂ 128 = 7 means the base 2 must be raised to the power 7 to give 128: 2⁷ = 128. ✓' },
+        { difficulty: 'Easy', question: 'Convert 9² = 81 to logarithmic form.', answer: 'log₉ 81 = 2', checkMode: 'auto', correctAnswer: 'log9(81)=2', correctAnswers: ['log9(81)=2', 'log9 81=2', 'log_9(81)=2'], explanation: '9² = 81 means log₉ 81 = 2. ✓' },
+        { difficulty: 'Easy', question: 'Convert log₆ x = 2 to exponential form.', answer: 'x = 6²', checkMode: 'auto', correctAnswer: 'x=6^2', correctAnswers: ['x=6^2', 'x=6²', '6^2', '6²', '36', 'x=36'], explanation: 'log₆ x = 2 means x = 6² (which equals 36). ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₂ 128.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Ask: to what power must 2 be raised to get 128? 2⁷ = 128, so log₂ 128 = 7. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₈ 64.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Ask: to what power must 8 be raised to get 64? 8² = 64, so log₈ 64 = 2. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Evaluate log₅ 625.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'Ask: to what power must 5 be raised to get 625? 5⁴ = 625, so log₅ 625 = 4. ✓' },
+
+        { difficulty: 'Medium', question: 'Simplify log₂(8 × 32) using the product law.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Product law: log₂(8 × 32) = log₂ 8 + log₂ 32 = 3 + 5 = 8. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₄(1024 ÷ 16) using the quotient law.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Quotient law: log₄(1024 ÷ 16) = log₄ 1024 − log₄ 16 = 5 − 2 = 3. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₂(16²) using the power law.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Power law: log₂(16²) = 2 · log₂ 16 = 2 × 4 = 8. ✓' },
+        { difficulty: 'Medium', question: 'Simplify log₅(25 × 125) − log₅ 5 using the product and quotient laws.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'log₅(25 × 125) = log₅ 25 + log₅ 125 = 2 + 3 = 5. Then 5 − log₅ 5 = 5 − 1 = 4. ✓' },
+
+        { difficulty: 'Medium', question: 'Solve for x: log₂ x = 8.', answer: 'x = 256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', 'x=256', 'x = 256'], explanation: 'Convert to exponential form: x = 2⁸ = 256. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log₅(x + 3) = 2.', answer: 'x = 22', checkMode: 'auto', correctAnswer: '22', correctAnswers: ['22', 'x=22', 'x = 22'], explanation: 'Convert to exponential form: x + 3 = 5² = 25. x = 25 − 3 = 22. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log x + log(x − 6) = log 16.', answer: 'x = 8 (x = −2 is rejected)', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'x=8', 'x = 8'], explanation: 'Combine: log(x(x − 6)) = log 16, so x(x − 6) = 16. Expand: x² − 6x − 16 = 0. Factorise: (x − 8)(x + 2) = 0, so x = 8 or x = −2. Since log of a negative number is undefined, x = −2 is rejected, leaving x = 8. ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: log(x²) = 6, considering both possible solutions.', answer: 'x = ±1000', checkMode: 'auto', correctAnswer: '±1000', correctAnswers: ['±1000', '+-1000', '1000 and -1000', '-1000 and 1000', 'x=±1000'], explanation: 'x² = 10⁶ = 1 000 000, so x = ±1000 (both are valid since x² is positive regardless of the sign of x). ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Solve for x: 5ˣ = 70. Give your answer to 3 decimal places.', answer: 'x ≈ 2.640', checkMode: 'auto', correctAnswer: '2.640', correctAnswers: ['2.640', '2.64', '≈2.640', 'x=2.640', 'x ≈ 2.640'], explanation: 'Take log of both sides: x · log 5 = log 70. x = log 70 / log 5 ≈ 1.845 / 0.699 ≈ 2.640. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Use the change of base formula to evaluate log₉ 150 to 3 decimal places.', answer: 'log₉ 150 ≈ 2.280', checkMode: 'auto', correctAnswer: '2.280', correctAnswers: ['2.280', '2.28', '≈2.280'], explanation: 'log₉ 150 = log(150) / log(9) ≈ 2.176 / 0.954 ≈ 2.280. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Solve for x: log₃(x − 1) + log₃ 4 = log₃ 20.', answer: 'x = 6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x=6', 'x = 6'], explanation: 'Combine: log₃(4(x − 1)) = log₃ 20, so 4(x − 1) = 20. x − 1 = 5, x = 6. Check: x − 1 = 5 > 0, so valid. ✓' },
+
+        { difficulty: 'Hard', question: 'Find the inverse of f(x) = log₆ x, and explain why this makes sense given the relationship between exponential and logarithmic functions.', answer: 'f⁻¹(x) = 6ˣ. This makes sense since logarithmic and exponential functions are inverses of each other by definition — converting between log and exponential form is the same operation as finding the inverse.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'The graph of g(x) = 5ˣ has horizontal asymptote y = 0 and passes through (0, 1) and (1, 5). State the vertical asymptote and two key points of g⁻¹(x) = log₅ x.', answer: 'Since g⁻¹ reflects g across the line y = x, every point (a, b) on g becomes (b, a) on g⁻¹, and the horizontal asymptote y = 0 becomes the vertical asymptote x = 0. So g⁻¹(x) = log₅ x has vertical asymptote x = 0, and passes through (1, 0) and (5, 1).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo says that since f(x) = log₂ x has a vertical asymptote at x = 0, its inverse f⁻¹(x) = 2ˣ must also have a vertical asymptote. Is he correct? Explain what happens to an asymptote when a graph is reflected across y = x.', answer: 'No, Thabo is not correct. When a graph is reflected across y = x, a vertical asymptote becomes a horizontal asymptote (the roles of x and y swap). So the vertical asymptote x = 0 of f(x) = log₂ x becomes the horizontal asymptote y = 0 of f⁻¹(x) = 2ˣ — the inverse does not have a vertical asymptote at all.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantastic! You can apply log laws, solve log and exponential equations, and reason about exponential-log inverses with confidence.' },
+        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 20,
     messages: [

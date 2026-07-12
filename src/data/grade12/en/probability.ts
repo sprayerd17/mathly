@@ -1,4 +1,4 @@
-import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
+import type { TopicData, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
 
 // ─── Colour helpers ───────────────────────────────────────────────────────────
 // blue   → individual events / given probabilities / known values      (#2563eb)
@@ -531,4 +531,145 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs) — counting principle → permutations → restrictions →
+    // repeated items → combinations → combined counting-and-probability
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Fundamental counting principle (Q1–Q3, Easy)
+        { difficulty: 'Easy', question: 'A clothing shop sells 4 jackets, 5 shirts and 3 pairs of shoes. How many different jacket-shirt-shoe outfits can be put together?', checkMode: 'auto', correctAnswer: '60', explanation: 'Apply the counting principle: 4 × 5 × 3 = 60 outfits ✓' },
+        { difficulty: 'Easy', question: 'A 3-digit code is formed by choosing digits from 1 to 7, with no digit repeated. How many different codes are possible?', checkMode: 'auto', correctAnswer: '210', explanation: 'First digit: 7 choices. Second digit: 6 remaining. Third digit: 5 remaining. 7 × 6 × 5 = 210 ✓' },
+        { difficulty: 'Easy', question: 'A number plate has the form: 2 letters (A–Z, no repetition) followed by 4 digits (0–9, no repetition). How many number plates are possible?', checkMode: 'self', answer: 'Letters: 26 × 25 = 650. Digits: 10 × 9 × 8 × 7 = 5040. Total = 650 × 5040 = 3 276 000.' },
+
+        // Block 2 — Permutations, all different objects (Q4–Q6, Easy/Medium)
+        { difficulty: 'Easy', question: 'In how many different ways can 7 different paintings be hung in a row on a gallery wall?', checkMode: 'auto', correctAnswer: '5040', explanation: '7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040 ✓' },
+        { difficulty: 'Medium', question: 'A race has 9 runners. In how many different ways can 1st, 2nd, 3rd and 4th place be awarded (assuming no ties)?', checkMode: 'auto', correctAnswer: '3024', explanation: '1st place: 9 choices. 2nd: 8 remaining. 3rd: 7 remaining. 4th: 6 remaining. 9 × 8 × 7 × 6 = 3024 ✓' },
+        { difficulty: 'Medium', question: 'In how many different ways can 8 different books be arranged on a shelf?', checkMode: 'auto', correctAnswer: '40320', explanation: '8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40 320 ✓' },
+
+        // Block 3 — Permutations with restrictions (Q7–Q10, Medium)
+        { difficulty: 'Medium', question: '6 people, including Zanele and Bongani, are arranged in a row. In how many ways can this be done if Zanele and Bongani must sit together?', checkMode: 'auto', correctAnswer: '240', explanation: 'Treat Zanele and Bongani as one block: now there are 5 "items" (block + 4 others) to arrange = 5! = 120. Multiply by the 2! = 2 ways to arrange them within the block. Total = 120 × 2 = 240 ✓' },
+        { difficulty: 'Medium', question: '7 people are arranged in a row. In how many ways can this be done if two specific people, Xolani and Palesa, do NOT sit next to each other?', checkMode: 'auto', correctAnswer: '3600', explanation: 'Total arrangements of 7 people: 7! = 5040. Arrangements with Xolani and Palesa together: treat as one block, 6! × 2! = 720 × 2 = 1440. Arrangements apart = total − together = 5040 − 1440 = 3600 ✓' },
+        { difficulty: 'Medium', question: '6 people are arranged in a row. One specific person, Thabo, may only sit at either end of the row. In how many ways can the group be arranged?', checkMode: 'auto', correctAnswer: '240', explanation: 'Thabo has 2 choices (left end or right end). The remaining 5 people fill the other 5 seats in 5! = 120 ways. Total = 2 × 120 = 240 ✓' },
+        { difficulty: 'Medium', question: 'A group of 3 doctors and 4 nurses is arranged in a row for a photo. In how many ways can they be arranged if all the doctors must stand together AND all the nurses must stand together?', checkMode: 'self', answer: 'Treat the doctors as one block and the nurses as one block: 2 blocks can be arranged in 2! = 2 ways. Within the doctor block: 3! = 6 ways. Within the nurse block: 4! = 24 ways. Total = 2 × 6 × 24 = 288.' },
+
+        // Block 4 — Permutations with repeated items (Q11–Q13, Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the number of different arrangements of the letters in the word "PENCIL".', checkMode: 'auto', correctAnswer: '720', explanation: 'All 6 letters of PENCIL are different, so arrangements = 6! = 720 ✓' },
+        { difficulty: 'Hard', question: 'Find the number of different arrangements of the letters in the word "GEOMETRY".', checkMode: 'auto', correctAnswer: '20160', explanation: 'GEOMETRY has 8 letters with E repeated twice (all others appear once). Arrangements = 8! ÷ 2! = 40 320 ÷ 2 = 20 160 ✓' },
+        { difficulty: 'Hard', question: 'Find the number of different arrangements of the letters in the word "STATISTICS".', checkMode: 'self', answer: 'STATISTICS has 10 letters: S(3), T(3), A(1), I(2), C(1). Arrangements = 10! ÷ (3! × 3! × 2!) = 3 628 800 ÷ (6 × 6 × 2) = 3 628 800 ÷ 72 = 50 400.' },
+
+        // Block 5 — Combinations (Q14–Q17, Hard)
+        { difficulty: 'Hard', question: 'A team must choose 4 members from a group of 11 candidates, where the order of selection does not matter. In how many ways can the team be chosen?', checkMode: 'auto', correctAnswer: '330', explanation: 'Order does not matter, so use combinations: C(11,4) = 11! ÷ (4! × 7!) = 330 ✓' },
+        { difficulty: 'Hard', question: 'A school committee needs 3 boys chosen from 6 boys AND 2 girls chosen from 5 girls. In how many ways can the committee be formed?', checkMode: 'auto', correctAnswer: '200', explanation: 'C(6,3) = 20 ways to choose the boys. C(5,2) = 10 ways to choose the girls. By the counting principle, total = 20 × 10 = 200 ✓' },
+        { difficulty: 'Hard', question: 'In how many ways can a hand of 6 cards be chosen from a set of 14 different cards?', checkMode: 'auto', correctAnswer: '3003', explanation: 'Order does not matter, so use combinations: C(14,6) = 14! ÷ (6! × 8!) = 3003 ✓' },
+        { difficulty: 'Hard', question: 'A committee of 4 people is chosen from a group of 8 men and 6 women (14 people in total). Find the number of ways to choose the committee if it must include AT LEAST one woman.', checkMode: 'self', answer: 'Total ways to choose any 4 from 14: C(14,4) = 1001. Ways to choose 4 with no women (all men): C(8,4) = 70. At least one woman = total − no women = 1001 − 70 = 931.' },
+
+        // Block 6 — Combined counting and probability (Q18–Q20, Hard)
+        { difficulty: 'Hard', question: '5 people, including a married couple, sit randomly in a row of 5 seats. Find the probability that the married couple sits together.', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '0.4', '0,4'], explanation: 'Total arrangements: 5! = 120. Favourable (couple together): treat as one block, 4! × 2! = 24 × 2 = 48. P = 48 ÷ 120 = 2/5 ✓' },
+        { difficulty: 'Hard', question: 'The letters of the word "LEVEL" are arranged in a random order. Find the probability that the arrangement starts AND ends with the letter L.', checkMode: 'auto', correctAnswer: '1/10', correctAnswers: ['1/10', '3/30', '0.1', '0,1'], explanation: 'LEVEL has 5 letters with L repeated twice and E repeated twice, so total arrangements = 5! ÷ (2! × 2!) = 120 ÷ 4 = 30. Favourable: fix L in the first and last position, then arrange E, V, E (3 letters, E repeated twice) in the middle 3 spots: 3! ÷ 2! = 3. P = 3 ÷ 30 = 1/10 ✓' },
+        { difficulty: 'Hard', question: 'A password is formed by arranging 4 different letters chosen from A–Z, with no letter repeated. Find the probability that the password starts with a vowel (A, E, I, O or U).', checkMode: 'self', answer: 'Total passwords: 26 × 25 × 24 × 23 = 358 800. Favourable (starts with a vowel): first letter has 5 choices (vowels), then 25 × 24 × 23 remaining letters = 5 × 25 × 24 × 23 = 69 000. P = 69 000 ÷ 358 800 = 5/26 ≈ 0,192.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered counting techniques and permutations.' },
+        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 10, message: 'Good effort! Revisit the counting principle and permutation sections, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Fundamental counting principle (Q1–Q3, Easy)
+        { difficulty: 'Easy', question: 'A restaurant offers 3 soups, 4 mains and 5 desserts. How many different soup-main-dessert meals can be made?', checkMode: 'auto', correctAnswer: '60', explanation: 'Apply the counting principle: 3 × 4 × 5 = 60 meals ✓' },
+        { difficulty: 'Easy', question: 'A 4-digit code is formed by choosing digits from 1 to 9, with no digit repeated. How many different codes are possible?', checkMode: 'auto', correctAnswer: '3024', explanation: 'First digit: 9 choices. Second: 8 remaining. Third: 7 remaining. Fourth: 6 remaining. 9 × 8 × 7 × 6 = 3024 ✓' },
+        { difficulty: 'Easy', question: 'A number plate has the form: 3 letters (A–Z, no repetition) followed by 3 digits (0–9, no repetition). How many number plates are possible?', checkMode: 'self', answer: 'Letters: 26 × 25 × 24 = 15 600. Digits: 10 × 9 × 8 = 720. Total = 15 600 × 720 = 11 232 000.' },
+
+        // Block 2 — Permutations, all different objects (Q4–Q6, Easy/Medium)
+        { difficulty: 'Easy', question: 'In how many different ways can 6 different ornaments be arranged in a row on a mantelpiece?', checkMode: 'auto', correctAnswer: '720', explanation: '6! = 6 × 5 × 4 × 3 × 2 × 1 = 720 ✓' },
+        { difficulty: 'Medium', question: 'A race has 10 sprinters. In how many different ways can 1st, 2nd and 3rd place (the podium) be awarded, assuming no ties?', checkMode: 'auto', correctAnswer: '720', explanation: '1st place: 10 choices. 2nd: 9 remaining. 3rd: 8 remaining. 10 × 9 × 8 = 720 ✓' },
+        { difficulty: 'Medium', question: 'In how many different ways can 9 different files be stacked in a pile?', checkMode: 'auto', correctAnswer: '362880', correctAnswers: ['362880', '362 880'], explanation: '9! = 9 × 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 362 880 ✓' },
+
+        // Block 3 — Permutations with restrictions (Q7–Q10, Medium)
+        { difficulty: 'Medium', question: '7 people are arranged in a row. In how many ways can this be done if 3 specific people must sit together?', checkMode: 'auto', correctAnswer: '720', explanation: 'Treat the 3 specific people as one block: now there are 5 "items" (block + 4 others) to arrange = 5! = 120. Multiply by the 3! = 6 ways to arrange them within the block. Total = 120 × 6 = 720 ✓' },
+        { difficulty: 'Medium', question: '6 people are arranged in a row. In how many ways can this be done if two specific people, Karabo and Naledi, do NOT sit next to each other?', checkMode: 'auto', correctAnswer: '480', explanation: 'Total arrangements of 6 people: 6! = 720. Arrangements with Karabo and Naledi together: treat as one block, 5! × 2! = 120 × 2 = 240. Arrangements apart = total − together = 720 − 240 = 480 ✓' },
+        { difficulty: 'Medium', question: '7 people are arranged in a row. One specific person, Lindiwe, may only sit at either end of the row. In how many ways can the group be arranged?', checkMode: 'auto', correctAnswer: '1440', explanation: 'Lindiwe has 2 choices (left end or right end). The remaining 6 people fill the other 6 seats in 6! = 720 ways. Total = 2 × 720 = 1440 ✓' },
+        { difficulty: 'Medium', question: 'A group of 4 Zulu dancers and 3 Sotho dancers is arranged in a row for a photo. In how many ways can they be arranged if all the Zulu dancers must stand together AND all the Sotho dancers must stand together?', checkMode: 'self', answer: 'Treat the Zulu dancers as one block and the Sotho dancers as one block: 2 blocks can be arranged in 2! = 2 ways. Within the Zulu block: 4! = 24 ways. Within the Sotho block: 3! = 6 ways. Total = 2 × 24 × 6 = 288.' },
+
+        // Block 4 — Permutations with repeated items (Q11–Q13, Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the number of different arrangements of the letters in the word "NUMBER".', checkMode: 'auto', correctAnswer: '720', explanation: 'All 6 letters of NUMBER are different, so arrangements = 6! = 720 ✓' },
+        { difficulty: 'Hard', question: 'Find the number of different arrangements of the letters in the word "CHEESE".', checkMode: 'auto', correctAnswer: '120', explanation: 'CHEESE has 6 letters with E repeated 3 times (all others appear once). Arrangements = 6! ÷ 3! = 720 ÷ 6 = 120 ✓' },
+        { difficulty: 'Hard', question: 'Find the number of different arrangements of the letters in the word "ENGINEERING".', checkMode: 'self', answer: 'ENGINEERING has 11 letters: E(3), N(3), G(2), I(2), R(1). Arrangements = 11! ÷ (3! × 3! × 2! × 2!) = 39 916 800 ÷ (6 × 6 × 2 × 2) = 39 916 800 ÷ 144 = 277 200.' },
+
+        // Block 5 — Combinations (Q14–Q17, Hard)
+        { difficulty: 'Hard', question: 'A team must choose 5 members from a group of 12 candidates, where the order of selection does not matter. In how many ways can the team be chosen?', checkMode: 'auto', correctAnswer: '792', explanation: 'Order does not matter, so use combinations: C(12,5) = 12! ÷ (5! × 7!) = 792 ✓' },
+        { difficulty: 'Hard', question: 'A hiking club needs 2 leaders chosen from 5 senior members AND 3 helpers chosen from 6 junior members. In how many ways can this group be formed?', checkMode: 'auto', correctAnswer: '200', explanation: 'C(5,2) = 10 ways to choose the leaders. C(6,3) = 20 ways to choose the helpers. By the counting principle, total = 10 × 20 = 200 ✓' },
+        { difficulty: 'Hard', question: 'In how many ways can a hand of 4 cards be chosen from a set of 13 different cards?', checkMode: 'auto', correctAnswer: '715', explanation: 'Order does not matter, so use combinations: C(13,4) = 13! ÷ (4! × 9!) = 715 ✓' },
+        { difficulty: 'Hard', question: 'A sports team of 5 players is chosen from a group of 7 boys and 5 girls (12 people in total). Find the number of ways to choose the team if it must include AT LEAST one boy.', checkMode: 'self', answer: 'Total ways to choose any 5 from 12: C(12,5) = 792. Ways to choose 5 with no boys (all girls): C(5,5) = 1. At least one boy = total − no boys = 792 − 1 = 791.' },
+
+        // Block 6 — Combined counting and probability (Q18–Q20, Hard)
+        { difficulty: 'Hard', question: '6 people, including two friends, sit randomly in a row of 6 seats. Find the probability that the two friends do NOT sit together.', checkMode: 'auto', correctAnswer: '2/3', correctAnswers: ['2/3', '480/720', '0.667', '0,667', '≈2/3', '≈0.667', '≈0,667'], explanation: 'Total arrangements: 6! = 720. Together (as one block): 5! × 2! = 120 × 2 = 240. Apart = 720 − 240 = 480. P(apart) = 480 ÷ 720 = 2/3 ✓' },
+        { difficulty: 'Hard', question: 'The letters of the word "NOON" are arranged in a random order. Find the probability that the arrangement starts with the letter N.', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '3/6', '0.5', '0,5'], explanation: 'NOON has 4 letters with N repeated twice and O repeated twice, so total arrangements = 4! ÷ (2! × 2!) = 24 ÷ 4 = 6. Favourable: fix N in the first position, then arrange O, O, N (3 letters, O repeated twice) in the remaining spots: 3! ÷ 2! = 3. P = 3 ÷ 6 = 1/2 ✓' },
+        { difficulty: 'Hard', question: 'A PIN is formed by arranging 5 different digits chosen from 0–9, with no digit repeated. Find the probability that the PIN ends in the digit 0.', checkMode: 'self', answer: 'Total PINs: 10 × 9 × 8 × 7 × 6 = 30 240. Favourable (ends in 0): last digit is fixed as 0 (1 way), then the first 4 digits are chosen from the remaining 9 digits with no repetition = 9 × 8 × 7 × 6 = 3024. P = 3024 ÷ 30 240 = 1/10 = 0,1.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered counting techniques and permutations.' },
+        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 10, message: 'Good effort! Revisit the counting principle and permutation sections, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Fundamental counting principle (Q1–Q3, Easy)
+        { difficulty: 'Easy', question: 'A café offers 5 starters, 3 mains and 4 drinks. How many different starter-main-drink combinations can be made?', checkMode: 'auto', correctAnswer: '60', explanation: 'Apply the counting principle: 5 × 3 × 4 = 60 combinations ✓' },
+        { difficulty: 'Easy', question: 'A 3-letter code is formed by choosing letters from a set of 8 different letters, with no letter repeated. How many different codes are possible?', checkMode: 'auto', correctAnswer: '336', explanation: 'First letter: 8 choices. Second: 7 remaining. Third: 6 remaining. 8 × 7 × 6 = 336 ✓' },
+        { difficulty: 'Easy', question: 'A number plate has the form: 2 letters (A–Z, no repetition) followed by 5 digits (0–9, no repetition). How many number plates are possible?', checkMode: 'self', answer: 'Letters: 26 × 25 = 650. Digits: 10 × 9 × 8 × 7 × 6 = 30 240. Total = 650 × 30 240 = 19 656 000.' },
+
+        // Block 2 — Permutations, all different objects (Q4–Q6, Easy/Medium)
+        { difficulty: 'Easy', question: 'In how many different ways can 8 different trophies be arranged in a row on a shelf?', checkMode: 'auto', correctAnswer: '40320', correctAnswers: ['40320', '40 320'], explanation: '8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40 320 ✓' },
+        { difficulty: 'Medium', question: 'A cricket team of 11 players must select a batting order for the first 5 positions only. In how many different ways can this be done?', checkMode: 'auto', correctAnswer: '55440', correctAnswers: ['55440', '55 440'], explanation: '1st position: 11 choices. 2nd: 10 remaining. 3rd: 9 remaining. 4th: 8 remaining. 5th: 7 remaining. 11 × 10 × 9 × 8 × 7 = 55 440 ✓' },
+        { difficulty: 'Medium', question: 'In how many different ways can 10 different playing cards be arranged in a row?', checkMode: 'auto', correctAnswer: '3628800', correctAnswers: ['3628800', '3 628 800'], explanation: '10! = 10 × 9 × 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 3 628 800 ✓' },
+
+        // Block 3 — Permutations with restrictions (Q7–Q10, Medium)
+        { difficulty: 'Medium', question: '8 people are arranged in a row. In how many ways can this be done if two specific people, Musa and Refilwe, must sit together?', checkMode: 'auto', correctAnswer: '10080', correctAnswers: ['10080', '10 080'], explanation: 'Treat Musa and Refilwe as one block: now there are 7 "items" (block + 6 others) to arrange = 7! = 5040. Multiply by the 2! = 2 ways to arrange them within the block. Total = 5040 × 2 = 10 080 ✓' },
+        { difficulty: 'Medium', question: '8 people are arranged in a row. In how many ways can this be done if two specific people, Tumi and Sibongile, do NOT sit next to each other?', checkMode: 'auto', correctAnswer: '30240', correctAnswers: ['30240', '30 240'], explanation: 'Total arrangements of 8 people: 8! = 40 320. Arrangements with Tumi and Sibongile together: treat as one block, 7! × 2! = 5040 × 2 = 10 080. Arrangements apart = total − together = 40 320 − 10 080 = 30 240 ✓' },
+        { difficulty: 'Medium', question: '5 people are arranged in a row. One specific person, Katlego, may only sit at either end of the row. In how many ways can the group be arranged?', checkMode: 'auto', correctAnswer: '48', explanation: 'Katlego has 2 choices (left end or right end). The remaining 4 people fill the other 4 seats in 4! = 24 ways. Total = 2 × 24 = 48 ✓' },
+        { difficulty: 'Medium', question: 'A choir of 5 sopranos and 4 altos is arranged in a row for a photo. In how many ways can they be arranged if all the sopranos must stand together AND all the altos must stand together?', checkMode: 'self', answer: 'Treat the sopranos as one block and the altos as one block: 2 blocks can be arranged in 2! = 2 ways. Within the soprano block: 5! = 120 ways. Within the alto block: 4! = 24 ways. Total = 2 × 120 × 24 = 5760.' },
+
+        // Block 4 — Permutations with repeated items (Q11–Q13, Medium/Hard)
+        { difficulty: 'Medium', question: 'Find the number of different arrangements of the letters in the word "FILTER".', checkMode: 'auto', correctAnswer: '720', explanation: 'All 6 letters of FILTER are different, so arrangements = 6! = 720 ✓' },
+        { difficulty: 'Hard', question: 'Find the number of different arrangements of the letters in the word "BUBBLE".', checkMode: 'auto', correctAnswer: '120', explanation: 'BUBBLE has 6 letters with B repeated 3 times (all others appear once). Arrangements = 6! ÷ 3! = 720 ÷ 6 = 120 ✓' },
+        { difficulty: 'Hard', question: 'Find the number of different arrangements of the letters in the word "ASSASSIN".', checkMode: 'self', answer: 'ASSASSIN has 8 letters: S(4), A(2), I(1), N(1). Arrangements = 8! ÷ (4! × 2!) = 40 320 ÷ (24 × 2) = 40 320 ÷ 48 = 840.' },
+
+        // Block 5 — Combinations (Q14–Q17, Hard)
+        { difficulty: 'Hard', question: 'A team must choose 6 members from a group of 13 candidates, where the order of selection does not matter. In how many ways can the team be chosen?', checkMode: 'auto', correctAnswer: '1716', explanation: 'Order does not matter, so use combinations: C(13,6) = 13! ÷ (6! × 7!) = 1716 ✓' },
+        { difficulty: 'Hard', question: 'A jar contains 7 red marbles and 4 blue marbles, all different in size. A sample of 4 red marbles AND 2 blue marbles must be selected. In how many ways can this sample be chosen?', checkMode: 'auto', correctAnswer: '210', explanation: 'C(7,4) = 35 ways to choose the red marbles. C(4,2) = 6 ways to choose the blue marbles. By the counting principle, total = 35 × 6 = 210 ✓' },
+        { difficulty: 'Hard', question: 'In how many ways can a group of 5 volunteers be chosen from 15 different applicants?', checkMode: 'auto', correctAnswer: '3003', explanation: 'Order does not matter, so use combinations: C(15,5) = 15! ÷ (5! × 10!) = 3003 ✓' },
+        { difficulty: 'Hard', question: 'A discussion panel of 4 people is chosen from a group of 6 teachers and 5 parents (11 people in total). Find the number of ways to choose the panel if it must include AT LEAST one teacher.', checkMode: 'self', answer: 'Total ways to choose any 4 from 11: C(11,4) = 330. Ways to choose 4 with no teachers (all parents): C(5,4) = 5. At least one teacher = total − no teachers = 330 − 5 = 325.' },
+
+        // Block 6 — Combined counting and probability (Q18–Q20, Hard)
+        { difficulty: 'Hard', question: '7 people, including a married couple, sit randomly in a row of 7 seats. Find the probability that the married couple sits together.', checkMode: 'auto', correctAnswer: '2/7', correctAnswers: ['2/7', '1440/5040', '0.286', '0,286', '≈2/7', '≈0.286', '≈0,286'], explanation: 'Total arrangements: 7! = 5040. Favourable (couple together): treat as one block, 6! × 2! = 720 × 2 = 1440. P = 1440 ÷ 5040 = 2/7 ✓' },
+        { difficulty: 'Hard', question: 'The letters of the word "RADAR" are arranged in a random order. Find the probability that the arrangement starts with the letter D.', checkMode: 'auto', correctAnswer: '1/5', correctAnswers: ['1/5', '6/30', '0.2', '0,2'], explanation: 'RADAR has 5 letters with R repeated twice and A repeated twice, so total arrangements = 5! ÷ (2! × 2!) = 120 ÷ 4 = 30. Favourable: fix D in the first position, then arrange R, A, A, R (4 letters, R repeated twice and A repeated twice) in the remaining spots: 4! ÷ (2! × 2!) = 6. P = 6 ÷ 30 = 1/5 ✓' },
+        { difficulty: 'Hard', question: 'A lock code is formed by arranging 4 different digits chosen from 0–9, with no digit repeated. Find the probability that the code ends in an even digit.', checkMode: 'self', answer: 'Total codes: 10 × 9 × 8 × 7 = 5040. Favourable (ends in an even digit): the last digit has 5 choices (0, 2, 4, 6 or 8), then the first 3 digits are chosen from the remaining 9 digits with no repetition = 9 × 8 × 7 = 504, giving 5 × 504 = 2520. P = 2520 ÷ 5040 = 1/2 = 0,5.' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered counting techniques and permutations.' },
+        { minScore: 15, message: 'Great work! You are confident with most of this — review any missed questions.' },
+        { minScore: 10, message: 'Good effort! Revisit the counting principle and permutation sections, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ] satisfies PracticeSet[],
 }

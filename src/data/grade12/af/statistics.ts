@@ -626,4 +626,576 @@ export const topicData: TopicData = {
     { minScore: 10, message: 'Goeie poging, gaan deur en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
   ],
+
+  // ═════════════════════════════════════════════════════════════════════════
+  // OEFENSTELLE — bivariaatdata: spreidingsdiagramme, kleinste-kwadrate-
+  // regressielyn (y = a + bx), korrelasiekoëffisiënt r, residue.
+  // Fase 1 (slegs inhoud): vrae wat later ʼn spreidingsdiagram sal kry, is
+  // selfstandig geformuleer — elke koördinaatpaar of regressiedetail wat
+  // benodig word, word in die vraagteks self gestel. Geen diagramSvg-velde
+  // word in hierdie fase bygevoeg nie.
+  //
+  // Vaardigheidsblokke (herhaal in elk van die 3 stelle, Maklik → Moeilik):
+  //   Blok A (V1–3)   Lees/plot spreidingsdiagrampunte, identifiseer
+  //                    onafhanklike/afhanklike veranderlike
+  //   Blok B (V4–7)   Interpreteer korrelasiesterkte/-rigting vanaf r
+  //   Blok C (V8–10)  Gebruik ʼn gegewe regressielyn om y vanaf x te voorspel
+  //   Blok D (V11–13) Residue (werklike y − voorspelde y)
+  //   Blok E (V14–16) Gekombineerde voorspelling + betroubaarheidsoordeel met r
+  //   Blok F (V17–20) Regressielyn-eienskappe, ekstrapolasiegevaar,
+  //                    vergelyk korrelasies, korrelasie teenoor kousaliteit
+  // ═════════════════════════════════════════════════════════════════════════
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 V)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // ── Blok A: lees spreidingsdiagrampunte / veranderlikes (V1–3) ─────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Spreidingsdiagram vergelyk die aantal ure wat ʼn leerder studeer (x) en hulle toetspunt uit 100 (y). Watter veranderlike is die onafhanklike veranderlike?',
+          answer: 'Ure gestudeer (x)',
+          checkMode: 'auto',
+          correctAnswer: 'uregestudeer',
+          correctAnswers: ['ure gestudeer', 'ure gestudeer (x)', 'x', 'ure'],
+          explanation: 'Die onafhanklike veranderlike is dié een wat ons beheer of kies — ure gestudeer — geplot op die x-as. Die toetspunt hang daarvan af, dus is dit die afhanklike veranderlike (y).',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">20</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">40</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">60</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">80</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">100</text><circle cx="115" cy="201" r="4" fill="#2563eb"/><circle cx="145" cy="168" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="235" cy="108.6" r="4" fill="#2563eb"/><circle cx="295" cy="66.8" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Ure gestudeer (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Toetspunt (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Twee datapunte op ʼn spreidingsdiagram van ure gestudeer (x) teenoor toetspunt (y) is geplot by (4, 68) en (7, 74). Watter leerder het meer ure gestudeer, en met hoeveel meer ure?',
+          answer: 'Die leerder by (7, 74) het meer gestudeer, met 3 ure',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          correctAnswers: ['3', '3 ure', '(7,74) met 3 ure'],
+          explanation: 'Die x-waardes (ure gestudeer) is 4 en 7. Die leerder by (7, 74) het meer gestudeer, en die verskil is 7 − 4 = 3 ure.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">20</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">40</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">60</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">80</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">100</text><circle cx="175" cy="95.4" r="4" fill="#2563eb"/><circle cx="265" cy="82.2" r="4" fill="#2563eb"/><text x="175" y="83.4" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(4, 68)</text><text x="265" y="70.2" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(7, 74)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Ure gestudeer (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Toetspunt (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'ʼn Spreidingsdiagram wys die punte (2, 20), (3, 35), (5, 55), (6, 62), (8, 81) vir ure gestudeer (x) teenoor toetspunt (y). Namate x toeneem oor hierdie punte, wat gebeur met y?',
+          answer: 'y neem toe namate x toeneem',
+          checkMode: 'auto',
+          correctAnswer: 'yneemtoe',
+          correctAnswers: ['y neem toe', 'neem toe', 'y neem toe namate x toeneem'],
+          explanation: 'As jy die punte in volgorde van toenemende x lees (2, 3, 5, 6, 8), neem die y-waardes ook toe (20, 35, 55, 62, 81) — die punte neig opwaarts, wat op ʼn positiewe verband dui.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">20</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">40</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">60</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">80</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">100</text><circle cx="115" cy="201" r="4" fill="#2563eb"/><circle cx="145" cy="168" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="235" cy="108.6" r="4" fill="#2563eb"/><circle cx="295" cy="66.8" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Ure gestudeer (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Toetspunt (y)</text></svg>',
+        },
+
+        // ── Blok B: r interpreteer (V4–7) ───────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0.95. Is dit ʼn positiewe of negatiewe korrelasie?',
+          answer: 'Positief',
+          checkMode: 'auto',
+          correctAnswer: 'positief',
+          correctAnswers: ['positief', 'positiewe korrelasie'],
+          explanation: 'Aangesien r = 0.95 groter as 0 is, is die korrelasie positief — namate x toeneem, neig y ook om toe te neem.',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0.82. Beskryf die sterkte van hierdie korrelasie.',
+          answer: 'Sterk (positiewe) korrelasie',
+          checkMode: 'auto',
+          correctAnswer: 'sterk',
+          correctAnswers: ['sterk', 'sterk korrelasie', 'sterk positiewe korrelasie'],
+          explanation: 'r = 0.82 lê tussen 0.75 en 1, wat op ʼn sterk lineêre korrelasie dui.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee datastelle het korrelasiekoëffisiënte r = 0.4 en r = −0.9. Watter een wys die sterker lineêre verband?',
+          answer: 'Die datastel met r = −0.9',
+          checkMode: 'auto',
+          correctAnswer: 'r=-0.9',
+          correctAnswers: ['r = -0.9', '-0.9', 'die een met r=-0.9', 'r=-0.9'],
+          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0.9| = 0.9 is groter as |0.4| = 0.4, dus wys r = −0.9 die sterker (negatiewe) lineêre verband.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Spreidingsdiagram van roomys-verkope (x) teenoor daaglikse temperatuur (y) het r = 0.05. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
+          answer: 'Daar is min tot geen lineêre korrelasie tussen die veranderlikes nie',
+          checkMode: 'auto',
+          correctAnswer: 'geenlineerekorrelasie',
+          correctAnswers: ['geen lineêre korrelasie', 'min tot geen korrelasie', 'geen korrelasie', 'baie swak korrelasie'],
+          explanation: 'r = 0.05 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
+        },
+
+        // ── Blok C: regressielynvoorspelling (V8–10) ────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Die kleinste-kwadrate-regressielyn vir ure gestudeer (x) teenoor toetspunt (y) is y = 12 + 2.5x. Voorspel die toetspunt vir ʼn leerder wat 8 ure studeer.',
+          answer: '32',
+          checkMode: 'auto',
+          correctAnswer: '32',
+          explanation: 'y = 12 + 2.5(8) = 12 + 20 = 32.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Met dieselfde regressielyn y = 12 + 2.5x, het ʼn leerder wat werklik 8 ure gestudeer het, 35 in die toets behaal. Bepaal die residu (werklike y − voorspelde y) vir hierdie leerder.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'Voorspelde y = 12 + 2.5(8) = 32. Residu = werklik − voorspel = 35 − 32 = 3.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn vir afstand afgelê (x, in km) teenoor brandstof gebruik (y, in liter) is y = 1.5 + 0.08x. Voorspel die brandstofgebruik vir ʼn rit van 200 km.',
+          answer: '17.5 liter',
+          checkMode: 'auto',
+          correctAnswer: '17.5',
+          correctAnswers: ['17.5', '17.5 liter', '17,5'],
+          explanation: 'y = 1.5 + 0.08(200) = 1.5 + 16 = 17.5 liter.',
+        },
+
+        // ── Blok D: residue (V11–13) ────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn is y = 5 + 3x. Vir x = 6 is die werklike waargenome waarde y = 27. Bereken die residu.',
+          answer: '4',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          explanation: 'Voorspelde y = 5 + 3(6) = 5 + 18 = 23. Residu = werklik − voorspel = 27 − 23 = 4.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'ʼn Regressielyn is y = 40 − 1.5x. Vir x = 10 is die werklike waargenome waarde y = 22. Bereken die residu en stel vas of die werklike punt bo of onder die regressielyn lê.',
+          answer: 'Residu = −3; die punt lê onder die regressielyn',
+          checkMode: 'auto',
+          correctAnswer: '-3onder',
+          correctAnswers: ['-3, onder', '-3 onder', 'residu -3 onder die lyn'],
+          explanation: 'Voorspelde y = 40 − 1.5(10) = 40 − 15 = 25. Residu = werklik − voorspel = 22 − 25 = −3. ʼn Negatiewe residu beteken die werklike punt lê onder die regressielyn.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Zanele sê ʼn residu van 0 beteken die regressielyn is ʼn perfekte passing vir die hele datastel. Is sy korrek? Verduidelik.',
+          answer: 'Nee — ʼn residu van 0 beteken slegs dat een spesifieke punt presies op die lyn lê. Ander punte in die datastel kan steeds groot residue hê, dus moet die algehele passing beoordeel word deur al die residue (of r) te gebruik, nie net een punt nie.',
+          checkMode: 'self',
+        },
+
+        // ── Blok E: gekombineerde voorspelling + betroubaarheid (V14–16) ────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn vir ure ekstra onderrig (x) teenoor verbetering in toetspunt (y, uit 100) is y = 20 + 1.8x, met korrelasiekoëffisiënt r = 0.93. Voorspel die verbetering in toetspunt vir ʼn leerder wat 15 ure onderrig ontvang.',
+          answer: '47',
+          checkMode: 'auto',
+          correctAnswer: '47',
+          explanation: 'y = 20 + 1.8(15) = 20 + 27 = 47.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Met die regressielyn y = 20 + 1.8x en korrelasiekoëffisiënt r = 0.93, het ʼn datapunt by x = 15 ʼn werklike y-waarde van 50. Bereken die residu en lewer kommentaar oor of r = 0.93 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
+          answer: 'Residu = 3. Aangesien r = 0.93 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Tweede datastel het regressielyn y = 20 + 1.8x maar korrelasiekoëffisiënt r = 0.21. Sipho gebruik hierdie lyn om y te voorspel wanneer x = 15, en kry y = 47, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0.93. Is hy korrek? Verduidelik.',
+          answer: 'Nee — alhoewel die berekening y = 47 wiskundig korrek is, dui r = 0.21 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0.93, wat ʼn sterk lineêre patroon toon.',
+          checkMode: 'self',
+        },
+
+        // ── Blok F: regressielyn-eienskappe / ekstrapolasie / kousaliteit (V17–20) ──
+        {
+          difficulty: 'Medium-Hard',
+          question: 'ʼn Datastel van ure gestudeer (x) het x-waardes wat wissel van 1 tot 10. Die regressielyn is y = 12 + 2.5x. Thabo wil hierdie lyn gebruik om die toetspunt te voorspel vir ʼn leerder wat 40 ure gestudeer het. Verduidelik waarom hierdie voorspelling onbetroubaar sou wees.',
+          answer: 'x = 40 lê ver buite die oorspronklike datareeks (1 tot 10). Om die regressielyn te gebruik om waardes ver buite die reeks van die oorspronklike data te voorspel, staan bekend as ekstrapolasie, en dit is onbetroubaar omdat daar geen bewys is dat die lineêre neiging buite die waargenome data voortduur nie.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Datastel van ure gestudeer (x) teenoor toetspunt (y) het gemiddelde x̄ = 5.5 ure en gemiddelde ȳ = 51.75 punte. Lerato sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (5.5, 51.75) gaan. Is sy korrek? Verduidelik.',
+          answer: 'Ja — die kleinste-kwadrate-regressielyn gaan altyd deur die gemiddeldepunt (x̄, ȳ) van die data. Dit is ʼn wiskundige eienskap van hoe die lyn bereken word.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0.88) tussen die aantal brandweerwaens wat na ʼn brand gestuur word en die hoeveelheid skade wat veroorsaak word. Sy maak die gevolgtrekking dat brandweerwaens meer skade veroorsaak. Verduidelik die fout in haar redenasie.',
+          answer: 'Korrelasie beteken nie kousaliteit nie. ʼn Waarskynlike verduideliking is ʼn derde (verwarrende) veranderlike — die grootte van die brand. Groter brande veroorsaak meer skade EN vereis meer brandweerwaens om gestuur te word, wat die korrelasie skep sonder dat die brandweerwaens die skade veroorsaak.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 2), (2, 8), (3, 18), (4, 32), (5, 50) wat ʼn duidelike geboë (U-vormige) patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0.98. Amahle sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is sy korrek? Verduidelik.',
+          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0.98 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
+          checkMode: 'self',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het spreidingsdiagramme, regressielyne en korrelasie bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 V) — dieselfde bloklayout as Stel 1, vars getalle/kontekste
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // ── Blok A: lees spreidingsdiagrampunte / veranderlikes (V1–3) ─────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Spreidingsdiagram vergelyk die aantal advertensies wat ʼn winkel per week uitsaai (x) en sy weeklikse verkope in rand (y). Watter veranderlike is die afhanklike veranderlike?',
+          answer: 'Weeklikse verkope (y)',
+          checkMode: 'auto',
+          correctAnswer: 'weeklikseverkope',
+          correctAnswers: ['weeklikse verkope', 'weeklikse verkope (y)', 'y', 'verkope'],
+          explanation: 'Die afhanklike veranderlike is dié een wat reageer op veranderinge in die ander veranderlike — weeklikse verkope hang af van die aantal advertensies wat uitgesaai word, dus word dit op die y-as geplot.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="130" y1="25" x2="130" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="205" y1="25" x2="205" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="280" y1="25" x2="280" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="190" x2="355" y2="190" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="135" x2="355" y2="135" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="80" x2="355" y2="80" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="130" y1="245" x2="130" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="130" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="280" y1="245" x2="280" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="280" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="190" x2="55" y2="190" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="194" font-size="11" fill="#374151" text-anchor="end">5000</text><line x1="50" y1="135" x2="55" y2="135" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="139" font-size="11" fill="#374151" text-anchor="end">10000</text><line x1="50" y1="80" x2="55" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="84" font-size="11" fill="#374151" text-anchor="end">15000</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">20000</text><circle cx="92.5" cy="190" r="4" fill="#2563eb"/><circle cx="130" cy="162.5" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="242.5" cy="96.5" r="4" fill="#2563eb"/><circle cx="317.5" cy="58" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Advertensies per week (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Weeklikse verkope (R) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Twee datapunte op ʼn spreidingsdiagram van advertensies uitgesaai (x) teenoor weeklikse verkope in rand (y) is geplot by (6, 14 200) en (6, 15 900). Hierdie twee winkels het dieselfde aantal advertensies uitgesaai — wat is die verskil in hulle weeklikse verkope?',
+          answer: 'R1 700',
+          checkMode: 'auto',
+          correctAnswer: '1700',
+          correctAnswers: ['1700', 'R1700', 'R1 700'],
+          explanation: 'Albei punte het x = 6 advertensies. Die verskil in die y-waardes (verkope) is 15 900 − 14 200 = R1 700.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="130" y1="25" x2="130" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="205" y1="25" x2="205" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="280" y1="25" x2="280" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="190" x2="355" y2="190" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="135" x2="355" y2="135" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="80" x2="355" y2="80" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="130" y1="245" x2="130" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="130" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="280" y1="245" x2="280" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="280" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="190" x2="55" y2="190" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="194" font-size="11" fill="#374151" text-anchor="end">5000</text><line x1="50" y1="135" x2="55" y2="135" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="139" font-size="11" fill="#374151" text-anchor="end">10000</text><line x1="50" y1="80" x2="55" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="84" font-size="11" fill="#374151" text-anchor="end">15000</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">20000</text><circle cx="280" cy="88.8" r="4" fill="#2563eb"/><circle cx="280" cy="70.1" r="4" fill="#2563eb"/><text x="280" y="104.8" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(6, 14 200)</text><text x="280" y="58.1" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(6, 15 900)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Advertensies per week (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Weeklikse verkope (R) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'ʼn Spreidingsdiagram wys die punte (1, 5 000), (2, 7 500), (4, 11 000), (5, 13 500), (7, 17 000) vir advertensies uitgesaai (x) teenoor weeklikse verkope (y). Namate x toeneem oor hierdie punte, wat gebeur met y?',
+          answer: 'y neem toe namate x toeneem',
+          checkMode: 'auto',
+          correctAnswer: 'yneemtoe',
+          correctAnswers: ['y neem toe', 'neem toe', 'y neem toe namate x toeneem'],
+          explanation: 'As jy die punte in volgorde van toenemende x lees (1, 2, 4, 5, 7), neem die y-waardes ook toe (5000, 7500, 11000, 13500, 17000) — die punte neig opwaarts, wat op ʼn positiewe verband dui.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="130" y1="25" x2="130" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="205" y1="25" x2="205" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="280" y1="25" x2="280" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="190" x2="355" y2="190" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="135" x2="355" y2="135" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="80" x2="355" y2="80" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="130" y1="245" x2="130" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="130" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="280" y1="245" x2="280" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="280" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="190" x2="55" y2="190" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="194" font-size="11" fill="#374151" text-anchor="end">5000</text><line x1="50" y1="135" x2="55" y2="135" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="139" font-size="11" fill="#374151" text-anchor="end">10000</text><line x1="50" y1="80" x2="55" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="84" font-size="11" fill="#374151" text-anchor="end">15000</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">20000</text><circle cx="92.5" cy="190" r="4" fill="#2563eb"/><circle cx="130" cy="162.5" r="4" fill="#2563eb"/><circle cx="205" cy="124" r="4" fill="#2563eb"/><circle cx="242.5" cy="96.5" r="4" fill="#2563eb"/><circle cx="317.5" cy="58" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Advertensies per week (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Weeklikse verkope (R) (y)</text></svg>',
+        },
+
+        // ── Blok B: r interpreteer (V4–7) ───────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0.78. Is dit ʼn positiewe of negatiewe korrelasie?',
+          answer: 'Negatief',
+          checkMode: 'auto',
+          correctAnswer: 'negatief',
+          correctAnswers: ['negatief', 'negatiewe korrelasie'],
+          explanation: 'Aangesien r = −0.78 kleiner as 0 is, is die korrelasie negatief — namate x toeneem, neig y om af te neem.',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0.6. Beskryf die sterkte van hierdie korrelasie.',
+          answer: 'Matige (negatiewe) korrelasie',
+          checkMode: 'auto',
+          correctAnswer: 'matig',
+          correctAnswers: ['matig', 'matige korrelasie', 'matige negatiewe korrelasie'],
+          explanation: '|r| = 0.6 lê tussen 0.5 en 0.75, wat op ʼn matige lineêre korrelasie dui.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee datastelle het korrelasiekoëffisiënte r = −0.85 en r = 0.3. Watter een wys die sterker lineêre verband?',
+          answer: 'Die datastel met r = −0.85',
+          checkMode: 'auto',
+          correctAnswer: 'r=-0.85',
+          correctAnswers: ['r = -0.85', '-0.85', 'die een met r=-0.85', 'r=-0.85'],
+          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0.85| = 0.85 is groter as |0.3| = 0.3, dus wys r = −0.85 die sterker (negatiewe) lineêre verband.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Spreidingsdiagram van skoengrootte (x) teenoor maandelikse inkomste (y) het r = 0.02. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
+          answer: 'Daar is min tot geen lineêre korrelasie tussen die veranderlikes nie',
+          checkMode: 'auto',
+          correctAnswer: 'geenlineerekorrelasie',
+          correctAnswers: ['geen lineêre korrelasie', 'min tot geen korrelasie', 'geen korrelasie', 'baie swak korrelasie'],
+          explanation: 'r = 0.02 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
+        },
+
+        // ── Blok C: regressielynvoorspelling (V8–10) ────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Die kleinste-kwadrate-regressielyn vir advertensies uitgesaai (x) teenoor weeklikse verkope in honderde rand (y) is y = 8 + 3.2x. Voorspel die weeklikse verkope (in honderde rand) wanneer 9 advertensies uitgesaai word.',
+          answer: '36.8',
+          checkMode: 'auto',
+          correctAnswer: '36.8',
+          correctAnswers: ['36.8', '36,8'],
+          explanation: 'y = 8 + 3.2(9) = 8 + 28.8 = 36.8 (honderde rand).',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Met dieselfde regressielyn y = 8 + 3.2x, het ʼn winkel wat werklik 9 advertensies uitgesaai het, weeklikse verkope van 40 (honderde rand) gehad. Bepaal die residu (werklike y − voorspelde y) vir hierdie winkel.',
+          answer: '3.2',
+          checkMode: 'auto',
+          correctAnswer: '3.2',
+          correctAnswers: ['3.2', '3,2'],
+          explanation: 'Voorspelde y = 8 + 3.2(9) = 36.8. Residu = werklik − voorspel = 40 − 36.8 = 3.2.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn vir erfgrootte in m² (x) teenoor huisprys in duisende rand (y) is y = 300 + 0.6x. Voorspel die huisprys vir ʼn erf van 250 m².',
+          answer: '450 (duisend rand)',
+          checkMode: 'auto',
+          correctAnswer: '450',
+          explanation: 'y = 300 + 0.6(250) = 300 + 150 = 450 (duisend rand).',
+        },
+
+        // ── Blok D: residue (V11–13) ────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn is y = 10 + 4x. Vir x = 5 is die werklike waargenome waarde y = 33. Bereken die residu.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'Voorspelde y = 10 + 4(5) = 10 + 20 = 30. Residu = werklik − voorspel = 33 − 30 = 3.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'ʼn Regressielyn is y = 60 − 2x. Vir x = 12 is die werklike waargenome waarde y = 33. Bereken die residu en stel vas of die werklike punt bo of onder die regressielyn lê.',
+          answer: 'Residu = −3; die punt lê onder die regressielyn',
+          checkMode: 'auto',
+          correctAnswer: '-3onder',
+          correctAnswers: ['-3, onder', '-3 onder', 'residu -3 onder die lyn'],
+          explanation: 'Voorspelde y = 60 − 2(12) = 60 − 24 = 36. Residu = werklik − voorspel = 33 − 36 = −3. ʼn Negatiewe residu beteken die werklike punt lê onder die regressielyn.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Bongani sê as die meeste residue in ʼn datastel naby nul is, moet die regressielyn se r naby 1 wees. Is hy korrek? Verduidelik.',
+          answer: 'Ja, oor die algemeen korrek — klein residue beteken die waargenome punte lê naby aan die regressielyn, wat presies is wat ʼn sterk korrelasie (|r| naby 1) beskryf. Groot, verspreide residue sou eerder op ʼn swak korrelasie (|r| naby 0) dui.',
+          checkMode: 'self',
+        },
+
+        // ── Blok E: gekombineerde voorspelling + betroubaarheid (V14–16) ────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn vir aantal werknemers opgelei (x) teenoor maandelikse uitsettoename (y, in eenhede) is y = 100 + 4x, met korrelasiekoëffisiënt r = 0.89. Voorspel die uitsettoename wanneer 6 werknemers opgelei word.',
+          answer: '124',
+          checkMode: 'auto',
+          correctAnswer: '124',
+          explanation: 'y = 100 + 4(6) = 100 + 24 = 124.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Met die regressielyn y = 100 + 4x en korrelasiekoëffisiënt r = 0.89, het ʼn datapunt by x = 6 ʼn werklike y-waarde van 130. Bereken die residu en lewer kommentaar oor of r = 0.89 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
+          answer: 'Residu = 6. Aangesien r = 0.89 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Tweede datastel het regressielyn y = 100 + 4x maar korrelasiekoëffisiënt r = 0.15. Nomvula gebruik hierdie lyn om y te voorspel wanneer x = 6, en kry y = 124, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0.89. Is sy korrek? Verduidelik.',
+          answer: 'Nee — alhoewel die berekening y = 124 wiskundig korrek is, dui r = 0.15 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0.89, wat ʼn sterk lineêre patroon toon.',
+          checkMode: 'self',
+        },
+
+        // ── Blok F: regressielyn-eienskappe / ekstrapolasie / kousaliteit (V17–20) ──
+        {
+          difficulty: 'Medium-Hard',
+          question: 'ʼn Datastel van advertensies uitgesaai (x) het x-waardes wat wissel van 1 tot 10. Die regressielyn is y = 8 + 3.2x. Kabelo wil hierdie lyn gebruik om weeklikse verkope te voorspel vir ʼn winkel wat 60 advertensies uitsaai. Verduidelik waarom hierdie voorspelling onbetroubaar sou wees.',
+          answer: 'x = 60 lê ver buite die oorspronklike datareeks (1 tot 10). Om die regressielyn te gebruik om waardes ver buite die reeks van die oorspronklike data te voorspel, staan bekend as ekstrapolasie, en dit is onbetroubaar omdat daar geen bewys is dat die lineêre neiging buite die waargenome data voortduur nie.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Datastel van advertensies uitgesaai (x) teenoor weeklikse verkope (y) het gemiddelde x̄ = 4 advertensies en gemiddelde ȳ = 20.8 (honderde rand). Aisha sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (4, 20.8) gaan. Is sy korrek? Verduidelik.',
+          answer: 'Ja — die kleinste-kwadrate-regressielyn gaan altyd deur die gemiddeldepunt (x̄, ȳ) van die data. Dit is ʼn wiskundige eienskap van hoe die lyn bereken word.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0.91) tussen maandelikse roomys-verkope en die aantal verdrinkingsvoorvalle by strande. Hy maak die gevolgtrekking dat roomys verdrinking veroorsaak. Verduidelik die fout in sy redenasie.',
+          answer: 'Korrelasie beteken nie kousaliteit nie. ʼn Waarskynlike verduideliking is ʼn derde (verwarrende) veranderlike — warm weer. Warm weer verhoog beide roomys-verkope EN die aantal mense wat swem (en dus verdrinkingsrisiko), wat die korrelasie skep sonder dat roomys verdrinking veroorsaak.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 3), (2, 10), (3, 21), (4, 36), (5, 55) wat ʼn duidelike geboë (U-vormige) patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0.97. Kagiso sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is hy korrek? Verduidelik.',
+          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0.97 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
+          checkMode: 'self',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy kan spreidingsdiagramme, regressielyne en korrelasie met selfvertroue interpreteer.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 V) — dieselfde bloklayout, meer werklike-wêreld-kontekste + redenasie
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // ── Blok A: lees spreidingsdiagrampunte / veranderlikes (V1–3) ─────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Spreidingsdiagram vergelyk ʼn motor se ouderdom in jare (x) en sy herverkoopwaarde in duisende rand (y). Watter veranderlike is die onafhanklike veranderlike?',
+          answer: 'Ouderdom van die motor (x)',
+          checkMode: 'auto',
+          correctAnswer: 'ouderdom',
+          correctAnswers: ['ouderdom', 'ouderdom van die motor', 'ouderdom van die motor (x)', 'x'],
+          explanation: 'Die onafhanklike veranderlike is dié een wat ons beheer of kies — die motor se ouderdom — geplot op die x-as. Die herverkoopwaarde hang daarvan af, dus is dit die afhanklike veranderlike (y).',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">50</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">100</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">150</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">200</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">250</text><circle cx="85" cy="51.4" r="4" fill="#2563eb"/><circle cx="115" cy="69" r="4" fill="#2563eb"/><circle cx="175" cy="99.8" r="4" fill="#2563eb"/><circle cx="235" cy="130.6" r="4" fill="#2563eb"/><circle cx="295" cy="161.4" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Ouderdom van motor (jare) (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Herverkoopwaarde (R\'000) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'Twee datapunte op ʼn spreidingsdiagram van motorouderdom in jare (x) teenoor herverkoopwaarde in duisende rand (y) is geplot by (5, 140) en (9, 95). Watter motor het die hoër herverkoopwaarde, en met hoeveel (in duisende rand)?',
+          answer: 'Die 5-jaar-oue motor, met 45 (duisend rand)',
+          checkMode: 'auto',
+          correctAnswer: '45',
+          correctAnswers: ['45', '5 jaar oue motor met 45', 'die motor by (5,140) met 45'],
+          explanation: 'Die y-waardes (herverkoopwaarde) is 140 en 95. Die motor by (5, 140) het die hoër herverkoopwaarde, en die verskil is 140 − 95 = 45 (duisend rand).',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">50</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">100</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">150</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">200</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">250</text><circle cx="205" cy="121.8" r="4" fill="#2563eb"/><circle cx="325" cy="161.4" r="4" fill="#2563eb"/><text x="205" y="109.8" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(5, 140)</text><text x="325" y="149.4" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(9, 95)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Ouderdom van motor (jare) (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Herverkoopwaarde (R\'000) (y)</text></svg>',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'ʼn Spreidingsdiagram wys die punte (1, 220), (2, 200), (4, 165), (6, 130), (8, 95) vir motorouderdom in jare (x) teenoor herverkoopwaarde in duisende rand (y). Namate x toeneem oor hierdie punte, wat gebeur met y?',
+          answer: 'y neem af namate x toeneem',
+          checkMode: 'auto',
+          correctAnswer: 'yneemaf',
+          correctAnswers: ['y neem af', 'neem af', 'y neem af namate x toeneem'],
+          explanation: 'As jy die punte in volgorde van toenemende x lees (1, 2, 4, 6, 8), neem die y-waardes af (220, 200, 165, 130, 95) — die punte neig afwaarts, wat op ʼn negatiewe verband dui.',
+          diagramSvg: '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg"><line x1="55" y1="25" x2="55" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="115" y1="25" x2="115" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="175" y1="25" x2="175" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="235" y1="25" x2="235" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="295" y1="25" x2="295" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="355" y1="25" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="245" x2="355" y2="245" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="201" x2="355" y2="201" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="157" x2="355" y2="157" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="113" x2="355" y2="113" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="69" x2="355" y2="69" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="355" y2="25" stroke="#e2e8f0" stroke-width="1"/><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="115" y1="245" x2="115" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="263" font-size="11" fill="#374151" text-anchor="middle">2</text><line x1="175" y1="245" x2="175" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="175" y="263" font-size="11" fill="#374151" text-anchor="middle">4</text><line x1="235" y1="245" x2="235" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="235" y="263" font-size="11" fill="#374151" text-anchor="middle">6</text><line x1="295" y1="245" x2="295" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="295" y="263" font-size="11" fill="#374151" text-anchor="middle">8</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="50" y1="245" x2="55" y2="245" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="249" font-size="11" fill="#374151" text-anchor="end">0</text><line x1="50" y1="201" x2="55" y2="201" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="205" font-size="11" fill="#374151" text-anchor="end">50</text><line x1="50" y1="157" x2="55" y2="157" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="161" font-size="11" fill="#374151" text-anchor="end">100</text><line x1="50" y1="113" x2="55" y2="113" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="117" font-size="11" fill="#374151" text-anchor="end">150</text><line x1="50" y1="69" x2="55" y2="69" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="73" font-size="11" fill="#374151" text-anchor="end">200</text><line x1="50" y1="25" x2="55" y2="25" stroke="#0f1f3d" stroke-width="1.5"/><text x="46" y="29" font-size="11" fill="#374151" text-anchor="end">250</text><circle cx="85" cy="51.4" r="4" fill="#2563eb"/><circle cx="115" cy="69" r="4" fill="#2563eb"/><circle cx="175" cy="99.8" r="4" fill="#2563eb"/><circle cx="235" cy="130.6" r="4" fill="#2563eb"/><circle cx="295" cy="161.4" r="4" fill="#2563eb"/><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Ouderdom van motor (jare) (x)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Herverkoopwaarde (R\'000) (y)</text></svg>',
+        },
+
+        // ── Blok B: r interpreteer (V4–7) ───────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = −0.97. Is dit ʼn positiewe of negatiewe korrelasie?',
+          answer: 'Negatief',
+          checkMode: 'auto',
+          correctAnswer: 'negatief',
+          correctAnswers: ['negatief', 'negatiewe korrelasie'],
+          explanation: 'Aangesien r = −0.97 kleiner as 0 is, is die korrelasie negatief — namate x toeneem, neig y om af te neem.',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'ʼn Datastel het korrelasiekoëffisiënt r = 0.68. Beskryf die sterkte van hierdie korrelasie.',
+          answer: 'Matige (positiewe) korrelasie',
+          checkMode: 'auto',
+          correctAnswer: 'matig',
+          correctAnswers: ['matig', 'matige korrelasie', 'matige positiewe korrelasie'],
+          explanation: 'r = 0.68 lê tussen 0.5 en 0.75, wat op ʼn matige lineêre korrelasie dui.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Twee datastelle het korrelasiekoëffisiënte r = 0.55 en r = −0.97. Watter een wys die sterker lineêre verband?',
+          answer: 'Die datastel met r = −0.97',
+          checkMode: 'auto',
+          correctAnswer: 'r=-0.97',
+          correctAnswers: ['r = -0.97', '-0.97', 'die een met r=-0.97', 'r=-0.97'],
+          explanation: 'Sterkte word gemeet aan die grootte van r ongeag die teken. |−0.97| = 0.97 is groter as |0.55| = 0.55, dus wys r = −0.97 die sterker (negatiewe) lineêre verband.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Spreidingsdiagram van ʼn persoon se geboortemaand (x) teenoor hulle lengte (y) het r = −0.03. Wat dui dit aan oor die lineêre verband tussen die veranderlikes?',
+          answer: 'Daar is min tot geen lineêre korrelasie tussen die veranderlikes nie',
+          checkMode: 'auto',
+          correctAnswer: 'geenlineerekorrelasie',
+          correctAnswers: ['geen lineêre korrelasie', 'min tot geen korrelasie', 'geen korrelasie', 'baie swak korrelasie'],
+          explanation: 'r = −0.03 is baie naby aan 0, wat op byna geen lineêre verband tussen die twee veranderlikes dui nie.',
+        },
+
+        // ── Blok C: regressielynvoorspelling (V8–10) ────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Die kleinste-kwadrate-regressielyn vir oefenure per week (x) teenoor kompetisietelling uit 100 (y) is y = 15 + 1.6x. Voorspel die kompetisietelling vir ʼn atleet wat 20 ure per week oefen.',
+          answer: '47',
+          checkMode: 'auto',
+          correctAnswer: '47',
+          explanation: 'y = 15 + 1.6(20) = 15 + 32 = 47.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Met dieselfde regressielyn y = 15 + 1.6x, het ʼn atleet wat werklik 20 ure geoefen het, 52 in die kompetisie behaal. Bepaal die residu (werklike y − voorspelde y) vir hierdie atleet.',
+          answer: '5',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          explanation: 'Voorspelde y = 15 + 1.6(20) = 47. Residu = werklik − voorspel = 52 − 47 = 5.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn vir temperatuur in °C (x) teenoor koeldrank-verkope in liter (y) is y = 40 + 5.5x. Voorspel die koeldrank-verkope wanneer die temperatuur 28°C is.',
+          answer: '194 liter',
+          checkMode: 'auto',
+          correctAnswer: '194',
+          explanation: 'y = 40 + 5.5(28) = 40 + 154 = 194 liter.',
+        },
+
+        // ── Blok D: residue (V11–13) ────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn is y = 8 + 6x. Vir x = 4 is die werklike waargenome waarde y = 35. Bereken die residu.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'Voorspelde y = 8 + 6(4) = 8 + 24 = 32. Residu = werklik − voorspel = 35 − 32 = 3.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'ʼn Regressielyn is y = 220 − 8x. Vir x = 15 is die werklike waargenome waarde y = 92. Bereken die residu en stel vas of die werklike punt bo of onder die regressielyn lê.',
+          answer: 'Residu = −8; die punt lê onder die regressielyn',
+          checkMode: 'auto',
+          correctAnswer: '-8onder',
+          correctAnswers: ['-8, onder', '-8 onder', 'residu -8 onder die lyn'],
+          explanation: 'Voorspelde y = 220 − 8(15) = 220 − 120 = 100. Residu = werklik − voorspel = 92 − 100 = −8. ʼn Negatiewe residu beteken die werklike punt lê onder die regressielyn.',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Precious sê residue kan nooit negatief wees nie, aangesien ʼn residu net ʼn "afstand" vanaf die lyn meet. Is sy korrek? Verduidelik.',
+          answer: 'Nee — ʼn residu word bereken as werklike y minus voorspelde y, dus kan dit positief (punt bo die lyn), negatief (punt onder die lyn), of nul (punt presies op die lyn) wees. Slegs die grootte (absolute waarde) van die residu verteenwoordig ʼn afstand; die teken dui die rigting aan.',
+          checkMode: 'self',
+        },
+
+        // ── Blok E: gekombineerde voorspelling + betroubaarheid (V14–16) ────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Regressielyn vir ure sonlig per dag (x) teenoor plantgroei in mm (y) is y = 50 + 6x, met korrelasiekoëffisiënt r = 0.87. Voorspel die plantgroei vir 7 ure sonlig per dag.',
+          answer: '92',
+          checkMode: 'auto',
+          correctAnswer: '92',
+          explanation: 'y = 50 + 6(7) = 50 + 42 = 92.',
+        },
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Met die regressielyn y = 50 + 6x en korrelasiekoëffisiënt r = 0.87, het ʼn datapunt by x = 7 ʼn werklike y-waarde van 85. Bereken die residu en lewer kommentaar oor of r = 0.87 daarop dui dat hierdie regressielyn oor die algemeen betroubaar is vir voorspelling.',
+          answer: 'Residu = −7. Aangesien r = 0.87 naby 1 is, dui dit op ʼn sterk positiewe korrelasie, dus is die regressielyn oor die algemeen ʼn betroubare model vir voorspelling.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Tweede datastel het regressielyn y = 50 + 6x maar korrelasiekoëffisiënt r = 0.18. Thandiwe gebruik hierdie lyn om y te voorspel wanneer x = 7, en kry y = 92, en beweer hierdie voorspelling is net so betroubaar as een van ʼn datastel met r = 0.87. Is sy korrek? Verduidelik.',
+          answer: 'Nee — alhoewel die berekening y = 92 wiskundig korrek is, dui r = 0.18 op ʼn baie swak lineêre korrelasie, wat beteken die datapunte is wyd versprei rondom die lyn. Die voorspelling is veel minder betroubaar as een gemaak met ʼn datastel met r = 0.87, wat ʼn sterk lineêre patroon toon.',
+          checkMode: 'self',
+        },
+
+        // ── Blok F: regressielyn-eienskappe / ekstrapolasie / kousaliteit (V17–20) ──
+        {
+          difficulty: 'Medium-Hard',
+          question: 'ʼn Datastel van motorouderdom in jare (x) het x-waardes wat wissel van 1 tot 10. Die regressielyn is y = 220 − 8x. Gegewe dat herverkoopwaarde nie negatief kan wees nie, verduidelik waarom die gebruik van hierdie lyn om herverkoopwaarde vir ʼn 40-jaar-oue motor te voorspel, onbetroubaar sou wees.',
+          answer: 'x = 40 lê ver buite die oorspronklike datareeks (1 tot 10). Om die regressielyn te gebruik om waardes ver buite die reeks van die oorspronklike data te voorspel, staan bekend as ekstrapolasie, en dit is onbetroubaar — inderdaad, y = 220 − 8(40) = −100, ʼn negatiewe herverkoopwaarde, wat onmoontlik is en wys dat die lineêre neiging nie onbepaald kan voortduur nie.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Datastel van oefenure (x) teenoor kompetisietelling (y) het gemiddelde x̄ = 11 ure en gemiddelde ȳ = 32.6. Karabo sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (11, 32.6) gaan. Is hy korrek? Verduidelik.',
+          answer: 'Ja — die kleinste-kwadrate-regressielyn gaan altyd deur die gemiddeldepunt (x̄, ȳ) van die data. Dit is ʼn wiskundige eienskap van hoe die lyn bereken word.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Navorser vind ʼn sterk positiewe korrelasie (r = 0.94) tussen die aantal brandweermanne by ʼn toneel en die hoeveelheid sigbare rook. Sy maak die gevolgtrekking dat meer brandweermanne meer rook veroorsaak. Verduidelik die fout in haar redenasie.',
+          answer: 'Korrelasie beteken nie kousaliteit nie. ʼn Waarskynlike verduideliking is ʼn derde (verwarrende) veranderlike — die grootte/intensiteit van die brand. ʼn Groter, meer intense brand produseer meer rook EN vereis meer brandweermanne om gestuur te word, wat die korrelasie skep sonder dat die brandweermanne die rook veroorsaak.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Spreidingsdiagram van x teenoor y wys die punte (1, 4), (2, 15), (3, 32), (4, 55), (5, 84) wat ʼn duidelike geboë patroon vorm, nie ʼn reguit lyn nie. Die korrelasiekoëffisiënt word bereken as r = 0.96. Boitumelo sê hierdie hoë r-waarde bewys dat ʼn reguit lyn die beste model vir hierdie data is. Is sy korrek? Verduidelik.',
+          answer: 'Nee — r meet slegs die sterkte van ʼn LINEÊRE verband. Alhoewel r = 0.96 naby 1 is, wys die spreidingsdiagram duidelik ʼn geboë (nie-lineêre) patroon. ʼn Reguit lyn sou nie ʼn geskikte model hier wees nie ondanks die hoë r-waarde; kontroleer altyd die vorm van die spreidingsdiagram, nie net r nie.',
+          checkMode: 'self',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantasties! Jy kan spreidingsdiagramme, regressielyne en korrelasie op werklike-wêreld-probleme toepas.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer die woordprobleme weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
 }

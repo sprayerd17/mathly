@@ -613,6 +613,132 @@ export const topicData: TopicData = {
     },
   ],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blokke: 0-2 Skakel om tussen eksp<->log vorm (Maklik) | 3-5 Bereken 'n log
+    // met die definisie (Maklik-Medium) | 6-9 Logwette — produk/kwosiënt/mag (Medium) |
+    // 10-13 Los logvergelykings op (Medium) | 14-16 Los eksponensiële vergelykings op /
+    // verandering van basis (Medium-Moeilik) | 17-19 Inverse verwantskap & grafiekkenmerke (Moeilik)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        { difficulty: 'Easy', question: 'Skakel log₂ 32 = 5 om na eksponensiële vorm.', answer: '2⁵ = 32', checkMode: 'auto', correctAnswer: '2^5=32', correctAnswers: ['2^5=32', '2⁵=32', '2^5 = 32', '2⁵ = 32'], explanation: 'log₂ 32 = 5 beteken die basis 2 moet tot die mag 5 verhef word om 32 te gee: 2⁵ = 32. ✓' },
+        { difficulty: 'Easy', question: 'Skakel 7² = 49 om na logaritmiese vorm.', answer: 'log₇ 49 = 2', checkMode: 'auto', correctAnswer: 'log7(49)=2', correctAnswers: ['log7(49)=2', 'log7 49=2', 'log_7(49)=2'], explanation: '7² = 49 beteken log₇ 49 = 2. ✓' },
+        { difficulty: 'Easy', question: 'Skakel log₄ x = 3 om na eksponensiële vorm.', answer: 'x = 4³', checkMode: 'auto', correctAnswer: 'x=4^3', correctAnswers: ['x=4^3', 'x=4³', '4^3', '4³', '64', 'x=64'], explanation: 'log₄ x = 3 beteken x = 4³ (wat gelyk is aan 64). ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Bereken log₂ 64.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Vra: tot watter mag moet 2 verhef word om 64 te kry? 2⁶ = 64, dus is log₂ 64 = 6. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken log₆ 36.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Vra: tot watter mag moet 6 verhef word om 36 te kry? 6² = 36, dus is log₆ 36 = 2. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken log₇ 343.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Vra: tot watter mag moet 7 verhef word om 343 te kry? 7³ = 343, dus is log₇ 343 = 3. ✓' },
+
+        { difficulty: 'Medium', question: 'Vereenvoudig log₂(16 × 8) deur die produkwet te gebruik.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Produkwet: log₂(16 × 8) = log₂ 16 + log₂ 8 = 4 + 3 = 7. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₂(128 ÷ 16) deur die kwosiëntwet te gebruik.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Kwosiëntwet: log₂(128 ÷ 16) = log₂ 128 − log₂ 16 = 7 − 4 = 3. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₂(32²) deur die magswet te gebruik.', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Magswet: log₂(32²) = 2 · log₂ 32 = 2 × 5 = 10. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₃(9 × 27) − log₃ 3 deur die produk- en kwosiëntwette te gebruik.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'log₃(9 × 27) = log₃ 9 + log₃ 27 = 2 + 3 = 5. Dan 5 − log₃ 3 = 5 − 1 = 4. ✓' },
+
+        { difficulty: 'Medium', question: 'Los op vir x: log₂ x = 6.', answer: 'x = 64', checkMode: 'auto', correctAnswer: '64', correctAnswers: ['64', 'x=64', 'x = 64'], explanation: 'Skakel om na eksponensiële vorm: x = 2⁶ = 64. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log₃(x + 5) = 3.', answer: 'x = 22', checkMode: 'auto', correctAnswer: '22', correctAnswers: ['22', 'x=22', 'x = 22'], explanation: 'Skakel om na eksponensiële vorm: x + 5 = 3³ = 27. x = 27 − 5 = 22. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log x + log(x − 8) = log 20.', answer: 'x = 10 (x = −2 word verwerp)', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', 'x=10', 'x = 10'], explanation: 'Kombineer: log(x(x − 8)) = log 20, dus x(x − 8) = 20. Vermenigvuldig uit: x² − 8x − 20 = 0. Faktoriseer: (x − 10)(x + 2) = 0, dus x = 10 of x = −2. Aangesien die log van ʼn negatiewe getal onbepaald is, word x = −2 verwerp, wat x = 10 laat. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log(x²) = 2, en oorweeg albei moontlike oplossings.', answer: 'x = ±10', checkMode: 'auto', correctAnswer: '±10', correctAnswers: ['±10', '+-10', '10 en -10', '-10 en 10', 'x=±10'], explanation: 'x² = 10² = 100, dus x = ±10 (albei is geldig aangesien x² altyd positief is, ongeag die teken van x). ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 2ˣ = 50. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 5.644', checkMode: 'auto', correctAnswer: '5.644', correctAnswers: ['5.644', '≈5.644', 'x=5.644', 'x ≈ 5.644'], explanation: 'Neem log van albei kante: x · log 2 = log 50. x = log 50 / log 2 ≈ 1.699 / 0.301 ≈ 5.644. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₆ 200 tot 3 desimale plekke te bereken.', answer: 'log₆ 200 ≈ 2.957', checkMode: 'auto', correctAnswer: '2.957', correctAnswers: ['2.957', '≈2.957'], explanation: 'log₆ 200 = log(200) / log(6) ≈ 2.301 / 0.778 ≈ 2.957. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: log₂(x − 1) + log₂ 3 = log₂ 18.', answer: 'x = 7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x=7', 'x = 7'], explanation: 'Kombineer: log₂(3(x − 1)) = log₂ 18, dus 3(x − 1) = 18. x − 1 = 6, x = 7. Kontroleer: x − 1 = 6 > 0, dus geldig. ✓' },
+
+        { difficulty: 'Hard', question: 'Vind die inverse van f(x) = log₅ x, en verduidelik waarom dit sin maak gegewe die verwantskap tussen eksponensiële en logaritmiese funksies.', answer: 'f⁻¹(x) = 5ˣ. Dit maak sin aangesien logaritmiese en eksponensiële funksies per definisie inverses van mekaar is — om tussen log- en eksponensiële vorm om te skakel, is dieselfde bewerking as om die inverse te vind.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Die grafiek van g(x) = 3ˣ het horisontale asimptoot y = 0 en gaan deur (0, 1) en (1, 3). Gee die vertikale asimptoot en twee sleutelpunte van g⁻¹(x) = log₃ x.', answer: 'Aangesien g⁻¹ g oor die lyn y = x spieël, word elke punt (a, b) op g die punt (b, a) op g⁻¹, en die horisontale asimptoot y = 0 word die vertikale asimptoot x = 0. Dus het g⁻¹(x) = log₃ x ʼn vertikale asimptoot x = 0, en gaan dit deur (1, 0) en (3, 1).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho sê dat omdat f(x) = 2ˣ ʼn toenemende funksie is, sy inverse f⁻¹(x) = log₂ x ook toenemend moet wees. Is hy korrek? Verduidelik deur gebruik te maak van die feit dat om ʼn grafiek oor y = x te spieël, of dit toeneem of afneem, behou.', answer: 'Ja, Sipho is korrek. Om ʼn toenemende grafiek oor die lyn y = x te spieël, lewer nog ʼn toenemende grafiek (spieëling ruil die rolle van die x- en y-asse om, maar keer nie die toenemende tendens om nie). Aangesien f(x) = 2ˣ vir alle x toeneem, neem sy inverse f⁻¹(x) = log₂ x ook vir alle x > 0 toe.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het omskakeling tussen vorms, logwette, en die oplos van log- en eksponensiële vergelykings bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae) — dieselfde bloklaaiuit as Stel 1, vars getalle
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        { difficulty: 'Easy', question: 'Skakel log₃ 243 = 5 om na eksponensiële vorm.', answer: '3⁵ = 243', checkMode: 'auto', correctAnswer: '3^5=243', correctAnswers: ['3^5=243', '3⁵=243', '3^5 = 243', '3⁵ = 243'], explanation: 'log₃ 243 = 5 beteken die basis 3 moet tot die mag 5 verhef word om 243 te gee: 3⁵ = 243. ✓' },
+        { difficulty: 'Easy', question: 'Skakel 8² = 64 om na logaritmiese vorm.', answer: 'log₈ 64 = 2', checkMode: 'auto', correctAnswer: 'log8(64)=2', correctAnswers: ['log8(64)=2', 'log8 64=2', 'log_8(64)=2'], explanation: '8² = 64 beteken log₈ 64 = 2. ✓' },
+        { difficulty: 'Easy', question: 'Skakel log₅ x = 4 om na eksponensiële vorm.', answer: 'x = 5⁴', checkMode: 'auto', correctAnswer: 'x=5^4', correctAnswers: ['x=5^4', 'x=5⁴', '5^4', '5⁴', '625', 'x=625'], explanation: 'log₅ x = 4 beteken x = 5⁴ (wat gelyk is aan 625). ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Bereken log₃ 243.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Vra: tot watter mag moet 3 verhef word om 243 te kry? 3⁵ = 243, dus is log₃ 243 = 5. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken log₉ 81.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Vra: tot watter mag moet 9 verhef word om 81 te kry? 9² = 81, dus is log₉ 81 = 2. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken log₄ 64.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Vra: tot watter mag moet 4 verhef word om 64 te kry? 4³ = 64, dus is log₄ 64 = 3. ✓' },
+
+        { difficulty: 'Medium', question: 'Vereenvoudig log₃(27 × 9) deur die produkwet te gebruik.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Produkwet: log₃(27 × 9) = log₃ 27 + log₃ 9 = 3 + 2 = 5. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₃(243 ÷ 27) deur die kwosiëntwet te gebruik.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Kwosiëntwet: log₃(243 ÷ 27) = log₃ 243 − log₃ 27 = 5 − 3 = 2. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₃(9³) deur die magswet te gebruik.', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'Magswet: log₃(9³) = 3 · log₃ 9 = 3 × 2 = 6. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₂(8 × 16) − log₂ 4 deur die produk- en kwosiëntwette te gebruik.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'log₂(8 × 16) = log₂ 8 + log₂ 16 = 3 + 4 = 7. Dan 7 − log₂ 4 = 7 − 2 = 5. ✓' },
+
+        { difficulty: 'Medium', question: 'Los op vir x: log₂ x = 7.', answer: 'x = 128', checkMode: 'auto', correctAnswer: '128', correctAnswers: ['128', 'x=128', 'x = 128'], explanation: 'Skakel om na eksponensiële vorm: x = 2⁷ = 128. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log₂(x + 6) = 4.', answer: 'x = 10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', 'x=10', 'x = 10'], explanation: 'Skakel om na eksponensiële vorm: x + 6 = 2⁴ = 16. x = 16 − 6 = 10. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log x + log(x − 4) = log 12.', answer: 'x = 6 (x = −2 word verwerp)', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x=6', 'x = 6'], explanation: 'Kombineer: log(x(x − 4)) = log 12, dus x(x − 4) = 12. Vermenigvuldig uit: x² − 4x − 12 = 0. Faktoriseer: (x − 6)(x + 2) = 0, dus x = 6 of x = −2. Aangesien die log van ʼn negatiewe getal onbepaald is, word x = −2 verwerp, wat x = 6 laat. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log(x²) = 3, en oorweeg albei moontlike oplossings, tot 3 desimale plekke waar nodig.', answer: 'x = ±31.623', checkMode: 'auto', correctAnswer: '±31.623', correctAnswers: ['±31.623', '+-31.623', '31.623 en -31.623', '-31.623 en 31.623', 'x=±31.623'], explanation: 'x² = 10³ = 1000, dus x = ±√1000 ≈ ±31.623 (albei is geldig aangesien x² altyd positief is, ongeag die teken van x). ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 3ˣ = 40. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 3.358', checkMode: 'auto', correctAnswer: '3.358', correctAnswers: ['3.358', '≈3.358', 'x=3.358', 'x ≈ 3.358'], explanation: 'Neem log van albei kante: x · log 3 = log 40. x = log 40 / log 3 ≈ 1.602 / 0.477 ≈ 3.358. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₄ 60 tot 3 desimale plekke te bereken.', answer: 'log₄ 60 ≈ 2.953', checkMode: 'auto', correctAnswer: '2.953', correctAnswers: ['2.953', '≈2.953'], explanation: 'log₄ 60 = log(60) / log(4) ≈ 1.778 / 0.602 ≈ 2.953. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: log₂(x − 2) + log₂ 5 = log₂ 25.', answer: 'x = 7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x=7', 'x = 7'], explanation: 'Kombineer: log₂(5(x − 2)) = log₂ 25, dus 5(x − 2) = 25. x − 2 = 5, x = 7. Kontroleer: x − 2 = 5 > 0, dus geldig. ✓' },
+
+        { difficulty: 'Hard', question: 'Vind die inverse van f(x) = log₇ x, en verduidelik waarom dit sin maak gegewe die verwantskap tussen eksponensiële en logaritmiese funksies.', answer: 'f⁻¹(x) = 7ˣ. Dit maak sin aangesien logaritmiese en eksponensiële funksies per definisie inverses van mekaar is — om tussen log- en eksponensiële vorm om te skakel, is dieselfde bewerking as om die inverse te vind.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Die grafiek van g(x) = 4ˣ het horisontale asimptoot y = 0 en gaan deur (0, 1) en (1, 4). Gee die vertikale asimptoot en twee sleutelpunte van g⁻¹(x) = log₄ x.', answer: 'Aangesien g⁻¹ g oor die lyn y = x spieël, word elke punt (a, b) op g die punt (b, a) op g⁻¹, en die horisontale asimptoot y = 0 word die vertikale asimptoot x = 0. Dus het g⁻¹(x) = log₄ x ʼn vertikale asimptoot x = 0, en gaan dit deur (1, 0) en (4, 1).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato sê dat omdat f(x) = (0.5)ˣ ʼn afnemende funksie is, sy inverse f⁻¹(x) = log₀.₅ x ook afnemend moet wees. Is sy korrek? Verduidelik deur gebruik te maak van die feit dat om ʼn grafiek oor y = x te spieël, of dit toeneem of afneem, behou.', answer: 'Ja, Lerato is korrek. Om ʼn afnemende grafiek oor die lyn y = x te spieël, lewer nog ʼn afnemende grafiek (spieëling ruil die rolle van die x- en y-asse om, maar keer nie die afnemende tendens om nie). Aangesien f(x) = (0.5)ˣ vir alle x afneem, neem sy inverse f⁻¹(x) = log₀.₅ x ook vir alle x > 0 af.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy kan vol vertroue omskakel tussen vorms, logwette toepas, en log- en eksponensiële vergelykings oplos.' },
+        { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae) — dieselfde bloklaaiuit, vars getalle, meer klem op grafieklees
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        { difficulty: 'Easy', question: 'Skakel log₂ 128 = 7 om na eksponensiële vorm.', answer: '2⁷ = 128', checkMode: 'auto', correctAnswer: '2^7=128', correctAnswers: ['2^7=128', '2⁷=128', '2^7 = 128', '2⁷ = 128'], explanation: 'log₂ 128 = 7 beteken die basis 2 moet tot die mag 7 verhef word om 128 te gee: 2⁷ = 128. ✓' },
+        { difficulty: 'Easy', question: 'Skakel 9² = 81 om na logaritmiese vorm.', answer: 'log₉ 81 = 2', checkMode: 'auto', correctAnswer: 'log9(81)=2', correctAnswers: ['log9(81)=2', 'log9 81=2', 'log_9(81)=2'], explanation: '9² = 81 beteken log₉ 81 = 2. ✓' },
+        { difficulty: 'Easy', question: 'Skakel log₆ x = 2 om na eksponensiële vorm.', answer: 'x = 6²', checkMode: 'auto', correctAnswer: 'x=6^2', correctAnswers: ['x=6^2', 'x=6²', '6^2', '6²', '36', 'x=36'], explanation: 'log₆ x = 2 beteken x = 6² (wat gelyk is aan 36). ✓' },
+
+        { difficulty: 'Easy-Medium', question: 'Bereken log₂ 128.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Vra: tot watter mag moet 2 verhef word om 128 te kry? 2⁷ = 128, dus is log₂ 128 = 7. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken log₈ 64.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Vra: tot watter mag moet 8 verhef word om 64 te kry? 8² = 64, dus is log₈ 64 = 2. ✓' },
+        { difficulty: 'Easy-Medium', question: 'Bereken log₅ 625.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'Vra: tot watter mag moet 5 verhef word om 625 te kry? 5⁴ = 625, dus is log₅ 625 = 4. ✓' },
+
+        { difficulty: 'Medium', question: 'Vereenvoudig log₂(8 × 32) deur die produkwet te gebruik.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Produkwet: log₂(8 × 32) = log₂ 8 + log₂ 32 = 3 + 5 = 8. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₄(1024 ÷ 16) deur die kwosiëntwet te gebruik.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Kwosiëntwet: log₄(1024 ÷ 16) = log₄ 1024 − log₄ 16 = 5 − 2 = 3. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₂(16²) deur die magswet te gebruik.', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Magswet: log₂(16²) = 2 · log₂ 16 = 2 × 4 = 8. ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig log₅(25 × 125) − log₅ 5 deur die produk- en kwosiëntwette te gebruik.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'log₅(25 × 125) = log₅ 25 + log₅ 125 = 2 + 3 = 5. Dan 5 − log₅ 5 = 5 − 1 = 4. ✓' },
+
+        { difficulty: 'Medium', question: 'Los op vir x: log₂ x = 8.', answer: 'x = 256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', 'x=256', 'x = 256'], explanation: 'Skakel om na eksponensiële vorm: x = 2⁸ = 256. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log₅(x + 3) = 2.', answer: 'x = 22', checkMode: 'auto', correctAnswer: '22', correctAnswers: ['22', 'x=22', 'x = 22'], explanation: 'Skakel om na eksponensiële vorm: x + 3 = 5² = 25. x = 25 − 3 = 22. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log x + log(x − 6) = log 16.', answer: 'x = 8 (x = −2 word verwerp)', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'x=8', 'x = 8'], explanation: 'Kombineer: log(x(x − 6)) = log 16, dus x(x − 6) = 16. Vermenigvuldig uit: x² − 6x − 16 = 0. Faktoriseer: (x − 8)(x + 2) = 0, dus x = 8 of x = −2. Aangesien die log van ʼn negatiewe getal onbepaald is, word x = −2 verwerp, wat x = 8 laat. ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: log(x²) = 6, en oorweeg albei moontlike oplossings.', answer: 'x = ±1000', checkMode: 'auto', correctAnswer: '±1000', correctAnswers: ['±1000', '+-1000', '1000 en -1000', '-1000 en 1000', 'x=±1000'], explanation: 'x² = 10⁶ = 1 000 000, dus x = ±1000 (albei is geldig aangesien x² altyd positief is, ongeag die teken van x). ✓' },
+
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 5ˣ = 70. Gee jou antwoord tot 3 desimale plekke.', answer: 'x ≈ 2.640', checkMode: 'auto', correctAnswer: '2.640', correctAnswers: ['2.640', '2.64', '≈2.640', 'x=2.640', 'x ≈ 2.640'], explanation: 'Neem log van albei kante: x · log 5 = log 70. x = log 70 / log 5 ≈ 1.845 / 0.699 ≈ 2.640. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Gebruik die formule vir verandering van basis om log₉ 150 tot 3 desimale plekke te bereken.', answer: 'log₉ 150 ≈ 2.280', checkMode: 'auto', correctAnswer: '2.280', correctAnswers: ['2.280', '2.28', '≈2.280'], explanation: 'log₉ 150 = log(150) / log(9) ≈ 2.176 / 0.954 ≈ 2.280. ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: log₃(x − 1) + log₃ 4 = log₃ 20.', answer: 'x = 6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x=6', 'x = 6'], explanation: 'Kombineer: log₃(4(x − 1)) = log₃ 20, dus 4(x − 1) = 20. x − 1 = 5, x = 6. Kontroleer: x − 1 = 5 > 0, dus geldig. ✓' },
+
+        { difficulty: 'Hard', question: 'Vind die inverse van f(x) = log₆ x, en verduidelik waarom dit sin maak gegewe die verwantskap tussen eksponensiële en logaritmiese funksies.', answer: 'f⁻¹(x) = 6ˣ. Dit maak sin aangesien logaritmiese en eksponensiële funksies per definisie inverses van mekaar is — om tussen log- en eksponensiële vorm om te skakel, is dieselfde bewerking as om die inverse te vind.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Die grafiek van g(x) = 5ˣ het horisontale asimptoot y = 0 en gaan deur (0, 1) en (1, 5). Gee die vertikale asimptoot en twee sleutelpunte van g⁻¹(x) = log₅ x.', answer: 'Aangesien g⁻¹ g oor die lyn y = x spieël, word elke punt (a, b) op g die punt (b, a) op g⁻¹, en die horisontale asimptoot y = 0 word die vertikale asimptoot x = 0. Dus het g⁻¹(x) = log₅ x ʼn vertikale asimptoot x = 0, en gaan dit deur (1, 0) en (5, 1).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo sê dat aangesien f(x) = log₂ x ʼn vertikale asimptoot by x = 0 het, sy inverse f⁻¹(x) = 2ˣ ook ʼn vertikale asimptoot moet hê. Is hy korrek? Verduidelik wat met ʼn asimptoot gebeur wanneer ʼn grafiek oor y = x gespieël word.', answer: 'Nee, Thabo is nie korrek nie. Wanneer ʼn grafiek oor y = x gespieël word, word ʼn vertikale asimptoot ʼn horisontale asimptoot (die rolle van x en y ruil om). Dus word die vertikale asimptoot x = 0 van f(x) = log₂ x die horisontale asimptoot y = 0 van f⁻¹(x) = 2ˣ — die inverse het glad nie ʼn vertikale asimptoot nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Fantasties! Jy kan logwette toepas, log- en eksponensiële vergelykings oplos, en met selfvertroue oor eksponensiële-log inverses redeneer.' },
+        { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 20,
     messages: [

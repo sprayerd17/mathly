@@ -653,6 +653,152 @@ export const topicData: TopicData = {
     },
   ],
 
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // Blok 1 (1-3):   Rekenkundige ry — vind die nde term
+    // Blok 2 (4-6):   Meetkundige ry — vind die nde term
+    // Blok 3 (7-10):  Sigma-notasie — evalueer ʼn som
+    // Blok 4 (11-13): Som van ʼn rekenkundige reeks
+    // Blok 5 (14-16): Som van ʼn meetkundige reeks / som tot oneindig
+    // Blok 6 (17-20): Moeilik — gekombineerde, omgekeerde en werklike-lewe-probleme
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Rekenkundige ry: vind Tₙ (Maklik)
+        { difficulty: 'Easy', question: 'Vind die 14de term van die rekenkundige ry 5, 9, 13, 17, …', checkMode: 'auto', correctAnswer: '57', answer: '57', explanation: 'a=5, d=4. T₁₄ = a + (n−1)d = 5 + (14−1)(4) = 5 + 52 = 57.' },
+        { difficulty: 'Easy', question: 'Vind die 10de term van die rekenkundige ry −6, −2, 2, 6, …', checkMode: 'auto', correctAnswer: '30', answer: '30', explanation: 'a=−6, d=4. T₁₀ = a + (n−1)d = −6 + (10−1)(4) = −6 + 36 = 30.' },
+        { difficulty: 'Easy', question: 'Vind die 20ste term van die rekenkundige ry 12, 8, 4, 0, …', checkMode: 'auto', correctAnswer: '-64', correctAnswers: ['-64', '−64'], answer: '−64', explanation: 'a=12, d=−4. T₂₀ = a + (n−1)d = 12 + (20−1)(−4) = 12 − 76 = −64.' },
+
+        // Blok 2 — Meetkundige ry: vind Tₙ (Maklik)
+        { difficulty: 'Easy', question: 'Vind die 6de term van die meetkundige ry 2, 6, 18, 54, …', checkMode: 'auto', correctAnswer: '486', answer: '486', explanation: 'a=2, r=3. T₆ = a·rⁿ⁻¹ = 2 × 3⁵ = 2 × 243 = 486.' },
+        { difficulty: 'Easy', question: 'Vind die 7de term van die meetkundige ry 3, 6, 12, 24, …', checkMode: 'auto', correctAnswer: '192', answer: '192', explanation: 'a=3, r=2. T₇ = a·rⁿ⁻¹ = 3 × 2⁶ = 3 × 64 = 192.' },
+        { difficulty: 'Easy-Medium', question: 'Vind die 5de term van die meetkundige ry 1, 5, 25, 125, …', checkMode: 'auto', correctAnswer: '625', answer: '625', explanation: 'a=1, r=5. T₅ = a·rⁿ⁻¹ = 1 × 5⁴ = 625.' },
+
+        // Blok 3 — Sigma-notasie: evalueer (Medium)
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf k = 1 tot 5) van (4k − 1).', checkMode: 'auto', correctAnswer: '55', answer: '55', explanation: 'k=1:3, k=2:7, k=3:11, k=4:15, k=5:19. Som = 3+7+11+15+19 = 55.' },
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf i = 2 tot 5) van i².', checkMode: 'auto', correctAnswer: '54', answer: '54', explanation: 'i=2:4, i=3:9, i=4:16, i=5:25. Som = 4+9+16+25 = 54.' },
+        { difficulty: 'Medium', question: 'Skryf die som 3 + 6 + 9 + 12 + 15 met sigma-notasie.', answer: '∑ (vanaf k = 1 tot 5) van 3k', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf k = 3 tot 7) van (2k + 1).', checkMode: 'auto', correctAnswer: '55', answer: '55', explanation: 'k=3:7, k=4:9, k=5:11, k=6:13, k=7:15. Som = 7+9+11+13+15 = 55.' },
+
+        // Blok 4 — Som van ʼn rekenkundige reeks (Medium)
+        { difficulty: 'Medium', question: 'Vind die som van die eerste 16 terme van die rekenkundige ry 4, 7, 10, 13, …', checkMode: 'auto', correctAnswer: '424', answer: '424', explanation: 'a=4, d=3, n=16. S₁₆ = 16/2[2(4) + 15(3)] = 8[8+45] = 8 × 53 = 424.' },
+        { difficulty: 'Medium', question: 'Vind die som van ʼn rekenkundige reeks met a = 10, n = 13, en laaste term 100.', checkMode: 'auto', correctAnswer: '715', answer: '715', explanation: 'Deur Sₙ = n/2(a + l) te gebruik: S₁₃ = 13/2(10 + 100) = 6,5 × 110 = 715.' },
+        { difficulty: 'Medium', question: 'Vind die som van die eerste 12 terme van die rekenkundige ry 9, 5, 1, −3, …', checkMode: 'auto', correctAnswer: '-154', correctAnswers: ['-154', '−154'], answer: '−154', explanation: 'a=9, d=−4, n=12. S₁₂ = 12/2[2(9) + 11(−4)] = 6[18−44] = 6 × (−26) = −154.' },
+
+        // Blok 5 — Som van ʼn meetkundige reeks / som tot oneindig (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Vind die som van die eerste 7 terme van die meetkundige ry 3, 6, 12, 24, …', checkMode: 'auto', correctAnswer: '381', answer: '381', explanation: 'a=3, r=2, n=7. S₇ = 3(2⁷−1)/(2−1) = 3(128−1) = 3 × 127 = 381.' },
+        { difficulty: 'Medium-Hard', question: 'Vind die som tot oneindig van die meetkundige reeks met a = 18 en r = 1/3.', checkMode: 'auto', correctAnswer: '27', answer: '27', explanation: 'Kontroleer konvergensie: −1 < 1/3 < 1 ✓. S∞ = a/(1−r) = 18/(1−1/3) = 18/(2/3) = 27.' },
+        { difficulty: 'Hard', question: 'Bepaal of die meetkundige reeks met a = 5 en r = 1,5 ʼn som tot oneindig het. Verduidelik.', answer: 'Nee — aangesien r = 1,5 nie aan −1 < r < 1 voldoen nie (|r| ≥ 1), divergeer die reeks en bestaan geen som tot oneindig nie.', checkMode: 'self' },
+
+        // Blok 6 — Moeilik: gekombineerde, omgekeerde en werklike-lewe-probleme
+        { difficulty: 'Hard', question: 'ʼn Rekenkundige ry het T₄ = 17 en T₉ = 42. Vind a en d.', answer: 'T₄ = a+3d = 17. T₉ = a+8d = 42. Trek af: 5d = 25, dus d = 5. Dan a = 17 − 15 = 2.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vind n as die som van ʼn rekenkundige reeks 143 is, met a = 3 en d = 2.', checkMode: 'auto', correctAnswer: '11', answer: '11', explanation: '143 = n/2[6 + 2(n−1)] → 286 = n(2n+4) = 2n²+4n. Herrangskik: n²+2n−143=0. Faktoriseer: (n+13)(n−11)=0, dus n=11 (verwerp die negatiewe oplossing n=−13).' },
+        { difficulty: 'Hard', question: 'ʼn Kolonie bakterieë begin met 500 selle en verdubbel elke uur. Gebruik ʼn meetkundige ry om die aantal selle na 5 uur te vind (d.w.s. die 6de term).', checkMode: 'auto', correctAnswer: '16000', answer: '16 000', explanation: 'a=500 (T₁, by uur 0), r=2, n=6 (na 5 verdubbelings). T₆ = 500 × 2⁵ = 500 × 32 = 16 000 selle.' },
+        { difficulty: 'Hard', question: 'Verifieer dat ∑ (vanaf k = 1 tot n) van k = n(n+1)/2 vir n = 6, deur beide direk op te tel en die formule te gebruik.', answer: 'Direkte som: 1+2+3+4+5+6 = 21. Formule: 6(7)/2 = 42/2 = 21. Albei metodes stem ooreen, wat die formule bevestig.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het patrone, rye en reekse bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige vrae wat jy oor reekssomme of sigma-notasie gemis het en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die nde term en somformules weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Rekenkundige ry: vind Tₙ (Maklik)
+        { difficulty: 'Easy', question: 'Vind die 15de term van die rekenkundige ry 6, 11, 16, 21, …', checkMode: 'auto', correctAnswer: '76', answer: '76', explanation: 'a=6, d=5. T₁₅ = a + (n−1)d = 6 + (15−1)(5) = 6 + 70 = 76.' },
+        { difficulty: 'Easy', question: 'Vind die 11de term van die rekenkundige ry −4, 0, 4, 8, …', checkMode: 'auto', correctAnswer: '36', answer: '36', explanation: 'a=−4, d=4. T₁₁ = a + (n−1)d = −4 + (11−1)(4) = −4 + 40 = 36.' },
+        { difficulty: 'Easy', question: 'Vind die 18de term van die rekenkundige ry 15, 11, 7, 3, …', checkMode: 'auto', correctAnswer: '-53', correctAnswers: ['-53', '−53'], answer: '−53', explanation: 'a=15, d=−4. T₁₈ = a + (n−1)d = 15 + (18−1)(−4) = 15 − 68 = −53.' },
+
+        // Blok 2 — Meetkundige ry: vind Tₙ (Maklik)
+        { difficulty: 'Easy', question: 'Vind die 6de term van die meetkundige ry 6, 12, 24, 48, …', checkMode: 'auto', correctAnswer: '192', answer: '192', explanation: 'a=6, r=2. T₆ = a·rⁿ⁻¹ = 6 × 2⁵ = 6 × 32 = 192.' },
+        { difficulty: 'Easy', question: 'Vind die 6de term van die meetkundige ry 4, 8, 16, 32, …', checkMode: 'auto', correctAnswer: '128', answer: '128', explanation: 'a=4, r=2. T₆ = a·rⁿ⁻¹ = 4 × 2⁵ = 4 × 32 = 128.' },
+        { difficulty: 'Easy-Medium', question: 'Vind die 5de term van die meetkundige ry 2, 10, 50, 250, …', checkMode: 'auto', correctAnswer: '1250', answer: '1250', explanation: 'a=2, r=5. T₅ = a·rⁿ⁻¹ = 2 × 5⁴ = 2 × 625 = 1250.' },
+
+        // Blok 3 — Sigma-notasie: evalueer (Medium)
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf k = 1 tot 5) van (3k + 2).', checkMode: 'auto', correctAnswer: '55', answer: '55', explanation: 'k=1:5, k=2:8, k=3:11, k=4:14, k=5:17. Som = 5+8+11+14+17 = 55.' },
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf i = 2 tot 5) van (i² + 1).', checkMode: 'auto', correctAnswer: '58', answer: '58', explanation: 'i=2:5, i=3:10, i=4:17, i=5:26. Som = 5+10+17+26 = 58.' },
+        { difficulty: 'Medium', question: 'Skryf die som 4 + 8 + 12 + 16 + 20 met sigma-notasie.', answer: '∑ (vanaf k = 1 tot 5) van 4k', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf k = 2 tot 6) van (2k − 1).', checkMode: 'auto', correctAnswer: '45', answer: '45', explanation: 'k=2:3, k=3:5, k=4:7, k=5:9, k=6:11. Som = 3+5+7+9+11 = 45.' },
+
+        // Blok 4 — Som van ʼn rekenkundige reeks (Medium)
+        { difficulty: 'Medium', question: 'Vind die som van die eerste 14 terme van die rekenkundige ry 5, 9, 13, 17, …', checkMode: 'auto', correctAnswer: '434', answer: '434', explanation: 'a=5, d=4, n=14. S₁₄ = 14/2[2(5) + 13(4)] = 7[10+52] = 7 × 62 = 434.' },
+        { difficulty: 'Medium', question: 'Vind die som van ʼn rekenkundige reeks met a = 8, n = 15, en laaste term 92.', checkMode: 'auto', correctAnswer: '750', answer: '750', explanation: 'Deur Sₙ = n/2(a + l) te gebruik: S₁₅ = 15/2(8 + 92) = 7,5 × 100 = 750.' },
+        { difficulty: 'Medium', question: 'Vind die som van die eerste 10 terme van die rekenkundige ry 7, 3, −1, −5, …', checkMode: 'auto', correctAnswer: '-110', correctAnswers: ['-110', '−110'], answer: '−110', explanation: 'a=7, d=−4, n=10. S₁₀ = 10/2[2(7) + 9(−4)] = 5[14−36] = 5 × (−22) = −110.' },
+
+        // Blok 5 — Som van ʼn meetkundige reeks / som tot oneindig (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Vind die som van die eerste 6 terme van die meetkundige ry 4, 8, 16, 32, …', checkMode: 'auto', correctAnswer: '252', answer: '252', explanation: 'a=4, r=2, n=6. S₆ = 4(2⁶−1)/(2−1) = 4(64−1) = 4 × 63 = 252.' },
+        { difficulty: 'Medium-Hard', question: 'Vind die som tot oneindig van die meetkundige reeks met a = 24 en r = 1/3.', checkMode: 'auto', correctAnswer: '36', answer: '36', explanation: 'Kontroleer konvergensie: −1 < 1/3 < 1 ✓. S∞ = a/(1−r) = 24/(1−1/3) = 24/(2/3) = 36.' },
+        { difficulty: 'Hard', question: 'Bepaal of die meetkundige reeks met a = 6 en r = −2 ʼn som tot oneindig het. Verduidelik.', answer: 'Nee — aangesien r = −2 nie aan −1 < r < 1 voldoen nie (|r| ≥ 1), divergeer die reeks en bestaan geen som tot oneindig nie.', checkMode: 'self' },
+
+        // Blok 6 — Moeilik: gekombineerde, omgekeerde en werklike-lewe-probleme
+        { difficulty: 'Hard', question: 'ʼn Rekenkundige ry het T₄ = 19 en T₉ = 44. Vind a en d.', answer: 'T₄ = a+3d = 19. T₉ = a+8d = 44. Trek af: 5d = 25, dus d = 5. Dan a = 19 − 15 = 4.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vind n as die som van ʼn rekenkundige reeks 222 is, met a = 2 en d = 3.', checkMode: 'auto', correctAnswer: '12', answer: '12', explanation: '222 = n/2[4 + 3(n−1)] → 444 = n(3n+1) = 3n²+n. Herrangskik: 3n²+n−444=0. Faktoriseer: (3n+37)(n−12)=0, dus n=12 (verwerp die negatiewe oplossing n=−37/3).' },
+        { difficulty: 'Hard', question: 'ʼn Kolonie bakterieë begin met 300 selle en verdubbel elke uur. Gebruik ʼn meetkundige ry om die aantal selle na 5 uur te vind (d.w.s. die 6de term).', checkMode: 'auto', correctAnswer: '9600', answer: '9 600', explanation: 'a=300 (T₁, by uur 0), r=2, n=6 (na 5 verdubbelings). T₆ = 300 × 2⁵ = 300 × 32 = 9 600 selle.' },
+        { difficulty: 'Hard', question: 'Verifieer dat ∑ (vanaf k = 1 tot n) van k = n(n+1)/2 vir n = 7, deur beide direk op te tel en die formule te gebruik.', answer: 'Direkte som: 1+2+3+4+5+6+7 = 28. Formule: 7(8)/2 = 56/2 = 28. Albei metodes stem ooreen, wat die formule bevestig.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het patrone, rye en reekse bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige vrae wat jy oor reekssomme of sigma-notasie gemis het en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die nde term en somformules weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Rekenkundige ry: vind Tₙ (Maklik)
+        { difficulty: 'Easy', question: 'Vind die 13de term van die rekenkundige ry 8, 15, 22, 29, …', checkMode: 'auto', correctAnswer: '92', answer: '92', explanation: 'a=8, d=7. T₁₃ = a + (n−1)d = 8 + (13−1)(7) = 8 + 84 = 92.' },
+        { difficulty: 'Easy', question: 'Vind die 12de term van die rekenkundige ry −5, −1, 3, 7, …', checkMode: 'auto', correctAnswer: '39', answer: '39', explanation: 'a=−5, d=4. T₁₂ = a + (n−1)d = −5 + (12−1)(4) = −5 + 44 = 39.' },
+        { difficulty: 'Easy', question: 'Vind die 16de term van die rekenkundige ry 20, 15, 10, 5, …', checkMode: 'auto', correctAnswer: '-55', correctAnswers: ['-55', '−55'], answer: '−55', explanation: 'a=20, d=−5. T₁₆ = a + (n−1)d = 20 + (16−1)(−5) = 20 − 75 = −55.' },
+
+        // Blok 2 — Meetkundige ry: vind Tₙ (Maklik)
+        { difficulty: 'Easy', question: 'Vind die 4de term van die meetkundige ry 4, 12, 36, 108, …', checkMode: 'auto', correctAnswer: '108', answer: '108', explanation: 'a=4, r=3. T₄ = a·rⁿ⁻¹ = 4 × 3³ = 4 × 27 = 108.' },
+        { difficulty: 'Easy', question: 'Vind die 6de term van die meetkundige ry 5, 10, 20, 40, …', checkMode: 'auto', correctAnswer: '160', answer: '160', explanation: 'a=5, r=2. T₆ = a·rⁿ⁻¹ = 5 × 2⁵ = 5 × 32 = 160.' },
+        { difficulty: 'Easy-Medium', question: 'Vind die 4de term van die meetkundige ry 5, 15, 45, 135, …', checkMode: 'auto', correctAnswer: '135', answer: '135', explanation: 'a=5, r=3. T₄ = a·rⁿ⁻¹ = 5 × 3³ = 5 × 27 = 135.' },
+
+        // Blok 3 — Sigma-notasie: evalueer (Medium)
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf k = 1 tot 5) van (5k − 2).', checkMode: 'auto', correctAnswer: '65', answer: '65', explanation: 'k=1:3, k=2:8, k=3:13, k=4:18, k=5:23. Som = 3+8+13+18+23 = 65.' },
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf i = 1 tot 4) van (i² + 2).', checkMode: 'auto', correctAnswer: '38', answer: '38', explanation: 'i=1:3, i=2:6, i=3:11, i=4:18. Som = 3+6+11+18 = 38.' },
+        { difficulty: 'Medium', question: 'Skryf die som 6 + 12 + 18 + 24 + 30 met sigma-notasie.', answer: '∑ (vanaf k = 1 tot 5) van 6k', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Evalueer ∑ (vanaf k = 3 tot 6) van (3k + 1).', checkMode: 'auto', correctAnswer: '58', answer: '58', explanation: 'k=3:10, k=4:13, k=5:16, k=6:19. Som = 10+13+16+19 = 58.' },
+
+        // Blok 4 — Som van ʼn rekenkundige reeks (Medium)
+        { difficulty: 'Medium', question: 'Vind die som van die eerste 12 terme van die rekenkundige ry 6, 11, 16, 21, …', checkMode: 'auto', correctAnswer: '402', answer: '402', explanation: 'a=6, d=5, n=12. S₁₂ = 12/2[2(6) + 11(5)] = 6[12+55] = 6 × 67 = 402.' },
+        { difficulty: 'Medium', question: 'Vind die som van ʼn rekenkundige reeks met a = 6, n = 15, en laaste term 90.', checkMode: 'auto', correctAnswer: '720', answer: '720', explanation: 'Deur Sₙ = n/2(a + l) te gebruik: S₁₅ = 15/2(6 + 90) = 7,5 × 96 = 720.' },
+        { difficulty: 'Medium', question: 'Vind die som van die eerste 9 terme van die rekenkundige ry 10, 6, 2, −2, …', checkMode: 'auto', correctAnswer: '-54', correctAnswers: ['-54', '−54'], answer: '−54', explanation: 'a=10, d=−4, n=9. S₉ = 9/2[2(10) + 8(−4)] = 4,5[20−32] = 4,5 × (−12) = −54.' },
+
+        // Blok 5 — Som van ʼn meetkundige reeks / som tot oneindig (Medium-Hard)
+        { difficulty: 'Medium-Hard', question: 'Vind die som van die eerste 5 terme van die meetkundige ry 4, 12, 36, 108, …', checkMode: 'auto', correctAnswer: '484', answer: '484', explanation: 'a=4, r=3, n=5. S₅ = 4(3⁵−1)/(3−1) = 4(243−1)/2 = 4 × 242/2 = 484.' },
+        { difficulty: 'Medium-Hard', question: 'Vind die som tot oneindig van die meetkundige reeks met a = 12 en r = 1/4.', checkMode: 'auto', correctAnswer: '16', answer: '16', explanation: 'Kontroleer konvergensie: −1 < 1/4 < 1 ✓. S∞ = a/(1−r) = 12/(1−1/4) = 12/(3/4) = 16.' },
+        { difficulty: 'Hard', question: 'Bepaal of die meetkundige reeks met a = 7 en r = 1,2 ʼn som tot oneindig het. Verduidelik.', answer: 'Nee — aangesien r = 1,2 nie aan −1 < r < 1 voldoen nie (|r| ≥ 1), divergeer die reeks en bestaan geen som tot oneindig nie.', checkMode: 'self' },
+
+        // Blok 6 — Moeilik: gekombineerde, omgekeerde en werklike-lewe-probleme
+        { difficulty: 'Hard', question: 'ʼn Rekenkundige ry het T₅ = 23 en T₉ = 43. Vind a en d.', answer: 'T₅ = a+4d = 23. T₉ = a+8d = 43. Trek af: 4d = 20, dus d = 5. Dan a = 23 − 20 = 3.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Vind n as die som van ʼn rekenkundige reeks 130 is, met a = 4 en d = 2.', checkMode: 'auto', correctAnswer: '10', answer: '10', explanation: '130 = n/2[8 + 2(n−1)] → 260 = n(2n+6) = 2n²+6n. Herrangskik: n²+3n−130=0. Faktoriseer: (n+13)(n−10)=0, dus n=10 (verwerp die negatiewe oplossing n=−13).' },
+        { difficulty: 'Hard', question: 'ʼn Kolonie bakterieë begin met 400 selle en verdubbel elke uur. Gebruik ʼn meetkundige ry om die aantal selle na 4 uur te vind (d.w.s. die 5de term).', checkMode: 'auto', correctAnswer: '6400', answer: '6 400', explanation: 'a=400 (T₁, by uur 0), r=2, n=5 (na 4 verdubbelings). T₅ = 400 × 2⁴ = 400 × 16 = 6 400 selle.' },
+        { difficulty: 'Hard', question: 'Verifieer dat ∑ (vanaf k = 1 tot n) van k = n(n+1)/2 vir n = 8, deur beide direk op te tel en die formule te gebruik.', answer: 'Direkte som: 1+2+3+4+5+6+7+8 = 36. Formule: 8(9)/2 = 72/2 = 36. Albei metodes stem ooreen, wat die formule bevestig.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het patrone, rye en reekse bemeester.' },
+        { minScore: 15, message: 'Goeie werk! Hersien enige vrae wat jy oor reekssomme of sigma-notasie gemis het en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die nde term en somformules weer deur, en probeer weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
+
   resultsConfig: {
     totalMarks: 20,
     messages: [
