@@ -24,6 +24,10 @@ export const topicData: TopicData = {
       title: 'Wat is ʼn Verhouding?',
       icon: ':',
       explanation:
+        `<div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;padding:12px 16px;background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;">` +
+        `<span style="font-size:18px;line-height:1;">🔭</span>` +
+        `<p style="margin:0;font-size:14px;color:#6b21a8;"><strong>Vooruitkyk:</strong> ʼn toegewyde onderwerp oor Verhouding en Koers met formele notasie (dubbelpuntvorm, GGF-gebaseerde vereenvoudiging, eenheidskoers) is Graad 7-inhoud — CAPS Graad 6 raak verhouding/koers slegs informeel aan, binne werklike-lewe Metingskontekste (bv. ʼn resep wat op- of afgeskaal word), sonder hierdie formele apparaat. Die hele onderwerp hieronder word as verryking ingesluit vir leerders wat ʼn vroeë, deeglike inleiding wil hê.</p>` +
+        `</div>` +
         `<p style="margin-bottom:16px;">ʼn Verhouding <strong>vergelyk twee of meer hoeveelhede van dieselfde soort</strong>. Ons skryf ʼn verhouding met ʼn dubbelpunt — byvoorbeeld ${bl('3')}:${re('5')} beteken vir elke ${bl('3')} van een ding is daar ${re('5')} van ʼn ander. Die <strong>volgorde van ʼn verhouding is belangrik</strong> — ${bl('3')}:${re('5')} is anders as ${re('5')}:${bl('3')}. Ons kan ʼn verhouding <strong>vereenvoudig</strong> deur al die dele deur hul ${or('GGF')} te deel, net soos wanneer ʼn breuk vereenvoudig word. ʼn Verhouding het geen eenhede nie — ons skryf net die getalle.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────

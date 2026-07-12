@@ -254,9 +254,13 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mean-median-mode',
-      title: 'Mean, Median and Mode',
+      title: 'Mode and Median (Plus a Look at Mean)',
       icon: '📐',
       explanation:
+        `<div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;padding:12px 16px;background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;">` +
+        `<span style="font-size:18px;line-height:1;">🔭</span>` +
+        `<p style="margin:0;font-size:14px;color:#6b21a8;"><strong>CAPS Grade 6 focus:</strong> the ${gr('median')} (the middle value once data is ordered) and the ${bl('mode')} (the most frequent value) are the two measures of central tendency required in Grade 6, building on mode alone from Grade 5. The ${or('mean')} (average) is included below as enrichment, since it's a natural next step but isn't formally required until later.</p>` +
+        `</div>` +
         `<p style="margin-bottom:16px;">These three measures describe the <strong>centre</strong> of a data set. The ${bl('mean')} is the average — add all values and divide by how many there are. The ${gr('median')} is the middle value when data is ordered from smallest to biggest. The ${or('mode')} is the value that appears most often.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

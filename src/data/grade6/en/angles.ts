@@ -10,6 +10,22 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Grade 6 names angle types (acute, right, obtuse, straight, reflex,
+// revolution) and compares them informally to right angles and straight
+// angles WITHOUT a protractor and WITHOUT measuring in degrees ("Learners...
+// still do not work with protractors. Nor do they measure angles in
+// degrees" — CAPS IP content clarification, Grade 6, Properties of 2D
+// shapes). Protractor use and exact-degree arithmetic are Senior Phase
+// (Grade 7+) content. We keep this material — clearly labelled — because it
+// is well-built and many schools do introduce it early, but it goes beyond
+// what CAPS examines in Grade 6.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Angles',
   grade: 6,
@@ -22,7 +38,11 @@ export const topicData: TopicData = {
       title: 'Types of Angles',
       icon: '∠',
       explanation:
-        `<p style="margin-bottom:16px;">An angle is formed where two lines meet at a point. We classify angles by their size. An ${bl('acute')} angle is less than 90°. A ${gr('right')} angle is exactly 90°. An ${or('obtuse')} angle is between 90° and 180°. A straight angle is exactly 180°. A ${re('reflex')} angle is between 180° and 360°. A revolution is a full turn of 360°.</p>` +
+        lookingAhead(
+          'exact degree values',
+          'In Grade 6 you compare angles informally to a right angle and a straight angle — for example "smaller than a right angle" (acute) or "bigger than a straight angle but smaller than a full turn" (reflex). Writing each angle as an exact number of degrees (like "35°") and measuring with a protractor is Grade 7+ work. It is shown here so you can see where this topic is heading, and it can help build number sense — just know it will not be examined this way in Grade 6.'
+        ) +
+        `<p style="margin-bottom:16px;">An angle is formed where two lines meet at a point. We classify angles by comparing them to a ${gr('right angle')} (a quarter turn) and a straight angle (a half turn). An ${bl('acute')} angle is smaller than a right angle. A ${gr('right')} angle looks like the corner of a square page. An ${or('obtuse')} angle is bigger than a right angle but smaller than a straight angle. A straight angle forms a straight line (a half turn). A ${re('reflex')} angle is bigger than a straight angle but smaller than a full turn. A revolution is a full turn back to where you started. In degrees (Grade 7+ notation, shown here for context): acute &lt; 90°, right = 90°, obtuse is 90°–180°, straight = 180°, reflex is 180°–360°, revolution = 360°.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -146,6 +166,10 @@ export const topicData: TopicData = {
       title: 'Measuring Angles with a Protractor',
       icon: '📐',
       explanation:
+        lookingAhead(
+          'protractors and degree measurement',
+          'CAPS Grade 6 does not use protractors or measure angles in degrees — that starts in Grade 7. In Grade 6 you only need an informal angle checker (like the corner of a piece of paper) to see whether an angle is bigger or smaller than a right angle. This whole section is enrichment for learners who want a head start.'
+        ) +
         `<p style="margin-bottom:16px;">We measure angles using a protractor in degrees. Place the ${bl('centre point')} of the protractor on the ${bl('vertex')} of the angle. Line up the ${gr('baseline')} of the protractor with one arm of the angle. Read the degree where the other arm crosses the scale — this is the ${or('measurement')}. Protractors have two scales — always check which one matches where you started counting from zero.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -253,6 +277,10 @@ export const topicData: TopicData = {
       title: 'Angles on a Straight Line and at a Point',
       icon: '↔',
       explanation:
+        lookingAhead(
+          'calculating unknown angles in degrees',
+          'Finding a missing angle by adding and subtracting degree values (e.g. 180° − 65°) is Grade 7+ algebra-style reasoning. In Grade 6 the CAPS-aligned version of this idea is informal: knowing that angles along a straight line together make a straight angle, and angles that meet at a point together make a full revolution — without solving for an exact missing number of degrees.'
+        ) +
         `<p style="margin-bottom:16px;">Angles on a straight line add up to ${or('180°')}. Angles around a point add up to ${or('360°')}. We use these facts to find ${re('unknown angles')} when some ${bl('known angles')} are already given.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

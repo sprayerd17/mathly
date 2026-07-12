@@ -10,6 +10,19 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// CAPS Graad 6 benoem hoeksoorte (skerp, reg, stomp, gestrek, refleks,
+// volledige omwenteling) en vergelyk hulle informeel met regte hoeke en
+// gestrekte hoeke SONDER 'n gradeboog en SONDER om hoeke in grade te meet.
+// Gradeboogwerk en presiese graadberekening is Senior Fase (Graad 7+)
+// inhoud. Ons hou hierdie materiaal — duidelik gemerk — omdat dit goed
+// opgebou is, maar dit gaan verder as wat CAPS in Graad 6 eksamineer.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Hoeke',
   grade: 6,
@@ -22,7 +35,11 @@ export const topicData: TopicData = {
       title: 'Tipes Hoeke',
       icon: '∠',
       explanation:
-        `<p style="margin-bottom:16px;">ʼn Hoek word gevorm waar twee lyne by ʼn punt ontmoet. Ons klassifiseer hoeke volgens hul grootte. ʼn ${bl('skerp')} hoek is kleiner as 90°. ʼn ${gr('regte')} hoek is presies 90°. ʼn ${or('stomp')} hoek is tussen 90° en 180°. ʼn gestrekte hoek is presies 180°. ʼn ${re('refleks')} hoek is tussen 180° en 360°. ʼn Volledige omwenteling is ʼn volle draai van 360°.</p>` +
+        lookingAhead(
+          'presiese graadwaardes',
+          'In Graad 6 vergelyk jy hoeke informeel met ʼn regte hoek en ʼn gestrekte hoek — byvoorbeeld "kleiner as ʼn regte hoek" (skerp) of "groter as ʼn gestrekte hoek maar kleiner as ʼn volle draai" (refleks). Om elke hoek as ʼn presiese aantal grade te skryf (soos "35°") en met ʼn gradeboog te meet, is Graad 7+-werk. Dit word hier gewys sodat jy kan sien waarheen hierdie onderwerp op pad is, en dit kan help om getalsin op te bou — onthou net dit sal nie so in Graad 6 geëksamineer word nie.'
+        ) +
+        `<p style="margin-bottom:16px;">ʼn Hoek word gevorm waar twee lyne by ʼn punt ontmoet. Ons klassifiseer hoeke deur hulle met ʼn ${gr('regte hoek')} (ʼn kwartdraai) en ʼn gestrekte hoek te vergelyk. ʼn ${bl('skerp')} hoek is kleiner as ʼn regte hoek. ʼn ${gr('regte')} hoek lyk soos die hoek van ʼn vierkantige bladsy. ʼn ${or('stomp')} hoek is groter as ʼn regte hoek maar kleiner as ʼn gestrekte hoek. ʼn gestrekte hoek vorm ʼn reguit lyn (ʼn halwe draai). ʼn ${re('refleks')} hoek is groter as ʼn gestrekte hoek maar kleiner as ʼn volle draai. ʼn Volledige omwenteling is ʼn volle draai terug na waar jy begin het. In grade (Graad 7+-notasie, hier vir konteks gewys): skerp &lt; 90°, reg = 90°, stomp is 90°–180°, gestrek = 180°, refleks is 180°–360°, volledige omwenteling = 360°.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -146,6 +163,10 @@ export const topicData: TopicData = {
       title: 'Hoeke Meet met ʼn Gradeboog',
       icon: '📐',
       explanation:
+        lookingAhead(
+          'gradebole en graadmeting',
+          'CAPS Graad 6 gebruik nie gradebole nie en meet nie hoeke in grade nie — dit begin in Graad 7. In Graad 6 het jy net ʼn informele hoekmeter (soos die hoek van ʼn stuk papier) nodig om te sien of ʼn hoek groter of kleiner as ʼn regte hoek is. Hierdie hele afdeling is verryking vir leerders wat ʼn voorsprong wil kry.'
+        ) +
         `<p style="margin-bottom:16px;">Ons meet hoeke met ʼn gradeboog in grade. Plaas die ${bl('middelpunt')} van die gradeboog op die ${bl('hoekpunt')} van die hoek. Lyn die ${gr('basislyn')} van die gradeboog op met een arm van die hoek. Lees die graad waar die ander arm die skaal kruis — dit is die ${or('meting')}. Gradebole het twee skale — kyk altyd watter een ooreenstem met waar jy by nul begin tel het.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -253,6 +274,10 @@ export const topicData: TopicData = {
       title: 'Hoeke op ʼn Reguit Lyn en by ʼn Punt',
       icon: '↔',
       explanation:
+        lookingAhead(
+          'onbekende hoeke in grade bereken',
+          'Om ʼn ontbrekende hoek te vind deur graadwaardes op te tel en af te trek (bv. 180° − 65°) is Graad 7+-algebra-agtige redenasie. In Graad 6 is die CAPS-belynde weergawe van hierdie idee informeel: om te weet dat hoeke langs ʼn reguit lyn saam ʼn gestrekte hoek vorm, en hoeke wat by ʼn punt ontmoet saam ʼn volledige omwenteling vorm — sonder om vir ʼn presiese ontbrekende aantal grade op te los.'
+        ) +
         `<p style="margin-bottom:16px;">Hoeke op ʼn reguit lyn tel op tot ${or('180°')}. Hoeke rondom ʼn punt tel op tot ${or('360°')}. Ons gebruik hierdie feite om ${re('onbekende hoeke')} te vind wanneer sommige ${bl('bekende hoeke')} reeds gegee is.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

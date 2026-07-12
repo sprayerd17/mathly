@@ -24,6 +24,10 @@ export const topicData: TopicData = {
       title: 'What is a Ratio?',
       icon: ':',
       explanation:
+        `<div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;padding:12px 16px;background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;">` +
+        `<span style="font-size:18px;line-height:1;">🔭</span>` +
+        `<p style="margin:0;font-size:14px;color:#6b21a8;"><strong>Looking ahead:</strong> a dedicated Ratio and Rate topic with formal notation (colon form, HCF-based simplification, unit rate) is Grade 7 content — CAPS Grade 6 only touches rate/ratio informally, inside real-life Measurement contexts (e.g. a recipe scaled up or down), without this formal apparatus. The whole topic below is included as enrichment for learners who want an early, thorough introduction.</p>` +
+        `</div>` +
         `<p style="margin-bottom:16px;">A ratio <strong>compares two or more quantities of the same kind</strong>. We write a ratio using a colon — for example ${bl('3')}:${re('5')} means for every ${bl('3')} of one thing there are ${re('5')} of another. The <strong>order of a ratio matters</strong> — ${bl('3')}:${re('5')} is different from ${re('5')}:${bl('3')}. We can <strong>simplify</strong> a ratio by dividing all parts by their ${or('HCF')} just like simplifying a fraction. A ratio does not have units — we just write the numbers.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────

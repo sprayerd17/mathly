@@ -470,9 +470,13 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mean-median-mode',
-      title: 'Gemiddelde, Mediaan en Modus',
+      title: 'Modus (Met ʼn Blik op Mediaan en Gemiddelde)',
       icon: '📊',
       explanation:
+        `<div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;padding:12px 16px;background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;">` +
+        `<span style="font-size:18px;line-height:1;">🔭</span>` +
+        `<p style="margin:0;font-size:14px;color:#6b21a8;"><strong>CAPS Graad 5-fokus:</strong> die ${bl('modus')} — die waarde wat die meeste voorkom — is die enigste maatstaf van sentrale neiging wat in Graad 5 vereis word. Die ${gr('mediaan')} word in <strong>Graad 6</strong> bekendgestel, en die ${or('gemiddelde')} kom eers later. Mediaan en gemiddelde word hieronder as verryking ingesluit, aangesien hulle natuurlik op modus voortbou.</p>` +
+        `</div>` +
         `<p style="margin-bottom:16px;">Die ${bl('modus')}, ${gr('mediaan')}, en ${or('gemiddelde')} is drie maniere om die middelste of mees tipiese waarde in ʼn datastel te beskryf. Hierdie word <strong>maatstawwe van sentrale neiging</strong> genoem omdat hulle ons vertel oor die middelpunt van die data.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────

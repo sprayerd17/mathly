@@ -22,6 +22,23 @@ const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</spa
 // centre of rotation   → orange  (#ea580c)   (reuses or)
 // degrees              → green   (#16a34a)   (reuses gr)
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Grade 6 never uses a Cartesian (x, y) coordinate plane, ordered
+// pairs, vector-based translation, or degree-based rotation anywhere in the
+// Grade 4-6 document — searches for "x-axis", "y-axis", "ordered pair" and
+// "Cartesian" return zero hits. Position work in the Intermediate Phase
+// uses alpha-numeric grid references instead (e.g. "D4", "A3" — see
+// position-and-movement.ts), and by Grade 6 transformations are used only
+// to DESCRIBE patterns in words ("I can make this pattern by translating
+// the hexagon"), not to draw shapes at (x, y) coordinates or rotate them by
+// an exact number of degrees. That is Grade 7+ content. Kept here as
+// clearly labelled enrichment.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Transformations',
   grade: 6,
@@ -34,6 +51,10 @@ export const topicData: TopicData = {
       title: 'Reflection',
       icon: '🪞',
       explanation:
+        lookingAhead(
+          'reflecting points using (x, y) coordinates',
+          'CAPS Grade 6 does not use the (x, y) coordinate plane — positions are described using alpha-numeric grid references like "D4" instead, and reflections are described in words (e.g. "the shape flips over the line"). Reflecting an exact coordinate point like (2, 3) over a line such as x = 5 is Grade 7+ work.'
+        ) +
         `<p style="margin-bottom:16px;">A <strong>reflection</strong> flips a shape over a <strong>mirror line</strong>. The image is the same size as the object but faces the opposite direction. Every point on the image is the same distance from the mirror line as the matching point on the object. Mirror lines can be vertical, horizontal or diagonal.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -113,6 +134,10 @@ export const topicData: TopicData = {
       title: 'Translation',
       icon: '➡️',
       explanation:
+        lookingAhead(
+          'translating on a coordinate grid using x- and y-coordinates',
+          'CAPS Grade 6 describes translation informally in words (e.g. "I can make this pattern by translating the shape") without a coordinate grid. Sliding a shape by adding/subtracting units from x- and y-coordinates is Grade 7+ work.'
+        ) +
         `<p style="margin-bottom:16px;">A <strong>translation</strong> slides a shape to a new position without turning or flipping it. Every point moves the same distance in the same direction. We describe a translation using how far <strong>left/right</strong> and <strong>up/down</strong>.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -192,6 +217,10 @@ export const topicData: TopicData = {
       title: 'Rotation',
       icon: '🔄',
       explanation:
+        lookingAhead(
+          'rotating shapes by an exact number of degrees',
+          'CAPS Grade 6 does describe turns informally using quarter/half/full-turn language (this part is Grade 6 appropriate), and describes rotation in words when explaining patterns. Actually rotating a shape by an exact number of degrees around a marked centre point, and reasoning about clockwise/anticlockwise degree equivalence, is Grade 7+ work.'
+        ) +
         `<p style="margin-bottom:16px;">A <strong>rotation</strong> turns a shape around a fixed <strong>centre point</strong>. We describe rotation by the <strong>angle turned</strong> and the <strong>direction</strong> — clockwise or anticlockwise. A quarter turn is ${gr('90°')}, a half turn is ${gr('180°')}, and a full turn is ${gr('360°')}.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

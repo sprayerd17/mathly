@@ -10,6 +10,22 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Grade 6 explicitly reserves formal letter-variable algebra for the
+// Senior Phase: "Writing and solving number sentences prepares learners for
+// writing algebraic expressions and solving equations in the Senior
+// Phase." Grade 6 writes number sentences with boxes/blanks (e.g.
+// ☐ + 5 = 12), not letters, and solves them by inspection or trial and
+// improvement, checking by substitution — not by applying named "inverse
+// operations" as a formal rule ("Learners are not expected to use the
+// expression 'inverse operations'"). Kept here as clearly labelled
+// enrichment because it is accurate, well-built content.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Number Sentences and Equations',
   grade: 6,
@@ -22,6 +38,10 @@ export const topicData: TopicData = {
       title: 'Writing and Understanding Equations',
       icon: '=',
       explanation:
+        lookingAhead(
+          'writing equations with letter variables',
+          'CAPS Grade 6 writes number sentences using a box or blank (☐) for the unknown, e.g. ☐ + 5 = 12, and solves by inspection or trial and improvement — checking the answer by substitution. Using a letter like x or n as a formal variable, and the word "equation" in this formal sense, is Grade 7+ algebra. Kept here as clearly labelled enrichment.'
+        ) +
         `<p style="margin-bottom:16px;">A <strong>number sentence</strong> is a mathematical statement using numbers and symbols. An ${re('equation')} is a number sentence with an equals sign — it shows that the left side has the same value as the right side. A <strong>${bl('variable')}</strong> is a letter used to represent an unknown number. In Grade 6 we write ${re('equations')} using ${bl('variables')} and solve them to find the unknown value. The <strong>solution</strong> is the value of the ${bl('variable')} that makes the equation true.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
@@ -127,6 +147,10 @@ export const topicData: TopicData = {
       title: 'Solving Equations Using Inverse Operations',
       icon: '⚖',
       explanation:
+        lookingAhead(
+          'the formal term "inverse operations" and balancing equations',
+          'CAPS explicitly says Grade 6 learners "are not expected to use the expression \'inverse operations\'" as a named rule — they informally know that addition checks subtraction and multiplication checks division. Solving a balanced equation for a letter variable by applying a named inverse operation to both sides is Grade 7+ algebra.'
+        ) +
         `<p style="margin-bottom:16px;">To solve an equation we find the value of the ${bl('variable')} that makes the equation true. We use <strong>${or('inverse operations')}</strong> to isolate the ${bl('variable')} — addition and subtraction are inverses of each other and multiplication and division are inverses of each other. Whatever we do to one side of the equation we must do to the ${gr('other side')} to keep it balanced. We can think of an equation as a balanced scale — if we add or remove something from one side we must do the same to the other side.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
@@ -224,6 +248,10 @@ export const topicData: TopicData = {
       title: 'Solving Two-Step Equations',
       icon: '✕',
       explanation:
+        lookingAhead(
+          'solving two-step equations with variables',
+          'Multi-step equations like 2x + 5 = 17, solved by systematically undoing operations on a letter variable, are Grade 7+ algebra. This builds directly on the previous enrichment section.'
+        ) +
         `<p style="margin-bottom:16px;">A <strong>two-step equation</strong> requires two inverse operations to solve. We always undo operations in the <strong>reverse order to BODMAS</strong> — ${bl('first undo addition or subtraction')} then ${gr('undo multiplication or division')}. After solving always substitute your answer back into the original equation to ${re('check')} that both sides are equal.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
@@ -312,6 +340,10 @@ export const topicData: TopicData = {
       title: 'Word Problems and Equations',
       icon: '📝',
       explanation:
+        lookingAhead(
+          'translating word problems into formal equations',
+          'CAPS Grade 6 solves word problems by writing an informal number sentence (with a box for the unknown) and reasoning it out — not by formally assigning a letter variable and solving an equation. Kept here as clearly labelled enrichment.'
+        ) +
         `<p style="margin-bottom:16px;">Many real life problems can be solved by writing and solving an ${or('equation')}. Read the problem carefully and identify the unknown — this becomes your ${bl('variable')}. Translate the words into mathematical symbols. Write the ${or('equation')} and solve it using inverse operations. Always ${re('check')} your answer by substituting it back and make sure it makes sense in the context of the problem.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────

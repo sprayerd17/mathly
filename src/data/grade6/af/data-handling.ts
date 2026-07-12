@@ -254,9 +254,13 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mean-median-mode',
-      title: 'Gemiddelde, Mediaan en Modus',
+      title: 'Modus en Mediaan (Met ʼn Blik op Gemiddelde)',
       icon: '📐',
       explanation:
+        `<div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;padding:12px 16px;background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;">` +
+        `<span style="font-size:18px;line-height:1;">🔭</span>` +
+        `<p style="margin:0;font-size:14px;color:#6b21a8;"><strong>CAPS Graad 6-fokus:</strong> die ${gr('mediaan')} (die middelste waarde sodra data gerangskik is) en die ${bl('modus')} (die waarde wat die meeste voorkom) is die twee maatstawwe van sentrale neiging wat in Graad 6 vereis word, wat op modus alleen uit Graad 5 voortbou. Die ${or('gemiddelde')} word hieronder as verryking ingesluit, aangesien dit ʼn natuurlike volgende stap is, maar eers later formeel vereis word.</p>` +
+        `</div>` +
         `<p style="margin-bottom:16px;">Hierdie drie maatstawwe beskryf die <strong>middelpunt</strong> van ʼn datastel. Die ${bl('gemiddelde')} is die gemiddeld — tel al die waardes op en deel deur hoeveel daar is. Die ${gr('mediaan')} is die middelste waarde wanneer data van kleinste na grootste gerangskik word. Die ${or('modus')} is die waarde wat die meeste voorkom.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

@@ -22,6 +22,21 @@ const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</spa
 // centre of rotation   → orange  (#ea580c)   (reuses or)
 // degrees              → green   (#16a34a)   (reuses gr)
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// CAPS Graad 6 gebruik nêrens ʼn Cartesiese (x, y)-koördinaatvlak, geordende
+// pare, vektor-gebaseerde translasie, of graad-gebaseerde rotasie in die
+// Graad 4-6-dokument nie. Posisiewerk in die Intermediêre Fase gebruik
+// alfa-numeriese roosterverwysings in plaas daarvan (bv. "D4", "A3" — sien
+// position-and-movement.ts), en teen Graad 6 word transformasies net gebruik
+// om patrone in woorde te BESKRYF, nie om vorms by (x, y)-koördinate te
+// teken of deur ʼn presiese aantal grade te draai nie. Dit is Graad
+// 7+-inhoud. Behou hier as duidelik gemerkte verryking.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Transformasies',
   grade: 6,
@@ -34,6 +49,10 @@ export const topicData: TopicData = {
       title: 'Refleksie',
       icon: '🪞',
       explanation:
+        lookingAhead(
+          'punte reflekteer met (x, y)-koördinate',
+          'CAPS Graad 6 gebruik nie die (x, y)-koördinaatvlak nie — posisies word met alfa-numeriese roosterverwysings soos "D4" beskryf, en refleksies word in woorde beskryf (bv. "die vorm flip oor die lyn"). Om ʼn presiese koördinaatpunt soos (2, 3) oor ʼn lyn soos x = 5 te reflekteer, is Graad 7+-werk.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn <strong>Refleksie</strong> flip ʼn vorm oor ʼn <strong>spieëllyn</strong>. Die beeld is dieselfde grootte as die objek, maar kyk in die teenoorgestelde rigting. Elke punt op die beeld is dieselfde afstand vanaf die spieëllyn as die ooreenstemmende punt op die objek. Spieëllyne kan vertikaal, horisontaal of diagonaal wees.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -113,6 +132,10 @@ export const topicData: TopicData = {
       title: 'Translasie',
       icon: '➡️',
       explanation:
+        lookingAhead(
+          'translasie op ʼn koördinaatrooster met x- en y-koördinate',
+          'CAPS Graad 6 beskryf translasie informeel in woorde (bv. "ek kan hierdie patroon maak deur die vorm te translateer") sonder ʼn koördinaatrooster. Om ʼn vorm te skuif deur eenhede by x- en y-koördinate op te tel/af te trek, is Graad 7+-werk.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn <strong>Translasie</strong> skuif ʼn vorm na ʼn nuwe posisie sonder om dit te draai of te flip. Elke punt beweeg dieselfde afstand in dieselfde rigting. Ons beskryf ʼn translasie deur te sê hoe ver <strong>links/regs</strong> en <strong>op/af</strong> dit beweeg.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -192,6 +215,10 @@ export const topicData: TopicData = {
       title: 'Rotasie',
       icon: '🔄',
       explanation:
+        lookingAhead(
+          'vorms deur ʼn presiese aantal grade draai',
+          'CAPS Graad 6 beskryf draaie informeel met kwart-/half-/vol-draai-taal (hierdie deel is Graad 6-toepaslik), en beskryf rotasie in woorde wanneer patrone verduidelik word. Om ʼn vorm werklik deur ʼn presiese aantal grade om ʼn gemerkte middelpunt te draai, en oor kloksgewys/anti-kloksgewys-graadekwivalensie te redeneer, is Graad 7+-werk.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn <strong>Rotasie</strong> draai ʼn vorm om ʼn vaste <strong>middelpunt</strong>. Ons beskryf rotasie deur die <strong>hoek gedraai</strong> en die <strong>rigting</strong> — kloksgewys of anti-kloksgewys. ʼn Kwartdraai is ${gr('90°')}, ʼn halwe draai is ${gr('180°')}, en ʼn volle draai is ${gr('360°')}.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

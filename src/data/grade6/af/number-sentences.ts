@@ -10,6 +10,21 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// CAPS Graad 6 bespreek formele letterveranderlike-algebra eksplisiet vir
+// die Senior Fase: "Getalsinne skryf en oplos berei leerders voor om
+// algebraïese uitdrukkings te skryf en vergelykings in die Senior Fase op
+// te los." Graad 6 skryf getalsinne met blokkies/oop plekke (bv.
+// ☐ + 5 = 12), nie letters nie, en los hulle op deur inspeksie of
+// probeer-en-verbeter, met kontrole deur vervanging — nie deur benoemde
+// "inverse bewerkings" as ʼn formele reël toe te pas nie. Behou hier as
+// duidelik gemerkte verryking.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Getalsinne en Vergelykings',
   grade: 6,
@@ -22,6 +37,10 @@ export const topicData: TopicData = {
       title: 'Vergelykings Skryf en Verstaan',
       icon: '=',
       explanation:
+        lookingAhead(
+          'vergelykings skryf met letterveranderlikes',
+          'CAPS Graad 6 skryf getalsinne met ʼn blokkie of oop plek (☐) vir die onbekende, bv. ☐ + 5 = 12, en los dit op deur inspeksie of probeer-en-verbeter — met kontrole deur vervanging. Om ʼn letter soos x of n as ʼn formele veranderlike te gebruik, en die woord "vergelyking" in hierdie formele sin, is Graad 7+-algebra. Behou hier as duidelik gemerkte verryking.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn <strong>Getalsin</strong> is ʼn wiskundige stelling wat getalle en simbole gebruik. ʼn ${re('Vergelyking')} is ʼn getalsin met ʼn gelykaanteken — dit wys dat die linkerkant dieselfde waarde het as die regterkant. ʼn <strong>${bl('Veranderlike')}</strong> is ʼn letter wat gebruik word om ʼn onbekende getal voor te stel. In Graad 6 skryf ons ${re('vergelykings')} met ${bl('veranderlikes')} en los hulle op om die onbekende waarde te vind. Die <strong>oplossing</strong> is die waarde van die ${bl('veranderlike')} wat die vergelyking waar maak.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
@@ -127,6 +146,10 @@ export const topicData: TopicData = {
       title: 'Vergelykings Oplos met Inverse Bewerkings',
       icon: '⚖',
       explanation:
+        lookingAhead(
+          'die formele term "inverse bewerkings" en vergelykings balanseer',
+          'CAPS stel eksplisiet dat Graad 6-leerders "nie verwag word om die uitdrukking \'inverse bewerkings\' te gebruik nie" as ʼn benoemde reël — hulle weet informeel dat optelling aftrekking kontroleer en vermenigvuldiging deling kontroleer. Om ʼn gebalanseerde vergelyking vir ʼn letterveranderlike op te los deur ʼn benoemde inverse bewerking aan albei kante toe te pas, is Graad 7+-algebra.'
+        ) +
         `<p style="margin-bottom:16px;">Om ʼn vergelyking op te los, vind ons die waarde van die ${bl('veranderlike')} wat die vergelyking waar maak. Ons gebruik <strong>${or('inverse bewerkings')}</strong> om die ${bl('veranderlike')} te isoleer — optelling en aftrekking is inverses van mekaar en vermenigvuldiging en deling is inverses van mekaar. Wat ons ook al aan een kant van die vergelyking doen, moet ons aan die ${gr('ander kant')} doen om dit gebalanseerd te hou. Ons kan aan ʼn vergelyking dink as ʼn gebalanseerde skaal — as ons iets by een kant voeg of daarvan wegneem, moet ons dieselfde aan die ander kant doen.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
@@ -224,6 +247,10 @@ export const topicData: TopicData = {
       title: 'Twee-stap Vergelykings Oplos',
       icon: '✕',
       explanation:
+        lookingAhead(
+          'twee-stap vergelykings met veranderlikes oplos',
+          'Multi-stap vergelykings soos 2x + 5 = 17, opgelos deur bewerkings op ʼn letterveranderlike stelselmatig ongedaan te maak, is Graad 7+-algebra. Dit bou direk voort op die vorige verrykingsafdeling.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn <strong>Twee-stap vergelyking</strong> benodig twee inverse bewerkings om op te los. Ons maak bewerkings altyd ongedaan in die <strong>omgekeerde volgorde van BODMAS</strong> — ${bl('maak eers optelling of aftrekking ongedaan')} en dan ${gr('maak vermenigvuldiging of deling ongedaan')}. Vervang na die oplos altyd jou antwoord terug in die oorspronklike vergelyking om te ${re('kontroleer')} dat albei kante gelyk is.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
@@ -312,6 +339,10 @@ export const topicData: TopicData = {
       title: 'Woordprobleme en Vergelykings',
       icon: '📝',
       explanation:
+        lookingAhead(
+          'woordprobleme na formele vergelykings omskakel',
+          'CAPS Graad 6 los woordprobleme op deur ʼn informele getalsin te skryf (met ʼn blokkie vir die onbekende) en dit uit te redeneer — nie deur formeel ʼn letterveranderlike toe te ken en ʼn vergelyking op te los nie. Behou hier as duidelik gemerkte verryking.'
+        ) +
         `<p style="margin-bottom:16px;">Baie werklike lewe probleme kan opgelos word deur ʼn ${or('vergelyking')} te skryf en op te los. Lees die probleem noukeurig en identifiseer die onbekende — dit word jou ${bl('veranderlike')}. Skakel die woorde om in wiskundige simbole. Skryf die ${or('vergelyking')} en los dit op met inverse bewerkings. Kontroleer jou antwoord altyd ${re('deur')} dit terug te vervang en maak seker dit maak sin binne die konteks van die probleem.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────

@@ -10,6 +10,19 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// CAPS Graad 6 klassifiseer 2D-vorms volgens reguit/geboë sye, aantal sye,
+// syelengte, en deur hoeke informeel met regte hoeke te vergelyk — SONDER
+// gradeboog of grade (sien angles.ts). Presiese graadberekening en die
+// veelhoek-binnehoeksom-formule (aantal sye − 2) × 180° kom nêrens in die
+// Graad 4-6 CAPS-dokument voor nie — albei is Senior Fase (Graad 7+)
+// inhoud. Behou hier as duidelik gemerkte verryking eerder as verwyder.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: '2D-vorms',
   grade: 6,
@@ -22,6 +35,10 @@ export const topicData: TopicData = {
       title: 'Eienskappe van Driehoeke',
       icon: '△',
       explanation:
+        lookingAhead(
+          'presiese hoekgrade in driehoeke',
+          'CAPS Graad 6 vergelyk ʼn driehoek se hoeke informeel met ʼn regte hoek (vir skerp/reg/stomp-klassifikasie), sonder gradeboog of presiese graadwaardes. Om elke hoek ʼn presiese aantal grade te gee en dit op te tel/af te trek is Graad 7+-werk — hier gewys vir leerders wat wil sien waarheen dit op pad is.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn Driehoek is ʼn 2D-vorm met <strong>3 sye</strong> en <strong>3 hoeke</strong>. Die drie hoeke van enige driehoek tel altyd op tot ${re('180°')}. Ons klassifiseer driehoeke op twee maniere — volgens hul <strong>sye</strong> en volgens hul <strong>hoeke</strong>.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -360,6 +377,10 @@ export const topicData: TopicData = {
       title: 'Hoeke in Vorms',
       icon: '∠',
       explanation:
+        lookingAhead(
+          'die veelhoek-binnehoeksom-formule',
+          'Die formule Som van binnehoeke = (aantal sye − 2) × 180° is Graad 7+-inhoud — dit kom nêrens in die Graad 4-6 CAPS-kurrikulum voor nie. In Graad 6 vergelyk jy ʼn vorm se hoeke informeel (bv. deur te kyk of hulle regte hoeke is) eerder as om ʼn hoeksom te bereken. Hierdie hele afdeling is verryking vir leerders wat ʼn voorskou van Senior Fase-meetkunde wil kry.'
+        ) +
         `<p style="margin-bottom:16px;">Die hoeke binne-in ʼn vorm word <strong>binnehoeke</strong> genoem. Die ${gr('som van binnehoeke')} hang af van die ${or('aantal sye')}. Ons kan die som vind met die ${bl('formule')}: ${bl('(aantal sye − 2) × 180°')}.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

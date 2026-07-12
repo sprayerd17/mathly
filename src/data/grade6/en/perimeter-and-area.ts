@@ -10,6 +10,23 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Grade 6 clarification notes state (identically for Grades 4-6):
+// "Learners are not required to know or apply formulae for the perimeter,
+// area or volume of any shape or object in the Intermediate Phase. Area
+// ... [is] only measured informally in the Intermediate Phase." For area,
+// Grade 6 specifically should "investigate why the area of a rectangle can
+// be stated as its length multiplied by its width" — i.e. explore the idea
+// with grid squares, NOT memorise and apply Area = length × width as a
+// formula. Counting grid squares is the CAPS Grade 6 method; the formula
+// below is kept as clearly labelled enrichment because it is accurate,
+// well-built content that many learners meet informally before Grade 7.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Perimeter and Area',
   grade: 6,
@@ -132,6 +149,10 @@ export const topicData: TopicData = {
       title: 'Area of Rectangles and Squares',
       icon: '▭',
       explanation:
+        lookingAhead(
+          'using Area = length × width as a formula',
+          'CAPS Grade 6 wants you to count grid squares to find area, and to investigate why a rectangle\'s area works out the same as length × width — not to memorise and apply that formula on its own. Applying the formula directly to numbers (without grid-counting) is Grade 7+ practice. It is kept here as clearly labelled enrichment.'
+        ) +
         `<p style="margin-bottom:16px;">Area is the amount of <strong>flat surface a shape covers</strong>, measured in square units like cm² or m². For a rectangle, Area ${gr('=')} ${bl('length')} ${gr('×')} ${re('width')}. For a square, Area ${gr('=')} ${bl('side')} ${gr('×')} ${bl('side')} (or side²). Knowing area helps us solve real-life problems like tiling, painting and carpeting.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -248,6 +269,10 @@ export const topicData: TopicData = {
       title: 'Area of Triangles',
       icon: '△',
       explanation:
+        lookingAhead(
+          'the triangle area formula',
+          'The formula Area = ½ × base × height is Grade 7+ content. CAPS Grade 6 sticks to counting grid squares (including for shapes with straight or curved sides) rather than applying a triangle-area formula. This section is kept as clearly labelled enrichment for learners who want a preview of what comes next.'
+        ) +
         `<p style="margin-bottom:16px;">The area of a triangle is <strong>half the area of a rectangle</strong> with the same base and height. The formula is: Area ${gr('=')} ½ ${gr('×')} ${bl('base')} ${gr('×')} ${re('height')}. The ${re('height')} must always be measured <strong>perpendicular to the base</strong> — at a right angle to it, not along a slanted side.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

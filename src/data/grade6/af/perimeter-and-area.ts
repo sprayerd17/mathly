@@ -10,6 +10,19 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// CAPS Graad 6-verduidelikingsnotas stel (eenders vir Graad 4-6): leerders
+// hoef nie formules vir omtrek, oppervlakte of volume te ken of toe te pas
+// nie — oppervlakte word slegs informeel in die Intermediêre Fase gemeet.
+// Vir oppervlakte moet Graad 6 spesifiek "ondersoek waarom" lengte × breedte
+// dieselfde antwoord gee as roosterblokkies tel — nie die formule as reël
+// memoriseer en toepas nie. Behou hier as duidelik gemerkte verryking.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Omtrek en Oppervlakte',
   grade: 6,
@@ -132,6 +145,10 @@ export const topicData: TopicData = {
       title: 'Oppervlakte van Reghoeke en Vierkante',
       icon: '▭',
       explanation:
+        lookingAhead(
+          'Oppervlakte = lengte × breedte as ʼn formule gebruik',
+          'CAPS Graad 6 wil hê jy moet roosterblokkies tel om oppervlakte te vind, en ondersoek waarom ʼn reghoek se oppervlakte dieselfde uitwerk as lengte × breedte — nie daardie formule op sy eie memoriseer en toepas nie. Om die formule direk op getalle toe te pas (sonder om blokkies te tel) is Graad 7+-werk. Hier behou as duidelik gemerkte verryking.'
+        ) +
         `<p style="margin-bottom:16px;">Oppervlakte is die hoeveelheid <strong>plat oppervlak wat ʼn vorm bedek</strong>, gemeet in vierkante eenhede soos cm² of m². Vir ʼn reghoek, Oppervlakte ${gr('=')} ${bl('lengte')} ${gr('×')} ${re('breedte')}. Vir ʼn vierkant, Oppervlakte ${gr('=')} ${bl('sy')} ${gr('×')} ${bl('sy')} (of sy²). Om oppervlakte te ken help ons om werklike-lewe probleme op te los soos teëlwerk, verf en matlegging.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -248,6 +265,10 @@ export const topicData: TopicData = {
       title: 'Oppervlakte van Driehoeke',
       icon: '△',
       explanation:
+        lookingAhead(
+          'die driehoek-oppervlakteformule',
+          'Die formule Oppervlakte = ½ × basis × hoogte is Graad 7+-inhoud. CAPS Graad 6 hou by roosterblokkies tel (ook vir vorms met reguit of geboë sye) eerder as om ʼn driehoek-oppervlakteformule toe te pas. Hierdie afdeling word behou as duidelik gemerkte verryking vir leerders wat ʼn voorskou wil kry.'
+        ) +
         `<p style="margin-bottom:16px;">Die oppervlakte van ʼn driehoek is <strong>die helfte van die oppervlakte van ʼn reghoek</strong> met dieselfde basis en hoogte. Die formule is: Oppervlakte ${gr('=')} ½ ${gr('×')} ${bl('basis')} ${gr('×')} ${re('hoogte')}. Die ${re('hoogte')} moet altyd <strong>loodreg op die basis</strong> gemeet word — teen ʼn regte hoek daarmee, nie langs ʼn skuins sy nie.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

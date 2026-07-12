@@ -10,6 +10,21 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Grade 6 classifies 2D shapes by straight/curved sides, number of
+// sides, side length, and by comparing angles informally to right angles —
+// WITHOUT a protractor or degrees (see angles.ts). Exact-degree angle
+// arithmetic and the polygon interior-angle-sum formula
+// (number of sides − 2) × 180° never appear anywhere in the Grade 4-6 CAPS
+// document — both are Senior Phase (Grade 7+) content. Kept here as clearly
+// labelled enrichment rather than removed, since the material is accurate
+// and well-built.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: '2D Shapes',
   grade: 6,
@@ -22,6 +37,10 @@ export const topicData: TopicData = {
       title: 'Properties of Triangles',
       icon: '△',
       explanation:
+        lookingAhead(
+          'exact angle degrees in triangles',
+          'CAPS Grade 6 compares a triangle\'s angles informally to a right angle (for acute/right/obtuse classification), without a protractor or exact degree values. Giving each angle a precise number of degrees and adding/subtracting them is Grade 7+ work — shown here for learners who want to see where this is heading.'
+        ) +
         `<p style="margin-bottom:16px;">A triangle is a 2D shape with <strong>3 sides</strong> and <strong>3 angles</strong>. The three angles of any triangle always add up to ${re('180°')}. We classify triangles in two ways — by their <strong>sides</strong> and by their <strong>angles</strong>.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -360,6 +379,10 @@ export const topicData: TopicData = {
       title: 'Angles in Shapes',
       icon: '∠',
       explanation:
+        lookingAhead(
+          'the polygon interior-angle-sum formula',
+          'The formula Sum of interior angles = (number of sides − 2) × 180° is Grade 7+ content — it does not appear anywhere in the Grade 4-6 CAPS curriculum. In Grade 6 you compare a shape\'s angles informally (e.g. checking whether they are right angles) rather than calculating an angle sum. This whole section is enrichment for learners who want a preview of Senior Phase geometry.'
+        ) +
         `<p style="margin-bottom:16px;">The angles inside a shape are called <strong>interior angles</strong>. The ${gr('sum of interior angles')} depends on the ${or('number of sides')}. We can find the sum using the ${bl('formula')}: ${bl('(number of sides − 2) × 180°')}.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

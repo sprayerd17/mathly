@@ -10,6 +10,19 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// CAPS Graad 6-verduidelikingsnotas stel: leerders hoef nie formules vir
+// omtrek, oppervlakte of volume te ken of toe te pas nie. Graad 6-volumewerk
+// gaan oor kubusse/reghoekige prismas tel of pak om ʼn houer te vul of ʼn
+// stapel te bou, en volume as "aantal kubusse/blokke" te gee — plus
+// ondersoek waarom dit dieselfde is as lengte × breedte × hoogte, nie die
+// formule op sy eie toepas nie. Behou hier as duidelik gemerkte verryking.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Volume',
   grade: 6,
@@ -22,6 +35,10 @@ export const topicData: TopicData = {
       title: 'Volume van Reghoekige Prismas',
       icon: '📦',
       explanation:
+        lookingAhead(
+          'Volume = lengte × breedte × hoogte as ʼn formule gebruik',
+          'CAPS Graad 6 wil hê jy moet kubusse tel of pak om ʼn houer te vul of ʼn stapel te bou, en volume as "aantal kubusse/blokke" gee — terwyl jy ondersoek waarom dit dieselfde uitwerk as lengte × breedte × hoogte. Om die formule direk op getalle toe te pas, sonder om fisies te tel of kubusse voor te stel, is Graad 7+-werk.'
+        ) +
         `<p style="margin-bottom:16px;">Volume is die hoeveelheid spasie wat ʼn 3D-voorwerp inneem, gemeet in <strong>kubieke eenhede</strong> soos cm³ of m³. Vir ʼn <strong>reghoekige prisma</strong> geld: Volume = lengte × breedte × hoogte. ʼn <strong>Kubus</strong> is ʼn spesiale reghoekige prisma waar al die sye gelyk is, dus Volume = sy × sy × sy.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -135,6 +152,10 @@ export const topicData: TopicData = {
       title: 'Volume in Konteks Bereken',
       icon: '📦',
       explanation:
+        lookingAhead(
+          'die volumeformule op werklike-lewe probleme toepas',
+          'Hierdie afdeling bou voort op die Graad 7+-volumeformule van die vorige afdeling. Die CAPS Graad 6-manier om ʼn werklike houer te hanteer is om jou voor te stel of te tel hoeveel kubusse/blokke dit sou vul, nie om getalle in V = l × b × h in te vul nie.'
+        ) +
         `<p style="margin-bottom:16px;">Ons gebruik volumeformules om <strong>werklike-lewe probleme</strong> op te los wat houers, bokse en berging behels. Kyk altyd na of al die metings in ${bl('dieselfde eenheid')} is voordat jy bereken. Volume-antwoorde moet altyd in <strong>kubieke eenhede</strong> geskryf word.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

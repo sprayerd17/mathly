@@ -10,6 +10,20 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Grade 6 clarification notes state (identically for Grades 4-6):
+// "Learners are not required to know or apply formulae for the perimeter,
+// area or volume of any shape or object in the Intermediate Phase." Grade 6
+// volume work is about counting or packing cubes/rectangular prisms to fill
+// or build a stack, and stating volume as "number of cubes/blocks" — plus
+// investigating why that count equals length × width × height, not applying
+// the formula on its own. Kept here as clearly labelled enrichment.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Volume',
   grade: 6,
@@ -22,6 +36,10 @@ export const topicData: TopicData = {
       title: 'Volume of Rectangular Prisms',
       icon: '📦',
       explanation:
+        lookingAhead(
+          'using Volume = length × width × height as a formula',
+          'CAPS Grade 6 wants you to count or pack cubes to fill a container or build a stack, and state volume as "number of cubes/blocks" — while investigating why that count works out the same as length × width × height. Applying the formula directly to numbers, without physically counting or picturing cubes, is Grade 7+ practice.'
+        ) +
         `<p style="margin-bottom:16px;">Volume is the amount of space a 3D object takes up, measured in <strong>cubic units</strong> such as cm³ or m³. For a <strong>rectangular prism</strong>, Volume = length × width × height. A <strong>cube</strong> is a special rectangular prism where all sides are equal, so Volume = side × side × side.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -135,6 +153,10 @@ export const topicData: TopicData = {
       title: 'Calculating Volume in Context',
       icon: '📦',
       explanation:
+        lookingAhead(
+          'applying the volume formula to real-life problems',
+          'This section builds on the Grade 7+ volume formula from the previous section. The CAPS Grade 6 way to handle a real container is to picture or count how many cubes/blocks would fill it, not to substitute numbers into V = l × w × h.'
+        ) +
         `<p style="margin-bottom:16px;">We use volume formulas to solve <strong>real-life problems</strong> involving containers, boxes and storage. Always check that all measurements are in the <strong>same unit</strong> before calculating. Volume answers must always be written in <strong>cubic units</strong>.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
