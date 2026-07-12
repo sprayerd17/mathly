@@ -133,6 +133,12 @@ const grade4Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'viewing-objects',
+    name: 'Viewing Objects',
+    description: 'Match front, side and top views to everyday objects, identify objects from a single view and explore how classrooms, buildings and school fields look from different viewpoints.',
+    free: false,
+  },
+  {
     slug: 'position-movement',
     name: 'Position and Movement',
     description: 'Describe position using direction words, locate objects on a grid using row and column references, follow and give directions and understand full, half and quarter turns clockwise and anticlockwise.',
@@ -385,6 +391,12 @@ const grade6Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'symmetry',
+    name: 'Symmetry',
+    description: 'Test whether vertical, horizontal and diagonal lines are true lines of symmetry, identify which diagonals of quadrilaterals are lines of symmetry and draw or complete symmetrical shapes.',
+    free: false,
+  },
+  {
     slug: '2d-shapes',
     name: '2D Shapes',
     description: 'Identify, classify and describe 2D shapes including triangles, quadrilaterals and circles, explore properties such as angles and sides and recognise shapes in composite figures.',
@@ -406,6 +418,12 @@ const grade6Topics: Topic[] = [
     slug: 'transformations',
     name: 'Transformations',
     description: 'Apply translation, reflection and rotation to 2D shapes on a coordinate grid, describe image positions and recognise equivalent rotations.',
+    free: false,
+  },
+  {
+    slug: 'position-and-movement',
+    name: 'Position and Movement',
+    description: 'Read and write alpha-numeric grid references, locate positions on a map, and give clear directions to move between positions on a grid or map.',
     free: false,
   },
   {
