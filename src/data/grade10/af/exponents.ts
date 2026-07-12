@@ -291,7 +291,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Rasionale getal</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Kan geskryf word as a/b (heelgetalle, b≠0). Desimaal eindig of herhaal. Voorbeeld: ¾ = 0.75, √${gr('4')} = 2.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Kan geskryf word as a/b (heelgetalle, b≠0). Desimaal eindig of herhaal. Voorbeeld: ¾ = 0,75, √${gr('4')} = 2.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
