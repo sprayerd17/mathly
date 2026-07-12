@@ -298,6 +298,12 @@ const grade5Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'temperature',
+    name: 'Temperature',
+    description: 'Read thermometers and record temperature in degrees Celsius, learn common temperature referents, compare and order temperatures, and calculate temperature differences.',
+    free: false,
+  },
+  {
     slug: 'perimeter-and-area',
     name: 'Perimeter, Area and Volume',
     description: 'Calculate perimeter of polygons, find area of rectangles and irregular shapes using grids, calculate volume of rectangular prisms and solve related word problems.',
@@ -522,7 +528,7 @@ const grade7Topics: Topic[] = [
   {
     slug: 'percentages',
     name: 'Percentages',
-    description: 'Calculate percentage increases and decreases, apply the simple interest formula and find total amounts after interest.',
+    description: 'Calculate percentage increases and decreases, apply the simple interest formula, and solve financial maths problems involving profit, loss, budgets and accounts.',
     free: false,
   },
   {
