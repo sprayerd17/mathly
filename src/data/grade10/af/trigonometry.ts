@@ -63,21 +63,21 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'In reghoekige driehoek ABC met hoek B = 90°, hoek A = 30° en AB = 10 cm, bepaal die skuinssy AC.',
-          answer: `${gr('AC')} ≈ 11.55 cm`,
+          answer: `${gr('AC')} ≈ 11,55 cm`,
           steps: [
             `Identifiseer die sye relatief tot hoek A. AB (= ${or('10')} cm) is die ${or('aangrensende')} sy (langs hoek A). AC is die ${gr('skuinssy')} wat ons soek.`,
             `Kies die korrekte verhouding: cos&nbsp;A = ${or('aangrensende')} / ${gr('skuinssy')}. Dus cos&nbsp;30° = ${or('10')} / ${gr('AC')}.`,
             `Herrangskik: ${gr('AC')} = ${or('10')} / cos&nbsp;30°.`,
-            `Bereken: cos&nbsp;30° ≈ 0.866. ${gr('AC')} = 10 / 0.866 ≈ <strong>11.55 cm</strong>. ✓`,
+            `Bereken: cos&nbsp;30° ≈ 0,866. ${gr('AC')} = 10 / 0,866 ≈ <strong>11,55 cm</strong>. ✓`,
           ],
         },
         {
           question: 'Sipho sê dat as jy ʼn hoek verdubbel, verdubbel jy ook sy sinuswaarde, so sin 60° = 2 × sin 30°. Is hy korrek?',
           answer: 'Nee — trigonometriese verhoudings skaleer nie lineêr met hoekgrootte nie.',
           steps: [
-            `Bereken sin&nbsp;30° met ʼn sakrekenaar: sin&nbsp;30° = ${bl('0.5')}.`,
-            `As Sipho korrek was, sou sin&nbsp;60° gelyk wees aan 2 × ${bl('0.5')} = ${bl('1.0')}.`,
-            `Kontroleer: sin&nbsp;60° ≈ ${bl('0.866')}, wat <strong>nie</strong> gelyk is aan 1.0 nie. Sipho is <strong>verkeerd</strong>.`,
+            `Bereken sin&nbsp;30° met ʼn sakrekenaar: sin&nbsp;30° = ${bl('0,5')}.`,
+            `As Sipho korrek was, sou sin&nbsp;60° gelyk wees aan 2 × ${bl('0,5')} = ${bl('1,0')}.`,
+            `Kontroleer: sin&nbsp;60° ≈ ${bl('0,866')}, wat <strong>nie</strong> gelyk is aan 1,0 nie. Sipho is <strong>verkeerd</strong>.`,
             `<strong>Gevolgtrekking:</strong> Trigonometriese verhoudings is nie eweredig aan die hoek nie. Om die hoek te verdubbel, verdubbel <em>nie</em> die sinuswaarde nie — die verwantskap is nie-lineêr.`,
           ],
         },
@@ -135,36 +135,36 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Inverse trigonometriese funksies op ʼn sakrekenaar gebruik</p>` +
-        `<p style="margin:0;color:#1e3a8a;">As sin&nbsp;θ = 0.6, dan is θ = sin⁻¹(0.6). Druk die <strong>2nd</strong>- of <strong>Shift</strong>-knoppie op jou sakrekenaar, dan die trig-funksieknoppie. Die inverse funksie "keer" die verhouding "om" en gee die hoek in grade terug.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As sin&nbsp;θ = 0,6, dan is θ = sin⁻¹(0,6). Druk die <strong>2nd</strong>- of <strong>Shift</strong>-knoppie op jou sakrekenaar, dan die trig-funksieknoppie. Die inverse funksie "keer" die verhouding "om" en gee die hoek in grade terug.</p>` +
         `</div>`,
 
       workedExamples: [
         {
           question: 'In reghoekige driehoek PQR met hoek Q = 90°, PQ = 8 cm en QR = 6 cm, bepaal hoek P.',
-          answer: `Hoek P ≈ ${re('36.87°')}`,
+          answer: `Hoek P ≈ ${re('36,87°')}`,
           steps: [
             `Identifiseer die sye relatief tot hoek P. QR (= ${bl('6')} cm) is die ${bl('teenoorstaande')} sy (oorkant P). PQ (= ${bl('8')} cm) is die ${bl('aangrensende')} sy (langs P).`,
-            `Kies die verhouding wat ${bl('teenoorstaande')} en ${bl('aangrensende')} verbind: ${gr('tan')} P = ${bl('teenoorstaande')} / ${bl('aangrensende')} = ${bl('QR')} / ${bl('PQ')} = ${bl('6')} / ${bl('8')} = ${bl('0.75')}.`,
-            `Pas die inverse trig-funksie toe: P = ${gr('tan⁻¹')}(0.75) ≈ <strong>${re('36.87°')}</strong>. ✓`,
+            `Kies die verhouding wat ${bl('teenoorstaande')} en ${bl('aangrensende')} verbind: ${gr('tan')} P = ${bl('teenoorstaande')} / ${bl('aangrensende')} = ${bl('QR')} / ${bl('PQ')} = ${bl('6')} / ${bl('8')} = ${bl('0,75')}.`,
+            `Pas die inverse trig-funksie toe: P = ${gr('tan⁻¹')}(0,75) ≈ <strong>${re('36,87°')}</strong>. ✓`,
           ],
         },
         {
           question: 'Los op vir θ (0° ≤ θ ≤ 90°): sin θ = 0,6.',
-          answer: `θ ≈ ${re('36.87°')}`,
+          answer: `θ ≈ ${re('36,87°')}`,
           steps: [
-            `Ons is gegee ${gr('sin')}&nbsp;θ = ${bl('0.6')} en moet die ${re('onbekende')} hoek θ bepaal.`,
-            `Pas die inverse funksie toe: θ = ${gr('sin⁻¹')}(${bl('0.6')}).`,
-            `Gebruik ʼn sakrekenaar: θ ≈ <strong>${re('36.87°')}</strong>. ✓`,
+            `Ons is gegee ${gr('sin')}&nbsp;θ = ${bl('0,6')} en moet die ${re('onbekende')} hoek θ bepaal.`,
+            `Pas die inverse funksie toe: θ = ${gr('sin⁻¹')}(${bl('0,6')}).`,
+            `Gebruik ʼn sakrekenaar: θ ≈ <strong>${re('36,87°')}</strong>. ✓`,
           ],
         },
         {
           question: 'Lerato het ʼn driehoek met skuinssy 15 cm en een hoek van 40°. Bepaal die sy teenoor hierdie hoek.',
-          answer: `Teenoorstaande sy ≈ ${re('9.64')} cm`,
+          answer: `Teenoorstaande sy ≈ ${re('9,64')} cm`,
           steps: [
             `Identifiseer die ${bl('bekende')} waardes: ${bl('skuinssy')} = ${bl('15')} cm, hoek = ${bl('40°')}. Die ${re('onbekende')} is die teenoorstaande sy.`,
             `Kies die verhouding: ${gr('sin')} 40° = ${re('teenoorstaande')} / ${bl('skuinssy')} = ${re('teenoorstaande')} / ${bl('15')}.`,
             `Herrangskik: ${re('teenoorstaande')} = ${bl('15')} × ${gr('sin')} 40°.`,
-            `Bereken: ${gr('sin')} 40° ≈ 0.6428. ${re('teenoorstaande')} = 15 × 0.6428 ≈ <strong>${re('9.64')} cm</strong>. ✓`,
+            `Bereken: ${gr('sin')} 40° ≈ 0,6428. ${re('teenoorstaande')} = 15 × 0,6428 ≈ <strong>${re('9,64')} cm</strong>. ✓`,
           ],
         },
       ],
@@ -478,32 +478,32 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Vanaf ʼn punt 50 m van die basis van ʼn gebou is die hoogtehoek na die bopunt 35°. Bepaal die hoogte van die gebou.',
-          answer: `Hoogte ≈ ${gr('35.01 m')}`,
+          answer: `Hoogte ≈ ${gr('35,01 m')}`,
           steps: [
             `Teken ʼn reghoekige driehoek: die ${bl('hoogtehoek')} is 35°, die horisontale afstand (aangrensende sy) is ${bl('50 m')}, en die ${gr('hoogte')} (teenoorstaande sy) is onbekend.`,
             `Kies die verhouding wat teenoorstaande en aangrensende verbind: tan 35° = ${gr('hoogte')} / ${bl('50')}.`,
             `Herrangskik: ${gr('hoogte')} = ${bl('50')} × tan 35°.`,
-            `Bereken: tan 35° ≈ 0.7002. ${gr('hoogte')} = 50 × 0.7002 ≈ ${gr('35.01 m')}. ✓`,
+            `Bereken: tan 35° ≈ 0,7002. ${gr('hoogte')} = 50 × 0,7002 ≈ ${gr('35,01 m')}. ✓`,
           ],
         },
         {
           question: 'Thabo staan bo-op ʼn 40 m krans en sien ʼn boot teen ʼn dieptehoek van 20°. Bepaal die horisontale afstand na die boot.',
-          answer: `Afstand ≈ ${gr('109.9 m')}`,
+          answer: `Afstand ≈ ${gr('109,9 m')}`,
           steps: [
             `Teken ʼn diagram: die ${or('dieptehoek')} vanaf Thabo na die boot is 20°. Die kranshoogte (teenoorstaande sy) is ${or('40 m')}, en die ${gr('horisontale afstand')} (aangrensende sy) is onbekend.`,
             `Die dieptehoek is gelyk aan die hoogtehoek vanaf die boot na Thabo (verwisselende binnehoeke), sodat die hoek in die driehoek 20° is.`,
             `tan 20° = ${or('40')} / ${gr('afstand')}. Herrangskik: ${gr('afstand')} = ${or('40')} / tan 20°.`,
-            `Bereken: tan 20° ≈ 0.3640. ${gr('afstand')} = 40 / 0.3640 ≈ ${gr('109.9 m')}. ✓`,
+            `Bereken: tan 20° ≈ 0,3640. ${gr('afstand')} = 40 / 0,3640 ≈ ${gr('109,9 m')}. ✓`,
           ],
         },
         {
           question: 'Twee geboue is 30 m van mekaar af. Vanaf die bopunt van die korter gebou (15 m hoog) is die hoogtehoek na die bopunt van die hoër gebou 25°. Bepaal die hoogte van die hoër gebou.',
-          answer: `Hoogte van hoër gebou ≈ ${gr('28.99 m')}`,
+          answer: `Hoogte van hoër gebou ≈ ${gr('28,99 m')}`,
           steps: [
             `Die horisontale afstand tussen die bopunte van die geboue is ${bl('30 m')} (aangrensende sy). Die ${bl('hoogtehoek')} is 25°. Die hoogteverskil tussen die bopunte is onbekend.`,
             `tan 25° = hoogteverskil / ${bl('30')}. Herrangskik: hoogteverskil = ${bl('30')} × tan 25°.`,
-            `Bereken: tan 25° ≈ 0.4663. hoogteverskil = 30 × 0.4663 ≈ ${gr('13.99 m')}.`,
-            `Totale ${gr('hoogte van hoër gebou')} = 15 + 13.99 ≈ ${gr('28.99 m')}. ✓`,
+            `Bereken: tan 25° ≈ 0,4663. hoogteverskil = 30 × 0,4663 ≈ ${gr('13,99 m')}.`,
+            `Totale ${gr('hoogte van hoër gebou')} = 15 + 13,99 ≈ ${gr('28,99 m')}. ✓`,
           ],
         },
       ],

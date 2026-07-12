@@ -441,7 +441,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing y=3ˣ rising steeply in blue (exponential growth) and y=(1/3)ˣ falling steeply in blue (exponential decay), with the horizontal asymptote at y=0 shown as an orange dashed line and the y-intercept at (0,1) marked in green" />',
+        '<DiagramPlaceholder label="Cartesiese vlak wat y=3ˣ steil opwaarts in blou wys (eksponensiële groei) en y=(1/3)ˣ steil afwaarts in blou (eksponensiële verval), met die horisontale asimptoot by y=0 as ʼn oranje kortstreeplyn, en die y-afsnit by (0,1) in groen gemerk" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die eksponensiële funksie y=a·bˣ+q verduidelik — hoe om groei teenoor verval van die grondtal b te onderskei, die horisontale asimptoot en y-afsnit te vind, en hoe die verandering van q die grafiek verskuif" />',
@@ -532,7 +532,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Three side-by-side sketches: (1) the line y=2x+5 with known points (0,5) and (2,9) marked in blue; (2) the parabola y=4x²−3 with turning point (0,−3) and the point (1,1) marked in blue; (3) an exponential growth curve for P=1000(1.05)ᵗ with the point at t=5 marked in green" />',
+        '<DiagramPlaceholder label="Drie sketse langs mekaar: (1) die lyn y=2x+5 met bekende punte (0,5) en (2,9) in blou gemerk; (2) die parabool y=4x²−3 met draaipunt (0,−3) en die punt (1,1) in blou gemerk; (3) ʼn eksponensiële groeikurwe vir P=1000(1,05)ᵗ met die punt by t=5 in groen gemerk" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat probleemoplossingstrategieë vir voorgeskrewe funksies deurwerk — hoe om ʼn grafiek te lees om parameters te identifiseer, bekende punte te vervang om onbekendes te vind, en die finale vergelyking te verifieer" />',

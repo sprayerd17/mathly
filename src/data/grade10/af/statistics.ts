@@ -76,12 +76,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'Gebruik dieselfde data (0≤x<10 freq 4, 10≤x<20 freq 8, 20≤x<30 freq 6) om die benaderde gemiddelde te bepaal.',
-          answer: `Benaderde gemiddelde ≈ ${or('16.11')}`,
+          answer: `Benaderde gemiddelde ≈ ${or('16,11')}`,
           steps: [
             `Bepaal die ${or('middelpunt')} van elke ${bl('interval')}: ${bl('0≤x<10')} → ${or('5')}, ${bl('10≤x<20')} → ${or('15')}, ${bl('20≤x<30')} → ${or('25')}.`,
             `Bereken ${or('middelpunt')} × ${gr('frekwensie')} vir elke ${bl('interval')}: (${or('5')} × ${gr('4')}) + (${or('15')} × ${gr('8')}) + (${or('25')} × ${gr('6')}) = 20 + 120 + 150 = <strong>290</strong>.`,
             `Bepaal die totale ${gr('frekwensie')}: ${gr('4')} + ${gr('8')} + ${gr('6')} = ${gr('18')}.`,
-            `<strong>Benaderde gemiddelde</strong> = 290 ÷ ${gr('18')} ≈ ${or('16.11')} ✓`,
+            `<strong>Benaderde gemiddelde</strong> = 290 ÷ ${gr('18')} ≈ ${or('16,11')} ✓`,
           ],
         },
       ],
@@ -158,12 +158,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'Voer die gegroepeerde data van Afdeling 1 in (middelpunte 5, 15, 25 met frekwensies 4, 8, 6) en bepaal die gemiddelde.',
-          answer: `Die sakrekenaar wys ${gr('≈ 16.11')}, wat die handberekening bevestig`,
+          answer: `Die sakrekenaar wys ${gr('≈ 16,11')}, wat die handberekening bevestig`,
           steps: [
             `Voer x-waardes as middelpunte in die <strong>x</strong>-kolom in: 5, 15, 25.`,
             `Voer ooreenstemmende frekwensies in die <strong>FREQ</strong>-kolom in: ${gr('4')}, ${gr('8')}, ${gr('6')}.`,
             `Druk ${bl('[AC]')} en dan ${bl('[SHIFT][1]')} (STAT) om toegang tot statistiese resultate te kry, kies dan ${or('Var')} (veranderlikes) en kies ${gr('x̄')} (x-streep) vir die gemiddelde.`,
-            `Die sakrekenaar wys ${gr('≈ 16.11')}, wat die handberekening bevestig ✓`,
+            `Die sakrekenaar wys ${gr('≈ 16,11')}, wat die handberekening bevestig ✓`,
           ],
         },
       ],
@@ -651,19 +651,19 @@ export const topicData: TopicData = {
         },
         {
           question: 'Bepaal Q1, Q2 en Q3 van die gerangskikte datastel: 4, 8, 10, 14, 18, 22, 25, 30.',
-          answer: `${bl('Q1')} = ${bl('9')}, ${bl('Q2')} = ${bl('16')}, ${bl('Q3')} = ${bl('23.5')}`,
+          answer: `${bl('Q1')} = ${bl('9')}, ${bl('Q2')} = ${bl('16')}, ${bl('Q3')} = ${bl('23,5')}`,
           steps: [
             `Die data is reeds gerangskik: 4, 8, 10, 14, 18, 22, 25, 30. Daar is 8 waardes.`,
             `${bl('Q2')} (mediaan) = gemiddelde van die 4de en 5de waardes = (14 + 18) ÷ 2 = ${bl('16')}.`,
             `Onderste helfte (waardes onder Q2): 4, 8, 10, 14. ${bl('Q1')} = gemiddelde van 2de en 3de waardes = (8 + 10) ÷ 2 = ${bl('9')}.`,
-            `Boonste helfte (waardes bo Q2): 18, 22, 25, 30. ${bl('Q3')} = gemiddelde van 2de en 3de waardes = (22 + 25) ÷ 2 = ${bl('23.5')}.`,
+            `Boonste helfte (waardes bo Q2): 18, 22, 25, 30. ${bl('Q3')} = gemiddelde van 2de en 3de waardes = (22 + 25) ÷ 2 = ${bl('23,5')}.`,
           ],
         },
         {
           question: 'Gebruik Q1 = 9 en Q3 = 23,5 uit Voorbeeld 2 om die interkwartielwydte te bepaal.',
-          answer: `${or('IKW')} = ${or('14.5')}`,
+          answer: `${or('IKW')} = ${or('14,5')}`,
           steps: [
-            `${or('IKW')} = ${bl('Q3')} − ${bl('Q1')} = ${bl('23.5')} − ${bl('9')} = ${or('14.5')}.`,
+            `${or('IKW')} = ${bl('Q3')} − ${bl('Q1')} = ${bl('23,5')} − ${bl('9')} = ${or('14,5')}.`,
             `Dit verteenwoordig die verspreiding van die middelste 50% van die data, onbeïnvloed deur enige uiterste uitskieters.`,
           ],
         },
