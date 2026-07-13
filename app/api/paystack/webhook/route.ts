@@ -62,7 +62,7 @@ type ChargeData = {
   status?: string
   amount?: number
   plan?: string
-  customer?: { customer_code?: string; email?: string }
+  customer?: { id?: number; customer_code?: string; email?: string }
   metadata?: Record<string, unknown> | null
 }
 
@@ -225,6 +225,7 @@ export async function POST(req: NextRequest) {
     }
 
     const customerCode = data.customer?.customer_code ?? null
+    const customerId = data.customer?.id ?? null
 
     await userRef.update({
       childPlans: expectedChildPlans,
@@ -244,15 +245,25 @@ export async function POST(req: NextRequest) {
       dunningStage: null,
     })
 
-    if (customerCode) {
-      const subs = await listSubscriptionsForCustomer(config, customerCode)
-      const active = subs.ok ? subs.data?.find(s => s.status === 'active') ?? subs.data?.[0] : null
-      if (active) {
-        await userRef.update({
-          paystackSubscriptionCode: active.subscription_code,
-          paystackEmailToken: active.email_token,
-        })
+    // Wrapped defensively — a failure here must never crash the whole
+    // handler and skip the founding/referral bookkeeping, the audit log, and
+    // the receipt email below. subscription.create (handled further down)
+    // is the fallback if this lookup comes up empty.
+    try {
+      if (customerId) {
+        const subs = await listSubscriptionsForCustomer(config, customerId)
+        const active = subs.ok ? subs.data?.find(s => s.status === 'active') ?? subs.data?.[0] : null
+        if (active) {
+          await userRef.update({
+            paystackSubscriptionCode: active.subscription_code,
+            paystackEmailToken: active.email_token,
+          })
+        } else {
+          console.error('[paystack/webhook] no subscription found for customer yet — relying on subscription.create fallback', { uid, customerId, subsOk: subs.ok, subsStatus: subs.status })
+        }
       }
+    } catch (err) {
+      console.error('[paystack/webhook] listSubscriptionsForCustomer threw — relying on subscription.create fallback', { uid, customerId, err })
     }
 
     // Founding seats are only consumed once the money actually arrives — the

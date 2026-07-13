@@ -121,11 +121,15 @@ export async function createPlan(config: PaystackConfig, params: { name: string;
 // webhook handler's signup branch instead of depending solely on a separate
 // `subscription.create` webhook event arriving (which the handler also
 // listens for, as a fallback, in case Paystack's subscription record isn't
-// created yet at the instant this call runs).
-export async function listSubscriptionsForCustomer(config: PaystackConfig, customerCode: string) {
+// created yet at the instant this call runs). The `customer` filter on this
+// endpoint takes Paystack's numeric Customer ID (`data.customer.id` on a
+// charge event) — NOT the `customer_code` string — confirmed against
+// Paystack's own API reference after this was the reason the first live
+// attempt left subscription_code/email_token unset.
+export async function listSubscriptionsForCustomer(config: PaystackConfig, customerId: number) {
   return paystackRequest<Array<{ subscription_code: string; email_token: string; status: string }>>(
     config,
-    `/subscription?customer=${encodeURIComponent(customerCode)}`,
+    `/subscription?customer=${customerId}`,
   )
 }
 
