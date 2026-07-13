@@ -10,6 +10,23 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// Die CAPS Graad 5-inhoudverduideliking vir 2D-vorms sê: leerders moet
+// vierkante en reghoeke kan identifiseer en benoem; vir ander vierhoeke
+// gebruik hulle die groepnaam "vierhoek" in Graad 5. Leerders moet ook
+// blootgestel word aan ʼn reeks verskillende driehoeke, maar word nie
+// verwag om tipes driehoeke in Graad 5 te benoem nie. Vierhoeknaming
+// (buiten vierkant/reghoek) en driehoektipe-name kom nêrens in die
+// Graad 4-6 CAPS-dokument voor nie — parallelogram word eers vanaf
+// Graad 6 benoem, en ruit/trapesium/driehoektipe-name is Senior Fase
+// (Graad 7+) inhoud. Behou hier as duidelik gemerkte verryking eerder as
+// verwyder.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: '2D-vorms',
   grade: 5,
@@ -133,6 +150,10 @@ export const topicData: TopicData = {
       title: 'Driehoeke',
       icon: '△',
       explanation:
+        lookingAhead(
+          'die benoeming van driehoektipes',
+          'CAPS Graad 5 verwag dat leerders blootgestel word aan ʼn reeks verskillende driehoeke, maar hulle word nie verwag om tipes driehoeke (gelyksydig, gelykbenig, skalene) in Graad 5 te benoem nie — dit is Senior Fase (Graad 7+) inhoud, hier gewys vir leerders wat wil sien waarheen dit op pad is.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn ${bl('Driehoek')} is ʼn 2D-vorm met ${or('3 sye')} en ${gr('3 hoeke')}. Driehoeke word benoem en gesorteer volgens die lengtes van hul ${or('sye')}. Daar is drie tipes driehoeke.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -209,6 +230,10 @@ export const topicData: TopicData = {
       title: 'Vierhoeke',
       icon: '▭',
       explanation:
+        lookingAhead(
+          'die benoeming van vierhoektipes buiten vierkant en reghoek',
+          'CAPS Graad 5 verwag dat leerders slegs vierkante en reghoeke by naam kan identifiseer en benoem — vir ander vierhoeke gebruik Graad 5-leerders die groepnaam "vierhoek". Parallelogram word eers vanaf Graad 6 as ʼn benoemde vorm bekendgestel, en ruit en trapesium is Senior Fase (Graad 7+) inhoud — hier gewys vir leerders wat wil sien waarheen dit op pad is.'
+        ) +
         `<p style="margin-bottom:16px;">ʼn <strong>vierhoek</strong> is enige 2D-vorm met ${or('4 sye')} en ${or('4 hoeke')}. Daar is verskeie tipes vierhoeke, elkeen met sy eie spesiale eienskappe.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

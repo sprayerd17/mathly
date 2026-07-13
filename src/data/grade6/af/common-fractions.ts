@@ -11,6 +11,21 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// Die CAPS fase-oorsigtabel lys "Breuke van heelgetalle" as Graad 6
+// berekening-met-breuke-inhoud (Graad 5 dek "breuke van heelgetalle wat
+// heelgetalle tot gevolg het"). Om ʼn breuk met ʼn heelgetal te
+// vermenigvuldig, of ʼn breuk van ʼn heelgetal te vind, is dus korrek
+// binne Graad 6-omvang. Om ʼn breuk met ʼn breuk te vermenigvuldig
+// (bv. 2/3 × 3/4) kom nêrens in die Graad 4-6 CAPS-dokument voor nie —
+// dit is Senior Fase (Graad 7+) inhoud. Behou hier as duidelik gemerkte
+// verryking eerder as verwyder.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Gewone Breuke',
   grade: 6,
@@ -564,6 +579,10 @@ export const topicData: TopicData = {
       title: 'Vermenigvuldiging van Breuke en Breuke van Heelgetalle',
       icon: '×',
       explanation:
+        lookingAhead(
+          'die vermenigvuldiging van ʼn breuk met ʼn breuk',
+          'CAPS Graad 6 dek die vermenigvuldiging van ʼn breuk met ʼn heelgetal en die vind van ʼn breuk van ʼn heelgetal — albei word hieronder gedek en is korrek binne Graad 6-omvang. Om ʼn breuk met ʼn breuk te vermenigvuldig (bv. 2/3 × 3/4) kom nêrens in die Graad 4-6 CAPS-dokument voor nie — dit is Senior Fase (Graad 7+) inhoud, hier gewys vir leerders wat wil sien waarheen dit op pad is.'
+        ) +
         `<p style="margin-bottom:16px;">Om <strong>ʼn breuk met ʼn heelgetal te vermenigvuldig</strong>, vermenigvuldig ons die ${bl('teller')} met die heelgetal en hou die ${re('noemer')} dieselfde. Om <strong>ʼn breuk van ʼn heelgetal te vind</strong>, vermenigvuldig ons die breuk met die heelgetal — dit is dieselfde as om deur die ${re('noemer')} te deel en met die ${bl('teller')} te vermenigvuldig. Om <strong>ʼn breuk met ʼn breuk te vermenigvuldig</strong>, vermenigvuldig ons die ${bl('tellers')} saam en vermenigvuldig die ${re('noemers')} saam, en ${or('vereenvoudig')} dan.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

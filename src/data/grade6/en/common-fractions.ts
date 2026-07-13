@@ -11,6 +11,22 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// The CAPS phase-overview table lists "Fractions of whole numbers" as
+// Grade 6 calculations-with-fractions content (Grade 5 covers "fractions
+// of whole numbers which result in whole numbers"). Multiplying a fraction
+// by a whole number, or finding a fraction of a whole number, is therefore
+// correctly scoped to Grade 6. Multiplying a fraction by a fraction
+// (e.g. 2/3 x 3/4) never appears anywhere in the Grade 4-6 CAPS document —
+// it is Senior Phase (Grade 7+) content. Kept here as clearly labelled
+// enrichment rather than removed, since the material is accurate and
+// well-built.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Common Fractions',
   grade: 6,
@@ -564,6 +580,10 @@ export const topicData: TopicData = {
       title: 'Multiplying Fractions and Fractions of Whole Numbers',
       icon: '×',
       explanation:
+        lookingAhead(
+          'multiplying a fraction by a fraction',
+          'CAPS Grade 6 covers multiplying a fraction by a whole number and finding a fraction of a whole number — both are covered below and are correctly within Grade 6 scope. Multiplying a fraction by a fraction (e.g. 2/3 × 3/4) never appears in the Grade 4-6 CAPS document — it is Senior Phase (Grade 7+) content, shown here for learners who want to see where this is heading.'
+        ) +
         `<p style="margin-bottom:16px;">To <strong>multiply a fraction by a whole number</strong> we multiply the ${bl('numerator')} by the whole number and keep the ${re('denominator')} the same. To <strong>find a fraction of a whole number</strong> we multiply the fraction by the whole number — this is the same as dividing by the ${re('denominator')} and multiplying by the ${bl('numerator')}. To <strong>multiply a fraction by a fraction</strong> we multiply the ${bl('numerators')} together and multiply the ${re('denominators')} together, then ${or('simplify')}.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────

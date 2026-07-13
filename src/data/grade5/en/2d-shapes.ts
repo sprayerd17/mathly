@@ -10,6 +10,24 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Grade 5 content clarification for 2-D shapes states: "They need to be
+// able to identify and name[] squares and rectangles, for other
+// quadrilaterals they use the group name, quadrilateral in Grade 5" and
+// "Learners should be exposed to a range of different triangles, but are
+// not expected to name types of triangles in Grade 5." Naming triangle
+// types (equilateral/isosceles/scalene) and quadrilateral types beyond
+// square/rectangle (rhombus, parallelogram, trapezium) never appears
+// anywhere in the Grade 4-6 CAPS document — parallelogram is only named
+// from Grade 6, and rhombus/trapezium/triangle-type names are Senior Phase
+// (Grade 7+) content. Kept here as clearly labelled enrichment rather than
+// removed, since the material is accurate and well-built.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: '2D Shapes',
   grade: 5,
@@ -133,6 +151,10 @@ export const topicData: TopicData = {
       title: 'Triangles',
       icon: '△',
       explanation:
+        lookingAhead(
+          'naming triangle types',
+          'CAPS Grade 5 expects learners to be exposed to a range of different triangles, but they are not expected to name types of triangles (equilateral, isosceles, scalene) in Grade 5 — this is Senior Phase (Grade 7+) content, shown here for learners who want to see where this is heading.'
+        ) +
         `<p style="margin-bottom:16px;">A ${bl('triangle')} is a 2D shape with ${or('3 sides')} and ${gr('3 corners')}. Triangles are named and sorted according to the lengths of their ${or('sides')}. There are three types of triangles.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -209,6 +231,10 @@ export const topicData: TopicData = {
       title: 'Quadrilaterals',
       icon: '▭',
       explanation:
+        lookingAhead(
+          'naming quadrilateral types beyond square and rectangle',
+          'CAPS Grade 5 expects learners to identify and name only squares and rectangles by name — for other quadrilaterals, Grade 5 learners use the group name "quadrilateral". Parallelogram is only introduced as a named shape in Grade 6, and rhombus and trapezium are Senior Phase (Grade 7+) content — shown here for learners who want to see where this is heading.'
+        ) +
         `<p style="margin-bottom:16px;">A <strong>quadrilateral</strong> is any 2D shape with ${or('4 sides')} and ${or('4 corners')}. There are several types of quadrilaterals, each with its own special properties.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
