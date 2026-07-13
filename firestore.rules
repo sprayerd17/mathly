@@ -5,7 +5,7 @@ service cloud.firestore {
       allow read: if request.auth != null && request.auth.uid == userId;
 
       // New accounts must always start with every child on the free tier —
-      // paid tiers are granted only by the PayFast ITN webhook (via the
+      // paid tiers are granted only by the Paystack webhook (via the
       // Firebase Admin SDK, which bypasses these rules entirely). This closes
       // the registration-time exploit where a client could otherwise create
       // itself directly into a paid tier.
@@ -15,8 +15,8 @@ service cloud.firestore {
                     && request.resource.data.childPlans.size() == request.resource.data.children.size()
                     && !request.resource.data.childPlans.hasAny(['pro', 'guided']);
 
-      // Billing fields are server-only from this point on — only the ITN
-      // webhook (Admin SDK) may change them. childPlans (each child's tier)
+      // Billing fields are server-only from this point on — only the
+      // Paystack webhook (Admin SDK) may change them. childPlans (each child's tier)
       // is included here too — it's a whole top-level field rather than a
       // sub-field of each child specifically so it can be locked down the
       // same simple way, since there's no clean way to protect just one
@@ -39,7 +39,8 @@ service cloud.firestore {
       // billing fields.
       allow update: if request.auth != null && request.auth.uid == userId
                     && !request.resource.data.diff(resource.data).affectedKeys()
-                         .hasAny(['childPlans', 'subscriptionStatus', 'payfastToken',
+                         .hasAny(['childPlans', 'subscriptionStatus',
+                                  'paystackCustomerCode', 'paystackSubscriptionCode', 'paystackEmailToken',
                                   'pendingChildPlans', 'pendingFounding', 'pendingAmount',
                                   'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
                                   'referredBy', 'freeSessionClaimed',
@@ -69,10 +70,10 @@ service cloud.firestore {
       allow read, update, delete: if false;
     }
 
-    // PayFast ITN audit log — one doc per webhook received (accepted, failed
-    // or rejected), written only by /api/payfast/notify (Admin SDK). The
-    // external admin dashboard reads these via the Admin SDK too, so clients
-    // never touch this collection.
+    // Paystack webhook audit log — one doc per event received (accepted,
+    // failed or rejected), written only by /api/paystack/webhook (Admin
+    // SDK). The external admin dashboard reads these via the Admin SDK too,
+    // so clients never touch this collection.
     match /payments/{docId} {
       allow read, write: if false;
     }
@@ -97,7 +98,7 @@ service cloud.firestore {
     }
 
     // Admin-managed settings (founding-spot counters etc.) — written by the
-    // ITN webhook, checkout enforcement and the admin dashboard, all via the
+    // Paystack webhook, checkout enforcement and the admin dashboard, all via the
     // Admin SDK.
     match /settings/{docId} {
       allow read, write: if false;
@@ -120,7 +121,7 @@ service cloud.firestore {
     }
 
     // Session bookings — created only by /api/sessions/book and confirmed
-    // only by the PayFast ITN webhook (both Admin SDK). A signed-in user can
+    // only by the Paystack webhook (both Admin SDK). A signed-in user can
     // read their own bookings (for "you're booked ✓" state and their Meet
     // link) and nobody else's.
     match /bookings/{docId} {

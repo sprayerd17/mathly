@@ -1,9 +1,9 @@
 import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
-import { getPayfastConfig, generateSignature } from '@/src/lib/payfast'
+import { getPaystackConfig, initializeTransaction } from '@/src/lib/paystack'
 
 // Pays for an existing 'reserved' booking before its deposit deadline — the
-// same booking doc is reused (not a new one), so the ITN webhook updates
+// same booking doc is reused (not a new one), so the Paystack webhook updates
 // this exact reservation to 'paid' rather than creating a duplicate.
 export async function POST(req: NextRequest) {
   const { idToken, bookingId } = await req.json().catch(() => ({})) as {
@@ -42,30 +42,21 @@ export async function POST(req: NextRequest) {
   const session = sessionSnap.exists ? sessionSnap.data()! : null
   if (!session) return new Response('Session not found', { status: 404 })
 
-  const config = getPayfastConfig()
-  const notifyBase = process.env.PAYFAST_NOTIFY_BASE_URL ?? 'http://localhost:3000'
-  const amountStr = (typeof booking.amount === 'number' ? booking.amount : 0).toFixed(2)
-  const itemName = `Mathly Live Session - ${String(session.topic ?? '')}`.slice(0, 100)
+  const config = getPaystackConfig()
+  const baseUrl = process.env.PAYSTACK_CALLBACK_BASE_URL ?? 'http://localhost:3000'
+  const amount = typeof booking.amount === 'number' ? booking.amount : 0
 
-  const fields: Record<string, string> = {
-    merchant_id: config.merchantId,
-    merchant_key: config.merchantKey,
-    return_url: `${notifyBase}/live-classes?payment=success`,
-    cancel_url: `${notifyBase}/live-classes?payment=cancelled`,
-    notify_url: `${notifyBase}/api/payfast/notify`,
-    name_first: booking.name ?? '',
-    email_address: booking.email ?? '',
-    m_payment_id: bookingId,
-    amount: amountStr,
-    item_name: itemName,
-    custom_str1: 'session_booking',
-    custom_str2: uid,
-    custom_str3: bookingId,
-  }
-  const signature = generateSignature(fields, config.passphrase)
-
-  return Response.json({
-    action: config.processUrl,
-    fields: { ...fields, signature },
+  const initResult = await initializeTransaction(config, {
+    email: booking.email ?? '',
+    amountRands: amount,
+    reference: `${bookingId}_${Date.now()}`,
+    callbackUrl: `${baseUrl}/live-classes?payment=return`,
+    metadata: { kind: 'session_booking', uid, bookingId },
   })
+  if (!initResult.ok || !initResult.data?.authorization_url) {
+    console.error('[sessions/pay-reservation] transaction init failed', { uid, bookingId, status: initResult.status, message: initResult.message })
+    return new Response('Could not start payment. Please try again.', { status: 502 })
+  }
+
+  return Response.json({ authorization_url: initResult.data.authorization_url })
 }

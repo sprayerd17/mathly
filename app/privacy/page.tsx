@@ -43,7 +43,7 @@ export default function PrivacyPage() {
         <Section heading="2. Information we collect">
           <p><strong>Account information (from you, the parent/guardian):</strong> your name, email address, and password (handled securely by our authentication provider — we never see your password in plain text).</p>
           <p><strong>Child profile information (that you provide about your child):</strong> your child's first name, school grade, and preferred language.</p>
-          <p><strong>Subscription and billing information:</strong> which plan each child is on, subscription status, payment amounts and dates, and a payment reference token from our payment processor. We do not collect or store your card number, expiry date, or CVV — these are entered directly with our payment processor, PayFast.</p>
+          <p><strong>Subscription and billing information:</strong> which plan each child is on, subscription status, payment amounts and dates, and a payment reference token from our payment processor. We do not collect or store your card number, expiry date, or CVV — these are entered directly with our payment processor, Paystack.</p>
           <p><strong>Live session bookings:</strong> the account holder's name and email, the child's name, the session booked, and its payment status.</p>
           <p><strong>Referral information:</strong> your referral code and, if someone signs up using it, a record linking the two accounts so we can apply referral credit.</p>
           <p><strong>AI assistant questions:</strong> the maths questions and study-guide text you send to the AI assistant, and its replies. We do not attach your name, email, or grade to this content when it is sent for processing.</p>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
           <p>We share personal information only with the service providers ("operators" under POPIA) that help us run Mathly, and only to the extent needed for them to do so:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li><strong>Firebase / Google Cloud</strong> — hosts our account login system and database.</li>
-            <li><strong>PayFast</strong> — processes your subscription and session payments; we never see or store your card details.</li>
+            <li><strong>Paystack</strong> — processes your subscription and session payments; we never see or store your card details.</li>
             <li><strong>Resend</strong> — sends transactional emails on our behalf (booking confirmations, receipts, reminders).</li>
             <li><strong>Anthropic</strong> — processes the text of questions sent to the AI maths assistant, without your name, email, or grade attached.</li>
             <li><strong>Google Meet</strong> — used to host live tutoring sessions; the meeting link is shared with you by email.</li>
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
             We use reasonable technical and organisational measures to protect your information,
             including encrypted connections (HTTPS), secure password handling through our authentication
             provider, database access rules that restrict who can read or write your data, and a
-            payment processor (PayFast) that is responsible for card-data security on its own PCI-DSS
+            payment processor (Paystack) that is responsible for card-data security on its own PCI-DSS
             compliant systems. No system is completely secure, but we take reasonable steps to protect
             your information against loss, misuse, or unauthorised access.
           </p>

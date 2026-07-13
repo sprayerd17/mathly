@@ -8,7 +8,7 @@ import { auth, db } from '@/src/lib/firebase'
 import { doc, getDoc } from 'firebase/firestore'
 import { onAuthStateChanged } from 'firebase/auth'
 
-// PayFast's browser redirect can land here before or after the server-to-server
+// Paystack's browser redirect can land here before or after the server-to-server
 // ITN POST — this page never sets package itself (ITN is the only trusted
 // source of truth). It just polls for confirmation to show live feedback.
 export default function PricingSuccessPage() {
@@ -35,7 +35,7 @@ export default function PricingSuccessPage() {
       timeoutId = setTimeout(() => poll(uid), 2000)
     }
 
-    // auth.currentUser is unreliable right after PayFast's external redirect
+    // auth.currentUser is unreliable right after Paystack's external redirect
     // back to this page — Firebase Auth hasn't finished restoring the session
     // from storage yet, so it reads null on first render. onAuthStateChanged
     // fires once that restore completes (or confirms there's no session).

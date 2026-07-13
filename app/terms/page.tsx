@@ -69,7 +69,7 @@ export default function TermsPage() {
           <p>
             Each child on your account can be assigned a Free, Pro, or Guided plan independently. Paid
             plans are billed monthly in advance and renew automatically until cancelled. Payment is
-            processed securely by PayFast; Mathly does not see or store your card details.
+            processed securely by Paystack; Mathly does not see or store your card details.
           </p>
           <p>
             Prices shown at checkout, including any limited-time "founding member" pricing, apply for

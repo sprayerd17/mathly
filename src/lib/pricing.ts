@@ -1,6 +1,6 @@
 // Single source of truth for plan prices — imported by the pricing UI, the
-// registration wizard, and the PayFast checkout/ITN routes (which must never
-// trust a client-supplied amount).
+// registration wizard, and the Paystack checkout/webhook routes (which must
+// never trust a client-supplied amount).
 
 export type Plan = 'pro' | 'guided'
 export type Tier = 'free' | 'pro' | 'guided'

@@ -29,7 +29,7 @@ export const GUIDED_SESSION_DISCOUNT = 0.2
 // Booking a spot doesn't require immediate payment — it holds the spot as a
 // 'reserved' booking with a payment deadline. Inside this many hours of the
 // session starting, there's no time left to defer: booking goes straight to
-// PayFast instead (same as the old always-immediate-payment behaviour).
+// Paystack instead (same as the old always-immediate-payment behaviour).
 export const DEPOSIT_HOURS_BEFORE_START = 48
 
 export function depositDeadlineFor(startsAt: Date): Date {

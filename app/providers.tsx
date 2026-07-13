@@ -19,7 +19,7 @@ import {
 import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore'
 import { auth, db } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
-import { initiateCheckout } from '@/src/lib/payfast-client'
+import { initiateCheckout } from '@/src/lib/paystack-client'
 import { computeFamilyPrice, FOUNDING_PRICE, type Tier } from '@/src/lib/pricing'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -36,7 +36,7 @@ export type Child = {
   languageChangeUsed: boolean
 }
 
-// Billing state, driven entirely by the PayFast ITN webhook and the
+// Billing state, driven entirely by the Paystack webhook and the
 // cancel-subscription/expire-cancelled-subscriptions server routes — never
 // written directly by the client. 'none' until the first successful payment.
 // 'cancelling' means the user has cancelled but is still inside their paid
@@ -64,11 +64,18 @@ export type User = {
   refCode: string
   activeChildIndex: number
   subscriptionStatus: SubscriptionStatus
-  payfastToken: string | null
+  // Captured off Paystack's subscription.create webhook event (and the
+  // synchronous lookup right after signup succeeds) — customerCode is set
+  // as soon as the first payment succeeds, subscriptionCode/emailToken once
+  // Paystack finishes creating the subscription record. Both are required
+  // to call Paystack's Disable Subscription endpoint at cancel time.
+  paystackCustomerCode: string | null
+  paystackSubscriptionCode: string | null
+  paystackEmailToken: string | null
   pendingChildPlans: Tier[] | null
   lastPaymentDate: string | null
   lastPaymentAmount: number | null
-  // Set by /api/payfast/cancel-subscription the moment a user cancels — the
+  // Set by /api/paystack/cancel-subscription the moment a user cancels — the
   // date their already-paid period ends. Only meaningful while
   // subscriptionStatus is 'cancelling'; null otherwise.
   accessUntil: string | null
@@ -300,7 +307,7 @@ function AuthModal({
     setError('')
     setSubmitting(true)
     // A paid plan means onRegister will end in a real browser navigation to
-    // PayFast, which isn't instant — closing the modal before that navigation
+    // Paystack, which isn't instant — closing the modal before that navigation
     // actually happens would flash the logged-in site underneath for a few
     // seconds first. Show a dedicated redirect screen instead and just leave
     // it up; the page is about to unload anyway.
@@ -768,7 +775,9 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     refCode,
     activeChildIndex,
     subscriptionStatus: sanitizeSubscriptionStatus(data.subscriptionStatus),
-    payfastToken: typeof data.payfastToken === 'string' ? data.payfastToken : null,
+    paystackCustomerCode: typeof data.paystackCustomerCode === 'string' ? data.paystackCustomerCode : null,
+    paystackSubscriptionCode: typeof data.paystackSubscriptionCode === 'string' ? data.paystackSubscriptionCode : null,
+    paystackEmailToken: typeof data.paystackEmailToken === 'string' ? data.paystackEmailToken : null,
     pendingChildPlans: sanitizePendingChildPlans(data.pendingChildPlans),
     lastPaymentDate: typeof data.lastPaymentDate === 'string' ? data.lastPaymentDate : null,
     lastPaymentAmount: typeof data.lastPaymentAmount === 'number' ? data.lastPaymentAmount : null,
@@ -818,15 +827,17 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     const refCode = generateRefCode(name)
     // Every account is created all-free, regardless of the tiers chosen in
     // the wizard — Firestore rules only allow childPlans with no paid tier
-    // on create. Paid tiers are granted afterwards by the PayFast ITN
-    // webhook, never here.
+    // on create. Paid tiers are granted afterwards by the Paystack webhook,
+    // never here.
     const freeChildPlans: Tier[] = children.map(() => 'free')
     await setDoc(doc(db, 'users', cred.user.uid), {
       name,
       email,
       childPlans: freeChildPlans,
       subscriptionStatus: 'none',
-      payfastToken: null,
+      paystackCustomerCode: null,
+      paystackSubscriptionCode: null,
+      paystackEmailToken: null,
       pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,
@@ -843,7 +854,9 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       initial: (name.charAt(0) || 'U').toUpperCase(),
       childPlans: freeChildPlans,
       subscriptionStatus: 'none',
-      payfastToken: null,
+      paystackCustomerCode: null,
+      paystackSubscriptionCode: null,
+      paystackEmailToken: null,
       pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,
@@ -887,8 +900,8 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     // Chosen any paid tier for any child? Immediately continue into checkout
-    // instead of granting it for free. This redirects the browser to PayFast
-    // on success. Founding pricing is hardcoded true here (matches prior
+    // instead of granting it for free. This redirects the browser to
+    // Paystack on success. Founding pricing is hardcoded true here (matches prior
     // behavior) — the checkout route clamps to one of the two known prices
     // per tier regardless.
     if (childTiers.some(t => t !== 'free')) {

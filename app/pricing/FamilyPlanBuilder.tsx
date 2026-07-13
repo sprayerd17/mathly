@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
-import { initiateCheckout } from '@/src/lib/payfast-client'
+import { initiateCheckout } from '@/src/lib/paystack-client'
 import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 
 type Spots = { proTaken: number; guidedTaken: number }

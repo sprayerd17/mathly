@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { FieldValue } from 'firebase-admin/firestore'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
-import { getPayfastConfig, generateSignature } from '@/src/lib/payfast'
+import { getPaystackConfig, initializeTransaction } from '@/src/lib/paystack'
 import { sessionPriceFor, depositDeadlineFor, type SessionType } from '@/src/lib/sessions'
 import { bookingConfirmedEmail, reservationHeldEmail, sendEmail } from '@/src/lib/email'
 import type { Tier } from '@/src/lib/pricing'
@@ -19,15 +19,15 @@ import type { Tier } from '@/src/lib/pricing'
 // deadline unpaid. Only available more than 48h before the session starts —
 // there'd be no runway left to pay otherwise.
 //
-// intent 'pay_now' — always goes straight to PayFast, any time before the
+// intent 'pay_now' — always goes straight to Paystack, any time before the
 // session starts, for anyone who'd rather commit immediately instead of
 // holding a reservation. The booking starts 'pending' and holds no spot;
-// the ITN webhook flips it to 'paid' and increments bookedCount once the
+// the webhook flips it to 'paid' and increments bookedCount once the
 // money actually arrives.
 //
 // Exception: every PAID child (Pro or Guided) gets exactly one free session
 // ever — freeSessionClaimed is index-aligned with children, same as
-// childPlans. That booking skips PayFast entirely — it's confirmed instantly,
+// childPlans. That booking skips Paystack entirely — it's confirmed instantly,
 // server-side, since there's no payment to verify, regardless of which
 // button was clicked. Free-tier children never qualify: a Free account costs
 // nothing to create, so offering a free session to every Free child would
@@ -222,7 +222,7 @@ export async function POST(req: NextRequest) {
     return Response.json({ reserved: true, bookingId: bookingRef.id, depositDeadline: depositDeadline.toISOString() })
   }
 
-  // ── "Complete payment": straight to PayFast, any time before the session ──
+  // ── "Complete payment": straight to Paystack, any time before the session ──
   const bookingRef = await adminDb.collection('bookings').add({
     sessionId,
     uid,
@@ -236,33 +236,22 @@ export async function POST(req: NextRequest) {
     createdAt: FieldValue.serverTimestamp(),
   })
 
-  const config = getPayfastConfig()
-  const notifyBase = process.env.PAYFAST_NOTIFY_BASE_URL ?? 'http://localhost:3000'
-  const amountStr = amount.toFixed(2)
-  // PayFast caps item_name at 100 chars.
-  const itemName = `Mathly Live Session - ${String(session.topic ?? '')}`.slice(0, 100)
+  const config = getPaystackConfig()
+  const baseUrl = process.env.PAYSTACK_CALLBACK_BASE_URL ?? 'http://localhost:3000'
 
-  // Once-off payment — no subscription fields. custom_str1 is the marker the
-  // ITN webhook branches on; custom_str3 carries the booking to confirm.
-  const fields: Record<string, string> = {
-    merchant_id: config.merchantId,
-    merchant_key: config.merchantKey,
-    return_url: `${notifyBase}/live-classes?payment=success`,
-    cancel_url: `${notifyBase}/live-classes?payment=cancelled`,
-    notify_url: `${notifyBase}/api/payfast/notify`,
-    name_first: userData.name ?? '',
-    email_address: userData.email ?? '',
-    m_payment_id: bookingRef.id,
-    amount: amountStr,
-    item_name: itemName,
-    custom_str1: 'session_booking',
-    custom_str2: uid,
-    custom_str3: bookingRef.id,
-  }
-  const signature = generateSignature(fields, config.passphrase)
-
-  return Response.json({
-    action: config.processUrl,
-    fields: { ...fields, signature },
+  // Once-off payment — no plan. metadata.kind is the marker the webhook
+  // branches on; metadata.bookingId carries the booking to confirm.
+  const initResult = await initializeTransaction(config, {
+    email: userData.email ?? '',
+    amountRands: amount,
+    reference: bookingRef.id,
+    callbackUrl: `${baseUrl}/live-classes?payment=return`,
+    metadata: { kind: 'session_booking', uid, bookingId: bookingRef.id },
   })
+  if (!initResult.ok || !initResult.data?.authorization_url) {
+    console.error('[sessions/book] transaction init failed', { uid, bookingId: bookingRef.id, status: initResult.status, message: initResult.message })
+    return new Response('Could not start payment. Please try again.', { status: 502 })
+  }
+
+  return Response.json({ authorization_url: initResult.data.authorization_url })
 }

@@ -8,7 +8,7 @@ import { paymentFinalWarningEmail, paymentReminderEmail, sendEmail, subscription
 //   day 10 — auto-cancel, account drops to free tier
 // dunningStage tracks which email was last sent so re-running this hourly
 // never re-sends the same stage. pastDueSince/dunningStage are set by the
-// PayFast webhook the moment an account first goes past_due, and cleared the
+// Paystack webhook the moment an account first goes past_due, and cleared the
 // moment a payment succeeds again.
 const HOUR = 60 * 60 * 1000
 const DAY = 24 * HOUR

@@ -5,7 +5,7 @@ import { collection, getDocs, query, where, addDoc, serverTimestamp } from 'fire
 import { auth, db } from '@/src/lib/firebase'
 import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
-import { initiateSessionBooking, initiatePayReservation, cancelReservation, CheckoutError } from '@/src/lib/payfast-client'
+import { initiateSessionBooking, initiatePayReservation, cancelReservation, CheckoutError } from '@/src/lib/paystack-client'
 import { sessionPriceFor, depositDeadlineFor, type PublicSession } from '@/src/lib/sessions'
 
 type MyBooking = {
@@ -20,7 +20,7 @@ type MyBooking = {
 // The bookable-sessions board: upcoming published sessions (served sanitized
 // by /api/sessions/list — the sessions collection itself is closed to
 // clients), each with a Book button that either holds the spot as an unpaid
-// reservation (more than 48h out) or goes straight through PayFast (within
+// reservation (more than 48h out) or goes straight through Paystack (within
 // 48h) — see /api/sessions/book. Full lessons offer "join the waitlist"
 // instead, which lands in lessonRequests — the same collection the
 // request-a-lesson form below writes to, so the dashboard sees all demand in
@@ -103,7 +103,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
     try {
       const result = await initiateSessionBooking(auth.currentUser!, session.id, intent)
       if ('free' in result && result.free) {
-        // Free bookings are confirmed instantly server-side — no PayFast
+        // Free bookings are confirmed instantly server-side — no Paystack
         // redirect happens, so pull the real (now-paid) booking doc rather
         // than navigating away.
         setFreeClaimedThisVisit(true)
@@ -116,7 +116,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
         setBookingId(null)
         setBookingIntent(null)
       }
-      // Otherwise the browser is already navigating to PayFast.
+      // Otherwise the browser is already navigating to Paystack.
     } catch (err) {
       const raw = err instanceof CheckoutError ? err.message : ''
       const message = raw.includes('full') ? t.live_error_full
@@ -133,7 +133,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
     setBookingId(b.sessionId)
     try {
       await initiatePayReservation(auth.currentUser!, b.bookingId)
-      // Browser is now navigating to PayFast.
+      // Browser is now navigating to Paystack.
     } catch {
       setBookingError({ id: b.sessionId, message: t.live_error_generic })
       setBookingId(null)

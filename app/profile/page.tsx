@@ -8,7 +8,7 @@ import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
 import { db, auth } from '@/src/lib/firebase'
-import { cancelSubscription } from '@/src/lib/payfast-client'
+import { cancelSubscription } from '@/src/lib/paystack-client'
 
 const MAX_CHILDREN = 3
 
