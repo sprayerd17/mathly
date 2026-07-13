@@ -808,9 +808,9 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Bereken die lengte van LM (korrek tot 2 desimale plekke).',
-              correctAnswer: '9,84',
-              correctAnswers: ['9,84', '9.84', '9,83', '9.83', '9,85', '9.85'],
-              explanation: 'LM² = 9² + 12² − 2(9)(12)cos55° = 81 + 144 − 216 · 0,5736 ≈ 225 − 123,90 = 101,10\nLM = √101,10 ≈ 9,84 cm ✓',
+              correctAnswer: '10,05',
+              correctAnswers: ['10,05', '10.05', '10,06', '10.06', '10,04', '10.04'],
+              explanation: 'LM² = 9² + 12² − 2(9)(12)cos55° = 81 + 144 − 216 · 0,5736 ≈ 225 − 123,90 = 101,10\nLM = √101,10 ≈ 10,05 cm ✓',
             },
           ],
         },

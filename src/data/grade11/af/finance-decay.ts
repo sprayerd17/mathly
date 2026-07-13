@@ -220,11 +220,11 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'ʼn Motor ter waarde van R200 000 verminder in waarde teen 15% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 4 jaar.',
-          answer: `${or('A ≈ R104 427')}`,
+          answer: `${or('A ≈ R104 400')}`,
           steps: [
             `Identifiseer ${bl('P = R200 000')}, ${re('i = 0,15')} dus ${re('1 − i = 0,85')}, ${gr('n = 4')}.`,
             `Vervang in ${or('A')} = ${bl('P')}(${re('1 − i')})<sup>${gr('n')}</sup>: ${or('A')} = ${bl('200 000')} × (${re('0,85')})<sup>${gr('4')}</sup>.`,
-            `Bereken: ${or('A')} = ${bl('200 000')} × 0,522 = ${or('R104 427')}.`,
+            `Bereken: ${or('A')} = ${bl('200 000')} × 0,522 = ${or('R104 400')}.`,
           ],
         },
         {

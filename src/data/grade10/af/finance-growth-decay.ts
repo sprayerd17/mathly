@@ -615,11 +615,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Vind die finale bedrag na 8 jaar as R6 000 teen 7% saamgestelde rente belê word.',
-      answer: 'R10 305,49',
+      answer: 'R10 309,14',
       checkMode: 'auto',
-      correctAnswer: 'R10305,49',
-      correctAnswers: ['R10305.49', '10305.49', 'R10 305.49', '10 305.49'],
-      explanation: 'A = 6 000(1,07)⁸ = 6 000 × 1,71819 ≈ R10 305,49 ✓',
+      correctAnswer: 'R10309,14',
+      correctAnswers: ['R10309.14', '10309.14', 'R10 309.14', '10 309.14'],
+      explanation: 'A = 6 000(1,07)⁸ = 6 000 × 1,71819 ≈ R10 309,14 ✓',
     },
 
     // ── V6 Hard ───────────────────────────────────────────────────────────────

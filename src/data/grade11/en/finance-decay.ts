@@ -220,11 +220,11 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'A car worth R200 000 depreciates at 15% p.a. on the reducing-balance method. Calculate its value after 4 years.',
-          answer: `${or('A ≈ R104 427')}`,
+          answer: `${or('A ≈ R104 400')}`,
           steps: [
             `Identify ${bl('P = R200 000')}, ${re('i = 0.15')} so ${re('1 − i = 0.85')}, ${gr('n = 4')}.`,
             `Substitute into ${or('A')} = ${bl('P')}(${re('1 − i')})<sup>${gr('n')}</sup>: ${or('A')} = ${bl('200 000')} × (${re('0.85')})<sup>${gr('4')}</sup>.`,
-            `Calculate: ${or('A')} = ${bl('200 000')} × 0.522 = ${or('R104 427')}.`,
+            `Calculate: ${or('A')} = ${bl('200 000')} × 0.522 = ${or('R104 400')}.`,
           ],
         },
         {
