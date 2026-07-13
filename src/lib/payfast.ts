@@ -99,16 +99,26 @@ export async function verifySourceIp(ip: string): Promise<boolean> {
 // PHP SDK confirms the endpoint shape and that `token` is the subscription
 // identifier already stored as `payfastToken`; an unofficial Node library
 // supplied the signature algorithm) rather than PayFast's own docs, which
-// weren't fetchable at implementation time. Two things in particular need a
-// real sandbox call to confirm before this ships to real subscribers:
-//   1. Whether the raw passphrase must be sent as a literal `passphrase`
-//      header (one community library does this) or — as implemented below,
-//      matching how PayFast's own classic signature never transmits the
-//      passphrase itself, only uses it to sign — should be used for signing
-//      only and never sent.
-//   2. The exact endpoint path/method/response shape, in case PayFast's API
-//      has since changed.
-// If a live test fails, check both of those first.
+// weren't fetchable at implementation time.
+//
+// First live attempt failed ("PayFast could not process the cancellation").
+// Two fixes applied based on re-reading PayFast's documented timestamp
+// format and the community library more carefully — still unconfirmed
+// against a real response, since the failure body wasn't available:
+//   1. Timestamp now carries an explicit +00:00 UTC offset instead of being
+//      stripped to a bare, timezone-less string — PayFast's documented
+//      format is `YYYY-MM-DDTHH:MM:SS[+HH:MM]`, and an ambiguous timestamp
+//      is a likely reason a signed request gets rejected outright.
+//   2. The passphrase is now sent as a literal header too (in addition to
+//      being used to sign), matching the one working community
+//      implementation found — being cautious/omitting it was a guess in
+//      the wrong direction: an extra header PayFast doesn't need is
+//      harmless, but omitting one it does need fails closed exactly like
+//      what was observed.
+// If this next attempt still fails, the full status+body is now logged by
+// the caller (app/api/payfast/cancel-subscription/route.ts) — that response
+// text is the fastest way to pin down what's still wrong, faster than
+// guessing further from documentation fragments.
 export type PayfastCancelResult = { success: boolean; status: number; body: string }
 
 export async function cancelPayfastSubscription(
@@ -116,7 +126,7 @@ export async function cancelPayfastSubscription(
   config: PayfastConfig,
 ): Promise<PayfastCancelResult> {
   const version = 'v1'
-  const timestamp = new Date().toISOString().replace(/\.\d{3}Z$/, '')
+  const timestamp = new Date().toISOString().replace(/\.\d{3}Z$/, '+00:00')
 
   const signaturePairs: Record<string, string> = {
     'merchant-id': config.merchantId,
@@ -130,14 +140,17 @@ export async function cancelPayfastSubscription(
     .join('&')
   const signature = crypto.createHash('md5').update(signatureString).digest('hex')
 
+  const headers: Record<string, string> = {
+    'merchant-id': config.merchantId,
+    version,
+    timestamp,
+    signature,
+  }
+  if (config.passphrase) headers.passphrase = config.passphrase
+
   const res = await fetch(`https://api.payfast.co.za/subscriptions/${encodeURIComponent(token)}/cancel${config.mode === 'sandbox' ? '?testing=true' : ''}`, {
     method: 'PUT',
-    headers: {
-      'merchant-id': config.merchantId,
-      version,
-      timestamp,
-      signature,
-    },
+    headers,
   })
   const body = await res.text()
   return { success: res.ok, status: res.status, body }

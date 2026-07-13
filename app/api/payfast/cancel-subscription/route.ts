@@ -59,7 +59,13 @@ export async function POST(req: NextRequest) {
     console.error('[payfast/cancel-subscription] PayFast rejected cancellation', {
       uid, status: result.status, body: result.body,
     })
-    return new Response('PayFast could not process the cancellation — please try again or contact support', { status: 502 })
+    // Echo PayFast's own status/body back in the response (not our secrets —
+    // just their rejection reason) so this is diagnosable from the browser
+    // network tab without needing access to server logs.
+    return new Response(
+      `PayFast could not process the cancellation (status ${result.status}: ${result.body.slice(0, 300)}) — please try again or contact support`,
+      { status: 502 },
+    )
   }
 
   // Access continues until the current paid period ends. lastPaymentDate +
