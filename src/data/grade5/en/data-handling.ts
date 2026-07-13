@@ -592,14 +592,14 @@ export const topicData: TopicData = {
           explanation: 'Arrange from smallest to biggest: 3, 7, 9, 12, 15.\nThere are 5 values so the middle (3rd) value is 9.\nThe median is 9.',
         },
 
-        // ── Q13 Hard — mean ──────────────────────────────────────────────────
+        // ── Q13 Hard — mode ──────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Find the mean of these test scores: 60, 75, 80, 55, 70, 90, 50.',
-          answer: '70',
+          question: 'Find the mode of these test scores: 60, 75, 80, 55, 75, 90, 75.',
+          answer: '75',
           checkMode: 'auto',
-          correctAnswer: '70',
-          explanation: 'Add all scores: 60 + 75 + 80 + 55 + 70 + 90 + 50 = 480.\nCount: 7 scores.\nMean = 480 ÷ 7 = 70.',
+          correctAnswer: '75',
+          explanation: 'Count how many times each score appears: 60 appears 1 time, 75 appears 3 times, 80 appears 1 time, 55 appears 1 time, 90 appears 1 time.\n75 appears most often, so the mode is 75.',
         },
       ],
 
@@ -871,7 +871,7 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Books Read During the Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 books</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Monday</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Tuesday</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Wednesday</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Thursday</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
         },
 
-        // ── Mean, Median and Mode (12-15) ───────────────────────────────────
+        // ── Mode and Median (12-15) ─────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Find the mode of this data set: 4, 7, 4, 9, 4, 2.',
@@ -890,11 +890,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Find the mean of this data set: 9, 14, 7, 10.',
+          question: 'Find the mode of this data set: 9, 14, 7, 10, 14.',
           checkMode: 'auto',
-          correctAnswer: '10',
-          correctAnswers: ['10'],
-          explanation: 'Add all the values: 9 + 14 + 7 + 10 = 40. There are 4 values, so the mean is 40 ÷ 4 = 10.',
+          correctAnswer: '14',
+          correctAnswers: ['14'],
+          explanation: 'Count how often each value appears: 9 appears 1 time, 14 appears 2 times, 7 appears 1 time, 10 appears 1 time. Since 14 appears most often, the mode is 14.',
         },
         {
           difficulty: 'Medium',
@@ -912,11 +912,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Class A recorded a mean test score of 68 and Class B recorded a mean test score of 74. What does comparing these two means tell us about the two classes\' performance?',
+          question: 'Class A recorded a mode test score of 68 (this mark occurred most often) and Class B recorded a mode test score of 74. What does comparing these two modes tell us about the two classes\' most common result?',
           checkMode: 'auto',
-          correctAnswer: 'Class B performed better on average than Class A',
-          correctAnswers: ['Class B performed better on average than Class A', 'Class B did better on average', 'Class B had a higher average'],
-          explanation: 'The mean gives the average score for each class. Since 74 is greater than 68, Class B\'s average score was higher, so on average Class B performed better than Class A on this test.',
+          correctAnswer: 'Class B\'s most common test score was higher than Class A\'s',
+          correctAnswers: ['Class B\'s most common test score was higher than Class A\'s', 'Class B\'s most common score was higher', 'Class B\'s typical score was higher than Class A\'s'],
+          explanation: 'The mode tells us the test score that occurred most often for each class. Since 74 is greater than 68, Class B\'s most common (most frequently occurring) test score was higher than Class A\'s most common test score.',
         },
 
         // ── Interpreting Data — multi-step application & fractions (18-19) ──
@@ -941,11 +941,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'A learner records the number of stickers collected each day from Monday to Friday: 6, 9, 4, 7, 9. She calculates the mean by adding all five numbers and dividing by 4, getting an answer of 8.75. Is her calculation correct? If not, find the correct mean.',
+          question: 'A learner records the number of stickers collected each day from Monday to Friday: 6, 9, 4, 7, 9. She says the mode is 6, because 6 was the first number listed. Is she correct? If not, find the correct mode.',
           checkMode: 'auto',
-          correctAnswer: '7',
-          correctAnswers: ['7'],
-          explanation: 'Her calculation is incorrect — she divided by 4 instead of 5, since there are 5 data values (Monday to Friday), not 4. The correct total is 6 + 9 + 4 + 7 + 9 = 35. The correct mean is 35 ÷ 5 = 7, not 8.75.',
+          correctAnswer: '9',
+          correctAnswers: ['9'],
+          explanation: 'She is incorrect. The mode is the value that appears most often, not the first value listed. Counting: 6 appears 1 time, 9 appears 2 times, 4 appears 1 time, 7 appears 1 time. Since 9 appears most often, the correct mode is 9, not 6.',
         },
       ],
       scoreMessages: [
@@ -1078,7 +1078,7 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stickers Collected This Term</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 stickers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
         },
 
-        // ── Mean, Median and Mode (12-15) ───────────────────────────────────
+        // ── Mode and Median (12-15) ─────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Find the mode of this data set: 5, 3, 5, 8, 5, 1.',
@@ -1097,11 +1097,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Find the mean of this data set: 12, 18, 15, 9, 6.',
+          question: 'Find the mode of this data set: 12, 18, 15, 18, 9.',
           checkMode: 'auto',
-          correctAnswer: '12',
-          correctAnswers: ['12'],
-          explanation: 'Add all the values: 12 + 18 + 15 + 9 + 6 = 60. There are 5 values, so the mean is 60 ÷ 5 = 12.',
+          correctAnswer: '18',
+          correctAnswers: ['18'],
+          explanation: 'Count how often each value appears: 12 appears 1 time, 18 appears 2 times, 15 appears 1 time, 9 appears 1 time. Since 18 appears most often, the mode is 18.',
         },
         {
           difficulty: 'Medium',
@@ -1119,11 +1119,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Team X recorded a mean of 6 goals per match and Team Y recorded a mean of 4 goals per match over a season. What does comparing these two means tell us about the two teams\' scoring?',
+          question: 'Team X\'s mode number of goals scored per match was 6 (this was the most frequent score), and Team Y\'s mode was 4. What does comparing these two modes tell us about the two teams\' most frequent scoring?',
           checkMode: 'auto',
-          correctAnswer: 'Team X scored more goals on average than Team Y',
-          correctAnswers: ['Team X scored more goals on average than Team Y', 'Team X scored more on average', 'Team X had a higher average'],
-          explanation: 'The mean gives the average number of goals per match for each team. Since 6 is greater than 4, Team X\'s average was higher, so on average Team X scored more goals per match than Team Y this season.',
+          correctAnswer: 'Team X\'s most frequent score was higher than Team Y\'s',
+          correctAnswers: ['Team X\'s most frequent score was higher than Team Y\'s', 'Team X\'s most common score was higher', 'Team X scored more goals most often than Team Y'],
+          explanation: 'The mode tells us the number of goals that occurred most often for each team. Since 6 is greater than 4, Team X\'s most frequent (most common) score per match was higher than Team Y\'s.',
         },
 
         // ── Interpreting Data — multi-step application & fractions (18-19) ──
@@ -1285,7 +1285,7 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Votes for Sports Day Team Names</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Key:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 votes</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Team A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Team B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Team C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Team D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
         },
 
-        // ── Mean, Median and Mode (12-15) ───────────────────────────────────
+        // ── Mode and Median (12-15) ─────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Find the mode of this data set: 6, 2, 6, 10, 6, 4.',
@@ -1304,11 +1304,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Find the mean of this data set: 8, 13, 6, 9.',
+          question: 'Find the mode of this data set: 8, 13, 6, 13, 9.',
           checkMode: 'auto',
-          correctAnswer: '9',
-          correctAnswers: ['9'],
-          explanation: 'Add all the values: 8 + 13 + 6 + 9 = 36. There are 4 values, so the mean is 36 ÷ 4 = 9.',
+          correctAnswer: '13',
+          correctAnswers: ['13'],
+          explanation: 'Count how often each value appears: 8 appears 1 time, 13 appears 2 times, 6 appears 1 time, 9 appears 1 time. Since 13 appears most often, the mode is 13.',
         },
         {
           difficulty: 'Medium',
@@ -1326,11 +1326,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Bakery A recorded a mean of 42 loaves sold per day and Bakery B recorded a mean of 50 loaves sold per day over a month. What does comparing these two means tell us about the two bakeries\' sales?',
+          question: 'Bakery A\'s mode number of loaves sold per day was 42 (this was the most frequent amount), and Bakery B\'s mode was 50. What does comparing these two modes tell us about the two bakeries\' most frequent daily sales?',
           checkMode: 'auto',
-          correctAnswer: 'Bakery B sold more loaves on average than Bakery A',
-          correctAnswers: ['Bakery B sold more loaves on average than Bakery A', 'Bakery B sold more on average', 'Bakery B had a higher average'],
-          explanation: 'The mean gives the average number of loaves sold per day for each bakery. Since 50 is greater than 42, Bakery B\'s average was higher, so on average Bakery B sold more loaves per day than Bakery A that month.',
+          correctAnswer: 'Bakery B\'s most frequent daily sales were higher than Bakery A\'s',
+          correctAnswers: ['Bakery B\'s most frequent daily sales were higher than Bakery A\'s', 'Bakery B\'s most common daily sales were higher', 'Bakery B sold more loaves most often than Bakery A'],
+          explanation: 'The mode tells us the number of loaves sold that occurred most often for each bakery. Since 50 is greater than 42, Bakery B\'s most frequent (most common) daily sales amount was higher than Bakery A\'s.',
         },
 
         // ── Interpreting Data — multi-step application & fractions (18-19) ──
@@ -1355,11 +1355,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'A tuck shop records the number of pies sold each day from Monday to Friday: 10, 14, 8, 16, 7. A learner calculates the mean as (10 + 14 + 8 + 16 + 7) ÷ 6 and gets an answer that is not a whole number. Explain the mistake and find the correct mean.',
+          question: 'A tuck shop records the number of pies sold each day from Monday to Friday: 10, 14, 8, 14, 7. A learner says the mode is 10, because 10 is the first number in the list. Explain the mistake and find the correct mode.',
           checkMode: 'auto',
-          correctAnswer: '11',
-          correctAnswers: ['11'],
-          explanation: 'The mistake is dividing by 6 instead of 5 — there are only 5 data values (Monday to Friday). The correct total is 10 + 14 + 8 + 16 + 7 = 55. The correct mean is 55 ÷ 5 = 11.',
+          correctAnswer: '14',
+          correctAnswers: ['14'],
+          explanation: 'The mistake is thinking the mode is simply the first value listed — the mode is actually the value that appears most often. Counting: 10 appears 1 time, 14 appears 2 times, 8 appears 1 time, 7 appears 1 time. Since 14 appears most often, the correct mode is 14, not 10.',
         },
       ],
       scoreMessages: [

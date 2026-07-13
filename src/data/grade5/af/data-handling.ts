@@ -592,14 +592,14 @@ export const topicData: TopicData = {
           explanation: 'Rangskik van kleinste na grootste: 3, 7, 9, 12, 15.\nDaar is 5 waardes, dus is die middelste (3de) waarde 9.\nDie mediaan is 9.',
         },
 
-        // ── Q13 Hard — mean ──────────────────────────────────────────────────
+        // ── Q13 Hard — mode ──────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Vind die gemiddelde van hierdie toetstellings: 60, 75, 80, 55, 70, 90, 50.',
-          answer: '70',
+          question: 'Vind die modus van hierdie toetstellings: 60, 75, 80, 55, 75, 90, 75.',
+          answer: '75',
           checkMode: 'auto',
-          correctAnswer: '70',
-          explanation: 'Tel al die tellings bymekaar: 60 + 75 + 80 + 55 + 70 + 90 + 50 = 480.\nTel: 7 tellings.\nGemiddelde = 480 ÷ 7 = 70.',
+          correctAnswer: '75',
+          explanation: 'Tel hoeveel keer elke telling voorkom: 60 kom 1 keer voor, 75 kom 3 keer voor, 80 kom 1 keer voor, 55 kom 1 keer voor, 90 kom 1 keer voor.\n75 kom die meeste voor, dus is die modus 75.',
         },
       ],
 
@@ -871,7 +871,7 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Boeke Gelees Gedurende die Week</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 2 boeke</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Maandag</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Dinsdag</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Woensdag</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Donderdag</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
         },
 
-        // ── Gemiddelde, Mediaan en Modus (12-15) ────────────────────────────
+        // ── Modus en Mediaan (12-15) ─────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Vind die modus van hierdie datastel: 4, 7, 4, 9, 4, 2.',
@@ -890,11 +890,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Vind die gemiddelde van hierdie datastel: 9, 14, 7, 10.',
+          question: 'Vind die modus van hierdie datastel: 9, 14, 7, 10, 14.',
           checkMode: 'auto',
-          correctAnswer: '10',
-          correctAnswers: ['10'],
-          explanation: 'Tel al die waardes bymekaar: 9 + 14 + 7 + 10 = 40. Daar is 4 waardes, dus is die gemiddelde 40 ÷ 4 = 10.',
+          correctAnswer: '14',
+          correctAnswers: ['14'],
+          explanation: 'Tel hoeveel keer elke waarde voorkom: 9 kom 1 keer voor, 14 kom 2 keer voor, 7 kom 1 keer voor, 10 kom 1 keer voor. Aangesien 14 die meeste voorkom, is die modus 14.',
         },
         {
           difficulty: 'Medium',
@@ -912,11 +912,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Klas A het ʼn gemiddelde toetstelling van 68 aangeteken en Klas B het ʼn gemiddelde toetstelling van 74 aangeteken. Wat vertel die vergelyking van hierdie twee gemiddeldes ons oor die twee klasse se prestasie?',
+          question: 'Klas A het ʼn modustoetstelling van 68 aangeteken (hierdie telling het die meeste voorgekom) en Klas B het ʼn modustoetstelling van 74 aangeteken. Wat vertel die vergelyking van hierdie twee modusse ons oor die twee klasse se mees algemene telling?',
           checkMode: 'auto',
-          correctAnswer: 'Klas B het gemiddeld beter presteer as Klas A',
-          correctAnswers: ['Klas B het gemiddeld beter presteer as Klas A', 'Klas B het gemiddeld beter gedoen', 'Klas B het ʼn hoër gemiddelde gehad'],
-          explanation: 'Die gemiddelde gee die gemiddelde telling vir elke klas. Aangesien 74 groter is as 68, was Klas B se gemiddelde telling hoër, dus het Klas B gemiddeld beter as Klas A in hierdie toets presteer.',
+          correctAnswer: 'Klas B se mees algemene toetstelling was hoër as Klas A s\'n',
+          correctAnswers: ['Klas B se mees algemene toetstelling was hoër as Klas A s\'n', 'Klas B se mees algemene telling was hoër', 'Klas B se tipiese telling was hoër as Klas A s\'n'],
+          explanation: 'Die modus vertel ons watter toetstelling die meeste vir elke klas voorgekom het. Aangesien 74 groter is as 68, was Klas B se mees algemene (mees voorkomende) toetstelling hoër as Klas A s\'n.',
         },
 
         // ── Data Interpreteer — multi-stap toepassing en breuke (18-19) ─────
@@ -941,11 +941,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Leerder skryf die aantal plakkers wat elke dag van Maandag tot Vrydag versamel is neer: 6, 9, 4, 7, 9. Sy bereken die gemiddelde deur al vyf getalle bymekaar te tel en deur 4 te deel, en kry ʼn antwoord van 8,75. Is haar berekening korrek? Indien nie, vind die korrekte gemiddelde.',
+          question: 'ʼn Leerder skryf die aantal plakkers wat elke dag van Maandag tot Vrydag versamel is neer: 6, 9, 4, 7, 9. Sy sê die modus is 6, omdat 6 die eerste getal in die lys is. Is sy korrek? Indien nie, vind die korrekte modus.',
           checkMode: 'auto',
-          correctAnswer: '7',
-          correctAnswers: ['7'],
-          explanation: 'Haar berekening is verkeerd — sy het deur 4 gedeel in plaas van 5, want daar is 5 datawaardes (Maandag tot Vrydag), nie 4 nie. Die korrekte totaal is 6 + 9 + 4 + 7 + 9 = 35. Die korrekte gemiddelde is 35 ÷ 5 = 7, nie 8,75 nie.',
+          correctAnswer: '9',
+          correctAnswers: ['9'],
+          explanation: 'Sy is verkeerd. Die modus is die waarde wat die meeste voorkom, nie die eerste waarde in die lys nie. Tel: 6 kom 1 keer voor, 9 kom 2 keer voor, 4 kom 1 keer voor, 7 kom 1 keer voor. Aangesien 9 die meeste voorkom, is die korrekte modus 9, nie 6 nie.',
         },
       ],
       scoreMessages: [
@@ -1078,7 +1078,7 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="10.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Plakkers Versamel Hierdie Kwartaal</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 4 plakkers</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Ayanda</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="#16a34a"/><circle cx="159" cy="55" r="6.5" fill="#16a34a"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Zanele</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><circle cx="127" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Kabelo</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><path d="M 127,102.5 A 6.5,6.5 0 0 0 127,115.5 Z" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Naledi</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="#16a34a"/><circle cx="127" cy="136" r="6.5" fill="#16a34a"/><circle cx="143" cy="136" r="6.5" fill="#16a34a"/></svg>',
         },
 
-        // ── Gemiddelde, Mediaan en Modus (12-15) ────────────────────────────
+        // ── Modus en Mediaan (12-15) ─────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Vind die modus van hierdie datastel: 5, 3, 5, 8, 5, 1.',
@@ -1097,11 +1097,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Vind die gemiddelde van hierdie datastel: 12, 18, 15, 9, 6.',
+          question: 'Vind die modus van hierdie datastel: 12, 18, 15, 18, 9.',
           checkMode: 'auto',
-          correctAnswer: '12',
-          correctAnswers: ['12'],
-          explanation: 'Tel al die waardes bymekaar: 12 + 18 + 15 + 9 + 6 = 60. Daar is 5 waardes, dus is die gemiddelde 60 ÷ 5 = 12.',
+          correctAnswer: '18',
+          correctAnswers: ['18'],
+          explanation: 'Tel hoeveel keer elke waarde voorkom: 12 kom 1 keer voor, 18 kom 2 keer voor, 15 kom 1 keer voor, 9 kom 1 keer voor. Aangesien 18 die meeste voorkom, is die modus 18.',
         },
         {
           difficulty: 'Medium',
@@ -1119,11 +1119,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Span X het ʼn gemiddelde van 6 doele per wedstryd aangeteken en Span Y het ʼn gemiddelde van 4 doele per wedstryd oor ʼn seisoen aangeteken. Wat vertel die vergelyking van hierdie twee gemiddeldes ons oor die twee spanne se doelaantekening?',
+          question: 'Span X se modusgetal doele per wedstryd was 6 (hierdie telling het die meeste voorgekom), en Span Y se modus was 4. Wat vertel die vergelyking van hierdie twee modusse ons oor die twee spanne se mees algemene doelaantekening?',
           checkMode: 'auto',
-          correctAnswer: 'Span X het gemiddeld meer doele aangeteken as Span Y',
-          correctAnswers: ['Span X het gemiddeld meer doele aangeteken as Span Y', 'Span X het gemiddeld meer aangeteken', 'Span X het ʼn hoër gemiddelde gehad'],
-          explanation: 'Die gemiddelde gee die gemiddelde aantal doele per wedstryd vir elke span. Aangesien 6 groter is as 4, was Span X se gemiddelde hoër, dus het Span X gemiddeld meer doele per wedstryd as Span Y hierdie seisoen aangeteken.',
+          correctAnswer: 'Span X se mees algemene telling was hoër as Span Y s\'n',
+          correctAnswers: ['Span X se mees algemene telling was hoër as Span Y s\'n', 'Span X se mees algemene telling was hoër', 'Span X het meer doele die meeste voorgekom as Span Y'],
+          explanation: 'Die modus vertel ons hoeveel doele die meeste vir elke span voorgekom het. Aangesien 6 groter is as 4, was Span X se mees algemene (mees voorkomende) telling per wedstryd hoër as Span Y s\'n.',
         },
 
         // ── Data Interpreteer — multi-stap toepassing en breuke (18-19) ─────
@@ -1285,7 +1285,7 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg"><text x="110" y="15" font-size="11.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Stemme vir Sportdag Spanname</text><text x="8" y="31" font-size="11" fill="#2563eb" font-weight="700">Sleutel:</text><circle cx="34" cy="27.5" r="5" fill="#16a34a"/><text x="43" y="31" font-size="11" fill="#2563eb" font-weight="700">= 10 stemme</text><line x1="8" y1="37" x2="212" y2="37" stroke="#9ca3af" stroke-width="1"/><text x="8" y="59" font-size="11.5" fill="#374151" font-weight="700">Span A</text><circle cx="95" cy="55" r="6.5" fill="#16a34a"/><circle cx="111" cy="55" r="6.5" fill="#16a34a"/><circle cx="127" cy="55" r="6.5" fill="#16a34a"/><path d="M 143,48.5 A 6.5,6.5 0 0 0 120,61.5 Z" fill="#16a34a"/><circle cx="143" cy="55" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/><line x1="8" y1="68" x2="212" y2="68" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="86" font-size="11.5" fill="#374151" font-weight="700">Span B</text><circle cx="95" cy="82" r="6.5" fill="#16a34a"/><circle cx="111" cy="82" r="6.5" fill="#16a34a"/><line x1="8" y1="96" x2="212" y2="96" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="113" font-size="11.5" fill="#374151" font-weight="700">Span C</text><circle cx="95" cy="109" r="6.5" fill="#16a34a"/><circle cx="111" cy="109" r="6.5" fill="#16a34a"/><circle cx="127" cy="109" r="6.5" fill="#16a34a"/><circle cx="143" cy="109" r="6.5" fill="#16a34a"/><line x1="8" y1="122" x2="212" y2="122" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="8" y="140" font-size="11.5" fill="#374151" font-weight="700">Span D</text><circle cx="95" cy="136" r="6.5" fill="#16a34a"/><path d="M 111,129.5 A 6.5,6.5 0 0 0 88,142.5 Z" fill="#16a34a"/><circle cx="111" cy="136" r="6.5" fill="none" stroke="#16a34a" stroke-width="1.2"/></svg>',
         },
 
-        // ── Gemiddelde, Mediaan en Modus (12-15) ────────────────────────────
+        // ── Modus en Mediaan (12-15) ─────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Vind die modus van hierdie datastel: 6, 2, 6, 10, 6, 4.',
@@ -1304,11 +1304,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Vind die gemiddelde van hierdie datastel: 8, 13, 6, 9.',
+          question: 'Vind die modus van hierdie datastel: 8, 13, 6, 13, 9.',
           checkMode: 'auto',
-          correctAnswer: '9',
-          correctAnswers: ['9'],
-          explanation: 'Tel al die waardes bymekaar: 8 + 13 + 6 + 9 = 36. Daar is 4 waardes, dus is die gemiddelde 36 ÷ 4 = 9.',
+          correctAnswer: '13',
+          correctAnswers: ['13'],
+          explanation: 'Tel hoeveel keer elke waarde voorkom: 8 kom 1 keer voor, 13 kom 2 keer voor, 6 kom 1 keer voor, 9 kom 1 keer voor. Aangesien 13 die meeste voorkom, is die modus 13.',
         },
         {
           difficulty: 'Medium',
@@ -1326,11 +1326,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Bakkery A het ʼn gemiddelde van 42 brode per dag verkoop aangeteken en Bakkery B het ʼn gemiddelde van 50 brode per dag verkoop oor ʼn maand aangeteken. Wat vertel die vergelyking van hierdie twee gemiddeldes ons oor die twee bakkerye se verkope?',
+          question: 'Bakkery A se modusgetal brode wat per dag verkoop is, was 42 (hierdie hoeveelheid het die meeste voorgekom), en Bakkery B se modus was 50. Wat vertel die vergelyking van hierdie twee modusse ons oor die twee bakkerye se mees algemene daaglikse verkope?',
           checkMode: 'auto',
-          correctAnswer: 'Bakkery B het gemiddeld meer brode verkoop as Bakkery A',
-          correctAnswers: ['Bakkery B het gemiddeld meer brode verkoop as Bakkery A', 'Bakkery B het gemiddeld meer verkoop', 'Bakkery B het ʼn hoër gemiddelde gehad'],
-          explanation: 'Die gemiddelde gee die gemiddelde aantal brode wat per dag vir elke bakkery verkoop is. Aangesien 50 groter is as 42, was Bakkery B se gemiddelde hoër, dus het Bakkery B gemiddeld meer brode per dag as Bakkery A daardie maand verkoop.',
+          correctAnswer: 'Bakkery B se mees algemene daaglikse verkope was hoër as Bakkery A s\'n',
+          correctAnswers: ['Bakkery B se mees algemene daaglikse verkope was hoër as Bakkery A s\'n', 'Bakkery B se mees algemene daaglikse verkope was hoër', 'Bakkery B het meer brode die meeste verkoop as Bakkery A'],
+          explanation: 'Die modus vertel ons hoeveel brode die meeste per dag vir elke bakkery verkoop is. Aangesien 50 groter is as 42, was Bakkery B se mees algemene (mees voorkomende) daaglikse verkoopshoeveelheid hoër as Bakkery A s\'n.',
         },
 
         // ── Data Interpreteer — multi-stap toepassing en breuke (18-19) ─────
@@ -1355,11 +1355,11 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Snoepiewinkel skryf die aantal pasteie wat elke dag van Maandag tot Vrydag verkoop is neer: 10, 14, 8, 16, 7. ʼn Leerder bereken die gemiddelde as (10 + 14 + 8 + 16 + 7) ÷ 6 en kry ʼn antwoord wat nie ʼn heelgetal is nie. Verduidelik die fout en vind die korrekte gemiddelde.',
+          question: 'ʼn Snoepiewinkel skryf die aantal pasteie wat elke dag van Maandag tot Vrydag verkoop is neer: 10, 14, 8, 14, 7. ʼn Leerder sê die modus is 10, omdat 10 die eerste getal in die lys is. Verduidelik die fout en vind die korrekte modus.',
           checkMode: 'auto',
-          correctAnswer: '11',
-          correctAnswers: ['11'],
-          explanation: 'Die fout is om deur 6 te deel in plaas van 5 — daar is slegs 5 datawaardes (Maandag tot Vrydag). Die korrekte totaal is 10 + 14 + 8 + 16 + 7 = 55. Die korrekte gemiddelde is 55 ÷ 5 = 11.',
+          correctAnswer: '14',
+          correctAnswers: ['14'],
+          explanation: 'Die fout is om te dink die modus is bloot die eerste waarde in die lys — die modus is eintlik die waarde wat die meeste voorkom. Tel: 10 kom 1 keer voor, 14 kom 2 keer voor, 8 kom 1 keer voor, 7 kom 1 keer voor. Aangesien 14 die meeste voorkom, is die korrekte modus 14, nie 10 nie.',
         },
       ],
       scoreMessages: [
