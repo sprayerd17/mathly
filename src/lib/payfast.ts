@@ -101,39 +101,35 @@ export async function verifySourceIp(ip: string): Promise<boolean> {
 // supplied the signature algorithm) rather than PayFast's own docs, which
 // weren't fetchable at implementation time.
 //
-// First live attempt failed generically. A second attempt (adding an
-// explicit UTC offset to the timestamp and sending the passphrase as its
-// own header, both guesses) got further and returned a specific, useful
-// error: 401 "Merchant authorization failed" — meaning the request reaches
-// PayFast but the signature itself doesn't match what PayFast computes.
-// That ruled both guesses IN as suspects, so this version instead mirrors a
-// concrete, complete third-party Node.js reference implementation found
-// afterwards (a full working signature+headers function, not just a
-// description) as closely as possible:
-//   1. Timestamp is back to a bare, offset-less string
-//      (`YYYY-MM-DDTHH:MM:SS`, no trailing Z or offset) — the reference
-//      implementation strips both and never adds one back. A timestamp
-//      format mismatch tends to fail as "invalid/expired timestamp", not
-//      "merchant authorization failed", so this wasn't the actual bug, but
-//      matching the reference exactly removes it as a variable.
-//   2. Passphrase is signed but NOT sent as its own header — the reference
-//      implementation only ever puts it into the signed string, same as
-//      the very first version of this function. Sending it as a literal
-//      header was the earlier speculative addition most likely to make a
-//      real PayFast server reject the signature outright (an unexpected
-//      header value it wasn't told to expect as part of the signed set).
-//   3. Encoding for the signature string now matches the reference exactly
-//      (`encodeURIComponent` + `%20`→`+`, nothing more) instead of the
-//      classic-API's fuller PHP-`urlencode` emulation (`pfUrlEncode`,
-//      still used for the separate classic checkout/ITN signature below,
-//      which is confirmed working in production) — the REST API isn't
-//      necessarily implemented in PHP, so assuming its encoding quirks
-//      match PHP's was itself part of the original, unverified guess.
-//   4. `Content-Type: application/json` is now sent, matching the
-//      reference — cheap to include even though this request has no body.
-// If this still fails, the full status+body is logged by the caller
+// Three live attempts all failed with the same 401 "Merchant authorization
+// failed" regardless of timestamp/header variations tried — pointing away
+// from a signature-formatting nitpick and toward either (a) the signature
+// algorithm being wrong in some more fundamental way, or (b) PayFast's
+// documented requirement that the calling server's IP be whitelisted in the
+// merchant's PayFast integration settings (a account-side prerequisite,
+// unrelated to anything in this file — see the caller/route for that
+// discussion). For (a), this version now mirrors the actual source of
+// `payfast-api/core` (github.com/payfast-api/core — an MIT-licensed,
+// fetched-and-read-verbatim reference, not a paraphrase) exactly:
+//   - Timestamp: bare `YYYY-MM-DDTHH:MM:SS`, no trailing Z or offset —
+//     confirmed by the library's own README example
+//     (`"timestamp": "2020-01-01T00:00:00"`).
+//   - Passphrase IS sent as its own header (`headers.passphrase =
+//     params.passphrase`) in addition to being part of the signed string —
+//     confirmed by reading `subscriptions.js`'s `cancel()` and
+//     `tools.js`'s `signature()` verbatim. An earlier attempt in this
+//     file's history removed this based on a secondhand, inaccurate
+//     paraphrase of the same library — reading the actual source corrected
+//     that.
+//   - Encoding: `encodeURIComponent` + `%20`→`+`, matching `tools.js`'s
+//     `signature()` exactly (distinct from the classic checkout/ITN API's
+//     fuller PHP-`urlencode` emulation, `pfUrlEncode`, which stays
+//     unchanged below since it's confirmed working in production).
+// If this still 401s, the signature algorithm itself is very unlikely to be
+// the remaining problem — the IP-whitelist prerequisite becomes the primary
+// suspect. The full status+body is logged by the caller
 // (app/api/payfast/cancel-subscription/route.ts) and surfaced directly in
-// the cancel error message on the profile page.
+// the cancel error message on the profile page either way.
 export type PayfastCancelResult = { success: boolean; status: number; body: string }
 
 function restUrlEncode(value: string): string {
@@ -164,8 +160,8 @@ export async function cancelPayfastSubscription(
     version,
     timestamp,
     signature,
-    'Content-Type': 'application/json',
   }
+  if (config.passphrase) headers.passphrase = config.passphrase
 
   const res = await fetch(`https://api.payfast.co.za/subscriptions/${encodeURIComponent(token)}/cancel${config.mode === 'sandbox' ? '?testing=true' : ''}`, {
     method: 'PUT',
