@@ -87,3 +87,58 @@ export async function verifySourceIp(ip: string): Promise<boolean> {
     return false
   }
 }
+
+// ── PayFast Subscriptions (REST) API — cancellation ────────────────────────
+//
+// UNVERIFIED — sandbox-test before relying on this in production. Everything
+// below the classic checkout/ITN code above is PayFast's separate, newer
+// REST-style Subscriptions API, used only to tell PayFast "stop billing this
+// token" (as opposed to the classic form-post flow, which only ever collects
+// payments and receives webhooks — it has no facility to cancel anything).
+// This was reconstructed from third-party/community SDK source (an official
+// PHP SDK confirms the endpoint shape and that `token` is the subscription
+// identifier already stored as `payfastToken`; an unofficial Node library
+// supplied the signature algorithm) rather than PayFast's own docs, which
+// weren't fetchable at implementation time. Two things in particular need a
+// real sandbox call to confirm before this ships to real subscribers:
+//   1. Whether the raw passphrase must be sent as a literal `passphrase`
+//      header (one community library does this) or — as implemented below,
+//      matching how PayFast's own classic signature never transmits the
+//      passphrase itself, only uses it to sign — should be used for signing
+//      only and never sent.
+//   2. The exact endpoint path/method/response shape, in case PayFast's API
+//      has since changed.
+// If a live test fails, check both of those first.
+export type PayfastCancelResult = { success: boolean; status: number; body: string }
+
+export async function cancelPayfastSubscription(
+  token: string,
+  config: PayfastConfig,
+): Promise<PayfastCancelResult> {
+  const version = 'v1'
+  const timestamp = new Date().toISOString().replace(/\.\d{3}Z$/, '')
+
+  const signaturePairs: Record<string, string> = {
+    'merchant-id': config.merchantId,
+    version,
+    timestamp,
+  }
+  if (config.passphrase) signaturePairs.passphrase = config.passphrase
+  const signatureString = Object.keys(signaturePairs)
+    .sort()
+    .map(key => `${key}=${pfUrlEncode(signaturePairs[key])}`)
+    .join('&')
+  const signature = crypto.createHash('md5').update(signatureString).digest('hex')
+
+  const res = await fetch(`https://api.payfast.co.za/subscriptions/${encodeURIComponent(token)}/cancel${config.mode === 'sandbox' ? '?testing=true' : ''}`, {
+    method: 'PUT',
+    headers: {
+      'merchant-id': config.merchantId,
+      version,
+      timestamp,
+      signature,
+    },
+  })
+  const body = await res.text()
+  return { success: res.ok, status: res.status, body }
+}

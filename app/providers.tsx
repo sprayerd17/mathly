@@ -36,11 +36,16 @@ export type Child = {
   languageChangeUsed: boolean
 }
 
-// Billing state, driven entirely by the PayFast ITN webhook (server-side) — never
+// Billing state, driven entirely by the PayFast ITN webhook and the
+// cancel-subscription/expire-cancelled-subscriptions server routes — never
 // written directly by the client. 'none' until the first successful payment.
-export type SubscriptionStatus = 'none' | 'pending' | 'active' | 'past_due' | 'cancelled'
+// 'cancelling' means the user has cancelled but is still inside their paid
+// period (childPlans stays unchanged); the expire-cancelled-subscriptions
+// cron flips it to 'cancelled' and drops childPlans to free once
+// accessUntil passes.
+export type SubscriptionStatus = 'none' | 'pending' | 'active' | 'past_due' | 'cancelling' | 'cancelled'
 
-const VALID_SUBSCRIPTION_STATUSES: SubscriptionStatus[] = ['none', 'pending', 'active', 'past_due', 'cancelled']
+const VALID_SUBSCRIPTION_STATUSES: SubscriptionStatus[] = ['none', 'pending', 'active', 'past_due', 'cancelling', 'cancelled']
 
 export type User = {
   uid: string
@@ -63,6 +68,10 @@ export type User = {
   pendingChildPlans: Tier[] | null
   lastPaymentDate: string | null
   lastPaymentAmount: number | null
+  // Set by /api/payfast/cancel-subscription the moment a user cancels — the
+  // date their already-paid period ends. Only meaningful while
+  // subscriptionStatus is 'cancelling'; null otherwise.
+  accessUntil: string | null
   // Set once, server-side, by /api/referral/attach right after registration.
   // null for accounts that didn't sign up via a referral link.
   referredBy: string | null
@@ -763,6 +772,7 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     pendingChildPlans: sanitizePendingChildPlans(data.pendingChildPlans),
     lastPaymentDate: typeof data.lastPaymentDate === 'string' ? data.lastPaymentDate : null,
     lastPaymentAmount: typeof data.lastPaymentAmount === 'number' ? data.lastPaymentAmount : null,
+    accessUntil: typeof data.accessUntil === 'string' ? data.accessUntil : null,
     referredBy: typeof data.referredBy === 'string' ? data.referredBy : null,
     freeSessionClaimed: sanitizeFreeSessionClaimed(data.freeSessionClaimed, children.length),
   }
@@ -820,6 +830,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,
+      accessUntil: null,
       children,
       refCode,
       activeChildIndex: 0,
@@ -836,6 +847,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,
+      accessUntil: null,
       children,
       refCode,
       activeChildIndex: 0,

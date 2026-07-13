@@ -238,6 +238,37 @@ export function subscriptionCancelledEmail(opts: { name: string }) {
   }
 }
 
+// Sent immediately when a user self-cancels from their account settings —
+// distinct wording from subscriptionCancelledEmail above (which is the
+// non-payment/dunning outcome), since this is a deliberate, successful
+// cancellation with a grace period still ahead of it.
+export function subscriptionCancellationScheduledEmail(opts: { name: string; accessUntil: string }) {
+  return {
+    from: FROM_PAYMENTS,
+    subject: 'Your Mathly subscription has been cancelled',
+    html: wrap(`
+      <p>Hi ${opts.name},</p>
+      <p>We've cancelled your Mathly subscription as requested. You won't be charged again.</p>
+      <p>Your paid access continues until <strong>${opts.accessUntil}</strong> — after that, your account will move to the free tier automatically.</p>
+      <p style="font-size:14px">Changed your mind? You can restart your subscription any time from the pricing page.</p>
+    `),
+  }
+}
+
+// Sent by the expire-cancelled-subscriptions cron the day a self-cancelled
+// account's paid period actually ends and it drops to free.
+export function subscriptionEndedEmail(opts: { name: string }) {
+  return {
+    from: FROM_PAYMENTS,
+    subject: 'Your Mathly paid access has ended',
+    html: wrap(`
+      <p>Hi ${opts.name},</p>
+      <p>Your paid Mathly subscription period has now ended, and your account has moved to the free tier, as requested when you cancelled.</p>
+      <p style="font-size:14px">You're welcome back any time — just restart your subscription from the pricing page whenever you're ready.</p>
+    `),
+  }
+}
+
 // ── Waitlist launch announcement ────────────────────────────────────────────
 
 export function launchAnnouncementEmail(opts: { name: string; grade: number }) {

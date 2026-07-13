@@ -41,7 +41,7 @@ service cloud.firestore {
                     && !request.resource.data.diff(resource.data).affectedKeys()
                          .hasAny(['childPlans', 'subscriptionStatus', 'payfastToken',
                                   'pendingChildPlans', 'pendingFounding', 'pendingAmount',
-                                  'lastPaymentDate', 'lastPaymentAmount',
+                                  'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
                                   'referredBy', 'freeSessionClaimed',
                                   'pastDueSince', 'dunningStage']);
 

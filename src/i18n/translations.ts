@@ -239,6 +239,12 @@ export const translations = {
     profile_plan_desc_guided: 'All topics · Dashboard · Live classes',
     profile_subscription_pending: 'Upgrade processing — this usually takes a few seconds',
     profile_subscription_past_due: 'Payment failed — please check your payment method',
+    profile_subscription_cancelling: 'Your subscription is cancelled. You keep full access until {date}.',
+    profile_cancel_subscription_link: 'Cancel subscription',
+    profile_cancel_subscription_confirm_body: 'Cancelling stops future billing right away. You’ll keep full access until the end of your current billing period, and you won’t be charged again.',
+    profile_cancel_subscription_keep: 'Never mind',
+    profile_cancel_subscription_confirm: 'Yes, cancel',
+    profile_cancel_subscription_in_progress: 'Cancelling…',
     profile_upgrade: 'Upgrade',
     profile_my_children_heading: 'My Children',
     profile_active_child_heading: 'Active Profile',
@@ -526,7 +532,7 @@ export const translations = {
 
     // ── FAQ accordion (FAQAccordion.tsx) ────────────────────────────────────
     faq_q1_question: 'How do I subscribe?',
-    faq_q1_answer: 'You can subscribe by creating a free account and then choosing a plan from your account dashboard. We offer monthly and annual options, and you can upgrade or downgrade at any time.',
+    faq_q1_answer: 'You can subscribe by creating a free account and then choosing a plan from your account dashboard. All plans are billed monthly, and you can upgrade at any time.',
     faq_q2_question: 'Which grades are covered?',
     faq_q2_answer: 'Mathly covers Grade 4 through Grade 12, following the South African school curriculum. Each grade has its own set of topics, worked examples, and practice problems.',
     faq_q3_question: 'Are the study guides aligned to the SA curriculum?',
@@ -838,6 +844,12 @@ export const translations = {
     profile_plan_desc_guided: 'Alle onderwerpe · Paneelbord · Aanlyn klasse',
     profile_subscription_pending: 'Opgradering word verwerk — dit neem gewoonlik net \'n paar sekondes',
     profile_subscription_past_due: 'Betaling het misluk — gaan asseblief jou betaalmetode na',
+    profile_subscription_cancelling: 'Jou subskripsie is gekanselleer. Jy behou volle toegang tot {date}.',
+    profile_cancel_subscription_link: 'Kanselleer subskripsie',
+    profile_cancel_subscription_confirm_body: 'Kansellasie stop toekomstige fakturering onmiddellik. Jy behou volle toegang tot die einde van jou huidige faktureringstydperk, en jy sal nie weer gehef word nie.',
+    profile_cancel_subscription_keep: 'Behou dit',
+    profile_cancel_subscription_confirm: 'Ja, kanselleer',
+    profile_cancel_subscription_in_progress: 'Kanselleer tans…',
     profile_upgrade: 'Opgradeer',
     profile_my_children_heading: 'My Kinders',
     profile_active_child_heading: 'Aktiewe Profiel',
@@ -1125,7 +1137,7 @@ export const translations = {
 
     // ── FAQ accordion (FAQAccordion.tsx) ────────────────────────────────────
     faq_q1_question: 'Hoe teken ek in?',
-    faq_q1_answer: "Jy kan inteken deur 'n gratis rekening te skep en dan 'n pakket vanaf jou rekening-paneelbord te kies. Ons bied maandelikse en jaarlikse opsies, en jy kan enige tyd opgradeer of afgradeer.",
+    faq_q1_answer: "Jy kan inteken deur 'n gratis rekening te skep en dan 'n pakket vanaf jou rekening-paneelbord te kies. Alle pakkette word maandeliks gefaktureer, en jy kan enige tyd opgradeer.",
     faq_q2_question: 'Watter grade word gedek?',
     faq_q2_answer: 'Mathly dek Graad 4 tot Graad 12, volgens die Suid-Afrikaanse skoolkurrikulum. Elke graad het sy eie stel onderwerpe, uitgewerkte voorbeelde en oefenprobleme.',
     faq_q3_question: 'Is die studiegidse belyn met die SA-kurrikulum?',

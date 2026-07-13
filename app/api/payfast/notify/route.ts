@@ -224,6 +224,14 @@ export async function POST(req: NextRequest) {
       await logItn(adminDb, fields, 'rejected', 'renewal_token_mismatch', 'renewal')
       return OK()
     }
+    // A self-cancelled account should never be pushed into dunning (or back to
+    // 'active') by a stray/duplicate ITN that arrives after cancellation —
+    // subscriptionStatus for these accounts is owned by the cancel-subscription
+    // route and the expire-cancelled-subscriptions cron from this point on.
+    if (userData.subscriptionStatus === 'cancelling' || userData.subscriptionStatus === 'cancelled') {
+      await logItn(adminDb, fields, 'rejected', 'account_already_cancelled', 'renewal')
+      return OK()
+    }
     if (fields.payment_status !== 'COMPLETE') {
       // Only stamp pastDueSince the moment an account FIRST goes past_due —
       // resetting it on every retry would keep pushing the dunning clock

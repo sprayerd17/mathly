@@ -111,3 +111,18 @@ export async function cancelReservation(fbUser: FirebaseUser, bookingId: string)
     throw new CheckoutError(await res.text().catch(() => 'Could not cancel the reservation.'))
   }
 }
+
+// Cancels the caller's paid subscription. Access continues until the
+// returned accessUntil date — the account isn't dropped to free immediately.
+export async function cancelSubscription(fbUser: FirebaseUser): Promise<{ accessUntil: string }> {
+  const idToken = await fbUser.getIdToken()
+  const res = await fetch('/api/payfast/cancel-subscription', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken }),
+  })
+  if (!res.ok) {
+    throw new CheckoutError(await res.text().catch(() => 'Could not cancel the subscription.'))
+  }
+  return res.json()
+}

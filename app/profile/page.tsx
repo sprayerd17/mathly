@@ -7,7 +7,8 @@ import { useAuth, LanguageCards, type Language, type Tier } from '@/app/provider
 import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
-import { db } from '@/src/lib/firebase'
+import { db, auth } from '@/src/lib/firebase'
+import { cancelSubscription } from '@/src/lib/payfast-client'
 
 const MAX_CHILDREN = 3
 
@@ -40,6 +41,26 @@ export default function ProfilePage() {
 
   const [linkCopied, setLinkCopied] = useState(false)
   const [codeCopied, setCodeCopied] = useState(false)
+
+  const [confirmingCancel, setConfirmingCancel] = useState(false)
+  const [cancelInProgress, setCancelInProgress] = useState(false)
+  const [cancelError, setCancelError] = useState<string | null>(null)
+
+  async function handleCancelSubscription() {
+    if (!auth.currentUser) return
+    setCancelInProgress(true)
+    setCancelError(null)
+    try {
+      await cancelSubscription(auth.currentUser)
+      // No client-side refreshUser() exists — a full reload re-runs the
+      // onAuthStateChanged listener, which re-fetches the user doc and picks
+      // up the new subscriptionStatus/accessUntil.
+      window.location.reload()
+    } catch (err) {
+      setCancelError(err instanceof Error ? err.message : String(err))
+      setCancelInProgress(false)
+    }
+  }
 
   const [children, setChildren]               = useState<ChildRecord[]>([])
   const [editingChildIdx, setEditingChildIdx] = useState<number | null>(null)
@@ -413,6 +434,53 @@ export default function ProfilePage() {
             <p className="text-xs font-semibold mt-4" style={{ color: '#b91c1c' }}>
               {t.profile_subscription_past_due}
             </p>
+          )}
+          {user.subscriptionStatus === 'cancelling' && user.accessUntil && (
+            <p className="text-xs font-semibold mt-4" style={{ color: '#b45309' }}>
+              {t.profile_subscription_cancelling.replace(
+                '{date}',
+                new Date(user.accessUntil).toLocaleDateString(user.children[0]?.language === 'af' ? 'af-ZA' : 'en-ZA', { year: 'numeric', month: 'long', day: 'numeric' })
+              )}
+            </p>
+          )}
+          {(user.subscriptionStatus === 'active' || user.subscriptionStatus === 'past_due') && user.childPlans.some(tier => tier !== 'free') && (
+            <div className="mt-5 pt-5" style={{ borderTop: '1px solid #f3f4f6' }}>
+              {!confirmingCancel ? (
+                <button
+                  onClick={() => setConfirmingCancel(true)}
+                  className="text-xs font-semibold hover:underline underline-offset-2"
+                  style={{ color: '#6b7280' }}
+                >
+                  {t.profile_cancel_subscription_link}
+                </button>
+              ) : (
+                <div>
+                  <p className="text-sm text-gray-600 mb-4">{t.profile_cancel_subscription_confirm_body}</p>
+                  {cancelError && (
+                    <p className="text-xs font-semibold mb-3" style={{ color: '#b91c1c' }}>{cancelError}</p>
+                  )}
+                  <div className="flex gap-3">
+                    <button
+                      type="button"
+                      onClick={() => { setConfirmingCancel(false); setCancelError(null) }}
+                      disabled={cancelInProgress}
+                      className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors disabled:opacity-50"
+                    >
+                      {t.profile_cancel_subscription_keep}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleCancelSubscription}
+                      disabled={cancelInProgress}
+                      className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-50"
+                      style={{ backgroundColor: '#b91c1c' }}
+                    >
+                      {cancelInProgress ? t.profile_cancel_subscription_in_progress : t.profile_cancel_subscription_confirm}
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           )}
         </div>
 
