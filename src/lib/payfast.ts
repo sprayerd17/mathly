@@ -101,32 +101,51 @@ export async function verifySourceIp(ip: string): Promise<boolean> {
 // supplied the signature algorithm) rather than PayFast's own docs, which
 // weren't fetchable at implementation time.
 //
-// First live attempt failed ("PayFast could not process the cancellation").
-// Two fixes applied based on re-reading PayFast's documented timestamp
-// format and the community library more carefully — still unconfirmed
-// against a real response, since the failure body wasn't available:
-//   1. Timestamp now carries an explicit +00:00 UTC offset instead of being
-//      stripped to a bare, timezone-less string — PayFast's documented
-//      format is `YYYY-MM-DDTHH:MM:SS[+HH:MM]`, and an ambiguous timestamp
-//      is a likely reason a signed request gets rejected outright.
-//   2. The passphrase is now sent as a literal header too (in addition to
-//      being used to sign), matching the one working community
-//      implementation found — being cautious/omitting it was a guess in
-//      the wrong direction: an extra header PayFast doesn't need is
-//      harmless, but omitting one it does need fails closed exactly like
-//      what was observed.
-// If this next attempt still fails, the full status+body is now logged by
-// the caller (app/api/payfast/cancel-subscription/route.ts) — that response
-// text is the fastest way to pin down what's still wrong, faster than
-// guessing further from documentation fragments.
+// First live attempt failed generically. A second attempt (adding an
+// explicit UTC offset to the timestamp and sending the passphrase as its
+// own header, both guesses) got further and returned a specific, useful
+// error: 401 "Merchant authorization failed" — meaning the request reaches
+// PayFast but the signature itself doesn't match what PayFast computes.
+// That ruled both guesses IN as suspects, so this version instead mirrors a
+// concrete, complete third-party Node.js reference implementation found
+// afterwards (a full working signature+headers function, not just a
+// description) as closely as possible:
+//   1. Timestamp is back to a bare, offset-less string
+//      (`YYYY-MM-DDTHH:MM:SS`, no trailing Z or offset) — the reference
+//      implementation strips both and never adds one back. A timestamp
+//      format mismatch tends to fail as "invalid/expired timestamp", not
+//      "merchant authorization failed", so this wasn't the actual bug, but
+//      matching the reference exactly removes it as a variable.
+//   2. Passphrase is signed but NOT sent as its own header — the reference
+//      implementation only ever puts it into the signed string, same as
+//      the very first version of this function. Sending it as a literal
+//      header was the earlier speculative addition most likely to make a
+//      real PayFast server reject the signature outright (an unexpected
+//      header value it wasn't told to expect as part of the signed set).
+//   3. Encoding for the signature string now matches the reference exactly
+//      (`encodeURIComponent` + `%20`→`+`, nothing more) instead of the
+//      classic-API's fuller PHP-`urlencode` emulation (`pfUrlEncode`,
+//      still used for the separate classic checkout/ITN signature below,
+//      which is confirmed working in production) — the REST API isn't
+//      necessarily implemented in PHP, so assuming its encoding quirks
+//      match PHP's was itself part of the original, unverified guess.
+//   4. `Content-Type: application/json` is now sent, matching the
+//      reference — cheap to include even though this request has no body.
+// If this still fails, the full status+body is logged by the caller
+// (app/api/payfast/cancel-subscription/route.ts) and surfaced directly in
+// the cancel error message on the profile page.
 export type PayfastCancelResult = { success: boolean; status: number; body: string }
+
+function restUrlEncode(value: string): string {
+  return encodeURIComponent(value).replace(/%20/g, '+')
+}
 
 export async function cancelPayfastSubscription(
   token: string,
   config: PayfastConfig,
 ): Promise<PayfastCancelResult> {
   const version = 'v1'
-  const timestamp = new Date().toISOString().replace(/\.\d{3}Z$/, '+00:00')
+  const timestamp = new Date().toISOString().replace(/\.\d{3}Z$/, '')
 
   const signaturePairs: Record<string, string> = {
     'merchant-id': config.merchantId,
@@ -136,7 +155,7 @@ export async function cancelPayfastSubscription(
   if (config.passphrase) signaturePairs.passphrase = config.passphrase
   const signatureString = Object.keys(signaturePairs)
     .sort()
-    .map(key => `${key}=${pfUrlEncode(signaturePairs[key])}`)
+    .map(key => `${key}=${restUrlEncode(signaturePairs[key])}`)
     .join('&')
   const signature = crypto.createHash('md5').update(signatureString).digest('hex')
 
@@ -145,8 +164,8 @@ export async function cancelPayfastSubscription(
     version,
     timestamp,
     signature,
+    'Content-Type': 'application/json',
   }
-  if (config.passphrase) headers.passphrase = config.passphrase
 
   const res = await fetch(`https://api.payfast.co.za/subscriptions/${encodeURIComponent(token)}/cancel${config.mode === 'sandbox' ? '?testing=true' : ''}`, {
     method: 'PUT',
