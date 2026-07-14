@@ -612,6 +612,15 @@
         });
         formState.style.display = "none";
         successState.style.display = "block";
+        // Push notification to the owner's phone via ntfy.sh — best-effort,
+        // never blocks or fails the signup itself if it errors. No email
+        // address is sent (ntfy topics are public/unauthenticated) — check
+        // the dashboard's Coming-soon list for who actually signed up.
+        fetch("https://ntfy.sh/mathly-waitlist-7k2xq9vw4h", {
+          method: "POST",
+          headers: { Title: "New waitlist signup" },
+          body: "Someone just joined the Mathly waitlist",
+        }).catch(() => {});
       } catch (err) {
         errorMsg.textContent = "Something went wrong. Please try again.";
         errorMsg.style.display = "block";
