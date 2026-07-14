@@ -44,9 +44,28 @@ service cloud.firestore {
                                   'pendingChildPlans', 'pendingFounding', 'pendingAmount',
                                   'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
                                   'referredBy', 'freeSessionClaimed',
-                                  'pastDueSince', 'dunningStage']);
+                                  'pastDueSince', 'dunningStage',
+                                  'testAnalysisUsage']);
 
       allow delete: if false;
+    }
+
+    // Saved Test Analysis reports — one doc per analysis a Guided student
+    // chooses to keep. Written directly by the client (not the Admin SDK):
+    // running the analysis itself is server-gated by /api/analyse-test (tier
+    // check + usage limit), but saving the finished report back is a plain
+    // own-uid write, same trust level as the rest of this user's own data.
+    match /users/{userId}/testAnalysisReports/{reportId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.keys().hasOnly(['grade', 'date', 'report', 'imageCount'])
+                    && request.resource.data.grade is number
+                    && request.resource.data.grade >= 4 && request.resource.data.grade <= 12
+                    && request.resource.data.date is timestamp
+                    && request.resource.data.report is string
+                    && request.resource.data.report.size() <= 20000
+                    && request.resource.data.imageCount is number;
+      allow update, delete: if false;
     }
 
     // One record per successful referral attachment, written only by

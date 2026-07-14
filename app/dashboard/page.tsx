@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import Navbar from '@/app/components/Navbar'
 import { useAuth, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import TestAnalysisPanel from './TestAnalysisPanel'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -73,6 +74,7 @@ const DEFAULT_PANELS: Record<string, boolean> = {
   focus: true,
   report: true,
   classes: true,
+  testAnalysis: true,
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -282,7 +284,7 @@ export default function DashboardPage() {
     updateActiveChild(i)
   }
 
-  if (!mounted || !userName) return null
+  if (!mounted || !userName || !user) return null
   // TODO: Re-enable access control before launch.
   // if (userPackage === 'free') return <UpgradePrompt />
 
@@ -853,6 +855,18 @@ export default function DashboardPage() {
             >
               {t.dash_browse_live_classes}
             </Link>
+          </div>
+        </CollapsiblePanel>
+
+        <CollapsiblePanel
+          id="testAnalysis"
+          title={t.dash_panel_test_analysis_title}
+          summary={t.dash_panel_test_analysis_summary}
+          panels={panels}
+          onToggle={togglePanel}
+        >
+          <div className="mt-5">
+            <TestAnalysisPanel user={user} />
           </div>
         </CollapsiblePanel>
 
