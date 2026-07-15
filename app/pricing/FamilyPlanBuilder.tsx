@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
-import { initiateCheckout } from '@/src/lib/paystack-client'
+import { initiateCheckout, updateTiers } from '@/src/lib/paystack-client'
 import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 
 type Spots = { proTaken: number; guidedTaken: number }
@@ -88,6 +88,13 @@ export default function FamilyPlanBuilder() {
   const [checkingOut, setCheckingOut]     = useState(false)
   const [checkoutError, setCheckoutError] = useState('')
 
+  // Once a family already has an active subscription, re-submitting this
+  // page must amend that subscription in place rather than starting a new
+  // checkout — checkout unconditionally creates a brand-new Plan +
+  // Transaction, which would leave the original subscription still billing
+  // and double-charge any child who was already paid.
+  const hasActiveSub = user?.subscriptionStatus === 'active' || user?.subscriptionStatus === 'past_due'
+
   useEffect(() => {
     setMounted(true)
     const raw = localStorage.getItem(SPOTS_KEY)
@@ -124,6 +131,8 @@ export default function FamilyPlanBuilder() {
   )
   const personDetails = persons.map((p, i) => ({ label: p.label, ...perChild[i] }))
   const paidCount = persons.filter(p => p.tier !== 'free').length
+  const noChange = hasActiveSub && !!user && persons.length === user.childPlans.length
+    && persons.every((p, i) => p.tier === user.childPlans[i])
   const hasAnyDiscount = paidCount > 1 && personDetails.some(p => p.tier !== 'free' && !p.isFounding)
   const totalSaving = personDetails.reduce((sum, p) => {
     if (p.tier === 'free') return sum
@@ -140,7 +149,16 @@ export default function FamilyPlanBuilder() {
     setCheckoutError('')
     setCheckingOut(true)
     try {
-      await initiateCheckout(auth.currentUser, persons.map(p => p.tier), founding)
+      if (hasActiveSub) {
+        // Already subscribed — amend the existing Plan in place instead of
+        // starting a brand-new checkout, which would create a duplicate
+        // subscription and double-bill any already-paid child. Reload so
+        // the page re-hydrates from the updated user doc (new childPlans).
+        await updateTiers(auth.currentUser, persons.map(p => p.tier))
+        window.location.reload()
+      } else {
+        await initiateCheckout(auth.currentUser, persons.map(p => p.tier), founding)
+      }
     } catch {
       // Always show the localized message — CheckoutError's own message is
       // English-only and meant for logs/debugging, not display.
@@ -463,11 +481,13 @@ export default function FamilyPlanBuilder() {
         <button
           type="button"
           onClick={handleClaimSpot}
-          disabled={checkingOut || (!!user && paidCount === 0)}
+          disabled={checkingOut || (!!user && paidCount === 0) || noChange}
           className="block w-full text-center font-semibold py-3 rounded-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ backgroundColor: '#1e40af', color: '#fff' }}
         >
-          {checkingOut ? t.pricing_checkout_redirecting : t.pricing_claim_your_spot}
+          {checkingOut
+            ? (hasActiveSub ? t.pricing_plan_updating : t.pricing_checkout_redirecting)
+            : (hasActiveSub ? t.pricing_update_plan : t.pricing_claim_your_spot)}
         </button>
       </div>
 

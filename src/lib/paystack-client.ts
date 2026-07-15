@@ -128,3 +128,22 @@ export async function downgradeChild(fbUser: FirebaseUser, childIndex: number): 
   }
   return res.json()
 }
+
+// Changes an already-subscribed family's tier mix in place (any combination
+// of upgrades/downgrades across children) by amending the existing Plan —
+// no checkout redirect, since the change bills on the next cycle against
+// the card already on file. Only valid once a subscription is active; a
+// brand-new signup with no subscription yet must go through
+// initiateCheckout() instead, which this does not replace.
+export async function updateTiers(fbUser: FirebaseUser, childTiers: Tier[]): Promise<{ childPlans: Tier[]; newTotal: number }> {
+  const idToken = await fbUser.getIdToken()
+  const res = await fetch('/api/paystack/update-tiers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken, childTiers }),
+  })
+  if (!res.ok) {
+    throw new CheckoutError(await res.text().catch(() => 'Could not update your plan. Please try again.'))
+  }
+  return res.json()
+}
