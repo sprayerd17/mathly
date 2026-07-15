@@ -148,15 +148,17 @@ export async function disableSubscription(config: PaystackConfig, params: { code
 
 // Amends the billed amount for a Plan going forward — used when a family
 // downgrades one child off a paid tier and the monthly total shrinks.
-// `update_existing_subscription: true` tells Paystack to apply the new
-// amount to every subscription currently on this Plan, not just future
-// subscriptions created against it. Safe here specifically because
-// createPlan() (above) creates one dedicated Plan per family — there is
-// exactly one subscription on this code, so "existing subscriptions" means
-// this one family, never a different customer sharing a rate.
+// `update_existing_subscriptions: true` (plural — a live-verified 400
+// "Unknown/Unexpected parameter" confirmed the singular form some
+// third-party docs use is wrong) tells Paystack to apply the new amount to
+// every subscription currently on this Plan, not just future subscriptions
+// created against it. Safe here specifically because createPlan() (above)
+// creates one dedicated Plan per family — there is exactly one subscription
+// on this code, so "existing subscriptions" means this one family, never a
+// different customer sharing a rate.
 export async function updatePlan(config: PaystackConfig, params: { code: string; amountRands: number }) {
   return paystackRequest(config, `/plan/${encodeURIComponent(params.code)}`, {
     method: 'PUT',
-    body: { amount: randsToCents(params.amountRands), update_existing_subscription: true },
+    body: { amount: randsToCents(params.amountRands), update_existing_subscriptions: true },
   })
 }
