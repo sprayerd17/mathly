@@ -129,13 +129,21 @@ export async function downgradeChild(fbUser: FirebaseUser, childIndex: number): 
   return res.json()
 }
 
-// Changes an already-subscribed family's tier mix in place (any combination
-// of upgrades/downgrades across children) by amending the existing Plan —
-// no checkout redirect, since the change bills on the next cycle against
-// the card already on file. Only valid once a subscription is active; a
-// brand-new signup with no subscription yet must go through
-// initiateCheckout() instead, which this does not replace.
-export async function updateTiers(fbUser: FirebaseUser, childTiers: Tier[]): Promise<{ childPlans: Tier[]; newTotal: number }> {
+// Changes an already-subscribed family's tier mix (any combination of
+// upgrades/downgrades across children). Two outcomes depending on whether
+// the total is going up or down — see update-tiers/route.ts for why:
+//   - Total same or lower: applied immediately, resolves with the new
+//     childPlans/total, no redirect.
+//   - Total higher: the server can't collect money without a real checkout,
+//     so this redirects to Paystack for the one-time incremental charge —
+//     like initiateCheckout, it does not return normally in that case, and
+//     childPlans only actually changes once that payment is confirmed.
+// Only valid once a subscription is active; a brand-new signup with no
+// subscription yet must go through initiateCheckout() instead.
+export async function updateTiers(
+  fbUser: FirebaseUser,
+  childTiers: Tier[],
+): Promise<{ childPlans: Tier[]; newTotal: number } | undefined> {
   const idToken = await fbUser.getIdToken()
   const res = await fetch('/api/paystack/update-tiers', {
     method: 'POST',
@@ -145,5 +153,10 @@ export async function updateTiers(fbUser: FirebaseUser, childTiers: Tier[]): Pro
   if (!res.ok) {
     throw new CheckoutError(await res.text().catch(() => 'Could not update your plan. Please try again.'))
   }
-  return res.json()
+  const data = await res.json()
+  if (data.requiresPayment) {
+    redirectToPaystack(data.authorization_url)
+    return undefined
+  }
+  return data
 }

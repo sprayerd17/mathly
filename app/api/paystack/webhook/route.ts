@@ -1,9 +1,9 @@
 import { NextRequest } from 'next/server'
 import { FieldValue, type Firestore } from 'firebase-admin/firestore'
 import { getAdminDb } from '@/src/lib/firebase-admin'
-import { getPaystackConfig, verifyWebhookSignature, verifyTransaction, listSubscriptionsForCustomer } from '@/src/lib/paystack'
+import { getPaystackConfig, verifyWebhookSignature, verifyTransaction, listSubscriptionsForCustomer, updatePlan } from '@/src/lib/paystack'
 import { bookingConfirmedEmail, paymentFailedEmail, paymentReceiptEmail, sendEmail, sendOwnerAlert } from '@/src/lib/email'
-import type { Plan, Tier } from '@/src/lib/pricing'
+import { computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 
 const OK = () => new Response(null, { status: 200 })
 
@@ -20,7 +20,7 @@ async function logEvent(
   data: Record<string, unknown>,
   outcome: 'complete' | 'failed' | 'rejected',
   reason: string | null,
-  kind: 'signup' | 'renewal' | 'session' | null,
+  kind: 'signup' | 'renewal' | 'session' | 'upgrade' | null,
 ) {
   if (outcome === 'rejected') {
     await sendOwnerAlert(
@@ -339,6 +339,120 @@ export async function POST(req: NextRequest) {
       }
     }
     await logEvent(adminDb, event, data, 'failed', 'payment_not_complete', 'signup')
+    return OK()
+  }
+
+  // ── Tier upgrade on an already-active family — a one-time charge for just
+  // the incremental amount, initiated by /api/paystack/update-tiers whenever
+  // the new tier mix costs more than the current one. Paystack's Update Plan
+  // endpoint (used for downgrades and same-or-lower-cost changes) only ever
+  // changes what bills on the *next* cycle — it can't collect money today —
+  // so an increase has to go through an actual transaction first. Only once
+  // that charge is confirmed here do childPlans (and therefore access) get
+  // upgraded and the family's recurring Plan amended to the new, higher
+  // amount; granting access before payment would let a family upgrade, use
+  // the higher tier, then downgrade again before the next renewal ever
+  // billed the difference — permanently free access.
+  if (event === 'charge.success' && metadata.kind === 'upgrade') {
+    const uid = metadata.uid as string | undefined
+    if (!uid) {
+      await logEvent(adminDb, event, data, 'rejected', 'missing_metadata', 'upgrade')
+      return OK()
+    }
+    const userRef = adminDb.doc(`users/${uid}`)
+    const userSnap = await userRef.get()
+    if (!userSnap.exists) {
+      console.error('[paystack/webhook] user not found', { uid })
+      await logEvent(adminDb, event, data, 'rejected', 'user_not_found', 'upgrade')
+      return OK()
+    }
+    const userData = userSnap.data()!
+    const expectedChildPlans: Tier[] | undefined | null = userData.pendingChildPlans
+    if (!expectedChildPlans) {
+      await logEvent(adminDb, event, data, 'rejected', 'no_pending_upgrade', 'upgrade')
+      return OK()
+    }
+    const metadataTiers = metadata.childTiers
+    if (JSON.stringify(expectedChildPlans) !== JSON.stringify(metadataTiers)) {
+      console.error('[paystack/webhook] pendingChildPlans mismatch', { uid, expected: expectedChildPlans, received: metadataTiers })
+      await logEvent(adminDb, event, data, 'rejected', 'child_plans_mismatch', 'upgrade')
+      return OK()
+    }
+    if (typeof userData.paystackPlanCode !== 'string' || !userData.paystackPlanCode || !userData.paystackFounding) {
+      console.error('[paystack/webhook] upgrade with no plan code/founding on file', { uid })
+      await logEvent(adminDb, event, data, 'rejected', 'no_plan_on_file', 'upgrade')
+      return OK()
+    }
+
+    // childPlans hasn't been touched yet (only pendingChildPlans has) — this
+    // is still the pre-upgrade family, so recomputing its price here gives
+    // the same "current total" the update-tiers route quoted the one-time
+    // charge against.
+    const currentChildPlans = Array.isArray(userData.childPlans) ? (userData.childPlans as Tier[]) : []
+    const { total: currentTotal } = computeFamilyPrice(currentChildPlans, userData.paystackFounding)
+    const newTotal = typeof userData.pendingAmount === 'number' ? userData.pendingAmount : null
+    if (newTotal === null) {
+      await logEvent(adminDb, event, data, 'rejected', 'missing_pending_amount', 'upgrade')
+      return OK()
+    }
+    const expectedDifference = newTotal - currentTotal
+    const receivedAmount = typeof data.amount === 'number' ? data.amount / 100 : NaN
+    if (Number.isNaN(receivedAmount) || Math.abs(receivedAmount - expectedDifference) > 0.01) {
+      console.error('[paystack/webhook] upgrade amount mismatch', { uid, expectedDifference, receivedAmount })
+      await logEvent(adminDb, event, data, 'rejected', 'amount_mismatch', 'upgrade')
+      return OK()
+    }
+    if (!(await verifiedSuccess(data.reference))) {
+      await logEvent(adminDb, event, data, 'rejected', 'verify_call_failed', 'upgrade')
+      return OK()
+    }
+
+    // Amend the recurring Plan to the new full total *before* granting
+    // access — if this fails, the family has paid the incremental charge
+    // but next cycle would still bill the old (lower) amount forever, so
+    // leave pendingChildPlans/pendingAmount in place (a redelivered webhook
+    // will retry this) rather than granting access on an unconfirmed billing
+    // change, and alert for manual follow-up.
+    const planResult = await updatePlan(config, { code: userData.paystackPlanCode, amountRands: newTotal })
+    if (!planResult.ok) {
+      console.error('[paystack/webhook] plan amendment failed after upgrade payment', {
+        uid, status: planResult.status, message: planResult.message,
+      })
+      await sendOwnerAlert(
+        `Mathly: paid upgrade could not amend Paystack plan (uid ${uid})`,
+        `<p>A family paid a one-time upgrade charge (reference ${data.reference ?? '?'}) but amending their
+         recurring Paystack plan to the new total failed (status ${planResult.status}: ${planResult.message ?? 'unknown'}).
+         Needs manual reconciliation — do not ignore, their next renewal will still bill the old, lower amount.</p>`,
+      ).catch(() => {})
+      await logEvent(adminDb, event, data, 'rejected', 'plan_update_failed', 'upgrade')
+      return OK()
+    }
+
+    await userRef.update({
+      childPlans: expectedChildPlans,
+      pendingChildPlans: null,
+      pendingAmount: null,
+      lastPaymentDate: new Date().toISOString(),
+      lastPaymentAmount: receivedAmount,
+    })
+
+    await logEvent(adminDb, event, data, 'complete', null, 'upgrade')
+    if (userData.email) {
+      const mail = paymentReceiptEmail({ name: userData.name ?? '', amount: receivedAmount, item: 'Mathly plan upgrade' })
+      await sendEmail(userData.email, mail.subject, mail.html, mail.from)
+    }
+    return OK()
+  }
+
+  if (event === 'charge.failed' && metadata.kind === 'upgrade') {
+    const uid = metadata.uid as string | undefined
+    if (uid) {
+      // Nothing was granted yet (access only ever follows a confirmed
+      // payment above), so a failed charge just clears the stale quote —
+      // the family's existing subscription and access are untouched.
+      await adminDb.doc(`users/${uid}`).update({ pendingChildPlans: null, pendingAmount: null }).catch(() => {})
+    }
+    await logEvent(adminDb, event, data, 'failed', 'payment_not_complete', 'upgrade')
     return OK()
   }
 

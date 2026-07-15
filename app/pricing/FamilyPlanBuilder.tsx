@@ -150,12 +150,14 @@ export default function FamilyPlanBuilder() {
     setCheckingOut(true)
     try {
       if (hasActiveSub) {
-        // Already subscribed — amend the existing Plan in place instead of
-        // starting a brand-new checkout, which would create a duplicate
-        // subscription and double-bill any already-paid child. Reload so
-        // the page re-hydrates from the updated user doc (new childPlans).
-        await updateTiers(auth.currentUser, persons.map(p => p.tier))
-        window.location.reload()
+        // Already subscribed — amend the existing Plan/childPlans directly
+        // instead of starting a brand-new checkout, which would create a
+        // duplicate subscription and double-bill any already-paid child.
+        // If the total is increasing, updateTiers redirects to Paystack for
+        // the incremental charge instead of returning — nothing to reload
+        // in that case, the browser is navigating away.
+        const result = await updateTiers(auth.currentUser, persons.map(p => p.tier))
+        if (result) window.location.reload()
       } else {
         await initiateCheckout(auth.currentUser, persons.map(p => p.tier), founding)
       }
