@@ -3,9 +3,9 @@ import { getAdminDb } from '@/src/lib/firebase-admin'
 import { sendEmail, sessionReminderEmail } from '@/src/lib/email'
 
 // Sends "your session is tomorrow" / "starting soon" emails to paid
-// attendees. Meant to be hit by an external cron on an hourly cadence (see
-// vercel.json) — auth is a shared secret header, not the admin session
-// cookie, since no human is present when this fires.
+// attendees. Hit hourly by netlify/functions/cron-session-reminders.mts —
+// auth is a shared secret header, not the admin session cookie, since no
+// human is present when this fires.
 //
 // Windows are 2 hours wide so an hourly cron can't miss a session between
 // runs: the 24h reminder fires once between 23–25h before start, the 1h
