@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect, type ReactNode } from 'react'
+import { useState, useEffect, useRef, type ReactNode } from 'react'
 import Link from 'next/link'
 import { useAuth, getActiveChild, type Language } from '@/app/providers'
 import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
 import AIAssistant from '@/app/components/AIAssistant'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { logActivityCompletion } from '@/src/lib/activity-log'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -13,6 +14,7 @@ type Tab = 'Study Guide' | 'Practice' | 'Answers'
 
 interface Props {
   topicName: string
+  topicSlug: string
   grade: string
   isLocked: boolean
   studyGuideData?: TopicData
@@ -722,13 +724,15 @@ function ResultsSummary({
 
 // ─── Set-based practice (multiple named sets, e.g. 4 sets of 25) ──────────────
 
-function SetPractice({ sets }: { sets: PracticeSet[] }) {
+function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlug: string; grade: number }) {
   const [activeSet, setActiveSet] = useState(0)
   const [resultsBySet, setResultsBySet] = useState<(boolean[] | null)[][]>(() =>
     sets.map((s) => Array(s.questions.length).fill(null))
   )
   const [resetKeyBySet, setResetKeyBySet] = useState<number[]>(() => sets.map(() => 0))
   const t = useTranslations()
+  const { user } = useAuth()
+  const loggedSetsRef = useRef<Set<number>>(new Set())
 
   const current = sets[activeSet]
   const currentResults = resultsBySet[activeSet]
@@ -756,10 +760,26 @@ function SetPractice({ sets }: { sets: PracticeSet[] }) {
       next[activeSet] = next[activeSet] + 1
       return next
     })
+    loggedSetsRef.current.delete(activeSet)
   }
 
   const allAnswered = currentResults.every((r) => r !== null)
   const score = currentResults.reduce((sum, r) => sum + (r ? r.filter(Boolean).length : 0), 0)
+
+  useEffect(() => {
+    if (!allAnswered || !user || loggedSetsRef.current.has(activeSet)) return
+    loggedSetsRef.current.add(activeSet)
+    logActivityCompletion({
+      uid: user.uid,
+      childIndex: Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1),
+      grade,
+      topicSlug,
+      activityType: 'practiceSet',
+      setName: current.name ?? null,
+      score,
+      total: totalMarks,
+    })
+  }, [allAnswered, activeSet, score, totalMarks, user, grade, topicSlug, current.name])
 
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -850,9 +870,13 @@ function SetPractice({ sets }: { sets: PracticeSet[] }) {
 function OpenPractice({
   questions,
   scoreMessages,
+  topicSlug,
+  grade,
 }: {
   questions: OpenQuestion[]
   scoreMessages?: { minScore: number; message: string }[]
+  topicSlug: string
+  grade: number
 }) {
   // 1 mark per part; questions without parts count as 1 mark
   const totalMarks = questions.reduce(
@@ -864,6 +888,8 @@ function OpenPractice({
     Array(questions.length).fill(null)
   )
   const [resetKey, setResetKey] = useState(0)
+  const { user } = useAuth()
+  const loggedRef = useRef(false)
 
   function handleResult(index: number, partResults: boolean[]) {
     setResults((prev) => {
@@ -876,6 +902,7 @@ function OpenPractice({
   function handleReset() {
     setResults(Array(questions.length).fill(null))
     setResetKey((k) => k + 1)
+    loggedRef.current = false
   }
 
   const allAnswered = results.every((r) => r !== null)
@@ -884,6 +911,20 @@ function OpenPractice({
     0
   )
   const t = useTranslations()
+
+  useEffect(() => {
+    if (!allAnswered || !user || loggedRef.current) return
+    loggedRef.current = true
+    logActivityCompletion({
+      uid: user.uid,
+      childIndex: Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1),
+      grade,
+      topicSlug,
+      activityType: 'openPractice',
+      score,
+      total: totalMarks,
+    })
+  }, [allAnswered, score, totalMarks, user, grade, topicSlug])
 
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -984,7 +1025,7 @@ function RealStudyGuide({ data }: { data: TopicData }) {
 
 // ─── Section-grouped open practice ───────────────────────────────────────────
 
-function SectionOpenPractice({ data }: { data: TopicData }) {
+function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topicSlug: string; grade: number }) {
   const sectionsWithQ = data.sections.filter(s => (s.openQuestions?.length ?? 0) > 0)
 
   // Build a stable flat list with global indices before any hooks
@@ -1013,14 +1054,32 @@ function SectionOpenPractice({ data }: { data: TopicData }) {
     })
   }
 
+  const { user } = useAuth()
+  const loggedRef = useRef(false)
+
   function handleReset() {
     setResults(Array(flatItems.length).fill(null))
     setResetKey(k => k + 1)
+    loggedRef.current = false
   }
 
   const allAnswered = results.every(r => r !== null)
   const score = results.reduce((sum, r) => sum + (r ? r.filter(Boolean).length : 0), 0)
   const t = useTranslations()
+
+  useEffect(() => {
+    if (!allAnswered || !user || loggedRef.current) return
+    loggedRef.current = true
+    logActivityCompletion({
+      uid: user.uid,
+      childIndex: Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1),
+      grade,
+      topicSlug,
+      activityType: 'sectionPractice',
+      score,
+      total: totalMarks,
+    })
+  }, [allAnswered, score, totalMarks, user, grade, topicSlug])
 
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -1068,20 +1127,20 @@ function SectionOpenPractice({ data }: { data: TopicData }) {
   )
 }
 
-function RealPractice({ data }: { data: TopicData }) {
+function RealPractice({ data, topicSlug, grade }: { data: TopicData; topicSlug: string; grade: number }) {
   const hasSectionOpenQ = data.sections.some(s => (s.openQuestions?.length ?? 0) > 0)
   const total = data.sections.reduce((sum, s) => sum + (s.practiceQuestions?.length ?? 0), 0)
   const [answers, setAnswers] = useState<Record<string, boolean>>({})
   const t = useTranslations()
 
   if (data.practiceSets && data.practiceSets.length > 0) {
-    return <SetPractice sets={data.practiceSets} />
+    return <SetPractice sets={data.practiceSets} topicSlug={topicSlug} grade={grade} />
   }
 
-  if (hasSectionOpenQ) return <SectionOpenPractice data={data} />
+  if (hasSectionOpenQ) return <SectionOpenPractice data={data} topicSlug={topicSlug} grade={grade} />
 
   if (data.topicPractice && data.topicPractice.length > 0) {
-    return <OpenPractice questions={data.topicPractice} scoreMessages={data.scoreMessages} />
+    return <OpenPractice questions={data.topicPractice} scoreMessages={data.scoreMessages} topicSlug={topicSlug} grade={grade} />
   }
 
   function handleAnswer(key: string, correct: boolean) {
@@ -1150,7 +1209,7 @@ function RealPractice({ data }: { data: TopicData }) {
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }: Props) {
+export default function TopicTabs({ topicName, topicSlug, grade, isLocked, studyGuideData }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>('Study Guide')
   const [mounted, setMounted] = useState(false)
   const { user, openModal } = useAuth()
@@ -1239,7 +1298,7 @@ export default function TopicTabs({ topicName, grade, isLocked, studyGuideData }
       )}
       {activeTab === 'Practice' && (
         studyGuideData
-          ? <RealPractice data={studyGuideData} />
+          ? <RealPractice data={studyGuideData} topicSlug={topicSlug} grade={Number(grade)} />
           : <Practice topicName={topicName} />
       )}
       {activeTab === 'Answers' && !studyGuideData && <Answers />}

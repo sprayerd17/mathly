@@ -20,7 +20,7 @@ import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firest
 import { auth, db } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateCheckout } from '@/src/lib/paystack-client'
-import { computeFamilyPrice, FOUNDING_PRICE, type Tier } from '@/src/lib/pricing'
+import { computeFamilyPrice, FOUNDING_PRICE, type Tier, type FoundingStatus } from '@/src/lib/pricing'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -72,6 +72,17 @@ export type User = {
   paystackCustomerCode: string | null
   paystackSubscriptionCode: string | null
   paystackEmailToken: string | null
+  // The Paystack Plan this family's subscription bills against — persisted
+  // by the webhook's signup-success branch (via pendingPlanCode, set by
+  // checkout right after createPlan()). Needed to call Paystack's Update
+  // Plan endpoint when a child is downgraded off a paid tier.
+  paystackPlanCode: string | null
+  // Whether this family locked in founding pricing per tier at signup —
+  // persisted permanently by the webhook (unlike pendingFounding, which is
+  // nulled out once consumed). Needed to recompute the correct price via
+  // computeFamilyPrice() after a child is downgraded, without silently
+  // dropping a founding family to full price.
+  paystackFounding: FoundingStatus | null
   pendingChildPlans: Tier[] | null
   lastPaymentDate: string | null
   lastPaymentAmount: number | null
@@ -731,6 +742,12 @@ function sanitizePendingChildPlans(raw: unknown): Tier[] | null {
   return raw.map(sanitizeTier)
 }
 
+function sanitizePaystackFounding(raw: unknown): FoundingStatus | null {
+  const f = raw as Partial<FoundingStatus> | null | undefined
+  if (!f || typeof f !== 'object') return null
+  return { pro: f.pro === true, guided: f.guided === true }
+}
+
 // A child record as it may exist in Firestore before the language fields were added.
 function sanitizeChild(raw: unknown): Child {
   const c = (raw ?? {}) as Partial<Child>
@@ -778,6 +795,8 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     paystackCustomerCode: typeof data.paystackCustomerCode === 'string' ? data.paystackCustomerCode : null,
     paystackSubscriptionCode: typeof data.paystackSubscriptionCode === 'string' ? data.paystackSubscriptionCode : null,
     paystackEmailToken: typeof data.paystackEmailToken === 'string' ? data.paystackEmailToken : null,
+    paystackPlanCode: typeof data.paystackPlanCode === 'string' ? data.paystackPlanCode : null,
+    paystackFounding: sanitizePaystackFounding(data.paystackFounding),
     pendingChildPlans: sanitizePendingChildPlans(data.pendingChildPlans),
     lastPaymentDate: typeof data.lastPaymentDate === 'string' ? data.lastPaymentDate : null,
     lastPaymentAmount: typeof data.lastPaymentAmount === 'number' ? data.lastPaymentAmount : null,
@@ -838,6 +857,8 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       paystackCustomerCode: null,
       paystackSubscriptionCode: null,
       paystackEmailToken: null,
+      paystackPlanCode: null,
+      paystackFounding: null,
       pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,
@@ -857,6 +878,8 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       paystackCustomerCode: null,
       paystackSubscriptionCode: null,
       paystackEmailToken: null,
+      paystackPlanCode: null,
+      paystackFounding: null,
       pendingChildPlans: null,
       lastPaymentDate: null,
       lastPaymentAmount: null,

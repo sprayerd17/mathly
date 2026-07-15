@@ -92,7 +92,7 @@ export default function TopicPage({
       </header>
 
       <main>
-        <TopicTabs topicName={topicName} grade={grade} isLocked={isLocked} studyGuideData={studyGuideData} />
+        <TopicTabs topicName={topicName} topicSlug={topic} grade={grade} isLocked={isLocked} studyGuideData={studyGuideData} />
       </main>
 
     </div>

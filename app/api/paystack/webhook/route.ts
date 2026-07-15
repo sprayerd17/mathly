@@ -227,10 +227,20 @@ export async function POST(req: NextRequest) {
     const customerCode = data.customer?.customer_code ?? null
     const customerId = data.customer?.id ?? null
 
+    // Permanent copies of what checkout only ever quoted transiently —
+    // pendingFounding/pendingPlanCode get nulled out below once consumed,
+    // but a per-child downgrade later needs to know both: which Plan to
+    // amend, and whether this family locked in founding pricing (recomputing
+    // without that would risk silently overcharging a founding family).
+    const foundingForPersist = (userData.pendingFounding ?? { pro: false, guided: false }) as Record<Plan, boolean>
+    const planCodeForPersist = typeof userData.pendingPlanCode === 'string' ? userData.pendingPlanCode : null
+
     await userRef.update({
       childPlans: expectedChildPlans,
       subscriptionStatus: 'active',
       paystackCustomerCode: customerCode,
+      paystackFounding: foundingForPersist,
+      paystackPlanCode: planCodeForPersist,
       // subscription_code/email_token aren't on the charge event itself —
       // looked up right below, right after Paystack creates the
       // subscription record for this customer+plan. subscription.create
@@ -239,6 +249,7 @@ export async function POST(req: NextRequest) {
       pendingChildPlans: null,
       pendingFounding: null,
       pendingAmount: null,
+      pendingPlanCode: null,
       lastPaymentDate: new Date().toISOString(),
       lastPaymentAmount: receivedAmount,
       pastDueSince: null,
@@ -271,10 +282,9 @@ export async function POST(req: NextRequest) {
     // pendingFounding, and the flag applies to every paid seat of that tier
     // (matching computeFamilyPrice). settings/founding is the persistent
     // counter the dashboard and checkout read spots-remaining from.
-    const pendingFounding = (userData.pendingFounding ?? { pro: false, guided: false }) as Record<Plan, boolean>
     const foundingSeats: Record<Plan, number> = { pro: 0, guided: 0 }
     for (const tier of expectedChildPlans) {
-      if (tier !== 'free' && pendingFounding[tier]) foundingSeats[tier]++
+      if (tier !== 'free' && foundingForPersist[tier]) foundingSeats[tier]++
     }
     if (foundingSeats.pro > 0 || foundingSeats.guided > 0) {
       await adminDb.doc('settings/founding').set({

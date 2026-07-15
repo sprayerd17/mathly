@@ -100,6 +100,15 @@ export async function POST(req: NextRequest) {
     return new Response('Could not start checkout. Please try again.', { status: 502 })
   }
 
+  // Persist the Plan code the moment it exists — this is the only place it's
+  // ever created, and it must survive to webhook time (and beyond, for
+  // future amendments like a per-child downgrade) rather than staying
+  // transient like it does today. A separate write from the pending-fields
+  // update above, since that one intentionally runs before createPlan() so
+  // the profile page can show "upgrade in progress" without waiting on
+  // Paystack.
+  await adminDb.doc(`users/${uid}`).update({ pendingPlanCode: planResult.data.plan_code })
+
   const initResult = await initializeTransaction(config, {
     email,
     amountRands: amount,

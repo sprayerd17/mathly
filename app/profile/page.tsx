@@ -8,7 +8,8 @@ import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
 import { db, auth } from '@/src/lib/firebase'
-import { cancelSubscription } from '@/src/lib/paystack-client'
+import { cancelSubscription, downgradeChild } from '@/src/lib/paystack-client'
+import { computeFamilyPrice } from '@/src/lib/pricing'
 
 const MAX_CHILDREN = 3
 
@@ -59,6 +60,23 @@ export default function ProfilePage() {
     } catch (err) {
       setCancelError(err instanceof Error ? err.message : String(err))
       setCancelInProgress(false)
+    }
+  }
+
+  const [downgradingIndex, setDowngradingIndex]   = useState<number | null>(null)
+  const [downgradeInProgress, setDowngradeInProgress] = useState(false)
+  const [downgradeError, setDowngradeError]       = useState<string | null>(null)
+
+  async function handleDowngradeChild(index: number) {
+    if (!auth.currentUser) return
+    setDowngradeInProgress(true)
+    setDowngradeError(null)
+    try {
+      await downgradeChild(auth.currentUser, index)
+      window.location.reload()
+    } catch (err) {
+      setDowngradeError(err instanceof Error ? err.message : String(err))
+      setDowngradeInProgress(false)
     }
   }
 
@@ -397,29 +415,79 @@ export default function ProfilePage() {
           <div className="flex flex-col gap-4">
             {children.map((child, i) => {
               const tier: Tier = user.childPlans[i] ?? 'free'
+              const paidCount = user.childPlans.filter(pt => pt !== 'free').length
+              const canDowngrade = tier !== 'free' && paidCount > 1
               return (
                 <div
                   key={i}
-                  className={`flex items-center justify-between gap-4 ${!singularProfile && i < children.length - 1 ? 'pb-4' : ''}`}
+                  className={!singularProfile && i < children.length - 1 ? 'pb-4' : ''}
                   style={!singularProfile && i < children.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}
                 >
-                  <div>
-                    {!singularProfile && (
-                      <p className="text-xs font-semibold text-gray-500 mb-0.5">{child.name}</p>
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      {!singularProfile && (
+                        <p className="text-xs font-semibold text-gray-500 mb-0.5">{child.name}</p>
+                      )}
+                      <p className="font-bold text-lg" style={{ color: '#0f1f3d' }}>
+                        {tierLabel(tier)}
+                      </p>
+                      <p className="text-sm text-gray-500 mt-0.5">{tierDesc(tier)}</p>
+                    </div>
+                    {tier === 'free' && (
+                      <Link
+                        href="/pricing"
+                        className="shrink-0 text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
+                        style={{ backgroundColor: '#1e40af' }}
+                      >
+                        {t.profile_upgrade}
+                      </Link>
                     )}
-                    <p className="font-bold text-lg" style={{ color: '#0f1f3d' }}>
-                      {tierLabel(tier)}
-                    </p>
-                    <p className="text-sm text-gray-500 mt-0.5">{tierDesc(tier)}</p>
+                    {canDowngrade && downgradingIndex !== i && (
+                      <button
+                        onClick={() => { setDowngradingIndex(i); setDowngradeError(null) }}
+                        className="shrink-0 text-xs font-semibold hover:underline underline-offset-2"
+                        style={{ color: '#6b7280' }}
+                      >
+                        {t.profile_remove_child_link.replace('{name}', child.name)}
+                      </button>
+                    )}
                   </div>
-                  {tier === 'free' && (
-                    <Link
-                      href="/pricing"
-                      className="shrink-0 text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
-                      style={{ backgroundColor: '#1e40af' }}
-                    >
-                      {t.profile_upgrade}
-                    </Link>
+                  {canDowngrade && downgradingIndex === i && (
+                    <div className="mt-3 p-4 rounded-xl" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
+                      <p className="text-sm text-gray-600 mb-2">
+                        {t.profile_remove_child_confirm_body.replace('{name}', child.name)}
+                      </p>
+                      <p className="text-xs font-semibold mb-3" style={{ color: '#0f1f3d' }}>
+                        {t.profile_remove_child_new_total_label}: R
+                        {computeFamilyPrice(
+                          user.childPlans.map((pt, pi) => (pi === i ? 'free' : pt)),
+                          user.paystackFounding ?? { pro: false, guided: false },
+                        ).total}
+                        {t.pricing_per_month}
+                      </p>
+                      {downgradeError && (
+                        <p className="text-xs font-semibold mb-3" style={{ color: '#b91c1c' }}>{downgradeError}</p>
+                      )}
+                      <div className="flex gap-3">
+                        <button
+                          type="button"
+                          onClick={() => { setDowngradingIndex(null); setDowngradeError(null) }}
+                          disabled={downgradeInProgress}
+                          className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2 rounded-lg text-xs hover:bg-gray-50 transition-colors disabled:opacity-50"
+                        >
+                          {t.profile_cancel_subscription_keep}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleDowngradeChild(i)}
+                          disabled={downgradeInProgress}
+                          className="flex-1 font-semibold py-2 rounded-lg text-xs text-white transition-colors disabled:opacity-50"
+                          style={{ backgroundColor: '#b91c1c' }}
+                        >
+                          {downgradeInProgress ? t.profile_remove_child_in_progress : t.profile_remove_child_confirm}
+                        </button>
+                      </div>
+                    </div>
                   )}
                 </div>
               )

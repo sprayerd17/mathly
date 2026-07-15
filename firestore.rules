@@ -37,10 +37,16 @@ service cloud.firestore {
       // pastDueSince/dunningStage drive the dunning cron's follow-up cadence
       // for failed renewals — same server-only reasoning as the other
       // billing fields.
+      // paystackPlanCode/paystackFounding are set once by the webhook's
+      // signup branch (via pendingPlanCode/pendingFounding) and only change
+      // again through another server round-trip — /api/paystack/downgrade-child
+      // (Admin SDK) is the only other writer of childPlans besides the
+      // webhook and add-child, and it never touches these two fields itself.
       allow update: if request.auth != null && request.auth.uid == userId
                     && !request.resource.data.diff(resource.data).affectedKeys()
                          .hasAny(['childPlans', 'subscriptionStatus',
                                   'paystackCustomerCode', 'paystackSubscriptionCode', 'paystackEmailToken',
+                                  'paystackPlanCode', 'pendingPlanCode', 'paystackFounding',
                                   'pendingChildPlans', 'pendingFounding', 'pendingAmount',
                                   'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
                                   'referredBy', 'freeSessionClaimed',
@@ -65,6 +71,30 @@ service cloud.firestore {
                     && request.resource.data.report is string
                     && request.resource.data.report.size() <= 20000
                     && request.resource.data.imageCount is number;
+      allow update, delete: if false;
+    }
+
+    // Practice-activity completions — one doc per finished practice
+    // set/section/quiz attempt, written directly by the client the moment a
+    // student finishes answering (see TopicTabs.tsx). Best-effort and
+    // append-only: nothing here gates access or billing, so a failed write
+    // just means that one attempt isn't reflected on the dashboard — never
+    // worth blocking the student's practice session over.
+    match /users/{userId}/activityLog/{activityId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.keys().hasOnly(['childIndex', 'grade', 'topicSlug', 'activityType', 'setName', 'score', 'total', 'completedAt'])
+                    && request.resource.data.childIndex is int && request.resource.data.childIndex >= 0
+                    && request.resource.data.grade is number
+                    && request.resource.data.grade >= 4 && request.resource.data.grade <= 12
+                    && request.resource.data.topicSlug is string
+                    && request.resource.data.topicSlug.size() > 0 && request.resource.data.topicSlug.size() <= 100
+                    && request.resource.data.activityType in ['practiceSet', 'sectionPractice', 'openPractice']
+                    && (request.resource.data.setName is string || request.resource.data.setName == null)
+                    && request.resource.data.score is number && request.resource.data.score >= 0
+                    && request.resource.data.total is number && request.resource.data.total > 0
+                    && request.resource.data.score <= request.resource.data.total
+                    && request.resource.data.completedAt is timestamp;
       allow update, delete: if false;
     }
 
