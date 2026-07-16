@@ -8,6 +8,21 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Gedeelde "Kyk vorentoe"-verrykingsbanier ─────────────────────────────
+// CAPS Intermediêre Fase Graad 5 sluit nie persentasies in nie. Die Graad
+// 6-verduidelikingsnotas stel dit duidelik: "Persentasies is ʼn nuwe
+// onderwerp vir Graad 6-leerders." Graad 5 se eie breuke-verduidelikings-
+// notas sê eweneens "Because learners will only work with decimal
+// fractions in Grade 6...", en Graad 5 se tydtoekenningstabel het geen
+// "Persentasies"- (of selfs "Desimale breuke"-) onderwerplyn nie, anders
+// as Graad 6 se tabel wat albei apart lys. Behou hier as duidelik gemerkte
+// verryking omdat dit akkurate, goed-opgeboude inhoud is.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Kyk vorentoe: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Desimale Breuke',
   grade: 5,
@@ -719,7 +734,11 @@ export const topicData: TopicData = {
       title: 'Omskakeling tussen Breuke, Desimale en Persentasies',
       icon: '%',
       explanation:
-        `<p style="margin-bottom:16px;">Breuke, desimale en persentasies is <strong>drie verskillende maniere om dieselfde waarde uit te druk</strong>. Om tussen hulle te kan omskakel, is ʼn sleutelvaardigheid in Graad 5. Sodra jy die verband verstaan, kan jy kies watter vorm ook al die nuttigste is vir ʼn gegewe probleem.</p>` +
+        lookingAhead(
+          'persentasies',
+          'CAPS Graad 5 sluit geensins persentasies in nie — leerders werk slegs met gewone breuke en desimale breuke (tiendes en honderdstes). Die Graad 6-kurrikulum se verduidelikingsnotas stel dit duidelik: "Persentasies is ʼn nuwe onderwerp vir Graad 6-leerders." Hierdie hele afdeling is akkuraat en nuttig, maar dit is Graad 6-inhoud — hier behou as duidelik gemerkte verryking.'
+        ) +
+        `<p style="margin-bottom:16px;">Breuke, desimale en persentasies is <strong>drie verskillende maniere om dieselfde waarde uit te druk</strong>. Om tussen hulle te kan omskakel, is ʼn nuttige vaardigheid. Sodra jy die verband verstaan, kan jy kies watter vorm ook al die nuttigste is vir ʼn gegewe probleem.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -1063,45 +1082,54 @@ export const topicData: TopicData = {
       explanation: 'Stap 1 — Totale koste: R3,75 + R1,50\nHonderdstes: 5 + 0 = 5.\nTiendes: 7 + 5 = 12. Skryf 2, dra 1 oor.\nEne: 3 + 1 + 1 = 5.\nTotaal: R5,25\n\nStap 2 — Kleingeld: R10,00 − R5,25\nHonderdstes: 0 − 5 — leen (kaskadeer deur tiendes). Resultaat: 10 − 5 = 5.\nTiendes: 9 − 2 = 7.\nEne: 9 − 5 = 4.\nKleingeld: R4,75 ✓',
     },
 
-    // ── Afdeling 4: Omskakeling tussen Breuke, Desimale en Persentasies ──────
+    // ── Afdeling 4: Meer Breuk ⇔ Desimaal-omskakelingsoefening ───────────────
+    // (persentasie-inhoud verskuif — sien die "Kyk vorentoe"-verrykingsbanier
+    // in die converting-fractions-decimals-percentages-afdeling)
 
-    // ── Q10 Easy — decimal to percentage ─────────────────────────────────────
+    // ── Q10 Easy — decimal to fraction ───────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Skryf 0,5 as ʼn persentasie.',
-      answer: '50%',
+      question: 'Skryf 0,5 as ʼn gewone breuk in eenvoudigste vorm.',
+      answer: '1/2',
       checkMode: 'auto',
-      correctAnswer: '50%',
-      explanation: 'Om ʼn desimaal na ʼn persentasie om te skakel, vermenigvuldig met 100: 0,5 × 100 = 50. Skryf die %-teken: 50% ✓',
+      correctAnswer: '1/2',
+      correctAnswers: ['1/2', '5/10'],
+      explanation: '0,5 beteken 5 tiendes = 5/10. Vereenvoudig deur teller en noemer met 5 te deel: 5/10 = 1/2 ✓',
     },
 
-    // ── Q11 Medium — converting in both directions ────────────────────────────
+    // ── Q11 Medium — converting fractions and decimals ────────────────────────
     {
       difficulty: 'Medium',
       question: 'Skakel elk van die volgende om.',
-      answer: 'a) 0,3 en 30%\nb) 25/100 en 25%',
+      answer: 'a) 3/5\nb) 0,25\nc) 0,75',
       checkMode: 'auto',
       parts: [
         {
-          label: 'a) Skryf 3/10 as ʼn desimaal en as ʼn persentasie.',
-          correctAnswer: '0,3 and 30%',
-          correctAnswers: ['0.3 and 30%', '0.3, 30%', '0,3 en 30%', '0,3, 30%'],
-          explanation: 'Breuk na desimaal: 3/10 = 0,3 (3 tiendes → 1 desimale plek).\nDesimaal na persentasie: 0,3 × 100 = 30%.\nAntwoord: 3/10 = 0,3 = 30% ✓',
+          label: 'a) Skryf 0,6 as ʼn breuk in eenvoudigste vorm.',
+          correctAnswer: '3/5',
+          correctAnswers: ['3/5', '6/10'],
+          explanation: 'Desimaal na breuk: 0,6 het een desimale plek (tiendes), dus 0,6 = 6/10. Vereenvoudig deur teller en noemer met 2 te deel: 6/10 = 3/5 ✓',
         },
         {
-          label: 'b) Skryf 0,25 as ʼn breuk en as ʼn persentasie.',
-          correctAnswer: '25/100 and 25%',
-          correctAnswers: ['25/100 and 25%', '1/4 and 25%', '25/100, 25%', '1/4, 25%', '25/100 en 25%', '1/4 en 25%'],
-          explanation: 'Desimaal na breuk: 0,25 het twee desimale plekke (honderdstes), dus 0,25 = 25/100.\nDesimaal na persentasie: 0,25 × 100 = 25%.\nAntwoord: 0,25 = 25/100 = 25% ✓',
+          label: 'b) Skryf 1/4 as ʼn desimaal.',
+          correctAnswer: '0,25',
+          correctAnswers: ['0.25', '0,25'],
+          explanation: 'Breuk na desimaal: vermenigvuldig teller en noemer met 25 om noemer 100 te kry: 1/4 = 25/100 = 0,25 ✓',
+        },
+        {
+          label: 'c) Skryf 3/4 as ʼn desimaal.',
+          correctAnswer: '0,75',
+          correctAnswers: ['0.75', '0,75'],
+          explanation: 'Breuk na desimaal: vermenigvuldig teller en noemer met 25 om noemer 100 te kry: 3/4 = 75/100 = 0,75 ✓',
         },
       ],
     },
 
-    // ── Q12 Hard — score as decimal and percentage ────────────────────────────
+    // ── Q12 Hard — score as a decimal, then rounded ────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Thabo behaal 17 uit 20. Skryf sy telling as ʼn desimaal en as ʼn persentasie.',
-      answer: 'a) 0,85\nb) 85%',
+      question: 'Thabo behaal 17 uit 20. Skryf sy telling as ʼn desimaal, en rond dan die desimaal af tot een desimale plek.',
+      answer: 'a) 0,85\nb) 0,9',
       checkMode: 'auto',
       parts: [
         {
@@ -1111,9 +1139,10 @@ export const topicData: TopicData = {
           explanation: 'Skryf die telling as ʼn breuk: 17/20.\nSkakel om na ʼn breuk met noemer 100 deur teller en noemer met 5 te vermenigvuldig: 17/20 = 85/100 = 0,85 ✓',
         },
         {
-          label: 'b) Skryf die telling as ʼn persentasie.',
-          correctAnswer: '85%',
-          explanation: 'Vermenigvuldig die desimaal met 100: 0,85 × 100 = 85. Skryf die %-teken: 85% ✓',
+          label: 'b) Rond die telling af tot een desimale plek.',
+          correctAnswer: '0,9',
+          correctAnswers: ['0.9', '0,9'],
+          explanation: 'Kyk na die honderdstes-syfer van 0,85, wat 5 is. Aangesien 5 opgerond word, gaan die tiendes-syfer van 8 na 9: 0,85 ≈ 0,9 ✓',
         },
       ],
     },
@@ -1132,7 +1161,7 @@ export const topicData: TopicData = {
   // OEFENSTELLE — 3 stelle × 20 vrae, hoofstuk-hersieningstyl
   // Blokke: 0-3 Plekwaarde & lees/skryf | 4-7 Vergelyk & orden |
   // 8-11 Optel/aftrek kolommetode | 12-15 Woordprobleme | 16-17 Omskakeling
-  // breuke/desimale/persentasies | 18-19 Multi-stap & foutopsporing
+  // breuke/desimale | 18-19 Multi-stap & foutopsporing
   // ═══════════════════════════════════════════════════════════════════════════
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
@@ -1161,7 +1190,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Beker bevat 8,05 liter water. As 3,6 liter uitgegooi word, hoeveel water bly oor?', answer: '4,45 L', checkMode: 'auto', correctAnswer: '4,45', correctAnswers: ['4.45', '4.45 L', '4,45', '4,45 L'], explanation: 'Herskryf 3,6 as 3,60. Honderdstes: 5 − 0 = 5. Tiendes: 0 − 6 — leen van ene. Ene word 7, tiendes word 10. 10 − 6 = 4. Ene: 7 − 3 = 4. Antwoord: 4,45 L ✓' },
         { difficulty: 'Medium', question: 'Zinhle koop brood vir R18,65 en melk vir R14,90. Hoeveel spandeer sy altesaam?', answer: 'R33,55', checkMode: 'auto', correctAnswer: 'R33,55', correctAnswers: ['R33.55', '33.55', 'R33,55', '33,55'], explanation: 'Honderdstes: 5 + 0 = 5. Tiendes: 6 + 9 = 15. Skryf 5, dra 1 oor. Ene: 8 + 4 + 1 = 13. Skryf 3, dra 1 oor. Tiene: 1 + 1 + 1 = 3. Totaal: R33,55 ✓' },
         { difficulty: 'Medium', question: 'ʼn Stuk tou is 4,35 m lank. ʼn Tweede stuk is 2,8 m lank. Wat is die gesamentlike lengte van albei stukke tou?', answer: '7,15 m', checkMode: 'auto', correctAnswer: '7,15', correctAnswers: ['7.15', '7.15 m', '7,15', '7,15 m'], explanation: 'Herskryf 2,8 as 2,80. Honderdstes: 5 + 0 = 5. Tiendes: 3 + 8 = 11. Skryf 1, dra 1 oor. Ene: 4 + 2 + 1 = 7. Antwoord: 7,15 m ✓' },
-        { difficulty: 'Medium-Hard', question: 'Priya behaal 23/25 in ʼn speltoets. Skryf haar telling as ʼn desimale breuk en as ʼn persentasie.', answer: '0,92 en 92%', checkMode: 'auto', correctAnswer: '0,92 and 92%', correctAnswers: ['0.92 and 92%', '0.92, 92%', '0,92 en 92%', '0,92, 92%'], explanation: 'Skakel 23/25 om na ʼn breuk met noemer 100 deur teller en noemer met 4 te vermenigvuldig: 23/25 = 92/100 = 0,92. Vermenigvuldig met 100 vir die persentasie: 0,92 × 100 = 92%. Antwoord: 0,92 = 92% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Priya behaal 23/25 in ʼn speltoets. Skryf haar telling as ʼn desimale breuk.', answer: '0,92', checkMode: 'auto', correctAnswer: '0,92', correctAnswers: ['0.92', '0,92', '0.920', '0,920'], explanation: 'Skakel 23/25 om na ʼn breuk met noemer 100 deur teller en noemer met 4 te vermenigvuldig: 23/25 = 92/100 = 0,92 ✓' },
         { difficulty: 'Hard', question: 'Drie vriende het hierdie spaargeld: Neo het R24,60, Aisha het R24,06, en Kabelo het R24,65.\n\na) Orden die drie bedrae van minste na meeste.\nb) Bereken die verskil tussen die grootste en kleinste bedrag.\nc) Skryf die verskil as ʼn breuk van R1, en vereenvoudig dit dan.', answer: 'a) R24,06, R24,60, R24,65\nb) R24,65 − R24,06 = R0,59\nc) 59/100 (reeds in eenvoudigste vorm aangesien 59 ʼn priemgetal is)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Leerder trek 6,02 − 3,47 af en skryf: "0 min 7 in die honderdstes-kolom, dus skryf ek net 7 en gaan aan." Verduidelik wat verkeerd is met hierdie redenasie en gee die korrekte antwoord.', answer: 'Die leerder kan nie eenvoudig ʼn groter syfer van ʼn kleiner een aftrek en die verskil neerskryf nie — hulle moet leen. Aangesien 2 (honderdstes) − 7 nie moontlik is nie, leen 1 van die tiendes-kolom: tiendes word -1 wat ook nie genoeg is nie, dus leen ook van ene. As dit korrek uitgewerk word: 6,02 − 3,47 = 2,55.', checkMode: 'self' },
       ],
@@ -1199,7 +1228,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Rol lint is 9,03 m lank. As 5,4 m afgesny word, hoeveel lint bly oor?', answer: '3,63 m', checkMode: 'auto', correctAnswer: '3,63', correctAnswers: ['3.63', '3.63 m', '3,63', '3,63 m'], explanation: 'Herskryf 5,4 as 5,40. Honderdstes: 3 − 0 = 3. Tiendes: 0 − 4 — leen van ene. Ene word 8, tiendes word 10. 10 − 4 = 6. Ene: 8 − 5 = 3. Antwoord: 3,63 m ✓' },
         { difficulty: 'Medium', question: 'Tumi koop ʼn skryfboek vir R22,75 en ʼn pen vir R9,50. Hoeveel spandeer hy altesaam?', answer: 'R32,25', checkMode: 'auto', correctAnswer: 'R32,25', correctAnswers: ['R32.25', '32.25', 'R32,25', '32,25'], explanation: 'Honderdstes: 5 + 0 = 5. Tiendes: 7 + 5 = 12. Skryf 2, dra 1 oor. Ene: 2 + 9 + 1 = 12. Skryf 2, dra 1 oor. Tiene: 2 + 0 + 1 = 3. Totaal: R32,25 ✓' },
         { difficulty: 'Medium', question: 'ʼn Beker bevat 3,6 liter vrugtesap. Zoe gooi 1,85 liter in glase uit. Hoeveel sap bly oor in die beker?', answer: '1,75 L', checkMode: 'auto', correctAnswer: '1,75', correctAnswers: ['1.75', '1.75 L', '1,75', '1,75 L'], explanation: 'Herskryf 3,6 as 3,60. Honderdstes: 0 − 5 — leen van tiendes. Tiendes word 5, honderdstes word 10. 10 − 5 = 5. Tiendes: 5 − 8 — steeds te klein, leen van ene. Ene word 2, tiendes word 15. 15 − 8 = 7. Ene: 2 − 1 = 1. Antwoord: 1,75 L ✓' },
-        { difficulty: 'Medium-Hard', question: 'Karabo behaal 9/20 in ʼn vasvra. Skryf haar telling as ʼn desimale breuk en as ʼn persentasie.', answer: '0,45 en 45%', checkMode: 'auto', correctAnswer: '0,45 and 45%', correctAnswers: ['0.45 and 45%', '0.45, 45%', '0,45 en 45%', '0,45, 45%'], explanation: 'Skakel 9/20 om na ʼn breuk met noemer 100 deur teller en noemer met 5 te vermenigvuldig: 9/20 = 45/100 = 0,45. Vermenigvuldig met 100 vir die persentasie: 0,45 × 100 = 45%. Antwoord: 0,45 = 45% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Karabo behaal 9/20 in ʼn vasvra. Skryf haar telling as ʼn desimale breuk.', answer: '0,45', checkMode: 'auto', correctAnswer: '0,45', correctAnswers: ['0.45', '0,45', '0.450', '0,450'], explanation: 'Skakel 9/20 om na ʼn breuk met noemer 100 deur teller en noemer met 5 te vermenigvuldig: 9/20 = 45/100 = 0,45 ✓' },
         { difficulty: 'Hard', question: 'Drie atlete het hierdie afstande in ʼn oefensessie afgelê: Bongi hardloop 5,42 km, Ruan hardloop 5,4 km, en Dineo hardloop 5,24 km.\n\na) Orden die drie afstande van minste na meeste.\nb) Bereken die verskil tussen die grootste en kleinste afstand.\nc) Skryf die verskil as ʼn breuk van 1 km, en vereenvoudig dit dan.', answer: 'a) 5,24 km, 5,4 km, 5,42 km\nb) 5,42 − 5,24 = 0,18 km\nc) 18/100 = 9/50 (vereenvoudig deur met 2 te deel)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Leerder tel 3,7 + 2,68 op en skryf: "7 + 68 = 75, dus is die antwoord 3,75." Verduidelik wat verkeerd is met hierdie redenasie en gee die korrekte antwoord.', answer: 'Die leerder het die tiendes- en honderdstes-syfers saam getel asof dit heelgetalle is, in plaas daarvan om die desimale plekke korrek op te lyn. 3,7 moet eers as 3,70 herskryf word. Dan: honderdstes 0 + 8 = 8, tiendes 7 + 6 = 13 (skryf 3, dra 1 oor), ene 3 + 2 + 1 = 6. Die korrekte antwoord is 3,7 + 2,68 = 6,38.', checkMode: 'self' },
       ],
@@ -1237,8 +1266,8 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Watertenk hou 7,04 kL. As 2,6 kL gebruik word, hoeveel water bly oor in die tenk?', answer: '4,44 kL', checkMode: 'auto', correctAnswer: '4,44', correctAnswers: ['4.44', '4.44 kL', '4,44', '4,44 kL'], explanation: 'Herskryf 2,6 as 2,60. Honderdstes: 4 − 0 = 4. Tiendes: 0 − 6 — leen van ene. Ene word 6, tiendes word 10. 10 − 6 = 4. Ene: 6 − 2 = 4. Antwoord: 4,44 kL ✓' },
         { difficulty: 'Medium', question: 'ʼn Skoolkiosk verkoop ʼn toebroodjie vir R16,80 en ʼn sap vir R8,45. Wat is die totale koste van albei items?', answer: 'R25,25', checkMode: 'auto', correctAnswer: 'R25,25', correctAnswers: ['R25.25', '25.25', 'R25,25', '25,25'], explanation: 'Honderdstes: 0 + 5 = 5. Tiendes: 8 + 4 = 12. Skryf 2, dra 1 oor. Ene: 6 + 8 + 1 = 15. Skryf 5, dra 1 oor. Tiene: 1 + 0 + 1 = 2. Totaal: R25,25 ✓' },
         { difficulty: 'Medium', question: 'Twee wandelroetes meet 3,75 km en 2,9 km. Wat is die gesamentlike afstand van albei roetes?', answer: '6,65 km', checkMode: 'auto', correctAnswer: '6,65', correctAnswers: ['6.65', '6.65 km', '6,65', '6,65 km'], explanation: 'Herskryf 2,9 as 2,90. Honderdstes: 5 + 0 = 5. Tiendes: 7 + 9 = 16. Skryf 6, dra 1 oor. Ene: 3 + 2 + 1 = 6. Antwoord: 6,65 km ✓' },
-        { difficulty: 'Medium-Hard', question: 'Lindiwe behaal 7/8 in ʼn praktiese toets. Skryf haar telling as ʼn desimale breuk en as ʼn persentasie.', answer: '0,875 en 87,5%', checkMode: 'auto', correctAnswer: '0,875 and 87,5%', correctAnswers: ['0.875 and 87.5%', '0.875, 87.5%', '0,875 en 87,5%', '0,875, 87,5%'], explanation: '7/8 moet omgeskakel word deur deling, aangesien 8 nie ʼn direkte faktor van 10 of 100 is nie: 7 ÷ 8 = 0,875. Vermenigvuldig met 100 vir die persentasie: 0,875 × 100 = 87,5%. Antwoord: 0,875 = 87,5% ✓' },
-        { difficulty: 'Hard', question: 'ʼn Winkel hou drie dae se inkomste dop: Maandag R156,40, Dinsdag R156,04, Woensdag R156,45.\n\na) Orden die drie bedrae van minste na meeste.\nb) Bereken die verskil tussen die grootste en kleinste bedrag.\nc) Skryf Woensdag se inkomste as ʼn persentasie van R200 (m.a.w. watter breuk van R200 is R156,45, as ʼn persentasie — rond af tot die naaste heel persent).', answer: 'a) R156,04, R156,40, R156,45\nb) R156,45 − R156,04 = R0,41\nc) 156,45/200 = 0,78225 → 78% (afgerond tot naaste heel persent)', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'Lindiwe behaal 7/8 in ʼn praktiese toets. Skryf haar telling as ʼn desimale breuk.', answer: '0,875', checkMode: 'auto', correctAnswer: '0,875', correctAnswers: ['0.875', '0,875'], explanation: '7/8 moet omgeskakel word deur deling, aangesien 8 nie ʼn direkte faktor van 10 of 100 is nie: 7 ÷ 8 = 0,875 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Winkel hou drie dae se inkomste dop: Maandag R156,40, Dinsdag R156,04, Woensdag R156,45.\n\na) Orden die drie bedrae van minste na meeste.\nb) Bereken die verskil tussen die grootste en kleinste bedrag.\nc) Die winkel se teiken vir Woensdag was R200. Skryf die tekort (teiken minus Woensdag se inkomste) as ʼn desimale bedrag in rand.', answer: 'a) R156,04, R156,40, R156,45\nb) R156,45 − R156,04 = R0,41\nc) R200,00 − R156,45 = R43,55', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Leerder trek 5,2 − 1,65 af en skryf: "0,2 minus 0,65 is onmoontlik, dus moet die antwoord negatief wees — 5,2 − 1,65 kan nie met leen uitgewerk word nie." Verduidelik wat verkeerd is met hierdie redenasie en gee die korrekte antwoord.', answer: 'Die leerder is verkeerd — desimale aftrekking met leen werk presies soos heelgetal-aftrekking; dit word nie onmoontlik of negatief net omdat ʼn kolom op sy eie te klein lyk nie. Herskryf 5,2 as 5,20. Honderdstes: 0 − 5, leen van tiendes (tiendes word 1, honderdstes word 10): 10 − 5 = 5. Tiendes: 1 − 6, leen van ene (ene word 4, tiendes word 11): 11 − 6 = 5. Ene: 4 − 1 = 3. Die korrekte antwoord is 5,2 − 1,65 = 3,55.', checkMode: 'self' },
       ],
       scoreMessages: [

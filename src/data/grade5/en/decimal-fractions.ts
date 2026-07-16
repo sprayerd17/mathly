@@ -8,6 +8,21 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
+// ─── Shared "Looking ahead" enrichment banner ─────────────────────────────
+// CAPS Intermediate Phase Grade 5 does not include percentages. The Grade 6
+// clarification notes state plainly: "Percentages is a new topic for Grade
+// 6 learners." Grade 5's own fractions clarification notes likewise say
+// "Because learners will only work with decimal fractions in Grade 6...",
+// and the Grade 5 time-allocation table has no "Percentages" (or even
+// "Decimal fractions") topic line at all, unlike Grade 6's table which
+// lists both separately. Kept here as clearly labelled enrichment because
+// it is accurate, well-built content.
+const lookingAhead = (title: string, body: string) =>
+  `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+  `<p style="font-weight:700;color:#7c3aed;margin-bottom:6px;">🔭 Looking ahead: ${title}</p>` +
+  `<p style="margin:0;color:#581c87;">${body}</p>` +
+  `</div>`
+
 export const topicData: TopicData = {
   title: 'Decimal Fractions',
   grade: 5,
@@ -714,7 +729,11 @@ export const topicData: TopicData = {
       title: 'Converting Between Fractions, Decimals and Percentages',
       icon: '%',
       explanation:
-        `<p style="margin-bottom:16px;">Fractions, decimals and percentages are <strong>three different ways of expressing the same value</strong>. Being able to convert between them is a key skill in Grade 5. Once you understand the connection, you can choose whichever form is most useful for a given problem.</p>` +
+        lookingAhead(
+          'percentages',
+          'CAPS Grade 5 does not include percentages at all — learners only work with common fractions and decimal fractions (tenths and hundredths). The Grade 6 curriculum clarification notes state plainly: "Percentages is a new topic for Grade 6 learners." This whole section is accurate and useful, but it is Grade 6 content — kept here as clearly labelled enrichment.'
+        ) +
+        `<p style="margin-bottom:16px;">Fractions, decimals and percentages are <strong>three different ways of expressing the same value</strong>. Being able to convert between them is a useful skill. Once you understand the connection, you can choose whichever form is most useful for a given problem.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -1051,45 +1070,52 @@ export const topicData: TopicData = {
       explanation: 'Step 1 — Total cost: R3.75 + R1.50\nHundredths: 5 + 0 = 5.\nTenths: 7 + 5 = 12. Write 2, carry 1.\nUnits: 3 + 1 + 1 = 5.\nTotal: R5.25\n\nStep 2 — Change: R10.00 − R5.25\nHundredths: 0 − 5 — borrow (cascades through tenths). Result: 10 − 5 = 5.\nTenths: 9 − 2 = 7.\nUnits: 9 − 5 = 4.\nChange: R4.75 ✓',
     },
 
-    // ── Section 4: Converting Between Fractions, Decimals and Percentages ────
+    // ── Section 4: More Fraction ⇔ Decimal Conversion Practice ───────────────
+    // (percentage content moved out — see the "Looking ahead" enrichment
+    // banner in the converting-fractions-decimals-percentages section)
 
-    // ── Q10 Easy — decimal to percentage ─────────────────────────────────────
+    // ── Q10 Easy — decimal to fraction ───────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Write 0.5 as a percentage.',
-      answer: '50%',
+      question: 'Write 0.5 as a common fraction in simplest form.',
+      answer: '1/2',
       checkMode: 'auto',
-      correctAnswer: '50%',
-      explanation: 'To convert a decimal to a percentage, multiply by 100: 0.5 × 100 = 50. Write the % sign: 50% ✓',
+      correctAnswer: '1/2',
+      correctAnswers: ['1/2', '5/10'],
+      explanation: '0.5 means 5 tenths = 5/10. Simplify by dividing numerator and denominator by 5: 5/10 = 1/2 ✓',
     },
 
-    // ── Q11 Medium — converting in both directions ────────────────────────────
+    // ── Q11 Medium — converting fractions and decimals ────────────────────────
     {
       difficulty: 'Medium',
       question: 'Convert each of the following.',
-      answer: 'a) 0.3 and 30%\nb) 25/100 and 25%',
+      answer: 'a) 3/5\nb) 0.25\nc) 0.75',
       checkMode: 'auto',
       parts: [
         {
-          label: 'a) Write 3/10 as a decimal and as a percentage.',
-          correctAnswer: '0.3 and 30%',
-          correctAnswers: ['0.3 and 30%', '0.3, 30%'],
-          explanation: 'Fraction to decimal: 3/10 = 0.3 (3 tenths → 1 decimal place).\nDecimal to percentage: 0.3 × 100 = 30%.\nAnswer: 3/10 = 0.3 = 30% ✓',
+          label: 'a) Write 0.6 as a fraction in simplest form.',
+          correctAnswer: '3/5',
+          correctAnswers: ['3/5', '6/10'],
+          explanation: 'Decimal to fraction: 0.6 has one decimal place (tenths), so 0.6 = 6/10. Simplify by dividing numerator and denominator by 2: 6/10 = 3/5 ✓',
         },
         {
-          label: 'b) Write 0.25 as a fraction and as a percentage.',
-          correctAnswer: '25/100 and 25%',
-          correctAnswers: ['25/100 and 25%', '1/4 and 25%', '25/100, 25%', '1/4, 25%'],
-          explanation: 'Decimal to fraction: 0.25 has two decimal places (hundredths), so 0.25 = 25/100.\nDecimal to percentage: 0.25 × 100 = 25%.\nAnswer: 0.25 = 25/100 = 25% ✓',
+          label: 'b) Write 1/4 as a decimal.',
+          correctAnswer: '0.25',
+          explanation: 'Fraction to decimal: multiply numerator and denominator by 25 to get denominator 100: 1/4 = 25/100 = 0.25 ✓',
+        },
+        {
+          label: 'c) Write 3/4 as a decimal.',
+          correctAnswer: '0.75',
+          explanation: 'Fraction to decimal: multiply numerator and denominator by 25 to get denominator 100: 3/4 = 75/100 = 0.75 ✓',
         },
       ],
     },
 
-    // ── Q12 Hard — score as decimal and percentage ────────────────────────────
+    // ── Q12 Hard — score as a decimal, then rounded ────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Thabo scores 17 out of 20. Write his score as a decimal and as a percentage.',
-      answer: 'a) 0.85\nb) 85%',
+      question: 'Thabo scores 17 out of 20. Write his score as a decimal, then round the decimal to one decimal place.',
+      answer: 'a) 0.85\nb) 0.9',
       checkMode: 'auto',
       parts: [
         {
@@ -1098,9 +1124,9 @@ export const topicData: TopicData = {
           explanation: 'Write the score as a fraction: 17/20.\nConvert to a fraction with denominator 100 by multiplying numerator and denominator by 5: 17/20 = 85/100 = 0.85 ✓',
         },
         {
-          label: 'b) Write the score as a percentage.',
-          correctAnswer: '85%',
-          explanation: 'Multiply the decimal by 100: 0.85 × 100 = 85. Write the % sign: 85% ✓',
+          label: 'b) Round the score to one decimal place.',
+          correctAnswer: '0.9',
+          explanation: 'Look at the hundredths digit of 0.85, which is 5. Since 5 rounds up, the tenths digit goes from 8 to 9: 0.85 ≈ 0.9 ✓',
         },
       ],
     },
@@ -1119,7 +1145,7 @@ export const topicData: TopicData = {
   // PRACTICE SETS — 3 sets × 20 questions, chapter-review style
   // Blocks: 0-3 Place value & reading/writing | 4-7 Comparing & ordering |
   // 8-11 Add/subtract column method | 12-15 Word problems | 16-17 Converting
-  // fractions/decimals/percentages | 18-19 Multi-step & error-spotting
+  // fractions/decimals | 18-19 Multi-step & error-spotting
   // ═══════════════════════════════════════════════════════════════════════════
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
@@ -1148,7 +1174,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'A jug contains 8.05 litres of water. If 3.6 litres are poured out, how much water is left?', answer: '4.45 L', checkMode: 'auto', correctAnswer: '4.45', correctAnswers: ['4.45', '4.45 L'], explanation: 'Rewrite 3.6 as 3.60. Hundredths: 5 − 0 = 5. Tenths: 0 − 6 — borrow from units. Units becomes 7, tenths becomes 10. 10 − 6 = 4. Units: 7 − 3 = 4. Answer: 4.45 L ✓' },
         { difficulty: 'Medium', question: 'Zinhle buys bread for R18.65 and milk for R14.90. How much does she spend in total?', answer: 'R33.55', checkMode: 'auto', correctAnswer: 'R33.55', correctAnswers: ['R33.55', '33.55'], explanation: 'Hundredths: 5 + 0 = 5. Tenths: 6 + 9 = 15. Write 5, carry 1. Units: 8 + 4 + 1 = 13. Write 3, carry 1. Tens: 1 + 1 + 1 = 3. Total: R33.55 ✓' },
         { difficulty: 'Medium', question: 'A piece of rope is 4.35 m long. A second piece is 2.8 m long. What is the combined length of both pieces of rope?', answer: '7.15 m', checkMode: 'auto', correctAnswer: '7.15', correctAnswers: ['7.15', '7.15 m'], explanation: 'Rewrite 2.8 as 2.80. Hundredths: 5 + 0 = 5. Tenths: 3 + 8 = 11. Write 1, carry 1. Units: 4 + 2 + 1 = 7. Answer: 7.15 m ✓' },
-        { difficulty: 'Medium-Hard', question: 'Priya scored 23/25 on a spelling test. Write her score as a decimal fraction and as a percentage.', answer: '0.92 and 92%', checkMode: 'auto', correctAnswer: '0.92 and 92%', correctAnswers: ['0.92 and 92%', '0.92, 92%'], explanation: 'Convert 23/25 to a fraction with denominator 100 by multiplying numerator and denominator by 4: 23/25 = 92/100 = 0.92. Multiply by 100 for the percentage: 0.92 × 100 = 92%. Answer: 0.92 = 92% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Priya scored 23/25 on a spelling test. Write her score as a decimal fraction.', answer: '0.92', checkMode: 'auto', correctAnswer: '0.92', correctAnswers: ['0.92', '0.920'], explanation: 'Convert 23/25 to a fraction with denominator 100 by multiplying numerator and denominator by 4: 23/25 = 92/100 = 0.92 ✓' },
         { difficulty: 'Hard', question: 'Three friends have these amounts of savings: Neo has R24.60, Aisha has R24.06, and Kabelo has R24.65.\n\na) Order the three amounts from least to greatest.\nb) Find the difference between the greatest and least amount.\nc) Write the difference as a fraction of R1, then simplify it.', answer: 'a) R24.06, R24.60, R24.65\nb) R24.65 − R24.06 = R0.59\nc) 59/100 (already in simplest form since 59 is prime)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'A student is subtracting 6.02 − 3.47 and writes: "0 − 7 in the hundredths column, so I just write 7 and move on." Explain what is wrong with this reasoning and give the correct answer.', answer: 'The student cannot simply subtract a bigger digit from a smaller one and write the difference — they must borrow. Since 2 (hundredths) − 7 is not possible, borrow 1 from the tenths column: tenths becomes -1 which is also not enough, so borrow from units too. Working it through correctly: 6.02 − 3.47 = 2.55.', checkMode: 'self' },
       ],
@@ -1186,7 +1212,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'A roll of ribbon is 9.03 m long. If 5.4 m is cut off, how much ribbon remains?', answer: '3.63 m', checkMode: 'auto', correctAnswer: '3.63', correctAnswers: ['3.63', '3.63 m'], explanation: 'Rewrite 5.4 as 5.40. Hundredths: 3 − 0 = 3. Tenths: 0 − 4 — borrow from units. Units becomes 8, tenths becomes 10. 10 − 4 = 6. Units: 8 − 5 = 3. Answer: 3.63 m ✓' },
         { difficulty: 'Medium', question: 'Tumi buys a notebook for R22.75 and a pen for R9.50. How much does he spend in total?', answer: 'R32.25', checkMode: 'auto', correctAnswer: 'R32.25', correctAnswers: ['R32.25', '32.25'], explanation: 'Hundredths: 5 + 0 = 5. Tenths: 7 + 5 = 12. Write 2, carry 1. Units: 2 + 9 + 1 = 12. Write 2, carry 1. Tens: 2 + 0 + 1 = 3. Total: R32.25 ✓' },
         { difficulty: 'Medium', question: 'A jug holds 3.6 litres of juice. Zoe pours out 1.85 litres into cups. How much juice is left in the jug?', answer: '1.75 L', checkMode: 'auto', correctAnswer: '1.75', correctAnswers: ['1.75', '1.75 L'], explanation: 'Rewrite 3.6 as 3.60. Hundredths: 0 − 5 — borrow from tenths. Tenths becomes 5, hundredths becomes 10. 10 − 5 = 5. Tenths: 5 − 8 — still too small, borrow from units. Units becomes 2, tenths becomes 15. 15 − 8 = 7. Units: 2 − 1 = 1. Answer: 1.75 L ✓' },
-        { difficulty: 'Medium-Hard', question: 'Karabo scored 9/20 on a quiz. Write her score as a decimal fraction and as a percentage.', answer: '0.45 and 45%', checkMode: 'auto', correctAnswer: '0.45 and 45%', correctAnswers: ['0.45 and 45%', '0.45, 45%'], explanation: 'Convert 9/20 to a fraction with denominator 100 by multiplying numerator and denominator by 5: 9/20 = 45/100 = 0.45. Multiply by 100 for the percentage: 0.45 × 100 = 45%. Answer: 0.45 = 45% ✓' },
+        { difficulty: 'Medium-Hard', question: 'Karabo scored 9/20 on a quiz. Write her score as a decimal fraction.', answer: '0.45', checkMode: 'auto', correctAnswer: '0.45', correctAnswers: ['0.45', '0.450'], explanation: 'Convert 9/20 to a fraction with denominator 100 by multiplying numerator and denominator by 5: 9/20 = 45/100 = 0.45 ✓' },
         { difficulty: 'Hard', question: 'Three runners recorded these distances in a training session: Bongi ran 5.42 km, Ruan ran 5.4 km, and Dineo ran 5.24 km.\n\na) Order the three distances from least to greatest.\nb) Find the difference between the greatest and least distance.\nc) Write the difference as a fraction of 1 km, then simplify it.', answer: 'a) 5.24 km, 5.4 km, 5.42 km\nb) 5.42 − 5.24 = 0.18 km\nc) 18/100 = 9/50 (simplified by dividing by 2)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'A student is adding 3.7 + 2.68 and writes: "7 + 68 = 75, so the answer is 3.75." Explain what is wrong with this reasoning and give the correct answer.', answer: 'The student added the tenths and hundredths digits together as if they were whole numbers instead of lining up decimal places correctly. 3.7 must be rewritten as 3.70 first. Then: hundredths 0 + 8 = 8, tenths 7 + 6 = 13 (write 3, carry 1), units 3 + 2 + 1 = 6. The correct answer is 3.7 + 2.68 = 6.38.', checkMode: 'self' },
       ],
@@ -1224,8 +1250,8 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'A water tank holds 7.04 kL. If 2.6 kL is used, how much water is left in the tank?', answer: '4.44 kL', checkMode: 'auto', correctAnswer: '4.44', correctAnswers: ['4.44', '4.44 kL'], explanation: 'Rewrite 2.6 as 2.60. Hundredths: 4 − 0 = 4. Tenths: 0 − 6 — borrow from units. Units becomes 6, tenths becomes 10. 10 − 6 = 4. Units: 6 − 2 = 4. Answer: 4.44 kL ✓' },
         { difficulty: 'Medium', question: 'A school tuck shop sells a sandwich for R16.80 and a juice for R8.45. What is the total cost of both items?', answer: 'R25.25', checkMode: 'auto', correctAnswer: 'R25.25', correctAnswers: ['R25.25', '25.25'], explanation: 'Hundredths: 0 + 5 = 5. Tenths: 8 + 4 = 12. Write 2, carry 1. Units: 6 + 8 + 1 = 15. Write 5, carry 1. Tens: 1 + 0 + 1 = 2. Total: R25.25 ✓' },
         { difficulty: 'Medium', question: 'Two hiking trails measure 3.75 km and 2.9 km. What is the combined distance of both trails?', answer: '6.65 km', checkMode: 'auto', correctAnswer: '6.65', correctAnswers: ['6.65', '6.65 km'], explanation: 'Rewrite 2.9 as 2.90. Hundredths: 5 + 0 = 5. Tenths: 7 + 9 = 16. Write 6, carry 1. Units: 3 + 2 + 1 = 6. Answer: 6.65 km ✓' },
-        { difficulty: 'Medium-Hard', question: 'Lindiwe scored 7/8 in a practical test. Write her score as a decimal fraction and as a percentage.', answer: '0.875 and 87.5%', checkMode: 'auto', correctAnswer: '0.875 and 87.5%', correctAnswers: ['0.875 and 87.5%', '0.875, 87.5%'], explanation: '7/8 needs to be converted using division since 8 is not a direct factor of 10 or 100: 7 ÷ 8 = 0.875. Multiply by 100 for the percentage: 0.875 × 100 = 87.5%. Answer: 0.875 = 87.5% ✓' },
-        { difficulty: 'Hard', question: 'A shop tracks three days of takings: Monday R156.40, Tuesday R156.04, Wednesday R156.45.\n\na) Order the three amounts from least to greatest.\nb) Find the difference between the greatest and least amount.\nc) Write Wednesday\'s takings as a percentage of R200 (i.e. what fraction of R200 is R156.45, as a percentage — round to the nearest whole percent).', answer: 'a) R156.04, R156.40, R156.45\nb) R156.45 − R156.04 = R0.41\nc) 156.45/200 = 0.78225 → 78% (rounded to nearest whole percent)', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'Lindiwe scored 7/8 in a practical test. Write her score as a decimal fraction.', answer: '0.875', checkMode: 'auto', correctAnswer: '0.875', explanation: '7/8 needs to be converted using division since 8 is not a direct factor of 10 or 100: 7 ÷ 8 = 0.875 ✓' },
+        { difficulty: 'Hard', question: 'A shop tracks three days of takings: Monday R156.40, Tuesday R156.04, Wednesday R156.45.\n\na) Order the three amounts from least to greatest.\nb) Find the difference between the greatest and least amount.\nc) The shop\'s target for Wednesday was R200. Write the shortfall (target minus Wednesday\'s takings) as a decimal amount in rand.', answer: 'a) R156.04, R156.40, R156.45\nb) R156.45 − R156.04 = R0.41\nc) R200.00 − R156.45 = R43.55', checkMode: 'self' },
         { difficulty: 'Hard', question: 'A student is subtracting 5.2 − 1.65 and writes: "0.2 minus 0.65 is impossible, so the answer must be negative — 5.2 − 1.65 cannot be worked out with borrowing." Explain what is wrong with this reasoning and give the correct answer.', answer: 'The student is wrong — decimal subtraction with borrowing works exactly like whole number subtraction; it does not become impossible or negative just because a column looks too small on its own. Rewrite 5.2 as 5.20. Hundredths: 0 − 5, borrow from tenths (tenths becomes 1, hundredths becomes 10): 10 − 5 = 5. Tenths: 1 − 6, borrow from units (units becomes 4, tenths becomes 11): 11 − 6 = 5. Units: 4 − 1 = 3. The correct answer is 5.2 − 1.65 = 3.55.', checkMode: 'self' },
       ],
       scoreMessages: [
