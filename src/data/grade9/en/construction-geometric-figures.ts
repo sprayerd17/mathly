@@ -78,9 +78,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the Exterior Angle Theorem and showing how an exterior angle of a triangle equals the sum of the two remote interior angles" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a triangle with one side extended to show an exterior angle, with the two remote interior angles clearly labelled and the exterior angle marked" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -147,9 +144,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video investigating the diagonals of rectangles, squares, parallelograms, rhombi and kites — comparing length, bisection and perpendicularity" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: side-by-side constructions of a rectangle and a rhombus, each with both diagonals drawn, labelling whether they are equal, bisecting, or perpendicular" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -224,7 +218,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to divide polygons into triangles from one vertex and use this to confirm the interior angle sum formula" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a hexagon with diagonals drawn from one vertex, dividing it into 4 triangles, each triangle shaded a different colour" />',
+        'A hexagon with diagonals drawn from one vertex, dividing it into 4 triangles, each triangle shaded a different colour',
+      diagramSvg:
+        '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><polygon points="50,95 80,43.04 140,43.04" fill="#eff6ff" stroke="none"/><polygon points="50,95 140,43.04 170,95" fill="#fff7ed" stroke="none"/><polygon points="50,95 170,95 140,146.96" fill="#eff6ff" stroke="none"/><polygon points="50,95 140,146.96 80,146.96" fill="#fff7ed" stroke="none"/><polygon points="50,95 80,43.04 140,43.04 170,95 140,146.96 80,146.96" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="95" x2="140" y2="43.04" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="95" x2="170" y2="95" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="95" x2="140" y2="146.96" stroke="#2563eb" stroke-width="2"/><circle cx="50" cy="95" r="3.5" fill="#ea580c"/><text x="88" y="64" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">1</text><text x="118" y="80" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">2</text><text x="118" y="116" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">3</text><text x="88" y="132" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">4</text><text x="110" y="178" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">4 × 180° = 720°</text></svg>',
     },
   ],
 

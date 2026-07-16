@@ -104,7 +104,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die 5 Platoniese vaste liggame bekendstel en dit vergelyk met sfere en silinders, met die klem op geboë oppervlaktes" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn sfeer en ʼn silinder langs die 5 Platoniese vaste liggame getoon, met die geboë oppervlaktes wat hulle onderskei uitgelig" />',
+        'ʼn Sfeer en ʼn silinder langs die 5 Platoniese vaste liggame getoon, met die geboë oppervlaktes wat hulle onderskei uitgelig',
+      diagramSvg:
+        '<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg"><circle cx="55" cy="85" r="38" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><ellipse cx="55" cy="85" rx="38" ry="13" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/><text x="55" y="140" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Sfeer</text><text x="55" y="153" font-size="10" fill="#374151" text-anchor="middle">1 geboë oppervlak</text><ellipse cx="150" cy="47" rx="32" ry="11" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/><line x1="118" y1="47" x2="118" y2="113" stroke="#16a34a" stroke-width="2.5"/><line x1="182" y1="47" x2="182" y2="113" stroke="#16a34a" stroke-width="2.5"/><path d="M 118,113 A 32,11 0 0 0 182,113" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M 118,113 A 32,11 0 0 1 182,113" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/><text x="150" y="140" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">Silinder</text><text x="150" y="153" font-size="10" fill="#374151" text-anchor="middle">2 plat + 1 geboë</text><polygon points="225,60 258,60 258,93 225,93" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><polygon points="225,60 240,45 273,45 258,60" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><polygon points="258,60 273,45 273,78 258,93" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><text x="248" y="140" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">Kubus</text><text x="248" y="153" font-size="10" fill="#374151" text-anchor="middle">(Platonies — plat vlakke)</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -170,7 +172,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die net van ʼn silinder wys — twee sirkels en ʼn reghoek — en hoe dit vou om die 3D-voorwerp te vorm" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn silinder se net plat getoon — twee sirkels en ʼn reghoek — met ʼn pyl wat wys hoe die reghoek omvou om die twee sirkels te verbind wanneer dit gevou word" />',
+        'ʼn Silinder se net plat getoon — twee sirkels en ʼn reghoek — met ʼn pyl wat wys hoe die reghoek omvou om die twee sirkels te verbind wanneer dit gevou word',
+      diagramSvg:
+        '<svg viewBox="0 0 260 195" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrEdgeAf" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#374151"/></marker></defs><circle cx="45" cy="45" r="30" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><text x="45" y="49" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">sirkel</text><rect x="90" y="75" width="120" height="45" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/><text x="150" y="65" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">lengte = omtrek (2πr)</text><text x="150" y="101" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">reghoek</text><text x="82" y="100" font-size="11" fill="#16a34a" font-weight="700">h</text><circle cx="45" cy="150" r="30" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><text x="45" y="154" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">sirkel</text><path d="M 74,55 Q 82,68 90,78" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrEdgeAf)"/><path d="M 74,140 Q 82,127 90,117" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrEdgeAf)"/></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -233,9 +237,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat 3D-voorwerpe vergelyk en klassifiseer volgens vlakke, rande en hoekpunte, en verduidelik wanneer Euler se formule van toepassing is" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn vergelykingstabel wat Platoniese vaste liggame, prismas, piramides, sfere en silinders langs mekaar wys met hulle vlakke, rande, hoekpunte en of Euler se formule van toepassing is" />',
     },
   ],
 

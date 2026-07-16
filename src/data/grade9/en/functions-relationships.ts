@@ -156,7 +156,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to substitute input values into an equation to find outputs, and how to solve an equation backwards to find the input when the output is given" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Flow diagram showing an input x arrow passing through an equation rule box to produce output y, illustrating substitution in both directions" />',
+        'A flow diagram showing an input x passing through an equation rule box to produce output y, with a return arrow showing that solving backwards recovers x from y',
+
+      diagramSvg:
+        '<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="45" width="70" height="40" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="50" y="65" font-size="15" font-weight="700" fill="#2563eb" text-anchor="middle">x</text><text x="50" y="79" font-size="8" fill="#2563eb" text-anchor="middle">(input)</text><rect x="125" y="45" width="70" height="40" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/><text x="160" y="60" font-size="7" font-weight="700" fill="#ea580c" text-anchor="middle">RULE</text><text x="160" y="75" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = mx + c</text><rect x="235" y="45" width="70" height="40" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/><text x="270" y="65" font-size="15" font-weight="700" fill="#16a34a" text-anchor="middle">y</text><text x="270" y="79" font-size="8" fill="#16a34a" text-anchor="middle">(output)</text><line x1="85" y1="65" x2="122" y2="65" stroke="#0f1f3d" stroke-width="2.5"/><polygon points="125,65 117,60 117,70" fill="#0f1f3d"/><text x="103" y="57" font-size="8" fill="#0f1f3d" text-anchor="middle">substitute</text><line x1="195" y1="65" x2="232" y2="65" stroke="#0f1f3d" stroke-width="2.5"/><polygon points="235,65 227,60 227,70" fill="#0f1f3d"/><text x="213" y="57" font-size="8" fill="#0f1f3d" text-anchor="middle">calculate</text><path d="M270,88 C270,125 50,125 50,88" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="5,3"/><polygon points="50,88 44,98 56,98" fill="#6b7280"/><text x="160" y="140" font-size="9" font-weight="700" fill="#6b7280" text-anchor="middle">solve backwards (isolate x)</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +294,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to move between verbal descriptions, tables, equations and straight-line graphs, reading gradient and y-intercept from each form" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a Cartesian plane showing the line y=3x+2, with the y-intercept at (0,2) clearly marked and the gradient illustrated with a rise/run triangle" />',
+        'A Cartesian plane showing the line y = 3x + 2, with the y-intercept at (0, 2) clearly marked and the gradient illustrated with a rise/run triangle',
+
+      diagramSvg:
+        '<svg viewBox="0 0 170 220" xmlns="http://www.w3.org/2000/svg"><text x="95" y="15" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = 3x + 2</text><line x1="15" y1="190" x2="150" y2="190" stroke="#0f1f3d" stroke-width="2"/><polygon points="154,190 146,186 146,194" fill="#0f1f3d"/><text x="150" y="184" font-size="9" fill="#0f1f3d" text-anchor="end">x</text><line x1="60" y1="205" x2="60" y2="40" stroke="#0f1f3d" stroke-width="2"/><polygon points="60,36 56,44 64,44" fill="#0f1f3d"/><text x="66" y="44" font-size="9" fill="#0f1f3d">y</text><line x1="45" y1="205" x2="100" y2="40" stroke="#2563eb" stroke-width="2.5"/><circle cx="60" cy="160" r="4" fill="#16a34a" stroke="#0f1f3d" stroke-width="1"/><text x="66" y="158" font-size="9" fill="#16a34a" font-weight="700">(0, 2)</text><line x1="60" y1="160" x2="75" y2="160" stroke="#ea580c" stroke-width="2" stroke-dasharray="3,2"/><line x1="75" y1="160" x2="75" y2="115" stroke="#ea580c" stroke-width="2" stroke-dasharray="3,2"/><text x="67" y="173" font-size="8" fill="#ea580c" font-weight="700" text-anchor="middle">run 1</text><text x="80" y="140" font-size="8" fill="#ea580c" font-weight="700">rise 3</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -444,7 +450,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to substitute x-values into an equation to build a table of ordered pairs and then plot those points on a Cartesian plane" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a Cartesian plane with points (-1,7),(0,5),(1,3),(2,1) plotted and connected by a straight line" />',
+        'A Cartesian plane with the points (−1, 7), (0, 5), (1, 3), (2, 1) plotted and connected by a straight line',
+
+      diagramSvg:
+        '<svg viewBox="0 0 170 210" xmlns="http://www.w3.org/2000/svg"><text x="100" y="10" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = −2x + 5</text><line x1="20" y1="170" x2="140" y2="170" stroke="#0f1f3d" stroke-width="2"/><polygon points="144,170 136,166 136,174" fill="#0f1f3d"/><text x="140" y="184" font-size="9" fill="#0f1f3d" text-anchor="end">x</text><line x1="60" y1="195" x2="60" y2="15" stroke="#0f1f3d" stroke-width="2"/><polygon points="60,11 56,19 64,19" fill="#0f1f3d"/><text x="66" y="19" font-size="9" fill="#0f1f3d">y</text><text x="50" y="183" font-size="8" fill="#374151">O</text><line x1="40" y1="30" x2="100" y2="150" stroke="#2563eb" stroke-width="2.5"/><circle cx="40" cy="30" r="4" fill="#ea580c" stroke="#0f1f3d" stroke-width="1"/><text x="16" y="26" font-size="8" font-weight="700" fill="#ea580c">(−1, 7)</text><circle cx="60" cy="70" r="4" fill="#ea580c" stroke="#0f1f3d" stroke-width="1"/><text x="66" y="68" font-size="8" font-weight="700" fill="#ea580c">(0, 5)</text><circle cx="80" cy="110" r="4" fill="#ea580c" stroke="#0f1f3d" stroke-width="1"/><text x="86" y="108" font-size="8" font-weight="700" fill="#ea580c">(1, 3)</text><circle cx="100" cy="150" r="4" fill="#ea580c" stroke="#0f1f3d" stroke-width="1"/><text x="106" y="148" font-size="8" font-weight="700" fill="#ea580c">(2, 1)</text></svg>',
     },
   ],
 

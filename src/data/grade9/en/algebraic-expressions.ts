@@ -125,7 +125,38 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to multiply a monomial by a polynomial using the distributive law with step-by-step colour coded examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the distributive law applied to 3x(2x²+5x−4) with arrows from the distributed term in blue to each multiplication in orange and the final expression in green" />',
+        'Fan diagram showing 3x distributed by arrows to each term in (2x² + 5x − 4), with the resulting products 6x³, 15x² and −12x on the right',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 175" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="8" y="64" width="50" height="38" rx="6" fill="rgba(37,99,235,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="33" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">3x</text>` +
+        `<rect x="105" y="6" width="60" height="30" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="135" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">2x²</text>` +
+        `<rect x="105" y="68" width="60" height="30" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="135" y="87" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">5x</text>` +
+        `<rect x="105" y="130" width="60" height="30" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="135" y="149" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">−4</text>` +
+        `<line x1="58" y1="83" x2="103" y2="21" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="105,21 96,17 96,25" fill="#0f1f3d"/>` +
+        `<line x1="58" y1="83" x2="103" y2="83" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="105,83 96,79 96,87" fill="#0f1f3d"/>` +
+        `<line x1="58" y1="83" x2="103" y2="145" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="105,145 96,141 96,149" fill="#0f1f3d"/>` +
+        `<rect x="225" y="6" width="65" height="30" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="257" y="25" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">6x³</text>` +
+        `<rect x="225" y="68" width="65" height="30" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="257" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">15x²</text>` +
+        `<rect x="225" y="130" width="65" height="30" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="257" y="149" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">−12x</text>` +
+        `<line x1="165" y1="21" x2="223" y2="21" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="225,21 216,17 216,25" fill="#0f1f3d"/>` +
+        `<line x1="165" y1="83" x2="223" y2="83" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="225,83 216,79 216,87" fill="#0f1f3d"/>` +
+        `<line x1="165" y1="145" x2="223" y2="145" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="225,145 216,141 216,149" fill="#0f1f3d"/>` +
+        `<text x="150" y="168" text-anchor="middle" font-size="10" fill="#6b7280">3x is multiplied by every term inside the bracket</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -237,9 +268,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to divide a polynomial by a monomial by splitting each term and applying the exponent subtraction rule" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing (15x³+10x²−5x)÷5x split into three separate fractions with the divisor in blue each division step in orange and the final expression in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -430,7 +458,29 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to multiply two binomials using FOIL and how to expand the square of a binomial using the special patterns with colour coded steps" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing FOIL method for (x+3)(x+5) with first term in blue outer and inner terms in orange last term in green and final answer in red alongside the square of a binomial pattern" />',
+        'Arc diagram showing the FOIL method applied to (x + 3)(x + 5), with coloured arcs connecting the First, Outer, Inner and Last term pairs down to the final expanded answer x² + 8x + 15',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 175" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="20" y="65" font-size="20" font-weight="700" fill="#0f1f3d">(</text>` +
+        `<text x="35" y="65" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">x</text>` +
+        `<text x="55" y="65" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">+</text>` +
+        `<text x="75" y="65" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="90" y="65" font-size="20" font-weight="700" fill="#0f1f3d">)(</text>` +
+        `<text x="155" y="65" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">x</text>` +
+        `<text x="175" y="65" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">+</text>` +
+        `<text x="195" y="65" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="205" y="65" font-size="20" font-weight="700" fill="#0f1f3d">)</text>` +
+        `<path d="M35,55 Q95,20 155,55" fill="none" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="95" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">F</text>` +
+        `<path d="M35,55 Q115,2 195,55" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="115" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">O</text>` +
+        `<path d="M75,75 Q115,100 155,75" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="115" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">I</text>` +
+        `<path d="M75,75 Q135,122 195,75" fill="none" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="135" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">L</text>` +
+        `<text x="115" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#dc2626">= x² + 8x + 15</text>` +
+        `</svg>`,
     },
   ],
 

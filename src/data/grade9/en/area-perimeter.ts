@@ -155,9 +155,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply area and perimeter formulae for circles and composite shapes, including SI unit conversions between cm² and m²" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of Sipho\'s irregular plot broken into a rectangle and a semicircle, with each part labelled in blue and the total area shown in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -303,7 +300,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video demonstrating how doubling one dimension vs doubling all dimensions affects the perimeter and area of rectangles and squares differently" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a small square and a larger square with sides doubled, shown side by side with both perimeter and area labelled on each, illustrating the 2x perimeter vs 4x area relationship" />',
+        'A small square and a larger square with sides doubled, shown side by side with both perimeter and area labelled on each, illustrating the 2x perimeter vs 4x area relationship',
+      diagramSvg:
+        '<svg viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="70" width="45" height="45" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="42.5" y="63" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">5 cm</text><text x="42.5" y="132" font-size="11" fill="#374151" text-anchor="middle">P = 20 cm</text><text x="42.5" y="146" font-size="11" fill="#374151" text-anchor="middle">A = 25 cm²</text><text x="90" y="98" font-size="18" fill="#ea580c" font-weight="700" text-anchor="middle">→</text><text x="90" y="112" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">×2</text><rect x="115" y="25" width="90" height="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="160" y="18" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">10 cm</text><text x="160" y="132" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">P = 40 cm (×2)</text><text x="160" y="146" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">A = 100 cm² (×4)</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -413,9 +412,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply linear and area scale factors to solve real-life enlargement and reduction problems involving area and perimeter" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a small garden plan and its enlarged version with scale factor k labelled on sides, and k² labelled on the area, illustrating the difference between linear and area scaling" />',
     },
   ],
 

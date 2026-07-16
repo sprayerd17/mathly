@@ -84,9 +84,6 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a rectangle with its diagonal drawn, forming a right-angled triangle with the length, width and diagonal labelled" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to identify the right-angled triangle inside a geometric figure and apply the Theorem of Pythagoras to find unknown lengths" />',
     },
@@ -167,9 +164,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a rectangular field with diagonal path shown alongside the two-side route, with measurements labelled" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve multi-step Pythagoras problems in real-life contexts and combined shapes, including the algebraic approach for an unknown hypotenuse" />',

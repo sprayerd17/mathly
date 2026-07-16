@@ -131,7 +131,33 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to set up and solve direct proportion problems using equal ratios and cross multiplication" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two quantities in direct proportion with a table of values and a straight-line graph through the origin" />',
+        'A straight-line graph through the origin for cost vs kg of apples, alongside a table of values, showing 4 kg = R72 and 7 kg = R126',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 170" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="105" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#0f1f3d">Cost vs mass — straight line through the origin</text>` +
+        `<line x1="30" y1="150" x2="195" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="200,150 193,146 193,154" fill="#0f1f3d"/>` +
+        `<line x1="30" y1="150" x2="30" y2="18" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="30,13 26,20 34,20" fill="#0f1f3d"/>` +
+        `<text x="205" y="153" font-size="8" fill="#374151">kg</text>` +
+        `<text x="18" y="16" font-size="8" fill="#374151">R</text>` +
+        `<line x1="30" y1="150" x2="180" y2="15" stroke="#2563eb" stroke-width="2"/>` +
+        `<circle cx="110" cy="78" r="4" fill="#2563eb"/>` +
+        `<text x="115" y="72" font-size="8" font-weight="700" fill="#2563eb">4 kg, R72</text>` +
+        `<circle cx="170" cy="24" r="4" fill="#16a34a"/>` +
+        `<text x="132" y="20" font-size="8" font-weight="700" fill="#16a34a">7 kg, R126</text>` +
+        `<text x="30" y="163" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `<text x="255" y="35" font-size="9" font-weight="700" fill="#0f1f3d">Table of values</text>` +
+        `<line x1="215" y1="42" x2="310" y2="42" stroke="#e2e8f0" stroke-width="1"/>` +
+        `<text x="225" y="55" font-size="8" fill="#374151">kg</text>` +
+        `<text x="270" y="55" font-size="8" fill="#374151">Cost</text>` +
+        `<line x1="215" y1="60" x2="310" y2="60" stroke="#e2e8f0" stroke-width="1"/>` +
+        `<text x="225" y="73" font-size="8" fill="#2563eb">4</text>` +
+        `<text x="265" y="73" font-size="8" fill="#2563eb">R72</text>` +
+        `<text x="225" y="90" font-size="8" fill="#16a34a">7</text>` +
+        `<text x="265" y="90" font-size="8" fill="#16a34a">R126</text>` +
+        `<text x="225" y="107" font-size="8" fill="#374151">8</text>` +
+        `<text x="265" y="107" font-size="8" fill="#374151">R144</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,7 +287,21 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to identify and solve inverse proportion problems using the constant product method" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing direct and inverse proportion with tables and graphs — straight line through origin for direct, curve for inverse" />',
+        'A decreasing curve showing workers vs days, with 5 workers = 12 days and 8 workers = 7.5 days, product always 60',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="110" y="12" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0f1f3d">More workers → fewer days (product always 60)</text>` +
+        `<line x1="30" y1="150" x2="195" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="200,150 193,146 193,154" fill="#0f1f3d"/>` +
+        `<line x1="30" y1="150" x2="30" y2="18" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="30,13 26,20 34,20" fill="#0f1f3d"/>` +
+        `<text x="180" y="163" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">Workers</text>` +
+        `<text x="15" y="24" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">Days</text>` +
+        `<path d="M69,20 L82,52.5 L95,72 L108,85 L134,101 L160,111 L186,118" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<circle cx="95" cy="72" r="4" fill="#0f1f3d"/>` +
+        `<text x="97" y="65" font-size="7.5" font-weight="700" fill="#0f1f3d">5 workers, 12 days</text>` +
+        `<circle cx="134" cy="101" r="4" fill="#0f1f3d"/>` +
+        `<text x="128" y="119" font-size="7.5" font-weight="700" fill="#0f1f3d">8 workers, 7.5 days</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -583,7 +623,23 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate commission, total rental costs, simple and compound interest, and hire-purchase instalments step by step with worked examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing simple interest (constant growth) and compound interest (growing total each year) over multiple years, plus a flow diagram of a hire-purchase agreement: cash price minus deposit gives the loan, simple interest is added, then the total is divided into equal monthly instalments" />',
+        'A line chart comparing R1 000 growing at 10% simple interest (straight line) vs 10% compound interest (curve) over 5 years',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 170" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="120" y="12" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0f1f3d">R1 000 growing at 10% — simple vs compound</text>` +
+        `<line x1="30" y1="150" x2="220" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="225,150 218,146 218,154" fill="#0f1f3d"/>` +
+        `<line x1="30" y1="150" x2="30" y2="18" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="30,13 26,20 34,20" fill="#0f1f3d"/>` +
+        `<text x="205" y="163" font-size="8" fill="#374151">Years</text>` +
+        `<text x="15" y="16" font-size="8" fill="#374151">R</text>` +
+        `<line x1="30" y1="150" x2="215" y2="50" stroke="#7c3aed" stroke-width="2"/>` +
+        `<circle cx="215" cy="50" r="3.5" fill="#7c3aed"/>` +
+        `<text x="150" y="63" font-size="7.5" font-weight="700" fill="#7c3aed">Simple: R1 500</text>` +
+        `<path d="M30,150 L67,130 L104,108 L141,84 L178,57 L215,28" fill="none" stroke="#16a34a" stroke-width="2"/>` +
+        `<circle cx="215" cy="28" r="3.5" fill="#16a34a"/>` +
+        `<text x="145" y="24" font-size="7.5" font-weight="700" fill="#16a34a">Compound: R1 611</text>` +
+        `<text x="30" y="163" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `</svg>`,
     },
   ],
 

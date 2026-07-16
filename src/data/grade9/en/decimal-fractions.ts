@@ -136,9 +136,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply BODMAS to combined decimal fraction calculations with and without brackets" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step BODMAS diagram showing the order of operations applied to a combined decimal fraction calculation" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,7 +258,29 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate squares, cubes and roots of decimal fractions within combined calculations using BODMAS" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing squares, cubes and roots of common decimal fractions with worked examples integrated into combined calculations" />',
+        'Number line showing that squaring a decimal between 0 and 1 makes it smaller, while taking its square root makes it larger',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="160" y="14" text-anchor="middle" font-size="10" fill="#6b7280">Squaring and rooting decimals between 0 and 1</text>` +
+        `<line x1="20" y1="80" x2="300" y2="80" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="20" y1="74" x2="20" y2="86" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="300" y1="74" x2="300" y2="86" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<circle cx="45" cy="80" r="4" fill="#ea580c"/>` +
+        `<circle cx="104" cy="80" r="4" fill="#2563eb"/>` +
+        `<text x="20" y="101" text-anchor="middle" font-size="10" fill="#6b7280">0</text>` +
+        `<text x="45" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0.09</text>` +
+        `<text x="104" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0.3</text>` +
+        `<text x="300" y="101" text-anchor="middle" font-size="10" fill="#6b7280">1</text>` +
+        `<path d="M104,74 Q75,35 45,74" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<polygon points="45,74 39,64 51,64" fill="#ea580c"/>` +
+        `<text x="75" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0.3² = 0.09</text>` +
+        `<text x="75" y="38" text-anchor="middle" font-size="8" fill="#6b7280">(squaring shrinks it)</text>` +
+        `<path d="M45,86 Q75,125 104,86" fill="none" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<polygon points="104,86 98,96 110,96" fill="#16a34a"/>` +
+        `<text x="75" y="135" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">√0.09 = 0.3</text>` +
+        `<text x="75" y="148" text-anchor="middle" font-size="8" fill="#6b7280">(rooting grows it)</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -387,9 +406,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve multi-step real-life problems involving decimal fractions, with rounding money to 2 decimal places" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Worked problem diagram showing the 3-step strategy applied to a real-life decimal fractions word problem involving money" />',
     },
   ],
 

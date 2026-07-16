@@ -131,7 +131,33 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om direkte eweredigheidsprobleme op te stel en op te los met behulp van gelyke verhoudings en kruisvermenigvuldiging" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat twee hoeveelhede in direkte eweredigheid wys, met ʼn tabel van waardes en ʼn reguitlyngrafiek deur die oorsprong" />',
+        'ʼn Reguitlyngrafiek deur die oorsprong vir koste vs kg appels, langs ʼn tabel van waardes, wat 4 kg = R72 en 7 kg = R126 wys',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 170" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="105" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#0f1f3d">Koste vs massa — reguit lyn deur die oorsprong</text>` +
+        `<line x1="30" y1="150" x2="195" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="200,150 193,146 193,154" fill="#0f1f3d"/>` +
+        `<line x1="30" y1="150" x2="30" y2="18" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="30,13 26,20 34,20" fill="#0f1f3d"/>` +
+        `<text x="205" y="153" font-size="8" fill="#374151">kg</text>` +
+        `<text x="18" y="16" font-size="8" fill="#374151">R</text>` +
+        `<line x1="30" y1="150" x2="180" y2="15" stroke="#2563eb" stroke-width="2"/>` +
+        `<circle cx="110" cy="78" r="4" fill="#2563eb"/>` +
+        `<text x="115" y="72" font-size="8" font-weight="700" fill="#2563eb">4 kg, R72</text>` +
+        `<circle cx="170" cy="24" r="4" fill="#16a34a"/>` +
+        `<text x="132" y="20" font-size="8" font-weight="700" fill="#16a34a">7 kg, R126</text>` +
+        `<text x="30" y="163" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `<text x="255" y="35" font-size="9" font-weight="700" fill="#0f1f3d">Tabel van waardes</text>` +
+        `<line x1="215" y1="42" x2="310" y2="42" stroke="#e2e8f0" stroke-width="1"/>` +
+        `<text x="225" y="55" font-size="8" fill="#374151">kg</text>` +
+        `<text x="270" y="55" font-size="8" fill="#374151">Koste</text>` +
+        `<line x1="215" y1="60" x2="310" y2="60" stroke="#e2e8f0" stroke-width="1"/>` +
+        `<text x="225" y="73" font-size="8" fill="#2563eb">4</text>` +
+        `<text x="265" y="73" font-size="8" fill="#2563eb">R72</text>` +
+        `<text x="225" y="90" font-size="8" fill="#16a34a">7</text>` +
+        `<text x="265" y="90" font-size="8" fill="#16a34a">R126</text>` +
+        `<text x="225" y="107" font-size="8" fill="#374151">8</text>` +
+        `<text x="265" y="107" font-size="8" fill="#374151">R144</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,7 +287,21 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om omgekeerde eweredigheidsprobleme te identifiseer en op te los met behulp van die konstante-produk-metode" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat direkte en omgekeerde eweredigheid vergelyk met tabelle en grafieke — reguit lyn deur die oorsprong vir direk, kromme vir omgekeerd" />',
+        'ʼn Afnemende kromme wat werkers vs dae wys, met 5 werkers = 12 dae en 8 werkers = 7,5 dae, produk altyd 60',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="110" y="12" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0f1f3d">Meer werkers → minder dae (produk altyd 60)</text>` +
+        `<line x1="30" y1="150" x2="195" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="200,150 193,146 193,154" fill="#0f1f3d"/>` +
+        `<line x1="30" y1="150" x2="30" y2="18" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="30,13 26,20 34,20" fill="#0f1f3d"/>` +
+        `<text x="180" y="163" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">Werkers</text>` +
+        `<text x="15" y="24" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">Dae</text>` +
+        `<path d="M69,20 L82,52.5 L95,72 L108,85 L134,101 L160,111 L186,118" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<circle cx="95" cy="72" r="4" fill="#0f1f3d"/>` +
+        `<text x="97" y="65" font-size="7.5" font-weight="700" fill="#0f1f3d">5 werkers, 12 dae</text>` +
+        `<circle cx="134" cy="101" r="4" fill="#0f1f3d"/>` +
+        `<text x="128" y="119" font-size="7.5" font-weight="700" fill="#0f1f3d">8 werkers, 7,5 dae</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -583,7 +623,23 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om kommissie, totale huurkoste, enkelvoudige en saamgestelde rente, en huurkoop-paaiemente stap vir stap te bereken met uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat enkelvoudige rente (konstante groei) en saamgestelde rente (groeiende totaal elke jaar) oor verskeie jare vergelyk, plus ʼn vloeidiagram van ʼn huurkoopooreenkoms: kontantprys minus deposito gee die lening, enkelvoudige rente word bygevoeg, en dan word die totaal in gelyke maandelikse paaiemente verdeel" />',
+        'ʼn Lyngrafiek wat R1 000 vergelyk wat teen 10% enkelvoudige rente (reguit lyn) teenoor 10% saamgestelde rente (kromme) oor 5 jaar groei',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 170" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="120" y="12" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0f1f3d">R1 000 groei teen 10% — enkelvoudig vs saamgestel</text>` +
+        `<line x1="30" y1="150" x2="220" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="225,150 218,146 218,154" fill="#0f1f3d"/>` +
+        `<line x1="30" y1="150" x2="30" y2="18" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="30,13 26,20 34,20" fill="#0f1f3d"/>` +
+        `<text x="205" y="163" font-size="8" fill="#374151">Jare</text>` +
+        `<text x="15" y="16" font-size="8" fill="#374151">R</text>` +
+        `<line x1="30" y1="150" x2="215" y2="50" stroke="#7c3aed" stroke-width="2"/>` +
+        `<circle cx="215" cy="50" r="3.5" fill="#7c3aed"/>` +
+        `<text x="150" y="63" font-size="7.5" font-weight="700" fill="#7c3aed">Enkelvoudig: R1 500</text>` +
+        `<path d="M30,150 L67,130 L104,108 L141,84 L178,57 L215,28" fill="none" stroke="#16a34a" stroke-width="2"/>` +
+        `<circle cx="215" cy="28" r="3.5" fill="#16a34a"/>` +
+        `<text x="140" y="24" font-size="7.5" font-weight="700" fill="#16a34a">Saamgestel: R1 611</text>` +
+        `<text x="30" y="163" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `</svg>`,
     },
   ],
 

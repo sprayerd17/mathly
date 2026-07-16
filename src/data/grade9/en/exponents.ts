@@ -114,7 +114,44 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to apply the negative exponent rule a⁻ᵏ = 1/aᵏ with worked examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the connection between negative exponents and reciprocals with colour coded examples" />',
+        'Sequence showing 2³ down to 2⁻² each divided by 2, with the negative-exponent boxes highlighted to show they give reciprocals',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 150" width="100%" style="max-width:560px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="240" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#0f1f3d">Each step divides by 2 — negative exponents give reciprocals</text>` +
+        `<rect x="21" y="62" width="58" height="36" rx="4" fill="rgba(15,31,61,0.05)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="50" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">2³</text>` +
+        `<text x="50" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">8</text>` +
+        `<rect x="97" y="62" width="58" height="36" rx="4" fill="rgba(15,31,61,0.05)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="126" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">2²</text>` +
+        `<text x="126" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">4</text>` +
+        `<rect x="173" y="62" width="58" height="36" rx="4" fill="rgba(15,31,61,0.05)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="202" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">2¹</text>` +
+        `<text x="202" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">2</text>` +
+        `<rect x="249" y="62" width="58" height="36" rx="4" fill="rgba(15,31,61,0.05)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="278" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">2⁰</text>` +
+        `<text x="278" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">1</text>` +
+        `<rect x="325" y="62" width="58" height="36" rx="4" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="354" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">2⁻¹</text>` +
+        `<text x="354" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">1/2</text>` +
+        `<rect x="401" y="62" width="58" height="36" rx="4" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="430" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">2⁻²</text>` +
+        `<text x="430" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">1/4</text>` +
+        `<line x1="82" y1="80" x2="94" y2="80" stroke="#6b7280" stroke-width="1.5"/><polygon points="94,80 88,77 88,83" fill="#6b7280"/>` +
+        `<text x="88" y="72" text-anchor="middle" font-size="7" fill="#6b7280">÷2</text>` +
+        `<line x1="158" y1="80" x2="170" y2="80" stroke="#6b7280" stroke-width="1.5"/><polygon points="170,80 164,77 164,83" fill="#6b7280"/>` +
+        `<text x="164" y="72" text-anchor="middle" font-size="7" fill="#6b7280">÷2</text>` +
+        `<line x1="234" y1="80" x2="246" y2="80" stroke="#6b7280" stroke-width="1.5"/><polygon points="246,80 240,77 240,83" fill="#6b7280"/>` +
+        `<text x="240" y="72" text-anchor="middle" font-size="7" fill="#6b7280">÷2</text>` +
+        `<line x1="310" y1="80" x2="322" y2="80" stroke="#6b7280" stroke-width="1.5"/><polygon points="322,80 316,77 316,83" fill="#6b7280"/>` +
+        `<text x="316" y="72" text-anchor="middle" font-size="7" fill="#6b7280">÷2</text>` +
+        `<line x1="386" y1="80" x2="398" y2="80" stroke="#6b7280" stroke-width="1.5"/><polygon points="398,80 392,77 392,83" fill="#6b7280"/>` +
+        `<text x="392" y="72" text-anchor="middle" font-size="7" fill="#6b7280">÷2</text>` +
+        `<line x1="325" y1="104" x2="459" y2="104" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="325" y1="104" x2="325" y2="108" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="459" y1="104" x2="459" y2="108" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="392" y="120" text-anchor="middle" font-size="8" font-weight="700" fill="#ea580c">negative exponent → reciprocal</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -218,7 +255,27 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to convert small decimal numbers into scientific notation using negative exponents" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing decimal point movement to the right with negative exponent annotation for small numbers" />',
+        'The decimal point in 0.00045 hopping 4 places right to land as 4.5 × 10⁻⁴',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="130" y="14" text-anchor="middle" font-size="9" font-weight="700" fill="#0f1f3d">Moving the decimal point right gives a negative exponent</text>` +
+        `<text x="20" y="40" font-family="monospace" font-size="20" font-weight="700" fill="#374151">0</text>` +
+        `<text x="34" y="40" font-family="monospace" font-size="20" font-weight="700" fill="#ea580c">.</text>` +
+        `<text x="48" y="40" font-family="monospace" font-size="20" font-weight="700" fill="#374151">0</text>` +
+        `<text x="62" y="40" font-family="monospace" font-size="20" font-weight="700" fill="#374151">0</text>` +
+        `<text x="76" y="40" font-family="monospace" font-size="20" font-weight="700" fill="#374151">0</text>` +
+        `<text x="90" y="40" font-family="monospace" font-size="20" font-weight="700" fill="#374151">4</text>` +
+        `<text x="104" y="40" font-family="monospace" font-size="20" font-weight="700" fill="#374151">5</text>` +
+        `<path d="M34,44 Q42.75,24 51.5,44" fill="none" stroke="#ea580c" stroke-width="2"/>` +
+        `<path d="M51.5,44 Q60.25,24 69,44" fill="none" stroke="#ea580c" stroke-width="2"/>` +
+        `<path d="M69,44 Q77.5,24 86.5,44" fill="none" stroke="#ea580c" stroke-width="2"/>` +
+        `<path d="M86.5,44 Q95.25,24 104,44" fill="none" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="104,44 98,40 98,48" fill="#ea580c"/>` +
+        `<text x="69" y="66" text-anchor="middle" font-size="8" font-weight="700" fill="#ea580c">4 places right</text>` +
+        `<text x="130" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">4.5 × 10⁻⁴</text>` +
+        `<text x="130" y="115" text-anchor="middle" font-size="9" fill="#6b7280">0.00045 in scientific notation</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -397,9 +454,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply all laws of exponents including negative exponents in calculations and real-life problems" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Summary diagram of all five laws of exponents with colour coded examples including negative and zero exponents" />',
     },
   ],
 

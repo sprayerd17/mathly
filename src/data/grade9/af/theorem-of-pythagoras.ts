@@ -84,9 +84,6 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn reghoek met sy diagonaal getrek, wat ʼn reghoekige driehoek vorm met die lengte, breedte en diagonaal gemerk" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die reghoekige driehoek binne ʼn geometriese figuur te identifiseer en die Stelling van Pythagoras toe te pas om onbekende lengtes te vind" />',
     },
@@ -167,9 +164,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn reghoekige veld met die diagonale pad langs die tweesy-roete getoon, met die metings gemerk" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om multi-stap Pythagoras-probleme in werklike-lewe kontekste en saamgestelde vorms op te los, insluitend die algebraïese benadering vir ʼn onbekende skuinssy" />',

@@ -119,7 +119,24 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Geneste Venn-tipe diagram wat natuurlike getalle binne hele getalle, binne heelgetalle, binne rasionale getalle wys, met irrasionale getalle as ʼn aparte sirkel, alles binne die reële getallestelsel" />',
+        'Geneste diagram wat natuurlike getalle binne hele getalle, binne heelgetalle, binne rasionale getalle wys, met irrasionale getalle as ʼn aparte versameling, alles binne die reële getalle',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 225" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="10" y="15" width="280" height="200" rx="14" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="18" y="30" font-size="10" font-weight="700" fill="#0f1f3d">Reële Getalle (ℝ)</text>` +
+        `<rect x="25" y="42" width="160" height="150" rx="12" fill="rgba(234,88,12,0.05)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="33" y="58" font-size="9" font-weight="700" fill="#ea580c">Rasionaal (ℚ)</text>` +
+        `<rect x="38" y="68" width="125" height="105" rx="10" fill="rgba(22,163,74,0.06)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="46" y="84" font-size="8.5" font-weight="700" fill="#16a34a">Heelgetalle (ℤ)</text>` +
+        `<rect x="50" y="94" width="90" height="62" rx="8" fill="rgba(107,114,128,0.08)" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<text x="58" y="108" font-size="7.5" font-weight="700" fill="#6b7280">Hele (ℕ₀)</text>` +
+        `<rect x="62" y="118" width="55" height="28" rx="6" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="89.5" y="135" text-anchor="middle" font-size="6.5" font-weight="700" fill="#2563eb">Natuurlik (ℕ)</text>` +
+        `<rect x="200" y="90" width="75" height="60" rx="10" fill="rgba(220,38,38,0.05)" stroke="#dc2626" stroke-width="1.5"/>` +
+        `<text x="237.5" y="115" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dc2626">Irrasionaal</text>` +
+        `<text x="237.5" y="128" text-anchor="middle" font-size="7" fill="#dc2626">(π, √2, √3)</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, heelgetal, geheel, rasionaal of irrasionaal te klassifiseer" />',
@@ -240,9 +257,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat voorbeelde van eindigende desimale, herhalende desimale en nie-herhalende nie-eindigende desimale wys, wat illustreer watter rasionaal en watter irrasionaal is" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om rasionale en irrasionale getalle te identifiseer, insluitend hoe om desimale en vierkantswortels te toets" />',
     },
@@ -355,9 +369,6 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Tabel wat die resultate van optel, aftrek en vermenigvuldig van rasionale en irrasionale getalle wys, met voorbeelde van elke kombinasie" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat voorbeelde wys van bewerkings met rasionale en irrasionale getalle en hoe om die resultate te klassifiseer" />',

@@ -139,9 +139,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om BODMAS toe te pas op saamgestelde desimale breukberekeninge met en sonder hakies" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Stap-vir-stap BODMAS-diagram wat die volgorde van bewerkings toegepas op ʼn saamgestelde desimale breukberekening wys" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -267,7 +264,29 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse en wortels van desimale breuke binne saamgestelde berekeninge met BODMAS te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat kwadrate, kubusse en wortels van algemene desimale breuke wys met uitgewerkte voorbeelde geïntegreer in saamgestelde berekeninge" />',
+        'Getallelyn wat wys dat die kwadrering van ʼn desimale getal tussen 0 en 1 dit kleiner maak, terwyl die vierkantswortel dit groter maak',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="160" y="14" text-anchor="middle" font-size="10" fill="#6b7280">Kwadrering en worteltrekking van desimale getalle tussen 0 en 1</text>` +
+        `<line x1="20" y1="80" x2="300" y2="80" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="20" y1="74" x2="20" y2="86" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="300" y1="74" x2="300" y2="86" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<circle cx="45" cy="80" r="4" fill="#ea580c"/>` +
+        `<circle cx="104" cy="80" r="4" fill="#2563eb"/>` +
+        `<text x="20" y="101" text-anchor="middle" font-size="10" fill="#6b7280">0</text>` +
+        `<text x="45" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0,09</text>` +
+        `<text x="104" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0,3</text>` +
+        `<text x="300" y="101" text-anchor="middle" font-size="10" fill="#6b7280">1</text>` +
+        `<path d="M104,74 Q75,35 45,74" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<polygon points="45,74 39,64 51,64" fill="#ea580c"/>` +
+        `<text x="75" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0,3² = 0,09</text>` +
+        `<text x="75" y="38" text-anchor="middle" font-size="8" fill="#6b7280">(kwadrering maak dit kleiner)</text>` +
+        `<path d="M45,86 Q75,125 104,86" fill="none" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<polygon points="104,86 98,96 110,96" fill="#16a34a"/>` +
+        `<text x="75" y="135" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">√0,09 = 0,3</text>` +
+        `<text x="75" y="148" text-anchor="middle" font-size="8" fill="#6b7280">(worteltrekking maak dit groter)</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -397,9 +416,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om veelstap werklike-lewe-probleme met desimale breuke op te los, met geld afgerond tot 2 desimale plekke" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Uitgewerkte-probleem-diagram wat die 3-stap-strategie toegepas op ʼn werklike-lewe desimale breuke woordprobleem met geld wys" />',
     },
   ],
 

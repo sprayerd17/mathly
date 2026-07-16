@@ -114,9 +114,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to expand brackets using the distributive property, combine like terms, and then solve a multi-step linear equation using inverse operations" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step layout showing a bracketed equation being expanded with the distributive property highlighted in blue, simplified terms in orange, and the final solution in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -232,9 +229,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve an equation with variables on both sides by moving the smaller x term across, followed by an example clearing a fraction by multiplying both sides" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing an equation with x terms on both sides, with the x terms highlighted in blue on each side and an arrow showing the smaller one being moved across, ending in a green solution" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -332,7 +326,30 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to solve a quadratic equation by factorising into two brackets and applying the zero product property" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step layout showing how to factorise x squared plus 5x plus 6 equals zero with factorised brackets highlighted in blue and solutions in orange" />',
+        'Flowchart showing (x + 2)(x + 3) = 0 branching into two zero-product equations x + 2 = 0 and x + 3 = 0, leading to the two solutions x = −2 and x = −3',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 185" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="55" y="6" width="150" height="28" rx="6" fill="rgba(37,99,235,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="25" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">(x + 2)(x + 3) = 0</text>` +
+        `<line x1="130" y1="34" x2="130" y2="48" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="130" y1="48" x2="65" y2="64" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="130" y1="48" x2="195" y2="64" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="45" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7280">or</text>` +
+        `<rect x="20" y="64" width="90" height="26" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">x + 2 = 0</text>` +
+        `<rect x="150" y="64" width="90" height="26" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="195" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">x + 3 = 0</text>` +
+        `<line x1="65" y1="90" x2="65" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="65,118 60,109 70,109" fill="#0f1f3d"/>` +
+        `<line x1="195" y1="90" x2="195" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="195,118 190,109 200,109" fill="#0f1f3d"/>` +
+        `<rect x="30" y="120" width="70" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">x = −2</text>` +
+        `<rect x="160" y="120" width="70" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="195" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">x = −3</text>` +
+        `<text x="130" y="172" text-anchor="middle" font-size="11" fill="#6b7280">Two solutions from one factorised equation</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -432,9 +449,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply the zero product property to solve equations already given in factorised form" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the zero product property with each factor highlighted in blue and the two solutions highlighted in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -588,9 +602,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to rearrange a quadratic equation, apply common factor and difference of squares factorisation, then use the zero product property" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side examples showing common factor, difference of squares, and trinomial factorisation methods with rearranging highlighted in blue, factorisation in orange, and solutions in green" />',
     },
   ],
   scoreMessages: [

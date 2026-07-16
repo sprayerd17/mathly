@@ -129,7 +129,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: a Cartesian plane showing the diagonal line y=x, with point (3,7) and its reflection (7,3) marked on either side of the line]" />',
+        'A Cartesian plane showing the diagonal line y=x, with point (3,7) and its reflection (7,3) marked on either side of the line',
+      diagramSvg:
+        '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="200" x2="30" y2="20" stroke="#374151" stroke-width="1.5"/><line x1="20" y1="190" x2="200" y2="190" stroke="#374151" stroke-width="1.5"/><text x="204" y="194" font-size="11" fill="#374151">x</text><text x="22" y="16" font-size="11" fill="#374151">y</text><line x1="30" y1="190" x2="190" y2="30" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/><text x="163" y="42" font-size="12" font-weight="700" fill="#2563eb">y = x</text><line x1="90" y1="50" x2="170" y2="130" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="90" cy="50" r="4" fill="#16a34a"/><text x="96" y="44" font-size="12" font-weight="700" fill="#16a34a">(3, 7)</text><circle cx="170" cy="130" r="4" fill="#ea580c"/><text x="176" y="146" font-size="12" font-weight="700" fill="#ea580c">(7, 3)</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to reflect a point and a simple figure in the line y=x by swapping coordinates" />',
@@ -244,9 +246,6 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing transformation examples: reflection in x-axis, y-axis, line y=x, and a translation, with original and image points colour coded" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to identify a transformation by comparing original and image coordinates" />',
@@ -376,7 +375,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: a small triangle with vertices (2,3),(4,3),(3,6) and a larger enlarged triangle with vertices (4,6),(8,6),(6,12), both shown on the same Cartesian plane radiating from the origin]" />',
+        'A small triangle with vertices (2,3),(4,3),(3,6) and a larger enlarged triangle with vertices (4,6),(8,6),(6,12), both shown on the same Cartesian plane radiating from the origin',
+      diagramSvg:
+        '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="205" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><line x1="20" y1="195" x2="170" y2="195" stroke="#374151" stroke-width="1.5"/><text x="174" y="199" font-size="11" fill="#374151">x</text><text x="22" y="11" font-size="11" fill="#374151">y</text><line x1="30" y1="195" x2="114" y2="27" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/><line x1="30" y1="195" x2="86" y2="111" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/><line x1="30" y1="195" x2="142" y2="111" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/><polygon points="58,153 86,153 72,111" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><polygon points="86,111 142,111 114,27" fill="none" stroke="#16a34a" stroke-width="2.5"/><text x="55" y="168" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">original</text><text x="128" y="120" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">enlarged (k=2)</text><circle cx="30" cy="195" r="2.5" fill="#0f1f3d"/><text x="20" y="205" font-size="9" fill="#374151">O</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to enlarge and reduce a shape using a scale factor from the origin on a Cartesian plane" />',

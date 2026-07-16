@@ -86,7 +86,27 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om die GGF van algebraïese terme te vind en dit uit ʼn uitdrukking te faktoriseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat 6x² + 9x wys, met GGF 3x in blou uitgefaktoriseer om 3x(2x+3) te gee, met die oorblywende uitdrukking in groen" />',
+        'Diagram wat 6x² en 9x wys wat saamvloei na hul GGF 3x, wat uitgefaktoriseer word om 3x(2x + 3) te gee',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 175" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="10" y="20" width="70" height="32" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="45" y="41" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">6x²</text>` +
+        `<rect x="10" y="122" width="70" height="32" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="45" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">9x</text>` +
+        `<line x1="80" y1="36" x2="138" y2="78" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="140,80 130,77 133,86" fill="#0f1f3d"/>` +
+        `<line x1="80" y1="138" x2="138" y2="97" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="140,95 130,94 135,102" fill="#0f1f3d"/>` +
+        `<text x="170" y="60" text-anchor="middle" font-size="9" fill="#6b7280">GGF</text>` +
+        `<rect x="140" y="68" width="60" height="38" rx="6" fill="rgba(37,99,235,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="170" y="92" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">3x</text>` +
+        `<line x1="200" y1="87" x2="233" y2="87" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="235,87 226,83 226,91" fill="#0f1f3d"/>` +
+        `<rect x="235" y="62" width="85" height="50" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="277" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">3x(2x + 3)</text>` +
+        `<text x="160" y="168" text-anchor="middle" font-size="10" fill="#6b7280">Die GGF word uitgefaktoriseer, wat die res in hakies laat</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -167,7 +187,25 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn verskil van twee kwadrate te herken en te faktoriseer deur die patroon a kwadraat minus b kwadraat is gelyk aan (a minus b)(a plus b) te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat x² minus 25 wys, met die eerste kwadraat in blou en die tweede kwadraat in oranje, wat die gefaktoriseerde vorm (x minus 5)(x plus 5) in groen gee" />',
+        'Meetkundige diagram wat ʼn vierkant met sy a wys, met ʼn kleiner vierkant met sy b verwyder, herrangskik na ʼn reghoek met wydte (a + b) en hoogte (a − b), wat a² − b² = (a − b)(a + b) illustreer',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 190" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<polygon points="20,20 85,20 85,55 120,55 120,120 20,120" fill="rgba(37,99,235,0.15)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="10" y="74" font-size="13" font-weight="700" fill="#2563eb">a</text>` +
+        `<text x="68" y="138" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">a</text>` +
+        `<text x="102" y="14" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">b</text>` +
+        `<text x="130" y="41" font-size="12" font-weight="700" fill="#ea580c">b</text>` +
+        `<line x1="128" y1="70" x2="178" y2="70" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="184,70 176,65 176,75" fill="#0f1f3d"/>` +
+        `<text x="156" y="58" text-anchor="middle" font-size="9" fill="#6b7280">herrangskik</text>` +
+        `<rect x="192" y="42" width="125" height="58" rx="4" fill="rgba(22,163,74,0.15)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="254" y="36" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">(a + b)</text>` +
+        `<text x="254" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">(a − b)</text>` +
+        `<text x="170" y="180" text-anchor="middle" font-size="14" font-weight="700">` +
+        `<tspan fill="#2563eb">a²</tspan><tspan fill="#0f1f3d"> − </tspan><tspan fill="#ea580c">b²</tspan><tspan fill="#0f1f3d"> = </tspan><tspan fill="#16a34a">(a − b)(a + b)</tspan>` +
+        `</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -260,9 +298,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om trinome van die vorm x kwadraat plus bx plus c te faktoriseer deur twee getalle te vind wat vermenigvuldig na c en optel na b" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die trinoom x² + 7x + 12 wys, met die twee getalle 3 en 4 in blou en die gefaktoriseerde vorm (x+3)(x+4) in groen" />',
     },
   ],
 

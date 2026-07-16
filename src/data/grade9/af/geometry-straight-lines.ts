@@ -155,9 +155,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat vertikaal-oorstaande, aangrensende, ooreenkomstige, verwisselende en ko-binnehoekverwantskappe met parallelle lyne en transversale hersien" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat twee parallelle lyne gesny deur ʼn transversaal wys, met al vyf hoekverwantskappe gemerk en kleurgekodeer" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -325,7 +322,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om verskeie hoekverhoudings te kombineer om komplekse geometrie-probleme stap vir stap op te los" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat twee parallelle lyne gesny deur twee transversale wys, met verskeie hoekverwantskappe gemerk en kleurgekodeer" />',
+        'Diagram wat twee parallelle lyne gesny deur twee transversale wys, met verskeie hoekverwantskappe gemerk en kleurgekodeer',
+      diagramSvg:
+        '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="50" x2="205" y2="50" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 46 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="150" x2="205" y2="150" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 146 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="60" y1="10" x2="140" y2="190" stroke="#2563eb" stroke-width="2"/><line x1="100" y1="10" x2="180" y2="190" stroke="#ea580c" stroke-width="2"/><circle cx="77.8" cy="50" r="2.5" fill="#0f1f3d"/><circle cx="122.2" cy="150" r="2.5" fill="#0f1f3d"/><circle cx="117.8" cy="50" r="2.5" fill="#0f1f3d"/><circle cx="162.2" cy="150" r="2.5" fill="#0f1f3d"/><path d="M 85,50 A 24,24 0 0 1 92,30" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="94" y="34" font-size="14" font-weight="700" fill="#2563eb">a</text><path d="M 170,150 A 24,24 0 0 0 178,170" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="174" y="184" font-size="14" font-weight="700" fill="#ea580c">b</text></svg>',
     },
   ],
   scoreMessages: [

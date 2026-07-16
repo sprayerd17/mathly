@@ -114,9 +114,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om hakies uit te brei deur die distributiewe eienskap te gebruik, gelyksoortige terme saam te voeg, en dan ʼn veelstap-lineêre vergelyking met inverse bewerkings op te los" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Stap-vir-stap uitleg wat wys hoe ʼn vergelyking met hakies uitgebrei word met die distributiewe eienskap uitgelig in blou, vereenvoudigde terme in oranje, en die finale oplossing in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -232,9 +229,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vergelyking met veranderlikes aan albei kante op te los deur die kleiner x-term oor te skuif, gevolg deur ʼn voorbeeld wat ʼn breuk uitklaar deur albei kante te vermenigvuldig" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn vergelyking met x-terme aan albei kante wys, met die x-terme uitgelig in blou aan elke kant en ʼn pyl wat wys hoe die kleiner een oorgeskuif word, wat eindig in ʼn groen oplossing" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -332,7 +326,30 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kwadratiese vergelyking op te los deur dit in twee hakies te faktoriseer en die nulproduk-eienskap toe te pas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Stap-vir-stap uitleg wat wys hoe om x kwadraat plus 5x plus 6 gelyk aan nul te faktoriseer met gefaktoriseerde hakies uitgelig in blou en oplossings in oranje" />',
+        'Vloeidiagram wat wys hoe (x + 2)(x + 3) = 0 vertak in twee nulproduk-vergelykings x + 2 = 0 en x + 3 = 0, wat lei tot die twee oplossings x = −2 en x = −3',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 185" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="55" y="6" width="150" height="28" rx="6" fill="rgba(37,99,235,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="25" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">(x + 2)(x + 3) = 0</text>` +
+        `<line x1="130" y1="34" x2="130" y2="48" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="130" y1="48" x2="65" y2="64" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="130" y1="48" x2="195" y2="64" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="45" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7280">óf</text>` +
+        `<rect x="20" y="64" width="90" height="26" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">x + 2 = 0</text>` +
+        `<rect x="150" y="64" width="90" height="26" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="195" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">x + 3 = 0</text>` +
+        `<line x1="65" y1="90" x2="65" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="65,118 60,109 70,109" fill="#0f1f3d"/>` +
+        `<line x1="195" y1="90" x2="195" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="195,118 190,109 200,109" fill="#0f1f3d"/>` +
+        `<rect x="30" y="120" width="70" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">x = −2</text>` +
+        `<rect x="160" y="120" width="70" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="195" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">x = −3</text>` +
+        `<text x="130" y="172" text-anchor="middle" font-size="11" fill="#6b7280">Twee oplossings uit een gefaktoriseerde vergelyking</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -432,9 +449,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die nulproduk-eienskap toe te pas om vergelykings op te los wat reeds in gefaktoriseerde vorm gegee is" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die nulproduk-eienskap wys met elke faktor uitgelig in blou en die twee oplossings uitgelig in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -588,9 +602,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kwadratiese vergelyking te herrangskik, gemeenskaplike faktor- en verskil-van-vierkante-faktorisering toe te pas, en dan die nulproduk-eienskap te gebruik" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Voorbeelde langs mekaar wat gemeenskaplike faktor, verskil van vierkante, en trinoom-faktoriseringsmetodes wys met herrangskikking uitgelig in blou, faktorisering in oranje, en oplossings in groen" />',
     },
   ],
   scoreMessages: [

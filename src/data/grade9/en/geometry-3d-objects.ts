@@ -104,7 +104,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video introducing the 5 Platonic solids and comparing them to spheres and cylinders highlighting curved surfaces" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a sphere and a cylinder shown alongside the 5 Platonic solids, highlighting the curved surfaces that distinguish them" />',
+        'A sphere and a cylinder shown alongside the 5 Platonic solids, highlighting the curved surfaces that distinguish them',
+      diagramSvg:
+        '<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg"><circle cx="55" cy="85" r="38" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><ellipse cx="55" cy="85" rx="38" ry="13" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/><text x="55" y="140" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Sphere</text><text x="55" y="153" font-size="10" fill="#374151" text-anchor="middle">1 curved surface</text><ellipse cx="150" cy="47" rx="32" ry="11" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/><line x1="118" y1="47" x2="118" y2="113" stroke="#16a34a" stroke-width="2.5"/><line x1="182" y1="47" x2="182" y2="113" stroke="#16a34a" stroke-width="2.5"/><path d="M 118,113 A 32,11 0 0 0 182,113" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M 118,113 A 32,11 0 0 1 182,113" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/><text x="150" y="140" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">Cylinder</text><text x="150" y="153" font-size="10" fill="#374151" text-anchor="middle">2 flat + 1 curved</text><polygon points="225,60 258,60 258,93 225,93" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><polygon points="225,60 240,45 273,45 258,60" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><polygon points="258,60 273,45 273,78 258,93" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><text x="248" y="140" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">Cube</text><text x="248" y="153" font-size="10" fill="#374151" text-anchor="middle">(Platonic — flat faces)</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -170,7 +172,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing the net of a cylinder — two circles and a rectangle — and how it folds to form the 3D solid" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a cylinder\'s net shown flat — two circles and a rectangle — with an arrow showing how the rectangle wraps around to connect the two circles when folded" />',
+        'A cylinder\'s net shown flat — two circles and a rectangle — with an arrow showing how the rectangle wraps around to connect the two circles when folded',
+      diagramSvg:
+        '<svg viewBox="0 0 260 195" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrEdge" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#374151"/></marker></defs><circle cx="45" cy="45" r="30" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><text x="45" y="49" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">circle</text><rect x="90" y="75" width="120" height="45" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/><text x="150" y="65" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">length = circumference (2πr)</text><text x="150" y="101" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">rectangle</text><text x="82" y="100" font-size="11" fill="#16a34a" font-weight="700">h</text><circle cx="45" cy="150" r="30" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><text x="45" y="154" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">circle</text><path d="M 74,55 Q 82,68 90,78" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrEdge)"/><path d="M 74,140 Q 82,127 90,117" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrEdge)"/></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -233,9 +237,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video comparing and classifying 3D objects by faces edges and vertices and explaining when Euler\'s formula applies" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a comparison table showing Platonic solids, prisms, pyramids, spheres and cylinders side by side with their faces edges vertices and Euler formula applicability" />',
     },
   ],
 

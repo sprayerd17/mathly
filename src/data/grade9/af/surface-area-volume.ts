@@ -125,7 +125,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die volume- en oppervlakteformules vir silinders verduidelik, en wys hoe die geboë oppervlak afrol tot ʼn reghoek met breedte gelyk aan die omtrek" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van ʼn silinder met radius en hoogte gemerk in blou en oranje, wat die net afgerol in twee sirkels en ʼn reghoek wys" />',
+        'ʼn Silinder met radius en hoogte gemerk in blou en oranje, wat die net afgerol in twee sirkels en ʼn reghoek wys',
+      diagramSvg:
+        '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrSav1Af" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#374151"/></marker></defs><circle cx="45" cy="45" r="30" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><line x1="45" y1="45" x2="45" y2="15" stroke="#2563eb" stroke-width="1.5"/><text x="51" y="30" font-size="12" fill="#2563eb" font-weight="700">r</text><rect x="90" y="75" width="120" height="45" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/><text x="150" y="65" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">2πr (omtrek)</text><text x="82" y="100" font-size="12" fill="#ea580c" font-weight="700">h</text><circle cx="45" cy="150" r="30" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><path d="M 74,55 Q 82,68 90,78" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrSav1Af)"/><path d="M 74,140 Q 82,127 90,117" fill="none" stroke="#374151" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrSav1Af)"/></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -240,7 +242,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om volumeformules vir prismas en silinders toe te pas en tussen SI-eenhede om te skakel om werklike-lewe inhoudsprobleme op te los" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn driehoekige prisma en ʼn silinder langs mekaar vergelyk met gemerkte afmetings en berekende volumes, met die eenheidomskakelingstap uitgelig" />',
+        'ʼn Driehoekige prisma en ʼn silinder langs mekaar vergelyk met gemerkte afmetings en berekende volumes, met die eenheidomskakelingstap uitgelig',
+      diagramSvg:
+        '<svg viewBox="0 0 260 215" xmlns="http://www.w3.org/2000/svg"><polygon points="20,140 70,140 45,90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><polygon points="35,125 85,125 60,75" fill="none" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="4,3"/><line x1="20" y1="140" x2="35" y2="125" stroke="#0f1f3d" stroke-width="2"/><line x1="70" y1="140" x2="85" y2="125" stroke="#0f1f3d" stroke-width="2"/><line x1="45" y1="90" x2="60" y2="75" stroke="#0f1f3d" stroke-width="2"/><text x="52" y="165" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">basisopp. = 15 cm²</text><text x="52" y="180" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">lengte = 20 cm</text><text x="52" y="198" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">V = 300 cm³</text><ellipse cx="190" cy="80" rx="35" ry="12" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="155" y1="80" x2="155" y2="140" stroke="#0f1f3d" stroke-width="2.5"/><line x1="225" y1="80" x2="225" y2="140" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 155,140 A 35,12 0 0 0 225,140" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 155,140 A 35,12 0 0 1 225,140" fill="none" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="4,3"/><text x="190" y="165" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">r = 3 cm, h = 25 cm</text><text x="190" y="198" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">V = 706.5 cm³</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -372,7 +376,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat ondersoek hoe die verdubbeling van een of al die afmetings van ʼn prisma of silinder die volume beïnvloed, en die gekubde skaalfaktor-verhouding verduidelik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn klein kubus en ʼn groter kubus met verdubbelde sye, langs mekaar getoon met volumes gemerk, wat die 8x-volumetoename deur verdubbeling van al drie afmetings illustreer" />',
+        'ʼn Klein kubus en ʼn groter kubus met verdubbelde sye, langs mekaar getoon met volumes gemerk, wat die 8x-volumetoename deur verdubbeling van al drie afmetings illustreer',
+      diagramSvg:
+        '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="100" width="35" height="35" fill="none" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="4,3"/><line x1="20" y1="115" x2="35" y2="100" stroke="#0f1f3d" stroke-width="1.6"/><line x1="55" y1="115" x2="70" y2="100" stroke="#0f1f3d" stroke-width="1.6"/><line x1="55" y1="150" x2="70" y2="135" stroke="#0f1f3d" stroke-width="1.6"/><rect x="20" y="115" width="35" height="35" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="37.5" y="168" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">3 cm</text><text x="37.5" y="183" font-size="11" fill="#374151" font-weight="700" text-anchor="middle">V = 27 cm³</text><text x="105" y="135" font-size="16" fill="#ea580c" font-weight="700" text-anchor="middle">×2</text><rect x="170" y="50" width="70" height="70" fill="none" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="4,3"/><line x1="140" y1="80" x2="170" y2="50" stroke="#0f1f3d" stroke-width="1.6"/><line x1="210" y1="80" x2="240" y2="50" stroke="#0f1f3d" stroke-width="1.6"/><line x1="210" y1="150" x2="240" y2="120" stroke="#0f1f3d" stroke-width="1.6"/><rect x="140" y="80" width="70" height="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="175" y="168" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">6 cm</text><text x="175" y="185" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">V = 216 cm³ (×8)</text></svg>',
     },
   ],
   scoreMessages: [

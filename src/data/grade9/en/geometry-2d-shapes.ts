@@ -89,9 +89,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the four minimum conditions for congruent triangles — SSS, SAS, AAS and RHS — with visual examples" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two triangles side by side showing matching sides/angles for each congruency condition — SSS, SAS, AAS, RHS — labelled clearly" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -163,7 +160,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining the two minimum conditions for similar triangles — AA and SSS proportionality — with visual examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two pairs of similar triangles showing equal angles and proportional sides labelled with their ratios" />',
+        'Two pairs of similar triangles showing equal angles and proportional sides labelled with their ratios',
+      diagramSvg:
+        '<svg viewBox="0 0 260 215" xmlns="http://www.w3.org/2000/svg"><text x="130" y="18" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Similar triangles — sides in ratio 1 : 2</text><polygon points="40,160 80,160 40,130" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="40" y="150" width="10" height="10" fill="none" stroke="#2563eb" stroke-width="1.5"/><path d="M 70,160 A 12,12 0 0 1 65,150" fill="none" stroke="#ea580c" stroke-width="1.5"/><path d="M 40,138 A 10,10 0 0 1 48,132" fill="none" stroke="#16a34a" stroke-width="1.5"/><text x="60" y="174" font-size="11" fill="#374151" font-weight="700" text-anchor="middle">4 cm</text><text x="30" y="147" font-size="11" fill="#374151" font-weight="700" text-anchor="end">3 cm</text><text x="55" y="150" font-size="11" fill="#374151" font-weight="700">5 cm</text><text x="112" y="150" font-size="18" fill="#ea580c" font-weight="700" text-anchor="middle">×2</text><polygon points="150,180 230,180 150,120" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="150" y="165" width="15" height="15" fill="none" stroke="#2563eb" stroke-width="1.5"/><path d="M 210,180 A 18,18 0 0 1 202,165" fill="none" stroke="#ea580c" stroke-width="1.5"/><path d="M 150,133 A 15,15 0 0 1 163,125" fill="none" stroke="#16a34a" stroke-width="1.5"/><text x="190" y="196" font-size="12" fill="#374151" font-weight="700" text-anchor="middle">8 cm</text><text x="140" y="155" font-size="12" fill="#374151" font-weight="700" text-anchor="end">6 cm</text><text x="175" y="145" font-size="12" fill="#374151" font-weight="700">10 cm</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -247,9 +246,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve geometric problems using congruency and similarity conditions with step-by-step justifications" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: labelled diagrams showing similar and congruent triangle pairs with known and unknown sides/angles marked" />',
     },
   ],
 

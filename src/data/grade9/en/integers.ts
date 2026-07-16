@@ -117,8 +117,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply BODMAS with integer operations including squares cubes square roots and cube roots" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Colour coded step-by-step calculation showing squares (blue) cubes (orange) and final answers (green) using BODMAS order" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -237,8 +235,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the distributive property and the difference between additive and multiplicative inverses for integers" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing distributive property (blue) additive inverse (orange) and multiplicative inverse (green) with integer examples" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -405,8 +401,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply BODMAS with mixed integer operations in multi-step abstract and real-life problems" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step multi-step integer calculation with order of operations (blue) integer signs (orange) and final answer (green) highlighted" />',
     },
   ],
 

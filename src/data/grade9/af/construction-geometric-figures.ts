@@ -78,9 +78,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die Buitehoekstelling verduidelik en wys hoe ʼn buitehoek van ʼn driehoek gelyk is aan die som van die twee oorstaande binnehoeke" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn driehoek met een sy verleng om ʼn buitehoek te wys, met die twee oorstaande binnehoeke duidelik gemerk en die buitehoek aangedui" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -147,9 +144,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die diagonale van reghoeke, vierkante, parallelogramme, ruite en vliers ondersoek — en lengte, halvering en loodregtheid vergelyk" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: konstruksies van ʼn reghoek en ʼn ruit langs mekaar, elk met beide diagonale geteken, gemerk om aan te dui of hulle gelyk, halverend, of loodreg is" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -224,7 +218,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om veelhoeke vanaf een hoekpunt in driehoeke te verdeel en dit te gebruik om die binnehoeksom-formule te bevestig" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn seshoek met diagonale vanaf een hoekpunt geteken, wat dit in 4 driehoeke verdeel, elke driehoek in ʼn ander kleur geskadu" />',
+        'ʼn Seshoek met diagonale vanaf een hoekpunt geteken, wat dit in 4 driehoeke verdeel, elke driehoek in ʼn ander kleur geskadu',
+      diagramSvg:
+        '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><polygon points="50,95 80,43.04 140,43.04" fill="#eff6ff" stroke="none"/><polygon points="50,95 140,43.04 170,95" fill="#fff7ed" stroke="none"/><polygon points="50,95 170,95 140,146.96" fill="#eff6ff" stroke="none"/><polygon points="50,95 140,146.96 80,146.96" fill="#fff7ed" stroke="none"/><polygon points="50,95 80,43.04 140,43.04 170,95 140,146.96 80,146.96" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="95" x2="140" y2="43.04" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="95" x2="170" y2="95" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="95" x2="140" y2="146.96" stroke="#2563eb" stroke-width="2"/><circle cx="50" cy="95" r="3.5" fill="#ea580c"/><text x="88" y="64" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">1</text><text x="118" y="80" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">2</text><text x="118" y="116" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">3</text><text x="88" y="132" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">4</text><text x="110" y="178" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">4 × 180° = 720°</text></svg>',
     },
   ],
 

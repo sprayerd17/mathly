@@ -102,7 +102,34 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van gewone breuke in veelstap-probleme toe te pas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visuele voorstelling wat die kwadrering en vierkantswortel-trekking van ʼn gewone breuk wys met teller en noemer apart hanteer" />',
+        'Visuele voorstelling wat die kwadrering en vierkantswortel-trekking van ʼn gewone breuk wys deur die teller en noemer apart te hanteer',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 170" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="10" y="25" font-size="11" fill="#6b7280">Kwadreer:</text>` +
+        `<text x="70" y="25" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">2</text>` +
+        `<line x1="55" y1="32" x2="85" y2="32" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="70" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">3</text>` +
+        `<text x="120" y="28" text-anchor="middle" font-size="8" fill="#6b7280">kwadreer bo &amp; onder</text>` +
+        `<line x1="95" y1="35" x2="140" y2="35" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="146,35 138,31 138,39" fill="#0f1f3d"/>` +
+        `<text x="185" y="25" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">4</text>` +
+        `<line x1="170" y1="32" x2="200" y2="32" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="185" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">9</text>` +
+        `<line x1="10" y1="85" x2="310" y2="85" stroke="#e2e8f0" stroke-width="1"/>` +
+        `<text x="10" y="115" font-size="11" fill="#6b7280">Worteltrek:</text>` +
+        `<text x="48" y="121" font-size="18" font-weight="700" fill="#2563eb">√</text>` +
+        `<text x="85" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">4</text>` +
+        `<line x1="70" y1="115" x2="100" y2="115" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="85" y="131" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">25</text>` +
+        `<text x="135" y="108" text-anchor="middle" font-size="8" fill="#6b7280">wortel bo &amp; onder</text>` +
+        `<line x1="110" y1="118" x2="155" y2="118" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="161,118 153,114 153,122" fill="#0f1f3d"/>` +
+        `<text x="200" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">2</text>` +
+        `<line x1="185" y1="115" x2="215" y2="115" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="200" y="131" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">5</text>` +
+        `<text x="160" y="160" text-anchor="middle" font-size="9" fill="#6b7280">Kwadreer of trek die wortel van teller en noemer apart</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -152,7 +179,27 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat veelstap werklike-lewe-probleme wys wat gewone breuke, gemengde getalle en persentasies kombineer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Staafmodel wat ʼn hoeveelheid wys wat eers deur ʼn breuk en dan deur ʼn persentasie van die oorblyfsel verdeel word" />',
+        'Staafmodel wat ʼn hoeveelheid wys wat eers deur ʼn breuk verdeel word, en dan ʼn persentasie van wat oorbly',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 145" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="160" y="12" text-anchor="middle" font-size="9" fill="#6b7280">Totale hoeveelheid</text>` +
+        `<rect x="20" y="18" width="280" height="24" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="18" width="112" height="24" fill="rgba(234,88,12,0.25)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="132" y="18" width="168" height="24" fill="rgba(22,163,74,0.15)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="76" y="34" text-anchor="middle" font-size="9" font-weight="700" fill="#7c2d12">gebruik (breuk)</text>` +
+        `<text x="216" y="34" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">oorblyfsel</text>` +
+        `<line x1="216" y1="42" x2="160" y2="72" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<polygon points="160,78 155,68 165,70" fill="#0f1f3d"/>` +
+        `<text x="255" y="60" text-anchor="middle" font-size="8" fill="#6b7280">oorblyfsel word die nuwe geheel</text>` +
+        `<text x="160" y="69" text-anchor="middle" font-size="9" fill="#6b7280">Oorblyfsel = nuwe 100%</text>` +
+        `<rect x="20" y="75" width="280" height="24" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="75" width="70" height="24" fill="rgba(234,88,12,0.25)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="90" y="75" width="210" height="24" fill="rgba(22,163,74,0.25)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="55" y="91" text-anchor="middle" font-size="9" font-weight="700" fill="#7c2d12">gebruik (%)</text>` +
+        `<text x="195" y="91" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">oor</text>` +
+        `<text x="160" y="130" text-anchor="middle" font-size="10" fill="#6b7280">Eers ʼn breuk, dan ʼn persentasie van wat oorbly</text>` +
+        `</svg>`,
     },
   ],
 

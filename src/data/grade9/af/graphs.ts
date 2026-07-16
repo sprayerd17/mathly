@@ -133,7 +133,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram benodig: ʼn Cartesiese vlak wat die lyn y=2x-6 wys, met die x-afsnit by (3,0) en y-afsnit by (0,-6) duidelik gemerk]" />',
+        'ʼn Cartesiese vlak wat die lyn y = 2x − 6 wys, met die x-afsnit by (3, 0) en y-afsnit by (0, −6) duidelik gemerk',
+
+      diagramSvg:
+        '<svg viewBox="0 0 180 230" xmlns="http://www.w3.org/2000/svg"><text x="90" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = 2x − 6</text><line x1="20" y1="70" x2="160" y2="70" stroke="#0f1f3d" stroke-width="2"/><polygon points="164,70 156,66 156,74" fill="#0f1f3d"/><text x="160" y="64" font-size="9" fill="#0f1f3d" text-anchor="end">x</text><line x1="60" y1="225" x2="60" y2="20" stroke="#0f1f3d" stroke-width="2"/><polygon points="60,16 56,24 64,24" fill="#0f1f3d"/><text x="66" y="24" font-size="9" fill="#0f1f3d">y</text><line x1="42" y1="214" x2="132" y2="34" stroke="#16a34a" stroke-width="2.5"/><circle cx="114" cy="70" r="4" fill="#ea580c" stroke="#0f1f3d" stroke-width="1"/><text x="118" y="62" font-size="9" font-weight="700" fill="#ea580c">(3, 0)</text><circle cx="60" cy="178" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><text x="10" y="192" font-size="9" font-weight="700" fill="#2563eb">(0, −6)</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat y-afsnit, x-afsnit en gradiënt van lineêre grafieke verduidelik met uitgewerkte voorbeelde" />',
@@ -263,7 +266,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram benodig: ʼn Cartesiese vlak wat die lyn y=-x+4 wys, geteken met behulp van sy x-afsnit (4,0) en y-afsnit (0,4)]" />',
+        'ʼn Cartesiese vlak wat die lyn y = −x + 4 wys, geteken met behulp van sy x-afsnit (4, 0) en y-afsnit (0, 4)',
+
+      diagramSvg:
+        '<svg viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = −x + 4</text><line x1="15" y1="150" x2="185" y2="150" stroke="#0f1f3d" stroke-width="2"/><polygon points="189,150 181,146 181,154" fill="#0f1f3d"/><text x="185" y="144" font-size="9" fill="#0f1f3d" text-anchor="end">x</text><line x1="50" y1="200" x2="50" y2="25" stroke="#0f1f3d" stroke-width="2"/><polygon points="50,21 46,29 54,29" fill="#0f1f3d"/><text x="56" y="29" font-size="9" fill="#0f1f3d">y</text><line x1="30" y1="50" x2="170" y2="190" stroke="#16a34a" stroke-width="2.5"/><circle cx="130" cy="150" r="4" fill="#ea580c" stroke="#0f1f3d" stroke-width="1"/><text x="134" y="145" font-size="9" font-weight="700" fill="#ea580c">(4, 0)</text><circle cx="50" cy="70" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><text x="8" y="60" font-size="9" font-weight="700" fill="#2563eb">(0, 4)</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn reguitlyngrafiek te teken met behulp van die afsnitmetode en ʼn tabel van waardes" />',
@@ -379,7 +385,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram benodig: ʼn Cartesiese vlak wat ʼn lyn wys wat deur (0,5) en (2,9) gaan, met die gradiëntdriehoek (opgaan van 4, aanloop van 2) tussen die punte gemerk]" />',
+        'ʼn Cartesiese vlak wat ʼn lyn wys wat deur (0, 5) en (2, 9) gaan, met die gradiëntdriehoek (opgaan van 4, aanloop van 2) tussen die punte gemerk',
+
+      diagramSvg:
+        '<svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg"><text x="80" y="12" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = 2x + 5</text><line x1="25" y1="165" x2="115" y2="165" stroke="#0f1f3d" stroke-width="2"/><polygon points="119,165 111,161 111,169" fill="#0f1f3d"/><text x="115" y="159" font-size="9" fill="#0f1f3d" text-anchor="end">x</text><line x1="45" y1="183" x2="45" y2="10" stroke="#0f1f3d" stroke-width="2"/><polygon points="45,6 41,14 49,14" fill="#0f1f3d"/><text x="52" y="21" font-size="9" fill="#0f1f3d">y</text><line x1="38" y1="109" x2="83" y2="19" stroke="#16a34a" stroke-width="2.5"/><circle cx="45" cy="95" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><text x="8" y="91" font-size="9" font-weight="700" fill="#2563eb">(0, 5)</text><circle cx="73" cy="39" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><text x="78" y="35" font-size="9" font-weight="700" fill="#2563eb">(2, 9)</text><line x1="45" y1="95" x2="73" y2="95" stroke="#ea580c" stroke-width="2" stroke-dasharray="3,2"/><line x1="73" y1="95" x2="73" y2="39" stroke="#ea580c" stroke-width="2" stroke-dasharray="3,2"/><text x="59" y="108" font-size="8" font-weight="700" fill="#ea580c" text-anchor="middle">aanloop 2</text><text x="79" y="70" font-size="8" font-weight="700" fill="#ea580c">opgaan 4</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die vergelyking van ʼn lineêre grafiek vanaf twee bekende punte te bepaal deur y = mx + c te gebruik" />',

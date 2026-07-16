@@ -155,9 +155,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om oppervlakte- en omtrekformules vir sirkels en saamgestelde vorms toe te pas, insluitend SI-eenheidomskakelings tussen cm² en m²" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van Sipho se onreëlmatige perseel verdeel in ʼn reghoek en ʼn halfsirkel, met elke deel gemerk in blou en die totale oppervlakte getoon in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -303,7 +300,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe die verdubbeling van een dimensie teenoor die verdubbeling van al die dimensies die omtrek en oppervlakte van reghoeke en vierkante verskillend beïnvloed" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn klein vierkant en ʼn groter vierkant met sye verdubbel, langs mekaar getoon met beide omtrek en oppervlakte op elk gemerk, wat die 2x-omtrek teenoor 4x-oppervlakte-verhouding illustreer" />',
+        'ʼn Klein vierkant en ʼn groter vierkant met sye verdubbel, langs mekaar getoon met beide omtrek en oppervlakte op elk gemerk, wat die 2x-omtrek teenoor 4x-oppervlakte-verhouding illustreer',
+      diagramSvg:
+        '<svg viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="70" width="45" height="45" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="42.5" y="63" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">5 cm</text><text x="42.5" y="132" font-size="11" fill="#374151" text-anchor="middle">Omtrek = 20 cm</text><text x="42.5" y="146" font-size="11" fill="#374151" text-anchor="middle">Opp = 25 cm²</text><text x="90" y="98" font-size="18" fill="#ea580c" font-weight="700" text-anchor="middle">→</text><text x="90" y="112" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">×2</text><rect x="115" y="25" width="90" height="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="160" y="18" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">10 cm</text><text x="160" y="132" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">Omtrek = 40 cm (×2)</text><text x="160" y="146" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">Opp = 100 cm² (×4)</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -413,9 +412,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om lineêre en oppervlakte-skaalfaktore toe te pas om werklike-lewe vergrotings- en verkleiningsprobleme met omtrek en oppervlakte op te los" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn klein tuinplan en die vergrote weergawe daarvan wys, met skaalfaktor k gemerk op die sye, en k² gemerk op die oppervlakte, wat die verskil tussen lineêre en oppervlakte-skalering illustreer" />',
     },
   ],
 
