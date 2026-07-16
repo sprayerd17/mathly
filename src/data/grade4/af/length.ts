@@ -112,6 +112,8 @@ export const topicData: TopicData = {
       openQuestions: [],
       diagramPlaceholder:
         'Vier voorwerpe getoon met hul metings — ʼn muntstuk gemerk in mm, ʼn potlood gemerk in cm, ʼn deur gemerk in m en ʼn padteken gemerk in km',
+      diagramSvg:
+        '<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="60" r="20" fill="none" stroke="#1e40af" stroke-width="2.5"/><line x1="20" y1="60" x2="60" y2="60" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="3,3"/><text x="40" y="105" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">Muntstuk</text><text x="40" y="122" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">mm</text><rect x="90" y="52" width="60" height="14" fill="none" stroke="#16a34a" stroke-width="2.5"/><polygon points="150,52 150,66 165,59" fill="none" stroke="#16a34a" stroke-width="2.5"/><text x="125" y="105" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">Potlood</text><text x="125" y="122" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">cm</text><rect x="200" y="20" width="40" height="80" fill="none" stroke="#dc2626" stroke-width="2.5"/><circle cx="232" cy="62" r="2.5" fill="#dc2626"/><text x="220" y="115" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">Deur</text><text x="220" y="132" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">m</text><line x1="270" y1="45" x2="270" y2="100" stroke="#ea580c" stroke-width="2.5"/><rect x="252" y="25" width="36" height="24" fill="none" stroke="#ea580c" stroke-width="2.5"/><text x="270" y="41" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">10km</text><text x="270" y="118" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">Teken</text><text x="270" y="135" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">km</text></svg>',
       videoPlaceholder:
         'Kort video wat die vier lengte-eenhede verduidelik met voorbeelde uit die werklike lewe van wanneer om elkeen te gebruik',
     },
@@ -213,8 +215,6 @@ export const topicData: TopicData = {
       ],
       practiceQuestions: [],
       openQuestions: [],
-      diagramPlaceholder:
-        'ʼn Liniaal wat sentimetermerke toon met ʼn potlood daarlangs geplaas van nul tot 17 cm duidelik gemerk',
       videoPlaceholder:
         'Kort video wat wys hoe om ʼn liniaal korrek te plaas om ʼn voorwerp te meet en die meting akkuraat te lees',
     },
@@ -320,6 +320,8 @@ export const topicData: TopicData = {
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Omskakelingsleer wat mm, cm, m, km van onder na bo toon met vermenigvuldig-pyle wat afgaan en deel-pyle wat opgaan en die omskakelingsfaktore gemerk',
+      diagramSvg:
+        '<svg viewBox="0 0 220 320" xmlns="http://www.w3.org/2000/svg"><rect x="70" y="14" width="80" height="32" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="110" y="35" font-size="15" font-weight="700" fill="#0f1f3d" text-anchor="middle">km</text><rect x="70" y="94" width="80" height="32" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="110" y="115" font-size="15" font-weight="700" fill="#0f1f3d" text-anchor="middle">m</text><rect x="70" y="174" width="80" height="32" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="110" y="195" font-size="15" font-weight="700" fill="#0f1f3d" text-anchor="middle">cm</text><rect x="70" y="254" width="80" height="32" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="110" y="275" font-size="15" font-weight="700" fill="#0f1f3d" text-anchor="middle">mm</text><line x1="165" y1="46" x2="165" y2="90" stroke="#dc2626" stroke-width="2"/><polygon points="165,94 160,86 170,86" fill="#dc2626"/><text x="185" y="74" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">×1000</text><line x1="165" y1="126" x2="165" y2="170" stroke="#dc2626" stroke-width="2"/><polygon points="165,174 160,166 170,166" fill="#dc2626"/><text x="185" y="154" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">×100</text><line x1="165" y1="206" x2="165" y2="250" stroke="#dc2626" stroke-width="2"/><polygon points="165,254 160,246 170,246" fill="#dc2626"/><text x="185" y="234" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">×10</text><line x1="55" y1="90" x2="55" y2="46" stroke="#2563eb" stroke-width="2"/><polygon points="55,42 50,50 60,50" fill="#2563eb"/><text x="30" y="74" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">÷1000</text><line x1="55" y1="170" x2="55" y2="126" stroke="#2563eb" stroke-width="2"/><polygon points="55,122 50,130 60,130" fill="#2563eb"/><text x="30" y="154" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">÷100</text><line x1="55" y1="250" x2="55" y2="206" stroke="#2563eb" stroke-width="2"/><polygon points="55,202 50,210 60,210" fill="#2563eb"/><text x="30" y="234" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">÷10</text></svg>',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // AFDELING 4 — BEREKEN MET LENGTE

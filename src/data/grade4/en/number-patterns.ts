@@ -272,6 +272,8 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder: 'Number line showing skip counting in 25s from 0 to 200 with each landing number marked and labelled',
+      diagramSvg:
+        '<svg viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="50" x2="570" y2="50" stroke="#0f1f3d" stroke-width="2"/><polygon points="570,50 560,45 560,55" fill="#0f1f3d"/><text x="63.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="131.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="198.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="266.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="333.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="401.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="468.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="536.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><circle cx="30" cy="50" r="5" fill="#1e40af"/><circle cx="97.5" cy="50" r="5" fill="#1e40af"/><circle cx="165" cy="50" r="5" fill="#1e40af"/><circle cx="232.5" cy="50" r="5" fill="#1e40af"/><circle cx="300" cy="50" r="5" fill="#1e40af"/><circle cx="367.5" cy="50" r="5" fill="#1e40af"/><circle cx="435" cy="50" r="5" fill="#1e40af"/><circle cx="502.5" cy="50" r="5" fill="#1e40af"/><circle cx="570" cy="50" r="5" fill="#1e40af"/><text x="30" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">0</text><text x="97.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">25</text><text x="165" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">50</text><text x="232.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">75</text><text x="300" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">100</text><text x="367.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">125</text><text x="435" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">150</text><text x="502.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">175</text><text x="570" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">200</text></svg>',
 
       practiceQuestions: [],
       openQuestions: [],
@@ -409,7 +411,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder: 'Function machine diagram showing input arrow going into a box labelled with the rule and output arrow coming out the other side',
       videoPlaceholder: 'Short video showing how input and output function machines work with different rules',
 
       practiceQuestions: [],
@@ -656,8 +657,6 @@ From <span style="color:#1e40af;font-weight:700;">200</span> to <span style="col
           ],
         },
       ],
-
-      diagramPlaceholder: 'Number line from 0 to 25 showing the pattern 0 5 10 15 20 with dots and arrows labelled add 5 between each',
 
       practiceQuestions: [],
       openQuestions: [],

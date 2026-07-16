@@ -272,6 +272,8 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder: 'Getallelyn wat springtel in 25e toon van 0 tot 200 met elke landingsgetal gemerk en geëtiketteer',
+      diagramSvg:
+        '<svg viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="50" x2="570" y2="50" stroke="#0f1f3d" stroke-width="2"/><polygon points="570,50 560,45 560,55" fill="#0f1f3d"/><text x="63.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="131.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="198.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="266.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="333.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="401.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="468.75" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><text x="536.25" y="34" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">+25</text><circle cx="30" cy="50" r="5" fill="#1e40af"/><circle cx="97.5" cy="50" r="5" fill="#1e40af"/><circle cx="165" cy="50" r="5" fill="#1e40af"/><circle cx="232.5" cy="50" r="5" fill="#1e40af"/><circle cx="300" cy="50" r="5" fill="#1e40af"/><circle cx="367.5" cy="50" r="5" fill="#1e40af"/><circle cx="435" cy="50" r="5" fill="#1e40af"/><circle cx="502.5" cy="50" r="5" fill="#1e40af"/><circle cx="570" cy="50" r="5" fill="#1e40af"/><text x="30" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">0</text><text x="97.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">25</text><text x="165" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">50</text><text x="232.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">75</text><text x="300" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">100</text><text x="367.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">125</text><text x="435" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">150</text><text x="502.5" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">175</text><text x="570" y="75" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">200</text></svg>',
 
       practiceQuestions: [],
       openQuestions: [],
@@ -409,7 +411,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder: 'Funksiemasjien-diagram wat ʼn inset-pyl toon wat in ʼn blokkie ingaan wat met die reël geëtiketteer is, met ʼn uitset-pyl wat aan die ander kant uitkom',
       videoPlaceholder: 'Kort video wat wys hoe inset- en uitset-funksiemasjiene met verskillende reëls werk',
 
       practiceQuestions: [],
@@ -656,8 +657,6 @@ Van <span style="color:#1e40af;font-weight:700;">200</span> na <span style="colo
           ],
         },
       ],
-
-      diagramPlaceholder: 'Getallelyn van 0 tot 25 wat die patroon 0 5 10 15 20 toon met kolletjies en pyle geëtiketteer tel 5 by tussen elkeen',
 
       practiceQuestions: [],
       openQuestions: [],

@@ -224,7 +224,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder: 'Short video showing how to memorise the 5 times table using skip counting',
-      diagramPlaceholder: 'Multiplication table grid for 2s, 3s, 4s, 5s and 10s laid out clearly',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -357,6 +356,7 @@ export const topicData: TopicData = {
       openQuestions: [],
       videoPlaceholder: 'Short video showing column multiplication of a 2-digit number by a 1-digit number with carrying',
       diagramPlaceholder: 'Column multiplication layout showing 47 × 3 with carried digit shown in orange',
+      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="90" y="20" font-weight="700" font-size="15" text-anchor="middle" fill="#ea580c">2</text><text x="90" y="55" font-weight="700" font-size="26" text-anchor="middle" fill="#16a34a">4</text><text x="140" y="55" font-weight="700" font-size="26" text-anchor="middle" fill="#2563eb">7</text><text x="55" y="85" font-weight="700" font-size="22" text-anchor="middle" fill="#0f1f3d">×</text><text x="140" y="85" font-weight="700" font-size="26" text-anchor="middle" fill="#0f1f3d">3</text><line x1="35" y1="95" x2="170" y2="95" stroke="#0f1f3d" stroke-width="2.5"/><text x="40" y="130" font-weight="700" font-size="26" text-anchor="middle" fill="#0f1f3d">1</text><text x="90" y="130" font-weight="700" font-size="26" text-anchor="middle" fill="#16a34a">4</text><text x="140" y="130" font-weight="700" font-size="26" text-anchor="middle" fill="#2563eb">1</text><text x="105" y="155" font-weight="700" font-size="14" text-anchor="middle" fill="#0f1f3d">47 × 3 = 141</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -647,6 +647,7 @@ export const topicData: TopicData = {
       openQuestions: [],
       videoPlaceholder: 'Short video showing how to use the grid method to multiply a 2-digit number by a 2-digit number',
       diagramPlaceholder: 'Grid method diagram showing 23 × 14 split into four partial products that add up to 322',
+      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="65" y="15" width="55" height="35" fill="#dcfce7"/><rect x="120" y="15" width="55" height="35" fill="#ffedd5"/><rect x="10" y="50" width="55" height="35" fill="#dbeafe"/><rect x="10" y="85" width="55" height="35" fill="#fee2e2"/><rect x="10" y="15" width="165" height="105" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="15" x2="65" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="120" y1="15" x2="120" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="10" y1="50" x2="175" y2="50" stroke="#0f1f3d" stroke-width="1.5"/><line x1="10" y1="85" x2="175" y2="85" stroke="#0f1f3d" stroke-width="1.5"/><text x="92" y="37" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">10</text><text x="147" y="37" font-weight="700" font-size="16" text-anchor="middle" fill="#ea580c">4</text><text x="37" y="72" font-weight="700" font-size="16" text-anchor="middle" fill="#2563eb">20</text><text x="37" y="107" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">3</text><text x="92" y="72" font-weight="700" font-size="15" text-anchor="middle" fill="#0f1f3d">200</text><text x="147" y="72" font-weight="700" font-size="15" text-anchor="middle" fill="#0f1f3d">80</text><text x="92" y="107" font-weight="700" font-size="15" text-anchor="middle" fill="#0f1f3d">30</text><text x="147" y="107" font-weight="700" font-size="15" text-anchor="middle" fill="#0f1f3d">12</text><text x="92" y="145" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">200+80+30+12=322</text></svg>',
     },
   ],
 

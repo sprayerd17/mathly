@@ -236,7 +236,6 @@ export const topicData: TopicData = {
 </div>`,
 
       videoPlaceholder: 'Short video showing how to translate word problems into number sentences step by step',
-      diagramPlaceholder: 'Step by step flow diagram showing how to go from a word problem to a number sentence to a solution',
 
       workedExamples: [
         {

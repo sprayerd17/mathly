@@ -236,7 +236,6 @@ export const topicData: TopicData = {
 </div>`,
 
       videoPlaceholder: 'Kort video wat wys hoe om woordprobleme stap vir stap in getalsinne om te skakel',
-      diagramPlaceholder: 'Stap-vir-stap vloeidiagram wat wys hoe om van ʼn woordprobleem na ʼn getalsin na ʼn oplossing te gaan',
 
       workedExamples: [
         {
