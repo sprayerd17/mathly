@@ -5,10 +5,14 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // red    → unknown value / decreasing quantity            (#dc2626)
 // green  → proportional relationship / compound interest (#16a34a)
 // orange → rentals                                        (#ea580c)
+// purple → simple interest                                (#7c3aed)
+// teal   → hire purchase                                  (#0d9488)
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
+const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</span>`
+const te = (t: string) => `<span style="color:#0d9488;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
   title: 'Ratio, Rate and Proportion',
@@ -265,19 +269,21 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'financial-problems',
-      title: 'Solving Financial Problems — Commission, Rentals and Compound Interest',
+      title: 'Solving Financial Problems — Commission, Rentals, Interest and Hire Purchase',
       icon: 'R',
       explanation:
-        `<p style="margin-bottom:16px;">We extend financial problem-solving to include <strong>commission</strong> (a percentage earned on sales), <strong>rentals</strong> (regular payments for using something), and <strong>compound interest</strong>, where interest is calculated on the growing total (principal plus previous interest) rather than just the original amount.</p>` +
+        `<p style="margin-bottom:16px;">We extend financial problem-solving to include <strong>commission</strong> (a percentage earned on sales), <strong>rentals</strong> (regular payments for using something), <strong>simple interest</strong> (interest calculated only on the original amount), <strong>compound interest</strong>, where interest is calculated on the growing total (principal plus previous interest) rather than just the original amount, and <strong>hire purchase</strong>, where a loan (after a deposit) is repaid with simple interest in equal monthly instalments.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('commission')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('rentals')}</span>` +
+        `<span style="background:#faf5ff;border:1px solid #e9d5ff;border-radius:6px;padding:3px 10px;font-size:13px;">${pu('simple interest')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('compound interest')}</span>` +
+        `<span style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:6px;padding:3px 10px;font-size:13px;">${te('hire purchase')}</span>` +
         `</div>` +
 
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Three financial concepts</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Five financial concepts</p>` +
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
@@ -292,10 +298,42 @@ export const topicData: TopicData = {
         `<p style="color:#c2410c;font-size:13px;font-weight:600;margin:0;">Total rental = rate × number of periods</p>` +
         `</div>` +
 
+        `<div style="background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#7c3aed;margin-bottom:4px;">Simple Interest</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Interest calculated only on the original principal — the interest earned is the same every year.</p>` +
+        `<p style="color:#6d28d9;font-size:13px;font-weight:600;margin:0;">Amount = P × (1 + i × n)</p>` +
+        `</div>` +
+
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Compound Interest</p>` +
         `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Interest calculated on the growing total each period.</p>` +
         `<p style="color:#15803d;font-size:13px;font-weight:600;margin:0;">Amount = P × (1 + r)ⁿ</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#0d9488;margin-bottom:4px;">Hire Purchase</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">A loan (cash price minus deposit) repaid with simple interest, in equal monthly instalments.</p>` +
+        `<p style="color:#0f766e;font-size:13px;font-weight:600;margin:0;">Instalment = Total repayable ÷ months</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Simple interest step by step</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Identify the values')} — Write down the principal P, the interest rate i as a decimal, and the time n in years.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Find the interest')} — Interest is the same every year, so total interest I = P × i × n.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Add to the principal')} — Amount A = P + I = P × (1 + i × n).</p>` +
         `</div>` +
 
         `</div>` +
@@ -321,9 +359,34 @@ export const topicData: TopicData = {
         `</div>` +
         `</div>` +
 
-        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
         `<p style="font-weight:700;color:#15803d;margin-bottom:6px;">Simple vs compound interest</p>` +
         `<p style="margin:0;color:#14532d;">Simple interest is always calculated on the original principal only, so the interest earned each year is the same. ${gr('Compound interest')} is calculated on the growing total, so it earns more over time — especially over many years.</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hire purchase step by step</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#0d9488;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${te('Find the loan amount')} — Subtract the deposit from the cash price: Loan = Cash price − Deposit. Only this reduced amount is financed.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#0d9488;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${te('Apply simple interest to the loan')} — Interest I = Loan × i × n, then Total repayable = Loan + I.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#0d9488;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${te('Find the monthly instalment')} — Divide the total repayable by the number of months: Instalment = Total repayable ÷ (n × 12).</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#0f766e;margin-bottom:6px;">Hire purchase in a nutshell</p>` +
+        `<p style="margin:0;color:#134e4a;">The ${bl('deposit')} reduces the amount that earns interest — you only pay simple interest on the ${te('loan')} (cash price minus deposit), never on the full cash price. This is why a bigger deposit means a smaller loan, less total interest, and a lower monthly instalment.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -353,6 +416,31 @@ export const topicData: TopicData = {
             `After year 1: 5 000 × 1.08 = ${gr('R5 400')}`,
             `After year 2: ${gr('5 400')} × 1.08 = ${gr('R5 832')}`,
             `<strong>Answer:</strong> Amount after 2 years = ${gr('R5 832')} ✓`,
+          ],
+        },
+        {
+          question: 'Determine the amount after investing R8 000 for 5 years at 11% simple interest.',
+          answer: `Amount = ${pu('R12 400')}`,
+          steps: [
+            `${pu('Simple interest formula')}: A = P × (1 + i × n)`,
+            `P = R8 000, i = 11% = 0.11, n = 5 years`,
+            `A = 8 000 × (1 + 0.11 × 5)`,
+            `A = 8 000 × (1 + 0.55)`,
+            `A = 8 000 × 1.55`,
+            `<strong>Answer:</strong> A = ${pu('R12 400')} ✓`,
+          ],
+        },
+        {
+          question: 'Peter pays a 15% deposit on a hire-purchase agreement for a couch with a cash price of R20 000, then repays the balance plus 11% simple interest over 2 years in equal monthly instalments. Find the monthly instalment.',
+          answer: `Monthly instalment = ${te('R864.17')}`,
+          steps: [
+            `${te('Find the deposit')}: 15% × R20 000 = 0.15 × 20 000 = R3 000`,
+            `${te('Find the loan amount')}: Loan = Cash price − Deposit = 20 000 − 3 000 = R17 000`,
+            `${te('Apply simple interest')}: I = P × i × n = 17 000 × 0.11 × 2 = R3 740`,
+            `${te('Total repayable')} = Loan + I = 17 000 + 3 740 = R20 740`,
+            `${te('Number of months')} = 2 × 12 = 24`,
+            `${te('Monthly instalment')} = 20 740 ÷ 24 = ${te('R864.17')}`,
+            `<strong>Answer:</strong> Monthly instalment = ${te('R864.17')} ✓`,
           ],
         },
       ],
@@ -429,13 +517,73 @@ export const topicData: TopicData = {
           answer: 'First 4 weeks: 280 × 4 = 1 120.\nDiscounted rate = 280 × 0.9 = 252.\nAdditional 3 weeks: 252 × 3 = 756.\nTotal = 1 120 + 756 = R1 876.',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Easy',
+          question: 'Determine the amount after investing R3 000 for 4 years at 9% simple interest.',
+          answer: 'R4 080',
+          checkMode: 'auto',
+          correctAnswer: 'R4080',
+          correctAnswers: ['R4080', '4080', 'R4 080', '4 080'],
+          explanation: 'A = P × (1 + i × n) = 3 000 × (1 + 0.09 × 4) = 3 000 × 1.36 = R4 080 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the simple interest (not the total amount) earned on R6 500 invested for 3 years at 7% per annum.',
+          answer: 'R1 365',
+          checkMode: 'auto',
+          correctAnswer: 'R1365',
+          correctAnswers: ['R1365', '1365', 'R1 365', '1 365'],
+          explanation: 'I = P × i × n = 6 500 × 0.07 × 3 = R1 365 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'An amount of R12 000 is invested at 8.5% simple interest per year for 6 years. Find the total amount after 6 years.',
+          answer: 'R18 120',
+          checkMode: 'auto',
+          correctAnswer: 'R18120',
+          correctAnswers: ['R18120', '18120', 'R18 120', '18 120'],
+          explanation: 'I = P × i × n = 12 000 × 0.085 × 6 = 6 120.\nA = P + I = 12 000 + 6 120 = R18 120 ✓',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'A fridge has a cash price of R6 000. A 20% deposit is paid. Find the loan amount that still needs to be financed.',
+          answer: 'R4 800',
+          checkMode: 'auto',
+          correctAnswer: 'R4800',
+          correctAnswers: ['R4800', '4800', 'R4 800', '4 800'],
+          explanation: 'Deposit = 20% × 6 000 = 1 200.\nLoan = Cash price − Deposit = 6 000 − 1 200 = R4 800 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Sarah buys a fridge with a cash price of R8 000. She pays a 10% deposit and repays the balance plus 12% simple interest over 18 months (1.5 years), in equal monthly instalments. Find the monthly instalment.',
+          answer: 'R472',
+          checkMode: 'auto',
+          correctAnswer: 'R472',
+          correctAnswers: ['R472', '472'],
+          explanation: 'Deposit = 10% × 8 000 = 800.\nLoan = 8 000 − 800 = 7 200.\nI = 7 200 × 0.12 × 1.5 = 1 296.\nTotal repayable = 7 200 + 1 296 = 8 496.\nInstalment = 8 496 ÷ 18 = R472 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'David buys a stove with a cash price of R18 000. He pays a 25% deposit and repays the balance plus 10% simple interest over 3 years, in equal monthly instalments. Find the monthly instalment.',
+          answer: 'R487.50',
+          checkMode: 'auto',
+          correctAnswer: 'R487.50',
+          correctAnswers: ['R487.50', '487.50', 'R487,50', '487.5', 'R487.5'],
+          explanation: 'Deposit = 25% × 18 000 = 4 500.\nLoan = 18 000 − 4 500 = 13 500.\nI = 13 500 × 0.10 × 3 = 4 050.\nTotal repayable = 13 500 + 4 050 = 17 550.\nMonths = 3 × 12 = 36.\nInstalment = 17 550 ÷ 36 = R487.50 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Explain why hire purchase uses the loan amount (cash price minus deposit) rather than the full cash price when calculating simple interest.',
+          answer: 'Only the money actually borrowed earns interest — the deposit is paid upfront, so it never accrues interest. This means a bigger deposit reduces both the interest charged and the monthly instalment.',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate commission, total rental costs and compound interest step by step with worked examples" />',
+        '<VideoPlaceholder label="Short video showing how to calculate commission, total rental costs, simple and compound interest, and hire-purchase instalments step by step with worked examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram comparing simple interest (constant growth) and compound interest (growing total each year) over multiple years" />',
+        '<DiagramPlaceholder label="Diagram comparing simple interest (constant growth) and compound interest (growing total each year) over multiple years, plus a flow diagram of a hire-purchase agreement: cash price minus deposit gives the loan, simple interest is added, then the total is divided into equal monthly instalments" />',
     },
   ],
 

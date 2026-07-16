@@ -319,6 +319,21 @@ export const topicData: TopicData = {
         `<p style="color:#374151;font-size:14px;margin:0;">To increase in ratio ${bl('a : b')}: new = original ÷ b × a. To decrease: new = original ÷ a × b.</p>` +
         `</div>` +
 
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Speed formula</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${bl('Speed = Distance ÷ Time')}. Rearrange to find distance (Speed × Time) or time (Distance ÷ Speed).</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Price per unit (better value)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Divide price by quantity to find the ${bl('unit price')}. Compare unit prices to see which option is the better buy.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Sharing an amount in a ratio</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Add the ratio parts to find the ${bl('total parts')}. Divide the amount by the total parts to find ${bl('one part')}, then multiply by each ratio number.</p>` +
+        `</div>` +
+
         `</div>` +
 
         // ── Tip box ──────────────────────────────────────────────────────────
@@ -355,6 +370,36 @@ export const topicData: TopicData = {
             `New amount = original ÷ smaller part × larger part = R480 ÷ ${bl('4')} × ${bl('5')}`,
             `= ${gr('R120')} × ${bl('5')} = ${bl('R600')}`,
             `<strong>Answer:</strong> ${bl('R600')} ✓`,
+          ],
+        },
+        {
+          question: 'A minibus taxi travels 180 km in 2.5 hours at a constant speed. Find its average speed.',
+          answer: `${bl('Average speed = 72 km/h')}`,
+          steps: [
+            `Write the formula: ${bl('Speed = Distance ÷ Time')}.`,
+            `Substitute the values: Speed = ${bl('180 km')} ÷ ${bl('2.5 h')}.`,
+            `Calculate: 180 ÷ 2.5 = ${bl('72')}.`,
+            `<strong>Answer:</strong> The average speed is ${bl('72 km/h')} ✓`,
+          ],
+        },
+        {
+          question: 'A shop sells rice in a 3 kg bag for R45 and a 5 kg bag for R70. Which bag gives the cheaper price per kilogram?',
+          answer: `${bl('The 5 kg bag is cheaper')} (R14/kg vs R15/kg)`,
+          steps: [
+            `Find the ${bl('unit price')} of the 3 kg bag: R45 ÷ 3 = ${bl('R15 per kg')}.`,
+            `Find the ${bl('unit price')} of the 5 kg bag: R70 ÷ 5 = ${bl('R14 per kg')}.`,
+            `Compare: R14 per kg is less than R15 per kg, so the 5 kg bag is the better buy.`,
+            `<strong>Answer:</strong> ${bl('The 5 kg bag')} gives the cheaper price per kilogram ✓`,
+          ],
+        },
+        {
+          question: 'Thabo, Lerato and Sipho share R840 in the ratio 3:4:5. Find each person\'s share.',
+          answer: `Thabo = ${bl('R210')}, Lerato = ${bl('R280')}, Sipho = ${bl('R350')}`,
+          steps: [
+            `Find the ${bl('total parts')}: 3 + 4 + 5 = ${bl('12')}.`,
+            `Find the value of ${bl('one part')}: R840 ÷ 12 = ${bl('R70')}.`,
+            `Thabo's share = 3 × R70 = ${bl('R210')}. Lerato's share = 4 × R70 = ${bl('R280')}. Sipho's share = 5 × R70 = ${bl('R350')}.`,
+            `<strong>Check:</strong> R210 + R280 + R350 = R840 ✓`,
           ],
         },
       ],
@@ -453,13 +498,81 @@ export const topicData: TopicData = {
           correctAnswer: '162',
           explanation: 'Dollars = R3 000 ÷ R18.50 = 162.16... ≈ 162 (rounded to the nearest dollar) ✓',
         },
+
+        // ── Q16 Easy — speed calculation ───────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'A car travels 240 km in 4 hours at a constant speed. Find its average speed.',
+          answer: '60 km/h',
+          checkMode: 'auto',
+          correctAnswer: '60km/h',
+          correctAnswers: ['60km/h', '60 km/h', '60'],
+          explanation: 'Speed = Distance ÷ Time = 240 ÷ 4 = 60 km/h ✓',
+        },
+
+        // ── Q17 Medium — price per unit / better value ─────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'A shop sells beans in a 2 kg packet for R38 and a 4.5 kg packet for R81. Which packet gives the cheaper price per kilogram?',
+          answer: '4.5 kg packet',
+          checkMode: 'auto',
+          correctAnswer: '4.5 kg packet',
+          correctAnswers: ['4.5 kg packet', 'the 4.5 kg packet', '4.5kg packet', '4.5 kg'],
+          explanation: '2 kg packet: R38 ÷ 2 = R19 per kg. 4.5 kg packet: R81 ÷ 4.5 = R18 per kg. R18 is less than R19, so the 4.5 kg packet is the better buy ✓',
+        },
+
+        // ── Q18 Medium — sharing an amount in a 2-part ratio ────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Share R560 between Palesa and Kagiso in the ratio 3:5. How much does each receive?',
+          answer: 'Total parts = 3+5 = 8. One part = 560÷8 = R70. Palesa = 3×70 = R210. Kagiso = 5×70 = R350. Check: R210+R350 = R560.',
+          checkMode: 'self',
+        },
+
+        // ── Q19 Hard — sharing an amount in a 3-part ratio ──────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Naledi, Kagiso and Zanele share a business profit of R960 in the ratio 2:3:5. How much does each receive?',
+          answer: 'Total parts = 2+3+5 = 10. One part = 960÷10 = R96. Naledi = 2×96 = R192. Kagiso = 3×96 = R288. Zanele = 5×96 = R480. Check: R192+R288+R480 = R960.',
+          checkMode: 'self',
+        },
+
+        // ── Q20 Medium — sharing in a ratio (single share, auto-checked) ────────
+        {
+          difficulty: 'Medium',
+          question: 'R750 is shared between Naledi and Zanele in the ratio 2:3. Find Zanele\'s share (the larger share).',
+          answer: 'R450',
+          checkMode: 'auto',
+          correctAnswer: 'R450',
+          correctAnswers: ['R450', '450'],
+          explanation: 'Total parts = 2+3 = 5. One part = R750 ÷ 5 = R150. Zanele\'s share = 3 × R150 = R450 ✓',
+        },
+
+        // ── Q21 Hard — rate error correction ────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Lerato says a car that travels 150 km in 2.5 hours has a speed of 75 km/h. Is she correct? Explain.',
+          answer: 'No — Speed = Distance ÷ Time = 150 ÷ 2.5 = 60 km/h, not 75 km/h. Lerato is incorrect.',
+          checkMode: 'self',
+        },
+
+        // ── Q22 Medium — finding distance from speed and time ───────────────────
+        {
+          difficulty: 'Medium',
+          question: 'A bus travels at a constant speed of 80 km/h for 3.5 hours. Find the distance travelled.',
+          answer: '280 km',
+          checkMode: 'auto',
+          correctAnswer: '280km',
+          correctAnswers: ['280km', '280 km', '280'],
+          explanation: 'Distance = Speed × Time = 80 × 3.5 = 280 km ✓',
+        },
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video covering ratio rate proportion profit loss VAT and increasing or decreasing a quantity in a given ratio" />',
+        '<VideoPlaceholder label="Short video covering ratio rate proportion profit loss VAT calculating speed and price per unit and sharing an amount in a given ratio" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Summary diagram showing profit loss VAT and ratio increase or decrease formulas with colour coded labels" />',
+        '<DiagramPlaceholder label="Summary diagram showing profit loss VAT ratio increase or decrease speed and sharing an amount in a ratio formulas with colour coded labels" />',
     },
 
   ],

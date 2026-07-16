@@ -5,10 +5,14 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // red    → unknown value / decreasing quantity            (#dc2626)
 // green  → proportional relationship / compound interest (#16a34a)
 // orange → rentals                                        (#ea580c)
+// purple → simple interest                                (#7c3aed)
+// teal   → hire purchase                                  (#0d9488)
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
+const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</span>`
+const te = (t: string) => `<span style="color:#0d9488;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
   title: 'Verhouding, Koers en Proporsie',
@@ -265,19 +269,21 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'financial-problems',
-      title: 'Finansiële Probleme Oplos — Kommissie, Huur en Saamgestelde Rente',
+      title: 'Finansiële Probleme Oplos — Kommissie, Huur, Rente en Huurkoop',
       icon: 'R',
       explanation:
-        `<p style="margin-bottom:16px;">Ons brei finansiële probleemoplossing uit om <strong>kommissie</strong> (ʼn persentasie verdien op verkope), <strong>huur</strong> (gereelde betalings vir die gebruik van iets), en <strong>saamgestelde rente</strong> in te sluit, waar rente bereken word op die groeiende totaal (hoofsom plus vorige rente) eerder as net die oorspronklike bedrag.</p>` +
+        `<p style="margin-bottom:16px;">Ons brei finansiële probleemoplossing uit om <strong>kommissie</strong> (ʼn persentasie verdien op verkope), <strong>huur</strong> (gereelde betalings vir die gebruik van iets), <strong>enkelvoudige rente</strong> (rente wat slegs op die oorspronklike bedrag bereken word), <strong>saamgestelde rente</strong>, waar rente bereken word op die groeiende totaal (hoofsom plus vorige rente) eerder as net die oorspronklike bedrag, en <strong>huurkoop</strong>, waar ʼn lening (na ʼn deposito) met enkelvoudige rente in gelyke maandelikse paaiemente terugbetaal word, in te sluit.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('kommissie')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('huur')}</span>` +
+        `<span style="background:#faf5ff;border:1px solid #e9d5ff;border-radius:6px;padding:3px 10px;font-size:13px;">${pu('enkelvoudige rente')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('saamgestelde rente')}</span>` +
+        `<span style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:6px;padding:3px 10px;font-size:13px;">${te('huurkoop')}</span>` +
         `</div>` +
 
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Drie finansiële begrippe</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Vyf finansiële begrippe</p>` +
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
@@ -292,10 +298,42 @@ export const topicData: TopicData = {
         `<p style="color:#c2410c;font-size:13px;font-weight:600;margin:0;">Totale huur = koers × aantal tydperke</p>` +
         `</div>` +
 
+        `<div style="background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#7c3aed;margin-bottom:4px;">Enkelvoudige Rente</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Rente wat slegs op die oorspronklike hoofsom bereken word — die rente wat verdien word, is elke jaar dieselfde.</p>` +
+        `<p style="color:#6d28d9;font-size:13px;font-weight:600;margin:0;">Bedrag = P × (1 + i × n)</p>` +
+        `</div>` +
+
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Saamgestelde Rente</p>` +
         `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Rente bereken op die groeiende totaal elke tydperk.</p>` +
         `<p style="color:#15803d;font-size:13px;font-weight:600;margin:0;">Bedrag = P × (1 + i)ⁿ</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#0d9488;margin-bottom:4px;">Huurkoop</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">ʼn Lening (kontantprys minus deposito) wat met enkelvoudige rente terugbetaal word, in gelyke maandelikse paaiemente.</p>` +
+        `<p style="color:#0f766e;font-size:13px;font-weight:600;margin:0;">Paaiement = Totaal terugbetaalbaar ÷ maande</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Enkelvoudige rente stap vir stap</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Identifiseer die waardes')} — Skryf die hoofsom P, die rentekoers i as ʼn desimaal, en die tyd n in jare neer.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Vind die rente')} — Rente is elke jaar dieselfde, so totale rente I = P × i × n.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#faf5ff;border:1.5px solid #e9d5ff;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Tel by die hoofsom')} — Bedrag A = P + I = P × (1 + i × n).</p>` +
         `</div>` +
 
         `</div>` +
@@ -321,9 +359,34 @@ export const topicData: TopicData = {
         `</div>` +
         `</div>` +
 
-        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
         `<p style="font-weight:700;color:#15803d;margin-bottom:6px;">Enkelvoudige teenoor saamgestelde rente</p>` +
         `<p style="margin:0;color:#14532d;">Enkelvoudige rente word altyd bereken op slegs die oorspronklike hoofsom, sodat die rente wat elke jaar verdien word dieselfde is. ${gr('Saamgestelde rente')} word bereken op die groeiende totaal, sodat dit met verloop van tyd meer verdien — veral oor baie jare.</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Huurkoop stap vir stap</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#0d9488;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${te('Vind die leningsbedrag')} — Trek die deposito af van die kontantprys: Lening = Kontantprys − Deposito. Slegs hierdie verminderde bedrag word gefinansier.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#0d9488;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${te('Pas enkelvoudige rente toe op die lening')} — Rente I = Lening × i × n, dan Totaal terugbetaalbaar = Lening + I.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#0d9488;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${te('Vind die maandelikse paaiement')} — Deel die totaal terugbetaalbaar deur die aantal maande: Paaiement = Totaal terugbetaalbaar ÷ (n × 12).</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#0f766e;margin-bottom:6px;">Huurkoop in ʼn neutedop</p>` +
+        `<p style="margin:0;color:#134e4a;">Die ${bl('deposito')} verminder die bedrag waarop rente bereken word — jy betaal slegs enkelvoudige rente op die ${te('lening')} (kontantprys minus deposito), nooit op die volle kontantprys nie. Dit is waarom ʼn groter deposito ʼn kleiner lening, minder totale rente, en ʼn laer maandelikse paaiement beteken.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -353,6 +416,31 @@ export const topicData: TopicData = {
             `Na jaar 1: 5 000 × 1,08 = ${gr('R5 400')}`,
             `Na jaar 2: ${gr('5 400')} × 1,08 = ${gr('R5 832')}`,
             `<strong>Antwoord:</strong> Bedrag na 2 jaar = ${gr('R5 832')} ✓`,
+          ],
+        },
+        {
+          question: 'Bepaal die bedrag na belegging van R8 000 vir 5 jaar teen 11% enkelvoudige rente.',
+          answer: `Bedrag = ${pu('R12 400')}`,
+          steps: [
+            `${pu('Enkelvoudige-rente-formule')}: A = P × (1 + i × n)`,
+            `P = R8 000, i = 11% = 0,11, n = 5 jaar`,
+            `A = 8 000 × (1 + 0,11 × 5)`,
+            `A = 8 000 × (1 + 0,55)`,
+            `A = 8 000 × 1,55`,
+            `<strong>Antwoord:</strong> A = ${pu('R12 400')} ✓`,
+          ],
+        },
+        {
+          question: 'Peter betaal ʼn deposito van 15% op ʼn huurkoopooreenkoms vir ʼn bank met ʼn kontantprys van R20 000, en betaal dan die balans plus 11% enkelvoudige rente oor 2 jaar in gelyke maandelikse paaiemente terug. Vind die maandelikse paaiement.',
+          answer: `Maandelikse paaiement = ${te('R864,17')}`,
+          steps: [
+            `${te('Vind die deposito')}: 15% × R20 000 = 0,15 × 20 000 = R3 000`,
+            `${te('Vind die leningsbedrag')}: Lening = Kontantprys − Deposito = 20 000 − 3 000 = R17 000`,
+            `${te('Pas enkelvoudige rente toe')}: I = P × i × n = 17 000 × 0,11 × 2 = R3 740`,
+            `${te('Totaal terugbetaalbaar')} = Lening + I = 17 000 + 3 740 = R20 740`,
+            `${te('Aantal maande')} = 2 × 12 = 24`,
+            `${te('Maandelikse paaiement')} = 20 740 ÷ 24 = ${te('R864,17')}`,
+            `<strong>Antwoord:</strong> Maandelikse paaiement = ${te('R864,17')} ✓`,
           ],
         },
       ],
@@ -429,13 +517,73 @@ export const topicData: TopicData = {
           answer: 'Eerste 4 weke: 280 × 4 = 1 120.\nVerdiskonteerde koers = 280 × 0,9 = 252.\nAddisionele 3 weke: 252 × 3 = 756.\nTotaal = 1 120 + 756 = R1 876.',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Easy',
+          question: 'Bepaal die bedrag na belegging van R3 000 vir 4 jaar teen 9% enkelvoudige rente.',
+          answer: 'R4 080',
+          checkMode: 'auto',
+          correctAnswer: 'R4080',
+          correctAnswers: ['R4080', '4080', 'R4 080', '4 080'],
+          explanation: 'A = P × (1 + i × n) = 3 000 × (1 + 0,09 × 4) = 3 000 × 1,36 = R4 080 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Vind die enkelvoudige rente (nie die totale bedrag nie) verdien op R6 500 belê vir 3 jaar teen 7% per jaar.',
+          answer: 'R1 365',
+          checkMode: 'auto',
+          correctAnswer: 'R1365',
+          correctAnswers: ['R1365', '1365', 'R1 365', '1 365'],
+          explanation: 'I = P × i × n = 6 500 × 0,07 × 3 = R1 365 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Bedrag van R12 000 word belê teen 8,5% enkelvoudige rente per jaar vir 6 jaar. Vind die totale bedrag na 6 jaar.',
+          answer: 'R18 120',
+          checkMode: 'auto',
+          correctAnswer: 'R18120',
+          correctAnswers: ['R18120', '18120', 'R18 120', '18 120'],
+          explanation: 'I = P × i × n = 12 000 × 0,085 × 6 = 6 120.\nA = P + I = 12 000 + 6 120 = R18 120 ✓',
+        },
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Yskas het ʼn kontantprys van R6 000. ʼn Deposito van 20% word betaal. Vind die leningsbedrag wat nog gefinansier moet word.',
+          answer: 'R4 800',
+          checkMode: 'auto',
+          correctAnswer: 'R4800',
+          correctAnswers: ['R4800', '4800', 'R4 800', '4 800'],
+          explanation: 'Deposito = 20% × 6 000 = 1 200.\nLening = Kontantprys − Deposito = 6 000 − 1 200 = R4 800 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Sarah koop ʼn yskas met ʼn kontantprys van R8 000. Sy betaal ʼn deposito van 10% en betaal die balans plus 12% enkelvoudige rente oor 18 maande (1,5 jaar) in gelyke maandelikse paaiemente terug. Vind die maandelikse paaiement.',
+          answer: 'R472',
+          checkMode: 'auto',
+          correctAnswer: 'R472',
+          correctAnswers: ['R472', '472'],
+          explanation: 'Deposito = 10% × 8 000 = 800.\nLening = 8 000 − 800 = 7 200.\nI = 7 200 × 0,12 × 1,5 = 1 296.\nTotaal terugbetaalbaar = 7 200 + 1 296 = 8 496.\nPaaiement = 8 496 ÷ 18 = R472 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'David koop ʼn stoof met ʼn kontantprys van R18 000. Hy betaal ʼn deposito van 25% en betaal die balans plus 10% enkelvoudige rente oor 3 jaar in gelyke maandelikse paaiemente terug. Vind die maandelikse paaiement.',
+          answer: 'R487,50',
+          checkMode: 'auto',
+          correctAnswer: 'R487,50',
+          correctAnswers: ['R487.50', '487.50', 'R487,50', '487,50', 'R487.5', '487.5'],
+          explanation: 'Deposito = 25% × 18 000 = 4 500.\nLening = 18 000 − 4 500 = 13 500.\nI = 13 500 × 0,10 × 3 = 4 050.\nTotaal terugbetaalbaar = 13 500 + 4 050 = 17 550.\nMaande = 3 × 12 = 36.\nPaaiement = 17 550 ÷ 36 = R487,50 ✓',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Verduidelik waarom huurkoop die leningsbedrag (kontantprys minus deposito) gebruik eerder as die volle kontantprys wanneer enkelvoudige rente bereken word.',
+          answer: 'Slegs die geld wat werklik geleen is, verdien rente — die deposito word vooraf betaal, so dit versamel nooit rente nie. Dit beteken ʼn groter deposito verminder beide die rente wat gehef word en die maandelikse paaiement.',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kommissie, totale huurkoste en saamgestelde rente stap vir stap te bereken met uitgewerkte voorbeelde" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om kommissie, totale huurkoste, enkelvoudige en saamgestelde rente, en huurkoop-paaiemente stap vir stap te bereken met uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat enkelvoudige rente (konstante groei) en saamgestelde rente (groeiende totaal elke jaar) oor verskeie jare vergelyk" />',
+        '<DiagramPlaceholder label="Diagram wat enkelvoudige rente (konstante groei) en saamgestelde rente (groeiende totaal elke jaar) oor verskeie jare vergelyk, plus ʼn vloeidiagram van ʼn huurkoopooreenkoms: kontantprys minus deposito gee die lening, enkelvoudige rente word bygevoeg, en dan word die totaal in gelyke maandelikse paaiemente verdeel" />',
     },
   ],
 

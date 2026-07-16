@@ -319,6 +319,21 @@ export const topicData: TopicData = {
         `<p style="color:#374151;font-size:14px;margin:0;">Om te vermeerder in verhouding ${bl('a : b')}: nuwe = oorspronklike ÷ b × a. Om te verminder: nuwe = oorspronklike ÷ a × b.</p>` +
         `</div>` +
 
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Spoedformule</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${bl('Spoed = Afstand ÷ Tyd')}. Herrangskik om afstand (Spoed × Tyd) of tyd (Afstand ÷ Spoed) te vind.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Prys per eenheid (beste waarde)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Deel die prys deur die hoeveelheid om die ${bl('eenheidsprys')} te vind. Vergelyk eenheidspryse om te sien watter opsie die beste koop is.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">ʼn Bedrag in ʼn verhouding verdeel</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Tel die verhoudingsdele bymekaar om die ${bl('totale dele')} te vind. Deel die bedrag deur die totale dele om ${bl('een deel')} te vind, en vermenigvuldig dan met elke verhoudingsgetal.</p>` +
+        `</div>` +
+
         `</div>` +
 
         // ── Tip box ──────────────────────────────────────────────────────────
@@ -355,6 +370,36 @@ export const topicData: TopicData = {
             `Nuwe bedrag = oorspronklike ÷ kleiner deel × groter deel = R480 ÷ ${bl('4')} × ${bl('5')}`,
             `= ${gr('R120')} × ${bl('5')} = ${bl('R600')}`,
             `<strong>Antwoord:</strong> ${bl('R600')} ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Minibustaxi ry 180 km in 2,5 uur teen ʼn konstante spoed. Vind sy gemiddelde spoed.',
+          answer: `${bl('Gemiddelde spoed = 72 km/h')}`,
+          steps: [
+            `Skryf die formule: ${bl('Spoed = Afstand ÷ Tyd')}.`,
+            `Vervang die waardes: Spoed = ${bl('180 km')} ÷ ${bl('2,5 h')}.`,
+            `Bereken: 180 ÷ 2,5 = ${bl('72')}.`,
+            `<strong>Antwoord:</strong> Die gemiddelde spoed is ${bl('72 km/h')} ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Winkel verkoop rys in ʼn 3 kg-sak vir R45 en ʼn 5 kg-sak vir R70. Watter sak gee die goedkoopste prys per kilogram?',
+          answer: `${bl('Die 5 kg-sak is goedkoper')} (R14/kg teenoor R15/kg)`,
+          steps: [
+            `Vind die ${bl('eenheidsprys')} van die 3 kg-sak: R45 ÷ 3 = ${bl('R15 per kg')}.`,
+            `Vind die ${bl('eenheidsprys')} van die 5 kg-sak: R70 ÷ 5 = ${bl('R14 per kg')}.`,
+            `Vergelyk: R14 per kg is minder as R15 per kg, dus is die 5 kg-sak die beste koop.`,
+            `<strong>Antwoord:</strong> ${bl('Die 5 kg-sak')} gee die goedkoopste prys per kilogram ✓`,
+          ],
+        },
+        {
+          question: 'Thabo, Lerato en Sipho verdeel R840 in die verhouding 3:4:5. Vind elke persoon se aandeel.',
+          answer: `Thabo = ${bl('R210')}, Lerato = ${bl('R280')}, Sipho = ${bl('R350')}`,
+          steps: [
+            `Vind die ${bl('totale dele')}: 3 + 4 + 5 = ${bl('12')}.`,
+            `Vind die waarde van ${bl('een deel')}: R840 ÷ 12 = ${bl('R70')}.`,
+            `Thabo se aandeel = 3 × R70 = ${bl('R210')}. Lerato se aandeel = 4 × R70 = ${bl('R280')}. Sipho se aandeel = 5 × R70 = ${bl('R350')}.`,
+            `<strong>Kontroleer:</strong> R210 + R280 + R350 = R840 ✓`,
           ],
         },
       ],
@@ -453,13 +498,81 @@ export const topicData: TopicData = {
           correctAnswer: '162',
           explanation: 'Dollar = R3 000 ÷ R18,50 = 162,16... ≈ 162 (afgerond na die naaste dollar) ✓',
         },
+
+        // ── V16 Maklik — spoedberekening ─────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Motor ry 240 km in 4 uur teen ʼn konstante spoed. Vind sy gemiddelde spoed.',
+          answer: '60 km/h',
+          checkMode: 'auto',
+          correctAnswer: '60km/h',
+          correctAnswers: ['60km/h', '60 km/h', '60'],
+          explanation: 'Spoed = Afstand ÷ Tyd = 240 ÷ 4 = 60 km/h ✓',
+        },
+
+        // ── V17 Medium — prys per eenheid / beste waarde ─────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Winkel verkoop boontjies in ʼn 2 kg-pakkie vir R38 en ʼn 4,5 kg-pakkie vir R81. Watter pakkie gee die goedkoopste prys per kilogram?',
+          answer: '4,5 kg-pakkie',
+          checkMode: 'auto',
+          correctAnswer: '4,5 kg-pakkie',
+          correctAnswers: ['4,5 kg-pakkie', 'die 4,5 kg-pakkie', '4.5 kg-pakkie', 'die 4.5 kg-pakkie', '4,5kg-pakkie', '4.5kg-pakkie'],
+          explanation: '2 kg-pakkie: R38 ÷ 2 = R19 per kg. 4,5 kg-pakkie: R81 ÷ 4,5 = R18 per kg. R18 is minder as R19, dus is die 4,5 kg-pakkie die beste koop ✓',
+        },
+
+        // ── V18 Medium — ʼn bedrag in ʼn 2-deel-verhouding verdeel ────────────
+        {
+          difficulty: 'Medium',
+          question: 'Verdeel R560 tussen Palesa en Kagiso in die verhouding 3:5. Hoeveel ontvang elkeen?',
+          answer: 'Totale dele = 3+5 = 8. Een deel = 560÷8 = R70. Palesa = 3×70 = R210. Kagiso = 5×70 = R350. Kontroleer: R210+R350 = R560.',
+          checkMode: 'self',
+        },
+
+        // ── V19 Moeilik — ʼn bedrag in ʼn 3-deel-verhouding verdeel ───────────
+        {
+          difficulty: 'Hard',
+          question: 'Naledi, Kagiso en Zanele verdeel ʼn besigheidswins van R960 in die verhouding 2:3:5. Hoeveel ontvang elkeen?',
+          answer: 'Totale dele = 2+3+5 = 10. Een deel = 960÷10 = R96. Naledi = 2×96 = R192. Kagiso = 3×96 = R288. Zanele = 5×96 = R480. Kontroleer: R192+R288+R480 = R960.',
+          checkMode: 'self',
+        },
+
+        // ── V20 Medium — verdeel in ʼn verhouding (enkele aandeel, outo-nagegaan) ──
+        {
+          difficulty: 'Medium',
+          question: 'R750 word tussen Naledi en Zanele verdeel in die verhouding 2:3. Vind Zanele se aandeel (die groter aandeel).',
+          answer: 'R450',
+          checkMode: 'auto',
+          correctAnswer: 'R450',
+          correctAnswers: ['R450', '450'],
+          explanation: 'Totale dele = 2+3 = 5. Een deel = R750 ÷ 5 = R150. Zanele se aandeel = 3 × R150 = R450 ✓',
+        },
+
+        // ── V21 Moeilik — koersfout-opsporing ─────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Lerato sê ʼn motor wat 150 km in 2,5 uur ry, het ʼn spoed van 75 km/h. Is sy korrek? Verduidelik.',
+          answer: 'Nee — Spoed = Afstand ÷ Tyd = 150 ÷ 2,5 = 60 km/h, nie 75 km/h nie. Lerato is verkeerd.',
+          checkMode: 'self',
+        },
+
+        // ── V22 Medium — afstand vind vanaf spoed en tyd ──────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Bus ry teen ʼn konstante spoed van 80 km/h vir 3,5 uur. Vind die afstand afgelê.',
+          answer: '280 km',
+          checkMode: 'auto',
+          correctAnswer: '280km',
+          correctAnswers: ['280km', '280 km', '280'],
+          explanation: 'Afstand = Spoed × Tyd = 80 × 3,5 = 280 km ✓',
+        },
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verhouding, koers, proporsie, wins, verlies, BTW en om ʼn hoeveelheid in ʼn gegewe verhouding te vermeerder of verminder dek" />',
+        '<VideoPlaceholder label="Kort video wat verhouding, koers, proporsie, wins, verlies, BTW, spoed en prys per eenheid bereken, en om ʼn bedrag in ʼn gegewe verhouding te verdeel of te vermeerder of verminder dek" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Opsommingsdiagram wat wins-, verlies-, BTW- en verhoudingsvermeerdering-of-vermindering-formules toon met kleurgekodeerde etikette" />',
+        '<DiagramPlaceholder label="Opsommingsdiagram wat wins-, verlies-, BTW-, verhoudingsvermeerdering-of-vermindering-, spoed- en verhoudingsverdelingsformules toon met kleurgekodeerde etikette" />',
     },
 
   ],
