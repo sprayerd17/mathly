@@ -174,7 +174,20 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Long multiplication layout showing 3 456 multiplied by 24 with the units row in blue showing 13 824 the tens row in green with orange placeholder zero showing 69 120 and the final addition in red giving 82 944" />',
+        'Lang vermenigvuldiging-uitleg wat 3 456 vermenigvuldig met 24 toon met die eenhede-ry in blou wat 13 824 wys, die tiene-ry in groen met oranje plekhouernul wat 69 120 wys, en die finale optelling in rooi wat 82 944 gee',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 145" width="100%" style="max-width:280px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="180" y="22" text-anchor="end" font-size="17" font-weight="700" fill="#0f1f3d">3 456</text>` +
+        `<text x="180" y="46" text-anchor="end" font-size="17" font-weight="700" fill="#0f1f3d">× 24</text>` +
+        `<line x1="55" y1="54" x2="180" y2="54" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="10" y="76" font-size="10" font-weight="700" fill="#6b7280">×4</text>` +
+        `<text x="180" y="76" text-anchor="end" font-size="16" font-weight="700" fill="#2563eb">13 824</text>` +
+        `<text x="10" y="98" font-size="10" font-weight="700" fill="#6b7280">×20</text>` +
+        `<text x="180" y="98" text-anchor="end" font-size="16" font-weight="700" fill="#16a34a">69 12<tspan fill="#ea580c">0</tspan></text>` +
+        `<line x1="35" y1="106" x2="180" y2="106" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="180" y="128" text-anchor="end" font-size="18" font-weight="700" fill="#dc2626">82 944</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn groot getal met ʼn 2-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, plekhouernul in oranje en die finale optelling in rooi" />',
@@ -275,7 +288,22 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Long multiplication layout showing 2 345 multiplied by 123 with the units row in blue showing 7 035 the tens row in green with one red placeholder zero showing 46 900 the hundreds row in orange with two red placeholder zeros showing 234 500 and the final addition in purple giving 288 435" />',
+        'Lang vermenigvuldiging-uitleg wat 2 345 vermenigvuldig met 123 toon met die eenhede-ry in blou wat 7 035 wys, die tiene-ry in groen met een rooi plekhouernul wat 46 900 wys, die honderde-ry in oranje met twee rooi plekhouernulle wat 234 500 wys, en die finale optelling in pers wat 288 435 gee',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 155" width="100%" style="max-width:280px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="180" y="20" text-anchor="end" font-size="16" font-weight="700" fill="#0f1f3d">2 345</text>` +
+        `<text x="180" y="40" text-anchor="end" font-size="16" font-weight="700" fill="#0f1f3d">× 123</text>` +
+        `<line x1="50" y1="48" x2="180" y2="48" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="8" y="66" font-size="9" font-weight="700" fill="#6b7280">×3</text>` +
+        `<text x="180" y="66" text-anchor="end" font-size="14" font-weight="700" fill="#2563eb">7 035</text>` +
+        `<text x="8" y="86" font-size="9" font-weight="700" fill="#6b7280">×20</text>` +
+        `<text x="180" y="86" text-anchor="end" font-size="14" font-weight="700" fill="#16a34a">46 90<tspan fill="#ea580c">0</tspan></text>` +
+        `<text x="8" y="106" font-size="9" font-weight="700" fill="#6b7280">×100</text>` +
+        `<text x="180" y="106" text-anchor="end" font-size="14" font-weight="700" fill="#ea580c">234 5<tspan fill="#dc2626">00</tspan></text>` +
+        `<line x1="30" y1="114" x2="180" y2="114" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="180" y="136" text-anchor="end" font-size="17" font-weight="700" fill="#7c3aed">288 435</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn groot getal met ʼn 3-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, honderdes in oranje, plekhouernulle in rooi en die finale antwoord in pers" />',
@@ -393,9 +421,6 @@ export const topicData: TopicData = {
           explanation: 'Breek 300 op in 3 × 100.\nStap 1 — Vermenigvuldig met 3: 4 500 × 3 = 13 500.\nStap 2 — Vermenigvuldig met 100 (voeg twee nulle by): 13 500 × 100 = 1 350 000 ✓',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Three rows showing number times 10 with one orange zero appended, number times 100 with two orange zeros appended, and number times 1 000 with three orange zeros appended, plus a fourth row showing a multiple like 300 split into blue non-zero digit 3 times orange 100 with two zeros added" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om met 10, 100 en 1 000 te vermenigvuldig deur oranje nulle by te voeg, en hoe om met veelvoude soos 20, 300 en 4 000 te vermenigvuldig deur eers die blou nie-nul-syfer te vermenigvuldig en dan al die oranje nulle by te voeg" />',
@@ -526,9 +551,6 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Three worked examples side by side: first showing 4 876 rounded in orange to 5 000 and 32 rounded in orange to 30 with blue estimate of 150 000, second showing 345 times 24 with partial products 1 380 and 6 900 in blue adding to exact answer in green R8 280 and estimate check 300 times 25 equals 7 500 in blue, third showing 125 times 365 split into three rows with partial products in blue adding to exact answer in green 45 625 km" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vermenigvuldigingsantwoord te skat deur getalle in oranje af te rond en dan te vermenigvuldig om die skatting in blou te kry, en dit met die presiese antwoord in groen te vergelyk, gevolg deur twee woordprobleme opgelos deur sleutelwoorde in rooi te identifiseer" />',

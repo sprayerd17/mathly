@@ -170,7 +170,21 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn driehoekige prisma en ʼn reghoekige prisma wys met vlakke uitgelig in blou, rande in oranje en hoekpunte in groen, geëtiketteer met tellings" />',
+        'ʼn Driehoekige prisma (5 vlakke, 9 rande, 6 hoekpunte) en ʼn reghoekige prisma (6 vlakke, 12 rande, 8 hoekpunte), voorgestel as 3D-draadraamwerke.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 260 175" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="77" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Driehoekige prisma</text>' +
+        '<polygon points="35,130 85,130 60,80" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M35,130 L70,108 M85,130 L120,108 M60,80 L95,58" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M70,108 L120,108 M120,108 L95,58 M95,58 L70,108" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<text x="77" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">5 vlakke, 9 rande, 6 hoekpunte</text>' +
+        '<text x="190" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Reghoekige prisma</text>' +
+        '<polygon points="150,80 200,80 200,130 150,130" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M150,80 L180,60 M200,80 L230,60 M200,130 L230,110 M150,130 L180,110" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M180,60 L230,60 M230,60 L230,110 M230,110 L180,110 M180,110 L180,60" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<text x="190" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">6 vlakke, 12 rande, 8 hoekpunte</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die eienskappe van prismas verduidelik — vlakke, rande en hoekpunte — met behulp van die basissye-formules en Euler se formule om te bevestig" />',
@@ -317,7 +331,33 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn vierkantige piramide en ʼn driehoekige piramide wys met vlakke uitgelig in blou, rande in oranje, hoekpunte in groen en die apeks uitgelig in rooi" />',
+        'ʼn Vierkantige piramide (5 vlakke, 8 rande, 5 hoekpunte) en ʼn driehoekige piramide (4 vlakke, 6 rande, 4 hoekpunte), met die apeks in rooi aangedui waar die driehoekige vlakke bymekaarkom.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 260 175" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="60" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Vierkantige piramide</text>' +
+        '<line x1="60" y1="145" x2="15" y2="125" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="60" y1="145" x2="105" y2="125" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="15" y1="125" x2="60" y2="105" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="105" y1="125" x2="60" y2="105" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="60" y1="145" x2="60" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="15" y1="125" x2="60" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="105" y1="125" x2="60" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="60" y1="105" x2="60" y2="55" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<circle cx="60" cy="55" r="3" fill="#dc2626"/>' +
+        '<text x="60" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">apeks</text>' +
+        '<text x="60" y="163" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">5 vlakke, 8 rande, 5 hoekpunte</text>' +
+        '<text x="202" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Driehoekige piramide</text>' +
+        '<line x1="175" y1="140" x2="230" y2="140" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="175" y1="140" x2="202" y2="112" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="230" y1="140" x2="202" y2="112" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="175" y1="140" x2="202" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="230" y1="140" x2="202" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="202" y1="112" x2="202" y2="55" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<circle cx="202" cy="55" r="3" fill="#dc2626"/>' +
+        '<text x="202" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">apeks</text>' +
+        '<text x="202" y="163" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">4 vlakke, 6 rande, 4 hoekpunte</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die eienskappe van piramides verduidelik — vlakke, rande, hoekpunte en die apeks — met die basissye-formules en ʼn vergelyking met prismas" />',
@@ -423,7 +463,24 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die nette van ʼn kubus en ʼn vierkantige piramide langs mekaar wys, met basisvorms uitgelig in blou, reghoekige sy-vlakke in groen en driehoekige vlakke in oranje" />',
+        'Die net van ʼn kubus (ses vierkante in ʼn kruisvorm) en die net van ʼn vierkantige piramide (een vierkantige basis met vier driehoeke aangeheg), plat uitgevou gewys.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg">' +
+        '<rect x="110" y="10" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="110" y="38" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="110" y="66" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="110" y="94" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="82" y="38" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="138" y="38" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="124" y="137" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Kubus-net</text>' +
+        '<rect x="230" y="55" width="40" height="40" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<polygon points="230,55 270,55 250,25" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="230,95 270,95 250,125" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="230,55 230,95 200,75" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="270,55 270,95 300,75" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="250" y="137" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Vierkantige piramide-net</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe die nette van ʼn kubus, driehoekige prisma en vierkantige piramide gevou word om die 3D-voorwerpe te vorm, met basisvorms uitgelig in blou, sy-vlakke in groen en driehoekige vlakke in oranje" />',

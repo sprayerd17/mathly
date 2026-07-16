@@ -132,9 +132,6 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram labelling the parts of an equation — variable in blue, known values in green, equals sign in orange, and the full equation highlighted in red" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to write equations from word problems using variables and how to check a solution by substituting back into the equation" />',
     },
@@ -234,7 +231,28 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a balanced scale showing an equation — variable isolated on one side after applying the inverse operation to both sides, colour coded with variable in blue, inverse operation in orange, both sides in green, and check in red" />',
+        'Balance-scale diagram showing x + 13 = 28, then after subtracting 13 from both sides, the solved equation x = 15',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 225" width="100%" style="max-width:260px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="75" x2="125" y2="75" stroke="#0f1f3d" stroke-width="3"/>` +
+        `<polygon points="60,95 80,95 70,75" fill="#0f1f3d"/>` +
+        `<rect x="15" y="45" width="50" height="30" rx="4" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="40" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">x + 13</text>` +
+        `<rect x="75" y="45" width="50" height="30" rx="4" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="100" y="64" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">28</text>` +
+        `<text x="70" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">x + 13 = 28</text>` +
+        `<text x="70" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">− 13 from both sides</text>` +
+        `<line x1="70" y1="132" x2="70" y2="148" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="70,155 65,145 75,145" fill="#ea580c"/>` +
+        `<line x1="15" y1="185" x2="125" y2="185" stroke="#0f1f3d" stroke-width="3"/>` +
+        `<polygon points="60,205 80,205 70,185" fill="#0f1f3d"/>` +
+        `<rect x="15" y="155" width="50" height="30" rx="4" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="40" y="174" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">x</text>` +
+        `<rect x="75" y="155" width="50" height="30" rx="4" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="100" y="174" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">15</text>` +
+        `<text x="70" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">x = 15</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve addition, subtraction, multiplication, and division equations using inverse operations with the balanced scale model" />',
@@ -324,9 +342,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a two-step equation solved in two colour coded steps — first step in blue undoing addition or subtraction then second step in green undoing multiplication or division with variable in orange and check in red" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve two-step equations using inverse operations in reverse BODMAS order with worked examples and substitution checks" />',
@@ -424,9 +439,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the four steps to solve a word problem — identify the unknown variable in blue write the equation in orange find the solution in green and check in red" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to translate word problems into equations using a variable then solve and check with three worked examples" />',

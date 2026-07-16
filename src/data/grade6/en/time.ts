@@ -145,8 +145,6 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video demonstrating how to convert between 12-hour am/pm time and 24-hour time, showing both the morning case which stays the same and the afternoon case which adds 12 to the hour" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a 24-hour timeline from 00:00 to 23:59, with the am section highlighted in green from 00:00 to 11:59 and the pm section highlighted in red from 12:00 to 23:59, showing matching 12-hour times underneath" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -522,7 +520,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to read a time-zone map, find the time difference between two cities using their GMT offsets, and calculate the time in another city including cases that cross into the next or previous day" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A simplified world time-zone map showing several cities such as London, Johannesburg, Dubai, Tokyo, New York and Los Angeles each labelled with their GMT offset, with arrows showing east means ahead and west means behind" />',
+        'A simplified world time-zone map showing several cities such as London, Johannesburg, Dubai, Tokyo, New York and Los Angeles each labelled with their GMT offset, with arrows showing east means ahead and west means behind',
+
+      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="90" x2="205" y2="90" stroke="#0f1f3d" stroke-width="2.5"/><polygon points="15,90 27,84 27,96" fill="#0f1f3d"/><polygon points="205,90 193,84 193,96" fill="#0f1f3d"/><line x1="35" y1="82" x2="35" y2="98" stroke="#0f1f3d" stroke-width="2"/><circle cx="35" cy="90" r="4" fill="#2563eb"/><text x="35" y="68" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Los Angeles</text><text x="35" y="112" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">GMT−8</text><line x1="104" y1="82" x2="104" y2="98" stroke="#0f1f3d" stroke-width="2"/><circle cx="104" cy="90" r="4" fill="#2563eb"/><text x="104" y="68" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">London</text><text x="104" y="112" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">GMT+0</text><line x1="185" y1="82" x2="185" y2="98" stroke="#0f1f3d" stroke-width="2"/><circle cx="185" cy="90" r="4" fill="#2563eb"/><text x="185" y="68" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Tokyo</text><text x="185" y="112" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">GMT+9</text><text x="20" y="140" font-size="12" fill="#16a34a" font-weight="700" text-anchor="start">← West = behind</text><text x="200" y="140" font-size="12" fill="#16a34a" font-weight="700" text-anchor="end">East = ahead →</text><text x="110" y="158" font-size="11" fill="#374151" text-anchor="middle">Bigger GMT offset = further east = later time</text></svg>',
     },
   ],
 

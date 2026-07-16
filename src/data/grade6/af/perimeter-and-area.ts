@@ -250,9 +250,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a labelled rectangle with length in blue and width in red, and a labelled square with side in blue, illustrating the area formula for each shape" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn reghoek en ʼn vierkant te bereken met die formules lengte maal breedte en sy in die kwadraat" />',
     },
@@ -354,9 +351,6 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a triangle with base labelled in blue and perpendicular height labelled in red, with a dotted line indicating the height is at a right angle to the base" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn driehoek te bereken met behulp van die helfte maal basis maal hoogte, met die loodregte hoogte uitgelig" />',

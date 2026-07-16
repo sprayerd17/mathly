@@ -155,7 +155,32 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to identify and classify acute right obtuse straight reflex angles and revolutions with examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing all six angle types side by side with their degree ranges and colour coded labels" />',
+        'The six angle types compared side by side by how wide they open — acute, right, obtuse, straight, reflex and revolution.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 490 165" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="40" y1="95" x2="40" y2="45" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<line x1="40" y1="95" x2="78" y2="63" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<text x="40" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Acute</text>' +
+        '<line x1="120" y1="95" x2="120" y2="45" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<line x1="120" y1="95" x2="170" y2="95" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<path d="M120,80 L135,80 L135,95" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="120" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Right</text>' +
+        '<line x1="200" y1="95" x2="200" y2="45" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<line x1="200" y1="95" x2="238" y2="127" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<text x="200" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Obtuse</text>' +
+        '<line x1="230" y1="95" x2="330" y2="95" stroke="#374151" stroke-width="2.5"/>' +
+        '<circle cx="280" cy="95" r="3" fill="#374151"/>' +
+        '<text x="280" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Straight</text>' +
+        '<line x1="360" y1="95" x2="360" y2="45" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<line x1="360" y1="95" x2="322" y2="70" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<path d="M360,77 A18,18 0 1 1 345,85.1" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,2"/>' +
+        '<text x="360" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Reflex</text>' +
+        '<line x1="440" y1="95" x2="440" y2="45" stroke="#374151" stroke-width="2.5"/>' +
+        '<circle cx="440" cy="95" r="30" fill="none" stroke="#374151" stroke-width="2" stroke-dasharray="4,3"/>' +
+        '<polygon points="465,80 465,90 474,85" fill="#374151"/>' +
+        '<text x="440" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Revolution</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,7 +291,29 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to place a protractor on a vertex align the baseline and read the correct scale to measure an angle" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a protractor showing the vertex centre point the baseline and the two scales with the correct reading highlighted in orange" />',
+        'A protractor with its centre point on the vertex, baseline aligned with one arm, and the other arm\'s reading of 65° highlighted in orange.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg">' +
+        '<path d="M30,120 A90,90 0 0 1 210,120" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="30" y1="120" x2="210" y2="120" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<line x1="210" y1="120" x2="200" y2="120" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="197.9" y1="75" x2="189.3" y2="80" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="165" y1="42.1" x2="160" y2="50.7" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="120" y1="30" x2="120" y2="40" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="75" y1="42.1" x2="80" y2="50.7" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="42.1" y1="75" x2="50.7" y2="80" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="30" y1="120" x2="40" y2="120" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<text x="212" y="135" font-size="9" fill="#0f1f3d">0°</text>' +
+        '<text x="108" y="24" font-size="9" fill="#0f1f3d">90°</text>' +
+        '<text x="14" y="135" font-size="9" fill="#0f1f3d">180°</text>' +
+        '<line x1="120" y1="120" x2="158" y2="38.4" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M150,120 A30,30 0 0 1 132.7,92.8" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="150" y="103" font-size="12" font-weight="700" fill="#ea580c">65°</text>' +
+        '<circle cx="120" cy="120" r="3" fill="#2563eb"/>' +
+        '<text x="120" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">vertex</text>' +
+        '<text x="70" y="112" font-size="10" font-weight="700" fill="#16a34a">baseline</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -375,7 +422,31 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to use the angle sum on a straight line 180 degrees and around a point 360 degrees to find unknown angles" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two diagrams side by side showing angles on a straight line summing to 180 degrees and angles around a point summing to 360 degrees with known angles blue and unknown angle red" />',
+        'Two diagrams side by side — angles a, b and x on a straight line summing to 180°, and angles a, b, c and y around a point summing to 360°, with known angles in blue and the unknown angle in red.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="110" y="15" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">Angles on a straight line</text>' +
+        '<line x1="40" y1="110" x2="180" y2="110" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="110" y1="110" x2="65" y2="56.4" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="110" y1="110" x2="145" y2="49.4" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<circle cx="110" cy="110" r="3" fill="#0f1f3d"/>' +
+        '<text x="80" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">a</text>' +
+        '<text x="107" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">b</text>' +
+        '<text x="140" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">x</text>' +
+        '<text x="110" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">a + b + x = 180°</text>' +
+        '<text x="320" y="15" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">Angles around a point</text>' +
+        '<line x1="320" y1="80" x2="320" y2="30" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="320" y1="80" x2="369.2" y2="71.3" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="320" y1="80" x2="320" y2="130" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="320" y1="80" x2="270" y2="80" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<circle cx="320" cy="80" r="3" fill="#0f1f3d"/>' +
+        '<text x="336" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">a</text>' +
+        '<text x="339" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">b</text>' +
+        '<text x="302" y="101" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">c</text>' +
+        '<text x="302" y="62" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">y</text>' +
+        '<text x="320" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">a + b + c + y = 360°</text>' +
+        '</svg>',
     },
   ],
   scoreMessages: [

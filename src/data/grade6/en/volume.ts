@@ -142,7 +142,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining volume of rectangular prisms and cubes using the formula Volume = length x width x height with colour coded dimensions" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="3D diagram of a rectangular prism labelled with length blue width red and height green showing the volume formula and cubic unit annotation" />',
+        '3D diagram of a rectangular prism labelled with length blue width red and height green showing the volume formula and cubic unit annotation',
+
+      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><polygon points="40,70 110,70 140,50 70,50" fill="#eff6ff" stroke="#0f1f3d" stroke-width="2.5"/><polygon points="110,70 140,50 140,110 110,130" fill="#bfdbfe" stroke="#0f1f3d" stroke-width="2.5"/><rect x="40" y="70" width="70" height="60" fill="#dbeafe" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="146" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">length</text><text x="124" y="100" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle" transform="rotate(-90 124 100)">height</text><text x="130" y="54" font-size="13" fill="#dc2626" font-weight="700" text-anchor="middle">width</text><text x="95" y="160" font-size="13" fill="#374151" text-anchor="middle">V = length × width × height</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -274,7 +276,9 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video solving real-life volume problems including containers and packing problems showing how to apply the volume formula in context" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side diagram showing the large box 30cm by 20cm by 15cm and the small cube 5cm by 5cm by 5cm with volume calculations labelled" />',
+        'Side-by-side diagram showing the large box 30cm by 20cm by 15cm and the small cube 5cm by 5cm by 5cm with volume calculations labelled',
+
+      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><polygon points="15,65 65,65 83,51 33,51" fill="#eff6ff" stroke="#0f1f3d" stroke-width="2.2"/><polygon points="65,65 83,51 83,76 65,90" fill="#bfdbfe" stroke="#0f1f3d" stroke-width="2.2"/><rect x="15" y="65" width="50" height="25" fill="#dbeafe" stroke="#0f1f3d" stroke-width="2.2"/><polygon points="150,75 170,75 180,67 160,67" fill="#fff7ed" stroke="#0f1f3d" stroke-width="2"/><polygon points="170,75 180,67 180,87 170,95" fill="#fdba74" stroke="#0f1f3d" stroke-width="2"/><rect x="150" y="75" width="20" height="20" fill="#fed7aa" stroke="#0f1f3d" stroke-width="2"/><text x="49" y="108" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">30 × 20 × 15 cm</text><text x="49" y="123" font-size="12" fill="#374151" text-anchor="middle">= 9 000 cm³</text><text x="165" y="112" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">5 × 5 × 5 cm</text><text x="165" y="127" font-size="12" fill="#374151" text-anchor="middle">= 125 cm³</text><text x="110" y="152" font-size="12" fill="#374151" text-anchor="middle">9 000 ÷ 125 = 72 small cubes fit inside</text></svg>',
     },
   ],
   scoreMessages: [

@@ -163,9 +163,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Plekwaardetabel wat al 9 posisies van honderd miljoene tot ene toon met elke kolom kleur-gekodeer en voorbeeldsyfers van 325 407 819 in elke kolom geplaas" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat plekwaarde in 9-syfer hele getalle verduidelik met behulp van ʼn kleur-gekodeerde plekwaardetabel en wys hoe om getalle in uitgebreide notasie te skryf" />',
     },
@@ -465,7 +462,48 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Sy-aan-sy syfervergelyking van 4 728 350 en 4 736 200 met elke ooreenstemmende posisie in kolomme belyn en die verskillende tienduisende-syfers in oranje uitgelig met ʼn kleiner-as-simbool in rooi tussen die twee getalle" />',
+        'Sy-aan-sy syfervergelyking van 4 728 350 en 4 736 200 met elke ooreenstemmende posisie in kolomme belyn en die verskillende tienduisende-syfers in oranje uitgelig met ʼn kleiner-as-simbool in rooi tussen die twee getalle',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 100" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="44" y="10" font-size="7" text-anchor="middle" fill="#6b7280">M</text>` +
+        `<text x="76" y="10" font-size="7" text-anchor="middle" fill="#6b7280">HD</text>` +
+        `<text x="108" y="10" font-size="7" text-anchor="middle" fill="#ea580c">TD</text>` +
+        `<text x="140" y="10" font-size="7" text-anchor="middle" fill="#6b7280">D</text>` +
+        `<text x="172" y="10" font-size="7" text-anchor="middle" fill="#6b7280">H</text>` +
+        `<text x="204" y="10" font-size="7" text-anchor="middle" fill="#6b7280">T</text>` +
+        `<text x="236" y="10" font-size="7" text-anchor="middle" fill="#6b7280">E</text>` +
+        `<rect x="30" y="14" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="62" y="14" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="94" y="14" width="28" height="28" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<rect x="126" y="14" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="158" y="14" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="190" y="14" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="222" y="14" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="44" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="76" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="108" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">2</text>` +
+        `<text x="140" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="172" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="204" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="236" y="33" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">0</text>` +
+        `<rect x="30" y="54" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="62" y="54" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="94" y="54" width="28" height="28" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<rect x="126" y="54" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="158" y="54" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="190" y="54" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="222" y="54" width="28" height="28" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="44" y="73" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="76" y="73" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="108" y="73" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">3</text>` +
+        `<text x="140" y="73" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<text x="172" y="73" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="204" y="73" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">0</text>` +
+        `<text x="236" y="73" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">0</text>` +
+        `<text x="258" y="56" font-size="24" font-weight="700" fill="#dc2626">&lt;</text>` +
+        `<text x="145" y="96" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4 728 350 &lt; 4 736 200</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om groot hele getalle te vergelyk en te orden deur eers syfers te tel en dan syfer vir syfer vanaf links te vergelyk met behulp van die groter-as, kleiner-as en gelyk-aan-simbole" />',
@@ -608,7 +646,24 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn wat 3 847 215 tussen 3 000 000 en 4 000 000 posisioneer met die middelpunt by 3 500 000 gemerk en ʼn pyl wat na 4 000 000 wys om afronding op te illustreer met die afrondingsyfer in blou en die bepalende syfer in oranje" />',
+        'Getallelyn wat 3 847 215 tussen 3 000 000 en 4 000 000 posisioneer met die middelpunt by 3 500 000 gemerk en ʼn pyl wat na 4 000 000 wys om afronding op te illustreer',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 130" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="20" y1="70" x2="220" y2="70" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<line x1="20" y1="63" x2="20" y2="77" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="120" y1="63" x2="120" y2="77" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="220" y1="63" x2="220" y2="77" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="2" y="93" font-size="9" font-weight="700" fill="#0f1f3d">3 000 000</text>` +
+        `<text x="120" y="93" text-anchor="middle" font-size="9" font-weight="700" fill="#6b7280">3 500 000</text>` +
+        `<text x="238" y="93" text-anchor="end" font-size="9" font-weight="700" fill="#16a34a">4 000 000</text>` +
+        `<circle cx="189" cy="70" r="4" fill="#2563eb"/>` +
+        `<text x="189" y="60" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">3 847 215</text>` +
+        `<text x="203" y="28" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">rond op</text>` +
+        `<line x1="189" y1="38" x2="212" y2="38" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<polygon points="220,38 210,33 210,43" fill="#16a34a"/>` +
+        `<text x="120" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">3 847 215 rond op na 4 000 000</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om hele getalle na die naaste 10 100 1 000 10 000 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël" />',
@@ -758,7 +813,28 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Faktorpare van 36 getoon as vermenigvuldigingspare met elke faktor in groen uitgelig en ʼn Venn-diagram wat faktore van 24 en 36 toon met gemene faktore in oranje in die oorvleuelende deel en GGF van 12 geëtiketteer" />',
+        'Venn-diagram wat die faktore van 24 en 36 vergelyk, met die gemene faktore in die oorvleuelende deel en die grootste gemene faktor van 12 in oranje uitgelig',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<circle cx="95" cy="95" r="70" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<circle cx="165" cy="95" r="70" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="60" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">Faktore van 24</text>` +
+        `<text x="200" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">Faktore van 36</text>` +
+        `<text x="50" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="50" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">24</text>` +
+        `<text x="210" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">9</text>` +
+        `<text x="210" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">18</text>` +
+        `<text x="210" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">36</text>` +
+        `<text x="115" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">1</text>` +
+        `<text x="145" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="115" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="145" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="115" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<circle cx="145" cy="107" r="11" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="145" y="111" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">12</text>` +
+        `<text x="130" y="165" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">GGF(24, 36) = 12</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om al die faktore van ʼn getal met faktorpare te lys en hoe om die GGF en KGV van twee getalle te vind met behulp van lyste van faktore en veelvoude" />',
@@ -898,7 +974,29 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Faktorboom vir 36 wat priemfaktorisering toon — 36 verdeel in 2 en 18, dan 18 in 2 en 9, dan 9 in 3 en 3 met priemfaktore in oranje uitgelig en die finale produknotasie 2 kwadraat maal 3 kwadraat in blou" />',
+        'Faktorboom vir 36 wat priemfaktorisering toon — 36 verdeel in 2 en 18, dan 18 in 2 en 9, dan 9 in 3 en 3 met priemfaktore in oranje uitgelig en die finale produknotasie 2 kwadraat maal 3 kwadraat in blou',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="120" y="24" text-anchor="middle" font-size="16" font-weight="700" fill="#0f1f3d">36</text>` +
+        `<line x1="112" y1="28" x2="76" y2="48" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="128" y1="28" x2="164" y2="48" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<circle cx="70" cy="58" r="13" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<text x="70" y="63" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">2</text>` +
+        `<text x="170" y="63" text-anchor="middle" font-size="16" font-weight="700" fill="#0f1f3d">18</text>` +
+        `<line x1="162" y1="67" x2="140" y2="83" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="178" y1="67" x2="200" y2="83" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<circle cx="136" cy="93" r="13" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<text x="136" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">2</text>` +
+        `<text x="204" y="98" text-anchor="middle" font-size="16" font-weight="700" fill="#0f1f3d">9</text>` +
+        `<line x1="197" y1="102" x2="180" y2="118" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="211" y1="102" x2="228" y2="118" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<circle cx="178" cy="128" r="13" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<text x="178" y="133" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">3</text>` +
+        `<circle cx="232" cy="128" r="13" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<text x="232" y="133" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">3</text>` +
+        `<text x="140" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">36 = 2 × 2 × 3 × 3 = 2² × 3²</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die verskil tussen priemgetalle en saamgestelde getalle verduidelik en priemfaktorisering demonstreer met behulp van ʼn faktorboom vir 36 met kleur-gekodeerde priemfaktore in oranje en produknotasie in blou" />',

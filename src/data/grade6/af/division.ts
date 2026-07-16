@@ -142,7 +142,33 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Long division layout showing 4 896 divided by 12 with each step colour coded — dividend in blue divisor in red quotient in green remainder in orange" />',
+        'Langdeling-uitleg wat 4 896 gedeel deur 12 stap vir stap toon, met die kwosiënt in rooi, aftrekkingstappe in blou, verskille in groen en afgebringde syfers in oranje',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="15" y="40" font-size="16" font-weight="700" fill="#0f1f3d">12</text>` +
+        `<line x1="34" y1="20" x2="150" y2="20" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="34" y1="20" x2="34" y2="105" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="76" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#dc2626">4</text>` +
+        `<text x="102" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#dc2626">0</text>` +
+        `<text x="128" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#dc2626">8</text>` +
+        `<text x="50" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="76" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="102" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">9</text>` +
+        `<text x="128" y="38" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<text x="42" y="52" font-size="13" font-weight="700" fill="#2563eb">− 48</text>` +
+        `<line x1="42" y1="57" x2="88" y2="57" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="76" y="70" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">0</text>` +
+        `<text x="102" y="70" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">9</text>` +
+        `<text x="76" y="84" font-size="13" font-weight="700" fill="#2563eb">− 0</text>` +
+        `<line x1="76" y1="89" x2="110" y2="89" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="102" y="102" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">9</text>` +
+        `<text x="128" y="102" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">6</text>` +
+        `<text x="90" y="116" font-size="13" font-weight="700" fill="#2563eb">− 96</text>` +
+        `<line x1="90" y1="121" x2="136" y2="121" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="128" y="134" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">0</text>` +
+        `<text x="110" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">4 896 ÷ 12 = 408</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat stap vir stap langdeling van ʼn 4-syfergetal deur ʼn 2-syfergetal wys, met kleurgekodeerde stappe" />',
@@ -243,9 +269,6 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Three worked examples showing the same remainder expressed three ways — as a whole number remainder in orange, as a fraction in blue, and as a decimal in green" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om te deel en die res uit te druk as ʼn heelgetal-res, as ʼn breuk, en as ʼn desimaal, met kleurgekodeerde uitgewerkte voorbeelde" />',
     },
@@ -331,9 +354,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Three worked examples showing division by multiples of 10 and 100 — zeros removed highlighted in orange, division steps in blue, final answers in green" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die hoofrekene-metode wys vir deling deur veelvoude van 10 en 100 deur die deler in sy nie-nul-syfer en mag van 10 te verdeel" />',
@@ -443,9 +463,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Three word problem scenarios showing key words highlighted in orange, division working in blue, remainder decision in red, and final answer in green" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om delingswoordprobleme op te los deur sleutelwoorde te identifiseer, die deling uit te voer, en te besluit wat om met die res te doen" />',

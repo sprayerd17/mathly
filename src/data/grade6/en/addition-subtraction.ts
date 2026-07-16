@@ -119,7 +119,37 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Column addition layout showing 3 456 728 plus 2 341 865 with carried digits shown in purple above each column, column sums in blue, and final answer in green" />',
+        'Column addition of 3 456 728 + 2 341 865 showing the carried digits in purple above each column and the final answer 5 798 593 in green',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 115" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="124" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">1</text>` +
+        `<text x="184" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">1</text>` +
+        `<text x="34" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="64" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="94" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="124" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<text x="154" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="184" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="214" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="10" y="58" font-size="15" font-weight="700" fill="#0f1f3d">+</text>` +
+        `<text x="34" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="64" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="94" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="124" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">1</text>` +
+        `<text x="154" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="184" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<text x="214" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<line x1="6" y1="66" x2="228" y2="66" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="34" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">5</text>` +
+        `<text x="64" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">7</text>` +
+        `<text x="94" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">9</text>` +
+        `<text x="124" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">8</text>` +
+        `<text x="154" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">5</text>` +
+        `<text x="184" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">9</text>` +
+        `<text x="214" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">3</text>` +
+        `<text x="120" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">3 456 728 + 2 341 865 = 5 798 593</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to add large numbers up to 9 digits using column addition with carrying, colour coded steps" />',
@@ -227,7 +257,38 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Column subtraction layout showing 7 435 862 minus 3 214 549 with borrowed digits in purple and borrowing adjustments in orange, final answer in green" />',
+        'Column subtraction layout showing 7 435 862 minus 3 214 549 with borrowed digits in purple and borrowing adjustments in orange, final answer in green',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 115" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="184" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">5</text>` +
+        `<text x="214" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">1</text>` +
+        `<text x="34" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="64" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="94" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="124" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="154" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="184" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<line x1="177" y1="29" x2="191" y2="39" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="214" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="10" y="58" font-size="15" font-weight="700" fill="#0f1f3d">−</text>` +
+        `<text x="34" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="64" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="94" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">1</text>` +
+        `<text x="124" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="154" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="184" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="214" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">9</text>` +
+        `<line x1="6" y1="66" x2="228" y2="66" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="34" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">4</text>` +
+        `<text x="64" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">2</text>` +
+        `<text x="94" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">2</text>` +
+        `<text x="124" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">1</text>` +
+        `<text x="154" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">3</text>` +
+        `<text x="184" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">1</text>` +
+        `<text x="214" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">3</text>` +
+        `<text x="120" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">7 435 862 − 3 214 549 = 4 221 313</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to subtract large numbers using borrowing, including how to borrow across zeros, with colour coded steps" />',
@@ -324,9 +385,6 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Rounding diagram showing 47 836 rounded to 50 000 and 28 194 rounded to 30 000 in orange, estimate 80 000 in blue, exact answer 76 030 in green, and check calculation 76 030 minus 28 194 equals 47 836 in red" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to estimate by rounding, calculate exactly, and check addition and subtraction answers using inverse operations with colour coded steps" />',
     },
@@ -412,9 +470,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Flowchart showing how to identify key words in a word problem and choose addition (green) or subtraction (red) or both, leading to the final answer in blue" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve word problems using addition and subtraction by identifying key words and writing a number sentence with colour coded steps" />',

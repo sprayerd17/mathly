@@ -119,7 +119,37 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Kolomoptelling-uitleg wat 3 456 728 plus 2 341 865 toon met oorgedraagde syfers in pers bo elke kolom, kolomsomme in blou, en die finale antwoord in groen" />',
+        'Kolomoptelling van 3 456 728 + 2 341 865 wat die oorgedraagde syfers in pers bo elke kolom toon en die finale antwoord 5 798 593 in groen',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 115" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="124" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">1</text>` +
+        `<text x="184" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">1</text>` +
+        `<text x="34" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="64" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="94" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="124" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<text x="154" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="184" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="214" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="10" y="58" font-size="15" font-weight="700" fill="#0f1f3d">+</text>` +
+        `<text x="34" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="64" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="94" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="124" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">1</text>` +
+        `<text x="154" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="184" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<text x="214" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<line x1="6" y1="66" x2="228" y2="66" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="34" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">5</text>` +
+        `<text x="64" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">7</text>` +
+        `<text x="94" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">9</text>` +
+        `<text x="124" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">8</text>` +
+        `<text x="154" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">5</text>` +
+        `<text x="184" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">9</text>` +
+        `<text x="214" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">3</text>` +
+        `<text x="120" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">3 456 728 + 2 341 865 = 5 798 593</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat toon hoe om groot getalle tot 9 syfers op te tel deur kolomoptelling met oordra te gebruik, met kleurgekodeerde stappe" />',
@@ -227,7 +257,38 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Kolomaftrekking-uitleg wat 7 435 862 minus 3 214 549 toon met geleende syfers in pers en leen-aanpassings in oranje, finale antwoord in groen" />',
+        'Kolomaftrekking-uitleg wat 7 435 862 minus 3 214 549 toon met geleende syfers in pers en leen-aanpassings in oranje, finale antwoord in groen',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 115" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="184" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">5</text>` +
+        `<text x="214" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">1</text>` +
+        `<text x="34" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="64" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="94" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="124" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="154" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="184" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">6</text>` +
+        `<line x1="177" y1="29" x2="191" y2="39" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="214" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="10" y="58" font-size="15" font-weight="700" fill="#0f1f3d">−</text>` +
+        `<text x="34" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="64" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="94" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">1</text>` +
+        `<text x="124" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="154" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<text x="184" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="214" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">9</text>` +
+        `<line x1="6" y1="66" x2="228" y2="66" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="34" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">4</text>` +
+        `<text x="64" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">2</text>` +
+        `<text x="94" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">2</text>` +
+        `<text x="124" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">1</text>` +
+        `<text x="154" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">3</text>` +
+        `<text x="184" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">1</text>` +
+        `<text x="214" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">3</text>` +
+        `<text x="120" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">7 435 862 − 3 214 549 = 4 221 313</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat toon hoe om groot getalle met leen af te trek, insluitend hoe om oor nulle te leen, met kleurgekodeerde stappe" />',
@@ -324,9 +385,6 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Afrondingsdiagram wat 47 836 afgerond na 50 000 en 28 194 afgerond na 30 000 in oranje toon, skatting 80 000 in blou, presiese antwoord 76 030 in groen, en nagaan-berekening 76 030 minus 28 194 gelyk aan 47 836 in rooi" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat toon hoe om deur afronding te skat, presies te bereken, en optellings- en aftrekkingsantwoorde met inverse bewerkings na te gaan, met kleurgekodeerde stappe" />',
     },
@@ -412,9 +470,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Vloeidiagram wat toon hoe om sleutelwoorde in ʼn woordprobleem te identifiseer en optelling (groen) of aftrekking (rooi) of albei te kies, wat lei na die finale antwoord in blou" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat toon hoe om woordprobleme met optelling en aftrekking op te los deur sleutelwoorde te identifiseer en ʼn getalsin te skryf, met kleurgekodeerde stappe" />',

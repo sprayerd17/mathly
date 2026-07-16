@@ -206,17 +206,20 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="100%" style="max-width:520px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
-        `<polygon points="65,12 18,95 112,95" fill="rgba(30,64,175,0.12)" stroke="#0f1f3d" stroke-width="2" stroke-linejoin="round"/>` +
-        `<text x="65" y="113" text-anchor="middle" font-size="12" fill="#0f1f3d" font-weight="600">Equilateral</text>` +
-        `<polygon points="195,10 165,95 225,95" fill="rgba(30,64,175,0.12)" stroke="#0f1f3d" stroke-width="2" stroke-linejoin="round"/>` +
-        `<text x="195" y="113" text-anchor="middle" font-size="12" fill="#0f1f3d" font-weight="600">Isosceles</text>` +
-        `<polygon points="285,10 263,95 375,95" fill="rgba(30,64,175,0.12)" stroke="#0f1f3d" stroke-width="2" stroke-linejoin="round"/>` +
-        `<text x="319" y="113" text-anchor="middle" font-size="12" fill="#0f1f3d" font-weight="600">Scalene</text>` +
-        `<polygon points="405,95 405,12 490,95" fill="rgba(30,64,175,0.12)" stroke="#0f1f3d" stroke-width="2" stroke-linejoin="round"/>` +
-        `<path d="M405,83 L417,83 L417,95" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="447" y="113" text-anchor="middle" font-size="12" fill="#0f1f3d" font-weight="600">Right-angled</text>` +
-        `</svg>`,
+        'The four ways to classify a triangle by its sides and angles — equilateral, isosceles, scalene and right-angled.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 480 150" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="30,120 100,120 65,59" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<polygon points="150,120 230,120 190,25" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<polygon points="270,120 365,108 300,30" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<polygon points="400,120 400,40 470,120" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<rect x="400" y="104" width="16" height="16" fill="none" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<text x="65" y="138" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Equilateral</text>' +
+        '<text x="190" y="138" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Isosceles</text>' +
+        '<text x="317" y="138" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Scalene</text>' +
+        '<text x="435" y="138" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Right-angled</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining how to classify triangles by their sides and angles and how to find a missing angle using the 180 degree rule" />',
@@ -365,7 +368,59 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagrams showing six types of quadrilaterals — square, rectangle, parallelogram, rhombus, trapezium and kite — each labelled with equal sides in blue, parallel sides in green, and angle values in orange" />',
+        'The six main types of quadrilaterals, with right angles marked in orange, equal sides marked in blue and parallel sides marked in green — square, rectangle, parallelogram, rhombus, trapezium and kite.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">' +
+        // Square
+        '<polygon points="50,20 110,20 110,80 50,80" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<rect x="50" y="20" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<rect x="100" y="20" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<rect x="100" y="70" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<rect x="50" y="70" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<line x1="80" y1="17" x2="80" y2="23" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="80" y1="77" x2="80" y2="83" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="47" y1="50" x2="53" y2="50" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="107" y1="50" x2="113" y2="50" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="80" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Square</text>' +
+        // Rectangle
+        '<polygon points="190,20 280,20 280,80 190,80" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<rect x="190" y="20" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<rect x="270" y="20" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<rect x="270" y="70" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<rect x="190" y="70" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<text x="235" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Rectangle</text>' +
+        // Parallelogram
+        '<polygon points="350,80 430,80 460,20 380,20" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<polyline points="386,76 394,80 386,84" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="416,16 424,20 416,24" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="361,46 369,50 361,54" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="357,46 365,50 357,54" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="441,46 449,50 441,54" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="437,46 445,50 437,54" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="405" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Parallelogram</text>' +
+        // Rhombus
+        '<polygon points="80,150 110,180 80,210 50,180" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="92" y1="162" x2="98" y2="168" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="92" y1="192" x2="98" y2="198" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="62" y1="192" x2="68" y2="198" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="62" y1="162" x2="68" y2="168" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="80" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Rhombus</text>' +
+        // Trapezium
+        '<polygon points="195,225 285,225 255,155 215,155" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<polyline points="236,221 244,225 236,229" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="231,151 239,155 231,159" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="240" y="243" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Trapezium</text>' +
+        // Kite
+        '<polygon points="400,150 428,178 400,222 372,178" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="383" y1="161" x2="389" y2="167" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="411" y1="161" x2="417" y2="167" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="382" y1="196" x2="388" y2="202" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="386" y1="198" x2="392" y2="204" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="410" y1="198" x2="416" y2="204" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="414" y1="196" x2="420" y2="202" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="400" y="243" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Kite</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the properties of different quadrilaterals and how to find a missing angle using the 360 degree rule" />',
@@ -685,7 +740,26 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagrams showing a triangle, quadrilateral, pentagon and hexagon with their interior angles labelled in red and the angle sum shown in green" />',
+        'Any polygon can be split into triangles using diagonals drawn from one vertex — a quadrilateral makes 2 triangles, a pentagon makes 3, and a hexagon makes 4. This is why the formula is (number of sides − 2) × 180°.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 480 170" xmlns="http://www.w3.org/2000/svg">' +
+        // Quadrilateral — 1 diagonal, 2 triangles
+        '<polygon points="30,140 130,140 130,30 30,30" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="30" y1="140" x2="130" y2="30" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="80" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4 sides = 2 triangles</text>' +
+        // Pentagon — 2 diagonals, 3 triangles
+        '<polygon points="240,30 292,68 272,130 208,130 188,68" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="240" y1="30" x2="272" y2="130" stroke="#ea580c" stroke-width="2"/>' +
+        '<line x1="240" y1="30" x2="208" y2="130" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="240" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">5 sides = 3 triangles</text>' +
+        // Hexagon — 3 diagonals, 4 triangles
+        '<polygon points="400,30 448,58 448,113 400,140 352,113 352,58" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="400" y1="30" x2="448" y2="113" stroke="#ea580c" stroke-width="2"/>' +
+        '<line x1="400" y1="30" x2="400" y2="140" stroke="#ea580c" stroke-width="2"/>' +
+        '<line x1="400" y1="30" x2="352" y2="113" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="400" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">6 sides = 4 triangles</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining how to find the sum of interior angles using the formula (number of sides minus 2) times 180 degrees with worked examples" />',

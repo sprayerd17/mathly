@@ -170,7 +170,21 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a triangular prism and a rectangular prism with faces highlighted blue, edges highlighted orange and vertices highlighted green, labelled with counts" />',
+        'A triangular prism (5 faces, 9 edges, 6 vertices) and a rectangular prism (6 faces, 12 edges, 8 vertices), shown as 3D wireframes.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 260 175" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="77" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Triangular prism</text>' +
+        '<polygon points="35,130 85,130 60,80" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M35,130 L70,108 M85,130 L120,108 M60,80 L95,58" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M70,108 L120,108 M120,108 L95,58 M95,58 L70,108" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<text x="77" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">5 faces, 9 edges, 6 vertices</text>' +
+        '<text x="190" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Rectangular prism</text>' +
+        '<polygon points="150,80 200,80 200,130 150,130" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M150,80 L180,60 M200,80 L230,60 M200,130 L230,110 M150,130 L180,110" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M180,60 L230,60 M230,60 L230,110 M230,110 L180,110 M180,110 L180,60" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<text x="190" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">6 faces, 12 edges, 8 vertices</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the properties of prisms — faces, edges and vertices — using the base-sides formulas and Euler\'s formula to verify" />',
@@ -317,7 +331,33 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a square pyramid and a triangular pyramid with faces highlighted blue, edges highlighted orange, vertices highlighted green and the apex highlighted red" />',
+        'A square pyramid (5 faces, 8 edges, 5 vertices) and a triangular pyramid (4 faces, 6 edges, 4 vertices), with the apex marked in red where the triangular faces meet.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 260 175" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="60" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Square pyramid</text>' +
+        '<line x1="60" y1="145" x2="15" y2="125" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="60" y1="145" x2="105" y2="125" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="15" y1="125" x2="60" y2="105" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="105" y1="125" x2="60" y2="105" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="60" y1="145" x2="60" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="15" y1="125" x2="60" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="105" y1="125" x2="60" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="60" y1="105" x2="60" y2="55" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<circle cx="60" cy="55" r="3" fill="#dc2626"/>' +
+        '<text x="60" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">apex</text>' +
+        '<text x="60" y="163" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">5 faces, 8 edges, 5 vertices</text>' +
+        '<text x="202" y="15" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Triangular pyramid</text>' +
+        '<line x1="175" y1="140" x2="230" y2="140" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="175" y1="140" x2="202" y2="112" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="230" y1="140" x2="202" y2="112" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<line x1="175" y1="140" x2="202" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="230" y1="140" x2="202" y2="55" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="202" y1="112" x2="202" y2="55" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<circle cx="202" cy="55" r="3" fill="#dc2626"/>' +
+        '<text x="202" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">apex</text>' +
+        '<text x="202" y="163" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">4 faces, 6 edges, 4 vertices</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the properties of pyramids — faces, edges, vertices and the apex — with the base-sides formulas and a comparison to prisms" />',
@@ -423,7 +463,24 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the nets of a cube and a square pyramid side by side, with base shapes highlighted blue, rectangular side faces green and triangular faces orange" />',
+        'The net of a cube (six squares in a cross shape) and the net of a square pyramid (one square base with four triangles attached), shown unfolded flat.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg">' +
+        '<rect x="110" y="10" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="110" y="38" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="110" y="66" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="110" y="94" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="82" y="38" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<rect x="138" y="38" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="124" y="137" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Cube net</text>' +
+        '<rect x="230" y="55" width="40" height="40" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<polygon points="230,55 270,55 250,25" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="230,95 270,95 250,125" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="230,55 230,95 200,75" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="270,55 270,95 300,75" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="250" y="137" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">Square pyramid net</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how nets of a cube, triangular prism and square pyramid are folded to form the 3D objects, with base shapes highlighted blue, side faces green and triangular faces orange" />',

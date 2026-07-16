@@ -195,7 +195,34 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Factor tree diagrams for 36, 120, and 252 with composite numbers in blue, prime numbers circled in green, exponents in orange, and the final prime factorisation in red" />',
+        'Factor tree diagram for 120 with composite numbers in blue, prime numbers circled in green, and the final prime factorisation 120 = 2³ × 3 × 5 in red',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 210" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="140" y="24" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">120</text>` +
+        `<line x1="132" y1="28" x2="84" y2="48" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="148" y1="28" x2="196" y2="48" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="80" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">12</text>` +
+        `<text x="200" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">10</text>` +
+        `<line x1="74" y1="66" x2="52" y2="86" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="86" y1="66" x2="108" y2="86" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="194" y1="66" x2="172" y2="86" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="206" y1="66" x2="228" y2="86" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="50" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">4</text>` +
+        `<circle cx="110" cy="94" r="13" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="110" y="99" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">3</text>` +
+        `<circle cx="170" cy="94" r="13" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="170" y="99" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">2</text>` +
+        `<circle cx="230" cy="94" r="13" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="230" y="99" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">5</text>` +
+        `<line x1="45" y1="103" x2="30" y2="123" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="55" y1="103" x2="70" y2="123" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<circle cx="28" cy="132" r="13" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="28" y="137" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">2</text>` +
+        `<circle cx="72" cy="132" r="13" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="72" y="137" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">2</text>` +
+        `<text x="140" y="185" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">120 = 2 × 2 × 2 × 3 × 5 = 2³ × 3 × 5</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to draw a factor tree and write the prime factorisation of a composite number using exponents for repeated factors" />',
@@ -371,7 +398,25 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Factor lists for 48 and 60 with factors in blue, common factors highlighted in green, and the HCF circled in orange; alongside a prime factorisation diagram for 72 and 90 with shared prime factors in red" />',
+        'Venn diagram comparing the factors of 12 and 18, with the common factors shown in the overlap and the highest common factor of 6 highlighted in orange',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 190" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<circle cx="90" cy="90" r="65" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<circle cx="160" cy="90" r="65" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="55" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">Factors of 12</text>` +
+        `<text x="195" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">Factors of 18</text>` +
+        `<text x="45" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<text x="45" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">12</text>` +
+        `<text x="205" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">9</text>` +
+        `<text x="205" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">18</text>` +
+        `<text x="115" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">1</text>` +
+        `<text x="135" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="115" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<circle cx="135" cy="103" r="11" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="135" y="107" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">6</text>` +
+        `<text x="125" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">HCF(12, 18) = 6</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to find the Highest Common Factor by listing factors and by using prime factorisation, with colour coded factors, common factors, and HCF" />',
@@ -569,7 +614,35 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Multiple lists for 8 and 12 with multiples in blue, shared multiples highlighted in green, and the LCM circled in orange; alongside a prime factorisation diagram for 12 and 18 with highest prime powers in red" />',
+        'Double number line showing multiples of 8 and multiples of 12 aligned by value, with the point where they first meet — 24 — highlighted in orange as the lowest common multiple',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 165" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="8" y="54" font-size="10" font-weight="700" fill="#2563eb">×8</text>` +
+        `<line x1="30" y1="50" x2="200" y2="50" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<line x1="62" y1="45" x2="62" y2="55" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<line x1="94" y1="45" x2="94" y2="55" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<line x1="126" y1="45" x2="126" y2="55" stroke="#ea580c" stroke-width="2"/>` +
+        `<line x1="158" y1="45" x2="158" y2="55" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<line x1="190" y1="45" x2="190" y2="55" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="62" y="38" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">8</text>` +
+        `<text x="94" y="38" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">16</text>` +
+        `<text x="126" y="38" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">24</text>` +
+        `<text x="158" y="38" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">32</text>` +
+        `<text x="190" y="38" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">40</text>` +
+        `<text x="5" y="114" font-size="10" font-weight="700" fill="#16a34a">×12</text>` +
+        `<line x1="30" y1="110" x2="230" y2="110" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<line x1="78" y1="105" x2="78" y2="115" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<line x1="126" y1="105" x2="126" y2="115" stroke="#ea580c" stroke-width="2"/>` +
+        `<line x1="174" y1="105" x2="174" y2="115" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<line x1="222" y1="105" x2="222" y2="115" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="78" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">12</text>` +
+        `<text x="126" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">24</text>` +
+        `<text x="174" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">36</text>` +
+        `<text x="222" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">48</text>` +
+        `<line x1="126" y1="42" x2="126" y2="102" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,3"/>` +
+        `<text x="130" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">LCM(8, 12) = 24</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to find the Lowest Common Multiple by listing multiples and by using prime factorisation, with colour coded multiples, shared multiples, LCM, and highest prime powers" />',

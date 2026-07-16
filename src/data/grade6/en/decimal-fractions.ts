@@ -179,9 +179,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining place value of decimal fractions to 3 decimal places with worked examples using tenths hundredths and thousandths" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Place value chart for decimal fractions showing units tenths hundredths and thousandths columns colour coded blue green orange red with example 4.375" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -322,8 +319,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining how to compare and order decimal fractions by comparing digit by digit from left to right using place value" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Comparison chart showing 3.45 and 3.452 side by side with tenths green hundredths orange thousandths red and the key comparison digit blue highlighted" />',
+      diagramPlaceholder: 'Column chart comparing 3.450 and 3.452 digit by digit, with the thousandths digit — the first point of difference — highlighted in blue',
+      diagramSvg: '<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="25" height="26" fill="#eff6ff" stroke="#0f1f3d" stroke-width="1.5"/><text x="27.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="46" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">.</text><rect x="52" y="15" width="25" height="26" fill="#f0fdf4" stroke="#0f1f3d" stroke-width="1.5"/><text x="64.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">4</text><rect x="77" y="15" width="25" height="26" fill="#fff7ed" stroke="#0f1f3d" stroke-width="1.5"/><text x="89.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#ea580c">5</text><rect x="102" y="15" width="25" height="26" fill="#fef2f2" stroke="#2563eb" stroke-width="3"/><text x="114.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">0</text><rect x="15" y="48" width="25" height="26" fill="#eff6ff" stroke="#0f1f3d" stroke-width="1.5"/><text x="27.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="46" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">.</text><rect x="52" y="48" width="25" height="26" fill="#f0fdf4" stroke="#0f1f3d" stroke-width="1.5"/><text x="64.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">4</text><rect x="77" y="48" width="25" height="26" fill="#fff7ed" stroke="#0f1f3d" stroke-width="1.5"/><text x="89.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#ea580c">5</text><rect x="102" y="48" width="25" height="26" fill="#fef2f2" stroke="#2563eb" stroke-width="3"/><text x="114.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">2</text><text x="71" y="97" font-weight="700" font-size="12" text-anchor="middle" fill="#16a34a">Thousandths: 0 &lt; 2, so 3.452 &gt; 3.45</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -470,8 +467,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to add and subtract decimal fractions by lining up decimal points and adding zeros to make equal decimal places" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Column addition layout showing 3.450 plus 2.368 equals 5.818 with decimal point blue carried digit purple zero added orange and answer green colour coded" />',
+      diagramPlaceholder: 'Column addition showing 3.450 + 2.368 = 5.818, with the carried digit from the hundredths column shown above the tenths column',
+      diagramSvg: '<svg viewBox="0 0 210 140" xmlns="http://www.w3.org/2000/svg"><circle cx="64.5" cy="16" r="8" fill="#7c3aed"/><text x="64.5" y="20.5" font-weight="700" font-size="11" text-anchor="middle" fill="white">1</text><text x="27.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="52" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#2563eb">.</text><text x="64.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">4</text><text x="89.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">5</text><text x="114.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#ea580c">0</text><text x="8" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">+</text><text x="27.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">2</text><text x="52" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#2563eb">.</text><text x="64.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="89.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">6</text><text x="114.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">8</text><line x1="10" y1="70" x2="130" y2="70" stroke="#0f1f3d" stroke-width="2.5"/><text x="27.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">5</text><text x="52" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#2563eb">.</text><text x="64.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">8</text><text x="89.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">1</text><text x="114.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">8</text><text x="105" y="118" font-size="11" text-anchor="middle" fill="#7c3aed">purple = carried digit</text><text x="105" y="132" font-size="11" text-anchor="middle" fill="#ea580c">orange = zero added</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -617,8 +614,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to multiply decimal fractions by a whole number and by 10 100 and 1000 with worked examples" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing 3.45 multiplied by 6 with decimal places counted orange decimal point position blue multiplication green and answer red colour coded" />',
+      diagramPlaceholder: 'Diagram showing how counting 2 decimal places from the right in the product 2070 gives the correctly placed answer 20.7 for 3.45 × 6',
+      diagramSvg: '<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg"><text x="110" y="18" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">345 × 6 = 2070</text><rect x="40" y="35" width="35" height="40" fill="#f8fafc" stroke="#0f1f3d" stroke-width="2"/><text x="57.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#0f1f3d">2</text><rect x="75" y="35" width="35" height="40" fill="#f8fafc" stroke="#0f1f3d" stroke-width="2"/><text x="92.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#0f1f3d">0</text><rect x="110" y="35" width="35" height="40" fill="#fef2f2" stroke="#2563eb" stroke-width="2.5"/><text x="127.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#dc2626">7</text><rect x="145" y="35" width="35" height="40" fill="#fef2f2" stroke="#2563eb" stroke-width="2.5"/><text x="162.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#dc2626">0</text><line x1="110" y1="28" x2="110" y2="82" stroke="#2563eb" stroke-width="2" stroke-dasharray="3,3"/><path d="M110 90 L110 98 L180 98 L180 90" fill="none" stroke="#ea580c" stroke-width="2"/><text x="145" y="112" font-weight="700" font-size="12" text-anchor="middle" fill="#ea580c">2 decimal places</text><text x="110" y="135" font-weight="700" font-size="14" text-anchor="middle" fill="#16a34a">Point goes here → 20.70 = 20.7</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -762,8 +759,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to divide decimal fractions by a whole number by keeping the decimal point in position and how dividing by 10 100 and 1000 moves the decimal point to the left" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Division layout showing 8.46 divided by 3 equals 2.82 with division steps green remainder orange decimal point position blue and answer red colour coded alongside arrows showing decimal point moving left when dividing by 10 100 and 1000" />',
+      diagramPlaceholder: 'Long division bracket showing 8.46 divided by 3 = 2.82, with the decimal point kept in the same column in the quotient',
+      diagramSvg: '<svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><text x="50" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#16a34a">2</text><text x="65" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#2563eb">.</text><text x="80" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#16a34a">8</text><text x="95" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#16a34a">2</text><line x1="40" y1="42" x2="112" y2="42" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="42" x2="40" y2="95" stroke="#0f1f3d" stroke-width="2.5"/><text x="25" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">3</text><text x="50" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">8</text><text x="65" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#2563eb">.</text><text x="80" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">4</text><text x="95" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">6</text><line x1="65" y1="20" x2="65" y2="95" stroke="#2563eb" stroke-width="1" stroke-dasharray="2,2"/><text x="150" y="66" font-size="11" text-anchor="middle" fill="#2563eb">point stays</text><text x="150" y="79" font-size="11" text-anchor="middle" fill="#2563eb">in line</text><text x="100" y="115" font-weight="700" font-size="14" text-anchor="middle" fill="#dc2626">8.46 ÷ 3 = 2.82</text></svg>',
     },
   ],
   resultsConfig: {

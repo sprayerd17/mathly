@@ -180,9 +180,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat plekwaarde van desimale breuke tot 3 desimale plekke verduidelik met uitgewerkte voorbeelde wat tiendes honderdstes en duisendstes gebruik" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Plekwaardetabel vir desimale breuke wat ene tiendes honderdstes en duisendstes kolomme toon kleurgekodeer blou groen oranje rooi met voorbeeld 4.375" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -324,8 +321,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat verduidelik hoe om desimale breuke te vergelyk en te orden deur syfer vir syfer van links na regs te vergelyk met plekwaarde" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Vergelykingstabel wat 3.45 en 3.452 langs mekaar toon met tiendes groen honderdstes oranje duisendstes rooi en die sleutel-vergelykingsyfer blou uitgelig" />',
+      diagramPlaceholder: 'Kolomtabel wat 3,450 en 3,452 syfer vir syfer vergelyk, met die duisendstesyfer — die eerste verskilpunt — blou uitgelig',
+      diagramSvg: '<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="25" height="26" fill="#eff6ff" stroke="#0f1f3d" stroke-width="1.5"/><text x="27.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="46" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">,</text><rect x="52" y="15" width="25" height="26" fill="#f0fdf4" stroke="#0f1f3d" stroke-width="1.5"/><text x="64.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">4</text><rect x="77" y="15" width="25" height="26" fill="#fff7ed" stroke="#0f1f3d" stroke-width="1.5"/><text x="89.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#ea580c">5</text><rect x="102" y="15" width="25" height="26" fill="#fef2f2" stroke="#2563eb" stroke-width="3"/><text x="114.5" y="33" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">0</text><rect x="15" y="48" width="25" height="26" fill="#eff6ff" stroke="#0f1f3d" stroke-width="1.5"/><text x="27.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="46" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">,</text><rect x="52" y="48" width="25" height="26" fill="#f0fdf4" stroke="#0f1f3d" stroke-width="1.5"/><text x="64.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">4</text><rect x="77" y="48" width="25" height="26" fill="#fff7ed" stroke="#0f1f3d" stroke-width="1.5"/><text x="89.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#ea580c">5</text><rect x="102" y="48" width="25" height="26" fill="#fef2f2" stroke="#2563eb" stroke-width="3"/><text x="114.5" y="66" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">2</text><text x="71" y="97" font-weight="700" font-size="12" text-anchor="middle" fill="#16a34a">Duisendstes: 0 &lt; 2, dus 3,452 &gt; 3,45</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -474,8 +471,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke op te tel en af te trek deur desimale kommas op te lyn en nulle by te voeg om gelyke desimale plekke te maak" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Kolomoptellinguitleg wat wys 3.450 plus 2.368 is gelyk aan 5.818 met desimale komma blou oorgedraagde syfer pers nul bygevoeg oranje en antwoord groen kleurgekodeer" />',
+      diagramPlaceholder: 'Kolomoptelling wat wys 3,450 + 2,368 = 5,818, met die oorgedraagde syfer van die honderdstekolom bo die tiendekolom getoon',
+      diagramSvg: '<svg viewBox="0 0 210 140" xmlns="http://www.w3.org/2000/svg"><circle cx="64.5" cy="16" r="8" fill="#7c3aed"/><text x="64.5" y="20.5" font-weight="700" font-size="11" text-anchor="middle" fill="white">1</text><text x="27.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="52" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#2563eb">,</text><text x="64.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">4</text><text x="89.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">5</text><text x="114.5" y="38" font-weight="700" font-size="16" text-anchor="middle" fill="#ea580c">0</text><text x="8" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">+</text><text x="27.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">2</text><text x="52" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#2563eb">,</text><text x="64.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="89.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">6</text><text x="114.5" y="62" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">8</text><line x1="10" y1="70" x2="130" y2="70" stroke="#0f1f3d" stroke-width="2.5"/><text x="27.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">5</text><text x="52" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#2563eb">,</text><text x="64.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">8</text><text x="89.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">1</text><text x="114.5" y="94" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">8</text><text x="105" y="118" font-size="11" text-anchor="middle" fill="#7c3aed">pers = oorgedraagde syfer</text><text x="105" y="132" font-size="11" text-anchor="middle" fill="#ea580c">oranje = nul bygevoeg</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -622,8 +619,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke met ʼn heelgetal en met 10 100 en 1000 te vermenigvuldig met uitgewerkte voorbeelde" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat wys 3.45 vermenigvuldig met 6 met desimale plekke getel oranje desimale komma-posisie blou vermenigvuldiging groen en antwoord rooi kleurgekodeer" />',
+      diagramPlaceholder: 'Diagram wat wys hoe om 2 desimale plekke van regs af in die produk 2070 te tel om die korrek geplaaste antwoord 20,7 vir 3,45 × 6 te kry',
+      diagramSvg: '<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg"><text x="110" y="18" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">345 × 6 = 2070</text><rect x="40" y="35" width="35" height="40" fill="#f8fafc" stroke="#0f1f3d" stroke-width="2"/><text x="57.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#0f1f3d">2</text><rect x="75" y="35" width="35" height="40" fill="#f8fafc" stroke="#0f1f3d" stroke-width="2"/><text x="92.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#0f1f3d">0</text><rect x="110" y="35" width="35" height="40" fill="#fef2f2" stroke="#2563eb" stroke-width="2.5"/><text x="127.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#dc2626">7</text><rect x="145" y="35" width="35" height="40" fill="#fef2f2" stroke="#2563eb" stroke-width="2.5"/><text x="162.5" y="61" font-weight="700" font-size="20" text-anchor="middle" fill="#dc2626">0</text><line x1="110" y1="28" x2="110" y2="82" stroke="#2563eb" stroke-width="2" stroke-dasharray="3,3"/><path d="M110 90 L110 98 L180 98 L180 90" fill="none" stroke="#ea580c" stroke-width="2"/><text x="145" y="112" font-weight="700" font-size="12" text-anchor="middle" fill="#ea580c">2 desimale plekke</text><text x="110" y="135" font-weight="700" font-size="14" text-anchor="middle" fill="#16a34a">Komma kom hier → 20,70 = 20,7</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -768,8 +765,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke deur ʼn heelgetal te deel deur die desimale komma in posisie te hou en hoe deling deur 10 100 en 1000 die desimale komma na links skuif" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Delinguitleg wat wys 8.46 gedeel deur 3 is gelyk aan 2.82 met delingstappe groen res oranje desimale komma-posisie blou en antwoord rooi kleurgekodeer saam met pyle wat wys hoe die desimale komma na links skuif wanneer daar deur 10 100 en 1000 gedeel word" />',
+      diagramPlaceholder: 'Lang delinguitleg wat wys 8,46 gedeel deur 3 = 2,82, met die desimale komma wat in dieselfde kolom in die kwosiënt bly',
+      diagramSvg: '<svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg"><text x="50" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#16a34a">2</text><text x="65" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#2563eb">,</text><text x="80" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#16a34a">8</text><text x="95" y="35" font-weight="700" font-size="18" text-anchor="middle" fill="#16a34a">2</text><line x1="40" y1="42" x2="112" y2="42" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="42" x2="40" y2="95" stroke="#0f1f3d" stroke-width="2.5"/><text x="25" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">3</text><text x="50" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">8</text><text x="65" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#2563eb">,</text><text x="80" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">4</text><text x="95" y="72" font-weight="700" font-size="18" text-anchor="middle" fill="#0f1f3d">6</text><line x1="65" y1="20" x2="65" y2="95" stroke="#2563eb" stroke-width="1" stroke-dasharray="2,2"/><text x="150" y="66" font-size="11" text-anchor="middle" fill="#2563eb">komma bly</text><text x="150" y="79" font-size="11" text-anchor="middle" fill="#2563eb">in lyn</text><text x="100" y="115" font-weight="700" font-size="14" text-anchor="middle" fill="#dc2626">8,46 ÷ 3 = 2,82</text></svg>',
     },
   ],
   resultsConfig: {

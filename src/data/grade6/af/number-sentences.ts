@@ -131,9 +131,6 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die dele van ʼn vergelyking merk — veranderlike in blou, bekende waardes in groen, gelykaanteken in oranje, en die volledige vergelyking uitgelig in rooi" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om vergelykings van woordprobleme te skryf met veranderlikes en hoe om ʼn oplossing te kontroleer deur dit terug te vervang in die vergelyking" />',
     },
@@ -233,7 +230,28 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van ʼn gebalanseerde skaal wat ʼn vergelyking wys — veranderlike geïsoleer aan een kant nadat die inverse bewerking op albei kante toegepas is, kleurgekodeer met veranderlike in blou, inverse bewerking in oranje, albei kante in groen, en kontrole in rooi" />',
+        'Gebalanseerde-skaal-diagram wat x + 13 = 28 wys, en dan na aftrekking van 13 van albei kante, die opgeloste vergelyking x = 15',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 225" width="100%" style="max-width:260px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="75" x2="125" y2="75" stroke="#0f1f3d" stroke-width="3"/>` +
+        `<polygon points="60,95 80,95 70,75" fill="#0f1f3d"/>` +
+        `<rect x="15" y="45" width="50" height="30" rx="4" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="40" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">x + 13</text>` +
+        `<rect x="75" y="45" width="50" height="30" rx="4" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="100" y="64" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">28</text>` +
+        `<text x="70" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">x + 13 = 28</text>` +
+        `<text x="70" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">− 13 van albei kante</text>` +
+        `<line x1="70" y1="132" x2="70" y2="148" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="70,155 65,145 75,145" fill="#ea580c"/>` +
+        `<line x1="15" y1="185" x2="125" y2="185" stroke="#0f1f3d" stroke-width="3"/>` +
+        `<polygon points="60,205 80,205 70,185" fill="#0f1f3d"/>` +
+        `<rect x="15" y="155" width="50" height="30" rx="4" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="40" y="174" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">x</text>` +
+        `<rect x="75" y="155" width="50" height="30" rx="4" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="100" y="174" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">15</text>` +
+        `<text x="70" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">x = 15</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om optelling-, aftrekking-, vermenigvuldiging-, en delingsvergelykings op te los met inverse bewerkings en die gebalanseerde skaal model" />',
@@ -323,9 +341,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn twee-stap vergelyking wys wat in twee kleurgekodeerde stappe opgelos word — eerste stap in blou wat optelling of aftrekking ongedaan maak, dan tweede stap in groen wat vermenigvuldiging of deling ongedaan maak, met veranderlike in oranje en kontrole in rooi" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om twee-stap vergelykings op te los met inverse bewerkings in omgekeerde BODMAS-volgorde met uitgewerkte voorbeelde en kontrole deur substitusie" />',
@@ -423,9 +438,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die vier stappe wys om ʼn woordprobleem op te los — identifiseer die onbekende veranderlike in blou, skryf die vergelyking in oranje, vind die oplossing in groen, en kontroleer in rooi" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om woordprobleme om te skakel in vergelykings met ʼn veranderlike en dan op te los en te kontroleer met drie uitgewerkte voorbeelde" />',

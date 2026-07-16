@@ -128,9 +128,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn persentasie is en hoe om tussen persentasies breuke en desimale breuke om te skakel" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die driehoekige verhouding tussen persentasies breuke en desimale breuke wys met omskakelingspyle gemerk vermenigvuldig met 100 en deel deur 100" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -320,9 +317,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om tussen breuke desimale breuke en persentasies om te skakel deur die vermenigvuldig met 100 en deel deur 100 reëls te gebruik" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Driehoekdiagram wat breuke desimale breuke en persentasies by elke hoek wys met omskakelingspyle gemerk: breuk na persentasie deel dan vermenigvuldig met 100, persentasie na desimale breuk deel deur 100, desimale breuk na persentasie vermenigvuldig met 100" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -422,8 +416,8 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die twee metodes wys om ʼn persentasie van ʼn bedrag te vind: desimale metode (skakel om na ʼn desimale breuk en vermenigvuldig dan) en hoofrekenmetode (vind 10% en bou dan op)" />',
+      diagramPlaceholder: 'Persentasiestaaf verdeel in tien gelyke 10%-strokies, met 15% opgebou deur een volle strokie plus die helfte van die volgende strokie te skakeer',
+      diagramSvg: '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg"><text x="105" y="16" font-weight="700" font-size="13" text-anchor="middle" fill="#0f1f3d">Bou 15% op uit 10% + 5%</text><rect x="15" y="30" width="180" height="30" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="15" y="30" width="18" height="30" fill="#2563eb"/><rect x="33" y="30" width="9" height="30" fill="#ea580c"/><line x1="33" y1="30" x2="33" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="51" y1="30" x2="51" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="69" y1="30" x2="69" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="87" y1="30" x2="87" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="105" y1="30" x2="105" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="123" y1="30" x2="123" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="141" y1="30" x2="141" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="159" y1="30" x2="159" y2="60" stroke="#0f1f3d" stroke-width="1"/><line x1="177" y1="30" x2="177" y2="60" stroke="#0f1f3d" stroke-width="1"/><text x="24" y="78" font-weight="700" font-size="11" text-anchor="middle" fill="#2563eb">10%</text><text x="37.5" y="90" font-weight="700" font-size="11" text-anchor="middle" fill="#ea580c">5%</text><text x="105" y="102" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">10% + 5% = 15%</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn persentasie van ʼn bedrag te vind deur die desimale metode en die hoofrekenmetode van opbou vanaf 10% te gebruik" />',
@@ -528,8 +522,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om persentasietoename en persentasieafname te bereken deur die tweestapmetode van eers die persentasie vind en dan by die oorspronklike te tel of daarvan af te trek" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat persentasietoename aan die linkerkant wys (oorspronklike bedrag plus persentasie gevind is gelyk aan nuwe bedrag) en persentasieafname aan die regterkant (oorspronklike bedrag minus persentasie gevind is gelyk aan nuwe bedrag) met kleurgekodeerde pyle" />',
+      diagramPlaceholder: 'Twee staafmodelle — boonste staaf wys die oorspronklike bedrag verleng met ʼn 12%-toename, onderste staaf wys die oorspronklike bedrag met ʼn 15%-afname daaruit verwyder',
+      diagramSvg: '<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg"><text x="85" y="16" font-size="11" text-anchor="middle" fill="#2563eb">Oorspronklik</text><text x="163" y="16" font-size="11" text-anchor="middle" fill="#16a34a">+12%</text><rect x="15" y="20" width="157" height="22" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="15" y="20" width="140" height="22" fill="#93c5fd"/><rect x="155" y="20" width="17" height="22" fill="#86efac"/><line x1="155" y1="20" x2="155" y2="42" stroke="#0f1f3d" stroke-width="1.5"/><text x="93" y="60" font-weight="700" font-size="12" text-anchor="middle" fill="#16a34a">Nuwe = Oorspronklik + 12%</text><text x="85" y="82" font-size="11" text-anchor="middle" fill="#2563eb">Oorspronklik</text><text x="144" y="82" font-size="11" text-anchor="middle" fill="#dc2626">−15%</text><rect x="15" y="86" width="140" height="22" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="15" y="86" width="119" height="22" fill="#93c5fd"/><rect x="134" y="86" width="21" height="22" fill="#fca5a5"/><line x1="134" y1="86" x2="134" y2="108" stroke="#0f1f3d" stroke-width="1.5"/><text x="85" y="126" font-weight="700" font-size="12" text-anchor="middle" fill="#dc2626">Nuwe = Oorspronklik − 15%</text></svg>',
     },
   ],
   topicPractice: [

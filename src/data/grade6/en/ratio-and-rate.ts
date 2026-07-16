@@ -106,8 +106,8 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing a ratio of red to blue marbles with the HCF highlighted and the step by step simplification from 12:8 to 3:2" />',
+      diagramPlaceholder: 'Marbles grouped by the HCF of 4, showing 12 red marbles as 3 groups and 8 blue marbles as 2 groups, simplifying the ratio to 3:2',
+      diagramSvg: '<svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg"><text x="72" y="10" font-size="10" text-anchor="middle" fill="#ea580c">grouped by 4 (the HCF)</text><rect x="15" y="15" width="34" height="34" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="24" cy="24" r="4" fill="#dc2626"/><circle cx="40" cy="24" r="4" fill="#dc2626"/><circle cx="24" cy="40" r="4" fill="#dc2626"/><circle cx="40" cy="40" r="4" fill="#dc2626"/><rect x="55" y="15" width="34" height="34" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="64" cy="24" r="4" fill="#dc2626"/><circle cx="80" cy="24" r="4" fill="#dc2626"/><circle cx="64" cy="40" r="4" fill="#dc2626"/><circle cx="80" cy="40" r="4" fill="#dc2626"/><rect x="95" y="15" width="34" height="34" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="104" cy="24" r="4" fill="#dc2626"/><circle cx="120" cy="24" r="4" fill="#dc2626"/><circle cx="104" cy="40" r="4" fill="#dc2626"/><circle cx="120" cy="40" r="4" fill="#dc2626"/><text x="150" y="36" font-size="11" fill="#dc2626" font-weight="700">12 red</text><rect x="15" y="60" width="34" height="34" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="24" cy="69" r="4" fill="#2563eb"/><circle cx="40" cy="69" r="4" fill="#2563eb"/><circle cx="24" cy="85" r="4" fill="#2563eb"/><circle cx="40" cy="85" r="4" fill="#2563eb"/><rect x="55" y="60" width="34" height="34" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="64" cy="69" r="4" fill="#2563eb"/><circle cx="80" cy="69" r="4" fill="#2563eb"/><circle cx="64" cy="85" r="4" fill="#2563eb"/><circle cx="80" cy="85" r="4" fill="#2563eb"/><text x="150" y="81" font-size="11" fill="#2563eb" font-weight="700">8 blue</text><text x="72" y="112" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">3 groups : 2 groups = 3:2</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining what a ratio is, how to write it using a colon, and how to simplify a ratio by dividing by the HCF" />',
@@ -203,8 +203,8 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing equivalent ratios as scaled rows (2:3 and 8:12) alongside a bar model for dividing R240 in the ratio 3:5 with each part labelled R30" />',
+      diagramPlaceholder: 'Bar model dividing R240 into 8 equal parts in the ratio 3:5, each part worth R30, with 3 parts shaded blue (R90) and 5 parts shaded red (R150)',
+      diagramSvg: '<svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg"><text x="95" y="15" font-size="11" text-anchor="middle" fill="#0f1f3d">Dividing R240 in the ratio 3:5</text><rect x="15" y="50" width="160" height="30" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="15" y="50" width="60" height="30" fill="#93c5fd"/><rect x="75" y="50" width="100" height="30" fill="#fca5a5"/><line x1="35" y1="50" x2="35" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="55" y1="50" x2="55" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="75" y1="50" x2="75" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><line x1="95" y1="50" x2="95" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="115" y1="50" x2="115" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="135" y1="50" x2="135" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="155" y1="50" x2="155" y2="80" stroke="#0f1f3d" stroke-width="1"/><text x="45" y="97" font-weight="700" font-size="11" text-anchor="middle" fill="#2563eb">R90 (3 parts)</text><text x="125" y="97" font-weight="700" font-size="11" text-anchor="middle" fill="#dc2626">R150 (5 parts)</text><text x="95" y="117" font-weight="700" font-size="12" text-anchor="middle" fill="#16a34a">Each part = R240 ÷ 8 = R30</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to check if two ratios are equivalent and how to divide an amount in a ratio using the total parts method with a worked R1 800 three-way split example" />',
@@ -295,8 +295,8 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing a rate as two quantities of different kinds — for example a car travelling 240 km in 3 hours with arrows pointing to the unit rate of 80 km per hour" />',
+      diagramPlaceholder: 'Timeline showing a car travelling 240 km over 3 hours in equal 80 km hourly steps, revealing the unit rate of 80 km per hour',
+      diagramSvg: '<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg"><line x1="20" y1="50" x2="200" y2="50" stroke="#0f1f3d" stroke-width="2.5"/><line x1="20" y1="44" x2="20" y2="56" stroke="#0f1f3d" stroke-width="2"/><line x1="80" y1="44" x2="80" y2="56" stroke="#0f1f3d" stroke-width="2"/><line x1="140" y1="44" x2="140" y2="56" stroke="#0f1f3d" stroke-width="2"/><line x1="200" y1="44" x2="200" y2="56" stroke="#0f1f3d" stroke-width="2"/><text x="20" y="30" font-weight="700" font-size="11" text-anchor="middle" fill="#0f1f3d">0h</text><text x="80" y="30" font-weight="700" font-size="11" text-anchor="middle" fill="#0f1f3d">1h</text><text x="140" y="30" font-weight="700" font-size="11" text-anchor="middle" fill="#0f1f3d">2h</text><text x="200" y="30" font-weight="700" font-size="11" text-anchor="middle" fill="#0f1f3d">3h</text><text x="20" y="72" font-size="10" text-anchor="middle" fill="#374151">0 km</text><text x="80" y="72" font-size="10" text-anchor="middle" fill="#374151">80 km</text><text x="140" y="72" font-size="10" text-anchor="middle" fill="#374151">160 km</text><text x="200" y="72" font-size="10" text-anchor="middle" fill="#374151">240 km</text><text x="50" y="90" font-weight="700" font-size="10" text-anchor="middle" fill="#16a34a">+80 km</text><text x="110" y="90" font-weight="700" font-size="10" text-anchor="middle" fill="#16a34a">+80 km</text><text x="170" y="90" font-weight="700" font-size="10" text-anchor="middle" fill="#16a34a">+80 km</text><text x="110" y="105" font-weight="700" font-size="12" text-anchor="middle" fill="#2563eb">Unit rate = 80 km per hour</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining what a rate is, how it differs from a ratio, what per means, and how to calculate a unit rate by dividing the first quantity by the second" />',
@@ -379,9 +379,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing two rate problems side by side — one multiplying unit rate by quantity to get the total and one dividing the total by the unit rate to get the quantity" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve rate problems by identifying what is given and what is needed then choosing to multiply or divide using the unit rate" />',
