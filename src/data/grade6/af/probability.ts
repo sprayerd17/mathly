@@ -115,7 +115,109 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — PROBABILITY AS A FRACTION
+    // SECTION 2 — EXPERIMENTAL PROBABILITY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'experimental-probability',
+      title: 'Eksperimentele Waarskynlikheid',
+      icon: '🪙',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn Ander manier om waarskynlikheid te ondersoek, is om werklik ʼn eksperiment uit te voer — soos ʼn muntstuk op te gooi, ʼn dobbelsteen te gooi, of ʼn wieletjie te draai — baie keer, en te sien wat werklik gebeur. Dit word ${gr('eksperimentele waarskynlikheid')} genoem. Ons teken die resultaat van elke ${bl('proef')} met ʼn ${or('telstreep')} aan, en tel dan die ${or('telstrepe')} om die ${gr('frekwensie')} van elke uitkoms te vind.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('proewe')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('telstrepe')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('frekwensie')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('eksperimentele waarskynlikheid')}</span>` +
+        `</div>` +
+
+        // ── Steps of an experiment ───────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">ʼn Waarskynlikheidseksperiment uitvoer</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Stap 1: Lys die uitkomste</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Besluit op die eksperiment en lys die moontlike uitkomste, byvoorbeeld Kop/Stert vir ʼn muntstuk, of 1–6 vir ʼn dobbelsteen.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Stap 2: Herhaal die proewe</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Voer herhaalde ${bl('proewe')} uit — CAPS Graad 6-eksperimente gebruik gewoonlik tot 50 — en teken elke resultaat met ʼn ${or('telstreep')} aan.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Stap 3: Tel die frekwensie</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Tel die ${or('telstrepe')} vir elke uitkoms om die ${gr('frekwensie')} daarvan te vind — hoeveel keer dit werklik gebeur het.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Stap 4: Skryf die waarskynlikheid</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${re('Eksperimentele waarskynlikheid')} = ${gr('frekwensie')} van daardie uitkoms ÷ totale aantal ${bl('proewe')}.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Worked demo tally/frequency table ────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Proewe met ʼn telstreep aanteken</p>` +
+        `<p style="margin-bottom:10px;color:#374151;font-size:14px;">Katlego gooi ʼn muntstuk ${bl('20')} keer op en teken elke resultaat as ʼn ${or('telstreep')} aan:</p>` +
+        `<div style="overflow-x:auto;margin-bottom:20px;">` +
+        `<table style="width:100%;border-collapse:collapse;font-size:13px;">` +
+        `<thead><tr style="background:#f8fafc;">` +
+        `<th style="border:1px solid #e2e8f0;padding:6px 10px;text-align:left;color:#0f1f3d;">Uitkoms</th>` +
+        `<th style="border:1px solid #e2e8f0;padding:6px 10px;text-align:left;color:#0f1f3d;">Telstrepe</th>` +
+        `<th style="border:1px solid #e2e8f0;padding:6px 10px;text-align:left;color:#0f1f3d;">Frekwensie</th>` +
+        `</tr></thead>` +
+        `<tbody>` +
+        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Kop</td><td style="border:1px solid #e2e8f0;padding:6px 10px;font-family:monospace;color:#ea580c;">${'∣∣∣∣ ∣∣∣∣ ∣∣'}</td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">12</td></tr>` +
+        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Stert</td><td style="border:1px solid #e2e8f0;padding:6px 10px;font-family:monospace;color:#ea580c;">${'∣∣∣∣ ∣∣∣'}</td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">8</td></tr>` +
+        `<tr style="background:#f8fafc;font-weight:700;"><td style="border:1px solid #e2e8f0;padding:6px 10px;">Totaal</td><td style="border:1px solid #e2e8f0;padding:6px 10px;"></td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#dc2626;">20</td></tr>` +
+        `</tbody></table></div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Meer proewe gee geneig tot meer betroubare resultate</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Met net ʼn paar ${bl('proewe')} kan resultate baie anders lyk as wat jy sou verwag — dit is normaal. Hoe meer ${bl('proewe')} jy uitvoer, hoe meer neig die ${re('eksperimentele waarskynlikheid')} om te stabiliseer en ʼn betroubaarder prentjie te gee van wat werklik gebeur.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Katlego gooi ʼn muntstuk 20 keer op en teken die resultate in die tabel hierbo aan: Kop = 12, Stert = 8. Vind die eksperimentele waarskynlikheid om kop te gooi.',
+          answer: `W(kop) = ${re('12/20 = 3/5')}`,
+          steps: [
+            `Totale aantal ${bl('proewe')} = ${bl('20')} opgooie.`,
+            `${gr('Frekwensie')} van kop = ${or('12')}.`,
+            `Eksperimentele waarskynlikheid = ${gr('frekwensie')} ÷ ${bl('totale proewe')} = ${or('12')} ÷ ${bl('20')} = ${re('12/20')}.`,
+            `Vereenvoudig: ${re('12/20 = 3/5')}.`,
+            `<strong>Antwoord:</strong> W(kop) = ${re('3/5')}. ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Groep leerders gooi ʼn dobbelsteen en teken aan hoeveel keer ʼn 6 voorkom. Na 10 gooie het hulle drie 6\'s. Na 50 gooie het hulle nege 6\'s. Vind die eksperimentele waarskynlikheid om ʼn 6 te gooi na 10 gooie en na 50 gooie, en verduidelik watter resultaat meer betroubaar is.',
+          answer: `Na 10 gooie: ${re('3/10 = 0,3')}. Na 50 gooie: ${re('9/50 = 0,18')}. Die 50-gooi-resultaat is meer betroubaar.`,
+          steps: [
+            `Na ${bl('10')} gooie: eksperimentele waarskynlikheid = ${gr('frekwensie')} ÷ ${bl('proewe')} = 3 ÷ 10 = ${re('3/10')} = 0,3.`,
+            `Na ${bl('50')} gooie: eksperimentele waarskynlikheid = 9 ÷ 50 = ${re('9/50')} = 0,18.`,
+            `Met net ${bl('10')} proewe kan ʼn paar ongewone resultate die breuk baie laat swaai — 0,3 lyk redelik hoog vir ʼn dobbelsteen.`,
+            `Met ${bl('50')} proewe is daar meer data, so die resultaat neig om te stabiliseer en ʼn betroubaarder prentjie te gee van wat werklik gebeur.`,
+            `<strong>Antwoord:</strong> Die eksperimentele waarskynlikheid na 50 gooie (${re('9/50')} = 0,18) is die betroubaarder skatting, aangesien dit op meer proewe gebaseer is. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om herhaalde proewe van ʼn muntstuk-, dobbelsteen- of wieletjie-eksperiment uit te voer, resultate met ʼn telstreep aan te teken, eksperimentele frekwensie te bereken, en resultate van ʼn klein aantal proewe met ʼn groter aantal proewe te vergelyk" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="A tally and frequency table for 20 coin flips showing heads and tails tally marks, their frequencies, and the total, alongside a comparison of experimental probability after 10 trials versus 50 trials" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — PROBABILITY AS A FRACTION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'probability-as-fraction',
@@ -176,7 +278,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — LISTING OUTCOMES
+    // SECTION 4 — LISTING OUTCOMES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'listing-outcomes',

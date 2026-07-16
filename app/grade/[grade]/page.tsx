@@ -415,6 +415,12 @@ const grade6Topics: Topic[] = [
     free: false,
   },
   {
+    slug: 'viewing-objects',
+    name: 'Viewing Objects',
+    description: 'Recognise how composite objects and cube structures look from front, back, left, right, above and below, match views to viewing position, and identify or sketch views of everyday and geometric composite objects.',
+    free: false,
+  },
+  {
     slug: 'angles',
     name: 'Angles',
     description: 'Classify acute, right, obtuse, straight and reflex angles, measure angles with a protractor, and calculate unknown angles on a straight line and around a point.',
@@ -423,7 +429,7 @@ const grade6Topics: Topic[] = [
   {
     slug: 'transformations',
     name: 'Transformations',
-    description: 'Apply translation, reflection and rotation to 2D shapes on a coordinate grid, describe image positions and recognise equivalent rotations.',
+    description: 'Enlarge and reduce 2D shapes on a grid using a scale factor, compare an image to its original in shape and size, and find the scale factor between shapes.',
     free: false,
   },
   {
@@ -1060,6 +1066,12 @@ const grade12Topics: Topic[] = [
     slug: 'functions-polynomials',
     name: 'Functions — Polynomials',
     description: 'Apply the Remainder and Factor Theorems, fully factorise cubic polynomials using long division, solve cubic equations and sketch cubic graphs from their factorised form.',
+    free: false,
+  },
+  {
+    slug: 'algebra-equations-and-inequalities',
+    name: 'Algebra, Equations and Inequalities',
+    description: 'Use the discriminant to determine the nature of roots, consolidate factorisation and the quadratic formula, solve quadratic inequalities from a sketch, tackle linear-quadratic simultaneous systems, and solve equations involving surds, exponents and algebraic fractions.',
     free: false,
   },
   {

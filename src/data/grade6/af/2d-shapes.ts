@@ -370,7 +370,181 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — ANGLES IN SHAPES
+    // SECTION 3 — CIRCLES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'circles',
+      title: 'Sirkels',
+      icon: '○',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn ${re('Sirkel')} is ook ʼn 2D-vorm — maar dit lyk niks soos ʼn driehoek of ʼn vierhoek nie. ʼn Sirkel het ${gr('geen reguit sye')} en ${gr('geen hoekpunte')} nie — net <strong>een deurlopende geboë rand</strong>. Elke enkele punt op daardie geboë rand is presies dieselfde afstand van ʼn vaste punt in die middel, genoem die ${gr('middelpunt')}. Hierdie vaste afstand word die ${bl('radius')} genoem. Nuut hierdie jaar — jy leer om sirkels en patrone akkuraat te teken met behulp van ʼn ${or('passer')}.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('sirkel')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('middelpunt / geboë rand')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('radius')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('passerstappe')}</span>` +
+        `</div>` +
+
+        // ── Properties of a circle ────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Eienskappe van ʼn sirkel</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Geen reguit sye of hoekpunte nie</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">ʼn Sirkel het ${gr('een deurlopende geboë rand')} — anders as driehoeke en vierhoeke, het dit nêrens reguit sye of hoekpunte nie.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">${gr('Middelpunt')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die vaste punt in die middel van ʼn sirkel. Elke punt op die geboë rand is dieselfde afstand van die ${gr('middelpunt')} af.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">${bl('Radius')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die vaste afstand vanaf die ${gr('middelpunt')} tot enige punt op die sirkel. Om hierdie afstand dieselfde te hou heeltemal rondom is wat die vorm perfek rond maak.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">${or('Passer')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die instrument wat gebruik word om ʼn akkurate sirkel te teken — dit hou ʼn vaste ${bl('radius')} terwyl dit om ʼn vaste ${gr('middelpunt')} draai.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── How to draw a circle with a compass ───────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om ʼn sirkel met ʼn passer te teken</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Vestig die punt</strong> — druk die passer se metaalpunt stewig op die papier by die ${gr('middelpunt')}-merk. Dit mag nie gly terwyl jy teken nie.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Stel die radius</strong> — gebruik ʼn liniaal om die passer oop te maak tot presies die ${bl('radius')} wat jy nodig het, gemeet vanaf die punt tot by die potloodpunt.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Draai om die boog te teken</strong> — terwyl die punt stil bly en die opening vas bly, draai die passer deur een volle draai sodat die potlood die sirkel trek.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Teken patrone met sirkels</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Sodra jy een akkurate sirkel kan teken, kan jy patrone skep. Hou dieselfde ${gr('middelpunt')} maar verander die ${bl('radius')} elke keer om <strong>sirkels binne sirkels</strong> te teken. Of hou dieselfde ${bl('radius')} maar skuif die ${gr('middelpunt')} langs ʼn lyn of om ʼn ander sirkel om <strong>kettings of ringe van sirkels</strong> te teken. ʼn ${or('Passer')} maak hierdie patrone vinnig en perfek akkuraat.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Sipho moet ʼn sirkel met ʼn radius van 4 cm met ʼn passer teken. Beskryf die stappe wat hy moet volg.',
+          answer: `Vestig die punt by die ${gr('middelpunt')}, stel die passer op ${bl('4 cm')} met ʼn liniaal, en draai dan ʼn volle draai om die ${gr('sirkel')} te teken`,
+          steps: [
+            `Merk ʼn ${gr('middelpunt')} op die papier en druk die passer se metaalpunt stewig daarop.`,
+            `Gebruik ʼn liniaal om die passer oop te maak sodat die afstand vanaf die punt tot by die potloodpunt presies ${bl('4 cm')} is — dit is die ${bl('radius')}.`,
+            `Terwyl die punt vas bly op die ${gr('middelpunt')}-merk, draai die passer deur een volle draai en laat die potlood die geboë rand trek.`,
+            `Die resultaat is ʼn ${re('sirkel')} met ʼn ${bl('radius')} van ${bl('4 cm')}.`,
+          ],
+        },
+        {
+          question: 'Watter een van hierdie is ʼn sirkel: Vorm A het 4 reguit sye en 4 hoekpunte. Vorm B het een deurlopende geboë rand en geen hoekpunte nie. Vorm C het 3 reguit sye en 3 hoekpunte.',
+          answer: `${re('Vorm B')} is die sirkel`,
+          steps: [
+            `ʼn ${re('Sirkel')} het ${gr('geen reguit sye en geen hoekpunte')} nie — net een deurlopende geboë rand.`,
+            `Vorm A het reguit sye en hoekpunte, so dit is ʼn vierhoek, nie ʼn sirkel nie.`,
+            `Vorm C het reguit sye en hoekpunte, so dit is ʼn driehoek, nie ʼn sirkel nie.`,
+            `Vorm B pas presies by die definisie van ʼn ${re('sirkel')}.`,
+          ],
+        },
+        {
+          question: 'Thandeka wil twee sirkels teken wat dieselfde middelpunt deel, maar verskillende groottes het (konsentriese sirkels). Verduidelik hoe sy haar passer moet gebruik.',
+          answer: `Hou die passerpunt op dieselfde ${gr('middelpunt')}-merk vir albei sirkels, maar verander die ${bl('radius')} (passeropening) tussen hulle`,
+          steps: [
+            `Merk een ${gr('middelpunt')} en hou die passer se metaalpunt vas daarop vir albei sirkels.`,
+            `Teken die eerste sirkel met een ${bl('radius')} (passeropening).`,
+            `Sonder om die ${gr('middelpunt')} te skuif, maak die passer oop tot ʼn ander ${bl('radius')} en teken die tweede sirkel.`,
+            `Omdat die ${gr('middelpunt')} dieselfde gebly het maar die ${bl('radius')} verander het, is die twee sirkels konsentries — een pas netjies binne die ander.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── V10 Maklik — aantal reguit sye van ʼn sirkel ──────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Hoeveel reguit sye het ʼn sirkel?',
+          answer: '0',
+          checkMode: 'auto',
+          correctAnswer: '0',
+          correctAnswers: ['0', 'nul', 'geen'],
+          explanation: 'ʼn Sirkel het een deurlopende geboë rand en glad geen reguit sye nie, so die antwoord is 0.',
+        },
+
+        // ── V11 Maklik — noem die middelpunt ──────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Wat is die naam van die punt wat dieselfde afstand is van elke punt op ʼn sirkel?',
+          answer: 'die middelpunt',
+          checkMode: 'auto',
+          correctAnswer: 'die middelpunt',
+          correctAnswers: ['die middelpunt', 'middelpunt'],
+          explanation: 'Elke punt op ʼn sirkel is dieselfde vaste afstand (die radius) van een punt in die middel, genoem die middelpunt.',
+        },
+
+        // ── V12 Medium — beskryf die passertegniek ────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Beskryf, in jou eie woorde, die drie stappe om ʼn akkurate sirkel met ʼn passer te teken.',
+          answer: '1) Vestig die passerpunt stewig by die middelpunt sodat dit nie kan gly nie. 2) Gebruik ʼn liniaal om die passeropening op die radius wat jy nodig het, te stel. 3) Terwyl die punt vas bly, draai die passer deur een volle draai sodat die potlood die sirkel trek.',
+          checkMode: 'self',
+        },
+
+        // ── V13 Medium-Hard — waarom ʼn liniaal alleen nie werk nie ───────────────
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Waarom kan jy nie ʼn akkurate sirkel met net ʼn liniaal teken nie?',
+          answer: 'ʼn Liniaal trek net reguit lyne. ʼn Sirkel benodig dat elke punt op sy rand presies dieselfde vaste afstand van ʼn middelpunt af krul, heeltemal rondom — net ʼn passer kan daardie vaste afstand hou terwyl dit deur ʼn volle draai draai.',
+          checkMode: 'self',
+        },
+
+        // ── V14 Moeilik — wanopvatting oor ʼn halfsirkel ──────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Palesa sê ʼn halfsirkel (die helfte van ʼn sirkel) het een reguit sy en een geboë sy, so dit tel steeds as ʼn sirkel. Is sy korrek? Verduidelik.',
+          answer: 'Nee — ʼn volledige sirkel het GEEN reguit sye nie, net een deurlopende geboë rand. ʼn Halfsirkel het ʼn reguit rand (waar dit dwarsdeur die middel gesny is) plus ʼn geboë rand, so dit is ʼn ander vorm, nie ʼn sirkel nie.',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramPlaceholder:
+        'Die tegniek om ʼn sirkel met ʼn passer te teken: vestig die middelpunt, stel die passer op die radius, en draai dan ʼn volle draai om die boog te trek.',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 190" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<circle cx="110" cy="95" r="65" stroke="#0f1f3d" stroke-width="2.5" fill="none"/>` +
+        `<line x1="110" y1="95" x2="110" y2="30" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<circle cx="110" cy="95" r="4" fill="#16a34a"/>` +
+        `<text x="110" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">middelpunt</text>` +
+        `<text x="120" y="62" font-size="11" font-weight="700" fill="#2563eb">radius</text>` +
+        `<path d="M110,30 A65,65 0 0 1 175,95" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="4 4"/>` +
+        `<polygon points="168,86 168,104 182,95" fill="#ea580c"/>` +
+        `<text x="110" y="178" text-anchor="middle" font-size="9" font-weight="700" fill="#0f1f3d">vestig → stel radius → draai</text>` +
+        `</svg>`,
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om die eienskappe van ʼn sirkel te identifiseer en hoe om ʼn akkurate sirkel en eenvoudige sirkelpatrone met ʼn passer te teken" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — ANGLES IN SHAPES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'angles-in-shapes',

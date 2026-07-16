@@ -93,7 +93,100 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — BAR GRAPHS AND DOUBLE BAR GRAPHS
+    // SECTION 2 — PICTOGRAPHS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'pictographs',
+      title: 'Piktogramme',
+      icon: '👥',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Piktogram</strong> gebruik herhaalde prente of simbole om data te wys, in plaas van stawe of skywe. In Graad 6 verteenwoordig elke simbool gewoonlik meer as een item — dit word ${bl('veelvuldige-tot-een-ooreenstemming')} genoem: een simbool kan ${bl('5')}, ${bl('10')}, of selfs ${bl('100')} items verteenwoordig, nie net een nie. Die waarde van ʼn enkele simbool word altyd in die ${bl('sleutel')} gewys, en ʼn simbool wat slegs half geteken is, verteenwoordig die helfte van daardie waarde.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('sleutelwaarde')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('volle simbole')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('half simbole')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('totaal')}</span>` +
+        `</div>` +
+
+        // ── Reading a pictograph ─────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">ʼn Piktogram lees</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Stap 1: Kontroleer die sleutel</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Vind die ${bl('sleutelwaarde')} — hoeveel items een simbool werd is. In Graad 6 is dit dikwels meer as 5, byvoorbeeld 10, 20 of 50.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Stap 2: Tel volle simbole</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Tel die ${gr('volle simbole')} in ʼn ry en vermenigvuldig met die ${bl('sleutelwaarde')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Stap 3: Hanteer ʼn half simbool</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">ʼn ${or('Half simbool')} is die helfte van die ${bl('sleutelwaarde')} werd — as die sleutel 10 is, is ʼn half simbool = 5.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Stap 4: Tel op vir die totaal</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${re('Totaal')} = (${gr('volle simbole')} × ${bl('sleutelwaarde')}) + enige ${or('half-simboolwaarde')}.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Drawing a pictograph ─────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">ʼn Piktogram teken</p>` +
+        `<p style="margin:0 0 20px;color:#374151;font-size:14px;">Kies ʼn verstandige ${bl('sleutelwaarde')} wat die meeste van jou datawaardes eweredig deel, of net helftes laat oorbly — nie so klein dat jy te veel simbole nodig het nie, en nie so groot dat klein verskille verdwyn nie. Verdeel dan, vir elke kategorie, die waarde daarvan deur die ${bl('sleutelwaarde')} om te bepaal hoeveel simbole om te teken, en gebruik ʼn ${or('half simbool')} vir enige oorblywende helfte. Voeg altyd ʼn titel, kategorie-etikette, en die sleutel self by.</p>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Kontroleer altyd eers die sleutel</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Die ${bl('sleutel')} is die belangrikste deel van ʼn piktogram — sonder dit beteken die simbole niks. Neem nooit aan dat een simbool gelyk is aan een item nie; kontroleer die ${bl('sleutelwaarde')} voordat jy enige simbole tel.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Piktogram wys leerders se gunsteling vrugte, met ʼn sleutel van een simbool = 10 leerders. Appels het 3 simbole, Piesangs het 2 en ʼn half simbole, en Lemoene het 1 en ʼn half simbole. Hoeveel leerders het elke vrug gekies?',
+          answer: `Appels = ${re('30')}, Piesangs = ${re('25')}, Lemoene = ${re('15')}`,
+          steps: [
+            `Kontroleer die ${bl('sleutel')}: een simbool = ${bl('10')} leerders.`,
+            `Appels: ${gr('3')} volle simbole × ${bl('10')} = ${re('30')} leerders.`,
+            `Piesangs: ${gr('2')} volle simbole × ${bl('10')} = 20, plus die ${or('half simbool')} wat ${bl('10')} ÷ 2 = ${or('5')} werd is. Totaal: 20 + 5 = ${re('25')} leerders.`,
+            `Lemoene: ${gr('1')} volle simbool × ${bl('10')} = 10, plus die ${or('half simbool')} wat ${or('5')} werd is. Totaal: 10 + 5 = ${re('15')} leerders.`,
+            `<strong>Antwoord:</strong> Appels = ${re('30')}, Piesangs = ${re('25')}, Lemoene = ${re('15')} leerders. ✓`,
+          ],
+        },
+        {
+          question: 'Zanele doen ʼn opname onder 70 klasmaats oor hul gunsteling drankie: Sap — 35, Melk — 25, Water — 10. Sy kies ʼn sleutel van een simbool = 10 drankies. Hoeveel simbole (insluitend enige half simbole) moet sy vir elke drankie teken?',
+          answer: `Sap = 3½ simbole, Melk = 2½ simbole, Water = 1 simbool`,
+          steps: [
+            `Kontroleer dat die totale optel: ${re('35 + 25 + 10 = 70')}, wat ooreenstem met die 70 klasmaats wat opgeneem is. ✓`,
+            `Sap: ${re('35')} ÷ ${bl('10')} = 3,5, teken dus ${gr('3')} volle simbole en ${or('een half simbool')}.`,
+            `Melk: ${re('25')} ÷ ${bl('10')} = 2,5, teken dus ${gr('2')} volle simbole en ${or('een half simbool')}.`,
+            `Water: ${re('10')} ÷ ${bl('10')} = 1, teken dus presies ${gr('1')} volle simbool — geen half simbool nodig nie.`,
+            `<strong>Antwoord:</strong> Sap = 3½ simbole, Melk = 2½ simbole, Water = 1 simbool. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 125" xmlns="http://www.w3.org/2000/svg"><text x="110" y="13" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Vrugte — Graad 6 Opname</text><text x="6" y="28" font-size="10" fill="#0f1f3d" font-weight="700">Sleutel:</text><circle cx="34" cy="25" r="5" fill="#16a34a"/><text x="42" y="28" font-size="10" fill="#2563eb" font-weight="700">= 10 leerders</text><line x1="6" y1="34" x2="214" y2="34" stroke="#9ca3af" stroke-width="1"/><text x="6" y="54" font-size="10.5" fill="#0f1f3d" font-weight="700">Appels</text><circle cx="70" cy="50" r="6" fill="#16a34a"/><circle cx="86" cy="50" r="6" fill="#16a34a"/><circle cx="102" cy="50" r="6" fill="#16a34a"/><text x="190" y="54" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">30</text><line x1="6" y1="64" x2="214" y2="64" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="6" y="84" font-size="10.5" fill="#0f1f3d" font-weight="700">Piesangs</text><circle cx="70" cy="80" r="6" fill="#16a34a"/><circle cx="86" cy="80" r="6" fill="#16a34a"/><path d="M 102,74 A 6,6 0 0 0 102,86 Z" fill="#ea580c"/><circle cx="102" cy="80" r="6" fill="none" stroke="#ea580c" stroke-width="1.2"/><text x="190" y="84" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">25</text><line x1="6" y1="94" x2="214" y2="94" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="6" y="114" font-size="10.5" fill="#0f1f3d" font-weight="700">Lemoene</text><circle cx="70" cy="110" r="6" fill="#16a34a"/><path d="M 86,104 A 6,6 0 0 0 86,116 Z" fill="#ea580c"/><circle cx="86" cy="110" r="6" fill="none" stroke="#ea580c" stroke-width="1.2"/><text x="190" y="114" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">15</text></svg>',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="ʼn Piktogram getiteld Gunsteling Vrugte wat Appels met 3 volle simbole, Piesangs met 2 volle simbole en ʼn half simbool, en Lemoene met 1 volle simbool en ʼn half simbool wys, met ʼn sleutel wat toon een simbool is gelyk aan 10 leerders, volle simbole in groen, half simbole in oranje, en totale in rooi" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn piktogram met ʼn veelvuldige-tot-een-sleutel te lees, insluitend ʼn half simbool, en hoe om ʼn sleutel te kies en ʼn piktogram vanaf ʼn klein datastel te teken" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — BAR GRAPHS AND DOUBLE BAR GRAPHS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'bar-graphs-double-bar-graphs',
@@ -172,7 +265,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — PIE CHARTS
+    // SECTION 4 — PIE CHARTS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'pie-charts',
@@ -250,7 +343,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — MEAN, MEDIAN AND MODE
+    // SECTION 5 — MEAN, MEDIAN AND MODE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mean-median-mode',

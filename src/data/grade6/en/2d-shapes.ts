@@ -372,7 +372,181 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — ANGLES IN SHAPES
+    // SECTION 3 — CIRCLES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'circles',
+      title: 'Circles',
+      icon: '○',
+      explanation:
+        `<p style="margin-bottom:16px;">A ${re('circle')} is a 2D shape too — but it looks nothing like a triangle or a quadrilateral. A circle has ${gr('no straight sides')} and ${gr('no corners')} at all — just <strong>one continuous curved edge</strong>. Every single point on that curved edge is exactly the same distance from a fixed point in the middle, called the ${gr('centre')}. This fixed distance is called the ${bl('radius')}. New this year — you learn to draw circles and patterns accurately using a ${or('compass')}.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('circle')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('centre point / curved edge')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('radius')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('compass steps')}</span>` +
+        `</div>` +
+
+        // ── Properties of a circle ────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Properties of a circle</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">No straight sides or corners</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A circle has ${gr('one continuous curved edge')} — unlike triangles and quadrilaterals, it has no straight sides and no corners (vertices) anywhere.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">${gr('Centre')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The fixed point in the middle of a circle. Every point on the curved edge is the same distance from the ${gr('centre')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">${bl('Radius')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The fixed distance from the ${gr('centre')} to any point on the circle. Keeping this distance the same all the way around is what makes the shape perfectly round.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">${or('Compass')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The tool used to draw an accurate circle — it holds a fixed ${bl('radius')} while it spins around a fixed ${gr('centre')} point.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── How to draw a circle with a compass ───────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">How to draw a circle with a compass</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Fix the point</strong> — press the compass's metal point firmly onto the paper at the ${gr('centre')} mark. It must not slip while you draw.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Set the radius</strong> — use a ruler to open the compass to the exact ${bl('radius')} you need, measuring from the point to the pencil tip.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Rotate to draw the arc</strong> — keeping the point still and the opening fixed, turn the compass through one full rotation so the pencil traces the circle.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Drawing patterns with circles</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Once you can draw one accurate circle, you can create patterns. Keep the same ${gr('centre')} but change the ${bl('radius')} each time to draw <strong>circles inside circles</strong>. Or keep the same ${bl('radius')} but move the ${gr('centre')} point along a line or around another circle to draw <strong>chains or rings of circles</strong>. A ${or('compass')} makes these patterns quick and perfectly accurate.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Sipho must draw a circle with a radius of 4 cm using a compass. Describe the steps he should follow.',
+          answer: `Fix the point at the ${gr('centre')}, set the compass to ${bl('4 cm')} using a ruler, then rotate a full turn to draw the ${gr('circle')}`,
+          steps: [
+            `Mark a ${gr('centre')} point on the paper and press the compass's metal point firmly onto it.`,
+            `Use a ruler to open the compass so the distance from the point to the pencil tip is exactly ${bl('4 cm')} — this is the ${bl('radius')}.`,
+            `Keeping the point fixed on the ${gr('centre')} mark, turn the compass through one full rotation, letting the pencil trace the curved edge.`,
+            `The result is a ${re('circle')} with a ${bl('radius')} of ${bl('4 cm')}.`,
+          ],
+        },
+        {
+          question: 'Which of these is a circle: Shape A has 4 straight sides and 4 corners. Shape B has one continuous curved edge and no corners. Shape C has 3 straight sides and 3 corners.',
+          answer: `${re('Shape B')} is the circle`,
+          steps: [
+            `A ${re('circle')} has ${gr('no straight sides and no corners')} — only one continuous curved edge.`,
+            `Shape A has straight sides and corners, so it is a quadrilateral, not a circle.`,
+            `Shape C has straight sides and corners, so it is a triangle, not a circle.`,
+            `Shape B matches the definition of a ${re('circle')} exactly.`,
+          ],
+        },
+        {
+          question: 'Thandeka wants to draw two circles that share the same centre but have different sizes (concentric circles). Explain how she should use her compass.',
+          answer: `Keep the compass point on the same ${gr('centre')} mark for both circles, but change the ${bl('radius')} (compass opening) between them`,
+          steps: [
+            `Mark one ${gr('centre')} point and keep the compass's metal point fixed there for both circles.`,
+            `Draw the first circle using one ${bl('radius')} (compass opening).`,
+            `Without moving the ${gr('centre')} point, open the compass to a different ${bl('radius')} and draw the second circle.`,
+            `Because the ${gr('centre')} stayed the same but the ${bl('radius')} changed, the two circles are concentric — one fits neatly inside the other.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q10 Easy — number of straight sides on a circle ──────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'How many straight sides does a circle have?',
+          answer: '0',
+          checkMode: 'auto',
+          correctAnswer: '0',
+          correctAnswers: ['0', 'zero', 'none'],
+          explanation: 'A circle has one continuous curved edge and no straight sides at all, so the answer is 0.',
+        },
+
+        // ── Q11 Easy — naming the centre ──────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'What is the name of the point that is the same distance from every point on a circle?',
+          answer: 'the centre',
+          checkMode: 'auto',
+          correctAnswer: 'the centre',
+          correctAnswers: ['the centre', 'centre', 'center', 'the center', 'centre point'],
+          explanation: 'Every point on a circle is the same fixed distance (the radius) from a single point in the middle, called the centre.',
+        },
+
+        // ── Q12 Medium — describing the compass technique ────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Describe, in your own words, the three steps for drawing an accurate circle with a compass.',
+          answer: '1) Fix the compass point firmly at the centre so it cannot slip. 2) Use a ruler to set the compass opening to the radius you need. 3) Keeping the point fixed, rotate the compass through one full turn so the pencil traces the circle.',
+          checkMode: 'self',
+        },
+
+        // ── Q13 Medium-Hard — why a ruler alone cannot draw a circle ──────────────
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Why can you not draw an accurate circle using only a ruler?',
+          answer: 'A ruler only draws straight lines. A circle needs every point on its edge to curve at exactly the same fixed distance from a centre point all the way around — only a compass can hold that fixed distance while turning through a full rotation.',
+          checkMode: 'self',
+        },
+
+        // ── Q14 Hard — misconception about a semi-circle ─────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Palesa says a semi-circle (half a circle) has one straight side and one curved side, so it still counts as a circle. Is she correct? Explain.',
+          answer: 'No — a full circle has NO straight sides at all, only one continuous curved edge. A semi-circle has a straight edge (where it was cut across the middle) plus a curved edge, so it is a different shape, not a circle.',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramPlaceholder:
+        'The technique for drawing a circle with a compass: fix the centre point, set the compass to the radius, then rotate a full turn to trace the arc.',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 190" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<circle cx="110" cy="95" r="65" stroke="#0f1f3d" stroke-width="2.5" fill="none"/>` +
+        `<line x1="110" y1="95" x2="110" y2="30" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<circle cx="110" cy="95" r="4" fill="#16a34a"/>` +
+        `<text x="110" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">centre</text>` +
+        `<text x="120" y="62" font-size="11" font-weight="700" fill="#2563eb">radius</text>` +
+        `<path d="M110,30 A65,65 0 0 1 175,95" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="4 4"/>` +
+        `<polygon points="168,86 168,104 182,95" fill="#ea580c"/>` +
+        `<text x="110" y="178" text-anchor="middle" font-size="9" font-weight="700" fill="#0f1f3d">anchor → set radius → rotate</text>` +
+        `</svg>`,
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to identify the properties of a circle and how to draw an accurate circle and simple circle patterns using a compass" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — ANGLES IN SHAPES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'angles-in-shapes',

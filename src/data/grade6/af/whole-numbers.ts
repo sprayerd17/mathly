@@ -171,7 +171,178 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // AFDELING 2 — VERGELYK EN ORDEN VAN HELE GETALLE
+    // AFDELING 2 — EIENSKAPPE VAN HELE GETALLE
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'properties-of-whole-numbers',
+      title: 'Eienskappe van Hele Getalle',
+      icon: '⇄',
+      explanation:
+        `<p style="margin-bottom:16px;">Hele getalle volg reëls — genoem <strong>eienskappe</strong> — wat altyd werk, ongeag watter getalle jy gebruik. As jy hierdie eienskappe ken, help dit jou om jou werk na te gaan en baie vinniger in jou kop te bereken, deur getalle te herrangskik, te hergroepeer of in vriendeliker dele op te breek voordat jy optel of vermenigvuldig.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('kommutatiewe eienskap')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('assosiatiewe eienskap')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('distributiewe eienskap')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('identiteitselemente')}</span>` +
+        `</div>` +
+
+        // ── The properties ───────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die eienskappe van hele getalle</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">${bl('Kommutatiewe eienskap')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">a + b = b + a &nbsp;en&nbsp; a × b = b × a. Jy kan getalle in <strong>enige volgorde</strong> optel of vermenigvuldig en steeds dieselfde antwoord kry.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">${gr('Assosiatiewe eienskap')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">(a + b) + c = a + (b + c) &nbsp;en&nbsp; (a × b) × c = a × (b × c). Jy kan getalle verskillend <strong>groepeer</strong> en steeds dieselfde antwoord kry.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">${or('Distributiewe eienskap')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">a × (b + c) = (a × b) + (a × c). Om ʼn som met ʼn getal te vermenigvuldig gee dieselfde antwoord as om elke deel <strong>apart</strong> te vermenigvuldig en dan bymekaar te tel.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Identiteitselemente')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">a + 0 = a (${re('0 is die additiewe identiteit')}). a × 1 = a (${re('1 is die vermenigvuldigende identiteit')}). Om 0 by te tel of met 1 te vermenigvuldig verander ʼn getal nooit nie.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Using properties to calculate mentally ───────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Gebruik eienskappe om in jou kop te bereken</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Herrangskik</strong> — gebruik die ${bl('kommutatiewe eienskap')} om getalle wat maklik saamgevoeg kan word (soos ʼn paar wat tot 10, 100 of 1 000 optel) langs mekaar te bring.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Hergroepeer</strong> — gebruik die ${gr('assosiatiewe eienskap')} om die vriendelike paar eerste te kombineer, voordat jy die res hanteer.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Breek op</strong> — gebruik die ${or('distributiewe eienskap')} om ʼn lastige getal in vriendeliker dele op te breek, vermenigvuldig elke deel, en tel (of trek) dan die resultate.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">ʼn Vinnige truuk: vermenigvuldig met 99</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Om ${or('6 × 99')} in jou kop te bereken, dink aan 99 as 100 − 1. Deur die ${or('distributiewe eienskap')} te gebruik: 6 × 99 = 6 × 100 − 6 × 1 = 600 − 6 = ${or('594')}. Getalle naby ʼn veelvoud van 10 of 100 is baie makliker om mee te vermenigvuldig nadat jy hulle so opgebreek het.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Gebruik die eienskappe van hele getalle om 37 + 58 + 63 in jou kop te bereken.',
+          answer: `37 + 58 + 63 = ${gr('158')}`,
+          steps: [
+            `Gebruik die ${bl('kommutatiewe eienskap')} om die getalle te herrangskik sodat die vriendelike paar saam is: 37 + 58 + 63 = 37 + 63 + 58.`,
+            `Gebruik die ${gr('assosiatiewe eienskap')} om die vriendelike paar eerste op te tel: (37 + 63) + 58.`,
+            `37 + 63 = 100.`,
+            `100 + 58 = ${gr('158')}.`,
+          ],
+        },
+        {
+          question: 'Gebruik die distributiewe eienskap om 6 × 99 in jou kop te bereken.',
+          answer: `6 × 99 = ${or('594')}`,
+          steps: [
+            `Dink aan 99 as 100 − 1.`,
+            `Gebruik die ${or('distributiewe eienskap')}: 6 × 99 = 6 × (100 − 1) = (6 × 100) − (6 × 1).`,
+            `6 × 100 = 600 en 6 × 1 = 6.`,
+            `600 − 6 = ${or('594')}.`,
+          ],
+        },
+        {
+          question: 'Watter eienskap wys (12 × 5) × 2 = 12 × (5 × 2)? Kontroleer dat albei kante dieselfde antwoord gee.',
+          answer: `Dit wys die ${gr('assosiatiewe eienskap')} van vermenigvuldiging — albei kante is gelyk aan ${gr('120')}`,
+          steps: [
+            `Linkerkant: (12 × 5) × 2 = 60 × 2 = 120.`,
+            `Regterkant: 12 × (5 × 2) = 12 × 10 = 120.`,
+            `Albei kante is gelyk aan ${gr('120')}, al was die getalle verskillend gegroepeer.`,
+            `Dit wys die ${gr('assosiatiewe eienskap')} van vermenigvuldiging.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── V1 Maklik — kommutatiewe eienskap invul ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Gebruik die kommutatiewe eienskap om te voltooi: 24 + 39 = 39 + ___',
+          answer: '24',
+          checkMode: 'auto',
+          correctAnswer: '24',
+          explanation: 'Die kommutatiewe eienskap sê a + b = b + a, so die volgorde van die getalle kan omgeruil word sonder om die antwoord te verander. 24 + 39 = 39 + 24.',
+        },
+
+        // ── V2 Maklik — noem die identiteitseienskap ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Watter eienskap wys 0 + 17 = 17?',
+          answer: 'identiteitseienskap van optelling',
+          checkMode: 'auto',
+          correctAnswer: 'identiteitseienskap van optelling',
+          correctAnswers: ['identiteitseienskap van optelling', 'additiewe identiteitseienskap', 'die additiewe identiteitseienskap', 'identiteitseienskap'],
+          explanation: 'Om 0 by enige getal op te tel, verander die getal nie. Dit is die identiteitseienskap van optelling (of additiewe identiteitseienskap) — 0 word die additiewe identiteit genoem.',
+        },
+
+        // ── V3 Medium — distributiewe eienskap in jou kop ────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Gebruik die distributiewe eienskap om 8 × 103 in jou kop te bereken. Wys jou werk.',
+          answer: '8 × 103 = 8 × 100 + 8 × 3 = 800 + 24 = 824',
+          checkMode: 'self',
+        },
+
+        // ── V4 Medium-Hard — kombineer kommutatiewe en assosiatiewe eienskappe ───
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Gebruik die eienskappe van hele getalle om 25 + 48 + 75 in jou kop te bereken. Wys watter eienskap jy by elke stap gebruik het.',
+          answer: 'Kommutatiewe eienskap om te herrangskik: 25 + 75 + 48. Assosiatiewe eienskap om die vriendelike paar te groepeer: (25 + 75) + 48 = 100 + 48 = 148.',
+          checkMode: 'self',
+        },
+
+        // ── V5 Moeilik — wanopvatting oor aftrekking ────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Katlego sê aftrekking is kommutatief omdat 10 − 4 en 4 − 10 albei dieselfde twee getalle gebruik. Is hy korrek? Verduidelik met die twee berekeninge.',
+          answer: 'Nee — 10 − 4 = 6 maar 4 − 10 = −6. Hierdie is nie gelyk nie, so aftrekking is NIE kommutatief nie. Die kommutatiewe eienskap geld net vir optelling en vermenigvuldiging, nie vir aftrekking of deling nie.',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramPlaceholder:
+        'Die distributiewe eienskap as ʼn area-model: 7 × 12 word opgesplit in 7 × 10 en 7 × 2, waarna die twee kleiner produkte bymekaar getel word.',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 140" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="6" y="58" font-size="12" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<rect x="20" y="10" width="140" height="90" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<rect x="160" y="10" width="28" height="90" fill="rgba(234,88,12,0.15)" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<text x="90" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">10</text>` +
+        `<text x="174" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">2</text>` +
+        `<text x="110" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">7×12 = 70 + 14 = 84</text>` +
+        `</svg>`,
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van hele getalle verduidelik, asook die additiewe en vermenigvuldigende identiteite, met voorbeelde van hoe om elke eienskap te gebruik om in jou kop te bereken" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 3 — VERGELYK EN ORDEN VAN HELE GETALLE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'comparing-ordering-whole-numbers',
@@ -300,7 +471,7 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om groot hele getalle te vergelyk en te orden deur eers syfers te tel en dan syfer vir syfer vanaf links te vergelyk met behulp van die groter-as, kleiner-as en gelyk-aan-simbole" />',
     },
     // ─────────────────────────────────────────────────────────────────────────
-    // AFDELING 3 — AFRONDING VAN HELE GETALLE
+    // AFDELING 4 — AFRONDING VAN HELE GETALLE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'rounding-off-whole-numbers',
@@ -443,7 +614,7 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om hele getalle na die naaste 10 100 1 000 10 000 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël" />',
     },
     // ─────────────────────────────────────────────────────────────────────────
-    // AFDELING 4 — VEELVOUDE EN FAKTORE
+    // AFDELING 5 — VEELVOUDE EN FAKTORE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'multiples-and-factors',
@@ -594,7 +765,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // AFDELING 5 — PRIEMGETALLE EN SAAMGESTELDE GETALLE
+    // AFDELING 6 — PRIEMGETALLE EN SAAMGESTELDE GETALLE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'prime-and-composite-numbers',

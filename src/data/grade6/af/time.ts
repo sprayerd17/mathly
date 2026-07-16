@@ -359,6 +359,171 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor tyd uit die regte lewe deurwerk, met ʼn rooster, verstreke tyd en ʼn afgetrekte pouse, wat eindig met ʼn finale aankoms- of afsluitingstyd" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — TIME ZONES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'time-zones',
+      title: 'Tydsones',
+      icon: '🌐',
+      explanation:
+        `<p style="margin-bottom:16px;">Die Aarde is rond en bly draai, so die son kan nie op elke deel van die wêreld gelyktydig skyn nie — terwyl dit dag is op een plek, kan dit nag wees iewers anders. Om horlosies by die posisie van die son te hou, word die wêreld in verskillende ${bl('tydsones')} verdeel, meestal gebaseer op hoe ver oos of wes ʼn plek is (sy lengtegraad). Plekke in dieselfde tydsone stem ooreen om hul horlosies op dieselfde tyd te stel.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('bekende stad/tyd')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('teikenstad')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('berekende tyd')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('dagverandering')}</span>` +
+        `</div>` +
+
+        // ── Reading a time-zone map ───────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">ʼn Tydsonekaart lees</p>` +
+        `<p style="margin-bottom:10px;color:#374151;font-size:14px;">ʼn Tydsonekaart of -tabel wys hoeveel ure elke plek voor of agter ʼn verwysingspunt is, gewoonlik <strong>GMT</strong> (Greenwichgemiddelde Tyd, gebaseer in Londen). ʼn Stad op <strong>GMT+2</strong> is 2 ure voor Londen; ʼn stad op <strong>GMT−5</strong> is 5 ure agter Londen.</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:20px;">` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Londen</p><p style="margin:0;font-size:13px;color:#374151;">GMT+0</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Johannesburg</p><p style="margin:0;font-size:13px;color:#374151;">GMT+2</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Dubai</p><p style="margin:0;font-size:13px;color:#374151;">GMT+4</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Tokio</p><p style="margin:0;font-size:13px;color:#374151;">GMT+9</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">New York</p><p style="margin:0;font-size:13px;color:#374151;">GMT−5</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Los Angeles</p><p style="margin:0;font-size:13px;color:#374151;">GMT−8</p></div>` +
+        `</div>` +
+
+        // ── Method ────────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die tyd in ʼn ander tydsone uitwerk</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Vind die verskil in ure</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Trek die twee ${bl('GMT')}-verskuiwings van mekaar af om die ${gr('tydsverskil')} tussen die twee plekke te vind. Byvoorbeeld, Tokio (GMT+9) en Londen (GMT+0) verskil met ${gr('9 ure')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Besluit voor of agter</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">ʼn Plek verder oos (ʼn groter ${or('GMT-verskuiwing')}) is <strong>voor</strong> — tel ure by om daarheen te beweeg. ʼn Plek verder wes (ʼn kleiner ${or('GMT-verskuiwing')}) is <strong>agter</strong> — trek ure af om daarheen te beweeg.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Let op vir ʼn dagverandering</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">As die optel of aftrek van die ure die tyd verby 24:00 of onder 00:00 neem, beweeg die tyd na die ${re('volgende dag')} of die ${re('vorige dag')} — net soos verstreke tyd wat oor middernag strek.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Oos beweeg maak dit later, wes beweeg maak dit vroeër</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Reis oos (soos van Londen na Dubai en Tokio) beweeg jy na tydsones wat ${gr('verder voor')} is. Reis wes (soos van Londen na New York en Los Angeles) beweeg jy na tydsones wat ${gr('verder agter')} is.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Dit is 14:00 in Johannesburg (GMT+2). Watter tyd is dit in Londen (GMT+0)?',
+          answer: `${gr('12:00')} in Londen`,
+          steps: [
+            `Vind die ${gr('verskil')}: ${bl('GMT+2')} − ${or('GMT+0')} = ${gr('2 ure')}.`,
+            `Londen het ʼn ${or('kleiner GMT-verskuiwing')}, so dit is ${gr('agter')} Johannesburg — trek die verskil af.`,
+            `${bl('14:00')} − ${gr('2 ure')} = ${gr('12:00')}.`,
+            `<strong>Antwoord:</strong> Dit is ${gr('12:00')} in Londen. ✓`,
+          ],
+        },
+        {
+          question: 'Dit is 09:00 in Londen (GMT+0). Watter tyd is dit in Tokio (GMT+9)?',
+          answer: `${gr('18:00')} in Tokio`,
+          steps: [
+            `Vind die ${gr('verskil')}: ${or('GMT+9')} − ${bl('GMT+0')} = ${gr('9 ure')}.`,
+            `Tokio het ʼn ${or('groter GMT-verskuiwing')}, so dit is ${gr('voor')} Londen — tel die verskil by.`,
+            `${bl('09:00')} + ${gr('9 ure')} = ${gr('18:00')}.`,
+            `<strong>Antwoord:</strong> Dit is ${gr('18:00')} in Tokio. ✓`,
+          ],
+        },
+        {
+          question: 'Dit is 05:00 op ʼn Dinsdag in Johannesburg (GMT+2). Watter tyd en dag is dit in Los Angeles (GMT−8)?',
+          answer: `${gr('19:00')} op ${re('Maandag')} in Los Angeles`,
+          steps: [
+            `Vind die ${gr('verskil')}: ${bl('GMT+2')} − ${or('GMT−8')} = ${gr('10 ure')}.`,
+            `Los Angeles het ʼn ${or('kleiner GMT-verskuiwing')}, so dit is ${gr('agter')} Johannesburg — trek die verskil af.`,
+            `${bl('05:00')} − ${gr('10 ure')}: aangesien 5 kleiner as 10 is, tel terug verby middernag — ${re('05:00 − 10 h = 19:00 die vorige dag')}.`,
+            `<strong>Antwoord:</strong> Dit is ${gr('19:00')} op ${re('Maandag')} in Los Angeles (die vorige dag). ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'Dit is 10:00 in Londen (GMT+0). Johannesburg is GMT+2. Watter tyd is dit in Johannesburg?',
+          answer: '12:00',
+          checkMode: 'auto',
+          correctAnswer: '12:00',
+          explanation: 'Johannesburg is 2 ure voor Londen (GMT+2 teenoor GMT+0), so tel 2 ure by: 10:00 + 2 h = 12:00 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Dubai is GMT+4 en New York is GMT−5.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vind die tydsverskil tussen Dubai en New York, in ure.',
+              correctAnswer: '9',
+              correctAnswers: ['9', '9 ure', '9 h'],
+              explanation: 'GMT+4 − (GMT−5) = 4 + 5 = 9 ure ✓',
+            },
+            {
+              label: 'b) As dit 15:00 in Dubai is, watter tyd is dit in New York?',
+              correctAnswer: '06:00',
+              explanation: 'New York is 9 ure agter Dubai, trek dus af: 15:00 − 9 h = 06:00 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Tokio is GMT+9 en Los Angeles is GMT−8. Dit is 03:00 op ʼn Woensdag in Tokio.\n\na) Vind die tydsverskil tussen Tokio en Los Angeles, in ure.\nb) Vind die tyd (en dag) in Los Angeles.\nc) Vind die tyd (en dag) in Londen (GMT+0).',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Tydsverskil (ure)',
+              correctAnswer: '17',
+              correctAnswers: ['17', '17 ure', '17 h'],
+              explanation: 'GMT+9 − (GMT−8) = 9 + 8 = 17 ure ✓',
+            },
+            {
+              label: 'b) Tyd en dag in Los Angeles',
+              correctAnswer: '10:00, Dinsdag',
+              correctAnswers: ['10:00, Dinsdag', '10:00 Dinsdag', 'Dinsdag, 10:00', '10:00 vorige dag'],
+              explanation: 'Los Angeles is 17 ure agter Tokio. 03:00 − 17 h: aangesien 3 kleiner as 17 is, tel terug verby middernag: 03:00 − 17 h = 10:00 die vorige dag, Dinsdag ✓',
+            },
+            {
+              label: 'c) Tyd en dag in Londen',
+              correctAnswer: '18:00, Dinsdag',
+              correctAnswers: ['18:00, Dinsdag', '18:00 Dinsdag', 'Dinsdag, 18:00', '18:00 vorige dag'],
+              explanation: 'Londen (GMT+0) is 9 ure agter Tokio (GMT+9). 03:00 − 9 h: aangesien 3 kleiner as 9 is, tel terug verby middernag: 03:00 − 9 h = 18:00 die vorige dag, Dinsdag ✓',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn tydsonekaart te lees, die tydsverskil tussen twee stede te vind deur hul GMT-verskuiwings te gebruik, en die tyd in ʼn ander stad te bereken, insluitend gevalle wat na die volgende of vorige dag oorgaan" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="A simplified world time-zone map showing several cities such as London, Johannesburg, Dubai, Tokyo, New York and Los Angeles each labelled with their GMT offset, with arrows showing east means ahead and west means behind" />',
+    },
   ],
 
   practiceSets: [

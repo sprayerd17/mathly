@@ -115,7 +115,109 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — PROBABILITY AS A FRACTION
+    // SECTION 2 — EXPERIMENTAL PROBABILITY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'experimental-probability',
+      title: 'Experimental Probability',
+      icon: '🪙',
+      explanation:
+        `<p style="margin-bottom:16px;">Another way to explore probability is to actually carry out an experiment — like flipping a coin, rolling a dice, or spinning a spinner — many times, and see what really happens. This is called ${gr('experimental probability')}. We record the result of every ${bl('trial')} using a ${or('tally')}, then count the ${or('tally')} marks to find the ${gr('frequency')} of each outcome.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('trials')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('tally')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('frequency')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('experimental probability')}</span>` +
+        `</div>` +
+
+        // ── Steps of an experiment ───────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Carrying out a probability experiment</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Step 1: List the outcomes</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Decide on the experiment and list the possible outcomes, e.g. Heads/Tails for a coin, or 1–6 for a dice.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Step 2: Repeat the trials</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Carry out repeated ${bl('trials')} — CAPS Grade 6 experiments usually use up to 50 — and record each result with a ${or('tally')} mark.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Step 3: Count the frequency</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Count the ${or('tally')} marks for each outcome to find its ${gr('frequency')} — how many times it actually happened.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Step 4: Write the probability</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${re('Experimental probability')} = ${gr('frequency')} of that outcome ÷ total number of ${bl('trials')}.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Worked demo tally/frequency table ────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Recording trials with a tally</p>` +
+        `<p style="margin-bottom:10px;color:#374151;font-size:14px;">Katlego flips a coin ${bl('20')} times and records every result as a ${or('tally')} mark:</p>` +
+        `<div style="overflow-x:auto;margin-bottom:20px;">` +
+        `<table style="width:100%;border-collapse:collapse;font-size:13px;">` +
+        `<thead><tr style="background:#f8fafc;">` +
+        `<th style="border:1px solid #e2e8f0;padding:6px 10px;text-align:left;color:#0f1f3d;">Outcome</th>` +
+        `<th style="border:1px solid #e2e8f0;padding:6px 10px;text-align:left;color:#0f1f3d;">Tally</th>` +
+        `<th style="border:1px solid #e2e8f0;padding:6px 10px;text-align:left;color:#0f1f3d;">Frequency</th>` +
+        `</tr></thead>` +
+        `<tbody>` +
+        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Heads</td><td style="border:1px solid #e2e8f0;padding:6px 10px;font-family:monospace;color:#ea580c;">${'∣∣∣∣ ∣∣∣∣ ∣∣'}</td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">12</td></tr>` +
+        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Tails</td><td style="border:1px solid #e2e8f0;padding:6px 10px;font-family:monospace;color:#ea580c;">${'∣∣∣∣ ∣∣∣'}</td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">8</td></tr>` +
+        `<tr style="background:#f8fafc;font-weight:700;"><td style="border:1px solid #e2e8f0;padding:6px 10px;">Total</td><td style="border:1px solid #e2e8f0;padding:6px 10px;"></td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#dc2626;">20</td></tr>` +
+        `</tbody></table></div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">More trials tend to give more reliable results</p>` +
+        `<p style="margin:0;color:#1e3a8a;">With only a few ${bl('trials')}, results can look quite different from what you might expect — that is normal. The more ${bl('trials')} you carry out, the more the ${re('experimental probability')} tends to settle down and give a more dependable picture of what actually happens.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Katlego flips a coin 20 times and records the results in the table above: Heads = 12, Tails = 8. Find the experimental probability of flipping heads.',
+          answer: `P(heads) = ${re('12/20 = 3/5')}`,
+          steps: [
+            `Total number of ${bl('trials')} = ${bl('20')} flips.`,
+            `${gr('Frequency')} of heads = ${or('12')}.`,
+            `Experimental probability = ${gr('frequency')} ÷ ${bl('total trials')} = ${or('12')} ÷ ${bl('20')} = ${re('12/20')}.`,
+            `Simplify: ${re('12/20 = 3/5')}.`,
+            `<strong>Answer:</strong> P(heads) = ${re('3/5')}. ✓`,
+          ],
+        },
+        {
+          question: 'A group of learners rolls a dice and tallies how many times a 6 comes up. After 10 rolls, they have three 6s. After 50 rolls, they have nine 6s. Find the experimental probability of rolling a 6 after 10 rolls and after 50 rolls, and explain which result is more reliable.',
+          answer: `After 10 rolls: ${re('3/10 = 0.3')}. After 50 rolls: ${re('9/50 = 0.18')}. The 50-roll result is more reliable.`,
+          steps: [
+            `After ${bl('10')} rolls: experimental probability = ${gr('frequency')} ÷ ${bl('trials')} = 3 ÷ 10 = ${re('3/10')} = 0.3.`,
+            `After ${bl('50')} rolls: experimental probability = 9 ÷ 50 = ${re('9/50')} = 0.18.`,
+            `With only ${bl('10')} trials, a few unusual results can swing the fraction a lot — 0.3 looks quite high for a dice.`,
+            `With ${bl('50')} trials, there is more data, so the result tends to settle down and give a more dependable picture of what actually happens.`,
+            `<strong>Answer:</strong> The experimental probability after 50 rolls (${re('9/50')} = 0.18) is the more reliable estimate, since it is based on more trials. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to carry out repeated trials of a coin, dice or spinner experiment, record results with a tally, calculate experimental frequency, and compare results from a small number of trials to a larger number of trials" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="A tally and frequency table for 20 coin flips showing heads and tails tally marks, their frequencies, and the total, alongside a comparison of experimental probability after 10 trials versus 50 trials" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — PROBABILITY AS A FRACTION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'probability-as-fraction',
@@ -176,7 +278,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — LISTING OUTCOMES
+    // SECTION 4 — LISTING OUTCOMES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'listing-outcomes',

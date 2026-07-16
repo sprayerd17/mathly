@@ -359,6 +359,171 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video working through a multi-step real-world time word problem combining a timetable, elapsed time and a subtracted break, ending with a final arrival or finishing time" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — TIME ZONES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'time-zones',
+      title: 'Time Zones',
+      icon: '🌐',
+      explanation:
+        `<p style="margin-bottom:16px;">The Earth is round and keeps spinning, so the sun cannot shine on every part of the world at once — while it is daytime in one place, it can be night-time somewhere else. To keep clocks matching the position of the sun, the world is divided into different ${bl('time zones')}, based mostly on how far east or west a place is (its longitude). Places in the same time zone agree to set their clocks to the same time.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('known city/time')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('target city')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('calculated time')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('day change')}</span>` +
+        `</div>` +
+
+        // ── Reading a time-zone map ───────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Reading a time-zone map</p>` +
+        `<p style="margin-bottom:10px;color:#374151;font-size:14px;">A time-zone map or table shows how many hours each place is ahead of or behind a reference point, usually <strong>GMT</strong> (Greenwich Mean Time, based in London). A city on <strong>GMT+2</strong> is 2 hours ahead of London; a city on <strong>GMT−5</strong> is 5 hours behind London.</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:20px;">` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">London</p><p style="margin:0;font-size:13px;color:#374151;">GMT+0</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Johannesburg</p><p style="margin:0;font-size:13px;color:#374151;">GMT+2</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Dubai</p><p style="margin:0;font-size:13px;color:#374151;">GMT+4</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Tokyo</p><p style="margin:0;font-size:13px;color:#374151;">GMT+9</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">New York</p><p style="margin:0;font-size:13px;color:#374151;">GMT−5</p></div>` +
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;text-align:center;"><p style="font-weight:700;color:#2563eb;margin:0 0 2px;">Los Angeles</p><p style="margin:0;font-size:13px;color:#374151;">GMT−8</p></div>` +
+        `</div>` +
+
+        // ── Method ────────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Working out the time in another time zone</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Find the difference in hours</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">Subtract the two ${bl('GMT')} offsets to find the ${gr('time difference')} between the two places. For example, Tokyo (GMT+9) and London (GMT+0) differ by ${gr('9 hours')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Decide ahead or behind</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">A place further east (a bigger ${or('GMT offset')}) is <strong>ahead</strong> — add hours to move there. A place further west (a smaller ${or('GMT offset')}) is <strong>behind</strong> — subtract hours to move there.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Watch for a day change</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">If adding or subtracting the hours takes the time past 24:00 or below 00:00, the time moves into the ${re('next day')} or the ${re('previous day')} — just like elapsed time crossing midnight.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Moving east makes it later, moving west makes it earlier</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Travelling east (like from London towards Dubai and Tokyo) moves you into time zones that are ${gr('further ahead')}. Travelling west (like from London towards New York and Los Angeles) moves you into time zones that are ${gr('further behind')}.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'It is 14:00 in Johannesburg (GMT+2). What time is it in London (GMT+0)?',
+          answer: `${gr('12:00')} in London`,
+          steps: [
+            `Find the ${gr('difference')}: ${bl('GMT+2')} − ${or('GMT+0')} = ${gr('2 hours')}.`,
+            `London has a ${or('smaller GMT offset')}, so it is ${gr('behind')} Johannesburg — subtract the difference.`,
+            `${bl('14:00')} − ${gr('2 hours')} = ${gr('12:00')}.`,
+            `<strong>Answer:</strong> It is ${gr('12:00')} in London. ✓`,
+          ],
+        },
+        {
+          question: 'It is 09:00 in London (GMT+0). What time is it in Tokyo (GMT+9)?',
+          answer: `${gr('18:00')} in Tokyo`,
+          steps: [
+            `Find the ${gr('difference')}: ${or('GMT+9')} − ${bl('GMT+0')} = ${gr('9 hours')}.`,
+            `Tokyo has a ${or('bigger GMT offset')}, so it is ${gr('ahead')} of London — add the difference.`,
+            `${bl('09:00')} + ${gr('9 hours')} = ${gr('18:00')}.`,
+            `<strong>Answer:</strong> It is ${gr('18:00')} in Tokyo. ✓`,
+          ],
+        },
+        {
+          question: 'It is 05:00 on a Tuesday in Johannesburg (GMT+2). What time and day is it in Los Angeles (GMT−8)?',
+          answer: `${gr('19:00')} on ${re('Monday')} in Los Angeles`,
+          steps: [
+            `Find the ${gr('difference')}: ${bl('GMT+2')} − ${or('GMT−8')} = ${gr('10 hours')}.`,
+            `Los Angeles has a ${or('smaller GMT offset')}, so it is ${gr('behind')} Johannesburg — subtract the difference.`,
+            `${bl('05:00')} − ${gr('10 hours')}: since 5 is less than 10, count back past midnight — ${re('05:00 − 10 h = 19:00 the previous day')}.`,
+            `<strong>Answer:</strong> It is ${gr('19:00')} on ${re('Monday')} in Los Angeles (the previous day). ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'It is 10:00 in London (GMT+0). Johannesburg is GMT+2. What time is it in Johannesburg?',
+          answer: '12:00',
+          checkMode: 'auto',
+          correctAnswer: '12:00',
+          explanation: 'Johannesburg is 2 hours ahead of London (GMT+2 vs GMT+0), so add 2 hours: 10:00 + 2 h = 12:00 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Dubai is GMT+4 and New York is GMT−5.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Find the time difference between Dubai and New York, in hours.',
+              correctAnswer: '9',
+              correctAnswers: ['9', '9 hours', '9 h'],
+              explanation: 'GMT+4 − (GMT−5) = 4 + 5 = 9 hours ✓',
+            },
+            {
+              label: 'b) If it is 15:00 in Dubai, what time is it in New York?',
+              correctAnswer: '06:00',
+              explanation: 'New York is 9 hours behind Dubai, so subtract: 15:00 − 9 h = 06:00 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Tokyo is GMT+9 and Los Angeles is GMT−8. It is 03:00 on a Wednesday in Tokyo.\n\na) Find the time difference between Tokyo and Los Angeles, in hours.\nb) Find the time (and day) in Los Angeles.\nc) Find the time (and day) in London (GMT+0).',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Time difference (hours)',
+              correctAnswer: '17',
+              correctAnswers: ['17', '17 hours', '17 h'],
+              explanation: 'GMT+9 − (GMT−8) = 9 + 8 = 17 hours ✓',
+            },
+            {
+              label: 'b) Time and day in Los Angeles',
+              correctAnswer: '10:00, Tuesday',
+              correctAnswers: ['10:00, Tuesday', '10:00 Tuesday', 'Tuesday, 10:00', '10:00 previous day'],
+              explanation: 'Los Angeles is 17 hours behind Tokyo. 03:00 − 17 h: since 3 is less than 17, count back past midnight: 03:00 − 17 h = 10:00 the previous day, Tuesday ✓',
+            },
+            {
+              label: 'c) Time and day in London',
+              correctAnswer: '18:00, Tuesday',
+              correctAnswers: ['18:00, Tuesday', '18:00 Tuesday', 'Tuesday, 18:00', '18:00 previous day'],
+              explanation: 'London (GMT+0) is 9 hours behind Tokyo (GMT+9). 03:00 − 9 h: since 3 is less than 9, count back past midnight: 03:00 − 9 h = 18:00 the previous day, Tuesday ✓',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to read a time-zone map, find the time difference between two cities using their GMT offsets, and calculate the time in another city including cases that cross into the next or previous day" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="A simplified world time-zone map showing several cities such as London, Johannesburg, Dubai, Tokyo, New York and Los Angeles each labelled with their GMT offset, with arrows showing east means ahead and west means behind" />',
+    },
   ],
 
   practiceSets: [

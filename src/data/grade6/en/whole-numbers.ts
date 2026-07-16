@@ -171,7 +171,178 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — COMPARING AND ORDERING WHOLE NUMBERS
+    // SECTION 2 — PROPERTIES OF WHOLE NUMBERS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'properties-of-whole-numbers',
+      title: 'Properties of Whole Numbers',
+      icon: '⇄',
+      explanation:
+        `<p style="margin-bottom:16px;">Whole numbers follow rules — called <strong>properties</strong> — that always work, no matter which numbers you use. Knowing these properties helps you check your working and calculate mentally much faster, by reordering, regrouping or splitting numbers into friendlier parts before you add or multiply.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('commutative property')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('associative property')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('distributive property')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('identity elements')}</span>` +
+        `</div>` +
+
+        // ── The properties ───────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The properties of whole numbers</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">${bl('Commutative property')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">a + b = b + a &nbsp;and&nbsp; a × b = b × a. You can add or multiply numbers in <strong>any order</strong> and get the same answer.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">${gr('Associative property')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">(a + b) + c = a + (b + c) &nbsp;and&nbsp; (a × b) × c = a × (b × c). You can <strong>group</strong> numbers differently and get the same answer.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">${or('Distributive property')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">a × (b + c) = (a × b) + (a × c). Multiplying a sum by a number gives the same answer as multiplying each part <strong>separately</strong> and then adding.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Identity elements')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">a + 0 = a (${re('0 is the additive identity')}). a × 1 = a (${re('1 is the multiplicative identity')}). Adding 0 or multiplying by 1 never changes a number.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Using properties to calculate mentally ───────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Using properties to calculate mentally</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Reorder</strong> — use the ${bl('commutative property')} to bring numbers that combine easily (like a pair that adds to 10, 100 or 1 000) next to each other.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Regroup</strong> — use the ${gr('associative property')} to combine the friendly pair first, before dealing with the rest.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Split</strong> — use the ${or('distributive property')} to break an awkward number into friendlier parts, multiply each part, then add (or subtract) the results.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">A fast trick: multiplying by 99</p>` +
+        `<p style="margin:0;color:#1e3a8a;">To calculate ${or('6 × 99')} mentally, think of 99 as 100 − 1. Using the ${or('distributive property')}: 6 × 99 = 6 × 100 − 6 × 1 = 600 − 6 = ${or('594')}. Numbers close to a multiple of 10 or 100 are much easier to multiply by after splitting them this way.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Use the properties of whole numbers to calculate 37 + 58 + 63 mentally.',
+          answer: `37 + 58 + 63 = ${gr('158')}`,
+          steps: [
+            `Use the ${bl('commutative property')} to reorder the numbers so the friendly pair is together: 37 + 58 + 63 = 37 + 63 + 58.`,
+            `Use the ${gr('associative property')} to add the friendly pair first: (37 + 63) + 58.`,
+            `37 + 63 = 100.`,
+            `100 + 58 = ${gr('158')}.`,
+          ],
+        },
+        {
+          question: 'Use the distributive property to calculate 6 × 99 mentally.',
+          answer: `6 × 99 = ${or('594')}`,
+          steps: [
+            `Think of 99 as 100 − 1.`,
+            `Use the ${or('distributive property')}: 6 × 99 = 6 × (100 − 1) = (6 × 100) − (6 × 1).`,
+            `6 × 100 = 600 and 6 × 1 = 6.`,
+            `600 − 6 = ${or('594')}.`,
+          ],
+        },
+        {
+          question: 'Which property does (12 × 5) × 2 = 12 × (5 × 2) show? Check that both sides give the same answer.',
+          answer: `This shows the ${gr('associative property')} of multiplication — both sides equal ${gr('120')}`,
+          steps: [
+            `Left side: (12 × 5) × 2 = 60 × 2 = 120.`,
+            `Right side: 12 × (5 × 2) = 12 × 10 = 120.`,
+            `Both sides equal ${gr('120')}, even though the numbers were grouped differently.`,
+            `This shows the ${gr('associative property')} of multiplication.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q1 Easy — commutative property fill-in ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Use the commutative property to complete: 24 + 39 = 39 + ___',
+          answer: '24',
+          checkMode: 'auto',
+          correctAnswer: '24',
+          explanation: 'The commutative property says a + b = b + a, so the order of the numbers can be swapped without changing the answer. 24 + 39 = 39 + 24.',
+        },
+
+        // ── Q2 Easy — naming the identity property ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Which property does 0 + 17 = 17 illustrate?',
+          answer: 'identity property of addition',
+          checkMode: 'auto',
+          correctAnswer: 'identity property of addition',
+          correctAnswers: ['identity property of addition', 'additive identity property', 'the additive identity property', 'identity property'],
+          explanation: 'Adding 0 to any number leaves the number unchanged. This is the identity property of addition (or additive identity property) — 0 is called the additive identity.',
+        },
+
+        // ── Q3 Medium — distributive property mental calculation ────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Use the distributive property to calculate 8 × 103 mentally. Show your working.',
+          answer: '8 × 103 = 8 × 100 + 8 × 3 = 800 + 24 = 824',
+          checkMode: 'self',
+        },
+
+        // ── Q4 Medium-Hard — combining commutative and associative properties ───
+        {
+          difficulty: 'Medium-Hard',
+          question: 'Use the properties of whole numbers to calculate 25 + 48 + 75 mentally. Show which property you used at each step.',
+          answer: 'Commutative property to reorder: 25 + 75 + 48. Associative property to group the friendly pair: (25 + 75) + 48 = 100 + 48 = 148.',
+          checkMode: 'self',
+        },
+
+        // ── Q5 Hard — misconception about subtraction ────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Katlego says subtraction is commutative because 10 − 4 and 4 − 10 both use the same two numbers. Is he correct? Explain using the two calculations.',
+          answer: 'No — 10 − 4 = 6 but 4 − 10 = −6. These are not equal, so subtraction is NOT commutative. The commutative property only holds for addition and multiplication, not subtraction or division.',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramPlaceholder:
+        'The distributive property as an area model: splitting 7 × 12 into 7 × 10 and 7 × 2, then adding the two smaller products.',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 140" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="6" y="58" font-size="12" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<rect x="20" y="10" width="140" height="90" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<rect x="160" y="10" width="28" height="90" fill="rgba(234,88,12,0.15)" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<text x="90" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">10</text>` +
+        `<text x="174" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">2</text>` +
+        `<text x="110" y="132" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">7×12 = 70 + 14 = 84</text>` +
+        `</svg>`,
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video explaining the commutative, associative and distributive properties of whole numbers and the additive and multiplicative identities, with examples of using each property to calculate mentally" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — COMPARING AND ORDERING WHOLE NUMBERS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'comparing-ordering-whole-numbers',
@@ -301,7 +472,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — ROUNDING OFF WHOLE NUMBERS
+    // SECTION 4 — ROUNDING OFF WHOLE NUMBERS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'rounding-off-whole-numbers',
@@ -445,7 +616,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — MULTIPLES AND FACTORS
+    // SECTION 5 — MULTIPLES AND FACTORS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'multiples-and-factors',
@@ -596,7 +767,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — PRIME AND COMPOSITE NUMBERS
+    // SECTION 6 — PRIME AND COMPOSITE NUMBERS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'prime-and-composite-numbers',

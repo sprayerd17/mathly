@@ -489,6 +489,333 @@ export const topicData: TopicData = {
       diagramPlaceholder:
         '<DiagramPlaceholder label="Koördinaatrooster wat die oorspronklike punt (3,2) in blou wys wat 90° kloksgewys om die oorsprong (oranje) geroteer word na die beeldpunt (2,−3) in groen, met die boog van rotasie gemerk" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SYMMETRY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'symmetry',
+      title: 'Simmetrie',
+      icon: '🪞',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Simmetrielyn</strong> verdeel ʼn 2D-figuur in twee helftes wat presiese spieëlbeelde van mekaar is — vou die figuur langs daardie lyn en die twee helftes val presies op mekaar. Jy weet reeds hoe om ʼn enkele lyn met die voutoets te toets. In Graad 7 moet jy <strong>elke</strong> simmetrielyn van ʼn figuur kan vind en teken, insluitend figure met verskeie simmetrielyne en figure met glad geen.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('simmetrielyn')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('figuur')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('passende helftes')}</span>` +
+        `</div>` +
+
+        // ── Key properties ───────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Simmetrielyne in verskillende figure</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Reëlmatige veelhoeke</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">ʼn Reëlmatige veelhoek met n gelyke sye het altyd presies n simmetrielyne — byvoorbeeld, ʼn reëlmatige vyfhoek (5 sye) het 5, en ʼn reëlmatige agthoek (8 sye) het 8.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Verskeie lyne</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Sommige figure het verskeie simmetrielyne wat in verskillende rigtings loop — vertikaal, horisontaal, en diagonaal — almal tegelyk.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Geen simmetrielyne nie</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Baie figure — skalene driehoeke, onreëlmatige vorms, en die meeste letters van die alfabet — het nul simmetrielyne.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── How to find and draw all lines of symmetry ─────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om al die simmetrielyne in ʼn figuur te vind en te teken</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Soek na moontlike lyne')} — vertikale, horisontale, en diagonale lyne deur hoekpunte, hoeke, of die middelpunte van sye.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Pas die voutoets toe')} op elke moontlike lyn — kyk of elke punt aan een kant ʼn passende punt dieselfde afstand weg aan die ander kant het.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Teken en tel')} — teken elke bevestigde simmetrielyn met ʼn liniaal deur die figuur, en tel hulle om die totaal te gee.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die reël vir reëlmatige veelhoeke — en die uitsonderings</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Vir ʼn <strong>reëlmatige</strong> veelhoek (al die sye en al die hoeke gelyk) met n sye, is die aantal simmetrielyne altyd n — ʼn sirkel, met oneindig baie "sye", het oneindig baie simmetrielyne. Maar die reël benodig reëlmatigheid: ʼn skalene driehoek het steeds 3 sye, maar 0 simmetrielyne, want sy sye is nie gelyk nie. Baie letters — F, G, J, L, N, P, Q, R, S en Z — het ook 0 simmetrielyne, alhoewel party van hulle (soos N, S en Z) eerder rotasiesimmetrie het.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Reëlmatige agthoek (8 gelyke sye en 8 gelyke hoeke) het al sy simmetrielyne ingeteken. Hoeveel simmetrielyne het dit, en watter twee tipes lyne is dit?',
+          answer: `${or('8 simmetrielyne')}: 4 deur pare teenoorgestelde hoekpunte, en 4 deur die middelpunte van pare teenoorgestelde sye`,
+          steps: [
+            `ʼn Reëlmatige veelhoek met n gelyke sye het n simmetrielyne — vir ʼn agthoek, n = 8.`,
+            `Omdat 8 ʼn ewe getal is, verdeel die lyne ewe in twee groepe: die helfte gaan deur twee teenoorgestelde hoekpunte, en die helfte gaan deur die middelpunte van twee teenoorgestelde sye.`,
+            `8 ÷ 2 = 4, dus is daar 4 hoekpunt-tot-hoekpunt-lyne en 4 middelpunt-tot-middelpunt-lyne.`,
+            `<strong>Antwoord:</strong> ${or('8 simmetrielyne')} in totaal ✓`,
+          ],
+        },
+        {
+          question: 'Die hoofletters N en A word in hul standaard bloklettervorm geteken. Het enige van die letters ʼn simmetrielyn?',
+          answer: `N het ${re('0 simmetrielyne')}; A het ${gr('1 simmetrielyn')} (vertikaal)`,
+          steps: [
+            `Probeer om N vertikaal, horisontaal, en diagonaal te vou — in elke geval pas die diagonale streep en die twee opregte strepe nie presies op mekaar nie.`,
+            `N het ${re('0 simmetrielyne')} — al karteer dit op homself wanneer dit 180° gedraai word, is dit rotasiesimmetrie, nie lynsimmetrie nie.`,
+            `Probeer om A vertikaal in die middel te vou — die twee skuins strepe en die dwarsbalk pas presies.`,
+            `<strong>Antwoord:</strong> A het ${gr('1 simmetrielyn')}: ʼn enkele vertikale lyn deur die middel ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q1 Easy — regular polygon rule ────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Reëlmatige vyfhoek het 5 gelyke sye en 5 gelyke hoeke. Hoeveel simmetrielyne het dit?',
+          answer: '5',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5', 'vyf'],
+          explanation: 'ʼn Reëlmatige veelhoek met n gelyke sye het n simmetrielyne. ʼn Vyfhoek het 5 sye, dus het dit 5 simmetrielyne — elkeen loop van een hoekpunt deur die middelpunt na die middelpunt van die teenoorgestelde sy.',
+        },
+
+        // ── Q2 Medium — letters H and T ────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Kyk na die hoof bloklletters H en T.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Hoeveel simmetrielyne het die letter H?',
+              correctAnswer: '2',
+              correctAnswers: ['2', 'twee'],
+              explanation: 'H het beide ʼn vertikale simmetrielyn (deur die middel van die twee opregte strepe) en ʼn horisontale simmetrielyn (deur die middel van die dwarsbalk) — 2 lyne in totaal.',
+            },
+            {
+              label: 'b) Hoeveel simmetrielyne het die letter T?',
+              correctAnswer: '1',
+              correctAnswers: ['1', 'een'],
+              explanation: 'T het net 1 simmetrielyn — ʼn enkele vertikale lyn deur die middel van die opregte streep en die middel van die boonste balk.',
+            },
+          ],
+        },
+
+        // ── Q3 Hard — why the polygon rule needs regularity ────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Reëlmatige seshoek het 6 simmetrielyne en ʼn reëlmatige negehoek (9 sye) het 9 simmetrielyne, maar ʼn skalene driehoek (3 ongelyke sye) het 0 simmetrielyne, al het dit ook 3 sye. Verduidelik waarom die reël "n sye = n simmetrielyne" vir reëlmatige veelhoeke werk, maar nie vir die skalene driehoek nie.',
+          answer: 'Die reël "n sye = n simmetrielyne" geld slegs vir reëlmatige veelhoeke, waar al die sye en al die hoeke gelyk is. Hierdie gelykheid is presies wat maak dat elke moontlike voulyn twee passende spieëlbeeld-helftes gee. ʼn Skalene driehoek het 3 sye, net soos ʼn gelyksydige driehoek, maar sy drie sye is almal verskillende lengtes, dus kan geen voulyn — vertikaal, horisontaal, of andersins — ooit twee helftes gee wat ware spieëlbeelde van mekaar is nie. Om net die aantal sye te tel is nie genoeg nie; die sye (en hoeke) moet werklik gelyk wees vir die veelhoekreël om te geld.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om al die simmetrielyne in reëlmatige veelhoeke en letters van die alfabet te vind en te teken, met voorbeelde van verskeie simmetrielyne en voorbeelde met geen" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="110,30 176.6,78.4 151.2,156.6 68.8,156.6 43.4,78.4" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="110" y1="30" x2="110" y2="156.6" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="176.6" y1="78.4" x2="56.1" y2="117.5" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="151.2" y1="156.6" x2="76.7" y2="54.2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="68.8" y1="156.6" x2="143.3" y2="54.2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="43.4" y1="78.4" x2="163.9" y2="117.5" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<text x="110" y="18" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Reëlmatige vyfhoek</text>' +
+        '<text x="110" y="188" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">5 simmetrielyne</text>' +
+        '</svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — ENLARGEMENTS AND REDUCTIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'enlargement-reduction',
+      title: 'Vergrotings en Verkleinings',
+      icon: '🔍',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Vergroting</strong> verander die grootte van ʼn vorm met ʼn <strong>skaalfaktor</strong>, sonder om die vorm te verander. As die skaalfaktor groter as 1 is, word die vorm groter; as dit tussen 0 en 1 is, word die vorm kleiner — dit word dikwels ʼn <strong>verkleining</strong> genoem, alhoewel dit steeds as ʼn tipe vergroting geklassifiseer word. Die beeld is <strong>gelykvormig</strong> aan die objek: ooreenstemmende hoeke bly presies gelyk, en ooreenstemmende sye is almal in dieselfde verhouding, die skaalfaktor.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('objek')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('beeld')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('middelpunt van vergroting')}</span>` +
+        `<span style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:3px 10px;font-size:13px;">${pu('skaalfaktor')}</span>` +
+        `</div>` +
+
+        // ── Key properties ───────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelidees</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Vorm word behou</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die ${gr('beeld')} is gelykvormig aan die ${bl('objek')} — elke hoek bly presies dieselfde. Slegs die grootte verander.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Middelpunt van vergroting</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die vaste ${or('punt')} waarvandaan elke beeldpunt op ʼn reguit straal lê, deur die ooreenstemmende objekpunt.</p>` +
+        `</div>` +
+
+        `<div style="background:#f5f3ff;border:1.5px solid #ddd6fe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#7c3aed;margin-bottom:4px;">Skaalfaktor</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${pu('Skaalfaktor')} = beeldlengte ÷ ooreenstemmende objeklengte — dieselfde verhouding geld vir elke paar ooreenstemmende sye.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── How to draw an enlargement/reduction on a grid ─────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om ʼn vergroting of verkleining op ʼn rooster te teken</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Merk die middelpunt van vergroting')} — dit is die vaste punt waarvandaan die vorm vergroot of verklein word.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Teken ʼn straal')} vanaf die middelpunt deur elke hoekpunt van die ${bl('objek')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Merk en verbind die beeldpunte')} — vermenigvuldig langs elke straal die afstand vanaf die middelpunt na die objekhoekpunt met die ${pu('skaalfaktor')}, merk die nuwe punt daardie afstand vanaf die middelpunt, en verbind dan die beeldhoekpunte in dieselfde volgorde.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Koördinaatreëls</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Vanaf die <strong>oorsprong</strong> met skaalfaktor k: (x, y) → (kx, ky). Vanaf ʼn <strong>algemene middelpunt</strong> (a, b) met skaalfaktor k: (x, y) → (a + k(x − a), b + k(y − b)). As k &gt; 1, word die vorm vergroot (groter). As 0 &lt; k &lt; 1, word die vorm verklein (kleiner). In albei gevalle is die objek en beeld gelykvormig, nie kongruent nie, tensy k = 1.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Driehoek ABC het hoekpunte A(1, 1), B(1, 3) en C(3, 1). Dit word met skaalfaktor 2 vanaf die oorsprong vergroot. Vind die beeldkoördinate en beskryf hoe om dit op ʼn rooster te teken.',
+          answer: `A'(2, 2), B'(2, 6), C'(6, 2)`,
+          steps: [
+            `Die ${or('middelpunt van vergroting')} is die oorsprong (0, 0), en die skaalfaktor is 2, dus gebruik die reël (x, y) → (2x, 2y).`,
+            `A(1, 1) → A'(2, 2). B(1, 3) → B'(2, 6). C(3, 1) → C'(6, 2).`,
+            `Om dit te teken: teken vanaf die oorsprong ʼn straal deur elke ${bl('objek')}hoekpunt. Omdat die skaalfaktor 2 is, lê elke ${gr('beeld')}hoekpunt presies twee keer so ver van die oorsprong as die ooreenstemmende objekhoekpunt, op dieselfde straal.`,
+            `<strong>Antwoord:</strong> Beeldhoekpunte = A'(2, 2), B'(2, 6), C'(6, 2) — die beeld is gelykvormig aan die objek, met elke sy twee keer so lank ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Model-motor is ʼn vergroting van ʼn werklike motor. ʼn Deur op die werklike motor is 90 cm hoog, en die ooreenstemmende deur op die model is 15 cm hoog. Vind die skaalfaktor, en gebruik dit dan om die lengte van ʼn enjinkap te vind wat 150 cm op die werklike motor meet.',
+          answer: `Skaalfaktor = ${pu('1/6')}; model-enjinkap = 25 cm`,
+          steps: [
+            `${pu('Skaalfaktor')} = beeldlengte ÷ objeklengte = 15 ÷ 90 = 1/6.`,
+            `Omdat die model kleiner as die werklike motor is, is dit ʼn verkleining (die skaalfaktor is tussen 0 en 1).`,
+            `Model-enjinkap = werklike enjinkap × skaalfaktor = 150 × 1/6 = 25 cm.`,
+            `<strong>Antwoord:</strong> Skaalfaktor = ${pu('1/6')}; model-enjinkap = ${gr('25 cm')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q1 Easy — enlarge a point from the origin ─────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Punt M is by (4, 2). Dit word met skaalfaktor 3 vanaf die oorsprong vergroot. Vind die koördinate van die beeld M′.',
+          answer: '(12, 6)',
+          checkMode: 'auto',
+          correctAnswer: '(12, 6)',
+          correctAnswers: ['(12, 6)', '(12,6)'],
+          explanation: 'Vergroting vanaf die oorsprong met skaalfaktor 3: (x, y) → (3x, 3y).\nM(4, 2) → M\'(3×4, 3×2) = (12, 6) ✓',
+        },
+
+        // ── Q2 Medium — scale factor as a ratio of corresponding sides ────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Driehoek word vergroot. ʼn Sy op die objek meet 5 cm, en die ooreenstemmende sy op die beeld meet 20 cm.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Wat is die skaalfaktor van die vergroting?',
+              correctAnswer: '4',
+              correctAnswers: ['4', 'x4', 'skaalfaktor 4'],
+              explanation: 'Skaalfaktor = beeldlengte ÷ objeklengte = 20 ÷ 5 = 4.',
+            },
+            {
+              label: 'b) ʼn Ander sy op die objek meet 3 cm. Wat is die lengte van die ooreenstemmende sy op die beeld?',
+              correctAnswer: '12',
+              correctAnswers: ['12', '12cm', '12 cm'],
+              explanation: 'Beeldlengte = objeklengte × skaalfaktor = 3 × 4 = 12 cm.',
+            },
+          ],
+        },
+
+        // ── Q3 Hard — congruent vs similar after a reduction ──────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Reghoek word met ʼn skaalfaktor van 1/4 verklein om ʼn kleiner reghoek te vorm. Verduidelik of die objek en beeld kongruent of gelykvormig is, en beskryf wat met die hoeke en die sylengtes gebeur.',
+          answer: 'Die objek en beeld is gelykvormig, nie kongruent nie (tensy die skaalfaktor presies 1 is). ʼn Verkleining met skaalfaktor 1/4 behou dieselfde vorm: al die hoeke bly presies dieselfde grootte (ʼn reghoek se hoeke bly steeds almal 90°), maar elke sylengte word met 1/4 vermenigvuldig, dus is die beeld ʼn kwart van die grootte van die objek in elke rigting. Omdat die grootte verander het, is die twee reghoeke nie kongruent nie — maar omdat die vorm (en al die hoeke) behou is, is hulle gelykvormig.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vorm op ʼn rooster te vergroot en te verklein deur strale vanaf ʼn middelpunt van vergroting te gebruik, ʼn skaalfaktor toe te pas, en ooreenstemmende sye en hoeke tussen die objek en die beeld te vergelyk" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="30" y1="190" x2="30" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="50" y1="190" x2="50" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="70" y1="190" x2="70" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="90" y1="190" x2="90" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="110" y1="190" x2="110" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="130" y1="190" x2="130" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="150" y1="190" x2="150" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="170" y1="190" x2="170" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="190" y1="190" x2="190" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="190" x2="190" y2="190" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="170" x2="190" y2="170" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="150" x2="190" y2="150" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="130" x2="190" y2="130" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="110" x2="190" y2="110" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="90" x2="190" y2="90" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="70" x2="190" y2="70" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="50" x2="190" y2="50" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="30" x2="190" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="190" x2="190" y2="190" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="30" y1="190" x2="30" y2="30" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="30" y1="190" x2="70" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="30" y1="190" x2="70" y2="70" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="30" y1="190" x2="150" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<polygon points="50,170 50,130 90,170" fill="none" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<polygon points="70,150 70,70 150,150" fill="none" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<circle cx="30" cy="190" r="4" fill="#ea580c"/>' +
+        '<text x="8" y="184" font-size="11" font-weight="700" fill="#ea580c">O</text>' +
+        '<text x="54" y="166" font-size="10" font-weight="700" fill="#2563eb">A(1,1)</text>' +
+        '<text x="54" y="126" font-size="10" font-weight="700" fill="#2563eb">B(1,3)</text>' +
+        '<text x="94" y="166" font-size="10" font-weight="700" fill="#2563eb">C(3,1)</text>' +
+        '<text x="74" y="146" font-size="10" font-weight="700" fill="#16a34a">A\'(2,2)</text>' +
+        '<text x="74" y="66" font-size="10" font-weight="700" fill="#16a34a">B\'(2,6)</text>' +
+        '<text x="154" y="146" font-size="10" font-weight="700" fill="#16a34a">C\'(6,2)</text>' +
+        '<text x="110" y="16" font-size="12" font-weight="700" fill="#7c3aed" text-anchor="middle">Skaalfaktor k = 2</text>' +
+        '</svg>',
+    },
   ],
 
   topicPractice: [

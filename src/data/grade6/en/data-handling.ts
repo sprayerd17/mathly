@@ -93,7 +93,100 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — BAR GRAPHS AND DOUBLE BAR GRAPHS
+    // SECTION 2 — PICTOGRAPHS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'pictographs',
+      title: 'Pictographs',
+      icon: '👥',
+      explanation:
+        `<p style="margin-bottom:16px;">A <strong>pictograph</strong> (or pictogram) uses repeated pictures or symbols to show data, instead of bars or slices. In Grade 6, each symbol usually stands for more than one item — this is called ${bl('many-to-one correspondence')}: one symbol might represent ${bl('5')}, ${bl('10')}, or even ${bl('100')} items, not just one. The value of a single symbol is always shown in the ${bl('key')}, and a symbol that is only half drawn represents half that value.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('key value')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('full symbols')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('half symbols')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('total')}</span>` +
+        `</div>` +
+
+        // ── Reading a pictograph ─────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Reading a pictograph</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Step 1: Check the key</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Find the ${bl('key value')} — how many items one symbol is worth. In Grade 6 this is often more than 5, e.g. 10, 20 or 50.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Step 2: Count full symbols</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Count the ${gr('full symbols')} in a row and multiply by the ${bl('key value')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Step 3: Handle a half symbol</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A ${or('half symbol')} is worth half the ${bl('key value')} — if the key is 10, a half symbol = 5.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Step 4: Add for the total</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${re('Total')} = (${gr('full symbols')} × ${bl('key value')}) + any ${or('half symbol')} value.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Drawing a pictograph ─────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Drawing a pictograph</p>` +
+        `<p style="margin:0 0 20px;color:#374151;font-size:14px;">Choose a sensible ${bl('key value')} that divides most of your data values evenly, or leaves only halves — not so small that you need too many symbols, and not so large that small differences disappear. Then, for each category, divide its value by the ${bl('key value')} to find how many symbols to draw, using a ${or('half symbol')} for any leftover half. Always add a title, category labels, and the key itself.</p>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Always check the key first</p>` +
+        `<p style="margin:0;color:#1e3a8a;">The ${bl('key')} is the most important part of a pictograph — without it, the symbols mean nothing. Never assume one symbol equals one item; check the ${bl('key value')} before counting any symbols.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A pictograph shows learners\' favourite fruit, with a key of one symbol = 10 learners. Apples has 3 symbols, Bananas has 2 and a half symbols, and Oranges has 1 and a half symbols. How many learners chose each fruit?',
+          answer: `Apples = ${re('30')}, Bananas = ${re('25')}, Oranges = ${re('15')}`,
+          steps: [
+            `Check the ${bl('key')}: one symbol = ${bl('10')} learners.`,
+            `Apples: ${gr('3')} full symbols × ${bl('10')} = ${re('30')} learners.`,
+            `Bananas: ${gr('2')} full symbols × ${bl('10')} = 20, plus the ${or('half symbol')} worth ${bl('10')} ÷ 2 = ${or('5')}. Total: 20 + 5 = ${re('25')} learners.`,
+            `Oranges: ${gr('1')} full symbol × ${bl('10')} = 10, plus the ${or('half symbol')} worth ${or('5')}. Total: 10 + 5 = ${re('15')} learners.`,
+            `<strong>Answer:</strong> Apples = ${re('30')}, Bananas = ${re('25')}, Oranges = ${re('15')} learners. ✓`,
+          ],
+        },
+        {
+          question: 'Zanele surveys 70 classmates about their favourite drink: Juice — 35, Milk — 25, Water — 10. She chooses a key of one symbol = 10 drinks. How many symbols (including any half symbols) should she draw for each drink?',
+          answer: `Juice = 3½ symbols, Milk = 2½ symbols, Water = 1 symbol`,
+          steps: [
+            `Check the totals add up: ${re('35 + 25 + 10 = 70')}, matching the 70 classmates surveyed. ✓`,
+            `Juice: ${re('35')} ÷ ${bl('10')} = 3.5, so draw ${gr('3')} full symbols and ${or('one half symbol')}.`,
+            `Milk: ${re('25')} ÷ ${bl('10')} = 2.5, so draw ${gr('2')} full symbols and ${or('one half symbol')}.`,
+            `Water: ${re('10')} ÷ ${bl('10')} = 1, so draw exactly ${gr('1')} full symbol — no half symbol needed.`,
+            `<strong>Answer:</strong> Juice = 3½ symbols, Milk = 2½ symbols, Water = 1 symbol. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 125" xmlns="http://www.w3.org/2000/svg"><text x="110" y="13" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Favourite Fruit — Grade 6 Survey</text><text x="6" y="28" font-size="10" fill="#0f1f3d" font-weight="700">Key:</text><circle cx="32" cy="25" r="5" fill="#16a34a"/><text x="40" y="28" font-size="10" fill="#2563eb" font-weight="700">= 10 learners</text><line x1="6" y1="34" x2="214" y2="34" stroke="#9ca3af" stroke-width="1"/><text x="6" y="54" font-size="10.5" fill="#0f1f3d" font-weight="700">Apples</text><circle cx="70" cy="50" r="6" fill="#16a34a"/><circle cx="86" cy="50" r="6" fill="#16a34a"/><circle cx="102" cy="50" r="6" fill="#16a34a"/><text x="190" y="54" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">30</text><line x1="6" y1="64" x2="214" y2="64" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="6" y="84" font-size="10.5" fill="#0f1f3d" font-weight="700">Bananas</text><circle cx="70" cy="80" r="6" fill="#16a34a"/><circle cx="86" cy="80" r="6" fill="#16a34a"/><path d="M 102,74 A 6,6 0 0 0 102,86 Z" fill="#ea580c"/><circle cx="102" cy="80" r="6" fill="none" stroke="#ea580c" stroke-width="1.2"/><text x="190" y="84" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">25</text><line x1="6" y1="94" x2="214" y2="94" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="6" y="114" font-size="10.5" fill="#0f1f3d" font-weight="700">Oranges</text><circle cx="70" cy="110" r="6" fill="#16a34a"/><path d="M 86,104 A 6,6 0 0 0 86,116 Z" fill="#ea580c"/><circle cx="86" cy="110" r="6" fill="none" stroke="#ea580c" stroke-width="1.2"/><text x="190" y="114" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">15</text></svg>',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="A pictograph titled Favourite Fruit showing Apples with 3 full symbols, Bananas with 2 full symbols and a half symbol, and Oranges with 1 full symbol and a half symbol, with a key showing one symbol equals 10 learners, full symbols in green, half symbols in orange, and totals in red" />',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to read a pictograph with a many-to-one key including a half symbol, and how to choose a key and draw a pictograph from a small data set" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — BAR GRAPHS AND DOUBLE BAR GRAPHS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'bar-graphs-double-bar-graphs',
@@ -172,7 +265,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — PIE CHARTS
+    // SECTION 4 — PIE CHARTS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'pie-charts',
@@ -250,7 +343,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — MEAN, MEDIAN AND MODE
+    // SECTION 5 — MEAN, MEDIAN AND MODE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mean-median-mode',

@@ -489,6 +489,333 @@ export const topicData: TopicData = {
       diagramPlaceholder:
         '<DiagramPlaceholder label="Coordinate grid showing the original point (3,2) in blue rotated 90° clockwise about the origin (orange) to the image point (2,−3) in green, with the arc of rotation marked" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SYMMETRY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'symmetry',
+      title: 'Symmetry',
+      icon: '🪞',
+      explanation:
+        `<p style="margin-bottom:16px;">A <strong>line of symmetry</strong> divides a 2D figure into two halves that are exact mirror images of each other — fold the figure along that line and the two halves land perfectly on top of one another. You already know how to test a single line using the fold test. In Grade 7, you must be able to find and draw <strong>every</strong> line of symmetry a figure has, including figures with several lines of symmetry and figures with none at all.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('line of symmetry')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('figure')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('matching halves')}</span>` +
+        `</div>` +
+
+        // ── Key properties ───────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Lines of symmetry in different figures</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Regular polygons</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A regular polygon with n equal sides always has exactly n lines of symmetry — for example, a regular pentagon (5 sides) has 5, and a regular octagon (8 sides) has 8.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Multiple lines</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Some figures have several lines of symmetry running in different directions — vertical, horizontal, and diagonal — all at once.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">No lines of symmetry</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Many figures — scalene triangles, irregular shapes, and most letters of the alphabet — have zero lines of symmetry.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── How to find and draw all lines of symmetry ─────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">How to find and draw all the lines of symmetry in a figure</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Look for candidate lines')} — vertical, horizontal, and diagonal lines through vertices, corners, or the midpoints of sides.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Apply the fold test')} to each candidate — check whether every point on one side has a matching point the same distance away on the other side.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Draw and count')} — draw each confirmed line of symmetry with a ruler through the figure, and count them to state the total.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">The regular polygon rule — and its exceptions</p>` +
+        `<p style="margin:0;color:#1e3a8a;">For a <strong>regular</strong> polygon (all sides and all angles equal) with n sides, the number of lines of symmetry is always n — a circle, with infinitely many "sides", has infinitely many lines of symmetry. But the rule needs regularity: a scalene triangle still has 3 sides, yet 0 lines of symmetry, because its sides are not equal. Many letters — F, G, J, L, N, P, Q, R, S and Z — also have 0 lines of symmetry, even though some of them (like N, S and Z) have rotational symmetry instead.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A regular octagon (8 equal sides and 8 equal angles) has all of its lines of symmetry drawn in. How many lines of symmetry does it have, and what two types of lines are they?',
+          answer: `${or('8 lines of symmetry')}: 4 through pairs of opposite vertices, and 4 through the midpoints of pairs of opposite sides`,
+          steps: [
+            `A regular polygon with n equal sides has n lines of symmetry — for an octagon, n = 8.`,
+            `Because 8 is an even number, the lines split evenly into two groups: half pass through two opposite vertices, and half pass through the midpoints of two opposite sides.`,
+            `8 ÷ 2 = 4, so there are 4 vertex-to-vertex lines and 4 midpoint-to-midpoint lines.`,
+            `<strong>Answer:</strong> ${or('8 lines of symmetry')} in total ✓`,
+          ],
+        },
+        {
+          question: 'The capital letters N and A are drawn in their standard block form. Does either letter have a line of symmetry?',
+          answer: `N has ${re('0 lines of symmetry')}; A has ${gr('1 line of symmetry')} (vertical)`,
+          steps: [
+            `Try folding N vertically, horizontally, and diagonally — in every case, the diagonal stroke and the two uprights fail to land on top of each other.`,
+            `N has ${re('0 lines of symmetry')} — even though turning it 180° maps it onto itself, that is rotational symmetry, not line symmetry.`,
+            `Try folding A vertically down the middle — the two slanted strokes and the crossbar match exactly.`,
+            `<strong>Answer:</strong> A has ${gr('1 line of symmetry')}: a single vertical line down the centre ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q1 Easy — regular polygon rule ────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'A regular pentagon has 5 equal sides and 5 equal angles. How many lines of symmetry does it have?',
+          answer: '5',
+          checkMode: 'auto',
+          correctAnswer: '5',
+          correctAnswers: ['5', 'five'],
+          explanation: 'A regular polygon with n equal sides has n lines of symmetry. A pentagon has 5 sides, so it has 5 lines of symmetry — each running from one vertex through the centre to the midpoint of the opposite side.',
+        },
+
+        // ── Q2 Medium — letters H and T ────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Consider the capital block letters H and T.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) How many lines of symmetry does the letter H have?',
+              correctAnswer: '2',
+              correctAnswers: ['2', 'two'],
+              explanation: 'H has both a vertical line of symmetry (down the middle of the two uprights) and a horizontal line of symmetry (through the middle of the crossbar) — 2 lines in total.',
+            },
+            {
+              label: 'b) How many lines of symmetry does the letter T have?',
+              correctAnswer: '1',
+              correctAnswers: ['1', 'one'],
+              explanation: 'T has only 1 line of symmetry — a single vertical line down the centre of the upright and the middle of the top bar.',
+            },
+          ],
+        },
+
+        // ── Q3 Hard — why the polygon rule needs regularity ────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'A regular hexagon has 6 lines of symmetry and a regular nonagon (9 sides) has 9 lines of symmetry, but a scalene triangle (3 unequal sides) has 0 lines of symmetry, even though it also has 3 sides. Explain why the "n sides = n lines of symmetry" rule works for regular polygons but not for the scalene triangle.',
+          answer: 'The rule "n sides = n lines of symmetry" only applies to regular polygons, where all sides and all angles are equal. This equality is exactly what makes every candidate fold line produce two matching mirror-image halves. A scalene triangle has 3 sides, like an equilateral triangle, but its three sides are all different lengths, so no fold line — vertical, horizontal, or otherwise — can ever produce two halves that are true mirror images of each other. Counting the number of sides alone is not enough; the sides (and angles) must actually be equal for the polygon rule to apply.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video demonstrating how to find and draw all the lines of symmetry in regular polygons and letters of the alphabet, including examples with several lines of symmetry and examples with none" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="110,30 176.6,78.4 151.2,156.6 68.8,156.6 43.4,78.4" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="110" y1="30" x2="110" y2="156.6" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="176.6" y1="78.4" x2="56.1" y2="117.5" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="151.2" y1="156.6" x2="76.7" y2="54.2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="68.8" y1="156.6" x2="143.3" y2="54.2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="43.4" y1="78.4" x2="163.9" y2="117.5" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<text x="110" y="18" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Regular pentagon</text>' +
+        '<text x="110" y="188" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">5 lines of symmetry</text>' +
+        '</svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — ENLARGEMENTS AND REDUCTIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'enlargement-reduction',
+      title: 'Enlargements and Reductions',
+      icon: '🔍',
+      explanation:
+        `<p style="margin-bottom:16px;">An <strong>enlargement</strong> changes the size of a shape using a <strong>scale factor</strong>, without changing its shape. If the scale factor is greater than 1, the shape gets bigger; if it is between 0 and 1, the shape gets smaller — this is often called a <strong>reduction</strong>, though it is still classified as a type of enlargement. The image is <strong>similar</strong> to the object: corresponding angles stay exactly equal, and corresponding sides are all in the same ratio, the scale factor.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('object')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('image')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('centre of enlargement')}</span>` +
+        `<span style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:3px 10px;font-size:13px;">${pu('scale factor')}</span>` +
+        `</div>` +
+
+        // ── Key properties ───────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key ideas</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Shape is preserved</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The ${gr('image')} is similar to the ${bl('object')} — every angle stays exactly the same. Only the size changes.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Centre of enlargement</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The fixed ${or('point')} that every image point lies on a straight ray from, through the matching object point.</p>` +
+        `</div>` +
+
+        `<div style="background:#f5f3ff;border:1.5px solid #ddd6fe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#7c3aed;margin-bottom:4px;">Scale factor</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${pu('Scale factor')} = image length ÷ corresponding object length — the same ratio applies to every pair of corresponding sides.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── How to draw an enlargement/reduction on a grid ─────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">How to draw an enlargement or reduction on a grid</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Mark the centre of enlargement')} — this is the fixed point the shape is enlarged or reduced from.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Draw a ray')} from the centre through each vertex of the ${bl('object')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Mark and join the image points')} — along each ray, multiply the distance from the centre to the object vertex by the ${pu('scale factor')}, mark the new point that distance from the centre, then join the image vertices in the same order.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Coordinate rules</p>` +
+        `<p style="margin:0;color:#1e3a8a;">From the <strong>origin</strong> with scale factor k: (x, y) → (kx, ky). From a <strong>general centre</strong> (a, b) with scale factor k: (x, y) → (a + k(x − a), b + k(y − b)). If k &gt; 1, the shape is enlarged (bigger). If 0 &lt; k &lt; 1, the shape is reduced (smaller). Either way, the object and image are similar, not congruent, unless k = 1.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Triangle ABC has vertices A(1, 1), B(1, 3) and C(3, 1). It is enlarged by scale factor 2 from the origin. Find the image coordinates and describe how to draw it on a grid.',
+          answer: `A'(2, 2), B'(2, 6), C'(6, 2)`,
+          steps: [
+            `The ${or('centre of enlargement')} is the origin (0, 0), and the scale factor is 2, so use the rule (x, y) → (2x, 2y).`,
+            `A(1, 1) → A'(2, 2). B(1, 3) → B'(2, 6). C(3, 1) → C'(6, 2).`,
+            `To draw it: from the origin, draw a ray through each ${bl('object')} vertex. Because the scale factor is 2, each ${gr('image')} vertex lies exactly twice as far from the origin as the matching object vertex, on the same ray.`,
+            `<strong>Answer:</strong> Image vertices = A'(2, 2), B'(2, 6), C'(6, 2) — the image is similar to the object, with every side twice as long ✓`,
+          ],
+        },
+        {
+          question: 'A model car is an enlargement of a real car. A door on the real car is 90 cm tall, and the corresponding door on the model is 15 cm tall. Find the scale factor, then use it to find the length of a bonnet that measures 150 cm on the real car.',
+          answer: `Scale factor = ${pu('1/6')}; model bonnet = 25 cm`,
+          steps: [
+            `${pu('Scale factor')} = image length ÷ object length = 15 ÷ 90 = 1/6.`,
+            `Because the model is smaller than the real car, this is a reduction (the scale factor is between 0 and 1).`,
+            `Model bonnet = real bonnet × scale factor = 150 × 1/6 = 25 cm.`,
+            `<strong>Answer:</strong> Scale factor = ${pu('1/6')}; model bonnet = ${gr('25 cm')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q1 Easy — enlarge a point from the origin ─────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Point M is at (4, 2). It is enlarged by scale factor 3 from the origin. Find the coordinates of the image M′.',
+          answer: '(12, 6)',
+          checkMode: 'auto',
+          correctAnswer: '(12, 6)',
+          correctAnswers: ['(12, 6)', '(12,6)'],
+          explanation: 'Enlargement from the origin by scale factor 3: (x, y) → (3x, 3y).\nM(4, 2) → M\'(3×4, 3×2) = (12, 6) ✓',
+        },
+
+        // ── Q2 Medium — scale factor as a ratio of corresponding sides ────────
+        {
+          difficulty: 'Medium',
+          question: 'A triangle is enlarged. A side on the object measures 5 cm, and the corresponding side on the image measures 20 cm.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) What is the scale factor of the enlargement?',
+              correctAnswer: '4',
+              correctAnswers: ['4', 'x4', 'scale factor 4'],
+              explanation: 'Scale factor = image length ÷ object length = 20 ÷ 5 = 4.',
+            },
+            {
+              label: 'b) Another side on the object measures 3 cm. What is the length of the corresponding side on the image?',
+              correctAnswer: '12',
+              correctAnswers: ['12', '12cm', '12 cm'],
+              explanation: 'Image length = object length × scale factor = 3 × 4 = 12 cm.',
+            },
+          ],
+        },
+
+        // ── Q3 Hard — congruent vs similar after a reduction ──────────────────
+        {
+          difficulty: 'Hard',
+          question: 'A rectangle is reduced by a scale factor of 1/4 to create a smaller rectangle. Explain whether the object and image are congruent or similar, and describe what happens to the angles and the side lengths.',
+          answer: 'The object and image are similar, not congruent (unless the scale factor is exactly 1). A reduction by scale factor 1/4 keeps the same shape: all the angles stay exactly the same size (a rectangle\'s angles are still all 90°), but every side length is multiplied by 1/4, so the image is a quarter of the size of the object in every direction. Because the size has changed, the two rectangles are not congruent — but because the shape (and all angles) is preserved, they are similar.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video demonstrating how to enlarge and reduce a shape on a grid using rays from a centre of enlargement, applying a scale factor, and comparing corresponding sides and angles between the object and the image" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="30" y1="190" x2="30" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="50" y1="190" x2="50" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="70" y1="190" x2="70" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="90" y1="190" x2="90" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="110" y1="190" x2="110" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="130" y1="190" x2="130" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="150" y1="190" x2="150" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="170" y1="190" x2="170" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="190" y1="190" x2="190" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="190" x2="190" y2="190" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="170" x2="190" y2="170" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="150" x2="190" y2="150" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="130" x2="190" y2="130" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="110" x2="190" y2="110" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="90" x2="190" y2="90" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="70" x2="190" y2="70" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="50" x2="190" y2="50" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="30" x2="190" y2="30" stroke="#e5e7eb" stroke-width="1"/>' +
+        '<line x1="30" y1="190" x2="190" y2="190" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="30" y1="190" x2="30" y2="30" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="30" y1="190" x2="70" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="30" y1="190" x2="70" y2="70" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="30" y1="190" x2="150" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<polygon points="50,170 50,130 90,170" fill="none" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<polygon points="70,150 70,70 150,150" fill="none" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<circle cx="30" cy="190" r="4" fill="#ea580c"/>' +
+        '<text x="8" y="184" font-size="11" font-weight="700" fill="#ea580c">O</text>' +
+        '<text x="54" y="166" font-size="10" font-weight="700" fill="#2563eb">A(1,1)</text>' +
+        '<text x="54" y="126" font-size="10" font-weight="700" fill="#2563eb">B(1,3)</text>' +
+        '<text x="94" y="166" font-size="10" font-weight="700" fill="#2563eb">C(3,1)</text>' +
+        '<text x="74" y="146" font-size="10" font-weight="700" fill="#16a34a">A\'(2,2)</text>' +
+        '<text x="74" y="66" font-size="10" font-weight="700" fill="#16a34a">B\'(2,6)</text>' +
+        '<text x="154" y="146" font-size="10" font-weight="700" fill="#16a34a">C\'(6,2)</text>' +
+        '<text x="110" y="16" font-size="12" font-weight="700" fill="#7c3aed" text-anchor="middle">Scale factor k = 2</text>' +
+        '</svg>',
+    },
   ],
 
   topicPractice: [
