@@ -127,7 +127,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate the perimeter of squares and rectangles using formulae" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Labelled diagrams of a square and a rectangle showing the side length formula for perimeter with colour coded measurements" />',
+        'Labelled diagrams of a square and a rectangle showing the side length formula for perimeter with colour coded measurements',
+
+      diagramSvg:
+        '<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="35" width="90" height="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="70" y="25" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">s</text><text x="70" y="145" font-size="12" fill="#374151" text-anchor="middle">square</text><rect x="160" y="45" width="120" height="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="220" y="35" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">l</text><text x="293" y="80" font-size="14" fill="#dc2626" font-weight="700" text-anchor="middle" transform="rotate(-90 293 80)">b</text><text x="220" y="145" font-size="12" fill="#374151" text-anchor="middle">rectangle</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -254,7 +257,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate the area of squares, rectangles and triangles using formulae" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Labelled diagrams of a square, rectangle and triangle with colour coded length, breadth, base and height dimensions" />',
+        'Labelled diagrams of a square, rectangle and triangle with colour coded length, breadth, base and height dimensions',
+
+      diagramSvg:
+        '<svg viewBox="0 0 460 170" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="35" width="80" height="80" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="60" y="25" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">l</text><text x="60" y="140" font-size="11" fill="#374151" text-anchor="middle">square</text><rect x="160" y="45" width="110" height="65" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="215" y="35" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">l</text><text x="285" y="77.5" font-size="13" fill="#dc2626" font-weight="700" text-anchor="middle" transform="rotate(-90 285 77.5)">b</text><text x="215" y="140" font-size="11" fill="#374151" text-anchor="middle">rectangle</text><polygon points="320,115 440,115 380,40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="380" y1="40" x2="380" y2="115" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5,4"/><rect x="374" y="108" width="8" height="8" fill="none" stroke="#7c3aed" stroke-width="1.5"/><text x="380" y="132" font-size="13" fill="#ea580c" font-weight="700" text-anchor="middle">b</text><text x="400" y="80" font-size="13" fill="#7c3aed" font-weight="700" text-anchor="start">h</text><text x="380" y="150" font-size="11" fill="#374151" text-anchor="middle">triangle</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -392,7 +398,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate the surface area and volume of cubes and rectangular prisms using formulae" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="3D diagrams of a cube and a rectangular prism with colour coded dimensions showing all six faces for surface area and the interior for volume" />',
+        '3D diagrams of a cube and a rectangular prism with colour coded dimensions showing all six faces for surface area and the interior for volume',
+
+      diagramSvg:
+        '<svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg"><text x="60" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Cube</text><polygon points="30,90 90,90 90,150 30,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M30,90 L50,70 M90,90 L110,70 M90,150 L110,130" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M50,70 L110,70 M110,70 L110,130 M110,130 L90,150" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/><text x="60" y="168" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">l</text><text x="104" y="60" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">l</text><text x="220" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Rectangular prism</text><polygon points="170,75 250,75 250,150 170,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M170,75 L190,55 M250,75 L270,55 M250,150 L270,130" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M190,55 L270,55 M270,55 L270,130 M270,130 L250,150" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/><text x="210" y="168" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">l</text><text x="158" y="116" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle" transform="rotate(-90 158 116)">h</text><text x="232" y="48" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">b</text></svg>',
     },
   ],
 

@@ -154,9 +154,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to build a stem-and-leaf display step by step and how to choose a representative sample" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Stem-and-leaf display for test scores 45 52 48 61 57 63 49 with stems in blue and leaves in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -321,7 +318,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate mean median mode and range with step by step worked examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line showing a data set with the mean marked in blue median in green mode in orange and range shown as a red double-headed arrow" />',
+        'Number line showing a data set with the mean marked in blue median in green mode in orange and range shown as a red double-headed arrow',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="95" x2="205" y2="95" stroke="#0f1f3d" stroke-width="2.5"/><polygon points="80,95 73,82 87,82" fill="#2563eb"/><text x="80" y="74" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">mean = 10</text><circle cx="80" cy="95" r="4" fill="#9ca3af" stroke="#374151" stroke-width="1"/><text x="80" y="110" font-size="10" fill="#374151" text-anchor="middle">10</text><circle cx="176" cy="95" r="4" fill="#9ca3af" stroke="#374151" stroke-width="1"/><text x="176" y="110" font-size="10" fill="#374151" text-anchor="middle">26</text><circle cx="68" cy="95" r="7" fill="#16a34a"/><text x="68" y="98" font-size="9" fill="#ffffff" font-weight="700" text-anchor="middle">8</text><text x="68" y="124" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">median</text><circle cx="38" cy="95" r="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><text x="38" y="99" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">3</text><text x="38" y="124" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">mode ×2</text><line x1="38" y1="145" x2="176" y2="145" stroke="#dc2626" stroke-width="2"/><polygon points="38,145 45,141 45,149" fill="#dc2626"/><polygon points="176,145 169,141 169,149" fill="#dc2626"/><text x="107" y="162" font-size="10" fill="#dc2626" font-weight="700" text-anchor="middle">range = 23</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -499,7 +499,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to read bar graphs double bar graphs and pie charts and how to calculate values from percentages" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side: double bar graph with blue and green bars for two groups across four categories, and a pie chart with coloured slices and orange percentage labels" />',
+        'Side-by-side: double bar graph with blue and green bars for two groups across four categories, and a pie chart with coloured slices and orange percentage labels',
+
+      diagramSvg:
+        '<svg viewBox="0 0 460 190" xmlns="http://www.w3.org/2000/svg"><text x="112" y="14" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Double Bar Graph</text><rect x="35" y="22" width="8" height="8" fill="#2563eb"/><text x="46" y="29" font-size="8" fill="#374151" font-weight="600">Group A</text><rect x="100" y="22" width="8" height="8" fill="#16a34a"/><text x="111" y="29" font-size="8" fill="#374151" font-weight="600">Group B</text><line x1="30" y1="35" x2="30" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="30" y1="155" x2="195" y2="155" stroke="#0f1f3d" stroke-width="2"/><rect x="35" y="65" width="12" height="90" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><rect x="49" y="95" width="12" height="60" fill="#16a34a" stroke="#0f1f3d" stroke-width="1"/><rect x="75" y="105" width="12" height="50" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><rect x="89" y="75" width="12" height="80" fill="#16a34a" stroke="#0f1f3d" stroke-width="1"/><rect x="115" y="55" width="12" height="100" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><rect x="129" y="115" width="12" height="40" fill="#16a34a" stroke="#0f1f3d" stroke-width="1"/><rect x="155" y="85" width="12" height="70" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><rect x="169" y="65" width="12" height="90" fill="#16a34a" stroke="#0f1f3d" stroke-width="1"/><text x="47" y="167" font-size="8" fill="#374151" text-anchor="middle">Cat 1</text><text x="87" y="167" font-size="8" fill="#374151" text-anchor="middle">Cat 2</text><text x="127" y="167" font-size="8" fill="#374151" text-anchor="middle">Cat 3</text><text x="167" y="167" font-size="8" fill="#374151" text-anchor="middle">Cat 4</text><text x="350" y="14" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Pie Chart</text><path d="M350,100 L350,52 A48,48 0 0 1 364.8,145.6 Z" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><path d="M350,100 L364.8,145.6 A48,48 0 0 1 304.4,85.2 Z" fill="#16a34a" stroke="#0f1f3d" stroke-width="1.5"/><path d="M350,100 L304.4,85.2 A48,48 0 0 1 350,52 Z" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.5"/><text x="378" y="96" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:2.5px">45%</text><text x="330" y="121" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:2.5px">35%</text><text x="333" y="77" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:2.5px">20%</text></svg>',
     },
   ],
 

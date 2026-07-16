@@ -132,9 +132,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die dele van die algebraïese uitdrukking 5x plus 3y minus 7 merk met pyle wat na elke term, koëffisiënt, konstante en veranderlike wys, kleurgekodeer blou vir veranderlikes, oranje vir koëffisiënte en groen vir die konstante" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn algebraïese uitdrukking is, terme, koëffisiënte en konstantes identifiseer, en wys hoe om ʼn uitdrukking te bereken deur ʼn waarde vir die veranderlike te vervang" />',
     },
@@ -224,9 +221,6 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van die uitdrukking 3x plus 5y minus 2x plus 7y met gelyksoortige terme in passende kleure omkring, blou vir x-terme en groen vir y-terme, wat wys watter pare gekombineer kan word" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die verskil tussen gelyksoortige en ongelyksoortige terme verduidelik met kleurkodering en wys waarom terme met verskillende veranderlikes of verskillende magte nie gekombineer kan word nie" />',
@@ -366,9 +360,6 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van die uitdrukking 6x plus 3y minus 2x plus 5y met gelyksoortige terme gegroepeer met kleurgekodeerde hakies, blou vir x-terme en groen vir y-terme, wat dan die finale vereenvoudigde resultaat 4x plus 8y in groen wys" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat demonstreer hoe om algebraïese uitdrukkings te vereenvoudig deur gelyksoortige terme met passende kleure te groepeer en hul koëffisiënte stap vir stap te kombineer" />',

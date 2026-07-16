@@ -101,7 +101,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die waarskynlikheidskaal van 0 tot 1 verduidelik en wys hoe om alle moontlike uitkomste van ʼn eksperiment te lys" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Waarskynlikheidskaal van 0 tot 1 wat onmoontlik by 0, ewekansig by die helfte, en seker by 1 wys, met kleurgekodeerde merkers" />',
+        'Waarskynlikheidskaal van 0 tot 1 wat onmoontlik by 0, ewekansig by die helfte, en seker by 1 wys, met kleurgekodeerde merkers',
+
+      diagramSvg:
+        '<svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="60" x2="370" y2="60" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="30" cy="60" r="5" fill="#dc2626"/><circle cx="115" cy="60" r="5" fill="#ea580c"/><circle cx="200" cy="60" r="5" fill="#374151"/><circle cx="285" cy="60" r="5" fill="#2563eb"/><circle cx="370" cy="60" r="5" fill="#16a34a"/><text x="30" y="45" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">0</text><text x="200" y="45" font-size="11" fill="#374151" font-weight="700" text-anchor="middle">½</text><text x="370" y="45" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">1</text><text x="30" y="82" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">Onmoontlik</text><text x="115" y="82" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">Onwaarskynlik</text><text x="200" y="82" font-size="9" fill="#374151" font-weight="700" text-anchor="middle">Ewe waarskynlik</text><text x="285" y="82" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">Waarskynlik</text><text x="370" y="82" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Seker</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -186,7 +189,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om waarskynlikheid as ʼn breuk te bereken deur gunstige uitkomste oor totale uitkomste te gebruik, met uitgewerkte voorbeelde" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van ʼn sak met 5 rooi en 3 blou albasters wat gunstige uitkomste in groen uitgelig wys en totale uitkomste in blou" />',
+        'Diagram van ʼn sak met 5 rooi en 3 blou albasters wat gunstige uitkomste in groen uitgelig wys en totale uitkomste in blou',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg"><path d="M40,45 Q40,18 70,18 Q100,18 100,45 L94,120 Q94,142 70,142 Q46,142 46,120 Z" fill="#f3f4f6" stroke="#0f1f3d" stroke-width="2.5"/><path d="M55,18 Q70,8 85,18" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="58" cy="50" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="82" cy="50" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="48" cy="70" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="70" cy="70" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="92" cy="70" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><ellipse cx="70" cy="104" rx="26" ry="22" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="4,3"/><circle cx="58" cy="100" r="7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><circle cx="82" cy="100" r="7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><circle cx="70" cy="118" r="7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><text x="70" y="10" font-size="10" fill="#374151" font-weight="700" text-anchor="middle">Sak: 8 albasters</text><text x="165" y="60" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">totaal = 8</text><text x="165" y="105" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">gunstige</text><text x="165" y="118" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">(blou) = 3</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -280,7 +286,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat relatiewe frekwensie uit ʼn eksperiment vergelyk met teoretiese waarskynlikheid en wys hoe meer proewe die twee waardes nader aan mekaar bring" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Tabel wat relatiewe frekwensie en teoretiese waarskynlikheid vir ʼn muntstuk-opgooi-eksperiment oor 10, 50 en 200 proewe vergelyk en konvergensie wys" />',
+        'Tabel wat relatiewe frekwensie en teoretiese waarskynlikheid vir ʼn muntstuk-opgooi-eksperiment oor 10, 50 en 200 proewe vergelyk en konvergensie wys',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg"><line x1="35" y1="20" x2="35" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="35" y1="140" x2="210" y2="140" stroke="#0f1f3d" stroke-width="2"/><text x="28" y="24" font-size="9" fill="#374151" text-anchor="end">1</text><text x="28" y="144" font-size="9" fill="#374151" text-anchor="end">0</text><line x1="35" y1="80" x2="210" y2="80" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/><text x="205" y="76" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="end">teoretiese W = 0.5</text><polyline points="50,56 120,70.4 190,77.6" fill="none" stroke="#ea580c" stroke-width="2"/><circle cx="50" cy="56" r="4" fill="#ea580c"/><circle cx="120" cy="70.4" r="4" fill="#ea580c"/><circle cx="190" cy="77.6" r="4" fill="#ea580c"/><text x="50" y="48" font-size="8.5" fill="#ea580c" font-weight="700" text-anchor="middle">0.70</text><text x="120" y="63" font-size="8.5" fill="#ea580c" font-weight="700" text-anchor="middle">0.58</text><text x="190" y="70" font-size="8.5" fill="#ea580c" font-weight="700" text-anchor="middle">0.52</text><text x="50" y="152" font-size="8.5" fill="#374151" text-anchor="middle">10 proewe</text><text x="120" y="152" font-size="8.5" fill="#374151" text-anchor="middle">50 proewe</text><text x="190" y="152" font-size="8.5" fill="#374151" text-anchor="middle">200 proewe</text></svg>',
     },
   ],
 

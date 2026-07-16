@@ -150,7 +150,50 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video classifying acute right obtuse straight and reflex angles with examples from diagrams" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Five angle diagrams labelled acute right obtuse straight and reflex with colour coding acute blue right green obtuse orange reflex red" />',
+        'Five angle diagrams — acute, right, obtuse, straight and reflex — each drawn with two rays from a vertex and the classified angle marked and colour-coded to match the colour key.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(48,112)">' +
+        '<line x1="0" y1="0" x2="40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="30.64" y2="-25.71" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<path d="M 18,0 A 18,18 0 0 1 13.79,-11.57" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<circle cx="0" cy="0" r="2" fill="#0f1f3d"/>' +
+        '<text x="26" y="-15" font-size="10" font-weight="700" fill="#2563eb" text-anchor="middle">40°</text>' +
+        '<text x="0" y="38" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Acute</text>' +
+        '</g>' +
+        '<g transform="translate(140,112)">' +
+        '<line x1="0" y1="0" x2="40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="0" y2="-40" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polyline points="14,0 14,-14 0,-14" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<circle cx="0" cy="0" r="2" fill="#0f1f3d"/>' +
+        '<text x="0" y="38" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Right</text>' +
+        '</g>' +
+        '<g transform="translate(232,112)">' +
+        '<line x1="0" y1="0" x2="40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="-25.71" y2="-30.64" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<path d="M 18,0 A 18,18 0 0 1 -11.57,-13.79" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<circle cx="0" cy="0" r="2" fill="#0f1f3d"/>' +
+        '<text x="6" y="-22" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">130°</text>' +
+        '<text x="0" y="38" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Obtuse</text>' +
+        '</g>' +
+        '<g transform="translate(324,112)">' +
+        '<line x1="0" y1="0" x2="40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="-40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<path d="M 18,0 A 18,18 0 0 1 -18,0" fill="none" stroke="#374151" stroke-width="2"/>' +
+        '<circle cx="0" cy="0" r="2" fill="#0f1f3d"/>' +
+        '<text x="0" y="-24" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">180°</text>' +
+        '<text x="0" y="38" font-size="11" font-weight="700" fill="#374151" text-anchor="middle">Straight</text>' +
+        '</g>' +
+        '<g transform="translate(416,112)">' +
+        '<line x1="0" y1="0" x2="40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="-13.68" y2="-37.59" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<path d="M 18,0 A 18,18 1 1 1 -6.16,-16.92" fill="none" stroke="#dc2626" stroke-width="2"/>' +
+        '<circle cx="0" cy="0" r="2" fill="#0f1f3d"/>' +
+        '<text x="0" y="24" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">250°</text>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">Reflex</text>' +
+        '</g>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -263,7 +306,30 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to find unknown angles using angles on a straight line 180 degrees and vertically opposite angles" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two diagrams: one showing angles on a straight line adding to 180 with given angle blue and unknown angle red, one showing two intersecting lines with vertically opposite angles highlighted green" />',
+        'Two diagrams: one showing angles a and b on a straight line adding to 180°, with the given angle in blue and the unknown angle in red; one showing two intersecting lines with the 70° vertically opposite angles highlighted in green and an adjacent 110° angle in red.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="80" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Angles on a straight line</text>' +
+        '<line x1="10" y1="80" x2="150" y2="80" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="80" y1="80" x2="101.1" y2="34.7" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<path d="M 98,80 A 18,18 0 0 1 87.6,63.7" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="97" y="68" font-size="11" font-weight="700" fill="#2563eb">a</text>' +
+        '<path d="M 89.3,60.1 A 22,22 0 0 1 58,80" fill="none" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="66" y="68" font-size="11" font-weight="700" fill="#dc2626">b</text>' +
+        '<circle cx="80" cy="80" r="2.5" fill="#0f1f3d"/>' +
+        '<text x="80" y="98" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">a + b = 180°</text>' +
+        '<text x="230" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Vertically opposite angles</text>' +
+        '<line x1="170" y1="80" x2="290" y2="80" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="212.9" y1="127" x2="247.1" y2="33" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<path d="M 250,80 A 20,20 0 0 1 236.8,61.2" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="248" y="68" font-size="10" font-weight="700" fill="#2563eb">70°</text>' +
+        '<path d="M 238.9,55.6 A 26,26 0 0 1 204,80" fill="none" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="215" y="63" font-size="10" font-weight="700" fill="#dc2626">110°</text>' +
+        '<path d="M 210,80 A 20,20 0 0 1 223.2,98.8" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="209" y="93" font-size="10" font-weight="700" fill="#16a34a">70°</text>' +
+        '<circle cx="230" cy="80" r="2.5" fill="#0f1f3d"/>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -404,7 +470,24 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video identifying corresponding alternate and co-interior angles formed by a transversal cutting two parallel lines" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two parallel lines cut by a transversal with corresponding angles highlighted green co-interior angles orange parallel lines blue transversal red" />',
+        'Two parallel lines cut by a transversal, with the parallel lines in blue, the transversal in red, one pair of corresponding angles highlighted green and one pair of co-interior angles highlighted orange.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 240 175" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="20" y1="50" x2="220" y2="50" stroke="#2563eb" stroke-width="2.2"/>' +
+        '<polyline points="135,44 141,50 135,56" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="20" y1="130" x2="220" y2="130" stroke="#2563eb" stroke-width="2.2"/>' +
+        '<polyline points="135,124 141,130 135,136" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="40" y1="20" x2="200" y2="160" stroke="#dc2626" stroke-width="2.2"/>' +
+        '<path d="M 89.34,63.17 A 20,20 0 0 1 54.29,50" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<path d="M 145.71,130 A 20,20 0 0 1 150.66,116.83" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<path d="M 59.24,36.83 A 20,20 0 0 1 94.29,50" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<path d="M 150.66,116.83 A 20,20 0 0 1 185.71,130" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<circle cx="74.29" cy="50" r="2.5" fill="#0f1f3d"/>' +
+        '<circle cx="165.71" cy="130" r="2.5" fill="#0f1f3d"/>' +
+        '<text x="30" y="38" font-size="9" font-weight="700" fill="#ea580c">co-interior</text>' +
+        '<text x="150" y="112" font-size="9" font-weight="700" fill="#16a34a">corresponding</text>' +
+        '</svg>',
     },
   ],
 

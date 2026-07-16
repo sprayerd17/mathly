@@ -101,7 +101,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining the probability scale from 0 to 1 and how to list all possible outcomes of an experiment" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Probability scale from 0 to 1 showing impossible at 0, even chance at half, and certain at 1 with colour coded labels" />',
+        'Probability scale from 0 to 1 showing impossible at 0, even chance at half, and certain at 1 with colour coded labels',
+
+      diagramSvg:
+        '<svg viewBox="0 0 290 140" xmlns="http://www.w3.org/2000/svg"><line x1="25" y1="60" x2="265" y2="60" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="25" cy="60" r="5" fill="#dc2626"/><circle cx="85" cy="60" r="5" fill="#ea580c"/><circle cx="145" cy="60" r="5" fill="#374151"/><circle cx="205" cy="60" r="5" fill="#2563eb"/><circle cx="265" cy="60" r="5" fill="#16a34a"/><text x="25" y="45" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">0</text><text x="145" y="45" font-size="11" fill="#374151" font-weight="700" text-anchor="middle">½</text><text x="265" y="45" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">1</text><text x="25" y="82" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">Impossible</text><text x="85" y="82" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">Unlikely</text><text x="145" y="82" font-size="9" fill="#374151" font-weight="700" text-anchor="middle">Even chance</text><text x="205" y="82" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">Likely</text><text x="265" y="82" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Certain</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -186,7 +189,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate probability as a fraction using favourable outcomes over total outcomes with worked examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a bag with 5 red and 3 blue marbles showing favourable outcomes highlighted in green and total outcomes in blue" />',
+        'Diagram of a bag with 5 red and 3 blue marbles showing favourable outcomes highlighted in green and total outcomes in blue',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg"><path d="M40,45 Q40,18 70,18 Q100,18 100,45 L94,120 Q94,142 70,142 Q46,142 46,120 Z" fill="#f3f4f6" stroke="#0f1f3d" stroke-width="2.5"/><path d="M55,18 Q70,8 85,18" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="58" cy="50" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="82" cy="50" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="48" cy="70" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="70" cy="70" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><circle cx="92" cy="70" r="7" fill="#dc2626" stroke="#0f1f3d" stroke-width="1"/><ellipse cx="70" cy="104" rx="26" ry="22" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="4,3"/><circle cx="58" cy="100" r="7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><circle cx="82" cy="100" r="7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><circle cx="70" cy="118" r="7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1"/><text x="70" y="10" font-size="10" fill="#374151" font-weight="700" text-anchor="middle">Bag: 8 marbles</text><text x="165" y="60" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">total = 8</text><text x="165" y="105" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">favourable</text><text x="165" y="118" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">(blue) = 3</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -280,7 +286,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video comparing relative frequency from an experiment to theoretical probability and showing how more trials brings the two values closer together" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table comparing relative frequency and theoretical probability for a coin flip experiment across 10 50 and 200 trials showing convergence" />',
+        'Table comparing relative frequency and theoretical probability for a coin flip experiment across 10 50 and 200 trials showing convergence',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg"><line x1="35" y1="20" x2="35" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="35" y1="140" x2="210" y2="140" stroke="#0f1f3d" stroke-width="2"/><text x="28" y="24" font-size="9" fill="#374151" text-anchor="end">1</text><text x="28" y="144" font-size="9" fill="#374151" text-anchor="end">0</text><line x1="35" y1="80" x2="210" y2="80" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/><text x="205" y="76" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="end">theoretical P = 0.5</text><polyline points="50,56 120,70.4 190,77.6" fill="none" stroke="#ea580c" stroke-width="2"/><circle cx="50" cy="56" r="4" fill="#ea580c"/><circle cx="120" cy="70.4" r="4" fill="#ea580c"/><circle cx="190" cy="77.6" r="4" fill="#ea580c"/><text x="50" y="48" font-size="8.5" fill="#ea580c" font-weight="700" text-anchor="middle">0.70</text><text x="120" y="63" font-size="8.5" fill="#ea580c" font-weight="700" text-anchor="middle">0.58</text><text x="190" y="70" font-size="8.5" fill="#ea580c" font-weight="700" text-anchor="middle">0.52</text><text x="50" y="152" font-size="8.5" fill="#374151" text-anchor="middle">10 trials</text><text x="120" y="152" font-size="8.5" fill="#374151" text-anchor="middle">50 trials</text><text x="190" y="152" font-size="8.5" fill="#374151" text-anchor="middle">200 trials</text></svg>',
     },
   ],
 

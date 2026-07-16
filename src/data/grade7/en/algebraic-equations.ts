@@ -132,9 +132,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to identify unknowns in word problems and translate sentences into algebraic equations step by step" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a word problem broken into parts with unknown variable highlighted in blue known values in green and the final equation in orange" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -267,7 +264,32 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to solve one-step equations using inverse operations while keeping both sides balanced" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Balance scale diagram showing x + 14 = 29 with the inverse operation subtracting 14 from both sides to isolate x" />',
+        'Balance scale diagram showing x + 14 = 29 with the inverse operation subtracting 14 from both sides to isolate x',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="120" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">x + 14 = 29</text>` +
+        `<polygon points="110,70 130,70 120,50" fill="#0f1f3d"/>` +
+        `<line x1="70" y1="50" x2="170" y2="50" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<line x1="70" y1="50" x2="70" y2="68" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="170" y1="50" x2="170" y2="68" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="50" y="68" width="40" height="16" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="150" y="68" width="40" height="16" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="70" y="79" text-anchor="middle" font-size="9"><tspan fill="#2563eb" font-weight="700">x</tspan><tspan fill="#16a34a" font-weight="700"> + 14</tspan></text>` +
+        `<text x="170" y="79" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">29</text>` +
+        `<line x1="120" y1="92" x2="120" y2="170" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="120,176 114,166 126,166" fill="#ea580c"/>` +
+        `<text x="150" y="134" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">subtract 14</text>` +
+        `<text x="150" y="146" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">from both sides</text>` +
+        `<polygon points="110,200 130,200 120,180" fill="#0f1f3d"/>` +
+        `<line x1="70" y1="180" x2="170" y2="180" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<line x1="70" y1="180" x2="70" y2="198" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="170" y1="180" x2="170" y2="198" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="50" y="198" width="40" height="16" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="150" y="198" width="40" height="16" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="70" y="209" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">x</text>` +
+        `<text x="170" y="209" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">15</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -411,9 +433,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve two-step equations by undoing addition or subtraction first then undoing multiplication or division with a substitution check" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step by step diagram solving 4x + 7 = 31 showing first step in blue subtracting 7 then second step in green dividing by 4 and check in red" />',
     },
   ],
   practiceSets: [

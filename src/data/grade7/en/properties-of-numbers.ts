@@ -204,9 +204,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="A reference chart listing the divisibility rules for 2, 3, 4, 5, 6, 8, 9, 10 and 11, with the rule in purple, the digits being tested (last digit, last two digits, digit sum, alternating sum) highlighted in teal, and worked examples for 4 131, 3 124 and 5 148 showing the conclusion in red" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Short video demonstrating each divisibility rule with a worked number, including why the digit-sum rule works for 3 and 9 and why the alternating-sum rule works for 11" />',
     },
@@ -397,7 +394,73 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Three prime factorisation trees side by side for 24, 36 and 60, with the three numbers in blue, prime factors shared across all three circled in red, and the final HCF and LCM answers in orange" />',
+        'Three prime factorisation trees side by side for 24, 36 and 60, with the three numbers in blue, prime factors shared across all three circled in red, and the final HCF and LCM answers in orange',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 195" width="100%" style="max-width:560px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<g transform="translate(10,10)">` +
+        `<line x1="65" y1="14" x2="35" y2="46" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="65" y1="14" x2="95" y2="46" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="95" y1="46" x2="65" y2="78" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="95" y1="46" x2="120" y2="78" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="120" y1="78" x2="98" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="120" y1="78" x2="128" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="10" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">24</text>` +
+        `<circle cx="35" cy="46" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="35" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">2</text>` +
+        `<text x="95" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7280">12</text>` +
+        `<circle cx="65" cy="78" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="65" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">2</text>` +
+        `<text x="120" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7280">6</text>` +
+        `<circle cx="98" cy="110" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="98" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">2</text>` +
+        `<circle cx="128" cy="110" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="128" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">3</text>` +
+        `<text x="80" y="132" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">24 = 2³×3</text>` +
+        `</g>` +
+        `<g transform="translate(150,10)">` +
+        `<line x1="65" y1="14" x2="35" y2="46" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="65" y1="14" x2="95" y2="46" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="95" y1="46" x2="65" y2="78" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="95" y1="46" x2="120" y2="78" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="120" y1="78" x2="98" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="120" y1="78" x2="128" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="10" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">36</text>` +
+        `<circle cx="35" cy="46" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="35" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">2</text>` +
+        `<text x="95" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7280">18</text>` +
+        `<circle cx="65" cy="78" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="65" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">2</text>` +
+        `<text x="120" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7280">9</text>` +
+        `<circle cx="98" cy="110" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="98" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">3</text>` +
+        `<circle cx="128" cy="110" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="128" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">3</text>` +
+        `<text x="80" y="132" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">36 = 2²×3²</text>` +
+        `</g>` +
+        `<g transform="translate(290,10)">` +
+        `<line x1="65" y1="14" x2="35" y2="46" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="65" y1="14" x2="95" y2="46" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="95" y1="46" x2="65" y2="78" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="95" y1="46" x2="120" y2="78" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="120" y1="78" x2="98" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="120" y1="78" x2="128" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="10" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">60</text>` +
+        `<circle cx="35" cy="46" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="35" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">2</text>` +
+        `<text x="95" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7280">30</text>` +
+        `<circle cx="65" cy="78" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="65" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">2</text>` +
+        `<text x="120" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7280">15</text>` +
+        `<circle cx="98" cy="110" r="10" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="98" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">3</text>` +
+        `<circle cx="128" cy="110" r="10" fill="rgba(107,114,128,0.12)" stroke="#6b7280" stroke-width="2"/>` +
+        `<text x="128" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#6b7280">5</text>` +
+        `<text x="80" y="132" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">60 = 2²×3×5</text>` +
+        `</g>` +
+        `<text x="220" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">Shared (red) primes, lowest powers: 2² × 3 → HCF = 12</text>` +
+        `<text x="220" y="180" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">Highest powers of every prime: 2³ × 3² × 5 → LCM = 360</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to extend the HCF and LCM prime factorisation method from two numbers to three numbers, with colour coded shared prime factors and highest/lowest powers" />',
@@ -554,7 +617,25 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A fraction bar diagram showing 1/4, 1/6 and 1/9 converted to equivalent fractions over the LCD of 36 in green, alongside a bakery hamper diagram showing 48, 72 and 96 cupcakes in blue being split into 24 equal boxes using the HCF shown in orange" />',
+        'A fraction bar diagram showing 1/4, 1/6 and 1/9 converted to equivalent fractions over the LCD of 36, with the individual bars in green and the combined total bar in blue',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 140" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="118" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">Denominators converted to 36ths (the LCD)</text>` +
+        `<rect x="20" y="22" width="216" height="16" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="22" width="54" height="16" fill="rgba(22,163,74,0.35)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="242" y="34" font-size="11" font-weight="700" fill="#16a34a">1/4 = 9/36</text>` +
+        `<rect x="20" y="50" width="216" height="16" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="50" width="36" height="16" fill="rgba(22,163,74,0.35)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="242" y="62" font-size="11" font-weight="700" fill="#16a34a">1/6 = 6/36</text>` +
+        `<rect x="20" y="78" width="216" height="16" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="78" width="24" height="16" fill="rgba(22,163,74,0.35)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="242" y="90" font-size="11" font-weight="700" fill="#16a34a">1/9 = 4/36</text>` +
+        `<line x1="20" y1="102" x2="236" y2="102" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>` +
+        `<rect x="20" y="112" width="216" height="16" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="112" width="114" height="16" fill="rgba(37,99,235,0.35)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="242" y="124" font-size="12" font-weight="700" fill="#2563eb">= 19/36</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to use the LCM as the lowest common denominator to add fractions, and how to solve HCF/LCM word problems involving three quantities such as packing hampers and coinciding flashing lights" />',

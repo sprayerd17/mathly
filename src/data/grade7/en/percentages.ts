@@ -96,8 +96,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to calculate percentage increase and decrease by converting the percentage to a decimal then adding or subtracting from the original amount" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing percentage increase and decrease with original amount in blue, percentage value found in orange, increase result in green and decrease result in red" />',
+      diagramPlaceholder: 'Diagram showing percentage increase and decrease with original amount in blue, percentage value found in orange, increase result in green and decrease result in red',
+      diagramSvg: '<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="140" x2="285" y2="140" stroke="#0f1f3d" stroke-width="2"/><rect x="20" y="80" width="26" height="60" fill="#93c5fd" stroke="#0f1f3d" stroke-width="2"/><rect x="65" y="71" width="26" height="69" fill="#86efac" stroke="#0f1f3d" stroke-width="2"/><rect x="65" y="71" width="26" height="9" fill="#fdba74"/><line x1="65" y1="80" x2="91" y2="80" stroke="#0f1f3d" stroke-width="1"/><text x="33" y="73" font-weight="700" font-size="11" text-anchor="middle" fill="#2563eb">R280</text><text x="78" y="64" font-weight="700" font-size="11" text-anchor="middle" fill="#16a34a">R322</text><line x1="91" y1="75" x2="103" y2="75" stroke="#ea580c" stroke-width="1"/><text x="105" y="78" font-size="9" text-anchor="start" fill="#ea580c" font-weight="700">+R42</text><text x="59" y="156" font-weight="700" font-size="11" text-anchor="middle" fill="#0f1f3d">Increase (+15%)</text><rect x="160" y="80" width="26" height="60" fill="#93c5fd" stroke="#0f1f3d" stroke-width="2"/><rect x="205" y="80" width="26" height="12" fill="none" stroke="#0f1f3d" stroke-width="1.5" stroke-dasharray="3,2"/><rect x="205" y="92" width="26" height="48" fill="#fca5a5" stroke="#0f1f3d" stroke-width="2"/><text x="173" y="73" font-weight="700" font-size="10" text-anchor="middle" fill="#2563eb">R8 500</text><text x="218" y="85" font-weight="700" font-size="10" text-anchor="middle" fill="#dc2626">R6 800</text><line x1="231" y1="86" x2="243" y2="87" stroke="#dc2626" stroke-width="1"/><text x="245" y="90" font-size="9" text-anchor="start" fill="#dc2626" font-weight="700">-R1700</text><text x="192" y="156" font-weight="700" font-size="11" text-anchor="middle" fill="#0f1f3d">Decrease (-20%)</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -199,8 +199,6 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply the simple interest formula SI = P x R x T and find the total amount by adding interest to the principal" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the simple interest formula with principal in blue, rate in orange, time in green and interest earned in red, plus the total amount calculation" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

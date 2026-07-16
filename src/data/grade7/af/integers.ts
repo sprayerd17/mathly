@@ -93,7 +93,27 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat verduidelik wat heelgetalle is, hoe hulle op ʼn getallelyn geplaas word, en voorbeelde van negatiewe getalle uit die alledaagse lewe" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn van -10 tot +10 met negatiewe heelgetalle in rooi uitgelig, nul in groen uitgelig, en positiewe heelgetalle in blou uitgelig" />',
+        'Getallelyn van -10 tot +10 met negatiewe heelgetalle in rooi uitgelig, nul in groen uitgelig, en positiewe heelgetalle in blou uitgelig',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 85" width="100%" style="max-width:480px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="80" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">negatiewe heelgetalle</text>` +
+        `<text x="260" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">positiewe heelgetalle</text>` +
+        `<line x1="20" y1="50" x2="170" y2="50" stroke="#dc2626" stroke-width="3"/>` +
+        `<line x1="170" y1="50" x2="320" y2="50" stroke="#2563eb" stroke-width="3"/>` +
+        `<polygon points="12,50 22,45 22,55" fill="#dc2626"/>` +
+        `<polygon points="328,50 318,45 318,55" fill="#2563eb"/>` +
+        `<line x1="20" y1="44" x2="20" y2="56" stroke="#dc2626" stroke-width="2"/>` +
+        `<line x1="95" y1="44" x2="95" y2="56" stroke="#dc2626" stroke-width="2"/>` +
+        `<circle cx="170" cy="50" r="5" fill="#16a34a"/>` +
+        `<line x1="245" y1="44" x2="245" y2="56" stroke="#2563eb" stroke-width="2"/>` +
+        `<line x1="320" y1="44" x2="320" y2="56" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="20" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">-10</text>` +
+        `<text x="95" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">-5</text>` +
+        `<text x="170" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">0</text>` +
+        `<text x="245" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">5</text>` +
+        `<text x="320" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">10</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -174,7 +194,28 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om heelgetalle op ʼn getallelyn van kleinste na grootste te orden, insluitend negatiewe getalle" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn wat die versameling -12, -5, 0, 3, 7 in volgorde geplaas toon met pyle wat die kleinste links en die grootste regs aandui" />',
+        'Getallelyn wat die versameling -12, -5, 0, 3, 7 in volgorde geplaas toon met pyle wat die kleinste links en die grootste regs aandui',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 95" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="20" y1="55" x2="280" y2="55" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="14,55 22,50 22,60" fill="#0f1f3d"/>` +
+        `<polygon points="286,55 278,50 278,60" fill="#0f1f3d"/>` +
+        `<circle cx="20" cy="55" r="5" fill="#dc2626"/>` +
+        `<circle cx="116" cy="55" r="5" fill="#dc2626"/>` +
+        `<circle cx="184" cy="55" r="5" fill="#16a34a"/>` +
+        `<circle cx="225" cy="55" r="5" fill="#2563eb"/>` +
+        `<circle cx="280" cy="55" r="5" fill="#2563eb"/>` +
+        `<text x="20" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">-12</text>` +
+        `<text x="116" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">-5</text>` +
+        `<text x="184" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">0</text>` +
+        `<text x="225" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">3</text>` +
+        `<text x="280" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">7</text>` +
+        `<line x1="40" y1="76" x2="256" y2="76" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<polygon points="262,76 254,72 254,80" fill="#16a34a"/>` +
+        `<text x="20" y="88" text-anchor="middle" font-size="9" fill="#6b7280">kleinste</text>` +
+        `<text x="280" y="88" text-anchor="middle" font-size="9" fill="#6b7280">grootste</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,7 +307,26 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die optel en aftrek van heelgetalle met ʼn getallelyn demonstreer, wat dieselfde teken, verskillende tekens, en aftrek van negatiewe getalle dek" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn wat -7 + (-4) = -11 toon met pyle wat vanaf -7 na links beweeg vir 4 verdere stappe, dieselfde-teken-bewerking kleurgekodeer in blou" />',
+        'Getallelyn wat -7 + (-4) = -11 toon met pyle wat vanaf -7 na links beweeg vir 4 verdere stappe, dieselfde-teken-bewerking kleurgekodeer in blou',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="20" y1="60" x2="280" y2="60" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="14,60 22,55 22,65" fill="#0f1f3d"/>` +
+        `<polygon points="286,60 278,55 278,65" fill="#0f1f3d"/>` +
+        `<path d="M128,60 Q117,40 106,60" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<path d="M106,60 Q96,40 85,60" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<path d="M85,60 Q74,40 63,60" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<path d="M63,60 Q53,40 42,60" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="42,60 50,53 50,63" fill="#2563eb"/>` +
+        `<circle cx="128" cy="60" r="5" fill="#dc2626"/>` +
+        `<circle cx="42" cy="60" r="5" fill="#dc2626"/>` +
+        `<circle cx="280" cy="60" r="4" fill="#6b7280"/>` +
+        `<text x="128" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">-7</text>` +
+        `<text x="42" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">-11</text>` +
+        `<text x="280" y="80" text-anchor="middle" font-size="11" fill="#6b7280">0</text>` +
+        `<text x="85" y="30" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">4 stappe van -1 (selfde teken)</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -356,9 +416,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die tekenreëls vir die vermenigvuldiging en deling van heelgetalle verduidelik met uitgewerkte voorbeelde wat dieselfde teken en verskillende tekens toon" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Tekenreëltabel vir vermenigvuldiging en deling wat al vier kombinasies toon: positief maal positief, negatief maal negatief, positief maal negatief, negatief maal positief" />',
     },
   ],
 

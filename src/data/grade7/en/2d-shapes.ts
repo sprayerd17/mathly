@@ -156,7 +156,44 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing triangle types by side and angle and how to use the angle sum rule to find missing angles including ratio problems" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing all six triangle types side by side — equilateral isosceles and scalene by side, and acute right-angled and obtuse-angled by angle — with angle labels" />',
+        'All six triangle types side by side: equilateral, isosceles and scalene classified by side length, and acute-angled, right-angled and obtuse-angled classified by angle size.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 225" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="170" y="16" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Classified by side length</text>' +
+        '<g transform="translate(60,68)">' +
+        '<polygon points="-30,27 30,27 0,-25" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="0" y1="23" x2="0" y2="31" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-18.5" y1="-1" x2="-11.5" y2="3" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="11.5" y1="3" x2="18.5" y2="-1" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Equilateral</text>' +
+        '</g>' +
+        '<g transform="translate(170,68)">' +
+        '<polygon points="-20,27 20,27 0,-33" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-13.8" y1="-4.26" x2="-6.2" y2="-1.74" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="6.2" y1="-1.74" x2="13.8" y2="-4.26" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Isosceles</text>' +
+        '</g>' +
+        '<g transform="translate(280,68)">' +
+        '<polygon points="-28,25 22,29 -6,-30" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<text x="-3" y="42" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Scalene</text>' +
+        '</g>' +
+        '<text x="170" y="120" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Classified by angle size</text>' +
+        '<g transform="translate(60,168)">' +
+        '<polygon points="-28,26 26,28 -4,-30" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<text x="-2" y="42" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Acute-angled</text>' +
+        '</g>' +
+        '<g transform="translate(170,168)">' +
+        '<polygon points="-28,28 28,28 -28,-28" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<polyline points="-28,18 -18,18 -18,28" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Right-angled</text>' +
+        '</g>' +
+        '<g transform="translate(280,168)">' +
+        '<polygon points="0,-15 -38,8 38,6" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<path d="M -12.82,-7.24 A 15,15 0 0 1 13.13,-7.75" fill="none" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">Obtuse-angled</text>' +
+        '</g>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +328,59 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing quadrilateral types and their properties and how to use the 360° angle sum to find missing angles and classify shapes" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing all six quadrilateral types — square rectangle parallelogram rhombus trapezium kite — with angle and side properties labelled" />',
+        'All six quadrilateral types with their key shape: square, rectangle, parallelogram, rhombus, trapezium and kite, each with equal-side or right-angle markers shown where they apply.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(60,58)">' +
+        '<polygon points="-25,-25 25,-25 25,25 -25,25" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="0" y1="-29" x2="0" y2="-21" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="21" y1="0" x2="29" y2="0" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="0" y1="21" x2="0" y2="29" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-29" y1="0" x2="-21" y2="0" stroke="#2563eb" stroke-width="2"/>' +
+        '<polyline points="-18,-25 -18,-18 -25,-18" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Square</text>' +
+        '</g>' +
+        '<g transform="translate(170,58)">' +
+        '<polygon points="-32,-18 32,-18 32,18 -32,18" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="0" y1="-21" x2="0" y2="-15" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="0" y1="15" x2="0" y2="21" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="-35" y1="-3" x2="-29" y2="-3" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="-35" y1="3" x2="-29" y2="3" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="29" y1="-3" x2="35" y2="-3" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="29" y1="3" x2="35" y2="3" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="25,-18 25,-11 32,-11" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Rectangle</text>' +
+        '</g>' +
+        '<g transform="translate(280,58)">' +
+        '<polygon points="-30,18 10,18 30,-18 -10,-18" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-10" y1="15" x2="-10" y2="21" stroke="#ea580c" stroke-width="2"/>' +
+        '<line x1="10" y1="-21" x2="10" y2="-15" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Parallelogram</text>' +
+        '</g>' +
+        '<g transform="translate(60,162)">' +
+        '<polygon points="0,-30 24,0 0,30 -24,0" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="0" y1="-30" x2="0" y2="30" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/>' +
+        '<line x1="-24" y1="0" x2="24" y2="0" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/>' +
+        '<polyline points="-4,0 -4,-4 0,-4" fill="none" stroke="#dc2626" stroke-width="1.5"/>' +
+        '<line x1="9.7" y1="-13.1" x2="14.3" y2="-16.9" stroke="#dc2626" stroke-width="2"/>' +
+        '<line x1="9.7" y1="13.1" x2="14.3" y2="16.9" stroke="#dc2626" stroke-width="2"/>' +
+        '<line x1="-9.7" y1="13.1" x2="-14.3" y2="16.9" stroke="#dc2626" stroke-width="2"/>' +
+        '<line x1="-9.7" y1="-13.1" x2="-14.3" y2="-16.9" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">Rhombus</text>' +
+        '</g>' +
+        '<g transform="translate(170,162)">' +
+        '<polygon points="-28,20 28,20 16,-20 -16,-20" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<polyline points="-4,-24 1,-20 -4,-16" fill="none" stroke="#7c3aed" stroke-width="2"/>' +
+        '<polyline points="-4,16 1,20 -4,24" fill="none" stroke="#7c3aed" stroke-width="2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#7c3aed" text-anchor="middle">Trapezium</text>' +
+        '</g>' +
+        '<g transform="translate(280,162)">' +
+        '<polygon points="0,-30 18,0 0,20 -18,0" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="0" y1="-30" x2="0" y2="20" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" fill="#374151" text-anchor="middle">Kite</text>' +
+        '</g>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -442,7 +531,28 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining the parts of a circle — centre radius diameter circumference chord and arc — with labelled diagrams and worked examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a circle with all parts clearly labelled — centre radius diameter circumference chord and arc — colour coded to match the colour key" />',
+        'A circle with the centre, radius, diameter, circumference, a chord and an arc all labelled, colour-coded to match the colour key.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">' +
+        '<circle cx="130" cy="130" r="90" fill="none" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<path d="M 198.9,187.9 A 90,90 0 0 1 145.6,218.6" fill="none" stroke="#0f1f3d" stroke-width="4"/>' +
+        '<line x1="40" y1="130" x2="220" y2="130" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<line x1="130" y1="130" x2="193.6" y2="66.4" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<line x1="52.1" y1="175" x2="114.4" y2="218.6" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<circle cx="130" cy="130" r="3.5" fill="#374151"/>' +
+        '<circle cx="193.6" cy="66.4" r="3" fill="#2563eb"/>' +
+        '<circle cx="40" cy="130" r="3" fill="#dc2626"/>' +
+        '<circle cx="220" cy="130" r="3" fill="#dc2626"/>' +
+        '<circle cx="52.1" cy="175" r="3" fill="#ea580c"/>' +
+        '<circle cx="114.4" cy="218.6" r="3" fill="#ea580c"/>' +
+        '<text x="112" y="148" font-size="11" font-weight="700" fill="#374151" text-anchor="end">Centre</text>' +
+        '<text x="168" y="94" font-size="11" font-weight="700" fill="#2563eb">Radius</text>' +
+        '<text x="60" y="122" font-size="11" font-weight="700" fill="#dc2626">Diameter</text>' +
+        '<text x="130" y="30" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Circumference</text>' +
+        '<text x="65" y="203" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Chord</text>' +
+        '<text x="185" y="212" font-size="11" font-weight="700" fill="#0f1f3d">Arc</text>' +
+        '</svg>',
     },
   ],
 

@@ -132,9 +132,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om onbekendes in woordprobleme te identifiseer en sinne stap vir stap om te skakel in algebraïese vergelykings" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn woordprobleem in dele verdeel wys met die onbekende veranderlike uitgelig in blou, bekende waardes in groen, en die finale vergelyking in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -267,7 +264,32 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om een-stap vergelykings op te los met inverse bewerkings terwyl albei kante gebalanseer bly" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Balansskaal-diagram wat x + 14 = 29 wys met die inverse bewerking wat 14 van albei kante aftrek om x te isoleer" />',
+        'Balansskaal-diagram wat x + 14 = 29 wys met die inverse bewerking wat 14 van albei kante aftrek om x te isoleer',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="120" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">x + 14 = 29</text>` +
+        `<polygon points="110,70 130,70 120,50" fill="#0f1f3d"/>` +
+        `<line x1="70" y1="50" x2="170" y2="50" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<line x1="70" y1="50" x2="70" y2="68" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="170" y1="50" x2="170" y2="68" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="50" y="68" width="40" height="16" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="150" y="68" width="40" height="16" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="70" y="79" text-anchor="middle" font-size="9"><tspan fill="#2563eb" font-weight="700">x</tspan><tspan fill="#16a34a" font-weight="700"> + 14</tspan></text>` +
+        `<text x="170" y="79" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">29</text>` +
+        `<line x1="120" y1="92" x2="120" y2="170" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="120,176 114,166 126,166" fill="#ea580c"/>` +
+        `<text x="150" y="134" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">trek 14 af</text>` +
+        `<text x="150" y="146" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">van albei kante</text>` +
+        `<polygon points="110,200 130,200 120,180" fill="#0f1f3d"/>` +
+        `<line x1="70" y1="180" x2="170" y2="180" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<line x1="70" y1="180" x2="70" y2="198" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="170" y1="180" x2="170" y2="198" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="50" y="198" width="40" height="16" fill="rgba(37,99,235,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="150" y="198" width="40" height="16" fill="rgba(22,163,74,0.12)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="70" y="209" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">x</text>` +
+        `<text x="170" y="209" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">15</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -411,9 +433,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om twee-stap vergelykings op te los deur eers optelling of aftrekking ongedaan te maak, dan vermenigvuldiging of deling, met ʼn kontrole deur substitusie" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Stap-vir-stap diagram wat 4x + 7 = 31 oplos, met eerste stap in blou wat 7 aftrek, dan tweede stap in groen wat deur 4 deel, en kontrole in rooi" />',
     },
   ],
   practiceSets: [

@@ -119,7 +119,42 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A ruler measuring a 7 cm line segment PQ, and a protractor placed correctly at vertex V measuring a 50° angle, with the baseline and 0° starting point highlighted" />',
+        'A ruler measuring a 7 cm line segment PQ, and a protractor placed at vertex V with its baseline along one arm, measuring a 50° angle from the 0° mark.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="95" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Ruler measuring PQ = 7 cm</text>' +
+        '<rect x="15" y="25" width="160" height="20" fill="#f8fafc" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="15" y1="25" x2="15" y2="45" stroke="#ea580c" stroke-width="2"/>' +
+        '<line x1="35" y1="25" x2="35" y2="37" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<line x1="55" y1="25" x2="55" y2="37" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<line x1="75" y1="25" x2="75" y2="37" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<line x1="95" y1="25" x2="95" y2="37" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<line x1="115" y1="25" x2="115" y2="37" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<line x1="135" y1="25" x2="135" y2="37" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<line x1="155" y1="25" x2="155" y2="45" stroke="#ea580c" stroke-width="2"/>' +
+        '<line x1="175" y1="25" x2="175" y2="37" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<text x="15" y="48" font-size="9" fill="#374151" text-anchor="middle">0</text>' +
+        '<text x="155" y="48" font-size="9" fill="#374151" text-anchor="middle">7</text>' +
+        '<text x="175" y="48" font-size="9" fill="#374151" text-anchor="middle">8</text>' +
+        '<line x1="15" y1="60" x2="155" y2="60" stroke="#16a34a" stroke-width="3"/>' +
+        '<line x1="15" y1="55" x2="15" y2="65" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="155" y1="55" x2="155" y2="65" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="15" y="78" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">P</text>' +
+        '<text x="155" y="78" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Q</text>' +
+        '<text x="85" y="93" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">7 cm</text>' +
+        '<text x="235" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Protractor measuring 50° at V</text>' +
+        '<path d="M 165,150 A 70,70 0 0 1 305,150" fill="none" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="165" y1="150" x2="305" y2="150" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<line x1="235" y1="80" x2="235" y2="74" stroke="#0f1f3d" stroke-width="1"/>' +
+        '<path d="M 255,150 A 20,20 0 0 1 247.9,134.7" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="266" y="141" font-size="11" font-weight="700" fill="#ea580c">50°</text>' +
+        '<line x1="235" y1="150" x2="289.6" y2="84.9" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<circle cx="276.8" cy="100.2" r="2.5" fill="#ea580c"/>' +
+        '<circle cx="235" cy="150" r="3.5" fill="#ea580c"/>' +
+        '<text x="235" y="166" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">V</text>' +
+        '<text x="305" y="164" font-size="9" fill="#ea580c" text-anchor="middle">0°</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to accurately draw a line segment of a given length with a ruler, and an angle of a given size with a protractor, with given measurements in blue and drawn results in green" />',
@@ -243,7 +278,38 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A set square placed against a line AB with a perpendicular line drawn through point P at 90°; a second diagram showing a set square sliding along a ruler to draw a line parallel to CD through point R, with equal distances marked at two points" />',
+        'A set square placed against line AB with a perpendicular line drawn through point P at 90°, and a set square sliding along a ruler guide to draw a line parallel to CD through point R, with equal 4 cm distances marked at two points to confirm the lines are equidistant.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 310 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="75" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Perpendicular line through P</text>' +
+        '<line x1="15" y1="100" x2="140" y2="100" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<text x="15" y="115" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">A</text>' +
+        '<text x="140" y="115" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">B</text>' +
+        '<polygon points="77,100 30,100 77,50" fill="#ea580c" fill-opacity="0.12" stroke="#ea580c" stroke-width="1.8"/>' +
+        '<polyline points="70,100 70,93 77,93" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<line x1="77" y1="100" x2="77" y2="40" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<text x="77" y="116" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">P</text>' +
+        '<text x="86" y="94" font-size="9" font-weight="700" fill="#ea580c">90°</text>' +
+        '<text x="237" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Parallel line through R</text>' +
+        '<line x1="175" y1="140" x2="300" y2="140" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<text x="175" y="155" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">C</text>' +
+        '<text x="300" y="155" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">D</text>' +
+        '<line x1="175" y1="80" x2="300" y2="80" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<line x1="225" y1="150" x2="225" y2="60" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="4,3"/>' +
+        '<polygon points="225,140 205,140 225,120" fill="#ea580c" fill-opacity="0.12" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<polygon points="225,80 205,80 225,60" fill="#ea580c" fill-opacity="0.12" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<line x1="190" y1="140" x2="190" y2="80" stroke="#ea580c" stroke-width="1.3"/>' +
+        '<polygon points="190,80 186,88 194,88" fill="#ea580c"/>' +
+        '<polygon points="190,140 186,132 194,132" fill="#ea580c"/>' +
+        '<line x1="270" y1="140" x2="270" y2="80" stroke="#ea580c" stroke-width="1.3"/>' +
+        '<polygon points="270,80 266,88 274,88" fill="#ea580c"/>' +
+        '<polygon points="270,140 266,132 274,132" fill="#ea580c"/>' +
+        '<text x="178" y="113" font-size="9" font-weight="700" fill="#ea580c" text-anchor="end">4 cm</text>' +
+        '<text x="282" y="113" font-size="9" font-weight="700" fill="#ea580c" text-anchor="start">4 cm</text>' +
+        '<circle cx="225" cy="80" r="2.5" fill="#16a34a"/>' +
+        '<text x="225" y="70" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">R</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to construct a perpendicular line and a parallel line using a ruler and set square, with the original line in blue, the constructed perpendicular or parallel line in green and the set square in orange" />',
@@ -358,7 +424,39 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step construction of a triangle with sides 6 cm, 7 cm and 9 cm, showing the base drawn first, then two compass arcs crossing above it to locate the third vertex; a second diagram showing two arcs from a 9 cm base that are too short to cross, for sides 3 cm and 4 cm" />',
+        'A triangle with sides 6 cm, 7 cm and 9 cm constructed from a 9 cm base with two crossing compass arcs locating the third vertex, next to a failed attempt with sides 3 cm, 4 cm and 9 cm where the two arcs are too short to cross.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 320 195" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="65" y="14" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="middle">6, 7, 9 cm — possible</text>' +
+        '<path d="M 77.96,124.47 A 60,60 0 0 1 20,80" fill="none" stroke="#2563eb" stroke-width="1.6"/>' +
+        '<path d="M 86.06,74.22 A 70,70 0 0 1 42.4,121.9" fill="none" stroke="#2563eb" stroke-width="1.6"/>' +
+        '<line x1="20" y1="140" x2="110" y2="140" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<line x1="20" y1="140" x2="57.78" y2="93.4" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<line x1="110" y1="140" x2="57.78" y2="93.4" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<circle cx="20" cy="140" r="2.5" fill="#ea580c"/>' +
+        '<circle cx="110" cy="140" r="2.5" fill="#ea580c"/>' +
+        '<circle cx="57.78" cy="93.4" r="2.5" fill="#16a34a"/>' +
+        '<text x="14" y="154" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">A</text>' +
+        '<text x="116" y="154" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">B</text>' +
+        '<text x="57.78" y="82" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">C</text>' +
+        '<text x="65" y="169" font-size="9.5" font-weight="700" fill="#ea580c" text-anchor="middle">9 cm</text>' +
+        '<text x="24" y="105" font-size="9" font-weight="700" fill="#2563eb">6 cm</text>' +
+        '<text x="92" y="105" font-size="9" font-weight="700" fill="#2563eb">7 cm</text>' +
+        '<text x="215" y="14" font-size="10.5" font-weight="700" fill="#dc2626" text-anchor="middle">3, 4, 9 cm — not possible</text>' +
+        '<path d="M 198.19,129.74 A 30,30 0 0 1 180.26,111.81" fill="none" stroke="#2563eb" stroke-width="1.6"/>' +
+        '<path d="M 246.32,102.41 A 40,40 0 0 1 222.41,126.32" fill="none" stroke="#2563eb" stroke-width="1.6"/>' +
+        '<line x1="198.19" y1="129.74" x2="222.41" y2="126.32" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3,2"/>' +
+        '<line x1="170" y1="140" x2="260" y2="140" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<circle cx="170" cy="140" r="2.5" fill="#ea580c"/>' +
+        '<circle cx="260" cy="140" r="2.5" fill="#ea580c"/>' +
+        '<text x="164" y="154" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">A</text>' +
+        '<text x="266" y="154" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">B</text>' +
+        '<text x="215" y="169" font-size="9.5" font-weight="700" fill="#ea580c" text-anchor="middle">9 cm</text>' +
+        '<text x="176" y="120" font-size="9" font-weight="700" fill="#2563eb">3 cm</text>' +
+        '<text x="234" y="112" font-size="9" font-weight="700" fill="#2563eb">4 cm</text>' +
+        '<text x="210" y="118" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">arcs don’t meet</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to construct a triangle given three side lengths using a compass and ruler, including how to check first whether the three lengths can form a triangle, with given side lengths in orange, compass arcs in blue and the completed triangle in green" />',

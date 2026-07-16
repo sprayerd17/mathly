@@ -174,7 +174,30 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to reflect a point and a shape over a vertical or horizontal mirror line on a coordinate grid" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Coordinate grid showing point (3,5) reflected over the mirror line x=7 (red) to image point (11,5) (green), with the object in blue and the equal distances labelled" />',
+        'Point (3, 5) reflected over the mirror line x = 7 to image point (11, 5), with the equal 4-unit distances from the mirror line labelled on each side.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="10" y1="130" x2="215" y2="130" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="20" y1="130" x2="20" y2="20" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="118" y1="20" x2="118" y2="130" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>' +
+        '<text x="118" y="14" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">x = 7</text>' +
+        '<line x1="62" y1="60" x2="174" y2="60" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>' +
+        '<line x1="62" y1="54" x2="62" y2="66" stroke="#9ca3af" stroke-width="1"/>' +
+        '<line x1="118" y1="54" x2="118" y2="66" stroke="#9ca3af" stroke-width="1"/>' +
+        '<line x1="174" y1="54" x2="174" y2="66" stroke="#9ca3af" stroke-width="1"/>' +
+        '<text x="90" y="50" font-size="11" font-weight="700" fill="#374151" text-anchor="middle">4</text>' +
+        '<text x="146" y="50" font-size="11" font-weight="700" fill="#374151" text-anchor="middle">4</text>' +
+        '<circle cx="62" cy="60" r="4" fill="#2563eb"/>' +
+        '<text x="62" y="42" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">(3, 5)</text>' +
+        '<circle cx="174" cy="60" r="4" fill="#16a34a"/>' +
+        '<text x="174" y="42" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">(11, 5)</text>' +
+        '<line x1="62" y1="126" x2="62" y2="134" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="62" y="146" font-size="10" fill="#374151" text-anchor="middle">3</text>' +
+        '<line x1="174" y1="126" x2="174" y2="134" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="174" y="146" font-size="10" fill="#374151" text-anchor="middle">11</text>' +
+        '<text x="120" y="164" font-size="11" fill="#0f1f3d" text-anchor="middle" font-weight="700">Reflection over x = 7</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -320,7 +343,32 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to translate a point and a shape on a coordinate grid using a horizontal and vertical shift" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Coordinate grid showing the original point (4,6) in orange translated by (3,−2) with the horizontal shift in blue and vertical shift in green to the image point (7,4) in purple" />',
+        'The original point (4, 6) translated by (3, −2), showing the horizontal shift and vertical shift separately to reach the image point (7, 4).',
+
+      diagramSvg:
+        '<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="15" y1="140" x2="165" y2="140" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="25" y1="140" x2="25" y2="20" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="89" y1="136" x2="89" y2="144" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="89" y="155" font-size="10" fill="#374151" text-anchor="middle">4</text>' +
+        '<line x1="137" y1="136" x2="137" y2="144" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="137" y="155" font-size="10" fill="#374151" text-anchor="middle">7</text>' +
+        '<line x1="21" y1="44" x2="29" y2="44" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="14" y="48" font-size="10" fill="#374151" text-anchor="end">6</text>' +
+        '<line x1="21" y1="76" x2="29" y2="76" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="14" y="80" font-size="10" fill="#374151" text-anchor="end">4</text>' +
+        '<line x1="89" y1="44" x2="132" y2="44" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<polygon points="137,44 129,39 129,49" fill="#2563eb"/>' +
+        '<text x="113" y="36" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">+3</text>' +
+        '<line x1="137" y1="44" x2="137" y2="71" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<polygon points="137,76 132,68 142,68" fill="#16a34a"/>' +
+        '<text x="152" y="62" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">−2</text>' +
+        '<circle cx="89" cy="44" r="4" fill="#ea580c"/>' +
+        '<text x="89" y="30" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">(4, 6)</text>' +
+        '<circle cx="137" cy="76" r="4" fill="#7c3aed"/>' +
+        '<text x="137" y="94" font-size="12" font-weight="700" fill="#7c3aed" text-anchor="middle">(7, 4)</text>' +
+        '<text x="100" y="166" font-size="11" fill="#0f1f3d" text-anchor="middle" font-weight="700">Translation by (3, −2)</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -487,7 +535,29 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to rotate a point and a shape about the origin by 90° and 180° using coordinate rules, with clockwise and anticlockwise examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Coordinate grid showing the original point (3,2) in blue rotated 90° clockwise about the origin (orange) to the image point (2,−3) in green, with the arc of rotation marked" />',
+        'The original point (3, 2) rotated 90° clockwise about the origin to the image point (2, −3), with the arc of rotation marked.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 190 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="20" y1="90" x2="160" y2="90" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="70" y1="15" x2="70" y2="175" stroke="#374151" stroke-width="1.5"/>' +
+        '<line x1="70" y1="90" x2="124" y2="54" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<line x1="70" y1="90" x2="106" y2="144" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<path d="M 90,76.7 A 24,24 0 0 1 83.3,110" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="83.3,110 76,104 89,104" fill="#ea580c"/>' +
+        '<text x="103" y="98" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">90°</text>' +
+        '<circle cx="70" cy="90" r="4" fill="#ea580c"/>' +
+        '<text x="60" y="86" font-size="11" font-weight="700" fill="#ea580c" text-anchor="end">O</text>' +
+        '<circle cx="124" cy="54" r="4" fill="#2563eb"/>' +
+        '<text x="130" y="48" font-size="12" font-weight="700" fill="#2563eb">(3, 2)</text>' +
+        '<circle cx="106" cy="144" r="4" fill="#16a34a"/>' +
+        '<text x="112" y="150" font-size="12" font-weight="700" fill="#16a34a">(2, −3)</text>' +
+        '<line x1="124" y1="86" x2="124" y2="94" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="124" y="105" font-size="10" fill="#374151" text-anchor="middle">3</text>' +
+        '<line x1="106" y1="86" x2="106" y2="94" stroke="#374151" stroke-width="1.5"/>' +
+        '<text x="106" y="105" font-size="10" fill="#374151" text-anchor="middle">2</text>' +
+        '<text x="95" y="185" font-size="11" fill="#0f1f3d" text-anchor="middle" font-weight="700">90° clockwise rotation about the origin</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

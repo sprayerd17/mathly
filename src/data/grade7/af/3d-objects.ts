@@ -127,7 +127,21 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van ʼn reghoekige prisma met lengte in blou, breedte in rooi en hoogte in groen geëtiketteer, wat al 6 vlakke en die oppervlakte-formule wys" />',
+        'ʼn Reghoekige prisma met die lengte, breedte en hoogte geëtiketteer en kleurgekodeer, wat die 6 vlakke wys wat gebruik word om die oppervlakteformule op te bou.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="140,150 140,70 170,45 170,125" fill="#e5e7eb" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="40,70 140,70 170,45 70,45" fill="#f1f5f9" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="40,150 140,150 140,70 40,70" fill="#ffffff" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="70" y1="125" x2="170" y2="125" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="4,3"/>' +
+        '<line x1="70" y1="125" x2="40" y2="150" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="4,3"/>' +
+        '<line x1="70" y1="125" x2="70" y2="45" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="4,3"/>' +
+        '<text x="90" y="168" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">lengte (l)</text>' +
+        '<text x="200" y="141" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">breedte (b)</text>' +
+        '<text x="14" y="110" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">hoogte (h)</text>' +
+        '<text x="120" y="192" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">OA = 2(lb + lh + bh)</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn reghoekige prisma en ʼn kubus te vind deur die formules met kleurgekodeerde dimensies te gebruik" />',
@@ -280,7 +294,30 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn reghoekige prisma en ʼn silinder langs mekaar wys met dimensies geëtiketteer in blou en volume-formules in groen" />',
+        'ʼn Reghoekige prisma en ʼn silinder langs mekaar, met hul dimensies in blou geëtiketteer en hul volumeformules in groen.',
+
+      diagramSvg:
+        '<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="100,150 100,90 120,72 120,132" fill="#e5e7eb" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="30,90 100,90 120,72 50,72" fill="#f1f5f9" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="30,150 100,150 100,90 30,90" fill="#ffffff" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="50" y1="132" x2="120" y2="132" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4,3"/>' +
+        '<line x1="50" y1="132" x2="30" y2="150" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4,3"/>' +
+        '<line x1="50" y1="132" x2="50" y2="72" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4,3"/>' +
+        '<text x="65" y="164" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">l</text>' +
+        '<text x="133" y="145" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">b</text>' +
+        '<text x="15" y="122" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">h</text>' +
+        '<text x="65" y="182" font-size="11.5" font-weight="700" fill="#16a34a" text-anchor="middle">V = l × b × h</text>' +
+        '<ellipse cx="220" cy="80" rx="35" ry="12" fill="#f1f5f9" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="185" y1="80" x2="185" y2="150" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="255" y1="80" x2="255" y2="150" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<path d="M 185,150 A 35,12 0 0 0 255,150" fill="none" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="220" y1="80" x2="255" y2="80" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>' +
+        '<circle cx="220" cy="80" r="2.5" fill="#2563eb"/>' +
+        '<text x="237" y="74" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">r</text>' +
+        '<text x="167" y="118" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">h</text>' +
+        '<text x="220" y="182" font-size="11.5" font-weight="700" fill="#16a34a" text-anchor="middle">V = π × r² × h</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die volume van ʼn reghoekige prisma en ʼn silinder te bereken deur die formules met kleurgekodeerde stappe te gebruik" />',

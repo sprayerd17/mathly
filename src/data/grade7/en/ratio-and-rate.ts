@@ -97,8 +97,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to divide an amount in a given ratio and how to compare ratios using equivalent forms" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing R750 divided into 5 equal parts with 2 parts coloured blue for first share and 3 parts coloured red for second share" />',
+      diagramPlaceholder: 'Visual showing R750 divided into 5 equal parts with 2 parts coloured blue for first share and 3 parts coloured red for second share',
+      diagramSvg: '<svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg"><text x="95" y="15" font-size="11" text-anchor="middle" fill="#0f1f3d">Dividing R750 in the ratio 2:3</text><rect x="15" y="50" width="150" height="30" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="15" y="50" width="60" height="30" fill="#93c5fd"/><rect x="75" y="50" width="90" height="30" fill="#fca5a5"/><line x1="45" y1="50" x2="45" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="75" y1="50" x2="75" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><line x1="105" y1="50" x2="105" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="135" y1="50" x2="135" y2="80" stroke="#0f1f3d" stroke-width="1"/><text x="45" y="97" font-weight="700" font-size="11" text-anchor="middle" fill="#2563eb">R300 (2 parts)</text><text x="120" y="97" font-weight="700" font-size="11" text-anchor="middle" fill="#dc2626">R450 (3 parts)</text><text x="90" y="117" font-weight="700" font-size="12" text-anchor="middle" fill="#16a34a">Each part = R750 ÷ 5 = R150</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -181,8 +181,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to calculate speed using the distance-time formula and how to find and compare unit rates" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Speed triangle diagram showing Distance at the top and Speed and Time at the bottom with colour coded labels" />',
+      diagramPlaceholder: 'Speed triangle diagram showing Distance at the top and Speed and Time at the bottom with colour coded labels',
+      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><polygon points="110,20 20,140 200,140" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="80" x2="155" y2="80" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="140" x2="110" y2="80" stroke="#0f1f3d" stroke-width="2"/><text x="110" y="58" font-weight="700" font-size="22" text-anchor="middle" fill="#2563eb">D</text><text x="110" y="72" font-size="9" text-anchor="middle" fill="#2563eb">Distance</text><text x="75" y="115" font-weight="700" font-size="22" text-anchor="middle" fill="#16a34a">S</text><text x="75" y="130" font-size="9" text-anchor="middle" fill="#16a34a">Speed</text><text x="145" y="115" font-weight="700" font-size="22" text-anchor="middle" fill="#ea580c">T</text><text x="145" y="130" font-size="9" text-anchor="middle" fill="#ea580c">Time</text><text x="110" y="158" font-size="10" text-anchor="middle" fill="#374151">Cover the letter you want to find</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,8 +266,6 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to set up and solve a proportion using cross multiplication with real-life examples" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing two equal fractions side by side with arrows crossing to show cross multiplication highlighted in orange" />',
     },
   ],
 

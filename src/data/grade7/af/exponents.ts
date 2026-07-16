@@ -93,7 +93,24 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat vierkantsgetalle en kwadraatwortels verduidelik met visuele voorbeelde van kwadratering en die vind van die kwadraatwortel" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visuele rooster wat vierkantsgetalle van 1² tot 12² wys met kleurgekodeerde grondgetal in blou en eksponent in oranje en ooreenstemmende kwadraatwortel in groen" />',
+        'Visuele rooster wat vierkantsgetalle van 1² tot 6² as groeiende n × n roosters wys, met die grondgetal in blou, eksponent in oranje en waarde in groen',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="100" y="12" text-anchor="middle" font-size="10" font-weight="700" fill="#0f1f3d">Vierkantsgetalle: n × n roosters</text>` +
+        `<rect x="10" y="94" width="6" height="6" fill="rgba(37,99,235,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<rect x="26" y="88" width="12" height="12" fill="rgba(37,99,235,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<rect x="48" y="82" width="18" height="18" fill="rgba(37,99,235,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<rect x="76" y="76" width="24" height="24" fill="rgba(37,99,235,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<rect x="110" y="70" width="30" height="30" fill="rgba(37,99,235,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<rect x="150" y="64" width="36" height="36" fill="rgba(37,99,235,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<text x="13" y="112" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">1</tspan><tspan fill="#ea580c" font-weight="700">²</tspan><tspan fill="#16a34a" font-weight="700">=1</tspan></text>` +
+        `<text x="32" y="112" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">2</tspan><tspan fill="#ea580c" font-weight="700">²</tspan><tspan fill="#16a34a" font-weight="700">=4</tspan></text>` +
+        `<text x="57" y="112" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">3</tspan><tspan fill="#ea580c" font-weight="700">²</tspan><tspan fill="#16a34a" font-weight="700">=9</tspan></text>` +
+        `<text x="88" y="112" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">4</tspan><tspan fill="#ea580c" font-weight="700">²</tspan><tspan fill="#16a34a" font-weight="700">=16</tspan></text>` +
+        `<text x="125" y="112" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">5</tspan><tspan fill="#ea580c" font-weight="700">²</tspan><tspan fill="#16a34a" font-weight="700">=25</tspan></text>` +
+        `<text x="168" y="112" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">6</tspan><tspan fill="#ea580c" font-weight="700">²</tspan><tspan fill="#16a34a" font-weight="700">=36</tspan></text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -164,7 +181,28 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat kubusgetalle en kubuswortels verduidelik met visuele 3D-kubusvoorbeelde en kleurgekodeerde werk" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visuele diagram wat kubusgetalle van 1³ tot 5³ as 3D-kubusse wys met kleurgekodeerde grondgetal in blou, eksponent in oranje en kubuswortel in groen" />',
+        'Visuele diagram wat kubusgetalle van 1³ tot 4³ as groeiende 3D-kubusse wys, met die grondgetal in blou, eksponent in oranje en waarde in groen',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="100" y="12" text-anchor="middle" font-size="10" font-weight="700" fill="#0f1f3d">Kubusgetalle: n × n × n vaste vorms</text>` +
+        `<polygon points="10,90 20,90 20,100 10,100" fill="rgba(234,88,12,0.30)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="10,90 20,90 24,87 14,87" fill="rgba(234,88,12,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="20,90 24,87 24,97 20,100" fill="rgba(234,88,12,0.45)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="38,82 56,82 56,100 38,100" fill="rgba(234,88,12,0.30)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="38,82 56,82 63,77 45,77" fill="rgba(234,88,12,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="56,82 63,77 63,95 56,100" fill="rgba(234,88,12,0.45)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="77,74 103,74 103,100 77,100" fill="rgba(234,88,12,0.30)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="77,74 103,74 113,67 87,67" fill="rgba(234,88,12,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="103,74 113,67 113,93 103,100" fill="rgba(234,88,12,0.45)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="127,66 161,66 161,100 127,100" fill="rgba(234,88,12,0.30)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="127,66 161,66 174,57 140,57" fill="rgba(234,88,12,0.15)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<polygon points="161,66 174,57 174,91 161,100" fill="rgba(234,88,12,0.45)" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<text x="16" y="114" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">1</tspan><tspan fill="#ea580c" font-weight="700">³</tspan><tspan fill="#16a34a" font-weight="700">=1</tspan></text>` +
+        `<text x="49" y="114" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">2</tspan><tspan fill="#ea580c" font-weight="700">³</tspan><tspan fill="#16a34a" font-weight="700">=8</tspan></text>` +
+        `<text x="92" y="114" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">3</tspan><tspan fill="#ea580c" font-weight="700">³</tspan><tspan fill="#16a34a" font-weight="700">=27</tspan></text>` +
+        `<text x="148" y="114" text-anchor="middle" font-size="7"><tspan fill="#2563eb" font-weight="700">4</tspan><tspan fill="#ea580c" font-weight="700">³</tspan><tspan fill="#16a34a" font-weight="700">=64</tspan></text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -245,9 +283,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat eksponensiële notasie verduidelik en wys hoe om uitdrukkings met enige grondgetal en eksponent uit te brei en te evalueer, insluitend die mag-van-0- en mag-van-1-reëls" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die struktuur van eksponensiële notasie wys met grondgetal in blou, eksponent in oranje, uitgebreide herhaalde vermenigvuldiging in groen en finale antwoord in rooi" />',
     },
   ],
 

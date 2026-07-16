@@ -97,8 +97,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn bedrag in ʼn gegewe verhouding te verdeel en hoe om verhoudings te vergelyk deur ekwivalente vorme te gebruik" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visuele voorstelling wat R750 in 5 gelyke dele verdeel wys, met 2 dele in blou vir die eerste aandeel en 3 dele in rooi vir die tweede aandeel" />',
+      diagramPlaceholder: 'Visuele voorstelling wat R750 in 5 gelyke dele verdeel wys, met 2 dele in blou vir die eerste aandeel en 3 dele in rooi vir die tweede aandeel',
+      diagramSvg: '<svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg"><text x="95" y="15" font-size="11" text-anchor="middle" fill="#0f1f3d">R750 verdeel in die verhouding 2:3</text><rect x="15" y="50" width="150" height="30" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="15" y="50" width="60" height="30" fill="#93c5fd"/><rect x="75" y="50" width="90" height="30" fill="#fca5a5"/><line x1="45" y1="50" x2="45" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="75" y1="50" x2="75" y2="80" stroke="#0f1f3d" stroke-width="1.5"/><line x1="105" y1="50" x2="105" y2="80" stroke="#0f1f3d" stroke-width="1"/><line x1="135" y1="50" x2="135" y2="80" stroke="#0f1f3d" stroke-width="1"/><text x="45" y="97" font-weight="700" font-size="11" text-anchor="middle" fill="#2563eb">R300 (2 dele)</text><text x="120" y="97" font-weight="700" font-size="11" text-anchor="middle" fill="#dc2626">R450 (3 dele)</text><text x="90" y="117" font-weight="700" font-size="12" text-anchor="middle" fill="#16a34a">Elke deel = R750 ÷ 5 = R150</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -181,8 +181,8 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om spoed met die afstand-tyd-formule te bereken en hoe om eenheidskoerse te vind en te vergelyk" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Spoed-driehoek-diagram wat Afstand bo-aan wys en Spoed en Tyd onder-aan, met kleurgekodeerde merkers" />',
+      diagramPlaceholder: 'Spoed-driehoek-diagram wat Afstand bo-aan wys en Spoed en Tyd onder-aan, met kleurgekodeerde merkers',
+      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><polygon points="110,20 20,140 200,140" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="80" x2="155" y2="80" stroke="#0f1f3d" stroke-width="2"/><line x1="110" y1="140" x2="110" y2="80" stroke="#0f1f3d" stroke-width="2"/><text x="110" y="58" font-weight="700" font-size="22" text-anchor="middle" fill="#2563eb">A</text><text x="110" y="72" font-size="9" text-anchor="middle" fill="#2563eb">Afstand</text><text x="75" y="115" font-weight="700" font-size="22" text-anchor="middle" fill="#16a34a">S</text><text x="75" y="130" font-size="9" text-anchor="middle" fill="#16a34a">Spoed</text><text x="145" y="115" font-weight="700" font-size="22" text-anchor="middle" fill="#ea580c">T</text><text x="145" y="130" font-size="9" text-anchor="middle" fill="#ea580c">Tyd</text><text x="110" y="158" font-size="10" text-anchor="middle" fill="#374151">Bedek die letter wat jy soek</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,8 +266,6 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn proporsie op te stel en op te los met kruisvermenigvuldiging, met voorbeelde uit die alledaagse lewe" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat twee gelyke breuke langs mekaar wys met pyle wat kruis om kruisvermenigvuldiging in oranje uit te lig" />',
     },
   ],
 

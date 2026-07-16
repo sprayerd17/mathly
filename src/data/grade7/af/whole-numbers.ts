@@ -139,7 +139,41 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Plekwaardetabel wat 38 462 719 toon met die honderdduisende-syfer blou uitgelig, die tienduisende-syfer oranje uitgelig, en die afrondingsbesluit groen uitgelig" />',
+        'Plekwaardetabel wat 38 462 719 toon met die honderdduisende-syfer blou uitgelig, die tienduisende-syfer oranje uitgelig, en die afrondingsbesluit groen uitgelig',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 155" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="19" y="14" font-size="7" text-anchor="middle" fill="#6b7280">TM</text>` +
+        `<text x="49" y="14" font-size="7" text-anchor="middle" fill="#6b7280">M</text>` +
+        `<text x="79" y="14" font-size="7" text-anchor="middle" fill="#2563eb">HD</text>` +
+        `<text x="109" y="14" font-size="7" text-anchor="middle" fill="#ea580c">TD</text>` +
+        `<text x="139" y="14" font-size="7" text-anchor="middle" fill="#6b7280">D</text>` +
+        `<text x="169" y="14" font-size="7" text-anchor="middle" fill="#6b7280">H</text>` +
+        `<text x="199" y="14" font-size="7" text-anchor="middle" fill="#6b7280">T</text>` +
+        `<text x="229" y="14" font-size="7" text-anchor="middle" fill="#6b7280">E</text>` +
+        `<rect x="6" y="18" width="26" height="32" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="36" y="18" width="26" height="32" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="66" y="18" width="26" height="32" fill="rgba(37,99,235,0.15)" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<rect x="96" y="18" width="26" height="32" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<rect x="126" y="18" width="26" height="32" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="156" y="18" width="26" height="32" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="186" y="18" width="26" height="32" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="216" y="18" width="26" height="32" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="19" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">3</text>` +
+        `<text x="49" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">8</text>` +
+        `<text x="79" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">4</text>` +
+        `<text x="109" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">6</text>` +
+        `<text x="139" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="169" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="199" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">1</text>` +
+        `<text x="229" y="40" text-anchor="middle" font-size="15" font-weight="700" fill="#0f1f3d">9</text>` +
+        `<text x="94" y="66" text-anchor="middle" font-size="8" font-weight="700" fill="#2563eb">afrondingsyfer = 4</text>` +
+        `<text x="94" y="80" text-anchor="middle" font-size="8" font-weight="700" fill="#ea580c">syfer regs = 6 → rond op</text>` +
+        `<line x1="140" y1="86" x2="140" y2="104" stroke="#16a34a" stroke-width="2"/>` +
+        `<polygon points="140,110 134,100 146,100" fill="#16a34a"/>` +
+        `<text x="140" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#16a34a">38 500 000</text>` +
+        `<text x="140" y="144" text-anchor="middle" font-size="9" fill="#6b7280">afgerond na naaste honderdduisend</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om groot hele getalle tot in die miljarde te lees, te orden en af te rond met behulp van plekwaarde" />',
@@ -254,7 +288,20 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Kolomuitleg wat 24 580 vermenigvuldig met 12 toon met tussenstappe oranje uitgelig en die finale antwoord groen uitgelig" />',
+        'Kolomuitleg wat 24 580 vermenigvuldig met 12 toon met tussenstappe oranje uitgelig en die finale antwoord groen uitgelig',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 190" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:'Courier New',monospace;">` +
+        `<text x="200" y="28" text-anchor="end" font-size="18" font-weight="700" fill="#0f1f3d">24 580</text>` +
+        `<text x="200" y="54" text-anchor="end" font-size="18" font-weight="700" fill="#0f1f3d">×    12</text>` +
+        `<line x1="20" y1="64" x2="200" y2="64" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="200" y="90" text-anchor="end" font-size="16" font-weight="700" fill="#ea580c">49 160</text>` +
+        `<text x="150" y="102" text-anchor="end" font-size="9" fill="#ea580c">(24 580 × 2)</text>` +
+        `<text x="200" y="128" text-anchor="end" font-size="16" font-weight="700" fill="#ea580c">245 800</text>` +
+        `<text x="150" y="140" text-anchor="end" font-size="9" fill="#ea580c">(24 580 × 10)</text>` +
+        `<line x1="20" y1="148" x2="200" y2="148" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="200" y="176" text-anchor="end" font-size="20" font-weight="700" fill="#16a34a">294 960</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om optelling, aftrekking en vermenigvuldiging toe te pas op groot hele getalle, insluitend meerstap-probleme en skatting" />',
@@ -411,7 +458,33 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visuele diagram wat 8 in die kwadraat as ʼn vierkant met 8 rye en 8 kolomme gelyk aan 64 toon, en 3 in die kubus as ʼn kubus met 3 lae van elk 3 by 3 gelyk aan 27, met grondgetalle blou, eksponente oranje, en antwoorde groen" />',
+        'Visuele diagram wat 8 in die kwadraat as ʼn vierkant met 8 rye en 8 kolomme gelyk aan 64 toon, en 3 in die kubus as ʼn kubus met 3 lae van elk 3 by 3 gelyk aan 27, met grondgetalle blou, eksponente oranje, en antwoorde groen',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="47" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">8</text>` +
+        `<text x="6" y="61" font-size="12" font-weight="700" fill="#2563eb">8</text>` +
+        `<rect x="15" y="25" width="64" height="64" fill="rgba(37,99,235,0.08)" stroke="#0f1f3d" stroke-width="2"/>` +
+        Array.from({ length: 7 }, (_, i) => `<line x1="${15 + 8 * (i + 1)}" y1="25" x2="${15 + 8 * (i + 1)}" y2="89" stroke="#2563eb" stroke-width="0.75" stroke-opacity="0.4"/>`).join('') +
+        Array.from({ length: 7 }, (_, i) => `<line x1="15" y1="${25 + 8 * (i + 1)}" x2="79" y2="${25 + 8 * (i + 1)}" stroke="#2563eb" stroke-width="0.75" stroke-opacity="0.4"/>`).join('') +
+        `<text x="47" y="106" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">8² = 8 × 8 = 64</text>` +
+        `<rect x="140" y="70" width="36" height="36" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="152" y1="70" x2="152" y2="106" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="164" y1="70" x2="164" y2="106" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="140" y1="82" x2="176" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="140" y1="94" x2="176" y2="94" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<rect x="152" y="58" width="36" height="36" fill="rgba(234,88,12,0.14)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="164" y1="58" x2="164" y2="94" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="176" y1="58" x2="176" y2="94" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="152" y1="70" x2="188" y2="70" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="152" y1="82" x2="188" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<rect x="164" y="46" width="36" height="36" fill="rgba(234,88,12,0.22)" stroke="#ea580c" stroke-width="2"/>` +
+        `<line x1="176" y1="46" x2="176" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
+        `<line x1="188" y1="46" x2="188" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
+        `<line x1="164" y1="58" x2="200" y2="58" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
+        `<line x1="164" y1="70" x2="200" y2="70" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
+        `<text x="182" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">3³ = 3 × 3 × 3 = 27</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat eksponente, kwadrate, kubusse, vierkantswortels en kubuswortels verduidelik met visuele modelle en uitgewerkte voorbeelde" />',
