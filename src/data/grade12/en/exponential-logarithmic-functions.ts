@@ -611,6 +611,30 @@ export const topicData: TopicData = {
       answer: 'x² = 10⁴ = 10 000. x = ±100 (both values are valid since x² is always positive, regardless of the sign of x).',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard (problem-solving: work backwards to find an unknown base) ────
+    {
+      difficulty: 'Hard',
+      question: 'The equation logₖ x + logₖ(x + 3) = 1 has x = 2 as one of its solutions. Determine the value of k, and show that your answer satisfies the equation.',
+      answer: 'Use the product law: logₖ x + logₖ(x + 3) = logₖ(x(x + 3)) = 1. Substitute x = 2: logₖ(2 × 5) = logₖ 10 = 1. Convert to exponential form: k¹ = 10, so k = 10. Check: log₁₀ 2 + log₁₀ 5 ≈ 0.301 + 0.699 = 1 ✓, and k = 10 satisfies k > 0 and k ≠ 1.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard (problem-solving: prove an identity by combining laws) ───────
+    {
+      difficulty: 'Hard',
+      question: 'Show that log₂ x · logₓ 8 = 3 for all x > 0, x ≠ 1.',
+      answer: 'Use the change of base law with base 2: logₓ 8 = log₂ 8 / log₂ x = 3 / log₂ x, since log₂ 8 = 3 (because 2³ = 8). So log₂ x · logₓ 8 = log₂ x · (3 / log₂ x) = 3. This holds for every x > 0, x ≠ 1, since these are exactly the restrictions needed for logₓ 8 to be defined — in particular, x ≠ 1 guarantees log₂ x ≠ 0, so the division is always valid.',
+      checkMode: 'self',
+    },
+
+    // ── Q23 Hard (problem-solving: set up and solve a growth-model scenario) ──
+    {
+      difficulty: 'Hard',
+      question: 'A bacteria culture doubles in size every h hours. If n is the number of doublings that occur in t hours (so n = t / h), the population after time t is given by N = N₀ · 2ⁿ, where N₀ is the initial number of bacteria. A culture starting with 150 bacteria grows to 900 bacteria after 4 hours. Determine the doubling time h, correct to 3 decimal places.',
+      answer: 'First find n, the number of doublings, using N = N₀ · 2ⁿ: 900 = 150 · 2ⁿ, so 2ⁿ = 6. Taking logs: n = log 6 / log 2 (change of base) ≈ 0.778 / 0.301 ≈ 2.585. Since n = t / h and t = 4, the doubling time is h = t / n = 4 / 2.585 ≈ 1.548 hours.',
+      checkMode: 'self',
+    },
   ],
 
   practiceSets: [

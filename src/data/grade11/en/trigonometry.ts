@@ -230,6 +230,12 @@ export const topicData: TopicData = {
           answer: 'LHS = (1 − sin²θ) / cosθ\nStep 1: Apply the Pythagorean identity — 1 − sin²θ = cos²θ\n= cos²θ / cosθ\nStep 2: Simplify by cancelling one factor of cosθ\n= cosθ\n= RHS ✓',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Hard',
+          question: 'Given that 5cosθ + 3 = 0 and θ ∈ [180°; 360°], use the Pythagorean identity to determine the exact values of sinθ and tanθ without using a calculator. First decide which quadrant θ lies in and justify your choice.',
+          answer: 'Step 1: Solve for cosθ.\n5cosθ + 3 = 0 → cosθ = −3/5\n\nStep 2: Decide the quadrant.\nθ ∈ [180°; 360°] covers Quadrants 3 and 4. Since cosθ = −3/5 is negative, and cos is only negative in Quadrant 3 within this interval (cos is positive in Quadrant 4), θ must be in Quadrant 3.\n\nStep 3: Apply the Pythagorean identity.\nsin²θ + cos²θ = 1\nsin²θ = 1 − (−3/5)² = 1 − 9/25 = 16/25\nsinθ = ±4/5\n\nStep 4: Choose the correct sign.\nIn Quadrant 3, sin is negative, so sinθ = −4/5.\n\nStep 5: Find tanθ using the quotient identity.\ntanθ = sinθ/cosθ = (−4/5) ÷ (−3/5) = 4/3 ✓',
+          checkMode: 'self',
+        },
       ],
 
       diagramPlaceholder:
@@ -523,6 +529,12 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'Find the general solution of 2sinθ + 1 = 0. Then list all solutions in the interval −360° ≤ θ ≤ 360°.',
           answer: 'Step 1: Isolate sinθ.\n2sinθ = −1 → sinθ = −1/2\n\nStep 2: Reference angle = sin⁻¹(1/2) = 30°.\nsinθ is negative → solutions in Q3 and Q4.\n\nStep 3: General solution.\nθ = (180° + 30°) + 360°n = 210° + 360°n, n ∈ ℤ\nor θ = (360° − 30°) + 360°n = 330° + 360°n, n ∈ ℤ\n\nStep 4: Solutions in [−360°, 360°].\nFrom 210° + 360°n: n = 0 → 210°; n = −1 → −150°.\nFrom 330° + 360°n: n = 0 → 330°; n = −1 → −30°.\nSolutions: −150°, −30°, 210°, 330°.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Solve for θ, giving the general solution: 2sin²θ − sinθ − 1 = 0.',
+          answer: 'Let x = sinθ, so the equation becomes a quadratic: 2x² − x − 1 = 0.\n\nFactorise: (2x + 1)(x − 1) = 0\nSo x = −1/2 or x = 1, i.e. sinθ = −1/2 or sinθ = 1.\n\nCase 1: sinθ = −1/2\nReference angle = sin⁻¹(1/2) = 30°. sinθ is negative → Q3 and Q4.\nθ = 210° + 360°n or θ = 330° + 360°n, n ∈ ℤ\n\nCase 2: sinθ = 1\nθ = 90° + 360°n, n ∈ ℤ (only one family — the two usual cases coincide at the boundary of the sine graph)\n\nFull general solution: θ = 90° + 360°n or θ = 210° + 360°n or θ = 330° + 360°n, n ∈ ℤ ✓',
           checkMode: 'self',
         },
       ],

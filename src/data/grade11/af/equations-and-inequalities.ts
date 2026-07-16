@@ -473,6 +473,26 @@ export const topicData: TopicData = {
       answer: '(x + 4)(x − 2) > 35\nx² + 2x − 8 > 35\nx² + 2x − 43 > 0\nDeur die kwadratiese formule te gebruik: x = (−2 ± √(4 + 172)) / 2 = (−2 ± √176) / 2 = −1 ± √44.\nKritieke waardes: x ≈ −7,63 of x ≈ 5,63.\nAangesien x > 2, is die oplossing x > −1 + √44 (ongeveer x > 5,63).',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard — problem-solving: work backwards from equal-roots condition to find k ──
+    {
+      difficulty: 'Hard',
+      question: 'Die vergelyking x² − kx + 9 = 0 het reële, gelyke wortels. Bepaal die waarde(s) van k.',
+      answer: 'k = 6 of k = −6',
+      checkMode: 'auto',
+      correctAnswers: ['k=6 or k=-6', 'k = 6 or k = -6', 'k=-6 or k=6', 'k = -6 or k = 6', 'k=±6', 'k = ±6', '6 or -6', '-6 or 6'],
+      explanation: 'Vir reële, gelyke wortels moet die diskriminant gelyk wees aan nul: b² − 4ac = 0.\nHier is a = 1, b = −k, c = 9, dus (−k)² − 4(1)(9) = 0.\nk² − 36 = 0 → k² = 36 → k = 6 of k = −6.\nKontroleer: k = 6 gee x² − 6x + 9 = (x − 3)² = 0 (een herhaalde wortel); k = −6 gee x² + 6x + 9 = (x + 3)² = 0 (een herhaalde wortel) ✓',
+    },
+
+    // ── Q22 Hard — problem-solving: synthesise systems + discriminant to find range of k ──
+    {
+      difficulty: 'Hard',
+      question: 'Vir watter waarde(s) van k sal die lyn y = x + k nie die parabool y = x² + 3x + 5 sny nie?',
+      answer: 'k < 4',
+      checkMode: 'auto',
+      correctAnswers: ['k<4', 'k < 4'],
+      explanation: 'Vervang die lyn in die parabool: x + k = x² + 3x + 5.\nHerrangskik na standaardvorm: x² + 2x + (5 − k) = 0.\nSodat die lyn en die parabool nie sny nie, moet hierdie vergelyking geen reële oplossings hê nie, dus moet die diskriminant negatief wees: b² − 4ac < 0.\nHier is a = 1, b = 2, c = 5 − k, dus 4 − 4(5 − k) < 0 → 4 − 20 + 4k < 0 → 4k − 16 < 0.\nOplossing: k < 4 ✓',
+    },
   ],
 
   resultsConfig: {

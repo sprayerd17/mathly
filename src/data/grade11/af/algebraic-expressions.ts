@@ -242,6 +242,17 @@ export const topicData: TopicData = {
           answer: 'Ja — in die vorm a(x−p)²+q is die draaipunt altyd by (p, q), wat hier (3, 7) is.',
           checkMode: 'self',
         },
+
+        // ── Q8b Hard (probleemoplossing) — herbou vergelyking uit draaipunt + ekstra punt ──
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Parabool in die vorm y = a(x−p)²+q het ʼn maksimumwaarde van 20, wat voorkom by x = 3. Die parabool gaan ook deur die punt (0, 2). Bepaal die vergelyking van die parabool in die vorm y = ax²+bx+c.',
+          answer: 'y = −2x²+12x+2',
+          checkMode: 'auto',
+          correctAnswer: '−2x²+12x+2',
+          correctAnswers: ['−2x²+12x+2', '-2x²+12x+2', '−2x^2+12x+2', '-2x^2+12x+2', 'y=−2x²+12x+2', 'y = −2x²+12x+2'],
+          explanation: 'Die draaipunt is (p, q) = (3, 20), en dit is ʼn maksimum, dus a<0: y = a(x−3)²+20.\nGebruik die punt (0, 2): 2 = a(0−3)²+20 = 9a+20, dus 9a = −18 en a = −2 (stem ooreen met a<0).\nDus y = −2(x−3)²+20 = −2(x²−6x+9)+20 = −2x²+12x−18+20 = −2x²+12x+2 ✓',
+        },
       ],
 
       diagramPlaceholder:
@@ -442,6 +453,17 @@ export const topicData: TopicData = {
           checkMode: 'auto',
           correctAnswer: '2/x',
           explanation: 'Faktoriseer teller: 2x+6 = 2(x+3).\nFaktoriseer noemer: x²+3x = x(x+3).\nKanselleer (x+3): 2/x, waar x ≠ 0 en x ≠ −3 ✓',
+        },
+
+        // ── Q20b Hard (probleemoplossing) — werk terugwaarts van ʼn gekombineerde resultaat om ʼn onbekende parameter te vind ──
+        {
+          difficulty: 'Hard',
+          question: 'Die som 3/(x+2) + k/(x−5) vereenvoudig na (5x−11)/[(x+2)(x−5)]. Bepaal die waarde van k.',
+          answer: 'k = 2',
+          checkMode: 'auto',
+          correctAnswer: '2',
+          correctAnswers: ['2', 'k=2', 'k = 2'],
+          explanation: 'Kombineer die linkerkant oor die gemeenskaplike noemer: [3(x−5) + k(x+2)] / [(x+2)(x−5)] = [(3+k)x + (2k−15)] / [(x+2)(x−5)].\nVergelyk dit met die gegewe resultaat (5x−11)/[(x+2)(x−5)]: die x-koëffisiënt gee 3+k = 5, dus k = 2.\nGaan die konstante term na: 2(2)−15 = −11, wat ooreenstem ✓. Dus k = 2 ✓',
         },
       ],
 

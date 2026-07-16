@@ -436,6 +436,22 @@ export const topicData: TopicData = {
       answer: 'W(hart eerste) = 13/52. W(hart tweede) = 12/51. Gekombineer = 13/52 × 12/51 = 156/2652 = 1/17.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard — problem-solving: Venn/addition rule with an unknown overlap ─
+    {
+      difficulty: 'Hard',
+      question: 'Gebeurtenisse A en B is sodanig dat W(A) = 0,4. Dit is bekend dat W(A en B) een derde van W(B) is, d.w.s. W(A en B) = ⅓ × W(B). As W(A of B) = 0,64, stel ʼn vergelyking in W(B) op, los dit op, en bepaal dus W(A en B).',
+      answer: 'Laat W(B) = y, sodat W(A en B) = y/3. Optellingsreël: W(A of B) = W(A) + W(B) − W(A en B), dus 0,64 = 0,4 + y − y/3 = 0,4 + (2/3)y. Los op: (2/3)y = 0,24, dus y = 0,36. Daarom is W(B) = 0,36 en W(A en B) = 0,36 ÷ 3 = 0,12. Toets: 0,4 + 0,36 − 0,12 = 0,64 ✓.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard — problem-solving: tree diagram + addition rule, two branches ─
+    {
+      difficulty: 'Hard',
+      question: 'ʼn Boks bevat 5 rooi penne en 3 blou penne. Naledi trek twee penne uit die boks, een na die ander, sonder vervanging. Teken ʼn boomdiagram en gebruik dit om die waarskynlikheid te vind dat die twee penne wat getrek word, van verskillende kleure is.',
+      answer: 'Daar is twee takke wat verskillende kleure gee: rooi-dan-blou en blou-dan-rooi. W(rooi dan blou) = 5/8 × 3/7 = 15/56. W(blou dan rooi) = 3/8 × 5/7 = 15/56. Hierdie twee uitkomste kan nie albei gebeur nie, so tel hulle bymekaar: W(verskillende kleure) = 15/56 + 15/56 = 30/56 = 15/28.',
+      checkMode: 'self',
+    },
   ],
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -588,7 +604,7 @@ export const topicData: TopicData = {
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 22,
     messages: [
       { minPercent: 100, message: 'Uitstekend! Jy het waarskynlikheid onder die knie.' },
       { minPercent: 75, message: 'Goeie werk!' },

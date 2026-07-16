@@ -560,6 +560,14 @@ export const topicData: TopicData = {
           answer: 'Substitute y=x+2: x²+(x+2)²=2 → x²+x²+4x+4=2 → 2x²+4x+2=0 → x²+2x+1=0 → (x+1)²=0.\nRepeated root x=−1 confirms tangency. y=−1+2=1. Point of tangency: (−1, 1).',
           checkMode: 'self',
         },
+
+        // ── Q21 Hard — find an unknown parameter using the tangency condition ──
+        {
+          difficulty: 'Hard',
+          question: 'Determine the value(s) of k for which the line y = 2x + k is a tangent to the circle x² + y² = 5.',
+          answer: 'Substitute y = 2x + k into x² + y² = 5:\nx² + (2x + k)² = 5\nx² + 4x² + 4kx + k² = 5\n5x² + 4kx + (k² − 5) = 0\n\nFor the line to be a tangent, this quadratic must have a repeated root, so the discriminant must equal zero:\nΔ = (4k)² − 4(5)(k² − 5) = 0\n16k² − 20k² + 100 = 0\n−4k² + 100 = 0\nk² = 25\nk = ±5\n\nCheck k = 5: 5x² + 20x + 20 = 0 → x² + 4x + 4 = 0 → (x+2)² = 0 ✓ (repeated root at x = −2)\nCheck k = −5: 5x² − 20x + 20 = 0 → x² − 4x + 4 = 0 → (x−2)² = 0 ✓ (repeated root at x = 2)\n\nSo k = 5 or k = −5.',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:

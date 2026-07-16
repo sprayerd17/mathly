@@ -651,6 +651,22 @@ export const topicData: TopicData = {
       answer: 'Direct sum: 1+2+3+4+5 = 15. Formula: 5(6)/2 = 30/2 = 15. Both methods agree, confirming the formula.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard ─────────────────────────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'An arithmetic sequence has first term a = 3. The 1st, 2nd and 4th terms of this sequence (T₁, T₂, T₄) form the first three terms of a geometric sequence. Determine the value(s) of the common difference d, and identify which value gives a genuine (non-trivial) geometric sequence.',
+      answer: 'T₁ = a = 3, T₂ = a + d = 3 + d, T₄ = a + 3d = 3 + 3d. For these to form a geometric sequence, T₂² = T₁ × T₄: (3 + d)² = 3(3 + 3d) → 9 + 6d + d² = 9 + 9d → d² − 3d = 0 → d(d − 3) = 0 → d = 0 or d = 3. d = 0 gives the trivial constant sequence 3, 3, 3 (not a meaningful geometric sequence), so d = 3 is the answer that works: T₁ = 3, T₂ = 6, T₄ = 12, with common ratio r = 2.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard ─────────────────────────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'A geometric series has a sum to infinity of 12, and its second term T₂ = 3. Determine the common ratio r and the first term a.',
+      answer: 'S∞ = a/(1 − r) = 12, so a = 12(1 − r). Also T₂ = ar = 3, so 12(1 − r)r = 3 → 12r − 12r² = 3 → 12r² − 12r + 3 = 0 → 4r² − 4r + 1 = 0 → (2r − 1)² = 0 → r = 0.5. Then a = 12(1 − 0.5) = 6. Check: T₂ = 6 × 0.5 = 3 ✓, and −1 < 0.5 < 1 so S∞ exists.',
+      checkMode: 'self',
+    },
   ],
 
   practiceSets: [

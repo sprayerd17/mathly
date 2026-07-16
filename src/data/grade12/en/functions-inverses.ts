@@ -566,6 +566,42 @@ export const topicData: TopicData = {
       answer: 'Yes — this is the defining property of an inverse function: if f maps 2 to 7, then by definition f⁻¹ must map 7 back to 2, no further calculation required.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard (Problem-solving) — work backwards from two given conditions to find a and q of a restricted quadratic, hence f⁻¹ ──
+    {
+      difficulty: 'Hard',
+      question: 'A restricted quadratic function is defined as f(x) = ax² + q for x ≥ 0. It is given that the point (3, 3) lies on both f and f⁻¹, and that f(1) = −1. Determine the values of a and q, and hence find f⁻¹(x).',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        {
+          label: 'a) a =',
+          correctAnswer: '1/2',
+          correctAnswers: ['1/2', '0.5', '0,5'],
+          explanation: 'Since (3, 3) lies on f, f(3) = 3: a(3)² + q = 3 → 9a + q = 3. We are also given f(1) = −1: a(1)² + q = −1 → a + q = −1. Subtracting the second equation from the first: 8a = 4, so a = 1/2.',
+        },
+        {
+          label: 'b) q =',
+          correctAnswer: '-3/2',
+          correctAnswers: ['-3/2', '-1.5', '-1,5'],
+          explanation: 'Substitute a = 1/2 into a + q = −1: 1/2 + q = −1 → q = −3/2.',
+        },
+        {
+          label: 'c) f⁻¹(x) =',
+          correctAnswer: '√(2x+3)',
+          correctAnswers: ['√(2x+3)', 'sqrt(2x+3)', '√(2x + 3)'],
+          explanation: 'With a = 1/2 and q = −3/2, f(x) = ½x² − 3/2 for x ≥ 0. Swap x and y: x = ½y² − 3/2 → x + 3/2 = ½y² → y² = 2x + 3 → y = ±√(2x + 3). Since the domain of f was x ≥ 0, the range of f⁻¹ must satisfy y ≥ 0, so take the positive root: f⁻¹(x) = √(2x + 3). Check: f⁻¹(3) = √9 = 3, confirming (3, 3) also lies on f⁻¹. ✓',
+        },
+      ],
+    },
+
+    // ── Q22 Hard (Problem-solving) — prove f and f⁻¹ meet on y = x, then use that shortcut instead of the routine swap-and-solve method ──
+    {
+      difficulty: 'Hard',
+      question: 'Given f(x) = 3x − 4, show that any point of intersection of f and f⁻¹ must lie on the line y = x, and use this fact to find the point of intersection WITHOUT first finding the equation of f⁻¹.',
+      answer: 'Suppose (x₀, y₀) is a point where the graphs of f and f⁻¹ intersect, so y₀ = f(x₀) and y₀ = f⁻¹(x₀). Applying f to both sides of y₀ = f⁻¹(x₀) gives f(y₀) = x₀. So f(x₀) = y₀ and f(y₀) = x₀. Since f(x) = 3x − 4 is strictly increasing (gradient 3 > 0), if x₀ were less than y₀ then f(x₀) < f(y₀), i.e. y₀ < x₀ — a contradiction; likewise x₀ > y₀ leads to a contradiction. So x₀ = y₀, meaning the intersection point lies on y = x. Since the point lies on both y = x and on f, substitute y = x into f(x) = 3x − 4: x = 3x − 4 → 4 = 2x → x = 2. The point of intersection is (2, 2). Check: f(2) = 3(2) − 4 = 2 ✓, and f⁻¹(x) = (x + 4)/3, so f⁻¹(2) = 6/3 = 2 ✓.',
+      checkMode: 'self',
+    },
   ],
 
   resultsConfig: {

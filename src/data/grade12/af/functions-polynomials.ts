@@ -484,7 +484,15 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
-      openQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Hard',
+          question: 'Zanele wil x³ − 9x = 0 oplos. Toon twee verskillende maniere om dit op te los — (1) deur die Faktorstelling te gebruik om ʼn wortel te vind deur waardes te toets, en dan te deel; en (2) deur eers ʼn gemeenskaplike faktor uit te haal. Verduidelik dan watter metode vir hierdie spesifieke vergelyking doeltreffender is, en waarom.',
+          answer: 'Metode 1 (Faktorstelling + deling): toets x=1: 1−9=−8≠0. Toets x=−1: −1+9=8≠0. Toets x=2: 8−18=−10≠0. Toets x=−2: −8+18=10≠0. Toets x=3: 27−27=0 ✓, dus is (x−3) ʼn faktor.\nDeel x³−9x deur (x−3): x³÷x=x², x²(x−3)=x³−3x², trek af: 3x²−9x. 3x²÷x=3x, 3x(x−3)=3x²−9x, trek af: 0. Kwosiënt: x²+3x=x(x+3).\nDus x³−9x=(x−3)(x)(x+3)=0, wat x=3, x=0, x=−3 gee.\n\nMetode 2 (eers gemeenskaplike faktor): x³−9x=x(x²−9)=x(x−3)(x+3)=0, wat direk x=0, x=3, x=−3 gee.\n\nMetode 2 is hier doeltreffender: x³−9x het reeds ʼn gemeenskaplike faktor van x wat dadelik raakgesien kan word, terwyl die Faktorstelling-benadering vier onsuksesvolle toetswaardes (x=1,−1,2,−2) benodig voordat die werkende wortel x=3 gevind word, en dan steeds ʼn volledige deling verg. Kyk altyd eers vir ʼn gemeenskaplike faktor voordat jy die Faktorstelling gebruik.',
+          checkMode: 'self',
+        },
+      ],
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke vergelyking op te los deur dit volledig te faktoriseer met die Faktorstelling en langdeling, en dan die nul-produk-eienskap toe te pas om al drie wortels te vind" />',
@@ -532,7 +540,29 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
-      openQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Derdegraadse funksie f(x) = ax³ + bx² + cx + d raak die x-as by x = 1 en sny die x-as by x = −4. Gegee dat f(0) = 4:\n\na) Verduidelik waarom f(x) geskryf kan word as f(x) = a(x−1)²(x+4), en bepaal dan die waarde van a.\nb) Bepaal dus die waardes van b, c en d.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Waarde van a',
+              correctAnswer: 'a=1',
+              correctAnswers: ['a=1', '1'],
+              explanation: 'Om die x-as by x=1 te raak beteken x=1 is ʼn herhaalde (dubbele) wortel, dus is (x−1)² ʼn faktor. Om die x-as by x=−4 te sny beteken x=−4 is ʼn enkele wortel, dus is (x+4) ʼn faktor. Dus is f(x) = a(x−1)²(x+4) vir ʼn sekere konstante a.\nVervang x=0: f(0) = a(0−1)²(0+4) = a(1)(4) = 4a.\nAangesien f(0) = 4: 4a = 4, dus a = 1 ✓',
+            },
+            {
+              label: 'b) Waardes van b, c en d',
+              correctAnswer: 'b=2, c=-7, d=4',
+              correctAnswers: ['b=2, c=-7, d=4', 'b=2 c=-7 d=4'],
+              explanation: 'Met a=1: f(x) = (x−1)²(x+4) = (x²−2x+1)(x+4) = x³+4x²−2x²−8x+x+4 = x³+2x²−7x+4.\nDus b=2, c=−7, d=4 ✓',
+            },
+          ],
+        },
+      ],
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke grafiek te skets deur die x-afsnitte uit die gefaktoriseerde vorm te vind, die y-afsnit deur x=0 te vervang, en die rigting van die kurwe uit die teken van die leidende koëffisiënt" />',

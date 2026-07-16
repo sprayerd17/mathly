@@ -371,6 +371,90 @@ export const topicData: TopicData = {
       videoPlaceholder:
         'Kort video wat wys hoe om die tydsduur tussen twee tye te bereken en ʼn kalender te gebruik om dae tussen datums te tel',
     },
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 5 — DIE GESKIEDENIS VAN TYD
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'history-of-time',
+      title: 'Die Geskiedenis van Tyd',
+      icon: '📜',
+      explanation: `
+<p style="margin-bottom:14px;">Horlosies en oorlosies het nie altyd bestaan nie! Lank gelede het mense steeds nodig gehad om ongeveer te weet hoe laat dit is — om te weet wanneer om gewasse te plant, mense te ontmoet, of ʼn reis te begin. Hulle het slim maniere gevind om tyd te meet deur die <strong style="color:#ea580c;">son</strong>, <strong style="color:#1e40af;">water</strong> en <strong style="color:#16a34a;">sand</strong> te gebruik.</p>
+
+<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#ea580c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">☀️ Sonwysers</div>
+  <p style="font-size:15px;color:#7c2d12;margin-bottom:8px;">ʼn <strong>Sonwyser</strong> is ʼn plat oppervlak met ʼn stok of wyser (genoem ʼn <strong>gnomon</strong>) wat regop in die middel staan. Soos die son gedurende die dag oor die lug beweeg, beweeg die <strong>skaduwee</strong> van die wyser ook, en die posisie daarvan wys ongeveer hoe laat dit is.</p>
+  <p style="font-size:14px;color:#9a3412;">Sonwysers is duisende jare gelede deur die antieke Egiptenare gebruik. Die groot probleem met ʼn sonwyser? Dit werk net wanneer die <strong>son skyn</strong> — nutteloos in die nag of op ʼn bewolkte dag!</p>
+</div>
+
+<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">💧 Waterhorlosies</div>
+  <p style="font-size:15px;color:#1e3a8a;margin-bottom:8px;">ʼn <strong>Waterhorlosie</strong> (ook genoem ʼn <em>clepsydra</em>) meet tyd deur <strong>water</strong> teen ʼn konstante tempo van een houer na ʼn ander te laat <strong>drup</strong>. Lyne wat op die houer gemerk is, het gewys hoeveel tyd verloop het soos die waterviak gestyg of gedaal het.</p>
+  <p style="font-size:14px;color:#1e40af;">Anders as ʼn sonwyser, kon ʼn waterhorlosie <strong>binnenshuis, in die nag, of op ʼn bewolkte dag</strong> gebruik word, want dit het glad nie op sonlig staatgemaak nie.</p>
+</div>
+
+<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">⏳ Sandlopers</div>
+  <p style="font-size:15px;color:#14532d;margin-bottom:8px;">ʼn <strong>Sandloper</strong> het twee glaskamers wat deur ʼn nou nekkie verbind is. <strong>Sand</strong> loop stadig van die boonste kamer na die onderste een, en wanneer dit almal deurgeloop het, het ʼn vaste hoeveelheid tyd verbygegaan (dikwels presies een uur).</p>
+  <p style="font-size:14px;color:#15803d;">Matrose op skepe het sandlopers besonder nuttig gevind — anders as ʼn sonwyser, werk ʼn sandloper steeds konstant, maak nie saak hoeveel die skip op die golwe wieg nie!</p>
+</div>
+
+<div style="background:#fef9c3;border:1.5px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:16px;">
+  <span style="font-size:13px;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:.05em;">🕯️ Kershorlosies</span>
+  <div style="color:#78350f;font-size:15px;margin-top:8px;">Sommige kulture het kerse met eweredig gespasieerde lyne gemerk. Soos die kers teen ʼn konstante tempo afgebrand het, het dit elke lyn na ongeveer dieselfde hoeveelheid tyd verbygesteek — ʼn eenvoudige manier om die verbygaan van ure te meet, selfs na donker.</div>
+</div>
+
+<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">📅 Vroeë Kalenders</div>
+  <p style="font-size:15px;color:#1e3a8a;">Lank voordat gedrukte kalenders bestaan het, het mense langer tydperke opgespoor deur die <strong>maan</strong> en die <strong>son</strong> dop te hou. Baie vroeë kalenders het die veranderende vorm van die maan van nag tot nag gevolg. Die antieke Egiptenare het een van die eerste kalenders ontwikkel wat op die son en die jaarlikse oorstroming van die Nylrivier gebaseer was, om hulle te help weet wanneer om hulle gewasse te plant en te oes.</p>
+</div>
+
+<div style="background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px 18px;">
+  <div style="font-size:13px;font-weight:700;color:#0f1f3d;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">Waarom moderne horlosies so nuttig is</div>
+  <div style="color:#374151;font-size:15px;">Anders as ʼn sonwyser, waterhorlosie, sandloper of kers, werk ʼn moderne horlosie <strong>dag en nag</strong>, in <strong>enige weer</strong>, en hou <strong>presies</strong> die tyd sonder dat iemand dit hoef dop te hou, te vul, of om te draai!</div>
+</div>
+`,
+      workedExamples: [
+        {
+          question:
+            'Voordat horlosies uitgevind is, hoe het die antieke Egiptenare die son gebruik om tyd gedurende die dag te meet?',
+          steps: [
+            'Hulle het opgemerk dat die skaduwee van ʼn stok of pilaar in ʼn voorspelbare patroon beweeg vanaf sonop tot sonsondergang.',
+            'Hulle het merke rondom die stok geplaas, wat ʼn sonwyser gevorm het, om verskillende tye van die dag te wys.',
+            'Deur te lees waar die skaduwee tussen die merke val, kon mense ongeveer sê hoe laat dit is.',
+          ],
+          answer:
+            'Hulle het ʼn sonwyser gebruik — ʼn wyser wat ʼn bewegende skaduwee gooi soos die son oor die lug beweeg, wat ongeveer wys hoe laat dit is.',
+        },
+        {
+          question:
+            'Matrose op ou skepe moes tyd meet, maar ʼn sonwyser was nie baie nuttig vir hulle op see nie. Hoekom nie, en wat het hulle eerder gebruik?',
+          steps: [
+            'ʼn Sonwyser moet stilstaan en reguit na die son wys om te werk — moeilik om te doen op ʼn skip wat op die golwe wieg.',
+            'ʼn Sandloper werk steeds dieselfde, maak nie saak hoe die skip beweeg nie, want swaartekrag trek die sand teen ʼn konstante tempo af.',
+            'Matrose het die sandloper elke keer omgedraai wanneer die sand klaar deurgeloop het, om die ure aan te hou tel.',
+          ],
+          answer:
+            'ʼn Sonwyser werk nie goed op ʼn bewegende, wiegende skip nie. Matrose het eerder ʼn sandloper gebruik, wat ʼn vaste hoeveelheid tyd meet deur vallende sand, ongeag die skip se beweging.',
+        },
+        {
+          question: 'Waarom word ʼn waterhorlosie as ʼn verbetering op ʼn sonwyser beskou?',
+          steps: [
+            'ʼn Sonwyser werk net wanneer die son skyn en sigbaar in die lug is.',
+            'ʼn Waterhorlosie gebruik water wat teen ʼn konstante tempo van een houer na ʼn ander drup, met lyne gemerk om die verlope tyd te wys.',
+            'Dit beteken mense kon tyd binnenshuis, in die nag, of op ʼn bewolkte dag meet — situasies waar ʼn sonwyser nutteloos sou wees.',
+          ],
+          answer:
+            'ʼn Waterhorlosie is nie afhanklik van sonlig nie, dus kan dit binnenshuis, in die nag, en op bewolkte dae gebruik word, anders as ʼn sonwyser.',
+        },
+      ],
+      practiceQuestions: [],
+      openQuestions: [],
+      diagramPlaceholder:
+        'ʼn Eenvoudige tydlyn wat ʼn sonwyser, ʼn waterhorlosie, ʼn sandloper, ʼn kershorlosie en ʼn moderne digitale horlosie in volgorde wys',
+      videoPlaceholder:
+        'Kort video wat wys hoe antieke mense tyd gemeet het deur sonwysers, waterhorlosies en sandlopers te gebruik voordat moderne horlosies bestaan het',
+    },
   ],
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
@@ -405,11 +489,15 @@ export const topicData: TopicData = {
         // Afdeling F — Meerstap-redenering en regverdiging (18-19, Moeilik)
         { difficulty: 'Hard', question: 'Sipho word om 6:15 vm. wakker. Dit vat hom 40 minute om reg te maak, en dan nog 15 minute om na die bushalte te loop. Hoe laat kom hy by die bushalte aan?', answer: '7:10 vm', checkMode: 'auto', correctAnswer: '7:10vm', correctAnswers: ['7:10vm', '7:10 vm', '710vm'], explanation: 'Regmaak: 6:15 vm. + 40 minute = 6:55 vm. Loop: 6:55 vm. + 15 minute = 7:10 vm.' },
         { difficulty: 'Hard', question: 'Verduidelik hoe jy die eindtyd van ʼn aktiwiteit sou uitwerk as jy die begintyd en die tydsduur gegee word, deur ʼn stap-vir-stap-metode te gebruik.', answer: 'Tel eers die volle ure van die tydsduur by die begintyd. Tel dan die oorblywende minute by daardie resultaat. As die minute oor 60 gaan, dra 1 uur oor en hou die oorblywende minute. Onthou om te kyk of die antwoord van vm. na nm. oorgaan (of oor middernag), en pas dienooreenkomstig aan.', checkMode: 'self' },
+
+        // Afdeling G — Die Geskiedenis van Tyd (20-21, Maklik-Medium)
+        { difficulty: 'Easy', question: 'Voordat meganiese horlosies bestaan het, watter antieke tydmeetinstrument het die skaduwee van ʼn stok of pilaar gebruik om die tyd van die dag te wys?', answer: 'ʼn Sonwyser', checkMode: 'auto', correctAnswer: 'sonwyser', correctAnswers: ['sonwyser', 'ʼn sonwyser', 'n sonwyser'], explanation: 'ʼn Sonwyser gebruik ʼn wyser (gnomon) wat ʼn bewegende skaduwee gooi soos die son oor die lug beweeg, wat ongeveer wys hoe laat dit is.' },
+        { difficulty: 'Medium', question: 'Waarom was ʼn sandloper nuttig vir matrose op ʼn bewegende skip, terwyl ʼn sonwyser dit nie was nie?', answer: 'ʼn Sandloper werk deur swaartekrag wat sand teen ʼn konstante tempo aftrek, maak nie saak hoe die skip wieg nie — dit is nie afhanklik daarvan om die son duidelik te sien nie soos ʼn sonwyser wel is.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue tyd vertel en tydprobleme oplos.' },
-        { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae na en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Kyk weer na die voorbeelde en probeer weer.' },
+        { minScore: 22, message: 'Uitstekend! Jy kan met selfvertroue tyd vertel en tydprobleme oplos.' },
+        { minScore: 17, message: 'Goeie werk! Gaan enige gemiste vrae na en probeer weer.' },
+        { minScore: 11, message: 'Goeie poging! Kyk weer na die voorbeelde en probeer weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -446,11 +534,15 @@ export const topicData: TopicData = {
         // Afdeling F — Meerstap-redenering en regverdiging (18-19, Moeilik)
         { difficulty: 'Hard', question: 'ʼn Sportdag-rooster begin met ʼn 400 m-wedloop om 9:20 vm. wat 15 minute duur, gevolg deur ʼn 25-minute-pouse, en dan verspringproewe wat 50 minute duur. Hoe laat eindig die verspringproewe?', answer: '10:50 vm', checkMode: 'auto', correctAnswer: '10:50vm', correctAnswers: ['10:50vm', '10:50 vm', '1050vm'], explanation: 'Totale tyd vanaf die begin van die wedloop tot die einde van die verspring = 15 + 25 + 50 = 90 minute = 1 uur 30 minute. 9:20 vm. + 1 uur 30 minute = 10:50 vm.' },
         { difficulty: 'Hard', question: 'Verduidelik waarom om alle tye na minute (of ure) om te skakel voordat jy optel of aftrek, jou kan help om foute te vermy wanneer jy meervoudige-stap-tydprobleme oplos.', answer: 'Om alles na dieselfde eenheid (soos minute) om te skakel, beteken jy kan die getalle direk optel of aftrek, net soos gewone getalle, sonder om oor ure en minute apart te bekommer. Sodra jy die totaal in een eenheid het, skakel jy dit aan die einde terug na ure en minute om, wat die kans op ʼn fout tydens die berekening verminder.', checkMode: 'self' },
+
+        // Afdeling G — Die Geskiedenis van Tyd (20-21, Maklik-Medium)
+        { difficulty: 'Easy', question: 'Watter antieke tydmeetinstrument het water gebruik wat teen ʼn konstante tempo van een houer na ʼn ander gedrup het om die verbygaan van tyd te wys?', answer: 'ʼn Waterhorlosie', checkMode: 'auto', correctAnswer: 'waterhorlosie', correctAnswers: ['waterhorlosie', 'ʼn waterhorlosie', 'n waterhorlosie', 'clepsydra'], explanation: 'ʼn Waterhorlosie (ook genoem ʼn clepsydra) meet tyd deur water teen ʼn konstante tempo te laat drup, met gemerkte lyne wat wys hoeveel tyd verloop het.' },
+        { difficulty: 'Medium', question: 'Noem een voordeel wat ʼn waterhorlosie bo ʼn sonwyser gehad het.', answer: 'ʼn Waterhorlosie kon binnenshuis, in die nag, of op ʼn bewolkte dag gebruik word, want dit het nie sonlig nodig gehad om te werk nie — ʼn sonwyser werk net in direkte sonlig.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue verlope tyd en tydsduur bereken.' },
-        { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae na en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Kyk weer na die tydsduurberekening-voorbeelde.' },
+        { minScore: 22, message: 'Uitstekend! Jy kan met selfvertroue verlope tyd en tydsduur bereken.' },
+        { minScore: 17, message: 'Goeie werk! Gaan enige gemiste vrae na en probeer weer.' },
+        { minScore: 11, message: 'Goeie poging! Kyk weer na die tydsduurberekening-voorbeelde.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -487,11 +579,15 @@ export const topicData: TopicData = {
         // Afdeling F — Meerstap-redenering en regverdiging (18-19, Moeilik)
         { difficulty: 'Hard', question: 'ʼn Boer begin om 5:15 vm. om koeie te melk. Dit vat 1 uur 50 minute. Dan, na ʼn 40-minute-ontbytpouse, begin hy die diere voer, wat nog 1 uur 10 minute vat. Hoe laat maak hy klaar om die diere te voer?', answer: '8:55 vm', checkMode: 'auto', correctAnswer: '8:55vm', correctAnswers: ['8:55vm', '8:55 vm', '855vm'], explanation: 'Melk: 5:15 vm. + 1 uur 50 minute = 7:05 vm. Ontbyt: 7:05 vm. + 40 minute = 7:45 vm. Voer: 7:45 vm. + 1 uur 10 minute = 8:55 vm.' },
         { difficulty: 'Hard', question: 'Verduidelik waarom dit belangrik is om te weet of ʼn tyd vm. of nm. is wanneer jy woordprobleme oor tydsduur oplos.', answer: 'vm. en nm. vertel jou of ʼn tyd in die eerste helfte of tweede helfte van die dag is. Sonder om dit te weet, kan jy die verkeerde tydsduur bereken — byvoorbeeld, om 7:00 vm. en 7:00 nm. te verwar, sal ʼn heeltemal ander (en verkeerde) antwoord gee vir hoe lank ʼn aktiwiteit geduur het.', checkMode: 'self' },
+
+        // Afdeling G — Die Geskiedenis van Tyd (20-21, Maklik-Medium)
+        { difficulty: 'Easy', question: 'Watter antieke tydmeetinstrument gebruik sand wat deur ʼn nou nekkie van ʼn boonste kamer na ʼn onderste kamer loop, om ʼn vaste tydperk te meet?', answer: 'ʼn Sandloper', checkMode: 'auto', correctAnswer: 'sandloper', correctAnswers: ['sandloper', 'ʼn sandloper', 'n sandloper', 'sandhorlosie'], explanation: 'ʼn Sandloper het twee glaskamers wat deur ʼn nou nekkie verbind is. Sand loop teen ʼn konstante tempo van bo na onder, wat ʼn vaste hoeveelheid tyd meet, dikwels presies een uur.' },
+        { difficulty: 'Medium', question: 'Verduidelik een rede waarom moderne horlosies meer nuttig is in die alledaagse lewe as ʼn sonwyser of ʼn sandloper.', answer: 'Moderne horlosies werk enige tyd van die dag of nag, in enige weer, en kan tyd deurlopend en presies meet sonder dat iemand dit hoef dop te hou, te vul, of om te draai — anders as ʼn sonwyser (het sonlig nodig) of ʼn sandloper (moet omgedraai word en meet net ʼn vaste hoeveelheid tyd).', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Fantasties! Jy kan tydberekenings op wêreldgerigte probleme toepas.' },
-        { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae na en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Kyk weer na die voorbeelde en probeer die woordprobleme weer.' },
+        { minScore: 22, message: 'Fantasties! Jy kan tydberekenings op wêreldgerigte probleme toepas.' },
+        { minScore: 17, message: 'Goeie werk! Gaan enige gemiste vrae na en probeer weer.' },
+        { minScore: 11, message: 'Goeie poging! Kyk weer na die voorbeelde en probeer die woordprobleme weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

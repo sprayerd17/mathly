@@ -484,7 +484,15 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
-      openQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Hard',
+          question: 'Zanele wants to solve x³ − 9x = 0. Show two different ways to solve it — (1) using the Factor Theorem to find a root by testing values, then dividing; and (2) by taking out a common factor first. Then explain which method is more efficient for this particular equation, and why.',
+          answer: 'Method 1 (Factor Theorem + division): test x=1: 1−9=−8≠0. Test x=−1: −1+9=8≠0. Test x=2: 8−18=−10≠0. Test x=−2: −8+18=10≠0. Test x=3: 27−27=0 ✓, so (x−3) is a factor.\nDividing x³−9x by (x−3): x³÷x=x², x²(x−3)=x³−3x², subtract: 3x²−9x. 3x²÷x=3x, 3x(x−3)=3x²−9x, subtract: 0. Quotient: x²+3x=x(x+3).\nSo x³−9x=(x−3)(x)(x+3)=0, giving x=3, x=0, x=−3.\n\nMethod 2 (common factor first): x³−9x=x(x²−9)=x(x−3)(x+3)=0, giving x=0, x=3, x=−3 directly.\n\nMethod 2 is more efficient here: x³−9x already has a common factor of x that can be spotted immediately, whereas the Factor Theorem approach needs four failed trial values (x=1,−1,2,−2) before finding the working root x=3, and then still requires a full division. Always check for a common factor before reaching for the Factor Theorem.',
+          checkMode: 'self',
+        },
+      ],
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve a cubic equation by fully factorising using the Factor Theorem and long division then applying the zero product property to find all three roots" />',
@@ -532,7 +540,29 @@ export const topicData: TopicData = {
       ],
 
       practiceQuestions: [],
-      openQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Hard',
+          question: 'A cubic function f(x) = ax³ + bx² + cx + d touches the x-axis at x = 1 and cuts (crosses) the x-axis at x = −4. Given that f(0) = 4:\n\na) Explain why f(x) can be written as f(x) = a(x−1)²(x+4), then determine the value of a.\nb) Hence determine the values of b, c and d.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Value of a',
+              correctAnswer: 'a=1',
+              correctAnswers: ['a=1', '1'],
+              explanation: 'Touching the x-axis at x=1 means x=1 is a repeated (double) root, so (x−1)² is a factor. Cutting the x-axis at x=−4 means x=−4 is a single root, so (x+4) is a factor. Hence f(x) = a(x−1)²(x+4) for some constant a.\nSubstitute x=0: f(0) = a(0−1)²(0+4) = a(1)(4) = 4a.\nSince f(0) = 4: 4a = 4, so a = 1 ✓',
+            },
+            {
+              label: 'b) Values of b, c and d',
+              correctAnswer: 'b=2, c=-7, d=4',
+              correctAnswers: ['b=2, c=-7, d=4', 'b=2 c=-7 d=4'],
+              explanation: 'With a=1: f(x) = (x−1)²(x+4) = (x²−2x+1)(x+4) = x³+4x²−2x²−8x+x+4 = x³+2x²−7x+4.\nSo b=2, c=−7, d=4 ✓',
+            },
+          ],
+        },
+      ],
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to sketch a cubic graph by finding x-intercepts from the factorised form the y-intercept by substituting x=0 and the curve direction from the sign of the leading coefficient" />',

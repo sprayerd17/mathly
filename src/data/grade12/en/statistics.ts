@@ -618,6 +618,22 @@ export const topicData: TopicData = {
       answer: '66 = 78 − 2(6) = μ − 2σ and 90 = 78 + 2(6) = μ + 2σ. By the 68-95-99.7 rule, 95% of data falls within 2 standard deviations. Probability ≈ 0.95.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard — working backwards to a constraint on σ ─────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'A factory fills bottles with a mean volume of 500 mL. Volumes are normally distributed with standard deviation σ mL. Quality control rejects a bottle only if its volume lies more than 2 standard deviations from the mean. A bottle containing 485 mL is NOT rejected.\n(a) Write an inequality in σ that must hold for this bottle to pass inspection.\n(b) Hence determine the smallest possible whole-number value of σ consistent with this information.',
+      answer: '(a) For the bottle to pass, it must lie within 2 standard deviations of the mean: |500 − 485| ≤ 2σ, i.e. 15 ≤ 2σ, so σ ≥ 7.5.\n(b) The smallest whole-number value of σ satisfying σ ≥ 7.5 is σ = 8 mL.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard — outlier decision + mean vs median recommendation ───────────
+    {
+      difficulty: 'Hard',
+      question: "A quality inspector records the diameters (in mm) of 9 ball bearings from a machine: 20, 21, 21, 22, 22, 22, 23, 23, 46. The 46 mm reading is suspected to be a measurement error.\n(a) Find the five-number summary of all 9 values as recorded, and use the rule that a value below Q1 − 1.5×IQR or above Q3 + 1.5×IQR is an outlier to test whether 46 mm should be classified as an outlier.\n(b) The inspector must report a single 'typical' diameter to the production manager. Using your answer to (a) and how the mean and median respond differently to extreme values, explain which measure of central tendency is more appropriate here, and why.",
+      answer: "(a) Sorted: 20, 21, 21, 22, 22, 22, 23, 23, 46. Median = 22 (5th value). Lower half (20, 21, 21, 22): Q1 = (21+21)÷2 = 21. Upper half (22, 23, 23, 46): Q3 = (23+23)÷2 = 23. IQR = 23 − 21 = 2. Upper fence = Q3 + 1.5×IQR = 23 + 3 = 26. Since 46 > 26, it IS an outlier.\n(b) Mean (including 46) = 220 ÷ 9 ≈ 24.44, noticeably pulled upward by the single 46 mm reading, while the median (22) is unaffected by it since it depends only on the middle position. Because 46 mm has already been identified as an outlier in (a), the median is the more appropriate 'typical' value to report — the mean is distorted by the one extreme (likely erroneous) reading, while the median reflects the true centre of the other eight consistent measurements.",
+      checkMode: 'self',
+    },
   ],
 
   scoreMessages: [

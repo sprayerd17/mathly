@@ -686,6 +686,12 @@ export const topicData: TopicData = {
           answer: 'LHS numerator: cos2x + 1 = (2cos²x − 1) + 1 = 2cos²x\nLHS denominator: sin2x = 2sinxcosx\nLHS = 2cos²x / (2sinxcosx) = cosx/sinx = RHS ✓',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Hard',
+          question: 'Suppose sinθ + cosθ = 3/2 for some real angle θ. Using the identity (sinθ + cosθ)² = 1 + sin2θ, show that no real value of θ can satisfy this equation.',
+          answer: 'Square both sides of the given equation:\n(sinθ + cosθ)² = (3/2)² = 9/4\n\nApply the identity (sinθ + cosθ)² = 1 + sin2θ:\n1 + sin2θ = 9/4\nsin2θ = 9/4 − 1 = 5/4\n\nBut for any real angle, sin2θ must satisfy −1 ≤ sin2θ ≤ 1.\nSince 5/4 > 1, this is impossible.\n\nTherefore no real value of θ can satisfy sinθ + cosθ = 3/2 ✓',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:
@@ -819,6 +825,12 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'A vertical mast TM stands at M on horizontal ground. From point A on the ground, the angle of elevation of T is 35°. From point B, also on the ground and 20 m closer to the mast along the straight line AB (so B is between A and M, with A, B, M collinear), the angle of elevation of T is 48°. Find the height of the mast TM.',
           answer: 'Let TM = h, BM = d.\nFrom B: tan48° = h/d → d = h/tan48°.\nFrom A: tan35° = h/(d + 20) → d + 20 = h/tan35°.\nSubtract: 20 = h(1/tan35° − 1/tan48°) = h(1.4281 − 0.9004) = h · 0.5277.\nh = 20/0.5277 ≈ 37.9 m.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A vertical tower TC stands on horizontal ground. From point A, the angle of elevation to the top T is θ. Walking directly towards the base along the straight line A, B, C, to a point B where AB = d, the angle of elevation to T has exactly doubled to 2θ. Prove that the height of the tower is h = 2d·sinθ·cosθ.',
+          answer: 'Let TC = h and BC = x.\n\nIn right triangle TBC: tan2θ = h/x, so x = h/tan2θ.\nIn right triangle TAC: tanθ = h/(x + d), so x + d = h/tanθ.\n\nSubtract the first equation from the second:\nd = h/tanθ − h/tan2θ = h(cotθ − cot2θ)\n\nSimplify cotθ − cot2θ:\ncotθ − cot2θ = cosθ/sinθ − cos2θ/sin2θ\n= cosθ/sinθ − cos2θ/(2sinθcosθ)\n= [2cos²θ − cos2θ] / (2sinθcosθ)\n\nSince cos2θ = 2cos²θ − 1:\n2cos²θ − cos2θ = 2cos²θ − (2cos²θ − 1) = 1\n\nSo cotθ − cot2θ = 1/(2sinθcosθ)\n\nTherefore d = h/(2sinθcosθ), which rearranges to:\nh = 2d·sinθ·cosθ ✓',
           checkMode: 'self',
         },
       ],

@@ -513,12 +513,32 @@ export const topicData: TopicData = {
       checkMode: 'self',
       answer: 'Total 2-digit numbers: 9 choices for the first tile, 8 remaining for the second tile = 9 × 8 = 72 different numbers. Numbers greater than 90 must start with 9: the tens digit is fixed as 9 (1 choice), and any of the remaining 8 tiles can be the units digit, giving 8 favourable outcomes. P(greater than 90) = 8 ÷ 72 = 1/9.',
     },
+
+    // ── Q21 Hard — problem-solving: addition rule with a conditional-probability-derived overlap
+    {
+      difficulty: 'Hard',
+      question: 'At a school, event A is "a learner takes Mathematics" and event B is "a learner takes Physical Science". It is known that P(A) = 0,6 and P(A or B) = 0,75. Of the learners who take Physical Science, exactly one quarter also take Mathematics. Let P(B) = x. Form an equation in x using the addition rule, solve for x, and hence state P(B).',
+      checkMode: 'auto',
+      correctAnswer: '0.2',
+      correctAnswers: ['0.2', '0,2'],
+      explanation: 'Since exactly one quarter of Physical Science learners also take Mathematics, P(A and B) = ¼ × P(B) = x/4. Addition rule: P(A or B) = P(A) + P(B) − P(A and B), so 0,75 = 0,6 + x − x/4 = 0,6 + 0,75x. Solving: 0,75x = 0,15, so x = 0,2. P(B) = 0,2 ✓',
+    },
+
+    // ── Q22 Hard — problem-solving: combinations combined with conditional probability
+    {
+      difficulty: 'Hard',
+      question: 'A committee of 4 people is chosen at random from a group of 6 men and 5 women. Given that the committee contains at least 3 women, find the probability that the committee consists entirely of women (all 4 members are women).',
+      checkMode: 'auto',
+      correctAnswer: '1/13',
+      correctAnswers: ['1/13', '≈0.0769', '≈0,0769', '0.0769', '0,0769'],
+      explanation: 'Number of committees with exactly 3 women and 1 man: C(5,3) × C(6,1) = 10 × 6 = 60. Number of committees with exactly 4 women (0 men): C(5,4) × C(6,0) = 5 × 1 = 5. So the number of committees with at least 3 women = 60 + 5 = 65. "All women" is one of the ways to get "at least 3 women", so P(all women | at least 3 women) = 5 ÷ 65 = 1/13 ✓',
+    },
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 22,
     messages: [
-      { minScore: 20, message: 'Outstanding! You have mastered probability.' },
+      { minScore: 22, message: 'Outstanding! You have mastered probability.' },
       { minScore: 15, message: 'Great work!' },
       { minScore: 10, message: 'Good effort, review and try again.' },
       { minScore: 0, message: 'Keep going, work through the guide again.' },
@@ -526,7 +546,7 @@ export const topicData: TopicData = {
   },
 
   scoreMessages: [
-    { minScore: 20, message: 'Outstanding! You have mastered probability.' },
+    { minScore: 22, message: 'Outstanding! You have mastered probability.' },
     { minScore: 15, message: 'Great work!' },
     { minScore: 10, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },

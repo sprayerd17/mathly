@@ -242,6 +242,17 @@ export const topicData: TopicData = {
           answer: 'Yes — in the form a(x−p)²+q, the turning point is always at (p, q), which here is (3, 7).',
           checkMode: 'self',
         },
+
+        // ── Q8b Hard (problem-solving) — reconstruct equation from turning point + extra point ──
+        {
+          difficulty: 'Hard',
+          question: 'A parabola in the form y = a(x−p)²+q has a maximum value of 20, occurring at x = 3. The parabola also passes through the point (0, 2). Determine the equation of the parabola in the form y = ax²+bx+c.',
+          answer: 'y = −2x²+12x+2',
+          checkMode: 'auto',
+          correctAnswer: '−2x²+12x+2',
+          correctAnswers: ['−2x²+12x+2', '-2x²+12x+2', '−2x^2+12x+2', '-2x^2+12x+2', 'y=−2x²+12x+2', 'y = −2x²+12x+2'],
+          explanation: 'The turning point is (p, q) = (3, 20), and it is a maximum, so a<0: y = a(x−3)²+20.\nUse the point (0, 2): 2 = a(0−3)²+20 = 9a+20, so 9a = −18 and a = −2 (consistent with a<0).\nSo y = −2(x−3)²+20 = −2(x²−6x+9)+20 = −2x²+12x−18+20 = −2x²+12x+2 ✓',
+        },
       ],
 
       diagramPlaceholder:
@@ -442,6 +453,17 @@ export const topicData: TopicData = {
           checkMode: 'auto',
           correctAnswer: '2/x',
           explanation: 'Factorise numerator: 2x+6 = 2(x+3).\nFactorise denominator: x²+3x = x(x+3).\nCancel (x+3): 2/x, where x ≠ 0 and x ≠ −3 ✓',
+        },
+
+        // ── Q20b Hard (problem-solving) — work backwards from a combined result to find an unknown parameter ──
+        {
+          difficulty: 'Hard',
+          question: 'The sum 3/(x+2) + k/(x−5) simplifies to (5x−11)/[(x+2)(x−5)]. Determine the value of k.',
+          answer: 'k = 2',
+          checkMode: 'auto',
+          correctAnswer: '2',
+          correctAnswers: ['2', 'k=2', 'k = 2'],
+          explanation: 'Combine the left side over the common denominator: [3(x−5) + k(x+2)] / [(x+2)(x−5)] = [(3+k)x + (2k−15)] / [(x+2)(x−5)].\nCompare this to the given result (5x−11)/[(x+2)(x−5)]: matching the x-coefficient gives 3+k = 5, so k = 2.\nCheck the constant term: 2(2)−15 = −11, which matches ✓. So k = 2 ✓',
         },
       ],
 

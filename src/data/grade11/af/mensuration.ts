@@ -152,6 +152,24 @@ export const topicData: TopicData = {
             },
           ],
         },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Piramide het volume 15 cm³ en oppervlakte 34 cm². ʼn Groter, soortgelyke piramide word gevorm deur elke afmeting met dieselfde faktor k te skaleer. Die groter piramide het volume 1 875 cm³.\n\na) Sonder om die werklike afmetings van enige piramide te bepaal, bereken die waarde van k.\nb) Bepaal dan die oppervlakte van die groter piramide.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Waarde van k',
+              correctAnswer: '5',
+              explanation: 'Volume skaleer met k³, dus k³ = nuwe volume ÷ oorspronklike volume = 1 875 ÷ 15 = 125.\nk = ∛125 = 5 ✓',
+            },
+            {
+              label: 'b) Oppervlakte van die groter piramide (cm²)',
+              correctAnswer: '850',
+              explanation: 'Nou dat k bekend is, skaleer oppervlakte met k² = 5² = 25.\nNuwe oppervlakte = 34 × 25 = 850 cm² ✓',
+            },
+          ],
+        },
       ],
 
       videoPlaceholder:
@@ -283,6 +301,12 @@ export const topicData: TopicData = {
               explanation: 'Oorblywend = 904,32 − 150,72 = 753,6 cm³ ✓',
             },
           ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Graansilo word gebou uit ʼn silinder met ʼn halfsferiese kap van dieselfde radius bo-op. Die hoogte van die silindriese deel is drie keer die radius. As die totale volume van die silo 2 486,88 cm³ is, bepaal die radius, r. Gebruik π ≈ 3,14.',
+          answer: 'Laat die radius r wees, sodat die hoogte van die silinder h = 3r is.\n\nStel die totale volume op:\nV = πr²h + ⅔πr³\nV = πr²(3r) + ⅔πr³\nV = 3πr³ + ⅔πr³ = (11/3)πr³\n\nVervang die bekende volume en π ≈ 3,14:\n2 486,88 = (11/3)(3,14)r³\n2 486,88 = 11,5133...r³\nr³ = 2 486,88 ÷ 11,5133... = 216\n\nNeem die derdemagswortel:\nr = ∛216 = 6 cm ✓',
+          checkMode: 'self',
         },
       ],
 

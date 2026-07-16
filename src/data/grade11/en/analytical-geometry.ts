@@ -428,6 +428,14 @@ export const topicData: TopicData = {
           correctAnswers: ['y = -3x + 12', 'y=-3x+12', 'y = −3x + 12'],
           explanation: 'Gradient of given line: m₁ = 1/3.\nPerpendicular gradient: m₂ = −3.\nSubstitute (2, 6): y − 6 = −3(x − 2) → y − 6 = −3x + 6 → y = −3x + 12 ✓',
         },
+
+        // ── Q12b Hard — perpendicularity used to find an unknown coordinate ──
+        {
+          difficulty: 'Hard',
+          question: 'Points A(1, 2), B(5, 4) and D(k, −4) are given such that AD ⊥ AB. Determine the value of k.',
+          answer: 'Step 1: Calculate the gradient of AB.\nm_AB = (4 − 2)/(5 − 1) = 2/4 = 1/2\n\nStep 2: Since AD ⊥ AB, the gradient of AD is the negative reciprocal.\nm_AD = −1 ÷ (1/2) = −2\n\nStep 3: Write the gradient of AD using the unknown coordinate k, and set it equal to −2.\nm_AD = (−4 − 2)/(k − 1) = −6/(k − 1)\n−6/(k − 1) = −2\n\nStep 4: Solve for k.\n−6 = −2(k − 1)\n−6 = −2k + 2\n−8 = −2k\nk = 4 ✓',
+          checkMode: 'self',
+        },
       ],
 
       diagramPlaceholder:
@@ -547,6 +555,14 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'Determine the gradient of a line with inclination 150°, rounded to two decimal places.',
           answer: 'm = tan(150°) = −tan(30°) ≈ −0.58',
+          checkMode: 'self',
+        },
+
+        // ── Q16b Hard — inclination used to find an unknown coordinate ───────
+        {
+          difficulty: 'Hard',
+          question: 'Line AB has inclination 135°, and passes through A(2, −1) and B(t, 3). Determine the value of t.',
+          answer: 'Step 1: Convert the inclination to a gradient.\nm = tan(135°) = −1\n\nStep 2: Write the gradient of AB using the unknown coordinate t, and set it equal to −1.\nm_AB = (3 − (−1))/(t − 2) = 4/(t − 2)\n4/(t − 2) = −1\n\nStep 3: Solve for t.\n4 = −1(t − 2)\n4 = −t + 2\nt = 2 − 4\nt = −2 ✓',
           checkMode: 'self',
         },
       ],

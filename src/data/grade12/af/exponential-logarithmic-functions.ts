@@ -611,6 +611,30 @@ export const topicData: TopicData = {
       answer: 'x² = 10⁴ = 10 000. x = ±100 (albei waardes is geldig aangesien x² altyd positief is, ongeag die teken van x).',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard (probleemoplossing: werk terug om 'n onbekende grondtal te vind) ──
+    {
+      difficulty: 'Hard',
+      question: 'Die vergelyking logₖ x + logₖ(x + 3) = 1 het x = 2 as een van sy oplossings. Bepaal die waarde van k, en toon dat jou antwoord aan die vergelyking voldoen.',
+      answer: 'Gebruik die produkwet: logₖ x + logₖ(x + 3) = logₖ(x(x + 3)) = 1. Vervang x = 2: logₖ(2 × 5) = logₖ 10 = 1. Skakel om na eksponensiële vorm: k¹ = 10, dus k = 10. Toets: log₁₀ 2 + log₁₀ 5 ≈ 0,301 + 0,699 = 1 ✓, en k = 10 voldoen aan k > 0 en k ≠ 1.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard (probleemoplossing: bewys 'n identiteit deur wette te kombineer) ──
+    {
+      difficulty: 'Hard',
+      question: 'Toon aan dat log₂ x · logₓ 8 = 3 vir alle x > 0, x ≠ 1.',
+      answer: 'Gebruik die formule vir verandering van basis met basis 2: logₓ 8 = log₂ 8 / log₂ x = 3 / log₂ x, aangesien log₂ 8 = 3 (want 2³ = 8). Dus is log₂ x · logₓ 8 = log₂ x · (3 / log₂ x) = 3. Dit geld vir elke x > 0, x ≠ 1, aangesien dit presies die beperkings is wat nodig is sodat logₓ 8 bepaald is — spesifiek verseker x ≠ 1 dat log₂ x ≠ 0, sodat die deling altyd geldig is.',
+      checkMode: 'self',
+    },
+
+    // ── Q23 Hard (probleemoplossing: stel 'n groeimodel op en los dit op) ─────
+    {
+      difficulty: 'Hard',
+      question: 'ʼn Bakteriekultuur verdubbel in grootte elke h ure. As n die aantal verdubbelings is wat in t ure plaasvind (dus n = t / h), word die bevolking na tyd t gegee deur N = N₀ · 2ⁿ, waar N₀ die aanvanklike aantal bakterieë is. ʼn Kultuur wat met 150 bakterieë begin, groei na 900 bakterieë na 4 ure. Bepaal die verdubbelingstyd h, korrek tot 3 desimale plekke.',
+      answer: 'Vind eers n, die aantal verdubbelings, deur N = N₀ · 2ⁿ te gebruik: 900 = 150 · 2ⁿ, dus 2ⁿ = 6. Neem logs: n = log 6 / log 2 (verandering van basis) ≈ 0,778 / 0,301 ≈ 2,585. Aangesien n = t / h en t = 4, is die verdubbelingstyd h = t / n = 4 / 2,585 ≈ 1,548 ure.',
+      checkMode: 'self',
+    },
   ],
 
   practiceSets: [

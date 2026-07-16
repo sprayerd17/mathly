@@ -601,6 +601,26 @@ export const topicData: TopicData = {
             },
           ],
         },
+        {
+          difficulty: 'Hard',
+          question: 'An investor deposits a lump sum into an account offering a nominal interest rate of 16% p.a. compounded monthly. She makes no further deposits or withdrawals. After exactly 3 years the investment has grown to R76 000.\n\na) Calculate the effective annual interest rate for this account (to 2 decimal places).\nb) Hence calculate the amount she originally deposited (to the nearest rand).',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Effective annual interest rate (%)',
+              correctAnswer: '17.23',
+              correctAnswers: ['17.23%', '17.23', '17.2%', '17.2'],
+              explanation: 'i_nom = 0.16, m = 12\ni_eff = (1 + 0.16/12)^12 − 1 = (1.013333)^12 − 1 ≈ 1.17227 − 1 = 17.23% ✓',
+            },
+            {
+              label: 'b) Original amount deposited (R, to the nearest rand)',
+              correctAnswer: '47177',
+              correctAnswers: ['R47177', 'R47 177', '47177', '47 177', 'R47176', '47176', 'R47178', '47178'],
+              explanation: 'Growing at 16% p.a. compounded monthly for 3 years (36 months) is identical to growing at i_eff = 17.23% p.a. for 3 years, since both come from the same underlying monthly rate.\n76 000 = P(1.013333)^36 = P × 1.610957\nP = 76 000 ÷ 1.610957 ≈ R47 177 ✓',
+            },
+          ],
+        },
       ],
 
       videoPlaceholder:
@@ -719,6 +739,15 @@ export const topicData: TopicData = {
               explanation: 'Loss = R180 000 − R75 278 = R104 722 ✓',
             },
           ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A grader is bought for R450 000. It depreciates on the reducing-balance method at an unknown annual rate for the first 2 years. The depreciation rate then changes to 10% p.a. for the next 3 years. After the full 5 years the grader is valued at R254 041.92. Determine the depreciation rate that applied during the first 2 years.',
+          answer: '12% p.a.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12%', '12', '12.00%', '12.0%'],
+          explanation: 'Step 1 — work backward through Phase 2 (known 10% p.a. for 3 years) to find the value at the end of year 2:\nV = 254 041.92 ÷ (0.90)³ = 254 041.92 ÷ 0.729 = R348 480\nStep 2 — solve for the unknown Phase 1 rate using 450 000(1 − r)² = 348 480:\n(1 − r)² = 348 480 ÷ 450 000 = 0.7744\n1 − r = √0.7744 = 0.88\nr = 1 − 0.88 = 0.12 = 12% p.a. ✓',
         },
       ],
 

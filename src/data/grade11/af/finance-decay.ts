@@ -601,6 +601,26 @@ export const topicData: TopicData = {
             },
           ],
         },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Belegger sit ʼn enkelbedrag in ʼn rekening wat ʼn nominale rentekoers van 16% p.j. maandeliks saamgestel bied. Sy maak geen verdere deposito\'s of onttrekkings nie. Na presies 3 jaar het die belegging tot R76 000 gegroei.\n\na) Bereken die effektiewe jaarlikse rentekoers vir hierdie rekening (tot 2 desimale plekke).\nb) Bereken dus die bedrag wat sy oorspronklik gedeponeer het (tot die naaste rand).',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Effektiewe jaarlikse rentekoers (%)',
+              correctAnswer: '17,23',
+              correctAnswers: ['17.23%', '17.23', '17.2%', '17.2'],
+              explanation: 'i_nom = 0,16, m = 12\ni_eff = (1 + 0,16/12)^12 − 1 = (1,013333)^12 − 1 ≈ 1,17227 − 1 = 17,23% ✓',
+            },
+            {
+              label: 'b) Oorspronklike bedrag gedeponeer (R, tot die naaste rand)',
+              correctAnswer: '47177',
+              correctAnswers: ['R47177', 'R47 177', '47177', '47 177', 'R47176', '47176', 'R47178', '47178'],
+              explanation: 'Om teen 16% p.j. maandeliks saamgestel te groei vir 3 jaar (36 maande) is presies dieselfde as om teen i_eff = 17,23% p.j. vir 3 jaar te groei, aangesien albei van dieselfde onderliggende maandelikse koers afkomstig is.\n76 000 = P(1,013333)^36 = P × 1,610957\nP = 76 000 ÷ 1,610957 ≈ R47 177 ✓',
+            },
+          ],
+        },
       ],
 
       videoPlaceholder:
@@ -719,6 +739,15 @@ export const topicData: TopicData = {
               explanation: 'Verlies = R180 000 − R75 278 = R104 722 ✓',
             },
           ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Grader word vir R450 000 gekoop. Dit verminder in waarde volgens die verminderende-balans-metode teen ʼn onbekende jaarlikse koers vir die eerste 2 jaar. Die waardeverminderingskoers verander dan na 10% p.j. vir die volgende 3 jaar. Na die volle 5 jaar is die grader R254 041,92 werd. Bepaal die waardeverminderingskoers wat tydens die eerste 2 jaar toegepas is.',
+          answer: '12% p.j.',
+          checkMode: 'auto',
+          correctAnswer: '12',
+          correctAnswers: ['12%', '12', '12.00%', '12.0%'],
+          explanation: 'Stap 1 — werk agteruit deur Fase 2 (bekende 10% p.j. vir 3 jaar) om die waarde aan die einde van jaar 2 te vind:\nV = 254 041,92 ÷ (0,90)³ = 254 041,92 ÷ 0,729 = R348 480\nStap 2 — los die onbekende Fase 1-koers op met 450 000(1 − r)² = 348 480:\n(1 − r)² = 348 480 ÷ 450 000 = 0,7744\n1 − r = √0,7744 = 0,88\nr = 1 − 0,88 = 0,12 = 12% p.j. ✓',
         },
       ],
 

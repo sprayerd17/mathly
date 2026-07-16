@@ -473,6 +473,26 @@ export const topicData: TopicData = {
       answer: '(x + 4)(x − 2) > 35\nx² + 2x − 8 > 35\nx² + 2x − 43 > 0\nUsing the quadratic formula: x = (−2 ± √(4 + 172)) / 2 = (−2 ± √176) / 2 = −1 ± √44.\nCritical values: x ≈ −7.63 or x ≈ 5.63.\nSince x > 2, the solution is x > −1 + √44 (approximately x > 5.63).',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard — problem-solving: work backwards from equal-roots condition to find k ──
+    {
+      difficulty: 'Hard',
+      question: 'The equation x² − kx + 9 = 0 has real, equal roots. Determine the value(s) of k.',
+      answer: 'k = 6 or k = −6',
+      checkMode: 'auto',
+      correctAnswers: ['k=6 or k=-6', 'k = 6 or k = -6', 'k=-6 or k=6', 'k = -6 or k = 6', 'k=±6', 'k = ±6', '6 or -6', '-6 or 6'],
+      explanation: 'For real, equal roots, the discriminant must equal zero: b² − 4ac = 0.\nHere a = 1, b = −k, c = 9, so (−k)² − 4(1)(9) = 0.\nk² − 36 = 0 → k² = 36 → k = 6 or k = −6.\nCheck: k = 6 gives x² − 6x + 9 = (x − 3)² = 0 (one repeated root); k = −6 gives x² + 6x + 9 = (x + 3)² = 0 (one repeated root) ✓',
+    },
+
+    // ── Q22 Hard — problem-solving: synthesise systems + discriminant to find range of k ──
+    {
+      difficulty: 'Hard',
+      question: 'For which value(s) of k will the line y = x + k not intersect the parabola y = x² + 3x + 5?',
+      answer: 'k < 4',
+      checkMode: 'auto',
+      correctAnswers: ['k<4', 'k < 4'],
+      explanation: 'Substitute the line into the parabola: x + k = x² + 3x + 5.\nRearrange into standard form: x² + 2x + (5 − k) = 0.\nFor the line and parabola not to intersect, this equation must have no real solutions, so the discriminant must be negative: b² − 4ac < 0.\nHere a = 1, b = 2, c = 5 − k, so 4 − 4(5 − k) < 0 → 4 − 20 + 4k < 0 → 4k − 16 < 0.\nSolution: k < 4 ✓',
+    },
   ],
 
   resultsConfig: {

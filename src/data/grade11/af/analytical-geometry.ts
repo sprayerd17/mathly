@@ -428,6 +428,14 @@ export const topicData: TopicData = {
           correctAnswers: ['y = -3x + 12', 'y=-3x+12', 'y = −3x + 12'],
           explanation: 'Gradiënt van die gegewe lyn: m₁ = 1/3.\nLoodregte gradiënt: m₂ = −3.\nVervang (2, 6): y − 6 = −3(x − 2) → y − 6 = −3x + 6 → y = −3x + 12 ✓',
         },
+
+        // ── Q12b Hard — loodregtheid gebruik om ʼn onbekende koördinaat te vind ──
+        {
+          difficulty: 'Hard',
+          question: 'Punte A(1, 2), B(5, 4) en D(k, −4) word gegee sodat AD ⊥ AB. Bepaal die waarde van k.',
+          answer: 'Stap 1: Bereken die gradiënt van AB.\nm_AB = (4 − 2)/(5 − 1) = 2/4 = 1/2\n\nStap 2: Aangesien AD ⊥ AB, is die gradiënt van AD die negatiewe resiprook.\nm_AD = −1 ÷ (1/2) = −2\n\nStap 3: Skryf die gradiënt van AD met die onbekende koördinaat k, en stel dit gelyk aan −2.\nm_AD = (−4 − 2)/(k − 1) = −6/(k − 1)\n−6/(k − 1) = −2\n\nStap 4: Los op vir k.\n−6 = −2(k − 1)\n−6 = −2k + 2\n−8 = −2k\nk = 4 ✓',
+          checkMode: 'self',
+        },
       ],
 
       diagramPlaceholder:
@@ -547,6 +555,14 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'Bepaal die gradiënt van ʼn lyn met inklinasie 150°, afgerond tot twee desimale plekke.',
           answer: 'm = tan(150°) = −tan(30°) ≈ −0,58',
+          checkMode: 'self',
+        },
+
+        // ── Q16b Hard — inklinasie gebruik om ʼn onbekende koördinaat te vind ──
+        {
+          difficulty: 'Hard',
+          question: 'Lyn AB het ʼn inklinasie van 135°, en gaan deur A(2, −1) en B(t, 3). Bepaal die waarde van t.',
+          answer: 'Stap 1: Skakel die inklinasie om na ʼn gradiënt.\nm = tan(135°) = −1\n\nStap 2: Skryf die gradiënt van AB met die onbekende koördinaat t, en stel dit gelyk aan −1.\nm_AB = (3 − (−1))/(t − 2) = 4/(t − 2)\n4/(t − 2) = −1\n\nStap 3: Los op vir t.\n4 = −1(t − 2)\n4 = −t + 2\nt = 2 − 4\nt = −2 ✓',
           checkMode: 'self',
         },
       ],

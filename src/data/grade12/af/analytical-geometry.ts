@@ -560,6 +560,14 @@ export const topicData: TopicData = {
           answer: 'Vervang y=x+2: x²+(x+2)²=2 → x²+x²+4x+4=2 → 2x²+4x+2=0 → x²+2x+1=0 → (x+1)²=0.\nHerhaalde wortel x=−1 bevestig raking. y=−1+2=1. Raakpunt: (−1, 1).',
           checkMode: 'self',
         },
+
+        // ── Q21 Hard — vind ʼn onbekende parameter met die rakingsvoorwaarde ──
+        {
+          difficulty: 'Hard',
+          question: 'Bepaal die waarde(s) van k waarvoor die lyn y = 2x + k ʼn raaklyn is aan die sirkel x² + y² = 5.',
+          answer: 'Vervang y = 2x + k in x² + y² = 5:\nx² + (2x + k)² = 5\nx² + 4x² + 4kx + k² = 5\n5x² + 4kx + (k² − 5) = 0\n\nVir die lyn om ʼn raaklyn te wees, moet hierdie kwadratiese vergelyking ʼn herhaalde wortel hê, dus moet die diskriminant gelyk aan nul wees:\nΔ = (4k)² − 4(5)(k² − 5) = 0\n16k² − 20k² + 100 = 0\n−4k² + 100 = 0\nk² = 25\nk = ±5\n\nKontroleer k = 5: 5x² + 20x + 20 = 0 → x² + 4x + 4 = 0 → (x+2)² = 0 ✓ (herhaalde wortel by x = −2)\nKontroleer k = −5: 5x² − 20x + 20 = 0 → x² − 4x + 4 = 0 → (x−2)² = 0 ✓ (herhaalde wortel by x = 2)\n\nDus k = 5 of k = −5.',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:

@@ -230,6 +230,12 @@ export const topicData: TopicData = {
           answer: 'LK = (1 − sin²θ) / cosθ\nStap 1: Pas die Pythagoras-identiteit toe — 1 − sin²θ = cos²θ\n= cos²θ / cosθ\nStap 2: Vereenvoudig deur een faktor van cosθ te kanselleer\n= cosθ\n= RK ✓',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Hard',
+          question: 'Gegee dat 5cosθ + 3 = 0 en θ ∈ [180°; 360°], gebruik die Pythagoras-identiteit om die eksakte waardes van sinθ en tanθ sonder \'n sakrekenaar te bepaal. Besluit eers in watter kwadrant θ lê en regverdig jou keuse.',
+          answer: 'Stap 1: Los op vir cosθ.\n5cosθ + 3 = 0 → cosθ = −3/5\n\nStap 2: Besluit die kwadrant.\nθ ∈ [180°; 360°] dek Kwadrant 3 en Kwadrant 4. Aangesien cosθ = −3/5 negatief is, en cos slegs in Kwadrant 3 negatief is binne hierdie interval (cos is positief in Kwadrant 4), moet θ in Kwadrant 3 wees.\n\nStap 3: Pas die Pythagoras-identiteit toe.\nsin²θ + cos²θ = 1\nsin²θ = 1 − (−3/5)² = 1 − 9/25 = 16/25\nsinθ = ±4/5\n\nStap 4: Kies die korrekte teken.\nIn Kwadrant 3 is sin negatief, so sinθ = −4/5.\n\nStap 5: Bepaal tanθ met die kwosiëntidentiteit.\ntanθ = sinθ/cosθ = (−4/5) ÷ (−3/5) = 4/3 ✓',
+          checkMode: 'self',
+        },
       ],
 
       diagramPlaceholder:
@@ -521,6 +527,12 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'Bepaal die algemene oplossing van 2sinθ + 1 = 0. Lys dan alle oplossings in die interval −360° ≤ θ ≤ 360°.',
           answer: 'Stap 1: Isoleer sinθ.\n2sinθ = −1 → sinθ = −1/2\n\nStap 2: Verwysingshoek = sin⁻¹(1/2) = 30°.\nsinθ is negatief → oplossings in K3 en K4.\n\nStap 3: Algemene oplossing.\nθ = (180° + 30°) + 360°n = 210° + 360°n, n ∈ ℤ\nof θ = (360° − 30°) + 360°n = 330° + 360°n, n ∈ ℤ\n\nStap 4: Oplossings in [−360°, 360°].\nVan 210° + 360°n: n = 0 → 210°; n = −1 → −150°.\nVan 330° + 360°n: n = 0 → 330°; n = −1 → −30°.\nOplossings: −150°, −30°, 210°, 330°.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Los op vir θ, en gee die algemene oplossing: 2sin²θ − sinθ − 1 = 0.',
+          answer: 'Laat x = sinθ, sodat die vergelyking \'n kwadratiese vergelyking word: 2x² − x − 1 = 0.\n\nFaktoriseer: (2x + 1)(x − 1) = 0\nDus x = −1/2 of x = 1, m.a.w. sinθ = −1/2 of sinθ = 1.\n\nGeval 1: sinθ = −1/2\nVerwysingshoek = sin⁻¹(1/2) = 30°. sinθ is negatief → K3 en K4.\nθ = 210° + 360°n of θ = 330° + 360°n, n ∈ ℤ\n\nGeval 2: sinθ = 1\nθ = 90° + 360°n, n ∈ ℤ (net een familie — die twee gewone gevalle val saam by die grens van die sin-grafiek)\n\nVolledige algemene oplossing: θ = 90° + 360°n of θ = 210° + 360°n of θ = 330° + 360°n, n ∈ ℤ ✓',
           checkMode: 'self',
         },
       ],

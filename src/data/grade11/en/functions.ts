@@ -474,6 +474,24 @@ export const topicData: TopicData = {
       answer: 'p=4, q=−1 (from asymptotes). Substitute (6,1): 1=a/(6−4)−1. 2=a/2. a=4. Equation: y=4/(x−4)−1.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard (problem-solving) — general proof of average gradient identity ──
+    {
+      difficulty: 'Hard',
+      question: 'Show that the average gradient of f(x)=x² between x=a and x=b (where a≠b) is always equal to a+b, for any values of a and b.',
+      answer: 'Average gradient = (f(b)−f(a))/(b−a) = (b²−a²)/(b−a). Since b²−a²=(b−a)(b+a), this simplifies to (b−a)(b+a)/(b−a)=a+b (valid since a≠b, so b−a≠0 and the fraction may be cancelled). This result holds for any values of a and b — not just specific numbers.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard (problem-solving) — unknown parameter from a given average gradient ──
+    {
+      difficulty: 'Hard',
+      question: 'A parabola in the form y=a(x−1)²−3 has turning point (1,−3). The average gradient of the parabola between x=1 and x=4 is 6. Find a.',
+      answer: '2',
+      checkMode: 'auto',
+      correctAnswer: '2',
+      explanation: 'f(1)=a(1−1)²−3=−3. f(4)=a(4−1)²−3=9a−3. Average gradient=(f(4)−f(1))/(4−1)=(9a−3−(−3))/3=9a/3=3a. Since the average gradient is 6: 3a=6, so a=2. ✓',
+    },
   ],
 
   practiceSets: [

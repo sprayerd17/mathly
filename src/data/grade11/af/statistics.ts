@@ -796,10 +796,26 @@ export const topicPractice = [
     answer: 'ʼn Eksponensiële model sal hierdie data waarskynlik die beste pas, aangesien eksponensiële groei kenmerkend stadig begin en dan vinnig versnel, wat by die beskryfde patroon pas eerder as ʼn konstante lineêre koers of ʼn simmetriese kwadratiese kromme.',
     checkMode: 'self',
   },
+
+  // V21 — Moeilik (self) ───────────────────────────────────────────────────────────
+  {
+    difficulty: 'Hard',
+    question: "Thandi se vyf vriende teken aan hoeveel minute elkeen een aand aan huiswerk spandeer het: 25, 30, 32, 35 en 28. Thandi se eie tyd, x, is onbekend, maar die gemiddelde vir al ses vriende (Thandi ingesluit) is 33 minute.\n(a) Bepaal x.\n(b) Die vyf aangetekende waardes (Thandi uitgesluit) het Q1 = 26,5 en Q3 = 33,5, dus IKW = 7. Gebruik die reël dat ʼn waarde onder Q1 − 1,5×IKW of bo Q3 + 1,5×IKW as ʼn uitskieter beskou word, en bepaal of Thandi se huiswerktyd ʼn uitskieter onder die ses vriende is, en gee kommentaar op wat dit aandui.",
+    answer: "(a) Som van die vyf bekende tye = 25 + 30 + 32 + 35 + 28 = 150. Totaal vir al ses = 33 × 6 = 198, dus x = 198 − 150 = 48 minute.\n(b) Onderste grens = Q1 − 1,5×IKW = 26,5 − 1,5(7) = 26,5 − 10,5 = 16. Boonste grens = Q3 + 1,5×IKW = 33,5 + 10,5 = 44. Aangesien x = 48 > 44, is Thandi se tyd ʼn uitskieter — sy het onverwags lank aan huiswerk spandeer in vergelyking met haar vriende, ver buite wat die spreiding van die ander vyf waardes sou voorspel.",
+    checkMode: 'self',
+  },
+
+  // V22 — Moeilik (self) ───────────────────────────────────────────────────────────
+  {
+    difficulty: 'Hard',
+    question: 'Twee spitsspelers het elkeen 9 wedstryde hierdie seisoen gespeel. Hul doele per wedstryd was:\nSpeler A: 1, 2, 2, 3, 3, 3, 4, 4, 5\nSpeler B: 0, 0, 1, 2, 3, 4, 5, 6, 6\nBeide spelers het ʼn gemiddelde van 3 doele per wedstryd.\n(a) Bereken die standaardafwyking van elke speler se doele, en wys jou volledige werk.\n(b) Gebruik beide die standaardafwykings ÉN die vyfgetalopsomming (Q1, mediaan, Q3) van elke speler, en skryf ʼn kort, geregverdigde gevolgtrekking oor watter speler die meer konsekwente doelskiever is, en watter speler ʼn afrigter wat op geleentheidsgewyse groot telling-oorwinnings jaag, sou verkies om te kies.',
+    answer: "(a) Speler A: afwykings −2, −1, −1, 0, 0, 0, 1, 1, 2; kwadratiese afwykings 4, 1, 1, 0, 0, 0, 1, 1, 4; som = 12; variansie = 12 ÷ 9 ≈ 1,33; standaardafwyking ≈ 1,15.\nSpeler B: afwykings −3, −3, −2, −1, 0, 1, 2, 3, 3; kwadratiese afwykings 9, 9, 4, 1, 0, 1, 4, 9, 9; som = 46; variansie = 46 ÷ 9 ≈ 5,11; standaardafwyking ≈ 2,26.\n(b) Vyfgetalopsommings: Speler A — Min 1, Q1 2, Mediaan 3, Q3 4, Maks 5 (IKW = 2). Speler B — Min 0, Q1 0,5, Mediaan 3, Q3 5,5, Maks 6 (IKW = 5). Beide spelers het dieselfde gemiddelde en mediaan (3), maar Speler A se baie kleiner standaardafwyking en IKW toon dat sy doelskiet-syfers eng gegroepeer is van wedstryd tot wedstryd — hy is die meer konsekwente doelskieter. Speler B se groter spreiding beteken hy is meer geneig tot beide baie lae (selfs 0-doel) en baie hoë doelskiet-wedstryde, dus behoort ʼn afrigter wat betroubare, voorspelbare uitset soek Speler A te kies, terwyl ʼn afrigter wat op geleentheidsgewyse groot telling-oorwinnings speel eerder Speler B mag verkies.",
+    checkMode: 'self',
+  },
 ]
 
 export const resultsConfig = {
-  totalMarks: 20,
+  totalMarks: 22,
   messages: [
     { minScore: 20, message: 'Uitstekend! Jy het al die Graad 11-statistiek voltooi en bemeester.' },
     { minScore: 15, message: 'Puik werk!' },

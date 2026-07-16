@@ -436,6 +436,22 @@ export const topicData: TopicData = {
       answer: 'P(heart first) = 13/52. P(heart second) = 12/51. Combined = 13/52 × 12/51 = 156/2652 = 1/17.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard — problem-solving: Venn/addition rule with an unknown overlap ─
+    {
+      difficulty: 'Hard',
+      question: 'Events A and B are such that P(A) = 0.4. It is known that P(A and B) is one third of P(B), i.e. P(A and B) = ⅓ × P(B). If P(A or B) = 0.64, form an equation in P(B), solve it, and hence state P(A and B).',
+      answer: 'Let P(B) = y, so P(A and B) = y/3. Addition rule: P(A or B) = P(A) + P(B) − P(A and B), so 0.64 = 0.4 + y − y/3 = 0.4 + (2/3)y. Solving: (2/3)y = 0.24, so y = 0.36. Therefore P(B) = 0.36 and P(A and B) = 0.36 ÷ 3 = 0.12. Check: 0.4 + 0.36 − 0.12 = 0.64 ✓.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard — problem-solving: tree diagram + addition rule, two branches ─
+    {
+      difficulty: 'Hard',
+      question: 'A box contains 5 red pens and 3 blue pens. Naledi draws two pens from the box, one after the other, without replacement. Draw a tree diagram and use it to find the probability that the two pens drawn are of different colours.',
+      answer: 'There are two branches that give different colours: red-then-blue and blue-then-red. P(red then blue) = 5/8 × 3/7 = 15/56. P(blue then red) = 3/8 × 5/7 = 15/56. These two outcomes cannot both happen, so add them: P(different colours) = 15/56 + 15/56 = 30/56 = 15/28.',
+      checkMode: 'self',
+    },
   ],
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -588,7 +604,7 @@ export const topicData: TopicData = {
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 22,
     messages: [
       { minPercent: 100, message: 'Outstanding! You have mastered probability.' },
       { minPercent: 75, message: 'Great work!' },

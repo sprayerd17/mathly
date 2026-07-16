@@ -534,6 +534,120 @@ export const topicData: TopicData = {
       openQuestions: [],
       videoPlaceholder: 'Kort video wat wys hoe om te skat voordat jy vermenigvuldig en hoe om te kyk of die antwoord redelik is',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 6 — VERMENIGVULDIG ʼN 2-SYFERGETAL MET ʼN 2-SYFERGETAL
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'multiplying-2digit-by-2digit',
+      title: 'Vermenigvuldig ʼn 2-Syfergetal met ʼn 2-Syfergetal',
+      icon: '🔲',
+      explanation: `<p style="margin-bottom:16px;">Om twee 2-syfergetalle te vermenigvuldig, kan ons die <strong>roostermetode</strong> gebruik (ook genoem gedeeltelike produkte). Breek <em>albei</em> getalle in tiene en eenhede, vermenigvuldig elke deel van die eerste getal met elke deel van die tweede getal, en tel dan al vier antwoorde bymekaar.</p>
+
+<p style="margin-bottom:16px;">Byvoorbeeld, <span style="color:#1e40af;font-weight:700;">23</span> × <span style="color:#16a34a;font-weight:700;">14</span> kan opgebreek word as (<span style="color:#1e40af;font-weight:700;">20</span> + <span style="color:#dc2626;font-weight:700;">3</span>) × (<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#ea580c;font-weight:700;">4</span>). Vermenigvuldig elke deel van die eerste hakie met elke deel van die tweede hakie, en tel dan die vier gedeeltelike produkte bymekaar: <span style="color:#1e40af;font-weight:700;">20</span>×<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#1e40af;font-weight:700;">20</span>×<span style="color:#ea580c;font-weight:700;">4</span> + <span style="color:#dc2626;font-weight:700;">3</span>×<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#dc2626;font-weight:700;">3</span>×<span style="color:#ea580c;font-weight:700;">4</span> = 200 + 80 + 30 + 12 = <strong>322</strong>.</p>
+
+<div style="background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px 16px;">
+  <p style="font-size:13px;font-weight:700;color:#0f1f3d;margin-bottom:10px;">Kleurgids:</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:13px;">
+    <span style="background:#eff6ff;color:#1e40af;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #bfdbfe;">Eerste getal se tiene — blou</span>
+    <span style="background:#fef2f2;color:#dc2626;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fca5a5;">Eerste getal se eenhede — rooi</span>
+    <span style="background:#f0fdf4;color:#16a34a;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #86efac;">Tweede getal se tiene — groen</span>
+    <span style="background:#fff7ed;color:#ea580c;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fdba74;">Tweede getal se eenhede — oranje</span>
+  </div>
+</div>`,
+
+      workedExamples: [
+        {
+          question: 'Bereken 23 × 14 met die roostermetode',
+          answer: '322',
+          steps: [
+            `Breek albei getalle in tiene en eenhede: <span style="color:#1e40af;font-weight:700;">23</span> = <span style="color:#1e40af;font-weight:700;">20</span> + <span style="color:#dc2626;font-weight:700;">3</span>, en <span style="color:#16a34a;font-weight:700;">14</span> = <span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
+            `Teken ʼn rooster en vermenigvuldig elke deel van een getal met elke deel van die ander:
+<div style="margin:12px 0;overflow-x:auto;">
+  <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
+    <tr>
+      <td style="padding:8px 16px;"></td>
+      <td style="padding:8px 16px;text-align:center;color:#16a34a;background:#f0fdf4;border:1px solid #86efac;">10</td>
+      <td style="padding:8px 16px;text-align:center;color:#ea580c;background:#fff7ed;border:1px solid #fdba74;">4</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;">20</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">200</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">80</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;">3</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">30</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">12</td>
+    </tr>
+  </table>
+</div>`,
+            `Tel al vier gedeeltelike produkte bymekaar: 200 + 80 + 30 + 12 = <strong>322</strong>. Dus 23 × 14 = <strong>322</strong>.`,
+          ],
+        },
+        {
+          question: 'Bereken 34 × 21 met die roostermetode',
+          answer: '714',
+          steps: [
+            `Breek albei getalle in tiene en eenhede: <span style="color:#1e40af;font-weight:700;">34</span> = <span style="color:#1e40af;font-weight:700;">30</span> + <span style="color:#dc2626;font-weight:700;">4</span>, en <span style="color:#16a34a;font-weight:700;">21</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">1</span>.`,
+            `Vermenigvuldig elke deel van een getal met elke deel van die ander:
+<div style="margin:12px 0;overflow-x:auto;">
+  <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
+    <tr>
+      <td style="padding:8px 16px;"></td>
+      <td style="padding:8px 16px;text-align:center;color:#16a34a;background:#f0fdf4;border:1px solid #86efac;">20</td>
+      <td style="padding:8px 16px;text-align:center;color:#ea580c;background:#fff7ed;border:1px solid #fdba74;">1</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;">30</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">600</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">30</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;">4</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">80</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">4</td>
+    </tr>
+  </table>
+</div>`,
+            `Tel al vier gedeeltelike produkte bymekaar: 600 + 30 + 80 + 4 = <strong>714</strong>. Dus 34 × 21 = <strong>714</strong>.`,
+          ],
+        },
+        {
+          question:
+            'ʼn Skool bestel 15 bokse potlode, met 24 potlode in elke boks. Hoeveel potlode is daar altesaam?',
+          answer: '360 potlode',
+          steps: [
+            `Dit is ʼn vermenigvuldigingsprobleem: <strong>15 × 24</strong>. Breek albei getalle in tiene en eenhede: <span style="color:#1e40af;font-weight:700;">15</span> = <span style="color:#1e40af;font-weight:700;">10</span> + <span style="color:#dc2626;font-weight:700;">5</span>, en <span style="color:#16a34a;font-weight:700;">24</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
+            `Vermenigvuldig elke deel van een getal met elke deel van die ander:
+<div style="margin:12px 0;overflow-x:auto;">
+  <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
+    <tr>
+      <td style="padding:8px 16px;"></td>
+      <td style="padding:8px 16px;text-align:center;color:#16a34a;background:#f0fdf4;border:1px solid #86efac;">20</td>
+      <td style="padding:8px 16px;text-align:center;color:#ea580c;background:#fff7ed;border:1px solid #fdba74;">4</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;">10</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">200</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">40</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;">5</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">100</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">20</td>
+    </tr>
+  </table>
+</div>`,
+            `Tel al vier gedeeltelike produkte bymekaar: 200 + 40 + 100 + 20 = <strong>360</strong>. Daar is <strong>360 potlode</strong> altesaam.`,
+          ],
+        },
+      ],
+      practiceQuestions: [],
+      openQuestions: [],
+      videoPlaceholder: 'Kort video wat wys hoe om die roostermetode te gebruik om ʼn 2-syfergetal met ʼn 2-syfergetal te vermenigvuldig',
+      diagramPlaceholder: 'Roostermetode-diagram wat 23 × 14 in vier gedeeltelike produkte verdeel wat bymekaar 322 gee',
+    },
   ],
 
   practiceSets: [
@@ -575,11 +689,16 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Sipho sê 6 × 23 = 148. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Sipho is verkeerd. 6 × 23 = 138, nie 148 nie. (Eenhede: 3 × 6 = 18, skryf 8 skuif 1. Tiene: 2 × 6 = 12, plus geskuifde 1 = 13, wat 138 gee.)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Boer het 8 rye van 14 kool. ʼn Haelstorm vernietig 2 volle rye. Hoeveel kool bly regop staan?', answer: '84 kool', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84', '84 kool'], explanation: 'Stap 1: Totale kool = 8 × 14 = 112.\nStap 2: Kool vernietig = 2 × 14 = 28.\nStap 3: Kool oor = 112 − 28 = 84 kool ✓' },
         { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom 6 × 8 dieselfde antwoord as 8 × 6 gee.', answer: 'Vermenigvuldiging kan in enige volgorde gedoen word — dit word die kommutatiewe eienskap genoem. 6 groepe van 8 en 8 groepe van 6 bevat albei presies dieselfde totale aantal items (48), net anders gerangskik, dus is die antwoord altyd dieselfde ongeag in watter volgorde jy vermenigvuldig.', checkMode: 'self' },
+
+        // Blok 7 — Vermenigvuldig ʼn 2-Syfergetal met ʼn 2-Syfergetal (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'Bereken met die roostermetode: 12 × 13', answer: '156', checkMode: 'auto', correctAnswer: '156', correctAnswers: ['156'], explanation: '12 = 10 + 2, 13 = 10 + 3. Gedeeltelike produkte: 10×10=100, 10×3=30, 2×10=20, 2×3=6.\nSom: 100 + 30 + 20 + 6 = 156 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die roostermetode: 26 × 34', answer: '884', checkMode: 'auto', correctAnswer: '884', correctAnswers: ['884'], explanation: '26 = 20 + 6, 34 = 30 + 4. Gedeeltelike produkte: 20×30=600, 20×4=80, 6×30=180, 6×4=24.\nSom: 600 + 80 + 180 + 24 = 884 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Stadion het 18 rye sitplekke met 22 sitplekke in elke ry. Hoeveel sitplekke is daar altesaam?', answer: '396 sitplekke', checkMode: 'auto', correctAnswer: '396', correctAnswers: ['396', '396 sitplekke'], explanation: '18 = 10 + 8, 22 = 20 + 2. Gedeeltelike produkte: 10×20=200, 10×2=20, 8×20=160, 8×2=16.\nSom: 200 + 20 + 160 + 16 = 396 sitplekke ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, woordprobleme en redenasie bemeester.' },
-        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
+        { minScore: 23, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, 2-syfervermenigvuldiging, woordprobleme en redenasie bemeester.' },
+        { minScore: 17, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 11, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -621,11 +740,16 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Thabo sê 9 × 36 = 314. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Thabo is verkeerd. 9 × 36 = 324, nie 314 nie. (Eenhede: 6 × 9 = 54, skryf 4 skuif 5. Tiene: 3 × 9 = 27, plus geskuifde 5 = 32, wat 324 gee.)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Skryfbehoeftewinkel koop 7 bokse penne, elk met 12 penne, teen R4 per pen. Wat is die totale koste?', answer: 'R336', checkMode: 'auto', correctAnswer: '336', correctAnswers: ['336', 'R336'], explanation: 'Stap 1: 7 × 12 = 84 penne.\nStap 2: 84 × 4 = R336 ✓' },
         { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom dit help om te skat voordat jy bereken om jou antwoord te kontroleer.', answer: 'Deur die getalle eers af te rond, kry jy vinnig ʼn benaderde antwoord. Nadat jy die presiese antwoord uitgewerk het, wys die vergelyking met die skatting of die presiese antwoord redelik is. As die presiese antwoord baie ver van die skatting af is, is dit ʼn teken dat daar waarskynlik ʼn fout iewers in die berekening gemaak is.', checkMode: 'self' },
+
+        // Blok 7 — Vermenigvuldig ʼn 2-Syfergetal met ʼn 2-Syfergetal (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'Bereken met die roostermetode: 14 × 21', answer: '294', checkMode: 'auto', correctAnswer: '294', correctAnswers: ['294'], explanation: '14 = 10 + 4, 21 = 20 + 1. Gedeeltelike produkte: 10×20=200, 10×1=10, 4×20=80, 4×1=4.\nSom: 200 + 10 + 80 + 4 = 294 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die roostermetode: 37 × 25', answer: '925', checkMode: 'auto', correctAnswer: '925', correctAnswers: ['925'], explanation: '37 = 30 + 7, 25 = 20 + 5. Gedeeltelike produkte: 30×20=600, 30×5=150, 7×20=140, 7×5=35.\nSom: 600 + 150 + 140 + 35 = 925 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Boer plant 24 bome in elk van 16 rye. Hoeveel bome is daar altesaam?', answer: '384 bome', checkMode: 'auto', correctAnswer: '384', correctAnswers: ['384', '384 bome'], explanation: '24 = 20 + 4, 16 = 10 + 6. Gedeeltelike produkte: 20×10=200, 20×6=120, 4×10=40, 4×6=24.\nSom: 200 + 120 + 40 + 24 = 384 bome ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, woordprobleme en redenasie bemeester.' },
-        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
+        { minScore: 23, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, 2-syfervermenigvuldiging, woordprobleme en redenasie bemeester.' },
+        { minScore: 17, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 11, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -667,11 +791,16 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Amahle sê 12 × 11 = 142. Gebruik ʼn korrekte metode om te kontroleer of sy reg is. Wys al jou werk.', answer: 'Amahle is verkeerd. 12 × 11 = 132, nie 142 nie. (Dink: 12 × 10 = 120, plus 12 × 1 = 12, wat 120 + 12 = 132 gee.)', checkMode: 'self' },
         { difficulty: 'Hard', question: '4 vissers begin elkeen die dag met 38 visse in hulle vangs. Elke visser verkoop 14 visse by die mark. Hoeveel visse het al 4 vissers saam oor?', answer: '96 visse', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96', '96 visse'], explanation: 'Stap 1: Visse oor per visser = 38 − 14 = 24.\nStap 2: 4 × 24 = 96 visse ✓' },
         { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom om 15 in 5 × 3 te breek en stap vir stap te vermenigvuldig presies dieselfde antwoord gee as om direk met 15 te vermenigvuldig.', answer: 'Om 15 in 5 × 3 te breek verander nie sy waarde nie — 5 × 3 is steeds 15. Dus is om met 5 en dan met 3 te vermenigvuldig dieselfde totale hoeveelheid vermenigvuldiging as om met 15 in een stap te vermenigvuldig, net verdeel in twee makliker kleiner stappe. Die volgorde en groepering van die vermenigvuldiging kan verander, maar die finale produk bly dieselfde.', checkMode: 'self' },
+
+        // Blok 7 — Vermenigvuldig ʼn 2-Syfergetal met ʼn 2-Syfergetal (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'Bereken met die roostermetode: 13 × 24', answer: '312', checkMode: 'auto', correctAnswer: '312', correctAnswers: ['312'], explanation: '13 = 10 + 3, 24 = 20 + 4. Gedeeltelike produkte: 10×20=200, 10×4=40, 3×20=60, 3×4=12.\nSom: 200 + 40 + 60 + 12 = 312 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die roostermetode: 42 × 36', answer: '1512', checkMode: 'auto', correctAnswer: '1512', correctAnswers: ['1512'], explanation: '42 = 40 + 2, 36 = 30 + 6. Gedeeltelike produkte: 40×30=1200, 40×6=240, 2×30=60, 2×6=12.\nSom: 1200 + 240 + 60 + 12 = 1512 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Teater het 27 rye met 19 sitplekke in elke ry. Hoeveel sitplekke is daar altesaam?', answer: '513 sitplekke', checkMode: 'auto', correctAnswer: '513', correctAnswers: ['513', '513 sitplekke'], explanation: '27 = 20 + 7, 19 = 10 + 9. Gedeeltelike produkte: 20×10=200, 20×9=180, 7×10=70, 7×9=63.\nSom: 200 + 180 + 70 + 63 = 513 sitplekke ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, woordprobleme en redenasie bemeester.' },
-        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
+        { minScore: 23, message: 'Uitstekend! Jy het tafels, kolommetode, skatting, faktore, 2-syfervermenigvuldiging, woordprobleme en redenasie bemeester.' },
+        { minScore: 17, message: 'Goeie werk! Jy is selfversekerd oor die meeste van hierdie vaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 11, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur vir die blokke wat lastig was en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

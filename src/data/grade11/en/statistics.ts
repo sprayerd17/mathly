@@ -796,10 +796,26 @@ export const topicPractice = [
     answer: 'An exponential model would likely suit this data best, since exponential growth characteristically starts slowly and then accelerates rapidly, matching the described pattern rather than a constant linear rate or a symmetric quadratic curve.',
     checkMode: 'self',
   },
+
+  // Q21 — Hard (self) ───────────────────────────────────────────────────────────
+  {
+    difficulty: 'Hard',
+    question: "Thandi's five friends record how many minutes each spent on homework one evening: 25, 30, 32, 35 and 28. Thandi's own time, x, is unknown, but the mean for all six friends (including Thandi) is 33 minutes.\n(a) Determine x.\n(b) The five recorded values (excluding Thandi) have Q1 = 26.5 and Q3 = 33.5, so IQR = 7. Using the rule that a value below Q1 − 1.5×IQR or above Q3 + 1.5×IQR is considered an outlier, determine whether Thandi's homework time is an outlier among the six friends, and comment on what this suggests.",
+    answer: "(a) Sum of the five known times = 25 + 30 + 32 + 35 + 28 = 150. Total for all six = 33 × 6 = 198, so x = 198 − 150 = 48 minutes.\n(b) Lower fence = Q1 − 1.5×IQR = 26.5 − 1.5(7) = 26.5 − 10.5 = 16. Upper fence = Q3 + 1.5×IQR = 33.5 + 10.5 = 44. Since x = 48 > 44, Thandi's time is an outlier — she spent unusually long on homework compared to her friends, well beyond what the spread of the other five values would predict.",
+    checkMode: 'self',
+  },
+
+  // Q22 — Hard (self) ───────────────────────────────────────────────────────────
+  {
+    difficulty: 'Hard',
+    question: 'Two strikers each played 9 matches this season. Their goals per match were:\nPlayer A: 1, 2, 2, 3, 3, 3, 4, 4, 5\nPlayer B: 0, 0, 1, 2, 3, 4, 5, 6, 6\nBoth players have a mean of 3 goals per match.\n(a) Calculate the standard deviation of each player\'s goals, showing your working.\n(b) Using both the standard deviations AND the five-number summary (Q1, median, Q3) of each player, write a short justified conclusion about which player is the more consistent goal-scorer, and which player a coach chasing occasional big score-lines might prefer to pick.',
+    answer: "(a) Player A: deviations −2, −1, −1, 0, 0, 0, 1, 1, 2; squared deviations 4, 1, 1, 0, 0, 0, 1, 1, 4; sum = 12; variance = 12 ÷ 9 ≈ 1.33; standard deviation ≈ 1.15.\nPlayer B: deviations −3, −3, −2, −1, 0, 1, 2, 3, 3; squared deviations 9, 9, 4, 1, 0, 1, 4, 9, 9; sum = 46; variance = 46 ÷ 9 ≈ 5.11; standard deviation ≈ 2.26.\n(b) Five-number summaries: Player A — Min 1, Q1 2, Median 3, Q3 4, Max 5 (IQR = 2). Player B — Min 0, Q1 0.5, Median 3, Q3 5.5, Max 6 (IQR = 5). Both players have the same mean and median (3), but Player A's much smaller standard deviation and IQR show his scoring is tightly clustered match to match — he is the more consistent scorer. Player B's larger spread means he is more likely to have both very low (even 0-goal) and very high-scoring games, so a coach wanting reliable, predictable output should pick Player A, while a coach gambling on occasional big score-lines might prefer Player B.",
+    checkMode: 'self',
+  },
 ]
 
 export const resultsConfig = {
-  totalMarks: 20,
+  totalMarks: 22,
   messages: [
     { minScore: 20, message: 'Outstanding! You have completed all of Grade 11 and mastered statistics.' },
     { minScore: 15, message: 'Great work!' },

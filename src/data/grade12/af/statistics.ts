@@ -618,6 +618,22 @@ export const topicData: TopicData = {
       answer: '66 = 78 − 2(6) = μ − 2σ en 90 = 78 + 2(6) = μ + 2σ. Volgens die 68-95-99,7-reël val 95% van die data binne 2 standaardafwykings. Waarskynlikheid ≈ 0,95.',
       checkMode: 'self',
     },
+
+    // ── V21 Moeilik — werk terug na ʼn beperking op σ ──────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'ʼn Fabriek vul bottels met ʼn gemiddelde volume van 500 mL. Volumes is normaal verdeel met standaardafwyking σ mL. Kwaliteitsbeheer verwerp ʼn bottel slegs as die volume meer as 2 standaardafwykings van die gemiddelde af lê. ʼn Bottel met 485 mL word NIE verwerp nie.\n(a) Skryf ʼn ongelykheid in σ neer wat moet geld sodat hierdie bottel deurkom.\n(b) Bepaal dus die kleinste moontlike heelgetalwaarde van σ wat met hierdie inligting bestaanbaar is.',
+      answer: '(a) Vir die bottel om deur te kom, moet dit binne 2 standaardafwykings van die gemiddelde lê: |500 − 485| ≤ 2σ, dit wil sê 15 ≤ 2σ, dus σ ≥ 7,5.\n(b) Die kleinste heelgetalwaarde van σ wat aan σ ≥ 7,5 voldoen, is σ = 8 mL.',
+      checkMode: 'self',
+    },
+
+    // ── V22 Moeilik — uitskieter-besluit + gemiddelde-vs-mediaan-aanbeveling ──
+    {
+      difficulty: 'Hard',
+      question: "ʼn Kwaliteitsinspekteur teken die deursnee (in mm) van 9 koeëllaers van ʼn masjien aan: 20, 21, 21, 22, 22, 22, 23, 23, 46. Daar word vermoed dat die lesing van 46 mm ʼn metingsfout is.\n(a) Bepaal die vyfgetalopsomming van al 9 waardes soos aangeteken, en gebruik die reël dat ʼn waarde onder Q1 − 1,5×IKW of bo Q3 + 1,5×IKW ʼn uitskieter is, om te toets of 46 mm as ʼn uitskieter geklassifiseer moet word.\n(b) Die inspekteur moet ʼn enkele 'tipiese' deursnee aan die produksiebestuurder rapporteer. Gebruik jou antwoord in (a) en hoe die gemiddelde en mediaan verskillend op uiterste waardes reageer, en verduidelik watter maatstaf van sentrale tendens hier meer geskik is, en waarom.",
+      answer: "(a) Gerangskik: 20, 21, 21, 22, 22, 22, 23, 23, 46. Mediaan = 22 (5de waarde). Onderste helfte (20, 21, 21, 22): Q1 = (21+21)÷2 = 21. Boonste helfte (22, 23, 23, 46): Q3 = (23+23)÷2 = 23. IKW = 23 − 21 = 2. Boonste grens = Q3 + 1,5×IKW = 23 + 3 = 26. Aangesien 46 > 26, IS dit ʼn uitskieter.\n(b) Gemiddelde (met 46 ingesluit) = 220 ÷ 9 ≈ 24,44, wat merkbaar deur die enkele 46 mm-lesing opwaarts getrek word, terwyl die mediaan (22) daardeur onaangeraak bly aangesien dit slegs van die middelste posisie afhang. Aangesien 46 mm reeds in (a) as ʼn uitskieter geïdentifiseer is, is die mediaan die meer geskikte 'tipiese' waarde om te rapporteer — die gemiddelde word deur die een uiterste (waarskynlik foutiewe) lesing vervorm, terwyl die mediaan die ware middelpunt van die ander agt konsekwente metings weerspieël.",
+      checkMode: 'self',
+    },
   ],
 
   scoreMessages: [

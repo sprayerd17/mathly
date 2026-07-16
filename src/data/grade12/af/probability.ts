@@ -513,12 +513,32 @@ export const topicData: TopicData = {
       checkMode: 'self',
       answer: 'Totale 2-syfergetalle: 9 keuses vir die eerste teël, 8 oorblywende vir die tweede teël = 9 × 8 = 72 verskillende getalle. Getalle groter as 90 moet met 9 begin: die tiene-syfer is vas as 9 (1 keuse), en enige van die oorblywende 8 teëls kan die eenhede-syfer wees, wat 8 gunstige uitkomste gee. P(groter as 90) = 8 ÷ 72 = 1/9.',
     },
+
+    // ── Q21 Hard — problem-solving: addition rule with a conditional-probability-derived overlap
+    {
+      difficulty: 'Hard',
+      question: "By 'n skool is gebeurtenis A 'ʼn leerder neem Wiskunde' en gebeurtenis B 'ʼn leerder neem Fisiese Wetenskap'. Dit is bekend dat P(A) = 0,6 en P(A of B) = 0,75. Van die leerders wat Fisiese Wetenskap neem, neem presies 'n kwart ook Wiskunde. Laat P(B) = x. Stel 'n vergelyking in x op deur die optellingsreël te gebruik, los op vir x, en bepaal dus P(B).",
+      checkMode: 'auto',
+      correctAnswer: '0.2',
+      correctAnswers: ['0.2', '0,2'],
+      explanation: "Aangesien presies 'n kwart van die Fisiese Wetenskap-leerders ook Wiskunde neem, is P(A en B) = ¼ × P(B) = x/4. Optellingsreël: P(A of B) = P(A) + P(B) − P(A en B), dus 0,75 = 0,6 + x − x/4 = 0,6 + 0,75x. Los op: 0,75x = 0,15, dus x = 0,2. P(B) = 0,2 ✓",
+    },
+
+    // ── Q22 Hard — problem-solving: combinations combined with conditional probability
+    {
+      difficulty: 'Hard',
+      question: "'n Komitee van 4 mense word lukraak gekies uit 'n groep van 6 mans en 5 vrouens. Gegewe dat die komitee ten minste 3 vrouens bevat, bepaal die waarskynlikheid dat die komitee heeltemal uit vrouens bestaan (al 4 lede is vrouens).",
+      checkMode: 'auto',
+      correctAnswer: '1/13',
+      correctAnswers: ['1/13', '≈0.0769', '≈0,0769', '0.0769', '0,0769'],
+      explanation: 'Aantal komitees met presies 3 vrouens en 1 man: C(5,3) × C(6,1) = 10 × 6 = 60. Aantal komitees met presies 4 vrouens (0 mans): C(5,4) × C(6,0) = 5 × 1 = 5. Dus is die aantal komitees met ten minste 3 vrouens = 60 + 5 = 65. "Almal vrouens" is een van die maniere om "ten minste 3 vrouens" te kry, dus P(almal vrouens | ten minste 3 vrouens) = 5 ÷ 65 = 1/13 ✓',
+    },
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 22,
     messages: [
-      { minScore: 20, message: 'Uitstekend! Jy het waarskynlikheid bemeester.' },
+      { minScore: 22, message: 'Uitstekend! Jy het waarskynlikheid bemeester.' },
       { minScore: 15, message: 'Goeie werk!' },
       { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
       { minScore: 0, message: 'Hou aan probeer, werk deur die gids weer deur.' },
@@ -526,7 +546,7 @@ export const topicData: TopicData = {
   },
 
   scoreMessages: [
-    { minScore: 20, message: 'Uitstekend! Jy het waarskynlikheid bemeester.' },
+    { minScore: 22, message: 'Uitstekend! Jy het waarskynlikheid bemeester.' },
     { minScore: 15, message: 'Goeie werk!' },
     { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan probeer, werk deur die gids weer deur.' },

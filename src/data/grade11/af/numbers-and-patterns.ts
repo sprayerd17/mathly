@@ -234,6 +234,17 @@ export const topicData: TopicData = {
           answer: 'Tel eksponente bymekaar: x^(2/3+1/3)=x^(3/3)=x¹=x.',
           checkMode: 'self',
         },
+
+        // ── Q21 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'As x^(3/2) = 27, bepaal die waarde van x.',
+          answer: 'x = 9',
+          checkMode: 'auto',
+          correctAnswer: '9',
+          correctAnswers: ['9', 'x=9', 'x = 9'],
+          explanation: 'Hierdie keer word die resultaat gegee, nie x nie, dus moet ons die rasionale eksponent omkeer deur beide kante tot die omgekeerde mag 2/3 te verhef: x = (x^(3/2))^(2/3) = 27^(2/3) = (∛27)² = 3² = 9. Kontroleer deur terug te vervang: 9^(3/2) = (√9)³ = 3³ = 27.',
+        },
       ],
 
       videoPlaceholder:
@@ -657,6 +668,14 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'Vind die n-de term van die patroon 4, 9, 18, 31, en gebruik dit om die 10de term te vind.',
           answer: 'Eerste verskille: 5,9,13. Tweede verskille: 4,4. a=2. Deur T₁=4 te gebruik: 2+b+c=4. Deur T₂=9 te gebruik: 8+2b+c=9. Trek af: 6+b=5, b=-1. c=4-2-(-1)=3. Reël: Tₙ=2n²-n+3. 10de term=2(100)-10+3=193.',
+          checkMode: 'self',
+        },
+
+        // ── Q22 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Kwadratiese patroon begin 3, 5, 9, 15. ʼn Leerder wil weet of hierdie patroon ooit die term 2 sal bevat. Bepaal die algemene term Tₙ, en gebruik dan die diskriminant om te besluit of die vergelyking Tₙ = 2 enige reële oplossings vir n het. Bepaal daarvolgens of 2 ooit ʼn term van hierdie patroon is.',
+          answer: 'Eerste verskille: 2,4,6. Tweede verskille: 2,2. a=1. Deur T₁=3 te gebruik: 1+b+c=3→b+c=2. Deur T₂=5 te gebruik: 4+2b+c=5→2b+c=1. Trek af: b=-1, c=3. Reël: Tₙ=n²-n+3. Deur Tₙ=2 te stel: n²-n+3=2→n²-n+1=0. Diskriminant=(-1)²-4(1)(1)=1-4=-3, wat negatief is, dus het hierdie vergelyking geen reële oplossings nie. Aangesien daar geen reële waarde van n is (wat nog te sê ʼn positiewe heelgetal) wat aan Tₙ=2 voldoen nie, sal die patroon nooit die term 2 bevat nie.',
           checkMode: 'self',
         },
       ],

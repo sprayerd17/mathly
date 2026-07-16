@@ -566,6 +566,42 @@ export const topicData: TopicData = {
       answer: 'Ja — dit is die definiërende eienskap van ʼn inverse funksie: as f 2 na 7 omskakel, moet f⁻¹ per definisie 7 terug na 2 omskakel, sonder enige verdere berekening.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard (Problem-solving) — work backwards from two given conditions to find a and q of a restricted quadratic, hence f⁻¹ ──
+    {
+      difficulty: 'Hard',
+      question: 'ʼn Beperkte kwadratiese funksie word gedefinieer as f(x) = ax² + q vir x ≥ 0. Dit is gegee dat die punt (3, 3) op beide f en f⁻¹ lê, en dat f(1) = −1. Bepaal die waardes van a en q, en bepaal gevolglik f⁻¹(x).',
+      answer: '',
+      checkMode: 'auto',
+      parts: [
+        {
+          label: 'a) a =',
+          correctAnswer: '1/2',
+          correctAnswers: ['1/2', '0.5', '0,5'],
+          explanation: 'Aangesien (3, 3) op f lê, weet ons f(3) = 3: a(3)² + q = 3 → 9a + q = 3. Ons is ook gegee dat f(1) = −1: a(1)² + q = −1 → a + q = −1. Trek die tweede vergelyking van die eerste af: 8a = 4, dus a = 1/2.',
+        },
+        {
+          label: 'b) q =',
+          correctAnswer: '-3/2',
+          correctAnswers: ['-3/2', '-1.5', '-1,5'],
+          explanation: 'Vervang a = 1/2 in a + q = −1: 1/2 + q = −1 → q = −3/2.',
+        },
+        {
+          label: 'c) f⁻¹(x) =',
+          correctAnswer: '√(2x+3)',
+          correctAnswers: ['√(2x+3)', 'sqrt(2x+3)', '√(2x + 3)'],
+          explanation: 'Met a = 1/2 en q = −3/2 is f(x) = ½x² − 3/2 vir x ≥ 0. Verwissel x en y: x = ½y² − 3/2 → x + 3/2 = ½y² → y² = 2x + 3 → y = ±√(2x + 3). Aangesien die domein van f x ≥ 0 was, moet die waardeversameling van f⁻¹ aan y ≥ 0 voldoen, dus neem ons die positiewe wortel: f⁻¹(x) = √(2x + 3). Kontroleer: f⁻¹(3) = √9 = 3, wat bevestig dat (3, 3) ook op f⁻¹ lê. ✓',
+        },
+      ],
+    },
+
+    // ── Q22 Hard (Problem-solving) — prove f and f⁻¹ meet on y = x, then use that shortcut instead of the routine swap-and-solve method ──
+    {
+      difficulty: 'Hard',
+      question: 'Gegee f(x) = 3x − 4, toon aan dat enige snypunt van f en f⁻¹ noodwendig op die lyn y = x moet lê, en gebruik hierdie feit om die snypunt te bepaal SONDER om eers die vergelyking van f⁻¹ te vind.',
+      answer: 'Gestel (x₀, y₀) is ʼn punt waar die grafieke van f en f⁻¹ sny, sodat y₀ = f(x₀) en y₀ = f⁻¹(x₀). Deur f aan albei kante van y₀ = f⁻¹(x₀) toe te pas, kry ons f(y₀) = x₀. Dus f(x₀) = y₀ en f(y₀) = x₀. Aangesien f(x) = 3x − 4 streng stygend is (gradiënt 3 > 0), sou x₀ < y₀ beteken dat f(x₀) < f(y₀), d.w.s. y₀ < x₀ — ʼn teenstrydigheid; net so lei x₀ > y₀ tot ʼn teenstrydigheid. Dus x₀ = y₀, wat beteken die snypunt lê op y = x. Aangesien die punt op beide y = x en op f lê, vervang y = x in f(x) = 3x − 4: x = 3x − 4 → 4 = 2x → x = 2. Die snypunt is (2, 2). Kontroleer: f(2) = 3(2) − 4 = 2 ✓, en f⁻¹(x) = (x + 4)/3, dus f⁻¹(2) = 6/3 = 2 ✓.',
+      checkMode: 'self',
+    },
   ],
 
   resultsConfig: {

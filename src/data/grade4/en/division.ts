@@ -562,6 +562,86 @@ export const topicData: TopicData = {
 
       openQuestions: [],
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — COMPARING AMOUNTS: "FOR EVERY" AND "PER" PROBLEMS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'comparing-amounts-for-every-and-per',
+      title: 'Comparing Amounts: "For Every" and "Per" Problems',
+      icon: '⚖️',
+      explanation: `<p style="margin-bottom:18px;">Some word problems do not ask you to share one amount or group one amount — they ask you to <strong>compare two amounts that change together</strong>. There are two kinds of these problems.</p>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;">
+  <div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px;flex:1;min-width:200px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#1e40af;margin-bottom:8px;">Comparing the Same Kind</div>
+    <div style="font-size:14px;color:#374151;margin-bottom:8px;">Two groups of the <em>same kind</em> of thing are compared — like red beads and blue beads.</div>
+    <div style="font-size:13px;color:#374151;">Look for: <span style="color:#ea580c;font-weight:700;">for every</span>, <span style="color:#ea580c;font-weight:700;">for each</span></div>
+  </div>
+  <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:16px 18px;flex:1;min-width:200px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#16a34a;margin-bottom:8px;">Comparing Different Kinds</div>
+    <div style="font-size:14px;color:#374151;margin-bottom:8px;">Two <em>different kinds</em> of things that change together are compared — like distance and time, or cost and number of items.</div>
+    <div style="font-size:13px;color:#374151;">Look for: <span style="color:#ea580c;font-weight:700;">per</span>, <span style="color:#ea580c;font-weight:700;">every hour</span>, <span style="color:#ea580c;font-weight:700;">each</span></div>
+  </div>
+</div>
+
+<p style="margin-bottom:16px;">You do not need any new signs or symbols to solve these problems — just the multiplication and division facts you already know. First find the <span style="color:#ea580c;font-weight:700;">scale factor</span>: how many times bigger (or smaller) one amount has become. Then apply that <em>same</em> scale factor to the other amount.</p>
+
+<div style="background:#fff7ed;border:1.5px solid #fdba74;border-radius:10px;padding:14px 18px;margin-bottom:16px;">
+  <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#ea580c;margin-bottom:8px;">Three steps to solve any comparing problem</div>
+  <ol style="margin:0;padding-left:18px;color:#374151;font-size:14px;line-height:1.8;">
+    <li>Write down what you know for <strong>one</strong> unit or one small group.</li>
+    <li>Divide to find the <span style="color:#ea580c;font-weight:700;">scale factor</span> — how many of those units or groups fit into the new amount.</li>
+    <li>Multiply to find the matching new amount.</li>
+  </ol>
+</div>
+
+<div style="background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px 16px;">
+  <p style="font-size:13px;font-weight:700;color:#0f1f3d;margin-bottom:10px;">Colour guide:</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:13px;">
+    <span style="background:#eff6ff;color:#1e40af;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #bfdbfe;">First amount — blue</span>
+    <span style="background:#fef2f2;color:#dc2626;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fca5a5;">Matching amount — red</span>
+    <span style="background:#fff7ed;color:#ea580c;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fdba74;">Scale factor — orange</span>
+    <span style="background:#f0fdf4;color:#16a34a;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #86efac;">Answer — green</span>
+  </div>
+</div>`,
+
+      videoPlaceholder: 'Short video showing how to solve "for every" and "per" comparison word problems using a scale factor',
+
+      workedExamples: [
+        {
+          question: 'For every <span style="color:#1e40af;font-weight:700;">2</span> sweets Thabo gets, his younger sister gets <span style="color:#dc2626;font-weight:700;">3</span> sweets. If Thabo gets 8 sweets, how many sweets does his sister get?',
+          answer: '12 sweets',
+          steps: [
+            `This compares two groups of the <strong>same kind</strong> of thing (sweets and sweets): for every <span style="color:#1e40af;font-weight:700;">2</span> sweets Thabo gets, his sister gets <span style="color:#dc2626;font-weight:700;">3</span>.`,
+            `Find the <span style="color:#ea580c;font-weight:700;">scale factor</span>: Thabo's 2 sweets became 8 sweets. <span style="color:#ea580c;font-weight:700;">8 ÷ 2 = 4</span> — everything is 4 times bigger now.`,
+            `Apply the same scale factor to his sister's amount: <span style="color:#dc2626;font-weight:700;">3</span> × <span style="color:#ea580c;font-weight:700;">4</span> = <span style="color:#16a34a;font-weight:700;font-size:18px;">12</span>. His sister gets <strong>12 sweets</strong>.`,
+          ],
+        },
+        {
+          question: 'A tap fills a water tank at a steady rate of <span style="color:#1e40af;font-weight:700;">5 litres every minute</span>. How many litres are in the tank after 6 minutes?',
+          answer: '30 litres',
+          steps: [
+            `This compares two <strong>different kinds</strong> of things that change together: litres and minutes. We are told the amount for <strong>1 minute</strong>: <span style="color:#1e40af;font-weight:700;">5 litres</span>.`,
+            `We want the amount for <span style="color:#ea580c;font-weight:700;">6 minutes</span>, so multiply the rate by 6: <span style="color:#1e40af;font-weight:700;">5</span> × <span style="color:#ea580c;font-weight:700;">6</span> = <span style="color:#16a34a;font-weight:700;font-size:18px;">30</span>.`,
+            `After 6 minutes, there are <strong>30 litres</strong> in the tank.`,
+          ],
+        },
+        {
+          question: 'A taxi travels <span style="color:#1e40af;font-weight:700;">120 km in 3 hours</span> at a steady speed. How far will it travel in 5 hours?',
+          answer: '200 km',
+          steps: [
+            `First find the amount for <strong>1 hour</strong> — divide the distance by the time: <span style="color:#1e40af;font-weight:700;">120</span> ÷ <span style="color:#ea580c;font-weight:700;">3</span> = <span style="color:#16a34a;font-weight:700;">40</span> km per hour.`,
+            `Now multiply this by the new number of hours: <span style="color:#16a34a;font-weight:700;">40</span> × <span style="color:#dc2626;font-weight:700;">5</span> = <span style="color:#16a34a;font-weight:700;font-size:18px;">200</span>.`,
+            `The taxi will travel <strong>200 km</strong> in 5 hours.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+    },
   ],
 
   practiceSets: [
@@ -602,11 +682,16 @@ export const topicData: TopicData = {
         // Block 6 — Reasoning & Justification (18-19, Hard)
         { difficulty: 'Hard', question: 'A learner claims: "In the fact family for 8 × 6 = 48, the two division facts are 48 ÷ 6 = 8 and 48 ÷ 5 = 8." Is this claim correct? Explain your reasoning and give the correct second division fact if needed.', answer: 'Incorrect — the second fact should be 48 ÷ 8 = 6, not 48 ÷ 5 = 8', checkMode: 'self', explanation: 'The claim is incorrect. From 8 × 6 = 48, the two related division facts must use the same three numbers: 48 ÷ 6 = 8 and 48 ÷ 8 = 6. The number 5 does not belong to this fact family at all.' },
         { difficulty: 'Hard', question: 'Without calculating both fully, explain which gives a bigger answer: 96 ÷ 4 or 96 ÷ 8. How do you know?', answer: '96 ÷ 4 is bigger', checkMode: 'self', explanation: 'When the same number is divided by a smaller divisor, it is split into fewer, larger groups, so the answer is bigger. Since 4 is smaller than 8, 96 ÷ 4 gives a bigger answer than 96 ÷ 8, without needing to work out that they are 24 and 12.' },
+
+        // Block 7 — Comparing Amounts: For Every and Per (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'For every 3 red counters, there are 4 blue counters. If there are 12 red counters, how many blue counters are there?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 blue counters'], explanation: '12 red counters is 12 ÷ 3 = 4 times as many as 3. Apply the same scale factor to the blue counters: 4 × 4 = 16 ✓' },
+        { difficulty: 'Medium', question: 'A minibus taxi travels 150 km in 3 hours at a steady speed. How far does it travel in 5 hours?', answer: '250 km', checkMode: 'auto', correctAnswer: '250', correctAnswers: ['250', '250 km'], explanation: 'Rate per hour: 150 ÷ 3 = 50 km per hour. In 5 hours: 50 × 5 = 250 km ✓' },
+        { difficulty: 'Medium', question: 'A recipe needs 2 eggs for every 3 cups of flour. Sipho has 8 eggs and wants to use all of them, keeping the same pattern. How many cups of flour does he need? Explain your reasoning.', answer: '12 cups', checkMode: 'self', explanation: 'The scale factor is 8 ÷ 2 = 4 (Sipho has 4 times as many eggs as the base amount of 2). Apply the same scale factor to the flour: 3 × 4 = 12 cups.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have a strong grasp of division facts, remainders, long division, and word problems.' },
-        { minScore: 15, message: 'Great work! You are confident with most division skills — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 23, message: 'Outstanding! You have a strong grasp of division facts, remainders, long division, word problems and comparing amounts.' },
+        { minScore: 17, message: 'Great work! You are confident with most division skills — review any missed questions.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples and try this set again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
@@ -648,11 +733,16 @@ export const topicData: TopicData = {
         // Block 6 — Reasoning & Justification (18-19, Hard)
         { difficulty: 'Hard', question: 'Explain in your own words why the remainder in a division must always be smaller than the divisor. Use the example 26 ÷ 7 to support your explanation.', answer: '26 ÷ 7 = 3 r 5, since 5 < 7', checkMode: 'self', explanation: 'If the remainder were equal to or greater than the divisor, another full group could still be made, so the division was not finished. For 26 ÷ 7: 7 × 3 = 21, and 26 − 21 = 5, which is smaller than 7, so 3 r 5 is correct. If someone said 2 r 12, that would be wrong because 12 is bigger than 7 — another group of 7 fits inside 12.' },
         { difficulty: 'Hard', question: 'Without calculating both fully, explain which gives a bigger answer: 120 ÷ 6 or 120 ÷ 10. How do you know?', answer: '120 ÷ 6 is bigger', checkMode: 'self', explanation: 'When the same number is divided by a smaller divisor, it is split into fewer, larger groups, so the answer is bigger. Since 6 is smaller than 10, 120 ÷ 6 gives a bigger answer than 120 ÷ 10, without needing to work out that they are 20 and 12.' },
+
+        // Block 7 — Comparing Amounts: For Every and Per (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'For every 4 pencils in a pack, there are 5 pens in a matching pack. If there are 20 pencils, how many pens are there?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 pens'], explanation: '20 pencils is 20 ÷ 4 = 5 times as many as 4. Apply the same scale factor to the pens: 5 × 5 = 25 ✓' },
+        { difficulty: 'Medium', question: 'A cyclist rides 84 km in 4 hours at a steady speed. How far does she ride in 7 hours?', answer: '147 km', checkMode: 'auto', correctAnswer: '147', correctAnswers: ['147', '147 km'], explanation: 'Rate per hour: 84 ÷ 4 = 21 km per hour. In 7 hours: 21 × 7 = 147 km ✓' },
+        { difficulty: 'Medium', question: 'A juice recipe uses 3 parts water for every 2 parts concentrate. Zanele has 10 parts of concentrate and wants to make juice, keeping the same pattern. How many parts of water does she need? Explain your reasoning.', answer: '15 parts', checkMode: 'self', explanation: 'The scale factor is 10 ÷ 2 = 5 (Zanele has 5 times as much concentrate as the base amount of 2). Apply the same scale factor to the water: 3 × 5 = 15 parts.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have a strong grasp of division facts, remainders, long division, and word problems.' },
-        { minScore: 15, message: 'Great work! You are confident with most division skills — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 23, message: 'Outstanding! You have a strong grasp of division facts, remainders, long division, word problems and comparing amounts.' },
+        { minScore: 17, message: 'Great work! You are confident with most division skills — review any missed questions.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples and try this set again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
@@ -694,11 +784,16 @@ export const topicData: TopicData = {
         // Block 6 — Reasoning & Justification (18-19, Hard)
         { difficulty: 'Hard', question: 'Explain, using an example, the difference between a sharing division problem and a grouping division problem, even though both can use the same division number sentence.', answer: 'Sharing: 4 friends get 8 marbles each from 32. Grouping: 32 marbles packed into bags of 8 makes 4 bags.', checkMode: 'self', explanation: 'In a sharing problem, you know the total and the number of groups, and you find how many items go in each group — for example, sharing 32 marbles among 4 friends means each friend gets 32 ÷ 4 = 8 marbles. In a grouping problem, you know the total and the size of each group, and you find how many groups you can make — for example, packing 32 marbles into bags of 8 means you can make 32 ÷ 8 = 4 bags. The number sentence looks similar, but the meaning of the answer is different.' },
         { difficulty: 'Hard', question: 'Without calculating both fully, explain which gives a bigger answer: 144 ÷ 3 or 144 ÷ 9. How do you know?', answer: '144 ÷ 3 is bigger', checkMode: 'self', explanation: 'When the same number is divided by a smaller divisor, it is split into fewer, larger groups, so the answer is bigger. Since 3 is smaller than 9, 144 ÷ 3 gives a bigger answer than 144 ÷ 9, without needing to work out that they are 48 and 16.' },
+
+        // Block 7 — Comparing Amounts: For Every and Per (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'For every 5 goals a soccer team scores, they concede 2 goals. If they scored 25 goals this season, how many goals did they concede, following the same pattern?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 goals'], explanation: '25 goals is 25 ÷ 5 = 5 times as many as 5. Apply the same scale factor to the goals conceded: 2 × 5 = 10 ✓' },
+        { difficulty: 'Medium', question: 'A tractor ploughs 36 hectares in 4 hours at a steady rate. How many hectares does it plough in 9 hours?', answer: '81 hectares', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '81 hectares'], explanation: 'Rate per hour: 36 ÷ 4 = 9 hectares per hour. In 9 hours: 9 × 9 = 81 hectares ✓' },
+        { difficulty: 'Medium', question: 'A paint mix uses 2 tins of blue for every 5 tins of white. A painter has 8 tins of blue and wants to keep the same pattern. How many tins of white does he need? Explain your reasoning.', answer: '20 tins', checkMode: 'self', explanation: 'The scale factor is 8 ÷ 2 = 4 (the painter has 4 times as much blue as the base amount of 2). Apply the same scale factor to the white: 5 × 4 = 20 tins.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have a strong grasp of division facts, remainders, long division, and word problems.' },
-        { minScore: 15, message: 'Great work! You are confident with most division skills — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples and try this set again.' },
+        { minScore: 23, message: 'Outstanding! You have a strong grasp of division facts, remainders, long division, word problems and comparing amounts.' },
+        { minScore: 17, message: 'Great work! You are confident with most division skills — review any missed questions.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples and try this set again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
@@ -1042,6 +1137,55 @@ export const topicData: TopicData = {
             '240 + 72 = R312.',
         },
       ],
+    },
+
+    // ── SECTION 6 — Comparing Amounts: "For Every" and "Per" Problems ────────
+    {
+      difficulty: 'Easy',
+      checkMode: 'auto',
+      question:
+        'For every 3 apples in a basket, there are 2 oranges.\n\n' +
+        'If there are 15 apples, how many oranges are there? Write only the number.',
+      answer: '10',
+      correctAnswer: '10',
+      correctAnswers: ['10', '10 oranges'],
+      explanation:
+        'The scale factor is 15 ÷ 3 = 5.\n' +
+        'Apply the same scale factor to the oranges: 2 × 5 = 10.',
+    },
+
+    {
+      difficulty: 'Medium',
+      checkMode: 'auto',
+      question:
+        'A car travels 180 km in 3 hours at a steady speed.\n\n' +
+        'a) What is the rate — how far does it travel in 1 hour?\n' +
+        'b) How far will it travel in 5 hours?',
+      answer: 'a) 60 km  b) 300 km',
+      parts: [
+        {
+          label: 'a) Distance in 1 hour',
+          correctAnswer: '60',
+          explanation: 'Divide the distance by the time: 180 ÷ 3 = 60 km per hour.',
+        },
+        {
+          label: 'b) Distance in 5 hours',
+          correctAnswer: '300',
+          explanation: 'Multiply the rate for 1 hour by 5: 60 × 5 = 300 km.',
+        },
+      ],
+    },
+
+    {
+      difficulty: 'Hard',
+      checkMode: 'self',
+      question:
+        'A caterer\'s pancake batter recipe uses 2 cups of milk for every 3 cups of flour. She needs to make a big batch using 15 cups of flour, keeping the same pattern.\n\n' +
+        'How many cups of milk are needed? Show your working and explain how you found the scale factor.',
+      answer:
+        'Scale factor: 15 ÷ 3 = 5 (there is 5 times as much flour as the base amount of 3 cups).\n\n' +
+        'Apply the same scale factor to the milk: 2 × 5 = 10.\n\n' +
+        'She needs 10 cups of milk.',
     },
   ],
 }

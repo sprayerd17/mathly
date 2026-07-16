@@ -371,6 +371,90 @@ export const topicData: TopicData = {
       videoPlaceholder:
         'Short video showing how to calculate duration between two times and use a calendar to count days between dates',
     },
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — THE HISTORY OF TIME
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'history-of-time',
+      title: 'The History of Time',
+      icon: '📜',
+      explanation: `
+<p style="margin-bottom:14px;">Clocks and watches have not always existed! Long ago, people still needed to know roughly what time it was — to know when to plant crops, meet others, or start a journey. They found clever ways to measure time using the <strong style="color:#ea580c;">sun</strong>, <strong style="color:#1e40af;">water</strong>, and <strong style="color:#16a34a;">sand</strong>.</p>
+
+<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#ea580c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">☀️ Sundials</div>
+  <p style="font-size:15px;color:#7c2d12;margin-bottom:8px;">A <strong>sundial</strong> is a flat surface with a stick or pointer (called a <strong>gnomon</strong>) standing up in the middle. As the sun moves across the sky during the day, the <strong>shadow</strong> of the pointer moves too, and its position shows roughly what time it is.</p>
+  <p style="font-size:14px;color:#9a3412;">Sundials were used by the ancient Egyptians thousands of years ago. The big problem with a sundial? It only works when the <strong>sun is shining</strong> — no use at night or on a cloudy day!</p>
+</div>
+
+<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">💧 Water Clocks</div>
+  <p style="font-size:15px;color:#1e3a8a;margin-bottom:8px;">A <strong>water clock</strong> (also called a <em>clepsydra</em>) measures time by letting <strong>water drip</strong> at a steady rate from one container into another. Lines marked on the container showed how much time had passed as the water level rose or fell.</p>
+  <p style="font-size:14px;color:#1e40af;">Unlike a sundial, a water clock could be used <strong>indoors, at night, or on a cloudy day</strong>, because it did not depend on sunlight at all.</p>
+</div>
+
+<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">⏳ Hourglasses</div>
+  <p style="font-size:15px;color:#14532d;margin-bottom:8px;">An <strong>hourglass</strong> has two glass chambers joined by a narrow neck. <strong>Sand</strong> trickles slowly from the top chamber to the bottom one, and when it has all fallen through, a fixed amount of time has passed (often exactly one hour).</p>
+  <p style="font-size:14px;color:#15803d;">Sailors on ships found hourglasses especially useful — unlike a sundial, an hourglass keeps working steadily no matter how much the ship rocks on the waves!</p>
+</div>
+
+<div style="background:#fef9c3;border:1.5px solid #fde68a;border-radius:10px;padding:14px 18px;margin-bottom:16px;">
+  <span style="font-size:13px;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:.05em;">🕯️ Candle clocks</span>
+  <div style="color:#78350f;font-size:15px;margin-top:8px;">Some cultures marked candles with evenly spaced lines. As the candle burned down at a steady rate, it passed each line after roughly the same amount of time — giving a simple way to measure the hours passing, even after dark.</div>
+</div>
+
+<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
+  <div style="font-size:13px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">📅 Early Calendars</div>
+  <p style="font-size:15px;color:#1e3a8a;">Long before printed calendars existed, people tracked longer stretches of time by watching the <strong>moon</strong> and the <strong>sun</strong>. Many early calendars followed the changing shape of the moon from night to night. The ancient Egyptians developed one of the first calendars based on the sun and the yearly flooding of the Nile River, to help them know when to plant and harvest their crops.</p>
+</div>
+
+<div style="background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px 18px;">
+  <div style="font-size:13px;font-weight:700;color:#0f1f3d;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">Why modern clocks are so useful</div>
+  <div style="color:#374151;font-size:15px;">Unlike a sundial, water clock, hourglass or candle, a modern clock works <strong>day and night</strong>, in <strong>any weather</strong>, and keeps time <strong>precisely</strong> without anyone needing to watch it, refill it, or turn it over!</div>
+</div>
+`,
+      workedExamples: [
+        {
+          question:
+            'Before clocks were invented, how did the ancient Egyptians use the sun to measure time during the day?',
+          steps: [
+            "They noticed that a stick or pillar's shadow moves in a predictable pattern from sunrise to sunset.",
+            'They placed markers around the stick, forming a sundial, to show different times of day.',
+            'By reading where the shadow fell among the markers, people could tell roughly what time it was.',
+          ],
+          answer:
+            'They used a sundial — a pointer that cast a moving shadow as the sun crossed the sky, showing roughly what time it was.',
+        },
+        {
+          question:
+            'Sailors on old ships needed to measure time, but a sundial was not very useful to them at sea. Why not, and what did they use instead?',
+          steps: [
+            "A sundial needs to stay still and face the sun clearly to work — hard to do on a ship rocking on the waves.",
+            'An hourglass works the same way no matter how the ship moves, because gravity pulls the sand down at a steady rate.',
+            'Sailors would turn the hourglass over each time the sand ran out, to keep counting the hours.',
+          ],
+          answer:
+            'A sundial does not work well on a moving, rocking ship. Sailors used an hourglass instead, which measures a fixed amount of time using falling sand, regardless of the ship\'s movement.',
+        },
+        {
+          question: 'Why is a water clock considered an improvement over a sundial?',
+          steps: [
+            'A sundial only works when the sun is shining and visible in the sky.',
+            'A water clock uses water dripping steadily from one container into another, marked with lines to show the passing time.',
+            'This meant people could measure time indoors, at night, or on a cloudy day — situations where a sundial would be useless.',
+          ],
+          answer:
+            'A water clock does not depend on sunlight, so it can be used indoors, at night, and on cloudy days, unlike a sundial.',
+        },
+      ],
+      practiceQuestions: [],
+      openQuestions: [],
+      diagramPlaceholder:
+        'A simple timeline showing a sundial, a water clock, an hourglass, a candle clock and a modern digital clock in order',
+      videoPlaceholder:
+        'Short video showing how ancient people measured time using sundials, water clocks and hourglasses before modern clocks existed',
+    },
   ],
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
@@ -405,11 +489,15 @@ export const topicData: TopicData = {
         // Block F — Multi-step reasoning & justification (18-19, Hard)
         { difficulty: 'Hard', question: "Sipho wakes up at 6:15 am. It takes him 40 minutes to get ready, then a further 15 minutes to walk to the bus stop. What time does he arrive at the bus stop?", answer: '7:10 am', checkMode: 'auto', correctAnswer: '7:10am', correctAnswers: ['7:10am', '7:10 am', '710am'], explanation: 'Getting ready: 6:15 am + 40 minutes = 6:55 am. Walking: 6:55 am + 15 minutes = 7:10 am.' },
         { difficulty: 'Hard', question: 'Explain how you would work out the finishing time of an activity if you are given the start time and the duration, using a step-by-step method.', answer: 'First add the whole hours from the duration to the start time. Then add the remaining minutes to that result. If the minutes go past 60, carry 1 hour over and keep the leftover minutes. Remember to check whether the answer crosses over from a.m. to p.m. (or past midnight) and adjust accordingly.', checkMode: 'self' },
+
+        // Block G — History of Time (20-21, Easy-Medium)
+        { difficulty: 'Easy', question: 'Before mechanical clocks existed, which ancient time-measuring tool used the shadow cast by a stick or pillar to show the time of day?', answer: 'A sundial', checkMode: 'auto', correctAnswer: 'sundial', correctAnswers: ['sundial', 'a sundial', 'suntial'], explanation: 'A sundial uses a pointer (gnomon) that casts a moving shadow as the sun crosses the sky, showing roughly what time it is.' },
+        { difficulty: 'Medium', question: 'Why was an hourglass useful to sailors on a moving ship, when a sundial was not?', answer: "An hourglass works using gravity pulling sand downward at a steady rate, no matter how the ship rocks — it does not depend on seeing the sun clearly like a sundial does.", checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You can confidently tell the time and solve time problems.' },
-        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples and try again.' },
+        { minScore: 22, message: 'Outstanding! You can confidently tell the time and solve time problems.' },
+        { minScore: 17, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples and try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
@@ -446,11 +534,15 @@ export const topicData: TopicData = {
         // Block F — Multi-step reasoning & justification (18-19, Hard)
         { difficulty: 'Hard', question: 'A sports day schedule starts with a 400 m race at 9:20 am lasting 15 minutes, followed by a 25-minute break, then long jump trials lasting 50 minutes. What time do the long jump trials finish?', answer: '10:50 am', checkMode: 'auto', correctAnswer: '10:50am', correctAnswers: ['10:50am', '10:50 am', '1050am'], explanation: 'Total time from the start of the race to the end of long jump = 15 + 25 + 50 = 90 minutes = 1 hour 30 minutes. 9:20 am + 1 hour 30 minutes = 10:50 am.' },
         { difficulty: 'Hard', question: 'Explain why converting all times to minutes (or hours) before adding or subtracting can help avoid mistakes when solving multi-step time problems.', answer: 'Converting everything into the same unit (like minutes) means you can add or subtract the numbers directly, just like normal numbers, without worrying about hours and minutes separately. Once you have the total in one unit, you convert back into hours and minutes at the end, which reduces the chance of making an error partway through the calculation.', checkMode: 'self' },
+
+        // Block G — History of Time (20-21, Easy-Medium)
+        { difficulty: 'Easy', question: 'Which ancient time-measuring tool used water dripping steadily from one container into another to show the passing of time?', answer: 'A water clock', checkMode: 'auto', correctAnswer: 'waterclock', correctAnswers: ['waterclock', 'water clock', 'a water clock', 'clepsydra'], explanation: 'A water clock (also called a clepsydra) measures time using water dripping at a steady rate, with marked lines showing how much time has passed.' },
+        { difficulty: 'Medium', question: 'Name one advantage a water clock has over a sundial.', answer: 'A water clock can be used indoors, at night, or on a cloudy day, because it does not need sunlight to work — a sundial only works in direct sunlight.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Excellent! You can confidently calculate elapsed time and duration.' },
-        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
-        { minScore: 10, message: 'Good effort! Revisit the duration-calculation worked examples.' },
+        { minScore: 22, message: 'Excellent! You can confidently calculate elapsed time and duration.' },
+        { minScore: 17, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 11, message: 'Good effort! Revisit the duration-calculation worked examples.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
@@ -487,11 +579,15 @@ export const topicData: TopicData = {
         // Block F — Multi-step reasoning & justification (18-19, Hard)
         { difficulty: 'Hard', question: 'A farmer starts milking cows at 5:15 am. It takes 1 hour 50 minutes. Then, after a 40-minute breakfast break, he starts feeding the animals, which takes another 1 hour 10 minutes. What time does he finish feeding the animals?', answer: '8:55 am', checkMode: 'auto', correctAnswer: '8:55am', correctAnswers: ['8:55am', '8:55 am', '855am'], explanation: 'Milking: 5:15 am + 1 hour 50 minutes = 7:05 am. Breakfast: 7:05 am + 40 minutes = 7:45 am. Feeding: 7:45 am + 1 hour 10 minutes = 8:55 am.' },
         { difficulty: 'Hard', question: 'Explain why it is important to know whether a time is a.m. or p.m. when solving word problems about duration.', answer: 'a.m. and p.m. tell you whether a time is in the first half or second half of the day. Without knowing this, you could calculate the wrong duration — for example, mixing up 7:00 am and 7:00 pm would give a completely different (and incorrect) answer for how long an activity lasted.', checkMode: 'self' },
+
+        // Block G — History of Time (20-21, Easy-Medium)
+        { difficulty: 'Easy', question: 'Which ancient time-measuring tool uses sand trickling through a narrow neck from a top chamber to a bottom chamber to measure a fixed length of time?', answer: 'An hourglass', checkMode: 'auto', correctAnswer: 'hourglass', correctAnswers: ['hourglass', 'an hourglass', 'sand timer', 'sand clock'], explanation: 'An hourglass has two glass chambers joined by a narrow neck. Sand trickles from the top to the bottom at a steady rate, measuring a fixed amount of time, often exactly one hour.' },
+        { difficulty: 'Medium', question: 'Explain one reason why modern clocks are more useful in everyday life than a sundial or an hourglass.', answer: 'Modern clocks work at any time of day or night, in any weather, and can measure time continuously and precisely without needing to be watched, refilled, or turned over — unlike a sundial (needs sunlight) or an hourglass (needs to be flipped and only measures a fixed amount of time).', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Fantastic! You can apply time calculations to real-world problems.' },
-        { minScore: 15, message: 'Great work! Review any missed questions and try again.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples and try the word problems again.' },
+        { minScore: 22, message: 'Fantastic! You can apply time calculations to real-world problems.' },
+        { minScore: 17, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples and try the word problems again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },

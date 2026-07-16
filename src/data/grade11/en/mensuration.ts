@@ -152,6 +152,24 @@ export const topicData: TopicData = {
             },
           ],
         },
+        {
+          difficulty: 'Hard',
+          question: 'A pyramid has volume 15 cm³ and surface area 34 cm². A larger, similar pyramid is formed by scaling every dimension by the same factor k. The larger pyramid has volume 1 875 cm³.\n\na) Without finding the actual dimensions of either pyramid, determine the value of k.\nb) Hence find the surface area of the larger pyramid.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Value of k',
+              correctAnswer: '5',
+              explanation: 'Volume scales by k³, so k³ = new volume ÷ original volume = 1 875 ÷ 15 = 125.\nk = ∛125 = 5 ✓',
+            },
+            {
+              label: 'b) Surface area of the larger pyramid (cm²)',
+              correctAnswer: '850',
+              explanation: 'Now that k is known, surface area scales by k² = 5² = 25.\nNew surface area = 34 × 25 = 850 cm² ✓',
+            },
+          ],
+        },
       ],
 
       videoPlaceholder:
@@ -277,6 +295,12 @@ export const topicData: TopicData = {
               explanation: 'Remaining = 904.32 − 150.72 = 753.6 cm³ ✓',
             },
           ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A grain silo is built from a cylinder with a hemispherical cap of the same radius on top. The height of the cylindrical part is three times the radius. If the total volume of the silo is 2 486.88 cm³, determine the radius, r. Use π ≈ 3.14.',
+          answer: 'Let the radius be r, so the height of the cylinder is h = 3r.\n\nSet up the total volume:\nV = πr²h + ⅔πr³\nV = πr²(3r) + ⅔πr³\nV = 3πr³ + ⅔πr³ = (11/3)πr³\n\nSubstitute the known volume and π ≈ 3.14:\n2 486.88 = (11/3)(3.14)r³\n2 486.88 = 11.5133...r³\nr³ = 2 486.88 ÷ 11.5133... = 216\n\nTake the cube root:\nr = ∛216 = 6 cm ✓',
+          checkMode: 'self',
         },
       ],
 

@@ -234,6 +234,17 @@ export const topicData: TopicData = {
           answer: 'Add exponents: x^(2/3+1/3)=x^(3/3)=x¹=x.',
           checkMode: 'self',
         },
+
+        // ── Q21 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'If x^(3/2) = 27, determine the value of x.',
+          answer: 'x = 9',
+          checkMode: 'auto',
+          correctAnswer: '9',
+          correctAnswers: ['9', 'x=9', 'x = 9'],
+          explanation: 'This time we are given the result, not x, so we must undo the rational exponent by raising both sides to the reciprocal power 2/3: x = (x^(3/2))^(2/3) = 27^(2/3) = (∛27)² = 3² = 9. Check by substituting back: 9^(3/2) = (√9)³ = 3³ = 27.',
+        },
       ],
 
       videoPlaceholder:
@@ -657,6 +668,14 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'Find the nth term of the pattern 4, 9, 18, 31, and use it to find the 10th term.',
           answer: 'First differences: 5,9,13. Second differences: 4,4. a=2. Using T₁=4: 2+b+c=4. Using T₂=9: 8+2b+c=9. Subtract: 6+b=5, b=-1. c=4-2-(-1)=3. Rule: Tₙ=2n²-n+3. 10th term=2(100)-10+3=193.',
+          checkMode: 'self',
+        },
+
+        // ── Q22 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'A quadratic pattern begins 3, 5, 9, 15. A learner wants to know whether this pattern will ever contain the term 2. Determine the general term Tₙ, then use the discriminant to decide whether the equation Tₙ = 2 has any real solutions for n. Hence state whether 2 is ever a term of this pattern.',
+          answer: 'First differences: 2,4,6. Second differences: 2,2. a=1. Using T₁=3: 1+b+c=3→b+c=2. Using T₂=5: 4+2b+c=5→2b+c=1. Subtract: b=-1, c=3. Rule: Tₙ=n²-n+3. Setting Tₙ=2: n²-n+3=2→n²-n+1=0. Discriminant=(-1)²-4(1)(1)=1-4=-3, which is negative, so this equation has no real solutions at all. Since there is no real value of n (let alone a positive integer one) satisfying Tₙ=2, the pattern will never contain the term 2.',
           checkMode: 'self',
         },
       ],

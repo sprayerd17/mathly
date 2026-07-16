@@ -562,6 +562,86 @@ export const topicData: TopicData = {
 
       openQuestions: [],
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 6 — VERGELYK HOEVEELHEDE: "VIR ELKE" EN "PER" PROBLEME
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'comparing-amounts-for-every-and-per',
+      title: 'Vergelyk Hoeveelhede: "Vir Elke" en "Per" Probleme',
+      icon: '⚖️',
+      explanation: `<p style="margin-bottom:18px;">Sommige woordprobleme vra nie vir jou om een hoeveelheid te deel of te groepeer nie — hulle vra jou om <strong>twee hoeveelhede wat saam verander, te vergelyk</strong>. Daar is twee soorte van hierdie probleme.</p>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;">
+  <div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px;flex:1;min-width:200px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#1e40af;margin-bottom:8px;">Vergelyk Dieselfde Soort</div>
+    <div style="font-size:14px;color:#374151;margin-bottom:8px;">Twee groepe van <em>dieselfde soort</em> ding word vergelyk — soos rooi krale en blou krale.</div>
+    <div style="font-size:13px;color:#374151;">Kyk vir: <span style="color:#ea580c;font-weight:700;">vir elke</span>, <span style="color:#ea580c;font-weight:700;">vir elk</span></div>
+  </div>
+  <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:16px 18px;flex:1;min-width:200px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#16a34a;margin-bottom:8px;">Vergelyk Verskillende Soorte</div>
+    <div style="font-size:14px;color:#374151;margin-bottom:8px;">Twee <em>verskillende soorte</em> dinge wat saam verander, word vergelyk — soos afstand en tyd, of koste en aantal items.</div>
+    <div style="font-size:13px;color:#374151;">Kyk vir: <span style="color:#ea580c;font-weight:700;">per</span>, <span style="color:#ea580c;font-weight:700;">elke uur</span>, <span style="color:#ea580c;font-weight:700;">elk</span></div>
+  </div>
+</div>
+
+<p style="margin-bottom:16px;">Jy het geen nuwe tekens of simbole nodig om hierdie probleme op te los nie — net die vermenigvuldiging- en delingsfeite wat jy reeds ken. Vind eers die <span style="color:#ea580c;font-weight:700;">skaalfaktor</span>: hoeveel keer groter (of kleiner) een hoeveelheid geword het. Pas dan <em>dieselfde</em> skaalfaktor op die ander hoeveelheid toe.</p>
+
+<div style="background:#fff7ed;border:1.5px solid #fdba74;border-radius:10px;padding:14px 18px;margin-bottom:16px;">
+  <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#ea580c;margin-bottom:8px;">Drie stappe om enige vergelykingsprobleem op te los</div>
+  <ol style="margin:0;padding-left:18px;color:#374151;font-size:14px;line-height:1.8;">
+    <li>Skryf neer wat jy weet vir <strong>een</strong> eenheid of een klein groep.</li>
+    <li>Deel om die <span style="color:#ea580c;font-weight:700;">skaalfaktor</span> te vind — hoeveel van daardie eenhede of groepe in die nuwe hoeveelheid pas.</li>
+    <li>Vermenigvuldig om die ooreenstemmende nuwe hoeveelheid te vind.</li>
+  </ol>
+</div>
+
+<div style="background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px 16px;">
+  <p style="font-size:13px;font-weight:700;color:#0f1f3d;margin-bottom:10px;">Kleurgids:</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:13px;">
+    <span style="background:#eff6ff;color:#1e40af;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #bfdbfe;">Eerste hoeveelheid — blou</span>
+    <span style="background:#fef2f2;color:#dc2626;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fca5a5;">Ooreenstemmende hoeveelheid — rooi</span>
+    <span style="background:#fff7ed;color:#ea580c;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fdba74;">Skaalfaktor — oranje</span>
+    <span style="background:#f0fdf4;color:#16a34a;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #86efac;">Antwoord — groen</span>
+  </div>
+</div>`,
+
+      videoPlaceholder: 'Kort video wat wys hoe om "vir elke" en "per" vergelykings-woordprobleme met ʼn skaalfaktor op te los',
+
+      workedExamples: [
+        {
+          question: 'Vir elke <span style="color:#1e40af;font-weight:700;">2</span> lekkers wat Thabo kry, kry sy jonger sussie <span style="color:#dc2626;font-weight:700;">3</span> lekkers. As Thabo 8 lekkers kry, hoeveel lekkers kry sy sussie?',
+          answer: '12 lekkers',
+          steps: [
+            `Dit vergelyk twee groepe van <strong>dieselfde soort</strong> ding (lekkers en lekkers): vir elke <span style="color:#1e40af;font-weight:700;">2</span> lekkers wat Thabo kry, kry sy sussie <span style="color:#dc2626;font-weight:700;">3</span>.`,
+            `Vind die <span style="color:#ea580c;font-weight:700;">skaalfaktor</span>: Thabo se 2 lekkers het 8 lekkers geword. <span style="color:#ea580c;font-weight:700;">8 ÷ 2 = 4</span> — alles is nou 4 keer groter.`,
+            `Pas dieselfde skaalfaktor op sy sussie se hoeveelheid toe: <span style="color:#dc2626;font-weight:700;">3</span> × <span style="color:#ea580c;font-weight:700;">4</span> = <span style="color:#16a34a;font-weight:700;font-size:18px;">12</span>. Sy sussie kry <strong>12 lekkers</strong>.`,
+          ],
+        },
+        {
+          question: 'ʼn Kraan vul ʼn watertenk teen ʼn konstante tempo van <span style="color:#1e40af;font-weight:700;">5 liter elke minuut</span>. Hoeveel liter is in die tenk na 6 minute?',
+          answer: '30 liter',
+          steps: [
+            `Dit vergelyk twee <strong>verskillende soorte</strong> dinge wat saam verander: liter en minute. Ons word die hoeveelheid vir <strong>1 minuut</strong> gegee: <span style="color:#1e40af;font-weight:700;">5 liter</span>.`,
+            `Ons wil die hoeveelheid vir <span style="color:#ea580c;font-weight:700;">6 minute</span> weet, dus vermenigvuldig ons die tempo met 6: <span style="color:#1e40af;font-weight:700;">5</span> × <span style="color:#ea580c;font-weight:700;">6</span> = <span style="color:#16a34a;font-weight:700;font-size:18px;">30</span>.`,
+            `Na 6 minute is daar <strong>30 liter</strong> in die tenk.`,
+          ],
+        },
+        {
+          question: 'ʼn Taxi ry <span style="color:#1e40af;font-weight:700;">120 km in 3 uur</span> teen ʼn konstante spoed. Hoe ver sal dit in 5 uur ry?',
+          answer: '200 km',
+          steps: [
+            `Vind eers die hoeveelheid vir <strong>1 uur</strong> — deel die afstand deur die tyd: <span style="color:#1e40af;font-weight:700;">120</span> ÷ <span style="color:#ea580c;font-weight:700;">3</span> = <span style="color:#16a34a;font-weight:700;">40</span> km per uur.`,
+            `Vermenigvuldig dit nou met die nuwe aantal ure: <span style="color:#16a34a;font-weight:700;">40</span> × <span style="color:#dc2626;font-weight:700;">5</span> = <span style="color:#16a34a;font-weight:700;font-size:18px;">200</span>.`,
+            `Die taxi sal <strong>200 km</strong> in 5 uur ry.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+    },
   ],
 
   practiceSets: [
@@ -602,11 +682,16 @@ export const topicData: TopicData = {
         // Blok 6 — Redenering en Regverdiging (18-19, Moeilik)
         { difficulty: 'Hard', question: 'ʼn Leerder beweer: "In die feitefamilie vir 8 × 6 = 48, is die twee delingsfeite 48 ÷ 6 = 8 en 48 ÷ 5 = 8." Is hierdie bewering korrek? Verduidelik jou redenering en gee die korrekte tweede delingsfeit indien nodig.', answer: 'Onkorrek — die tweede feit moet 48 ÷ 8 = 6 wees, nie 48 ÷ 5 = 8 nie', checkMode: 'self', explanation: 'Die bewering is onkorrek. Vanaf 8 × 6 = 48, moet die twee verwante delingsfeite dieselfde drie getalle gebruik: 48 ÷ 6 = 8 en 48 ÷ 8 = 6. Die getal 5 behoort glad nie tot hierdie feitefamilie nie.' },
         { difficulty: 'Hard', question: 'Sonder om altwee volledig te bereken, verduidelik watter een ʼn groter antwoord gee: 96 ÷ 4 of 96 ÷ 8. Hoe weet jy dit?', answer: '96 ÷ 4 is groter', checkMode: 'self', explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 4 kleiner as 8 is, gee 96 ÷ 4 ʼn groter antwoord as 96 ÷ 8, sonder dat jy hoef uit te werk dat hulle 24 en 12 is.' },
+
+        // Blok 7 — Vergelyk Hoeveelhede: Vir Elke en Per (20-22, Maklik-Medium)
+        { difficulty: 'Easy', question: 'Vir elke 3 rooi fiches is daar 4 blou fiches. As daar 12 rooi fiches is, hoeveel blou fiches is daar?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 blou fiches'], explanation: '12 rooi fiches is 12 ÷ 3 = 4 keer soveel as 3. Pas dieselfde skaalfaktor op die blou fiches toe: 4 × 4 = 16 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Minibus-taxi ry 150 km in 3 uur teen ʼn konstante spoed. Hoe ver ry dit in 5 uur?', answer: '250 km', checkMode: 'auto', correctAnswer: '250', correctAnswers: ['250', '250 km'], explanation: 'Tempo per uur: 150 ÷ 3 = 50 km per uur. In 5 uur: 50 × 5 = 250 km ✓' },
+        { difficulty: 'Medium', question: 'ʼn Resep het 2 eiers vir elke 3 koppies meel nodig. Sipho het 8 eiers en wil dit almal gebruik, terwyl hy dieselfde patroon volhou. Hoeveel koppies meel het hy nodig? Verduidelik jou redenering.', answer: '12 koppies', checkMode: 'self', explanation: 'Die skaalfaktor is 8 ÷ 2 = 4 (Sipho het 4 keer soveel eiers as die basishoeveelheid van 2). Pas dieselfde skaalfaktor op die meel toe: 3 × 4 = 12 koppies.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling en woordprobleme.' },
-        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd met die meeste delingsvaardighede — gaan enige gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 23, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling, woordprobleme en die vergelyking van hoeveelhede.' },
+        { minScore: 17, message: 'Goeie werk! Jy is selfversekerd met die meeste delingsvaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 11, message: 'Goeie poging! Gaan die voorbeelde weer deur en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -648,11 +733,16 @@ export const topicData: TopicData = {
         // Blok 6 — Redenering en Regverdiging (18-19, Moeilik)
         { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom die res in ʼn deling altyd kleiner as die deler moet wees. Gebruik die voorbeeld 26 ÷ 7 om jou verduideliking te ondersteun.', answer: '26 ÷ 7 = 3 r 5, aangesien 5 < 7', checkMode: 'self', explanation: 'As die res gelyk aan of groter as die deler was, kon nog ʼn volle groep steeds gemaak word, dus was die deling nie klaar nie. Vir 26 ÷ 7: 7 × 3 = 21, en 26 − 21 = 5, wat kleiner as 7 is, dus is 3 r 5 korrek. As iemand 2 r 12 gesê het, sou dit verkeerd wees omdat 12 groter as 7 is — nog ʼn groep van 7 pas binne 12.' },
         { difficulty: 'Hard', question: 'Sonder om altwee volledig te bereken, verduidelik watter een ʼn groter antwoord gee: 120 ÷ 6 of 120 ÷ 10. Hoe weet jy dit?', answer: '120 ÷ 6 is groter', checkMode: 'self', explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 6 kleiner as 10 is, gee 120 ÷ 6 ʼn groter antwoord as 120 ÷ 10, sonder dat jy hoef uit te werk dat hulle 20 en 12 is.' },
+
+        // Blok 7 — Vergelyk Hoeveelhede: Vir Elke en Per (20-22, Maklik-Medium)
+        { difficulty: 'Easy', question: 'Vir elke 4 potlode in ʼn pakkie is daar 5 penne in ʼn ooreenstemmende pakkie. As daar 20 potlode is, hoeveel penne is daar?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 penne'], explanation: '20 potlode is 20 ÷ 4 = 5 keer soveel as 4. Pas dieselfde skaalfaktor op die penne toe: 5 × 5 = 25 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Fietsryer ry 84 km in 4 uur teen ʼn konstante spoed. Hoe ver ry sy in 7 uur?', answer: '147 km', checkMode: 'auto', correctAnswer: '147', correctAnswers: ['147', '147 km'], explanation: 'Tempo per uur: 84 ÷ 4 = 21 km per uur. In 7 uur: 21 × 7 = 147 km ✓' },
+        { difficulty: 'Medium', question: 'ʼn Sapresep gebruik 3 dele water vir elke 2 dele konsentraat. Zanele het 10 dele konsentraat en wil sap maak terwyl sy dieselfde patroon volhou. Hoeveel dele water het sy nodig? Verduidelik jou redenering.', answer: '15 dele', checkMode: 'self', explanation: 'Die skaalfaktor is 10 ÷ 2 = 5 (Zanele het 5 keer soveel konsentraat as die basishoeveelheid van 2). Pas dieselfde skaalfaktor op die water toe: 3 × 5 = 15 dele.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling en woordprobleme.' },
-        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd met die meeste delingsvaardighede — gaan enige gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 23, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling, woordprobleme en die vergelyking van hoeveelhede.' },
+        { minScore: 17, message: 'Goeie werk! Jy is selfversekerd met die meeste delingsvaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 11, message: 'Goeie poging! Gaan die voorbeelde weer deur en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -694,11 +784,16 @@ export const topicData: TopicData = {
         // Blok 6 — Redenering en Regverdiging (18-19, Moeilik)
         { difficulty: 'Hard', question: 'Verduidelik, met ʼn voorbeeld, die verskil tussen ʼn delingsprobleem en ʼn groeperingsprobleem, al kan altwee dieselfde delings-getalsin gebruik.', answer: 'Deling: 4 vriende kry elk 8 albasters uit 32. Groepering: 32 albasters in sakkies van 8 verpak maak 4 sakkies.', checkMode: 'self', explanation: 'In ʼn delingsprobleem ken jy die totaal en die aantal groepe, en jy vind hoeveel items in elke groep gaan — byvoorbeeld, om 32 albasters tussen 4 vriende te deel beteken elke vriend kry 32 ÷ 4 = 8 albasters. In ʼn groeperingsprobleem ken jy die totaal en die grootte van elke groep, en jy vind hoeveel groepe jy kan maak — byvoorbeeld, om 32 albasters in sakkies van 8 te verpak beteken jy kan 32 ÷ 8 = 4 sakkies maak. Die getalsin lyk soortgelyk, maar die betekenis van die antwoord is verskillend.' },
         { difficulty: 'Hard', question: 'Sonder om altwee volledig te bereken, verduidelik watter een ʼn groter antwoord gee: 144 ÷ 3 of 144 ÷ 9. Hoe weet jy dit?', answer: '144 ÷ 3 is groter', checkMode: 'self', explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 3 kleiner as 9 is, gee 144 ÷ 3 ʼn groter antwoord as 144 ÷ 9, sonder dat jy hoef uit te werk dat hulle 48 en 16 is.' },
+
+        // Blok 7 — Vergelyk Hoeveelhede: Vir Elke en Per (20-22, Maklik-Medium)
+        { difficulty: 'Easy', question: 'Vir elke 5 doele wat ʼn sokkerspan aanteken, laat hulle 2 doele in. As hulle vanjaar 25 doele aangeteken het, hoeveel doele het hulle ingelaat, volgens dieselfde patroon?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 doele'], explanation: '25 doele is 25 ÷ 5 = 5 keer soveel as 5. Pas dieselfde skaalfaktor op die doele wat ingelaat is toe: 2 × 5 = 10 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Trekker ploeg 36 hektaar in 4 uur teen ʼn konstante tempo. Hoeveel hektaar ploeg dit in 9 uur?', answer: '81 hektaar', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '81 hektaar'], explanation: 'Tempo per uur: 36 ÷ 4 = 9 hektaar per uur. In 9 uur: 9 × 9 = 81 hektaar ✓' },
+        { difficulty: 'Medium', question: 'ʼn Verfmengsel gebruik 2 blikke blou vir elke 5 blikke wit. ʼn Skilder het 8 blikke blou en wil dieselfde patroon volhou. Hoeveel blikke wit het hy nodig? Verduidelik jou redenering.', answer: '20 blikke', checkMode: 'self', explanation: 'Die skaalfaktor is 8 ÷ 2 = 4 (die skilder het 4 keer soveel blou as die basishoeveelheid van 2). Pas dieselfde skaalfaktor op die wit toe: 5 × 4 = 20 blikke.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling en woordprobleme.' },
-        { minScore: 15, message: 'Goeie werk! Jy is selfversekerd met die meeste delingsvaardighede — gaan enige gemiste vrae weer deur.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die voorbeelde weer deur en probeer hierdie stel weer.' },
+        { minScore: 23, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling, woordprobleme en die vergelyking van hoeveelhede.' },
+        { minScore: 17, message: 'Goeie werk! Jy is selfversekerd met die meeste delingsvaardighede — gaan enige gemiste vrae weer deur.' },
+        { minScore: 11, message: 'Goeie poging! Gaan die voorbeelde weer deur en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -1042,6 +1137,55 @@ export const topicData: TopicData = {
             '240 + 72 = R312.',
         },
       ],
+    },
+
+    // ── AFDELING 6 — Vergelyk Hoeveelhede: "Vir Elke" en "Per" Probleme ──────
+    {
+      difficulty: 'Easy',
+      checkMode: 'auto',
+      question:
+        'Vir elke 3 appels in ʼn mandjie is daar 2 lemoene.\n\n' +
+        'As daar 15 appels is, hoeveel lemoene is daar? Skryf slegs die getal.',
+      answer: '10',
+      correctAnswer: '10',
+      correctAnswers: ['10', '10 lemoene'],
+      explanation:
+        'Die skaalfaktor is 15 ÷ 3 = 5.\n' +
+        'Pas dieselfde skaalfaktor op die lemoene toe: 2 × 5 = 10.',
+    },
+
+    {
+      difficulty: 'Medium',
+      checkMode: 'auto',
+      question:
+        'ʼn Motor ry 180 km in 3 uur teen ʼn konstante spoed.\n\n' +
+        'a) Wat is die tempo — hoe ver ry dit in 1 uur?\n' +
+        'b) Hoe ver sal dit in 5 uur ry?',
+      answer: 'a) 60 km  b) 300 km',
+      parts: [
+        {
+          label: 'a) Afstand in 1 uur',
+          correctAnswer: '60',
+          explanation: 'Deel die afstand deur die tyd: 180 ÷ 3 = 60 km per uur.',
+        },
+        {
+          label: 'b) Afstand in 5 uur',
+          correctAnswer: '300',
+          explanation: 'Vermenigvuldig die tempo vir 1 uur met 5: 60 × 5 = 300 km.',
+        },
+      ],
+    },
+
+    {
+      difficulty: 'Hard',
+      checkMode: 'self',
+      question:
+        'ʼn Spyseniers se pannekoekbeslag-resep gebruik 2 koppies melk vir elke 3 koppies meel. Sy moet ʼn groot bondel maak met 15 koppies meel, terwyl sy dieselfde patroon volhou.\n\n' +
+        'Hoeveel koppies melk word benodig? Wys jou werk en verduidelik hoe jy die skaalfaktor gevind het.',
+      answer:
+        'Skaalfaktor: 15 ÷ 3 = 5 (daar is 5 keer soveel meel as die basishoeveelheid van 3 koppies).\n\n' +
+        'Pas dieselfde skaalfaktor op die melk toe: 2 × 5 = 10.\n\n' +
+        'Sy het 10 koppies melk nodig.',
     },
   ],
 }

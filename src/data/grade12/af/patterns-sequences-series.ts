@@ -651,6 +651,22 @@ export const topicData: TopicData = {
       answer: 'Direkte som: 1+2+3+4+5 = 15. Formule: 5(6)/2 = 30/2 = 15. Albei metodes stem ooreen, wat die formule bevestig.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard ─────────────────────────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'ʼn Rekenkundige ry het eerste term a = 3. Die 1ste, 2de en 4de terme van hierdie ry (T₁, T₂, T₄) vorm die eerste drie terme van ʼn meetkundige ry. Bepaal die waarde(s) van die gemeenskaplike verskil d, en identifiseer watter waarde ʼn werklike (nie-triviale) meetkundige ry lewer.',
+      answer: 'T₁ = a = 3, T₂ = a + d = 3 + d, T₄ = a + 3d = 3 + 3d. Vir hierdie terme om ʼn meetkundige ry te vorm, moet T₂² = T₁ × T₄: (3 + d)² = 3(3 + 3d) → 9 + 6d + d² = 9 + 9d → d² − 3d = 0 → d(d − 3) = 0 → d = 0 of d = 3. d = 0 lewer die triviale konstante ry 3, 3, 3 (nie ʼn betekenisvolle meetkundige ry nie), dus is d = 3 die antwoord wat werk: T₁ = 3, T₂ = 6, T₄ = 12, met gemeenskaplike verhouding r = 2.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard ─────────────────────────────────────────────────────────────
+    {
+      difficulty: 'Hard',
+      question: 'ʼn Meetkundige reeks het ʼn som tot oneindig van 12, en die tweede term T₂ = 3. Bepaal die gemeenskaplike verhouding r en die eerste term a.',
+      answer: 'S∞ = a/(1 − r) = 12, dus a = 12(1 − r). Ook T₂ = ar = 3, dus 12(1 − r)r = 3 → 12r − 12r² = 3 → 12r² − 12r + 3 = 0 → 4r² − 4r + 1 = 0 → (2r − 1)² = 0 → r = 0,5. Dan a = 12(1 − 0,5) = 6. Kontroleer: T₂ = 6 × 0,5 = 3 ✓, en −1 < 0,5 < 1, dus bestaan S∞.',
+      checkMode: 'self',
+    },
   ],
 
   practiceSets: [

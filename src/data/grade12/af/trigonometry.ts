@@ -685,6 +685,12 @@ export const topicData: TopicData = {
           answer: 'LK-teller: cos2x + 1 = (2cos²x − 1) + 1 = 2cos²x\nLK-noemer: sin2x = 2sinxcosx\nLK = 2cos²x / (2sinxcosx) = cosx/sinx = RK ✓',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Hard',
+          question: 'Gestel sinθ + cosθ = 3/2 vir ʼn werklike hoek θ. Gebruik die identiteit (sinθ + cosθ)² = 1 + sin2θ om te wys dat geen werklike waarde van θ hierdie vergelyking kan bevredig nie.',
+          answer: 'Kwadreer albei kante van die gegewe vergelyking:\n(sinθ + cosθ)² = (3/2)² = 9/4\n\nPas die identiteit (sinθ + cosθ)² = 1 + sin2θ toe:\n1 + sin2θ = 9/4\nsin2θ = 9/4 − 1 = 5/4\n\nMaar vir enige werklike hoek moet sin2θ voldoen aan −1 ≤ sin2θ ≤ 1.\nAangesien 5/4 > 1, is dit onmoontlik.\n\nGevolglik kan geen werklike waarde van θ aan sinθ + cosθ = 3/2 voldoen nie ✓',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:
@@ -818,6 +824,12 @@ export const topicData: TopicData = {
           difficulty: 'Hard',
           question: 'ʼn Vertikale mas TM staan by M op horisontale grond. Vanaf punt A op die grond is die hoogtehoek na T 35°. Vanaf punt B, ook op die grond en 20 m nader aan die mas langs die reguit lyn AB (sodat B tussen A en M lê, met A, B, M kollineêr), is die hoogtehoek na T 48°. Bepaal die hoogte van die mas TM.',
           answer: 'Laat TM = h, BM = d.\nVanaf B: tan48° = h/d → d = h/tan48°.\nVanaf A: tan35° = h/(d + 20) → d + 20 = h/tan35°.\nTrek af: 20 = h(1/tan35° − 1/tan48°) = h(1,4281 − 0,9004) = h · 0,5277.\nh = 20/0,5277 ≈ 37,9 m.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Vertikale toring TC staan op horisontale grond. Vanaf punt A is die hoogtehoek na die punt T bo θ. Deur reguit na die basis te loop langs die lyn A, B, C, na ʼn punt B waar AB = d, het die hoogtehoek na T presies verdubbel na 2θ. Bewys dat die hoogte van die toring h = 2d·sinθ·cosθ is.',
+          answer: 'Laat TC = h en BC = x.\n\nIn reghoekige driehoek TBC: tan2θ = h/x, dus x = h/tan2θ.\nIn reghoekige driehoek TAC: tanθ = h/(x + d), dus x + d = h/tanθ.\n\nTrek die eerste vergelyking van die tweede af:\nd = h/tanθ − h/tan2θ = h(cotθ − cot2θ)\n\nVereenvoudig cotθ − cot2θ:\ncotθ − cot2θ = cosθ/sinθ − cos2θ/sin2θ\n= cosθ/sinθ − cos2θ/(2sinθcosθ)\n= [2cos²θ − cos2θ] / (2sinθcosθ)\n\nAangesien cos2θ = 2cos²θ − 1:\n2cos²θ − cos2θ = 2cos²θ − (2cos²θ − 1) = 1\n\nDus cotθ − cot2θ = 1/(2sinθcosθ)\n\nGevolglik is d = h/(2sinθcosθ), wat herrangskik na:\nh = 2d·sinθ·cosθ ✓',
           checkMode: 'self',
         },
       ],

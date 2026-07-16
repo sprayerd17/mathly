@@ -474,6 +474,24 @@ export const topicData: TopicData = {
       answer: 'p=4, q=−1 (vanaf asimptote). Vervang (6,1): 1=a/(6−4)−1. 2=a/2. a=4. Vergelyking: y=4/(x−4)−1.',
       checkMode: 'self',
     },
+
+    // ── Q21 Hard (problem-solving) — general proof of average gradient identity ──
+    {
+      difficulty: 'Hard',
+      question: 'Toon aan dat die gemiddelde gradiënt van f(x)=x² tussen x=a en x=b (waar a≠b) altyd gelyk is aan a+b, vir enige waardes van a en b.',
+      answer: 'Gemiddelde gradiënt = (f(b)−f(a))/(b−a) = (b²−a²)/(b−a). Aangesien b²−a²=(b−a)(b+a), vereenvoudig dit tot (b−a)(b+a)/(b−a)=a+b (geldig aangesien a≠b, dus b−a≠0 en die breuk mag uitgekanselleer word). Hierdie resultaat geld vir enige waardes van a en b — nie net spesifieke getalle nie.',
+      checkMode: 'self',
+    },
+
+    // ── Q22 Hard (problem-solving) — unknown parameter from a given average gradient ──
+    {
+      difficulty: 'Hard',
+      question: 'ʼn Parabool in die vorm y=a(x−1)²−3 het draaipunt (1,−3). Die gemiddelde gradiënt van die parabool tussen x=1 en x=4 is 6. Vind a.',
+      answer: '2',
+      checkMode: 'auto',
+      correctAnswer: '2',
+      explanation: 'f(1)=a(1−1)²−3=−3. f(4)=a(4−1)²−3=9a−3. Gemiddelde gradiënt=(f(4)−f(1))/(4−1)=(9a−3−(−3))/3=9a/3=3a. Aangesien die gemiddelde gradiënt 6 is: 3a=6, dus a=2. ✓',
+    },
   ],
 
   practiceSets: [

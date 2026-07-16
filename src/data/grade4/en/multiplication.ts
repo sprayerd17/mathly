@@ -534,6 +534,120 @@ export const topicData: TopicData = {
       openQuestions: [],
       videoPlaceholder: 'Short video showing how to estimate before multiplying and check if the answer is reasonable',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — MULTIPLYING A 2-DIGIT NUMBER BY A 2-DIGIT NUMBER
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'multiplying-2digit-by-2digit',
+      title: 'Multiplying a 2-Digit Number by a 2-Digit Number',
+      icon: '🔲',
+      explanation: `<p style="margin-bottom:16px;">To multiply two 2-digit numbers, we can use the <strong>grid method</strong> (also called partial products). Break <em>both</em> numbers into tens and units, multiply every part of the first number by every part of the second number, then add all four answers together.</p>
+
+<p style="margin-bottom:16px;">For example, <span style="color:#1e40af;font-weight:700;">23</span> × <span style="color:#16a34a;font-weight:700;">14</span> can be broken up as (<span style="color:#1e40af;font-weight:700;">20</span> + <span style="color:#dc2626;font-weight:700;">3</span>) × (<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#ea580c;font-weight:700;">4</span>). Multiply each part of the first bracket by each part of the second bracket, then add the four partial products together: <span style="color:#1e40af;font-weight:700;">20</span>×<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#1e40af;font-weight:700;">20</span>×<span style="color:#ea580c;font-weight:700;">4</span> + <span style="color:#dc2626;font-weight:700;">3</span>×<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#dc2626;font-weight:700;">3</span>×<span style="color:#ea580c;font-weight:700;">4</span> = 200 + 80 + 30 + 12 = <strong>322</strong>.</p>
+
+<div style="background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px 16px;">
+  <p style="font-size:13px;font-weight:700;color:#0f1f3d;margin-bottom:10px;">Colour guide:</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:13px;">
+    <span style="background:#eff6ff;color:#1e40af;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #bfdbfe;">First number's tens — blue</span>
+    <span style="background:#fef2f2;color:#dc2626;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fca5a5;">First number's units — red</span>
+    <span style="background:#f0fdf4;color:#16a34a;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #86efac;">Second number's tens — green</span>
+    <span style="background:#fff7ed;color:#ea580c;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fdba74;">Second number's units — orange</span>
+  </div>
+</div>`,
+
+      workedExamples: [
+        {
+          question: 'Calculate 23 × 14 using the grid method',
+          answer: '322',
+          steps: [
+            `Break both numbers into tens and units: <span style="color:#1e40af;font-weight:700;">23</span> = <span style="color:#1e40af;font-weight:700;">20</span> + <span style="color:#dc2626;font-weight:700;">3</span>, and <span style="color:#16a34a;font-weight:700;">14</span> = <span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
+            `Draw a grid and multiply each part of one number by each part of the other:
+<div style="margin:12px 0;overflow-x:auto;">
+  <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
+    <tr>
+      <td style="padding:8px 16px;"></td>
+      <td style="padding:8px 16px;text-align:center;color:#16a34a;background:#f0fdf4;border:1px solid #86efac;">10</td>
+      <td style="padding:8px 16px;text-align:center;color:#ea580c;background:#fff7ed;border:1px solid #fdba74;">4</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;">20</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">200</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">80</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;">3</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">30</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">12</td>
+    </tr>
+  </table>
+</div>`,
+            `Add all four partial products together: 200 + 80 + 30 + 12 = <strong>322</strong>. So 23 × 14 = <strong>322</strong>.`,
+          ],
+        },
+        {
+          question: 'Calculate 34 × 21 using the grid method',
+          answer: '714',
+          steps: [
+            `Break both numbers into tens and units: <span style="color:#1e40af;font-weight:700;">34</span> = <span style="color:#1e40af;font-weight:700;">30</span> + <span style="color:#dc2626;font-weight:700;">4</span>, and <span style="color:#16a34a;font-weight:700;">21</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">1</span>.`,
+            `Multiply each part of one number by each part of the other:
+<div style="margin:12px 0;overflow-x:auto;">
+  <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
+    <tr>
+      <td style="padding:8px 16px;"></td>
+      <td style="padding:8px 16px;text-align:center;color:#16a34a;background:#f0fdf4;border:1px solid #86efac;">20</td>
+      <td style="padding:8px 16px;text-align:center;color:#ea580c;background:#fff7ed;border:1px solid #fdba74;">1</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;">30</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">600</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">30</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;">4</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">80</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">4</td>
+    </tr>
+  </table>
+</div>`,
+            `Add all four partial products together: 600 + 30 + 80 + 4 = <strong>714</strong>. So 34 × 21 = <strong>714</strong>.`,
+          ],
+        },
+        {
+          question:
+            'A school orders 15 boxes of pencils, with 24 pencils in each box. How many pencils are there in total?',
+          answer: '360 pencils',
+          steps: [
+            `This is a multiplication problem: <strong>15 × 24</strong>. Break both numbers into tens and units: <span style="color:#1e40af;font-weight:700;">15</span> = <span style="color:#1e40af;font-weight:700;">10</span> + <span style="color:#dc2626;font-weight:700;">5</span>, and <span style="color:#16a34a;font-weight:700;">24</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
+            `Multiply each part of one number by each part of the other:
+<div style="margin:12px 0;overflow-x:auto;">
+  <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
+    <tr>
+      <td style="padding:8px 16px;"></td>
+      <td style="padding:8px 16px;text-align:center;color:#16a34a;background:#f0fdf4;border:1px solid #86efac;">20</td>
+      <td style="padding:8px 16px;text-align:center;color:#ea580c;background:#fff7ed;border:1px solid #fdba74;">4</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;">10</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">200</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">40</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 16px;text-align:center;color:#dc2626;background:#fef2f2;border:1px solid #fca5a5;">5</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">100</td>
+      <td style="padding:8px 16px;text-align:center;border:1px solid #e5e7eb;">20</td>
+    </tr>
+  </table>
+</div>`,
+            `Add all four partial products together: 200 + 40 + 100 + 20 = <strong>360</strong>. There are <strong>360 pencils</strong> in total.`,
+          ],
+        },
+      ],
+      practiceQuestions: [],
+      openQuestions: [],
+      videoPlaceholder: 'Short video showing how to use the grid method to multiply a 2-digit number by a 2-digit number',
+      diagramPlaceholder: 'Grid method diagram showing 23 × 14 split into four partial products that add up to 322',
+    },
   ],
 
   practiceSets: [
@@ -575,11 +689,16 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Sipho says 6 × 23 = 148. Use a correct method to check whether he is right. Show all your working.', answer: 'Sipho is incorrect. 6 × 23 = 138, not 148. (Units: 3 × 6 = 18, write 8 carry 1. Tens: 2 × 6 = 12, plus carried 1 = 13, giving 138.)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'A farmer has 8 rows of 14 cabbages. A hailstorm ruins 2 whole rows. How many cabbages are left standing?', answer: '84 cabbages', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84', '84 cabbages'], explanation: 'Step 1: Total cabbages = 8 × 14 = 112.\nStep 2: Cabbages ruined = 2 × 14 = 28.\nStep 3: Cabbages left = 112 − 28 = 84 cabbages ✓' },
         { difficulty: 'Hard', question: 'Explain, in your own words, why 6 × 8 gives the same answer as 8 × 6.', answer: 'Multiplication can be done in any order — this is called the commutative property. 6 groups of 8 and 8 groups of 6 both contain the exact same total number of items (48), just arranged differently, so the answer is always the same no matter which order you multiply in.', checkMode: 'self' },
+
+        // Block 7 — Multiplying a 2-Digit Number by a 2-Digit Number (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'Calculate using the grid method: 12 × 13', answer: '156', checkMode: 'auto', correctAnswer: '156', correctAnswers: ['156'], explanation: '12 = 10 + 2, 13 = 10 + 3. Partial products: 10×10=100, 10×3=30, 2×10=20, 2×3=6.\nSum: 100 + 30 + 20 + 6 = 156 ✓' },
+        { difficulty: 'Medium', question: 'Calculate using the grid method: 26 × 34', answer: '884', checkMode: 'auto', correctAnswer: '884', correctAnswers: ['884'], explanation: '26 = 20 + 6, 34 = 30 + 4. Partial products: 20×30=600, 20×4=80, 6×30=180, 6×4=24.\nSum: 600 + 80 + 180 + 24 = 884 ✓' },
+        { difficulty: 'Medium', question: 'A stadium has 18 rows of seats with 22 seats in each row. How many seats are there in total?', answer: '396 seats', checkMode: 'auto', correctAnswer: '396', correctAnswers: ['396', '396 seats'], explanation: '18 = 10 + 8, 22 = 20 + 2. Partial products: 10×20=200, 10×2=20, 8×20=160, 8×2=16.\nSum: 200 + 20 + 160 + 16 = 396 seats ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have mastered times tables, column method, estimation, factors, word problems and reasoning.' },
-        { minScore: 15, message: 'Great work! You are confident across most of these skills — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples for the blocks you found tricky and try again.' },
+        { minScore: 23, message: 'Outstanding! You have mastered times tables, column method, estimation, factors, 2-digit multiplication, word problems and reasoning.' },
+        { minScore: 17, message: 'Great work! You are confident across most of these skills — review any missed questions.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples for the blocks you found tricky and try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
@@ -621,11 +740,16 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Thabo says 9 × 36 = 314. Use a correct method to check whether he is right. Show all your working.', answer: 'Thabo is incorrect. 9 × 36 = 324, not 314. (Units: 6 × 9 = 54, write 4 carry 5. Tens: 3 × 9 = 27, plus carried 5 = 32, giving 324.)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'A stationery shop buys 7 boxes of pens, each with 12 pens, at a cost of R4 per pen. What is the total cost?', answer: 'R336', checkMode: 'auto', correctAnswer: '336', correctAnswers: ['336', 'R336'], explanation: 'Step 1: 7 × 12 = 84 pens.\nStep 2: 84 × 4 = R336 ✓' },
         { difficulty: 'Hard', question: 'Explain, in your own words, why estimating before you calculate helps you check your answer.', answer: 'Rounding the numbers first gives a quick approximate answer. After working out the exact answer, comparing it to the estimate shows whether the exact answer is reasonable. If the exact answer is very far from the estimate, it is a sign that a mistake was probably made somewhere in the calculation.', checkMode: 'self' },
+
+        // Block 7 — Multiplying a 2-Digit Number by a 2-Digit Number (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'Calculate using the grid method: 14 × 21', answer: '294', checkMode: 'auto', correctAnswer: '294', correctAnswers: ['294'], explanation: '14 = 10 + 4, 21 = 20 + 1. Partial products: 10×20=200, 10×1=10, 4×20=80, 4×1=4.\nSum: 200 + 10 + 80 + 4 = 294 ✓' },
+        { difficulty: 'Medium', question: 'Calculate using the grid method: 37 × 25', answer: '925', checkMode: 'auto', correctAnswer: '925', correctAnswers: ['925'], explanation: '37 = 30 + 7, 25 = 20 + 5. Partial products: 30×20=600, 30×5=150, 7×20=140, 7×5=35.\nSum: 600 + 150 + 140 + 35 = 925 ✓' },
+        { difficulty: 'Medium', question: 'A farmer plants 24 trees in each of 16 rows. How many trees are there in total?', answer: '384 trees', checkMode: 'auto', correctAnswer: '384', correctAnswers: ['384', '384 trees'], explanation: '24 = 20 + 4, 16 = 10 + 6. Partial products: 20×10=200, 20×6=120, 4×10=40, 4×6=24.\nSum: 200 + 120 + 40 + 24 = 384 trees ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have mastered times tables, column method, estimation, factors, word problems and reasoning.' },
-        { minScore: 15, message: 'Great work! You are confident across most of these skills — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples for the blocks you found tricky and try again.' },
+        { minScore: 23, message: 'Outstanding! You have mastered times tables, column method, estimation, factors, 2-digit multiplication, word problems and reasoning.' },
+        { minScore: 17, message: 'Great work! You are confident across most of these skills — review any missed questions.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples for the blocks you found tricky and try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
@@ -667,11 +791,16 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Amahle says 12 × 11 = 142. Use a correct method to check whether she is right. Show all your working.', answer: 'Amahle is incorrect. 12 × 11 = 132, not 142. (Think: 12 × 10 = 120, plus 12 × 1 = 12, giving 120 + 12 = 132.)', checkMode: 'self' },
         { difficulty: 'Hard', question: '4 fishermen each start the day with 38 fish in their catch. Each fisherman sells 14 fish at the market. How many fish do all 4 fishermen have left altogether?', answer: '96 fish', checkMode: 'auto', correctAnswer: '96', correctAnswers: ['96', '96 fish'], explanation: 'Step 1: Fish left per fisherman = 38 − 14 = 24.\nStep 2: 4 × 24 = 96 fish ✓' },
         { difficulty: 'Hard', question: 'Explain, in your own words, why breaking 15 into 5 × 3 and multiplying step by step gives exactly the same answer as multiplying by 15 directly.', answer: 'Breaking 15 into 5 × 3 does not change its value — 5 × 3 is still 15. So multiplying by 5 and then by 3 is the same total amount of multiplying as multiplying by 15 in one step, just split into two easier smaller steps. The order and grouping of the multiplication can change, but the final product stays the same.', checkMode: 'self' },
+
+        // Block 7 — Multiplying a 2-Digit Number by a 2-Digit Number (20-22, Easy-Medium)
+        { difficulty: 'Easy', question: 'Calculate using the grid method: 13 × 24', answer: '312', checkMode: 'auto', correctAnswer: '312', correctAnswers: ['312'], explanation: '13 = 10 + 3, 24 = 20 + 4. Partial products: 10×20=200, 10×4=40, 3×20=60, 3×4=12.\nSum: 200 + 40 + 60 + 12 = 312 ✓' },
+        { difficulty: 'Medium', question: 'Calculate using the grid method: 42 × 36', answer: '1512', checkMode: 'auto', correctAnswer: '1512', correctAnswers: ['1512'], explanation: '42 = 40 + 2, 36 = 30 + 6. Partial products: 40×30=1200, 40×6=240, 2×30=60, 2×6=12.\nSum: 1200 + 240 + 60 + 12 = 1512 ✓' },
+        { difficulty: 'Medium', question: 'A theatre has 27 rows with 19 seats in each row. How many seats are there in total?', answer: '513 seats', checkMode: 'auto', correctAnswer: '513', correctAnswers: ['513', '513 seats'], explanation: '27 = 20 + 7, 19 = 10 + 9. Partial products: 20×10=200, 20×9=180, 7×10=70, 7×9=63.\nSum: 200 + 180 + 70 + 63 = 513 seats ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Outstanding! You have mastered times tables, column method, estimation, factors, word problems and reasoning.' },
-        { minScore: 15, message: 'Great work! You are confident across most of these skills — review any missed questions.' },
-        { minScore: 10, message: 'Good effort! Revisit the worked examples for the blocks you found tricky and try again.' },
+        { minScore: 23, message: 'Outstanding! You have mastered times tables, column method, estimation, factors, 2-digit multiplication, word problems and reasoning.' },
+        { minScore: 17, message: 'Great work! You are confident across most of these skills — review any missed questions.' },
+        { minScore: 11, message: 'Good effort! Revisit the worked examples for the blocks you found tricky and try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
