@@ -362,8 +362,9 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
             {Math.max(0, MONTHLY_LIMIT - usageCount)} of {MONTHLY_LIMIT} analyses remaining this month
           </p>
           <p className="text-xs text-gray-400 mt-0.5">
-            Each analysis uses one of your {MONTHLY_LIMIT} monthly uploads — reports aren&apos;t saved automatically,
-            so click &quot;Save Report&quot; once you have your results if you want to keep them.
+            Each analysis uses one of your {MONTHLY_LIMIT}{' '}
+            monthly uploads — reports aren&apos;t saved automatically, so click &quot;Save Report&quot; once you
+            have your results if you want to keep them.
           </p>
         </div>
       )}
