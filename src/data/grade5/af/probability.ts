@@ -143,9 +143,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Waarskynlikheidskaal van 0 tot 1 kleurgekodeer — onmoontlik in rooi by 0, onwaarskynlik in oranje, ewe waarskynlik in geel op die halfpadpunt, waarskynlik in blou, seker in groen by 1" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat waarskynlikheid verduidelik met alledaagse voorbeelde en wys hoe om gebeurtenisse op die waarskynlikheidskaal van 0 tot 1 te plaas" />',
     },
@@ -271,7 +268,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Breukdiagram wat die waarskynlikheidsformule wys met gunstige uitkomste in groen bo en totale uitkomste in blou onder, geïllustreer met ʼn sak gekleurde balle" />',
+        'Breukdiagram wat die waarskynlikheidsformule wys met gunstige uitkomste in groen bo en totale uitkomste in blou onder, geïllustreer met ʼn sak gekleurde balle',
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="65" y="18" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Sak balle</text><path d="M40 42 L30 128 Q30 140 42 140 L88 140 Q100 140 100 128 L90 42 Z" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M50 42 Q50 30 65 30 Q80 30 80 42" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="50" cy="68" r="9" fill="#16a34a"/><circle cx="72" cy="62" r="9" fill="#16a34a"/><circle cx="60" cy="90" r="9" fill="#16a34a"/><circle cx="80" cy="84" r="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><circle cx="46" cy="108" r="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><text x="65" y="156" font-size="9.5" fill="#374151" text-anchor="middle" font-weight="700">3 groen, 2 blou — 5 totaal</text><text x="170" y="18" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Waarskynlikheid</text><line x1="145" y1="52" x2="195" y2="52" stroke="#0f1f3d" stroke-width="2.5"/><text x="170" y="45" font-size="22" font-weight="700" fill="#16a34a" text-anchor="middle">3</text><text x="170" y="76" font-size="22" font-weight="700" fill="#2563eb" text-anchor="middle">5</text><text x="170" y="94" font-size="9.5" fill="#16a34a" text-anchor="middle" font-weight="700">gunstige</text><text x="170" y="107" font-size="9.5" fill="#2563eb" text-anchor="middle" font-weight="700">totale uitkomste</text><text x="170" y="132" font-size="14" font-weight="700" fill="#ea580c" text-anchor="middle">= 3/5</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om waarskynlikheid as ʼn breuk te skryf met sakke gekleurde balle en ʼn dobbelsteen, met stap-vir-stap werk" />',
@@ -384,7 +383,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Roosterdiagram wat al 12 uitkomste wys wanneer ʼn muntstuk opgegooi en ʼn dobbelsteen gegooi word — kop-ry en stert-ry elk met 6 dobbelsteenuitkomste, alle uitkomste in blou uitgelig" />',
+        'Roosterdiagram wat al 12 uitkomste wys wanneer ʼn muntstuk opgegooi en ʼn dobbelsteen gegooi word — kop-ry en stert-ry elk met 6 dobbelsteenuitkomste, alle uitkomste in blou uitgelig',
+      diagramSvg:
+        '<svg viewBox="0 0 340 100" xmlns="http://www.w3.org/2000/svg"><text x="15" y="35" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="start">Kop</text><text x="15" y="70" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="start">Stert</text><rect x="70" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="88" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">1</text><rect x="114" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="132" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">2</text><rect x="158" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="176" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">3</text><rect x="202" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="220" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">4</text><rect x="246" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="264" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">5</text><rect x="290" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="308" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">6</text><rect x="70" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="88" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">1</text><rect x="114" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="132" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">2</text><rect x="158" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="176" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">3</text><rect x="202" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="220" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">4</text><rect x="246" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="264" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">5</text><rect x="290" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="308" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">6</text><text x="170" y="95" font-size="10" fill="#64748b" text-anchor="middle">12 totale uitkomste (2 × 6)</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om alle moontlike uitkomste vir ʼn muntstuk-en-dobbelsteen-eksperiment te lys met ʼn tabel en hoe om die lys te gebruik om waarskynlikheid te bereken" />',
@@ -489,7 +490,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Staafgrafiek wat eksperimentele waarskynlikheidsresultate vir 10 en 30 proewe vergelyk met die teoretiese waarskynlikheidslyn — oranje stawe vir eksperimentele resultate en blou lyn vir teoretiese waarskynlikheid" />',
+        'Staafgrafiek wat eksperimentele waarskynlikheidsresultate vir 10 en 30 proewe vergelyk met die teoretiese waarskynlikheidslyn — oranje stawe vir eksperimentele resultate en blou lyn vir teoretiese waarskynlikheid',
+      diagramSvg:
+        '<svg viewBox="0 0 230 160" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="20" x2="30" y2="130" stroke="#0f1f3d" stroke-width="2"/><line x1="30" y1="130" x2="200" y2="130" stroke="#0f1f3d" stroke-width="2"/><text x="24" y="24" font-size="9" fill="#64748b" text-anchor="end">1</text><text x="24" y="133" font-size="9" fill="#64748b" text-anchor="end">0</text><line x1="30" y1="75" x2="200" y2="75" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,4"/><text x="204" y="78" font-size="9" font-weight="700" fill="#2563eb" text-anchor="start">0.5</text><rect x="55" y="53" width="40" height="77" fill="#ea580c"/><text x="75" y="47" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">0.7</text><text x="75" y="145" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">10 proewe</text><rect x="135" y="72" width="40" height="58" fill="#ea580c"/><text x="155" y="66" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">0.53</text><text x="155" y="145" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">30 proewe</text><text x="115" y="158" font-size="9" fill="#64748b" text-anchor="middle">Eksperimentele waarskynlikheid van kop</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat ʼn waarskynlikheidseksperiment met ʼn muntstuk en dobbelsteen wys, eksperimentele resultate met teoretiese waarskynlikheid vergelyk en verduidelik waarom meer proewe resultate nader aan die teoretiese waarde gee" />',

@@ -133,7 +133,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual scale showing the core Grade 5 units of mass — g in green and kg in orange — with everyday examples for each unit, plus mg in blue and t in red shown separately as enrichment" />',
+        'A visual scale from lightest to heaviest showing the core Grade 5 units of mass — g (green, apple) and kg (orange, bag) — with mg (blue, pill) and t (red, truck) shown at the ends as enrichment',
+      diagramSvg:
+        '<svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg"><line x1="20" y1="100" x2="320" y2="100" stroke="#0f1f3d" stroke-width="2"/><circle cx="30" cy="100" r="3" fill="#2563eb"/><circle cx="120" cy="100" r="3" fill="#16a34a"/><circle cx="220" cy="100" r="3" fill="#ea580c"/><circle cx="310" cy="100" r="3" fill="#dc2626"/><circle cx="30" cy="80" r="7" fill="none" stroke="#2563eb" stroke-width="2"/><circle cx="120" cy="70" r="16" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M204,60 L236,60 L242,92 L198,92 Z" fill="none" stroke="#ea580c" stroke-width="2.5"/><rect x="288" y="62" width="44" height="24" rx="2" fill="none" stroke="#dc2626" stroke-width="2.5"/><circle cx="298" cy="88" r="5" fill="none" stroke="#dc2626" stroke-width="2"/><circle cx="322" cy="88" r="5" fill="none" stroke="#dc2626" stroke-width="2"/><text x="30" y="128" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">mg</text><text x="30" y="140" font-size="8" fill="#6b7280" text-anchor="middle">enrichment</text><text x="120" y="128" font-size="13" font-weight="700" fill="#16a34a" text-anchor="middle">g</text><text x="220" y="128" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">kg</text><text x="310" y="128" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">t</text><text x="310" y="140" font-size="8" fill="#6b7280" text-anchor="middle">enrichment</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the Grade 5 units of mass — grams and kilograms — and how to choose the correct unit for everyday objects, with milligrams and tonnes introduced as enrichment" />',
@@ -274,7 +276,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Conversion diagram highlighting the core Grade 5 conversion g to kg — with arrows indicating multiply by 1000 going right in green and divide by 1000 going left in red — plus mg and t shown separately as enrichment" />',
+        'A conversion diagram highlighting the core Grade 5 conversion between kg and g, with a green multiply-by-1000 arrow and a red divide-by-1000 arrow, plus a note that mg and t work the same way as enrichment',
+      diagramSvg:
+        '<svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="40" width="90" height="40" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="65" font-size="15" font-weight="700" fill="#ea580c" text-anchor="middle">kg</text><rect x="220" y="40" width="90" height="40" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="265" y="65" font-size="15" font-weight="700" fill="#16a34a" text-anchor="middle">g</text><line x1="125" y1="50" x2="215" y2="50" stroke="#16a34a" stroke-width="2"/><polygon points="219,50 211,45 211,55" fill="#16a34a"/><text x="170" y="40" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">× 1 000</text><line x1="215" y1="73" x2="125" y2="73" stroke="#dc2626" stroke-width="2"/><polygon points="121,73 129,68 129,78" fill="#dc2626"/><text x="170" y="92" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">÷ 1 000</text><text x="170" y="112" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">1 000 g = 1 kg</text><rect x="60" y="122" width="220" height="22" rx="4" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,2"/><text x="170" y="137" font-size="10" fill="#6b7280" text-anchor="middle">mg ↔ g and kg ↔ t work the same way (enrichment)</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to convert grams and kilograms by multiplying or dividing by 1000 with worked examples, with milligram and tonne conversions introduced as enrichment" />',
@@ -398,7 +402,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing three types of scales — kitchen scale with scale markings in blue and mass reading in orange, bathroom scale, and balance scale with heavier side in red going down and lighter side in green going up" />',
+        'Three types of scales — a kitchen scale with scale markings in blue and the mass reading in orange, a bathroom scale, and a balance scale with the heavier side in red going down and the lighter side in green going up',
+      diagramSvg:
+        '<svg viewBox="0 0 400 155" xmlns="http://www.w3.org/2000/svg"><circle cx="65" cy="60" r="35" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="60" x2="65" y2="28" stroke="#2563eb" stroke-width="1.5"/><line x1="65" y1="60" x2="90" y2="42" stroke="#2563eb" stroke-width="1.5"/><line x1="65" y1="60" x2="40" y2="42" stroke="#2563eb" stroke-width="1.5"/><line x1="65" y1="60" x2="82" y2="36" stroke="#0f1f3d" stroke-width="2"/><circle cx="65" cy="60" r="3" fill="#0f1f3d"/><text x="65" y="108" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Kitchen scale</text><text x="65" y="122" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">450 g</text><rect x="165" y="85" width="70" height="14" rx="3" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="183" y="55" width="34" height="20" rx="2" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="200" y="69" font-size="9" font-weight="700" fill="#0f1f3d" text-anchor="middle">42 kg</text><text x="200" y="112" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Bathroom scale</text><polygon points="335,75 322,97 348,97" fill="none" stroke="#0f1f3d" stroke-width="2"/><line x1="292" y1="92" x2="378" y2="58" stroke="#0f1f3d" stroke-width="2.5"/><line x1="292" y1="92" x2="292" y2="108" stroke="#dc2626" stroke-width="1.5"/><rect x="276" y="108" width="32" height="13" fill="none" stroke="#dc2626" stroke-width="2"/><line x1="378" y1="58" x2="378" y2="74" stroke="#16a34a" stroke-width="1.5"/><rect x="362" y="74" width="32" height="13" fill="none" stroke="#16a34a" stroke-width="2"/><text x="292" y="135" font-size="10" font-weight="700" fill="#dc2626" text-anchor="middle">heavier</text><text x="378" y="42" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">lighter</text><text x="335" y="148" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Balance scale</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to read a kitchen scale by identifying scale markings and counting spaces, and how a balance scale indicates which object is heavier" />',
@@ -529,9 +535,6 @@ export const topicData: TopicData = {
           explanation: 'Mass of 4 books: 4 × 350 g = 1 400 g\nMass of lunchbox: 450 g\nTotal: 1 400 g + 450 g = 1 850 g\nConvert to kilograms: 1 850 ÷ 1 000 = 1.85 kg ✓',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing three calculating with mass examples — addition with unit conversion in blue and green, subtraction with unit conversion in blue and red, multiplication with conversion to kilograms in blue and green" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to add, subtract and multiply mass measurements by first converting to the same unit and then calculating with colour coded steps" />',

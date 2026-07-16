@@ -143,9 +143,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Probability scale from 0 to 1 colour coded — impossible in red at 0, unlikely in orange, equally likely in yellow at the halfway point, likely in blue, certain in green at 1" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining probability using everyday examples and showing how to place events on the probability scale from 0 to 1" />',
     },
@@ -271,7 +268,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Fraction diagram showing the probability formula with favourable outcomes in green on top and total outcomes in blue on the bottom illustrated with a bag of coloured balls" />',
+        'Fraction diagram showing the probability formula with favourable outcomes in green on top and total outcomes in blue on the bottom illustrated with a bag of coloured balls',
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="65" y="18" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Bag of balls</text><path d="M40 42 L30 128 Q30 140 42 140 L88 140 Q100 140 100 128 L90 42 Z" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M50 42 Q50 30 65 30 Q80 30 80 42" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="50" cy="68" r="9" fill="#16a34a"/><circle cx="72" cy="62" r="9" fill="#16a34a"/><circle cx="60" cy="90" r="9" fill="#16a34a"/><circle cx="80" cy="84" r="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><circle cx="46" cy="108" r="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><text x="65" y="156" font-size="9.5" fill="#374151" text-anchor="middle" font-weight="700">3 green, 2 blue — 5 total</text><text x="170" y="18" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Probability</text><line x1="145" y1="52" x2="195" y2="52" stroke="#0f1f3d" stroke-width="2.5"/><text x="170" y="45" font-size="22" font-weight="700" fill="#16a34a" text-anchor="middle">3</text><text x="170" y="76" font-size="22" font-weight="700" fill="#2563eb" text-anchor="middle">5</text><text x="170" y="94" font-size="9.5" fill="#16a34a" text-anchor="middle" font-weight="700">favourable</text><text x="170" y="107" font-size="9.5" fill="#2563eb" text-anchor="middle" font-weight="700">total outcomes</text><text x="170" y="132" font-size="14" font-weight="700" fill="#ea580c" text-anchor="middle">= 3/5</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to write probability as a fraction using bags of coloured balls and a dice with step by step working" />',
@@ -384,7 +383,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Grid diagram showing all 12 outcomes when flipping a coin and rolling a dice — heads row and tails row each with 6 dice outcomes, all outcomes highlighted in blue" />',
+        'Grid diagram showing all 12 outcomes when flipping a coin and rolling a dice — heads row and tails row each with 6 dice outcomes, all outcomes highlighted in blue',
+      diagramSvg:
+        '<svg viewBox="0 0 340 100" xmlns="http://www.w3.org/2000/svg"><text x="15" y="35" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="start">Heads</text><text x="15" y="70" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="start">Tails</text><rect x="70" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="88" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">1</text><rect x="114" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="132" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">2</text><rect x="158" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="176" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">3</text><rect x="202" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="220" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">4</text><rect x="246" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="264" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">5</text><rect x="290" y="15" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="308" y="34" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">6</text><rect x="70" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="88" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">1</text><rect x="114" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="132" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">2</text><rect x="158" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="176" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">3</text><rect x="202" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="220" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">4</text><rect x="246" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="264" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">5</text><rect x="290" y="50" width="36" height="30" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/><text x="308" y="69" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">6</text><text x="170" y="95" font-size="10" fill="#64748b" text-anchor="middle">12 total outcomes (2 × 6)</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to list all possible outcomes for a coin and dice experiment using a table and how to use the list to calculate probability" />',
@@ -489,7 +490,9 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Bar chart comparing experimental probability results for 10 and 30 trials against the theoretical probability line — orange bars for experimental results and blue line for theoretical probability" />',
+        'Bar chart comparing experimental probability results for 10 and 30 trials against the theoretical probability line — orange bars for experimental results and blue line for theoretical probability',
+      diagramSvg:
+        '<svg viewBox="0 0 230 160" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="20" x2="30" y2="130" stroke="#0f1f3d" stroke-width="2"/><line x1="30" y1="130" x2="200" y2="130" stroke="#0f1f3d" stroke-width="2"/><text x="24" y="24" font-size="9" fill="#64748b" text-anchor="end">1</text><text x="24" y="133" font-size="9" fill="#64748b" text-anchor="end">0</text><line x1="30" y1="75" x2="200" y2="75" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,4"/><text x="204" y="78" font-size="9" font-weight="700" fill="#2563eb" text-anchor="start">0.5</text><rect x="55" y="53" width="40" height="77" fill="#ea580c"/><text x="75" y="47" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">0.7</text><text x="75" y="145" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">10 trials</text><rect x="135" y="72" width="40" height="58" fill="#ea580c"/><text x="155" y="66" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">0.53</text><text x="155" y="145" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">30 trials</text><text x="115" y="158" font-size="9.5" fill="#64748b" text-anchor="middle">Experimental probability of heads</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing a probability experiment with a coin and dice comparing experimental results to theoretical probability and explaining why more trials give results closer to the theoretical value" />',
