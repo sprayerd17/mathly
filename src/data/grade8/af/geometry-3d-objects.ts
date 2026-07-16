@@ -122,7 +122,71 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die 5 Platoniese vaste liggame bekendstel — tetraëder, kubus, oktaëder, dodekaëder en ikosaëder — en vlakke, hoekpunte en rande vergelyk" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram nodig: al 5 Platoniese vaste liggame saam gewys — tetraëder, kubus, oktaëder, dodekaëder, ikosaëder — elkeen geëtiketteer met vlakvorm en telling" />',
+        'Al 5 Platoniese vaste liggame saam gewys — tetraëder, kubus, oktaëder, dodekaëder, ikosaëder — elkeen geëtiketteer met vlak-, hoekpunt- en randtellings',
+
+      diagramSvg:
+        '<svg viewBox="0 0 560 175" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(55,85)">' +
+        '<polygon points="-22,18 22,18 0,-24" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="0" y1="4" x2="-22" y2="18" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="22" y2="18" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="0" y2="-24" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<circle cx="-22" cy="18" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="22" cy="18" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="0" cy="-24" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="0" cy="4" r="2.2" fill="#ea580c"/>' +
+        '<text x="0" y="38" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Tetraëder</text>' +
+        '<text x="0" y="50" font-size="8.5" text-anchor="middle" fill="#6b7280">V4 · H4 · R6</text>' +
+        '</g>' +
+        '<g transform="translate(165,85)">' +
+        '<polygon points="-18,-18 18,-18 18,18 -18,18" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-8" y1="-28" x2="28" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="28" y1="-28" x2="28" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="28" y1="8" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-8" y1="8" x2="-8" y2="-28" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-18" y1="-18" x2="-8" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="18" y1="-18" x2="28" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="18" y1="18" x2="28" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-18" y1="18" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<circle cx="-18" cy="-18" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="18" cy="-18" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="18" cy="18" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="-18" cy="18" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="-8" cy="-28" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="28" cy="-28" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="28" cy="8" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="-8" cy="8" r="2.2" fill="#ea580c"/>' +
+        '<text x="5" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Kubus</text>' +
+        '<text x="5" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V6 · H8 · R12</text>' +
+        '</g>' +
+        '<g transform="translate(275,85)">' +
+        '<polygon points="0,-28 22,0 0,28 -22,0" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-22" y1="0" x2="22" y2="0" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<circle cx="0" cy="-28" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="0" cy="28" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="-22" cy="0" r="2.2" fill="#ea580c"/>' +
+        '<circle cx="22" cy="0" r="2.2" fill="#ea580c"/>' +
+        '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Oktaëder</text>' +
+        '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V8 · H6 · R12</text>' +
+        '</g>' +
+        '<g transform="translate(385,85)">' +
+        '<polygon points="0,-26 15.28,-21.03 24.73,-8.03 24.73,8.03 15.28,21.03 0,26 -15.28,21.03 -24.73,8.03 -24.73,-8.03 -15.28,-21.03" fill="#eff6ff" fill-opacity="0.5" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="0,-12 9.51,-5.09 5.88,6.09 -5.88,6.09 -9.51,-5.09" fill="none" stroke="#2563eb" stroke-width="1.6"/>' +
+        '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Dodekaëder</text>' +
+        '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V12 · H20 · R30</text>' +
+        '</g>' +
+        '<g transform="translate(495,85)">' +
+        '<polygon points="0,-26 22.52,-13 22.52,13 0,26 -22.52,13 -22.52,-13" fill="#fff7ed" fill-opacity="0.5" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="0" y2="-26" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="22.52" y2="-13" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="22.52" y2="13" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="0" y2="26" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="-22.52" y2="13" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="-22.52" y2="-13" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Ikosaëder</text>' +
+        '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V20 · H12 · R30</text>' +
+        '</g>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -236,7 +300,55 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om nette in piramides te vou — insluitend die vierkantige piramide en tetraëder — en die basisvorm, driehoekige vlakke en apeks identifiseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram nodig: net van ʼn vierkantige piramide plat en gevou gewys; net van ʼn tetraëder plat en gevou gewys" />',
+        'Net van ʼn vierkantige piramide plat en gevou gewys, en net van ʼn tetraëder plat en gevou gewys',
+
+      diagramSvg:
+        '<svg viewBox="0 0 480 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="125" y="18" font-size="11" font-weight="700" text-anchor="middle" fill="#0f1f3d">Vierkantige piramide</text>' +
+        '<text x="365" y="18" font-size="11" font-weight="700" text-anchor="middle" fill="#0f1f3d">Tetraëder</text>' +
+        '<g transform="translate(65,95)">' +
+        '<polygon points="-20,-20 20,-20 20,20 -20,20" fill="#eff6ff" fill-opacity="0.5" stroke="#2563eb" stroke-width="2"/>' +
+        '<polygon points="-20,-20 20,-20 0,-45" fill="#fff7ed" fill-opacity="0.5" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="-20,20 20,20 0,45" fill="#fff7ed" fill-opacity="0.5" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="-20,-20 -20,20 -45,0" fill="#fff7ed" fill-opacity="0.5" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="20,-20 20,20 45,0" fill="#fff7ed" fill-opacity="0.5" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="0" y="62" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Net (plat)</text>' +
+        '</g>' +
+        '<g transform="translate(185,100)">' +
+        '<line x1="-24" y1="-4" x2="10" y2="-10" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="10" y1="-10" x2="24" y2="10" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="24" y1="10" x2="-10" y2="16" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-10" y1="16" x2="-24" y2="-4" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="2" y1="-40" x2="-24" y2="-4" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="2" y1="-40" x2="10" y2="-10" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="2" y1="-40" x2="24" y2="10" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="2" y1="-40" x2="-10" y2="16" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<circle cx="-24" cy="-4" r="2" fill="#16a34a"/>' +
+        '<circle cx="10" cy="-10" r="2" fill="#16a34a"/>' +
+        '<circle cx="24" cy="10" r="2" fill="#16a34a"/>' +
+        '<circle cx="-10" cy="16" r="2" fill="#16a34a"/>' +
+        '<circle cx="2" cy="-40" r="2.2" fill="#16a34a"/>' +
+        '<text x="0" y="57" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Gevou</text>' +
+        '</g>' +
+        '<g transform="translate(305,100)">' +
+        '<polygon points="-17.5,-5.3 17.5,-5.3 0,25" fill="#eff6ff" fill-opacity="0.5" stroke="#2563eb" stroke-width="2"/>' +
+        '<polygon points="0,-35.6 -17.5,-5.3 17.5,-5.3" fill="#fff7ed" fill-opacity="0.5" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="-35,25 -17.5,-5.3 0,25" fill="#fff7ed" fill-opacity="0.5" stroke="#ea580c" stroke-width="2"/>' +
+        '<polygon points="35,25 17.5,-5.3 0,25" fill="#fff7ed" fill-opacity="0.5" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="0" y="45" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Net (plat)</text>' +
+        '</g>' +
+        '<g transform="translate(425,100)">' +
+        '<polygon points="-20,16 20,16 0,-22" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="0" y1="4" x2="-20" y2="16" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="20" y2="16" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="0" y2="-22" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<circle cx="-20" cy="16" r="2.2" fill="#16a34a"/>' +
+        '<circle cx="20" cy="16" r="2.2" fill="#16a34a"/>' +
+        '<circle cx="0" cy="-22" r="2.2" fill="#16a34a"/>' +
+        '<circle cx="0" cy="4" r="2.2" fill="#16a34a"/>' +
+        '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Gevou</text>' +
+        '</g>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -369,8 +481,6 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om 3D-voorwerpe te vergelyk en te klassifiseer aan die hand van vlakke, hoekpunte en rande, en hoe om Euler se formule te verifieer" />',
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram nodig: vergelykingstabel wat vlakke, hoekpunte en rande vir Platoniese vaste liggame en ander 3D-vorms wys, met Euler se formule vir elkeen geverifieer" />',
     },
   ],
 

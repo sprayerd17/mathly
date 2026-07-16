@@ -85,7 +85,27 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat konvensies vir die skryf van algebraïese uitdrukkings verduidelik, gelyksoortige en ongelyksoortige terme, koëffisiënte, eksponente, monome, binome en trinome" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die dele van ʼn algebraïese term merk — koëffisiënt in blou, veranderlike, eksponent in oranje — met voorbeelde van monoom, binoom en trinoom in groen" />',
+        'Gemerkte diagram van die term 4x² wat die koëffisiënt, veranderlike en eksponent wys, met klein voorbeelde van ʼn monoom, binoom en trinoom',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 175" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="130" y="55" text-anchor="middle" font-size="40" font-weight="700" fill="#0f1f3d">4x<tspan font-size="24" dy="-16" fill="#ea580c">2</tspan></text>` +
+        `<line x1="100" y1="70" x2="100" y2="90" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="100" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">koëffisiënt</text>` +
+        `<line x1="130" y1="70" x2="130" y2="90" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">veranderlike</text>` +
+        `<line x1="160" y1="40" x2="185" y2="90" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="185" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">eksponent</text>` +
+        `<rect x="10" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="46" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">5x</text>` +
+        `<text x="46" y="153" text-anchor="middle" font-size="9" fill="#15803d">monoom</text>` +
+        `<rect x="94" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="130" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">3x+2</text>` +
+        `<text x="130" y="153" text-anchor="middle" font-size="9" fill="#15803d">binoom</text>` +
+        `<rect x="178" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="214" y="138" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">x²+3x−7</text>` +
+        `<text x="214" y="153" text-anchor="middle" font-size="9" fill="#15803d">trinoom</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -157,9 +177,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om gelyksoortige terme op te tel en af te trek, die distributiewe wet toe te pas by vermenigvuldiging, en monome te deel deur koëffisiënte te deel en eksponente af te trek" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Newenmekaar uitgewerkte voorbeelde van optel van gelyksoortige terme in blou, distribusie in oranje en deling in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -230,9 +247,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese terme te kwadreer en te kubeer, vierkantswortels en kubuswortels van algebraïese terme te vind, en uitdrukkings deur vervanging te bereken" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Stap-vir-stap vervangingsvoorbeeld met die x-waarde uitgelig in oranje en die finale antwoord in groen" />',
     },
   ],
 

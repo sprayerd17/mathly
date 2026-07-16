@@ -134,7 +134,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om die variasiewydte en ekstreme van ʼn datastel te vind en waarom dit nuttig is om data in intervalle te groepeer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn datastel wys wat georganiseer is in ʼn stingel-en-blaar-diagram en gegroepeerde intervalle, met kleinste ekstreem in blou, grootste ekstreem in rooi en variasiewydte in oranje" />',
+        'Getallelyn wat die datastel 8, 12, 19, 33, 45, 52 wys met die kleinste ekstreem in blou, die grootste ekstreem in rooi, en die variasiewydte in oranje aangedui',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg"><line x1="20" y1="60" x2="200" y2="60" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="44" cy="60" r="5" fill="#2563eb"/><circle cx="56" cy="60" r="5" fill="#374151"/><circle cx="77" cy="60" r="5" fill="#374151"/><circle cx="119" cy="60" r="5" fill="#374151"/><circle cx="155" cy="60" r="5" fill="#374151"/><circle cx="176" cy="60" r="5" fill="#dc2626"/><text x="44" y="45" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">8</text><text x="56" y="45" font-size="9" fill="#374151" text-anchor="middle">12</text><text x="77" y="45" font-size="9" fill="#374151" text-anchor="middle">19</text><text x="119" y="45" font-size="9" fill="#374151" text-anchor="middle">33</text><text x="155" y="45" font-size="9" fill="#374151" text-anchor="middle">45</text><text x="176" y="45" font-size="10" fill="#dc2626" font-weight="700" text-anchor="middle">52</text><text x="44" y="78" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">kleinste</text><text x="176" y="78" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">grootste</text><line x1="44" y1="105" x2="176" y2="105" stroke="#ea580c" stroke-width="2"/><line x1="44" y1="100" x2="44" y2="110" stroke="#ea580c" stroke-width="2"/><line x1="176" y1="100" x2="176" y2="110" stroke="#ea580c" stroke-width="2"/><text x="110" y="125" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">Variasiewydte = 52 − 8 = 44</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -253,7 +256,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn histogram met gelyke intervalle en ʼn gebrokelyn-grafiek met datapunte verbind deur reguit lyne te teken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn gebrokelyn-grafiek wat maandelikse reënval oor 12 maande wys, met punte verbind deur reguit lyne" />',
+        'Gebrokelyn-grafiek wat maandelikse reënval oor ses maande wys, wat styg en daal, met datapunte in blou verbind deur groen reguit lyne',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="115" y="14" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Maandelikse Reënval</text><line x1="30" y1="20" x2="30" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="30" y1="140" x2="200" y2="140" stroke="#0f1f3d" stroke-width="2"/><polyline points="30,109 64,69 98,93 132,46 166,101 200,61" fill="none" stroke="#16a34a" stroke-width="2.5"/><circle cx="30" cy="109" r="4" fill="#2563eb"/><circle cx="64" cy="69" r="4" fill="#2563eb"/><circle cx="98" cy="93" r="4" fill="#2563eb"/><circle cx="132" cy="46" r="4" fill="#2563eb"/><circle cx="166" cy="101" r="4" fill="#2563eb"/><circle cx="200" cy="61" r="4" fill="#2563eb"/><text x="30" y="153" font-size="8" fill="#374151" text-anchor="middle">J</text><text x="64" y="153" font-size="8" fill="#374151" text-anchor="middle">F</text><text x="98" y="153" font-size="8" fill="#374151" text-anchor="middle">M</text><text x="132" y="153" font-size="8" fill="#374151" text-anchor="middle">A</text><text x="166" y="153" font-size="8" fill="#374151" text-anchor="middle">M</text><text x="200" y="153" font-size="8" fill="#374151" text-anchor="middle">J</text><text x="115" y="167" font-size="9" fill="#374151" text-anchor="middle">Maand</text><text x="10" y="80" font-size="9" fill="#374151" text-anchor="middle" transform="rotate(-90 10,80)">Reënval (mm)</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -422,7 +428,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om data krities uit grafieke te interpreteer, vooroordeel en misleidende skale te identifiseer, en geldige gevolgtrekkings te skryf" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat twee grafieke langs mekaar wys: een met y-as wat by 0 begin en een wat by 80 begin, wat illustreer hoe misleidende skale verskille kan oordryf" />',
+        'Twee staafgrafieke langs mekaar wat dieselfde waardes (82, 85, 90) wys: een met ʼn y-as wat by 0 begin waar die stawe eenders lyk, en een wat by 80 begin waar die verskille oordrewe lyk',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="55" y="14" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">As begin by 0</text><line x1="15" y1="40" x2="15" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="15" y1="140" x2="95" y2="140" stroke="#0f1f3d" stroke-width="2"/><rect x="22" y="58" width="14" height="82" fill="#2563eb"/><rect x="47" y="55" width="14" height="85" fill="#2563eb"/><rect x="72" y="50" width="14" height="90" fill="#2563eb"/><text x="10" y="44" font-size="7" fill="#9ca3af" text-anchor="end">100</text><text x="10" y="144" font-size="7" fill="#9ca3af" text-anchor="end">0</text><text x="55" y="153" font-size="7.5" fill="#374151" text-anchor="middle">stawe lyk eenders</text><text x="165" y="14" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">As begin by 80</text><line x1="125" y1="40" x2="125" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="125" y1="140" x2="205" y2="140" stroke="#0f1f3d" stroke-width="2"/><rect x="132" y="130" width="14" height="10" fill="#dc2626"/><rect x="157" y="115" width="14" height="25" fill="#dc2626"/><rect x="182" y="90" width="14" height="50" fill="#dc2626"/><text x="120" y="44" font-size="7" fill="#9ca3af" text-anchor="end">100</text><text x="120" y="144" font-size="7" fill="#9ca3af" text-anchor="end">80</text><text x="165" y="153" font-size="7.5" fill="#374151" text-anchor="middle">verskille oordryf</text><text x="110" y="168" font-size="8" fill="#374151" text-anchor="middle" font-style="italic">Selfde waardes: 82, 85, 90</text></svg>',
     },
   ],
   scoreMessages: [

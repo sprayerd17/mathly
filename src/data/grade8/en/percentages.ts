@@ -115,7 +115,20 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to find the original price after a percentage increase or decrease by working backwards using division" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing how to reverse a percentage increase and decrease to find the original amount in blue from the final amount in green with the percentage change in orange" />',
+        'Bar model showing R400 (original, 100%) plus a 15% segment making up R460 (115%), with a reverse arrow labelled ÷1.15 pointing back from the final amount to the original',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 115" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="105" y="13" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">Original R400 (100%)</text>` +
+        `<text x="203" y="13" text-anchor="middle" font-size="8" font-weight="700" fill="#ea580c">+15%</text>` +
+        `<rect x="20" y="20" width="170" height="28" fill="rgba(37,99,235,0.15)" stroke="#2563eb" stroke-width="2"/>` +
+        `<rect x="190" y="20" width="26" height="28" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2"/>` +
+        `<rect x="20" y="20" width="196" height="28" fill="none" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="118" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">New price R460 (115%)</text>` +
+        `<line x1="216" y1="85" x2="30" y2="85" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="24,85 32,80 32,90" fill="#2563eb"/>` +
+        `<text x="118" y="103" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2563eb">÷ 1.15 — work backwards to the original</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -217,7 +230,23 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate a new amount after a percentage increase or decrease using the two-step method and the one-step multiplier shortcut" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing how to calculate amounts after percentage changes with original amount in blue, percentage found in orange and final amount in green" />',
+        'Two-step flowchart showing Original R12 000, an arrow labelled ×0.09 leading to the increase R1 080, then an arrow labelled +R12 000 leading to the final new salary R13 080',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="25" y="10" width="170" height="32" rx="6" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="110" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">Original: R12 000</text>` +
+        `<line x1="110" y1="42" x2="110" y2="64" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="110,70 104,60 116,60" fill="#ea580c"/>` +
+        `<text x="150" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">×0.09</text>` +
+        `<rect x="25" y="74" width="170" height="32" rx="6" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="110" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">Increase: R1 080</text>` +
+        `<line x1="110" y1="106" x2="110" y2="128" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="110,134 104,124 116,124" fill="#2563eb"/>` +
+        `<text x="158" y="122" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">+ R12 000</text>` +
+        `<rect x="25" y="138" width="170" height="32" rx="6" fill="rgba(22,163,74,0.12)" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="110" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">New salary: R13 080</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -381,7 +410,19 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to solve multi-step percentage problems involving successive percentage changes and percentage increase relative to original" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing successive percentage changes with original amount in blue each change in orange and final result in green illustrating why they do not cancel out" />',
+        'Three stacked bars proportional to R100 (original), R110 (after +10%) and R99 (after -10%), with a reference line showing the final bar falls short of the original',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 150" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="20" y="15" width="180" height="22" fill="rgba(37,99,235,0.15)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="110" y="30" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">R100 — Original</text>` +
+        `<rect x="20" y="52" width="198" height="22" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="119" y="67" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">R110 — after +10%</text>` +
+        `<rect x="20" y="89" width="178" height="22" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="109" y="104" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">R99 — after −10%</text>` +
+        `<line x1="200" y1="10" x2="200" y2="115" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,2"/>` +
+        `<text x="140" y="135" text-anchor="middle" font-size="9" fill="#991b1b">R99 &lt; R100 — the two 10% changes do not cancel out</text>` +
+        `</svg>`,
     },
   ],
 

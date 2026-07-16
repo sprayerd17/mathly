@@ -120,9 +120,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die tekenreëls vir die vermenigvuldiging en deling van heelgetalle verduidelik met uitgewerkte voorbeelde" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Tekenreëldiagram wat toon dat dieselfde tekens ʼn positiewe antwoord gee en verskillende tekens ʼn negatiewe antwoord gee vir vermenigvuldiging en deling van heelgetalle" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -241,7 +238,31 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat additiewe en vermenigvuldigende inverse van heelgetalle verduidelik met voorbeelde wat toon waarom 0 ʼn spesiale geval is" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die getallelynparing van additiewe inverse toon en ʼn tabel van vermenigvuldigende inverse vir heelgetalle" />',
+        'Getallelyn wat additiewe inverspare (-5,5) en (-3,3) toon, verbind deur boë wat tot 0 optel, met ʼn klein tabel van vermenigvuldigende-inverse-voorbeelde daaronder',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 165" width="100%" style="max-width:440px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="160" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">Additiewe inverse: a + (−a) = 0</text>` +
+        `<path d="M72.5,55 Q160,20 247.5,55" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<path d="M107.5,55 Q160,38 212.5,55" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<line x1="20" y1="55" x2="300" y2="55" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="14,55 22,50 22,60" fill="#0f1f3d"/>` +
+        `<polygon points="306,55 298,50 298,60" fill="#0f1f3d"/>` +
+        `<circle cx="72.5" cy="55" r="5" fill="#2563eb"/>` +
+        `<circle cx="107.5" cy="55" r="5" fill="#2563eb"/>` +
+        `<circle cx="160" cy="55" r="4" fill="#6b7280"/>` +
+        `<circle cx="212.5" cy="55" r="5" fill="#2563eb"/>` +
+        `<circle cx="247.5" cy="55" r="5" fill="#2563eb"/>` +
+        `<text x="72.5" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">-5</text>` +
+        `<text x="107.5" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">-3</text>` +
+        `<text x="160" y="72" text-anchor="middle" font-size="11" fill="#6b7280">0</text>` +
+        `<text x="212.5" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">3</text>` +
+        `<text x="247.5" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">5</text>` +
+        `<rect x="40" y="95" width="240" height="55" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="160" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">Vermenigvuldigende inverse: a × 1/a = 1</text>` +
+        `<text x="160" y="129" text-anchor="middle" font-size="11" fill="#92400e">4 × ¼ = 1</text>` +
+        `<text x="160" y="145" text-anchor="middle" font-size="11" fill="#92400e">−8 × (−⅛) = 1</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -397,7 +418,29 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om te bereken met kwadrate, kubusse en wortels van heelgetalle, insluitend die verskil tussen (negatiewe a) in die kwadraat en negatiewe a in die kwadraat" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die verskil tussen (−a)² en −a² illustreer met kleurgekodeerde kwadraat-, kubus- en wortelberekeninge" />',
+        'Vergelyking langs mekaar wat (-6) in die kwadraat met hakies wys wat positief 36 gee, teenoor negatief 6 in die kwadraat sonder hakies wat negatief 36 gee',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 150" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="130" y1="10" x2="130" y2="130" stroke="#e2e8f0" stroke-width="1.5"/>` +
+        `<text x="65" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">(−6)²</text>` +
+        `<line x1="65" y1="30" x2="65" y2="45" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="65,52 60,43 70,43" fill="#2563eb"/>` +
+        `<text x="65" y="65" text-anchor="middle" font-size="11" fill="#2563eb">(−6) × (−6)</text>` +
+        `<line x1="65" y1="73" x2="65" y2="88" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="65,95 60,86 70,86" fill="#2563eb"/>` +
+        `<text x="65" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#16a34a">= 36</text>` +
+        `<text x="65" y="126" text-anchor="middle" font-size="8.5" fill="#6b7280">(dieselfde tekens → positief)</text>` +
+        `<text x="195" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">−6²</text>` +
+        `<line x1="195" y1="30" x2="195" y2="45" stroke="#dc2626" stroke-width="2"/>` +
+        `<polygon points="195,52 190,43 200,43" fill="#dc2626"/>` +
+        `<text x="195" y="65" text-anchor="middle" font-size="11" fill="#dc2626">−(6 × 6)</text>` +
+        `<line x1="195" y1="73" x2="195" y2="88" stroke="#dc2626" stroke-width="2"/>` +
+        `<polygon points="195,95 190,86 200,86" fill="#dc2626"/>` +
+        `<text x="195" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#dc2626">= −36</text>` +
+        `<text x="195" y="126" text-anchor="middle" font-size="8.5" fill="#6b7280">(eksponent geld eerste)</text>` +
+        `<text x="130" y="144" text-anchor="middle" font-size="9" fill="#991b1b">Hakies verander die volgorde: (−a)² ≠ −a²</text>` +
+        `</svg>`,
     },
   ],
 

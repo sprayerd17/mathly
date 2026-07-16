@@ -106,7 +106,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om insetwaardes in ʼn vergelyking te vervang om uitsetwaardes te vind, en hoe om inverse bewerkings te gebruik om insetwaardes vanaf ʼn gegewe uitset te vind" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Vloeidiagram wat die vergelyking y=4x-3 wys met insetwaarde x in blou, die vergelykingsbewerking in oranje, en uitsetwaarde y in groen" />',
+        'Vloeidiagram wat insetwaarde x = 6 in blou, die bewerking ×4, −3 in oranje, en uitsetwaarde y = 21 in groen wys',
+
+      diagramSvg:
+        '<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg"><defs><marker id="fnarrow1af" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0f1f3d"/></marker></defs><rect x="10" y="35" width="60" height="50" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><text x="40" y="53" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">inset</text><text x="40" y="70" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">x = 6</text><line x1="70" y1="60" x2="100" y2="60" stroke="#0f1f3d" stroke-width="2.5" marker-end="url(#fnarrow1af)"/><rect x="105" y="35" width="60" height="50" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><text x="135" y="53" font-size="10.5" fill="#ea580c" font-weight="700" text-anchor="middle">×4, −3</text><text x="135" y="70" font-size="9" fill="#ea580c" text-anchor="middle">y = 4x−3</text><line x1="165" y1="60" x2="195" y2="60" stroke="#0f1f3d" stroke-width="2.5" marker-end="url(#fnarrow1af)"/><rect x="200" y="35" width="55" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/><text x="227" y="53" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">uitset</text><text x="227" y="70" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">y = 21</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -214,9 +217,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn verbale beskrywing van ʼn verwantskap na ʼn vergelyking om te skakel, en hoe om ʼn vergelyking uit ʼn tabel van waardes te vind" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Newenmekaar vergelyking van vyf ekwivalente vorme van die verwantskap y=3x+5: verbale beskrywing in blou, vloeidiagram, tabel van waardes in groen, formule, en vergelyking in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,7 +306,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om x-waardes stap vir stap in ʼn vergelyking te vervang en die resultate as geordende pare in ʼn tabel te skryf" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Tabel van geordende pare vir y=2x-1 met x-waardes in blou en y-waardes in groen, en die resulterende geordende pare in oranje gereed om op ʼn Cartesiese vlak gestip te word" />',
+        'Tabel van geordende pare vir y = 2x − 1 met x-waardes in blou en y-waardes in groen, en die resulterende geordende pare in oranje gestip op ʼn Cartesiese vlak',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="10.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = 2x − 1</text><text x="18" y="33" font-size="10" fill="#2563eb" font-weight="700">x:</text><text x="55" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">0</text><text x="95" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">1</text><text x="135" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">2</text><text x="175" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">3</text><text x="18" y="49" font-size="10" fill="#16a34a" font-weight="700">y:</text><text x="55" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">−1</text><text x="95" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">1</text><text x="135" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">3</text><text x="175" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">5</text><line x1="30" y1="159" x2="200" y2="159" stroke="#0f1f3d" stroke-width="2"/><line x1="64" y1="65" x2="64" y2="190" stroke="#0f1f3d" stroke-width="2"/><circle cx="64" cy="175" r="4.5" fill="#ea580c"/><circle cx="98" cy="143" r="4.5" fill="#ea580c"/><circle cx="132" cy="112" r="4.5" fill="#ea580c"/><circle cx="166" cy="81" r="4.5" fill="#ea580c"/><text x="64" y="189" font-size="8" fill="#ea580c" text-anchor="middle">(0,−1)</text><text x="98" y="135" font-size="8" fill="#ea580c" text-anchor="middle">(1,1)</text><text x="132" y="104" font-size="8" fill="#ea580c" text-anchor="middle">(2,3)</text><text x="166" y="73" font-size="8" fill="#ea580c" text-anchor="middle">(3,5)</text><text x="204" y="163" font-size="9" fill="#374151">x</text><text x="58" y="62" font-size="9" fill="#374151">y</text></svg>',
     },
   ],
 

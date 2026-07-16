@@ -152,7 +152,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to analyse and interpret global graphs — identifying increasing, decreasing, constant sections, and maximum and minimum points" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two example global graphs — one showing speed vs time with a rising then flat line; one showing height vs time for a ball throw, rising to a peak then falling, with the maximum point marked" />',
+        'Two example global graphs: one showing speed vs time with a rising then flat line, and one showing height vs time for a ball throw, rising to a peak then falling, with the maximum point marked in orange',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="57" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Speed vs Time</text><line x1="15" y1="140" x2="100" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="15" y1="140" x2="15" y2="30" stroke="#0f1f3d" stroke-width="2"/><polyline points="15,140 55,60" fill="none" stroke="#16a34a" stroke-width="2.5"/><polyline points="55,60 100,60" fill="none" stroke="#2563eb" stroke-width="2.5"/><text x="57" y="155" font-size="8" fill="#374151" text-anchor="middle">Time</text><text x="8" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 8,85)">Speed</text><text x="30" y="95" font-size="7.5" fill="#16a34a" font-weight="700" text-anchor="middle">rising</text><text x="78" y="52" font-size="7.5" fill="#2563eb" font-weight="700" text-anchor="middle">constant</text><text x="165" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Height vs Time</text><line x1="120" y1="140" x2="210" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="120" y1="140" x2="120" y2="30" stroke="#0f1f3d" stroke-width="2"/><path d="M120,140 Q142,45 165,38" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M165,38 Q188,45 210,140" fill="none" stroke="#dc2626" stroke-width="2.5"/><circle cx="165" cy="38" r="4" fill="#ea580c"/><text x="165" y="28" font-size="7.5" fill="#ea580c" font-weight="700" text-anchor="middle">max</text><text x="165" y="155" font-size="8" fill="#374151" text-anchor="middle">Time</text><text x="113" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 113,85)">Height</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -282,7 +285,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to plot ordered pairs on the Cartesian plane and draw a straight line through plotted points" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: Cartesian plane showing points (1,2),(2,4),(3,6) connected by a line; a second Cartesian plane showing points (-1,3),(0,1),(1,-1) connected by a downward line" />',
+        'Two Cartesian planes: one showing points (1,2), (2,4), (3,6) connected by an upward line through the origin for y = 2x, and one showing points (−1,3), (0,1), (1,−1) connected by a downward line for y = −2x + 1',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="57" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = 2x</text><line x1="12" y1="140" x2="95" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="20" y1="145" x2="20" y2="25" stroke="#0f1f3d" stroke-width="2"/><polyline points="20,140 40,110 60,80 80,50" fill="none" stroke="#ea580c" stroke-width="2.5"/><circle cx="40" cy="110" r="3.5" fill="#ea580c"/><circle cx="60" cy="80" r="3.5" fill="#ea580c"/><circle cx="80" cy="50" r="3.5" fill="#ea580c"/><text x="98" y="144" font-size="8" fill="#374151">x</text><text x="14" y="22" font-size="8" fill="#374151">y</text><text x="165" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = −2x + 1</text><line x1="125" y1="90" x2="205" y2="90" stroke="#0f1f3d" stroke-width="2"/><line x1="165" y1="30" x2="165" y2="130" stroke="#0f1f3d" stroke-width="2"/><polyline points="140,45 165,75 190,105" fill="none" stroke="#dc2626" stroke-width="2.5"/><circle cx="140" cy="45" r="3.5" fill="#ea580c"/><circle cx="165" cy="75" r="3.5" fill="#ea580c"/><circle cx="190" cy="105" r="3.5" fill="#ea580c"/><text x="208" y="94" font-size="8" fill="#374151">x</text><text x="159" y="27" font-size="8" fill="#374151">y</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -410,7 +416,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to draw a global graph from a real-life description, identifying rising, falling and flat sections" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two simple sketched graphs — one showing a tank filling (rising then flat line); one showing savings rising, a sudden drop, then rising again" />',
+        'Two simple sketched graphs: one showing a tank filling with a rising then flat line, and one showing savings rising, a sudden drop, then rising again',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="57" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Tank Filling</text><line x1="15" y1="140" x2="100" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="15" y1="140" x2="15" y2="30" stroke="#0f1f3d" stroke-width="2"/><polyline points="15,140 55,55" fill="none" stroke="#16a34a" stroke-width="2.5"/><polyline points="55,55 100,55" fill="none" stroke="#2563eb" stroke-width="2.5"/><text x="57" y="155" font-size="8" fill="#374151" text-anchor="middle">Time</text><text x="8" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 8,85)">Volume</text><text x="165" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Savings Over Time</text><line x1="120" y1="140" x2="210" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="120" y1="140" x2="120" y2="30" stroke="#0f1f3d" stroke-width="2"/><polyline points="120,140 150,70" fill="none" stroke="#16a34a" stroke-width="2.5"/><polyline points="150,70 150,110" fill="none" stroke="#dc2626" stroke-width="2.5"/><polyline points="150,110 210,50" fill="none" stroke="#16a34a" stroke-width="2.5"/><text x="165" y="155" font-size="8" fill="#374151" text-anchor="middle">Time</text><text x="113" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 113,85)">Savings (R)</text></svg>',
     },
   ],
   scoreMessages: [

@@ -89,7 +89,16 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A right-angled triangle with legs labelled 3 cm and 4 cm, and hypotenuse labelled as the unknown side c, with a small square marking the right angle" />',
+        'A right-angled triangle with legs labelled 3 cm and 4 cm, and the hypotenuse labelled c, with a small square marking the right angle',
+
+      diagramSvg:
+        '<svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="30,150 150,150 150,50" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<rect x="138" y="138" width="12" height="12" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<text x="90" y="168" font-size="13" font-weight="700" text-anchor="middle" fill="#2563eb">3 cm</text>' +
+        '<text x="164" y="104" font-size="13" font-weight="700" fill="#2563eb">4 cm</text>' +
+        '<text x="80" y="94" font-size="14" font-weight="700" fill="#dc2626">c</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to apply the Theorem of Pythagoras to find the hypotenuse of a right-angled triangle" />',
@@ -165,7 +174,28 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two triangles side by side — first labelled right-angled (6 cm, 8 cm, 10 cm) with tick confirming equality of squares, second labelled not right-angled (5 cm, 7 cm, 9 cm) with cross" />',
+        'Two triangles side by side — one right-angled (6 cm, 8 cm, 10 cm) confirmed, one not right-angled (5 cm, 7 cm, 9 cm)',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(70,95)">' +
+        '<polygon points="-32,24 32,24 32,-24" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<rect x="22" y="14" width="10" height="10" fill="none" stroke="#0f1f3d" stroke-width="1.4"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" text-anchor="middle" fill="#2563eb">8 cm</text>' +
+        '<text x="46" y="4" font-size="11" font-weight="700" fill="#2563eb">6 cm</text>' +
+        '<text x="-14" y="-2" font-size="11" font-weight="700" fill="#dc2626">10 cm</text>' +
+        '<text x="0" y="-34" font-size="16" font-weight="700" text-anchor="middle" fill="#16a34a">✓</text>' +
+        '<text x="0" y="58" font-size="11" font-weight="700" text-anchor="middle" fill="#16a34a">Right-angled</text>' +
+        '</g>' +
+        '<g transform="translate(255,100)">' +
+        '<polygon points="-35,25 35,25 10,-30" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" text-anchor="middle" fill="#2563eb">9 cm</text>' +
+        '<text x="30" y="0" font-size="11" font-weight="700" fill="#2563eb">7 cm</text>' +
+        '<text x="-32" y="0" font-size="11" font-weight="700" fill="#2563eb">5 cm</text>' +
+        '<text x="10" y="-38" font-size="16" font-weight="700" text-anchor="middle" fill="#dc2626">✗</text>' +
+        '<text x="0" y="58" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">Not right-angled</text>' +
+        '</g>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to test whether a triangle is right-angled using the converse of the Theorem of Pythagoras" />',
@@ -248,7 +278,20 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A ladder leaning against a wall forming a right-angled triangle, with the base (3 m), ladder length (7 m), and unknown height labelled" />',
+        'A ladder leaning against a wall forming a right-angled triangle, with the base (3 m), ladder length (7 m), and unknown height labelled',
+
+      diagramSvg:
+        '<svg viewBox="0 0 180 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="40" y1="150" x2="40" y2="40" stroke="#0f1f3d" stroke-width="3"/>' +
+        '<line x1="20" y1="150" x2="150" y2="150" stroke="#0f1f3d" stroke-width="3"/>' +
+        '<line x1="40" y1="40" x2="120" y2="150" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<rect x="40" y="138" width="12" height="12" fill="none" stroke="#0f1f3d" stroke-width="1.4"/>' +
+        '<line x1="12" y1="145" x2="20" y2="155" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="24" y1="145" x2="32" y2="155" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<text x="24" y="98" font-size="14" font-weight="700" fill="#dc2626">h</text>' +
+        '<text x="80" y="168" font-size="13" font-weight="700" text-anchor="middle" fill="#2563eb">3 m</text>' +
+        '<text x="90" y="90" font-size="13" font-weight="700" fill="#2563eb">7 m</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to find a missing side of a right-angled triangle using the Theorem of Pythagoras, including surd form answers" />',

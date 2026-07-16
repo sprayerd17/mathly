@@ -78,7 +78,22 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step construction showing a line segment AB being bisected with compass arcs above and below, and the perpendicular bisector drawn through" />',
+        'Step-by-step construction showing a line segment AB being bisected with compass arcs above and below, and the perpendicular bisector drawn through',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="40" y1="110" x2="180" y2="110" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<circle cx="40" cy="110" r="2.5" fill="#0f1f3d"/>' +
+        '<circle cx="180" cy="110" r="2.5" fill="#0f1f3d"/>' +
+        '<text x="40" y="128" font-size="12" text-anchor="middle" fill="#0f1f3d">A</text>' +
+        '<text x="180" y="128" font-size="12" text-anchor="middle" fill="#0f1f3d">B</text>' +
+        '<path d="M 110,62 A 85,85 0 0 1 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 110,62 A 85,85 0 0 0 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="110" y1="50" x2="110" y2="170" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<rect x="103" y="103" width="7" height="7" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<text x="55" y="80" font-size="11" font-weight="700" fill="#2563eb">Compass arcs</text>' +
+        '<text x="110" y="42" font-size="11" font-weight="700" text-anchor="middle" fill="#16a34a">Bisecting line</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to bisect a line segment and construct a perpendicular line using compass and ruler, with compass arcs in blue, bisecting line in green and perpendicular line in orange" />',
@@ -152,7 +167,34 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step construction of an equilateral triangle with compass arcs shown; separate diagram showing construction of a 60° angle" />',
+        'Step-by-step construction of an equilateral triangle with compass arcs shown, and a separate construction of a 60° angle',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(85,110)">' +
+        '<path d="M -22,-20 Q -5,-52 8,-30" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 22,-20 Q 5,-52 -8,-30" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<polygon points="-50,30 50,30 0,-56.6" fill="none" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<circle cx="-50" cy="30" r="2.5" fill="#0f1f3d"/>' +
+        '<circle cx="50" cy="30" r="2.5" fill="#0f1f3d"/>' +
+        '<circle cx="0" cy="-56.6" r="2.5" fill="#0f1f3d"/>' +
+        '<text x="-50" y="46" font-size="11" text-anchor="middle" fill="#0f1f3d">A</text>' +
+        '<text x="50" y="46" font-size="11" text-anchor="middle" fill="#0f1f3d">B</text>' +
+        '<text x="0" y="-64" font-size="11" text-anchor="middle" fill="#0f1f3d">C</text>' +
+        '<text x="0" y="60" font-size="11" font-weight="700" text-anchor="middle" fill="#16a34a">Equilateral triangle</text>' +
+        '</g>' +
+        '<g transform="translate(255,110)">' +
+        '<line x1="0" y1="30" x2="75" y2="30" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<circle cx="0" cy="30" r="2.5" fill="#0f1f3d"/>' +
+        '<path d="M 45,30 A 45,45 0 0 0 22.5,-9" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 8,14 A 45,45 0 0 1 24,-7" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="0" y1="30" x2="25" y2="-13" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<path d="M 15,30 A 15,15 0 0 0 7.5,17" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="20" y="26" font-size="11" font-weight="700" fill="#ea580c">60°</text>' +
+        '<text x="0" y="46" font-size="11" text-anchor="middle" fill="#0f1f3d">V</text>' +
+        '<text x="37" y="60" font-size="11" font-weight="700" text-anchor="middle" fill="#16a34a">60° angle</text>' +
+        '</g>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to construct an equilateral triangle and a 60° angle using only compass and ruler, with compass arcs in blue, constructed shape in green and angle markings in orange" />',
@@ -223,7 +265,26 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A triangle with all three angle bisectors drawn, meeting at a single labelled incentre point" />',
+        'A triangle with all three angle bisectors drawn, meeting at a single labelled incentre point',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 185" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="20,150 190,150 90,30" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="20" y1="150" x2="96.35" y2="106.13" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="190" y1="150" x2="96.35" y2="106.13" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="90" y1="30" x2="96.35" y2="106.13" stroke="#16a34a" stroke-width="2"/>' +
+        '<circle cx="96.35" cy="106.13" r="4" fill="#ea580c"/>' +
+        '<circle cx="20" cy="150" r="2.5" fill="#0f1f3d"/>' +
+        '<circle cx="190" cy="150" r="2.5" fill="#0f1f3d"/>' +
+        '<circle cx="90" cy="30" r="2.5" fill="#0f1f3d"/>' +
+        '<path d="M 34,150 A 14,14 0 0 1 26.9,138.2" fill="none" stroke="#2563eb" stroke-width="1.8"/>' +
+        '<path d="M 176,150 A 14,14 0 0 0 182.4,138.9" fill="none" stroke="#2563eb" stroke-width="1.8"/>' +
+        '<path d="M 84,43.5 A 14,14 0 0 0 96.2,43.7" fill="none" stroke="#2563eb" stroke-width="1.8"/>' +
+        '<text x="14" y="168" font-size="11" fill="#0f1f3d">A</text>' +
+        '<text x="192" y="168" font-size="11" fill="#0f1f3d">B</text>' +
+        '<text x="90" y="20" font-size="11" text-anchor="middle" fill="#0f1f3d">C</text>' +
+        '<text x="96.35" y="126" font-size="11" font-weight="700" text-anchor="middle" fill="#ea580c">Incentre</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to bisect all three angles of a triangle using a compass, with original angle in blue, bisector line in green and incentre in orange" />',

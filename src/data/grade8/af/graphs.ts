@@ -152,7 +152,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om globale grafieke te ontleed en te interpreteer — hoe om toenemende, afnemende, konstante gedeeltes, en maksimum- en minimumpunte te identifiseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram nodig: twee voorbeeld globale grafieke — een wat spoed teenoor tyd wys met ʼn stygende lyn wat dan plat word; een wat hoogte teenoor tyd wys vir ʼn balgooi, wat styg tot ʼn hoogtepunt en dan val, met die maksimumpunt gemerk" />',
+        'Twee voorbeeld globale grafieke: een wat spoed teenoor tyd wys met ʼn stygende lyn wat dan plat word, en een wat hoogte teenoor tyd wys vir ʼn balgooi, wat styg tot ʼn hoogtepunt en dan val, met die maksimumpunt in oranje gemerk',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="57" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Spoed teenoor Tyd</text><line x1="15" y1="140" x2="100" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="15" y1="140" x2="15" y2="30" stroke="#0f1f3d" stroke-width="2"/><polyline points="15,140 55,60" fill="none" stroke="#16a34a" stroke-width="2.5"/><polyline points="55,60 100,60" fill="none" stroke="#2563eb" stroke-width="2.5"/><text x="57" y="155" font-size="8" fill="#374151" text-anchor="middle">Tyd</text><text x="8" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 8,85)">Spoed</text><text x="30" y="95" font-size="7.5" fill="#16a34a" font-weight="700" text-anchor="middle">stygend</text><text x="78" y="52" font-size="7.5" fill="#2563eb" font-weight="700" text-anchor="middle">konstant</text><text x="165" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Hoogte teenoor Tyd</text><line x1="120" y1="140" x2="210" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="120" y1="140" x2="120" y2="30" stroke="#0f1f3d" stroke-width="2"/><path d="M120,140 Q142,45 165,38" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M165,38 Q188,45 210,140" fill="none" stroke="#dc2626" stroke-width="2.5"/><circle cx="165" cy="38" r="4" fill="#ea580c"/><text x="165" y="28" font-size="7.5" fill="#ea580c" font-weight="700" text-anchor="middle">maks</text><text x="165" y="155" font-size="8" fill="#374151" text-anchor="middle">Tyd</text><text x="113" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 113,85)">Hoogte</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -282,7 +285,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om geordende pare op die Cartesiese vlak te stip en ʼn reguit lyn deur die gestipte punte te trek" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram nodig: Cartesiese vlak wat punte (1,2),(2,4),(3,6) verbind deur ʼn lyn wys; ʼn tweede Cartesiese vlak wat punte (-1,3),(0,1),(1,-1) verbind deur ʼn afwaartse lyn wys" />',
+        'Twee Cartesiese vlakke: een wat punte (1,2), (2,4), (3,6) verbind deur ʼn opwaartse lyn deur die oorsprong vir y = 2x wys, en een wat punte (−1,3), (0,1), (1,−1) verbind deur ʼn afwaartse lyn vir y = −2x + 1 wys',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="57" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = 2x</text><line x1="12" y1="140" x2="95" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="20" y1="145" x2="20" y2="25" stroke="#0f1f3d" stroke-width="2"/><polyline points="20,140 40,110 60,80 80,50" fill="none" stroke="#ea580c" stroke-width="2.5"/><circle cx="40" cy="110" r="3.5" fill="#ea580c"/><circle cx="60" cy="80" r="3.5" fill="#ea580c"/><circle cx="80" cy="50" r="3.5" fill="#ea580c"/><text x="98" y="144" font-size="8" fill="#374151">x</text><text x="14" y="22" font-size="8" fill="#374151">y</text><text x="165" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = −2x + 1</text><line x1="125" y1="90" x2="205" y2="90" stroke="#0f1f3d" stroke-width="2"/><line x1="165" y1="30" x2="165" y2="130" stroke="#0f1f3d" stroke-width="2"/><polyline points="140,45 165,75 190,105" fill="none" stroke="#dc2626" stroke-width="2.5"/><circle cx="140" cy="45" r="3.5" fill="#ea580c"/><circle cx="165" cy="75" r="3.5" fill="#ea580c"/><circle cx="190" cy="105" r="3.5" fill="#ea580c"/><text x="208" y="94" font-size="8" fill="#374151">x</text><text x="159" y="27" font-size="8" fill="#374151">y</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -410,7 +416,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn globale grafiek uit ʼn werklike-lewe beskrywing te teken, deur stygende, dalende en plat gedeeltes te identifiseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram nodig: twee eenvoudige gesketste grafieke — een wat ʼn tenk wys wat volmaak (stygende lyn wat dan plat word); een wat spaargeld wys wat styg, skielik daal, en dan weer styg" />',
+        'Twee eenvoudige gesketste grafieke: een wat ʼn tenk wys wat volmaak met ʼn stygende lyn wat dan plat word, en een wat spaargeld wys wat styg, skielik daal, en dan weer styg',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="57" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Tenk word Vol</text><line x1="15" y1="140" x2="100" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="15" y1="140" x2="15" y2="30" stroke="#0f1f3d" stroke-width="2"/><polyline points="15,140 55,55" fill="none" stroke="#16a34a" stroke-width="2.5"/><polyline points="55,55 100,55" fill="none" stroke="#2563eb" stroke-width="2.5"/><text x="57" y="155" font-size="8" fill="#374151" text-anchor="middle">Tyd</text><text x="8" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 8,85)">Volume</text><text x="165" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">Spaargeld oor Tyd</text><line x1="120" y1="140" x2="210" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="120" y1="140" x2="120" y2="30" stroke="#0f1f3d" stroke-width="2"/><polyline points="120,140 150,70" fill="none" stroke="#16a34a" stroke-width="2.5"/><polyline points="150,70 150,110" fill="none" stroke="#dc2626" stroke-width="2.5"/><polyline points="150,110 210,50" fill="none" stroke="#16a34a" stroke-width="2.5"/><text x="165" y="155" font-size="8" fill="#374151" text-anchor="middle">Tyd</text><text x="113" y="85" font-size="8" fill="#374151" text-anchor="middle" transform="rotate(-90 113,85)">Spaargeld (R)</text></svg>',
     },
   ],
   scoreMessages: [

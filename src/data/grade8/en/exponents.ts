@@ -149,9 +149,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining all five laws of exponents with colour coded base and exponent examples" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Reference card showing all five laws of exponents with base blue exponent orange and simplified answer green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -278,7 +275,30 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to convert large numbers to scientific notation by moving the decimal point and counting places" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step diagram showing decimal movement blue power of 10 orange and final scientific notation form green for 45 000 and 3 200 000" />',
+        'Digit boxes for 45 000 showing the decimal point moving 4 places left to give 4.5 × 10⁴',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 165" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="130" y="14" text-anchor="middle" font-size="11" fill="#6b7280">45 000</text>` +
+        `<rect x="35" y="20" width="30" height="36" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="50" y="45" text-anchor="middle" font-size="20" font-weight="700" fill="#2563eb">4</text>` +
+        `<rect x="65" y="20" width="30" height="36" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="80" y="45" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<rect x="95" y="20" width="30" height="36" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="110" y="45" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">0</text>` +
+        `<rect x="125" y="20" width="30" height="36" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="140" y="45" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">0</text>` +
+        `<rect x="155" y="20" width="30" height="36" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="170" y="45" text-anchor="middle" font-size="20" font-weight="700" fill="#0f1f3d">0</text>` +
+        `<circle cx="65" cy="60" r="3" fill="#2563eb"/>` +
+        `<text x="65" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">new point</text>` +
+        `<circle cx="185" cy="60" r="3" fill="#9ca3af"/>` +
+        `<text x="185" y="76" text-anchor="middle" font-size="9" fill="#9ca3af">original</text>` +
+        `<path d="M180,90 Q125,110 70,90" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="65,90 75,85 75,96" fill="#2563eb"/>` +
+        `<text x="125" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">moved 4 places left</text>` +
+        `<text x="130" y="150" text-anchor="middle" font-size="20" font-weight="700" fill="#16a34a">4.5 × 10<tspan font-size="13" dy="-8" fill="#ea580c">4</tspan></text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -417,9 +437,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video demonstrating squares cubes square roots and cube roots of integers and fractions with negative sign rules explained" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side comparison showing negative sign red fraction blue and root result green for key examples including the critical distinction between (negative 4) squared and negative 4 squared" />',
     },
   ],
 

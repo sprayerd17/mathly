@@ -142,7 +142,25 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to divide whole numbers and fractions by a common fraction using the reciprocal method" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing division by a fraction as multiplication by its reciprocal with colour coded dividend and reciprocal" />',
+        'Diagram showing the divisor 2/3 flipped into its reciprocal 3/2, illustrating a ÷ b/c = a × c/b',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="60" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">divisor</text>` +
+        `<line x1="35" y1="55" x2="85" y2="55" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="60" y="48" text-anchor="middle" font-size="22" font-weight="700" fill="#2563eb">2</text>` +
+        `<text x="60" y="75" text-anchor="middle" font-size="22" font-weight="700" fill="#dc2626">3</text>` +
+        `<text x="180" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">reciprocal</text>` +
+        `<line x1="155" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="180" y="48" text-anchor="middle" font-size="22" font-weight="700" fill="#dc2626">3</text>` +
+        `<text x="180" y="75" text-anchor="middle" font-size="22" font-weight="700" fill="#2563eb">2</text>` +
+        `<path d="M90,40 C120,10 140,10 160,40" fill="none" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="160,40 150,36 154,46" fill="#2563eb"/>` +
+        `<path d="M90,70 C120,100 140,100 160,70" fill="none" stroke="#dc2626" stroke-width="2"/>` +
+        `<polygon points="160,70 150,74 154,64" fill="#dc2626"/>` +
+        `<text x="120" y="115" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">a ÷ b/c = a × c/b</text>` +
+        `<text x="120" y="132" text-anchor="middle" font-size="10" fill="#6b7280">flip numerator and denominator</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -289,7 +307,21 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to calculate squares, cubes, square roots and cube roots of common fractions by applying operations to numerator and denominator separately" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing squaring and square root of a fraction with numerator highlighted blue and denominator highlighted red" />',
+        'Area model of a 3-by-3 grid with a 2-by-3 shaded block showing (2/3)² = 4/9',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" width="100%" style="max-width:260px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="30" y="20" width="120" height="120" fill="none" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="70" y1="20" x2="70" y2="140" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<line x1="110" y1="20" x2="110" y2="140" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<line x1="30" y1="60" x2="150" y2="60" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<line x1="30" y1="100" x2="150" y2="100" stroke="#0f1f3d" stroke-width="1"/>` +
+        `<rect x="30" y="20" width="80" height="80" fill="rgba(37,99,235,0.28)" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<text x="90" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">2/3</text>` +
+        `<text x="16" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb" transform="rotate(-90 16 65)">2/3</text>` +
+        `<text x="100" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">4/9</text>` +
+        `<text x="90" y="165" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">(2/3)² = 4/9</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -394,7 +426,18 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to solve grouping and sharing problems involving common fractions and mixed numbers" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing grouping highlighted blue and sharing highlighted orange with a worked example of dividing a mixed number by a fraction" />',
+        'Bar model of a 6½ m rope cut into eight 3/4 m pieces, with the short leftover piece shown separately',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 130" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="170" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">6½ m of rope</text>` +
+        `<rect x="20" y="30" width="300" height="34" fill="none" stroke="#0f1f3d" stroke-width="2"/>` +
+        Array.from({ length: 8 }, (_, i) => `<rect x="${(20 + i * 34.6).toFixed(1)}" y="30" width="34.6" height="34" fill="${i % 2 === 0 ? 'rgba(37,99,235,0.18)' : 'rgba(37,99,235,0.32)'}" stroke="#2563eb" stroke-width="1"/>`).join('') +
+        `<rect x="296.8" y="30" width="23.2" height="34" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>` +
+        `<text x="170" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">8 pieces of 3/4 m</text>` +
+        `<text x="308" y="82" text-anchor="middle" font-size="8" fill="#6b7280">left over</text>` +
+        `<text x="170" y="105" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">8 full pieces</text>` +
+        `</svg>`,
     },
   ],
   scoreMessages: [

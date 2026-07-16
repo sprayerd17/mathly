@@ -119,7 +119,20 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke te vermenigvuldig deur desimale plekke te tel en die desimale komma korrek in die produk te plaas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat 2,45 × 3,6 wys met desimale plekke getel in oranje, vermenigvuldiging gewys in groen, en die finale antwoord in blou" />',
+        'Kolomuitleg wat 2,45 × 3,6 as heelgetalle vermenigvuldig wys, desimale plekke getel, en die desimale komma in die finale antwoord geplaas',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:'Courier New',monospace;">` +
+        `<text x="200" y="28" text-anchor="end" font-size="18" font-weight="700" fill="#0f1f3d">2,45</text>` +
+        `<text x="200" y="54" text-anchor="end" font-size="18" font-weight="700" fill="#0f1f3d">×  3,6</text>` +
+        `<line x1="20" y1="64" x2="200" y2="64" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="200" y="90" text-anchor="end" font-size="16" font-weight="700" fill="#16a34a">245 × 36 = 8 820</text>` +
+        `<text x="150" y="102" text-anchor="end" font-size="9" fill="#16a34a">(ignoreer desimale kommas)</text>` +
+        `<text x="200" y="128" text-anchor="end" font-size="14" font-weight="700" fill="#ea580c">2 + 1 = 3 desimale plekke</text>` +
+        `<line x1="20" y1="140" x2="200" y2="140" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="200" y="168" text-anchor="end" font-size="20" font-weight="700" fill="#2563eb">8,82</text>` +
+        `<text x="150" y="182" text-anchor="end" font-size="9" fill="#2563eb">(3 plekke van regs af)</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -219,7 +232,20 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke te deel deur die deler na ʼn heelgetal om te skakel deur met magte van 10 te vermenigvuldig" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat 4,8 gedeel deur 0,6 wys met albei getalle vermenigvuldig met 10 in oranje, delingstap in blou, en finale antwoord in groen" />',
+        'Vloeidiagram wat 4,8 ÷ 0,6 verander in 48 ÷ 6 deur albei getalle met 10 te vermenigvuldig, wat die finale antwoord 8 gee',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 190" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="110" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#0f1f3d">4,8 ÷ 0,6</text>` +
+        `<line x1="110" y1="34" x2="110" y2="60" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="110,66 104,56 116,56" fill="#ea580c"/>` +
+        `<text x="140" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">×10 albei</text>` +
+        `<text x="110" y="90" text-anchor="middle" font-size="18" font-weight="700" fill="#2563eb">48 ÷ 6</text>` +
+        `<line x1="110" y1="98" x2="110" y2="122" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="110,128 104,118 116,118" fill="#2563eb"/>` +
+        `<text x="135" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">deel</text>` +
+        `<text x="110" y="160" text-anchor="middle" font-size="26" font-weight="700" fill="#16a34a">= 8</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -383,7 +409,23 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van desimale breuke stap vir stap te bereken" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat 0,3 in die kwadraat en die kubuswortel van 0,027 wys, met die grondtal in blou, eksponent in oranje, en finale antwoord in groen" />',
+        '10-by-10-roosteroppervlaktemodel wat 0,3² = 0,09 wys, langs drie gestapelde lae wat 0,3³ = 0,027 wys, sodat ∛0,027 = 0,3',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="15" y="15" width="100" height="100" fill="none" stroke="#0f1f3d" stroke-width="2"/>` +
+        Array.from({ length: 9 }, (_, i) => `<line x1="${15 + 10 * (i + 1)}" y1="15" x2="${15 + 10 * (i + 1)}" y2="115" stroke="#cbd5e1" stroke-width="0.75"/>`).join('') +
+        Array.from({ length: 9 }, (_, i) => `<line x1="15" y1="${15 + 10 * (i + 1)}" x2="115" y2="${15 + 10 * (i + 1)}" stroke="#cbd5e1" stroke-width="0.75"/>`).join('') +
+        `<rect x="15" y="15" width="30" height="30" fill="rgba(37,99,235,0.28)" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<text x="30" y="10" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">0,3</text>` +
+        `<text x="6" y="34" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb" transform="rotate(-90 6 34)">0,3</text>` +
+        `<text x="65" y="135" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">0,3² = 0,09</text>` +
+        `<rect x="190" y="70" width="36" height="36" fill="rgba(37,99,235,0.10)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<rect x="202" y="58" width="36" height="36" fill="rgba(37,99,235,0.16)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<rect x="214" y="46" width="36" height="36" fill="rgba(37,99,235,0.24)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="232" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">∛0,027 = 0,3</text>` +
+        `<text x="232" y="146" text-anchor="middle" font-size="9" fill="#6b7280">0,3 × 0,3 × 0,3 = 0,027</text>` +
+        `</svg>`,
     },
   ],
 

@@ -106,7 +106,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to substitute input values into an equation to find output values, and how to use inverse operations to find input values from a given output" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Flow diagram showing the equation y=4x-3 with input value x in blue, the equation operation in orange, and output value y in green" />',
+        'Flow diagram showing input value x = 6 in blue, the operation ×4, −3 in orange, and output value y = 21 in green',
+
+      diagramSvg:
+        '<svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg"><defs><marker id="fnarrow1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0f1f3d"/></marker></defs><rect x="10" y="35" width="60" height="50" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><text x="40" y="53" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">input</text><text x="40" y="70" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">x = 6</text><line x1="70" y1="60" x2="100" y2="60" stroke="#0f1f3d" stroke-width="2.5" marker-end="url(#fnarrow1)"/><rect x="105" y="35" width="60" height="50" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><text x="135" y="53" font-size="10.5" fill="#ea580c" font-weight="700" text-anchor="middle">×4, −3</text><text x="135" y="70" font-size="9" fill="#ea580c" text-anchor="middle">y = 4x−3</text><line x1="165" y1="60" x2="195" y2="60" stroke="#0f1f3d" stroke-width="2.5" marker-end="url(#fnarrow1)"/><rect x="200" y="35" width="55" height="50" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/><text x="227" y="53" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">output</text><text x="227" y="70" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">y = 21</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -214,9 +217,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to convert a verbal description of a relationship into an equation, and how to find an equation from a table of values" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side comparison of five equivalent forms of the relationship y=3x+5: verbal description in blue, flow diagram, table of values in green, formula, and equation in orange" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,7 +306,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to substitute x-values into an equation step by step and write the results as ordered pairs in a table" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table of ordered pairs for y=2x-1 with x-values in blue and y-values in green, and the resulting ordered pairs in orange ready to be plotted on a Cartesian plane" />',
+        'Table of ordered pairs for y = 2x − 1 with x-values in blue and y-values in green, and the resulting ordered pairs in orange plotted on a Cartesian plane',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="10.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">y = 2x − 1</text><text x="18" y="33" font-size="10" fill="#2563eb" font-weight="700">x:</text><text x="55" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">0</text><text x="95" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">1</text><text x="135" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">2</text><text x="175" y="33" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">3</text><text x="18" y="49" font-size="10" fill="#16a34a" font-weight="700">y:</text><text x="55" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">−1</text><text x="95" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">1</text><text x="135" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">3</text><text x="175" y="49" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">5</text><line x1="30" y1="159" x2="200" y2="159" stroke="#0f1f3d" stroke-width="2"/><line x1="64" y1="65" x2="64" y2="190" stroke="#0f1f3d" stroke-width="2"/><circle cx="64" cy="175" r="4.5" fill="#ea580c"/><circle cx="98" cy="143" r="4.5" fill="#ea580c"/><circle cx="132" cy="112" r="4.5" fill="#ea580c"/><circle cx="166" cy="81" r="4.5" fill="#ea580c"/><text x="64" y="189" font-size="8" fill="#ea580c" text-anchor="middle">(0,−1)</text><text x="98" y="135" font-size="8" fill="#ea580c" text-anchor="middle">(1,1)</text><text x="132" y="104" font-size="8" fill="#ea580c" text-anchor="middle">(2,3)</text><text x="166" y="73" font-size="8" fill="#ea580c" text-anchor="middle">(3,5)</text><text x="204" y="163" font-size="9" fill="#374151">x</text><text x="58" y="62" font-size="9" fill="#374151">y</text></svg>',
     },
   ],
 

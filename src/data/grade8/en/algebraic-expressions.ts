@@ -85,7 +85,27 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining conventions for writing algebraic expressions, like and unlike terms, coefficients, exponents, monomials, binomials and trinomials" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram labelling the parts of an algebraic term — coefficient in blue, variable, exponent in orange — with examples of monomial, binomial and trinomial in green" />',
+        'Labelled diagram of the term 4x² showing the coefficient, variable and exponent, with small examples of a monomial, binomial and trinomial',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 175" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="130" y="55" text-anchor="middle" font-size="40" font-weight="700" fill="#0f1f3d">4x<tspan font-size="24" dy="-16" fill="#ea580c">2</tspan></text>` +
+        `<line x1="100" y1="70" x2="100" y2="90" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="100" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">coefficient</text>` +
+        `<line x1="130" y1="70" x2="130" y2="90" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">variable</text>` +
+        `<line x1="160" y1="40" x2="185" y2="90" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="185" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">exponent</text>` +
+        `<rect x="10" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="46" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">5x</text>` +
+        `<text x="46" y="153" text-anchor="middle" font-size="9" fill="#15803d">monomial</text>` +
+        `<rect x="94" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="130" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">3x+2</text>` +
+        `<text x="130" y="153" text-anchor="middle" font-size="9" fill="#15803d">binomial</text>` +
+        `<rect x="178" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="214" y="138" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">x²+3x−7</text>` +
+        `<text x="214" y="153" text-anchor="middle" font-size="9" fill="#15803d">trinomial</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -157,9 +177,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to add and subtract like terms, apply the distributive law when multiplying, and divide monomials by dividing coefficients and subtracting exponents" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side worked examples of adding like terms in blue, distribution in orange and division in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -230,9 +247,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to square and cube algebraic terms, find square and cube roots of algebraic terms, and evaluate expressions by substitution" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step substitution example with x value highlighted in orange and the final answer in green" />',
     },
   ],
 

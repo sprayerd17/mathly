@@ -134,7 +134,20 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om die volume en oppervlakte van ʼn driehoekige prisma te vind deur die driehoekige basisoppervlakte en die lengte van die prisma te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram van ʼn driehoekige prisma wat die driehoekige basis, hoogte, lengte en drie reghoekige vlakke merk met kleurgekodeerde metings" />',
+        'Diagram van ʼn driehoekige prisma wat die driehoekige basis, hoogte en lengte merk',
+
+      diagramSvg:
+        '<svg viewBox="0 0 160 140" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="50,70 110,70 80,5" fill="none" stroke="#0f1f3d" stroke-width="1.8" stroke-dasharray="3,3"/>' +
+        '<line x1="20" y1="90" x2="50" y2="70" stroke="#0f1f3d" stroke-width="1.8" stroke-dasharray="3,3"/>' +
+        '<line x1="80" y1="90" x2="110" y2="70" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="50" y1="25" x2="80" y2="5" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<polygon points="20,90 80,90 50,25" fill="#eff6ff" fill-opacity="0.6" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="50" y1="25" x2="50" y2="90" stroke="#6b7280" stroke-width="1.3" stroke-dasharray="3,3"/>' +
+        '<text x="50" y="108" font-size="11" font-weight="700" text-anchor="middle" fill="#2563eb">basis</text>' +
+        '<text x="30" y="58" font-size="11" font-weight="700" fill="#2563eb">hoogte</text>' +
+        '<text x="98" y="76" font-size="11" font-weight="700" fill="#ea580c">lengte</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -263,9 +276,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om werklike-lewe probleme met volume en kapasiteit op te los, met SI-eenheidomskakelings tussen cm³, m³, liter en kiloliter" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat die ketting van SI-eenheidomskakelings vir oppervlakte, volume en kapasiteit wys, met vermenigvuldigings- en delingsfaktore gemerk in oranje" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -434,7 +444,40 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe oppervlakte volgens die kwadraat skaleer en volume volgens die derdemag van die skaalfaktor, met uitgewerkte vergelykings met kubusse en reghoekige prismas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat ʼn klein kubus en ʼn groot kubus vergelyk en wys hoe oppervlakte en volume teen verskillende tempos verander wanneer al die dimensies met dieselfde faktor vergroot word" />',
+        'Diagram wat ʼn klein kubus en ʼn groot kubus vergelyk en wys hoe oppervlakte en volume teen verskillende tempos verander wanneer al die dimensies met dieselfde faktor vergroot word',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 170" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="165" y="16" font-size="12" font-weight="700" text-anchor="middle" fill="#0f1f3d">Skaalfaktor k = 2</text>' +
+        '<g transform="translate(70,75)">' +
+        '<polygon points="-12,-12 12,-12 12,12 -12,12" fill="none" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="-4" y1="-20" x2="20" y2="-20" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="20" y1="-20" x2="20" y2="4" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="20" y1="4" x2="-4" y2="4" stroke="#0f1f3d" stroke-width="1.4" stroke-dasharray="3,3"/>' +
+        '<line x1="-4" y1="4" x2="-4" y2="-20" stroke="#0f1f3d" stroke-width="1.4" stroke-dasharray="3,3"/>' +
+        '<line x1="-12" y1="-12" x2="-4" y2="-20" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="12" y1="-12" x2="20" y2="-20" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="12" y1="12" x2="20" y2="4" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<line x1="-12" y1="12" x2="-4" y2="4" stroke="#0f1f3d" stroke-width="1.4" stroke-dasharray="3,3"/>' +
+        '<text x="0" y="36" font-size="11" font-weight="700" text-anchor="middle" fill="#0f1f3d">2 cm</text>' +
+        '<text x="0" y="49" font-size="9.5" text-anchor="middle"><tspan fill="#2563eb">O 24 cm²</tspan><tspan fill="#6b7280"> · </tspan><tspan fill="#16a34a">V 8 cm³</tspan></text>' +
+        '</g>' +
+        '<text x="165" y="82" font-size="18" font-weight="700" text-anchor="middle" fill="#ea580c">×2</text>' +
+        '<text x="165" y="112" font-size="10.5" text-anchor="middle"><tspan fill="#2563eb">Opp ×4</tspan><tspan fill="#6b7280"> · </tspan><tspan fill="#16a34a">Volume ×8</tspan></text>' +
+        '<g transform="translate(260,95)">' +
+        '<polygon points="-24,-24 24,-24 24,24 -24,24" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-8" y1="-40" x2="40" y2="-40" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="40" y1="-40" x2="40" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="40" y1="8" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-8" y1="8" x2="-8" y2="-40" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-24" y1="-24" x2="-8" y2="-40" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="24" y1="-24" x2="40" y2="-40" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="24" y1="24" x2="40" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<line x1="-24" y1="24" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<text x="0" y="44" font-size="11" font-weight="700" text-anchor="middle" fill="#0f1f3d">4 cm</text>' +
+        '<text x="0" y="57" font-size="9.5" text-anchor="middle"><tspan fill="#2563eb">O 96 cm²</tspan><tspan fill="#6b7280"> · </tspan><tspan fill="#16a34a">V 64 cm³</tspan></text>' +
+        '</g>' +
+        '</svg>',
     },
   ],
   scoreMessages: [

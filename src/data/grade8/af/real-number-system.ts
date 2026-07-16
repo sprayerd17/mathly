@@ -127,7 +127,23 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Geneste-blokke-diagram wat natuurlike getalle binne heelgetalle, binne gehele getalle, binne rasionale getalle wys, gemerk N, N0, Z en Q" />',
+        'Geneste-reghoeke-diagram wat N binne N0 binne Z binne Q wys, elkeen gemerk met sy naam en ʼn kort voorbeeld',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="10" y="10" width="240" height="180" rx="10" fill="none" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="20" y="26" font-size="10" font-weight="700" fill="#ea580c">Q — rasionale getalle</text>` +
+        `<text x="20" y="38" font-size="8" fill="#ea580c">bv. 3/4, 0,5</text>` +
+        `<rect x="40" y="44" width="180" height="138" rx="8" fill="none" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="50" y="60" font-size="10" font-weight="700" fill="#16a34a">Z — heelgetalle</text>` +
+        `<text x="50" y="72" font-size="8" fill="#16a34a">bv. −3, −1</text>` +
+        `<rect x="70" y="78" width="120" height="96" rx="8" fill="none" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<text x="80" y="94" font-size="9.5" font-weight="700" fill="#374151">N0 — hele getalle</text>` +
+        `<text x="80" y="106" font-size="8" fill="#374151">bv. 0</text>` +
+        `<rect x="100" y="112" width="60" height="54" rx="6" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="130" y="138" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">N</text>` +
+        `<text x="130" y="154" text-anchor="middle" font-size="7.5" fill="#2563eb">1, 2, 3...</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat natuurlike getalle, heelgetalle, gehele getalle en rasionale getalle bekendstel en wys hoe elke versameling binne die volgende pas" />',
@@ -261,7 +277,33 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat volkome vierkante soos 4, 9, 16, 25 waarvan die vierkantswortels rasionale heelgetalle is, vergelyk met nie-volkome vierkante soos 2, 3, 5, 7 waarvan die vierkantswortels irrasionaal is" />',
+        'Getallelyn van 0 tot 4 wat wys hoe √4 en √9 presies op heelgetal-merke val (rasionaal), terwyl √5 tussen 2 en 3 val sonder ʼn presiese posisie (irrasionaal)',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="20" y1="55" x2="280" y2="55" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="14,55 22,50 22,60" fill="#0f1f3d"/>` +
+        `<polygon points="286,55 278,50 278,60" fill="#0f1f3d"/>` +
+        `<line x1="20" y1="50" x2="20" y2="60" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="80" y1="50" x2="80" y2="60" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="140" y1="50" x2="140" y2="60" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="200" y1="50" x2="200" y2="60" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="260" y1="50" x2="260" y2="60" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="20" y="75" text-anchor="middle" font-size="10" fill="#6b7280">0</text>` +
+        `<text x="80" y="75" text-anchor="middle" font-size="10" fill="#6b7280">1</text>` +
+        `<text x="140" y="75" text-anchor="middle" font-size="10" fill="#6b7280">2</text>` +
+        `<text x="200" y="75" text-anchor="middle" font-size="10" fill="#6b7280">3</text>` +
+        `<text x="260" y="75" text-anchor="middle" font-size="10" fill="#6b7280">4</text>` +
+        `<circle cx="140" cy="55" r="5" fill="#ea580c"/>` +
+        `<text x="140" y="35" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ea580c">√4 = 2</text>` +
+        `<circle cx="200" cy="55" r="5" fill="#ea580c"/>` +
+        `<text x="200" y="35" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ea580c">√9 = 3</text>` +
+        `<circle cx="154" cy="55" r="5" fill="white" stroke="#dc2626" stroke-width="2"/>` +
+        `<line x1="154" y1="61" x2="154" y2="93" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>` +
+        `<text x="154" y="106" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">√5 ≈ 2,24</text>` +
+        `<text x="154" y="118" text-anchor="middle" font-size="7.5" fill="#dc2626">(tussen 2 en 3 — irrasionaal)</text>` +
+        `<text x="150" y="134" text-anchor="middle" font-size="8" fill="#6b7280">Volkome-vierkant-wortels val presies op heelgetalle — ander val tussenin</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat irrasionale getalle vir die eerste keer bekendstel, met pi en vierkantswortels van nie-volkome vierkante as voorbeelde" />',
@@ -373,9 +415,6 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Sorteerdiagram of vloeikaart wat ʼn lys voorbeeldgetalle stap vir stap in N, N0, Z, Q of irrasionaal sorteer deur die klassifikasie-kontrolelys te gebruik" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat verskeie voorbeelde deurwerk van die klassifisering van gegewe getalle in natuurlik, heel, geheel, rasionaal of irrasionaal" />',

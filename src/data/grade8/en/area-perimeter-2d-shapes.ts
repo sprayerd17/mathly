@@ -138,7 +138,19 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to use the circumference and area formulas for circles using π = 3.14 with worked examples" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of a circle with radius labelled blue, diameter labelled red, circumference labelled green and area region labelled orange" />',
+        'Diagram of a circle with radius labelled blue, diameter labelled red, circumference labelled green and area region shaded orange',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">' +
+        '<circle cx="110" cy="120" r="78" fill="#fed7aa" fill-opacity="0.4" stroke="#16a34a" stroke-width="3"/>' +
+        '<line x1="32" y1="120" x2="188" y2="120" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<line x1="110" y1="120" x2="110" y2="42" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<circle cx="110" cy="120" r="3.5" fill="#374151"/>' +
+        '<text x="110" y="16" font-size="13" font-weight="700" fill="#16a34a" text-anchor="middle">Circumference</text>' +
+        '<text x="118" y="78" font-size="13" font-weight="700" fill="#2563eb">Radius</text>' +
+        '<text x="60" y="136" font-size="13" font-weight="700" fill="#dc2626">Diameter</text>' +
+        '<text x="150" y="165" font-size="13" font-weight="700" fill="#ea580c">Area</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -264,7 +276,20 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to decompose an L-shape and a pentagon into rectangles and triangles to find the total area" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A pentagon shape split into a rectangle and triangle with each section labelled with its dimensions" />',
+        'A pentagon shape split into a rectangle and a triangle, each section labelled with its dimensions',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 210" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="40,170 180,170 180,90 110,30 40,90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="40" y1="90" x2="180" y2="90" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,4"/>' +
+        '<line x1="110" y1="30" x2="110" y2="90" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4,3"/>' +
+        '<rect x="104" y="84" width="8" height="8" fill="none" stroke="#9ca3af" stroke-width="1.2"/>' +
+        '<text x="110" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">Rectangle</text>' +
+        '<text x="110" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#7c3aed">Triangle</text>' +
+        '<text x="110" y="188" text-anchor="middle" font-size="12" fill="#374151">base = 8 cm</text>' +
+        '<text x="20" y="132" text-anchor="middle" font-size="12" fill="#374151" transform="rotate(-90 20 132)">height = 5 cm</text>' +
+        '<text x="152" y="55" text-anchor="middle" font-size="11" fill="#374151">height = 3 cm</text>' +
+        '</svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -399,9 +424,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve real-life perimeter and area problems involving circles and how to convert between SI area units" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a circular garden with radius labelled and a unit conversion scale from mm² to cm² to m² to km²" />',
     },
   ],
 

@@ -82,7 +82,25 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om vergelykings uit woordprobleme op te stel en deur inspeksie op te los" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Visuele voorstelling van ʼn vergelykingsbalans met die onbekende veranderlike aan die een kant en die oplossing aan die ander kant" />',
+        'Balans wat 4x + 7 aan die een kant en 31 aan die ander kant wys, wat gebalanseerd bly, met die oplossing x = 6 hieronder',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 195" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="110" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">4x + 7 = 31 bly gebalanseerd</text>` +
+        `<line x1="30" y1="80" x2="190" y2="80" stroke="#0f1f3d" stroke-width="3"/>` +
+        `<line x1="110" y1="80" x2="110" y2="150" stroke="#0f1f3d" stroke-width="3"/>` +
+        `<polygon points="110,150 94,172 126,172" fill="#0f1f3d"/>` +
+        `<rect x="70" y="172" width="80" height="4" fill="#0f1f3d"/>` +
+        `<line x1="50" y1="80" x2="35" y2="108" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="50" y1="80" x2="65" y2="108" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<path d="M35,108 Q50,124 65,108" fill="none" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<line x1="170" y1="80" x2="155" y2="108" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="170" y1="80" x2="185" y2="108" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<path d="M155,108 Q170,124 185,108" fill="none" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<text x="50" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">4x + 7</text>` +
+        `<text x="170" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">31</text>` +
+        `<text x="110" y="190" text-anchor="middle" font-size="18" font-weight="700" fill="#16a34a">x = 6</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -166,7 +184,32 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om additiewe en multiplikatiewe inverses te gebruik om vergelykings op te los, en hoe om vergelykings met vierkantsterme op te los" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Balansdiagram wat additiewe en multiplikatiewe inverse-stappe wys wat op albei kante van ʼn vergelyking toegepas word" />',
+        'Balans wat x + 8 = 15 wys, met −8 van albei kante afgetrek om x = 7 oor te laat',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 210" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="120" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#0f1f3d">Begin: gebalanseerd</text>` +
+        `<line x1="40" y1="35" x2="200" y2="35" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<polygon points="120,35 112,50 128,50" fill="#0f1f3d"/>` +
+        `<rect x="55" y="20" width="60" height="26" rx="4" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="85" y="38" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">x + 8</text>` +
+        `<rect x="145" y="20" width="60" height="26" rx="4" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="175" y="38" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">15</text>` +
+        `<line x1="85" y1="55" x2="85" y2="80" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="85,86 79,74 91,74" fill="#2563eb"/>` +
+        `<text x="85" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">−8</text>` +
+        `<line x1="175" y1="55" x2="175" y2="80" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="175,86 169,74 181,74" fill="#ea580c"/>` +
+        `<text x="175" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">−8</text>` +
+        `<text x="120" y="120" text-anchor="middle" font-size="10" fill="#6b7280">dieselfde bewerking op albei kante</text>` +
+        `<line x1="40" y1="140" x2="200" y2="140" stroke="#0f1f3d" stroke-width="2.5"/>` +
+        `<polygon points="120,140 112,155 128,155" fill="#0f1f3d"/>` +
+        `<rect x="55" y="125" width="60" height="26" rx="4" fill="rgba(22,163,74,0.12)" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="85" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">x</text>` +
+        `<rect x="145" y="125" width="60" height="26" rx="4" fill="rgba(22,163,74,0.12)" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="175" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">7</text>` +
+        `<text x="120" y="195" text-anchor="middle" font-size="20" font-weight="700" fill="#16a34a">x = 7</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -240,7 +283,30 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van georde pare te genereer en die punte te stip" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Tabel van x- en y-waardes langs ʼn koördinaatrooster wat die gestipte georde pare wys wat ʼn reguit lyn vorm" />',
+        'Koördinaatrooster wat die georde pare (0,−2), (1,1), (2,4) en (3,7) uit y = 3x − 2 stip, verbind deur ʼn reguit lyn',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="50" y1="185" x2="50" y2="15" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="50,10 45,20 55,20" fill="#0f1f3d"/>` +
+        `<line x1="15" y1="150" x2="205" y2="150" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="210,150 200,145 200,155" fill="#0f1f3d"/>` +
+        `<text x="213" y="146" font-size="11" fill="#0f1f3d">x</text>` +
+        `<text x="42" y="14" font-size="11" fill="#0f1f3d">y</text>` +
+        `<text x="50" y="163" text-anchor="middle" font-size="9" fill="#6b7280">0</text>` +
+        `<text x="85" y="163" text-anchor="middle" font-size="9" fill="#6b7280">1</text>` +
+        `<text x="120" y="163" text-anchor="middle" font-size="9" fill="#6b7280">2</text>` +
+        `<text x="155" y="163" text-anchor="middle" font-size="9" fill="#6b7280">3</text>` +
+        `<line x1="50" y1="174" x2="155" y2="66" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3,3"/>` +
+        `<circle cx="50" cy="174" r="4.5" fill="#ea580c"/>` +
+        `<text x="60" y="186" font-size="9" font-weight="700" fill="#ea580c">(0,−2)</text>` +
+        `<circle cx="85" cy="138" r="4.5" fill="#ea580c"/>` +
+        `<text x="97" y="132" font-size="9" font-weight="700" fill="#ea580c">(1,1)</text>` +
+        `<circle cx="120" cy="102" r="4.5" fill="#ea580c"/>` +
+        `<text x="132" y="96" font-size="9" font-weight="700" fill="#ea580c">(2,4)</text>` +
+        `<circle cx="155" cy="66" r="4.5" fill="#ea580c"/>` +
+        `<text x="167" y="60" font-size="9" font-weight="700" fill="#ea580c">(3,7)</text>` +
+        `</svg>`,
     },
   ],
 

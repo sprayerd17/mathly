@@ -144,7 +144,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to investigate and extend numeric patterns, find differences and write the general rule using algebraic notation" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a numeric pattern with terms highlighted in blue, differences in orange and the derived rule in green" />',
+        'Diagram showing the numeric pattern 3, 8, 15, 24 with terms highlighted in blue, differences +5, +7, +9 in orange, and the derived rule n² + 2n in green',
+
+      diagramSvg:
+        '<svg viewBox="0 0 240 125" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="35" width="40" height="40" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="30" y="60" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">3</text><text x="30" y="88" font-size="8" fill="#2563eb" text-anchor="middle">n = 1</text><rect x="70" y="35" width="40" height="40" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="90" y="60" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">8</text><text x="90" y="88" font-size="8" fill="#2563eb" text-anchor="middle">n = 2</text><rect x="130" y="35" width="40" height="40" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="150" y="60" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">15</text><text x="150" y="88" font-size="8" fill="#2563eb" text-anchor="middle">n = 3</text><rect x="190" y="35" width="40" height="40" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="210" y="60" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">24</text><text x="210" y="88" font-size="8" fill="#2563eb" text-anchor="middle">n = 4</text><line x1="50" y1="55" x2="68" y2="55" stroke="#ea580c" stroke-width="2"/><text x="60" y="47" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">+5</text><line x1="110" y1="55" x2="128" y2="55" stroke="#ea580c" stroke-width="2"/><text x="120" y="47" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">+7</text><line x1="170" y1="55" x2="188" y2="55" stroke="#ea580c" stroke-width="2"/><text x="180" y="47" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">+9</text><text x="120" y="112" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">Rule: nth term = n² + 2n</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -237,7 +240,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to investigate geometric patterns using diagrams and tables and write the algebraic rule for the nth term" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing triangular dot patterns at steps 1 to 4 with step numbers in blue, shapes in green and the algebraic rule in orange" />',
+        'Diagram showing triangular dot patterns at steps 1 to 4 (1, 3, 6, 10 dots) with step numbers in blue, dots in green and the algebraic rule n(n+1)/2 in orange',
+
+      diagramSvg:
+        '<svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="80" r="4" fill="#16a34a"/><text x="30" y="100" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">n = 1</text><text x="30" y="112" font-size="8" fill="#374151" text-anchor="middle">1 dot</text><circle cx="85" cy="60" r="4" fill="#16a34a"/><circle cx="79" cy="74" r="4" fill="#16a34a"/><circle cx="91" cy="74" r="4" fill="#16a34a"/><text x="85" y="100" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">n = 2</text><text x="85" y="112" font-size="8" fill="#374151" text-anchor="middle">3 dots</text><circle cx="140" cy="50" r="4" fill="#16a34a"/><circle cx="134" cy="64" r="4" fill="#16a34a"/><circle cx="146" cy="64" r="4" fill="#16a34a"/><circle cx="128" cy="78" r="4" fill="#16a34a"/><circle cx="140" cy="78" r="4" fill="#16a34a"/><circle cx="152" cy="78" r="4" fill="#16a34a"/><text x="140" y="100" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">n = 3</text><text x="140" y="112" font-size="8" fill="#374151" text-anchor="middle">6 dots</text><circle cx="200" cy="40" r="4" fill="#16a34a"/><circle cx="194" cy="54" r="4" fill="#16a34a"/><circle cx="206" cy="54" r="4" fill="#16a34a"/><circle cx="188" cy="68" r="4" fill="#16a34a"/><circle cx="200" cy="68" r="4" fill="#16a34a"/><circle cx="212" cy="68" r="4" fill="#16a34a"/><circle cx="182" cy="82" r="4" fill="#16a34a"/><circle cx="194" cy="82" r="4" fill="#16a34a"/><circle cx="206" cy="82" r="4" fill="#16a34a"/><circle cx="218" cy="82" r="4" fill="#16a34a"/><text x="200" y="100" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">n = 4</text><text x="200" y="112" font-size="8" fill="#374151" text-anchor="middle">10 dots</text><text x="120" y="130" font-size="10.5" fill="#ea580c" font-weight="700" text-anchor="middle">Rule: nth term = n(n+1)/2</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -373,9 +379,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to justify an algebraic rule by substituting values and comparing with actual pattern terms" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing the verification process with the rule tested in blue, substitution steps in orange and confirmed results in green" />',
     },
   ],
   scoreMessages: [

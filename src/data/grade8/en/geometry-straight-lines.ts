@@ -92,7 +92,21 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two intersecting lines forming four angles, with one labelled 110° and the others to be calculated" />',
+        'Two intersecting lines forming four angles, with one labelled 110° and the others calculated',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="30" y1="60" x2="190" y2="120" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="30" y1="120" x2="190" y2="60" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M 95,75 Q 110,68 125,75" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 95,105 Q 110,112 125,105" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<path d="M 90,80 Q 82,90 90,100" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<path d="M 130,80 Q 138,90 130,100" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="110" y="52" font-size="13" font-weight="700" text-anchor="middle" fill="#2563eb">110°</text>' +
+        '<text x="110" y="145" font-size="13" font-weight="700" text-anchor="middle" fill="#16a34a">110°</text>' +
+        '<text x="50" y="94" font-size="13" font-weight="700" fill="#ea580c">70°</text>' +
+        '<text x="150" y="94" font-size="13" font-weight="700" fill="#ea580c">70°</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing angle relationships formed when two lines intersect, including vertically opposite and adjacent supplementary angles" />',
@@ -171,7 +185,25 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two parallel lines cut by a transversal, labelling corresponding, alternate, and co-interior angle pairs" />',
+        'Two parallel lines cut by a transversal, labelling corresponding, alternate, and co-interior angle pairs',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="20" y1="50" x2="200" y2="50" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<line x1="20" y1="130" x2="200" y2="130" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<polyline points="166,46 172,50 166,54" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<polyline points="166,126 172,130 166,134" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="30" y1="20" x2="190" y2="160" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<circle cx="64.3" cy="50" r="2.5" fill="#0f1f3d"/>' +
+        '<circle cx="155.7" cy="130" r="2.5" fill="#0f1f3d"/>' +
+        '<text x="64.3" y="24" font-size="13" font-weight="700" text-anchor="middle" fill="#16a34a">a</text>' +
+        '<text x="98" y="63" font-size="13" font-weight="700" fill="#2563eb">b</text>' +
+        '<text x="42" y="78" font-size="13" font-weight="700" fill="#ea580c">c</text>' +
+        '<text x="155.7" y="104" font-size="13" font-weight="700" text-anchor="middle" fill="#16a34a">a</text>' +
+        '<text x="118" y="122" font-size="13" font-weight="700" fill="#2563eb">b</text>' +
+        '<text x="118" y="145" font-size="13" font-weight="700" fill="#ea580c">c</text>' +
+        '<text x="110" y="180" font-size="10" text-anchor="middle" fill="#6b7280">a = corresponding · b = alternate · c = co-interior</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining corresponding, alternate and co-interior angles formed when a transversal cuts two parallel lines" />',
@@ -263,7 +295,20 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: two parallel lines cut by a transversal showing angles x and y labelled, with given angles marked" />',
+        'Two parallel lines cut by a transversal showing angles x and y, with a given angle marked',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="20" y1="50" x2="200" y2="50" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="20" y1="130" x2="200" y2="130" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="30" y1="20" x2="190" y2="160" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<circle cx="64.3" cy="50" r="2.5" fill="#374151"/>' +
+        '<circle cx="155.7" cy="130" r="2.5" fill="#374151"/>' +
+        '<text x="64.3" y="26" font-size="14" font-weight="700" text-anchor="middle" fill="#2563eb">75°</text>' +
+        '<text x="98" y="63" font-size="14" font-weight="700" fill="#dc2626">y</text>' +
+        '<text x="155.7" y="106" font-size="14" font-weight="700" text-anchor="middle" fill="#dc2626">x</text>' +
+        '<text x="110" y="180" font-size="10" text-anchor="middle" fill="#6b7280">x corresponds to 75° · y is co-interior with x</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing multi-step geometric problem solving using corresponding, alternate and co-interior angle relationships" />',

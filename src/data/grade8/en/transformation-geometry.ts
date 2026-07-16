@@ -122,7 +122,22 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing point (3,5) and its reflection (3,-5) across the x-axis, with a dotted line showing the reflection" />',
+        'Cartesian plane showing point (3, 5) and its reflection (3, −5) across the x-axis, with a dashed line showing the reflection',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="10" y1="110" x2="210" y2="110" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="210,110 202,106 202,114" fill="#0f1f3d"/>' +
+        '<line x1="110" y1="210" x2="110" y2="10" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="110,10 106,18 114,18" fill="#0f1f3d"/>' +
+        '<text x="204" y="124" font-size="11" fill="#2563eb" font-weight="700">x</text>' +
+        '<text x="118" y="18" font-size="11" fill="#16a34a" font-weight="700">y</text>' +
+        '<line x1="155" y1="35" x2="155" y2="185" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="4,3"/>' +
+        '<circle cx="155" cy="35" r="4" fill="#0f1f3d"/>' +
+        '<text x="163" y="32" font-size="12" font-weight="700" fill="#0f1f3d">P(3, 5)</text>' +
+        '<circle cx="155" cy="185" r="4" fill="#ea580c"/>' +
+        '<text x="163" y="190" font-size="12" font-weight="700" fill="#ea580c">P′(3, −5)</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to reflect and translate points on a coordinate plane, with the x-axis in blue, y-axis in green and reflected point in orange" />',
@@ -242,7 +257,19 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A triangle with vertices (1,2),(3,2),(2,5) and its reflection in the y-axis shown side by side on a Cartesian plane" />',
+        'A triangle with vertices (1,2), (3,2), (2,5) and its reflection in the y-axis shown on a Cartesian plane',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 210" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="10" y1="180" x2="210" y2="180" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="210,180 202,176 202,184" fill="#0f1f3d"/>' +
+        '<line x1="110" y1="200" x2="110" y2="10" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="110,10 106,18 114,18" fill="#0f1f3d"/>' +
+        '<polygon points="130,140 170,140 150,80" fill="#eff6ff" fill-opacity="0.6" stroke="#2563eb" stroke-width="2.2"/>' +
+        '<polygon points="90,140 50,140 70,80" fill="#f0fdf4" fill-opacity="0.6" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<text x="150" y="158" font-size="10" font-weight="700" text-anchor="middle" fill="#2563eb">Original</text>' +
+        '<text x="70" y="158" font-size="10" font-weight="700" text-anchor="middle" fill="#16a34a">Reflected</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to reflect and rotate triangles on a coordinate plane with original triangle in blue and transformed triangle in green" />',
@@ -403,7 +430,24 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="A small square and a larger square showing an enlargement by scale factor 2, with side lengths and areas labelled on each" />',
+        'A small square and a larger square showing an enlargement by scale factor 2, with side lengths and areas labelled',
+
+      diagramSvg:
+        '<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<text x="150" y="18" font-size="12" font-weight="700" text-anchor="middle" fill="#0f1f3d">Scale factor k = 2</text>' +
+        '<g transform="translate(60,105)">' +
+        '<rect x="-15" y="-15" width="30" height="30" fill="#eff6ff" fill-opacity="0.6" stroke="#2563eb" stroke-width="2.2"/>' +
+        '<text x="0" y="34" font-size="11" font-weight="700" text-anchor="middle" fill="#2563eb">side 2 cm</text>' +
+        '<text x="0" y="47" font-size="10" text-anchor="middle" fill="#16a34a">area 4 cm²</text>' +
+        '</g>' +
+        '<text x="150" y="100" font-size="18" font-weight="700" text-anchor="middle" fill="#ea580c">×2</text>' +
+        '<text x="150" y="122" font-size="10" text-anchor="middle" fill="#6b7280">perimeter ×2 · area ×4</text>' +
+        '<g transform="translate(230,105)">' +
+        '<rect x="-30" y="-30" width="60" height="60" fill="#f0fdf4" fill-opacity="0.5" stroke="#16a34a" stroke-width="2.5"/>' +
+        '<text x="0" y="49" font-size="11" font-weight="700" text-anchor="middle" fill="#2563eb">side 4 cm</text>' +
+        '<text x="0" y="62" font-size="10" text-anchor="middle" fill="#16a34a">area 16 cm²</text>' +
+        '</g>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to calculate new perimeter and area after enlargement or reduction using a scale factor, with scale factor in orange, perimeter in blue and area in green" />',

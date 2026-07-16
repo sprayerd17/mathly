@@ -115,7 +115,20 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om die oorspronklike prys na ʼn persentasietoename of -afname te vind deur agteruit te werk met behulp van deling" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat wys hoe om ʼn persentasietoename en -afname om te keer om die oorspronklike bedrag in blou te vind vanaf die finale bedrag in groen met die persentasieverandering in oranje" />',
+        'Staafmodel wat R400 (oorspronklike, 100%) plus ʼn 15%-segment wys wat R460 (115%) uitmaak, met ʼn omgekeerde pyl gemerk ÷1,15 wat van die finale bedrag terug na die oorspronklike wys',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 115" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="105" y="13" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">Oorspronklike R400 (100%)</text>` +
+        `<text x="203" y="13" text-anchor="middle" font-size="8" font-weight="700" fill="#ea580c">+15%</text>` +
+        `<rect x="20" y="20" width="170" height="28" fill="rgba(37,99,235,0.15)" stroke="#2563eb" stroke-width="2"/>` +
+        `<rect x="190" y="20" width="26" height="28" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2"/>` +
+        `<rect x="20" y="20" width="196" height="28" fill="none" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="118" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">Nuwe prys R460 (115%)</text>` +
+        `<line x1="216" y1="85" x2="30" y2="85" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="24,85 32,80 32,90" fill="#2563eb"/>` +
+        `<text x="118" y="103" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2563eb">÷ 1,15 — werk agteruit na die oorspronklike</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -217,7 +230,23 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn nuwe bedrag na ʼn persentasietoename of -afname te bereken deur die tweestap-metode en die eenstap-vermenigvuldiger-kortpad te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat wys hoe om bedrae na persentasieveranderings te bereken met die oorspronklike bedrag in blou, die gevonde persentasie in oranje en die finale bedrag in groen" />',
+        'Tweestap-vloeikaart wat Oorspronklike R12 000 wys, ʼn pyl gemerk ×0,09 wat na die toename R1 080 lei, en dan ʼn pyl gemerk +R12 000 wat na die finale nuwe salaris R13 080 lei',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="25" y="10" width="170" height="32" rx="6" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="110" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">Oorspronklike: R12 000</text>` +
+        `<line x1="110" y1="42" x2="110" y2="64" stroke="#ea580c" stroke-width="2"/>` +
+        `<polygon points="110,70 104,60 116,60" fill="#ea580c"/>` +
+        `<text x="150" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">×0,09</text>` +
+        `<rect x="25" y="74" width="170" height="32" rx="6" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="110" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">Toename: R1 080</text>` +
+        `<line x1="110" y1="106" x2="110" y2="128" stroke="#2563eb" stroke-width="2"/>` +
+        `<polygon points="110,134 104,124 116,124" fill="#2563eb"/>` +
+        `<text x="158" y="122" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">+ R12 000</text>` +
+        `<rect x="25" y="138" width="170" height="32" rx="6" fill="rgba(22,163,74,0.12)" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="110" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">Nuwe salaris: R13 080</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -381,7 +410,19 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om meerstap-persentasieprobleme op te los wat opeenvolgende persentasieveranderings en persentasietoename relatief tot die oorspronklike behels" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat opeenvolgende persentasieveranderings wys met die oorspronklike bedrag in blou, elke verandering in oranje en die finale resultaat in groen wat illustreer waarom hulle nie uitkanselleer nie" />',
+        'Drie gestapelde stawe eweredig aan R100 (oorspronklike), R110 (na +10%) en R99 (na −10%), met ʼn verwysingslyn wat wys die finale staaf kom korter as die oorspronklike',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 150" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="20" y="15" width="180" height="22" fill="rgba(37,99,235,0.15)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="110" y="30" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a8a">R100 — Oorspronklike</text>` +
+        `<rect x="20" y="52" width="198" height="22" fill="rgba(234,88,12,0.15)" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="119" y="67" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">R110 — na +10%</text>` +
+        `<rect x="20" y="89" width="178" height="22" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="109" y="104" text-anchor="middle" font-size="10" font-weight="700" fill="#14532d">R99 — na −10%</text>` +
+        `<line x1="200" y1="10" x2="200" y2="115" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,2"/>` +
+        `<text x="140" y="135" text-anchor="middle" font-size="9" fill="#991b1b">R99 &lt; R100 — die twee 10%-veranderings kanselleer nie uit nie</text>` +
+        `</svg>`,
     },
   ],
 

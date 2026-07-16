@@ -146,9 +146,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the commutative associative and distributive properties of whole numbers and the division property of zero" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual table showing all three properties with examples and the division by zero rule highlighted in red" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -263,7 +260,35 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing prime factorisation using a factor tree and how to find HCF and LCM from prime factors" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Factor tree for 120 300 and 900 with HCF highlighted in green and LCM highlighted in orange" />',
+        'Factor tree for 120 branching down to its prime factors 2, 2, 2, 3 and 5, matching the worked example prime factorisation',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="130" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">120</text>` +
+        `<line x1="130" y1="26" x2="70" y2="52" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<line x1="130" y1="26" x2="190" y2="52" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<text x="70" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">12</text>` +
+        `<text x="190" y="60" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">10</text>` +
+        `<line x1="70" y1="66" x2="40" y2="92" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<line x1="70" y1="66" x2="100" y2="92" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<line x1="190" y1="66" x2="160" y2="92" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<line x1="190" y1="66" x2="220" y2="92" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<circle cx="40" cy="100" r="11" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="40" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">3</text>` +
+        `<text x="100" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<circle cx="160" cy="100" r="11" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="160" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">2</text>` +
+        `<circle cx="220" cy="100" r="11" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="220" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">5</text>` +
+        `<line x1="100" y1="106" x2="85" y2="132" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<line x1="100" y1="106" x2="115" y2="132" stroke="#94a3b8" stroke-width="1.5"/>` +
+        `<circle cx="85" cy="140" r="11" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="85" y="144" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">2</text>` +
+        `<circle cx="115" cy="140" r="11" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="115" y="144" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">2</text>` +
+        `<text x="130" y="172" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">120 = 2 × 2 × 2 × 3 × 5 = 2³ × 3 × 5</text>` +
+        `<text x="130" y="185" text-anchor="middle" font-size="8" fill="#6b7280">(prime factorisation)</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -570,9 +595,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video covering ratio rate proportion profit loss VAT calculating speed and price per unit and sharing an amount in a given ratio" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Summary diagram showing profit loss VAT ratio increase or decrease speed and sharing an amount in a ratio formulas with colour coded labels" />',
     },
 
   ],

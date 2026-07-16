@@ -159,7 +159,35 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side comparison of a rhombus and a kite, labelling equal sides in blue, parallel sides in green, and angles in orange on each shape" />',
+        'Side-by-side comparison of a rhombus and a kite, showing equal sides in blue, parallel sides in green, and matching angles in orange on each shape',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(90,100)">' +
+        '<polygon points="0,-55 45,0 0,55 -45,0" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="19" y1="-31" x2="26" y2="-24" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="19" y1="24" x2="26" y2="31" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-19" y1="24" x2="-26" y2="31" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-19" y1="-31" x2="-26" y2="-24" stroke="#2563eb" stroke-width="2"/>' +
+        '<polyline points="14,-36 20,-33 14,-30" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<polyline points="-14,30 -20,33 -14,36" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<path d="M -8,-42 Q 0,-38 8,-42" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<path d="M -8,42 Q 0,38 8,42" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="0" y="76" font-size="12" font-weight="700" text-anchor="middle" fill="#0f1f3d">Rhombus</text>' +
+        '</g>' +
+        '<g transform="translate(250,100)">' +
+        '<polygon points="0,-60 35,-10 0,50 -35,-10" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="14" y1="-38" x2="21" y2="-32" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-14" y1="-38" x2="-21" y2="-32" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="14" y1="17" x2="20" y2="23" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="18" y1="15" x2="24" y2="21" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-14" y1="17" x2="-20" y2="23" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-18" y1="15" x2="-24" y2="21" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 25,-14 Q 20,-2 25,10" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<path d="M -25,-14 Q -20,-2 -25,10" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<text x="0" y="72" font-size="12" font-weight="700" text-anchor="middle" fill="#0f1f3d">Kite</text>' +
+        '</g>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the formal definitions of triangles and quadrilaterals using colour-coded diagrams of equal sides, parallel sides, and angles" />',
@@ -267,7 +295,23 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Two triangles of different sizes but identical angles labelled similar in orange; two identical squares labelled congruent in blue" />',
+        'Two triangles of different sizes but identical angles, labelled similar; two identical squares, labelled congruent',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(70,100)">' +
+        '<rect x="-55" y="-20" width="40" height="40" fill="none" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<rect x="15" y="-20" width="40" height="40" fill="none" stroke="#2563eb" stroke-width="2.5"/>' +
+        '<text x="0" y="45" font-size="12" font-weight="700" text-anchor="middle" fill="#2563eb">Congruent</text>' +
+        '</g>' +
+        '<g transform="translate(255,90)">' +
+        '<polygon points="-75,25 -45,25 -60,-15" fill="none" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<polygon points="10,25 58,25 34,-39" fill="none" stroke="#ea580c" stroke-width="2.5"/>' +
+        '<path d="M -65,25 A 10,10 0 0 0 -71.5,15.6" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<path d="M 24,25 A 14,14 0 0 0 14.9,11.9" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="-8" y="48" font-size="12" font-weight="700" text-anchor="middle" fill="#ea580c">Similar</text>' +
+        '</g>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to identify congruent and similar shapes by comparing side lengths and angles, with colour-coded matching angles in green" />',
@@ -409,7 +453,42 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Worked examples showing a kite ABCD with equal adjacent sides labelled in blue, two similar triangles with proportion set up, and a parallelogram with all four angles marked in orange" />',
+        'Worked examples showing a kite ABCD with equal adjacent sides labelled, two similar triangles with a proportion set up, and a parallelogram with all four angles marked',
+
+      diagramSvg:
+        '<svg viewBox="0 0 480 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(80,95)">' +
+        '<polygon points="0,-50 30,-5 0,45 -30,-5" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<line x1="13" y1="-30" x2="19" y2="-24" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-13" y1="-30" x2="-19" y2="-24" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="11" y1="17" x2="18" y2="24" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="16" y1="14" x2="23" y2="21" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-11" y1="17" x2="-18" y2="24" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="-16" y1="14" x2="-23" y2="21" stroke="#2563eb" stroke-width="2"/>' +
+        '<text x="0" y="-58" font-size="11" text-anchor="middle" fill="#0f1f3d">A</text>' +
+        '<text x="38" y="-2" font-size="11" fill="#0f1f3d">B</text>' +
+        '<text x="0" y="60" font-size="11" text-anchor="middle" fill="#0f1f3d">C</text>' +
+        '<text x="-42" y="-2" font-size="11" fill="#0f1f3d">D</text>' +
+        '<text x="0" y="76" font-size="12" font-weight="700" text-anchor="middle" fill="#0f1f3d">Kite ABCD</text>' +
+        '</g>' +
+        '<g transform="translate(230,95)">' +
+        '<polygon points="-55,20 -30,20 -45,-12" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<polygon points="15,20 55,20 31,-31.2" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<path d="M -45,20 A 10,10 0 0 0 -52,10.5" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<path d="M 29,20 A 14,14 0 0 0 19.2,6.6" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<text x="-42" y="35" font-size="12" font-weight="700" fill="#2563eb">8</text>' +
+        '<text x="35" y="35" font-size="12" font-weight="700" fill="#dc2626">x</text>' +
+        '<text x="0" y="55" font-size="12" font-weight="700" text-anchor="middle" fill="#0f1f3d">Similar (ratio 2 : 5)</text>' +
+        '</g>' +
+        '<g transform="translate(400,95)">' +
+        '<polygon points="-35,25 35,25 50,-20 -20,-20" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<text x="-20" y="18" font-size="11" font-weight="700" fill="#2563eb">65°</text>' +
+        '<text x="18" y="18" font-size="11" font-weight="700" fill="#dc2626">115°</text>' +
+        '<text x="34" y="-12" font-size="11" font-weight="700" fill="#2563eb">65°</text>' +
+        '<text x="-8" y="-12" font-size="11" font-weight="700" fill="#dc2626">115°</text>' +
+        '<text x="7" y="45" font-size="12" font-weight="700" text-anchor="middle" fill="#0f1f3d">Parallelogram</text>' +
+        '</g>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to use known properties of quadrilaterals and similar triangles to find unknown sides and angles step by step" />',

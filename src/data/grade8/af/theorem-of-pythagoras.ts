@@ -89,7 +89,16 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="ʼn Reghoekige driehoek met sye gemerk 3 cm en 4 cm, en die skuinssy gemerk as die onbekende sy c, met ʼn klein vierkantjie wat die regte hoek aandui" />',
+        'ʼn Reghoekige driehoek met sye gemerk 3 cm en 4 cm, en die skuinssy gemerk c, met ʼn klein vierkantjie wat die regte hoek aandui',
+
+      diagramSvg:
+        '<svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<polygon points="30,150 150,150 150,50" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<rect x="138" y="138" width="12" height="12" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<text x="90" y="168" font-size="13" font-weight="700" text-anchor="middle" fill="#2563eb">3 cm</text>' +
+        '<text x="164" y="104" font-size="13" font-weight="700" fill="#2563eb">4 cm</text>' +
+        '<text x="80" y="94" font-size="14" font-weight="700" fill="#dc2626">c</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die Stelling van Pythagoras toe te pas om die skuinssy van ʼn reghoekige driehoek te vind" />',
@@ -165,7 +174,28 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Twee driehoeke langs mekaar — eerste gemerk reghoekig (6 cm, 8 cm, 10 cm) met ʼn regmerkie wat gelykheid van kwadrate bevestig, tweede gemerk nie-reghoekig (5 cm, 7 cm, 9 cm) met ʼn kruisie" />',
+        'Twee driehoeke langs mekaar — een reghoekig (6 cm, 8 cm, 10 cm) bevestig, een nie-reghoekig (5 cm, 7 cm, 9 cm)',
+
+      diagramSvg:
+        '<svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<g transform="translate(70,95)">' +
+        '<polygon points="-32,24 32,24 32,-24" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<rect x="22" y="14" width="10" height="10" fill="none" stroke="#0f1f3d" stroke-width="1.4"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" text-anchor="middle" fill="#2563eb">8 cm</text>' +
+        '<text x="46" y="4" font-size="11" font-weight="700" fill="#2563eb">6 cm</text>' +
+        '<text x="-14" y="-2" font-size="11" font-weight="700" fill="#dc2626">10 cm</text>' +
+        '<text x="0" y="-34" font-size="16" font-weight="700" text-anchor="middle" fill="#16a34a">✓</text>' +
+        '<text x="0" y="58" font-size="11" font-weight="700" text-anchor="middle" fill="#16a34a">Reghoekig</text>' +
+        '</g>' +
+        '<g transform="translate(255,100)">' +
+        '<polygon points="-35,25 35,25 10,-30" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
+        '<text x="0" y="42" font-size="11" font-weight="700" text-anchor="middle" fill="#2563eb">9 cm</text>' +
+        '<text x="30" y="0" font-size="11" font-weight="700" fill="#2563eb">7 cm</text>' +
+        '<text x="-32" y="0" font-size="11" font-weight="700" fill="#2563eb">5 cm</text>' +
+        '<text x="10" y="-38" font-size="16" font-weight="700" text-anchor="middle" fill="#dc2626">✗</text>' +
+        '<text x="0" y="58" font-size="11" font-weight="700" text-anchor="middle" fill="#dc2626">Nie-reghoekig</text>' +
+        '</g>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om te toets of ʼn driehoek reghoekig is met behulp van die omgekeerde van die Stelling van Pythagoras" />',
@@ -248,7 +278,20 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="ʼn Leer wat teen ʼn muur leun en ʼn reghoekige driehoek vorm, met die basis (3 m), leerlengte (7 m), en onbekende hoogte gemerk" />',
+        'ʼn Leer wat teen ʼn muur leun en ʼn reghoekige driehoek vorm, met die basis (3 m), leerlengte (7 m), en onbekende hoogte gemerk',
+
+      diagramSvg:
+        '<svg viewBox="0 0 180 190" xmlns="http://www.w3.org/2000/svg">' +
+        '<line x1="40" y1="150" x2="40" y2="40" stroke="#0f1f3d" stroke-width="3"/>' +
+        '<line x1="20" y1="150" x2="150" y2="150" stroke="#0f1f3d" stroke-width="3"/>' +
+        '<line x1="40" y1="40" x2="120" y2="150" stroke="#0f1f3d" stroke-width="2.5"/>' +
+        '<rect x="40" y="138" width="12" height="12" fill="none" stroke="#0f1f3d" stroke-width="1.4"/>' +
+        '<line x1="12" y1="145" x2="20" y2="155" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<line x1="24" y1="145" x2="32" y2="155" stroke="#0f1f3d" stroke-width="1.5"/>' +
+        '<text x="24" y="98" font-size="14" font-weight="700" fill="#dc2626">h</text>' +
+        '<text x="80" y="168" font-size="13" font-weight="700" text-anchor="middle" fill="#2563eb">3 m</text>' +
+        '<text x="90" y="90" font-size="13" font-weight="700" fill="#2563eb">7 m</text>' +
+        '</svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn ontbrekende sy van ʼn reghoekige driehoek te vind met behulp van die Stelling van Pythagoras, insluitend antwoorde in wortelvorm" />',
