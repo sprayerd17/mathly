@@ -659,6 +659,126 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing a tangent touching a circle — labelling the tangent line in green, the radius at the contact point in blue, equal tangent segments from an external point, and the tangent-chord angle in orange with the matching alternate segment angle" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — COMBINED RIDERS: CIRCLES AND SIMILARITY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'combined-riders-circles-similarity',
+      title: 'Combined Riders — Circles and Similarity',
+      icon: '∼',
+      explanation:
+        `<p style="margin-bottom:16px;">The hardest riders in the Grade 12 Paper 2 exam almost never test a single circle theorem on its own. Instead, they chain a ${re('circle theorem')} — which hands you an angle for free — together with ${gr('equiangular (AA) similarity')} to prove two triangles similar, and then use the resulting ${or('proportion')} (sometimes finishing with the Theorem of Pythagoras) to reach the required result. This is exactly the Grade 11 skill set (proportionality, similarity, and Pythagoras via similar triangles) combined with everything you now know about circles.</p>` +
+        `<p style="margin-bottom:16px;">This section does not re-teach any individual theorem — every theorem used below was covered earlier in this topic (circles) or in Grade 11 (similarity). Instead, it shows you exactly how the pieces link together, and gives you a solid bank of combined riders to practise the same multi-step reasoning the exam demands.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('angle from a circle theorem')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('shared / common angle')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('equiangular (AA) triangles')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('resulting proportion')}</span>` +
+        `</div>` +
+
+        // ── Strategy steps ────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The combined strategy — four steps</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Write down what is <strong>given</strong> and what you are <strong>required to prove</strong> (RTP). If the RTP is a squared length (like ${or('x² = y·z')}) or a product of two lengths (like ${or('AB·CD = EF·GH')}), that is a strong signal that similar triangles — not a circle theorem alone — will be needed.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Scan the diagram for a ${re('circle theorem')} that hands you an angle relationship for free — a tangent-chord angle, an angle in a semicircle, angles in the same segment, or a cyclic quadrilateral's opposite angles.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Combine that ${re('circle-theorem angle')} with a ${bl('shared or common angle')} (or a second circle-theorem angle) between two triangles. Two matching angle pairs is enough to prove the triangles ${gr('equiangular, hence similar (AA)')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">Write the ${or('proportion')} from the similar triangles, matching corresponding sides in the correct order (the order you stated the similarity in). Cross-multiply, substitute the given lengths, and solve — applying the Theorem of Pythagoras as well if the RTP needs it.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Spotting the combination</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Look out for: two triangles that share a vertex or an angle; a chord that forms an inscribed angle at two different points on the circle; a tangent-chord angle; a diameter (which always signals a 90° angle); or an RTP written as ${or('AB² = ...')} or ${or('AB × CD = EF × GH')} — these almost always mean "prove two triangles similar first, then cross-multiply."</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'PT is a tangent to a circle at T. PAB is a secant from external point P, cutting the circle at A (nearer P) and B (farther from P). PA = 4 cm and AB = 5 cm. Prove that PT² = PA · PB, and hence find the length of PT.',
+          answer: `PT = ${or('6 cm')}`,
+          steps: [
+            `<svg viewBox="0 0 280 240" width="280" height="240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="30" stroke="#2563eb" stroke-width="2"/><line x1="140" y1="30" x2="40" y2="30" stroke="#16a34a" stroke-width="2.5"/><line x1="40" y1="30" x2="206.9" y2="180.21" stroke="#ea580c" stroke-width="2"/><path d="M 140,39 L 131,39 L 131,30" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="start">O</text><circle cx="140" cy="30" r="3" fill="#0f1f3d"/><text x="136" y="20" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">T</text><circle cx="40" cy="30" r="3" fill="#0f1f3d"/><text x="34" y="46" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">P</text><circle cx="73.1" cy="59.79" r="3" fill="#0f1f3d"/><text x="57.1" y="67.79" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="206.9" cy="180.21" r="3" fill="#0f1f3d"/><text x="216.9" y="188.21" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><text x="50" y="105" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">PA = 4 cm</text><text x="160" y="145" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">AB = 5 cm</text></svg>`,
+            `<strong>Given:</strong> PT is a tangent at T; PAB is a secant with PA = 4 cm and AB = 5 cm (so PB = PA + AB = 9 cm). <strong>Required to prove:</strong> PT² = PA · PB. Construction: join TA and TB to form ${bl('△PTA')} and ${bl('△PBT')}.`,
+            proofTable([
+              ['∠P is common to △PTA and △PBT', 'Common angle (same vertex P in both triangles)'],
+              [`${re('∠PTA = ∠PBT')}`, 'Tangent-chord angle equals the inscribed angle in the alternate segment (∠PBT = ∠TBA, the angle subtended by chord TA at B)'],
+              [`${gr('∴ △PTA ||| △PBT')}`, 'Two pairs of angles equal (AA)'],
+              [`${or('PT/PB = PA/PT')}`, 'Corresponding sides of similar triangles are in proportion'],
+              [`${or('∴ PT² = PA · PB')}`, 'Cross-multiplying'],
+              ['PT² = 4 × 9 = 36', 'Substituting PA = 4 cm and PB = 9 cm'],
+              ['∴ PT = 6 cm', 'Taking the square root'],
+            ]),
+            `<strong>Answer:</strong> PT = ${or('6 cm')}. ✓`,
+          ],
+        },
+        {
+          question: 'ABCD is a cyclic quadrilateral. Diagonals AC and BD intersect at E. AE = 6 cm, ED = 4 cm and BE = 3 cm. Prove that AE · EC = BE · ED, and hence find the length of EC.',
+          answer: `EC = ${or('2 cm')}`,
+          steps: [
+            `<svg viewBox="0 0 280 240" width="280" height="240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="62.06" y1="75" x2="224.57" y2="150.78" stroke="#ea580c" stroke-width="2"/><line x1="178.04" y1="38.43" x2="55.43" y2="150.78" stroke="#2563eb" stroke-width="2"/><line x1="62.06" y1="75" x2="178.04" y2="38.43" stroke="#0f1f3d" stroke-width="1.6"/><line x1="178.04" y1="38.43" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="1.6"/><line x1="224.57" y1="150.78" x2="55.43" y2="150.78" stroke="#0f1f3d" stroke-width="1.6"/><line x1="55.43" y1="150.78" x2="62.06" y2="75" stroke="#0f1f3d" stroke-width="1.6"/><circle cx="62.06" cy="75" r="3" fill="#0f1f3d"/><text x="48.06" y="77" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="178.04" cy="38.43" r="3" fill="#0f1f3d"/><text x="180.04" y="28.43" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="224.57" cy="150.78" r="3" fill="#0f1f3d"/><text x="238.57" y="154.78" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="55.43" cy="150.78" r="3" fill="#0f1f3d"/><text x="41.43" y="154.78" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="112.47" cy="98.51" r="2.2" fill="#16a34a"/><text x="116.47" y="90.51" font-size="12" fill="#16a34a" font-weight="700" text-anchor="start">E</text></svg>`,
+            `<strong>Given:</strong> ABCD is a cyclic quadrilateral with diagonals AC and BD meeting at E; AE = 6 cm, ED = 4 cm, BE = 3 cm. <strong>Required to prove:</strong> AE · EC = BE · ED.`,
+            proofTable([
+              [`${bl('∠AED = ∠BEC')}`, 'Vertically opposite angles'],
+              [`${re('∠ADE = ∠BCE')}`, 'Angles in the same segment (∠ADB = ∠ACB, both subtend chord AB from the same arc)'],
+              [`${gr('∴ △AED ||| △BEC')}`, 'Two pairs of angles equal (AA)'],
+              [`${or('AE/BE = ED/EC')}`, 'Corresponding sides of similar triangles are in proportion'],
+              [`${or('∴ AE · EC = BE · ED')}`, 'Cross-multiplying'],
+              ['6 × EC = 3 × 4 = 12', 'Substituting AE = 6 cm, BE = 3 cm and ED = 4 cm'],
+              ['∴ EC = 2 cm', 'Dividing both sides by 6'],
+            ]),
+            `<strong>Answer:</strong> EC = ${or('2 cm')}. ✓`,
+          ],
+        },
+        {
+          question: 'AB is a diameter of a circle with centre O. C is a point on the circle, and CD ⊥ AB with D on AB. AD = 9 cm and DB = 16 cm. Prove that CD² = AD · DB, and hence find the lengths of CD and AC.',
+          answer: `CD = ${or('12 cm')}, AC = ${or('15 cm')}`,
+          steps: [
+            `<svg viewBox="0 0 280 240" width="280" height="240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="120" x2="230" y2="120" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="120" x2="191.62" y2="46.28" stroke="#0f1f3d" stroke-width="1.8"/><line x1="191.62" y1="46.28" x2="230" y2="120" stroke="#0f1f3d" stroke-width="1.8"/><line x1="191.62" y1="46.28" x2="191.62" y2="120" stroke="#ea580c" stroke-width="2"/><path d="M 191.62,111 L 182.62,111 L 182.62,120" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="50" cy="120" r="3" fill="#0f1f3d"/><text x="46" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="230" cy="120" r="3" fill="#0f1f3d"/><text x="234" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="191.62" cy="46.28" r="3" fill="#0f1f3d"/><text x="199.62" y="40.28" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="191.62" cy="120" r="3" fill="#0f1f3d"/><text x="195.62" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="136" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">O</text><text x="120" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">AD = 9 cm</text><text x="210" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">DB = 16 cm</text></svg>`,
+            `<strong>Given:</strong> AB is a diameter of circle O; C is on the circle; CD ⊥ AB with D on AB; AD = 9 cm, DB = 16 cm. <strong>Required to prove:</strong> CD² = AD · DB.`,
+            proofTable([
+              [`${re('∠ACB = 90°')}`, 'Angle in a semicircle (AB is a diameter)'],
+              [`In △ACD and △ABC: ${bl('∠ADC = ∠ACB = 90°')}, ∠DAC = ∠CAB (common)`, 'CD ⊥ AB (given); common angle at A'],
+              [`${gr('∴ △ACD ||| △ABC')}`, 'Two pairs of angles equal (AA)'],
+              [`In △CBD and △ABC: ${bl('∠BDC = ∠ACB = 90°')}, ∠DBC = ∠CBA (common)`, 'CD ⊥ AB (given); common angle at B'],
+              [`${gr('∴ △CBD ||| △ABC')}`, 'Two pairs of angles equal (AA)'],
+              [`${or('AD/CD = CD/DB')}`, '△ACD ||| △CBD (both similar to △ABC, hence to each other); corresponding sides in proportion'],
+              [`${or('∴ CD² = AD · DB')}`, 'Cross-multiplying'],
+              ['CD² = 9 × 16 = 144, so CD = 12 cm', 'Substituting AD = 9 cm and DB = 16 cm'],
+              [`${or('AD/AC = AC/AB')}`, '△ACD ||| △ABC; corresponding sides in proportion'],
+              ['AC² = AD · AB = 9 × 25 = 225, so AC = 15 cm', 'Substituting AD = 9 cm and AB = AD + DB = 25 cm'],
+            ]),
+            `<strong>Answer:</strong> CD = ${or('12 cm')}, AC = ${or('15 cm')}. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to combine a circle theorem (tangent-chord angle, angle in a semicircle, cyclic quadrilateral opposite angles) with equiangular (AA) similar triangles to prove a squared-length or product-of-lengths result, working through the tangent-secant rider step by step" />',
+    },
   ],
 
   topicPractice: [
@@ -1023,6 +1143,94 @@ export const topicData: TopicData = {
         { minScore: 15, message: 'Great work! Review any missed questions on the cyclic quadrilateral or tangent-chord theorem, and try again.' },
         { minScore: 10, message: 'Good effort! Revisit the worked examples on each circle theorem, then try again.' },
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — COMBINED RIDERS: CIRCLES AND SIMILARITY (4 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 4 — Combined Riders',
+      questions: [
+        {
+          difficulty: 'Hard',
+          question: 'PT is a tangent to a circle at T. PAB is a secant from external point P, cutting the circle at A (nearer P) and B (farther from P). PA = 4 cm and AB = 12 cm. Prove that PT² = PA · PB, and hence find the length of PT.',
+          answer: '8 cm',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8', '8cm', '8 cm'],
+          explanation: `Join TA and TB. In ${bl('△PTA')} and ${bl('△PBT')}, ${bl('∠P')} is common, and ${re('∠PTA = ∠PBT')} (tangent-chord angle equals the inscribed angle in the alternate segment), so ${gr('△PTA ||| △PBT')} (AA). Hence ${or('PT² = PA · PB')}.` + proofTable([
+            ['∠P is common to △PTA and △PBT', 'Common angle'],
+            ['∠PTA = ∠PBT', 'Tangent-chord angle equals the inscribed angle in the alternate segment'],
+            ['∴ △PTA ||| △PBT', 'Two pairs of angles equal (AA)'],
+            ['PT/PB = PA/PT, so PT² = PA · PB', 'Corresponding sides of similar triangles in proportion'],
+            ['PB = PA + AB = 4 + 12 = 16 cm', 'Given PA = 4 cm, AB = 12 cm'],
+            ['PT² = 4 × 16 = 64', 'Substituting PA = 4 cm and PB = 16 cm'],
+            ['∴ PT = 8 cm', 'Taking the square root'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="210" stroke="#2563eb" stroke-width="2"/><line x1="140" y1="210" x2="240" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="240" y1="210" x2="73.1" y2="59.79" stroke="#ea580c" stroke-width="2"/><path d="M 140,201 L 149,201 L 149,210" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="124" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="start">O</text><circle cx="140" cy="210" r="3" fill="#0f1f3d"/><text x="136" y="228" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">T</text><circle cx="240" cy="210" r="3" fill="#0f1f3d"/><text x="246" y="226" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">P</text><circle cx="206.9" cy="180.21" r="3" fill="#0f1f3d"/><text x="220.9" y="182.21" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="73.1" cy="59.79" r="3" fill="#0f1f3d"/><text x="63.1" y="53.79" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><text x="230" y="150" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">PA = 4 cm</text><text x="140" y="110" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">AB = 12 cm</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ABCD is a cyclic quadrilateral. Diagonals AC and BD intersect at E. AE = 6 cm, ED = 3 cm and BE = 8 cm. Prove that AE · EC = BE · ED, and hence find the length of EC.',
+          answer: '4 cm',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4', '4cm', '4 cm'],
+          explanation: `${bl('∠AED = ∠BEC')} (vertically opposite angles) and ${re('∠ADE = ∠BCE')} (angles in the same segment, both subtend chord AB), so ${gr('△AED ||| △BEC')} (AA). Hence ${or('AE · EC = BE · ED')}.` + proofTable([
+            ['∠AED = ∠BEC', 'Vertically opposite angles'],
+            ['∠ADE = ∠BCE', 'Angles in the same segment (subtend chord AB from the same arc)'],
+            ['∴ △AED ||| △BEC', 'Two pairs of angles equal (AA)'],
+            ['AE/BE = ED/EC, so AE · EC = BE · ED', 'Corresponding sides of similar triangles in proportion'],
+            ['6 × EC = 8 × 3 = 24', 'Substituting AE = 6 cm, BE = 8 cm and ED = 3 cm'],
+            ['∴ EC = 4 cm', 'Dividing both sides by 6'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="53.07" y1="96.71" x2="213.72" y2="171.62" stroke="#ea580c" stroke-width="2"/><line x1="155.63" y1="31.37" x2="66.28" y2="171.62" stroke="#2563eb" stroke-width="2"/><line x1="53.07" y1="96.71" x2="155.63" y2="31.37" stroke="#0f1f3d" stroke-width="1.6"/><line x1="155.63" y1="31.37" x2="213.72" y2="171.62" stroke="#0f1f3d" stroke-width="1.6"/><line x1="213.72" y1="171.62" x2="66.28" y2="171.62" stroke="#0f1f3d" stroke-width="1.6"/><line x1="66.28" y1="171.62" x2="53.07" y2="96.71" stroke="#0f1f3d" stroke-width="1.6"/><circle cx="53.07" cy="96.71" r="3" fill="#0f1f3d"/><text x="39.07" y="98.71" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="155.63" cy="31.37" r="3" fill="#0f1f3d"/><text x="157.63" y="21.37" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="213.72" cy="171.62" r="3" fill="#0f1f3d"/><text x="227.72" y="175.62" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="66.28" cy="171.62" r="3" fill="#0f1f3d"/><text x="52.28" y="175.62" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="100.05" cy="118.62" r="2.2" fill="#16a34a"/><text x="96.05" y="132.62" font-size="12" fill="#16a34a" font-weight="700" text-anchor="end">E</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'AB is a diameter of a circle with centre O, and C is a point on the circle. CD ⊥ AB, with D on AB. AD = 2 cm and DB = 8 cm. Prove that CD² = AD · DB, and hence find the length of CD.',
+          answer: '4 cm',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4', '4cm', '4 cm'],
+          explanation: `${re('∠ACB = 90°')} (angle in a semicircle), so ${gr('△ACD ||| △ABC')} and ${gr('△CBD ||| △ABC')} (AA, using the right angle at D and the common angles at A and B respectively) — hence ${gr('△ACD ||| △CBD')} too. This gives ${or('CD² = AD · DB')}.` + proofTable([
+            ['∠ACB = 90°', 'Angle in a semicircle (AB is a diameter)'],
+            ['△ACD ||| △ABC and △CBD ||| △ABC', 'AA: right angle at D (CD ⊥ AB) plus a common angle at A (or B) in each case'],
+            ['∴ △ACD ||| △CBD', 'Both are similar to △ABC, hence similar to each other'],
+            ['AD/CD = CD/DB, so CD² = AD · DB', 'Corresponding sides of similar triangles in proportion'],
+            ['CD² = 2 × 8 = 16', 'Substituting AD = 2 cm and DB = 8 cm'],
+            ['∴ CD = 4 cm', 'Taking the square root'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="120" x2="230" y2="120" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="120" x2="213.72" y2="68.38" stroke="#0f1f3d" stroke-width="1.8"/><line x1="213.72" y1="68.38" x2="230" y2="120" stroke="#0f1f3d" stroke-width="1.8"/><line x1="213.72" y1="68.38" x2="213.72" y2="120" stroke="#ea580c" stroke-width="2"/><path d="M 213.72,111 L 204.72,111 L 204.72,120" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="50" cy="120" r="3" fill="#0f1f3d"/><text x="46" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="230" cy="120" r="3" fill="#0f1f3d"/><text x="234" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="213.72" cy="68.38" r="3" fill="#0f1f3d"/><text x="221.72" y="62.38" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="213.72" cy="120" r="3" fill="#0f1f3d"/><text x="225.72" y="136" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="136" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">O</text><text x="180" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">AD = 2 cm</text><text x="224" y="150" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">DB = 8 cm</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ABCD is a cyclic quadrilateral. Sides AB and DC are produced (extended) to meet at external point E, with A between E and B, and D between E and C. EA = 3 cm, AB = 5 cm and ED = 4 cm. Prove that △EBC ||| △EDA, and hence find the length of EC.',
+          answer: '6 cm',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6', '6cm', '6 cm'],
+          explanation: `${bl('∠BEC = ∠DEA')} is common to ${bl('△EBC')} and ${bl('△EDA')}, and ${re('∠EBC = ∠EDA')} (both equal ${re('180° − ∠ADC')}, using the cyclic quadrilateral's opposite angles and the straight lines EAB, EDC), so ${gr('△EBC ||| △EDA')} (AA). Hence ${or('EA · EB = ED · EC')}.` + proofTable([
+            ['∠BEC = ∠DEA', 'Common angle (E, A, B are collinear and E, D, C are collinear)'],
+            ['∠EBC = ∠ABC', 'E, A, B are collinear (A between E and B), so ray BE = ray BA'],
+            ['∠ABC + ∠ADC = 180°', 'Opposite angles of cyclic quadrilateral ABCD are supplementary'],
+            ['∠EDA + ∠ADC = 180°', 'E, D, C are collinear (D between E and C), so ∠EDA and ∠ADC are angles on a straight line'],
+            ['∴ ∠EBC = ∠ABC = 180° − ∠ADC = ∠EDA', 'Combining the two equations above'],
+            ['∴ △EBC ||| △EDA', 'Two pairs of angles equal (AA)'],
+            ['EB/ED = EC/EA, so EA · EB = ED · EC', 'Corresponding sides of similar triangles in proportion'],
+            ['EB = EA + AB = 3 + 5 = 8 cm', 'Given EA = 3 cm, AB = 5 cm'],
+            ['3 × 8 = 4 × EC', 'Substituting EA = 3 cm, EB = 8 cm and ED = 4 cm'],
+            ['∴ EC = 6 cm', 'Dividing both sides by 4'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="20" y1="210" x2="146.87" y2="30.26" stroke="#ea580c" stroke-width="2"/><line x1="20" y1="210" x2="229.42" y2="130.22" stroke="#2563eb" stroke-width="2"/><line x1="57.75" y1="156.53" x2="80.05" y2="187.12" stroke="#0f1f3d" stroke-width="1.6"/><line x1="146.87" y1="30.26" x2="229.42" y2="130.22" stroke="#0f1f3d" stroke-width="1.6"/><circle cx="20" cy="210" r="3" fill="#0f1f3d"/><text x="16" y="226" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">E</text><circle cx="57.75" cy="156.53" r="3" fill="#0f1f3d"/><text x="43.75" y="158.53" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="146.87" cy="30.26" r="3" fill="#0f1f3d"/><text x="148.87" y="22.26" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="80.05" cy="187.12" r="3" fill="#0f1f3d"/><text x="76.05" y="203.12" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="229.42" cy="130.22" r="3" fill="#0f1f3d"/><text x="243.42" y="134.22" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><text x="60" y="220" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">EA = 3 cm</text><text x="50" y="135" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">ED = 4 cm</text></svg>',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 4, message: 'Outstanding! You have mastered combining circle theorems with similarity and proportionality — exactly the multi-step reasoning Grade 12 Paper 2 riders demand.' },
+        { minScore: 3, message: 'Great work! Review whichever rider you missed, paying close attention to which circle theorem supplies the matching angle before you write the similarity statement.' },
+        { minScore: 2, message: 'Good effort! Revisit the worked examples above — focus on spotting the circle theorem first, then the shared angle, before writing the proportion.' },
+        { minScore: 0, message: 'Keep going — work through the three worked examples again, then retry this set.' },
       ],
     },
   ],

@@ -659,6 +659,126 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat ʼn raaklyn aan ʼn sirkel wys — met die raaklyn in groen, die radius by die raakpunt in blou, gelyke raaklynsegmente vanaf ʼn eksterne punt, en die raaklyn-koord hoek in oranje met die ooreenstemmende alternerende segmenthoek, gemerk" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — COMBINED RIDERS: CIRCLES AND SIMILARITY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'combined-riders-circles-similarity',
+      title: 'Gekombineerde Riders — Sirkels en Gelykvormigheid',
+      icon: '∼',
+      explanation:
+        `<p style="margin-bottom:16px;">Die moeilikste riders in die Graad 12 Vraestel 2-eksamen toets byna nooit net een sirkelstelling op sy eie nie. In plaas daarvan skakel hulle ʼn ${re('sirkelstelling')} — wat vir jou ʼn hoek verniet gee — saam met ${gr('gelykhoekige (AA) gelykvormigheid')} om te bewys dat twee driehoeke gelykvormig is, en gebruik dan die gevolglike ${or('verhouding')} (soms met die Stelling van Pythagoras aan die einde) om by die vereiste resultaat uit te kom. Dit is presies die Graad 11-vaardighede (eweredigheid, gelykvormigheid, en Pythagoras met behulp van gelykvormige driehoeke) gekombineer met alles wat jy nou van sirkels weet.</p>` +
+        `<p style="margin-bottom:16px;">Hierdie afdeling leer nie enige individuele stelling van voor af nie — elke stelling wat hieronder gebruik word, is vroeër in hierdie onderwerp (sirkels) of in Graad 11 (gelykvormigheid) gedek. In plaas daarvan wys dit jou presies hoe die stukke inmekaar pas, en gee jou ʼn stewige bank gekombineerde riders om dieselfde meerstap-redenering te oefen wat die eksamen vereis.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('hoek vanaf ʼn sirkelstelling')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gedeelde / gemeenskaplike hoek')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('gelykhoekige (AA) driehoeke')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('gevolglike verhouding')}</span>` +
+        `</div>` +
+
+        // ── Strategy steps ────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die gekombineerde strategie — vier stappe</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Skryf neer wat <strong>gegee</strong> is en wat jy <strong>vereis word om te bewys</strong> (VOB). As die VOB ʼn gekwadreerde lengte is (soos ${or('x² = y·z')}) of ʼn produk van twee lengtes (soos ${or('AB·CD = EF·GH')}), is dit ʼn sterk teken dat gelykvormige driehoeke — nie net ʼn sirkelstelling nie — nodig gaan wees.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Deursoek die diagram vir ʼn ${re('sirkelstelling')} wat vir jou ʼn hoekverhouding verniet gee — ʼn raaklyn-koordhoek, ʼn hoek in ʼn halfsirkel, hoeke in dieselfde segment, of die teenoorstaande hoeke van ʼn koordevierhoek.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Kombineer daardie ${re('sirkelstelling-hoek')} met ʼn ${bl('gedeelde of gemeenskaplike hoek')} (of ʼn tweede sirkelstelling-hoek) tussen twee driehoeke. Twee pare passende hoeke is genoeg om te bewys dat die driehoeke ${gr('gelykhoekig, dus gelykvormig (AA), is')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">Skryf die ${or('verhouding')} vanaf die gelykvormige driehoeke neer, deur ooreenstemmende sye in die korrekte volgorde te pas (die volgorde waarin jy die gelykvormigheid gestel het). Kruisvermenigvuldig, vervang die gegewe lengtes, en los op — pas ook die Stelling van Pythagoras toe as die VOB dit vereis.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die kombinasie raaksien</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Let op vir: twee driehoeke wat ʼn hoekpunt of ʼn hoek deel; ʼn koord wat ʼn ingeskrewe hoek by twee verskillende punte op die sirkel vorm; ʼn raaklyn-koordhoek; ʼn middellyn (wat altyd ʼn hoek van 90° aandui); of ʼn VOB geskryf as ${or('AB² = ...')} of ${or('AB × CD = EF × GH')} — dit beteken byna altyd "bewys eers dat twee driehoeke gelykvormig is, en kruisvermenigvuldig dan".</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'PT is ʼn raaklyn aan ʼn sirkel by T. PAB is ʼn snylyn vanaf die eksterne punt P, wat die sirkel by A (nader aan P) en B (verder van P) sny. PA = 4 cm en AB = 5 cm. Bewys dat PT² = PA · PB, en bepaal dus die lengte van PT.',
+          answer: `PT = ${or('6 cm')}`,
+          steps: [
+            `<svg viewBox="0 0 280 240" width="280" height="240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="30" stroke="#2563eb" stroke-width="2"/><line x1="140" y1="30" x2="40" y2="30" stroke="#16a34a" stroke-width="2.5"/><line x1="40" y1="30" x2="206.9" y2="180.21" stroke="#ea580c" stroke-width="2"/><path d="M 140,39 L 131,39 L 131,30" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="start">O</text><circle cx="140" cy="30" r="3" fill="#0f1f3d"/><text x="136" y="20" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">T</text><circle cx="40" cy="30" r="3" fill="#0f1f3d"/><text x="34" y="46" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">P</text><circle cx="73.1" cy="59.79" r="3" fill="#0f1f3d"/><text x="57.1" y="67.79" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="206.9" cy="180.21" r="3" fill="#0f1f3d"/><text x="216.9" y="188.21" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><text x="50" y="105" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">PA = 4 cm</text><text x="160" y="145" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">AB = 5 cm</text></svg>`,
+            `<strong>Gegee:</strong> PT is ʼn raaklyn by T; PAB is ʼn snylyn met PA = 4 cm en AB = 5 cm (dus PB = PA + AB = 9 cm). <strong>Vereis om te bewys:</strong> PT² = PA · PB. Konstruksie: trek TA en TB om ${bl('△PTA')} en ${bl('△PBT')} te vorm.`,
+            proofTable([
+              ['∠P is gemeenskaplik aan △PTA en △PBT', 'Gemeenskaplike hoek (dieselfde hoekpunt P in albei driehoeke)'],
+              [`${re('∠PTA = ∠PBT')}`, 'Raaklyn-koordhoek is gelyk aan die ingeskrewe hoek in die oorstaande segment (∠PBT = ∠TBA, die hoek wat koord TA by B onderspan)'],
+              [`${gr('∴ △PTA ||| △PBT')}`, 'Twee pare hoeke gelyk (AA)'],
+              [`${or('PT/PB = PA/PT')}`, 'Ooreenstemmende sye van gelykvormige driehoeke is eweredig'],
+              [`${or('∴ PT² = PA · PB')}`, 'Kruisvermenigvuldig'],
+              ['PT² = 4 × 9 = 36', 'Vervang PA = 4 cm en PB = 9 cm'],
+              ['∴ PT = 6 cm', 'Trek die vierkantswortel'],
+            ]),
+            `<strong>Antwoord:</strong> PT = ${or('6 cm')}. ✓`,
+          ],
+        },
+        {
+          question: 'ABCD is ʼn koordevierhoek. Diagonale AC en BD sny mekaar by E. AE = 6 cm, ED = 4 cm en BE = 3 cm. Bewys dat AE · EC = BE · ED, en bepaal dus die lengte van EC.',
+          answer: `EC = ${or('2 cm')}`,
+          steps: [
+            `<svg viewBox="0 0 280 240" width="280" height="240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="62.06" y1="75" x2="224.57" y2="150.78" stroke="#ea580c" stroke-width="2"/><line x1="178.04" y1="38.43" x2="55.43" y2="150.78" stroke="#2563eb" stroke-width="2"/><line x1="62.06" y1="75" x2="178.04" y2="38.43" stroke="#0f1f3d" stroke-width="1.6"/><line x1="178.04" y1="38.43" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="1.6"/><line x1="224.57" y1="150.78" x2="55.43" y2="150.78" stroke="#0f1f3d" stroke-width="1.6"/><line x1="55.43" y1="150.78" x2="62.06" y2="75" stroke="#0f1f3d" stroke-width="1.6"/><circle cx="62.06" cy="75" r="3" fill="#0f1f3d"/><text x="48.06" y="77" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="178.04" cy="38.43" r="3" fill="#0f1f3d"/><text x="180.04" y="28.43" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="224.57" cy="150.78" r="3" fill="#0f1f3d"/><text x="238.57" y="154.78" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="55.43" cy="150.78" r="3" fill="#0f1f3d"/><text x="41.43" y="154.78" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="112.47" cy="98.51" r="2.2" fill="#16a34a"/><text x="116.47" y="90.51" font-size="12" fill="#16a34a" font-weight="700" text-anchor="start">E</text></svg>`,
+            `<strong>Gegee:</strong> ABCD is ʼn koordevierhoek met diagonale AC en BD wat mekaar by E sny; AE = 6 cm, ED = 4 cm, BE = 3 cm. <strong>Vereis om te bewys:</strong> AE · EC = BE · ED.`,
+            proofTable([
+              [`${bl('∠AED = ∠BEC')}`, 'Vertikaal-oorstaande hoeke'],
+              [`${re('∠ADE = ∠BCE')}`, 'Hoeke in dieselfde segment (∠ADB = ∠ACB, albei onderspan koord AB vanaf dieselfde boog)'],
+              [`${gr('∴ △AED ||| △BEC')}`, 'Twee pare hoeke gelyk (AA)'],
+              [`${or('AE/BE = ED/EC')}`, 'Ooreenstemmende sye van gelykvormige driehoeke is eweredig'],
+              [`${or('∴ AE · EC = BE · ED')}`, 'Kruisvermenigvuldig'],
+              ['6 × EC = 3 × 4 = 12', 'Vervang AE = 6 cm, BE = 3 cm en ED = 4 cm'],
+              ['∴ EC = 2 cm', 'Deel albei kante deur 6'],
+            ]),
+            `<strong>Antwoord:</strong> EC = ${or('2 cm')}. ✓`,
+          ],
+        },
+        {
+          question: 'AB is ʼn middellyn van ʼn sirkel met middelpunt O. C is ʼn punt op die sirkel, en CD ⊥ AB met D op AB. AD = 9 cm en DB = 16 cm. Bewys dat CD² = AD · DB, en bepaal dus die lengtes van CD en AC.',
+          answer: `CD = ${or('12 cm')}, AC = ${or('15 cm')}`,
+          steps: [
+            `<svg viewBox="0 0 280 240" width="280" height="240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="120" x2="230" y2="120" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="120" x2="191.62" y2="46.28" stroke="#0f1f3d" stroke-width="1.8"/><line x1="191.62" y1="46.28" x2="230" y2="120" stroke="#0f1f3d" stroke-width="1.8"/><line x1="191.62" y1="46.28" x2="191.62" y2="120" stroke="#ea580c" stroke-width="2"/><path d="M 191.62,111 L 182.62,111 L 182.62,120" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="50" cy="120" r="3" fill="#0f1f3d"/><text x="46" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="230" cy="120" r="3" fill="#0f1f3d"/><text x="234" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="191.62" cy="46.28" r="3" fill="#0f1f3d"/><text x="199.62" y="40.28" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="191.62" cy="120" r="3" fill="#0f1f3d"/><text x="195.62" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="136" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">O</text><text x="120" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">AD = 9 cm</text><text x="210" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">DB = 16 cm</text></svg>`,
+            `<strong>Gegee:</strong> AB is ʼn middellyn van sirkel O; C is op die sirkel; CD ⊥ AB met D op AB; AD = 9 cm, DB = 16 cm. <strong>Vereis om te bewys:</strong> CD² = AD · DB.`,
+            proofTable([
+              [`${re('∠ACB = 90°')}`, 'Hoek in ʼn halfsirkel (AB is ʼn middellyn)'],
+              [`In △ACD en △ABC: ${bl('∠ADC = ∠ACB = 90°')}, ∠DAC = ∠CAB (gemeenskaplik)`, 'CD ⊥ AB (gegee); gemeenskaplike hoek by A'],
+              [`${gr('∴ △ACD ||| △ABC')}`, 'Twee pare hoeke gelyk (AA)'],
+              [`In △CBD en △ABC: ${bl('∠BDC = ∠ACB = 90°')}, ∠DBC = ∠CBA (gemeenskaplik)`, 'CD ⊥ AB (gegee); gemeenskaplike hoek by B'],
+              [`${gr('∴ △CBD ||| △ABC')}`, 'Twee pare hoeke gelyk (AA)'],
+              [`${or('AD/CD = CD/DB')}`, '△ACD ||| △CBD (albei gelykvormig aan △ABC, dus aan mekaar); ooreenstemmende sye is eweredig'],
+              [`${or('∴ CD² = AD · DB')}`, 'Kruisvermenigvuldig'],
+              ['CD² = 9 × 16 = 144, dus CD = 12 cm', 'Vervang AD = 9 cm en DB = 16 cm'],
+              [`${or('AD/AC = AC/AB')}`, '△ACD ||| △ABC; ooreenstemmende sye is eweredig'],
+              ['AC² = AD · AB = 9 × 25 = 225, dus AC = 15 cm', 'Vervang AD = 9 cm en AB = AD + DB = 25 cm'],
+            ]),
+            `<strong>Antwoord:</strong> CD = ${or('12 cm')}, AC = ${or('15 cm')}. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn sirkelstelling (raaklyn-koordhoek, hoek in ʼn halfsirkel, koordevierhoek se teenoorstaande hoeke) te kombineer met gelykhoekige (AA) gelykvormige driehoeke om ʼn gekwadreerde lengte of ʼn produk-van-lengtes resultaat te bewys, deur die raaklyn-snylyn rider stap vir stap deur te werk" />',
+    },
   ],
 
   topicPractice: [
@@ -1023,6 +1143,94 @@ export const topicData: TopicData = {
         { minScore: 15, message: 'Goeie werk! Gaan enige vrae oor die koordevierhoek- of raaklyn-koordstelling weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde van elke sirkelstelling weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 4 — GEKOMBINEERDE RIDERS: SIRKELS EN GELYKVORMIGHEID (4 Vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 4 — Gekombineerde Riders',
+      questions: [
+        {
+          difficulty: 'Hard',
+          question: 'PT is ʼn raaklyn aan ʼn sirkel by T. PAB is ʼn snylyn vanaf die eksterne punt P, wat die sirkel by A (nader aan P) en B (verder van P) sny. PA = 4 cm en AB = 12 cm. Bewys dat PT² = PA · PB, en bepaal dus die lengte van PT.',
+          answer: '8 cm',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8', '8cm', '8 cm'],
+          explanation: `Trek TA en TB. In ${bl('△PTA')} en ${bl('△PBT')} is ${bl('∠P')} gemeenskaplik, en ${re('∠PTA = ∠PBT')} (raaklyn-koordhoek is gelyk aan die ingeskrewe hoek in die oorstaande segment), dus ${gr('△PTA ||| △PBT')} (AA). Daarom ${or('PT² = PA · PB')}.` + proofTable([
+            ['∠P is gemeenskaplik aan △PTA en △PBT', 'Gemeenskaplike hoek'],
+            ['∠PTA = ∠PBT', 'Raaklyn-koordhoek is gelyk aan die ingeskrewe hoek in die oorstaande segment'],
+            ['∴ △PTA ||| △PBT', 'Twee pare hoeke gelyk (AA)'],
+            ['PT/PB = PA/PT, dus PT² = PA · PB', 'Ooreenstemmende sye van gelykvormige driehoeke is eweredig'],
+            ['PB = PA + AB = 4 + 12 = 16 cm', 'Gegee PA = 4 cm, AB = 12 cm'],
+            ['PT² = 4 × 16 = 64', 'Vervang PA = 4 cm en PB = 16 cm'],
+            ['∴ PT = 8 cm', 'Trek die vierkantswortel'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="210" stroke="#2563eb" stroke-width="2"/><line x1="140" y1="210" x2="240" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="240" y1="210" x2="73.1" y2="59.79" stroke="#ea580c" stroke-width="2"/><path d="M 140,201 L 149,201 L 149,210" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="124" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="start">O</text><circle cx="140" cy="210" r="3" fill="#0f1f3d"/><text x="136" y="228" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">T</text><circle cx="240" cy="210" r="3" fill="#0f1f3d"/><text x="246" y="226" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">P</text><circle cx="206.9" cy="180.21" r="3" fill="#0f1f3d"/><text x="220.9" y="182.21" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="73.1" cy="59.79" r="3" fill="#0f1f3d"/><text x="63.1" y="53.79" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><text x="230" y="150" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">PA = 4 cm</text><text x="140" y="110" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">AB = 12 cm</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ABCD is ʼn koordevierhoek. Diagonale AC en BD sny mekaar by E. AE = 6 cm, ED = 3 cm en BE = 8 cm. Bewys dat AE · EC = BE · ED, en bepaal dus die lengte van EC.',
+          answer: '4 cm',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4', '4cm', '4 cm'],
+          explanation: `${bl('∠AED = ∠BEC')} (vertikaal-oorstaande hoeke) en ${re('∠ADE = ∠BCE')} (hoeke in dieselfde segment, albei onderspan koord AB), dus ${gr('△AED ||| △BEC')} (AA). Daarom ${or('AE · EC = BE · ED')}.` + proofTable([
+            ['∠AED = ∠BEC', 'Vertikaal-oorstaande hoeke'],
+            ['∠ADE = ∠BCE', 'Hoeke in dieselfde segment (onderspan koord AB vanaf dieselfde boog)'],
+            ['∴ △AED ||| △BEC', 'Twee pare hoeke gelyk (AA)'],
+            ['AE/BE = ED/EC, dus AE · EC = BE · ED', 'Ooreenstemmende sye van gelykvormige driehoeke is eweredig'],
+            ['6 × EC = 8 × 3 = 24', 'Vervang AE = 6 cm, BE = 8 cm en ED = 3 cm'],
+            ['∴ EC = 4 cm', 'Deel albei kante deur 6'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="53.07" y1="96.71" x2="213.72" y2="171.62" stroke="#ea580c" stroke-width="2"/><line x1="155.63" y1="31.37" x2="66.28" y2="171.62" stroke="#2563eb" stroke-width="2"/><line x1="53.07" y1="96.71" x2="155.63" y2="31.37" stroke="#0f1f3d" stroke-width="1.6"/><line x1="155.63" y1="31.37" x2="213.72" y2="171.62" stroke="#0f1f3d" stroke-width="1.6"/><line x1="213.72" y1="171.62" x2="66.28" y2="171.62" stroke="#0f1f3d" stroke-width="1.6"/><line x1="66.28" y1="171.62" x2="53.07" y2="96.71" stroke="#0f1f3d" stroke-width="1.6"/><circle cx="53.07" cy="96.71" r="3" fill="#0f1f3d"/><text x="39.07" y="98.71" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="155.63" cy="31.37" r="3" fill="#0f1f3d"/><text x="157.63" y="21.37" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="213.72" cy="171.62" r="3" fill="#0f1f3d"/><text x="227.72" y="175.62" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="66.28" cy="171.62" r="3" fill="#0f1f3d"/><text x="52.28" y="175.62" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="100.05" cy="118.62" r="2.2" fill="#16a34a"/><text x="96.05" y="132.62" font-size="12" fill="#16a34a" font-weight="700" text-anchor="end">E</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'AB is ʼn middellyn van ʼn sirkel met middelpunt O, en C is ʼn punt op die sirkel. CD ⊥ AB, met D op AB. AD = 2 cm en DB = 8 cm. Bewys dat CD² = AD · DB, en bepaal dus die lengte van CD.',
+          answer: '4 cm',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          correctAnswers: ['4', '4cm', '4 cm'],
+          explanation: `${re('∠ACB = 90°')} (hoek in ʼn halfsirkel), dus ${gr('△ACD ||| △ABC')} en ${gr('△CBD ||| △ABC')} (AA, met die regte hoek by D en die gemeenskaplike hoeke by A en B onderskeidelik) — daarom ook ${gr('△ACD ||| △CBD')}. Dit gee ${or('CD² = AD · DB')}.` + proofTable([
+            ['∠ACB = 90°', 'Hoek in ʼn halfsirkel (AB is ʼn middellyn)'],
+            ['△ACD ||| △ABC en △CBD ||| △ABC', 'AA: regte hoek by D (CD ⊥ AB) plus ʼn gemeenskaplike hoek by A (of B) in elke geval'],
+            ['∴ △ACD ||| △CBD', 'Albei is gelykvormig aan △ABC, dus gelykvormig aan mekaar'],
+            ['AD/CD = CD/DB, dus CD² = AD · DB', 'Ooreenstemmende sye van gelykvormige driehoeke is eweredig'],
+            ['CD² = 2 × 8 = 16', 'Vervang AD = 2 cm en DB = 8 cm'],
+            ['∴ CD = 4 cm', 'Trek die vierkantswortel'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="120" x2="230" y2="120" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="120" x2="213.72" y2="68.38" stroke="#0f1f3d" stroke-width="1.8"/><line x1="213.72" y1="68.38" x2="230" y2="120" stroke="#0f1f3d" stroke-width="1.8"/><line x1="213.72" y1="68.38" x2="213.72" y2="120" stroke="#ea580c" stroke-width="2"/><path d="M 213.72,111 L 204.72,111 L 204.72,120" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="50" cy="120" r="3" fill="#0f1f3d"/><text x="46" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="230" cy="120" r="3" fill="#0f1f3d"/><text x="234" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="213.72" cy="68.38" r="3" fill="#0f1f3d"/><text x="221.72" y="62.38" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><circle cx="213.72" cy="120" r="3" fill="#0f1f3d"/><text x="225.72" y="136" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="136" y="138" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">O</text><text x="180" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">AD = 2 cm</text><text x="224" y="150" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">DB = 8 cm</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ABCD is ʼn koordevierhoek. Sye AB en DC word verleng om by die eksterne punt E te ontmoet, met A tussen E en B, en D tussen E en C. EA = 3 cm, AB = 5 cm en ED = 4 cm. Bewys dat △EBC ||| △EDA, en bepaal dus die lengte van EC.',
+          answer: '6 cm',
+          checkMode: 'auto',
+          correctAnswer: '6',
+          correctAnswers: ['6', '6cm', '6 cm'],
+          explanation: `${bl('∠BEC = ∠DEA')} is gemeenskaplik aan ${bl('△EBC')} en ${bl('△EDA')}, en ${re('∠EBC = ∠EDA')} (albei gelyk aan ${re('180° − ∠ADC')}, deur die koordevierhoek se teenoorstaande hoeke en die reguit lyne EAB, EDC te gebruik), dus ${gr('△EBC ||| △EDA')} (AA). Daarom ${or('EA · EB = ED · EC')}.` + proofTable([
+            ['∠BEC = ∠DEA', 'Gemeenskaplike hoek (E, A, B lê op ʼn reguit lyn en E, D, C lê op ʼn reguit lyn)'],
+            ['∠EBC = ∠ABC', 'E, A, B lê op ʼn reguit lyn (A tussen E en B), dus straal BE = straal BA'],
+            ['∠ABC + ∠ADC = 180°', 'Teenoorstaande hoeke van koordevierhoek ABCD is supplementêr'],
+            ['∠EDA + ∠ADC = 180°', 'E, D, C lê op ʼn reguit lyn (D tussen E en C), dus is ∠EDA en ∠ADC hoeke op ʼn reguit lyn'],
+            ['∴ ∠EBC = ∠ABC = 180° − ∠ADC = ∠EDA', 'Deur die twee vergelykings hierbo te kombineer'],
+            ['∴ △EBC ||| △EDA', 'Twee pare hoeke gelyk (AA)'],
+            ['EB/ED = EC/EA, dus EA · EB = ED · EC', 'Ooreenstemmende sye van gelykvormige driehoeke is eweredig'],
+            ['EB = EA + AB = 3 + 5 = 8 cm', 'Gegee EA = 3 cm, AB = 5 cm'],
+            ['3 × 8 = 4 × EC', 'Vervang EA = 3 cm, EB = 8 cm en ED = 4 cm'],
+            ['∴ EC = 6 cm', 'Deel albei kante deur 4'],
+          ]),
+          diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="20" y1="210" x2="146.87" y2="30.26" stroke="#ea580c" stroke-width="2"/><line x1="20" y1="210" x2="229.42" y2="130.22" stroke="#2563eb" stroke-width="2"/><line x1="57.75" y1="156.53" x2="80.05" y2="187.12" stroke="#0f1f3d" stroke-width="1.6"/><line x1="146.87" y1="30.26" x2="229.42" y2="130.22" stroke="#0f1f3d" stroke-width="1.6"/><circle cx="20" cy="210" r="3" fill="#0f1f3d"/><text x="16" y="226" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">E</text><circle cx="57.75" cy="156.53" r="3" fill="#0f1f3d"/><text x="43.75" y="158.53" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">A</text><circle cx="146.87" cy="30.26" r="3" fill="#0f1f3d"/><text x="148.87" y="22.26" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">B</text><circle cx="80.05" cy="187.12" r="3" fill="#0f1f3d"/><text x="76.05" y="203.12" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">D</text><circle cx="229.42" cy="130.22" r="3" fill="#0f1f3d"/><text x="243.42" y="134.22" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">C</text><text x="60" y="220" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">EA = 3 cm</text><text x="50" y="135" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">ED = 4 cm</text></svg>',
+        },
+      ],
+      scoreMessages: [
+        { minScore: 4, message: 'Uitstekend! Jy het dit reggekry om sirkelstellings met gelykvormigheid en eweredigheid te kombineer — presies die meerstap-redenering wat Graad 12 Vraestel 2-riders vereis.' },
+        { minScore: 3, message: 'Goeie werk! Hersien die rider wat jy gemis het, en let noukeurig op watter sirkelstelling die ooreenstemmende hoek verskaf voordat jy die gelykvormigheidstelling skryf.' },
+        { minScore: 2, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde hierbo weer deur — fokus daarop om eers die sirkelstelling raak te sien, dan die gedeelde hoek, voordat jy die verhouding skryf.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die drie uitgewerkte voorbeelde, en probeer dan hierdie stel weer.' },
       ],
     },
   ],

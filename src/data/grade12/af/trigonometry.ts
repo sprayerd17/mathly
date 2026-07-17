@@ -522,7 +522,7 @@ export const topicData: TopicData = {
         `<ol style="margin:0;padding-left:18px;color:#1e3a8a;line-height:1.9;font-size:14px;">` +
         `<li>${bl('Vervang')} die saamgestelde of dubbelhoek identiteit om alles in terme van ʼn enkele trig-verhouding uit te druk.</li>` +
         `<li>Skuif alle terme na een kant en ${or('faktoriseer')}.</li>` +
-        `<li>Stel elke faktor gelyk aan nul en ${gr('lys alle oplossings')} in die gegewe interval.</li>` +
+        `<li>Stel elke faktor gelyk aan nul en los op — ${gr('lys alle oplossings')} in ʼn gegewe interval, of (soos in Graad 11) skryf die volledige ${gr('algemene oplossing')} met θ = ... + 360°n (sin/cos) of θ = ... + 180°n (tan), n ∈ ℤ, wanneer geen interval gegee word nie.</li>` +
         `</ol>` +
         `</div>`,
 
@@ -569,6 +569,33 @@ export const topicData: TopicData = {
             `<strong>Alle oplossings:</strong> ${gr('x = 30°, 90°, 150°, 270°')} ✓`,
           ],
         },
+        {
+          question: 'Bepaal die algemene oplossing van cos 2θ − cos θ = 0 (moenie θ tot ʼn interval beperk nie).',
+          answer: `θ = ${gr('±120° + 360°n of 0° + 360°n, n ∈ ℤ')}`,
+          steps: [
+            `${bl('Vervang')} die dubbelhoek identiteit: ${bl('cos 2θ = 2 cos²θ − 1')}.`,
+            `Vergelyking word: 2 cos²θ − 1 − cos θ = 0.`,
+            `Herrangskik: 2 cos²θ − cos θ − 1 = 0.`,
+            `${or('Faktoriseer')}: ${or('(2 cos θ + 1)(cos θ − 1) = 0')}.`,
+            `Stel elke faktor gelyk aan nul: cos θ = −½ &nbsp;of&nbsp; cos θ = 1.`,
+            `cos θ = −½ → verwysingshoek = 60°, Kwadrante 2 en 3: θ = 180° − 60° = 120° of θ = 180° + 60° = 240°, kompak geskryf as ${gr('θ = ±120° + 360°n')}, n ∈ ℤ.`,
+            `cos θ = 1: ${gr('θ = 0° + 360°n')}, n ∈ ℤ.`,
+            `<strong>Algemene oplossing:</strong> ${gr('θ = ±120° + 360°n of θ = 0° + 360°n, n ∈ ℤ')} ✓`,
+          ],
+        },
+        {
+          question: 'Bepaal die algemene oplossing van sin(θ + 45°) + sin(θ − 45°) = 1.',
+          answer: `θ = ${gr('45° + 360°n of 135° + 360°n, n ∈ ℤ')}`,
+          steps: [
+            `${bl('Vervang')} die saamgestelde hoek identiteite: ${bl('sin(θ+45°) = sinθ cos45° + cosθ sin45°')} en ${bl('sin(θ−45°) = sinθ cos45° − cosθ sin45°')}.`,
+            `Tel die twee uitbreidings bymekaar — die cosθ sin45°-terme kanselleer: sin(θ+45°) + sin(θ−45°) = 2 sinθ cos45°.`,
+            `Vervang cos45° = √2/2: = 2 sinθ · (√2/2) = √2 sinθ.`,
+            `Vergelyking word: √2 sinθ = 1.`,
+            `Isoleer: sinθ = 1/√2 = √2/2.`,
+            `Verwysingshoek = 45°, sinθ positief → Kwadrante 1 en 2.`,
+            `<strong>Algemene oplossing:</strong> ${gr('θ = 45° + 360°n of θ = 135° + 360°n, n ∈ ℤ')} ✓`,
+          ],
+        },
       ],
 
       practiceQuestions: [],
@@ -592,10 +619,28 @@ export const topicData: TopicData = {
           answer: '1 − 2sin²x + sinx = 0  →  2sin²x − sinx − 1 = 0  →  (2sinx + 1)(sinx − 1) = 0\nsinx = −½ → x = 210°, 330°\nsinx = 1 → x = 90°\nAlle oplossings: x = 90°, 210°, 330°',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Medium',
+          question: 'Bepaal die algemene oplossing van sin 2θ + sin θ = 0.',
+          answer: 'sinθ(2cosθ + 1) = 0\nsinθ = 0 → θ = 0° + 360°n of θ = 180° + 360°n, n ∈ ℤ (m.a.w. θ = 180°n, n ∈ ℤ)\ncosθ = −1/2 → verwysingshoek 60°, K2 en K3 → θ = ±120° + 360°n, n ∈ ℤ\nAlgemene oplossing: θ = 180°n of θ = ±120° + 360°n, n ∈ ℤ',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Bepaal die algemene oplossing van sin(θ + 60°) = cos θ.',
+          answer: 'Brei uit: sinθcos60° + cosθsin60° = cosθ\n½sinθ + (√3/2)cosθ = cosθ\n½sinθ = cosθ(1 − √3/2) = cosθ·(2−√3)/2\nsinθ = cosθ(2−√3) → tanθ = 2 − √3\nAangesien tan15° = 2 − √3 (uit tan(45°−30°) met die saamgestelde hoek identiteit), is die verwysingshoek 15°.\nAlgemene oplossing: θ = 15° + 180°n, n ∈ ℤ',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Bepaal die algemene oplossing van cos 2θ + 3sin θ − 2 = 0. Toon alle stappe duidelik.',
+          answer: 'cos2θ = 1 − 2sin²θ\n1 − 2sin²θ + 3sinθ − 2 = 0 → −2sin²θ + 3sinθ − 1 = 0 → 2sin²θ − 3sinθ + 1 = 0\n(2sinθ − 1)(sinθ − 1) = 0\nsinθ = ½ → verwysingshoek 30°, K1 en K2 → θ = 30° + 360°n of θ = 150° + 360°n, n ∈ ℤ\nsinθ = 1 → θ = 90° + 360°n, n ∈ ℤ\nAlgemene oplossing: θ = 30° + 360°n of θ = 90° + 360°n of θ = 150° + 360°n, n ∈ ℤ',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om dubbelhoek identiteite te gebruik om trig-vergelykings te vereenvoudig voordat dit binne ʼn gegewe interval gefaktoriseer en opgelos word" />',
+        '<VideoPlaceholder label="Kort video wat wys hoe om dubbelhoek identiteite te gebruik om trig-vergelykings te vereenvoudig voordat dit binne ʼn gegewe interval gefaktoriseer en opgelos word, en hoe om dieselfde tegniek uit te brei om ʼn volledige algemene oplossing te skryf" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

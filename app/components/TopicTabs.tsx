@@ -1103,14 +1103,31 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
               {section.title}
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {items.map(({ q, idx }) => (
-                <OpenQuestionCard
-                  key={`q-${idx}-${resetKey}`}
-                  question={q}
-                  index={idx}
-                  onResult={r => handleResult(idx, r)}
-                />
-              ))}
+              {(() => {
+                const elements: ReactNode[] = []
+                let lastSvg: string | undefined
+                items.forEach(({ q, idx }) => {
+                  if (q.diagramSvg && q.diagramSvg !== lastSvg) {
+                    elements.push(
+                      <DiagramPlaceholderCard
+                        key={`section-${section.id}-diagram-${idx}-${resetKey}`}
+                        label={t.topic_diagram_label}
+                        svg={q.diagramSvg}
+                      />
+                    )
+                  }
+                  lastSvg = q.diagramSvg
+                  elements.push(
+                    <OpenQuestionCard
+                      key={`q-${idx}-${resetKey}`}
+                      question={q}
+                      index={idx}
+                      onResult={r => handleResult(idx, r)}
+                    />
+                  )
+                })
+                return elements
+              })()}
             </div>
           </div>
         )

@@ -523,7 +523,7 @@ export const topicData: TopicData = {
         `<ol style="margin:0;padding-left:18px;color:#1e3a8a;line-height:1.9;font-size:14px;">` +
         `<li>${bl('Substitute')} the compound or double angle identity to express everything in terms of a single trig ratio.</li>` +
         `<li>Move all terms to one side and ${or('factorise')}.</li>` +
-        `<li>Set each factor equal to zero and ${gr('list all solutions')} in the given interval.</li>` +
+        `<li>Set each factor equal to zero and solve — ${gr('list all solutions')} in a given interval, or (as in Grade 11) write the full ${gr('general solution')} using θ = ... + 360°n (sin/cos) or θ = ... + 180°n (tan), n ∈ ℤ, when no interval is given.</li>` +
         `</ol>` +
         `</div>`,
 
@@ -570,6 +570,33 @@ export const topicData: TopicData = {
             `<strong>All solutions:</strong> ${gr('x = 30°, 90°, 150°, 270°')} ✓`,
           ],
         },
+        {
+          question: 'Find the general solution of cos 2θ − cos θ = 0 (do not restrict θ to an interval).',
+          answer: `θ = ${gr('±120° + 360°n or 0° + 360°n, n ∈ ℤ')}`,
+          steps: [
+            `${bl('Substitute')} the double angle identity: ${bl('cos 2θ = 2 cos²θ − 1')}.`,
+            `Equation becomes: 2 cos²θ − 1 − cos θ = 0.`,
+            `Rearrange: 2 cos²θ − cos θ − 1 = 0.`,
+            `${or('Factorise')}: ${or('(2 cos θ + 1)(cos θ − 1) = 0')}.`,
+            `Set each factor to zero: cos θ = −½ &nbsp;or&nbsp; cos θ = 1.`,
+            `cos θ = −½ → reference angle = 60°, Quadrants 2 and 3: θ = 180° − 60° = 120° or θ = 180° + 60° = 240°, written compactly as ${gr('θ = ±120° + 360°n')}, n ∈ ℤ.`,
+            `cos θ = 1: ${gr('θ = 0° + 360°n')}, n ∈ ℤ.`,
+            `<strong>General solution:</strong> ${gr('θ = ±120° + 360°n or θ = 0° + 360°n, n ∈ ℤ')} ✓`,
+          ],
+        },
+        {
+          question: 'Find the general solution of sin(θ + 45°) + sin(θ − 45°) = 1.',
+          answer: `θ = ${gr('45° + 360°n or 135° + 360°n, n ∈ ℤ')}`,
+          steps: [
+            `${bl('Substitute')} the compound angle identities: ${bl('sin(θ+45°) = sinθ cos45° + cosθ sin45°')} and ${bl('sin(θ−45°) = sinθ cos45° − cosθ sin45°')}.`,
+            `Add the two expansions — the cosθ sin45° terms cancel: sin(θ+45°) + sin(θ−45°) = 2 sinθ cos45°.`,
+            `Substitute cos45° = √2/2: = 2 sinθ · (√2/2) = √2 sinθ.`,
+            `Equation becomes: √2 sinθ = 1.`,
+            `Isolate: sinθ = 1/√2 = √2/2.`,
+            `Reference angle = 45°, sinθ positive → Quadrants 1 and 2.`,
+            `<strong>General solution:</strong> ${gr('θ = 45° + 360°n or θ = 135° + 360°n, n ∈ ℤ')} ✓`,
+          ],
+        },
       ],
 
       practiceQuestions: [],
@@ -593,10 +620,28 @@ export const topicData: TopicData = {
           answer: '1 − 2sin²x + sinx = 0  →  2sin²x − sinx − 1 = 0  →  (2sinx + 1)(sinx − 1) = 0\nsinx = −½ → x = 210°, 330°\nsinx = 1 → x = 90°\nAll solutions: x = 90°, 210°, 330°',
           checkMode: 'self',
         },
+        {
+          difficulty: 'Medium',
+          question: 'Find the general solution of sin 2θ + sin θ = 0.',
+          answer: 'sinθ(2cosθ + 1) = 0\nsinθ = 0 → θ = 0° + 360°n or θ = 180° + 360°n, n ∈ ℤ (equivalently θ = 180°n, n ∈ ℤ)\ncosθ = −1/2 → reference angle 60°, Q2 and Q3 → θ = ±120° + 360°n, n ∈ ℤ\nGeneral solution: θ = 180°n or θ = ±120° + 360°n, n ∈ ℤ',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Find the general solution of sin(θ + 60°) = cos θ.',
+          answer: 'Expand: sinθcos60° + cosθsin60° = cosθ\n½sinθ + (√3/2)cosθ = cosθ\n½sinθ = cosθ(1 − √3/2) = cosθ·(2−√3)/2\nsinθ = cosθ(2−√3) → tanθ = 2 − √3\nSince tan15° = 2 − √3 (from tan(45°−30°) using the compound angle identity), reference angle = 15°.\nGeneral solution: θ = 15° + 180°n, n ∈ ℤ',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Find the general solution of cos 2θ + 3sin θ − 2 = 0. Show all steps clearly.',
+          answer: 'cos2θ = 1 − 2sin²θ\n1 − 2sin²θ + 3sinθ − 2 = 0 → −2sin²θ + 3sinθ − 1 = 0 → 2sin²θ − 3sinθ + 1 = 0\n(2sinθ − 1)(sinθ − 1) = 0\nsinθ = ½ → reference angle 30°, Q1 and Q2 → θ = 30° + 360°n or θ = 150° + 360°n, n ∈ ℤ\nsinθ = 1 → θ = 90° + 360°n, n ∈ ℤ\nGeneral solution: θ = 30° + 360°n or θ = 90° + 360°n or θ = 150° + 360°n, n ∈ ℤ',
+          checkMode: 'self',
+        },
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use double angle identities to simplify trig equations before factorising and solving within a given interval" />',
+        '<VideoPlaceholder label="Short video showing how to use double angle identities to simplify trig equations before factorising and solving within a given interval, and how to extend the same technique to write a full general solution" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
