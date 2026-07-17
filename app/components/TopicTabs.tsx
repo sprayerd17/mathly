@@ -144,7 +144,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
       >
         {example.question.includes('<') ? (
           <span
-            className="text-sm font-semibold text-[#0f1f3d] leading-snug pr-4"
+            className="topic-html text-sm font-semibold text-[#0f1f3d] leading-snug pr-4"
             dangerouslySetInnerHTML={{ __html: `${exampleLabel}: ${example.question}` }}
           />
         ) : (
@@ -175,7 +175,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
                   {i + 1}
                 </span>
                 {step.includes('<') ? (
-                <div className="text-gray-700" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: step }} />
+                <div className="topic-html text-gray-700" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: step }} />
               ) : (
                 <span className="text-gray-700" style={{ lineHeight: 1.8 }}>{step}</span>
               )}
@@ -185,7 +185,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
           <div className="flex items-center gap-3 mt-6 pt-5 border-t border-gray-100">
             <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide shrink-0">{t.topic_answer_label}</span>
             {example.answer.includes('<') ? (
-              <span className="bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug" dangerouslySetInnerHTML={{ __html: example.answer }} />
+              <span className="topic-html bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug" dangerouslySetInnerHTML={{ __html: example.answer }} />
             ) : (
               <span className="bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug">
                 {example.answer}
@@ -233,6 +233,7 @@ function DiagramPlaceholderCard({ label, svg }: { label: string; svg?: string })
         <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#1e40af' }}>{t.topic_diagram_label}</p>
         <p className="text-sm font-medium mb-3" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
         <div
+          className="topic-html"
           dangerouslySetInnerHTML={{ __html: svg }}
           style={{ maxWidth: '100%', display: 'flex', justifyContent: 'center' }}
         />
@@ -289,7 +290,7 @@ function PracticeCard({
           {number}
         </span>
         {question.question.includes('<') ? (
-          <p className="text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
+          <p className="topic-html text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
         ) : (
           <p className="text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }}>
             {question.question}
@@ -373,7 +374,7 @@ function FeedbackBox({
     <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
       <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#16a34a' }}>{t.topic_correct_badge}</p>
       {text.includes('<') ? (
-        <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
+        <p className="topic-html text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
       ) : (
         <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{text}</p>
       )}
@@ -382,7 +383,7 @@ function FeedbackBox({
     <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#fef2f2', border: '1px solid #fca5a5' }}>
       <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#dc2626' }}>{t.topic_incorrect_badge}</p>
       {text.includes('<') ? (
-        <p className="text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
+        <p className="topic-html text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
       ) : (
         <p className="text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }}>{text}</p>
       )}
@@ -472,7 +473,7 @@ function OpenQuestionCard({
             {question.difficulty}
           </span>
           {question.question.includes('<') ? (
-            <p className="text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
+            <p className="topic-html text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
           ) : (
             <p className="text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }}>
               {question.question}
@@ -625,7 +626,7 @@ function OpenQuestionCard({
                 <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
                   <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
                   {(question.answer ?? '').includes('<') ? (
-                    <p className="text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.answer ?? '' }} />
+                    <p className="topic-html text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.answer ?? '' }} />
                   ) : (
                     <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{question.answer}</p>
                   )}
@@ -980,7 +981,7 @@ function RealStudyGuide({ data }: { data: TopicData }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {section.explanation.includes('<') ? (
                 <div
-                  className="text-blue-900"
+                  className="topic-html text-blue-900"
                   style={{ fontSize: '17px', lineHeight: 1.8 }}
                   dangerouslySetInnerHTML={{ __html: section.explanation }}
                 />

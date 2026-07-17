@@ -16,3 +16,15 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Study-guide content renders diagrams as raw inline SVG via dangerouslySetInnerHTML.
+   Some of those SVGs only carry a viewBox (no width/height), which some mobile
+   browsers size inconsistently -- force every one to scale to its container so
+   wide diagrams never get clipped on narrow (portrait phone) screens. */
+.topic-html svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
