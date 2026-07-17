@@ -163,8 +163,8 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesiese vlak wat \'n sirkel met middelpunt O(2,1) en radius 5 wys, met punte A(6,4) en B(-1,-3) op die omtrek, \'n raaklyn by A, koord AB met middelpunt M gemerk, en eksterne punt P(9,1) buite die sirkel" />',
+      diagramSvg:
+        `<svg viewBox="0 0 210 182" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><circle cx="91" cy="91" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5" /><line x1="147" y1="49" x2="49" y2="147" stroke="#16a34a" stroke-width="2.5" /><line x1="91" y1="91" x2="147" y2="49" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3" /><line x1="91" y1="91" x2="189" y2="91" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3" /><line x1="111" y1="1" x2="183" y2="97" stroke="#ea580c" stroke-width="2.5" /><circle cx="91" cy="91" r="3.5" fill="#0f1f3d" /><circle cx="147" cy="49" r="3.5" fill="#2563eb" /><circle cx="49" cy="147" r="3.5" fill="#2563eb" /><circle cx="98" cy="98" r="3.5" fill="#16a34a" /><circle cx="189" cy="91" r="3.5" fill="#dc2626" /><text x="80" y="107" font-weight="700" font-size="11" fill="#0f1f3d" text-anchor="end">O(2, 1)</text><text x="152" y="42" font-weight="700" font-size="11" fill="#2563eb" text-anchor="start">A(6, 4)</text><text x="38" y="152" font-weight="700" font-size="11" fill="#2563eb" text-anchor="end">B(-1, -3)</text><text x="98" y="113" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">M</text><text x="194" y="87" font-weight="700" font-size="11" fill="#dc2626" text-anchor="start">P(9, 1)</text><text x="172" y="16" font-weight="700" font-size="10" fill="#ea580c" text-anchor="middle">raaklyn</text></svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die afstand-, gradiënt- en middelpuntformules hersien met uitgewerkte voorbeelde deur twee koördinaatpunte" />',
@@ -299,8 +299,8 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesiese vlak wat die sirkel x²+y²-4x+6y-12=0 wys met sy middelpunt (2,-3) en radius 5 gemerk na voltooiing van die vierkant, en punt P(7,-3) op die omtrek" />',
+      diagramSvg:
+        `<svg viewBox="0 0 182 182" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><circle cx="91" cy="91" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5" /><line x1="91" y1="91" x2="161" y2="91" stroke="#ea580c" stroke-width="2" stroke-dasharray="4 3" /><circle cx="91" cy="91" r="3.5" fill="#2563eb" /><circle cx="161" cy="91" r="3.5" fill="#16a34a" /><text x="80" y="80" font-weight="700" font-size="11" fill="#2563eb" text-anchor="end">middelpunt (2, -3)</text><text x="166" y="87" font-weight="700" font-size="11" fill="#16a34a" text-anchor="start">P(7, -3)</text><text x="126" y="83" font-weight="700" font-size="11" fill="#ea580c" text-anchor="middle">r = 5</text></svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die vergelyking van \'n sirkel in standaardvorm verduidelik en hoe om die middelpunt en radius te vind deur die vierkant te voltooi" />',
