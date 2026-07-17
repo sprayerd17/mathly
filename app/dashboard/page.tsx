@@ -7,6 +7,9 @@ import Navbar from '@/app/components/Navbar'
 import { useAuth, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import TestAnalysisPanel from './TestAnalysisPanel'
+import { getTopics } from '@/src/data/topic-registry'
+import { getActivityLog, resetTopicAttempts, type ActivityLogEntry } from '@/src/lib/activity-log'
+import { getStudyProgress } from '@/src/lib/study-progress'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -17,7 +20,7 @@ type ChildProfile = { name: string; grade: number }
 type TopicProgress = {
   name: string
   slug: string
-  completion: number
+  studied: boolean
   score: number | null
   completedDate?: string
 }
@@ -25,8 +28,8 @@ type TopicProgress = {
 type ScoreEntry = {
   topic: string
   slug: string
-  activityType: 'Study Guide Quiz' | 'Practice Questions'
-  score: number | null
+  activityLabel: string
+  score: number
   date: string | null
 }
 
@@ -43,27 +46,88 @@ type GradeData = {
   activity: Activity[]
 }
 
-// ── Per-grade topic lists (true empty progress — no activity has happened yet) ──
+const EMPTY_GRADE_DATA: GradeData = { topics: [], scores: [], activity: [] }
 
-const GRADE_TOPIC_NAMES: Record<number, string[]> = {
-  4: ['Whole Numbers — Counting, Ordering & Place Value', 'Addition & Subtraction', 'Multiplication', 'Division', 'Number Sentences', 'Common Fractions', 'Number Patterns', 'Geometric Patterns', 'Symmetry', '2D Shapes', '3D Objects', 'Position and Movement', 'Transformations', 'Length', 'Mass', 'Capacity and Volume', 'Perimeter and Area', 'Time', 'Data Handling', 'Probability'],
-  5: ['Whole Numbers — Counting, Ordering & Place Value', 'Addition & Subtraction', 'Multiplication', 'Division', 'Number Sentences', 'Common Fractions', 'Decimal Fractions', 'Number Patterns', 'Geometric Patterns', 'Symmetry', '2D Shapes', '3D Objects', 'Position and Movement', 'Transformations', 'Length', 'Mass', 'Capacity and Volume', 'Perimeter, Area and Volume', 'Time', 'Data Handling', 'Probability'],
-  6: ['Whole Numbers — Counting, Ordering & Place Value', 'Addition & Subtraction', 'Multiplication', 'Division', 'Properties of Numbers', 'Number Sentences', 'Common Fractions', 'Decimal Fractions', 'Percentages', 'Ratio and Rate', 'Patterns and Functions', '2D Shapes', '3D Objects', 'Angles', 'Transformations', 'Perimeter and Area', 'Volume', 'Data Handling', 'Probability'],
-  7: ['Whole Numbers', 'Integers', 'Exponents', 'Common Fractions', 'Decimal Fractions', 'Percentages', 'Ratio and Rate', 'Patterns, Functions and Relationships', 'Algebraic Expressions', 'Algebraic Equations', '2D Shapes', '3D Objects', 'Geometry of Straight Lines', 'Transformations', 'Perimeter, Area and Volume', 'Data Handling', 'Probability'],
-  8: ['Whole Numbers', 'Exponents', 'Integers', 'Common Fractions', 'Decimal Fractions', 'Percentages', 'Numeric and Geometric Patterns', 'Functions and Relationships', 'Algebraic Expressions', 'Algebraic Equations', 'Graphs', 'Geometry of 2D Shapes', 'Geometry of 3D Objects', 'Geometry of Straight Lines', 'Transformation Geometry', 'Construction of Geometric Figures', 'Area and Perimeter of 2D Shapes', 'Surface Area and Volume of 3D Objects', 'The Theorem of Pythagoras', 'Data Handling', 'Probability'],
-  9: ['Numbers and the Real Number System', 'Exponents', 'Integers', 'Common Fractions', 'Decimal Fractions', 'Ratio, Rate and Proportion', 'Numeric and Geometric Patterns', 'Functions and Relationships', 'Algebraic Expressions', 'Factorising Algebraic Expressions', 'Algebraic Equations', 'Graphs', 'Geometry of 2D Shapes', 'Geometry of 3D Objects', 'Geometry of Straight Lines', 'Transformation Geometry', 'Construction of Geometric Figures', 'Area and Perimeter', 'Surface Area and Volume', 'The Theorem of Pythagoras', 'Data Handling', 'Probability'],
-  10: ['Algebraic Expressions', 'Exponents', 'Numbers and Patterns', 'Equations and Inequalities', 'Trigonometry', 'Functions', 'Euclidean Geometry', 'Analytical Geometry', 'Finance, Growth and Decay', 'Statistics', 'Mensuration', 'Probability'],
-  11: ['Algebraic Expressions', 'Equations and Inequalities', 'Numbers and Patterns', 'Analytical Geometry', 'Finance — Simple and Compound Decay', 'Trigonometry', 'Functions', 'Euclidean Geometry', 'Probability', 'Statistics'],
-  12: ['Functions (Including Inverses)', 'Exponential and Logarithmic Functions', 'Patterns, Sequences and Series', 'Finance', 'Trigonometry', 'Functions — Polynomials', 'Euclidean Geometry — Circles', 'Analytical Geometry', 'Differential Calculus', 'Statistics'],
+function toDateStr(d: Date | null): string | null {
+  return d ? d.toISOString().slice(0, 10) : null
 }
 
-function getGradeData(grade: number): GradeData {
-  const names = GRADE_TOPIC_NAMES[grade] ?? GRADE_TOPIC_NAMES[10]
-  return {
-    topics: names.map((name, i) => ({ name, slug: `topic-${i + 1}`, completion: 0, score: null })),
-    scores: [],
-    activity: [],
+// Real dashboard data, sourced from the same topic registry the grade page
+// uses (so slugs can't drift) plus the child's actual activityLog/studyProgress
+// writes. Attempts are grouped by topic and kept in chronological order so the
+// scores table reads as a growth story (Set 1 → Set 2 → Set 3), not a single
+// collapsed "best" or "latest" number.
+async function loadGradeData(
+  uid: string,
+  childIndex: number,
+  grade: number,
+  genericPracticeLabel: string
+): Promise<GradeData> {
+  const registryTopics = getTopics(String(grade))
+  const [logEntries, studyEntries] = await Promise.all([
+    getActivityLog(uid, childIndex, grade),
+    getStudyProgress(uid, childIndex, grade),
+  ])
+
+  const studiedMap = new Map(studyEntries.filter(s => s.studied).map(s => [s.topicSlug, s]))
+
+  const logsByTopic = new Map<string, ActivityLogEntry[]>()
+  for (const entry of logEntries) {
+    const list = logsByTopic.get(entry.topicSlug) ?? []
+    list.push(entry)
+    logsByTopic.set(entry.topicSlug, list)
   }
+  for (const list of logsByTopic.values()) {
+    list.sort((a, b) => (a.completedAt?.getTime() ?? 0) - (b.completedAt?.getTime() ?? 0))
+  }
+
+  const activityLabel = (entry: ActivityLogEntry) =>
+    entry.activityType === 'practiceSet' && entry.setName ? entry.setName : genericPracticeLabel
+
+  const topics: TopicProgress[] = registryTopics.map(rt => {
+    const attempts = logsByTopic.get(rt.slug) ?? []
+    const latest = attempts[attempts.length - 1]
+    const studyEntry = studiedMap.get(rt.slug)
+    return {
+      name: rt.name,
+      slug: rt.slug,
+      studied: !!studyEntry,
+      score: latest ? Math.round((latest.score / latest.total) * 100) : null,
+      completedDate: studyEntry?.markedAt ? toDateStr(studyEntry.markedAt) ?? undefined : undefined,
+    }
+  })
+
+  const scores: ScoreEntry[] = registryTopics.flatMap(rt =>
+    (logsByTopic.get(rt.slug) ?? []).map(entry => ({
+      topic: rt.name,
+      slug: rt.slug,
+      activityLabel: activityLabel(entry),
+      score: Math.round((entry.score / entry.total) * 100),
+      date: toDateStr(entry.completedAt),
+    }))
+  )
+
+  const nameBySlug = new Map(registryTopics.map(rt => [rt.slug, rt.name]))
+  const activity: Activity[] = [
+    ...logEntries
+      .filter(e => e.completedAt)
+      .map(e => ({
+        topic: nameBySlug.get(e.topicSlug) ?? e.topicSlug,
+        type: 'Practice' as const,
+        date: toDateStr(e.completedAt) as string,
+        score: Math.round((e.score / e.total) * 100),
+      })),
+    ...studyEntries
+      .filter(s => s.studied && s.markedAt)
+      .map(s => ({
+        topic: nameBySlug.get(s.topicSlug) ?? s.topicSlug,
+        type: 'Study Guide' as const,
+        date: toDateStr(s.markedAt) as string,
+        score: null,
+      })),
+  ]
+
+  return { topics, scores, activity }
 }
 
 // ── Panel defaults ────────────────────────────────────────────────────────────
@@ -251,6 +315,10 @@ export default function DashboardPage() {
   const [reportPeriod, setReportPeriod]             = useState<'week' | 'month' | 'quarter'>('month')
   const [reportVisible, setReportVisible]           = useState(false)
   const [reportLastGenerated, setReportLastGenerated] = useState<string | null>(null)
+  const [gradeData, setGradeData]                   = useState<GradeData>(EMPTY_GRADE_DATA)
+  const [gradeDataVersion, setGradeDataVersion]     = useState(0)
+  const [resetConfirmSlug, setResetConfirmSlug]     = useState<string | null>(null)
+  const [resetting, setResetting]                   = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -269,6 +337,29 @@ export default function DashboardPage() {
     setActiveChildIndex(user.activeChildIndex)
     setActiveGrade(user.children[user.activeChildIndex]?.grade ?? user.children[0]?.grade ?? null)
   }, [user, authLoading, router, t.dash_default_student_name])
+
+  useEffect(() => {
+    if (!user || activeGrade === null) return
+    let cancelled = false
+    loadGradeData(user.uid, activeChildIndex, activeGrade, t.dash_activity_practice_questions)
+      .then(data => { if (!cancelled) setGradeData(data) })
+      .catch(err => console.error('[dashboard] failed to load grade data', err))
+    return () => { cancelled = true }
+  }, [user, activeChildIndex, activeGrade, gradeDataVersion, t.dash_activity_practice_questions])
+
+  async function handleResetAttempts(slug: string) {
+    if (!user || resetting) return
+    setResetting(true)
+    try {
+      await resetTopicAttempts(user.uid, activeChildIndex, slug)
+      setResetConfirmSlug(null)
+      setGradeDataVersion(v => v + 1)
+    } catch (err) {
+      console.error('[dashboard] failed to reset attempts', err)
+    } finally {
+      setResetting(false)
+    }
+  }
 
   function togglePanel(id: string) {
     setPanels(prev => {
@@ -292,16 +383,20 @@ export default function DashboardPage() {
   const pkgStyle = PACKAGE_STYLE[userPackage]
   const pkgLabel: Record<Package, string> = { free: t.dash_package_free, pro: t.dash_package_pro, guided: t.dash_package_guided }
 
+  // ── Active-grade data ────────────────────────────────────────────────────────
+  const topics     = gradeData.topics
+  const scores     = gradeData.scores
+  const activity   = gradeData.activity
+
   // ── Stats computed from active grade (child or first user grade) ────────────
-  const primaryData        = getGradeData(activeGrade ?? 10)
-  const completedCount     = primaryData.topics.filter(t => t.completion === 100).length
-  const primaryScoredTopics = primaryData.topics.filter(t => t.score !== null)
+  const completedCount     = topics.filter(t => t.studied).length
+  const primaryScoredTopics = topics.filter(t => t.score !== null)
   const avgScore           = primaryScoredTopics.length > 0
     ? Math.round(primaryScoredTopics.reduce((s, t) => s + (t.score as number), 0) / primaryScoredTopics.length)
     : 0
 
   // ── Streak (consecutive days with activity in primary grade) ────────────────
-  const activityDateSet = new Set(primaryData.activity.map(a => a.date))
+  const activityDateSet = new Set(activity.map(a => a.date))
   let streak = 0
   if (activityDateSet.size > 0) {
     const latestDate = [...activityDateSet].sort((a, b) => b.localeCompare(a))[0]
@@ -312,26 +407,24 @@ export default function DashboardPage() {
     }
   }
 
-  // ── Active-grade data (switches with grade pills) ───────────────────────────
-  const gradeData  = getGradeData(activeGrade ?? 10)
-  const topics     = gradeData.topics
-  const scores     = gradeData.scores
-  const activity   = gradeData.activity
-
-  const activityTypeLabel = (type: ScoreEntry['activityType']) =>
-    type === 'Study Guide Quiz' ? t.dash_activity_study_guide_quiz : t.dash_activity_practice_questions
-
   // ── My Progress panel ───────────────────────────────────────────────────────
-  const notStarted = topics.filter(t => t.completion === 0)
-  const inProgress = topics.filter(t => t.completion > 0 && t.completion < 100)
-  const completed  = topics.filter(t => t.completion === 100)
+  // "Done" tracks the student's own "Mark as Studied" action on the Study
+  // Guide tab — practice scores are a separate track, shown in My Scores.
+  const notStarted = topics.filter(t => !t.studied && t.score === null)
+  const inProgress = topics.filter(t => !t.studied && t.score !== null)
+  const completed  = topics.filter(t => t.studied)
   const topicsDone = completed.length
 
   // ── My Scores panel ─────────────────────────────────────────────────────────
-  const validScores    = scores.filter(s => s.score !== null)
-  const avgGradeScore  = validScores.length > 0
-    ? Math.round(validScores.reduce((s, e) => s + (e.score as number), 0) / validScores.length)
+  const avgGradeScore  = scores.length > 0
+    ? Math.round(scores.reduce((s, e) => s + e.score, 0) / scores.length)
     : 0
+  const scoreGroups: { slug: string; topic: string; entries: ScoreEntry[] }[] = []
+  for (const entry of scores) {
+    const group = scoreGroups.find(g => g.slug === entry.slug)
+    if (group) group.entries.push(entry)
+    else scoreGroups.push({ slug: entry.slug, topic: entry.topic, entries: [entry] })
+  }
 
   // ── Focus Areas panel ───────────────────────────────────────────────────────
   const weakTopics = topics.filter(t => t.score !== null && (t.score as number) < 60)
@@ -362,7 +455,7 @@ export default function DashboardPage() {
 
   const periodScores      = scores.filter(s => s.date && s.date >= rStartStr && s.date <= rEndStr && s.score !== null).map(s => s.score as number)
   const periodAvgScore    = periodScores.length > 0 ? Math.round(periodScores.reduce((a, b) => a + b, 0) / periodScores.length) : 0
-  const completedInPeriod = topics.filter(t => t.completion === 100 && t.completedDate && t.completedDate >= rStartStr).length
+  const completedInPeriod = topics.filter(t => t.studied && t.completedDate && t.completedDate >= rStartStr).length
   const reportStrengths   = topics.filter(t => t.score !== null && (t.score as number) >= 80)
   const reportNeedsAttn   = topics.filter(t => t.score !== null && (t.score as number) < 60)
 
@@ -376,9 +469,7 @@ export default function DashboardPage() {
   const reportRecs: string[] = []
   if (inProgress.length > 0)
     reportRecs.push(
-      t.dash_rec_finish_topic
-        .replace('{topic}', inProgress[0].name)
-        .replace('{percent}', String(inProgress[0].completion))
+      t.dash_rec_finish_topic.replace('{topic}', inProgress[0].name)
     )
   if (reportNeedsAttn.length > 0)
     reportRecs.push(
@@ -440,7 +531,7 @@ export default function DashboardPage() {
 
         {/* ── Quick stats row (always visible) ──────────────────────────────── */}
         <div className="grid gap-4 mb-8 grid-cols-2 sm:grid-cols-3">
-          <StatCard label={t.dash_stat_topics_completed} value={`${completedCount}/${primaryData.topics.length}`} />
+          <StatCard label={t.dash_stat_topics_completed} value={`${completedCount}/${topics.length}`} />
           <StatCard label={t.dash_stat_average_score}    value={`${avgScore}%`} />
           <StatCard label={t.dash_stat_study_time_week} value="0h 0min" />
         </div>
@@ -490,7 +581,7 @@ export default function DashboardPage() {
                   : inProgress.map(topic => (
                     <div key={topic.slug} className="flex items-center justify-between text-sm py-2 px-3 rounded-lg gap-2" style={{ backgroundColor: '#eff6ff', color: '#374151' }}>
                       <span className="truncate">{topic.name}</span>
-                      <span className="text-xs shrink-0" style={{ color: '#1e40af' }}>{topic.completion}%</span>
+                      <span className="text-xs shrink-0" style={{ color: '#1e40af' }}>{topic.score}%</span>
                     </div>
                   ))
                 }
@@ -528,84 +619,79 @@ export default function DashboardPage() {
           panels={panels}
           onToggle={togglePanel}
         >
-          <div className="pt-5 rounded-xl border overflow-hidden" style={{ borderColor: '#f3f4f6' }}>
-            {/* Table header — desktop only */}
-            <div
-              className="hidden sm:grid px-4 py-2.5 border-b"
-              style={{ borderColor: '#f3f4f6', gridTemplateColumns: '2fr 1.5fr 110px 80px 70px', gap: '12px', backgroundColor: '#f9fafb' }}
-            >
-              {[t.dash_table_topic, t.dash_table_activity, t.dash_table_score, t.dash_table_date, ''].map((h, i) => (
-                <span key={i} className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#9ca3af' }}>
-                  {h}
-                </span>
-              ))}
-            </div>
-
-            {scores.map((entry, i) => (
-              <div
-                key={i}
-                className="px-4 py-3.5 bg-white"
-                style={i < scores.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : {}}
-              >
-                {/* Desktop row */}
-                <div
-                  className="hidden sm:grid items-center"
-                  style={{ gridTemplateColumns: '2fr 1.5fr 110px 80px 70px', gap: '12px' }}
-                >
-                  <p className="text-sm font-semibold truncate" style={{ color: '#0f1f3d' }}>{entry.topic}</p>
-                  <p className="text-xs text-gray-500 truncate">{activityTypeLabel(entry.activityType)}</p>
-                  <div>
-                    {entry.score !== null ? (
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: scoreColor(entry.score) }} />
-                        <span className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{entry.score}%</span>
-                      </div>
-                    ) : (
-                      <span className="text-xs text-gray-400">{t.dash_not_attempted}</span>
-                    )}
-                  </div>
-                  <p className="text-xs text-gray-400">{entry.date ? formatDate(entry.date) : '—'}</p>
-                  <div>
-                    {entry.score !== null && (
-                      <Link
-                        href={activeGrade !== null ? `/grade/${activeGrade}/${entry.slug}` : '/select-grade'}
-                        className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
-                        style={{ backgroundColor: '#f3f4f6', color: '#374151' }}
-                      >
-                        {t.dash_retry}
-                      </Link>
-                    )}
-                  </div>
-                </div>
-
-                {/* Mobile card */}
-                <div className="sm:hidden flex items-center justify-between gap-3">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{entry.topic}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{activityTypeLabel(entry.activityType)}{entry.date ? ` · ${formatDate(entry.date)}` : ''}</p>
-                  </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    {entry.score !== null ? (
-                      <>
-                        <div className="flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full" style={{ backgroundColor: scoreColor(entry.score) }} />
-                          <span className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{entry.score}%</span>
-                        </div>
+          <div className="pt-5">
+            {scoreGroups.length === 0 ? (
+              <div className="py-8 text-center">
+                <p className="text-sm text-gray-500">{t.dash_scores_none_yet}</p>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-4">
+                {scoreGroups.map(group => (
+                  <div key={group.slug} className="rounded-xl border overflow-hidden" style={{ borderColor: '#f3f4f6' }}>
+                    <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3" style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #f3f4f6' }}>
+                      <p className="text-sm font-semibold truncate" style={{ color: '#0f1f3d' }}>{group.topic}</p>
+                      <div className="flex items-center gap-3 shrink-0">
                         <Link
-                          href={activeGrade !== null ? `/grade/${activeGrade}/${entry.slug}` : '/select-grade'}
-                          className="text-xs font-semibold px-3 py-1.5 rounded-lg"
+                          href={activeGrade !== null ? `/grade/${activeGrade}/${group.slug}` : '/select-grade'}
+                          className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
                           style={{ backgroundColor: '#f3f4f6', color: '#374151' }}
                         >
                           {t.dash_retry}
                         </Link>
-                      </>
-                    ) : (
-                      <span className="text-xs text-gray-400">{t.dash_not_attempted}</span>
+                        {resetConfirmSlug !== group.slug && (
+                          <button
+                            onClick={() => setResetConfirmSlug(group.slug)}
+                            className="text-xs font-semibold text-gray-400 hover:text-red-600 transition-colors"
+                          >
+                            {t.dash_reset_attempts}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    {resetConfirmSlug === group.slug && (
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-3 px-4 py-3" style={{ backgroundColor: '#fff7f7', borderBottom: '1px solid #fecaca' }}>
+                        <p className="text-xs text-gray-600 flex-1">{t.dash_reset_attempts_confirm_body.replace('{topic}', group.topic)}</p>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <button
+                            onClick={() => setResetConfirmSlug(null)}
+                            className="text-xs font-semibold px-3 py-1.5 rounded-lg"
+                            style={{ backgroundColor: '#f3f4f6', color: '#374151' }}
+                          >
+                            {t.dash_reset_attempts_cancel}
+                          </button>
+                          <button
+                            onClick={() => handleResetAttempts(group.slug)}
+                            disabled={resetting}
+                            className="text-xs font-semibold px-3 py-1.5 rounded-lg text-white disabled:opacity-60 transition-colors"
+                            style={{ backgroundColor: '#dc2626' }}
+                          >
+                            {t.dash_reset_attempts_confirm_button}
+                          </button>
+                        </div>
+                      </div>
                     )}
+
+                    {group.entries.map((entry, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center justify-between gap-3 px-4 py-3 bg-white"
+                        style={i < group.entries.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : {}}
+                      >
+                        <p className="text-sm text-gray-600">{entry.activityLabel}</p>
+                        <div className="flex items-center gap-3 shrink-0">
+                          <div className="flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: scoreColor(entry.score) }} />
+                            <span className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{entry.score}%</span>
+                          </div>
+                          <p className="text-xs text-gray-400 w-16 text-right">{entry.date ? formatDate(entry.date) : '—'}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         </CollapsiblePanel>
 

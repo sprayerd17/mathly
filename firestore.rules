@@ -80,6 +80,10 @@ service cloud.firestore {
     // append-only: nothing here gates access or billing, so a failed write
     // just means that one attempt isn't reflected on the dashboard — never
     // worth blocking the student's practice session over.
+    // Deletes are allowed (own-uid only) for the dashboard's explicit
+    // "reset all attempts for this topic" action — a deliberate, separate
+    // action from the in-session "Try again" reset, which never touches
+    // Firestore at all.
     match /users/{userId}/activityLog/{activityId} {
       allow read: if request.auth != null && request.auth.uid == userId;
       allow create: if request.auth != null && request.auth.uid == userId
@@ -95,7 +99,27 @@ service cloud.firestore {
                     && request.resource.data.total is number && request.resource.data.total > 0
                     && request.resource.data.score <= request.resource.data.total
                     && request.resource.data.completedAt is timestamp;
-      allow update, delete: if false;
+      allow update: if false;
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // "Mark as Studied" toggle for the Study Guide tab — one doc per
+    // child+grade+topic (deterministic id, so re-marking just overwrites
+    // rather than piling up documents). Separate from activityLog, which is
+    // append-only attempt history for practice, since this is a single
+    // current-state toggle instead.
+    match /users/{userId}/studyProgress/{docId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.keys().hasOnly(['childIndex', 'grade', 'topicSlug', 'studied', 'markedAt'])
+                    && request.resource.data.childIndex is int && request.resource.data.childIndex >= 0
+                    && request.resource.data.grade is number
+                    && request.resource.data.grade >= 4 && request.resource.data.grade <= 12
+                    && request.resource.data.topicSlug is string
+                    && request.resource.data.topicSlug.size() > 0 && request.resource.data.topicSlug.size() <= 100
+                    && request.resource.data.studied is bool
+                    && request.resource.data.markedAt is timestamp;
+      allow delete: if request.auth != null && request.auth.uid == userId;
     }
 
     // One record per successful referral attachment, written only by

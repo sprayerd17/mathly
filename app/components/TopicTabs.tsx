@@ -7,6 +7,7 @@ import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion,
 import AIAssistant from '@/app/components/AIAssistant'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { logActivityCompletion } from '@/src/lib/activity-log'
+import { getTopicStudied, setTopicStudied } from '@/src/lib/study-progress'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -941,8 +942,33 @@ function OpenPractice({
 
 // ─── Real study guide renderers ───────────────────────────────────────────────
 
-function RealStudyGuide({ data }: { data: TopicData }) {
+function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug: string; grade: number }) {
   const t = useTranslations()
+  const { user } = useAuth()
+  const [studied, setStudied] = useState(false)
+  const [saving, setSaving] = useState(false)
+
+  useEffect(() => {
+    if (!user) return
+    const childIndex = Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1)
+    let cancelled = false
+    getTopicStudied({ uid: user.uid, childIndex, grade, topicSlug })
+      .then(result => { if (!cancelled) setStudied(result) })
+      .catch(err => console.error('[study-progress] read failed', err))
+    return () => { cancelled = true }
+  }, [user, grade, topicSlug])
+
+  function handleToggle() {
+    if (!user || saving) return
+    const childIndex = Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1)
+    const next = !studied
+    setSaving(true)
+    setStudied(next)
+    setTopicStudied({ uid: user.uid, childIndex, grade, topicSlug, studied: next })
+      .catch(err => { console.error('[study-progress] write failed', err); setStudied(!next) })
+      .finally(() => setSaving(false))
+  }
+
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
       {data.sections.map((section: Section, i: number) => (
@@ -1007,6 +1033,23 @@ function RealStudyGuide({ data }: { data: TopicData }) {
           )}
         </div>
       ))}
+
+      {user && (
+        <div>
+          <button
+            onClick={handleToggle}
+            disabled={saving}
+            className="px-6 py-3 rounded-xl text-sm font-semibold transition-colors hover:opacity-90 disabled:opacity-60"
+            style={
+              studied
+                ? { backgroundColor: '#f0fdf4', color: '#16a34a', border: '1.5px solid #bbf7d0' }
+                : { backgroundColor: '#1e40af', color: '#ffffff' }
+            }
+          >
+            {studied ? `✓ ${t.topic_studied_badge}` : t.topic_mark_as_studied}
+          </button>
+        </div>
+      )}
     </div>
   )
 }
@@ -1338,7 +1381,7 @@ export default function TopicTabs({ topicName, topicSlug, grade, isLocked, study
       {/* Tab panels */}
       {activeTab === 'Study Guide' && (
         studyGuideData
-          ? <RealStudyGuide data={studyGuideData} />
+          ? <RealStudyGuide data={studyGuideData} topicSlug={topicSlug} grade={Number(grade)} />
           : <StudyGuide topicName={topicName} />
       )}
       {activeTab === 'Practice' && (
