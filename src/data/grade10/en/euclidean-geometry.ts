@@ -108,7 +108,137 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — INVESTIGATING PROPERTIES OF SPECIAL QUADRILATERALS
+    // SECTION 2 — INVESTIGATING THE MIDPOINT THEOREM
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'midpoint-theorem',
+      title: 'Investigating the Midpoint Theorem',
+      icon: '△',
+      explanation:
+        `<p style="margin-bottom:16px;">The <strong>midpoint</strong> of a line segment is the point exactly halfway between its two endpoints. If we join the midpoints of two sides of a triangle, the segment we draw — called the ${or('midsegment')} — has a striking relationship with the third side. We ${or('investigate')} this relationship through construction and measurement, leading to the <strong>Midpoint Theorem</strong>.</p>` +
+        `<p style="margin-bottom:16px;">In triangle ABC, if ${bl('D')} and ${bl('E')} are the midpoints of ${bl('AB')} and ${bl('AC')}, then ${gr('DE ∥ BC')} AND ${gr('DE = ½BC')}. Here we only investigate and apply the theorem through examples and measurement — the full logical proof (using similar triangles) is covered in Grade 11.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('given midpoints and sides')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('investigation step')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('confirmed relationship')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">How to investigate the Midpoint Theorem</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Draw any triangle ${bl('ABC')} — any shape or size will work.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Use a ruler to measure ${bl('AB')} and ${bl('AC')}, and mark the midpoints ${bl('D')} (on AB) and ${bl('E')} (on AC).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Join ${bl('D')} to ${bl('E')} with a straight line — this segment is called the ${or('midsegment')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">Measure ${gr('DE')} and ${gr('BC')} with a ruler, and check with a protractor (or a set square) that DE and BC point in the same direction. You will find ${gr('DE ∥ BC')} and ${gr('DE is exactly half the length of BC')} — every time, for every triangle shape.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">The Midpoint Theorem</p>` +
+        `<p style="margin:0;color:#1e3a8a;">If ${bl('D')} and ${bl('E')} are the midpoints of sides ${bl('AB')} and ${bl('AC')} of triangle ABC, then ${gr('DE ∥ BC')} and ${gr('DE = ½BC')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Two facts, not one</p>` +
+        `<p style="margin:0;color:#7c2d12;">The Midpoint Theorem always gives you TWO facts at once — a ${or('parallel')} relationship AND a ${or('length')} relationship. Once you know two points are midpoints, both facts follow immediately, with no extra measuring needed.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Triangle ABC has vertices A(2, 6), B(0, 0) and C(8, 0) on the Cartesian plane. D is the midpoint of AB and E is the midpoint of AC. Find the coordinates of D and E, then investigate whether DE ∥ BC and DE = ½BC.',
+          answer: `Investigation confirms ${gr('DE ∥ BC')} and ${gr('DE = ½BC')}`,
+          steps: [
+            `Find ${bl('D')}, the midpoint of AB: D = ((2+0)/2, (6+0)/2) = ${bl('(1, 3)')}`,
+            `Find ${bl('E')}, the midpoint of AC: E = ((2+8)/2, (6+0)/2) = ${bl('(5, 3)')}`,
+            `${or('Check for parallel:')} D and E both have y-coordinate 3, so DE is a horizontal line. B and C both have y-coordinate 0, so BC is also horizontal. Two horizontal lines point in the same direction, so ${gr('DE ∥ BC')} ✓`,
+            `${or('Check the length:')} DE = 5 − 1 = 4 units. BC = 8 − 0 = 8 units. Since 4 = ½ × 8, ${gr('DE = ½BC')} ✓`,
+            `<strong>Conclusion:</strong> This numerical investigation confirms the Midpoint Theorem: ${gr('DE ∥ BC')} and ${gr('DE = ½BC')}.`,
+          ],
+        },
+        {
+          question: 'In triangle KLM, P and Q are the midpoints of KL and KM respectively. If LM = 22 cm, find the length of PQ, and state which sides are parallel.',
+          answer: `PQ = ${or('11')} cm, and ${or('PQ ∥ LM')}`,
+          steps: [
+            `${bl('P')} and ${bl('Q')} are the midpoints of ${bl('KL')} and ${bl('KM')}, so the Midpoint Theorem applies directly.`,
+            `By the Midpoint Theorem: ${or('PQ ∥ LM')} and ${or('PQ = ½LM')}`,
+            `Substitute: ${or('PQ = ½ × 22 = 11')} cm`,
+            `<strong>Answer:</strong> PQ = ${or('11')} cm, and PQ is parallel to LM ✓`,
+          ],
+        },
+        {
+          question: 'In triangle XYZ, M and N are the midpoints of XY and XZ. MN = 6.5 cm. (a) Find YZ. (b) Explain why MN must be parallel to YZ, without measuring anything.',
+          answer: `(a) YZ = ${or('13')} cm (b) ${gr('MN ∥ YZ')} follows automatically from the Midpoint Theorem`,
+          steps: [
+            `(a) By the Midpoint Theorem, ${or('MN = ½YZ')}, so ${or('YZ = 2 × MN = 2 × 6.5 = 13')} cm.`,
+            `(b) ${bl('M')} and ${bl('N')} are defined as the exact midpoints of two sides of the triangle. The Midpoint Theorem guarantees that the segment joining any two such midpoints is parallel to the third side — this follows automatically from the midpoint condition, so ${gr('MN ∥ YZ')} without needing to measure or check anything further.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'In triangle DEF, G and H are the midpoints of DE and DF respectively. EF = 20 cm. Use the Midpoint Theorem to find the length of GH.',
+          checkMode: 'auto',
+          correctAnswer: '10cm',
+          correctAnswers: ['10cm', '10 cm', '10'],
+          answer: '10 cm',
+          explanation: 'By the Midpoint Theorem, GH = ½ × EF = ½ × 20 = 10 cm (and GH ∥ EF).',
+          diagramSvg: '<svg viewBox="0 0 210 175" xmlns="http://www.w3.org/2000/svg"><polygon points="105,25 25,150 185,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="87.5" x2="145" y2="87.5" stroke="#2563eb" stroke-width="2.5"/><circle cx="65" cy="87.5" r="3" fill="#2563eb"/><circle cx="145" cy="87.5" r="3" fill="#2563eb"/><text x="105" y="80" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">?</text><text x="105" y="167" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">20 cm</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'In triangle PQR, S and T are the midpoints of PQ and PR respectively. ST = 7.5 cm. Find the length of QR.',
+          checkMode: 'auto',
+          correctAnswer: '15cm',
+          correctAnswers: ['15cm', '15 cm', '15'],
+          answer: '15 cm',
+          explanation: 'By the Midpoint Theorem, QR = 2 × ST = 2 × 7.5 = 15 cm.',
+          diagramSvg: '<svg viewBox="0 0 210 175" xmlns="http://www.w3.org/2000/svg"><polygon points="105,25 25,150 185,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="87.5" x2="145" y2="87.5" stroke="#2563eb" stroke-width="2.5"/><circle cx="65" cy="87.5" r="3" fill="#2563eb"/><circle cx="145" cy="87.5" r="3" fill="#2563eb"/><text x="105" y="80" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">7.5 cm</text><text x="105" y="167" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'In triangle ABC, M and N are the midpoints of AB and AC. Explain why MN must be parallel to BC, without measuring anything.',
+          answer: 'Because M and N are defined as the exact midpoints of two sides of the triangle, the Midpoint Theorem guarantees that the segment joining them is parallel to the third side — this follows automatically from the midpoint condition itself, so no measurement is needed to confirm it.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'In triangle XYZ, D, E and F are the midpoints of XY, XZ and YZ respectively. The perimeter of triangle XYZ is 54 cm. Find the perimeter of triangle DEF (formed by joining the three midpoints), and explain your reasoning.',
+          answer: 'Applying the Midpoint Theorem three times (once for each pair of midpoints) shows that each side of triangle DEF is exactly half the length of the corresponding side of triangle XYZ (DE = ½YZ, DF = ½XZ, EF = ½XY), so the perimeter of DEF is half the perimeter of XYZ: ½ × 54 = 27 cm.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video investigating the Midpoint Theorem by constructing a triangle, marking the midpoints of two sides, and measuring the midsegment to confirm it is parallel to and half the length of the third side" />',
+
+      diagramPlaceholder:
+        'Triangle ABC with D and E marked as the midpoints of AB and AC, the midsegment DE drawn in blue with tick marks showing AD = DB and AE = EC, and the relationship DE ∥ BC, DE = ½BC labelled in green',
+      diagramSvg:
+        '<svg viewBox="0 0 210 195" xmlns="http://www.w3.org/2000/svg"><polygon points="105,25 25,150 185,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="87.5" x2="145" y2="87.5" stroke="#2563eb" stroke-width="2.5"/><circle cx="65" cy="87.5" r="3.5" fill="#2563eb"/><circle cx="145" cy="87.5" r="3.5" fill="#2563eb"/><line x1="80" y1="53" x2="90.1" y2="59.5" stroke="#ea580c" stroke-width="2"/><line x1="40" y1="115.5" x2="50.1" y2="122" stroke="#ea580c" stroke-width="2"/><line x1="120" y1="59.5" x2="130.1" y2="53" stroke="#ea580c" stroke-width="2"/><line x1="160" y1="122" x2="170.1" y2="115.5" stroke="#ea580c" stroke-width="2"/><text x="105" y="16" font-size="13" fill="#374151" font-weight="700" text-anchor="middle">A</text><text x="10" y="158" font-size="13" fill="#374151" font-weight="700">B</text><text x="190" y="158" font-size="13" fill="#374151" font-weight="700">C</text><text x="47" y="79" font-size="12" fill="#2563eb" font-weight="700">D</text><text x="150" y="79" font-size="12" fill="#2563eb" font-weight="700">E</text><text x="105" y="99" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">DE</text><text x="105" y="185" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">DE ∥ BC and DE = ½BC</text></svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — INVESTIGATING PROPERTIES OF SPECIAL QUADRILATERALS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'properties-special-quadrilaterals',
@@ -211,7 +341,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — ALTERNATIVE DEFINITIONS OF POLYGONS
+    // SECTION 4 — ALTERNATIVE DEFINITIONS OF POLYGONS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'alternative-definitions-polygons',
@@ -296,7 +426,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — PROVING GEOMETRIC CONJECTURES AND DISPROVING FALSE ONES
+    // SECTION 5 — PROVING GEOMETRIC CONJECTURES AND DISPROVING FALSE ONES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'proving-disproving-conjectures',

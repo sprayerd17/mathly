@@ -678,6 +678,177 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to find the range, Q1, Q2, Q3 and interquartile range from an ordered data set, and explaining the difference between range and IQR" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 8 — FIVE NUMBER SUMMARY AND BOX-AND-WHISKER DIAGRAMS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'five-number-summary-box-whisker',
+      title: 'Five Number Summary and Box-and-Whisker Diagrams',
+      icon: '📦',
+      explanation:
+        `<p style="margin-bottom:16px;">In the previous section we learnt how to find ${bl('Q1')}, the median and ${bl('Q3')} from ordered data. Put together with the ${bl('minimum')} and ${bl('maximum')}, these five values form the <strong>five number summary</strong>. A <strong>box-and-whisker diagram</strong> is a way of drawing this summary on a scale, so the spread and position of the data can be seen at a glance — a box from ${or('Q1')} to ${or('Q3')} with a line at the ${gr('median')}, and 'whiskers' stretching out to the ${bl('minimum')} and ${bl('maximum')}.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('minimum / maximum')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('Q1 / Q3 (the box)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('median')}</span>` +
+        `</div>` +
+
+        // ── The five values ─────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The five number summary</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">1. Minimum</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The smallest value once the data is ordered.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">2. Q1 (Lower Quartile)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The median of the lower half of the data (values below the median).</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">3. Median (Q2)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The middle value of the whole ordered data set.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">4. Q3 (Upper Quartile)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The median of the upper half of the data (values above the median).</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">5. Maximum</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The largest value once the data is ordered.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Construction steps ───────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Steps to draw a box-and-whisker diagram</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Find the five number summary</strong> — order the data, then find the ${bl('minimum')}, ${or('Q1')}, ${gr('median')}, ${or('Q3')} and ${bl('maximum')} using the method from the previous section.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Draw a scale</strong> — draw a number line (horizontal or vertical) that covers the full range of the data, from at or below the ${bl('minimum')} to at or above the ${bl('maximum')}, with evenly spaced markings.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Draw the box</strong> — draw a rectangle (the box) from ${or('Q1')} to ${or('Q3')} above the scale. The width of this box is the interquartile range.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Mark the median</strong> — draw a vertical line inside the box at the ${gr('median')}, splitting the box in two.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">5</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Draw the whiskers</strong> — draw a straight line from each side of the box out to the ${bl('minimum')} and ${bl('maximum')}. These lines are the whiskers.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">The box width is the IQR</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Because the box stretches from ${or('Q1')} to ${or('Q3')}, its width on the scale is exactly the interquartile range (IQR) from the previous section. A wide box means the middle 50% of the data is spread out; a narrow box means it is tightly clustered.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Nine learners score the following marks out of 40 in a class quiz: 10, 14, 16, 18, 22, 24, 26, 30, 34. Find the five number summary.',
+          answer: `${bl('Min = 10')} &nbsp;|&nbsp; ${or('Q1 = 15')} &nbsp;|&nbsp; ${gr('Median = 22')} &nbsp;|&nbsp; ${or('Q3 = 28')} &nbsp;|&nbsp; ${bl('Max = 34')}`,
+          steps: [
+            `The data is already in ascending order: 10, 14, 16, 18, 22, 24, 26, 30, 34. There are 9 values.`,
+            `${bl('Minimum')} = ${bl('10')} (first value). &nbsp; ${bl('Maximum')} = ${bl('34')} (last value).`,
+            `${gr('Median (Q2)')} = the middle (5th) value of 9 = ${gr('22')}.`,
+            `${or('Lower half')} (values below the median): 10, 14, 16, 18. Q1 = median of this half = (14 + 16) ÷ 2 = ${or('15')}.`,
+            `${or('Upper half')} (values above the median): 24, 26, 30, 34. Q3 = median of this half = (26 + 30) ÷ 2 = ${or('28')}.`,
+            `<strong>Five number summary:</strong> ${bl('Min = 10')}, ${or('Q1 = 15')}, ${gr('Median = 22')}, ${or('Q3 = 28')}, ${bl('Max = 34')}`,
+          ],
+        },
+        {
+          question: 'Use the five number summary from Example 1 (Min = 10, Q1 = 15, Median = 22, Q3 = 28, Max = 34) to construct a box-and-whisker diagram, step by step.',
+          answer: 'The box runs from 15 to 28 with a median line at 22, and whiskers stretch from 15 down to 10 and from 28 up to 34 — see the diagram below.',
+          steps: [
+            `<strong>Step 1 — draw a scale:</strong> draw a number line from below the ${bl('minimum')} to above the ${bl('maximum')}, for example 0 to 40, with even spacing.`,
+            `<strong>Step 2 — mark the five values:</strong> locate ${bl('10')}, ${or('15')}, ${gr('22')}, ${or('28')} and ${bl('34')} on the scale.`,
+            `<strong>Step 3 — draw the box:</strong> draw a rectangle from ${or('Q1 = 15')} to ${or('Q3 = 28')} above the scale — this box shows the middle 50% of the marks.`,
+            `<strong>Step 4 — mark the median:</strong> draw a vertical line inside the box at the ${gr('median = 22')}.`,
+            `<strong>Step 5 — draw the whiskers:</strong> draw a line from the left of the box (${or('15')}) to the ${bl('minimum (10)')}, and a line from the right of the box (${or('28')}) to the ${bl('maximum (34)')}.`,
+            `<strong>Completed diagram:</strong> the box-and-whisker diagram below shows all five values in their correct positions ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'A data set has five number summary Min = 2, Q1 = 6, Median = 9, Q3 = 13, Max = 18. What is the interquartile range shown by the width of the box?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7', 'IQR = 7'],
+          explanation: 'IQR = Q3 − Q1 = 13 − 6 = 7 ✓',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'Find the five number summary of this ordered data set, then sketch a box-and-whisker diagram from it: 6, 9, 11, 14, 17, 20, 23, 26, 29.',
+          checkMode: 'self',
+          answer: 'Min = 6, Q1 = 10, Median = 17, Q3 = 24.5, Max = 29. The box runs from 10 to 24.5 with a median line at 17, and whiskers extend from 10 down to 6 and from 24.5 up to 29.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'This data set is not yet in order: 18, 7, 12, 25, 9, 30, 15, 21, 4. Order it, find the five number summary, and describe how you would draw the box-and-whisker diagram.',
+          checkMode: 'self',
+          answer: 'Ordered: 4, 7, 9, 12, 15, 18, 21, 25, 30. Min = 4, Q1 = 8, Median = 15, Q3 = 23, Max = 30. Draw a scale from below 4 to above 30, draw a box from 8 to 23 with a line at 15, then whiskers from 8 down to 4 and from 23 up to 30.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'The box-and-whisker diagram below shows the times (in minutes) taken by 9 runners to finish a fun run. Read off the median time.',
+          checkMode: 'auto',
+          correctAnswer: '27',
+          correctAnswers: ['27', '27 minutes'],
+          explanation: 'The line inside the box is drawn at the median, which is at 27 on the scale ✓',
+          diagramSvg:
+            '<svg viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg"><text x="230" y="16" font-size="13" font-weight="700" fill="#0f1f3d" text-anchor="middle">Box-and-Whisker Diagram: Race Times (minutes)</text><line x1="40" y1="60" x2="135" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="287" y1="60" x2="420" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="40" y1="43" x2="40" y2="77" stroke="#0f1f3d" stroke-width="2"/><line x1="420" y1="43" x2="420" y2="77" stroke="#0f1f3d" stroke-width="2"/><rect x="135" y="43" width="152" height="34" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="211" y1="43" x2="211" y2="77" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="115" x2="420" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="40" y1="110" x2="40" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="135" y1="110" x2="135" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="211" y1="110" x2="211" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="287" y1="110" x2="287" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="420" y1="110" x2="420" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><text x="40" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">18</text><text x="135" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">23</text><text x="211" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">27</text><text x="287" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">31</text><text x="420" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">38</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Using the same box-and-whisker diagram of race times, what is the interquartile range (IQR)?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8', '8 minutes'],
+          explanation: 'IQR = Q3 − Q1 = 31 − 23 = 8 minutes ✓',
+          diagramSvg:
+            '<svg viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg"><text x="230" y="16" font-size="13" font-weight="700" fill="#0f1f3d" text-anchor="middle">Box-and-Whisker Diagram: Race Times (minutes)</text><line x1="40" y1="60" x2="135" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="287" y1="60" x2="420" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="40" y1="43" x2="40" y2="77" stroke="#0f1f3d" stroke-width="2"/><line x1="420" y1="43" x2="420" y2="77" stroke="#0f1f3d" stroke-width="2"/><rect x="135" y="43" width="152" height="34" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="211" y1="43" x2="211" y2="77" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="115" x2="420" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="40" y1="110" x2="40" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="135" y1="110" x2="135" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="211" y1="110" x2="211" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="287" y1="110" x2="287" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="420" y1="110" x2="420" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><text x="40" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">18</text><text x="135" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">23</text><text x="211" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">27</text><text x="287" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">31</text><text x="420" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">38</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A shop manager records the number of items sold by 9 sales assistants in a day: 14, 8, 22, 11, 19, 25, 9, 17, 30. Find the five number summary and describe the box-and-whisker diagram you would draw, marking Q1, the median and Q3 clearly.',
+          checkMode: 'self',
+          answer: 'Ordered: 8, 9, 11, 14, 17, 19, 22, 25, 30. Min = 8, Q1 = 10, Median = 17, Q3 = 23.5, Max = 30. Draw a scale from below 8 to above 30, a box from 10 to 23.5 with a median line at 17, and whiskers from 10 down to 8 and from 23.5 up to 30.',
+        },
+      ],
+
+      diagramSvg:
+        '<svg viewBox="0 0 460 155" xmlns="http://www.w3.org/2000/svg"><text x="230" y="16" font-size="13" font-weight="700" fill="#0f1f3d" text-anchor="middle">Box-and-Whisker Diagram: Quiz Marks (out of 40)</text><text x="40" y="33" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Min</text><text x="119.17" y="33" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Q1</text><text x="230" y="33" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Median</text><text x="325" y="33" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Q3</text><text x="420" y="33" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Max</text><line x1="40" y1="60" x2="119.17" y2="60" stroke="#2563eb" stroke-width="2.5"/><line x1="325" y1="60" x2="420" y2="60" stroke="#2563eb" stroke-width="2.5"/><line x1="40" y1="43" x2="40" y2="77" stroke="#2563eb" stroke-width="2.5"/><line x1="420" y1="43" x2="420" y2="77" stroke="#2563eb" stroke-width="2.5"/><rect x="119.17" y="43" width="205.83" height="34" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><line x1="230" y1="43" x2="230" y2="77" stroke="#16a34a" stroke-width="3"/><line x1="30" y1="115" x2="430" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="40" y1="110" x2="40" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="119.17" y1="110" x2="119.17" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="230" y1="110" x2="230" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="325" y1="110" x2="325" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="420" y1="110" x2="420" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><text x="40" y="138" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">10</text><text x="119.17" y="138" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">15</text><text x="230" y="138" font-size="13" font-weight="700" fill="#16a34a" text-anchor="middle">22</text><text x="325" y="138" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">28</text><text x="420" y="138" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">34</text><text x="230" y="151" font-size="10" fill="#64748b" text-anchor="middle">Marks out of 40</text></svg>',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to find the five number summary and draw a box-and-whisker diagram step by step from a small data set" />',
+    },
   ],
 
   // ═══════════════════════════════════════════════════════════════════════════

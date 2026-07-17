@@ -465,7 +465,167 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — NOMINAL AND EFFECTIVE INTEREST RATES
+    // SECTION 4 — COMPOUND AND SIMPLE GROWTH
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'compound-and-simple-growth',
+      title: 'Saamgestelde en Enkelvoudige Groei',
+      icon: '📈',
+      explanation:
+        `<p style="margin-bottom:16px;">In Graad 10 het jy twee groeiformules leer ken: <strong>enkelvoudige groei</strong>, ${or('A')} = ${bl('P')}(1 + ${gr('n')} × ${re('i')}), en <strong>saamgestelde groei</strong>, ${or('A')} = ${bl('P')}(1 + ${re('i')})<sup>${gr('n')}</sup>. In Graad 11 word dieselfde twee formules hersien en toegepas op moeiliker, meer realistiese probleme — <strong>huurkoop</strong>-ooreenkomste met ʼn deposito en maandelikse paaiemente, <strong>bevolkingsgroei</strong>, en <strong>beleggingsgroei</strong> — en word daar dikwels van jou verwag om vir ${bl('P')}, ${re('i')} of ${gr('n')} op te los, en nie net vir ${or('A')} nie.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('P — oorspronklike waarde')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('i — koers')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('n — jare')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('A — finale waarde')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die twee groeiformules (hersiening)</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;text-align:center;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:6px;font-size:0.95em;">Enkelvoudige groei</p>` +
+        `<p style="font-size:1.2em;font-weight:700;color:#374151;margin:0;">${or('A')} = ${bl('P')}(1 + ${gr('n')} × ${re('i')})</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;text-align:center;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:6px;font-size:0.95em;">Saamgestelde groei</p>` +
+        `<p style="font-size:1.2em;font-weight:700;color:#374151;margin:0;">${or('A')} = ${bl('P')}(1 + ${re('i')})<sup style="font-size:0.85em;">${gr('n')}</sup></p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Werklike groeikontekste</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Huurkoop</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">ʼn Deposito word eers van die kontantprys afgetrek. Enkelvoudige groei word dan op die <strong>oorblywende balans</strong> toegepas om die totaal van die paaiemente te vind. Deel daardie totaal deur die aantal maande om die maandelikse paaiement te vind.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Bevolkingsgroei</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">ʼn Groeiende bevolking groei presies soos saamgestelde rente — elke jaar se groei word bereken op die <strong>nuwe, groter</strong> bevolking, nie op die oorspronklike bevolking nie.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:6px;">Beleggingsgroei</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Eenmalige beleggings groei onder saamgestelde groei. Graad 11-probleme gee dikwels die <strong>teiken</strong>-toekomstige bedrag en vra jou om agteruit te werk om die hoofsom, koers, of tyd te vind wat benodig word om dit te bereik.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Oplos vir P, i of n</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Omdat ${gr('n')} ʼn eksponent in die saamgestelde formule is, beteken die oplos vir ${re('i')} gewoonlik dat albei kante gedeel word en dan die ${gr('n')}<sup>de</sup> wortel getrek word, terwyl die oplos vir ${bl('P')} bloot ʼn deling is. Om vir ${gr('n')} self op te los, benodig logaritmes, wat behandel word in die Nominale en Effektiewe Rentekoerse- en Gemengde Toepassings-afdelings.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Wasmasjien het ʼn kontantprys van R14 500. Naledi betaal ʼn 10%-deposito en betaal die balans, plus enkelvoudige rente teen 16% p.j., oor 3 jaar in gelyke maandelikse paaiemente terug. Bereken (a) haar deposito, (b) haar totale terugbetaling, en (c) haar maandelikse paaiement.',
+          answer: `${bl('Deposito = R1 450')}; ${or('Totale terugbetaling = R20 764')}; ${gr('Maandelikse paaiement = R536,50')}`,
+          steps: [
+            `${bl('Deposito:')} 10% × R14 500 = ${bl('R1 450')}.`,
+            `${bl('Balans verskuldig:')} R14 500 − ${bl('R1 450')} = ${bl('R13 050')}. Hierdie balans word die nuwe ${bl('P')} vir die enkelvoudige-groei-formule.`,
+            `Pas enkelvoudige groei op die balans toe: ${or('A')} = ${bl('P')}(1 + ${gr('n')} × ${re('i')}) = ${bl('13 050')}(1 + ${gr('3')} × ${re('0,16')}) = ${bl('13 050')}(1,48) = ${or('R19 314')}. Dit is die totaal wat sy op die balans terugbetaal.`,
+            `${or('Totale terugbetaling')} = deposito + balansterugbetaling = ${bl('R1 450')} + ${or('R19 314')} = ${or('R20 764')}.`,
+            `${gr('Maandelikse paaiement')} = ${or('R19 314')} ÷ (${gr('3')} × 12 maande) = R19 314 ÷ 36 = ${gr('R536,50')}.`,
+          ],
+        },
+        {
+          question: 'ʼn Dorp se bevolking het van 42 000 tot 51 660 oor 7 jaar gegroei, met die aanname van saamgestelde groei. Bereken die jaarlikse bevolkingsgroeikoers.',
+          answer: `${re('i ≈ 3,00% p.j.')}`,
+          steps: [
+            `Identifiseer ${bl('P = 42 000')}, ${or('A = 51 660')}, ${gr('n = 7')}.`,
+            `Vervang in ${or('A')} = ${bl('P')}(1 + ${re('i')})<sup>${gr('n')}</sup>: ${or('51 660')} = ${bl('42 000')}(1 + ${re('i')})<sup>${gr('7')}</sup>.`,
+            `Deel albei kante deur ${bl('42 000')}: (1 + ${re('i')})<sup>${gr('7')}</sup> = 1,23.`,
+            `Trek die 7de wortel van albei kante: 1 + ${re('i')} = 1,23<sup>1/7</sup> = 1,0300.`,
+            `Los op vir ${re('i')}: ${re('i')} = 1,0300 − 1 = 0,0300 = ${re('3,00% p.j.')}.`,
+          ],
+        },
+        {
+          question: 'Thabo wil oor 6 jaar R250 000 beskikbaar hê. As hy vandag ʼn enkelbedrag teen 9,5% p.j. jaarliks saamgestel belê, hoeveel moet hy nou belê?',
+          answer: `${bl('P ≈ R145 029,15')}`,
+          steps: [
+            `Identifiseer ${or('A = R250 000')}, ${re('i = 0,095')}, ${gr('n = 6')}. Hierdie keer los ons vir ${bl('P')} op, nie vir ${or('A')} nie.`,
+            `Vervang in ${or('A')} = ${bl('P')}(1 + ${re('i')})<sup>${gr('n')}</sup>: ${or('250 000')} = ${bl('P')}(1,095)<sup>${gr('6')}</sup>.`,
+            `Bereken die groeifaktor: (1,095)<sup>6</sup> ≈ 1,723791.`,
+            `Los op vir ${bl('P')}: ${bl('P')} = ${or('250 000')} ÷ 1,723791 ≈ ${bl('R145 029,15')}.`,
+            `Toets: ${bl('R145 029,15')} × (1,095)<sup>6</sup> ≈ ${or('R250 000')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'Kagiso belê R18 000 teen 9% p.j. saamgestelde rente vir 5 jaar. Bereken die finale bedrag, afgerond na die naaste rand.',
+          answer: 'R27 695',
+          checkMode: 'auto',
+          correctAnswer: '27695',
+          correctAnswers: ['R27695', 'R27 695', '27695', '27 695'],
+          explanation: 'A = P(1 + i)ⁿ\nA = 18 000(1,09)⁵\nA = 18 000 × 1,538624 ≈ R27 695 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Yskas het ʼn kontantprys van R22 000. Zanele betaal ʼn 12%-deposito en betaal die balans, plus enkelvoudige rente teen 14% p.j., oor 4 jaar in gelyke maandelikse paaiemente terug.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Bereken haar deposito (R).',
+              correctAnswer: '2640',
+              correctAnswers: ['R2640', 'R2 640', '2640', '2 640'],
+              explanation: 'Deposito = 12% × 22 000 = R2 640 ✓',
+            },
+            {
+              label: 'b) Bereken haar totale terugbetaling (deposito plus paaiemente), tot die naaste sent.',
+              correctAnswer: '32841.60',
+              correctAnswers: ['R32841,60', 'R32 841,60', '32841,60', '32 841,60', 'R32842', 'R32 842', '32842'],
+              explanation: 'Balans = 22 000 − 2 640 = R19 360.\nBalansterugbetaling: A = 19 360(1 + 4 × 0,14) = 19 360(1,56) = R30 201,60.\nTotale terugbetaling = 2 640 + 30 201,60 = R32 841,60 ✓',
+            },
+            {
+              label: 'c) Bereken haar maandelikse paaiement (R).',
+              correctAnswer: '629.20',
+              correctAnswers: ['R629,20', 'R629,2', '629,20', '629,2'],
+              explanation: 'Maandelikse paaiement = R30 201,60 ÷ (4 × 12) = R30 201,60 ÷ 48 = R629,20 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Beantwoord die volgende groeiprobleme, wat elkeen vereis dat jy vir ʼn veranderlike anders as A oplos.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) ʼn Stad se bevolking het van 28 000 tot 34 000 oor 4 jaar gegroei as gevolg van saamgestelde groei. Bereken die jaarlikse groeikoers (%, tot 2 desimale plekke).',
+              correctAnswer: '4.97',
+              correctAnswers: ['4.97%', '4.97', '4,97%', '4,97', '5.0%', '5.0', '5,0%', '5,0', '5%'],
+              explanation: '34 000 = 28 000(1 + i)⁴\n(1 + i)⁴ = 1,214286\n1 + i = 1,214286^(1/4) ≈ 1,0497\ni ≈ 0,0497 = 4,97% p.j. ✓',
+            },
+            {
+              label: 'b) ʼn Belegger wil oor 5 jaar R200 000 beskikbaar hê. As sy nou ʼn enkelbedrag teen 10% p.j. jaarliks saamgestel belê, bereken die bedrag wat sy vandag moet belê (R, tot die naaste rand).',
+              correctAnswer: '124184',
+              correctAnswers: ['R124184', 'R124 184', '124184', '124 184'],
+              explanation: '200 000 = P(1,10)⁵\n(1,10)⁵ ≈ 1,61051\nP = 200 000 ÷ 1,61051 ≈ R124 184 ✓',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat enkelvoudige en saamgestelde groei van Graad 10 hersien en dit toepas op moeiliker Graad 11-probleme: huurkoop met deposito en paaiemente, oplos vir die groeikoers in ʼn bevolkingsprobleem, en oplos vir die hoofsom in ʼn beleggingsprobleem" />',
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Diagram benodig: ʼn tydlyn vir die huurkoop-uitgewerkte-voorbeeld wat die kontantprys, afgetrekte deposito, oorblywende balans, en die balans wat onder enkelvoudige rente groei tot gelyke maandelikse paaiemente, wys" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — NOMINAL AND EFFECTIVE INTEREST RATES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'nominal-effective-interest-rates',
@@ -630,7 +790,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — MIXED APPLICATIONS: DECAY AND COMPOUNDING COMBINED
+    // SECTION 6 — MIXED APPLICATIONS: DECAY AND COMPOUNDING COMBINED
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mixed-applications-decay-compounding',

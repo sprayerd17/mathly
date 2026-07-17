@@ -10,6 +10,27 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 
+// ─── CAPS-style two-column (Statement | Reason) proof table ──────────────────
+// rows: array of [statement, reason] pairs, rendered as an HTML table matching
+// the site's design system (used inside `explanation` strings for formal
+// theorem proofs, and inside rider `answer` strings for self-marked riders).
+const proofTable = (rows: [string, string][]) =>
+  `<div style="overflow-x:auto;margin-top:10px;margin-bottom:6px"><table style="border-collapse:collapse;font-size:0.92em;width:100%">` +
+  `<thead><tr>` +
+  `<th style="padding:8px 12px;background:#0f1f3d;color:#ffffff;border:1px solid #0f1f3d;font-weight:700;text-align:left">Statement</th>` +
+  `<th style="padding:8px 12px;background:#0f1f3d;color:#ffffff;border:1px solid #0f1f3d;font-weight:700;text-align:left">Reason</th>` +
+  `</tr></thead><tbody>` +
+  rows
+    .map(
+      ([s, r], i) =>
+        `<tr style="background:${i % 2 === 0 ? '#f8fafc' : '#ffffff'}">` +
+        `<td style="padding:8px 12px;border:1px solid #e2e8f0;color:#0f1f3d;">${s}</td>` +
+        `<td style="padding:8px 12px;border:1px solid #e2e8f0;color:#374151;">${r}</td>` +
+        `</tr>`
+    )
+    .join('') +
+  `</tbody></table></div>`
+
 export const topicData: TopicData = {
   title: 'Euclidean Geometry — Circles',
   grade: 11,
@@ -657,6 +678,363 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing a diameter with a third point on the circle forming a right angle, demonstrating the angle in a semicircle is always 90 degrees, then showing the converse where a 90 degree angle proves a chord is a diameter" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — THEOREMS: CYCLIC QUADRILATERALS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'cyclic-quadrilaterals',
+      title: 'Theorem — Cyclic Quadrilaterals',
+      icon: '▱',
+      explanation:
+        `<p style="margin-bottom:16px;">A ${bl('cyclic quadrilateral')} is a quadrilateral whose four vertices ${bl('all')} lie on the circumference of the same circle. Two theorems govern the angles inside one: (1) ${bl('opposite angles')} of a cyclic quadrilateral are always ${bl('supplementary')} (they add up to 180°), and (2) the ${gr('exterior angle')} of a cyclic quadrilateral (formed by extending one side) always equals the ${or('interior opposite angle')}. Both theorems have equally important converses, which let you prove that four points lie on a common circle (that they are ${bl('concyclic')}) without ever drawing that circle. This is one of the two most frequently examined circle riders in Grade 11 CAPS Paper 2, so make sure you can reproduce the proof below, not just quote the result.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('opposite angle pair 1')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('opposite angle pair 2')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('interior opposite angle')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('exterior angle')}</span>` +
+        `</div>` +
+
+        // ── Two theorems + converses ───────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The theorems and their converses</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Opposite Angles of a Cyclic Quadrilateral are Supplementary</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">In cyclic quadrilateral ABCD, ${bl('∠A + ∠C = 180°')} and ${re('∠B + ∠D = 180°')}. Each pair of opposite angles sums to 180°, because each is half of one of the two arcs that together make up the full 360° of the circle.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Converse — Supplementary Opposite Angles ⟹ Cyclic</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">If a quadrilateral has one pair of opposite angles that add up to 180°, then that quadrilateral is cyclic — its four vertices must lie on a single circle. Use this to prove points are concyclic.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Exterior Angle = Interior Opposite Angle</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">If a side of cyclic quadrilateral ABCD is produced (extended) beyond a vertex, the ${gr('exterior angle')} formed there equals the ${or('interior opposite angle')}. This is a direct corollary of Theorem 1, proved below.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">4</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Converse — Exterior Angle = Interior Opposite ⟹ Cyclic</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">If the exterior angle of a quadrilateral equals the interior opposite angle, the quadrilateral is cyclic. This is simply an alternative way of stating the converse of Theorem 1.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Formal proof of Theorem 1 ───────────────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:16px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Proof — Opposite Angles are Supplementary</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Given:</strong> Cyclic quadrilateral ABCD in a circle with centre O.</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Required to prove:</strong> ∠BAD + ∠BCD = 180°.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Construction:</strong> Join OB and OD.</p>` +
+        proofTable([
+          ['Reflex ∠BOD = 2∠BAD', '∠ at centre = 2 × ∠ at circumference (standing on arc BCD)'],
+          ['∠BOD = 2∠BCD', '∠ at centre = 2 × ∠ at circumference (standing on arc BAD)'],
+          ['Reflex ∠BOD + ∠BOD = 360°', '∠s round a point'],
+          ['∴ 2∠BAD + 2∠BCD = 360°', 'substitution from the two lines above'],
+          ['∴ ∠BAD + ∠BCD = 180°, i.e. ∠A + ∠C = 180°', 'dividing both sides by 2'],
+        ]) +
+        `<p style="margin:10px 0 0 0;color:#374151;font-size:14px;">Since the angles of any quadrilateral sum to 360°, ${bl('∠B + ∠D = 360° − (∠A + ∠C) = 360° − 180° = 180°')} follows immediately — so both pairs of opposite angles are supplementary.</p>` +
+        `</div>` +
+
+        // ── Corollary proof ──────────────────────────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Proof of the Corollary — Exterior Angle = Interior Opposite Angle</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Given:</strong> Cyclic quadrilateral ABCD with side AB produced to a point E.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Required to prove:</strong> ∠CBE = ∠ADC.</p>` +
+        proofTable([
+          ['∠ABC + ∠CBE = 180°', '∠s on a straight line AE'],
+          ['∠ABC + ∠ADC = 180°', 'opp ∠s of cyclic quad ABCD'],
+          ['∴ ∠CBE = ∠ADC', 'both equal 180° − ∠ABC'],
+        ]) +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Proving points are concyclic</p>` +
+        `<p style="margin:0;color:#1e3a8a;">To prove four points lie on one circle, show <strong>either</strong> that one pair of opposite angles of the quadrilateral they form is supplementary, <strong>or</strong> that an exterior angle equals the interior opposite angle. Either converse is sufficient — you only need to prove one.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question:
+            'In cyclic quadrilateral ABCD (shown), ∠ABC = 92° and ∠ADC = x. Find x.<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="55.43" y1="89.22" x2="170.78" y2="35.43" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="95" y2="197.94" stroke="#0f1f3d" stroke-width="2.5"/><line x1="95" y1="197.94" x2="55.43" y2="89.22" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 154.47,43.04 A 18,18 0 0 1 178.39,51.74" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M 111.91,191.78 A 18,18 0 0 1 88.84,181.03" fill="none" stroke="#ea580c" stroke-width="2"/><circle cx="55.43" cy="89.22" r="2.5" fill="#0f1f3d"/><text x="35.43" y="83.22" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="170.78" cy="35.43" r="2.5" fill="#0f1f3d"/><text x="176.78" y="25.43" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="224.57" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="232.57" y="156.78" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="95" cy="197.94" r="2.5" fill="#0f1f3d"/><text x="85" y="216.94" font-size="13" fill="#0f1f3d" font-weight="700">D</text><text x="159.15" y="71.39" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">92°</text><text x="109.37" y="171.14" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer: `x = ${or('88°')}`,
+          steps: [
+            `${bl('Opposite angles')} of a cyclic quadrilateral are supplementary: ${bl('∠ABC + ∠ADC = 180°')}.`,
+            `${bl('92°')} + x = 180°.`,
+            `x = 180° − 92° = ${or('88°')}.`,
+            `<strong>Answer:</strong> x = ${or('88°')}. ✓`,
+          ],
+        },
+        {
+          question: 'Cyclic quadrilateral WXYZ has ∠WZY = 118°. Side ZW is produced beyond W to a point V. Find the exterior angle ∠VWX.',
+          answer: `∠VWX = ${gr('118°')}`,
+          steps: [
+            `The ${gr('exterior angle')} at W (that is, ∠VWX) equals the ${or('interior opposite angle')}, which is ${or('∠WZY')}.`,
+            `${or('∠WZY')} = ${or('118°')}.`,
+            `Therefore ${gr('∠VWX')} = ${gr('118°')}.`,
+            `<strong>Answer:</strong> ∠VWX = ${gr('118°')}. ✓`,
+          ],
+        },
+        {
+          question: 'Quadrilateral PQRS has ∠P = 95° and ∠R = 85°. Zanele claims PQRS must be a cyclic quadrilateral. Is she correct?',
+          answer: 'Yes — by the converse of the theorem',
+          steps: [
+            `Check whether the given pair of opposite angles is supplementary: ${bl('∠P + ∠R = 95° + 85° = 180°')}.`,
+            `Since one pair of opposite angles sums to 180°, the converse applies: a quadrilateral with supplementary opposite angles is cyclic.`,
+            `<strong>Answer:</strong> Yes, Zanele is correct — PQRS is a cyclic quadrilateral, because ∠P and ∠R are supplementary. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ABCD is a cyclic quadrilateral with ∠A = 112°. Find ∠C.',
+          answer: '68°',
+          checkMode: 'auto',
+          correctAnswer: '68',
+          correctAnswers: ['68', '68°', '68 degrees'],
+          explanation: 'Opposite angles of a cyclic quadrilateral are supplementary: ∠A + ∠C = 180°.\n∠C = 180° − 112° = 68° ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Answer each of the following about cyclic quadrilateral EFGH.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) ∠F = 77°. Find ∠H.',
+              correctAnswer: '103',
+              correctAnswers: ['103', '103°', '103 degrees'],
+              explanation: 'Opposite angles of a cyclic quadrilateral are supplementary: ∠H = 180° − 77° = 103° ✓',
+            },
+            {
+              label: 'b) Side FG is produced beyond G. If the interior opposite angle ∠E = 99°, find the exterior angle at G.',
+              correctAnswer: '99',
+              correctAnswers: ['99', '99°', '99 degrees'],
+              explanation: 'Exterior angle of a cyclic quadrilateral = interior opposite angle = 99° ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question:
+            'In the diagram, O is the centre of the circle and ABCD is a cyclic quadrilateral. Chord AC subtends ∠AOC = 130° at the centre, on the same side as B. D lies on the minor arc AC. Find the size of ∠ABC and ∠ADC, showing your reasons.<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="55.43" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 117.45,128.21 A 24,24 0 0 0 162.55,128.21" fill="none" stroke="#dc2626" stroke-width="2"/><line x1="55.43" y1="150.78" x2="140" y2="30" stroke="#2563eb" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="140" y2="30" stroke="#2563eb" stroke-width="2.5"/><path d="M 131.4,42.29 A 15,15 0 0 0 148.6,42.29" fill="none" stroke="#2563eb" stroke-width="2"/><line x1="55.43" y1="150.78" x2="140" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="140" y2="210" stroke="#16a34a" stroke-width="2.5"/><path d="M 127.71,201.4 A 15,15 0 0 1 152.29,201.4" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="55.43" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="35.43" y="158.78" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="224.57" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="234.57" y="158.78" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="140" cy="30" r="2.5" fill="#0f1f3d"/><text x="146" y="20" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="228" font-size="13" fill="#0f1f3d" font-weight="700">D</text><text x="140" y="160" font-size="12" fill="#dc2626" font-weight="700" text-anchor="middle">130°</text><text x="140" y="60" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="140" y="180" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer:
+            `∠ABC = ${bl('65°')}, ∠ADC = ${gr('115°')}.` +
+            proofTable([
+              ['∠ABC = 130° ÷ 2 = 65°', '∠ at centre = 2 × ∠ at circumference (∠AOC and ∠ABC stand on the same arc — B on the major arc, same side as O)'],
+              ['∠ABC + ∠ADC = 180°', 'opp ∠s of cyclic quad ABCD'],
+              ['∠ADC = 180° − 65° = 115°', 'substitution'],
+            ]),
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing a cyclic quadrilateral ABCD with opposite angle pairs highlighted in blue and red, a side produced to show the exterior angle in green matching the interior opposite angle in orange, and the centre-angle construction used in the formal proof" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="55.43" y1="89.22" x2="170.78" y2="35.43" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="95" y2="197.94" stroke="#0f1f3d" stroke-width="2.5"/><line x1="95" y1="197.94" x2="55.43" y2="89.22" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="207.02" y2="18.53" stroke="#0f1f3d" stroke-width="2" stroke-dasharray="4,3"/><path d="M 71.74,81.61 A 18,18 0 0 1 61.59,106.13" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M 154.47,43.04 A 18,18 0 0 1 178.39,51.74" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 187.09,27.82 A 18,18 0 0 1 178.39,51.74" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="2,2"/><path d="M 216.96,134.47 A 18,18 0 0 1 207.66,156.94" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 111.91,191.78 A 18,18 0 0 1 88.84,181.03" fill="none" stroke="#dc2626" stroke-width="2"/><circle cx="55.43" cy="89.22" r="2.5" fill="#0f1f3d"/><text x="35.43" y="83.22" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="170.78" cy="35.43" r="2.5" fill="#0f1f3d"/><text x="176.78" y="25.43" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="224.57" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="232.57" y="156.78" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="95" cy="197.94" r="2.5" fill="#0f1f3d"/><text x="85" y="216.94" font-size="13" fill="#0f1f3d" font-weight="700">D</text><circle cx="207.02" cy="18.53" r="2.5" fill="#0f1f3d"/><text x="212.02" y="14.53" font-size="12" fill="#0f1f3d" font-weight="700">E</text><text x="86.83" y="106.24" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">100°</text><text x="159.15" y="71.39" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">75°</text><text x="202.74" y="51.06" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">105°</text><text x="193.15" y="141.77" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">80°</text><text x="109.37" y="171.14" font-size="12" fill="#dc2626" font-weight="700" text-anchor="middle">105°</text></svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 7 — THEOREM: TANGENT-CHORD (ALTERNATE SEGMENT) THEOREM
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'tangent-chord-theorem',
+      title: 'Theorem — The Tangent-Chord (Alternate Segment) Theorem',
+      icon: '↗',
+      explanation:
+        `<p style="margin-bottom:16px;">When a ${gr('tangent')} touches a circle at a point T, and a ${or('chord')} is drawn from T, the ${gr('angle between the tangent and the chord')} is called the tangent-chord angle. This theorem — also called the ${gr('alternate segment theorem')} — states that the tangent-chord angle always equals the inscribed angle in the ${gr('alternate segment')} (the segment on the ${bl('other side')} of the chord). This is the second heavily examined circle rider in Grade 11 CAPS Paper 2, alongside the cyclic quadrilateral theorem. A useful corollary also follows: two tangents drawn to a circle from the same external point are always equal in length.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('tangent / equal angles')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('chord')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('alternate segment')}</span>` +
+        `</div>` +
+
+        // ── Theorem + converse + corollary ───────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The theorem, its converse, and a corollary</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Tangent-Chord (Alternate Segment) Theorem</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">If PT is a tangent at T and TC is a chord, then the ${gr('tangent-chord angle ∠PTC')} equals the inscribed angle ${gr('∠TAC')} in the alternate segment, for any point A on the arc on the other side of TC.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Converse — Equal Angle ⟹ Tangent</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">If a line through a point T on a circle makes an angle with a chord TC equal to the inscribed angle in the alternate segment, then that line is a tangent to the circle at T. Use this to prove a line is a tangent.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Corollary — Tangents from an External Point are Equal</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">If ${or('PA')} and ${or('PB')} are tangents drawn from the same external point P, touching the circle at A and B, then ${or('PA = PB')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Formal proof of the tan-chord theorem ────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:16px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Proof — Tangent-Chord Theorem</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Given:</strong> Circle with centre O; PT is a tangent at T; TC is a chord with tangent-chord angle ${gr('∠PTC = x')}; A is a point on the circle in the alternate segment.</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Required to prove:</strong> ∠TAC = x.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Construction:</strong> Draw diameter TD through T, and join DC.</p>` +
+        proofTable([
+          ['∠DTP = 90°', 'tan ⊥ diameter at the point of contact'],
+          ['∠DTC = 90° − x', '∠DTC = ∠DTP − ∠PTC'],
+          ['∠TCD = 90°', '∠ in semi-circle (TD is a diameter)'],
+          ['∠TDC = 180° − 90° − (90° − x) = x', '∠ sum of △TDC = 180°'],
+          ['∠TAC = ∠TDC = x', '∠s in the same segment (A and D lie on the same arc, both subtend TC)'],
+          ['∴ ∠TAC = ∠PTC (both equal x)', 'tangent-chord theorem proved'],
+        ]) +
+        `</div>` +
+
+        // ── Corollary proof ──────────────────────────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Proof of the Corollary — Equal Tangents from an External Point</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Given:</strong> PA and PB are tangents from external point P, touching the circle (centre O) at A and B.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Required to prove:</strong> PA = PB.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Construction:</strong> Join OA, OB and OP.</p>` +
+        proofTable([
+          ['OA = OB', 'radii of the same circle'],
+          ['∠OAP = ∠OBP = 90°', 'tan ⊥ radius'],
+          ['OP = OP', 'common side'],
+          ['∴ △OAP ≡ △OBP', 'RHS (right angle, hypotenuse, side)'],
+          ['∴ PA = PB', 'corresponding sides of congruent triangles'],
+        ]) +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#92400e;margin-bottom:6px;">Identifying the alternate segment</p>` +
+        `<p style="margin:0;color:#78350f;">Draw the chord, note which side of it the tangent-chord angle opens towards, then look at the segment on the <strong>other</strong> side — any inscribed angle standing on the chord from that segment equals your tangent-chord angle.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question:
+            'A tangent at point T makes an angle of 58° with chord TC. Find the angle ∠TAC in the alternate segment (A on the far arc).<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="210" x2="220" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="210" stroke="#0f1f3d" stroke-width="1.5" stroke-dasharray="3,3"/><path d="M 140,198 L 152,198 L 152,210" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="140" y1="210" x2="213.7" y2="68.3" stroke="#ea580c" stroke-width="2.5"/><line x1="62.06" y1="75" x2="140" y2="210" stroke="#0f1f3d" stroke-width="2"/><line x1="62.06" y1="75" x2="213.7" y2="68.3" stroke="#0f1f3d" stroke-width="2"/><path d="M 160,210 A 20,20 0 0 1 149.23,192.26" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 72.06,92.32 A 20,20 0 0 1 82.04,74.12" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">T</text><circle cx="213.7" cy="68.3" r="2.5" fill="#0f1f3d"/><text x="221.7" y="62.3" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="62.06" cy="75" r="2.5" fill="#0f1f3d"/><text x="42.06" y="69" font-size="13" fill="#0f1f3d" font-weight="700">A</text><text x="169.92" y="196.84" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">58°</text><text x="92.74" y="91.82" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer: `∠TAC = ${gr('58°')}`,
+          steps: [
+            `The tangent-chord angle at T between the tangent and chord TC is ${gr('58°')}.`,
+            `By the tangent-chord (alternate segment) theorem, the inscribed angle in the alternate segment equals the tangent-chord angle.`,
+            `∠TAC = ${gr('58°')}.`,
+            `<strong>Answer:</strong> ∠TAC = ${gr('58°')}. ✓`,
+          ],
+        },
+        {
+          question:
+            'A line ℓ touches a circle at point P. Chord PQ is drawn, and the angle between ℓ and PQ is 47°. A point R lies on the circle, in the segment on the opposite side of PQ from where that angle opens, with ∠PRQ = 47°. State, with reason, whether ℓ is a tangent to the circle at P.',
+          answer: 'Yes — by the converse of the tangent-chord theorem',
+          steps: [
+            `The angle between line ℓ and chord PQ (47°) equals the inscribed angle ∠PRQ (47°) in the segment on the other side of PQ.`,
+            `By the converse of the tangent-chord theorem, if the angle a line makes with a chord equals the angle in the alternate segment, that line must be a tangent.`,
+            `<strong>Answer:</strong> Yes, ℓ is a tangent to the circle at P. ✓`,
+          ],
+        },
+        {
+          question: 'Tangents PA and PB are drawn from external point P, with PA = 3x − 2 and PB = x + 8. Find x, then find the length of PA.',
+          answer: `x = ${or('5')}, PA = ${or('13')}`,
+          steps: [
+            `Tangents from the same external point are equal in length: ${or('PA = PB')}.`,
+            `${or('3x − 2 = x + 8')}.`,
+            `2x = 10, so x = ${or('5')}.`,
+            `PA = 3(5) − 2 = 15 − 2 = ${or('13')}.`,
+            `<strong>Answer:</strong> x = ${or('5')}, PA = ${or('13')}. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'A tangent-chord angle at point T measures 63°. Find the angle in the alternate segment.',
+          answer: '63°',
+          checkMode: 'auto',
+          correctAnswer: '63',
+          correctAnswers: ['63', '63°', '63 degrees'],
+          explanation: 'By the tangent-chord theorem, the angle in the alternate segment equals the tangent-chord angle: 63° ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Answer each of the following.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Tangents PA and PB are drawn from external point P, with PA = 4x + 1 and PB = 2x + 9. Find PA.',
+              correctAnswer: '17',
+              correctAnswers: ['17', '17cm', '17 cm'],
+              explanation: 'Tangents from the same external point are equal: 4x + 1 = 2x + 9, so 2x = 8, x = 4.\nPA = 4(4) + 1 = 17 ✓',
+            },
+            {
+              label: 'b) The angle between a tangent and a chord at the point of contact is 71°. Find the angle subtended by the chord in the alternate segment.',
+              correctAnswer: '71',
+              correctAnswers: ['71', '71°', '71 degrees'],
+              explanation: 'By the tangent-chord theorem, the angle in the alternate segment equals the tangent-chord angle: 71° ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question:
+            'PT is a tangent to a circle at T. TC is a chord, and A is a point on the circle in the alternate segment, with TA and AC drawn to form triangle TAC. The tangent-chord angle at T (between the tangent and chord TC) is 50°, and ∠TCA = 65°. Find ∠TAC and ∠ATC, and show that triangle TAC is isosceles.<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="210" x2="220" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="210" x2="213.7" y2="68.3" stroke="#ea580c" stroke-width="2.5"/><line x1="62.06" y1="75" x2="140" y2="210" stroke="#0f1f3d" stroke-width="2"/><line x1="62.06" y1="75" x2="213.7" y2="68.3" stroke="#0f1f3d" stroke-width="2"/><path d="M 160,210 A 20,20 0 0 1 149.23,192.26" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 129,190.95 A 22,22 0 0 1 150.16,190.48" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M 204.47,86.04 A 20,20 0 0 1 193.72,69.18" fill="none" stroke="#ea580c" stroke-width="2"/><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">T</text><circle cx="213.7" cy="68.3" r="2.5" fill="#0f1f3d"/><text x="221.7" y="62.3" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="62.06" cy="75" r="2.5" fill="#0f1f3d"/><text x="42.06" y="69" font-size="13" fill="#0f1f3d" font-weight="700">A</text><text x="169.92" y="191.84" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">50°</text><text x="139.13" y="178" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="184.18" y="87.12" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">65°</text><text x="92.74" y="91.82" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer:
+            `∠TAC = ${gr('50°')}, ∠ATC = ${bl('65°')}, and since ∠TCA = ∠ATC, triangle TAC is isosceles with TA = AC.` +
+            proofTable([
+              ['∠TAC = 50°', 'tan-chord theorem (∠TAC is the ∠ in the alternate segment, equal to the tangent-chord ∠ of 50°)'],
+              ['∠ATC = 180° − 50° − 65° = 65°', '∠ sum of △TAC = 180°'],
+              ['∠TCA = ∠ATC = 65°', 'both equal 65° (shown above)'],
+              ['∴ TA = AC', 'sides opposite equal angles in a triangle are equal, so △TAC is isosceles'],
+            ]),
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing a tangent at T with the tangent-chord angle highlighted in green, an equal inscribed angle in the alternate segment also highlighted in green, and a separate diagram showing two equal tangent segments from an external point" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="210" x2="220" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="210" stroke="#0f1f3d" stroke-width="1.5" stroke-dasharray="3,3"/><path d="M 140,198 L 152,198 L 152,210" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="140" y1="210" x2="213.7" y2="68.3" stroke="#ea580c" stroke-width="2.5"/><line x1="62.06" y1="75" x2="140" y2="210" stroke="#0f1f3d" stroke-width="2"/><line x1="62.06" y1="75" x2="213.7" y2="68.3" stroke="#0f1f3d" stroke-width="2"/><path d="M 160,210 A 20,20 0 0 1 149.23,192.26" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 72.06,92.32 A 20,20 0 0 1 82.04,74.12" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">T</text><circle cx="213.7" cy="68.3" r="2.5" fill="#0f1f3d"/><text x="221.7" y="62.3" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="62.06" cy="75" r="2.5" fill="#0f1f3d"/><text x="42.06" y="69" font-size="13" fill="#0f1f3d" font-weight="700">A</text><text x="169.92" y="196.84" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">x</text><text x="92.74" y="91.82" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">x</text></svg>',
     },
   ],
 

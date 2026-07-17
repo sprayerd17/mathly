@@ -465,7 +465,167 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — NOMINAL AND EFFECTIVE INTEREST RATES
+    // SECTION 4 — COMPOUND AND SIMPLE GROWTH
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'compound-and-simple-growth',
+      title: 'Compound and Simple Growth',
+      icon: '📈',
+      explanation:
+        `<p style="margin-bottom:16px;">In Grade 10 you met two growth formulae: <strong>simple growth</strong>, ${or('A')} = ${bl('P')}(1 + ${gr('n')} × ${re('i')}), and <strong>compound growth</strong>, ${or('A')} = ${bl('P')}(1 + ${re('i')})<sup>${gr('n')}</sup>. In Grade 11 the same two formulae are revised and applied to harder, more realistic problems — <strong>hire purchase</strong> agreements that include a deposit and monthly instalments, <strong>population growth</strong>, and <strong>investment growth</strong> — and you are often asked to solve for ${bl('P')}, ${re('i')} or ${gr('n')} rather than just ${or('A')}.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('P — original value')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('i — rate')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('n — years')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('A — final value')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The two growth formulae (revision)</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;text-align:center;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:6px;font-size:0.95em;">Simple growth</p>` +
+        `<p style="font-size:1.2em;font-weight:700;color:#374151;margin:0;">${or('A')} = ${bl('P')}(1 + ${gr('n')} × ${re('i')})</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;text-align:center;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:6px;font-size:0.95em;">Compound growth</p>` +
+        `<p style="font-size:1.2em;font-weight:700;color:#374151;margin:0;">${or('A')} = ${bl('P')}(1 + ${re('i')})<sup style="font-size:0.85em;">${gr('n')}</sup></p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Real-world growth contexts</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Hire purchase</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A deposit is subtracted from the cash price first. Simple growth is then applied to the <strong>remaining balance</strong> to find the total of the instalments. Divide that total by the number of months to find the monthly instalment.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Population growth</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A growing population compounds in exactly the same way as compound interest — each year's growth is calculated on the <strong>new, larger</strong> population, not the original one.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:6px;">Investment growth</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Lump-sum investments grow under compound growth. Grade 11 problems often give you the <strong>target</strong> future amount and ask you to work backward to find the principal, rate, or time needed to reach it.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Solving for P, i or n</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Because ${gr('n')} is an exponent in the compound formula, solving for ${re('i')} usually means taking a root of both sides (e.g. dividing, then taking the ${gr('n')}<sup>th</sup> root), while solving for ${bl('P')} directly is just a division. Solving for ${gr('n')} itself requires logarithms, covered in the Nominal and Effective Interest Rates and Mixed Applications sections.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A washing machine has a cash price of R14 500. Naledi pays a 10% deposit and repays the balance, plus simple interest at 16% p.a., over 3 years in equal monthly instalments. Calculate (a) her deposit, (b) her total repayment, and (c) her monthly instalment.',
+          answer: `${bl('Deposit = R1 450')}; ${or('Total repayment = R20 764')}; ${gr('Monthly instalment = R536.50')}`,
+          steps: [
+            `${bl('Deposit:')} 10% × R14 500 = ${bl('R1 450')}.`,
+            `${bl('Balance owing:')} R14 500 − ${bl('R1 450')} = ${bl('R13 050')}. This balance becomes the new ${bl('P')} for the simple growth formula.`,
+            `Apply simple growth to the balance: ${or('A')} = ${bl('P')}(1 + ${gr('n')} × ${re('i')}) = ${bl('13 050')}(1 + ${gr('3')} × ${re('0.16')}) = ${bl('13 050')}(1.48) = ${or('R19 314')}. This is the total she repays on the balance.`,
+            `${or('Total repayment')} = deposit + balance repayment = ${bl('R1 450')} + ${or('R19 314')} = ${or('R20 764')}.`,
+            `${gr('Monthly instalment')} = ${or('R19 314')} ÷ (${gr('3')} × 12 months) = R19 314 ÷ 36 = ${gr('R536.50')}.`,
+          ],
+        },
+        {
+          question: "A town's population grew from 42 000 to 51 660 over 7 years, assuming compound growth. Calculate the annual population growth rate.",
+          answer: `${re('i ≈ 3.00% p.a.')}`,
+          steps: [
+            `Identify ${bl('P = 42 000')}, ${or('A = 51 660')}, ${gr('n = 7')}.`,
+            `Substitute into ${or('A')} = ${bl('P')}(1 + ${re('i')})<sup>${gr('n')}</sup>: ${or('51 660')} = ${bl('42 000')}(1 + ${re('i')})<sup>${gr('7')}</sup>.`,
+            `Divide both sides by ${bl('42 000')}: (1 + ${re('i')})<sup>${gr('7')}</sup> = 1.23.`,
+            `Take the 7th root of both sides: 1 + ${re('i')} = 1.23<sup>1/7</sup> = 1.0300.`,
+            `Solve for ${re('i')}: ${re('i')} = 1.0300 − 1 = 0.0300 = ${re('3.00% p.a.')}.`,
+          ],
+        },
+        {
+          question: "Thabo wants to have R250 000 available in 6 years' time. If he invests a lump sum today at 9.5% p.a. compounded annually, how much must he invest now?",
+          answer: `${bl('P ≈ R145 029.15')}`,
+          steps: [
+            `Identify ${or('A = R250 000')}, ${re('i = 0.095')}, ${gr('n = 6')}. This time we are solving for ${bl('P')}, not ${or('A')}.`,
+            `Substitute into ${or('A')} = ${bl('P')}(1 + ${re('i')})<sup>${gr('n')}</sup>: ${or('250 000')} = ${bl('P')}(1.095)<sup>${gr('6')}</sup>.`,
+            `Calculate the growth factor: (1.095)<sup>6</sup> ≈ 1.723791.`,
+            `Solve for ${bl('P')}: ${bl('P')} = ${or('250 000')} ÷ 1.723791 ≈ ${bl('R145 029.15')}.`,
+            `Check: ${bl('R145 029.15')} × (1.095)<sup>6</sup> ≈ ${or('R250 000')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'Kagiso invests R18 000 at 9% p.a. compound interest for 5 years. Calculate the final amount, correct to the nearest rand.',
+          answer: 'R27 695',
+          checkMode: 'auto',
+          correctAnswer: '27695',
+          correctAnswers: ['R27695', 'R27 695', '27695', '27 695'],
+          explanation: 'A = P(1 + i)ⁿ\nA = 18 000(1.09)⁵\nA = 18 000 × 1.538624 ≈ R27 695 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A fridge has a cash price of R22 000. Zanele pays a 12% deposit and repays the balance, plus simple interest at 14% p.a., over 4 years in equal monthly instalments.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Calculate her deposit (R).',
+              correctAnswer: '2640',
+              correctAnswers: ['R2640', 'R2 640', '2640', '2 640'],
+              explanation: 'Deposit = 12% × 22 000 = R2 640 ✓',
+            },
+            {
+              label: 'b) Calculate her total repayment (deposit plus instalments), to the nearest cent.',
+              correctAnswer: '32841.60',
+              correctAnswers: ['R32841.60', 'R32 841.60', '32841.60', '32 841.60', 'R32842', 'R32 842', '32842'],
+              explanation: 'Balance = 22 000 − 2 640 = R19 360.\nBalance repayment: A = 19 360(1 + 4 × 0.14) = 19 360(1.56) = R30 201.60.\nTotal repayment = 2 640 + 30 201.60 = R32 841.60 ✓',
+            },
+            {
+              label: 'c) Calculate her monthly instalment (R).',
+              correctAnswer: '629.20',
+              correctAnswers: ['R629.20', 'R629.2', '629.20', '629.2'],
+              explanation: 'Monthly instalment = R30 201.60 ÷ (4 × 12) = R30 201.60 ÷ 48 = R629.20 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'Answer the following growth problems, each of which requires solving for a variable other than A.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: "a) A city's population grew from 28 000 to 34 000 over 4 years due to compound growth. Calculate the annual growth rate (%, to 2 decimal places).",
+              correctAnswer: '4.97',
+              correctAnswers: ['4.97%', '4.97', '5.0%', '5.0', '5%'],
+              explanation: '34 000 = 28 000(1 + i)⁴\n(1 + i)⁴ = 1.214286\n1 + i = 1.214286^(1/4) ≈ 1.0497\ni ≈ 0.0497 = 4.97% p.a. ✓',
+            },
+            {
+              label: 'b) An investor wants R200 000 available in 5 years. If she invests a lump sum now at 10% p.a. compounded annually, calculate the amount she must invest today (R, to the nearest rand).',
+              correctAnswer: '124184',
+              correctAnswers: ['R124184', 'R124 184', '124184', '124 184'],
+              explanation: '200 000 = P(1.10)⁵\n(1.10)⁵ ≈ 1.61051\nP = 200 000 ÷ 1.61051 ≈ R124 184 ✓',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video revising simple and compound growth from Grade 10 and applying them to harder Grade 11 problems: hire purchase with deposit and instalments, solving for the growth rate in a population problem, and solving for the principal in an investment problem" />',
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Diagram needed: a timeline for the hire purchase worked example showing cash price, deposit subtracted, remaining balance, and the balance growing under simple interest into equal monthly instalments" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — NOMINAL AND EFFECTIVE INTEREST RATES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'nominal-effective-interest-rates',
@@ -630,7 +790,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — MIXED APPLICATIONS: DECAY AND COMPOUNDING COMBINED
+    // SECTION 6 — MIXED APPLICATIONS: DECAY AND COMPOUNDING COMBINED
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mixed-applications-decay-compounding',

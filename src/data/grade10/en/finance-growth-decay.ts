@@ -9,6 +9,8 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
+// deposit (hire purchase only) → purple (#7c3aed)
+const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
   title: 'Finance, Growth and Decay',
@@ -566,6 +568,439 @@ export const topicData: TopicData = {
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram showing currency conversion arrows between Rands and foreign currencies with exchange rate in blue conversion operation in orange and final converted amount in green" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — HIRE PURCHASE
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'hire-purchase',
+      title: 'Hire Purchase — Deposit, Balance and Instalments',
+      icon: '🛒',
+      explanation:
+        `<p style="margin-bottom:16px;">${pu('Hire purchase')} (HP) lets you take an item home immediately by paying a ${pu('deposit')} up front, then paying off the rest — the ${bl('balance')} — through equal monthly instalments that include ${or('simple interest')}. It uses the same simple interest formula as Simple Growth, ${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')}), but the ${bl('principal P')} being financed is the <strong>cash price minus the deposit</strong>, not the full price.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:3px 10px;font-size:13px;">${pu('deposit')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('balance financed P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('interest rate i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('repayment period n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('total repayment A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The hire purchase formula</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')})</p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">where ${bl('P')} = Cash price − ${pu('Deposit')}, and ${gr('n')} is the repayment period in years</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Steps to solve a hire purchase problem</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f5f3ff;border:1.5px solid #ddd6fe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Deposit')} — Multiply the cash price by the deposit percentage (or use the fixed deposit amount if one is given).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Balance (P)')} — Subtract the ${pu('deposit')} from the cash price. Only this remaining balance is charged interest.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Total repayment (A)')} — Apply simple interest to the balance: ${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')}).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Monthly instalment')} — Divide ${re('A')} by the total number of months (${gr('n')} × 12).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">5</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Total cost')} — Add the ${pu('deposit')} back on: Total cost = ${pu('Deposit')} + ${re('A')}. This is what you actually pay in the end.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Hire purchase always costs more than the cash price</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Because interest is charged on the balance, the total cost of buying on hire purchase is always more than the original cash price. The trade-off is convenience — you get to use the item immediately instead of saving up first.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A fridge has a cash price of R15 000. Zinhle pays a 10% deposit and repays the balance on hire purchase at 15% simple interest per year over 3 years. Find her monthly instalment and the total cost of the fridge.',
+          answer: `Monthly instalment = ${re('R543.75')}; Total cost = ${re('R21 075')}`,
+          steps: [
+            `${pu('Deposit')} = 10% × R15 000 = <strong>R1 500</strong>`,
+            `${bl('Balance (P)')} = R15 000 − R1 500 = <strong>R13 500</strong>`,
+            `${re('Total repayment')}: ${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')}) = ${bl('13 500')}(1 + ${gr('3')} × ${or('0.15')}) = 13 500(1.45) = <strong>R19 575</strong>`,
+            `${gr('Monthly instalment')} = R19 575 ÷ (3 × 12) = R19 575 ÷ 36 = <strong>R543.75</strong>`,
+            `${or('Total cost')} = ${pu('R1 500')} + R19 575 = <strong>R21 075</strong> ✓`,
+          ],
+        },
+        {
+          question: 'A motorbike has a cash price of R24 000. Kagiso pays a 15% deposit and repays the balance on hire purchase at 12% simple interest per year over 2 years. Find his monthly instalment and the total cost.',
+          answer: `Monthly instalment = ${re('R1 054')}; Total cost = ${re('R28 896')}`,
+          steps: [
+            `${pu('Deposit')} = 15% × R24 000 = <strong>R3 600</strong>`,
+            `${bl('Balance (P)')} = R24 000 − R3 600 = <strong>R20 400</strong>`,
+            `${re('Total repayment')}: ${re('A')} = ${bl('20 400')}(1 + ${gr('2')} × ${or('0.12')}) = 20 400(1.24) = <strong>R25 296</strong>`,
+            `${gr('Monthly instalment')} = R25 296 ÷ (2 × 12) = R25 296 ÷ 24 = <strong>R1 054</strong>`,
+            `${or('Total cost')} = ${pu('R3 600')} + R25 296 = <strong>R28 896</strong> ✓`,
+          ],
+        },
+        {
+          question: 'A laptop has a cash price of R20 000. Naledi pays a fixed deposit of R4 000 and repays the balance on hire purchase at 16% simple interest per year over 4 years. Find her monthly instalment (round to the nearest cent) and the total cost.',
+          answer: `Monthly instalment ≈ ${re('R546.67')}; Total cost = ${re('R30 240')}`,
+          steps: [
+            `${pu('Deposit')} = <strong>R4 000</strong> (a fixed amount, not a percentage this time)`,
+            `${bl('Balance (P)')} = R20 000 − R4 000 = <strong>R16 000</strong>`,
+            `${re('Total repayment')}: ${re('A')} = ${bl('16 000')}(1 + ${gr('4')} × ${or('0.16')}) = 16 000(1.64) = <strong>R26 240</strong>`,
+            `${gr('Monthly instalment')} = R26 240 ÷ (4 × 12) = R26 240 ÷ 48 ≈ <strong>R546.67</strong>`,
+            `${or('Total cost')} = ${pu('R4 000')} + R26 240 = <strong>R30 240</strong> ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'A stove has a cash price of R9 000. Lindiwe pays a 15% deposit. Calculate the balance that must be financed on hire purchase.',
+          answer: 'R7 650',
+          checkMode: 'auto',
+          correctAnswer: 'R7650',
+          correctAnswers: ['R7650', '7650', 'R7 650', '7 650'],
+          explanation: 'Deposit = 15% × R9 000 = R1 350\nBalance = R9 000 − R1 350 = R7 650 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A couch has a cash price of R12 000. Sipho pays a 10% deposit and repays the balance on hire purchase at 16% simple interest per year over 3 years.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Find the deposit amount.',
+              correctAnswer: 'R1200',
+              correctAnswers: ['R1200', '1200', 'R1 200', '1 200'],
+              explanation: 'Deposit = 10% × R12 000 = R1 200 ✓',
+            },
+            {
+              label: 'b) Find the total repayment on the balance (using simple interest).',
+              correctAnswer: 'R15984',
+              correctAnswers: ['R15984', '15984', 'R15 984', '15 984'],
+              explanation: 'Balance = 12 000 − 1 200 = R10 800\nA = 10 800(1 + 3 × 0.16) = 10 800(1.48) = R15 984 ✓',
+            },
+            {
+              label: 'c) Find the monthly instalment.',
+              correctAnswer: 'R444',
+              correctAnswers: ['R444', '444', 'R444.00'],
+              explanation: 'Monthly instalment = R15 984 ÷ (3 × 12) = R15 984 ÷ 36 = R444 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A dining set has a cash price of R18 000. Amahle pays a 12% deposit and repays the balance on hire purchase at 18% simple interest per year over 4 years.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Find the total cost of the dining set (deposit plus total repayment).',
+              correctAnswer: 'R29404.80',
+              correctAnswers: ['R29404.80', '29404.80', 'R29 404.80', '29 404.80', 'R29404.8', '29404.8'],
+              explanation: 'Deposit = 12% × 18 000 = R2 160\nBalance = 18 000 − 2 160 = R15 840\nA = 15 840(1 + 4 × 0.18) = 15 840(1.72) = R27 244.80\nTotal cost = R2 160 + R27 244.80 = R29 404.80 ✓',
+            },
+            {
+              label: 'b) Find the monthly instalment.',
+              correctAnswer: 'R567.60',
+              correctAnswers: ['R567.60', '567.60', 'R567.6', '567.6'],
+              explanation: 'Monthly instalment = R27 244.80 ÷ (4 × 12) = R27 244.80 ÷ 48 = R567.60 ✓',
+            },
+            {
+              label: 'c) How much more does Amahle pay in total compared to the original cash price?',
+              correctAnswer: 'R11404.80',
+              correctAnswers: ['R11404.80', '11404.80', 'R11 404.80', '11 404.80', 'R11404.8', '11404.8'],
+              explanation: 'Extra paid = Total cost − Cash price = R29 404.80 − R18 000 = R11 404.80 ✓',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video working through a hire purchase problem step by step showing deposit in purple balance in blue interest rate in orange repayment period in green and total repayment in red" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Bar breakdown of a hire purchase purchase showing the deposit segment in purple next to the financed balance segment in blue growing into the total repayment segment in red across the repayment period" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — INFLATION
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'inflation',
+      title: 'Inflation and Purchasing Power',
+      icon: '📈',
+      explanation:
+        `<p style="margin-bottom:16px;">${or('Inflation')} is the rate at which prices rise over time, which reduces the buying power of your money. Because each year's price increase is calculated on the <em>already-inflated</em> price from the year before, inflation grows exponentially — exactly like ${gr('compound growth')}. We use the same formula: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup>, but here ${bl('P')} is a ${bl('current price')}, ${or('i')} is the ${or('inflation rate')}, and ${re('A')} is a ${re('future price')}.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('current price P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('inflation rate i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('number of years n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('future price A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The inflation formula</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup></p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">the same compound growth formula, applied to prices instead of investments</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key terms</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">P — Current Price</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">What the item costs today, before any further inflation.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">i — Inflation Rate</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">The average yearly percentage increase in prices, written as a decimal.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">n — Number of Years</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">How many years of inflation the price is projected over.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">A — Future Price</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">What the item is expected to cost after n years of inflation.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Purchasing power</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Your <strong>purchasing power</strong> is how much you can actually buy with your money. If prices rise 6% a year but your salary only rises 3% a year, your purchasing power falls — the same rand amount buys less each year, even though the number on your payslip is bigger.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A loaf of bread costs R18 today. If inflation averages 6% per year, find the expected price of the loaf after 5 years (round to 2 decimal places).',
+          answer: `${re('A')} ≈ ${re('R24.09')}`,
+          steps: [
+            `Write the formula: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>`,
+            `Substitute: ${bl('P')} = R18, ${or('i')} = 0.06, ${gr('n')} = 5:<br>${re('A')} = ${bl('18')}(1.06)<sup style="color:#16a34a;font-weight:700;">5</sup>`,
+            `Calculate the power: (1.06)<sup style="color:#16a34a;font-weight:700;">5</sup> ≈ 1.33823`,
+            `Multiply: ${re('A')} = ${bl('18')} × 1.33823 ≈ <strong>R24.09</strong> ✓`,
+          ],
+        },
+        {
+          question: 'A grocery basket costs R2 500 today. If inflation averages 5.5% per year, find the expected cost after 8 years, and how much extra money you would need compared to today (round to 2 decimal places).',
+          answer: `Cost ≈ ${re('R3 836.72')}; Extra needed ≈ ${re('R1 336.72')}`,
+          steps: [
+            `Write the formula: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>`,
+            `Substitute: ${bl('P')} = R2 500, ${or('i')} = 0.055, ${gr('n')} = 8:<br>${re('A')} = ${bl('2 500')}(1.055)<sup style="color:#16a34a;font-weight:700;">8</sup>`,
+            `Calculate the power: (1.055)<sup style="color:#16a34a;font-weight:700;">8</sup> ≈ 1.53469`,
+            `Multiply: ${re('A')} = ${bl('2 500')} × 1.53469 ≈ <strong>R3 836.72</strong>`,
+            `Extra money needed = R3 836.72 − R2 500 = <strong>R1 336.72</strong> ✓`,
+          ],
+        },
+        {
+          question: 'A textbook now costs R450, after 3 years of inflation averaging 7% per year. Find what the textbook cost 3 years ago (round to 2 decimal places).',
+          answer: `${bl('P')} ≈ ${bl('R367.33')}`,
+          steps: [
+            `Write the formula: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>, and solve for ${bl('P')} this time.`,
+            `Substitute: ${re('A')} = R450, ${or('i')} = 0.07, ${gr('n')} = 3:<br>450 = ${bl('P')}(1.07)<sup style="color:#16a34a;font-weight:700;">3</sup>`,
+            `Calculate the power: (1.07)<sup style="color:#16a34a;font-weight:700;">3</sup> ≈ 1.22504`,
+            `Divide: ${bl('P')} = 450 ÷ 1.22504 ≈ <strong>R367.33</strong>`,
+            `<strong>Answer:</strong> The textbook cost approximately ${bl('R367.33')} three years ago. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'A loaf of bread costs R16 today. If inflation averages 6% per year, find the expected price after 3 years (round to 2 decimal places).',
+          answer: 'R19.06',
+          checkMode: 'auto',
+          correctAnswer: 'R19.06',
+          correctAnswers: ['R19.06', '19.06'],
+          explanation: 'A = P(1 + i)ⁿ = 16(1.06)³\n(1.06)³ = 1.191016\nA = 16 × 1.191016 ≈ R19.06 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A school charges annual fees of R32 000. If fees rise with inflation at 8% per year, find:',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) The fees after 3 years (round to the nearest Rand).',
+              correctAnswer: 'R40311',
+              correctAnswers: ['R40311', '40311', 'R40 311', '40 311'],
+              explanation: 'A = 32 000(1.08)³ ≈ 32 000 × 1.259712 ≈ R40 311 ✓',
+            },
+            {
+              label: 'b) The fees after 6 years (round to the nearest Rand).',
+              correctAnswer: 'R50780',
+              correctAnswers: ['R50780', '50780', 'R50 780', '50 780'],
+              explanation: 'A = 32 000(1.08)⁶ ≈ 32 000 × 1.586874 ≈ R50 780 ✓',
+            },
+            {
+              label: 'c) The increase in fees between year 3 and year 6 (round to the nearest Rand).',
+              correctAnswer: 'R10469',
+              correctAnswers: ['R10469', '10469', 'R10 469', '10 469'],
+              explanation: 'R50 780 − R40 311 = R10 469 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'A textbook now costs R620. If the average inflation rate over the past 4 years was 6.5% per year, find what the textbook would have cost 4 years ago (round to the nearest Rand).',
+          answer: 'R482',
+          checkMode: 'auto',
+          correctAnswer: 'R482',
+          correctAnswers: ['R482', '482'],
+          explanation: '620 = P(1.065)⁴\n(1.065)⁴ ≈ 1.28647\nP = 620 ÷ 1.28647 ≈ R482 ✓',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video explaining inflation using the compound growth formula A=P(1+i)^n to project future prices with current price in blue inflation rate in orange years in green and future price in red and how purchasing power is affected" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Rising price curve over time showing the current price in blue growing exponentially to the future price in red as the inflation rate in orange compounds each year in green" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 7 — POPULATION GROWTH
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'population-growth',
+      title: 'Population Growth',
+      icon: '👥',
+      explanation:
+        `<p style="margin-bottom:16px;">Population growth follows the exact same exponential pattern as compound interest — each year's growth happens on top of the already-larger population from the year before. We reuse the ${gr('compound growth')} formula ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup>, but here ${bl('P')} is a ${bl('starting population')}, ${or('i')} is an ${or('annual growth rate')}, and ${re('A')} is a ${re('future population')}. Since you cannot have part of a person, population answers are always rounded to the nearest whole number.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('starting population P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('growth rate i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('number of years n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('future population A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The population growth formula</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup></p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">the same compound growth formula — money is replaced by people!</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Growth, decay, and doubling time</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Not all populations grow — a town losing residents to emigration shrinks using the same idea as simple/compound <strong>decay</strong>. And just like with investments, you can use <strong>trial and improvement</strong> (see Solving for n) to work out how many years it takes a population to double, or to reach a target size.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: "A village's population is 8 200 and grows at 2.8% per year. Find the population after 6 years (round to the nearest whole number).",
+          answer: `Population ≈ ${re('9 678')}`,
+          steps: [
+            `Write the formula: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>`,
+            `Substitute: ${bl('P')} = 8 200, ${or('i')} = 0.028, ${gr('n')} = 6:<br>${re('A')} = ${bl('8 200')}(1.028)<sup style="color:#16a34a;font-weight:700;">6</sup>`,
+            `Calculate the power: (1.028)<sup style="color:#16a34a;font-weight:700;">6</sup> ≈ 1.18021`,
+            `Multiply: ${re('A')} = ${bl('8 200')} × 1.18021 ≈ <strong>9 678</strong> people ✓`,
+          ],
+        },
+        {
+          question: "A city's population grew at 3% per year for 8 years to reach 96 000. Find the population 8 years ago (round to the nearest whole number).",
+          answer: `${bl('P')} ≈ ${bl('75 783')}`,
+          steps: [
+            `Write the formula: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>, and solve for ${bl('P')} this time.`,
+            `Substitute: ${re('A')} = 96 000, ${or('i')} = 0.03, ${gr('n')} = 8:<br>96 000 = ${bl('P')}(1.03)<sup style="color:#16a34a;font-weight:700;">8</sup>`,
+            `Calculate the power: (1.03)<sup style="color:#16a34a;font-weight:700;">8</sup> ≈ 1.26677`,
+            `Divide: ${bl('P')} = 96 000 ÷ 1.26677 ≈ <strong>75 783</strong> people`,
+            `<strong>Answer:</strong> The population 8 years ago was approximately ${bl('75 783')}. ✓`,
+          ],
+        },
+        {
+          question: "A rural population of 5 000 grows at 4.5% per year. Use trial and improvement to find how many years it takes for the population to double.",
+          answer: `Approximately ${gr('16')} years`,
+          steps: [
+            `Doubling means we need (1.045)<sup>${bl('n')}</sup> = ${or('2')}.`,
+            `${bl('Try n = 15:')} (1.045)<sup>15</sup> ≈ 1.935 — this is below the ${or('target of 2')}, so n = 15 is too low.`,
+            `${bl('Try n = 16:')} (1.045)<sup>16</sup> ≈ 2.022 — this exceeds the ${or('target of 2')}.`,
+            `<strong>Conclusion:</strong> Since population is counted in whole years, it takes approximately ${gr('n = 16')} years for the population to double. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: "A town's population is 12 000 and grows at 3.2% per year. Find the population after 4 years (round to the nearest whole number).",
+          answer: '13 611',
+          checkMode: 'auto',
+          correctAnswer: '13611',
+          correctAnswers: ['13611', '13 611'],
+          explanation: 'A = P(1 + i)ⁿ = 12 000(1.032)⁴\n(1.032)⁴ ≈ 1.13428\nA ≈ 12 000 × 1.13428 ≈ 13 611 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: "A city's population of 55 000 grows at 2.5% per year.",
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Find the population after 5 years (round to the nearest whole number).',
+              correctAnswer: '62227',
+              correctAnswers: ['62227', '62 227'],
+              explanation: 'A = 55 000(1.025)⁵\n(1.025)⁵ ≈ 1.13141\nA ≈ 55 000 × 1.13141 ≈ 62 227 ✓',
+            },
+            {
+              label: 'b) Find the population after 10 years (round to the nearest whole number).',
+              correctAnswer: '70405',
+              correctAnswers: ['70405', '70 405'],
+              explanation: 'A = 55 000(1.025)¹⁰\n(1.025)¹⁰ ≈ 1.28008\nA ≈ 55 000 × 1.28008 ≈ 70 405 ✓',
+            },
+            {
+              label: 'c) By how many people does the population increase between year 5 and year 10?',
+              correctAnswer: '8177',
+              correctAnswers: ['8177', '8 177', '8178', '8 178'],
+              explanation: '70 405 − 62 227 = 8 177 people (small rounding differences of a person are acceptable) ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: "A district's population grew at 3.5% per year for 7 years to reach 140 000. Find the district's population 7 years ago (round to the nearest whole number).",
+          answer: '110 039',
+          checkMode: 'auto',
+          correctAnswer: '110039',
+          correctAnswers: ['110039', '110 039'],
+          explanation: '140 000 = P(1.035)⁷\n(1.035)⁷ ≈ 1.27228\nP = 140 000 ÷ 1.27228 ≈ 110 039 ✓',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video applying the compound growth formula A=P(1+i)^n to population figures with starting population in blue growth rate in orange years in green and future population in red including doubling time by trial and improvement" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Growing crowd of stick figures illustrating an exponential population curve over time with starting population in blue growth rate in orange time in green and future population in red" />',
     },
   ],
 

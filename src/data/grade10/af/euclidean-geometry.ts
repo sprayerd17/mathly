@@ -108,7 +108,137 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — INVESTIGATING PROPERTIES OF SPECIAL QUADRILATERALS
+    // SECTION 2 — INVESTIGATING THE MIDPOINT THEOREM
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'midpoint-theorem',
+      title: 'Ondersoek van die Middelpuntstelling',
+      icon: '△',
+      explanation:
+        `<p style="margin-bottom:16px;">Die <strong>middelpunt</strong> van ʼn lynstuk is die punt presies op halfpad tussen sy twee eindpunte. As ons die middelpunte van twee sye van ʼn driehoek verbind, het die lynstuk wat ons teken — die ${or('middelyn')} genoem — ʼn opvallende verband met die derde sy. Ons ${or('ondersoek')} hierdie verband deur konstruksie en meting, wat lei tot die <strong>Middelpuntstelling</strong>.</p>` +
+        `<p style="margin-bottom:16px;">In driehoek ABC, as ${bl('D')} en ${bl('E')} die middelpunte van ${bl('AB')} en ${bl('AC')} is, dan is ${gr('DE ∥ BC')} ÉN ${gr('DE = ½BC')}. Hier ondersoek en pas ons slegs die stelling toe deur voorbeelde en meting — die volledige logiese bewys (met gelykvormige driehoeke) word in Graad 11 behandel.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gegewe middelpunte en sye')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('ondersoekstap')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('bevestigde verband')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om die Middelpuntstelling te ondersoek</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Teken enige driehoek ${bl('ABC')} — enige vorm of grootte werk.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Gebruik ʼn liniaal om ${bl('AB')} en ${bl('AC')} te meet, en merk die middelpunte ${bl('D')} (op AB) en ${bl('E')} (op AC).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Verbind ${bl('D')} met ${bl('E')} met ʼn reguit lyn — hierdie lynstuk word die ${or('middelyn')} genoem.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">Meet ${gr('DE')} en ${gr('BC')} met ʼn liniaal, en kontroleer met ʼn gradeboog (of ʼn winkelhaak) dat DE en BC in dieselfde rigting wys. Jy sal vind dat ${gr('DE ∥ BC')} en ${gr('DE presies die helfte van die lengte van BC is')} — elke keer, vir elke driehoeksvorm.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die Middelpuntstelling</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As ${bl('D')} en ${bl('E')} die middelpunte van sye ${bl('AB')} en ${bl('AC')} van driehoek ABC is, dan is ${gr('DE ∥ BC')} en ${gr('DE = ½BC')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Twee feite, nie een nie</p>` +
+        `<p style="margin:0;color:#7c2d12;">Die Middelpuntstelling gee jou altyd TWEE feite gelyktydig — ʼn ${or('ewewydigheids')}-verband ÉN ʼn ${or('lengte')}-verband. Sodra jy weet twee punte is middelpunte, volg albei feite onmiddellik, sonder enige verdere meting.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Driehoek ABC het hoekpunte A(2, 6), B(0, 0) en C(8, 0) op die Cartesiese vlak. D is die middelpunt van AB en E is die middelpunt van AC. Bepaal die koördinate van D en E, en ondersoek dan of DE ∥ BC en DE = ½BC.',
+          answer: `Die ondersoek bevestig ${gr('DE ∥ BC')} en ${gr('DE = ½BC')}`,
+          steps: [
+            `Bepaal ${bl('D')}, die middelpunt van AB: D = ((2+0)/2, (6+0)/2) = ${bl('(1, 3)')}`,
+            `Bepaal ${bl('E')}, die middelpunt van AC: E = ((2+8)/2, (6+0)/2) = ${bl('(5, 3)')}`,
+            `${or('Kontroleer vir ewewydigheid:')} D en E het albei y-koördinaat 3, dus is DE ʼn horisontale lyn. B en C het albei y-koördinaat 0, dus is BC ook horisontaal. Twee horisontale lyne wys in dieselfde rigting, dus ${gr('DE ∥ BC')} ✓`,
+            `${or('Kontroleer die lengte:')} DE = 5 − 1 = 4 eenhede. BC = 8 − 0 = 8 eenhede. Aangesien 4 = ½ × 8, is ${gr('DE = ½BC')} ✓`,
+            `<strong>Gevolgtrekking:</strong> Hierdie numeriese ondersoek bevestig die Middelpuntstelling: ${gr('DE ∥ BC')} en ${gr('DE = ½BC')}.`,
+          ],
+        },
+        {
+          question: 'In driehoek KLM is P en Q onderskeidelik die middelpunte van KL en KM. As LM = 22 cm, bepaal die lengte van PQ, en stel watter sye ewewydig is.',
+          answer: `PQ = ${or('11')} cm, en ${or('PQ ∥ LM')}`,
+          steps: [
+            `${bl('P')} en ${bl('Q')} is die middelpunte van ${bl('KL')} en ${bl('KM')}, dus is die Middelpuntstelling direk van toepassing.`,
+            `Volgens die Middelpuntstelling: ${or('PQ ∥ LM')} en ${or('PQ = ½LM')}`,
+            `Vervang: ${or('PQ = ½ × 22 = 11')} cm`,
+            `<strong>Antwoord:</strong> PQ = ${or('11')} cm, en PQ is ewewydig aan LM ✓`,
+          ],
+        },
+        {
+          question: 'In driehoek XYZ is M en N die middelpunte van XY en XZ. MN = 6.5 cm. (a) Bepaal YZ. (b) Verduidelik waarom MN ewewydig aan YZ moet wees, sonder om iets te meet.',
+          answer: `(a) YZ = ${or('13')} cm (b) ${gr('MN ∥ YZ')} volg outomaties uit die Middelpuntstelling`,
+          steps: [
+            `(a) Volgens die Middelpuntstelling is ${or('MN = ½YZ')}, dus is ${or('YZ = 2 × MN = 2 × 6,5 = 13')} cm.`,
+            `(b) ${bl('M')} en ${bl('N')} word gedefinieer as die presiese middelpunte van twee sye van die driehoek. Die Middelpuntstelling waarborg dat die lynstuk wat enige twee sulke middelpunte verbind, ewewydig aan die derde sy is — dit volg outomaties uit die middelpuntvoorwaarde, dus is ${gr('MN ∥ YZ')} sonder dat enigiets verder gemeet hoef te word.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'In driehoek DEF is G en H onderskeidelik die middelpunte van DE en DF. EF = 20 cm. Gebruik die Middelpuntstelling om die lengte van GH te bepaal.',
+          checkMode: 'auto',
+          correctAnswer: '10cm',
+          correctAnswers: ['10cm', '10 cm', '10'],
+          answer: '10 cm',
+          explanation: 'Volgens die Middelpuntstelling is GH = ½ × EF = ½ × 20 = 10 cm (en GH ∥ EF).',
+          diagramSvg: '<svg viewBox="0 0 210 175" xmlns="http://www.w3.org/2000/svg"><polygon points="105,25 25,150 185,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="87.5" x2="145" y2="87.5" stroke="#2563eb" stroke-width="2.5"/><circle cx="65" cy="87.5" r="3" fill="#2563eb"/><circle cx="145" cy="87.5" r="3" fill="#2563eb"/><text x="105" y="80" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">?</text><text x="105" y="167" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">20 cm</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'In driehoek PQR is S en T onderskeidelik die middelpunte van PQ en PR. ST = 7.5 cm. Bepaal die lengte van QR.',
+          checkMode: 'auto',
+          correctAnswer: '15cm',
+          correctAnswers: ['15cm', '15 cm', '15'],
+          answer: '15 cm',
+          explanation: 'Volgens die Middelpuntstelling is QR = 2 × ST = 2 × 7,5 = 15 cm.',
+          diagramSvg: '<svg viewBox="0 0 210 175" xmlns="http://www.w3.org/2000/svg"><polygon points="105,25 25,150 185,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="87.5" x2="145" y2="87.5" stroke="#2563eb" stroke-width="2.5"/><circle cx="65" cy="87.5" r="3" fill="#2563eb"/><circle cx="145" cy="87.5" r="3" fill="#2563eb"/><text x="105" y="80" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">7,5 cm</text><text x="105" y="167" font-size="14" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'In driehoek ABC is M en N die middelpunte van AB en AC. Verduidelik waarom MN ewewydig aan BC moet wees, sonder om iets te meet.',
+          answer: 'Omdat M en N gedefinieer word as die presiese middelpunte van twee sye van die driehoek, waarborg die Middelpuntstelling dat die lynstuk wat hulle verbind, ewewydig aan die derde sy is — dit volg outomaties uit die middelpuntvoorwaarde self, dus is geen meting nodig om dit te bevestig nie.',
+          checkMode: 'self',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'In driehoek XYZ is D, E en F onderskeidelik die middelpunte van XY, XZ en YZ. Die omtrek van driehoek XYZ is 54 cm. Bepaal die omtrek van driehoek DEF (gevorm deur die drie middelpunte te verbind), en verduidelik jou redenasie.',
+          answer: 'Deur die Middelpuntstelling drie keer toe te pas (een keer vir elke paar middelpunte) blyk dit dat elke sy van driehoek DEF presies die helfte van die lengte van die ooreenstemmende sy van driehoek XYZ is (DE = ½YZ, DF = ½XZ, EF = ½XY), dus is die omtrek van DEF die helfte van die omtrek van XYZ: ½ × 54 = 27 cm.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat die Middelpuntstelling ondersoek deur ʼn driehoek te konstrueer, die middelpunte van twee sye te merk, en die middelyn te meet om te bevestig dat dit ewewydig aan en die helfte van die lengte van die derde sy is" />',
+
+      diagramPlaceholder:
+        'Driehoek ABC met D en E gemerk as die middelpunte van AB en AC, die middelyn DE in blou geteken met kepies wat wys AD = DB en AE = EC, en die verband DE ∥ BC, DE = ½BC in groen aangedui',
+      diagramSvg:
+        '<svg viewBox="0 0 210 195" xmlns="http://www.w3.org/2000/svg"><polygon points="105,25 25,150 185,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="65" y1="87.5" x2="145" y2="87.5" stroke="#2563eb" stroke-width="2.5"/><circle cx="65" cy="87.5" r="3.5" fill="#2563eb"/><circle cx="145" cy="87.5" r="3.5" fill="#2563eb"/><line x1="80" y1="53" x2="90.1" y2="59.5" stroke="#ea580c" stroke-width="2"/><line x1="40" y1="115.5" x2="50.1" y2="122" stroke="#ea580c" stroke-width="2"/><line x1="120" y1="59.5" x2="130.1" y2="53" stroke="#ea580c" stroke-width="2"/><line x1="160" y1="122" x2="170.1" y2="115.5" stroke="#ea580c" stroke-width="2"/><text x="105" y="16" font-size="13" fill="#374151" font-weight="700" text-anchor="middle">A</text><text x="10" y="158" font-size="13" fill="#374151" font-weight="700">B</text><text x="190" y="158" font-size="13" fill="#374151" font-weight="700">C</text><text x="47" y="79" font-size="12" fill="#2563eb" font-weight="700">D</text><text x="150" y="79" font-size="12" fill="#2563eb" font-weight="700">E</text><text x="105" y="99" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">DE</text><text x="105" y="185" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">DE ∥ BC en DE = ½BC</text></svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — INVESTIGATING PROPERTIES OF SPECIAL QUADRILATERALS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'properties-special-quadrilaterals',
@@ -211,7 +341,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — ALTERNATIVE DEFINITIONS OF POLYGONS
+    // SECTION 4 — ALTERNATIVE DEFINITIONS OF POLYGONS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'alternative-definitions-polygons',
@@ -296,7 +426,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — PROVING GEOMETRIC CONJECTURES AND DISPROVING FALSE ONES
+    // SECTION 5 — PROVING GEOMETRIC CONJECTURES AND DISPROVING FALSE ONES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'proving-disproving-conjectures',

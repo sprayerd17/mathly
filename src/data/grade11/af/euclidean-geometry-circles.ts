@@ -10,6 +10,27 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 
+// ─── CAPS-styl tweekolom (Stelling | Rede) bewystabel ─────────────────────────
+// rows: 'n reeks van [stelling, rede]-pare, weergegee as 'n HTML-tabel wat by
+// die werf se ontwerpstelsel pas (gebruik binne `explanation`-stringe vir
+// formele stellingbewyse, en binne self-nagesiene raaisel-`answer`-stringe).
+const proofTable = (rows: [string, string][]) =>
+  `<div style="overflow-x:auto;margin-top:10px;margin-bottom:6px"><table style="border-collapse:collapse;font-size:0.92em;width:100%">` +
+  `<thead><tr>` +
+  `<th style="padding:8px 12px;background:#0f1f3d;color:#ffffff;border:1px solid #0f1f3d;font-weight:700;text-align:left">Stelling</th>` +
+  `<th style="padding:8px 12px;background:#0f1f3d;color:#ffffff;border:1px solid #0f1f3d;font-weight:700;text-align:left">Rede</th>` +
+  `</tr></thead><tbody>` +
+  rows
+    .map(
+      ([s, r], i) =>
+        `<tr style="background:${i % 2 === 0 ? '#f8fafc' : '#ffffff'}">` +
+        `<td style="padding:8px 12px;border:1px solid #e2e8f0;color:#0f1f3d;">${s}</td>` +
+        `<td style="padding:8px 12px;border:1px solid #e2e8f0;color:#374151;">${r}</td>` +
+        `</tr>`
+    )
+    .join('') +
+  `</tbody></table></div>`
+
 export const topicData: TopicData = {
   title: 'Euklidiese Meetkunde — Sirkels',
   grade: 11,
@@ -657,6 +678,362 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat ʼn middellyn met ʼn derde punt op die sirkel wys wat ʼn regte hoek vorm, wat demonstreer dat die hoek in ʼn halfsirkel altyd 90 grade is, en dan die omgekeerde wys waar ʼn 90-grade-hoek bewys dat ʼn koord ʼn middellyn is" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — THEOREM: CYCLIC QUADRILATERALS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'cyclic-quadrilaterals',
+      title: 'Stelling — Koordevierhoeke',
+      icon: '▱',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn ${bl('Koordevierhoek')} is ʼn vierhoek waarvan al vier hoekpunte ${bl('almal')} op die omtrek van dieselfde sirkel lê. Twee stellings beheer die hoeke daarbinne: (1) ${bl('teenoorstaande hoeke')} van ʼn koordevierhoek is altyd ${bl('supplementêr')} (hulle tel op tot 180°), en (2) die ${gr('buitehoek')} van ʼn koordevierhoek (gevorm deur een sy te verleng) is altyd gelyk aan die ${or('teenoorstaande binnehoek')}. Albei stellings het ewe belangrike omgekeerdes, wat jou toelaat om te bewys dat vier punte op ʼn gemeenskaplike sirkel lê (dat hulle ${bl('konsiklies')} is) sonder om ooit daardie sirkel te teken. Dit is een van die twee mees gereeld geëksamineerde sirkelraaisels in Graad 11 CAPS Vraestel 2, so maak seker jy kan die bewys hieronder reproduseer, nie net die resultaat opsê nie.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('teenoorstaande hoekpaar 1')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('teenoorstaande hoekpaar 2')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('teenoorstaande binnehoek')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('buitehoek')}</span>` +
+        `</div>` +
+
+        // ── Two theorems + converses ───────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die stellings en hulle omgekeerdes</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Teenoorstaande Hoeke van ʼn Koordevierhoek is Supplementêr</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">In koordevierhoek ABCD is ${bl('∠A + ∠C = 180°')} en ${re('∠B + ∠D = 180°')}. Elke paar teenoorstaande hoeke tel op tot 180°, omdat elkeen die helfte is van een van die twee boë wat saam die volle 360° van die sirkel uitmaak.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Omgekeerde — Supplementêre Teenoorstaande Hoeke ⟹ Koordevierhoek</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">As ʼn vierhoek een paar teenoorstaande hoeke het wat optel tot 180°, dan is daardie vierhoek ʼn koordevierhoek — sy vier hoekpunte moet op een sirkel lê. Gebruik dit om te bewys dat punte konsiklies is.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Buitehoek = Teenoorstaande Binnehoek</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">As ʼn sy van koordevierhoek ABCD verleng word verby ʼn hoekpunt, is die ${gr('buitehoek')} wat daar gevorm word gelyk aan die ${or('teenoorstaande binnehoek')}. Dit is ʼn direkte gevolg van Stelling 1, hieronder bewys.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">4</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Omgekeerde — Buitehoek = Teenoorstaande Binnehoek ⟹ Koordevierhoek</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">As die buitehoek van ʼn vierhoek gelyk is aan die teenoorstaande binnehoek, is die vierhoek ʼn koordevierhoek. Dit is bloot ʼn alternatiewe manier om die omgekeerde van Stelling 1 te stel.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Formal proof of Theorem 1 ───────────────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:16px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Bewys — Teenoorstaande Hoeke is Supplementêr</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Gegee:</strong> Koordevierhoek ABCD in ʼn sirkel met middelpunt O.</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Te bewys:</strong> ∠BAD + ∠BCD = 180°.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Konstruksie:</strong> Trek OB en OD.</p>` +
+        proofTable([
+          ['Refleks ∠BOD = 2∠BAD', '∠ by middelpunt = 2 × ∠ by omtrek (staan op boog BCD)'],
+          ['∠BOD = 2∠BCD', '∠ by middelpunt = 2 × ∠ by omtrek (staan op boog BAD)'],
+          ['Refleks ∠BOD + ∠BOD = 360°', '∠e rondom ʼn punt'],
+          ['∴ 2∠BAD + 2∠BCD = 360°', 'substitusie uit die twee reëls hierbo'],
+          ['∴ ∠BAD + ∠BCD = 180°, d.w.s. ∠A + ∠C = 180°', 'deel albei kante deur 2'],
+        ]) +
+        `<p style="margin:10px 0 0 0;color:#374151;font-size:14px;">Aangesien die hoeke van enige vierhoek optel tot 360°, volg ${bl('∠B + ∠D = 360° − (∠A + ∠C) = 360° − 180° = 180°')} onmiddellik — dus is albei pare teenoorstaande hoeke supplementêr.</p>` +
+        `</div>` +
+
+        // ── Corollary proof ──────────────────────────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Bewys van die Gevolgtrekking — Buitehoek = Teenoorstaande Binnehoek</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Gegee:</strong> Koordevierhoek ABCD met sy AB verleng tot ʼn punt E.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Te bewys:</strong> ∠CBE = ∠ADC.</p>` +
+        proofTable([
+          ['∠ABC + ∠CBE = 180°', '∠e op ʼn reguit lyn AE'],
+          ['∠ABC + ∠ADC = 180°', 'teenoorst ∠e van koordevierhoek ABCD'],
+          ['∴ ∠CBE = ∠ADC', 'albei gelyk aan 180° − ∠ABC'],
+        ]) +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Bewys dat punte konsiklies is</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Om te bewys dat vier punte op een sirkel lê, wys <strong>óf</strong> dat een paar teenoorstaande hoeke van die vierhoek wat hulle vorm supplementêr is, <strong>óf</strong> dat ʼn buitehoek gelyk is aan die teenoorstaande binnehoek. Enige een van die omgekeerdes is voldoende — jy hoef net een te bewys.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question:
+            'In koordevierhoek ABCD (getoon), is ∠ABC = 92° en ∠ADC = x. Bepaal x.<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="55.43" y1="89.22" x2="170.78" y2="35.43" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="95" y2="197.94" stroke="#0f1f3d" stroke-width="2.5"/><line x1="95" y1="197.94" x2="55.43" y2="89.22" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 154.47,43.04 A 18,18 0 0 1 178.39,51.74" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M 111.91,191.78 A 18,18 0 0 1 88.84,181.03" fill="none" stroke="#ea580c" stroke-width="2"/><circle cx="55.43" cy="89.22" r="2.5" fill="#0f1f3d"/><text x="35.43" y="83.22" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="170.78" cy="35.43" r="2.5" fill="#0f1f3d"/><text x="176.78" y="25.43" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="224.57" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="232.57" y="156.78" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="95" cy="197.94" r="2.5" fill="#0f1f3d"/><text x="85" y="216.94" font-size="13" fill="#0f1f3d" font-weight="700">D</text><text x="159.15" y="71.39" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">92°</text><text x="109.37" y="171.14" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer: `x = ${or('88°')}`,
+          steps: [
+            `${bl('Teenoorstaande hoeke')} van ʼn koordevierhoek is supplementêr: ${bl('∠ABC + ∠ADC = 180°')}.`,
+            `${bl('92°')} + x = 180°.`,
+            `x = 180° − 92° = ${or('88°')}.`,
+            `<strong>Antwoord:</strong> x = ${or('88°')}. ✓`,
+          ],
+        },
+        {
+          question: 'Koordevierhoek WXYZ het ∠WZY = 118°. Sy ZW word verleng verby W tot ʼn punt V. Bepaal die buitehoek ∠VWX.',
+          answer: `∠VWX = ${gr('118°')}`,
+          steps: [
+            `Die ${gr('buitehoek')} by W (naamlik ∠VWX) is gelyk aan die ${or('teenoorstaande binnehoek')}, naamlik ${or('∠WZY')}.`,
+            `${or('∠WZY')} = ${or('118°')}.`,
+            `Daarom is ${gr('∠VWX')} = ${gr('118°')}.`,
+            `<strong>Antwoord:</strong> ∠VWX = ${gr('118°')}. ✓`,
+          ],
+        },
+        {
+          question: 'Vierhoek PQRS het ∠P = 95° en ∠R = 85°. Zanele beweer PQRS moet ʼn koordevierhoek wees. Is sy korrek?',
+          answer: 'Ja — volgens die omgekeerde van die stelling',
+          steps: [
+            `Kyk of die gegewe paar teenoorstaande hoeke supplementêr is: ${bl('∠P + ∠R = 95° + 85° = 180°')}.`,
+            `Aangesien een paar teenoorstaande hoeke optel tot 180°, geld die omgekeerde: ʼn vierhoek met supplementêre teenoorstaande hoeke is ʼn koordevierhoek.`,
+            `<strong>Antwoord:</strong> Ja, Zanele is korrek — PQRS is ʼn koordevierhoek, want ∠P en ∠R is supplementêr. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ABCD is ʼn koordevierhoek met ∠A = 112°. Bepaal ∠C.',
+          answer: '68°',
+          checkMode: 'auto',
+          correctAnswer: '68',
+          correctAnswers: ['68', '68°', '68 grade'],
+          explanation: 'Teenoorstaande hoeke van ʼn koordevierhoek is supplementêr: ∠A + ∠C = 180°.\n∠C = 180° − 112° = 68° ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Beantwoord elk van die volgende oor koordevierhoek EFGH.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) ∠F = 77°. Bepaal ∠H.',
+              correctAnswer: '103',
+              correctAnswers: ['103', '103°', '103 grade'],
+              explanation: 'Teenoorstaande hoeke van ʼn koordevierhoek is supplementêr: ∠H = 180° − 77° = 103° ✓',
+            },
+            {
+              label: 'b) Sy FG word verleng verby G. As die teenoorstaande binnehoek ∠E = 99°, bepaal die buitehoek by G.',
+              correctAnswer: '99',
+              correctAnswers: ['99', '99°', '99 grade'],
+              explanation: 'Buitehoek van ʼn koordevierhoek = teenoorstaande binnehoek = 99° ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question:
+            'In die diagram is O die middelpunt van die sirkel en ABCD is ʼn koordevierhoek. Koord AC onderspan ∠AOC = 130° by die middelpunt, aan dieselfde kant as B. D lê op die klein boog AC. Bepaal die grootte van ∠ABC en ∠ADC, en toon jou redes.<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="55.43" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="120" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 117.45,128.21 A 24,24 0 0 0 162.55,128.21" fill="none" stroke="#dc2626" stroke-width="2"/><line x1="55.43" y1="150.78" x2="140" y2="30" stroke="#2563eb" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="140" y2="30" stroke="#2563eb" stroke-width="2.5"/><path d="M 131.4,42.29 A 15,15 0 0 0 148.6,42.29" fill="none" stroke="#2563eb" stroke-width="2"/><line x1="55.43" y1="150.78" x2="140" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="140" y2="210" stroke="#16a34a" stroke-width="2.5"/><path d="M 127.71,201.4 A 15,15 0 0 1 152.29,201.4" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="55.43" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="35.43" y="158.78" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="224.57" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="234.57" y="158.78" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="140" cy="30" r="2.5" fill="#0f1f3d"/><text x="146" y="20" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="228" font-size="13" fill="#0f1f3d" font-weight="700">D</text><text x="140" y="160" font-size="12" fill="#dc2626" font-weight="700" text-anchor="middle">130°</text><text x="140" y="60" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="140" y="180" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer:
+            `∠ABC = ${bl('65°')}, ∠ADC = ${gr('115°')}.` +
+            proofTable([
+              ['∠ABC = 130° ÷ 2 = 65°', '∠ by middelpunt = 2 × ∠ by omtrek (∠AOC en ∠ABC staan op dieselfde boog — B op die groot boog, dieselfde kant as O)'],
+              ['∠ABC + ∠ADC = 180°', 'teenoorst ∠e van koordevierhoek ABCD'],
+              ['∠ADC = 180° − 65° = 115°', 'substitusie'],
+            ]),
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat ʼn koordevierhoek ABCD wys met teenoorstaande hoekpare uitgelig in blou en rooi, ʼn sy verleng om die buitehoek in groen te wys wat met die teenoorstaande binnehoek in oranje ooreenstem, en die middelpunt-konstruksie wat in die formele bewys gebruik word" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="55.43" y1="89.22" x2="170.78" y2="35.43" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="95" y2="197.94" stroke="#0f1f3d" stroke-width="2.5"/><line x1="95" y1="197.94" x2="55.43" y2="89.22" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="207.02" y2="18.53" stroke="#0f1f3d" stroke-width="2" stroke-dasharray="4,3"/><path d="M 71.74,81.61 A 18,18 0 0 1 61.59,106.13" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M 154.47,43.04 A 18,18 0 0 1 178.39,51.74" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 187.09,27.82 A 18,18 0 0 1 178.39,51.74" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="2,2"/><path d="M 216.96,134.47 A 18,18 0 0 1 207.66,156.94" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 111.91,191.78 A 18,18 0 0 1 88.84,181.03" fill="none" stroke="#dc2626" stroke-width="2"/><circle cx="55.43" cy="89.22" r="2.5" fill="#0f1f3d"/><text x="35.43" y="83.22" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="170.78" cy="35.43" r="2.5" fill="#0f1f3d"/><text x="176.78" y="25.43" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="224.57" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="232.57" y="156.78" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="95" cy="197.94" r="2.5" fill="#0f1f3d"/><text x="85" y="216.94" font-size="13" fill="#0f1f3d" font-weight="700">D</text><circle cx="207.02" cy="18.53" r="2.5" fill="#0f1f3d"/><text x="212.02" y="14.53" font-size="12" fill="#0f1f3d" font-weight="700">E</text><text x="86.83" y="106.24" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">100°</text><text x="159.15" y="71.39" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">75°</text><text x="202.74" y="51.06" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">105°</text><text x="193.15" y="141.77" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">80°</text><text x="109.37" y="171.14" font-size="12" fill="#dc2626" font-weight="700" text-anchor="middle">105°</text></svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 7 — THEOREM: TANGENT-CHORD (ALTERNATE SEGMENT) THEOREM
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'tangent-chord-theorem',
+      title: 'Stelling — Die Raaklyn-koordstelling (Stelling van die Oorstaande Segment)',
+      icon: '↗',
+      explanation:
+        `<p style="margin-bottom:16px;">Wanneer ʼn ${gr('raaklyn')} ʼn sirkel by ʼn punt T raak, en ʼn ${or('koord')} vanaf T getrek word, word die ${gr('hoek tussen die raaklyn en die koord')} die raaklyn-koordhoek genoem. Hierdie stelling — ook die ${gr('stelling van die oorstaande segment')} genoem — sê dat die raaklyn-koordhoek altyd gelyk is aan die ingeskrewe hoek in die ${gr('oorstaande segment')} (die segment aan die ${bl('ander kant')} van die koord). Dit is die tweede swaar geëksamineerde sirkelraaisel in Graad 11 CAPS Vraestel 2, saam met die koordevierhoekstelling. ʼn Nuttige gevolgtrekking volg ook: twee raaklyne wat vanuit dieselfde eksterne punt aan ʼn sirkel getrek word, is altyd ewe lank.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('raaklyn / gelyke hoeke')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('koord')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('oorstaande segment')}</span>` +
+        `</div>` +
+
+        // ── Theorem + converse + corollary ───────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die stelling, sy omgekeerde, en ʼn gevolgtrekking</p>` +
+        `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">1</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Raaklyn-koordstelling (Stelling van die Oorstaande Segment)</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">As PT ʼn raaklyn by T is en TC ʼn koord is, dan is die ${gr('raaklyn-koordhoek ∠PTC')} gelyk aan die ingeskrewe hoek ${gr('∠TAC')} in die oorstaande segment, vir enige punt A op die boog aan die ander kant van TC.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">2</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Omgekeerde — Gelyke Hoek ⟹ Raaklyn</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">As ʼn lyn deur ʼn punt T op ʼn sirkel ʼn hoek met ʼn koord TC vorm wat gelyk is aan die ingeskrewe hoek in die oorstaande segment, dan is daardie lyn ʼn raaklyn aan die sirkel by T. Gebruik dit om te bewys dat ʼn lyn ʼn raaklyn is.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;">` +
+        `<span style="display:inline-block;min-width:26px;height:26px;line-height:26px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:13px;text-align:center;flex-shrink:0;">3</span>` +
+        `<div>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Gevolgtrekking — Raaklyne vanaf ʼn Eksterne Punt is Ewe Lank</p>` +
+        `<p style="margin:0;font-size:14px;color:#374151;">As ${or('PA')} en ${or('PB')} raaklyne is wat vanaf dieselfde eksterne punt P getrek word en die sirkel by A en B raak, dan is ${or('PA = PB')}.</p>` +
+        `</div>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Formal proof of the tan-chord theorem ────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:16px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Bewys — Raaklyn-koordstelling</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Gegee:</strong> Sirkel met middelpunt O; PT is ʼn raaklyn by T; TC is ʼn koord met raaklyn-koordhoek ${gr('∠PTC = x')}; A is ʼn punt op die sirkel in die oorstaande segment.</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Te bewys:</strong> ∠TAC = x.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Konstruksie:</strong> Trek middellyn TD deur T, en trek DC.</p>` +
+        proofTable([
+          ['∠DTP = 90°', 'raaklyn ⊥ middellyn by die raakpunt'],
+          ['∠DTC = 90° − x', '∠DTC = ∠DTP − ∠PTC'],
+          ['∠TCD = 90°', '∠ in halfsirkel (TD is ʼn middellyn)'],
+          ['∠TDC = 180° − 90° − (90° − x) = x', '∠somme van △TDC = 180°'],
+          ['∠TAC = ∠TDC = x', '∠e in dieselfde segment (A en D lê op dieselfde boog, albei onderspan TC)'],
+          ['∴ ∠TAC = ∠PTC (albei gelyk aan x)', 'raaklyn-koordstelling bewys'],
+        ]) +
+        `</div>` +
+
+        // ── Corollary proof ──────────────────────────────────────────────────
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;">Bewys van die Gevolgtrekking — Gelyke Raaklyne vanaf ʼn Eksterne Punt</p>` +
+        `<p style="margin:0 0 6px 0;color:#374151;font-size:14px;"><strong>Gegee:</strong> PA en PB is raaklyne vanaf eksterne punt P, wat die sirkel (middelpunt O) by A en B raak.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Te bewys:</strong> PA = PB.</p>` +
+        `<p style="margin:0 0 10px 0;color:#374151;font-size:14px;"><strong>Konstruksie:</strong> Trek OA, OB en OP.</p>` +
+        proofTable([
+          ['OA = OB', 'radiusse van dieselfde sirkel'],
+          ['∠OAP = ∠OBP = 90°', 'raaklyn ⊥ radius'],
+          ['OP = OP', 'gemeenskaplike sy'],
+          ['∴ △OAP ≡ △OBP', 'RHS (regte hoek, skuinssy, sy)'],
+          ['∴ PA = PB', 'ooreenstemmende sye van kongruente driehoeke'],
+        ]) +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#92400e;margin-bottom:6px;">Die oorstaande segment identifiseer</p>` +
+        `<p style="margin:0;color:#78350f;">Teken die koord, let op na watter kant die raaklyn-koordhoek oopmaak, en kyk dan na die segment aan die <strong>ander</strong> kant — enige ingeskrewe hoek wat vanuit daardie segment op die koord staan, is gelyk aan jou raaklyn-koordhoek.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question:
+            'ʼn Raaklyn by punt T maak ʼn hoek van 58° met koord TC. Bepaal die hoek ∠TAC in die oorstaande segment (A op die ver boog).<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="210" x2="220" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="210" stroke="#0f1f3d" stroke-width="1.5" stroke-dasharray="3,3"/><path d="M 140,198 L 152,198 L 152,210" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="140" y1="210" x2="213.7" y2="68.3" stroke="#ea580c" stroke-width="2.5"/><line x1="62.06" y1="75" x2="140" y2="210" stroke="#0f1f3d" stroke-width="2"/><line x1="62.06" y1="75" x2="213.7" y2="68.3" stroke="#0f1f3d" stroke-width="2"/><path d="M 160,210 A 20,20 0 0 1 149.23,192.26" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 72.06,92.32 A 20,20 0 0 1 82.04,74.12" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">T</text><circle cx="213.7" cy="68.3" r="2.5" fill="#0f1f3d"/><text x="221.7" y="62.3" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="62.06" cy="75" r="2.5" fill="#0f1f3d"/><text x="42.06" y="69" font-size="13" fill="#0f1f3d" font-weight="700">A</text><text x="169.92" y="196.84" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">58°</text><text x="92.74" y="91.82" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer: `∠TAC = ${gr('58°')}`,
+          steps: [
+            `Die raaklyn-koordhoek by T tussen die raaklyn en koord TC is ${gr('58°')}.`,
+            `Volgens die raaklyn-koordstelling (stelling van die oorstaande segment) is die ingeskrewe hoek in die oorstaande segment gelyk aan die raaklyn-koordhoek.`,
+            `∠TAC = ${gr('58°')}.`,
+            `<strong>Antwoord:</strong> ∠TAC = ${gr('58°')}. ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Lyn ℓ raak ʼn sirkel by punt P. Koord PQ word getrek, en die hoek tussen ℓ en PQ is 47°. ʼn Punt R lê op die sirkel, in die segment aan die teenoorgestelde kant van PQ vanwaar daardie hoek oopmaak, met ∠PRQ = 47°. Sê, met rede, of ℓ ʼn raaklyn aan die sirkel by P is.',
+          answer: 'Ja — volgens die omgekeerde van die raaklyn-koordstelling',
+          steps: [
+            `Die hoek tussen lyn ℓ en koord PQ (47°) is gelyk aan die ingeskrewe hoek ∠PRQ (47°) in die segment aan die ander kant van PQ.`,
+            `Volgens die omgekeerde van die raaklyn-koordstelling, as die hoek wat ʼn lyn met ʼn koord vorm gelyk is aan die hoek in die oorstaande segment, moet daardie lyn ʼn raaklyn wees.`,
+            `<strong>Antwoord:</strong> Ja, ℓ is ʼn raaklyn aan die sirkel by P. ✓`,
+          ],
+        },
+        {
+          question: 'Raaklyne PA en PB word vanaf eksterne punt P getrek, met PA = 3x − 2 en PB = x + 8. Bepaal x, en bepaal dan die lengte van PA.',
+          answer: `x = ${or('5')}, PA = ${or('13')}`,
+          steps: [
+            `Raaklyne vanaf dieselfde eksterne punt is ewe lank: ${or('PA = PB')}.`,
+            `${or('3x − 2 = x + 8')}.`,
+            `2x = 10, dus x = ${or('5')}.`,
+            `PA = 3(5) − 2 = 15 − 2 = ${or('13')}.`,
+            `<strong>Antwoord:</strong> x = ${or('5')}, PA = ${or('13')}. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Raaklyn-koordhoek by punt T is 63°. Bepaal die hoek in die oorstaande segment.',
+          answer: '63°',
+          checkMode: 'auto',
+          correctAnswer: '63',
+          correctAnswers: ['63', '63°', '63 grade'],
+          explanation: 'Volgens die raaklyn-koordstelling is die hoek in die oorstaande segment gelyk aan die raaklyn-koordhoek: 63° ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Beantwoord elk van die volgende.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Raaklyne PA en PB word vanaf eksterne punt P getrek, met PA = 4x + 1 en PB = 2x + 9. Bepaal PA.',
+              correctAnswer: '17',
+              correctAnswers: ['17', '17cm', '17 cm'],
+              explanation: 'Raaklyne vanaf dieselfde eksterne punt is ewe lank: 4x + 1 = 2x + 9, dus 2x = 8, x = 4.\nPA = 4(4) + 1 = 17 ✓',
+            },
+            {
+              label: 'b) Die hoek tussen ʼn raaklyn en ʼn koord by die raakpunt is 71°. Bepaal die hoek wat die koord in die oorstaande segment onderspan.',
+              correctAnswer: '71',
+              correctAnswers: ['71', '71°', '71 grade'],
+              explanation: 'Volgens die raaklyn-koordstelling is die hoek in die oorstaande segment gelyk aan die raaklyn-koordhoek: 71° ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question:
+            'PT is ʼn raaklyn aan ʼn sirkel by T. TC is ʼn koord, en A is ʼn punt op die sirkel in die oorstaande segment, met TA en AC getrek om driehoek TAC te vorm. Die raaklyn-koordhoek by T (tussen die raaklyn en koord TC) is 50°, en ∠TCA = 65°. Bepaal ∠TAC en ∠ATC, en toon dat driehoek TAC gelykbenig is.<br>' +
+            '<div style="margin:10px 0"><svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="210" x2="220" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="210" x2="213.7" y2="68.3" stroke="#ea580c" stroke-width="2.5"/><line x1="62.06" y1="75" x2="140" y2="210" stroke="#0f1f3d" stroke-width="2"/><line x1="62.06" y1="75" x2="213.7" y2="68.3" stroke="#0f1f3d" stroke-width="2"/><path d="M 160,210 A 20,20 0 0 1 149.23,192.26" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 129,190.95 A 22,22 0 0 1 150.16,190.48" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M 204.47,86.04 A 20,20 0 0 1 193.72,69.18" fill="none" stroke="#ea580c" stroke-width="2"/><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">T</text><circle cx="213.7" cy="68.3" r="2.5" fill="#0f1f3d"/><text x="221.7" y="62.3" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="62.06" cy="75" r="2.5" fill="#0f1f3d"/><text x="42.06" y="69" font-size="13" fill="#0f1f3d" font-weight="700">A</text><text x="169.92" y="191.84" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">50°</text><text x="139.13" y="178" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="184.18" y="87.12" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">65°</text><text x="92.74" y="91.82" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">?</text></svg></div>',
+          answer:
+            `∠TAC = ${gr('50°')}, ∠ATC = ${bl('65°')}, en aangesien ∠TCA = ∠ATC, is driehoek TAC gelykbenig met TA = AC.` +
+            proofTable([
+              ['∠TAC = 50°', 'raaklyn-koordstelling (∠TAC is die ∠ in die oorstaande segment, gelyk aan die raaklyn-koordhoek van 50°)'],
+              ['∠ATC = 180° − 50° − 65° = 65°', '∠somme van △TAC = 180°'],
+              ['∠TCA = ∠ATC = 65°', 'albei gelyk aan 65° (hierbo getoon)'],
+              ['∴ TA = AC', 'sye teenoor gelyke hoeke in ʼn driehoek is gelyk, dus is △TAC gelykbenig'],
+            ]),
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat ʼn raaklyn by T wys met die raaklyn-koordhoek in groen uitgelig, ʼn gelyke ingeskrewe hoek in die oorstaande segment ook in groen uitgelig, en ʼn aparte diagram wat twee gelyke raaklynstukke vanaf ʼn eksterne punt wys" />',
+
+      diagramSvg:
+        '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="210" x2="220" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="210" stroke="#0f1f3d" stroke-width="1.5" stroke-dasharray="3,3"/><path d="M 140,198 L 152,198 L 152,210" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="140" y1="210" x2="213.7" y2="68.3" stroke="#ea580c" stroke-width="2.5"/><line x1="62.06" y1="75" x2="140" y2="210" stroke="#0f1f3d" stroke-width="2"/><line x1="62.06" y1="75" x2="213.7" y2="68.3" stroke="#0f1f3d" stroke-width="2"/><path d="M 160,210 A 20,20 0 0 1 149.23,192.26" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 72.06,92.32 A 20,20 0 0 1 82.04,74.12" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">T</text><circle cx="213.7" cy="68.3" r="2.5" fill="#0f1f3d"/><text x="221.7" y="62.3" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="62.06" cy="75" r="2.5" fill="#0f1f3d"/><text x="42.06" y="69" font-size="13" fill="#0f1f3d" font-weight="700">A</text><text x="169.92" y="196.84" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">x</text><text x="92.74" y="91.82" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">x</text></svg>',
     },
   ],
 

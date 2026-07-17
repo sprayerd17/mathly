@@ -678,6 +678,177 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die variasiewydte, Q1, Q2, Q3 en interkwartielwydte uit ʼn gerangskikte datastel te bepaal, en die verskil tussen variasiewydte en IKW verduidelik" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AFDELING 8 — VYFGETALOPSOMMING EN BOKS-EN-PUNT-DIAGRAMME
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'five-number-summary-box-whisker',
+      title: 'Vyfgetalopsomming en Boks-en-Punt-diagramme',
+      icon: '📦',
+      explanation:
+        `<p style="margin-bottom:16px;">In die vorige afdeling het ons geleer hoe om ${bl('Q1')}, die mediaan en ${bl('Q3')} uit gerangskikte data te bepaal. Saam met die ${bl('minimum')} en ${bl('maksimum')} vorm hierdie vyf waardes die <strong>vyfgetalopsomming</strong>. ʼn <strong>Boks-en-punt-diagram</strong> is ʼn manier om hierdie opsomming op ʼn skaal te teken, sodat die verspreiding en posisie van die data op ʼn oogopslag gesien kan word — ʼn boks van ${or('Q1')} tot ${or('Q3')} met ʼn lyn by die ${gr('mediaan')}, en 'punte' wat na die ${bl('minimum')} en ${bl('maksimum')} strek.</p>` +
+
+        // ── Kleursleutel ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('minimum / maksimum')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('Q1 / Q3 (die boks)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('mediaan')}</span>` +
+        `</div>` +
+
+        // ── Die vyf waardes ─────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die vyfgetalopsomming</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">1. Minimum</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die kleinste waarde nadat die data gerangskik is.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">2. Q1 (Onderkwartiel)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die mediaan van die onderste helfte van die data (waardes onder die mediaan).</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">3. Mediaan (Q2)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die middelste waarde van die hele gerangskikte datastel.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">4. Q3 (Bokwartiel)</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die mediaan van die boonste helfte van die data (waardes bo die mediaan).</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">5. Maksimum</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die grootste waarde nadat die data gerangskik is.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Konstruksiestappe ───────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Stappe om ʼn boks-en-punt-diagram te teken</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Bepaal die vyfgetalopsomming</strong> — rangskik die data, bepaal dan die ${bl('minimum')}, ${or('Q1')}, ${gr('mediaan')}, ${or('Q3')} en ${bl('maksimum')} met die metode uit die vorige afdeling.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Teken ʼn skaal</strong> — teken ʼn getallelyn (horisontaal of vertikaal) wat die volle omvang van die data dek, van op of onder die ${bl('minimum')} tot op of bo die ${bl('maksimum')}, met eweredig gespasieerde merke.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Teken die boks</strong> — teken ʼn reghoek (die boks) van ${or('Q1')} tot ${or('Q3')} bo die skaal. Die breedte van hierdie boks is die interkwartielwydte.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Merk die mediaan</strong> — teken ʼn vertikale lyn binne die boks by die ${gr('mediaan')}, wat die boks in twee verdeel.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">5</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Teken die punte</strong> — teken ʼn reguit lyn van elke kant van die boks na die ${bl('minimum')} en ${bl('maksimum')}. Hierdie lyne is die punte.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Wenk-blokkie ──────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die boksbreedte is die IKW</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Omdat die boks van ${or('Q1')} tot ${or('Q3')} strek, is sy breedte op die skaal presies die interkwartielwydte (IKW) uit die vorige afdeling. ʼn Wye boks beteken die middelste 50% van die data is versprei; ʼn smal boks beteken dit is styf saamgroepeer.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Nege leerders behaal die volgende toetspunte uit 40 in ʼn klastoets: 10, 14, 16, 18, 22, 24, 26, 30, 34. Bepaal die vyfgetalopsomming.',
+          answer: `${bl('Min = 10')} &nbsp;|&nbsp; ${or('Q1 = 15')} &nbsp;|&nbsp; ${gr('Mediaan = 22')} &nbsp;|&nbsp; ${or('Q3 = 28')} &nbsp;|&nbsp; ${bl('Maks = 34')}`,
+          steps: [
+            `Die data is reeds in stygende volgorde: 10, 14, 16, 18, 22, 24, 26, 30, 34. Daar is 9 waardes.`,
+            `${bl('Minimum')} = ${bl('10')} (eerste waarde). &nbsp; ${bl('Maksimum')} = ${bl('34')} (laaste waarde).`,
+            `${gr('Mediaan (Q2)')} = die middelste (5de) waarde van 9 = ${gr('22')}.`,
+            `${or('Onderste helfte')} (waardes onder die mediaan): 10, 14, 16, 18. Q1 = mediaan van hierdie helfte = (14 + 16) ÷ 2 = ${or('15')}.`,
+            `${or('Boonste helfte')} (waardes bo die mediaan): 24, 26, 30, 34. Q3 = mediaan van hierdie helfte = (26 + 30) ÷ 2 = ${or('28')}.`,
+            `<strong>Vyfgetalopsomming:</strong> ${bl('Min = 10')}, ${or('Q1 = 15')}, ${gr('Mediaan = 22')}, ${or('Q3 = 28')}, ${bl('Maks = 34')}`,
+          ],
+        },
+        {
+          question: 'Gebruik die vyfgetalopsomming uit Voorbeeld 1 (Min = 10, Q1 = 15, Mediaan = 22, Q3 = 28, Maks = 34) om stap vir stap ʼn boks-en-punt-diagram te teken.',
+          answer: 'Die boks strek van 15 tot 28 met ʼn mediaanlyn by 22, en punte strek van 15 af tot by 10 en van 28 af tot by 34 — sien die diagram hieronder.',
+          steps: [
+            `<strong>Stap 1 — teken ʼn skaal:</strong> teken ʼn getallelyn van onder die ${bl('minimum')} tot bo die ${bl('maksimum')}, byvoorbeeld 0 tot 40, met eweredige spasiëring.`,
+            `<strong>Stap 2 — merk die vyf waardes:</strong> dui ${bl('10')}, ${or('15')}, ${gr('22')}, ${or('28')} en ${bl('34')} op die skaal aan.`,
+            `<strong>Stap 3 — teken die boks:</strong> teken ʼn reghoek van ${or('Q1 = 15')} tot ${or('Q3 = 28')} bo die skaal — hierdie boks wys die middelste 50% van die punte.`,
+            `<strong>Stap 4 — merk die mediaan:</strong> teken ʼn vertikale lyn binne die boks by die ${gr('mediaan = 22')}.`,
+            `<strong>Stap 5 — teken die punte:</strong> teken ʼn lyn van die linkerkant van die boks (${or('15')}) na die ${bl('minimum (10)')}, en ʼn lyn van die regterkant van die boks (${or('28')}) na die ${bl('maksimum (34)')}.`,
+            `<strong>Voltooide diagram:</strong> die boks-en-punt-diagram hieronder wys al vyf waardes in hul korrekte posisies ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Datastel het vyfgetalopsomming Min = 2, Q1 = 6, Mediaan = 9, Q3 = 13, Maks = 18. Wat is die interkwartielwydte wat deur die breedte van die boks getoon word?',
+          checkMode: 'auto',
+          correctAnswer: '7',
+          correctAnswers: ['7', 'IKW = 7'],
+          explanation: 'IKW = Q3 − Q1 = 13 − 6 = 7 ✓',
+        },
+        {
+          difficulty: 'Easy-Medium',
+          question: 'Bepaal die vyfgetalopsomming van hierdie gerangskikte datastel, en skets dan ʼn boks-en-punt-diagram daarvan: 6, 9, 11, 14, 17, 20, 23, 26, 29.',
+          checkMode: 'self',
+          answer: 'Min = 6, Q1 = 10, Mediaan = 17, Q3 = 24,5, Maks = 29. Die boks strek van 10 tot 24,5 met ʼn mediaanlyn by 17, en punte strek van 10 af tot by 6 en van 24,5 af tot by 29.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Hierdie datastel is nog nie gerangskik nie: 18, 7, 12, 25, 9, 30, 15, 21, 4. Rangskik dit, bepaal die vyfgetalopsomming, en beskryf hoe jy die boks-en-punt-diagram sou teken.',
+          checkMode: 'self',
+          answer: 'Gerangskik: 4, 7, 9, 12, 15, 18, 21, 25, 30. Min = 4, Q1 = 8, Mediaan = 15, Q3 = 23, Maks = 30. Teken ʼn skaal van onder 4 tot bo 30, teken ʼn boks van 8 tot 23 met ʼn lyn by 15, en dan punte van 8 af tot by 4 en van 23 af tot by 30.',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Die boks-en-punt-diagram hieronder wys die tye (in minute) wat 9 hardlopers geneem het om ʼn skoffiehardloop te voltooi. Lees die mediaantyd van die diagram af.',
+          checkMode: 'auto',
+          correctAnswer: '27',
+          correctAnswers: ['27', '27 minute'],
+          explanation: 'Die lyn binne die boks is by die mediaan geteken, wat op 27 op die skaal is ✓',
+          diagramSvg:
+            '<svg viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg"><text x="230" y="16" font-size="13" font-weight="700" fill="#0f1f3d" text-anchor="middle">Boks-en-Punt-diagram: Wedlooptye (minute)</text><line x1="40" y1="60" x2="135" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="287" y1="60" x2="420" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="40" y1="43" x2="40" y2="77" stroke="#0f1f3d" stroke-width="2"/><line x1="420" y1="43" x2="420" y2="77" stroke="#0f1f3d" stroke-width="2"/><rect x="135" y="43" width="152" height="34" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="211" y1="43" x2="211" y2="77" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="115" x2="420" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="40" y1="110" x2="40" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="135" y1="110" x2="135" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="211" y1="110" x2="211" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="287" y1="110" x2="287" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="420" y1="110" x2="420" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><text x="40" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">18</text><text x="135" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">23</text><text x="211" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">27</text><text x="287" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">31</text><text x="420" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">38</text></svg>',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'Gebruik dieselfde boks-en-punt-diagram van wedlooptye — wat is die interkwartielwydte (IKW)?',
+          checkMode: 'auto',
+          correctAnswer: '8',
+          correctAnswers: ['8', '8 minute'],
+          explanation: 'IKW = Q3 − Q1 = 31 − 23 = 8 minute ✓',
+          diagramSvg:
+            '<svg viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg"><text x="230" y="16" font-size="13" font-weight="700" fill="#0f1f3d" text-anchor="middle">Boks-en-Punt-diagram: Wedlooptye (minute)</text><line x1="40" y1="60" x2="135" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="287" y1="60" x2="420" y2="60" stroke="#0f1f3d" stroke-width="2"/><line x1="40" y1="43" x2="40" y2="77" stroke="#0f1f3d" stroke-width="2"/><line x1="420" y1="43" x2="420" y2="77" stroke="#0f1f3d" stroke-width="2"/><rect x="135" y="43" width="152" height="34" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="211" y1="43" x2="211" y2="77" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="115" x2="420" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="40" y1="110" x2="40" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="135" y1="110" x2="135" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="211" y1="110" x2="211" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="287" y1="110" x2="287" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="420" y1="110" x2="420" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><text x="40" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">18</text><text x="135" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">23</text><text x="211" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">27</text><text x="287" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">31</text><text x="420" y="135" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">38</text></svg>',
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Winkelbestuurder teken die aantal items aan wat deur 9 verkoopsassistente op ʼn dag verkoop is: 14, 8, 22, 11, 19, 25, 9, 17, 30. Bepaal die vyfgetalopsomming en beskryf die boks-en-punt-diagram wat jy sou teken, met Q1, die mediaan en Q3 duidelik gemerk.',
+          checkMode: 'self',
+          answer: 'Gerangskik: 8, 9, 11, 14, 17, 19, 22, 25, 30. Min = 8, Q1 = 10, Mediaan = 17, Q3 = 23,5, Maks = 30. Teken ʼn skaal van onder 8 tot bo 30, ʼn boks van 10 tot 23,5 met ʼn mediaanlyn by 17, en punte van 10 af tot by 8 en van 23,5 af tot by 30.',
+        },
+      ],
+
+      diagramSvg:
+        '<svg viewBox="0 0 460 155" xmlns="http://www.w3.org/2000/svg"><text x="230" y="16" font-size="13" font-weight="700" fill="#0f1f3d" text-anchor="middle">Boks-en-Punt-diagram: Toetspunte (uit 40)</text><text x="40" y="33" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Min</text><text x="119.17" y="33" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Q1</text><text x="230" y="33" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Mediaan</text><text x="325" y="33" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Q3</text><text x="420" y="33" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Maks</text><line x1="40" y1="60" x2="119.17" y2="60" stroke="#2563eb" stroke-width="2.5"/><line x1="325" y1="60" x2="420" y2="60" stroke="#2563eb" stroke-width="2.5"/><line x1="40" y1="43" x2="40" y2="77" stroke="#2563eb" stroke-width="2.5"/><line x1="420" y1="43" x2="420" y2="77" stroke="#2563eb" stroke-width="2.5"/><rect x="119.17" y="43" width="205.83" height="34" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><line x1="230" y1="43" x2="230" y2="77" stroke="#16a34a" stroke-width="3"/><line x1="30" y1="115" x2="430" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="40" y1="110" x2="40" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="119.17" y1="110" x2="119.17" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="230" y1="110" x2="230" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="325" y1="110" x2="325" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><line x1="420" y1="110" x2="420" y2="120" stroke="#0f1f3d" stroke-width="1.5"/><text x="40" y="138" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">10</text><text x="119.17" y="138" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">15</text><text x="230" y="138" font-size="13" font-weight="700" fill="#16a34a" text-anchor="middle">22</text><text x="325" y="138" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">28</text><text x="420" y="138" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">34</text><text x="230" y="151" font-size="10" fill="#64748b" text-anchor="middle">Punte uit 40</text></svg>',
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om die vyfgetalopsomming te bepaal en stap vir stap ʼn boks-en-punt-diagram vir ʼn klein datastel te teken" />',
+    },
   ],
 
   // ═══════════════════════════════════════════════════════════════════════════

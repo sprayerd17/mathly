@@ -9,6 +9,8 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
+// deposito (net huurkoop) → pers (#7c3aed)
+const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
   title: 'Finansies, Groei en Verval',
@@ -566,6 +568,439 @@ export const topicData: TopicData = {
 
       diagramPlaceholder:
         '<DiagramPlaceholder label="Diagram wat geldomskakelingspyle tussen Rand en buitelandse geldeenhede wys, met die wisselkoers in blou, die omskakelingsbewerking in oranje, en die finale omgeskakelde bedrag in groen" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — HUURKOOP
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'hire-purchase',
+      title: 'Huurkoop — Deposito, Balans en Paaiemente',
+      icon: '🛒',
+      explanation:
+        `<p style="margin-bottom:16px;">${pu('Huurkoop')} laat jou toe om ʼn item dadelik huis toe te neem deur ʼn ${pu('deposito')} vooraf te betaal, en dan die res — die ${bl('balans')} — deur gelyke maandelikse paaiemente wat ${or('enkelvoudige rente')} insluit, af te betaal. Dit gebruik dieselfde enkelvoudige-rente-formule as Enkelvoudige Groei, ${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')}), maar die ${bl('hoofsom P')} wat gefinansier word, is die <strong>kontantprys minus die deposito</strong>, nie die volle prys nie.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:3px 10px;font-size:13px;">${pu('deposito')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gefinansierde balans P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('rentekoers i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('terugbetalingstydperk n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('totale terugbetaling A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die huurkoop-formule</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')})</p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">waar ${bl('P')} = Kontantprys − ${pu('Deposito')}, en ${gr('n')} die terugbetalingstydperk in jare is</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Stappe om ʼn huurkoopprobleem op te los</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f5f3ff;border:1.5px solid #ddd6fe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#7c3aed;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${pu('Deposito')} — Vermenigvuldig die kontantprys met die depositopersentasie (of gebruik die vaste depositobedrag indien gegee).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Balans (P)')} — Trek die ${pu('deposito')} van die kontantprys af. Slegs hierdie oorblywende balans word rente op gehef.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Totale terugbetaling (A)')} — Pas enkelvoudige rente op die balans toe: ${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')}).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Maandelikse paaiement')} — Deel ${re('A')} deur die totale aantal maande (${gr('n')} × 12).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">5</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Totale koste')} — Tel die ${pu('deposito')} weer by: Totale koste = ${pu('Deposito')} + ${re('A')}. Dit is wat jy uiteindelik werklik betaal.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Huurkoop kos altyd meer as die kontantprys</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Omdat rente op die balans gehef word, is die totale koste om op huurkoop te koop altyd meer as die oorspronklike kontantprys. Die kompromie is gerief — jy kry die item dadelik in plaas daarvan om eers te spaar.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Yskas het ʼn kontantprys van R15 000. Zinhle betaal ʼn 10%-deposito en betaal die balans op huurkoop teen 15% enkelvoudige rente per jaar oor 3 jaar terug. Vind haar maandelikse paaiement en die totale koste van die yskas.',
+          answer: `Maandelikse paaiement = ${re('R543,75')}; Totale koste = ${re('R21 075')}`,
+          steps: [
+            `${pu('Deposito')} = 10% × R15 000 = <strong>R1 500</strong>`,
+            `${bl('Balans (P)')} = R15 000 − R1 500 = <strong>R13 500</strong>`,
+            `${re('Totale terugbetaling')}: ${re('A')} = ${bl('P')}(1 + ${gr('n')} × ${or('i')}) = ${bl('13 500')}(1 + ${gr('3')} × ${or('0,15')}) = 13 500(1,45) = <strong>R19 575</strong>`,
+            `${gr('Maandelikse paaiement')} = R19 575 ÷ (3 × 12) = R19 575 ÷ 36 = <strong>R543,75</strong>`,
+            `${or('Totale koste')} = ${pu('R1 500')} + R19 575 = <strong>R21 075</strong> ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Motorfiets het ʼn kontantprys van R24 000. Kagiso betaal ʼn 15%-deposito en betaal die balans op huurkoop teen 12% enkelvoudige rente per jaar oor 2 jaar terug. Vind sy maandelikse paaiement en die totale koste.',
+          answer: `Maandelikse paaiement = ${re('R1 054')}; Totale koste = ${re('R28 896')}`,
+          steps: [
+            `${pu('Deposito')} = 15% × R24 000 = <strong>R3 600</strong>`,
+            `${bl('Balans (P)')} = R24 000 − R3 600 = <strong>R20 400</strong>`,
+            `${re('Totale terugbetaling')}: ${re('A')} = ${bl('20 400')}(1 + ${gr('2')} × ${or('0,12')}) = 20 400(1,24) = <strong>R25 296</strong>`,
+            `${gr('Maandelikse paaiement')} = R25 296 ÷ (2 × 12) = R25 296 ÷ 24 = <strong>R1 054</strong>`,
+            `${or('Totale koste')} = ${pu('R3 600')} + R25 296 = <strong>R28 896</strong> ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Skootrekenaar het ʼn kontantprys van R20 000. Naledi betaal ʼn vaste deposito van R4 000 en betaal die balans op huurkoop teen 16% enkelvoudige rente per jaar oor 4 jaar terug. Vind haar maandelikse paaiement (rond af tot die naaste sent) en die totale koste.',
+          answer: `Maandelikse paaiement ≈ ${re('R546,67')}; Totale koste = ${re('R30 240')}`,
+          steps: [
+            `${pu('Deposito')} = <strong>R4 000</strong> (ʼn vaste bedrag, nie ʼn persentasie hierdie keer nie)`,
+            `${bl('Balans (P)')} = R20 000 − R4 000 = <strong>R16 000</strong>`,
+            `${re('Totale terugbetaling')}: ${re('A')} = ${bl('16 000')}(1 + ${gr('4')} × ${or('0,16')}) = 16 000(1,64) = <strong>R26 240</strong>`,
+            `${gr('Maandelikse paaiement')} = R26 240 ÷ (4 × 12) = R26 240 ÷ 48 ≈ <strong>R546,67</strong>`,
+            `${or('Totale koste')} = ${pu('R4 000')} + R26 240 = <strong>R30 240</strong> ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Stoof het ʼn kontantprys van R9 000. Lindiwe betaal ʼn 15%-deposito. Bereken die balans wat op huurkoop gefinansier moet word.',
+          answer: 'R7 650',
+          checkMode: 'auto',
+          correctAnswer: 'R7650',
+          correctAnswers: ['R7650', '7650', 'R7 650', '7 650'],
+          explanation: 'Deposito = 15% × R9 000 = R1 350\nBalans = R9 000 − R1 350 = R7 650 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Rusbank het ʼn kontantprys van R12 000. Sipho betaal ʼn 10%-deposito en betaal die balans op huurkoop teen 16% enkelvoudige rente per jaar oor 3 jaar terug.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vind die depositobedrag.',
+              correctAnswer: 'R1200',
+              correctAnswers: ['R1200', '1200', 'R1 200', '1 200'],
+              explanation: 'Deposito = 10% × R12 000 = R1 200 ✓',
+            },
+            {
+              label: 'b) Vind die totale terugbetaling op die balans (met enkelvoudige rente).',
+              correctAnswer: 'R15984',
+              correctAnswers: ['R15984', '15984', 'R15 984', '15 984'],
+              explanation: 'Balans = 12 000 − 1 200 = R10 800\nA = 10 800(1 + 3 × 0,16) = 10 800(1,48) = R15 984 ✓',
+            },
+            {
+              label: 'c) Vind die maandelikse paaiement.',
+              correctAnswer: 'R444',
+              correctAnswers: ['R444', '444', 'R444.00'],
+              explanation: 'Maandelikse paaiement = R15 984 ÷ (3 × 12) = R15 984 ÷ 36 = R444 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Eetkamerstel het ʼn kontantprys van R18 000. Amahle betaal ʼn 12%-deposito en betaal die balans op huurkoop teen 18% enkelvoudige rente per jaar oor 4 jaar terug.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vind die totale koste van die eetkamerstel (deposito plus totale terugbetaling).',
+              correctAnswer: 'R29404,80',
+              correctAnswers: ['R29404.80', '29404.80', 'R29 404.80', '29 404.80', 'R29404.8', '29404.8'],
+              explanation: 'Deposito = 12% × 18 000 = R2 160\nBalans = 18 000 − 2 160 = R15 840\nA = 15 840(1 + 4 × 0,18) = 15 840(1,72) = R27 244,80\nTotale koste = R2 160 + R27 244,80 = R29 404,80 ✓',
+            },
+            {
+              label: 'b) Vind die maandelikse paaiement.',
+              correctAnswer: 'R567,60',
+              correctAnswers: ['R567.60', '567.60', 'R567.6', '567.6'],
+              explanation: 'Maandelikse paaiement = R27 244,80 ÷ (4 × 12) = R27 244,80 ÷ 48 = R567,60 ✓',
+            },
+            {
+              label: 'c) Hoeveel meer betaal Amahle in totaal in vergelyking met die oorspronklike kontantprys?',
+              correctAnswer: 'R11404,80',
+              correctAnswers: ['R11404.80', '11404.80', 'R11 404.80', '11 404.80', 'R11404.8', '11404.8'],
+              explanation: 'Ekstra betaal = Totale koste − Kontantprys = R29 404,80 − R18 000 = R11 404,80 ✓',
+            },
+          ],
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat ʼn huurkoopprobleem stap vir stap deurwerk en wys hoe die deposito in pers, balans in blou, rentekoers in oranje, terugbetalingstydperk in groen, en totale terugbetaling in rooi saamwerk" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Staafdiagram van ʼn huurkoopaankoop wat die deposito-segment in pers langs die gefinansierde balans-segment in blou wys wat oor die terugbetalingstydperk groei tot die totale terugbetaling-segment in rooi" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — INFLASIE
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'inflation',
+      title: 'Inflasie en Koopkrag',
+      icon: '📈',
+      explanation:
+        `<p style="margin-bottom:16px;">${or('Inflasie')} is die tempo waarteen pryse mettertyd styg, wat die koopkrag van jou geld verminder. Omdat elke jaar se prysstyging op die <em>reeds-verhoogde</em> prys van die vorige jaar bereken word, groei inflasie eksponensieel — presies soos ${gr('saamgestelde groei')}. Ons gebruik dieselfde formule: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup>, maar hier is ${bl('P')} ʼn ${bl('huidige prys')}, ${or('i')} is die ${or('inflasiekoers')}, en ${re('A')} is ʼn ${re('toekomstige prys')}.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('huidige prys P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('inflasiekoers i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('aantal jare n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('toekomstige prys A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die inflasieformule</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup></p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">dieselfde saamgestelde-groei-formule, toegepas op pryse in plaas van beleggings</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelterme</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">P — Huidige Prys</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Wat die item vandag kos, voor enige verdere inflasie.</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">i — Inflasiekoers</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die gemiddelde jaarlikse persentasietoename in pryse, as ʼn desimale breuk geskryf.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">n — Aantal Jare</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Oor hoeveel jare van inflasie die prys geprojekteer word.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">A — Toekomstige Prys</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Wat verwag word die item na n jaar se inflasie sal kos.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Koopkrag</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Jou <strong>koopkrag</strong> is hoeveel jy werklik met jou geld kan koop. As pryse 6% per jaar styg, maar jou salaris slegs 3% per jaar styg, val jou koopkrag — dieselfde randbedrag koop elke jaar minder, al is die getal op jou salarisstrokie groter.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Brood kos vandag R18. As inflasie gemiddeld 6% per jaar is, vind die verwagte prys van die brood na 5 jaar (rond af tot 2 desimale plekke).',
+          answer: `${re('A')} ≈ ${re('R24,09')}`,
+          steps: [
+            `Skryf die formule neer: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>`,
+            `Vervang: ${bl('P')} = R18, ${or('i')} = 0,06, ${gr('n')} = 5:<br>${re('A')} = ${bl('18')}(1,06)<sup style="color:#16a34a;font-weight:700;">5</sup>`,
+            `Bereken die mag: (1,06)<sup style="color:#16a34a;font-weight:700;">5</sup> ≈ 1,33823`,
+            `Vermenigvuldig: ${re('A')} = ${bl('18')} × 1,33823 ≈ <strong>R24,09</strong> ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Kruideniersmandjie kos vandag R2 500. As inflasie gemiddeld 5,5% per jaar is, vind die verwagte koste na 8 jaar, en hoeveel ekstra geld jy sou benodig in vergelyking met vandag (rond af tot 2 desimale plekke).',
+          answer: `Koste ≈ ${re('R3 836,72')}; Ekstra benodig ≈ ${re('R1 336,72')}`,
+          steps: [
+            `Skryf die formule neer: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>`,
+            `Vervang: ${bl('P')} = R2 500, ${or('i')} = 0,055, ${gr('n')} = 8:<br>${re('A')} = ${bl('2 500')}(1,055)<sup style="color:#16a34a;font-weight:700;">8</sup>`,
+            `Bereken die mag: (1,055)<sup style="color:#16a34a;font-weight:700;">8</sup> ≈ 1,53469`,
+            `Vermenigvuldig: ${re('A')} = ${bl('2 500')} × 1,53469 ≈ <strong>R3 836,72</strong>`,
+            `Ekstra geld benodig = R3 836,72 − R2 500 = <strong>R1 336,72</strong> ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Handboek kos nou R450, na 3 jaar se inflasie wat gemiddeld 7% per jaar was. Vind wat die handboek 3 jaar gelede gekos het (rond af tot 2 desimale plekke).',
+          answer: `${bl('P')} ≈ ${bl('R367,33')}`,
+          steps: [
+            `Skryf die formule neer: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>, en los hierdie keer vir ${bl('P')} op.`,
+            `Vervang: ${re('A')} = R450, ${or('i')} = 0,07, ${gr('n')} = 3:<br>450 = ${bl('P')}(1,07)<sup style="color:#16a34a;font-weight:700;">3</sup>`,
+            `Bereken die mag: (1,07)<sup style="color:#16a34a;font-weight:700;">3</sup> ≈ 1,22504`,
+            `Deel: ${bl('P')} = 450 ÷ 1,22504 ≈ <strong>R367,33</strong>`,
+            `<strong>Antwoord:</strong> Die handboek het ongeveer ${bl('R367,33')} drie jaar gelede gekos. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Brood kos vandag R16. As inflasie gemiddeld 6% per jaar is, vind die verwagte prys na 3 jaar (rond af tot 2 desimale plekke).',
+          answer: 'R19,06',
+          checkMode: 'auto',
+          correctAnswer: 'R19,06',
+          correctAnswers: ['R19.06', '19.06'],
+          explanation: 'A = P(1 + i)ⁿ = 16(1,06)³\n(1,06)³ = 1,191016\nA = 16 × 1,191016 ≈ R19,06 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Skool hef jaarlikse skoolgeld van R32 000. As skoolgeld met inflasie van 8% per jaar styg, vind:',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Die skoolgeld na 3 jaar (rond af na die naaste Rand).',
+              correctAnswer: 'R40311',
+              correctAnswers: ['R40311', '40311', 'R40 311', '40 311'],
+              explanation: 'A = 32 000(1,08)³ ≈ 32 000 × 1,259712 ≈ R40 311 ✓',
+            },
+            {
+              label: 'b) Die skoolgeld na 6 jaar (rond af na die naaste Rand).',
+              correctAnswer: 'R50780',
+              correctAnswers: ['R50780', '50780', 'R50 780', '50 780'],
+              explanation: 'A = 32 000(1,08)⁶ ≈ 32 000 × 1,586874 ≈ R50 780 ✓',
+            },
+            {
+              label: 'c) Die toename in skoolgeld tussen jaar 3 en jaar 6 (rond af na die naaste Rand).',
+              correctAnswer: 'R10469',
+              correctAnswers: ['R10469', '10469', 'R10 469', '10 469'],
+              explanation: 'R50 780 − R40 311 = R10 469 ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Handboek kos nou R620. As die gemiddelde inflasiekoers oor die afgelope 4 jaar 6,5% per jaar was, vind wat die handboek 4 jaar gelede sou gekos het (rond af na die naaste Rand).',
+          answer: 'R482',
+          checkMode: 'auto',
+          correctAnswer: 'R482',
+          correctAnswers: ['R482', '482'],
+          explanation: '620 = P(1,065)⁴\n(1,065)⁴ ≈ 1,28647\nP = 620 ÷ 1,28647 ≈ R482 ✓',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat inflasie verduidelik deur die saamgestelde-groei-formule A=P(1+i)^n te gebruik om toekomstige pryse te projekteer, met huidige prys in blou, inflasiekoers in oranje, jare in groen, toekomstige prys in rooi, en hoe koopkrag geraak word" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Stygende pryskurwe oor tyd wat die huidige prys in blou eksponensieel na die toekomstige prys in rooi laat groei terwyl die inflasiekoers in oranje elke jaar in groen saamstel" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 7 — BEVOLKINGSGROEI
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'population-growth',
+      title: 'Bevolkingsgroei',
+      icon: '👥',
+      explanation:
+        `<p style="margin-bottom:16px;">Bevolkingsgroei volg presies dieselfde eksponensiële patroon as saamgestelde rente — elke jaar se groei vind bo-op die reeds-groter bevolking van die vorige jaar plaas. Ons hergebruik die ${gr('saamgestelde-groei')}-formule ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup>, maar hier is ${bl('P')} ʼn ${bl('beginbevolking')}, ${or('i')} is ʼn ${or('jaarlikse groeikoers')}, en ${re('A')} is ʼn ${re('toekomstige bevolking')}. Aangesien jy nie deel van ʼn persoon kan hê nie, word bevolkingsantwoorde altyd na die naaste heelgetal afgerond.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('beginbevolking P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('groeikoers i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('aantal jare n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('toekomstige bevolking A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die bevolkingsgroei-formule</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 + ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup></p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">dieselfde saamgestelde-groei-formule — geld word deur mense vervang!</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Groei, verval, en verdubbelingstyd</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Nie alle bevolkings groei nie — ʼn dorp wat inwoners aan emigrasie verloor, krimp met dieselfde idee as enkelvoudige/saamgestelde <strong>verval</strong>. En net soos met beleggings kan jy <strong>probeer en verbeter</strong> gebruik (sien Oplos vir n) om te bereken hoeveel jare dit neem vir ʼn bevolking om te verdubbel, of om ʼn teikengrootte te bereik.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Dorp se bevolking is 8 200 en groei teen 2,8% per jaar. Vind die bevolking na 6 jaar (rond af na die naaste heelgetal).',
+          answer: `Bevolking ≈ ${re('9 678')}`,
+          steps: [
+            `Skryf die formule neer: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>`,
+            `Vervang: ${bl('P')} = 8 200, ${or('i')} = 0,028, ${gr('n')} = 6:<br>${re('A')} = ${bl('8 200')}(1,028)<sup style="color:#16a34a;font-weight:700;">6</sup>`,
+            `Bereken die mag: (1,028)<sup style="color:#16a34a;font-weight:700;">6</sup> ≈ 1,18021`,
+            `Vermenigvuldig: ${re('A')} = ${bl('8 200')} × 1,18021 ≈ <strong>9 678</strong> mense ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Stad se bevolking het teen 3% per jaar oor 8 jaar gegroei om 96 000 te bereik. Vind die bevolking 8 jaar gelede (rond af na die naaste heelgetal).',
+          answer: `${bl('P')} ≈ ${bl('75 783')}`,
+          steps: [
+            `Skryf die formule neer: ${re('A')} = ${bl('P')}(1 + ${or('i')})<sup>n</sup>, en los hierdie keer vir ${bl('P')} op.`,
+            `Vervang: ${re('A')} = 96 000, ${or('i')} = 0,03, ${gr('n')} = 8:<br>96 000 = ${bl('P')}(1,03)<sup style="color:#16a34a;font-weight:700;">8</sup>`,
+            `Bereken die mag: (1,03)<sup style="color:#16a34a;font-weight:700;">8</sup> ≈ 1,26677`,
+            `Deel: ${bl('P')} = 96 000 ÷ 1,26677 ≈ <strong>75 783</strong> mense`,
+            `<strong>Antwoord:</strong> Die bevolking 8 jaar gelede was ongeveer ${bl('75 783')}. ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Landelike bevolking van 5 000 groei teen 4,5% per jaar. Gebruik probeer en verbeter om te vind hoeveel jare dit neem vir die bevolking om te verdubbel.',
+          answer: `Ongeveer ${gr('16')} jaar`,
+          steps: [
+            `Verdubbeling beteken ons moet (1,045)<sup>${bl('n')}</sup> = ${or('2')} kry.`,
+            `${bl('Probeer n = 15:')} (1,045)<sup>15</sup> ≈ 1,935 — dit is onder die ${or('teiken van 2')}, dus is n = 15 te laag.`,
+            `${bl('Probeer n = 16:')} (1,045)<sup>16</sup> ≈ 2,022 — dit oorskry die ${or('teiken van 2')}.`,
+            `<strong>Gevolgtrekking:</strong> Aangesien bevolking in heel jare getel word, neem dit ongeveer ${gr('n = 16')} jaar vir die bevolking om te verdubbel. ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Dorp se bevolking is 12 000 en groei teen 3,2% per jaar. Vind die bevolking na 4 jaar (rond af na die naaste heelgetal).',
+          answer: '13 611',
+          checkMode: 'auto',
+          correctAnswer: '13611',
+          correctAnswers: ['13611', '13 611'],
+          explanation: 'A = P(1 + i)ⁿ = 12 000(1,032)⁴\n(1,032)⁴ ≈ 1,13428\nA ≈ 12 000 × 1,13428 ≈ 13 611 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Stad se bevolking van 55 000 groei teen 2,5% per jaar.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vind die bevolking na 5 jaar (rond af na die naaste heelgetal).',
+              correctAnswer: '62227',
+              correctAnswers: ['62227', '62 227'],
+              explanation: 'A = 55 000(1,025)⁵\n(1,025)⁵ ≈ 1,13141\nA ≈ 55 000 × 1,13141 ≈ 62 227 ✓',
+            },
+            {
+              label: 'b) Vind die bevolking na 10 jaar (rond af na die naaste heelgetal).',
+              correctAnswer: '70405',
+              correctAnswers: ['70405', '70 405'],
+              explanation: 'A = 55 000(1,025)¹⁰\n(1,025)¹⁰ ≈ 1,28008\nA ≈ 55 000 × 1,28008 ≈ 70 405 ✓',
+            },
+            {
+              label: 'c) Met hoeveel mense neem die bevolking toe tussen jaar 5 en jaar 10?',
+              correctAnswer: '8177',
+              correctAnswers: ['8177', '8 177', '8178', '8 178'],
+              explanation: '70 405 − 62 227 = 8 177 mense (klein afrondingsverskille van een persoon is aanvaarbaar) ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Distrik se bevolking het teen 3,5% per jaar oor 7 jaar gegroei om 140 000 te bereik. Vind die distrik se bevolking 7 jaar gelede (rond af na die naaste heelgetal).',
+          answer: '110 039',
+          checkMode: 'auto',
+          correctAnswer: '110039',
+          correctAnswers: ['110039', '110 039'],
+          explanation: '140 000 = P(1,035)⁷\n(1,035)⁷ ≈ 1,27228\nP = 140 000 ÷ 1,27228 ≈ 110 039 ✓',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat die saamgestelde-groei-formule A=P(1+i)^n op bevolkingsyfers toepas, met beginbevolking in blou, groeikoers in oranje, jare in groen, en toekomstige bevolking in rooi, insluitend verdubbelingstyd deur probeer en verbeter" />',
+
+      diagramPlaceholder:
+        '<DiagramPlaceholder label="Groeiende skare van staaksytjies wat ʼn eksponensiële bevolkingskurwe oor tyd illustreer, met beginbevolking in blou, groeikoers in oranje, tyd in groen, en toekomstige bevolking in rooi" />',
     },
   ],
 
