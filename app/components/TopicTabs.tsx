@@ -266,22 +266,30 @@ function DiagramPlaceholderCard({ label, svg }: { label: string; svg?: string })
 function PracticeCard({
   question,
   number,
+  revealed,
   onAnswer,
 }: {
   question: PracticeQuestion
   number: number
+  revealed: boolean
   onAnswer: (correct: boolean) => void
 }) {
   const [selected, setSelected] = useState<number | null>(null)
+  const [selfMark, setSelfMark] = useState<boolean | null>(null)
   const t = useTranslations()
 
   function handleSelect(idx: number) {
-    if (selected !== null) return
+    if (selected !== null || revealed) return
     setSelected(idx)
-    onAnswer(idx === question.correctIndex)
   }
 
-  const answered = selected !== null
+  function handleSelfMark(correct: boolean) {
+    if (selfMark !== null) return
+    setSelfMark(correct)
+    onAnswer(correct)
+  }
+
+  const isCorrectSelection = selected !== null && selected === question.correctIndex
 
   return (
     <div className="bg-white border border-gray-100 rounded-xl shadow-sm" style={{ padding: '24px' }}>
@@ -305,8 +313,10 @@ function PracticeCard({
 
           let btnClass =
             'w-full text-left text-sm px-4 py-3 rounded-xl border transition-colors font-medium '
-          if (!answered) {
-            btnClass += 'border-gray-200 text-gray-700 hover:border-[#1e40af] hover:bg-blue-50 hover:text-[#1e40af]'
+          if (!revealed) {
+            btnClass += isSelected
+              ? 'border-[#1e40af] bg-blue-50 text-[#1e40af]'
+              : 'border-gray-200 text-gray-700 hover:border-[#1e40af] hover:bg-blue-50 hover:text-[#1e40af]'
           } else if (isCorrect) {
             btnClass += 'border-green-400 bg-green-50 text-green-800'
           } else if (isSelected) {
@@ -316,10 +326,10 @@ function PracticeCard({
           }
 
           return (
-            <button key={idx} onClick={() => handleSelect(idx)} className={btnClass}>
+            <button key={idx} onClick={() => handleSelect(idx)} disabled={revealed} className={btnClass}>
               <span className="inline-flex items-center gap-2.5">
                 <span className="shrink-0 w-5 h-5 rounded-full border border-current flex items-center justify-center text-xs font-bold">
-                  {answered && isCorrect ? '✓' : answered && isSelected ? '✗' : String.fromCharCode(65 + idx)}
+                  {revealed && isCorrect ? '✓' : revealed && isSelected ? '✗' : String.fromCharCode(65 + idx)}
                 </span>
                 {opt}
               </span>
@@ -328,13 +338,38 @@ function PracticeCard({
         })}
       </div>
 
-      {answered && selected !== question.correctIndex && (
+      {revealed && !isCorrectSelection && (
         <div className="ml-11 mt-4 bg-blue-50 border border-blue-200 rounded-xl px-4 py-4">
           <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-2">{t.topic_how_to_work_it_out}</p>
           <p className="text-sm text-blue-900 whitespace-pre-line" style={{ lineHeight: 1.8 }}>
             {question.answer}
           </p>
         </div>
+      )}
+
+      {revealed && (
+        selfMark === null ? (
+          <div className="ml-11 flex gap-3 mt-4">
+            <button
+              onClick={() => handleSelfMark(true)}
+              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+              style={{ backgroundColor: '#f0fdf4', color: '#16a34a', border: '1px solid #86efac' }}
+            >
+              {t.topic_i_got_it_right}
+            </button>
+            <button
+              onClick={() => handleSelfMark(false)}
+              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+              style={{ backgroundColor: '#fef2f2', color: '#dc2626', border: '1px solid #fca5a5' }}
+            >
+              {t.topic_i_got_it_wrong}
+            </button>
+          </div>
+        ) : (
+          <p className="ml-11 mt-4 text-sm font-semibold" style={{ color: selfMark ? '#16a34a' : '#dc2626' }}>
+            {selfMark ? t.topic_marked_correct : t.topic_marked_incorrect}
+          </p>
+        )
       )}
     </div>
   )
@@ -350,113 +385,50 @@ const DIFFICULTY_STYLE: Record<string, { bg: string; color: string; border: stri
   'Hard':        { bg: '#fef2f2', color: '#dc2626', border: '#fca5a5' },
 }
 
-function normalizeAnswer(s: string): string {
-  return s.toLowerCase().replace(/×/g, 'x').replace(/\s+/g, '').replace(/,/g, '').replace(/[.;:!?]/g, '')
-}
-
-function matchesAnswer(input: string, correctAnswer: string, correctAnswers?: string[]): boolean {
-  const n = normalizeAnswer(input)
-  if (correctAnswers && correctAnswers.length > 0) {
-    return correctAnswers.some((a) => normalizeAnswer(a) === n)
-  }
-  return n === normalizeAnswer(correctAnswer)
-}
-
-function FeedbackBox({
-  correct,
-  text,
-}: {
-  correct: boolean
-  text: string
-}) {
-  const t = useTranslations()
-  return correct ? (
-    <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
-      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#16a34a' }}>{t.topic_correct_badge}</p>
-      {text.includes('<') ? (
-        <p className="topic-html text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
-      ) : (
-        <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{text}</p>
-      )}
-    </div>
-  ) : (
-    <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#fef2f2', border: '1px solid #fca5a5' }}>
-      <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#dc2626' }}>{t.topic_incorrect_badge}</p>
-      {text.includes('<') ? (
-        <p className="topic-html text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: text }} />
-      ) : (
-        <p className="text-sm whitespace-pre-line" style={{ color: '#7f1d1d', lineHeight: 1.8 }}>{text}</p>
-      )}
-    </div>
-  )
-}
-
 function OpenQuestionCard({
   question,
   index,
+  revealed,
   onResult,
 }: {
   question: OpenQuestion
   index: number
+  revealed: boolean
   onResult: (partResults: boolean[]) => void
 }) {
   const [singleInput, setSingleInput] = useState('')
   const [partInputs, setPartInputs] = useState<string[]>(
     question.parts ? question.parts.map(() => '') : []
   )
-  const [checked, setChecked] = useState(false)
-  const [singleCorrect, setSingleCorrect] = useState(false)
-  const [partCorrects, setPartCorrects] = useState<boolean[]>([])
+  const [selfMark, setSelfMark] = useState<boolean | null>(null)
   const [partSelfResults, setPartSelfResults] = useState<(boolean | null)[]>(() =>
     (question.parts ?? []).map(() => null)
   )
   const [resultSent, setResultSent] = useState(false)
-  const [revealed, setRevealed] = useState(false)
-  const [selfMark, setSelfMark] = useState<boolean | null>(null)
   const t = useTranslations()
 
   const d = DIFFICULTY_STYLE[question.difficulty] ?? DIFFICULTY_STYLE['Medium']
+  const parts = question.parts ?? []
 
-  function handleAutoSingleCheck() {
-    const correct = matchesAnswer(singleInput, question.correctAnswer ?? '', question.correctAnswers)
-    setSingleCorrect(correct)
-    setChecked(true)
+  function handleSelfMark(correct: boolean) {
+    if (resultSent) return
+    setResultSent(true)
+    setSelfMark(correct)
     onResult([correct])
-  }
-
-  function handleAutoPartsCheck() {
-    const hasSelfParts = (question.parts ?? []).some((p: QuestionPart) => p.checkMode === 'self')
-    const results = (question.parts ?? []).map((p: QuestionPart, i: number) => {
-      if (p.checkMode === 'self') return false
-      return matchesAnswer(partInputs[i] ?? '', p.correctAnswer ?? '', p.correctAnswers)
-    })
-    setPartCorrects(results)
-    setChecked(true)
-    if (!hasSelfParts) onResult(results)
   }
 
   function handlePartSelfMark(pi: number, correct: boolean) {
     if (resultSent) return
-    const newSelfResults = [...partSelfResults]
-    newSelfResults[pi] = correct
-    setPartSelfResults(newSelfResults)
-    const parts = question.parts ?? []
-    const allSelfDone = parts.every((p: QuestionPart, i: number) =>
-      p.checkMode !== 'self' || newSelfResults[i] !== null
-    )
-    if (allSelfDone) {
+    const next = [...partSelfResults]
+    next[pi] = correct
+    setPartSelfResults(next)
+    if (next.every((r) => r !== null)) {
       setResultSent(true)
-      const combined = parts.map((p: QuestionPart, i: number) =>
-        p.checkMode === 'self' ? (newSelfResults[i] ?? false) : (partCorrects[i] ?? false)
-      )
-      onResult(combined)
+      onResult(next as boolean[])
     }
   }
 
-  function handleSelfMark(correct: boolean) {
-    setSelfMark(correct)
-    onResult([correct])
-  }
+  const revealedAnswerText = question.answer ?? question.correctAnswer ?? question.correctAnswers?.[0] ?? ''
 
   return (
     <div className="bg-white border border-gray-100 rounded-xl shadow-sm" style={{ padding: '24px' }}>
@@ -483,89 +455,35 @@ function OpenQuestionCard({
       </div>
 
       <div className="ml-11">
-        {/* ── AUTO SINGLE ── */}
-        {question.checkMode === 'auto' && !question.parts && (
-          <div>
-            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {t.topic_your_answer_label}
-            </label>
-            <input
-              type="text"
-              value={singleInput}
-              onChange={(e) => setSingleInput(e.target.value)}
-              disabled={checked}
-              onKeyDown={(e) => { if (e.key === 'Enter' && !checked && singleInput.trim()) handleAutoSingleCheck() }}
-              placeholder={t.topic_type_answer_placeholder}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
-            />
-            {!checked ? (
-              <button
-                onClick={handleAutoSingleCheck}
-                disabled={!singleInput.trim()}
-                className="mt-3 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-40"
-                style={{ backgroundColor: '#1e40af' }}
-              >
-                {t.topic_check_answer}
-              </button>
-            ) : (
-              <FeedbackBox correct={singleCorrect} text={question.explanation ?? ''} />
-            )}
-          </div>
-        )}
-
-        {/* ── AUTO PARTS (with optional per-part self-mark) ── */}
-        {question.checkMode === 'auto' && question.parts && (
+        {parts.length > 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {question.parts.map((part: QuestionPart, pi: number) => (
-              <div key={pi}>
-                {part.checkMode === 'self' ? (
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-                      {t.topic_part_show_working_label.replace('{part}', part.label)}
-                    </label>
+            {parts.map((part: QuestionPart, pi: number) => {
+              // checkMode no longer drives grading — it's kept only to pick a short-input
+              // vs long-working-space widget, matching how each question was originally authored.
+              const longform = part.checkMode === 'self'
+              const partAnswerText = part.answer ?? part.correctAnswer ?? part.correctAnswers?.[0] ?? ''
+              return (
+                <div key={pi}>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+                    {longform
+                      ? t.topic_part_show_working_label.replace('{part}', part.label)
+                      : t.topic_part_your_answer_label.replace('{part}', part.label)}
+                  </label>
+                  {longform ? (
                     <textarea
+                      value={partInputs[pi] ?? ''}
+                      onChange={(e) => {
+                        const next = [...partInputs]
+                        next[pi] = e.target.value
+                        setPartInputs(next)
+                      }}
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 resize-none focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
                       rows={3}
                       placeholder={t.topic_write_working_placeholder}
                       style={{ fontFamily: 'inherit' }}
-                      disabled={checked}
+                      disabled={revealed}
                     />
-                    {checked && (
-                      <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
-                        <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
-                        <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
-                          {part.answer ?? part.explanation ?? ''}
-                        </p>
-                        {partSelfResults[pi] === null ? (
-                          <div className="flex gap-3 mt-3">
-                            <button
-                              onClick={() => handlePartSelfMark(pi, true)}
-                              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-                              style={{ backgroundColor: '#f0fdf4', color: '#16a34a', border: '1px solid #86efac' }}
-                            >
-                              {t.topic_i_got_it_right}
-                            </button>
-                            <button
-                              onClick={() => handlePartSelfMark(pi, false)}
-                              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-                              style={{ backgroundColor: '#fef2f2', color: '#dc2626', border: '1px solid #fca5a5' }}
-                            >
-                              {t.topic_i_got_it_wrong}
-                            </button>
-                          </div>
-                        ) : (
-                          <p className="mt-3 text-sm font-semibold" style={{ color: partSelfResults[pi] ? '#16a34a' : '#dc2626' }}>
-                            {partSelfResults[pi] ? t.topic_marked_correct : t.topic_marked_incorrect}
-                          </p>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-                      {t.topic_part_your_answer_label.replace('{part}', part.label)}
-                    </label>
+                  ) : (
                     <input
                       type="text"
                       value={partInputs[pi] ?? ''}
@@ -574,63 +492,88 @@ function OpenQuestionCard({
                         next[pi] = e.target.value
                         setPartInputs(next)
                       }}
-                      disabled={checked}
+                      disabled={revealed}
                       placeholder={t.topic_type_answer_placeholder}
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
                     />
-                    {checked && (
-                      <FeedbackBox
-                        correct={partCorrects[pi] ?? false}
-                        text={part.explanation ?? ''}
-                      />
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
-            {!checked && (
-              <button
-                onClick={handleAutoPartsCheck}
-                disabled={partInputs.some((v, i) => !v.trim() && question.parts?.[i]?.checkMode !== 'self')}
-                className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-40 self-start"
-                style={{ backgroundColor: '#1e40af' }}
-              >
-                {t.topic_check_answer}
-              </button>
-            )}
-          </div>
-        )}
-
-        {/* ── SELF MARK ── */}
-        {question.checkMode === 'self' && (
-          <div>
-            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
-              {t.topic_show_your_working_label}
-            </label>
-            <textarea
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 resize-none focus:outline-none focus:border-[#1e40af] transition-colors"
-              rows={4}
-              placeholder={t.topic_write_working_placeholder}
-              style={{ fontFamily: 'inherit' }}
-            />
-            {!revealed ? (
-              <button
-                onClick={() => setRevealed(true)}
-                className="mt-3 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
-                style={{ backgroundColor: '#1e40af' }}
-              >
-                {t.topic_check_answer}
-              </button>
-            ) : (
-              <div>
-                <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
-                  <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
-                  {(question.answer ?? '').includes('<') ? (
-                    <p className="topic-html text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.answer ?? '' }} />
-                  ) : (
-                    <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{question.answer}</p>
+                  )}
+                  {revealed && (
+                    <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
+                      <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
+                      <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
+                        {partAnswerText}
+                      </p>
+                      {part.explanation && (
+                        <p className="text-sm mt-2 whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
+                          {part.explanation}
+                        </p>
+                      )}
+                      {partSelfResults[pi] === null ? (
+                        <div className="flex gap-3 mt-3">
+                          <button
+                            onClick={() => handlePartSelfMark(pi, true)}
+                            className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+                            style={{ backgroundColor: '#f0fdf4', color: '#16a34a', border: '1px solid #86efac' }}
+                          >
+                            {t.topic_i_got_it_right}
+                          </button>
+                          <button
+                            onClick={() => handlePartSelfMark(pi, false)}
+                            className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
+                            style={{ backgroundColor: '#fef2f2', color: '#dc2626', border: '1px solid #fca5a5' }}
+                          >
+                            {t.topic_i_got_it_wrong}
+                          </button>
+                        </div>
+                      ) : (
+                        <p className="mt-3 text-sm font-semibold" style={{ color: partSelfResults[pi] ? '#16a34a' : '#dc2626' }}>
+                          {partSelfResults[pi] ? t.topic_marked_correct : t.topic_marked_incorrect}
+                        </p>
+                      )}
+                    </div>
                   )}
                 </div>
+              )
+            })}
+          </div>
+        ) : (
+          <div>
+            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+              {question.checkMode === 'self' ? t.topic_show_your_working_label : t.topic_your_answer_label}
+            </label>
+            {question.checkMode === 'self' ? (
+              <textarea
+                value={singleInput}
+                onChange={(e) => setSingleInput(e.target.value)}
+                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 resize-none focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
+                rows={4}
+                placeholder={t.topic_write_working_placeholder}
+                style={{ fontFamily: 'inherit' }}
+                disabled={revealed}
+              />
+            ) : (
+              <input
+                type="text"
+                value={singleInput}
+                onChange={(e) => setSingleInput(e.target.value)}
+                disabled={revealed}
+                placeholder={t.topic_type_answer_placeholder}
+                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-[#1e40af] transition-colors disabled:bg-gray-50 disabled:text-gray-500"
+              />
+            )}
+            {revealed && (
+              <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
+                {revealedAnswerText.includes('<') ? (
+                  <p className="topic-html text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: revealedAnswerText }} />
+                ) : (
+                  <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{revealedAnswerText}</p>
+                )}
+                {question.explanation && (
+                  <p className="text-sm mt-2 whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
+                    {question.explanation}
+                  </p>
+                )}
                 {selfMark === null ? (
                   <div className="flex gap-3 mt-3">
                     <button
@@ -730,6 +673,7 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
   const [resultsBySet, setResultsBySet] = useState<(boolean[] | null)[][]>(() =>
     sets.map((s) => Array(s.questions.length).fill(null))
   )
+  const [revealedBySet, setRevealedBySet] = useState<boolean[]>(() => sets.map(() => false))
   const [resetKeyBySet, setResetKeyBySet] = useState<number[]>(() => sets.map(() => 0))
   const t = useTranslations()
   const { user } = useAuth()
@@ -737,6 +681,7 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
 
   const current = sets[activeSet]
   const currentResults = resultsBySet[activeSet]
+  const revealed = revealedBySet[activeSet]
   const totalMarks = current.questions.reduce(
     (sum, q) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1),
     0
@@ -750,10 +695,23 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
     })
   }
 
+  function handleReveal() {
+    setRevealedBySet((prev) => {
+      const next = [...prev]
+      next[activeSet] = true
+      return next
+    })
+  }
+
   function handleReset() {
     setResultsBySet((prev) => {
       const next = prev.map((arr) => [...arr])
       next[activeSet] = Array(current.questions.length).fill(null)
+      return next
+    })
+    setRevealedBySet((prev) => {
+      const next = [...prev]
+      next[activeSet] = false
       return next
     })
     setResetKeyBySet((prev) => {
@@ -787,7 +745,7 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
       <div>
         <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
         <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
-          {t.topic_practice_instructions_prefix} <strong>{t.topic_check_answer}</strong>{t.topic_practice_instructions_suffix}
+          {t.topic_reveal_instructions}
         </p>
       </div>
 
@@ -846,6 +804,7 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
                 key={`set-${activeSet}-q-${i}-${resetKeyBySet[activeSet]}`}
                 question={q}
                 index={i}
+                revealed={revealed}
                 onResult={(partResults) => handleResult(i, partResults)}
               />
             )
@@ -853,6 +812,19 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
           return elements
         })()}
       </div>
+
+      {!revealed && (
+        <div>
+          <button
+            onClick={handleReveal}
+            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
+            style={{ backgroundColor: '#1e40af' }}
+          >
+            {t.topic_reveal_answers}
+          </button>
+          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
+        </div>
+      )}
 
       {allAnswered && (
         <ResultsSummary
@@ -888,6 +860,7 @@ function OpenPractice({
   const [results, setResults] = useState<(boolean[] | null)[]>(() =>
     Array(questions.length).fill(null)
   )
+  const [revealed, setRevealed] = useState(false)
   const [resetKey, setResetKey] = useState(0)
   const { user } = useAuth()
   const loggedRef = useRef(false)
@@ -902,6 +875,7 @@ function OpenPractice({
 
   function handleReset() {
     setResults(Array(questions.length).fill(null))
+    setRevealed(false)
     setResetKey((k) => k + 1)
     loggedRef.current = false
   }
@@ -932,7 +906,7 @@ function OpenPractice({
       <div>
         <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
         <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
-          {t.topic_practice_instructions_prefix} <strong>{t.topic_check_answer}</strong>{t.topic_practice_instructions_suffix}
+          {t.topic_reveal_instructions}
         </p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -941,10 +915,23 @@ function OpenPractice({
             key={`q-${i}-${resetKey}`}
             question={q}
             index={i}
+            revealed={revealed}
             onResult={(partResults) => handleResult(i, partResults)}
           />
         ))}
       </div>
+      {!revealed && (
+        <div>
+          <button
+            onClick={() => setRevealed(true)}
+            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
+            style={{ backgroundColor: '#1e40af' }}
+          >
+            {t.topic_reveal_answers}
+          </button>
+          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
+        </div>
+      )}
       {allAnswered && (
         <ResultsSummary score={score} total={totalMarks} onReset={handleReset} customMessages={scoreMessages} />
       )}
@@ -1045,6 +1032,7 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
   const [results, setResults] = useState<(boolean[] | null)[]>(() =>
     Array(flatItems.length).fill(null)
   )
+  const [revealed, setRevealed] = useState(false)
   const [resetKey, setResetKey] = useState(0)
 
   function handleResult(idx: number, partResults: boolean[]) {
@@ -1060,6 +1048,7 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
 
   function handleReset() {
     setResults(Array(flatItems.length).fill(null))
+    setRevealed(false)
     setResetKey(k => k + 1)
     loggedRef.current = false
   }
@@ -1087,7 +1076,7 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
       <div>
         <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
         <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
-          {t.topic_practice_instructions_prefix} <strong>{t.topic_check_answer}</strong>{t.topic_practice_instructions_suffix}
+          {t.topic_reveal_instructions}
         </p>
       </div>
 
@@ -1122,6 +1111,7 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
                       key={`q-${idx}-${resetKey}`}
                       question={q}
                       index={idx}
+                      revealed={revealed}
                       onResult={r => handleResult(idx, r)}
                     />
                   )
@@ -1132,6 +1122,19 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
           </div>
         )
       })}
+
+      {!revealed && (
+        <div>
+          <button
+            onClick={() => setRevealed(true)}
+            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
+            style={{ backgroundColor: '#1e40af' }}
+          >
+            {t.topic_reveal_answers}
+          </button>
+          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
+        </div>
+      )}
 
       {allAnswered && (
         <ResultsSummary
@@ -1147,9 +1150,6 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
 
 function RealPractice({ data, topicSlug, grade }: { data: TopicData; topicSlug: string; grade: number }) {
   const hasSectionOpenQ = data.sections.some(s => (s.openQuestions?.length ?? 0) > 0)
-  const total = data.sections.reduce((sum, s) => sum + (s.practiceQuestions?.length ?? 0), 0)
-  const [answers, setAnswers] = useState<Record<string, boolean>>({})
-  const t = useTranslations()
 
   if (data.practiceSets && data.practiceSets.length > 0) {
     return <SetPractice sets={data.practiceSets} topicSlug={topicSlug} grade={grade} />
@@ -1161,66 +1161,93 @@ function RealPractice({ data, topicSlug, grade }: { data: TopicData; topicSlug: 
     return <OpenPractice questions={data.topicPractice} scoreMessages={data.scoreMessages} topicSlug={topicSlug} grade={grade} />
   }
 
+  return <FlatPracticeQuestions data={data} />
+}
+
+// ─── Flat multiple-choice fallback (no practice sets / open questions defined) ─
+
+function FlatPracticeQuestions({ data }: { data: TopicData }) {
+  const t = useTranslations()
+
+  const flatItems: Array<{ q: PracticeQuestion; key: string; sectionId: string }> = []
+  data.sections.forEach((section) => {
+    ;(section.practiceQuestions ?? []).forEach((q, i) => {
+      flatItems.push({ q, key: `${section.id}-${i}`, sectionId: section.id })
+    })
+  })
+  const total = flatItems.length
+
+  const [results, setResults] = useState<Record<string, boolean | null>>(() =>
+    Object.fromEntries(flatItems.map((item) => [item.key, null]))
+  )
+  const [revealed, setRevealed] = useState(false)
+  const [resetKey, setResetKey] = useState(0)
+
   function handleAnswer(key: string, correct: boolean) {
-    setAnswers((prev) => ({ ...prev, [key]: correct }))
+    setResults((prev) => ({ ...prev, [key]: correct }))
   }
 
-  const answered = Object.keys(answers).length
-  const correct = Object.values(answers).filter(Boolean).length
+  function handleReset() {
+    setResults(Object.fromEntries(flatItems.map((item) => [item.key, null])))
+    setRevealed(false)
+    setResetKey((k) => k + 1)
+  }
+
+  const allAnswered = total > 0 && Object.values(results).every((r) => r !== null)
+  const score = Object.values(results).filter(Boolean).length
 
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-      {/* Score tracker */}
-      <div className="bg-white border border-gray-200 rounded-2xl px-6 py-5 shadow-sm">
-        <div className="flex items-center justify-between mb-3">
-          <p className="text-sm font-semibold text-[#0f1f3d]">{t.topic_your_score}</p>
-          <span className="text-sm font-bold text-[#1e40af]">
-            {correct} / {total}
-          </span>
-        </div>
-        <div className="h-2.5 w-full rounded-full bg-gray-100 overflow-hidden">
-          <div
-            className="h-full rounded-full bg-[#1e40af] transition-all duration-500"
-            style={{ width: total ? `${(correct / total) * 100}%` : '0%' }}
-          />
-        </div>
-        <p className="text-xs text-gray-400 mt-2">
-          {answered === 0
-            ? t.topic_select_answer_to_begin
-            : answered < total
-            ? (total - answered === 1
-                ? t.topic_questions_remaining_singular.replace('{count}', String(total - answered))
-                : t.topic_questions_remaining_plural.replace('{count}', String(total - answered)))
-            : correct === total
-            ? t.topic_perfect_score
-            : t.topic_incorrect_review.replace('{count}', String(total - correct))}
+      <div>
+        <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
+        <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
+          {t.topic_reveal_instructions}
         </p>
       </div>
 
-      {data.sections.map((section: Section) => (
-        <div key={section.id}>
-          <h2
-            className="text-sm font-semibold text-[#0f1f3d] uppercase tracking-wide flex items-center gap-2"
-            style={{ marginBottom: '16px' }}
-          >
-            <span aria-hidden="true">{section.icon}</span>
-            {section.title}
-          </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {(section.practiceQuestions ?? []).map((q: PracticeQuestion, i: number) => {
-              const key = `${section.id}-${i}`
-              return (
+      {data.sections.map((section: Section) => {
+        const items = flatItems.filter((item) => item.sectionId === section.id)
+        if (items.length === 0) return null
+        return (
+          <div key={section.id}>
+            <h2
+              className="text-sm font-semibold text-[#0f1f3d] uppercase tracking-wide flex items-center gap-2"
+              style={{ marginBottom: '16px' }}
+            >
+              <span aria-hidden="true">{section.icon}</span>
+              {section.title}
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {items.map(({ q, key }, i) => (
                 <PracticeCard
-                  key={key}
+                  key={`${key}-${resetKey}`}
                   question={q}
                   number={i + 1}
+                  revealed={revealed}
                   onAnswer={(c) => handleAnswer(key, c)}
                 />
-              )
-            })}
+              ))}
+            </div>
           </div>
+        )
+      })}
+
+      {!revealed && total > 0 && (
+        <div>
+          <button
+            onClick={() => setRevealed(true)}
+            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
+            style={{ backgroundColor: '#1e40af' }}
+          >
+            {t.topic_reveal_answers}
+          </button>
+          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
         </div>
-      ))}
+      )}
+
+      {allAnswered && (
+        <ResultsSummary score={score} total={total} onReset={handleReset} />
+      )}
     </div>
   )
 }
