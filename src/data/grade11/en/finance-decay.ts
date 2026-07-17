@@ -160,8 +160,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing the straight-line depreciation formula A = P(1 − ni) applied step by step with colour-coded variables" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a straight downward-sloping line graph of value (y-axis) against time in years (x-axis), showing equal vertical drops between each year mark" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,8 +304,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing the reducing-balance depreciation formula A = P(1 − i)^n applied step by step, including a logarithm example to find n" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a curved downward-sloping graph of value against time, steep at first and flattening out, shown alongside the straight-line graph from Section 1 for visual contrast" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -460,8 +456,39 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video comparing straight-line and reducing-balance depreciation side by side with the same asset, rate, and time period" />',
+
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: both the straight-line and reducing-balance graphs plotted on the same set of axes for the same starting value, with the point where the reducing-balance curve sits above the straight line clearly marked" />',
+        'Both the straight-line and reducing-balance graphs plotted on the same set of axes for the same starting value, with the point where the reducing-balance curve sits above the straight line clearly marked',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="45" y1="12" x2="45" y2="165" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="45,5 40,15 50,15" fill="#0f1f3d"/>` +
+        `<line x1="40" y1="160" x2="253" y2="160" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="260,160 250,155 250,165" fill="#0f1f3d"/>` +
+        `<text x="18" y="24" font-size="8" fill="#6b7280">R18 000</text>` +
+        `<text x="30" y="164" font-size="8" fill="#6b7280">0</text>` +
+        `<line x1="45" y1="159" x2="45" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="85" y1="159" x2="85" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="125" y1="159" x2="125" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="165" y1="159" x2="165" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="205" y1="159" x2="205" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="245" y1="159" x2="245" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<text x="45" y="175" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `<text x="85" y="175" text-anchor="middle" font-size="8" fill="#6b7280">1</text>` +
+        `<text x="125" y="175" text-anchor="middle" font-size="8" fill="#6b7280">2</text>` +
+        `<text x="165" y="175" text-anchor="middle" font-size="8" fill="#6b7280">3</text>` +
+        `<text x="205" y="175" text-anchor="middle" font-size="8" fill="#6b7280">4</text>` +
+        `<text x="245" y="175" text-anchor="middle" font-size="8" fill="#6b7280">5 yrs</text>` +
+        `<polyline points="45,20 85,48 125,76 165,104 205,132 245,160" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<polyline points="45,20 85,48 125,70 165,88 205,103 245,114" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<circle cx="85" cy="48" r="3.5" fill="#0f1f3d"/>` +
+        `<line x1="175" y1="14" x2="190" y2="14" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<text x="194" y="17" font-size="8" font-weight="700" fill="#2563eb">Straight-line</text>` +
+        `<line x1="175" y1="26" x2="190" y2="26" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="194" y="29" font-size="8" font-weight="700" fill="#16a34a">Reducing-balance</text>` +
+        `<text x="140" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Same P, same rate: reducing-balance stays higher after year 1</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -620,8 +647,35 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video revising simple and compound growth from Grade 10 and applying them to harder Grade 11 problems: hire purchase with deposit and instalments, solving for the growth rate in a population problem, and solving for the principal in an investment problem" />',
+
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a timeline for the hire purchase worked example showing cash price, deposit subtracted, remaining balance, and the balance growing under simple interest into equal monthly instalments" />',
+        'A flow diagram for the hire purchase worked example showing cash price, deposit subtracted, remaining balance, and the balance growing under simple interest into equal monthly instalments',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 115" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="2" y="40" width="58" height="42" rx="6" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="31" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">Cash price</text>` +
+        `<text x="31" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R14 500</text>` +
+        `<line x1="60" y1="61" x2="82" y2="61" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="82,61 74,57 74,65" fill="#0f1f3d"/>` +
+        `<text x="71" y="33" text-anchor="middle" font-size="7" font-weight="700" fill="#dc2626">−10% deposit</text>` +
+        `<rect x="82" y="40" width="58" height="42" rx="6" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="111" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">Balance</text>` +
+        `<text x="111" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R13 050</text>` +
+        `<line x1="140" y1="61" x2="162" y2="61" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="162,61 154,57 154,65" fill="#0f1f3d"/>` +
+        `<text x="151" y="33" text-anchor="middle" font-size="7" font-weight="700" fill="#dc2626">+16% p.a. × 3yr</text>` +
+        `<rect x="162" y="40" width="58" height="42" rx="6" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="191" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Total repay</text>` +
+        `<text x="191" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">R19 314</text>` +
+        `<line x1="220" y1="61" x2="242" y2="61" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="242,61 234,57 234,65" fill="#0f1f3d"/>` +
+        `<text x="231" y="33" text-anchor="middle" font-size="7" font-weight="700" fill="#16a34a">÷ 36 months</text>` +
+        `<rect x="242" y="40" width="58" height="42" rx="6" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="271" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Instalment</text>` +
+        `<text x="271" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">R536.50</text>` +
+        `<text x="155" y="100" text-anchor="middle" font-size="8" fill="#6b7280">Deposit → balance → simple interest → equal monthly instalments</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -785,8 +839,32 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing the nominal-to-effective rate formula applied step by step with monthly, quarterly and daily compounding examples" />',
+
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a simple comparison bar or line showing the same nominal rate compounded at different frequencies (annually, monthly, daily) converging toward a slightly higher effective rate, to illustrate that more frequent compounding increases the effective rate" />',
+        'A comparison bar chart showing the same nominal rate compounded at different frequencies (annually, monthly, daily) converging toward a slightly higher effective rate, to illustrate that more frequent compounding increases the effective rate',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 185" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="125" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#0f1f3d">Nominal rate: 12% p.a.</text>` +
+        `<line x1="35" y1="25" x2="35" y2="145" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="30" y1="140" x2="40" y2="136" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<line x1="30" y1="134" x2="40" y2="130" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<line x1="30" y1="140" x2="220" y2="140" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="228,140 218,136 218,144" fill="#0f1f3d"/>` +
+        `<rect x="50" y="103" width="40" height="37" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="110" y="54" width="40" height="86" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="170" y="48" width="40" height="92" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="70" y="98" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.00%</text>` +
+        `<text x="130" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.68%</text>` +
+        `<text x="190" y="43" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.75%</text>` +
+        `<text x="70" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Annual</text>` +
+        `<text x="70" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=1)</text>` +
+        `<text x="130" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Monthly</text>` +
+        `<text x="130" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=12)</text>` +
+        `<text x="190" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Daily</text>` +
+        `<text x="190" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=365)</text>` +
+        `<text x="120" y="178" text-anchor="middle" font-size="8" fill="#6b7280">More frequent compounding → smaller effective-rate gain</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -913,8 +991,34 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video working through a multi-phase finance problem step by step, showing how to handle a rate change and a mid-period withdrawal" />',
+
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram needed: a timeline showing the multi-stage scenario from Example 2, with markers at 18 months (rate change), 24 months (withdrawal), and 48 months (final value), so the sequence of events is visually clear" />',
+        'A timeline showing the multi-stage scenario from Example 2, with markers at 18 months (rate change), 24 months (withdrawal), and 48 months (final value), so the sequence of events is visually clear',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 155" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="30" y1="80" x2="127.5" y2="80" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>` +
+        `<line x1="127.5" y1="80" x2="160" y2="80" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>` +
+        `<line x1="160" y1="80" x2="290" y2="80" stroke="#ea580c" stroke-width="6" stroke-linecap="round"/>` +
+        `<polygon points="300,80 290,75 290,85" fill="#ea580c"/>` +
+        `<circle cx="30" cy="80" r="4" fill="#0f1f3d"/>` +
+        `<circle cx="127.5" cy="80" r="4" fill="#0f1f3d"/>` +
+        `<circle cx="160" cy="80" r="4" fill="#dc2626"/>` +
+        `<circle cx="290" cy="80" r="4" fill="#0f1f3d"/>` +
+        `<line x1="160" y1="50" x2="160" y2="72" stroke="#dc2626" stroke-width="1.5"/>` +
+        `<polygon points="160,74 156,66 164,66" fill="#dc2626"/>` +
+        `<text x="160" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">− R10 000</text>` +
+        `<text x="30" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R50 000</text>` +
+        `<text x="127.5" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R56 308</text>` +
+        `<text x="290" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">R54 134</text>` +
+        `<text x="160" y="100" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">R58 022</text>` +
+        `<text x="160" y="112" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">→ R48 022</text>` +
+        `<text x="30" y="128" text-anchor="middle" font-size="9" fill="#6b7280">0 mo</text>` +
+        `<text x="127.5" y="128" text-anchor="middle" font-size="9" fill="#6b7280">18 mo</text>` +
+        `<text x="160" y="128" text-anchor="middle" font-size="9" fill="#6b7280">24 mo</text>` +
+        `<text x="290" y="128" text-anchor="middle" font-size="9" fill="#6b7280">48 mo</text>` +
+        `<text x="160" y="145" text-anchor="middle" font-size="8" fill="#6b7280">Phase 1: 8% p.a. qtrly · Phase 2: 6% p.a. mthly · Phase 3: 6% p.a. mthly (after withdrawal)</text>` +
+        `</svg>`,
     },
   ],
 

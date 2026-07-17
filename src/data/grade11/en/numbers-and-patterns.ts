@@ -116,7 +116,34 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining non-real numbers and how to identify equations with no real solutions using the discriminant" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram of the number system showing real numbers on the number line and indicating that non-real solutions fall outside it, with examples of equations producing each type" />',
+        'Diagram of the number system showing real numbers on the number line and indicating that non-real solutions fall outside it, with examples of equations producing each type',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 155" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<ellipse cx="130" cy="35" rx="95" ry="26" fill="rgba(220,38,38,0.06)" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<text x="130" y="31" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">non-real numbers</text>` +
+        `<text x="130" y="44" text-anchor="middle" font-size="10" fill="#dc2626">e.g. x² = −4 → no real x</text>` +
+        `<line x1="130" y1="61" x2="130" y2="95" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3"/>` +
+        `<text x="130" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">✕</text>` +
+        `<polygon points="15,115 25,110 25,120" fill="#0f1f3d"/>` +
+        `<line x1="25" y1="115" x2="235" y2="115" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="245,115 235,110 235,120" fill="#0f1f3d"/>` +
+        `<line x1="40" y1="111" x2="40" y2="119" stroke="#6b7280" stroke-width="1.2"/>` +
+        `<line x1="70" y1="111" x2="70" y2="119" stroke="#6b7280" stroke-width="1.2"/>` +
+        `<line x1="100" y1="111" x2="100" y2="119" stroke="#6b7280" stroke-width="1.2"/>` +
+        `<line x1="130" y1="111" x2="130" y2="119" stroke="#6b7280" stroke-width="1.2"/>` +
+        `<line x1="160" y1="111" x2="160" y2="119" stroke="#6b7280" stroke-width="1.2"/>` +
+        `<line x1="220" y1="111" x2="220" y2="119" stroke="#6b7280" stroke-width="1.2"/>` +
+        `<circle cx="190" cy="115" r="4" fill="#2563eb"/>` +
+        `<text x="190" y="105" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">x = 3</text>` +
+        `<text x="40" y="133" text-anchor="middle" font-size="10" fill="#6b7280">−2</text>` +
+        `<text x="70" y="133" text-anchor="middle" font-size="10" fill="#6b7280">−1</text>` +
+        `<text x="100" y="133" text-anchor="middle" font-size="10" fill="#6b7280">0</text>` +
+        `<text x="130" y="133" text-anchor="middle" font-size="10" fill="#6b7280">1</text>` +
+        `<text x="160" y="133" text-anchor="middle" font-size="10" fill="#6b7280">2</text>` +
+        `<text x="220" y="133" text-anchor="middle" font-size="10" fill="#6b7280">4</text>` +
+        `<text x="130" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">ℝ — the real number line</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -249,9 +276,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video demonstrating rational exponents, the connection between fractional powers and roots, and applying exponent laws with fractional exponents" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Visual showing the rational exponent x to the p over q equals the qth root of x to the p, with colour coded numerator power and denominator root index" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -392,9 +416,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to simplify surds and then add, subtract, multiply, and rationalise the denominator when dividing surds" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step by step diagram showing surd simplification into like surds for addition, multiplication under the root, and rationalising the denominator with colour coded steps" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -519,7 +540,30 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining error margins, how to calculate minimum and maximum values from a measurement with a stated tolerance, and how to find the range of possible areas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line diagram showing a measured value with error margin, minimum and maximum endpoints of the range colour coded, and a rectangle example with both dimensions labelled with tolerances" />',
+        'Number line diagram showing a measured value with error margin, minimum and maximum endpoints of the range colour coded, and a rectangle example with both dimensions labelled with tolerances',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 205" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="70" y1="65" x2="190" y2="65" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>` +
+        `<line x1="70" y1="55" x2="70" y2="75" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<line x1="190" y1="55" x2="190" y2="75" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<circle cx="130" cy="65" r="5" fill="#2563eb" stroke="white" stroke-width="1.5"/>` +
+        `<line x1="125" y1="42" x2="78" y2="42" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<polygon points="70,42 78,38 78,46" fill="#ea580c"/>` +
+        `<line x1="135" y1="42" x2="182" y2="42" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<polygon points="190,42 182,38 182,46" fill="#ea580c"/>` +
+        `<text x="100" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">−0.1</text>` +
+        `<text x="160" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">+0.1</text>` +
+        `<text x="70" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">Min = 15.1 cm</text>` +
+        `<text x="130" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">15.2 cm</text>` +
+        `<text x="190" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">Max = 15.3 cm</text>` +
+        `<line x1="15" y1="102" x2="245" y2="102" stroke="#e2e8f0" stroke-width="1"/>` +
+        `<rect x="85" y="112" width="90" height="45" fill="rgba(37,99,235,0.06)" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="130" y="173" text-anchor="middle" font-size="10"><tspan fill="#2563eb" font-weight="700">8 cm</tspan><tspan fill="#ea580c" font-weight="700"> ± 0.2 cm</tspan></text>` +
+        `<text x="182" y="132" font-size="10" fill="#2563eb" font-weight="700">5 cm</text>` +
+        `<text x="182" y="146" font-size="10" fill="#ea580c" font-weight="700">± 0.1 cm</text>` +
+        `<text x="130" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">Area: 38.22 – 41.82 cm²</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -684,7 +728,47 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to find the nth term of a quadratic number pattern using first and second differences, then setting up and solving simultaneous equations for a, b and c" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing a number pattern with first differences colour coded blue and second differences colour coded orange beneath, leading to the quadratic rule shown in green" />',
+        'Diagram showing a number pattern with first differences colour coded blue and second differences colour coded orange beneath, leading to the quadratic rule shown in green',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 195" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="29" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₁</text>` +
+        `<text x="99" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₂</text>` +
+        `<text x="169" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₃</text>` +
+        `<text x="239" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₄</text>` +
+        `<rect x="29" y="22" width="32" height="26" rx="5" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="99" y="22" width="32" height="26" rx="5" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="169" y="22" width="32" height="26" rx="5" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="239" y="22" width="32" height="26" rx="5" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="45" y="39" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">2</text>` +
+        `<text x="115" y="39" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<text x="185" y="39" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">16</text>` +
+        `<text x="255" y="39" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">29</text>` +
+        `<line x1="53" y1="48" x2="80" y2="72" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="107" y1="48" x2="80" y2="72" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="123" y1="48" x2="150" y2="72" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="177" y1="48" x2="150" y2="72" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="193" y1="48" x2="220" y2="72" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="247" y1="48" x2="220" y2="72" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<rect x="65" y="72" width="30" height="26" rx="5" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<rect x="135" y="72" width="30" height="26" rx="5" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<rect x="205" y="72" width="30" height="26" rx="5" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="80" y="89" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">+5</text>` +
+        `<text x="150" y="89" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">+9</text>` +
+        `<text x="220" y="89" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">+13</text>` +
+        `<line x1="88" y1="98" x2="115" y2="122" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="142" y1="98" x2="115" y2="122" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="158" y1="98" x2="185" y2="122" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="212" y1="98" x2="185" y2="122" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<rect x="100" y="122" width="30" height="26" rx="5" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<rect x="170" y="122" width="30" height="26" rx="5" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="115" y="139" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">+4</text>` +
+        `<text x="185" y="139" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">+4</text>` +
+        `<line x1="115" y1="148" x2="150" y2="160" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="185" y1="148" x2="150" y2="160" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<rect x="80" y="160" width="140" height="28" rx="6" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="150" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">Tₙ = 2n² − n + 1</text>` +
+        `</svg>`,
     },
   ],
 

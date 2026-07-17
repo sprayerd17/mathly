@@ -112,9 +112,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering, volledigmaking van die vierkant, en die kwadratiese formule, met ʼn uitgewerkte voorbeeld vir elke metode" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Langs-mekaar-vergelyking van al drie metodes toegepas op ʼn kwadratiese vergelyking met faktoriseringstappe in blou, volledigmaking van die vierkant in oranje, en die kwadratiese formule in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -208,7 +205,37 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om kwadratiese en rasionale ongelykhede op te los deur kritieke waardes en tekenanalise op ʼn getallelyn te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyndiagram wat kritieke waardes in blou toon, die teken van die uitdrukking in elke interval in oranje, en die finale oplossingsintervalle in groen uitgelig" />',
+        'Getallelyndiagram wat kritieke waardes in blou toon, die teken van die uitdrukking in elke interval in oranje, en die finale oplossingsintervalle in groen uitgelig',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="150" y="14" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">x² − 5x + 6 &gt; 0</text>` +
+        `<text x="86" y="27" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">+</text>` +
+        `<text x="166" y="27" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">−</text>` +
+        `<text x="227" y="27" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">+</text>` +
+        `<polygon points="15,40 25,35 25,45" fill="#16a34a"/>` +
+        `<line x1="25" y1="40" x2="148" y2="40" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>` +
+        `<line x1="184" y1="40" x2="271" y2="40" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>` +
+        `<polygon points="281,40 271,35 271,45" fill="#16a34a"/>` +
+        `<polygon points="15,55 25,50 25,60" fill="#0f1f3d"/>` +
+        `<line x1="25" y1="55" x2="271" y2="55" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="281,55 271,50 271,60" fill="#0f1f3d"/>` +
+        `<line x1="40" y1="50" x2="40" y2="60" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="76" y1="50" x2="76" y2="60" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="112" y1="50" x2="112" y2="60" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="220" y1="50" x2="220" y2="60" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<line x1="256" y1="50" x2="256" y2="60" stroke="#9ca3af" stroke-width="1.2"/>` +
+        `<circle cx="148" cy="55" r="5" fill="white" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<circle cx="184" cy="55" r="5" fill="white" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<text x="40" y="75" text-anchor="middle" font-size="11" fill="#6b7280">−1</text>` +
+        `<text x="76" y="75" text-anchor="middle" font-size="11" fill="#6b7280">0</text>` +
+        `<text x="112" y="75" text-anchor="middle" font-size="11" fill="#6b7280">1</text>` +
+        `<text x="148" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">2</text>` +
+        `<text x="184" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">3</text>` +
+        `<text x="220" y="75" text-anchor="middle" font-size="11" fill="#6b7280">4</text>` +
+        `<text x="256" y="75" text-anchor="middle" font-size="11" fill="#6b7280">5</text>` +
+        `<text x="150" y="98" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">Oplossing: x &lt; 2 of x &gt; 3</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -295,7 +322,26 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn stelsel van een lineêre en een kwadratiese vergelyking gelyktydig op te los deur die substitusiemetode te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Grafiek wat ʼn reguit lyn in blou toon wat ʼn parabool in oranje by twee punte sny, met die snypuntkoördinate in groen uitgelig" />',
+        'Grafiek wat ʼn reguit lyn in blou toon wat ʼn parabool in oranje by twee punte sny, met die snypuntkoördinate in groen uitgelig',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 190" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="5" y1="150" x2="230" y2="150" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="238,150 228,145 228,155" fill="#0f1f3d"/>` +
+        `<line x1="70" y1="175" x2="70" y2="20" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="70,10 65,20 75,20" fill="#0f1f3d"/>` +
+        `<text x="230" y="163" text-anchor="middle" font-size="10" fill="#0f1f3d">x</text>` +
+        `<text x="76" y="16" font-size="10" fill="#0f1f3d">y</text>` +
+        `<polyline points="10,121 25,134 40,143 55,148 70,150 85,148 100,143 115,134 130,121 145,105 160,85" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<line x1="0" y1="137" x2="175" y2="106" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<circle cx="24" cy="133" r="4" fill="#16a34a"/>` +
+        `<circle cx="138" cy="113" r="4" fill="#16a34a"/>` +
+        `<text x="12" y="126" font-size="10" font-weight="700" fill="#16a34a">A</text>` +
+        `<text x="144" y="106" font-size="10" font-weight="700" fill="#16a34a">B</text>` +
+        `<text x="163" y="78" font-size="9" font-weight="700" fill="#ea580c">y=ax²+bx+c</text>` +
+        `<text x="178" y="103" font-size="9" font-weight="700" fill="#2563eb">y=mx+c</text>` +
+        `<text x="120" y="184" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">2 snypunte = 2 oplossings</text>` +
+        `</svg>`,
     },
   ],
 

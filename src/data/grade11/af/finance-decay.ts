@@ -160,8 +160,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die reguitlyn-waardeverminderingsformule A = P(1 − ni) stap vir stap toepas, met kleurgekodeerde veranderlikes" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn reguit afwaarts-hellende lyngrafiek van waarde (y-as) teenoor tyd in jare (x-as), wat gelyke vertikale dalings tussen elke jaarmerk wys" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,8 +304,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die verminderende-balans-waardeverminderingsformule A = P(1 − i)^n stap vir stap toepas, insluitend ʼn logaritme-voorbeeld om n te vind" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn geboë afwaarts-hellende grafiek van waarde teenoor tyd, steil aan die begin en later platter, langs die reguitlyn-grafiek van Afdeling 1 vir visuele kontras" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -461,7 +457,37 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat reguitlyn- en verminderende-balans-waardevermindering langs mekaar vergelyk vir dieselfde bate, koers, en tydperk" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: albei die reguitlyn- en verminderende-balans-grafieke geteken op dieselfde stel asse vir dieselfde beginwaarde, met die punt waar die verminderende-balans-kromme bo die reguit lyn lê duidelik gemerk" />',
+        'Albei die reguitlyn- en verminderende-balans-grafieke geteken op dieselfde stel asse vir dieselfde beginwaarde, met die punt waar die verminderende-balans-kromme bo die reguit lyn lê duidelik gemerk',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="45" y1="12" x2="45" y2="165" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="45,5 40,15 50,15" fill="#0f1f3d"/>` +
+        `<line x1="40" y1="160" x2="253" y2="160" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="260,160 250,155 250,165" fill="#0f1f3d"/>` +
+        `<text x="18" y="24" font-size="8" fill="#6b7280">R18 000</text>` +
+        `<text x="30" y="164" font-size="8" fill="#6b7280">0</text>` +
+        `<line x1="45" y1="159" x2="45" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="85" y1="159" x2="85" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="125" y1="159" x2="125" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="165" y1="159" x2="165" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="205" y1="159" x2="205" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<line x1="245" y1="159" x2="245" y2="161" stroke="#6b7280" stroke-width="1"/>` +
+        `<text x="45" y="175" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `<text x="85" y="175" text-anchor="middle" font-size="8" fill="#6b7280">1</text>` +
+        `<text x="125" y="175" text-anchor="middle" font-size="8" fill="#6b7280">2</text>` +
+        `<text x="165" y="175" text-anchor="middle" font-size="8" fill="#6b7280">3</text>` +
+        `<text x="205" y="175" text-anchor="middle" font-size="8" fill="#6b7280">4</text>` +
+        `<text x="245" y="175" text-anchor="middle" font-size="8" fill="#6b7280">5 jr</text>` +
+        `<polyline points="45,20 85,48 125,76 165,104 205,132 245,160" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<polyline points="45,20 85,48 125,70 165,88 205,103 245,114" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<circle cx="85" cy="48" r="3.5" fill="#0f1f3d"/>` +
+        `<line x1="175" y1="14" x2="190" y2="14" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<text x="194" y="17" font-size="8" font-weight="700" fill="#2563eb">Reguitlyn</text>` +
+        `<line x1="175" y1="26" x2="190" y2="26" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="194" y="29" font-size="8" font-weight="700" fill="#16a34a">Verm. balans</text>` +
+        `<text x="140" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Selfde P, selfde koers: verminderende balans bly hoër ná jaar 1</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -621,7 +647,33 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat enkelvoudige en saamgestelde groei van Graad 10 hersien en dit toepas op moeiliker Graad 11-probleme: huurkoop met deposito en paaiemente, oplos vir die groeikoers in ʼn bevolkingsprobleem, en oplos vir die hoofsom in ʼn beleggingsprobleem" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn tydlyn vir die huurkoop-uitgewerkte-voorbeeld wat die kontantprys, afgetrekte deposito, oorblywende balans, en die balans wat onder enkelvoudige rente groei tot gelyke maandelikse paaiemente, wys" />',
+        'ʼn Vloeidiagram vir die huurkoop-uitgewerkte-voorbeeld wat die kontantprys, afgetrekte deposito, oorblywende balans, en die balans wat onder enkelvoudige rente groei tot gelyke maandelikse paaiemente, wys',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 115" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="2" y="40" width="58" height="42" rx="6" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="31" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">Kontantprys</text>` +
+        `<text x="31" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R14 500</text>` +
+        `<line x1="60" y1="61" x2="82" y2="61" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="82,61 74,57 74,65" fill="#0f1f3d"/>` +
+        `<text x="71" y="33" text-anchor="middle" font-size="7" font-weight="700" fill="#dc2626">−10% deposito</text>` +
+        `<rect x="82" y="40" width="58" height="42" rx="6" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="111" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">Balans</text>` +
+        `<text x="111" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R13 050</text>` +
+        `<line x1="140" y1="61" x2="162" y2="61" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="162,61 154,57 154,65" fill="#0f1f3d"/>` +
+        `<text x="151" y="33" text-anchor="middle" font-size="7" font-weight="700" fill="#dc2626">+16% p.j. × 3jr</text>` +
+        `<rect x="162" y="40" width="58" height="42" rx="6" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="191" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Totale terugb.</text>` +
+        `<text x="191" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">R19 314</text>` +
+        `<line x1="220" y1="61" x2="242" y2="61" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="242,61 234,57 234,65" fill="#0f1f3d"/>` +
+        `<text x="231" y="33" text-anchor="middle" font-size="7" font-weight="700" fill="#16a34a">÷ 36 maande</text>` +
+        `<rect x="242" y="40" width="58" height="42" rx="6" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="271" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Paaiement</text>` +
+        `<text x="271" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">R536,50</text>` +
+        `<text x="155" y="100" text-anchor="middle" font-size="8" fill="#6b7280">Deposito → balans → enkelvoudige rente → gelyke maandelikse paaiemente</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -786,7 +838,30 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die nominale-na-effektiewe-koersformule stap vir stap toepas, met voorbeelde van maandelikse, kwartaallikse en daaglikse samestelling" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn eenvoudige vergelykende staaf- of lyngrafiek wat dieselfde nominale koers teen verskillende samestellingsfrekwensies (jaarliks, maandeliks, daagliks) wys wat na ʼn effens hoër effektiewe koers konvergeer, om te illustreer dat meer gereelde samestelling die effektiewe koers verhoog" />',
+        'ʼn Vergelykende staafgrafiek wat dieselfde nominale koers teen verskillende samestellingsfrekwensies (jaarliks, maandeliks, daagliks) wys wat na ʼn effens hoër effektiewe koers konvergeer, om te illustreer dat meer gereelde samestelling die effektiewe koers verhoog',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 185" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="125" y="15" text-anchor="middle" font-size="10" font-weight="700" fill="#0f1f3d">Nominale koers: 12% p.j.</text>` +
+        `<line x1="35" y1="25" x2="35" y2="145" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="30" y1="140" x2="40" y2="136" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<line x1="30" y1="134" x2="40" y2="130" stroke="#0f1f3d" stroke-width="1.2"/>` +
+        `<line x1="30" y1="140" x2="220" y2="140" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="228,140 218,136 218,144" fill="#0f1f3d"/>` +
+        `<rect x="50" y="103" width="40" height="37" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="110" y="54" width="40" height="86" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="170" y="48" width="40" height="92" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="70" y="98" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,00%</text>` +
+        `<text x="130" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,68%</text>` +
+        `<text x="190" y="43" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,75%</text>` +
+        `<text x="70" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Jaarliks</text>` +
+        `<text x="70" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=1)</text>` +
+        `<text x="130" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Maandeliks</text>` +
+        `<text x="130" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=12)</text>` +
+        `<text x="190" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Daagliks</text>` +
+        `<text x="190" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=365)</text>` +
+        `<text x="120" y="178" text-anchor="middle" font-size="8" fill="#6b7280">Meer gereelde samestelling → kleiner effektiewe-koerstoename</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -914,7 +989,32 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat stap vir stap deur ʼn multi-fase-finansiëleprobleem werk, wat wys hoe om ʼn koersverandering en ʼn onttrekking halfpad deur die tydperk te hanteer" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram benodig: ʼn tydlyn wat die multi-fase-scenario van Voorbeeld 2 wys, met merkers by 18 maande (koersverandering), 24 maande (onttrekking), en 48 maande (finale waarde), sodat die volgorde van gebeure visueel duidelik is" />',
+        'ʼn Tydlyn wat die multi-fase-scenario van Voorbeeld 2 wys, met merkers by 18 maande (koersverandering), 24 maande (onttrekking), en 48 maande (finale waarde), sodat die volgorde van gebeure visueel duidelik is',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 155" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="30" y1="80" x2="127.5" y2="80" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>` +
+        `<line x1="127.5" y1="80" x2="160" y2="80" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>` +
+        `<line x1="160" y1="80" x2="290" y2="80" stroke="#ea580c" stroke-width="6" stroke-linecap="round"/>` +
+        `<polygon points="300,80 290,75 290,85" fill="#ea580c"/>` +
+        `<circle cx="30" cy="80" r="4" fill="#0f1f3d"/>` +
+        `<circle cx="127.5" cy="80" r="4" fill="#0f1f3d"/>` +
+        `<circle cx="160" cy="80" r="4" fill="#dc2626"/>` +
+        `<circle cx="290" cy="80" r="4" fill="#0f1f3d"/>` +
+        `<line x1="160" y1="50" x2="160" y2="72" stroke="#dc2626" stroke-width="1.5"/>` +
+        `<polygon points="160,74 156,66 164,66" fill="#dc2626"/>` +
+        `<text x="160" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">− R10 000</text>` +
+        `<text x="30" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R50 000</text>` +
+        `<text x="127.5" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R56 308</text>` +
+        `<text x="290" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">R54 134</text>` +
+        `<text x="160" y="100" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">R58 022</text>` +
+        `<text x="160" y="112" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">→ R48 022</text>` +
+        `<text x="30" y="128" text-anchor="middle" font-size="9" fill="#6b7280">0 md</text>` +
+        `<text x="127.5" y="128" text-anchor="middle" font-size="9" fill="#6b7280">18 md</text>` +
+        `<text x="160" y="128" text-anchor="middle" font-size="9" fill="#6b7280">24 md</text>` +
+        `<text x="290" y="128" text-anchor="middle" font-size="9" fill="#6b7280">48 md</text>` +
+        `<text x="160" y="145" text-anchor="middle" font-size="8" fill="#6b7280">Fase 1: 8% p.j. kw. · Fase 2: 6% p.j. mnd. · Fase 3: 6% p.j. mnd. (na onttrekking)</text>` +
+        `</svg>`,
     },
   ],
 

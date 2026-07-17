@@ -121,9 +121,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Langs-mekaar-uitleg wat wys hoe x²+6x+5 stap vir stap omskep word na voltooide vierkantvorm (x+3)²−4, met die uitgefaktoriseerde koëffisiënt in blou, die voltooide vierkantterm in oranje en die konstante in groen" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat demonstreer hoe om die vierkant te voltooi vir kwadratiese uitdrukkings met a=1 en a≠1, met elke stap kleurgekodeer" />',
     },
@@ -256,7 +253,26 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Paraboolsketse langs mekaar: een wat opwaarts oopmaak (a>0) met die minimum by die draaipunt gemerk as q in groen en die x-waarde in oranje; een wat afwaarts oopmaak (a<0) met die maksimum eenders gemerk" />',
+        'Paraboolsketse langs mekaar: een wat opwaarts oopmaak (a>0) met die minimum by die draaipunt gemerk as q in groen en die x-waarde in oranje; een wat afwaarts oopmaak (a<0) met die maksimum eenders gemerk',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 178" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="160" y1="20" x2="160" y2="150" stroke="#e2e8f0" stroke-width="1.5"/>` +
+        `<text x="85" y="13" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">a &gt; 0 → Minimum</text>` +
+        `<line x1="85" y1="22" x2="85" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<line x1="18" y1="128" x2="152" y2="128" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<polyline points="25,20 35,53 45,80 55,101 65,116 75,125 85,128 95,125 105,116 115,101 125,80 135,53 145,20" fill="none" stroke="#0f1f3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<circle cx="85" cy="128" r="4" fill="#16a34a"/>` +
+        `<text x="85" y="144" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">q</text>` +
+        `<text x="85" y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">x = −p</text>` +
+        `<text x="235" y="13" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">a &lt; 0 → Maksimum</text>` +
+        `<line x1="235" y1="22" x2="235" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<line x1="168" y1="20" x2="302" y2="20" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<polyline points="175,128 185,95 195,68 205,47 215,32 225,23 235,20 245,23 255,32 265,47 275,68 285,95 295,128" fill="none" stroke="#0f1f3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<circle cx="235" cy="20" r="4" fill="#16a34a"/>` +
+        `<text x="235" y="35" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">q</text>` +
+        `<text x="235" y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">x = −p</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die minimum- of maksimumwaarde en die x-posisie daarvan direk uit ʼn voltooide vierkantvorm af te lees, met ʼn toegepaste omheiningswoordprobleem" />',
@@ -466,9 +482,6 @@ export const topicData: TopicData = {
           explanation: 'Kombineer die linkerkant oor die gemeenskaplike noemer: [3(x−5) + k(x+2)] / [(x+2)(x−5)] = [(3+k)x + (2k−15)] / [(x+2)(x−5)].\nVergelyk dit met die gegewe resultaat (5x−11)/[(x+2)(x−5)]: die x-koëffisiënt gee 3+k = 5, dus k = 2.\nGaan die konstante term na: 2(2)−15 = −11, wat ooreenstem ✓. Dus k = 2 ✓',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Stap-vir-stap-uitleg vir 2/(x+1) + 3/(x−2) wat gefaktoriseerde vorms in blou, die KGV in oranje en die gekombineerde vereenvoudigde teller in groen wys" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese breuke met binoomnoemers te vereenvoudig: faktorisering, die KGV vind, tellers kombineer en gemeenskaplike faktore kanselleer" />',

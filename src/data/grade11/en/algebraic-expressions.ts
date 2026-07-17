@@ -121,9 +121,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Side-by-side layout showing x²+6x+5 transforming step by step into completed square form (x+3)²−4, with factored coefficient in blue, completed square term in orange and constant in green" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Short video demonstrating how to complete the square for quadratics with a=1 and a≠1, showing each step colour coded" />',
     },
@@ -256,7 +253,26 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Parabola sketches side by side: one opening upward (a>0) with minimum at turning point labelled q in green and x-value in orange; one opening downward (a<0) with maximum labelled similarly" />',
+        'Parabola sketches side by side: one opening upward (a>0) with minimum at turning point labelled q in green and x-value in orange; one opening downward (a<0) with maximum labelled similarly',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 178" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="160" y1="20" x2="160" y2="150" stroke="#e2e8f0" stroke-width="1.5"/>` +
+        `<text x="85" y="13" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">a &gt; 0 → Minimum</text>` +
+        `<line x1="85" y1="22" x2="85" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<line x1="18" y1="128" x2="152" y2="128" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<polyline points="25,20 35,53 45,80 55,101 65,116 75,125 85,128 95,125 105,116 115,101 125,80 135,53 145,20" fill="none" stroke="#0f1f3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<circle cx="85" cy="128" r="4" fill="#16a34a"/>` +
+        `<text x="85" y="144" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">q</text>` +
+        `<text x="85" y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">x = −p</text>` +
+        `<text x="235" y="13" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">a &lt; 0 → Maximum</text>` +
+        `<line x1="235" y1="22" x2="235" y2="150" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<line x1="168" y1="20" x2="302" y2="20" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>` +
+        `<polyline points="175,128 185,95 195,68 205,47 215,32 225,23 235,20 245,23 255,32 265,47 275,68 285,95 295,128" fill="none" stroke="#0f1f3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<circle cx="235" cy="20" r="4" fill="#16a34a"/>` +
+        `<text x="235" y="35" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">q</text>` +
+        `<text x="235" y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">x = −p</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to read the minimum or maximum value and its x-position directly from a completed square form, including an applied fencing word problem" />',
@@ -466,9 +482,6 @@ export const topicData: TopicData = {
           explanation: 'Combine the left side over the common denominator: [3(x−5) + k(x+2)] / [(x+2)(x−5)] = [(3+k)x + (2k−15)] / [(x+2)(x−5)].\nCompare this to the given result (5x−11)/[(x+2)(x−5)]: matching the x-coefficient gives 3+k = 5, so k = 2.\nCheck the constant term: 2(2)−15 = −11, which matches ✓. So k = 2 ✓',
         },
       ],
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step-by-step layout for 2/(x+1) + 3/(x−2) showing factorised forms in blue, LCM in orange and combined simplified numerator in green" />',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to simplify algebraic fractions with binomial denominators: factorising, finding the LCM, combining numerators and cancelling common factors" />',
