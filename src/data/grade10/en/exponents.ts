@@ -145,8 +145,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the five laws of exponents for integral exponents with worked examples including negative and zero exponents" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Reference card showing all five exponent laws with base blue exponent orange and simplified answer green colour coding" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,7 +264,27 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to simplify surds by extracting the largest perfect square factor and how to locate a surd between two consecutive integers" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line showing √30 located between integers 5 and 6 with perfect squares 25 and 36 labelled in orange" />',
+        'Number line from 4 to 7 with √30 marked between the integers 5 and 6, and the perfect squares 5² = 25 and 6² = 36 labelled to show why 5 < √30 < 6',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="60" x2="245" y2="60" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="252,60 244,56 244,64" fill="#0f1f3d"/>` +
+        `<line x1="20" y1="52" x2="20" y2="68" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="20" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<line x1="93" y1="52" x2="93" y2="68" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="93" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">5</text>` +
+        `<text x="93" y="100" text-anchor="middle" font-size="10" fill="#ea580c">5² = 25</text>` +
+        `<line x1="166" y1="52" x2="166" y2="68" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="166" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">6</text>` +
+        `<text x="166" y="100" text-anchor="middle" font-size="10" fill="#ea580c">6² = 36</text>` +
+        `<line x1="239" y1="52" x2="239" y2="68" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="239" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<circle cx="128" cy="60" r="5" fill="#2563eb"/>` +
+        `<line x1="128" y1="60" x2="128" y2="36" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="128" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">√30</text>` +
+        `<text x="130" y="118" text-anchor="middle" font-size="11" fill="#6b7280">25 &lt; 30 &lt; 36, so 5 &lt; √30 &lt; 6</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -375,7 +393,24 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining the difference between rational and irrational numbers using perfect squares and non-perfect squares as examples" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Venn diagram showing rational numbers containing integers and terminating decimals alongside the set of irrational numbers with surds labelled in red" />',
+        'Diagram showing the set of Real Numbers divided into two non-overlapping regions — Rational numbers (integers, terminating/repeating decimals) in blue and Irrational numbers (surds, π, non-repeating decimals) in red',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 210" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="10" y="20" width="300" height="180" rx="10" fill="none" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="160" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">ℝ — Real Numbers</text>` +
+        `<circle cx="95" cy="112" r="62" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="95" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">Rational (ℚ)</text>` +
+        `<text x="95" y="105" text-anchor="middle" font-size="10" fill="#1e3a8a">integers</text>` +
+        `<text x="95" y="122" text-anchor="middle" font-size="10" fill="#1e3a8a">¾, 0.75</text>` +
+        `<text x="95" y="139" text-anchor="middle" font-size="10" fill="#1e3a8a">√4 = 2, √9 = 3</text>` +
+        `<circle cx="225" cy="112" r="62" fill="rgba(220,38,38,0.08)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="225" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">Irrational</text>` +
+        `<text x="225" y="105" text-anchor="middle" font-size="10" fill="#991b1b">√2, √3, √5</text>` +
+        `<text x="225" y="122" text-anchor="middle" font-size="10" fill="#991b1b">π</text>` +
+        `<text x="225" y="139" text-anchor="middle" font-size="10" fill="#991b1b">1.41421356…</text>` +
+        `<text x="160" y="198" text-anchor="middle" font-size="10" fill="#6b7280">Every real number is either rational or irrational — never both</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -502,7 +537,24 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing when to use exact surd form versus decimal approximation and how to round irrational numbers to a given number of decimal places" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line zoomed in on √20 between 4 and 5 showing the decimal approximation 4.47213 with the rounded answer 4.47 marked in green" />',
+        'Number line zoomed between 4 and 5 showing √20 marked at its position (≈4.47213…), rounding to 4.47 to 2 decimal places',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="65" x2="245" y2="65" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="252,65 244,61 244,69" fill="#0f1f3d"/>` +
+        `<line x1="20" y1="57" x2="20" y2="73" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="20" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<line x1="130" y1="57" x2="130" y2="73" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="90" text-anchor="middle" font-size="11" fill="#6b7280">4.5</text>` +
+        `<line x1="240" y1="57" x2="240" y2="73" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="240" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<circle cx="124" cy="65" r="5" fill="#2563eb"/>` +
+        `<line x1="124" y1="65" x2="124" y2="38" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="124" y="28" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">√20</text>` +
+        `<text x="124" y="108" text-anchor="middle" font-size="11" fill="#ea580c">≈ 4.47213…</text>` +
+        `<text x="124" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">rounds to 4.47</text>` +
+        `</svg>`,
     },
   ],
 

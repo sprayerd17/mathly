@@ -145,8 +145,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die vyf wette van eksponente vir heelgetal-eksponente verduidelik met uitgewerkte voorbeelde wat negatiewe en nul-eksponente insluit" />',
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Verwysingskaart wat al vyf wette van eksponente wys met grondgetal in blou, eksponent in oranje en vereenvoudigde antwoord in groen kleurkodering" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,7 +264,27 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om wortelvorme te vereenvoudig deur die grootste volkome-vierkant-faktor uit te haal en hoe om ʼn wortelvorm tussen twee opeenvolgende heelgetalle te plaas" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn wat √30 tussen die heelgetalle 5 en 6 wys met volkome vierkante 25 en 36 in oranje gemerk" />',
+        'Getallelyn van 4 tot 7 met √30 gemerk tussen die heelgetalle 5 en 6, en die volkome vierkante 5² = 25 en 6² = 36 gemerk om te wys waarom 5 < √30 < 6',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="60" x2="245" y2="60" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="252,60 244,56 244,64" fill="#0f1f3d"/>` +
+        `<line x1="20" y1="52" x2="20" y2="68" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="20" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<line x1="93" y1="52" x2="93" y2="68" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="93" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">5</text>` +
+        `<text x="93" y="100" text-anchor="middle" font-size="10" fill="#ea580c">5² = 25</text>` +
+        `<line x1="166" y1="52" x2="166" y2="68" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="166" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">6</text>` +
+        `<text x="166" y="100" text-anchor="middle" font-size="10" fill="#ea580c">6² = 36</text>` +
+        `<line x1="239" y1="52" x2="239" y2="68" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="239" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">7</text>` +
+        `<circle cx="128" cy="60" r="5" fill="#2563eb"/>` +
+        `<line x1="128" y1="60" x2="128" y2="36" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="128" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">√30</text>` +
+        `<text x="130" y="118" text-anchor="middle" font-size="11" fill="#6b7280">25 &lt; 30 &lt; 36, dus 5 &lt; √30 &lt; 6</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -375,7 +393,24 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die verskil tussen rasionale en irrasionale getalle verduidelik deur volkome vierkante en nie-volkome vierkante as voorbeelde te gebruik" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Venn-diagram wat rasionale getalle wys wat heelgetalle en eindigende desimale bevat, langs die versameling irrasionale getalle met wortelvorme in rooi gemerk" />',
+        'Diagram wat die versameling Reële Getalle in twee nie-oorvleuelende gebiede verdeel — Rasionale getalle (heelgetalle, eindigende/herhalende desimale) in blou en Irrasionale getalle (wortelvorme, π, nie-herhalende desimale) in rooi',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 210" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="10" y="20" width="300" height="180" rx="10" fill="none" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="160" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">ℝ — Reële Getalle</text>` +
+        `<circle cx="95" cy="112" r="62" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="95" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">Rasionaal (ℚ)</text>` +
+        `<text x="95" y="105" text-anchor="middle" font-size="10" fill="#1e3a8a">heelgetalle</text>` +
+        `<text x="95" y="122" text-anchor="middle" font-size="10" fill="#1e3a8a">¾, 0,75</text>` +
+        `<text x="95" y="139" text-anchor="middle" font-size="10" fill="#1e3a8a">√4 = 2, √9 = 3</text>` +
+        `<circle cx="225" cy="112" r="62" fill="rgba(220,38,38,0.08)" stroke="#dc2626" stroke-width="2"/>` +
+        `<text x="225" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">Irrasionaal</text>` +
+        `<text x="225" y="105" text-anchor="middle" font-size="10" fill="#991b1b">√2, √3, √5</text>` +
+        `<text x="225" y="122" text-anchor="middle" font-size="10" fill="#991b1b">π</text>` +
+        `<text x="225" y="139" text-anchor="middle" font-size="10" fill="#991b1b">1,41421356…</text>` +
+        `<text x="160" y="198" text-anchor="middle" font-size="10" fill="#6b7280">Elke reële getal is óf rasionaal óf irrasionaal — nooit albei nie</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -502,7 +537,24 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys wanneer om presiese wortelvorm teenoor desimale benadering te gebruik en hoe om irrasionale getalle tot ʼn gegewe aantal desimale plekke af te rond" />',
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn ingezoem op √20 tussen 4 en 5 wat die desimale benadering 4,47213 wys met die afgeronde antwoord 4,47 in groen gemerk" />',
+        'Getallelyn ingezoem tussen 4 en 5 wat √20 by sy posisie (≈4,47213…) merk, wat afrond na 4,47 tot 2 desimale plekke',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 140" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="65" x2="245" y2="65" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="252,65 244,61 244,69" fill="#0f1f3d"/>` +
+        `<line x1="20" y1="57" x2="20" y2="73" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="20" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">4</text>` +
+        `<line x1="130" y1="57" x2="130" y2="73" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="130" y="90" text-anchor="middle" font-size="11" fill="#6b7280">4,5</text>` +
+        `<line x1="240" y1="57" x2="240" y2="73" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<text x="240" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">5</text>` +
+        `<circle cx="124" cy="65" r="5" fill="#2563eb"/>` +
+        `<line x1="124" y1="65" x2="124" y2="38" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="124" y="28" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">√20</text>` +
+        `<text x="124" y="108" text-anchor="middle" font-size="11" fill="#ea580c">≈ 4,47213…</text>` +
+        `<text x="124" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">rond af na 4,47</text>` +
+        `</svg>`,
     },
   ],
 

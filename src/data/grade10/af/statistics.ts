@@ -89,9 +89,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Frekwensietabel met drie intervalle met middelpunte en frekwensies, en werk vir die berekening van die benaderde gemiddelde met kleurgekodeerde kolomme vir intervalle blou middelpunte oranje frekwensies groen" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die modale interval en benaderde gemiddelde uit ʼn gegroepeerde frekwensietabel te bepaal deur middelpunte en frekwensies te gebruik" />',
     },
@@ -172,7 +169,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Skerm-vir-skerm diagram van ʼn Casio fx-82ZA PLUS wat die MODE-kieslys, 1-VAR-keuse, data-invoertabel met x- en FREQ-kolomme ingevul, en die STAT-resultateskerm met x-streep wys, met kleurgekodeerde knoppies blou kieslys-opsies oranje vertoonde resultaat groen" />',
+        'Skerm-vir-skerm diagram van ʼn sakrekenaar wat die MODE-kieslys met STAT gekies, ʼn 1-VAR data-invoertabel met x- en FREQ-kolomme ingevul, en die finale STAT-resultateskerm met x-streep wys',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="6" width="190" height="28" rx="4" fill="#0f1f3d"/><text x="110" y="17" font-size="8.5" fill="#93c5fd" text-anchor="middle" font-weight="700">MODE</text><text x="46" y="29" font-size="8.5" fill="#e5e7eb" text-anchor="middle">1:COMP</text><text x="110" y="29" font-size="8.5" fill="#fdba74" text-anchor="middle" font-weight="700">2:STAT</text><text x="172" y="29" font-size="8.5" fill="#e5e7eb" text-anchor="middle">3:TABLE</text><line x1="110" y1="34" x2="110" y2="46" stroke="#374151" stroke-width="1.5"/><polygon points="110,50 105,42 115,42" fill="#374151"/><rect x="15" y="52" width="190" height="52" rx="4" fill="#0f1f3d"/><text x="110" y="63" font-size="8.5" fill="#fdba74" text-anchor="middle" font-weight="700">1-VAR:  x    FREQ</text><text x="70" y="77" font-size="8.5" fill="#ffffff" text-anchor="middle">5</text><text x="150" y="77" font-size="8.5" fill="#ffffff" text-anchor="middle">4</text><text x="70" y="89" font-size="8.5" fill="#ffffff" text-anchor="middle">15</text><text x="150" y="89" font-size="8.5" fill="#ffffff" text-anchor="middle">8</text><text x="70" y="101" font-size="8.5" fill="#ffffff" text-anchor="middle">25</text><text x="150" y="101" font-size="8.5" fill="#ffffff" text-anchor="middle">6</text><line x1="110" y1="112" x2="110" y2="124" stroke="#374151" stroke-width="1.5"/><polygon points="110,128 105,120 115,120" fill="#374151"/><rect x="15" y="130" width="190" height="30" rx="4" fill="#0f1f3d"/><text x="110" y="142" font-size="8.5" fill="#fdba74" text-anchor="middle" font-weight="700">STAT → Var</text><text x="110" y="155" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="700">x̄ = 16,11</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat demonstreer hoe om gegroepeerde frekwensiedata in ʼn Casio fx-82-reeks sakrekenaar in STAT 1-VAR-modus in te voer en die gemiddelde af te lees" />',
@@ -259,7 +259,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn wat datawaardes 21 22 23 24 25 saam gegroepeer in blou en 99 geïsoleerd ver na regs in rooi wys, wat ʼn duidelike uitskieter illustreer" />',
+        'Getallelyn wat datawaardes 21 tot 25 saam gegroepeer in blou en 99 geïsoleerd ver na regs in rooi wys, met ʼn asbreuk wat ʼn duidelike uitskieter illustreer',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="20" y1="100" x2="115" y2="100" stroke="#374151" stroke-width="1.8"/><line x1="131" y1="100" x2="200" y2="100" stroke="#374151" stroke-width="1.8"/><polygon points="200,100 192,96 192,104" fill="#374151"/><line x1="118" y1="94" x2="124" y2="106" stroke="#374151" stroke-width="1.5"/><line x1="123" y1="94" x2="129" y2="106" stroke="#374151" stroke-width="1.5"/><circle cx="30" cy="86" r="4.5" fill="#2563eb"/><circle cx="51" cy="86" r="4.5" fill="#2563eb"/><circle cx="72" cy="86" r="4.5" fill="#2563eb"/><circle cx="93" cy="86" r="4.5" fill="#2563eb"/><circle cx="114" cy="86" r="4.5" fill="#2563eb"/><text x="30" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">21</text><text x="51" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">22</text><text x="72" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">23</text><text x="93" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">24</text><text x="114" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">25</text><circle cx="180" cy="86" r="5.5" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.5"/><text x="180" y="114" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">99</text><path d="M114,72 C140,55 160,55 178,74" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3,2"/><text x="150" y="52" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">groot gaping → uitskieter</text><text x="70" y="140" font-size="9" fill="#374151" text-anchor="middle">tipiese waardes gegroepeer</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn uitskieter is, hoe om een visueel op ʼn getallelyn te herken, en hoe om te besluit of dit ʼn datafout of ʼn egte uiterste waarde is" />',
@@ -365,7 +368,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Histogram met vier rakende stawe vir gelyke klasintervalle gemerk op die x-as in blou, staafhoogtes van 4 8 6 2 in groen op die y-as as frekwensie gewys, met die hoogste staaf vir 10 tot 20 uitgelig in oranje as die modale klas, en geen gapings tussen enige van die stawe nie" />',
+        'Histogram met vier rakende stawe vir gelyke klasintervalle gemerk op die x-as, staafhoogtes van 4, 8, 6, 2 as frekwensie, met die hoogste staaf uitgelig in oranje as die modale klas, en geen gapings tussen enige van die stawe nie',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="25" y1="140" x2="200" y2="140" stroke="#374151" stroke-width="1.5"/><polygon points="200,140 192,136 192,144" fill="#374151"/><line x1="30" y1="140" x2="30" y2="20" stroke="#374151" stroke-width="1.5"/><polygon points="30,20 26,28 34,28" fill="#374151"/><text x="18" y="18" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">f</text><rect x="30" y="90" width="40" height="50" fill="#16a34a" fill-opacity="0.75" stroke="#0f1f3d" stroke-width="1.5"/><rect x="70" y="40" width="40" height="100" fill="#ea580c" fill-opacity="0.85" stroke="#0f1f3d" stroke-width="1.5"/><rect x="110" y="65" width="40" height="75" fill="#16a34a" fill-opacity="0.75" stroke="#0f1f3d" stroke-width="1.5"/><rect x="150" y="115" width="40" height="25" fill="#16a34a" fill-opacity="0.75" stroke="#0f1f3d" stroke-width="1.5"/><text x="30" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">0</text><text x="70" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">10</text><text x="110" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">20</text><text x="150" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">30</text><text x="190" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">40</text><text x="90" y="32" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">modale klas</text><text x="115" y="165" font-size="9" fill="#374151" text-anchor="middle">stawe raak — deurlopende data</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn histogram uit ʼn gegroepeerde frekwensietabel met gelyke klasintervalle te teken, waarom die stawe moet raak sonder gapings, en hoe om die modale klas van die hoogste staaf te bepaal" />',
@@ -423,8 +429,7 @@ export const topicData: TopicData = {
           steps: [
             `Bepaal die ${bl('middelpunt')} van elke interval: ${bl('0≤x<10')} → ${bl('5')}, ${bl('10≤x<20')} → ${bl('15')}, ${bl('20≤x<30')} → ${bl('25')}.`,
             `Plot punte by elke (${bl('middelpunt')}, ${or('frekwensie')}): (${bl('5')}, ${or('4')}), (${bl('15')}, ${or('8')}), (${bl('25')}, ${or('6')}).`,
-            `Verbind hierdie punte met ${gr('reguit lyne')} om die poligoon te vorm.`,
-            `<em>[Diagram benodig: ʼn frekwensiepoligoon wat punte (${bl('5')}, ${or('4')}), (${bl('15')}, ${or('8')}), (${bl('25')}, ${or('6')}) verbind deur reguit lyne wys, met die x-as gemerk as intervalmiddelpunte en die y-as gemerk as frekwensie]</em>`,
+            `Verbind hierdie punte met ${gr('reguit lyne')} om die poligoon te vorm — sien die diagram hieronder.`,
           ],
         },
         {
@@ -442,7 +447,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Frekwensiepoligoon met die x-as gemerk as intervalmiddelpunte wat 5 15 25 in blou wys en die y-as gemerk as frekwensie wat punte op hoogtes 4 8 6 in oranje wys, verbind deur reguit groen lyne" />',
+        'Frekwensiepoligoon met die x-as gemerk as intervalmiddelpunte 5, 15, 25 en punte op frekwensiehoogtes 4, 8, 6 verbind deur reguit lyne',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="25" y1="140" x2="200" y2="140" stroke="#374151" stroke-width="1.5"/><polygon points="200,140 192,136 192,144" fill="#374151"/><line x1="30" y1="140" x2="30" y2="20" stroke="#374151" stroke-width="1.5"/><polygon points="30,20 26,28 34,28" fill="#374151"/><text x="18" y="18" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">f</text><path d="M50,90 L110,40 L170,65" fill="none" stroke="#16a34a" stroke-width="2.5"/><circle cx="50" cy="90" r="4.5" fill="#ea580c"/><circle cx="110" cy="40" r="4.5" fill="#ea580c"/><circle cx="170" cy="65" r="4.5" fill="#ea580c"/><text x="50" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">5</text><text x="110" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">15</text><text x="170" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">25</text><text x="58" y="86" font-size="8.5" fill="#ea580c" font-weight="700">4</text><text x="118" y="36" font-size="8.5" fill="#ea580c" font-weight="700">8</text><text x="178" y="61" font-size="8.5" fill="#ea580c" font-weight="700">6</text><text x="115" y="165" font-size="9" fill="#374151" text-anchor="middle">middelpunte geplot op frekwensiehoogte, verbind deur reguit lyne</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn frekwensiepoligoon uit ʼn gegroepeerde frekwensietabel te teken deur middelpunt-frekwensie-pare te plot en dit met reguit lyne te verbind" />',
@@ -572,7 +580,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Stam-en-blaar-diagram met ʼn vertikale kolom van stamme in blou soos 2 en 3, gerangskikte blare in groen langs elke stam geskryf, en ʼn sleutel onderaan wat lees 2 vertikale streep 3 is gelyk aan 23, plus ʼn tweede rug-aan-rug stam-en-blaar-diagram voorbeeld wat een klas se blare links en ʼn ander klas se blare regs van ʼn gedeelde sentrale stamkolom wys" />',
+        'Rug-aan-rug stam-en-blaar-diagram met ʼn gedeelde sentrale stamkolom, Klas A se blare links en Klas B se blare regs, plus ʼn sleutel wat wys hoe om ʼn waarde te lees',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="60" y="18" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">Klas A</text><text x="110" y="18" font-size="10" font-weight="700" fill="#2563eb" text-anchor="middle">Stam</text><text x="160" y="18" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">Klas B</text><line x1="95" y1="26" x2="95" y2="100" stroke="#d1d5db" stroke-width="1"/><line x1="125" y1="26" x2="125" y2="100" stroke="#d1d5db" stroke-width="1"/><rect x="100" y="34" width="20" height="22" fill="#2563eb"/><text x="110" y="49" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">1</text><rect x="100" y="64" width="20" height="22" fill="#2563eb"/><text x="110" y="79" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">2</text><text x="92" y="49" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="end">8  5  2</text><text x="128" y="49" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="start">4  6  9</text><text x="92" y="79" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="end">7  3  1</text><text x="128" y="79" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="start">0  2  2  8</text><text x="110" y="105" font-size="8" fill="#6b7280" text-anchor="middle">(blare naaste aan die stam = kleinste)</text><text x="110" y="130" font-size="9" font-weight="700" fill="#0f1f3d" text-anchor="middle">Sleutel: 2 | 1 | 4</text><text x="110" y="144" font-size="8.5" fill="#374151" text-anchor="middle">Klas A = 12,  Klas B = 14</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om datawaardes in stamme en blare te verdeel, ʼn gerangskikte stam-en-blaar-diagram met ʼn sleutel te bou, die modus, variasiewydte en mediaan daarvan af te lees, en ʼn rug-aan-rug stam-en-blaar-diagram te konstrueer wat twee datastelle vergelyk" />',
@@ -673,7 +684,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Getallelyn wat gerangskikte data met Q1 Q2 en Q3 posisies in blou gemerk wys, die interkwartielwydte in oranje tussen Q1 en Q3 gehaak, en die volle variasiewydte in groen van kleinste tot grootste waarde gehaak" />',
+        'Getallelyn wat gerangskikte data met Q1, Q2 en Q3 posisies gemerk wys, die interkwartielwydte in oranje tussen Q1 en Q3 gehaak, en die volle variasiewydte in groen van kleinste tot grootste waarde gehaak',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="25" y1="110" x2="205" y2="110" stroke="#374151" stroke-width="1.5"/><polygon points="205,110 197,106 197,114" fill="#374151"/><circle cx="51" cy="110" r="4" fill="#2563eb"/><circle cx="78" cy="110" r="4" fill="#2563eb"/><circle cx="115" cy="110" r="4.5" fill="#16a34a"/><circle cx="155" cy="110" r="4" fill="#2563eb"/><circle cx="189" cy="110" r="4" fill="#2563eb"/><text x="51" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">4</text><text x="78" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">Q1=9</text><text x="115" y="128" font-size="8.5" fill="#16a34a" font-weight="700" text-anchor="middle">Q2=16</text><text x="155" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">Q3=23,5</text><text x="189" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">30</text><path d="M78,88 L78,80 L155,80 L155,88" fill="none" stroke="#ea580c" stroke-width="1.6"/><text x="116" y="72" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">IKW</text><path d="M51,142 L51,150 L189,150 L189,142" fill="none" stroke="#16a34a" stroke-width="1.6"/><text x="120" y="163" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">variasiewydte</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die variasiewydte, Q1, Q2, Q3 en interkwartielwydte uit ʼn gerangskikte datastel te bepaal, en die verskil tussen variasiewydte en IKW verduidelik" />',

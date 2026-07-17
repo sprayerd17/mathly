@@ -142,7 +142,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om die enkelvoudige-rente-formule A=P(1+ni) te gebruik met kleurgekodeerde uitgewerkte voorbeelde in huurkoop- en spaarkonteks" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Lineêre grafiek van A teenoor n vir enkelvoudige rente wat konstante reguitlyn-groei wys met hoofsom in blou, koers in oranje, tyd in groen, en finale bedrag in rooi" />',
+        'Lineêre grafiek van A teenoor n vir enkelvoudige rente wat konstante reguitlyn-groei wys, met dieselfde bedrag wat elke jaar bygevoeg word',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">A</text><line x1="30" y1="145" x2="190" y2="40" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="30" cy="145" r="4" fill="#2563eb"/><text x="20" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><circle cx="70" cy="119.75" r="3" fill="#ea580c"/><circle cx="110" cy="92.5" r="3" fill="#ea580c"/><circle cx="150" cy="65.25" r="3" fill="#ea580c"/><line x1="70" y1="119.75" x2="110" y2="119.75" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="119.75" x2="110" y2="92.5" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="92.5" x2="150" y2="92.5" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="150" y1="92.5" x2="150" y2="65.25" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><text x="90" y="130" font-size="8" fill="#ea580c" font-weight="700" text-anchor="middle">Δn</text><text x="130" y="103" font-size="8" fill="#ea580c" font-weight="700" text-anchor="middle">Δn</text><circle cx="190" cy="40" r="4" fill="#dc2626"/><text x="196" y="36" font-size="11" fill="#dc2626" font-weight="700">A</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">dieselfde bedrag elke jaar bygevoeg → reguit lyn</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -296,7 +299,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om die saamgestelde-rente-formule A=P(1+i)^n te gebruik met kleurgekodeerde voorbeelde oor spaargeld en bevolkingsgroei, en ʼn vergelyking met enkelvoudige rente" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Eksponensiële groeikurwe wat enkelvoudige en saamgestelde rente oor 10 jaar op dieselfde asse vergelyk, met hoofsom in blou, rentekoers in oranje, en die eksponensiële groeikurwe in groen" />',
+        'Eksponensiële groeikurwe wat enkelvoudige en saamgestelde rente oor tyd op dieselfde asse vergelyk, wat wys hoe saamgestelde rente enkelvoudige rente oortref',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#374151" font-weight="700" text-anchor="middle">A</text><circle cx="30" cy="145" r="4" fill="#2563eb"/><text x="20" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><line x1="30" y1="145" x2="190" y2="72" stroke="#2563eb" stroke-width="2.2"/><text x="150" y="85" font-size="10" fill="#2563eb" font-weight="700">enkelvoudig</text><path d="M30,145 C90,142 150,108 190,26" fill="none" stroke="#dc2626" stroke-width="2.5"/><text x="128" y="42" font-size="10" fill="#dc2626" font-weight="700">saamgesteld</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">saamgestelde rente oortref enkelvoudige rente mettertyd</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -417,7 +423,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om probeer en verbeter te gebruik om n in saamgestelde-groeiprobleme te vind, met stappe om te toets, te verfyn en die resultate te interpreteer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Tabel wat probeerwaardes van n in blou wys teenoor die berekende vermenigvuldiger versus die teikenwaarde in oranje, met die verfynde antwoord uitgelig in groen" />',
+        'Grafiek van probeerwaardes van n teenoor die berekende vermenigvuldiger, met ʼn stippel-teikenlyn in oranje en die verfynde antwoord wat eerste die teiken bereik, uitgelig in groen',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="10" fill="#374151" font-weight="700">n</text><text x="6" y="12" font-size="9" fill="#374151" font-weight="700">vermenigvuldiger</text><line x1="30" y1="77" x2="190" y2="77" stroke="#ea580c" stroke-width="1.8" stroke-dasharray="5,3"/><text x="192" y="73" font-size="10" fill="#ea580c" font-weight="700">teiken = 2</text><path d="M70,117.46 L115,81.42 L160,41.13" fill="none" stroke="#9ca3af" stroke-width="1.5"/><circle cx="70" cy="117.46" r="4.5" fill="#0f1f3d"/><circle cx="115" cy="81.42" r="4.5" fill="#0f1f3d"/><circle cx="160" cy="41.13" r="5.5" fill="#16a34a" stroke="#0f1f3d" stroke-width="1.5"/><text x="70" y="160" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">n=5</text><text x="115" y="160" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">n=6</text><text x="160" y="160" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">n=7</text><text x="160" y="32" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">verfynde antwoord</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -565,9 +574,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wisselkoerse verduidelik, hoe om tussen geldeenhede om te skakel deur te vermenigvuldig en te deel, en wat gebeur wanneer die Rand verswak of versterk" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat geldomskakelingspyle tussen Rand en buitelandse geldeenhede wys, met die wisselkoers in blou, die omskakelingsbewerking in oranje, en die finale omgeskakelde bedrag in groen" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -736,7 +742,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat ʼn huurkoopprobleem stap vir stap deurwerk en wys hoe die deposito in pers, balans in blou, rentekoers in oranje, terugbetalingstydperk in groen, en totale terugbetaling in rooi saamwerk" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Staafdiagram van ʼn huurkoopaankoop wat die deposito-segment in pers langs die gefinansierde balans-segment in blou wys wat oor die terugbetalingstydperk groei tot die totale terugbetaling-segment in rooi" />',
+        'Staafdiagram van ʼn huurkoopaankoop wat die deposito-segment in pers langs die gefinansierde balans-segment in blou wys, en dan dieselfde deposito langs ʼn groter totale terugbetaling-segment in rooi sodra enkelvoudige rente bygetel is',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="95" y="16" font-size="10.5" font-weight="700" fill="#374151" text-anchor="middle">Kontantprys</text><rect x="30" y="24" width="13" height="22" fill="#7c3aed"/><rect x="43" y="24" width="117" height="22" fill="#2563eb"/><rect x="30" y="24" width="130" height="22" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><text x="36.5" y="60" font-size="8" font-weight="700" fill="#7c3aed" text-anchor="middle">deposito</text><text x="101" y="39" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Balans (P)</text><line x1="101" y1="46" x2="101" y2="70" stroke="#ea580c" stroke-width="2"/><polygon points="101,74 96,66 106,66" fill="#ea580c"/><text x="150" y="76" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">+ enkelvoudige rente</text><rect x="30" y="94" width="13" height="22" fill="#7c3aed"/><rect x="43" y="94" width="169.7" height="22" fill="#dc2626"/><rect x="30" y="94" width="182.7" height="22" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><text x="128" y="109" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Totale terugbetaling (A)</text><text x="112" y="132" font-size="10.5" font-weight="700" fill="#374151" text-anchor="middle">Totale koste = deposito + A</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -879,9 +888,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat inflasie verduidelik deur die saamgestelde-groei-formule A=P(1+i)^n te gebruik om toekomstige pryse te projekteer, met huidige prys in blou, inflasiekoers in oranje, jare in groen, toekomstige prys in rooi, en hoe koopkrag geraak word" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Stygende pryskurwe oor tyd wat die huidige prys in blou eksponensieel na die toekomstige prys in rooi laat groei terwyl die inflasiekoers in oranje elke jaar in groen saamstel" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -1000,7 +1006,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die saamgestelde-groei-formule A=P(1+i)^n op bevolkingsyfers toepas, met beginbevolking in blou, groeikoers in oranje, jare in groen, en toekomstige bevolking in rooi, insluitend verdubbelingstyd deur probeer en verbeter" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Groeiende skare van staaksytjies wat ʼn eksponensiële bevolkingskurwe oor tyd illustreer, met beginbevolking in blou, groeikoers in oranje, tyd in groen, en toekomstige bevolking in rooi" />',
+        'Groeiende skare kolletjies wat ʼn klein beginbevolking wys wat oor tyd na ʼn veel groter bevolking groei, wat eksponensiële bevolkingsgroei illustreer',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="112" y="16" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">bevolking groei vinniger namate dit groter word</text><text x="40" y="120" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">P</text><circle cx="35" cy="144" r="3.2" fill="#2563eb"/><circle cx="45" cy="144" r="3.2" fill="#2563eb"/><circle cx="40" cy="135" r="3.2" fill="#2563eb"/><circle cx="100" cy="135" r="3.2" fill="#ea580c"/><circle cx="112" cy="135" r="3.2" fill="#ea580c"/><circle cx="124" cy="135" r="3.2" fill="#ea580c"/><circle cx="100" cy="144" r="3.2" fill="#ea580c"/><circle cx="112" cy="144" r="3.2" fill="#ea580c"/><circle cx="124" cy="144" r="3.2" fill="#ea580c"/><text x="185" y="104" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">A</text><circle cx="167" cy="126" r="3.2" fill="#dc2626"/><circle cx="177" cy="126" r="3.2" fill="#dc2626"/><circle cx="187" cy="126" r="3.2" fill="#dc2626"/><circle cx="197" cy="126" r="3.2" fill="#dc2626"/><circle cx="167" cy="135" r="3.2" fill="#dc2626"/><circle cx="177" cy="135" r="3.2" fill="#dc2626"/><circle cx="187" cy="135" r="3.2" fill="#dc2626"/><circle cx="197" cy="135" r="3.2" fill="#dc2626"/><circle cx="167" cy="144" r="3.2" fill="#dc2626"/><circle cx="177" cy="144" r="3.2" fill="#dc2626"/><circle cx="187" cy="144" r="3.2" fill="#dc2626"/><circle cx="197" cy="144" r="3.2" fill="#dc2626"/><line x1="20" y1="152" x2="210" y2="152" stroke="#16a34a" stroke-width="1.8"/><polygon points="210,152 202,148 202,156" fill="#16a34a"/><text x="40" y="164" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">t = 0</text><text x="112" y="164" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">t = n/2</text><text x="185" y="164" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">t = n</text></svg>',
     },
   ],
 

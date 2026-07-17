@@ -90,7 +90,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video introducing SOHCAHTOA and showing how to identify opposite, adjacent and hypotenuse sides relative to a given angle in a right-angled triangle" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Right-angled triangle labelled with the opposite side in blue, adjacent side in orange and hypotenuse in green, with SOHCAHTOA ratios shown for a given angle θ" />',
+        'Right-angled triangle with the opposite side in blue, adjacent side in orange and hypotenuse in green, with the SOHCAHTOA ratios for angle θ shown alongside',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="110" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">sin θ = opposite / hypotenuse</text><text x="110" y="24" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">cos θ = adjacent / hypotenuse</text><text x="110" y="36" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">tan θ = opposite / adjacent</text><polygon points="30,140 170,140 30,50" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M 30,128 L 42,128 L 42,140" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="30" y1="140" x2="170" y2="140" stroke="#ea580c" stroke-width="3.5"/><line x1="30" y1="50" x2="30" y2="140" stroke="#2563eb" stroke-width="3.5"/><line x1="30" y1="50" x2="170" y2="140" stroke="#16a34a" stroke-width="3.5"/><path d="M 152,140 A 18 18 0 0 0 145,126" fill="none" stroke="#0f1f3d" stroke-width="1.3"/><text x="146" y="134" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">θ</text><text x="100" y="158" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">adjacent</text><text x="14" y="95" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle" transform="rotate(-90 14 95)">opposite</text><text x="100" y="85" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle" transform="rotate(33 100 85)">hypotenuse</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -176,7 +179,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to find a missing side or angle in a right-angled triangle using SOHCAHTOA and inverse trig functions on a calculator" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Right-angled triangle PQR with known sides PQ and QR highlighted in blue and the unknown angle P highlighted in red, showing the tan ratio being applied step by step" />',
+        'Right-angled triangle PQR with the known sides PQ and QR in blue and the unknown angle P in red, showing the tan ratio used to solve it',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><polygon points="30,140 170,140 30,50" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 30,128 L 42,128 L 42,140" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><text x="100" y="158" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">8 cm</text><text x="14" y="98" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><path d="M 152,140 A 18 18 0 0 0 145,126" fill="none" stroke="#0f1f3d" stroke-width="1.3"/><text x="146" y="134" font-size="13" fill="#dc2626" font-weight="700" text-anchor="middle">?</text><text x="20" y="153" font-size="12" fill="#475569" font-weight="600" text-anchor="middle">Q</text><text x="180" y="153" font-size="12" fill="#475569" font-weight="600" text-anchor="middle">P</text><text x="20" y="46" font-size="12" fill="#475569" font-weight="600" text-anchor="middle">R</text><text x="110" y="18" font-size="10.5" fill="#16a34a" font-weight="700" text-anchor="middle">tan P = opposite / adjacent</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -259,7 +265,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video extending trig definitions to all four quadrants using a point (x,y) on the terminal arm and showing how r is always positive while x and y can be negative" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: a Cartesian plane showing a point (3,4) with the terminal arm drawn from the origin, r labelled as the hypotenuse distance, and x and y labelled along the axes]" />',
+        'Cartesian plane showing the point (3, 4) with the terminal arm drawn from the origin, r labelled along the arm, and x and y labelled as dashed drop-lines to the axes',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="110" x2="210" y2="110" stroke="#94a3b8" stroke-width="1.5"/><line x1="110" y1="10" x2="110" y2="210" stroke="#94a3b8" stroke-width="1.5"/><polygon points="210,110 202,106 202,114" fill="#94a3b8"/><polygon points="110,10 106,18 114,18" fill="#94a3b8"/><text x="200" y="124" font-size="11" fill="#64748b">x</text><text x="118" y="20" font-size="11" fill="#64748b">y</text><line x1="110" y1="110" x2="119.6" y2="97.2" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="119.6" cy="97.2" r="4" fill="#0f1f3d"/><text x="134" y="90" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">(3, 4)</text><line x1="119.6" y1="97.2" x2="119.6" y2="110" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,3"/><text x="132" y="106" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">4</text><line x1="110" y1="110" x2="119.6" y2="110" stroke="#2563eb" stroke-width="1.3" stroke-dasharray="3,3"/><text x="115" y="124" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">3</text><text x="100" y="98" font-size="13" fill="#ea580c" font-weight="700" text-anchor="middle">r</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -346,7 +355,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video plotting y=sinθ, y=cosθ and y=tanθ for 0° to 360°, identifying maximum and minimum points and explaining vertical asymptotes on the tangent graph" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: three separate graphs side by side showing y=sinθ, y=cosθ and y=tanθ for 0° to 360°, with key points and asymptotes (for tan) clearly marked]" />',
+        'Graphs of y=sinθ and y=cosθ plotted together over 0° to 360° with maximum and minimum points marked, alongside a graph of y=tanθ showing its vertical asymptote at 90°',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="75" y="10" font-size="9" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = sin θ and y = cos θ</text><line x1="15" y1="90" x2="135" y2="90" stroke="#94a3b8" stroke-width="1.2"/><path d="M15,90 L25,70 L35,55.36 L45,50 L55,55.36 L65,70 L75,90 L85,110 L95,124.64 L105,130 L115,124.64 L125,110 L135,90" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M15,50 L25,55.36 L35,70 L45,90 L55,110 L65,124.64 L75,130 L85,124.64 L95,110 L105,90 L115,70 L125,55.36 L135,50" fill="none" stroke="#2563eb" stroke-width="2"/><circle cx="45" cy="50" r="3" fill="#16a34a"/><circle cx="15" cy="50" r="3" fill="#16a34a"/><circle cx="135" cy="50" r="3" fill="#16a34a"/><circle cx="105" cy="130" r="3" fill="#dc2626"/><circle cx="75" cy="130" r="3" fill="#dc2626"/><text x="8" y="93" font-size="8" fill="#0f1f3d" font-weight="700" text-anchor="middle">sin</text><text x="8" y="53" font-size="8" fill="#2563eb" font-weight="700" text-anchor="middle">cos</text><text x="15" y="140" font-size="7" fill="#64748b" text-anchor="middle">0°</text><text x="45" y="140" font-size="7" fill="#64748b" text-anchor="middle">90°</text><text x="75" y="140" font-size="7" fill="#64748b" text-anchor="middle">180°</text><text x="105" y="140" font-size="7" fill="#64748b" text-anchor="middle">270°</text><text x="135" y="140" font-size="7" fill="#64748b" text-anchor="middle">360°</text><text x="179" y="10" font-size="9" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = tan θ</text><line x1="146" y1="90" x2="212" y2="90" stroke="#94a3b8" stroke-width="1.2"/><line x1="179" y1="20" x2="179" y2="160" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/><path d="M150,90 L154.8,85.98 L159.7,81.35 L164.5,75 L169.3,64.02 L174.2,34.02" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M183.8,146 L188.6,116 L193.5,105 L198.3,98.66 L203.1,94.02 L208,90" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="150" y="163" font-size="7" fill="#64748b" text-anchor="middle">0°</text><text x="179" y="163" font-size="7" fill="#ea580c" font-weight="700" text-anchor="middle">90°</text><text x="208" y="163" font-size="7" fill="#64748b" text-anchor="middle">180°</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -424,7 +436,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing the effect of parameters a and q on y=a·sinθ+q — demonstrating amplitude stretch with a and vertical shift with q using side-by-side graphs" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: y=sinθ and y=3sinθ plotted on the same axes to show amplitude stretch; a second graph showing y=cosθ and y=cosθ+2 to show vertical shift]" />',
+        'Two graphs side by side: y=3sinθ compared with y=sinθ to show the amplitude stretch from parameter a, and y=cosθ+2 compared with y=cosθ to show the vertical shift from parameter q',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="57" y="10" font-size="8" font-weight="700" fill="#0f1f3d" text-anchor="middle">3sin θ (blue) vs sin θ (grey)</text><line x1="10" y1="87.5" x2="105" y2="87.5" stroke="#cbd5e1" stroke-width="1"/><path d="M10,87.5 L21.9,72.77 L33.8,66.67 L45.6,72.77 L57.5,87.5 L69.4,102.23 L81.3,108.33 L93.1,102.23 L105,87.5" fill="none" stroke="#94a3b8" stroke-width="1.6"/><path d="M10,87.5 L21.9,43.3 L33.8,25 L45.6,43.3 L57.5,87.5 L69.4,131.7 L81.3,150 L93.1,131.7 L105,87.5" fill="none" stroke="#2563eb" stroke-width="2.2"/><text x="162" y="10" font-size="8" font-weight="700" fill="#0f1f3d" text-anchor="middle">cos θ+2 (orange) vs cos θ (grey)</text><line x1="115" y1="87.5" x2="210" y2="87.5" stroke="#cbd5e1" stroke-width="1"/><path d="M115,87.5 L126.9,96.65 L138.8,118.75 L150.6,140.85 L162.5,150 L174.4,140.85 L186.3,118.75 L198.1,96.65 L210,87.5" fill="none" stroke="#94a3b8" stroke-width="1.6"/><path d="M115,25 L126.9,34.15 L138.8,56.25 L150.6,78.35 L162.5,87.5 L174.4,78.35 L186.3,56.25 L198.1,34.15 L210,25" fill="none" stroke="#ea580c" stroke-width="2.2"/><text x="57" y="164" font-size="7.5" fill="#374151" text-anchor="middle">amplitude a stretches the wave</text><text x="162" y="164" font-size="7.5" fill="#374151" text-anchor="middle">q shifts the wave up/down</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -515,7 +530,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video solving real-life 2D trigonometry problems involving angles of elevation and depression, showing how to draw a diagram and apply SOHCAHTOA step by step" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram needed: three separate diagrams — (1) angle of elevation from ground to building top, (2) angle of depression from cliff top to boat, (3) two buildings side by side with angle of elevation between their tops]" />',
+        'Diagram of a building with the angle of elevation from the ground marked in blue and the angle of depression from the top marked in orange, showing that the two angles are equal',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="140" x2="200" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="170" y1="140" x2="170" y2="30" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 170,128 L 158,128 L 158,140" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="30" x2="190" y2="30" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3"/><line x1="30" y1="140" x2="170" y2="30" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="5,3"/><path d="M 58,140 A 28 28 0 0 0 45,120" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="50" y="130" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">θ</text><path d="M138,30 A32 32 0 0 0 148,52" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="148" y="42" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">θ</text><circle cx="30" cy="140" r="3.5" fill="#16a34a"/><circle cx="170" cy="30" r="3.5" fill="#16a34a"/><text x="14" y="153" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">elevation</text><text x="30" y="22" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="middle">depression</text><text x="105" y="160" font-size="8.5" fill="#16a34a" font-weight="700" text-anchor="middle">the two θ angles are equal (alternate angles)</text></svg>',
     },
   ],
 

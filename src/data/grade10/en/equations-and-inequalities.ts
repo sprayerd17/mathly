@@ -88,9 +88,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to solve linear equations with fractions and brackets using LCM and inverse operations" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Step by step layout showing how to solve (2x−3)/3 = (x+2)/6 with colour coded steps: LCM blue, expanded brackets orange, solution green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -168,7 +165,24 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to solve quadratic equations by factorisation using the zero product property and the a×c method" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Layout showing the a×c method for factorising 2x²+3x−20=0 with rearranged equation blue, factorised brackets orange, and solutions green" />',
+        'X-box diagram for 2x² + 3x − 20 = 0 showing a×c = −40 at top, b = 3 at bottom, and the two numbers −5 and 8 at the sides, leading through splitting and grouping to the factorised form (x + 4)(2x − 5) = 0 and solutions x = −4 or x = 5/2',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 250" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="110" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">2x² + 3x − 20 = 0</text>` +
+        `<rect x="60" y="30" width="100" height="100" fill="none" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="60" y1="30" x2="160" y2="130" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="160" y1="30" x2="60" y2="130" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="110" y="50" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">a×c = −40</text>` +
+        `<text x="110" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">b = 3</text>` +
+        `<text x="80" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">−5</text>` +
+        `<text x="140" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">8</text>` +
+        `<text x="110" y="150" text-anchor="middle" font-size="11" fill="#6b7280">−5 × 8 = −40 and −5 + 8 = 3</text>` +
+        `<text x="110" y="172" text-anchor="middle" font-size="12" fill="#0f1f3d">Split: 2x² <tspan fill="#2563eb" font-weight="700">− 5x + 8x</tspan> − 20</text>` +
+        `<text x="110" y="192" text-anchor="middle" font-size="12" fill="#0f1f3d">Group: x(2x − 5) + 4(2x − 5)</text>` +
+        `<text x="110" y="212" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">= (x + 4)(2x − 5) = 0</text>` +
+        `<text x="110" y="234" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">x = −4 or x = 5/2</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -238,9 +252,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to change the subject of a formula using inverse operations treating other variables as constants" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Two worked examples showing literal equation rearrangement with subject variable blue, other variables orange, and isolated subject green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -327,7 +338,32 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to solve linear inequalities including sign reversal and how to solve simultaneous equations by substitution and graphically" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Cartesian plane showing two lines y=x+3 and y=−x+7 intersecting at point (2,5) with the intersection clearly marked in green" />',
+        'Cartesian plane showing the lines y = x + 3 (blue) and y = −x + 7 (orange) intersecting at the point (2, 5), marked in green',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="100%" style="max-width:280px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<g stroke="#e5e7eb" stroke-width="1">` +
+        `<line x1="30" y1="20" x2="30" y2="200"/><line x1="50" y1="20" x2="50" y2="200"/><line x1="70" y1="20" x2="70" y2="200"/>` +
+        `<line x1="90" y1="20" x2="90" y2="200"/><line x1="110" y1="20" x2="110" y2="200"/><line x1="130" y1="20" x2="130" y2="200"/>` +
+        `<line x1="150" y1="20" x2="150" y2="200"/><line x1="170" y1="20" x2="170" y2="200"/><line x1="190" y1="20" x2="190" y2="200"/>` +
+        `<line x1="20" y1="30" x2="200" y2="30"/><line x1="20" y1="50" x2="200" y2="50"/><line x1="20" y1="70" x2="200" y2="70"/>` +
+        `<line x1="20" y1="90" x2="200" y2="90"/><line x1="20" y1="110" x2="200" y2="110"/><line x1="20" y1="130" x2="200" y2="130"/>` +
+        `<line x1="20" y1="150" x2="200" y2="150"/><line x1="20" y1="170" x2="200" y2="170"/>` +
+        `</g>` +
+        `<line x1="20" y1="190" x2="205" y2="190" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="210,190 202,186 202,194" fill="#0f1f3d"/>` +
+        `<line x1="30" y1="205" x2="30" y2="15" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="30,10 26,18 34,18" fill="#0f1f3d"/>` +
+        `<text x="212" y="203" font-size="11" fill="#0f1f3d">x</text>` +
+        `<text x="20" y="10" font-size="11" fill="#0f1f3d">y</text>` +
+        `<line x1="30" y1="130" x2="130" y2="30" stroke="#2563eb" stroke-width="2.5"/>` +
+        `<text x="134" y="26" font-size="11" font-weight="700" fill="#2563eb">y = x + 3</text>` +
+        `<line x1="30" y1="50" x2="170" y2="190" stroke="#ea580c" stroke-width="2.5"/>` +
+        `<text x="34" y="44" font-size="11" font-weight="700" fill="#ea580c">y = −x + 7</text>` +
+        `<circle cx="70" cy="90" r="4.5" fill="#16a34a"/>` +
+        `<text x="78" y="86" font-size="12" font-weight="700" fill="#16a34a">(2, 5)</text>` +
+        `<text x="110" y="215" text-anchor="middle" font-size="10" fill="#6b7280">The lines intersect where both equations are true</text>` +
+        `</svg>`,
     },
   ],
 

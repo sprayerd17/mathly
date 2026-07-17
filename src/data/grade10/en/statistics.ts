@@ -89,9 +89,6 @@ export const topicData: TopicData = {
       practiceQuestions: [],
       openQuestions: [],
 
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Frequency table showing three intervals with midpoints and frequencies, and working for approximate mean calculation with colour coded columns for intervals blue midpoints orange frequencies green" />',
-
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to find the modal interval and approximate mean from a grouped frequency table using midpoints and frequencies" />',
     },
@@ -172,7 +169,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Screen-by-screen diagram of a Casio fx-82ZA PLUS showing MODE menu, 1-VAR selection, data entry table with x and FREQ columns filled in, and the STAT results screen displaying x-bar with colour coded buttons blue menu options orange displayed result green" />',
+        'Screen-by-screen diagram of a calculator showing the MODE menu with STAT selected, a 1-VAR data entry table with x and FREQ columns filled in, and the final STAT results screen displaying x-bar',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="6" width="190" height="28" rx="4" fill="#0f1f3d"/><text x="110" y="17" font-size="8.5" fill="#93c5fd" text-anchor="middle" font-weight="700">MODE</text><text x="46" y="29" font-size="8.5" fill="#e5e7eb" text-anchor="middle">1:COMP</text><text x="110" y="29" font-size="8.5" fill="#fdba74" text-anchor="middle" font-weight="700">2:STAT</text><text x="172" y="29" font-size="8.5" fill="#e5e7eb" text-anchor="middle">3:TABLE</text><line x1="110" y1="34" x2="110" y2="46" stroke="#374151" stroke-width="1.5"/><polygon points="110,50 105,42 115,42" fill="#374151"/><rect x="15" y="52" width="190" height="52" rx="4" fill="#0f1f3d"/><text x="110" y="63" font-size="8.5" fill="#fdba74" text-anchor="middle" font-weight="700">1-VAR:  x    FREQ</text><text x="70" y="77" font-size="8.5" fill="#ffffff" text-anchor="middle">5</text><text x="150" y="77" font-size="8.5" fill="#ffffff" text-anchor="middle">4</text><text x="70" y="89" font-size="8.5" fill="#ffffff" text-anchor="middle">15</text><text x="150" y="89" font-size="8.5" fill="#ffffff" text-anchor="middle">8</text><text x="70" y="101" font-size="8.5" fill="#ffffff" text-anchor="middle">25</text><text x="150" y="101" font-size="8.5" fill="#ffffff" text-anchor="middle">6</text><line x1="110" y1="112" x2="110" y2="124" stroke="#374151" stroke-width="1.5"/><polygon points="110,128 105,120 115,120" fill="#374151"/><rect x="15" y="130" width="190" height="30" rx="4" fill="#0f1f3d"/><text x="110" y="142" font-size="8.5" fill="#fdba74" text-anchor="middle" font-weight="700">STAT → Var</text><text x="110" y="155" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="700">x̄ = 16.11</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video demonstrating how to enter grouped frequency data into a Casio fx-82 series calculator in STAT 1-VAR mode and read off the mean" />',
@@ -259,7 +259,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line showing data values 21 22 23 24 25 clustered together in blue and 99 isolated far to the right in red illustrating a clear outlier" />',
+        'Number line showing data values 21 to 25 clustered together in blue and 99 isolated far to the right in red, with an axis break illustrating a clear outlier',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="20" y1="100" x2="115" y2="100" stroke="#374151" stroke-width="1.8"/><line x1="131" y1="100" x2="200" y2="100" stroke="#374151" stroke-width="1.8"/><polygon points="200,100 192,96 192,104" fill="#374151"/><line x1="118" y1="94" x2="124" y2="106" stroke="#374151" stroke-width="1.5"/><line x1="123" y1="94" x2="129" y2="106" stroke="#374151" stroke-width="1.5"/><circle cx="30" cy="86" r="4.5" fill="#2563eb"/><circle cx="51" cy="86" r="4.5" fill="#2563eb"/><circle cx="72" cy="86" r="4.5" fill="#2563eb"/><circle cx="93" cy="86" r="4.5" fill="#2563eb"/><circle cx="114" cy="86" r="4.5" fill="#2563eb"/><text x="30" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">21</text><text x="51" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">22</text><text x="72" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">23</text><text x="93" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">24</text><text x="114" y="114" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">25</text><circle cx="180" cy="86" r="5.5" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.5"/><text x="180" y="114" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">99</text><path d="M114,72 C140,55 160,55 178,74" fill="none" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3,2"/><text x="150" y="52" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">large gap → outlier</text><text x="70" y="140" font-size="9" fill="#374151" text-anchor="middle">clustered typical values</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining what an outlier is, how to spot one visually on a number line, and how to decide whether it is a data error or a genuine extreme value" />',
@@ -365,7 +368,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Histogram with four touching bars for equal class intervals labelled on the x-axis in blue, bar heights of 4 8 6 2 shown in green on the y-axis as frequency, with the tallest bar for 10 to 20 highlighted in orange as the modal class, and no gaps between any of the bars" />',
+        'Histogram with four touching bars for equal class intervals labelled on the x-axis, bar heights of 4, 8, 6, 2 as frequency, with the tallest bar highlighted in orange as the modal class, and no gaps between any of the bars',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="25" y1="140" x2="200" y2="140" stroke="#374151" stroke-width="1.5"/><polygon points="200,140 192,136 192,144" fill="#374151"/><line x1="30" y1="140" x2="30" y2="20" stroke="#374151" stroke-width="1.5"/><polygon points="30,20 26,28 34,28" fill="#374151"/><text x="18" y="18" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">f</text><rect x="30" y="90" width="40" height="50" fill="#16a34a" fill-opacity="0.75" stroke="#0f1f3d" stroke-width="1.5"/><rect x="70" y="40" width="40" height="100" fill="#ea580c" fill-opacity="0.85" stroke="#0f1f3d" stroke-width="1.5"/><rect x="110" y="65" width="40" height="75" fill="#16a34a" fill-opacity="0.75" stroke="#0f1f3d" stroke-width="1.5"/><rect x="150" y="115" width="40" height="25" fill="#16a34a" fill-opacity="0.75" stroke="#0f1f3d" stroke-width="1.5"/><text x="30" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">0</text><text x="70" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">10</text><text x="110" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">20</text><text x="150" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">30</text><text x="190" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">40</text><text x="90" y="32" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">modal class</text><text x="115" y="165" font-size="9" fill="#374151" text-anchor="middle">bars touch — continuous data</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to draw a histogram from a grouped frequency table with equal class intervals, why the bars must touch with no gaps, and how to identify the modal class from the tallest bar" />',
@@ -423,8 +429,7 @@ export const topicData: TopicData = {
           steps: [
             `Find the ${bl('midpoint')} of each interval: ${bl('0≤x<10')} → ${bl('5')}, ${bl('10≤x<20')} → ${bl('15')}, ${bl('20≤x<30')} → ${bl('25')}.`,
             `Plot points at each (${bl('midpoint')}, ${or('frequency')}): (${bl('5')}, ${or('4')}), (${bl('15')}, ${or('8')}), (${bl('25')}, ${or('6')}).`,
-            `Connect these points with ${gr('straight lines')} to form the polygon.`,
-            `<em>[Diagram needed: a frequency polygon showing points (${bl('5')}, ${or('4')}), (${bl('15')}, ${or('8')}), (${bl('25')}, ${or('6')}) connected by straight lines, with the x-axis labelled as interval midpoints and y-axis labelled as frequency]</em>`,
+            `Connect these points with ${gr('straight lines')} to form the polygon — see the diagram below.`,
           ],
         },
         {
@@ -442,7 +447,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Frequency polygon with x-axis labelled as interval midpoints showing 5 15 25 in blue and y-axis labelled as frequency showing points at heights 4 8 6 in orange connected by straight green lines" />',
+        'Frequency polygon with x-axis labelled as interval midpoints 5, 15, 25 and points at frequency heights 4, 8, 6 connected by straight lines',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="25" y1="140" x2="200" y2="140" stroke="#374151" stroke-width="1.5"/><polygon points="200,140 192,136 192,144" fill="#374151"/><line x1="30" y1="140" x2="30" y2="20" stroke="#374151" stroke-width="1.5"/><polygon points="30,20 26,28 34,28" fill="#374151"/><text x="18" y="18" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">f</text><path d="M50,90 L110,40 L170,65" fill="none" stroke="#16a34a" stroke-width="2.5"/><circle cx="50" cy="90" r="4.5" fill="#ea580c"/><circle cx="110" cy="40" r="4.5" fill="#ea580c"/><circle cx="170" cy="65" r="4.5" fill="#ea580c"/><text x="50" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">5</text><text x="110" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">15</text><text x="170" y="153" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">25</text><text x="58" y="86" font-size="8.5" fill="#ea580c" font-weight="700">4</text><text x="118" y="36" font-size="8.5" fill="#ea580c" font-weight="700">8</text><text x="178" y="61" font-size="8.5" fill="#ea580c" font-weight="700">6</text><text x="115" y="165" font-size="9" fill="#374151" text-anchor="middle">midpoints plotted at frequency height, joined by straight lines</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to draw a frequency polygon from a grouped frequency table by plotting midpoint-frequency pairs and joining them with straight lines" />',
@@ -572,7 +580,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Stem and leaf plot with a vertical column of stems in blue such as 2 and 3, ordered leaves in green written beside each stem, and a key at the bottom reading 2 vertical bar 3 equals 23, plus a second back to back stem and leaf plot example showing one classes leaves on the left and another classes leaves on the right of a shared central stem column" />',
+        'Back-to-back stem-and-leaf plot with a shared central stem column, Class A leaves on the left and Class B leaves on the right, plus a key showing how to read a value',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="60" y="18" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">Class A</text><text x="110" y="18" font-size="10" font-weight="700" fill="#2563eb" text-anchor="middle">Stem</text><text x="160" y="18" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">Class B</text><line x1="95" y1="26" x2="95" y2="100" stroke="#d1d5db" stroke-width="1"/><line x1="125" y1="26" x2="125" y2="100" stroke="#d1d5db" stroke-width="1"/><rect x="100" y="34" width="20" height="22" fill="#2563eb"/><text x="110" y="49" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">1</text><rect x="100" y="64" width="20" height="22" fill="#2563eb"/><text x="110" y="79" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">2</text><text x="92" y="49" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="end">8  5  2</text><text x="128" y="49" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="start">4  6  9</text><text x="92" y="79" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="end">7  3  1</text><text x="128" y="79" font-size="10.5" font-weight="700" fill="#16a34a" text-anchor="start">0  2  2  8</text><text x="110" y="105" font-size="8" fill="#6b7280" text-anchor="middle">(leaves nearest the stem = smallest)</text><text x="110" y="130" font-size="9" font-weight="700" fill="#0f1f3d" text-anchor="middle">Key: 2 | 1 | 4</text><text x="110" y="144" font-size="8.5" fill="#374151" text-anchor="middle">Class A = 12,  Class B = 14</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to split data values into stems and leaves, build an ordered stem-and-leaf plot with a key, read off the mode range and median from it, and construct a back-to-back stem-and-leaf plot comparing two data sets" />',
@@ -673,7 +684,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Number line showing ordered data with Q1 Q2 and Q3 positions marked in blue, the interquartile range bracketed in orange between Q1 and Q3, and the full range bracketed in green from smallest to largest value" />',
+        'Number line showing ordered data with Q1, Q2 and Q3 positions marked, the interquartile range bracketed in orange between Q1 and Q3, and the full range bracketed in green from smallest to largest value',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="25" y1="110" x2="205" y2="110" stroke="#374151" stroke-width="1.5"/><polygon points="205,110 197,106 197,114" fill="#374151"/><circle cx="51" cy="110" r="4" fill="#2563eb"/><circle cx="78" cy="110" r="4" fill="#2563eb"/><circle cx="115" cy="110" r="4.5" fill="#16a34a"/><circle cx="155" cy="110" r="4" fill="#2563eb"/><circle cx="189" cy="110" r="4" fill="#2563eb"/><text x="51" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">4</text><text x="78" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">Q1=9</text><text x="115" y="128" font-size="8.5" fill="#16a34a" font-weight="700" text-anchor="middle">Q2=16</text><text x="155" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">Q3=23.5</text><text x="189" y="128" font-size="8.5" fill="#2563eb" font-weight="700" text-anchor="middle">30</text><path d="M78,88 L78,80 L155,80 L155,88" fill="none" stroke="#ea580c" stroke-width="1.6"/><text x="116" y="72" font-size="9" fill="#ea580c" font-weight="700" text-anchor="middle">IQR</text><path d="M51,142 L51,150 L189,150 L189,142" fill="none" stroke="#16a34a" stroke-width="1.6"/><text x="120" y="163" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">range</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to find the range, Q1, Q2, Q3 and interquartile range from an ordered data set, and explaining the difference between range and IQR" />',

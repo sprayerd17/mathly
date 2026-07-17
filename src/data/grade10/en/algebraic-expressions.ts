@@ -132,7 +132,29 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to multiply a binomial by a trinomial using distribution with colour coded first term blue and second term orange then combining like terms green" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Distribution diagram for (x+2)(x²+3x−5) showing six arrows from each binomial term to each trinomial term colour coded blue for x and orange for 2" />',
+        'Distribution diagram for (x + 2)(x² + 3x − 5) showing six arrows from each binomial term (x and +2) to each trinomial term (x², 3x, −5), colour coded blue for x and orange for +2',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 205" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="130" y="14" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">(x + 2)(x² + 3x − 5)</text>` +
+        `<rect x="45" y="24" width="50" height="30" rx="6" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<text x="70" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">x</text>` +
+        `<rect x="165" y="24" width="50" height="30" rx="6" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="190" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">+2</text>` +
+        `<rect x="8" y="150" width="55" height="30" rx="6" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="35" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">x²</text>` +
+        `<rect x="100" y="150" width="55" height="30" rx="6" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="127" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">3x</text>` +
+        `<rect x="192" y="150" width="55" height="30" rx="6" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="219" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">−5</text>` +
+        `<line x1="70" y1="54" x2="35" y2="150" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<line x1="70" y1="54" x2="127" y2="150" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<line x1="70" y1="54" x2="219" y2="150" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<line x1="190" y1="54" x2="35" y2="150" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="190" y1="54" x2="127" y2="150" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="190" y1="54" x2="219" y2="150" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<text x="130" y="196" text-anchor="middle" font-size="11" fill="#6b7280">Each binomial term multiplies every trinomial term — six products</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -273,7 +295,23 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to factorise trinomials using the sum-product method for a=1 and the a×c method for a≠1 with colour coded a×c value orange and split terms blue" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Factor grid for 3x²+11x+6 showing a×c product orange, the two split numbers, split terms blue, and the resulting factored brackets green" />',
+        'X-box diagram for 3x² + 11x + 6 showing a×c = 18 at top, b = 11 at bottom, and the two numbers 9 and 2 at the sides, leading to the split and factored form (3x + 2)(x + 3)',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 230" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<text x="110" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">3x² + 11x + 6</text>` +
+        `<rect x="60" y="30" width="100" height="100" fill="none" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<line x1="60" y1="30" x2="160" y2="130" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="160" y1="30" x2="60" y2="130" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="110" y="50" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">a×c = 18</text>` +
+        `<text x="110" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">b = 11</text>` +
+        `<text x="80" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">9</text>` +
+        `<text x="140" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">2</text>` +
+        `<text x="110" y="150" text-anchor="middle" font-size="11" fill="#6b7280">9 × 2 = 18 and 9 + 2 = 11</text>` +
+        `<text x="110" y="172" text-anchor="middle" font-size="12" fill="#0f1f3d">Split: 3x² + <tspan fill="#2563eb" font-weight="700">9x + 2x</tspan> + 6</text>` +
+        `<text x="110" y="192" text-anchor="middle" font-size="12" fill="#0f1f3d">Group: 3x(x + 3) + 2(x + 3)</text>` +
+        `<text x="110" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">= (3x + 2)(x + 3)</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -387,7 +425,36 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video showing how to factorise a four-term expression by grouping in pairs with first pair colour coded red and second pair purple and common binomial green" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Grouping diagram for x³+3x²−4x−12 showing the first pair red, second pair purple, factored groups, and the resulting common binomial factor green" />',
+        'Flowchart for x³ + 3x² − 4x − 12 showing the first pair red, second pair purple, their factored forms, converging on the common binomial factor, and the final fully factored answer in green',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 265" width="100%" style="max-width:360px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="55" y="6" width="170" height="28" rx="6" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="140" y="25" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">x³ + 3x² − 4x − 12</text>` +
+        `<line x1="140" y1="34" x2="140" y2="48" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="140" y1="48" x2="70" y2="62" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="140" y1="48" x2="210" y2="62" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="62" width="100" height="26" rx="6" fill="rgba(220,38,38,0.08)" stroke="#dc2626" stroke-width="1.5"/>` +
+        `<text x="70" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">x³ + 3x²</text>` +
+        `<rect x="160" y="62" width="100" height="26" rx="6" fill="rgba(124,58,237,0.08)" stroke="#7c3aed" stroke-width="1.5"/>` +
+        `<text x="210" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">−4x − 12</text>` +
+        `<line x1="70" y1="88" x2="70" y2="102" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="210" y1="88" x2="210" y2="102" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="102" width="100" height="26" rx="6" fill="rgba(220,38,38,0.08)" stroke="#dc2626" stroke-width="1.5"/>` +
+        `<text x="70" y="119" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">x²(x + 3)</text>` +
+        `<rect x="160" y="102" width="100" height="26" rx="6" fill="rgba(124,58,237,0.08)" stroke="#7c3aed" stroke-width="1.5"/>` +
+        `<text x="210" y="119" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">−4(x + 3)</text>` +
+        `<line x1="70" y1="128" x2="140" y2="146" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<line x1="210" y1="128" x2="140" y2="146" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="70" y="146" width="140" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="140" y="165" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">(x + 3)(x² − 4)</text>` +
+        `<line x1="140" y1="174" x2="140" y2="192" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<polygon points="140,200 135,191 145,191" fill="#0f1f3d"/>` +
+        `<text x="150" y="188" font-size="9" font-style="italic" fill="#6b7280">x² − 4 = (x−2)(x+2)</text>` +
+        `<rect x="55" y="206" width="170" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<text x="140" y="225" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">(x + 3)(x − 2)(x + 2)</text>` +
+        `<text x="140" y="250" text-anchor="middle" font-size="10" fill="#6b7280">Grouping in pairs finds the common binomial factor</text>` +
+        `</svg>`,
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -510,9 +577,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to simplify add and subtract algebraic fractions with monomial denominators using LCM colour coded orange with converted fractions blue and simplified answer green" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Fraction addition diagram for 3/x + 5/2x showing LCM orange, converted equivalent fractions blue, and the final simplified answer green" />',
     },
   ],
 

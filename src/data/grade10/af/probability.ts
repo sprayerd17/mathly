@@ -111,7 +111,7 @@ export const topicData: TopicData = {
           steps: [
             `Leerders wat minstens een vak studeer = ${bl('18')} + ${or('15')} − ${gr('8')} = ${gr('25')} (met die oorvleueling om dubbeltelling te vermy).`,
             `Leerders wat geen van die twee studeer nie = 30 − ${gr('25')} = ${gr('5')}.`,
-            `[Diagram nodig: ʼn Venndiagram met twee oorvleuelende sirkels gemerk ${bl('Wiskunde')} en ${or('Wetenskap')}, met ${bl('10')} in slegs Wiskunde, ${or('7')} in slegs Wetenskap, ${gr('8')} in die oorvleueling, en 5 buite albei sirkels]`,
+            `Die voltooide Venndiagram wys ${bl('10')} in slegs Wiskunde, ${or('7')} in slegs Wetenskap, ${gr('8')} in die oorvleueling, en 5 buite albei sirkels.`,
           ],
         },
         {
@@ -128,7 +128,9 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Venn-diagram met twee oorvleuelende sirkels gemerk Wiskunde en Wetenskap, wat 10 slegs in Wiskunde, 7 slegs in Wetenskap, 8 in die oorvleueling, en 5 buite albei sirkels wys" />',
+        'Venn-diagram met twee oorvleuelende sirkels gemerk Wiskunde en Wetenskap, wat 10 slegs in Wiskunde, 7 slegs in Wetenskap, 8 in die oorvleueling, en 5 buite albei sirkels wys',
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="200" height="150" fill="#f8fafc" stroke="#0f1f3d" stroke-width="2"/><circle cx="85" cy="85" r="55" fill="#eff6ff" fill-opacity="0.6" stroke="#2563eb" stroke-width="2.5"/><circle cx="135" cy="85" r="55" fill="#fff7ed" fill-opacity="0.6" stroke="#ea580c" stroke-width="2.5"/><text x="55" y="35" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Wiskunde</text><text x="165" y="35" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">Wetenskap</text><text x="65" y="90" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">10</text><text x="155" y="90" font-size="16" fill="#ea580c" font-weight="700" text-anchor="middle">7</text><text x="110" y="90" font-size="16" fill="#16a34a" font-weight="700" text-anchor="middle">8</text><text x="20" y="148" font-size="12" fill="#374151" font-weight="700">5 (geeneen)</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn Venn-diagram te teken en te gebruik om waarskynlikhede van saamgestelde gebeurtenisse te vind, insluitend deursnit, unie en komplement" />',
@@ -196,7 +198,9 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram wat twee nie-oorvleuelende streke wys, gemerk gebeurtenis A (blou) en nie-A (oranje), binne ʼn steekproefruimte-reghoek, met P(A) + P(nie-A) = 1 uitgelig in groen" />',
+        'Diagram wat twee nie-oorvleuelende streke wys, gemerk gebeurtenis A en nie-A, binne ʼn steekproefruimte-reghoek, met P(A) + P(nie-A) = 1 uitgelig',
+      diagramSvg:
+        '<svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="90" height="90" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><rect x="100" y="20" width="110" height="90" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><rect x="10" y="20" width="200" height="90" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="110" y="12" font-size="12" fill="#374151" font-weight="700" text-anchor="middle">Steekproefruimte S</text><text x="55" y="70" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">A</text><text x="155" y="70" font-size="16" fill="#ea580c" font-weight="700" text-anchor="middle">nie-A</text><text x="110" y="130" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">P(A) + P(nie-A) = 1</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wedersyds uitsluitende en komplementêre gebeurtenisse verduidelik met dobbelsteen- en alledaagse voorbeelde, en wys hoe om die komplementêre reël te gebruik" />',
@@ -249,11 +253,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'Gebruik dieselfde studie (80 pasiënte, A=40, B=35, C=40, A∩C=21, B∩C=18, alle drie=7, minstens een=68), vind hoeveel van middels A en B, maar nie C nie, verligting gekry het.',
-          answer: `${gr('Slegs A en B')} vereis dat jy deur die volledige Venndiagram werk`,
+          answer: `${gr('8')} pasiënte het van A en B, maar nie C nie, verligting gekry`,
           steps: [
-            `Dit vereis dat jy deur die volledige Venndiagram met al die gegewe oorvleuelings werk om die spesifieke ${or('"slegs A en B"')}-streek te isoleer.`,
-            `Deur die gegewe totale stelselmatig te gebruik om hierdie spesifieke snyding af te lei, wat daarop neerkom dat jy ${or('bekende oorvleuelende streke moet aftrek')} van die totale vir A en B.`,
-            `Begin deur ${gr('7')} in die middel te plaas (al drie). Dan: slegs A∩C = 21 − 7 = 14; slegs B∩C = 18 − 7 = 11. Gebruik die totale vir A, B, en C om A∩B te vind = 68 − (slegs A) − (slegs B) − (slegs C) − (slegs A∩C) − (slegs B∩C) − 7 deur stelselmatige aftrekking.`,
+            `Begin deur ${gr('7')} in die middel te plaas (al drie). Dan: slegs A∩C = 21 − 7 = 14; slegs B∩C = 18 − 7 = 11.`,
+            `Gebruik die algemene optellingsreël vir drie gebeurtenisse om die volledige A∩B (die middel ingesluit) te vind: 68 = 40 + 35 + 40 − ${bl('A∩B')} − 21 − 18 + 7, dus ${bl('A∩B')} = 15.`,
+            `${or('Slegs A en B')} (die middel uitgesluit) = A∩B − 7 = 15 − 7 = ${gr('8')}.`,
+            `<strong>Antwoord:</strong> ${gr('8')} pasiënte het van middels A en B, maar nie C nie, verligting gekry.`,
           ],
         },
       ],
@@ -262,7 +267,9 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Drie-sirkel-Venn-diagram vir ʼn studie oor geneesmiddels A, B en C wat al die deursnitstreke met hul waardes gemerk wys, wat die algemene optellingsreël vir drie gebeurtenisse demonstreer" />',
+        'Drie-sirkel-Venn-diagram vir die studie oor geneesmiddels A, B en C wat al die deursnitstreke met hul waardes gemerk wys, wat die algemene optellingsreël vir drie gebeurtenisse demonstreer',
+      diagramSvg:
+        '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg"><circle cx="90" cy="85" r="55" fill="#eff6ff" fill-opacity="0.55" stroke="#2563eb" stroke-width="2.5"/><circle cx="130" cy="85" r="55" fill="#fff7ed" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5"/><circle cx="110" cy="125" r="55" fill="#f0fdf4" fill-opacity="0.55" stroke="#16a34a" stroke-width="2.5"/><text x="50" y="18" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">A</text><text x="170" y="18" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">B</text><text x="110" y="196" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">C</text><text x="58" y="55" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">11</text><text x="165" y="55" font-size="13" fill="#ea580c" font-weight="700" text-anchor="middle">9</text><text x="110" y="168" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">8</text><text x="110" y="55" font-size="13" fill="#7c3aed" font-weight="700" text-anchor="middle">8</text><text x="70" y="118" font-size="13" fill="#7c3aed" font-weight="700" text-anchor="middle">14</text><text x="150" y="118" font-size="13" fill="#7c3aed" font-weight="700" text-anchor="middle">11</text><text x="110" y="98" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">7</text><text x="8" y="196" font-size="10" fill="#374151" font-weight="700">geeneen = 12</text></svg>',
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat die algemene optellingsreël vir waarskynlikheid aflei en toepas, met voorbeelde wat twee gebeurtenisse en ʼn drie-sirkel-Venn-diagram behels" />',

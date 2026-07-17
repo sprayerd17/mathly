@@ -142,7 +142,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining simple interest formula A=P(1+ni) with colour coded worked examples showing hire purchase and savings contexts" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Linear graph of A against n for simple interest showing constant straight-line growth with principal blue rate orange time green and final amount red" />',
+        'Linear graph of A against n for simple interest showing constant straight-line growth, with the same amount added every year',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">A</text><line x1="30" y1="145" x2="190" y2="40" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="30" cy="145" r="4" fill="#2563eb"/><text x="20" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><circle cx="70" cy="119.75" r="3" fill="#ea580c"/><circle cx="110" cy="92.5" r="3" fill="#ea580c"/><circle cx="150" cy="65.25" r="3" fill="#ea580c"/><line x1="70" y1="119.75" x2="110" y2="119.75" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="119.75" x2="110" y2="92.5" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="92.5" x2="150" y2="92.5" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="150" y1="92.5" x2="150" y2="65.25" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><text x="90" y="130" font-size="8" fill="#ea580c" font-weight="700" text-anchor="middle">Δn</text><text x="130" y="103" font-size="8" fill="#ea580c" font-weight="700" text-anchor="middle">Δn</text><circle cx="190" cy="40" r="4" fill="#dc2626"/><text x="196" y="36" font-size="11" fill="#dc2626" font-weight="700">A</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">equal amount added every year → straight line</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -296,7 +299,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video explaining compound interest formula A=P(1+i)^n with colour coded examples showing savings and population growth and comparison with simple interest" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Exponential growth curve comparing simple and compound interest over 10 years on the same axes with principal blue interest rate orange and exponential growth curve green" />',
+        'Exponential growth curve comparing simple and compound interest over time on the same axes, showing compound interest overtaking simple interest',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#374151" font-weight="700" text-anchor="middle">A</text><circle cx="30" cy="145" r="4" fill="#2563eb"/><text x="20" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><line x1="30" y1="145" x2="190" y2="72" stroke="#2563eb" stroke-width="2.2"/><text x="150" y="85" font-size="10" fill="#2563eb" font-weight="700">simple</text><path d="M30,145 C90,142 150,108 190,26" fill="none" stroke="#dc2626" stroke-width="2.5"/><text x="128" y="42" font-size="10" fill="#dc2626" font-weight="700">compound</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">compound interest overtakes simple interest over time</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -417,7 +423,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video demonstrating trial and improvement to find n in compound growth problems showing how to test refine and interpret results" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Table showing trial values of n in blue against calculated multiplier versus target value in orange with the refined answer highlighted in green" />',
+        'Graph of trial values of n against the calculated multiplier, with a dashed target line in orange and the refined answer that first reaches the target highlighted in green',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="10" fill="#374151" font-weight="700">n</text><text x="6" y="12" font-size="9" fill="#374151" font-weight="700">multiplier</text><line x1="30" y1="77" x2="190" y2="77" stroke="#ea580c" stroke-width="1.8" stroke-dasharray="5,3"/><text x="192" y="73" font-size="10" fill="#ea580c" font-weight="700">target = 2</text><path d="M70,117.46 L115,81.42 L160,41.13" fill="none" stroke="#9ca3af" stroke-width="1.5"/><circle cx="70" cy="117.46" r="4.5" fill="#0f1f3d"/><circle cx="115" cy="81.42" r="4.5" fill="#0f1f3d"/><circle cx="160" cy="41.13" r="5.5" fill="#16a34a" stroke="#0f1f3d" stroke-width="1.5"/><text x="70" y="160" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">n=5</text><text x="115" y="160" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">n=6</text><text x="160" y="160" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">n=7</text><text x="160" y="32" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">refined answer</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -565,9 +574,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining foreign exchange rates how to convert between currencies using multiplication and division and what happens when the Rand weakens or strengthens" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Diagram showing currency conversion arrows between Rands and foreign currencies with exchange rate in blue conversion operation in orange and final converted amount in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -736,7 +742,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video working through a hire purchase problem step by step showing deposit in purple balance in blue interest rate in orange repayment period in green and total repayment in red" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Bar breakdown of a hire purchase purchase showing the deposit segment in purple next to the financed balance segment in blue growing into the total repayment segment in red across the repayment period" />',
+        'Bar breakdown of a hire purchase showing the deposit segment in purple next to the financed balance segment in blue, then the same deposit next to a larger total repayment segment in red once simple interest has been added',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="95" y="16" font-size="10.5" font-weight="700" fill="#374151" text-anchor="middle">Cash price</text><rect x="30" y="24" width="13" height="22" fill="#7c3aed"/><rect x="43" y="24" width="117" height="22" fill="#2563eb"/><rect x="30" y="24" width="130" height="22" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><text x="36.5" y="60" font-size="8" font-weight="700" fill="#7c3aed" text-anchor="middle">deposit</text><text x="101" y="39" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Balance (P)</text><line x1="101" y1="46" x2="101" y2="70" stroke="#ea580c" stroke-width="2"/><polygon points="101,74 96,66 106,66" fill="#ea580c"/><text x="150" y="76" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">+ simple interest</text><rect x="30" y="94" width="13" height="22" fill="#7c3aed"/><rect x="43" y="94" width="169.7" height="22" fill="#dc2626"/><rect x="30" y="94" width="182.7" height="22" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><text x="128" y="109" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Total repayment (A)</text><text x="112" y="132" font-size="10.5" font-weight="700" fill="#374151" text-anchor="middle">Total cost = deposit + A</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -879,9 +888,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining inflation using the compound growth formula A=P(1+i)^n to project future prices with current price in blue inflation rate in orange years in green and future price in red and how purchasing power is affected" />',
-
-      diagramPlaceholder:
-        '<DiagramPlaceholder label="Rising price curve over time showing the current price in blue growing exponentially to the future price in red as the inflation rate in orange compounds each year in green" />',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -1000,7 +1006,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Short video applying the compound growth formula A=P(1+i)^n to population figures with starting population in blue growth rate in orange years in green and future population in red including doubling time by trial and improvement" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Growing crowd of stick figures illustrating an exponential population curve over time with starting population in blue growth rate in orange time in green and future population in red" />',
+        'Growing crowd of dots showing a small starting population growing to a much larger population over time, illustrating exponential population growth',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="112" y="16" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">population grows faster as it gets bigger</text><text x="40" y="120" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">P</text><circle cx="35" cy="144" r="3.2" fill="#2563eb"/><circle cx="45" cy="144" r="3.2" fill="#2563eb"/><circle cx="40" cy="135" r="3.2" fill="#2563eb"/><circle cx="100" cy="135" r="3.2" fill="#ea580c"/><circle cx="112" cy="135" r="3.2" fill="#ea580c"/><circle cx="124" cy="135" r="3.2" fill="#ea580c"/><circle cx="100" cy="144" r="3.2" fill="#ea580c"/><circle cx="112" cy="144" r="3.2" fill="#ea580c"/><circle cx="124" cy="144" r="3.2" fill="#ea580c"/><text x="185" y="104" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">A</text><circle cx="167" cy="126" r="3.2" fill="#dc2626"/><circle cx="177" cy="126" r="3.2" fill="#dc2626"/><circle cx="187" cy="126" r="3.2" fill="#dc2626"/><circle cx="197" cy="126" r="3.2" fill="#dc2626"/><circle cx="167" cy="135" r="3.2" fill="#dc2626"/><circle cx="177" cy="135" r="3.2" fill="#dc2626"/><circle cx="187" cy="135" r="3.2" fill="#dc2626"/><circle cx="197" cy="135" r="3.2" fill="#dc2626"/><circle cx="167" cy="144" r="3.2" fill="#dc2626"/><circle cx="177" cy="144" r="3.2" fill="#dc2626"/><circle cx="187" cy="144" r="3.2" fill="#dc2626"/><circle cx="197" cy="144" r="3.2" fill="#dc2626"/><line x1="20" y1="152" x2="210" y2="152" stroke="#16a34a" stroke-width="1.8"/><polygon points="210,152 202,148 202,156" fill="#16a34a"/><text x="40" y="164" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">t = 0</text><text x="112" y="164" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">t = n/2</text><text x="185" y="164" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">t = n</text></svg>',
     },
   ],
 

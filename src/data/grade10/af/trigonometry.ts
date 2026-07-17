@@ -90,7 +90,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat STSCASTTA bekendstel en wys hoe om die teenoorstaande, aangrensende en skuinssy sye relatief tot ʼn gegewe hoek in ʼn reghoekige driehoek te identifiseer" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Reghoekige driehoek gemerk met die teenoorstaande sy in blou, aangrensende sy in oranje en skuinssy in groen, met STSCASTTA-verhoudings getoon vir ʼn gegewe hoek θ" />',
+        'Reghoekige driehoek met die teenoorstaande sy in blou, aangrensende sy in oranje en skuinssy in groen, met die STSCASTTA-verhoudings vir hoek θ langsaan getoon',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="110" y="12" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">sin θ = teenoorstaande / skuinssy</text><text x="110" y="24" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">cos θ = aangrensende / skuinssy</text><text x="110" y="36" font-size="9" fill="#0f1f3d" font-weight="700" text-anchor="middle">tan θ = teenoorstaande / aangrensende</text><polygon points="30,140 170,140 30,50" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M 30,128 L 42,128 L 42,140" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="30" y1="140" x2="170" y2="140" stroke="#ea580c" stroke-width="3.5"/><line x1="30" y1="50" x2="30" y2="140" stroke="#2563eb" stroke-width="3.5"/><line x1="30" y1="50" x2="170" y2="140" stroke="#16a34a" stroke-width="3.5"/><path d="M 152,140 A 18 18 0 0 0 145,126" fill="none" stroke="#0f1f3d" stroke-width="1.3"/><text x="146" y="134" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">θ</text><text x="100" y="158" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">aangrensende</text><text x="14" y="95" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle" transform="rotate(-90 14 95)">teenoorstaande</text><text x="100" y="85" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle" transform="rotate(33 100 85)">skuinssy</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -176,7 +179,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat wys hoe om ʼn onbekende sy of hoek in ʼn reghoekige driehoek te bepaal deur STSCASTTA en inverse trig-funksies op ʼn sakrekenaar te gebruik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="Reghoekige driehoek PQR met bekende sye PQ en QR uitgelig in blou en die onbekende hoek P uitgelig in rooi, wat wys hoe die tan-verhouding stap vir stap toegepas word" />',
+        'Reghoekige driehoek PQR met die bekende sye PQ en QR in blou en die onbekende hoek P in rooi, wat wys hoe die tan-verhouding gebruik word om dit op te los',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><polygon points="30,140 170,140 30,50" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 30,128 L 42,128 L 42,140" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><text x="100" y="158" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">8 cm</text><text x="14" y="98" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">6 cm</text><path d="M 152,140 A 18 18 0 0 0 145,126" fill="none" stroke="#0f1f3d" stroke-width="1.3"/><text x="146" y="134" font-size="13" fill="#dc2626" font-weight="700" text-anchor="middle">?</text><text x="20" y="153" font-size="12" fill="#475569" font-weight="600" text-anchor="middle">Q</text><text x="180" y="153" font-size="12" fill="#475569" font-weight="600" text-anchor="middle">P</text><text x="20" y="46" font-size="12" fill="#475569" font-weight="600" text-anchor="middle">R</text><text x="110" y="18" font-size="10.5" fill="#16a34a" font-weight="700" text-anchor="middle">tan P = teenoorstaande / aangrensende</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -259,7 +265,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat trig-definisies na al vier kwadrante uitbrei deur ʼn punt (x,y) op die eindarm te gebruik en wys hoe r altyd positief is terwyl x en y negatief kan wees" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram nodig: ʼn Cartesiese vlak met ʼn punt (3,4) met die eindarm vanaf die oorsprong geteken, r gemerk as die skuinssy-afstand, en x en y gemerk langs die asse]" />',
+        'Cartesiese vlak wat die punt (3, 4) wys met die eindarm vanaf die oorsprong geteken, r langs die arm gemerk, en x en y as stippel-aftreklyne na die asse gemerk',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="110" x2="210" y2="110" stroke="#94a3b8" stroke-width="1.5"/><line x1="110" y1="10" x2="110" y2="210" stroke="#94a3b8" stroke-width="1.5"/><polygon points="210,110 202,106 202,114" fill="#94a3b8"/><polygon points="110,10 106,18 114,18" fill="#94a3b8"/><text x="200" y="124" font-size="11" fill="#64748b">x</text><text x="118" y="20" font-size="11" fill="#64748b">y</text><line x1="110" y1="110" x2="119.6" y2="97.2" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="119.6" cy="97.2" r="4" fill="#0f1f3d"/><text x="134" y="90" font-size="13" fill="#374151" font-weight="600" text-anchor="middle">(3, 4)</text><line x1="119.6" y1="97.2" x2="119.6" y2="110" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,3"/><text x="132" y="106" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">4</text><line x1="110" y1="110" x2="119.6" y2="110" stroke="#2563eb" stroke-width="1.3" stroke-dasharray="3,3"/><text x="115" y="124" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">3</text><text x="100" y="98" font-size="13" fill="#ea580c" font-weight="700" text-anchor="middle">r</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -346,7 +355,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat y=sinθ, y=cosθ en y=tanθ teken vir 0° tot 360°, maksimum- en minimumpunte identifiseer en vertikale asimptote op die tangensgrafiek verduidelik" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram nodig: drie aparte grafieke langs mekaar wat y=sinθ, y=cosθ en y=tanθ vir 0° tot 360° toon, met sleutelpunte en asimptote (vir tan) duidelik gemerk]" />',
+        'Grafieke van y=sinθ en y=cosθ saam geteken oor 0° tot 360° met maksimum- en minimumpunte gemerk, langs ʼn grafiek van y=tanθ wat sy vertikale asimptoot by 90° wys',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="75" y="10" font-size="9" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = sin θ en y = cos θ</text><line x1="15" y1="90" x2="135" y2="90" stroke="#94a3b8" stroke-width="1.2"/><path d="M15,90 L25,70 L35,55.36 L45,50 L55,55.36 L65,70 L75,90 L85,110 L95,124.64 L105,130 L115,124.64 L125,110 L135,90" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M15,50 L25,55.36 L35,70 L45,90 L55,110 L65,124.64 L75,130 L85,124.64 L95,110 L105,90 L115,70 L125,55.36 L135,50" fill="none" stroke="#2563eb" stroke-width="2"/><circle cx="45" cy="50" r="3" fill="#16a34a"/><circle cx="15" cy="50" r="3" fill="#16a34a"/><circle cx="135" cy="50" r="3" fill="#16a34a"/><circle cx="105" cy="130" r="3" fill="#dc2626"/><circle cx="75" cy="130" r="3" fill="#dc2626"/><text x="8" y="93" font-size="8" fill="#0f1f3d" font-weight="700" text-anchor="middle">sin</text><text x="8" y="53" font-size="8" fill="#2563eb" font-weight="700" text-anchor="middle">cos</text><text x="15" y="140" font-size="7" fill="#64748b" text-anchor="middle">0°</text><text x="45" y="140" font-size="7" fill="#64748b" text-anchor="middle">90°</text><text x="75" y="140" font-size="7" fill="#64748b" text-anchor="middle">180°</text><text x="105" y="140" font-size="7" fill="#64748b" text-anchor="middle">270°</text><text x="135" y="140" font-size="7" fill="#64748b" text-anchor="middle">360°</text><text x="179" y="10" font-size="9" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = tan θ</text><line x1="146" y1="90" x2="212" y2="90" stroke="#94a3b8" stroke-width="1.2"/><line x1="179" y1="20" x2="179" y2="160" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="4,3"/><path d="M150,90 L154.8,85.98 L159.7,81.35 L164.5,75 L169.3,64.02 L174.2,34.02" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M183.8,146 L188.6,116 L193.5,105 L198.3,98.66 L203.1,94.02 L208,90" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="150" y="163" font-size="7" fill="#64748b" text-anchor="middle">0°</text><text x="179" y="163" font-size="7" fill="#ea580c" font-weight="700" text-anchor="middle">90°</text><text x="208" y="163" font-size="7" fill="#64748b" text-anchor="middle">180°</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -424,7 +436,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat die effek van parameters a en q op y=a·sinθ+q wys — met amplitudestrekking deur a en vertikale skuif deur q, aan die hand van grafieke langs mekaar" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram nodig: y=sinθ en y=3sinθ op dieselfde asse geteken om amplitudestrekking te wys; ʼn tweede grafiek wat y=cosθ en y=cosθ+2 wys om vertikale skuif te toon]" />',
+        'Twee grafieke langs mekaar: y=3sinθ vergelyk met y=sinθ om die amplitude-strekking van parameter a te wys, en y=cosθ+2 vergelyk met y=cosθ om die vertikale skuif van parameter q te wys',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="57" y="10" font-size="8" font-weight="700" fill="#0f1f3d" text-anchor="middle">3sin θ (blou) vs sin θ (grys)</text><line x1="10" y1="87.5" x2="105" y2="87.5" stroke="#cbd5e1" stroke-width="1"/><path d="M10,87.5 L21.9,72.77 L33.8,66.67 L45.6,72.77 L57.5,87.5 L69.4,102.23 L81.3,108.33 L93.1,102.23 L105,87.5" fill="none" stroke="#94a3b8" stroke-width="1.6"/><path d="M10,87.5 L21.9,43.3 L33.8,25 L45.6,43.3 L57.5,87.5 L69.4,131.7 L81.3,150 L93.1,131.7 L105,87.5" fill="none" stroke="#2563eb" stroke-width="2.2"/><text x="162" y="10" font-size="8" font-weight="700" fill="#0f1f3d" text-anchor="middle">cos θ+2 (oranje) vs cos θ (grys)</text><line x1="115" y1="87.5" x2="210" y2="87.5" stroke="#cbd5e1" stroke-width="1"/><path d="M115,87.5 L126.9,96.65 L138.8,118.75 L150.6,140.85 L162.5,150 L174.4,140.85 L186.3,118.75 L198.1,96.65 L210,87.5" fill="none" stroke="#94a3b8" stroke-width="1.6"/><path d="M115,25 L126.9,34.15 L138.8,56.25 L150.6,78.35 L162.5,87.5 L174.4,78.35 L186.3,56.25 L198.1,34.15 L210,25" fill="none" stroke="#ea580c" stroke-width="2.2"/><text x="57" y="164" font-size="7.5" fill="#374151" text-anchor="middle">amplitude a strek die golf</text><text x="162" y="164" font-size="7.5" fill="#374151" text-anchor="middle">q skuif die golf op/af</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -515,7 +530,10 @@ export const topicData: TopicData = {
         '<VideoPlaceholder label="Kort video wat werklike 2D-trigonometrieprobleme met hoogte- en dieptehoeke oplos, en wys hoe om ʼn diagram te teken en STSCASTTA stap vir stap toe te pas" />',
 
       diagramPlaceholder:
-        '<DiagramPlaceholder label="[Diagram nodig: drie aparte diagramme — (1) hoogtehoek vanaf grond na gebou se bopunt, (2) dieptehoek vanaf kranstop na boot, (3) twee geboue langs mekaar met hoogtehoek tussen hul bopunte]" />',
+        'Diagram van ʼn gebou met die hoogtehoek vanaf die grond in blou gemerk en die dieptehoek vanaf die bopunt in oranje gemerk, wat wys dat die twee hoeke gelyk is',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="140" x2="200" y2="140" stroke="#0f1f3d" stroke-width="2"/><line x1="170" y1="140" x2="170" y2="30" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 170,128 L 158,128 L 158,140" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="30" x2="190" y2="30" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3"/><line x1="30" y1="140" x2="170" y2="30" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="5,3"/><path d="M 58,140 A 28 28 0 0 0 45,120" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="50" y="130" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">θ</text><path d="M138,30 A32 32 0 0 0 148,52" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="148" y="42" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">θ</text><circle cx="30" cy="140" r="3.5" fill="#16a34a"/><circle cx="170" cy="30" r="3.5" fill="#16a34a"/><text x="14" y="153" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">hoogtehoek</text><text x="30" y="22" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="middle">dieptehoek</text><text x="105" y="160" font-size="8.5" fill="#16a34a" font-weight="700" text-anchor="middle">die twee θ-hoeke is gelyk (verwisselende hoeke)</text></svg>',
     },
   ],
 
