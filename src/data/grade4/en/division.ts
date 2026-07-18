@@ -268,8 +268,6 @@ export const topicData: TopicData = {
 </div>`,
 
       videoPlaceholder: 'Short video showing step by step long division of a 3-digit number by a 1-digit number',
-      diagramPlaceholder: 'Long division layout showing 156 divided by 4 with each step colour coded',
-      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="95" y="25" font-weight="700" font-size="12" text-anchor="middle" fill="#16a34a">quotient</text><text x="95" y="45" font-weight="700" font-size="22" text-anchor="middle" fill="#16a34a">3</text><text x="130" y="45" font-weight="700" font-size="22" text-anchor="middle" fill="#16a34a">9</text><line x1="40" y1="55" x2="180" y2="55" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="55" x2="40" y2="115" stroke="#0f1f3d" stroke-width="2.5"/><text x="25" y="95" font-weight="700" font-size="22" text-anchor="middle" fill="#0f1f3d">4</text><text x="60" y="95" font-weight="700" font-size="22" text-anchor="middle" fill="#0f1f3d">1</text><text x="95" y="95" font-weight="700" font-size="22" text-anchor="middle" fill="#0f1f3d">5</text><text x="130" y="95" font-weight="700" font-size="22" text-anchor="middle" fill="#0f1f3d">6</text><text x="25" y="135" font-weight="700" font-size="12" text-anchor="middle" fill="#0f1f3d">divisor</text><text x="95" y="135" font-weight="700" font-size="12" text-anchor="middle" fill="#0f1f3d">dividend</text><text x="95" y="155" font-weight="700" font-size="15" text-anchor="middle" fill="#dc2626">156 ÷ 4 = 39</text></svg>',
 
       workedExamples: [
         {
