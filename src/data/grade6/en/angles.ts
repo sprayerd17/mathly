@@ -308,7 +308,7 @@ export const topicData: TopicData = {
         '<text x="108" y="24" font-size="9" fill="#0f1f3d">90°</text>' +
         '<text x="14" y="135" font-size="9" fill="#0f1f3d">180°</text>' +
         '<line x1="120" y1="120" x2="158" y2="38.4" stroke="#0f1f3d" stroke-width="2.5"/>' +
-        '<path d="M150,120 A30,30 0 0 1 132.7,92.8" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<path d="M150,120 A30,30 0 0 0 132.7,92.8" fill="none" stroke="#ea580c" stroke-width="2"/>' +
         '<text x="150" y="103" font-size="12" font-weight="700" fill="#ea580c">65°</text>' +
         '<circle cx="120" cy="120" r="3" fill="#2563eb"/>' +
         '<text x="120" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">vertex</text>' +

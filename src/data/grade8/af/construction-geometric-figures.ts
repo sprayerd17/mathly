@@ -88,7 +88,7 @@ export const topicData: TopicData = {
         '<text x="40" y="128" font-size="12" text-anchor="middle" fill="#0f1f3d">A</text>' +
         '<text x="180" y="128" font-size="12" text-anchor="middle" fill="#0f1f3d">B</text>' +
         '<path d="M 110,62 A 85,85 0 0 1 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
-        '<path d="M 110,62 A 85,85 0 0 0 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 110,62 A 85,85 0 0 1 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
         '<line x1="110" y1="50" x2="110" y2="170" stroke="#16a34a" stroke-width="2.5"/>' +
         '<rect x="103" y="103" width="7" height="7" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
         '<text x="55" y="80" font-size="11" font-weight="700" fill="#2563eb">Passerboë</text>' +

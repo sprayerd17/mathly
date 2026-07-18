@@ -157,7 +157,7 @@ export const topicData: TopicData = {
         '<g transform="translate(48,112)">' +
         '<line x1="0" y1="0" x2="40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
         '<line x1="0" y1="0" x2="30.64" y2="-25.71" stroke="#0f1f3d" stroke-width="2"/>' +
-        '<path d="M 18,0 A 18,18 0 0 1 13.79,-11.57" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 18,0 A 18,18 0 0 0 13.79,-11.57" fill="none" stroke="#2563eb" stroke-width="2"/>' +
         '<circle cx="0" cy="0" r="2" fill="#0f1f3d"/>' +
         '<text x="26" y="-15" font-size="10" font-weight="700" fill="#2563eb" text-anchor="middle">40°</text>' +
         '<text x="0" y="38" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Acute</text>' +
@@ -172,7 +172,7 @@ export const topicData: TopicData = {
         '<g transform="translate(232,112)">' +
         '<line x1="0" y1="0" x2="40" y2="0" stroke="#0f1f3d" stroke-width="2"/>' +
         '<line x1="0" y1="0" x2="-25.71" y2="-30.64" stroke="#0f1f3d" stroke-width="2"/>' +
-        '<path d="M 18,0 A 18,18 0 0 1 -11.57,-13.79" fill="none" stroke="#ea580c" stroke-width="2"/>' +
+        '<path d="M 18,0 A 18,18 0 0 0 -11.57,-13.79" fill="none" stroke="#ea580c" stroke-width="2"/>' +
         '<circle cx="0" cy="0" r="2" fill="#0f1f3d"/>' +
         '<text x="6" y="-22" font-size="10" font-weight="700" fill="#ea580c" text-anchor="middle">130°</text>' +
         '<text x="0" y="38" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Obtuse</text>' +
@@ -313,20 +313,20 @@ export const topicData: TopicData = {
         '<text x="80" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Angles on a straight line</text>' +
         '<line x1="10" y1="80" x2="150" y2="80" stroke="#0f1f3d" stroke-width="2.2"/>' +
         '<line x1="80" y1="80" x2="101.1" y2="34.7" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<path d="M 98,80 A 18,18 0 0 1 87.6,63.7" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 98,80 A 18,18 0 0 0 87.6,63.7" fill="none" stroke="#2563eb" stroke-width="2"/>' +
         '<text x="97" y="68" font-size="11" font-weight="700" fill="#2563eb">a</text>' +
-        '<path d="M 89.3,60.1 A 22,22 0 0 1 58,80" fill="none" stroke="#dc2626" stroke-width="2"/>' +
+        '<path d="M 89.3,60.1 A 22,22 0 0 0 58,80" fill="none" stroke="#dc2626" stroke-width="2"/>' +
         '<text x="66" y="68" font-size="11" font-weight="700" fill="#dc2626">b</text>' +
         '<circle cx="80" cy="80" r="2.5" fill="#0f1f3d"/>' +
         '<text x="80" y="98" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">a + b = 180°</text>' +
         '<text x="230" y="14" font-size="11" font-weight="700" fill="#0f1f3d" text-anchor="middle">Vertically opposite angles</text>' +
         '<line x1="170" y1="80" x2="290" y2="80" stroke="#0f1f3d" stroke-width="2.2"/>' +
         '<line x1="212.9" y1="127" x2="247.1" y2="33" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<path d="M 250,80 A 20,20 0 0 1 236.8,61.2" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 250,80 A 20,20 0 0 0 236.8,61.2" fill="none" stroke="#2563eb" stroke-width="2"/>' +
         '<text x="248" y="68" font-size="10" font-weight="700" fill="#2563eb">70°</text>' +
-        '<path d="M 238.9,55.6 A 26,26 0 0 1 204,80" fill="none" stroke="#dc2626" stroke-width="2"/>' +
+        '<path d="M 238.9,55.6 A 26,26 0 0 0 204,80" fill="none" stroke="#dc2626" stroke-width="2"/>' +
         '<text x="215" y="63" font-size="10" font-weight="700" fill="#dc2626">110°</text>' +
-        '<path d="M 210,80 A 20,20 0 0 1 223.2,98.8" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<path d="M 210,80 A 20,20 0 0 0 223.2,98.8" fill="none" stroke="#16a34a" stroke-width="2"/>' +
         '<text x="209" y="93" font-size="10" font-weight="700" fill="#16a34a">70°</text>' +
         '<circle cx="230" cy="80" r="2.5" fill="#0f1f3d"/>' +
         '</svg>',
