@@ -117,8 +117,6 @@ export const topicData: TopicData = {
 </div>`,
 
       videoPlaceholder: 'Kort video wat wys hoe vermenigvuldigingsfeite jou help om delingsprobleme op te los',
-      diagramPlaceholder: 'Feitefamilie-driehoek wat 7 x 8 = 56 wys met die twee verwante delingsfeite',
-      diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><polygon points="110,30 50,150 170,150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="110" y1="110" x2="110" y2="30" stroke="#0f1f3d" stroke-width="1.5"/><line x1="110" y1="110" x2="50" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><line x1="110" y1="110" x2="170" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><text x="110" y="75" font-weight="700" font-size="22" text-anchor="middle" fill="#16a34a">56</text><text x="70" y="135" font-weight="700" font-size="20" text-anchor="middle" fill="#2563eb">7</text><text x="150" y="135" font-weight="700" font-size="20" text-anchor="middle" fill="#dc2626">8</text></svg>',
 
       workedExamples: [
         {
