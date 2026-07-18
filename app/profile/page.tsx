@@ -824,13 +824,13 @@ export default function ProfilePage() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
                   {t.profile_referral_code}
                 </p>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                   <div
-                    className="flex-1 flex items-center justify-center py-4 rounded-xl"
+                    className="flex-1 min-w-0 flex items-center justify-center py-4 rounded-xl px-2"
                     style={{ backgroundColor: '#0f1f3d' }}
                   >
                     <span
-                      className="text-2xl font-bold tracking-[0.2em]"
+                      className="text-xl sm:text-2xl font-bold tracking-[0.15em] sm:tracking-[0.2em]"
                       style={{ color: '#ffffff', fontFamily: 'monospace' }}
                     >
                       {refCode || '——'}
@@ -856,8 +856,8 @@ export default function ProfilePage() {
                 <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
                   {t.profile_qr_code}
                 </p>
-                <div className="flex items-center gap-5">
-                  <div className="p-3 rounded-xl bg-white border inline-flex" style={{ borderColor: '#e5e7eb' }}>
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
+                  <div className="p-3 rounded-xl bg-white border inline-flex shrink-0" style={{ borderColor: '#e5e7eb' }}>
                     {refCode ? (
                       <QRCodeCanvas
                         id="referral-qr"
@@ -870,8 +870,8 @@ export default function ProfilePage() {
                       <div style={{ width: 120, height: 120, backgroundColor: '#f3f4f6', borderRadius: 4 }} />
                     )}
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <p className="text-xs text-gray-500 leading-relaxed max-w-[180px]">
+                  <div className="flex flex-col gap-2 min-w-0">
+                    <p className="text-xs text-gray-500 leading-relaxed sm:max-w-[180px]">
                       {t.profile_qr_scan_hint}
                     </p>
                     <button

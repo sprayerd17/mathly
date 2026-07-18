@@ -35,7 +35,7 @@ function PlanSelect({
     <select
       value={value}
       onChange={e => onChange(e.target.value as Tier)}
-      className="border rounded-lg px-3 py-2 text-sm bg-white font-medium"
+      className="border rounded-lg px-3 py-2 text-sm bg-white font-medium w-full sm:w-auto sm:max-w-[220px]"
       style={{ borderColor: '#d1d5db', color: '#0f1f3d' }}
     >
       {allowFree && <option value="free">Free — R0/month</option>}
@@ -316,16 +316,16 @@ export default function FamilyPlanBuilder() {
             user.children.map((child, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between gap-4 py-4"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4"
                 style={i < user.children.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}
               >
                 <span
-                  className="text-xs font-bold px-2.5 py-1 rounded-full"
+                  className="text-xs font-bold px-2.5 py-1 rounded-full self-start"
                   style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
                 >
                   {child.name}
                 </span>
-                <div className="flex flex-col items-end gap-1">
+                <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
                   {slotBadgeAndSpots(ownTiers[i] ?? 'free')}
                   <PlanSelect
                     value={ownTiers[i] ?? 'free'}
@@ -343,7 +343,7 @@ export default function FamilyPlanBuilder() {
             <>
               {/* Person 1 — always required */}
               <div
-                className="flex items-center justify-between gap-4 py-4"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4"
                 style={{ borderBottom: '1px solid #f3f4f6' }}
               >
                 <div className="flex items-center gap-3">
@@ -355,7 +355,7 @@ export default function FamilyPlanBuilder() {
                   </span>
                   <span className="text-xs text-gray-400">{t.pricing_required_label}</span>
                 </div>
-                <div className="flex flex-col items-end gap-1">
+                <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
                   {slotBadgeAndSpots(c1)}
                   <PlanSelect value={c1} onChange={tier => setC1(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
                 </div>
@@ -363,7 +363,7 @@ export default function FamilyPlanBuilder() {
 
               {/* Person 2 */}
               <div
-                className="flex items-center justify-between gap-4 py-4"
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4"
                 style={{ borderBottom: '1px solid #f3f4f6' }}
               >
                 <div className="flex items-center gap-3">
@@ -385,7 +385,7 @@ export default function FamilyPlanBuilder() {
                   </button>
                 </div>
                 {c2On && (
-                  <div className="flex flex-col items-end gap-1">
+                  <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
                     {slotBadgeAndSpots(c2)}
                     <PlanSelect value={c2} onChange={tier => setC2(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
                   </div>
@@ -393,7 +393,7 @@ export default function FamilyPlanBuilder() {
               </div>
 
               {/* Person 3 */}
-              <div className="flex items-center justify-between gap-4 py-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4">
                 <div className="flex items-center gap-3">
                   <span
                     className="text-xs font-bold px-2.5 py-1 rounded-full"
@@ -413,7 +413,7 @@ export default function FamilyPlanBuilder() {
                   </button>
                 </div>
                 {c3On && (
-                  <div className="flex flex-col items-end gap-1">
+                  <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
                     {slotBadgeAndSpots(c3)}
                     <PlanSelect value={c3} onChange={tier => setC3(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
                   </div>
