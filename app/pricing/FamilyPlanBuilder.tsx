@@ -7,11 +7,11 @@ import { auth } from '@/src/lib/firebase'
 import { initiateCheckout, updateTiers } from '@/src/lib/paystack-client'
 import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 
-type Spots = { proTaken: number; guidedTaken: number }
+type Spots = { proTaken: number; maxTaken: number }
 
 const FOUNDING_SPOTS = 100
 const SPOTS_KEY    = 'mathly_founding_spots'
-const DEFAULT_SPOTS: Spots = { proTaken: 33, guidedTaken: 57 }
+const DEFAULT_SPOTS: Spots = { proTaken: 33, maxTaken: 57 }
 
 function PlanSelect({
   value,
@@ -42,8 +42,8 @@ function PlanSelect({
       <option value="pro">
         {`${labels.pro} — R${prices.pro}/month${founding.pro ? ' ' + foundingSuffix : ''}`}
       </option>
-      <option value="guided">
-        {`${labels.guided} — R${prices.guided}/month${founding.guided ? ' ' + foundingSuffix : ''}`}
+      <option value="max">
+        {`${labels.max} — R${prices.max}/month${founding.max ? ' ' + foundingSuffix : ''}`}
       </option>
     </select>
   )
@@ -63,13 +63,13 @@ function FoundingBadge({ label }: { label: string }) {
 export default function FamilyPlanBuilder() {
   const t = useTranslations()
   const { user, openModal } = useAuth()
-  const LABEL: Record<Plan, string> = { pro: t.dash_package_pro, guided: t.dash_package_guided }
+  const LABEL: Record<Plan, string> = { pro: t.dash_package_pro, max: t.dash_package_max }
   const [mounted, setMounted] = useState(false)
   const [spots, setSpots]     = useState<Spots>(DEFAULT_SPOTS)
 
   // Logged-out preview — purely illustrative (clicking "claim your spot" just
   // opens the register modal, which has its own per-child plan picker), so
-  // this stays a free-form 1-3 toggleable comparison, pro/guided only.
+  // this stays a free-form 1-3 toggleable comparison, pro/max only.
   const [c1, setC1]           = useState<Plan>('pro')
   const [c2On, setC2On]       = useState(false)
   const [c2, setC2]           = useState<Plan>('pro')
@@ -105,16 +105,16 @@ export default function FamilyPlanBuilder() {
     }
   }, [])
 
-  const proFounding     = spots.proTaken < FOUNDING_SPOTS
-  const guidedFounding  = spots.guidedTaken < FOUNDING_SPOTS
-  const proRemaining    = FOUNDING_SPOTS - spots.proTaken
-  const guidedRemaining = FOUNDING_SPOTS - spots.guidedTaken
+  const proFounding  = spots.proTaken < FOUNDING_SPOTS
+  const maxFounding   = spots.maxTaken < FOUNDING_SPOTS
+  const proRemaining = FOUNDING_SPOTS - spots.proTaken
+  const maxRemaining  = FOUNDING_SPOTS - spots.maxTaken
 
   const prices: Record<Plan, number>    = {
-    pro:    proFounding    ? FOUNDING_PRICE.pro    : FULL_PRICE.pro,
-    guided: guidedFounding ? FOUNDING_PRICE.guided : FULL_PRICE.guided,
+    pro: proFounding ? FOUNDING_PRICE.pro : FULL_PRICE.pro,
+    max:  maxFounding  ? FOUNDING_PRICE.max  : FULL_PRICE.max,
   }
-  const founding: Record<Plan, boolean> = { pro: proFounding, guided: guidedFounding }
+  const founding: Record<Plan, boolean> = { pro: proFounding, max: maxFounding }
 
   const persons: { label: string; tier: Tier }[] = user
     ? user.children.map((c, i) => ({ label: c.name || `Person ${i + 1}`, tier: ownTiers[i] ?? 'free' }))
@@ -127,7 +127,7 @@ export default function FamilyPlanBuilder() {
 
   const { total: grandTotal, perChild } = computeFamilyPrice(
     persons.map(p => p.tier),
-    { pro: proFounding, guided: guidedFounding }
+    { pro: proFounding, max: maxFounding }
   )
   const personDetails = persons.map((p, i) => ({ label: p.label, ...perChild[i] }))
   const paidCount = persons.filter(p => p.tier !== 'free').length
@@ -169,18 +169,18 @@ export default function FamilyPlanBuilder() {
     }
   }
 
-  const showSpots = mounted && (proFounding || guidedFounding)
+  const showSpots = mounted && (proFounding || maxFounding)
 
-  const p2Pro    = proFounding    ? prices.pro * 2    : Math.round(prices.pro * 0.8) * 2
-  const p3Pro    = proFounding    ? prices.pro * 3    : Math.round(prices.pro * 0.8) * 3
-  const p2Guided = guidedFounding ? prices.guided * 2 : Math.round(prices.guided * 0.8) * 2
-  const p3Guided = guidedFounding ? prices.guided * 3 : Math.round(prices.guided * 0.8) * 3
-  const pMixed   = (proFounding    ? prices.pro * 2    : Math.round(prices.pro * 0.8) * 2)
-                 + (guidedFounding ? prices.guided      : Math.round(prices.guided * 0.8))
+  const p2Pro = proFounding ? prices.pro * 2 : Math.round(prices.pro * 0.8) * 2
+  const p3Pro = proFounding ? prices.pro * 3 : Math.round(prices.pro * 0.8) * 3
+  const p2Max  = maxFounding ? prices.max * 2  : Math.round(prices.max * 0.8) * 2
+  const p3Max  = maxFounding ? prices.max * 3  : Math.round(prices.max * 0.8) * 3
+  const pMixed = (proFounding ? prices.pro * 2 : Math.round(prices.pro * 0.8) * 2)
+               + (maxFounding  ? prices.max      : Math.round(prices.max * 0.8))
 
   function slotBadgeAndSpots(tier: Tier) {
     if (!mounted || tier === 'free' || !founding[tier]) return null
-    const remaining = tier === 'pro' ? proRemaining : guidedRemaining
+    const remaining = tier === 'pro' ? proRemaining : maxRemaining
     return (
       <div className="flex flex-col items-end gap-0.5">
         <FoundingBadge label={t.pricing_founding_member_badge} />
@@ -194,7 +194,7 @@ export default function FamilyPlanBuilder() {
   return (
     <div>
       {/* Founding member note — shown while at least one plan is in founding period */}
-      {(!mounted || proFounding || guidedFounding) && (
+      {(!mounted || proFounding || maxFounding) && (
         <div
           className="rounded-xl px-5 py-4 mb-6 max-w-2xl mx-auto"
           style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}
@@ -264,28 +264,28 @@ export default function FamilyPlanBuilder() {
           </ul>
         </div>
 
-        {/* GUIDED */}
+        {/* MAX */}
         <div className="rounded-xl p-5 bg-white flex flex-col" style={{ border: '1px solid #e5e7eb' }}>
           <div className="flex items-start justify-between gap-2 mb-1">
-            <p className="text-xs font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>{t.dash_package_guided}</p>
-            {(!mounted || guidedFounding) && <FoundingBadge label={t.pricing_founding_member_badge} />}
+            <p className="text-xs font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>{t.dash_package_max}</p>
+            {(!mounted || maxFounding) && <FoundingBadge label={t.pricing_founding_member_badge} />}
           </div>
           <div className="mb-4">
-            {(!mounted || guidedFounding) && (
-              <p className="text-xs text-gray-400 line-through">R{FULL_PRICE.guided}{t.pricing_per_month}</p>
+            {(!mounted || maxFounding) && (
+              <p className="text-xs text-gray-400 line-through">R{FULL_PRICE.max}{t.pricing_per_month}</p>
             )}
             <p className="text-2xl font-bold" style={{ color: '#0f1f3d' }}>
-              R{prices.guided}<span className="text-sm font-normal text-gray-400"> {t.pricing_per_month}</span>
+              R{prices.max}<span className="text-sm font-normal text-gray-400"> {t.pricing_per_month}</span>
             </p>
           </div>
           <ul className="flex-1 space-y-2.5 mb-5">
             {[
-              t.pricing_guided_feature_everything_in_pro,
-              t.pricing_guided_feature_discount_live_classes,
-              t.pricing_guided_feature_video_explanation,
-              t.pricing_guided_feature_priority_support,
-              t.pricing_guided_feature_exam_packs,
-              t.pricing_guided_feature_ai_assistant,
+              t.pricing_max_feature_everything_in_pro,
+              t.pricing_max_feature_discount_live_classes,
+              t.pricing_max_feature_video_explanation,
+              t.pricing_max_feature_priority_support,
+              t.pricing_max_feature_exam_packs,
+              t.pricing_max_feature_ai_assistant,
             ].map(f => (
               <li key={f} className="flex gap-2 text-xs leading-snug" style={{ color: '#4b5563' }}>
                 <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }}>✓</span>
@@ -501,9 +501,9 @@ export default function FamilyPlanBuilder() {
               {t.pricing_pro_founding_spots_remaining.replace('{count}', String(proRemaining))}
             </p>
           )}
-          {guidedFounding && (
+          {maxFounding && (
             <p className="text-xs text-center font-semibold" style={{ color: '#1e40af' }}>
-              {t.pricing_guided_founding_spots_remaining.replace('{count}', String(guidedRemaining))}
+              {t.pricing_max_founding_spots_remaining.replace('{count}', String(maxRemaining))}
             </p>
           )}
         </div>
@@ -516,7 +516,7 @@ export default function FamilyPlanBuilder() {
       >
         {[
           t.pricing_example_pro.replace('{p2}', String(p2Pro)).replace('{p3}', String(p3Pro)),
-          t.pricing_example_guided.replace('{p2}', String(p2Guided)).replace('{p3}', String(p3Guided)),
+          t.pricing_example_max.replace('{p2}', String(p2Max)).replace('{p3}', String(p3Max)),
           t.pricing_example_mixed.replace('{amount}', String(pMixed)),
         ].map(ex => (
           <p key={ex} className="text-xs text-center py-0.5" style={{ color: '#9ca3af' }}>

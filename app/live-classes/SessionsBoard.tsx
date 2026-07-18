@@ -205,7 +205,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
           const isFull = spotsLeft !== null && spotsLeft === 0
           const booked = bookedBySession.get(s.id)
           const price = user ? sessionPriceFor(s.type, activeTier) : s.price
-          const discounted = user && activeTier === 'guided'
+          const discounted = user && activeTier === 'max'
           const isFree = freeSessionAvailable && !booked
           const startsAt = new Date(`${s.date}T${s.time || '00:00'}:00`)
           const dateLabel = startsAt.toLocaleDateString(
@@ -271,7 +271,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
                         R{price}
                         {discounted && (
                           <span className="ml-2 text-xs font-semibold align-middle" style={{ color: '#15803d' }}>
-                            {t.live_guided_discount_note.replace('{price}', String(s.price))}
+                            {t.live_max_discount_note.replace('{price}', String(s.price))}
                           </span>
                         )}
                       </>

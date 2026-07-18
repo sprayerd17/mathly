@@ -67,7 +67,7 @@ export default function TermsPage() {
 
         <Section heading="4. Subscription plans and billing">
           <p>
-            Each child on your account can be assigned a Free, Pro, or Guided plan independently. Paid
+            Each child on your account can be assigned a Free, Pro, or Max plan independently. Paid
             plans are billed monthly in advance and renew automatically until cancelled. Payment is
             processed securely by Paystack; Mathly does not see or store your card details.
           </p>
@@ -122,7 +122,7 @@ export default function TermsPage() {
             You can also cancel your own unpaid reservation at any time before the deadline at no cost.
           </p>
           <p>
-            Each child on a paid Pro or Guided plan may claim one free introductory live session. This
+            Each child on a paid Pro or Max plan may claim one free introductory live session. This
             benefit is not available to children on the Free plan — since a Free account costs nothing
             to create, offering a free session to every Free-plan child would let the same person claim
             unlimited free sessions using different email addresses. The free session is a one-time

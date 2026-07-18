@@ -24,7 +24,7 @@ export const SESSION_DEFAULT_SPOTS: Record<SessionType, number> = {
   crash: 0,
 }
 
-export const GUIDED_SESSION_DISCOUNT = 0.2
+export const MAX_SESSION_DISCOUNT = 0.2
 
 // Booking a spot doesn't require immediate payment — it holds the spot as a
 // 'reserved' booking with a payment deadline. Inside this many hours of the
@@ -36,10 +36,10 @@ export function depositDeadlineFor(startsAt: Date): Date {
   return new Date(startsAt.getTime() - DEPOSIT_HOURS_BEFORE_START * 60 * 60 * 1000)
 }
 
-// A child on the Guided tier books at 20% off; everyone else pays full price.
+// A child on the Max tier books at 20% off; everyone else pays full price.
 export function sessionPriceFor(type: SessionType, tier: Tier): number {
   const base = SESSION_PRICE[type]
-  return tier === 'guided' ? Math.round(base * (1 - GUIDED_SESSION_DISCOUNT)) : base
+  return tier === 'max' ? Math.round(base * (1 - MAX_SESSION_DISCOUNT)) : base
 }
 
 // The sanitized shape the public list API returns — everything a visitor may

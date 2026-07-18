@@ -3,7 +3,7 @@ import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, updatePlan, initializeTransaction } from '@/src/lib/paystack'
 import { computeFamilyPrice, type Tier } from '@/src/lib/pricing'
 
-const VALID_TIERS: Tier[] = ['free', 'pro', 'guided']
+const VALID_TIERS: Tier[] = ['free', 'pro', 'max']
 
 // Changes an already-subscribed family's tier mix (upgrades, downgrades, or a
 // mix of both across children in one go). This is the path the pricing page

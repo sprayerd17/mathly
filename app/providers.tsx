@@ -27,7 +27,7 @@ import { computeFamilyPrice, FOUNDING_PRICE, type Tier, type FoundingStatus } fr
 export type Language = 'en' | 'af'
 export type { Tier } from '@/src/lib/pricing'
 
-const VALID_TIERS: Tier[] = ['free', 'pro', 'guided']
+const VALID_TIERS: Tier[] = ['free', 'pro', 'max']
 
 export type Child = {
   name: string
@@ -53,7 +53,7 @@ export type User = {
   email: string
   initial: string
   // Index-aligned with `children` — each child's own tier, independent of
-  // the others (a family of 3 can mix Free/Pro/Guided freely). Kept as a
+  // the others (a family of 3 can mix Free/Pro/Max freely). Kept as a
   // separate top-level field rather than nested in Child so Firestore rules
   // can protect it as a whole field, the same way `package` used to be
   // protected — there's no clean way to lock just one sub-field of an
@@ -258,7 +258,7 @@ function AuthModal({
   // Indicative preview only (assumes founding pricing for both tiers, same as
   // the old PLAN_PRICE constant did) — the actual charge is always computed
   // and verified server-side at checkout time, never trusted from here.
-  const pricePreview = computeFamilyPrice(regChildren.map(c => c.tier), { pro: true, guided: true })
+  const pricePreview = computeFamilyPrice(regChildren.map(c => c.tier), { pro: true, max: true })
 
   function switchTab(t: 'login' | 'register') {
     setTab(t)
@@ -637,10 +637,10 @@ function AuthModal({
                         {t.auth_child_plan_label}
                       </label>
                       <div className="grid grid-cols-3 gap-2">
-                        {(['free', 'pro', 'guided'] as const).map(tier => {
+                        {(['free', 'pro', 'max'] as const).map(tier => {
                           const active = child.tier === tier
                           const price = tier === 'free' ? 'R0' : `R${FOUNDING_PRICE[tier]}${t.pricing_per_month}`
-                          const desc = tier === 'free' ? t.profile_plan_desc_free : tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_guided
+                          const desc = tier === 'free' ? t.profile_plan_desc_free : tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_max
                           return (
                             <button
                               key={tier}
@@ -653,14 +653,14 @@ function AuthModal({
                                   : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
                               }
                             >
-                              <span>{tier === 'free' ? t.dash_package_free : tier === 'pro' ? t.dash_package_pro : t.dash_package_guided}</span>
+                              <span>{tier === 'free' ? t.dash_package_free : tier === 'pro' ? t.dash_package_pro : t.dash_package_max}</span>
                               <span className="text-[10px] font-normal" style={{ color: active ? '#dbeafe' : '#9ca3af' }}>{price}</span>
                             </button>
                           )
                         })}
                       </div>
                       <p className="text-[11px] text-gray-400 leading-relaxed mt-1.5">
-                        {child.tier === 'free' ? t.profile_plan_desc_free : child.tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_guided}
+                        {child.tier === 'free' ? t.profile_plan_desc_free : child.tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_max}
                       </p>
                     </div>
                   </div>
@@ -745,7 +745,7 @@ function sanitizePendingChildPlans(raw: unknown): Tier[] | null {
 function sanitizePaystackFounding(raw: unknown): FoundingStatus | null {
   const f = raw as Partial<FoundingStatus> | null | undefined
   if (!f || typeof f !== 'object') return null
-  return { pro: f.pro === true, guided: f.guided === true }
+  return { pro: f.pro === true, max: f.max === true }
 }
 
 // A child record as it may exist in Firestore before the language fields were added.
@@ -928,7 +928,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     // behavior) — the checkout route clamps to one of the two known prices
     // per tier regardless.
     if (childTiers.some(t => t !== 'free')) {
-      await initiateCheckout(cred.user, childTiers, { pro: true, guided: true })
+      await initiateCheckout(cred.user, childTiers, { pro: true, max: true })
     }
   }
 

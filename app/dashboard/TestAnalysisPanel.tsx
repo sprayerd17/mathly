@@ -172,7 +172,7 @@ function UploadZone({
 
 export default function TestAnalysisPanel({ user }: { user: User }) {
   const tier = getActiveTier(user)
-  const isGuided = tier === 'guided'
+  const isMax = tier === 'max'
 
   const [questionImages, setQuestionImages] = useState<ZoneImage[]>([])
   const [answerImages, setAnswerImages] = useState<ZoneImage[]>([])
@@ -222,10 +222,10 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
   }, [user.uid])
 
   useEffect(() => {
-    if (!isGuided) return
+    if (!isMax) return
     loadUsage()
     loadReports()
-  }, [isGuided, loadUsage, loadReports])
+  }, [isMax, loadUsage, loadReports])
 
   function totalImageCount() {
     return questionImages.length + answerImages.length
@@ -332,20 +332,20 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
     }
   }
 
-  if (!isGuided) {
+  if (!isMax) {
     return (
       <div className="rounded-xl p-5" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}>
-        <p className="text-sm font-semibold mb-1.5" style={{ color: '#0f1f3d' }}>Test Analysis is a Guided-tier feature</p>
+        <p className="text-sm font-semibold mb-1.5" style={{ color: '#0f1f3d' }}>Test Analysis is a Max-tier feature</p>
         <p className="text-sm text-gray-600 mb-4">
           Upload photos of a test and get specific, CAPS-referenced feedback on exactly where marks were lost —
-          available on the Guided plan.
+          available on the Max plan.
         </p>
         <Link
           href="/pricing"
           className="inline-block text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
           style={{ backgroundColor: '#1e40af' }}
         >
-          Upgrade to Guided
+          Upgrade to Max
         </Link>
       </div>
     )

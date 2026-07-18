@@ -17,7 +17,7 @@ function redirectToPaystack(authorizationUrl: string) {
 export async function initiateCheckout(
   fbUser: FirebaseUser,
   childTiers: Tier[],
-  founding: { pro: boolean; guided: boolean }
+  founding: { pro: boolean; max: boolean }
 ) {
   const idToken = await fbUser.getIdToken()
   const res = await fetch('/api/paystack/checkout', {

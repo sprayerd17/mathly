@@ -25,7 +25,7 @@ import type { Tier } from '@/src/lib/pricing'
 // the webhook flips it to 'paid' and increments bookedCount once the
 // money actually arrives.
 //
-// Exception: every PAID child (Pro or Guided) gets exactly one free session
+// Exception: every PAID child (Pro or Max) gets exactly one free session
 // ever — freeSessionClaimed is index-aligned with children, same as
 // childPlans. That booking skips Paystack entirely — it's confirmed instantly,
 // server-side, since there's no payment to verify, regardless of which

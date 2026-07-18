@@ -5,7 +5,7 @@ import { useAuth, getActiveTier } from '@/app/providers'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-type Plan = 'free' | 'pro' | 'guided'
+type Plan = 'free' | 'pro' | 'max'
 
 type ChatMessage = {
   id: string
@@ -21,7 +21,7 @@ type AIUsage = {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, guided: 100 }
+const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 100 }
 
 // ─── localStorage helpers ─────────────────────────────────────────────────────
 

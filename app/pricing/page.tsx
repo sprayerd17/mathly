@@ -8,11 +8,11 @@ import { useTranslations } from '@/src/i18n/useTranslations'
 function useTableFeatures() {
   const t = useTranslations()
   return [
-    { label: t.pricing_feature_study_guides,           free: true,  pro: true,  guided: true  },
-    { label: t.pricing_feature_practice_questions,     free: true,  pro: true,  guided: true  },
-    { label: t.pricing_feature_answers,                free: false, pro: true,  guided: true  },
-    { label: t.pricing_feature_all_topics_grades,      free: false, pro: true,  guided: true  },
-    { label: t.pricing_feature_expert_group_responses, free: false, pro: false, guided: true  },
+    { label: t.pricing_feature_study_guides,           free: true,  pro: true,  max: true  },
+    { label: t.pricing_feature_practice_questions,     free: true,  pro: true,  max: true  },
+    { label: t.pricing_feature_answers,                free: false, pro: true,  max: true  },
+    { label: t.pricing_feature_all_topics_grades,      free: false, pro: true,  max: true  },
+    { label: t.pricing_feature_expert_group_responses, free: false, pro: false, max: true  },
   ]
 }
 
@@ -170,7 +170,7 @@ export default function PricingPage() {
                   {[
                     { name: t.dash_package_free, price: 'R0', highlighted: false },
                     { name: t.dash_package_pro, price: 'R29*', highlighted: true },
-                    { name: t.dash_package_guided, price: 'R59*', highlighted: false },
+                    { name: t.dash_package_max, price: 'R59*', highlighted: false },
                   ].map((col) => (
                     <th
                       key={col.name}
@@ -194,7 +194,7 @@ export default function PricingPage() {
                     </td>
                     <td className="py-3.5 px-3 text-center">{row.free   ? <Check label={t.pricing_included_label} /> : <Dash label={t.pricing_not_included_label} />}</td>
                     <td className="py-3.5 px-3 text-center">{row.pro    ? <Check label={t.pricing_included_label} /> : <Dash label={t.pricing_not_included_label} />}</td>
-                    <td className="py-3.5 px-3 text-center rounded-r-lg">{row.guided ? <Check label={t.pricing_included_label} /> : <Dash label={t.pricing_not_included_label} />}</td>
+                    <td className="py-3.5 px-3 text-center rounded-r-lg">{row.max ? <Check label={t.pricing_included_label} /> : <Dash label={t.pricing_not_included_label} />}</td>
                   </tr>
                 ))}
               </tbody>

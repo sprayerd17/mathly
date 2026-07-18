@@ -243,8 +243,8 @@ export default function ProfilePage() {
 
   const atChildLimit = children.length >= MAX_CHILDREN
   const singularProfile = children.length === 1
-  const tierLabel = (tier: Tier) => tier === 'pro' ? t.profile_plan_pro : tier === 'guided' ? t.profile_plan_guided : t.profile_plan_free
-  const tierDesc = (tier: Tier) => tier === 'pro' ? t.profile_plan_desc_pro : tier === 'guided' ? t.profile_plan_desc_guided : t.profile_plan_desc_free
+  const tierLabel = (tier: Tier) => tier === 'pro' ? t.profile_plan_pro : tier === 'max' ? t.profile_plan_max : t.profile_plan_free
+  const tierDesc = (tier: Tier) => tier === 'pro' ? t.profile_plan_desc_pro : tier === 'max' ? t.profile_plan_desc_max : t.profile_plan_desc_free
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
@@ -461,7 +461,7 @@ export default function ProfilePage() {
                         {t.profile_remove_child_new_total_label}: R
                         {computeFamilyPrice(
                           user.childPlans.map((pt, pi) => (pi === i ? 'free' : pt)),
-                          user.paystackFounding ?? { pro: false, guided: false },
+                          user.paystackFounding ?? { pro: false, max: false },
                         ).total}
                         {t.pricing_per_month}
                       </p>
@@ -779,7 +779,7 @@ export default function ProfilePage() {
 
         {/* Referral section */}
         {/* TODO: Re-enable subscription check before launch */}
-        {/* {(user.package === 'pro' || user.package === 'guided') ? ( */}
+        {/* {(user.package === 'pro' || user.package === 'max') ? ( */}
           <div
             className="bg-white rounded-2xl shadow-sm p-7 mt-5"
             style={{ border: '1px solid #e5e7eb' }}
@@ -986,7 +986,7 @@ export default function ProfilePage() {
               Refer friends, earn free months
             </h2>
             <p className="text-sm text-gray-500 mb-5 leading-relaxed">
-              Upgrade to Pro or Guided to access your referral program.
+              Upgrade to Pro or Max to access your referral program.
             </p>
             <Link
               href="/pricing"

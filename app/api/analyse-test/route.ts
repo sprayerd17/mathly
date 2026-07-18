@@ -107,8 +107,8 @@ export async function POST(req: NextRequest) {
   const childPlans: string[] = Array.isArray(userData.childPlans) ? userData.childPlans : []
   const activeIdx = Math.min(Math.max(typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0, 0), Math.max(childPlans.length - 1, 0))
   const tier = childPlans[activeIdx] ?? 'free'
-  if (tier !== 'guided') {
-    return new Response('Test Analysis is a Guided-tier feature', { status: 403 })
+  if (tier !== 'max') {
+    return new Response('Test Analysis is a Max-tier feature', { status: 403 })
   }
 
   // Reserve a usage slot before calling Claude — a Firestore transaction so

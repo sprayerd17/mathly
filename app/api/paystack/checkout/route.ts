@@ -3,13 +3,13 @@ import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, createPlan, initializeTransaction } from '@/src/lib/paystack'
 import { computeFamilyPrice, type Tier } from '@/src/lib/pricing'
 
-const VALID_TIERS: Tier[] = ['free', 'pro', 'guided']
+const VALID_TIERS: Tier[] = ['free', 'pro', 'max']
 
 export async function POST(req: NextRequest) {
   const { idToken, childTiers, founding } = await req.json() as {
     idToken?: string
     childTiers?: Tier[]
-    founding?: { pro?: boolean; guided?: boolean }
+    founding?: { pro?: boolean; max?: boolean }
   }
 
   if (
@@ -57,11 +57,11 @@ export async function POST(req: NextRequest) {
   // webhook and the admin dashboard) so a client can't claim a founding
   // price once the spots are gone. Totals unset (doc missing / total <= 0)
   // means the window is open-ended — don't enforce.
-  const wantsFounding = { pro: Boolean(founding?.pro), guided: Boolean(founding?.guided) }
-  if (wantsFounding.pro || wantsFounding.guided) {
+  const wantsFounding = { pro: Boolean(founding?.pro), max: Boolean(founding?.max) }
+  if (wantsFounding.pro || wantsFounding.max) {
     const foundingSnap = await adminDb.doc('settings/founding').get()
     const f = foundingSnap.exists ? foundingSnap.data()! : {}
-    for (const plan of ['pro', 'guided'] as const) {
+    for (const plan of ['pro', 'max'] as const) {
       const total = typeof f[`${plan}Total`] === 'number' ? f[`${plan}Total`] : 0
       const used = typeof f[`${plan}Used`] === 'number' ? f[`${plan}Used`] : 0
       if (wantsFounding[plan] && total > 0 && used >= total) {

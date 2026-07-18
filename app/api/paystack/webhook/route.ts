@@ -232,7 +232,7 @@ export async function POST(req: NextRequest) {
     // but a per-child downgrade later needs to know both: which Plan to
     // amend, and whether this family locked in founding pricing (recomputing
     // without that would risk silently overcharging a founding family).
-    const foundingForPersist = (userData.pendingFounding ?? { pro: false, guided: false }) as Record<Plan, boolean>
+    const foundingForPersist = (userData.pendingFounding ?? { pro: false, max: false }) as Record<Plan, boolean>
     const planCodeForPersist = typeof userData.pendingPlanCode === 'string' ? userData.pendingPlanCode : null
 
     await userRef.update({
@@ -282,14 +282,14 @@ export async function POST(req: NextRequest) {
     // pendingFounding, and the flag applies to every paid seat of that tier
     // (matching computeFamilyPrice). settings/founding is the persistent
     // counter the dashboard and checkout read spots-remaining from.
-    const foundingSeats: Record<Plan, number> = { pro: 0, guided: 0 }
+    const foundingSeats: Record<Plan, number> = { pro: 0, max: 0 }
     for (const tier of expectedChildPlans) {
       if (tier !== 'free' && foundingForPersist[tier]) foundingSeats[tier]++
     }
-    if (foundingSeats.pro > 0 || foundingSeats.guided > 0) {
+    if (foundingSeats.pro > 0 || foundingSeats.max > 0) {
       await adminDb.doc('settings/founding').set({
         proUsed: FieldValue.increment(foundingSeats.pro),
-        guidedUsed: FieldValue.increment(foundingSeats.guided),
+        maxUsed: FieldValue.increment(foundingSeats.max),
       }, { merge: true })
     }
 

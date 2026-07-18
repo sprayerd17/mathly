@@ -2,18 +2,18 @@
 // registration wizard, and the Paystack checkout/webhook routes (which must
 // never trust a client-supplied amount).
 
-export type Plan = 'pro' | 'guided'
-export type Tier = 'free' | 'pro' | 'guided'
+export type Plan = 'pro' | 'max'
+export type Tier = 'free' | 'pro' | 'max'
 
-export const FOUNDING_PRICE: Record<Plan, number> = { pro: 29, guided: 59 }
-export const FULL_PRICE: Record<Plan, number> = { pro: 49, guided: 99 }
+export const FOUNDING_PRICE: Record<Plan, number> = { pro: 29, max: 59 }
+export const FULL_PRICE: Record<Plan, number> = { pro: 49, max: 99 }
 export const FAMILY_DISCOUNT = 0.2
 
-export type FoundingStatus = { pro: boolean; guided: boolean }
+export type FoundingStatus = { pro: boolean; max: boolean }
 
 export type ChildPriceBreakdown = { tier: Tier; price: number; isFounding: boolean }
 
-// Prices a family's per-child tier selection. Each child picks Free/Pro/Guided
+// Prices a family's per-child tier selection. Each child picks Free/Pro/Max
 // independently — the 20% family discount kicks in once there's more than one
 // PAID seat (free seats don't count toward that threshold and never trigger
 // it on their own), and only applies to a seat once its founding-price window

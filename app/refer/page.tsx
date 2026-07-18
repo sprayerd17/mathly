@@ -14,7 +14,7 @@ const EARNINGS_PRO: EarningsRow[] = [
   { referrals: 12, creditAmount: 'R588',   months: null, note: 'topped_up' },
 ]
 
-const EARNINGS_GUIDED: EarningsRow[] = [
+const EARNINGS_MAX: EarningsRow[] = [
   { referrals: 1,  creditAmount: 'R99',      months: 1,    note: 'none'      },
   { referrals: 3,  creditAmount: 'R297',     months: 3,    note: 'none'      },
   { referrals: 6,  creditAmount: 'R594',     months: 6,    note: 'half_year' },
@@ -250,12 +250,12 @@ export default function ReferPage() {
             ))}
           </div>
 
-          {/* Guided plan table */}
+          {/* Max plan table */}
           <h3 className="text-base font-bold mb-3" style={{ color: '#0f1f3d' }}>
-            {t.refer_guided_plan_label} <span className="font-normal text-gray-400 ml-1 text-sm">{t.refer_guided_plan_price}</span>
+            {t.refer_max_plan_label} <span className="font-normal text-gray-400 ml-1 text-sm">{t.refer_max_plan_price}</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-            {EARNINGS_GUIDED.map(row => (
+            {EARNINGS_MAX.map(row => (
               <div
                 key={row.referrals}
                 className="bg-white rounded-2xl p-6 shadow-sm flex items-center gap-5"
@@ -304,7 +304,7 @@ export default function ReferPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {[
                 { label: t.refer_founding_pro_label, cap: 'R348/year', calc: 'R29 x 12', bg: '#1e3560', accent: '#93c5fd' },
-                { label: t.refer_founding_guided_label, cap: 'R708/year', calc: 'R59 x 12', bg: '#1e3560', accent: '#93c5fd' },
+                { label: t.refer_founding_max_label, cap: 'R708/year', calc: 'R59 x 12', bg: '#1e3560', accent: '#93c5fd' },
               ].map(item => (
                 <div
                   key={item.label}

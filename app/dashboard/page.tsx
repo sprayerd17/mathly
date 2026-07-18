@@ -13,7 +13,7 @@ import { getStudyProgress } from '@/src/lib/study-progress'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
-type Package = 'free' | 'pro' | 'guided'
+type Package = 'free' | 'pro' | 'max'
 
 type ChildProfile = { name: string; grade: number }
 
@@ -159,7 +159,7 @@ function formatDate(dateStr: string) {
 const PACKAGE_STYLE: Record<Package, { bg: string; color: string }> = {
   free:    { bg: '#f3f4f6', color: '#374151' },
   pro:     { bg: '#eff6ff', color: '#1e40af' },
-  guided:  { bg: '#fef3c7', color: '#92400e' },
+  max:     { bg: '#fef3c7', color: '#92400e' },
 }
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
@@ -379,9 +379,9 @@ export default function DashboardPage() {
   // TODO: Re-enable access control before launch.
   // if (userPackage === 'free') return <UpgradePrompt />
 
-  const isGuided = userPackage === 'guided'
+  const isMax = userPackage === 'max'
   const pkgStyle = PACKAGE_STYLE[userPackage]
-  const pkgLabel: Record<Package, string> = { free: t.dash_package_free, pro: t.dash_package_pro, guided: t.dash_package_guided }
+  const pkgLabel: Record<Package, string> = { free: t.dash_package_free, pro: t.dash_package_pro, max: t.dash_package_max }
 
   // ── Active-grade data ────────────────────────────────────────────────────────
   const topics     = gradeData.topics

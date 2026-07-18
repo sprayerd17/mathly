@@ -13,7 +13,7 @@ service cloud.firestore {
                     && request.resource.data.subscriptionStatus == 'none'
                     && request.resource.data.keys().hasAll(['childPlans'])
                     && request.resource.data.childPlans.size() == request.resource.data.children.size()
-                    && !request.resource.data.childPlans.hasAny(['pro', 'guided']);
+                    && !request.resource.data.childPlans.hasAny(['pro', 'max']);
 
       // Billing fields are server-only from this point on — only the
       // Paystack webhook (Admin SDK) may change them. childPlans (each child's tier)
@@ -56,7 +56,7 @@ service cloud.firestore {
       allow delete: if false;
     }
 
-    // Saved Test Analysis reports — one doc per analysis a Guided student
+    // Saved Test Analysis reports — one doc per analysis a Max student
     // chooses to keep. Written directly by the client (not the Admin SDK):
     // running the analysis itself is server-gated by /api/analyse-test (tier
     // check + usage limit), but saving the finished report back is a plain
