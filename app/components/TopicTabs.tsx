@@ -8,6 +8,7 @@ import AIAssistant from '@/app/components/AIAssistant'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { logActivityCompletion } from '@/src/lib/activity-log'
 import { getTopicStudied, setTopicStudied } from '@/src/lib/study-progress'
+import { getTopics } from '@/src/data/topic-registry'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -969,6 +970,10 @@ function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug
       .finally(() => setSaving(false))
   }
 
+  const gradeTopics = getTopics(String(grade))
+  const currentIndex = gradeTopics.findIndex(topic => topic.slug === topicSlug)
+  const nextTopic = currentIndex >= 0 ? gradeTopics[currentIndex + 1] : undefined
+
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
       {data.sections.map((section: Section, i: number) => (
@@ -1034,20 +1039,32 @@ function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug
         </div>
       ))}
 
-      {user && (
-        <div>
-          <button
-            onClick={handleToggle}
-            disabled={saving}
-            className="px-6 py-3 rounded-xl text-sm font-semibold transition-colors hover:opacity-90 disabled:opacity-60"
-            style={
-              studied
-                ? { backgroundColor: '#f0fdf4', color: '#16a34a', border: '1.5px solid #bbf7d0' }
-                : { backgroundColor: '#1e40af', color: '#ffffff' }
-            }
-          >
-            {studied ? `✓ ${t.topic_studied_badge}` : t.topic_mark_as_studied}
-          </button>
+      {(user || nextTopic) && (
+        <div className="flex flex-wrap items-center gap-3">
+          {user && (
+            <button
+              onClick={handleToggle}
+              disabled={saving}
+              className="px-6 py-3 rounded-xl text-sm font-semibold transition-colors hover:opacity-90 disabled:opacity-60"
+              style={
+                studied
+                  ? { backgroundColor: '#f0fdf4', color: '#16a34a', border: '1.5px solid #bbf7d0' }
+                  : { backgroundColor: '#1e40af', color: '#ffffff' }
+              }
+            >
+              {studied ? `✓ ${t.topic_studied_badge}` : t.topic_mark_as_studied}
+            </button>
+          )}
+          {nextTopic && (
+            <Link
+              href={`/grade/${grade}/${nextTopic.slug}`}
+              className="px-6 py-3 rounded-xl text-sm font-semibold transition-colors hover:opacity-90 inline-flex items-center gap-2"
+              style={{ backgroundColor: '#ffffff', color: '#1e40af', border: '1.5px solid #bfdbfe' }}
+            >
+              {t.topic_next_topic_label.replace('{topic}', nextTopic.name)}
+              <span aria-hidden="true">→</span>
+            </Link>
+          )}
         </div>
       )}
     </div>

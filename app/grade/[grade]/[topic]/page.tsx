@@ -64,20 +64,22 @@ export default function TopicPage({
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-100">
+      {/* Header — sticky so it stays reachable without scrolling back to the
+          top once a student is deep into a topic's content. */}
+      <header className="bg-white border-b border-gray-100 sticky top-0 z-20">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-          {/* Left: back + breadcrumb */}
+          {/* Left: quick-back arrow + single breadcrumb trail (Home > Grade > Topic —
+              previously duplicated "Grade N" between a separate back-link and the
+              breadcrumb, and hid the breadcrumb on mobile entirely). */}
           <div className="flex items-center gap-3 min-w-0">
             <Link
               href={`/grade/${grade}`}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0f1f3d] hover:underline underline-offset-4 transition-all shrink-0"
+              aria-label={t.grade_back_to_grade.replace('{grade}', String(grade))}
+              className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-[#0f1f3d] hover:bg-gray-100 transition-colors shrink-0"
             >
               <span aria-hidden="true">←</span>
-              {t.grade_back_to_grade.replace('{grade}', String(grade))}
             </Link>
-            <nav className="hidden md:flex items-center gap-2 text-sm text-gray-400 min-w-0" aria-label="Breadcrumb">
-              <span aria-hidden="true">/</span>
+            <nav className="flex items-center gap-2 text-sm text-gray-400 min-w-0" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-[#0f1f3d] transition-colors shrink-0">{t.nav_home}</Link>
               <span aria-hidden="true">/</span>
               <Link href={`/grade/${grade}`} className="hover:text-[#0f1f3d] transition-colors shrink-0">{t.grade_heading.replace('{grade}', String(grade))}</Link>
