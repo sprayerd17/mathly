@@ -132,6 +132,12 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing the full mass conversion chain from tonnes to kilograms to grams to milligrams, demonstrating how to jump two steps at once and how to convert a decimal kilogram measurement into mixed kg and g units" />',
+
+      diagramPlaceholder:
+        'Diagram showing four connected boxes for t, kg, g and mg in a row, each in its own colour, with arrows labelled × 1 000 linking each step, illustrating the mass conversion chain from tonnes down to milligrams',
+
+      diagramSvg:
+        '<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="70" width="50" height="45" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/><text x="30" y="98" font-size="18" fill="#dc2626" font-weight="700" text-anchor="middle">t</text><line x1="57" y1="92" x2="83" y2="92" stroke="#374151" stroke-width="2"/><polygon points="83,92 75,87 75,97" fill="#374151"/><text x="70" y="60" font-size="10" fill="#374151" font-weight="700" text-anchor="middle">× 1 000</text><rect x="85" y="70" width="50" height="45" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/><text x="110" y="98" font-size="18" fill="#ea580c" font-weight="700" text-anchor="middle">kg</text><line x1="137" y1="92" x2="163" y2="92" stroke="#374151" stroke-width="2"/><polygon points="163,92 155,87 155,97" fill="#374151"/><text x="150" y="60" font-size="10" fill="#374151" font-weight="700" text-anchor="middle">× 1 000</text><rect x="165" y="70" width="50" height="45" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/><text x="190" y="98" font-size="18" fill="#16a34a" font-weight="700" text-anchor="middle">g</text><line x1="217" y1="92" x2="243" y2="92" stroke="#374151" stroke-width="2"/><polygon points="243,92 235,87 235,97" fill="#374151"/><text x="230" y="60" font-size="10" fill="#374151" font-weight="700" text-anchor="middle">× 1 000</text><rect x="245" y="70" width="50" height="45" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="270" y="98" font-size="18" fill="#2563eb" font-weight="700" text-anchor="middle">mg</text><text x="150" y="135" font-size="11" fill="#374151" text-anchor="middle">× 1 000 moving right, ÷ 1 000 moving left</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

@@ -298,7 +298,7 @@ export const topicData: TopicData = {
         `<text x="8" y="66" font-size="9" font-weight="700" fill="#6b7280">×3</text>` +
         `<text x="180" y="66" text-anchor="end" font-size="14" font-weight="700" fill="#2563eb">7 035</text>` +
         `<text x="8" y="86" font-size="9" font-weight="700" fill="#6b7280">×20</text>` +
-        `<text x="180" y="86" text-anchor="end" font-size="14" font-weight="700" fill="#16a34a">46 90<tspan fill="#ea580c">0</tspan></text>` +
+        `<text x="180" y="86" text-anchor="end" font-size="14" font-weight="700" fill="#16a34a">46 90<tspan fill="#dc2626">0</tspan></text>` +
         `<text x="8" y="106" font-size="9" font-weight="700" fill="#6b7280">×100</text>` +
         `<text x="180" y="106" text-anchor="end" font-size="14" font-weight="700" fill="#ea580c">234 5<tspan fill="#dc2626">00</tspan></text>` +
         `<line x1="30" y1="114" x2="180" y2="114" stroke="#0f1f3d" stroke-width="2"/>` +

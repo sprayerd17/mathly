@@ -169,6 +169,11 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
+      diagramPlaceholder:
+        'Town map with columns labelled A to D across the top and rows labelled 1 to 4 down the side, showing five landmarks (Clinic, Market, School, Bank and Park) each marked at their grid position, for looking up a landmark\'s grid reference or finding which landmark sits at a given reference',
+
+      diagramSvg: GRID_SVG,
+
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to find the grid reference of a landmark on a map and how to find which landmark is at a given grid reference" />',
     },

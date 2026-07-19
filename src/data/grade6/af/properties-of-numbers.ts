@@ -221,7 +221,7 @@ export const topicData: TopicData = {
         `<text x="28" y="137" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">2</text>` +
         `<circle cx="72" cy="132" r="13" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="2.5"/>` +
         `<text x="72" y="137" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">2</text>` +
-        `<text x="140" y="185" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">120 = 2 × 2 × 2 × 3 × 5 = 2³ × 3 × 5</text>` +
+        `<text x="140" y="185" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">120 = 2 × 2 × 2 × 3 × 5 = 2<tspan fill="#ea580c">³</tspan> × 3 × 5</text>` +
         `</svg>`,
 
       videoPlaceholder:

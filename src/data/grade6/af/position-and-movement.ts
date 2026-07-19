@@ -169,6 +169,11 @@ export const topicData: TopicData = {
 
       openQuestions: [],
 
+      diagramPlaceholder:
+        'Dorpskaart met kolomme gemerk A tot D bo-oor en rye gemerk 1 tot 4 langs die kant, wat vyf landmerke (Kliniek, Mark, Skool, Bank en Park) elk by hul roosterposisie gemerk wys, om ʼn landmerk se roosterverwysing op te soek of om te vind watter landmerk by ʼn gegewe verwysing is',
+
+      diagramSvg: GRID_SVG,
+
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om die roosterverwysing van ʼn landmerk op ʼn kaart te vind en hoe om te vind watter landmerk by ʼn gegewe roosterverwysing is" />',
     },

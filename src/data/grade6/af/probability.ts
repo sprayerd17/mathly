@@ -12,6 +12,16 @@ const ye = (t: string) => `<span style="color:#ca8a04;font-weight:700">${t}</spa
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 
+// ─── Telmerkweergawe (groep van 5: 4 regop strepe + 1 diagonale streep) ──────
+const t5 = () =>
+  `<svg width="26" height="18" viewBox="0 0 26 18" style="display:inline-block;vertical-align:middle;" xmlns="http://www.w3.org/2000/svg">` +
+  `<line x1="3" y1="1" x2="3" y2="17" stroke="#ea580c" stroke-width="2.5"/>` +
+  `<line x1="9" y1="1" x2="9" y2="17" stroke="#ea580c" stroke-width="2.5"/>` +
+  `<line x1="15" y1="1" x2="15" y2="17" stroke="#ea580c" stroke-width="2.5"/>` +
+  `<line x1="21" y1="1" x2="21" y2="17" stroke="#ea580c" stroke-width="2.5"/>` +
+  `<line x1="0" y1="17" x2="24" y2="1" stroke="#ea580c" stroke-width="2.5"/>` +
+  `</svg>`
+
 export const topicData: TopicData = {
   title: 'Waarskynlikheid',
   grade: 6,
@@ -167,8 +177,8 @@ export const topicData: TopicData = {
         `<th style="border:1px solid #e2e8f0;padding:6px 10px;text-align:left;color:#0f1f3d;">Frekwensie</th>` +
         `</tr></thead>` +
         `<tbody>` +
-        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Kop</td><td style="border:1px solid #e2e8f0;padding:6px 10px;font-family:monospace;color:#ea580c;">${'∣∣∣∣ ∣∣∣∣ ∣∣'}</td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">12</td></tr>` +
-        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Stert</td><td style="border:1px solid #e2e8f0;padding:6px 10px;font-family:monospace;color:#ea580c;">${'∣∣∣∣ ∣∣∣'}</td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">8</td></tr>` +
+        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Kop</td><td style="border:1px solid #e2e8f0;padding:6px 10px;"><span style="display:inline-flex;gap:6px;align-items:center;">${t5()} ${t5()} <span style="font-family:monospace;color:#ea580c;font-size:1.1em;">||</span></span></td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">12</td></tr>` +
+        `<tr><td style="border:1px solid #e2e8f0;padding:6px 10px;">Stert</td><td style="border:1px solid #e2e8f0;padding:6px 10px;"><span style="display:inline-flex;gap:6px;align-items:center;">${t5()} <span style="font-family:monospace;color:#ea580c;font-size:1.1em;">|||</span></span></td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#16a34a;font-weight:700;">8</td></tr>` +
         `<tr style="background:#f8fafc;font-weight:700;"><td style="border:1px solid #e2e8f0;padding:6px 10px;">Totaal</td><td style="border:1px solid #e2e8f0;padding:6px 10px;"></td><td style="border:1px solid #e2e8f0;padding:6px 10px;color:#dc2626;">20</td></tr>` +
         `</tbody></table></div>` +
 
