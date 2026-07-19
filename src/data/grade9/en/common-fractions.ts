@@ -118,7 +118,7 @@ export const topicData: TopicData = {
         `<text x="185" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">9</text>` +
         `<line x1="10" y1="85" x2="310" y2="85" stroke="#e2e8f0" stroke-width="1"/>` +
         `<text x="10" y="115" font-size="11" fill="#6b7280">Rooting:</text>` +
-        `<text x="48" y="121" font-size="18" font-weight="700" fill="#2563eb">√</text>` +
+        `<text x="62" y="121" font-size="18" font-weight="700" fill="#2563eb">√</text>` +
         `<text x="85" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">4</text>` +
         `<line x1="70" y1="115" x2="100" y2="115" stroke="#2563eb" stroke-width="1.5"/>` +
         `<text x="85" y="131" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">25</text>` +
@@ -185,13 +185,13 @@ export const topicData: TopicData = {
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 145" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
         `<text x="160" y="12" text-anchor="middle" font-size="9" fill="#6b7280">Total quantity</text>` +
         `<rect x="20" y="18" width="280" height="24" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<rect x="20" y="18" width="112" height="24" fill="rgba(234,88,12,0.25)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<rect x="20" y="18" width="112" height="24" fill="rgba(37,99,235,0.25)" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<rect x="132" y="18" width="168" height="24" fill="rgba(22,163,74,0.15)" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="76" y="34" text-anchor="middle" font-size="9" font-weight="700" fill="#7c2d12">used (fraction)</text>` +
+        `<text x="76" y="34" text-anchor="middle" font-size="9" font-weight="700" fill="#1e3a8a">used (fraction)</text>` +
         `<text x="216" y="34" text-anchor="middle" font-size="9" font-weight="700" fill="#166534">remainder</text>` +
         `<line x1="216" y1="42" x2="160" y2="72" stroke="#0f1f3d" stroke-width="1.2"/>` +
         `<polygon points="160,78 155,68 165,70" fill="#0f1f3d"/>` +
-        `<text x="255" y="60" text-anchor="middle" font-size="8" fill="#6b7280">remainder becomes the new whole</text>` +
+        `<text x="250" y="60" text-anchor="middle" font-size="8" fill="#6b7280">remainder becomes the new whole</text>` +
         `<text x="160" y="69" text-anchor="middle" font-size="9" fill="#6b7280">Remainder = new 100%</text>` +
         `<rect x="20" y="75" width="280" height="24" fill="none" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<rect x="20" y="75" width="70" height="24" fill="rgba(234,88,12,0.25)" stroke="#0f1f3d" stroke-width="1.5"/>` +
@@ -324,7 +324,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Calculate √(1/9) + (2/3)² − 1/9.',
-      answer: '4/9',
+      answer: '2/3',
       checkMode: 'self',
     },
 
@@ -495,7 +495,7 @@ export const topicData: TopicData = {
 
         // Block 6: error-spotting, critique and comparison/ordering (Q18-20)
         { difficulty: 'Hard', question: 'Katlego calculates ⅖ + ¼ × ⅘ by first adding ⅖ and ¼, then multiplying by ⅘, getting 13/25 as his answer. What is the correct answer, using the proper order of operations?', answer: '3/5', checkMode: 'auto', correctAnswer: '3/5', correctAnswers: ['3/5'], explanation: 'Step 1: Multiplication must be done before addition: 1/4 × 4/5 = 4/20 = 1/5.\nStep 2: Add: 2/5 + 1/5 = 3/5.\nAnswer: 3/5 ✓ (Katlego was wrong to add before multiplying — there was no bracket around ⅖ + ¼.)' },
-        { difficulty: 'Hard', question: 'Arrange these from smallest to largest: ⅗, (⅖)², √1/16 + ⅜.', answer: '(2/5)^2, sqrt(1/16)+3/8, 3/5', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Arrange these from smallest to largest: ⅗, (⅖)², √1/16 + ⅜.', answer: '(2/5)^2, 3/5, sqrt(1/16)+3/8', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Thandiwe says (⅗)² + (⅖)² gives the same answer as (⅗ + ⅖)². Calculate both sides and explain whether she is correct.', answer: 'No — (3/5)² + (2/5)² = 9/25 + 4/25 = 13/25, but (3/5 + 2/5)² = 1² = 1. The two expressions are not equal because squaring does not distribute over addition.', checkMode: 'self' },
       ],
       scoreMessages: [

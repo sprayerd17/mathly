@@ -90,10 +90,10 @@ export const topicData: TopicData = {
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 175" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
-        `<rect x="10" y="20" width="70" height="32" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="45" y="41" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">6x²</text>` +
-        `<rect x="10" y="122" width="70" height="32" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="45" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">9x</text>` +
+        `<rect x="10" y="20" width="70" height="32" rx="6" fill="rgba(55,65,81,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="45" y="41" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">6x²</text>` +
+        `<rect x="10" y="122" width="70" height="32" rx="6" fill="rgba(55,65,81,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="45" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">9x</text>` +
         `<line x1="80" y1="36" x2="138" y2="78" stroke="#0f1f3d" stroke-width="1.2"/>` +
         `<polygon points="140,80 130,77 133,86" fill="#0f1f3d"/>` +
         `<line x1="80" y1="138" x2="138" y2="97" stroke="#0f1f3d" stroke-width="1.2"/>` +

@@ -447,7 +447,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Calculate √0.36 + 0.2³.', answer: '0.608', checkMode: 'auto', correctAnswer: '0.608', explanation: '√0.36 = 0.6 (check: 0.6 × 0.6 = 0.36 ✓)\n0.2³ = 0.008\nAdd: 0.6 + 0.008 = 0.608 ✓' },
         { difficulty: 'Medium-Hard', question: 'Calculate √1.44 − 0.4².', answer: '1.04', checkMode: 'auto', correctAnswer: '1.04', explanation: '√1.44 = 1.2 (check: 1.2 × 1.2 = 1.44 ✓)\n0.4² = 0.16\nSubtract: 1.2 − 0.16 = 1.04 ✓' },
         { difficulty: 'Hard', question: 'Calculate ∛0.125 + 0.7².', answer: '0.99', checkMode: 'auto', correctAnswer: '0.99', explanation: '∛0.125 = 0.5 (check: 0.5 × 0.5 × 0.5 = 0.125 ✓)\n0.7² = 0.49\nAdd: 0.5 + 0.49 = 0.99 ✓' },
-        { difficulty: 'Hard', question: 'Lerato calculates 0.9² and ∛0.027 × 10, and claims both give the same answer. Is she correct? Show your working.', answer: 'Yes — 0.9² = 0.81 and ∛0.027 × 10 = 0.3 × 10 = 3, so actually these are NOT equal. She is incorrect.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato calculates 0.9² and ∛0.027 × 10, and claims both give the same answer. Is she correct? Show your working.', answer: 'No — 0.9² = 0.81 and ∛0.027 × 10 = 0.3 × 10 = 3, so actually these are NOT equal. She is incorrect.', checkMode: 'self' },
 
         // Block E — Multi-step real-life word problems (14-17)
         { difficulty: 'Medium', question: 'Amahle buys 3.4 kg of potatoes at R24.50 per kg and 1.6 kg of onions at R38.20 per kg. Find the total cost.', answer: 'R144.42', checkMode: 'auto', correctAnswer: 'R144.42', correctAnswers: ['R144.42', '144.42'], explanation: 'Potatoes: 3.4 × R24.50 = R83.30\nOnions: 1.6 × R38.20 = R61.12\nTotal: R83.30 + R61.12 = R144.42 ✓' },

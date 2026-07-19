@@ -336,18 +336,18 @@ export const topicData: TopicData = {
         `<line x1="130" y1="48" x2="65" y2="64" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<line x1="130" y1="48" x2="195" y2="64" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<text x="130" y="45" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7280">óf</text>` +
-        `<rect x="20" y="64" width="90" height="26" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="65" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">x + 2 = 0</text>` +
-        `<rect x="150" y="64" width="90" height="26" rx="6" fill="rgba(234,88,12,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="195" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">x + 3 = 0</text>` +
+        `<rect x="20" y="64" width="90" height="26" rx="6" fill="rgba(37,99,235,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">x + 2 = 0</text>` +
+        `<rect x="150" y="64" width="90" height="26" rx="6" fill="rgba(37,99,235,0.08)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="195" y="81" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">x + 3 = 0</text>` +
         `<line x1="65" y1="90" x2="65" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<polygon points="65,118 60,109 70,109" fill="#0f1f3d"/>` +
         `<line x1="195" y1="90" x2="195" y2="110" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<polygon points="195,118 190,109 200,109" fill="#0f1f3d"/>` +
-        `<rect x="30" y="120" width="70" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="65" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">x = −2</text>` +
-        `<rect x="160" y="120" width="70" height="28" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
-        `<text x="195" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">x = −3</text>` +
+        `<rect x="30" y="120" width="70" height="28" rx="6" fill="rgba(234,88,12,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="65" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">x = −2</text>` +
+        `<rect x="160" y="120" width="70" height="28" rx="6" fill="rgba(234,88,12,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="195" y="139" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">x = −3</text>` +
         `<text x="130" y="172" text-anchor="middle" font-size="11" fill="#6b7280">Twee oplossings uit een gefaktoriseerde vergelyking</text>` +
         `</svg>`,
     },

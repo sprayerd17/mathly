@@ -135,7 +135,7 @@ export const topicData: TopicData = {
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 170" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
-        `<text x="105" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#0f1f3d">Koste vs massa — reguit lyn deur die oorsprong</text>` +
+        `<text x="105" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="#0f1f3d">Koste vs massa — reguit lyn deur oorsprong</text>` +
         `<line x1="30" y1="150" x2="195" y2="150" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="200,150 193,146 193,154" fill="#0f1f3d"/>` +
         `<line x1="30" y1="150" x2="30" y2="18" stroke="#0f1f3d" stroke-width="1.5"/><polygon points="30,13 26,20 34,20" fill="#0f1f3d"/>` +
         `<text x="205" y="153" font-size="8" fill="#374151">kg</text>` +
@@ -146,7 +146,7 @@ export const topicData: TopicData = {
         `<circle cx="170" cy="24" r="4" fill="#16a34a"/>` +
         `<text x="132" y="20" font-size="8" font-weight="700" fill="#16a34a">7 kg, R126</text>` +
         `<text x="30" y="163" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
-        `<text x="255" y="35" font-size="9" font-weight="700" fill="#0f1f3d">Tabel van waardes</text>` +
+        `<text x="240" y="35" font-size="9" font-weight="700" fill="#0f1f3d">Tabel van waardes</text>` +
         `<line x1="215" y1="42" x2="310" y2="42" stroke="#e2e8f0" stroke-width="1"/>` +
         `<text x="225" y="55" font-size="8" fill="#374151">kg</text>` +
         `<text x="270" y="55" font-size="8" fill="#374151">Koste</text>` +
