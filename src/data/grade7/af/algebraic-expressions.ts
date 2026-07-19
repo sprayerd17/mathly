@@ -132,6 +132,47 @@ export const topicData: TopicData = {
         },
       ],
 
+      diagramPlaceholder:
+        'Gemerkte uiteensetting van die uitdrukking 5x + 3y − 7 wat die koëffisiënte 5 en 3 in oranje blokkies, die veranderlikes x en y in blou blokkies, en die konstante −7 in ʼn groen blokkie wys, met die drie terme onderaan gemerk',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="20" y="15" width="26" height="32" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="33" y="37" text-anchor="middle" font-size="18" font-weight="700" fill="#ea580c">5</text>` +
+        `<rect x="50" y="15" width="26" height="32" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="63" y="37" text-anchor="middle" font-size="18" font-weight="700" fill="#2563eb">x</text>` +
+        `<text x="85" y="37" text-anchor="middle" font-size="18" font-weight="700" fill="#0f1f3d">+</text>` +
+        `<rect x="100" y="15" width="26" height="32" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="113" y="37" text-anchor="middle" font-size="18" font-weight="700" fill="#ea580c">3</text>` +
+        `<rect x="130" y="15" width="26" height="32" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="143" y="37" text-anchor="middle" font-size="18" font-weight="700" fill="#2563eb">y</text>` +
+        `<text x="165" y="37" text-anchor="middle" font-size="18" font-weight="700" fill="#16a34a">−</text>` +
+        `<rect x="180" y="15" width="26" height="32" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="193" y="37" text-anchor="middle" font-size="18" font-weight="700" fill="#16a34a">7</text>` +
+        `<line x1="33" y1="47" x2="33" y2="60" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="33" y="72" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">koëffisiënt</text>` +
+        `<line x1="113" y1="47" x2="113" y2="60" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="113" y="72" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">koëffisiënt</text>` +
+        `<line x1="193" y1="47" x2="193" y2="60" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="193" y="72" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">konstante</text>` +
+        `<line x1="63" y1="47" x2="63" y2="85" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="63" y="97" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">veranderlike</text>` +
+        `<line x1="143" y1="47" x2="143" y2="85" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="143" y="97" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">veranderlike</text>` +
+        `<line x1="20" y1="104" x2="20" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<line x1="76" y1="104" x2="76" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<line x1="20" y1="108" x2="76" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<text x="48" y="122" text-anchor="middle" font-size="8" font-weight="700" fill="#6b7280">term 1</text>` +
+        `<line x1="100" y1="104" x2="100" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<line x1="156" y1="104" x2="156" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<line x1="100" y1="108" x2="156" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<text x="128" y="122" text-anchor="middle" font-size="8" font-weight="700" fill="#6b7280">term 2</text>` +
+        `<line x1="180" y1="104" x2="180" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<line x1="206" y1="104" x2="206" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<line x1="180" y1="108" x2="206" y2="108" stroke="#6b7280" stroke-width="1.5"/>` +
+        `<text x="193" y="122" text-anchor="middle" font-size="8" font-weight="700" fill="#6b7280">term 3</text>` +
+        `</svg>`,
+
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn algebraïese uitdrukking is, terme, koëffisiënte en konstantes identifiseer, en wys hoe om ʼn uitdrukking te bereken deur ʼn waarde vir die veranderlike te vervang" />',
     },
@@ -360,6 +401,38 @@ export const topicData: TopicData = {
           checkMode: 'self',
         },
       ],
+
+      diagramPlaceholder:
+        'Diagram wat 6x + 3y − 2x + 5y wys met die x-terme 6x en −2x in blou blokkies, die y-terme 3y en 5y in oranje blokkies, en ʼn pyl na die vereenvoudigde uitdrukking 4x + 8y in ʼn groen blokkie',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 85" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<rect x="10" y="15" width="34" height="32" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="27" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">6x</text>` +
+        `<text x="56" y="37" text-anchor="middle" font-size="16" font-weight="700" fill="#0f1f3d">+</text>` +
+        `<rect x="68" y="15" width="34" height="32" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="85" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">3y</text>` +
+        `<text x="114" y="37" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">−</text>` +
+        `<rect x="126" y="15" width="34" height="32" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>` +
+        `<text x="143" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">2x</text>` +
+        `<text x="172" y="37" text-anchor="middle" font-size="16" font-weight="700" fill="#0f1f3d">+</text>` +
+        `<rect x="184" y="15" width="34" height="32" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>` +
+        `<text x="201" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">5y</text>` +
+        `<line x1="224" y1="31" x2="248" y2="31" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<polygon points="248,26 256,31 248,36" fill="#16a34a"/>` +
+        `<rect x="260" y="15" width="60" height="32" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>` +
+        `<text x="290" y="37" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">4x + 8y</text>` +
+        `<line x1="27" y1="47" x2="27" y2="58" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="27" y="68" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">x-term</text>` +
+        `<line x1="85" y1="47" x2="85" y2="58" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="85" y="68" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">y-term</text>` +
+        `<line x1="143" y1="47" x2="143" y2="58" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="143" y="68" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">x-term</text>` +
+        `<line x1="201" y1="47" x2="201" y2="58" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="201" y="68" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">y-term</text>` +
+        `<line x1="290" y1="47" x2="290" y2="58" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>` +
+        `<text x="290" y="68" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">vereenvoudig</text>` +
+        `</svg>`,
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat demonstreer hoe om algebraïese uitdrukkings te vereenvoudig deur gelyksoortige terme met passende kleure te groepeer en hul koëffisiënte stap vir stap te kombineer" />',

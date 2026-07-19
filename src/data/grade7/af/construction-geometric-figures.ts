@@ -148,7 +148,7 @@ export const topicData: TopicData = {
         '<line x1="165" y1="150" x2="305" y2="150" stroke="#ea580c" stroke-width="2.5"/>' +
         '<line x1="235" y1="80" x2="235" y2="74" stroke="#0f1f3d" stroke-width="1"/>' +
         '<path d="M 255,150 A 20,20 0 0 0 247.9,134.7" fill="none" stroke="#ea580c" stroke-width="2"/>' +
-        '<text x="266" y="141" font-size="11" font-weight="700" fill="#ea580c">50°</text>' +
+        '<text x="266" y="141" font-size="11" font-weight="700" fill="#2563eb">50°</text>' +
         '<line x1="235" y1="150" x2="289.6" y2="84.9" stroke="#16a34a" stroke-width="2.5"/>' +
         '<circle cx="276.8" cy="100.2" r="2.5" fill="#ea580c"/>' +
         '<circle cx="235" cy="150" r="3.5" fill="#ea580c"/>' +
