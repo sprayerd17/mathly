@@ -221,7 +221,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Lerato says decreasing R500 by 40% gives R300. Is she correct? Explain.',
-          answer: 'No — 40% of 500 is 200, so the decreased amount is 500-200=R300. Actually her answer is correct.',
+          answer: 'Yes — 40% of 500 is 200, so the decreased amount is 500 − 200 = R300, which matches her answer.',
           checkMode: 'self',
         },
       ],

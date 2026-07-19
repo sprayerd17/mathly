@@ -88,7 +88,7 @@ export const topicData: TopicData = {
         '<text x="40" y="128" font-size="12" text-anchor="middle" fill="#0f1f3d">A</text>' +
         '<text x="180" y="128" font-size="12" text-anchor="middle" fill="#0f1f3d">B</text>' +
         '<path d="M 110,62 A 85,85 0 0 1 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
-        '<path d="M 110,62 A 85,85 0 0 1 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
+        '<path d="M 110,62 A 85,85 0 0 0 110,158" fill="none" stroke="#2563eb" stroke-width="2"/>' +
         '<line x1="110" y1="50" x2="110" y2="170" stroke="#16a34a" stroke-width="2.5"/>' +
         '<rect x="103" y="103" width="7" height="7" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
         '<text x="55" y="80" font-size="11" font-weight="700" fill="#2563eb">Passerboë</text>' +
@@ -279,7 +279,7 @@ export const topicData: TopicData = {
         '<circle cx="90" cy="30" r="2.5" fill="#0f1f3d"/>' +
         '<path d="M 34,150 A 14,14 0 0 1 26.9,138.2" fill="none" stroke="#2563eb" stroke-width="1.8"/>' +
         '<path d="M 176,150 A 14,14 0 0 0 182.4,138.9" fill="none" stroke="#2563eb" stroke-width="1.8"/>' +
-        '<path d="M 84,43.5 A 14,14 0 0 0 96.2,43.7" fill="none" stroke="#2563eb" stroke-width="1.8"/>' +
+        '<path d="M 84,43.5 A 14,14 0 0 0 99.0,40.8" fill="none" stroke="#2563eb" stroke-width="1.8"/>' +
         '<text x="14" y="168" font-size="11" fill="#0f1f3d">A</text>' +
         '<text x="192" y="168" font-size="11" fill="#0f1f3d">B</text>' +
         '<text x="90" y="20" font-size="11" text-anchor="middle" fill="#0f1f3d">C</text>' +

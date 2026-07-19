@@ -302,7 +302,7 @@ export const topicData: TopicData = {
         `<line x1="154" y1="61" x2="154" y2="93" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>` +
         `<text x="154" y="106" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">√5 ≈ 2,24</text>` +
         `<text x="154" y="118" text-anchor="middle" font-size="7.5" fill="#dc2626">(tussen 2 en 3 — irrasionaal)</text>` +
-        `<text x="150" y="134" text-anchor="middle" font-size="8" fill="#6b7280">Volkome-vierkant-wortels val presies op heelgetalle — ander val tussenin</text>` +
+        `<text x="150" y="134" text-anchor="middle" font-size="8" fill="#6b7280">Volkome vierkante val op heelgetalle — ander nie</text>` +
         `</svg>`,
 
       videoPlaceholder:

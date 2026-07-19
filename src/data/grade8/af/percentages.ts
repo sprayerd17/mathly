@@ -221,7 +221,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Lerato sê as R500 met 40% verminder word, kry jy R300. Is sy korrek? Verduidelik.',
-          answer: 'Nee — 40% van 500 is 200, dus is die verminderde bedrag 500-200=R300. Haar antwoord is eintlik korrek.',
+          answer: 'Ja — 40% van 500 is 200, dus is die verminderde bedrag 500 − 200 = R300, wat met haar antwoord ooreenstem.',
           checkMode: 'self',
         },
       ],

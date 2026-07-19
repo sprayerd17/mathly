@@ -302,7 +302,7 @@ export const topicData: TopicData = {
         `<line x1="154" y1="61" x2="154" y2="93" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>` +
         `<text x="154" y="106" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">√5 ≈ 2.24</text>` +
         `<text x="154" y="118" text-anchor="middle" font-size="7.5" fill="#dc2626">(between 2 and 3 — irrational)</text>` +
-        `<text x="150" y="134" text-anchor="middle" font-size="8" fill="#6b7280">Perfect square roots land exactly on whole numbers — others fall in between</text>` +
+        `<text x="150" y="134" text-anchor="middle" font-size="8" fill="#6b7280">Perfect squares land on whole numbers — others don't</text>` +
         `</svg>`,
 
       videoPlaceholder:

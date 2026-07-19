@@ -127,10 +127,10 @@ export const topicData: TopicData = {
       diagramSvg:
         '<svg viewBox="0 0 560 175" xmlns="http://www.w3.org/2000/svg">' +
         '<g transform="translate(55,85)">' +
-        '<polygon points="-22,18 22,18 0,-24" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="0" y1="4" x2="-22" y2="18" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="0" y1="4" x2="22" y2="18" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="0" y1="4" x2="0" y2="-24" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<polygon points="-22,18 22,18 0,-24" fill="none" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="0" y1="4" x2="-22" y2="18" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="22" y2="18" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="0" y2="-24" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<circle cx="-22" cy="18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="22" cy="18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="0" cy="-24" r="2.2" fill="#ea580c"/>' +
@@ -139,15 +139,15 @@ export const topicData: TopicData = {
         '<text x="0" y="50" font-size="8.5" text-anchor="middle" fill="#6b7280">F4 · V4 · E6</text>' +
         '</g>' +
         '<g transform="translate(165,85)">' +
-        '<polygon points="-18,-18 18,-18 18,18 -18,18" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="-8" y1="-28" x2="28" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="28" y1="-28" x2="28" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="28" y1="8" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="-8" y1="8" x2="-8" y2="-28" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="-18" y1="-18" x2="-8" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="18" y1="-18" x2="28" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="18" y1="18" x2="28" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="-18" y1="18" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<polygon points="-18,-18 18,-18 18,18 -18,18" fill="none" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="-8" y1="-28" x2="28" y2="-28" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="28" y1="-28" x2="28" y2="8" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="28" y1="8" x2="-8" y2="8" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-8" y1="8" x2="-8" y2="-28" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-18" y1="-18" x2="-8" y2="-28" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="18" y1="-18" x2="28" y2="-28" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="18" y1="18" x2="28" y2="8" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="-18" y1="18" x2="-8" y2="8" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<circle cx="-18" cy="-18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="18" cy="-18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="18" cy="18" r="2.2" fill="#ea580c"/>' +
@@ -160,8 +160,8 @@ export const topicData: TopicData = {
         '<text x="5" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">F6 · V8 · E12</text>' +
         '</g>' +
         '<g transform="translate(275,85)">' +
-        '<polygon points="0,-28 22,0 0,28 -22,0" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="-22" y1="0" x2="22" y2="0" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<polygon points="0,-28 22,0 0,28 -22,0" fill="none" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="-22" y1="0" x2="22" y2="0" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<circle cx="0" cy="-28" r="2.2" fill="#ea580c"/>' +
         '<circle cx="0" cy="28" r="2.2" fill="#ea580c"/>' +
         '<circle cx="-22" cy="0" r="2.2" fill="#ea580c"/>' +
@@ -170,19 +170,19 @@ export const topicData: TopicData = {
         '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">F8 · V6 · E12</text>' +
         '</g>' +
         '<g transform="translate(385,85)">' +
-        '<polygon points="0,-26 15.28,-21.03 24.73,-8.03 24.73,8.03 15.28,21.03 0,26 -15.28,21.03 -24.73,8.03 -24.73,-8.03 -15.28,-21.03" fill="#eff6ff" fill-opacity="0.5" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="0,-26 15.28,-21.03 24.73,-8.03 24.73,8.03 15.28,21.03 0,26 -15.28,21.03 -24.73,8.03 -24.73,-8.03 -15.28,-21.03" fill="#eff6ff" fill-opacity="0.5" stroke="#16a34a" stroke-width="2"/>' +
         '<polygon points="0,-12 9.51,-5.09 5.88,6.09 -5.88,6.09 -9.51,-5.09" fill="none" stroke="#2563eb" stroke-width="1.6"/>' +
         '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Dodecahedron</text>' +
         '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">F12 · V20 · E30</text>' +
         '</g>' +
         '<g transform="translate(495,85)">' +
-        '<polygon points="0,-26 22.52,-13 22.52,13 0,26 -22.52,13 -22.52,-13" fill="#fff7ed" fill-opacity="0.5" stroke="#0f1f3d" stroke-width="2"/>' +
-        '<line x1="0" y1="0" x2="0" y2="-26" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="22.52" y2="-13" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="22.52" y2="13" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="0" y2="26" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="-22.52" y2="13" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="-22.52" y2="-13" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<polygon points="0,-26 22.52,-13 22.52,13 0,26 -22.52,13 -22.52,-13" fill="#fff7ed" fill-opacity="0.5" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="0" y2="-26" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="22.52" y2="-13" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="22.52" y2="13" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="0" y2="26" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="-22.52" y2="13" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="-22.52" y2="-13" stroke="#16a34a" stroke-width="1.2"/>' +
         '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Icosahedron</text>' +
         '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">F20 · V12 · E30</text>' +
         '</g>' +
@@ -323,10 +323,10 @@ export const topicData: TopicData = {
         '<line x1="2" y1="-40" x2="10" y2="-10" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<line x1="2" y1="-40" x2="24" y2="10" stroke="#0f1f3d" stroke-width="2.2"/>' +
         '<line x1="2" y1="-40" x2="-10" y2="16" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<circle cx="-24" cy="-4" r="2" fill="#16a34a"/>' +
-        '<circle cx="10" cy="-10" r="2" fill="#16a34a"/>' +
-        '<circle cx="24" cy="10" r="2" fill="#16a34a"/>' +
-        '<circle cx="-10" cy="16" r="2" fill="#16a34a"/>' +
+        '<circle cx="-24" cy="-4" r="2" fill="#2563eb"/>' +
+        '<circle cx="10" cy="-10" r="2" fill="#2563eb"/>' +
+        '<circle cx="24" cy="10" r="2" fill="#2563eb"/>' +
+        '<circle cx="-10" cy="16" r="2" fill="#2563eb"/>' +
         '<circle cx="2" cy="-40" r="2.2" fill="#16a34a"/>' +
         '<text x="0" y="57" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Folded</text>' +
         '</g>' +
@@ -342,10 +342,10 @@ export const topicData: TopicData = {
         '<line x1="0" y1="4" x2="-20" y2="16" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<line x1="0" y1="4" x2="20" y2="16" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<line x1="0" y1="4" x2="0" y2="-22" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<circle cx="-20" cy="16" r="2.2" fill="#16a34a"/>' +
-        '<circle cx="20" cy="16" r="2.2" fill="#16a34a"/>' +
+        '<circle cx="-20" cy="16" r="2.2" fill="#2563eb"/>' +
+        '<circle cx="20" cy="16" r="2.2" fill="#2563eb"/>' +
         '<circle cx="0" cy="-22" r="2.2" fill="#16a34a"/>' +
-        '<circle cx="0" cy="4" r="2.2" fill="#16a34a"/>' +
+        '<circle cx="0" cy="4" r="2.2" fill="#2563eb"/>' +
         '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Folded</text>' +
         '</g>' +
         '</svg>',
@@ -511,7 +511,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "Sipho tries to apply Euler's formula (F − E + V = 2) to a cylinder, using F = 3 (2 circular faces + 1 curved surface), E = 2 (2 circular edges) and V = 0. Does the formula give 2? Explain why Euler's formula does not work the same way for a cylinder as it does for a prism.", answer: "F − E + V = 3 − 2 + 0 = 1, not 2, so the formula does not hold. Euler's formula was proved for solids with flat polygonal faces and straight edges meeting at sharp vertices. A cylinder has a curved surface and curved edges, not straight edges between flat polygon faces, so it does not have the same face-edge-vertex structure as a polyhedron and Euler's formula cannot be applied to it in the usual sense.", checkMode: 'self' },
 
         // Block D: nets (12-15), 12 and 14 diagram-flagged
-        { difficulty: 'Medium', question: 'A net consists of 2 hexagons and 6 rectangles arranged as shown, where the two hexagons form opposite ends and the 6 rectangles form a connected strip joining them edge to edge. Which solid does this net fold into?', answer: 'hexagonal prism', checkMode: 'auto', correctAnswer: 'hexagonalprism', correctAnswers: ['hexagonalprism', 'hexagonal prism'], explanation: 'The net has 2 identical hexagonal bases and 6 rectangular side faces, matching a hexagonal prism (F = 6 + 2 = 8, made of 2 hexagons + 6 rectangles) ✓' },
+        { difficulty: 'Medium', question: 'A net consists of 2 hexagons and 6 rectangles arranged as shown, where the two hexagons form opposite ends and the 6 rectangles form a connected strip joining them edge to edge. Which solid does this net fold into?', answer: 'hexagonal prism', checkMode: 'auto', correctAnswer: 'hexagonalprism', correctAnswers: ['hexagonalprism', 'hexagonal prism'], explanation: 'The net has 2 identical hexagonal bases and 6 rectangular side faces, matching a hexagonal prism (F = 6 + 2 = 8, made of 2 hexagons + 6 rectangles) ✓', diagramSvg: '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg"><polygon points="57,80 40,90 23,80 23,60 40,50 57,60" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><rect x="57" y="50" width="144" height="40" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><line x1="81" y1="50" x2="81" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="105" y1="50" x2="105" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="129" y1="50" x2="129" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="153" y1="50" x2="153" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="177" y1="50" x2="177" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><polygon points="235,80 218,90 201,80 201,60 218,50 235,60" fill="none" stroke="#0f1f3d" stroke-width="1.8"/></svg>' },
         { difficulty: 'Medium', question: 'Describe the net of a cone — how many shapes are in it, what shapes are they, and how are they arranged?', answer: 'The net has 2 shapes in total: 1 circle (the base) and 1 sector of a larger circle (the curved surface unrolled flat). The circle sits beside the curved edge of the sector — when the sector is rolled up into a cone shape, its straight edges meet and its curved edge wraps exactly around the circle, forming the base.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'A net consists of 2 circles and 1 rectangle arranged as shown, where one circle touches the top edge of the rectangle, the other circle touches the bottom edge of the rectangle, and the rectangle\'s width exactly matches the circumference of the circles. Which solid does this net fold into?', answer: 'cylinder', checkMode: 'auto', correctAnswer: 'cylinder', correctAnswers: ['cylinder', 'a cylinder'], explanation: 'The net has 2 identical circular bases and 1 rectangle that wraps around to form the curved surface, matching a cylinder — the rectangle\'s width must equal the circle\'s circumference so the curved surface joins up exactly ✓' },
         { difficulty: 'Hard', question: 'A learner draws a net for a hexagonal prism using 2 hexagons and 5 rectangles. Is this net valid? If not, explain the error.', answer: 'No, the net is invalid. A hexagonal prism has F = 6 + 2 = 8 faces: 2 hexagonal bases and 6 rectangular side faces. The learner\'s net has only 5 rectangles instead of 6, so it is one rectangular face short and cannot fold into a closed hexagonal prism.', checkMode: 'self' },
@@ -557,7 +557,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "Lerato tries to apply Euler's formula (F − E + V = 2) to a sphere, using F = 1 (the curved surface), E = 0 and V = 0. Does the formula give 2? Explain why Euler's formula does not work the same way for a sphere as it does for a pyramid.", answer: "F − E + V = 1 − 0 + 0 = 1, not 2, so the formula does not hold. Euler's formula was proved for solids with flat polygonal faces, straight edges and sharp vertices where faces meet. A sphere has one continuous curved surface with no flat faces, no straight edges and no vertices at all, so it does not have the same face-edge-vertex structure as a polyhedron and Euler's formula cannot be applied to it in the usual sense.", checkMode: 'self' },
 
         // Block D: nets (12-15), 12 and 14 diagram-flagged
-        { difficulty: 'Medium', question: 'A net consists of 2 pentagons and 5 rectangles arranged as shown, where the two pentagons form opposite ends and the 5 rectangles form a connected strip joining them edge to edge. Which solid does this net fold into?', answer: 'pentagonal prism', checkMode: 'auto', correctAnswer: 'pentagonalprism', correctAnswers: ['pentagonalprism', 'pentagonal prism'], explanation: 'The net has 2 identical pentagonal bases and 5 rectangular side faces, matching a pentagonal prism (F = 5 + 2 = 7, made of 2 pentagons + 5 rectangles) ✓' },
+        { difficulty: 'Medium', question: 'A net consists of 2 pentagons and 5 rectangles arranged as shown, where the two pentagons form opposite ends and the 5 rectangles form a connected strip joining them edge to edge. Which solid does this net fold into?', answer: 'pentagonal prism', checkMode: 'auto', correctAnswer: 'pentagonalprism', correctAnswers: ['pentagonalprism', 'pentagonal prism'], explanation: 'The net has 2 identical pentagonal bases and 5 rectangular side faces, matching a pentagonal prism (F = 5 + 2 = 7, made of 2 pentagons + 5 rectangles) ✓', diagramSvg: '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg"><polygon points="56,83 31,91 16,70 31,49 56,57" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><rect x="56" y="57" width="148" height="26" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><line x1="86" y1="57" x2="86" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><line x1="115" y1="57" x2="115" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><line x1="145" y1="57" x2="145" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><line x1="174" y1="57" x2="174" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><polygon points="204,83 229,91 244,70 229,49 204,57" fill="none" stroke="#0f1f3d" stroke-width="1.8"/></svg>' },
         { difficulty: 'Medium', question: 'Describe the net of a cylinder — how many shapes are in it, what shapes are they, and how are they arranged?', answer: 'The net has 3 shapes in total: 2 identical circles (the top and bottom bases) and 1 rectangle (the curved surface unrolled flat). One circle touches the top edge of the rectangle and the other touches the bottom edge — when rolled up, the rectangle wraps around to form the curved surface, and its width must exactly equal the circumference of the circles so the edges meet without gaps.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'A net consists of 1 circle and 1 sector of a larger circle arranged as shown, where the curved edge of the sector lies directly against the circle so the two curved edges match in length exactly. Which solid does this net fold into?', answer: 'cone', checkMode: 'auto', correctAnswer: 'cone', correctAnswers: ['cone', 'a cone'], explanation: 'The net has 1 circular base and 1 sector that rolls up into the curved surface of a cone, meeting at a single apex when the sector\'s straight edges are joined — this matches a cone, where the sector\'s curved edge length must equal the base circle\'s circumference ✓' },
         { difficulty: 'Hard', question: 'A learner draws a net for a pentagonal prism using 2 pentagons and 4 rectangles. Is this net valid? If not, explain the error.', answer: 'No, the net is invalid. A pentagonal prism has F = 5 + 2 = 7 faces: 2 pentagonal bases and 5 rectangular side faces. The learner\'s net has only 4 rectangles instead of 5, so it is one rectangular face short and cannot fold into a closed pentagonal prism.', checkMode: 'self' },
@@ -603,7 +603,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "Thabo tries to apply Euler's formula (F − E + V = 2) to a cone, using F = 2 (1 circular base + 1 curved surface), E = 1 (the circular edge) and V = 1 (the apex). Does the formula give 2 this time? Explain why this result does not mean a cone is a true polyhedron.", answer: "F − E + V = 2 − 1 + 1 = 2, so the formula coincidentally does give 2 for a cone. However, this does not make a cone a true polyhedron: Euler's formula applies properly to solids with flat polygonal faces and straight edges between sharp vertices. A cone has a curved surface and a curved (circular) edge, not straight edges meeting flat polygons, so its 'apex vertex' and 'circular edge' are not the same kind of features as in a true polyhedron — the formula working numerically here is a coincidence, not proof that a cone follows the same structural rule as a prism or pyramid.", checkMode: 'self' },
 
         // Block D: nets (12-15), 12 and 14 diagram-flagged
-        { difficulty: 'Medium', question: 'A net consists of 2 octagons and 8 rectangles arranged as shown, where the two octagons form opposite ends and the 8 rectangles form a connected strip joining them edge to edge. Which solid does this net fold into?', answer: 'octagonal prism', checkMode: 'auto', correctAnswer: 'octagonalprism', correctAnswers: ['octagonalprism', 'octagonal prism'], explanation: 'The net has 2 identical octagonal bases and 8 rectangular side faces, matching an octagonal prism (F = 8 + 2 = 10, made of 2 octagons + 8 rectangles) ✓' },
+        { difficulty: 'Medium', question: 'A net consists of 2 octagons and 8 rectangles arranged as shown, where the two octagons form opposite ends and the 8 rectangles form a connected strip joining them edge to edge. Which solid does this net fold into?', answer: 'octagonal prism', checkMode: 'auto', correctAnswer: 'octagonalprism', correctAnswers: ['octagonalprism', 'octagonal prism'], explanation: 'The net has 2 identical octagonal bases and 8 rectangular side faces, matching an octagonal prism (F = 8 + 2 = 10, made of 2 octagons + 8 rectangles) ✓', diagramSvg: '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg"><polygon points="66,79 53,92 35,92 22,79 22,61 35,48 53,48 66,61" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><rect x="66" y="61" width="128" height="18" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><line x1="82" y1="61" x2="82" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="98" y1="61" x2="98" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="114" y1="61" x2="114" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="130" y1="61" x2="130" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="146" y1="61" x2="146" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="162" y1="61" x2="162" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="178" y1="61" x2="178" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><polygon points="238,79 225,92 207,92 194,79 194,61 207,48 225,48 238,61" fill="none" stroke="#0f1f3d" stroke-width="1.8"/></svg>' },
         { difficulty: 'Medium', question: 'Describe the net of a nonagonal pyramid — how many shapes are in it, what shapes are they, and how are they arranged?', answer: 'The net has 10 shapes in total: 1 nonagon (the base) and 9 triangles (the side faces). The nonagon sits in the centre with one triangle attached to each of its 9 sides — when folded, the triangles rise up and their free vertices meet at the apex.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'A net consists of 2 circles and 1 rectangle arranged as shown, where the rectangle\'s width is much shorter than the circles\' circumference — the rectangle only reaches partway around each circle\'s edge. If this net were folded, would it close up into a proper cylinder? Explain.', answer: 'No — the net would not fold into a proper cylinder. For a cylinder net, the rectangle (curved surface) must have a width exactly equal to the circumference of the circular bases so that its two short edges meet perfectly when rolled. If the rectangle is too short, there will be a gap left uncovered around the circular edges, and the solid will not close up into a complete cylinder.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'A learner draws a net for a square pyramid using 1 square and 3 triangles. Is this net valid? If not, explain the error.', answer: 'No, the net is invalid. A square pyramid has F = 4 + 1 = 5 faces: 1 square base and 4 triangular side faces. The learner\'s net has only 3 triangles instead of 4, so one side of the square has no triangle attached and the net cannot fold into a closed square pyramid.', checkMode: 'self' },

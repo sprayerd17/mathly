@@ -127,10 +127,10 @@ export const topicData: TopicData = {
       diagramSvg:
         '<svg viewBox="0 0 560 175" xmlns="http://www.w3.org/2000/svg">' +
         '<g transform="translate(55,85)">' +
-        '<polygon points="-22,18 22,18 0,-24" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="0" y1="4" x2="-22" y2="18" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="0" y1="4" x2="22" y2="18" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="0" y1="4" x2="0" y2="-24" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<polygon points="-22,18 22,18 0,-24" fill="none" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="0" y1="4" x2="-22" y2="18" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="22" y2="18" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="0" y1="4" x2="0" y2="-24" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<circle cx="-22" cy="18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="22" cy="18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="0" cy="-24" r="2.2" fill="#ea580c"/>' +
@@ -139,15 +139,15 @@ export const topicData: TopicData = {
         '<text x="0" y="50" font-size="8.5" text-anchor="middle" fill="#6b7280">V4 · H4 · R6</text>' +
         '</g>' +
         '<g transform="translate(165,85)">' +
-        '<polygon points="-18,-18 18,-18 18,18 -18,18" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="-8" y1="-28" x2="28" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="28" y1="-28" x2="28" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="28" y1="8" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="-8" y1="8" x2="-8" y2="-28" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<line x1="-18" y1="-18" x2="-8" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="18" y1="-18" x2="28" y2="-28" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="18" y1="18" x2="28" y2="8" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="-18" y1="18" x2="-8" y2="8" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<polygon points="-18,-18 18,-18 18,18 -18,18" fill="none" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="-8" y1="-28" x2="28" y2="-28" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="28" y1="-28" x2="28" y2="8" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="28" y1="8" x2="-8" y2="8" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-8" y1="8" x2="-8" y2="-28" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<line x1="-18" y1="-18" x2="-8" y2="-28" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="18" y1="-18" x2="28" y2="-28" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="18" y1="18" x2="28" y2="8" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="-18" y1="18" x2="-8" y2="8" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<circle cx="-18" cy="-18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="18" cy="-18" r="2.2" fill="#ea580c"/>' +
         '<circle cx="18" cy="18" r="2.2" fill="#ea580c"/>' +
@@ -160,8 +160,8 @@ export const topicData: TopicData = {
         '<text x="5" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V6 · H8 · R12</text>' +
         '</g>' +
         '<g transform="translate(275,85)">' +
-        '<polygon points="0,-28 22,0 0,28 -22,0" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<line x1="-22" y1="0" x2="22" y2="0" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
+        '<polygon points="0,-28 22,0 0,28 -22,0" fill="none" stroke="#16a34a" stroke-width="2.2"/>' +
+        '<line x1="-22" y1="0" x2="22" y2="0" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<circle cx="0" cy="-28" r="2.2" fill="#ea580c"/>' +
         '<circle cx="0" cy="28" r="2.2" fill="#ea580c"/>' +
         '<circle cx="-22" cy="0" r="2.2" fill="#ea580c"/>' +
@@ -170,19 +170,19 @@ export const topicData: TopicData = {
         '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V8 · H6 · R12</text>' +
         '</g>' +
         '<g transform="translate(385,85)">' +
-        '<polygon points="0,-26 15.28,-21.03 24.73,-8.03 24.73,8.03 15.28,21.03 0,26 -15.28,21.03 -24.73,8.03 -24.73,-8.03 -15.28,-21.03" fill="#eff6ff" fill-opacity="0.5" stroke="#0f1f3d" stroke-width="2"/>' +
+        '<polygon points="0,-26 15.28,-21.03 24.73,-8.03 24.73,8.03 15.28,21.03 0,26 -15.28,21.03 -24.73,8.03 -24.73,-8.03 -15.28,-21.03" fill="#eff6ff" fill-opacity="0.5" stroke="#16a34a" stroke-width="2"/>' +
         '<polygon points="0,-12 9.51,-5.09 5.88,6.09 -5.88,6.09 -9.51,-5.09" fill="none" stroke="#2563eb" stroke-width="1.6"/>' +
         '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Dodekaëder</text>' +
         '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V12 · H20 · R30</text>' +
         '</g>' +
         '<g transform="translate(495,85)">' +
-        '<polygon points="0,-26 22.52,-13 22.52,13 0,26 -22.52,13 -22.52,-13" fill="#fff7ed" fill-opacity="0.5" stroke="#0f1f3d" stroke-width="2"/>' +
-        '<line x1="0" y1="0" x2="0" y2="-26" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="22.52" y2="-13" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="22.52" y2="13" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="0" y2="26" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="-22.52" y2="13" stroke="#ea580c" stroke-width="1.2"/>' +
-        '<line x1="0" y1="0" x2="-22.52" y2="-13" stroke="#ea580c" stroke-width="1.2"/>' +
+        '<polygon points="0,-26 22.52,-13 22.52,13 0,26 -22.52,13 -22.52,-13" fill="#fff7ed" fill-opacity="0.5" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="0" y1="0" x2="0" y2="-26" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="22.52" y2="-13" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="22.52" y2="13" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="0" y2="26" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="-22.52" y2="13" stroke="#16a34a" stroke-width="1.2"/>' +
+        '<line x1="0" y1="0" x2="-22.52" y2="-13" stroke="#16a34a" stroke-width="1.2"/>' +
         '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Ikosaëder</text>' +
         '<text x="0" y="54" font-size="8.5" text-anchor="middle" fill="#6b7280">V20 · H12 · R30</text>' +
         '</g>' +
@@ -323,10 +323,10 @@ export const topicData: TopicData = {
         '<line x1="2" y1="-40" x2="10" y2="-10" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<line x1="2" y1="-40" x2="24" y2="10" stroke="#0f1f3d" stroke-width="2.2"/>' +
         '<line x1="2" y1="-40" x2="-10" y2="16" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<circle cx="-24" cy="-4" r="2" fill="#16a34a"/>' +
-        '<circle cx="10" cy="-10" r="2" fill="#16a34a"/>' +
-        '<circle cx="24" cy="10" r="2" fill="#16a34a"/>' +
-        '<circle cx="-10" cy="16" r="2" fill="#16a34a"/>' +
+        '<circle cx="-24" cy="-4" r="2" fill="#2563eb"/>' +
+        '<circle cx="10" cy="-10" r="2" fill="#2563eb"/>' +
+        '<circle cx="24" cy="10" r="2" fill="#2563eb"/>' +
+        '<circle cx="-10" cy="16" r="2" fill="#2563eb"/>' +
         '<circle cx="2" cy="-40" r="2.2" fill="#16a34a"/>' +
         '<text x="0" y="57" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Gevou</text>' +
         '</g>' +
@@ -342,10 +342,10 @@ export const topicData: TopicData = {
         '<line x1="0" y1="4" x2="-20" y2="16" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<line x1="0" y1="4" x2="20" y2="16" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
         '<line x1="0" y1="4" x2="0" y2="-22" stroke="#0f1f3d" stroke-width="1.6" stroke-dasharray="3,3"/>' +
-        '<circle cx="-20" cy="16" r="2.2" fill="#16a34a"/>' +
-        '<circle cx="20" cy="16" r="2.2" fill="#16a34a"/>' +
+        '<circle cx="-20" cy="16" r="2.2" fill="#2563eb"/>' +
+        '<circle cx="20" cy="16" r="2.2" fill="#2563eb"/>' +
         '<circle cx="0" cy="-22" r="2.2" fill="#16a34a"/>' +
-        '<circle cx="0" cy="4" r="2.2" fill="#16a34a"/>' +
+        '<circle cx="0" cy="4" r="2.2" fill="#2563eb"/>' +
         '<text x="0" y="42" font-size="10" font-weight="700" text-anchor="middle" fill="#0f1f3d">Gevou</text>' +
         '</g>' +
         '</svg>',
@@ -512,7 +512,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "Sipho probeer Euler se formule (V − R + H = 2) op ʼn silinder toepas, met V = 3 (2 sirkelvormige vlakke + 1 geboë oppervlak), R = 2 (2 sirkelvormige rande) en H = 0. Gee die formule 2? Verduidelik waarom Euler se formule nie op dieselfde manier vir ʼn silinder werk soos vir ʼn prisma nie.", answer: "V − R + H = 3 − 2 + 0 = 1, nie 2 nie, dus geld die formule nie. Euler se formule is bewys vir vaste liggame met plat veelhoekige vlakke en reguit rande wat by skerp hoekpunte ontmoet. ʼn Silinder het ʼn geboë oppervlak en geboë rande, nie reguit rande tussen plat veelhoeke nie, dus het dit nie dieselfde vlak-rand-hoekpunt-struktuur as ʼn veelvlak nie, en Euler se formule kan nie in die gewone sin daarop toegepas word nie.", checkMode: 'self' },
 
         // Blok D: nette (12-15), 12 en 14 diagram-gemerk
-        { difficulty: 'Medium', question: 'ʼn Net bestaan uit 2 seshoeke en 6 reghoeke soos getoon, waar die twee seshoeke die teenoorgestelde punte vorm en die 6 reghoeke ʼn aaneenlopende strook vorm wat hulle rand-aan-rand verbind. In watter vaste liggaam vou hierdie net op?', answer: 'seshoekige prisma', checkMode: 'auto', correctAnswer: 'seshoekigeprisma', correctAnswers: ['seshoekigeprisma', 'seshoekige prisma'], explanation: 'Die net het 2 identiese seshoekige basisse en 6 reghoekige sy-vlakke, wat ooreenstem met ʼn seshoekige prisma (V = 6 + 2 = 8, gemaak van 2 seshoeke + 6 reghoeke) ✓' },
+        { difficulty: 'Medium', question: 'ʼn Net bestaan uit 2 seshoeke en 6 reghoeke soos getoon, waar die twee seshoeke die teenoorgestelde punte vorm en die 6 reghoeke ʼn aaneenlopende strook vorm wat hulle rand-aan-rand verbind. In watter vaste liggaam vou hierdie net op?', answer: 'seshoekige prisma', checkMode: 'auto', correctAnswer: 'seshoekigeprisma', correctAnswers: ['seshoekigeprisma', 'seshoekige prisma'], explanation: 'Die net het 2 identiese seshoekige basisse en 6 reghoekige sy-vlakke, wat ooreenstem met ʼn seshoekige prisma (V = 6 + 2 = 8, gemaak van 2 seshoeke + 6 reghoeke) ✓', diagramSvg: '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg"><polygon points="57,80 40,90 23,80 23,60 40,50 57,60" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><rect x="57" y="50" width="144" height="40" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><line x1="81" y1="50" x2="81" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="105" y1="50" x2="105" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="129" y1="50" x2="129" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="153" y1="50" x2="153" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><line x1="177" y1="50" x2="177" y2="90" stroke="#0f1f3d" stroke-width="1.2"/><polygon points="235,80 218,90 201,80 201,60 218,50 235,60" fill="none" stroke="#0f1f3d" stroke-width="1.8"/></svg>' },
         { difficulty: 'Medium', question: 'Beskryf die net van ʼn keël — hoeveel vorms is daarin, watter vorms is dit, en hoe is hulle gerangskik?', answer: 'Die net het 2 vorms in totaal: 1 sirkel (die basis) en 1 sektor van ʼn groter sirkel (die geboë oppervlak plat uitgerol). Die sirkel lê langs die geboë rand van die sektor — wanneer die sektor opgerol word in ʼn keëlvorm, ontmoet sy reguit rande mekaar en sy geboë rand omvou die sirkel presies, wat die basis vorm.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'ʼn Net bestaan uit 2 sirkels en 1 reghoek soos getoon, waar een sirkel die bo-rand van die reghoek raak, die ander sirkel die onder-rand van die reghoek raak, en die reghoek se breedte presies ooreenstem met die omtrek van die sirkels. In watter vaste liggaam vou hierdie net op?', answer: 'silinder', checkMode: 'auto', correctAnswer: 'silinder', correctAnswers: ['silinder', 'ʼn silinder', 'n silinder'], explanation: 'Die net het 2 identiese sirkelvormige basisse en 1 reghoek wat omvou om die geboë oppervlak te vorm, wat ooreenstem met ʼn silinder — die reghoek se breedte moet presies gelyk wees aan die sirkel se omtrek sodat die geboë oppervlak presies aansluit ✓' },
         { difficulty: 'Hard', question: 'ʼn Leerder teken ʼn net vir ʼn seshoekige prisma met 2 seshoeke en 5 reghoeke. Is hierdie net geldig? Indien nie, verduidelik die fout.', answer: 'Nee, die net is ongeldig. ʼn Seshoekige prisma het V = 6 + 2 = 8 vlakke: 2 seshoekige basisse en 6 reghoekige sy-vlakke. Die leerder se net het slegs 5 reghoeke in plaas van 6, dus is dit een reghoekige vlak kort en kan dit nie opvou tot ʼn geslote seshoekige prisma nie.', checkMode: 'self' },
@@ -558,7 +558,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "Lerato probeer Euler se formule (V − R + H = 2) op ʼn sfeer toepas, met V = 1 (die geboë oppervlak), R = 0 en H = 0. Gee die formule 2? Verduidelik waarom Euler se formule nie op dieselfde manier vir ʼn sfeer werk soos vir ʼn piramide nie.", answer: "V − R + H = 1 − 0 + 0 = 1, nie 2 nie, dus geld die formule nie. Euler se formule is bewys vir vaste liggame met plat veelhoekige vlakke, reguit rande en skerp hoekpunte waar vlakke ontmoet. ʼn Sfeer het een aaneenlopende geboë oppervlak met geen plat vlakke, geen reguit rande en glad geen hoekpunte nie, dus het dit nie dieselfde vlak-rand-hoekpunt-struktuur as ʼn veelvlak nie, en Euler se formule kan nie in die gewone sin daarop toegepas word nie.", checkMode: 'self' },
 
         // Blok D: nette (12-15), 12 en 14 diagram-gemerk
-        { difficulty: 'Medium', question: 'ʼn Net bestaan uit 2 vyfhoeke en 5 reghoeke soos getoon, waar die twee vyfhoeke die teenoorgestelde punte vorm en die 5 reghoeke ʼn aaneenlopende strook vorm wat hulle rand-aan-rand verbind. In watter vaste liggaam vou hierdie net op?', answer: 'vyfhoekige prisma', checkMode: 'auto', correctAnswer: 'vyfhoekigeprisma', correctAnswers: ['vyfhoekigeprisma', 'vyfhoekige prisma'], explanation: 'Die net het 2 identiese vyfhoekige basisse en 5 reghoekige sy-vlakke, wat ooreenstem met ʼn vyfhoekige prisma (V = 5 + 2 = 7, gemaak van 2 vyfhoeke + 5 reghoeke) ✓' },
+        { difficulty: 'Medium', question: 'ʼn Net bestaan uit 2 vyfhoeke en 5 reghoeke soos getoon, waar die twee vyfhoeke die teenoorgestelde punte vorm en die 5 reghoeke ʼn aaneenlopende strook vorm wat hulle rand-aan-rand verbind. In watter vaste liggaam vou hierdie net op?', answer: 'vyfhoekige prisma', checkMode: 'auto', correctAnswer: 'vyfhoekigeprisma', correctAnswers: ['vyfhoekigeprisma', 'vyfhoekige prisma'], explanation: 'Die net het 2 identiese vyfhoekige basisse en 5 reghoekige sy-vlakke, wat ooreenstem met ʼn vyfhoekige prisma (V = 5 + 2 = 7, gemaak van 2 vyfhoeke + 5 reghoeke) ✓', diagramSvg: '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg"><polygon points="56,83 31,91 16,70 31,49 56,57" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><rect x="56" y="57" width="148" height="26" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><line x1="86" y1="57" x2="86" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><line x1="115" y1="57" x2="115" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><line x1="145" y1="57" x2="145" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><line x1="174" y1="57" x2="174" y2="83" stroke="#0f1f3d" stroke-width="1.2"/><polygon points="204,83 229,91 244,70 229,49 204,57" fill="none" stroke="#0f1f3d" stroke-width="1.8"/></svg>' },
         { difficulty: 'Medium', question: 'Beskryf die net van ʼn silinder — hoeveel vorms is daarin, watter vorms is dit, en hoe is hulle gerangskik?', answer: 'Die net het 3 vorms in totaal: 2 identiese sirkels (die bo- en onderbasisse) en 1 reghoek (die geboë oppervlak plat uitgerol). Een sirkel raak die bo-rand van die reghoek en die ander raak die onder-rand — wanneer dit opgerol word, omvou die reghoek om die geboë oppervlak te vorm, en sy breedte moet presies gelyk wees aan die omtrek van die sirkels sodat die rande sonder gapings ontmoet.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'ʼn Net bestaan uit 1 sirkel en 1 sektor van ʼn groter sirkel soos getoon, waar die geboë rand van die sektor direk teen die sirkel lê sodat die twee geboë rande presies in lengte ooreenstem. In watter vaste liggaam vou hierdie net op?', answer: 'keël', checkMode: 'auto', correctAnswer: 'keël', correctAnswers: ['keël', 'ʼn keël', 'n keël', 'keel'], explanation: 'Die net het 1 sirkelvormige basis en 1 sektor wat oprol tot die geboë oppervlak van ʼn keël, wat by ʼn enkele apeks ontmoet wanneer die sektor se reguit rande saamgevoeg word — dit stem ooreen met ʼn keël, waar die sektor se geboë-randlengte gelyk moet wees aan die basissirkel se omtrek ✓' },
         { difficulty: 'Hard', question: 'ʼn Leerder teken ʼn net vir ʼn vyfhoekige prisma met 2 vyfhoeke en 4 reghoeke. Is hierdie net geldig? Indien nie, verduidelik die fout.', answer: 'Nee, die net is ongeldig. ʼn Vyfhoekige prisma het V = 5 + 2 = 7 vlakke: 2 vyfhoekige basisse en 5 reghoekige sy-vlakke. Die leerder se net het slegs 4 reghoeke in plaas van 5, dus is dit een reghoekige vlak kort en kan dit nie opvou tot ʼn geslote vyfhoekige prisma nie.', checkMode: 'self' },
@@ -604,7 +604,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "Thabo probeer Euler se formule (V − R + H = 2) op ʼn keël toepas, met V = 2 (1 sirkelvormige basis + 1 geboë oppervlak), R = 1 (die sirkelvormige rand) en H = 1 (die apeks). Gee die formule hierdie keer 2? Verduidelik waarom hierdie resultaat nie beteken ʼn keël is ʼn ware veelvlak nie.", answer: "V − R + H = 2 − 1 + 1 = 2, dus gee die formule toevallig wel 2 vir ʼn keël. Dit maak ʼn keël egter nie ʼn ware veelvlak nie: Euler se formule geld eintlik vir vaste liggame met plat veelhoekige vlakke en reguit rande tussen skerp hoekpunte. ʼn Keël het ʼn geboë oppervlak en ʼn geboë (sirkelvormige) rand, nie reguit rande wat plat veelhoeke ontmoet nie, dus is sy 'apeks-hoekpunt' en 'sirkelvormige rand' nie dieselfde soort kenmerke as in ʼn ware veelvlak nie — dat die formule hier syfermatig werk, is toevallig, en nie bewys dat ʼn keël dieselfde strukturele reël as ʼn prisma of piramide volg nie.", checkMode: 'self' },
 
         // Blok D: nette (12-15), 12 en 14 diagram-gemerk
-        { difficulty: 'Medium', question: 'ʼn Net bestaan uit 2 agthoeke en 8 reghoeke soos getoon, waar die twee agthoeke die teenoorgestelde punte vorm en die 8 reghoeke ʼn aaneenlopende strook vorm wat hulle rand-aan-rand verbind. In watter vaste liggaam vou hierdie net op?', answer: 'agthoekige prisma', checkMode: 'auto', correctAnswer: 'agthoekigeprisma', correctAnswers: ['agthoekigeprisma', 'agthoekige prisma'], explanation: 'Die net het 2 identiese agthoekige basisse en 8 reghoekige sy-vlakke, wat ooreenstem met ʼn agthoekige prisma (V = 8 + 2 = 10, gemaak van 2 agthoeke + 8 reghoeke) ✓' },
+        { difficulty: 'Medium', question: 'ʼn Net bestaan uit 2 agthoeke en 8 reghoeke soos getoon, waar die twee agthoeke die teenoorgestelde punte vorm en die 8 reghoeke ʼn aaneenlopende strook vorm wat hulle rand-aan-rand verbind. In watter vaste liggaam vou hierdie net op?', answer: 'agthoekige prisma', checkMode: 'auto', correctAnswer: 'agthoekigeprisma', correctAnswers: ['agthoekigeprisma', 'agthoekige prisma'], explanation: 'Die net het 2 identiese agthoekige basisse en 8 reghoekige sy-vlakke, wat ooreenstem met ʼn agthoekige prisma (V = 8 + 2 = 10, gemaak van 2 agthoeke + 8 reghoeke) ✓', diagramSvg: '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg"><polygon points="66,79 53,92 35,92 22,79 22,61 35,48 53,48 66,61" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><rect x="66" y="61" width="128" height="18" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><line x1="82" y1="61" x2="82" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="98" y1="61" x2="98" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="114" y1="61" x2="114" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="130" y1="61" x2="130" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="146" y1="61" x2="146" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="162" y1="61" x2="162" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="178" y1="61" x2="178" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><polygon points="238,79 225,92 207,92 194,79 194,61 207,48 225,48 238,61" fill="none" stroke="#0f1f3d" stroke-width="1.8"/></svg>' },
         { difficulty: 'Medium', question: 'Beskryf die net van ʼn neghoekige piramide — hoeveel vorms is daarin, watter vorms is dit, en hoe is hulle gerangskik?', answer: 'Die net het 10 vorms in totaal: 1 neghoek (die basis) en 9 driehoeke (die sy-vlakke). Die neghoek sit in die middel met een driehoek aan elk van sy 9 kante vas — wanneer dit gevou word, styg die driehoeke op en ontmoet hulle vrye hoekpunte by die apeks.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'ʼn Net bestaan uit 2 sirkels en 1 reghoek soos getoon, waar die reghoek se breedte baie korter is as die sirkels se omtrek — die reghoek reik net halfpad om elke sirkel se rand. As hierdie net gevou word, sou dit toevou tot ʼn behoorlike silinder? Verduidelik.', answer: 'Nee — die net sou nie tot ʼn behoorlike silinder toevou nie. Vir ʼn silinder-net moet die reghoek (geboë oppervlak) ʼn breedte hê wat presies gelyk is aan die omtrek van die sirkelvormige basisse sodat sy twee kort rande perfek ontmoet wanneer dit opgerol word. As die reghoek te kort is, bly daar ʼn gaping onbedek rondom die sirkelvormige rande, en die vaste liggaam sal nie toevou tot ʼn volledige silinder nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Leerder teken ʼn net vir ʼn vierkantige piramide met 1 vierkant en 3 driehoeke. Is hierdie net geldig? Indien nie, verduidelik die fout.', answer: 'Nee, die net is ongeldig. ʼn Vierkantige piramide het V = 4 + 1 = 5 vlakke: 1 vierkantige basis en 4 driehoekige sy-vlakke. Die leerder se net het slegs 3 driehoeke in plaas van 4, dus het een kant van die vierkant geen driehoek vas nie en kan die net nie opvou tot ʼn geslote vierkantige piramide nie.', checkMode: 'self' },
