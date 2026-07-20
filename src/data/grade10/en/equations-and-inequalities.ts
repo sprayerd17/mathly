@@ -186,7 +186,111 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SOLVING LITERAL EQUATIONS
+    // SECTION 3 — THE QUADRATIC FORMULA AND THE DISCRIMINANT
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'quadratic-formula-discriminant',
+      title: 'The Quadratic Formula and the Discriminant',
+      icon: '√',
+      explanation:
+        `<p style="margin-bottom:16px;">When a quadratic trinomial in <strong>ax² + bx + c = 0</strong> does not factorise nicely using the a × c method, we can always find its solutions using the <strong>quadratic formula</strong>: x = (−b ± √(b² − 4ac)) / 2a. The expression under the square root, <strong>b² − 4ac</strong>, is called the <strong>discriminant</strong> (written Δ), and its sign tells us how many real solutions the equation has — before we even finish solving it.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('substitute a, b, c')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('discriminant')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('solution(s)')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('no real solutions')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key strategy</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Identify a, b and c')} — Write the equation in standard form ax² + bx + c = 0 and read off the values of a, b and c.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Work out the ${or('discriminant')} first — Δ = b² − 4ac. Its sign tells you what kind of solutions to expect before you go any further.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#6b7280;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Substitute into the formula</strong> — Substitute ${bl('a, b, c')} and the ${or('discriminant')} into x = (−b ± √(b² − 4ac)) / 2a.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Simplify')} — Simplify the square root (or leave it in simplest surd form) and simplify the fraction to state the final ${gr('solution(s)')}.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The discriminant and the nature of the roots</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">${gr('Δ > 0')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Two distinct real roots — the graph crosses the x-axis at two different points.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:4px;">Δ = 0</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">One repeated (equal) real root — the graph touches the x-axis at a single point.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Δ < 0')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">No real roots — you would need the square root of a negative number, which is not real. The graph never touches the x-axis.</p>` +
+        `</div>` +
+
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 4x − 3 = 0',
+          answer: `x = ${gr('2 ± √7')}`,
+          steps: [
+            `${bl('Identify a, b and c:')} ${bl('a = 1, b = −4, c = −3')}`,
+            `Calculate the ${or('discriminant')}: ${or('Δ = (−4)² − 4(1)(−3) = 16 + 12 = 28')}`,
+            `Substitute into the formula: x = (−(−4) ± √28) / 2(1) = (4 ± √28) / 2`,
+            `Simplify the surd: √28 = 2√7, so x = (4 ± 2√7) / 2`,
+            `${gr('Solutions:')} x = ${gr('2 ± √7')} ✓`,
+          ],
+        },
+        {
+          question: 'Show that 2x² − 3x + 5 = 0 has no real solutions.',
+          answer: `${re('No real solutions')} — Δ = ${re('−31')} < 0`,
+          steps: [
+            `${bl('Identify a, b and c:')} ${bl('a = 2, b = −3, c = 5')}`,
+            `Calculate the ${or('discriminant')}: ${or('Δ = (−3)² − 4(2)(5) = 9 − 40 = −31')}`,
+            `Since ${re('Δ = −31 < 0')}, we would need √(−31), and the square root of a negative number is not a real number.`,
+            `${re('There are no real solutions')} — the graph of y = 2x² − 3x + 5 never crosses the x-axis ✓`,
+          ],
+        },
+        {
+          question: 'Use the discriminant to show that 4x² − 12x + 9 = 0 has two equal real roots, then solve for x.',
+          answer: `x = ${gr('3/2')} (equal roots)`,
+          steps: [
+            `${bl('Identify a, b and c:')} ${bl('a = 4, b = −12, c = 9')}`,
+            `Calculate the ${or('discriminant')}: ${or('Δ = (−12)² − 4(4)(9) = 144 − 144 = 0')}`,
+            `Since Δ = 0, the equation has two equal real roots.`,
+            `Substitute into the formula: x = (−(−12) ± √0) / 2(4) = 12 / 8`,
+            `${gr('Solution:')} x = ${gr('3/2')} ✓ (Notice 4x² − 12x + 9 = (2x − 3)², confirming the repeated root.)`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to use the quadratic formula and how the discriminant tells you the number of real solutions" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SOLVING LITERAL EQUATIONS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'literal-equations',
@@ -255,7 +359,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — LINEAR INEQUALITIES AND SIMULTANEOUS EQUATIONS
+    // SECTION 5 — LINEAR INEQUALITIES AND SIMULTANEOUS EQUATIONS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'inequalities-simultaneous-equations',
@@ -363,6 +467,142 @@ export const topicData: TopicData = {
         `<circle cx="70" cy="90" r="4.5" fill="#16a34a"/>` +
         `<text x="78" y="86" font-size="12" font-weight="700" fill="#16a34a">(2, 5)</text>` +
         `<text x="110" y="215" text-anchor="middle" font-size="10" fill="#6b7280">The lines intersect where both equations are true</text>` +
+        `</svg>`,
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — QUADRATIC AND RATIONAL INEQUALITIES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'quadratic-rational-inequalities',
+      title: 'Quadratic and Rational Inequalities',
+      icon: '≠',
+      explanation:
+        `<p style="margin-bottom:16px;">A <strong>quadratic inequality</strong> (like x² − x − 6 > 0) is solved by finding the <strong>critical values</strong> where the expression equals zero, marking them on a number line, and <strong>testing each interval</strong> to see where the expression is positive or negative. A <strong>rational inequality</strong> (a fraction compared to zero) needs critical values from <strong>both</strong> the numerator and the denominator — and the value that makes the denominator zero must <strong>always</strong> be excluded from the solution set, since the expression is undefined there.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('critical values')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('interval testing')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('final solution')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('always excluded')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key strategy — quadratic inequalities</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Flip if needed')} — If the coefficient of x² is negative, multiply or divide both sides by −1 first so a is positive, and ${re('reverse the inequality sign')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Find the ${bl('critical values')} — Factorise and set each factor to zero to find where the expression equals zero.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Draw a <strong>sign diagram</strong> — Mark the ${bl('critical values')} on a number line and ${or('test a value from each interval')} to see whether the expression is positive or negative there.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Write the solution set')} — Select the interval(s) that satisfy the original inequality, using ≤ or ≥ to include the critical values where appropriate.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">${re('Remember: flip the sign when the leading coefficient is negative')}</p>` +
+        `<p style="margin:0;color:#991b1b;">Example: −x² + 4x + 5 ≥ 0 &nbsp;→&nbsp; multiply by −1 and flip &nbsp;→&nbsp; ${re('x² − 4x − 5 ≤ 0')} &nbsp;→&nbsp; factorise and solve as usual.</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Key strategy — rational inequalities</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Find ${bl('critical values')} from <strong>both</strong> parts — Set the numerator equal to zero, AND set the denominator equal to zero.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Mark the values and ${or('test each interval')} — Use the sign diagram exactly as with a quadratic inequality.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Always exclude the denominator-zero value')} — Even if ≤ or ≥ is used and the sign pattern seems to include it, that value makes the expression undefined and can ${re('never')} be part of the solution set.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Write the solution set')} — The numerator-zero value may be included (open or closed circle depending on the inequality), but the denominator-zero value is always shown with an ${re('open circle')}.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Number line notation</p>` +
+        `<p style="margin:0;color:#1e3a8a;">An <strong>open circle</strong> means the value is excluded (not part of the solution); a <strong>closed (filled) circle</strong> means the value is included. A denominator-zero value is always shown with an open circle, no matter what the inequality sign is.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Solve for x: −x² + 4x + 5 ≥ 0',
+          answer: `${gr('−1 ≤ x ≤ 5')}`,
+          steps: [
+            `${re('Multiply both sides by −1 and flip the inequality:')} ${re('x² − 4x − 5 ≤ 0')}`,
+            `Find the ${bl('critical values')} by factorising: (x − 5)(x + 1) = 0, so ${bl('x = 5')} or ${bl('x = −1')}`,
+            `${or('Test the intervals:')} for x < −1 the expression is positive; for −1 < x < 5 it is negative; for x > 5 it is positive.`,
+            `We need the expression ≤ 0, so we want the interval where it is negative or zero — including the critical values, since the inequality is ≤.`,
+            `${gr('Solution:')} ${gr('−1 ≤ x ≤ 5')} ✓`,
+          ],
+        },
+        {
+          question: 'Solve for x: (x − 2)/(x + 1) ≤ 0. Remember to exclude any value that makes the denominator zero.',
+          answer: `${gr('−1 < x ≤ 2')}`,
+          steps: [
+            `Find the ${bl('critical values')}: numerator zero at ${bl('x = 2')}; denominator zero at ${re('x = −1')} (this value must be excluded).`,
+            `${or('Test the intervals:')} for x < −1 the expression is positive; for −1 < x < 2 it is negative; for x > 2 it is positive.`,
+            `We need the expression ≤ 0, so we want where it is negative or zero. x = 2 gives exactly zero, so it is included; x = −1 is ${re('always excluded')} since the expression is undefined there.`,
+            `${gr('Solution:')} ${gr('−1 < x ≤ 2')} ✓`,
+          ],
+        },
+        {
+          question: 'Solve for x: (2x + 1)/(x − 3) ≥ 0. Explain why x = 3 must always be excluded from the solution set.',
+          answer: `${gr('x ≤ −1/2 or x > 3')}`,
+          steps: [
+            `Find the ${bl('critical values')}: numerator zero at ${bl('x = −1/2')}; denominator zero at ${re('x = 3')}.`,
+            `${or('Test the intervals:')} for x < −1/2 the expression is positive; for −1/2 < x < 3 it is negative; for x > 3 it is positive.`,
+            `We need the expression ≥ 0, so we want where it is positive or zero. x = −1/2 gives exactly zero, so it is included.`,
+            `${re('x = 3 must always be excluded')}, even though the expression is positive on both sides of it here — at x = 3 the denominator is zero, so the expression is undefined and can never be part of the solution, regardless of the sign pattern either side of it.`,
+            `${gr('Solution:')} ${gr('x ≤ −1/2 or x > 3')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to solve quadratic inequalities using a sign diagram and how to solve rational inequalities while always excluding the denominator-zero value" />',
+
+      diagramPlaceholder:
+        'Number line showing the solution to (2x + 1)/(x − 3) ≥ 0: a closed (filled) circle at x = −1/2 with shading to the left, and an open circle at x = 3 (always excluded, denominator zero) with shading to the right',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="50" x2="205" y2="50" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="10,50 18,46 18,54" fill="#0f1f3d"/>` +
+        `<polygon points="210,50 202,46 202,54" fill="#0f1f3d"/>` +
+        `<line x1="18" y1="50" x2="70" y2="50" stroke="#16a34a" stroke-width="5"/>` +
+        `<line x1="150" y1="50" x2="202" y2="50" stroke="#16a34a" stroke-width="5"/>` +
+        `<circle cx="70" cy="50" r="6" fill="#16a34a" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="70" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">−1/2</text>` +
+        `<circle cx="150" cy="50" r="6" fill="white" stroke="#dc2626" stroke-width="2.5"/>` +
+        `<text x="150" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">3 (excluded)</text>` +
+        `<text x="110" y="16" text-anchor="middle" font-size="11" fill="#6b7280">Solution: x ≤ −1/2 or x > 3</text>` +
         `</svg>`,
     },
   ],

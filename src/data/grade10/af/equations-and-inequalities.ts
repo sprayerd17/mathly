@@ -186,7 +186,111 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SOLVING LITERAL EQUATIONS
+    // SECTION 3 — THE QUADRATIC FORMULA AND THE DISCRIMINANT
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'quadratic-formula-discriminant',
+      title: 'Die Kwadratiese Formule en die Diskriminant',
+      icon: '√',
+      explanation:
+        `<p style="margin-bottom:16px;">Wanneer ʼn kwadratiese trinoom in <strong>ax² + bx + c = 0</strong> nie maklik faktoriseer met die a × c-metode nie, kan ons altyd die oplossings vind deur die <strong>kwadratiese formule</strong> te gebruik: x = (−b ± √(b² − 4ac)) / 2a. Die uitdrukking onder die vierkantswortel, <strong>b² − 4ac</strong>, word die <strong>diskriminant</strong> genoem (geskryf as Δ), en die teken daarvan wys hoeveel reële oplossings die vergelyking het — nog voordat ons klaar opgelos het.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('vervang a, b, c')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('diskriminant')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('oplossing(s)')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('geen reële oplossings')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelstrategie</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Identifiseer a, b en c')} — Skryf die vergelyking in standaardvorm ax² + bx + c = 0 en lees die waardes van a, b en c af.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Bereken eers die ${or('diskriminant')} — Δ = b² − 4ac. Die teken daarvan wys watter soort oplossings jy kan verwag, nog voordat jy verder gaan.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#6b7280;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Vervang in die formule</strong> — Vervang ${bl('a, b, c')} en die ${or('diskriminant')} in x = (−b ± √(b² − 4ac)) / 2a.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Vereenvoudig')} — Vereenvoudig die vierkantswortel (of los dit in eenvoudigste wortelvorm) en vereenvoudig die breuk om die finale ${gr('oplossing(s)')} te gee.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die diskriminant en die aard van die wortels</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">${gr('Δ > 0')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Twee verskillende reële wortels — die grafiek sny die x-as by twee verskillende punte.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:4px;">Δ = 0</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Een herhaalde (gelyke) reële wortel — die grafiek raak die x-as by net een punt.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Δ < 0')}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Geen reële wortels nie — jy sou die vierkantswortel van ʼn negatiewe getal nodig gehad het, wat nie reëel is nie. Die grafiek raak nooit die x-as nie.</p>` +
+        `</div>` +
+
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Los op vir x met die kwadratiese formule, en los jou antwoord in eenvoudigste wortelvorm: x² − 4x − 3 = 0',
+          answer: `x = ${gr('2 ± √7')}`,
+          steps: [
+            `${bl('Identifiseer a, b en c:')} ${bl('a = 1, b = −4, c = −3')}`,
+            `Bereken die ${or('diskriminant')}: ${or('Δ = (−4)² − 4(1)(−3) = 16 + 12 = 28')}`,
+            `Vervang in die formule: x = (−(−4) ± √28) / 2(1) = (4 ± √28) / 2`,
+            `Vereenvoudig die wortel: √28 = 2√7, dus x = (4 ± 2√7) / 2`,
+            `${gr('Oplossings:')} x = ${gr('2 ± √7')} ✓`,
+          ],
+        },
+        {
+          question: 'Wys dat 2x² − 3x + 5 = 0 geen reële oplossings het nie.',
+          answer: `${re('Geen reële oplossings nie')} — Δ = ${re('−31')} < 0`,
+          steps: [
+            `${bl('Identifiseer a, b en c:')} ${bl('a = 2, b = −3, c = 5')}`,
+            `Bereken die ${or('diskriminant')}: ${or('Δ = (−3)² − 4(2)(5) = 9 − 40 = −31')}`,
+            `Aangesien ${re('Δ = −31 < 0')}, sou ons √(−31) nodig gehad het, en die vierkantswortel van ʼn negatiewe getal is nie ʼn reële getal nie.`,
+            `${re('Daar is geen reële oplossings nie')} — die grafiek van y = 2x² − 3x + 5 sny nooit die x-as nie ✓`,
+          ],
+        },
+        {
+          question: 'Gebruik die diskriminant om te wys dat 4x² − 12x + 9 = 0 twee gelyke reële wortels het, en los dan op vir x.',
+          answer: `x = ${gr('3/2')} (gelyke wortels)`,
+          steps: [
+            `${bl('Identifiseer a, b en c:')} ${bl('a = 4, b = −12, c = 9')}`,
+            `Bereken die ${or('diskriminant')}: ${or('Δ = (−12)² − 4(4)(9) = 144 − 144 = 0')}`,
+            `Aangesien Δ = 0, het die vergelyking twee gelyke reële wortels.`,
+            `Vervang in die formule: x = (−(−12) ± √0) / 2(4) = 12 / 8`,
+            `${gr('Oplossing:')} x = ${gr('3/2')} ✓ (Let op 4x² − 12x + 9 = (2x − 3)², wat die herhaalde wortel bevestig.)`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om die kwadratiese formule te gebruik en hoe die diskriminant die aantal reële oplossings aandui" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SOLVING LITERAL EQUATIONS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'literal-equations',
@@ -255,7 +359,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — LINEAR INEQUALITIES AND SIMULTANEOUS EQUATIONS
+    // SECTION 5 — LINEAR INEQUALITIES AND SIMULTANEOUS EQUATIONS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'inequalities-simultaneous-equations',
@@ -363,6 +467,142 @@ export const topicData: TopicData = {
         `<circle cx="70" cy="90" r="4.5" fill="#16a34a"/>` +
         `<text x="78" y="86" font-size="12" font-weight="700" fill="#16a34a">(2, 5)</text>` +
         `<text x="110" y="215" text-anchor="middle" font-size="10" fill="#6b7280">Die lyne sny waar albei vergelykings waar is</text>` +
+        `</svg>`,
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — QUADRATIC AND RATIONAL INEQUALITIES
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'quadratic-rational-inequalities',
+      title: 'Kwadratiese en Rasionale Ongelykhede',
+      icon: '≠',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Kwadratiese ongelykheid</strong> (soos x² − x − 6 > 0) word opgelos deur die <strong>kritieke waardes</strong> te vind waar die uitdrukking gelyk is aan nul, dit op ʼn getallelyn te merk, en <strong>elke interval te toets</strong> om te sien waar die uitdrukking positief of negatief is. ʼn <strong>Rasionale ongelykheid</strong> (ʼn breuk vergelyk met nul) benodig kritieke waardes van <strong>albei</strong> die teller en die noemer — en die waarde wat die noemer nul maak, moet <strong>altyd</strong> van die oplossingstel uitgesluit word, aangesien die uitdrukking daar onbepaald is.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('kritieke waardes')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('intervaltoetsing')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('finale oplossing')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('altyd uitgesluit')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelstrategie — kwadratiese ongelykhede</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Keer om indien nodig')} — As die koëffisiënt van x² negatief is, vermenigvuldig of deel eers albei kante met −1 sodat a positief is, en ${re('keer die ongelykheidsteken om')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Vind die ${bl('kritieke waardes')} — Faktoriseer en stel elke faktor gelyk aan nul om te vind waar die uitdrukking gelyk is aan nul.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Trek ʼn <strong>tekendiagram</strong> — Merk die ${bl('kritieke waardes')} op ʼn getallelyn en ${or('toets ʼn waarde uit elke interval')} om te sien of die uitdrukking daar positief of negatief is.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Skryf die oplossingstel')} — Kies die interval(le) wat aan die oorspronklike ongelykheid voldoen, en gebruik ≤ of ≥ om die kritieke waardes in te sluit waar toepaslik.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">${re('Onthou: keer die teken om wanneer die leidende koëffisiënt negatief is')}</p>` +
+        `<p style="margin:0;color:#991b1b;">Voorbeeld: −x² + 4x + 5 ≥ 0 &nbsp;→&nbsp; vermenigvuldig met −1 en keer om &nbsp;→&nbsp; ${re('x² − 4x − 5 ≤ 0')} &nbsp;→&nbsp; faktoriseer en los soos gewoonlik op.</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Sleutelstrategie — rasionale ongelykhede</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Vind ${bl('kritieke waardes')} van <strong>albei</strong> dele — Stel die teller gelyk aan nul, EN stel die noemer gelyk aan nul.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Merk die waardes en ${or('toets elke interval')} — Gebruik die tekendiagram presies soos by ʼn kwadratiese ongelykheid.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#dc2626;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${re('Sluit altyd die noemer-nul-waarde uit')} — Selfs al word ≤ of ≥ gebruik en die tekenpatroon lyk asof dit ingesluit moet word, maak daardie waarde die uitdrukking onbepaald en kan dit ${re('nooit')} deel van die oplossingstel wees nie.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Skryf die oplossingstel')} — Die teller-nul-waarde kan ingesluit word (oop of toe sirkel, afhangend van die ongelykheid), maar die noemer-nul-waarde word altyd met ʼn ${re('oop sirkel')} aangedui.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Getallelyn-notasie</p>` +
+        `<p style="margin:0;color:#1e3a8a;">ʼn <strong>Oop sirkel</strong> beteken die waarde word uitgesluit (nie deel van die oplossing nie); ʼn <strong>toe (volgemaakte) sirkel</strong> beteken die waarde word ingesluit. ʼn Noemer-nul-waarde word altyd met ʼn oop sirkel aangedui, ongeag wat die ongelykheidsteken is.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Los op vir x: −x² + 4x + 5 ≥ 0',
+          answer: `${gr('−1 ≤ x ≤ 5')}`,
+          steps: [
+            `${re('Vermenigvuldig albei kante met −1 en keer die ongelykheid om:')} ${re('x² − 4x − 5 ≤ 0')}`,
+            `Vind die ${bl('kritieke waardes')} deur te faktoriseer: (x − 5)(x + 1) = 0, dus ${bl('x = 5')} óf ${bl('x = −1')}`,
+            `${or('Toets die intervalle:')} vir x < −1 is die uitdrukking positief; vir −1 < x < 5 is dit negatief; vir x > 5 is dit positief.`,
+            `Ons benodig die uitdrukking ≤ 0, dus wil ons die interval waar dit negatief of nul is — die kritieke waardes ingesluit, aangesien die ongelykheid ≤ is.`,
+            `${gr('Oplossing:')} ${gr('−1 ≤ x ≤ 5')} ✓`,
+          ],
+        },
+        {
+          question: 'Los op vir x: (x − 2)/(x + 1) ≤ 0. Onthou om enige waarde wat die noemer nul maak, uit te sluit.',
+          answer: `${gr('−1 < x ≤ 2')}`,
+          steps: [
+            `Vind die ${bl('kritieke waardes')}: teller nul by ${bl('x = 2')}; noemer nul by ${re('x = −1')} (hierdie waarde moet uitgesluit word).`,
+            `${or('Toets die intervalle:')} vir x < −1 is die uitdrukking positief; vir −1 < x < 2 is dit negatief; vir x > 2 is dit positief.`,
+            `Ons benodig die uitdrukking ≤ 0, dus wil ons waar dit negatief of nul is. x = 2 gee presies nul, dus word dit ingesluit; x = −1 word ${re('altyd uitgesluit')} aangesien die uitdrukking daar onbepaald is.`,
+            `${gr('Oplossing:')} ${gr('−1 < x ≤ 2')} ✓`,
+          ],
+        },
+        {
+          question: 'Los op vir x: (2x + 1)/(x − 3) ≥ 0. Verduidelik waarom x = 3 altyd van die oplossingstel uitgesluit moet word.',
+          answer: `${gr('x ≤ −1/2 óf x > 3')}`,
+          steps: [
+            `Vind die ${bl('kritieke waardes')}: teller nul by ${bl('x = −1/2')}; noemer nul by ${re('x = 3')}.`,
+            `${or('Toets die intervalle:')} vir x < −1/2 is die uitdrukking positief; vir −1/2 < x < 3 is dit negatief; vir x > 3 is dit positief.`,
+            `Ons benodig die uitdrukking ≥ 0, dus wil ons waar dit positief of nul is. x = −1/2 gee presies nul, dus word dit ingesluit.`,
+            `${re('x = 3 moet altyd uitgesluit word')}, selfs al is die uitdrukking hier positief aan albei kante daarvan — by x = 3 is die noemer nul, dus is die uitdrukking onbepaald en kan dit nooit deel van die oplossing wees nie, ongeag die tekenpatroon aan weerskante daarvan.`,
+            `${gr('Oplossing:')} ${gr('x ≤ −1/2 óf x > 3')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om kwadratiese ongelykhede met ʼn tekendiagram op te los en hoe om rasionale ongelykhede op te los deur altyd die noemer-nul-waarde uit te sluit" />',
+
+      diagramPlaceholder:
+        'Getallelyn wat die oplossing vir (2x + 1)/(x − 3) ≥ 0 wys: ʼn toe (volgemaakte) sirkel by x = −1/2 met skadu na links, en ʼn oop sirkel by x = 3 (altyd uitgesluit, noemer nul) met skadu na regs',
+
+      diagramSvg:
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" width="100%" style="max-width:320px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<line x1="15" y1="50" x2="205" y2="50" stroke="#0f1f3d" stroke-width="2"/>` +
+        `<polygon points="10,50 18,46 18,54" fill="#0f1f3d"/>` +
+        `<polygon points="210,50 202,46 202,54" fill="#0f1f3d"/>` +
+        `<line x1="18" y1="50" x2="70" y2="50" stroke="#16a34a" stroke-width="5"/>` +
+        `<line x1="150" y1="50" x2="202" y2="50" stroke="#16a34a" stroke-width="5"/>` +
+        `<circle cx="70" cy="50" r="6" fill="#16a34a" stroke="#0f1f3d" stroke-width="1.5"/>` +
+        `<text x="70" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">−1/2</text>` +
+        `<circle cx="150" cy="50" r="6" fill="white" stroke="#dc2626" stroke-width="2.5"/>` +
+        `<text x="150" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">3 (uitgesluit)</text>` +
+        `<text x="110" y="16" text-anchor="middle" font-size="11" fill="#6b7280">Oplossing: x ≤ −1/2 óf x > 3</text>` +
         `</svg>`,
     },
   ],

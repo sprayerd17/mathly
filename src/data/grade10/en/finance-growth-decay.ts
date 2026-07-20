@@ -306,7 +306,139 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SOLVING FOR n
+    // SECTION 3 — SIMPLE AND COMPOUND DECAY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'simple-and-compound-decay',
+      title: 'Simple and Compound Decay — A = P(1 − ni) and A = P(1 − i)ⁿ',
+      icon: '↓',
+      explanation:
+        `<p style="margin-bottom:16px;">Decay describes an amount that <em>decreases</em> over time — most often the depreciation (loss of value) of an asset such as a car, machine, or piece of equipment. Just like growth, decay comes in two forms: <strong>simple decay</strong>, where the same rand amount is subtracted from the ${bl('principal')} every period, and <strong>compound decay</strong>, where a percentage of the <em>current</em> (already-reduced) value is subtracted every period. The formulas are ${re('A')} = ${bl('P')}(1 − ${gr('n')} × ${or('i')}) for simple decay and ${re('A')} = ${bl('P')}(1 − ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup> for compound decay — mirror images of simple and compound growth, but with a minus sign.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('principal P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('rate i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('time n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('final amount A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The simple decay formula</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 − ${gr('n')} × ${or('i')})</p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">the same amount is subtracted every period — used for straight-line (book value) depreciation</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The compound decay formula</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 − ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup></p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">a percentage of the current value is subtracted every period — used for reducing-balance (resale/market value) depreciation</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Simple vs Compound decay compared</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Simple Decay</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">The same rand amount is subtracted every period, based on the original ${bl('principal')}.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Value decreases in a <strong>straight line</strong> — commonly used for book value (tax) depreciation.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Compound Decay</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">A percentage of the ${bl('current')} (already-reduced) value is subtracted every period.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Value decreases <strong>exponentially</strong> — the rand amount lost shrinks each year as the value shrinks.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Compound decay is more realistic</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Most assets — cars, machinery, electronics — actually lose value the way <strong>compound decay</strong> describes: a percentage of whatever the item is currently worth. This means the rand value lost shrinks year after year, matching how second-hand prices really behave. <strong>Simple decay</strong> is mainly used for accounting purposes, where a business needs a predictable, straight-line book value for tax calculations.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A delivery vehicle valued at R280 000 depreciates using simple decay at 15% per year. Find its value after 4 years.',
+          answer: `${re('A')} = ${re('R112 000')}`,
+          steps: [
+            `Write the formula: ${re('A')} = ${bl('P')}(1 − ${gr('n')} × ${or('i')})`,
+            `Substitute the values — ${bl('P')} = R280 000, ${gr('n')} = 4, ${or('i')} = 0.15:<br>${re('A')} = ${bl('280 000')}(1 − ${gr('4')} × ${or('0.15')})`,
+            `Calculate the bracket: ${gr('4')} × ${or('0.15')} = 0.60, so (1 − 0.60) = 0.40`,
+            `Multiply: ${re('A')} = ${bl('280 000')} × 0.40 = <strong>R112 000</strong> ✓`,
+          ],
+        },
+        {
+          question: 'A car valued at R320 000 depreciates using compound decay at 12% per year. Find its value after 5 years (round to the nearest Rand).',
+          answer: `${re('A')} ≈ ${re('R168 874')}`,
+          steps: [
+            `Write the formula: ${re('A')} = ${bl('P')}(1 − ${or('i')})<sup>n</sup>`,
+            `Substitute: ${bl('P')} = R320 000, ${or('i')} = 0.12, ${gr('n')} = 5:<br>${re('A')} = ${bl('320 000')}(1 − ${or('0.12')})<sup style="color:#16a34a;font-weight:700;">5</sup>`,
+            `Simplify the bracket: (1 − ${or('0.12')}) = 0.88`,
+            `Calculate the power: (0.88)<sup style="color:#16a34a;font-weight:700;">5</sup> ≈ 0.52773`,
+            `Multiply: ${re('A')} = ${bl('320 000')} × 0.52773 ≈ <strong>R168 874</strong> ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'A laptop valued at R12 000 depreciates using simple decay at 20% per year. Calculate its value after 3 years.',
+          answer: 'R4 800',
+          checkMode: 'auto',
+          correctAnswer: 'R4800',
+          correctAnswers: ['R4800', '4800', 'R4 800', '4 800'],
+          explanation: 'A = P(1 − ni)\nA = 12 000(1 − 3 × 0.20)\nA = 12 000(1 − 0.60)\nA = 12 000 × 0.40\nA = R4 800 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'A generator valued at R60 000 depreciates at 10% per year.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Find its value after 5 years using simple decay.',
+              correctAnswer: 'R30000',
+              correctAnswers: ['R30000', '30000', 'R30 000', '30 000'],
+              explanation: 'A = 60 000(1 − 5 × 0.10) = 60 000(0.50) = R30 000 ✓',
+            },
+            {
+              label: 'b) Find its value after 5 years using compound decay (round to 2 decimal places).',
+              correctAnswer: 'R35429.40',
+              correctAnswers: ['R35429.40', '35429.40', 'R35 429.40', '35 429.40'],
+              explanation: 'A = 60 000(0.90)⁵\n(0.90)⁵ = 0.59049\nA = 60 000 × 0.59049 = R35 429.40 ✓',
+            },
+            {
+              label: 'c) Find the difference between the two values (round to 2 decimal places).',
+              correctAnswer: 'R5429.40',
+              correctAnswers: ['R5429.40', '5429.40', 'R5 429.40', '5 429.40'],
+              explanation: 'Difference = R35 429.40 − R30 000 = R5 429.40 (compound decay keeps more value) ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: "A car valued at R200 000 depreciates at 15% per year over 3 years. Compare its value using simple decay versus compound decay, and explain why compound decay is considered more realistic for modelling a car's resale value.",
+          answer: 'Simple decay: A = 200 000(1 − 3 × 0.15) = 200 000(0.55) = R110 000. Compound decay: A = 200 000(0.85)³ ≈ 200 000 × 0.614125 ≈ R122 825. Compound decay gives a higher (more realistic) resale value because each year\'s loss is a percentage of the already-reduced value — so the rand amount lost shrinks over time, matching how second-hand cars actually depreciate (fast at first, then more slowly), rather than losing the same fixed amount every year.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video explaining simple decay formula A=P(1-ni) and compound decay formula A=P(1-i)^n with colour coded worked examples showing car and machine depreciation contexts" />',
+
+      diagramPlaceholder:
+        'Linear graph of A against n for simple decay showing constant straight-line decline, with the same amount subtracted every year (compound decay would curve instead, decreasing more slowly as the value shrinks)',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">A</text><line x1="30" y1="40" x2="190" y2="145" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="30" cy="40" r="4" fill="#2563eb"/><text x="20" y="47" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><circle cx="70" cy="65.25" r="3" fill="#ea580c"/><circle cx="110" cy="92.5" r="3" fill="#ea580c"/><circle cx="150" cy="119.75" r="3" fill="#ea580c"/><line x1="70" y1="65.25" x2="110" y2="65.25" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="65.25" x2="110" y2="92.5" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="92.5" x2="150" y2="92.5" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="150" y1="92.5" x2="150" y2="119.75" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><text x="90" y="55" font-size="8" fill="#16a34a" font-weight="700" text-anchor="middle">Δn</text><text x="130" y="82" font-size="8" fill="#16a34a" font-weight="700" text-anchor="middle">Δn</text><circle cx="190" cy="145" r="4" fill="#dc2626"/><text x="196" y="138" font-size="11" fill="#dc2626" font-weight="700">A</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">same amount lost every year → straight line</text></svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SOLVING FOR n
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'solving-for-n',
@@ -430,7 +562,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — FOREIGN EXCHANGE RATES
+    // SECTION 5 — FOREIGN EXCHANGE RATES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'foreign-exchange-rates',
@@ -577,7 +709,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — HIRE PURCHASE
+    // SECTION 6 — HIRE PURCHASE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'hire-purchase',
@@ -749,7 +881,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 6 — INFLATION
+    // SECTION 7 — INFLATION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'inflation',
@@ -891,7 +1023,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 7 — POPULATION GROWTH
+    // SECTION 8 — POPULATION GROWTH
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'population-growth',
@@ -1157,8 +1289,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'A car valued at R250,000 depreciates using simple decay at 12% per year. Find its value after 5 years.',
-      answer: 'A = P(1 − ni) = 250 000(1 − 5 × 0.12) = 250 000(0.4) = R100,000.',
-      checkMode: 'self',
+      answer: 'R100,000',
+      checkMode: 'auto',
+      correctAnswer: 'R100000',
+      correctAnswers: ['R100000', '100000', 'R100 000', '100 000', 'R100,000'],
+      explanation: 'A = P(1 − ni) = 250 000(1 − 5 × 0.12) = 250 000(0.4) = R100 000 ✓',
     },
 
     // ── Q16 Hard ──────────────────────────────────────────────────────────────

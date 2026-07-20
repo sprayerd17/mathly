@@ -306,7 +306,139 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SOLVING FOR n
+    // SECTION 3 — SIMPLE AND COMPOUND DECAY
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'simple-and-compound-decay',
+      title: 'Enkelvoudige en Saamgestelde Verval — A = P(1 − ni) en A = P(1 − i)ⁿ',
+      icon: '↓',
+      explanation:
+        `<p style="margin-bottom:16px;">Verval beskryf ʼn bedrag wat oor tyd <em>afneem</em> — meestal die waardevermindering (verlies aan waarde) van ʼn bate soos ʼn motor, masjien, of stuk toerusting. Net soos groei, kom verval in twee vorme voor: <strong>enkelvoudige verval</strong>, waar dieselfde randbedrag elke tydperk van die ${bl('hoofsom')} afgetrek word, en <strong>saamgestelde verval</strong>, waar ʼn persentasie van die <em>huidige</em> (reeds-verminderde) waarde elke tydperk afgetrek word. Die formules is ${re('A')} = ${bl('P')}(1 − ${gr('n')} × ${or('i')}) vir enkelvoudige verval en ${re('A')} = ${bl('P')}(1 − ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup> vir saamgestelde verval — spieëlbeelde van enkelvoudige en saamgestelde groei, maar met ʼn minusteken.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('hoofsom P')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('koers i')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('tyd n')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('finale bedrag A')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die enkelvoudige-verval-formule</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 − ${gr('n')} × ${or('i')})</p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">dieselfde bedrag word elke tydperk afgetrek — gebruik vir reguitlyn (boekwaarde) waardevermindering</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die saamgestelde-verval-formule</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.5em;font-weight:700;color:#374151;margin:0 0 8px 0;">${re('A')} = ${bl('P')}(1 − ${or('i')})<sup style="font-weight:700;color:#16a34a;">n</sup></p>` +
+        `<p style="font-size:0.9em;color:#6b7280;margin:0;">ʼn persentasie van die huidige waarde word elke tydperk afgetrek — gebruik vir verminderende-balans (herverkoop-/markwaarde) waardevermindering</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Enkelvoudige teenoor saamgestelde verval vergelyk</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Enkelvoudige Verval</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Dieselfde randbedrag word elke tydperk afgetrek, gebaseer op die oorspronklike ${bl('hoofsom')}.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Waarde neem in ʼn <strong>reguit lyn</strong> af — algemeen gebruik vir boekwaarde (belasting) waardevermindering.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Saamgestelde Verval</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">ʼn Persentasie van die ${bl('huidige')} (reeds-verminderde) waarde word elke tydperk afgetrek.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Waarde neem <strong>eksponensieel</strong> af — die randbedrag wat verloor word, krimp elke jaar namate die waarde krimp.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Saamgestelde verval is meer realisties</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Die meeste bates — motors, masjinerie, elektronika — verloor eintlik waarde soos <strong>saamgestelde verval</strong> beskryf: ʼn persentasie van wat die item tans werd is. Dit beteken die randwaarde wat verloor word, krimp jaar na jaar, wat ooreenstem met hoe tweedehandse pryse werklik optree. <strong>Enkelvoudige verval</strong> word hoofsaaklik vir rekeningkundige doeleindes gebruik, waar ʼn besigheid ʼn voorspelbare, reguitlyn-boekwaarde vir belastingberekenings benodig.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Afleweringsvoertuig ter waarde van R280 000 verval deur enkelvoudige verval teen 15% per jaar. Vind sy waarde na 4 jaar.',
+          answer: `${re('A')} = ${re('R112 000')}`,
+          steps: [
+            `Skryf die formule neer: ${re('A')} = ${bl('P')}(1 − ${gr('n')} × ${or('i')})`,
+            `Vervang die waardes — ${bl('P')} = R280 000, ${gr('n')} = 4, ${or('i')} = 0,15:<br>${re('A')} = ${bl('280 000')}(1 − ${gr('4')} × ${or('0,15')})`,
+            `Bereken die hakie: ${gr('4')} × ${or('0,15')} = 0,60, dus (1 − 0,60) = 0,40`,
+            `Vermenigvuldig: ${re('A')} = ${bl('280 000')} × 0,40 = <strong>R112 000</strong> ✓`,
+          ],
+        },
+        {
+          question: 'ʼn Motor ter waarde van R320 000 verval deur saamgestelde verval teen 12% per jaar. Vind sy waarde na 5 jaar (rond af na die naaste rand).',
+          answer: `${re('A')} ≈ ${re('R168 874')}`,
+          steps: [
+            `Skryf die formule neer: ${re('A')} = ${bl('P')}(1 − ${or('i')})<sup>n</sup>`,
+            `Vervang: ${bl('P')} = R320 000, ${or('i')} = 0,12, ${gr('n')} = 5:<br>${re('A')} = ${bl('320 000')}(1 − ${or('0,12')})<sup style="color:#16a34a;font-weight:700;">5</sup>`,
+            `Vereenvoudig die hakie: (1 − ${or('0,12')}) = 0,88`,
+            `Bereken die mag: (0,88)<sup style="color:#16a34a;font-weight:700;">5</sup> ≈ 0,52773`,
+            `Vermenigvuldig: ${re('A')} = ${bl('320 000')} × 0,52773 ≈ <strong>R168 874</strong> ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Skootrekenaar ter waarde van R12 000 verval deur enkelvoudige verval teen 20% per jaar. Bereken sy waarde na 3 jaar.',
+          answer: 'R4 800',
+          checkMode: 'auto',
+          correctAnswer: 'R4800',
+          correctAnswers: ['R4800', '4800', 'R4 800', '4 800'],
+          explanation: 'A = P(1 − ni)\nA = 12 000(1 − 3 × 0,20)\nA = 12 000(1 − 0,60)\nA = 12 000 × 0,40\nA = R4 800 ✓',
+        },
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Kragopwekker ter waarde van R60 000 verval teen 10% per jaar.',
+          answer: '',
+          checkMode: 'auto',
+          parts: [
+            {
+              label: 'a) Vind sy waarde na 5 jaar met enkelvoudige verval.',
+              correctAnswer: 'R30000',
+              correctAnswers: ['R30000', '30000', 'R30 000', '30 000'],
+              explanation: 'A = 60 000(1 − 5 × 0,10) = 60 000(0,50) = R30 000 ✓',
+            },
+            {
+              label: 'b) Vind sy waarde na 5 jaar met saamgestelde verval (rond af tot 2 desimale plekke).',
+              correctAnswer: 'R35429,40',
+              correctAnswers: ['R35429.40', '35429.40', 'R35 429.40', '35 429.40'],
+              explanation: 'A = 60 000(0,90)⁵\n(0,90)⁵ = 0,59049\nA = 60 000 × 0,59049 = R35 429,40 ✓',
+            },
+            {
+              label: 'c) Vind die verskil tussen die twee waardes (rond af tot 2 desimale plekke).',
+              correctAnswer: 'R5429,40',
+              correctAnswers: ['R5429.40', '5429.40', 'R5 429.40', '5 429.40'],
+              explanation: 'Verskil = R35 429,40 − R30 000 = R5 429,40 (saamgestelde verval behou meer waarde) ✓',
+            },
+          ],
+        },
+        {
+          difficulty: 'Hard',
+          question: "ʼn Motor ter waarde van R200 000 verval teen 15% per jaar oor 3 jaar. Vergelyk sy waarde met enkelvoudige verval teenoor saamgestelde verval, en verduidelik waarom saamgestelde verval as meer realisties beskou word om ʼn motor se herverkoopwaarde te modelleer.",
+          answer: 'Enkelvoudige verval: A = 200 000(1 − 3 × 0,15) = 200 000(0,55) = R110 000. Saamgestelde verval: A = 200 000(0,85)³ ≈ 200 000 × 0,614125 ≈ R122 825. Saamgestelde verval gee ʼn hoër (meer realistiese) herverkoopwaarde omdat elke jaar se verlies ʼn persentasie van die reeds-verminderde waarde is — sodat die randbedrag wat verloor word oor tyd krimp, wat ooreenstem met hoe tweedehandse motors werklik in waarde verminder (vinnig aan die begin, dan stadiger), eerder as om elke jaar dieselfde vaste bedrag te verloor.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat die enkelvoudige-verval-formule A=P(1-ni) en die saamgestelde-verval-formule A=P(1-i)^n verduidelik met kleurgekodeerde uitgewerkte voorbeelde oor motor- en masjienwaardevermindering" />',
+
+      diagramPlaceholder:
+        'Lineêre grafiek van A teenoor n vir enkelvoudige verval wat konstante reguitlyn-afname wys, met dieselfde bedrag wat elke jaar afgetrek word (saamgestelde verval sou eerder krom wees, en stadiger afneem namate die waarde krimp)',
+
+      diagramSvg:
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">A</text><line x1="30" y1="40" x2="190" y2="145" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="30" cy="40" r="4" fill="#2563eb"/><text x="20" y="47" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><circle cx="70" cy="65.25" r="3" fill="#ea580c"/><circle cx="110" cy="92.5" r="3" fill="#ea580c"/><circle cx="150" cy="119.75" r="3" fill="#ea580c"/><line x1="70" y1="65.25" x2="110" y2="65.25" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="65.25" x2="110" y2="92.5" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="92.5" x2="150" y2="92.5" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="150" y1="92.5" x2="150" y2="119.75" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><text x="90" y="55" font-size="8" fill="#16a34a" font-weight="700" text-anchor="middle">Δn</text><text x="130" y="82" font-size="8" fill="#16a34a" font-weight="700" text-anchor="middle">Δn</text><circle cx="190" cy="145" r="4" fill="#dc2626"/><text x="196" y="138" font-size="11" fill="#dc2626" font-weight="700">A</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">dieselfde bedrag elke jaar verloor → reguit lyn</text></svg>',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SOLVING FOR n
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'solving-for-n',
@@ -430,7 +562,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — FOREIGN EXCHANGE RATES
+    // SECTION 5 — FOREIGN EXCHANGE RATES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'foreign-exchange-rates',
@@ -577,7 +709,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — HUURKOOP
+    // SECTION 6 — HUURKOOP
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'hire-purchase',
@@ -749,7 +881,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 6 — INFLASIE
+    // SECTION 7 — INFLASIE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'inflation',
@@ -891,7 +1023,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 7 — BEVOLKINGSGROEI
+    // SECTION 8 — BEVOLKINGSGROEI
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'population-growth',
@@ -1157,8 +1289,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'ʼn Motor met ʼn waarde van R250 000 verval deur enkelvoudige verval teen 12% per jaar. Vind sy waarde na 5 jaar.',
-      answer: 'A = P(1 − ni) = 250 000(1 − 5 × 0,12) = 250 000(0,4) = R100 000.',
-      checkMode: 'self',
+      answer: 'R100 000',
+      checkMode: 'auto',
+      correctAnswer: 'R100000',
+      correctAnswers: ['R100000', '100000', 'R100 000', '100 000'],
+      explanation: 'A = P(1 − ni) = 250 000(1 − 5 × 0,12) = 250 000(0,4) = R100 000 ✓',
     },
 
     // ── V16 Hard ──────────────────────────────────────────────────────────────
