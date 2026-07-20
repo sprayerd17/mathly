@@ -147,7 +147,140 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — LAWS OF EXPONENTS FOR RATIONAL EXPONENTS
+    // SECTION 2 — THE QUADRATIC FORMULA
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'quadratic-formula',
+      title: 'The Quadratic Formula',
+      icon: '±√Δ',
+      explanation:
+        `<p style="margin-bottom:16px;">The <strong>quadratic formula</strong> lets us solve any quadratic equation of the form ax² + bx + c = 0 (a ≠ 0) directly. It states that <strong>x = (−b ± √(b²−4ac)) / 2a</strong>. Look closely at what is under the root sign: b²−4ac is exactly the <strong>discriminant</strong> we met earlier. So the formula can be written more compactly as x = (−b ± √Δ) / 2a — once you know Δ, you already have the hardest part of the formula calculated.</p>` +
+
+        // ── Colour key ───────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('discriminant')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('root taken')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('real solutions')}</span>` +
+        `</div>` +
+
+        // ── Formula box ──────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The quadratic formula</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.15em;font-weight:700;color:#374151;margin:0;">For ax² + bx + c = 0 (a ≠ 0): ${bl('x')} = (−b ± ${or('√Δ')}) / 2a, where ${gr('Δ = b² − 4ac')}</p>` +
+        `<p style="font-size:13px;color:#6b7280;margin-top:8px;margin-bottom:0;">Calculate the ${gr('discriminant')} first, then ${or('take its square root')} to complete the formula.</p>` +
+        `</div>` +
+
+        // ── Steps list ───────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Steps to solve using the formula</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Write the equation in ${bl('standard form')} ax² + bx + c = 0, then identify a, b and c.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Calculate the ${gr('discriminant')}: ${gr('Δ = b² − 4ac')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Take the square root')} of the discriminant, ${or('√Δ')}, simplifying it as a surd if it is not a perfect square.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">Substitute a, b and ${or('√Δ')} into ${bl('x = (−b ± √Δ) / 2a')} and simplify both solutions.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Where does the formula come from?</p>` +
+        `<p style="margin:0;color:#7c2d12;">The quadratic formula is derived by <strong>completing the square</strong> on the general equation ax² + bx + c = 0: divide through by a, move c across, add (b/2a)² to both sides to form a perfect square on the left, then take the square root of both sides and isolate x. You do not need to redo this derivation each time — the result, x = (−b ± √Δ)/2a, works for every quadratic equation.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Solve x² + 3x − 10 = 0 using the quadratic formula.',
+          answer: `x = ${gr('2')} or x = ${gr('−5')}`,
+          steps: [
+            `Identify the coefficients: a = 1, b = 3, c = −10.`,
+            `Calculate the ${gr('discriminant')}: ${gr('Δ = b² − 4ac')} = (3)² − 4(1)(−10) = 9 + 40 = ${gr('49')}.`,
+            `${or('Take the square root')}: ${or('√49 = 7')}.`,
+            `Substitute into the formula: x = (−3 ± 7) / 2(1) = (−3 ± 7) / 2.`,
+            `Split into the two solutions: x = (−3 + 7)/2 = ${gr('4/2 = 2')}, or x = (−3 − 7)/2 = ${gr('−10/2 = −5')}.`,
+            `<strong>Answer:</strong> x = ${gr('2')} or x = ${gr('−5')} ✓ (check: 2² + 3(2) − 10 = 4 + 6 − 10 = 0 ✓)`,
+          ],
+        },
+        {
+          question: 'A quadratic pattern gives the equation 2n² + n − 105 = 0, where n is a positive term number. Solve for n using the quadratic formula.',
+          answer: `n = ${gr('7')} (rejecting the negative root)`,
+          steps: [
+            `Identify the coefficients: a = 2, b = 1, c = −105.`,
+            `Calculate the ${gr('discriminant')}: ${gr('Δ = b² − 4ac')} = (1)² − 4(2)(−105) = 1 + 840 = ${gr('841')}.`,
+            `${or('Take the square root')}: ${or('√841 = 29')} (841 is a perfect square).`,
+            `Substitute into the formula: n = (−1 ± 29) / 2(2) = (−1 ± 29) / 4.`,
+            `Split into the two solutions: n = (−1 + 29)/4 = ${gr('28/4 = 7')}, or n = (−1 − 29)/4 = ${gr('−30/4 = −7.5')}.`,
+            `Since n must be a ${bl('positive')} term number, reject n = −7.5.`,
+            `<strong>Answer:</strong> n = ${gr('7')} ✓`,
+          ],
+        },
+        {
+          question: 'Solve 3x² − 4x − 2 = 0 using the quadratic formula, giving your answer as simplified surds.',
+          answer: `x = ${gr('(2 ± √10) / 3')}`,
+          steps: [
+            `Identify the coefficients: a = 3, b = −4, c = −2.`,
+            `Calculate the ${gr('discriminant')}: ${gr('Δ = b² − 4ac')} = (−4)² − 4(3)(−2) = 16 + 24 = ${gr('40')}.`,
+            `Since 40 is not a perfect square, ${or('take the square root')} and simplify it as a surd: ${or('√40 = √(4 × 10) = 2√10')}.`,
+            `Substitute into the formula: x = (4 ± ${or('2√10')}) / 2(3) = (4 ± 2√10) / 6.`,
+            `Simplify by dividing every term by the common factor 2: x = ${gr('(2 ± √10) / 3')}.`,
+            `<strong>Answer:</strong> x = ${gr('(2 ± √10) / 3')} — these are irrational (surd) solutions, since Δ = 40 is positive but not a perfect square ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q23 Easy ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Solve x² − x − 6 = 0 using the quadratic formula. If x represents a positive length, state its value.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'a=1, b=−1, c=−6. Δ=(−1)²−4(1)(−6)=1+24=25. √25=5. x=(1±5)/2, so x=3 or x=−2. Since x is a positive length, x=3.',
+        },
+
+        // ── Q24 Medium ────────────────────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Solve 2x² − 7x − 4 = 0 using the quadratic formula. If x represents a positive quantity, state its value.',
+          answer: '4',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          explanation: 'a=2, b=−7, c=−4. Δ=(−7)²−4(2)(−4)=49+32=81. √81=9. x=(7±9)/4, so x=4 or x=−0.5. Since x is positive, x=4.',
+        },
+
+        // ── Q25 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Solve 3x² − 6x − 2 = 0 using the quadratic formula, giving your answer as simplified surds. Explain why the solutions are irrational.',
+          answer: 'a=3, b=−6, c=−2. Δ=(−6)²−4(3)(−2)=36+24=60. √60=2√15. x=(6±2√15)/6=(3±√15)/3. The solutions are irrational because Δ=60 is positive (two real solutions exist) but is not a perfect square, so √Δ cannot be simplified to a whole number.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video deriving the quadratic formula from completing the square, connecting it to the discriminant, and using it to solve quadratic equations including those with surd solutions" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — LAWS OF EXPONENTS FOR RATIONAL EXPONENTS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'rational-exponents',
@@ -279,7 +412,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — ADDING, SUBTRACTING, MULTIPLYING AND DIVIDING SIMPLE SURDS
+    // SECTION 4 — ADDING, SUBTRACTING, MULTIPLYING AND DIVIDING SIMPLE SURDS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'surds',
@@ -419,7 +552,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — ERROR MARGINS
+    // SECTION 5 — ERROR MARGINS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'error-margins',
@@ -567,7 +700,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — INVESTIGATING QUADRATIC NUMBER PATTERNS
+    // SECTION 6 — INVESTIGATING QUADRATIC NUMBER PATTERNS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'quadratic-number-patterns',

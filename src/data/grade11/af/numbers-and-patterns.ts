@@ -147,7 +147,140 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — LAWS OF EXPONENTS FOR RATIONAL EXPONENTS
+    // SECTION 2 — THE QUADRATIC FORMULA
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'quadratic-formula',
+      title: 'Die Kwadratiese Formule',
+      icon: '±√Δ',
+      explanation:
+        `<p style="margin-bottom:16px;">Die <strong>kwadratiese formule</strong> laat ons toe om enige kwadratiese vergelyking van die vorm ax² + bx + c = 0 (a ≠ 0) direk op te los. Dit lui: <strong>x = (−b ± √(b²−4ac)) / 2a</strong>. Kyk mooi na wat onder die worteltekens staan: b²−4ac is presies die <strong>diskriminant</strong> wat ons vroeër teëgekom het. Die formule kan dus meer kompak geskryf word as x = (−b ± √Δ) / 2a — sodra jy Δ ken, het jy reeds die moeilikste deel van die formule bereken.</p>` +
+
+        // ── Colour key ───────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('diskriminant')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('wortel geneem')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('reële oplossings')}</span>` +
+        `</div>` +
+
+        // ── Formula box ──────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die kwadratiese formule</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.15em;font-weight:700;color:#374151;margin:0;">Vir ax² + bx + c = 0 (a ≠ 0): ${bl('x')} = (−b ± ${or('√Δ')}) / 2a, waar ${gr('Δ = b² − 4ac')}</p>` +
+        `<p style="font-size:13px;color:#6b7280;margin-top:8px;margin-bottom:0;">Bereken eers die ${gr('diskriminant')}, en ${or('neem dan die vierkantswortel')} daarvan om die formule te voltooi.</p>` +
+        `</div>` +
+
+        // ── Steps list ───────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Stappe om met die formule op te los</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Skryf die vergelyking in ${bl('standaardvorm')} ax² + bx + c = 0, en identifiseer dan a, b en c.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">Bereken die ${gr('diskriminant')}: ${gr('Δ = b² − 4ac')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Neem die vierkantswortel')} van die diskriminant, ${or('√Δ')}, en vereenvoudig dit as ʼn wortelvorm indien dit nie ʼn volkome vierkant is nie.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">Vervang a, b en ${or('√Δ')} in ${bl('x = (−b ± √Δ) / 2a')} en vereenvoudig altwee oplossings.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Waar kom die formule vandaan?</p>` +
+        `<p style="margin:0;color:#7c2d12;">Die kwadratiese formule word afgelei deur die <strong>vierkant te voltooi</strong> op die algemene vergelyking ax² + bx + c = 0: deel deur a, skuif c oor, tel (b/2a)² by beide kante om ʼn volkome vierkant aan die linkerkant te vorm, en neem dan die vierkantswortel van beide kante en isoleer x. Jy hoef nie hierdie afleiding elke keer te herhaal nie — die resultaat, x = (−b ± √Δ)/2a, werk vir elke kwadratiese vergelyking.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Los x² + 3x − 10 = 0 op met die kwadratiese formule.',
+          answer: `x = ${gr('2')} of x = ${gr('−5')}`,
+          steps: [
+            `Identifiseer die koëffisiënte: a = 1, b = 3, c = −10.`,
+            `Bereken die ${gr('diskriminant')}: ${gr('Δ = b² − 4ac')} = (3)² − 4(1)(−10) = 9 + 40 = ${gr('49')}.`,
+            `${or('Neem die vierkantswortel')}: ${or('√49 = 7')}.`,
+            `Vervang in die formule: x = (−3 ± 7) / 2(1) = (−3 ± 7) / 2.`,
+            `Skei in die twee oplossings: x = (−3 + 7)/2 = ${gr('4/2 = 2')}, of x = (−3 − 7)/2 = ${gr('−10/2 = −5')}.`,
+            `<strong>Antwoord:</strong> x = ${gr('2')} of x = ${gr('−5')} ✓ (kontroleer: 2² + 3(2) − 10 = 4 + 6 − 10 = 0 ✓)`,
+          ],
+        },
+        {
+          question: 'ʼn Kwadratiese patroon lewer die vergelyking 2n² + n − 105 = 0, waar n ʼn positiewe termnommer is. Los op vir n met die kwadratiese formule.',
+          answer: `n = ${gr('7')} (die negatiewe wortel word verwerp)`,
+          steps: [
+            `Identifiseer die koëffisiënte: a = 2, b = 1, c = −105.`,
+            `Bereken die ${gr('diskriminant')}: ${gr('Δ = b² − 4ac')} = (1)² − 4(2)(−105) = 1 + 840 = ${gr('841')}.`,
+            `${or('Neem die vierkantswortel')}: ${or('√841 = 29')} (841 is ʼn volkome vierkant).`,
+            `Vervang in die formule: n = (−1 ± 29) / 2(2) = (−1 ± 29) / 4.`,
+            `Skei in die twee oplossings: n = (−1 + 29)/4 = ${gr('28/4 = 7')}, of n = (−1 − 29)/4 = ${gr('−30/4 = −7,5')}.`,
+            `Aangesien n ʼn ${bl('positiewe')} termnommer moet wees, verwerp ons n = −7,5.`,
+            `<strong>Antwoord:</strong> n = ${gr('7')} ✓`,
+          ],
+        },
+        {
+          question: 'Los 3x² − 4x − 2 = 0 op met die kwadratiese formule, en gee jou antwoord as vereenvoudigde wortelvorme.',
+          answer: `x = ${gr('(2 ± √10) / 3')}`,
+          steps: [
+            `Identifiseer die koëffisiënte: a = 3, b = −4, c = −2.`,
+            `Bereken die ${gr('diskriminant')}: ${gr('Δ = b² − 4ac')} = (−4)² − 4(3)(−2) = 16 + 24 = ${gr('40')}.`,
+            `Aangesien 40 nie ʼn volkome vierkant is nie, ${or('neem die vierkantswortel')} en vereenvoudig dit as ʼn wortelvorm: ${or('√40 = √(4 × 10) = 2√10')}.`,
+            `Vervang in die formule: x = (4 ± ${or('2√10')}) / 2(3) = (4 ± 2√10) / 6.`,
+            `Vereenvoudig deur elke term deur die gemeenskaplike faktor 2 te deel: x = ${gr('(2 ± √10) / 3')}.`,
+            `<strong>Antwoord:</strong> x = ${gr('(2 ± √10) / 3')} — dit is irrasionale (wortelvorm-)oplossings, aangesien Δ = 40 positief is maar nie ʼn volkome vierkant nie ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q23 Easy ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Los x² − x − 6 = 0 op met die kwadratiese formule. As x ʼn positiewe lengte verteenwoordig, gee die waarde daarvan.',
+          answer: '3',
+          checkMode: 'auto',
+          correctAnswer: '3',
+          explanation: 'a=1, b=−1, c=−6. Δ=(−1)²−4(1)(−6)=1+24=25. √25=5. x=(1±5)/2, dus x=3 of x=−2. Aangesien x ʼn positiewe lengte is, is x=3.',
+        },
+
+        // ── Q24 Medium ────────────────────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Los 2x² − 7x − 4 = 0 op met die kwadratiese formule. As x ʼn positiewe hoeveelheid verteenwoordig, gee die waarde daarvan.',
+          answer: '4',
+          checkMode: 'auto',
+          correctAnswer: '4',
+          explanation: 'a=2, b=−7, c=−4. Δ=(−7)²−4(2)(−4)=49+32=81. √81=9. x=(7±9)/4, dus x=4 of x=−0,5. Aangesien x positief is, is x=4.',
+        },
+
+        // ── Q25 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Los 3x² − 6x − 2 = 0 op met die kwadratiese formule, en gee jou antwoord as vereenvoudigde wortelvorme. Verduidelik waarom die oplossings irrasionaal is.',
+          answer: 'a=3, b=−6, c=−2. Δ=(−6)²−4(3)(−2)=36+24=60. √60=2√15. x=(6±2√15)/6=(3±√15)/3. Die oplossings is irrasionaal omdat Δ=60 positief is (twee reële oplossings bestaan) maar nie ʼn volkome vierkant is nie, dus kan √Δ nie tot ʼn heelgetal vereenvoudig word nie.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat die kwadratiese formule aflei deur die vierkant te voltooi, dit met die diskriminant verbind, en dit gebruik om kwadratiese vergelykings op te los, insluitend dié met wortelvorm-oplossings" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — LAWS OF EXPONENTS FOR RATIONAL EXPONENTS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'rational-exponents',
@@ -279,7 +412,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — ADDING, SUBTRACTING, MULTIPLYING AND DIVIDING SIMPLE SURDS
+    // SECTION 4 — ADDING, SUBTRACTING, MULTIPLYING AND DIVIDING SIMPLE SURDS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'surds',
@@ -419,7 +552,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — ERROR MARGINS
+    // SECTION 5 — ERROR MARGINS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'error-margins',
@@ -567,7 +700,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — INVESTIGATING QUADRATIC NUMBER PATTERNS
+    // SECTION 6 — INVESTIGATING QUADRATIC NUMBER PATTERNS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'quadratic-number-patterns',

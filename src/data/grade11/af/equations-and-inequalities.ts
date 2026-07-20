@@ -4,10 +4,16 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // Section 1: factorisation method  → blue   (#2563eb)
 //            completing the square → orange (#ea580c)
 //            quadratic formula     → green  (#16a34a)
-// Section 2: critical values       → blue
+// Section 2: isolate the surd      → blue
+//            square both sides     → orange
+//            check for extraneous roots → green
+// Section 3: same base             → blue
+//            quadratic in form     → orange
+//            substitution          → green
+// Section 4: critical values       → blue
 //            sign of each interval → orange
 //            final solution        → green
-// Section 3: linear equation       → blue
+// Section 5: linear equation       → blue
 //            quadratic equation    → orange
 //            substitution result   → green
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
@@ -115,7 +121,200 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — QUADRATIC AND RATIONAL INEQUALITIES
+    // SECTION 2 — SOLVING SURD (RADICAL) EQUATIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'surd-equations',
+      title: 'Wortelvergelykings Oplos',
+      icon: '√',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Wortelvergelyking</strong> bevat die veranderlike onder ʼn vierkantswortelteken, byvoorbeeld √(2x + 3) = x. Om dit op te los: ${bl('isoleer die wortelterm')} aan een kant van die vergelyking, ${or('vierkant albei kante')} om die wortelteken te verwyder, en los die vergelyking wat oorbly op. Omdat vierkanting van albei kante ekstra oplossings kan skep wat nie werklik aan die oorspronklike vergelyking voldoen nie, moet jy altyd elke antwoord terug in die ${gr('oorspronklike vergelyking vervang om vir vreemde wortels te toets')} en enige wat faal, verwerp.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('isoleer die wortelterm')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('vierkant albei kante')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('toets vir vreemde wortels')}</span>` +
+        `</div>` +
+
+        // ── Steps ───────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Stappe om wortelvergelykings op te los</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Isoleer die wortelterm')} — herrangskik die vergelyking sodat die vierkantswortelterm alleen aan een kant is.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Vierkant albei kante')} van die vergelyking om die vierkantswortelteken te verwyder — onthou om die hele ander kant te vierkant, nie net elke term nie.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#6b7280;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Los die vergelyking wat oorbly op</strong> — dit is gewoonlik ʼn kwadratiese vergelyking, gebruik dus faktorisering of die kwadratiese formule.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Toets elke oplossing in die OORSPRONKLIKE vergelyking')} — vervang elke waarde terug voordat dit gevierkant is. Verwerp enige waarde wat nie aan die oorspronklike vergelyking voldoen nie; dit word vreemde wortels genoem.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Why extraneous roots occur ─────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Waarom vreemde wortels voorkom</p>` +
+        `<p style="margin:0;color:#7c2d12;">Die simbool √ dui altyd die <strong>nie-negatiewe</strong> vierkantswortel aan, so √(enigiets) kan nooit gelyk wees aan ʼn negatiewe getal nie. Wanneer albei kante van ʼn vergelyking gevierkant word, gaan hierdie inligting verlore — dit behandel ʼn moontlike negatiewe resultaat asof dit positief is. Dit is waarom vierkanting ʼn oplossing kan skep wat aan die gevierkantde vergelyking voldoen, maar nie aan die oorspronklike wortelvergelyking nie, en waarom toetsing nie opsioneel is nie.</p>` +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Vinnige toets voordat jy selfs vierkant</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As, nadat jy die ${bl('wortelterm geïsoleer')} het, die ander kant ʼn waarde is wat negatief moet wees (byvoorbeeld √(x + 3) = −5), kan jy dadelik aflei dat daar geen oplossing is nie — ʼn vierkantswortel kan nooit gelyk wees aan ʼn negatiewe getal nie, so daar is geen nodigheid om ${or('albei kante te vierkant')} nie.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Los op vir x: √(5x + 14) = x',
+          answer: `${gr('x = 7')} (x = −2 word verwerp)`,
+          steps: [
+            `${bl('Die wortelterm is reeds geïsoleer:')} √(5x + 14) = x`,
+            `${or('Vierkant albei kante:')} 5x + 14 = x²`,
+            `Herrangskik in standaardvorm en los op: x² − 5x − 14 = 0 → (x − 7)(x + 2) = 0, dus x = 7 of x = −2`,
+            `${gr('Toets albei oplossings in die oorspronklike vergelyking:')}<br>x = 7: √(5(7) + 14) = √49 = 7 = 7 ✓ geldig<br>x = −2: √(5(−2) + 14) = √4 = 2 ≠ −2 ✗ vreemde wortel — verwerp`,
+            `<strong>Oplossing:</strong> ${gr('x = 7')} slegs`,
+          ],
+        },
+        {
+          question: 'Los op vir x: √(2x + 8) = x, en toets vir vreemde wortels.',
+          answer: `${gr('x = 4')} (x = −2 word verwerp)`,
+          steps: [
+            `${bl('Die wortelterm is reeds geïsoleer:')} √(2x + 8) = x`,
+            `${or('Vierkant albei kante:')} 2x + 8 = x²`,
+            `Herrangskik in standaardvorm en los op: x² − 2x − 8 = 0 → (x − 4)(x + 2) = 0, dus x = 4 of x = −2`,
+            `${gr('Toets albei oplossings in die oorspronklike vergelyking:')}<br>x = 4: √(2(4) + 8) = √16 = 4 = 4 ✓ geldig<br>x = −2: √(2(−2) + 8) = √4 = 2 ≠ −2 ✗ vreemde wortel — verwerp`,
+            `<strong>Oplossing:</strong> ${gr('x = 4')} slegs`,
+          ],
+        },
+        {
+          question: 'Los op vir x: √(x + 3) = x − 3, en toets sorgvuldig vir vreemde wortels.',
+          answer: `${gr('x = 6')} (x = 1 word verwerp)`,
+          steps: [
+            `${bl('Die wortelterm is reeds geïsoleer:')} √(x + 3) = x − 3`,
+            `${or('Vierkant albei kante:')} x + 3 = (x − 3)² = x² − 6x + 9`,
+            `Herrangskik in standaardvorm en los op: x² − 7x + 6 = 0 → (x − 6)(x − 1) = 0, dus x = 6 of x = 1`,
+            `${gr('Toets albei oplossings in die oorspronklike vergelyking:')}<br>x = 6: √(6 + 3) = √9 = 3, en 6 − 3 = 3 ✓ geldig<br>x = 1: √(1 + 3) = √4 = 2, maar 1 − 3 = −2, en 2 ≠ −2 ✗ vreemde wortel — verwerp (ʼn vierkantswortel kan nooit gelyk wees aan ʼn negatiewe getal nie)`,
+            `<strong>Oplossing:</strong> ${gr('x = 6')} slegs`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om wortelvergelykings op te los deur die wortelterm te isoleer, albei kante te vierkant, en elke oplossing in die oorspronklike vergelyking vir vreemde wortels te toets" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — SOLVING EXPONENTIAL EQUATIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'exponential-equations',
+      title: 'Eksponensiële Vergelykings Oplos',
+      icon: 'ˣ',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Eksponensiële vergelyking</strong> is ʼn vergelyking waarin die veranderlike in die eksponent voorkom, byvoorbeeld 2^x = 8. Die mees algemene strategie is om ${bl('albei kante met dieselfde grondtal te skryf')}, aangesien as b^m = b^n (met b &gt; 0 en b ≠ 1) dan moet die eksponente gelyk wees: m = n. Sommige eksponensiële vergelykings is ${or('kwadraties van vorm')} — hulle kan nie na ʼn enkele mag aan elke kant herlei word nie, maar ʼn ${gr('vervanging')} soos y = b^x verander hulle in ʼn gewone kwadratiese vergelyking.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('dieselfde grondtal')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('kwadraties van vorm')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('vervanging')}</span>` +
+        `</div>` +
+
+        // ── Law box ─────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.2em;font-weight:700;color:#2563eb;margin:0;letter-spacing:0.02em;">As b^m = b^n dan m = n</p>` +
+        `<p style="font-size:13px;color:#374151;margin-top:10px;margin-bottom:0;">(waar b &gt; 0 en b ≠ 1) — sodra albei kante dieselfde grondtal deel, stel jy eenvoudig die eksponente gelyk.</p>` +
+        `</div>` +
+
+        // ── Two method cards ────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Twee oplossingstrategieë</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Dieselfde-Grondtal-Metode</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Skryf albei kante as magte van dieselfde grondtal, stel dan die eksponente gelyk en los die vergelyking vir x op.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;"><strong>Gebruik wanneer:</strong> albei kante as magte van dieselfde getal geskryf kan word, bv. 2^x = 32 = 2⁵.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Vervanging (Kwadratiese Vorm)</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Laat y = b^x om die vergelyking in ʼn kwadratiese vergelyking in y te verander. Los vir y op, en vervang dan terug om vir x op te los.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;"><strong>Gebruik wanneer:</strong> die vergelyking b^(2x)- en b^x-terme bevat, bv. 2^(2x) − 3·2^x + 2 = 0.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Powers reference ────────────────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Magte wat jy behoort te ken</p>` +
+        `<p style="margin:0;color:#7c2d12;">2² = 4, 2³ = 8, 2⁴ = 16, 2⁵ = 32, 2⁶ = 64 &nbsp;|&nbsp; 3² = 9, 3³ = 27, 3⁴ = 81 &nbsp;|&nbsp; 5² = 25, 5³ = 125, 5⁴ = 625. Om hierdie vinnig te herken, maak die ${bl('dieselfde-grondtal-metode')} baie vinniger.</p>` +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die kwadratiese vorm raaksien</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As ʼn vergelyking beide b^(2x) en b^x bevat, onthou dat b^(2x) = (b^x)². Gebruik die ${gr('vervanging')} y = b^x om die vergelyking as ʼn gewone ${or('kwadratiese vergelyking in y')} te herskryf, los dit op (deur te faktoriseer of die kwadratiese formule te gebruik), en verander dan elke y-waarde terug met b^x = y om x te vind.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Los op vir x: 2^x = 16',
+          answer: `${bl('x = 4')}`,
+          steps: [
+            `Skryf 16 as ʼn mag van 2: 16 = 2⁴.`,
+            `${bl('Dieselfde grondtal:')} 2^x = 2⁴`,
+            `Aangesien die grondtalle gelyk is, stel die eksponente gelyk: x = 4`,
+            `<strong>Oplossing:</strong> ${bl('x = 4')}`,
+          ],
+        },
+        {
+          question: 'Los op vir x: 3^(x−2) = 27',
+          answer: `${bl('x = 5')}`,
+          steps: [
+            `Skryf 27 as ʼn mag van 3: 27 = 3³.`,
+            `${bl('Dieselfde grondtal:')} 3^(x−2) = 3³`,
+            `Aangesien die grondtalle gelyk is, stel die eksponente gelyk: x − 2 = 3`,
+            `<strong>Oplossing:</strong> x = 3 + 2 = ${bl('5')}`,
+          ],
+        },
+        {
+          question: 'Los op vir x: 2^(2x) − 3 · 2^x + 2 = 0',
+          answer: `${gr('x = 0')} of ${gr('x = 1')}`,
+          steps: [
+            `Let daarop dat 2^(2x) = (2^x)². ${gr('Laat y = 2^x,')} sodat die vergelyking ʼn kwadratiese vergelyking in y word: y² − 3y + 2 = 0`,
+            `${or('Los die kwadratiese vergelyking op:')} Faktoriseer: (y − 1)(y − 2) = 0, dus y = 1 of y = 2`,
+            `Vervang terug met 2^x = y:<br>2^x = 1 = 2⁰ → x = 0<br>2^x = 2 = 2¹ → x = 1`,
+            `<strong>Oplossings:</strong> ${gr('x = 0')} of ${gr('x = 1')}`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om eksponensiële vergelykings op te los deur albei kante met dieselfde grondtal te skryf, en deur vervanging wanneer die vergelyking kwadraties van vorm is" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — QUADRATIC AND RATIONAL INEQUALITIES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'quadratic-rational-inequalities',
@@ -239,7 +438,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SOLVING SYSTEMS WITH ONE LINEAR AND ONE QUADRATIC EQUATION
+    // SECTION 5 — SOLVING SYSTEMS WITH ONE LINEAR AND ONE QUADRATIC EQUATION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'linear-quadratic-systems',

@@ -4,10 +4,16 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // Section 1: factorisation method  → blue   (#2563eb)
 //            completing the square → orange (#ea580c)
 //            quadratic formula     → green  (#16a34a)
-// Section 2: critical values       → blue
+// Section 2: isolate the surd      → blue
+//            square both sides     → orange
+//            check for extraneous roots → green
+// Section 3: same base             → blue
+//            quadratic in form     → orange
+//            substitution          → green
+// Section 4: critical values       → blue
 //            sign of each interval → orange
 //            final solution        → green
-// Section 3: linear equation       → blue
+// Section 5: linear equation       → blue
 //            quadratic equation    → orange
 //            substitution result   → green
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
@@ -115,7 +121,200 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 2 — QUADRATIC AND RATIONAL INEQUALITIES
+    // SECTION 2 — SOLVING SURD (RADICAL) EQUATIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'surd-equations',
+      title: 'Solving Surd (Radical) Equations',
+      icon: '√',
+      explanation:
+        `<p style="margin-bottom:16px;">A <strong>surd equation</strong> (or radical equation) contains the variable under a square root sign, for example √(2x + 3) = x. To solve one: ${bl('isolate the surd')} on one side of the equation, then ${or('square both sides')} to remove the root, and solve the equation that remains. Because squaring both sides can create extra solutions that do not actually satisfy the original equation, you must always substitute each answer back into the ${gr('original equation to check for extraneous roots')} and reject any that fail.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('isolate the surd')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('square both sides')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('check for extraneous roots')}</span>` +
+        `</div>` +
+
+        // ── Steps ───────────────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Steps for solving surd equations</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Isolate the surd')} — rearrange the equation so the square root term is alone on one side.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Square both sides')} of the equation to remove the square root sign — remember to square the entire other side, not just each term.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#6b7280;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Solve the resulting equation</strong> — this is usually a quadratic, so use factorisation or the quadratic formula.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Check every solution in the ORIGINAL equation')} — substitute each value back before squaring. Reject any value that does not satisfy the original equation; these are called extraneous roots.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Why extraneous roots occur ─────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Why extraneous roots occur</p>` +
+        `<p style="margin:0;color:#7c2d12;">The symbol √ always denotes the <strong>non-negative</strong> square root, so √(anything) can never equal a negative number. Squaring both sides of an equation loses this information — it treats a possible negative result as though it were positive. This is why squaring can introduce a solution that satisfies the squared equation but not the original surd equation, and why checking is not optional.</p>` +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Quick check before you even square</p>` +
+        `<p style="margin:0;color:#1e3a8a;">If, after you ${bl('isolate the surd')}, the other side is a value that must be negative (for example √(x + 3) = −5), you can immediately conclude there is no solution — a square root can never equal a negative number, so there is no need to ${or('square both sides')} at all.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Solve for x: √(5x + 14) = x',
+          answer: `${gr('x = 7')} (x = −2 is rejected)`,
+          steps: [
+            `${bl('The surd is already isolated:')} √(5x + 14) = x`,
+            `${or('Square both sides:')} 5x + 14 = x²`,
+            `Rearrange into standard form and solve: x² − 5x − 14 = 0 → (x − 7)(x + 2) = 0, so x = 7 or x = −2`,
+            `${gr('Check both solutions in the original equation:')}<br>x = 7: √(5(7) + 14) = √49 = 7 = 7 ✓ valid<br>x = −2: √(5(−2) + 14) = √4 = 2 ≠ −2 ✗ extraneous — rejected`,
+            `<strong>Solution:</strong> ${gr('x = 7')} only`,
+          ],
+        },
+        {
+          question: 'Solve for x: √(2x + 8) = x, checking for extraneous roots.',
+          answer: `${gr('x = 4')} (x = −2 is rejected)`,
+          steps: [
+            `${bl('The surd is already isolated:')} √(2x + 8) = x`,
+            `${or('Square both sides:')} 2x + 8 = x²`,
+            `Rearrange into standard form and solve: x² − 2x − 8 = 0 → (x − 4)(x + 2) = 0, so x = 4 or x = −2`,
+            `${gr('Check both solutions in the original equation:')}<br>x = 4: √(2(4) + 8) = √16 = 4 = 4 ✓ valid<br>x = −2: √(2(−2) + 8) = √4 = 2 ≠ −2 ✗ extraneous — rejected`,
+            `<strong>Solution:</strong> ${gr('x = 4')} only`,
+          ],
+        },
+        {
+          question: 'Solve for x: √(x + 3) = x − 3, checking carefully for extraneous roots.',
+          answer: `${gr('x = 6')} (x = 1 is rejected)`,
+          steps: [
+            `${bl('The surd is already isolated:')} √(x + 3) = x − 3`,
+            `${or('Square both sides:')} x + 3 = (x − 3)² = x² − 6x + 9`,
+            `Rearrange into standard form and solve: x² − 7x + 6 = 0 → (x − 6)(x − 1) = 0, so x = 6 or x = 1`,
+            `${gr('Check both solutions in the original equation:')}<br>x = 6: √(6 + 3) = √9 = 3, and 6 − 3 = 3 ✓ valid<br>x = 1: √(1 + 3) = √4 = 2, but 1 − 3 = −2, and 2 ≠ −2 ✗ extraneous — rejected (a square root can never equal a negative number)`,
+            `<strong>Solution:</strong> ${gr('x = 6')} only`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to solve surd equations by isolating the surd, squaring both sides, and checking every solution in the original equation for extraneous roots" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 3 — SOLVING EXPONENTIAL EQUATIONS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'exponential-equations',
+      title: 'Solving Exponential Equations',
+      icon: 'ˣ',
+      explanation:
+        `<p style="margin-bottom:16px;">An <strong>exponential equation</strong> is an equation in which the variable appears in the exponent, for example 2^x = 8. The most common strategy is to ${bl('write both sides with the same base')}, since if b^m = b^n (with b &gt; 0 and b ≠ 1) then the exponents must be equal: m = n. Some exponential equations are ${or('quadratic in form')} — they cannot be reduced to a single power on each side, but a ${gr('substitution')} such as y = b^x turns them into an ordinary quadratic equation.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('same base')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('quadratic in form')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('substitution')}</span>` +
+        `</div>` +
+
+        // ── Law box ─────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.2em;font-weight:700;color:#2563eb;margin:0;letter-spacing:0.02em;">If b^m = b^n then m = n</p>` +
+        `<p style="font-size:13px;color:#374151;margin-top:10px;margin-bottom:0;">(where b &gt; 0 and b ≠ 1) — once both sides share the same base, simply equate the exponents.</p>` +
+        `</div>` +
+
+        // ── Two method cards ────────────────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Two solving strategies</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:6px;">Same Base Method</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Rewrite both sides as powers of the same base, then equate the exponents and solve the resulting equation for x.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;"><strong>Use when:</strong> both sides can be expressed as powers of the same number, e.g. 2^x = 32 = 2⁵.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Substitution (Quadratic Form)</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Let y = b^x to turn the equation into a quadratic in y. Solve for y, then substitute back to solve for x.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;"><strong>Use when:</strong> the equation contains b^(2x) and b^x terms, e.g. 2^(2x) − 3·2^x + 2 = 0.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Powers reference ────────────────────────────────────────────────
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Powers worth knowing</p>` +
+        `<p style="margin:0;color:#7c2d12;">2² = 4, 2³ = 8, 2⁴ = 16, 2⁵ = 32, 2⁶ = 64 &nbsp;|&nbsp; 3² = 9, 3³ = 27, 3⁴ = 81 &nbsp;|&nbsp; 5² = 25, 5³ = 125, 5⁴ = 625. Recognising these quickly makes the ${bl('same base method')} much faster.</p>` +
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Spotting the quadratic form</p>` +
+        `<p style="margin:0;color:#1e3a8a;">If an equation has both b^(2x) and b^x, remember that b^(2x) = (b^x)². Use the ${gr('substitution')} y = b^x to rewrite the equation as an ordinary ${or('quadratic in y')}, solve it (by factorising or the quadratic formula), then convert each y-value back using b^x = y to find x.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Solve for x: 2^x = 16',
+          answer: `${bl('x = 4')}`,
+          steps: [
+            `Write 16 as a power of 2: 16 = 2⁴.`,
+            `${bl('Same base:')} 2^x = 2⁴`,
+            `Since the bases are equal, equate the exponents: x = 4`,
+            `<strong>Solution:</strong> ${bl('x = 4')}`,
+          ],
+        },
+        {
+          question: 'Solve for x: 3^(x−2) = 27',
+          answer: `${bl('x = 5')}`,
+          steps: [
+            `Write 27 as a power of 3: 27 = 3³.`,
+            `${bl('Same base:')} 3^(x−2) = 3³`,
+            `Since the bases are equal, equate the exponents: x − 2 = 3`,
+            `<strong>Solution:</strong> x = 3 + 2 = ${bl('5')}`,
+          ],
+        },
+        {
+          question: 'Solve for x: 2^(2x) − 3 · 2^x + 2 = 0',
+          answer: `${gr('x = 0')} or ${gr('x = 1')}`,
+          steps: [
+            `Notice that 2^(2x) = (2^x)². ${gr('Let y = 2^x,')} so the equation becomes a quadratic in y: y² − 3y + 2 = 0`,
+            `${or('Solve the quadratic:')} Factorise: (y − 1)(y − 2) = 0, so y = 1 or y = 2`,
+            `Substitute back using 2^x = y:<br>2^x = 1 = 2⁰ → x = 0<br>2^x = 2 = 2¹ → x = 1`,
+            `<strong>Solutions:</strong> ${gr('x = 0')} or ${gr('x = 1')}`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to solve exponential equations by writing both sides with the same base, and by substitution when the equation is quadratic in form" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — QUADRATIC AND RATIONAL INEQUALITIES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'quadratic-rational-inequalities',
@@ -239,7 +438,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SOLVING SYSTEMS WITH ONE LINEAR AND ONE QUADRATIC EQUATION
+    // SECTION 5 — SOLVING SYSTEMS WITH ONE LINEAR AND ONE QUADRATIC EQUATION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'linear-quadratic-systems',
