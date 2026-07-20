@@ -402,6 +402,12 @@ export const topicData: TopicData = {
         '<polyline points="357,46 365,50 357,54" fill="none" stroke="#16a34a" stroke-width="2"/>' +
         '<polyline points="441,46 449,50 441,54" fill="none" stroke="#16a34a" stroke-width="2"/>' +
         '<polyline points="437,46 445,50 437,54" fill="none" stroke="#16a34a" stroke-width="2"/>' +
+        '<line x1="366" y1="77" x2="366" y2="83" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="444" y1="17" x2="444" y2="23" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="447.6" y1="35.9" x2="454.7" y2="39.5" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="450.3" y1="30.5" x2="457.4" y2="34.1" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="362.4" y1="64.1" x2="355.3" y2="60.5" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="359.7" y1="69.5" x2="352.6" y2="65.9" stroke="#2563eb" stroke-width="2"/>' +
         '<text x="405" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Parallelogram</text>' +
         // Ruit
         '<polygon points="80,150 110,180 80,210 50,180" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
@@ -418,11 +424,11 @@ export const topicData: TopicData = {
         // Vlieër
         '<polygon points="400,150 428,178 400,222 372,178" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
         '<line x1="383" y1="161" x2="389" y2="167" stroke="#2563eb" stroke-width="2"/>' +
-        '<line x1="411" y1="161" x2="417" y2="167" stroke="#2563eb" stroke-width="2"/>' +
-        '<line x1="382" y1="196" x2="388" y2="202" stroke="#2563eb" stroke-width="2"/>' +
-        '<line x1="386" y1="198" x2="392" y2="204" stroke="#2563eb" stroke-width="2"/>' +
-        '<line x1="410" y1="198" x2="416" y2="204" stroke="#2563eb" stroke-width="2"/>' +
-        '<line x1="414" y1="196" x2="420" y2="202" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="411" y1="167" x2="417" y2="161" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="387.8" y1="195.3" x2="381" y2="199.6" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="391" y1="200.4" x2="384.2" y2="204.7" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="409" y1="200.4" x2="415.8" y2="204.7" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="412.2" y1="195.3" x2="419" y2="199.6" stroke="#2563eb" stroke-width="2"/>' +
         '<text x="400" y="243" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Vlieër</text>' +
         '</svg>',
 
