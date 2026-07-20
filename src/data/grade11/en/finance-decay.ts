@@ -852,11 +852,11 @@ export const topicData: TopicData = {
         `<line x1="30" y1="140" x2="220" y2="140" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<polygon points="228,140 218,136 218,144" fill="#0f1f3d"/>` +
         `<rect x="50" y="103" width="40" height="37" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
-        `<rect x="110" y="54" width="40" height="86" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
-        `<rect x="170" y="48" width="40" height="92" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="110" y="101" width="40" height="39" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="170" y="101" width="40" height="39" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
         `<text x="70" y="98" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.00%</text>` +
-        `<text x="130" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.68%</text>` +
-        `<text x="190" y="43" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.75%</text>` +
+        `<text x="130" y="96" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.68%</text>` +
+        `<text x="190" y="96" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12.75%</text>` +
         `<text x="70" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Annual</text>` +
         `<text x="70" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=1)</text>` +
         `<text x="130" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Monthly</text>` +
@@ -901,12 +901,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'R50 000 is invested at 8% p.a. compounded quarterly for the first 18 months. The interest rate then changes to 6% p.a. compounded monthly. Two years after the money is invested, R10 000 is withdrawn. Calculate how much is in the account after 4 years.',
-          answer: `${re('A ≈ R54 134')}`,
+          answer: `${re('A ≈ R54 124.65')}`,
           steps: [
-            `${bl('Phase 1 (0 to 18 months = 6 quarters at 8% p.a.):')} ${bl('A₁')} = ${bl('50 000')}(1 + 0.08 ÷ 4)<sup>6</sup> = ${bl('50 000')}(1.02)<sup>6</sup> = ${bl('50 000')} × 1.1262 = ${bl('R56 308')}.`,
-            `${gr('Phase 2 (18 to 24 months = 6 months at 6% p.a.):')} ${gr('A₂')} = ${bl('56 308')}(1 + 0.06 ÷ 12)<sup>6</sup> = ${bl('56 308')}(1.005)<sup>6</sup> = ${bl('56 308')} × 1.0304 = ${gr('R58 022')}.`,
-            `Withdrawal at 2 years: ${gr('R58 022')} − R10 000 = ${or('R48 022')}.`,
-            `${or('Phase 3 (24 to 48 months = 24 months at 6% p.a.):')} ${re('A₃')} = ${or('48 022')}(1.005)<sup>24</sup> = ${or('48 022')} × 1.1272 = ${re('R54 134')}.`,
+            `${bl('Phase 1 (0 to 18 months = 6 quarters at 8% p.a.):')} ${bl('A₁')} = ${bl('50 000')}(1 + 0.08 ÷ 4)<sup>6</sup> = ${bl('50 000')}(1.02)<sup>6</sup> = ${bl('50 000')} × 1.126162 = ${bl('R56 308.12')}.`,
+            `${gr('Phase 2 (18 to 24 months = 6 months at 6% p.a.):')} ${gr('A₂')} = ${bl('56 308.12')}(1 + 0.06 ÷ 12)<sup>6</sup> = ${bl('56 308.12')}(1.005)<sup>6</sup> = ${bl('56 308.12')} × 1.030378 = ${gr('R58 018.62')}.`,
+            `Withdrawal at 2 years: ${gr('R58 018.62')} − R10 000 = ${or('R48 018.62')}.`,
+            `${or('Phase 3 (24 to 48 months = 24 months at 6% p.a.):')} ${re('A₃')} = ${or('48 018.62')}(1.005)<sup>24</sup> = ${or('48 018.62')} × 1.127160 = ${re('R54 124.65')}.`,
           ],
         },
         {
@@ -1009,10 +1009,10 @@ export const topicData: TopicData = {
         `<polygon points="160,74 156,66 164,66" fill="#dc2626"/>` +
         `<text x="160" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">− R10 000</text>` +
         `<text x="30" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R50 000</text>` +
-        `<text x="127.5" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R56 308</text>` +
-        `<text x="290" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">R54 134</text>` +
-        `<text x="160" y="100" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">R58 022</text>` +
-        `<text x="160" y="112" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">→ R48 022</text>` +
+        `<text x="127.5" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R56 308.12</text>` +
+        `<text x="290" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">R54 124.65</text>` +
+        `<text x="160" y="100" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">R58 018.62</text>` +
+        `<text x="160" y="112" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">→ R48 018.62</text>` +
         `<text x="30" y="128" text-anchor="middle" font-size="9" fill="#6b7280">0 mo</text>` +
         `<text x="127.5" y="128" text-anchor="middle" font-size="9" fill="#6b7280">18 mo</text>` +
         `<text x="160" y="128" text-anchor="middle" font-size="9" fill="#6b7280">24 mo</text>` +
@@ -1064,7 +1064,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'A forklift worth R90,000 depreciates at 20% p.a. on the reducing-balance method. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '46080', correctAnswers: ['R46080', 'R46 080', '46080', '46 080', 'R46080.00', 'R46 080.00'], answer: 'R46 080', explanation: 'A = P(1 − i)ⁿ = 90 000(0.80)³ = 90 000 × 0.512 = R46 080 ✓' },
         { difficulty: 'Medium', question: 'A bus worth R150,000 depreciates at 15% p.a. on the reducing-balance method. Calculate its value after 5 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '66556', correctAnswers: ['R66556', 'R66 556', '66556', '66 556', 'R66555.80', 'R66555.8', 'R66 555.80'], answer: 'R66 555.80', explanation: 'A = 150 000(0.85)⁵ = 150 000 × 0.443705 ≈ R66 555.80 ✓' },
         { difficulty: 'Medium', question: 'A printer worth R40,000 depreciates on the reducing-balance method to R23,000 after 4 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '12.92', correctAnswers: ['12.92%', '12.92', '12.9%', '12.9'], answer: '12.92%', explanation: '23 000 = 40 000(1 − i)⁴\n0.575 = (1 − i)⁴\n1 − i = ⁴√0.575 = 0.870798\ni = 1 − 0.870798 = 0.129202 = 12.92% ✓' },
-        { difficulty: 'Hard', question: 'A crane worth R220,000 depreciates at 18% p.a. on the reducing-balance method. After how many full years will it first be worth less than R90,000?', checkMode: 'auto', correctAnswer: '5', explanation: '90 000 = 220 000(0.82)ⁿ\n0.409091 = (0.82)ⁿ\nn = log(0.409091) ÷ log(0.82) = 4.50 → round up to 5 full years.\nCheck: 220 000 × (0.82)⁵ ≈ R81 025 < R90 000 ✓' },
+        { difficulty: 'Hard', question: 'A crane worth R220,000 depreciates at 18% p.a. on the reducing-balance method. After how many full years will it first be worth less than R90,000?', checkMode: 'auto', correctAnswer: '5', explanation: '90 000 = 220 000(0.82)ⁿ\n0.409091 = (0.82)ⁿ\nn = log(0.409091) ÷ log(0.82) = 4.50 → round up to 5 full years.\nCheck: 220 000 × (0.82)⁵ ≈ R81 562.77 < R90 000 ✓' },
 
         // Block 5 — Comparing depreciation methods (Medium, Hard)
         { difficulty: 'Medium', question: 'A vehicle worth R40,000 depreciates at 15% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '2565', correctAnswers: ['R2565', 'R2 565', '2565', '2 565', 'R2565.00', 'R2 565.00'], answer: 'R2 565', explanation: 'Straight-line: 40 000(1 − 3 × 0.15) = 40 000(0.55) = R22 000.\nReducing-balance: 40 000(0.85)³ = 40 000 × 0.614125 ≈ R24 565.\nDifference = R24 565 − R22 000 = R2 565 ✓' },
@@ -1162,7 +1162,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'A drone worth R70,000 depreciates at 18% p.a. on the reducing-balance method. Calculate its value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '38596', correctAnswers: ['R38596', 'R38 596', '38596', '38 596', 'R38595.76', 'R38 595.76'], answer: 'R38 595.76', explanation: 'A = 70 000(0.82)³ = 70 000 × 0.551368 ≈ R38 595.76 ✓' },
         { difficulty: 'Medium', question: 'A tour bus worth R195,000 depreciates at 14% p.a. on the reducing-balance method. Calculate its value after 6 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '78891', correctAnswers: ['R78891', 'R78 891', '78891', '78 891', 'R78890.61', 'R78 890.61'], answer: 'R78 890.61', explanation: 'A = 195 000(0.86)⁶ = 195 000 × 0.404567 ≈ R78 890.61 ✓' },
         { difficulty: 'Medium', question: 'A laptop worth R65,000 depreciates on the reducing-balance method to R30,000 after 5 years. Calculate the annual rate of depreciation (as a percentage, to 2 decimal places).', checkMode: 'auto', correctAnswer: '14.33', correctAnswers: ['14.33%', '14.33', '14.3%', '14.3'], answer: '14.33%', explanation: '30 000 = 65 000(1 − i)⁵\n0.461538 = (1 − i)⁵\n1 − i = ⁵√0.461538 = 0.856725\ni = 1 − 0.856725 = 0.143275 = 14.33% ✓' },
-        { difficulty: 'Hard', question: 'A yacht worth R600,000 depreciates at 22% p.a. on the reducing-balance method. After how many full years will it first be worth less than R150,000?', checkMode: 'auto', correctAnswer: '6', explanation: '150 000 = 600 000(0.78)ⁿ\n0.25 = (0.78)ⁿ\nn = log(0.25) ÷ log(0.78) = 5.58 → round up to 6 full years.\nCheck: 600 000 × (0.78)⁶ ≈ R136 962 < R150 000 ✓' },
+        { difficulty: 'Hard', question: 'A yacht worth R600,000 depreciates at 22% p.a. on the reducing-balance method. After how many full years will it first be worth less than R150,000?', checkMode: 'auto', correctAnswer: '6', explanation: '150 000 = 600 000(0.78)ⁿ\n0.25 = (0.78)ⁿ\nn = log(0.25) ÷ log(0.78) = 5.58 → round up to 6 full years.\nCheck: 600 000 × (0.78)⁶ ≈ R135 119.76 < R150 000 ✓' },
 
         // Block 5 — Comparing depreciation methods (Medium, Hard)
         { difficulty: 'Medium', question: 'A delivery bike worth R50,000 depreciates at 20% p.a. Calculate the difference between the reducing-balance value and the straight-line value after 3 years (to the nearest rand).', checkMode: 'auto', correctAnswer: '5600', correctAnswers: ['R5600', 'R5 600', '5600', '5 600', 'R5600.00', 'R5 600.00'], answer: 'R5 600', explanation: 'Straight-line: 50 000(1 − 3 × 0.20) = 50 000(0.40) = R20 000.\nReducing-balance: 50 000(0.80)³ = 50 000 × 0.512 = R25 600.\nDifference = R25 600 − R20 000 = R5 600 ✓' },

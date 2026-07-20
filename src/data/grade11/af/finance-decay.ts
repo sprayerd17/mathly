@@ -849,11 +849,11 @@ export const topicData: TopicData = {
         `<line x1="30" y1="140" x2="220" y2="140" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<polygon points="228,140 218,136 218,144" fill="#0f1f3d"/>` +
         `<rect x="50" y="103" width="40" height="37" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
-        `<rect x="110" y="54" width="40" height="86" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
-        `<rect x="170" y="48" width="40" height="92" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="110" y="101" width="40" height="39" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
+        `<rect x="170" y="101" width="40" height="39" fill="rgba(22,163,74,0.15)" stroke="#16a34a" stroke-width="1.5"/>` +
         `<text x="70" y="98" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,00%</text>` +
-        `<text x="130" y="49" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,68%</text>` +
-        `<text x="190" y="43" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,75%</text>` +
+        `<text x="130" y="96" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,68%</text>` +
+        `<text x="190" y="96" text-anchor="middle" font-size="9" font-weight="700" fill="#16a34a">12,75%</text>` +
         `<text x="70" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Jaarliks</text>` +
         `<text x="70" y="163" text-anchor="middle" font-size="8" fill="#6b7280">(m=1)</text>` +
         `<text x="130" y="152" text-anchor="middle" font-size="8" fill="#6b7280">Maandeliks</text>` +
@@ -898,12 +898,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'R50 000 word teen 8% p.j. kwartaalliks saamgestel vir die eerste 18 maande belê. Die rentekoers verander dan na 6% p.j. maandeliks saamgestel. Twee jaar nadat die geld belê is, word R10 000 onttrek. Bereken hoeveel in die rekening is na 4 jaar.',
-          answer: `${re('A ≈ R54 134')}`,
+          answer: `${re('A ≈ R54 124,65')}`,
           steps: [
-            `${bl('Fase 1 (0 tot 18 maande = 6 kwartale teen 8% p.j.):')} ${bl('A₁')} = ${bl('50 000')}(1 + 0,08 ÷ 4)<sup>6</sup> = ${bl('50 000')}(1,02)<sup>6</sup> = ${bl('50 000')} × 1,1262 = ${bl('R56 308')}.`,
-            `${gr('Fase 2 (18 tot 24 maande = 6 maande teen 6% p.j.):')} ${gr('A₂')} = ${bl('56 308')}(1 + 0,06 ÷ 12)<sup>6</sup> = ${bl('56 308')}(1,005)<sup>6</sup> = ${bl('56 308')} × 1,0304 = ${gr('R58 022')}.`,
-            `Onttrekking na 2 jaar: ${gr('R58 022')} − R10 000 = ${or('R48 022')}.`,
-            `${or('Fase 3 (24 tot 48 maande = 24 maande teen 6% p.j.):')} ${re('A₃')} = ${or('48 022')}(1,005)<sup>24</sup> = ${or('48 022')} × 1,1272 = ${re('R54 134')}.`,
+            `${bl('Fase 1 (0 tot 18 maande = 6 kwartale teen 8% p.j.):')} ${bl('A₁')} = ${bl('50 000')}(1 + 0,08 ÷ 4)<sup>6</sup> = ${bl('50 000')}(1,02)<sup>6</sup> = ${bl('50 000')} × 1,126162 = ${bl('R56 308,12')}.`,
+            `${gr('Fase 2 (18 tot 24 maande = 6 maande teen 6% p.j.):')} ${gr('A₂')} = ${bl('56 308,12')}(1 + 0,06 ÷ 12)<sup>6</sup> = ${bl('56 308,12')}(1,005)<sup>6</sup> = ${bl('56 308,12')} × 1,030378 = ${gr('R58 018,62')}.`,
+            `Onttrekking na 2 jaar: ${gr('R58 018,62')} − R10 000 = ${or('R48 018,62')}.`,
+            `${or('Fase 3 (24 tot 48 maande = 24 maande teen 6% p.j.):')} ${re('A₃')} = ${or('48 018,62')}(1,005)<sup>24</sup> = ${or('48 018,62')} × 1,127160 = ${re('R54 124,65')}.`,
           ],
         },
         {
@@ -1005,10 +1005,10 @@ export const topicData: TopicData = {
         `<polygon points="160,74 156,66 164,66" fill="#dc2626"/>` +
         `<text x="160" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">− R10 000</text>` +
         `<text x="30" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R50 000</text>` +
-        `<text x="127.5" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R56 308</text>` +
-        `<text x="290" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">R54 134</text>` +
-        `<text x="160" y="100" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">R58 022</text>` +
-        `<text x="160" y="112" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">→ R48 022</text>` +
+        `<text x="127.5" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">R56 308,12</text>` +
+        `<text x="290" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626">R54 124,65</text>` +
+        `<text x="160" y="100" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">R58 018,62</text>` +
+        `<text x="160" y="112" text-anchor="middle" font-size="8" font-weight="700" fill="#dc2626">→ R48 018,62</text>` +
         `<text x="30" y="128" text-anchor="middle" font-size="9" fill="#6b7280">0 md</text>` +
         `<text x="127.5" y="128" text-anchor="middle" font-size="9" fill="#6b7280">18 md</text>` +
         `<text x="160" y="128" text-anchor="middle" font-size="9" fill="#6b7280">24 md</text>` +
@@ -1060,7 +1060,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'ʼn Vurkhyser ter waarde van R90 000 verminder in waarde teen 20% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 3 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '46080', correctAnswers: ['R46080', 'R46 080', '46080', '46 080', 'R46080,00', 'R46 080,00'], answer: 'R46 080', explanation: 'A = P(1 − i)ⁿ = 90 000(0,80)³ = 90 000 × 0,512 = R46 080 ✓' },
         { difficulty: 'Medium', question: 'ʼn Bus ter waarde van R150 000 verminder in waarde teen 15% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 5 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '66556', correctAnswers: ['R66556', 'R66 556', '66556', '66 556', 'R66555,80', 'R66555,8', 'R66 555,80'], answer: 'R66 555,80', explanation: 'A = 150 000(0,85)⁵ = 150 000 × 0,443705 ≈ R66 555,80 ✓' },
         { difficulty: 'Medium', question: 'ʼn Drukker ter waarde van R40 000 verminder volgens die verminderende-balans-metode tot R23 000 na 4 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '12,92', correctAnswers: ['12,92%', '12,92', '12.92%', '12.92', '12,9%', '12,9', '12.9%', '12.9'], answer: '12,92%', explanation: '23 000 = 40 000(1 − i)⁴\n0,575 = (1 − i)⁴\n1 − i = ⁴√0,575 = 0,870798\ni = 1 − 0,870798 = 0,129202 = 12,92% ✓' },
-        { difficulty: 'Hard', question: 'ʼn Hyskraan ter waarde van R220 000 verminder in waarde teen 18% p.j. volgens die verminderende-balans-metode. Na hoeveel volle jare sal dit die eerste keer minder as R90 000 werd wees?', checkMode: 'auto', correctAnswer: '5', explanation: '90 000 = 220 000(0,82)ⁿ\n0,409091 = (0,82)ⁿ\nn = log(0,409091) ÷ log(0,82) = 4,50 → rond na bo af na 5 volle jare.\nKontroleer: 220 000 × (0,82)⁵ ≈ R81 025 < R90 000 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Hyskraan ter waarde van R220 000 verminder in waarde teen 18% p.j. volgens die verminderende-balans-metode. Na hoeveel volle jare sal dit die eerste keer minder as R90 000 werd wees?', checkMode: 'auto', correctAnswer: '5', explanation: '90 000 = 220 000(0,82)ⁿ\n0,409091 = (0,82)ⁿ\nn = log(0,409091) ÷ log(0,82) = 4,50 → rond na bo af na 5 volle jare.\nKontroleer: 220 000 × (0,82)⁵ ≈ R81 562,77 < R90 000 ✓' },
 
         // Blok 5 — Vergelyking van waardeverminderingsmetodes (Medium, Hard)
         { difficulty: 'Medium', question: 'ʼn Voertuig ter waarde van R40 000 verminder in waarde teen 15% p.j. Bereken die verskil tussen die verminderende-balans-waarde en die reguitlynwaarde na 3 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '2565', correctAnswers: ['R2565', 'R2 565', '2565', '2 565', 'R2565,00', 'R2 565,00'], answer: 'R2 565', explanation: 'Reguitlyn: 40 000(1 − 3 × 0,15) = 40 000(0,55) = R22 000.\nVerminderende balans: 40 000(0,85)³ = 40 000 × 0,614125 ≈ R24 565.\nVerskil = R24 565 − R22 000 = R2 565 ✓' },
@@ -1158,7 +1158,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'ʼn Dromvliegtuig (drone) ter waarde van R70 000 verminder in waarde teen 18% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 3 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '38596', correctAnswers: ['R38596', 'R38 596', '38596', '38 596', 'R38595,76', 'R38 595,76'], answer: 'R38 595,76', explanation: 'A = 70 000(0,82)³ = 70 000 × 0,551368 ≈ R38 595,76 ✓' },
         { difficulty: 'Medium', question: 'ʼn Toerbus ter waarde van R195 000 verminder in waarde teen 14% p.j. volgens die verminderende-balans-metode. Bereken die waarde na 6 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '78891', correctAnswers: ['R78891', 'R78 891', '78891', '78 891', 'R78890,61', 'R78 890,61'], answer: 'R78 890,61', explanation: 'A = 195 000(0,86)⁶ = 195 000 × 0,404567 ≈ R78 890,61 ✓' },
         { difficulty: 'Medium', question: 'ʼn Skootrekenaar ter waarde van R65 000 verminder volgens die verminderende-balans-metode tot R30 000 na 5 jaar. Bereken die jaarlikse waardeverminderingskoers (as ʼn persentasie, tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: '14,33', correctAnswers: ['14,33%', '14,33', '14.33%', '14.33', '14,3%', '14,3', '14.3%', '14.3'], answer: '14,33%', explanation: '30 000 = 65 000(1 − i)⁵\n0,461538 = (1 − i)⁵\n1 − i = ⁵√0,461538 = 0,856725\ni = 1 − 0,856725 = 0,143275 = 14,33% ✓' },
-        { difficulty: 'Hard', question: 'ʼn Jag ter waarde van R600 000 verminder in waarde teen 22% p.j. volgens die verminderende-balans-metode. Na hoeveel volle jare sal dit die eerste keer minder as R150 000 werd wees?', checkMode: 'auto', correctAnswer: '6', explanation: '150 000 = 600 000(0,78)ⁿ\n0,25 = (0,78)ⁿ\nn = log(0,25) ÷ log(0,78) = 5,58 → rond na bo af na 6 volle jare.\nKontroleer: 600 000 × (0,78)⁶ ≈ R136 962 < R150 000 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Jag ter waarde van R600 000 verminder in waarde teen 22% p.j. volgens die verminderende-balans-metode. Na hoeveel volle jare sal dit die eerste keer minder as R150 000 werd wees?', checkMode: 'auto', correctAnswer: '6', explanation: '150 000 = 600 000(0,78)ⁿ\n0,25 = (0,78)ⁿ\nn = log(0,25) ÷ log(0,78) = 5,58 → rond na bo af na 6 volle jare.\nKontroleer: 600 000 × (0,78)⁶ ≈ R135 119,76 < R150 000 ✓' },
 
         // Blok 5 — Vergelyking van waardeverminderingsmetodes (Medium, Hard)
         { difficulty: 'Medium', question: 'ʼn Afleweringsfiets ter waarde van R50 000 verminder in waarde teen 20% p.j. Bereken die verskil tussen die verminderende-balans-waarde en die reguitlynwaarde na 3 jaar (tot die naaste rand).', checkMode: 'auto', correctAnswer: '5600', correctAnswers: ['R5600', 'R5 600', '5600', '5 600', 'R5600,00', 'R5 600,00'], answer: 'R5 600', explanation: 'Reguitlyn: 50 000(1 − 3 × 0,20) = 50 000(0,40) = R20 000.\nVerminderende balans: 50 000(0,80)³ = 50 000 × 0,512 = R25 600.\nVerskil = R25 600 − R20 000 = R5 600 ✓' },
