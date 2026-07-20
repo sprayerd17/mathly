@@ -296,7 +296,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'A car worth R350,000 depreciates at 18% per year on a reducing balance. How many years until it is worth less than R100,000?',
-          answer: '100 000 = 350 000(0.82)ⁿ\n0.2857 = (0.82)ⁿ\nn = log(0.2857) ÷ log(0.82) ≈ 6.47 years, so more than 6 years.',
+          answer: '100 000 = 350 000(0.82)ⁿ\n0.2857 = (0.82)ⁿ\nn = log(0.2857) ÷ log(0.82) ≈ 6.31 years, so more than 6 years.',
           checkMode: 'self',
         },
 
@@ -507,11 +507,11 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Amahle deposits R800 per month into an account earning 6% per year compounded monthly for 4 years. Find the future value.',
-          answer: 'R43,017.83',
+          answer: 'R43,278.27',
           checkMode: 'auto',
-          correctAnswer: 'R43017.83',
-          correctAnswers: ['R43017.83', '43017.83', 'R43,017.83', '43,017.83'],
-          explanation: 'i = 0.06 ÷ 12 = 0.005, n = 4 × 12 = 48\nF = 800 × [(1.005)⁴⁸ − 1] ÷ 0.005 ≈ R43,017.83 ✓',
+          correctAnswer: 'R43278.27',
+          correctAnswers: ['R43278.27', '43278.27', 'R43,278.27', '43,278.27'],
+          explanation: 'i = 0.06 ÷ 12 = 0.005, n = 4 × 12 = 48\nF = 800 × [(1.005)⁴⁸ − 1] ÷ 0.005 ≈ R43,278.27 ✓',
         },
 
         // ── Q11 Hard ──────────────────────────────────────────────────────────
@@ -526,7 +526,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Sipho wants to save R500,000 in 8 years by making equal monthly deposits into an account earning 8.4% per year compounded monthly. Find the monthly deposit needed.',
-          answer: 'i = 0.084 ÷ 12 = 0.007, n = 96\n500 000 = x × [(1.007)⁹⁶ − 1] ÷ 0.007\n(1.007)⁹⁶ ≈ 1.9316\n500 000 = x × (0.9316 ÷ 0.007) = x × 133.09\nx ≈ R3,756',
+          answer: 'i = 0.084 ÷ 12 = 0.007, n = 96\n500 000 = x × [(1.007)⁹⁶ − 1] ÷ 0.007\n(1.007)⁹⁶ ≈ 1.9536\n500 000 = x × (0.9536 ÷ 0.007) = x × 136.22\nx ≈ R3,670',
           checkMode: 'self',
         },
 
@@ -617,7 +617,7 @@ export const topicData: TopicData = {
         },
         {
           question: 'Sipho takes a loan of R180 000 at 9% per year compounded monthly and repays R2 000 per month. Find how many months it takes to repay the loan.',
-          answer: `n ≈ 131 months`,
+          answer: `n ≈ 151 months`,
           steps: [
             `Identify the interest rate per period: i = 0.09 ÷ 12 = 0.0075 per month`,
             `Set up the equation: ${bl('180 000')} = ${or('2 000')} × [1 − (1.0075)⁻ⁿ] ÷ 0.0075`,
@@ -625,7 +625,7 @@ export const topicData: TopicData = {
             `Divide both sides by ${or('2 000')}: 0.675 = 1 − (1.0075)⁻ⁿ`,
             `Rearrange: (1.0075)⁻ⁿ = 1 − 0.675 = 0.325`,
             `Take log of both sides: −n · log(1.0075) = log(0.325)`,
-            `Apply the power law and solve: n = −log(0.325) ÷ log(1.0075) ≈ 0.4881 ÷ 0.003244 ≈ <strong>131 months</strong>`,
+            `Apply the power law and solve: n = −log(0.325) ÷ log(1.0075) ≈ 0.4881 ÷ 0.003244 ≈ 150.46, rounded up to <strong>151 months</strong> (the loan needs one more partial payment to be fully repaid)`,
           ],
         },
         {
@@ -662,11 +662,11 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Thabo takes a loan of R50,000 at 9% per year compounded monthly and repays R800 per month. How many months will it take to repay?',
-          answer: 'approximately 79 months',
+          answer: 'approximately 85 months',
           checkMode: 'auto',
-          correctAnswer: '79',
-          correctAnswers: ['79', 'approximately 79 months', '79 months', '≈ 79 months'],
-          explanation: '50 000 = 800 × [1 − (1.0075)⁻ⁿ] ÷ 0.0075\nSolving: (1.0075)⁻ⁿ = 0.53125\nn = log(0.53125) ÷ (−log(1.0075)) ≈ 79 months ✓',
+          correctAnswer: '85',
+          correctAnswers: ['85', 'approximately 85 months', '85 months', '≈ 85 months'],
+          explanation: '50 000 = 800 × [1 − (1.0075)⁻ⁿ] ÷ 0.0075\nSolving: (1.0075)⁻ⁿ = 0.53125\nn = log(0.53125) ÷ (−log(1.0075)) ≈ 84.65, rounded up to 85 months ✓',
         },
 
         // ── Q14 Hard ──────────────────────────────────────────────────────────

@@ -599,7 +599,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Using the same ogive (cumulative frequencies: up to 20=8, up to 40=20, up to 60=32, up to 80=40, total=40), estimate Q1 and Q3.',
-      answer: 'Q1 is at 25% of 40 = 10th value. Cumulative frequency reaches 10 between the 0–20 interval (reaches 8) and 20–40 interval (reaches 20). Q1 ≈ 26. Q3 is at 75% of 40 = 30th value. Cumulative frequency reaches 30 in the 40–60 interval. Q3 ≈ 50.',
+      answer: 'Q1 is at 25% of 40 = 10th value. Cumulative frequency reaches 10 between the 20–40 interval (cf goes from 8 to 20). Q1 = 20 + [(10−8)/(20−8)]×20 ≈ 23.3. Q3 is at 75% of 40 = 30th value. Cumulative frequency reaches 30 between the 40–60 interval (cf goes from 20 to 32). Q3 = 40 + [(30−20)/(32−20)]×20 ≈ 56.7.',
       checkMode: 'self',
     },
 

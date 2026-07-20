@@ -296,7 +296,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'ʼn Motor ter waarde van R350 000 verminder in waarde teen 18% per jaar op ʼn verminderende balans. Hoeveel jare tot dit minder as R100 000 werd is?',
-          answer: '100 000 = 350 000(0,82)ⁿ\n0,2857 = (0,82)ⁿ\nn = log(0,2857) ÷ log(0,82) ≈ 6,47 jaar, dus meer as 6 jaar.',
+          answer: '100 000 = 350 000(0,82)ⁿ\n0,2857 = (0,82)ⁿ\nn = log(0,2857) ÷ log(0,82) ≈ 6,31 jaar, dus meer as 6 jaar.',
           checkMode: 'self',
         },
 
@@ -507,11 +507,11 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Amahle deponeer R800 per maand in ʼn rekening wat 6% per jaar maandeliks saamgestel verdien vir 4 jaar. Vind die toekomstige waarde.',
-          answer: 'R43 017,83',
+          answer: 'R43 278,27',
           checkMode: 'auto',
-          correctAnswer: 'R43017,83',
-          correctAnswers: ['R43017.83', '43017.83', 'R43,017.83', '43,017.83', 'R43 017.83', '43 017.83', 'R43017,83', 'R43 017,83'],
-          explanation: 'i = 0,06 ÷ 12 = 0,005, n = 4 × 12 = 48\nF = 800 × [(1,005)⁴⁸ − 1] ÷ 0,005 ≈ R43 017,83 ✓',
+          correctAnswer: 'R43278,27',
+          correctAnswers: ['R43278.27', '43278.27', 'R43,278.27', '43,278.27', 'R43 278.27', '43 278.27', 'R43278,27', 'R43 278,27'],
+          explanation: 'i = 0,06 ÷ 12 = 0,005, n = 4 × 12 = 48\nF = 800 × [(1,005)⁴⁸ − 1] ÷ 0,005 ≈ R43 278,27 ✓',
         },
 
         // ── Q11 Hard ──────────────────────────────────────────────────────────
@@ -526,7 +526,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Sipho wil R500 000 spaar in 8 jaar deur gelyke maandelikse deposito’s in ʼn rekening te maak wat 8,4% per jaar maandeliks saamgestel verdien. Vind die maandelikse deposito benodig.',
-          answer: 'i = 0,084 ÷ 12 = 0,007, n = 96\n500 000 = x × [(1,007)⁹⁶ − 1] ÷ 0,007\n(1,007)⁹⁶ ≈ 1,9316\n500 000 = x × (0,9316 ÷ 0,007) = x × 133,09\nx ≈ R3 756',
+          answer: 'i = 0,084 ÷ 12 = 0,007, n = 96\n500 000 = x × [(1,007)⁹⁶ − 1] ÷ 0,007\n(1,007)⁹⁶ ≈ 1,9536\n500 000 = x × (0,9536 ÷ 0,007) = x × 136,22\nx ≈ R3 670',
           checkMode: 'self',
         },
 
@@ -617,7 +617,7 @@ export const topicData: TopicData = {
         },
         {
           question: 'Sipho neem ʼn lening van R180 000 teen 9% per jaar maandeliks saamgestel en betaal R2 000 per maand terug. Vind hoeveel maande dit neem om die lening terug te betaal.',
-          answer: `n ≈ 131 maande`,
+          answer: `n ≈ 151 maande`,
           steps: [
             `Identifiseer die rentekoers per tydperk: i = 0,09 ÷ 12 = 0,0075 per maand`,
             `Stel die vergelyking op: ${bl('180 000')} = ${or('2 000')} × [1 − (1,0075)⁻ⁿ] ÷ 0,0075`,
@@ -625,7 +625,7 @@ export const topicData: TopicData = {
             `Deel albei kante deur ${or('2 000')}: 0,675 = 1 − (1,0075)⁻ⁿ`,
             `Herrangskik: (1,0075)⁻ⁿ = 1 − 0,675 = 0,325`,
             `Neem log van albei kante: −n · log(1,0075) = log(0,325)`,
-            `Pas die magswet toe en los op: n = −log(0,325) ÷ log(1,0075) ≈ 0,4881 ÷ 0,003244 ≈ <strong>131 maande</strong>`,
+            `Pas die magswet toe en los op: n = −log(0,325) ÷ log(1,0075) ≈ 0,4881 ÷ 0,003244 ≈ 150,46, na bo afgerond tot <strong>151 maande</strong> (die lening benodig nog een gedeeltelike betaling om ten volle terugbetaal te word)`,
           ],
         },
         {
@@ -662,11 +662,11 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Thabo neem ʼn lening van R50 000 teen 9% per jaar maandeliks saamgestel en betaal R800 per maand terug. Hoeveel maande sal dit neem om terug te betaal?',
-          answer: 'ongeveer 79 maande',
+          answer: 'ongeveer 85 maande',
           checkMode: 'auto',
-          correctAnswer: '79',
-          correctAnswers: ['79', 'approximately 79 months', '79 months', '≈ 79 months', '79 maande', 'ongeveer 79 maande', '≈ 79 maande'],
-          explanation: '50 000 = 800 × [1 − (1,0075)⁻ⁿ] ÷ 0,0075\nOplos: (1,0075)⁻ⁿ = 0,53125\nn = log(0,53125) ÷ (−log(1,0075)) ≈ 79 maande ✓',
+          correctAnswer: '85',
+          correctAnswers: ['85', 'approximately 85 months', '85 months', '≈ 85 months', '85 maande', 'ongeveer 85 maande', '≈ 85 maande'],
+          explanation: '50 000 = 800 × [1 − (1,0075)⁻ⁿ] ÷ 0,0075\nOplos: (1,0075)⁻ⁿ = 0,53125\nn = log(0,53125) ÷ (−log(1,0075)) ≈ 84,65, na bo afgerond tot 85 maande ✓',
         },
 
         // ── Q14 Hard ──────────────────────────────────────────────────────────

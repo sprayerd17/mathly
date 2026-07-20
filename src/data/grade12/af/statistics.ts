@@ -599,7 +599,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Gebruik dieselfde ogief (kumulatiewe frekwensies: tot 20=8, tot 40=20, tot 60=32, tot 80=40, totaal=40), skat Q1 en Q3.',
-      answer: 'Q1 is by 25% van 40 = 10de waarde. Die kumulatiewe frekwensie bereik 10 tussen die 0–20-interval (bereik 8) en die 20–40-interval (bereik 20). Q1 ≈ 26. Q3 is by 75% van 40 = 30ste waarde. Die kumulatiewe frekwensie bereik 30 in die 40–60-interval. Q3 ≈ 50.',
+      answer: 'Q1 is by 25% van 40 = 10de waarde. Die kumulatiewe frekwensie bereik 10 tussen die 20–40-interval (kf gaan van 8 na 20). Q1 = 20 + [(10−8)/(20−8)]×20 ≈ 23,3. Q3 is by 75% van 40 = 30ste waarde. Die kumulatiewe frekwensie bereik 30 tussen die 40–60-interval (kf gaan van 20 na 32). Q3 = 40 + [(30−20)/(32−20)]×20 ≈ 56,7.',
       checkMode: 'self',
     },
 
