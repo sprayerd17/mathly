@@ -10,6 +10,12 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // Section 3: radius gradient  → blue   (#2563eb)
 //            tangent gradient → orange (#ea580c)
 //            tangent equation → green  (#16a34a)
+// Section 5: gradient (m)     → blue   (#2563eb)
+//            angle of incl. θ → orange (#ea580c)
+//            tan θ = m result → green  (#16a34a)
+// Section 6: gradient test    → blue   (#2563eb)
+//            length/distance  → orange (#ea580c)
+//            conclusion       → green  (#16a34a)
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
@@ -572,6 +578,293 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Short video showing how to combine circle and line geometry to verify points on a circle, find tangent lengths from external points, and prove chord-perpendicularity properties" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — ANGLE OF INCLINATION OF A LINE
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'angle-of-inclination',
+      title: 'Angle of Inclination of a Line',
+      icon: '🧭',
+      explanation:
+        `<p style="margin-bottom:16px;">Every non-vertical straight line makes an angle with the positive x-axis, measured anticlockwise from the axis to the line. This angle is called the ${or('angle of inclination (θ)')}. It is directly linked to the ${bl('gradient (m)')} of the line by the relationship ${gr('m = tan θ')}, where 0° ≤ θ &lt; 180°.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gradient (m)')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('angle of inclination (θ)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('tan θ result')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The key relationship</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-family:monospace;font-size:1.2em;font-weight:700;color:#0f1f3d;margin:0;">${bl('m')} = tan ${or('θ')} &nbsp;&nbsp;⟺&nbsp;&nbsp; ${or('θ')} = tan⁻¹(${bl('m')})</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin-top:8px;margin-bottom:0;">θ is measured anticlockwise from the positive x-axis, and 0° ≤ θ &lt; 180°</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Finding θ from a gradient</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">If ${bl('m')} is ${bl('positive')}, the line slopes upward left to right, so θ is ${or('acute')} (0° &lt; θ &lt; 90°). Simply calculate θ = tan⁻¹(${bl('m')}).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">If ${bl('m')} is ${bl('negative')}, a calculator gives a negative reference angle for tan⁻¹(${bl('m')}). Since θ must lie between 0° and 180°, ${or('add 180°')} to the calculator's answer: θ = 180° + tan⁻¹(${bl('m')}).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Special cases: a ${gr('horizontal line')} has m = 0, so θ = 0°. A ${gr('vertical line')} has an undefined gradient, so θ = 90°.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Angle between two lines</p>` +
+        `<p style="margin:0;color:#1e3a8a;">To find the angle between two lines, first find the ${or('angle of inclination')} of each line separately (θ₁ and θ₂). The angle between the lines is then |θ₂ − θ₁|. This works because both angles are measured from the same reference direction — the positive x-axis.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Find the angle of inclination θ of a line with gradient m = 1.',
+          answer: `${or('θ = 45°')}`,
+          steps: [
+            `${bl('m = 1')} is positive, so θ is acute.`,
+            `θ = tan⁻¹(${bl('1')}) = ${or('45°')}`,
+          ],
+        },
+        {
+          question: 'A line passes through P(−2, 1) and Q(3, −4). Find its gradient and angle of inclination.',
+          answer: `${bl('m = −1')} &nbsp;·&nbsp; ${or('θ = 135°')}`,
+          steps: [
+            `${bl('Gradient:')} m = (−4 − 1) / (3 − (−2)) = −5/5 = ${bl('−1')}`,
+            `${bl('m')} is negative, so θ is obtuse. tan⁻¹(${bl('−1')}) = −45° on a calculator.`,
+            `Add 180°: θ = 180° − 45° = ${or('135°')}`,
+          ],
+        },
+        {
+          question: 'Line AB passes through A(0, 3) and B(4, 0). A second line, PQ, has gradient 1. Find the angle between AB and PQ.',
+          answer: `The angle between AB and PQ is ${gr('≈ 98.1°')}`,
+          steps: [
+            `${bl('Gradient of AB:')} m<sub>AB</sub> = (0 − 3) / (4 − 0) = ${bl('−3/4')}`,
+            `${bl('m')}<sub>AB</sub> is negative, so ${or('θ')}<sub>AB</sub> = 180° + tan⁻¹(−3/4) = 180° − 36.87° = ${or('143.13°')}`,
+            `${bl('Gradient of PQ:')} m<sub>PQ</sub> = ${bl('1')}, so ${or('θ')}<sub>PQ</sub> = tan⁻¹(1) = ${or('45°')}`,
+            `Angle between the lines = |${or('143.13°')} − ${or('45°')}| = ${gr('98.13°')} (≈ 98.1°)`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q22 Easy — θ from a positive gradient ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Find the angle of inclination θ of a line with gradient m = 1.732 (≈ √3).',
+          answer: '60',
+          checkMode: 'auto',
+          correctAnswer: '60',
+          correctAnswers: ['60', '60°'],
+          explanation: 'm is positive, so θ is acute. θ = tan⁻¹(1.732) = 60° ✓',
+        },
+
+        // ── Q23 Medium — θ from a negative gradient ────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Find the angle of inclination θ of a line with gradient m = −√3 (≈ −1.732).',
+          answer: '120',
+          checkMode: 'auto',
+          correctAnswer: '120',
+          correctAnswers: ['120', '120°'],
+          explanation: 'm is negative, so θ is obtuse. tan⁻¹(−1.732) = −60° on a calculator. θ = 180° − 60° = 120° ✓',
+        },
+
+        // ── Q24 Medium — gradient and θ from two points ────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Find the gradient and angle of inclination of the line through A(−1, −2) and B(2, 4). Round θ to one decimal place.',
+          answer: 'Gradient: m = (4−(−2)) / (2−(−1)) = 6/3 = 2.\nSince m is positive, θ = tan⁻¹(2) ≈ 63.4°',
+          checkMode: 'self',
+        },
+
+        // ── Q25 Hard — angle between two lines given by points ────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Line AB passes through A(0, 3) and B(4, 0). Line CD passes through C(1, 1) and D(4, 5). Find the angle of inclination of each line, then find the angle between the two lines.',
+          answer: 'Gradient AB = (0−3)/(4−0) = −3/4. Since negative, θ₁ = 180° − tan⁻¹(3/4) = 180° − 36.87° = 143.13°.\nGradient CD = (5−1)/(4−1) = 4/3. Since positive, θ₂ = tan⁻¹(4/3) = 53.13°.\nAngle between the lines = |143.13° − 53.13°| = 90°.\n(Check: m_AB × m_CD = (−3/4)(4/3) = −1, confirming the lines are perpendicular.)',
+          checkMode: 'self',
+        },
+
+        // ── Q26 Hard — evaluate a claim about negative gradients ───────────────
+        {
+          difficulty: 'Hard',
+          question: 'Thabo says that any line with a negative gradient must have an angle of inclination greater than 90°. Is he correct? Explain.',
+          answer: 'Yes, Thabo is correct. For 0° ≤ θ < 180°, tan θ is negative only when θ is between 90° and 180° (the second quadrant angle range). Since m = tan θ, a negative gradient always corresponds to an obtuse angle of inclination, i.e. 90° < θ < 180°.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video explaining the angle of inclination of a line, how it relates to the gradient through m = tan θ, and how to find the angle between two lines" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — ANALYTICAL PROOFS OF QUADRILATERALS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'analytical-proofs-of-quadrilaterals',
+      title: 'Analytical Proofs of Quadrilaterals',
+      icon: '🔷',
+      explanation:
+        `<p style="margin-bottom:16px;">Given the coordinates of the vertices of a quadrilateral, we can use the ${bl('gradient formula')} and the ${or('distance formula')} to prove — without a protractor or ruler — what type of quadrilateral it is. Different combinations of tests confirm a ${gr('parallelogram')}, ${gr('rectangle')}, ${gr('rhombus')} or ${gr('square')}.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gradient test')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('length/distance test')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('conclusion')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Tests for each quadrilateral</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:8px;">Parallelogram</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">${bl('Both pairs of opposite sides parallel')} (equal gradients), OR opposite sides equal in length, OR the diagonals bisect each other (equal midpoints).</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:8px;">Rectangle</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">A parallelogram with ${or('one right angle')} (adjacent side gradients multiply to −1), OR a parallelogram whose ${or('diagonals are equal in length')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:8px;">Rhombus</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">A parallelogram with ${gr('all four sides equal')} in length, OR a parallelogram whose diagonals are perpendicular (gradient product = −1).</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">General method</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Find all four gradients')} — Use the gradient formula on each side. Equal gradients for both opposite pairs confirm a parallelogram.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Find the relevant lengths')} — Use the distance formula on the sides and/or diagonals, depending on what the question asks you to prove.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('State the conclusion')} — Name the quadrilateral type, backed by the specific numerical evidence you calculated.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Prove the parallelogram first</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Always establish that a quadrilateral is a ${bl('parallelogram')} before testing whether it is also a rectangle or rhombus. Equal diagonals or a right angle only guarantee a rectangle if the shape is already known to be a parallelogram — otherwise other (non-parallelogram) quadrilaterals can share those same properties by coincidence.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Prove that quadrilateral ABCD with A(0, 0), B(4, 1), C(6, 5) and D(2, 4) is a parallelogram.',
+          answer: `${bl('m_AB = m_DC = 1/4')} &nbsp;·&nbsp; ${bl('m_BC = m_AD = 2')} &nbsp;→&nbsp; ${gr('ABCD is a parallelogram')}`,
+          steps: [
+            `${bl('Gradient AB:')} m<sub>AB</sub> = (1−0)/(4−0) = ${bl('1/4')}`,
+            `${bl('Gradient DC:')} m<sub>DC</sub> = (5−4)/(6−2) = ${bl('1/4')}`,
+            `${bl('Gradient BC:')} m<sub>BC</sub> = (5−1)/(6−4) = ${bl('2')}`,
+            `${bl('Gradient AD:')} m<sub>AD</sub> = (4−0)/(2−0) = ${bl('2')}`,
+            `Since m<sub>AB</sub> = m<sub>DC</sub> and m<sub>BC</sub> = m<sub>AD</sub>, both pairs of opposite sides are parallel, so ${gr('ABCD is a parallelogram.')} ✓`,
+          ],
+        },
+        {
+          question: 'For the same quadrilateral ABCD — A(0, 0), B(4, 1), C(6, 5), D(2, 4) — test whether it is also a rectangle or a rhombus.',
+          answer: `${or('AB ≠ BC and AC ≠ BD')} &nbsp;→&nbsp; ${gr('ABCD is a parallelogram only')} (not a rectangle or rhombus)`,
+          steps: [
+            `${or('Side lengths:')} AB = √[(4−0)²+(1−0)²] = √17. &nbsp; BC = √[(6−4)²+(5−1)²] = √20`,
+            `Since ${or('AB ≠ BC')}, not all sides are equal, so ABCD is <strong>not a rhombus</strong>.`,
+            `${or('Diagonal lengths:')} AC = √[(6−0)²+(5−0)²] = √61. &nbsp; BD = √[(2−4)²+(4−1)²] = √13`,
+            `Since ${or('AC ≠ BD')}, the diagonals are not equal, so ABCD is <strong>not a rectangle</strong>.`,
+            `${gr('Conclusion: ABCD is a parallelogram only.')}`,
+          ],
+        },
+        {
+          question: 'Prove that quadrilateral WXYZ with W(0, 0), X(4, 2), Y(2, 6) and Z(−2, 4) is a square.',
+          answer: `${bl('Parallelogram')} + ${or('right angle')} + ${or('equal sides')} ⟹ ${gr('WXYZ is a square')}`,
+          steps: [
+            `${bl('Gradient WX:')} m<sub>WX</sub> = (2−0)/(4−0) = 1/2. &nbsp; ${bl('Gradient ZY:')} m<sub>ZY</sub> = (6−4)/(2−(−2)) = 1/2 — equal, so WX ∥ ZY.`,
+            `${bl('Gradient XY:')} m<sub>XY</sub> = (6−2)/(2−4) = −2. &nbsp; ${bl('Gradient WZ:')} m<sub>WZ</sub> = (4−0)/(−2−0) = −2 — equal, so XY ∥ WZ. ${bl('WXYZ is a parallelogram.')}`,
+            `${or('Right angle check:')} m<sub>WX</sub> × m<sub>XY</sub> = (1/2) × (−2) = −1, so WX ⊥ XY. ${or('WXYZ is a rectangle.')}`,
+            `${or('Side lengths:')} WX = √[(4)²+(2)²] = √20. &nbsp; XY = √[(−2)²+(4)²] = √20 — all four sides equal (by the parallelogram property, WX = ZY and XY = WZ too).`,
+            `A rectangle with all sides equal is a ${gr('square. WXYZ is a square.')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q27 Easy — gradient of one side of a quadrilateral ─────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Quadrilateral PQRS has P(1, 2), Q(5, 4), R(9, 2) and S(5, 0). Find the gradient of side PQ.',
+          answer: '1/2',
+          checkMode: 'auto',
+          correctAnswer: '1/2',
+          correctAnswers: ['1/2', '0.5'],
+          explanation: 'm_PQ = (4−2)/(5−1) = 2/4 = 1/2 ✓',
+        },
+
+        // ── Q28 Medium — gradient of the opposite side ─────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'For the same quadrilateral PQRS — P(1, 2), Q(5, 4), R(9, 2), S(5, 0) — find the gradient of side SR. Is SR parallel to PQ (gradient 1/2)?',
+          answer: '1/2',
+          checkMode: 'auto',
+          correctAnswer: '1/2',
+          correctAnswers: ['1/2', '0.5'],
+          explanation: 'm_SR = (2−0)/(9−5) = 2/4 = 1/2. Since m_SR = m_PQ = 1/2, SR ∥ PQ ✓',
+        },
+
+        // ── Q29 Medium — combine the gradients into a parallelogram proof ──────
+        {
+          difficulty: 'Medium',
+          question: 'For quadrilateral PQRS — P(1, 2), Q(5, 4), R(9, 2), S(5, 0) — you are given that m_QR = m_PS = −1/2. Using this together with your answers for PQ and SR, state with reasons whether PQRS is a parallelogram.',
+          answer: 'm_PQ = m_SR = 1/2, so PQ ∥ SR. m_QR = m_PS = −1/2, so QR ∥ PS. Since both pairs of opposite sides are parallel, PQRS is a parallelogram.',
+          checkMode: 'self',
+        },
+
+        // ── Q30 Hard — full rectangle proof (not a rhombus) ────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Quadrilateral WXYZ has W(0, 0), X(4, 2), Y(1, 8) and Z(−3, 6). Prove that WXYZ is a rectangle, and show that it is not a rhombus.',
+          answer: 'Gradient WX = (2−0)/(4−0) = 1/2. Gradient ZY = (8−6)/(1−(−3)) = 1/2 — equal, so WX ∥ ZY.\nGradient XY = (8−2)/(1−4) = −2. Gradient WZ = (6−0)/(−3−0) = −2 — equal, so XY ∥ WZ. WXYZ is a parallelogram.\nm_WX × m_XY = (1/2)×(−2) = −1, so WX ⊥ XY. WXYZ is a rectangle.\nWX = √[16+4] = √20 ≈ 4.47. XY = √[9+36] = √45 ≈ 6.71. Since WX ≠ XY, not all sides are equal, so WXYZ is not a rhombus.',
+          checkMode: 'self',
+        },
+
+        // ── Q31 Hard — evaluate a claim about equal diagonals ──────────────────
+        {
+          difficulty: 'Hard',
+          question: 'In quadrilateral ABCD, the diagonals AC and BD are equal in length, but it has not yet been shown that ABCD is a parallelogram. Zanele claims this is already enough to say ABCD is a rectangle. Is she correct? Explain.',
+          answer: 'No, Zanele is not correct. Equal diagonals alone do not guarantee a rectangle — for example, an isosceles trapezium also has equal diagonals but is not a rectangle. The equal-diagonals test only confirms a rectangle once the quadrilateral has already been proven to be a parallelogram (using the gradient or side-length tests). Without that first step, equal diagonals are not sufficient evidence.',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramSvg:
+        `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><polygon points="40,140 170,120 150,30 60,50" fill="none" stroke="#0f1f3d" stroke-width="2.5" /><circle cx="40" cy="140" r="3.5" fill="#2563eb" /><circle cx="170" cy="120" r="3.5" fill="#2563eb" /><circle cx="150" cy="30" r="3.5" fill="#2563eb" /><circle cx="60" cy="50" r="3.5" fill="#2563eb" /><text x="30" y="157" font-weight="700" font-size="11" fill="#2563eb" text-anchor="middle">A(0, 0)</text><text x="178" y="122" font-weight="700" font-size="11" fill="#2563eb" text-anchor="start">B(4, 1)</text><text x="155" y="20" font-weight="700" font-size="11" fill="#2563eb" text-anchor="start">C(6, 5)</text><text x="46" y="40" font-weight="700" font-size="11" fill="#2563eb" text-anchor="end">D(2, 4)</text><text x="105" y="90" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">AB ∥ DC</text><text x="105" y="105" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">BC ∥ AD</text></svg>`,
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video showing how to use the gradient and distance formulae to prove that a quadrilateral is a parallelogram, rectangle, rhombus or square" />',
     },
   ],
 

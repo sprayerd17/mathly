@@ -177,7 +177,125 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SIGMA NOTATION
+    // SECTION 3 — FINDING a AND d (OR a AND r) FROM TWO GIVEN TERMS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'finding-a-and-d-from-two-terms',
+      title: 'Finding a and d (or a and r) from Two Given Terms',
+      icon: '∑',
+      explanation:
+        `<p style="margin-bottom:16px;">So far we have been given ${bl('a')} and ${or('d')} (or ${bl('a')} and ${or('r')}) and asked to find a term. Many exam questions work in <strong>reverse</strong>: you are given two specific terms of a sequence, e.g. T<sub>m</sub> and T<sub>n</sub>, and must find ${bl('a')} and ${or('d')} (or ${bl('a')} and ${or('r')}) yourself. We do this by writing each given term using the general term formula, which produces <strong>two equations in two unknowns</strong>, then solving them <strong>simultaneously</strong>.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('given term values')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('simultaneous equations')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('a and d (or a and r)')}</span>` +
+        `</div>` +
+
+        // ── Arithmetic: subtract to eliminate a ────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Arithmetic sequences — subtract to eliminate a</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.1em;font-weight:700;color:#374151;margin:0 0 6px 0;">${or('T<sub>m</sub>')} = ${bl('a')} + (m − 1)${gr('d')} &nbsp;and&nbsp; ${or('T<sub>n</sub>')} = ${bl('a')} + (n − 1)${gr('d')}</p>` +
+        `<p style="font-size:0.95em;color:#6b7280;margin:0;">Subtracting the equations cancels ${bl('a')}, leaving an equation in ${gr('d')} alone.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Write each ${bl('given term')} using T<sub>n</sub> = a + (n − 1)d. This gives two equations in a and d.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Subtract')} the equation with the smaller term number from the one with the larger term number. The ${bl('a')} terms cancel, leaving (n − m)${gr('d')} = T<sub>n</sub> − T<sub>m</sub>. Solve this for ${gr('d')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Substitute')} d back into either original equation and solve for a.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Geometric: divide to eliminate a ────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Geometric sequences — divide to eliminate a</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.1em;font-weight:700;color:#374151;margin:0 0 6px 0;">${or('T<sub>m</sub>')} = ${bl('a')} · ${gr('r')}<sup>m−1</sup> &nbsp;and&nbsp; ${or('T<sub>n</sub>')} = ${bl('a')} · ${gr('r')}<sup>n−1</sup></p>` +
+        `<p style="font-size:0.95em;color:#6b7280;margin:0;">Dividing the equations cancels ${bl('a')}, leaving a power of ${gr('r')} alone.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Write each ${bl('given term')} using T<sub>n</sub> = a · r<sup>n−1</sup>. This gives two equations in a and r.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Divide')} the equation with the larger term number by the one with the smaller term number. The ${bl('a')} terms cancel, leaving ${gr('r')}<sup>n−m</sup> = T<sub>n</sub> ÷ T<sub>m</sub>. Take the appropriate root to solve for ${gr('r')} — remember an <strong>even</strong> root can give a ± answer.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Substitute')} r back into either original equation and solve for a.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Watch for a ± answer</p>` +
+        `<p style="margin:0;color:#1e3a8a;">If eliminating ${bl('a')} in a geometric sequence leaves an <strong>even</strong> power of ${gr('r')} (e.g. r² or r⁴), there are two possible values of ${gr('r')} — one positive and one negative. Unless the context rules one out (e.g. all terms must be positive), you may need to give both solutions, each with its own value of ${bl('a')}.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'An arithmetic sequence has T₅ = 16 and T₁₀ = 41. Find a and d.',
+          answer: `${bl('a')} = ${gr('−4')}, ${or('d')} = ${gr('5')}`,
+          steps: [
+            `Write each ${bl('term')} using T<sub>n</sub> = a + (n − 1)d: ${or('T<sub>5</sub>')} = a + 4d = 16 and ${or('T<sub>10</sub>')} = a + 9d = 41.`,
+            `${or('Subtract')} the first equation from the second: (a + 9d) − (a + 4d) = 41 − 16 → 5d = 25.`,
+            `Solve for d: ${gr('d')} = 25 ÷ 5 = ${gr('5')}.`,
+            `${gr('Substitute')} d = 5 into a + 4d = 16: a + 4(5) = 16 → a + 20 = 16 → ${bl('a')} = ${gr('−4')}.`,
+          ],
+        },
+        {
+          question: 'A geometric sequence has T₂ = 6 and T₅ = 162. Find a and r.',
+          answer: `${bl('a')} = ${gr('2')}, ${or('r')} = ${gr('3')}`,
+          steps: [
+            `Write each ${bl('term')} using T<sub>n</sub> = a · r<sup>n−1</sup>: ${or('T<sub>2</sub>')} = ar = 6 and ${or('T<sub>5</sub>')} = ar⁴ = 162.`,
+            `${or('Divide')} T<sub>5</sub> by T<sub>2</sub>: ar⁴ ÷ ar = 162 ÷ 6 → r³ = 27.`,
+            `Solve for r: ${gr('r')} = ∛27 = ${gr('3')}.`,
+            `${gr('Substitute')} r = 3 into ar = 6: a(3) = 6 → ${bl('a')} = ${gr('2')}.`,
+          ],
+        },
+        {
+          question: 'A geometric sequence has T₂ = 20 and T₄ = 5, and all terms are known to be positive. Find a and r.',
+          answer: `${bl('a')} = ${gr('40')}, ${or('r')} = ${gr('0.5')}`,
+          steps: [
+            `Write each ${bl('term')} using T<sub>n</sub> = a · r<sup>n−1</sup>: ${or('T<sub>2</sub>')} = ar = 20 and ${or('T<sub>4</sub>')} = ar³ = 5.`,
+            `${or('Divide')} T<sub>4</sub> by T<sub>2</sub>: ar³ ÷ ar = 5 ÷ 20 → r² = 0.25.`,
+            `Solve for r: r = ±√0.25 = ±0.5. This is an <strong>even</strong> root, so both signs are mathematically possible.`,
+            `Since every term must be positive, reject r = −0.5 (it would alternate the sign of the terms). So ${gr('r')} = ${gr('0.5')}.`,
+            `${gr('Substitute')} r = 0.5 into ar = 20: a(0.5) = 20 → ${bl('a')} = ${gr('40')}.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video explaining how to find a and d (or a and r) when given two terms of a sequence, by forming and solving simultaneous equations using subtraction (arithmetic) or division (geometric)" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SIGMA NOTATION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sigma-notation',
@@ -295,7 +413,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — SUM OF AN ARITHMETIC SERIES
+    // SECTION 5 — SUM OF AN ARITHMETIC SERIES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sum-arithmetic-series',
@@ -377,7 +495,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — SUM OF A GEOMETRIC SERIES
+    // SECTION 6 — SUM OF A GEOMETRIC SERIES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sum-geometric-series',

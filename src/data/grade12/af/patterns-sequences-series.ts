@@ -177,7 +177,125 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 3 — SIGMA NOTATION
+    // SECTION 3 — FINDING a AND d (OR a AND r) FROM TWO GIVEN TERMS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'finding-a-and-d-from-two-terms',
+      title: 'Vind a en d (of a en r) uit Twee Gegewe Terme',
+      icon: '∑',
+      explanation:
+        `<p style="margin-bottom:16px;">Tot dusver is ons ${bl('a')} en ${or('d')} (of ${bl('a')} en ${or('r')}) gegee en gevra om ʼn term te vind. Baie eksamenvrae werk andersom: jy word twee spesifieke terme van ʼn ry gegee, bv. T<sub>m</sub> en T<sub>n</sub>, en moet self ${bl('a')} en ${or('d')} (of ${bl('a')} en ${or('r')}) vind. Ons doen dit deur elke gegewe term met die algemene-term-formule te skryf, wat twee vergelykings in twee onbekendes gee, en dit dan <strong>gelyktydig</strong> op te los.</p>` +
+
+        // ── Colour key ──────────────────────────────────────────────────────
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gegewe termwaardes')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('gelyktydige vergelykings')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('a en d (of a en r)')}</span>` +
+        `</div>` +
+
+        // ── Arithmetic: subtract to eliminate a ────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Rekenkundige rye — trek af om a te elimineer</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.1em;font-weight:700;color:#374151;margin:0 0 6px 0;">${or('T<sub>m</sub>')} = ${bl('a')} + (m − 1)${gr('d')} &nbsp;en&nbsp; ${or('T<sub>n</sub>')} = ${bl('a')} + (n − 1)${gr('d')}</p>` +
+        `<p style="font-size:0.95em;color:#6b7280;margin:0;">Om die vergelykings af te trek kanselleer ${bl('a')}, en laat ʼn vergelyking in ${gr('d')} alleen oor.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Skryf elke ${bl('gegewe term')} met T<sub>n</sub> = a + (n − 1)d. Dit gee twee vergelykings in a en d.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Trek')} die vergelyking met die kleiner termgetal af van dié met die groter termgetal. Die ${bl('a')}-terme kanselleer, en laat (n − m)${gr('d')} = T<sub>n</sub> − T<sub>m</sub> oor. Los dit op vir ${gr('d')}.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Vervang')} d terug in enige oorspronklike vergelyking en los op vir a.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Geometric: divide to eliminate a ────────────────────────────────────
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Meetkundige rye — deel om a te elimineer</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.1em;font-weight:700;color:#374151;margin:0 0 6px 0;">${or('T<sub>m</sub>')} = ${bl('a')} · ${gr('r')}<sup>m−1</sup> &nbsp;en&nbsp; ${or('T<sub>n</sub>')} = ${bl('a')} · ${gr('r')}<sup>n−1</sup></p>` +
+        `<p style="font-size:0.95em;color:#6b7280;margin:0;">Om die vergelykings te deel kanselleer ${bl('a')}, en laat ʼn mag van ${gr('r')} alleen oor.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">Skryf elke ${bl('gegewe term')} met T<sub>n</sub> = a · r<sup>n−1</sup>. Dit gee twee vergelykings in a en r.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Deel')} die vergelyking met die groter termgetal deur dié met die kleiner termgetal. Die ${bl('a')}-terme kanselleer, en laat ${gr('r')}<sup>n−m</sup> = T<sub>n</sub> ÷ T<sub>m</sub> oor. Neem die toepaslike wortel om ${gr('r')} op te los — onthou ʼn <strong>ewe</strong> wortel kan ʼn ± antwoord gee.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Vervang')} r terug in enige oorspronklike vergelyking en los op vir a.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        // ── Tip box ──────────────────────────────────────────────────────────
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Let op vir ʼn ± antwoord</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Indien die eliminering van ${bl('a')} in ʼn meetkundige ry ʼn <strong>ewe</strong> mag van ${gr('r')} laat (bv. r² of r⁴), is daar twee moontlike waardes van ${gr('r')} — een positief en een negatief. Tensy die konteks een uitsluit (bv. alle terme moet positief wees), moet jy dalk albei oplossings gee, elk met sy eie waarde van ${bl('a')}.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Rekenkundige ry het T₅ = 16 en T₁₀ = 41. Vind a en d.',
+          answer: `${bl('a')} = ${gr('−4')}, ${or('d')} = ${gr('5')}`,
+          steps: [
+            `Skryf elke ${bl('term')} met T<sub>n</sub> = a + (n − 1)d: ${or('T<sub>5</sub>')} = a + 4d = 16 en ${or('T<sub>10</sub>')} = a + 9d = 41.`,
+            `${or('Trek')} die eerste vergelyking af van die tweede: (a + 9d) − (a + 4d) = 41 − 16 → 5d = 25.`,
+            `Los op vir d: ${gr('d')} = 25 ÷ 5 = ${gr('5')}.`,
+            `${gr('Vervang')} d = 5 in a + 4d = 16: a + 4(5) = 16 → a + 20 = 16 → ${bl('a')} = ${gr('−4')}.`,
+          ],
+        },
+        {
+          question: 'ʼn Meetkundige ry het T₂ = 6 en T₅ = 162. Vind a en r.',
+          answer: `${bl('a')} = ${gr('2')}, ${or('r')} = ${gr('3')}`,
+          steps: [
+            `Skryf elke ${bl('term')} met T<sub>n</sub> = a · r<sup>n−1</sup>: ${or('T<sub>2</sub>')} = ar = 6 en ${or('T<sub>5</sub>')} = ar⁴ = 162.`,
+            `${or('Deel')} T<sub>5</sub> deur T<sub>2</sub>: ar⁴ ÷ ar = 162 ÷ 6 → r³ = 27.`,
+            `Los op vir r: ${gr('r')} = ∛27 = ${gr('3')}.`,
+            `${gr('Vervang')} r = 3 in ar = 6: a(3) = 6 → ${bl('a')} = ${gr('2')}.`,
+          ],
+        },
+        {
+          question: 'ʼn Meetkundige ry het T₂ = 20 en T₄ = 5, en dit is bekend dat alle terme positief is. Vind a en r.',
+          answer: `${bl('a')} = ${gr('40')}, ${or('r')} = ${gr('0,5')}`,
+          steps: [
+            `Skryf elke ${bl('term')} met T<sub>n</sub> = a · r<sup>n−1</sup>: ${or('T<sub>2</sub>')} = ar = 20 en ${or('T<sub>4</sub>')} = ar³ = 5.`,
+            `${or('Deel')} T<sub>4</sub> deur T<sub>2</sub>: ar³ ÷ ar = 5 ÷ 20 → r² = 0,25.`,
+            `Los op vir r: r = ±√0,25 = ±0,5. Dit is ʼn <strong>ewe</strong> wortel, so albei tekens is wiskundig moontlik.`,
+            `Aangesien elke term positief moet wees, verwerp r = −0,5 (dit sou die teken van die terme laat wissel). Dus ${gr('r')} = ${gr('0,5')}.`,
+            `${gr('Vervang')} r = 0,5 in ar = 20: a(0,5) = 20 → ${bl('a')} = ${gr('40')}.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat verduidelik hoe om a en d (of a en r) te vind wanneer twee terme van ʼn ry gegee word, deur gelyktydige vergelykings te vorm en op te los met aftrekking (rekenkundig) of deling (meetkundig)" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 4 — SIGMA NOTATION
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sigma-notation',
@@ -295,7 +413,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — SUM OF AN ARITHMETIC SERIES
+    // SECTION 5 — SUM OF AN ARITHMETIC SERIES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sum-arithmetic-series',
@@ -377,7 +495,7 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 5 — SUM OF A GEOMETRIC SERIES
+    // SECTION 6 — SUM OF A GEOMETRIC SERIES
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'sum-geometric-series',

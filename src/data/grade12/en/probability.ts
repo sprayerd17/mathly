@@ -251,7 +251,95 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — USING COUNTING TECHNIQUES TO SOLVE PROBABILITY PROBLEMS
+    // SECTION 4 — COMBINATIONS: SELECTING OBJECTS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'combinations-selecting-objects',
+      title: 'Combinations — Selecting Objects When Order Does Not Matter',
+      icon: '🧮',
+      explanation:
+        `<p style="margin-bottom:16px;">In the previous section, every problem was about <strong>arranging</strong> objects, where changing the order created a new outcome. Many real situations are different — choosing a committee, a team, or a hand of cards does not care about the order the members were picked in. A ${bl('combination')} is a selection of objects where order does NOT matter:</p>` +
+
+        `<div style="text-align:center;font-size:1.3em;font-weight:700;color:#0f1f3d;margin-bottom:20px;padding:12px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;">${gr('C(n, r) = ⁿCᵣ = n! ÷ (r! × (n − r)!)')}</div>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('n and r values')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('formula applied')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('final count')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('excluded / complement case')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Three ideas you must recognise</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Order Does NOT Matter</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Choosing Kagiso, then Zanele, then Amahle for a committee gives the ${gr('same committee')} as choosing Amahle, then Kagiso, then Zanele. A permutation asks "in what order?"; a combination only asks "which ones?".</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Where the Formula Comes From</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">There are ${bl('n × (n − 1) × ... × (n − r + 1)')} ways to choose r objects <strong>in order</strong> (fundamental counting principle). Each unordered group of r objects can itself be arranged in ${or('r!')} different orders, so we divide those out: ${gr('C(n, r) = n! ÷ (r!(n − r)!)')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Selecting From Two or More Groups</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">If a selection must include a fixed number from one group AND a fixed number from another (e.g. boys and girls), find each combination separately then ${re('multiply')} them using the counting principle.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Spot "at least" combination questions</p>` +
+        `<p style="margin:0;color:#1e3a8a;">When a question asks for a selection with <strong>"at least one"</strong> from a particular group, it is usually fastest to find the number of selections with ${re('NONE from that group')} and subtract: ${re('favourable = total − none')}, just like the complementary rule earlier in this topic.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A netball squad must choose a starting side of 4 players from a squad of 9 players. The order the players are chosen in does not matter. In how many ways can the starting side be chosen?',
+          answer: `${gr('C(9,4) = 126')} ways`,
+          steps: [
+            `The question only cares WHICH 4 players are chosen, not the order — this is a ${bl('combination')}, with ${bl('n = 9')} and ${bl('r = 4')}.`,
+            `Apply the ${or('combination formula')}: ${or('C(9,4) = 9! ÷ (4! × 5!)')}.`,
+            `Calculate: 9! ÷ (4! × 5!) = (9 × 8 × 7 × 6) ÷ (4 × 3 × 2 × 1) = 3024 ÷ 24 = ${gr('126')}.`,
+            `<strong>Answer:</strong> There are ${gr('126')} different ways to choose the starting side.`,
+          ],
+        },
+        {
+          question: 'A debating team needs 3 speakers chosen from 7 candidates AND 2 researchers chosen from 5 candidates. In how many ways can the team be formed?',
+          answer: `${gr('C(7,3) × C(5,2) = 350')} ways`,
+          steps: [
+            `Choosing the ${bl('speakers')} and choosing the ${bl('researchers')} are two separate combinations, done independently.`,
+            `Apply the ${or('combination formula')} to each group: ${or('C(7,3) = 7! ÷ (3! × 4!) = 35')} and ${or('C(5,2) = 5! ÷ (2! × 3!) = 10')}.`,
+            `Since both selections happen together, apply the ${gr('fundamental counting principle')} and multiply: ${gr('35 × 10 = 350')}.`,
+            `<strong>Answer:</strong> There are ${gr('350')} different ways to form the team.`,
+          ],
+        },
+        {
+          question: 'A working group of 4 people is chosen from 5 managers and 6 staff members (11 people in total). Find the number of ways to choose the group if it must include at least one manager.',
+          answer: `${gr('330 − 15 = 315')} ways`,
+          steps: [
+            `${bl('Total ways')} to choose any 4 people from all 11, ignoring the restriction: ${bl('C(11,4) = 11! ÷ (4! × 7!) = 330')}.`,
+            `${re('"At least one manager" is easiest via the complement')} — find the selections with NO managers (all 4 from the 6 staff members): ${re('C(6,4) = 6! ÷ (4! × 2!) = 15')}.`,
+            `Subtract: ${gr('favourable = total − none = 330 − 15 = 315')}.`,
+            `<strong>Answer:</strong> There are ${gr('315')} ways to choose a group with at least one manager.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video contrasting combinations with permutations using a committee-selection example, deriving the C(n,r) formula from the counting principle, then showing the multiply-two-groups technique and the at-least-one complement trick" />',
+
+      diagramSvg:
+        `<svg viewBox="0 0 280 165" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><circle cx="30" cy="35" r="16" fill="none" stroke="#2563eb" stroke-width="2.5" /><circle cx="76" cy="35" r="16" fill="#ea580c" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5" /><circle cx="122" cy="35" r="16" fill="#ea580c" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5" /><circle cx="168" cy="35" r="16" fill="none" stroke="#2563eb" stroke-width="2.5" /><circle cx="214" cy="35" r="16" fill="#ea580c" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5" /><text x="30" y="40" font-weight="700" font-size="13" fill="#2563eb" text-anchor="middle">1</text><text x="76" y="40" font-weight="700" font-size="13" fill="#ea580c" text-anchor="middle">2</text><text x="122" y="40" font-weight="700" font-size="13" fill="#ea580c" text-anchor="middle">3</text><text x="168" y="40" font-weight="700" font-size="13" fill="#2563eb" text-anchor="middle">4</text><text x="214" y="40" font-weight="700" font-size="13" fill="#ea580c" text-anchor="middle">5</text><text x="140" y="68" font-weight="700" font-size="11" fill="#374151" text-anchor="middle">chosen group = {2, 3, 5}</text><rect x="40" y="95" width="46" height="22" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5" /><text x="63" y="110" font-size="10" fill="#ea580c" text-anchor="middle" font-weight="700">2,3,5</text><rect x="96" y="95" width="46" height="22" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5" /><text x="119" y="110" font-size="10" fill="#ea580c" text-anchor="middle" font-weight="700">3,5,2</text><rect x="152" y="95" width="46" height="22" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5" /><text x="175" y="110" font-size="10" fill="#ea580c" text-anchor="middle" font-weight="700">5,2,3</text><text x="220" y="112" font-size="16" fill="#94a3b8" text-anchor="middle">...</text><line x1="63" y1="117" x2="140" y2="140" stroke="#94a3b8" stroke-width="1.5" /><line x1="119" y1="117" x2="140" y2="140" stroke="#94a3b8" stroke-width="1.5" /><line x1="175" y1="117" x2="140" y2="140" stroke="#94a3b8" stroke-width="1.5" /><circle cx="140" cy="150" r="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5" /><text x="140" y="153" font-size="8" fill="#16a34a" text-anchor="middle" font-weight="700">1 group</text><text x="220" y="145" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">÷ 3! orders</text></svg>`,
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — USING COUNTING TECHNIQUES TO SOLVE PROBABILITY PROBLEMS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'counting-techniques-probability',

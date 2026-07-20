@@ -697,22 +697,191 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Short video explaining present value annuities and bond repayments with worked examples on monthly repayments outstanding balance and solving for the number of payments" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — SINKING FUNDS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'sinking-funds',
+      title: 'Sinking Funds',
+      icon: 'SF',
+      explanation:
+        `<p style="margin-bottom:16px;">A <strong>sinking fund</strong> is a savings plan set up to reach a known target amount by a future date — typically so a business can replace an asset (a machine, vehicle, or piece of equipment) once it wears out. A sinking fund is not a new formula: it combines two formulae you already know. <strong>Compound growth</strong> (Section 1) is used to inflate today's replacement cost into tomorrow's replacement cost, and the <strong>future value annuity</strong> formula (Section 4) is then used to work out the regular deposit that will grow to meet that inflated target.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('known amount')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('rate (inflation or interest)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('calculated result')}</span>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.05em;font-weight:700;color:#374151;margin:0 0 6px 0;">Step 1 (growth): ${gr('C future')} = ${bl('C')}(1 + ${or('f')})ⁿ &nbsp;&nbsp;→&nbsp;&nbsp; Step 2 (annuity): ${gr('F')} = ${bl('x')} × [(1 + ${or('i')})ⁿ − 1] ÷ ${or('i')}</p>` +
+        `<p style="font-size:13px;color:#6b7280;margin:0;">The output of Step 1 becomes the target ${bl('F')} you substitute into Step 2, which you then solve for ${gr('x')}</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">The two-step method</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Identify what you're given:</strong> the current cost ${bl('C')}, the inflation/growth rate ${or('f')}, the number of years n until the asset must be replaced, and the interest rate ${or('i')} earned by the sinking fund.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>STEP 1 — Inflate the replacement cost:</strong> use the compound growth formula from Section 1 to grow today's cost ${bl('C')} forward by n years at the inflation rate ${or('f')}: ${gr('future cost')} = ${bl('C')}(1 + ${or('f')})ⁿ.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>If a trade-in or scrap value applies:</strong> subtract it from the inflated cost before continuing — ${gr('F')} = ${gr('future cost')} − trade-in value. The fund only needs to cover the shortfall, not the full replacement cost.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>STEP 2 — Solve for the deposit:</strong> treat ${gr('F')} as the target future value of a savings annuity (Section 4) and solve ${gr('F')} = ${bl('x')} × [(1 + ${or('i')})ⁿ − 1] ÷ ${or('i')} for the regular deposit: ${bl('x')} = ${gr('F')} × ${or('i')} ÷ [(1 + ${or('i')})ⁿ − 1].</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Variable reference</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">C — Current cost</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">What the asset would cost to replace today, before inflation is applied.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">f — Inflation rate</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">The annual rate at which the replacement cost itself grows — used only in Step 1.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">F — Sinking fund target</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">The future value the fund must reach — the inflated replacement cost, less any trade-in value.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">i — Interest per period</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">The sinking fund's own interest rate per period — used only in Step 2, and usually different from ${or('f')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">x — Required deposit</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">The regular (usually monthly) deposit into the sinking fund — this is what Step 2 solves for.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#166534;margin-bottom:6px;">Accounting for a trade-in or scrap value</p>` +
+        `<p style="margin:0;color:#166534;">If the old asset can be traded in or sold for scrap when it's replaced, that money reduces how much the sinking fund needs to provide. Always subtract the trade-in or scrap value from the inflated replacement cost <strong>before</strong> using it as the target ${gr('F')} in Step 2 — do not apply it to the current cost ${bl('C')} before inflating.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Sinking fund vs loan annuity</p>` +
+        `<p style="margin:0;color:#1e3a8a;">A sinking fund and a loan repayment (Section 5) both use a series of equal regular payments, but they run in opposite directions. A sinking fund starts at zero and <strong>grows</strong> toward a future target — it uses the future value annuity formula. A loan starts at a known present amount and <strong>shrinks</strong> as it's paid off — it uses the present value annuity formula. One builds up to a future amount; the other pays down an existing one.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'A school wants to save R120 000 to buy a replacement minibus in 4 years. They set up a sinking fund, depositing equal monthly amounts into an account earning 7% per year compounded monthly. Find the monthly deposit needed.',
+          answer: `${bl('x')} ≈ R2 173.55 per month`,
+          steps: [
+            `No inflation is mentioned, so the target is already the future amount: ${gr('F')} = R120 000`,
+            `Identify the ${or('interest rate per period')}: ${or('i')} = 0.07 ÷ 12 ≈ ${or('0.005833')} per month`,
+            `Determine the number of payments: n = 4 × 12 = 48 months`,
+            `Write the formula and solve for ${bl('x')}: ${bl('x')} = ${gr('F')} × ${or('i')} ÷ [(1 + ${or('i')})ⁿ − 1]`,
+            `Calculate (1.005833)⁴⁸ ≈ 1.3221; denominator = 1.3221 − 1 = 0.3221`,
+            `Substitute: ${bl('x')} = ${gr('120 000')} × ${or('0.005833')} ÷ 0.3221 ≈ 700.00 ÷ 0.3221`,
+            `Calculate: ${bl('x')} ≈ ${bl('R2 173.55')} per month`,
+          ],
+        },
+        {
+          question: 'A factory\'s current machine costs R350 000. Due to inflation of 6.5% per year, the replacement cost will be higher in 6 years\' time. The factory sets up a sinking fund earning 8.4% per year compounded monthly to cover the future replacement cost. Find the required monthly deposit.',
+          answer: `${bl('x')} ≈ R5 479.40 per month`,
+          steps: [
+            `Step 1 — inflate the current cost: ${gr('future cost')} = ${bl('350 000')}(1 + ${or('0.065')})⁶`,
+            `Calculate (1.065)⁶ ≈ 1.4591`,
+            `${gr('future cost')} = ${bl('350 000')} × 1.4591 ≈ ${gr('R510 699.80')}`,
+            `Step 2 — treat this as the sinking fund target: ${gr('F')} = R510 699.80`,
+            `Identify the ${or('interest rate per period')}: ${or('i')} = 0.084 ÷ 12 = ${or('0.007')} per month; n = 6 × 12 = 72 months`,
+            `Calculate (1.007)⁷² ≈ 1.6524; denominator = 1.6524 − 1 = 0.6524`,
+            `Solve for ${bl('x')}: ${bl('x')} = ${gr('510 699.80')} × ${or('0.007')} ÷ 0.6524 ≈ 3 574.90 ÷ 0.6524`,
+            `Calculate: ${bl('x')} ≈ ${bl('R5 479.40')} per month`,
+          ],
+        },
+        {
+          question: 'A delivery company\'s truck currently costs R480 000. It inflates at 6% per year, and the company will replace the truck in 5 years\' time, trading in the old truck for an estimated R60 000 at that point. The sinking fund earns 9.6% per year compounded monthly. Find the required monthly deposit.',
+          answer: `${bl('x')} ≈ R7 600.09 per month`,
+          steps: [
+            `Step 1 — inflate the current cost: ${gr('future cost')} = ${bl('480 000')}(1 + ${or('0.06')})⁵`,
+            `Calculate (1.06)⁵ ≈ 1.3382`,
+            `${gr('future cost')} = ${bl('480 000')} × 1.3382 ≈ ${gr('R642 348.28')}`,
+            `Subtract the trade-in value to find the sinking fund target: ${gr('F')} = R642 348.28 − R60 000 = ${gr('R582 348.28')}`,
+            `Step 2 — identify the ${or('interest rate per period')}: ${or('i')} = 0.096 ÷ 12 = ${or('0.008')} per month; n = 5 × 12 = 60 months`,
+            `Calculate (1.008)⁶⁰ ≈ 1.6130; denominator = 1.6130 − 1 = 0.6130`,
+            `Solve for ${bl('x')}: ${bl('x')} = ${gr('582 348.28')} × ${or('0.008')} ÷ 0.6130 ≈ 4 658.79 ÷ 0.6130`,
+            `Calculate: ${bl('x')} ≈ ${bl('R7 600.09')} per month`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q21 Easy ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'A gym needs to replace fitness equipment worth R80,000 in 3 years. They set up a sinking fund, depositing equal monthly amounts into an account earning 7.2% per year compounded monthly. Find the monthly deposit needed (to the nearest cent).',
+          answer: 'R1,997.49',
+          checkMode: 'auto',
+          correctAnswer: 'R1997.49',
+          correctAnswers: ['R1997.49', '1997.49', 'R1,997.49', '1,997.49'],
+          explanation: 'i = 0.072 ÷ 12 = 0.006, n = 36, F = 80 000\n80 000 = x × [(1.006)³⁶ − 1] ÷ 0.006\n(1.006)³⁶ ≈ 1.2403\nx ≈ R1,997.49 ✓',
+        },
+
+        // ── Q22 Medium ────────────────────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'A bakery\'s oven currently costs R150,000. Due to inflation of 5.5% per year, the replacement cost will be higher in 4 years\' time. The bakery sets up a sinking fund earning 7.8% per year compounded monthly to cover the future replacement cost. Find the required monthly deposit (to the nearest cent). First find the future replacement cost.',
+          answer: 'R3,311.22',
+          checkMode: 'auto',
+          correctAnswer: 'R3311.22',
+          correctAnswers: ['R3311.22', '3311.22', 'R3,311.22', '3,311.22'],
+          explanation: 'Future cost = 150 000(1.055)⁴ ≈ R185,823.70\ni = 0.078 ÷ 12 = 0.0065, n = 48, F = 185 823.70\n185 823.70 = x × [(1.0065)⁴⁸ − 1] ÷ 0.0065\nx ≈ R3,311.22 ✓',
+        },
+
+        // ── Q23 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'A construction company\'s excavator currently costs R540,000. Due to inflation of 7% per year, the replacement cost will be higher in 6 years\' time. The company expects to trade in the old excavator for R90,000 at that point. They set up a sinking fund earning 10.2% per year compounded monthly to cover the shortfall. Find the required monthly deposit, and explain in one sentence how this problem differs from a plain loan repayment calculation.',
+          answer: 'Future cost = 540 000(1.07)⁶ ≈ R810,394.39\nSinking fund target: F = 810 394.39 − 90 000 = R720,394.39\ni = 0.102 ÷ 12 = 0.0085, n = 72\n720 394.39 = x × [(1.0085)⁷² − 1] ÷ 0.0085\nx ≈ R7,295.33 per month\nUnlike a loan repayment, which uses the present value annuity formula to pay down a known present amount, this problem uses the future value annuity formula because the fund starts at zero and must grow to reach a future target.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Short video explaining sinking funds, inflating a future replacement cost with compound growth, and using the future value annuity formula to find the required regular deposit" />',
+    },
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 23,
     messages: [
-      { minScore: 20, message: 'Outstanding! You have mastered finance.' },
-      { minScore: 15, message: 'Great work!' },
-      { minScore: 10, message: 'Good effort, review and try again.' },
+      { minScore: 23, message: 'Outstanding! You have mastered finance.' },
+      { minScore: 17, message: 'Great work!' },
+      { minScore: 12, message: 'Good effort, review and try again.' },
       { minScore: 0, message: 'Keep going, work through the guide again.' },
     ],
   },
 
   scoreMessages: [
-    { minScore: 20, message: 'Outstanding! You have mastered finance.' },
-    { minScore: 15, message: 'Great work!' },
-    { minScore: 10, message: 'Good effort, review and try again.' },
+    { minScore: 23, message: 'Outstanding! You have mastered finance.' },
+    { minScore: 17, message: 'Great work!' },
+    { minScore: 12, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
 

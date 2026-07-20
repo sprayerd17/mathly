@@ -10,6 +10,12 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // Section 3: radius gradient  → blue   (#2563eb)
 //            tangent gradient → orange (#ea580c)
 //            tangent equation → green  (#16a34a)
+// Section 5: gradient (m)     → blue   (#2563eb)
+//            angle of incl. θ → orange (#ea580c)
+//            tan θ = m result → green  (#16a34a)
+// Section 6: gradient test    → blue   (#2563eb)
+//            length/distance  → orange (#ea580c)
+//            conclusion       → green  (#16a34a)
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
@@ -572,6 +578,293 @@ export const topicData: TopicData = {
 
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat wys hoe om sirkel- en lynmeetkunde te kombineer om punte op \'n sirkel te bevestig, raaklynlengtes vanaf eksterne punte te vind, en koord-loodregtheidseienskappe te bewys" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — ANGLE OF INCLINATION OF A LINE
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'angle-of-inclination',
+      title: 'Hellingshoek van ʼn Lyn',
+      icon: '🧭',
+      explanation:
+        `<p style="margin-bottom:16px;">Elke nie-vertikale reguit lyn vorm ʼn hoek met die positiewe x-as, gemeet anti-kloksgewys vanaf die as na die lyn. Hierdie hoek word die ${or('hellingshoek (θ)')} genoem. Dit hou direk verband met die ${bl('gradiënt (m)')} van die lyn deur die verwantskap ${gr('m = tan θ')}, waar 0° ≤ θ &lt; 180°.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gradiënt (m)')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('hellingshoek (θ)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('tan θ resultaat')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die sleutelverwantskap</p>` +
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-family:monospace;font-size:1.2em;font-weight:700;color:#0f1f3d;margin:0;">${bl('m')} = tan ${or('θ')} &nbsp;&nbsp;⟺&nbsp;&nbsp; ${or('θ')} = tan⁻¹(${bl('m')})</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin-top:8px;margin-bottom:0;">θ word anti-kloksgewys vanaf die positiewe x-as gemeet, en 0° ≤ θ &lt; 180°</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Bepaal θ vanaf ʼn gradiënt</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">As ${bl('m')} ${bl('positief')} is, loop die lyn opwaarts van links na regs, dus is θ ${or('skerp')} (0° &lt; θ &lt; 90°). Bereken eenvoudig θ = tan⁻¹(${bl('m')}).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">As ${bl('m')} ${bl('negatief')} is, gee ʼn sakrekenaar ʼn negatiewe verwysingshoek vir tan⁻¹(${bl('m')}). Aangesien θ tussen 0° en 180° moet lê, ${or('tel 180° by')}: θ = 180° + tan⁻¹(${bl('m')}).</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">Spesiale gevalle: ʼn ${gr('horisontale lyn')} het m = 0, dus θ = 0°. ʼn ${gr('vertikale lyn')} het ʼn onbepaalde gradiënt, dus θ = 90°.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Hoek tussen twee lyne</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Om die hoek tussen twee lyne te vind, bepaal eers die ${or('hellingshoek')} van elke lyn afsonderlik (θ₁ en θ₂). Die hoek tussen die lyne is dan |θ₂ − θ₁|. Dit werk omdat albei hoeke vanaf dieselfde verwysingsrigting gemeet word — die positiewe x-as.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Bepaal die hellingshoek θ van ʼn lyn met gradiënt m = 1.',
+          answer: `${or('θ = 45°')}`,
+          steps: [
+            `${bl('m = 1')} is positief, dus is θ skerp.`,
+            `θ = tan⁻¹(${bl('1')}) = ${or('45°')}`,
+          ],
+        },
+        {
+          question: 'ʼn Lyn gaan deur P(−2, 1) en Q(3, −4). Bepaal die gradiënt en hellingshoek daarvan.',
+          answer: `${bl('m = −1')} &nbsp;·&nbsp; ${or('θ = 135°')}`,
+          steps: [
+            `${bl('Gradiënt:')} m = (−4 − 1) / (3 − (−2)) = −5/5 = ${bl('−1')}`,
+            `${bl('m')} is negatief, dus is θ stomp. tan⁻¹(${bl('−1')}) = −45° op ʼn sakrekenaar.`,
+            `Tel 180° by: θ = 180° − 45° = ${or('135°')}`,
+          ],
+        },
+        {
+          question: 'Lyn AB gaan deur A(0, 3) en B(4, 0). ʼn Tweede lyn, PQ, het gradiënt 1. Bepaal die hoek tussen AB en PQ.',
+          answer: `Die hoek tussen AB en PQ is ${gr('≈ 98,1°')}`,
+          steps: [
+            `${bl('Gradiënt van AB:')} m<sub>AB</sub> = (0 − 3) / (4 − 0) = ${bl('−3/4')}`,
+            `${bl('m')}<sub>AB</sub> is negatief, dus ${or('θ')}<sub>AB</sub> = 180° + tan⁻¹(−3/4) = 180° − 36,87° = ${or('143,13°')}`,
+            `${bl('Gradiënt van PQ:')} m<sub>PQ</sub> = ${bl('1')}, dus ${or('θ')}<sub>PQ</sub> = tan⁻¹(1) = ${or('45°')}`,
+            `Hoek tussen die lyne = |${or('143,13°')} − ${or('45°')}| = ${gr('98,13°')} (≈ 98,1°)`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q22 Easy — θ from a positive gradient ──────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Bepaal die hellingshoek θ van ʼn lyn met gradiënt m = 1,732 (≈ √3).',
+          answer: '60',
+          checkMode: 'auto',
+          correctAnswer: '60',
+          correctAnswers: ['60', '60°'],
+          explanation: 'm is positief, dus is θ skerp. θ = tan⁻¹(1,732) = 60° ✓',
+        },
+
+        // ── Q23 Medium — θ from a negative gradient ────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Bepaal die hellingshoek θ van ʼn lyn met gradiënt m = −√3 (≈ −1,732).',
+          answer: '120',
+          checkMode: 'auto',
+          correctAnswer: '120',
+          correctAnswers: ['120', '120°'],
+          explanation: 'm is negatief, dus is θ stomp. tan⁻¹(−1,732) = −60° op ʼn sakrekenaar. θ = 180° − 60° = 120° ✓',
+        },
+
+        // ── Q24 Medium — gradient and θ from two points ────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Bepaal die gradiënt en hellingshoek van die lyn deur A(−1, −2) en B(2, 4). Rond θ af tot een desimale plek.',
+          answer: 'Gradiënt: m = (4−(−2)) / (2−(−1)) = 6/3 = 2.\nAangesien m positief is, θ = tan⁻¹(2) ≈ 63,4°',
+          checkMode: 'self',
+        },
+
+        // ── Q25 Hard — angle between two lines given by points ────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Lyn AB gaan deur A(0, 3) en B(4, 0). Lyn CD gaan deur C(1, 1) en D(4, 5). Bepaal die hellingshoek van elke lyn, en bepaal dan die hoek tussen die twee lyne.',
+          answer: 'Gradiënt AB = (0−3)/(4−0) = −3/4. Aangesien dit negatief is, θ₁ = 180° − tan⁻¹(3/4) = 180° − 36,87° = 143,13°.\nGradiënt CD = (5−1)/(4−1) = 4/3. Aangesien dit positief is, θ₂ = tan⁻¹(4/3) = 53,13°.\nHoek tussen die lyne = |143,13° − 53,13°| = 90°.\n(Kontroleer: m_AB × m_CD = (−3/4)(4/3) = −1, wat bevestig dat die lyne loodreg is.)',
+          checkMode: 'self',
+        },
+
+        // ── Q26 Hard — evaluate a claim about negative gradients ───────────────
+        {
+          difficulty: 'Hard',
+          question: 'Thabo sê dat enige lyn met ʼn negatiewe gradiënt noodwendig ʼn hellingshoek groter as 90° moet hê. Is hy korrek? Verduidelik.',
+          answer: 'Ja, Thabo is korrek. Vir 0° ≤ θ < 180° is tan θ slegs negatief wanneer θ tussen 90° en 180° lê (die tweede-kwadrant-hoekgebied). Aangesien m = tan θ, kom ʼn negatiewe gradiënt altyd ooreen met ʼn stomp hellingshoek, d.w.s. 90° < θ < 180°.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat die hellingshoek van \'n lyn verduidelik, hoe dit met die gradiënt verband hou deur m = tan θ, en hoe om die hoek tussen twee lyne te vind" />',
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — ANALYTICAL PROOFS OF QUADRILATERALS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'analytical-proofs-of-quadrilaterals',
+      title: 'Analitiese Bewyse van Vierhoeke',
+      icon: '🔷',
+      explanation:
+        `<p style="margin-bottom:16px;">Gegewe die koördinate van die hoekpunte van ʼn vierhoek, kan ons die ${bl('gradiëntformule')} en die ${or('afstandsformule')} gebruik om — sonder ʼn gradeboog of liniaal — te bewys watter tipe vierhoek dit is. Verskillende kombinasies van toetse bevestig ʼn ${gr('parallelogram')}, ${gr('reghoek')}, ${gr('ruit')} of ${gr('vierkant')}.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('gradiënttoets')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('lengte-/afstandtoets')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('gevolgtrekking')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Toetse vir elke vierhoek</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:8px;">Parallelogram</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">${bl('Albei pare oorstaande sye parallel')} (gelyke gradiënte), OF oorstaande sye gelyk in lengte, OF die diagonale halveer mekaar (gelyke middelpunte).</p>` +
+        `</div>` +
+
+        `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:8px;">Reghoek</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">ʼn Parallelogram met ${or('een regte hoek')} (aangrensende sygradiënte se produk is −1), OF ʼn parallelogram waarvan die ${or('diagonale gelyk in lengte')} is.</p>` +
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:8px;">Ruit</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">ʼn Parallelogram met ${gr('al vier sye gelyk')} in lengte, OF ʼn parallelogram waarvan die diagonale loodreg is (gradiëntproduk = −1).</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Algemene metode</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;">${bl('Bepaal al vier gradiënte')} — Gebruik die gradiëntformule op elke sy. Gelyke gradiënte vir albei oorstaande pare bevestig ʼn parallelogram.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;">${or('Bepaal die relevante lengtes')} — Gebruik die afstandsformule op die sye en/of diagonale, na gelang van wat die vraag jou vra om te bewys.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;">${gr('Formuleer die gevolgtrekking')} — Noem die tipe vierhoek, ondersteun deur die spesifieke numeriese bewyse wat jy bereken het.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Bewys eers die parallelogram</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Bevestig altyd eers dat ʼn vierhoek ʼn ${bl('parallelogram')} is voordat jy toets of dit ook ʼn reghoek of ruit is. Gelyke diagonale of ʼn regte hoek waarborg slegs ʼn reghoek as die vorm reeds bekend is as ʼn parallelogram — andersins kan ander (nie-parallelogram) vierhoeke dieselfde eienskappe toevallig deel.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'Bewys dat vierhoek ABCD met A(0, 0), B(4, 1), C(6, 5) en D(2, 4) ʼn parallelogram is.',
+          answer: `${bl('m_AB = m_DC = 1/4')} &nbsp;·&nbsp; ${bl('m_BC = m_AD = 2')} &nbsp;→&nbsp; ${gr('ABCD is ʼn parallelogram')}`,
+          steps: [
+            `${bl('Gradiënt AB:')} m<sub>AB</sub> = (1−0)/(4−0) = ${bl('1/4')}`,
+            `${bl('Gradiënt DC:')} m<sub>DC</sub> = (5−4)/(6−2) = ${bl('1/4')}`,
+            `${bl('Gradiënt BC:')} m<sub>BC</sub> = (5−1)/(6−4) = ${bl('2')}`,
+            `${bl('Gradiënt AD:')} m<sub>AD</sub> = (4−0)/(2−0) = ${bl('2')}`,
+            `Aangesien m<sub>AB</sub> = m<sub>DC</sub> en m<sub>BC</sub> = m<sub>AD</sub>, is albei pare oorstaande sye parallel, dus ${gr('is ABCD ʼn parallelogram.')} ✓`,
+          ],
+        },
+        {
+          question: 'Vir dieselfde vierhoek ABCD — A(0, 0), B(4, 1), C(6, 5), D(2, 4) — toets of dit ook ʼn reghoek of ʼn ruit is.',
+          answer: `${or('AB ≠ BC en AC ≠ BD')} &nbsp;→&nbsp; ${gr('ABCD is slegs ʼn parallelogram')} (nie ʼn reghoek of ruit nie)`,
+          steps: [
+            `${or('Sylengtes:')} AB = √[(4−0)²+(1−0)²] = √17. &nbsp; BC = √[(6−4)²+(5−1)²] = √20`,
+            `Aangesien ${or('AB ≠ BC')}, is nie al die sye gelyk nie, dus is ABCD <strong>nie ʼn ruit nie</strong>.`,
+            `${or('Diagonaallengtes:')} AC = √[(6−0)²+(5−0)²] = √61. &nbsp; BD = √[(2−4)²+(4−1)²] = √13`,
+            `Aangesien ${or('AC ≠ BD')}, is die diagonale nie gelyk nie, dus is ABCD <strong>nie ʼn reghoek nie</strong>.`,
+            `${gr('Gevolgtrekking: ABCD is slegs ʼn parallelogram.')}`,
+          ],
+        },
+        {
+          question: 'Bewys dat vierhoek WXYZ met W(0, 0), X(4, 2), Y(2, 6) en Z(−2, 4) ʼn vierkant is.',
+          answer: `${bl('Parallelogram')} + ${or('regte hoek')} + ${or('gelyke sye')} ⟹ ${gr('WXYZ is ʼn vierkant')}`,
+          steps: [
+            `${bl('Gradiënt WX:')} m<sub>WX</sub> = (2−0)/(4−0) = 1/2. &nbsp; ${bl('Gradiënt ZY:')} m<sub>ZY</sub> = (6−4)/(2−(−2)) = 1/2 — gelyk, dus WX ∥ ZY.`,
+            `${bl('Gradiënt XY:')} m<sub>XY</sub> = (6−2)/(2−4) = −2. &nbsp; ${bl('Gradiënt WZ:')} m<sub>WZ</sub> = (4−0)/(−2−0) = −2 — gelyk, dus XY ∥ WZ. ${bl('WXYZ is ʼn parallelogram.')}`,
+            `${or('Regte-hoek-toets:')} m<sub>WX</sub> × m<sub>XY</sub> = (1/2) × (−2) = −1, dus WX ⊥ XY. ${or('WXYZ is ʼn reghoek.')}`,
+            `${or('Sylengtes:')} WX = √[(4)²+(2)²] = √20. &nbsp; XY = √[(−2)²+(4)²] = √20 — al vier sye gelyk (deur die parallelogram-eienskap is WX = ZY en XY = WZ ook).`,
+            `ʼn Reghoek met al die sye gelyk is ʼn ${gr('vierkant. WXYZ is ʼn vierkant.')} ✓`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q27 Easy — gradient of one side of a quadrilateral ─────────────────
+        {
+          difficulty: 'Easy',
+          question: 'Vierhoek PQRS het P(1, 2), Q(5, 4), R(9, 2) en S(5, 0). Bepaal die gradiënt van sy PQ.',
+          answer: '1/2',
+          checkMode: 'auto',
+          correctAnswer: '1/2',
+          correctAnswers: ['1/2', '0,5'],
+          explanation: 'm_PQ = (4−2)/(5−1) = 2/4 = 1/2 ✓',
+        },
+
+        // ── Q28 Medium — gradient of the opposite side ─────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'Vir dieselfde vierhoek PQRS — P(1, 2), Q(5, 4), R(9, 2), S(5, 0) — bepaal die gradiënt van sy SR. Is SR parallel aan PQ (gradiënt 1/2)?',
+          answer: '1/2',
+          checkMode: 'auto',
+          correctAnswer: '1/2',
+          correctAnswers: ['1/2', '0,5'],
+          explanation: 'm_SR = (2−0)/(9−5) = 2/4 = 1/2. Aangesien m_SR = m_PQ = 1/2, is SR ∥ PQ ✓',
+        },
+
+        // ── Q29 Medium — combine the gradients into a parallelogram proof ──────
+        {
+          difficulty: 'Medium',
+          question: 'Vir vierhoek PQRS — P(1, 2), Q(5, 4), R(9, 2), S(5, 0) — word jy gegee dat m_QR = m_PS = −1/2. Gebruik dit saam met jou antwoorde vir PQ en SR om, met redes, te sê of PQRS ʼn parallelogram is.',
+          answer: 'm_PQ = m_SR = 1/2, dus PQ ∥ SR. m_QR = m_PS = −1/2, dus QR ∥ PS. Aangesien albei pare oorstaande sye parallel is, is PQRS ʼn parallelogram.',
+          checkMode: 'self',
+        },
+
+        // ── Q30 Hard — full rectangle proof (not a rhombus) ────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'Vierhoek WXYZ het W(0, 0), X(4, 2), Y(1, 8) en Z(−3, 6). Bewys dat WXYZ ʼn reghoek is, en toon aan dat dit nie ʼn ruit is nie.',
+          answer: 'Gradiënt WX = (2−0)/(4−0) = 1/2. Gradiënt ZY = (8−6)/(1−(−3)) = 1/2 — gelyk, dus WX ∥ ZY.\nGradiënt XY = (8−2)/(1−4) = −2. Gradiënt WZ = (6−0)/(−3−0) = −2 — gelyk, dus XY ∥ WZ. WXYZ is ʼn parallelogram.\nm_WX × m_XY = (1/2)×(−2) = −1, dus WX ⊥ XY. WXYZ is ʼn reghoek.\nWX = √[16+4] = √20 ≈ 4,47. XY = √[9+36] = √45 ≈ 6,71. Aangesien WX ≠ XY, is nie al die sye gelyk nie, dus is WXYZ nie ʼn ruit nie.',
+          checkMode: 'self',
+        },
+
+        // ── Q31 Hard — evaluate a claim about equal diagonals ──────────────────
+        {
+          difficulty: 'Hard',
+          question: 'In vierhoek ABCD is die diagonale AC en BD gelyk in lengte, maar dit is nog nie bewys dat ABCD ʼn parallelogram is nie. Zanele beweer dit is reeds genoeg bewys om te sê ABCD is ʼn reghoek. Is sy korrek? Verduidelik.',
+          answer: 'Nee, Zanele is nie korrek nie. Gelyke diagonale alleen waarborg nie ʼn reghoek nie — ʼn gelykbenige trapesium het byvoorbeeld ook gelyke diagonale, maar is nie ʼn reghoek nie. Die gelyke-diagonale-toets bevestig slegs ʼn reghoek sodra reeds bewys is dat die vierhoek ʼn parallelogram is (deur die gradiënt- of sylengtetoetse te gebruik). Sonder daardie eerste stap is gelyke diagonale nie voldoende bewys nie.',
+          checkMode: 'self',
+        },
+      ],
+
+      diagramSvg:
+        `<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><polygon points="40,140 170,120 150,30 60,50" fill="none" stroke="#0f1f3d" stroke-width="2.5" /><circle cx="40" cy="140" r="3.5" fill="#2563eb" /><circle cx="170" cy="120" r="3.5" fill="#2563eb" /><circle cx="150" cy="30" r="3.5" fill="#2563eb" /><circle cx="60" cy="50" r="3.5" fill="#2563eb" /><text x="30" y="157" font-weight="700" font-size="11" fill="#2563eb" text-anchor="middle">A(0, 0)</text><text x="178" y="122" font-weight="700" font-size="11" fill="#2563eb" text-anchor="start">B(4, 1)</text><text x="155" y="20" font-weight="700" font-size="11" fill="#2563eb" text-anchor="start">C(6, 5)</text><text x="46" y="40" font-weight="700" font-size="11" fill="#2563eb" text-anchor="end">D(2, 4)</text><text x="105" y="90" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">AB ∥ DC</text><text x="105" y="105" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">BC ∥ AD</text></svg>`,
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat wys hoe om die gradiënt- en afstandsformules te gebruik om te bewys dat ʼn vierhoek ʼn parallelogram, reghoek, ruit of vierkant is" />',
     },
   ],
 

@@ -251,7 +251,95 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // SECTION 4 — USING COUNTING TECHNIQUES TO SOLVE PROBABILITY PROBLEMS
+    // SECTION 4 — COMBINATIONS: SELECTING OBJECTS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'combinations-selecting-objects',
+      title: 'Kombinasies — Kies van Voorwerpe Wanneer Volgorde Nie Saak Maak Nie',
+      icon: '🧮',
+      explanation:
+        `<p style="margin-bottom:16px;">In die vorige afdeling het elke probleem gegaan oor die <strong>rangskikking</strong> van voorwerpe, waar 'n verandering in volgorde 'n nuwe uitkoms geskep het. Baie werklike situasies is anders — die kies van 'n komitee, 'n span, of 'n hand kaarte gee nie om oor die volgorde waarin die lede gekies is nie. 'n ${bl('Kombinasie')} is 'n keuse van voorwerpe waar volgorde NIE saak maak nie:</p>` +
+
+        `<div style="text-align:center;font-size:1.3em;font-weight:700;color:#0f1f3d;margin-bottom:20px;padding:12px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;">${gr('C(n, r) = ⁿCᵣ = n! ÷ (r! × (n − r)!)')}</div>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('n- en r-waardes')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('formule toegepas')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('finale telling')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('uitgesluite / komplement-geval')}</span>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Drie idees wat jy moet herken</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Volgorde Maak NIE Saak Nie</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Om Kagiso, dan Zanele, dan Amahle vir 'n komitee te kies, gee dieselfde ${gr('komitee')} as om Amahle, dan Kagiso, dan Zanele te kies. 'n Permutasie vra "in watter volgorde?"; 'n kombinasie vra net "watter een(s)?".</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Waar die Formule Vandaan Kom</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Daar is ${bl('n × (n − 1) × ... × (n − r + 1)')} maniere om r voorwerpe <strong>in volgorde</strong> te kies (fundamentele telbeginsel). Elke ongeordende groep van r voorwerpe kan self op ${or('r!')} verskillende maniere gerangskik word, so ons deel dit uit: ${gr('C(n, r) = n! ÷ (r!(n − r)!)')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Kies uit Twee of Meer Groepe</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">As 'n keuse 'n vaste aantal uit een groep EN 'n vaste aantal uit 'n ander groep moet insluit (bv. seuns en meisies), bepaal elke kombinasie afsonderlik en ${re('vermenigvuldig')} dan met behulp van die telbeginsel.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Herken 'n "ten minste"-kombinasievraag</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Wanneer 'n vraag 'n keuse met <strong>"ten minste een"</strong> uit 'n bepaalde groep vra, is dit gewoonlik vinniger om die aantal keuses met ${re('GEEN uit daardie groep nie')} te bepaal en af te trek: ${re('gunstige = totaal − geen')}, net soos die komplementêre reël vroeër in hierdie onderwerp.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: "'n Netbalspan moet 'n aanvangspan van 4 spelers uit 'n span van 9 spelers kies. Die volgorde waarin die spelers gekies word, maak nie saak nie. Op hoeveel maniere kan die aanvangspan gekies word?",
+          answer: `${gr('C(9,4) = 126')} maniere`,
+          steps: [
+            `Die vraag gee net om WATTER 4 spelers gekies word, nie die volgorde nie — dit is 'n ${bl('kombinasie')}, met ${bl('n = 9')} en ${bl('r = 4')}.`,
+            `Pas die ${or('kombinasieformule')} toe: ${or('C(9,4) = 9! ÷ (4! × 5!)')}.`,
+            `Bereken: 9! ÷ (4! × 5!) = (9 × 8 × 7 × 6) ÷ (4 × 3 × 2 × 1) = 3024 ÷ 24 = ${gr('126')}.`,
+            `<strong>Antwoord:</strong> Daar is ${gr('126')} verskillende maniere om die aanvangspan te kies.`,
+          ],
+        },
+        {
+          question: "'n Debatspan benodig 3 sprekers gekies uit 7 kandidate EN 2 navorsers gekies uit 5 kandidate. Op hoeveel maniere kan die span gevorm word?",
+          answer: `${gr('C(7,3) × C(5,2) = 350')} maniere`,
+          steps: [
+            `Die keuse van die ${bl('sprekers')} en die keuse van die ${bl('navorsers')} is twee afsonderlike kombinasies, wat onafhanklik gedoen word.`,
+            `Pas die ${or('kombinasieformule')} op elke groep toe: ${or('C(7,3) = 7! ÷ (3! × 4!) = 35')} en ${or('C(5,2) = 5! ÷ (2! × 3!) = 10')}.`,
+            `Aangesien albei keuses saam gebeur, pas die ${gr('fundamentele telbeginsel')} toe en vermenigvuldig: ${gr('35 × 10 = 350')}.`,
+            `<strong>Antwoord:</strong> Daar is ${gr('350')} verskillende maniere om die span te vorm.`,
+          ],
+        },
+        {
+          question: "'n Werkgroep van 4 mense word uit 5 bestuurders en 6 personeellede (11 mense in totaal) gekies. Bepaal die aantal maniere om die groep te kies as dit ten minste een bestuurder moet insluit.",
+          answer: `${gr('330 − 15 = 315')} maniere`,
+          steps: [
+            `${bl('Totale maniere')} om enige 4 mense uit al 11 te kies, sonder om die beperking in ag te neem: ${bl('C(11,4) = 11! ÷ (4! × 7!) = 330')}.`,
+            `${re('"Ten minste een bestuurder" is makliker via die komplement')} — bepaal die keuses met GEEN bestuurders nie (al 4 uit die 6 personeellede): ${re('C(6,4) = 6! ÷ (4! × 2!) = 15')}.`,
+            `Trek af: ${gr('gunstige = totaal − geen = 330 − 15 = 315')}.`,
+            `<strong>Antwoord:</strong> Daar is ${gr('315')} maniere om 'n groep met ten minste een bestuurder te kies.`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+      openQuestions: [],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat kombinasies met permutasies vergelyk deur \'n komitee-keuse-voorbeeld te gebruik, die C(n,r)-formule van die telbeginsel aflei, en dan die vermenigvuldig-twee-groepe-tegniek en die ten-minste-een-komplement-truuk wys" />',
+
+      diagramSvg:
+        `<svg viewBox="0 0 280 165" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><circle cx="30" cy="35" r="16" fill="none" stroke="#2563eb" stroke-width="2.5" /><circle cx="76" cy="35" r="16" fill="#ea580c" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5" /><circle cx="122" cy="35" r="16" fill="#ea580c" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5" /><circle cx="168" cy="35" r="16" fill="none" stroke="#2563eb" stroke-width="2.5" /><circle cx="214" cy="35" r="16" fill="#ea580c" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5" /><text x="30" y="40" font-weight="700" font-size="13" fill="#2563eb" text-anchor="middle">1</text><text x="76" y="40" font-weight="700" font-size="13" fill="#ea580c" text-anchor="middle">2</text><text x="122" y="40" font-weight="700" font-size="13" fill="#ea580c" text-anchor="middle">3</text><text x="168" y="40" font-weight="700" font-size="13" fill="#2563eb" text-anchor="middle">4</text><text x="214" y="40" font-weight="700" font-size="13" fill="#ea580c" text-anchor="middle">5</text><text x="140" y="68" font-weight="700" font-size="11" fill="#374151" text-anchor="middle">gekose groep = {2, 3, 5}</text><rect x="40" y="95" width="46" height="22" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5" /><text x="63" y="110" font-size="10" fill="#ea580c" text-anchor="middle" font-weight="700">2,3,5</text><rect x="96" y="95" width="46" height="22" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5" /><text x="119" y="110" font-size="10" fill="#ea580c" text-anchor="middle" font-weight="700">3,5,2</text><rect x="152" y="95" width="46" height="22" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5" /><text x="175" y="110" font-size="10" fill="#ea580c" text-anchor="middle" font-weight="700">5,2,3</text><text x="220" y="112" font-size="16" fill="#94a3b8" text-anchor="middle">...</text><line x1="63" y1="117" x2="140" y2="140" stroke="#94a3b8" stroke-width="1.5" /><line x1="119" y1="117" x2="140" y2="140" stroke="#94a3b8" stroke-width="1.5" /><line x1="175" y1="117" x2="140" y2="140" stroke="#94a3b8" stroke-width="1.5" /><circle cx="140" cy="150" r="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5" /><text x="140" y="153" font-size="8" fill="#16a34a" text-anchor="middle" font-weight="700">1 groep</text><text x="220" y="145" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">÷ 3! ordes</text></svg>`,
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 5 — USING COUNTING TECHNIQUES TO SOLVE PROBABILITY PROBLEMS
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'counting-techniques-probability',

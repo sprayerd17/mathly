@@ -697,22 +697,191 @@ export const topicData: TopicData = {
       videoPlaceholder:
         '<VideoPlaceholder label="Kort video wat huidige waarde-annuïteite en verbandterugbetalings verduidelik, met uitgewerkte voorbeelde oor maandelikse terugbetalings, uitstaande balans, en om vir die aantal betalings op te los" />',
     },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECTION 6 — SINKING FUNDS
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      id: 'sinking-funds',
+      title: 'Sinkingsfondse',
+      icon: 'SF',
+      explanation:
+        `<p style="margin-bottom:16px;">ʼn <strong>Sinkingsfonds</strong> is ʼn spaarplan wat opgestel word om ʼn bekende teikenbedrag teen ʼn toekomstige datum te bereik — gewoonlik sodat ʼn besigheid ʼn bate (ʼn masjien, voertuig, of stuk toerusting) kan vervang sodra dit uitgedien is. ʼn Sinkingsfonds is nie ʼn nuwe formule nie: dit kombineer twee formules wat jy reeds ken. <strong>Saamgestelde groei</strong> (Afdeling 1) word gebruik om vandag se vervangingskoste na môre se vervangingskoste te inflateer, en die <strong>toekomstige waarde annuïteit</strong>-formule (Afdeling 4) word dan gebruik om die gereelde deposito te bereken wat sal groei om daardie geïnflateerde teiken te bereik.</p>` +
+
+        `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
+        `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('bekende bedrag')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('koers (inflasie of rente)')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('berekende resultaat')}</span>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-align:center;">` +
+        `<p style="font-size:1.05em;font-weight:700;color:#374151;margin:0 0 6px 0;">Stap 1 (groei): ${gr('C toekomstig')} = ${bl('C')}(1 + ${or('f')})ⁿ &nbsp;&nbsp;→&nbsp;&nbsp; Stap 2 (annuïteit): ${gr('F')} = ${bl('x')} × [(1 + ${or('i')})ⁿ − 1] ÷ ${or('i')}</p>` +
+        `<p style="font-size:13px;color:#6b7280;margin:0;">Die uitset van Stap 1 word die teiken ${bl('F')} wat jy in Stap 2 vervang, wat jy dan vir ${gr('x')} oplos</p>` +
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die twee-stap-metode</p>` +
+        `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#374151;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>Identifiseer wat jy gegee is:</strong> die huidige koste ${bl('C')}, die inflasie-/groeikoers ${or('f')}, die aantal jare n totdat die bate vervang moet word, en die rentekoers ${or('i')} wat die sinkingsfonds verdien.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>STAP 1 — Inflateer die vervangingskoste:</strong> gebruik die saamgestelde groei-formule van Afdeling 1 om vandag se koste ${bl('C')} vorentoe te groei oor n jaar teen die inflasiekoers ${or('f')}: ${gr('toekomstige koste')} = ${bl('C')}(1 + ${or('f')})ⁿ.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>As ʼn ruilwaarde of skrootwaarde van toepassing is:</strong> trek dit af van die geïnflateerde koste voordat jy voortgaan — ${gr('F')} = ${gr('toekomstige koste')} − ruilwaarde. Die fonds hoef net die tekort te dek, nie die volle vervangingskoste nie.</p>` +
+        `</div>` +
+
+        `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
+        `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">4</span>` +
+        `<p style="margin:0;font-size:14px;"><strong>STAP 2 — Los vir die deposito op:</strong> behandel ${gr('F')} as die teiken toekomstige waarde van ʼn spaarannuïteit (Afdeling 4) en los ${gr('F')} = ${bl('x')} × [(1 + ${or('i')})ⁿ − 1] ÷ ${or('i')} op vir die gereelde deposito: ${bl('x')} = ${gr('F')} × ${or('i')} ÷ [(1 + ${or('i')})ⁿ − 1].</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Veranderlike-verwysing</p>` +
+        `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px;">` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">C — Huidige koste</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">Wat die bate vandag sou kos om te vervang, voordat inflasie toegepas word.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">f — Inflasiekoers</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">Die jaarlikse koers waarteen die vervangingskoste self groei — slegs in Stap 1 gebruik.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">F — Sinkingsfonds-teiken</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">Die toekomstige waarde wat die fonds moet bereik — die geïnflateerde vervangingskoste, minus enige ruilwaarde.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">i — Rente per tydperk</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">Die sinkingsfonds se eie rentekoers per tydperk — slegs in Stap 2 gebruik, en gewoonlik anders as ${or('f')}.</p>` +
+        `</div>` +
+
+        `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;padding:12px 14px;">` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">x — Benodigde deposito</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">Die gereelde (gewoonlik maandelikse) deposito in die sinkingsfonds — dit is wat Stap 2 vir oplos.</p>` +
+        `</div>` +
+
+        `</div>` +
+
+        `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
+        `<p style="font-weight:700;color:#166534;margin-bottom:6px;">Voorsiening vir ʼn ruilwaarde of skrootwaarde</p>` +
+        `<p style="margin:0;color:#166534;">As die ou bate ingeruil of as skroot verkoop kan word wanneer dit vervang word, verminder daardie geld hoeveel die sinkingsfonds moet voorsien. Trek altyd die ruil- of skrootwaarde af van die geïnflateerde vervangingskoste <strong>voordat</strong> dit as die teiken ${gr('F')} in Stap 2 gebruik word — moenie dit op die huidige koste ${bl('C')} toepas voordat dit geïnflateer word nie.</p>` +
+        `</div>` +
+
+        `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Sinkingsfonds teenoor lening-annuïteit</p>` +
+        `<p style="margin:0;color:#1e3a8a;">ʼn Sinkingsfonds en ʼn lening-terugbetaling (Afdeling 5) gebruik altwee ʼn reeks gelyke gereelde betalings, maar hulle beweeg in teenoorgestelde rigtings. ʼn Sinkingsfonds begin by nul en <strong>groei</strong> na ʼn toekomstige teiken toe — dit gebruik die toekomstige waarde annuïteit-formule. ʼn Lening begin by ʼn bekende huidige bedrag en <strong>krimp</strong> soos dit afbetaal word — dit gebruik die huidige waarde annuïteit-formule. Die een bou op tot ʼn toekomstige bedrag; die ander betaal ʼn bestaande bedrag af.</p>` +
+        `</div>`,
+
+      workedExamples: [
+        {
+          question: 'ʼn Skool wil R120 000 spaar om ʼn vervangende minibus binne 4 jaar te koop. Hulle stel ʼn sinkingsfonds op en deponeer gelyke maandelikse bedrae in ʼn rekening wat 7% per jaar maandeliks saamgestel verdien. Vind die maandelikse deposito benodig.',
+          answer: `${bl('x')} ≈ R2 173,55 per maand`,
+          steps: [
+            `Geen inflasie word genoem nie, dus is die teiken reeds die toekomstige bedrag: ${gr('F')} = R120 000`,
+            `Identifiseer die ${or('rentekoers per tydperk')}: ${or('i')} = 0,07 ÷ 12 ≈ ${or('0,005833')} per maand`,
+            `Bepaal die aantal betalings: n = 4 × 12 = 48 maande`,
+            `Skryf die formule neer en los op vir ${bl('x')}: ${bl('x')} = ${gr('F')} × ${or('i')} ÷ [(1 + ${or('i')})ⁿ − 1]`,
+            `Bereken (1,005833)⁴⁸ ≈ 1,3221; noemer = 1,3221 − 1 = 0,3221`,
+            `Vervang: ${bl('x')} = ${gr('120 000')} × ${or('0,005833')} ÷ 0,3221 ≈ 700,00 ÷ 0,3221`,
+            `Bereken: ${bl('x')} ≈ ${bl('R2 173,55')} per maand`,
+          ],
+        },
+        {
+          question: 'ʼn Fabriek se huidige masjien kos R350 000. As gevolg van inflasie van 6,5% per jaar sal die vervangingskoste hoër wees oor 6 jaar. Die fabriek stel ʼn sinkingsfonds op wat 8,4% per jaar maandeliks saamgestel verdien om die toekomstige vervangingskoste te dek. Vind die maandelikse deposito benodig.',
+          answer: `${bl('x')} ≈ R5 479,40 per maand`,
+          steps: [
+            `Stap 1 — inflateer die huidige koste: ${gr('toekomstige koste')} = ${bl('350 000')}(1 + ${or('0,065')})⁶`,
+            `Bereken (1,065)⁶ ≈ 1,4591`,
+            `${gr('toekomstige koste')} = ${bl('350 000')} × 1,4591 ≈ ${gr('R510 699,80')}`,
+            `Stap 2 — behandel dit as die sinkingsfonds-teiken: ${gr('F')} = R510 699,80`,
+            `Identifiseer die ${or('rentekoers per tydperk')}: ${or('i')} = 0,084 ÷ 12 = ${or('0,007')} per maand; n = 6 × 12 = 72 maande`,
+            `Bereken (1,007)⁷² ≈ 1,6524; noemer = 1,6524 − 1 = 0,6524`,
+            `Los op vir ${bl('x')}: ${bl('x')} = ${gr('510 699,80')} × ${or('0,007')} ÷ 0,6524 ≈ 3 574,90 ÷ 0,6524`,
+            `Bereken: ${bl('x')} ≈ ${bl('R5 479,40')} per maand`,
+          ],
+        },
+        {
+          question: 'ʼn Afleweringsmaatskappy se trok kos tans R480 000. Dit inflateer teen 6% per jaar, en die maatskappy sal die trok binne 5 jaar vervang, en die ou trok teen daardie tyd vir ʼn geskatte R60 000 inruil. Die sinkingsfonds verdien 9,6% per jaar maandeliks saamgestel. Vind die maandelikse deposito benodig.',
+          answer: `${bl('x')} ≈ R7 600,09 per maand`,
+          steps: [
+            `Stap 1 — inflateer die huidige koste: ${gr('toekomstige koste')} = ${bl('480 000')}(1 + ${or('0,06')})⁵`,
+            `Bereken (1,06)⁵ ≈ 1,3382`,
+            `${gr('toekomstige koste')} = ${bl('480 000')} × 1,3382 ≈ ${gr('R642 348,28')}`,
+            `Trek die ruilwaarde af om die sinkingsfonds-teiken te vind: ${gr('F')} = R642 348,28 − R60 000 = ${gr('R582 348,28')}`,
+            `Stap 2 — identifiseer die ${or('rentekoers per tydperk')}: ${or('i')} = 0,096 ÷ 12 = ${or('0,008')} per maand; n = 5 × 12 = 60 maande`,
+            `Bereken (1,008)⁶⁰ ≈ 1,6130; noemer = 1,6130 − 1 = 0,6130`,
+            `Los op vir ${bl('x')}: ${bl('x')} = ${gr('582 348,28')} × ${or('0,008')} ÷ 0,6130 ≈ 4 658,79 ÷ 0,6130`,
+            `Bereken: ${bl('x')} ≈ ${bl('R7 600,09')} per maand`,
+          ],
+        },
+      ],
+
+      practiceQuestions: [],
+
+      openQuestions: [
+        // ── Q21 Easy ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Easy',
+          question: 'ʼn Gimnasium moet fiksheidstoerusting ter waarde van R80 000 binne 3 jaar vervang. Hulle stel ʼn sinkingsfonds op en deponeer gelyke maandelikse bedrae in ʼn rekening wat 7,2% per jaar maandeliks saamgestel verdien. Vind die maandelikse deposito benodig (tot die naaste sent).',
+          answer: 'R1 997,49',
+          checkMode: 'auto',
+          correctAnswer: 'R1997,49',
+          correctAnswers: ['R1997.49', '1997.49', 'R1,997.49', '1,997.49', 'R1 997.49', '1 997.49', 'R1997,49', 'R1 997,49'],
+          explanation: 'i = 0,072 ÷ 12 = 0,006, n = 36, F = 80 000\n80 000 = x × [(1,006)³⁶ − 1] ÷ 0,006\n(1,006)³⁶ ≈ 1,2403\nx ≈ R1 997,49 ✓',
+        },
+
+        // ── Q22 Medium ────────────────────────────────────────────────────────
+        {
+          difficulty: 'Medium',
+          question: 'ʼn Bakkery se oond kos tans R150 000. As gevolg van inflasie van 5,5% per jaar sal die vervangingskoste hoër wees oor 4 jaar. Die bakkery stel ʼn sinkingsfonds op wat 7,8% per jaar maandeliks saamgestel verdien om die toekomstige vervangingskoste te dek. Vind die maandelikse deposito benodig (tot die naaste sent). Vind eers die toekomstige vervangingskoste.',
+          answer: 'R3 311,22',
+          checkMode: 'auto',
+          correctAnswer: 'R3311,22',
+          correctAnswers: ['R3311.22', '3311.22', 'R3,311.22', '3,311.22', 'R3 311.22', '3 311.22', 'R3311,22', 'R3 311,22'],
+          explanation: 'Toekomstige koste = 150 000(1,055)⁴ ≈ R185 823,70\ni = 0,078 ÷ 12 = 0,0065, n = 48, F = 185 823,70\n185 823,70 = x × [(1,0065)⁴⁸ − 1] ÷ 0,0065\nx ≈ R3 311,22 ✓',
+        },
+
+        // ── Q23 Hard ──────────────────────────────────────────────────────────
+        {
+          difficulty: 'Hard',
+          question: 'ʼn Konstruksiemaatskappy se grafmasjien kos tans R540 000. As gevolg van inflasie van 7% per jaar sal die vervangingskoste hoër wees oor 6 jaar. Die maatskappy verwag om die ou grafmasjien teen daardie tyd vir R90 000 in te ruil. Hulle stel ʼn sinkingsfonds op wat 10,2% per jaar maandeliks saamgestel verdien om die tekort te dek. Vind die maandelikse deposito benodig, en verduidelik in een sin hoe hierdie probleem verskil van ʼn gewone lening-terugbetalingsberekening.',
+          answer: 'Toekomstige koste = 540 000(1,07)⁶ ≈ R810 394,39\nSinkingsfonds-teiken: F = 810 394,39 − 90 000 = R720 394,39\ni = 0,102 ÷ 12 = 0,0085, n = 72\n720 394,39 = x × [(1,0085)⁷² − 1] ÷ 0,0085\nx ≈ R7 295,33 per maand\nAnders as ʼn lening-terugbetaling, wat die huidige waarde annuïteit-formule gebruik om ʼn bekende huidige bedrag af te betaal, gebruik hierdie probleem die toekomstige waarde annuïteit-formule omdat die fonds by nul begin en moet groei om ʼn toekomstige teiken te bereik.',
+          checkMode: 'self',
+        },
+      ],
+
+      videoPlaceholder:
+        '<VideoPlaceholder label="Kort video wat sinkingsfondse verduidelik, hoe om ʼn toekomstige vervangingskoste met saamgestelde groei te inflateer, en hoe om die toekomstige waarde annuïteit-formule te gebruik om die benodigde gereelde deposito te vind" />',
+    },
   ],
 
   resultsConfig: {
-    totalMarks: 20,
+    totalMarks: 23,
     messages: [
-      { minScore: 20, message: 'Uitstekend! Jy het finansies bemeester.' },
-      { minScore: 15, message: 'Puik werk!' },
-      { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
+      { minScore: 23, message: 'Uitstekend! Jy het finansies bemeester.' },
+      { minScore: 17, message: 'Puik werk!' },
+      { minScore: 12, message: 'Goeie poging, hersien en probeer weer.' },
       { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
     ],
   },
 
   scoreMessages: [
-    { minScore: 20, message: 'Uitstekend! Jy het finansies bemeester.' },
-    { minScore: 15, message: 'Puik werk!' },
-    { minScore: 10, message: 'Goeie poging, hersien en probeer weer.' },
+    { minScore: 23, message: 'Uitstekend! Jy het finansies bemeester.' },
+    { minScore: 17, message: 'Puik werk!' },
+    { minScore: 12, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
   ],
 
