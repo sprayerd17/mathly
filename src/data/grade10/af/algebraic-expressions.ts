@@ -305,8 +305,8 @@ export const topicData: TopicData = {
         `<line x1="160" y1="30" x2="60" y2="130" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<text x="110" y="50" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">a×c = 18</text>` +
         `<text x="110" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">b = 11</text>` +
-        `<text x="80" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">9</text>` +
-        `<text x="140" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#16a34a">2</text>` +
+        `<text x="80" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">9</text>` +
+        `<text x="140" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">2</text>` +
         `<text x="110" y="150" text-anchor="middle" font-size="11" fill="#6b7280">9 × 2 = 18 en 9 + 2 = 11</text>` +
         `<text x="110" y="172" text-anchor="middle" font-size="12" fill="#0f1f3d">Splits: 3x² + <tspan fill="#2563eb" font-weight="700">9x + 2x</tspan> + 6</text>` +
         `<text x="110" y="192" text-anchor="middle" font-size="12" fill="#0f1f3d">Groepeer: 3x(x + 3) + 2(x + 3)</text>` +

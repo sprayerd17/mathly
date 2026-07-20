@@ -145,7 +145,7 @@ export const topicData: TopicData = {
         'Linear graph of A against n for simple interest showing constant straight-line growth, with the same amount added every year',
 
       diagramSvg:
-        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">A</text><line x1="30" y1="145" x2="190" y2="40" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="30" cy="145" r="4" fill="#2563eb"/><text x="20" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><circle cx="70" cy="119.75" r="3" fill="#ea580c"/><circle cx="110" cy="92.5" r="3" fill="#ea580c"/><circle cx="150" cy="65.25" r="3" fill="#ea580c"/><line x1="70" y1="119.75" x2="110" y2="119.75" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="119.75" x2="110" y2="92.5" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="92.5" x2="150" y2="92.5" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="150" y1="92.5" x2="150" y2="65.25" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="3,2"/><text x="90" y="130" font-size="8" fill="#ea580c" font-weight="700" text-anchor="middle">Δn</text><text x="130" y="103" font-size="8" fill="#ea580c" font-weight="700" text-anchor="middle">Δn</text><circle cx="190" cy="40" r="4" fill="#dc2626"/><text x="196" y="36" font-size="11" fill="#dc2626" font-weight="700">A</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">equal amount added every year → straight line</text></svg>',
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="145" x2="205" y2="145" stroke="#374151" stroke-width="1.5"/><polygon points="205,145 197,141 197,149" fill="#374151"/><line x1="30" y1="145" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><polygon points="30,15 26,23 34,23" fill="#374151"/><text x="208" y="149" font-size="11" fill="#16a34a" font-weight="700">n</text><text x="22" y="13" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">A</text><line x1="30" y1="145" x2="190" y2="40" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="30" cy="145" r="4" fill="#2563eb"/><text x="20" y="138" font-size="10" fill="#2563eb" font-weight="700" text-anchor="middle">P</text><circle cx="70" cy="119.75" r="3" fill="#ea580c"/><circle cx="110" cy="92.5" r="3" fill="#ea580c"/><circle cx="150" cy="65.25" r="3" fill="#ea580c"/><line x1="70" y1="119.75" x2="110" y2="119.75" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="119.75" x2="110" y2="92.5" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="110" y1="92.5" x2="150" y2="92.5" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><line x1="150" y1="92.5" x2="150" y2="65.25" stroke="#16a34a" stroke-width="1.3" stroke-dasharray="3,2"/><text x="90" y="130" font-size="8" fill="#16a34a" font-weight="700" text-anchor="middle">Δn</text><text x="130" y="103" font-size="8" fill="#16a34a" font-weight="700" text-anchor="middle">Δn</text><circle cx="190" cy="40" r="4" fill="#dc2626"/><text x="196" y="36" font-size="11" fill="#dc2626" font-weight="700">A</text><text x="115" y="163" font-size="9" fill="#374151" text-anchor="middle">equal amount added every year → straight line</text></svg>',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -1009,7 +1009,7 @@ export const topicData: TopicData = {
         'Growing crowd of dots showing a small starting population growing to a much larger population over time, illustrating exponential population growth',
 
       diagramSvg:
-        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="112" y="16" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">population grows faster as it gets bigger</text><text x="40" y="120" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">P</text><circle cx="35" cy="144" r="3.2" fill="#2563eb"/><circle cx="45" cy="144" r="3.2" fill="#2563eb"/><circle cx="40" cy="135" r="3.2" fill="#2563eb"/><circle cx="100" cy="135" r="3.2" fill="#ea580c"/><circle cx="112" cy="135" r="3.2" fill="#ea580c"/><circle cx="124" cy="135" r="3.2" fill="#ea580c"/><circle cx="100" cy="144" r="3.2" fill="#ea580c"/><circle cx="112" cy="144" r="3.2" fill="#ea580c"/><circle cx="124" cy="144" r="3.2" fill="#ea580c"/><text x="185" y="104" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">A</text><circle cx="167" cy="126" r="3.2" fill="#dc2626"/><circle cx="177" cy="126" r="3.2" fill="#dc2626"/><circle cx="187" cy="126" r="3.2" fill="#dc2626"/><circle cx="197" cy="126" r="3.2" fill="#dc2626"/><circle cx="167" cy="135" r="3.2" fill="#dc2626"/><circle cx="177" cy="135" r="3.2" fill="#dc2626"/><circle cx="187" cy="135" r="3.2" fill="#dc2626"/><circle cx="197" cy="135" r="3.2" fill="#dc2626"/><circle cx="167" cy="144" r="3.2" fill="#dc2626"/><circle cx="177" cy="144" r="3.2" fill="#dc2626"/><circle cx="187" cy="144" r="3.2" fill="#dc2626"/><circle cx="197" cy="144" r="3.2" fill="#dc2626"/><line x1="20" y1="152" x2="210" y2="152" stroke="#16a34a" stroke-width="1.8"/><polygon points="210,152 202,148 202,156" fill="#16a34a"/><text x="40" y="164" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">t = 0</text><text x="112" y="164" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">t = n/2</text><text x="185" y="164" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">t = n</text></svg>',
+        '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="112" y="16" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">population grows faster as it gets bigger</text><text x="40" y="120" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">P</text><circle cx="35" cy="144" r="3.2" fill="#2563eb"/><circle cx="45" cy="144" r="3.2" fill="#2563eb"/><circle cx="40" cy="135" r="3.2" fill="#2563eb"/><circle cx="100" cy="135" r="3.2" fill="#ea580c"/><circle cx="112" cy="135" r="3.2" fill="#ea580c"/><circle cx="124" cy="135" r="3.2" fill="#ea580c"/><circle cx="100" cy="144" r="3.2" fill="#ea580c"/><circle cx="112" cy="144" r="3.2" fill="#ea580c"/><circle cx="124" cy="144" r="3.2" fill="#ea580c"/><text x="185" y="104" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">A</text><circle cx="167" cy="126" r="3.2" fill="#dc2626"/><circle cx="177" cy="126" r="3.2" fill="#dc2626"/><circle cx="187" cy="126" r="3.2" fill="#dc2626"/><circle cx="197" cy="126" r="3.2" fill="#dc2626"/><circle cx="167" cy="135" r="3.2" fill="#dc2626"/><circle cx="177" cy="135" r="3.2" fill="#dc2626"/><circle cx="187" cy="135" r="3.2" fill="#dc2626"/><circle cx="197" cy="135" r="3.2" fill="#dc2626"/><circle cx="167" cy="144" r="3.2" fill="#dc2626"/><circle cx="177" cy="144" r="3.2" fill="#dc2626"/><circle cx="187" cy="144" r="3.2" fill="#dc2626"/><circle cx="197" cy="144" r="3.2" fill="#dc2626"/><line x1="20" y1="152" x2="210" y2="152" stroke="#16a34a" stroke-width="1.8"/><polygon points="210,152 202,148 202,156" fill="#16a34a"/><text x="40" y="164" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">t = 0</text><text x="112" y="164" font-size="9" font-weight="700" fill="#16a34a" text-anchor="middle">t = n/2</text><text x="185" y="164" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">t = n</text></svg>',
     },
   ],
 
@@ -1070,7 +1070,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Lerato compares simple and compound interest on R8,000 at 6% over 4 years. Find the difference between the two methods.',
-      answer: 'Simple: 8 000(1 + 4 × 0.06) = R9,920. Compound: 8 000(1.06)⁴ ≈ R10,096.91. Difference ≈ R176.91.',
+      answer: 'Simple: 8 000(1 + 4 × 0.06) = R9,920. Compound: 8 000(1.06)⁴ ≈ R10,099.82. Difference ≈ R179.82.',
       checkMode: 'self',
     },
 
@@ -1078,11 +1078,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'A population of 40,000 grows at 4% per year. Find the population after 7 years, rounded to the nearest whole number.',
-      answer: '52,633',
+      answer: '52,637',
       checkMode: 'auto',
-      correctAnswer: '52633',
-      correctAnswers: ['52633', '52 633'],
-      explanation: 'A = 40 000(1.04)⁷ = 40 000 × 1.31593 ≈ 52 633 ✓',
+      correctAnswer: '52637',
+      correctAnswers: ['52637', '52 637'],
+      explanation: 'A = 40 000(1.04)⁷ = 40 000 × 1.31593 ≈ 52 637 ✓',
     },
 
     // ── Q8 Hard ───────────────────────────────────────────────────────────────
@@ -1146,11 +1146,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Lerato invests R15,000 at 9% compound interest for 10 years. Find the final amount, rounded to the nearest Rand.',
-      answer: 'R35,516',
+      answer: 'R35,510',
       checkMode: 'auto',
-      correctAnswer: 'R35516',
-      correctAnswers: ['R35516', '35516', 'R35 516', '35 516'],
-      explanation: 'A = 15 000(1.09)¹⁰ = 15 000 × 2.36736 ≈ R35 516 ✓',
+      correctAnswer: 'R35510',
+      correctAnswers: ['R35510', '35510', 'R35 510', '35 510'],
+      explanation: 'A = 15 000(1.09)¹⁰ = 15 000 × 2.367363 ≈ R35 510 ✓',
     },
 
     // ── Q15 Hard ──────────────────────────────────────────────────────────────

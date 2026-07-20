@@ -221,6 +221,8 @@ export const topicData: TopicData = {
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('individuele waarskynlikhede')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('oorvleueling afgetrek')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('finale gekombineerde waarskynlikheid')}</span>` +
+        `<span style="background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:3px 10px;font-size:13px;"><span style="color:#7c3aed;font-weight:700">paarsgewyse oorvleueling</span></span>` +
+        `<span style="background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;padding:3px 10px;font-size:13px;"><span style="color:#0f1f3d;font-weight:700">al drie oorvleueling</span></span>` +
         `</div>` +
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
