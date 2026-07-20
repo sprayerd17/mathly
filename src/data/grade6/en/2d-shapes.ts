@@ -389,6 +389,12 @@ export const topicData: TopicData = {
         '<rect x="270" y="20" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
         '<rect x="270" y="70" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
         '<rect x="190" y="70" width="10" height="10" fill="none" stroke="#ea580c" stroke-width="1.5"/>' +
+        '<line x1="235" y1="17" x2="235" y2="23" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="235" y1="77" x2="235" y2="83" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="187" y1="47" x2="193" y2="47" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="187" y1="53" x2="193" y2="53" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="277" y1="47" x2="283" y2="47" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="277" y1="53" x2="283" y2="53" stroke="#2563eb" stroke-width="2"/>' +
         '<text x="235" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Rectangle</text>' +
         // Parallelogram
         '<polygon points="350,80 430,80 460,20 380,20" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
@@ -401,9 +407,9 @@ export const topicData: TopicData = {
         '<text x="405" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Parallelogram</text>' +
         // Rhombus
         '<polygon points="80,150 110,180 80,210 50,180" fill="none" stroke="#0f1f3d" stroke-width="2.5"/>' +
-        '<line x1="92" y1="162" x2="98" y2="168" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="92" y1="168" x2="98" y2="162" stroke="#2563eb" stroke-width="2"/>' +
         '<line x1="92" y1="192" x2="98" y2="198" stroke="#2563eb" stroke-width="2"/>' +
-        '<line x1="62" y1="192" x2="68" y2="198" stroke="#2563eb" stroke-width="2"/>' +
+        '<line x1="62" y1="198" x2="68" y2="192" stroke="#2563eb" stroke-width="2"/>' +
         '<line x1="62" y1="162" x2="68" y2="168" stroke="#2563eb" stroke-width="2"/>' +
         '<text x="80" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d">Rhombus</text>' +
         // Trapezium
