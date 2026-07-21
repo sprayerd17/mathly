@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
-import Footer from '@/app/components/Footer'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
 type EarningsRow = { referrals: number; creditAmount: string; months: number | null; note: 'none' | 'half_year' | 'topped_up' }
@@ -374,8 +373,6 @@ export default function ReferPage() {
         </section>
 
       </main>
-
-      <Footer />
     </div>
   )
 }

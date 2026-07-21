@@ -970,7 +970,8 @@ function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug
       .finally(() => setSaving(false))
   }
 
-  const gradeTopics = getTopics(String(grade))
+  const lang: Language = user ? getActiveChild(user).language : 'en'
+  const gradeTopics = getTopics(String(grade), lang)
   const currentIndex = gradeTopics.findIndex(topic => topic.slug === topicSlug)
   const nextTopic = currentIndex >= 0 ? gradeTopics[currentIndex + 1] : undefined
 

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Navbar from '@/app/components/Navbar'
-import { useAuth, getActiveTier } from '@/app/providers'
+import { useAuth, getActiveTier, getActiveChild } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import TestAnalysisPanel from './TestAnalysisPanel'
 import { getTopics } from '@/src/data/topic-registry'
@@ -61,9 +61,10 @@ async function loadGradeData(
   uid: string,
   childIndex: number,
   grade: number,
-  genericPracticeLabel: string
+  genericPracticeLabel: string,
+  language: 'en' | 'af'
 ): Promise<GradeData> {
-  const registryTopics = getTopics(String(grade))
+  const registryTopics = getTopics(String(grade), language)
   const [logEntries, studyEntries] = await Promise.all([
     getActivityLog(uid, childIndex, grade),
     getStudyProgress(uid, childIndex, grade),
@@ -341,7 +342,8 @@ export default function DashboardPage() {
   useEffect(() => {
     if (!user || activeGrade === null) return
     let cancelled = false
-    loadGradeData(user.uid, activeChildIndex, activeGrade, t.dash_activity_practice_questions)
+    const language = getActiveChild(user).language
+    loadGradeData(user.uid, activeChildIndex, activeGrade, t.dash_activity_practice_questions, language)
       .then(data => { if (!cancelled) setGradeData(data) })
       .catch(err => console.error('[dashboard] failed to load grade data', err))
     return () => { cancelled = true }
@@ -376,8 +378,7 @@ export default function DashboardPage() {
   }
 
   if (!mounted || !userName || !user) return null
-  // TODO: Re-enable access control before launch.
-  // if (userPackage === 'free') return <UpgradePrompt />
+  if (userPackage === 'free') return <UpgradePrompt />
 
   const isMax = userPackage === 'max'
   const pkgStyle = PACKAGE_STYLE[userPackage]

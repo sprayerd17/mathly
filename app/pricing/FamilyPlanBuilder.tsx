@@ -251,11 +251,11 @@ export default function FamilyPlanBuilder() {
           </div>
           <ul className="flex-1 space-y-2.5 mb-5">
             {[
-              t.pricing_pro_feature_full_access,
-              t.pricing_pro_feature_complete_materials,
-              t.pricing_pro_feature_dashboard,
-              t.pricing_pro_feature_early_access,
+              t.pricing_feature_study_guides,
+              t.pricing_feature_practice_questions,
+              t.pricing_feature_answers,
               t.pricing_pro_feature_ai_assistant,
+              t.pricing_pro_feature_dashboard,
             ].map(f => (
               <li key={f} className="flex gap-2 text-xs leading-snug" style={{ color: '#4b5563' }}>
                 <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }}>✓</span>
@@ -282,11 +282,9 @@ export default function FamilyPlanBuilder() {
           <ul className="flex-1 space-y-2.5 mb-5">
             {[
               t.pricing_max_feature_everything_in_pro,
+              t.pricing_max_feature_test_analyzer,
               t.pricing_max_feature_discount_live_classes,
-              t.pricing_max_feature_video_explanation,
-              t.pricing_max_feature_priority_support,
               t.pricing_max_feature_exam_packs,
-              t.pricing_max_feature_ai_assistant,
             ].map(f => (
               <li key={f} className="flex gap-2 text-xs leading-snug" style={{ color: '#4b5563' }}>
                 <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }}>✓</span>

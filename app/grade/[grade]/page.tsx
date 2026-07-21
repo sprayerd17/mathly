@@ -54,7 +54,8 @@ export default function GradePage() {
 
   useEffect(() => { setMounted(true) }, [])
 
-  const topics = getTopics(grade)
+  const language = (user ? getActiveChild(user).language : 'en') as 'en' | 'af'
+  const topics = getTopics(grade, language)
 
   // Only restrict after hydration, and only for the active child's paid tier —
   // free accounts can browse any grade (limited to 1 topic each), a paid

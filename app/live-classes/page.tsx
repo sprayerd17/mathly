@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Navbar from '@/app/components/Navbar'
-import Footer from '@/app/components/Footer'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import SessionsBoard from './SessionsBoard'
 import RequestLessonCard from './RequestLessonCard'
@@ -104,8 +103,6 @@ export default function LiveClassesPage() {
         </section>
 
       </main>
-
-      <Footer />
     </div>
   )
 }

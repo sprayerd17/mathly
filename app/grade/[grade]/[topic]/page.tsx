@@ -55,7 +55,7 @@ export default function TopicPage({
   const [mounted, setMounted] = useState(false)
   useEffect(() => { setMounted(true) }, [])
 
-  const topicMeta = getTopics(grade).find(tp => tp.slug === topic)
+  const topicMeta = getTopics(grade, language).find(tp => tp.slug === topic)
   const isTopicFree = topicMeta?.free ?? false
   const hasFullGradeAccess = !!user && getActiveTier(user) !== 'free' && getActiveChild(user).grade === Number(grade)
   // Free topics are always unlocked (safe pre-hydration). Paid topics stay
