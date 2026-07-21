@@ -52,6 +52,8 @@ export default function Home() {
 
       <main>
 
+        {!PAYMENTS_ENABLED && <FoundingNotifyBanner />}
+
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section
           className="relative flex flex-col items-center justify-center min-h-[calc(100vh-57px)] px-6 text-center overflow-hidden"
@@ -133,8 +135,6 @@ export default function Home() {
             </svg>
           </div>
         </section>
-
-        {!PAYMENTS_ENABLED && <FoundingNotifyBanner />}
 
         {/* ── Story ─────────────────────────────────────────────────────────── */}
         <section className="py-24 px-6" style={{ backgroundColor: '#0f1f3d' }}>
