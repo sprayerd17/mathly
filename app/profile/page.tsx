@@ -10,6 +10,7 @@ import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore
 import { db, auth } from '@/src/lib/firebase'
 import { cancelSubscription, downgradeChild } from '@/src/lib/paystack-client'
 import { computeFamilyPrice, addOneMonth } from '@/src/lib/pricing'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 const MAX_CHILDREN = 3
 
@@ -412,6 +413,14 @@ export default function ProfilePage() {
           >
             {t.profile_my_subscription_heading}
           </h2>
+          {!PAYMENTS_ENABLED && user.childPlans.some(tier => tier !== 'free') && (
+            <p
+              className="text-xs font-semibold mb-4 px-3 py-2 rounded-lg"
+              style={{ color: '#92400e', backgroundColor: '#fffbeb', border: '1px solid #fde68a' }}
+            >
+              {t.profile_subscription_paused_note}
+            </p>
+          )}
           <div className="flex flex-col gap-4">
             {children.map((child, i) => {
               const tier: Tier = user.childPlans[i] ?? 'free'
@@ -823,8 +832,11 @@ export default function ProfilePage() {
         </div>
         )}
 
-        {/* Referral section — any account with at least one paid child */}
-        {user.childPlans.some(tier => tier !== 'free') && (
+        {/* Referral section — any account with at least one paid child. Gated
+            on PAYMENTS_ENABLED too: while payments are paused, a childPlans
+            entry can reflect a Paystack test-mode "purchase" that shouldn't
+            unlock referral perks either. */}
+        {PAYMENTS_ENABLED && user.childPlans.some(tier => tier !== 'free') && (
           <div
             className="bg-white rounded-2xl shadow-sm p-7 mt-5"
             style={{ border: '1px solid #e5e7eb' }}

@@ -5,6 +5,7 @@ import { getPaystackConfig, initializeTransaction } from '@/src/lib/paystack'
 import { sessionPriceFor, depositDeadlineFor, type SessionType } from '@/src/lib/sessions'
 import { bookingConfirmedEmail, reservationHeldEmail, sendEmail } from '@/src/lib/email'
 import type { Tier } from '@/src/lib/pricing'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 // Books the signed-in account's ACTIVE child onto a live session. The
 // student explicitly chooses how via `intent`, offered as two separate
@@ -90,7 +91,10 @@ export async function POST(req: NextRequest) {
   const idx = Math.min(Math.max(typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0, 0), Math.max(children.length - 1, 0))
   const child = children[idx]
   if (!child) return new Response('No child profile on account', { status: 409 })
-  const tier: Tier = childPlans[idx] ?? 'free'
+  // Same PAYMENTS_ENABLED clamp as getActiveTier() in app/providers.tsx — a
+  // Paystack test-mode "purchase" during the pause must not unlock the
+  // Max-tier session discount or the one-time free session.
+  const tier: Tier = PAYMENTS_ENABLED ? (childPlans[idx] ?? 'free') : 'free'
 
   // One held seat (paid or still-reserved) per child per session.
   const existing = await adminDb.collection('bookings')

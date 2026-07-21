@@ -106,6 +106,12 @@ export type User = {
 // same way getActiveChild() clamps activeChildIndex, so a stale index never
 // crashes a gating check.
 export function getActiveTier(user: User): Tier {
+  // While payments are paused, nobody gets paid-tier access regardless of what's
+  // recorded in childPlans — Paystack test mode lets anyone complete checkout
+  // with a published test card, so a "successful" transaction during this
+  // window must not actually unlock anything. The underlying childPlans/
+  // subscriptionStatus data stays intact for billing-record purposes.
+  if (!PAYMENTS_ENABLED) return 'free'
   const idx = Math.min(Math.max(user.activeChildIndex, 0), user.childPlans.length - 1)
   return user.childPlans[idx] ?? 'free'
 }

@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { FieldValue } from 'firebase-admin/firestore'
 import Anthropic from '@anthropic-ai/sdk'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 const MIN_GRADE = 4
 const MAX_GRADE = 12
@@ -107,7 +108,10 @@ export async function POST(req: NextRequest) {
   const childPlans: string[] = Array.isArray(userData.childPlans) ? userData.childPlans : []
   const activeIdx = Math.min(Math.max(typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0, 0), Math.max(childPlans.length - 1, 0))
   const tier = childPlans[activeIdx] ?? 'free'
-  if (tier !== 'max') {
+  // Same PAYMENTS_ENABLED clamp as getActiveTier() in app/providers.tsx — a
+  // "successful" Paystack test-mode checkout must not unlock Max features
+  // while payments are paused.
+  if (!PAYMENTS_ENABLED || tier !== 'max') {
     return new Response('Test Analysis is a Max-tier feature', { status: 403 })
   }
 
