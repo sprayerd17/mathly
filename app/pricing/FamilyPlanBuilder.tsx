@@ -487,7 +487,7 @@ export default function FamilyPlanBuilder() {
         <button
           type="button"
           onClick={handleClaimSpot}
-          disabled={checkingOut || (!!user && paidCount === 0) || noChange || (!PAYMENTS_ENABLED && paidCount > 0)}
+          disabled={checkingOut || (!!user && paidCount === 0) || noChange}
           className="block w-full text-center font-semibold py-3 rounded-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ backgroundColor: '#1e40af', color: '#fff' }}
         >
