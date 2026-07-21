@@ -47,7 +47,7 @@ export default function RequestLessonCard() {
   }
 
   return (
-    <section className="px-6 pb-14 max-w-3xl mx-auto">
+    <section className="px-6 py-14 max-w-3xl mx-auto">
       <div className="bg-white rounded-2xl shadow-sm p-8" style={{ border: '1px solid #e5e7eb' }}>
         <h2 className="text-xl font-bold mb-2" style={{ color: '#0f1f3d' }}>
           {t.live_request_heading}
