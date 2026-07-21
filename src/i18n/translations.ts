@@ -450,7 +450,7 @@ export const translations = {
     // ── Live classes (live-classes/page.tsx) ────────────────────────────────
     live_coming_soon_badge: 'Coming Soon',
     live_hero_heading: 'Live group classes are coming to Mathly',
-    live_hero_subheading: 'Small groups, one topic at a time, run by qualified maths educators.',
+    live_hero_subheading: 'Small groups, one topic at a time, run by experienced tutors.',
     live_first_session_free_banner: 'First session free for paid subscribers',
     live_waitlist_confirmed_heading: "You're on the waitlist!",
     live_already_registered_heading: "You're already registered",
@@ -1078,7 +1078,7 @@ export const translations = {
     // ── Live classes (live-classes/page.tsx) ────────────────────────────────
     live_coming_soon_badge: 'Binnekort',
     live_hero_heading: 'Lewendige groepklasse kom binnekort na Mathly',
-    live_hero_subheading: 'Klein groepe, een onderwerp op \'n slag, aangebied deur gekwalifiseerde wiskunde-opvoeders.',
+    live_hero_subheading: 'Klein groepe, een onderwerp op \'n slag, aangebied deur ervare tutors.',
     live_first_session_free_banner: 'Eerste sessie gratis vir betalende intekenaars',
     live_waitlist_confirmed_heading: 'Jy is op die waglys!',
     live_already_registered_heading: 'Jy is reeds geregistreer',
