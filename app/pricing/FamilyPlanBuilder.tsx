@@ -10,9 +10,9 @@ import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 type Spots = { proTaken: number; maxTaken: number }
 
-const FOUNDING_SPOTS = 100
+const FOUNDING_SPOTS = 20
 const SPOTS_KEY    = 'mathly_founding_spots'
-const DEFAULT_SPOTS: Spots = { proTaken: 33, maxTaken: 57 }
+const DEFAULT_SPOTS: Spots = { proTaken: 7, maxTaken: 12 }
 
 function PlanSelect({
   value,

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
+import FoundingNotifyBanner from '@/app/components/FoundingNotifyBanner'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
@@ -132,6 +133,8 @@ export default function Home() {
             </svg>
           </div>
         </section>
+
+        {!PAYMENTS_ENABLED && <FoundingNotifyBanner />}
 
         {/* ── Story ─────────────────────────────────────────────────────────── */}
         <section className="py-24 px-6" style={{ backgroundColor: '#0f1f3d' }}>
