@@ -4,8 +4,9 @@ import { use, useState, useEffect } from 'react'
 import Link from 'next/link'
 import TopicTabs from '@/app/components/TopicTabs'
 import NavAuth from '@/app/components/NavAuth'
-import { useAuth, getActiveChild } from '@/app/providers'
+import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { getTopics } from '@/src/data/topic-registry'
 import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 
 async function resolveStudyGuideData(
@@ -50,8 +51,17 @@ export default function TopicPage({
   const { user } = useAuth()
   const t = useTranslations()
   const language = (user ? getActiveChild(user).language : 'en') as 'en' | 'af'
-  // const FREE_TOPICS = new Set(['topic-1', 'topic-2']) // REVIEW MODE: re-enable to restore locking
-  const isLocked = false
+
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+
+  const topicMeta = getTopics(grade).find(tp => tp.slug === topic)
+  const isTopicFree = topicMeta?.free ?? false
+  const hasFullGradeAccess = !!user && getActiveTier(user) !== 'free' && getActiveChild(user).grade === Number(grade)
+  // Free topics are always unlocked (safe pre-hydration). Paid topics stay
+  // locked until we've confirmed access post-mount, so there's no flash of
+  // real content before we know the user doesn't actually have access.
+  const isLocked = isTopicFree ? false : (!mounted || !hasFullGradeAccess)
 
   const [studyGuideData, setStudyGuideData] = useState<TopicData | undefined>(undefined)
 

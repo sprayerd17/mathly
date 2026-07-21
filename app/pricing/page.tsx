@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
 import FamilyPlanBuilder from './FamilyPlanBuilder'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 function useTableFeatures() {
   const t = useTranslations()
@@ -57,7 +58,7 @@ export default function PricingPage() {
           className="w-full py-3 px-6 text-center text-sm font-semibold"
           style={{ background: '#0f1f3d', color: '#93c5fd' }}
         >
-          {t.pricing_launch_banner}
+          {PAYMENTS_ENABLED ? t.pricing_launch_banner : t.pricing_launch_banner_paused}
         </div>
 
         {/* Hero */}

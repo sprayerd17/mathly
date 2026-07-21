@@ -777,9 +777,8 @@ export default function ProfilePage() {
         </div>
         )}
 
-        {/* Referral section */}
-        {/* TODO: Re-enable subscription check before launch */}
-        {/* {(user.package === 'pro' || user.package === 'max') ? ( */}
+        {/* Referral section — any account with at least one paid child */}
+        {user.childPlans.some(tier => tier !== 'free') && (
           <div
             className="bg-white rounded-2xl shadow-sm p-7 mt-5"
             style={{ border: '1px solid #e5e7eb' }}
@@ -977,26 +976,7 @@ export default function ProfilePage() {
             </div>
 
           </div>
-        {/* ) : (
-          <div
-            className="bg-white rounded-2xl shadow-sm p-7 mt-5"
-            style={{ border: '1px solid #e5e7eb' }}
-          >
-            <h2 className="text-xl font-bold mb-2" style={{ color: '#0f1f3d' }}>
-              Refer friends, earn free months
-            </h2>
-            <p className="text-sm text-gray-500 mb-5 leading-relaxed">
-              Upgrade to Pro or Max to access your referral program.
-            </p>
-            <Link
-              href="/pricing"
-              className="inline-block text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
-              style={{ backgroundColor: '#1e40af' }}
-            >
-              Upgrade to Pro
-            </Link>
-          </div>
-        )} */}
+        )}
       </main>
     </div>
   )

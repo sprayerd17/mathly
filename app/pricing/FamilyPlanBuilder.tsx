@@ -6,6 +6,7 @@ import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
 import { initiateCheckout, updateTiers } from '@/src/lib/paystack-client'
 import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 type Spots = { proTaken: number; maxTaken: number }
 
@@ -480,10 +481,15 @@ export default function FamilyPlanBuilder() {
             {checkoutError}
           </p>
         )}
+        {!PAYMENTS_ENABLED && (
+          <p className="text-xs text-center mb-3" style={{ color: '#92400e' }}>
+            {t.pricing_payments_paused_note}
+          </p>
+        )}
         <button
           type="button"
           onClick={handleClaimSpot}
-          disabled={checkingOut || (!!user && paidCount === 0) || noChange}
+          disabled={checkingOut || (!!user && paidCount === 0) || noChange || (!PAYMENTS_ENABLED && paidCount > 0)}
           className="block w-full text-center font-semibold py-3 rounded-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ backgroundColor: '#1e40af', color: '#fff' }}
         >
@@ -494,7 +500,7 @@ export default function FamilyPlanBuilder() {
       </div>
 
       {/* Spots remaining row */}
-      {showSpots && (
+      {PAYMENTS_ENABLED && showSpots && (
         <div className="mt-4 flex flex-col gap-1.5">
           {proFounding && (
             <p className="text-xs text-center font-semibold" style={{ color: '#1e40af' }}>

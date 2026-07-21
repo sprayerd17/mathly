@@ -21,6 +21,7 @@ import { auth, db } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateCheckout } from '@/src/lib/paystack-client'
 import { computeFamilyPrice, FOUNDING_PRICE, type Tier, type FoundingStatus } from '@/src/lib/pricing'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -639,14 +640,16 @@ function AuthModal({
                       <div className="grid grid-cols-3 gap-2">
                         {(['free', 'pro', 'max'] as const).map(tier => {
                           const active = child.tier === tier
+                          const disabled = !PAYMENTS_ENABLED && tier !== 'free'
                           const price = tier === 'free' ? 'R0' : `R${FOUNDING_PRICE[tier]}${t.pricing_per_month}`
                           const desc = tier === 'free' ? t.profile_plan_desc_free : tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_max
                           return (
                             <button
                               key={tier}
                               type="button"
+                              disabled={disabled}
                               onClick={() => setRegChildren(prev => prev.map((c, idx) => idx === i ? { ...c, tier } : c))}
-                              className="py-2.5 px-2 rounded-xl text-xs font-semibold transition-all border text-center flex flex-col items-center gap-0.5"
+                              className="py-2.5 px-2 rounded-xl text-xs font-semibold transition-all border text-center flex flex-col items-center gap-0.5 disabled:opacity-40 disabled:cursor-not-allowed"
                               style={
                                 active
                                   ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
@@ -660,7 +663,7 @@ function AuthModal({
                         })}
                       </div>
                       <p className="text-[11px] text-gray-400 leading-relaxed mt-1.5">
-                        {child.tier === 'free' ? t.profile_plan_desc_free : child.tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_max}
+                        {!PAYMENTS_ENABLED ? t.auth_plan_paused_note : (child.tier === 'free' ? t.profile_plan_desc_free : child.tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_max)}
                       </p>
                     </div>
                   </div>

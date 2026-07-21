@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 function ArrowRight() {
   return (
@@ -94,7 +95,7 @@ export default function Home() {
           {/* Hero content */}
           <div className="relative z-10 max-w-2xl">
             <span className="inline-block bg-blue-50 text-[#1e40af] text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8 border border-blue-200">
-              {t.home_hero_badge}
+              {PAYMENTS_ENABLED ? t.home_hero_badge : t.home_hero_badge_launching_soon}
             </span>
 
             <h1

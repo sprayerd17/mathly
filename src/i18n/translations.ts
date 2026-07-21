@@ -76,6 +76,7 @@ export const translations = {
     auth_children_step_title_paid: "Who's studying?",
     auth_children_step_subtitle_paid: 'This is the grade each profile will get full access to.',
     auth_child_plan_label: 'Plan for this person',
+    auth_plan_paused_note: 'Paid plans launch soon — sign up free for now.',
     auth_plan_running_total_label: 'Estimated monthly total',
 
     // ── Topic tabs (TopicTabs.tsx) ─────────────────────────────────────────
@@ -343,6 +344,7 @@ export const translations = {
 
     // ── Homepage (page.tsx) ─────────────────────────────────────────────────
     home_hero_badge: 'From R49/month · Cancel anytime',
+    home_hero_badge_launching_soon: 'Launching soon — payment verification in progress',
     home_hero_heading: "Extra maths help shouldn't break the bank",
     home_hero_subheading: 'Mathly gives South African students from Grade 4 to Grade 12 access to clear study guides, worked examples, and practice questions — at a fraction of the cost of a private tutor',
     home_hero_cta: 'Start Learning',
@@ -366,6 +368,8 @@ export const translations = {
 
     // ── Pricing (pricing/page.tsx, FamilyPlanBuilder.tsx) ──────────────────
     pricing_launch_banner: '★ Founding Member Launch — Limited spots available. Lock in your discounted rate for your first year before spots are gone.',
+    pricing_launch_banner_paused: "★ Almost there — we're finalising payment verification with our processor. Sign up free today; paid plans unlock within the next few days.",
+    pricing_payments_paused_note: "Payment processor verification is in progress. You'll be notified as soon as paid plans go live — check back in a few days!",
     pricing_hero_heading: 'Simple, affordable packages',
     pricing_hero_subheading: 'No hidden fees. Cancel anytime. Pick the option that works for you.',
     pricing_family_discount_note: 'Adding more than one person? A 20% family discount applies automatically.',
@@ -696,6 +700,7 @@ export const translations = {
     auth_plan_free_note: 'Gratis gee jou toegang om enige graad te verken, met een onderwerp per graad oop sodat jy kan sien hoe Mathly werk.',
     auth_plan_paid_note: 'Elke profiel kry volle toegang tot elke onderwerp in die een graad wat jy vir hulle kies.',
     auth_child_plan_label: 'Pakket vir hierdie persoon',
+    auth_plan_paused_note: 'Betaalde pakkette begin binnekort — teken gratis in vir nou.',
     auth_plan_running_total_label: 'Geskatte maandelikse totaal',
     auth_children_step_title_free: 'Pas jou paneelbord aan',
     auth_children_step_subtitle_free: "Kies 'n graad om jou paneelbord aan te pas — jy kan steeds enige graad verken om te sien hoe Mathly werk.",
@@ -967,6 +972,7 @@ export const translations = {
 
     // ── Homepage (page.tsx) ─────────────────────────────────────────────────
     home_hero_badge: 'Van R49/maand · Kanselleer enige tyd',
+    home_hero_badge_launching_soon: 'Loods binnekort — betalingsverifikasie in proses',
     home_hero_heading: 'Ekstra wiskundehulp hoef nie jou beursie te breek nie',
     home_hero_subheading: "Mathly gee Suid-Afrikaanse leerders van Graad 4 tot Graad 12 toegang tot duidelike studiegidse, uitgewerkte voorbeelde en oefenvrae — teen 'n breukdeel van die koste van 'n privaat tutor",
     home_hero_cta: 'Begin Leer',
@@ -990,6 +996,8 @@ export const translations = {
 
     // ── Pricing (pricing/page.tsx, FamilyPlanBuilder.tsx) ──────────────────
     pricing_launch_banner: '★ Stigterslid-Bekendstelling — Beperkte plekke beskikbaar. Bevestig jou afslagkoers vir jou eerste jaar voordat die plekke vol is.',
+    pricing_launch_banner_paused: '★ Amper daar — ons is besig om betalingsverifikasie met ons verwerker af te handel. Teken vandag gratis in; betaalde pakkette ontsluit binne die volgende paar dae.',
+    pricing_payments_paused_note: 'Betalingsverwerker-verifikasie is in proses. Jy sal in kennis gestel word sodra betaalde pakkette beskikbaar is — kom kyk binnekort weer!',
     pricing_hero_heading: 'Eenvoudige, bekostigbare pakkette',
     pricing_hero_subheading: 'Geen verskuilde fooie nie. Kanselleer enige tyd. Kies die opsie wat vir jou werk.',
     pricing_family_discount_note: "Voeg jy meer as een persoon by? 'n Gesinsafslag van 20% word outomaties toegepas.",
