@@ -36,3 +36,17 @@ export function computeFamilyPrice(
   const total = perChild.reduce((sum, p) => sum + p.price, 0)
   return { total, perChild }
 }
+
+// Approximates a monthly billing cycle boundary as one calendar month after
+// the last successful charge. Paystack doesn't give us a confirmed
+// next-payment date anywhere in this codebase's webhook handling, so this is
+// the same derivation cancel-subscription/route.ts already uses for
+// accessUntil — kept here as the one shared implementation so the two never
+// drift apart. Falls back to one month from today if lastPaymentDate is
+// missing, rather than under- or over-stating the next charge.
+export function addOneMonth(lastPaymentDate: string | null): Date {
+  const base = typeof lastPaymentDate === 'string' ? new Date(lastPaymentDate) : new Date()
+  const result = new Date(base)
+  result.setMonth(result.getMonth() + 1)
+  return result
+}

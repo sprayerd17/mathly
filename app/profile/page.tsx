@@ -9,7 +9,7 @@ import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
 import { db, auth } from '@/src/lib/firebase'
 import { cancelSubscription, downgradeChild } from '@/src/lib/paystack-client'
-import { computeFamilyPrice } from '@/src/lib/pricing'
+import { computeFamilyPrice, addOneMonth } from '@/src/lib/pricing'
 
 const MAX_CHILDREN = 3
 
@@ -493,6 +493,49 @@ export default function ProfilePage() {
               )
             })}
           </div>
+          {user.subscriptionStatus === 'active' && user.childPlans.some(tier => tier !== 'free') && (() => {
+            const { total, perChild } = computeFamilyPrice(user.childPlans, user.paystackFounding ?? { pro: false, max: false })
+            const groups: { tier: Tier; price: number; count: number }[] = []
+            perChild.forEach(({ tier, price }) => {
+              if (tier === 'free') return
+              const existing = groups.find(g => g.tier === tier && g.price === price)
+              if (existing) existing.count += 1
+              else groups.push({ tier, price, count: 1 })
+            })
+            const locale = user.children[0]?.language === 'af' ? 'af-ZA' : 'en-ZA'
+            const nextBillingDate = addOneMonth(user.lastPaymentDate)
+            return (
+              <div className="mt-5 pt-5" style={{ borderTop: '1px solid #f3f4f6' }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-2.5" style={{ color: '#6b7280' }}>
+                  {t.profile_billing_summary_heading}
+                </p>
+                {user.lastPaymentDate && user.lastPaymentAmount != null && (
+                  <p className="text-xs text-gray-500 mb-1.5">
+                    {t.profile_billing_last_payment
+                      .replace('{amount}', `R${user.lastPaymentAmount}`)
+                      .replace('{date}', new Date(user.lastPaymentDate).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' }))}
+                  </p>
+                )}
+                <p className="text-sm font-semibold mb-1.5" style={{ color: '#0f1f3d' }}>
+                  {t.profile_billing_next_date.replace(
+                    '{date}',
+                    nextBillingDate.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })
+                  )}
+                </p>
+                <p className="text-sm font-semibold mb-1.5" style={{ color: '#0f1f3d' }}>
+                  R{total}{t.pricing_per_month}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {groups
+                    .map(g => t.profile_billing_breakdown_item
+                      .replace('{count}', String(g.count))
+                      .replace('{tier}', tierLabel(g.tier))
+                      .replace('{price}', String(g.price)))
+                    .join(' + ')}
+                </p>
+              </div>
+            )
+          })()}
           {user.subscriptionStatus === 'pending' && (
             <p className="text-xs font-semibold mt-4" style={{ color: '#1e40af' }}>
               {t.profile_subscription_pending}
@@ -500,7 +543,10 @@ export default function ProfilePage() {
           )}
           {user.subscriptionStatus === 'past_due' && (
             <p className="text-xs font-semibold mt-4" style={{ color: '#b91c1c' }}>
-              {t.profile_subscription_past_due}
+              {t.profile_subscription_past_due}{' '}
+              <Link href="/pricing" className="underline underline-offset-2">
+                {t.profile_subscription_past_due_cta}
+              </Link>
             </p>
           )}
           {user.subscriptionStatus === 'cancelling' && user.accessUntil && (

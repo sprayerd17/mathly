@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, disableSubscription } from '@/src/lib/paystack'
 import { sendEmail, subscriptionCancellationScheduledEmail } from '@/src/lib/email'
+import { addOneMonth } from '@/src/lib/pricing'
 
 // Self-service cancellation, matching what the FAQ and Terms already
 // promise: cancel now, keep full access until the already-paid period ends,
@@ -62,13 +63,8 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  // Access continues until the current paid period ends. lastPaymentDate +
-  // one month approximates the monthly billing cycle; if lastPaymentDate is
-  // somehow missing, fall back to one month from now rather than cutting
-  // access off early.
-  const periodStart = typeof userData.lastPaymentDate === 'string' ? new Date(userData.lastPaymentDate) : new Date()
-  const accessUntilDate = new Date(periodStart)
-  accessUntilDate.setMonth(accessUntilDate.getMonth() + 1)
+  // Access continues until the current paid period ends.
+  const accessUntilDate = addOneMonth(userData.lastPaymentDate ?? null)
   const accessUntil = accessUntilDate.toISOString()
 
   await userRef.update({
