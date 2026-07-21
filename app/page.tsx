@@ -56,7 +56,7 @@ export default function Home() {
 
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section
-          className="relative flex flex-col items-center justify-center min-h-[calc(100vh-57px)] px-6 text-center overflow-hidden"
+          className="relative flex flex-col items-center px-6 pt-10 pb-16 sm:pt-14 sm:pb-20 text-center overflow-hidden"
           style={{ backgroundColor: '#f8fafc' }}
         >
           {/* Atmospheric color blobs */}
