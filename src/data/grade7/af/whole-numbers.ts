@@ -468,22 +468,26 @@ export const topicData: TopicData = {
         Array.from({ length: 7 }, (_, i) => `<line x1="${15 + 8 * (i + 1)}" y1="25" x2="${15 + 8 * (i + 1)}" y2="89" stroke="#2563eb" stroke-width="0.75" stroke-opacity="0.4"/>`).join('') +
         Array.from({ length: 7 }, (_, i) => `<line x1="15" y1="${25 + 8 * (i + 1)}" x2="79" y2="${25 + 8 * (i + 1)}" stroke="#2563eb" stroke-width="0.75" stroke-opacity="0.4"/>`).join('') +
         `<text x="47" y="106" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">8² = 8 × 8 = 64</text>` +
-        `<rect x="140" y="70" width="36" height="36" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<line x1="152" y1="70" x2="152" y2="106" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<line x1="164" y1="70" x2="164" y2="106" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<line x1="140" y1="82" x2="176" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<line x1="140" y1="94" x2="176" y2="94" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<rect x="152" y="58" width="36" height="36" fill="rgba(234,88,12,0.14)" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<line x1="164" y1="58" x2="164" y2="94" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<line x1="176" y1="58" x2="176" y2="94" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<line x1="152" y1="70" x2="188" y2="70" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<line x1="152" y1="82" x2="188" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<rect x="164" y="46" width="36" height="36" fill="rgba(234,88,12,0.22)" stroke="#ea580c" stroke-width="2"/>` +
-        `<line x1="176" y1="46" x2="176" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
-        `<line x1="188" y1="46" x2="188" y2="82" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
-        `<line x1="164" y1="58" x2="200" y2="58" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
-        `<line x1="164" y1="70" x2="200" y2="70" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.6"/>` +
-        `<text x="182" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">3³ = 3 × 3 × 3 = 27</text>` +
+        `<text x="138" y="32" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">3</text>` +
+        `<text x="106" y="61" font-size="12" font-weight="700" fill="#ea580c">3</text>` +
+        `<rect x="120" y="39" width="36" height="36" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="132" y1="39" x2="132" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="144" y1="39" x2="144" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="120" y1="51" x2="156" y2="51" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="120" y1="63" x2="156" y2="63" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<text x="160" y="61" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">×</text>` +
+        `<rect x="164" y="39" width="36" height="36" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="176" y1="39" x2="176" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="188" y1="39" x2="188" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="164" y1="51" x2="200" y2="51" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="164" y1="63" x2="200" y2="63" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<text x="204" y="61" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">×</text>` +
+        `<rect x="208" y="39" width="36" height="36" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
+        `<line x1="220" y1="39" x2="220" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="232" y1="39" x2="232" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="208" y1="51" x2="244" y2="51" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<line x1="208" y1="63" x2="244" y2="63" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
+        `<text x="182" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">3³ = 3 × 3 × 3 = 27</text>` +
         `</svg>`,
 
       videoPlaceholder:
