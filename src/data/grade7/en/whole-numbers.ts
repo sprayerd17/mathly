@@ -475,13 +475,11 @@ export const topicData: TopicData = {
         `<line x1="144" y1="39" x2="144" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
         `<line x1="120" y1="51" x2="156" y2="51" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
         `<line x1="120" y1="63" x2="156" y2="63" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<text x="160" y="61" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">×</text>` +
         `<rect x="164" y="39" width="36" height="36" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
         `<line x1="176" y1="39" x2="176" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
         `<line x1="188" y1="39" x2="188" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
         `<line x1="164" y1="51" x2="200" y2="51" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
         `<line x1="164" y1="63" x2="200" y2="63" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
-        `<text x="204" y="61" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">×</text>` +
         `<rect x="208" y="39" width="36" height="36" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
         `<line x1="220" y1="39" x2="220" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
         `<line x1="232" y1="39" x2="232" y2="75" stroke="#ea580c" stroke-width="0.6" stroke-opacity="0.5"/>` +
