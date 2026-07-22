@@ -124,6 +124,31 @@ function Answers() {
 // ─── Real study guide renderers ───────────────────────────────────────────────
 
 /** Splits a single explanation string into groups of ~3 sentences per paragraph. */
+// Content data files use HTML entities (&nbsp;, &times;, etc.) for spacing
+// and symbols, expecting the browser to decode them. That only happens
+// automatically on the dangerouslySetInnerHTML branch (raw strings that
+// contain a literal '<'); plain-text JSX branches render entities literally
+// since React escapes text content. This decodes the same entity set for
+// those plain-text branches so "x &nbsp;→&nbsp; y" doesn't show up as-is.
+const HTML_ENTITIES: Record<string, string> = {
+  '&amp;': '&',
+  '&apos;': "'",
+  '&divide;': '÷',
+  '&gt;': '>',
+  '&ldquo;': '“',
+  '&lt;': '<',
+  '&minus;': '−',
+  '&nbsp;': ' ',
+  '&quot;': '"',
+  '&rdquo;': '”',
+  '&thinsp;': ' ',
+  '&times;': '×',
+}
+
+function decodeEntities(text: string): string {
+  return text.replace(/&[a-zA-Z]+;/g, (entity) => HTML_ENTITIES[entity] ?? entity)
+}
+
 function splitIntoParagraphs(text: string, sentencesPerParagraph = 3): string[] {
   const sentences = text.split(/(?<=[.!?])\s+(?=[A-Z"'(])/)
   const paragraphs: string[] = []
@@ -151,7 +176,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
           />
         ) : (
           <span className="text-sm font-semibold text-[#0f1f3d] leading-snug pr-4">
-            {exampleLabel}: {example.question}
+            {exampleLabel}: {decodeEntities(example.question)}
           </span>
         )}
         <svg
@@ -179,7 +204,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
                 {step.includes('<') ? (
                 <div className="topic-html text-gray-700" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: step }} />
               ) : (
-                <span className="text-gray-700" style={{ lineHeight: 1.8 }}>{step}</span>
+                <span className="text-gray-700" style={{ lineHeight: 1.8 }}>{decodeEntities(step)}</span>
               )}
               </li>
             ))}
@@ -190,7 +215,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
               <span className="topic-html bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug" dangerouslySetInnerHTML={{ __html: example.answer }} />
             ) : (
               <span className="bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug">
-                {example.answer}
+                {decodeEntities(example.answer)}
               </span>
             )}
           </div>
@@ -303,7 +328,7 @@ function PracticeCard({
           <p className="topic-html text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
         ) : (
           <p className="text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }}>
-            {question.question}
+            {decodeEntities(question.question)}
           </p>
         )}
       </div>
@@ -333,7 +358,7 @@ function PracticeCard({
                 <span className="shrink-0 w-5 h-5 rounded-full border border-current flex items-center justify-center text-xs font-bold">
                   {revealed && isCorrect ? '✓' : revealed && isSelected ? '✗' : String.fromCharCode(65 + idx)}
                 </span>
-                {opt}
+                {decodeEntities(opt)}
               </span>
             </button>
           )
@@ -344,7 +369,7 @@ function PracticeCard({
         <div className="ml-11 mt-4 bg-blue-50 border border-blue-200 rounded-xl px-4 py-4">
           <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-2">{t.topic_how_to_work_it_out}</p>
           <p className="text-sm text-blue-900 whitespace-pre-line" style={{ lineHeight: 1.8 }}>
-            {question.answer}
+            {decodeEntities(question.answer)}
           </p>
         </div>
       )}
@@ -450,7 +475,7 @@ function OpenQuestionCard({
             <p className="topic-html text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
           ) : (
             <p className="text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }}>
-              {question.question}
+              {decodeEntities(question.question)}
             </p>
           )}
         </div>
@@ -503,11 +528,11 @@ function OpenQuestionCard({
                     <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
                       <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
                       <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
-                        {partAnswerText}
+                        {decodeEntities(partAnswerText)}
                       </p>
                       {part.explanation && (
                         <p className="text-sm mt-2 whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
-                          {part.explanation}
+                          {decodeEntities(part.explanation)}
                         </p>
                       )}
                       {partSelfResults[pi] === null ? (
@@ -569,11 +594,11 @@ function OpenQuestionCard({
                 {revealedAnswerText.includes('<') ? (
                   <p className="topic-html text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: revealedAnswerText }} />
                 ) : (
-                  <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{revealedAnswerText}</p>
+                  <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{decodeEntities(revealedAnswerText)}</p>
                 )}
                 {question.explanation && (
                   <p className="text-sm mt-2 whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>
-                    {question.explanation}
+                    {decodeEntities(question.explanation)}
                   </p>
                 )}
                 {selfMark === null ? (
@@ -1005,7 +1030,7 @@ function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug
                   dangerouslySetInnerHTML={{ __html: section.explanation }}
                 />
               ) : (
-                splitIntoParagraphs(section.explanation).map((para, pi) => (
+                splitIntoParagraphs(decodeEntities(section.explanation)).map((para, pi) => (
                   <p key={pi} className="text-blue-900" style={{ fontSize: '17px', lineHeight: 1.8 }}>
                     {para}
                   </p>
