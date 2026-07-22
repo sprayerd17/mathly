@@ -95,7 +95,7 @@ export async function verifyTransaction(config: PaystackConfig, reference: strin
     status: string
     amount: number
     reference: string
-    customer: { customer_code: string; email: string }
+    customer: { id: number; customer_code: string; email: string }
     plan?: string
     metadata: Record<string, unknown> | null
   }>(config, `/transaction/verify/${encodeURIComponent(reference)}`)
