@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
-import FoundingNotifyBanner from '@/app/components/FoundingNotifyBanner'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
@@ -51,8 +50,6 @@ export default function Home() {
       <Navbar />
 
       <main>
-
-        {!PAYMENTS_ENABLED && <FoundingNotifyBanner />}
 
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
         <section

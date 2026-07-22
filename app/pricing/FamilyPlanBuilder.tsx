@@ -108,8 +108,6 @@ export default function FamilyPlanBuilder() {
 
   const proFounding  = spots.proTaken < FOUNDING_SPOTS
   const maxFounding   = spots.maxTaken < FOUNDING_SPOTS
-  const proRemaining = FOUNDING_SPOTS - spots.proTaken
-  const maxRemaining  = FOUNDING_SPOTS - spots.maxTaken
 
   const prices: Record<Plan, number>    = {
     pro: proFounding ? FOUNDING_PRICE.pro : FULL_PRICE.pro,
@@ -170,8 +168,6 @@ export default function FamilyPlanBuilder() {
     }
   }
 
-  const showSpots = mounted && (proFounding || maxFounding)
-
   const p2Pro = proFounding ? prices.pro * 2 : Math.round(prices.pro * 0.8) * 2
   const p3Pro = proFounding ? prices.pro * 3 : Math.round(prices.pro * 0.8) * 3
   const p2Max  = maxFounding ? prices.max * 2  : Math.round(prices.max * 0.8) * 2
@@ -181,15 +177,7 @@ export default function FamilyPlanBuilder() {
 
   function slotBadgeAndSpots(tier: Tier) {
     if (!mounted || tier === 'free' || !founding[tier]) return null
-    const remaining = tier === 'pro' ? proRemaining : maxRemaining
-    return (
-      <div className="flex flex-col items-end gap-0.5">
-        <FoundingBadge label={t.pricing_founding_member_badge} />
-        <span className="text-xs" style={{ color: '#1e40af' }}>
-          {t.pricing_spots_remaining.replace('{count}', String(remaining))}
-        </span>
-      </div>
-    )
+    return <FoundingBadge label={t.pricing_founding_member_badge} />
   }
 
   return (
@@ -496,22 +484,6 @@ export default function FamilyPlanBuilder() {
             : (hasActiveSub ? t.pricing_update_plan : t.pricing_claim_your_spot)}
         </button>
       </div>
-
-      {/* Spots remaining row */}
-      {PAYMENTS_ENABLED && showSpots && (
-        <div className="mt-4 flex flex-col gap-1.5">
-          {proFounding && (
-            <p className="text-xs text-center font-semibold" style={{ color: '#1e40af' }}>
-              {t.pricing_pro_founding_spots_remaining.replace('{count}', String(proRemaining))}
-            </p>
-          )}
-          {maxFounding && (
-            <p className="text-xs text-center font-semibold" style={{ color: '#1e40af' }}>
-              {t.pricing_max_founding_spots_remaining.replace('{count}', String(maxRemaining))}
-            </p>
-          )}
-        </div>
-      )}
 
       {/* Price examples */}
       <div
