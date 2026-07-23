@@ -142,7 +142,7 @@ export default function Navbar() {
 
       {/* ── Mobile sliding menu ─────────────────────────────────────────────── */}
       <aside
-        className={`fixed top-0 left-0 h-full w-72 z-30 flex flex-col transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-72 z-[60] flex flex-col transition-transform duration-300 ease-in-out md:hidden ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         style={{ backgroundColor: '#0f1f3d' }}

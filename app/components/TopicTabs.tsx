@@ -428,7 +428,7 @@ function OpenQuestionCard({
     }
   }
 
-  const revealedAnswerText = question.answer ?? question.correctAnswer ?? question.correctAnswers?.[0] ?? ''
+  const revealedAnswerText = question.answer || question.correctAnswer || question.correctAnswers?.[0] || ''
 
   return (
     <div className="bg-white border border-gray-100 rounded-xl shadow-sm" style={{ padding: '24px' }}>
@@ -461,7 +461,7 @@ function OpenQuestionCard({
               // checkMode no longer drives grading — it's kept only to pick a short-input
               // vs long-working-space widget, matching how each question was originally authored.
               const longform = part.checkMode === 'self'
-              const partAnswerText = part.answer ?? part.correctAnswer ?? part.correctAnswers?.[0] ?? ''
+              const partAnswerText = part.answer || part.correctAnswer || part.correctAnswers?.[0] || ''
               return (
                 <div key={pi}>
                   <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
@@ -1340,7 +1340,7 @@ export default function TopicTabs({ topicName, topicSlug, grade, isLocked, study
         ) : user ? (
           <UpgradePanel />
         ) : (
-          <LoggedOutLocked onLoginClick={openModal} />
+          <LoggedOutLocked onLoginClick={() => openModal('login')} />
         )}
         <div className="mt-8 pt-6 border-t border-gray-100">
           <Link
