@@ -499,6 +499,145 @@ export const topicData: TopicData = {
     { minScore: 6, message: 'Good effort, review and try again.' },
     { minScore: 0, message: 'Keep going, work through the guide again.' },
   ],
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 1 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 1',
+      questions: [
+        // Block 1 — Place value, comparing and ordering large numbers (Easy-Medium) — positions 0-3
+        { difficulty: 'Easy', question: 'In the number 5 172 946, what is the place value of the digit 7?', answer: 'Ten thousands', checkMode: 'auto', correctAnswer: 'ten thousands', correctAnswers: ['ten thousands', 'Ten thousands'], explanation: 'Count place values from the right: units, tens, hundreds, thousands, ten thousands, hundred thousands, millions.\nIn 5 172 946 the digits are 5-1-7-2-9-4-6, so 7 is the third digit from the left.\nThat is the ten thousands place.' },
+        { difficulty: 'Easy-Medium', question: 'What is the value of the digit 3 in 632 458 000?', answer: '30 000 000', checkMode: 'auto', correctAnswer: '30 000 000', correctAnswers: ['30 000 000', '30000000'], explanation: 'In 632 458 000 the digit 3 is in the ten millions place.\nValue = 3 × 10 000 000 = 30 000 000' },
+        { difficulty: 'Medium', question: 'Which number is greater: 82 461 300 or 8 246 130?', answer: '82 461 300', checkMode: 'auto', correctAnswer: '82 461 300', correctAnswers: ['82 461 300', '82461300'], explanation: 'Compare the number of digits first.\n82 461 300 has 8 digits. 8 246 130 has 7 digits.\nMore digits means a larger number, so 82 461 300 is greater.' },
+        { difficulty: 'Medium', question: 'Order from smallest to biggest: 6 205 400, 620 540, 62 054 000.', answer: '620 540, 6 205 400, 62 054 000', checkMode: 'self' },
+
+        // Block 2 — Rounding to a given place value (Easy-Medium) — positions 4-7
+        { difficulty: 'Easy', question: 'Round 48 623 to the nearest thousand.', answer: '49 000', checkMode: 'auto', correctAnswer: '49 000', correctAnswers: ['49 000', '49000'], explanation: 'The thousands digit is 8.\nLook one place right — the hundreds digit is 6. Since 6 ≥ 5, round up.\n8 rounds up to 9. Replace all digits to the right with zeros.\nAnswer: 49 000' },
+        { difficulty: 'Easy-Medium', question: 'Round 275 480 to the nearest ten thousand.', answer: '280 000', checkMode: 'auto', correctAnswer: '280 000', correctAnswers: ['280 000', '280000'], explanation: 'The ten thousands digit is 7.\nLook one place right — the thousands digit is 5. Since 5 ≥ 5, round up.\n7 rounds up to 8. Replace all digits to the right with zeros.\nAnswer: 280 000' },
+        { difficulty: 'Medium', question: 'Round 4 763 900 to the nearest hundred thousand.', answer: '4 800 000', checkMode: 'auto', correctAnswer: '4 800 000', correctAnswers: ['4 800 000', '4800000'], explanation: 'The hundred thousands digit is 7.\nLook one place right — the ten thousands digit is 6. Since 6 ≥ 5, round up.\n7 rounds up to 8. Replace all digits to the right with zeros.\nAnswer: 4 800 000' },
+        { difficulty: 'Medium', question: 'Round 53 218 700 to the nearest million.', answer: '53 000 000', checkMode: 'auto', correctAnswer: '53 000 000', correctAnswers: ['53 000 000', '53000000'], explanation: 'The millions digit is 3.\nLook one place right — the hundred thousands digit is 2. Since 2 < 5, round down.\nKeep the 3 and replace all digits to the right with zeros.\nAnswer: 53 000 000' },
+
+        // Block 3 — Operations with large numbers (Easy-Hard) — positions 8-12
+        { difficulty: 'Easy', question: 'Calculate 2 340 × 16.', answer: '37 440', checkMode: 'auto', correctAnswer: '37 440', correctAnswers: ['37 440', '37440'], explanation: '2 340 × 16\n= 2 340 × 10 + 2 340 × 6\n= 23 400 + 14 040\n= 37 440' },
+        { difficulty: 'Easy-Medium', question: 'Calculate 84 672 ÷ 24.', answer: '3 528', checkMode: 'auto', correctAnswer: '3 528', correctAnswers: ['3 528', '3528'], explanation: '84 672 ÷ 24 = 3 528\nCheck: 3 528 × 24 = 84 672 ✓' },
+        { difficulty: 'Medium', question: 'A school raised R84 350 in a fun run and R37 620 in a bake sale. How much did they raise in total?', answer: 'R121 970', checkMode: 'auto', correctAnswer: 'R121 970', correctAnswers: ['R121 970', '121 970', 'R121970', '121970'], explanation: '84 350 + 37 620 = 121 970\nAnswer: R121 970' },
+        { difficulty: 'Medium', question: 'A factory packs 3 250 boxes per day. How many boxes does it pack in 14 days?', answer: '45 500', checkMode: 'auto', correctAnswer: '45 500', correctAnswers: ['45 500', '45500'], explanation: '3 250 × 14\n= 3 250 × 10 + 3 250 × 4\n= 32 500 + 13 000\n= 45 500' },
+        { difficulty: 'Hard', question: 'Thabo has R125 000 in savings. He spends R38 400 on a car repair and then earns R52 750 from a side job. How much does he have now?', answer: 'R139 350', checkMode: 'auto', correctAnswer: 'R139 350', correctAnswers: ['R139 350', '139 350', 'R139350', '139350'], explanation: 'Step 1 — subtract: 125 000 − 38 400 = 86 600\nStep 2 — add: 86 600 + 52 750 = 139 350\nAnswer: R139 350' },
+
+        // Block 4 — Squares and square roots (Easy-Medium) — positions 13-15
+        { difficulty: 'Easy', question: 'Calculate 7².', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: '7² = 7 × 7 = 49' },
+        { difficulty: 'Medium', question: 'Find the square root of 121.', answer: '11', checkMode: 'auto', correctAnswer: '11', explanation: '√121 = 11 because 11 × 11 = 121' },
+        { difficulty: 'Medium', question: 'Calculate 6² + 9².', answer: '117', checkMode: 'auto', correctAnswer: '117', explanation: '6² = 6 × 6 = 36\n9² = 9 × 9 = 81\n36 + 81 = 117' },
+
+        // Block 5 — Cubes and cube roots (Easy-Medium) — positions 16-17
+        { difficulty: 'Easy', question: 'Calculate 4³.', answer: '64', checkMode: 'auto', correctAnswer: '64', explanation: '4³ = 4 × 4 × 4 = 16 × 4 = 64' },
+        { difficulty: 'Medium', question: 'Find the cube root of 125.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: '∛125 = 5 because 5 × 5 × 5 = 125' },
+
+        // Block 6 — Misconception and reasoning questions (Hard) — positions 18-19
+        { difficulty: 'Hard', question: 'A learner rounds 6 499 999 to the nearest million and gets 7 000 000. Is this correct? Explain.', answer: 'No — the millions digit is 6, and the digit one place to the right (hundred thousands) is 4, which is less than 5, so we round down. The correct answer is 6 000 000, not 7 000 000.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A learner says that (5 + 3)² is the same as 5² + 3². Is this correct? Explain and give the correct value of (5 + 3)².', answer: 'No — (5 + 3)² = 8² = 64, but 5² + 3² = 25 + 9 = 34. These are not equal, so squaring a sum is not the same as squaring each term separately.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered place value, rounding, operations with large numbers, squares and cubes.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on rounding or operations and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on place value and calculations with large numbers, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block 1 — Place value, comparing and ordering large numbers (Easy-Medium) — positions 0-3
+        { difficulty: 'Easy', question: 'In the number 7 249 583, what is the place value of the digit 2?', answer: 'Hundred thousands', checkMode: 'auto', correctAnswer: 'hundred thousands', correctAnswers: ['hundred thousands', 'Hundred thousands'], explanation: 'Count place values from the right: units, tens, hundreds, thousands, ten thousands, hundred thousands, millions.\nIn 7 249 583 the digits are 7-2-4-9-5-8-3, so 2 is the second digit from the left.\nThat is the hundred thousands place.' },
+        { difficulty: 'Easy-Medium', question: 'What is the value of the digit 5 in 519 483 000?', answer: '500 000 000', checkMode: 'auto', correctAnswer: '500 000 000', correctAnswers: ['500 000 000', '500000000'], explanation: 'In 519 483 000 the digit 5 is in the hundred millions place.\nValue = 5 × 100 000 000 = 500 000 000' },
+        { difficulty: 'Medium', question: 'Which number is greater: 45 902 100 or 4 590 210?', answer: '45 902 100', checkMode: 'auto', correctAnswer: '45 902 100', correctAnswers: ['45 902 100', '45902100'], explanation: 'Compare the number of digits first.\n45 902 100 has 8 digits. 4 590 210 has 7 digits.\nMore digits means a larger number, so 45 902 100 is greater.' },
+        { difficulty: 'Medium', question: 'Order from smallest to biggest: 5 108 300, 510 830, 51 083 000.', answer: '510 830, 5 108 300, 51 083 000', checkMode: 'self' },
+
+        // Block 2 — Rounding to a given place value (Easy-Medium) — positions 4-7
+        { difficulty: 'Easy', question: 'Round 37 218 to the nearest thousand.', answer: '37 000', checkMode: 'auto', correctAnswer: '37 000', correctAnswers: ['37 000', '37000'], explanation: 'The thousands digit is 7.\nLook one place right — the hundreds digit is 2. Since 2 < 5, round down.\nKeep the 7 and replace all digits to the right with zeros.\nAnswer: 37 000' },
+        { difficulty: 'Easy-Medium', question: 'Round 384 260 to the nearest ten thousand.', answer: '380 000', checkMode: 'auto', correctAnswer: '380 000', correctAnswers: ['380 000', '380000'], explanation: 'The ten thousands digit is 8.\nLook one place right — the thousands digit is 4. Since 4 < 5, round down.\nKeep the 8 and replace all digits to the right with zeros.\nAnswer: 380 000' },
+        { difficulty: 'Medium', question: 'Round 6 249 500 to the nearest hundred thousand.', answer: '6 200 000', checkMode: 'auto', correctAnswer: '6 200 000', correctAnswers: ['6 200 000', '6200000'], explanation: 'The hundred thousands digit is 2.\nLook one place right — the ten thousands digit is 4. Since 4 < 5, round down.\nKeep the 2 and replace all digits to the right with zeros.\nAnswer: 6 200 000' },
+        { difficulty: 'Medium', question: 'Round 78 512 300 to the nearest million.', answer: '79 000 000', checkMode: 'auto', correctAnswer: '79 000 000', correctAnswers: ['79 000 000', '79000000'], explanation: 'The millions digit is 8.\nLook one place right — the hundred thousands digit is 5. Since 5 ≥ 5, round up.\n8 rounds up to 9. Replace all digits to the right with zeros.\nAnswer: 79 000 000' },
+
+        // Block 3 — Operations with large numbers (Easy-Hard) — positions 8-12
+        { difficulty: 'Easy', question: 'Calculate 4 120 × 18.', answer: '74 160', checkMode: 'auto', correctAnswer: '74 160', correctAnswers: ['74 160', '74160'], explanation: '4 120 × 18\n= 4 120 × 20 − 4 120 × 2\n= 82 400 − 8 240\n= 74 160' },
+        { difficulty: 'Easy-Medium', question: 'Calculate 78 336 ÷ 24.', answer: '3 264', checkMode: 'auto', correctAnswer: '3 264', correctAnswers: ['3 264', '3264'], explanation: '78 336 ÷ 24 = 3 264\nCheck: 3 264 × 24 = 78 336 ✓' },
+        { difficulty: 'Medium', question: 'A charity collected R56 480 in March and R42 950 in April. How much did they collect in total?', answer: 'R99 430', checkMode: 'auto', correctAnswer: 'R99 430', correctAnswers: ['R99 430', '99 430', 'R99430', '99430'], explanation: '56 480 + 42 950 = 99 430\nAnswer: R99 430' },
+        { difficulty: 'Medium', question: 'A bakery bakes 2 480 loaves per day. How many loaves does it bake in 21 days?', answer: '52 080', checkMode: 'auto', correctAnswer: '52 080', correctAnswers: ['52 080', '52080'], explanation: '2 480 × 21\n= 2 480 × 20 + 2 480\n= 49 600 + 2 480\n= 52 080' },
+        { difficulty: 'Hard', question: 'Zanele has R95 000 in savings. She spends R27 650 on furniture and then earns R41 300 from freelance work. How much does she have now?', answer: 'R108 650', checkMode: 'auto', correctAnswer: 'R108 650', correctAnswers: ['R108 650', '108 650', 'R108650', '108650'], explanation: 'Step 1 — subtract: 95 000 − 27 650 = 67 350\nStep 2 — add: 67 350 + 41 300 = 108 650\nAnswer: R108 650' },
+
+        // Block 4 — Squares and square roots (Easy-Medium) — positions 13-15
+        { difficulty: 'Easy', question: 'Calculate 8².', answer: '64', checkMode: 'auto', correctAnswer: '64', explanation: '8² = 8 × 8 = 64' },
+        { difficulty: 'Medium', question: 'Find the square root of 100.', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: '√100 = 10 because 10 × 10 = 100' },
+        { difficulty: 'Medium', question: 'Calculate 4² + 10².', answer: '116', checkMode: 'auto', correctAnswer: '116', explanation: '4² = 4 × 4 = 16\n10² = 10 × 10 = 100\n16 + 100 = 116' },
+
+        // Block 5 — Cubes and cube roots (Easy-Medium) — positions 16-17
+        { difficulty: 'Easy', question: 'Calculate 3³.', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: '3³ = 3 × 3 × 3 = 9 × 3 = 27' },
+        { difficulty: 'Medium', question: 'Find the cube root of 64.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: '∛64 = 4 because 4 × 4 × 4 = 64' },
+
+        // Block 6 — Misconception and reasoning questions (Hard) — positions 18-19
+        { difficulty: 'Hard', question: 'A learner rounds 7 449 999 to the nearest million and gets 8 000 000. Is this correct? Explain.', answer: 'No — the millions digit is 7, and the digit one place to the right (hundred thousands) is 4, which is less than 5, so we round down. The correct answer is 7 000 000, not 8 000 000.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A learner says that (4 + 6)² is the same as 4² + 6². Is this correct? Explain and give the correct value of (4 + 6)².', answer: 'No — (4 + 6)² = 10² = 100, but 4² + 6² = 16 + 36 = 52. These are not equal, so squaring a sum is not the same as squaring each term separately.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered place value, rounding, operations with large numbers, squares and cubes.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on rounding or operations and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on place value and calculations with large numbers, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block 1 — Place value, comparing and ordering large numbers (Easy-Medium) — positions 0-3
+        { difficulty: 'Easy', question: 'In the number 3 816 295, what is the place value of the digit 3?', answer: 'Millions', checkMode: 'auto', correctAnswer: 'millions', correctAnswers: ['millions', 'Millions'], explanation: 'Count place values from the right: units, tens, hundreds, thousands, ten thousands, hundred thousands, millions.\nIn 3 816 295 the digits are 3-8-1-6-2-9-5, so 3 is the first (leftmost) digit.\nThat is the millions place.' },
+        { difficulty: 'Easy-Medium', question: 'What is the value of the digit 7 in 271 640 000?', answer: '70 000 000', checkMode: 'auto', correctAnswer: '70 000 000', correctAnswers: ['70 000 000', '70000000'], explanation: 'In 271 640 000 the digit 7 is in the ten millions place.\nValue = 7 × 10 000 000 = 70 000 000' },
+        { difficulty: 'Medium', question: 'Which number is greater: 36 748 200 or 3 674 820?', answer: '36 748 200', checkMode: 'auto', correctAnswer: '36 748 200', correctAnswers: ['36 748 200', '36748200'], explanation: 'Compare the number of digits first.\n36 748 200 has 8 digits. 3 674 820 has 7 digits.\nMore digits means a larger number, so 36 748 200 is greater.' },
+        { difficulty: 'Medium', question: 'Order from smallest to biggest: 4 296 700, 429 670, 42 967 000.', answer: '429 670, 4 296 700, 42 967 000', checkMode: 'self' },
+
+        // Block 2 — Rounding to a given place value (Easy-Medium) — positions 4-7
+        { difficulty: 'Easy', question: 'Round 52 384 to the nearest thousand.', answer: '52 000', checkMode: 'auto', correctAnswer: '52 000', correctAnswers: ['52 000', '52000'], explanation: 'The thousands digit is 2.\nLook one place right — the hundreds digit is 3. Since 3 < 5, round down.\nKeep the 2 and replace all digits to the right with zeros.\nAnswer: 52 000' },
+        { difficulty: 'Easy-Medium', question: 'Round 617 350 to the nearest ten thousand.', answer: '620 000', checkMode: 'auto', correctAnswer: '620 000', correctAnswers: ['620 000', '620000'], explanation: 'The ten thousands digit is 1.\nLook one place right — the thousands digit is 7. Since 7 ≥ 5, round up.\n1 rounds up to 2. Replace all digits to the right with zeros.\nAnswer: 620 000' },
+        { difficulty: 'Medium', question: 'Round 8 352 600 to the nearest hundred thousand.', answer: '8 400 000', checkMode: 'auto', correctAnswer: '8 400 000', correctAnswers: ['8 400 000', '8400000'], explanation: 'The hundred thousands digit is 3.\nLook one place right — the ten thousands digit is 5. Since 5 ≥ 5, round up.\n3 rounds up to 4. Replace all digits to the right with zeros.\nAnswer: 8 400 000' },
+        { difficulty: 'Medium', question: 'Round 24 683 900 to the nearest million.', answer: '25 000 000', checkMode: 'auto', correctAnswer: '25 000 000', correctAnswers: ['25 000 000', '25000000'], explanation: 'The millions digit is 4.\nLook one place right — the hundred thousands digit is 6. Since 6 ≥ 5, round up.\n4 rounds up to 5. Replace all digits to the right with zeros.\nAnswer: 25 000 000' },
+
+        // Block 3 — Operations with large numbers (Easy-Hard) — positions 8-12
+        { difficulty: 'Easy', question: 'Calculate 5 230 × 17.', answer: '88 910', checkMode: 'auto', correctAnswer: '88 910', correctAnswers: ['88 910', '88910'], explanation: '5 230 × 17\n= 5 230 × 20 − 5 230 × 3\n= 104 600 − 15 690\n= 88 910' },
+        { difficulty: 'Easy-Medium', question: 'Calculate 67 158 ÷ 18.', answer: '3 731', checkMode: 'auto', correctAnswer: '3 731', correctAnswers: ['3 731', '3731'], explanation: '67 158 ÷ 18 = 3 731\nCheck: 3 731 × 18 = 67 158 ✓' },
+        { difficulty: 'Medium', question: 'A community garden sold R63 240 worth of vegetables in spring and R48 970 in summer. How much did they sell in total?', answer: 'R112 210', checkMode: 'auto', correctAnswer: 'R112 210', correctAnswers: ['R112 210', '112 210', 'R112210', '112210'], explanation: '63 240 + 48 970 = 112 210\nAnswer: R112 210' },
+        { difficulty: 'Medium', question: 'A printing company prints 3 640 pamphlets per day. How many pamphlets does it print in 16 days?', answer: '58 240', checkMode: 'auto', correctAnswer: '58 240', correctAnswers: ['58 240', '58240'], explanation: '3 640 × 16\n= 3 640 × 10 + 3 640 × 6\n= 36 400 + 21 840\n= 58 240' },
+        { difficulty: 'Hard', question: 'Bongani has R110 000 in savings. He spends R45 250 on a laptop and then earns R36 800 from a bonus. How much does he have now?', answer: 'R101 550', checkMode: 'auto', correctAnswer: 'R101 550', correctAnswers: ['R101 550', '101 550', 'R101550', '101550'], explanation: 'Step 1 — subtract: 110 000 − 45 250 = 64 750\nStep 2 — add: 64 750 + 36 800 = 101 550\nAnswer: R101 550' },
+
+        // Block 4 — Squares and square roots (Easy-Medium) — positions 13-15
+        { difficulty: 'Easy', question: 'Calculate 12².', answer: '144', checkMode: 'auto', correctAnswer: '144', explanation: '12² = 12 × 12 = 144' },
+        { difficulty: 'Medium', question: 'Find the square root of 81.', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '√81 = 9 because 9 × 9 = 81' },
+        { difficulty: 'Medium', question: 'Calculate 5² + 7².', answer: '74', checkMode: 'auto', correctAnswer: '74', explanation: '5² = 5 × 5 = 25\n7² = 7 × 7 = 49\n25 + 49 = 74' },
+
+        // Block 5 — Cubes and cube roots (Easy-Medium) — positions 16-17
+        { difficulty: 'Easy', question: 'Calculate 5³.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: '5³ = 5 × 5 × 5 = 25 × 5 = 125' },
+        { difficulty: 'Medium', question: 'Find the cube root of 8.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: '∛8 = 2 because 2 × 2 × 2 = 8' },
+
+        // Block 6 — Misconception and reasoning questions (Hard) — positions 18-19
+        { difficulty: 'Hard', question: 'A learner rounds 2 550 000 to the nearest hundred thousand and gets 2 500 000. Is this correct? Explain.', answer: 'No — the hundred thousands digit is 5, and the digit one place to the right (ten thousands) is also 5, which means we round up. The correct answer is 2 600 000, not 2 500 000.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A learner says that (7 − 2)² is the same as 7² − 2². Is this correct? Explain and give the correct value of (7 − 2)².', answer: 'No — (7 − 2)² = 5² = 25, but 7² − 2² = 49 − 4 = 45. These are not equal, so squaring a difference is not the same as squaring each term separately.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Outstanding! You have mastered place value, rounding, operations with large numbers, squares and cubes.' },
+        { minScore: 15, message: 'Great work! Review any missed questions on rounding or operations and try again.' },
+        { minScore: 10, message: 'Good effort! Revisit the worked examples on place value and calculations with large numbers, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+  ],
   resultsConfig: {
     totalMarks: 12,
     messages: [

@@ -499,6 +499,145 @@ export const topicData: TopicData = {
     { minScore: 6, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die studiegids.' },
   ],
+  practiceSets: [
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 1 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 1',
+      questions: [
+        // Blok 1 — Plekwaarde, vergelyking en ordening van groot getalle (Easy-Medium) — posisies 0-3
+        { difficulty: 'Easy', question: 'In die getal 5 172 946, wat is die plekwaarde van die syfer 7?', answer: 'Tienduisende', checkMode: 'auto', correctAnswer: 'tienduisende', correctAnswers: ['tienduisende', 'Tienduisende'], explanation: 'Tel plekwaardes van regs af: ene, tiene, honderde, duisende, tienduisende, honderdduisende, miljoene.\nIn 5 172 946 is die syfers 5-1-7-2-9-4-6, dus is 7 die derde syfer van links af.\nDit is die tienduisende-plek.' },
+        { difficulty: 'Easy-Medium', question: 'Wat is die waarde van die syfer 3 in 632 458 000?', answer: '30 000 000', checkMode: 'auto', correctAnswer: '30 000 000', correctAnswers: ['30 000 000', '30000000'], explanation: 'In 632 458 000 is die syfer 3 in die tien miljoene-plek.\nWaarde = 3 × 10 000 000 = 30 000 000' },
+        { difficulty: 'Medium', question: 'Watter getal is groter: 82 461 300 of 8 246 130?', answer: '82 461 300', checkMode: 'auto', correctAnswer: '82 461 300', correctAnswers: ['82 461 300', '82461300'], explanation: 'Vergelyk eers die aantal syfers.\n82 461 300 het 8 syfers. 8 246 130 het 7 syfers.\nMeer syfers beteken ʼn groter getal, dus is 82 461 300 groter.' },
+        { difficulty: 'Medium', question: 'Orden van kleinste na grootste: 6 205 400, 620 540, 62 054 000.', answer: '620 540, 6 205 400, 62 054 000', checkMode: 'self' },
+
+        // Blok 2 — Afronding na ʼn gegewe plekwaarde (Easy-Medium) — posisies 4-7
+        { difficulty: 'Easy', question: 'Rond 48 623 af na die naaste duisend.', answer: '49 000', checkMode: 'auto', correctAnswer: '49 000', correctAnswers: ['49 000', '49000'], explanation: 'Die duisende-syfer is 8.\nKyk een plek regs — die honderde-syfer is 6. Aangesien 6 ≥ 5, rond ons op.\n8 rond op na 9. Vervang alle syfers regs daarvan met nulle.\nAntwoord: 49 000' },
+        { difficulty: 'Easy-Medium', question: 'Rond 275 480 af na die naaste tienduisend.', answer: '280 000', checkMode: 'auto', correctAnswer: '280 000', correctAnswers: ['280 000', '280000'], explanation: 'Die tienduisende-syfer is 7.\nKyk een plek regs — die duisende-syfer is 5. Aangesien 5 ≥ 5, rond ons op.\n7 rond op na 8. Vervang alle syfers regs daarvan met nulle.\nAntwoord: 280 000' },
+        { difficulty: 'Medium', question: 'Rond 4 763 900 af na die naaste honderdduisend.', answer: '4 800 000', checkMode: 'auto', correctAnswer: '4 800 000', correctAnswers: ['4 800 000', '4800000'], explanation: 'Die honderdduisende-syfer is 7.\nKyk een plek regs — die tienduisende-syfer is 6. Aangesien 6 ≥ 5, rond ons op.\n7 rond op na 8. Vervang alle syfers regs daarvan met nulle.\nAntwoord: 4 800 000' },
+        { difficulty: 'Medium', question: 'Rond 53 218 700 af na die naaste miljoen.', answer: '53 000 000', checkMode: 'auto', correctAnswer: '53 000 000', correctAnswers: ['53 000 000', '53000000'], explanation: 'Die miljoene-syfer is 3.\nKyk een plek regs — die honderdduisende-syfer is 2. Aangesien 2 < 5, rond ons af.\nHou die 3 en vervang alle syfers regs daarvan met nulle.\nAntwoord: 53 000 000' },
+
+        // Blok 3 — Bewerkings met groot getalle (Easy-Hard) — posisies 8-12
+        { difficulty: 'Easy', question: 'Bereken 2 340 × 16.', answer: '37 440', checkMode: 'auto', correctAnswer: '37 440', correctAnswers: ['37 440', '37440'], explanation: '2 340 × 16\n= 2 340 × 10 + 2 340 × 6\n= 23 400 + 14 040\n= 37 440' },
+        { difficulty: 'Easy-Medium', question: 'Bereken 84 672 ÷ 24.', answer: '3 528', checkMode: 'auto', correctAnswer: '3 528', correctAnswers: ['3 528', '3528'], explanation: '84 672 ÷ 24 = 3 528\nToets: 3 528 × 24 = 84 672 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Skool het R84 350 by ʼn pretlopie ingesamel en R37 620 by ʼn bakverkoping. Hoeveel het hulle in totaal ingesamel?', answer: 'R121 970', checkMode: 'auto', correctAnswer: 'R121 970', correctAnswers: ['R121 970', '121 970', 'R121970', '121970'], explanation: '84 350 + 37 620 = 121 970\nAntwoord: R121 970' },
+        { difficulty: 'Medium', question: 'ʼn Fabriek pak 3 250 bokse per dag. Hoeveel bokse pak dit in 14 dae?', answer: '45 500', checkMode: 'auto', correctAnswer: '45 500', correctAnswers: ['45 500', '45500'], explanation: '3 250 × 14\n= 3 250 × 10 + 3 250 × 4\n= 32 500 + 13 000\n= 45 500' },
+        { difficulty: 'Hard', question: 'Thabo het R125 000 gespaar. Hy spandeer R38 400 op ʼn motorherstel en verdien dan R52 750 van ʼn newe-werk. Hoeveel het hy nou?', answer: 'R139 350', checkMode: 'auto', correctAnswer: 'R139 350', correctAnswers: ['R139 350', '139 350', 'R139350', '139350'], explanation: 'Stap 1 — trek af: 125 000 − 38 400 = 86 600\nStap 2 — tel by: 86 600 + 52 750 = 139 350\nAntwoord: R139 350' },
+
+        // Blok 4 — Kwadrate en vierkantswortels (Easy-Medium) — posisies 13-15
+        { difficulty: 'Easy', question: 'Bereken 7².', answer: '49', checkMode: 'auto', correctAnswer: '49', explanation: '7² = 7 × 7 = 49' },
+        { difficulty: 'Medium', question: 'Vind die vierkantswortel van 121.', answer: '11', checkMode: 'auto', correctAnswer: '11', explanation: '√121 = 11 want 11 × 11 = 121' },
+        { difficulty: 'Medium', question: 'Bereken 6² + 9².', answer: '117', checkMode: 'auto', correctAnswer: '117', explanation: '6² = 6 × 6 = 36\n9² = 9 × 9 = 81\n36 + 81 = 117' },
+
+        // Blok 5 — Kubusse en kubuswortels (Easy-Medium) — posisies 16-17
+        { difficulty: 'Easy', question: 'Bereken 4³.', answer: '64', checkMode: 'auto', correctAnswer: '64', explanation: '4³ = 4 × 4 × 4 = 16 × 4 = 64' },
+        { difficulty: 'Medium', question: 'Vind die kubuswortel van 125.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: '∛125 = 5 want 5 × 5 × 5 = 125' },
+
+        // Blok 6 — Wanopvattings en redenering (Hard) — posisies 18-19
+        { difficulty: 'Hard', question: 'ʼn Leerder rond 6 499 999 af na die naaste miljoen en kry 7 000 000. Is dit korrek? Verduidelik.', answer: 'Nee — die miljoene-syfer is 6, en die syfer een plek regs (honderdduisende) is 4, wat minder as 5 is, dus rond ons af. Die korrekte antwoord is 6 000 000, nie 7 000 000 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder sê dat (5 + 3)² dieselfde is as 5² + 3². Is dit korrek? Verduidelik en gee die korrekte waarde van (5 + 3)².', answer: 'Nee — (5 + 3)² = 8² = 64, maar 5² + 3² = 25 + 9 = 34. Hierdie is nie gelyk nie, dus is die kwadraat van ʼn som nie dieselfde as om elke term afsonderlik te kwadreer nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het plekwaarde, afronding, bewerkings met groot getalle, kwadrate en kubusse bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan die vrae wat jy oor afronding of bewerkings verkeerd gehad het weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor plekwaarde en berekeninge met groot getalle weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 2 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 2',
+      questions: [
+        // Blok 1 — Plekwaarde, vergelyking en ordening van groot getalle (Easy-Medium) — posisies 0-3
+        { difficulty: 'Easy', question: 'In die getal 7 249 583, wat is die plekwaarde van die syfer 2?', answer: 'Honderdduisende', checkMode: 'auto', correctAnswer: 'honderdduisende', correctAnswers: ['honderdduisende', 'Honderdduisende'], explanation: 'Tel plekwaardes van regs af: ene, tiene, honderde, duisende, tienduisende, honderdduisende, miljoene.\nIn 7 249 583 is die syfers 7-2-4-9-5-8-3, dus is 2 die tweede syfer van links af.\nDit is die honderdduisende-plek.' },
+        { difficulty: 'Easy-Medium', question: 'Wat is die waarde van die syfer 5 in 519 483 000?', answer: '500 000 000', checkMode: 'auto', correctAnswer: '500 000 000', correctAnswers: ['500 000 000', '500000000'], explanation: 'In 519 483 000 is die syfer 5 in die honderd miljoene-plek.\nWaarde = 5 × 100 000 000 = 500 000 000' },
+        { difficulty: 'Medium', question: 'Watter getal is groter: 45 902 100 of 4 590 210?', answer: '45 902 100', checkMode: 'auto', correctAnswer: '45 902 100', correctAnswers: ['45 902 100', '45902100'], explanation: 'Vergelyk eers die aantal syfers.\n45 902 100 het 8 syfers. 4 590 210 het 7 syfers.\nMeer syfers beteken ʼn groter getal, dus is 45 902 100 groter.' },
+        { difficulty: 'Medium', question: 'Orden van kleinste na grootste: 5 108 300, 510 830, 51 083 000.', answer: '510 830, 5 108 300, 51 083 000', checkMode: 'self' },
+
+        // Blok 2 — Afronding na ʼn gegewe plekwaarde (Easy-Medium) — posisies 4-7
+        { difficulty: 'Easy', question: 'Rond 37 218 af na die naaste duisend.', answer: '37 000', checkMode: 'auto', correctAnswer: '37 000', correctAnswers: ['37 000', '37000'], explanation: 'Die duisende-syfer is 7.\nKyk een plek regs — die honderde-syfer is 2. Aangesien 2 < 5, rond ons af.\nHou die 7 en vervang alle syfers regs daarvan met nulle.\nAntwoord: 37 000' },
+        { difficulty: 'Easy-Medium', question: 'Rond 384 260 af na die naaste tienduisend.', answer: '380 000', checkMode: 'auto', correctAnswer: '380 000', correctAnswers: ['380 000', '380000'], explanation: 'Die tienduisende-syfer is 8.\nKyk een plek regs — die duisende-syfer is 4. Aangesien 4 < 5, rond ons af.\nHou die 8 en vervang alle syfers regs daarvan met nulle.\nAntwoord: 380 000' },
+        { difficulty: 'Medium', question: 'Rond 6 249 500 af na die naaste honderdduisend.', answer: '6 200 000', checkMode: 'auto', correctAnswer: '6 200 000', correctAnswers: ['6 200 000', '6200000'], explanation: 'Die honderdduisende-syfer is 2.\nKyk een plek regs — die tienduisende-syfer is 4. Aangesien 4 < 5, rond ons af.\nHou die 2 en vervang alle syfers regs daarvan met nulle.\nAntwoord: 6 200 000' },
+        { difficulty: 'Medium', question: 'Rond 78 512 300 af na die naaste miljoen.', answer: '79 000 000', checkMode: 'auto', correctAnswer: '79 000 000', correctAnswers: ['79 000 000', '79000000'], explanation: 'Die miljoene-syfer is 8.\nKyk een plek regs — die honderdduisende-syfer is 5. Aangesien 5 ≥ 5, rond ons op.\n8 rond op na 9. Vervang alle syfers regs daarvan met nulle.\nAntwoord: 79 000 000' },
+
+        // Blok 3 — Bewerkings met groot getalle (Easy-Hard) — posisies 8-12
+        { difficulty: 'Easy', question: 'Bereken 4 120 × 18.', answer: '74 160', checkMode: 'auto', correctAnswer: '74 160', correctAnswers: ['74 160', '74160'], explanation: '4 120 × 18\n= 4 120 × 20 − 4 120 × 2\n= 82 400 − 8 240\n= 74 160' },
+        { difficulty: 'Easy-Medium', question: 'Bereken 78 336 ÷ 24.', answer: '3 264', checkMode: 'auto', correctAnswer: '3 264', correctAnswers: ['3 264', '3264'], explanation: '78 336 ÷ 24 = 3 264\nToets: 3 264 × 24 = 78 336 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Liefdadigheidsorganisasie het R56 480 in Maart ingesamel en R42 950 in April. Hoeveel het hulle in totaal ingesamel?', answer: 'R99 430', checkMode: 'auto', correctAnswer: 'R99 430', correctAnswers: ['R99 430', '99 430', 'R99430', '99430'], explanation: '56 480 + 42 950 = 99 430\nAntwoord: R99 430' },
+        { difficulty: 'Medium', question: 'ʼn Bakkery bak 2 480 brode per dag. Hoeveel brode bak dit in 21 dae?', answer: '52 080', checkMode: 'auto', correctAnswer: '52 080', correctAnswers: ['52 080', '52080'], explanation: '2 480 × 21\n= 2 480 × 20 + 2 480\n= 49 600 + 2 480\n= 52 080' },
+        { difficulty: 'Hard', question: 'Zanele het R95 000 gespaar. Sy spandeer R27 650 op meubels en verdien dan R41 300 van vryskutwerk. Hoeveel het sy nou?', answer: 'R108 650', checkMode: 'auto', correctAnswer: 'R108 650', correctAnswers: ['R108 650', '108 650', 'R108650', '108650'], explanation: 'Stap 1 — trek af: 95 000 − 27 650 = 67 350\nStap 2 — tel by: 67 350 + 41 300 = 108 650\nAntwoord: R108 650' },
+
+        // Blok 4 — Kwadrate en vierkantswortels (Easy-Medium) — posisies 13-15
+        { difficulty: 'Easy', question: 'Bereken 8².', answer: '64', checkMode: 'auto', correctAnswer: '64', explanation: '8² = 8 × 8 = 64' },
+        { difficulty: 'Medium', question: 'Vind die vierkantswortel van 100.', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: '√100 = 10 want 10 × 10 = 100' },
+        { difficulty: 'Medium', question: 'Bereken 4² + 10².', answer: '116', checkMode: 'auto', correctAnswer: '116', explanation: '4² = 4 × 4 = 16\n10² = 10 × 10 = 100\n16 + 100 = 116' },
+
+        // Blok 5 — Kubusse en kubuswortels (Easy-Medium) — posisies 16-17
+        { difficulty: 'Easy', question: 'Bereken 3³.', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: '3³ = 3 × 3 × 3 = 9 × 3 = 27' },
+        { difficulty: 'Medium', question: 'Vind die kubuswortel van 64.', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: '∛64 = 4 want 4 × 4 × 4 = 64' },
+
+        // Blok 6 — Wanopvattings en redenering (Hard) — posisies 18-19
+        { difficulty: 'Hard', question: 'ʼn Leerder rond 7 449 999 af na die naaste miljoen en kry 8 000 000. Is dit korrek? Verduidelik.', answer: 'Nee — die miljoene-syfer is 7, en die syfer een plek regs (honderdduisende) is 4, wat minder as 5 is, dus rond ons af. Die korrekte antwoord is 7 000 000, nie 8 000 000 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder sê dat (4 + 6)² dieselfde is as 4² + 6². Is dit korrek? Verduidelik en gee die korrekte waarde van (4 + 6)².', answer: 'Nee — (4 + 6)² = 10² = 100, maar 4² + 6² = 16 + 36 = 52. Hierdie is nie gelyk nie, dus is die kwadraat van ʼn som nie dieselfde as om elke term afsonderlik te kwadreer nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het plekwaarde, afronding, bewerkings met groot getalle, kwadrate en kubusse bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan die vrae wat jy oor afronding of bewerkings verkeerd gehad het weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor plekwaarde en berekeninge met groot getalle weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // STEL 3 (20 vrae)
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Stel 3',
+      questions: [
+        // Blok 1 — Plekwaarde, vergelyking en ordening van groot getalle (Easy-Medium) — posisies 0-3
+        { difficulty: 'Easy', question: 'In die getal 3 816 295, wat is die plekwaarde van die syfer 3?', answer: 'Miljoene', checkMode: 'auto', correctAnswer: 'miljoene', correctAnswers: ['miljoene', 'Miljoene'], explanation: 'Tel plekwaardes van regs af: ene, tiene, honderde, duisende, tienduisende, honderdduisende, miljoene.\nIn 3 816 295 is die syfers 3-8-1-6-2-9-5, dus is 3 die eerste (mees linkse) syfer.\nDit is die miljoene-plek.' },
+        { difficulty: 'Easy-Medium', question: 'Wat is die waarde van die syfer 7 in 271 640 000?', answer: '70 000 000', checkMode: 'auto', correctAnswer: '70 000 000', correctAnswers: ['70 000 000', '70000000'], explanation: 'In 271 640 000 is die syfer 7 in die tien miljoene-plek.\nWaarde = 7 × 10 000 000 = 70 000 000' },
+        { difficulty: 'Medium', question: 'Watter getal is groter: 36 748 200 of 3 674 820?', answer: '36 748 200', checkMode: 'auto', correctAnswer: '36 748 200', correctAnswers: ['36 748 200', '36748200'], explanation: 'Vergelyk eers die aantal syfers.\n36 748 200 het 8 syfers. 3 674 820 het 7 syfers.\nMeer syfers beteken ʼn groter getal, dus is 36 748 200 groter.' },
+        { difficulty: 'Medium', question: 'Orden van kleinste na grootste: 4 296 700, 429 670, 42 967 000.', answer: '429 670, 4 296 700, 42 967 000', checkMode: 'self' },
+
+        // Blok 2 — Afronding na ʼn gegewe plekwaarde (Easy-Medium) — posisies 4-7
+        { difficulty: 'Easy', question: 'Rond 52 384 af na die naaste duisend.', answer: '52 000', checkMode: 'auto', correctAnswer: '52 000', correctAnswers: ['52 000', '52000'], explanation: 'Die duisende-syfer is 2.\nKyk een plek regs — die honderde-syfer is 3. Aangesien 3 < 5, rond ons af.\nHou die 2 en vervang alle syfers regs daarvan met nulle.\nAntwoord: 52 000' },
+        { difficulty: 'Easy-Medium', question: 'Rond 617 350 af na die naaste tienduisend.', answer: '620 000', checkMode: 'auto', correctAnswer: '620 000', correctAnswers: ['620 000', '620000'], explanation: 'Die tienduisende-syfer is 1.\nKyk een plek regs — die duisende-syfer is 7. Aangesien 7 ≥ 5, rond ons op.\n1 rond op na 2. Vervang alle syfers regs daarvan met nulle.\nAntwoord: 620 000' },
+        { difficulty: 'Medium', question: 'Rond 8 352 600 af na die naaste honderdduisend.', answer: '8 400 000', checkMode: 'auto', correctAnswer: '8 400 000', correctAnswers: ['8 400 000', '8400000'], explanation: 'Die honderdduisende-syfer is 3.\nKyk een plek regs — die tienduisende-syfer is 5. Aangesien 5 ≥ 5, rond ons op.\n3 rond op na 4. Vervang alle syfers regs daarvan met nulle.\nAntwoord: 8 400 000' },
+        { difficulty: 'Medium', question: 'Rond 24 683 900 af na die naaste miljoen.', answer: '25 000 000', checkMode: 'auto', correctAnswer: '25 000 000', correctAnswers: ['25 000 000', '25000000'], explanation: 'Die miljoene-syfer is 4.\nKyk een plek regs — die honderdduisende-syfer is 6. Aangesien 6 ≥ 5, rond ons op.\n4 rond op na 5. Vervang alle syfers regs daarvan met nulle.\nAntwoord: 25 000 000' },
+
+        // Blok 3 — Bewerkings met groot getalle (Easy-Hard) — posisies 8-12
+        { difficulty: 'Easy', question: 'Bereken 5 230 × 17.', answer: '88 910', checkMode: 'auto', correctAnswer: '88 910', correctAnswers: ['88 910', '88910'], explanation: '5 230 × 17\n= 5 230 × 20 − 5 230 × 3\n= 104 600 − 15 690\n= 88 910' },
+        { difficulty: 'Easy-Medium', question: 'Bereken 67 158 ÷ 18.', answer: '3 731', checkMode: 'auto', correctAnswer: '3 731', correctAnswers: ['3 731', '3731'], explanation: '67 158 ÷ 18 = 3 731\nToets: 3 731 × 18 = 67 158 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Gemeenskapstuin het R63 240 se groente in die lente verkoop en R48 970 in die somer. Hoeveel het hulle in totaal verkoop?', answer: 'R112 210', checkMode: 'auto', correctAnswer: 'R112 210', correctAnswers: ['R112 210', '112 210', 'R112210', '112210'], explanation: '63 240 + 48 970 = 112 210\nAntwoord: R112 210' },
+        { difficulty: 'Medium', question: 'ʼn Drukkersmaatskappy druk 3 640 pamflette per dag. Hoeveel pamflette druk dit in 16 dae?', answer: '58 240', checkMode: 'auto', correctAnswer: '58 240', correctAnswers: ['58 240', '58240'], explanation: '3 640 × 16\n= 3 640 × 10 + 3 640 × 6\n= 36 400 + 21 840\n= 58 240' },
+        { difficulty: 'Hard', question: 'Bongani het R110 000 gespaar. Hy spandeer R45 250 op ʼn skootrekenaar en verdien dan R36 800 van ʼn bonus. Hoeveel het hy nou?', answer: 'R101 550', checkMode: 'auto', correctAnswer: 'R101 550', correctAnswers: ['R101 550', '101 550', 'R101550', '101550'], explanation: 'Stap 1 — trek af: 110 000 − 45 250 = 64 750\nStap 2 — tel by: 64 750 + 36 800 = 101 550\nAntwoord: R101 550' },
+
+        // Blok 4 — Kwadrate en vierkantswortels (Easy-Medium) — posisies 13-15
+        { difficulty: 'Easy', question: 'Bereken 12².', answer: '144', checkMode: 'auto', correctAnswer: '144', explanation: '12² = 12 × 12 = 144' },
+        { difficulty: 'Medium', question: 'Vind die vierkantswortel van 81.', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '√81 = 9 want 9 × 9 = 81' },
+        { difficulty: 'Medium', question: 'Bereken 5² + 7².', answer: '74', checkMode: 'auto', correctAnswer: '74', explanation: '5² = 5 × 5 = 25\n7² = 7 × 7 = 49\n25 + 49 = 74' },
+
+        // Blok 5 — Kubusse en kubuswortels (Easy-Medium) — posisies 16-17
+        { difficulty: 'Easy', question: 'Bereken 5³.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: '5³ = 5 × 5 × 5 = 25 × 5 = 125' },
+        { difficulty: 'Medium', question: 'Vind die kubuswortel van 8.', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: '∛8 = 2 want 2 × 2 × 2 = 8' },
+
+        // Blok 6 — Wanopvattings en redenering (Hard) — posisies 18-19
+        { difficulty: 'Hard', question: 'ʼn Leerder rond 2 550 000 af na die naaste honderdduisend en kry 2 500 000. Is dit korrek? Verduidelik.', answer: 'Nee — die honderdduisende-syfer is 5, en die syfer een plek regs (tienduisende) is ook 5, wat beteken ons rond op. Die korrekte antwoord is 2 600 000, nie 2 500 000 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder sê dat (7 − 2)² dieselfde is as 7² − 2². Is dit korrek? Verduidelik en gee die korrekte waarde van (7 − 2)².', answer: 'Nee — (7 − 2)² = 5² = 25, maar 7² − 2² = 49 − 4 = 45. Hierdie is nie gelyk nie, dus is die kwadraat van ʼn verskil nie dieselfde as om elke term afsonderlik te kwadreer nie.', checkMode: 'self' },
+      ],
+      scoreMessages: [
+        { minScore: 20, message: 'Uitstekend! Jy het plekwaarde, afronding, bewerkings met groot getalle, kwadrate en kubusse bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan die vrae wat jy oor afronding of bewerkings verkeerd gehad het weer deur en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor plekwaarde en berekeninge met groot getalle weer deur, en probeer dan weer.' },
+        { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
+      ],
+    },
+  ],
   resultsConfig: {
     totalMarks: 12,
     messages: [
