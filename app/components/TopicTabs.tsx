@@ -245,67 +245,20 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
   )
 }
 
-function VideoPlaceholderCard({ label }: { label: string }) {
+function DiagramPlaceholderCard({ label, svg }: { label: string; svg: string }) {
   const t = useTranslations()
   return (
     <div
-      className="flex items-center gap-4 rounded-xl px-5 py-5"
+      className="rounded-xl px-5 py-5"
       style={{ border: '1.5px dashed #bfdbfe', backgroundColor: '#f8faff' }}
     >
+      <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#1e40af' }}>{t.topic_diagram_label}</p>
+      <p className="text-sm font-medium mb-3" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
       <div
-        className="shrink-0 w-11 h-11 rounded-full flex items-center justify-center"
-        style={{ backgroundColor: '#dbeafe' }}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1e40af" className="w-5 h-5" aria-hidden="true">
-          <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clipRule="evenodd" />
-        </svg>
-      </div>
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>{t.topic_video_label}</p>
-        <p className="text-sm font-medium" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
-        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>{t.topic_video_coming_soon}</p>
-      </div>
-    </div>
-  )
-}
-
-function DiagramPlaceholderCard({ label, svg }: { label: string; svg?: string }) {
-  const t = useTranslations()
-  if (svg) {
-    return (
-      <div
-        className="rounded-xl px-5 py-5"
-        style={{ border: '1.5px dashed #bfdbfe', backgroundColor: '#f8faff' }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#1e40af' }}>{t.topic_diagram_label}</p>
-        <p className="text-sm font-medium mb-3" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
-        <div
-          className="topic-html"
-          dangerouslySetInnerHTML={{ __html: svg }}
-          style={{ maxWidth: '100%', display: 'flex', justifyContent: 'center' }}
-        />
-      </div>
-    )
-  }
-
-  return (
-    <div
-      className="flex items-center gap-4 rounded-xl px-5 py-5"
-      style={{ border: '1.5px dashed #bfdbfe', backgroundColor: '#f8faff' }}
-    >
-      <div
-        className="shrink-0 w-11 h-11 rounded-full flex items-center justify-center"
-        style={{ backgroundColor: '#dbeafe' }}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1e40af" className="w-5 h-5" aria-hidden="true">
-          <path fillRule="evenodd" d="M1.5 5.625c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v12.75c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 18.375V5.625ZM21 9.375A.375.375 0 0 0 20.625 9h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5A.375.375 0 0 0 21 10.875v-1.5Zm0 3.75a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 0 0 .375-.375v-1.5Zm0 3.75a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 0 0 .375-.375v-1.5ZM10.875 18.75a.375.375 0 0 0 .375-.375v-1.5a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375h7.5ZM3.375 15h7.5a.375.375 0 0 0 .375-.375v-1.5a.375.375 0 0 0-.375-.375h-7.5a.375.375 0 0 0-.375.375v1.5c0 .207.168.375.375.375Zm0-3.75h7.5a.375.375 0 0 0 .375-.375v-1.5A.375.375 0 0 0 10.875 9h-7.5A.375.375 0 0 0 3 9.375v1.5c0 .207.168.375.375.375Z" clipRule="evenodd" />
-        </svg>
-      </div>
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: '#1e40af' }}>{t.topic_diagram_label}</p>
-        <p className="text-sm font-medium" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
-        <p className="text-xs mt-1" style={{ color: '#9ca3af' }}>{t.topic_diagram_coming_soon}</p>
-      </div>
+        className="topic-html"
+        dangerouslySetInnerHTML={{ __html: svg }}
+        style={{ maxWidth: '100%', display: 'flex', justifyContent: 'center' }}
+      />
     </div>
   )
 }
@@ -1072,14 +1025,9 @@ function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug
             ))}
           </div>
 
-          {(section.diagramPlaceholder || section.diagramSvg) && (
+          {section.diagramSvg && (
             <div style={{ marginTop: '16px' }}>
               <DiagramPlaceholderCard label={section.diagramPlaceholder ?? ''} svg={section.diagramSvg} />
-            </div>
-          )}
-          {section.videoPlaceholder && (
-            <div style={{ marginTop: '12px' }}>
-              <VideoPlaceholderCard label={section.videoPlaceholder} />
             </div>
           )}
         </div>
