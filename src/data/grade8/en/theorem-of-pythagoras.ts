@@ -101,7 +101,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply the Theorem of Pythagoras to find the hypotenuse of a right-angled triangle" />',
+        'Short video showing how to apply the Theorem of Pythagoras to find the hypotenuse of a right-angled triangle',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -198,7 +198,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to test whether a triangle is right-angled using the converse of the Theorem of Pythagoras" />',
+        'Short video showing how to test whether a triangle is right-angled using the converse of the Theorem of Pythagoras',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -294,7 +294,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find a missing side of a right-angled triangle using the Theorem of Pythagoras, including surd form answers" />',
+        'Short video showing how to find a missing side of a right-angled triangle using the Theorem of Pythagoras, including surd form answers',
     },
   ],
 

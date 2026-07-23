@@ -87,7 +87,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om lineêre vergelykings met breuke en hakies op te los deur die KGV en inverse bewerkings te gebruik" />',
+        'Kort video wat wys hoe om lineêre vergelykings met breuke en hakies op te los deur die KGV en inverse bewerkings te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -162,7 +162,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering met die nulproduk-eienskap en die a×c-metode" />',
+        'Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering met die nulproduk-eienskap en die a×c-metode',
 
       diagramPlaceholder:
         'X-boks-diagram vir 2x² + 3x − 20 = 0 wat a×c = −40 bo, b = 3 onder, en die twee getalle −5 en 8 aan die kante wys, wat deur splitsing en groepering lei tot die gefaktoriseerde vorm (x + 4)(2x − 5) = 0 en oplossings x = −4 óf x = 5/2',
@@ -286,7 +286,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die kwadratiese formule te gebruik en hoe die diskriminant die aantal reële oplossings aandui" />',
+        'Kort video wat wys hoe om die kwadratiese formule te gebruik en hoe die diskriminant die aantal reële oplossings aandui',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -355,7 +355,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die onderwerp van ʼn formule te verander deur inverse bewerkings te gebruik en ander veranderlikes as konstantes te behandel" />',
+        'Kort video wat wys hoe om die onderwerp van ʼn formule te verander deur inverse bewerkings te gebruik en ander veranderlikes as konstantes te behandel',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -439,7 +439,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om lineêre ongelykhede op te los, insluitend tekenomkering, en hoe om gelyktydige vergelykings deur substitusie en grafies op te los" />',
+        'Kort video wat wys hoe om lineêre ongelykhede op te los, insluitend tekenomkering, en hoe om gelyktydige vergelykings deur substitusie en grafies op te los',
 
       diagramPlaceholder:
         'Cartesiese vlak wat die lyne y = x + 3 (blou) en y = −x + 7 (oranje) wys wat by die punt (2, 5) sny, gemerk in groen',
@@ -586,7 +586,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadratiese ongelykhede met ʼn tekendiagram op te los en hoe om rasionale ongelykhede op te los deur altyd die noemer-nul-waarde uit te sluit" />',
+        'Kort video wat wys hoe om kwadratiese ongelykhede met ʼn tekendiagram op te los en hoe om rasionale ongelykhede op te los deur altyd die noemer-nul-waarde uit te sluit',
 
       diagramPlaceholder:
         'Getallelyn wat die oplossing vir (2x + 1)/(x − 3) ≥ 0 wys: ʼn toe (volgemaakte) sirkel by x = −1/2 met skadu na links, en ʼn oop sirkel by x = 3 (altyd uitgesluit, noemer nul) met skadu na regs',

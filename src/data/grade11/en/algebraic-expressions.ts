@@ -122,7 +122,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to complete the square for quadratics with a=1 and a≠1, showing each step colour coded" />',
+        'Short video demonstrating how to complete the square for quadratics with a=1 and a≠1, showing each step colour coded',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -275,7 +275,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read the minimum or maximum value and its x-position directly from a completed square form, including an applied fencing word problem" />',
+        'Short video showing how to read the minimum or maximum value and its x-position directly from a completed square form, including an applied fencing word problem',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -484,7 +484,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to simplify algebraic fractions with binomial denominators: factorising, finding the LCM, combining numerators and cancelling common factors" />',
+        'Short video showing how to simplify algebraic fractions with binomial denominators: factorising, finding the LCM, combining numerators and cancelling common factors',
     },
   ],
 

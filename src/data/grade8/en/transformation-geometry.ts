@@ -140,7 +140,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to reflect and translate points on a coordinate plane, with the x-axis in blue, y-axis in green and reflected point in orange" />',
+        'Short video showing how to reflect and translate points on a coordinate plane, with the x-axis in blue, y-axis in green and reflected point in orange',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -272,7 +272,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to reflect and rotate triangles on a coordinate plane with original triangle in blue and transformed triangle in green" />',
+        'Short video showing how to reflect and rotate triangles on a coordinate plane with original triangle in blue and transformed triangle in green',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -450,7 +450,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate new perimeter and area after enlargement or reduction using a scale factor, with scale factor in orange, perimeter in blue and area in green" />',
+        'Short video showing how to calculate new perimeter and area after enlargement or reduction using a scale factor, with scale factor in orange, perimeter in blue and area in green',
     },
   ],
   scoreMessages: [

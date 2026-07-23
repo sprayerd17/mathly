@@ -103,7 +103,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute input values into an equation to find output values, and how to use inverse operations to find input values from a given output" />',
+        'Short video showing how to substitute input values into an equation to find output values, and how to use inverse operations to find input values from a given output',
 
       diagramPlaceholder:
         'Flow diagram showing input value x = 6 in blue, the operation ×4, −3 in orange, and output value y = 21 in green',
@@ -216,7 +216,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert a verbal description of a relationship into an equation, and how to find an equation from a table of values" />',
+        'Short video showing how to convert a verbal description of a relationship into an equation, and how to find an equation from a table of values',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -303,7 +303,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute x-values into an equation step by step and write the results as ordered pairs in a table" />',
+        'Short video showing how to substitute x-values into an equation step by step and write the results as ordered pairs in a table',
 
       diagramPlaceholder:
         'Table of ordered pairs for y = 2x − 1 with x-values in blue and y-values in green, and the resulting ordered pairs in orange plotted on a Cartesian plane',

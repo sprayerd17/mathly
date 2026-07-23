@@ -143,7 +143,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to convert between 12-hour am/pm time and 24-hour time, showing both the morning case which stays the same and the afternoon case which adds 12 to the hour" />',
+        'Short video demonstrating how to convert between 12-hour am/pm time and 24-hour time, showing both the morning case which stays the same and the afternoon case which adds 12 to the hour',
 
     },
 
@@ -256,7 +256,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to calculate elapsed time by counting up in stages, including a case where the time period crosses midnight into the next day" />',
+        'Short video demonstrating how to calculate elapsed time by counting up in stages, including a case where the time period crosses midnight into the next day',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -355,7 +355,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-step real-world time word problem combining a timetable, elapsed time and a subtracted break, ending with a final arrival or finishing time" />',
+        'Short video working through a multi-step real-world time word problem combining a timetable, elapsed time and a subtracted break, ending with a final arrival or finishing time',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -517,7 +517,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read a time-zone map, find the time difference between two cities using their GMT offsets, and calculate the time in another city including cases that cross into the next or previous day" />',
+        'Short video showing how to read a time-zone map, find the time difference between two cities using their GMT offsets, and calculate the time in another city including cases that cross into the next or previous day',
 
       diagramPlaceholder:
         'A simplified world time-zone map showing three cities — Los Angeles, London and Tokyo — each labelled with their GMT offset, with arrows showing east means ahead and west means behind',

@@ -124,7 +124,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die omtrek van vierkante en reghoeke met formules te bereken" />',
+        'Kort video wat wys hoe om die omtrek van vierkante en reghoeke met formules te bereken',
 
       diagramPlaceholder:
         'Gemerkte diagramme van ʼn vierkant en ʼn reghoek wat die sylengteformule vir omtrek wys, met kleurgekodeerde metings',
@@ -254,7 +254,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van vierkante, reghoeke en driehoeke met formules te bereken" />',
+        'Kort video wat wys hoe om die oppervlakte van vierkante, reghoeke en driehoeke met formules te bereken',
 
       diagramPlaceholder:
         'Gemerkte diagramme van ʼn vierkant, reghoek en driehoek met kleurgekodeerde lengte-, breedte-, basis- en hoogte-afmetings',
@@ -395,7 +395,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte en volume van kubusse en reghoekige prismas met formules te bereken" />',
+        'Kort video wat wys hoe om die oppervlakte en volume van kubusse en reghoekige prismas met formules te bereken',
 
       diagramPlaceholder:
         '3D-diagramme van ʼn kubus en ʼn reghoekige prisma met kleurgekodeerde dimensies wat al ses vlakke vir oppervlakte en die binnekant vir volume wys',

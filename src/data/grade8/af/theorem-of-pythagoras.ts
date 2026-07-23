@@ -101,7 +101,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die Stelling van Pythagoras toe te pas om die skuinssy van ʼn reghoekige driehoek te vind" />',
+        'Kort video wat wys hoe om die Stelling van Pythagoras toe te pas om die skuinssy van ʼn reghoekige driehoek te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -198,7 +198,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om te toets of ʼn driehoek reghoekig is met behulp van die omgekeerde van die Stelling van Pythagoras" />',
+        'Kort video wat wys hoe om te toets of ʼn driehoek reghoekig is met behulp van die omgekeerde van die Stelling van Pythagoras',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -294,7 +294,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn ontbrekende sy van ʼn reghoekige driehoek te vind met behulp van die Stelling van Pythagoras, insluitend antwoorde in wortelvorm" />',
+        'Kort video wat wys hoe om ʼn ontbrekende sy van ʼn reghoekige driehoek te vind met behulp van die Stelling van Pythagoras, insluitend antwoorde in wortelvorm',
     },
   ],
   practiceSets: [

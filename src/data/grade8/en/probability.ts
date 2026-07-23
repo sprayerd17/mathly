@@ -84,7 +84,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to list all outcomes and calculate probability using favourable outcomes divided by total outcomes" />',
+        'Short video showing how to list all outcomes and calculate probability using favourable outcomes divided by total outcomes',
 
       diagramPlaceholder:
         'Diagram of a bag with 4 red, 3 blue and 5 green balls, showing the probability formula P(blue) = 3 ÷ 12 = 1/4 applied step by step',
@@ -163,7 +163,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to predict relative frequency from theoretical probability and explain differences between predicted and actual results" />',
+        'Short video showing how to predict relative frequency from theoretical probability and explain differences between predicted and actual results',
 
       diagramPlaceholder:
         'Bar chart comparing predicted (theoretical) frequency in blue with actual frequency in orange for a 100-flip coin experiment and a 60-roll dice experiment',
@@ -225,7 +225,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve multi-step probability problems in real-life contexts including listing outcomes and combining independent events" />',
+        'Short video showing how to solve multi-step probability problems in real-life contexts including listing outcomes and combining independent events',
 
       diagramPlaceholder:
         'Tree diagram for flipping a coin and rolling a dice, showing the branch for heads and even highlighted in green with combined probability 1/2 × 1/2 = 1/4',

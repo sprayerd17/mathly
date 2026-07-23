@@ -132,7 +132,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die volle omskakelingsketting vir lengte van km na m na cm na mm wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale kilometermeting na gemengde km- en m-eenhede om te skakel" />',
+        'Kort video wat die volle omskakelingsketting vir lengte van km na m na cm na mm wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale kilometermeting na gemengde km- en m-eenhede om te skakel',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -231,7 +231,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kaartskaal te gebruik om werklike afstande vanaf ʼn getekende meting te vind, gevolg deur ʼn omtrekvoorbeeld met verskeie rondtes om ʼn veld" />',
+        'Kort video wat wys hoe om ʼn kaartskaal te gebruik om werklike afstande vanaf ʼn getekende meting te vind, gevolg deur ʼn omtrekvoorbeeld met verskeie rondtes om ʼn veld',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -329,7 +329,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor lengte uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar opgetel, afgetrek of gedeel word om die finale antwoord te kry" />',
+        'Kort video wat ʼn multistap-woordprobleem oor lengte uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar opgetel, afgetrek of gedeel word om die finale antwoord te kry',
     },
   ],
 

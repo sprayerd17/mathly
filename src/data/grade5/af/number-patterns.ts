@@ -19,9 +19,9 @@ export const topicData: TopicData = {
 <p>ʼn <strong>Afnemende patroon</strong> krimp — die terme word kleiner. Dieselfde hoeveelheid word elke keer <em>afgetrek</em>.</p>
 <p>Voorbeeld: <span style="color:#2563eb">30, 25, 20, 15, …</span> — <span style="color:#dc2626">Reël: trek 5 af</span> — volgende term: <span style="color:#16a34a">10</span></p>
 
-<VideoPlaceholder title="Getalpatrone Identifiseer en Uitbrei" duration="4 min" />
-<DiagramPlaceholder title="Getallelyn — patroon van +3" description="ʼn Horisontale getallelyn van 0 tot 18. Geboë pyle van gelyke lengte wys spronge van +3 wat land op 3, 6, 9, 12, 15, 18." />
 `,
+      videoPlaceholder: 'Getalpatrone Identifiseer en Uitbrei',
+      diagramPlaceholder: 'ʼn Horisontale getallelyn van 0 tot 18. Geboë pyle van gelyke lengte wys spronge van +3 wat land op 3, 6, 9, 12, 15, 18.',
       workedExamples: [
         {
           title: 'ʼn Toenemende Patroon Uitbrei',
@@ -128,8 +128,8 @@ export const topicData: TopicData = {
 <p><span style="color:#dc2626">Vermenigvuldig met 3</span> → terme verdriedubbel elke keer (bv. <span style="color:#2563eb">2, 6, 18, 54</span>)</p>
 <p><span style="color:#dc2626">Deel deur 2</span> → terme halveer elke keer (bv. <span style="color:#2563eb">80, 40, 20, 10</span>)</p>
 
-<VideoPlaceholder title="Die Reël van ʼn Patroon Beskryf" duration="5 min" />
 `,
+      videoPlaceholder: 'Die Reël van ʼn Patroon Beskryf',
       workedExamples: [
         {
           title: 'ʼn Optelpatroon Beskryf',
@@ -229,9 +229,9 @@ export const topicData: TopicData = {
   <li>Inverse van <span style="color:#dc2626">÷ 3</span> is <span style="color:#dc2626">× 3</span></li>
 </ul>
 
-<VideoPlaceholder title="Inset- en Uitsetwaardes — Funksiemasjiene" duration="5 min" />
-<DiagramPlaceholder title="Funksiemasjien-diagram" description="ʼn Vloeidiagram wat wys: ʼn kolom insette (3, 5, 7) wat in ʼn reghoekige blokkie invoer wat geëtiketteer is met '× 4', met pyle wat lei na ʼn kolom uitsette (12, 20, 28)." />
 `,
+      videoPlaceholder: 'Inset- en Uitsetwaardes — Funksiemasjiene',
+      diagramPlaceholder: 'ʼn Vloeidiagram wat wys: ʼn kolom insette (3, 5, 7) wat in ʼn reghoekige blokkie invoer wat geëtiketteer is met \'× 4\', met pyle wat lei na ʼn kolom uitsette (12, 20, 28).',
       workedExamples: [
         {
           title: 'Uitsetwaardes Vind',
@@ -379,8 +379,8 @@ export const topicData: TopicData = {
 
 <p><strong>Wenk:</strong> Kontroleer altyd eers die verskille. As dit gelyk is, is dit ʼn optel- of aftrekpatroon. As dit <em>nie</em> gelyk is nie, kontroleer die verhoudings — dit is waarskynlik ʼn vermenigvuldigings- of delingspatroon.</p>
 
-<VideoPlaceholder title="Patrone met Al Vier Bewerkings" duration="5 min" />
 `,
+      videoPlaceholder: 'Patrone met Al Vier Bewerkings',
       workedExamples: [
         {
           title: 'Optelpatroon',
@@ -492,8 +492,8 @@ export const topicData: TopicData = {
 <h3>Kleurgids wat in hierdie afdeling gebruik word</h3>
 <p><span style="color:#2563eb;font-weight:700">Bekende terme word in blou getoon</span> &nbsp;·&nbsp; <span style="color:#ea580c;font-weight:700">Ontbrekende term word in oranje getoon</span> &nbsp;·&nbsp; <span style="color:#dc2626;font-weight:700">Reël word in rooi getoon</span></p>
 
-<VideoPlaceholder title="Ontbrekende Getalle in ʼn Patroon Vind" duration="4 min" />
 `,
+      videoPlaceholder: 'Ontbrekende Getalle in ʼn Patroon Vind',
       workedExamples: [
         {
           title: 'Ontbrekende Term in die Middel (Optelpatroon)',
@@ -626,8 +626,8 @@ export const topicData: TopicData = {
   </tr>
 </table>
 
-<VideoPlaceholder title="Skep Jou Eie Patrone" duration="4 min" />
 `,
+      videoPlaceholder: 'Skep Jou Eie Patrone',
       workedExamples: [
         {
           title: 'ʼn Toenemende Optelpatroon Skep',

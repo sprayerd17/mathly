@@ -149,7 +149,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om skerp, regte, stomp, gestrekte en refleks hoeke, asook omwentelinge, te identifiseer en te klassifiseer met voorbeelde" />',
+        'Kort video wat wys hoe om skerp, regte, stomp, gestrekte en refleks hoeke, asook omwentelinge, te identifiseer en te klassifiseer met voorbeelde',
 
       diagramPlaceholder:
         'Die ses hoeksoorte langs mekaar vergelyk volgens hoe wyd hulle oopmaak — skerp, regte, stomp, gestrekte, refleks en volledige omwenteling.',
@@ -285,7 +285,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn gradeboog op ʼn hoekpunt te plaas, die basislyn te belyn en die korrekte skaal te lees om ʼn hoek te meet" />',
+        'Kort video wat wys hoe om ʼn gradeboog op ʼn hoekpunt te plaas, die basislyn te belyn en die korrekte skaal te lees om ʼn hoek te meet',
 
       diagramPlaceholder:
         'ʼn Gradeboog met sy middelpunt op die hoekpunt, die basislyn opgelyn met een arm, en die ander arm se lesing van 65° in oranje uitgelig.',
@@ -416,7 +416,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die hoeksom op ʼn reguit lyn (180 grade) en rondom ʼn punt (360 grade) te gebruik om onbekende hoeke te vind" />',
+        'Kort video wat wys hoe om die hoeksom op ʼn reguit lyn (180 grade) en rondom ʼn punt (360 grade) te gebruik om onbekende hoeke te vind',
 
       diagramPlaceholder:
         'Twee diagramme langs mekaar — hoeke a, b en x op ʼn reguit lyn wat optel tot 180°, en hoeke a, b, c en y rondom ʼn punt wat optel tot 360°, met bekende hoeke in blou en die onbekende hoek in rooi.',

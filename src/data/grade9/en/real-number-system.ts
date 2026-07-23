@@ -139,7 +139,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the real number system and how to classify numbers as natural, whole, integer, rational or irrational" />',
+        'Short video explaining the real number system and how to classify numbers as natural, whole, integer, rational or irrational',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -258,7 +258,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify rational and irrational numbers including how to test decimals and square roots" />',
+        'Short video showing how to identify rational and irrational numbers including how to test decimals and square roots',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -371,7 +371,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing examples of operations involving rational and irrational numbers and how to classify the results" />',
+        'Short video showing examples of operations involving rational and irrational numbers and how to classify the results',
     },
   ],
   scoreMessages: [

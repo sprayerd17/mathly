@@ -205,7 +205,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat elke deelbaarheidsreël demonstreer met ʼn uitgewerkte getal, insluitend waarom die syfersom-reël werk vir 3 en 9 en waarom die alternerende-som-reël werk vir 11" />',
+        'Kort video wat elke deelbaarheidsreël demonstreer met ʼn uitgewerkte getal, insluitend waarom die syfersom-reël werk vir 3 en 9 en waarom die alternerende-som-reël werk vir 11',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -463,7 +463,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die GGD- en KGV-priemfaktoriseringsmetode van twee getalle na drie getalle uit te brei, met kleurgekodeerde gedeelde priemfaktore en hoogste/laagste magte" />',
+        'Kort video wat wys hoe om die GGD- en KGV-priemfaktoriseringsmetode van twee getalle na drie getalle uit te brei, met kleurgekodeerde gedeelde priemfaktore en hoogste/laagste magte',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -638,7 +638,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die KGV as die laagste gemeenskaplike noemer te gebruik om breuke op te tel, en hoe om GGD/KGV-woordprobleme met drie hoeveelhede op te los, soos die pak van mandjies en saamvallende flikkerende ligte" />',
+        'Kort video wat wys hoe om die KGV as die laagste gemeenskaplike noemer te gebruik om breuke op te tel, en hoe om GGD/KGV-woordprobleme met drie hoeveelhede op te los, soos die pak van mandjies en saamvallende flikkerende ligte',
     },
   ],
   resultsConfig: {

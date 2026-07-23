@@ -114,7 +114,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply decimal fractions by counting decimal places and placing the decimal point correctly in the product" />',
+        'Short video showing how to multiply decimal fractions by counting decimal places and placing the decimal point correctly in the product',
 
       diagramPlaceholder:
         'Column layout showing 2.45 × 3.6 multiplied as whole numbers, decimal places counted, and the decimal point placed in the final answer',
@@ -227,7 +227,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide decimal fractions by converting the divisor to a whole number using multiplication by powers of 10" />',
+        'Short video showing how to divide decimal fractions by converting the divisor to a whole number using multiplication by powers of 10',
 
       diagramPlaceholder:
         'Flow diagram showing 4.8 ÷ 0.6 turned into 48 ÷ 6 by multiplying both numbers by 10, giving the final answer 8',
@@ -400,7 +400,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate squares, cubes, square roots and cube roots of decimal fractions step by step" />',
+        'Short video showing how to calculate squares, cubes, square roots and cube roots of decimal fractions step by step',
 
       diagramPlaceholder:
         '10-by-10 grid area model showing 0.3² = 0.09, alongside three stacked layers showing 0.3³ = 0.027 so ∛0.027 = 0.3',

@@ -190,7 +190,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the formal definitions of triangles and quadrilaterals using colour-coded diagrams of equal sides, parallel sides, and angles" />',
+        'Short video explaining the formal definitions of triangles and quadrilaterals using colour-coded diagrams of equal sides, parallel sides, and angles',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -314,7 +314,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify congruent and similar shapes by comparing side lengths and angles, with colour-coded matching angles in green" />',
+        'Short video showing how to identify congruent and similar shapes by comparing side lengths and angles, with colour-coded matching angles in green',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -491,7 +491,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use known properties of quadrilaterals and similar triangles to find unknown sides and angles step by step" />',
+        'Short video showing how to use known properties of quadrilaterals and similar triangles to find unknown sides and angles step by step',
     },
   ],
   scoreMessages: [

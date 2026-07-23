@@ -153,7 +153,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute input values into an equation to find outputs, and how to solve an equation backwards to find the input when the output is given" />',
+        'Short video showing how to substitute input values into an equation to find outputs, and how to solve an equation backwards to find the input when the output is given',
 
       diagramPlaceholder:
         'A flow diagram showing an input x passing through an equation rule box to produce output y, with a return arrow showing that solving backwards recovers x from y',
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to move between verbal descriptions, tables, equations and straight-line graphs, reading gradient and y-intercept from each form" />',
+        'Short video showing how to move between verbal descriptions, tables, equations and straight-line graphs, reading gradient and y-intercept from each form',
 
       diagramPlaceholder:
         'A Cartesian plane showing the line y = 3x + 2, with the y-intercept at (0, 2) clearly marked and the gradient illustrated with a rise/run triangle',
@@ -447,7 +447,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute x-values into an equation to build a table of ordered pairs and then plot those points on a Cartesian plane" />',
+        'Short video showing how to substitute x-values into an equation to build a table of ordered pairs and then plot those points on a Cartesian plane',
 
       diagramPlaceholder:
         'A Cartesian plane with the points (−1, 7), (0, 5), (1, 3), (2, 1) plotted and connected by a straight line',

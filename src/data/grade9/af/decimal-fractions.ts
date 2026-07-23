@@ -138,7 +138,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om BODMAS toe te pas op saamgestelde desimale breukberekeninge met en sonder hakies" />',
+        'Kort video wat wys hoe om BODMAS toe te pas op saamgestelde desimale breukberekeninge met en sonder hakies',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,7 +261,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse en wortels van desimale breuke binne saamgestelde berekeninge met BODMAS te bereken" />',
+        'Kort video wat wys hoe om kwadrate, kubusse en wortels van desimale breuke binne saamgestelde berekeninge met BODMAS te bereken',
 
       diagramPlaceholder:
         'Getallelyn wat wys dat die kwadrering van ʼn desimale getal tussen 0 en 1 dit kleiner maak, terwyl die vierkantswortel dit groter maak',
@@ -415,7 +415,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om veelstap werklike-lewe-probleme met desimale breuke op te los, met geld afgerond tot 2 desimale plekke" />',
+        'Kort video wat wys hoe om veelstap werklike-lewe-probleme met desimale breuke op te los, met geld afgerond tot 2 desimale plekke',
     },
   ],
 

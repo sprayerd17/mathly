@@ -130,7 +130,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die volle omskakelingsketting vir inhoud van kiloliter na liter na milliliter wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale litermeting na gemengde liter- en milliliter-eenhede om te skakel" />',
+        'Kort video wat die volle omskakelingsketting vir inhoud van kiloliter na liter na milliliter wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale litermeting na gemengde liter- en milliliter-eenhede om te skakel',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -253,7 +253,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn kubus van presies 1 kubieke sentimeter wys wat met presies 1 milliliter water gevul word, en dan wys hoe om die inhoud van ʼn reghoekige tenk te vind deur eers sy volume te bereken" />',
+        'Kort video wat ʼn kubus van presies 1 kubieke sentimeter wys wat met presies 1 milliliter water gevul word, en dan wys hoe om die inhoud van ʼn reghoekige tenk te vind deur eers sy volume te bereken',
 
       diagramPlaceholder:
         'Diagram wat ʼn klein 1 cm-kubus langs ʼn meetsilinder met 1 ml gemerk wys, met ʼn pyl en gelykaan-teken wat hulle verbind om te wys 1 kubieke sentimeter is gelyk aan 1 ml',
@@ -357,7 +357,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor inhoud uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar gedeel word om ʼn hoeveelheid gelyk te verdeel of ʼn vultempo te vind" />',
+        'Kort video wat ʼn multistap-woordprobleem oor inhoud uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar gedeel word om ʼn hoeveelheid gelyk te verdeel of ʼn vultempo te vind',
     },
   ],
 

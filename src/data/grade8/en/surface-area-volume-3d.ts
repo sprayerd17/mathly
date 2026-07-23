@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the volume and surface area of a triangular prism using the triangular base area and the length of the prism" />',
+        'Short video showing how to find the volume and surface area of a triangular prism using the triangular base area and the length of the prism',
 
       diagramPlaceholder:
         'Diagram of a triangular prism labelling the triangular base, height and length',
@@ -275,7 +275,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve real-life problems involving volume and capacity with SI unit conversions between cm³, m³, litres and kilolitres" />',
+        'Short video showing how to solve real-life problems involving volume and capacity with SI unit conversions between cm³, m³, litres and kilolitres',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -441,7 +441,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how surface area scales by the square and volume scales by the cube of the scale factor, with worked comparisons using cubes and rectangular prisms" />',
+        'Short video showing how surface area scales by the square and volume scales by the cube of the scale factor, with worked comparisons using cubes and rectangular prisms',
 
       diagramPlaceholder:
         'Diagram comparing a small cube and a large cube showing how surface area and volume change at different rates when all dimensions are scaled up by the same factor',

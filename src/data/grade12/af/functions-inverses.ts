@@ -115,7 +115,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die vier funksietipes — lineêr, kwadraties, hiperbolies en eksponensieel — hersien, met hul standaardvorme, sleuteleienskappe, en hoe om elkeen te skets" />',
+        'Kort video wat die vier funksietipes — lineêr, kwadraties, hiperbolies en eksponensieel — hersien, met hul standaardvorme, sleuteleienskappe, en hoe om elkeen te skets',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -181,7 +181,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die formele definisie van ʼn funksie, die vertikale-lyn-toets, die horisontale-lyn-toets, en die verskil tussen een-tot-een en veel-tot-een funksies verduidelik" />',
+        'Kort video wat die formele definisie van ʼn funksie, die vertikale-lyn-toets, die horisontale-lyn-toets, en die verskil tussen een-tot-een en veel-tot-een funksies verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -256,7 +256,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die definisie van ʼn inverse funksie verduidelik, hoe om dit te vind deur x en y te verwissel, en waarom die inverse van ʼn veel-tot-een funksie nie self ʼn funksie is nie" />',
+        'Kort video wat die definisie van ʼn inverse funksie verduidelik, hoe om dit te vind deur x en y te verwissel, en waarom die inverse van ʼn veel-tot-een funksie nie self ʼn funksie is nie',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -341,7 +341,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die inverse van lineêre, kwadratiese en eksponensiële funksies te skets deur oor y = x te weerspieël, met uitgewerkte voorbeelde vir elke tipe, insluitend domeinbeperking vir kwadratiese funksies" />',
+        'Kort video wat wys hoe om die inverse van lineêre, kwadratiese en eksponensiële funksies te skets deur oor y = x te weerspieël, met uitgewerkte voorbeelde vir elke tipe, insluitend domeinbeperking vir kwadratiese funksies',
     },
   ],
 

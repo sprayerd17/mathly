@@ -77,7 +77,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die Buitehoekstelling verduidelik en wys hoe ʼn buitehoek van ʼn driehoek gelyk is aan die som van die twee oorstaande binnehoeke" />',
+        'Kort video wat die Buitehoekstelling verduidelik en wys hoe ʼn buitehoek van ʼn driehoek gelyk is aan die som van die twee oorstaande binnehoeke',
 
       diagramPlaceholder:
         'ʼn Driehoek met een sy verleng verby ʼn hoekpunt om ʼn buitehoek te vorm, met die twee oorstaande binnehoeke gemerk a en b, en die buitehoek gemerk a + b',
@@ -148,7 +148,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die diagonale van reghoeke, vierkante, parallelogramme, ruite en vliers ondersoek — en lengte, halvering en loodregtheid vergelyk" />',
+        'Kort video wat die diagonale van reghoeke, vierkante, parallelogramme, ruite en vliers ondersoek — en lengte, halvering en loodregtheid vergelyk',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -220,7 +220,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om veelhoeke vanaf een hoekpunt in driehoeke te verdeel en dit te gebruik om die binnehoeksom-formule te bevestig" />',
+        'Kort video wat wys hoe om veelhoeke vanaf een hoekpunt in driehoeke te verdeel en dit te gebruik om die binnehoeksom-formule te bevestig',
 
       diagramPlaceholder:
         'ʼn Seshoek met diagonale vanaf een hoekpunt geteken, wat dit in 4 driehoeke verdeel, elke driehoek in ʼn ander kleur geskadu',

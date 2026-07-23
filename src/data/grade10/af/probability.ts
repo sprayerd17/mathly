@@ -73,7 +73,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verskil tussen teoretiese waarskynlikheid en relatiewe frekwensie verduidelik, en wys hoe relatiewe frekwensie na teoretiese waarskynlikheid neig namate proewe toeneem" />',
+        'Kort video wat die verskil tussen teoretiese waarskynlikheid en relatiewe frekwensie verduidelik, en wys hoe relatiewe frekwensie na teoretiese waarskynlikheid neig namate proewe toeneem',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -133,7 +133,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="200" height="150" fill="#f8fafc" stroke="#0f1f3d" stroke-width="2"/><circle cx="85" cy="85" r="55" fill="#eff6ff" fill-opacity="0.6" stroke="#2563eb" stroke-width="2.5"/><circle cx="135" cy="85" r="55" fill="#fff7ed" fill-opacity="0.6" stroke="#ea580c" stroke-width="2.5"/><text x="55" y="35" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Wiskunde</text><text x="165" y="35" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">Wetenskap</text><text x="65" y="90" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">10</text><text x="155" y="90" font-size="16" fill="#ea580c" font-weight="700" text-anchor="middle">7</text><text x="110" y="90" font-size="16" fill="#16a34a" font-weight="700" text-anchor="middle">8</text><text x="20" y="148" font-size="12" fill="#374151" font-weight="700">5 (geeneen)</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn Venn-diagram te teken en te gebruik om waarskynlikhede van saamgestelde gebeurtenisse te vind, insluitend deursnit, unie en komplement" />',
+        'Kort video wat wys hoe om ʼn Venn-diagram te teken en te gebruik om waarskynlikhede van saamgestelde gebeurtenisse te vind, insluitend deursnit, unie en komplement',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -203,7 +203,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="90" height="90" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><rect x="100" y="20" width="110" height="90" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><rect x="10" y="20" width="200" height="90" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="110" y="12" font-size="12" fill="#374151" font-weight="700" text-anchor="middle">Steekproefruimte S</text><text x="55" y="70" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">A</text><text x="155" y="70" font-size="16" fill="#ea580c" font-weight="700" text-anchor="middle">nie-A</text><text x="110" y="130" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">P(A) + P(nie-A) = 1</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wedersyds uitsluitende en komplementêre gebeurtenisse verduidelik met dobbelsteen- en alledaagse voorbeelde, en wys hoe om die komplementêre reël te gebruik" />',
+        'Kort video wat wedersyds uitsluitende en komplementêre gebeurtenisse verduidelik met dobbelsteen- en alledaagse voorbeelde, en wys hoe om die komplementêre reël te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -274,7 +274,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg"><circle cx="90" cy="85" r="55" fill="#eff6ff" fill-opacity="0.55" stroke="#2563eb" stroke-width="2.5"/><circle cx="130" cy="85" r="55" fill="#fff7ed" fill-opacity="0.55" stroke="#ea580c" stroke-width="2.5"/><circle cx="110" cy="125" r="55" fill="#f0fdf4" fill-opacity="0.55" stroke="#16a34a" stroke-width="2.5"/><text x="50" y="18" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">A</text><text x="170" y="18" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">B</text><text x="110" y="196" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">C</text><text x="58" y="55" font-size="13" fill="#2563eb" font-weight="700" text-anchor="middle">11</text><text x="165" y="55" font-size="13" fill="#ea580c" font-weight="700" text-anchor="middle">9</text><text x="110" y="168" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">8</text><text x="110" y="55" font-size="13" fill="#7c3aed" font-weight="700" text-anchor="middle">8</text><text x="70" y="118" font-size="13" fill="#7c3aed" font-weight="700" text-anchor="middle">14</text><text x="150" y="118" font-size="13" fill="#7c3aed" font-weight="700" text-anchor="middle">11</text><text x="110" y="98" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">7</text><text x="8" y="196" font-size="10" fill="#374151" font-weight="700">geeneen = 12</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die algemene optellingsreël vir waarskynlikheid aflei en toepas, met voorbeelde wat twee gebeurtenisse en ʼn drie-sirkel-Venn-diagram behels" />',
+        'Kort video wat die algemene optellingsreël vir waarskynlikheid aflei en toepas, met voorbeelde wat twee gebeurtenisse en ʼn drie-sirkel-Venn-diagram behels',
     },
   ],
 

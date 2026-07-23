@@ -153,7 +153,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing triangle types by side and angle and how to use the angle sum rule to find missing angles including ratio problems" />',
+        'Short video showing triangle types by side and angle and how to use the angle sum rule to find missing angles including ratio problems',
 
       diagramPlaceholder:
         'All six triangle types side by side: equilateral, isosceles and scalene classified by side length, and acute-angled, right-angled and obtuse-angled classified by angle size.',
@@ -325,7 +325,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing quadrilateral types and their properties and how to use the 360° angle sum to find missing angles and classify shapes" />',
+        'Short video showing quadrilateral types and their properties and how to use the 360° angle sum to find missing angles and classify shapes',
 
       diagramPlaceholder:
         'All six quadrilateral types with their key shape: square, rectangle, parallelogram, rhombus, trapezium and kite, each with equal-side or right-angle markers shown where they apply.',
@@ -528,7 +528,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the parts of a circle — centre radius diameter circumference chord and arc — with labelled diagrams and worked examples" />',
+        'Short video explaining the parts of a circle — centre radius diameter circumference chord and arc — with labelled diagrams and worked examples',
 
       diagramPlaceholder:
         'A circle with the centre, radius, diameter, circumference, a chord and an arc all labelled, colour-coded to match the colour key.',

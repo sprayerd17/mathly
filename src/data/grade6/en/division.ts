@@ -171,7 +171,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing step by step long division of a 4-digit number by a 2-digit number with colour coded steps" />',
+        'Short video showing step by step long division of a 4-digit number by a 2-digit number with colour coded steps',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -270,7 +270,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide and express the remainder as a whole number remainder, as a fraction, and as a decimal with colour coded worked examples" />',
+        'Short video showing how to divide and express the remainder as a whole number remainder, as a fraction, and as a decimal with colour coded worked examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -356,7 +356,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the mental method for dividing by multiples of 10 and 100 by splitting the divisor into its non-zero digit and power of 10" />',
+        'Short video showing the mental method for dividing by multiples of 10 and 100 by splitting the divisor into its non-zero digit and power of 10',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -465,7 +465,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve division word problems by identifying key words, performing the division, and deciding what to do with the remainder" />',
+        'Short video showing how to solve division word problems by identifying key words, performing the division, and deciding what to do with the remainder',
     },
   ],
 

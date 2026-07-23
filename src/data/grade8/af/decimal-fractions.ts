@@ -116,7 +116,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke te vermenigvuldig deur desimale plekke te tel en die desimale komma korrek in die produk te plaas" />',
+        'Kort video wat wys hoe om desimale breuke te vermenigvuldig deur desimale plekke te tel en die desimale komma korrek in die produk te plaas',
 
       diagramPlaceholder:
         'Kolomuitleg wat 2,45 × 3,6 as heelgetalle vermenigvuldig wys, desimale plekke getel, en die desimale komma in die finale antwoord geplaas',
@@ -229,7 +229,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om desimale breuke te deel deur die deler na ʼn heelgetal om te skakel deur met magte van 10 te vermenigvuldig" />',
+        'Kort video wat wys hoe om desimale breuke te deel deur die deler na ʼn heelgetal om te skakel deur met magte van 10 te vermenigvuldig',
 
       diagramPlaceholder:
         'Vloeidiagram wat 4,8 ÷ 0,6 verander in 48 ÷ 6 deur albei getalle met 10 te vermenigvuldig, wat die finale antwoord 8 gee',
@@ -406,7 +406,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van desimale breuke stap vir stap te bereken" />',
+        'Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van desimale breuke stap vir stap te bereken',
 
       diagramPlaceholder:
         '10-by-10-roosteroppervlaktemodel wat 0,3² = 0,09 wys, langs drie gestapelde lae wat 0,3³ = 0,027 wys, sodat ∛0,027 = 0,3',

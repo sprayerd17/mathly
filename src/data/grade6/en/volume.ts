@@ -139,7 +139,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining volume of rectangular prisms and cubes using the formula Volume = length x width x height with colour coded dimensions" />',
+        'Short video explaining volume of rectangular prisms and cubes using the formula Volume = length x width x height with colour coded dimensions',
 
       diagramPlaceholder:
         '3D diagram of a rectangular prism labelled with length blue width red and height green showing the volume formula and cubic unit annotation',
@@ -273,7 +273,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video solving real-life volume problems including containers and packing problems showing how to apply the volume formula in context" />',
+        'Short video solving real-life volume problems including containers and packing problems showing how to apply the volume formula in context',
 
       diagramPlaceholder:
         'Side-by-side diagram showing the large box 30cm by 20cm by 15cm and the small cube 5cm by 5cm by 5cm with volume calculations labelled',

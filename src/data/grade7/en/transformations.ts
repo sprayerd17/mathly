@@ -171,7 +171,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to reflect a point and a shape over a vertical or horizontal mirror line on a coordinate grid" />',
+        'Short video showing how to reflect a point and a shape over a vertical or horizontal mirror line on a coordinate grid',
 
       diagramPlaceholder:
         'Point (3, 5) reflected over the mirror line x = 7 to image point (11, 5), with the equal 4-unit distances from the mirror line labelled on each side.',
@@ -340,7 +340,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to translate a point and a shape on a coordinate grid using a horizontal and vertical shift" />',
+        'Short video showing how to translate a point and a shape on a coordinate grid using a horizontal and vertical shift',
 
       diagramPlaceholder:
         'The original point (4, 6) translated by (3, −2), showing the horizontal shift and vertical shift separately to reach the image point (7, 4).',
@@ -532,7 +532,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to rotate a point and a shape about the origin by 90° and 180° using coordinate rules, with clockwise and anticlockwise examples" />',
+        'Short video showing how to rotate a point and a shape about the origin by 90° and 180° using coordinate rules, with clockwise and anticlockwise examples',
 
       diagramPlaceholder:
         'The original point (3, 2) rotated 90° clockwise about the origin to the image point (2, −3), with the arc of rotation marked.',
@@ -696,7 +696,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to find and draw all the lines of symmetry in regular polygons and letters of the alphabet, including examples with several lines of symmetry and examples with none" />',
+        'Short video demonstrating how to find and draw all the lines of symmetry in regular polygons and letters of the alphabet, including examples with several lines of symmetry and examples with none',
 
       diagramSvg:
         '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">' +
@@ -847,7 +847,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to enlarge and reduce a shape on a grid using rays from a centre of enlargement, applying a scale factor, and comparing corresponding sides and angles between the object and the image" />',
+        'Short video demonstrating how to enlarge and reduce a shape on a grid using rays from a centre of enlargement, applying a scale factor, and comparing corresponding sides and angles between the object and the image',
 
       diagramSvg:
         '<svg viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">' +

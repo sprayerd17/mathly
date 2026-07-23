@@ -106,7 +106,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die vyfgetalopsomming, mond-en-snor-diagram en hoe om ʼn ogief uit ʼn frekwensietabel te teken en te lees, verduidelik" />',
+        'Kort video wat die vyfgetalopsomming, mond-en-snor-diagram en hoe om ʼn ogief uit ʼn frekwensietabel te teken en te lees, verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -182,7 +182,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat simmetriese en skewe verspreidings verduidelik met voorbeelde van positiewe en negatiewe skeefheid deur middel van mond-en-snor-diagramme" />',
+        'Kort video wat simmetriese en skewe verspreidings verduidelik met voorbeelde van positiewe en negatiewe skeefheid deur middel van mond-en-snor-diagramme',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,7 +266,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die normaalverspreiding en die 68-95-99,7-reël verduidelik met uitgewerkte voorbeelde wat gebruik maak van standaardafwykingintervalle" />',
+        'Kort video wat die normaalverspreiding en die 68-95-99,7-reël verduidelik met uitgewerkte voorbeelde wat gebruik maak van standaardafwykingintervalle',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -345,7 +345,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat populasie teenoor steekproef, verteenwoordigende steekproewe, en algemene bronne van vooroordeel insluitend gerieflikheidsteekproefneming en vrywillige-reaksie-vooroordeel verduidelik" />',
+        'Kort video wat populasie teenoor steekproef, verteenwoordigende steekproewe, en algemene bronne van vooroordeel insluitend gerieflikheidsteekproefneming en vrywillige-reaksie-vooroordeel verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -430,7 +430,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat spreidingsdiagramme verduidelik, hoe om die kleinste-kwadrate-regressielyn te vind en te interpreteer, en wat die korrelasiekoëffisiënt r beteken met voorbeelde van sterk, matige en swak korrelasie" />',
+        'Kort video wat spreidingsdiagramme verduidelik, hoe om die kleinste-kwadrate-regressielyn te vind en te interpreteer, en wat die korrelasiekoëffisiënt r beteken met voorbeelde van sterk, matige en swak korrelasie',
     },
   ],
 

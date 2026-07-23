@@ -141,7 +141,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to investigate and extend numeric patterns, find differences and write the general rule using algebraic notation" />',
+        'Short video showing how to investigate and extend numeric patterns, find differences and write the general rule using algebraic notation',
 
       diagramPlaceholder:
         'Diagram showing the numeric pattern 3, 8, 15, 24 with terms highlighted in blue, differences +5, +7, +9 in orange, and the derived rule n² + 2n in green',
@@ -237,7 +237,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to investigate geometric patterns using diagrams and tables and write the algebraic rule for the nth term" />',
+        'Short video showing how to investigate geometric patterns using diagrams and tables and write the algebraic rule for the nth term',
 
       diagramPlaceholder:
         'Diagram showing triangular dot patterns at steps 1 to 4 (1, 3, 6, 10 dots) with step numbers in blue, dots in green and the algebraic rule n(n+1)/2 in orange',
@@ -378,7 +378,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to justify an algebraic rule by substituting values and comparing with actual pattern terms" />',
+        'Short video showing how to justify an algebraic rule by substituting values and comparing with actual pattern terms',
     },
   ],
   scoreMessages: [

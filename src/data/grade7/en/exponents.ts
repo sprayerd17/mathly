@@ -90,7 +90,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining square numbers and square roots with visual examples of squaring and finding the square root" />',
+        'Short video explaining square numbers and square roots with visual examples of squaring and finding the square root',
 
       diagramPlaceholder:
         'Visual grid showing square numbers from 1² to 6² as growing n × n grids, with the base number blue, exponent orange and value green',
@@ -178,7 +178,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining cube numbers and cube roots with visual 3D cube examples and colour coded working" />',
+        'Short video explaining cube numbers and cube roots with visual 3D cube examples and colour coded working',
 
       diagramPlaceholder:
         'Visual diagram showing cube numbers from 1³ to 4³ as growing 3D cubes, with the base number blue, exponent orange and value green',
@@ -282,7 +282,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining exponential notation showing how to expand and evaluate expressions with any base and exponent including the power of 0 and power of 1 rules" />',
+        'Short video explaining exponential notation showing how to expand and evaluate expressions with any base and exponent including the power of 0 and power of 1 rules',
     },
   ],
 

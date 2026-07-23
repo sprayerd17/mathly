@@ -111,7 +111,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply the negative exponent rule a⁻ᵏ = 1/aᵏ with worked examples" />',
+        'Short video showing how to apply the negative exponent rule a⁻ᵏ = 1/aᵏ with worked examples',
 
       diagramPlaceholder:
         'Sequence showing 2³ down to 2⁻² each divided by 2, with the negative-exponent boxes highlighted to show they give reciprocals',
@@ -252,7 +252,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert small decimal numbers into scientific notation using negative exponents" />',
+        'Short video showing how to convert small decimal numbers into scientific notation using negative exponents',
 
       diagramPlaceholder:
         'The decimal point in 0.00045 hopping 4 places right to land as 4.5 × 10⁻⁴',
@@ -453,7 +453,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply all laws of exponents including negative exponents in calculations and real-life problems" />',
+        'Short video showing how to apply all laws of exponents including negative exponents in calculations and real-life problems',
     },
   ],
 

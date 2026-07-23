@@ -138,7 +138,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die volume van reghoekige prismas en kubusse verduidelik met die formule Volume = lengte x breedte x hoogte, met kleurgekodeerde dimensies" />',
+        'Kort video wat die volume van reghoekige prismas en kubusse verduidelik met die formule Volume = lengte x breedte x hoogte, met kleurgekodeerde dimensies',
 
       diagramPlaceholder:
         '3D-diagram van ʼn reghoekige prisma gemerk met lengte in blou, breedte in rooi en hoogte in groen, wat die volumeformule en die kubieke-eenheid-notasie wys',
@@ -272,7 +272,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat werklike-lewe volumeprobleme oplos, insluitend houers en pakprobleme, en wys hoe om die volumeformule in konteks toe te pas" />',
+        'Kort video wat werklike-lewe volumeprobleme oplos, insluitend houers en pakprobleme, en wys hoe om die volumeformule in konteks toe te pas',
 
       diagramPlaceholder:
         'Diagram wat die groot boks (30 cm by 20 cm by 15 cm) langs die klein kubus (5 cm by 5 cm by 5 cm) wys, met die volumeberekenings gemerk',

@@ -132,7 +132,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn limiet is, hoe om ʼn onbepaalde vorm te herken, en hoe om limiete deur faktorisering te bereken" />',
+        'Kort video wat verduidelik wat ʼn limiet is, hoe om ʼn onbepaalde vorm te herken, en hoe om limiete deur faktorisering te bereken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat differensiasie vanuit eerste beginsels vir f(x) = x² en f(x) = x³ stap vir stap demonstreer" />',
+        'Kort video wat differensiasie vanuit eerste beginsels vir f(x) = x² en f(x) = x³ stap vir stap demonstreer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -391,7 +391,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die konstante-, mag-, konstante-veelvoud- en som/verskil-reëls toe te pas om polinome en vereenvoudigde rasionale uitdrukkings te differensieer" />',
+        'Kort video wat wys hoe om die konstante-, mag-, konstante-veelvoud- en som/verskil-reëls toe te pas om polinome en vereenvoudigde rasionale uitdrukkings te differensieer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -509,7 +509,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die vergelyking van ʼn raaklyn aan ʼn kurwe te vind deur gebruik te maak van differensiasie en die punt-gradiënt formule" />',
+        'Kort video wat wys hoe om die vergelyking van ʼn raaklyn aan ʼn kurwe te vind deur gebruik te maak van differensiasie en die punt-gradiënt formule',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -618,7 +618,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat demonstreer hoe om afsnitte en stilstandspunte te vind en ʼn kubieke funksie stap vir stap te skets" />',
+        'Kort video wat demonstreer hoe om afsnitte en stilstandspunte te vind en ʼn kubieke funksie stap vir stap te skets',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -748,7 +748,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat optimering met behulp van differensiaalrekene demonstreer — die heiningprobleem en die vallende voorwerp word stap vir stap uitgewerk" />',
+        'Kort video wat optimering met behulp van differensiaalrekene demonstreer — die heiningprobleem en die vallende voorwerp word stap vir stap uitgewerk',
     },
   ],
 

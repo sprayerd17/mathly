@@ -139,7 +139,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, heelgetal, geheel, rasionaal of irrasionaal te klassifiseer" />',
+        'Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, heelgetal, geheel, rasionaal of irrasionaal te klassifiseer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -258,7 +258,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om rasionale en irrasionale getalle te identifiseer, insluitend hoe om desimale en vierkantswortels te toets" />',
+        'Kort video wat wys hoe om rasionale en irrasionale getalle te identifiseer, insluitend hoe om desimale en vierkantswortels te toets',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -371,7 +371,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat voorbeelde wys van bewerkings met rasionale en irrasionale getalle en hoe om die resultate te klassifiseer" />',
+        'Kort video wat voorbeelde wys van bewerkings met rasionale en irrasionale getalle en hoe om die resultate te klassifiseer',
     },
   ],
   scoreMessages: [

@@ -101,7 +101,7 @@ export const topicData: TopicData = {
       diagramSvg: GRID_HIGHLIGHT_SVG,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om alfanumeriese roosterverwysings te lees en te skryf deur ʼn kolomletter en ʼn rygetal te kombineer" />',
+        'Kort video wat wys hoe om alfanumeriese roosterverwysings te lees en te skryf deur ʼn kolomletter en ʼn rygetal te kombineer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -175,7 +175,7 @@ export const topicData: TopicData = {
       diagramSvg: GRID_SVG,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die roosterverwysing van ʼn landmerk op ʼn kaart te vind en hoe om te vind watter landmerk by ʼn gegewe roosterverwysing is" />',
+        'Kort video wat wys hoe om die roosterverwysing van ʼn landmerk op ʼn kaart te vind en hoe om te vind watter landmerk by ʼn gegewe roosterverwysing is',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -264,7 +264,7 @@ export const topicData: TopicData = {
       diagramSvg: ROUTE_SVG,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om duidelike stap-vir-stap rigtings uit te werk en te gee om tussen twee alfanumeriese roosterverwysings op ʼn kaart te beweeg" />',
+        'Kort video wat wys hoe om duidelike stap-vir-stap rigtings uit te werk en te gee om tussen twee alfanumeriese roosterverwysings op ʼn kaart te beweeg',
     },
   ],
   topicPractice: [

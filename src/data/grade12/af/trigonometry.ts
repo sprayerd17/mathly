@@ -218,7 +218,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat spesiale hoeke, die CAST-reël, en hoe om reduksieformules toe te pas om trig-uitdrukkings te vereenvoudig, hersien" />',
+        'Kort video wat spesiale hoeke, die CAST-reël, en hoe om reduksieformules toe te pas om trig-uitdrukkings te vereenvoudig, hersien',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die saamgestelde hoek identiteite vir sin en cos bekendstel met uitgewerkte voorbeelde wat uitbreiding en presiese-waarde-berekeninge toon" />',
+        'Kort video wat die saamgestelde hoek identiteite vir sin en cos bekendstel met uitgewerkte voorbeelde wat uitbreiding en presiese-waarde-berekeninge toon',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 3 — DOUBLE ANGLE IDENTITIES
@@ -495,7 +495,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die dubbelhoek identiteite van saamgestelde hoeke aflei en dit toepas om uitdrukkings te vereenvoudig en trig-vergelykings op te los" />',
+        'Kort video wat die dubbelhoek identiteite van saamgestelde hoeke aflei en dit toepas om uitdrukkings te vereenvoudig en trig-vergelykings op te los',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -640,7 +640,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om dubbelhoek identiteite te gebruik om trig-vergelykings te vereenvoudig voordat dit binne ʼn gegewe interval gefaktoriseer en opgelos word, en hoe om dieselfde tegniek uit te brei om ʼn volledige algemene oplossing te skryf" />',
+        'Kort video wat wys hoe om dubbelhoek identiteite te gebruik om trig-vergelykings te vereenvoudig voordat dit binne ʼn gegewe interval gefaktoriseer en opgelos word, en hoe om dieselfde tegniek uit te brei om ʼn volledige algemene oplossing te skryf',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -739,7 +739,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die reëls vir die bewys van trig-identiteite verduidelik en deur voorbeelde stap wat saamgestelde en dubbelhoek identiteite gebruik" />',
+        'Kort video wat die reëls vir die bewys van trig-identiteite verduidelik en deur voorbeelde stap wat saamgestelde en dubbelhoek identiteite gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -879,7 +879,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om 2D- en 3D-trigonometrieprobleme op te los deur horisontale en vertikale driehoeke te identifiseer, die sin reël en cos reël toe te pas, en hoogte- en dieptehoeke te gebruik" />',
+        'Kort video wat wys hoe om 2D- en 3D-trigonometrieprobleme op te los deur horisontale en vertikale driehoeke te identifiseer, die sin reël en cos reël toe te pas, en hoogte- en dieptehoeke te gebruik',
     },
   ],
 

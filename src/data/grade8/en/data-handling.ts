@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the range and extremes of a data set and why grouping data into intervals is useful" />',
+        'Short video showing how to find the range and extremes of a data set and why grouping data into intervals is useful',
 
       diagramPlaceholder:
         'Number line showing the data set 8, 12, 19, 33, 45, 52 with the smallest extreme in blue, the largest extreme in red, and the range marked in orange',
@@ -253,7 +253,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw a histogram with equal intervals and a broken-line graph with data points connected by straight lines" />',
+        'Short video showing how to draw a histogram with equal intervals and a broken-line graph with data points connected by straight lines',
 
       diagramPlaceholder:
         'Broken-line graph showing monthly rainfall rising and falling across six months, with data points in blue connected by green straight lines',
@@ -425,7 +425,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to critically interpret data from graphs, identify bias and misleading scales, and write valid conclusions" />',
+        'Short video showing how to critically interpret data from graphs, identify bias and misleading scales, and write valid conclusions',
 
       diagramPlaceholder:
         'Two bar graphs side by side showing the same values (82, 85, 90): one with a y-axis starting at 0 where the bars look similar, and one starting at 80 where the differences look exaggerated',

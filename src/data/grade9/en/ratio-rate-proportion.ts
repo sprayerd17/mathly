@@ -128,7 +128,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to set up and solve direct proportion problems using equal ratios and cross multiplication" />',
+        'Short video showing how to set up and solve direct proportion problems using equal ratios and cross multiplication',
 
       diagramPlaceholder:
         'A straight-line graph through the origin for cost vs kg of apples, alongside a table of values, showing 4 kg = R72 and 7 kg = R126',
@@ -284,7 +284,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify and solve inverse proportion problems using the constant product method" />',
+        'Short video showing how to identify and solve inverse proportion problems using the constant product method',
 
       diagramPlaceholder:
         'A decreasing curve showing workers vs days, with 5 workers = 12 days and 8 workers = 7.5 days, product always 60',
@@ -620,7 +620,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate commission, total rental costs, simple and compound interest, and hire-purchase instalments step by step with worked examples" />',
+        'Short video showing how to calculate commission, total rental costs, simple and compound interest, and hire-purchase instalments step by step with worked examples',
 
       diagramPlaceholder:
         'A line chart comparing R1 000 growing at 10% simple interest (straight line) vs 10% compound interest (curve) over 5 years',

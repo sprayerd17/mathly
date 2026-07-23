@@ -93,7 +93,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die vyfgetalopsomming te bepaal en ʼn mond-en-snor-diagram vir ʼn datastel te teken" />',
+        'Kort video wat wys hoe om die vyfgetalopsomming te bepaal en ʼn mond-en-snor-diagram vir ʼn datastel te teken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -166,7 +166,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn ogief uit ʼn frekwensietabel te teken en dit te gebruik om die mediaan en kwartiele te skat" />',
+        'Kort video wat wys hoe om ʼn ogief uit ʼn frekwensietabel te teken en dit te gebruik om die mediaan en kwartiele te skat',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -252,7 +252,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om variansie en standaardafwyking met die hand en met ʼn Casio fx-82-sakrekenaar te bereken" />',
+        'Kort video wat wys hoe om variansie en standaardafwyking met die hand en met ʼn Casio fx-82-sakrekenaar te bereken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -324,7 +324,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat simmetriese, positief skewe en negatief skewe data verduidelik deur middel van mond-en-snor-diagramme" />',
+        'Kort video wat simmetriese, positief skewe en negatief skewe data verduidelik deur middel van mond-en-snor-diagramme',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -397,7 +397,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="105" y1="245" x2="105" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="105" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="155" y1="245" x2="155" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="155" y="263" font-size="11" fill="#374151" text-anchor="middle">20</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">30</text><line x1="255" y1="245" x2="255" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="255" y="263" font-size="11" fill="#374151" text-anchor="middle">40</text><line x1="305" y1="245" x2="305" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="305" y="263" font-size="11" fill="#374151" text-anchor="middle">50</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">60</text><line x1="55" y1="190" x2="355" y2="25" stroke="#16a34a" stroke-width="2.5"/><circle cx="105" cy="176.25" r="3.5" fill="#2563eb"/><text x="105" y="166.25" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(10, 50)</text><circle cx="155" cy="148.75" r="3.5" fill="#2563eb"/><text x="155" y="138.75" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(20, 70)</text><circle cx="205" cy="114.375" r="3.5" fill="#2563eb"/><text x="205" y="104.375" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(30, 95)</text><circle cx="255" cy="93.75" r="3.5" fill="#2563eb"/><text x="255" y="83.75" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(40, 110)</text><circle cx="305" cy="52.5" r="3.5" fill="#2563eb"/><text x="305" y="42.5" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(50, 140)</text><circle cx="355" cy="31.875" r="3.5" fill="#2563eb"/><text x="350" y="21.875" font-size="11" fill="#2563eb" font-weight="700" text-anchor="end">(60, 155)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Advertensiebesteding (R duisend)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Verkope (R duisend)</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om spreidingsdiagramme te teken en te interpreteer, en om lineêre, kwadratiese en eksponensiële neigings in bivariaatdata te identifiseer" />',
+        'Kort video wat wys hoe om spreidingsdiagramme te teken en te interpreteer, en om lineêre, kwadratiese en eksponensiële neigings in bivariaatdata te identifiseer',
     },
   ],
 

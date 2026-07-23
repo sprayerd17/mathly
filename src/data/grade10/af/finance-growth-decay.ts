@@ -139,7 +139,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die enkelvoudige-rente-formule A=P(1+ni) te gebruik met kleurgekodeerde uitgewerkte voorbeelde in huurkoop- en spaarkonteks" />',
+        'Kort video wat wys hoe om die enkelvoudige-rente-formule A=P(1+ni) te gebruik met kleurgekodeerde uitgewerkte voorbeelde in huurkoop- en spaarkonteks',
 
       diagramPlaceholder:
         'Lineêre grafiek van A teenoor n vir enkelvoudige rente wat konstante reguitlyn-groei wys, met dieselfde bedrag wat elke jaar bygevoeg word',
@@ -296,7 +296,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die saamgestelde-rente-formule A=P(1+i)^n te gebruik met kleurgekodeerde voorbeelde oor spaargeld en bevolkingsgroei, en ʼn vergelyking met enkelvoudige rente" />',
+        'Kort video wat wys hoe om die saamgestelde-rente-formule A=P(1+i)^n te gebruik met kleurgekodeerde voorbeelde oor spaargeld en bevolkingsgroei, en ʼn vergelyking met enkelvoudige rente',
 
       diagramPlaceholder:
         'Eksponensiële groeikurwe wat enkelvoudige en saamgestelde rente oor tyd op dieselfde asse vergelyk, wat wys hoe saamgestelde rente enkelvoudige rente oortref',
@@ -428,7 +428,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die enkelvoudige-verval-formule A=P(1-ni) en die saamgestelde-verval-formule A=P(1-i)^n verduidelik met kleurgekodeerde uitgewerkte voorbeelde oor motor- en masjienwaardevermindering" />',
+        'Kort video wat die enkelvoudige-verval-formule A=P(1-ni) en die saamgestelde-verval-formule A=P(1-i)^n verduidelik met kleurgekodeerde uitgewerkte voorbeelde oor motor- en masjienwaardevermindering',
 
       diagramPlaceholder:
         'Lineêre grafiek van A teenoor n vir enkelvoudige verval wat konstante reguitlyn-afname wys, met dieselfde bedrag wat elke jaar afgetrek word (saamgestelde verval sou eerder krom wees, en stadiger afneem namate die waarde krimp)',
@@ -552,7 +552,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om probeer en verbeter te gebruik om n in saamgestelde-groeiprobleme te vind, met stappe om te toets, te verfyn en die resultate te interpreteer" />',
+        'Kort video wat wys hoe om probeer en verbeter te gebruik om n in saamgestelde-groeiprobleme te vind, met stappe om te toets, te verfyn en die resultate te interpreteer',
 
       diagramPlaceholder:
         'Grafiek van probeerwaardes van n teenoor die berekende vermenigvuldiger, met ʼn stippel-teikenlyn in oranje en die verfynde antwoord wat eerste die teiken bereik, uitgelig in groen',
@@ -705,7 +705,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wisselkoerse verduidelik, hoe om tussen geldeenhede om te skakel deur te vermenigvuldig en te deel, en wat gebeur wanneer die Rand verswak of versterk" />',
+        'Kort video wat wisselkoerse verduidelik, hoe om tussen geldeenhede om te skakel deur te vermenigvuldig en te deel, en wat gebeur wanneer die Rand verswak of versterk',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -871,7 +871,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn huurkoopprobleem stap vir stap deurwerk en wys hoe die deposito in pers, balans in blou, rentekoers in oranje, terugbetalingstydperk in groen, en totale terugbetaling in rooi saamwerk" />',
+        'Kort video wat ʼn huurkoopprobleem stap vir stap deurwerk en wys hoe die deposito in pers, balans in blou, rentekoers in oranje, terugbetalingstydperk in groen, en totale terugbetaling in rooi saamwerk',
 
       diagramPlaceholder:
         'Staafdiagram van ʼn huurkoopaankoop wat die deposito-segment in pers langs die gefinansierde balans-segment in blou wys, en dan dieselfde deposito langs ʼn groter totale terugbetaling-segment in rooi sodra enkelvoudige rente bygetel is',
@@ -1019,7 +1019,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat inflasie verduidelik deur die saamgestelde-groei-formule A=P(1+i)^n te gebruik om toekomstige pryse te projekteer, met huidige prys in blou, inflasiekoers in oranje, jare in groen, toekomstige prys in rooi, en hoe koopkrag geraak word" />',
+        'Kort video wat inflasie verduidelik deur die saamgestelde-groei-formule A=P(1+i)^n te gebruik om toekomstige pryse te projekteer, met huidige prys in blou, inflasiekoers in oranje, jare in groen, toekomstige prys in rooi, en hoe koopkrag geraak word',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -1135,7 +1135,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die saamgestelde-groei-formule A=P(1+i)^n op bevolkingsyfers toepas, met beginbevolking in blou, groeikoers in oranje, jare in groen, en toekomstige bevolking in rooi, insluitend verdubbelingstyd deur probeer en verbeter" />',
+        'Kort video wat die saamgestelde-groei-formule A=P(1+i)^n op bevolkingsyfers toepas, met beginbevolking in blou, groeikoers in oranje, jare in groen, en toekomstige bevolking in rooi, insluitend verdubbelingstyd deur probeer en verbeter',
 
       diagramPlaceholder:
         'Groeiende skare kolletjies wat ʼn klein beginbevolking wys wat oor tyd na ʼn veel groter bevolking groei, wat eksponensiële bevolkingsgroei illustreer',

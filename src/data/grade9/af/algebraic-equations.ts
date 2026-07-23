@@ -113,7 +113,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om hakies uit te brei deur die distributiewe eienskap te gebruik, gelyksoortige terme saam te voeg, en dan ʼn veelstap-lineêre vergelyking met inverse bewerkings op te los" />',
+        'Kort video wat wys hoe om hakies uit te brei deur die distributiewe eienskap te gebruik, gelyksoortige terme saam te voeg, en dan ʼn veelstap-lineêre vergelyking met inverse bewerkings op te los',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -228,7 +228,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vergelyking met veranderlikes aan albei kante op te los deur die kleiner x-term oor te skuif, gevolg deur ʼn voorbeeld wat ʼn breuk uitklaar deur albei kante te vermenigvuldig" />',
+        'Kort video wat wys hoe om ʼn vergelyking met veranderlikes aan albei kante op te los deur die kleiner x-term oor te skuif, gevolg deur ʼn voorbeeld wat ʼn breuk uitklaar deur albei kante te vermenigvuldig',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -323,7 +323,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kwadratiese vergelyking op te los deur dit in twee hakies te faktoriseer en die nulproduk-eienskap toe te pas" />',
+        'Kort video wat wys hoe om ʼn kwadratiese vergelyking op te los deur dit in twee hakies te faktoriseer en die nulproduk-eienskap toe te pas',
 
       diagramPlaceholder:
         'Vloeidiagram wat wys hoe (x + 2)(x + 3) = 0 vertak in twee nulproduk-vergelykings x + 2 = 0 en x + 3 = 0, wat lei tot die twee oplossings x = −2 en x = −3',
@@ -448,7 +448,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die nulproduk-eienskap toe te pas om vergelykings op te los wat reeds in gefaktoriseerde vorm gegee is" />',
+        'Kort video wat wys hoe om die nulproduk-eienskap toe te pas om vergelykings op te los wat reeds in gefaktoriseerde vorm gegee is',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -601,7 +601,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kwadratiese vergelyking te herrangskik, gemeenskaplike faktor- en verskil-van-vierkante-faktorisering toe te pas, en dan die nulproduk-eienskap te gebruik" />',
+        'Kort video wat wys hoe om ʼn kwadratiese vergelyking te herrangskik, gemeenskaplike faktor- en verskil-van-vierkante-faktorisering toe te pas, en dan die nulproduk-eienskap te gebruik',
     },
   ],
   scoreMessages: [

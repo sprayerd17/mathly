@@ -99,7 +99,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die eksponensiële funksie y = a maal b tot die mag x plus q hersien, en wys hoe om die horisontale asimptoot, y-afsnit, en of die grafiek groei of verval, te identifiseer" />',
+        'Kort video wat die eksponensiële funksie y = a maal b tot die mag x plus q hersien, en wys hoe om die horisontale asimptoot, y-afsnit, en of die grafiek groei of verval, te identifiseer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -193,7 +193,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die definisie van \'n logaritme verduidelik en hoe om vrylik tussen logaritmiese vorm en eksponensiële vorm om te skakel" />',
+        'Kort video wat die definisie van \'n logaritme verduidelik en hoe om vrylik tussen logaritmiese vorm en eksponensiële vorm om te skakel',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat al vier logaritmewette demonstreer — produk, kwosiënt, mag, en verandering van grondtal — met uitgewerkte voorbeelde vir elkeen" />',
+        'Kort video wat al vier logaritmewette demonstreer — produk, kwosiënt, mag, en verandering van grondtal — met uitgewerkte voorbeelde vir elkeen',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -348,7 +348,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat logaritmiese en eksponensiële vergelykings oplos — deur tussen vorms om te skakel, logwette toe te pas, en vir ongeldige oplossings te toets" />',
+        'Kort video wat logaritmiese en eksponensiële vergelykings oplos — deur tussen vorms om te skakel, logwette toe te pas, en vir ongeldige oplossings te toets',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -395,7 +395,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die grafiek van y is gelyk aan log tot die grondtal a van x skets — deur die vertikale asimptoot en sleutelpunte te identifiseer, en stygende teenoor dalende gevalle te vergelyk" />',
+        'Kort video wat die grafiek van y is gelyk aan log tot die grondtal a van x skets — deur die vertikale asimptoot en sleutelpunte te identifiseer, en stygende teenoor dalende gevalle te vergelyk',
     },
   ],
 

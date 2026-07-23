@@ -157,7 +157,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to accurately draw a line segment of a given length with a ruler, and an angle of a given size with a protractor, with given measurements in blue and drawn results in green" />',
+        'Short video showing how to accurately draw a line segment of a given length with a ruler, and an angle of a given size with a protractor, with given measurements in blue and drawn results in green',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -312,7 +312,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to construct a perpendicular line and a parallel line using a ruler and set square, with the original line in blue, the constructed perpendicular or parallel line in green and the set square in orange" />',
+        'Short video showing how to construct a perpendicular line and a parallel line using a ruler and set square, with the original line in blue, the constructed perpendicular or parallel line in green and the set square in orange',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -459,7 +459,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to construct a triangle given three side lengths using a compass and ruler, including how to check first whether the three lengths can form a triangle, with given side lengths in orange, compass arcs in blue and the completed triangle in green" />',
+        'Short video showing how to construct a triangle given three side lengths using a compass and ruler, including how to check first whether the three lengths can form a triangle, with given side lengths in orange, compass arcs in blue and the completed triangle in green',
     },
   ],
 

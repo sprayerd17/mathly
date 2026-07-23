@@ -134,7 +134,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn termometerskaal wys met nul grade gemerk in rooi as die vriespunt van water, honderd grade gemerk as die kookpunt, en sewe-en-dertig grade gemerk as normale menslike liggaamstemperatuur" />',
+        'Kort video wat ʼn termometerskaal wys met nul grade gemerk in rooi as die vriespunt van water, honderd grade gemerk as die kookpunt, en sewe-en-dertig grade gemerk as normale menslike liggaamstemperatuur',
 
       diagramPlaceholder:
         'Diagram van ʼn vertikale termometerskaal van 0 tot 100 grade Celsius, met die vriespunt, kookpunt en gemiddelde menslike liggaamstemperatuur gemerk en die vloeistofvlak by ʼn voorbeeldlesing gewys',
@@ -259,7 +259,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat demonstreer hoe om die vloeistofvlak op ʼn termometerskaal te lees en die temperatuur korrek aan te teken met die grade Celsius-simbool" />',
+        'Kort video wat demonstreer hoe om die vloeistofvlak op ʼn termometerskaal te lees en die temperatuur korrek aan te teken met die grade Celsius-simbool',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -356,7 +356,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat pare positiewe temperature vergelyk en wys hoe om ʼn lys temperature van koudste na warmste te orden deur die heelgetalle te vergelyk" />',
+        'Kort video wat pare positiewe temperature vergelyk en wys hoe om ʼn lys temperature van koudste na warmste te orden deur die heelgetalle te vergelyk',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -465,7 +465,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat demonstreer hoe om die verskil tussen twee positiewe temperature te vind deur die kleiner van die groter af te trek, insluitend ʼn temperatuurwydte-voorbeeld" />',
+        'Kort video wat demonstreer hoe om die verskil tussen twee positiewe temperature te vind deur die kleiner van die groter af te trek, insluitend ʼn temperatuurwydte-voorbeeld',
     },
   ],
 

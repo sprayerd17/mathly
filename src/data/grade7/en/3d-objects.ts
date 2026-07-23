@@ -144,7 +144,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the surface area of a rectangular prism and a cube using the formulas with colour coded dimensions" />',
+        'Short video showing how to find the surface area of a rectangular prism and a cube using the formulas with colour coded dimensions',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -320,7 +320,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the volume of a rectangular prism and a cylinder using the formulas with colour coded steps" />',
+        'Short video showing how to calculate the volume of a rectangular prism and a cylinder using the formulas with colour coded steps',
     },
   ],
 

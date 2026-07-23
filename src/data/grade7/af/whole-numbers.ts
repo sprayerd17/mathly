@@ -176,7 +176,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om groot hele getalle tot in die miljarde te lees, te orden en af te rond met behulp van plekwaarde" />',
+        'Kort video wat wys hoe om groot hele getalle tot in die miljarde te lees, te orden en af te rond met behulp van plekwaarde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om optelling, aftrekking en vermenigvuldiging toe te pas op groot hele getalle, insluitend meerstap-probleme en skatting" />',
+        'Kort video wat wys hoe om optelling, aftrekking en vermenigvuldiging toe te pas op groot hele getalle, insluitend meerstap-probleme en skatting',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -489,7 +489,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat eksponente, kwadrate, kubusse, vierkantswortels en kubuswortels verduidelik met visuele modelle en uitgewerkte voorbeelde" />',
+        'Kort video wat eksponente, kwadrate, kubusse, vierkantswortels en kubuswortels verduidelik met visuele modelle en uitgewerkte voorbeelde',
     },
   ],
 

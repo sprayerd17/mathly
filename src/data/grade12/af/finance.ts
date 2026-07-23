@@ -178,7 +178,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die formules vir enkelvoudige en saamgestelde groei en verval verduidelik, met uitgewerkte voorbeelde oor spaargeld, waardevermindering en bevolkingsgroei" />',
+        'Kort video wat die formules vir enkelvoudige en saamgestelde groei en verval verduidelik, met uitgewerkte voorbeelde oor spaargeld, waardevermindering en bevolkingsgroei',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -310,7 +310,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om logaritmes te gebruik om vir n op te los in saamgestelde groei- en verval-vergelykings deur die magswet te gebruik" />',
+        'Kort video wat wys hoe om logaritmes te gebruik om vir n op te los in saamgestelde groei- en verval-vergelykings deur die magswet te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -414,7 +414,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verskil tussen nominale en effektiewe rentekoerse verduidelik, en hoe om tussen die twee om te skakel deur die samegestelde-rente-formule te gebruik" />',
+        'Kort video wat die verskil tussen nominale en effektiewe rentekoerse verduidelik, en hoe om tussen die twee om te skakel deur die samegestelde-rente-formule te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -540,7 +540,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat toekomstige waarde-annuïteite verduidelik, met uitgewerkte voorbeelde oor maandelikse spaargeld en beleggingsgroei deur die annuïteitsformule te gebruik" />',
+        'Kort video wat toekomstige waarde-annuïteite verduidelik, met uitgewerkte voorbeelde oor maandelikse spaargeld en beleggingsgroei deur die annuïteitsformule te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -695,7 +695,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat huidige waarde-annuïteite en verbandterugbetalings verduidelik, met uitgewerkte voorbeelde oor maandelikse terugbetalings, uitstaande balans, en om vir die aantal betalings op te los" />',
+        'Kort video wat huidige waarde-annuïteite en verbandterugbetalings verduidelik, met uitgewerkte voorbeelde oor maandelikse terugbetalings, uitstaande balans, en om vir die aantal betalings op te los',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -864,7 +864,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat sinkingsfondse verduidelik, hoe om ʼn toekomstige vervangingskoste met saamgestelde groei te inflateer, en hoe om die toekomstige waarde annuïteit-formule te gebruik om die benodigde gereelde deposito te vind" />',
+        'Kort video wat sinkingsfondse verduidelik, hoe om ʼn toekomstige vervangingskoste met saamgestelde groei te inflateer, en hoe om die toekomstige waarde annuïteit-formule te gebruik om die benodigde gereelde deposito te vind',
     },
   ],
 

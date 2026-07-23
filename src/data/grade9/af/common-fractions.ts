@@ -55,7 +55,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat veelstap-berekenings met gewone breuke en gemengde getalle wys deur al vier bewerkings te gebruik" />',
+        'Kort video wat veelstap-berekenings met gewone breuke en gemengde getalle wys deur al vier bewerkings te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -99,7 +99,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van gewone breuke in veelstap-probleme toe te pas" />',
+        'Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van gewone breuke in veelstap-probleme toe te pas',
 
       diagramPlaceholder:
         'Visuele voorstelling wat die kwadrering en vierkantswortel-trekking van ʼn gewone breuk wys deur die teller en noemer apart te hanteer',
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat veelstap werklike-lewe-probleme wys wat gewone breuke, gemengde getalle en persentasies kombineer" />',
+        'Kort video wat veelstap werklike-lewe-probleme wys wat gewone breuke, gemengde getalle en persentasies kombineer',
 
       diagramPlaceholder:
         'Staafmodel wat ʼn hoeveelheid wys wat eers deur ʼn breuk verdeel word, en dan ʼn persentasie van wat oorbly',

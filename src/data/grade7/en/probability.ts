@@ -98,7 +98,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the probability scale from 0 to 1 and how to list all possible outcomes of an experiment" />',
+        'Short video explaining the probability scale from 0 to 1 and how to list all possible outcomes of an experiment',
 
       diagramPlaceholder:
         'Probability scale from 0 to 1 showing impossible at 0, even chance at half, and certain at 1 with colour coded labels',
@@ -186,7 +186,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate probability as a fraction using favourable outcomes over total outcomes with worked examples" />',
+        'Short video showing how to calculate probability as a fraction using favourable outcomes over total outcomes with worked examples',
 
       diagramPlaceholder:
         'Diagram of a bag with 5 red and 3 blue marbles showing favourable outcomes highlighted in green and total outcomes in blue',
@@ -283,7 +283,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing relative frequency from an experiment to theoretical probability and showing how more trials brings the two values closer together" />',
+        'Short video comparing relative frequency from an experiment to theoretical probability and showing how more trials brings the two values closer together',
 
       diagramPlaceholder:
         'Table comparing relative frequency and theoretical probability for a coin flip experiment across 10 50 and 200 trials showing convergence',

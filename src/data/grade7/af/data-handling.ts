@@ -153,7 +153,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om stap vir stap ʼn stingel-en-blaar-diagram te bou en hoe om ʼn verteenwoordigende steekproef te kies" />',
+        'Kort video wat wys hoe om stap vir stap ʼn stingel-en-blaar-diagram te bou en hoe om ʼn verteenwoordigende steekproef te kies',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -315,7 +315,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die gemiddelde mediaan modus en variasiewydte te bereken met stap-vir-stap uitgewerkte voorbeelde" />',
+        'Kort video wat wys hoe om die gemiddelde mediaan modus en variasiewydte te bereken met stap-vir-stap uitgewerkte voorbeelde',
 
       diagramPlaceholder:
         'Getallelyn wat ʼn datastel wys met die gemiddelde gemerk in blou mediaan in groen modus in oranje en variasiewydte gewys as ʼn rooi dubbelkop-pyl',
@@ -500,7 +500,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om staafgrafieke dubbelstaafgrafieke en sirkelgrafieke te lees en hoe om waardes van persentasies te bereken" />',
+        'Kort video wat wys hoe om staafgrafieke dubbelstaafgrafieke en sirkelgrafieke te lees en hoe om waardes van persentasies te bereken',
 
       diagramPlaceholder:
         'Langs mekaar: dubbelstaafgrafiek met blou en groen stawe vir twee groepe oor vier kategorieë, en ʼn sirkelgrafiek met gekleurde skywe en oranje persentasie-etikette',

@@ -91,7 +91,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 220 155" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="15" width="180" height="25" fill="#f8fafc"/><rect x="20" y="115" width="180" height="25" fill="#f0fdf4"/><rect x="20" y="15" width="180" height="125" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="20" y1="40" x2="200" y2="40" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="65" x2="200" y2="65" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="90" x2="200" y2="90" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="115" x2="200" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="130" y1="15" x2="130" y2="140" stroke="#0f1f3d" stroke-width="1.5"/><text x="75" y="31" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Kategorie</text><text x="165" y="31" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">Frekwensie</text><text x="75" y="56" font-size="11" fill="#374151" text-anchor="middle">Wiskunde</text><text x="165" y="56" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">7</text><text x="75" y="81" font-size="11" fill="#374151" text-anchor="middle">Engels</text><text x="165" y="81" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">5</text><text x="75" y="106" font-size="11" fill="#374151" text-anchor="middle">Wetenskap</text><text x="165" y="106" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">8</text><text x="75" y="131" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">Totaal</text><text x="165" y="131" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">20</text><text x="110" y="151" font-size="10" fill="#374151" text-anchor="middle">frekwensies moet by die totaal optel</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om data deur ʼn opname te versamel en dit in ʼn frekwensietabel met kategorieë en frekwensies te organiseer" />',
+        'Kort video wat wys hoe om data deur ʼn opname te versamel en dit in ʼn frekwensietabel met kategorieë en frekwensies te organiseer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -184,7 +184,7 @@ export const topicData: TopicData = {
         'ʼn Piktogram getiteld Gunsteling Vrugte wat Appels met 3 volle simbole, Piesangs met 2 volle simbole en ʼn half simbool, en Lemoene met 1 volle simbool en ʼn half simbool wys, met ʼn sleutel wat toon een simbool is gelyk aan 10 leerders, alle simbole (vol en half) in groen, en totale in rooi',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn piktogram met ʼn veelvuldige-tot-een-sleutel te lees, insluitend ʼn half simbool, en hoe om ʼn sleutel te kies en ʼn piktogram vanaf ʼn klein datastel te teken" />',
+        'Kort video wat wys hoe om ʼn piktogram met ʼn veelvuldige-tot-een-sleutel te lees, insluitend ʼn half simbool, en hoe om ʼn sleutel te kies en ʼn piktogram vanaf ʼn klein datastel te teken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -265,7 +265,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Boeke Gelees — Seuns vs Meisies</text><rect x="40" y="26" width="8" height="8" fill="#2563eb"/><text x="52" y="33" font-size="8" fill="#374151" font-weight="600">Seuns</text><rect x="40" y="38" width="8" height="8" fill="#dc2626"/><text x="52" y="45" font-size="8" fill="#374151" font-weight="600">Meisies</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155" x2="34" y2="155" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158" font-size="9" fill="#16a34a" font-weight="700" text-anchor="end">0</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9" fill="#16a34a" font-weight="700" text-anchor="end">10</text><line x1="34" y1="102.6" x2="210" y2="102.6" stroke="#e5e7eb" stroke-width="0.6"/><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9" fill="#16a34a" font-weight="700" text-anchor="end">20</text><line x1="34" y1="50.2" x2="210" y2="50.2" stroke="#e5e7eb" stroke-width="0.6"/><rect x="45" y="92.1" width="16" height="62.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.2"/><text x="53" y="88.1" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">12</text><rect x="63" y="60.7" width="16" height="94.3" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.2"/><text x="71" y="56.7" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">18</text><text x="62" y="167" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Wk1</text><rect x="100" y="50.2" width="16" height="104.8" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.2"/><text x="108" y="46.2" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">20</text><rect x="118" y="81.6" width="16" height="73.4" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.2"/><text x="126" y="77.6" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">14</text><text x="117" y="167" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Wk2</text><rect x="155" y="107.8" width="16" height="47.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.2"/><text x="163" y="103.8" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">9</text><rect x="173" y="71.2" width="16" height="83.8" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.2"/><text x="181" y="67.2" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">16</text><text x="172" y="167" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Wk3</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik hoe om staafgrafieke en dubbelstaafgrafieke te lees en te teken, insluitend hoe om asse te etiketteer en ʼn sleutel by te voeg" />',
+        'Kort video wat verduidelik hoe om staafgrafieke en dubbelstaafgrafieke te lees en te teken, insluitend hoe om asse te etiketteer en ʼn sleutel by te voeg',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -340,7 +340,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn sirkelgrafiek te lees deur tussen grade en persentasies om te skakel en te bereken hoeveel items elke skyf verteenwoordig" />',
+        'Kort video wat wys hoe om ʼn sirkelgrafiek te lees deur tussen grade en persentasies om te skakel en te bereken hoeveel items elke skyf verteenwoordig',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -425,7 +425,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg"><text x="130" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#0f1f3d"><tspan fill="#ea580c">3</tspan><tspan>, </tspan><tspan fill="#ea580c">3</tspan><tspan>, </tspan><tspan fill="#ea580c">3</tspan><tspan>, </tspan><tspan fill="#16a34a">6</tspan><tspan>, 9, 11, 14</tspan></text><text x="130" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d"><tspan>Gemiddelde = </tspan><tspan fill="#2563eb">7</tspan><tspan>   Mediaan = </tspan><tspan fill="#16a34a">6</tspan><tspan>   Modus = </tspan><tspan fill="#ea580c">3</tspan></text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die gemiddelde te bereken deur op te tel en te deel, die mediaan te vind deur waardes te rangskik en die middelste te vind, en die modus te identifiseer" />',
+        'Kort video wat wys hoe om die gemiddelde te bereken deur op te tel en te deel, die mediaan te vind deur waardes te rangskik en die middelste te vind, en die modus te identifiseer',
     },
   ],
 

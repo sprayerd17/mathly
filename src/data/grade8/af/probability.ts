@@ -84,7 +84,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om alle uitkomste te lys en waarskynlikheid te bereken deur gunstige uitkomste deur totale uitkomste te deel" />',
+        'Kort video wat wys hoe om alle uitkomste te lys en waarskynlikheid te bereken deur gunstige uitkomste deur totale uitkomste te deel',
 
       diagramPlaceholder:
         'Diagram van ʼn sak met 4 rooi, 3 blou en 5 groen balle, wat die waarskynlikheidsformule W(blou) = 3 ÷ 12 = 1/4 stap vir stap toepas',
@@ -163,7 +163,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om relatiewe frekwensie vanuit teoretiese waarskynlikheid te voorspel en verskille tussen voorspelde en werklike resultate te verduidelik" />',
+        'Kort video wat wys hoe om relatiewe frekwensie vanuit teoretiese waarskynlikheid te voorspel en verskille tussen voorspelde en werklike resultate te verduidelik',
 
       diagramPlaceholder:
         'Staafgrafiek wat voorspelde (teoretiese) frekwensie in blou vergelyk met werklike frekwensie in oranje vir ʼn 100-opgooi-muntstukeksperiment en ʼn 60-gooi-dobbelsteeneksperiment',
@@ -225,7 +225,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om meerstap-waarskynlikheidsprobleme in werklike-lewe kontekste op te los, insluitend die lys van uitkomste en die kombinering van onafhanklike gebeurtenisse" />',
+        'Kort video wat wys hoe om meerstap-waarskynlikheidsprobleme in werklike-lewe kontekste op te los, insluitend die lys van uitkomste en die kombinering van onafhanklike gebeurtenisse',
 
       diagramPlaceholder:
         'Boomdiagram vir die opgooi van ʼn muntstuk en die rol van ʼn dobbelsteen, met die tak vir kop en ewe uitgelig in groen met gekombineerde waarskynlikheid 1/2 × 1/2 = 1/4',

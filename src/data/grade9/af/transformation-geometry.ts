@@ -134,7 +134,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="200" x2="30" y2="20" stroke="#374151" stroke-width="1.5"/><line x1="20" y1="190" x2="200" y2="190" stroke="#374151" stroke-width="1.5"/><text x="204" y="194" font-size="11" fill="#374151">x</text><text x="22" y="16" font-size="11" fill="#374151">y</text><line x1="30" y1="190" x2="190" y2="30" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/><text x="163" y="42" font-size="12" font-weight="700" fill="#2563eb">y = x</text><line x1="90" y1="50" x2="170" y2="130" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="90" cy="50" r="4" fill="#16a34a"/><text x="96" y="44" font-size="12" font-weight="700" fill="#16a34a">(3, 7)</text><circle cx="170" cy="130" r="4" fill="#ea580c"/><text x="162.0" y="146.0" font-size="12" font-weight="700" fill="#ea580c" text-anchor="end">(7, 3)</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn punt en ʼn eenvoudige figuur in die lyn y=x te spieël deur koördinate om te ruil" />',
+        'Kort video wat wys hoe om ʼn punt en ʼn eenvoudige figuur in die lyn y=x te spieël deur koördinate om te ruil',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -248,7 +248,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn transformasie te identifiseer deur oorspronklike en beeldkoördinate te vergelyk" />',
+        'Kort video wat wys hoe om ʼn transformasie te identifiseer deur oorspronklike en beeldkoördinate te vergelyk',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -380,7 +380,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="205" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/><line x1="20" y1="195" x2="170" y2="195" stroke="#374151" stroke-width="1.5"/><text x="174" y="199" font-size="11" fill="#374151">x</text><text x="22" y="11" font-size="11" fill="#374151">y</text><line x1="30" y1="195" x2="114" y2="27" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/><line x1="30" y1="195" x2="86" y2="111" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/><line x1="30" y1="195" x2="142" y2="111" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="3,3"/><polygon points="58,153 86,153 72,111" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><polygon points="86,111 142,111 114,27" fill="none" stroke="#16a34a" stroke-width="2.5"/><text x="55" y="168" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">oorspronklik</text><text x="128" y="120" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">vergroot (k=2)</text><circle cx="30" cy="195" r="2.5" fill="#0f1f3d"/><text x="20" y="205" font-size="9" fill="#374151">O</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vorm te vergroot en te verklein met behulp van ʼn skaalfaktor vanaf die oorsprong op ʼn Cartesiese vlak" />',
+        'Kort video wat wys hoe om ʼn vorm te vergroot en te verklein met behulp van ʼn skaalfaktor vanaf die oorsprong op ʼn Cartesiese vlak',
     },
   ],
 

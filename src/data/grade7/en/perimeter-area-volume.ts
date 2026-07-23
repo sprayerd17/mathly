@@ -124,7 +124,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the perimeter of squares and rectangles using formulae" />',
+        'Short video showing how to calculate the perimeter of squares and rectangles using formulae',
 
       diagramPlaceholder:
         'Labelled diagrams of a square and a rectangle showing the side length formula for perimeter with colour coded measurements',
@@ -254,7 +254,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the area of squares, rectangles and triangles using formulae" />',
+        'Short video showing how to calculate the area of squares, rectangles and triangles using formulae',
 
       diagramPlaceholder:
         'Labelled diagrams of a square, rectangle and triangle with colour coded length, breadth, base and height dimensions',
@@ -395,7 +395,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the surface area and volume of cubes and rectangular prisms using formulae" />',
+        'Short video showing how to calculate the surface area and volume of cubes and rectangular prisms using formulae',
 
       diagramPlaceholder:
         '3D diagrams of a cube and a rectangular prism with colour coded dimensions showing all six faces for surface area and the interior for volume',

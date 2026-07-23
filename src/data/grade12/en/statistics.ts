@@ -106,7 +106,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the five number summary, box and whisker diagram and how to draw and read an ogive from a frequency table" />',
+        'Short video explaining the five number summary, box and whisker diagram and how to draw and read an ogive from a frequency table',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -182,7 +182,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining symmetric and skewed distributions with examples of positive and negative skewness using box and whisker diagrams" />',
+        'Short video explaining symmetric and skewed distributions with examples of positive and negative skewness using box and whisker diagrams',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -266,7 +266,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the normal distribution and the 68-95-99.7 rule with worked examples using standard deviation intervals" />',
+        'Short video explaining the normal distribution and the 68-95-99.7 rule with worked examples using standard deviation intervals',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -345,7 +345,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining population vs sample, representative samples, and common sources of bias including convenience sampling and voluntary response bias" />',
+        'Short video explaining population vs sample, representative samples, and common sources of bias including convenience sampling and voluntary response bias',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -430,7 +430,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining scatter plots, how to find and interpret the least squares regression line, and what the correlation coefficient r means with examples of strong, moderate, and weak correlation" />',
+        'Short video explaining scatter plots, how to find and interpret the least squares regression line, and what the correlation coefficient r means with examples of strong, moderate, and weak correlation',
     },
   ],
 

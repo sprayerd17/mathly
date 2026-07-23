@@ -111,7 +111,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="30" width="80" height="120" rx="4" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="62" y="90" width="76" height="58" fill="#16a34a" fill-opacity="0.18"/><line x1="60" y1="30" x2="140" y2="30" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,3"/><line x1="60" y1="90" x2="140" y2="90" stroke="#16a34a" stroke-width="2"/><text x="160" y="34" font-size="12" font-weight="700" fill="#2563eb" text-anchor="start">Capacity</text><text x="160" y="48" font-size="12" font-weight="700" fill="#2563eb" text-anchor="start">= 2 l</text><text x="160" y="94" font-size="12" font-weight="700" fill="#16a34a" text-anchor="start">Volume</text><text x="160" y="108" font-size="12" font-weight="700" fill="#16a34a" text-anchor="start">= 1 l</text><text x="100" y="170" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">1 000 ml = 1 l</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between capacity and volume and how to use millilitres and litres for different amounts of liquid" />',
+        'Short video explaining the difference between capacity and volume and how to use millilitres and litres for different amounts of liquid',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -200,7 +200,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="45" width="90" height="40" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="65" y="70" font-size="15" font-weight="700" fill="#dc2626" text-anchor="middle">litres</text><rect x="190" y="45" width="90" height="40" rx="6" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="235" y="70" font-size="15" font-weight="700" fill="#ea580c" text-anchor="middle">ml</text><line x1="115" y1="55" x2="185" y2="55" stroke="#16a34a" stroke-width="2"/><polygon points="189,55 181,50 181,60" fill="#16a34a"/><text x="150" y="45" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">× 1 000</text><line x1="185" y1="78" x2="115" y2="78" stroke="#dc2626" stroke-width="2"/><polygon points="111,78 119,73 119,83" fill="#dc2626"/><text x="150" y="98" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">÷ 1 000</text><text x="150" y="118" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">1 000 ml = 1 l</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert between millilitres and litres by multiplying by 1 000 when going to a smaller unit and dividing by 1 000 when going to a larger unit with worked examples" />',
+        'Short video showing how to convert between millilitres and litres by multiplying by 1 000 when going to a smaller unit and dividing by 1 000 when going to a larger unit with worked examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -282,7 +282,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg"><rect x="50" y="40" width="70" height="150" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="190" x2="42" y2="190" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="152" x2="42" y2="152" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="115" x2="42" y2="115" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="77" x2="42" y2="77" stroke="#2563eb" stroke-width="2"/><line x1="50" y1="40" x2="42" y2="40" stroke="#2563eb" stroke-width="2"/><text x="34" y="194" font-size="10" fill="#2563eb" font-weight="700" text-anchor="end">0</text><text x="34" y="156" font-size="10" fill="#2563eb" font-weight="700" text-anchor="end">250</text><text x="34" y="119" font-size="10" fill="#2563eb" font-weight="700" text-anchor="end">500</text><text x="34" y="81" font-size="10" fill="#2563eb" font-weight="700" text-anchor="end">750</text><text x="34" y="44" font-size="10" fill="#2563eb" font-weight="700" text-anchor="end">1000</text><rect x="52" y="96" width="66" height="94" fill="#16a34a" fill-opacity="0.25"/><line x1="50" y1="96" x2="120" y2="96" stroke="#16a34a" stroke-width="2"/><line x1="120" y1="96" x2="140" y2="96" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/><text x="145" y="100" font-size="12" font-weight="700" fill="#ea580c" text-anchor="start">625 ml</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read a measuring jug by identifying scale markings counting spaces and reading at eye level from the bottom of the liquid curve" />',
+        'Short video showing how to read a measuring jug by identifying scale markings counting spaces and reading at eye level from the bottom of the liquid curve',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -369,7 +369,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to add and subtract volumes by first converting to the same unit then calculating and writing the answer with the correct unit" />',
+        'Short video showing how to add and subtract volumes by first converting to the same unit then calculating and writing the answer with the correct unit',
     },
   ],
   topicPractice: [

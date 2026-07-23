@@ -149,7 +149,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om globale grafieke te ontleed en te interpreteer — hoe om toenemende, afnemende, konstante gedeeltes, en maksimum- en minimumpunte te identifiseer" />',
+        'Kort video wat wys hoe om globale grafieke te ontleed en te interpreteer — hoe om toenemende, afnemende, konstante gedeeltes, en maksimum- en minimumpunte te identifiseer',
 
       diagramPlaceholder:
         'Twee voorbeeld globale grafieke: een wat spoed teenoor tyd wys met ʼn stygende lyn wat dan plat word, en een wat hoogte teenoor tyd wys vir ʼn balgooi, wat styg tot ʼn hoogtepunt en dan val, met die maksimumpunt in oranje gemerk',
@@ -282,7 +282,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om geordende pare op die Cartesiese vlak te stip en ʼn reguit lyn deur die gestipte punte te trek" />',
+        'Kort video wat wys hoe om geordende pare op die Cartesiese vlak te stip en ʼn reguit lyn deur die gestipte punte te trek',
 
       diagramPlaceholder:
         'Twee Cartesiese vlakke: een wat punte (1,2), (2,4), (3,6) verbind deur ʼn opwaartse lyn deur die oorsprong vir y = 2x wys, en een wat punte (−1,3), (0,1), (1,−1) verbind deur ʼn afwaartse lyn vir y = −2x + 1 wys',
@@ -413,7 +413,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn globale grafiek uit ʼn werklike-lewe beskrywing te teken, deur stygende, dalende en plat gedeeltes te identifiseer" />',
+        'Kort video wat wys hoe om ʼn globale grafiek uit ʼn werklike-lewe beskrywing te teken, deur stygende, dalende en plat gedeeltes te identifiseer',
 
       diagramPlaceholder:
         'Twee eenvoudige gesketste grafieke: een wat ʼn tenk wys wat volmaak met ʼn stygende lyn wat dan plat word, en een wat spaargeld wys wat styg, skielik daal, en dan weer styg',

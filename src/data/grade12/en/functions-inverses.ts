@@ -115,7 +115,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising the four function types — linear, quadratic, hyperbolic, and exponential — with their standard forms, key features, and how to sketch each one" />',
+        'Short video revising the four function types — linear, quadratic, hyperbolic, and exponential — with their standard forms, key features, and how to sketch each one',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -181,7 +181,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the formal definition of a function, the vertical line test, the horizontal line test, and the difference between one-to-one and many-to-one functions" />',
+        'Short video explaining the formal definition of a function, the vertical line test, the horizontal line test, and the difference between one-to-one and many-to-one functions',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -256,7 +256,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the definition of an inverse function, how to find it by swapping x and y, and why the inverse of a many-to-one function is not itself a function" />',
+        'Short video explaining the definition of an inverse function, how to find it by swapping x and y, and why the inverse of a many-to-one function is not itself a function',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -341,7 +341,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to sketch inverses of linear, quadratic, and exponential functions by reflecting across y = x, with worked examples for each type including domain restriction for quadratics" />',
+        'Short video showing how to sketch inverses of linear, quadratic, and exponential functions by reflecting across y = x, with worked examples for each type including domain restriction for quadratics',
     },
   ],
 

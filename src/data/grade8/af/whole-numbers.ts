@@ -145,7 +145,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van hele getalle en die delingseienskap van nul verduidelik" />',
+        'Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van hele getalle en die delingseienskap van nul verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -257,7 +257,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat priemfaktorisering met ʼn faktorboom wys en hoe om GGF en KGV vanaf priemfaktore te vind" />',
+        'Kort video wat priemfaktorisering met ʼn faktorboom wys en hoe om GGF en KGV vanaf priemfaktore te vind',
 
       diagramPlaceholder:
         'Faktorboom vir 120 wat vertak na sy priemfaktore 2, 2, 2, 3 en 5, wat ooreenstem met die uitgewerkte voorbeeld se priemfaktorisering',
@@ -594,7 +594,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verhouding, koers, proporsie, wins, verlies, BTW, spoed en prys per eenheid bereken, en om ʼn bedrag in ʼn gegewe verhouding te verdeel of te vermeerder of verminder dek" />',
+        'Kort video wat verhouding, koers, proporsie, wins, verlies, BTW, spoed en prys per eenheid bereken, en om ʼn bedrag in ʼn gegewe verhouding te verdeel of te vermeerder of verminder dek',
     },
 
   ],

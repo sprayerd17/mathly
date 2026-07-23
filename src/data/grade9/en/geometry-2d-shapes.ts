@@ -88,7 +88,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the four minimum conditions for congruent triangles — SSS, SAS, AAS and RHS — with visual examples" />',
+        'Short video explaining the four minimum conditions for congruent triangles — SSS, SAS, AAS and RHS — with visual examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -157,7 +157,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the two minimum conditions for similar triangles — AA and SSS proportionality — with visual examples" />',
+        'Short video explaining the two minimum conditions for similar triangles — AA and SSS proportionality — with visual examples',
 
       diagramPlaceholder:
         'Two pairs of similar triangles showing equal angles and proportional sides labelled with their ratios',
@@ -245,7 +245,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve geometric problems using congruency and similarity conditions with step-by-step justifications" />',
+        'Short video showing how to solve geometric problems using congruency and similarity conditions with step-by-step justifications',
     },
   ],
 

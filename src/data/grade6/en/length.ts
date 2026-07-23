@@ -132,7 +132,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the full length conversion chain from km to m to cm to mm, demonstrating how to jump two steps at once and how to convert a decimal kilometre measurement into mixed km and m units" />',
+        'Short video showing the full length conversion chain from km to m to cm to mm, demonstrating how to jump two steps at once and how to convert a decimal kilometre measurement into mixed km and m units',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -231,7 +231,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to use a map scale to find real-world distances from a drawn measurement, followed by a perimeter example involving multiple laps around a field" />',
+        'Short video demonstrating how to use a map scale to find real-world distances from a drawn measurement, followed by a perimeter example involving multiple laps around a field',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -329,7 +329,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-step real-world length word problem, converting between units before adding, subtracting, or dividing to reach the final answer" />',
+        'Short video working through a multi-step real-world length word problem, converting between units before adding, subtracting, or dividing to reach the final answer',
     },
   ],
 

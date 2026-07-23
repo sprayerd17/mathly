@@ -113,7 +113,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat nie-reële getalle verduidelik en wys hoe om vergelykings met geen reële oplossings te identifiseer deur die diskriminant te gebruik" />',
+        'Kort video wat nie-reële getalle verduidelik en wys hoe om vergelykings met geen reële oplossings te identifiseer deur die diskriminant te gebruik',
 
       diagramPlaceholder:
         'Diagram van die getallestelsel wat reële getalle op die getallelyn wys en aandui dat nie-reële oplossings daarbuite val, met voorbeelde van vergelykings wat elke tipe lewer',
@@ -276,7 +276,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die kwadratiese formule aflei deur die vierkant te voltooi, dit met die diskriminant verbind, en dit gebruik om kwadratiese vergelykings op te los, insluitend dié met wortelvorm-oplossings" />',
+        'Kort video wat die kwadratiese formule aflei deur die vierkant te voltooi, dit met die diskriminant verbind, en dit gebruik om kwadratiese vergelykings op te los, insluitend dié met wortelvorm-oplossings',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -408,7 +408,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat rasionale eksponente demonstreer, die verband tussen breukmagte en wortels, en die toepassing van eksponentwette met breukeksponente" />',
+        'Kort video wat rasionale eksponente demonstreer, die verband tussen breukmagte en wortels, en die toepassing van eksponentwette met breukeksponente',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -548,7 +548,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om wortelvorme te vereenvoudig en dan op te tel, af te trek, te vermenigvuldig, en die noemer te rasionaliseer wanneer wortelvorme gedeel word" />',
+        'Kort video wat wys hoe om wortelvorme te vereenvoudig en dan op te tel, af te trek, te vermenigvuldig, en die noemer te rasionaliseer wanneer wortelvorme gedeel word',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -670,7 +670,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat foutmarges verduidelik, hoe om die minimum en maksimum waardes van ʼn meting met ʼn gegewe toleransie te bereken, en hoe om die interval van moontlike oppervlaktes te vind" />',
+        'Kort video wat foutmarges verduidelik, hoe om die minimum en maksimum waardes van ʼn meting met ʼn gegewe toleransie te bereken, en hoe om die interval van moontlike oppervlaktes te vind',
 
       diagramPlaceholder:
         'Getallelyndiagram wat ʼn gemete waarde met foutmarge wys, met die minimum- en maksimum-eindpunte van die interval kleurgekodeer, en ʼn reghoekvoorbeeld met albei afmetings gemerk met toleransies',
@@ -858,7 +858,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die n-de term van ʼn kwadratiese getalpatroon te vind deur eerste en tweede verskille te gebruik, en dan gelyktydige vergelykings vir a, b en c op te stel en op te los" />',
+        'Kort video wat wys hoe om die n-de term van ʼn kwadratiese getalpatroon te vind deur eerste en tweede verskille te gebruik, en dan gelyktydige vergelykings vir a, b en c op te stel en op te los',
 
       diagramPlaceholder:
         'Diagram wat ʼn getalpatroon wys met eerste verskille kleurgekodeer in blou en tweede verskille kleurgekodeer in oranje daaronder, wat lei tot die kwadratiese reël in groen',

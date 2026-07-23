@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die volle omskakelingsketting vir massa van ton na kilogram na gram na milligram wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale kilogrammeting na gemengde kg- en g-eenhede om te skakel" />',
+        'Kort video wat die volle omskakelingsketting vir massa van ton na kilogram na gram na milligram wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale kilogrammeting na gemengde kg- en g-eenhede om te skakel',
 
       diagramPlaceholder:
         'Diagram wat vier verbonde blokke vir t, kg, g en mg in ʼn ry wys, elk in sy eie kleur, met pyle gemerk × 1 000 wat elke stap verbind, wat die omskakelingsketting vir massa van ton af tot by milligram illustreer',
@@ -243,7 +243,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn resep op te skaal met ʼn skaalfaktor, gevolg deur ʼn voorbeeld wat die prys per kilogram van twee verskillende pakgroottes vergelyk om die beter waarde te vind" />',
+        'Kort video wat wys hoe om ʼn resep op te skaal met ʼn skaalfaktor, gevolg deur ʼn voorbeeld wat die prys per kilogram van twee verskillende pakgroottes vergelyk om die beter waarde te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -342,7 +342,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor massa uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar opgetel, afgetrek, vermenigvuldig of gedeel word om die finale antwoord te kry" />',
+        'Kort video wat ʼn multistap-woordprobleem oor massa uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar opgetel, afgetrek, vermenigvuldig of gedeel word om die finale antwoord te kry',
     },
   ],
 

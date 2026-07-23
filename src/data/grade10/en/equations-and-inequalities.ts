@@ -87,7 +87,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve linear equations with fractions and brackets using LCM and inverse operations" />',
+        'Short video showing how to solve linear equations with fractions and brackets using LCM and inverse operations',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -162,7 +162,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve quadratic equations by factorisation using the zero product property and the a×c method" />',
+        'Short video showing how to solve quadratic equations by factorisation using the zero product property and the a×c method',
 
       diagramPlaceholder:
         'X-box diagram for 2x² + 3x − 20 = 0 showing a×c = −40 at top, b = 3 at bottom, and the two numbers −5 and 8 at the sides, leading through splitting and grouping to the factorised form (x + 4)(2x − 5) = 0 and solutions x = −4 or x = 5/2',
@@ -286,7 +286,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use the quadratic formula and how the discriminant tells you the number of real solutions" />',
+        'Short video showing how to use the quadratic formula and how the discriminant tells you the number of real solutions',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -355,7 +355,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to change the subject of a formula using inverse operations treating other variables as constants" />',
+        'Short video showing how to change the subject of a formula using inverse operations treating other variables as constants',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -439,7 +439,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve linear inequalities including sign reversal and how to solve simultaneous equations by substitution and graphically" />',
+        'Short video showing how to solve linear inequalities including sign reversal and how to solve simultaneous equations by substitution and graphically',
 
       diagramPlaceholder:
         'Cartesian plane showing the lines y = x + 3 (blue) and y = −x + 7 (orange) intersecting at the point (2, 5), marked in green',
@@ -586,7 +586,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve quadratic inequalities using a sign diagram and how to solve rational inequalities while always excluding the denominator-zero value" />',
+        'Short video showing how to solve quadratic inequalities using a sign diagram and how to solve rational inequalities while always excluding the denominator-zero value',
 
       diagramPlaceholder:
         'Number line showing the solution to (2x + 1)/(x − 3) ≥ 0: a closed (filled) circle at x = −1/2 with shading to the left, and an open circle at x = 3 (always excluded, denominator zero) with shading to the right',

@@ -96,7 +96,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn lynstuk te halveer en ʼn loodregte lyn te konstrueer met ʼn passer en liniaal, met passerboë in blou, halveerlyn in groen en loodregte lyn in oranje" />',
+        'Kort video wat wys hoe om ʼn lynstuk te halveer en ʼn loodregte lyn te konstrueer met ʼn passer en liniaal, met passerboë in blou, halveerlyn in groen en loodregte lyn in oranje',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -197,7 +197,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn gelyksydige driehoek en ʼn 60°-hoek te konstrueer met slegs ʼn passer en liniaal, met passerboë in blou, gekonstrueerde vorm in groen en hoekmerke in oranje" />',
+        'Kort video wat wys hoe om ʼn gelyksydige driehoek en ʼn 60°-hoek te konstrueer met slegs ʼn passer en liniaal, met passerboë in blou, gekonstrueerde vorm in groen en hoekmerke in oranje',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -287,7 +287,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om al drie hoeke van ʼn driehoek met ʼn passer te halveer, met die oorspronklike hoek in blou, halveerlyn in groen en binnesentrum in oranje" />',
+        'Kort video wat wys hoe om al drie hoeke van ʼn driehoek met ʼn passer te halveer, met die oorspronklike hoek in blou, halveerlyn in groen en binnesentrum in oranje',
     },
   ],
 

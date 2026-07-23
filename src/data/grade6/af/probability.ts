@@ -118,7 +118,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die waarskynlikheidskaal van 0 tot 1 verduidelik met alledaagse voorbeelde van onmoontlike, onwaarskynlike, ewe waarskynlike, waarskynlike en sekere gebeurtenisse" />',
+        'Kort video wat die waarskynlikheidskaal van 0 tot 1 verduidelik met alledaagse voorbeelde van onmoontlike, onwaarskynlike, ewe waarskynlike, waarskynlike en sekere gebeurtenisse',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -217,7 +217,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om herhaalde proewe van ʼn muntstuk-, dobbelsteen- of wieletjie-eksperiment uit te voer, resultate met ʼn telstreep aan te teken, eksperimentele frekwensie te bereken, en resultate van ʼn klein aantal proewe met ʼn groter aantal proewe te vergelyk" />',
+        'Kort video wat wys hoe om herhaalde proewe van ʼn muntstuk-, dobbelsteen- of wieletjie-eksperiment uit te voer, resultate met ʼn telstreep aan te teken, eksperimentele frekwensie te bereken, en resultate van ʼn klein aantal proewe met ʼn groter aantal proewe te vergelyk',
 
       diagramPlaceholder:
         'ʼn Telstreep- en frekwensietabel vir 20 muntgooie wat kop- en stert-telstrepe, hul frekwensies en die totaal wys, saam met ʼn vergelyking van eksperimentele waarskynlikheid na 10 proewe teenoor 50 proewe',
@@ -280,7 +280,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om waarskynlikheid as ʼn breuk te skryf deur gunstige uitkomste oor totale uitkomste te gebruik, met uitgewerkte voorbeelde" />',
+        'Kort video wat wys hoe om waarskynlikheid as ʼn breuk te skryf deur gunstige uitkomste oor totale uitkomste te gebruik, met uitgewerkte voorbeelde',
 
       diagramPlaceholder:
         'Diagram wat ʼn sak met 4 rooi en 6 blou balle wys, met gunstige uitkomste in groen en totale uitkomste in blou gemerk, en die waarskynlikheidsbreuk in oranje',
@@ -343,7 +343,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om al die uitkomste vir enkel- en saamgestelde gebeurtenisse te lys en dit te gebruik om waarskynlikheid te bereken" />',
+        'Kort video wat wys hoe om al die uitkomste vir enkel- en saamgestelde gebeurtenisse te lys en dit te gebruik om waarskynlikheid te bereken',
 
       diagramPlaceholder:
         'Diagram wat ʼn steekproefruimtetabel vir ʼn muntgooi en ʼn dobbelsteengooi wys, met al 12 uitkomste gelys — uitkomste in blou, gunstige uitkomste in groen, totaal in oranje',

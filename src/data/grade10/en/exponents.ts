@@ -144,7 +144,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the five laws of exponents for integral exponents with worked examples including negative and zero exponents" />',
+        'Short video explaining the five laws of exponents for integral exponents with worked examples including negative and zero exponents',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to simplify surds by extracting the largest perfect square factor and how to locate a surd between two consecutive integers" />',
+        'Short video showing how to simplify surds by extracting the largest perfect square factor and how to locate a surd between two consecutive integers',
       diagramPlaceholder:
         'Number line from 4 to 7 with √30 marked between the integers 5 and 6, and the perfect squares 5² = 25 and 6² = 36 labelled to show why 5 < √30 < 6',
 
@@ -391,7 +391,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between rational and irrational numbers using perfect squares and non-perfect squares as examples" />',
+        'Short video explaining the difference between rational and irrational numbers using perfect squares and non-perfect squares as examples',
       diagramPlaceholder:
         'Diagram showing the set of Real Numbers divided into two non-overlapping regions — Rational numbers (integers, terminating/repeating decimals) in blue and Irrational numbers (surds, π, non-repeating decimals) in red',
 
@@ -535,7 +535,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing when to use exact surd form versus decimal approximation and how to round irrational numbers to a given number of decimal places" />',
+        'Short video showing when to use exact surd form versus decimal approximation and how to round irrational numbers to a given number of decimal places',
       diagramPlaceholder:
         'Number line zoomed between 4 and 5 showing √20 marked at its position (≈4.47213…), rounding to 4.47 to 2 decimal places',
 

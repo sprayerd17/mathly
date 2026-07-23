@@ -162,7 +162,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide a cubic polynomial by a linear factor using polynomial long division with colour coded quotient terms and subtraction steps" />',
+        'Short video showing how to divide a cubic polynomial by a linear factor using polynomial long division with colour coded quotient terms and subtraction steps',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -292,7 +292,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the Remainder Theorem and Factor Theorem with colour coded test value substitutions and factor conclusions for cubic polynomials" />',
+        'Short video explaining the Remainder Theorem and Factor Theorem with colour coded test value substitutions and factor conclusions for cubic polynomials',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -430,7 +430,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to fully factorise a cubic polynomial by finding a linear factor using the Factor Theorem then dividing and factorising the quadratic quotient" />',
+        'Short video showing how to fully factorise a cubic polynomial by finding a linear factor using the Factor Theorem then dividing and factorising the quadratic quotient',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -495,7 +495,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve a cubic equation by fully factorising using the Factor Theorem and long division then applying the zero product property to find all three roots" />',
+        'Short video showing how to solve a cubic equation by fully factorising using the Factor Theorem and long division then applying the zero product property to find all three roots',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -565,7 +565,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to sketch a cubic graph by finding x-intercepts from the factorised form the y-intercept by substituting x=0 and the curve direction from the sign of the leading coefficient" />',
+        'Short video showing how to sketch a cubic graph by finding x-intercepts from the factorised form the y-intercept by substituting x=0 and the curve direction from the sign of the leading coefficient',
     },
   ],
 

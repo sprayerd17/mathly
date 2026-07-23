@@ -149,7 +149,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to analyse and interpret global graphs — identifying increasing, decreasing, constant sections, and maximum and minimum points" />',
+        'Short video showing how to analyse and interpret global graphs — identifying increasing, decreasing, constant sections, and maximum and minimum points',
 
       diagramPlaceholder:
         'Two example global graphs: one showing speed vs time with a rising then flat line, and one showing height vs time for a ball throw, rising to a peak then falling, with the maximum point marked in orange',
@@ -282,7 +282,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to plot ordered pairs on the Cartesian plane and draw a straight line through plotted points" />',
+        'Short video showing how to plot ordered pairs on the Cartesian plane and draw a straight line through plotted points',
 
       diagramPlaceholder:
         'Two Cartesian planes: one showing points (1,2), (2,4), (3,6) connected by an upward line through the origin for y = 2x, and one showing points (−1,3), (0,1), (1,−1) connected by a downward line for y = −2x + 1',
@@ -413,7 +413,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw a global graph from a real-life description, identifying rising, falling and flat sections" />',
+        'Short video showing how to draw a global graph from a real-life description, identifying rising, falling and flat sections',
 
       diagramPlaceholder:
         'Two simple sketched graphs: one showing a tank filling with a rising then flat line, and one showing savings rising, a sudden drop, then rising again',

@@ -109,7 +109,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat hoekverwantskappe wys wat gevorm word wanneer twee lyne sny, insluitend vertikaal-oorstaande en aangrensende supplementêre hoeke" />',
+        'Kort video wat hoekverwantskappe wys wat gevorm word wanneer twee lyne sny, insluitend vertikaal-oorstaande en aangrensende supplementêre hoeke',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -206,7 +206,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ooreenkomstige, verwisselende en ko-binnehoeke verduidelik wat gevorm word wanneer ʼn transversaal twee parallelle lyne sny" />',
+        'Kort video wat ooreenkomstige, verwisselende en ko-binnehoeke verduidelik wat gevorm word wanneer ʼn transversaal twee parallelle lyne sny',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -311,7 +311,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat meerstap-meetkundige probleemoplossing wys met behulp van ooreenkomstige, verwisselende en ko-binnehoekverwantskappe" />',
+        'Kort video wat meerstap-meetkundige probleemoplossing wys met behulp van ooreenkomstige, verwisselende en ko-binnehoekverwantskappe',
     },
   ],
 

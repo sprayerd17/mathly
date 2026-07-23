@@ -175,7 +175,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat primêre teenoor sekondêre bronne, populasie teenoor steekproef, en hoe om ʼn geskikte metode vir data-insameling te kies en te regverdig, verduidelik" />',
+        'Kort video wat primêre teenoor sekondêre bronne, populasie teenoor steekproef, en hoe om ʼn geskikte metode vir data-insameling te kies en te regverdig, verduidelik',
 
       diagramPlaceholder:
         'ʼn Vloeidiagram van die data-hanteringsiklus — stel ʼn vraag, samel data in, organiseer data, stel data voor, ontleed en interpreteer — as ʼn herhalende siklus met die data-insamelingstadium in blou uitgelig',
@@ -306,7 +306,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik hoe om uitskieters te identifiseer en data volgens veelvuldige kriteria te organiseer om verborge patrone in datastelle te onthul" />',
+        'Kort video wat verduidelik hoe om uitskieters te identifiseer en data volgens veelvuldige kriteria te organiseer om verborge patrone in datastelle te onthul',
 
       diagramPlaceholder:
         'ʼn Tweerigting-tabel wat data volgens twee kriteria gelyktydig groepeer — geslag oor rye en slaag/druip-status oor kolomme, met tellings in elke sel en ry-/kolomtotale',
@@ -456,7 +456,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om staafgrafieke, dubbelstaafgrafieke, histogramme, sirkeldiagramme en gebroke-lyngrafieke met die hand te konstrueer en te lees" />',
+        'Kort video wat wys hoe om staafgrafieke, dubbelstaafgrafieke, histogramme, sirkeldiagramme en gebroke-lyngrafieke met die hand te konstrueer en te lees',
 
       diagramPlaceholder:
         'ʼn Rooster van vier klein grafieke langs mekaar — ʼn staafgrafiek met gapings tussen stawe, ʼn histogram met rakende stawe, ʼn sirkeldiagram met gemerkte persentasie-snitte, en ʼn gebroke-lyngrafiek met punte wat deur reguit segmente verbind is',
@@ -586,7 +586,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om spreidingsdiagramme te teken en te interpreteer en positiewe, negatiewe en geen korrelasie uit die patroon van datapunte te identifiseer" />',
+        'Kort video wat wys hoe om spreidingsdiagramme te teken en te interpreteer en positiewe, negatiewe en geen korrelasie uit die patroon van datapunte te identifiseer',
 
       diagramPlaceholder:
         'Twee spreidingsdiagramme langs mekaar — een wat positiewe korrelasie wys (punte wat van links na regs styg) en een wat negatiewe korrelasie wys (punte wat van links na regs val), elk met ʼn duidelike neigingslyn',
@@ -685,7 +685,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om twee datastelle te vergelyk met behulp van gemiddelde en variasiewydte en hoe om ʼn kort vergelykingsparagraaf met ʼn gevolgtrekking te skryf" />',
+        'Kort video wat wys hoe om twee datastelle te vergelyk met behulp van gemiddelde en variasiewydte en hoe om ʼn kort vergelykingsparagraaf met ʼn gevolgtrekking te skryf',
 
       diagramPlaceholder:
         'Twee kant-langs-kant staafgrafieke wat twee verskillende datastelle met dieselfde gemiddelde maar verskillende variasiewydtes verteenwoordig, vir visuele vergelyking van verspreiding',

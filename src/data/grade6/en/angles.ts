@@ -152,7 +152,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify and classify acute right obtuse straight reflex angles and revolutions with examples" />',
+        'Short video showing how to identify and classify acute right obtuse straight reflex angles and revolutions with examples',
 
       diagramPlaceholder:
         'The six angle types compared side by side by how wide they open — acute, right, obtuse, straight, reflex and revolution.',
@@ -288,7 +288,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to place a protractor on a vertex align the baseline and read the correct scale to measure an angle" />',
+        'Short video showing how to place a protractor on a vertex align the baseline and read the correct scale to measure an angle',
 
       diagramPlaceholder:
         'A protractor with its centre point on the vertex, baseline aligned with one arm, and the other arm\'s reading of 65° highlighted in orange.',
@@ -419,7 +419,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use the angle sum on a straight line 180 degrees and around a point 360 degrees to find unknown angles" />',
+        'Short video showing how to use the angle sum on a straight line 180 degrees and around a point 360 degrees to find unknown angles',
 
       diagramPlaceholder:
         'Two diagrams side by side — angles a, b and x on a straight line summing to 180°, and angles a, b, c and y around a point summing to 360°, with known angles in blue and the unknown angle in red.',

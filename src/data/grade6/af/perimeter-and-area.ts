@@ -134,7 +134,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die omtrek van reëlmatige en onreëlmatige veelhoeke te vind deur sylengtes op te tel of te vermenigvuldig" />',
+        'Kort video wat wys hoe om die omtrek van reëlmatige en onreëlmatige veelhoeke te vind deur sylengtes op te tel of te vermenigvuldig',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -251,7 +251,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn reghoek en ʼn vierkant te bereken met die formules lengte maal breedte en sy in die kwadraat" />',
+        'Kort video wat wys hoe om die oppervlakte van ʼn reghoek en ʼn vierkant te bereken met die formules lengte maal breedte en sy in die kwadraat',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -353,7 +353,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn driehoek te bereken met behulp van die helfte maal basis maal hoogte, met die loodregte hoogte uitgelig" />',
+        'Kort video wat wys hoe om die oppervlakte van ʼn driehoek te bereken met behulp van die helfte maal basis maal hoogte, met die loodregte hoogte uitgelig',
     },
   ],
 

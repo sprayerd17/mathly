@@ -144,7 +144,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die vyf wette van eksponente vir heelgetal-eksponente verduidelik met uitgewerkte voorbeelde wat negatiewe en nul-eksponente insluit" />',
+        'Kort video wat die vyf wette van eksponente vir heelgetal-eksponente verduidelik met uitgewerkte voorbeelde wat negatiewe en nul-eksponente insluit',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om wortelvorme te vereenvoudig deur die grootste volkome-vierkant-faktor uit te haal en hoe om ʼn wortelvorm tussen twee opeenvolgende heelgetalle te plaas" />',
+        'Kort video wat wys hoe om wortelvorme te vereenvoudig deur die grootste volkome-vierkant-faktor uit te haal en hoe om ʼn wortelvorm tussen twee opeenvolgende heelgetalle te plaas',
       diagramPlaceholder:
         'Getallelyn van 4 tot 7 met √30 gemerk tussen die heelgetalle 5 en 6, en die volkome vierkante 5² = 25 en 6² = 36 gemerk om te wys waarom 5 < √30 < 6',
 
@@ -391,7 +391,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verskil tussen rasionale en irrasionale getalle verduidelik deur volkome vierkante en nie-volkome vierkante as voorbeelde te gebruik" />',
+        'Kort video wat die verskil tussen rasionale en irrasionale getalle verduidelik deur volkome vierkante en nie-volkome vierkante as voorbeelde te gebruik',
       diagramPlaceholder:
         'Diagram wat die versameling Reële Getalle in twee nie-oorvleuelende gebiede verdeel — Rasionale getalle (heelgetalle, eindigende/herhalende desimale) in blou en Irrasionale getalle (wortelvorme, π, nie-herhalende desimale) in rooi',
 
@@ -535,7 +535,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys wanneer om presiese wortelvorm teenoor desimale benadering te gebruik en hoe om irrasionale getalle tot ʼn gegewe aantal desimale plekke af te rond" />',
+        'Kort video wat wys wanneer om presiese wortelvorm teenoor desimale benadering te gebruik en hoe om irrasionale getalle tot ʼn gegewe aantal desimale plekke af te rond',
       diagramPlaceholder:
         'Getallelyn ingezoem tussen 4 en 5 wat √20 by sy posisie (≈4,47213…) merk, wat afrond na 4,47 tot 2 desimale plekke',
 

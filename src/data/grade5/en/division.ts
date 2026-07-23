@@ -167,7 +167,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how multiplication fact families help solve division problems with larger numbers up to 12 x 12" />',
+        'Short video showing how multiplication fact families help solve division problems with larger numbers up to 12 x 12',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -338,7 +338,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><text x="71" y="14" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">6</text><text x="97" y="14" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">0</text><text x="123" y="14" font-weight="700" font-size="16" text-anchor="middle" fill="#dc2626">9</text><line x1="32" y1="20" x2="140" y2="20" stroke="#0f1f3d" stroke-width="2"/><line x1="32" y1="20" x2="32" y2="100" stroke="#0f1f3d" stroke-width="2"/><text x="18" y="40" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">4</text><text x="45" y="36" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">2</text><text x="71" y="36" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">4</text><text x="97" y="36" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">3</text><text x="123" y="36" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">6</text><text x="38" y="50" font-weight="700" font-size="13" fill="#2563eb">− 24</text><line x1="38" y1="55" x2="84" y2="55" stroke="#0f1f3d" stroke-width="1.5"/><text x="71" y="68" font-weight="700" font-size="15" text-anchor="middle" fill="#16a34a">0</text><text x="97" y="68" font-weight="700" font-size="15" text-anchor="middle" fill="#ea580c">3</text><text x="84" y="82" font-weight="700" font-size="13" fill="#2563eb">− 0</text><line x1="84" y1="87" x2="110" y2="87" stroke="#0f1f3d" stroke-width="1.5"/><text x="97" y="100" font-weight="700" font-size="15" text-anchor="middle" fill="#16a34a">3</text><text x="123" y="100" font-weight="700" font-size="15" text-anchor="middle" fill="#ea580c">6</text><text x="84" y="114" font-weight="700" font-size="13" fill="#2563eb">− 36</text><line x1="84" y1="119" x2="136" y2="119" stroke="#0f1f3d" stroke-width="1.5"/><text x="123" y="132" font-weight="700" font-size="15" text-anchor="middle" fill="#16a34a">0</text><text x="110" y="155" font-weight="700" font-size="14" text-anchor="middle" fill="#0f1f3d">2 436 ÷ 4 = 609</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing step by step long division of a 4-digit number by a 1-digit number with colour coded steps" />',
+        'Short video showing step by step long division of a 4-digit number by a 1-digit number with colour coded steps',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -520,7 +520,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 220 175" xmlns="http://www.w3.org/2000/svg"><text x="85" y="14" font-weight="700" font-size="16" text-anchor="middle" fill="#7c3aed">6</text><text x="115" y="14" font-weight="700" font-size="16" text-anchor="middle" fill="#7c3aed">3</text><line x1="40" y1="20" x2="150" y2="20" stroke="#0f1f3d" stroke-width="2"/><line x1="40" y1="20" x2="40" y2="95" stroke="#0f1f3d" stroke-width="2"/><text x="18" y="40" font-weight="700" font-size="15" text-anchor="middle" fill="#0f1f3d">12</text><text x="55" y="36" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">7</text><text x="85" y="36" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">5</text><text x="115" y="36" font-weight="700" font-size="16" text-anchor="middle" fill="#0f1f3d">6</text><text x="45" y="50" font-weight="700" font-size="13" fill="#2563eb">− 72</text><line x1="45" y1="55" x2="100" y2="55" stroke="#0f1f3d" stroke-width="1.5"/><text x="85" y="68" font-weight="700" font-size="15" text-anchor="middle" fill="#16a34a">3</text><text x="115" y="68" font-weight="700" font-size="15" text-anchor="middle" fill="#ea580c">6</text><text x="78" y="82" font-weight="700" font-size="13" fill="#2563eb">− 36</text><line x1="78" y1="87" x2="130" y2="87" stroke="#0f1f3d" stroke-width="1.5"/><text x="115" y="100" font-weight="700" font-size="15" text-anchor="middle" fill="#16a34a">0</text><text x="95" y="122" font-weight="700" font-size="14" text-anchor="middle" fill="#0f1f3d">756 ÷ 12 = 63</text><text x="95" y="140" font-size="10" text-anchor="middle" fill="#6b7280"><tspan x="95" dy="0">Estimate: round 12 to 10,</tspan><tspan x="95" dy="13">then try and adjust</tspan></text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide a 3-digit number by a 2-digit number using estimation and long division" />',
+        'Short video showing how to divide a 3-digit number by a 2-digit number using estimation and long division',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -827,7 +827,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to interpret remainders in context and solve division word problems by identifying sharing and grouping situations" />',
+        'Short video showing how to interpret remainders in context and solve division word problems by identifying sharing and grouping situations',
     },
   ],
 

@@ -118,7 +118,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the probability scale from 0 to 1 with everyday examples of impossible unlikely equally likely likely and certain events" />',
+        'Short video explaining the probability scale from 0 to 1 with everyday examples of impossible unlikely equally likely likely and certain events',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -217,7 +217,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to carry out repeated trials of a coin, dice or spinner experiment, record results with a tally, calculate experimental frequency, and compare results from a small number of trials to a larger number of trials" />',
+        'Short video showing how to carry out repeated trials of a coin, dice or spinner experiment, record results with a tally, calculate experimental frequency, and compare results from a small number of trials to a larger number of trials',
 
       diagramPlaceholder:
         'A tally and frequency table for 20 coin flips showing heads and tails tally marks, their frequencies, and the total, alongside a comparison of experimental probability after 10 trials versus 50 trials',
@@ -280,7 +280,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to write probability as a fraction using favourable outcomes over total outcomes with worked examples" />',
+        'Short video showing how to write probability as a fraction using favourable outcomes over total outcomes with worked examples',
 
       diagramPlaceholder:
         'Diagram showing a bag with 4 red and 6 blue balls labelling favourable outcomes green and total outcomes blue with the probability fraction orange',
@@ -343,7 +343,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to list all outcomes for single and combined events and use them to calculate probability" />',
+        'Short video showing how to list all outcomes for single and combined events and use them to calculate probability',
 
       diagramPlaceholder:
         'Diagram showing a sample space table for flipping a coin and rolling a dice with all 12 outcomes listed outcomes blue favourable outcomes green total orange',

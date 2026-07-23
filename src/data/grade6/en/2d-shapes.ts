@@ -222,7 +222,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to classify triangles by their sides and angles and how to find a missing angle using the 180 degree rule" />',
+        'Short video explaining how to classify triangles by their sides and angles and how to find a missing angle using the 180 degree rule',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -435,7 +435,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the properties of different quadrilaterals and how to find a missing angle using the 360 degree rule" />',
+        'Short video explaining the properties of different quadrilaterals and how to find a missing angle using the 360 degree rule',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -609,7 +609,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify the properties of a circle and how to draw an accurate circle and simple circle patterns using a compass" />',
+        'Short video showing how to identify the properties of a circle and how to draw an accurate circle and simple circle patterns using a compass',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -774,7 +774,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to find the sum of interior angles using the formula (number of sides minus 2) times 180 degrees with worked examples" />',
+        'Short video explaining how to find the sum of interior angles using the formula (number of sides minus 2) times 180 degrees with worked examples',
     },
   ],
   resultsConfig: {

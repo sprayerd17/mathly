@@ -129,7 +129,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a binomial by a trinomial using distribution with colour coded first term blue and second term orange then combining like terms green" />',
+        'Short video showing how to multiply a binomial by a trinomial using distribution with colour coded first term blue and second term orange then combining like terms green',
 
       diagramPlaceholder:
         'Distribution diagram for (x + 2)(x² + 3x − 5) showing six arrows from each binomial term (x and +2) to each trinomial term (x², 3x, −5), colour coded blue for x and orange for +2',
@@ -292,7 +292,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to factorise trinomials using the sum-product method for a=1 and the a×c method for a≠1 with colour coded a×c value orange and split terms blue" />',
+        'Short video showing how to factorise trinomials using the sum-product method for a=1 and the a×c method for a≠1 with colour coded a×c value orange and split terms blue',
 
       diagramPlaceholder:
         'X-box diagram for 3x² + 11x + 6 showing a×c = 18 at top, b = 11 at bottom, and the two numbers 9 and 2 at the sides, leading to the split and factored form (3x + 2)(x + 3)',
@@ -422,7 +422,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to factorise a four-term expression by grouping in pairs with first pair colour coded red and second pair purple and common binomial green" />',
+        'Short video showing how to factorise a four-term expression by grouping in pairs with first pair colour coded red and second pair purple and common binomial green',
 
       diagramPlaceholder:
         'Flowchart for x³ + 3x² − 4x − 12 showing the first pair red, second pair purple, their factored forms, converging on the common binomial factor, and the final fully factored answer in green',
@@ -576,7 +576,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to simplify add and subtract algebraic fractions with monomial denominators using LCM colour coded orange with converted fractions blue and simplified answer green" />',
+        'Short video showing how to simplify add and subtract algebraic fractions with monomial denominators using LCM colour coded orange with converted fractions blue and simplified answer green',
     },
   ],
 

@@ -88,7 +88,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die vier minimum voorwaardes vir kongruente driehoeke verduidelik — SSS, SHS, HHS en R.S. — met visuele voorbeelde" />',
+        'Kort video wat die vier minimum voorwaardes vir kongruente driehoeke verduidelik — SSS, SHS, HHS en R.S. — met visuele voorbeelde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -157,7 +157,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die twee minimum voorwaardes vir gelykvormige driehoeke verduidelik — HH en SSS-eweredigheid — met visuele voorbeelde" />',
+        'Kort video wat die twee minimum voorwaardes vir gelykvormige driehoeke verduidelik — HH en SSS-eweredigheid — met visuele voorbeelde',
 
       diagramPlaceholder:
         'Twee pare gelykvormige driehoeke wat gelyke hoeke en eweredige sye wys, gemerk met hulle verhoudings',
@@ -245,7 +245,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om geometriese probleme op te los deur kongruensie- en gelykvormigheidsvoorwaardes te gebruik, met stap-vir-stap regverdigings" />',
+        'Kort video wat wys hoe om geometriese probleme op te los deur kongruensie- en gelykvormigheidsvoorwaardes te gebruik, met stap-vir-stap regverdigings',
     },
   ],
 

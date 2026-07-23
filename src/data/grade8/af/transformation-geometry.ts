@@ -140,7 +140,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om punte op ʼn koördinaatvlak te reflekteer en te transleer, met die x-as in blou, y-as in groen en gereflekteerde punt in oranje" />',
+        'Kort video wat wys hoe om punte op ʼn koördinaatvlak te reflekteer en te transleer, met die x-as in blou, y-as in groen en gereflekteerde punt in oranje',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -272,7 +272,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om driehoeke op ʼn koördinaatvlak te reflekteer en te roteer, met die oorspronklike driehoek in blou en die getransformeerde driehoek in groen" />',
+        'Kort video wat wys hoe om driehoeke op ʼn koördinaatvlak te reflekteer en te roteer, met die oorspronklike driehoek in blou en die getransformeerde driehoek in groen',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -450,7 +450,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die nuwe omtrek en oppervlakte na vergroting of verkleining met ʼn skaalfaktor te bereken, met skaalfaktor in oranje, omtrek in blou en oppervlakte in groen" />',
+        'Kort video wat wys hoe om die nuwe omtrek en oppervlakte na vergroting of verkleining met ʼn skaalfaktor te bereken, met skaalfaktor in oranje, omtrek in blou en oppervlakte in groen',
     },
   ],
   scoreMessages: [

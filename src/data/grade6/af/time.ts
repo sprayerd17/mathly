@@ -143,7 +143,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om tussen 12-uur vm./nm.-tyd en 24-uur-tyd om te skakel, met beide die oggendgeval wat dieselfde bly en die middaggeval waar 12 by die uur getel word" />',
+        'Kort video wat wys hoe om tussen 12-uur vm./nm.-tyd en 24-uur-tyd om te skakel, met beide die oggendgeval wat dieselfde bly en die middaggeval waar 12 by die uur getel word',
 
     },
 
@@ -256,7 +256,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om verstreke tyd te bereken deur in stadiums op te tel, insluitend ʼn geval waar die tydperk oor middernag na die volgende dag strek" />',
+        'Kort video wat wys hoe om verstreke tyd te bereken deur in stadiums op te tel, insluitend ʼn geval waar die tydperk oor middernag na die volgende dag strek',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -355,7 +355,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn multistap-woordprobleem oor tyd uit die regte lewe deurwerk, met ʼn rooster, verstreke tyd en ʼn afgetrekte pouse, wat eindig met ʼn finale aankoms- of afsluitingstyd" />',
+        'Kort video wat ʼn multistap-woordprobleem oor tyd uit die regte lewe deurwerk, met ʼn rooster, verstreke tyd en ʼn afgetrekte pouse, wat eindig met ʼn finale aankoms- of afsluitingstyd',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -517,7 +517,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn tydsonekaart te lees, die tydsverskil tussen twee stede te vind deur hul GMT-verskuiwings te gebruik, en die tyd in ʼn ander stad te bereken, insluitend gevalle wat na die volgende of vorige dag oorgaan" />',
+        'Kort video wat wys hoe om ʼn tydsonekaart te lees, die tydsverskil tussen twee stede te vind deur hul GMT-verskuiwings te gebruik, en die tyd in ʼn ander stad te bereken, insluitend gevalle wat na die volgende of vorige dag oorgaan',
 
       diagramPlaceholder:
         'ʼn Vereenvoudigde wêreld-tydsonekaart wat drie stede — Los Angeles, Londen en Tokio — elk gemerk met hul GMT-verskuiwing wys, met pyle wat wys oos beteken voor en wes beteken agter',

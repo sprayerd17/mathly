@@ -171,7 +171,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn punt en ʼn vorm oor ʼn vertikale of horisontale spieëllyn op ʼn koördinaatrooster te reflekteer" />',
+        'Kort video wat wys hoe om ʼn punt en ʼn vorm oor ʼn vertikale of horisontale spieëllyn op ʼn koördinaatrooster te reflekteer',
 
       diagramPlaceholder:
         'Punt (3, 5) gereflekteer oor die spieëllyn x = 7 na beeldpunt (11, 5), met die gelyke afstande van 4 eenhede vanaf die spieëllyn aan albei kante gemerk.',
@@ -340,7 +340,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn punt en ʼn vorm op ʼn koördinaatrooster te transleer met ʼn horisontale en vertikale skuif" />',
+        'Kort video wat wys hoe om ʼn punt en ʼn vorm op ʼn koördinaatrooster te transleer met ʼn horisontale en vertikale skuif',
 
       diagramPlaceholder:
         'Die oorspronklike punt (4, 6) getransleer met (3, −2), wat die horisontale skuif en vertikale skuif afsonderlik wys om by die beeldpunt (7, 4) uit te kom.',
@@ -532,7 +532,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn punt en ʼn vorm om die oorsprong 90° en 180° te roteer met koördinaatreëls, met kloksgewyse en anti-kloksgewyse voorbeelde" />',
+        'Kort video wat wys hoe om ʼn punt en ʼn vorm om die oorsprong 90° en 180° te roteer met koördinaatreëls, met kloksgewyse en anti-kloksgewyse voorbeelde',
 
       diagramPlaceholder:
         'Die oorspronklike punt (3, 2) 90° kloksgewys om die oorsprong geroteer na die beeldpunt (2, −3), met die boog van rotasie gemerk.',
@@ -696,7 +696,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om al die simmetrielyne in reëlmatige veelhoeke en letters van die alfabet te vind en te teken, met voorbeelde van verskeie simmetrielyne en voorbeelde met geen" />',
+        'Kort video wat wys hoe om al die simmetrielyne in reëlmatige veelhoeke en letters van die alfabet te vind en te teken, met voorbeelde van verskeie simmetrielyne en voorbeelde met geen',
 
       diagramSvg:
         '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">' +
@@ -847,7 +847,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vorm op ʼn rooster te vergroot en te verklein deur strale vanaf ʼn middelpunt van vergroting te gebruik, ʼn skaalfaktor toe te pas, en ooreenstemmende sye en hoeke tussen die objek en die beeld te vergelyk" />',
+        'Kort video wat wys hoe om ʼn vorm op ʼn rooster te vergroot en te verklein deur strale vanaf ʼn middelpunt van vergroting te gebruik, ʼn skaalfaktor toe te pas, en ooreenstemmende sye en hoeke tussen die objek en die beeld te vergelyk',
 
       diagramSvg:
         '<svg viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg">' +

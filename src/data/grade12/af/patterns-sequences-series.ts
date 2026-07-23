@@ -91,7 +91,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat rekenkundige rye, die algemene-term-formule Tₙ = a + (n−1)d, en hoe om enige term te vind met uitgewerkte voorbeelde verduidelik" />',
+        'Kort video wat rekenkundige rye, die algemene-term-formule Tₙ = a + (n−1)d, en hoe om enige term te vind met uitgewerkte voorbeelde verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -173,7 +173,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat meetkundige rye, die algemene-term-formule Tₙ = a · rⁿ⁻¹, en hoe om enige term te vind met uitgewerkte voorbeelde verduidelik" />',
+        'Kort video wat meetkundige rye, die algemene-term-formule Tₙ = a · rⁿ⁻¹, en hoe om enige term te vind met uitgewerkte voorbeelde verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik hoe om a en d (of a en r) te vind wanneer twee terme van ʼn ry gegee word, deur gelyktydige vergelykings te vorm en op te los met aftrekking (rekenkundig) of deling (meetkundig)" />',
+        'Kort video wat verduidelik hoe om a en d (of a en r) te vind wanneer twee terme van ʼn ry gegee word, deur gelyktydige vergelykings te vorm en op te los met aftrekking (rekenkundig) of deling (meetkundig)',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -409,7 +409,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat sigmanotasie verduidelik, hoe om ʼn sigma-uitdrukking te lees en te evalueer, en hoe om ʼn geskrewe som na sigmanotasie om te skakel" />',
+        'Kort video wat sigmanotasie verduidelik, hoe om ʼn sigma-uitdrukking te lees en te evalueer, en hoe om ʼn geskrewe som na sigmanotasie om te skakel',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -491,7 +491,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die som van ʼn rekenkundige reeks verduidelik deur Sₙ = n/2[2a + (n−1)d] en Sₙ = n/2(a + l) te gebruik, met uitgewerkte voorbeelde insluitend hoe om n vanaf die som te vind" />',
+        'Kort video wat die som van ʼn rekenkundige reeks verduidelik deur Sₙ = n/2[2a + (n−1)d] en Sₙ = n/2(a + l) te gebruik, met uitgewerkte voorbeelde insluitend hoe om n vanaf die som te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -588,7 +588,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die som van ʼn meetkundige reeks verduidelik deur Sₙ = a(rⁿ−1)/(r−1) en die som tot oneindig S∞ = a/(1−r) te gebruik, insluitend die konvergensievoorwaarde en divergente reekse" />',
+        'Kort video wat die som van ʼn meetkundige reeks verduidelik deur Sₙ = a(rⁿ−1)/(r−1) en die som tot oneindig S∞ = a/(1−r) te gebruik, insluitend die konvergensievoorwaarde en divergente reekse',
     },
   ],
   topicPractice: [

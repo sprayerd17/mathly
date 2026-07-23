@@ -90,7 +90,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik wat heelgetalle is, hoe hulle op ʼn getallelyn geplaas word, en voorbeelde van negatiewe getalle uit die alledaagse lewe" />',
+        'Kort video wat verduidelik wat heelgetalle is, hoe hulle op ʼn getallelyn geplaas word, en voorbeelde van negatiewe getalle uit die alledaagse lewe',
 
       diagramPlaceholder:
         'Getallelyn van -10 tot +10 met negatiewe heelgetalle in rooi uitgelig, nul in groen uitgelig, en positiewe heelgetalle in blou uitgelig',
@@ -191,7 +191,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om heelgetalle op ʼn getallelyn van kleinste na grootste te orden, insluitend negatiewe getalle" />',
+        'Kort video wat wys hoe om heelgetalle op ʼn getallelyn van kleinste na grootste te orden, insluitend negatiewe getalle',
 
       diagramPlaceholder:
         'Getallelyn wat die versameling -12, -5, 0, 3, 7 in volgorde geplaas toon met pyle wat die kleinste links en die grootste regs aandui',
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die optel en aftrek van heelgetalle met ʼn getallelyn demonstreer, wat dieselfde teken, verskillende tekens, en aftrek van negatiewe getalle dek" />',
+        'Kort video wat die optel en aftrek van heelgetalle met ʼn getallelyn demonstreer, wat dieselfde teken, verskillende tekens, en aftrek van negatiewe getalle dek',
 
       diagramPlaceholder:
         'Getallelyn wat -7 + (-4) = -11 toon met pyle wat vanaf -7 na links beweeg vir 4 verdere stappe, dieselfde-teken-bewerking kleurgekodeer in blou',
@@ -415,7 +415,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die tekenreëls vir die vermenigvuldiging en deling van heelgetalle verduidelik met uitgewerkte voorbeelde wat dieselfde teken en verskillende tekens toon" />',
+        'Kort video wat die tekenreëls vir die vermenigvuldiging en deling van heelgetalle verduidelik met uitgewerkte voorbeelde wat dieselfde teken en verskillende tekens toon',
     },
   ],
 

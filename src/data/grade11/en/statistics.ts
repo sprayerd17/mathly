@@ -93,7 +93,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the five number summary and draw a box and whisker diagram for a data set" />',
+        'Short video showing how to find the five number summary and draw a box and whisker diagram for a data set',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -166,7 +166,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw an ogive from a frequency table and use it to estimate the median and quartiles" />',
+        'Short video showing how to draw an ogive from a frequency table and use it to estimate the median and quartiles',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -252,7 +252,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate variance and standard deviation by hand and using a Casio fx-82 calculator" />',
+        'Short video showing how to calculate variance and standard deviation by hand and using a Casio fx-82 calculator',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -324,7 +324,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining symmetric positively skewed and negatively skewed data using box and whisker diagrams" />',
+        'Short video explaining symmetric positively skewed and negatively skewed data using box and whisker diagrams',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -397,7 +397,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><line x1="55" y1="25" x2="55" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="355" y2="245" stroke="#0f1f3d" stroke-width="2"/><line x1="55" y1="245" x2="55" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="55" y="263" font-size="11" fill="#374151" text-anchor="middle">0</text><line x1="105" y1="245" x2="105" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="105" y="263" font-size="11" fill="#374151" text-anchor="middle">10</text><line x1="155" y1="245" x2="155" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="155" y="263" font-size="11" fill="#374151" text-anchor="middle">20</text><line x1="205" y1="245" x2="205" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="205" y="263" font-size="11" fill="#374151" text-anchor="middle">30</text><line x1="255" y1="245" x2="255" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="255" y="263" font-size="11" fill="#374151" text-anchor="middle">40</text><line x1="305" y1="245" x2="305" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="305" y="263" font-size="11" fill="#374151" text-anchor="middle">50</text><line x1="355" y1="245" x2="355" y2="250" stroke="#0f1f3d" stroke-width="1.5"/><text x="355" y="263" font-size="11" fill="#374151" text-anchor="middle">60</text><line x1="55" y1="190" x2="355" y2="25" stroke="#16a34a" stroke-width="2.5"/><circle cx="105" cy="176.25" r="3.5" fill="#2563eb"/><text x="105" y="166.25" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(10, 50)</text><circle cx="155" cy="148.75" r="3.5" fill="#2563eb"/><text x="155" y="138.75" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(20, 70)</text><circle cx="205" cy="114.375" r="3.5" fill="#2563eb"/><text x="205" y="104.375" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(30, 95)</text><circle cx="255" cy="93.75" r="3.5" fill="#2563eb"/><text x="255" y="83.75" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(40, 110)</text><circle cx="305" cy="52.5" r="3.5" fill="#2563eb"/><text x="305" y="42.5" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">(50, 140)</text><circle cx="355" cy="31.875" r="3.5" fill="#2563eb"/><text x="350" y="21.875" font-size="11" fill="#2563eb" font-weight="700" text-anchor="end">(60, 155)</text><text x="205" y="292" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Advertising spend (R thousands)</text><text x="14" y="135" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle" transform="rotate(-90 14 135)">Sales (R thousands)</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw and interpret scatter plots and identify linear quadratic and exponential trends in bivariate data" />',
+        'Short video showing how to draw and interpret scatter plots and identify linear quadratic and exponential trends in bivariate data',
     },
   ],
 

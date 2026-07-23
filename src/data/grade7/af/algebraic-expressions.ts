@@ -174,7 +174,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik wat ʼn algebraïese uitdrukking is, terme, koëffisiënte en konstantes identifiseer, en wys hoe om ʼn uitdrukking te bereken deur ʼn waarde vir die veranderlike te vervang" />',
+        'Kort video wat verduidelik wat ʼn algebraïese uitdrukking is, terme, koëffisiënte en konstantes identifiseer, en wys hoe om ʼn uitdrukking te bereken deur ʼn waarde vir die veranderlike te vervang',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -264,7 +264,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verskil tussen gelyksoortige en ongelyksoortige terme verduidelik met kleurkodering en wys waarom terme met verskillende veranderlikes of verskillende magte nie gekombineer kan word nie" />',
+        'Kort video wat die verskil tussen gelyksoortige en ongelyksoortige terme verduidelik met kleurkodering en wys waarom terme met verskillende veranderlikes of verskillende magte nie gekombineer kan word nie',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -435,7 +435,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat demonstreer hoe om algebraïese uitdrukkings te vereenvoudig deur gelyksoortige terme met passende kleure te groepeer en hul koëffisiënte stap vir stap te kombineer" />',
+        'Kort video wat demonstreer hoe om algebraïese uitdrukkings te vereenvoudig deur gelyksoortige terme met passende kleure te groepeer en hul koëffisiënte stap vir stap te kombineer',
     },
   ],
   scoreMessages: [

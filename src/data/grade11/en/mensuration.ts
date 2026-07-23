@@ -173,7 +173,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating why surface area scales by k squared and volume scales by k cubed when every dimension of a solid is multiplied by a constant factor k, using a doubled cube as a visual example" />',
+        'Short video demonstrating why surface area scales by k squared and volume scales by k cubed when every dimension of a solid is multiplied by a constant factor k, using a doubled cube as a visual example',
 
       diagramPlaceholder:
         'Diagram showing a small cube next to a larger cube with sides scaled by factor k, with the surface area labelled as scaling by k squared and the volume labelled as scaling by k cubed',
@@ -308,7 +308,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a cylinder with a cone-shaped cavity drilled out of the top, demonstrating how to subtract the removed volume from the outer solid, followed by an example with an added hemisphere and a removed cylindrical hole in the same solid" />',
+        'Short video showing a cylinder with a cone-shaped cavity drilled out of the top, demonstrating how to subtract the removed volume from the outer solid, followed by an example with an added hemisphere and a removed cylindrical hole in the same solid',
 
       diagramPlaceholder:
         'Diagram of a solid cylinder with a cone shaped hole highlighted in purple drilled into the top surface, and a second diagram showing a cube with a hemisphere added on top and a thin cylindrical hole removed through the middle',
@@ -438,7 +438,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a real-world word problem step by step, showing how to decide between volume and surface area based on the wording, then converting units and applying a cost rate to reach a final rand amount" />',
+        'Short video working through a real-world word problem step by step, showing how to decide between volume and surface area based on the wording, then converting units and applying a cost rate to reach a final rand amount',
 
       diagramPlaceholder:
         'Side-by-side diagram of two real-world cylinders: a water tank (radius 1.4 m, height 2 m) shaded to show it filling with water, labelled "Use Volume" for capacity, next to a paint can (radius 5 cm, height 12 cm) with its curved surface highlighted and a paint roller icon, labelled "Use Surface Area" for the cost of paint',

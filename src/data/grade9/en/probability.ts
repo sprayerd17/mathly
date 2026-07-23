@@ -81,7 +81,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to set up and use a two-way table to list all outcomes of a compound event and calculate probability" />',
+        'Short video showing how to set up and use a two-way table to list all outcomes of a compound event and calculate probability',
 
       diagramPlaceholder:
         'A two-way table with coin flip outcomes (heads/tails) as rows and dice outcomes (1-6) as columns, with all 12 combinations shown in the grid and the two favourable (heads, >4) cells highlighted',
@@ -160,7 +160,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw a tree diagram for a compound event and multiply probabilities along branch paths" />',
+        'Short video showing how to draw a tree diagram for a compound event and multiply probabilities along branch paths',
 
       diagramPlaceholder:
         'A tree diagram showing two coin flips, with branches for heads and tails at each stage, and probabilities labelled on each branch leading to four final outcomes each with combined probability 1/4',
@@ -238,7 +238,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to predict relative frequency for compound events and compare with theoretical probability, explaining natural variation" />',
+        'Short video showing how to predict relative frequency for compound events and compare with theoretical probability, explaining natural variation',
 
       diagramPlaceholder:
         'A comparison showing predicted frequency versus actual frequency for a two-coin flip experiment (80 flips), plus a graph illustrating how the relative frequency converges toward the theoretical probability of 1/4 as the number of trials increases',

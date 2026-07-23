@@ -139,7 +139,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om heelgetalle en breuke deur ʼn gewone breuk te deel met die resiprookmetode" />',
+        'Kort video wat wys hoe om heelgetalle en breuke deur ʼn gewone breuk te deel met die resiprookmetode',
 
       diagramPlaceholder:
         'Diagram wat die deler 2/3 omgekeer wys as sy resiprook 3/2, wat a ÷ b/c = a × c/b illustreer',
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van gewone breuke te bereken deur bewerkings apart op teller en noemer toe te pas" />',
+        'Kort video wat wys hoe om kwadrate, kubusse, vierkantswortels en kubuswortels van gewone breuke te bereken deur bewerkings apart op teller en noemer toe te pas',
 
       diagramPlaceholder:
         'Oppervlaktemodel van ʼn 3-by-3-rooster met ʼn 2-by-3-geskakeerde blok wat (2/3)² = 4/9 wys',
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om groeperings- en delingsprobleme met gewone breuke en gemengde getalle op te los" />',
+        'Kort video wat wys hoe om groeperings- en delingsprobleme met gewone breuke en gemengde getalle op te los',
 
       diagramPlaceholder:
         'Staafmodel van ʼn 6½ m tou gesny in agt stukke van 3/4 m, met die kort oorblywende stuk apart gewys',

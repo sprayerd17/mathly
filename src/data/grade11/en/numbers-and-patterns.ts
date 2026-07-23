@@ -113,7 +113,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining non-real numbers and how to identify equations with no real solutions using the discriminant" />',
+        'Short video explaining non-real numbers and how to identify equations with no real solutions using the discriminant',
 
       diagramPlaceholder:
         'Diagram of the number system showing real numbers on the number line and indicating that non-real solutions fall outside it, with examples of equations producing each type',
@@ -276,7 +276,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video deriving the quadratic formula from completing the square, connecting it to the discriminant, and using it to solve quadratic equations including those with surd solutions" />',
+        'Short video deriving the quadratic formula from completing the square, connecting it to the discriminant, and using it to solve quadratic equations including those with surd solutions',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -408,7 +408,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating rational exponents, the connection between fractional powers and roots, and applying exponent laws with fractional exponents" />',
+        'Short video demonstrating rational exponents, the connection between fractional powers and roots, and applying exponent laws with fractional exponents',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -548,7 +548,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to simplify surds and then add, subtract, multiply, and rationalise the denominator when dividing surds" />',
+        'Short video showing how to simplify surds and then add, subtract, multiply, and rationalise the denominator when dividing surds',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -670,7 +670,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining error margins, how to calculate minimum and maximum values from a measurement with a stated tolerance, and how to find the range of possible areas" />',
+        'Short video explaining error margins, how to calculate minimum and maximum values from a measurement with a stated tolerance, and how to find the range of possible areas',
 
       diagramPlaceholder:
         'Number line diagram showing a measured value with error margin, minimum and maximum endpoints of the range colour coded, and a rectangle example with both dimensions labelled with tolerances',
@@ -858,7 +858,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the nth term of a quadratic number pattern using first and second differences, then setting up and solving simultaneous equations for a, b and c" />',
+        'Short video showing how to find the nth term of a quadratic number pattern using first and second differences, then setting up and solving simultaneous equations for a, b and c',
 
       diagramPlaceholder:
         'Diagram showing a number pattern with first differences colour coded blue and second differences colour coded orange beneath, leading to the quadratic rule shown in green',

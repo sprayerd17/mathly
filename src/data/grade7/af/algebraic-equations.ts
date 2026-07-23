@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om onbekendes in woordprobleme te identifiseer en sinne stap vir stap om te skakel in algebraïese vergelykings" />',
+        'Kort video wat wys hoe om onbekendes in woordprobleme te identifiseer en sinne stap vir stap om te skakel in algebraïese vergelykings',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,7 +261,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om een-stap vergelykings op te los met inverse bewerkings terwyl albei kante gebalanseer bly" />',
+        'Kort video wat wys hoe om een-stap vergelykings op te los met inverse bewerkings terwyl albei kante gebalanseer bly',
 
       diagramPlaceholder:
         'Balansskaal-diagram wat x + 14 = 29 wys met die inverse bewerking wat 14 van albei kante aftrek om x te isoleer',
@@ -432,7 +432,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om twee-stap vergelykings op te los deur eers optelling of aftrekking ongedaan te maak, dan vermenigvuldiging of deling, met ʼn kontrole deur substitusie" />',
+        'Kort video wat wys hoe om twee-stap vergelykings op te los deur eers optelling of aftrekking ongedaan te maak, dan vermenigvuldiging of deling, met ʼn kontrole deur substitusie',
     },
   ],
   practiceSets: [

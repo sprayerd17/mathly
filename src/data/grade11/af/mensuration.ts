@@ -173,7 +173,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat demonstreer waarom oppervlakte skaleer met k in die kwadraat en volume skaleer met k in die derde mag wanneer elke afmeting van ʼn voorwerp met ʼn konstante faktor k vermenigvuldig word, met ʼn verdubbelde kubus as visuele voorbeeld" />',
+        'Kort video wat demonstreer waarom oppervlakte skaleer met k in die kwadraat en volume skaleer met k in die derde mag wanneer elke afmeting van ʼn voorwerp met ʼn konstante faktor k vermenigvuldig word, met ʼn verdubbelde kubus as visuele voorbeeld',
 
       diagramPlaceholder:
         'Diagram wat ʼn klein kubus langs ʼn groter kubus met sye geskaleer deur faktor k wys, met die oppervlakte gemerk as skalerend met k in die kwadraat en die volume gemerk as skalerend met k in die derde mag',
@@ -314,7 +314,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn silinder met ʼn keëlvormige holte uit die boonste deel geboor wys, wat demonstreer hoe om die verwyderde volume van die buitenste voorwerp af te trek, gevolg deur ʼn voorbeeld met ʼn bygevoegde halfsfeer en ʼn verwyderde silindriese gat in dieselfde voorwerp" />',
+        'Kort video wat ʼn silinder met ʼn keëlvormige holte uit die boonste deel geboor wys, wat demonstreer hoe om die verwyderde volume van die buitenste voorwerp af te trek, gevolg deur ʼn voorbeeld met ʼn bygevoegde halfsfeer en ʼn verwyderde silindriese gat in dieselfde voorwerp',
 
       diagramPlaceholder:
         'Diagram van ʼn soliede silinder met ʼn keëlvormige gat uitgelig in pers wat in die boonste oppervlak geboor is, en ʼn tweede diagram wat ʼn kubus wys met ʼn halfsfeer bygevoeg bo-op en ʼn dun silindriese gat verwyder deur die middel',
@@ -447,7 +447,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat stap vir stap deur ʼn werklike-lewe woordprobleem werk, wat wys hoe om tussen volume en oppervlakte te kies gebaseer op die bewoording, en dan eenhede omskakel en ʼn kostetempo toepas om by ʼn finale randbedrag uit te kom" />',
+        'Kort video wat stap vir stap deur ʼn werklike-lewe woordprobleem werk, wat wys hoe om tussen volume en oppervlakte te kies gebaseer op die bewoording, en dan eenhede omskakel en ʼn kostetempo toepas om by ʼn finale randbedrag uit te kom',
 
       diagramPlaceholder:
         'Diagram langs mekaar van twee werklike-lewe silinders: ʼn watertenk (radius 1,4 m, hoogte 2 m) geskakeer om te wys dit vul met water, gemerk "Gebruik Volume" vir kapasiteit, langs ʼn verfblik (radius 5 cm, hoogte 12 cm) met sy geboë oppervlak uitgelig en ʼn verfroller-ikoon, gemerk "Gebruik Oppervlakte" vir die koste van verf',

@@ -119,7 +119,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die algebraïese reël vir numeriese patrone te vind deur eerste en tweede verskille te bereken en formules te toets" />',
+        'Kort video wat wys hoe om die algebraïese reël vir numeriese patrone te vind deur eerste en tweede verskille te bereken en formules te toets',
 
       diagramPlaceholder:
         'ʼn Verskille-piramide vir die ry 4, 11, 22, 37 wat die terme (blou), eerste verskille (oranje) en konstante tweede verskille (groen) wys, wat lei tot die algebraïese reël 2n² + n + 1',
@@ -235,7 +235,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om tussen diagram-, tabel- en algebraïese voorstellings van dieselfde patroon te beweeg, met ʼn uitgewerkte voorbeeld vir vyfhoekgetalle" />',
+        'Kort video wat wys hoe om tussen diagram-, tabel- en algebraïese voorstellings van dieselfde patroon te beweeg, met ʼn uitgewerkte voorbeeld vir vyfhoekgetalle',
 
       diagramPlaceholder:
         'ʼn Groeiende vierkant-kolletjiepatroon wat stappe 1 tot 4 wys, met kolletjies gerangskik om n² vir elke stap visueel te bevestig',
@@ -351,7 +351,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn algebraïese reël deur substitusie te verifieer en hoe om werklike-lewe patroonprobleme op te los deur die reël te identifiseer en voorspellings te maak" />',
+        'Kort video wat wys hoe om ʼn algebraïese reël deur substitusie te verifieer en hoe om werklike-lewe patroonprobleme op te los deur die reël te identifiseer en voorspellings te maak',
 
       diagramPlaceholder:
         'ʼn Diagram wat die gestapelde-stoele-patroon vir stappe 1 tot 4 wys, met stoele en bene getel en die reël bene = 3n + 1 aangedui',

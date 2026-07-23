@@ -133,7 +133,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn termometer as ʼn vertikale getallelyn wys, met nul grade in rooi gemerk, positiewe temperature wat opwaarts in oranje styg, en negatiewe temperature wat afwaarts in blou daal" />',
+        'Kort video wat ʼn termometer as ʼn vertikale getallelyn wys, met nul grade in rooi gemerk, positiewe temperature wat opwaarts in oranje styg, en negatiewe temperature wat afwaarts in blou daal',
 
       diagramPlaceholder:
         'Diagram van ʼn vertikale termometerskaal van minus 10 tot 40 grade Celsius, met 0 grade in rooi gemerk, water se vries- en kookpunte gemerk, en die kwiksilwervlak by ʼn voorbeeldtemperatuur gewys',
@@ -236,7 +236,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat pare negatiewe temperature op ʼn getallelyn vergelyk, en wys dat die temperatuur nader aan nul altyd warmer is, selfs al is die getal na die minusteken kleiner" />',
+        'Kort video wat pare negatiewe temperature op ʼn getallelyn vergelyk, en wys dat die temperatuur nader aan nul altyd warmer is, selfs al is die getal na die minusteken kleiner',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -348,7 +348,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die verskil tussen twee temperature op ʼn getallelyn te vind, insluitend ʼn geval wat oor nul beweeg deur die afstand onder nul by die afstand bo nul te tel" />',
+        'Kort video wat wys hoe om die verskil tussen twee temperature op ʼn getallelyn te vind, insluitend ʼn geval wat oor nul beweeg deur die afstand onder nul by die afstand bo nul te tel',
     },
   ],
 

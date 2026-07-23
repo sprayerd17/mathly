@@ -79,7 +79,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to set up equations from word problems and solve by inspection" />',
+        'Short video showing how to set up equations from word problems and solve by inspection',
 
       diagramPlaceholder:
         'Balance scale showing 4x + 7 on one side and 31 on the other, staying level, with the solution x = 6 shown below',
@@ -181,7 +181,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use additive and multiplicative inverses to solve equations, and how to solve equations with squared terms" />',
+        'Short video showing how to use additive and multiplicative inverses to solve equations, and how to solve equations with squared terms',
 
       diagramPlaceholder:
         'Balance scale showing x + 8 = 15, with −8 subtracted from both sides to leave x = 7',
@@ -280,7 +280,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to substitute x-values into an equation to generate a table of ordered pairs and plot the points" />',
+        'Short video showing how to substitute x-values into an equation to generate a table of ordered pairs and plot the points',
 
       diagramPlaceholder:
         'Coordinate grid plotting the ordered pairs (0,−2), (1,1), (2,4) and (3,7) generated from y = 3x − 2, joined by a straight line',

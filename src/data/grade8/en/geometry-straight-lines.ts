@@ -109,7 +109,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing angle relationships formed when two lines intersect, including vertically opposite and adjacent supplementary angles" />',
+        'Short video showing angle relationships formed when two lines intersect, including vertically opposite and adjacent supplementary angles',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -206,7 +206,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining corresponding, alternate and co-interior angles formed when a transversal cuts two parallel lines" />',
+        'Short video explaining corresponding, alternate and co-interior angles formed when a transversal cuts two parallel lines',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -311,7 +311,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing multi-step geometric problem solving using corresponding, alternate and co-interior angle relationships" />',
+        'Short video showing multi-step geometric problem solving using corresponding, alternate and co-interior angle relationships',
     },
   ],
 

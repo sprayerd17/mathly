@@ -90,7 +90,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what integers are, how they are placed on a number line, and real-life examples of negative numbers" />',
+        'Short video explaining what integers are, how they are placed on a number line, and real-life examples of negative numbers',
 
       diagramPlaceholder:
         'Number line from -10 to +10 with negative integers highlighted red, zero highlighted green, and positive integers highlighted blue',
@@ -191,7 +191,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to order integers on a number line from smallest to biggest, including negative numbers" />',
+        'Short video showing how to order integers on a number line from smallest to biggest, including negative numbers',
 
       diagramPlaceholder:
         'Number line showing the set -12, -5, 0, 3, 7 placed in order with arrows indicating smallest on the left and largest on the right',
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating adding and subtracting integers using a number line, covering same sign, different sign, and subtracting negatives" />',
+        'Short video demonstrating adding and subtracting integers using a number line, covering same sign, different sign, and subtracting negatives',
 
       diagramPlaceholder:
         'Number line showing -7 + (-4) = -11 with arrows moving left from -7 by 4 more steps, colour coded same-sign operation in blue',
@@ -415,7 +415,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the sign rules for multiplying and dividing integers with worked examples showing same sign and different sign calculations" />',
+        'Short video explaining the sign rules for multiplying and dividing integers with worked examples showing same sign and different sign calculations',
     },
   ],
 

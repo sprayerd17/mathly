@@ -147,7 +147,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat skerp-, regte, stomp-, gestrekte en refleks hoeke klassifiseer met voorbeelde uit diagramme" />',
+        'Kort video wat skerp-, regte, stomp-, gestrekte en refleks hoeke klassifiseer met voorbeelde uit diagramme',
 
       diagramPlaceholder:
         'Vyf hoekdiagramme — skerp, reg, stomp, gestrek en refleks — elk geteken met twee strale vanaf ʼn hoekpunt en die geklassifiseerde hoek gemerk en kleurgekodeer volgens die kleursleutel.',
@@ -303,7 +303,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om onbekende hoeke te vind deur hoeke op ʼn reguit lyn (180 grade) en vertikaal-oorstaande hoeke te gebruik" />',
+        'Kort video wat wys hoe om onbekende hoeke te vind deur hoeke op ʼn reguit lyn (180 grade) en vertikaal-oorstaande hoeke te gebruik',
 
       diagramPlaceholder:
         'Twee diagramme: een wat hoeke a en b op ʼn reguit lyn wys wat optel tot 180°, met die gegewe hoek in blou en die onbekende hoek in rooi; een wat twee snydende lyne wys met die 70°-vertikaal-oorstaande hoeke uitgelig in groen en ʼn aangrensende 110°-hoek in rooi.',
@@ -467,7 +467,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ooreenkomstige, verwisselende en kohoeke identifiseer wat gevorm word deur ʼn transversaal wat twee parallelle lyne sny" />',
+        'Kort video wat ooreenkomstige, verwisselende en kohoeke identifiseer wat gevorm word deur ʼn transversaal wat twee parallelle lyne sny',
 
       diagramPlaceholder:
         'Twee parallelle lyne gesny deur ʼn transversaal, met die parallelle lyne in blou, die transversaal in rooi, een paar ooreenkomstige hoeke uitgelig in groen en een paar kohoeke uitgelig in oranje.',

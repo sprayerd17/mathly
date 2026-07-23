@@ -148,7 +148,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat al vyf wette van eksponente verduidelik met kleurgekodeerde grondgetal- en eksponentvoorbeelde" />',
+        'Kort video wat al vyf wette van eksponente verduidelik met kleurgekodeerde grondgetal- en eksponentvoorbeelde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -272,7 +272,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om groot getalle na wetenskaplike notasie om te skakel deur die desimale punt te skuif en die plekke te tel" />',
+        'Kort video wat wys hoe om groot getalle na wetenskaplike notasie om te skakel deur die desimale punt te skuif en die plekke te tel',
 
       diagramPlaceholder:
         'Syferblokke vir 45 000 wat wys hoe die desimale punt 4 plekke na links skuif om 4,5 × 10⁴ te gee',
@@ -436,7 +436,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat vierkante, kubusse, kwadraatwortels en kubuswortels van heelgetalle en breuke demonstreer met verduideliking van die negatiewe-teken-reëls" />',
+        'Kort video wat vierkante, kubusse, kwadraatwortels en kubuswortels van heelgetalle en breuke demonstreer met verduideliking van die negatiewe-teken-reëls',
     },
   ],
 

@@ -164,7 +164,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat plekwaarde in 9-syfer hele getalle verduidelik met behulp van ʼn kleur-gekodeerde plekwaardetabel en wys hoe om getalle in uitgebreide notasie te skryf" />',
+        'Kort video wat plekwaarde in 9-syfer hele getalle verduidelik met behulp van ʼn kleur-gekodeerde plekwaardetabel en wys hoe om getalle in uitgebreide notasie te skryf',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -335,7 +335,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van hele getalle verduidelik, asook die additiewe en vermenigvuldigende identiteite, met voorbeelde van hoe om elke eienskap te gebruik om in jou kop te bereken" />',
+        'Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van hele getalle verduidelik, asook die additiewe en vermenigvuldigende identiteite, met voorbeelde van hoe om elke eienskap te gebruik om in jou kop te bereken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -506,7 +506,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om groot hele getalle te vergelyk en te orden deur eers syfers te tel en dan syfer vir syfer vanaf links te vergelyk met behulp van die groter-as, kleiner-as en gelyk-aan-simbole" />',
+        'Kort video wat wys hoe om groot hele getalle te vergelyk en te orden deur eers syfers te tel en dan syfer vir syfer vanaf links te vergelyk met behulp van die groter-as, kleiner-as en gelyk-aan-simbole',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // AFDELING 4 — AFRONDING VAN HELE GETALLE
@@ -666,7 +666,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om hele getalle na die naaste 10 100 1 000 10 000 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël" />',
+        'Kort video wat wys hoe om hele getalle na die naaste 10 100 1 000 10 000 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // AFDELING 5 — VEELVOUDE EN FAKTORE
@@ -837,7 +837,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om al die faktore van ʼn getal met faktorpare te lys en hoe om die GGF en KGV van twee getalle te vind met behulp van lyste van faktore en veelvoude" />',
+        'Kort video wat wys hoe om al die faktore van ʼn getal met faktorpare te lys en hoe om die GGF en KGV van twee getalle te vind met behulp van lyste van faktore en veelvoude',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -999,7 +999,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verskil tussen priemgetalle en saamgestelde getalle verduidelik en priemfaktorisering demonstreer met behulp van ʼn faktorboom vir 36 met kleur-gekodeerde priemfaktore in oranje en produknotasie in blou" />',
+        'Kort video wat die verskil tussen priemgetalle en saamgestelde getalle verduidelik en priemfaktorisering demonstreer met behulp van ʼn faktorboom vir 36 met kleur-gekodeerde priemfaktore in oranje en produknotasie in blou',
     },
   ],
   topicPractice: [

@@ -225,7 +225,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn faktorboom te teken en die priemfaktorisering van ʼn saamgestelde getal te skryf met eksponente vir herhaalde faktore" />',
+        'Kort video wat wys hoe om ʼn faktorboom te teken en die priemfaktorisering van ʼn saamgestelde getal te skryf met eksponente vir herhaalde faktore',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -419,7 +419,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die Grootste Gemene Faktor te vind deur faktore te lys en deur priemfaktorisering te gebruik, met kleur-gekodeerde faktore, gemene faktore, en GGF" />',
+        'Kort video wat wys hoe om die Grootste Gemene Faktor te vind deur faktore te lys en deur priemfaktorisering te gebruik, met kleur-gekodeerde faktore, gemene faktore, en GGF',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -645,7 +645,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die Kleinste Gemene Veelvoud te vind deur veelvoude te lys en deur priemfaktorisering te gebruik, met kleur-gekodeerde veelvoude, gedeelde veelvoude, KGV, en hoogste priemmagte" />',
+        'Kort video wat wys hoe om die Kleinste Gemene Veelvoud te vind deur veelvoude te lys en deur priemfaktorisering te gebruik, met kleur-gekodeerde veelvoude, gedeelde veelvoude, KGV, en hoogste priemmagte',
     },
   ],
   resultsConfig: {

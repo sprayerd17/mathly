@@ -153,7 +153,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to build a stem-and-leaf display step by step and how to choose a representative sample" />',
+        'Short video showing how to build a stem-and-leaf display step by step and how to choose a representative sample',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -315,7 +315,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate mean median mode and range with step by step worked examples" />',
+        'Short video showing how to calculate mean median mode and range with step by step worked examples',
 
       diagramPlaceholder:
         'Number line showing a data set with the mean marked in blue median in green mode in orange and range shown as a red double-headed arrow',
@@ -496,7 +496,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read bar graphs double bar graphs and pie charts and how to calculate values from percentages" />',
+        'Short video showing how to read bar graphs double bar graphs and pie charts and how to calculate values from percentages',
 
       diagramPlaceholder:
         'Side-by-side: double bar graph with blue and green bars for two groups across four categories, and a pie chart with coloured slices and orange percentage labels',

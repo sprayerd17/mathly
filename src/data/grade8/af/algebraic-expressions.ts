@@ -82,7 +82,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat konvensies vir die skryf van algebraïese uitdrukkings verduidelik, gelyksoortige en ongelyksoortige terme, koëffisiënte, eksponente, monome, binome en trinome" />',
+        'Kort video wat konvensies vir die skryf van algebraïese uitdrukkings verduidelik, gelyksoortige en ongelyksoortige terme, koëffisiënte, eksponente, monome, binome en trinome',
 
       diagramPlaceholder:
         'Gemerkte diagram van die term 4x² wat die koëffisiënt, veranderlike en eksponent wys, met klein voorbeelde van ʼn monoom, binoom en trinoom',
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om gelyksoortige terme op te tel en af te trek, die distributiewe wet toe te pas by vermenigvuldiging, en monome te deel deur koëffisiënte te deel en eksponente af te trek" />',
+        'Kort video wat wys hoe om gelyksoortige terme op te tel en af te trek, die distributiewe wet toe te pas by vermenigvuldiging, en monome te deel deur koëffisiënte te deel en eksponente af te trek',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -246,7 +246,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese terme te kwadreer en te kubeer, vierkantswortels en kubuswortels van algebraïese terme te vind, en uitdrukkings deur vervanging te bereken" />',
+        'Kort video wat wys hoe om algebraïese terme te kwadreer en te kubeer, vierkantswortels en kubuswortels van algebraïese terme te vind, en uitdrukkings deur vervanging te bereken',
     },
   ],
 

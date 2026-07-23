@@ -190,7 +190,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a large number by a 2-digit number using long multiplication with colour coded steps for units blue tens green placeholder zero orange and final addition red" />',
+        'Short video showing how to multiply a large number by a 2-digit number using long multiplication with colour coded steps for units blue tens green placeholder zero orange and final addition red',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,7 +306,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a large number by a 3-digit number using long multiplication with colour coded steps for units blue tens green hundreds orange placeholder zeros red and final answer purple" />',
+        'Short video showing how to multiply a large number by a 3-digit number using long multiplication with colour coded steps for units blue tens green hundreds orange placeholder zeros red and final answer purple',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply by 10 100 and 1 000 by adding orange zeros and how to multiply by multiples like 20 300 and 4 000 by first multiplying the blue non-zero digit then adding all orange zeros" />',
+        'Short video showing how to multiply by 10 100 and 1 000 by adding orange zeros and how to multiply by multiples like 20 300 and 4 000 by first multiplying the blue non-zero digit then adding all orange zeros',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -553,7 +553,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to estimate a multiplication answer by rounding numbers in orange then multiplying to get the estimate in blue and comparing to the exact answer in green, followed by two word problems solved by identifying key words in red" />',
+        'Short video showing how to estimate a multiplication answer by rounding numbers in orange then multiplying to get the estimate in blue and comparing to the exact answer in green, followed by two word problems solved by identifying key words in red',
     },
   ],
   practiceSets: [

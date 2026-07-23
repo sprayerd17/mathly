@@ -103,7 +103,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om insetwaardes in ʼn vergelyking te vervang om uitsetwaardes te vind, en hoe om inverse bewerkings te gebruik om insetwaardes vanaf ʼn gegewe uitset te vind" />',
+        'Kort video wat wys hoe om insetwaardes in ʼn vergelyking te vervang om uitsetwaardes te vind, en hoe om inverse bewerkings te gebruik om insetwaardes vanaf ʼn gegewe uitset te vind',
 
       diagramPlaceholder:
         'Vloeidiagram wat insetwaarde x = 6 in blou, die bewerking ×4, −3 in oranje, en uitsetwaarde y = 21 in groen wys',
@@ -216,7 +216,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn verbale beskrywing van ʼn verwantskap na ʼn vergelyking om te skakel, en hoe om ʼn vergelyking uit ʼn tabel van waardes te vind" />',
+        'Kort video wat wys hoe om ʼn verbale beskrywing van ʼn verwantskap na ʼn vergelyking om te skakel, en hoe om ʼn vergelyking uit ʼn tabel van waardes te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -303,7 +303,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om x-waardes stap vir stap in ʼn vergelyking te vervang en die resultate as geordende pare in ʼn tabel te skryf" />',
+        'Kort video wat wys hoe om x-waardes stap vir stap in ʼn vergelyking te vervang en die resultate as geordende pare in ʼn tabel te skryf',
 
       diagramPlaceholder:
         'Tabel van geordende pare vir y = 2x − 1 met x-waardes in blou en y-waardes in groen, en die resulterende geordende pare in oranje gestip op ʼn Cartesiese vlak',

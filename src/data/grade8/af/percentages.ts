@@ -112,7 +112,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oorspronklike prys na ʼn persentasietoename of -afname te vind deur agteruit te werk met behulp van deling" />',
+        'Kort video wat wys hoe om die oorspronklike prys na ʼn persentasietoename of -afname te vind deur agteruit te werk met behulp van deling',
 
       diagramPlaceholder:
         'Staafmodel wat R400 (oorspronklike, 100%) plus ʼn 15%-segment wys wat R460 (115%) uitmaak, met ʼn omgekeerde pyl gemerk ÷1,15 wat van die finale bedrag terug na die oorspronklike wys',
@@ -227,7 +227,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn nuwe bedrag na ʼn persentasietoename of -afname te bereken deur die tweestap-metode en die eenstap-vermenigvuldiger-kortpad te gebruik" />',
+        'Kort video wat wys hoe om ʼn nuwe bedrag na ʼn persentasietoename of -afname te bereken deur die tweestap-metode en die eenstap-vermenigvuldiger-kortpad te gebruik',
 
       diagramPlaceholder:
         'Tweestap-vloeikaart wat Oorspronklike R12 000 wys, ʼn pyl gemerk ×0,09 wat na die toename R1 080 lei, en dan ʼn pyl gemerk +R12 000 wat na die finale nuwe salaris R13 080 lei',
@@ -407,7 +407,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om meerstap-persentasieprobleme op te los wat opeenvolgende persentasieveranderings en persentasietoename relatief tot die oorspronklike behels" />',
+        'Kort video wat wys hoe om meerstap-persentasieprobleme op te los wat opeenvolgende persentasieveranderings en persentasietoename relatief tot die oorspronklike behels',
 
       diagramPlaceholder:
         'Drie gestapelde stawe eweredig aan R100 (oorspronklike), R110 (na +10%) en R99 (na −10%), met ʼn verwysingslyn wat wys die finale staaf kom korter as die oorspronklike',

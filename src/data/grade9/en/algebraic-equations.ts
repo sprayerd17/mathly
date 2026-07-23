@@ -113,7 +113,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to expand brackets using the distributive property, combine like terms, and then solve a multi-step linear equation using inverse operations" />',
+        'Short video showing how to expand brackets using the distributive property, combine like terms, and then solve a multi-step linear equation using inverse operations',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -228,7 +228,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve an equation with variables on both sides by moving the smaller x term across, followed by an example clearing a fraction by multiplying both sides" />',
+        'Short video showing how to solve an equation with variables on both sides by moving the smaller x term across, followed by an example clearing a fraction by multiplying both sides',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -323,7 +323,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve a quadratic equation by factorising into two brackets and applying the zero product property" />',
+        'Short video showing how to solve a quadratic equation by factorising into two brackets and applying the zero product property',
 
       diagramPlaceholder:
         'Flowchart showing (x + 2)(x + 3) = 0 branching into two zero-product equations x + 2 = 0 and x + 3 = 0, leading to the two solutions x = −2 and x = −3',
@@ -448,7 +448,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply the zero product property to solve equations already given in factorised form" />',
+        'Short video showing how to apply the zero product property to solve equations already given in factorised form',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -601,7 +601,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to rearrange a quadratic equation, apply common factor and difference of squares factorisation, then use the zero product property" />',
+        'Short video showing how to rearrange a quadratic equation, apply common factor and difference of squares factorisation, then use the zero product property',
     },
   ],
   scoreMessages: [

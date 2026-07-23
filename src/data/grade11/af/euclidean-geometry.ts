@@ -101,7 +101,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die HH- en SSS-eweredigheidsvoorwaardes vir gelykvormige driehoeke verduidelik, met kleurgekodeerde hoek- en syooreenstemming" />',
+        'Kort video wat die HH- en SSS-eweredigheidsvoorwaardes vir gelykvormige driehoeke verduidelik, met kleurgekodeerde hoek- en syooreenstemming',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -184,7 +184,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die Eweredigheidstelling en die Middelpuntstelling verduidelik, met kleurgekodeerde ewewydige lyne en syverhoudings in ʼn driehoek" />',
+        'Kort video wat die Eweredigheidstelling en die Middelpuntstelling verduidelik, met kleurgekodeerde ewewydige lyne en syverhoudings in ʼn driehoek',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,7 +261,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat bewys dat gelykhoekige driehoeke gelykvormig is deur die Eweredigheidstelling te gebruik, en wat gelykvormigheid via die SSS-eweredigheidsvoorwaarde bevestig" />',
+        'Kort video wat bewys dat gelykhoekige driehoeke gelykvormig is deur die Eweredigheidstelling te gebruik, en wat gelykvormigheid via die SSS-eweredigheidsvoorwaarde bevestig',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -339,7 +339,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die Stelling van Pythagoras bewys met behulp van gelykvormige driehoeke gevorm deur die hoogtelyn na die skuinssy, met ʼn kleurgekodeerde reghoekige driehoek, hoogtelyn, en kleiner gelykvormige driehoeke" />',
+        'Kort video wat die Stelling van Pythagoras bewys met behulp van gelykvormige driehoeke gevorm deur die hoogtelyn na die skuinssy, met ʼn kleurgekodeerde reghoekige driehoek, hoogtelyn, en kleiner gelykvormige driehoeke',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -425,7 +425,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat gelykvormigheidsprobleme oplos — omtrek- en oppervlakteskalering, en die toepassing van die Eweredigheidstelling — met kleurgekodeerde bekende metings, onbekende metings, en gelykvormigheidsvoorwaardes" />',
+        'Kort video wat gelykvormigheidsprobleme oplos — omtrek- en oppervlakteskalering, en die toepassing van die Eweredigheidstelling — met kleurgekodeerde bekende metings, onbekende metings, en gelykvormigheidsvoorwaardes',
     },
   ],
   topicPractice: [

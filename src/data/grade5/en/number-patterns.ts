@@ -19,9 +19,9 @@ export const topicData: TopicData = {
 <p>A <strong>decreasing pattern</strong> shrinks — the terms get smaller. The same amount is <em>subtracted</em> each time.</p>
 <p>Example: <span style="color:#2563eb">30, 25, 20, 15, …</span> — <span style="color:#dc2626">Rule: subtract 5</span> — next term: <span style="color:#16a34a">10</span></p>
 
-<VideoPlaceholder title="Identifying and Extending Patterns" duration="4 min" />
-<DiagramPlaceholder title="Number line — pattern of +3" description="A horizontal number line from 0 to 18. Curved arrows of equal length show jumps of +3 landing on 3, 6, 9, 12, 15, 18." />
 `,
+      videoPlaceholder: 'Identifying and Extending Patterns',
+      diagramPlaceholder: 'A horizontal number line from 0 to 18. Curved arrows of equal length show jumps of +3 landing on 3, 6, 9, 12, 15, 18.',
       workedExamples: [
         {
           title: 'Extending an Increasing Pattern',
@@ -128,8 +128,8 @@ export const topicData: TopicData = {
 <p><span style="color:#dc2626">Multiply by 3</span> → terms triple each time (e.g. <span style="color:#2563eb">2, 6, 18, 54</span>)</p>
 <p><span style="color:#dc2626">Divide by 2</span> → terms halve each time (e.g. <span style="color:#2563eb">80, 40, 20, 10</span>)</p>
 
-<VideoPlaceholder title="Describing the Rule of a Pattern" duration="5 min" />
 `,
+      videoPlaceholder: 'Describing the Rule of a Pattern',
       workedExamples: [
         {
           title: 'Describing an Addition Pattern',
@@ -229,9 +229,9 @@ export const topicData: TopicData = {
   <li>Inverse of <span style="color:#dc2626">÷ 3</span> is <span style="color:#dc2626">× 3</span></li>
 </ul>
 
-<VideoPlaceholder title="Input and Output Values — Function Machines" duration="5 min" />
-<DiagramPlaceholder title="Function machine diagram" description="A flow diagram showing: a column of inputs (3, 5, 7) feeding into a rectangular box labelled '× 4', with arrows leading out to a column of outputs (12, 20, 28)." />
 `,
+      videoPlaceholder: 'Input and Output Values — Function Machines',
+      diagramPlaceholder: 'A flow diagram showing: a column of inputs (3, 5, 7) feeding into a rectangular box labelled \'× 4\', with arrows leading out to a column of outputs (12, 20, 28).',
       workedExamples: [
         {
           title: 'Finding Output Values',
@@ -379,8 +379,8 @@ export const topicData: TopicData = {
 
 <p><strong>Tip:</strong> Always check the differences first. If they are equal, it is an addition or subtraction pattern. If they are <em>not</em> equal, check the ratios — it is likely a multiplication or division pattern.</p>
 
-<VideoPlaceholder title="Patterns Involving All Four Operations" duration="5 min" />
 `,
+      videoPlaceholder: 'Patterns Involving All Four Operations',
       workedExamples: [
         {
           title: 'Addition Pattern',
@@ -492,8 +492,8 @@ export const topicData: TopicData = {
 <h3>Colour key used in this section</h3>
 <p><span style="color:#2563eb;font-weight:700">Known terms are shown in blue</span> &nbsp;·&nbsp; <span style="color:#ea580c;font-weight:700">Missing term is shown in orange</span> &nbsp;·&nbsp; <span style="color:#dc2626;font-weight:700">Rule is shown in red</span></p>
 
-<VideoPlaceholder title="Finding Missing Numbers in a Pattern" duration="4 min" />
 `,
+      videoPlaceholder: 'Finding Missing Numbers in a Pattern',
       workedExamples: [
         {
           title: 'Missing Term in the Middle (Addition Pattern)',
@@ -626,8 +626,8 @@ export const topicData: TopicData = {
   </tr>
 </table>
 
-<VideoPlaceholder title="Creating Your Own Patterns" duration="4 min" />
 `,
+      videoPlaceholder: 'Creating Your Own Patterns',
       workedExamples: [
         {
           title: 'Creating an Increasing Addition Pattern',

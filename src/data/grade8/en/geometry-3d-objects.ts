@@ -119,7 +119,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing the 5 Platonic solids — tetrahedron, cube, octahedron, dodecahedron and icosahedron — comparing faces, vertices and edges" />',
+        'Short video introducing the 5 Platonic solids — tetrahedron, cube, octahedron, dodecahedron and icosahedron — comparing faces, vertices and edges',
 
       diagramPlaceholder:
         'All 5 Platonic solids shown together — tetrahedron, cube, octahedron, dodecahedron, icosahedron — each labelled with face, vertex and edge counts',
@@ -297,7 +297,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to fold nets into pyramids — including the square pyramid and tetrahedron — identifying base shape, triangular faces and apex" />',
+        'Short video showing how to fold nets into pyramids — including the square pyramid and tetrahedron — identifying base shape, triangular faces and apex',
 
       diagramPlaceholder:
         'Net of a square pyramid shown flat and folded, and net of a tetrahedron shown flat and folded',
@@ -479,7 +479,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to compare and classify 3D objects using faces, vertices and edges, and how to verify Euler\'s formula" />',
+        'Short video showing how to compare and classify 3D objects using faces, vertices and edges, and how to verify Euler\'s formula',
     },
   ],
 

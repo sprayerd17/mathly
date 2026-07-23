@@ -145,7 +145,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the commutative associative and distributive properties of whole numbers and the division property of zero" />',
+        'Short video explaining the commutative associative and distributive properties of whole numbers and the division property of zero',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -257,7 +257,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing prime factorisation using a factor tree and how to find HCF and LCM from prime factors" />',
+        'Short video showing prime factorisation using a factor tree and how to find HCF and LCM from prime factors',
 
       diagramPlaceholder:
         'Factor tree for 120 branching down to its prime factors 2, 2, 2, 3 and 5, matching the worked example prime factorisation',
@@ -594,7 +594,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video covering ratio rate proportion profit loss VAT calculating speed and price per unit and sharing an amount in a given ratio" />',
+        'Short video covering ratio rate proportion profit loss VAT calculating speed and price per unit and sharing an amount in a given ratio',
     },
 
   ],

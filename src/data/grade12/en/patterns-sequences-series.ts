@@ -91,7 +91,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining arithmetic sequences, the general term formula Tₙ = a + (n−1)d, and how to find any term using worked examples" />',
+        'Short video explaining arithmetic sequences, the general term formula Tₙ = a + (n−1)d, and how to find any term using worked examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -173,7 +173,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining geometric sequences, the general term formula Tₙ = a · rⁿ⁻¹, and how to find any term using worked examples" />',
+        'Short video explaining geometric sequences, the general term formula Tₙ = a · rⁿ⁻¹, and how to find any term using worked examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to find a and d (or a and r) when given two terms of a sequence, by forming and solving simultaneous equations using subtraction (arithmetic) or division (geometric)" />',
+        'Short video explaining how to find a and d (or a and r) when given two terms of a sequence, by forming and solving simultaneous equations using subtraction (arithmetic) or division (geometric)',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -409,7 +409,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining sigma notation, how to read and evaluate a sigma expression, and how to convert a written sum into sigma notation" />',
+        'Short video explaining sigma notation, how to read and evaluate a sigma expression, and how to convert a written sum into sigma notation',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -491,7 +491,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the sum of an arithmetic series using Sₙ = n/2[2a + (n−1)d] and Sₙ = n/2(a + l), with worked examples including finding n from the sum" />',
+        'Short video explaining the sum of an arithmetic series using Sₙ = n/2[2a + (n−1)d] and Sₙ = n/2(a + l), with worked examples including finding n from the sum',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -588,7 +588,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the sum of a geometric series using Sₙ = a(rⁿ−1)/(r−1) and the sum to infinity S∞ = a/(1−r), including the convergence condition and divergent series" />',
+        'Short video explaining the sum of a geometric series using Sₙ = a(rⁿ−1)/(r−1) and the sum to infinity S∞ = a/(1−r), including the convergence condition and divergent series',
     },
   ],
   topicPractice: [

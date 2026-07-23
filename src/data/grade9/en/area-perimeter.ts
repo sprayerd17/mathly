@@ -154,7 +154,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply area and perimeter formulae for circles and composite shapes, including SI unit conversions between cm² and m²" />',
+        'Short video showing how to apply area and perimeter formulae for circles and composite shapes, including SI unit conversions between cm² and m²',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -297,7 +297,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how doubling one dimension vs doubling all dimensions affects the perimeter and area of rectangles and squares differently" />',
+        'Short video demonstrating how doubling one dimension vs doubling all dimensions affects the perimeter and area of rectangles and squares differently',
 
       diagramPlaceholder:
         'A small square and a larger square with sides doubled, shown side by side with both perimeter and area labelled on each, illustrating the 2x perimeter vs 4x area relationship',
@@ -411,7 +411,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply linear and area scale factors to solve real-life enlargement and reduction problems involving area and perimeter" />',
+        'Short video showing how to apply linear and area scale factors to solve real-life enlargement and reduction problems involving area and perimeter',
     },
   ],
 

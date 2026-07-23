@@ -141,7 +141,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om numeriese patrone te ondersoek en uit te brei, verskille te vind en die algemene reël in algebraïese notasie te skryf" />',
+        'Kort video wat wys hoe om numeriese patrone te ondersoek en uit te brei, verskille te vind en die algemene reël in algebraïese notasie te skryf',
 
       diagramPlaceholder:
         'Diagram wat die numeriese patroon 3, 8, 15, 24 wys met terme uitgelig in blou, verskille +5, +7, +9 in oranje, en die afgeleide reël n² + 2n in groen',
@@ -237,7 +237,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om geometriese patrone met diagramme en tabelle te ondersoek en die algebraïese reël vir die nde term te skryf" />',
+        'Kort video wat wys hoe om geometriese patrone met diagramme en tabelle te ondersoek en die algebraïese reël vir die nde term te skryf',
 
       diagramPlaceholder:
         'Diagram wat driehoekige puntpatrone by stappe 1 tot 4 (1, 3, 6, 10 punte) wys met stapnommers in blou, punte in groen en die algebraïese reël n(n+1)/2 in oranje',
@@ -378,7 +378,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn algebraïese reël te regverdig deur waardes te vervang en met werklike patroonterme te vergelyk" />',
+        'Kort video wat wys hoe om ʼn algebraïese reël te regverdig deur waardes te vervang en met werklike patroonterme te vergelyk',
     },
   ],
   scoreMessages: [

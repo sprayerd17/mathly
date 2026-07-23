@@ -138,7 +138,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the perimeter of regular and irregular polygons by adding or multiplying side lengths" />',
+        'Short video showing how to find the perimeter of regular and irregular polygons by adding or multiplying side lengths',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -255,7 +255,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the area of a rectangle and a square using the formulas length times width and side squared" />',
+        'Short video showing how to calculate the area of a rectangle and a square using the formulas length times width and side squared',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -357,7 +357,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the area of a triangle using half times base times height with the perpendicular height highlighted" />',
+        'Short video showing how to calculate the area of a triangle using half times base times height with the perpendicular height highlighted',
     },
   ],
 

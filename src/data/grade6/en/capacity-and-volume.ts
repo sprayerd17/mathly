@@ -130,7 +130,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the full capacity conversion chain from kilolitres to litres to millilitres, demonstrating how to jump two steps at once and how to convert a decimal litre measurement into mixed litre and millilitre units" />',
+        'Short video showing the full capacity conversion chain from kilolitres to litres to millilitres, demonstrating how to jump two steps at once and how to convert a decimal litre measurement into mixed litre and millilitre units',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -253,7 +253,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a cube of exactly 1 cubic centimetre being filled with exactly 1 millilitre of water, then demonstrating how to find the capacity of a rectangular tank by first calculating its volume" />',
+        'Short video showing a cube of exactly 1 cubic centimetre being filled with exactly 1 millilitre of water, then demonstrating how to find the capacity of a rectangular tank by first calculating its volume',
 
       diagramPlaceholder:
         'Diagram showing a small 1cm cube next to a measuring cylinder with 1ml marked, with an arrow and equals sign connecting them to show 1 cm cubed equals 1 ml',
@@ -357,7 +357,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-step real-world capacity word problem, converting between units before dividing to share a quantity equally or find a filling rate" />',
+        'Short video working through a multi-step real-world capacity word problem, converting between units before dividing to share a quantity equally or find a filling rate',
     },
   ],
 

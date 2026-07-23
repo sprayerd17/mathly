@@ -129,7 +129,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn binoom met ʼn trinoom te vermenigvuldig deur distribusie te gebruik, kleurgekodeer met die eerste term blou en die tweede term oranje, en dan gelyksoortige terme groen saamgevoeg" />',
+        'Kort video wat wys hoe om ʼn binoom met ʼn trinoom te vermenigvuldig deur distribusie te gebruik, kleurgekodeer met die eerste term blou en die tweede term oranje, en dan gelyksoortige terme groen saamgevoeg',
 
       diagramPlaceholder:
         'Distribusiediagram vir (x + 2)(x² + 3x − 5) wat ses pyle wys van elke binoomterm (x en +2) na elke trinoomterm (x², 3x, −5), kleurgekodeer blou vir x en oranje vir +2',
@@ -292,7 +292,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om trinome te faktoriseer deur die som-produk-metode te gebruik vir a=1 en die a×c-metode vir a≠1, kleurgekodeer met die a×c-waarde oranje en gesplitste terme blou" />',
+        'Kort video wat wys hoe om trinome te faktoriseer deur die som-produk-metode te gebruik vir a=1 en die a×c-metode vir a≠1, kleurgekodeer met die a×c-waarde oranje en gesplitste terme blou',
 
       diagramPlaceholder:
         'X-boks-diagram vir 3x² + 11x + 6 wat a×c = 18 bo, b = 11 onder, en die twee getalle 9 en 2 aan die kante wys, wat lei tot die splitsing en gefaktoriseerde vorm (3x + 2)(x + 3)',
@@ -422,7 +422,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vierterm-uitdrukking te faktoriseer deur in pare te groepeer, met die eerste paar kleurgekodeer rooi en die tweede paar pers, en die gemeenskaplike binoom groen" />',
+        'Kort video wat wys hoe om ʼn vierterm-uitdrukking te faktoriseer deur in pare te groepeer, met die eerste paar kleurgekodeer rooi en die tweede paar pers, en die gemeenskaplike binoom groen',
 
       diagramPlaceholder:
         'Vloeidiagram vir x³ + 3x² − 4x − 12 wat die eerste paar rooi, tweede paar pers, hul gefaktoriseerde vorme, wat saamkom by die gemeenskaplike binoomfaktor, en die finale volledig gefaktoriseerde antwoord in groen wys',
@@ -576,7 +576,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese breuke met monoomnoemers te vereenvoudig, optel en aftrek deur die KGV te gebruik, kleurgekodeer oranje, met omgeskakelde breuke blou en die vereenvoudigde antwoord groen" />',
+        'Kort video wat wys hoe om algebraïese breuke met monoomnoemers te vereenvoudig, optel en aftrek deur die KGV te gebruik, kleurgekodeer oranje, met omgeskakelde breuke blou en die vereenvoudigde antwoord groen',
     },
   ],
 

@@ -82,7 +82,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining conventions for writing algebraic expressions, like and unlike terms, coefficients, exponents, monomials, binomials and trinomials" />',
+        'Short video explaining conventions for writing algebraic expressions, like and unlike terms, coefficients, exponents, monomials, binomials and trinomials',
 
       diagramPlaceholder:
         'Labelled diagram of the term 4x² showing the coefficient, variable and exponent, with small examples of a monomial, binomial and trinomial',
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to add and subtract like terms, apply the distributive law when multiplying, and divide monomials by dividing coefficients and subtracting exponents" />',
+        'Short video showing how to add and subtract like terms, apply the distributive law when multiplying, and divide monomials by dividing coefficients and subtracting exponents',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -246,7 +246,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to square and cube algebraic terms, find square and cube roots of algebraic terms, and evaluate expressions by substitution" />',
+        'Short video showing how to square and cube algebraic terms, find square and cube roots of algebraic terms, and evaluate expressions by substitution',
     },
   ],
 

@@ -171,7 +171,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat stap vir stap langdeling van ʼn 4-syfergetal deur ʼn 2-syfergetal wys, met kleurgekodeerde stappe" />',
+        'Kort video wat stap vir stap langdeling van ʼn 4-syfergetal deur ʼn 2-syfergetal wys, met kleurgekodeerde stappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -270,7 +270,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om te deel en die res uit te druk as ʼn heelgetal-res, as ʼn breuk, en as ʼn desimaal, met kleurgekodeerde uitgewerkte voorbeelde" />',
+        'Kort video wat wys hoe om te deel en die res uit te druk as ʼn heelgetal-res, as ʼn breuk, en as ʼn desimaal, met kleurgekodeerde uitgewerkte voorbeelde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -356,7 +356,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die hoofrekene-metode wys vir deling deur veelvoude van 10 en 100 deur die deler in sy nie-nul-syfer en mag van 10 te verdeel" />',
+        'Kort video wat die hoofrekene-metode wys vir deling deur veelvoude van 10 en 100 deur die deler in sy nie-nul-syfer en mag van 10 te verdeel',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -465,7 +465,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om delingswoordprobleme op te los deur sleutelwoorde te identifiseer, die deling uit te voer, en te besluit wat om met die res te doen" />',
+        'Kort video wat wys hoe om delingswoordprobleme op te los deur sleutelwoorde te identifiseer, die deling uit te voer, en te besluit wat om met die res te doen',
     },
   ],
 

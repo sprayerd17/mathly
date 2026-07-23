@@ -218,7 +218,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising special angles, the CAST rule, and how to apply reduction formulae to simplify trig expressions" />',
+        'Short video revising special angles, the CAST rule, and how to apply reduction formulae to simplify trig expressions',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing the compound angle identities for sin and cos with worked examples showing expansion and exact value calculations" />',
+        'Short video introducing the compound angle identities for sin and cos with worked examples showing expansion and exact value calculations',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -496,7 +496,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video deriving the double angle identities from compound angles and applying them to simplify expressions and solve trig equations" />',
+        'Short video deriving the double angle identities from compound angles and applying them to simplify expressions and solve trig equations',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -641,7 +641,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use double angle identities to simplify trig equations before factorising and solving within a given interval, and how to extend the same technique to write a full general solution" />',
+        'Short video showing how to use double angle identities to simplify trig equations before factorising and solving within a given interval, and how to extend the same technique to write a full general solution',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -740,7 +740,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the rules for proving trig identities and walking through examples using compound and double angle identities" />',
+        'Short video explaining the rules for proving trig identities and walking through examples using compound and double angle identities',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -880,7 +880,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve 2D and 3D trigonometry problems by identifying horizontal and vertical triangles, applying the sine rule and cosine rule, and using angles of elevation and depression" />',
+        'Short video showing how to solve 2D and 3D trigonometry problems by identifying horizontal and vertical triangles, applying the sine rule and cosine rule, and using angles of elevation and depression',
     },
   ],
   practiceSets: [

@@ -220,7 +220,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik hoe om driehoeke volgens hul sye en hoeke te klassifiseer en hoe om ʼn ontbrekende hoek met die 180-grade-reël te vind" />',
+        'Kort video wat verduidelik hoe om driehoeke volgens hul sye en hoeke te klassifiseer en hoe om ʼn ontbrekende hoek met die 180-grade-reël te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -433,7 +433,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die eienskappe van verskillende vierhoeke verduidelik en hoe om ʼn ontbrekende hoek met die 360-grade-reël te vind" />',
+        'Kort video wat die eienskappe van verskillende vierhoeke verduidelik en hoe om ʼn ontbrekende hoek met die 360-grade-reël te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -607,7 +607,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die eienskappe van ʼn sirkel te identifiseer en hoe om ʼn akkurate sirkel en eenvoudige sirkelpatrone met ʼn passer te teken" />',
+        'Kort video wat wys hoe om die eienskappe van ʼn sirkel te identifiseer en hoe om ʼn akkurate sirkel en eenvoudige sirkelpatrone met ʼn passer te teken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -772,7 +772,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik hoe om die som van binnehoeke te vind met die formule (aantal sye min 2) maal 180 grade, met uitgewerkte voorbeelde" />',
+        'Kort video wat verduidelik hoe om die som van binnehoeke te vind met die formule (aantal sye min 2) maal 180 grade, met uitgewerkte voorbeelde',
     },
   ],
   resultsConfig: {

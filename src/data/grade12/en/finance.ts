@@ -178,7 +178,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining simple and compound growth and decay formulae with worked examples on savings depreciation and population growth" />',
+        'Short video explaining simple and compound growth and decay formulae with worked examples on savings depreciation and population growth',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -310,7 +310,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use logarithms to solve for n in compound growth and decay equations using the power law" />',
+        'Short video showing how to use logarithms to solve for n in compound growth and decay equations using the power law',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -414,7 +414,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between nominal and effective interest rates and how to convert between them using the compounding formula" />',
+        'Short video explaining the difference between nominal and effective interest rates and how to convert between them using the compounding formula',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -540,7 +540,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining future value annuities with worked examples on monthly savings and investment growth using the annuity formula" />',
+        'Short video explaining future value annuities with worked examples on monthly savings and investment growth using the annuity formula',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -695,7 +695,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining present value annuities and bond repayments with worked examples on monthly repayments outstanding balance and solving for the number of payments" />',
+        'Short video explaining present value annuities and bond repayments with worked examples on monthly repayments outstanding balance and solving for the number of payments',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -864,7 +864,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining sinking funds, inflating a future replacement cost with compound growth, and using the future value annuity formula to find the required regular deposit" />',
+        'Short video explaining sinking funds, inflating a future replacement cost with compound growth, and using the future value annuity formula to find the required regular deposit',
     },
   ],
 

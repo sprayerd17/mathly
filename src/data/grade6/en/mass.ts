@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the full mass conversion chain from tonnes to kilograms to grams to milligrams, demonstrating how to jump two steps at once and how to convert a decimal kilogram measurement into mixed kg and g units" />',
+        'Short video showing the full mass conversion chain from tonnes to kilograms to grams to milligrams, demonstrating how to jump two steps at once and how to convert a decimal kilogram measurement into mixed kg and g units',
 
       diagramPlaceholder:
         'Diagram showing four connected boxes for t, kg, g and mg in a row, each in its own colour, with arrows labelled × 1 000 linking each step, illustrating the mass conversion chain from tonnes down to milligrams',
@@ -243,7 +243,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to scale a recipe up using a scale factor, followed by an example comparing the price per kilogram of two different package sizes to find the better value" />',
+        'Short video demonstrating how to scale a recipe up using a scale factor, followed by an example comparing the price per kilogram of two different package sizes to find the better value',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -342,7 +342,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-step real-world mass word problem, converting between units before adding, subtracting, multiplying or dividing to reach the final answer" />',
+        'Short video working through a multi-step real-world mass word problem, converting between units before adding, subtracting, multiplying or dividing to reach the final answer',
     },
   ],
 

@@ -225,7 +225,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw a factor tree and write the prime factorisation of a composite number using exponents for repeated factors" />',
+        'Short video showing how to draw a factor tree and write the prime factorisation of a composite number using exponents for repeated factors',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -419,7 +419,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the Highest Common Factor by listing factors and by using prime factorisation, with colour coded factors, common factors, and HCF" />',
+        'Short video showing how to find the Highest Common Factor by listing factors and by using prime factorisation, with colour coded factors, common factors, and HCF',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -645,7 +645,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the Lowest Common Multiple by listing multiples and by using prime factorisation, with colour coded multiples, shared multiples, LCM, and highest prime powers" />',
+        'Short video showing how to find the Lowest Common Multiple by listing multiples and by using prime factorisation, with colour coded multiples, shared multiples, LCM, and highest prime powers',
     },
   ],
   resultsConfig: {

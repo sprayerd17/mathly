@@ -164,7 +164,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a visual overview of all key circle terms labelled on a single circle diagram — centre, radius, diameter, chord, tangent, secant, arc and segment" />',
+        'Short video showing a visual overview of all key circle terms labelled on a single circle diagram — centre, radius, diameter, chord, tangent, secant, arc and segment',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -305,7 +305,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a chord with the perpendicular from the centre bisecting it — labelling the two equal half-chords and the right-angled triangle used for Pythagoras calculations" />',
+        'Short video showing a chord with the perpendicular from the centre bisecting it — labelling the two equal half-chords and the right-angled triangle used for Pythagoras calculations',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -416,7 +416,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a chord subtending an angle at the centre and an angle at the circumference, demonstrating the angle at centre equals double the angle at circumference, and showing the reflex angle case for a point on the minor arc" />',
+        'Short video showing a chord subtending an angle at the centre and an angle at the circumference, demonstrating the angle at centre equals double the angle at circumference, and showing the reflex angle case for a point on the minor arc',
 
       diagramPlaceholder:
         'Diagram showing a circle with centre O, chord AB, the angle AOB at the centre highlighted in red, and angle APB at point P on the circumference highlighted in blue, with a dashed reflex angle shown for a second point on the minor arc',
@@ -548,7 +548,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing two angles subtended by the same chord on the same side, demonstrating that angles in the same segment are equal, then showing two equal chords producing equal angles at the centre and circumference" />',
+        'Short video showing two angles subtended by the same chord on the same side, demonstrating that angles in the same segment are equal, then showing two equal chords producing equal angles at the centre and circumference',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -680,7 +680,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a diameter with a third point on the circle forming a right angle, demonstrating the angle in a semicircle is always 90 degrees, then showing the converse where a 90 degree angle proves a chord is a diameter" />',
+        'Short video showing a diameter with a third point on the circle forming a right angle, demonstrating the angle in a semicircle is always 90 degrees, then showing the converse where a 90 degree angle proves a chord is a diameter',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -857,7 +857,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a cyclic quadrilateral ABCD with opposite angle pairs highlighted in blue and red, a side produced to show the exterior angle in green matching the interior opposite angle in orange, and the centre-angle construction used in the formal proof" />',
+        'Short video showing a cyclic quadrilateral ABCD with opposite angle pairs highlighted in blue and red, a side produced to show the exterior angle in green matching the interior opposite angle in orange, and the centre-angle construction used in the formal proof',
 
       diagramSvg:
         '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="55.43" y1="89.22" x2="170.78" y2="35.43" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="224.57" y2="150.78" stroke="#0f1f3d" stroke-width="2.5"/><line x1="224.57" y1="150.78" x2="95" y2="197.94" stroke="#0f1f3d" stroke-width="2.5"/><line x1="95" y1="197.94" x2="55.43" y2="89.22" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170.78" y1="35.43" x2="207.02" y2="18.53" stroke="#0f1f3d" stroke-width="2" stroke-dasharray="4,3"/><path d="M 71.74,81.61 A 18,18 0 0 1 61.59,106.13" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M 154.47,43.04 A 18,18 0 0 0 178.39,51.74" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 187.09,27.82 A 18,18 0 0 1 178.39,51.74" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="2,2"/><path d="M 216.96,134.47 A 18,18 0 0 0 207.66,156.94" fill="none" stroke="#ea580c" stroke-width="2"/><path d="M 111.91,191.78 A 18,18 0 0 0 88.84,181.03" fill="none" stroke="#dc2626" stroke-width="2"/><circle cx="55.43" cy="89.22" r="2.5" fill="#0f1f3d"/><text x="35.43" y="83.22" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="170.78" cy="35.43" r="2.5" fill="#0f1f3d"/><text x="176.78" y="25.43" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="224.57" cy="150.78" r="2.5" fill="#0f1f3d"/><text x="232.57" y="156.78" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="95" cy="197.94" r="2.5" fill="#0f1f3d"/><text x="85" y="216.94" font-size="13" fill="#0f1f3d" font-weight="700">D</text><circle cx="207.02" cy="18.53" r="2.5" fill="#0f1f3d"/><text x="212.02" y="14.53" font-size="12" fill="#0f1f3d" font-weight="700">E</text><text x="86.83" y="106.24" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">95°</text><text x="159.15" y="71.39" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">90°</text><text x="202.74" y="51.06" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">90°</text><text x="193.15" y="141.77" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">85°</text><text x="109.37" y="171.14" font-size="12" fill="#dc2626" font-weight="700" text-anchor="middle">90°</text></svg>',
@@ -1034,7 +1034,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a tangent at T with the tangent-chord angle highlighted in green, an equal inscribed angle in the alternate segment also highlighted in green, and a separate diagram showing two equal tangent segments from an external point" />',
+        'Short video showing a tangent at T with the tangent-chord angle highlighted in green, an equal inscribed angle in the alternate segment also highlighted in green, and a separate diagram showing two equal tangent segments from an external point',
 
       diagramSvg:
         '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="210" x2="220" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="120" x2="140" y2="210" stroke="#0f1f3d" stroke-width="1.5" stroke-dasharray="3,3"/><path d="M 140,198 L 152,198 L 152,210" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="140" y1="210" x2="213.7" y2="68.3" stroke="#ea580c" stroke-width="2.5"/><line x1="62.06" y1="75" x2="140" y2="210" stroke="#0f1f3d" stroke-width="2"/><line x1="62.06" y1="75" x2="213.7" y2="68.3" stroke="#0f1f3d" stroke-width="2"/><path d="M 160,210 A 20,20 0 0 0 149.23,192.26" fill="none" stroke="#16a34a" stroke-width="2"/><path d="M 72.06,92.32 A 20,20 0 0 0 82.04,74.12" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">T</text><circle cx="213.7" cy="68.3" r="2.5" fill="#0f1f3d"/><text x="221.7" y="62.3" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="62.06" cy="75" r="2.5" fill="#0f1f3d"/><text x="42.06" y="69" font-size="13" fill="#0f1f3d" font-weight="700">A</text><text x="169.92" y="196.84" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">x</text><text x="92.74" y="91.82" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">x</text></svg>',

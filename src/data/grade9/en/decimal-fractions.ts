@@ -135,7 +135,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply BODMAS to combined decimal fraction calculations with and without brackets" />',
+        'Short video showing how to apply BODMAS to combined decimal fraction calculations with and without brackets',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -255,7 +255,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate squares, cubes and roots of decimal fractions within combined calculations using BODMAS" />',
+        'Short video showing how to calculate squares, cubes and roots of decimal fractions within combined calculations using BODMAS',
 
       diagramPlaceholder:
         'Number line showing that squaring a decimal between 0 and 1 makes it smaller, while taking its square root makes it larger',
@@ -405,7 +405,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve multi-step real-life problems involving decimal fractions, with rounding money to 2 decimal places" />',
+        'Short video showing how to solve multi-step real-life problems involving decimal fractions, with rounding money to 2 decimal places',
     },
   ],
 

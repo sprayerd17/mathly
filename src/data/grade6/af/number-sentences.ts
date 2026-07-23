@@ -132,7 +132,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om vergelykings van woordprobleme te skryf met veranderlikes en hoe om ʼn oplossing te kontroleer deur dit terug te vervang in die vergelyking" />',
+        'Kort video wat wys hoe om vergelykings van woordprobleme te skryf met veranderlikes en hoe om ʼn oplossing te kontroleer deur dit terug te vervang in die vergelyking',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -254,7 +254,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om optelling-, aftrekking-, vermenigvuldiging-, en delingsvergelykings op te los met inverse bewerkings en die gebalanseerde skaal model" />',
+        'Kort video wat wys hoe om optelling-, aftrekking-, vermenigvuldiging-, en delingsvergelykings op te los met inverse bewerkings en die gebalanseerde skaal model',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -343,7 +343,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om twee-stap vergelykings op te los met inverse bewerkings in omgekeerde BODMAS-volgorde met uitgewerkte voorbeelde en kontrole deur substitusie" />',
+        'Kort video wat wys hoe om twee-stap vergelykings op te los met inverse bewerkings in omgekeerde BODMAS-volgorde met uitgewerkte voorbeelde en kontrole deur substitusie',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -440,7 +440,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om woordprobleme om te skakel in vergelykings met ʼn veranderlike en dan op te los en te kontroleer met drie uitgewerkte voorbeelde" />',
+        'Kort video wat wys hoe om woordprobleme om te skakel in vergelykings met ʼn veranderlike en dan op te los en te kontroleer met drie uitgewerkte voorbeelde',
     },
   ],
   practiceSets: [

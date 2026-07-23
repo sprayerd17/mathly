@@ -122,7 +122,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the volume and surface area formulae for cylinders, showing how the curved surface unwraps into a rectangle with width equal to the circumference" />',
+        'Short video explaining the volume and surface area formulae for cylinders, showing how the curved surface unwraps into a rectangle with width equal to the circumference',
 
       diagramPlaceholder:
         'A cylinder with radius and height labelled in blue and orange, showing the net unwrapped into two circles and a rectangle',
@@ -239,7 +239,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply volume formulae for prisms and cylinders and convert between SI units to solve real-life capacity problems" />',
+        'Short video showing how to apply volume formulae for prisms and cylinders and convert between SI units to solve real-life capacity problems',
 
       diagramPlaceholder:
         'Diagram comparing a triangular prism and a cylinder side by side with labelled dimensions and calculated volumes, highlighting the unit conversion step',
@@ -373,7 +373,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video investigating how doubling one or all dimensions of a prism or cylinder affects its volume, explaining the cubed scale factor relationship" />',
+        'Short video investigating how doubling one or all dimensions of a prism or cylinder affects its volume, explaining the cubed scale factor relationship',
 
       diagramPlaceholder:
         'A small cube and a larger cube with sides doubled, shown side by side with volumes labelled, illustrating the 8x volume increase from doubling all three dimensions',

@@ -101,7 +101,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verskil tussen gelykvormige en kongruente driehoeke verduidelik deur ooreenstemmende hoeke en proporsionele sye te gebruik, met kleurgekodeerde diagramme" />',
+        'Kort video wat die verskil tussen gelykvormige en kongruente driehoeke verduidelik deur ooreenstemmende hoeke en proporsionele sye te gebruik, met kleurgekodeerde diagramme',
 
       diagramPlaceholder:
         'Diagram wat twee gelykvormige driehoeke langs mekaar wys met ooreenstemmende hoeke in blou en eweredige sye in oranje gemerk, teenoor twee kongruente driehoeke met identiese sye in groen gemerk',
@@ -231,7 +231,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die Middelpuntstelling ondersoek deur ʼn driehoek te konstrueer, die middelpunte van twee sye te merk, en die middelyn te meet om te bevestig dat dit ewewydig aan en die helfte van die lengte van die derde sy is" />',
+        'Kort video wat die Middelpuntstelling ondersoek deur ʼn driehoek te konstrueer, die middelpunte van twee sye te merk, en die middelyn te meet om te bevestig dat dit ewewydig aan en die helfte van die lengte van die derde sy is',
 
       diagramPlaceholder:
         'Driehoek ABC met D en E gemerk as die middelpunte van AB en AC, die middelyn DE in blou geteken met kepies wat wys AD = DB en AE = EC, en die verband DE ∥ BC, DE = ½BC in groen aangedui',
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die eienskappe van spesiale vierhoeke ondersoek, insluitend sye, hoeke en diagonale, met kleurgekodeerde bewysstappe en teenvoorbeelde" />',
+        'Kort video wat die eienskappe van spesiale vierhoeke ondersoek, insluitend sye, hoeke en diagonale, met kleurgekodeerde bewysstappe en teenvoorbeelde',
 
       diagramPlaceholder:
         'Hiërargie-diagram wat die verwantskappe tussen spesiale vierhoeke wys, van parallelogram af tot by reghoek, ruit en vierkant, met sleuteleienskappe in blou gemerk en teenvoorbeelde in rooi uitgelig',
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik hoe standaard- en alternatiewe definisies van spesiale vierhoeke as ekwivalent bewys word deur geometriese redenering" />',
+        'Kort video wat verduidelik hoe standaard- en alternatiewe definisies van spesiale vierhoeke as ekwivalent bewys word deur geometriese redenering',
 
       diagramPlaceholder:
         'Diagram wat ʼn ruit wys met die standaarddefinisie in blou gemerk en die alternatiewe definisie (diagonale wat mekaar teen regte hoeke halveer) in oranje gemerk, met die bewys wat hulle verbind in groen aangedui',
@@ -509,7 +509,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat demonstreer hoe om geometriese vermoedens oor vierhoeke te stel, te toets en óf te bewys óf te weerlê deur teenvoorbeelde en logiese bewyse te gebruik" />',
+        'Kort video wat demonstreer hoe om geometriese vermoedens oor vierhoeke te stel, te toets en óf te bewys óf te weerlê deur teenvoorbeelde en logiese bewyse te gebruik',
 
       diagramPlaceholder:
         'Diagram wat ʼn gelykbenige driehoek wys met die gelyke sye blou gemerk vir die gestelde vermoede, en dan die twee basishoeke groen boog-gemerk om te wys die getoetste vermoede is bewys gelyk',

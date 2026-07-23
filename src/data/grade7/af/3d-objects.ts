@@ -144,7 +144,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn reghoekige prisma en ʼn kubus te vind deur die formules met kleurgekodeerde dimensies te gebruik" />',
+        'Kort video wat wys hoe om die oppervlakte van ʼn reghoekige prisma en ʼn kubus te vind deur die formules met kleurgekodeerde dimensies te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -320,7 +320,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die volume van ʼn reghoekige prisma en ʼn silinder te bereken deur die formules met kleurgekodeerde stappe te gebruik" />',
+        'Kort video wat wys hoe om die volume van ʼn reghoekige prisma en ʼn silinder te bereken deur die formules met kleurgekodeerde stappe te gebruik',
     },
   ],
 

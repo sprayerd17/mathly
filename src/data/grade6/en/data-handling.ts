@@ -91,7 +91,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 220 155" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="15" width="180" height="25" fill="#f8fafc"/><rect x="20" y="115" width="180" height="25" fill="#f0fdf4"/><rect x="20" y="15" width="180" height="125" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="20" y1="40" x2="200" y2="40" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="65" x2="200" y2="65" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="90" x2="200" y2="90" stroke="#0f1f3d" stroke-width="1.5"/><line x1="20" y1="115" x2="200" y2="115" stroke="#0f1f3d" stroke-width="1.5"/><line x1="130" y1="15" x2="130" y2="140" stroke="#0f1f3d" stroke-width="1.5"/><text x="75" y="31" font-size="12" fill="#2563eb" font-weight="700" text-anchor="middle">Category</text><text x="165" y="31" font-size="12" fill="#ea580c" font-weight="700" text-anchor="middle">Frequency</text><text x="75" y="56" font-size="11" fill="#374151" text-anchor="middle">Maths</text><text x="165" y="56" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">7</text><text x="75" y="81" font-size="11" fill="#374151" text-anchor="middle">English</text><text x="165" y="81" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">5</text><text x="75" y="106" font-size="11" fill="#374151" text-anchor="middle">Science</text><text x="165" y="106" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">8</text><text x="75" y="131" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">Total</text><text x="165" y="131" font-size="12" fill="#16a34a" font-weight="700" text-anchor="middle">20</text><text x="110" y="151" font-size="10" fill="#374151" text-anchor="middle">frequencies must add up to the total</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to collect data using a survey and organise it into a frequency table with categories and frequencies" />',
+        'Short video showing how to collect data using a survey and organise it into a frequency table with categories and frequencies',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -184,7 +184,7 @@ export const topicData: TopicData = {
         'A pictograph titled Favourite Fruit showing Apples with 3 full symbols, Bananas with 2 full symbols and a half symbol, and Oranges with 1 full symbol and a half symbol, with a key showing one symbol equals 10 learners, all symbols (full and half) in green, and totals in red',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read a pictograph with a many-to-one key including a half symbol, and how to choose a key and draw a pictograph from a small data set" />',
+        'Short video showing how to read a pictograph with a many-to-one key including a half symbol, and how to choose a key and draw a pictograph from a small data set',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -265,7 +265,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12" fill="#0f1f3d" font-weight="700" text-anchor="middle">Books Read — Boys vs Girls</text><rect x="40" y="26" width="8" height="8" fill="#2563eb"/><text x="52" y="33" font-size="8" fill="#374151" font-weight="600">Boys</text><rect x="40" y="38" width="8" height="8" fill="#dc2626"/><text x="52" y="45" font-size="8" fill="#374151" font-weight="600">Girls</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155" x2="34" y2="155" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158" font-size="9" fill="#16a34a" font-weight="700" text-anchor="end">0</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9" fill="#16a34a" font-weight="700" text-anchor="end">10</text><line x1="34" y1="102.6" x2="210" y2="102.6" stroke="#e5e7eb" stroke-width="0.6"/><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9" fill="#16a34a" font-weight="700" text-anchor="end">20</text><line x1="34" y1="50.2" x2="210" y2="50.2" stroke="#e5e7eb" stroke-width="0.6"/><rect x="45" y="92.1" width="16" height="62.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.2"/><text x="53" y="88.1" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">12</text><rect x="63" y="60.7" width="16" height="94.3" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.2"/><text x="71" y="56.7" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">18</text><text x="62" y="167" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Wk1</text><rect x="100" y="50.2" width="16" height="104.8" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.2"/><text x="108" y="46.2" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">20</text><rect x="118" y="81.6" width="16" height="73.4" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.2"/><text x="126" y="77.6" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">14</text><text x="117" y="167" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Wk2</text><rect x="155" y="107.8" width="16" height="47.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.2"/><text x="163" y="103.8" font-size="9" fill="#2563eb" font-weight="700" text-anchor="middle">9</text><rect x="173" y="71.2" width="16" height="83.8" fill="#dc2626" stroke="#0f1f3d" stroke-width="1.2"/><text x="181" y="67.2" font-size="9" fill="#dc2626" font-weight="700" text-anchor="middle">16</text><text x="172" y="167" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Wk3</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to read and draw bar graphs and double bar graphs, including how to label axes and add a key" />',
+        'Short video explaining how to read and draw bar graphs and double bar graphs, including how to label axes and add a key',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -340,7 +340,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read a pie chart by converting between degrees and percentages and calculating the number of items each slice represents" />',
+        'Short video showing how to read a pie chart by converting between degrees and percentages and calculating the number of items each slice represents',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -425,7 +425,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg"><text x="130" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#0f1f3d"><tspan fill="#ea580c">3</tspan><tspan>, </tspan><tspan fill="#ea580c">3</tspan><tspan>, </tspan><tspan fill="#ea580c">3</tspan><tspan>, </tspan><tspan fill="#16a34a">6</tspan><tspan>, 9, 11, 14</tspan></text><text x="130" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#0f1f3d"><tspan>Mean = </tspan><tspan fill="#2563eb">7</tspan><tspan>   Median = </tspan><tspan fill="#16a34a">6</tspan><tspan>   Mode = </tspan><tspan fill="#ea580c">3</tspan></text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate the mean by adding and dividing, find the median by ordering values and locating the middle, and identify the mode" />',
+        'Short video showing how to calculate the mean by adding and dividing, find the median by ordering values and locating the middle, and identify the mode',
     },
   ],
 

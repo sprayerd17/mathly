@@ -174,7 +174,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what an algebraic expression is identifying terms coefficients and constants and showing how to evaluate an expression by substituting a value for the variable" />',
+        'Short video explaining what an algebraic expression is identifying terms coefficients and constants and showing how to evaluate an expression by substituting a value for the variable',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -264,7 +264,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between like and unlike terms using colour coding and showing why terms with different variables or different powers cannot be combined" />',
+        'Short video explaining the difference between like and unlike terms using colour coding and showing why terms with different variables or different powers cannot be combined',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -435,7 +435,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to simplify algebraic expressions by grouping like terms with matching colours and combining their coefficients step by step" />',
+        'Short video demonstrating how to simplify algebraic expressions by grouping like terms with matching colours and combining their coefficients step by step',
     },
   ],
   scoreMessages: [

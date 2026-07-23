@@ -175,7 +175,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining primary vs secondary sources, population vs sample, and how to choose and justify an appropriate method for collecting data" />',
+        'Short video explaining primary vs secondary sources, population vs sample, and how to choose and justify an appropriate method for collecting data',
 
       diagramPlaceholder:
         'A flow diagram of the data-handling cycle — pose a question, collect data, organise data, represent data, analyse and interpret — shown as a repeating loop with the collect-data stage highlighted in blue',
@@ -306,7 +306,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how to identify outliers and organise data by multiple criteria to reveal hidden patterns in data sets" />',
+        'Short video explaining how to identify outliers and organise data by multiple criteria to reveal hidden patterns in data sets',
 
       diagramPlaceholder:
         'A two-way table grouping data by two criteria simultaneously — gender across rows and pass/fail status across columns, with counts in each cell and row/column totals',
@@ -456,7 +456,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to construct and read bar graphs, double bar graphs, histograms, pie charts and broken-line graphs by hand" />',
+        'Short video demonstrating how to construct and read bar graphs, double bar graphs, histograms, pie charts and broken-line graphs by hand',
 
       diagramPlaceholder:
         'A grid of four small graphs side by side — a bar graph with gaps between bars, a histogram with touching bars, a pie chart with labelled percentage slices, and a broken-line graph with points joined by straight segments',
@@ -586,7 +586,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to draw and interpret scatter plots and identify positive, negative and no correlation from the pattern of data points" />',
+        'Short video showing how to draw and interpret scatter plots and identify positive, negative and no correlation from the pattern of data points',
 
       diagramPlaceholder:
         'Two scatter plots side by side — one showing positive correlation (points rising left to right) and one showing negative correlation (points falling left to right), each with a clear trend line',
@@ -685,7 +685,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to compare two data sets using mean and range and how to write a short comparison paragraph with a conclusion" />',
+        'Short video showing how to compare two data sets using mean and range and how to write a short comparison paragraph with a conclusion',
 
       diagramPlaceholder:
         'Two side-by-side bar graphs representing two different data sets with the same mean but different ranges, for visual comparison of spread',

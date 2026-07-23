@@ -146,7 +146,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat natuurlike getalle, heelgetalle, gehele getalle en rasionale getalle bekendstel en wys hoe elke versameling binne die volgende pas" />',
+        'Kort video wat natuurlike getalle, heelgetalle, gehele getalle en rasionale getalle bekendstel en wys hoe elke versameling binne die volgende pas',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,7 +306,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat irrasionale getalle vir die eerste keer bekendstel, met pi en vierkantswortels van nie-volkome vierkante as voorbeelde" />',
+        'Kort video wat irrasionale getalle vir die eerste keer bekendstel, met pi en vierkantswortels van nie-volkome vierkante as voorbeelde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -417,7 +417,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verskeie voorbeelde deurwerk van die klassifisering van gegewe getalle in natuurlik, heel, geheel, rasionaal of irrasionaal" />',
+        'Kort video wat verskeie voorbeelde deurwerk van die klassifisering van gegewe getalle in natuurlik, heel, geheel, rasionaal of irrasionaal',
     },
   ],
   resultsConfig: {

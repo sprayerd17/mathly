@@ -90,7 +90,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat vierkantsgetalle en kwadraatwortels verduidelik met visuele voorbeelde van kwadratering en die vind van die kwadraatwortel" />',
+        'Kort video wat vierkantsgetalle en kwadraatwortels verduidelik met visuele voorbeelde van kwadratering en die vind van die kwadraatwortel',
 
       diagramPlaceholder:
         'Visuele rooster wat vierkantsgetalle van 1² tot 6² as groeiende n × n roosters wys, met die grondgetal in blou, eksponent in oranje en waarde in groen',
@@ -178,7 +178,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat kubusgetalle en kubuswortels verduidelik met visuele 3D-kubusvoorbeelde en kleurgekodeerde werk" />',
+        'Kort video wat kubusgetalle en kubuswortels verduidelik met visuele 3D-kubusvoorbeelde en kleurgekodeerde werk',
 
       diagramPlaceholder:
         'Visuele diagram wat kubusgetalle van 1³ tot 4³ as groeiende 3D-kubusse wys, met die grondgetal in blou, eksponent in oranje en waarde in groen',
@@ -282,7 +282,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat eksponensiële notasie verduidelik en wys hoe om uitdrukkings met enige grondgetal en eksponent uit te brei en te evalueer, insluitend die mag-van-0- en mag-van-1-reëls" />',
+        'Kort video wat eksponensiële notasie verduidelik en wys hoe om uitdrukkings met enige grondgetal en eksponent uit te brei en te evalueer, insluitend die mag-van-0- en mag-van-1-reëls',
     },
   ],
 

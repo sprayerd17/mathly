@@ -79,7 +79,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om vergelykings uit woordprobleme op te stel en deur inspeksie op te los" />',
+        'Kort video wat wys hoe om vergelykings uit woordprobleme op te stel en deur inspeksie op te los',
 
       diagramPlaceholder:
         'Balans wat 4x + 7 aan die een kant en 31 aan die ander kant wys, wat gebalanseerd bly, met die oplossing x = 6 hieronder',
@@ -181,7 +181,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om additiewe en multiplikatiewe inverses te gebruik om vergelykings op te los, en hoe om vergelykings met vierkantsterme op te los" />',
+        'Kort video wat wys hoe om additiewe en multiplikatiewe inverses te gebruik om vergelykings op te los, en hoe om vergelykings met vierkantsterme op te los',
 
       diagramPlaceholder:
         'Balans wat x + 8 = 15 wys, met −8 van albei kante afgetrek om x = 7 oor te laat',
@@ -280,7 +280,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van georde pare te genereer en die punte te stip" />',
+        'Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van georde pare te genereer en die punte te stip',
 
       diagramPlaceholder:
         'Koördinaatrooster wat die georde pare (0,−2), (1,1), (2,4) en (3,7) uit y = 3x − 2 stip, verbind deur ʼn reguit lyn',

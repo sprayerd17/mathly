@@ -135,7 +135,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use the circumference and area formulas for circles using π = 3.14 with worked examples" />',
+        'Short video showing how to use the circumference and area formulas for circles using π = 3.14 with worked examples',
 
       diagramPlaceholder:
         'Diagram of a circle with radius labelled blue, diameter labelled red, circumference labelled green and area region shaded orange',
@@ -273,7 +273,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to decompose an L-shape and a pentagon into rectangles and triangles to find the total area" />',
+        'Short video showing how to decompose an L-shape and a pentagon into rectangles and triangles to find the total area',
 
       diagramPlaceholder:
         'A pentagon shape split into a rectangle and a triangle, each section labelled with its dimensions',
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve real-life perimeter and area problems involving circles and how to convert between SI area units" />',
+        'Short video showing how to solve real-life perimeter and area problems involving circles and how to convert between SI area units',
     },
   ],
 

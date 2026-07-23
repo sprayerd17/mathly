@@ -152,7 +152,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat toon hoe om groot getalle tot 9 syfers op te tel deur kolomoptelling met oordra te gebruik, met kleurgekodeerde stappe" />',
+        'Kort video wat toon hoe om groot getalle tot 9 syfers op te tel deur kolomoptelling met oordra te gebruik, met kleurgekodeerde stappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat toon hoe om groot getalle met leen af te trek, insluitend hoe om oor nulle te leen, met kleurgekodeerde stappe" />',
+        'Kort video wat toon hoe om groot getalle met leen af te trek, insluitend hoe om oor nulle te leen, met kleurgekodeerde stappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -386,7 +386,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat toon hoe om deur afronding te skat, presies te bereken, en optellings- en aftrekkingsantwoorde met inverse bewerkings na te gaan, met kleurgekodeerde stappe" />',
+        'Kort video wat toon hoe om deur afronding te skat, presies te bereken, en optellings- en aftrekkingsantwoorde met inverse bewerkings na te gaan, met kleurgekodeerde stappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -472,7 +472,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat toon hoe om woordprobleme met optelling en aftrekking op te los deur sleutelwoorde te identifiseer en ʼn getalsin te skryf, met kleurgekodeerde stappe" />',
+        'Kort video wat toon hoe om woordprobleme met optelling en aftrekking op te los deur sleutelwoorde te identifiseer en ʼn getalsin te skryf, met kleurgekodeerde stappe',
     },
   ],
   topicPractice: [

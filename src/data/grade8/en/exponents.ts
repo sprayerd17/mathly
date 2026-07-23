@@ -148,7 +148,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining all five laws of exponents with colour coded base and exponent examples" />',
+        'Short video explaining all five laws of exponents with colour coded base and exponent examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -272,7 +272,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to convert large numbers to scientific notation by moving the decimal point and counting places" />',
+        'Short video showing how to convert large numbers to scientific notation by moving the decimal point and counting places',
 
       diagramPlaceholder:
         'Digit boxes for 45 000 showing the decimal point moving 4 places left to give 4.5 × 10⁴',
@@ -436,7 +436,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating squares cubes square roots and cube roots of integers and fractions with negative sign rules explained" />',
+        'Short video demonstrating squares cubes square roots and cube roots of integers and fractions with negative sign rules explained',
     },
   ],
 

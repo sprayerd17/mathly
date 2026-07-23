@@ -81,7 +81,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn tweerigtingtabel op te stel en te gebruik om al die uitkomste van ʼn saamgestelde gebeurtenis te lys en waarskynlikheid te bereken" />',
+        'Kort video wat wys hoe om ʼn tweerigtingtabel op te stel en te gebruik om al die uitkomste van ʼn saamgestelde gebeurtenis te lys en waarskynlikheid te bereken',
 
       diagramPlaceholder:
         'ʼn Tweerigting-tabel met muntgooi-uitkomste (kop/stert) as rye en dobbelsteen-uitkomste (1-6) as kolomme, met al 12 kombinasies in die rooster getoon en die twee gunstige (kop, >4) selle uitgelig',
@@ -160,7 +160,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn boomdiagram vir ʼn saamgestelde gebeurtenis te teken en waarskynlikhede langs taklane te vermenigvuldig" />',
+        'Kort video wat wys hoe om ʼn boomdiagram vir ʼn saamgestelde gebeurtenis te teken en waarskynlikhede langs taklane te vermenigvuldig',
 
       diagramPlaceholder:
         'ʼn Boomdiagram wat twee muntgooie wys, met takke vir kop en stert by elke stadium, en waarskynlikhede op elke tak gemerk wat na vier finale uitkomste lei, elk met gekombineerde waarskynlikheid 1/4',
@@ -238,7 +238,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om relatiewe frekwensie vir saamgestelde gebeurtenisse te voorspel en met teoretiese waarskynlikheid te vergelyk, en natuurlike variasie te verduidelik" />',
+        'Kort video wat wys hoe om relatiewe frekwensie vir saamgestelde gebeurtenisse te voorspel en met teoretiese waarskynlikheid te vergelyk, en natuurlike variasie te verduidelik',
 
       diagramPlaceholder:
         'ʼn Vergelyking wat voorspelde frekwensie teenoor werklike frekwensie vir ʼn twee-muntgooi-eksperiment (80 gooie) wys, plus ʼn grafiek wat illustreer hoe die relatiewe frekwensie na die teoretiese waarskynlikheid van 1/4 konvergeer soos die aantal proewe toeneem',

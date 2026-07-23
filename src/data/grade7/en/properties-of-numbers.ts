@@ -205,7 +205,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating each divisibility rule with a worked number, including why the digit-sum rule works for 3 and 9 and why the alternating-sum rule works for 11" />',
+        'Short video demonstrating each divisibility rule with a worked number, including why the digit-sum rule works for 3 and 9 and why the alternating-sum rule works for 11',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -463,7 +463,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to extend the HCF and LCM prime factorisation method from two numbers to three numbers, with colour coded shared prime factors and highest/lowest powers" />',
+        'Short video showing how to extend the HCF and LCM prime factorisation method from two numbers to three numbers, with colour coded shared prime factors and highest/lowest powers',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -638,7 +638,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to use the LCM as the lowest common denominator to add fractions, and how to solve HCF/LCM word problems involving three quantities such as packing hampers and coinciding flashing lights" />',
+        'Short video showing how to use the LCM as the lowest common denominator to add fractions, and how to solve HCF/LCM word problems involving three quantities such as packing hampers and coinciding flashing lights',
     },
   ],
   resultsConfig: {

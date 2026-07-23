@@ -132,7 +132,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining what a limit is, how to recognise an indeterminate form, and how to evaluate limits by factorising" />',
+        'Short video explaining what a limit is, how to recognise an indeterminate form, and how to evaluate limits by factorising',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating differentiation from first principles for f(x) = x² and f(x) = x³ step by step" />',
+        'Short video demonstrating differentiation from first principles for f(x) = x² and f(x) = x³ step by step',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -391,7 +391,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply the constant, power, constant multiple, and sum/difference rules to differentiate polynomials and simplified rational expressions" />',
+        'Short video showing how to apply the constant, power, constant multiple, and sum/difference rules to differentiate polynomials and simplified rational expressions',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -509,7 +509,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the equation of a tangent to a curve using differentiation and the point-slope formula" />',
+        'Short video showing how to find the equation of a tangent to a curve using differentiation and the point-slope formula',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -618,7 +618,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to find intercepts, stationary points, and sketch a cubic function step by step" />',
+        'Short video demonstrating how to find intercepts, stationary points, and sketch a cubic function step by step',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -748,7 +748,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating optimisation using calculus — fencing problem and falling object worked through step by step" />',
+        'Short video demonstrating optimisation using calculus — fencing problem and falling object worked through step by step',
     },
   ],
 

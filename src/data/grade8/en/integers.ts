@@ -119,7 +119,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the sign rules for multiplying and dividing integers with worked examples" />',
+        'Short video explaining the sign rules for multiplying and dividing integers with worked examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -235,7 +235,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining additive and multiplicative inverses of integers with examples showing why 0 is a special case" />',
+        'Short video explaining additive and multiplicative inverses of integers with examples showing why 0 is a special case',
 
       diagramPlaceholder:
         'Number line showing additive inverse pairs (-5,5) and (-3,3) linked by arcs summing to 0, with a small table of multiplicative inverse examples below',
@@ -415,7 +415,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate with squares cubes and roots of integers including the difference between (negative a) squared and negative a squared" />',
+        'Short video showing how to calculate with squares cubes and roots of integers including the difference between (negative a) squared and negative a squared',
 
       diagramPlaceholder:
         'Side-by-side comparison showing (-6) squared with brackets giving positive 36, versus negative 6 squared without brackets giving negative 36',

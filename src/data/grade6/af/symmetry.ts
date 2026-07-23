@@ -94,7 +94,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die voutoets vir simmetrielyne demonstreer, met hoe om vertikale, horisontale en diagonale lyne te toets, en waarom ʼn reghoek se diagonaal die toets faal terwyl ʼn vierkant se diagonaal dit slaag" />',
+        'Kort video wat die voutoets vir simmetrielyne demonstreer, met hoe om vertikale, horisontale en diagonale lyne te toets, en waarom ʼn reghoek se diagonaal die toets faal terwyl ʼn vierkant se diagonaal dit slaag',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -205,7 +205,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die diagonale van ʼn vierkant, ruit, reghoek, parallelogram en vlieër vergelyk, met watter diagonale simmetrielyne is en hoe dit met elke vorm se gelyke-sye-eienskappe verband hou" />',
+        'Kort video wat die diagonale van ʼn vierkant, ruit, reghoek, parallelogram en vlieër vergelyk, met watter diagonale simmetrielyne is en hoe dit met elke vorm se gelyke-sye-eienskappe verband hou',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn simmetriese vorm te voltooi deur afstande vanaf die simmetrielyn te meet en punte na die teenoorgestelde kant te weerspieël, met ʼn voorbeeld van ʼn diagonale simmetrielyn" />',
+        'Kort video wat wys hoe om ʼn simmetriese vorm te voltooi deur afstande vanaf die simmetrielyn te meet en punte na die teenoorgestelde kant te weerspieël, met ʼn voorbeeld van ʼn diagonale simmetrielyn',
     },
   ],
 

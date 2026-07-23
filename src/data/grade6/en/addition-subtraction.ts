@@ -152,7 +152,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to add large numbers up to 9 digits using column addition with carrying, colour coded steps" />',
+        'Short video showing how to add large numbers up to 9 digits using column addition with carrying, colour coded steps',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to subtract large numbers using borrowing, including how to borrow across zeros, with colour coded steps" />',
+        'Short video showing how to subtract large numbers using borrowing, including how to borrow across zeros, with colour coded steps',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -386,7 +386,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to estimate by rounding, calculate exactly, and check addition and subtraction answers using inverse operations with colour coded steps" />',
+        'Short video showing how to estimate by rounding, calculate exactly, and check addition and subtraction answers using inverse operations with colour coded steps',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -472,7 +472,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve word problems using addition and subtraction by identifying key words and writing a number sentence with colour coded steps" />',
+        'Short video showing how to solve word problems using addition and subtraction by identifying key words and writing a number sentence with colour coded steps',
     },
   ],
   topicPractice: [

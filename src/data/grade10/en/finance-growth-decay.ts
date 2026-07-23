@@ -139,7 +139,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining simple interest formula A=P(1+ni) with colour coded worked examples showing hire purchase and savings contexts" />',
+        'Short video explaining simple interest formula A=P(1+ni) with colour coded worked examples showing hire purchase and savings contexts',
 
       diagramPlaceholder:
         'Linear graph of A against n for simple interest showing constant straight-line growth, with the same amount added every year',
@@ -296,7 +296,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining compound interest formula A=P(1+i)^n with colour coded examples showing savings and population growth and comparison with simple interest" />',
+        'Short video explaining compound interest formula A=P(1+i)^n with colour coded examples showing savings and population growth and comparison with simple interest',
 
       diagramPlaceholder:
         'Exponential growth curve comparing simple and compound interest over time on the same axes, showing compound interest overtaking simple interest',
@@ -428,7 +428,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining simple decay formula A=P(1-ni) and compound decay formula A=P(1-i)^n with colour coded worked examples showing car and machine depreciation contexts" />',
+        'Short video explaining simple decay formula A=P(1-ni) and compound decay formula A=P(1-i)^n with colour coded worked examples showing car and machine depreciation contexts',
 
       diagramPlaceholder:
         'Linear graph of A against n for simple decay showing constant straight-line decline, with the same amount subtracted every year (compound decay would curve instead, decreasing more slowly as the value shrinks)',
@@ -552,7 +552,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating trial and improvement to find n in compound growth problems showing how to test refine and interpret results" />',
+        'Short video demonstrating trial and improvement to find n in compound growth problems showing how to test refine and interpret results',
 
       diagramPlaceholder:
         'Graph of trial values of n against the calculated multiplier, with a dashed target line in orange and the refined answer that first reaches the target highlighted in green',
@@ -705,7 +705,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining foreign exchange rates how to convert between currencies using multiplication and division and what happens when the Rand weakens or strengthens" />',
+        'Short video explaining foreign exchange rates how to convert between currencies using multiplication and division and what happens when the Rand weakens or strengthens',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -871,7 +871,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a hire purchase problem step by step showing deposit in purple balance in blue interest rate in orange repayment period in green and total repayment in red" />',
+        'Short video working through a hire purchase problem step by step showing deposit in purple balance in blue interest rate in orange repayment period in green and total repayment in red',
 
       diagramPlaceholder:
         'Bar breakdown of a hire purchase showing the deposit segment in purple next to the financed balance segment in blue, then the same deposit next to a larger total repayment segment in red once simple interest has been added',
@@ -1019,7 +1019,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining inflation using the compound growth formula A=P(1+i)^n to project future prices with current price in blue inflation rate in orange years in green and future price in red and how purchasing power is affected" />',
+        'Short video explaining inflation using the compound growth formula A=P(1+i)^n to project future prices with current price in blue inflation rate in orange years in green and future price in red and how purchasing power is affected',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -1135,7 +1135,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video applying the compound growth formula A=P(1+i)^n to population figures with starting population in blue growth rate in orange years in green and future population in red including doubling time by trial and improvement" />',
+        'Short video applying the compound growth formula A=P(1+i)^n to population figures with starting population in blue growth rate in orange years in green and future population in red including doubling time by trial and improvement',
 
       diagramPlaceholder:
         'Growing crowd of dots showing a small starting population growing to a much larger population over time, illustrating exponential population growth',

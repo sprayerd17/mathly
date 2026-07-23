@@ -101,7 +101,7 @@ export const topicData: TopicData = {
       diagramSvg: GRID_HIGHLIGHT_SVG,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read and write alpha-numeric grid references by combining a column letter and a row number" />',
+        'Short video showing how to read and write alpha-numeric grid references by combining a column letter and a row number',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -175,7 +175,7 @@ export const topicData: TopicData = {
       diagramSvg: GRID_SVG,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the grid reference of a landmark on a map and how to find which landmark is at a given grid reference" />',
+        'Short video showing how to find the grid reference of a landmark on a map and how to find which landmark is at a given grid reference',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -264,7 +264,7 @@ export const topicData: TopicData = {
       diagramSvg: ROUTE_SVG,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to work out and give clear step-by-step directions to move between two alpha-numeric grid references on a map" />',
+        'Short video showing how to work out and give clear step-by-step directions to move between two alpha-numeric grid references on a map',
     },
   ],
   topicPractice: [

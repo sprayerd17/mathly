@@ -190,7 +190,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die formele definisies van driehoeke en vierhoeke verduidelik met kleurgekodeerde diagramme van gelyke sye, parallelle sye, en hoeke" />',
+        'Kort video wat die formele definisies van driehoeke en vierhoeke verduidelik met kleurgekodeerde diagramme van gelyke sye, parallelle sye, en hoeke',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -314,7 +314,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kongruente en gelykvormige vorms te identifiseer deur sylengtes en hoeke te vergelyk, met kleurgekodeerde ooreenstemmende hoeke in groen" />',
+        'Kort video wat wys hoe om kongruente en gelykvormige vorms te identifiseer deur sylengtes en hoeke te vergelyk, met kleurgekodeerde ooreenstemmende hoeke in groen',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -491,7 +491,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om bekende eienskappe van vierhoeke en gelykvormige driehoeke te gebruik om onbekende sye en hoeke stap vir stap te vind" />',
+        'Kort video wat wys hoe om bekende eienskappe van vierhoeke en gelykvormige driehoeke te gebruik om onbekende sye en hoeke stap vir stap te vind',
     },
   ],
   scoreMessages: [

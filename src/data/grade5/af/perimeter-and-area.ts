@@ -123,7 +123,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="25" width="140" height="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="130" y="16" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">10 cm</text><text x="45" y="64" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle" transform="rotate(-90 45 64)">6 cm</text><text x="130" y="120" font-size="13" font-weight="700" fill="#16a34a" text-anchor="middle">10+10+6+6 = <tspan fill="#ea580c">32 cm</tspan></text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die omtrek van ʼn reghoek en ʼn vierkant te bereken deur al die sylengtes op te tel met kleurgekodeerde stappe" />',
+        'Kort video wat wys hoe om die omtrek van ʼn reghoek en ʼn vierkant te bereken deur al die sylengtes op te tel met kleurgekodeerde stappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -237,7 +237,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="30" width="140" height="60" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="130" y="21" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">lengte = 8 cm</text><text x="45" y="64" font-size="13" font-weight="700" fill="#dc2626" text-anchor="middle" transform="rotate(-90 45 64)">breedte = 5 cm</text><text x="130" y="120" font-size="13" font-weight="700" fill="#16a34a" text-anchor="middle">8 × 5 = <tspan fill="#ea580c">40 cm²</tspan></text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn reghoek en ʼn vierkant te bereken deur lengte met breedte te vermenigvuldig met kleurgekodeerde stappe" />',
+        'Kort video wat wys hoe om die oppervlakte van ʼn reghoek en ʼn vierkant te bereken deur lengte met breedte te vermenigvuldig met kleurgekodeerde stappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="84" width="120" height="6" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="75" y="20" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">O = 42 <tspan fill="#16a34a">cm</tspan></text><text x="75" y="38" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">Opp = 20 <tspan fill="#ea580c">cm²</tspan></text><text x="75" y="105" font-size="11" fill="#0f1f3d" text-anchor="middle">lang dun reghoek</text><rect x="195" y="54" width="60" height="60" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="225" y="20" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">O = 24 <tspan fill="#16a34a">cm</tspan></text><text x="225" y="38" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">Opp = 36 <tspan fill="#ea580c">cm²</tspan></text><text x="225" y="130" font-size="11" fill="#0f1f3d" text-anchor="middle">vierkant</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verskil tussen omtrek en oppervlakte verduidelik deur die raam-en-prent-analogie te gebruik met kleurgekodeerde voorbeelde in blou, rooi, groen en oranje" />',
+        'Kort video wat die verskil tussen omtrek en oppervlakte verduidelik deur die raam-en-prent-analogie te gebruik met kleurgekodeerde voorbeelde in blou, rooi, groen en oranje',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -439,7 +439,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg"><polygon points="20,20 140,20 140,60 70,60 70,110 20,110" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="20" y1="60" x2="70" y2="60" stroke="#0f1f3d" stroke-width="1.5" stroke-dasharray="4,3"/><text x="105" y="14" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">Reghoek A</text><text x="45" y="128" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">Reghoek B</text><text x="180" y="60" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">Totale</text><text x="180" y="76" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">oppervlakte</text><text x="180" y="92" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">= A + B</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die oppervlakte van ʼn onreëlmatige vorm te bereken deur dit in kleiner reghoeke te verdeel, elke oppervlakte apart te bereken en dit bymekaar te tel met kleurgekodeerde stappe" />',
+        'Kort video wat wys hoe om die oppervlakte van ʼn onreëlmatige vorm te bereken deur dit in kleiner reghoeke te verdeel, elke oppervlakte apart te bereken en dit bymekaar te tel met kleurgekodeerde stappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -560,7 +560,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om tussen omtrek en oppervlakte te besluit wanneer werklike-lewe-probleme opgelos word met kleurgekodeerde uitgewerkte voorbeelde in blou, rooi en groen" />',
+        'Kort video wat wys hoe om tussen omtrek en oppervlakte te besluit wanneer werklike-lewe-probleme opgelos word met kleurgekodeerde uitgewerkte voorbeelde in blou, rooi en groen',
     },
   ],
   resultsConfig: {

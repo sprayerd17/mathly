@@ -133,7 +133,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a thermometer as a vertical number line, with zero degrees marked in red, positive temperatures shown climbing upward in orange, and negative temperatures shown going downward in blue" />',
+        'Short video showing a thermometer as a vertical number line, with zero degrees marked in red, positive temperatures shown climbing upward in orange, and negative temperatures shown going downward in blue',
 
       diagramPlaceholder:
         'Diagram of a vertical thermometer scale from minus 10 to 40 degrees Celsius, with 0 degrees marked in red, water freezing and boiling points labelled, and the mercury level shown at a sample temperature',
@@ -236,7 +236,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing pairs of negative temperatures on a number line, showing that the temperature closer to zero is always warmer even though its number after the minus sign is smaller" />',
+        'Short video comparing pairs of negative temperatures on a number line, showing that the temperature closer to zero is always warmer even though its number after the minus sign is smaller',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -348,7 +348,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to find the difference between two temperatures on a number line, including a case that crosses zero by adding the distance below zero to the distance above zero" />',
+        'Short video demonstrating how to find the difference between two temperatures on a number line, including a case that crosses zero by adding the distance below zero to the distance above zero',
     },
   ],
 

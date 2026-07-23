@@ -117,7 +117,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve quadratic equations using factorisation, completing the square, and the quadratic formula with a worked example for each method" />',
+        'Short video showing how to solve quadratic equations using factorisation, completing the square, and the quadratic formula with a worked example for each method',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -216,7 +216,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve surd equations by isolating the surd, squaring both sides, and checking every solution in the original equation for extraneous roots" />',
+        'Short video showing how to solve surd equations by isolating the surd, squaring both sides, and checking every solution in the original equation for extraneous roots',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -310,7 +310,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve exponential equations by writing both sides with the same base, and by substitution when the equation is quadratic in form" />',
+        'Short video showing how to solve exponential equations by writing both sides with the same base, and by substitution when the equation is quadratic in form',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -401,7 +401,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve quadratic and rational inequalities using critical values and sign analysis on a number line" />',
+        'Short video showing how to solve quadratic and rational inequalities using critical values and sign analysis on a number line',
 
       diagramPlaceholder:
         'Number line diagram showing critical values marked in blue, sign of the expression in each interval in orange, and the final solution intervals highlighted in green',
@@ -518,7 +518,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve a system of one linear and one quadratic equation simultaneously using the substitution method" />',
+        'Short video showing how to solve a system of one linear and one quadratic equation simultaneously using the substitution method',
 
       diagramPlaceholder:
         'Graph showing a straight line in blue intersecting a parabola in orange at two points, with the intersection coordinates highlighted in green',

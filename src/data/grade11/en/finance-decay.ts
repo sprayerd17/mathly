@@ -159,7 +159,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the straight-line depreciation formula A = P(1 − ni) applied step by step with colour-coded variables" />',
+        'Short video showing the straight-line depreciation formula A = P(1 − ni) applied step by step with colour-coded variables',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -303,7 +303,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the reducing-balance depreciation formula A = P(1 − i)^n applied step by step, including a logarithm example to find n" />',
+        'Short video showing the reducing-balance depreciation formula A = P(1 − i)^n applied step by step, including a logarithm example to find n',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -455,7 +455,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing straight-line and reducing-balance depreciation side by side with the same asset, rate, and time period" />',
+        'Short video comparing straight-line and reducing-balance depreciation side by side with the same asset, rate, and time period',
 
       diagramPlaceholder:
         'Both the straight-line and reducing-balance graphs plotted on the same set of axes for the same starting value, with the point where the reducing-balance curve sits above the straight line clearly marked',
@@ -646,7 +646,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising simple and compound growth from Grade 10 and applying them to harder Grade 11 problems: hire purchase with deposit and instalments, solving for the growth rate in a population problem, and solving for the principal in an investment problem" />',
+        'Short video revising simple and compound growth from Grade 10 and applying them to harder Grade 11 problems: hire purchase with deposit and instalments, solving for the growth rate in a population problem, and solving for the principal in an investment problem',
 
       diagramPlaceholder:
         'A flow diagram for the hire purchase worked example showing cash price, deposit subtracted, remaining balance, and the balance growing under simple interest into equal monthly instalments',
@@ -838,7 +838,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the nominal-to-effective rate formula applied step by step with monthly, quarterly and daily compounding examples" />',
+        'Short video showing the nominal-to-effective rate formula applied step by step with monthly, quarterly and daily compounding examples',
 
       diagramPlaceholder:
         'A comparison bar chart showing the same nominal rate compounded at different frequencies (annually, monthly, daily) converging toward a slightly higher effective rate, to illustrate that more frequent compounding increases the effective rate',
@@ -990,7 +990,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through a multi-phase finance problem step by step, showing how to handle a rate change and a mid-period withdrawal" />',
+        'Short video working through a multi-phase finance problem step by step, showing how to handle a rate change and a mid-period withdrawal',
 
       diagramPlaceholder:
         'A timeline showing the multi-stage scenario from Example 2, with markers at 18 months (rate change), 24 months (withdrawal), and 48 months (final value), so the sequence of events is visually clear',

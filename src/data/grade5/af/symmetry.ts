@@ -90,7 +90,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 250 135" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="20" width="80" height="80" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="60" y1="16" x2="60" y2="104" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><line x1="16" y1="60" x2="104" y2="60" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><line x1="20" y1="20" x2="100" y2="100" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><line x1="100" y1="20" x2="20" y2="100" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><text x="60" y="118" font-weight="700" font-size="12" text-anchor="middle" fill="#0f1f3d">Vierkant — 4 lyne</text><line x1="160" y1="100" x2="190" y2="20" stroke="#0f1f3d" stroke-width="3"/><line x1="220" y1="100" x2="190" y2="20" stroke="#0f1f3d" stroke-width="3"/><line x1="172" y1="70" x2="208" y2="70" stroke="#0f1f3d" stroke-width="2.5"/><line x1="190" y1="15" x2="190" y2="105" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><text x="190" y="118" font-weight="700" font-size="12" text-anchor="middle" fill="#0f1f3d">Letter A — 1 lyn</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik wat simmetrie is, hoe om ʼn simmetrielyn te identifiseer deur te vou, en voorbeelde van simmetriese en nie-simmetriese vorms" />',
+        'Kort video wat verduidelik wat simmetrie is, hoe om ʼn simmetrielyn te identifiseer deur te vou, en voorbeelde van simmetriese en nie-simmetriese vorms',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -202,7 +202,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 280 135" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="35" width="110" height="60" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="70" y1="30" x2="70" y2="100" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><line x1="10" y1="65" x2="130" y2="65" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><text x="70" y="118" font-weight="700" font-size="12" text-anchor="middle" fill="#0f1f3d">Reghoek — 2 lyne</text><polygon points="210,25 165,105 255,105" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="210" y1="25" x2="210" y2="105" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><line x1="165" y1="105" x2="232.5" y2="65" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><line x1="255" y1="105" x2="187.5" y2="65" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><text x="210" y="118" font-weight="700" font-size="11" text-anchor="middle" fill="#0f1f3d">Driehoek — 3 lyne</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om al die simmetrielyne in verskillende vorms te vind deur vertikale horisontale en diagonale voue te probeer" />',
+        'Kort video wat wys hoe om al die simmetrielyne in verskillende vorms te vind deur vertikale horisontale en diagonale voue te probeer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -308,7 +308,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 300 135" xmlns="http://www.w3.org/2000/svg"><path d="M70,30 Q30,20 25,55 Q30,85 70,70 Z" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M70,30 Q110,20 115,55 Q110,85 70,70 Z" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M70,68 Q48,74 42,94 Q56,99 70,84 Z" fill="none" stroke="#0f1f3d" stroke-width="2"/><path d="M70,68 Q92,74 98,94 Q84,99 70,84 Z" fill="none" stroke="#0f1f3d" stroke-width="2"/><line x1="70" y1="25" x2="70" y2="95" stroke="#0f1f3d" stroke-width="3"/><circle cx="70" cy="22" r="4" fill="#0f1f3d"/><line x1="70" y1="10" x2="70" y2="108" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><text x="70" y="122" font-weight="700" font-size="12" text-anchor="middle" fill="#0f1f3d">Skoenlapper — 1 lyn</text><polygon points="230,30 190,70 270,70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="195" y="70" width="70" height="40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="230" y1="25" x2="230" y2="115" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="4,3"/><text x="230" y="128" font-weight="700" font-size="12" text-anchor="middle" fill="#0f1f3d">Huisvorm — 1 lyn</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat voorbeelde van simmetrie in die alledaagse lewe wys, insluitend skoenlappers blare geboue, en hoe om die simmetrielyn in elkeen te identifiseer" />',
+        'Kort video wat voorbeelde van simmetrie in die alledaagse lewe wys, insluitend skoenlappers blare geboue, en hoe om die simmetrielyn in elkeen te identifiseer',
     },
   ],
   topicPractice: [],

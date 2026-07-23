@@ -157,7 +157,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om akkuraat ʼn lynstuk van ʼn gegewe lengte met ʼn liniaal te teken, en ʼn hoek van ʼn gegewe grootte met ʼn gradeboog, met gegewe metings in blou en getrekte resultate in groen" />',
+        'Kort video wat wys hoe om akkuraat ʼn lynstuk van ʼn gegewe lengte met ʼn liniaal te teken, en ʼn hoek van ʼn gegewe grootte met ʼn gradeboog, met gegewe metings in blou en getrekte resultate in groen',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -312,7 +312,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn loodregte lyn en ʼn parallelle lyn met ʼn liniaal en winkelhaak te konstrueer, met die oorspronklike lyn in blou, die gekonstrueerde loodregte of parallelle lyn in groen en die winkelhaak in oranje" />',
+        'Kort video wat wys hoe om ʼn loodregte lyn en ʼn parallelle lyn met ʼn liniaal en winkelhaak te konstrueer, met die oorspronklike lyn in blou, die gekonstrueerde loodregte of parallelle lyn in groen en die winkelhaak in oranje',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -459,7 +459,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn driehoek gegewe drie sylengtes met ʼn passer en liniaal te konstrueer, insluitend hoe om eers te kontroleer of die drie lengtes ʼn driehoek kan vorm, met gegewe sylengtes in oranje, passerboë in blou en die voltooide driehoek in groen" />',
+        'Kort video wat wys hoe om ʼn driehoek gegewe drie sylengtes met ʼn passer en liniaal te konstrueer, insluitend hoe om eers te kontroleer of die drie lengtes ʼn driehoek kan vorm, met gegewe sylengtes in oranje, passerboë in blou en die voltooide driehoek in groen',
     },
   ],
 

@@ -153,7 +153,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om intreewaardes in ʼn vergelyking te vervang om uittree te vind, en hoe om ʼn vergelyking agteruit op te los om die intree te vind wanneer die uittree gegee is" />',
+        'Kort video wat wys hoe om intreewaardes in ʼn vergelyking te vervang om uittree te vind, en hoe om ʼn vergelyking agteruit op te los om die intree te vind wanneer die uittree gegee is',
 
       diagramPlaceholder:
         'ʼn Vloeidiagram wat ʼn intree x wys wat deur ʼn vergelykingsreël-blokkie beweeg om uittree y te produseer, met ʼn terugkeerpyl wat wys dat agteruit oplos x uit y herwin',
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om tussen verbale beskrywings, tabelle, vergelykings en reguitlyngrafieke te beweeg, en gradiënt en y-afsnit uit elke vorm te lees" />',
+        'Kort video wat wys hoe om tussen verbale beskrywings, tabelle, vergelykings en reguitlyngrafieke te beweeg, en gradiënt en y-afsnit uit elke vorm te lees',
 
       diagramPlaceholder:
         'ʼn Cartesiese vlak wat die lyn y = 3x + 2 wys, met die y-afsnit by (0, 2) duidelik gemerk en die gradiënt geïllustreer met ʼn opgaan/aanloop-driehoek',
@@ -447,7 +447,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van geordende pare te bou en dan daardie punte op ʼn Cartesiese vlak te plot" />',
+        'Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van geordende pare te bou en dan daardie punte op ʼn Cartesiese vlak te plot',
 
       diagramPlaceholder:
         'ʼn Cartesiese vlak met die punte (−1, 7), (0, 5), (1, 3), (2, 1) geplot en verbind deur ʼn reguit lyn',

@@ -122,7 +122,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat demonstreer hoe om die vierkant te voltooi vir kwadratiese uitdrukkings met a=1 en a≠1, met elke stap kleurgekodeer" />',
+        'Kort video wat demonstreer hoe om die vierkant te voltooi vir kwadratiese uitdrukkings met a=1 en a≠1, met elke stap kleurgekodeer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -275,7 +275,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die minimum- of maksimumwaarde en die x-posisie daarvan direk uit ʼn voltooide vierkantvorm af te lees, met ʼn toegepaste omheiningswoordprobleem" />',
+        'Kort video wat wys hoe om die minimum- of maksimumwaarde en die x-posisie daarvan direk uit ʼn voltooide vierkantvorm af te lees, met ʼn toegepaste omheiningswoordprobleem',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -484,7 +484,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese breuke met binoomnoemers te vereenvoudig: faktorisering, die KGV vind, tellers kombineer en gemeenskaplike faktore kanselleer" />',
+        'Kort video wat wys hoe om algebraïese breuke met binoomnoemers te vereenvoudig: faktorisering, die KGV vind, tellers kombineer en gemeenskaplike faktore kanselleer',
     },
   ],
 

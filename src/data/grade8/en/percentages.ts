@@ -112,7 +112,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the original price after a percentage increase or decrease by working backwards using division" />',
+        'Short video showing how to find the original price after a percentage increase or decrease by working backwards using division',
 
       diagramPlaceholder:
         'Bar model showing R400 (original, 100%) plus a 15% segment making up R460 (115%), with a reverse arrow labelled ÷1.15 pointing back from the final amount to the original',
@@ -227,7 +227,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate a new amount after a percentage increase or decrease using the two-step method and the one-step multiplier shortcut" />',
+        'Short video showing how to calculate a new amount after a percentage increase or decrease using the two-step method and the one-step multiplier shortcut',
 
       diagramPlaceholder:
         'Two-step flowchart showing Original R12 000, an arrow labelled ×0.09 leading to the increase R1 080, then an arrow labelled +R12 000 leading to the final new salary R13 080',
@@ -407,7 +407,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve multi-step percentage problems involving successive percentage changes and percentage increase relative to original" />',
+        'Short video showing how to solve multi-step percentage problems involving successive percentage changes and percentage increase relative to original',
 
       diagramPlaceholder:
         'Three stacked bars proportional to R100 (original), R110 (after +10%) and R99 (after -10%), with a reference line showing the final bar falls short of the original',

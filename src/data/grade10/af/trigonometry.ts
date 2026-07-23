@@ -87,7 +87,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat STSCASTTA bekendstel en wys hoe om die teenoorstaande, aangrensende en skuinssy sye relatief tot ʼn gegewe hoek in ʼn reghoekige driehoek te identifiseer" />',
+        'Kort video wat STSCASTTA bekendstel en wys hoe om die teenoorstaande, aangrensende en skuinssy sye relatief tot ʼn gegewe hoek in ʼn reghoekige driehoek te identifiseer',
 
       diagramPlaceholder:
         'Reghoekige driehoek met die teenoorstaande sy in blou, aangrensende sy in oranje en skuinssy in groen, met die STSCASTTA-verhoudings vir hoek θ langsaan getoon',
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn onbekende sy of hoek in ʼn reghoekige driehoek te bepaal deur STSCASTTA en inverse trig-funksies op ʼn sakrekenaar te gebruik" />',
+        'Kort video wat wys hoe om ʼn onbekende sy of hoek in ʼn reghoekige driehoek te bepaal deur STSCASTTA en inverse trig-funksies op ʼn sakrekenaar te gebruik',
 
       diagramPlaceholder:
         'Reghoekige driehoek PQR met die bekende sye PQ en QR in blou en die onbekende hoek P in rooi, wat wys hoe die tan-verhouding gebruik word om dit op te los',
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat trig-definisies na al vier kwadrante uitbrei deur ʼn punt (x,y) op die eindarm te gebruik en wys hoe r altyd positief is terwyl x en y negatief kan wees" />',
+        'Kort video wat trig-definisies na al vier kwadrante uitbrei deur ʼn punt (x,y) op die eindarm te gebruik en wys hoe r altyd positief is terwyl x en y negatief kan wees',
 
       diagramPlaceholder:
         'Cartesiese vlak wat die punt (3, 4) wys met die eindarm vanaf die oorsprong geteken, r langs die arm gemerk, en x en y as stippel-aftreklyne na die asse gemerk',
@@ -352,7 +352,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat y=sinθ, y=cosθ en y=tanθ teken vir 0° tot 360°, maksimum- en minimumpunte identifiseer en vertikale asimptote op die tangensgrafiek verduidelik" />',
+        'Kort video wat y=sinθ, y=cosθ en y=tanθ teken vir 0° tot 360°, maksimum- en minimumpunte identifiseer en vertikale asimptote op die tangensgrafiek verduidelik',
 
       diagramPlaceholder:
         'Grafieke van y=sinθ en y=cosθ saam geteken oor 0° tot 360° met maksimum- en minimumpunte gemerk, langs ʼn grafiek van y=tanθ wat sy vertikale asimptoot by 90° wys',
@@ -433,7 +433,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die effek van parameters a en q op y=a·sinθ+q wys — met amplitudestrekking deur a en vertikale skuif deur q, aan die hand van grafieke langs mekaar" />',
+        'Kort video wat die effek van parameters a en q op y=a·sinθ+q wys — met amplitudestrekking deur a en vertikale skuif deur q, aan die hand van grafieke langs mekaar',
 
       diagramPlaceholder:
         'Twee grafieke langs mekaar: y=3sinθ vergelyk met y=sinθ om die amplitude-strekking van parameter a te wys, en y=cosθ+2 vergelyk met y=cosθ om die vertikale skuif van parameter q te wys',
@@ -527,7 +527,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat werklike 2D-trigonometrieprobleme met hoogte- en dieptehoeke oplos, en wys hoe om ʼn diagram te teken en STSCASTTA stap vir stap toe te pas" />',
+        'Kort video wat werklike 2D-trigonometrieprobleme met hoogte- en dieptehoeke oplos, en wys hoe om ʼn diagram te teken en STSCASTTA stap vir stap toe te pas',
 
       diagramPlaceholder:
         'Diagram van ʼn gebou met die hoogtehoek vanaf die grond in blou gemerk en die dieptehoek vanaf die bopunt in oranje gemerk, wat wys dat die twee hoeke gelyk is',

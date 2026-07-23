@@ -122,7 +122,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply a monomial by a polynomial using the distributive law with step-by-step colour coded examples" />',
+        'Short video showing how to multiply a monomial by a polynomial using the distributive law with step-by-step colour coded examples',
 
       diagramPlaceholder:
         'Fan diagram showing 3x distributed by arrows to each term in (2x² + 5x − 4), with the resulting products 6x³, 15x² and −12x on the right',
@@ -267,7 +267,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide a polynomial by a monomial by splitting each term and applying the exponent subtraction rule" />',
+        'Short video showing how to divide a polynomial by a monomial by splitting each term and applying the exponent subtraction rule',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -455,7 +455,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to multiply two binomials using FOIL and how to expand the square of a binomial using the special patterns with colour coded steps" />',
+        'Short video showing how to multiply two binomials using FOIL and how to expand the square of a binomial using the special patterns with colour coded steps',
 
       diagramPlaceholder:
         'Arc diagram showing the FOIL method applied to (x + 3)(x + 5), with coloured arcs connecting the First, Outer, Inner and Last term pairs down to the final expanded answer x² + 8x + 15',

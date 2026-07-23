@@ -119,7 +119,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the algebraic rule for numeric patterns by calculating first and second differences and testing formulas" />',
+        'Short video showing how to find the algebraic rule for numeric patterns by calculating first and second differences and testing formulas',
 
       diagramPlaceholder:
         'A differences pyramid for the sequence 4, 11, 22, 37 showing the terms (blue), first differences (orange) and constant second differences (green), leading to the algebraic rule 2n² + n + 1',
@@ -235,7 +235,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to move between diagram, table and algebraic representations of the same pattern, with a worked example for pentagonal numbers" />',
+        'Short video showing how to move between diagram, table and algebraic representations of the same pattern, with a worked example for pentagonal numbers',
 
       diagramPlaceholder:
         'A growing square dot pattern showing steps 1 through 4, with dots arranged to visually confirm n² for each step',
@@ -351,7 +351,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to verify an algebraic rule by substitution and how to solve real-life pattern problems by identifying the rule and making predictions" />',
+        'Short video showing how to verify an algebraic rule by substitution and how to solve real-life pattern problems by identifying the rule and making predictions',
 
       diagramPlaceholder:
         'A diagram showing the stacked chairs pattern for steps 1 through 4, with chairs and legs counted and the rule legs = 3n + 1 annotated',

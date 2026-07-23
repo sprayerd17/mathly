@@ -154,7 +154,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising vertically opposite, adjacent, corresponding, alternate and co-interior angle relationships with parallel lines and transversals" />',
+        'Short video revising vertically opposite, adjacent, corresponding, alternate and co-interior angle relationships with parallel lines and transversals',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -319,7 +319,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to combine multiple angle relationships to solve complex geometry problems step by step" />',
+        'Short video showing how to combine multiple angle relationships to solve complex geometry problems step by step',
 
       diagramPlaceholder:
         'Diagram showing two parallel lines cut by two transversals with multiple angle relationships labelled and colour coded',

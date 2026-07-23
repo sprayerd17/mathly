@@ -613,7 +613,7 @@ export const topicData: TopicData = {
         'Diagram wat die inverse verwantskap toon: 54 738 plus 27 465 is gelyk aan 82 203 in blou, en die nagaan 82 203 minus 27 465 is gelyk aan 54 738 bevestig in groen',
       diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="15" width="200" height="35" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/><text x="110" y="37" font-size="13" font-weight="700" text-anchor="middle" fill="#2563eb">54 738 + 27 465 = 82 203</text><text x="110" y="70" font-size="20" text-anchor="middle" fill="#9ca3af">&#8645;</text><text x="110" y="85" font-size="11" text-anchor="middle" fill="#6b7280">inverse nagaan</text><rect x="10" y="95" width="200" height="35" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/><text x="110" y="117" font-size="13" font-weight="700" text-anchor="middle" fill="#16a34a">82 203 − 27 465 = 54 738</text><text x="110" y="150" font-size="13" font-weight="700" text-anchor="middle" fill="#16a34a">&#10003; klop — antwoord bevestig</text></svg>',
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat toon hoe om te skat voordat jy bereken en hoe om inverse bewerkings te gebruik om optellings- en aftrekkingsantwoorde na te gaan" />',
+        'Kort video wat toon hoe om te skat voordat jy bereken en hoe om inverse bewerkings te gebruik om optellings- en aftrekkingsantwoorde na te gaan',
     },
 
   ],

@@ -99,7 +99,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video revising the exponential function y = a times b to the power x plus q, showing how to identify the horizontal asymptote, y-intercept, and whether the graph grows or decays" />',
+        'Short video revising the exponential function y = a times b to the power x plus q, showing how to identify the horizontal asymptote, y-intercept, and whether the graph grows or decays',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -193,7 +193,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the definition of a logarithm and how to convert freely between logarithmic form and exponential form" />',
+        'Short video explaining the definition of a logarithm and how to convert freely between logarithmic form and exponential form',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating all four logarithm laws — product, quotient, power, and change of base — with worked examples for each" />',
+        'Short video demonstrating all four logarithm laws — product, quotient, power, and change of base — with worked examples for each',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -348,7 +348,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video solving logarithmic and exponential equations — converting between forms, applying log laws, and checking for invalid solutions" />',
+        'Short video solving logarithmic and exponential equations — converting between forms, applying log laws, and checking for invalid solutions',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -395,7 +395,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video sketching the graph of y equals log base a of x — identifying the vertical asymptote, key points, and comparing increasing versus decreasing cases" />',
+        'Short video sketching the graph of y equals log base a of x — identifying the vertical asymptote, key points, and comparing increasing versus decreasing cases',
     },
   ],
 

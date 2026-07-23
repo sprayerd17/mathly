@@ -119,7 +119,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die tekenreëls vir die vermenigvuldiging en deling van heelgetalle verduidelik met uitgewerkte voorbeelde" />',
+        'Kort video wat die tekenreëls vir die vermenigvuldiging en deling van heelgetalle verduidelik met uitgewerkte voorbeelde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -235,7 +235,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat additiewe en vermenigvuldigende inverse van heelgetalle verduidelik met voorbeelde wat toon waarom 0 ʼn spesiale geval is" />',
+        'Kort video wat additiewe en vermenigvuldigende inverse van heelgetalle verduidelik met voorbeelde wat toon waarom 0 ʼn spesiale geval is',
 
       diagramPlaceholder:
         'Getallelyn wat additiewe inverspare (-5,5) en (-3,3) toon, verbind deur boë wat tot 0 optel, met ʼn klein tabel van vermenigvuldigende-inverse-voorbeelde daaronder',
@@ -415,7 +415,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om te bereken met kwadrate, kubusse en wortels van heelgetalle, insluitend die verskil tussen (negatiewe a) in die kwadraat en negatiewe a in die kwadraat" />',
+        'Kort video wat wys hoe om te bereken met kwadrate, kubusse en wortels van heelgetalle, insluitend die verskil tussen (negatiewe a) in die kwadraat en negatiewe a in die kwadraat',
 
       diagramPlaceholder:
         'Vergelyking langs mekaar wat (-6) in die kwadraat met hakies wys wat positief 36 gee, teenoor negatief 6 in die kwadraat sonder hakies wat negatief 36 gee',

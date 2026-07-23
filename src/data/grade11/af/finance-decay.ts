@@ -159,7 +159,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die reguitlyn-waardeverminderingsformule A = P(1 − ni) stap vir stap toepas, met kleurgekodeerde veranderlikes" />',
+        'Kort video wat die reguitlyn-waardeverminderingsformule A = P(1 − ni) stap vir stap toepas, met kleurgekodeerde veranderlikes',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -303,7 +303,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die verminderende-balans-waardeverminderingsformule A = P(1 − i)^n stap vir stap toepas, insluitend ʼn logaritme-voorbeeld om n te vind" />',
+        'Kort video wat die verminderende-balans-waardeverminderingsformule A = P(1 − i)^n stap vir stap toepas, insluitend ʼn logaritme-voorbeeld om n te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -455,7 +455,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat reguitlyn- en verminderende-balans-waardevermindering langs mekaar vergelyk vir dieselfde bate, koers, en tydperk" />',
+        'Kort video wat reguitlyn- en verminderende-balans-waardevermindering langs mekaar vergelyk vir dieselfde bate, koers, en tydperk',
       diagramPlaceholder:
         'Albei die reguitlyn- en verminderende-balans-grafieke geteken op dieselfde stel asse vir dieselfde beginwaarde, met die punt waar die verminderende-balans-kromme bo die reguit lyn lê duidelik gemerk',
 
@@ -645,7 +645,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat enkelvoudige en saamgestelde groei van Graad 10 hersien en dit toepas op moeiliker Graad 11-probleme: huurkoop met deposito en paaiemente, oplos vir die groeikoers in ʼn bevolkingsprobleem, en oplos vir die hoofsom in ʼn beleggingsprobleem" />',
+        'Kort video wat enkelvoudige en saamgestelde groei van Graad 10 hersien en dit toepas op moeiliker Graad 11-probleme: huurkoop met deposito en paaiemente, oplos vir die groeikoers in ʼn bevolkingsprobleem, en oplos vir die hoofsom in ʼn beleggingsprobleem',
       diagramPlaceholder:
         'ʼn Vloeidiagram vir die huurkoop-uitgewerkte-voorbeeld wat die kontantprys, afgetrekte deposito, oorblywende balans, en die balans wat onder enkelvoudige rente groei tot gelyke maandelikse paaiemente, wys',
 
@@ -836,7 +836,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die nominale-na-effektiewe-koersformule stap vir stap toepas, met voorbeelde van maandelikse, kwartaallikse en daaglikse samestelling" />',
+        'Kort video wat die nominale-na-effektiewe-koersformule stap vir stap toepas, met voorbeelde van maandelikse, kwartaallikse en daaglikse samestelling',
       diagramPlaceholder:
         'ʼn Vergelykende staafgrafiek wat dieselfde nominale koers teen verskillende samestellingsfrekwensies (jaarliks, maandeliks, daagliks) wys wat na ʼn effens hoër effektiewe koers konvergeer, om te illustreer dat meer gereelde samestelling die effektiewe koers verhoog',
 
@@ -987,7 +987,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat stap vir stap deur ʼn multi-fase-finansiëleprobleem werk, wat wys hoe om ʼn koersverandering en ʼn onttrekking halfpad deur die tydperk te hanteer" />',
+        'Kort video wat stap vir stap deur ʼn multi-fase-finansiëleprobleem werk, wat wys hoe om ʼn koersverandering en ʼn onttrekking halfpad deur die tydperk te hanteer',
       diagramPlaceholder:
         'ʼn Tydlyn wat die multi-fase-scenario van Voorbeeld 2 wys, met merkers by 18 maande (koersverandering), 24 maande (onttrekking), en 48 maande (finale waarde), sodat die volgorde van gebeure visueel duidelik is',
 

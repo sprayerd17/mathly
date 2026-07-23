@@ -117,7 +117,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering, volledigmaking van die vierkant, en die kwadratiese formule, met ʼn uitgewerkte voorbeeld vir elke metode" />',
+        'Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering, volledigmaking van die vierkant, en die kwadratiese formule, met ʼn uitgewerkte voorbeeld vir elke metode',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -216,7 +216,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om wortelvergelykings op te los deur die wortelterm te isoleer, albei kante te vierkant, en elke oplossing in die oorspronklike vergelyking vir vreemde wortels te toets" />',
+        'Kort video wat wys hoe om wortelvergelykings op te los deur die wortelterm te isoleer, albei kante te vierkant, en elke oplossing in die oorspronklike vergelyking vir vreemde wortels te toets',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -310,7 +310,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om eksponensiële vergelykings op te los deur albei kante met dieselfde grondtal te skryf, en deur vervanging wanneer die vergelyking kwadraties van vorm is" />',
+        'Kort video wat wys hoe om eksponensiële vergelykings op te los deur albei kante met dieselfde grondtal te skryf, en deur vervanging wanneer die vergelyking kwadraties van vorm is',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -401,7 +401,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kwadratiese en rasionale ongelykhede op te los deur kritieke waardes en tekenanalise op ʼn getallelyn te gebruik" />',
+        'Kort video wat wys hoe om kwadratiese en rasionale ongelykhede op te los deur kritieke waardes en tekenanalise op ʼn getallelyn te gebruik',
 
       diagramPlaceholder:
         'Getallelyndiagram wat kritieke waardes in blou toon, die teken van die uitdrukking in elke interval in oranje, en die finale oplossingsintervalle in groen uitgelig',
@@ -518,7 +518,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn stelsel van een lineêre en een kwadratiese vergelyking gelyktydig op te los deur die substitusiemetode te gebruik" />',
+        'Kort video wat wys hoe om ʼn stelsel van een lineêre en een kwadratiese vergelyking gelyktydig op te los deur die substitusiemetode te gebruik',
 
       diagramPlaceholder:
         'Grafiek wat ʼn reguit lyn in blou toon wat ʼn parabool in oranje by twee punte sny, met die snypuntkoördinate in groen uitgelig',

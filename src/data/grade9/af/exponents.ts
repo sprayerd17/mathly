@@ -111,7 +111,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die negatiewe-eksponentreël a⁻ᵏ = 1/aᵏ toe te pas met uitgewerkte voorbeelde" />',
+        'Kort video wat wys hoe om die negatiewe-eksponentreël a⁻ᵏ = 1/aᵏ toe te pas met uitgewerkte voorbeelde',
 
       diagramPlaceholder:
         'Reeks wat 2³ tot by 2⁻² wys, elkeen gedeel deur 2, met die negatiewe-eksponent-blokke uitgelig om te wys dat hulle resiproke gee',
@@ -252,7 +252,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om klein desimale getalle na wetenskaplike notasie om te skakel deur negatiewe eksponente te gebruik" />',
+        'Kort video wat wys hoe om klein desimale getalle na wetenskaplike notasie om te skakel deur negatiewe eksponente te gebruik',
 
       diagramPlaceholder:
         'Die desimale punt in 0,00045 wat 4 plekke na regs spring om as 4,5 × 10⁻⁴ te land',
@@ -453,7 +453,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om al die wette van eksponente, insluitend negatiewe eksponente, in berekeninge en werklike-lewe-probleme toe te pas" />',
+        'Kort video wat wys hoe om al die wette van eksponente, insluitend negatiewe eksponente, in berekeninge en werklike-lewe-probleme toe te pas',
     },
   ],
 

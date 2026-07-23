@@ -119,7 +119,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die 5 Platoniese vaste liggame bekendstel — tetraëder, kubus, oktaëder, dodekaëder en ikosaëder — en vlakke, hoekpunte en rande vergelyk" />',
+        'Kort video wat die 5 Platoniese vaste liggame bekendstel — tetraëder, kubus, oktaëder, dodekaëder en ikosaëder — en vlakke, hoekpunte en rande vergelyk',
 
       diagramPlaceholder:
         'Al 5 Platoniese vaste liggame saam gewys — tetraëder, kubus, oktaëder, dodekaëder, ikosaëder — elkeen geëtiketteer met vlak-, hoekpunt- en randtellings',
@@ -297,7 +297,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om nette in piramides te vou — insluitend die vierkantige piramide en tetraëder — en die basisvorm, driehoekige vlakke en apeks identifiseer" />',
+        'Kort video wat wys hoe om nette in piramides te vou — insluitend die vierkantige piramide en tetraëder — en die basisvorm, driehoekige vlakke en apeks identifiseer',
 
       diagramPlaceholder:
         'Net van ʼn vierkantige piramide plat en gevou gewys, en net van ʼn tetraëder plat en gevou gewys',
@@ -479,7 +479,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om 3D-voorwerpe te vergelyk en te klassifiseer aan die hand van vlakke, hoekpunte en rande, en hoe om Euler se formule te verifieer" />',
+        'Kort video wat wys hoe om 3D-voorwerpe te vergelyk en te klassifiseer aan die hand van vlakke, hoekpunte en rande, en hoe om Euler se formule te verifieer',
 
     },
   ],

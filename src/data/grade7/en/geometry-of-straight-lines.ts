@@ -147,7 +147,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video classifying acute right obtuse straight and reflex angles with examples from diagrams" />',
+        'Short video classifying acute right obtuse straight and reflex angles with examples from diagrams',
 
       diagramPlaceholder:
         'Five angle diagrams — acute, right, obtuse, straight and reflex — each drawn with two rays from a vertex and the classified angle marked and colour-coded to match the colour key.',
@@ -303,7 +303,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find unknown angles using angles on a straight line 180 degrees and vertically opposite angles" />',
+        'Short video showing how to find unknown angles using angles on a straight line 180 degrees and vertically opposite angles',
 
       diagramPlaceholder:
         'Two diagrams: one showing angles a and b on a straight line adding to 180°, with the given angle in blue and the unknown angle in red; one showing two intersecting lines with the 70° vertically opposite angles highlighted in green and an adjacent 110° angle in red.',
@@ -467,7 +467,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video identifying corresponding alternate and co-interior angles formed by a transversal cutting two parallel lines" />',
+        'Short video identifying corresponding alternate and co-interior angles formed by a transversal cutting two parallel lines',
 
       diagramPlaceholder:
         'Two parallel lines cut by a transversal, with the parallel lines in blue, the transversal in red, one pair of corresponding angles highlighted green and one pair of co-interior angles highlighted orange.',

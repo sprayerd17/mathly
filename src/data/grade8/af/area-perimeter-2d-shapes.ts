@@ -135,7 +135,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die omtrek- en oppervlakteformules vir sirkels te gebruik met π = 3,14, met uitgewerkte voorbeelde" />',
+        'Kort video wat wys hoe om die omtrek- en oppervlakteformules vir sirkels te gebruik met π = 3,14, met uitgewerkte voorbeelde',
 
       diagramPlaceholder:
         'Diagram van ʼn sirkel met radius gemerk in blou, deursnee gemerk in rooi, omtrek gemerk in groen en oppervlaktegebied gemerk in oranje',
@@ -273,7 +273,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn L-vorm en ʼn vyfhoek in reghoeke en driehoeke te ontbind om die totale oppervlakte te vind" />',
+        'Kort video wat wys hoe om ʼn L-vorm en ʼn vyfhoek in reghoeke en driehoeke te ontbind om die totale oppervlakte te vind',
 
       diagramPlaceholder:
         'ʼn Vyfhoekvorm verdeel in ʼn reghoek en ʼn driehoek, met elke gedeelte gemerk met sy dimensies',
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om werklike-lewe omtrek- en oppervlakteprobleme met sirkels op te los en hoe om tussen SI-oppervlakte-eenhede om te reken" />',
+        'Kort video wat wys hoe om werklike-lewe omtrek- en oppervlakteprobleme met sirkels op te los en hoe om tussen SI-oppervlakte-eenhede om te reken',
     },
   ],
 

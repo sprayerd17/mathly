@@ -176,7 +176,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to read, order, and round large whole numbers up to the billions using place value" />',
+        'Short video showing how to read, order, and round large whole numbers up to the billions using place value',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply addition, subtraction, and multiplication to large whole numbers including multi-step problems and estimation" />',
+        'Short video showing how to apply addition, subtraction, and multiplication to large whole numbers including multi-step problems and estimation',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -489,7 +489,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining exponents, squares, cubes, square roots, and cube roots with visual models and worked examples" />',
+        'Short video explaining exponents, squares, cubes, square roots, and cube roots with visual models and worked examples',
     },
   ],
 

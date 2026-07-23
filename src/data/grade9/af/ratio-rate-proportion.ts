@@ -128,7 +128,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om direkte eweredigheidsprobleme op te stel en op te los met behulp van gelyke verhoudings en kruisvermenigvuldiging" />',
+        'Kort video wat wys hoe om direkte eweredigheidsprobleme op te stel en op te los met behulp van gelyke verhoudings en kruisvermenigvuldiging',
 
       diagramPlaceholder:
         'ʼn Reguitlyngrafiek deur die oorsprong vir koste vs kg appels, langs ʼn tabel van waardes, wat 4 kg = R72 en 7 kg = R126 wys',
@@ -284,7 +284,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om omgekeerde eweredigheidsprobleme te identifiseer en op te los met behulp van die konstante-produk-metode" />',
+        'Kort video wat wys hoe om omgekeerde eweredigheidsprobleme te identifiseer en op te los met behulp van die konstante-produk-metode',
 
       diagramPlaceholder:
         'ʼn Afnemende kromme wat werkers vs dae wys, met 5 werkers = 12 dae en 8 werkers = 7,5 dae, produk altyd 60',
@@ -620,7 +620,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om kommissie, totale huurkoste, enkelvoudige en saamgestelde rente, en huurkoop-paaiemente stap vir stap te bereken met uitgewerkte voorbeelde" />',
+        'Kort video wat wys hoe om kommissie, totale huurkoste, enkelvoudige en saamgestelde rente, en huurkoop-paaiemente stap vir stap te bereken met uitgewerkte voorbeelde',
 
       diagramPlaceholder:
         'ʼn Lyngrafiek wat R1 000 vergelyk wat teen 10% enkelvoudige rente (reguit lyn) teenoor 10% saamgestelde rente (kromme) oor 5 jaar groei',

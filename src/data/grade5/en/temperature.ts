@@ -134,7 +134,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing a thermometer scale with zero degrees marked in red as the freezing point of water, one hundred degrees marked as the boiling point, and thirty seven degrees marked as normal human body temperature" />',
+        'Short video showing a thermometer scale with zero degrees marked in red as the freezing point of water, one hundred degrees marked as the boiling point, and thirty seven degrees marked as normal human body temperature',
 
       diagramPlaceholder:
         'Diagram of a vertical thermometer scale from 0 to 100 degrees Celsius, with the freezing point, boiling point and average human body temperature labelled and the liquid level shown at a sample reading',
@@ -259,7 +259,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to read the liquid level on a thermometer scale and correctly record the temperature with the degrees Celsius symbol" />',
+        'Short video demonstrating how to read the liquid level on a thermometer scale and correctly record the temperature with the degrees Celsius symbol',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -356,7 +356,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing pairs of positive temperatures and showing how to order a list of temperatures from coldest to warmest by comparing the whole numbers" />',
+        'Short video comparing pairs of positive temperatures and showing how to order a list of temperatures from coldest to warmest by comparing the whole numbers',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -465,7 +465,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to find the difference between two positive temperatures by subtracting the smaller from the larger, including a temperature range example" />',
+        'Short video demonstrating how to find the difference between two positive temperatures by subtracting the smaller from the larger, including a temperature range example',
     },
   ],
 

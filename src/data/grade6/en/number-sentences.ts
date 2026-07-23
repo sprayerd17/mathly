@@ -133,7 +133,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to write equations from word problems using variables and how to check a solution by substituting back into the equation" />',
+        'Short video showing how to write equations from word problems using variables and how to check a solution by substituting back into the equation',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -255,7 +255,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve addition, subtraction, multiplication, and division equations using inverse operations with the balanced scale model" />',
+        'Short video showing how to solve addition, subtraction, multiplication, and division equations using inverse operations with the balanced scale model',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -344,7 +344,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve two-step equations using inverse operations in reverse BODMAS order with worked examples and substitution checks" />',
+        'Short video showing how to solve two-step equations using inverse operations in reverse BODMAS order with worked examples and substitution checks',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -441,7 +441,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to translate word problems into equations using a variable then solve and check with three worked examples" />',
+        'Short video showing how to translate word problems into equations using a variable then solve and check with three worked examples',
     },
   ],
   practiceSets: [

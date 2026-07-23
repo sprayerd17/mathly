@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify unknowns in word problems and translate sentences into algebraic equations step by step" />',
+        'Short video showing how to identify unknowns in word problems and translate sentences into algebraic equations step by step',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -261,7 +261,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve one-step equations using inverse operations while keeping both sides balanced" />',
+        'Short video showing how to solve one-step equations using inverse operations while keeping both sides balanced',
 
       diagramPlaceholder:
         'Balance scale diagram showing x + 14 = 29 with the inverse operation subtracting 14 from both sides to isolate x',
@@ -432,7 +432,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve two-step equations by undoing addition or subtraction first then undoing multiplication or division with a substitution check" />',
+        'Short video showing how to solve two-step equations by undoing addition or subtraction first then undoing multiplication or division with a substitution check',
     },
   ],
   practiceSets: [

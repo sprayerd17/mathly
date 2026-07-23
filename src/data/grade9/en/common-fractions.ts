@@ -55,7 +55,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing multi-step calculations with common fractions and mixed numbers using all four operations" />',
+        'Short video showing multi-step calculations with common fractions and mixed numbers using all four operations',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -99,7 +99,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to apply squares, cubes, square roots and cube roots of common fractions in multi-step problems" />',
+        'Short video showing how to apply squares, cubes, square roots and cube roots of common fractions in multi-step problems',
 
       diagramPlaceholder:
         'Visual showing squaring and square rooting a common fraction by treating the numerator and denominator separately',
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing multi-step real-life problems combining common fractions, mixed numbers and percentages" />',
+        'Short video showing multi-step real-life problems combining common fractions, mixed numbers and percentages',
 
       diagramPlaceholder:
         'Bar model showing a quantity split by a fraction first, then a percentage taken from what remains',

@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die variasiewydte en ekstreme van ʼn datastel te vind en waarom dit nuttig is om data in intervalle te groepeer" />',
+        'Kort video wat wys hoe om die variasiewydte en ekstreme van ʼn datastel te vind en waarom dit nuttig is om data in intervalle te groepeer',
 
       diagramPlaceholder:
         'Getallelyn wat die datastel 8, 12, 19, 33, 45, 52 wys met die kleinste ekstreem in blou, die grootste ekstreem in rooi, en die variasiewydte in oranje aangedui',
@@ -253,7 +253,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn histogram met gelyke intervalle en ʼn gebrokelyn-grafiek met datapunte verbind deur reguit lyne te teken" />',
+        'Kort video wat wys hoe om ʼn histogram met gelyke intervalle en ʼn gebrokelyn-grafiek met datapunte verbind deur reguit lyne te teken',
 
       diagramPlaceholder:
         'Gebrokelyn-grafiek wat maandelikse reënval oor ses maande wys, wat styg en daal, met datapunte in blou verbind deur groen reguit lyne',
@@ -425,7 +425,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om data krities uit grafieke te interpreteer, vooroordeel en misleidende skale te identifiseer, en geldige gevolgtrekkings te skryf" />',
+        'Kort video wat wys hoe om data krities uit grafieke te interpreteer, vooroordeel en misleidende skale te identifiseer, en geldige gevolgtrekkings te skryf',
 
       diagramPlaceholder:
         'Twee staafgrafieke langs mekaar wat dieselfde waardes (82, 85, 90) wys: een met ʼn y-as wat by 0 begin waar die stawe eenders lyk, en een wat by 80 begin waar die verskille oordrewe lyk',

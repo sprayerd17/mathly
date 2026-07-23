@@ -154,7 +154,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat vertikaal-oorstaande, aangrensende, ooreenkomstige, verwisselende en ko-binnehoekverwantskappe met parallelle lyne en transversale hersien" />',
+        'Kort video wat vertikaal-oorstaande, aangrensende, ooreenkomstige, verwisselende en ko-binnehoekverwantskappe met parallelle lyne en transversale hersien',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -319,7 +319,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om verskeie hoekverhoudings te kombineer om komplekse geometrie-probleme stap vir stap op te los" />',
+        'Kort video wat wys hoe om verskeie hoekverhoudings te kombineer om komplekse geometrie-probleme stap vir stap op te los',
 
       diagramPlaceholder:
         'Diagram wat twee parallelle lyne gesny deur twee transversale wys, met verskeie hoekverwantskappe gemerk en kleurgekodeer',

@@ -122,7 +122,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 620 190" xmlns="http://www.w3.org/2000/svg"><g><line x1="10" y1="110" x2="190" y2="110" stroke="#0f1f3d" stroke-width="1.5"/><path d="M 20 30 Q 100 245 180 30" fill="none" stroke="#2563eb" stroke-width="2.5"/><circle cx="58" cy="110" r="3.5" fill="#2563eb"/><circle cx="142" cy="110" r="3.5" fill="#2563eb"/><text x="100" y="20" font-size="13" font-weight="700" fill="#2563eb" text-anchor="middle">&#916; &gt; 0</text><text x="100" y="150" font-size="10" font-weight="600" fill="#0f1f3d" text-anchor="middle">twee reële, ongelyke wortels</text></g><g transform="translate(210,0)"><line x1="10" y1="110" x2="190" y2="110" stroke="#0f1f3d" stroke-width="1.5"/><path d="M 20 30 Q 100 190 180 30" fill="none" stroke="#ea580c" stroke-width="2.5"/><circle cx="100" cy="110" r="3.5" fill="#ea580c"/><text x="100" y="20" font-size="13" font-weight="700" fill="#ea580c" text-anchor="middle">&#916; = 0</text><text x="100" y="150" font-size="10" font-weight="600" fill="#0f1f3d" text-anchor="middle">een reële, herhaalde wortel</text></g><g transform="translate(420,0)"><line x1="10" y1="110" x2="190" y2="110" stroke="#0f1f3d" stroke-width="1.5"/><path d="M 20 90 Q 100 55 180 90" fill="none" stroke="#dc2626" stroke-width="2.5"/><text x="100" y="20" font-size="13" font-weight="700" fill="#dc2626" text-anchor="middle">&#916; &lt; 0</text><text x="100" y="150" font-size="10" font-weight="600" fill="#0f1f3d" text-anchor="middle">geen reële wortels (nie-reëel)</text></g></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat verduidelik hoe die diskriminant bepaal of die wortels van ʼn kwadratiese vergelyking reëel en gelyk, reëel en ongelyk (rasionaal of irrasionaal), of nie-reëel is" />',
+        'Kort video wat verduidelik hoe die diskriminant bepaal of die wortels van ʼn kwadratiese vergelyking reëel en gelyk, reëel en ongelyk (rasionaal of irrasionaal), of nie-reëel is',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -211,7 +211,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die drie metodes vir die oplos van kwadratiese vergelykings konsolideer, met ʼn nota oor watter metodes direk op Graad 12-vlak geëksamineer word" />',
+        'Kort video wat die drie metodes vir die oplos van kwadratiese vergelykings konsolideer, met ʼn nota oor watter metodes direk op Graad 12-vlak geëksamineer word',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -321,7 +321,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="110" x2="245" y2="110" stroke="#0f1f3d" stroke-width="1.5"/><rect x="80" y="110" width="100" height="35" fill="#fed7aa" opacity="0.5"/><path d="M 40 40 Q 130 220 220 40" fill="none" stroke="#ea580c" stroke-width="2.5"/><circle cx="80" cy="110" r="4" fill="#2563eb"/><circle cx="180" cy="110" r="4" fill="#2563eb"/><text x="80" y="128" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">-2</text><text x="180" y="128" font-size="11" font-weight="700" fill="#2563eb" text-anchor="middle">3</text><text x="130" y="150" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">-2 &#8804; x &#8804; 3</text><text x="130" y="20" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">y = x&#178; - x - 6 &#8804; 0</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kwadratiese ongelykheid op te los deur die parabool vanaf sy gefaktoriseerde vorm te skets en die oplossing van die grafiek af te lees" />',
+        'Kort video wat wys hoe om ʼn kwadratiese ongelykheid op te los deur die parabool vanaf sy gefaktoriseerde vorm te skets en die oplossing van die grafiek af te lees',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -433,7 +433,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="160" x2="245" y2="160" stroke="#0f1f3d" stroke-width="1.5"/><line x1="25" y1="150" x2="235" y2="30" stroke="#2563eb" stroke-width="2.5"/><path d="M 30 30 Q 130 185 230 30" fill="none" stroke="#ea580c" stroke-width="2.5"/><circle cx="107" cy="103" r="4.5" fill="#16a34a"/><circle cx="227" cy="35" r="4.5" fill="#16a34a"/><text x="130" y="16" font-size="11.5" font-weight="700" fill="#0f1f3d" text-anchor="middle">lyn en parabool: 2 snypunte</text></svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn lineêr-kwadratiese stelsel met wortelvorm-oplossings op te los, en hoe die diskriminant van die gevolglike vergelyking raaklynigheid of geen snypunt bepaal" />',
+        'Kort video wat wys hoe om ʼn lineêr-kwadratiese stelsel met wortelvorm-oplossings op te los, en hoe die diskriminant van die gevolglike vergelyking raaklynigheid of geen snypunt bepaal',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -543,7 +543,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om vergelykings met wortelvorme op te los deur die wortel te isoleer, albei kante te kwadreer, en elke oplossing teen die oorspronklike vergelyking te kontroleer om vreemde wortels te verwerp" />',
+        'Kort video wat wys hoe om vergelykings met wortelvorme op te los deur die wortel te isoleer, albei kante te kwadreer, en elke oplossing teen die oorspronklike vergelyking te kontroleer om vreemde wortels te verwerp',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -631,7 +631,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat hersien hoe om eksponensiële vergelykings op te los deur albei kante met dieselfde grondtal te skryf, insluitend die vervangingsmetode vir vergelykings wat tot ʼn kwadratiese herlei" />',
+        'Kort video wat hersien hoe om eksponensiële vergelykings op te los deur albei kante met dieselfde grondtal te skryf, insluitend die vervangingsmetode vir vergelykings wat tot ʼn kwadratiese herlei',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -737,7 +737,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om algebraïese breukvergelykings op te los deur beperkings te gee, met die KGN te vermenigvuldig, en oplossings teen die uitgeslote waardes te kontroleer" />',
+        'Kort video wat wys hoe om algebraïese breukvergelykings op te los deur beperkings te gee, met die KGN te vermenigvuldig, en oplossings teen die uitgeslote waardes te kontroleer',
     },
   ],
 

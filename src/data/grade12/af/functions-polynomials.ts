@@ -162,7 +162,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke polinoom deur ʼn lineêre faktor te deel deur polinoom-langdeling te gebruik, met kleurgekodeerde kwosiëntterme en aftrekkingstappe" />',
+        'Kort video wat wys hoe om ʼn kubieke polinoom deur ʼn lineêre faktor te deel deur polinoom-langdeling te gebruik, met kleurgekodeerde kwosiëntterme en aftrekkingstappe',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -292,7 +292,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die Resttheorema en Faktorstelling verduidelik met kleurgekodeerde toetswaarde-vervangings en faktorgevolgtrekkings vir kubieke polinome" />',
+        'Kort video wat die Resttheorema en Faktorstelling verduidelik met kleurgekodeerde toetswaarde-vervangings en faktorgevolgtrekkings vir kubieke polinome',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -430,7 +430,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke polinoom volledig te faktoriseer deur eers ʼn lineêre faktor met die Faktorstelling te vind, en dan die kwadratiese kwosiënt te deel en te faktoriseer" />',
+        'Kort video wat wys hoe om ʼn kubieke polinoom volledig te faktoriseer deur eers ʼn lineêre faktor met die Faktorstelling te vind, en dan die kwadratiese kwosiënt te deel en te faktoriseer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -495,7 +495,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke vergelyking op te los deur dit volledig te faktoriseer met die Faktorstelling en langdeling, en dan die nul-produk-eienskap toe te pas om al drie wortels te vind" />',
+        'Kort video wat wys hoe om ʼn kubieke vergelyking op te los deur dit volledig te faktoriseer met die Faktorstelling en langdeling, en dan die nul-produk-eienskap toe te pas om al drie wortels te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -565,7 +565,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn kubieke grafiek te skets deur die x-afsnitte uit die gefaktoriseerde vorm te vind, die y-afsnit deur x=0 te vervang, en die rigting van die kurwe uit die teken van die leidende koëffisiënt" />',
+        'Kort video wat wys hoe om ʼn kubieke grafiek te skets deur die x-afsnitte uit die gefaktoriseerde vorm te vind, die y-afsnit deur x=0 te vervang, en die rigting van die kurwe uit die teken van die leidende koëffisiënt',
     },
   ],
 

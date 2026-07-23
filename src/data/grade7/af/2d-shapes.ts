@@ -153,7 +153,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat driehoektipes volgens sye en hoeke wys en hoe om die hoeksomreël te gebruik om ontbrekende hoeke te vind, insluitend verhoudingsprobleme" />',
+        'Kort video wat driehoektipes volgens sye en hoeke wys en hoe om die hoeksomreël te gebruik om ontbrekende hoeke te vind, insluitend verhoudingsprobleme',
 
       diagramPlaceholder:
         'Al ses driehoektipes langs mekaar: gelyksydig, gelykbenig en skaleen volgens sylengte, en skerphoekig, reghoekig en stomphoekig volgens hoekgrootte.',
@@ -325,7 +325,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat vierhoektipes en hul eienskappe wys en hoe om die 360°-hoeksom te gebruik om ontbrekende hoeke te vind en vorms te klassifiseer" />',
+        'Kort video wat vierhoektipes en hul eienskappe wys en hoe om die 360°-hoeksom te gebruik om ontbrekende hoeke te vind en vorms te klassifiseer',
 
       diagramPlaceholder:
         'Al ses vierhoektipes met hul kenmerkende vorm: vierkant, reghoek, parallelogram, ruit, trapesium en vlieër, elkeen met gelyke-sy- of regte-hoek-merkers waar dit van toepassing is.',
@@ -528,7 +528,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die dele van ʼn sirkel verduidelik — middelpunt, radius, deursnee, omtrek, koord en boog — met gemerkte diagramme en uitgewerkte voorbeelde" />',
+        'Kort video wat die dele van ʼn sirkel verduidelik — middelpunt, radius, deursnee, omtrek, koord en boog — met gemerkte diagramme en uitgewerkte voorbeelde',
 
       diagramPlaceholder:
         'ʼn Sirkel met die middelpunt, radius, deursnee, omtrek, ʼn koord en ʼn boog almal gemerk, kleurgekodeer volgens die kleursleutel.',

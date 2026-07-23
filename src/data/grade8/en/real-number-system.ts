@@ -146,7 +146,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing natural numbers, whole numbers, integers and rational numbers and showing how each set fits inside the next" />',
+        'Short video introducing natural numbers, whole numbers, integers and rational numbers and showing how each set fits inside the next',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,7 +306,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing irrational numbers for the first time, using pi and square roots of non-perfect squares as examples" />',
+        'Short video introducing irrational numbers for the first time, using pi and square roots of non-perfect squares as examples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -417,7 +417,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video working through several examples of classifying given numbers into natural, whole, integer, rational or irrational" />',
+        'Short video working through several examples of classifying given numbers into natural, whole, integer, rational or irrational',
     },
   ],
   resultsConfig: {

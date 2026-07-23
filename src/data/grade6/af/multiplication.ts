@@ -190,7 +190,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn groot getal met ʼn 2-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, plekhouernul in oranje en die finale optelling in rooi" />',
+        'Kort video wat wys hoe om ʼn groot getal met ʼn 2-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, plekhouernul in oranje en die finale optelling in rooi',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -306,7 +306,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn groot getal met ʼn 3-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, honderdes in oranje, plekhouernulle in rooi en die finale antwoord in pers" />',
+        'Kort video wat wys hoe om ʼn groot getal met ʼn 3-syfergetal te vermenigvuldig deur lang vermenigvuldiging te gebruik, met kleurgekodeerde stappe vir eenhede in blou, tiene in groen, honderdes in oranje, plekhouernulle in rooi en die finale antwoord in pers',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om met 10, 100 en 1 000 te vermenigvuldig deur oranje nulle by te voeg, en hoe om met veelvoude soos 20, 300 en 4 000 te vermenigvuldig deur eers die blou nie-nul-syfer te vermenigvuldig en dan al die oranje nulle by te voeg" />',
+        'Kort video wat wys hoe om met 10, 100 en 1 000 te vermenigvuldig deur oranje nulle by te voeg, en hoe om met veelvoude soos 20, 300 en 4 000 te vermenigvuldig deur eers die blou nie-nul-syfer te vermenigvuldig en dan al die oranje nulle by te voeg',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -553,7 +553,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn vermenigvuldigingsantwoord te skat deur getalle in oranje af te rond en dan te vermenigvuldig om die skatting in blou te kry, en dit met die presiese antwoord in groen te vergelyk, gevolg deur twee woordprobleme opgelos deur sleutelwoorde in rooi te identifiseer" />',
+        'Kort video wat wys hoe om ʼn vermenigvuldigingsantwoord te skat deur getalle in oranje af te rond en dan te vermenigvuldig om die skatting in blou te kry, en dit met die presiese antwoord in groen te vergelyk, gevolg deur twee woordprobleme opgelos deur sleutelwoorde in rooi te identifiseer',
     },
   ],
   practiceSets: [

@@ -189,7 +189,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die eienskappe van prismas verduidelik — vlakke, rande en hoekpunte — met behulp van die basissye-formules en Euler se formule om te bevestig" />',
+        'Kort video wat die eienskappe van prismas verduidelik — vlakke, rande en hoekpunte — met behulp van die basissye-formules en Euler se formule om te bevestig',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -364,7 +364,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die eienskappe van piramides verduidelik — vlakke, rande, hoekpunte en die apeks — met die basissye-formules en ʼn vergelyking met prismas" />',
+        'Kort video wat die eienskappe van piramides verduidelik — vlakke, rande, hoekpunte en die apeks — met die basissye-formules en ʼn vergelyking met prismas',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -487,7 +487,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe die nette van ʼn kubus, driehoekige prisma en vierkantige piramide gevou word om die 3D-voorwerpe te vorm, met basisvorms uitgelig in blou, sy-vlakke in groen en driehoekige vlakke in oranje" />',
+        'Kort video wat wys hoe die nette van ʼn kubus, driehoekige prisma en vierkantige piramide gevou word om die 3D-voorwerpe te vorm, met basisvorms uitgelig in blou, sy-vlakke in groen en driehoekige vlakke in oranje',
     },
   ],
 

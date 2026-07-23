@@ -189,7 +189,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the properties of prisms — faces, edges and vertices — using the base-sides formulas and Euler\'s formula to verify" />',
+        'Short video explaining the properties of prisms — faces, edges and vertices — using the base-sides formulas and Euler\'s formula to verify',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -364,7 +364,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the properties of pyramids — faces, edges, vertices and the apex — with the base-sides formulas and a comparison to prisms" />',
+        'Short video explaining the properties of pyramids — faces, edges, vertices and the apex — with the base-sides formulas and a comparison to prisms',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -487,7 +487,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how nets of a cube, triangular prism and square pyramid are folded to form the 3D objects, with base shapes highlighted blue, side faces green and triangular faces orange" />',
+        'Short video showing how nets of a cube, triangular prism and square pyramid are folded to form the 3D objects, with base shapes highlighted blue, side faces green and triangular faces orange',
     },
   ],
 

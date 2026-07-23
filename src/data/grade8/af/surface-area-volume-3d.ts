@@ -131,7 +131,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die volume en oppervlakte van ʼn driehoekige prisma te vind deur die driehoekige basisoppervlakte en die lengte van die prisma te gebruik" />',
+        'Kort video wat wys hoe om die volume en oppervlakte van ʼn driehoekige prisma te vind deur die driehoekige basisoppervlakte en die lengte van die prisma te gebruik',
 
       diagramPlaceholder:
         'Diagram van ʼn driehoekige prisma wat die driehoekige basis, hoogte en lengte merk',
@@ -275,7 +275,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om werklike-lewe probleme met volume en kapasiteit op te los, met SI-eenheidomskakelings tussen cm³, m³, liter en kiloliter" />',
+        'Kort video wat wys hoe om werklike-lewe probleme met volume en kapasiteit op te los, met SI-eenheidomskakelings tussen cm³, m³, liter en kiloliter',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -441,7 +441,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe oppervlakte volgens die kwadraat skaleer en volume volgens die derdemag van die skaalfaktor, met uitgewerkte vergelykings met kubusse en reghoekige prismas" />',
+        'Kort video wat wys hoe oppervlakte volgens die kwadraat skaleer en volume volgens die derdemag van die skaalfaktor, met uitgewerkte vergelykings met kubusse en reghoekige prismas',
 
       diagramPlaceholder:
         'Diagram wat ʼn klein kubus en ʼn groot kubus vergelyk en wys hoe oppervlakte en volume teen verskillende tempos verander wanneer al die dimensies met dieselfde faktor vergroot word',

@@ -122,7 +122,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die volume- en oppervlakteformules vir silinders verduidelik, en wys hoe die geboë oppervlak afrol tot ʼn reghoek met breedte gelyk aan die omtrek" />',
+        'Kort video wat die volume- en oppervlakteformules vir silinders verduidelik, en wys hoe die geboë oppervlak afrol tot ʼn reghoek met breedte gelyk aan die omtrek',
 
       diagramPlaceholder:
         'ʼn Silinder met radius en hoogte gemerk in blou en oranje, wat die net afgerol in twee sirkels en ʼn reghoek wys',
@@ -239,7 +239,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om volumeformules vir prismas en silinders toe te pas en tussen SI-eenhede om te skakel om werklike-lewe inhoudsprobleme op te los" />',
+        'Kort video wat wys hoe om volumeformules vir prismas en silinders toe te pas en tussen SI-eenhede om te skakel om werklike-lewe inhoudsprobleme op te los',
 
       diagramPlaceholder:
         'ʼn Driehoekige prisma en ʼn silinder langs mekaar vergelyk met gemerkte afmetings en berekende volumes, met die eenheidomskakelingstap uitgelig',
@@ -373,7 +373,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ondersoek hoe die verdubbeling van een of al die afmetings van ʼn prisma of silinder die volume beïnvloed, en die gekubde skaalfaktor-verhouding verduidelik" />',
+        'Kort video wat ondersoek hoe die verdubbeling van een of al die afmetings van ʼn prisma of silinder die volume beïnvloed, en die gekubde skaalfaktor-verhouding verduidelik',
 
       diagramPlaceholder:
         'ʼn Klein kubus en ʼn groter kubus met verdubbelde sye, langs mekaar getoon met volumes gemerk, wat die 8x-volumetoename deur verdubbeling van al drie afmetings illustreer',

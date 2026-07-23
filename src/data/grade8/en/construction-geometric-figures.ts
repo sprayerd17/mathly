@@ -96,7 +96,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to bisect a line segment and construct a perpendicular line using compass and ruler, with compass arcs in blue, bisecting line in green and perpendicular line in orange" />',
+        'Short video showing how to bisect a line segment and construct a perpendicular line using compass and ruler, with compass arcs in blue, bisecting line in green and perpendicular line in orange',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -197,7 +197,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to construct an equilateral triangle and a 60° angle using only compass and ruler, with compass arcs in blue, constructed shape in green and angle markings in orange" />',
+        'Short video showing how to construct an equilateral triangle and a 60° angle using only compass and ruler, with compass arcs in blue, constructed shape in green and angle markings in orange',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -287,7 +287,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to bisect all three angles of a triangle using a compass, with original angle in blue, bisector line in green and incentre in orange" />',
+        'Short video showing how to bisect all three angles of a triangle using a compass, with original angle in blue, bisector line in green and incentre in orange',
     },
   ],
 

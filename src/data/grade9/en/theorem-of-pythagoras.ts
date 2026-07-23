@@ -85,7 +85,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to identify the right-angled triangle inside a geometric figure and apply the Theorem of Pythagoras to find unknown lengths" />',
+        'Short video showing how to identify the right-angled triangle inside a geometric figure and apply the Theorem of Pythagoras to find unknown lengths',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -166,7 +166,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve multi-step Pythagoras problems in real-life contexts and combined shapes, including the algebraic approach for an unknown hypotenuse" />',
+        'Short video showing how to solve multi-step Pythagoras problems in real-life contexts and combined shapes, including the algebraic approach for an unknown hypotenuse',
     },
   ],
 

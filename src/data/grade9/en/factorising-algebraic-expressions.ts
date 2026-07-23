@@ -83,7 +83,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find the HCF of algebraic terms and factor it out of an expression" />',
+        'Short video showing how to find the HCF of algebraic terms and factor it out of an expression',
 
       diagramPlaceholder:
         'Diagram showing 6x² and 9x converging to their HCF 3x, which is factored out to give 3x(2x + 3)',
@@ -184,7 +184,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to recognise and factorise a difference of two squares using the pattern a squared minus b squared equals (a minus b)(a plus b)" />',
+        'Short video showing how to recognise and factorise a difference of two squares using the pattern a squared minus b squared equals (a minus b)(a plus b)',
 
       diagramPlaceholder:
         'Geometric diagram showing a square of side a with a smaller square of side b removed, rearranged into a rectangle of width (a + b) and height (a − b), illustrating a² − b² = (a − b)(a + b)',
@@ -297,7 +297,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to factorise trinomials of the form x squared plus bx plus c by finding two numbers that multiply to c and add to b" />',
+        'Short video showing how to factorise trinomials of the form x squared plus bx plus c by finding two numbers that multiply to c and add to b',
     },
   ],
 

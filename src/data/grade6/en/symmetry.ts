@@ -94,7 +94,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating the fold test for lines of symmetry, showing how to check vertical, horizontal and diagonal lines, and why a rectangle\'s diagonal fails the test while a square\'s diagonal passes it" />',
+        'Short video demonstrating the fold test for lines of symmetry, showing how to check vertical, horizontal and diagonal lines, and why a rectangle\'s diagonal fails the test while a square\'s diagonal passes it',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -205,7 +205,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video comparing the diagonals of a square, rhombus, rectangle, parallelogram and kite, showing which diagonals are lines of symmetry and linking this to each shape\'s equal-side properties" />',
+        'Short video comparing the diagonals of a square, rhombus, rectangle, parallelogram and kite, showing which diagonals are lines of symmetry and linking this to each shape\'s equal-side properties',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to complete a symmetrical shape by measuring distances from the line of symmetry and reflecting points to the opposite side, including an example with a diagonal line of symmetry" />',
+        'Short video demonstrating how to complete a symmetrical shape by measuring distances from the line of symmetry and reflecting points to the opposite side, including an example with a diagonal line of symmetry',
     },
   ],
 

@@ -116,7 +116,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om BODMAS toe te pas met heelgetalbewerkings insluitend kwadrate kubusse vierkantswortels en kubuswortels" />',
+        'Kort video wat wys hoe om BODMAS toe te pas met heelgetalbewerkings insluitend kwadrate kubusse vierkantswortels en kubuswortels',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -234,7 +234,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat die distributiewe eienskap en die verskil tussen additiewe en vermenigvuldigende inverse vir heelgetalle verduidelik" />',
+        'Kort video wat die distributiewe eienskap en die verskil tussen additiewe en vermenigvuldigende inverse vir heelgetalle verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -400,7 +400,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om BODMAS toe te pas met gemengde heelgetalbewerkings in meerstap abstrakte en werklike-lewe probleme" />',
+        'Kort video wat wys hoe om BODMAS toe te pas met gemengde heelgetalbewerkings in meerstap abstrakte en werklike-lewe probleme',
     },
   ],
 

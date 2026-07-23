@@ -83,7 +83,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om die GGF van algebraïese terme te vind en dit uit ʼn uitdrukking te faktoriseer" />',
+        'Kort video wat wys hoe om die GGF van algebraïese terme te vind en dit uit ʼn uitdrukking te faktoriseer',
 
       diagramPlaceholder:
         'Diagram wat 6x² en 9x wys wat saamvloei na hul GGF 3x, wat uitgefaktoriseer word om 3x(2x + 3) te gee',
@@ -184,7 +184,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn verskil van twee kwadrate te herken en te faktoriseer deur die patroon a kwadraat minus b kwadraat is gelyk aan (a minus b)(a plus b) te gebruik" />',
+        'Kort video wat wys hoe om ʼn verskil van twee kwadrate te herken en te faktoriseer deur die patroon a kwadraat minus b kwadraat is gelyk aan (a minus b)(a plus b) te gebruik',
 
       diagramPlaceholder:
         'Meetkundige diagram wat ʼn vierkant met sy a wys, met ʼn kleiner vierkant met sy b verwyder, herrangskik na ʼn reghoek met wydte (a + b) en hoogte (a − b), wat a² − b² = (a − b)(a + b) illustreer',
@@ -297,7 +297,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om trinome van die vorm x kwadraat plus bx plus c te faktoriseer deur twee getalle te vind wat vermenigvuldig na c en optel na b" />',
+        'Kort video wat wys hoe om trinome van die vorm x kwadraat plus bx plus c te faktoriseer deur twee getalle te vind wat vermenigvuldig na c en optel na b',
     },
   ],
 

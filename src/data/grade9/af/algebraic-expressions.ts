@@ -122,7 +122,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn monoom met ʼn polinoom te vermenigvuldig deur die distributiewe wet te gebruik, met stap-vir-stap kleurgekodeerde voorbeelde" />',
+        'Kort video wat wys hoe om ʼn monoom met ʼn polinoom te vermenigvuldig deur die distributiewe wet te gebruik, met stap-vir-stap kleurgekodeerde voorbeelde',
 
       diagramPlaceholder:
         'Waaierdiagram wat wys hoe 3x met pyle na elke term in (2x² + 5x − 4) versprei word, met die resulterende produkte 6x³, 15x² en −12x aan die regterkant',
@@ -267,7 +267,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn polinoom deur ʼn monoom te deel deur elke term te skei en die eksponent-aftrekkingsreël toe te pas" />',
+        'Kort video wat wys hoe om ʼn polinoom deur ʼn monoom te deel deur elke term te skei en die eksponent-aftrekkingsreël toe te pas',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -456,7 +456,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om twee binome te vermenigvuldig deur die FOIL-metode te gebruik en hoe om die kwadraat van ʼn binoom uit te brei met die spesiale patrone, met kleurgekodeerde stappe" />',
+        'Kort video wat wys hoe om twee binome te vermenigvuldig deur die FOIL-metode te gebruik en hoe om die kwadraat van ʼn binoom uit te brei met die spesiale patrone, met kleurgekodeerde stappe',
 
       diagramPlaceholder:
         'Boogdiagram wat die FOIL-metode toegepas op (x + 3)(x + 5) wys, met gekleurde boë wat die Eerste, Buitenste, Binneste en Laaste termpare verbind na die finale uitgebreide antwoord x² + 8x + 15',

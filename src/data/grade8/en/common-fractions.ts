@@ -139,7 +139,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide whole numbers and fractions by a common fraction using the reciprocal method" />',
+        'Short video showing how to divide whole numbers and fractions by a common fraction using the reciprocal method',
 
       diagramPlaceholder:
         'Diagram showing the divisor 2/3 flipped into its reciprocal 3/2, illustrating a ÷ b/c = a × c/b',
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to calculate squares, cubes, square roots and cube roots of common fractions by applying operations to numerator and denominator separately" />',
+        'Short video showing how to calculate squares, cubes, square roots and cube roots of common fractions by applying operations to numerator and denominator separately',
 
       diagramPlaceholder:
         'Area model of a 3-by-3 grid with a 2-by-3 shaded block showing (2/3)² = 4/9',
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to solve grouping and sharing problems involving common fractions and mixed numbers" />',
+        'Short video showing how to solve grouping and sharing problems involving common fractions and mixed numbers',
 
       diagramPlaceholder:
         'Bar model of a 6½ m rope cut into eight 3/4 m pieces, with the short leftover piece shown separately',

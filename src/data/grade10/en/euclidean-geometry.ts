@@ -101,7 +101,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between similar and congruent triangles using matching angles and proportional sides with colour coded diagrams" />',
+        'Short video explaining the difference between similar and congruent triangles using matching angles and proportional sides with colour coded diagrams',
 
       diagramPlaceholder:
         'Side by side diagram showing two similar triangles with matching angles highlighted blue and proportional sides labelled orange versus two congruent triangles with identical sides highlighted green',
@@ -231,7 +231,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video investigating the Midpoint Theorem by constructing a triangle, marking the midpoints of two sides, and measuring the midsegment to confirm it is parallel to and half the length of the third side" />',
+        'Short video investigating the Midpoint Theorem by constructing a triangle, marking the midpoints of two sides, and measuring the midsegment to confirm it is parallel to and half the length of the third side',
 
       diagramPlaceholder:
         'Triangle ABC with D and E marked as the midpoints of AB and AC, the midsegment DE drawn in blue with tick marks showing AD = DB and AE = EC, and the relationship DE ∥ BC, DE = ½BC labelled in green',
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video investigating the properties of special quadrilaterals including sides angles and diagonals with colour coded proof steps and counter-examples" />',
+        'Short video investigating the properties of special quadrilaterals including sides angles and diagonals with colour coded proof steps and counter-examples',
 
       diagramPlaceholder:
         'Hierarchy diagram showing the relationships between special quadrilaterals from parallelogram down to rectangle rhombus and square with key properties labelled blue and counter-examples highlighted red',
@@ -423,7 +423,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining how standard and alternative definitions of special quadrilaterals are proven to be equivalent using geometric reasoning" />',
+        'Short video explaining how standard and alternative definitions of special quadrilaterals are proven to be equivalent using geometric reasoning',
 
       diagramPlaceholder:
         'Diagram showing a rhombus with the standard definition labelled blue and the alternative diagonal bisecting at right angles definition labelled orange with proof connecting them labelled green',
@@ -509,7 +509,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video demonstrating how to state test and either prove or disprove geometric conjectures about quadrilaterals using counter-examples and logical proofs" />',
+        'Short video demonstrating how to state test and either prove or disprove geometric conjectures about quadrilaterals using counter-examples and logical proofs',
 
       diagramPlaceholder:
         'Diagram showing an isosceles triangle with the equal sides tick marked blue for the stated conjecture, then the two base angles arc marked green to show the tested conjecture has been proven equal',

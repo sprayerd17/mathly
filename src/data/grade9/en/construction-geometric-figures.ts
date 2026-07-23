@@ -77,7 +77,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the Exterior Angle Theorem and showing how an exterior angle of a triangle equals the sum of the two remote interior angles" />',
+        'Short video explaining the Exterior Angle Theorem and showing how an exterior angle of a triangle equals the sum of the two remote interior angles',
 
       diagramPlaceholder:
         'A triangle with one side extended beyond a vertex to form an exterior angle, with the two remote interior angles labelled a and b, and the exterior angle labelled a + b',
@@ -148,7 +148,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video investigating the diagonals of rectangles, squares, parallelograms, rhombi and kites — comparing length, bisection and perpendicularity" />',
+        'Short video investigating the diagonals of rectangles, squares, parallelograms, rhombi and kites — comparing length, bisection and perpendicularity',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -220,7 +220,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to divide polygons into triangles from one vertex and use this to confirm the interior angle sum formula" />',
+        'Short video showing how to divide polygons into triangles from one vertex and use this to confirm the interior angle sum formula',
 
       diagramPlaceholder:
         'A hexagon with diagonals drawn from one vertex, dividing it into 4 triangles, each triangle shaded a different colour',

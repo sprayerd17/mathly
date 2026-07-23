@@ -164,7 +164,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining place value in 9-digit whole numbers using a colour coded place value chart and showing how to write numbers in expanded notation" />',
+        'Short video explaining place value in 9-digit whole numbers using a colour coded place value chart and showing how to write numbers in expanded notation',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -335,7 +335,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the commutative, associative and distributive properties of whole numbers and the additive and multiplicative identities, with examples of using each property to calculate mentally" />',
+        'Short video explaining the commutative, associative and distributive properties of whole numbers and the additive and multiplicative identities, with examples of using each property to calculate mentally',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -506,7 +506,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to compare and order large whole numbers by counting digits first then comparing digit by digit from the left using the greater than less than and equal to symbols" />',
+        'Short video showing how to compare and order large whole numbers by counting digits first then comparing digit by digit from the left using the greater than less than and equal to symbols',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -667,7 +667,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to round whole numbers to the nearest 10 100 1 000 10 000 100 000 and 1 000 000 using the colour coded digit to the right rule" />',
+        'Short video showing how to round whole numbers to the nearest 10 100 1 000 10 000 100 000 and 1 000 000 using the colour coded digit to the right rule',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -839,7 +839,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to list all factors of a number using factor pairs and how to find the HCF and LCM of two numbers using lists of factors and multiples" />',
+        'Short video showing how to list all factors of a number using factor pairs and how to find the HCF and LCM of two numbers using lists of factors and multiples',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -1001,7 +1001,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video explaining the difference between prime and composite numbers and demonstrating prime factorisation using a factor tree for 36 with colour coded prime factors in orange and product notation in blue" />',
+        'Short video explaining the difference between prime and composite numbers and demonstrating prime factorisation using a factor tree for 36 with colour coded prime factors in orange and product notation in blue',
     },
   ],
   topicPractice: [

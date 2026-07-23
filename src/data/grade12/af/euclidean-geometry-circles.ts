@@ -191,7 +191,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat \'n visuele oorsig gee van al die sleutel sirkelterme gemerk op \'n sirkel — radius, koord, raaklyn, boog, koordevierhoek — en wys dat die hoek by die middelpunt gelyk is aan twee keer die hoek by die omtrek" />',
+        'Kort video wat \'n visuele oorsig gee van al die sleutel sirkelterme gemerk op \'n sirkel — radius, koord, raaklyn, boog, koordevierhoek — en wys dat die hoek by die middelpunt gelyk is aan twee keer die hoek by die omtrek',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -331,7 +331,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn koord met die loodlyn vanaf die middelpunt wat dit halveer, wys — met die twee gelyke halfkoorde en die reghoekige driehoek wat vir Pythagoras-berekeninge gebruik word, gemerk" />',
+        'Kort video wat ʼn koord met die loodlyn vanaf die middelpunt wat dit halveer, wys — met die twee gelyke halfkoorde en die reghoekige driehoek wat vir Pythagoras-berekeninge gebruik word, gemerk',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -487,7 +487,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat diagramme vir al drie hoekstellings wys — hoek by die middelpunt is twee keer die hoek by die omtrek, gelyke hoeke in dieselfde segment, en hoek in ʼn halfsirkel — met elke relevante hoek in sy kleur uitgelig" />',
+        'Kort video wat diagramme vir al drie hoekstellings wys — hoek by die middelpunt is twee keer die hoek by die omtrek, gelyke hoeke in dieselfde segment, en hoek in ʼn halfsirkel — met elke relevante hoek in sy kleur uitgelig',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -564,7 +564,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn gemerkte koordevierhoek ABCD wys met teenoorstaande hoekpare in blou en oranje uitgelig, en ʼn buitehoek in groen uitgelig, wat albei stellings demonstreer" />',
+        'Kort video wat ʼn gemerkte koordevierhoek ABCD wys met teenoorstaande hoekpare in blou en oranje uitgelig, en ʼn buitehoek in groen uitgelig, wat albei stellings demonstreer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -657,7 +657,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat ʼn raaklyn aan ʼn sirkel wys — met die raaklyn in groen, die radius by die raakpunt in blou, gelyke raaklynsegmente vanaf ʼn eksterne punt, en die raaklyn-koord hoek in oranje met die ooreenstemmende alternerende segmenthoek, gemerk" />',
+        'Kort video wat ʼn raaklyn aan ʼn sirkel wys — met die raaklyn in groen, die radius by die raakpunt in blou, gelyke raaklynsegmente vanaf ʼn eksterne punt, en die raaklyn-koord hoek in oranje met die ooreenstemmende alternerende segmenthoek, gemerk',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -777,7 +777,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om ʼn sirkelstelling (raaklyn-koordhoek, hoek in ʼn halfsirkel, koordevierhoek se teenoorstaande hoeke) te kombineer met gelykhoekige (AA) gelykvormige driehoeke om ʼn gekwadreerde lengte of ʼn produk-van-lengtes resultaat te bewys, deur die raaklyn-snylyn rider stap vir stap deur te werk" />',
+        'Kort video wat wys hoe om ʼn sirkelstelling (raaklyn-koordhoek, hoek in ʼn halfsirkel, koordevierhoek se teenoorstaande hoeke) te kombineer met gelykhoekige (AA) gelykvormige driehoeke om ʼn gekwadreerde lengte of ʼn produk-van-lengtes resultaat te bewys, deur die raaklyn-snylyn rider stap vir stap deur te werk',
     },
   ],
 

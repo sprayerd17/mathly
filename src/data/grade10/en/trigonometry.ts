@@ -87,7 +87,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video introducing SOHCAHTOA and showing how to identify opposite, adjacent and hypotenuse sides relative to a given angle in a right-angled triangle" />',
+        'Short video introducing SOHCAHTOA and showing how to identify opposite, adjacent and hypotenuse sides relative to a given angle in a right-angled triangle',
 
       diagramPlaceholder:
         'Right-angled triangle with the opposite side in blue, adjacent side in orange and hypotenuse in green, with the SOHCAHTOA ratios for angle θ shown alongside',
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing how to find a missing side or angle in a right-angled triangle using SOHCAHTOA and inverse trig functions on a calculator" />',
+        'Short video showing how to find a missing side or angle in a right-angled triangle using SOHCAHTOA and inverse trig functions on a calculator',
 
       diagramPlaceholder:
         'Right-angled triangle PQR with the known sides PQ and QR in blue and the unknown angle P in red, showing the tan ratio used to solve it',
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video extending trig definitions to all four quadrants using a point (x,y) on the terminal arm and showing how r is always positive while x and y can be negative" />',
+        'Short video extending trig definitions to all four quadrants using a point (x,y) on the terminal arm and showing how r is always positive while x and y can be negative',
 
       diagramPlaceholder:
         'Cartesian plane showing the point (3, 4) with the terminal arm drawn from the origin, r labelled along the arm, and x and y labelled as dashed drop-lines to the axes',
@@ -352,7 +352,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video plotting y=sinθ, y=cosθ and y=tanθ for 0° to 360°, identifying maximum and minimum points and explaining vertical asymptotes on the tangent graph" />',
+        'Short video plotting y=sinθ, y=cosθ and y=tanθ for 0° to 360°, identifying maximum and minimum points and explaining vertical asymptotes on the tangent graph',
 
       diagramPlaceholder:
         'Graphs of y=sinθ and y=cosθ plotted together over 0° to 360° with maximum and minimum points marked, alongside a graph of y=tanθ showing its vertical asymptote at 90°',
@@ -433,7 +433,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video showing the effect of parameters a and q on y=a·sinθ+q — demonstrating amplitude stretch with a and vertical shift with q using side-by-side graphs" />',
+        'Short video showing the effect of parameters a and q on y=a·sinθ+q — demonstrating amplitude stretch with a and vertical shift with q using side-by-side graphs',
 
       diagramPlaceholder:
         'Two graphs side by side: y=3sinθ compared with y=sinθ to show the amplitude stretch from parameter a, and y=cosθ+2 compared with y=cosθ to show the vertical shift from parameter q',
@@ -527,7 +527,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Short video solving real-life 2D trigonometry problems involving angles of elevation and depression, showing how to draw a diagram and apply SOHCAHTOA step by step" />',
+        'Short video solving real-life 2D trigonometry problems involving angles of elevation and depression, showing how to draw a diagram and apply SOHCAHTOA step by step',
 
       diagramPlaceholder:
         'Diagram of a building with the angle of elevation from the ground marked in blue and the angle of depression from the top marked in orange, showing that the two angles are equal',

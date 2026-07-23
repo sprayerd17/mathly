@@ -154,7 +154,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om oppervlakte- en omtrekformules vir sirkels en saamgestelde vorms toe te pas, insluitend SI-eenheidomskakelings tussen cm² en m²" />',
+        'Kort video wat wys hoe om oppervlakte- en omtrekformules vir sirkels en saamgestelde vorms toe te pas, insluitend SI-eenheidomskakelings tussen cm² en m²',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -297,7 +297,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe die verdubbeling van een dimensie teenoor die verdubbeling van al die dimensies die omtrek en oppervlakte van reghoeke en vierkante verskillend beïnvloed" />',
+        'Kort video wat wys hoe die verdubbeling van een dimensie teenoor die verdubbeling van al die dimensies die omtrek en oppervlakte van reghoeke en vierkante verskillend beïnvloed',
 
       diagramPlaceholder:
         'ʼn Klein vierkant en ʼn groter vierkant met sye verdubbel, langs mekaar getoon met beide omtrek en oppervlakte op elk gemerk, wat die 2x-omtrek teenoor 4x-oppervlakte-verhouding illustreer',
@@ -411,7 +411,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        '<VideoPlaceholder label="Kort video wat wys hoe om lineêre en oppervlakte-skaalfaktore toe te pas om werklike-lewe vergrotings- en verkleiningsprobleme met omtrek en oppervlakte op te los" />',
+        'Kort video wat wys hoe om lineêre en oppervlakte-skaalfaktore toe te pas om werklike-lewe vergrotings- en verkleiningsprobleme met omtrek en oppervlakte op te los',
     },
   ],
 
