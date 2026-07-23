@@ -1003,5 +1003,99 @@ export const topicData: TopicData = {
         { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
       ],
     },
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 2 (20 Qs) — same block layout as Set 1, fresh numbers
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 2',
+      questions: [
+        // Block A — Nature of roots
+        { difficulty: 'Easy', question: 'Determine the nature of the roots of x² − 8x + 16 = 0 without solving.', answer: 'Real, equal, rational roots', checkMode: 'auto', correctAnswer: 'real, equal, rational', correctAnswers: ['real, equal, rational', 'real equal rational', 'equal, real, rational'], explanation: 'a=1, b=−8, c=16. Δ=64−64=0.\nReal, equal, rational roots ✓' },
+        { difficulty: 'Medium', question: 'Determine the nature of the roots of x² + 4x − 3 = 0 without solving.', answer: 'Real, unequal, irrational roots', checkMode: 'auto', correctAnswer: 'real, unequal, irrational', correctAnswers: ['real, unequal, irrational', 'real unequal irrational', 'unequal, real, irrational'], explanation: 'a=1, b=4, c=−3. Δ=16+12=28, not a perfect square.\nReal, unequal, irrational roots ✓' },
+        { difficulty: 'Hard', question: 'For which value(s) of k will 3x² + kx + 12 = 0 have real, equal roots?', answer: 'k = 12 or k = −12', checkMode: 'auto', correctAnswers: ['k=12 or k=-12', 'k=-12 or k=12', 'k=±12', 'k = ±12', '12 or -12', '-12 or 12'], explanation: 'Δ=k²−4(3)(12)=k²−144. For equal roots, Δ=0: k²=144 → k=12 or k=−12 ✓' },
+
+        // Block B — Solving quadratics
+        { difficulty: 'Easy', question: 'Solve for x by factorisation: 6x² + x − 2 = 0.', answer: 'x = ½ or x = −2/3', checkMode: 'auto', correctAnswers: ['x=1/2 or x=-2/3', 'x=-2/3 or x=1/2', 'x=0.5 or x=-0.667', 'x=-0.667 or x=0.5'], explanation: '6x²+4x−3x−2=0 → 2x(3x+2)−1(3x+2)=0 → (2x−1)(3x+2)=0.\nx=½ or x=−2/3 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 6x − 2 = 0.', answer: 'x = −3 + √11 or x = −3 − √11', checkMode: 'self' },
+
+        // Block C — Quadratic inequalities
+        { difficulty: 'Easy', question: 'Solve for x: x² − 25 < 0.', answer: '−5 < x < 5', checkMode: 'auto', correctAnswers: ['-5<x<5', '-5 < x < 5', '(-5,5)'], explanation: 'x²−25=0 → x=±5. Opens upward, so <0 between the roots.\nSolution: −5 < x < 5 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: x² − x − 12 ≥ 0.', answer: 'x ≤ −3 or x ≥ 4', checkMode: 'auto', correctAnswers: ['x≤-3 or x≥4', 'x <= -3 or x >= 4', 'x≥4 or x≤-3'], explanation: '(x−4)(x+3)=0 → x=4 or x=−3. Opens upward, so ≥0 outside the roots.\nSolution: x≤−3 or x≥4 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: −3x² + 3x + 6 > 0.', answer: '−1 < x < 2', checkMode: 'auto', correctAnswers: ['-1<x<2', '-1 < x < 2', '(-1,2)'], explanation: 'Divide by −3 (flip): x²−x−2<0 → (x−2)(x+1)<0 → −1<x<2 ✓' },
+
+        // Block D — Simultaneous linear-quadratic
+        { difficulty: 'Medium', question: 'Solve simultaneously: y = 2x − 1 and y = x² − 4x − 1.', answer: 'x = 0, y = −1  or  x = 6, y = 11', checkMode: 'auto', correctAnswers: ['x=0,y=-1 or x=6,y=11', 'x=6,y=11 or x=0,y=-1', '(0,-1) and (6,11)'], explanation: '2x−1=x²−4x−1 → x²−6x=0 → x(x−6)=0 → x=0 or x=6.\nWhen x=0: y=−1. When x=6: y=11.\nCheck: 0²−4(0)−1=−1 ✓ and 6²−4(6)−1=11 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously: y = 4x − 3 and y = x² − x − 3.', answer: 'x = 0, y = −3  or  x = 5, y = 17', checkMode: 'auto', correctAnswers: ['x=0,y=-3 or x=5,y=17', 'x=5,y=17 or x=0,y=-3', '(0,-3) and (5,17)'], explanation: '4x−3=x²−x−3 → x²−5x=0 → x(x−5)=0 → x=0 or x=5.\nWhen x=0: y=−3. When x=5: y=17.\nCheck: 0²−0−3=−3 ✓ and 5²−5−3=17 ✓' },
+        { difficulty: 'Hard', question: 'Show algebraically that the line y = 2x + 5 does not intersect the parabola y = x² + x + 8.', answer: '2x+5=x²+x+8 → x²−x+3=0. Δ=1−12=−11<0.\nSince Δ<0, there are no real solutions, so the line does not intersect the parabola.', checkMode: 'self' },
+
+        // Block E — Surd equations
+        { difficulty: 'Easy', question: 'Solve for x: √(x + 12) = x.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Square: x+12=x² → x²−x−12=0 → (x−4)(x+3)=0 → x=4 or x=−3.\nCheck x=4: √16=4=4 ✓ valid.\nCheck x=−3: √9=3≠−3, rejected.\nSolution: x=4.' },
+        { difficulty: 'Medium', question: 'Solve for x: √(5x + 9) = x + 3.', answer: 'x = 0 or x = −1', checkMode: 'auto', correctAnswers: ['x=0 or x=-1', 'x=-1 or x=0', '0 or -1', '-1 or 0'], explanation: 'Square: 5x+9=x²+6x+9 → x²+x=0 → x(x+1)=0 → x=0 or x=−1.\nCheck x=0: √9=3, and 0+3=3 ✓ valid.\nCheck x=−1: √4=2, and −1+3=2 ✓ valid.\nSolution: x=0 or x=−1.' },
+        { difficulty: 'Hard', question: 'Solve for x: 1 + √(x + 4) = x − 1.', answer: 'x = 5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Isolate: √(x+4)=x−2. Square: x+4=x²−4x+4 → x²−5x=0 → x(x−5)=0 → x=0 or x=5.\nCheck x=0: √4=2, but 0−2=−2, 2≠−2, rejected.\nCheck x=5: √9=3, and 5−2=3 ✓ valid.\nSolution: x=5.' },
+
+        // Block F — Exponential equations
+        { difficulty: 'Easy', question: 'Solve for x: 5^x = 625.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: '625=5⁴. So x=4 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: 4^(x − 1) = 8^(x + 1).', answer: 'x = −5', checkMode: 'auto', correctAnswer: 'x=-5', correctAnswers: ['x=-5', 'x = -5', '-5'], explanation: '4=2², 8=2³. So 2^(2x−2)=2^(3x+3) → 2x−2=3x+3 → x=−5 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 2^(2x) − 20 · 2^x + 64 = 0.', answer: 'x = 2 or x = 4', checkMode: 'auto', correctAnswers: ['x=2 or x=4', 'x=4 or x=2'], explanation: 'Let k=2^x: k²−20k+64=0 → (k−4)(k−16)=0 → k=4 or k=16.\n2^x=4 → x=2. 2^x=16=2⁴ → x=4.\nSolution: x=2 or x=4 ✓' },
+
+        // Block G — Algebraic fraction equations
+        { difficulty: 'Easy', question: 'Solve for x: 10/(x + 4) = 5/(x − 1).', answer: 'x = 6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Restrictions: x≠−4, x≠1.\nCross-multiply: 10(x−1)=5(x+4) → 10x−10=5x+20 → 5x=30 → x=6 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: x − 6/x = 1.', answer: 'x = 3 or x = −2', checkMode: 'auto', correctAnswers: ['x=3 or x=-2', 'x=-2 or x=3', '3 or -2', '-2 or 3'], explanation: 'Restriction: x≠0.\nMultiply by x: x²−6=x → x²−x−6=0 → (x−3)(x+2)=0 → x=3 or x=−2 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: (3x − 1)/(x − 2) = 4 + 3/(x − 2), stating any restrictions.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Restriction: x≠2.\nMultiply by (x−2): 3x−1=4(x−2)+3 → 3x−1=4x−5 → −x=−4 → x=4.\nNot excluded — valid. x=4 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Excellent! You can confidently apply the nature of roots, quadratic equations and inequalities, simultaneous systems, surd equations, exponential equations, and algebraic fraction equations.' },
+        { minScore: 14, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples, especially on surd and rational fraction equations, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
+    // ═══════════════════════════════════════════════════════════════════════
+    // SET 3 (20 Qs) — same block layout, fresh numbers
+    // ═══════════════════════════════════════════════════════════════════════
+    {
+      name: 'Set 3',
+      questions: [
+        // Block A — Nature of roots
+        { difficulty: 'Easy', question: 'Determine the nature of the roots of x² + 12x + 36 = 0 without solving.', answer: 'Real, equal, rational roots', checkMode: 'auto', correctAnswer: 'real, equal, rational', correctAnswers: ['real, equal, rational', 'real equal rational', 'equal, real, rational'], explanation: 'a=1, b=12, c=36. Δ=144−144=0.\nReal, equal, rational roots ✓' },
+        { difficulty: 'Medium', question: 'Determine the nature of the roots of x² − 6x − 1 = 0 without solving.', answer: 'Real, unequal, irrational roots', checkMode: 'auto', correctAnswer: 'real, unequal, irrational', correctAnswers: ['real, unequal, irrational', 'real unequal irrational', 'unequal, real, irrational'], explanation: 'a=1, b=−6, c=−1. Δ=36+4=40, not a perfect square.\nReal, unequal, irrational roots ✓' },
+        { difficulty: 'Hard', question: 'For which value(s) of m will x² + mx + 9 = 0 have non-real roots?', answer: '−6 < m < 6', checkMode: 'auto', correctAnswers: ['-6<m<6', '-6 < m < 6', '(-6,6)'], explanation: 'Δ=m²−4(1)(9)=m²−36. For non-real roots, Δ<0: m²<36 → −6<m<6 ✓' },
+
+        // Block B — Solving quadratics
+        { difficulty: 'Easy', question: 'Solve for x by factorisation: 6x² − 7x − 3 = 0.', answer: 'x = −⅓ or x = 3/2', checkMode: 'auto', correctAnswers: ['x=-1/3 or x=3/2', 'x=3/2 or x=-1/3', 'x=-0.333 or x=1.5', 'x=1.5 or x=-0.333'], explanation: '6x²−9x+2x−3=0 → 3x(2x−3)+1(2x−3)=0 → (3x+1)(2x−3)=0.\nx=−⅓ or x=3/2 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 2x − 9 = 0.', answer: 'x = 1 + √10 or x = 1 − √10', checkMode: 'self' },
+
+        // Block C — Quadratic inequalities
+        { difficulty: 'Easy', question: 'Solve for x: x² − 36 < 0.', answer: '−6 < x < 6', checkMode: 'auto', correctAnswers: ['-6<x<6', '-6 < x < 6', '(-6,6)'], explanation: 'x²−36=0 → x=±6. Opens upward, so <0 between the roots.\nSolution: −6 < x < 6 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: x² + 3x − 10 ≥ 0.', answer: 'x ≤ −5 or x ≥ 2', checkMode: 'auto', correctAnswers: ['x≤-5 or x≥2', 'x <= -5 or x >= 2', 'x≥2 or x≤-5'], explanation: '(x+5)(x−2)=0 → x=−5 or x=2. Opens upward, so ≥0 outside the roots.\nSolution: x≤−5 or x≥2 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: −2x² + 2x + 12 > 0.', answer: '−2 < x < 3', checkMode: 'auto', correctAnswers: ['-2<x<3', '-2 < x < 3', '(-2,3)'], explanation: 'Divide by −2 (flip): x²−x−6<0 → (x−3)(x+2)<0 → −2<x<3 ✓' },
+
+        // Block D — Simultaneous linear-quadratic
+        { difficulty: 'Medium', question: 'Solve simultaneously: y = 3x + 4 and y = x² + 3x − 5.', answer: 'x = 3, y = 13  or  x = −3, y = −5', checkMode: 'auto', correctAnswers: ['x=3,y=13 or x=-3,y=-5', 'x=-3,y=-5 or x=3,y=13', '(3,13) and (-3,-5)'], explanation: '3x+4=x²+3x−5 → x²−9=0 → x=±3.\nWhen x=3: y=13. When x=−3: y=−5.\nCheck: 3²+3(3)−5=13 ✓ and (−3)²+3(−3)−5=−5 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously: y = 2x − 4 and y = x² − 4x − 4.', answer: 'x = 0, y = −4  or  x = 6, y = 8', checkMode: 'auto', correctAnswers: ['x=0,y=-4 or x=6,y=8', 'x=6,y=8 or x=0,y=-4', '(0,-4) and (6,8)'], explanation: '2x−4=x²−4x−4 → x²−6x=0 → x(x−6)=0 → x=0 or x=6.\nWhen x=0: y=−4. When x=6: y=8.\nCheck: 0²−4(0)−4=−4 ✓ and 6²−4(6)−4=8 ✓' },
+        { difficulty: 'Hard', question: 'Determine the value of t for which the line y = 3x + t is tangent to (touches) the parabola y = x² + x + 4.', answer: 't = 3', checkMode: 'auto', correctAnswer: 't=3', correctAnswers: ['t=3', 't = 3', '3'], explanation: '3x+t=x²+x+4 → x²−2x+(4−t)=0. For tangency, Δ=0: 4−4(4−t)=0 → 4−16+4t=0 → 4t=12 → t=3 ✓' },
+
+        // Block E — Surd equations
+        { difficulty: 'Easy', question: 'Solve for x: √(x + 2) = x − 4.', answer: 'x = 7', checkMode: 'auto', correctAnswer: 'x=7', correctAnswers: ['x=7', 'x = 7', '7'], explanation: 'Square: x+2=x²−8x+16 → x²−9x+14=0 → (x−7)(x−2)=0 → x=7 or x=2.\nCheck x=7: √9=3, and 7−4=3 ✓ valid.\nCheck x=2: √4=2, but 2−4=−2, 2≠−2, rejected.\nSolution: x=7.' },
+        { difficulty: 'Medium', question: 'Solve for x: √(6x + 13) = x + 3.', answer: 'x = 2 or x = −2', checkMode: 'auto', correctAnswers: ['x=2 or x=-2', 'x=-2 or x=2', '2 or -2', '-2 or 2'], explanation: 'Square: 6x+13=x²+6x+9 → x²=4 → x=±2.\nCheck x=2: √25=5, and 2+3=5 ✓ valid.\nCheck x=−2: √1=1, and −2+3=1 ✓ valid.\nSolution: x=2 or x=−2.' },
+        { difficulty: 'Hard', question: 'Solve for x: 3 + √(x − 1) = x.', answer: 'x = 5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Isolate: √(x−1)=x−3. Square: x−1=x²−6x+9 → x²−7x+10=0 → (x−5)(x−2)=0 → x=5 or x=2.\nCheck x=5: 3+√4=3+2=5 ✓ valid.\nCheck x=2: 3+√1=3+1=4≠2, rejected (also x−3<0 here).\nSolution: x=5.' },
+
+        // Block F — Exponential equations
+        { difficulty: 'Easy', question: 'Solve for x: 6^x = 216.', answer: 'x = 3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: '216=6³. So x=3 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: 27^(x + 1) = 9^(x + 3).', answer: 'x = 3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: '27=3³, 9=3². So 3^(3x+3)=3^(2x+6) → 3x+3=2x+6 → x=3 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: 3^(2x) − 28 · 3^x + 27 = 0.', answer: 'x = 0 or x = 3', checkMode: 'auto', correctAnswers: ['x=0 or x=3', 'x=3 or x=0'], explanation: 'Let k=3^x: k²−28k+27=0 → (k−1)(k−27)=0 → k=1 or k=27.\n3^x=1 → x=0. 3^x=27=3³ → x=3.\nSolution: x=0 or x=3 ✓' },
+
+        // Block G — Algebraic fraction equations
+        { difficulty: 'Easy', question: 'Solve for x: 12/(x − 2) = 6/(x + 3).', answer: 'x = −8', checkMode: 'auto', correctAnswer: 'x=-8', correctAnswers: ['x=-8', 'x = -8', '-8'], explanation: 'Restrictions: x≠2, x≠−3.\nCross-multiply: 12(x+3)=6(x−2) → 12x+36=6x−12 → 6x=−48 → x=−8 ✓' },
+        { difficulty: 'Medium', question: 'Solve for x: x + 10/x = 7.', answer: 'x = 5 or x = 2', checkMode: 'auto', correctAnswers: ['x=5 or x=2', 'x=2 or x=5', '5 or 2', '2 or 5'], explanation: 'Restriction: x≠0.\nMultiply by x: x²+10=7x → x²−7x+10=0 → (x−5)(x−2)=0 → x=5 or x=2 ✓' },
+        { difficulty: 'Hard', question: 'Solve for x: (4x + 1)/(x + 1) = 3 + 4/(x + 1), stating any restrictions.', answer: 'x = 6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Restriction: x≠−1.\nMultiply by (x+1): 4x+1=3(x+1)+4 → 4x+1=3x+7 → x=6.\nNot excluded — valid. x=6 ✓' },
+      ],
+      scoreMessages: [
+        { minScore: 18, message: 'Fantastic! You can apply the nature of roots, quadratic equations and inequalities, simultaneous systems, surd equations, exponential equations, and algebraic fraction equations with confidence.' },
+        { minScore: 14, message: 'Great work! Review any missed questions and try again.' },
+        { minScore: 9, message: 'Good effort! Revisit the worked examples, especially on surd and rational fraction equations, then try again.' },
+        { minScore: 0, message: 'Keep going — work through the study guide again and retry this set.' },
+      ],
+    },
   ],
 }
