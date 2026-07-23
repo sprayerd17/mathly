@@ -285,7 +285,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
       const res = await fetch('/api/ai-assistant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ idToken, messages: apiMessages, image: capturedImage ?? undefined }),
+        body: JSON.stringify({ idToken, messages: apiMessages, image: capturedImage ?? undefined, grade }),
       })
 
       if (res.status === 401) {

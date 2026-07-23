@@ -6,12 +6,17 @@ import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 const client = new Anthropic()
 
-const SYSTEM_PROMPT =
+const BASE_SYSTEM_PROMPT =
   'You are a friendly maths tutor assistant on Mathly, a South African maths education website. ' +
   'You help students from Grade 4 to Grade 12 understand maths concepts. ' +
   'Always explain things clearly and simply. Use examples where helpful. ' +
   'Keep responses concise and encouraging. ' +
   'If a student shares selected text from a study guide, explain it in simpler terms or give an additional example.'
+
+function systemPromptFor(grade: string | null): string {
+  if (!grade) return BASE_SYSTEM_PROMPT
+  return `${BASE_SYSTEM_PROMPT} The student you're helping right now is in Grade ${grade} — pitch explanations and examples at that level.`
+}
 
 type ApiMessage = { role: 'user' | 'assistant'; content: string }
 type Plan = 'free' | 'pro' | 'max'
@@ -58,9 +63,14 @@ function toImageBlock(dataUrl: string): Anthropic.Messages.ImageBlockParam | nul
 }
 
 export async function POST(req: NextRequest) {
-  const body = await req.json().catch(() => null) as { idToken?: string; messages?: unknown; image?: unknown } | null
+  const body = await req.json().catch(() => null) as { idToken?: string; messages?: unknown; image?: unknown; grade?: unknown } | null
 
   if (!body?.idToken) return new Response('Bad request', { status: 400 })
+
+  // Purely descriptive context for the system prompt — not used for any
+  // access-control decision, so a malformed/missing value just falls back
+  // to the ungraded prompt rather than rejecting the request.
+  const grade = typeof body.grade === 'string' && /^(4|5|6|7|8|9|10|11|12)$/.test(body.grade) ? body.grade : null
 
   let adminAuth, adminDb
   try {
@@ -173,7 +183,7 @@ export async function POST(req: NextRequest) {
         const response = await client.messages.create({
           model: 'claude-sonnet-5',
           max_tokens: 1024,
-          system: SYSTEM_PROMPT,
+          system: systemPromptFor(grade),
           messages: anthropicMessages,
           stream: true,
         })
