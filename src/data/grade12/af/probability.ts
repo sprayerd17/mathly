@@ -607,8 +607,8 @@ export const topicData: TopicData = {
       difficulty: 'Hard',
       question: "By 'n skool is gebeurtenis A 'ʼn leerder neem Wiskunde' en gebeurtenis B 'ʼn leerder neem Fisiese Wetenskap'. Dit is bekend dat P(A) = 0,6 en P(A of B) = 0,75. Van die leerders wat Fisiese Wetenskap neem, neem presies 'n kwart ook Wiskunde. Laat P(B) = x. Stel 'n vergelyking in x op deur die optellingsreël te gebruik, los op vir x, en bepaal dus P(B).",
       checkMode: 'auto',
-      correctAnswer: '0.2',
-      correctAnswers: ['0.2', '0,2'],
+      correctAnswer: '0,2',
+      correctAnswers: ['0,2', '0.2'],
       explanation: "Aangesien presies 'n kwart van die Fisiese Wetenskap-leerders ook Wiskunde neem, is P(A en B) = ¼ × P(B) = x/4. Optellingsreël: P(A of B) = P(A) + P(B) − P(A en B), dus 0,75 = 0,6 + x − x/4 = 0,6 + 0,75x. Los op: 0,75x = 0,15, dus x = 0,2. P(B) = 0,2 ✓",
     },
 

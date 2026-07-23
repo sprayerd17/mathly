@@ -208,7 +208,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'In driehoek PQR is S en T onderskeidelik die middelpunte van PQ en PR. ST = 7.5 cm. Bepaal die lengte van QR.',
+          question: 'In driehoek PQR is S en T onderskeidelik die middelpunte van PQ en PR. ST = 7,5 cm. Bepaal die lengte van QR.',
           checkMode: 'auto',
           correctAnswer: '15cm',
           correctAnswers: ['15cm', '15 cm', '15'],

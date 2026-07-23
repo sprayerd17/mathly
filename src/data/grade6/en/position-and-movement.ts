@@ -444,7 +444,7 @@ export const topicData: TopicData = {
     {
       name: 'Set 3',
       questions: [
-        { difficulty: 'Easy', question: 'Using the map above, what is the grid reference of the Park?', checkMode: 'auto', correctAnswer: 'D4', correctAnswers: ['D4', 'd4'], explanation: 'The Park is marked where column D crosses row 4, so its grid reference is D4.', diagramSvg: GRID_SVG },
+        { difficulty: 'Easy', question: 'Using the map above, which landmark is found at grid reference A3?', checkMode: 'auto', correctAnswer: 'School', correctAnswers: ['School', 'school'], explanation: 'Column A, row 3 is where the School is marked on the map.', diagramSvg: GRID_SVG },
         { difficulty: 'Easy', question: 'Using the map above, which landmark is found at grid reference B1?', checkMode: 'auto', correctAnswer: 'Clinic', correctAnswers: ['Clinic', 'clinic'], explanation: 'Column B, row 1 is where the Clinic is marked on the map.', diagramSvg: GRID_SVG },
         { difficulty: 'Easy', question: 'Using the map above, what is the grid reference of the Bank?', checkMode: 'auto', correctAnswer: 'C2', correctAnswers: ['C2', 'c2'], explanation: 'The Bank is marked where column C crosses row 2, so its grid reference is C2.', diagramSvg: GRID_SVG },
         { difficulty: 'Easy', question: 'In the alpha-numeric grid reference A3, which letter names the column and which number names the row?', checkMode: 'auto', correctAnswer: 'A is the column and 3 is the row', correctAnswers: ['a is the column and 3 is the row', 'column a, row 3', 'a, 3'], explanation: 'In any alpha-numeric grid reference, the letter names the column and the number names the row. In A3, A is the column and 3 is the row.' },

@@ -112,9 +112,9 @@ export const topicData: TopicData = {
       practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
-        'A 1 litre bottle shown with markings at 250ml 500ml 750ml and 1000ml with the current volume shown at 750ml to illustrate capacity vs volume',
+        'ʼn 1 liter-bottel met merke by 250 ml, 500 ml, 750 ml en 1000 ml, met die huidige volume getoon by 750 ml om kapasiteit teenoor volume te illustreer',
       videoPlaceholder:
-        'Short video explaining the difference between capacity and volume with real life examples of millilitres and litres',
+        'Kort video wat die verskil tussen kapasiteit en volume verduidelik met werklike-lewe-voorbeelde van milliliters en liters',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 2 — READING MEASURING CONTAINERS
@@ -200,9 +200,9 @@ export const topicData: TopicData = {
       practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
-        'A measuring jug showing markings at 0 200 400 600 800 and 1000ml with the liquid level at 600ml clearly marked with a red line',
+        'ʼn Maatbeker met merke by 0, 200, 400, 600, 800 en 1000 ml, met die vloeistofvlak by 600 ml duidelik met ʼn rooi lyn gemerk',
       videoPlaceholder:
-        'Short video showing how to read a measuring jug or cylinder correctly at eye level and calculate the value of intervals',
+        'Kort video wat wys hoe om ʼn maatbeker of silinder korrek op ooghoogte te lees en die waarde van intervalle te bereken',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 3 — CONVERTING BETWEEN MILLILITRES AND LITRES
@@ -265,7 +265,7 @@ export const topicData: TopicData = {
       practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
-        'Short video showing how to convert between millilitres and litres by multiplying or dividing by 1 000 with worked examples',
+        'Kort video wat wys hoe om tussen milliliters en liters om te skakel deur met 1 000 te vermenigvuldig of te deel, met uitgewerkte voorbeelde',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // SECTION 4 — VOLUME USING UNIT CUBES
@@ -344,9 +344,9 @@ export const topicData: TopicData = {
       practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
-        'A 3D rectangular box made of unit cubes showing 3 cubes long 2 cubes wide and 2 cubes tall with each cube labelled 1cm cubed',
+        'ʼn 3D-reghoekige blok gemaak van eenheidsblokkies wat 3 blokkies lank, 2 blokkies wyd en 2 blokkies hoog wys, met elke blokkie gemerk as 1 cm in die kubiek',
       videoPlaceholder:
-        'Short video showing how to calculate the volume of a 3D shape by counting unit cubes and using length times width times height',
+        'Kort video wat wys hoe om die volume van ʼn 3D-vorm te bereken deur eenheidsblokkies te tel en lengte maal breedte maal hoogte te gebruik',
     },
   ],
   practiceSets: [

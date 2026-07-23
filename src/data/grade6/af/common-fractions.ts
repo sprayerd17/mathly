@@ -556,10 +556,10 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Bereken 3 en 1/2 + 2 en 2/3. Skryf jou antwoord as ʼn gemengde getal.',
-          answer: '6 and 1/6',
+          answer: '6 en 1/6',
           checkMode: 'auto',
-          correctAnswer: '6 and 1/6',
-          correctAnswers: ['6 and 1/6', '6 1/6'],
+          correctAnswer: '6 en 1/6',
+          correctAnswers: ['6 en 1/6', '6 1/6'],
           explanation: 'Skakel om: 3 en 1/2 = 7/2. 2 en 2/3 = 8/3.\nLGV van 2 en 3 = 6.\n7/2 = 21/6. 8/3 = 16/6.\nTel op: 21 + 16 = 37/6.\nSkakel terug om: 37 ÷ 6 = 6 res 1.\nAntwoord: 6 en 1/6 ✓',
         },
       ],

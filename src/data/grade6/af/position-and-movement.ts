@@ -444,7 +444,7 @@ export const topicData: TopicData = {
     {
       name: 'Stel 3',
       questions: [
-        { difficulty: 'Easy', question: 'Gebruik die kaart hierbo — wat is die roosterverwysing van die Park?', checkMode: 'auto', correctAnswer: 'D4', correctAnswers: ['D4', 'd4'], explanation: 'Die Park is gemerk waar kolom D ry 4 kruis, so sy roosterverwysing is D4.', diagramSvg: GRID_SVG },
+        { difficulty: 'Easy', question: 'Gebruik die kaart hierbo — watter landmerk word by roosterverwysing A3 gevind?', checkMode: 'auto', correctAnswer: 'Skool', correctAnswers: ['Skool', 'skool'], explanation: 'Kolom A, ry 3 is waar die Skool op die kaart gemerk is.', diagramSvg: GRID_SVG },
         { difficulty: 'Easy', question: 'Gebruik die kaart hierbo — watter landmerk word by roosterverwysing B1 gevind?', checkMode: 'auto', correctAnswer: 'Kliniek', correctAnswers: ['Kliniek', 'kliniek'], explanation: 'Kolom B, ry 1 is waar die Kliniek op die kaart gemerk is.', diagramSvg: GRID_SVG },
         { difficulty: 'Easy', question: 'Gebruik die kaart hierbo — wat is die roosterverwysing van die Bank?', checkMode: 'auto', correctAnswer: 'C2', correctAnswers: ['C2', 'c2'], explanation: 'Die Bank is gemerk waar kolom C ry 2 kruis, so sy roosterverwysing is C2.', diagramSvg: GRID_SVG },
         { difficulty: 'Easy', question: 'In die alfanumeriese roosterverwysing A3, watter letter noem die kolom en watter getal noem die ry?', checkMode: 'auto', correctAnswer: 'A is die kolom en 3 is die ry', correctAnswers: ['a is die kolom en 3 is die ry', 'kolom a, ry 3', 'a, 3'], explanation: 'In enige alfanumeriese roosterverwysing noem die letter die kolom en die getal die ry. In A3 is A die kolom en 3 die ry.' },
