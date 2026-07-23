@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server'
 import { getAdminDb } from '@/src/lib/firebase-admin'
+import { getPaystackConfig, disableSubscription } from '@/src/lib/paystack'
 import { paymentFinalWarningEmail, paymentReminderEmail, sendEmail, subscriptionCancelledEmail } from '@/src/lib/email'
 
 // Follow-up cadence for accounts stuck on a failed subscription renewal:
@@ -40,6 +41,26 @@ export async function GET(req: NextRequest) {
     const stage: number = typeof user.dunningStage === 'number' ? user.dunningStage : 0
 
     if (daysSince >= 10 && stage < 3) {
+      // Stop Paystack from retrying before dropping the account to free —
+      // otherwise a later successful retry charges the card while the
+      // account already has no access, and Paystack rejects any subsequent
+      // disable attempt as account_already_cancelled. Local cancellation
+      // still proceeds even if this fails, so the account doesn't stay
+      // stuck paid-but-unpaying; the error is logged for manual follow-up.
+      if (user.paystackSubscriptionCode && user.paystackEmailToken) {
+        const result = await disableSubscription(getPaystackConfig(), {
+          code: user.paystackSubscriptionCode,
+          token: user.paystackEmailToken,
+        })
+        if (!result.ok) {
+          console.error('[cron/dunning] Paystack disable failed during auto-cancel — subscription may still be billing', {
+            uid: doc.id, status: result.status, message: result.message,
+          })
+        }
+      } else {
+        console.error('[cron/dunning] auto-cancel with no subscription code/token on file', { uid: doc.id })
+      }
+
       const freeChildPlans = Array.isArray(user.childPlans) ? user.childPlans.map(() => 'free') : []
       await doc.ref.update({ subscriptionStatus: 'cancelled', childPlans: freeChildPlans, dunningStage: 3 })
       if (user.email) {

@@ -51,6 +51,15 @@ export async function POST(req: NextRequest) {
     return new Response('Bad request', { status: 400 })
   }
 
+  // An already-subscribed family must go through /api/paystack/update-tiers
+  // instead — routing them back through checkout would create a second,
+  // duplicate Plan + Transaction while the original subscription keeps
+  // billing, orphaning it and double-charging the family. The client is
+  // expected to make this same split, but the server can't trust that.
+  if (userData.subscriptionStatus === 'active' || userData.subscriptionStatus === 'past_due') {
+    return new Response('Already subscribed — use update-tiers instead', { status: 409 })
+  }
+
   // Never trust a client-supplied amount — compute it server-side. `founding`
   // selects one of exactly two known prices per tier, and is checked against
   // the persistent spots counter (settings/founding, maintained by the
