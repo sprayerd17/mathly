@@ -59,7 +59,7 @@ export const topicData: TopicData = {
           answer: `${gr('40')}`,
           steps: [
             `Identifiseer die tekens: albei getalle is ${gr('negatief')} — die tekens is <strong>dieselfde</strong>.`,
-            `${gr('Dieselfde tekens → positiewe antwoord.')}</strong>`,
+            `${gr('Dieselfde tekens → positiewe antwoord.')}`,
             `Vermenigvuldig die absolute waardes: 8 × 5 = ${gr('40')}`,
             `<strong>Antwoord:</strong> −8 × −5 = ${gr('40')} ✓`,
           ],

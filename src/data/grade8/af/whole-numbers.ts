@@ -13,7 +13,7 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 export const topicData: TopicData = {
   title: 'Hele Getalle',
   grade: 8,
-  // @ts-ignore — subject field extends base type for Grade 8 topics
+  // @ts-expect-error — subject field extends base type for Grade 8 topics
   subject: 'Mathematics',
   sections: [
 

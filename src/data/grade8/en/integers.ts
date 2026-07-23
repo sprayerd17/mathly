@@ -59,7 +59,7 @@ export const topicData: TopicData = {
           answer: `${gr('40')}`,
           steps: [
             `Identify the signs: both numbers are ${gr('negative')} — the signs are the <strong>same</strong>.`,
-            `${gr('Same signs → positive answer.')}</strong>`,
+            `${gr('Same signs → positive answer.')}`,
             `Multiply the absolute values: 8 × 5 = ${gr('40')}`,
             `<strong>Answer:</strong> −8 × −5 = ${gr('40')} ✓`,
           ],
