@@ -7,6 +7,7 @@ import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateSessionBooking, initiatePayReservation, cancelReservation, CheckoutError } from '@/src/lib/paystack-client'
 import { sessionPriceFor, depositDeadlineFor, type PublicSession } from '@/src/lib/sessions'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 type MyBooking = {
   bookingId: string
@@ -396,6 +397,11 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
                     <p className="text-[11px] text-right max-w-[240px] leading-snug" style={{ color: '#9ca3af' }}>
                       {t.live_pay_disclaimer}
                     </p>
+                    {!PAYMENTS_ENABLED && (
+                      <p className="text-[11px] text-right max-w-[240px] leading-snug" style={{ color: '#92400e' }}>
+                        {t.live_payments_paused_note}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>

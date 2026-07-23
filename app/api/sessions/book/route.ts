@@ -41,6 +41,14 @@ export async function POST(req: NextRequest) {
   }
   if (!idToken || !sessionId) return new Response('Bad request', { status: 400 })
   if (intent !== 'reserve' && intent !== 'pay_now') return new Response('Bad request: invalid intent', { status: 400 })
+  // 'reserve' never touches Paystack (payment is deferred to pay-reservation,
+  // which has its own gate). pay_now is allowed to run during the pause —
+  // same reasoning as /api/paystack/checkout, tier gets clamped to free
+  // below regardless — blocked only as a backstop if Paystack isn't in test mode.
+  if (intent === 'pay_now' && !PAYMENTS_ENABLED && getPaystackConfig().mode !== 'test') {
+    console.error('[sessions/book] blocked: payments paused and Paystack is not in test mode')
+    return new Response('Payments are temporarily paused — check back soon', { status: 503 })
+  }
 
   let adminDb, adminAuth
   try {

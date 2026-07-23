@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, initializeTransaction } from '@/src/lib/paystack'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 // Pays for an existing 'reserved' booking before its deposit deadline — the
 // same booking doc is reused (not a new one), so the Paystack webhook updates
@@ -11,6 +12,12 @@ export async function POST(req: NextRequest) {
     bookingId?: string
   }
   if (!idToken || !bookingId) return new Response('Bad request', { status: 400 })
+  // Allowed to run during the pause, same reasoning as /api/paystack/checkout
+  // — blocked only as a backstop if Paystack isn't in test mode.
+  if (!PAYMENTS_ENABLED && getPaystackConfig().mode !== 'test') {
+    console.error('[sessions/pay-reservation] blocked: payments paused and Paystack is not in test mode')
+    return new Response('Payments are temporarily paused — check back soon', { status: 503 })
+  }
 
   let adminDb, adminAuth
   try {

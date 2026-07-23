@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, updatePlan, initializeTransaction } from '@/src/lib/paystack'
 import { computeFamilyPrice, type Tier } from '@/src/lib/pricing'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 const VALID_TIERS: Tier[] = ['free', 'pro', 'max']
 
@@ -33,6 +34,14 @@ export async function POST(req: NextRequest) {
   const { idToken, childTiers } = await req.json().catch(() => ({})) as {
     idToken?: string
     childTiers?: Tier[]
+  }
+
+  // Same reasoning as /api/paystack/checkout: allowed to run during the
+  // pause (access stays clamped to free via getActiveTier()), blocked only
+  // as a backstop if Paystack somehow isn't in test mode.
+  if (!PAYMENTS_ENABLED && getPaystackConfig().mode !== 'test') {
+    console.error('[paystack/update-tiers] blocked: payments paused and Paystack is not in test mode')
+    return new Response('Payments are temporarily paused — check back soon', { status: 503 })
   }
 
   if (

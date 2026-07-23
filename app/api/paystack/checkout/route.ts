@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, createPlan, initializeTransaction } from '@/src/lib/paystack'
 import { computeFamilyPrice, type Tier } from '@/src/lib/pricing'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 const VALID_TIERS: Tier[] = ['free', 'pro', 'max']
 
@@ -10,6 +11,18 @@ export async function POST(req: NextRequest) {
     idToken?: string
     childTiers?: Tier[]
     founding?: { pro?: boolean; max?: boolean }
+  }
+
+  // While paused, checkout is still allowed to run — Paystack needs to see a
+  // working checkout flow on the live site for their review, and access
+  // stays clamped to free regardless (see getActiveTier() in providers.tsx).
+  // What must never happen is a real charge going through during the pause,
+  // so this only blocks if Paystack is somehow NOT in test mode — the one
+  // scenario the pricing page's "no funds are deducted" copy can't itself
+  // guarantee.
+  if (!PAYMENTS_ENABLED && getPaystackConfig().mode !== 'test') {
+    console.error('[paystack/checkout] blocked: payments paused and Paystack is not in test mode')
+    return new Response('Payments are temporarily paused — check back soon', { status: 503 })
   }
 
   if (

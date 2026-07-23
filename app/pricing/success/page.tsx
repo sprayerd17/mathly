@@ -7,6 +7,7 @@ import { useTranslations } from '@/src/i18n/useTranslations'
 import { auth, db } from '@/src/lib/firebase'
 import { doc, getDoc } from 'firebase/firestore'
 import { onAuthStateChanged } from 'firebase/auth'
+import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 // Paystack's browser redirect can land here before or after the server-to-server
 // ITN POST — this page never sets package itself (ITN is the only trusted
@@ -106,13 +107,18 @@ export default function PricingSuccessPage() {
         <h1 className="text-2xl font-bold mb-3" style={{ color: '#0f1f3d' }}>
           {status === 'active' ? t.pricing_success_active_heading : status === 'timeout' ? t.pricing_success_timeout_heading : t.pricing_success_waiting_heading}
         </h1>
-        <p className="text-sm text-gray-500 mb-8">
+        <p className={`text-sm text-gray-500 ${status === 'active' && !PAYMENTS_ENABLED ? 'mb-3' : 'mb-8'}`}>
           {status === 'active'
             ? t.pricing_success_active_body
             : status === 'timeout'
             ? t.pricing_success_timeout_body
             : t.pricing_success_waiting_body}
         </p>
+        {status === 'active' && !PAYMENTS_ENABLED && (
+          <p className="text-xs mb-8" style={{ color: '#92400e' }}>
+            {t.pricing_success_active_paused_note}
+          </p>
+        )}
 
         <Link
           href="/profile"
