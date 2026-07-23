@@ -29,6 +29,35 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Build & deploy notes
+
+This app deploys to Netlify, not Vercel — the section below is
+create-next-app boilerplate and doesn't reflect this project's actual
+deploy target.
+
+Two things in `package.json` look inconsistent at a glance but are both
+deliberate fixes for the same underlying issue, not oversights:
+
+- **`"build": "next build --webpack"` while `dev` uses the Turbopack
+  default.** Production builds crashed on Netlify with
+  `ERR_REQUIRE_ESM`: `firebase-admin/auth` pulls in `jwks-rsa`, which
+  `require()`s `jose` (ESM-only since v6). Turbopack's runtime module
+  loader can't handle a `require()` of a nested ESM-only dependency
+  inside an externalized package; webpack can. `next dev` never
+  surfaces this because dev mode bundles differently — so don't
+  "fix" the dev/build split back to matching, it would reintroduce the
+  crash on the next production deploy. See commit `60ec25c`.
+- **`"overrides": { "jose": "^4.15.9" }`.** The webpack switch alone
+  wasn't enough — `jwks-rsa`'s own code still does `require('jose')`
+  regardless of bundler, and `jose` v6 has no CJS build at all. Pinning
+  to the last v4 release (the last version with a real CJS `main`
+  entry) fixes it at the dependency level. See commit `81a84af`.
+
+If either `firebase-admin` or `jwks-rsa` is upgraded in a way that
+changes their `jose` dependency, re-verify this — the override may
+become unnecessary, or may need bumping to whatever the last CJS-built
+major version is at that time.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
