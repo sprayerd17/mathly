@@ -139,7 +139,7 @@ export default function PricingPage() {
               </p>
             </div>
             <div className="text-center shrink-0">
-              <span className="text-4xl font-bold text-white">R100</span>
+              <span className="text-4xl font-bold text-white">{t.pricing_live_classes_from_price}</span>
               <span className="text-sm ml-1" style={{ color: '#94a3b8' }}>{t.pricing_per_session}</span>
             </div>
             <div className="shrink-0">

@@ -346,7 +346,7 @@ export const translations = {
     footer_privacy: 'Privacy Policy',
 
     // ── Homepage (page.tsx) ─────────────────────────────────────────────────
-    home_hero_badge: 'From R49/month · Cancel anytime',
+    home_hero_badge: 'From R29/month (Founding Member rate) · Cancel anytime',
     home_hero_badge_launching_soon: 'Launching soon — payment verification in progress',
     home_hero_heading: "Extra maths help shouldn't break the bank",
     home_hero_subheading: 'Mathly gives South African students from Grade 4 to Grade 12 access to clear study guides, worked examples, and practice questions — at a fraction of the cost of a private tutor',
@@ -370,7 +370,7 @@ export const translations = {
     home_mission_statement: 'To make quality maths education accessible to every South African student, regardless of their budget',
 
     // ── Pricing (pricing/page.tsx, FamilyPlanBuilder.tsx) ──────────────────
-    pricing_launch_banner: '★ Founding Member Launch — Limited spots available. Lock in your discounted rate for your first year before spots are gone.',
+    pricing_launch_banner: '★ Founding Member Launch — Lock in your discounted rate for your first year.',
     pricing_launch_banner_paused: "★ Almost there — we're finalising payment verification with our processor. You can subscribe below, but no funds will be deducted until verification is complete.",
     pricing_payments_paused_note: "Payment processor verification is in progress. You can complete checkout below, but your account will work exactly like Free — no paid features unlock and no funds are deducted — until verification is complete.",
     pricing_hero_heading: 'Simple, affordable packages',
@@ -384,6 +384,7 @@ export const translations = {
     pricing_referral_promo_cta: 'Learn how it works',
     pricing_live_classes_label: 'Live Classes',
     pricing_live_classes_description: 'Drop-in live sessions for Grades 8 to 12. One topic per week per grade. Pay only for what you attend — no subscription needed.',
+    pricing_live_classes_from_price: 'From R50',
     pricing_per_session: 'per session',
     pricing_view_upcoming_classes: 'View Upcoming Classes',
     pricing_whats_included_heading: "What's included",
@@ -404,12 +405,12 @@ export const translations = {
     pricing_per_month: '/month',
     pricing_free_feature_topics: '1 free topic per grade — full study guides and practice questions included',
     pricing_free_feature_ai_assistant: 'AI assistant — 5 queries and 2 screen captures per month',
-    pricing_free_feature_live_classes: 'Book live class sessions at R100 per session',
+    pricing_free_feature_live_classes: 'Book live class sessions from R50 per session',
     pricing_pro_feature_dashboard: 'Personal dashboard tracking progress',
     pricing_pro_feature_ai_assistant: 'AI assistant',
     pricing_max_feature_everything_in_pro: 'Everything in Pro',
     pricing_max_feature_test_analyzer: "Test analyzer — upload a test for detailed, specific feedback on what you're struggling with",
-    pricing_max_feature_discount_live_classes: '25% off online lessons when they start',
+    pricing_max_feature_discount_live_classes: '20% off live class sessions',
     pricing_max_feature_exam_packs: 'Exam prep packs — key focus areas + a full exam-style paper + step-by-step answers before all exams',
     pricing_choose_your_plan_heading: 'Choose your plan',
     pricing_person_1_label: 'Person 1',
@@ -447,6 +448,7 @@ export const translations = {
     // ── Live classes (live-classes/page.tsx) ────────────────────────────────
     live_coming_soon_badge: 'Coming Soon',
     live_hero_heading: 'Live group classes are coming to Mathly',
+    live_hero_heading_open: 'Live group classes, small and focused',
     live_hero_subheading: 'Small groups, one topic at a time, run by experienced tutors.',
     live_first_session_free_banner: 'First session free for paid subscribers',
     live_waitlist_confirmed_heading: "You're on the waitlist!",
@@ -972,7 +974,7 @@ export const translations = {
     footer_privacy: 'Privaatheidsbeleid',
 
     // ── Homepage (page.tsx) ─────────────────────────────────────────────────
-    home_hero_badge: 'Van R49/maand · Kanselleer enige tyd',
+    home_hero_badge: 'Van R29/maand (Stigterslid-tarief) · Kanselleer enige tyd',
     home_hero_badge_launching_soon: 'Loods binnekort — betalingsverifikasie in proses',
     home_hero_heading: 'Ekstra wiskundehulp hoef nie jou beursie te breek nie',
     home_hero_subheading: "Mathly gee Suid-Afrikaanse leerders van Graad 4 tot Graad 12 toegang tot duidelike studiegidse, uitgewerkte voorbeelde en oefenvrae — teen 'n breukdeel van die koste van 'n privaat tutor",
@@ -996,7 +998,7 @@ export const translations = {
     home_mission_statement: "Om gehalte wiskunde-onderrig toeganklik te maak vir elke Suid-Afrikaanse student, ongeag hul begroting",
 
     // ── Pricing (pricing/page.tsx, FamilyPlanBuilder.tsx) ──────────────────
-    pricing_launch_banner: '★ Stigterslid-Bekendstelling — Beperkte plekke beskikbaar. Bevestig jou afslagkoers vir jou eerste jaar voordat die plekke vol is.',
+    pricing_launch_banner: '★ Stigterslid-Bekendstelling — Bevestig jou afslagkoers vir jou eerste jaar.',
     pricing_launch_banner_paused: '★ Amper daar — ons is besig om betalingsverifikasie met ons verwerker af te handel. Jy kan hieronder inteken, maar geen fondse sal onttrek word voordat verifikasie voltooi is nie.',
     pricing_payments_paused_note: "Betalingsverwerker-verifikasie is in proses. Jy kan hieronder deurgaan met uitbetaal, maar jou rekening sal presies soos Gratis werk — geen betaalde kenmerke ontsluit nie en geen fondse word onttrek nie — totdat verifikasie voltooi is.",
     pricing_hero_heading: 'Eenvoudige, bekostigbare pakkette',
@@ -1010,6 +1012,7 @@ export const translations = {
     pricing_referral_promo_cta: 'Kom te wete hoe dit werk',
     pricing_live_classes_label: 'Aanlyn Klasse',
     pricing_live_classes_description: 'Los aanlyn sessies vir Graad 8 tot 12. Een onderwerp per week per graad. Betaal net vir wat jy bywoon — geen intekening nodig nie.',
+    pricing_live_classes_from_price: 'Vanaf R50',
     pricing_per_session: 'per sessie',
     pricing_view_upcoming_classes: 'Bekyk Komende Klasse',
     pricing_whats_included_heading: 'Wat ingesluit is',
@@ -1030,12 +1033,12 @@ export const translations = {
     pricing_per_month: '/maand',
     pricing_free_feature_topics: '1 gratis onderwerp per graad — volledige studiegidse en oefenvrae ingesluit',
     pricing_free_feature_ai_assistant: 'KI-assistent — 5 navrae en 2 skermgrepe per maand',
-    pricing_free_feature_live_classes: 'Bespreek aanlyn klassessies teen R100 per sessie',
+    pricing_free_feature_live_classes: 'Bespreek aanlyn klassessies vanaf R50 per sessie',
     pricing_pro_feature_dashboard: 'Persoonlike paneelbord wat vordering volg',
     pricing_pro_feature_ai_assistant: 'KI-assistent',
     pricing_max_feature_everything_in_pro: 'Alles in Pro',
     pricing_max_feature_test_analyzer: 'Toetsontleder — laai \'n toets op vir spesifieke, gedetailleerde terugvoer oor waarmee jy sukkel',
-    pricing_max_feature_discount_live_classes: '25% afslag op aanlyn lesse wanneer dit begin',
+    pricing_max_feature_discount_live_classes: '20% afslag op lewendige klassessies',
     pricing_max_feature_exam_packs: 'Eksamenvoorbereidingspakkette — sleutelfokusareas + \'n volledige eksamenstyl-vraestel + stap-vir-stap antwoorde voor alle eksamens',
     pricing_choose_your_plan_heading: 'Kies jou pakket',
     pricing_person_1_label: 'Persoon 1',
@@ -1073,6 +1076,7 @@ export const translations = {
     // ── Live classes (live-classes/page.tsx) ────────────────────────────────
     live_coming_soon_badge: 'Binnekort',
     live_hero_heading: 'Lewendige groepklasse kom binnekort na Mathly',
+    live_hero_heading_open: 'Lewendige groepklasse, klein en gefokus',
     live_hero_subheading: 'Klein groepe, een onderwerp op \'n slag, aangebied deur ervare tutors.',
     live_first_session_free_banner: 'Eerste sessie gratis vir betalende intekenaars',
     live_waitlist_confirmed_heading: 'Jy is op die waglys!',

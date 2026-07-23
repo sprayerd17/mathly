@@ -39,6 +39,17 @@ export default function Navbar() {
 
   const lastScrollY = useRef(0)
 
+  // Same endpoint the live-classes page itself uses to decide "Bookings
+  // open" vs "Coming Soon" — without this the nav badge always said "Soon"
+  // even once real sessions were scheduled and bookable below.
+  const [hasSessions, setHasSessions] = useState(false)
+  useEffect(() => {
+    fetch('/api/sessions/list')
+      .then(r => r.json())
+      .then(d => setHasSessions(Array.isArray(d.sessions) && d.sessions.length > 0))
+      .catch(() => {})
+  }, [])
+
   useEffect(() => {
     function onScroll() {
       const current = window.scrollY
@@ -90,7 +101,7 @@ export default function Navbar() {
                   style={{ color: isActive ? '#1e40af' : '#0f1f3d' }}
                 >
                   {t[key]}
-                  {href === '/live-classes' && (
+                  {href === '/live-classes' && !hasSessions && (
                     <span
                       className="text-[10px] font-bold px-1.5 py-0.5 rounded-full"
                       style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}
@@ -178,7 +189,7 @@ export default function Navbar() {
                 }}
               >
                 {t[key]}
-                {href === '/live-classes' && (
+                {href === '/live-classes' && !hasSessions && (
                   <span
                     className="text-[10px] font-bold px-1.5 py-0.5 rounded-full"
                     style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}

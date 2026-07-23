@@ -56,7 +56,7 @@ export default function LiveClassesPage() {
             {hasSessions ? t.live_open_badge : t.live_coming_soon_badge}
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-white">
-            {t.live_hero_heading}
+            {hasSessions ? t.live_hero_heading_open : t.live_hero_heading}
           </h1>
           <p className="text-lg max-w-xl mx-auto mb-6" style={{ color: '#93c5fd' }}>
             {t.live_hero_subheading}

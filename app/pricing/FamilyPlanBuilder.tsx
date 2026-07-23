@@ -8,12 +8,6 @@ import { initiateCheckout, updateTiers } from '@/src/lib/paystack-client'
 import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
-type Spots = { proTaken: number; maxTaken: number }
-
-const FOUNDING_SPOTS = 20
-const SPOTS_KEY    = 'mathly_founding_spots'
-const DEFAULT_SPOTS: Spots = { proTaken: 7, maxTaken: 12 }
-
 function PlanSelect({
   value,
   onChange,
@@ -66,7 +60,6 @@ export default function FamilyPlanBuilder() {
   const { user, openModal } = useAuth()
   const LABEL: Record<Plan, string> = { pro: t.dash_package_pro, max: t.dash_package_max }
   const [mounted, setMounted] = useState(false)
-  const [spots, setSpots]     = useState<Spots>(DEFAULT_SPOTS)
 
   // Logged-out preview — purely illustrative (clicking "claim your spot" just
   // opens the register modal, which has its own per-child plan picker), so
@@ -98,16 +91,13 @@ export default function FamilyPlanBuilder() {
 
   useEffect(() => {
     setMounted(true)
-    const raw = localStorage.getItem(SPOTS_KEY)
-    if (raw) {
-      try { setSpots(JSON.parse(raw)) } catch { /* ignore */ }
-    } else {
-      localStorage.setItem(SPOTS_KEY, JSON.stringify(DEFAULT_SPOTS))
-    }
   }, [])
 
-  const proFounding  = spots.proTaken < FOUNDING_SPOTS
-  const maxFounding   = spots.maxTaken < FOUNDING_SPOTS
+  // Founding pricing is always offered client-side; the server is the sole
+  // arbiter of real remaining capacity (settings/founding) and rejects
+  // checkout if it's genuinely sold out — mirrors providers.tsx's register().
+  const proFounding  = true
+  const maxFounding   = true
 
   const prices: Record<Plan, number>    = {
     pro: proFounding ? FOUNDING_PRICE.pro : FULL_PRICE.pro,
