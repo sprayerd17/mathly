@@ -253,7 +253,7 @@ function DiagramPlaceholderCard({ label, svg }: { label: string; svg: string }) 
       style={{ border: '1.5px dashed #bfdbfe', backgroundColor: '#f8faff' }}
     >
       <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#1e40af' }}>{t.topic_diagram_label}</p>
-      <p className="text-sm font-medium mb-3" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{label}</p>
+      <p className="text-sm font-medium mb-3" style={{ color: '#0f1f3d', lineHeight: 1.5 }}>{decodeEntities(label)}</p>
       <div
         className="topic-html"
         dangerouslySetInnerHTML={{ __html: svg }}
@@ -466,8 +466,8 @@ function OpenQuestionCard({
                 <div key={pi}>
                   <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
                     {longform
-                      ? t.topic_part_show_working_label.replace('{part}', part.label)
-                      : t.topic_part_your_answer_label.replace('{part}', part.label)}
+                      ? t.topic_part_show_working_label.replace('{part}', decodeEntities(part.label))
+                      : t.topic_part_your_answer_label.replace('{part}', decodeEntities(part.label))}
                   </label>
                   {longform ? (
                     <textarea
@@ -647,7 +647,7 @@ function ResultsSummary({
           <p className="text-2xl font-bold text-[#0f1f3d] mb-1">
             {score} <span className="text-base font-medium text-gray-400">/ {total}</span>
           </p>
-          <p className="text-sm text-gray-600">{message}</p>
+          <p className="text-sm text-gray-600">{decodeEntities(message)}</p>
         </div>
         <button
           onClick={onReset}
@@ -769,7 +769,7 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
                   : 'border-gray-200 text-gray-600 hover:border-gray-300'
               }`}
             >
-              {set.name || t.topic_set_label.replace('{number}', String(i + 1))}
+              {set.name ? decodeEntities(set.name) : t.topic_set_label.replace('{number}', String(i + 1))}
               {setAnswered && (
                 <span
                   className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${
@@ -981,7 +981,7 @@ function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug
           <div className="flex items-center gap-3" style={{ marginBottom: '32px' }}>
             <span className="text-2xl" aria-hidden="true">{section.icon}</span>
             <h2 className="text-lg font-bold text-[#0f1f3d]">
-              {i + 1}. {section.title}
+              {i + 1}. {decodeEntities(section.title)}
             </h2>
           </div>
 
@@ -1143,7 +1143,7 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
               style={{ marginBottom: '16px' }}
             >
               <span aria-hidden="true">{section.icon}</span>
-              {section.title}
+              {decodeEntities(section.title)}
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {(() => {
@@ -1269,7 +1269,7 @@ function FlatPracticeQuestions({ data }: { data: TopicData }) {
               style={{ marginBottom: '16px' }}
             >
               <span aria-hidden="true">{section.icon}</span>
-              {section.title}
+              {decodeEntities(section.title)}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {items.map(({ q, key }, i) => (

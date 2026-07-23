@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import { collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, Timestamp } from 'firebase/firestore'
 import { db, auth } from '@/src/lib/firebase'
 import { getActiveTier, type User } from '@/app/providers'
+import { useTranslations } from '@/src/i18n/useTranslations'
 
 const MAX_IMAGES_PER_ZONE = 10
 const MAX_IMAGES_TOTAL = 20
@@ -120,11 +121,14 @@ function UploadZone({
   disabled: boolean
 }) {
   const inputRef = useRef<HTMLInputElement>(null)
+  const t = useTranslations()
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
         <span className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{label}</span>
-        <span className="text-xs text-gray-400">{images.length} of {MAX_IMAGES_PER_ZONE} images uploaded</span>
+        <span className="text-xs text-gray-400">
+          {t.dash_test_analysis_images_uploaded.replace('{count}', String(images.length)).replace('{max}', String(MAX_IMAGES_PER_ZONE))}
+        </span>
       </div>
       <div className="rounded-xl border-2 border-dashed p-4" style={{ borderColor: '#d1d5db', backgroundColor: '#f9fafb' }}>
         {images.length > 0 && (
@@ -153,7 +157,7 @@ function UploadZone({
           className="w-full text-sm font-semibold py-2.5 rounded-lg border transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           style={{ backgroundColor: '#ffffff', color: '#1e40af', borderColor: '#bfdbfe' }}
         >
-          + Add photos
+          {t.dash_test_analysis_add_photos}
         </button>
         <input
           ref={inputRef}
@@ -171,6 +175,7 @@ function UploadZone({
 // ── Main panel ────────────────────────────────────────────────────────────────
 
 export default function TestAnalysisPanel({ user }: { user: User }) {
+  const t = useTranslations()
   const tier = getActiveTier(user)
   const isMax = tier === 'max'
 
@@ -242,7 +247,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
     const fileArray = Array.from(files)
     const oversized = fileArray.some(f => f.size > MAX_FILE_SIZE_BYTES)
     if (oversized) {
-      setError('One or more images are too large. Please use photos under 5MB each.')
+      setError(t.dash_test_analysis_error_oversized)
       return
     }
 
@@ -255,7 +260,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       })))
       setZone(prev => [...prev, ...processed])
     } catch {
-      setError('Something went wrong processing one of your photos. Please try a different image.')
+      setError(t.dash_test_analysis_error_photo_processing)
     }
   }
 
@@ -277,11 +282,11 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
   async function handleAnalyse() {
     setError(null)
     if (questionImages.length === 0 || answerImages.length === 0 || grade === '') {
-      setError('Please add at least one photo to both the question paper and answer sheet zones, and select a grade.')
+      setError(t.dash_test_analysis_error_missing_fields)
       return
     }
     if (!auth.currentUser) {
-      setError('Something went wrong. Please try again.')
+      setError(t.auth_error_generic)
       return
     }
     setSubmitting(true)
@@ -299,7 +304,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
         }),
       })
       if (!res.ok) {
-        setError(await res.text().catch(() => 'Something went wrong. Please try again.'))
+        setError(await res.text().catch(() => t.auth_error_generic))
         return
       }
       const data = await res.json()
@@ -307,7 +312,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       setSaved(false)
       loadUsage()
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t.auth_error_generic)
     } finally {
       setSubmitting(false)
     }
@@ -326,7 +331,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       setSaved(true)
       loadReports()
     } catch {
-      setError('Could not save this report. Please try again.')
+      setError(t.dash_test_analysis_error_save_failed)
     } finally {
       setSaving(false)
     }
@@ -335,17 +340,16 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
   if (!isMax) {
     return (
       <div className="rounded-xl p-5" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}>
-        <p className="text-sm font-semibold mb-1.5" style={{ color: '#0f1f3d' }}>Test Analysis is a Max-tier feature</p>
+        <p className="text-sm font-semibold mb-1.5" style={{ color: '#0f1f3d' }}>{t.dash_test_analysis_gate_heading}</p>
         <p className="text-sm text-gray-600 mb-4">
-          Upload photos of a test and get specific, CAPS-referenced feedback on exactly where marks were lost —
-          available on the Max plan.
+          {t.dash_test_analysis_gate_body}
         </p>
         <Link
           href="/pricing"
           className="inline-block text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
           style={{ backgroundColor: '#1e40af' }}
         >
-          Upgrade to Max
+          {t.dash_test_analysis_gate_cta}
         </Link>
       </div>
     )
@@ -359,12 +363,10 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       {usageCount !== null && (
         <div className="mb-4">
           <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>
-            {Math.max(0, MONTHLY_LIMIT - usageCount)} of {MONTHLY_LIMIT} analyses remaining this month
+            {t.dash_test_analysis_remaining.replace('{count}', String(Math.max(0, MONTHLY_LIMIT - usageCount))).replace('{max}', String(MONTHLY_LIMIT))}
           </p>
           <p className="text-xs text-gray-400 mt-0.5">
-            Each analysis uses one of your {MONTHLY_LIMIT}{' '}
-            monthly uploads — reports aren&apos;t saved automatically, so click &quot;Save Report&quot; once you
-            have your results if you want to keep them.
+            {t.dash_test_analysis_remaining_hint.replace('{max}', String(MONTHLY_LIMIT))}
           </p>
         </div>
       )}
@@ -377,8 +379,8 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
 
       {atLimit ? (
         <div className="rounded-xl p-5 mb-6" style={{ backgroundColor: '#f9fafb', border: '1px solid #e5e7eb' }}>
-          <p className="text-sm font-semibold mb-1" style={{ color: '#0f1f3d' }}>You&apos;ve used both your analyses this month</p>
-          <p className="text-sm text-gray-500">Your count resets at the start of next month — your Previous Reports are still available below.</p>
+          <p className="text-sm font-semibold mb-1" style={{ color: '#0f1f3d' }}>{t.dash_test_analysis_limit_heading}</p>
+          <p className="text-sm text-gray-500">{t.dash_test_analysis_limit_body}</p>
         </div>
       ) : result ? (
         <div className="mb-6">
@@ -387,8 +389,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
           </div>
           {!saved && (
             <p className="text-xs mt-3" style={{ color: '#b45309' }}>
-              This report isn&apos;t saved yet — if you leave this page or start a new analysis without clicking
-              &quot;Save Report&quot;, it will be lost for good.
+              {t.dash_test_analysis_unsaved_warning}
             </p>
           )}
           <div className="flex flex-wrap items-center gap-3 mt-3">
@@ -398,35 +399,35 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
               className="text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors disabled:opacity-50"
               style={{ backgroundColor: '#1e40af' }}
             >
-              {saving ? 'Saving…' : saved ? 'Saved' : 'Save Report'}
+              {saving ? t.dash_test_analysis_saving : saved ? t.dash_test_analysis_saved : t.dash_test_analysis_save_report}
             </button>
             <button
               onClick={resetForm}
               className="text-sm font-semibold px-5 py-2.5 rounded-xl border transition-colors"
               style={{ backgroundColor: '#ffffff', color: '#0f1f3d', borderColor: '#d1d5db' }}
             >
-              Start New Analysis
+              {t.dash_test_analysis_start_new}
             </button>
-            {saved && <span className="text-sm font-semibold" style={{ color: '#16a34a' }}>Analysis saved</span>}
+            {saved && <span className="text-sm font-semibold" style={{ color: '#16a34a' }}>{t.dash_test_analysis_saved_badge}</span>}
           </div>
         </div>
       ) : submitting ? (
         <div className="rounded-xl p-8 mb-6 flex flex-col items-center gap-3 text-center" style={{ backgroundColor: '#f9fafb', border: '1px solid #e5e7eb' }}>
           <span style={{ color: '#1e40af' }}><SpinnerIcon /></span>
-          <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>Analysing your test… this may take up to 30 seconds</p>
+          <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{t.dash_test_analysis_analysing}</p>
         </div>
       ) : (
         <div className="mb-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
             <UploadZone
-              label="Question Paper"
+              label={t.dash_test_analysis_question_paper}
               images={questionImages}
               onAdd={files => addImages('question', files)}
               onRemove={id => removeImage('question', id)}
               disabled={submitting}
             />
             <UploadZone
-              label="Answer Sheet"
+              label={t.dash_test_analysis_answer_sheet}
               images={answerImages}
               onAdd={files => addImages('answer', files)}
               onRemove={id => removeImage('answer', id)}
@@ -436,22 +437,22 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
             <div>
-              <label className="block text-sm font-semibold mb-2" style={{ color: '#0f1f3d' }}>Grade</label>
+              <label className="block text-sm font-semibold mb-2" style={{ color: '#0f1f3d' }}>{t.dash_form_grade}</label>
               <select
                 value={grade}
                 onChange={e => setGrade(e.target.value ? Number(e.target.value) : '')}
                 className="w-full px-4 py-2.5 rounded-lg border text-sm"
                 style={{ borderColor: '#d1d5db', color: '#0f1f3d' }}
               >
-                <option value="">Select a grade</option>
+                <option value="">{t.auth_select_grade_placeholder}</option>
                 {Array.from({ length: MAX_GRADE - MIN_GRADE + 1 }, (_, i) => MIN_GRADE + i).map(g => (
-                  <option key={g} value={g}>Grade {g}</option>
+                  <option key={g} value={g}>{t.dash_grade_label.replace('{grade}', String(g))}</option>
                 ))}
               </select>
             </div>
             <div>
               <label className="block text-sm font-semibold mb-2" style={{ color: '#0f1f3d' }}>
-                Anything specific you want feedback on? <span className="font-normal text-gray-400">(optional)</span>
+                {t.dash_test_analysis_feedback_focus_label} <span className="font-normal text-gray-400">{t.dash_test_analysis_optional_label}</span>
               </label>
               <input
                 type="text"
@@ -460,7 +461,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
                 onChange={e => setNotes(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-lg border text-sm"
                 style={{ borderColor: '#d1d5db', color: '#0f1f3d' }}
-                placeholder="e.g. focus on my algebra questions"
+                placeholder={t.dash_test_analysis_feedback_focus_placeholder}
               />
               <p className="text-xs text-gray-400 mt-1 text-right">{notes.length}/{MAX_NOTES_LENGTH}</p>
             </div>
@@ -472,34 +473,34 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
             className="text-sm font-semibold px-6 py-3 rounded-xl text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             style={{ backgroundColor: '#1e40af' }}
           >
-            Analyse My Test
+            {t.dash_test_analysis_submit}
           </button>
         </div>
       )}
 
       {/* ── Previous Reports ─────────────────────────────────────────────── */}
       <div className="pt-5" style={{ borderTop: '1px solid #f3f4f6' }}>
-        <h3 className="text-sm font-bold mb-3" style={{ color: '#0f1f3d' }}>Previous Reports</h3>
+        <h3 className="text-sm font-bold mb-3" style={{ color: '#0f1f3d' }}>{t.dash_test_analysis_previous_reports}</h3>
         {reportsLoading ? (
-          <p className="text-sm text-gray-400">Loading…</p>
+          <p className="text-sm text-gray-400">{t.dash_test_analysis_loading}</p>
         ) : reports.length === 0 ? (
-          <p className="text-sm text-gray-400">No saved reports yet.</p>
+          <p className="text-sm text-gray-400">{t.dash_test_analysis_no_reports}</p>
         ) : (
           <div className="flex flex-col gap-2">
             {reports.map(r => (
               <div key={r.id} className="flex items-center justify-between gap-3 rounded-lg px-4 py-3" style={{ backgroundColor: '#f9fafb' }}>
                 <div className="min-w-0">
                   <p className="text-sm font-semibold truncate" style={{ color: '#0f1f3d' }}>
-                    {r.date ? r.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Unknown date'}
+                    {r.date ? r.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : t.dash_test_analysis_unknown_date}
                   </p>
-                  <p className="text-xs text-gray-400">Grade {r.grade}</p>
+                  <p className="text-xs text-gray-400">{t.dash_grade_label.replace('{grade}', String(r.grade))}</p>
                 </div>
                 <button
                   onClick={() => setViewingReport(r)}
                   className="shrink-0 text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
                   style={{ backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }}
                 >
-                  View Report
+                  {t.dash_test_analysis_view_report}
                 </button>
               </div>
             ))}
@@ -521,9 +522,9 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
             <div className="flex items-start justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-lg font-bold" style={{ color: '#0f1f3d' }}>
-                  {viewingReport.date ? viewingReport.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Report'}
+                  {viewingReport.date ? viewingReport.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : t.dash_test_analysis_report_fallback_heading}
                 </h3>
-                <p className="text-sm text-gray-400">Grade {viewingReport.grade}</p>
+                <p className="text-sm text-gray-400">{t.dash_grade_label.replace('{grade}', String(viewingReport.grade))}</p>
               </div>
               <button
                 onClick={() => setViewingReport(null)}

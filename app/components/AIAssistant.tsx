@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useAuth, getActiveTier } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
+import { useTranslations } from '@/src/i18n/useTranslations'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -156,6 +157,7 @@ function TypingDots() {
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function AIAssistant({ grade }: { grade: string }) {
+  const t = useTranslations()
   const { user, openModal } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
   const [selectedText, setSelectedText] = useState('')
@@ -291,7 +293,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
       if (res.status === 401) {
         setMessages((prev) => [
           ...prev,
-          { id: (Date.now() + 1).toString(), role: 'assistant', content: 'Your session has expired — please log in again.' },
+          { id: (Date.now() + 1).toString(), role: 'assistant', content: t.ai_assistant_error_session_expired },
         ])
         return
       }
@@ -348,7 +350,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
         {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
-          content: 'Sorry, something went wrong. Please try again.',
+          content: t.ai_assistant_error_generic,
         },
       ])
     } finally {
@@ -386,7 +388,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
       {!isOpen && (
         <button
           onClick={openChat}
-          aria-label={hasSelection ? 'Explain selected text with AI' : 'Ask AI a maths question'}
+          aria-label={hasSelection ? t.ai_assistant_fab_aria_explain : t.ai_assistant_fab_aria_ask}
           style={{
             position: 'fixed',
             bottom: '28px',
@@ -412,7 +414,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
           onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#1e40af' }}
         >
           <SparkleIcon size={15} />
-          {hasSelection ? 'Explain this' : 'Ask AI'}
+          {hasSelection ? t.ai_assistant_fab_label_explain : t.ai_assistant_fab_label_ask}
         </button>
       )}
 
@@ -421,7 +423,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
         <div
           ref={dialogRef}
           role="dialog"
-          aria-label="Mathly AI Assistant"
+          aria-label={t.ai_assistant_title}
           style={{
             position: 'fixed',
             bottom: '28px',
@@ -453,12 +455,12 @@ export default function AIAssistant({ grade }: { grade: string }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <SparkleIcon size={15} />
               <span style={{ fontWeight: 600, fontSize: '14px', letterSpacing: '-0.01em' }}>
-                Mathly AI Assistant
+                {t.ai_assistant_title}
               </span>
             </div>
             <button
               onClick={closeChat}
-              aria-label="Close chat"
+              aria-label={t.ai_assistant_close_chat_label}
               style={{
                 background: 'none',
                 border: 'none',
@@ -509,7 +511,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                     marginBottom: '6px',
                   }}
                 >
-                  Selected text
+                  {t.ai_assistant_selected_text_label}
                 </p>
                 <p
                   style={{
@@ -522,7 +524,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                   &ldquo;{pendingContext.length > 200 ? pendingContext.slice(0, 200) + '…' : pendingContext}&rdquo;
                 </p>
                 <p style={{ color: '#1e40af', fontWeight: 600, fontSize: '13px' }}>
-                  How can I explain this to you?
+                  {t.ai_assistant_explain_prompt}
                 </p>
               </div>
             )}
@@ -537,7 +539,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                   marginTop: '4px',
                 }}
               >
-                Hi! Select any text on the page and I can explain it, or just ask me a maths question.
+                {t.ai_assistant_empty_state}
               </div>
             )}
 
@@ -570,7 +572,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={msg.image}
-                      alt="Attached screen capture"
+                      alt={t.ai_assistant_capture_alt}
                       style={{
                         display: 'block',
                         width: '100%',
@@ -629,15 +631,21 @@ export default function AIAssistant({ grade }: { grade: string }) {
             >
               {isLimitReached ? (
                 <>
-                  You have used all your AI questions for this month.{' '}
+                  {t.ai_assistant_limit_reached_message}{' '}
                   {plan === 'free' && (
                     <a href="/pricing" style={{ color: '#1e40af', fontWeight: 600 }}>
-                      Upgrade to Pro for 20 questions per month
+                      {t.ai_assistant_upgrade_link.replace('{count}', String(PLAN_LIMITS.pro))}
                     </a>
                   )}
                 </>
               ) : (
-                `${usage.count}/${limit} question${limit === 1 ? '' : 's'} · ${usage.captures}/${captureLimit} capture${captureLimit === 1 ? '' : 's'} this month`
+                t.ai_assistant_usage_summary
+                  .replace('{questions}', String(usage.count))
+                  .replace('{limit}', String(limit))
+                  .replace('{questionWord}', limit === 1 ? t.ai_assistant_question_singular : t.ai_assistant_question_plural)
+                  .replace('{captures}', String(usage.captures))
+                  .replace('{captureLimit}', String(captureLimit))
+                  .replace('{captureWord}', captureLimit === 1 ? t.ai_assistant_capture_singular : t.ai_assistant_capture_plural)
               )}
             </div>
           )}
@@ -653,7 +661,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
             {!user ? (
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', padding: '6px 0' }}>
                 <p style={{ fontSize: '13px', color: '#6b7280', textAlign: 'center', margin: 0 }}>
-                  Log in to ask the AI a question.
+                  {t.ai_assistant_login_prompt}
                 </p>
                 <button
                   onClick={() => openModal('login')}
@@ -669,7 +677,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                     fontFamily: 'inherit',
                   }}
                 >
-                  Log In
+                  {t.ai_assistant_login_button}
                 </button>
               </div>
             ) : isLimitReached ? (
@@ -681,7 +689,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                   padding: '6px 0',
                 }}
               >
-                Upgrade your plan for more questions.
+                {t.ai_assistant_upgrade_prompt}
               </p>
             ) : (
               <>
@@ -691,12 +699,12 @@ export default function AIAssistant({ grade }: { grade: string }) {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={pendingCapture}
-                        alt="Screen capture preview"
+                        alt={t.ai_assistant_capture_preview_alt}
                         style={{ width: '44px', height: '44px', objectFit: 'cover', borderRadius: '8px', border: '1px solid #e5e7eb', display: 'block' }}
                       />
                       <button
                         onClick={() => setPendingCapture(null)}
-                        aria-label="Remove screen capture"
+                        aria-label={t.ai_assistant_remove_capture_label}
                         style={{
                           position: 'absolute',
                           top: '-6px',
@@ -721,7 +729,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                       </button>
                     </div>
                     <span style={{ fontSize: '12px', color: '#6b7280' }}>
-                      Screen capture attached — sent with your next message
+                      {t.ai_assistant_capture_attached_note}
                     </span>
                   </div>
                 )}
@@ -729,11 +737,11 @@ export default function AIAssistant({ grade }: { grade: string }) {
                   <button
                     onClick={handleCapture}
                     disabled={isCapturing || isCaptureLimitReached || isLoading}
-                    aria-label="Capture this page"
+                    aria-label={t.ai_assistant_capture_button_aria}
                     title={
                       isCaptureLimitReached
-                        ? `You've used all ${captureLimit} of your screen captures for this month`
-                        : 'Attach a screenshot of this page'
+                        ? t.ai_assistant_capture_limit_title.replace('{count}', String(captureLimit))
+                        : t.ai_assistant_capture_button_title
                     }
                     style={{
                       backgroundColor: '#fff',
@@ -761,7 +769,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                         sendMessage()
                       }
                     }}
-                    placeholder="Ask a question…"
+                    placeholder={t.ai_assistant_input_placeholder}
                     rows={1}
                     disabled={isLoading}
                     style={{
@@ -785,7 +793,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                   <button
                     onClick={sendMessage}
                     disabled={!input.trim() || isLoading}
-                    aria-label="Send message"
+                    aria-label={t.ai_assistant_send_button_aria}
                     style={{
                       backgroundColor: !input.trim() || isLoading ? '#e5e7eb' : '#1e40af',
                       color: !input.trim() || isLoading ? '#9ca3af' : '#fff',

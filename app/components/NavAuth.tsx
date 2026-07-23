@@ -31,7 +31,7 @@ export default function NavAuth() {
         onClick={() => openModal()}
         className="text-sm font-medium text-[#0f1f3d] border border-[#0f1f3d]/20 hover:border-[#1e40af] hover:text-[#1e40af] px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
       >
-        Log in / Register
+        {t.nav_login}
       </button>
     )
   }
@@ -41,7 +41,7 @@ export default function NavAuth() {
       <button
         onClick={() => setDropdownOpen((o) => !o)}
         className="w-9 h-9 rounded-full bg-[#1e40af] text-white text-sm font-bold flex items-center justify-center hover:bg-[#1d3a9e] transition-colors select-none"
-        aria-label="Account menu"
+        aria-label={t.nav_auth_account_menu_label}
         aria-expanded={dropdownOpen}
         aria-haspopup="true"
       >
