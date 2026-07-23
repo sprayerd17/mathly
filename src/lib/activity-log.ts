@@ -73,10 +73,11 @@ export async function getActivityLog(uid: string, childIndex: number, grade: num
 // Explicit, separate action from the in-session "Try again" reset (which
 // never touches Firestore) — batch-deletes every attempt logged for this
 // topic so the student can start their Set 1→2→3 growth story over.
-export async function resetTopicAttempts(uid: string, childIndex: number, topicSlug: string): Promise<void> {
+export async function resetTopicAttempts(uid: string, childIndex: number, grade: number, topicSlug: string): Promise<void> {
   const q = query(
     collection(db, 'users', uid, 'activityLog'),
     where('childIndex', '==', childIndex),
+    where('grade', '==', grade),
     where('topicSlug', '==', topicSlug),
   )
   const snap = await getDocs(q)

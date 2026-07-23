@@ -350,10 +350,10 @@ export default function DashboardPage() {
   }, [user, activeChildIndex, activeGrade, gradeDataVersion, t.dash_activity_practice_questions])
 
   async function handleResetAttempts(slug: string) {
-    if (!user || resetting) return
+    if (!user || resetting || activeGrade === null) return
     setResetting(true)
     try {
-      await resetTopicAttempts(user.uid, activeChildIndex, slug)
+      await resetTopicAttempts(user.uid, activeChildIndex, activeGrade, slug)
       setResetConfirmSlug(null)
       setGradeDataVersion(v => v + 1)
     } catch (err) {
