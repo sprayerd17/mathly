@@ -5,6 +5,7 @@ import {
   useContext,
   useState,
   useEffect,
+  useRef,
   type ReactNode,
   type FormEvent,
 } from 'react'
@@ -818,10 +819,24 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
   const [modalInitialTab, setModalInitialTab] = useState<'login' | 'register'>('login')
+  // register() creates the Firebase Auth account, then writes the Firestore
+  // user doc, then sets user state itself. But createUserWithEmailAndPassword
+  // also fires this same onAuthStateChanged listener — independently and
+  // immediately — which races to loadUser() the very doc register() hasn't
+  // finished writing yet. If that read lands first, it builds a User from
+  // empty defaults (no children, wrong refCode) and clobbers whatever
+  // register() sets afterward, leaving broken state until a manual reload.
+  // Suppressing this listener for the uid register() is actively handling
+  // closes that window — register() owns setting user state for its own uid.
+  const registeringUidRef = useRef<string | null>(null)
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
       if (fbUser) {
+        if (fbUser.uid === registeringUidRef.current) {
+          setLoading(false)
+          return
+        }
         try {
           setUser(await loadUser(fbUser))
         } catch {
@@ -848,55 +863,67 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     referredByCode?: string
   ) {
     const cred = await createUserWithEmailAndPassword(auth, email, password)
-    await updateAuthProfile(cred.user, { displayName: name })
-    const children: Child[] = childInputs.map(c => ({ ...c, languageChangeUsed: false }))
-    const refCode = generateRefCode(name)
-    // Every account is created all-free, regardless of the tiers chosen in
-    // the wizard — Firestore rules only allow childPlans with no paid tier
-    // on create. Paid tiers are granted afterwards by the Paystack webhook,
-    // never here.
-    const freeChildPlans: Tier[] = children.map(() => 'free')
-    await setDoc(doc(db, 'users', cred.user.uid), {
-      name,
-      email,
-      childPlans: freeChildPlans,
-      subscriptionStatus: 'none',
-      paystackCustomerCode: null,
-      paystackSubscriptionCode: null,
-      paystackEmailToken: null,
-      paystackPlanCode: null,
-      paystackFounding: null,
-      pendingChildPlans: null,
-      lastPaymentDate: null,
-      lastPaymentAmount: null,
-      accessUntil: null,
-      children,
-      refCode,
-      activeChildIndex: 0,
-      createdAt: serverTimestamp(),
-    })
-    setUser({
-      uid: cred.user.uid,
-      name,
-      email,
-      initial: (name.charAt(0) || 'U').toUpperCase(),
-      childPlans: freeChildPlans,
-      subscriptionStatus: 'none',
-      paystackCustomerCode: null,
-      paystackSubscriptionCode: null,
-      paystackEmailToken: null,
-      paystackPlanCode: null,
-      paystackFounding: null,
-      pendingChildPlans: null,
-      lastPaymentDate: null,
-      lastPaymentAmount: null,
-      accessUntil: null,
-      children,
-      refCode,
-      activeChildIndex: 0,
-      referredBy: null,
-      freeSessionClaimed: children.map(() => false),
-    })
+    // Set before any further await — createUserWithEmailAndPassword is what
+    // triggers onAuthStateChanged, so this needs to be in place as early as
+    // possible to close the race window described above.
+    registeringUidRef.current = cred.user.uid
+    try {
+      await updateAuthProfile(cred.user, { displayName: name })
+      const children: Child[] = childInputs.map(c => ({ ...c, languageChangeUsed: false }))
+      const refCode = generateRefCode(name)
+      // Every account is created all-free, regardless of the tiers chosen in
+      // the wizard — Firestore rules only allow childPlans with no paid tier
+      // on create. Paid tiers are granted afterwards by the Paystack webhook,
+      // never here.
+      const freeChildPlans: Tier[] = children.map(() => 'free')
+      await setDoc(doc(db, 'users', cred.user.uid), {
+        name,
+        email,
+        childPlans: freeChildPlans,
+        subscriptionStatus: 'none',
+        paystackCustomerCode: null,
+        paystackSubscriptionCode: null,
+        paystackEmailToken: null,
+        paystackPlanCode: null,
+        paystackFounding: null,
+        pendingChildPlans: null,
+        lastPaymentDate: null,
+        lastPaymentAmount: null,
+        accessUntil: null,
+        children,
+        refCode,
+        activeChildIndex: 0,
+        createdAt: serverTimestamp(),
+      })
+      setUser({
+        uid: cred.user.uid,
+        name,
+        email,
+        initial: (name.charAt(0) || 'U').toUpperCase(),
+        childPlans: freeChildPlans,
+        subscriptionStatus: 'none',
+        paystackCustomerCode: null,
+        paystackSubscriptionCode: null,
+        paystackEmailToken: null,
+        paystackPlanCode: null,
+        paystackFounding: null,
+        pendingChildPlans: null,
+        lastPaymentDate: null,
+        lastPaymentAmount: null,
+        accessUntil: null,
+        children,
+        refCode,
+        activeChildIndex: 0,
+        referredBy: null,
+        freeSessionClaimed: children.map(() => false),
+      })
+    } finally {
+      // The Firestore doc exists from this point on regardless of what
+      // happens next, so a stray onAuthStateChanged firing during the rest
+      // of registration (referral attach, welcome email) would read valid
+      // data — only the window before setDoc committed was dangerous.
+      registeringUidRef.current = null
+    }
 
     // Was a referral code entered (typed in manually, or pre-filled from a
     // /join?ref= link) or otherwise pending in sessionStorage? Attach it now,

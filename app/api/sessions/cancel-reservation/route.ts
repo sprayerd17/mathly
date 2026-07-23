@@ -33,10 +33,22 @@ export async function POST(req: NextRequest) {
   if (!bookingSnap.exists) return new Response('Booking not found', { status: 404 })
   const booking = bookingSnap.data()!
   if (booking.uid !== uid) return new Response('Forbidden', { status: 403 })
-  if (booking.status !== 'reserved') return new Response('Only an unpaid reservation can be cancelled this way', { status: 409 })
 
-  await bookingRef.update({ status: 'cancelled', cancelledAt: new Date().toISOString() })
-  await adminDb.doc(`sessions/${booking.sessionId}`).update({ bookedCount: FieldValue.increment(-1) })
+  // Re-check status fresh inside a transaction, and make the status write and
+  // the bookedCount decrement one atomic unit — a plain read-then-write here
+  // both risks acting on a stale status (e.g. the booking got paid a moment
+  // ago) and risks a lost/duplicated decrement if this races another writer
+  // of the same session doc.
+  const cancelled = await adminDb.runTransaction(async (tx) => {
+    const freshSnap = await tx.get(bookingRef)
+    if (!freshSnap.exists) return false
+    const freshBooking = freshSnap.data()!
+    if (freshBooking.status !== 'reserved') return false
+    tx.update(bookingRef, { status: 'cancelled', cancelledAt: new Date().toISOString() })
+    tx.update(adminDb.doc(`sessions/${freshBooking.sessionId}`), { bookedCount: FieldValue.increment(-1) })
+    return true
+  })
+  if (!cancelled) return new Response('Only an unpaid reservation can be cancelled this way', { status: 409 })
 
   return Response.json({ ok: true })
 }

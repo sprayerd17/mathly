@@ -131,17 +131,31 @@ export async function handlePaystackEvent(
     // verify-checkout call for the same reference. A plain read-then-write
     // leaves a window where both see status !== 'paid' and both increment
     // the spot count.
+    let overbooked = false
     const claimed = await adminDb.runTransaction(async (tx) => {
-      const freshSnap = await tx.get(bookingRef)
+      const [freshSnap, freshSessionSnap] = await Promise.all([tx.get(bookingRef), tx.get(sessionRef)])
       if (!freshSnap.exists) return false
       const freshBooking = freshSnap.data()!
       if (freshBooking.status === 'paid') return false
+      const freshSession = freshSessionSnap.exists ? freshSessionSnap.data()! : null
       tx.update(bookingRef, {
         status: 'paid',
         paidAt: new Date().toISOString(),
-        meetLink: session?.meetLink ?? '',
+        meetLink: freshSession?.meetLink ?? '',
       })
-      if (session && freshBooking.status !== 'reserved') {
+      if (freshSession && freshBooking.status !== 'reserved') {
+        // 'reserved' bookings already hold their spot from creation time
+        // (sessions/book's own transaction) — only a first-time pay_now
+        // confirmation needs a fresh capacity check here. The money is
+        // already collected by this point (Paystack confirmed success
+        // above), so a full session can't just silently drop the booking —
+        // honour it and flag for manual follow-up instead. This closes the
+        // race where the spots-available check at booking-creation time in
+        // sessions/book is stale by the time payment actually confirms,
+        // possibly minutes or hours later on Paystack's checkout page.
+        const spots = typeof freshSession.spots === 'number' ? freshSession.spots : 0
+        const bookedCount = typeof freshSession.bookedCount === 'number' ? freshSession.bookedCount : 0
+        if (spots > 0 && bookedCount >= spots) overbooked = true
         tx.update(sessionRef, { bookedCount: FieldValue.increment(1) })
       }
       return true
@@ -150,6 +164,14 @@ export async function handlePaystackEvent(
       // Paystack retries webhook delivery — never double-count a spot.
       await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'session')
       return
+    }
+    if (overbooked) {
+      await sendOwnerAlert(
+        `Mathly: session overbooked (booking ${bookingId})`,
+        `<p>A pay-now booking (reference ${data.reference ?? '?'}) was confirmed for session ${booking.sessionId}
+         after it was already at capacity. The booking was honoured since payment had already been collected —
+         needs manual follow-up (an extra seat, or a refund if that isn't possible).</p>`,
+      ).catch(() => {})
     }
     await logEvent(adminDb, event, data, 'complete', null, 'session')
 
@@ -259,6 +281,7 @@ export async function handlePaystackEvent(
         pendingFounding: null,
         pendingAmount: null,
         pendingPlanCode: null,
+        pendingSince: null,
         lastPaymentDate: new Date().toISOString(),
         lastPaymentAmount: receivedAmount,
         pastDueSince: null,
@@ -302,10 +325,38 @@ export async function handlePaystackEvent(
       if (tier !== 'free' && foundingForPersist[tier]) foundingSeats[tier]++
     }
     if (foundingSeats.pro > 0 || foundingSeats.max > 0) {
-      await adminDb.doc('settings/founding').set({
-        proUsed: FieldValue.increment(foundingSeats.pro),
-        maxUsed: FieldValue.increment(foundingSeats.max),
-      }, { merge: true })
+      // checkout/route.ts only checks spots-remaining at quote time — by the
+      // time payment actually confirms (possibly minutes or hours later on
+      // Paystack's checkout page), other concurrent signups can have already
+      // exhausted the total. The customer has already been charged the
+      // founding rate at this point, so oversubscribing can't be reversed
+      // here — re-check anyway, atomically, so an oversell is flagged for a
+      // real decision instead of silently exceeding the advertised total.
+      const foundingRef = adminDb.doc('settings/founding')
+      const oversold = await adminDb.runTransaction(async (tx) => {
+        const snap = await tx.get(foundingRef)
+        const f = snap.exists ? snap.data()! : {}
+        const results: Plan[] = []
+        for (const plan of ['pro', 'max'] as const) {
+          if (foundingSeats[plan] === 0) continue
+          const total = typeof f[`${plan}Total`] === 'number' ? f[`${plan}Total`] : 0
+          const used = typeof f[`${plan}Used`] === 'number' ? f[`${plan}Used`] : 0
+          if (total > 0 && used + foundingSeats[plan] > total) results.push(plan)
+        }
+        tx.set(foundingRef, {
+          proUsed: FieldValue.increment(foundingSeats.pro),
+          maxUsed: FieldValue.increment(foundingSeats.max),
+        }, { merge: true })
+        return results
+      })
+      if (oversold.length > 0) {
+        await sendOwnerAlert(
+          `Mathly: founding spots oversold (${oversold.join(', ')})`,
+          `<p>uid ${uid} was granted founding pricing for [${oversold.join(', ')}] after the spots were already
+           claimed by other concurrent signups. Their payment already reflects founding pricing — needs a
+           decision on whether to honour it or follow up.</p>`,
+        ).catch(() => {})
+      }
     }
 
     // First successful payment for someone who signed up via a referral
@@ -459,6 +510,14 @@ export async function handlePaystackEvent(
         pendingAmount: null,
         lastPaymentDate: new Date().toISOString(),
         lastPaymentAmount: receivedAmount,
+        // A family stuck past_due from a failed renewal can still upgrade —
+        // paying this one-time charge proves the card works right now.
+        // Without clearing these, the dunning cron would still auto-cancel
+        // them 10 days after the *original* renewal failure, even though
+        // they just paid: money taken, still cancelled.
+        subscriptionStatus: 'active',
+        pastDueSince: null,
+        dunningStage: null,
       })
       return true
     })

@@ -63,7 +63,13 @@ export async function GET(req: NextRequest) {
 
       const freeChildPlans = Array.isArray(user.childPlans) ? user.childPlans.map(() => 'free') : []
       await doc.ref.update({ subscriptionStatus: 'cancelled', childPlans: freeChildPlans, dunningStage: 3 })
-      if (user.email) {
+      // A brand-new signup's very first charge attempt can fail and land the
+      // account here — lastPaymentDate only ever gets set on a successful
+      // charge, so its absence means this account never actually had a paid
+      // subscription to cancel. "Your subscription has been cancelled" would
+      // be false for them (and confusing, since they're already on Free);
+      // skip the email rather than send incorrect copy.
+      if (user.email && user.lastPaymentDate) {
         const mail = subscriptionCancelledEmail({ name: user.name ?? '' })
         await sendEmail(user.email, mail.subject, mail.html, mail.from)
       }

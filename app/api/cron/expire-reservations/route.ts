@@ -33,8 +33,23 @@ export async function GET(req: NextRequest) {
     const booking = doc.data()
     if (!booking.depositDeadline || new Date(booking.depositDeadline).getTime() >= now) continue
 
-    await doc.ref.update({ status: 'expired', expiredAt: new Date().toISOString() })
-    await adminDb.doc(`sessions/${booking.sessionId}`).update({ bookedCount: FieldValue.increment(-1) })
+    // Re-check status fresh inside a transaction — a webhook or the
+    // student's own pay-reservation call can flip this booking to 'paid'
+    // (or the student can cancel it themselves) between the query above and
+    // this write, especially with the email-sending loop stretching out the
+    // time between reads and writes. Without the re-check, that race lets
+    // this cron expire a booking that just got paid — money taken, booking
+    // dead.
+    const wasExpired = await adminDb.runTransaction(async (tx) => {
+      const freshSnap = await tx.get(doc.ref)
+      if (!freshSnap.exists) return false
+      const freshBooking = freshSnap.data()!
+      if (freshBooking.status !== 'reserved') return false
+      tx.update(doc.ref, { status: 'expired', expiredAt: new Date().toISOString() })
+      tx.update(adminDb.doc(`sessions/${freshBooking.sessionId}`), { bookedCount: FieldValue.increment(-1) })
+      return true
+    })
+    if (!wasExpired) continue
     expired++
 
     if (booking.email) {

@@ -205,7 +205,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
           const spotsLeft = s.spots > 0 ? Math.max(0, s.spots - s.bookedCount) : null
           const isFull = spotsLeft !== null && spotsLeft === 0
           const booked = bookedBySession.get(s.id)
-          const price = user ? sessionPriceFor(s.type, activeTier) : s.price
+          const price = user ? sessionPriceFor(s.type, activeTier, s.price) : s.price
           const discounted = user && activeTier === 'max'
           const isFree = freeSessionAvailable && !booked
           const startsAt = new Date(`${s.date}T${s.time || '00:00'}:00`)

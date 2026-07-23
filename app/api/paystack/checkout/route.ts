@@ -102,10 +102,18 @@ export async function POST(req: NextRequest) {
   // once payment actually completes. subscriptionStatus moves to 'pending'
   // so the profile page can reflect "upgrade in progress" immediately,
   // before the webhook confirms.
+  // pendingSince lets the expire-cancelled-subscriptions cron identify and
+  // clean up an abandoned checkout — if the user closes the tab and never
+  // completes payment on Paystack's page, neither charge.success nor
+  // charge.failed ever fires, and without this the account would stay
+  // 'pending' forever (update-tiers/cancel-subscription both refuse a
+  // 'pending' account, and the profile page would show a permanent
+  // "upgrade in progress" that's no longer true).
   await adminDb.doc(`users/${uid}`).update({
     pendingChildPlans: childTiers,
     pendingFounding: wantsFounding,
     pendingAmount: amount,
+    pendingSince: new Date().toISOString(),
     subscriptionStatus: 'pending',
   })
 

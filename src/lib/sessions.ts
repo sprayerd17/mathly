@@ -37,8 +37,12 @@ export function depositDeadlineFor(startsAt: Date): Date {
 }
 
 // A child on the Max tier books at 20% off; everyone else pays full price.
-export function sessionPriceFor(type: SessionType, tier: Tier): number {
-  const base = SESSION_PRICE[type]
+// basePrice overrides the type's catalogue default — an admin can set a
+// custom price on an individual session doc (sessions/list already surfaces
+// it as PublicSession.price), and the discount must apply to whatever price
+// was actually set, not silently fall back to the catalogue default.
+export function sessionPriceFor(type: SessionType, tier: Tier, basePrice?: number): number {
+  const base = typeof basePrice === 'number' ? basePrice : SESSION_PRICE[type]
   return tier === 'max' ? Math.round(base * (1 - MAX_SESSION_DISCOUNT)) : base
 }
 

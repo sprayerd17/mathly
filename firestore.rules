@@ -8,12 +8,37 @@ service cloud.firestore {
       // paid tiers are granted only by the Paystack webhook (via the
       // Firebase Admin SDK, which bypasses these rules entirely). This closes
       // the registration-time exploit where a client could otherwise create
-      // itself directly into a paid tier.
+      // itself directly into a paid tier. The key allowlist below closes the
+      // wider version of that hole: without it, create only checked
+      // childPlans/subscriptionStatus, leaving every other server-only field
+      // (paystackCustomerCode, accessUntil, referredBy, pastDueSince, etc.)
+      // completely unconstrained at document creation — a fresh account
+      // could be created with an arbitrary paystackCustomerCode, which the
+      // renewal webhook's customer_code lookup (limit(1)) would then treat
+      // as authoritative if the real value ever leaked. Only the exact
+      // fields register() actually writes are allowed, and every one of
+      // them that's server-managed must be its safe creation-time default.
       allow create: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.keys().hasOnly([
+                         'name', 'email', 'childPlans', 'subscriptionStatus',
+                         'paystackCustomerCode', 'paystackSubscriptionCode', 'paystackEmailToken',
+                         'paystackPlanCode', 'paystackFounding', 'pendingChildPlans',
+                         'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
+                         'children', 'refCode', 'activeChildIndex', 'createdAt'
+                       ])
                     && request.resource.data.subscriptionStatus == 'none'
                     && request.resource.data.keys().hasAll(['childPlans'])
                     && request.resource.data.childPlans.size() == request.resource.data.children.size()
-                    && !request.resource.data.childPlans.hasAny(['pro', 'max']);
+                    && !request.resource.data.childPlans.hasAny(['pro', 'max'])
+                    && request.resource.data.paystackCustomerCode == null
+                    && request.resource.data.paystackSubscriptionCode == null
+                    && request.resource.data.paystackEmailToken == null
+                    && request.resource.data.paystackPlanCode == null
+                    && request.resource.data.paystackFounding == null
+                    && request.resource.data.pendingChildPlans == null
+                    && request.resource.data.lastPaymentDate == null
+                    && request.resource.data.lastPaymentAmount == null
+                    && request.resource.data.accessUntil == null;
 
       // Billing fields are server-only from this point on — only the
       // Paystack webhook (Admin SDK) may change them. childPlans (each child's tier)
@@ -27,9 +52,13 @@ service cloud.firestore {
       // referredBy is also server-only: it's attached once, right after
       // registration, by /api/referral/attach (Admin SDK) — never settable
       // or overwritable by the client itself, so a user can't fake who
-      // referred them. Everything else the client already legitimately
-      // writes (children, activeChildIndex, refCode, name, initial) stays
-      // freely writable.
+      // referred them. refCode is protected too, despite being client-set at
+      // creation: without this, a client could overwrite it to someone
+      // else's code, and /api/referral/attach's query for that code would
+      // then credit whichever doc Firestore returns first — a referral
+      // hijack. It's permanent once created, same as an identity field.
+      // Everything else the client already legitimately writes (children,
+      // activeChildIndex, name, initial) stays freely writable.
       // freeSessionClaimed (index-aligned with children) is set once per
       // child, server-side, by /api/sessions/book the first time that child
       // claims its one free live-session booking — never client-settable,
@@ -50,9 +79,9 @@ service cloud.firestore {
                          .hasAny(['childPlans', 'subscriptionStatus',
                                   'paystackCustomerCode', 'paystackSubscriptionCode', 'paystackEmailToken',
                                   'paystackPlanCode', 'pendingPlanCode', 'paystackFounding',
-                                  'pendingChildPlans', 'pendingFounding', 'pendingAmount',
+                                  'pendingChildPlans', 'pendingFounding', 'pendingAmount', 'pendingSince',
                                   'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
-                                  'referredBy', 'freeSessionClaimed',
+                                  'referredBy', 'refCode', 'freeSessionClaimed',
                                   'pastDueSince', 'dunningStage',
                                   'testAnalysisUsage', 'aiUsage']);
 

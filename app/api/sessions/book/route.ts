@@ -117,7 +117,11 @@ export async function POST(req: NextRequest) {
   }
 
   const type: SessionType = session.type === 'crash' ? 'crash' : 'lesson'
-  const amount = sessionPriceFor(type, tier)
+  // An admin can set a custom price on this specific session doc (the
+  // public listing at /api/sessions/list already displays it) — charging
+  // the catalogue default instead would silently diverge from what the
+  // student saw and agreed to pay.
+  const amount = sessionPriceFor(type, tier, typeof session.price === 'number' ? session.price : undefined)
   const freeSessionClaimed: boolean[] = Array.isArray(userData.freeSessionClaimed) ? userData.freeSessionClaimed : []
   const claimingFreeSession = tier !== 'free' && freeSessionClaimed[idx] !== true
 
