@@ -227,7 +227,11 @@ export default function AIAssistant({ grade }: { grade: string }) {
     if (isCapturing || isCaptureLimitReached || !user || isLoading) return
     setIsCapturing(true)
     try {
-      const html2canvas = (await import('html2canvas')).default
+      // html2canvas-pro, not the original html2canvas — that package can't
+      // parse modern CSS colour functions (oklch/lab), which Tailwind v4
+      // emits by default, so it threw on the first such element and aborted
+      // the whole capture. This is a drop-in fork with the same API.
+      const html2canvas = (await import('html2canvas-pro')).default
       const target = (document.querySelector('main') ?? document.body) as HTMLElement
       const canvas = await html2canvas(target, {
         // Cleaner than toggling visibility around the call: just skip the
