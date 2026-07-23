@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useAuth, getActiveTier } from '@/app/providers'
+import { auth } from '@/src/lib/firebase'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -112,7 +113,7 @@ function TypingDots() {
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function AIAssistant({ grade }: { grade: string }) {
-  const { user } = useAuth()
+  const { user, openModal } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
   const [selectedText, setSelectedText] = useState('')
   const [pendingContext, setPendingContext] = useState('')
@@ -170,7 +171,13 @@ export default function AIAssistant({ grade }: { grade: string }) {
 
   async function sendMessage() {
     const text = input.trim()
-    if (!text || isLoading || isLimitReached) return
+    if (!text || isLoading || isLimitReached || !user) return
+
+    // The chat input is hidden whenever !user (see the input area below), so
+    // this is a defensive check against auth.currentUser being momentarily
+    // out of sync with the useAuth() user object rather than an expected path.
+    const fbUser = auth.currentUser
+    if (!fbUser) return
 
     const isFirst = messages.length === 0 && pendingContext
     const apiContent = isFirst
@@ -196,16 +203,31 @@ export default function AIAssistant({ grade }: { grade: string }) {
     setIsLoading(true)
     setStreamingContent('')
 
-    const newUsage = { month: getCurrentMonth(), count: usage.count + 1 }
-    setUsage(newUsage)
-    writeUsage(newUsage)
-
     try {
+      const idToken = await fbUser.getIdToken()
       const res = await fetch('/api/ai-assistant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: apiMessages }),
+        body: JSON.stringify({ idToken, messages: apiMessages }),
       })
+
+      if (res.status === 401) {
+        setMessages((prev) => [
+          ...prev,
+          { id: (Date.now() + 1).toString(), role: 'assistant', content: 'Your session has expired — please log in again.' },
+        ])
+        return
+      }
+
+      if (res.status === 429) {
+        // The server is the authority on the limit — mirror it into the
+        // count that already drives the limit-reached UI below, rather than
+        // showing a separate message.
+        const limitReachedUsage = { month: getCurrentMonth(), count: limit }
+        setUsage(limitReachedUsage)
+        writeUsage(limitReachedUsage)
+        return
+      }
 
       if (!res.ok || !res.body) throw new Error('Request failed')
 
@@ -224,6 +246,12 @@ export default function AIAssistant({ grade }: { grade: string }) {
         ...prev,
         { id: (Date.now() + 1).toString(), role: 'assistant', content: accumulated },
       ])
+
+      // Only counted once Claude actually answered — incrementing before the
+      // fetch (as this used to) would burn a question on a failed request.
+      const newUsage = { month: getCurrentMonth(), count: usage.count + 1 }
+      setUsage(newUsage)
+      writeUsage(newUsage)
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -476,8 +504,9 @@ export default function AIAssistant({ grade }: { grade: string }) {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Usage indicator */}
-          {mounted && (
+          {/* Usage indicator — meaningless for a signed-out visitor, who has no
+              server-side count yet, so it's gated on user like the input area below. */}
+          {mounted && user && (
             <div
               style={{
                 padding: '5px 16px',
@@ -511,7 +540,29 @@ export default function AIAssistant({ grade }: { grade: string }) {
               flexShrink: 0,
             }}
           >
-            {isLimitReached ? (
+            {!user ? (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', padding: '6px 0' }}>
+                <p style={{ fontSize: '13px', color: '#6b7280', textAlign: 'center', margin: 0 }}>
+                  Log in to ask the AI a question.
+                </p>
+                <button
+                  onClick={() => openModal('login')}
+                  style={{
+                    backgroundColor: '#1e40af',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '10px',
+                    padding: '8px 20px',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                  }}
+                >
+                  Log In
+                </button>
+              </div>
+            ) : isLimitReached ? (
               <p
                 style={{
                   fontSize: '13px',

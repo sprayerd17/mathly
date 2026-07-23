@@ -42,6 +42,9 @@ service cloud.firestore {
       // again through another server round-trip — /api/paystack/downgrade-child
       // (Admin SDK) is the only other writer of childPlans besides the
       // webhook and add-child, and it never touches these two fields itself.
+      // aiUsage is the same server-only pattern as testAnalysisUsage above —
+      // written only by /api/ai-assistant (Admin SDK) so a client can't
+      // reset its own monthly counter.
       allow update: if request.auth != null && request.auth.uid == userId
                     && !request.resource.data.diff(resource.data).affectedKeys()
                          .hasAny(['childPlans', 'subscriptionStatus',
@@ -51,7 +54,7 @@ service cloud.firestore {
                                   'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
                                   'referredBy', 'freeSessionClaimed',
                                   'pastDueSince', 'dunningStage',
-                                  'testAnalysisUsage']);
+                                  'testAnalysisUsage', 'aiUsage']);
 
       allow delete: if false;
     }
