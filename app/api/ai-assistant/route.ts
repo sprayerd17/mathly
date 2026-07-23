@@ -19,8 +19,17 @@ type Plan = 'free' | 'pro' | 'max'
 // Same monthly allowances as PLAN_LIMITS in app/components/AIAssistant.tsx —
 // the client copy is optimistic UI only, this is the source of truth.
 const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 100 }
+// Same monthly allowances as CAPTURE_LIMITS in app/components/AIAssistant.tsx.
+// Free matches the advertised pricing-page copy ("2 screen captures per
+// month"); pro/max are chosen proportionally to their question limits — both
+// are adjustable product decisions, not derived from anything external.
+const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 10, max: 30 }
 const MAX_MESSAGES = 30
 const MAX_CONTENT_LENGTH = 4000
+// Data-URL string length cap for an attached screen capture — the client
+// downscales to a 1400px-longest-edge JPEG before sending, so a well-behaved
+// client never gets close to this; it's a backstop against a tampered request.
+const MAX_IMAGE_DATA_URL_LENGTH = 2_000_000
 
 function currentMonthStamp(): string {
   const d = new Date()
@@ -38,8 +47,18 @@ function isValidMessages(value: unknown): value is ApiMessage[] {
   })
 }
 
+// Same pattern as toImageBlock in app/api/analyse-test/route.ts.
+function toImageBlock(dataUrl: string): Anthropic.Messages.ImageBlockParam | null {
+  const match = /^data:(image\/(?:jpeg|png|webp));base64,(.+)$/.exec(dataUrl)
+  if (!match) return null
+  return {
+    type: 'image',
+    source: { type: 'base64', media_type: match[1] as 'image/jpeg' | 'image/png' | 'image/webp', data: match[2] },
+  }
+}
+
 export async function POST(req: NextRequest) {
-  const body = await req.json().catch(() => null) as { idToken?: string; messages?: unknown } | null
+  const body = await req.json().catch(() => null) as { idToken?: string; messages?: unknown; image?: unknown } | null
 
   if (!body?.idToken) return new Response('Bad request', { status: 400 })
 
@@ -64,6 +83,18 @@ export async function POST(req: NextRequest) {
   }
   const messages = body.messages
 
+  // Optional screen capture attached to this message — a single data-URL
+  // string, same validation as analyse-test's images plus a length cap since
+  // there's no separate multipart upload here.
+  let imageBlock: Anthropic.Messages.ImageBlockParam | null = null
+  if (body.image !== undefined) {
+    if (typeof body.image !== 'string' || body.image.length > MAX_IMAGE_DATA_URL_LENGTH) {
+      return new Response('Bad request', { status: 400 })
+    }
+    imageBlock = toImageBlock(body.image)
+    if (!imageBlock) return new Response('Bad request', { status: 400 })
+  }
+
   const userRef = adminDb.doc(`users/${uid}`)
   const userSnap = await userRef.get()
   if (!userSnap.exists) return new Response('User not found', { status: 404 })
@@ -81,31 +112,59 @@ export async function POST(req: NextRequest) {
   // monthly limit while payments are paused.
   const tier: Plan = PAYMENTS_ENABLED && (rawTier === 'pro' || rawTier === 'max') ? rawTier : 'free'
   const limit = PLAN_LIMITS[tier]
+  const captureLimit = CAPTURE_LIMITS[tier]
 
   // Reserve a usage slot before calling Claude — a Firestore transaction so
   // two simultaneous questions can't both slip through at the same count.
-  // Rolled back (best-effort) below if the Anthropic call itself fails, so a
-  // transient API error doesn't cost the student one of their monthly questions.
+  // When an image is attached, the capture slot is checked and reserved in
+  // the SAME transaction as the query slot, so a request that would exceed
+  // either limit reserves neither. Both are rolled back (best-effort) below
+  // if the Anthropic call itself fails, so a transient API error doesn't
+  // cost the student one of their monthly questions or captures.
   const month = currentMonthStamp()
-  let reserved = false
+  let reservedQuery = false
+  let reservedCapture = false
   try {
     await adminDb.runTransaction(async tx => {
       const snap = await tx.get(userRef)
-      const usage = snap.data()?.aiUsage as { count?: number; monthStamp?: string } | undefined
-      const currentCount = usage?.monthStamp === month ? (usage.count ?? 0) : 0
+      const usage = snap.data()?.aiUsage as { count?: number; captures?: number; monthStamp?: string } | undefined
+      const sameMonth = usage?.monthStamp === month
+      const currentCount = sameMonth ? (usage?.count ?? 0) : 0
+      const currentCaptures = sameMonth ? (usage?.captures ?? 0) : 0
       if (currentCount >= limit) {
         throw new Error('LIMIT_REACHED')
       }
-      tx.update(userRef, { aiUsage: { count: currentCount + 1, monthStamp: month } })
+      if (imageBlock && currentCaptures >= captureLimit) {
+        throw new Error('CAPTURE_LIMIT_REACHED')
+      }
+      const nextCaptures = imageBlock ? currentCaptures + 1 : currentCaptures
+      tx.update(userRef, { aiUsage: { count: currentCount + 1, captures: nextCaptures, monthStamp: month } })
     })
-    reserved = true
+    reservedQuery = true
+    reservedCapture = imageBlock !== null
   } catch (err) {
     if (err instanceof Error && err.message === 'LIMIT_REACHED') {
       return new Response(`You've used all ${limit} of your AI questions for this month — they reset next month.`, { status: 429 })
     }
+    if (err instanceof Error && err.message === 'CAPTURE_LIMIT_REACHED') {
+      return new Response(`You've used all ${captureLimit} of your screen captures for this month — they reset next month.`, { status: 429 })
+    }
     console.error('[ai-assistant] usage transaction failed', err)
     return new Response('Something went wrong. Please try again.', { status: 500 })
   }
+
+  // Attach the image to the LAST user message as an Anthropic image content
+  // block (text block + image block, same shape analyse-test builds).
+  let lastUserIdx = -1
+  for (let i = messages.length - 1; i >= 0; i--) {
+    if (messages[i].role === 'user') { lastUserIdx = i; break }
+  }
+  const anthropicMessages: Anthropic.Messages.MessageParam[] = messages.map((m, i) => {
+    if (imageBlock && i === lastUserIdx) {
+      return { role: m.role, content: [{ type: 'text', text: m.content }, imageBlock] }
+    }
+    return { role: m.role, content: m.content }
+  })
 
   const stream = new ReadableStream({
     async start(controller) {
@@ -115,7 +174,7 @@ export async function POST(req: NextRequest) {
           model: 'claude-sonnet-5',
           max_tokens: 1024,
           system: SYSTEM_PROMPT,
-          messages,
+          messages: anthropicMessages,
           stream: true,
         })
 
@@ -129,8 +188,10 @@ export async function POST(req: NextRequest) {
         }
       } catch (err) {
         console.error('[ai-assistant] Anthropic call failed', err)
-        if (reserved) {
-          await userRef.update({ 'aiUsage.count': FieldValue.increment(-1) }).catch(rollbackErr => {
+        if (reservedQuery) {
+          const rollback: Record<string, FieldValue> = { 'aiUsage.count': FieldValue.increment(-1) }
+          if (reservedCapture) rollback['aiUsage.captures'] = FieldValue.increment(-1)
+          await userRef.update(rollback).catch(rollbackErr => {
             console.error('[ai-assistant] usage rollback failed', rollbackErr)
           })
         }

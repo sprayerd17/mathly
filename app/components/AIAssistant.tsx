@@ -13,16 +13,23 @@ type ChatMessage = {
   role: 'user' | 'assistant'
   content: string
   apiContent?: string
+  image?: string
 }
 
 type AIUsage = {
   month: string
   count: number
+  captures: number
 }
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 100 }
+// Same monthly allowances as CAPTURE_LIMITS in app/api/ai-assistant/route.ts
+// — the server is the authority, this is optimistic UI only.
+const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 10, max: 30 }
+const CAPTURE_MAX_DIMENSION = 1400
+const CAPTURE_QUALITY = 0.8
 
 // ─── localStorage helpers ─────────────────────────────────────────────────────
 
@@ -35,15 +42,33 @@ function readUsage(): AIUsage {
   try {
     const stored = localStorage.getItem('mathly_ai_usage')
     if (stored) {
-      const parsed = JSON.parse(stored) as AIUsage
-      if (parsed.month === getCurrentMonth()) return parsed
+      const parsed = JSON.parse(stored) as Partial<AIUsage>
+      // captures may be missing on usage written before this feature shipped.
+      if (parsed.month === getCurrentMonth()) {
+        return { month: parsed.month, count: parsed.count ?? 0, captures: parsed.captures ?? 0 }
+      }
     }
   } catch {}
-  return { month: getCurrentMonth(), count: 0 }
+  return { month: getCurrentMonth(), count: 0, captures: 0 }
 }
 
 function writeUsage(usage: AIUsage): void {
   localStorage.setItem('mathly_ai_usage', JSON.stringify(usage))
+}
+
+// Downscales a captured canvas so its longest edge is at most maxEdge px,
+// then exports it as a JPEG data URL — same "shrink before it ever leaves
+// the browser" approach as TestAnalysisPanel's fileToCompressedDataUrl.
+function canvasToScaledDataUrl(canvas: HTMLCanvasElement, maxEdge: number, quality: number): string {
+  const scale = Math.min(1, maxEdge / Math.max(canvas.width, canvas.height))
+  if (scale === 1) return canvas.toDataURL('image/jpeg', quality)
+  const scaled = document.createElement('canvas')
+  scaled.width = Math.max(1, Math.round(canvas.width * scale))
+  scaled.height = Math.max(1, Math.round(canvas.height * scale))
+  const ctx = scaled.getContext('2d')
+  if (!ctx) return canvas.toDataURL('image/jpeg', quality)
+  ctx.drawImage(canvas, 0, 0, scaled.width, scaled.height)
+  return scaled.toDataURL('image/jpeg', quality)
 }
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
@@ -75,6 +100,24 @@ function SendIcon() {
   return (
     <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+    </svg>
+  )
+}
+
+function CameraIcon() {
+  return (
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 9.5a2 2 0 012-2h1.4l1.17-1.75A2 2 0 019.24 5h5.52a2 2 0 011.67.9L17.6 7.5H19a2 2 0 012 2V18a2 2 0 01-2 2H5a2 2 0 01-2-2V9.5z" />
+      <circle cx="12" cy="13.5" r="3.25" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function SmallSpinnerIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ animation: 'ai-spin 0.8s linear infinite' }}>
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.25" strokeWidth="3" />
+      <path d="M21 12a9 9 0 00-9-9" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
     </svg>
   )
 }
@@ -121,8 +164,10 @@ export default function AIAssistant({ grade }: { grade: string }) {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [streamingContent, setStreamingContent] = useState<string | null>(null)
-  const [usage, setUsage] = useState<AIUsage>({ month: getCurrentMonth(), count: 0 })
+  const [usage, setUsage] = useState<AIUsage>({ month: getCurrentMonth(), count: 0, captures: 0 })
   const [mounted, setMounted] = useState(false)
+  const [pendingCapture, setPendingCapture] = useState<string | null>(null)
+  const [isCapturing, setIsCapturing] = useState(false)
 
   // Usage limit is tied to the active child's own plan tier, not the account
   // as a whole — a family can mix plans, so the assistant's allowance
@@ -131,6 +176,9 @@ export default function AIAssistant({ grade }: { grade: string }) {
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
+  // The chat dialog's own root — passed to html2canvas's ignoreElements so a
+  // capture of the page doesn't photograph the assistant's own panel.
+  const dialogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setUsage(readUsage())
@@ -166,8 +214,31 @@ export default function AIAssistant({ grade }: { grade: string }) {
   }
 
   const limit = PLAN_LIMITS[plan]
-  const remaining = Math.max(0, limit - usage.count)
   const isLimitReached = usage.count >= limit
+  const captureLimit = CAPTURE_LIMITS[plan]
+  const isCaptureLimitReached = usage.captures >= captureLimit
+
+  // Captures the current page (minus the assistant's own panel) as a
+  // downscaled JPEG data URL and holds it as a pending attachment — it's
+  // sent along with whatever the student types next, not immediately.
+  async function handleCapture() {
+    if (isCapturing || isCaptureLimitReached || !user || isLoading) return
+    setIsCapturing(true)
+    try {
+      const html2canvas = (await import('html2canvas')).default
+      const target = (document.querySelector('main') ?? document.body) as HTMLElement
+      const canvas = await html2canvas(target, {
+        // Cleaner than toggling visibility around the call: just skip the
+        // assistant's own dialog so it doesn't photograph itself.
+        ignoreElements: (el) => el === dialogRef.current,
+      })
+      setPendingCapture(canvasToScaledDataUrl(canvas, CAPTURE_MAX_DIMENSION, CAPTURE_QUALITY))
+    } catch (err) {
+      console.error('[AIAssistant] screen capture failed', err)
+    } finally {
+      setIsCapturing(false)
+    }
+  }
 
   async function sendMessage() {
     const text = input.trim()
@@ -184,11 +255,16 @@ export default function AIAssistant({ grade }: { grade: string }) {
       ? `From a study guide: "${pendingContext}"\n\nStudent question: "${text}"`
       : text
 
+    // Captured once so the request and the optimistic message agree on what
+    // was attached, even though pendingCapture is cleared right after.
+    const capturedImage = pendingCapture
+
     const userMsg: ChatMessage = {
       id: Date.now().toString(),
       role: 'user',
       content: text,
       apiContent,
+      image: capturedImage ?? undefined,
     }
 
     const historyForApi = messages.map((m) => ({
@@ -200,6 +276,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
     setMessages((prev) => [...prev, userMsg])
     setInput('')
     setPendingContext('')
+    setPendingCapture(null)
     setIsLoading(true)
     setStreamingContent('')
 
@@ -208,7 +285,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
       const res = await fetch('/api/ai-assistant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ idToken, messages: apiMessages }),
+        body: JSON.stringify({ idToken, messages: apiMessages, image: capturedImage ?? undefined }),
       })
 
       if (res.status === 401) {
@@ -220,12 +297,20 @@ export default function AIAssistant({ grade }: { grade: string }) {
       }
 
       if (res.status === 429) {
-        // The server is the authority on the limit — mirror it into the
-        // count that already drives the limit-reached UI below, rather than
-        // showing a separate message.
-        const limitReachedUsage = { month: getCurrentMonth(), count: limit }
-        setUsage(limitReachedUsage)
-        writeUsage(limitReachedUsage)
+        // The server is the authority on the limit — mirror it into whichever
+        // count already drives the relevant limit-reached UI, rather than
+        // showing a separate message. Captures and questions are distinct
+        // limits, so tell the two 429s apart by the response body.
+        const message = await res.text().catch(() => '')
+        if (message.includes('captures')) {
+          const captureLimitReachedUsage = { ...usage, month: getCurrentMonth(), captures: captureLimit }
+          setUsage(captureLimitReachedUsage)
+          writeUsage(captureLimitReachedUsage)
+        } else {
+          const limitReachedUsage = { ...usage, month: getCurrentMonth(), count: limit }
+          setUsage(limitReachedUsage)
+          writeUsage(limitReachedUsage)
+        }
         return
       }
 
@@ -248,8 +333,13 @@ export default function AIAssistant({ grade }: { grade: string }) {
       ])
 
       // Only counted once Claude actually answered — incrementing before the
-      // fetch (as this used to) would burn a question on a failed request.
-      const newUsage = { month: getCurrentMonth(), count: usage.count + 1 }
+      // fetch (as this used to) would burn a question (or capture) on a
+      // failed request.
+      const newUsage = {
+        month: getCurrentMonth(),
+        count: usage.count + 1,
+        captures: usage.captures + (capturedImage ? 1 : 0),
+      }
       setUsage(newUsage)
       writeUsage(newUsage)
     } catch {
@@ -285,6 +375,10 @@ export default function AIAssistant({ grade }: { grade: string }) {
           0%   { box-shadow: 0 4px 20px rgba(30,64,175,0.35), 0 0 0 0   rgba(30,64,175,0.45); }
           70%  { box-shadow: 0 4px 20px rgba(30,64,175,0.35), 0 0 0 10px rgba(30,64,175,0);   }
           100% { box-shadow: 0 4px 20px rgba(30,64,175,0.35), 0 0 0 0   rgba(30,64,175,0);   }
+        }
+        @keyframes ai-spin {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
         }
       `}</style>
 
@@ -325,6 +419,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
       {/* ── Chat box ────────────────────────────────────────────────────────── */}
       {isOpen && (
         <div
+          ref={dialogRef}
           role="dialog"
           aria-label="Mathly AI Assistant"
           style={{
@@ -471,6 +566,21 @@ export default function AIAssistant({ grade }: { grade: string }) {
                     wordBreak: 'break-word',
                   }}
                 >
+                  {msg.image && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={msg.image}
+                      alt="Attached screen capture"
+                      style={{
+                        display: 'block',
+                        width: '100%',
+                        maxWidth: '180px',
+                        borderRadius: '10px',
+                        marginBottom: '6px',
+                        border: '1px solid rgba(0,0,0,0.08)',
+                      }}
+                    />
+                  )}
                   {msg.content}
                 </div>
               </div>
@@ -527,7 +637,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                   )}
                 </>
               ) : (
-                `${remaining} of ${limit} question${limit === 1 ? '' : 's'} remaining this month`
+                `${usage.count}/${limit} question${limit === 1 ? '' : 's'} · ${usage.captures}/${captureLimit} capture${captureLimit === 1 ? '' : 's'} this month`
               )}
             </div>
           )}
@@ -574,60 +684,127 @@ export default function AIAssistant({ grade }: { grade: string }) {
                 Upgrade your plan for more questions.
               </p>
             ) : (
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-end' }}>
-                <textarea
-                  ref={inputRef}
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                      e.preventDefault()
-                      sendMessage()
+              <>
+                {pendingCapture && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                    <div style={{ position: 'relative', flexShrink: 0 }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={pendingCapture}
+                        alt="Screen capture preview"
+                        style={{ width: '44px', height: '44px', objectFit: 'cover', borderRadius: '8px', border: '1px solid #e5e7eb', display: 'block' }}
+                      />
+                      <button
+                        onClick={() => setPendingCapture(null)}
+                        aria-label="Remove screen capture"
+                        style={{
+                          position: 'absolute',
+                          top: '-6px',
+                          right: '-6px',
+                          width: '18px',
+                          height: '18px',
+                          borderRadius: '50%',
+                          backgroundColor: '#1e40af',
+                          color: '#fff',
+                          border: '2px solid #fff',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          padding: 0,
+                          lineHeight: 1,
+                          fontSize: '11px',
+                          fontWeight: 700,
+                        }}
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <span style={{ fontSize: '12px', color: '#6b7280' }}>
+                      Screen capture attached — sent with your next message
+                    </span>
+                  </div>
+                )}
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-end' }}>
+                  <button
+                    onClick={handleCapture}
+                    disabled={isCapturing || isCaptureLimitReached || isLoading}
+                    aria-label="Capture this page"
+                    title={
+                      isCaptureLimitReached
+                        ? `You've used all ${captureLimit} of your screen captures for this month`
+                        : 'Attach a screenshot of this page'
                     }
-                  }}
-                  placeholder="Ask a question…"
-                  rows={1}
-                  disabled={isLoading}
-                  style={{
-                    flex: 1,
-                    border: '1.5px solid #e5e7eb',
-                    borderRadius: '12px',
-                    padding: '9px 13px',
-                    fontSize: '14px',
-                    resize: 'none',
-                    outline: 'none',
-                    fontFamily: 'inherit',
-                    lineHeight: 1.5,
-                    maxHeight: '80px',
-                    overflowY: 'auto',
-                    color: '#111827',
-                    transition: 'border-color 0.15s',
-                  }}
-                  onFocus={(e) => { (e.target as HTMLTextAreaElement).style.borderColor = '#1e40af' }}
-                  onBlur={(e) => { (e.target as HTMLTextAreaElement).style.borderColor = '#e5e7eb' }}
-                />
-                <button
-                  onClick={sendMessage}
-                  disabled={!input.trim() || isLoading}
-                  aria-label="Send message"
-                  style={{
-                    backgroundColor: !input.trim() || isLoading ? '#e5e7eb' : '#1e40af',
-                    color: !input.trim() || isLoading ? '#9ca3af' : '#fff',
-                    border: 'none',
-                    borderRadius: '12px',
-                    padding: '10px 13px',
-                    cursor: !input.trim() || isLoading ? 'not-allowed' : 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    transition: 'background-color 0.15s',
-                    fontFamily: 'inherit',
-                  }}
-                >
-                  <SendIcon />
-                </button>
-              </div>
+                    style={{
+                      backgroundColor: '#fff',
+                      color: isCapturing || isCaptureLimitReached || isLoading ? '#d1d5db' : '#1e40af',
+                      border: '1.5px solid ' + (isCapturing || isCaptureLimitReached || isLoading ? '#e5e7eb' : '#bfdbfe'),
+                      borderRadius: '12px',
+                      padding: '9px 12px',
+                      cursor: isCapturing || isCaptureLimitReached || isLoading ? 'not-allowed' : 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      transition: 'border-color 0.15s, color 0.15s',
+                    }}
+                  >
+                    {isCapturing ? <SmallSpinnerIcon /> : <CameraIcon />}
+                  </button>
+                  <textarea
+                    ref={inputRef}
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault()
+                        sendMessage()
+                      }
+                    }}
+                    placeholder="Ask a question…"
+                    rows={1}
+                    disabled={isLoading}
+                    style={{
+                      flex: 1,
+                      border: '1.5px solid #e5e7eb',
+                      borderRadius: '12px',
+                      padding: '9px 13px',
+                      fontSize: '14px',
+                      resize: 'none',
+                      outline: 'none',
+                      fontFamily: 'inherit',
+                      lineHeight: 1.5,
+                      maxHeight: '80px',
+                      overflowY: 'auto',
+                      color: '#111827',
+                      transition: 'border-color 0.15s',
+                    }}
+                    onFocus={(e) => { (e.target as HTMLTextAreaElement).style.borderColor = '#1e40af' }}
+                    onBlur={(e) => { (e.target as HTMLTextAreaElement).style.borderColor = '#e5e7eb' }}
+                  />
+                  <button
+                    onClick={sendMessage}
+                    disabled={!input.trim() || isLoading}
+                    aria-label="Send message"
+                    style={{
+                      backgroundColor: !input.trim() || isLoading ? '#e5e7eb' : '#1e40af',
+                      color: !input.trim() || isLoading ? '#9ca3af' : '#fff',
+                      border: 'none',
+                      borderRadius: '12px',
+                      padding: '10px 13px',
+                      cursor: !input.trim() || isLoading ? 'not-allowed' : 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      transition: 'background-color 0.15s',
+                      fontFamily: 'inherit',
+                    }}
+                  >
+                    <SendIcon />
+                  </button>
+                </div>
+              </>
             )}
           </div>
         </div>
