@@ -149,6 +149,26 @@ function decodeEntities(text: string): string {
   return text.replace(/&[a-zA-Z]+;/g, (entity) => HTML_ENTITIES[entity] ?? entity)
 }
 
+// Content strings mix plain text with real HTML (color-coded <span>s,
+// <strong>, tables, inline SVG diagrams). A bare `<` in maths like
+// "-2<x<1/2" must NOT count as HTML — dangerouslySetInnerHTML would parse
+// `<x...` as an unterminated tag and silently swallow the rest of the
+// answer. Only route to the HTML branch when a genuine, properly-closed
+// known tag is present. The tag whitelist was derived by scanning every
+// src/data/**/*.ts content file for tags actually used inside question/
+// answer/step/explanation strings (excluding diagramSvg fields, which are
+// rendered through a separate always-HTML path): span, strong, em, sub,
+// sup, br, p, div, ul, ol, li, table/thead/tbody/tr/td/th, h3, and the
+// inline-SVG-diagram set (svg, circle, line, path, polygon, rect, text, g,
+// polyline) used directly inside some worked-example steps. `b` and `i`
+// were deliberately left out: they don't appear anywhere in real content,
+// and being common maths variable names, keeping them would risk matching
+// something like "a<b>c" as HTML.
+const HTML_TAG_RE = /<\/?(?:span|strong|em|sub|sup|br|p|div|ul|ol|li|table|thead|tbody|tr|td|th|h3|svg|circle|line|path|polygon|rect|text|g|polyline)(?:\s[^<>]*)?\/?>/i
+function looksLikeHtml(text: string): boolean {
+  return HTML_TAG_RE.test(text)
+}
+
 function splitIntoParagraphs(text: string, sentencesPerParagraph = 3): string[] {
   const sentences = text.split(/(?<=[.!?])\s+(?=[A-Z"'(])/)
   const paragraphs: string[] = []
@@ -169,7 +189,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between px-6 py-5 bg-blue-50 hover:bg-blue-100 transition-colors text-left"
       >
-        {example.question.includes('<') ? (
+        {looksLikeHtml(example.question) ? (
           <span
             className="topic-html text-sm font-semibold text-[#0f1f3d] leading-snug pr-4"
             dangerouslySetInnerHTML={{ __html: `${exampleLabel}: ${example.question}` }}
@@ -201,7 +221,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
                 <span className="shrink-0 w-6 h-6 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
-                {step.includes('<') ? (
+                {looksLikeHtml(step) ? (
                 <div className="topic-html text-gray-700" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: step }} />
               ) : (
                 <span className="text-gray-700" style={{ lineHeight: 1.8 }}>{decodeEntities(step)}</span>
@@ -211,7 +231,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
           </ol>
           <div className="flex items-center gap-3 mt-6 pt-5 border-t border-gray-100">
             <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide shrink-0">{t.topic_answer_label}</span>
-            {example.answer.includes('<') ? (
+            {looksLikeHtml(example.answer) ? (
               <span className="topic-html bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug" dangerouslySetInnerHTML={{ __html: example.answer }} />
             ) : (
               <span className="bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug">
@@ -324,7 +344,7 @@ function PracticeCard({
         <span className="shrink-0 w-7 h-7 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
           {number}
         </span>
-        {question.question.includes('<') ? (
+        {looksLikeHtml(question.question) ? (
           <p className="topic-html text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
         ) : (
           <p className="text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }}>
@@ -471,7 +491,7 @@ function OpenQuestionCard({
           >
             {question.difficulty}
           </span>
-          {question.question.includes('<') ? (
+          {looksLikeHtml(question.question) ? (
             <p className="topic-html text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
           ) : (
             <p className="text-sm text-gray-800 font-medium whitespace-pre-line" style={{ lineHeight: 1.8 }}>
@@ -591,7 +611,7 @@ function OpenQuestionCard({
             {revealed && (
               <div className="mt-3 rounded-xl px-4 py-4" style={{ backgroundColor: '#f0fdf4', border: '1px solid #86efac' }}>
                 <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#16a34a' }}>{t.topic_answer_label}</p>
-                {revealedAnswerText.includes('<') ? (
+                {looksLikeHtml(revealedAnswerText) ? (
                   <p className="topic-html text-sm" style={{ color: '#14532d', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: revealedAnswerText }} />
                 ) : (
                   <p className="text-sm whitespace-pre-line" style={{ color: '#14532d', lineHeight: 1.8 }}>{decodeEntities(revealedAnswerText)}</p>
@@ -1023,7 +1043,7 @@ function RealStudyGuide({ data, topicSlug, grade }: { data: TopicData; topicSlug
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              {section.explanation.includes('<') ? (
+              {looksLikeHtml(section.explanation) ? (
                 <div
                   className="topic-html text-blue-900"
                   style={{ fontSize: '17px', lineHeight: 1.8 }}
