@@ -90,6 +90,8 @@ export default function ProfilePage() {
   const [newChildName, setNewChildName]       = useState('')
   const [newChildGrade, setNewChildGrade]     = useState<number>(4)
   const [newChildLanguage, setNewChildLanguage] = useState<Language>('en')
+  const [savingNewChild, setSavingNewChild]   = useState(false)
+  const [addChildError, setAddChildError]     = useState('')
 
   useEffect(() => {
     setChildren(user?.children ?? [])
@@ -184,15 +186,24 @@ export default function ProfilePage() {
     setNewChildName('')
     setNewChildGrade(4)
     setNewChildLanguage('en')
+    setAddChildError('')
     setAddingChild(true)
   }
 
   async function saveNewChild() {
     if (!newChildName.trim() || children.length >= MAX_CHILDREN) return
-    // Growing the family goes through a server route rather than a direct
-    // Firestore write — see app/api/family/add-child/route.ts.
-    await addChild(newChildName.trim(), newChildGrade, newChildLanguage)
-    setAddingChild(false)
+    setAddChildError('')
+    setSavingNewChild(true)
+    try {
+      // Growing the family goes through a server route rather than a direct
+      // Firestore write — see app/api/family/add-child/route.ts.
+      await addChild(newChildName.trim(), newChildGrade, newChildLanguage)
+      setAddingChild(false)
+    } catch {
+      setAddChildError(t.profile_add_child_error)
+    } finally {
+      setSavingNewChild(false)
+    }
   }
 
   function startEditGrade() {
@@ -809,6 +820,9 @@ export default function ProfilePage() {
                   <LanguageCards selected={newChildLanguage} onSelect={setNewChildLanguage} />
                 </div>
               </div>
+              {addChildError && (
+                <p className="text-xs text-red-600 mb-3">{addChildError}</p>
+              )}
               <div className="flex gap-3">
                 <button
                   type="button"
@@ -820,7 +834,7 @@ export default function ProfilePage() {
                 <button
                   type="button"
                   onClick={saveNewChild}
-                  disabled={!newChildName.trim()}
+                  disabled={!newChildName.trim() || savingNewChild}
                   className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-40"
                   style={{ backgroundColor: '#1e40af' }}
                 >
