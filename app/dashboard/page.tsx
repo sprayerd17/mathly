@@ -48,8 +48,18 @@ type GradeData = {
 
 const EMPTY_GRADE_DATA: GradeData = { topics: [], scores: [], activity: [] }
 
+// Calendar-day string in the browser's local timezone — NOT toISOString(),
+// which is UTC and misattributes activity to the previous day for roughly
+// two hours after local midnight for SA users (SAST is UTC+2).
+function localDateStr(d: Date): string {
+  const y = d.getFullYear()
+  const m = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${y}-${m}-${day}`
+}
+
 function toDateStr(d: Date | null): string | null {
-  return d ? d.toISOString().slice(0, 10) : null
+  return d ? localDateStr(d) : null
 }
 
 // Real dashboard data, sourced from the same topic registry the grade page
@@ -396,13 +406,28 @@ export default function DashboardPage() {
     ? Math.round(primaryScoredTopics.reduce((s, t) => s + (t.score as number), 0) / primaryScoredTopics.length)
     : 0
 
-  // ── Streak (consecutive days with activity in primary grade) ────────────────
+  // We don't track session duration anywhere, so a literal "study time"
+  // figure can't be computed honestly — this counts distinct days with
+  // logged activity in the last 7 days instead, using real data.
+  const last7DaysSet = new Set<string>()
+  for (let i = 0; i < 7; i++) {
+    const d = new Date()
+    d.setDate(d.getDate() - i)
+    last7DaysSet.add(localDateStr(d))
+  }
+  const daysActiveThisWeek = new Set(activity.filter(a => last7DaysSet.has(a.date)).map(a => a.date)).size
+
+  // ── Streak (consecutive days with activity in primary grade, anchored to
+  // today — a streak with no activity today or yesterday is over, not just
+  // "counting from whenever the last activity happened to be") ────────────────
   const activityDateSet = new Set(activity.map(a => a.date))
   let streak = 0
-  if (activityDateSet.size > 0) {
-    const latestDate = [...activityDateSet].sort((a, b) => b.localeCompare(a))[0]
-    const d = new Date(latestDate + 'T00:00:00')
-    while (activityDateSet.has(d.toISOString().slice(0, 10))) {
+  const now = new Date()
+  const todayStr = localDateStr(now)
+  const yesterdayStr = localDateStr(new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1))
+  if (activityDateSet.has(todayStr) || activityDateSet.has(yesterdayStr)) {
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - (activityDateSet.has(todayStr) ? 0 : 1))
+    while (activityDateSet.has(localDateStr(d))) {
       streak++
       d.setDate(d.getDate() - 1)
     }
@@ -437,8 +462,8 @@ export default function DashboardPage() {
   const todayDate        = new Date()
   const rStartDate       = new Date(todayDate)
   rStartDate.setDate(todayDate.getDate() - (rPDays - 1))
-  const rStartStr        = rStartDate.toISOString().slice(0, 10)
-  const rEndStr          = todayDate.toISOString().slice(0, 10)
+  const rStartStr        = localDateStr(rStartDate)
+  const rEndStr          = localDateStr(todayDate)
   const todayFormatted   = todayDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 
   const periodAct        = activity.filter(a => a.date >= rStartStr && a.date <= rEndStr)
@@ -448,7 +473,7 @@ export default function DashboardPage() {
   let reportStreak = 0
   const streakCheck = new Date(todayDate)
   for (let i = 0; i < rPDays; i++) {
-    if (studiedDaysSet.has(streakCheck.toISOString().slice(0, 10))) {
+    if (studiedDaysSet.has(localDateStr(streakCheck))) {
       reportStreak++
       streakCheck.setDate(streakCheck.getDate() - 1)
     } else break
@@ -464,7 +489,7 @@ export default function DashboardPage() {
   for (let i = rPDays - 1; i >= 0; i--) {
     const d = new Date(todayDate)
     d.setDate(todayDate.getDate() - i)
-    allDaysInPeriod.push(d.toISOString().slice(0, 10))
+    allDaysInPeriod.push(localDateStr(d))
   }
 
   const reportRecs: string[] = []
@@ -534,7 +559,7 @@ export default function DashboardPage() {
         <div className="grid gap-4 mb-8 grid-cols-2 sm:grid-cols-3">
           <StatCard label={t.dash_stat_topics_completed} value={`${completedCount}/${topics.length}`} />
           <StatCard label={t.dash_stat_average_score}    value={`${avgScore}%`} />
-          <StatCard label={t.dash_stat_study_time_week} value="0h 0min" />
+          <StatCard label={t.dash_stat_days_active_week} value={`${daysActiveThisWeek}/7`} />
         </div>
 
         {/* ── Collapsible panels ────────────────────────────────────────────── */}

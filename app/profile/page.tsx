@@ -128,6 +128,13 @@ export default function ProfilePage() {
   const subscribedReferrals = referrals.filter(r => r.hasSubscribed)
   const totalCredit = subscribedReferrals.reduce((sum, r) => sum + r.creditAmount, 0)
 
+  // Best available proxy for "how long has this family been an active
+  // subscriber" — we don't track a separate subscription-start date, only
+  // account creation, so this is 0 for anyone not currently active/past_due.
+  const monthsActive = user?.createdAt && (user.subscriptionStatus === 'active' || user.subscriptionStatus === 'past_due')
+    ? Math.max(0, Math.floor((Date.now() - user.createdAt.getTime()) / (1000 * 60 * 60 * 24 * 30)))
+    : 0
+
   const refCode = user?.refCode ?? ''
 
   const referralUrl = `mathly.co.za/join?ref=${refCode}`
@@ -965,7 +972,7 @@ export default function ProfilePage() {
                 { label: t.profile_stat_referrals_used,   value: `${subscribedReferrals.length} of 12` },
                 { label: t.profile_stat_referrals_remaining, value: String(Math.max(12 - subscribedReferrals.length, 0)) },
                 { label: t.profile_stat_total_credit,      value: `R${totalCredit}` },
-                { label: t.profile_stat_months_active,     value: '0'        },
+                { label: t.profile_stat_months_active,     value: String(monthsActive) },
               ].map(stat => (
                 <div key={stat.label} className="rounded-xl p-4 text-center" style={{ backgroundColor: '#f3f4f6' }}>
                   <p className="text-xl font-bold mb-1" style={{ color: '#0f1f3d' }}>{stat.value}</p>

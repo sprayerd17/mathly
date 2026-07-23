@@ -17,7 +17,7 @@ import {
   updateProfile as updateAuthProfile,
   type User as FirebaseUser,
 } from 'firebase/auth'
-import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore'
+import { doc, getDoc, setDoc, updateDoc, serverTimestamp, Timestamp } from 'firebase/firestore'
 import { auth, db } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateCheckout } from '@/src/lib/paystack-client'
@@ -65,6 +65,9 @@ export type User = {
   children: Child[]
   refCode: string
   activeChildIndex: number
+  // Set once, server-side, at registration (register()'s setDoc). Missing on
+  // the handful of accounts created before this field existed.
+  createdAt: Date | null
   subscriptionStatus: SubscriptionStatus
   // Captured off Paystack's subscription.create webhook event (and the
   // synchronous lookup right after signup succeeds) — customerCode is set
@@ -799,6 +802,7 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     children,
     refCode,
     activeChildIndex,
+    createdAt: data.createdAt instanceof Timestamp ? data.createdAt.toDate() : null,
     subscriptionStatus: sanitizeSubscriptionStatus(data.subscriptionStatus),
     paystackCustomerCode: typeof data.paystackCustomerCode === 'string' ? data.paystackCustomerCode : null,
     paystackSubscriptionCode: typeof data.paystackSubscriptionCode === 'string' ? data.paystackSubscriptionCode : null,
@@ -901,6 +905,10 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         email,
         initial: (name.charAt(0) || 'U').toUpperCase(),
         childPlans: freeChildPlans,
+        // serverTimestamp() above resolves asynchronously — this is close
+        // enough for immediate local state, and gets corrected to the real
+        // value on the next loadUser() call.
+        createdAt: new Date(),
         subscriptionStatus: 'none',
         paystackCustomerCode: null,
         paystackSubscriptionCode: null,
