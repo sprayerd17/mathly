@@ -120,23 +120,36 @@ export async function handlePaystackEvent(
       await logEvent(adminDb, event, data, 'rejected', 'verify_call_failed', 'session')
       return
     }
-    if (booking.status === 'paid') {
-      // Paystack retries webhook delivery — never double-count a spot.
-      await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'session')
-      return
-    }
 
     const sessionRef = adminDb.doc(`sessions/${booking.sessionId}`)
     const sessionSnap = await sessionRef.get()
     const session = sessionSnap.exists ? sessionSnap.data()! : null
 
-    await bookingRef.update({
-      status: 'paid',
-      paidAt: new Date().toISOString(),
-      meetLink: session?.meetLink ?? '',
+    // The status check and the writes it gates (marking paid, incrementing
+    // bookedCount) must happen as one atomic unit — this handler can be
+    // entered concurrently by the webhook and a client-triggered
+    // verify-checkout call for the same reference. A plain read-then-write
+    // leaves a window where both see status !== 'paid' and both increment
+    // the spot count.
+    const claimed = await adminDb.runTransaction(async (tx) => {
+      const freshSnap = await tx.get(bookingRef)
+      if (!freshSnap.exists) return false
+      const freshBooking = freshSnap.data()!
+      if (freshBooking.status === 'paid') return false
+      tx.update(bookingRef, {
+        status: 'paid',
+        paidAt: new Date().toISOString(),
+        meetLink: session?.meetLink ?? '',
+      })
+      if (session && freshBooking.status !== 'reserved') {
+        tx.update(sessionRef, { bookedCount: FieldValue.increment(1) })
+      }
+      return true
     })
-    if (session && booking.status !== 'reserved') {
-      await sessionRef.update({ bookedCount: FieldValue.increment(1) })
+    if (!claimed) {
+      // Paystack retries webhook delivery — never double-count a spot.
+      await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'session')
+      return
     }
     await logEvent(adminDb, event, data, 'complete', null, 'session')
 
@@ -220,26 +233,43 @@ export async function handlePaystackEvent(
     const foundingForPersist = (userData.pendingFounding ?? { pro: false, max: false }) as Record<Plan, boolean>
     const planCodeForPersist = typeof userData.pendingPlanCode === 'string' ? userData.pendingPlanCode : null
 
-    await userRef.update({
-      childPlans: expectedChildPlans,
-      subscriptionStatus: 'active',
-      paystackCustomerCode: customerCode,
-      paystackFounding: foundingForPersist,
-      paystackPlanCode: planCodeForPersist,
-      // subscription_code/email_token aren't on the charge event itself —
-      // looked up right below, right after Paystack creates the
-      // subscription record for this customer+plan. subscription.create
-      // (handled further down) is a fallback in case that lookup races
-      // ahead of Paystack's own subscription creation.
-      pendingChildPlans: null,
-      pendingFounding: null,
-      pendingAmount: null,
-      pendingPlanCode: null,
-      lastPaymentDate: new Date().toISOString(),
-      lastPaymentAmount: receivedAmount,
-      pastDueSince: null,
-      dunningStage: null,
+    // The pendingChildPlans check above and this consuming write must happen
+    // as one atomic unit — this handler can be entered concurrently by the
+    // webhook and a client-triggered verify-checkout call for the same
+    // reference. A plain read-then-write leaves a window where both calls
+    // see pendingChildPlans still set and both grant access, double-count
+    // founding seats, and email a duplicate receipt.
+    const consumed = await adminDb.runTransaction(async (tx) => {
+      const freshSnap = await tx.get(userRef)
+      if (!freshSnap.exists) return false
+      const freshPending: Tier[] | undefined | null = freshSnap.data()!.pendingChildPlans
+      if (!freshPending || JSON.stringify(freshPending) !== JSON.stringify(expectedChildPlans)) return false
+      tx.update(userRef, {
+        childPlans: expectedChildPlans,
+        subscriptionStatus: 'active',
+        paystackCustomerCode: customerCode,
+        paystackFounding: foundingForPersist,
+        paystackPlanCode: planCodeForPersist,
+        // subscription_code/email_token aren't on the charge event itself —
+        // looked up right below, right after Paystack creates the
+        // subscription record for this customer+plan. subscription.create
+        // (handled further down) is a fallback in case that lookup races
+        // ahead of Paystack's own subscription creation.
+        pendingChildPlans: null,
+        pendingFounding: null,
+        pendingAmount: null,
+        pendingPlanCode: null,
+        lastPaymentDate: new Date().toISOString(),
+        lastPaymentAmount: receivedAmount,
+        pastDueSince: null,
+        dunningStage: null,
+      })
+      return true
     })
+    if (!consumed) {
+      await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'signup')
+      return
+    }
 
     // Wrapped defensively — a failure here must never crash the whole
     // handler and skip the founding/referral bookkeeping, the audit log, and
@@ -413,13 +443,29 @@ export async function handlePaystackEvent(
       return
     }
 
-    await userRef.update({
-      childPlans: expectedChildPlans,
-      pendingChildPlans: null,
-      pendingAmount: null,
-      lastPaymentDate: new Date().toISOString(),
-      lastPaymentAmount: receivedAmount,
+    // Same concurrency concern as the signup branch above — the webhook and
+    // a client-triggered verify-checkout call can both reach this point for
+    // the same reference, so the pendingChildPlans check and the consuming
+    // write must be one atomic unit or both calls grant access and send a
+    // duplicate receipt.
+    const consumed = await adminDb.runTransaction(async (tx) => {
+      const freshSnap = await tx.get(userRef)
+      if (!freshSnap.exists) return false
+      const freshPending: Tier[] | undefined | null = freshSnap.data()!.pendingChildPlans
+      if (!freshPending || JSON.stringify(freshPending) !== JSON.stringify(expectedChildPlans)) return false
+      tx.update(userRef, {
+        childPlans: expectedChildPlans,
+        pendingChildPlans: null,
+        pendingAmount: null,
+        lastPaymentDate: new Date().toISOString(),
+        lastPaymentAmount: receivedAmount,
+      })
+      return true
     })
+    if (!consumed) {
+      await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'upgrade')
+      return
+    }
 
     await logEvent(adminDb, event, data, 'complete', null, 'upgrade')
     if (userData.email) {
