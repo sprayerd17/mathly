@@ -28,11 +28,24 @@ export async function POST(req: NextRequest) {
     return new Response('Unauthorized', { status: 401 })
   }
 
-  const userSnap = await adminDb.doc(`users/${uid}`).get()
-  if (!userSnap.exists) {
-    return new Response('User not found', { status: 404 })
+  const userRef = adminDb.doc(`users/${uid}`)
+
+  // This route is reachable by any signed-in user's own idToken, and
+  // providers.tsx only calls it once at registration — but without a
+  // server-side gate, that same idToken could be replayed to fire an
+  // unbounded number of sends against one account. claimed here is only
+  // true for the caller that actually flips welcomeEmailSent false -> true,
+  // so a replay (or a race with a second concurrent call) is a no-op.
+  const userData = await adminDb.runTransaction(async (tx) => {
+    const snap = await tx.get(userRef)
+    if (!snap.exists || snap.data()!.welcomeEmailSent) return null
+    tx.update(userRef, { welcomeEmailSent: true })
+    return snap.data()!
+  })
+  if (!userData) {
+    return new Response(null, { status: 200 })
   }
-  const userData = userSnap.data()!
+
   if (userData.email) {
     const mail = welcomeEmail({ name: userData.name ?? '' })
     await sendEmail(userData.email, mail.subject, mail.html, mail.from)
