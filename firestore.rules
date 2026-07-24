@@ -74,6 +74,13 @@ service cloud.firestore {
       // aiUsage is the same server-only pattern as testAnalysisUsage above —
       // written only by /api/ai-assistant (Admin SDK) so a client can't
       // reset its own monthly counter.
+      // children is otherwise freely client-writable (name/grade/language
+      // edits), but childPlans is locked above to server-only writes — so
+      // without this check, a direct Firestore SDK call (bypassing the
+      // app's own UI, which only ever edits in place) could grow or shrink
+      // the children array independently of childPlans, desyncing the two
+      // index-aligned arrays that activeChildIndex, freeSessionClaimed and
+      // every per-child tier lookup all assume stay the same length.
       allow update: if request.auth != null && request.auth.uid == userId
                     && !request.resource.data.diff(resource.data).affectedKeys()
                          .hasAny(['childPlans', 'subscriptionStatus',
@@ -83,7 +90,9 @@ service cloud.firestore {
                                   'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
                                   'referredBy', 'refCode', 'freeSessionClaimed',
                                   'pastDueSince', 'dunningStage',
-                                  'testAnalysisUsage', 'aiUsage']);
+                                  'testAnalysisUsage', 'aiUsage'])
+                    && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['children'])
+                        || request.resource.data.children.size() == resource.data.childPlans.size());
 
       allow delete: if false;
     }
@@ -253,40 +262,6 @@ service cloud.firestore {
                     && (request.resource.data.sessionId is string || request.resource.data.sessionId == null)
                     && request.resource.data.createdAt is timestamp;
       allow read, update, delete: if false;
-    }
-
-    // Live-class interest signups. Signed-in users always use their own uid
-    // as the document ID — this makes "read/write only my own entry" trivial
-    // to enforce and lets the client check whether it already has an entry.
-    // Guests (no account yet) write to an auto-generated doc ID with
-    // uid == null and can never read anything back, same write-only pattern
-    // as /waitlist — view/export guest signups from the Firebase Console.
-    match /liveClassInterest/{docId} {
-      allow read: if request.auth != null && docId == request.auth.uid;
-
-      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'grades', 'uid', 'createdAt', 'updatedAt'])
-                    && request.resource.data.name is string
-                    && request.resource.data.email is string
-                    && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+[.][^@\\s]+$')
-                    && request.resource.data.grades is list
-                    && request.resource.data.grades.size() > 0
-                    && request.resource.data.createdAt is timestamp
-                    && request.resource.data.updatedAt is timestamp
-                    && (
-                      (request.auth != null && docId == request.auth.uid && request.resource.data.uid == request.auth.uid)
-                      || (request.auth == null && request.resource.data.uid == null)
-                    );
-
-      // Only the signed-in owner can update their own doc, and only to
-      // refresh grades/updatedAt — never to reassign uid or email to someone
-      // else's. Guests can never update (no way to prove they own a doc with
-      // no auth to check against).
-      allow update: if request.auth != null && docId == request.auth.uid
-                    && resource.data.uid == request.auth.uid
-                    && request.resource.data.uid == request.auth.uid
-                    && request.resource.data.email == resource.data.email;
-
-      allow delete: if false;
     }
   }
 }
