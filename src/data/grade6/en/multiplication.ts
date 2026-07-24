@@ -500,7 +500,7 @@ export const topicData: TopicData = {
             `345 × 4 = ${bl('1 380')}.`,
             `345 × 20 = ${bl('6 900')}.`,
             `Add: ${bl('1 380')} + ${bl('6 900')} = ${gr('8 280')}. The total cost is ${gr('R8 280')}.`,
-            `${bl('Estimate check:')} ${or('300')} × ${or('25')} = ${bl('7 500')} — close to ${gr('R8 280')} so reasonable. ✓`,
+            `${bl('Estimate check:')} ${or('300')} × ${or('20')} = ${bl('6 000')} — a reasonable ballpark estimate for ${gr('R8 280')} (rounding both numbers down makes the estimate lower than the actual total). ✓`,
           ],
         },
 

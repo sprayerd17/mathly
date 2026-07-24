@@ -357,7 +357,7 @@ export const topicData: TopicData = {
         // ── "of" means multiply tip ──────────────────────────────────────────
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">"van" beteken vermenigvuldig</p>` +
-        `<p style="margin:0;color:#14532d;">Wanneer jy die woord <strong>van</strong> in ʼn wiskundevraagstuk sien, vervang dit met ${bl('×')}. So word "${or('20%')} van 350" ${or('0,20')} ${bl('× 350')} = ${gr('70')}.</p>` +
+        `<p style="margin:0;color:#14532d;">Wanneer jy die woord <strong>van</strong> in ʼn wiskundevraagstuk sien, vervang dit met ${bl('×')}. So word "${or('20%')} van 350" gelyk aan ${or('0,20')} ${bl('× 350')} = ${gr('70')}.</p>` +
         `</div>` +
 
         // ── Tip box ──────────────────────────────────────────────────────────

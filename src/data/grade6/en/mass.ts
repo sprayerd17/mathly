@@ -22,7 +22,7 @@ export const topicData: TopicData = {
       title: 'Multi-Step Conversions and Mixed Units',
       icon: '⚖️',
       explanation:
-        `<p style="margin-bottom:16px;">You already know the key facts ${bl('1 000 mg = 1 g')}, ${gr('1 000 g = 1 kg')} and ${or('1 000 kg = 1 t')}. This year we combine these facts to convert directly between units that are ${bl('two steps apart')} (like mg to kg, or g to t), and to write mass measurements using ${gr('mixed units')} — for example, expressing 2,4 kg as "2 kg 400 g".</p>` +
+        `<p style="margin-bottom:16px;">You already know the key facts ${bl('1 000 mg = 1 g')}, ${gr('1 000 g = 1 kg')} and ${or('1 000 kg = 1 t')}. This year we combine these facts to convert directly between units that are ${bl('two steps apart')} (like mg to kg, or g to t), and to write mass measurements using ${gr('mixed units')} — for example, expressing 2.4 kg as "2 kg 400 g".</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -42,36 +42,36 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Converting to mixed units</p>` +
-        `<p style="margin:0;color:#1e3a8a;">To write 2,4 kg as kg and g: the whole number part (2) stays as ${or('kg')}, and the decimal part (0,4) is converted to ${gr('g')} by multiplying by 1 000 → ${gr('400 g')}. So 2,4 kg = <strong>2 kg 400 g</strong>.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">To write 2.4 kg as kg and g: the whole number part (2) stays as ${or('kg')}, and the decimal part (0.4) is converted to ${gr('g')} by multiplying by 1 000 → ${gr('400 g')}. So 2.4 kg = <strong>2 kg 400 g</strong>.</p>` +
         `</div>`,
 
       workedExamples: [
         {
-          question: 'Convert 2,5 t directly to g.',
-          answer: `2,5 t = ${re('2 500 000 g')}`,
+          question: 'Convert 2.5 t directly to g.',
+          answer: `2.5 t = ${re('2 500 000 g')}`,
           steps: [
             `Going from ${re('t')} to ${gr('g')} means jumping two steps: t → kg → g.`,
             `Multiply by both factors: ${re('1 000 × 1 000 = 1 000 000')}.`,
-            `${re('2,5 × 1 000 000 = 2 500 000')}.`,
-            `<strong>Answer:</strong> 2,5 t = ${re('2 500 000 g')}. ✓`,
+            `${re('2.5 × 1 000 000 = 2 500 000')}.`,
+            `<strong>Answer:</strong> 2.5 t = ${re('2 500 000 g')}. ✓`,
           ],
         },
         {
-          question: 'Write 5,75 kg using mixed units (kg and g).',
-          answer: `5,75 kg = ${or('5 kg 750 g')}`,
+          question: 'Write 5.75 kg using mixed units (kg and g).',
+          answer: `5.75 kg = ${or('5 kg 750 g')}`,
           steps: [
             `The whole number part, 5, stays as ${or('kg')}.`,
-            `The decimal part, 0,75, is converted to ${gr('g')}: ${gr('0,75 × 1 000 = 750 g')}.`,
-            `<strong>Answer:</strong> 5,75 kg = ${or('5 kg 750 g')}. ✓`,
+            `The decimal part, 0.75, is converted to ${gr('g')}: ${gr('0.75 × 1 000 = 750 g')}.`,
+            `<strong>Answer:</strong> 5.75 kg = ${or('5 kg 750 g')}. ✓`,
           ],
         },
         {
           question: 'Convert 4 200 mg directly to g.',
-          answer: `4 200 mg = ${gr('4,2 g')}`,
+          answer: `4 200 mg = ${gr('4.2 g')}`,
           steps: [
             `Going from ${bl('mg')} to ${gr('g')}: divide by 1 000.`,
-            `${bl('4 200 ÷ 1 000 = 4,2')}.`,
-            `<strong>Answer:</strong> 4 200 mg = ${gr('4,2 g')}. ✓`,
+            `${bl('4 200 ÷ 1 000 = 4.2')}.`,
+            `<strong>Answer:</strong> 4 200 mg = ${gr('4.2 g')}. ✓`,
           ],
         },
       ],
@@ -95,22 +95,22 @@ export const topicData: TopicData = {
           checkMode: 'auto',
           parts: [
             {
-              label: 'a) Write 7,2 kg using mixed units (kg and g).',
+              label: 'a) Write 7.2 kg using mixed units (kg and g).',
               correctAnswer: '7 kg 200 g',
               correctAnswers: ['7 kg 200 g', '7kg200g', '7 kg200g'],
-              explanation: '0,2 kg = 0,2 × 1 000 = 200 g.\n7,2 kg = 7 kg 200 g ✓',
+              explanation: '0.2 kg = 0.2 × 1 000 = 200 g.\n7.2 kg = 7 kg 200 g ✓',
             },
             {
-              label: 'b) Convert 1,8 t directly to kg.',
+              label: 'b) Convert 1.8 t directly to kg.',
               correctAnswer: '1800',
               correctAnswers: ['1800', '1 800', '1800kg', '1 800 kg'],
-              explanation: '1,8 × 1 000 = 1 800 kg ✓',
+              explanation: '1.8 × 1 000 = 1 800 kg ✓',
             },
           ],
         },
         {
           difficulty: 'Hard',
-          question: 'A delivery truck carries a load of 3,08 t.\n\na) Write this mass using mixed units (t and kg).\nb) Convert this mass directly to g.',
+          question: 'A delivery truck carries a load of 3.08 t.\n\na) Write this mass using mixed units (t and kg).\nb) Convert this mass directly to g.',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -118,13 +118,13 @@ export const topicData: TopicData = {
               label: 'a) Mixed units (t and kg)',
               correctAnswer: '3 t 80 kg',
               correctAnswers: ['3 t 80 kg', '3t80kg', '3 t80kg'],
-              explanation: '0,08 t = 0,08 × 1 000 = 80 kg.\n3,08 t = 3 t 80 kg ✓',
+              explanation: '0.08 t = 0.08 × 1 000 = 80 kg.\n3.08 t = 3 t 80 kg ✓',
             },
             {
               label: 'b) Mass in g',
               correctAnswer: '3080000',
               correctAnswers: ['3080000', '3 080 000'],
-              explanation: '1 t = 1 000 000 g.\n3,08 × 1 000 000 = 3 080 000 g ✓',
+              explanation: '1 t = 1 000 000 g.\n3.08 × 1 000 000 = 3 080 000 g ✓',
             },
           ],
         },
@@ -168,8 +168,8 @@ export const topicData: TopicData = {
           question: 'A recipe for 8 muffins needs 240 g of flour. Sipho wants to make 20 muffins. How much flour does he need?',
           answer: `${gr('600 g of flour')}`,
           steps: [
-            `Find the ${or('scale factor')}: ${or('20 ÷ 8 = 2,5')}.`,
-            `Multiply the flour amount by the scale factor: ${gr('240 × 2,5 = 600 g')}.`,
+            `Find the ${or('scale factor')}: ${or('20 ÷ 8 = 2.5')}.`,
+            `Multiply the flour amount by the scale factor: ${gr('240 × 2.5 = 600 g')}.`,
             `<strong>Answer:</strong> Sipho needs ${gr('600 g')} of flour. ✓`,
           ],
         },
@@ -199,7 +199,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'A 1,5 kg box of cereal costs R54.',
+          question: 'A 1.5 kg box of cereal costs R54.',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -207,7 +207,7 @@ export const topicData: TopicData = {
               label: 'a) Find the price per kg.',
               correctAnswer: '36',
               correctAnswers: ['36', 'R36'],
-              explanation: 'R54 ÷ 1,5 = R36 per kg ✓',
+              explanation: 'R54 ÷ 1.5 = R36 per kg ✓',
             },
             {
               label: 'b) At the same price per kg, find the cost of a 4 kg box.',
@@ -264,19 +264,19 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'A grocery bag contains a 1,2 kg bag of rice, a 750 g bag of sugar, and a 500 g packet of pasta. Find the total mass, in kg.',
-          answer: `Total = ${gr('2,45 kg')}`,
+          question: 'A grocery bag contains a 1.2 kg bag of rice, a 750 g bag of sugar, and a 500 g packet of pasta. Find the total mass, in kg.',
+          answer: `Total = ${gr('2.45 kg')}`,
           steps: [
-            `Convert everything to the ${or('same unit')} (kg): 750 g = 0,75 kg, 500 g = 0,5 kg.`,
-            `Add the three masses: ${gr('1,2 + 0,75 + 0,5 = 2,45 kg')}.`,
-            `<strong>Answer:</strong> Total mass = ${gr('2,45 kg')}. ✓`,
+            `Convert everything to the ${or('same unit')} (kg): 750 g = 0.75 kg, 500 g = 0.5 kg.`,
+            `Add the three masses: ${gr('1.2 + 0.75 + 0.5 = 2.45 kg')}.`,
+            `<strong>Answer:</strong> Total mass = ${gr('2.45 kg')}. ✓`,
           ],
         },
         {
-          question: 'A delivery van can carry a maximum of 1,5 t. It already carries 8 crates of 85 kg each. How much more mass (in kg) can it carry?',
+          question: 'A delivery van can carry a maximum of 1.5 t. It already carries 8 crates of 85 kg each. How much more mass (in kg) can it carry?',
           answer: `${gr('820 kg more')}`,
           steps: [
-            `Convert the maximum load to kg: ${or('1,5 t = 1 500 kg')}.`,
+            `Convert the maximum load to kg: ${or('1.5 t = 1 500 kg')}.`,
             `Find the mass already loaded: ${or('8 × 85 = 680 kg')}.`,
             `Subtract: ${gr('1 500 − 680 = 820 kg')}.`,
             `<strong>Answer:</strong> The van can carry ${gr('820 kg more')}. ✓`,
@@ -289,12 +289,12 @@ export const topicData: TopicData = {
       openQuestions: [
         {
           difficulty: 'Easy',
-          question: 'A hamper contains a 900 g box of tea, a 1,1 kg jar of jam, and a 600 g bag of coffee. Find the total mass, in kg.',
+          question: 'A hamper contains a 900 g box of tea, a 1.1 kg jar of jam, and a 600 g bag of coffee. Find the total mass, in kg.',
           answer: '2.6 kg',
           checkMode: 'auto',
           correctAnswer: '2.6',
           correctAnswers: ['2.6', '2,6', '2.6kg', '2,6kg'],
-          explanation: '900 g = 0,9 kg, 600 g = 0,6 kg.\n0,9 + 1,1 + 0,6 = 2,6 kg ✓',
+          explanation: '900 g = 0.9 kg, 600 g = 0.6 kg.\n0.9 + 1.1 + 0.6 = 2.6 kg ✓',
         },
         {
           difficulty: 'Medium',
@@ -316,7 +316,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'A farmer harvests 2,4 t of maize. It is packed into bags of 25 kg each, and the farmer sells each bag for R110.\n\na) Convert the total harvest to kg.\nb) Find how many bags can be filled.\nc) Find the total amount earned from selling all the bags.',
+          question: 'A farmer harvests 2.4 t of maize. It is packed into bags of 25 kg each, and the farmer sells each bag for R110.\n\na) Convert the total harvest to kg.\nb) Find how many bags can be filled.\nc) Find the total amount earned from selling all the bags.',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -324,7 +324,7 @@ export const topicData: TopicData = {
               label: 'a) Total harvest in kg',
               correctAnswer: '2400',
               correctAnswers: ['2400', '2 400'],
-              explanation: '2,4 t × 1 000 = 2 400 kg ✓',
+              explanation: '2.4 t × 1 000 = 2 400 kg ✓',
             },
             {
               label: 'b) Number of bags',
@@ -357,7 +357,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Convert 4.5 t directly to g.', answer: '4500000 g', checkMode: 'auto', correctAnswer: '4500000', correctAnswers: ['4500000', '4 500 000', '4500000g', '4 500 000 g'], explanation: 'Jumping t straight to g means multiplying by 1 000 twice: 1 000 × 1 000 = 1 000 000.\n4.5 × 1 000 000 = 4 500 000 g ✓' },
         { difficulty: 'Easy', question: 'A shipping container is loaded with 7.25 t of goods. What is this mass in grams?', answer: '7250000 g', checkMode: 'auto', correctAnswer: '7250000', correctAnswers: ['7250000', '7 250 000', '7250000g', '7 250 000 g'], explanation: '1 t = 1 000 000 g.\n7.25 × 1 000 000 = 7 250 000 g ✓' },
         { difficulty: 'Easy', question: 'Convert 2 800 000 mg directly to kg.', answer: '2.8 kg', checkMode: 'auto', correctAnswer: '2.8', correctAnswers: ['2.8', '2.8kg', '2.8 kg'], explanation: 'Jumping mg straight to kg means dividing by 1 000 twice: 1 000 × 1 000 = 1 000 000.\n2 800 000 ÷ 1 000 000 = 2.8 kg ✓' },
-        { difficulty: 'Easy', question: 'A vitamin tablet has a mass of 3.2 kg of active ingredient stored in bulk at a factory. Express this mass in milligrams.', answer: '3200000 mg', checkMode: 'auto', correctAnswer: '3200000', correctAnswers: ['3200000', '3 200 000', '3200000mg', '3 200 000 mg'], explanation: '1 kg = 1 000 000 mg.\n3.2 × 1 000 000 = 3 200 000 mg ✓' },
+        { difficulty: 'Easy', question: 'A factory stores 3.2 kg of a vitamin\'s active ingredient in bulk. Express this mass in milligrams.', answer: '3200000 mg', checkMode: 'auto', correctAnswer: '3200000', correctAnswers: ['3200000', '3 200 000', '3200000mg', '3 200 000 mg'], explanation: '1 kg = 1 000 000 mg.\n3.2 × 1 000 000 = 3 200 000 mg ✓' },
         { difficulty: 'Easy', question: 'A student converts 0.6 t to g like this: "0.6 × 1 000 = 600 g." Is this correct? Explain the mistake.', answer: 'No, the student only multiplied by 1 000 once, which converts t to kg, not t to g. Going from t to g is two steps apart, so both factors of 1 000 are needed: 0.6 × 1 000 × 1 000 = 600 000 g, not 600 g.', checkMode: 'self' },
 
         // Block 2 — Mixed units (5-8, Easy-Medium)

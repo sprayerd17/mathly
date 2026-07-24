@@ -22,7 +22,7 @@ export const topicData: TopicData = {
       title: 'Multi-Step Conversions and Mixed Units',
       icon: '📏',
       explanation:
-        `<p style="margin-bottom:16px;">You already know how to convert between ${bl('millimetres')}, ${gr('centimetres')}, ${or('metres')} and ${re('kilometres')} using the key facts ${gr('10 mm = 1 cm')}, ${or('100 cm = 1 m')} and ${re('1 000 m = 1 km')}. This year we combine these facts to convert directly between units that are ${bl('two steps apart')} (like mm to m, or cm to km), and to write measurements using ${or('mixed units')} — for example, expressing 2,35 km as "2 km 350 m".</p>` +
+        `<p style="margin-bottom:16px;">You already know how to convert between ${bl('millimetres')}, ${gr('centimetres')}, ${or('metres')} and ${re('kilometres')} using the key facts ${gr('10 mm = 1 cm')}, ${or('100 cm = 1 m')} and ${re('1 000 m = 1 km')}. This year we combine these facts to convert directly between units that are ${bl('two steps apart')} (like mm to m, or cm to km), and to write measurements using ${or('mixed units')} — for example, expressing 2.35 km as "2 km 350 m".</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -42,37 +42,37 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Converting to mixed units</p>` +
-        `<p style="margin:0;color:#1e3a8a;">To write 2,35 km as km and m: the whole number part (2) stays as ${re('km')}, and the decimal part (0,35) is converted to ${or('m')} by multiplying by 1 000 → ${or('350 m')}. So 2,35 km = <strong>2 km 350 m</strong>.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">To write 2.35 km as km and m: the whole number part (2) stays as ${re('km')}, and the decimal part (0.35) is converted to ${or('m')} by multiplying by 1 000 → ${or('350 m')}. So 2.35 km = <strong>2 km 350 m</strong>.</p>` +
         `</div>`,
 
       workedExamples: [
         {
-          question: 'Convert 4,2 km directly to cm.',
-          answer: `4,2 km = ${re('420 000 cm')}`,
+          question: 'Convert 4.2 km directly to cm.',
+          answer: `4.2 km = ${re('420 000 cm')}`,
           steps: [
             `Going from ${re('km')} to ${gr('cm')} means jumping two steps: km → m → cm.`,
             `Multiply by both factors: ${re('1 000 × 100 = 100 000')}.`,
-            `${re('4,2 × 100 000 = 420 000')}.`,
-            `<strong>Answer:</strong> 4,2 km = ${re('420 000 cm')}. ✓`,
+            `${re('4.2 × 100 000 = 420 000')}.`,
+            `<strong>Answer:</strong> 4.2 km = ${re('420 000 cm')}. ✓`,
           ],
         },
         {
-          question: 'Write 3,65 km using mixed units (km and m).',
-          answer: `3,65 km = ${or('3 km 650 m')}`,
+          question: 'Write 3.65 km using mixed units (km and m).',
+          answer: `3.65 km = ${or('3 km 650 m')}`,
           steps: [
             `The whole number part, 3, stays as ${re('km')}.`,
-            `The decimal part, 0,65, is converted to ${or('m')}: ${or('0,65 × 1 000 = 650 m')}.`,
-            `<strong>Answer:</strong> 3,65 km = ${or('3 km 650 m')}. ✓`,
+            `The decimal part, 0.65, is converted to ${or('m')}: ${or('0.65 × 1 000 = 650 m')}.`,
+            `<strong>Answer:</strong> 3.65 km = ${or('3 km 650 m')}. ✓`,
           ],
         },
         {
           question: 'Convert 3 500 mm directly to m.',
-          answer: `3 500 mm = ${or('3,5 m')}`,
+          answer: `3 500 mm = ${or('3.5 m')}`,
           steps: [
             `Going from ${bl('mm')} to ${or('m')} means jumping two steps: mm → cm → m.`,
             `Divide by both factors: ${bl('10 × 100 = 1 000')}.`,
-            `${bl('3 500 ÷ 1 000 = 3,5')}.`,
-            `<strong>Answer:</strong> 3 500 mm = ${or('3,5 m')}. ✓`,
+            `${bl('3 500 ÷ 1 000 = 3.5')}.`,
+            `<strong>Answer:</strong> 3 500 mm = ${or('3.5 m')}. ✓`,
           ],
         },
       ],
@@ -96,22 +96,22 @@ export const topicData: TopicData = {
           checkMode: 'auto',
           parts: [
             {
-              label: 'a) Write 5,4 km using mixed units (km and m).',
+              label: 'a) Write 5.4 km using mixed units (km and m).',
               correctAnswer: '5 km 400 m',
               correctAnswers: ['5 km 400 m', '5km400m', '5 km400m'],
-              explanation: '0,4 km = 0,4 × 1 000 = 400 m.\n5,4 km = 5 km 400 m ✓',
+              explanation: '0.4 km = 0.4 × 1 000 = 400 m.\n5.4 km = 5 km 400 m ✓',
             },
             {
               label: 'b) Convert 6 200 mm directly to m.',
               correctAnswer: '6.2',
               correctAnswers: ['6.2', '6,2', '6.2m', '6,2m'],
-              explanation: '1 000 mm = 1 m.\n6 200 ÷ 1 000 = 6,2 m ✓',
+              explanation: '1 000 mm = 1 m.\n6 200 ÷ 1 000 = 6.2 m ✓',
             },
           ],
         },
         {
           difficulty: 'Hard',
-          question: 'A road sign shows the distance to a town as 12,08 km.\n\na) Write this distance using mixed units (km and m).\nb) Convert this distance directly to cm.',
+          question: 'A road sign shows the distance to a town as 12.08 km.\n\na) Write this distance using mixed units (km and m).\nb) Convert this distance directly to cm.',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -119,13 +119,13 @@ export const topicData: TopicData = {
               label: 'a) Mixed units (km and m)',
               correctAnswer: '12 km 80 m',
               correctAnswers: ['12 km 80 m', '12km80m', '12 km80m'],
-              explanation: '0,08 km = 0,08 × 1 000 = 80 m.\n12,08 km = 12 km 80 m ✓',
+              explanation: '0.08 km = 0.08 × 1 000 = 80 m.\n12.08 km = 12 km 80 m ✓',
             },
             {
               label: 'b) Distance in cm',
               correctAnswer: '1208000',
               correctAnswers: ['1208000', '1 208 000'],
-              explanation: '1 km = 100 000 cm.\n12,08 × 100 000 = 1 208 000 cm ✓',
+              explanation: '1 km = 100 000 cm.\n12.08 × 100 000 = 1 208 000 cm ✓',
             },
           ],
         },
@@ -170,12 +170,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'Sipho walks around a rectangular field 4 times. The field is 120 m long and 80 m wide. Find the total distance he walks, in km.',
-          answer: `Total distance = ${gr('1,6 km')}`,
+          answer: `Total distance = ${gr('1.6 km')}`,
           steps: [
             `Find the perimeter of the field: ${or('P = 2 × (120 + 80) = 2 × 200 = 400 m')}.`,
             `Multiply by 4 laps: ${or('400 × 4 = 1 600 m')}.`,
-            `Convert to km: ${gr('1 600 ÷ 1 000 = 1,6 km')}.`,
-            `<strong>Answer:</strong> Sipho walks ${gr('1,6 km')}. ✓`,
+            `Convert to km: ${gr('1 600 ÷ 1 000 = 1.6 km')}.`,
+            `<strong>Answer:</strong> Sipho walks ${gr('1.6 km')}. ✓`,
           ],
         },
       ],
@@ -212,14 +212,14 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'A architectural plan of a house is drawn at a scale of 1 : 200. A wall measures 3,5 cm on the plan.\n\na) Find the real length of the wall in metres.\nb) If 4 identical walls form a square room, find the perimeter of the room in metres.',
+          question: 'An architectural plan of a house is drawn at a scale of 1 : 200. A wall measures 3.5 cm on the plan.\n\na) Find the real length of the wall in metres.\nb) If 4 identical walls form a square room, find the perimeter of the room in metres.',
           answer: '',
           checkMode: 'auto',
           parts: [
             {
               label: 'a) Real length of the wall (m)',
               correctAnswer: '7',
-              explanation: '3,5 × 200 = 700 cm.\n700 ÷ 100 = 7 m ✓',
+              explanation: '3.5 × 200 = 700 cm.\n700 ÷ 100 = 7 m ✓',
             },
             {
               label: 'b) Perimeter of the square room (m)',
@@ -252,19 +252,19 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Thandi buys 3 pieces of ribbon: 1,25 m, 85 cm and 0,4 m. Find the total length of ribbon she buys, in metres.',
-          answer: `Total = ${gr('2,5 m')}`,
+          question: 'Thandi buys 3 pieces of ribbon: 1.25 m, 85 cm and 0.4 m. Find the total length of ribbon she buys, in metres.',
+          answer: `Total = ${gr('2.5 m')}`,
           steps: [
-            `Convert everything to the ${or('same unit')} (metres): 85 cm = 0,85 m.`,
-            `Add the three lengths: ${gr('1,25 + 0,85 + 0,4 = 2,5 m')}.`,
-            `<strong>Answer:</strong> Total ribbon = ${gr('2,5 m')}. ✓`,
+            `Convert everything to the ${or('same unit')} (metres): 85 cm = 0.85 m.`,
+            `Add the three lengths: ${gr('1.25 + 0.85 + 0.4 = 2.5 m')}.`,
+            `<strong>Answer:</strong> Total ribbon = ${gr('2.5 m')}. ✓`,
           ],
         },
         {
-          question: 'A ribbon that is 4,5 m long is cut into equal pieces, each 30 cm long. How many pieces can be cut?',
+          question: 'A ribbon that is 4.5 m long is cut into equal pieces, each 30 cm long. How many pieces can be cut?',
           answer: `${gr('15 pieces')}`,
           steps: [
-            `Convert the total length to the ${or('same unit')} as the pieces (cm): ${or('4,5 m = 450 cm')}.`,
+            `Convert the total length to the ${or('same unit')} as the pieces (cm): ${or('4.5 m = 450 cm')}.`,
             `Divide the total by the length of each piece: ${gr('450 ÷ 30 = 15')}.`,
             `<strong>Answer:</strong> ${gr('15 pieces')} can be cut. ✓`,
           ],
@@ -284,7 +284,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Kagiso buys curtain material: 2,3 m for the lounge and 145 cm for the bedroom.',
+          question: 'Kagiso buys curtain material: 2.3 m for the lounge and 145 cm for the bedroom.',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -292,13 +292,13 @@ export const topicData: TopicData = {
               label: 'a) Find the total length of material bought, in metres.',
               correctAnswer: '3.75',
               correctAnswers: ['3.75', '3,75'],
-              explanation: '145 cm = 1,45 m.\n2,3 + 1,45 = 3,75 m ✓',
+              explanation: '145 cm = 1.45 m.\n2.3 + 1.45 = 3.75 m ✓',
             },
             {
               label: 'b) If material costs R60 per metre, find the total cost.',
               correctAnswer: '225',
               correctAnswers: ['225', 'R225'],
-              explanation: '3,75 × R60 = R225 ✓',
+              explanation: '3.75 × R60 = R225 ✓',
             },
           ],
         },

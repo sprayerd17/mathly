@@ -57,7 +57,7 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Going back to 12-hour time</p>` +
-        `<p style="margin:0;color:#1e3a8a;">If the 24-hour time is ${bl('13:00 or later')}, subtract 12 and add ${re('pm')}. If it's ${bl('before 12:00')}, keep the hour and add ${gr('am')} (with 00:00 becoming 12:00 am).</p>` +
+        `<p style="margin:0;color:#1e3a8a;">If the 24-hour time is ${bl('13:00 or later')}, subtract 12 and add ${re('pm')}. If it's ${bl('before 12:00')}, keep the hour and add ${gr('am')} (with 00:00 becoming 12:00 am), and if it's ${bl('exactly 12:00')}, it stays as 12:00 pm (midday).</p>` +
         `</div>`,
 
       workedExamples: [

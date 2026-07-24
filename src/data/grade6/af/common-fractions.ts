@@ -540,8 +540,8 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Skakel 17/5 om na ʼn gemengde getal',
-              correctAnswer: '3 and 2/5',
-              correctAnswers: ['3 and 2/5', '3 2/5'],
+              correctAnswer: '3 en 2/5',
+              correctAnswers: ['3 en 2/5', '3 2/5'],
               explanation: 'Deel 17 deur 5: 5 gaan drie keer in 17 (3 × 5 = 15). Res: 17 − 15 = 2.\nAntwoord: 3 en 2/5 ✓',
             },
             {
@@ -753,9 +753,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Watter is groter — 3/5 of 5/8?',
-      answer: '3/5',
+      answer: '5/8',
       checkMode: 'auto',
-      correctAnswer: '3/5',
+      correctAnswer: '5/8',
       explanation: 'LGV van 5 en 8 = 40.\n3/5 = 24/40. 5/8 = 25/40.\nAangesien 24 < 25, 3/5 < 5/8.',
     },
 
@@ -813,8 +813,8 @@ export const topicData: TopicData = {
       question: 'Skakel 31/7 om na ʼn gemengde getal.',
       answer: '4 en 3/7',
       checkMode: 'auto',
-      correctAnswer: '4 and 3/7',
-      correctAnswers: ['4 and 3/7', '4 3/7'],
+      correctAnswer: '4 en 3/7',
+      correctAnswers: ['4 en 3/7', '4 3/7'],
       explanation: 'Deel 31 deur 7: 7 × 4 = 28. Res: 31 − 28 = 3.\nAntwoord: 4 en 3/7 ✓',
     },
 
@@ -824,8 +824,8 @@ export const topicData: TopicData = {
       question: 'Bereken 1 en 2/3 + 2 en 3/4.',
       answer: '4 en 5/12',
       checkMode: 'auto',
-      correctAnswer: '4 and 5/12',
-      correctAnswers: ['4 and 5/12', '4 5/12'],
+      correctAnswer: '4 en 5/12',
+      correctAnswers: ['4 en 5/12', '4 5/12'],
       explanation: 'Skakel om: 1 en 2/3 = 5/3. 2 en 3/4 = 11/4.\nLGV van 3 en 4 = 12.\n5/3 = 20/12. 11/4 = 33/12.\n20/12 + 33/12 = 53/12.\n53 ÷ 12 = 4 res 5.\nAntwoord: 4 en 5/12 ✓',
     },
 

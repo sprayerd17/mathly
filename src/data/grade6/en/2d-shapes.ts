@@ -266,12 +266,12 @@ export const topicData: TopicData = {
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Parallelogram')}</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">${bl('Opposite sides equal')} and ${gr('parallel')}; opposite angles equal. No right angles.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${bl('Opposite sides equal')} and ${gr('parallel')}; opposite angles equal. Usually no right angles.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Rhombus')}</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">${bl('4 equal sides')}; opposite angles equal but no right angles.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${bl('4 equal sides')}; opposite angles equal but usually no right angles.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
@@ -303,11 +303,11 @@ export const topicData: TopicData = {
         },
         {
           question: 'How is a parallelogram different from a rectangle?',
-          answer: `A ${re('rectangle')} is a special type of ${re('parallelogram')} — it has ${or('right angles')} while a parallelogram does not`,
+          answer: `A ${re('rectangle')} is a special type of ${re('parallelogram')} — it has ${or('right angles')} while a parallelogram doesn't usually`,
           steps: [
             `Both a ${re('rectangle')} and a ${re('parallelogram')} have ${bl('opposite sides that are equal')} and ${gr('parallel')}.`,
             `A ${re('rectangle')} has ${or('4 right angles')} of ${or('90°')} each.`,
-            `A ${re('parallelogram')} does not have right angles — its angles can be any size as long as opposite angles are equal.`,
+            `A ${re('parallelogram')} doesn't usually have right angles — its angles can be any size as long as opposite angles are equal.`,
             `A ${re('rectangle')} is a special type of ${re('parallelogram')}.`,
           ],
         },
@@ -316,7 +316,7 @@ export const topicData: TopicData = {
           answer: `It is a ${re('rhombus')}`,
           steps: [
             `${bl('Four equal sides')} — not a ${re('square')} because there are no right angles.`,
-            `A ${re('rhombus')} has ${bl('4 equal sides')} and opposite angles equal but no right angles.`,
+            `A ${re('rhombus')} has ${bl('4 equal sides')} and opposite angles equal but usually no right angles.`,
             `It is a ${re('rhombus')}.`,
           ],
         },
@@ -351,7 +351,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'What is the difference between a rhombus and a square?',
-          answer: 'Both have 4 equal sides but a square has 4 right angles of 90° and a rhombus does not have right angles — its angles are not 90°.',
+          answer: 'Both have 4 equal sides but a square has 4 right angles of 90° and a rhombus usually does not have right angles — its angles are not 90° unless it happens to be a square.',
           checkMode: 'self',
         },
 

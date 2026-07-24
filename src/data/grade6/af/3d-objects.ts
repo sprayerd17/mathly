@@ -418,20 +418,20 @@ export const topicData: TopicData = {
           answer: `Die net van ʼn kubus bestaan uit ${bl('6 identiese vierkante')}, algemeen gerangskik in ʼn kruisvorm`,
           steps: [
             `ʼn Kubus het ${bl('6 identiese vierkantige vlakke')}.`,
-            `In die net word hierdie 6 vierkante plat neergelê en langs gedeelde rande verbind. Die algemeenste rangskikking is ʼn <strong>kruisvorm</strong> — 4 vierkante in ʼn kolom en 1 vierkant aan elke kant van die tweede vierkant vanaf die bokant vas.`,
+            `In die net word hierdie 6 vierkante plat neergelê en langs gedeelde rande verbind. Die algemeenste rangskikking is ʼn <strong>kruisvorm</strong> — 4 vierkante in ʼn kolom en 1 vierkant aan elke kant van die tweede vierkant vanaf die bokant vas gemaak.`,
             `Wanneer dit gevou word, word elke vierkant een vlak van die kubus: bo, onder, voor, agter, links en regs.`,
             `<strong>Antwoord:</strong> ${bl('6 identiese vierkante')}, algemeen gerangskik in ʼn kruisvorm, wat vou om die 6 vlakke van die kubus te vorm. ✓`,
           ],
         },
         {
           question: 'Beskryf die net van ʼn vierkantige piramide.',
-          answer: `Die net van ʼn vierkantige piramide het ${bl('1 vierkantige basis')} in die middel met ${or('4 driehoeke')} aan elke kant vas`,
+          answer: `Die net van ʼn vierkantige piramide het ${bl('1 vierkantige basis')} in die middel met ${or('4 driehoeke')} aan elke kant vas gemaak`,
           steps: [
             `ʼn Vierkantige piramide het ${bl('1 vierkantige basis')} en ${or('4 driehoekige')} sy-vlakke.`,
             `In die net word die ${bl('vierkantige basis')} in die middel geplaas.`,
             `Een ${or('driehoek')} word aan elk van die vier kante van die vierkant vas gemaak — dit is die driehoekige vlakke wat die sye van die piramide vorm.`,
             `Wanneer dit gevou word, styg die vier ${or('driehoeke')} op en hul vrye hoekpunte ontmoet by die ${re('apeks')}.`,
-            `<strong>Antwoord:</strong> ${bl('1 vierkant')} in die middel met ${or('4 driehoeke')} aan elke kant vas, wat opvou om by die apeks te ontmoet. ✓`,
+            `<strong>Antwoord:</strong> ${bl('1 vierkant')} in die middel met ${or('4 driehoeke')} aan elke kant vas gemaak, wat opvou om by die apeks te ontmoet. ✓`,
           ],
         },
       ],
@@ -453,7 +453,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Beskryf die net van ʼn vierkantige piramide.',
-          answer: 'Die net het 1 vierkant in die middel met 4 driehoeke vas, een aan elke kant van die vierkant. Wanneer dit gevou word, styg die driehoeke op en hul vrye hoekpunte ontmoet by die apeks.',
+          answer: 'Die net het 1 vierkant in die middel met 4 driehoeke vas gemaak, een aan elke kant van die vierkant. Wanneer dit gevou word, styg die driehoeke op en hul vrye hoekpunte ontmoet by die apeks.',
           checkMode: 'self',
         },
 
@@ -552,7 +552,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium-Hard', question: 'ʼn Verpakkingsontwerper moet kies tussen ʼn boks in die vorm van ʼn vyfhoekige prisma en een in die vorm van ʼn vyfhoekige piramide — minder plat panele beteken goedkoper vervaardiging. Watter vorm benodig minder panele (vlakke), en hoeveel benodig dit?', answer: 'vyfhoekige piramide, 6', checkMode: 'auto', correctAnswer: 'vyfhoekigepiramide6', correctAnswers: ['vyfhoekigepiramide6', 'vyfhoekigepiramide', 'piramide6'], explanation: 'Vyfhoekige prisma: V = 5 + 2 = 7.\nVyfhoekige piramide: V = 5 + 1 = 6.\n6 < 7, dus benodig die piramide minder panele — 6 in totaal ✓' },
         { difficulty: 'Medium-Hard', question: 'Twee voorwerpe — een ʼn prisma, een ʼn piramide — het elk presies 20 rande. Vind die basisvorm van elke voorwerp (of verduidelik as dit nie moontlik is nie).', answer: 'Prisma: rande = basissye × 3, dus is basissye = 20 ÷ 3 = 6,67, nie ʼn heelgetal nie — geen prisma kan presies 20 rande hê nie. Piramide: rande = basissye × 2, dus is basissye = 20 ÷ 2 = 10, ʼn tienhoek. Dus werk net die piramide — dit is ʼn tienhoekige piramide.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Tissueboks is in die vorm van ʼn reghoekige prisma. Hoeveel vorms (panele) in totaal is nodig vir sy volledige net?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'ʼn Reghoekige prisma het 6 vlakke, almal reghoeke.\nSy net benodig dus 6 panele in totaal ✓' },
-        { difficulty: 'Hard', question: 'Beskryf die net van ʼn vierkantige piramide — hoeveel vorms is daarin, watter vorms is dit, en hoe is hulle gerangskik?', answer: 'Die net het 5 vorms in totaal: 1 vierkant (die basis) en 4 driehoeke (die sy-vlakke). Die vierkant sit in die middel met een driehoek aan elk van sy vier kante vas — wanneer dit gevou word, styg die driehoeke op en ontmoet by die apeks.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Beskryf die net van ʼn vierkantige piramide — hoeveel vorms is daarin, watter vorms is dit, en hoe is hulle gerangskik?', answer: 'Die net het 5 vorms in totaal: 1 vierkant (die basis) en 4 driehoeke (die sy-vlakke). Die vierkant sit in die middel met een driehoek aan elk van sy vier kante vas gemaak — wanneer dit gevou word, styg die driehoeke op en ontmoet by die apeks.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Leerder teken ʼn net vir ʼn driehoekige prisma met 3 driehoeke en 2 reghoeke. Is hierdie net geldig?', answer: 'Nee', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['Nee', 'nee'], explanation: 'ʼn Driehoekige prisma het V = 3 + 2 = 5 vlakke: 2 driehoekige basisse en 3 reghoekige sy-vlakke.\nDie leerder se net het 3 driehoeke en 2 reghoeke — die verkeerde telling vir albei vorms.\nDie net is ongeldig — dit benodig 2 driehoeke en 3 reghoeke, nie 3 driehoeke en 2 reghoeke nie ✓' },
         { difficulty: 'Hard', question: 'ʼn Fabriek ontwerp die plat kartonuitleg vir ʼn uitstalstaander in die vorm van ʼn vierkantige piramide. Hoeveel plat vorms (panele) in totaal moet uitgesny word vir een volledige staander, en watter vorms is dit?', answer: '5 panele: 1 vierkant en 4 driehoeke', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '1vierkant4driehoeke'], explanation: 'ʼn Vierkantige piramide het V = 4 + 1 = 5 vlakke.\nDit is 1 vierkantige basis en 4 driehoekige sy-vlakke.\nDie fabriek moet 5 panele in totaal uitsny ✓' },
       ],

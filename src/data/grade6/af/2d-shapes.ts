@@ -264,12 +264,12 @@ export const topicData: TopicData = {
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Parallelogram')}</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">${bl('Oorstaande sye gelyk')} en ${gr('parallel')}; oorstaande hoeke gelyk. Geen regte hoeke nie.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${bl('Oorstaande sye gelyk')} en ${gr('parallel')}; oorstaande hoeke gelyk. Gewoonlik geen regte hoeke nie.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">${re('Ruit')}</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">${bl('4 gelyke sye')}; oorstaande hoeke gelyk maar geen regte hoeke nie.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${bl('4 gelyke sye')}; oorstaande hoeke gelyk maar gewoonlik geen regte hoeke nie.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
@@ -301,11 +301,11 @@ export const topicData: TopicData = {
         },
         {
           question: 'Hoe verskil ʼn parallelogram van ʼn reghoek?',
-          answer: `ʼn ${re('Reghoek')} is ʼn spesiale tipe ${re('parallelogram')} — dit het ${or('regte hoeke')} terwyl ʼn parallelogram dit nie het nie`,
+          answer: `ʼn ${re('Reghoek')} is ʼn spesiale tipe ${re('parallelogram')} — dit het ${or('regte hoeke')} terwyl ʼn parallelogram dit gewoonlik nie het nie`,
           steps: [
             `Beide ʼn ${re('reghoek')} en ʼn ${re('parallelogram')} het ${bl('oorstaande sye wat gelyk')} en ${gr('parallel')} is.`,
             `ʼn ${re('Reghoek')} het ${or('4 regte hoeke')} van ${or('90°')} elk.`,
-            `ʼn ${re('Parallelogram')} het nie regte hoeke nie — sy hoeke kan enige grootte wees solank oorstaande hoeke gelyk is.`,
+            `ʼn ${re('Parallelogram')} het gewoonlik nie regte hoeke nie — sy hoeke kan enige grootte wees solank oorstaande hoeke gelyk is.`,
             `ʼn ${re('Reghoek')} is ʼn spesiale tipe ${re('parallelogram')}.`,
           ],
         },
@@ -314,7 +314,7 @@ export const topicData: TopicData = {
           answer: `Dit is ʼn ${re('ruit')}`,
           steps: [
             `${bl('Vier gelyke sye')} — nie ʼn ${re('vierkant')} nie omdat daar geen regte hoeke is nie.`,
-            `ʼn ${re('Ruit')} het ${bl('4 gelyke sye')} en oorstaande hoeke gelyk maar geen regte hoeke nie.`,
+            `ʼn ${re('Ruit')} het ${bl('4 gelyke sye')} en oorstaande hoeke gelyk maar gewoonlik geen regte hoeke nie.`,
             `Dit is ʼn ${re('ruit')}.`,
           ],
         },
@@ -349,7 +349,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Wat is die verskil tussen ʼn ruit en ʼn vierkant?',
-          answer: 'Albei het 4 gelyke sye maar ʼn vierkant het 4 regte hoeke van 90° en ʼn ruit het nie regte hoeke nie — sy hoeke is nie 90° nie.',
+          answer: 'Albei het 4 gelyke sye maar ʼn vierkant het 4 regte hoeke van 90° en ʼn ruit het gewoonlik nie regte hoeke nie — sy hoeke is nie 90° nie, tensy dit toevallig ʼn vierkant is.',
           checkMode: 'self',
         },
 

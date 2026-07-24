@@ -215,13 +215,13 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Koudste dorp',
-              correctAnswer: 'Town C',
+              correctAnswer: 'Dorp C',
               correctAnswers: ['Town C', 'C', 'Dorp C'],
               explanation: 'Dorp C by −11°C het die grootste getal na die minusteken, dus is dit die koudste ✓',
             },
             {
               label: 'b) Warmste dorp',
-              correctAnswer: 'Town B',
+              correctAnswer: 'Dorp B',
               correctAnswers: ['Town B', 'B', 'Dorp B'],
               explanation: 'Dorp B by 2°C is die enigste positiewe temperatuur, dus is dit die warmste ✓',
             },
@@ -466,7 +466,7 @@ export const topicData: TopicData = {
         // Blok 3 — Selfde-teken verskille (9-12, Medium)
         { difficulty: 'Medium', question: 'Bepaal die verskil tussen −10°C en −25°C.', answer: '15°C', checkMode: 'auto', correctAnswer: '15', correctAnswers: ['15', '15°C', '15 °C'], explanation: 'Albei temperature is negatief, dus trek af: 25 − 10 = 15°C ✓' },
         { difficulty: 'Medium', question: 'ʼn Woestyndorp het ʼn maksimum van 38°C en ʼn minimum van 24°C op dieselfde dag aangeteken. Bepaal die temperatuurwydte vir die dag.', answer: '14°C', checkMode: 'auto', correctAnswer: '14', correctAnswers: ['14', '14°C', '14 °C'], explanation: 'Albei temperature is positief, dus trek af: 38 − 24 = 14°C ✓' },
-        { difficulty: 'Medium', question: 'Die temperatuur die middagete was 25°C. Teen laatmiddag het dit met 8°C geval. Wat was die temperatuur laatmiddag?', answer: '17°C', checkMode: 'auto', correctAnswer: '17', correctAnswers: ['17', '17°C', '17 °C'], explanation: 'ʼn Daling beteken aftrek: 25°C − 8°C = 17°C ✓' },
+        { difficulty: 'Medium', question: 'Die temperatuur teen die middag was 25°C. Teen laatmiddag het dit met 8°C geval. Wat was die temperatuur laatmiddag?', answer: '17°C', checkMode: 'auto', correctAnswer: '17', correctAnswers: ['17', '17°C', '17 °C'], explanation: 'ʼn Daling beteken aftrek: 25°C − 8°C = 17°C ✓' },
         { difficulty: 'Medium', question: 'ʼn Ski-oord was op −14°C. ʼn Koue front het dit verder afgestoot na −30°C. Met hoeveel grade het die temperatuur gedaal?', answer: '16°C', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16°C', '16 °C'], explanation: 'Albei temperature is negatief, dus trek af: 30 − 14 = 16°C ✓' },
 
         // Blok 4 — Oor-nul verskille (13-16, Medium-Moeilik)

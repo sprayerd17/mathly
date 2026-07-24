@@ -500,7 +500,7 @@ export const topicData: TopicData = {
             `345 × 4 = ${bl('1 380')}.`,
             `345 × 20 = ${bl('6 900')}.`,
             `Tel bymekaar: ${bl('1 380')} + ${bl('6 900')} = ${gr('8 280')}. Die totale koste is ${gr('R8 280')}.`,
-            `${bl('Skattingskontrole:')} ${or('300')} × ${or('25')} = ${bl('7 500')} — naby aan ${gr('R8 280')}, dus redelik. ✓`,
+            `${bl('Skattingskontrole:')} ${or('300')} × ${or('20')} = ${bl('6 000')} — ʼn redelike geskatte waarde vir ${gr('R8 280')} (deur albei getalle af te rond, is die skatting laer as die werklike totaal). ✓`,
           ],
         },
 

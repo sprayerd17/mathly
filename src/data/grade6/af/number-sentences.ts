@@ -41,7 +41,7 @@ export const topicData: TopicData = {
           'vergelykings skryf met letterveranderlikes',
           'CAPS Graad 6 skryf getalsinne met ʼn blokkie of oop plek (☐) vir die onbekende, bv. ☐ + 5 = 12, en los dit op deur inspeksie of probeer-en-verbeter — met kontrole deur vervanging. Om ʼn letter soos x of n as ʼn formele veranderlike te gebruik, en die woord "vergelyking" in hierdie formele sin, is Graad 7+-algebra. Behou hier as duidelik gemerkte verryking.'
         ) +
-        `<p style="margin-bottom:16px;">ʼn <strong>Getalsin</strong> is ʼn wiskundige stelling wat getalle en simbole gebruik. ʼn ${re('Vergelyking')} is ʼn getalsin met ʼn gelykaanteken — dit wys dat die linkerkant dieselfde waarde het as die regterkant. ʼn <strong>${bl('Veranderlike')}</strong> is ʼn letter wat gebruik word om ʼn onbekende getal voor te stel. In Graad 6 skryf ons ${re('vergelykings')} met ${bl('veranderlikes')} en los hulle op om die onbekende waarde te vind. Die <strong>oplossing</strong> is die waarde van die ${bl('veranderlike')} wat die vergelyking waar maak.</p>` +
+        `<p style="margin-bottom:16px;">ʼn <strong>Getalsin</strong> is ʼn wiskundige stelling wat getalle en simbole gebruik. ʼn ${re('Vergelyking')} is ʼn getalsin met ʼn gelykaanteken — dit wys dat die linkerkant dieselfde waarde het as die regterkant. ʼn <strong>${bl('Veranderlike')}</strong> is ʼn letter wat gebruik word om ʼn onbekende getal voor te stel. In hierdie afdeling skryf ons ${re('vergelykings')} met ${bl('veranderlikes')} en los hulle op om die onbekende waarde te vind. Die <strong>oplossing</strong> is die waarde van die ${bl('veranderlike')} wat die vergelyking waar maak.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -179,7 +179,7 @@ export const topicData: TopicData = {
         // ── Balanced scale tip ───────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die reël van die gebalanseerde skaal</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Wat jy ook al aan een kant van die vergelyking doen, jy <strong>moet dieselfde aan ${gr('albei kante')} doen</strong>. Die ${or('inverse bewerking')} maak ongedaan wat aan die ${bl('veranderlike')} gedoen is, en laat dit op sy eie staan. Kontroleer jou antwoord altyd ${re('deur')} dit terug te vervang in die oorspronklike vergelyking.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Wat jy ook al aan een kant van die vergelyking doen, jy <strong>moet dieselfde aan ${gr('albei kante')} doen</strong>. Die ${or('inverse bewerking')} maak ongedaan wat aan die ${bl('veranderlike')} gedoen is, en laat dit op sy eie staan. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang in die oorspronklike vergelyking.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -358,7 +358,7 @@ export const topicData: TopicData = {
           'woordprobleme na formele vergelykings omskakel',
           'CAPS Graad 6 los woordprobleme op deur ʼn informele getalsin te skryf (met ʼn blokkie vir die onbekende) en dit uit te redeneer — nie deur formeel ʼn letterveranderlike toe te ken en ʼn vergelyking op te los nie. Behou hier as duidelik gemerkte verryking.'
         ) +
-        `<p style="margin-bottom:16px;">Baie werklike lewe probleme kan opgelos word deur ʼn ${or('vergelyking')} te skryf en op te los. Lees die probleem noukeurig en identifiseer die onbekende — dit word jou ${bl('veranderlike')}. Skakel die woorde om in wiskundige simbole. Skryf die ${or('vergelyking')} en los dit op met inverse bewerkings. Kontroleer jou antwoord altyd ${re('deur')} dit terug te vervang en maak seker dit maak sin binne die konteks van die probleem.</p>` +
+        `<p style="margin-bottom:16px;">Baie werklike lewe probleme kan opgelos word deur ʼn ${or('vergelyking')} te skryf en op te los. Lees die probleem noukeurig en identifiseer die onbekende — dit word jou ${bl('veranderlike')}. Skakel die woorde om in wiskundige simbole. Skryf die ${or('vergelyking')} en los dit op met inverse bewerkings. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang en maak seker dit maak sin binne die konteks van die probleem.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +

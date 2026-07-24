@@ -754,9 +754,9 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Which is greater — 3/5 or 5/8?',
-      answer: '3/5',
+      answer: '5/8',
       checkMode: 'auto',
-      correctAnswer: '3/5',
+      correctAnswer: '5/8',
       explanation: 'LCM of 5 and 8 = 40.\n3/5 = 24/40. 5/8 = 25/40.\nSince 24 < 25, 3/5 < 5/8.',
     },
 

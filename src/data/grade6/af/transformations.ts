@@ -405,7 +405,7 @@ export const topicData: TopicData = {
       answer: '1/5',
       checkMode: 'auto',
       correctAnswer: '1/5',
-      correctAnswers: ['1/5', '1 / 5', '0.2'],
+      correctAnswers: ['1/5', '1 / 5', '0,2'],
       explanation: '2 ÷ 10 = 1/5.\nKontroleer: 3 ÷ 15 = 1/5 ook.\nAntwoord: 1/5 ✓',
     },
   ],
@@ -437,7 +437,7 @@ export const topicData: TopicData = {
 
         // Block 4 — Comparing original and image, consistency of scale factor (12-15, Medium-Hard)
         { difficulty: 'Medium', question: 'ʼn Reghoek het sye van 5 cm en 8 cm. Ná ʼn vergroting het die beeld sye van 15 cm en 24 cm. Vind die skaalfaktor, en kontroleer dat dit dieselfde is vir albei sye.', answer: '3', checkMode: 'auto', correctAnswer: '3', correctAnswers: ['3', 'x3', '×3'], explanation: '15 ÷ 5 = 3.\nKontroleer: 24 ÷ 8 = 3 ook.\nAntwoord: 3 (konsekwent vir albei sye) ✓' },
-        { difficulty: 'Medium', question: 'ʼn Driehoek het sye van 10 cm, 6 cm en 8 cm. Dit word verklein na ʼn eenvormige driehoek met sye van 5 cm, 3 cm en 4 cm. Vind die skaalfaktor.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '1 / 2', '0.5'], explanation: '5 ÷ 10 = 1/2.\nKontroleer: 3 ÷ 6 = 1/2 en 4 ÷ 8 = 1/2 ook.\nAntwoord: 1/2 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Driehoek het sye van 10 cm, 6 cm en 8 cm. Dit word verklein na ʼn eenvormige driehoek met sye van 5 cm, 3 cm en 4 cm. Vind die skaalfaktor.', answer: '1/2', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '1 / 2', '0,5'], explanation: '5 ÷ 10 = 1/2.\nKontroleer: 3 ÷ 6 = 1/2 en 4 ÷ 8 = 1/2 ook.\nAntwoord: 1/2 ✓' },
         { difficulty: 'Medium-Hard', question: 'ʼn Vierkant het ʼn sy van 6 cm. Ná ʼn transformasie het die nuwe vierkant ook ʼn sy van 6 cm. Zanele sê dit moet óf ʼn vergroting óf ʼn verkleining wees, want die vorm is getransformeer. Is sy korrek? Verduidelik.', answer: 'Nee — die skaalfaktor is 6 ÷ 6 = 1, wat beteken die beeld is dieselfde grootte as die objek (kongruent). ʼn Vergroting het ʼn skaalfaktor groter as 1 nodig, en ʼn verkleining het ʼn skaalfaktor nodig wat ʼn breuk kleiner as 1 is, so ʼn skaalfaktor van 1 is nie een van die twee nie.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'ʼn Reghoek van 3 cm by 5 cm word getransformeer na ʼn reghoek van 3 cm by 15 cm. Karabo sê dit is ʼn vergroting met skaalfaktor 3. Is hy korrek? Verduidelik.', answer: 'Nee — 3 ÷ 3 = 1 vir een paar sye, maar 15 ÷ 5 = 3 vir die ander paar. Die sye is nie met dieselfde faktor geskaal nie, so die beeld is nie ʼn eenvormige vorm nie — dit is ʼn vervorming, nie ʼn ware vergroting nie.', checkMode: 'self' },
 

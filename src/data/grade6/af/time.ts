@@ -57,7 +57,7 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Terug na 12-uur tyd</p>` +
-        `<p style="margin:0;color:#1e3a8a;">As die 24-uur tyd ${bl('13:00 of later')} is, trek 12 af en voeg ${re('nm')} by. As dit ${bl('voor 12:00')} is, hou die uur dieselfde en voeg ${gr('vm')} by (met 00:00 wat 12:00 vm word).</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As die 24-uur tyd ${bl('13:00 of later')} is, trek 12 af en voeg ${re('nm')} by. As dit ${bl('voor 12:00')} is, hou die uur dieselfde en voeg ${gr('vm')} by (met 00:00 wat 12:00 vm word), en as dit ${bl('presies 12:00')} is, bly dit 12:00 nm (middag).</p>` +
         `</div>`,
 
       workedExamples: [
