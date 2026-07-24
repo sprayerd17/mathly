@@ -52,7 +52,7 @@ const wrap = (body: string) => `
 <div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#0f1f3d">
   <p style="font-size:20px;font-weight:bold;margin:0 0 20px">Mathly</p>
   ${body}
-  <p style="font-size:12px;color:#9ca3af;margin-top:28px">Mathly · Extra maths, made simple. Questions? Reply to this email or write to support@mathly.co.za.</p>
+  <p style="font-size:12px;color:#9ca3af;margin-top:28px">Mathly · Extra maths, made simple. Questions? Reply to this email or write to hello@mathly.co.za.</p>
 </div>`
 
 export function bookingConfirmedEmail(opts: {

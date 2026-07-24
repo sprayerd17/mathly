@@ -103,7 +103,7 @@ export default function TermsPage() {
             We do not issue refunds where a subscription renewed because you did not cancel it in time,
             or because you or your child simply did not use the service during a billing period. If you
             believe you were billed in error, contact{' '}
-            <a href="mailto:support@mathly.co.za" style={{ color: '#1e40af', fontWeight: 600 }}>support@mathly.co.za</a>{' '}
+            <a href="mailto:hello@mathly.co.za" style={{ color: '#1e40af', fontWeight: 600 }}>hello@mathly.co.za</a>{' '}
             with your account email and the date of the charge.
           </p>
         </Section>
