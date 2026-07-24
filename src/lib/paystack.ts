@@ -22,19 +22,32 @@ export function randsToCents(amountRands: number): number {
 
 type PaystackResponse<T> = { ok: boolean; status: number; data: T | null; message: string | null }
 
+const REQUEST_TIMEOUT_MS = 15_000
+
 async function paystackRequest<T = unknown>(
   config: PaystackConfig,
   path: string,
   init?: { method?: string; body?: unknown },
 ): Promise<PaystackResponse<T>> {
-  const res = await fetch(`${PAYSTACK_BASE}${path}`, {
-    method: init?.method ?? 'GET',
-    headers: {
-      Authorization: `Bearer ${config.secretKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: init?.body ? JSON.stringify(init.body) : undefined,
-  })
+  let res: Response
+  try {
+    res = await fetch(`${PAYSTACK_BASE}${path}`, {
+      method: init?.method ?? 'GET',
+      headers: {
+        Authorization: `Bearer ${config.secretKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: init?.body ? JSON.stringify(init.body) : undefined,
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+    })
+  } catch (err) {
+    // A hung Paystack API would otherwise leave the request (checkout,
+    // webhook fallback, cron) hanging indefinitely — every call site here
+    // already branches on `ok`, so normalize a timeout/network failure into
+    // the same shape rather than throwing and skipping that handling.
+    console.error('[paystack] request failed', path, err)
+    return { ok: false, status: 0, data: null, message: err instanceof Error ? err.message : 'request failed' }
+  }
   const json = await res.json().catch(() => null) as { status?: boolean; message?: string; data?: T } | null
   return {
     ok: res.ok && json?.status === true,
