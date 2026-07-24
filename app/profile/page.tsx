@@ -867,7 +867,10 @@ export default function ProfilePage() {
               {t.profile_referral_heading}
             </h2>
             <p className="text-sm text-gray-500 mb-7 leading-relaxed">
-              {t.profile_referral_subheading}
+              {t.profile_referral_subheading}{' '}
+              <Link href="/refer" className="font-semibold" style={{ color: '#1e40af' }}>
+                {t.footer_how_to_get_mathly_free}
+              </Link>
             </p>
 
             {/* Sharing options card */}

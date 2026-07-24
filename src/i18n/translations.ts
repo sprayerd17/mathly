@@ -300,7 +300,7 @@ const en = {
     profile_add_child_submit: 'Add child',
     profile_add_child_error: "Couldn't add child — please try again.",
     profile_referral_heading: 'Refer friends, earn free months',
-    profile_referral_subheading: 'Share your unique referral link and earn one free month for every friend who subscribes — up to 12 referrals per year.',
+    profile_referral_subheading: 'Share your unique referral link and earn account credit for every friend who subscribes, up to an annual cap.',
     profile_referral_link: 'Referral Link',
     profile_copied: 'Copied!',
     profile_copy_link: 'Copy link',
@@ -348,7 +348,6 @@ const en = {
     footer_support_heading: 'Support',
     footer_contact_us: 'Contact Us',
     footer_faqs: 'FAQs',
-    footer_how_it_works: 'How It Works',
     footer_account_heading: 'Account',
     footer_login: 'Login',
     footer_register: 'Register',
@@ -548,7 +547,7 @@ const en = {
 
     // ── FAQ accordion (FAQAccordion.tsx) ────────────────────────────────────
     faq_q1_question: 'How do I subscribe?',
-    faq_q1_answer: 'You can subscribe by creating a free account and then choosing a plan from your account dashboard. All plans are billed monthly, and you can upgrade at any time.',
+    faq_q1_answer: 'You can subscribe by creating a free account and then choosing a plan on the pricing page. All plans are billed monthly, and you can upgrade at any time.',
     faq_q2_question: 'Which grades are covered?',
     faq_q2_answer: 'Mathly covers Grade 4 through Grade 12, following the South African school curriculum. Each grade has its own set of topics, worked examples, and practice problems.',
     faq_q3_question: 'Are the study guides aligned to the SA curriculum?',
@@ -925,7 +924,7 @@ const af: Record<TranslationKeys, string> = {
     profile_add_child_submit: 'Voeg kind by',
     profile_add_child_error: 'Kon nie kind byvoeg nie — probeer asseblief weer.',
     profile_referral_heading: 'Verwys vriende, verdien gratis maande',
-    profile_referral_subheading: 'Deel jou unieke verwysingskakel en verdien een gratis maand vir elke vriend wat inteken — tot 12 verwysings per jaar.',
+    profile_referral_subheading: "Deel jou unieke verwysingskakel en verdien rekeningkrediet vir elke vriend wat inteken, tot 'n jaarlikse plafon.",
     profile_referral_link: 'Verwysingskakel',
     profile_copied: 'Gekopieer!',
     profile_copy_link: 'Kopieer skakel',
@@ -973,7 +972,6 @@ const af: Record<TranslationKeys, string> = {
     footer_support_heading: 'Ondersteuning',
     footer_contact_us: 'Kontak Ons',
     footer_faqs: 'Vrae en Antwoorde',
-    footer_how_it_works: 'Hoe Dit Werk',
     footer_account_heading: 'Rekening',
     footer_login: 'Teken in',
     footer_register: 'Registreer',
@@ -1173,7 +1171,7 @@ const af: Record<TranslationKeys, string> = {
 
     // ── FAQ accordion (FAQAccordion.tsx) ────────────────────────────────────
     faq_q1_question: 'Hoe teken ek in?',
-    faq_q1_answer: "Jy kan inteken deur 'n gratis rekening te skep en dan 'n pakket vanaf jou rekening-paneelbord te kies. Alle pakkette word maandeliks gefaktureer, en jy kan enige tyd opgradeer.",
+    faq_q1_answer: "Jy kan inteken deur 'n gratis rekening te skep en dan 'n pakket op die pryse-bladsy te kies. Alle pakkette word maandeliks gefaktureer, en jy kan enige tyd opgradeer.",
     faq_q2_question: 'Watter grade word gedek?',
     faq_q2_answer: 'Mathly dek Graad 4 tot Graad 12, volgens die Suid-Afrikaanse skoolkurrikulum. Elke graad het sy eie stel onderwerpe, uitgewerkte voorbeelde en oefenprobleme.',
     faq_q3_question: 'Is die studiegidse belyn met die SA-kurrikulum?',

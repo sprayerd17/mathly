@@ -41,11 +41,6 @@ export default function Footer() {
                   {t.footer_faqs}
                 </Link>
               </li>
-              <li>
-                <Link href="/" className={linkClass} style={linkStyle}>
-                  {t.footer_how_it_works}
-                </Link>
-              </li>
             </ul>
           </div>
 
