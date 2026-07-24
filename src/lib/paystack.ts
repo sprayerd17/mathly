@@ -65,7 +65,10 @@ async function paystackRequest<T = unknown>(
 // call as defense-in-depth). Must be computed over the exact raw body bytes
 // — parsing then re-serializing would produce a different signature.
 export function verifyWebhookSignature(rawBody: string, signatureHeader: string | null, secretKey: string): boolean {
-  if (!signatureHeader) return false
+  // An empty secretKey (missing env var) is a known, computable HMAC key —
+  // anyone can forge a matching signature, so this must reject rather than
+  // "verify" against it.
+  if (!signatureHeader || !secretKey) return false
   const expected = crypto.createHmac('sha512', secretKey).update(rawBody).digest('hex')
   // Lengths always match here (both are hex SHA-512 digests), so timingSafeEqual
   // won't throw — but guard anyway since a malformed header is attacker-controlled input.
