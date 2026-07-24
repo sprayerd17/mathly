@@ -104,14 +104,20 @@ export async function POST(req: NextRequest) {
   // Max-tier session discount or the one-time free session.
   const tier: Tier = PAYMENTS_ENABLED ? (childPlans[idx] ?? 'free') : 'free'
 
-  // One held seat (paid or still-reserved) per child per session.
+  // One held seat (paid or still-reserved) per child per session. Matched by
+  // childIndex, not childName — two children on the same account can share
+  // a first name (twins are the obvious case), and matching by name alone
+  // would let the second one book but silently look like a duplicate of the
+  // first, or vice versa. Bookings created before childIndex existed have no
+  // such field, so they fall back to a name match for those older rows only.
   const existing = await adminDb.collection('bookings')
     .where('sessionId', '==', sessionId)
     .where('uid', '==', uid)
     .get()
   if (existing.docs.some(d => {
     const b = d.data()
-    return b.childName === child.name && (b.status === 'paid' || b.status === 'reserved')
+    const sameChild = typeof b.childIndex === 'number' ? b.childIndex === idx : b.childName === child.name
+    return sameChild && (b.status === 'paid' || b.status === 'reserved')
   })) {
     return new Response('Already booked', { status: 409 })
   }
@@ -147,6 +153,7 @@ export async function POST(req: NextRequest) {
         sessionId,
         uid,
         childName: child.name ?? '',
+        childIndex: idx,
         name: userData.name ?? '',
         email: userData.email ?? '',
         grade: typeof session.grade === 'number' ? session.grade : null,
@@ -210,6 +217,7 @@ export async function POST(req: NextRequest) {
         sessionId,
         uid,
         childName: child.name ?? '',
+        childIndex: idx,
         name: userData.name ?? '',
         email: userData.email ?? '',
         grade: typeof session.grade === 'number' ? session.grade : null,
@@ -243,6 +251,7 @@ export async function POST(req: NextRequest) {
     sessionId,
     uid,
     childName: child.name ?? '',
+    childIndex: idx,
     name: userData.name ?? '',
     email: userData.email ?? '',
     grade: typeof session.grade === 'number' ? session.grade : null,
