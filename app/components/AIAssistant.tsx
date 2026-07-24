@@ -232,8 +232,20 @@ export default function AIAssistant({ grade }: { grade: string }) {
       // emits by default, so it threw on the first such element and aborted
       // the whole capture. This is a drop-in fork with the same API.
       const html2canvas = (await import('html2canvas-pro')).default
-      const target = (document.querySelector('main') ?? document.body) as HTMLElement
-      const canvas = await html2canvas(target, {
+      // Clip to the current viewport (what the student can actually see),
+      // not the whole scrollable page — capturing the full document (often
+      // several thousand px tall for a study guide) and then squeezing it
+      // down to CAPTURE_MAX_DIMENSION shrank every letter into an unreadable
+      // blur. x/y/width/height select the visible rectangle; windowWidth/
+      // windowHeight tell html2canvas the real document size so it lays out
+      // fixed/absolute-positioned elements the same way the browser did.
+      const canvas = await html2canvas(document.body, {
+        x: window.scrollX,
+        y: window.scrollY,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        windowWidth: document.documentElement.scrollWidth,
+        windowHeight: document.documentElement.scrollHeight,
         // Cleaner than toggling visibility around the call: just skip the
         // assistant's own dialog so it doesn't photograph itself.
         ignoreElements: (el) => el === dialogRef.current,
