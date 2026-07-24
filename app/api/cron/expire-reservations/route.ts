@@ -7,8 +7,7 @@ import { isCronRequestAuthorized } from '@/src/lib/cron-auth'
 // Frees any 'reserved' (unpaid) booking whose deposit deadline has passed —
 // the whole point of book-now-pay-later is that someone else can have the
 // spot if payment never came through. Same auth convention as the other
-// cron routes: Vercel attaches `Authorization: Bearer $CRON_SECRET`
-// automatically when that env var is set.
+// cron routes — see isCronRequestAuthorized in src/lib/cron-auth.ts.
 export async function GET(req: NextRequest) {
   if (!isCronRequestAuthorized(req)) {
     return new Response('Unauthorized', { status: 401 })

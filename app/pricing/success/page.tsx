@@ -10,8 +10,8 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 // Paystack's browser redirect can land here before or after the server-to-server
-// ITN POST — this page never sets package itself (ITN is the only trusted
-// source of truth). It just polls for confirmation to show live feedback.
+// webhook — this page never sets package itself (the webhook is the only
+// trusted source of truth). It just polls for confirmation to show live feedback.
 export default function PricingSuccessPage() {
   const t = useTranslations()
   const [status, setStatus] = useState<'waiting' | 'active' | 'timeout'>('waiting')

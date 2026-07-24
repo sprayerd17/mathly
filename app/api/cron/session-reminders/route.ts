@@ -18,10 +18,6 @@ const WINDOWS = {
   '1h': { min: 0.5 * HOUR, max: 1.5 * HOUR, flag: 'reminder1hSent' },
 } as const
 
-// Vercel Cron triggers a GET request and, when CRON_SECRET is set as a
-// project env var, automatically attaches `Authorization: Bearer
-// <CRON_SECRET>` — this checks against that convention directly rather than
-// a custom header.
 export async function GET(req: NextRequest) {
   if (!isCronRequestAuthorized(req)) {
     return new Response('Unauthorized', { status: 401 })
