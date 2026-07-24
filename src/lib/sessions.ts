@@ -12,18 +12,6 @@ export const SESSION_PRICE: Record<SessionType, number> = {
   crash: 50,   // 30 min crash course on exam pitfalls — watch-only
 }
 
-export const SESSION_DURATION: Record<SessionType, number> = {
-  lesson: 60,
-  crash: 30,
-}
-
-// Lessons are capped so the group stays small enough for questions; crash
-// courses are broadcast-style and uncapped (spots = 0 means no limit).
-export const SESSION_DEFAULT_SPOTS: Record<SessionType, number> = {
-  lesson: 10,
-  crash: 0,
-}
-
 export const MAX_SESSION_DISCOUNT = 0.2
 
 // Booking a spot doesn't require immediate payment — it holds the spot as a

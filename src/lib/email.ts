@@ -278,17 +278,3 @@ export function subscriptionEndedEmail(opts: { name: string }) {
     `),
   }
 }
-
-// ── Waitlist launch announcement ────────────────────────────────────────────
-
-export function launchAnnouncementEmail(opts: { name: string; grade: number }) {
-  return {
-    from: FROM_CLASSES,
-    subject: `Live sessions are now open for Grade ${opts.grade}!`,
-    html: wrap(`
-      <p>Hi ${esc(opts.name)},</p>
-      <p>You registered interest in live sessions for <strong>Grade ${opts.grade}</strong> — good news, they're now open for booking!</p>
-      <p style="font-size:14px">Head to the live-classes page to see what's scheduled and grab a spot.</p>
-    `),
-  }
-}

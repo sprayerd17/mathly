@@ -64,15 +64,6 @@ async function fileToCompressedDataUrl(file: File): Promise<string> {
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
-export function TestAnalysisIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth={2} stroke="currentColor" className="w-4 h-4 shrink-0" style={{ color: '#1e40af' }} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75M3.75 4.5h16.5v15a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-15z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9.75l1.5 1.5 3-3" />
-    </svg>
-  )
-}
-
 function SpinnerIcon() {
   return (
     <svg className="animate-spin w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">

@@ -23,7 +23,6 @@ function PlanSelect({
   founding: Record<Plan, boolean>
   labels: Record<Plan, string>
   foundingSuffix: string
-  freeLabel?: string
   allowFree?: boolean
 }) {
   return (
