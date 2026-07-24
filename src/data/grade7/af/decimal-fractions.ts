@@ -105,11 +105,11 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Bereken 14,85 + 6,347.',
-          answer: `14${bl(',')}${or('850')} + 6${bl(',')}347 = ${gr('21,197')}`,
+          answer: `14${bl(',')}85${or('0')} + 6${bl(',')}347 = ${gr('21,197')}`,
           steps: [
             `Lyn die ${bl('desimale kommas')} vertikaal op: 14${bl(',')}85 en 6${bl(',')}347.`,
-            `Voeg ʼn ${or('nul')} by 14${bl(',')}85 om 14${bl(',')}${or('850')} te maak sodat albei getalle 3 desimale plekke het.`,
-            `Tel op: 14${bl(',')}${or('850')} + 6${bl(',')}347 = ${gr('21,197')}.`,
+            `Voeg ʼn ${or('nul')} by 14${bl(',')}85 om 14${bl(',')}85${or('0')} te maak sodat albei getalle 3 desimale plekke het.`,
+            `Tel op: 14${bl(',')}85${or('0')} + 6${bl(',')}347 = ${gr('21,197')}.`,
           ],
         },
         {

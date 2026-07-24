@@ -112,7 +112,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Amahle measures an angle with her protractor. She places the centre point correctly on the vertex, but reads off 130° from the outer scale when the angle actually opens from 0° on the inner scale. What mistake has she made, and what is the correct size of the angle if the inner-scale reading at the same arm position is 50°?\n\na) Explain her mistake.\nb) What is the correct angle size?',
+          question: 'Amahle measures an angle with her protractor. She places the centre point correctly on the vertex, but reads off 130° from the outer scale when the angle actually opens from 0° on the inner scale. What mistake has she made, and what is the correct size of the angle? (Hint: the two scales always add to 180° at the same arm position.)\n\na) Explain her mistake.\nb) What is the correct angle size?',
           answer: 'a) She read the wrong scale — protractors have two scales running in opposite directions, and she must read from 0° on the side where the baseline arm actually lies.\nb) 50°',
           checkMode: 'self',
         },

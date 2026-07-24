@@ -1334,7 +1334,7 @@ export const topicData: TopicData = {
           checkMode: 'auto',
           correctAnswer: '(-2, 2)',
           correctAnswers: ['(-2, 2)', '(-2,2)', '(−2, 2)', '(−2,2)', 'No, (-2,2)', 'No, the correct image is (-2, 2).'],
-          explanation: 'Correct rule: (x, y) → (x + (−6), y + (−1)).\n(4, 3) → (4 − 6, 3 − 1) = (−2, 2).\nThe student subtracted instead of adding the shift to the x-coordinate, giving 10 instead of −2. The correct image is (−2, 2) ✓',
+          explanation: 'Correct rule: (x, y) → (x + (−6), y + (−1)).\n(4, 3) → (4 − 6, 3 − 1) = (−2, 2).\nThe student added instead of subtracting the shift to the x-coordinate, giving 10 instead of −2. The correct image is (−2, 2) ✓',
         },
 
         // ── Block D — Rotation about the origin (Q11-14) ──────────────────────

@@ -410,14 +410,14 @@ export const topicData: TopicData = {
         `<rect x="10" y="15" width="34" height="32" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>` +
         `<text x="27" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">6x</text>` +
         `<text x="56" y="37" text-anchor="middle" font-size="16" font-weight="700" fill="#0f1f3d">+</text>` +
-        `<rect x="68" y="15" width="34" height="32" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>` +
-        `<text x="85" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">3y</text>` +
+        `<rect x="68" y="15" width="34" height="32" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="85" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">3y</text>` +
         `<text x="114" y="37" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">−</text>` +
         `<rect x="126" y="15" width="34" height="32" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>` +
         `<text x="143" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb">2x</text>` +
         `<text x="172" y="37" text-anchor="middle" font-size="16" font-weight="700" fill="#0f1f3d">+</text>` +
-        `<rect x="184" y="15" width="34" height="32" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>` +
-        `<text x="201" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">5y</text>` +
+        `<rect x="184" y="15" width="34" height="32" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>` +
+        `<text x="201" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">5y</text>` +
         `<line x1="224" y1="31" x2="248" y2="31" stroke="#16a34a" stroke-width="2.5"/>` +
         `<polygon points="248,26 256,31 248,36" fill="#16a34a"/>` +
         `<rect x="260" y="15" width="60" height="32" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>` +

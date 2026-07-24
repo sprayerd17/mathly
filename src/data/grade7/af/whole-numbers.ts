@@ -84,7 +84,7 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Lees groot getalle</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Groepeer syfers in drie-tallle vanaf regs om groot getalle te lees: <strong>4 523 100</strong> word gelees as "vier miljoen, vyf honderd drie en twintig duisend, een honderd." Om spasies as skeitekens te gebruik (nie kommas nie) is die Suid-Afrikaanse konvensie.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Groepeer syfers in drie-tallle vanaf regs om groot getalle te lees: <strong>4 523 100</strong> word gelees as "vier miljoen, vyf honderd drie-en-twintig duisend, een honderd." Om spasies as skeitekens te gebruik (nie kommas nie) is die Suid-Afrikaanse konvensie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -268,11 +268,11 @@ export const topicData: TopicData = {
         // ── V5 Medium — woordprobleem met vermenigvuldiging ───────────────────────
         {
           difficulty: 'Medium',
-          question: 'ʼn Fabriek maak 18 750 items per week. Hoeveel items maak dit in 8 weke?',
+          question: 'ʼn Fabriek maak 18 750 eenhede per week. Hoeveel eenhede maak dit in 8 weke?',
           answer: '150 000',
           checkMode: 'auto',
           correctAnswer: '150 000',
-          explanation: '18 750 × 8\n= 18 000 × 8 + 750 × 8\n= 144 000 + 6 000\n= 150 000 items ✓',
+          explanation: '18 750 × 8\n= 18 000 × 8 + 750 × 8\n= 144 000 + 6 000\n= 150 000 eenhede ✓',
         },
 
         // ── V6 Moeilik — meerstap woordprobleem ────────────────────────────────

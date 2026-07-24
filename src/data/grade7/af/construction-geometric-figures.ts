@@ -68,7 +68,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#b45309;margin-bottom:6px;">Wenk: watter skaal om te lees</p>` +
-        `<p style="margin:0;color:#92400e;">Die meeste gradebole het twee skale wat in teenoorgestelde rigtings loop (0°→180° en 180°→0°). Begin altyd tel vanaf ${or('0°')} aan die kant waar jou basislyn-arm lê, en nie net vanaf watter skaal ook al die naaste aan die gewenste getal lyk nie.</p>` +
+        `<p style="margin:0;color:#92400e;">Die meeste gradeboë het twee skale wat in teenoorgestelde rigtings loop (0°→180° en 180°→0°). Begin altyd tel vanaf ${or('0°')} aan die kant waar jou basislyn-arm lê, en nie net vanaf watter skaal ook al die naaste aan die gewenste getal lyk nie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -112,8 +112,8 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Amahle meet ʼn hoek met haar gradeboog. Sy plaas die middelpunt korrek op die hoekpunt, maar lees 130° van die buitenste skaal af terwyl die hoek eintlik vanaf 0° op die binneste skaal oopmaak. Watter fout het sy gemaak, en wat is die korrekte grootte van die hoek as die binneste-skaal-lesing by dieselfde armposisie 50° is?\n\na) Verduidelik haar fout.\nb) Wat is die korrekte hoekgrootte?',
-          answer: 'a) Sy het die verkeerde skaal gelees — gradebole het twee skale wat in teenoorgestelde rigtings loop, en sy moet lees vanaf 0° aan die kant waar die basislyn-arm werklik lê.\nb) 50°',
+          question: 'Amahle meet ʼn hoek met haar gradeboog. Sy plaas die middelpunt korrek op die hoekpunt, maar lees 130° van die buitenste skaal af terwyl die hoek eintlik vanaf 0° op die binneste skaal oopmaak. Watter fout het sy gemaak, en wat is die korrekte grootte van die hoek? (Wenk: die twee skale tel altyd op tot 180° by dieselfde armposisie.)\n\na) Verduidelik haar fout.\nb) Wat is die korrekte hoekgrootte?',
+          answer: 'a) Sy het die verkeerde skaal gelees — gradeboë het twee skale wat in teenoorgestelde rigtings loop, en sy moet lees vanaf 0° aan die kant waar die basislyn-arm werklik lê.\nb) 50°',
           checkMode: 'self',
         },
       ],

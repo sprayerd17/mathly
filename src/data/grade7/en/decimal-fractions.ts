@@ -105,11 +105,11 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Calculate 14.85 + 6.347.',
-          answer: `14${bl('.')}${or('850')} + 6${bl('.')}347 = ${gr('21.197')}`,
+          answer: `14${bl('.')}85${or('0')} + 6${bl('.')}347 = ${gr('21.197')}`,
           steps: [
             `Line up the ${bl('decimal points')} vertically: 14${bl('.')}85 and 6${bl('.')}347.`,
-            `Add a ${or('zero')} to 14${bl('.')}85 to make 14${bl('.')}${or('850')} so both numbers have 3 decimal places.`,
-            `Add: 14${bl('.')}${or('850')} + 6${bl('.')}347 = ${gr('21.197')}.`,
+            `Add a ${or('zero')} to 14${bl('.')}85 to make 14${bl('.')}85${or('0')} so both numbers have 3 decimal places.`,
+            `Add: 14${bl('.')}85${or('0')} + 6${bl('.')}347 = ${gr('21.197')}.`,
           ],
         },
         {

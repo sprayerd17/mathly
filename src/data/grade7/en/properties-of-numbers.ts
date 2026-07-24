@@ -131,7 +131,7 @@ export const topicData: TopicData = {
         // ── Example 1: 4131 — divisibility by 3 and 9 via digit sum ─────────
         {
           question: 'Is 4 131 divisible by 3? Is it divisible by 9?',
-          answer: `${re('4 131 is divisible by 3, but NOT by 9')}`,
+          answer: `${re('4 131 is divisible by both 3 and 9')}`,
           steps: [
             `Find the ${te('digit sum')}: 4 + 1 + 3 + 1 = ${te('9')}.`,
             `Is 9 divisible by 3? Yes (9 ÷ 3 = 3) — so by the ${pu('divisibility rule for 3')}, ${re('4 131 is divisible by 3')}.`,
@@ -576,7 +576,7 @@ export const topicData: TopicData = {
           steps: [
             `This is a "splitting into equal groups with nothing left over" problem, so we need the ${or('HCF')} of ${bl('48, 72 and 96')}.`,
             `Prime factorise: 48 = 2⁴ × 3, 72 = 2³ × 3², 96 = 2⁵ × 3.`,
-            `The only prime common to all three is 2, with lowest power 2³. 3 appears in all three too, with lowest power 3¹.`,
+            `The primes common to all three are 2 (lowest power 2³) and 3 (lowest power 3¹).`,
             `${or('HCF')} = 2³ × 3 = 8 × 3 = ${or('24')}.`,
             `<strong>Answer:</strong> She can make ${or('24')} boxes, each with 48 ÷ 24 = ${gr('2')} chocolate, 72 ÷ 24 = ${gr('3')} vanilla, and 96 ÷ 24 = ${gr('4')} strawberry cupcakes ✓`,
           ],
@@ -705,7 +705,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Write the first six multiples of 7.', answer: '7, 14, 21, 28, 35, 42', checkMode: 'auto', correctAnswer: '7, 14, 21, 28, 35, 42', correctAnswers: ['7, 14, 21, 28, 35, 42', '7,14,21,28,35,42'], explanation: 'Multiply 7 by 1, 2, 3, 4, 5, 6: 7, 14, 21, 28, 35, 42 ✓' },
         { difficulty: 'Easy', question: 'A bakery sells bread rolls in bags of 8. Naledi wants to buy exactly 56 rolls. Is 56 a multiple of 8? Explain, and say how many bags she needs.', answer: 'Yes, 56 is a multiple of 8 because 56 ÷ 8 = 7 exactly. She needs 7 bags.', checkMode: 'self', explanation: '56 ÷ 8 = 7 with no remainder, so 56 is a multiple of 8 (equivalently, 8 is a factor of 56). Naledi needs 7 bags to get exactly 56 rolls.' },
         { difficulty: 'Easy-Medium', question: 'Kagiso lists the factors of 32 as 1, 2, 4, 8, 16. He says this is the complete list. Is he correct?', answer: 'No — he is missing 32 itself. The complete list of factors of 32 is 1, 2, 4, 8, 16, 32, since every number is a factor of itself.', checkMode: 'self', explanation: '32 ÷ 1 = 32, ÷2 = 16, ÷4 = 8, ÷8 = 4, ÷16 = 2, ÷32 = 1. The complete factor list is 1, 2, 4, 8, 16, 32. Kagiso forgot that 32 is always a factor of itself.' },
-        { difficulty: 'Medium', question: 'Is 43 a prime number or a composite number? Give a brief reason.', answer: 'Prime — its only factors are 1 and 43, so it cannot be split into smaller whole-number factors.', checkMode: 'self', explanation: '43 is not divisible by 2, 3, or 5 (checking up to its square root, about 6.6, is enough, so we also confirm not divisible by nothing new appears before 7² exceeds it). Its only factors are 1 and 43, so it is prime.' },
+        { difficulty: 'Medium', question: 'Is 43 a prime number or a composite number? Give a brief reason.', answer: 'Prime — its only factors are 1 and 43, so it cannot be split into smaller whole-number factors.', checkMode: 'self', explanation: '43 is not divisible by 2, 3, or 5 (checking up to its square root, about 6.6, is enough). Its only factors are 1 and 43, so it is prime.' },
         { difficulty: 'Medium', question: 'Use a factor tree to write 126 as a product of its prime factors, using exponents.', answer: '2 x 3² x 7', checkMode: 'auto', correctAnswer: '2 x 3² x 7', correctAnswers: ['2 x 3² x 7', '2 x 3^2 x 7', '2 × 3² × 7', '2 × 3^2 × 7'], explanation: 'Factor tree: 126 → 2 × 63 → 2 × 7 × 9 → 2 × 7 × 3 × 3\nPrime factors: 2, 3, 3, 7\n3 appears twice → 3²\nPrime factorisation: 126 = 2 × 3² × 7 ✓' },
         { difficulty: 'Medium', question: 'A learner factorises 175 as 175 → 5 × 35 → 5 × 5 × 7, then writes the final answer as 5 × 7². Spot the mistake and give the correct prime factorisation.', answer: '5² x 7', checkMode: 'auto', correctAnswer: '5² x 7', correctAnswers: ['5² x 7', '5^2 x 7', '5² × 7', '5^2 × 7'], explanation: 'The prime factors found (5, 5, 7) are correct, but the learner put the exponent on the wrong prime — 5 appears twice, not 7. It should be 5², not 7².\nCorrect prime factorisation: 175 = 5² × 7 ✓' },
         { difficulty: 'Medium', question: 'A rectangular hall floor has an area of 300 m² made of whole-metre sides. Write 300 as a product of prime factors, then use it to explain why the hall could measure 12 m by 25 m.', answer: '300 = 2² × 3 × 5². Since 12 = 2² × 3 and 25 = 5², multiplying them gives 2² × 3 × 5² = 300, so 12 m × 25 m is a valid pair of whole-metre dimensions.', checkMode: 'self', explanation: '300 = 2 × 150 = 2 × 2 × 75 = 2 × 2 × 3 × 25 = 2² × 3 × 5². Since 12 × 25 = 300, and 12 = 2² × 3, 25 = 5², this matches the prime factorisation exactly, confirming 12 m by 25 m is valid.' },
