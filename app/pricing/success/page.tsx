@@ -14,7 +14,7 @@ import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 // trusted source of truth). It just polls for confirmation to show live feedback.
 export default function PricingSuccessPage() {
   const t = useTranslations()
-  const [status, setStatus] = useState<'waiting' | 'active' | 'timeout'>('waiting')
+  const [status, setStatus] = useState<'waiting' | 'active' | 'timeout' | 'notSignedIn'>('waiting')
 
   useEffect(() => {
     let cancelled = false
@@ -69,7 +69,7 @@ export default function PricingSuccessPage() {
       unsubscribe()
       if (cancelled) return
       if (!user) {
-        setStatus('timeout')
+        setStatus('notSignedIn')
         return
       }
       confirmWithPaystack()
@@ -99,19 +99,31 @@ export default function PricingSuccessPage() {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 8v4l2.5 2.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="#b45309" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
+          ) : status === 'notSignedIn' ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 9v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           ) : (
             <div className="w-5 h-5 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#1e40af transparent #1e40af #1e40af' }} />
           )}
         </div>
 
         <h1 className="text-2xl font-bold mb-3" style={{ color: '#0f1f3d' }}>
-          {status === 'active' ? t.pricing_success_active_heading : status === 'timeout' ? t.pricing_success_timeout_heading : t.pricing_success_waiting_heading}
+          {status === 'active'
+            ? t.pricing_success_active_heading
+            : status === 'timeout'
+            ? t.pricing_success_timeout_heading
+            : status === 'notSignedIn'
+            ? t.pricing_success_notsignedin_heading
+            : t.pricing_success_waiting_heading}
         </h1>
         <p className={`text-sm text-gray-500 ${status === 'active' && !PAYMENTS_ENABLED ? 'mb-3' : 'mb-8'}`}>
           {status === 'active'
             ? t.pricing_success_active_body
             : status === 'timeout'
             ? t.pricing_success_timeout_body
+            : status === 'notSignedIn'
+            ? t.pricing_success_notsignedin_body
             : t.pricing_success_waiting_body}
         </p>
         {status === 'active' && !PAYMENTS_ENABLED && (

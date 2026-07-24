@@ -99,7 +99,7 @@ export default function GradePage() {
           {!isRestricted && (
             <p className="text-gray-500">
               {t.grade_choose_topic_below}{' '}
-              <span className="text-[#1e40af] font-medium">{t.grade_topics_1_2_free}</span>
+              <span className="text-[#1e40af] font-medium">{t.grade_topic_1_free}</span>
             </p>
           )}
         </div>

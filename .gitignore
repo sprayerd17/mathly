@@ -43,3 +43,7 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Local Claude Code permissions — accumulates per-session tool grants,
+# personal to this machine, not something collaborators need synced.
+.claude/settings.local.json
