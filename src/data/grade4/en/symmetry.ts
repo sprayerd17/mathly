@@ -515,7 +515,7 @@ export const topicData: TopicData = {
     <div style="display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;">
       <span style="min-width:200px;font-weight:700;color:#1e3a8a;font-size:14px;padding-top:6px;">Vertical symmetry only:</span>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        ${['A','H','I','M','O','T','U','V','W','X','Y'].map(l =>
+        ${['A','M','T','U','V','W','Y'].map(l =>
           `<span style="background:#dbeafe;border:1.5px solid #93c5fd;border-radius:6px;padding:4px 10px;font-size:16px;font-weight:700;color:#1e40af;">${l}</span>`
         ).join('')}
       </div>
