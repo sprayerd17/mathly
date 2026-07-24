@@ -75,7 +75,12 @@ export default function FamilyPlanBuilder() {
   // family (no add/remove), one tier picker per existing child, defaulting
   // to whatever they're currently on.
   const [ownTiers, setOwnTiers] = useState<Tier[]>([])
+  // ownTiers holds uncommitted edits from the tier pickers below, so it can't
+  // be computed at render time from user.childPlans directly — it only needs
+  // to resync when the underlying account data changes (login, a tier update
+  // completing elsewhere).
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (user) setOwnTiers(user.childPlans)
   }, [user])
 
@@ -89,7 +94,9 @@ export default function FamilyPlanBuilder() {
   // and double-charge any child who was already paid.
   const hasActiveSub = user?.subscriptionStatus === 'active' || user?.subscriptionStatus === 'past_due'
 
+  // Intentional hydration-safe mount flag — see slotBadgeAndSpots() below.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
   }, [])
 

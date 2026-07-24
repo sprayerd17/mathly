@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import {
   createContext,
   useContext,
@@ -375,7 +376,7 @@ function AuthModal({
         <div className="px-8 pt-7 pb-0 shrink-0">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <img src="/logo-icon.png" width={24} height={24} alt="" aria-hidden="true" />
+              <Image src="/logo-icon.png" width={24} height={24} alt="" aria-hidden="true" />
               <span
                 style={{
                   color: '#0f1f3d',
@@ -651,7 +652,6 @@ function AuthModal({
                         {(['free', 'pro', 'max'] as const).map(tier => {
                           const active = child.tier === tier
                           const price = tier === 'free' ? 'R0' : `R${FOUNDING_PRICE[tier]}${t.pricing_per_month}`
-                          const desc = tier === 'free' ? t.profile_plan_desc_free : tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_max
                           return (
                             <button
                               key={tier}

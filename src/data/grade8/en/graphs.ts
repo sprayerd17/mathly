@@ -1,4 +1,4 @@
-import type { TopicData, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
+import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 
 // ─── Colour helpers (graph roles) ────────────────────────────────────────────
 // increasing / y-axis   → green  (#16a34a)

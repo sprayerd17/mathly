@@ -32,9 +32,9 @@ export default function PrivacyPage() {
 
         <Section heading="1. Who is responsible for your information">
           <p>
-            This policy explains how Mathly ("Mathly", "we", "us"), a South African maths education
+            This policy explains how Mathly (&quot;Mathly&quot;, &quot;we&quot;, &quot;us&quot;), a South African maths education
             service operated by an individual trading as Mathly, collects, uses, and protects personal
-            information under the Protection of Personal Information Act, 2013 ("POPIA"). You can reach
+            information under the Protection of Personal Information Act, 2013 (&quot;POPIA&quot;). You can reach
             us about privacy matters at{' '}
             <a href="mailto:hello@mathly.co.za" style={{ color: '#1e40af', fontWeight: 600 }}>hello@mathly.co.za</a>.
           </p>
@@ -42,9 +42,9 @@ export default function PrivacyPage() {
 
         <Section heading="2. Information we collect">
           <p><strong>Account information (from you, the parent/guardian):</strong> your name, email address, and password (handled securely by our authentication provider — we never see your password in plain text).</p>
-          <p><strong>Child profile information (that you provide about your child):</strong> your child's first name, school grade, and preferred language.</p>
+          <p><strong>Child profile information (that you provide about your child):</strong> your child&apos;s first name, school grade, and preferred language.</p>
           <p><strong>Subscription and billing information:</strong> which plan each child is on, subscription status, payment amounts and dates, and a payment reference token from our payment processor. We do not collect or store your card number, expiry date, or CVV — these are entered directly with our payment processor, Paystack.</p>
-          <p><strong>Live session bookings:</strong> the account holder's name and email, the child's name, the session booked, and its payment status.</p>
+          <p><strong>Live session bookings:</strong> the account holder&apos;s name and email, the child&apos;s name, the session booked, and its payment status.</p>
           <p><strong>Referral information:</strong> your referral code and, if someone signs up using it, a record linking the two accounts so we can apply referral credit.</p>
           <p><strong>AI assistant questions:</strong> the maths questions and study-guide text you send to the AI assistant, and its replies. We do not attach your name, email, or grade to this content when it is sent for processing.</p>
           <p><strong>Contact and support messages:</strong> anything you send us via our contact form, including your name, email, grade, and message.</p>
@@ -53,17 +53,17 @@ export default function PrivacyPage() {
         <Section heading="3. Children's personal information">
           <p>
             Mathly is used by children, but accounts are created and controlled by a parent or guardian,
-            who provides their child's name, grade, and language preference for the sole purpose of
-            personalising that child's access to age-appropriate study content. We collect the minimum
-            information needed to provide the service and do not knowingly use children's personal
+            who provides their child&apos;s name, grade, and language preference for the sole purpose of
+            personalising that child&apos;s access to age-appropriate study content. We collect the minimum
+            information needed to provide the service and do not knowingly use children&apos;s personal
             information for direct marketing. If you are a parent or guardian and want to review, correct,
-            or remove your child's information, contact us using the details in Section 10.
+            or remove your child&apos;s information, contact us using the details in Section 11.
           </p>
         </Section>
 
         <Section heading="4. How we use your information">
           <ul className="list-disc pl-5 space-y-1">
-            <li>to create and run your account and your children's profiles,</li>
+            <li>to create and run your account and your children&apos;s profiles,</li>
             <li>to show the correct study content, difficulty, and language for each child,</li>
             <li>to process subscription payments and live session bookings,</li>
             <li>to send you service emails — for example booking confirmations, payment receipts, session
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section heading="5. Who we share information with">
-          <p>We share personal information only with the service providers ("operators" under POPIA) that help us run Mathly, and only to the extent needed for them to do so:</p>
+          <p>We share personal information only with the service providers (&quot;operators&quot; under POPIA) that help us run Mathly, and only to the extent needed for them to do so:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li><strong>Firebase / Google Cloud</strong> — hosts our account login system and database.</li>
             <li><strong>Paystack</strong> — processes your subscription and session payments; we never see or store your card details.</li>
@@ -117,7 +117,7 @@ export default function PrivacyPage() {
             recognise your browser and collect anonymised, aggregate visit statistics (such as page views
             and general location). This is separate from your Mathly account and is not linked to your
             name, email, or any account data. You can opt out of Google Analytics tracking generally using
-            a browser extension such as Google's own{' '}
+            a browser extension such as Google&apos;s own{' '}
             <a
               href="https://tools.google.com/dlpage/gaoptout"
               target="_blank"
@@ -160,7 +160,7 @@ export default function PrivacyPage() {
               mishandled your information (<span style={{ color: '#1e40af' }}>inforegulator.org.za</span>).</li>
           </ul>
           <p>
-            To exercise any of these rights, contact us using the details in Section 11 — we'll respond
+            To exercise any of these rights, contact us using the details in Section 11 — we&apos;ll respond
             within a reasonable time.
           </p>
         </Section>
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
 
         <Section heading="12. Changes to this policy">
           <p>
-            We may update this Privacy Policy as the service changes. We'll update the "Last updated"
+            We may update this Privacy Policy as the service changes. We&apos;ll update the &quot;Last updated&quot;
             date above whenever we do.
           </p>
         </Section>

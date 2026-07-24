@@ -32,7 +32,7 @@ export default function TermsPage() {
 
         <Section heading="1. Who we are">
           <p>
-            Mathly ("Mathly", "we", "us") is a South African online maths education service for Grade 4
+            Mathly (&quot;Mathly&quot;, &quot;we&quot;, &quot;us&quot;) is a South African online maths education service for Grade 4
             to Grade 12 learners, operated by an individual trading as Mathly. You can reach us at{' '}
             <a href="mailto:hello@mathly.co.za" style={{ color: '#1e40af', fontWeight: 600 }}>hello@mathly.co.za</a>.
           </p>
@@ -45,8 +45,8 @@ export default function TermsPage() {
         <Section heading="2. Eligibility and accounts">
           <p>
             You must be at least 18 years old to register a Mathly account. Accounts are created and
-            managed by a parent or guardian ("you", "the account holder") on behalf of one or more
-            children ("your child" / "your children"), for whom you add a name, grade, and language
+            managed by a parent or guardian (&quot;you&quot;, &quot;the account holder&quot;) on behalf of one or more
+            children (&quot;your child&quot; / &quot;your children&quot;), for whom you add a name, grade, and language
             preference. A single account supports up to 3 children.
           </p>
           <p>
@@ -72,9 +72,9 @@ export default function TermsPage() {
             processed securely by Paystack; Mathly does not see or store your card details.
           </p>
           <p>
-            Prices shown at checkout, including any limited-time "founding member" pricing, apply for
+            Prices shown at checkout, including any limited-time &quot;founding member&quot; pricing, apply for
             as long as your subscription remains active without a break. We may change our prices for
-            future billing periods; if we do, we'll give you reasonable notice before the change takes
+            future billing periods; if we do, we&apos;ll give you reasonable notice before the change takes
             effect on your account.
           </p>
         </Section>
@@ -146,13 +146,13 @@ export default function TermsPage() {
             your account, but credit is applied to your account manually by Mathly rather than
             automatically. Referral credit has no cash value, cannot be withdrawn or exchanged for
             money, and can only be used against future Mathly subscription charges. We may change the
-            referral programme's structure, rewards, or availability, or end it, at any time.
+            referral programme&apos;s structure, rewards, or availability, or end it, at any time.
           </p>
         </Section>
 
         <Section heading="10. AI maths assistant">
           <p>
-            Mathly's AI assistant is a study aid, not a qualified teacher, and the number of questions
+            Mathly&apos;s AI assistant is a study aid, not a qualified teacher, and the number of questions
             you can ask it each month depends on your plan. Like any AI system, it can occasionally give
             an incorrect, incomplete, or confusing answer — always check its explanations against your
             study guide or ask a teacher if something seems wrong. The AI assistant should not be relied
@@ -164,7 +164,7 @@ export default function TermsPage() {
           <p>You agree not to:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>share your account or login details outside your own household,</li>
-            <li>copy, scrape, redistribute, or resell Mathly's content or questions,</li>
+            <li>copy, scrape, redistribute, or resell Mathly&apos;s content or questions,</li>
             <li>attempt to bypass subscription limits, AI usage limits, or payment requirements, or</li>
             <li>use the service in a way that disrupts it for other students.</li>
           </ul>
@@ -174,7 +174,7 @@ export default function TermsPage() {
         <Section heading="12. Content and intellectual property">
           <p>
             All study guides, questions, explanations, diagrams, and other content on Mathly belong to
-            Mathly (or are licensed to us) and are provided for your and your children's personal,
+            Mathly (or are licensed to us) and are provided for your and your children&apos;s personal,
             non-commercial, educational use only. You may not republish, distribute, or sell this
             content.
           </p>
@@ -182,16 +182,16 @@ export default function TermsPage() {
 
         <Section heading="13. Educational disclaimer">
           <p>
-            Mathly's content is designed to align with the CAPS curriculum, but we cannot guarantee any
+            Mathly&apos;s content is designed to align with the CAPS curriculum, but we cannot guarantee any
             particular exam result, mark, or outcome. Mathly is a supplementary study resource and is
-            not a substitute for classroom teaching or a full educational assessment of a learner's
+            not a substitute for classroom teaching or a full educational assessment of a learner&apos;s
             needs.
           </p>
         </Section>
 
         <Section heading="14. Limitation of liability">
           <p>
-            Mathly is provided "as is." To the extent permitted by South African law, Mathly is not
+            Mathly is provided &quot;as is.&quot; To the extent permitted by South African law, Mathly is not
             liable for any indirect or consequential loss arising from your use of the service. Nothing
             in these Terms limits any right you have that cannot lawfully be excluded.
           </p>
@@ -199,8 +199,8 @@ export default function TermsPage() {
 
         <Section heading="15. Changes to these Terms">
           <p>
-            We may update these Terms from time to time as the service changes. We'll update the "Last
-            updated" date above when we do; continuing to use Mathly after a change means you accept the
+            We may update these Terms from time to time as the service changes. We&apos;ll update the &quot;Last
+            updated&quot; date above when we do; continuing to use Mathly after a change means you accept the
             updated Terms.
           </p>
         </Section>

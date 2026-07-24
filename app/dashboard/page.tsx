@@ -390,7 +390,6 @@ export default function DashboardPage() {
   if (!mounted || !userName || !user) return null
   if (userPackage === 'free') return <UpgradePrompt />
 
-  const isMax = userPackage === 'max'
   const pkgStyle = PACKAGE_STYLE[userPackage]
   const pkgLabel: Record<Package, string> = { free: t.dash_package_free, pro: t.dash_package_pro, max: t.dash_package_max }
 

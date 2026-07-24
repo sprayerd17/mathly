@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import NavAuth from './NavAuth'
@@ -83,7 +84,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo-icon.png" width={26} height={26} alt="" aria-hidden="true" />
+            <Image src="/logo-icon.png" width={26} height={26} alt="" aria-hidden="true" />
             <span style={{ color: '#0f1f3d', fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '1.35rem', fontWeight: 600, letterSpacing: '0.01em' }}>
               Mathly
             </span>

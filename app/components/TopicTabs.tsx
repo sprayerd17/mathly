@@ -90,7 +90,7 @@ function UpgradePanel() {
 
 // ─── Tab content: Study Guide ─────────────────────────────────────────────────
 
-function StudyGuide({ topicName }: { topicName: string }) {
+function StudyGuide() {
   const t = useTranslations()
   return (
     <div className="flex items-center justify-center py-24">
@@ -101,7 +101,7 @@ function StudyGuide({ topicName }: { topicName: string }) {
 
 // ─── Tab content: Practice ────────────────────────────────────────────────────
 
-function Practice({ topicName }: { topicName: string }) {
+function Practice() {
   const t = useTranslations()
   return (
     <div className="flex items-center justify-center py-24">
@@ -1314,11 +1314,12 @@ export default function TopicTabs({ topicName, topicSlug, grade, isLocked, study
   const { user, openModal } = useAuth()
   const t = useTranslations()
 
+  // Intentional hydration-safe mount flag: server and first client render must
+  // match, so client-only state (auth, locked content) is applied post-mount.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
   }, [])
-
-  const lang: Language = user ? getActiveChild(user).language : 'en'
 
   const TAB_LABELS: Record<Tab, string> = {
     'Study Guide': t.topic_tab_study_guide,
@@ -1393,12 +1394,12 @@ export default function TopicTabs({ topicName, topicSlug, grade, isLocked, study
       {activeTab === 'Study Guide' && (
         studyGuideData
           ? <RealStudyGuide data={studyGuideData} topicSlug={topicSlug} grade={Number(grade)} />
-          : <StudyGuide topicName={topicName} />
+          : <StudyGuide />
       )}
       {activeTab === 'Practice' && (
         studyGuideData
           ? <RealPractice data={studyGuideData} topicSlug={topicSlug} grade={Number(grade)} />
-          : <Practice topicName={topicName} />
+          : <Practice />
       )}
       {activeTab === 'Answers' && !studyGuideData && <Answers />}
 

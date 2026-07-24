@@ -53,6 +53,8 @@ export default function TopicPage({
   const language = (user ? getActiveChild(user).language : 'en') as 'en' | 'af'
 
   const [mounted, setMounted] = useState(false)
+  // Intentional hydration-safe mount flag — see isLocked below.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMounted(true) }, [])
 
   const topicMeta = getTopics(grade, language).find(tp => tp.slug === topic)
@@ -66,6 +68,10 @@ export default function TopicPage({
   const [studyGuideData, setStudyGuideData] = useState<TopicData | undefined>(undefined)
 
   useEffect(() => {
+    // Clear stale data from the previous grade/topic/language before the new
+    // fetch resolves, so a slow load never briefly shows the wrong topic's
+    // content.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStudyGuideData(undefined)
     resolveStudyGuideData(grade, topic, language).then(setStudyGuideData)
   }, [grade, topic, language])

@@ -77,7 +77,10 @@ export async function GET(req: NextRequest) {
         // reminders the moment a key finally gets added weeks late for a
         // session that already happened.
         await bookingDoc.ref.update({ [cfg.flag]: true })
-        if (ok) windowKey === '24h' ? sent24h++ : sent1h++
+        if (ok) {
+          if (windowKey === '24h') sent24h++
+          else sent1h++
+        }
       }
     }
   }

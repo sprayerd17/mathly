@@ -52,6 +52,9 @@ export default function GradePage() {
   const t = useTranslations()
   const [mounted, setMounted] = useState(false)
 
+  // Intentional hydration-safe mount flag — server and first client render
+  // must match, so client-only state (auth, active grade) applies post-mount.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMounted(true) }, [])
 
   const language = (user ? getActiveChild(user).language : 'en') as 'en' | 'af'

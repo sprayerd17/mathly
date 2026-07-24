@@ -8,11 +8,9 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // division step   → blue    (#2563eb)
 // base            → blue    (#2563eb)
 // exponent        → orange  (#ea580c)
-const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
-const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
   title: 'Desimale Breuke',

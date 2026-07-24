@@ -4,11 +4,9 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 // common factor / first square / numbers found → blue   (#2563eb)
 // remaining expression / factorised form       → green  (#16a34a)
 // second square / common factor in trinomials  → orange (#ea580c)
-// step labels / checks                         → red    (#dc2626)
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
-const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
   title: 'Factorising Algebraic Expressions',
