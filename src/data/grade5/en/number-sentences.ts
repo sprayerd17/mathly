@@ -129,7 +129,7 @@ export const topicData: TopicData = {
         // ── Q1 Easy — true or false ───────────────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'Write true or false for each number sentence:\n\na) 8 × 25 = 200\nb) 450 ÷ 9 > 60\nc) 6 × 35 = 7 × 30',
+          question: 'Write true or false for each number sentence:\n\na) 8 × 25 = 200\nb) 450 ÷ 9 > 60\nc) 9 × 48 = 6 × 72',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -144,9 +144,9 @@ export const topicData: TopicData = {
               explanation: 'Calculate: 450 ÷ 9 = 50.\nIs 50 > 60? No — 50 is less than 60.\nThe correct symbol is <, not >. The number sentence is false.',
             },
             {
-              label: 'c) 6 × 35 = 7 × 30',
+              label: 'c) 9 × 48 = 6 × 72',
               correctAnswer: 'true',
-              explanation: 'Left side: 6 × 35 = 210.\nRight side: 7 × 30 = 210.\nBoth sides equal 210, so the number sentence is true ✓',
+              explanation: 'Left side: 9 × 48 = 432.\nRight side: 6 × 72 = 432.\nBoth sides equal 432, so the number sentence is true ✓',
             },
           ],
         },
@@ -707,7 +707,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium-Hard', checkMode: 'auto', question: 'Use the distributive property to calculate 47 × 99. Show the friendly-number breakdown.', correctAnswer: '4653', correctAnswers: ['4653'], explanation: '47 × 99 = 47 × (100 − 1) = 47 × 100 − 47 × 1 = 4 700 − 47 = 4 653.', answer: '4 653' },
         { difficulty: 'Medium-Hard', checkMode: 'self', question: 'A learner wants to calculate 6 × 25 × 4 quickly. Which two numbers should be grouped first using the associative property, and why does this make the calculation easier? Give the final answer too.', answer: 'Group 25 and 4 first: 25 × 4 = 100, a friendly round number.\nThen (25 × 4) × 6 = 100 × 6 = 600.\nGrouping 25 and 4 first is easier because their product is a multiple of 100, which is simple to multiply by any other number. The final answer is 600.' },
         { difficulty: 'Hard', checkMode: 'self', question: 'A student claims: "In 15 × 22, since 15 < 18, then 15 × 22 must be less than 18 × 22 — and I don\'t even need to calculate anything." Evaluate whether this reasoning is valid, and if it is, explain why it works without a full calculation.', answer: 'The reasoning is actually valid here, but the student should still understand why. When multiplying two positive numbers by the same positive factor (22 in this case), the inequality between the other factors is preserved: since 15 < 18, it follows that 15 × 22 < 18 × 22. This works because multiplying both sides of an inequality by the same positive number does not change the direction of the inequality.\n\nHowever, this reasoning only works when comparing products that share a common factor multiplied by the same amount. It would NOT work for something like comparing 15 × 22 to 18 × 15, because the numbers being multiplied are different on each side — you would need to calculate both sides to be sure. In this specific case, checking: 15 × 22 = 330 and 18 × 22 = 396, and indeed 330 < 396, confirming the claim is correct — but only because the same factor (22) appears on both sides.' },
-        { difficulty: 'Hard', checkMode: 'self', question: 'A community hall charges the same hire fee for every event. In one month, 8 events were held and the hall earned R4 800 altogether. In a busier month, the hall hosted events and earned R6 000. Write a number sentence to find the fee per event, solve it, then use that fee (applying a property of operations to simplify the working) to find how many events were held in the busier month. Finally, explain why your answer is reasonable.', answer: 'Step 1 — Find the fee per event using the first month\'s data:\nNumber sentence: 8 × □ = 4 800\n□ = 4 800 ÷ 8 = 600\nThe fee per event is R600.\n\nStep 2 — Find the number of events in the busier month:\nNumber sentence: 600 × □ = 6 000\nUsing the distributive property to simplify: 600 × 10 = 6 000, so □ = 10.\nCheck by substitution: 600 × 10 = 6 000 ✓\n\nStep 3 — Reasonableness:\n10 events is more than the 8 events in the first month, which makes sense because the problem says this was a "busier month" and it earned more money (R6 000 compared to R4 800) at the same fee per event. The answer fits the context of the problem.' },
+        { difficulty: 'Hard', checkMode: 'self', question: 'A community hall charges the same hire fee for every event. In one month, 8 events were held and the hall earned R4 800 altogether. In a busier month, the hall hosted events and earned R6 000. Write a number sentence to find the fee per event, solve it, then use that fee (applying a property of operations to simplify the working) to find how many events were held in the busier month. Finally, explain why your answer is reasonable.', answer: 'Step 1 — Find the fee per event using the first month\'s data:\nNumber sentence: 8 × □ = 4 800\n□ = 4 800 ÷ 8 = 600\nThe fee per event is R600.\n\nStep 2 — Find the number of events in the busier month:\nNumber sentence: 600 × □ = 6 000\nThis is straightforward multiplication by 10: 600 × 10 = 6 000, so □ = 10.\nCheck by substitution: 600 × 10 = 6 000 ✓\n\nStep 3 — Reasonableness:\n10 events is more than the 8 events in the first month, which makes sense because the problem says this was a "busier month" and it earned more money (R6 000 compared to R4 800) at the same fee per event. The answer fits the context of the problem.' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Perfect score! You have mastered true/false number sentences, symbols, missing values, word problems and properties of operations.' },

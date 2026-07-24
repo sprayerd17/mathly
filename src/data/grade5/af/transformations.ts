@@ -1,7 +1,5 @@
 import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 
-// [IMAGE: A 6x6 grid showing shape A — a small rectangle with corners at (1,1), (2,1), (2,2), (1,2). Shape B is the same rectangle translated to (4,3), (5,3), (5,4), (4,4). Shape C is shape A reflected over a vertical mirror line at x=4 giving corners at (6,1), (7,1), (7,2), (6,2).]
-
 // ─── Colour helpers (transformation roles) ────────────────────────────────────
 // object      → red     (#dc2626)
 // translation → blue    (#2563eb)
@@ -197,8 +195,8 @@ export const topicData: TopicData = {
         // ── Q4 Medium — describe translation from grid ────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Beskryf, deur die rooster hierbo te gebruik, die translasie van Vorm A na Vorm B.',
-          answer: 'Vorm A beweeg 3 stappe regs en 2 stappe op om Vorm B te word.',
+          question: 'Beskryf, deur die rooster hierbo te gebruik, die translasie van Begin na Einde.',
+          answer: 'Begin beweeg 4 stappe regs en 2 stappe op om Einde te word.',
           checkMode: 'self',
         },
 

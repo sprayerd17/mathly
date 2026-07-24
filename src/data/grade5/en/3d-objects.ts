@@ -48,7 +48,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Vertex</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">A corner where edges meet. More than one vertex are called vertices.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A corner where edges meet. The plural of vertex is vertices.</p>` +
         `</div>` +
 
         `</div>` +
@@ -623,7 +623,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'A chocolate box has two triangular ends and three rectangular sides. What 3D object is it?', answer: 'triangular prism', checkMode: 'auto', correctAnswer: 'triangularprism', correctAnswers: ['triangularprism', 'a triangular prism'], explanation: 'A triangular prism has 2 identical triangular faces at each end and 3 rectangular faces joining them.' },
         { difficulty: 'Easy', question: 'The Egyptian pyramids have a square base and four triangular sides that meet at a point. Name this 3D object.', answer: 'square pyramid', checkMode: 'auto', correctAnswer: 'squarepyramid', correctAnswers: ['squarepyramid', 'a square pyramid'], explanation: 'A square pyramid has a square base and 4 triangular faces that meet at the apex, just like the Egyptian pyramids.' },
         { difficulty: 'Easy', question: 'A soccer ball is perfectly round with no flat faces at all. Name this 3D object.', answer: 'sphere', checkMode: 'auto', correctAnswer: 'sphere', correctAnswers: ['sphere', 'a sphere'], explanation: 'A sphere is perfectly round with only 1 curved surface and no flat faces, edges or vertices.' },
-        { difficulty: 'Easy', question: 'A tetrahedron toy has 4 triangular faces, including its base. Name this 3D object.', answer: 'triangular pyramid', checkMode: 'auto', correctAnswer: 'triangularpyramid', correctAnswers: ['triangularpyramid', 'a triangular pyramid', 'tetrahedron', 'a tetrahedron'], explanation: 'A triangular pyramid (also called a tetrahedron) has a triangular base and 3 triangular side faces that meet at the apex.' },
+        { difficulty: 'Easy', question: 'A toy has 4 triangular faces, including its base. Name this 3D object.', answer: 'triangular pyramid', checkMode: 'auto', correctAnswer: 'triangularpyramid', correctAnswers: ['triangularpyramid', 'a triangular pyramid', 'tetrahedron', 'a tetrahedron'], explanation: 'A triangular pyramid (also called a tetrahedron) has a triangular base and 3 triangular side faces that meet at the apex.' },
         { difficulty: 'Easy', question: 'How many vertices does a cube have?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'A cube has 8 vertices — 4 on the top face and 4 on the bottom face.' },
         { difficulty: 'Easy-Medium', question: 'How many faces does a rectangular prism have?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'A rectangular prism has 6 rectangular faces — top, bottom, front, back, left and right.' },
         { difficulty: 'Medium', question: 'A cube has how many faces, edges and vertices?', answer: '', checkMode: 'auto', parts: [

@@ -455,8 +455,8 @@ export const topicData: TopicData = {
         // ── Q10 Hard — drawing pictograph with remainder (self) ──────────────
         {
           difficulty: 'Hard',
-          question: 'Thabo wants to show 22 learners in a pictograph where each symbol = 5 learners. How many symbols should he draw and will there be a half symbol?',
-          answer: '22 divided by 5 = 4 remainder 2. He draws 4 full symbols and a half symbol since 2 is close to half of 5. He shows 4 and a half symbols.',
+          question: 'Thabo wants to show 22 learners in a pictograph where each symbol = 4 learners. How many symbols should he draw and will there be a half symbol?',
+          answer: '22 divided by 4 = 5 remainder 2. Since 2 is exactly half of the key value (4 ÷ 2 = 2), he draws 5 full symbols and a half symbol. 5 full symbols (5 × 4 = 20) plus a half symbol (2) = 22 learners.',
           checkMode: 'self',
         },
       ],

@@ -231,7 +231,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Themba teken ʼn yskaste-temperatuur aan as "5" sonder ʼn eenheid. Verduidelik waarom dit ʼn onvolledige aantekening is.',
+          question: 'Themba teken ʼn yskastemperatuur aan as "5" sonder ʼn eenheid. Verduidelik waarom dit ʼn onvolledige aantekening is.',
           answer: 'ʼn Getal op sy eie sê nie vir ons wat gemeet is nie. Sonder die °C-simbool kan "5" enigiets beteken. Dit moet as 5°C aangeteken word sodat enigiemand wat dit lees, weet dit is ʼn temperatuur gemeet in grade Celsius.',
           checkMode: 'self',
           explanation: 'ʼn Volledige aantekening sluit altyd die eenheidsimbool, °C, in sodat die meting duidelik is vir enigiemand wat dit lees.',
@@ -589,7 +589,7 @@ export const topicData: TopicData = {
         // Blok 4 — Verskille bereken (13-16, Matig-Moeilik)
         { difficulty: 'Medium-Hard', question: 'Vind die verskil tussen 21°C en 38°C.', answer: '17°C', checkMode: 'auto', correctAnswer: '17', correctAnswers: ['17', '17°C', '17 °C'], explanation: '38 − 21 = 17°C ✓' },
         { difficulty: 'Medium-Hard', question: 'ʼn Kusdorp teken ʼn maksimum van 26°C en ʼn minimum van 20°C op dieselfde dag aan. Vind die temperatuurwydte vir die dag.', answer: '6°C', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', '6°C', '6 °C'], explanation: '26 − 20 = 6°C ✓' },
-        { difficulty: 'Medium-Hard', question: 'Die temperatuur om 8 vm. was 14°C. Teen middagete het dit met 11°C gestyg. Wat was die temperatuur teen middagete?', answer: '25°C', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25°C', '25 °C'], explanation: 'ʼn Styging beteken optel: 14°C + 11°C = 25°C ✓' },
+        { difficulty: 'Medium-Hard', question: 'Die temperatuur om 8 vm. was 14°C. Teen middag het dit met 11°C gestyg. Wat was die temperatuur teen middag?', answer: '25°C', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25°C', '25 °C'], explanation: 'ʼn Styging beteken optel: 14°C + 11°C = 25°C ✓' },
         { difficulty: 'Medium-Hard', question: 'ʼn Wetenskapklaskamer koel ʼn bekervol water af van 35°C na 22°C vir ʼn eksperiment. Met hoeveel grade het die temperatuur gedaal?', answer: '13°C', checkMode: 'auto', correctAnswer: '13', correctAnswers: ['13', '13°C', '13 °C'], explanation: '35 − 22 = 13°C ✓' },
 
         // Blok 5 — Multi-stap redenering en werklike-lewe-toepassings (17-19, Moeilik)

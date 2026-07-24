@@ -35,7 +35,7 @@ export const topicData: TopicData = {
       title: 'Begrip van Desimale Breuke',
       icon: '.',
       explanation:
-        `<p style="margin-bottom:16px;">ʼn <strong>Desimale breuk</strong> is ʼn manier om ʼn getal te skryf wat ʼn deel kleiner as een geheel insluit. Die <strong>desimale komma</strong> skei die heelgetaldeel (aan die linkerkant) van die breukdeel (aan die regterkant). Desimale breuke is bloot ʼn ander manier om gewone breuke te skryf waarvan die noemers 10, 100 of 1 000 is — hulle beteken almal dieselfde hoeveelheid.</p>` +
+        `<p style="margin-bottom:16px;">ʼn <strong>Desimale breuk</strong> is ʼn manier om ʼn getal te skryf wat ʼn deel kleiner as een geheel insluit. Die <strong>desimale komma</strong> skei die heelgetaldeel (aan die linkerkant) van die breukdeel (aan die regterkant). Desimale breuke is bloot ʼn ander manier om gewone breuke te skryf waarvan die noemers 10 of 100 is — hulle beteken almal dieselfde hoeveelheid.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -223,7 +223,7 @@ export const topicData: TopicData = {
             },
             {
               label: 'c) Wat is die waarde van die syfer 7 in die desimale breuk 3,07?',
-              correctAnswer: '7 hundredths',
+              correctAnswer: '7 honderdstes',
               correctAnswers: ['7 hundredths', '7 honderdstes', '7/100', '0.07', '0,07'],
               explanation: 'In 3,07:\n• 3 is in die ene-plek\n• 0 is in die tiendes-plek (plekhouer)\n• 7 is in die honderdstes-plek\nWaarde van 7 = 7 honderdstes = 7/100 = 0,07 ✓',
             },
@@ -861,7 +861,7 @@ export const topicData: TopicData = {
           question: 'Skakel 1/5 om na ʼn desimaal en ʼn persentasie.',
           answer: '0,2 en 20%',
           checkMode: 'auto',
-          correctAnswer: '0,2 and 20%',
+          correctAnswer: '0,2 en 20%',
           correctAnswers: ['0.2 and 20%', '0.2, 20%', '0.20 and 20%', '0,2 en 20%', '0,2, 20%', '0,20 en 20%'],
           explanation: 'Stap 1: Breuk na desimaal — skakel 1/5 om na ʼn ekwivalente breuk met noemer 10 deur teller en noemer met 2 te vermenigvuldig: 1/5 = 2/10 = 0,2\nStap 2: Desimaal na persentasie — 0,2 × 100 = 20%\nAntwoord: 1/5 = 0,2 = 20% ✓',
         },
@@ -875,19 +875,19 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Skryf 0,6 as ʼn breuk en as ʼn persentasie.',
-              correctAnswer: '6/10 and 60%',
+              correctAnswer: '6/10 en 60%',
               correctAnswers: ['6/10 and 60%', '3/5 and 60%', '6/10, 60%', '3/5, 60%', '6/10 en 60%', '3/5 en 60%'],
               explanation: 'Desimaal na breuk: 0,6 het een desimale plek (tiendes), dus 0,6 = 6/10.\nDesimaal na persentasie: 0,6 × 100 = 60%.\nAntwoord: 0,6 = 6/10 = 60% ✓',
             },
             {
               label: 'b) Skryf 25% as ʼn desimaal en as ʼn breuk in eenvoudigste vorm.',
-              correctAnswer: '0,25 and 1/4',
+              correctAnswer: '0,25 en 1/4',
               correctAnswers: ['0.25 and 1/4', '0.25, 1/4', '0,25 en 1/4', '0,25, 1/4'],
               explanation: 'Persentasie na desimaal: 25 ÷ 100 = 0,25.\nDesimaal na breuk: 0,25 = 25/100. Vereenvoudig deur deur 25 te deel: 25/100 = 1/4.\nAntwoord: 25% = 0,25 = 1/4 ✓',
             },
             {
               label: 'c) Skryf 3/4 as ʼn desimaal en as ʼn persentasie.',
-              correctAnswer: '0,75 and 75%',
+              correctAnswer: '0,75 en 75%',
               correctAnswers: ['0.75 and 75%', '0.75, 75%', '0,75 en 75%', '0,75, 75%'],
               explanation: 'Breuk na desimaal: vermenigvuldig teller en noemer met 25 om noemer 100 te kry: 3/4 = 75/100 = 0,75.\nDesimaal na persentasie: 0,75 × 100 = 75%.\nAntwoord: 3/4 = 0,75 = 75% ✓',
             },
@@ -920,7 +920,7 @@ export const topicData: TopicData = {
             },
             {
               label: 'd) Wie het hoër behaal en met hoeveel persentasiepunte?',
-              correctAnswer: 'Thabo by 5',
+              correctAnswer: 'Thabo met 5',
               correctAnswers: ['Thabo by 5', 'Thabo by 5%', 'Thabo, 5 percentage points', 'Thabo', 'Thabo met 5', 'Thabo met 5%', 'Thabo, 5 persentasiepunte'],
               explanation: 'Sipho het 80% behaal en Thabo het 85% behaal.\n85% > 80%, dus het Thabo hoër behaal.\nVerskil: 85% − 80% = 5 persentasiepunte ✓',
             },
@@ -985,19 +985,19 @@ export const topicData: TopicData = {
       parts: [
         {
           label: 'a) 3,45',
-          correctAnswer: '4 tenths',
+          correctAnswer: '4 tiendes',
           correctAnswers: ['4 tenths', '4 tiendes', '0.4', '0,4', '4/10'],
           explanation: 'In 3,45: die syfer 4 is in die tiendes-posisie (eerste plek na die desimale komma). Waarde = 4 tiendes = 0,4 ✓',
         },
         {
           label: 'b) 0,04',
-          correctAnswer: '4 hundredths',
+          correctAnswer: '4 honderdstes',
           correctAnswers: ['4 hundredths', '4 honderdstes', '0.04', '0,04', '4/100'],
           explanation: 'In 0,04: die syfer 4 is in die honderdstes-posisie (tweede plek na die desimale komma). Waarde = 4 honderdstes = 0,04 ✓',
         },
         {
           label: 'c) 14,2',
-          correctAnswer: '4 units',
+          correctAnswer: '4 ene',
           correctAnswers: ['4 units', '4', '4 ones', '4 ene'],
           explanation: 'In 14,2: die syfer 4 is in die ene-posisie (aan die linkerkant van die desimale komma). Waarde = 4 ene = 4 ✓',
         },
@@ -1170,7 +1170,7 @@ export const topicData: TopicData = {
     {
       name: 'Stel 1',
       questions: [
-        { difficulty: 'Easy', question: 'Wat is die waarde van die syfer 6 in die desimale breuk 4,68?', answer: '6 tiendes', checkMode: 'auto', correctAnswer: '6 tenths', correctAnswers: ['6 tenths', '6 tiendes', '6/10', '0.6', '0,6'], explanation: 'In 4,68 is die syfer 6 die eerste syfer na die desimale komma, dus is dit in die tiendes-posisie. Waarde = 6 tiendes = 6/10 = 0,6 ✓' },
+        { difficulty: 'Easy', question: 'Wat is die waarde van die syfer 6 in die desimale breuk 4,68?', answer: '6 tiendes', checkMode: 'auto', correctAnswer: '6 tiendes', correctAnswers: ['6 tenths', '6 tiendes', '6/10', '0.6', '0,6'], explanation: 'In 4,68 is die syfer 6 die eerste syfer na die desimale komma, dus is dit in die tiendes-posisie. Waarde = 6 tiendes = 6/10 = 0,6 ✓' },
         { difficulty: 'Easy', question: 'Skryf elke gewone breuk as ʼn desimale breuk.', answer: 'a) 0,3\nb) 0,29', checkMode: 'auto', parts: [
           { label: 'a) 3/10', correctAnswer: '0,3', correctAnswers: ['0.3', '0.30', '0,3', '0,30'], explanation: '3/10 beteken 3 tiendes. Tiendes benodig 1 desimale plek. Skryf 0 in die ene-plek en 3 in die tiendes-plek: 0,3 ✓' },
           { label: 'b) 29/100', correctAnswer: '0,29', correctAnswers: ['0.29', '0,29'], explanation: '29/100 beteken 29 honderdstes. Honderdstes benodig 2 desimale plekke: 2 tiendes en 9 honderdstes → 0,29 ✓' },
@@ -1179,7 +1179,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy-Medium', question: 'Skryf "twee komma sewe honderdstes" as ʼn desimale breuk.', answer: '2,07', checkMode: 'auto', correctAnswer: '2,07', correctAnswers: ['2.07', '2,07'], explanation: 'Die heelgetaldeel is 2. "Sewe honderdstes" benodig 2 desimale plekke, maar daar is geen tiendes nie, dus word ʼn 0-plekhouer in die tiendes-posisie benodig: 2,07 ✓' },
         { difficulty: 'Easy-Medium', question: 'Skryf 0,9 as ʼn gewone breuk in eenvoudigste vorm.', answer: '9/10', checkMode: 'auto', correctAnswer: '9/10', explanation: '0,9 beteken 9 tiendes = 9/10. Hierdie breuk is reeds in eenvoudigste vorm aangesien 9 en 10 geen gemeenskaplike faktor buiten 1 deel nie ✓' },
         { difficulty: 'Medium', question: 'ʼn Liniaal wys ʼn lengte van "ses komma agt honderdstes sentimeter". Skryf hierdie lengte as ʼn desimale breuk, en verduidelik dan waarom ʼn plekhouer-nul nodig is.', answer: '6,08 cm — ʼn nul-plekhouer is nodig in die tiendes-posisie omdat daar geen tiendes is nie, slegs honderdstes', checkMode: 'auto', correctAnswer: '6,08', correctAnswers: ['6.08', '6.08 cm', '6,08', '6,08 cm'], explanation: 'Heelgetaldeel = 6. "Agt honderdstes" benodig 2 desimale plekke. Aangesien daar geen tiendes is nie, moet ons ʼn 0 in die tiendes-posisie skryf sodat die 8 korrek in die honderdstes-kolom land: 6,08 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Leerder skryf 3 5/100 as 3,5. Is dit korrek? Skryf ja of nee.', answer: 'Nee', checkMode: 'auto', correctAnswer: 'No', correctAnswers: ['No', 'no', 'Nee', 'nee'], explanation: 'Nee — 3,5 beteken 3 komma 5 tiendes, nie 3 komma 5 honderdstes nie. 5/100 benodig 2 desimale plekke met ʼn plekhouer-nul in die tiendes-posisie: die korrekte desimaal is 3,05.' },
+        { difficulty: 'Medium', question: 'ʼn Leerder skryf 3 5/100 as 3,5. Is dit korrek? Skryf ja of nee.', answer: 'Nee', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['No', 'no', 'Nee', 'nee'], explanation: 'Nee — 3,5 beteken 3 komma 5 tiendes, nie 3 komma 5 honderdstes nie. 5/100 benodig 2 desimale plekke met ʼn plekhouer-nul in die tiendes-posisie: die korrekte desimaal is 3,05.' },
         { difficulty: 'Easy', question: 'Watter is groter: 0,8 of 0,62?', answer: '0,8', checkMode: 'auto', correctAnswer: '0,8', correctAnswers: ['0.8', '0,8'], explanation: 'Skryf met 2 desimale plekke: 0,80 en 0,62. Vergelyk ene: albei 0. Vergelyk tiendes: 8 vs 6. Aangesien 8 > 6, is 0,8 > 0,62 ✓' },
         { difficulty: 'Easy-Medium', question: 'Skryf > , < of = vir: 2,5 __ 2,50', answer: '=', checkMode: 'auto', correctAnswer: '=', explanation: 'ʼn Slot-nul verander nie die waarde nie. 2,5 en 2,50 beteken albei 2 ene en 5 tiendes, dus is hulle gelyk: 2,5 = 2,50 ✓' },
         { difficulty: 'Medium', question: 'Orden van kleinste na grootste: 0,6, 0,16, 0,61, 0,1', answer: '0,1, 0,16, 0,6, 0,61', checkMode: 'auto', correctAnswer: '0,1, 0,16, 0,6, 0,61', correctAnswers: ['0.1, 0.16, 0.6, 0.61', '0.10, 0.16, 0.60, 0.61', '0,1, 0,16, 0,6, 0,61', '0,10, 0,16, 0,60, 0,61'], explanation: 'Skryf met 2 desimale plekke: 0,60, 0,16, 0,61, 0,10. Vergelyk eers tiendes: 0,10 en 0,16 het 1 tiende (kleinste groep); 0,60 en 0,61 het 6 tiendes (groter groep). Binne elke groep vergelyk honderdstes: 0,10 < 0,16 en 0,60 < 0,61. Volgorde: 0,1, 0,16, 0,6, 0,61 ✓' },
@@ -1208,7 +1208,7 @@ export const topicData: TopicData = {
     {
       name: 'Stel 2',
       questions: [
-        { difficulty: 'Easy', question: 'Wat is die waarde van die syfer 3 in die desimale breuk 7,53?', answer: '3 honderdstes', checkMode: 'auto', correctAnswer: '3 hundredths', correctAnswers: ['3 hundredths', '3 honderdstes', '3/100', '0.03', '0,03'], explanation: 'In 7,53 is die syfer 3 die tweede syfer na die desimale komma, dus is dit in die honderdstes-posisie. Waarde = 3 honderdstes = 3/100 = 0,03 ✓' },
+        { difficulty: 'Easy', question: 'Wat is die waarde van die syfer 3 in die desimale breuk 7,53?', answer: '3 honderdstes', checkMode: 'auto', correctAnswer: '3 honderdstes', correctAnswers: ['3 hundredths', '3 honderdstes', '3/100', '0.03', '0,03'], explanation: 'In 7,53 is die syfer 3 die tweede syfer na die desimale komma, dus is dit in die honderdstes-posisie. Waarde = 3 honderdstes = 3/100 = 0,03 ✓' },
         { difficulty: 'Easy', question: 'Skryf elke gewone breuk as ʼn desimale breuk.', answer: 'a) 0,7\nb) 0,84', checkMode: 'auto', parts: [
           { label: 'a) 7/10', correctAnswer: '0,7', correctAnswers: ['0.7', '0.70', '0,7', '0,70'], explanation: '7/10 beteken 7 tiendes. Tiendes benodig 1 desimale plek. Skryf 0 in die ene-plek en 7 in die tiendes-plek: 0,7 ✓' },
           { label: 'b) 84/100', correctAnswer: '0,84', correctAnswers: ['0.84', '0,84'], explanation: '84/100 beteken 84 honderdstes. Honderdstes benodig 2 desimale plekke: 8 tiendes en 4 honderdstes → 0,84 ✓' },
@@ -1217,10 +1217,10 @@ export const topicData: TopicData = {
         { difficulty: 'Easy-Medium', question: 'Skryf "vier komma een honderdste" as ʼn desimale breuk.', answer: '4,01', checkMode: 'auto', correctAnswer: '4,01', correctAnswers: ['4.01', '4,01'], explanation: 'Die heelgetaldeel is 4. "Een honderdste" benodig 2 desimale plekke, maar daar is geen tiendes nie, dus word ʼn 0-plekhouer in die tiendes-posisie benodig: 4,01 ✓' },
         { difficulty: 'Easy-Medium', question: 'Skryf 0,4 as ʼn gewone breuk in eenvoudigste vorm.', answer: '2/5', checkMode: 'auto', correctAnswer: '2/5', correctAnswers: ['2/5', '4/10'], explanation: '0,4 beteken 4 tiendes = 4/10. Vereenvoudig deur teller en noemer met 2 te deel: 4/10 = 2/5 ✓' },
         { difficulty: 'Medium', question: 'ʼn Resep benodig "een komma ses honderdstes liter" olie. Skryf hierdie hoeveelheid as ʼn desimale breuk, en verduidelik dan waarom ʼn plekhouer-nul nodig is.', answer: '1,06 L — ʼn nul-plekhouer is nodig in die tiendes-posisie omdat daar geen tiendes is nie, slegs honderdstes', checkMode: 'auto', correctAnswer: '1,06', correctAnswers: ['1.06', '1.06 L', '1,06', '1,06 L'], explanation: 'Heelgetaldeel = 1. "Ses honderdstes" benodig 2 desimale plekke. Aangesien daar geen tiendes is nie, moet ons ʼn 0 in die tiendes-posisie skryf sodat die 6 korrek in die honderdstes-kolom land: 1,06 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Leerder skryf 2 3/100 as 2,3. Is dit korrek? Skryf ja of nee.', answer: 'Nee', checkMode: 'auto', correctAnswer: 'No', correctAnswers: ['No', 'no', 'Nee', 'nee'], explanation: 'Nee — 2,3 beteken 2 komma 3 tiendes, nie 2 komma 3 honderdstes nie. 3/100 benodig 2 desimale plekke met ʼn plekhouer-nul in die tiendes-posisie: die korrekte desimaal is 2,03.' },
+        { difficulty: 'Medium', question: 'ʼn Leerder skryf 2 3/100 as 2,3. Is dit korrek? Skryf ja of nee.', answer: 'Nee', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['No', 'no', 'Nee', 'nee'], explanation: 'Nee — 2,3 beteken 2 komma 3 tiendes, nie 2 komma 3 honderdstes nie. 3/100 benodig 2 desimale plekke met ʼn plekhouer-nul in die tiendes-posisie: die korrekte desimaal is 2,03.' },
         { difficulty: 'Easy', question: 'Watter is kleiner: 0,45 of 0,5?', answer: '0,45', checkMode: 'auto', correctAnswer: '0,45', correctAnswers: ['0.45', '0,45'], explanation: 'Skryf met 2 desimale plekke: 0,45 en 0,50. Vergelyk ene: albei 0. Vergelyk tiendes: 4 vs 5. Aangesien 4 < 5, is 0,45 < 0,5 ✓' },
         { difficulty: 'Easy-Medium', question: 'Skryf > , < of = vir: 6,80 __ 6,8', answer: '=', checkMode: 'auto', correctAnswer: '=', explanation: 'ʼn Slot-nul verander nie die waarde nie. 6,80 en 6,8 beteken albei 6 ene en 8 tiendes, dus is hulle gelyk: 6,80 = 6,8 ✓' },
-        { difficulty: 'Medium', question: 'Orden van grootste na kleinste: 0,3, 0,03, 0,33, 0,3', answer: '0,33, 0,3, 0,3, 0,03', checkMode: 'auto', correctAnswer: '0,33, 0,3, 0,3, 0,03', correctAnswers: ['0.33, 0.3, 0.3, 0.03', '0.33, 0.30, 0.30, 0.03', '0,33, 0,3, 0,3, 0,03', '0,33, 0,30, 0,30, 0,03'], explanation: 'Skryf met 2 desimale plekke: 0,30, 0,03, 0,33, 0,30. Vergelyk tiendes: 0,03 het 0 tiendes (kleinste); die res het 3 tiendes. Binne die 3-tiendes-groep, vergelyk honderdstes: 0,33 het 3 honderdstes (grootste); die twee 0,30-waardes is gelyk. Volgorde van grootste na kleinste: 0,33, 0,3, 0,3, 0,03 ✓' },
+        { difficulty: 'Medium', question: 'Orden van grootste na kleinste: 0,3, 0,03, 0,33, 0,31', answer: '0,33, 0,31, 0,3, 0,03', checkMode: 'auto', correctAnswer: '0,33, 0,31, 0,3, 0,03', correctAnswers: ['0.33, 0.31, 0.3, 0.03', '0.33, 0.31, 0.30, 0.03', '0,33, 0,31, 0,3, 0,03', '0,33, 0,31, 0,30, 0,03'], explanation: 'Skryf met 2 desimale plekke: 0,30, 0,03, 0,33, 0,31. Vergelyk tiendes: 0,03 het 0 tiendes (kleinste); die res het 3 tiendes. Binne die 3-tiendes-groep, vergelyk honderdstes: 0,33 het 3 honderdstes (grootste), 0,31 het 1 honderdste, 0,30 het 0 honderdstes (kleinste van daardie groep). Volgorde van grootste na kleinste: 0,33, 0,31, 0,3, 0,03 ✓' },
         { difficulty: 'Medium', question: 'ʼn Leerder sê 0,8 < 0,75 omdat "0,75 meer syfers het, dus moet dit ʼn groter, meer presiese getal wees." Is dit korrek? Verduidelik jou antwoord.', answer: 'Nee, 0,8 > 0,75. Die aantal desimale syfers het niks met grootte te doen nie. Vergelyk plek vir plek: tiendes-syfer van 0,8 is 8, tiendes-syfer van 0,75 is 7. Aangesien 8 > 7, is 0,8 die groter getal.', checkMode: 'self' },
         { difficulty: 'Medium', question: 'Bereken 0,6 + 0,7.', answer: '1,3', checkMode: 'auto', correctAnswer: '1,3', correctAnswers: ['1.3', '1,3'], explanation: 'Lyn desimale kommas op. Tiendes: 6 + 7 = 13. Skryf 3, dra 1 oor na die ene-kolom. Ene: 0 + 0 + 1 = 1. Antwoord: 1,3 ✓' },
         { difficulty: 'Medium', question: 'ʼn Boer oes 4,57 kg tamaties in die oggend en 3,68 kg in die middag. Wat is die totale massa geoes?', answer: '8,25 kg', checkMode: 'auto', correctAnswer: '8,25', correctAnswers: ['8.25', '8.25 kg', '8,25', '8,25 kg'], explanation: 'Honderdstes: 7 + 8 = 15. Skryf 5, dra 1 oor. Tiendes: 5 + 6 + 1 = 12. Skryf 2, dra 1 oor. Ene: 4 + 3 + 1 = 8. Antwoord: 8,25 kg ✓' },
@@ -1246,7 +1246,7 @@ export const topicData: TopicData = {
     {
       name: 'Stel 3',
       questions: [
-        { difficulty: 'Easy', question: 'ʼn Krieket-telbord wys die getal 9,14. Wat is die waarde van die syfer 1?', answer: '1 tiende', checkMode: 'auto', correctAnswer: '1 tenth', correctAnswers: ['1 tenth', '1 tiende', '1/10', '0.1', '0,1'], explanation: 'In 9,14 is die syfer 1 die eerste syfer na die desimale komma, dus is dit in die tiendes-posisie. Waarde = 1 tiende = 1/10 = 0,1 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Krieket-telbord wys die getal 9,14. Wat is die waarde van die syfer 1?', answer: '1 tiende', checkMode: 'auto', correctAnswer: '1 tiende', correctAnswers: ['1 tenth', '1 tiende', '1/10', '0.1', '0,1'], explanation: 'In 9,14 is die syfer 1 die eerste syfer na die desimale komma, dus is dit in die tiendes-posisie. Waarde = 1 tiende = 1/10 = 0,1 ✓' },
         { difficulty: 'Easy', question: 'Skryf elke gewone breuk as ʼn desimale breuk.', answer: 'a) 0,1\nb) 0,63', checkMode: 'auto', parts: [
           { label: 'a) 1/10', correctAnswer: '0,1', correctAnswers: ['0.1', '0.10', '0,1', '0,10'], explanation: '1/10 beteken 1 tiende. Tiendes benodig 1 desimale plek. Skryf 0 in die ene-plek en 1 in die tiendes-plek: 0,1 ✓' },
           { label: 'b) 63/100', correctAnswer: '0,63', correctAnswers: ['0.63', '0,63'], explanation: '63/100 beteken 63 honderdstes. Honderdstes benodig 2 desimale plekke: 6 tiendes en 3 honderdstes → 0,63 ✓' },
@@ -1255,7 +1255,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy-Medium', question: 'Skryf "agt komma drie honderdstes" as ʼn desimale breuk.', answer: '8,03', checkMode: 'auto', correctAnswer: '8,03', correctAnswers: ['8.03', '8,03'], explanation: 'Die heelgetaldeel is 8. "Drie honderdstes" benodig 2 desimale plekke, maar daar is geen tiendes nie, dus word ʼn 0-plekhouer in die tiendes-posisie benodig: 8,03 ✓' },
         { difficulty: 'Easy-Medium', question: 'Skryf 0,25 as ʼn gewone breuk in eenvoudigste vorm.', answer: '1/4', checkMode: 'auto', correctAnswer: '1/4', correctAnswers: ['1/4', '25/100'], explanation: '0,25 beteken 25 honderdstes = 25/100. Vereenvoudig deur teller en noemer met 25 te deel: 25/100 = 1/4 ✓' },
         { difficulty: 'Medium', question: 'ʼn Tydhorlosie wys "twaalf komma vier honderdstes sekondes". Skryf dit as ʼn desimale breuk, en verduidelik dan waarom ʼn plekhouer-nul nodig is.', answer: '12,04 s — ʼn nul-plekhouer is nodig in die tiendes-posisie omdat daar geen tiendes is nie, slegs honderdstes', checkMode: 'auto', correctAnswer: '12,04', correctAnswers: ['12.04', '12.04 s', '12,04', '12,04 s'], explanation: 'Heelgetaldeel = 12. "Vier honderdstes" benodig 2 desimale plekke. Aangesien daar geen tiendes is nie, moet ons ʼn 0 in die tiendes-posisie skryf sodat die 4 korrek in die honderdstes-kolom land: 12,04 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Leerder skryf 5 7/100 as 5,7. Is dit korrek? Skryf ja of nee.', answer: 'Nee', checkMode: 'auto', correctAnswer: 'No', correctAnswers: ['No', 'no', 'Nee', 'nee'], explanation: 'Nee — 5,7 beteken 5 komma 7 tiendes, nie 5 komma 7 honderdstes nie. 7/100 benodig 2 desimale plekke met ʼn plekhouer-nul in die tiendes-posisie: die korrekte desimaal is 5,07.' },
+        { difficulty: 'Medium', question: 'ʼn Leerder skryf 5 7/100 as 5,7. Is dit korrek? Skryf ja of nee.', answer: 'Nee', checkMode: 'auto', correctAnswer: 'Nee', correctAnswers: ['No', 'no', 'Nee', 'nee'], explanation: 'Nee — 5,7 beteken 5 komma 7 tiendes, nie 5 komma 7 honderdstes nie. 7/100 benodig 2 desimale plekke met ʼn plekhouer-nul in die tiendes-posisie: die korrekte desimaal is 5,07.' },
         { difficulty: 'Easy', question: 'ʼn Winkelier vergelyk twee pryse: R0,75 en R0,7. Watter is duurder?', answer: 'R0,75', checkMode: 'auto', correctAnswer: 'R0,75', correctAnswers: ['R0.75', '0.75', 'R0,75', '0,75'], explanation: 'Skryf met 2 desimale plekke: 0,75 en 0,70. Vergelyk ene: albei 0. Vergelyk tiendes: 7 vs 7, gelyk. Vergelyk honderdstes: 5 vs 0. Aangesien 5 > 0, is R0,75 > R0,70 ✓' },
         { difficulty: 'Easy-Medium', question: 'Skryf > , < of = vir: 0,09 __ 0,9', answer: '<', checkMode: 'auto', correctAnswer: '<', explanation: 'Skryf met 2 desimale plekke: 0,09 en 0,90. Vergelyk tiendes: 0 vs 9. Aangesien 0 < 9, is 0,09 < 0,9 ✓' },
         { difficulty: 'Medium', question: 'Vier atlete se spronglengtes word aangeteken as: 2,15 m, 2,5 m, 2,05 m, 2,51 m. Orden hierdie afstande van kleinste na grootste.', answer: '2,05 m, 2,15 m, 2,5 m, 2,51 m', checkMode: 'auto', correctAnswer: '2,05, 2,15, 2,5, 2,51', correctAnswers: ['2.05, 2.15, 2.5, 2.51', '2.05, 2.15, 2.50, 2.51', '2,05, 2,15, 2,5, 2,51', '2,05, 2,15, 2,50, 2,51'], explanation: 'Skryf met 2 desimale plekke: 2,15, 2,50, 2,05, 2,51. Vergelyk tiendes: 2,05 het 0 tiendes (kleinste); 2,15 het 1 tiende; 2,50 en 2,51 het 5 tiendes. Vergelyk die laaste twee volgens honderdstes: 2,50 < 2,51. Volgorde: 2,05, 2,15, 2,5, 2,51 ✓' },
@@ -1266,7 +1266,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Watertenk hou 7,04 kL. As 2,6 kL gebruik word, hoeveel water bly oor in die tenk?', answer: '4,44 kL', checkMode: 'auto', correctAnswer: '4,44', correctAnswers: ['4.44', '4.44 kL', '4,44', '4,44 kL'], explanation: 'Herskryf 2,6 as 2,60. Honderdstes: 4 − 0 = 4. Tiendes: 0 − 6 — leen van ene. Ene word 6, tiendes word 10. 10 − 6 = 4. Ene: 6 − 2 = 4. Antwoord: 4,44 kL ✓' },
         { difficulty: 'Medium', question: 'ʼn Skoolkiosk verkoop ʼn toebroodjie vir R16,80 en ʼn sap vir R8,45. Wat is die totale koste van albei items?', answer: 'R25,25', checkMode: 'auto', correctAnswer: 'R25,25', correctAnswers: ['R25.25', '25.25', 'R25,25', '25,25'], explanation: 'Honderdstes: 0 + 5 = 5. Tiendes: 8 + 4 = 12. Skryf 2, dra 1 oor. Ene: 6 + 8 + 1 = 15. Skryf 5, dra 1 oor. Tiene: 1 + 0 + 1 = 2. Totaal: R25,25 ✓' },
         { difficulty: 'Medium', question: 'Twee wandelroetes meet 3,75 km en 2,9 km. Wat is die gesamentlike afstand van albei roetes?', answer: '6,65 km', checkMode: 'auto', correctAnswer: '6,65', correctAnswers: ['6.65', '6.65 km', '6,65', '6,65 km'], explanation: 'Herskryf 2,9 as 2,90. Honderdstes: 5 + 0 = 5. Tiendes: 7 + 9 = 16. Skryf 6, dra 1 oor. Ene: 3 + 2 + 1 = 6. Antwoord: 6,65 km ✓' },
-        { difficulty: 'Medium-Hard', question: 'Lindiwe behaal 7/8 in ʼn praktiese toets. Skryf haar telling as ʼn desimale breuk.', answer: '0,875', checkMode: 'auto', correctAnswer: '0,875', correctAnswers: ['0.875', '0,875'], explanation: '7/8 moet omgeskakel word deur deling, aangesien 8 nie ʼn direkte faktor van 10 of 100 is nie: 7 ÷ 8 = 0,875 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Lindiwe behaal 19/25 in ʼn praktiese toets. Skryf haar telling as ʼn desimale breuk.', answer: '0,76', checkMode: 'auto', correctAnswer: '0,76', correctAnswers: ['0.76', '0,76'], explanation: '19/25 moet omgeskakel word na ʼn breuk met noemer 100: vermenigvuldig die teller en noemer met 4 (aangesien 25 × 4 = 100): 19/25 = 76/100 = 0,76 ✓' },
         { difficulty: 'Hard', question: 'ʼn Winkel hou drie dae se inkomste dop: Maandag R156,40, Dinsdag R156,04, Woensdag R156,45.\n\na) Orden die drie bedrae van minste na meeste.\nb) Bereken die verskil tussen die grootste en kleinste bedrag.\nc) Die winkel se teiken vir Woensdag was R200. Skryf die tekort (teiken minus Woensdag se inkomste) as ʼn desimale bedrag in rand.', answer: 'a) R156,04, R156,40, R156,45\nb) R156,45 − R156,04 = R0,41\nc) R200,00 − R156,45 = R43,55', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Leerder trek 5,2 − 1,65 af en skryf: "0,2 minus 0,65 is onmoontlik, dus moet die antwoord negatief wees — 5,2 − 1,65 kan nie met leen uitgewerk word nie." Verduidelik wat verkeerd is met hierdie redenasie en gee die korrekte antwoord.', answer: 'Die leerder is verkeerd — desimale aftrekking met leen werk presies soos heelgetal-aftrekking; dit word nie onmoontlik of negatief net omdat ʼn kolom op sy eie te klein lyk nie. Herskryf 5,2 as 5,20. Honderdstes: 0 − 5, leen van tiendes (tiendes word 1, honderdstes word 10): 10 − 5 = 5. Tiendes: 1 − 6, leen van ene (ene word 4, tiendes word 11): 11 − 6 = 5. Ene: 4 − 1 = 3. Die korrekte antwoord is 5,2 − 1,65 = 3,55.', checkMode: 'self' },
       ],

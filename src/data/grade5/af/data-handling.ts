@@ -455,8 +455,8 @@ export const topicData: TopicData = {
         // ── Q10 Hard — drawing pictograph with remainder (self) ──────────────
         {
           difficulty: 'Hard',
-          question: 'Thabo wil 22 leerders in ʼn prentgrafiek wys waar elke simbool = 5 leerders. Hoeveel simbole moet hy teken en sal daar ʼn half simbool wees?',
-          answer: '22 gedeel deur 5 = 4 oor 2. Hy teken 4 volle simbole en ʼn half simbool aangesien 2 naby aan die helfte van 5 is. Hy wys 4 en ʼn half simbole.',
+          question: 'Thabo wil 22 leerders in ʼn prentgrafiek wys waar elke simbool = 4 leerders. Hoeveel simbole moet hy teken en sal daar ʼn half simbool wees?',
+          answer: '22 gedeel deur 4 = 5 oor 2. Aangesien 2 presies die helfte van die sleutelwaarde is (4 ÷ 2 = 2), teken hy 5 volle simbole en ʼn half simbool. 5 volle simbole (5 × 4 = 20) plus ʼn half simbool (2) = 22 leerders.',
           checkMode: 'self',
         },
       ],
@@ -740,7 +740,7 @@ export const topicData: TopicData = {
             {
               label: 'b) Watter persentasie verkies lees?',
               correctAnswer: '37,5%',
-              correctAnswers: ['37.5%', '37.5'],
+              correctAnswers: ['37.5%', '37.5', '37,5%', '37,5'],
               explanation: '15 uit 40 verkies lees.\nPersentasie = (15 ÷ 40) × 100 = 37,5%.',
             },
           ],
@@ -961,7 +961,7 @@ export const topicData: TopicData = {
         },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 1 — jy het telmerktabelle, staafgrafieke, prentgrafieke en gemiddelde, mediaan en modus heeltemal baasgeraak. Puik werk!' },
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 1 — jy het telmerktabelle, staafgrafieke, prentgrafieke, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
         { minScore: 15, message: 'Puik werk op Stel 1! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
         { minScore: 10, message: 'Goeie poging op Stel 1! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
         { minScore: 0, message: "Hou aan oefen met Stel 1 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
@@ -1168,7 +1168,7 @@ export const topicData: TopicData = {
         },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 2 — jy het telmerktabelle, staafgrafieke, prentgrafieke en gemiddelde, mediaan en modus heeltemal baasgeraak. Puik werk!' },
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 2 — jy het telmerktabelle, staafgrafieke, prentgrafieke, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
         { minScore: 15, message: 'Puik werk op Stel 2! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
         { minScore: 10, message: 'Goeie poging op Stel 2! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
         { minScore: 0, message: "Hou aan oefen met Stel 2 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
@@ -1375,7 +1375,7 @@ export const topicData: TopicData = {
         },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 3 — jy het telmerktabelle, staafgrafieke, prentgrafieke en gemiddelde, mediaan en modus heeltemal baasgeraak. Puik werk!' },
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 3 — jy het telmerktabelle, staafgrafieke, prentgrafieke, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
         { minScore: 15, message: 'Puik werk op Stel 3! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
         { minScore: 10, message: 'Goeie poging op Stel 3! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
         { minScore: 0, message: "Hou aan oefen met Stel 3 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
