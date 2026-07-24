@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import ReactMarkdown from 'react-markdown'
 import { useAuth, getActiveTier } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
@@ -29,8 +30,14 @@ const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 100 }
 // Same monthly allowances as CAPTURE_LIMITS in app/api/ai-assistant/route.ts
 // — the server is the authority, this is optimistic UI only.
 const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 10, max: 30 }
-const CAPTURE_MAX_DIMENSION = 1400
-const CAPTURE_QUALITY = 0.8
+// Both bumped up from an earlier 1400px/0.8 — html2canvas-pro already
+// captures at devicePixelRatio (so a HiDPI screen starts from a genuinely
+// sharp canvas), but squeezing that down hard and re-compressing it was
+// still blurring small study-guide text and diagram labels by the time the
+// AI saw it. Still comfortably under the server's MAX_IMAGE_DATA_URL_LENGTH
+// backstop for a text-and-diagram screenshot.
+const CAPTURE_MAX_DIMENSION = 1800
+const CAPTURE_QUALITY = 0.88
 
 // ─── localStorage helpers ─────────────────────────────────────────────────────
 
@@ -70,6 +77,36 @@ function canvasToScaledDataUrl(canvas: HTMLCanvasElement, maxEdge: number, quali
   if (!ctx) return canvas.toDataURL('image/jpeg', quality)
   ctx.drawImage(canvas, 0, 0, scaled.width, scaled.height)
   return scaled.toDataURL('image/jpeg', quality)
+}
+
+// ─── Markdown styling ─────────────────────────────────────────────────────────
+// The assistant's replies come back as markdown (bold, lists, etc.) — these
+// were previously dumped into the chat bubble as raw text, so students saw
+// literal ** and other markdown syntax instead of formatted text. Same
+// approach as TestAnalysisPanel.tsx's markdownComponents, but compact enough
+// for a narrow chat bubble. No explicit color is set — every element inherits
+// the bubble's own text color, which differs between the user's (blue) and
+// the assistant's (gray) bubbles.
+
+const chatMarkdownComponents = {
+  p: (props: React.ComponentPropsWithoutRef<'p'>) => (
+    <p className="mb-2 last:mb-0" {...props} />
+  ),
+  ul: (props: React.ComponentPropsWithoutRef<'ul'>) => (
+    <ul className="list-disc pl-4 mb-2 last:mb-0 space-y-0.5" {...props} />
+  ),
+  ol: (props: React.ComponentPropsWithoutRef<'ol'>) => (
+    <ol className="list-decimal pl-4 mb-2 last:mb-0 space-y-0.5" {...props} />
+  ),
+  li: (props: React.ComponentPropsWithoutRef<'li'>) => <li {...props} />,
+  strong: (props: React.ComponentPropsWithoutRef<'strong'>) => <strong className="font-bold" {...props} />,
+  em: (props: React.ComponentPropsWithoutRef<'em'>) => <em className="italic" {...props} />,
+  code: (props: React.ComponentPropsWithoutRef<'code'>) => (
+    <code className="px-1 py-0.5 rounded text-[13px]" style={{ backgroundColor: 'rgba(0,0,0,0.06)' }} {...props} />
+  ),
+  a: (props: React.ComponentPropsWithoutRef<'a'>) => (
+    <a className="underline" target="_blank" rel="noopener noreferrer" {...props} />
+  ),
 }
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
@@ -580,7 +617,6 @@ export default function AIAssistant({ grade }: { grade: string }) {
                     color: msg.role === 'user' ? '#1e3a8a' : '#111827',
                     fontSize: '14px',
                     lineHeight: 1.65,
-                    whiteSpace: 'pre-wrap',
                     wordBreak: 'break-word',
                   }}
                 >
@@ -599,7 +635,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                       }}
                     />
                   )}
-                  {msg.content}
+                  <ReactMarkdown components={chatMarkdownComponents}>{msg.content}</ReactMarkdown>
                 </div>
               </div>
             ))}
@@ -619,11 +655,10 @@ export default function AIAssistant({ grade }: { grade: string }) {
                       color: '#111827',
                       fontSize: '14px',
                       lineHeight: 1.65,
-                      whiteSpace: 'pre-wrap',
                       wordBreak: 'break-word',
                     }}
                   >
-                    {streamingContent}
+                    <ReactMarkdown components={chatMarkdownComponents}>{streamingContent}</ReactMarkdown>
                   </div>
                 )}
               </div>

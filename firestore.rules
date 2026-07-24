@@ -74,6 +74,14 @@ service cloud.firestore {
       // aiUsage is the same server-only pattern as testAnalysisUsage above —
       // written only by /api/ai-assistant (Admin SDK) so a client can't
       // reset its own monthly counter.
+      // referralCreditBalance/Cap/Allowance/CountThisYear/monthsActiveThisYear/
+      // CreditYear are the referral credit pool (see src/lib/referral-credit.ts)
+      // — written only by the Paystack webhook and the referral-year-rollover
+      // cron (both Admin SDK). A client editing its own balance or cap would
+      // be free money; editing referralCreditYear would let an account fake
+      // its own annual rollover and re-earn a spent allowance early.
+      // lastReferralCreditApplied/Reference are a lightweight audit trail for
+      // the same feature, same server-only reasoning.
       // children is otherwise freely client-writable (name/grade/language
       // edits), but childPlans is locked above to server-only writes — so
       // without this check, a direct Firestore SDK call (bypassing the
@@ -90,7 +98,10 @@ service cloud.firestore {
                                   'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
                                   'referredBy', 'refCode', 'freeSessionClaimed',
                                   'pastDueSince', 'dunningStage',
-                                  'testAnalysisUsage', 'aiUsage'])
+                                  'testAnalysisUsage', 'aiUsage',
+                                  'referralCreditBalance', 'referralCreditCap', 'referralAllowance',
+                                  'referralCountThisYear', 'monthsActiveThisYear', 'referralCreditYear',
+                                  'lastReferralCreditApplied', 'lastReferralCreditReference'])
                     && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['children'])
                         || request.resource.data.children.size() == resource.data.childPlans.size());
 

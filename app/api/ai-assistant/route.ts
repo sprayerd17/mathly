@@ -32,7 +32,7 @@ const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 10, max: 30 }
 const MAX_MESSAGES = 30
 const MAX_CONTENT_LENGTH = 4000
 // Data-URL string length cap for an attached screen capture — the client
-// downscales to a 1400px-longest-edge JPEG before sending, so a well-behaved
+// downscales to a 1800px-longest-edge JPEG before sending, so a well-behaved
 // client never gets close to this; it's a backstop against a tampered request.
 const MAX_IMAGE_DATA_URL_LENGTH = 2_000_000
 

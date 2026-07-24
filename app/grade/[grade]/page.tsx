@@ -71,6 +71,15 @@ export default function GradePage() {
     getActiveTier(user) !== 'free' &&
     getActiveChild(user).grade !== Number(grade)
 
+  // A paid (Pro/Max) child already has full access to every topic in their
+  // own grade — the cards below must reflect that instead of showing every
+  // non-free topic as locked regardless of subscription status.
+  const hasFullGradeAccess =
+    mounted &&
+    user !== null &&
+    getActiveTier(user) !== 'free' &&
+    getActiveChild(user).grade === Number(grade)
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
@@ -142,54 +151,61 @@ export default function GradePage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {topics.map((topic) => (
-              <Link
-                key={topic.slug}
-                href={`/grade/${grade}/${topic.slug}`}
-                className={`group bg-white rounded-xl p-6 border shadow-sm transition-all ${
-                  topic.free
-                    ? 'border-gray-100 hover:border-[#1e40af]/30 hover:shadow-md'
-                    : 'border-gray-100 hover:border-gray-300 hover:shadow-md'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2 mb-3">
-                  <h2
-                    className={`font-semibold transition-colors ${
-                      topic.free
-                        ? 'text-[#0f1f3d] group-hover:text-[#1e40af]'
-                        : 'text-gray-600 group-hover:text-gray-800'
-                    }`}
-                  >
-                    {topic.name}
-                  </h2>
-                  <span className="mt-0.5 shrink-0">
-                    {topic.free ? (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-[#1e40af] border border-blue-200">
-                        {t.grade_free_badge}
-                      </span>
-                    ) : (
-                      <span className="text-gray-400 group-hover:text-gray-500 transition-colors">
-                        <LockIcon />
-                      </span>
-                    )}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4">{topic.description}</p>
-                <div
-                  className={`inline-flex items-center gap-1 text-xs font-medium transition-colors ${
-                    topic.free
-                      ? 'text-[#1e40af] group-hover:gap-1.5'
-                      : 'text-gray-400'
+            {topics.map((topic) => {
+              const isUnlocked = topic.free || hasFullGradeAccess
+              return (
+                <Link
+                  key={topic.slug}
+                  href={`/grade/${grade}/${topic.slug}`}
+                  className={`group bg-white rounded-xl p-6 border shadow-sm transition-all ${
+                    isUnlocked
+                      ? 'border-gray-100 hover:border-[#1e40af]/30 hover:shadow-md'
+                      : 'border-gray-100 hover:border-gray-300 hover:shadow-md'
                   }`}
                 >
-                  {topic.free ? (
-                    <>{t.grade_start_learning} <ChevronRight /></>
-                  ) : (
-                    <>{t.grade_subscribe_to_unlock}</>
-                  )}
-                </div>
-              </Link>
-            ))}
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <h2
+                      className={`font-semibold transition-colors ${
+                        isUnlocked
+                          ? 'text-[#0f1f3d] group-hover:text-[#1e40af]'
+                          : 'text-gray-600 group-hover:text-gray-800'
+                      }`}
+                    >
+                      {topic.name}
+                    </h2>
+                    <span className="mt-0.5 shrink-0">
+                      {topic.free ? (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-[#1e40af] border border-blue-200">
+                          {t.grade_free_badge}
+                        </span>
+                      ) : hasFullGradeAccess ? (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          {t.grade_included_badge}
+                        </span>
+                      ) : (
+                        <span className="text-gray-400 group-hover:text-gray-500 transition-colors">
+                          <LockIcon />
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-500 leading-relaxed mb-4">{topic.description}</p>
+                  <div
+                    className={`inline-flex items-center gap-1 text-xs font-medium transition-colors ${
+                      isUnlocked
+                        ? 'text-[#1e40af] group-hover:gap-1.5'
+                        : 'text-gray-400'
+                    }`}
+                  >
+                    {isUnlocked ? (
+                      <>{t.grade_start_learning} <ChevronRight /></>
+                    ) : (
+                      <>{t.grade_subscribe_to_unlock}</>
+                    )}
+                  </div>
+                </Link>
+              )
+            })}
           </div>
         )}
       </main>

@@ -319,7 +319,7 @@ const en = {
     profile_th_amount_credited: 'Amount Credited',
     profile_th_status: 'Status',
     profile_no_referrals_yet: 'No referrals yet. Share your link to start earning free months.',
-    profile_next_year_preview: 'Based on 0 months active this billing period you will receive 0 referral credits next year. Stay subscribed longer to earn more referrals.',
+    profile_next_year_preview: 'Based on {months} months active this year you will receive {credits} referral credits next year. Stay subscribed longer to earn more referrals.',
 
     // ── Grade / topic / select-grade pages ─────────────────────────────────
     grade_back_to_home: 'Back to Home',
@@ -331,6 +331,7 @@ const en = {
     grade_not_added_to_profile: 'This grade has not been added to your profile. Update your grades to access this content.',
     grade_update_grades_in_profile: 'Update your grades in My Profile',
     grade_free_badge: 'Free',
+    grade_included_badge: 'Included',
     grade_start_learning: 'Start learning',
     grade_subscribe_to_unlock: 'Subscribe to unlock',
     grade_back_to_grade: 'Back to Grade {grade}',
@@ -945,7 +946,7 @@ const af: Record<TranslationKeys, string> = {
     profile_th_amount_credited: 'Bedrag Gekrediteer',
     profile_th_status: 'Status',
     profile_no_referrals_yet: 'Nog geen verwysings nie. Deel jou skakel om gratis maande te begin verdien.',
-    profile_next_year_preview: 'Op grond van 0 maande aktief hierdie faktureringstydperk sal jy 0 verwysingskrediete volgende jaar ontvang. Bly langer ingeteken om meer verwysings te verdien.',
+    profile_next_year_preview: 'Op grond van {months} maande aktief vanjaar sal jy {credits} verwysingskrediete volgende jaar ontvang. Bly langer ingeteken om meer verwysings te verdien.',
 
     // ── Grade / topic / select-grade pages ─────────────────────────────────
     grade_back_to_home: 'Terug na Tuis',
@@ -957,6 +958,7 @@ const af: Record<TranslationKeys, string> = {
     grade_not_added_to_profile: 'Hierdie graad is nog nie by jou profiel gevoeg nie. Werk jou grade by om toegang tot hierdie inhoud te kry.',
     grade_update_grades_in_profile: 'Werk jou grade by in My Profiel',
     grade_free_badge: 'Gratis',
+    grade_included_badge: 'Ingesluit',
     grade_start_learning: 'Begin leer',
     grade_subscribe_to_unlock: 'Teken in om te ontsluit',
     grade_back_to_grade: 'Terug na Graad {grade}',

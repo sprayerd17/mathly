@@ -105,6 +105,15 @@ export type User = {
   // /api/sessions/book, the first time that child claims it. Same
   // whole-field-lock reasoning as childPlans above.
   freeSessionClaimed: boolean[]
+  // Referral credit pool — see src/lib/referral-credit.ts for the full
+  // doctrine. Server-only, written by the Paystack webhook and the daily
+  // referral-year-rollover cron; a client can only ever read these.
+  referralCreditBalance: number
+  referralCreditCap: number
+  referralAllowance: number
+  referralCountThisYear: number
+  monthsActiveThisYear: number
+  referralCreditYear: number
 }
 
 // Tier of the child currently driving site-wide content access — clamped the
@@ -815,6 +824,12 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     accessUntil: typeof data.accessUntil === 'string' ? data.accessUntil : null,
     referredBy: typeof data.referredBy === 'string' ? data.referredBy : null,
     freeSessionClaimed: sanitizeFreeSessionClaimed(data.freeSessionClaimed, children.length),
+    referralCreditBalance: typeof data.referralCreditBalance === 'number' ? data.referralCreditBalance : 0,
+    referralCreditCap: typeof data.referralCreditCap === 'number' ? data.referralCreditCap : 0,
+    referralAllowance: typeof data.referralAllowance === 'number' ? data.referralAllowance : 12,
+    referralCountThisYear: typeof data.referralCountThisYear === 'number' ? data.referralCountThisYear : 0,
+    monthsActiveThisYear: typeof data.monthsActiveThisYear === 'number' ? data.monthsActiveThisYear : 0,
+    referralCreditYear: typeof data.referralCreditYear === 'number' ? data.referralCreditYear : 0,
   }
 }
 
@@ -924,6 +939,12 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         activeChildIndex: 0,
         referredBy: null,
         freeSessionClaimed: children.map(() => false),
+        referralCreditBalance: 0,
+        referralCreditCap: 0,
+        referralAllowance: 12,
+        referralCountThisYear: 0,
+        monthsActiveThisYear: 0,
+        referralCreditYear: 0,
       })
     } finally {
       // The Firestore doc exists from this point on regardless of what

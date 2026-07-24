@@ -2,6 +2,7 @@ import { FieldValue, type Firestore } from 'firebase-admin/firestore'
 import { getPaystackConfig, verifyTransaction, listSubscriptionsForCustomer, updatePlan } from '@/src/lib/paystack'
 import { bookingConfirmedEmail, paymentFailedEmail, paymentReceiptEmail, sendEmail, sendOwnerAlert } from '@/src/lib/email'
 import { computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
+import { creditReferrer, consumeReferralCredit } from '@/src/lib/referral-credit'
 
 // Every webhook — accepted, failed or rejected — is recorded in the
 // `payments` collection so the admin dashboard can build revenue history and
@@ -360,8 +361,11 @@ export async function handlePaystackEvent(
     }
 
     // First successful payment for someone who signed up via a referral
-    // link? Mark their referral record as converted — only ever flips
-    // false -> true, same as before.
+    // link? Credit the referrer's pool (clamped to their annual cap and
+    // referral allowance — see src/lib/referral-credit.ts) and mark the
+    // referral record as converted, storing the amount actually credited
+    // rather than the friend's raw payment, since those two can differ once
+    // the referrer is near their cap.
     if (userData.referredBy) {
       const referralQuery = await adminDb
         .collection('referrals')
@@ -369,12 +373,20 @@ export async function handlePaystackEvent(
         .limit(1)
         .get()
       if (!referralQuery.empty) {
+        const credited = await creditReferrer(adminDb, userData.referredBy, receivedAmount)
         await referralQuery.docs[0].ref.update({
           hasSubscribed: true,
-          creditAmount: receivedAmount,
+          creditAmount: credited,
           subscribedTiers: expectedChildPlans,
         })
       }
+    }
+
+    // This account's own referral credit pool (from friends *they've*
+    // referred) applies against this charge too, via a partial refund — see
+    // src/lib/referral-credit.ts.
+    if (data.reference) {
+      await consumeReferralCredit(adminDb, config, uid, data.reference, receivedAmount, { countsAsActiveMonth: true })
     }
 
     await logEvent(adminDb, event, data, 'complete', null, 'signup')
@@ -526,6 +538,13 @@ export async function handlePaystackEvent(
       return
     }
 
+    // An upgrade top-up is a same-cycle charge, not a new billing month — so
+    // it can still draw down referral credit, but it must not also count as
+    // an extra "active month" toward next year's referral allowance.
+    if (data.reference) {
+      await consumeReferralCredit(adminDb, config, uid, data.reference, receivedAmount, { countsAsActiveMonth: false })
+    }
+
     await logEvent(adminDb, event, data, 'complete', null, 'upgrade')
     if (userData.email) {
       const mail = paymentReceiptEmail({ name: userData.name ?? '', amount: receivedAmount, item: 'Mathly plan upgrade' })
@@ -610,6 +629,9 @@ export async function handlePaystackEvent(
       pastDueSince: null,
       dunningStage: null,
     })
+    if (data.reference) {
+      await consumeReferralCredit(adminDb, config, userRef.id, data.reference, receivedAmount, { countsAsActiveMonth: true })
+    }
     await logEvent(adminDb, event, data, 'complete', null, 'renewal')
     if (userData.email) {
       const mail = paymentReceiptEmail({ name: userData.name ?? '', amount: receivedAmount, item: 'Mathly subscription' })

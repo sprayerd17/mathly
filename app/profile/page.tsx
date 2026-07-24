@@ -125,15 +125,16 @@ export default function ProfilePage() {
     return () => { cancelled = true }
   }, [user])
 
-  const subscribedReferrals = referrals.filter(r => r.hasSubscribed)
-  const totalCredit = subscribedReferrals.reduce((sum, r) => sum + r.creditAmount, 0)
-
-  // Best available proxy for "how long has this family been an active
-  // subscriber" — we don't track a separate subscription-start date, only
-  // account creation, so this is 0 for anyone not currently active/past_due.
-  const monthsActive = user?.createdAt && (user.subscriptionStatus === 'active' || user.subscriptionStatus === 'past_due')
-    ? Math.max(0, Math.floor((Date.now() - user.createdAt.getTime()) / (1000 * 60 * 60 * 24 * 30)))
-    : 0
+  // Real referral-credit bookkeeping, not a client-side approximation — see
+  // src/lib/referral-credit.ts for how these are earned/consumed server-side.
+  const referralAllowance = user?.referralAllowance ?? 12
+  const referralCountThisYear = user?.referralCountThisYear ?? 0
+  const referralCreditBalance = user?.referralCreditBalance ?? 0
+  const monthsActive = user?.monthsActiveThisYear ?? 0
+  // What next year's referral allowance would be if the year ended today —
+  // mirrors rolledOver()'s allowance formula exactly, so this preview never
+  // drifts from what actually gets applied at the real Jan-1 rollover.
+  const creditsNextYearPreview = Math.min(12, monthsActive)
 
   const refCode = user?.refCode ?? ''
 
@@ -972,9 +973,9 @@ export default function ProfilePage() {
             {/* Referral stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
               {[
-                { label: t.profile_stat_referrals_used,   value: `${subscribedReferrals.length} of 12` },
-                { label: t.profile_stat_referrals_remaining, value: String(Math.max(12 - subscribedReferrals.length, 0)) },
-                { label: t.profile_stat_total_credit,      value: `R${totalCredit}` },
+                { label: t.profile_stat_referrals_used,   value: `${referralCountThisYear} of ${referralAllowance}` },
+                { label: t.profile_stat_referrals_remaining, value: String(Math.max(referralAllowance - referralCountThisYear, 0)) },
+                { label: t.profile_stat_total_credit,      value: `R${referralCreditBalance}` },
                 { label: t.profile_stat_months_active,     value: String(monthsActive) },
               ].map(stat => (
                 <div key={stat.label} className="rounded-xl p-4 text-center" style={{ backgroundColor: '#f3f4f6' }}>
@@ -1053,7 +1054,9 @@ export default function ProfilePage() {
                 <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd" />
               </svg>
               <p className="text-sm text-gray-600 leading-relaxed">
-                {t.profile_next_year_preview}
+                {t.profile_next_year_preview
+                  .replace('{months}', String(monthsActive))
+                  .replace('{credits}', String(creditsNextYearPreview))}
               </p>
             </div>
 

@@ -178,3 +178,16 @@ export async function updatePlan(config: PaystackConfig, params: { code: string;
     body: { amount: randsToCents(params.amountRands), update_existing_subscriptions: true },
   })
 }
+
+// Refunds part (or all) of a previously successful transaction — used to
+// apply accumulated referral credit against a real charge after the fact,
+// since a recurring Plan's amount can only be changed for the *next* cycle
+// (see updatePlan above), never the one that just billed. Giving money back
+// post-charge is the only way to honour a credit pool without altering the
+// family's actual recurring Plan.
+export async function refundTransaction(config: PaystackConfig, params: { reference: string; amountRands: number }) {
+  return paystackRequest<{ status: string }>(config, '/refund', {
+    method: 'POST',
+    body: { transaction: params.reference, amount: randsToCents(params.amountRands) },
+  })
+}
