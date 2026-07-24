@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { FieldValue } from 'firebase-admin/firestore'
 import { getAdminDb } from '@/src/lib/firebase-admin'
 import { reservationExpiredEmail, sendEmail } from '@/src/lib/email'
+import { isCronRequestAuthorized } from '@/src/lib/cron-auth'
 
 // Frees any 'reserved' (unpaid) booking whose deposit deadline has passed —
 // the whole point of book-now-pay-later is that someone else can have the
@@ -9,8 +10,7 @@ import { reservationExpiredEmail, sendEmail } from '@/src/lib/email'
 // cron routes: Vercel attaches `Authorization: Bearer $CRON_SECRET`
 // automatically when that env var is set.
 export async function GET(req: NextRequest) {
-  const secret = process.env.CRON_SECRET
-  if (!secret || req.headers.get('authorization') !== `Bearer ${secret}`) {
+  if (!isCronRequestAuthorized(req)) {
     return new Response('Unauthorized', { status: 401 })
   }
 

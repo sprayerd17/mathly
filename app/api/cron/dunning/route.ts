@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, disableSubscription } from '@/src/lib/paystack'
 import { paymentFinalWarningEmail, paymentReminderEmail, sendEmail, subscriptionCancelledEmail } from '@/src/lib/email'
+import { isCronRequestAuthorized } from '@/src/lib/cron-auth'
 
 // Follow-up cadence for accounts stuck on a failed subscription renewal:
 //   day 3  — reminder
@@ -15,8 +16,7 @@ const HOUR = 60 * 60 * 1000
 const DAY = 24 * HOUR
 
 export async function GET(req: NextRequest) {
-  const secret = process.env.CRON_SECRET
-  if (!secret || req.headers.get('authorization') !== `Bearer ${secret}`) {
+  if (!isCronRequestAuthorized(req)) {
     return new Response('Unauthorized', { status: 401 })
   }
 

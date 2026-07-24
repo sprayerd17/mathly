@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getAdminDb } from '@/src/lib/firebase-admin'
 import { sendEmail, sessionReminderEmail } from '@/src/lib/email'
+import { isCronRequestAuthorized } from '@/src/lib/cron-auth'
 
 // Sends "your session is tomorrow" / "starting soon" emails to paid
 // attendees. Hit hourly by netlify/functions/cron-session-reminders.mts —
@@ -22,8 +23,7 @@ const WINDOWS = {
 // <CRON_SECRET>` — this checks against that convention directly rather than
 // a custom header.
 export async function GET(req: NextRequest) {
-  const secret = process.env.CRON_SECRET
-  if (!secret || req.headers.get('authorization') !== `Bearer ${secret}`) {
+  if (!isCronRequestAuthorized(req)) {
     return new Response('Unauthorized', { status: 401 })
   }
 

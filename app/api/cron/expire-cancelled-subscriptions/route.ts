@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getAdminDb } from '@/src/lib/firebase-admin'
 import { sendEmail, subscriptionEndedEmail } from '@/src/lib/email'
+import { isCronRequestAuthorized } from '@/src/lib/cron-auth'
 
 const HOUR = 60 * 60 * 1000
 const PENDING_ABANDON_HOURS = 2
@@ -28,8 +29,7 @@ const PENDING_ABANDON_HOURS = 2
 //    range + subscriptionStatus equality would need a composite index this
 //    repo doesn't manage via firestore.indexes.json).
 export async function GET(req: NextRequest) {
-  const secret = process.env.CRON_SECRET
-  if (!secret || req.headers.get('authorization') !== `Bearer ${secret}`) {
+  if (!isCronRequestAuthorized(req)) {
     return new Response('Unauthorized', { status: 401 })
   }
 
