@@ -14,7 +14,13 @@ const PENDING_ABANDON_HOURS = 2
 //    'cancelling' whose paid period (accessUntil) has passed, drops
 //    childPlans to free, and flips the status to 'cancelled'. accessUntil is
 //    a specific instant, not a day boundary, so hourly keeps the gap between
-//    "period actually ends" and "access actually drops" small.
+//    "period actually ends" and "access actually drops" small. Like the
+//    pending sweep below, the accessUntil cutoff is filtered in code rather
+//    than in the query — an equality filter plus a range filter on a
+//    different field needs a composite index, and this repo doesn't manage
+//    indexes via firestore.indexes.json. The 'cancelling' set is small (only
+//    accounts currently in their post-cancellation grace period), so
+//    fetching all of them and filtering in memory is cheap.
 //
 // 2. Reverts abandoned checkouts: /api/paystack/checkout sets
 //    subscriptionStatus to 'pending' the moment it initializes a Paystack
@@ -25,9 +31,7 @@ const PENDING_ABANDON_HOURS = 2
 //    account, and the profile page shows a permanent "upgrade in progress"
 //    that's no longer true. Anything still pending after 2 hours is clearly
 //    abandoned, not just slow — Paystack checkout sessions don't stay open
-//    that long. Filtered in code rather than in the query (pendingSince
-//    range + subscriptionStatus equality would need a composite index this
-//    repo doesn't manage via firestore.indexes.json).
+//    that long. Same composite-index-avoidance reasoning as above.
 export async function GET(req: NextRequest) {
   if (!isCronRequestAuthorized(req)) {
     return new Response('Unauthorized', { status: 401 })
@@ -45,13 +49,13 @@ export async function GET(req: NextRequest) {
   const snap = await adminDb
     .collection('users')
     .where('subscriptionStatus', '==', 'cancelling')
-    .where('accessUntil', '<=', nowIso)
     .limit(500)
     .get()
 
   let expired = 0
   for (const doc of snap.docs) {
     const user = doc.data()
+    if (!user.accessUntil || user.accessUntil > nowIso) continue
     const freeChildPlans = Array.isArray(user.childPlans) ? user.childPlans.map(() => 'free') : []
     await doc.ref.update({
       subscriptionStatus: 'cancelled',
