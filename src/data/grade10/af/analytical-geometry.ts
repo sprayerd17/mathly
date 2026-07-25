@@ -306,7 +306,7 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Gegewe punte P(2,5) en Q(3,1), bepaal R as M(1;0) die middelpunt van PR is.',
+          question: 'Gegewe punte P(2,5) en Q(3,1), bepaal R as M(1,0) die middelpunt van PR is.',
           answer: `R = ${bl('(0, −5)')}`,
           steps: [
             `Die ${bl('middelpunt')} van PR is M(${bl('1')},${bl('0')}). Punt P = (${bl('2')},${gr('5')}). Laat R = (${bl('x')},${gr('y')}).`,
@@ -326,6 +326,7 @@ export const topicData: TopicData = {
             `Los op vir ${bl('x')}: (${bl('3')}+${bl('x')})÷2 = ${bl('1')}, dus ${bl('3')}+${bl('x')} = 2, wat ${bl('x')} = ${bl('−1')} gee`,
             `Los op vir ${gr('y')}: (${gr('1')}+${gr('y')})÷2 = ${gr('0')}, dus ${gr('1')}+${gr('y')} = 0, wat ${gr('y')} = ${gr('−1')} gee`,
             `<strong>Antwoord:</strong> S = (${bl('−1')},${gr('−1')}) ✓`,
+            `Verifieer met gradiënte: gradiënt PQ = (${gr('1')}−${gr('5')})/(${bl('3')}−${bl('2')}) = −4, en gradiënt SR = (${gr('−5')}−${gr('−1')})/(${bl('0')}−${bl('−1')}) = −4, dus PQ ∥ SR. Gradiënt QR = (${gr('−5')}−${gr('1')})/(${bl('0')}−${bl('3')}) = 2, en gradiënt PS = (${gr('−1')}−${gr('5')})/(${bl('−1')}−${bl('2')}) = 2, dus QR ∥ PS. Albei pare oorstaande sye is parallel ✓`,
           ],
         },
         {
@@ -463,7 +464,7 @@ export const topicData: TopicData = {
     // ── Q12 Medium — find unknown endpoint R ─────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Gegewe P(3,4) en Q(7,2), bepaal R as M(5,3) die middelpunt van PR is.',
+      question: 'Gegewe P(3,4) en Q(7,6), bepaal R as M(5,3) die middelpunt van PR is.',
       answer: '(7,2)',
       checkMode: 'auto',
       correctAnswer: '(7,2)',
@@ -518,7 +519,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Bepaal die lengte van sy PQ in die vierhoek van V16, en bepaal dan of PQRS ʼn reghoek kan wees.',
-      answer: 'PQ=√[(5-1)²+(1-1)²]=√16=4. Om alle hoeke te kontroleer sal bevestig dat regte hoeke bestaan (aangesien sye horisontaal/vertikaal is), wat PQRS ʼn reghoek maak.',
+      answer: 'PQ=√[(5-1)²+(1-1)²]=√16=4. PQ is horisontaal (gradiënt 0) en QR is vertikaal (ongedefinieerde gradiënt), dus vorm PQ⊥QR ʼn hoek van 90°; dieselfde geld by elke hoekpunt aangesien alle sye horisontaal/vertikaal is, wat bevestig dat elke hoek reg is en PQRS ʼn reghoek is.',
       checkMode: 'self',
     },
 

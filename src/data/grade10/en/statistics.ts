@@ -1030,10 +1030,10 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Using the data from Q1 (intervals 0≤x<5 freq 3, 5≤x<10 freq 7, 10≤x<15 freq 2), find the approximate mean.',
-      answer: '6.92',
+      answer: '7.08',
       checkMode: 'auto',
-      correctAnswer: '6.92',
-      explanation: 'Midpoints: 2.5, 7.5, 12.5. Σ(midpoint × freq) = (2.5×3)+(7.5×7)+(12.5×2) = 7.5+52.5+25 = 85. Total freq = 12. Mean = 85÷12 ≈ 6.92.',
+      correctAnswer: '7.08',
+      explanation: 'Midpoints: 2.5, 7.5, 12.5. Σ(midpoint × freq) = (2.5×3)+(7.5×7)+(12.5×2) = 7.5+52.5+25 = 85. Total freq = 12. Mean = 85÷12 ≈ 7.08.',
     },
 
     // ── Q3 Hard — endpoints vs midpoints ─────────────────────────────────────
@@ -1201,7 +1201,7 @@ export const topicData: TopicData = {
     // ── Q20 Hard — IQR and what it represents ────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Using the quartiles from Q13, find the interquartile range and explain what it represents.',
+      question: 'Using the quartiles from Q19, find the interquartile range and explain what it represents.',
       answer: 'IQR=27-11=16. This represents the spread of the middle 50% of the data, providing a measure of spread that is less affected by extreme values than the full range.',
       checkMode: 'self',
     },

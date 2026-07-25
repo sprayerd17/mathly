@@ -306,7 +306,7 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Given points P(2,5) and Q(3,1), find R if M(1;0) is the midpoint of PR.',
+          question: 'Given points P(2,5) and Q(3,1), find R if M(1,0) is the midpoint of PR.',
           answer: `R = ${bl('(0, −5)')}`,
           steps: [
             `The ${bl('midpoint')} of PR is M(${bl('1')},${bl('0')}). Point P = (${bl('2')},${gr('5')}). Let R = (${bl('x')},${gr('y')}).`,
@@ -326,6 +326,7 @@ export const topicData: TopicData = {
             `Solve for ${bl('x')}: (${bl('3')}+${bl('x')})÷2 = ${bl('1')}, so ${bl('3')}+${bl('x')} = 2, giving ${bl('x')} = ${bl('−1')}`,
             `Solve for ${gr('y')}: (${gr('1')}+${gr('y')})÷2 = ${gr('0')}, so ${gr('1')}+${gr('y')} = 0, giving ${gr('y')} = ${gr('−1')}`,
             `<strong>Answer:</strong> S = (${bl('−1')},${gr('−1')}) ✓`,
+            `Verify with gradients: gradient PQ = (${gr('1')}−${gr('5')})/(${bl('3')}−${bl('2')}) = −4, and gradient SR = (${gr('−5')}−${gr('−1')})/(${bl('0')}−${bl('−1')}) = −4, so PQ ∥ SR. Gradient QR = (${gr('−5')}−${gr('1')})/(${bl('0')}−${bl('3')}) = 2, and gradient PS = (${gr('−1')}−${gr('5')})/(${bl('−1')}−${bl('2')}) = 2, so QR ∥ PS. Both pairs of opposite sides are parallel ✓`,
           ],
         },
         {
@@ -463,7 +464,7 @@ export const topicData: TopicData = {
     // ── Q12 Medium — find unknown endpoint R ─────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Given P(3,4) and Q(7,2), find R if M(5,3) is the midpoint of PR.',
+      question: 'Given P(3,4) and Q(7,6), find R if M(5,3) is the midpoint of PR.',
       answer: '(7,2)',
       checkMode: 'auto',
       correctAnswer: '(7,2)',
@@ -518,7 +519,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Find the length of side PQ in the quadrilateral from Q16, then determine if PQRS could be a rectangle.',
-      answer: 'PQ=√[(5-1)²+(1-1)²]=√16=4. Checking all angles would confirm right angles exist (since sides are horizontal/vertical), making PQRS a rectangle.',
+      answer: 'PQ=√[(5-1)²+(1-1)²]=√16=4. PQ is horizontal (gradient 0) and QR is vertical (undefined gradient), so PQ⊥QR forms a 90° angle; the same holds at each vertex since all sides are horizontal/vertical, confirming every angle is a right angle and PQRS is a rectangle.',
       checkMode: 'self',
     },
 

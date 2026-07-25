@@ -255,15 +255,15 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Find the final amount using compound interest (round to 2 decimal places).',
-              correctAnswer: 'R11220.40',
-              correctAnswers: ['R11220.40', '11220.40', 'R11 220.40', '11 220.40', 'R11220.39', '11220.39'],
-              explanation: 'A = 8 000(1.07)⁵\n(1.07)⁵ ≈ 1.40255\nA ≈ 8 000 × 1.40255 ≈ R11 220.40 ✓',
+              correctAnswer: 'R11220.41',
+              correctAnswers: ['R11220.41', '11220.41', 'R11 220.41', '11 220.41'],
+              explanation: 'A = 8 000(1.07)⁵\n(1.07)⁵ ≈ 1.4025517\nA ≈ 8 000 × 1.4025517 ≈ R11 220.41 ✓',
             },
             {
               label: 'c) How much more does compound interest earn?',
-              correctAnswer: 'R420.40',
-              correctAnswers: ['R420.40', '420.40', 'R420', '420', 'R420.39', '420.39'],
-              explanation: 'Difference: R11 220.40 − R10 800 = R420.40 ✓',
+              correctAnswer: 'R420.41',
+              correctAnswers: ['R420.41', '420.41', 'R420', '420'],
+              explanation: 'Difference: R11 220.41 − R10 800 = R420.41 ✓',
             },
           ],
         },
@@ -275,21 +275,21 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Find the population after 5 years (round to the nearest whole number).',
-              correctAnswer: '182497',
-              correctAnswers: ['182497', '182 497'],
-              explanation: 'A = 150 000(1.04)⁵\n(1.04)⁵ ≈ 1.21665\nA ≈ 150 000 × 1.21665 ≈ 182 497 ✓',
+              correctAnswer: '182498',
+              correctAnswers: ['182498', '182 498'],
+              explanation: 'A = 150 000(1.04)⁵\n(1.04)⁵ ≈ 1.2166529\nA ≈ 150 000 × 1.2166529 ≈ 182 498 ✓',
             },
             {
               label: 'b) Find the population after 10 years (round to the nearest whole number).',
-              correctAnswer: '222036',
-              correctAnswers: ['222036', '222 036'],
-              explanation: 'A = 150 000(1.04)¹⁰\n(1.04)¹⁰ ≈ 1.48024\nA ≈ 150 000 × 1.48024 ≈ 222 036 ✓',
+              correctAnswer: '222037',
+              correctAnswers: ['222037', '222 037'],
+              explanation: 'A = 150 000(1.04)¹⁰\n(1.04)¹⁰ ≈ 1.4802443\nA ≈ 150 000 × 1.4802443 ≈ 222 037 ✓',
             },
             {
               label: 'c) By how many people does the population increase between year 5 and year 10?',
               correctAnswer: '39539',
               correctAnswers: ['39539', '39 539', '39540', '39 540'],
-              explanation: '222 036 − 182 497 = 39 539 people ✓',
+              explanation: '222 037 − 182 498 = 39 539 people ✓',
             },
           ],
         },
@@ -487,13 +487,13 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'How long will it take a population of 1.2 million to double if it grows at 12% per year?',
-          answer: `Approximately ${gr('6')} years`,
+          answer: `Approximately ${gr('7')} years`,
           steps: [
             `We need (1.12)<sup>${bl('n')}</sup> = ${or('2')} (doubling means the multiplier must reach 2).`,
             `${bl('Try n = 5:')} (1.12)<sup>5</sup> ≈ 1.762 — this is below the ${or('target of 2')}, so n = 5 is too low.`,
             `${bl('Try n = 6:')} (1.12)<sup>6</sup> ≈ 1.974 — very close to the ${or('target of 2')} but not yet reached.`,
             `${bl('Try n = 7:')} (1.12)<sup>7</sup> ≈ 2.211 — this exceeds the ${or('target of 2')}.`,
-            `<strong>Conclusion:</strong> Since population must be counted in whole years, it takes approximately ${gr('n ≈ 6')} years (rounding up to ensure doubling is reached). ✓`,
+            `<strong>Conclusion:</strong> Since population must be counted in whole years, it takes ${gr('n = 7')} years (rounding up to ensure doubling is reached). ✓`,
           ],
         },
         {
@@ -1191,11 +1191,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Find the final amount after 8 years if R6,000 is invested at 7% compound interest.',
-      answer: 'R10,309.14',
+      answer: 'R10,309.12',
       checkMode: 'auto',
-      correctAnswer: 'R10309.14',
-      correctAnswers: ['R10309.14', '10309.14', 'R10 309.14', '10 309.14'],
-      explanation: 'A = 6 000(1.07)⁸ = 6 000 × 1.71819 ≈ R10 309.14 ✓',
+      correctAnswer: 'R10309.12',
+      correctAnswers: ['R10309.12', '10309.12', 'R10 309.12', '10 309.12'],
+      explanation: 'A = 6 000(1.07)⁸ = 6 000 × 1.7181860 ≈ R10 309.12 ✓',
     },
 
     // ── Q6 Hard ───────────────────────────────────────────────────────────────
@@ -1308,7 +1308,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: "Amahle's population of 60,000 grows at 2.5% per year. Find how many years until the population exceeds 80,000, using trial and improvement.",
-      answer: 'Need (1.025)ⁿ = 1.333. Try n = 11: 1.025¹¹ ≈ 1.319. Try n = 12: 1.025¹² ≈ 1.352. It takes approximately 12 years.',
+      answer: 'Need (1.025)ⁿ = 1.333. Try n = 11: 1.025¹¹ ≈ 1.312. Try n = 12: 1.025¹² ≈ 1.345. It takes approximately 12 years.',
       checkMode: 'self',
     },
 
@@ -1324,7 +1324,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Compare investing R12,000 at 6% simple interest for 8 years versus 6% compound interest for 8 years. Find both final amounts and the difference.',
-      answer: 'Simple: 12 000(1 + 8 × 0.06) = R17,760. Compound: 12 000(1.06)⁸ ≈ R19,126.05. Difference ≈ R1,366.05.',
+      answer: 'Simple: 12 000(1 + 8 × 0.06) = R17,760. Compound: 12 000(1.06)⁸ ≈ R19,126.18. Difference ≈ R1,366.18.',
       checkMode: 'self',
     },
 

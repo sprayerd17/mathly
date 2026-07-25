@@ -28,7 +28,7 @@ export const topicData: TopicData = {
       title: 'Wette van Eksponente vir Heelgetal-eksponente',
       icon: 'xⁿ',
       explanation:
-        `<p style="margin-bottom:16px;">Ons brei die wette van eksponente uit na <strong>heelgetal-eksponente</strong> — heelgetalle wat negatiewe getalle en nul insluit. Dieselfde reëls wat vir positiewe eksponente gegeld het, geld steeds: ${bl('x')}${or('ᵃ')}·${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁺ᵇ')}, ${bl('x')}${or('ᵃ')}÷${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁻ᵇ')}, (${bl('x')}${or('ᵃ')})${or('ᵇ')}=${bl('x')}${or('ᵃᵇ')}, ${bl('x')}${or('⁻ⁿ')}=1/${bl('x')}${or('ⁿ')}, en ${bl('x')}${or('⁰')}=${gr('1')} (vir x≠0). ʼn Kritieke fout om op te let: wanneer jy dieselfde grondgetalle <em>vermenigvuldig</em>, ${'​'}<strong>tel</strong> jy die eksponente bymekaar — jy vermenigvuldig hulle nie.</p>` +
+        `<p style="margin-bottom:16px;">Ons brei die wette van eksponente uit na <strong>heelgetal-eksponente</strong> — heelgetalle wat negatiewe getalle en nul insluit. Dieselfde reëls wat vir positiewe eksponente gegeld het, geld steeds: ${bl('x')}${or('ᵃ')}·${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁺ᵇ')}, ${bl('x')}${or('ᵃ')}÷${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁻ᵇ')}, (${bl('x')}${or('ᵃ')})${or('ᵇ')}=${bl('x')}${or('ᵃᵇ')}, ${bl('x')}${or('⁻ⁿ')}=1/${bl('x')}${or('ⁿ')}, en ${bl('x')}${or('⁰')}=${gr('1')} (vir x≠0). ʼn Kritieke fout om op te let: wanneer jy dieselfde grondgetalle <em>vermenigvuldig</em>, <strong>tel</strong> jy die eksponente bymekaar — jy vermenigvuldig hulle nie.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -527,7 +527,7 @@ export const topicData: TopicData = {
             {
               label: 'c) Lengte van een sy afgerond tot 2 dp (cm) =',
               correctAnswer: '3,46',
-              correctAnswers: ['3.46', '3.46 cm'],
+              correctAnswers: ['3,46', '3,46 cm', '3.46', '3.46 cm'],
               explanation: '2√3 ≈ 2 × 1,73205… = 3,46410… Die beslissende syfer is 4 < 5, dus rond af: 3,46 cm ✓',
             },
           ],

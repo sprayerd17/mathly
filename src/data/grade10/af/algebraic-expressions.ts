@@ -663,17 +663,18 @@ export const topicData: TopicData = {
     // ── Q9 Easy — Simplify (4x²+8x)/4x ──────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Vereenvoudig (4x²+8x)/4x.',
+      question: 'Vereenvoudig (4x²+8x)/4x &nbsp;(x ≠ 0).',
       answer: 'x+2',
       checkMode: 'auto',
       correctAnswer: 'x+2',
+      correctAnswers: ['x+2', 'x + 2'],
       explanation: 'Faktoriseer teller: 4x(x+2). Kanselleer 4x: x+2.',
     },
 
     // ── Q10 Medium — Calculate 2/x + 7/3x ────────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Bereken 2/x + 7/3x.',
+      question: 'Bereken 2/x + 7/(3x) &nbsp;(x ≠ 0).',
       answer: '13/3x',
       checkMode: 'auto',
       correctAnswer: '13/(3x)',
@@ -684,7 +685,7 @@ export const topicData: TopicData = {
     // ── Q11 Hard — Calculate 5/x² - 2/x showing the LCM step ─────────────────
     {
       difficulty: 'Hard',
-      question: 'Bereken 5/x² - 2/x, en toon die KGV-stap.',
+      question: 'Bereken 5/x² - 2/x &nbsp;(x ≠ 0), en toon die KGV-stap.',
       answer: 'KGV=x². Skakel om: 5/x² - 2x/x². Kombineer: (5-2x)/x².',
       checkMode: 'self',
     },
@@ -741,7 +742,7 @@ export const topicData: TopicData = {
     // ── Q17 Hard — Calculate 1/2x + 3/4x - 1/x ──────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Bereken 1/2x + 3/4x - 1/x.',
+      question: 'Bereken 1/(2x) + 3/(4x) - 1/x &nbsp;(x ≠ 0).',
       answer: '1/4x',
       checkMode: 'auto',
       correctAnswer: '1/(4x)',

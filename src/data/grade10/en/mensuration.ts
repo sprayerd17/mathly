@@ -644,10 +644,10 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'A capsule has a cylinder (radius 3 cm, height 15 cm) with a hemisphere on each end. Find the total volume. Use π ≈ 3.14.',
-      answer: '537.21 cm³',
+      answer: '536.94 cm³',
       checkMode: 'auto',
-      correctAnswer: '537.21',
-      explanation: 'Cylinder: 3.14 × 9 × 15 = 423.9 cm³\nTwo hemispheres = one sphere: (4/3) × 3.14 × 27 ≈ 113.31 cm³\nTotal ≈ 537.21 cm³ ✓',
+      correctAnswer: '536.94',
+      explanation: 'Cylinder: 3.14 × 9 × 15 = 423.9 cm³\nTwo hemispheres = one sphere: (4/3) × 3.14 × 27 ≈ 113.04 cm³\nTotal ≈ 536.94 cm³ ✓',
     },
 
     // ── Q8 Hard — surface area of cone ───────────────────────────────────────
@@ -751,10 +751,10 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'A water tank is a cylinder (radius 1.5 m, height 3 m) with a cone-shaped top (same radius, height 1 m) for drainage. Find the total volume in cubic metres. Use π ≈ 3.14.',
-      answer: '23.83 m³',
+      answer: '23.55 m³',
       checkMode: 'auto',
-      correctAnswer: '23.83',
-      explanation: 'Cylinder: 3.14 × 1.5² × 3 = 21.195 m³\nCone: ⅓ × 3.14 × 1.5² × 1 = 2.355 m³\nTotal ≈ 23.83 m³ ✓',
+      correctAnswer: '23.55',
+      explanation: 'Cylinder: 3.14 × 1.5² × 3 = 21.195 m³\nCone: ⅓ × 3.14 × 1.5² × 1 = 2.355 m³\nTotal ≈ 23.55 m³ ✓',
     },
 
     // ── Q20 Hard — Lerato's claim about doubling radius ───────────────────────

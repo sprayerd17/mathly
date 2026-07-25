@@ -255,15 +255,15 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Vind die finale bedrag met saamgestelde rente (rond af tot 2 desimale plekke).',
-              correctAnswer: 'R11220,40',
-              correctAnswers: ['R11220.40', '11220.40', 'R11 220.40', '11 220.40', 'R11220.39', '11220.39'],
-              explanation: 'A = 8 000(1,07)⁵\n(1,07)⁵ ≈ 1,40255\nA ≈ 8 000 × 1,40255 ≈ R11 220,40 ✓',
+              correctAnswer: 'R11220,41',
+              correctAnswers: ['R11220.41', '11220.41', 'R11 220.41', '11 220.41', 'R11220,41'],
+              explanation: 'A = 8 000(1,07)⁵\n(1,07)⁵ ≈ 1,4025517\nA ≈ 8 000 × 1,4025517 ≈ R11 220,41 ✓',
             },
             {
               label: 'c) Hoeveel meer verdien saamgestelde rente?',
-              correctAnswer: 'R420,40',
-              correctAnswers: ['R420.40', '420.40', 'R420', '420', 'R420.39', '420.39'],
-              explanation: 'Verskil: R11 220,40 − R10 800 = R420,40 ✓',
+              correctAnswer: 'R420,41',
+              correctAnswers: ['R420.41', '420.41', 'R420', '420', 'R420,41'],
+              explanation: 'Verskil: R11 220,41 − R10 800 = R420,41 ✓',
             },
           ],
         },
@@ -275,21 +275,21 @@ export const topicData: TopicData = {
           parts: [
             {
               label: 'a) Vind die bevolking na 5 jaar (rond af na die naaste heelgetal).',
-              correctAnswer: '182497',
-              correctAnswers: ['182497', '182 497'],
-              explanation: 'A = 150 000(1,04)⁵\n(1,04)⁵ ≈ 1,21665\nA ≈ 150 000 × 1,21665 ≈ 182 497 ✓',
+              correctAnswer: '182498',
+              correctAnswers: ['182498', '182 498'],
+              explanation: 'A = 150 000(1,04)⁵\n(1,04)⁵ ≈ 1,2166529\nA ≈ 150 000 × 1,2166529 ≈ 182 498 ✓',
             },
             {
               label: 'b) Vind die bevolking na 10 jaar (rond af na die naaste heelgetal).',
-              correctAnswer: '222036',
-              correctAnswers: ['222036', '222 036'],
-              explanation: 'A = 150 000(1,04)¹⁰\n(1,04)¹⁰ ≈ 1,48024\nA ≈ 150 000 × 1,48024 ≈ 222 036 ✓',
+              correctAnswer: '222037',
+              correctAnswers: ['222037', '222 037'],
+              explanation: 'A = 150 000(1,04)¹⁰\n(1,04)¹⁰ ≈ 1,4802443\nA ≈ 150 000 × 1,4802443 ≈ 222 037 ✓',
             },
             {
               label: 'c) Met hoeveel mense neem die bevolking toe tussen jaar 5 en jaar 10?',
               correctAnswer: '39539',
               correctAnswers: ['39539', '39 539', '39540', '39 540'],
-              explanation: '222 036 − 182 497 = 39 539 mense ✓',
+              explanation: '222 037 − 182 498 = 39 539 mense ✓',
             },
           ],
         },
@@ -487,13 +487,13 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Hoe lank sal dit ʼn bevolking van 1,2 miljoen neem om te verdubbel as dit teen 12% per jaar groei?',
-          answer: `Ongeveer ${gr('6')} jaar`,
+          answer: `Ongeveer ${gr('7')} jaar`,
           steps: [
             `Ons moet (1,12)<sup>${bl('n')}</sup> = ${or('2')} kry (verdubbeling beteken die vermenigvuldiger moet 2 bereik).`,
             `${bl('Probeer n = 5:')} (1,12)<sup>5</sup> ≈ 1,762 — dit is onder die ${or('teiken van 2')}, dus is n = 5 te laag.`,
             `${bl('Probeer n = 6:')} (1,12)<sup>6</sup> ≈ 1,974 — baie naby aan die ${or('teiken van 2')} maar nog nie bereik nie.`,
             `${bl('Probeer n = 7:')} (1,12)<sup>7</sup> ≈ 2,211 — dit oorskry die ${or('teiken van 2')}.`,
-            `<strong>Gevolgtrekking:</strong> Aangesien bevolking in heel jare getel moet word, neem dit ongeveer ${gr('n ≈ 6')} jaar (na bo afgerond om te verseker dat verdubbeling bereik word). ✓`,
+            `<strong>Gevolgtrekking:</strong> Aangesien bevolking in heel jare getel moet word, neem dit ${gr('n = 7')} jaar (na bo afgerond om te verseker dat verdubbeling bereik word). ✓`,
           ],
         },
         {
@@ -1191,11 +1191,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Vind die finale bedrag na 8 jaar as R6 000 teen 7% saamgestelde rente belê word.',
-      answer: 'R10 309,14',
+      answer: 'R10 309,12',
       checkMode: 'auto',
-      correctAnswer: 'R10309,14',
-      correctAnswers: ['R10309.14', '10309.14', 'R10 309.14', '10 309.14'],
-      explanation: 'A = 6 000(1,07)⁸ = 6 000 × 1,71819 ≈ R10 309,14 ✓',
+      correctAnswer: 'R10309,12',
+      correctAnswers: ['R10309.12', '10309.12', 'R10 309.12', '10 309.12', 'R10309,12'],
+      explanation: 'A = 6 000(1,07)⁸ = 6 000 × 1,7181860 ≈ R10 309,12 ✓',
     },
 
     // ── V6 Hard ───────────────────────────────────────────────────────────────
@@ -1308,7 +1308,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: "Amahle se bevolking van 60 000 groei teen 2,5% per jaar. Vind hoeveel jare dit neem voordat die bevolking 80 000 oorskry, deur probeer en verbeter te gebruik.",
-      answer: 'Benodig (1,025)ⁿ = 1,333. Probeer n = 11: 1,025¹¹ ≈ 1,319. Probeer n = 12: 1,025¹² ≈ 1,352. Dit neem ongeveer 12 jaar.',
+      answer: 'Benodig (1,025)ⁿ = 1,333. Probeer n = 11: 1,025¹¹ ≈ 1,312. Probeer n = 12: 1,025¹² ≈ 1,345. Dit neem ongeveer 12 jaar.',
       checkMode: 'self',
     },
 
@@ -1324,7 +1324,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Vergelyk die belegging van R12 000 teen 6% enkelvoudige rente vir 8 jaar met 6% saamgestelde rente vir 8 jaar. Vind albei finale bedrae en die verskil.',
-      answer: 'Enkelvoudig: 12 000(1 + 8 × 0,06) = R17 760. Saamgesteld: 12 000(1,06)⁸ ≈ R19 126,05. Verskil ≈ R1 366,05.',
+      answer: 'Enkelvoudig: 12 000(1 + 8 × 0,06) = R17 760. Saamgesteld: 12 000(1,06)⁸ ≈ R19 126,18. Verskil ≈ R1 366,18.',
       checkMode: 'self',
     },
 
