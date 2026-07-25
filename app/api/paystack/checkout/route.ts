@@ -84,9 +84,18 @@ export async function POST(req: NextRequest) {
     const foundingSnap = await adminDb.doc('settings/founding').get()
     const f = foundingSnap.exists ? foundingSnap.data()! : {}
     for (const plan of ['pro', 'max'] as const) {
+      if (!wantsFounding[plan]) continue
       const total = typeof f[`${plan}Total`] === 'number' ? f[`${plan}Total`] : 0
       const used = typeof f[`${plan}Used`] === 'number' ? f[`${plan}Used`] : 0
-      if (wantsFounding[plan] && total > 0 && used >= total) {
+      // Each paid child on this tier consumes one founding spot — a family
+      // requesting 3 Pro seats needs 3 spots available, not just 1, or a
+      // multi-child signup could slip through right at the boundary (e.g.
+      // used=19/total=20 would otherwise pass regardless of how many seats
+      // this family is claiming). The webhook still re-checks atomically at
+      // payment time, but catching it here avoids quoting a founding price
+      // we may not be able to honour.
+      const requestedSeats = childTiers.filter(t => t === plan).length
+      if (total > 0 && used + requestedSeats > total) {
         return new Response('Founding spots sold out', { status: 409 })
       }
     }

@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, updatePlan, initializeTransaction } from '@/src/lib/paystack'
-import { computeFamilyPrice, type Tier } from '@/src/lib/pricing'
+import { computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 const VALID_TIERS: Tier[] = ['free', 'pro', 'max']
@@ -104,6 +104,34 @@ export async function POST(req: NextRequest) {
   const { total: currentTotal } = computeFamilyPrice(currentChildPlans, userData.paystackFounding)
   const { total: newTotal } = computeFamilyPrice(childTiers, userData.paystackFounding)
   const config = getPaystackConfig()
+
+  // computeFamilyPrice applies a family's founding flag to every child on
+  // that tier — so if this family is already locked into founding pricing
+  // for pro/max and this change adds MORE children to that same tier, those
+  // new seats need founding-spot capacity too. Without this check, a family
+  // could keep adding children to an already-founding tier indefinitely with
+  // nothing ever counted against the 20-spot cap (the webhook mirrors this
+  // same check and does the actual atomic increment once payment confirms).
+  const foundingStatus = userData.paystackFounding as Record<Plan, boolean>
+  const addedFoundingSeats: Record<Plan, number> = { pro: 0, max: 0 }
+  for (const plan of ['pro', 'max'] as const) {
+    if (!foundingStatus[plan]) continue
+    const before = currentChildPlans.filter(t => t === plan).length
+    const after = childTiers.filter(t => t === plan).length
+    if (after > before) addedFoundingSeats[plan] = after - before
+  }
+  if (addedFoundingSeats.pro > 0 || addedFoundingSeats.max > 0) {
+    const foundingSnap = await adminDb.doc('settings/founding').get()
+    const f = foundingSnap.exists ? foundingSnap.data()! : {}
+    for (const plan of ['pro', 'max'] as const) {
+      if (addedFoundingSeats[plan] === 0) continue
+      const total = typeof f[`${plan}Total`] === 'number' ? f[`${plan}Total`] : 0
+      const used = typeof f[`${plan}Used`] === 'number' ? f[`${plan}Used`] : 0
+      if (total > 0 && used + addedFoundingSeats[plan] > total) {
+        return new Response('Founding spots sold out for this plan', { status: 409 })
+      }
+    }
+  }
 
   if (newTotal <= currentTotal) {
     const result = await updatePlan(config, { code: userData.paystackPlanCode, amountRands: newTotal })

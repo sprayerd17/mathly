@@ -538,6 +538,49 @@ export async function handlePaystackEvent(
       return
     }
 
+    // Founding seats consumed by this upgrade — mirrors the signup branch
+    // above. computeFamilyPrice applies the family's founding flag to every
+    // child on that tier, so if this family is already locked into founding
+    // pricing and this upgrade adds MORE children to that tier, those new
+    // seats need to count against the 20-spot cap too (update-tiers/route.ts
+    // pre-checked availability, but the actual increment — like every other
+    // founding consumption — only happens here, once payment is confirmed).
+    const foundingStatusForUpgrade = userData.paystackFounding as Record<Plan, boolean>
+    const upgradeFoundingSeats: Record<Plan, number> = { pro: 0, max: 0 }
+    for (const plan of ['pro', 'max'] as const) {
+      if (!foundingStatusForUpgrade[plan]) continue
+      const before = currentChildPlans.filter(t => t === plan).length
+      const after = expectedChildPlans.filter(t => t === plan).length
+      if (after > before) upgradeFoundingSeats[plan] = after - before
+    }
+    if (upgradeFoundingSeats.pro > 0 || upgradeFoundingSeats.max > 0) {
+      const foundingRef = adminDb.doc('settings/founding')
+      const oversold = await adminDb.runTransaction(async (tx) => {
+        const snap = await tx.get(foundingRef)
+        const f = snap.exists ? snap.data()! : {}
+        const results: Plan[] = []
+        for (const plan of ['pro', 'max'] as const) {
+          if (upgradeFoundingSeats[plan] === 0) continue
+          const total = typeof f[`${plan}Total`] === 'number' ? f[`${plan}Total`] : 0
+          const used = typeof f[`${plan}Used`] === 'number' ? f[`${plan}Used`] : 0
+          if (total > 0 && used + upgradeFoundingSeats[plan] > total) results.push(plan)
+        }
+        tx.set(foundingRef, {
+          proUsed: FieldValue.increment(upgradeFoundingSeats.pro),
+          maxUsed: FieldValue.increment(upgradeFoundingSeats.max),
+        }, { merge: true })
+        return results
+      })
+      if (oversold.length > 0) {
+        await sendOwnerAlert(
+          `Mathly: founding spots oversold via upgrade (${oversold.join(', ')})`,
+          `<p>uid ${uid} added more children to [${oversold.join(', ')}] under existing founding pricing after the
+           spots were already claimed by other concurrent signups/upgrades. Their payment already reflects
+           founding pricing for the new seat(s) — needs a decision on whether to honour it or follow up.</p>`,
+        ).catch(() => {})
+      }
+    }
+
     // An upgrade top-up is a same-cycle charge, not a new billing month — so
     // it can still draw down referral credit, but it must not also count as
     // an extra "active month" toward next year's referral allowance.

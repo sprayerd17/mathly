@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
-import { initiateCheckout, updateTiers } from '@/src/lib/paystack-client'
+import { initiateCheckout, updateTiers, getFoundingStatus, type FoundingPlanStatus } from '@/src/lib/paystack-client'
 import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
@@ -54,6 +54,34 @@ function FoundingBadge({ label }: { label: string }) {
   )
 }
 
+// total <= 0 means the founding window for this plan is open-ended (no cap
+// configured) — same convention checkout/route.ts uses server-side — so
+// there's nothing meaningful to show a bar for.
+function FoundingSpotsBar({ status, remainingLabel, soldOutLabel }: {
+  status?: FoundingPlanStatus
+  remainingLabel: string
+  soldOutLabel: string
+}) {
+  if (!status || status.total <= 0) return null
+  const remaining = Math.max(0, status.total - status.used)
+  const pct = Math.min(100, Math.round((status.used / status.total) * 100))
+  return (
+    <div className="mb-3">
+      <div className="h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: '#e5e7eb' }}>
+        <div
+          className="h-full rounded-full"
+          style={{ width: `${pct}%`, backgroundColor: status.soldOut ? '#9ca3af' : '#1e40af' }}
+        />
+      </div>
+      <p className="text-[11px] mt-1" style={{ color: '#6b7280' }}>
+        {status.soldOut
+          ? soldOutLabel
+          : remainingLabel.replace('{remaining}', String(remaining)).replace('{total}', String(status.total))}
+      </p>
+    </div>
+  )
+}
+
 export default function FamilyPlanBuilder() {
   const t = useTranslations()
   const { user, openModal } = useAuth()
@@ -99,11 +127,23 @@ export default function FamilyPlanBuilder() {
     setMounted(true)
   }, [])
 
-  // Founding pricing is always offered client-side; the server is the sole
-  // arbiter of real remaining capacity (settings/founding) and rejects
-  // checkout if it's genuinely sold out — mirrors providers.tsx's register().
-  const proFounding  = true
-  const maxFounding   = true
+  // Real remaining-capacity check, fetched from settings/founding via a
+  // narrow read-only endpoint (the doc itself is locked to Admin SDK access
+  // in firestore.rules). Until it resolves, default to "founding available"
+  // so there's no flash of full pricing while the request is in flight — the
+  // server is still the sole arbiter that actually blocks checkout once
+  // spots are gone, this just keeps the client's own display honest once we
+  // know for sure.
+  const [foundingStatus, setFoundingStatus] = useState<{ pro: FoundingPlanStatus; max: FoundingPlanStatus } | null>(null)
+  useEffect(() => {
+    getFoundingStatus().then(status => {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      if (status) setFoundingStatus(status)
+    })
+  }, [])
+
+  const proFounding  = !foundingStatus?.pro.soldOut
+  const maxFounding   = !foundingStatus?.max.soldOut
 
   const prices: Record<Plan, number>    = {
     pro: proFounding ? FOUNDING_PRICE.pro : FULL_PRICE.pro,
@@ -233,6 +273,11 @@ export default function FamilyPlanBuilder() {
               R{prices.pro}<span className="text-sm font-normal text-gray-400"> {t.pricing_per_month}</span>
             </p>
           </div>
+          <FoundingSpotsBar
+            status={foundingStatus?.pro}
+            remainingLabel={t.pricing_founding_spots_remaining}
+            soldOutLabel={t.pricing_founding_spots_sold_out}
+          />
           <ul className="flex-1 space-y-2.5 mb-5">
             {[
               t.pricing_feature_study_guides,
@@ -263,6 +308,11 @@ export default function FamilyPlanBuilder() {
               R{prices.max}<span className="text-sm font-normal text-gray-400"> {t.pricing_per_month}</span>
             </p>
           </div>
+          <FoundingSpotsBar
+            status={foundingStatus?.max}
+            remainingLabel={t.pricing_founding_spots_remaining}
+            soldOutLabel={t.pricing_founding_spots_sold_out}
+          />
           <ul className="flex-1 space-y-2.5 mb-5">
             {[
               t.pricing_max_feature_everything_in_pro,

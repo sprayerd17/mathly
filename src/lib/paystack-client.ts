@@ -3,6 +3,20 @@ import type { Tier } from '@/src/lib/pricing'
 
 export class CheckoutError extends Error {}
 
+export type FoundingPlanStatus = { total: number; used: number; soldOut: boolean }
+
+// Public capacity summary for the pricing page's founding-spots bar — no
+// auth required, settings/founding itself stays locked down server-side.
+export async function getFoundingStatus(): Promise<{ pro: FoundingPlanStatus; max: FoundingPlanStatus } | null> {
+  try {
+    const res = await fetch('/api/paystack/founding-status')
+    if (!res.ok) return null
+    return await res.json()
+  } catch {
+    return null
+  }
+}
+
 // Paystack's Initialize Transaction returns a single authorization_url —
 // simpler than PayFast's action+fields auto-post form, just redirect.
 function redirectToPaystack(authorizationUrl: string) {
