@@ -818,12 +818,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'Find the area of triangle ABC where a = 6 cm, b = 9 cm, and the included angle C = 70°.',
-          answer: `Area ≈ ${gr('25.38 cm²')}`,
+          answer: `Area ≈ ${gr('25.37 cm²')}`,
           steps: [
             `Identify what is known: ${bl('a = 6 cm')}, ${bl('b = 9 cm')}, ${bl('C = 70°')} (two sides and the included angle).`,
             `Apply the ${or('Area Rule')}: ${or('Area = ½ · a · b · sinC')}.`,
             `Substitute: Area = ½ × ${bl('6')} × ${bl('9')} × sin(${bl('70°')}).`,
-            `Calculate: Area = ½ × 54 × 0.9397 = 27 × 0.9397 ≈ ${gr('25.38 cm²')} ✓`,
+            `Calculate: Area = ½ × 54 × 0.9397 = 27 × 0.9397 ≈ ${gr('25.37 cm²')} ✓`,
           ],
         },
       ],
@@ -926,7 +926,7 @@ export const topicData: TopicData = {
         },
         {
           question: 'A surveyor stands at point A and measures the angle of elevation to the top of a tower as 25°. She walks 50 m closer (now at point B) and measures the new angle of elevation as 40°. Find the height of the tower.',
-          answer: `Tower height h ≈ ${gr('34.8 m')}`,
+          answer: `Tower height h ≈ ${gr('52.4 m')}`,
           steps: [
             `Let the tower height = h and the horizontal distance from B to the base of the tower = d. The surveyor starts at A, which is ${bl('50 m')} further from the base than B.`,
             `From B (angle of elevation ${bl('40°')}): ${or('tan 40° = h / d')}, so ${or('h = d · tan 40°')}.`,
@@ -934,7 +934,7 @@ export const topicData: TopicData = {
             `Set the two expressions for h equal: ${or('d · tan 40° = (d + 50) · tan 25°')}.`,
             `Expand and collect d terms: ${or('d · tan 40° − d · tan 25° = 50 · tan 25°')}, so ${or('d(tan 40° − tan 25°) = 50 · tan 25°')}.`,
             `Solve for d: ${or('d = 50 · tan 25° / (tan 40° − tan 25°)')} ≈ ${or('50 × 0.4663 / (0.8391 − 0.4663)')} ≈ ${or('23.315 / 0.3728')} ≈ ${or('62.5 m')}.`,
-            `Substitute back: h = ${or('d · tan 40°')} ≈ ${or('62.5 × 0.8391')} ≈ ${gr('34.8 m')} ✓`,
+            `Substitute back: h = ${or('d · tan 40°')} ≈ ${or('62.5 × 0.8391')} ≈ ${gr('52.4 m')} ✓`,
           ],
         },
         {
@@ -975,10 +975,10 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        'Three sub-diagrams side by side: (1) two flagpoles 30 m apart with crossing ropes and intersection height h labelled in blue, intermediate proportion in orange, answer 6 m in green; (2) surveyor scenario with tower, angles 25° and 40° in blue, distance d in orange, height h ≈ 34.8 m in green; (3) triangular plot with sides 45 m and 60 m and angle 55° in blue, area and third side calculations in orange, final answers in green',
+        'Three sub-diagrams side by side: (1) two flagpoles 30 m apart with crossing ropes and intersection height h labelled in blue, intermediate proportion in orange, answer 6 m in green; (2) surveyor scenario with tower, angles 25° and 40° in blue, distance d in orange, height h ≈ 52.4 m in green; (3) triangular plot with sides 45 m and 60 m and angle 55° in blue, area and third side calculations in orange, final answers in green',
 
       diagramSvg:
-        '<svg viewBox="0 0 660 220" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><line x1="210" y1="10" x2="210" y2="210" stroke="#e2e8f0" stroke-width="1.5"/><line x1="430" y1="10" x2="430" y2="210" stroke="#e2e8f0" stroke-width="1.5"/><text x="105" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Flagpoles</text><line x1="20" y1="180" x2="190" y2="180" stroke="#0f1f3d" stroke-width="2"/><line x1="40" y1="180" x2="40" y2="110" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170" y1="180" x2="170" y2="75" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="110" x2="170" y2="180" stroke="#ea580c" stroke-width="1.8"/><line x1="170" y1="75" x2="40" y2="180" stroke="#ea580c" stroke-width="1.8"/><circle cx="92" cy="138" r="3" fill="#16a34a"/><line x1="92" y1="138" x2="92" y2="180" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="3,3"/><text x="98" y="165" font-size="10" font-weight="700" fill="#16a34a">h = 6m</text><text x="40" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">A</text><text x="170" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">B</text><text x="24" y="145" font-size="9" font-weight="700" fill="#2563eb" text-anchor="end">10m</text><text x="182" y="125" font-size="9" font-weight="700" fill="#2563eb" text-anchor="start">15m</text><text x="105" y="204" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">30m</text><text x="320" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Surveyor</text><line x1="230" y1="180" x2="400" y2="180" stroke="#0f1f3d" stroke-width="2"/><line x1="380" y1="180" x2="380" y2="60" stroke="#0f1f3d" stroke-width="2.5"/><line x1="300" y1="180" x2="380" y2="60" stroke="#ea580c" stroke-width="1.8"/><line x1="250" y1="180" x2="380" y2="60" stroke="#ea580c" stroke-width="1.8"/><text x="250" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">A</text><text x="300" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">B</text><text x="253" y="174" font-size="9" font-weight="700" fill="#2563eb">25&#176;</text><text x="303" y="174" font-size="9" font-weight="700" fill="#2563eb">40&#176;</text><text x="275" y="204" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">50m</text><text x="386" y="70" font-size="10" font-weight="700" fill="#16a34a">h &#8776; 34.8m</text><text x="550" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Triangular plot</text><polygon points="540,70 460,180 640,180" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="540" y="62" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">A</text><text x="450" y="190" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="end">B</text><text x="650" y="190" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="start">C</text><text x="490" y="118" font-size="9" font-weight="700" fill="#2563eb">45m</text><text x="580" y="118" font-size="9" font-weight="700" fill="#2563eb">60m</text><text x="540" y="90" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">55&#176;</text><text x="550" y="197" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">BC &#8776; 50.28m</text><text x="550" y="150" font-size="9" font-weight="700" fill="#16a34a" text-anchor="middle">Area &#8776; 1106.7m&#178;</text></svg>',
+        '<svg viewBox="0 0 660 220" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><line x1="210" y1="10" x2="210" y2="210" stroke="#e2e8f0" stroke-width="1.5"/><line x1="430" y1="10" x2="430" y2="210" stroke="#e2e8f0" stroke-width="1.5"/><text x="105" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Flagpoles</text><line x1="20" y1="180" x2="190" y2="180" stroke="#0f1f3d" stroke-width="2"/><line x1="40" y1="180" x2="40" y2="110" stroke="#0f1f3d" stroke-width="2.5"/><line x1="170" y1="180" x2="170" y2="75" stroke="#0f1f3d" stroke-width="2.5"/><line x1="40" y1="110" x2="170" y2="180" stroke="#ea580c" stroke-width="1.8"/><line x1="170" y1="75" x2="40" y2="180" stroke="#ea580c" stroke-width="1.8"/><circle cx="92" cy="138" r="3" fill="#16a34a"/><line x1="92" y1="138" x2="92" y2="180" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="3,3"/><text x="98" y="165" font-size="10" font-weight="700" fill="#16a34a">h = 6m</text><text x="40" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">A</text><text x="170" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">B</text><text x="24" y="145" font-size="9" font-weight="700" fill="#2563eb" text-anchor="end">10m</text><text x="182" y="125" font-size="9" font-weight="700" fill="#2563eb" text-anchor="start">15m</text><text x="105" y="204" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">30m</text><text x="320" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Surveyor</text><line x1="230" y1="180" x2="400" y2="180" stroke="#0f1f3d" stroke-width="2"/><line x1="380" y1="180" x2="380" y2="60" stroke="#0f1f3d" stroke-width="2.5"/><line x1="300" y1="180" x2="380" y2="60" stroke="#ea580c" stroke-width="1.8"/><line x1="250" y1="180" x2="380" y2="60" stroke="#ea580c" stroke-width="1.8"/><text x="250" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">A</text><text x="300" y="193" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">B</text><text x="253" y="174" font-size="9" font-weight="700" fill="#2563eb">25&#176;</text><text x="303" y="174" font-size="9" font-weight="700" fill="#2563eb">40&#176;</text><text x="275" y="204" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">50m</text><text x="386" y="70" font-size="10" font-weight="700" fill="#16a34a">h &#8776; 52.4m</text><text x="550" y="15" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Triangular plot</text><polygon points="540,70 460,180 640,180" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="540" y="62" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="middle">A</text><text x="450" y="190" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="end">B</text><text x="650" y="190" font-size="10" font-weight="700" fill="#0f1f3d" text-anchor="start">C</text><text x="490" y="118" font-size="9" font-weight="700" fill="#2563eb">45m</text><text x="580" y="118" font-size="9" font-weight="700" fill="#2563eb">60m</text><text x="540" y="90" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">55&#176;</text><text x="550" y="197" font-size="9" font-weight="700" fill="#ea580c" text-anchor="middle">BC &#8776; 50.28m</text><text x="550" y="150" font-size="9" font-weight="700" fill="#16a34a" text-anchor="middle">Area &#8776; 1106.7m&#178;</text></svg>',
 
       videoPlaceholder:
         'Short video walking through multi-step 2D trigonometry problems — the crossing ropes intersection height, the angle-of-elevation tower problem solved simultaneously, and the triangular plot using the Area and Cosine Rules',
@@ -1269,11 +1269,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'In triangle ABC, A = 35°, B = 70°, a = 12 cm. Find side b using the Sine Rule.',
-      answer: '19.95 cm',
+      answer: '19.66 cm',
       checkMode: 'auto',
-      correctAnswer: '19.95cm',
-      correctAnswers: ['19.95cm', '19.95 cm', '≈19.95cm', '≈ 19.95 cm', '19.9cm', '20cm'],
-      explanation: 'Sine Rule: a/sinA = b/sinB\n12/sin35° = b/sin70°\nb = 12 × sin70°/sin35° = 12 × 0.9397/0.5736 ≈ 19.95 cm ✓',
+      correctAnswer: '19.66cm',
+      correctAnswers: ['19.66cm', '19.66 cm', '≈19.66cm', '≈ 19.66 cm', '19.7cm', '20cm'],
+      explanation: 'Sine Rule: a/sinA = b/sinB\n12/sin35° = b/sin70°\nb = 12 × sin70°/sin35° = 12 × 0.9397/0.5736 ≈ 19.66 cm ✓',
     },
 
     // ── Q16 Hard — Cosine Rule ────────────────────────────────────────────────

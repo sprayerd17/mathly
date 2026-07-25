@@ -140,7 +140,7 @@ export const topicData: TopicData = {
             {
               label: 'a) Jaarlikse waardeverminderingskoers (%)',
               correctAnswer: '8,33',
-              correctAnswers: ['8.33%', '8.33', '8.3%', '8.3'],
+              correctAnswers: ['8.33%', '8.33', '8.3%', '8.3', '8,33%', '8,33', '8,3%', '8,3'],
               explanation: 'i = 8 000 / 96 000 = 0,0833 = 8,33% p.j. ✓',
             },
             {
@@ -276,7 +276,7 @@ export const topicData: TopicData = {
             {
               label: 'b) ʼn Rekenaar verminder in waarde van R25 000 tot R6 250 in 4 jaar volgens die verminderende-balans-metode. Vind i (as ʼn persentasie).',
               correctAnswer: '29,29',
-              correctAnswers: ['29.29%', '29.29', '29.3%', '29.3'],
+              correctAnswers: ['29.29%', '29.29', '29.3%', '29.3', '29,29%', '29,29', '29,3%', '29,3'],
               explanation: 'P = 25 000, A = 6 250, n = 4\n6 250 = 25 000(1 − i)⁴\n0,25 = (1 − i)⁴\n1 − i = ⁴√0,25 = 0,7071 → i = 0,2929 = 29,29% p.j. ✓',
             },
           ],
@@ -395,8 +395,8 @@ export const topicData: TopicData = {
             },
             {
               label: 'c) Watter metode gee die hoër boekwaarde?',
-              correctAnswer: 'reducing-balance',
-              correctAnswers: ['reducing-balance', 'reducing balance', 'RB', 'compound decay', 'verminderende balans', 'verminderende-balans'],
+              correctAnswer: 'verminderende balans',
+              correctAnswers: ['verminderende balans', 'verminderende-balans', 'reducing-balance', 'reducing balance', 'RB', 'compound decay'],
               explanation: 'Verminderende balans (R36 125) > reguitlyn (R35 000) — verminderende balans gee die hoër boekwaarde ✓',
             },
           ],
@@ -436,7 +436,7 @@ export const topicData: TopicData = {
             {
               label: 'a) Jare met reguitlyn (10% p.j.)',
               correctAnswer: '7,5',
-              correctAnswers: ['7.5', '7.5 jaar', '7½'],
+              correctAnswers: ['7.5', '7.5 jaar', '7½', '7,5', '7,5 jaar'],
               explanation: '50 000 = 200 000(1 − n × 0,10)\n0,25 = 1 − 0,10n → 0,10n = 0,75 → n = 7,5 jaar ✓',
             },
             {
@@ -446,8 +446,8 @@ export const topicData: TopicData = {
             },
             {
               label: 'c) Watter metode bereik R50 000 in minder jare?',
-              correctAnswer: 'straight-line',
-              correctAnswers: ['straight-line', 'straight line', 'SL', 'simple decay', 'reguitlyn', 'reguitlynmetode'],
+              correctAnswer: 'reguitlyn',
+              correctAnswers: ['reguitlyn', 'reguitlynmetode', 'straight-line', 'straight line', 'SL', 'simple decay'],
               explanation: 'Reguitlyn (7,5 jaar) bereik R50 000 baie vroeër as verminderende balans (14 jaar) teen dieselfde koers ✓',
             },
           ],
@@ -610,13 +610,13 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Bereken haar totale terugbetaling (deposito plus paaiemente), tot die naaste sent.',
-              correctAnswer: '32841.60',
+              correctAnswer: '32841,60',
               correctAnswers: ['R32841,60', 'R32 841,60', '32841,60', '32 841,60', 'R32842', 'R32 842', '32842'],
               explanation: 'Balans = 22 000 − 2 640 = R19 360.\nBalansterugbetaling: A = 19 360(1 + 4 × 0,14) = 19 360(1,56) = R30 201,60.\nTotale terugbetaling = 2 640 + 30 201,60 = R32 841,60 ✓',
             },
             {
               label: 'c) Bereken haar maandelikse paaiement (R).',
-              correctAnswer: '629.20',
+              correctAnswer: '629,20',
               correctAnswers: ['R629,20', 'R629,2', '629,20', '629,2'],
               explanation: 'Maandelikse paaiement = R30 201,60 ÷ (4 × 12) = R30 201,60 ÷ 48 = R629,20 ✓',
             },
@@ -764,7 +764,7 @@ export const topicData: TopicData = {
           answer: '9,38%',
           checkMode: 'auto',
           correctAnswer: '9,38',
-          correctAnswers: ['9.38%', '9.38', '9.4%', '9.4'],
+          correctAnswers: ['9.38%', '9.38', '9.4%', '9.4', '9,38%', '9,38', '9,4%', '9,4'],
           explanation: 'i_nom = 0,09, m = 12\ni_eff = (1 + 0,09/12)^12 − 1 = (1,0075)^12 − 1 = 1,09381 − 1 = 9,38% ✓',
         },
         {
@@ -776,13 +776,13 @@ export const topicData: TopicData = {
             {
               label: 'a) ʼn Spaarrekening betaal 18% p.j. kwartaalliks saamgestel. Bereken die effektiewe jaarlikse rentekoers (%).',
               correctAnswer: '19,25',
-              correctAnswers: ['19.25%', '19.25', '19.3%', '19.3'],
+              correctAnswers: ['19.25%', '19.25', '19.3%', '19.3', '19,25%', '19,25', '19,3%', '19,3'],
               explanation: 'i_eff = (1 + 0,18/4)^4 − 1 = (1,045)^4 − 1 = 1,19252 − 1 = 19,25% ✓',
             },
             {
               label: 'b) ʼn Effektiewe jaarlikse koers van 15% is ekwivalent aan watter nominale koers, maandeliks saamgestel (%)? Gee jou antwoord tot 2 desimale plekke.',
               correctAnswer: '14,06',
-              correctAnswers: ['14.06%', '14.06', '14.1%', '14.1'],
+              correctAnswers: ['14.06%', '14.06', '14.1%', '14.1', '14,06%', '14,06', '14,1%', '14,1'],
               explanation: '0,15 = (1 + i_nom/12)^12 − 1\n1,15 = (1 + i_nom/12)^12\n1 + i_nom/12 = ¹²√1,15 = 1,01172\ni_nom = 12 × 0,01172 = 14,06% ✓',
             },
           ],
@@ -796,19 +796,19 @@ export const topicData: TopicData = {
             {
               label: 'a) Bereken die effektiewe jaarlikse koers indien kwartaalliks saamgestel (%).',
               correctAnswer: '12,55',
-              correctAnswers: ['12.55%', '12.55', '12.6%', '12.6'],
+              correctAnswers: ['12.55%', '12.55', '12.6%', '12.6', '12,55%', '12,55', '12,6%', '12,6'],
               explanation: 'i_eff = (1 + 0,12/4)^4 − 1 = (1,03)^4 − 1 = 1,12551 − 1 = 12,55% ✓',
             },
             {
               label: 'b) Bereken die effektiewe jaarlikse koers indien maandeliks saamgestel (%).',
               correctAnswer: '12,68',
-              correctAnswers: ['12.68%', '12.68', '12.7%', '12.7'],
+              correctAnswers: ['12.68%', '12.68', '12.7%', '12.7', '12,68%', '12,68', '12,7%', '12,7'],
               explanation: 'i_eff = (1 + 0,12/12)^12 − 1 = (1,01)^12 − 1 = 1,12683 − 1 = 12,68% ✓',
             },
             {
               label: 'c) Op ʼn deposito van R100 000 vir 1 jaar, hoeveel meer rente (in rand) verdien maandelikse samestelling in vergelyking met kwartaallikse?',
               correctAnswer: '132',
-              correctAnswers: ['R132', '132', 'R132.50', '132.50', 'R133', '133'],
+              correctAnswers: ['R132', '132', 'R132,50', '132,50', 'R133', '133'],
               explanation: 'Maandelikse rente: R100 000 × 0,1268 = R12 683\nKwartaallikse rente: R100 000 × 0,1255 = R12 551\nVerskil: R12 683 − R12 551 = R132 ✓',
             },
           ],
@@ -822,7 +822,7 @@ export const topicData: TopicData = {
             {
               label: 'a) Effektiewe jaarlikse rentekoers (%)',
               correctAnswer: '17,23',
-              correctAnswers: ['17.23%', '17.23', '17.2%', '17.2'],
+              correctAnswers: ['17.23%', '17.23', '17.2%', '17.2', '17,23%', '17,23', '17,2%', '17,2'],
               explanation: 'i_nom = 0,16, m = 12\ni_eff = (1 + 0,16/12)^12 − 1 = (1,013333)^12 − 1 ≈ 1,17227 − 1 = 17,23% ✓',
             },
             {
@@ -890,10 +890,10 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'ʼn Afleweringsvoertuig wat vir R280 000 gekoop is, verminder in waarde volgens die verminderende-balans-metode teen 20% p.j. vir die eerste 2 jaar, waarna die waardeverminderingskoers na 12% p.j. verander vir die volgende 2 jaar. Bereken die waarde van die voertuig na 4 jaar.',
-          answer: `${re('A ≈ R138 781')}`,
+          answer: `${re('A ≈ R138 772')}`,
           steps: [
             `${bl('Fase 1 (jaar 1–2, 20% p.j.):')} ${bl('A₁')} = ${bl('280 000')}(1 − 0,20)² = ${bl('280 000')}(0,80)² = ${bl('280 000')} × 0,64 = ${bl('R179 200')}.`,
-            `${gr('Fase 2 (jaar 3–4, 12% p.j.):')} gebruik ${bl('R179 200')} as die nuwe beginwaarde. ${gr('A₂')} = ${bl('179 200')}(1 − 0,12)² = ${bl('179 200')}(0,88)² = ${bl('179 200')} × 0,7744 = ${re('R138 781')}.`,
+            `${gr('Fase 2 (jaar 3–4, 12% p.j.):')} gebruik ${bl('R179 200')} as die nuwe beginwaarde. ${gr('A₂')} = ${bl('179 200')}(1 − 0,12)² = ${bl('179 200')}(0,88)² = ${bl('179 200')} × 0,7744 = ${re('R138 772')}.`,
           ],
         },
         {
@@ -944,9 +944,9 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Bereken die waarde na nog 2 jaar teen 8% kwartaalliks saamgestel (R, tot die naaste rand).',
-              correctAnswer: '52812',
-              correctAnswers: ['R52812', 'R52 812', '52812', '52 812', 'R52813', '52813', 'R52811', '52811'],
-              explanation: 'A₂ = 45 073 × (1 + 0,08/4)^8 = 45 073 × (1,02)^8 = 45 073 × 1,17166 = R52 812 ✓',
+              correctAnswer: '52810',
+              correctAnswers: ['R52810', 'R52 810', '52810', '52 810', 'R52811', '52811', 'R52809', '52809'],
+              explanation: 'A₂ = 45 073 × (1 + 0,08/4)^8 = 45 073 × (1,02)^8 = 45 073 × 1,17166 = R52 810 ✓',
             },
           ],
         },
@@ -981,7 +981,7 @@ export const topicData: TopicData = {
           answer: '12% p.j.',
           checkMode: 'auto',
           correctAnswer: '12',
-          correctAnswers: ['12%', '12', '12.00%', '12.0%'],
+          correctAnswers: ['12%', '12', '12.00%', '12.0%', '12,00%', '12,0%'],
           explanation: 'Stap 1 — werk agteruit deur Fase 2 (bekende 10% p.j. vir 3 jaar) om die waarde aan die einde van jaar 2 te vind:\nV = 254 041,92 ÷ (0,90)³ = 254 041,92 ÷ 0,729 = R348 480\nStap 2 — los die onbekende Fase 1-koers op met 450 000(1 − r)² = 348 480:\n(1 − r)² = 348 480 ÷ 450 000 = 0,7744\n1 − r = √0,7744 = 0,88\nr = 1 − 0,88 = 0,12 = 12% p.j. ✓',
         },
       ],

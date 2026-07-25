@@ -551,7 +551,7 @@ export const topicData: TopicData = {
       question: 'Los op: x² − 9x + 20 = 0 deur faktorisering.',
       answer: 'x = 4 of x = 5',
       checkMode: 'auto',
-      correctAnswers: ['x=4 or x=5', 'x = 4 or x = 5', 'x=5 or x=4', 'x = 5 or x = 4', '4 or 5', '5 or 4'],
+      correctAnswers: ['x=4 or x=5', 'x = 4 or x = 5', 'x=5 or x=4', 'x = 5 or x = 4', '4 or 5', '5 or 4', 'x=4 of x=5', 'x = 4 of x = 5', 'x=5 of x=4', 'x = 5 of x = 4', '4 of 5', '5 of 4'],
       explanation: 'Vind twee getalle wat vermenigvuldig tot 20 en optel tot −9: dit is −4 en −5.\n(x − 4)(x − 5) = 0\nStel elke faktor gelyk aan nul: x = 4 of x = 5 ✓',
     },
 
@@ -577,7 +577,7 @@ export const topicData: TopicData = {
       question: 'Los op: x² − 4 > 0.',
       answer: 'x < −2 of x > 2',
       checkMode: 'auto',
-      correctAnswers: ['x<-2 or x>2', 'x < -2 or x > 2', 'x<−2 or x>2', 'x < −2 or x > 2'],
+      correctAnswers: ['x<-2 or x>2', 'x < -2 or x > 2', 'x<−2 or x>2', 'x < −2 or x > 2', 'x<-2 of x>2', 'x < -2 of x > 2', 'x<−2 of x>2', 'x < −2 of x > 2'],
       explanation: 'Kritieke waardes: x² − 4 = 0 → x = −2 of x = 2.\nToets intervalle:\n• x < −2: positief ✓\n• −2 < x < 2: negatief\n• x > 2: positief ✓\nOplossing: x < −2 of x > 2.',
     },
 
@@ -631,7 +631,7 @@ export const topicData: TopicData = {
       question: 'Los gelyktydig op: y = x + 2 en y = x² − 4.',
       answer: 'x = 3, y = 5  of  x = −2, y = 0',
       checkMode: 'auto',
-      correctAnswers: ['x=3 or x=-2', 'x = 3 or x = -2', '(3,5) and (-2,0)', 'x=3,y=5 and x=-2,y=0'],
+      correctAnswers: ['x=3 or x=-2', 'x = 3 or x = -2', '(3,5) and (-2,0)', 'x=3,y=5 and x=-2,y=0', 'x=3 of x=-2', 'x = 3 of x = -2', '(3,5) en (-2,0)', 'x=3,y=5 en x=-2,y=0'],
       explanation: 'Vervang y = x + 2 in y = x² − 4:\nx + 2 = x² − 4\nx² − x − 6 = 0 → (x − 3)(x + 2) = 0\nx = 3 of x = −2\nOoreenstemmende y-waardes: y = 5 of y = 0.',
     },
 
@@ -657,7 +657,7 @@ export const topicData: TopicData = {
       question: 'Los op: x² + x − 12 = 0 deur die kwadratiese formule te gebruik.',
       answer: 'x = 3 of x = −4',
       checkMode: 'auto',
-      correctAnswers: ['x=3 or x=-4', 'x = 3 or x = -4', 'x=-4 or x=3', 'x = -4 or x = 3', '3 or -4', '-4 or 3'],
+      correctAnswers: ['x=3 or x=-4', 'x = 3 or x = -4', 'x=-4 or x=3', 'x = -4 or x = 3', '3 or -4', '-4 or 3', 'x=3 of x=-4', 'x = 3 of x = -4', 'x=-4 of x=3', 'x = -4 of x = 3', '3 of -4', '-4 of 3'],
       explanation: 'a = 1, b = 1, c = −12. Diskriminant: Δ = 1 + 48 = 49.\nx = (−1 ± 7) / 2.\nx = 3 of x = −4 ✓',
     },
 
@@ -691,7 +691,7 @@ export const topicData: TopicData = {
       question: 'Los gelyktydig op: y = 3x − 4 en y = 2x² − 6x − 9, en vind albei snypunte.',
       answer: 'x = 5, y = 11  of  x = −½, y = −5,5',
       checkMode: 'auto',
-      correctAnswers: ['x=5 or x=-1/2', 'x = 5 or x = -1/2', 'x=5 or x=-0.5', '(5,11) and (-0.5,-5.5)', '(5,11) and (-1/2,-5.5)'],
+      correctAnswers: ['x=5 or x=-1/2', 'x = 5 or x = -1/2', 'x=5 or x=-0,5', '(5,11) and (-0,5,-5,5)', '(5,11) and (-1/2,-5,5)', 'x=5 of x=-1/2', 'x = 5 of x = -1/2', 'x=5 of x=-0,5', '(5,11) en (-0,5,-5,5)', '(5,11) en (-1/2,-5,5)'],
       explanation: 'Vervang y = 3x − 4 in y = 2x² − 6x − 9:\n3x − 4 = 2x² − 6x − 9\n2x² − 9x − 5 = 0 → (2x + 1)(x − 5) = 0\nx = 5 of x = −½\nOoreenstemmende y-waardes: y = 11 of y = −5,5.',
     },
 
@@ -725,7 +725,7 @@ export const topicData: TopicData = {
       question: 'Die vergelyking x² − kx + 9 = 0 het reële, gelyke wortels. Bepaal die waarde(s) van k.',
       answer: 'k = 6 of k = −6',
       checkMode: 'auto',
-      correctAnswers: ['k=6 or k=-6', 'k = 6 or k = -6', 'k=-6 or k=6', 'k = -6 or k = 6', 'k=±6', 'k = ±6', '6 or -6', '-6 or 6'],
+      correctAnswers: ['k=6 or k=-6', 'k = 6 or k = -6', 'k=-6 or k=6', 'k = -6 or k = 6', 'k=±6', 'k = ±6', '6 or -6', '-6 or 6', 'k=6 of k=-6', 'k = 6 of k = -6', 'k=-6 of k=6', 'k = -6 of k = 6', '6 of -6', '-6 of 6'],
       explanation: 'Vir reële, gelyke wortels moet die diskriminant gelyk wees aan nul: b² − 4ac = 0.\nHier is a = 1, b = −k, c = 9, dus (−k)² − 4(1)(9) = 0.\nk² − 36 = 0 → k² = 36 → k = 6 of k = −6.\nKontroleer: k = 6 gee x² − 6x + 9 = (x − 3)² = 0 (een herhaalde wortel); k = −6 gee x² + 6x + 9 = (x + 3)² = 0 (een herhaalde wortel) ✓',
     },
 
@@ -764,7 +764,7 @@ export const topicData: TopicData = {
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
         { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² − 4x − 3 = 0', answer: 'x=2+√7 of x=2-√7', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: 2x² + 3x − 5 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=2, b=3, c=−5. Diskriminant = 9 − 4(2)(−5) = 49, wat ʼn positiewe volkome vierkant is, dus is daar twee verskillende rasionale wortels.\nx = (−3 ± 7) / 4.\nx = 1 of x = −5/2.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² + 4x + 1 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=1, b=4, c=1. Diskriminant = 16 − 4(1)(1) = 12, wat positief is maar nie ʼn volkome vierkant nie, dus is daar twee verskillende irrasionale wortels (in wortelvorm).\nx = (−4 ± √12) / 2 = (−4 ± 2√3) / 2.\nx = −2 + √3 of x = −2 − √3.', checkMode: 'self' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
         { difficulty: 'Medium', question: 'Los op vir x: √(2x + 3) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Kwadreer albei kante: 2x + 3 = x².\nHerrangskik: x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0, dus x = 3 of x = −1.\nToets x = 3: √(2(3)+3) = √9 = 3 = 3 ✓ geldig.\nToets x = −1: √(2(−1)+3) = √1 = 1 ≠ −1, dus is x = −1 buitenstaander (verwerp).\nOplossing: x = 3 alleen.' },
@@ -812,7 +812,7 @@ export const topicData: TopicData = {
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
         { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² − 2x − 9 = 0', answer: 'x=1+√10 of x=1-√10', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: 3x² − 2x − 8 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=3, b=−2, c=−8. Diskriminant = 4 − 4(3)(−8) = 100, wat ʼn positiewe volkome vierkant is, dus is daar twee verskillende rasionale wortels.\nx = (2 ± 10) / 6.\nx = 2 of x = −4/3.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² − 6x + 4 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=1, b=−6, c=4. Diskriminant = 36 − 4(1)(4) = 20, wat positief is maar nie ʼn volkome vierkant nie, dus is daar twee verskillende irrasionale wortels (in wortelvorm).\nx = (6 ± √20) / 2 = (6 ± 2√5) / 2.\nx = 3 + √5 of x = 3 − √5.', checkMode: 'self' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
         { difficulty: 'Medium', question: 'Los op vir x: √(x + 6) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Kwadreer albei kante: x + 6 = x².\nHerrangskik: x² − x − 6 = 0 → (x − 3)(x + 2) = 0, dus x = 3 of x = −2.\nToets x = 3: √(3+6) = √9 = 3 = 3 ✓ geldig.\nToets x = −2: √(−2+6) = √4 = 2 ≠ −2, dus is x = −2 buitenstaander (verwerp).\nOplossing: x = 3 alleen.' },
@@ -860,7 +860,7 @@ export const topicData: TopicData = {
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
         { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² + 2x − 7 = 0', answer: 'x=-1+2√2 of x=-1-2√2', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: 2x² − x − 6 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=2, b=−1, c=−6. Diskriminant = 1 − 4(2)(−6) = 49, wat ʼn positiewe volkome vierkant is, dus is daar twee verskillende rasionale wortels.\nx = (1 ± 7) / 4.\nx = 2 of x = −3/2.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op vir x deur die kwadratiese formule te gebruik, en laat jou antwoord in eenvoudigste wortelvorm: x² + 6x + 3 = 0. Gee die diskriminant voordat jy oplos.', answer: 'a=1, b=6, c=3. Diskriminant = 36 − 4(1)(3) = 24, wat positief is maar nie ʼn volkome vierkant nie, dus is daar twee verskillende irrasionale wortels (in wortelvorm).\nx = (−6 ± √24) / 2 = (−6 ± 2√6) / 2.\nx = −3 + √6 of x = −3 − √6.', checkMode: 'self' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
         { difficulty: 'Medium', question: 'Los op vir x: √(x + 2) = x', answer: 'x=2', checkMode: 'auto', correctAnswer: 'x=2', correctAnswers: ['x=2', 'x = 2', '2'], explanation: 'Kwadreer albei kante: x + 2 = x².\nHerrangskik: x² − x − 2 = 0 → (x − 2)(x + 1) = 0, dus x = 2 of x = −1.\nToets x = 2: √(2+2) = √4 = 2 = 2 ✓ geldig.\nToets x = −1: √(−1+2) = √1 = 1 ≠ −1, dus is x = −1 buitenstaander (verwerp).\nOplossing: x = 2 alleen.' },

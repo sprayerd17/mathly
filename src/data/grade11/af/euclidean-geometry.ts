@@ -466,7 +466,7 @@ export const topicData: TopicData = {
       answer: '6,67 cm',
       checkMode: 'auto',
       correctAnswer: '6,67 cm',
-      correctAnswers: ['6.67 cm', '6.67', '6⅔ cm', '20/3 cm', '20/3'],
+      correctAnswers: ['6,67 cm', '6,67', '6⅔ cm', '20/3 cm', '20/3'],
       explanation: 'Volgens die Eweredigheidstelling: AM/MB = AN/NC. Dus 3/5 = 4/NC. Kruisvermenigvuldig: 3 × NC = 20. NC = 20/3 ≈ 6,67 cm.',
     },
 
@@ -788,7 +788,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Naledi het bewys dat twee driehoeke gelykvormig is deur die HH-voorwaarde te gebruik, en het toe die Middelpuntstelling gebruik om ʼn onbekende lengte binne een van die driehoeke te bepaal. Verduidelik hoe hierdie twee resultate as afsonderlike maar verwante gereedskapstukke saamwerk.', answer: 'Die HH-voorwaarde en die Middelpuntstelling handel oor verskillende situasies: die HH-voorwaarde bewys dat hele driehoeke gelykvormig is deur hulle hoeke te vergelyk, terwyl die Middelpuntstelling binne ʼn enkele driehoek geld wanneer ʼn lyn die middelpunte van twee sye verbind, wat wys dat daardie lyn ewewydig aan die derde sy is en gelyk is aan die helfte van die lengte daarvan. Naledi het eers die HH-voorwaarde gebruik om vas te stel dat twee afsonderlike driehoeke dieselfde vorm deel, en het toe afsonderlik die Middelpuntstelling binne een driehoek toegepas om ʼn onbekende lynstuklengte op te los — die Middelpuntstelling is eintlik ʼn spesiale geval (verhouding 1:1) van dieselfde Eweredigheidstelling wat die HH-gelykvormigheidsbewys onderlê.', checkMode: 'self' },
 
         // Blok 7 — Riderbewys (CAPS probleemoplossings-kognitiewe vlak)
-        { difficulty: 'Hard', question: 'Driehoek ABC het sye AB = 8 cm, BC = 14 cm en CA = 10 cm (wat ∠B ≈ 44,4° gee volgens die cosinereël). Driehoek DEF het sye DE = 20 cm, EF = 35 cm en FD = 25 cm. Bewys dat △ABC ∼ △DEF, en bepaal dus ∠E.', answer: `${bl('DE/AB = 20/8 = 2,5')}, ${bl('EF/BC = 35/14 = 2,5')}, ${bl('FD/CA = 25/10 = 2,5')} — al drie verhoudings is gelyk, dus is △ABC ∼ △DEF volgens SSS-eweredigheid, en aangesien ooreenstemmende hoeke van gelykvormige driehoeke gelyk is, is ∠E = ∠B ≈ 44,4°.` + proofTable([
+        { difficulty: 'Hard', question: 'Driehoek ABC het sye AB = 8 cm, BC = 14 cm en CA = 10 cm (wat ∠B ≈ 44,4° gee volgens die kosinusreël). Driehoek DEF het sye DE = 20 cm, EF = 35 cm en FD = 25 cm. Bewys dat △ABC ∼ △DEF, en bepaal dus ∠E.', answer: `${bl('DE/AB = 20/8 = 2,5')}, ${bl('EF/BC = 35/14 = 2,5')}, ${bl('FD/CA = 25/10 = 2,5')} — al drie verhoudings is gelyk, dus is △ABC ∼ △DEF volgens SSS-eweredigheid, en aangesien ooreenstemmende hoeke van gelykvormige driehoeke gelyk is, is ∠E = ∠B ≈ 44,4°.` + proofTable([
           ['DE/AB = 20/8 = 2,5', 'Gegewe sylengtes'],
           ['EF/BC = 35/14 = 2,5', 'Gegewe sylengtes'],
           ['FD/CA = 25/10 = 2,5', 'Gegewe sylengtes'],

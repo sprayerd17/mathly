@@ -893,10 +893,10 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'A delivery vehicle bought for R280 000 depreciates on the reducing-balance method at 20% p.a. for the first 2 years, then the depreciation rate changes to 12% p.a. for the next 2 years. Calculate the value of the vehicle after 4 years.',
-          answer: `${re('A ≈ R138 781')}`,
+          answer: `${re('A ≈ R138 772')}`,
           steps: [
             `${bl('Phase 1 (years 1–2, 20% p.a.):')} ${bl('A₁')} = ${bl('280 000')}(1 − 0.20)² = ${bl('280 000')}(0.80)² = ${bl('280 000')} × 0.64 = ${bl('R179 200')}.`,
-            `${gr('Phase 2 (years 3–4, 12% p.a.):')} use ${bl('R179 200')} as the new starting value. ${gr('A₂')} = ${bl('179 200')}(1 − 0.12)² = ${bl('179 200')}(0.88)² = ${bl('179 200')} × 0.7744 = ${re('R138 781')}.`,
+            `${gr('Phase 2 (years 3–4, 12% p.a.):')} use ${bl('R179 200')} as the new starting value. ${gr('A₂')} = ${bl('179 200')}(1 − 0.12)² = ${bl('179 200')}(0.88)² = ${bl('179 200')} × 0.7744 = ${re('R138 772')}.`,
           ],
         },
         {
@@ -947,9 +947,9 @@ export const topicData: TopicData = {
             },
             {
               label: 'b) Calculate the value after 2 more years at 8% compounded quarterly (R, to the nearest rand).',
-              correctAnswer: '52812',
-              correctAnswers: ['R52812', 'R52 812', '52812', '52 812', 'R52813', '52813', 'R52811', '52811'],
-              explanation: 'A₂ = 45 073 × (1 + 0.08/4)^8 = 45 073 × (1.02)^8 = 45 073 × 1.17166 = R52 812 ✓',
+              correctAnswer: '52810',
+              correctAnswers: ['R52810', 'R52 810', '52810', '52 810', 'R52811', '52811', 'R52809', '52809'],
+              explanation: 'A₂ = 45 073 × (1 + 0.08/4)^8 = 45 073 × (1.02)^8 = 45 073 × 1.17166 = R52 810 ✓',
             },
           ],
         },

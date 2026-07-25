@@ -764,7 +764,7 @@ export const topicData: TopicData = {
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
         { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 4x − 3 = 0', answer: 'x=2+√7 or x=2-√7', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: 2x² + 3x − 5 = 0. State the discriminant before solving.', answer: 'a=2, b=3, c=−5. Discriminant = 9 − 4(2)(−5) = 49, which is a positive perfect square, so there are two distinct rational roots.\nx = (−3 ± 7) / 4.\nx = 1 or x = −5/2.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 4x + 1 = 0. State the discriminant before solving.', answer: 'a=1, b=4, c=1. Discriminant = 16 − 4(1)(1) = 12, which is positive but not a perfect square, so there are two distinct irrational (surd) roots.\nx = (−4 ± √12) / 2 = (−4 ± 2√3) / 2.\nx = −2 + √3 or x = −2 − √3.', checkMode: 'self' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
         { difficulty: 'Medium', question: 'Solve for x: √(2x + 3) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Square both sides: 2x + 3 = x².\nRearrange: x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0, so x = 3 or x = −1.\nCheck x = 3: √(2(3)+3) = √9 = 3 = 3 ✓ valid.\nCheck x = −1: √(2(−1)+3) = √1 = 1 ≠ −1, so x = −1 is extraneous (rejected).\nSolution: x = 3 only.' },
@@ -812,7 +812,7 @@ export const topicData: TopicData = {
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
         { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 2x − 9 = 0', answer: 'x=1+√10 or x=1-√10', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: 3x² − 2x − 8 = 0. State the discriminant before solving.', answer: 'a=3, b=−2, c=−8. Discriminant = 4 − 4(3)(−8) = 100, which is a positive perfect square, so there are two distinct rational roots.\nx = (2 ± 10) / 6.\nx = 2 or x = −4/3.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 6x + 4 = 0. State the discriminant before solving.', answer: 'a=1, b=−6, c=4. Discriminant = 36 − 4(1)(4) = 20, which is positive but not a perfect square, so there are two distinct irrational (surd) roots.\nx = (6 ± √20) / 2 = (6 ± 2√5) / 2.\nx = 3 + √5 or x = 3 − √5.', checkMode: 'self' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
         { difficulty: 'Medium', question: 'Solve for x: √(x + 6) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Square both sides: x + 6 = x².\nRearrange: x² − x − 6 = 0 → (x − 3)(x + 2) = 0, so x = 3 or x = −2.\nCheck x = 3: √(3+6) = √9 = 3 = 3 ✓ valid.\nCheck x = −2: √(−2+6) = √4 = 2 ≠ −2, so x = −2 is extraneous (rejected).\nSolution: x = 3 only.' },
@@ -860,7 +860,7 @@ export const topicData: TopicData = {
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
         { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 2x − 7 = 0', answer: 'x=-1+2√2 or x=-1-2√2', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: 2x² − x − 6 = 0. State the discriminant before solving.', answer: 'a=2, b=−1, c=−6. Discriminant = 1 − 4(2)(−6) = 49, which is a positive perfect square, so there are two distinct rational roots.\nx = (1 ± 7) / 4.\nx = 2 or x = −3/2.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 6x + 3 = 0. State the discriminant before solving.', answer: 'a=1, b=6, c=3. Discriminant = 36 − 4(1)(3) = 24, which is positive but not a perfect square, so there are two distinct irrational (surd) roots.\nx = (−6 ± √24) / 2 = (−6 ± 2√6) / 2.\nx = −3 + √6 or x = −3 − √6.', checkMode: 'self' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
         { difficulty: 'Medium', question: 'Solve for x: √(x + 2) = x', answer: 'x=2', checkMode: 'auto', correctAnswer: 'x=2', correctAnswers: ['x=2', 'x = 2', '2'], explanation: 'Square both sides: x + 2 = x².\nRearrange: x² − x − 2 = 0 → (x − 2)(x + 1) = 0, so x = 2 or x = −1.\nCheck x = 2: √(2+2) = √4 = 2 = 2 ✓ valid.\nCheck x = −1: √(−1+2) = √1 = 1 ≠ −1, so x = −1 is extraneous (rejected).\nSolution: x = 2 only.' },

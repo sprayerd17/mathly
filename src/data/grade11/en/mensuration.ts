@@ -301,8 +301,8 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'A grain silo is built from a cylinder with a hemispherical cap of the same radius on top. The height of the cylindrical part is three times the radius. If the total volume of the silo is 2 486.88 cm³, determine the radius, r. Use π ≈ 3.14.',
-          answer: 'Let the radius be r, so the height of the cylinder is h = 3r.\n\nSet up the total volume:\nV = πr²h + ⅔πr³\nV = πr²(3r) + ⅔πr³\nV = 3πr³ + ⅔πr³ = (11/3)πr³\n\nSubstitute the known volume and π ≈ 3.14:\n2 486.88 = (11/3)(3.14)r³\n2 486.88 = 11.5133...r³\nr³ = 2 486.88 ÷ 11.5133... = 216\n\nTake the cube root:\nr = ∛216 = 6 cm ✓',
+          question: 'A grain silo is built from a cylinder with a hemispherical cap of the same radius on top. The height of the cylindrical part is three times the radius. If the total volume of the silo is 2 486.88 m³, determine the radius, r. Use π ≈ 3.14.',
+          answer: 'Let the radius be r, so the height of the cylinder is h = 3r.\n\nSet up the total volume:\nV = πr²h + ⅔πr³\nV = πr²(3r) + ⅔πr³\nV = 3πr³ + ⅔πr³ = (11/3)πr³\n\nSubstitute the known volume and π ≈ 3.14:\n2 486.88 = (11/3)(3.14)r³\n2 486.88 = 11.5133...r³\nr³ = 2 486.88 ÷ 11.5133... = 216\n\nTake the cube root:\nr = ∛216 = 6 m ✓',
           checkMode: 'self',
         },
       ],
