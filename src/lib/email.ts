@@ -193,15 +193,15 @@ export function reservationExpiredEmail(opts: { name: string; childName: string;
   }
 }
 
-// ── Host cancels a session (refund handled manually by the coach) ──────────
+// ── Tutor cancels a session (refund handled manually by the tutor) ─────────
 
-export function sessionCancelledByHostEmail(opts: { name: string; childName: string; topic: string; date: string; time: string; wasPaid: boolean }) {
+export function sessionCancelledByTutorEmail(opts: { name: string; childName: string; topic: string; date: string; time: string; wasPaid: boolean }) {
   return {
     from: FROM_CLASSES,
     subject: `Session cancelled: ${opts.topic}`,
     html: wrap(`
       <p>Hi ${esc(opts.name)},</p>
-      <p>Unfortunately <strong>${opts.topic}</strong> (${opts.date} at ${opts.time}), which ${esc(opts.childName)} was booked into, has been cancelled.</p>
+      <p>Unfortunately <strong>${opts.topic}</strong> (${opts.date} at ${opts.time}), which ${esc(opts.childName)} was booked into, has been cancelled by the tutor.</p>
       <p style="font-size:14px">${opts.wasPaid
         ? 'A full refund will be processed back to your original payment method shortly.'
         : 'No payment was taken for this booking, so there\'s nothing to refund.'}</p>

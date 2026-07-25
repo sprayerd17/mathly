@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import NavAuth from './NavAuth'
 import { useAuth } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { ADMIN_EMAIL } from '@/src/lib/admin'
 
 const navLinks = [
   { key: 'nav_home',         href: '/'            },
@@ -237,6 +238,16 @@ export default function Navbar() {
               >
                 {t.nav_my_profile}
               </Link>
+              {user.email === ADMIN_EMAIL && (
+                <Link
+                  href="/admin"
+                  onClick={close}
+                  className="block text-sm py-2 transition-colors"
+                  style={{ color: '#a8b8d8' }}
+                >
+                  Admin
+                </Link>
+              )}
               <button
                 onClick={() => { logout(); close() }}
                 className="block text-sm py-2 text-red-400 hover:text-red-300 transition-colors"
