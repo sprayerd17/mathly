@@ -821,7 +821,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'A data set of hours studied (x) vs test mark (y) has mean x̄ = 5.5 hours and mean ȳ = 51.75 marks. Lerato says the least squares regression line for this data must pass through the point (5.5, 51.75). Is she correct? Explain.',
+          question: 'A data set of hours studied (x) vs test mark (y) has mean x̄ = 5.5 hours and mean ȳ = 25.75 marks. Lerato says the least squares regression line for this data must pass through the point (5.5, 25.75). Is she correct? Explain.',
           answer: 'Yes — the least squares regression line always passes through the mean point (x̄, ȳ) of the data. This is a mathematical property of how the line is calculated.',
           checkMode: 'self',
         },

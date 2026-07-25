@@ -1102,9 +1102,9 @@ export const topicData: TopicData = {
         },
         {
           label: 'b) cos2α =',
-          correctAnswer: '7/25',
-          correctAnswers: ['7/25', '0,28', '0.28'],
-          explanation: 'cos2α = cos²α − sin²α = (3/5)² − (4/5)² = 9/25 − 16/25 = 7/25 ✓',
+          correctAnswer: '-7/25',
+          correctAnswers: ['-7/25', '−7/25', '-0.28', '−0.28', '-0,28', '−0,28'],
+          explanation: 'cos2α = cos²α − sin²α = (3/5)² − (4/5)² = 9/25 − 16/25 = −7/25 ✓',
         },
       ],
     },

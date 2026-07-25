@@ -292,7 +292,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat die Resttheorema en Faktorstelling verduidelik met kleurgekodeerde toetswaarde-vervangings en faktorgevolgtrekkings vir kubieke polinome',
+        'Kort video wat die Resttelling en Faktorstelling verduidelik met kleurgekodeerde toetswaarde-vervangings en faktorgevolgtrekkings vir kubieke polinome',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -755,8 +755,8 @@ export const topicData: TopicData = {
     // ── Q18 Hard — equation from a cubic graph diagram ────────────────────────
     {
       difficulty: 'Hard',
-      question: '[DIAGRAM: ʼn Derdegraadse grafiek met x-afsnitte by x=−2, x=1, x=4 en ʼn positiewe voorste koëffisiënt, wat deur die y-as by ʼn negatiewe y-waarde gaan] Gebruik die diagram en skryf die vergelyking van die derdegraadse funksie in gefaktoriseerde vorm.',
-      answer: 'y=a(x+2)(x−1)(x−4). y-afsnit: y=a(2)(−1)(−4)=8a. Die y-afsnit hang dus van a af — as die grafiek blyk om die y-as by −8 te sny, dan is a=1 en y=(x+2)(x−1)(x−4).',
+      question: '[DIAGRAM: ʼn Derdegraadse grafiek met x-afsnitte by x=−2, x=1, x=4 en ʼn positiewe voorste koëffisiënt, wat deur die y-as by ʼn positiewe y-waarde gaan] Gebruik die diagram en skryf die vergelyking van die derdegraadse funksie in gefaktoriseerde vorm.',
+      answer: 'y=a(x+2)(x−1)(x−4). y-afsnit: y=a(2)(−1)(−4)=8a. Die y-afsnit hang dus van a af — as die grafiek blyk om die y-as by 8 te sny, dan is a=1 en y=(x+2)(x−1)(x−4).',
       checkMode: 'self',
     },
 

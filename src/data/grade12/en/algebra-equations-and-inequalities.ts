@@ -731,7 +731,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Solve for x: (3x)/(x − 3) = 4 + 6/(x − 3), stating any restrictions.',
-          answer: 'No solution — x = 3 is excluded',
+          answer: 'x = 6 (restriction: x ≠ 3, which does not exclude this solution)',
           checkMode: 'self',
         },
       ],

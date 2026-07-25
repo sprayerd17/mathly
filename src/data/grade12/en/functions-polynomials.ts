@@ -755,8 +755,8 @@ export const topicData: TopicData = {
     // ── Q18 Hard — equation from a cubic graph diagram ────────────────────────
     {
       difficulty: 'Hard',
-      question: '[DIAGRAM: A cubic graph with x-intercepts at x=−2, x=1, x=4 and a positive leading coefficient, passing through the y-axis at a negative y-value] Using the diagram, write the equation of the cubic in factorised form.',
-      answer: 'y=a(x+2)(x−1)(x−4). y-intercept: y=a(2)(−1)(−4)=8a. So the y-intercept depends on a — if the graph appears to cross the y-axis at −8, then a=1 and y=(x+2)(x−1)(x−4).',
+      question: '[DIAGRAM: A cubic graph with x-intercepts at x=−2, x=1, x=4 and a positive leading coefficient, passing through the y-axis at a positive y-value] Using the diagram, write the equation of the cubic in factorised form.',
+      answer: 'y=a(x+2)(x−1)(x−4). y-intercept: y=a(2)(−1)(−4)=8a. So the y-intercept depends on a — if the graph appears to cross the y-axis at 8, then a=1 and y=(x+2)(x−1)(x−4).',
       checkMode: 'self',
     },
 

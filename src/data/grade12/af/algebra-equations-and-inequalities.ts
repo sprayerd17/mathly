@@ -193,7 +193,7 @@ export const topicData: TopicData = {
           question: 'Los op vir x deur faktorisering: 2x² + 7x + 3 = 0.',
           answer: 'x = −½ of x = −3',
           checkMode: 'auto',
-          correctAnswers: ['x=-1/2 or x=-3', 'x = -1/2 of x = -3', 'x=-3 of x=-1/2', 'x=-0.5 of x=-3', '-0.5 of -3', '-3 of -0.5'],
+          correctAnswers: ['x=-1/2 of x=-3', 'x = -1/2 of x = -3', 'x=-3 of x=-1/2', 'x=-0.5 of x=-3', '-0.5 of -3', '-3 of -0.5'],
           explanation: '2x²+6x+x+3=0 → 2x(x+3)+1(x+3)=0 → (2x+1)(x+3)=0.\nx=−½ of x=−3 ✓',
         },
         {
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
           question: 'Los op vir x: −x² + 2x + 3 < 0.',
           answer: 'x < −1 of x > 3',
           checkMode: 'auto',
-          correctAnswers: ['x<-1 or x>3', 'x < -1 of x > 3', 'x>3 of x<-1'],
+          correctAnswers: ['x<-1 of x>3', 'x < -1 of x > 3', 'x>3 of x<-1'],
           explanation: '−x²+2x+3=0 → x²−2x−3=0 → (x−3)(x+1)=0 → x=3 of x=−1.\nParabool open afwaarts (a=−1<0), dus is dit positief tussen die wortels en negatief daarbuite.\nOns benodig <0 (negatief): x < −1 of x > 3 ✓',
         },
         {
@@ -312,7 +312,7 @@ export const topicData: TopicData = {
           question: 'Die grafiek van g(x) = x² + x − 12 het x-afsnitte by x = −4 en x = 3. Gebruik die grafiek om g(x) > 0 op te los.',
           answer: 'x < −4 of x > 3',
           checkMode: 'auto',
-          correctAnswers: ['x<-4 or x>3', 'x < -4 of x > 3', 'x>3 of x<-4'],
+          correctAnswers: ['x<-4 of x>3', 'x < -4 of x > 3', 'x>3 of x<-4'],
           explanation: 'a=1>0, dus open die parabool opwaarts — positief (bo die as) buite die wortels.\nAangesien die ongelykheid streng is, word eindpunte uitgesluit.\nOplossing: x < −4 of x > 3 ✓',
         },
       ],
@@ -409,7 +409,7 @@ export const topicData: TopicData = {
           question: 'Los gelyktydig op: y = 2x − 3 en y = x² − 2x − 3.',
           answer: 'x = 0, y = −3  of  x = 4, y = 5',
           checkMode: 'auto',
-          correctAnswers: ['x=0,y=-3 or x=4,y=5', 'x=4,y=5 of x=0,y=-3', '(0,-3) en (4,5)'],
+          correctAnswers: ['x=0,y=-3 of x=4,y=5', 'x=4,y=5 of x=0,y=-3', '(0,-3) en (4,5)'],
           explanation: '2x−3=x²−2x−3 → x²−4x=0 → x(x−4)=0 → x=0 of x=4.\nWanneer x=0: y=2(0)−3=−3. Wanneer x=4: y=2(4)−3=5.\nKontroleer: 0²−2(0)−3=−3 ✓ en 4²−2(4)−3=5 ✓',
         },
         {
@@ -625,7 +625,7 @@ export const topicData: TopicData = {
           question: 'Los op vir x: 2^(2x) − 9 · 2^x + 8 = 0.',
           answer: 'x = 0 of x = 3',
           checkMode: 'auto',
-          correctAnswers: ['x=0 or x=3', 'x=3 of x=0'],
+          correctAnswers: ['x=0 of x=3', 'x=3 of x=0'],
           explanation: 'Laat k=2^x: k²−9k+8=0 → (k−1)(k−8)=0 → k=1 of k=8.\n2^x=1 → x=0. 2^x=8=2³ → x=3.\nOplossing: x=0 of x=3 ✓',
         },
       ],
@@ -725,13 +725,13 @@ export const topicData: TopicData = {
           question: 'Los op vir x: x − 4/x = 3.',
           answer: 'x = 4 of x = −1',
           checkMode: 'auto',
-          correctAnswers: ['x=4 or x=-1', 'x=-1 of x=4', '4 of -1', '-1 of 4'],
+          correctAnswers: ['x=4 of x=-1', 'x=-1 of x=4', '4 of -1', '-1 of 4'],
           explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²−4=3x → x²−3x−4=0 → (x−4)(x+1)=0 → x=4 of x=−1.\nGeen is uitgesluit nie. Oplossing: x=4 of x=−1 ✓',
         },
         {
           difficulty: 'Hard',
           question: 'Los op vir x: (3x)/(x − 3) = 4 + 6/(x − 3), met vermelding van enige beperkings.',
-          answer: 'Geen oplossing — x = 3 word uitgesluit',
+          answer: 'x = 6 (beperking: x ≠ 3, wat hierdie oplossing nie uitsluit nie)',
           checkMode: 'self',
         },
       ],
@@ -796,7 +796,7 @@ export const topicData: TopicData = {
       question: 'Los op vir x: x² − 49 ≥ 0.',
       answer: 'x ≤ −7 of x ≥ 7',
       checkMode: 'auto',
-      correctAnswers: ['x≤-7 or x≥7', 'x <= -7 of x >= 7', 'x≥7 of x≤-7'],
+      correctAnswers: ['x≤-7 of x≥7', 'x <= -7 of x >= 7', 'x≥7 of x≤-7'],
       explanation: 'x²−49=0 → x=±7. Parabool open opwaarts, dus ≥0 buite die wortels.\nOplossing: x≤−7 of x≥7 ✓',
     },
 
@@ -824,7 +824,7 @@ export const topicData: TopicData = {
       question: 'Los gelyktydig op: y = 3x − 2 en y = x² − x − 2.',
       answer: 'x = 0, y = −2  of  x = 4, y = 10',
       checkMode: 'auto',
-      correctAnswers: ['x=0,y=-2 or x=4,y=10', 'x=4,y=10 of x=0,y=-2', '(0,-2) en (4,10)'],
+      correctAnswers: ['x=0,y=-2 of x=4,y=10', 'x=4,y=10 of x=0,y=-2', '(0,-2) en (4,10)'],
       explanation: '3x−2=x²−x−2 → x²−4x=0 → x(x−4)=0 → x=0 of x=4.\nWanneer x=0: y=−2. Wanneer x=4: y=10.\nKontroleer: 0²−0−2=−2 ✓ en 4²−4−2=10 ✓',
     },
 
@@ -834,7 +834,7 @@ export const topicData: TopicData = {
       question: 'Los gelyktydig op: y = x − 2 en y = x² − 5x + 3.',
       answer: 'x = 1, y = −1  of  x = 5, y = 3',
       checkMode: 'auto',
-      correctAnswers: ['x=1,y=-1 or x=5,y=3', 'x=5,y=3 of x=1,y=-1', '(1,-1) en (5,3)'],
+      correctAnswers: ['x=1,y=-1 of x=5,y=3', 'x=5,y=3 of x=1,y=-1', '(1,-1) en (5,3)'],
       explanation: 'x−2=x²−5x+3 → x²−6x+5=0 → (x−1)(x−5)=0 → x=1 of x=5.\nWanneer x=1: y=−1. Wanneer x=5: y=3.\nKontroleer: 1²−5(1)+3=−1 ✓ en 5²−5(5)+3=3 ✓',
     },
 
@@ -904,7 +904,7 @@ export const topicData: TopicData = {
       question: 'Los op vir x: 5^(2x) − 30 · 5^x + 125 = 0.',
       answer: 'x = 1 of x = 2',
       checkMode: 'auto',
-      correctAnswers: ['x=1 or x=2', 'x=2 of x=1'],
+      correctAnswers: ['x=1 of x=2', 'x=2 of x=1'],
       explanation: 'Laat k=5^x: k²−30k+125=0. Δ=900−500=400, √400=20. k=(30±20)/2=25 of 5.\n5^x=25=5² → x=2. 5^x=5 → x=1.\nOplossing: x=1 of x=2 ✓',
     },
 
@@ -925,7 +925,7 @@ export const topicData: TopicData = {
       question: 'Los op vir x: x − 12/x = 1.',
       answer: 'x = 4 of x = −3',
       checkMode: 'auto',
-      correctAnswers: ['x=4 or x=-3', 'x=-3 of x=4', '4 of -3', '-3 of 4'],
+      correctAnswers: ['x=4 of x=-3', 'x=-3 of x=4', '4 of -3', '-3 of 4'],
       explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²−12=x → x²−x−12=0 → (x−4)(x+3)=0 → x=4 of x=−3.\nGeen is uitgesluit nie. Oplossing: x=4 of x=−3 ✓',
     },
 
@@ -965,35 +965,35 @@ export const topicData: TopicData = {
         // Blok A — Aard van wortels
         { difficulty: 'Easy', question: 'Bepaal die aard van die wortels van x² − 10x + 25 = 0 sonder om op te los.', answer: 'Reële, gelyke, rasionale wortels', checkMode: 'auto', correctAnswer: 'reeel, gelyk, rasionaal', correctAnswers: ['reeel, gelyk, rasionaal', 'reëel, gelyk, rasionaal', 'gelyk, reëel, rasionaal'], explanation: 'a=1, b=−10, c=25. Δ=100−100=0.\nReële, gelyke, rasionale wortels ✓' },
         { difficulty: 'Medium', question: 'Bepaal die aard van die wortels van x² + 2x − 4 = 0 sonder om op te los.', answer: 'Reële, ongelyke, irrasionale wortels', checkMode: 'auto', correctAnswer: 'reeel, ongelyk, irrasionaal', correctAnswers: ['reeel, ongelyk, irrasionaal', 'reëel, ongelyk, irrasionaal', 'ongelyk, reëel, irrasionaal'], explanation: 'a=1, b=2, c=−4. Δ=4+16=20, nie ʼn volkome vierkant nie.\nReële, ongelyke, irrasionale wortels ✓' },
-        { difficulty: 'Hard', question: 'Vir watter waarde(s) van p sal 2x² + px + 8 = 0 reële, gelyke wortels hê?', answer: 'p = 8 of p = −8', checkMode: 'auto', correctAnswers: ['p=8 or p=-8', 'p=-8 of p=8', 'p=±8', 'p = ±8', '8 of -8', '-8 of 8'], explanation: 'Δ=p²−4(2)(8)=p²−64. Vir gelyke wortels, Δ=0: p²=64 → p=8 of p=−8 ✓' },
+        { difficulty: 'Hard', question: 'Vir watter waarde(s) van p sal 2x² + px + 8 = 0 reële, gelyke wortels hê?', answer: 'p = 8 of p = −8', checkMode: 'auto', correctAnswers: ['p=8 of p=-8', 'p=-8 of p=8', 'p=±8', 'p = ±8', '8 of -8', '-8 of 8'], explanation: 'Δ=p²−4(2)(8)=p²−64. Vir gelyke wortels, Δ=0: p²=64 → p=8 of p=−8 ✓' },
 
         // Blok B — Kwadratiese vergelykings oplos
-        { difficulty: 'Easy', question: 'Los op vir x deur faktorisering: 4x² + 4x − 3 = 0.', answer: 'x = ½ of x = −3/2', checkMode: 'auto', correctAnswers: ['x=1/2 or x=-3/2', 'x=-3/2 of x=1/2', 'x=0.5 of x=-1.5', 'x=-1.5 of x=0.5'], explanation: '4x²+6x−2x−3=0 → 2x(2x+3)−1(2x+3)=0 → (2x−1)(2x+3)=0.\nx=½ of x=−3/2 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x deur faktorisering: 4x² + 4x − 3 = 0.', answer: 'x = ½ of x = −3/2', checkMode: 'auto', correctAnswers: ['x=1/2 of x=-3/2', 'x=-3/2 of x=1/2', 'x=0.5 of x=-1.5', 'x=-1.5 of x=0.5'], explanation: '4x²+6x−2x−3=0 → 2x(2x+3)−1(2x+3)=0 → (2x−1)(2x+3)=0.\nx=½ of x=−3/2 ✓' },
         { difficulty: 'Medium', question: 'Los op vir x met die kwadratiese formule, en laat jou antwoord in eenvoudigste wortelvorm: x² + 4x − 3 = 0.', answer: 'x = −2 + √7 of x = −2 − √7', checkMode: 'self' },
 
         // Blok C — Kwadratiese ongelykhede
         { difficulty: 'Easy', question: 'Los op vir x: x² − 16 < 0.', answer: '−4 < x < 4', checkMode: 'auto', correctAnswers: ['-4<x<4', '-4 < x < 4', '(-4,4)'], explanation: 'x²−16=0 → x=±4. Open opwaarts, dus <0 tussen die wortels.\nOplossing: −4 < x < 4 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x² + 2x − 15 ≥ 0.', answer: 'x ≤ −5 of x ≥ 3', checkMode: 'auto', correctAnswers: ['x≤-5 or x≥3', 'x <= -5 of x >= 3', 'x≥3 of x≤-5'], explanation: '(x+5)(x−3)=0 → x=−5 of x=3. Open opwaarts, dus ≥0 buite die wortels.\nOplossing: x≤−5 of x≥3 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² + 2x − 15 ≥ 0.', answer: 'x ≤ −5 of x ≥ 3', checkMode: 'auto', correctAnswers: ['x≤-5 of x≥3', 'x <= -5 of x >= 3', 'x≥3 of x≤-5'], explanation: '(x+5)(x−3)=0 → x=−5 of x=3. Open opwaarts, dus ≥0 buite die wortels.\nOplossing: x≤−5 of x≥3 ✓' },
         { difficulty: 'Hard', question: 'Los op vir x: −2x² + 2x + 4 > 0.', answer: '−1 < x < 2', checkMode: 'auto', correctAnswers: ['-1<x<2', '-1 < x < 2', '(-1,2)'], explanation: 'Deel deur −2 (draai om): x²−x−2<0 → (x−2)(x+1)<0 → −1<x<2 ✓' },
 
         // Blok D — Gelyktydige lineêr-kwadratiese vergelykings
-        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 2x + 1 en y = x² + 2x − 3.', answer: 'x = 2, y = 5  of  x = −2, y = −3', checkMode: 'auto', correctAnswers: ['x=2,y=5 or x=-2,y=-3', 'x=-2,y=-3 of x=2,y=5', '(2,5) en (-2,-3)'], explanation: '2x+1=x²+2x−3 → x²−4=0 → x=±2.\nWanneer x=2: y=5. Wanneer x=−2: y=−3.\nKontroleer: 2²+2(2)−3=5 ✓ en (−2)²+2(−2)−3=−3 ✓' },
-        { difficulty: 'Medium', question: 'Los gelyktydig op: y = x + 1 en y = x² − 3x + 1.', answer: 'x = 0, y = 1  of  x = 4, y = 5', checkMode: 'auto', correctAnswers: ['x=0,y=1 or x=4,y=5', 'x=4,y=5 of x=0,y=1', '(0,1) en (4,5)'], explanation: 'x+1=x²−3x+1 → x²−4x=0 → x=0 of x=4.\nWanneer x=0: y=1. Wanneer x=4: y=5.\nKontroleer: 0²−0+1=1 ✓ en 4²−3(4)+1=5 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 2x + 1 en y = x² + 2x − 3.', answer: 'x = 2, y = 5  of  x = −2, y = −3', checkMode: 'auto', correctAnswers: ['x=2,y=5 of x=-2,y=-3', 'x=-2,y=-3 of x=2,y=5', '(2,5) en (-2,-3)'], explanation: '2x+1=x²+2x−3 → x²−4=0 → x=±2.\nWanneer x=2: y=5. Wanneer x=−2: y=−3.\nKontroleer: 2²+2(2)−3=5 ✓ en (−2)²+2(−2)−3=−3 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op: y = x + 1 en y = x² − 3x + 1.', answer: 'x = 0, y = 1  of  x = 4, y = 5', checkMode: 'auto', correctAnswers: ['x=0,y=1 of x=4,y=5', 'x=4,y=5 of x=0,y=1', '(0,1) en (4,5)'], explanation: 'x+1=x²−3x+1 → x²−4x=0 → x=0 of x=4.\nWanneer x=0: y=1. Wanneer x=4: y=5.\nKontroleer: 0²−0+1=1 ✓ en 4²−3(4)+1=5 ✓' },
         { difficulty: 'Hard', question: 'Toon algebraïes dat die lyn y = x − 4 nie die parabool y = x² − 3x + 2 sny nie.', answer: 'x−4=x²−3x+2 → x²−4x+6=0. Δ=16−24=−8<0.\nAangesien Δ<0, is daar geen reële oplossings nie, dus sny die lyn nie die parabool nie.', checkMode: 'self' },
 
         // Blok E — Wortelvorm-vergelykings
         { difficulty: 'Easy', question: 'Los op vir x: √(x + 6) = x.', answer: 'x = 3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Kwadreer: x+6=x² → x²−x−6=0 → (x−3)(x+2)=0 → x=3 of x=−2.\nKontroleer x=3: √9=3=3 ✓ geldig.\nKontroleer x=−2: √4=2≠−2, verwerp.\nOplossing: x=3.' },
-        { difficulty: 'Medium', question: 'Los op vir x: √(4x + 5) = x + 2.', answer: 'x = 1 of x = −1', checkMode: 'auto', correctAnswers: ['x=1 or x=-1', 'x=-1 of x=1', '1 of -1', '-1 of 1'], explanation: 'Kwadreer: 4x+5=x²+4x+4 → x²=1 → x=±1.\nKontroleer x=1: √9=3, en 1+2=3 ✓ geldig.\nKontroleer x=−1: √1=1, en −1+2=1 ✓ geldig.\nOplossing: x=1 of x=−1.' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2 + √(x − 3) = x − 1.', answer: 'x = 3 of x = 4', checkMode: 'auto', correctAnswers: ['x=3 or x=4', 'x=4 of x=3', '3 of 4', '4 of 3'], explanation: 'Isoleer: √(x−3)=x−3. Kwadreer: x−3=(x−3)². Laat w=x−3: w=w² → w(w−1)=0 → w=0 of w=1 → x=3 of x=4.\nKontroleer x=3: 2+√0=2, en 3−1=2 ✓ geldig.\nKontroleer x=4: 2+√1=3, en 4−1=3 ✓ geldig.\nOplossing: x=3 of x=4.' },
+        { difficulty: 'Medium', question: 'Los op vir x: √(4x + 5) = x + 2.', answer: 'x = 1 of x = −1', checkMode: 'auto', correctAnswers: ['x=1 of x=-1', 'x=-1 of x=1', '1 of -1', '-1 of 1'], explanation: 'Kwadreer: 4x+5=x²+4x+4 → x²=1 → x=±1.\nKontroleer x=1: √9=3, en 1+2=3 ✓ geldig.\nKontroleer x=−1: √1=1, en −1+2=1 ✓ geldig.\nOplossing: x=1 of x=−1.' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2 + √(x − 3) = x − 1.', answer: 'x = 3 of x = 4', checkMode: 'auto', correctAnswers: ['x=3 of x=4', 'x=4 of x=3', '3 of 4', '4 of 3'], explanation: 'Isoleer: √(x−3)=x−3. Kwadreer: x−3=(x−3)². Laat w=x−3: w=w² → w(w−1)=0 → w=0 of w=1 → x=3 of x=4.\nKontroleer x=3: 2+√0=2, en 3−1=2 ✓ geldig.\nKontroleer x=4: 2+√1=3, en 4−1=3 ✓ geldig.\nOplossing: x=3 of x=4.' },
 
         // Blok F — Eksponensiële vergelykings
         { difficulty: 'Easy', question: 'Los op vir x: 4^x = 256.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: '256=4⁴. Dus x=4 ✓' },
         { difficulty: 'Medium', question: 'Los op vir x: 8^(x − 1) = 16^x.', answer: 'x = −3', checkMode: 'auto', correctAnswer: 'x=-3', correctAnswers: ['x=-3', 'x = -3', '-3'], explanation: '8=2³, 16=2⁴. Dus 2^(3x−3)=2^(4x) → 3x−3=4x → x=−3 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 3^(2x) − 12 · 3^x + 27 = 0.', answer: 'x = 1 of x = 2', checkMode: 'auto', correctAnswers: ['x=1 or x=2', 'x=2 of x=1'], explanation: 'Laat k=3^x: k²−12k+27=0 → (k−3)(k−9)=0 → k=3 of k=9.\n3^x=3 → x=1. 3^x=9=3² → x=2.\nOplossing: x=1 of x=2 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 3^(2x) − 12 · 3^x + 27 = 0.', answer: 'x = 1 of x = 2', checkMode: 'auto', correctAnswers: ['x=1 of x=2', 'x=2 of x=1'], explanation: 'Laat k=3^x: k²−12k+27=0 → (k−3)(k−9)=0 → k=3 of k=9.\n3^x=3 → x=1. 3^x=9=3² → x=2.\nOplossing: x=1 of x=2 ✓' },
 
         // Blok G — Algebraïese breukvergelykings
         { difficulty: 'Easy', question: 'Los op vir x: 8/(x + 3) = 4/(x − 1).', answer: 'x = 5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Beperkings: x≠−3, x≠1.\nKruisvermenigvuldig: 8(x−1)=4(x+3) → 8x−8=4x+12 → 4x=20 → x=5 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x − 12/x = 1.', answer: 'x = 4 of x = −3', checkMode: 'auto', correctAnswers: ['x=4 or x=-3', 'x=-3 of x=4', '4 of -3', '-3 of 4'], explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²−12=x → x²−x−12=0 → (x−4)(x+3)=0 → x=4 of x=−3 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: x − 12/x = 1.', answer: 'x = 4 of x = −3', checkMode: 'auto', correctAnswers: ['x=4 of x=-3', 'x=-3 of x=4', '4 of -3', '-3 of 4'], explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²−12=x → x²−x−12=0 → (x−4)(x+3)=0 → x=4 of x=−3 ✓' },
         { difficulty: 'Hard', question: 'Los op vir x: (2x + 1)/(x − 1) = 3 − 2/(x − 1), met vermelding van enige beperkings.', answer: 'x = 6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Beperking: x≠1.\nVermenigvuldig met (x−1): 2x+1=3(x−1)−2 → 2x+1=3x−3−2 → 2x+1=3x−5 → −x=−6 → x=6.\nNie uitgesluit nie — geldig. x=6 ✓' },
       ],
       scoreMessages: [
@@ -1012,35 +1012,35 @@ export const topicData: TopicData = {
         // Blok A — Aard van wortels
         { difficulty: 'Easy', question: 'Bepaal die aard van die wortels van x² − 8x + 16 = 0 sonder om op te los.', answer: 'Reële, gelyke, rasionale wortels', checkMode: 'auto', correctAnswer: 'reeel, gelyk, rasionaal', correctAnswers: ['reeel, gelyk, rasionaal', 'reëel, gelyk, rasionaal', 'gelyk, reëel, rasionaal'], explanation: 'a=1, b=−8, c=16. Δ=64−64=0.\nReële, gelyke, rasionale wortels ✓' },
         { difficulty: 'Medium', question: 'Bepaal die aard van die wortels van x² + 4x − 3 = 0 sonder om op te los.', answer: 'Reële, ongelyke, irrasionale wortels', checkMode: 'auto', correctAnswer: 'reeel, ongelyk, irrasionaal', correctAnswers: ['reeel, ongelyk, irrasionaal', 'reëel, ongelyk, irrasionaal', 'ongelyk, reëel, irrasionaal'], explanation: 'a=1, b=4, c=−3. Δ=16+12=28, nie ʼn volkome vierkant nie.\nReële, ongelyke, irrasionale wortels ✓' },
-        { difficulty: 'Hard', question: 'Vir watter waarde(s) van k sal 3x² + kx + 12 = 0 reële, gelyke wortels hê?', answer: 'k = 12 of k = −12', checkMode: 'auto', correctAnswers: ['k=12 or k=-12', 'k=-12 of k=12', 'k=±12', 'k = ±12', '12 of -12', '-12 of 12'], explanation: 'Δ=k²−4(3)(12)=k²−144. Vir gelyke wortels, Δ=0: k²=144 → k=12 of k=−12 ✓' },
+        { difficulty: 'Hard', question: 'Vir watter waarde(s) van k sal 3x² + kx + 12 = 0 reële, gelyke wortels hê?', answer: 'k = 12 of k = −12', checkMode: 'auto', correctAnswers: ['k=12 of k=-12', 'k=-12 of k=12', 'k=±12', 'k = ±12', '12 of -12', '-12 of 12'], explanation: 'Δ=k²−4(3)(12)=k²−144. Vir gelyke wortels, Δ=0: k²=144 → k=12 of k=−12 ✓' },
 
         // Blok B — Kwadratiese vergelykings oplos
-        { difficulty: 'Easy', question: 'Los op vir x deur faktorisering: 6x² + x − 2 = 0.', answer: 'x = ½ of x = −2/3', checkMode: 'auto', correctAnswers: ['x=1/2 or x=-2/3', 'x=-2/3 of x=1/2', 'x=0.5 of x=-0.667', 'x=-0.667 of x=0.5'], explanation: '6x²+4x−3x−2=0 → 2x(3x+2)−1(3x+2)=0 → (2x−1)(3x+2)=0.\nx=½ of x=−2/3 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x deur faktorisering: 6x² + x − 2 = 0.', answer: 'x = ½ of x = −2/3', checkMode: 'auto', correctAnswers: ['x=1/2 of x=-2/3', 'x=-2/3 of x=1/2', 'x=0.5 of x=-0.667', 'x=-0.667 of x=0.5'], explanation: '6x²+4x−3x−2=0 → 2x(3x+2)−1(3x+2)=0 → (2x−1)(3x+2)=0.\nx=½ of x=−2/3 ✓' },
         { difficulty: 'Medium', question: 'Los op vir x met die kwadratiese formule, en laat jou antwoord in eenvoudigste wortelvorm: x² + 6x − 2 = 0.', answer: 'x = −3 + √11 of x = −3 − √11', checkMode: 'self' },
 
         // Blok C — Kwadratiese ongelykhede
         { difficulty: 'Easy', question: 'Los op vir x: x² − 25 < 0.', answer: '−5 < x < 5', checkMode: 'auto', correctAnswers: ['-5<x<5', '-5 < x < 5', '(-5,5)'], explanation: 'x²−25=0 → x=±5. Open opwaarts, dus <0 tussen die wortels.\nOplossing: −5 < x < 5 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x² − x − 12 ≥ 0.', answer: 'x ≤ −3 of x ≥ 4', checkMode: 'auto', correctAnswers: ['x≤-3 or x≥4', 'x <= -3 of x >= 4', 'x≥4 of x≤-3'], explanation: '(x−4)(x+3)=0 → x=4 of x=−3. Open opwaarts, dus ≥0 buite die wortels.\nOplossing: x≤−3 of x≥4 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² − x − 12 ≥ 0.', answer: 'x ≤ −3 of x ≥ 4', checkMode: 'auto', correctAnswers: ['x≤-3 of x≥4', 'x <= -3 of x >= 4', 'x≥4 of x≤-3'], explanation: '(x−4)(x+3)=0 → x=4 of x=−3. Open opwaarts, dus ≥0 buite die wortels.\nOplossing: x≤−3 of x≥4 ✓' },
         { difficulty: 'Hard', question: 'Los op vir x: −3x² + 3x + 6 > 0.', answer: '−1 < x < 2', checkMode: 'auto', correctAnswers: ['-1<x<2', '-1 < x < 2', '(-1,2)'], explanation: 'Deel deur −3 (draai om): x²−x−2<0 → (x−2)(x+1)<0 → −1<x<2 ✓' },
 
         // Blok D — Gelyktydige lineêr-kwadratiese vergelykings
-        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 2x − 1 en y = x² − 4x − 1.', answer: 'x = 0, y = −1  of  x = 6, y = 11', checkMode: 'auto', correctAnswers: ['x=0,y=-1 or x=6,y=11', 'x=6,y=11 of x=0,y=-1', '(0,-1) en (6,11)'], explanation: '2x−1=x²−4x−1 → x²−6x=0 → x(x−6)=0 → x=0 of x=6.\nWanneer x=0: y=−1. Wanneer x=6: y=11.\nKontroleer: 0²−4(0)−1=−1 ✓ en 6²−4(6)−1=11 ✓' },
-        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 4x − 3 en y = x² − x − 3.', answer: 'x = 0, y = −3  of  x = 5, y = 17', checkMode: 'auto', correctAnswers: ['x=0,y=-3 or x=5,y=17', 'x=5,y=17 of x=0,y=-3', '(0,-3) en (5,17)'], explanation: '4x−3=x²−x−3 → x²−5x=0 → x(x−5)=0 → x=0 of x=5.\nWanneer x=0: y=−3. Wanneer x=5: y=17.\nKontroleer: 0²−0−3=−3 ✓ en 5²−5−3=17 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 2x − 1 en y = x² − 4x − 1.', answer: 'x = 0, y = −1  of  x = 6, y = 11', checkMode: 'auto', correctAnswers: ['x=0,y=-1 of x=6,y=11', 'x=6,y=11 of x=0,y=-1', '(0,-1) en (6,11)'], explanation: '2x−1=x²−4x−1 → x²−6x=0 → x(x−6)=0 → x=0 of x=6.\nWanneer x=0: y=−1. Wanneer x=6: y=11.\nKontroleer: 0²−4(0)−1=−1 ✓ en 6²−4(6)−1=11 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 4x − 3 en y = x² − x − 3.', answer: 'x = 0, y = −3  of  x = 5, y = 17', checkMode: 'auto', correctAnswers: ['x=0,y=-3 of x=5,y=17', 'x=5,y=17 of x=0,y=-3', '(0,-3) en (5,17)'], explanation: '4x−3=x²−x−3 → x²−5x=0 → x(x−5)=0 → x=0 of x=5.\nWanneer x=0: y=−3. Wanneer x=5: y=17.\nKontroleer: 0²−0−3=−3 ✓ en 5²−5−3=17 ✓' },
         { difficulty: 'Hard', question: 'Toon algebraïes dat die lyn y = 2x + 5 nie die parabool y = x² + x + 8 sny nie.', answer: '2x+5=x²+x+8 → x²−x+3=0. Δ=1−12=−11<0.\nAangesien Δ<0, is daar geen reële oplossings nie, dus sny die lyn nie die parabool nie.', checkMode: 'self' },
 
         // Blok E — Wortelvorm-vergelykings
         { difficulty: 'Easy', question: 'Los op vir x: √(x + 12) = x.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Kwadreer: x+12=x² → x²−x−12=0 → (x−4)(x+3)=0 → x=4 of x=−3.\nKontroleer x=4: √16=4=4 ✓ geldig.\nKontroleer x=−3: √9=3≠−3, verwerp.\nOplossing: x=4.' },
-        { difficulty: 'Medium', question: 'Los op vir x: √(5x + 9) = x + 3.', answer: 'x = 0 of x = −1', checkMode: 'auto', correctAnswers: ['x=0 or x=-1', 'x=-1 of x=0', '0 of -1', '-1 of 0'], explanation: 'Kwadreer: 5x+9=x²+6x+9 → x²+x=0 → x(x+1)=0 → x=0 of x=−1.\nKontroleer x=0: √9=3, en 0+3=3 ✓ geldig.\nKontroleer x=−1: √4=2, en −1+3=2 ✓ geldig.\nOplossing: x=0 of x=−1.' },
+        { difficulty: 'Medium', question: 'Los op vir x: √(5x + 9) = x + 3.', answer: 'x = 0 of x = −1', checkMode: 'auto', correctAnswers: ['x=0 of x=-1', 'x=-1 of x=0', '0 of -1', '-1 of 0'], explanation: 'Kwadreer: 5x+9=x²+6x+9 → x²+x=0 → x(x+1)=0 → x=0 of x=−1.\nKontroleer x=0: √9=3, en 0+3=3 ✓ geldig.\nKontroleer x=−1: √4=2, en −1+3=2 ✓ geldig.\nOplossing: x=0 of x=−1.' },
         { difficulty: 'Hard', question: 'Los op vir x: 1 + √(x + 4) = x − 1.', answer: 'x = 5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Isoleer: √(x+4)=x−2. Kwadreer: x+4=x²−4x+4 → x²−5x=0 → x(x−5)=0 → x=0 of x=5.\nKontroleer x=0: √4=2, maar 0−2=−2, 2≠−2, verwerp.\nKontroleer x=5: √9=3, en 5−2=3 ✓ geldig.\nOplossing: x=5.' },
 
         // Blok F — Eksponensiële vergelykings
         { difficulty: 'Easy', question: 'Los op vir x: 5^x = 625.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: '625=5⁴. Dus x=4 ✓' },
         { difficulty: 'Medium', question: 'Los op vir x: 4^(x − 1) = 8^(x + 1).', answer: 'x = −5', checkMode: 'auto', correctAnswer: 'x=-5', correctAnswers: ['x=-5', 'x = -5', '-5'], explanation: '4=2², 8=2³. Dus 2^(2x−2)=2^(3x+3) → 2x−2=3x+3 → x=−5 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2^(2x) − 20 · 2^x + 64 = 0.', answer: 'x = 2 of x = 4', checkMode: 'auto', correctAnswers: ['x=2 or x=4', 'x=4 of x=2'], explanation: 'Laat k=2^x: k²−20k+64=0 → (k−4)(k−16)=0 → k=4 of k=16.\n2^x=4 → x=2. 2^x=16=2⁴ → x=4.\nOplossing: x=2 of x=4 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2^(2x) − 20 · 2^x + 64 = 0.', answer: 'x = 2 of x = 4', checkMode: 'auto', correctAnswers: ['x=2 of x=4', 'x=4 of x=2'], explanation: 'Laat k=2^x: k²−20k+64=0 → (k−4)(k−16)=0 → k=4 of k=16.\n2^x=4 → x=2. 2^x=16=2⁴ → x=4.\nOplossing: x=2 of x=4 ✓' },
 
         // Blok G — Algebraïese breukvergelykings
         { difficulty: 'Easy', question: 'Los op vir x: 10/(x + 4) = 5/(x − 1).', answer: 'x = 6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Beperkings: x≠−4, x≠1.\nKruisvermenigvuldig: 10(x−1)=5(x+4) → 10x−10=5x+20 → 5x=30 → x=6 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x − 6/x = 1.', answer: 'x = 3 of x = −2', checkMode: 'auto', correctAnswers: ['x=3 or x=-2', 'x=-2 of x=3', '3 of -2', '-2 of 3'], explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²−6=x → x²−x−6=0 → (x−3)(x+2)=0 → x=3 of x=−2 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: x − 6/x = 1.', answer: 'x = 3 of x = −2', checkMode: 'auto', correctAnswers: ['x=3 of x=-2', 'x=-2 of x=3', '3 of -2', '-2 of 3'], explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²−6=x → x²−x−6=0 → (x−3)(x+2)=0 → x=3 of x=−2 ✓' },
         { difficulty: 'Hard', question: 'Los op vir x: (3x − 1)/(x − 2) = 4 + 3/(x − 2), met vermelding van enige beperkings.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Beperking: x≠2.\nVermenigvuldig met (x−2): 3x−1=4(x−2)+3 → 3x−1=4x−5 → −x=−4 → x=4.\nNie uitgesluit nie — geldig. x=4 ✓' },
       ],
       scoreMessages: [
@@ -1062,32 +1062,32 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Vir watter waarde(s) van m sal x² + mx + 9 = 0 nie-reële wortels hê?', answer: '−6 < m < 6', checkMode: 'auto', correctAnswers: ['-6<m<6', '-6 < m < 6', '(-6,6)'], explanation: 'Δ=m²−4(1)(9)=m²−36. Vir nie-reële wortels, Δ<0: m²<36 → −6<m<6 ✓' },
 
         // Blok B — Kwadratiese vergelykings oplos
-        { difficulty: 'Easy', question: 'Los op vir x deur faktorisering: 6x² − 7x − 3 = 0.', answer: 'x = −⅓ of x = 3/2', checkMode: 'auto', correctAnswers: ['x=-1/3 or x=3/2', 'x=3/2 of x=-1/3', 'x=-0.333 of x=1.5', 'x=1.5 of x=-0.333'], explanation: '6x²−9x+2x−3=0 → 3x(2x−3)+1(2x−3)=0 → (3x+1)(2x−3)=0.\nx=−⅓ of x=3/2 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x deur faktorisering: 6x² − 7x − 3 = 0.', answer: 'x = −⅓ of x = 3/2', checkMode: 'auto', correctAnswers: ['x=-1/3 of x=3/2', 'x=3/2 of x=-1/3', 'x=-0.333 of x=1.5', 'x=1.5 of x=-0.333'], explanation: '6x²−9x+2x−3=0 → 3x(2x−3)+1(2x−3)=0 → (3x+1)(2x−3)=0.\nx=−⅓ of x=3/2 ✓' },
         { difficulty: 'Medium', question: 'Los op vir x met die kwadratiese formule, en laat jou antwoord in eenvoudigste wortelvorm: x² − 2x − 9 = 0.', answer: 'x = 1 + √10 of x = 1 − √10', checkMode: 'self' },
 
         // Blok C — Kwadratiese ongelykhede
         { difficulty: 'Easy', question: 'Los op vir x: x² − 36 < 0.', answer: '−6 < x < 6', checkMode: 'auto', correctAnswers: ['-6<x<6', '-6 < x < 6', '(-6,6)'], explanation: 'x²−36=0 → x=±6. Open opwaarts, dus <0 tussen die wortels.\nOplossing: −6 < x < 6 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x² + 3x − 10 ≥ 0.', answer: 'x ≤ −5 of x ≥ 2', checkMode: 'auto', correctAnswers: ['x≤-5 or x≥2', 'x <= -5 of x >= 2', 'x≥2 of x≤-5'], explanation: '(x+5)(x−2)=0 → x=−5 of x=2. Open opwaarts, dus ≥0 buite die wortels.\nOplossing: x≤−5 of x≥2 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² + 3x − 10 ≥ 0.', answer: 'x ≤ −5 of x ≥ 2', checkMode: 'auto', correctAnswers: ['x≤-5 of x≥2', 'x <= -5 of x >= 2', 'x≥2 of x≤-5'], explanation: '(x+5)(x−2)=0 → x=−5 of x=2. Open opwaarts, dus ≥0 buite die wortels.\nOplossing: x≤−5 of x≥2 ✓' },
         { difficulty: 'Hard', question: 'Los op vir x: −2x² + 2x + 12 > 0.', answer: '−2 < x < 3', checkMode: 'auto', correctAnswers: ['-2<x<3', '-2 < x < 3', '(-2,3)'], explanation: 'Deel deur −2 (draai om): x²−x−6<0 → (x−3)(x+2)<0 → −2<x<3 ✓' },
 
         // Blok D — Gelyktydige lineêr-kwadratiese vergelykings
-        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 3x + 4 en y = x² + 3x − 5.', answer: 'x = 3, y = 13  of  x = −3, y = −5', checkMode: 'auto', correctAnswers: ['x=3,y=13 or x=-3,y=-5', 'x=-3,y=-5 of x=3,y=13', '(3,13) en (-3,-5)'], explanation: '3x+4=x²+3x−5 → x²−9=0 → x=±3.\nWanneer x=3: y=13. Wanneer x=−3: y=−5.\nKontroleer: 3²+3(3)−5=13 ✓ en (−3)²+3(−3)−5=−5 ✓' },
-        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 2x − 4 en y = x² − 4x − 4.', answer: 'x = 0, y = −4  of  x = 6, y = 8', checkMode: 'auto', correctAnswers: ['x=0,y=-4 or x=6,y=8', 'x=6,y=8 of x=0,y=-4', '(0,-4) en (6,8)'], explanation: '2x−4=x²−4x−4 → x²−6x=0 → x(x−6)=0 → x=0 of x=6.\nWanneer x=0: y=−4. Wanneer x=6: y=8.\nKontroleer: 0²−4(0)−4=−4 ✓ en 6²−4(6)−4=8 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 3x + 4 en y = x² + 3x − 5.', answer: 'x = 3, y = 13  of  x = −3, y = −5', checkMode: 'auto', correctAnswers: ['x=3,y=13 of x=-3,y=-5', 'x=-3,y=-5 of x=3,y=13', '(3,13) en (-3,-5)'], explanation: '3x+4=x²+3x−5 → x²−9=0 → x=±3.\nWanneer x=3: y=13. Wanneer x=−3: y=−5.\nKontroleer: 3²+3(3)−5=13 ✓ en (−3)²+3(−3)−5=−5 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op: y = 2x − 4 en y = x² − 4x − 4.', answer: 'x = 0, y = −4  of  x = 6, y = 8', checkMode: 'auto', correctAnswers: ['x=0,y=-4 of x=6,y=8', 'x=6,y=8 of x=0,y=-4', '(0,-4) en (6,8)'], explanation: '2x−4=x²−4x−4 → x²−6x=0 → x(x−6)=0 → x=0 of x=6.\nWanneer x=0: y=−4. Wanneer x=6: y=8.\nKontroleer: 0²−4(0)−4=−4 ✓ en 6²−4(6)−4=8 ✓' },
         { difficulty: 'Hard', question: 'Bepaal die waarde van t waarvoor die lyn y = 3x + t raaklynig is aan (raak) die parabool y = x² + x + 4.', answer: 't = 3', checkMode: 'auto', correctAnswer: 't=3', correctAnswers: ['t=3', 't = 3', '3'], explanation: '3x+t=x²+x+4 → x²−2x+(4−t)=0. Vir raaklynigheid, Δ=0: 4−4(4−t)=0 → 4−16+4t=0 → 4t=12 → t=3 ✓' },
 
         // Blok E — Wortelvorm-vergelykings
         { difficulty: 'Easy', question: 'Los op vir x: √(x + 2) = x − 4.', answer: 'x = 7', checkMode: 'auto', correctAnswer: 'x=7', correctAnswers: ['x=7', 'x = 7', '7'], explanation: 'Kwadreer: x+2=x²−8x+16 → x²−9x+14=0 → (x−7)(x−2)=0 → x=7 of x=2.\nKontroleer x=7: √9=3, en 7−4=3 ✓ geldig.\nKontroleer x=2: √4=2, maar 2−4=−2, 2≠−2, verwerp.\nOplossing: x=7.' },
-        { difficulty: 'Medium', question: 'Los op vir x: √(6x + 13) = x + 3.', answer: 'x = 2 of x = −2', checkMode: 'auto', correctAnswers: ['x=2 or x=-2', 'x=-2 of x=2', '2 of -2', '-2 of 2'], explanation: 'Kwadreer: 6x+13=x²+6x+9 → x²=4 → x=±2.\nKontroleer x=2: √25=5, en 2+3=5 ✓ geldig.\nKontroleer x=−2: √1=1, en −2+3=1 ✓ geldig.\nOplossing: x=2 of x=−2.' },
+        { difficulty: 'Medium', question: 'Los op vir x: √(6x + 13) = x + 3.', answer: 'x = 2 of x = −2', checkMode: 'auto', correctAnswers: ['x=2 of x=-2', 'x=-2 of x=2', '2 of -2', '-2 of 2'], explanation: 'Kwadreer: 6x+13=x²+6x+9 → x²=4 → x=±2.\nKontroleer x=2: √25=5, en 2+3=5 ✓ geldig.\nKontroleer x=−2: √1=1, en −2+3=1 ✓ geldig.\nOplossing: x=2 of x=−2.' },
         { difficulty: 'Hard', question: 'Los op vir x: 3 + √(x − 1) = x.', answer: 'x = 5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Isoleer: √(x−1)=x−3. Kwadreer: x−1=x²−6x+9 → x²−7x+10=0 → (x−5)(x−2)=0 → x=5 of x=2.\nKontroleer x=5: 3+√4=3+2=5 ✓ geldig.\nKontroleer x=2: 3+√1=3+1=4≠2, verwerp (ook x−3<0 hier).\nOplossing: x=5.' },
 
         // Blok F — Eksponensiële vergelykings
         { difficulty: 'Easy', question: 'Los op vir x: 6^x = 216.', answer: 'x = 3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: '216=6³. Dus x=3 ✓' },
         { difficulty: 'Medium', question: 'Los op vir x: 27^(x + 1) = 9^(x + 3).', answer: 'x = 3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: '27=3³, 9=3². Dus 3^(3x+3)=3^(2x+6) → 3x+3=2x+6 → x=3 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 3^(2x) − 28 · 3^x + 27 = 0.', answer: 'x = 0 of x = 3', checkMode: 'auto', correctAnswers: ['x=0 or x=3', 'x=3 of x=0'], explanation: 'Laat k=3^x: k²−28k+27=0 → (k−1)(k−27)=0 → k=1 of k=27.\n3^x=1 → x=0. 3^x=27=3³ → x=3.\nOplossing: x=0 of x=3 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 3^(2x) − 28 · 3^x + 27 = 0.', answer: 'x = 0 of x = 3', checkMode: 'auto', correctAnswers: ['x=0 of x=3', 'x=3 of x=0'], explanation: 'Laat k=3^x: k²−28k+27=0 → (k−1)(k−27)=0 → k=1 of k=27.\n3^x=1 → x=0. 3^x=27=3³ → x=3.\nOplossing: x=0 of x=3 ✓' },
 
         // Blok G — Algebraïese breukvergelykings
         { difficulty: 'Easy', question: 'Los op vir x: 12/(x − 2) = 6/(x + 3).', answer: 'x = −8', checkMode: 'auto', correctAnswer: 'x=-8', correctAnswers: ['x=-8', 'x = -8', '-8'], explanation: 'Beperkings: x≠2, x≠−3.\nKruisvermenigvuldig: 12(x+3)=6(x−2) → 12x+36=6x−12 → 6x=−48 → x=−8 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x + 10/x = 7.', answer: 'x = 5 of x = 2', checkMode: 'auto', correctAnswers: ['x=5 or x=2', 'x=2 of x=5', '5 of 2', '2 of 5'], explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²+10=7x → x²−7x+10=0 → (x−5)(x−2)=0 → x=5 of x=2 ✓' },
+        { difficulty: 'Medium', question: 'Los op vir x: x + 10/x = 7.', answer: 'x = 5 of x = 2', checkMode: 'auto', correctAnswers: ['x=5 of x=2', 'x=2 of x=5', '5 of 2', '2 of 5'], explanation: 'Beperking: x≠0.\nVermenigvuldig met x: x²+10=7x → x²−7x+10=0 → (x−5)(x−2)=0 → x=5 of x=2 ✓' },
         { difficulty: 'Hard', question: 'Los op vir x: (4x + 1)/(x + 1) = 3 + 4/(x + 1), met vermelding van enige beperkings.', answer: 'x = 6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Beperking: x≠−1.\nVermenigvuldig met (x+1): 4x+1=3(x+1)+4 → 4x+1=3x+7 → x=6.\nNie uitgesluit nie — geldig. x=6 ✓' },
       ],
       scoreMessages: [

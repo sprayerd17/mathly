@@ -524,7 +524,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Use the change of base formula to evaluate log₇ 50 to 3 decimal places.',
-      answer: 'log₇ 50 = log(50) / log(7) ≈ 1.699 / 0.845 ≈ 2.011.',
+      answer: 'log₇ 50 = log(50) / log(7) ≈ 1.699 / 0.845 ≈ 2.010.',
       checkMode: 'self',
     },
 

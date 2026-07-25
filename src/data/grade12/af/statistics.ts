@@ -821,7 +821,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Datastel van ure gestudeer (x) teenoor toetspunt (y) het gemiddelde x̄ = 5,5 ure en gemiddelde ȳ = 51,75 punte. Lerato sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (5,5; 51,75) gaan. Is sy korrek? Verduidelik.',
+          question: 'ʼn Datastel van ure gestudeer (x) teenoor toetspunt (y) het gemiddelde x̄ = 5,5 ure en gemiddelde ȳ = 25,75 punte. Lerato sê die kleinste-kwadrate-regressielyn vir hierdie data moet deur die punt (5,5; 25,75) gaan. Is sy korrek? Verduidelik.',
           answer: 'Ja — die kleinste-kwadrate-regressielyn gaan altyd deur die gemiddeldepunt (x̄, ȳ) van die data. Dit is ʼn wiskundige eienskap van hoe die lyn bereken word.',
           checkMode: 'self',
         },

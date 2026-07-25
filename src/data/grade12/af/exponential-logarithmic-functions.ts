@@ -438,7 +438,7 @@ export const topicData: TopicData = {
         {
           label: 'b) Groei of verval:',
           correctAnswer: 'verval',
-          correctAnswers: ['verval', 'verval nie'],
+          correctAnswers: ['verval'],
           explanation: 'Aangesien b = 0,4 en 0 < 0,4 < 1, verval die funksie soos x toeneem.',
         },
       ],
@@ -524,7 +524,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Gebruik die formule vir verandering van basis om log₇ 50 tot 3 desimale plekke te bereken.',
-      answer: 'log₇ 50 = log(50) / log(7) ≈ 1,699 / 0,845 ≈ 2,011.',
+      answer: 'log₇ 50 = log(50) / log(7) ≈ 1,699 / 0,845 ≈ 2,010.',
       checkMode: 'self',
     },
 
