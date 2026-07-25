@@ -626,8 +626,11 @@ export default function ProfilePage() {
           )}
         </div>
 
-        {/* My Children section */}
-        {!singularProfile && (
+        {/* My Children section — rendered regardless of child count so a
+            single-child (solo-plan) account still has a way to add a second
+            child. Only the existing-children list below is suppressed for
+            exactly one child, since that child's own details are already
+            shown inline in the identity card above. */}
         <div
           className="bg-white rounded-2xl shadow-sm p-7 mt-5"
           style={{ border: '1px solid #e5e7eb' }}
@@ -699,6 +702,7 @@ export default function ProfilePage() {
             </p>
           )}
 
+          {!singularProfile && (
           <div className="flex flex-col gap-3">
             {children.map((child, i) => (
               <div key={i} className="rounded-xl border p-4" style={{ borderColor: '#e5e7eb' }}>
@@ -794,6 +798,7 @@ export default function ProfilePage() {
               </div>
             ))}
           </div>
+          )}
 
           {addingChild && (
             <div className={`${children.length > 0 ? 'mt-3' : ''} rounded-xl border p-4`} style={{ borderColor: '#e5e7eb' }}>
@@ -852,7 +857,6 @@ export default function ProfilePage() {
             </div>
           )}
         </div>
-        )}
 
         {/* Referral section — any account with at least one paid child. Gated
             on PAYMENTS_ENABLED too: while payments are paused, a childPlans
