@@ -146,7 +146,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat natuurlike getalle, heelgetalle, gehele getalle en rasionale getalle bekendstel en wys hoe elke versameling binne die volgende pas',
+        'Kort video wat natuurlike getalle, hele getalle, heelgetalle en rasionale getalle bekendstel en wys hoe elke versameling binne die volgende pas',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -277,7 +277,7 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        'Getallelyn van 0 tot 4 wat wys hoe √4 en √9 presies op heelgetal-merke val (rasionaal), terwyl √5 tussen 2 en 3 val sonder ʼn presiese posisie (irrasionaal)',
+        'Getallelyn van 0 tot 4 wat wys hoe √4 en √9 presies op hele-getal-merke val (rasionaal), terwyl √5 tussen 2 en 3 val sonder ʼn presiese posisie (irrasionaal)',
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
@@ -417,7 +417,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat verskeie voorbeelde deurwerk van die klassifisering van gegewe getalle in natuurlik, heel, geheel, rasionaal of irrasionaal',
+        'Kort video wat verskeie voorbeelde deurwerk van die klassifisering van gegewe getalle in natuurlik, hele getal, heelgetal, rasionaal of irrasionaal',
     },
   ],
   resultsConfig: {

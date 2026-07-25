@@ -49,7 +49,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#374151;margin-bottom:4px;">Gelyksoortige teenoor Ongelyksoortige Terme</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;"><strong>Gelyksoortige terme</strong> het dieselfde veranderlike en eksponent. <strong>Ongelyksoortige terme</strong> nie.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;"><strong>Gelyksoortige terme</strong> het dieselfde veranderlike en eksponent. <strong>Ongelyksoortige terme</strong> het nie dieselfde veranderlike en eksponent nie.</p>` +
         `</div>` +
 
         `</div>` +

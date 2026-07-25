@@ -412,7 +412,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Amahle says the equation y = 5x − 2 and the table x: 1, 2, 3 — y: 3, 8, 13 describe the same relationship. Is she correct? Explain.',
-      answer: 'No — substituting x = 1 into y = 5x − 2 gives y = 3 ✓, but x = 2 gives y = 8 ✓, and x = 3 gives y = 13 ✓. Actually all values match, so she is correct.',
+      answer: 'Yes — substituting x = 1 into y = 5x − 2 gives y = 3 ✓, x = 2 gives y = 8 ✓, and x = 3 gives y = 13 ✓. All values match, so she is correct.',
       checkMode: 'self',
     },
 

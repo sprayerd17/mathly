@@ -231,7 +231,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#ea580c;margin-bottom:6px;">Square pyramid</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">${bl('1 square base')} + ${or('4 triangular faces')} = 5 faces total. The net has the ${bl('square')} in the centre with an ${or('triangle')} on each side.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${bl('1 square base')} + ${or('4 triangular faces')} = 5 faces total. The net has the ${bl('square')} in the centre with a ${or('triangle')} on each side.</p>` +
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +

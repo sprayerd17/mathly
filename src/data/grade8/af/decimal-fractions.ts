@@ -108,7 +108,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Sipho bereken 0,05 × 0,3 en kry 0,15. Kontroleer sy antwoord en verbeter dit indien nodig.',
-          answer: 'Hy is verkeerd — 5 × 3 = 15, en met 4 desimale plekke in totaal gee dit 0,0015, nie 0,15 nie.',
+          answer: 'Hy is verkeerd — 5 × 3 = 15, en met 3 desimale plekke in totaal gee dit 0,015, nie 0,15 nie.',
           checkMode: 'self',
         },
       ],

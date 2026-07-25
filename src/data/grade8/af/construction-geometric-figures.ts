@@ -51,7 +51,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Waarom gebruik ons ʼn passer en liniaal?</p>` +
-        `<p style="margin:0;color:#1e3a8a;">ʼn Passer en liniaal laat ons toe om <strong>presiese</strong> meetkundige konstruksies te maak sonder om hoeke met ʼn gradeboog te meet. Die ${bl('passerboë')} word met ʼn vaste wydte getrek, wat verseker dat alle afstande gelyk is. Die ${gr('halveerlyn')} wat deur die boog-snypunte getrek word, gaan gewaarborg deur die middelpunt teen presies 90°.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">ʼn Passer en liniaal laat ons toe om <strong>presiese</strong> meetkundige konstruksies te maak sonder om hoeke met ʼn gradeboog te meet. Die ${bl('passerboë')} word met ʼn vaste wydte getrek, wat verseker dat alle afstande gelyk is. Die ${gr('halveerlyn')} wat deur die boog-snypunte getrek word, word gewaarborg om deur die middelpunt te gaan teen presies 90°.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -239,7 +239,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die binnesentrum is altyd binne die driehoek</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Anders as die buitesentrum (waar die middelloodlyne van die sye ontmoet), is die ${or('binnesentrum')} altyd binne die driehoek geleë, ongeag of die driehoek skerphoekig, reghoekig of stomphoekig is.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Anders as die omsentrum (waar die middelloodlyne van die sye ontmoet), is die ${or('binnesentrum')} altyd binne die driehoek geleë, ongeag of die driehoek skerphoekig, reghoekig of stomphoekig is.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -386,7 +386,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Sipho konstrueer al drie middelloodlyne van ʼn driehoek se sye in plaas van sy hoekhalveerders. Sou hierdie by dieselfde punt as die hoekhalveerders ontmoet? Verduidelik.',
-      answer: 'Nee — die middelloodlyne van die sye ontmoet by ʼn ander punt genaamd die buitesentrum, wat oor die algemeen nie dieselfde is as die binnesentrum wat deur hoekhalveerders gevorm word nie.',
+      answer: 'Nee — die middelloodlyne van die sye ontmoet by ʼn ander punt genaamd die omsentrum, wat oor die algemeen nie dieselfde is as die binnesentrum wat deur hoekhalveerders gevorm word nie.',
       checkMode: 'self',
     },
   ],

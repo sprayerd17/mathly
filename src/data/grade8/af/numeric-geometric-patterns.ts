@@ -353,7 +353,7 @@ export const topicData: TopicData = {
         // ── Q13 Hard ─────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Sipho sê om elke term in ʼn patroon te verdubbel, verdubbel altyd die verskil tussen terme. Is hy korrek? Verduidelik met ʼn voorbeeld.',
+          question: 'Sipho sê dat die verdubbeling van elke term in ʼn patroon altyd die verskil tussen terme verdubbel. Is hy korrek? Verduidelik met ʼn voorbeeld.',
           answer: 'Ja — byvoorbeeld die patroon 2, 4, 6, 8 het ʼn verskil van 2. Verdubbeling gee 4, 8, 12, 16 met ʼn verskil van 4, wat dubbel die oorspronklike verskil is.',
           checkMode: 'self',
         },

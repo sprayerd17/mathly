@@ -106,7 +106,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Sipho calculates 0.05 × 0.3 and gets 0.15. Check his answer and correct it if needed.',
-          answer: 'He is incorrect — 5 × 3 = 15, with 4 total decimal places gives 0.0015, not 0.15.',
+          answer: 'He is incorrect — 5 × 3 = 15, with 3 total decimal places gives 0.015, not 0.15.',
           checkMode: 'self',
         },
       ],

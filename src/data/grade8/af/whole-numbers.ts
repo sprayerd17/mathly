@@ -316,7 +316,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Verhouding</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Vergelyk hoeveelhede van <em>dieselfde</em> soort. Geskryf as ${bl('a : b')} of as ʼn breuk. Vereenvoudig altyd deur deur die GGF te deel.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Vergelyk hoeveelhede van <em>dieselfde</em> soort. Geskryf as ${bl('a : b')} of as ʼn breuk. Vereenvoudig altyd deur die GGF te deel.</p>` +
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +

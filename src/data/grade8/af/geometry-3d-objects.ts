@@ -249,22 +249,22 @@ export const topicData: TopicData = {
       workedExamples: [
         {
           question: 'Beskryf die net van ʼn vierkantige piramide.',
-          answer: `Die net het ${bl('1 vierkantige basis')} in die middel met ${or('4 driehoeke')} aan elke kant vas, wat opvou om by die ${gr('apeks')} te ontmoet.`,
+          answer: `Die net het ${bl('1 vierkantige basis')} in die middel met ${or('4 driehoeke')} aan elke kant vasgemaak, wat opvou om by die ${gr('apeks')} te ontmoet.`,
           steps: [
             `<strong>Identifiseer die basis:</strong> ʼn Vierkantige piramide het ʼn ${bl('vierkantige basis')}. In die net verskyn hierdie ${bl('vierkant')} in die middel.`,
-            `<strong>Identifiseer die driehoekige vlakke:</strong> Daar is ${or('4 driehoekige vlakke')} — een aan elke kant van die ${bl('vierkantige basis')} vas.`,
+            `<strong>Identifiseer die driehoekige vlakke:</strong> Daar is ${or('4 driehoekige vlakke')} — een aan elke kant van die ${bl('vierkantige basis')} vasgemaak.`,
             `<strong>Beskryf die vou:</strong> Wanneer jy die net vou, styg die ${or('4 driehoeke')} op en hul vrye rande ontmoet by die ${gr('apeks')} bo die ${bl('vierkantige basis')}.`,
-            `<strong>Gevolgtrekking:</strong> Die net het ${bl('1 vierkantige basis')} in die middel met ${or('4 driehoeke')} aan elke kant vas, wat opvou om by die ${gr('apeks')} te ontmoet. Sien die diagram hieronder wat hierdie net uitgevou en gevou wys.`,
+            `<strong>Gevolgtrekking:</strong> Die net het ${bl('1 vierkantige basis')} in die middel met ${or('4 driehoeke')} aan elke kant vasgemaak, wat opvou om by die ${gr('apeks')} te ontmoet. Sien die diagram hieronder wat hierdie net uitgevou en gevou wys.`,
           ],
         },
         {
           question: "Lerato bou ʼn driehoekige piramide (tetraëder) uit sy net. Beskryf die netvorm.",
-          answer: `Die net bestaan uit ${or('4 gelyksydige driehoeke')} — ${bl('een basisdriehoek')} met ${or('3 driehoeke')} aan elke kant vas, wat opvou om die tetraëder te vorm.`,
+          answer: `Die net bestaan uit ${or('4 gelyksydige driehoeke')} — ${bl('een basisdriehoek')} met ${or('3 driehoeke')} aan elke kant vasgemaak, wat opvou om die tetraëder te vorm.`,
           steps: [
             `<strong>Identifiseer die vlakke:</strong> ʼn Tetraëder het 4 driehoekige vlakke in totaal — ${bl('1 basisdriehoek')} en ${or('3 driehoekige sye')}.`,
-            `<strong>Beskryf die netuitleg:</strong> In die plat net dien ${bl('een gelyksydige driehoek')} as die basis, met ${or('3 gelyksydige driehoeke')} aan elk van sy 3 kante vas.`,
+            `<strong>Beskryf die netuitleg:</strong> In die plat net dien ${bl('een gelyksydige driehoek')} as die basis, met ${or('3 gelyksydige driehoeke')} aan elk van sy 3 kante vasgemaak.`,
             `<strong>Beskryf die vou:</strong> Die ${or('3 buitenste driehoeke')} vou opwaarts om by die ${gr('apeks')} te ontmoet, en vorm sodoende die tetraëder.`,
-            `<strong>Gevolgtrekking:</strong> Die net bestaan uit ${or('4 gelyksydige driehoeke')}: ${bl('een basisdriehoek')} met ${or('3 driehoeke')} aan elke kant vas, wat opvou om die tetraëder te vorm.`,
+            `<strong>Gevolgtrekking:</strong> Die net bestaan uit ${or('4 gelyksydige driehoeke')}: ${bl('een basisdriehoek')} met ${or('3 driehoeke')} aan elke kant vasgemaak, wat opvou om die tetraëder te vorm.`,
           ],
         },
       ],
@@ -278,7 +278,7 @@ export const topicData: TopicData = {
           answer: 'vierkant',
           checkMode: 'auto',
           correctAnswer: 'vierkant',
-          explanation: 'ʼn Vierkantige piramide het ʼn vierkantige basis. Die net bevat een vierkant in die middel met 4 driehoeke aan sy kante vas.',
+          explanation: 'ʼn Vierkantige piramide het ʼn vierkantige basis. Die net bevat een vierkant in die middel met 4 driehoeke aan sy kante vasgemaak.',
         },
         {
           difficulty: 'Medium',
@@ -605,9 +605,9 @@ export const topicData: TopicData = {
 
         // Blok D: nette (12-15), 12 en 14 diagram-gemerk
         { difficulty: 'Medium', question: 'ʼn Net bestaan uit 2 agthoeke en 8 reghoeke soos getoon, waar die twee agthoeke die teenoorgestelde punte vorm en die 8 reghoeke ʼn aaneenlopende strook vorm wat hulle rand-aan-rand verbind. In watter vaste liggaam vou hierdie net op?', answer: 'agthoekige prisma', checkMode: 'auto', correctAnswer: 'agthoekigeprisma', correctAnswers: ['agthoekigeprisma', 'agthoekige prisma'], explanation: 'Die net het 2 identiese agthoekige basisse en 8 reghoekige sy-vlakke, wat ooreenstem met ʼn agthoekige prisma (V = 8 + 2 = 10, gemaak van 2 agthoeke + 8 reghoeke) ✓', diagramSvg: '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg"><polygon points="66,79 53,92 35,92 22,79 22,61 35,48 53,48 66,61" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><rect x="66" y="61" width="128" height="18" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><line x1="82" y1="61" x2="82" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="98" y1="61" x2="98" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="114" y1="61" x2="114" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="130" y1="61" x2="130" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="146" y1="61" x2="146" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="162" y1="61" x2="162" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><line x1="178" y1="61" x2="178" y2="79" stroke="#0f1f3d" stroke-width="1.2"/><polygon points="238,79 225,92 207,92 194,79 194,61 207,48 225,48 238,61" fill="none" stroke="#0f1f3d" stroke-width="1.8"/></svg>' },
-        { difficulty: 'Medium', question: 'Beskryf die net van ʼn neghoekige piramide — hoeveel vorms is daarin, watter vorms is dit, en hoe is hulle gerangskik?', answer: 'Die net het 10 vorms in totaal: 1 neghoek (die basis) en 9 driehoeke (die sy-vlakke). Die neghoek sit in die middel met een driehoek aan elk van sy 9 kante vas — wanneer dit gevou word, styg die driehoeke op en ontmoet hulle vrye hoekpunte by die apeks.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Beskryf die net van ʼn neghoekige piramide — hoeveel vorms is daarin, watter vorms is dit, en hoe is hulle gerangskik?', answer: 'Die net het 10 vorms in totaal: 1 neghoek (die basis) en 9 driehoeke (die sy-vlakke). Die neghoek sit in die middel met een driehoek aan elk van sy 9 kante vasgemaak — wanneer dit gevou word, styg die driehoeke op en ontmoet hulle vrye hoekpunte by die apeks.', checkMode: 'self' },
         { difficulty: 'Medium-Hard', question: 'ʼn Net bestaan uit 2 sirkels en 1 reghoek soos getoon, waar die reghoek se breedte baie korter is as die sirkels se omtrek — die reghoek reik net halfpad om elke sirkel se rand. As hierdie net gevou word, sou dit toevou tot ʼn behoorlike silinder? Verduidelik.', answer: 'Nee — die net sou nie tot ʼn behoorlike silinder toevou nie. Vir ʼn silinder-net moet die reghoek (geboë oppervlak) ʼn breedte hê wat presies gelyk is aan die omtrek van die sirkelvormige basisse sodat sy twee kort rande perfek ontmoet wanneer dit opgerol word. As die reghoek te kort is, bly daar ʼn gaping onbedek rondom die sirkelvormige rande, en die vaste liggaam sal nie toevou tot ʼn volledige silinder nie.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ʼn Leerder teken ʼn net vir ʼn vierkantige piramide met 1 vierkant en 3 driehoeke. Is hierdie net geldig? Indien nie, verduidelik die fout.', answer: 'Nee, die net is ongeldig. ʼn Vierkantige piramide het V = 4 + 1 = 5 vlakke: 1 vierkantige basis en 4 driehoekige sy-vlakke. Die leerder se net het slegs 3 driehoeke in plaas van 4, dus het een kant van die vierkant geen driehoek vas nie en kan die net nie opvou tot ʼn geslote vierkantige piramide nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder teken ʼn net vir ʼn vierkantige piramide met 1 vierkant en 3 driehoeke. Is hierdie net geldig? Indien nie, verduidelik die fout.', answer: 'Nee, die net is ongeldig. ʼn Vierkantige piramide het V = 4 + 1 = 5 vlakke: 1 vierkantige basis en 4 driehoekige sy-vlakke. Die leerder se net het slegs 3 driehoeke in plaas van 4, dus het een kant van die vierkant geen driehoek vasgemaak nie en kan die net nie opvou tot ʼn geslote vierkantige piramide nie.', checkMode: 'self' },
 
         // Blok E: dwarssnitte (16-18)
         { difficulty: 'Hard', question: 'ʼn Seshoekige prisma word gesny deur ʼn plat vlak parallel aan sy seshoekige basis, wat reguit dwarsdeur die prisma sny. Watter vorm is die dwarssnit?', answer: 'seshoek', checkMode: 'auto', correctAnswer: 'seshoek', correctAnswers: ['seshoek', 'ʼn seshoek', 'n seshoek'], explanation: 'ʼn Dwarssnit parallel aan die basis van ʼn prisma is altyd identies in vorm aan die basis. Aangesien die basis ʼn seshoek is, is die dwarssnit ʼn seshoek ✓' },

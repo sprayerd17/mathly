@@ -412,7 +412,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Amahle sê die vergelyking y = 5x − 2 en die tabel x: 1, 2, 3 — y: 3, 8, 13 beskryf dieselfde verwantskap. Is sy korrek? Verduidelik.',
-      answer: 'Nee — deur x = 1 in y = 5x − 2 te vervang, kry jy y = 3 ✓, en x = 2 gee y = 8 ✓, en x = 3 gee y = 13 ✓. Al die waardes stem eintlik ooreen, dus is sy korrek.',
+      answer: 'Ja — deur x = 1 in y = 5x − 2 te vervang, kry jy y = 3 ✓, x = 2 gee y = 8 ✓, en x = 3 gee y = 13 ✓. Al die waardes stem ooreen, dus is sy korrek.',
       checkMode: 'self',
     },
 

@@ -217,16 +217,16 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'substitution-ordered-pairs',
-      title: 'Substitusie om Tabelle van Georde Pare te Genereer',
+      title: 'Substitusie om Tabelle van Geordende Pare te Genereer',
       icon: '(x,y)',
       explanation:
-        `<p style="margin-bottom:16px;">Ons gebruik <strong>substitusie</strong> in vergelykings om <strong>tabelle van georde pare</strong> te genereer, wat algebraïese vergelykings met hul grafiese voorstelling verbind.</p>` +
+        `<p style="margin-bottom:16px;">Ons gebruik <strong>substitusie</strong> in vergelykings om <strong>tabelle van geordende pare</strong> te genereer, wat algebraïese vergelykings met hul grafiese voorstelling verbind.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('x-waardes')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('y-waardes')}</span>` +
-        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('georde pare')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('geordende pare')}</span>` +
         `</div>` +
 
         `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe substitusie werk</p>` +
@@ -244,35 +244,35 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
-        `<p style="margin:0;font-size:14px;">Skryf die resultaat as ʼn ${or('georde paar')} (${bl('x')}, ${gr('y')}) — x kom altyd eerste.</p>` +
+        `<p style="margin:0;font-size:14px;">Skryf die resultaat as ʼn ${or('geordende paar')} (${bl('x')}, ${gr('y')}) — x kom altyd eerste.</p>` +
         `</div>` +
 
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Algebra aan grafieke koppel</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Elke ${or('georde paar')} (${bl('x')}, ${gr('y')}) stel ʼn punt op die koördinaatvlak voor. Deur hierdie punte te stip, word die vorm van die grafiek van die vergelyking sigbaar.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Elke ${or('geordende paar')} (${bl('x')}, ${gr('y')}) stel ʼn punt op die koördinaatvlak voor. Deur hierdie punte te stip, word die vorm van die grafiek van die vergelyking sigbaar.</p>` +
         `</div>`,
 
       workedExamples: [
         {
-          question: 'Gebruik y = 3x − 2 om georde pare te genereer vir x = 0, 1, 2, 3.',
+          question: 'Gebruik y = 3x − 2 om geordende pare te genereer vir x = 0, 1, 2, 3.',
           answer: `${or('(0, −2), (1, 1), (2, 4), (3, 7)')}`,
           steps: [
-            `${bl('x = 0')}: y = 3(${bl('0')}) − 2 = 0 − 2 = ${gr('−2')}. Georde paar: ${or('(0, −2)')}`,
-            `${bl('x = 1')}: y = 3(${bl('1')}) − 2 = 3 − 2 = ${gr('1')}. Georde paar: ${or('(1, 1)')}`,
-            `${bl('x = 2')}: y = 3(${bl('2')}) − 2 = 6 − 2 = ${gr('4')}. Georde paar: ${or('(2, 4)')}`,
-            `${bl('x = 3')}: y = 3(${bl('3')}) − 2 = 9 − 2 = ${gr('7')}. Georde paar: ${or('(3, 7)')}`,
+            `${bl('x = 0')}: y = 3(${bl('0')}) − 2 = 0 − 2 = ${gr('−2')}. Geordende paar: ${or('(0, −2)')}`,
+            `${bl('x = 1')}: y = 3(${bl('1')}) − 2 = 3 − 2 = ${gr('1')}. Geordende paar: ${or('(1, 1)')}`,
+            `${bl('x = 2')}: y = 3(${bl('2')}) − 2 = 6 − 2 = ${gr('4')}. Geordende paar: ${or('(2, 4)')}`,
+            `${bl('x = 3')}: y = 3(${bl('3')}) − 2 = 9 − 2 = ${gr('7')}. Geordende paar: ${or('(3, 7)')}`,
           ],
         },
         {
-          question: 'Lerato vervang x = −1, 0, 1, 2 in y = −2x + 3. Vind die georde pare.',
+          question: 'Lerato vervang x = −1, 0, 1, 2 in y = −2x + 3. Vind die geordende pare.',
           answer: `${or('(−1, 5), (0, 3), (1, 1), (2, −1)')}`,
           steps: [
-            `${bl('x = −1')}: y = −2(${bl('−1')}) + 3 = 2 + 3 = ${gr('5')}. Georde paar: ${or('(−1, 5)')}`,
-            `${bl('x = 0')}: y = −2(${bl('0')}) + 3 = 0 + 3 = ${gr('3')}. Georde paar: ${or('(0, 3)')}`,
-            `${bl('x = 1')}: y = −2(${bl('1')}) + 3 = −2 + 3 = ${gr('1')}. Georde paar: ${or('(1, 1)')}`,
-            `${bl('x = 2')}: y = −2(${bl('2')}) + 3 = −4 + 3 = ${gr('−1')}. Georde paar: ${or('(2, −1)')}`,
+            `${bl('x = −1')}: y = −2(${bl('−1')}) + 3 = 2 + 3 = ${gr('5')}. Geordende paar: ${or('(−1, 5)')}`,
+            `${bl('x = 0')}: y = −2(${bl('0')}) + 3 = 0 + 3 = ${gr('3')}. Geordende paar: ${or('(0, 3)')}`,
+            `${bl('x = 1')}: y = −2(${bl('1')}) + 3 = −2 + 3 = ${gr('1')}. Geordende paar: ${or('(1, 1)')}`,
+            `${bl('x = 2')}: y = −2(${bl('2')}) + 3 = −4 + 3 = ${gr('−1')}. Geordende paar: ${or('(2, −1)')}`,
           ],
         },
       ],
@@ -280,10 +280,10 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van georde pare te genereer en die punte te stip',
+        'Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van geordende pare te genereer en die punte te stip',
 
       diagramPlaceholder:
-        'Koördinaatrooster wat die georde pare (0,−2), (1,1), (2,4) en (3,7) uit y = 3x − 2 stip, verbind deur ʼn reguit lyn',
+        'Koördinaatrooster wat die geordende pare (0,−2), (1,1), (2,4) en (3,7) uit y = 3x − 2 stip, verbind deur ʼn reguit lyn',
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" width="100%" style="max-width:300px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
@@ -388,7 +388,7 @@ export const topicData: TopicData = {
     // ── Q9 Medium ────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Genereer georde pare deur y = 2x + 5 te gebruik vir x = 0, 1, 2, 3.',
+      question: 'Genereer geordende pare deur y = 2x + 5 te gebruik vir x = 0, 1, 2, 3.',
       answer: '(0, 5), (1, 7), (2, 9), (3, 11).',
       checkMode: 'self',
     },
@@ -442,7 +442,7 @@ export const topicData: TopicData = {
     // ── Q15 Hard ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Genereer georde pare deur y = x² − 3 te gebruik vir x = 0, 1, 2, 3.',
+      question: 'Genereer geordende pare deur y = x² − 3 te gebruik vir x = 0, 1, 2, 3.',
       answer: '(0, −3), (1, −2), (2, 1), (3, 6)',
       checkMode: 'auto',
       correctAnswer: '(0,-3),(1,-2),(2,1),(3,6)',
@@ -475,7 +475,7 @@ export const topicData: TopicData = {
         // Blok 1 — Veranderlikes aan albei kante (posisies 0-3)
         { difficulty: 'Medium', question: 'Los op: 6x + 5 = 2x + 29', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: '6x + 5 = 2x + 29\nTrek 2x van albei kante af: 4x + 5 = 29\nTrek 5 van albei kante af: 4x = 24\nDeel albei kante deur 4: x = 6\nKontroleer: 6(6) + 5 = 41 en 2(6) + 29 = 41 ✓' },
         { difficulty: 'Medium', question: 'Los op: 9x − 8 = 4x + 17', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: '9x − 8 = 4x + 17\nTrek 4x van albei kante af: 5x − 8 = 17\nTel 8 by albei kante: 5x = 25\nDeel albei kante deur 5: x = 5\nKontroleer: 9(5) − 8 = 37 en 4(5) + 17 = 37 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Sewe keer ʼn getal, verminder met 3, is gelyk aan vier keer die getal vermeerder met 15. Stel ʼn vergelyking op en los op.', answer: '7x − 3 = 4x + 15', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x = 6', '7x - 3 = 4x + 15, x = 6'], explanation: 'Laat die getal x wees.\n7x − 3 = 4x + 15\nTrek 4x van albei kante af: 3x − 3 = 15\nTel 3 by albei kante: 3x = 18\nDeel albei kante deur 3: x = 6\nKontroleer: 7(6) − 3 = 39 en 4(6) + 15 = 39 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Sewe keer ʼn getal, verminder met 3, is gelyk aan vier keer die getal vermeerder met 15. Stel ʼn vergelyking op en los op.', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'x = 6', '7x - 3 = 4x + 15, x = 6'], explanation: 'Laat die getal x wees.\n7x − 3 = 4x + 15\nTrek 4x van albei kante af: 3x − 3 = 15\nTel 3 by albei kante: 3x = 18\nDeel albei kante deur 3: x = 6\nKontroleer: 7(6) − 3 = 39 en 4(6) + 15 = 39 ✓' },
         { difficulty: 'Hard', question: 'ʼn Leerder los 5x + 9 = 2x + 30 op deur net 2x van die regterkant af te trek en skryf 5x + 9 = 30. Verduidelik die fout en gee die korrekte oplossing.', answer: 'Die leerder het slegs die 2x-term aan die regterkant verwyder, maar dit nie ook van die linkerkant afgetrek nie — 2x moet van ALBEI kante afgetrek word. Korrekte metode: trek 2x van albei kante af om 3x + 9 = 30 te kry, trek 9 van albei kante af om 3x = 21 te kry, deel dan deur 3 om x = 7 te kry. Kontroleer: 5(7) + 9 = 44 en 2(7) + 30 = 44 ✓', checkMode: 'self' },
 
         // Blok 2 — Vergelykings met hakies wat eers uitgebrei moet word (posisies 4-7)
@@ -492,9 +492,9 @@ export const topicData: TopicData = {
 
         // Blok 4 — Vergelykings uit woordprobleme opstel en oplos (posisies 12-15)
         { difficulty: 'Medium', question: 'ʼn Getal word bygetel by twee keer ʼn tweede getal plus 3, en die totaal is 30. As die tweede getal x is, kan die eerste getal geskryf word as 2x + 3. Stel ʼn vergelyking op en vind albei getalle.', answer: 'x + (2x + 3) = 30\n3x + 3 = 30\n3x = 27\nx = 9\nDie tweede getal is 9 en die eerste getal is 2(9) + 3 = 21.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ʼn Vader is 4 keer so oud soos sy seun. Oor 6 jaar sal die vader slegs 3 keer so oud soos sy seun wees. As die seun se huidige ouderdom x is, stel ʼn vergelyking op en vind die seun se huidige ouderdom.', answer: '4x + 6 = 3(x + 6)', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', 'x = 12', '4x + 6 = 3(x + 6), x = 12'], explanation: 'Laat die seun se huidige ouderdom x wees, dus is die vader se huidige ouderdom 4x.\nOor 6 jaar: vader = 4x + 6, seun = x + 6\n4x + 6 = 3(x + 6)\nBrei uit: 4x + 6 = 3x + 18\nTrek 3x van albei kante af: x + 6 = 18\nTrek 6 van albei kante af: x = 12\nDie seun is tans 12 jaar oud.' },
+        { difficulty: 'Hard', question: 'ʼn Vader is 4 keer so oud soos sy seun. Oor 6 jaar sal die vader slegs 3 keer so oud soos sy seun wees. As die seun se huidige ouderdom x is, stel ʼn vergelyking op en vind die seun se huidige ouderdom.', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', 'x = 12', '4x + 6 = 3(x + 6), x = 12'], explanation: 'Laat die seun se huidige ouderdom x wees, dus is die vader se huidige ouderdom 4x.\nOor 6 jaar: vader = 4x + 6, seun = x + 6\n4x + 6 = 3(x + 6)\nBrei uit: 4x + 6 = 3x + 18\nTrek 3x van albei kante af: x + 6 = 18\nTrek 6 van albei kante af: x = 12\nDie seun is tans 12 jaar oud.' },
         { difficulty: 'Hard', question: 'Die breedte van ʼn reghoek is w cm en die lengte is 5 cm meer as die breedte. Die omtrek is 46 cm. Stel ʼn vergelyking op en los dit op om die breedte te vind.', answer: '2(w + (w + 5)) = 46\n2(2w + 5) = 46\n4w + 10 = 46\n4w = 36\nw = 9\nDie breedte is 9 cm en die lengte is 9 + 5 = 14 cm.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Skryfbehoeftewinkel vra ʼn R20-lidmaatskapfooi plus R3 per pen. ʼn Tweede winkel vra ʼn R8-lidmaatskapfooi plus R5 per pen. Vir hoeveel penne, n, sal die totale koste by albei winkels dieselfde wees?', answer: '20 + 3n = 8 + 5n', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'n = 6', '20 + 3n = 8 + 5n, n = 6'], explanation: 'Winkel A se koste: 20 + 3n. Winkel B se koste: 8 + 5n.\n20 + 3n = 8 + 5n\nTrek 3n van albei kante af: 20 = 8 + 2n\nTrek 8 van albei kante af: 12 = 2n\nDeel albei kante deur 2: n = 6\nKontroleer: 20 + 3(6) = 38 en 8 + 5(6) = 38 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Skryfbehoeftewinkel vra ʼn R20-lidmaatskapfooi plus R3 per pen. ʼn Tweede winkel vra ʼn R8-lidmaatskapfooi plus R5 per pen. Vir hoeveel penne, n, sal die totale koste by albei winkels dieselfde wees?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6', 'n = 6', '20 + 3n = 8 + 5n, n = 6'], explanation: 'Winkel A se koste: 20 + 3n. Winkel B se koste: 8 + 5n.\n20 + 3n = 8 + 5n\nTrek 3n van albei kante af: 20 = 8 + 2n\nTrek 8 van albei kante af: 12 = 2n\nDeel albei kante deur 2: n = 6\nKontroleer: 20 + 3(6) = 38 en 8 + 5(6) = 38 ✓' },
 
         // Blok 5 — Oplossings kontroleer deur substitusie / foutopsporing (posisies 16-17)
         { difficulty: 'Medium', question: 'Is x = 6 ʼn oplossing vir 5x − 4 = 3x + 8? Wys jou substitusie-kontrole.', answer: 'ja', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja', 'Ja'], explanation: 'Vervang x = 6 in albei kante.\nLinkerkant: 5(6) − 4 = 30 − 4 = 26\nRegterkant: 3(6) + 8 = 18 + 8 = 26\nAlbei kante is gelyk aan 26, dus is x = 6 ʼn oplossing.' },
@@ -521,7 +521,7 @@ export const topicData: TopicData = {
         // Blok 1 — Veranderlikes aan albei kante (posisies 0-3)
         { difficulty: 'Medium', question: 'Los op: 8x + 3 = 3x + 38', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: '8x + 3 = 3x + 38\nTrek 3x van albei kante af: 5x + 3 = 38\nTrek 3 van albei kante af: 5x = 35\nDeel albei kante deur 5: x = 7\nKontroleer: 8(7) + 3 = 59 en 3(7) + 38 = 59 ✓' },
         { difficulty: 'Medium', question: 'Los op: 10x − 6 = 5x + 29', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: '10x − 6 = 5x + 29\nTrek 5x van albei kante af: 5x − 6 = 29\nTel 6 by albei kante: 5x = 35\nDeel albei kante deur 5: x = 7\nKontroleer: 10(7) − 6 = 64 en 5(7) + 29 = 64 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Nege keer ʼn getal, verminder met 4, is gelyk aan vyf keer die getal vermeerder met 24. Stel ʼn vergelyking op en los op.', answer: '9x − 4 = 5x + 24', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x = 7', '9x - 4 = 5x + 24, x = 7'], explanation: 'Laat die getal x wees.\n9x − 4 = 5x + 24\nTrek 5x van albei kante af: 4x − 4 = 24\nTel 4 by albei kante: 4x = 28\nDeel albei kante deur 4: x = 7\nKontroleer: 9(7) − 4 = 59 en 5(7) + 24 = 59 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Nege keer ʼn getal, verminder met 4, is gelyk aan vyf keer die getal vermeerder met 24. Stel ʼn vergelyking op en los op.', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', 'x = 7', '9x - 4 = 5x + 24, x = 7'], explanation: 'Laat die getal x wees.\n9x − 4 = 5x + 24\nTrek 5x van albei kante af: 4x − 4 = 24\nTel 4 by albei kante: 4x = 28\nDeel albei kante deur 4: x = 7\nKontroleer: 9(7) − 4 = 59 en 5(7) + 24 = 59 ✓' },
         { difficulty: 'Hard', question: 'ʼn Leerder los 6x + 11 = 3x + 35 op deur net 3x van die regterkant af te trek en skryf 6x + 11 = 35. Verduidelik die fout en gee die korrekte oplossing.', answer: 'Die leerder het slegs die 3x-term aan die regterkant verwyder, maar dit nie ook van die linkerkant afgetrek nie — 3x moet van ALBEI kante afgetrek word. Korrekte metode: trek 3x van albei kante af om 3x + 11 = 35 te kry, trek 11 van albei kante af om 3x = 24 te kry, deel dan deur 3 om x = 8 te kry. Kontroleer: 6(8) + 11 = 59 en 3(8) + 35 = 59 ✓', checkMode: 'self' },
 
         // Blok 2 — Vergelykings met hakies wat eers uitgebrei moet word (posisies 4-7)
@@ -538,9 +538,9 @@ export const topicData: TopicData = {
 
         // Blok 4 — Vergelykings uit woordprobleme opstel en oplos (posisies 12-15)
         { difficulty: 'Medium', question: 'ʼn Getal word bygetel by twee keer ʼn tweede getal plus 6, en die totaal is 39. As die tweede getal x is, kan die eerste getal geskryf word as 2x + 6. Stel ʼn vergelyking op en vind albei getalle.', answer: 'x + (2x + 6) = 39\n3x + 6 = 39\n3x = 33\nx = 11\nDie tweede getal is 11 en die eerste getal is 2(11) + 6 = 28.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ʼn Vader is 5 keer so oud soos sy seun. Oor 4 jaar sal die vader slegs 4 keer so oud soos sy seun wees. As die seun se huidige ouderdom x is, stel ʼn vergelyking op en vind die seun se huidige ouderdom.', answer: '5x + 4 = 4(x + 4)', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', 'x = 12', '5x + 4 = 4(x + 4), x = 12'], explanation: 'Laat die seun se huidige ouderdom x wees, dus is die vader se huidige ouderdom 5x.\nOor 4 jaar: vader = 5x + 4, seun = x + 4\n5x + 4 = 4(x + 4)\nBrei uit: 5x + 4 = 4x + 16\nTrek 4x van albei kante af: x + 4 = 16\nTrek 4 van albei kante af: x = 12\nDie seun is tans 12 jaar oud.' },
+        { difficulty: 'Hard', question: 'ʼn Vader is 5 keer so oud soos sy seun. Oor 4 jaar sal die vader slegs 4 keer so oud soos sy seun wees. As die seun se huidige ouderdom x is, stel ʼn vergelyking op en vind die seun se huidige ouderdom.', answer: '12', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', 'x = 12', '5x + 4 = 4(x + 4), x = 12'], explanation: 'Laat die seun se huidige ouderdom x wees, dus is die vader se huidige ouderdom 5x.\nOor 4 jaar: vader = 5x + 4, seun = x + 4\n5x + 4 = 4(x + 4)\nBrei uit: 5x + 4 = 4x + 16\nTrek 4x van albei kante af: x + 4 = 16\nTrek 4 van albei kante af: x = 12\nDie seun is tans 12 jaar oud.' },
         { difficulty: 'Hard', question: 'Die breedte van ʼn reghoek is w cm en die lengte is 8 cm meer as die breedte. Die omtrek is 52 cm. Stel ʼn vergelyking op en los dit op om die breedte te vind.', answer: '2(w + (w + 8)) = 52\n2(2w + 8) = 52\n4w + 16 = 52\n4w = 36\nw = 9\nDie breedte is 9 cm en die lengte is 9 + 8 = 17 cm.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Drukkerswinkel vra ʼn R25-opstelfooi plus R4 per plakkaat. ʼn Tweede winkel vra ʼn R10-opstelfooi plus R7 per plakkaat. Vir hoeveel plakkate, n, sal die totale koste by albei winkels dieselfde wees?', answer: '25 + 4n = 10 + 7n', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', 'n = 5', '25 + 4n = 10 + 7n, n = 5'], explanation: '25 + 4n = 10 + 7n\nTrek 4n van albei kante af: 25 = 10 + 3n\nTrek 10 van albei kante af: 15 = 3n\nDeel albei kante deur 3: n = 5\nKontroleer: 25 + 4(5) = 45 en 10 + 7(5) = 45 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Drukkerswinkel vra ʼn R25-opstelfooi plus R4 per plakkaat. ʼn Tweede winkel vra ʼn R10-opstelfooi plus R7 per plakkaat. Vir hoeveel plakkate, n, sal die totale koste by albei winkels dieselfde wees?', answer: '5', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', 'n = 5', '25 + 4n = 10 + 7n, n = 5'], explanation: '25 + 4n = 10 + 7n\nTrek 4n van albei kante af: 25 = 10 + 3n\nTrek 10 van albei kante af: 15 = 3n\nDeel albei kante deur 3: n = 5\nKontroleer: 25 + 4(5) = 45 en 10 + 7(5) = 45 ✓' },
 
         // Blok 5 — Oplossings kontroleer deur substitusie / foutopsporing (posisies 16-17)
         { difficulty: 'Medium', question: 'Is x = 7 ʼn oplossing vir 4x + 9 = 2x + 23? Wys jou substitusie-kontrole.', answer: 'ja', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja', 'Ja'], explanation: 'Vervang x = 7 in albei kante.\nLinkerkant: 4(7) + 9 = 28 + 9 = 37\nRegterkant: 2(7) + 23 = 14 + 23 = 37\nAlbei kante is gelyk aan 37, dus is x = 7 ʼn oplossing.' },
@@ -567,7 +567,7 @@ export const topicData: TopicData = {
         // Blok 1 — Veranderlikes aan albei kante (posisies 0-3)
         { difficulty: 'Medium', question: 'Los op: 7x + 9 = 4x + 27', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: '7x + 9 = 4x + 27\nTrek 4x van albei kante af: 3x + 9 = 27\nTrek 9 van albei kante af: 3x = 18\nDeel albei kante deur 3: x = 6\nKontroleer: 7(6) + 9 = 51 en 4(6) + 27 = 51 ✓' },
         { difficulty: 'Medium', question: 'Los op: 11x − 10 = 6x + 30', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: '11x − 10 = 6x + 30\nTrek 6x van albei kante af: 5x − 10 = 30\nTel 10 by albei kante: 5x = 40\nDeel albei kante deur 5: x = 8\nKontroleer: 11(8) − 10 = 78 en 6(8) + 30 = 78 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Agt keer ʼn getal, verminder met 5, is gelyk aan vyf keer die getal vermeerder met 19. Stel ʼn vergelyking op en los op.', answer: '8x − 5 = 5x + 19', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'x = 8', '8x - 5 = 5x + 19, x = 8'], explanation: 'Laat die getal x wees.\n8x − 5 = 5x + 19\nTrek 5x van albei kante af: 3x − 5 = 19\nTel 5 by albei kante: 3x = 24\nDeel albei kante deur 3: x = 8\nKontroleer: 8(8) − 5 = 59 en 5(8) + 19 = 59 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Agt keer ʼn getal, verminder met 5, is gelyk aan vyf keer die getal vermeerder met 19. Stel ʼn vergelyking op en los op.', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'x = 8', '8x - 5 = 5x + 19, x = 8'], explanation: 'Laat die getal x wees.\n8x − 5 = 5x + 19\nTrek 5x van albei kante af: 3x − 5 = 19\nTel 5 by albei kante: 3x = 24\nDeel albei kante deur 3: x = 8\nKontroleer: 8(8) − 5 = 59 en 5(8) + 19 = 59 ✓' },
         { difficulty: 'Hard', question: 'ʼn Leerder los 9x + 4 = 4x + 49 op deur net 4x van die regterkant af te trek en skryf 9x + 4 = 49. Verduidelik die fout en gee die korrekte oplossing.', answer: 'Die leerder het slegs die 4x-term aan die regterkant verwyder, maar dit nie ook van die linkerkant afgetrek nie — 4x moet van ALBEI kante afgetrek word. Korrekte metode: trek 4x van albei kante af om 5x + 4 = 49 te kry, trek 4 van albei kante af om 5x = 45 te kry, deel dan deur 5 om x = 9 te kry. Kontroleer: 9(9) + 4 = 85 en 4(9) + 49 = 85 ✓', checkMode: 'self' },
 
         // Blok 2 — Vergelykings met hakies wat eers uitgebrei moet word (posisies 4-7)
@@ -584,9 +584,9 @@ export const topicData: TopicData = {
 
         // Blok 4 — Vergelykings uit woordprobleme opstel en oplos (posisies 12-15)
         { difficulty: 'Medium', question: 'ʼn Getal word bygetel by twee keer ʼn tweede getal plus 9, en die totaal is 45. As die tweede getal x is, kan die eerste getal geskryf word as 2x + 9. Stel ʼn vergelyking op en vind albei getalle.', answer: 'x + (2x + 9) = 45\n3x + 9 = 45\n3x = 36\nx = 12\nDie tweede getal is 12 en die eerste getal is 2(12) + 9 = 33.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ʼn Vader is 6 keer so oud soos sy seun. Oor 2 jaar sal die vader slegs 5 keer so oud soos sy seun wees. As die seun se huidige ouderdom x is, stel ʼn vergelyking op en vind die seun se huidige ouderdom.', answer: '6x + 2 = 5(x + 2)', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'x = 8', '6x + 2 = 5(x + 2), x = 8'], explanation: 'Laat die seun se huidige ouderdom x wees, dus is die vader se huidige ouderdom 6x.\nOor 2 jaar: vader = 6x + 2, seun = x + 2\n6x + 2 = 5(x + 2)\nBrei uit: 6x + 2 = 5x + 10\nTrek 5x van albei kante af: x + 2 = 10\nTrek 2 van albei kante af: x = 8\nDie seun is tans 8 jaar oud.' },
+        { difficulty: 'Hard', question: 'ʼn Vader is 6 keer so oud soos sy seun. Oor 2 jaar sal die vader slegs 5 keer so oud soos sy seun wees. As die seun se huidige ouderdom x is, stel ʼn vergelyking op en vind die seun se huidige ouderdom.', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', 'x = 8', '6x + 2 = 5(x + 2), x = 8'], explanation: 'Laat die seun se huidige ouderdom x wees, dus is die vader se huidige ouderdom 6x.\nOor 2 jaar: vader = 6x + 2, seun = x + 2\n6x + 2 = 5(x + 2)\nBrei uit: 6x + 2 = 5x + 10\nTrek 5x van albei kante af: x + 2 = 10\nTrek 2 van albei kante af: x = 8\nDie seun is tans 8 jaar oud.' },
         { difficulty: 'Hard', question: 'Die breedte van ʼn reghoek is w cm en die lengte is 6 cm meer as die breedte. Die omtrek is 64 cm. Stel ʼn vergelyking op en los dit op om die breedte te vind.', answer: '2(w + (w + 6)) = 64\n2(2w + 6) = 64\n4w + 12 = 64\n4w = 52\nw = 13\nDie breedte is 13 cm en die lengte is 13 + 6 = 19 cm.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Padstalletjie vra ʼn R18-stalfooi plus R6 per item. ʼn Tweede stalletjie vra ʼn R6-stalfooi plus R9 per item. Vir hoeveel items, n, sal die totale koste by albei stalletjies dieselfde wees?', answer: '18 + 6n = 6 + 9n', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'n = 4', '18 + 6n = 6 + 9n, n = 4'], explanation: '18 + 6n = 6 + 9n\nTrek 6n van albei kante af: 18 = 6 + 3n\nTrek 6 van albei kante af: 12 = 3n\nDeel albei kante deur 3: n = 4\nKontroleer: 18 + 6(4) = 42 en 6 + 9(4) = 42 ✓' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Snoepie vra ʼn R18-stalfooi plus R6 per item. ʼn Tweede stalletjie vra ʼn R6-stalfooi plus R9 per item. Vir hoeveel items, n, sal die totale koste by albei stalletjies dieselfde wees?', answer: '4', checkMode: 'auto', correctAnswer: '4', correctAnswers: ['4', 'n = 4', '18 + 6n = 6 + 9n, n = 4'], explanation: '18 + 6n = 6 + 9n\nTrek 6n van albei kante af: 18 = 6 + 3n\nTrek 6 van albei kante af: 12 = 3n\nDeel albei kante deur 3: n = 4\nKontroleer: 18 + 6(4) = 42 en 6 + 9(4) = 42 ✓' },
 
         // Blok 5 — Oplossings kontroleer deur substitusie / foutopsporing (posisies 16-17)
         { difficulty: 'Medium', question: 'Is x = 10 ʼn oplossing vir 3x − 8 = 2x + 3? Wys jou substitusie-kontrole, en gee die korrekte oplossing as dit nie is nie.', answer: 'nee', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee', 'Nee'], explanation: 'Vervang x = 10 in albei kante.\nLinkerkant: 3(10) − 8 = 30 − 8 = 22\nRegterkant: 2(10) + 3 = 20 + 3 = 23\n22 is nie gelyk aan 23 nie, dus is x = 10 nie ʼn oplossing nie. Die korrekte oplossing: 3x − 8 = 2x + 3 → x = 11. Kontroleer: 3(11) − 8 = 25 en 2(11) + 3 = 25 ✓' },

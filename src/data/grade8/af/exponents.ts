@@ -193,7 +193,7 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Waarom wetenskaplike notasie?</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Om 3 200 000 as ${gr('3,2 × 10⁶')} te skryf is kompak en maklik om te vergelyk. Wetenskaplikes gebruik dit vir afstande, massas en hoeveelhede wat baie groottordes strek.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Om 3 200 000 as ${gr('3,2 × 10⁶')} te skryf is kompak en maklik om te vergelyk. Wetenskaplikes gebruik dit vir afstande, massas en hoeveelhede wat oor baie grootte-ordes strek.</p>` +
         `</div>`,
 
       workedExamples: [
