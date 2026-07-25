@@ -508,6 +508,11 @@ export default function FamilyPlanBuilder() {
           </div>
         </div>
 
+        {paidCount > 0 && (
+          <p className="text-xs text-center mb-3" style={{ color: '#9ca3af' }}>
+            {t.billing_recurring_note}
+          </p>
+        )}
         {checkoutError && (
           <p className="text-xs text-center mb-3 text-red-600">
             {checkoutError}

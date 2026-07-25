@@ -14,12 +14,13 @@ import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 // trusted source of truth). It just polls for confirmation to show live feedback.
 export default function PricingSuccessPage() {
   const t = useTranslations()
-  const [status, setStatus] = useState<'waiting' | 'active' | 'timeout' | 'notSignedIn'>('waiting')
+  const [status, setStatus] = useState<'waiting' | 'active' | 'timeout' | 'notSignedIn' | 'failed'>('waiting')
 
   useEffect(() => {
     let cancelled = false
     let attempts = 0
     let timeoutId: ReturnType<typeof setTimeout> | undefined
+    let stopPolling = false
 
     // Paystack's webhook is the primary way subscriptionStatus flips to
     // 'active', but its delivery depends on the webhook URL being configured
@@ -28,18 +29,27 @@ export default function PricingSuccessPage() {
     // page polling forever with nothing to show for it. This independently
     // verifies the transaction and, if genuinely successful, applies it —
     // safe to call even if the webhook also fires, since the handler is
-    // idempotent (a webhook arriving first just makes this a no-op).
+    // idempotent (a webhook arriving first just makes this a no-op). It's
+    // also the only way this page finds out a checkout was cancelled or
+    // declined — Paystack redirects back here on every outcome, not just
+    // success, so without reading this response the page (and the account's
+    // subscriptionStatus) would just sit there as if payment might still land.
     async function confirmWithPaystack() {
       const params = new URLSearchParams(window.location.search)
       const reference = params.get('reference') ?? params.get('trxref')
       if (!reference || !auth.currentUser) return
       try {
         const idToken = await auth.currentUser.getIdToken()
-        await fetch('/api/paystack/verify-checkout', {
+        const res = await fetch('/api/paystack/verify-checkout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ idToken, reference }),
         })
+        const data = await res.json().catch(() => null)
+        if (data?.status === 'failed' && !cancelled) {
+          stopPolling = true
+          setStatus('failed')
+        }
       } catch {
         // Best-effort nudge — the Firestore poll below still catches a
         // webhook that arrives later, so a failure here isn't fatal.
@@ -47,8 +57,9 @@ export default function PricingSuccessPage() {
     }
 
     async function poll(uid: string) {
+      if (stopPolling) return
       const snap = await getDoc(doc(db, 'users', uid))
-      if (cancelled) return
+      if (cancelled || stopPolling) return
       if (snap.exists() && snap.data().subscriptionStatus === 'active') {
         setStatus('active')
         return
@@ -89,11 +100,15 @@ export default function PricingSuccessPage() {
       <main className="max-w-lg mx-auto px-6 py-24 text-center">
         <div
           className="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center"
-          style={{ backgroundColor: status === 'active' ? '#dcfce7' : status === 'timeout' ? '#fef3c7' : '#eff6ff' }}
+          style={{ backgroundColor: status === 'active' ? '#dcfce7' : status === 'failed' ? '#fee2e2' : status === 'timeout' ? '#fef3c7' : '#eff6ff' }}
         >
           {status === 'active' ? (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 6L9 17L4 12" stroke="#15803d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          ) : status === 'failed' ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6l12 12" stroke="#b91c1c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           ) : status === 'timeout' ? (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,6 +126,8 @@ export default function PricingSuccessPage() {
         <h1 className="text-2xl font-bold mb-3" style={{ color: '#0f1f3d' }}>
           {status === 'active'
             ? t.pricing_success_active_heading
+            : status === 'failed'
+            ? t.pricing_success_failed_heading
             : status === 'timeout'
             ? t.pricing_success_timeout_heading
             : status === 'notSignedIn'
@@ -120,6 +137,8 @@ export default function PricingSuccessPage() {
         <p className={`text-sm text-gray-500 ${status === 'active' && !PAYMENTS_ENABLED ? 'mb-3' : 'mb-8'}`}>
           {status === 'active'
             ? t.pricing_success_active_body
+            : status === 'failed'
+            ? t.pricing_success_failed_body
             : status === 'timeout'
             ? t.pricing_success_timeout_body
             : status === 'notSignedIn'
@@ -133,10 +152,10 @@ export default function PricingSuccessPage() {
         )}
 
         <Link
-          href="/profile"
+          href={status === 'failed' ? '/pricing' : '/profile'}
           className="inline-flex items-center gap-2 bg-[#1e40af] hover:bg-[#1d3a9e] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors"
         >
-          {t.pricing_success_profile_link}
+          {status === 'failed' ? t.pricing_success_failed_cta : t.pricing_success_profile_link}
         </Link>
       </main>
     </div>

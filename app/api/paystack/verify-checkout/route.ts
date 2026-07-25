@@ -57,7 +57,37 @@ export async function POST(req: NextRequest) {
   }
 
   if (result.data.status !== 'success') {
-    return Response.json({ status: result.data.status === 'failed' ? 'failed' : 'pending' })
+    // 'failed'/'abandoned' are terminal — Paystack has already decided this
+    // charge is never completing (the common case: the shopper hit "Cancel"
+    // on Paystack's own page). Left alone, the account would sit in
+    // 'pending' — showing "upgrade in progress" on the profile page — until
+    // the abandoned-checkout cron sweep catches it up to 2 hours later, and
+    // the success page itself would just poll to an unhelpful generic
+    // timeout. Revert right away instead, same fields the cron clears.
+    if (result.data.status === 'failed' || result.data.status === 'abandoned') {
+      const userRef = adminDb.doc(`users/${uid}`)
+      const userSnap = await userRef.get()
+      if (userSnap.exists) {
+        const u = userSnap.data()!
+        const updates: Record<string, unknown> = {
+          pendingChildPlans: null,
+          pendingFounding: null,
+          pendingAmount: null,
+          pendingPlanCode: null,
+          pendingSince: null,
+        }
+        // Only a brand-new signup's checkout sets subscriptionStatus to
+        // 'pending' — an upgrade's abandoned incremental charge leaves it at
+        // 'active' the whole time, and must stay that way here.
+        if (u.subscriptionStatus === 'pending') updates.subscriptionStatus = 'none'
+        await userRef.update(updates)
+      }
+      return Response.json({ status: 'failed' })
+    }
+    // Any other status (still settling, reference not yet known, etc.) — the
+    // client just keeps polling Firestore, which the webhook (if it does
+    // arrive) still updates.
+    return Response.json({ status: 'pending' })
   }
 
   const chargeData: ChargeData = {

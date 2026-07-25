@@ -47,7 +47,6 @@ const en = {
     auth_child_name_label_other: 'What is their name?',
     auth_child_name_placeholder: 'e.g. Chris',
     auth_child_grade_label: 'What grade are they in?',
-    auth_grade_label_solo: 'What grade are you in?',
     auth_select_grade_placeholder: 'Select a grade',
     auth_child_language_label: 'Language',
     auth_complete_registration_button: 'Complete Registration',
@@ -61,6 +60,7 @@ const en = {
     auth_plan_size_note: "Everyone starts free — you can upgrade any of them to Pro or Max on the next step, and mix plans freely.",
     auth_child_plan_label: 'Plan for this person',
     auth_plan_paused_note: "Payment processor verification is in progress — even after checkout, this account will work exactly like Free until it's complete. No paid features unlock and no funds are deducted.",
+    billing_recurring_note: "Paid plans are a recurring monthly subscription — your card is billed automatically every month until you cancel. No manual renewal needed.",
     auth_plan_running_total_label: 'Estimated monthly total',
 
     // ── Topic tabs (TopicTabs.tsx) ─────────────────────────────────────────
@@ -452,6 +452,9 @@ const en = {
     pricing_success_active_paused_note: "Payment processor verification is still in progress, so your account works exactly like Free for now — no funds were deducted. Paid features unlock automatically once verification completes.",
     pricing_success_timeout_heading: 'Still confirming…',
     pricing_success_timeout_body: "This is taking longer than usual. Check your profile in a minute — if it hasn't updated by then, contact us and we'll sort it out.",
+    pricing_success_failed_heading: 'Payment not completed',
+    pricing_success_failed_body: "No charge was made and your account is still on the Free plan. You can try again anytime from the pricing page.",
+    pricing_success_failed_cta: 'Back to pricing',
     pricing_success_notsignedin_heading: "You're not signed in",
     pricing_success_notsignedin_body: "We couldn't find an active session, so we can't confirm a payment here. If you just completed checkout, sign in to see your plan status.",
     pricing_success_profile_link: 'Go to my profile',
@@ -676,7 +679,6 @@ const af: Record<TranslationKeys, string> = {
     auth_child_name_label_other: 'Wat is hulle se naam?',
     auth_child_name_placeholder: 'bv. Chris',
     auth_child_grade_label: 'In watter graad is hulle?',
-    auth_grade_label_solo: 'In watter graad is jy?',
     auth_select_grade_placeholder: "Kies 'n graad",
     auth_child_language_label: 'Taal',
     auth_complete_registration_button: 'Voltooi Registrasie',
@@ -690,6 +692,7 @@ const af: Record<TranslationKeys, string> = {
     auth_plan_size_note: 'Almal begin gratis — jy kan enige een van hulle na Pro of Max opgradeer op die volgende stap, en pakkette vryelik meng.',
     auth_child_plan_label: 'Pakket vir hierdie persoon',
     auth_plan_paused_note: "Betalingsverwerker-verifikasie is in proses — selfs ná uitbetaal sal hierdie rekening presies soos Gratis werk totdat dit voltooi is. Geen betaalde kenmerke ontsluit nie en geen fondse word onttrek nie.",
+    billing_recurring_note: "Betaalde pakkette is 'n herhalende maandelikse intekening — jou kaart word outomaties elke maand gehef totdat jy kanselleer. Geen handmatige hernuwing nodig nie.",
     auth_plan_running_total_label: 'Geskatte maandelikse totaal',
 
     // ── Topic tabs (TopicTabs.tsx) ─────────────────────────────────────────
@@ -1081,6 +1084,9 @@ const af: Record<TranslationKeys, string> = {
     pricing_success_active_paused_note: 'Betalingsverwerker-verifikasie is steeds in proses, so jou rekening werk vir eers presies soos Gratis — geen fondse is onttrek nie. Betaalde kenmerke ontsluit outomaties sodra verifikasie voltooi is.',
     pricing_success_timeout_heading: 'Steeds besig om te bevestig…',
     pricing_success_timeout_body: "Dit neem langer as gewoonlik. Kyk oor 'n minuut na jou profiel — as dit dan nog nie opgedateer is nie, kontak ons en ons stel dit reg.",
+    pricing_success_failed_heading: 'Betaling nie voltooi nie',
+    pricing_success_failed_body: "Geen bedrag is gehef nie en jou rekening is steeds op die Gratis-pakket. Jy kan enige tyd weer probeer vanaf die pryse-bladsy.",
+    pricing_success_failed_cta: 'Terug na pryse',
     pricing_success_notsignedin_heading: 'Jy is nie aangeteken nie',
     pricing_success_notsignedin_body: "Ons kon nie 'n aktiewe sessie vind nie, so ons kan nie 'n betaling hier bevestig nie. As jy pas afgereken het, teken aan om jou pakketstatus te sien.",
     pricing_success_profile_link: 'Gaan na my profiel',

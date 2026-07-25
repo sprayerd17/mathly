@@ -316,11 +316,11 @@ function AuthModal({
 
   function goToChildrenStep() {
     const count = planSize === 'family3' ? 3 : planSize === 'family2' ? 2 : 1
-    setRegChildren(prev => {
-      const next = Array.from({ length: count }, (_, i) => prev[i] ?? { name: '', grade: '', language: null, tier: 'free' as Tier })
-      if (count === 1) next[0] = { ...next[0], name: name.trim() }
-      return next
-    })
+    // Every plan size — including solo — asks for the child's own name
+    // explicitly rather than reusing the account holder's name from step 1:
+    // the account holder isn't necessarily the student, and silently copying
+    // their name in was confusing once a family later grew past one child.
+    setRegChildren(prev => Array.from({ length: count }, (_, i) => prev[i] ?? { name: '', grade: '', language: null, tier: 'free' as Tier }))
     setError('')
     setRegisterStep(3)
   }
@@ -615,23 +615,21 @@ function AuthModal({
                     </span>
                   )}
                   <div className="flex flex-col gap-3">
-                    {regChildren.length > 1 && (
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                          {i === 0 ? t.auth_child_name_label_first : t.auth_child_name_label_other}
-                        </label>
-                        <input
-                          type="text"
-                          value={child.name}
-                          onChange={e => setRegChildren(prev => prev.map((c, idx) => idx === i ? { ...c, name: e.target.value } : c))}
-                          placeholder={t.auth_child_name_placeholder}
-                          className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
-                        />
-                      </div>
-                    )}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                        {regChildren.length > 1 ? t.auth_child_grade_label : t.auth_grade_label_solo}
+                        {i === 0 ? t.auth_child_name_label_first : t.auth_child_name_label_other}
+                      </label>
+                      <input
+                        type="text"
+                        value={child.name}
+                        onChange={e => setRegChildren(prev => prev.map((c, idx) => idx === i ? { ...c, name: e.target.value } : c))}
+                        placeholder={t.auth_child_name_placeholder}
+                        className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                        {t.auth_child_grade_label}
                       </label>
                       <select
                         value={child.grade}
@@ -689,12 +687,17 @@ function AuthModal({
             </div>
 
             {pricePreview.total > 0 && (
-              <div className="flex items-center justify-between rounded-lg px-4 py-3 mb-4" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
-                <span className="text-xs font-medium text-gray-500">{t.auth_plan_running_total_label}</span>
-                <span className="text-sm font-bold" style={{ color: '#0f1f3d' }}>
-                  R{pricePreview.total}{t.pricing_per_month}
-                </span>
-              </div>
+              <>
+                <div className="flex items-center justify-between rounded-lg px-4 py-3 mb-2" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
+                  <span className="text-xs font-medium text-gray-500">{t.auth_plan_running_total_label}</span>
+                  <span className="text-sm font-bold" style={{ color: '#0f1f3d' }}>
+                    R{pricePreview.total}{t.pricing_per_month}
+                  </span>
+                </div>
+                <p className="text-[11px] text-gray-400 leading-relaxed mb-4">
+                  {t.billing_recurring_note}
+                </p>
+              </>
             )}
 
             {error && (
