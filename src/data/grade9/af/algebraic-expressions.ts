@@ -298,12 +298,12 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;text-align:center;">` +
-        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;font-size:1.1em;">B — ${or('Buite')}</p>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;font-size:1.1em;">U — ${or('Uitwendig')}</p>` +
         `<p style="color:#374151;font-size:13px;margin:0;">Vermenigvuldig die ${or('buite')} terme (eerste van eerste × laaste van tweede).</p>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;text-align:center;">` +
-        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;font-size:1.1em;">B — ${or('Binne')}</p>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;font-size:1.1em;">I — ${or('Inwendig')}</p>` +
         `<p style="color:#374151;font-size:13px;margin:0;">Vermenigvuldig die ${or('binne')} terme (laaste van eerste × eerste van tweede).</p>` +
         `</div>` +
 
@@ -333,7 +333,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">Algemene fout om te vermy</p>` +
-        `<p style="margin:0;color:#991b1b;">(x + 4)² ≠ x² + 16. Die kwadreer van ʼn binoom lewer altyd ʼn <strong>trinoom</strong> op: (x + 4)² = x² + 8x + 16. Die middelste term 2ab is noodsaaklik — moet dit nooit weglaat nie.</p>` +
+        `<p style="margin:0;color:#991b1b;">(x + 4)² ≠ x² + 16. Die kwadrering van ʼn binoom lewer altyd ʼn <strong>trinoom</strong> op: (x + 4)² = x² + 8x + 16. Die middelste term 2ab is noodsaaklik — moet dit nooit weglaat nie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -475,9 +475,9 @@ export const topicData: TopicData = {
         `<path d="M35,55 Q95,20 155,55" fill="none" stroke="#2563eb" stroke-width="1.5"/>` +
         `<text x="95" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#2563eb">E</text>` +
         `<path d="M35,55 Q115,2 195,55" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<text x="115" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">B</text>` +
+        `<text x="115" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">U</text>` +
         `<path d="M75,75 Q115,100 155,75" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<text x="115" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">B</text>` +
+        `<text x="115" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">I</text>` +
         `<path d="M75,75 Q135,122 195,75" fill="none" stroke="#16a34a" stroke-width="1.5"/>` +
         `<text x="135" y="132" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">L</text>` +
         `<text x="115" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#dc2626">= x² + 8x + 15</text>` +
@@ -535,7 +535,7 @@ export const topicData: TopicData = {
 
         // Blok 6 — Multi-stap vereenvoudiging / foutopsporing (Hard)
         { difficulty: 'Hard', question: 'Brei uit en vereenvoudig (x + 3)(x + 2) + 2x.', checkMode: 'auto', correctAnswer: 'x²+7x+6', correctAnswers: ['x²+7x+6', 'x^2+7x+6'], answer: 'x² + 7x + 6', explanation: 'Brei eers uit: (x + 3)(x + 2) = x² + 2x + 3x + 6 = x² + 5x + 6.\nTel die oorblywende term by: x² + 5x + 6 + 2x.\nVoeg gelyksoortige terme saam: 5x + 2x = 7x.\nAntwoord: x² + 7x + 6' },
-        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x + 6)² = x² + 36. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadreer van ʼn binoom lewer altyd ʼn trinoom op: (x + 6)² = x² + 2(x)(6) + 6² = x² + 12x + 36, nie x² + 36 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x + 6)² = x² + 36. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadrering van ʼn binoom lewer altyd ʼn trinoom op: (x + 6)² = x² + 2(x)(6) + 6² = x² + 12x + 36, nie x² + 36 nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Evalueer (x + 3)(x − 2) wanneer x = −1, en wys of jy eers uitbrei of eers vervang.', answer: 'Albei metodes werk. Direkte vervanging: (−1 + 3)(−1 − 2) = (2)(−3) = −6.\nEers uitbrei: (x + 3)(x − 2) = x² + x − 6, en dan x = −1 vervang: 1 − 1 − 6 = −6. Albei metodes gee −6.', checkMode: 'self' },
       ],
       scoreMessages: [
@@ -581,7 +581,7 @@ export const topicData: TopicData = {
 
         // Blok 6 — Multi-stap vereenvoudiging / foutopsporing (Hard)
         { difficulty: 'Hard', question: 'Brei uit en vereenvoudig (x + 4)(x + 1) + 3x.', checkMode: 'auto', correctAnswer: 'x²+8x+4', correctAnswers: ['x²+8x+4', 'x^2+8x+4'], answer: 'x² + 8x + 4', explanation: 'Brei eers uit: (x + 4)(x + 1) = x² + x + 4x + 4 = x² + 5x + 4.\nTel die oorblywende term by: x² + 5x + 4 + 3x.\nVoeg gelyksoortige terme saam: 5x + 3x = 8x.\nAntwoord: x² + 8x + 4' },
-        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x − 5)² = x² − 25. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadreer van ʼn binoom lewer altyd ʼn trinoom op: (x − 5)² = x² − 2(x)(5) + 5² = x² − 10x + 25, nie x² − 25 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x − 5)² = x² − 25. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadrering van ʼn binoom lewer altyd ʼn trinoom op: (x − 5)² = x² − 2(x)(5) + 5² = x² − 10x + 25, nie x² − 25 nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Evalueer (x + 5)(x − 3) wanneer x = −2, en wys of jy eers uitbrei of eers vervang.', answer: 'Albei metodes werk. Direkte vervanging: (−2 + 5)(−2 − 3) = (3)(−5) = −15.\nEers uitbrei: (x + 5)(x − 3) = x² + 2x − 15, en dan x = −2 vervang: 4 − 4 − 15 = −15. Albei metodes gee −15.', checkMode: 'self' },
       ],
       scoreMessages: [
@@ -627,7 +627,7 @@ export const topicData: TopicData = {
 
         // Blok 6 — Multi-stap vereenvoudiging / foutopsporing (Hard)
         { difficulty: 'Hard', question: 'Brei uit en vereenvoudig (x + 2)(x + 5) + 4x.', checkMode: 'auto', correctAnswer: 'x²+11x+10', correctAnswers: ['x²+11x+10', 'x^2+11x+10'], answer: 'x² + 11x + 10', explanation: 'Brei eers uit: (x + 2)(x + 5) = x² + 5x + 2x + 10 = x² + 7x + 10.\nTel die oorblywende term by: x² + 7x + 10 + 4x.\nVoeg gelyksoortige terme saam: 7x + 4x = 11x.\nAntwoord: x² + 11x + 10' },
-        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x − 4)² = x² − 16. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadreer van ʼn binoom lewer altyd ʼn trinoom op: (x − 4)² = x² − 2(x)(4) + 4² = x² − 8x + 16, nie x² − 16 nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder beweer (x − 4)² = x² − 16. Verduidelik die fout en gee die korrekte uitbreiding.', answer: 'Die leerder het elke term apart gekwadreer en die middelste term vergeet. Die kwadrering van ʼn binoom lewer altyd ʼn trinoom op: (x − 4)² = x² − 2(x)(4) + 4² = x² − 8x + 16, nie x² − 16 nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Evalueer (x + 4)(x − 1) wanneer x = −3, en wys of jy eers uitbrei of eers vervang.', answer: 'Albei metodes werk. Direkte vervanging: (−3 + 4)(−3 − 1) = (1)(−4) = −4.\nEers uitbrei: (x + 4)(x − 1) = x² + 3x − 4, en dan x = −3 vervang: 9 − 9 − 4 = −4. Albei metodes gee −4.', checkMode: 'self' },
       ],
       scoreMessages: [

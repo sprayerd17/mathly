@@ -267,7 +267,7 @@ export const topicData: TopicData = {
       answer: '2 5/6 liter',
       checkMode: 'auto',
       correctAnswer: '2 5/6',
-      correctAnswers: ['2 5/6', '17/6', '2.833'],
+      correctAnswers: ['2 5/6', '17/6', '2.833', '2,833'],
       explanation: '4¼ = 17/4. Gebruik: 1/3 × 17/4 = 17/12.\nOor: 17/4 − 17/12 = 51/12 − 17/12 = 34/12 = 2 10/12 = 2 5/6 liter ✓',
     },
 
@@ -286,7 +286,7 @@ export const topicData: TopicData = {
       answer: '3 1/3',
       checkMode: 'auto',
       correctAnswer: '3 1/3',
-      correctAnswers: ['3 1/3', '10/3', '3.333'],
+      correctAnswers: ['3 1/3', '10/3', '3.333', '3,333'],
       explanation: '(1/2)² = 1/4.\n5/6 ÷ 1/4 = 5/6 × 4 = 20/6 = 10/3 = 3 1/3 ✓',
     },
 
@@ -305,7 +305,7 @@ export const topicData: TopicData = {
       answer: '1 1/2',
       checkMode: 'auto',
       correctAnswer: '3/2',
-      correctAnswers: ['3/2', '1 1/2', '1½', '1.5'],
+      correctAnswers: ['3/2', '1 1/2', '1½', '1.5', '1,5'],
       explanation: '2⅔ = 8/3. 8/3 × 3/4 = 24/12 = 2. 2 − 1/2 = 3/2 = 1½ ✓',
     },
 
@@ -316,7 +316,7 @@ export const topicData: TopicData = {
       answer: '1 7/20 koppies',
       checkMode: 'auto',
       correctAnswer: '1 7/20',
-      correctAnswers: ['1 7/20', '27/20', '1.35'],
+      correctAnswers: ['1 7/20', '27/20', '1.35', '1,35'],
       explanation: '2¼ = 9/4. 60% = 3/5.\n3/5 × 9/4 = 27/20 = 1 7/20 koppies ✓',
     },
 

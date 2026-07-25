@@ -347,7 +347,7 @@ export const topicData: TopicData = {
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Compound Interest</p>` +
         `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Interest calculated on the growing total each period.</p>` +
-        `<p style="color:#15803d;font-size:13px;font-weight:600;margin:0;">Amount = P × (1 + r)ⁿ</p>` +
+        `<p style="color:#15803d;font-size:13px;font-weight:600;margin:0;">Amount = P × (1 + i)ⁿ</p>` +
         `</div>` +
 
         `<div style="background:#f0fdfa;border:1.5px solid #99f6e4;border-radius:10px;padding:12px 14px;">` +
@@ -380,7 +380,7 @@ export const topicData: TopicData = {
 
         `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Compound interest step by step</p>` +
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:16px 20px;margin-bottom:20px;">` +
-        `<p style="margin:0 0 10px;font-size:14px;">Multiply the ${gr('growing total')} by (1 + r) each year, where r is the interest rate as a decimal:</p>` +
+        `<p style="margin:0 0 10px;font-size:14px;">Multiply the ${gr('growing total')} by (1 + i) each year, where i is the interest rate as a decimal:</p>` +
         `<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;">` +
         `<div style="text-align:center;min-width:100px;padding:8px 12px;background:white;border:1.5px solid #bbf7d0;border-radius:8px;">` +
         `<p style="font-size:0.7em;font-weight:700;color:#6b7280;text-transform:uppercase;margin-bottom:2px;">Start</p>` +
@@ -389,12 +389,12 @@ export const topicData: TopicData = {
         `<div style="color:#9ca3af;font-size:1.2em;">→</div>` +
         `<div style="text-align:center;min-width:100px;padding:8px 12px;background:white;border:1.5px solid #bbf7d0;border-radius:8px;">` +
         `<p style="font-size:0.7em;font-weight:700;color:#6b7280;text-transform:uppercase;margin-bottom:2px;">Year 1</p>` +
-        `<p style="font-size:1em;font-weight:700;margin:0;">${gr('P')} × (1+r)</p>` +
+        `<p style="font-size:1em;font-weight:700;margin:0;">${gr('P')} × (1+i)</p>` +
         `</div>` +
         `<div style="color:#9ca3af;font-size:1.2em;">→</div>` +
         `<div style="text-align:center;min-width:100px;padding:8px 12px;background:white;border:1.5px solid #bbf7d0;border-radius:8px;">` +
         `<p style="font-size:0.7em;font-weight:700;color:#6b7280;text-transform:uppercase;margin-bottom:2px;">Year 2</p>` +
-        `<p style="font-size:1em;font-weight:700;margin:0;">${gr('P')} × (1+r)²</p>` +
+        `<p style="font-size:1em;font-weight:700;margin:0;">${gr('P')} × (1+i)²</p>` +
         `</div>` +
         `</div>` +
         `</div>` +
@@ -639,6 +639,7 @@ export const topicData: TopicData = {
         `<circle cx="215" cy="28" r="3.5" fill="#16a34a"/>` +
         `<text x="145" y="24" font-size="7.5" font-weight="700" fill="#16a34a">Compound: R1 611</text>` +
         `<text x="30" y="163" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `<text x="215" y="163" text-anchor="middle" font-size="8" fill="#6b7280">5</text>` +
         `</svg>`,
     },
   ],

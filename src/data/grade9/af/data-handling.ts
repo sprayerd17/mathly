@@ -388,11 +388,11 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'ʼn Histogram groepeer die ouderdomme van 50 marathon-hardlopers in die intervalle 20-29, 30-39, 40-49, 50-59, elk met ʼn ander breedte (10, 10, 10, en 20 jaar). Verduidelik waarom dit ʼn probleem is.',
+          question: 'ʼn Histogram groepeer die ouderdomme van 50 marathon-hardlopers in die intervalle 20-29, 30-39, 40-49, 50-69, elk met ʼn ander breedte (10, 10, 10, en 20 jaar). Verduidelik waarom dit ʼn probleem is.',
           answer: `Ongelyke ${or('intervalbreedtes')} maak die histogram misleidend, aangesien staaf-hoogtes nie meer die frekwensie oor gelyke reekse eerlik sal verteenwoordig nie`,
           steps: [
             `ʼn Histogram se stawe verteenwoordig ${or('intervalle van gelyke breedte')} van aaneenlopende data — dit is wat toelaat dat staaf-hoogte regverdig oor die hele grafiek vergelyk word.`,
-            `As die laaste interval (50-59 getoon as 20 jaar breed, bv. 50-69) twee keer so breed is as die ander, kan dit meer hardlopers bevat bloot omdat dit ʼn groter reeks dek — nie omdat daardie ouderdomsgroep werklik meer algemeen is nie.`,
+            `Die laaste interval (50-69) is twee keer so breed as die ander, dus kan dit meer hardlopers bevat bloot omdat dit ʼn groter reeks dek — nie omdat daardie ouderdomsgroep werklik meer algemeen is nie.`,
             `Dit maak die histogram ${re('misleidend')}: ʼn hoër staaf kan bloot ʼn breër interval weerspieël, nie ʼn hoër frekwensiedigtheid nie.`,
           ],
         },

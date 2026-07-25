@@ -275,12 +275,12 @@ export const topicData: TopicData = {
         `<circle cx="45" cy="80" r="4" fill="#ea580c"/>` +
         `<circle cx="104" cy="80" r="4" fill="#2563eb"/>` +
         `<text x="20" y="101" text-anchor="middle" font-size="10" fill="#6b7280">0</text>` +
-        `<text x="45" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0,09</text>` +
+        `<text x="45" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0,09</text>` +
         `<text x="104" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0,3</text>` +
         `<text x="300" y="101" text-anchor="middle" font-size="10" fill="#6b7280">1</text>` +
-        `<path d="M104,74 Q75,35 45,74" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<polygon points="45,74 39,64 51,64" fill="#ea580c"/>` +
-        `<text x="75" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0,3² = 0,09</text>` +
+        `<path d="M104,74 Q75,35 45,74" fill="none" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<polygon points="45,74 39,64 51,64" fill="#2563eb"/>` +
+        `<text x="75" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0,3² = 0,09</text>` +
         `<text x="75" y="38" text-anchor="middle" font-size="8" fill="#6b7280">(kwadrering maak dit kleiner)</text>` +
         `<path d="M45,86 Q75,125 104,86" fill="none" stroke="#16a34a" stroke-width="1.5"/>` +
         `<polygon points="104,86 98,96 110,96" fill="#16a34a"/>` +
@@ -467,7 +467,7 @@ export const topicData: TopicData = {
 
         // Blok F — Afronding tot 'n gegewe aantal desimale plekke & foutopsporing (18-20)
         { difficulty: 'Medium-Hard', question: "Lerato se motor gebruik 6,5 liter per 100 km. Bereken die liter benodig vir ʼn 480 km-rit, tot 2 desimale plekke.", answer: '31,20 liter', checkMode: 'auto', correctAnswer: '31,20', correctAnswers: ['31.20', '31,20', '31.2', '31,2', '31.20 liter', '31,20 liter', '31.2 liter', '31,2 liter'], explanation: 'Tempo per km: 6,5 ÷ 100 = 0,065 liter per km\nVermenigvuldig: 0,065 × 480 = 31,2\nAfgerond tot 2 desimale plekke: 31,20 liter ✓' },
-        { difficulty: 'Hard', question: "ʼn Prys van R22,50 word gelykop tussen 7 leerders verdeel. Bereken elkeen se deel, tot 2 desimale plekke.", answer: 'R3,21', checkMode: 'auto', correctAnswer: '3,21', correctAnswers: ['R3.21', 'R3,21', '3.21', '3,21'], explanation: '22,50 ÷ 7 = 3,214285...\nAfgerond tot 2 desimale plekke: R3,21 ✓' },
+        { difficulty: 'Hard', question: "ʼn Prys van R22,50 word gelykop tussen 7 leerders verdeel. Bereken elkeen se deel, tot 2 desimale plekke.", answer: 'R3,21', checkMode: 'auto', correctAnswer: 'R3,21', correctAnswers: ['R3.21', 'R3,21', '3.21', '3,21'], explanation: '22,50 ÷ 7 = 3,214285...\nAfgerond tot 2 desimale plekke: R3,21 ✓' },
         { difficulty: 'Hard', question: 'ʼn Student bereken 0,8 ÷ 0,05 en skryf die antwoord as 1,6. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die student het verkeerd gedeel. Die deler 0,05 het 2 desimale plekke, dus vermenigvuldig altwee getalle met 100: 0,8 × 100 = 80 en 0,05 × 100 = 5. Dan is 80 ÷ 5 = 16, nie 1,6 nie.', checkMode: 'self' },
       ],
       scoreMessages: [
@@ -513,7 +513,7 @@ export const topicData: TopicData = {
 
         // Blok F — Afronding tot 'n gegewe aantal desimale plekke & foutopsporing (18-20)
         { difficulty: 'Medium-Hard', question: "Lerato se bakkie gebruik 7,5 liter per 100 km. Bereken die liter benodig vir ʼn 340 km-rit, tot 2 desimale plekke.", answer: '25,50 liter', checkMode: 'auto', correctAnswer: '25,50', correctAnswers: ['25.50', '25,50', '25.5', '25,5', '25.50 liter', '25,50 liter', '25.5 liter', '25,5 liter'], explanation: 'Tempo per km: 7,5 ÷ 100 = 0,075 liter per km\nVermenigvuldig: 0,075 × 340 = 25,5\nAfgerond tot 2 desimale plekke: 25,50 liter ✓' },
-        { difficulty: 'Hard', question: "ʼn Prys van R35,60 word gelykop tussen 8 leerders verdeel. Bereken elkeen se deel, tot 2 desimale plekke.", answer: 'R4,45', checkMode: 'auto', correctAnswer: '4,45', correctAnswers: ['R4.45', 'R4,45', '4.45', '4,45'], explanation: '35,60 ÷ 8 = 4,45\nReeds tot 2 desimale plekke: R4,45 ✓' },
+        { difficulty: 'Hard', question: "ʼn Prys van R35,60 word gelykop tussen 8 leerders verdeel. Bereken elkeen se deel, tot 2 desimale plekke.", answer: 'R4,45', checkMode: 'auto', correctAnswer: 'R4,45', correctAnswers: ['R4.45', 'R4,45', '4.45', '4,45'], explanation: '35,60 ÷ 8 = 4,45\nReeds tot 2 desimale plekke: R4,45 ✓' },
         { difficulty: 'Hard', question: 'ʼn Student bereken 0,6 ÷ 0,04 en skryf die antwoord as 1,5. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die student het verkeerd gedeel. Die deler 0,04 het 2 desimale plekke, dus vermenigvuldig altwee getalle met 100: 0,6 × 100 = 60 en 0,04 × 100 = 4. Dan is 60 ÷ 4 = 15, nie 1,5 nie.', checkMode: 'self' },
       ],
       scoreMessages: [
@@ -559,7 +559,7 @@ export const topicData: TopicData = {
 
         // Blok F — Afronding tot 'n gegewe aantal desimale plekke & foutopsporing (18-20)
         { difficulty: 'Medium-Hard', question: "Sipho se motor gebruik 8,4 liter per 100 km. Bereken die liter benodig vir ʼn 225 km-rit, tot 2 desimale plekke.", answer: '18,90 liter', checkMode: 'auto', correctAnswer: '18,90', correctAnswers: ['18.90', '18,90', '18.9', '18,9', '18.90 liter', '18,90 liter', '18.9 liter', '18,9 liter'], explanation: 'Tempo per km: 8,4 ÷ 100 = 0,084 liter per km\nVermenigvuldig: 0,084 × 225 = 18,9\nAfgerond tot 2 desimale plekke: 18,90 liter ✓' },
-        { difficulty: 'Hard', question: "ʼn Prys van R48,30 word gelykop tussen 9 leerders verdeel. Bereken elkeen se deel, tot 2 desimale plekke.", answer: 'R5,37', checkMode: 'auto', correctAnswer: '5,37', correctAnswers: ['R5.37', 'R5,37', '5.37', '5,37'], explanation: '48,30 ÷ 9 = 5,3666...\nAfgerond tot 2 desimale plekke: R5,37 ✓' },
+        { difficulty: 'Hard', question: "ʼn Prys van R48,30 word gelykop tussen 9 leerders verdeel. Bereken elkeen se deel, tot 2 desimale plekke.", answer: 'R5,37', checkMode: 'auto', correctAnswer: 'R5,37', correctAnswers: ['R5.37', 'R5,37', '5.37', '5,37'], explanation: '48,30 ÷ 9 = 5,3666...\nAfgerond tot 2 desimale plekke: R5,37 ✓' },
         { difficulty: 'Hard', question: 'ʼn Student bereken 0,9 ÷ 0,06 en skryf die antwoord as 1,5. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die student het verkeerd gedeel. Die deler 0,06 het 2 desimale plekke, dus vermenigvuldig altwee getalle met 100: 0,9 × 100 = 90 en 0,06 × 100 = 6. Dan is 90 ÷ 6 = 15, nie 1,5 nie.', checkMode: 'self' },
       ],
       scoreMessages: [

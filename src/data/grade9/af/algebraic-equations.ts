@@ -301,8 +301,8 @@ export const topicData: TopicData = {
           question: 'Los x² + 7x + 10 = 0 op deur te faktoriseer.',
           answer: 'x = −2 of x = −5',
           checkMode: 'auto',
-          correctAnswer: 'x=-2 or x=-5',
-          correctAnswers: ['x=-2 or x=-5', 'x=-5 or x=-2', 'x = -2 or x = -5', 'x = -5 or x = -2', '-2 or -5', '-5 or -2'],
+          correctAnswer: 'x=-2 of x=-5',
+          correctAnswers: ['x=-2 of x=-5', 'x=-5 of x=-2', 'x = -2 of x = -5', 'x = -5 of x = -2', '-2 of -5', '-5 of -2'],
           explanation: 'Faktoriseer: vind getalle wat vermenigvuldig tot 10, en optel tot 7 → 2 en 5.\n(x + 2)(x + 5) = 0\nx + 2 = 0 of x + 5 = 0\nx = −2 of x = −5 ✓',
         },
         {
@@ -310,8 +310,8 @@ export const topicData: TopicData = {
           question: 'Los x² − 8x + 15 = 0 op.',
           answer: 'x = 3 of x = 5',
           checkMode: 'auto',
-          correctAnswer: 'x=3 or x=5',
-          correctAnswers: ['x=3 or x=5', 'x=5 or x=3', 'x = 3 or x = 5', 'x = 5 or x = 3', '3 or 5', '5 or 3'],
+          correctAnswer: 'x=3 of x=5',
+          correctAnswers: ['x=3 of x=5', 'x=5 of x=3', 'x = 3 of x = 5', 'x = 5 of x = 3', '3 of 5', '5 of 3'],
           explanation: 'Faktoriseer: vind getalle wat vermenigvuldig tot 15, en optel tot −8 → −3 en −5.\n(x − 3)(x − 5) = 0\nx − 3 = 0 of x − 5 = 0\nx = 3 of x = 5 ✓',
         },
         {
@@ -426,8 +426,8 @@ export const topicData: TopicData = {
           question: 'Los (x − 4)(x + 9) = 0 op.',
           answer: 'x = 4 of x = −9',
           checkMode: 'auto',
-          correctAnswer: 'x=4 or x=-9',
-          correctAnswers: ['x=4 or x=-9', 'x=-9 or x=4', 'x = 4 or x = -9', 'x = -9 or x = 4', '4 or -9', '-9 or 4'],
+          correctAnswer: 'x=4 of x=-9',
+          correctAnswers: ['x=4 of x=-9', 'x=-9 of x=4', 'x = 4 of x = -9', 'x = -9 of x = 4', '4 of -9', '-9 of 4'],
           explanation: 'Nulproduk-eienskap: (x − 4) = 0 of (x + 9) = 0.\nx − 4 = 0 → x = 4\nx + 9 = 0 → x = −9\nOplossings: x = 4 of x = −9 ✓',
         },
         {
@@ -435,8 +435,8 @@ export const topicData: TopicData = {
           question: 'Los x(x + 8) = 0 op.',
           answer: 'x = 0 of x = −8',
           checkMode: 'auto',
-          correctAnswer: 'x=0 or x=-8',
-          correctAnswers: ['x=0 or x=-8', 'x=-8 or x=0', 'x = 0 or x = -8', 'x = -8 or x = 0', '0 or -8', '-8 or 0'],
+          correctAnswer: 'x=0 of x=-8',
+          correctAnswers: ['x=0 of x=-8', 'x=-8 of x=0', 'x = 0 of x = -8', 'x = -8 of x = 0', '0 of -8', '-8 of 0'],
           explanation: 'Nulproduk-eienskap: x = 0 of (x + 8) = 0.\nx = 0\nx + 8 = 0 → x = −8\nOplossings: x = 0 of x = −8 ✓',
         },
         {
@@ -537,8 +537,8 @@ export const topicData: TopicData = {
           question: 'Los x² − 36 = 0 op.',
           answer: 'x = 6 of x = −6',
           checkMode: 'auto',
-          correctAnswer: 'x=6 or x=-6',
-          correctAnswers: ['x=6 or x=-6', 'x=-6 or x=6', 'x = 6 or x = -6', 'x = -6 or x = 6', '6 or -6', '-6 or 6'],
+          correctAnswer: 'x=6 of x=-6',
+          correctAnswers: ['x=6 of x=-6', 'x=-6 of x=6', 'x = 6 of x = -6', 'x = -6 of x = 6', '6 of -6', '-6 of 6'],
           explanation: 'Herken as verskil van twee vierkante: x² − 36 = x² − 6²\nFaktoriseer: (x − 6)(x + 6) = 0\nx − 6 = 0 of x + 6 = 0\nx = 6 of x = −6 ✓',
         },
         {
@@ -552,8 +552,8 @@ export const topicData: TopicData = {
           question: 'Los x² + x − 12 = 0 op.',
           answer: 'x = −4 of x = 3',
           checkMode: 'auto',
-          correctAnswer: 'x=-4 or x=3',
-          correctAnswers: ['x=-4 or x=3', 'x=3 or x=-4', 'x = -4 or x = 3', 'x = 3 or x = -4', '-4 or 3', '3 or -4'],
+          correctAnswer: 'x=-4 of x=3',
+          correctAnswers: ['x=-4 of x=3', 'x=3 of x=-4', 'x = -4 of x = 3', 'x = 3 of x = -4', '-4 of 3', '3 of -4'],
           explanation: 'Faktoriseer: vind getalle wat vermenigvuldig tot −12, en optel tot 1 → 4 en −3.\n(x + 4)(x − 3) = 0\nx + 4 = 0 of x − 3 = 0\nx = −4 of x = 3 ✓',
         },
         {
@@ -567,8 +567,8 @@ export const topicData: TopicData = {
           question: 'Los x² − 10x + 24 = 0 op.',
           answer: 'x = 4 of x = 6',
           checkMode: 'auto',
-          correctAnswer: 'x=4 or x=6',
-          correctAnswers: ['x=4 or x=6', 'x=6 or x=4', 'x = 4 or x = 6', 'x = 6 or x = 4', '4 or 6', '6 or 4'],
+          correctAnswer: 'x=4 of x=6',
+          correctAnswers: ['x=4 of x=6', 'x=6 of x=4', 'x = 4 of x = 6', 'x = 6 of x = 4', '4 of 6', '6 of 4'],
           explanation: 'Faktoriseer: vind getalle wat vermenigvuldig tot 24, en optel tot −10 → −4 en −6.\n(x − 4)(x − 6) = 0\nx − 4 = 0 of x − 6 = 0\nx = 4 of x = 6 ✓',
         },
         {
@@ -594,8 +594,8 @@ export const topicData: TopicData = {
           question: 'Los 4x² − 16x = 0 op, en wys al die stappe volledig, insluitend faktorisering.',
           answer: 'x = 0 of x = 4',
           checkMode: 'auto',
-          correctAnswer: 'x=0 or x=4',
-          correctAnswers: ['x=0 or x=4', 'x=4 or x=0', 'x = 0 or x = 4', 'x = 4 or x = 0', '0 or 4', '4 or 0'],
+          correctAnswer: 'x=0 of x=4',
+          correctAnswers: ['x=0 of x=4', 'x=4 of x=0', 'x = 0 of x = 4', 'x = 4 of x = 0', '0 of 4', '4 of 0'],
           explanation: 'Haal die gemeenskaplike faktor 4x uit: 4x(x − 4) = 0.\nStel elke faktor gelyk aan nul: 4x = 0 of x − 4 = 0.\n4x = 0 → x = 0\nx − 4 = 0 → x = 4\nOplossings: x = 0 of x = 4 ✓',
         },
       ],
@@ -629,21 +629,21 @@ export const topicData: TopicData = {
         { difficulty: 'Medium-Hard', question: 'Los op: x/2 + x/5 = 7', answer: 'x = 10', checkMode: 'auto', correctAnswer: 'x=10', correctAnswers: ['x=10', 'x = 10', '10'], explanation: 'x/2 + x/5 = 7\nVermenigvuldig elke term met die kleinste gemene deler, 10: 5x + 2x = 70\nKombineer soortgelyke terme: 7x = 70\nDeel deur 7: x = 10\nKontroleer: 10/2 + 10/5 = 5 + 2 = 7 ✓' },
 
         // Blok C — Kwadratiese vergelykings oplos deur ʼn trinoom te faktoriseer (posisies 6-9)
-        { difficulty: 'Medium', question: 'Los x² + 9x + 18 = 0 op deur te faktoriseer.', answer: 'x = −3 of x = −6', checkMode: 'auto', correctAnswer: 'x=-3 or x=-6', correctAnswers: ['x=-3 or x=-6', 'x=-6 or x=-3', 'x = -3 or x = -6', 'x = -6 or x = -3', '-3 or -6', '-6 or -3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 18, en optel tot 9 → 3 en 6.\n(x + 3)(x + 6) = 0\nx + 3 = 0 of x + 6 = 0\nx = −3 of x = −6 ✓' },
-        { difficulty: 'Medium', question: 'Los x² − 11x + 24 = 0 op.', answer: 'x = 3 of x = 8', checkMode: 'auto', correctAnswer: 'x=3 or x=8', correctAnswers: ['x=3 or x=8', 'x=8 or x=3', 'x = 3 or x = 8', 'x = 8 or x = 3', '3 or 8', '8 or 3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 24, en optel tot −11 → −3 en −8.\n(x − 3)(x − 8) = 0\nx − 3 = 0 of x − 8 = 0\nx = 3 of x = 8 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los x² − 2x − 15 = 0 op.', answer: 'x = 5 of x = −3', checkMode: 'auto', correctAnswer: 'x=5 or x=-3', correctAnswers: ['x=5 or x=-3', 'x=-3 or x=5', 'x = 5 or x = -3', 'x = -3 or x = 5', '5 or -3', '-3 or 5'], explanation: 'Vind twee getalle wat vermenigvuldig tot −15, en optel tot −2 → −5 en 3.\n(x − 5)(x + 3) = 0\nx − 5 = 0 of x + 3 = 0\nx = 5 of x = −3 ✓' },
+        { difficulty: 'Medium', question: 'Los x² + 9x + 18 = 0 op deur te faktoriseer.', answer: 'x = −3 of x = −6', checkMode: 'auto', correctAnswer: 'x=-3 of x=-6', correctAnswers: ['x=-3 of x=-6', 'x=-6 of x=-3', 'x = -3 of x = -6', 'x = -6 of x = -3', '-3 of -6', '-6 of -3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 18, en optel tot 9 → 3 en 6.\n(x + 3)(x + 6) = 0\nx + 3 = 0 of x + 6 = 0\nx = −3 of x = −6 ✓' },
+        { difficulty: 'Medium', question: 'Los x² − 11x + 24 = 0 op.', answer: 'x = 3 of x = 8', checkMode: 'auto', correctAnswer: 'x=3 of x=8', correctAnswers: ['x=3 of x=8', 'x=8 of x=3', 'x = 3 of x = 8', 'x = 8 of x = 3', '3 of 8', '8 of 3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 24, en optel tot −11 → −3 en −8.\n(x − 3)(x − 8) = 0\nx − 3 = 0 of x − 8 = 0\nx = 3 of x = 8 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los x² − 2x − 15 = 0 op.', answer: 'x = 5 of x = −3', checkMode: 'auto', correctAnswer: 'x=5 of x=-3', correctAnswers: ['x=5 of x=-3', 'x=-3 of x=5', 'x = 5 of x = -3', 'x = -3 of x = 5', '5 of -3', '-3 of 5'], explanation: 'Vind twee getalle wat vermenigvuldig tot −15, en optel tot −2 → −5 en 3.\n(x − 5)(x + 3) = 0\nx − 5 = 0 of x + 3 = 0\nx = 5 of x = −3 ✓' },
         { difficulty: 'Hard', question: 'Kabelo los x² + 6x − 16 = 0 op en kry x = 2 of x = −8. Kontroleer sy antwoord. Is hy korrek?', answer: 'Hy is korrek — vind twee getalle wat vermenigvuldig tot −16 en optel tot 6: dit is 8 en −2. Dus (x + 8)(x − 2) = 0, wat x = −8 of x = 2 gee. Albei van Kabelo se oplossings stem ooreen.', checkMode: 'self' },
 
         // Blok D — Nulproduk-eienskap (posisies 10-12)
-        { difficulty: 'Medium', question: 'Los (x − 5)(x + 8) = 0 op.', answer: 'x = 5 of x = −8', checkMode: 'auto', correctAnswer: 'x=5 or x=-8', correctAnswers: ['x=5 or x=-8', 'x=-8 or x=5', 'x = 5 or x = -8', 'x = -8 or x = 5', '5 or -8', '-8 or 5'], explanation: 'Nulproduk-eienskap: x − 5 = 0 of x + 8 = 0.\nx − 5 = 0 → x = 5\nx + 8 = 0 → x = −8\nOplossings: x = 5 of x = −8 ✓' },
-        { difficulty: 'Medium', question: 'Los x(x − 9) = 0 op.', answer: 'x = 0 of x = 9', checkMode: 'auto', correctAnswer: 'x=0 or x=9', correctAnswers: ['x=0 or x=9', 'x=9 or x=0', 'x = 0 or x = 9', 'x = 9 or x = 0', '0 or 9', '9 or 0'], explanation: 'Nulproduk-eienskap: x = 0 of x − 9 = 0.\nx = 0\nx − 9 = 0 → x = 9\nOplossings: x = 0 of x = 9 ✓' },
+        { difficulty: 'Medium', question: 'Los (x − 5)(x + 8) = 0 op.', answer: 'x = 5 of x = −8', checkMode: 'auto', correctAnswer: 'x=5 of x=-8', correctAnswers: ['x=5 of x=-8', 'x=-8 of x=5', 'x = 5 of x = -8', 'x = -8 of x = 5', '5 of -8', '-8 of 5'], explanation: 'Nulproduk-eienskap: x − 5 = 0 of x + 8 = 0.\nx − 5 = 0 → x = 5\nx + 8 = 0 → x = −8\nOplossings: x = 5 of x = −8 ✓' },
+        { difficulty: 'Medium', question: 'Los x(x − 9) = 0 op.', answer: 'x = 0 of x = 9', checkMode: 'auto', correctAnswer: 'x=0 of x=9', correctAnswers: ['x=0 of x=9', 'x=9 of x=0', 'x = 0 of x = 9', 'x = 9 of x = 0', '0 of 9', '9 of 0'], explanation: 'Nulproduk-eienskap: x = 0 of x − 9 = 0.\nx = 0\nx − 9 = 0 → x = 9\nOplossings: x = 0 of x = 9 ✓' },
         { difficulty: 'Hard', question: 'Bongani los x(x + 7) = 0 op en skryf slegs x = −7 as die antwoord. Is hy korrek? Verduidelik.', answer: 'Nee — Bongani mis ʼn oplossing. Die faktor x self gee x = 0, dus is die volledige oplossing x = 0 of x = −7. Hy het vergeet dat ʼn los veranderlike-faktor steeds ʼn faktor is wat gelyk aan nul gestel moet word.', checkMode: 'self' },
 
         // Blok E — Eers faktoriseer: gemeenskaplike faktor en verskil van vierkante (posisies 13-16)
-        { difficulty: 'Medium', question: 'Los x² − 25 = 0 op.', answer: 'x = 5 of x = −5', checkMode: 'auto', correctAnswer: 'x=5 or x=-5', correctAnswers: ['x=5 or x=-5', 'x=-5 or x=5', 'x = 5 or x = -5', 'x = -5 or x = 5', '5 or -5', '-5 or 5'], explanation: 'Herken dit as ʼn verskil van twee vierkante: x² − 25 = x² − 5²\nFaktoriseer: (x − 5)(x + 5) = 0\nx − 5 = 0 of x + 5 = 0\nx = 5 of x = −5 ✓' },
-        { difficulty: 'Medium', question: 'Los 3x² − 21x = 0 op deur eers die gemeenskaplike faktor uit te haal.', answer: 'x = 0 of x = 7', checkMode: 'auto', correctAnswer: 'x=0 or x=7', correctAnswers: ['x=0 or x=7', 'x=7 or x=0', 'x = 0 or x = 7', 'x = 7 or x = 0', '0 or 7', '7 or 0'], explanation: 'Haal die gemeenskaplike faktor 3x uit: 3x(x − 7) = 0.\n3x = 0 → x = 0\nx − 7 = 0 → x = 7\nOplossings: x = 0 of x = 7 ✓' },
+        { difficulty: 'Medium', question: 'Los x² − 25 = 0 op.', answer: 'x = 5 of x = −5', checkMode: 'auto', correctAnswer: 'x=5 of x=-5', correctAnswers: ['x=5 of x=-5', 'x=-5 of x=5', 'x = 5 of x = -5', 'x = -5 of x = 5', '5 of -5', '-5 of 5'], explanation: 'Herken dit as ʼn verskil van twee vierkante: x² − 25 = x² − 5²\nFaktoriseer: (x − 5)(x + 5) = 0\nx − 5 = 0 of x + 5 = 0\nx = 5 of x = −5 ✓' },
+        { difficulty: 'Medium', question: 'Los 3x² − 21x = 0 op deur eers die gemeenskaplike faktor uit te haal.', answer: 'x = 0 of x = 7', checkMode: 'auto', correctAnswer: 'x=0 of x=7', correctAnswers: ['x=0 of x=7', 'x=7 of x=0', 'x = 0 of x = 7', 'x = 7 of x = 0', '0 of 7', '7 of 0'], explanation: 'Haal die gemeenskaplike faktor 3x uit: 3x(x − 7) = 0.\n3x = 0 → x = 0\nx − 7 = 0 → x = 7\nOplossings: x = 0 of x = 7 ✓' },
         { difficulty: 'Medium-Hard', question: 'Los 2x² − 32 = 0 op, en identifiseer die gemeenskaplike faktor- en verskil-van-vierkante-stappe.', answer: 'Stap 1: Haal die gemeenskaplike faktor 2 uit: 2(x² − 16) = 0.\nStap 2: Herken die verskil van vierkante: 2(x − 4)(x + 4) = 0.\nStap 3: Stel elke faktor gelyk aan nul: x − 4 = 0 of x + 4 = 0.\nOplossings: x = 4 of x = −4.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Los x² + 5x = 24 op, en wys die herrangskikkingstap voordat jy faktoriseer.', answer: 'x = −8 of x = 3', checkMode: 'auto', correctAnswer: 'x=-8 or x=3', correctAnswers: ['x=-8 or x=3', 'x=3 or x=-8', 'x = -8 or x = 3', 'x = 3 or x = -8', '-8 or 3', '3 or -8'], explanation: 'Herrangskik sodat die een kant nul is: x² + 5x − 24 = 0.\nVind twee getalle wat vermenigvuldig tot −24, en optel tot 5 → 8 en −3.\n(x + 8)(x − 3) = 0\nx + 8 = 0 of x − 3 = 0\nx = −8 of x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Los x² + 5x = 24 op, en wys die herrangskikkingstap voordat jy faktoriseer.', answer: 'x = −8 of x = 3', checkMode: 'auto', correctAnswer: 'x=-8 of x=3', correctAnswers: ['x=-8 of x=3', 'x=3 of x=-8', 'x = -8 of x = 3', 'x = 3 of x = -8', '-8 of 3', '3 of -8'], explanation: 'Herrangskik sodat die een kant nul is: x² + 5x − 24 = 0.\nVind twee getalle wat vermenigvuldig tot −24, en optel tot 5 → 8 en −3.\n(x + 8)(x − 3) = 0\nx + 8 = 0 of x − 3 = 0\nx = −8 of x = 3 ✓' },
 
         // Blok F — Toegepaste woordprobleme en foutopsporing wat lineêre en kwadratiese vaardighede meng (posisies 17-19)
         { difficulty: 'Hard', question: 'ʼn Reghoekige tuin het ʼn lengte wat 3 m meer as sy wydte is. As die oppervlakte 40 m² is, stel ʼn vergelyking op in terme van die wydte w en los op vir w (verwerp enige negatiewe oplossing, aangesien wydte nie negatief kan wees nie).', answer: 'w(w + 3) = 40\nw² + 3w − 40 = 0\n(w + 8)(w − 5) = 0\nw = −8 of w = 5\nAangesien wydte nie negatief kan wees nie, is w = 5.\nDie wydte is 5 m en die lengte is 5 + 3 = 8 m.', checkMode: 'self' },
@@ -675,21 +675,21 @@ export const topicData: TopicData = {
         { difficulty: 'Medium-Hard', question: 'Los op: x/3 + x/6 = 9', answer: 'x = 18', checkMode: 'auto', correctAnswer: 'x=18', correctAnswers: ['x=18', 'x = 18', '18'], explanation: 'x/3 + x/6 = 9\nVermenigvuldig elke term met die kleinste gemene deler, 6: 2x + x = 54\nKombineer soortgelyke terme: 3x = 54\nDeel deur 3: x = 18\nKontroleer: 18/3 + 18/6 = 6 + 3 = 9 ✓' },
 
         // Blok C — Kwadratiese vergelykings oplos deur ʼn trinoom te faktoriseer (posisies 6-9)
-        { difficulty: 'Medium', question: 'Los x² + 8x + 15 = 0 op deur te faktoriseer.', answer: 'x = −3 of x = −5', checkMode: 'auto', correctAnswer: 'x=-3 or x=-5', correctAnswers: ['x=-3 or x=-5', 'x=-5 or x=-3', 'x = -3 or x = -5', 'x = -5 or x = -3', '-3 or -5', '-5 or -3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 15, en optel tot 8 → 3 en 5.\n(x + 3)(x + 5) = 0\nx + 3 = 0 of x + 5 = 0\nx = −3 of x = −5 ✓' },
-        { difficulty: 'Medium', question: 'Los x² − 13x + 36 = 0 op.', answer: 'x = 4 of x = 9', checkMode: 'auto', correctAnswer: 'x=4 or x=9', correctAnswers: ['x=4 or x=9', 'x=9 or x=4', 'x = 4 or x = 9', 'x = 9 or x = 4', '4 or 9', '9 or 4'], explanation: 'Vind twee getalle wat vermenigvuldig tot 36, en optel tot −13 → −4 en −9.\n(x − 4)(x − 9) = 0\nx − 4 = 0 of x − 9 = 0\nx = 4 of x = 9 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los x² − 3x − 18 = 0 op.', answer: 'x = 6 of x = −3', checkMode: 'auto', correctAnswer: 'x=6 or x=-3', correctAnswers: ['x=6 or x=-3', 'x=-3 or x=6', 'x = 6 or x = -3', 'x = -3 or x = 6', '6 or -3', '-3 or 6'], explanation: 'Vind twee getalle wat vermenigvuldig tot −18, en optel tot −3 → −6 en 3.\n(x − 6)(x + 3) = 0\nx − 6 = 0 of x + 3 = 0\nx = 6 of x = −3 ✓' },
+        { difficulty: 'Medium', question: 'Los x² + 8x + 15 = 0 op deur te faktoriseer.', answer: 'x = −3 of x = −5', checkMode: 'auto', correctAnswer: 'x=-3 of x=-5', correctAnswers: ['x=-3 of x=-5', 'x=-5 of x=-3', 'x = -3 of x = -5', 'x = -5 of x = -3', '-3 of -5', '-5 of -3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 15, en optel tot 8 → 3 en 5.\n(x + 3)(x + 5) = 0\nx + 3 = 0 of x + 5 = 0\nx = −3 of x = −5 ✓' },
+        { difficulty: 'Medium', question: 'Los x² − 13x + 36 = 0 op.', answer: 'x = 4 of x = 9', checkMode: 'auto', correctAnswer: 'x=4 of x=9', correctAnswers: ['x=4 of x=9', 'x=9 of x=4', 'x = 4 of x = 9', 'x = 9 of x = 4', '4 of 9', '9 of 4'], explanation: 'Vind twee getalle wat vermenigvuldig tot 36, en optel tot −13 → −4 en −9.\n(x − 4)(x − 9) = 0\nx − 4 = 0 of x − 9 = 0\nx = 4 of x = 9 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los x² − 3x − 18 = 0 op.', answer: 'x = 6 of x = −3', checkMode: 'auto', correctAnswer: 'x=6 of x=-3', correctAnswers: ['x=6 of x=-3', 'x=-3 of x=6', 'x = 6 of x = -3', 'x = -3 of x = 6', '6 of -3', '-3 of 6'], explanation: 'Vind twee getalle wat vermenigvuldig tot −18, en optel tot −3 → −6 en 3.\n(x − 6)(x + 3) = 0\nx − 6 = 0 of x + 3 = 0\nx = 6 of x = −3 ✓' },
         { difficulty: 'Hard', question: 'Palesa los x² + 2x − 24 = 0 op en kry x = 4 of x = −6. Kontroleer haar antwoord. Is sy korrek?', answer: 'Sy is korrek — vind twee getalle wat vermenigvuldig tot −24 en optel tot 2: dit is 6 en −4. Dus (x + 6)(x − 4) = 0, wat x = −6 of x = 4 gee. Albei van Palesa se oplossings stem ooreen.', checkMode: 'self' },
 
         // Blok D — Nulproduk-eienskap (posisies 10-12)
-        { difficulty: 'Medium', question: 'Los (x − 6)(x + 4) = 0 op.', answer: 'x = 6 of x = −4', checkMode: 'auto', correctAnswer: 'x=6 or x=-4', correctAnswers: ['x=6 or x=-4', 'x=-4 or x=6', 'x = 6 or x = -4', 'x = -4 or x = 6', '6 or -4', '-4 or 6'], explanation: 'Nulproduk-eienskap: x − 6 = 0 of x + 4 = 0.\nx − 6 = 0 → x = 6\nx + 4 = 0 → x = −4\nOplossings: x = 6 of x = −4 ✓' },
-        { difficulty: 'Medium', question: 'Los x(x − 11) = 0 op.', answer: 'x = 0 of x = 11', checkMode: 'auto', correctAnswer: 'x=0 or x=11', correctAnswers: ['x=0 or x=11', 'x=11 or x=0', 'x = 0 or x = 11', 'x = 11 or x = 0', '0 or 11', '11 or 0'], explanation: 'Nulproduk-eienskap: x = 0 of x − 11 = 0.\nx = 0\nx − 11 = 0 → x = 11\nOplossings: x = 0 of x = 11 ✓' },
+        { difficulty: 'Medium', question: 'Los (x − 6)(x + 4) = 0 op.', answer: 'x = 6 of x = −4', checkMode: 'auto', correctAnswer: 'x=6 of x=-4', correctAnswers: ['x=6 of x=-4', 'x=-4 of x=6', 'x = 6 of x = -4', 'x = -4 of x = 6', '6 of -4', '-4 of 6'], explanation: 'Nulproduk-eienskap: x − 6 = 0 of x + 4 = 0.\nx − 6 = 0 → x = 6\nx + 4 = 0 → x = −4\nOplossings: x = 6 of x = −4 ✓' },
+        { difficulty: 'Medium', question: 'Los x(x − 11) = 0 op.', answer: 'x = 0 of x = 11', checkMode: 'auto', correctAnswer: 'x=0 of x=11', correctAnswers: ['x=0 of x=11', 'x=11 of x=0', 'x = 0 of x = 11', 'x = 11 of x = 0', '0 of 11', '11 of 0'], explanation: 'Nulproduk-eienskap: x = 0 of x − 11 = 0.\nx = 0\nx − 11 = 0 → x = 11\nOplossings: x = 0 of x = 11 ✓' },
         { difficulty: 'Hard', question: 'Tumelo los x(x + 9) = 0 op en skryf slegs x = −9 as die antwoord. Is hy korrek? Verduidelik.', answer: 'Nee — Tumelo mis ʼn oplossing. Die faktor x self gee x = 0, dus is die volledige oplossing x = 0 of x = −9. Hy het vergeet dat ʼn los veranderlike-faktor steeds ʼn faktor is wat gelyk aan nul gestel moet word.', checkMode: 'self' },
 
         // Blok E — Eers faktoriseer: gemeenskaplike faktor en verskil van vierkante (posisies 13-16)
-        { difficulty: 'Medium', question: 'Los x² − 49 = 0 op.', answer: 'x = 7 of x = −7', checkMode: 'auto', correctAnswer: 'x=7 or x=-7', correctAnswers: ['x=7 or x=-7', 'x=-7 or x=7', 'x = 7 or x = -7', 'x = -7 or x = 7', '7 or -7', '-7 or 7'], explanation: 'Herken dit as ʼn verskil van twee vierkante: x² − 49 = x² − 7²\nFaktoriseer: (x − 7)(x + 7) = 0\nx − 7 = 0 of x + 7 = 0\nx = 7 of x = −7 ✓' },
-        { difficulty: 'Medium', question: 'Los 4x² − 20x = 0 op deur eers die gemeenskaplike faktor uit te haal.', answer: 'x = 0 of x = 5', checkMode: 'auto', correctAnswer: 'x=0 or x=5', correctAnswers: ['x=0 or x=5', 'x=5 or x=0', 'x = 0 or x = 5', 'x = 5 or x = 0', '0 or 5', '5 or 0'], explanation: 'Haal die gemeenskaplike faktor 4x uit: 4x(x − 5) = 0.\n4x = 0 → x = 0\nx − 5 = 0 → x = 5\nOplossings: x = 0 of x = 5 ✓' },
+        { difficulty: 'Medium', question: 'Los x² − 49 = 0 op.', answer: 'x = 7 of x = −7', checkMode: 'auto', correctAnswer: 'x=7 of x=-7', correctAnswers: ['x=7 of x=-7', 'x=-7 of x=7', 'x = 7 of x = -7', 'x = -7 of x = 7', '7 of -7', '-7 of 7'], explanation: 'Herken dit as ʼn verskil van twee vierkante: x² − 49 = x² − 7²\nFaktoriseer: (x − 7)(x + 7) = 0\nx − 7 = 0 of x + 7 = 0\nx = 7 of x = −7 ✓' },
+        { difficulty: 'Medium', question: 'Los 4x² − 20x = 0 op deur eers die gemeenskaplike faktor uit te haal.', answer: 'x = 0 of x = 5', checkMode: 'auto', correctAnswer: 'x=0 of x=5', correctAnswers: ['x=0 of x=5', 'x=5 of x=0', 'x = 0 of x = 5', 'x = 5 of x = 0', '0 of 5', '5 of 0'], explanation: 'Haal die gemeenskaplike faktor 4x uit: 4x(x − 5) = 0.\n4x = 0 → x = 0\nx − 5 = 0 → x = 5\nOplossings: x = 0 of x = 5 ✓' },
         { difficulty: 'Medium-Hard', question: 'Los 3x² − 48 = 0 op, en identifiseer die gemeenskaplike faktor- en verskil-van-vierkante-stappe.', answer: 'Stap 1: Haal die gemeenskaplike faktor 3 uit: 3(x² − 16) = 0.\nStap 2: Herken die verskil van vierkante: 3(x − 4)(x + 4) = 0.\nStap 3: Stel elke faktor gelyk aan nul: x − 4 = 0 of x + 4 = 0.\nOplossings: x = 4 of x = −4.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Los x² + 4x = 21 op, en wys die herrangskikkingstap voordat jy faktoriseer.', answer: 'x = −7 of x = 3', checkMode: 'auto', correctAnswer: 'x=-7 or x=3', correctAnswers: ['x=-7 or x=3', 'x=3 or x=-7', 'x = -7 or x = 3', 'x = 3 or x = -7', '-7 or 3', '3 or -7'], explanation: 'Herrangskik sodat die een kant nul is: x² + 4x − 21 = 0.\nVind twee getalle wat vermenigvuldig tot −21, en optel tot 4 → 7 en −3.\n(x + 7)(x − 3) = 0\nx + 7 = 0 of x − 3 = 0\nx = −7 of x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Los x² + 4x = 21 op, en wys die herrangskikkingstap voordat jy faktoriseer.', answer: 'x = −7 of x = 3', checkMode: 'auto', correctAnswer: 'x=-7 of x=3', correctAnswers: ['x=-7 of x=3', 'x=3 of x=-7', 'x = -7 of x = 3', 'x = 3 of x = -7', '-7 of 3', '3 of -7'], explanation: 'Herrangskik sodat die een kant nul is: x² + 4x − 21 = 0.\nVind twee getalle wat vermenigvuldig tot −21, en optel tot 4 → 7 en −3.\n(x + 7)(x − 3) = 0\nx + 7 = 0 of x − 3 = 0\nx = −7 of x = 3 ✓' },
 
         // Blok F — Toegepaste woordprobleme en foutopsporing wat lineêre en kwadratiese vaardighede meng (posisies 17-19)
         { difficulty: 'Hard', question: 'ʼn Reghoekige blombedding het ʼn lengte wat 4 m meer as sy wydte is. As die oppervlakte 45 m² is, stel ʼn vergelyking op in terme van die wydte w en los op vir w (verwerp enige negatiewe oplossing, aangesien wydte nie negatief kan wees nie).', answer: 'w(w + 4) = 45\nw² + 4w − 45 = 0\n(w + 9)(w − 5) = 0\nw = −9 of w = 5\nAangesien wydte nie negatief kan wees nie, is w = 5.\nDie wydte is 5 m en die lengte is 5 + 4 = 9 m.', checkMode: 'self' },
@@ -721,21 +721,21 @@ export const topicData: TopicData = {
         { difficulty: 'Medium-Hard', question: 'Los op: x/4 + x/3 = 14', answer: 'x = 24', checkMode: 'auto', correctAnswer: 'x=24', correctAnswers: ['x=24', 'x = 24', '24'], explanation: 'x/4 + x/3 = 14\nVermenigvuldig elke term met die kleinste gemene deler, 12: 3x + 4x = 168\nKombineer soortgelyke terme: 7x = 168\nDeel deur 7: x = 24\nKontroleer: 24/4 + 24/3 = 6 + 8 = 14 ✓' },
 
         // Blok C — Kwadratiese vergelykings oplos deur ʼn trinoom te faktoriseer (posisies 6-9)
-        { difficulty: 'Medium', question: 'Los x² + 10x + 21 = 0 op deur te faktoriseer.', answer: 'x = −3 of x = −7', checkMode: 'auto', correctAnswer: 'x=-3 or x=-7', correctAnswers: ['x=-3 or x=-7', 'x=-7 or x=-3', 'x = -3 or x = -7', 'x = -7 or x = -3', '-3 or -7', '-7 or -3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 21, en optel tot 10 → 3 en 7.\n(x + 3)(x + 7) = 0\nx + 3 = 0 of x + 7 = 0\nx = −3 of x = −7 ✓' },
-        { difficulty: 'Medium', question: 'Los x² − 12x + 35 = 0 op.', answer: 'x = 5 of x = 7', checkMode: 'auto', correctAnswer: 'x=5 or x=7', correctAnswers: ['x=5 or x=7', 'x=7 or x=5', 'x = 5 or x = 7', 'x = 7 or x = 5', '5 or 7', '7 or 5'], explanation: 'Vind twee getalle wat vermenigvuldig tot 35, en optel tot −12 → −5 en −7.\n(x − 5)(x − 7) = 0\nx − 5 = 0 of x − 7 = 0\nx = 5 of x = 7 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los x² − 4x − 21 = 0 op.', answer: 'x = 7 of x = −3', checkMode: 'auto', correctAnswer: 'x=7 or x=-3', correctAnswers: ['x=7 or x=-3', 'x=-3 or x=7', 'x = 7 or x = -3', 'x = -3 or x = 7', '7 or -3', '-3 or 7'], explanation: 'Vind twee getalle wat vermenigvuldig tot −21, en optel tot −4 → −7 en 3.\n(x − 7)(x + 3) = 0\nx − 7 = 0 of x + 3 = 0\nx = 7 of x = −3 ✓' },
+        { difficulty: 'Medium', question: 'Los x² + 10x + 21 = 0 op deur te faktoriseer.', answer: 'x = −3 of x = −7', checkMode: 'auto', correctAnswer: 'x=-3 of x=-7', correctAnswers: ['x=-3 of x=-7', 'x=-7 of x=-3', 'x = -3 of x = -7', 'x = -7 of x = -3', '-3 of -7', '-7 of -3'], explanation: 'Vind twee getalle wat vermenigvuldig tot 21, en optel tot 10 → 3 en 7.\n(x + 3)(x + 7) = 0\nx + 3 = 0 of x + 7 = 0\nx = −3 of x = −7 ✓' },
+        { difficulty: 'Medium', question: 'Los x² − 12x + 35 = 0 op.', answer: 'x = 5 of x = 7', checkMode: 'auto', correctAnswer: 'x=5 of x=7', correctAnswers: ['x=5 of x=7', 'x=7 of x=5', 'x = 5 of x = 7', 'x = 7 of x = 5', '5 of 7', '7 of 5'], explanation: 'Vind twee getalle wat vermenigvuldig tot 35, en optel tot −12 → −5 en −7.\n(x − 5)(x − 7) = 0\nx − 5 = 0 of x − 7 = 0\nx = 5 of x = 7 ✓' },
+        { difficulty: 'Medium-Hard', question: 'Los x² − 4x − 21 = 0 op.', answer: 'x = 7 of x = −3', checkMode: 'auto', correctAnswer: 'x=7 of x=-3', correctAnswers: ['x=7 of x=-3', 'x=-3 of x=7', 'x = 7 of x = -3', 'x = -3 of x = 7', '7 of -3', '-3 of 7'], explanation: 'Vind twee getalle wat vermenigvuldig tot −21, en optel tot −4 → −7 en 3.\n(x − 7)(x + 3) = 0\nx − 7 = 0 of x + 3 = 0\nx = 7 of x = −3 ✓' },
         { difficulty: 'Hard', question: 'Naledi los x² + 3x − 28 = 0 op en kry x = 4 of x = −7. Kontroleer haar antwoord. Is sy korrek?', answer: 'Sy is korrek — vind twee getalle wat vermenigvuldig tot −28 en optel tot 3: dit is 7 en −4. Dus (x + 7)(x − 4) = 0, wat x = −7 of x = 4 gee. Albei van Naledi se oplossings stem ooreen.', checkMode: 'self' },
 
         // Blok D — Nulproduk-eienskap (posisies 10-12)
-        { difficulty: 'Medium', question: 'Los (x − 8)(x + 3) = 0 op.', answer: 'x = 8 of x = −3', checkMode: 'auto', correctAnswer: 'x=8 or x=-3', correctAnswers: ['x=8 or x=-3', 'x=-3 or x=8', 'x = 8 or x = -3', 'x = -3 or x = 8', '8 or -3', '-3 or 8'], explanation: 'Nulproduk-eienskap: x − 8 = 0 of x + 3 = 0.\nx − 8 = 0 → x = 8\nx + 3 = 0 → x = −3\nOplossings: x = 8 of x = −3 ✓' },
-        { difficulty: 'Medium', question: 'Los x(x − 13) = 0 op.', answer: 'x = 0 of x = 13', checkMode: 'auto', correctAnswer: 'x=0 or x=13', correctAnswers: ['x=0 or x=13', 'x=13 or x=0', 'x = 0 or x = 13', 'x = 13 or x = 0', '0 or 13', '13 or 0'], explanation: 'Nulproduk-eienskap: x = 0 of x − 13 = 0.\nx = 0\nx − 13 = 0 → x = 13\nOplossings: x = 0 of x = 13 ✓' },
+        { difficulty: 'Medium', question: 'Los (x − 8)(x + 3) = 0 op.', answer: 'x = 8 of x = −3', checkMode: 'auto', correctAnswer: 'x=8 of x=-3', correctAnswers: ['x=8 of x=-3', 'x=-3 of x=8', 'x = 8 of x = -3', 'x = -3 of x = 8', '8 of -3', '-3 of 8'], explanation: 'Nulproduk-eienskap: x − 8 = 0 of x + 3 = 0.\nx − 8 = 0 → x = 8\nx + 3 = 0 → x = −3\nOplossings: x = 8 of x = −3 ✓' },
+        { difficulty: 'Medium', question: 'Los x(x − 13) = 0 op.', answer: 'x = 0 of x = 13', checkMode: 'auto', correctAnswer: 'x=0 of x=13', correctAnswers: ['x=0 of x=13', 'x=13 of x=0', 'x = 0 of x = 13', 'x = 13 of x = 0', '0 of 13', '13 of 0'], explanation: 'Nulproduk-eienskap: x = 0 of x − 13 = 0.\nx = 0\nx − 13 = 0 → x = 13\nOplossings: x = 0 of x = 13 ✓' },
         { difficulty: 'Hard', question: 'Mpho los x(x + 5) = 0 op en skryf slegs x = −5 as die antwoord. Is hy korrek? Verduidelik.', answer: 'Nee — Mpho mis ʼn oplossing. Die faktor x self gee x = 0, dus is die volledige oplossing x = 0 of x = −5. Hy het vergeet dat ʼn los veranderlike-faktor steeds ʼn faktor is wat gelyk aan nul gestel moet word.', checkMode: 'self' },
 
         // Blok E — Eers faktoriseer: gemeenskaplike faktor en verskil van vierkante (posisies 13-16)
-        { difficulty: 'Medium', question: 'Los x² − 81 = 0 op.', answer: 'x = 9 of x = −9', checkMode: 'auto', correctAnswer: 'x=9 or x=-9', correctAnswers: ['x=9 or x=-9', 'x=-9 or x=9', 'x = 9 or x = -9', 'x = -9 or x = 9', '9 or -9', '-9 or 9'], explanation: 'Herken dit as ʼn verskil van twee vierkante: x² − 81 = x² − 9²\nFaktoriseer: (x − 9)(x + 9) = 0\nx − 9 = 0 of x + 9 = 0\nx = 9 of x = −9 ✓' },
-        { difficulty: 'Medium', question: 'Los 5x² − 30x = 0 op deur eers die gemeenskaplike faktor uit te haal.', answer: 'x = 0 of x = 6', checkMode: 'auto', correctAnswer: 'x=0 or x=6', correctAnswers: ['x=0 or x=6', 'x=6 or x=0', 'x = 0 or x = 6', 'x = 6 or x = 0', '0 or 6', '6 or 0'], explanation: 'Haal die gemeenskaplike faktor 5x uit: 5x(x − 6) = 0.\n5x = 0 → x = 0\nx − 6 = 0 → x = 6\nOplossings: x = 0 of x = 6 ✓' },
+        { difficulty: 'Medium', question: 'Los x² − 81 = 0 op.', answer: 'x = 9 of x = −9', checkMode: 'auto', correctAnswer: 'x=9 of x=-9', correctAnswers: ['x=9 of x=-9', 'x=-9 of x=9', 'x = 9 of x = -9', 'x = -9 of x = 9', '9 of -9', '-9 of 9'], explanation: 'Herken dit as ʼn verskil van twee vierkante: x² − 81 = x² − 9²\nFaktoriseer: (x − 9)(x + 9) = 0\nx − 9 = 0 of x + 9 = 0\nx = 9 of x = −9 ✓' },
+        { difficulty: 'Medium', question: 'Los 5x² − 30x = 0 op deur eers die gemeenskaplike faktor uit te haal.', answer: 'x = 0 of x = 6', checkMode: 'auto', correctAnswer: 'x=0 of x=6', correctAnswers: ['x=0 of x=6', 'x=6 of x=0', 'x = 0 of x = 6', 'x = 6 of x = 0', '0 of 6', '6 of 0'], explanation: 'Haal die gemeenskaplike faktor 5x uit: 5x(x − 6) = 0.\n5x = 0 → x = 0\nx − 6 = 0 → x = 6\nOplossings: x = 0 of x = 6 ✓' },
         { difficulty: 'Medium-Hard', question: 'Los 2x² − 50 = 0 op, en identifiseer die gemeenskaplike faktor- en verskil-van-vierkante-stappe.', answer: 'Stap 1: Haal die gemeenskaplike faktor 2 uit: 2(x² − 25) = 0.\nStap 2: Herken die verskil van vierkante: 2(x − 5)(x + 5) = 0.\nStap 3: Stel elke faktor gelyk aan nul: x − 5 = 0 of x + 5 = 0.\nOplossings: x = 5 of x = −5.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Los x² + 6x = 16 op, en wys die herrangskikkingstap voordat jy faktoriseer.', answer: 'x = −8 of x = 2', checkMode: 'auto', correctAnswer: 'x=-8 or x=2', correctAnswers: ['x=-8 or x=2', 'x=2 or x=-8', 'x = -8 or x = 2', 'x = 2 or x = -8', '-8 or 2', '2 or -8'], explanation: 'Herrangskik sodat die een kant nul is: x² + 6x − 16 = 0.\nVind twee getalle wat vermenigvuldig tot −16, en optel tot 6 → 8 en −2.\n(x + 8)(x − 2) = 0\nx + 8 = 0 of x − 2 = 0\nx = −8 of x = 2 ✓' },
+        { difficulty: 'Hard', question: 'Los x² + 6x = 16 op, en wys die herrangskikkingstap voordat jy faktoriseer.', answer: 'x = −8 of x = 2', checkMode: 'auto', correctAnswer: 'x=-8 of x=2', correctAnswers: ['x=-8 of x=2', 'x=2 of x=-8', 'x = -8 of x = 2', 'x = 2 of x = -8', '-8 of 2', '2 of -8'], explanation: 'Herrangskik sodat die een kant nul is: x² + 6x − 16 = 0.\nVind twee getalle wat vermenigvuldig tot −16, en optel tot 6 → 8 en −2.\n(x + 8)(x − 2) = 0\nx + 8 = 0 of x − 2 = 0\nx = −8 of x = 2 ✓' },
 
         // Blok F — Toegepaste woordprobleme en foutopsporing wat lineêre en kwadratiese vaardighede meng (posisies 17-19)
         { difficulty: 'Hard', question: 'ʼn Reghoekige groentetuin het ʼn lengte wat 5 m meer as sy wydte is. As die oppervlakte 36 m² is, stel ʼn vergelyking op in terme van die wydte w en los op vir w (verwerp enige negatiewe oplossing, aangesien wydte nie negatief kan wees nie).', answer: 'w(w + 5) = 36\nw² + 5w − 36 = 0\n(w + 9)(w − 4) = 0\nw = −9 of w = 4\nAangesien wydte nie negatief kan wees nie, is w = 4.\nDie wydte is 4 m en die lengte is 4 + 5 = 9 m.', checkMode: 'self' },

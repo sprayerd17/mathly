@@ -63,7 +63,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
-        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Onthou: die versamelings is genes</p>` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Onthou: die versamelings is geneste</p>` +
         `<p style="margin:0;color:#1e3a8a;">Elke ${bl('natuurlike getal')} is ook ʼn hele getal, ʼn ${gr('heelgetal')}, en ʼn ${or('rasionale getal')}. Die ${re('irrasionale getalle')} is apart — hulle is reële getalle wat <em>nie</em> rasionaal is nie.</p>` +
         `</div>`,
 
@@ -139,7 +139,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, heelgetal, geheel, rasionaal of irrasionaal te klassifiseer',
+        'Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, hele getal, heelgetal, rasionaal of irrasionaal te klassifiseer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

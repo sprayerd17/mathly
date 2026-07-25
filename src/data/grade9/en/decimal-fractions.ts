@@ -269,12 +269,12 @@ export const topicData: TopicData = {
         `<circle cx="45" cy="80" r="4" fill="#ea580c"/>` +
         `<circle cx="104" cy="80" r="4" fill="#2563eb"/>` +
         `<text x="20" y="101" text-anchor="middle" font-size="10" fill="#6b7280">0</text>` +
-        `<text x="45" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0.09</text>` +
+        `<text x="45" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0.09</text>` +
         `<text x="104" y="101" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0.3</text>` +
         `<text x="300" y="101" text-anchor="middle" font-size="10" fill="#6b7280">1</text>` +
-        `<path d="M104,74 Q75,35 45,74" fill="none" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<polygon points="45,74 39,64 51,64" fill="#ea580c"/>` +
-        `<text x="75" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">0.3² = 0.09</text>` +
+        `<path d="M104,74 Q75,35 45,74" fill="none" stroke="#2563eb" stroke-width="1.5"/>` +
+        `<polygon points="45,74 39,64 51,64" fill="#2563eb"/>` +
+        `<text x="75" y="25" text-anchor="middle" font-size="10" font-weight="700" fill="#2563eb">0.3² = 0.09</text>` +
         `<text x="75" y="38" text-anchor="middle" font-size="8" fill="#6b7280">(squaring shrinks it)</text>` +
         `<path d="M45,86 Q75,125 104,86" fill="none" stroke="#16a34a" stroke-width="1.5"/>` +
         `<polygon points="104,86 98,96 110,96" fill="#16a34a"/>` +

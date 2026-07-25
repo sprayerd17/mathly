@@ -67,12 +67,12 @@ export const topicData: TopicData = {
         },
         {
           question: 'Sipho creates his own pattern: 5, 13, 25, 41. Find the rule.',
-          answer: `nth term = ${gr('2n² + n + 2')}`,
+          answer: `nth term = ${gr('2n² + 2n + 1')}`,
           steps: [
             `List the ${bl('pattern terms')}: ${bl('5')}, ${bl('13')}, ${bl('25')}, ${bl('41')}.`,
             `Find first differences: ${or('8')}, ${or('12')}, ${or('16')} — ${or('increasing by 4')}. The constant second difference of 4 confirms a quadratic with leading coefficient 2.`,
-            `Testing ${gr('2n² + n + 2')}: n = 1 gives 2 + 1 + 2 = ${bl('5')} ✓, n = 2 gives 8 + 2 + 2 = ${bl('13')} ✓, n = 3 gives 18 + 3 + 2 = ${bl('25')} ✓.`,
-            `Rule: nth term = ${gr('2n² + n + 2')} ✓`,
+            `Testing ${gr('2n² + 2n + 1')}: n = 1 gives 2 + 2 + 1 = ${bl('5')} ✓, n = 2 gives 8 + 4 + 1 = ${bl('13')} ✓, n = 3 gives 18 + 6 + 1 = ${bl('25')} ✓, n = 4 gives 32 + 8 + 1 = ${bl('41')} ✓.`,
+            `Rule: nth term = ${gr('2n² + 2n + 1')} ✓`,
           ],
         },
       ],
@@ -91,10 +91,10 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Find the algebraic rule for the pattern 2, 9, 20, 35.',
-          answer: '2n²-n+1',
+          answer: '2n²+n-1',
           checkMode: 'auto',
-          correctAnswer: '2n²-n+1',
-          explanation: 'First differences: 7, 11, 15 — increasing by 4. The constant second difference confirms a quadratic with leading coefficient 2. Testing 2n²-n+1: n=1 gives 2, n=2 gives 9, n=3 gives 20, n=4 gives 35 ✓',
+          correctAnswer: '2n²+n-1',
+          explanation: 'First differences: 7, 11, 15 — increasing by 4. The constant second difference confirms a quadratic with leading coefficient 2. Testing 2n²+n-1: n=1 gives 2+1-1=2, n=2 gives 8+2-1=9, n=3 gives 18+3-1=20, n=4 gives 32+4-1=35 ✓',
         },
         {
           difficulty: 'Hard',
@@ -221,10 +221,10 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Find the rule for the pattern 4, 13, 28, 49.',
-          answer: '3n²+n',
+          answer: '3n²+1',
           checkMode: 'auto',
-          correctAnswer: '3n²+n',
-          explanation: 'First differences: 9, 15, 21 — increasing by 6. Second difference = 6, so coefficient of n² is 3. Testing 3n²+n: n=1 gives 4, n=2 gives 14, n=3 gives 30, n=4 gives 52. Rule: 3n²+n.',
+          correctAnswer: '3n²+1',
+          explanation: 'First differences: 9, 15, 21 — increasing by 6. Second difference = 6, so coefficient of n² is 3. Testing 3n²+1: n=1 gives 3+1=4 ✓, n=2 gives 12+1=13 ✓, n=3 gives 27+1=28 ✓, n=4 gives 48+1=49 ✓. Rule: 3n²+1.',
         },
         {
           difficulty: 'Hard',

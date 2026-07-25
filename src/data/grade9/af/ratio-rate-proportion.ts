@@ -639,6 +639,7 @@ export const topicData: TopicData = {
         `<circle cx="215" cy="28" r="3.5" fill="#16a34a"/>` +
         `<text x="140" y="24" font-size="7.5" font-weight="700" fill="#16a34a">Saamgestel: R1 611</text>` +
         `<text x="30" y="163" text-anchor="middle" font-size="8" fill="#6b7280">0</text>` +
+        `<text x="215" y="163" text-anchor="middle" font-size="8" fill="#6b7280">5</text>` +
         `</svg>`,
     },
   ],

@@ -117,7 +117,7 @@ export const topicData: TopicData = {
       title: 'Building 3D Models Including Cylinders',
       icon: '🔵',
       explanation:
-        `<p style="margin-bottom:16px;">We use nets to create models of geometric solids, now including ${gr('cylinders')}. A ${gr('cylinder')}'s net consists of ${bl('2 circles')} (the top and bottom) and ${gr('1 rectangle')} (which wraps around to form the curved surface), where the rectangle's width equals the circle's ${or('circumference')}.</p>` +
+        `<p style="margin-bottom:16px;">We use nets to create models of geometric solids, now including ${gr('cylinders')}. A ${gr('cylinder')}'s net consists of ${bl('2 circles')} (the top and bottom) and ${gr('1 rectangle')} (which wraps around to form the curved surface), where the rectangle's length equals the circle's ${or('circumference')}.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Colour key:</span>` +
@@ -279,7 +279,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'A cylinder has radius 5 cm and height 12 cm. Find the dimensions of the rectangular part of its net (to 2 decimal places).',
-      answer: 'Width = height = 12 cm. Length = circumference = 2 × 3.14 × 5 = 31.4 cm.',
+      answer: 'Width = height = 12 cm. Length = circumference = 2 × 3.14 × 5 = 31.40 cm.',
       checkMode: 'self',
     },
 

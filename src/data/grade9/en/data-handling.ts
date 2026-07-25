@@ -388,11 +388,11 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'A histogram groups the ages of 50 marathon runners into the intervals 20-29, 30-39, 40-49, 50-59, each with a different width (10, 10, 10, and 20 years). Explain why this is a problem.',
+          question: 'A histogram groups the ages of 50 marathon runners into the intervals 20-29, 30-39, 40-49, 50-69, each with a different width (10, 10, 10, and 20 years). Explain why this is a problem.',
           answer: `Unequal ${or('interval widths')} make the histogram misleading, since bar heights would no longer fairly represent frequency across equal ranges`,
           steps: [
             `A histogram's bars represent ${or('equal-width intervals')} of continuous data — this is what allows bar height to be compared fairly across the whole graph.`,
-            `If the last interval (50-59 shown as 20 years wide, e.g. 50-69) is twice as wide as the others, it can contain more runners simply because it spans a bigger range — not because that age group is genuinely more common.`,
+            `The last interval (50-69) is twice as wide as the others, so it can contain more runners simply because it spans a bigger range — not because that age group is genuinely more common.`,
             `This makes the histogram ${re('misleading')}: a taller bar might only reflect a wider interval, not a higher frequency density.`,
           ],
         },
@@ -720,7 +720,7 @@ export const topicData: TopicData = {
           { label: 'c) Mode', correctAnswer: '58', explanation: '58 appears three times — more than any other value. Mode = 58 ✓' },
           { label: 'd) Range', correctAnswer: '23', explanation: 'Largest: 71, smallest: 48.\nRange: 71 − 48 = 23 ✓' },
         ] },
-        { difficulty: 'Medium-Hard', question: 'A vet weighs 5 puppies from the same litter (in kg): 18,4; 22,1; 19,6; 25,3; 21,8. Find the mean and median mass, each to 2 decimal places where needed.', answer: 'Mean = 21.44 kg, Median = 21.8 kg', checkMode: 'auto', correctAnswer: '21.44,21.8', correctAnswers: ['21.44,21.8', '21.44, 21.8', 'mean21.44median21.8', '21,44,21,8'], explanation: 'Sum: 18.4 + 22.1 + 19.6 + 25.3 + 21.8 = 107.2.\nMean: 107.2 ÷ 5 = 21.44 kg.\nMedian: order the values: 18.4, 19.6, 21.8, 22.1, 25.3.\n5 values (odd) → the middle (3rd) value = 21.8 kg ✓' },
+        { difficulty: 'Medium-Hard', question: 'A vet weighs 5 puppies from the same litter (in kg): 18.4; 22.1; 19.6; 25.3; 21.8. Find the mean and median mass, each to 2 decimal places where needed.', answer: 'Mean = 21.44 kg, Median = 21.8 kg', checkMode: 'auto', correctAnswer: '21.44,21.8', correctAnswers: ['21.44,21.8', '21.44, 21.8', 'mean21.44median21.8', '21,44,21,8'], explanation: 'Sum: 18.4 + 22.1 + 19.6 + 25.3 + 21.8 = 107.2.\nMean: 107.2 ÷ 5 = 21.44 kg.\nMedian: order the values: 18.4, 19.6, 21.8, 22.1, 25.3.\n5 values (odd) → the middle (3rd) value = 21.8 kg ✓' },
 
         // Block C — Outlier identification and its effect on mean vs median (5-7)
         { difficulty: 'Easy', question: 'Identify the outlier in this set of daily temperatures (°C): 14, 17, 12, 15, 13, 92.', answer: '92', checkMode: 'auto', correctAnswer: '92', explanation: 'Most values cluster between 12°C and 17°C, but 92°C is far higher than the rest (likely a recording error), making it a clear outlier ✓' },
@@ -787,7 +787,7 @@ export const topicData: TopicData = {
           { label: 'c) Mode', correctAnswer: '69', explanation: '69 appears three times — more than any other value. Mode = 69 ✓' },
           { label: 'd) Range', correctAnswer: '22', explanation: 'Largest: 82, smallest: 60.\nRange: 82 − 60 = 22 ✓' },
         ] },
-        { difficulty: 'Medium-Hard', question: 'A vet weighs 5 puppies from the same litter (in kg): 16,2; 20,5; 17,8; 23,9; 19,6. Find the mean and median mass, each to 2 decimal places where needed.', answer: 'Mean = 19.6 kg, Median = 19.6 kg', checkMode: 'auto', correctAnswer: '19.6,19.6', correctAnswers: ['19.6,19.6', '19.6, 19.6', 'mean19.6median19.6', '19,6,19,6'], explanation: 'Sum: 16.2 + 20.5 + 17.8 + 23.9 + 19.6 = 98.\nMean: 98 ÷ 5 = 19.6 kg.\nMedian: order the values: 16.2, 17.8, 19.6, 20.5, 23.9.\n5 values (odd) → the middle (3rd) value = 19.6 kg ✓' },
+        { difficulty: 'Medium-Hard', question: 'A vet weighs 5 puppies from the same litter (in kg): 16.2; 20.5; 17.8; 23.9; 19.6. Find the mean and median mass, each to 2 decimal places where needed.', answer: 'Mean = 19.6 kg, Median = 19.6 kg', checkMode: 'auto', correctAnswer: '19.6,19.6', correctAnswers: ['19.6,19.6', '19.6, 19.6', 'mean19.6median19.6', '19,6,19,6'], explanation: 'Sum: 16.2 + 20.5 + 17.8 + 23.9 + 19.6 = 98.\nMean: 98 ÷ 5 = 19.6 kg.\nMedian: order the values: 16.2, 17.8, 19.6, 20.5, 23.9.\n5 values (odd) → the middle (3rd) value = 19.6 kg ✓' },
 
         // Block C — Outlier identification and its effect on mean vs median (5-7)
         { difficulty: 'Easy', question: 'Identify the outlier in this set of daily temperatures (°C): 19, 22, 17, 20, 18, 95.', answer: '95', checkMode: 'auto', correctAnswer: '95', explanation: 'Most values cluster between 17°C and 22°C, but 95°C is far higher than the rest (likely a recording error), making it a clear outlier ✓' },
@@ -854,7 +854,7 @@ export const topicData: TopicData = {
           { label: 'c) Mode', correctAnswer: '49', explanation: '49 appears three times — more than any other value. Mode = 49 ✓' },
           { label: 'd) Range', correctAnswer: '21', explanation: 'Largest: 63, smallest: 42.\nRange: 63 − 42 = 21 ✓' },
         ] },
-        { difficulty: 'Medium-Hard', question: 'A vet weighs 5 puppies from the same litter (in kg): 14,7; 18,9; 16,3; 21,5; 17,4. Find the mean and median mass, each to 2 decimal places where needed.', answer: 'Mean = 17.76 kg, Median = 17.4 kg', checkMode: 'auto', correctAnswer: '17.76,17.4', correctAnswers: ['17.76,17.4', '17.76, 17.4', 'mean17.76median17.4', '17,76,17,4'], explanation: 'Sum: 14.7 + 18.9 + 16.3 + 21.5 + 17.4 = 88.8.\nMean: 88.8 ÷ 5 = 17.76 kg.\nMedian: order the values: 14.7, 16.3, 17.4, 18.9, 21.5.\n5 values (odd) → the middle (3rd) value = 17.4 kg ✓' },
+        { difficulty: 'Medium-Hard', question: 'A vet weighs 5 puppies from the same litter (in kg): 14.7; 18.9; 16.3; 21.5; 17.4. Find the mean and median mass, each to 2 decimal places where needed.', answer: 'Mean = 17.76 kg, Median = 17.4 kg', checkMode: 'auto', correctAnswer: '17.76,17.4', correctAnswers: ['17.76,17.4', '17.76, 17.4', 'mean17.76median17.4', '17,76,17,4'], explanation: 'Sum: 14.7 + 18.9 + 16.3 + 21.5 + 17.4 = 88.8.\nMean: 88.8 ÷ 5 = 17.76 kg.\nMedian: order the values: 14.7, 16.3, 17.4, 18.9, 21.5.\n5 values (odd) → the middle (3rd) value = 17.4 kg ✓' },
 
         // Block C — Outlier identification and its effect on mean vs median (5-7)
         { difficulty: 'Easy', question: 'Identify the outlier in this set of daily temperatures (°C): 11, 14, 9, 12, 10, 87.', answer: '87', checkMode: 'auto', correctAnswer: '87', explanation: 'Most values cluster between 9°C and 14°C, but 87°C is far higher than the rest (likely a recording error), making it a clear outlier ✓' },

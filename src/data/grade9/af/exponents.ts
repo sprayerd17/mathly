@@ -227,7 +227,7 @@ export const topicData: TopicData = {
           answer: '3,6 × 10⁻³',
           checkMode: 'auto',
           correctAnswer: '3,6 × 10⁻³',
-          correctAnswers: ['3.6 × 10⁻³', '3.6×10⁻³', '3.6x10⁻³', '3.6 x 10⁻³', '3.6e-3'],
+          correctAnswers: ['3,6 × 10⁻³', '3,6×10⁻³', '3,6x10⁻³', '3,6 x 10⁻³', '3.6 × 10⁻³', '3.6×10⁻³', '3.6x10⁻³', '3.6 x 10⁻³', '3.6e-3'],
           explanation: 'Skuif die desimaal 3 plekke na regs: 0,0036 → 3,6\nNa regs skuif → negatiewe eksponent van −3\nAntwoord: 3,6 × 10⁻³ ✓',
         },
 
@@ -238,7 +238,7 @@ export const topicData: TopicData = {
           answer: '8,9 × 10⁻⁵',
           checkMode: 'auto',
           correctAnswer: '8,9 × 10⁻⁵',
-          correctAnswers: ['8.9 × 10⁻⁵', '8.9×10⁻⁵', '8.9x10⁻⁵', '8.9 x 10⁻⁵', '8.9e-5'],
+          correctAnswers: ['8,9 × 10⁻⁵', '8,9×10⁻⁵', '8,9x10⁻⁵', '8,9 x 10⁻⁵', '8.9 × 10⁻⁵', '8.9×10⁻⁵', '8.9x10⁻⁵', '8.9 x 10⁻⁵', '8.9e-5'],
           explanation: 'Skuif die desimaal 5 plekke na regs: 0,000089 → 8,9\nNa regs skuif → negatiewe eksponent van −5\nAntwoord: 8,9 × 10⁻⁵ ✓',
         },
 
@@ -400,7 +400,7 @@ export const topicData: TopicData = {
           answer: '1,2 × 10⁻¹¹ gram',
           checkMode: 'auto',
           correctAnswer: '1,2 × 10⁻¹¹ gram',
-          correctAnswers: ['1.2 × 10⁻¹¹ gram', '1.2×10⁻¹¹ gram', '1.2x10⁻¹¹ gram', '1.2e-11 gram', '1.2 × 10⁻¹¹'],
+          correctAnswers: ['1,2 × 10⁻¹¹ gram', '1,2×10⁻¹¹ gram', '1,2x10⁻¹¹ gram', '1,2 × 10⁻¹¹', '1.2 × 10⁻¹¹ gram', '1.2×10⁻¹¹ gram', '1.2x10⁻¹¹ gram', '1.2e-11 gram', '1.2 × 10⁻¹¹'],
           explanation: 'Vermenigvuldig: 4 × (3 × 10⁻¹²) = 12 × 10⁻¹²\nPas aan na wetenskaplike notasie: 12 × 10⁻¹² = 1,2 × 10¹ × 10⁻¹² = 1,2 × 10⁻¹¹ gram ✓',
         },
 
