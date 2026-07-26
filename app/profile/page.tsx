@@ -148,11 +148,16 @@ export default function ProfilePage() {
   const referralAllowance = user?.referralAllowance ?? 12
   const referralCountThisYear = user?.referralCountThisYear ?? 0
   const referralCreditBalance = user?.referralCreditBalance ?? 0
-  const monthsActive = user?.monthsActiveThisYear ?? 0
+  const childMonthsActive = user?.childMonthsActiveThisYear ?? []
+  const monthsActive = childMonthsActive.reduce((sum, m) => sum + m, 0)
   // What next year's referral allowance would be if the year ended today —
-  // mirrors rolledOver()'s allowance formula exactly, so this preview never
+  // mirrors rolledOver()'s per-child allowance formula exactly (summed
+  // across every current child, each capped at 12), so this preview never
   // drifts from what actually gets applied at the real Jan-1 rollover.
-  const creditsNextYearPreview = Math.min(12, monthsActive)
+  const creditsNextYearPreview = (user?.childPlans ?? []).reduce(
+    (sum, _, i) => sum + Math.min(12, Math.max(0, childMonthsActive[i] ?? 0)),
+    0
+  )
 
   const refCode = user?.refCode ?? ''
 

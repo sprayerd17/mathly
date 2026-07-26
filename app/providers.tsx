@@ -113,7 +113,8 @@ export type User = {
   referralCreditCap: number
   referralAllowance: number
   referralCountThisYear: number
-  monthsActiveThisYear: number
+  // Index-aligned with childPlans — see src/lib/referral-credit.ts.
+  childMonthsActiveThisYear: number[]
   referralCreditYear: number
 }
 
@@ -833,7 +834,9 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     referralCreditCap: typeof data.referralCreditCap === 'number' ? data.referralCreditCap : 0,
     referralAllowance: typeof data.referralAllowance === 'number' ? data.referralAllowance : 12,
     referralCountThisYear: typeof data.referralCountThisYear === 'number' ? data.referralCountThisYear : 0,
-    monthsActiveThisYear: typeof data.monthsActiveThisYear === 'number' ? data.monthsActiveThisYear : 0,
+    childMonthsActiveThisYear: Array.isArray(data.childMonthsActiveThisYear)
+      ? (data.childMonthsActiveThisYear as unknown[]).map(v => (typeof v === 'number' ? v : 0))
+      : [],
     referralCreditYear: typeof data.referralCreditYear === 'number' ? data.referralCreditYear : 0,
   }
 }
@@ -946,9 +949,9 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         freeSessionClaimed: children.map(() => false),
         referralCreditBalance: 0,
         referralCreditCap: 0,
-        referralAllowance: 12,
+        referralAllowance: children.length * 12,
         referralCountThisYear: 0,
-        monthsActiveThisYear: 0,
+        childMonthsActiveThisYear: children.map(() => 0),
         referralCreditYear: 0,
       })
     } finally {

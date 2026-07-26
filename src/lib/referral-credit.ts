@@ -5,11 +5,16 @@ import { sendOwnerAlert } from '@/src/lib/email'
 
 // Referral credit pool — the actual enforcement behind the promises made on
 // /refer and profile.tsx: a referrer's own subscription price caps how much
-// their pool can hold in a calendar year, a first-time referrer gets a flat
-// allowance of 12 counted referrals, and every year after that the allowance
-// carries forward as however many months they stayed subscribed the
-// previous year. The pool never carries between years — whatever's unclaimed
-// on Dec 31 is gone.
+// their pool can hold in a calendar year, and the *count* of referrals that
+// can be applied against that cap is earned per child — a child's first-ever
+// year subscribed grants a flat 12, and every year after that the child's own
+// contribution carries forward as however many months that specific child
+// stayed subscribed the previous year. A family with 3 children each active
+// all year gets 36; a child that lapses just stops contributing until they
+// resubscribe, at which point their last-recorded months become their
+// contribution again — nothing is lost, it just sits at 0 while inactive.
+// The pool itself never carries between years — whatever's unclaimed on
+// Dec 31 is gone.
 //
 // Applying an accumulated credit against real Paystack billing has no clean
 // "charge a reduced amount" option once a recurring Plan is already set up
@@ -22,7 +27,9 @@ export type ReferralBlock = {
   referralCreditCap: number
   referralAllowance: number
   referralCountThisYear: number
-  monthsActiveThisYear: number
+  // Index-aligned with childPlans — months this specific child was billed as
+  // a paid tier during the current referralCreditYear, capped at 12 each.
+  childMonthsActiveThisYear: number[]
   referralCreditYear: number
 }
 
@@ -32,12 +39,20 @@ function annualCap(childPlans: Tier[], founding: FoundingStatus | null): number 
 }
 
 export function readReferralBlock(data: FirebaseFirestore.DocumentData): ReferralBlock {
+  // Legacy accounts (before the per-child allowance change) stored a single
+  // account-wide `monthsActiveThisYear` scalar — folded onto child index 0
+  // on first read so accounts with existing history don't lose it outright.
+  const childMonthsActiveThisYear = Array.isArray(data.childMonthsActiveThisYear)
+    ? (data.childMonthsActiveThisYear as unknown[]).map(v => (typeof v === 'number' ? v : 0))
+    : typeof data.monthsActiveThisYear === 'number'
+      ? [data.monthsActiveThisYear]
+      : []
   return {
     referralCreditBalance: typeof data.referralCreditBalance === 'number' ? data.referralCreditBalance : 0,
     referralCreditCap: typeof data.referralCreditCap === 'number' ? data.referralCreditCap : 0,
     referralAllowance: typeof data.referralAllowance === 'number' ? data.referralAllowance : 12,
     referralCountThisYear: typeof data.referralCountThisYear === 'number' ? data.referralCountThisYear : 0,
-    monthsActiveThisYear: typeof data.monthsActiveThisYear === 'number' ? data.monthsActiveThisYear : 0,
+    childMonthsActiveThisYear,
     referralCreditYear: typeof data.referralCreditYear === 'number' ? data.referralCreditYear : 0,
   }
 }
@@ -48,17 +63,19 @@ export function readReferralBlock(data: FirebaseFirestore.DocumentData): Referra
 // depends on the cron running at the right moment — only on this account
 // being touched, by its own billing or by crediting a referral, at some
 // point during the new year. referralCreditYear === 0 means "no block yet"
-// (a brand-new referrer), which always gets the flat 12-referral allowance
-// rather than treating a missing previous year as zero months active.
+// (a brand-new referrer), which grants every current child a flat 12 rather
+// than treating their as-yet-untracked history as zero months active.
 export function rolledOver(block: ReferralBlock, year: number, childPlans: Tier[], founding: FoundingStatus | null): ReferralBlock {
   if (block.referralCreditYear >= year) return block
-  const allowance = block.referralCreditYear === 0 ? 12 : Math.min(12, Math.max(0, block.monthsActiveThisYear))
+  const allowance = block.referralCreditYear === 0
+    ? childPlans.length * 12
+    : childPlans.reduce((sum, _, i) => sum + Math.min(12, Math.max(0, block.childMonthsActiveThisYear[i] ?? 0)), 0)
   return {
     referralCreditBalance: 0,
     referralCreditCap: annualCap(childPlans, founding),
     referralAllowance: allowance,
     referralCountThisYear: 0,
-    monthsActiveThisYear: 0,
+    childMonthsActiveThisYear: childPlans.map(() => 0),
     referralCreditYear: year,
   }
 }
@@ -127,7 +144,14 @@ export async function consumeReferralCredit(
     const founding = (data.paystackFounding ?? null) as FoundingStatus | null
     let block = rolledOver(readReferralBlock(data), year, childPlans, founding)
     if (opts.countsAsActiveMonth) {
-      block = { ...block, monthsActiveThisYear: Math.min(12, block.monthsActiveThisYear + 1) }
+      // Only children actually billed as a paid tier this cycle earn a month
+      // toward next year's allowance — a free child just sits at whatever it
+      // last accrued until it's paid again.
+      const childMonthsActiveThisYear = childPlans.map((tier, i) => {
+        const prior = block.childMonthsActiveThisYear[i] ?? 0
+        return tier === 'free' ? prior : Math.min(12, prior + 1)
+      })
+      block = { ...block, childMonthsActiveThisYear }
     }
     const amount = Math.min(block.referralCreditBalance, chargedAmount)
     if (amount <= 0) {
