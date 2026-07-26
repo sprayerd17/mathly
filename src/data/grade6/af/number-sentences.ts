@@ -17,7 +17,7 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 // te los." Graad 6 skryf getalsinne met blokkies/oop plekke (bv.
 // ☐ + 5 = 12), nie letters nie, en los hulle op deur inspeksie of
 // probeer-en-verbeter, met kontrole deur vervanging — nie deur benoemde
-// "inverse bewerkings" as ʼn formele reël toe te pas nie. Behou hier as
+// "omgekeerde bewerkings" as ʼn formele reël toe te pas nie. Behou hier as
 // duidelik gemerkte verryking.
 const lookingAhead = (title: string, body: string) =>
   `<div style="background:#faf5ff;border:1.5px solid #d8b4fe;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
@@ -140,20 +140,20 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'solving-equations-inverse-operations',
-      title: 'Vergelykings Oplos met Inverse Bewerkings',
+      title: 'Vergelykings Oplos met Omgekeerde Bewerkings',
       icon: '⚖',
       explanation:
         lookingAhead(
-          'die formele term "inverse bewerkings" en vergelykings balanseer',
-          'CAPS stel eksplisiet dat Graad 6-leerders "nie verwag word om die uitdrukking \'inverse bewerkings\' te gebruik nie" as ʼn benoemde reël — hulle weet informeel dat optelling aftrekking kontroleer en vermenigvuldiging deling kontroleer. Om ʼn gebalanseerde vergelyking vir ʼn letterveranderlike op te los deur ʼn benoemde inverse bewerking aan albei kante toe te pas, is Graad 7+-algebra.'
+          'die formele term "omgekeerde bewerkings" en vergelykings balanseer',
+          'CAPS stel eksplisiet dat Graad 6-leerders "nie verwag word om die uitdrukking \'omgekeerde bewerkings\' te gebruik nie" as ʼn benoemde reël — hulle weet informeel dat optelling aftrekking kontroleer en vermenigvuldiging deling kontroleer. Om ʼn gebalanseerde vergelyking vir ʼn letterveranderlike op te los deur ʼn benoemde omgekeerde bewerking aan albei kante toe te pas, is Graad 7+-algebra.'
         ) +
-        `<p style="margin-bottom:16px;">Om ʼn vergelyking op te los, vind ons die waarde van die ${bl('veranderlike')} wat die vergelyking waar maak. Ons gebruik <strong>${or('inverse bewerkings')}</strong> om die ${bl('veranderlike')} te isoleer — optelling en aftrekking is inverses van mekaar en vermenigvuldiging en deling is inverses van mekaar. Wat ons ook al aan een kant van die vergelyking doen, moet ons aan die ${gr('ander kant')} doen om dit gebalanseerd te hou. Ons kan aan ʼn vergelyking dink as ʼn gebalanseerde skaal — as ons iets by een kant voeg of daarvan wegneem, moet ons dieselfde aan die ander kant doen.</p>` +
+        `<p style="margin-bottom:16px;">Om ʼn vergelyking op te los, vind ons die waarde van die ${bl('veranderlike')} wat die vergelyking waar maak. Ons gebruik <strong>${or('omgekeerde bewerkings')}</strong> om die ${bl('veranderlike')} te isoleer — optelling en aftrekking is inverses van mekaar en vermenigvuldiging en deling is inverses van mekaar. Wat ons ook al aan een kant van die vergelyking doen, moet ons aan die ${gr('ander kant')} doen om dit gebalanseerd te hou. Ons kan aan ʼn vergelyking dink as ʼn gebalanseerde skaal — as ons iets by een kant voeg of daarvan wegneem, moet ons dieselfde aan die ander kant doen.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('veranderlike')}</span>` +
-        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('inverse bewerking')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('omgekeerde bewerking')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('albei kante')}</span>` +
         `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('kontroleer')}</span>` +
         `</div>` +
@@ -179,7 +179,7 @@ export const topicData: TopicData = {
         // ── Balanced scale tip ───────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die reël van die gebalanseerde skaal</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Wat jy ook al aan een kant van die vergelyking doen, jy <strong>moet dieselfde aan ${gr('albei kante')} doen</strong>. Die ${or('inverse bewerking')} maak ongedaan wat aan die ${bl('veranderlike')} gedoen is, en laat dit op sy eie staan. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang in die oorspronklike vergelyking.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Wat jy ook al aan een kant van die vergelyking doen, jy <strong>moet dieselfde aan ${gr('albei kante')} doen</strong>. Die ${or('omgekeerde bewerking')} maak ongedaan wat aan die ${bl('veranderlike')} gedoen is, en laat dit op sy eie staan. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang in die oorspronklike vergelyking.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -254,7 +254,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat wys hoe om optelling-, aftrekking-, vermenigvuldiging-, en delingsvergelykings op te los met inverse bewerkings en die gebalanseerde skaal model',
+        'Kort video wat wys hoe om optelling-, aftrekking-, vermenigvuldiging-, en delingsvergelykings op te los met omgekeerde bewerkings en die gebalanseerde skaal model',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -269,7 +269,7 @@ export const topicData: TopicData = {
           'twee-stap vergelykings met veranderlikes oplos',
           'Multi-stap vergelykings soos 2x + 5 = 17, opgelos deur bewerkings op ʼn letterveranderlike stelselmatig ongedaan te maak, is Graad 7+-algebra. Dit bou direk voort op die vorige verrykingsafdeling.'
         ) +
-        `<p style="margin-bottom:16px;">ʼn <strong>Twee-stap vergelyking</strong> benodig twee inverse bewerkings om op te los. Ons maak bewerkings altyd ongedaan in die <strong>omgekeerde volgorde van BODMAS</strong> — ${bl('maak eers optelling of aftrekking ongedaan')} en dan ${gr('maak vermenigvuldiging of deling ongedaan')}. Vervang na die oplos altyd jou antwoord terug in die oorspronklike vergelyking om te ${re('kontroleer')} dat albei kante gelyk is.</p>` +
+        `<p style="margin-bottom:16px;">ʼn <strong>Twee-stap vergelyking</strong> benodig twee omgekeerde bewerkings om op te los. Ons maak bewerkings altyd ongedaan in die <strong>omgekeerde volgorde van BODMAS</strong> — ${bl('maak eers optelling of aftrekking ongedaan')} en dan ${gr('maak vermenigvuldiging of deling ongedaan')}. Vervang na die oplos altyd jou antwoord terug in die oorspronklike vergelyking om te ${re('kontroleer')} dat albei kante gelyk is.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -286,12 +286,12 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
-        `<p style="margin:0;font-size:14px;">${bl('Maak optelling of aftrekking ongedaan')} — Gebruik die inverse bewerking om die getal wat met die veranderlike-term bygetel of afgetrek is, te verwyder.</p>` +
+        `<p style="margin:0;font-size:14px;">${bl('Maak optelling of aftrekking ongedaan')} — Gebruik die omgekeerde bewerking om die getal wat met die veranderlike-term bygetel of afgetrek is, te verwyder.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
-        `<p style="margin:0;font-size:14px;">${gr('Maak vermenigvuldiging of deling ongedaan')} — Gebruik die inverse bewerking om die ${or('veranderlike')} heeltemal te isoleer.</p>` +
+        `<p style="margin:0;font-size:14px;">${gr('Maak vermenigvuldiging of deling ongedaan')} — Gebruik die omgekeerde bewerking om die ${or('veranderlike')} heeltemal te isoleer.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
@@ -343,7 +343,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om twee-stap vergelykings op te los met inverse bewerkings in omgekeerde BODMAS-volgorde met uitgewerkte voorbeelde en kontrole deur substitusie',
+        'Kort video wat wys hoe om twee-stap vergelykings op te los met omgekeerde bewerkings in omgekeerde BODMAS-volgorde met uitgewerkte voorbeelde en kontrole deur substitusie',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -358,7 +358,7 @@ export const topicData: TopicData = {
           'woordprobleme na formele vergelykings omskakel',
           'CAPS Graad 6 los woordprobleme op deur ʼn informele getalsin te skryf (met ʼn blokkie vir die onbekende) en dit uit te redeneer — nie deur formeel ʼn letterveranderlike toe te ken en ʼn vergelyking op te los nie. Behou hier as duidelik gemerkte verryking.'
         ) +
-        `<p style="margin-bottom:16px;">Baie werklike lewe probleme kan opgelos word deur ʼn ${or('vergelyking')} te skryf en op te los. Lees die probleem noukeurig en identifiseer die onbekende — dit word jou ${bl('veranderlike')}. Skakel die woorde om in wiskundige simbole. Skryf die ${or('vergelyking')} en los dit op met inverse bewerkings. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang en maak seker dit maak sin binne die konteks van die probleem.</p>` +
+        `<p style="margin-bottom:16px;">Baie werklike lewe probleme kan opgelos word deur ʼn ${or('vergelyking')} te skryf en op te los. Lees die probleem noukeurig en identifiseer die onbekende — dit word jou ${bl('veranderlike')}. Skakel die woorde om in wiskundige simbole. Skryf die ${or('vergelyking')} en los dit op met omgekeerde bewerkings. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang en maak seker dit maak sin binne die konteks van die probleem.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -385,7 +385,7 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
-        `<p style="margin:0;font-size:14px;">${gr('Los op vir die veranderlike')} — Gebruik inverse bewerkings om die ${bl('veranderlike')} te isoleer en die ${gr('oplossing')} te vind.</p>` +
+        `<p style="margin:0;font-size:14px;">${gr('Los op vir die veranderlike')} — Gebruik omgekeerde bewerkings om die ${bl('veranderlike')} te isoleer en die ${gr('oplossing')} te vind.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
@@ -462,10 +462,10 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Watter vergelyking pas by hierdie storie — Lindiwe het ʼn aantal sportpunte. Sy verloor 20 punte weens ʼn strafskop en het nou 65 punte.\n\nA) p − 20 = 65\nB) p + 20 = 65\nC) 20 − p = 65\n\nSkryf net "A", "B", of "C".', answer: 'A', checkMode: 'auto', correctAnswer: 'a', correctAnswers: ['a', 'A'], explanation: '"Verloor" beteken trek af van haar beginpunte p.\nBeginpunte min 20 is gelyk aan 65: p − 20 = 65\nDit pas by vergelyking A.' },
         { difficulty: 'Medium', question: 'ʼn Leerder skryf die vergelyking 8 + w = 40 vir hierdie probleem: "Nomvula deel 40 lekkers gelykop tussen 8 vriende. Hoeveel kry elke vriend?" Verduidelik wat verkeerd is met hierdie vergelyking.', answer: 'Die vergelyking is verkeerd want die probleem beskryf gelykop deel (deling), nie optelling nie. "Deel gelykop tussen 8 vriende" beteken die totaal van 40 moet deur 8 gedeel word, nie by 8 getel word nie. Die korrekte vergelyking is 40 ÷ 8 = w, of gelykstaande 8w = 40.', checkMode: 'self' },
 
-        // Blok 3 — Een-stap vergelykings met inverse bewerkings (Medium) — posisies 8-11
+        // Blok 3 — Een-stap vergelykings met omgekeerde bewerkings (Medium) — posisies 8-11
         { difficulty: 'Medium', question: 'Los op: x + 29 = 64.', answer: '35', checkMode: 'auto', correctAnswer: '35', explanation: 'Inverse van 29 optel is 29 aftrek.\nx + 29 − 29 = 64 − 29\nx = 35\nKontroleer: 35 + 29 = 64 ✓' },
-        { difficulty: 'Medium', question: 'Los op: 9m = 117. Watter inverse bewerking het jy gebruik, en waarom?', answer: 'm = 13. Ek het deling gebruik omdat m met 9 vermenigvuldig word, en deur 9 deel is die inverse bewerking wat vermenigvuldiging ongedaan maak en m isoleer. 117 ÷ 9 = 13. Kontroleer: 9 × 13 = 117 ✓', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Student los x − 37 = 48 op deur 37 van albei kante af te trek, en kry x = 11. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die student het die verkeerde inverse bewerking gebruik. Omdat 37 van x afgetrek word, is die inverse optelling, nie aftrekking nie. Deur 37 by albei kante te tel, kry ons x = 48 + 37 = 85. Kontroleer: 85 − 37 = 48 ✓. Die student se antwoord van 11 is verkeerd omdat om weer 37 af te trek nie die oorspronklike aftrekking ongedaan maak nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op: 9m = 117. Watter omgekeerde bewerking het jy gebruik, en waarom?', answer: 'm = 13. Ek het deling gebruik omdat m met 9 vermenigvuldig word, en deur 9 deel is die omgekeerde bewerking wat vermenigvuldiging ongedaan maak en m isoleer. 117 ÷ 9 = 13. Kontroleer: 9 × 13 = 117 ✓', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Student los x − 37 = 48 op deur 37 van albei kante af te trek, en kry x = 11. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die student het die verkeerde omgekeerde bewerking gebruik. Omdat 37 van x afgetrek word, is die inverse optelling, nie aftrekking nie. Deur 37 by albei kante te tel, kry ons x = 48 + 37 = 85. Kontroleer: 85 − 37 = 48 ✓. Die student se antwoord van 11 is verkeerd omdat om weer 37 af te trek nie die oorspronklike aftrekking ongedaan maak nie.', checkMode: 'self' },
         { difficulty: 'Medium', question: 'ʼn Verkoper verkoop appels in sakke van 6. Bongani beweer dat as 6b = 102, dan is b = 18. Is Bongani korrek? Wys jou kontrole.', answer: 'nee', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee', 'Nee'], explanation: 'Deel albei kante deur 6: b = 102 ÷ 6 = 17.\nKontroleer Bongani se bewering: 6 × 18 = 108, nie 102 nie, dus is sy antwoord verkeerd.\nBongani is nie korrek nie; die korrekte antwoord is b = 17. Kontroleer: 6 × 17 = 102 ✓' },
 
         // Blok 4 — Twee-stap vergelykings, omgekeerde BODMAS-volgorde (Medium-Hard) — posisies 12-15
@@ -481,9 +481,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Lerato sê x = 12 is die oplossing vir 5x − 20 = 40. Wys ʼn volledige kontrole deur substitusie en verduidelik of sy korrek is.', answer: 'Vervang x = 12 in 5x − 20 = 40.\n5 × 12 − 20 = 60 − 20 = 40\nDie linkerkant is gelyk aan 40 en die regterkant is 40, dus is albei kante gelyk. Lerato is korrek — x = 12 is die oplossing.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het vergelykings, inverse bewerkings, en woordprobleme met getalsinne baasgeraak.' },
+        { minScore: 20, message: 'Uitstekend! Jy het vergelykings, omgekeerde bewerkings, en woordprobleme met getalsinne baasgeraak.' },
         { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae oor twee-stap vergelykings of woordprobleme deur en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor inverse bewerkings en omgekeerde BODMAS-volgorde weer deur, en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor omgekeerde bewerkings en omgekeerde BODMAS-volgorde weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -506,9 +506,9 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Watter vergelyking pas by hierdie storie — Thandiwe het ʼn bedrag lugtyd gehad. Sy koop nog R35 se lugtyd en het nou R120 se lugtyd in totaal.\n\nA) a − 35 = 120\nB) a + 35 = 120\nC) 35a = 120\n\nSkryf net "A", "B", of "C".', answer: 'B', checkMode: 'auto', correctAnswer: 'b', correctAnswers: ['b', 'B'], explanation: '"Koop nog" beteken tel by haar beginlugtyd a.\nBeginlugtyd plus 35 is gelyk aan 120: a + 35 = 120\nDit pas by vergelyking B.' },
         { difficulty: 'Medium', question: 'ʼn Leerder skryf die vergelyking p − 9 = 63 vir hierdie probleem: "ʼn Winkel verkoop potlode teen R9 elk. Die totaal vir ʼn klasbestelling is R63. Hoeveel potlode is gekoop?" Verduidelik wat verkeerd is met hierdie vergelyking.', answer: 'Die vergelyking is verkeerd want die probleem beskryf ʼn prys per item (vermenigvuldiging), nie aftrekking nie. "Teen R9 elk" beteken die totale koste is gelyk aan R9 vermenigvuldig met die aantal potlode, p. Die korrekte vergelyking is 9p = 63.', checkMode: 'self' },
 
-        // Blok 3 — Een-stap vergelykings met inverse bewerkings (Medium) — posisies 8-11
+        // Blok 3 — Een-stap vergelykings met omgekeerde bewerkings (Medium) — posisies 8-11
         { difficulty: 'Medium', question: 'Los op: y − 46 = 58.', answer: '104', checkMode: 'auto', correctAnswer: '104', explanation: 'Inverse van 46 aftrek is 46 optel.\ny − 46 + 46 = 58 + 46\ny = 104\nKontroleer: 104 − 46 = 58 ✓' },
-        { difficulty: 'Medium', question: 'Los op: p ÷ 9 = 23. Watter inverse bewerking het jy gebruik, en waarom?', answer: 'p = 207. Ek het vermenigvuldiging gebruik omdat p deur 9 gedeel word, en met 9 vermenigvuldig is die inverse bewerking wat deling ongedaan maak en p isoleer. 23 × 9 = 207. Kontroleer: 207 ÷ 9 = 23 ✓', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op: p ÷ 9 = 23. Watter omgekeerde bewerking het jy gebruik, en waarom?', answer: 'p = 207. Ek het vermenigvuldiging gebruik omdat p deur 9 gedeel word, en met 9 vermenigvuldig is die omgekeerde bewerking wat deling ongedaan maak en p isoleer. 23 × 9 = 207. Kontroleer: 207 ÷ 9 = 23 ✓', checkMode: 'self' },
         { difficulty: 'Medium', question: 'ʼn Student los 7x = 154 op deur net die linkerkant deur 7 te deel, en kry x = 22 maar skryf die regterkant steeds as 154. Verduidelik die fout in hierdie redenasie, al is die finale numeriese antwoord korrek.', answer: 'Al is x = 22 toevallig numeries korrek (154 ÷ 7 = 22), is die beskryfde metode gebrekkige redenasie — jy moet BEIDE kante van die vergelyking deur 7 deel om dit gebalanseerd te hou, nie net die linkerkant isoleer terwyl die regterkant geïgnoreer word nie. Korrek geskryf: 7x ÷ 7 = 154 ÷ 7, dus x = 22. Om dit enige ander manier te doen, loop jy risiko vir foute in vergelykings waar die berekening minder voor die hand liggend is.', checkMode: 'self' },
         { difficulty: 'Medium', question: 'ʼn Boer pak lemoene in kratte van 8. Nkosana beweer dat as 8c = 152, dan is c = 19. Is Nkosana korrek? Wys jou kontrole.', answer: 'ja', checkMode: 'auto', correctAnswer: 'ja', correctAnswers: ['ja', 'Ja'], explanation: 'Deel albei kante deur 8: c = 152 ÷ 8 = 19.\nKontroleer: 8 × 19 = 152 ✓\nNkosana is korrek.' },
 
@@ -525,9 +525,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Kagiso sê x = 15 is die oplossing vir 3x − 25 = 20. Wys ʼn volledige kontrole deur substitusie en verduidelik of hy korrek is.', answer: 'Vervang x = 15 in 3x − 25 = 20.\n3 × 15 − 25 = 45 − 25 = 20\nDie linkerkant is gelyk aan 20 en die regterkant is 20, dus is albei kante gelyk. Kagiso is korrek — x = 15 is die oplossing.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het vergelykings, inverse bewerkings, en woordprobleme met getalsinne baasgeraak.' },
+        { minScore: 20, message: 'Uitstekend! Jy het vergelykings, omgekeerde bewerkings, en woordprobleme met getalsinne baasgeraak.' },
         { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae oor twee-stap vergelykings of woordprobleme deur en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor inverse bewerkings en omgekeerde BODMAS-volgorde weer deur, en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor omgekeerde bewerkings en omgekeerde BODMAS-volgorde weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -550,16 +550,16 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Watter vergelyking pas by hierdie storie — Vusi het ʼn aantal doelwitte hierdie seisoen aangeteken. Hy tel dan nog 5 doelwitte aan in die finale wedstryd, wat hom 23 doelwitte in totaal gee.\n\nA) g − 5 = 23\nB) 5g = 23\nC) g + 5 = 23\n\nSkryf net "A", "B", of "C".', answer: 'C', checkMode: 'auto', correctAnswer: 'c', correctAnswers: ['c', 'C'], explanation: '"Tel nog 5 aan" beteken tel 5 by sy beginaantal doelwitte g.\nBeginaantal plus 5 is gelyk aan 23: g + 5 = 23\nDit pas by vergelyking C.' },
         { difficulty: 'Medium', question: 'ʼn Leerder skryf die vergelyking d + 6 = 90 vir hierdie probleem: "ʼn Totaal van 90 muffins word gelykop tussen 6 klasse verdeel. Hoeveel kry elke klas, d?" Verduidelik wat verkeerd is met hierdie vergelyking.', answer: 'Die vergelyking is verkeerd want die probleem beskryf gelykop deel (deling), nie optelling nie. "Gelykop verdeel tussen 6 klasse" beteken die totaal van 90 moet deur 6 gedeel word. Die korrekte vergelyking is 90 ÷ 6 = d, of gelykstaande 6d = 90.', checkMode: 'self' },
 
-        // Blok 3 — Een-stap vergelykings met inverse bewerkings (Medium) — posisies 8-11
+        // Blok 3 — Een-stap vergelykings met omgekeerde bewerkings (Medium) — posisies 8-11
         { difficulty: 'Medium', question: 'Los op: x + 68 = 121.', answer: '53', checkMode: 'auto', correctAnswer: '53', explanation: 'Inverse van 68 optel is 68 aftrek.\nx + 68 − 68 = 121 − 68\nx = 53\nKontroleer: 53 + 68 = 121 ✓' },
-        { difficulty: 'Medium', question: 'Los op: 11n = 132. Watter inverse bewerking het jy gebruik, en waarom?', answer: 'n = 12. Ek het deling gebruik omdat n met 11 vermenigvuldig word, en deur 11 deel is die inverse bewerking wat vermenigvuldiging ongedaan maak en n isoleer. 132 ÷ 11 = 12. Kontroleer: 11 × 12 = 132 ✓', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Student los x ÷ 7 = 15 op deur albei kante weer deur 7 te deel, en kry x = 15 ÷ 7. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die student het die verkeerde inverse bewerking gebruik. Omdat x deur 7 gedeel word, is die inverse vermenigvuldiging, nie verdere deling nie. Deur albei kante met 7 te vermenigvuldig, kry ons x = 15 × 7 = 105. Kontroleer: 105 ÷ 7 = 15 ✓. Om weer te deel beweeg verder weg van om x te isoleer, in plaas daarvan om die deling ongedaan te maak.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los op: 11n = 132. Watter omgekeerde bewerking het jy gebruik, en waarom?', answer: 'n = 12. Ek het deling gebruik omdat n met 11 vermenigvuldig word, en deur 11 deel is die omgekeerde bewerking wat vermenigvuldiging ongedaan maak en n isoleer. 132 ÷ 11 = 12. Kontroleer: 11 × 12 = 132 ✓', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Student los x ÷ 7 = 15 op deur albei kante weer deur 7 te deel, en kry x = 15 ÷ 7. Verduidelik die fout en gee die korrekte antwoord.', answer: 'Die student het die verkeerde omgekeerde bewerking gebruik. Omdat x deur 7 gedeel word, is die inverse vermenigvuldiging, nie verdere deling nie. Deur albei kante met 7 te vermenigvuldig, kry ons x = 15 × 7 = 105. Kontroleer: 105 ÷ 7 = 15 ✓. Om weer te deel beweeg verder weg van om x te isoleer, in plaas daarvan om die deling ongedaan te maak.', checkMode: 'self' },
         { difficulty: 'Medium', question: 'ʼn Skool pak leerders in busse van 45 sitplekke. Ayanda beweer dat as 45b = 405, dan is b = 8. Is Ayanda korrek? Wys jou kontrole.', answer: 'nee', checkMode: 'auto', correctAnswer: 'nee', correctAnswers: ['nee', 'Nee'], explanation: 'Deel albei kante deur 45: b = 405 ÷ 45 = 9.\nKontroleer: 45 × 9 = 405 ✓, maar 45 × 8 = 360 ≠ 405.\nAyanda is nie korrek nie — die korrekte antwoord is b = 9.' },
 
         // Blok 4 — Twee-stap vergelykings, omgekeerde BODMAS-volgorde (Medium-Hard) — posisies 12-15
         { difficulty: 'Medium', question: 'Los op: 8x + 37 = 133.', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: 'Stap 1 — Maak die optelling ongedaan: trek 37 van albei kante af.\n8x + 37 − 37 = 133 − 37\n8x = 96\nStap 2 — Maak die vermenigvuldiging ongedaan: deel albei kante deur 8.\n8x ÷ 8 = 96 ÷ 8\nx = 12\nKontroleer: 8 × 12 + 37 = 96 + 37 = 133 ✓' },
         { difficulty: 'Medium-Hard', question: 'Ntombi dink aan ʼn getal. Sy vermenigvuldig dit met 15 en trek 48 af, wat ʼn antwoord van 192 gee. Wat is haar getal?', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Laat die getal n wees.\nVergelyking: 15n − 48 = 192\nStap 1: tel 48 by albei kante → 15n = 240\nStap 2: deel albei kante deur 15 → n = 16\nKontroleer: 15 × 16 − 48 = 240 − 48 = 192 ✓' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Student los 9x − 18 = 63 op deur eers 18 van 63 af te trek (in plaas van optel), en kry 9x = 45 en dan x = 5. Verduidelik die fout in hierdie volgorde van bewerkings en los korrek op.', answer: 'Die fout is om die verkeerde inverse bewerking te gebruik — omdat 18 op die linkerkant afgetrek word, moet ons 18 by ALBEI kante TEL om dit ongedaan te maak, nie weer 18 aftrek nie. Korrekte metode: 9x − 18 + 18 = 63 + 18, dus 9x = 81, dan x = 81 ÷ 9 = 9. Kontroleer: 9 × 9 − 18 = 81 − 18 = 63 ✓', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Student los 9x − 18 = 63 op deur eers 18 van 63 af te trek (in plaas van optel), en kry 9x = 45 en dan x = 5. Verduidelik die fout in hierdie volgorde van bewerkings en los korrek op.', answer: 'Die fout is om die verkeerde omgekeerde bewerking te gebruik — omdat 18 op die linkerkant afgetrek word, moet ons 18 by ALBEI kante TEL om dit ongedaan te maak, nie weer 18 aftrek nie. Korrekte metode: 9x − 18 + 18 = 63 + 18, dus 9x = 81, dan x = 81 ÷ 9 = 9. Kontroleer: 9 × 9 − 18 = 81 − 18 = 63 ✓', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Watter een van hierdie twee vergelykings het die groter oplossing?\n\nA) 6x + 5 = 41\nB) 4x + 3 = 39\n\nSkryf net "A" of "B".', answer: 'B', checkMode: 'auto', correctAnswer: 'b', correctAnswers: ['b', 'B'], explanation: 'A) 6x + 5 = 41 → 6x = 36 → x = 6\nB) 4x + 3 = 39 → 4x = 36 → x = 9\n9 > 6, dus het vergelyking B die groter oplossing.' },
 
         // Blok 5 — Multi-stap en gekombineerde-onbekende woordprobleme (Hard) — posisies 16-19
@@ -569,9 +569,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Thandeka sê x = 18 is die oplossing vir 4x − 27 = 45. Wys ʼn volledige kontrole deur substitusie en verduidelik of sy korrek is.', answer: 'Vervang x = 18 in 4x − 27 = 45.\n4 × 18 − 27 = 72 − 27 = 45\nDie linkerkant is gelyk aan 45 en die regterkant is 45, dus is albei kante gelyk. Thandeka is korrek — x = 18 is die oplossing.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het vergelykings, inverse bewerkings, en woordprobleme met getalsinne baasgeraak.' },
+        { minScore: 20, message: 'Uitstekend! Jy het vergelykings, omgekeerde bewerkings, en woordprobleme met getalsinne baasgeraak.' },
         { minScore: 15, message: 'Goeie werk! Gaan gemiste vrae oor twee-stap vergelykings of woordprobleme deur en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor inverse bewerkings en omgekeerde BODMAS-volgorde weer deur, en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor omgekeerde bewerkings en omgekeerde BODMAS-volgorde weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

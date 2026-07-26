@@ -41,7 +41,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">ʼn Verhouding vereenvoudig</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Deel altwee terme deur hul grootste gemene faktor (GGF) totdat geen gemene faktor oorbly nie.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Deel altwee terme deur hul grootste gemene deler (GGD) totdat geen gemene faktor oorbly nie.</p>` +
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
@@ -277,7 +277,7 @@ export const topicData: TopicData = {
       answer: '2:3',
       checkMode: 'auto',
       correctAnswer: '2:3',
-      explanation: 'GGF van 24 en 36 is 12.\n24 ÷ 12 = 2 en 36 ÷ 12 = 3.\nVereenvoudigde verhouding: 2:3 ✓',
+      explanation: 'GGD van 24 en 36 is 12.\n24 ÷ 12 = 2 en 36 ÷ 12 = 3.\nVereenvoudigde verhouding: 2:3 ✓',
     },
 
     // ── Q2 Medium — divide in a ratio (two parts) ─────────────────────────────
@@ -429,9 +429,9 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Verhoudings vereenvoudig & verhoudings uit konteks skryf (Easy) — posisies 0-2
-        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 84:56.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 84 en 56 is 28.\n84 ÷ 28 = 3 en 56 ÷ 28 = 2.\nVereenvoudigde verhouding = 3:2 ✓' },
-        { difficulty: 'Easy', question: 'ʼn Netbalklub het 45 senior spelers en 30 junior spelers. Skryf die verhouding van senior tot junior spelers in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 45 en 30 is 15.\n45 ÷ 15 = 3 en 30 ÷ 15 = 2.\nVerhouding van senior tot junior spelers = 3:2 ✓' },
-        { difficulty: 'Easy', question: 'ʼn Vrugteplaas het 42 lemoenbome, 70 suurlemoenbome en 98 nartjiebome. Skryf die verhouding van lemoen tot suurlemoen tot nartjiebome in eenvoudigste vorm.', answer: '3:5:7', checkMode: 'auto', correctAnswer: '3:5:7', correctAnswers: ['3:5:7'], explanation: 'GGF van 42, 70 en 98 is 14.\n42 ÷ 14 = 3, 70 ÷ 14 = 5, 98 ÷ 14 = 7.\nVereenvoudigde verhouding = 3:5:7 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 84:56.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGD van 84 en 56 is 28.\n84 ÷ 28 = 3 en 56 ÷ 28 = 2.\nVereenvoudigde verhouding = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Netbalklub het 45 senior spelers en 30 junior spelers. Skryf die verhouding van senior tot junior spelers in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGD van 45 en 30 is 15.\n45 ÷ 15 = 3 en 30 ÷ 15 = 2.\nVerhouding van senior tot junior spelers = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Vrugteplaas het 42 lemoenbome, 70 suurlemoenbome en 98 nartjiebome. Skryf die verhouding van lemoen tot suurlemoen tot nartjiebome in eenvoudigste vorm.', answer: '3:5:7', checkMode: 'auto', correctAnswer: '3:5:7', correctAnswers: ['3:5:7'], explanation: 'GGD van 42, 70 en 98 is 14.\n42 ÷ 14 = 3, 70 ÷ 14 = 5, 98 ÷ 14 = 7.\nVereenvoudigde verhouding = 3:5:7 ✓' },
 
         // Blok 2 — Ekwivalente verhoudings / ontbrekende term vind (Easy-Medium) — posisies 3-5
         { difficulty: 'Easy-Medium', question: 'Vind die ontbrekende waarde: 5:8 = x:56', answer: '35', checkMode: 'auto', correctAnswer: '35', correctAnswers: ['35', 'x = 35'], explanation: 'Vind die skaalfaktor: 56 ÷ 8 = 7.\nVermenigvuldig die eerste term met dieselfde faktor: 5 × 7 = 35.\nx = 35 ✓' },
@@ -489,9 +489,9 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok 1 — Verhoudings vereenvoudig & verhoudings uit konteks skryf (Easy) — posisies 0-2
-        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 108:72.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 108 en 72 is 36.\n108 ÷ 36 = 3 en 72 ÷ 36 = 2.\nVereenvoudigde verhouding = 3:2 ✓' },
-        { difficulty: 'Easy', question: 'ʼn Hokkieklub het 60 senior lede en 40 junior lede. Skryf die verhouding van senior tot junior lede in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 60 en 40 is 20.\n60 ÷ 20 = 3 en 40 ÷ 20 = 2.\nVerhouding van senior tot junior lede = 3:2 ✓' },
-        { difficulty: 'Easy', question: 'ʼn Gemeenskapstuin het 54 tamatieplante, 90 boontjieplante en 126 spinasieplante. Skryf die verhouding van tamatie tot boontjie tot spinasieplante in eenvoudigste vorm.', answer: '3:5:7', checkMode: 'auto', correctAnswer: '3:5:7', correctAnswers: ['3:5:7'], explanation: 'GGF van 54, 90 en 126 is 18.\n54 ÷ 18 = 3, 90 ÷ 18 = 5, 126 ÷ 18 = 7.\nVereenvoudigde verhouding = 3:5:7 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 108:72.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGD van 108 en 72 is 36.\n108 ÷ 36 = 3 en 72 ÷ 36 = 2.\nVereenvoudigde verhouding = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Hokkieklub het 60 senior lede en 40 junior lede. Skryf die verhouding van senior tot junior lede in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGD van 60 en 40 is 20.\n60 ÷ 20 = 3 en 40 ÷ 20 = 2.\nVerhouding van senior tot junior lede = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Gemeenskapstuin het 54 tamatieplante, 90 boontjieplante en 126 spinasieplante. Skryf die verhouding van tamatie tot boontjie tot spinasieplante in eenvoudigste vorm.', answer: '3:5:7', checkMode: 'auto', correctAnswer: '3:5:7', correctAnswers: ['3:5:7'], explanation: 'GGD van 54, 90 en 126 is 18.\n54 ÷ 18 = 3, 90 ÷ 18 = 5, 126 ÷ 18 = 7.\nVereenvoudigde verhouding = 3:5:7 ✓' },
 
         // Blok 2 — Ekwivalente verhoudings / ontbrekende term vind (Easy-Medium) — posisies 3-5
         { difficulty: 'Easy-Medium', question: 'Vind die ontbrekende waarde: 4:9 = x:63', answer: '28', checkMode: 'auto', correctAnswer: '28', correctAnswers: ['28', 'x = 28'], explanation: 'Vind die skaalfaktor: 63 ÷ 9 = 7.\nVermenigvuldig die eerste term met dieselfde faktor: 4 × 7 = 28.\nx = 28 ✓' },
@@ -549,9 +549,9 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok 1 — Verhoudings vereenvoudig & verhoudings uit konteks skryf (Easy) — posisies 0-2
-        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 96:64.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 96 en 64 is 32.\n96 ÷ 32 = 3 en 64 ÷ 32 = 2.\nVereenvoudigde verhouding = 3:2 ✓' },
-        { difficulty: 'Easy', question: 'ʼn Krieketklub het 75 senior lede en 50 junior lede. Skryf die verhouding van senior tot junior lede in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGF van 75 en 50 is 25.\n75 ÷ 25 = 3 en 50 ÷ 25 = 2.\nVerhouding van senior tot junior lede = 3:2 ✓' },
-        { difficulty: 'Easy', question: 'ʼn Kwekery het 33 roosbosse, 55 hortensiabosse en 77 varings. Skryf die verhouding van roos tot hortensia tot varings in eenvoudigste vorm.', answer: '3:5:7', checkMode: 'auto', correctAnswer: '3:5:7', correctAnswers: ['3:5:7'], explanation: 'GGF van 33, 55 en 77 is 11.\n33 ÷ 11 = 3, 55 ÷ 11 = 5, 77 ÷ 11 = 7.\nVereenvoudigde verhouding = 3:5:7 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig die verhouding 96:64.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGD van 96 en 64 is 32.\n96 ÷ 32 = 3 en 64 ÷ 32 = 2.\nVereenvoudigde verhouding = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Krieketklub het 75 senior lede en 50 junior lede. Skryf die verhouding van senior tot junior lede in eenvoudigste vorm.', answer: '3:2', checkMode: 'auto', correctAnswer: '3:2', correctAnswers: ['3:2'], explanation: 'GGD van 75 en 50 is 25.\n75 ÷ 25 = 3 en 50 ÷ 25 = 2.\nVerhouding van senior tot junior lede = 3:2 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Kwekery het 33 roosbosse, 55 hortensiabosse en 77 varings. Skryf die verhouding van roos tot hortensia tot varings in eenvoudigste vorm.', answer: '3:5:7', checkMode: 'auto', correctAnswer: '3:5:7', correctAnswers: ['3:5:7'], explanation: 'GGD van 33, 55 en 77 is 11.\n33 ÷ 11 = 3, 55 ÷ 11 = 5, 77 ÷ 11 = 7.\nVereenvoudigde verhouding = 3:5:7 ✓' },
 
         // Blok 2 — Ekwivalente verhoudings / ontbrekende term vind (Easy-Medium) — posisies 3-5
         { difficulty: 'Easy-Medium', question: 'Vind die ontbrekende waarde: 6:11 = x:77', answer: '42', checkMode: 'auto', correctAnswer: '42', correctAnswers: ['42', 'x = 42'], explanation: 'Vind die skaalfaktor: 77 ÷ 11 = 7.\nVermenigvuldig die eerste term met dieselfde faktor: 6 × 7 = 42.\nx = 42 ✓' },

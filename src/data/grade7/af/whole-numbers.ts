@@ -320,7 +320,7 @@ export const topicData: TopicData = {
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
-        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('grondgetal')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('grondtal')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('eksponent')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('antwoord')}</span>` +
         `</div>` +
@@ -330,13 +330,13 @@ export const topicData: TopicData = {
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Grondgetal</p>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Grondtal</p>` +
         `<p style="color:#374151;font-size:14px;margin:0;">Die getal wat met homself vermenigvuldig word. Geskryf in normale grootte.</p>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Eksponent (indeks)</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Die klein verhoogde getal wat wys hoeveel keer die grondgetal met homself vermenigvuldig word.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die klein verhoogde getal wat wys hoeveel keer die grondtal met homself vermenigvuldig word.</p>` +
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
@@ -379,7 +379,7 @@ export const topicData: TopicData = {
           question: 'Bereken 8² en vind die vierkantswortel van 64.',
           answer: `${bl('8')}${or('²')} = ${gr('64')} &nbsp;|&nbsp; √${gr('64')} = ${bl('8')}`,
           steps: [
-            `<strong>Bereken ${bl('8')}${or('²')}:</strong> Die ${or('eksponent')} is ${or('2')}, dus vermenigvuldig ons die ${bl('grondgetal')} twee keer met homself: ${bl('8')} × ${bl('8')} = ${gr('64')}`,
+            `<strong>Bereken ${bl('8')}${or('²')}:</strong> Die ${or('eksponent')} is ${or('2')}, dus vermenigvuldig ons die ${bl('grondtal')} twee keer met homself: ${bl('8')} × ${bl('8')} = ${gr('64')}`,
             `<strong>Vind √${gr('64')}:</strong> Ons benodig die waarde wat, wanneer dit gekwadreer word, ${gr('64')} gee. Vra: "__ × __ = 64?" Aangesien ${bl('8')} × ${bl('8')} = ${gr('64')}, is die vierkantswortel van ${gr('64')} gelyk aan ${bl('8')}.`,
             `<strong>Opsomming:</strong> ${bl('8')}${or('²')} = ${gr('64')} &nbsp;en&nbsp; √${gr('64')} = ${bl('8')} ✓`,
           ],
@@ -388,7 +388,7 @@ export const topicData: TopicData = {
           question: 'Bereken 4³ en vind die kubuswortel van 27.',
           answer: `${bl('4')}${or('³')} = ${gr('64')} &nbsp;|&nbsp; ∛${gr('27')} = ${bl('3')}`,
           steps: [
-            `<strong>Bereken ${bl('4')}${or('³')}:</strong> Die ${or('eksponent')} is ${or('3')}, dus vermenigvuldig ons die ${bl('grondgetal')} drie keer met homself: ${bl('4')} × ${bl('4')} × ${bl('4')} = 16 × 4 = ${gr('64')}`,
+            `<strong>Bereken ${bl('4')}${or('³')}:</strong> Die ${or('eksponent')} is ${or('3')}, dus vermenigvuldig ons die ${bl('grondtal')} drie keer met homself: ${bl('4')} × ${bl('4')} × ${bl('4')} = 16 × 4 = ${gr('64')}`,
             `<strong>Vind ∛${gr('27')}:</strong> Ons benodig die waarde wat, wanneer dit gekubus word, ${gr('27')} gee. Vra: "__ × __ × __ = 27?" Aangesien ${bl('3')} × ${bl('3')} × ${bl('3')} = ${gr('27')}, is die kubuswortel van ${gr('27')} gelyk aan ${bl('3')}.`,
             `<strong>Opsomming:</strong> ${bl('4')}${or('³')} = ${gr('64')} &nbsp;en&nbsp; ∛${gr('27')} = ${bl('3')} ✓`,
           ],
@@ -458,7 +458,7 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        'Visuele diagram wat 8 in die kwadraat as ʼn vierkant met 8 rye en 8 kolomme gelyk aan 64 toon, en 3 in die kubus as ʼn kubus met 3 lae van elk 3 by 3 gelyk aan 27, met grondgetalle blou, eksponente oranje, en antwoorde groen',
+        'Visuele diagram wat 8 in die kwadraat as ʼn vierkant met 8 rye en 8 kolomme gelyk aan 64 toon, en 3 in die kubus as ʼn kubus met 3 lae van elk 3 by 3 gelyk aan 27, met grondtalle blou, eksponente oranje, en antwoorde groen',
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="100%" style="max-width:420px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +

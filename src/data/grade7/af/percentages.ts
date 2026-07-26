@@ -521,7 +521,7 @@ export const topicData: TopicData = {
       questions: [
         // Blok 1 — Omskakeling tussen persentasies, breuke en desimale (0-2)
         { difficulty: 'Easy', question: 'Skryf 7/8 as ʼn persentasie.', answer: '87,5%', checkMode: 'auto', correctAnswer: '87,5%', correctAnswers: ['87,5%', '87,5', '87.5%', '87.5'], explanation: 'Deel die teller deur die noemer, en vermenigvuldig dan met 100.\n7 ÷ 8 = 0,875. 0,875 × 100 = 87,5%. ✓' },
-        { difficulty: 'Easy', question: 'Skryf 0,35 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '35%, 7/20', checkMode: 'auto', correctAnswer: '35%,7/20', correctAnswers: ['35%,7/20', '35,7/20', '35% en 7/20', '35, 7/20'], explanation: 'Persentasie: vermenigvuldig met 100. 0,35 × 100 = 35%.\nBreuk: 0,35 = 35/100. GGF van 35 en 100 is 5, dus 35/100 = 7/20. ✓' },
+        { difficulty: 'Easy', question: 'Skryf 0,35 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '35%, 7/20', checkMode: 'auto', correctAnswer: '35%,7/20', correctAnswers: ['35%,7/20', '35,7/20', '35% en 7/20', '35, 7/20'], explanation: 'Persentasie: vermenigvuldig met 100. 0,35 × 100 = 35%.\nBreuk: 0,35 = 35/100. GGD van 35 en 100 is 5, dus 35/100 = 7/20. ✓' },
         { difficulty: 'Medium', question: 'ʼn Resep gebruik 18/25 van ʼn sak meel. Skryf hierdie hoeveelheid as ʼn persentasie en as ʼn desimale breuk.', answer: '72%, 0,72', checkMode: 'auto', correctAnswer: '72%,0,72', correctAnswers: ['72%,0,72', '72,0,72', '72% en 0,72', '72%,0.72'], explanation: 'Persentasie: 18 ÷ 25 = 0,72, en dan 0,72 × 100 = 72%.\nDesimale breuk: 18 ÷ 25 = 0,72 direk. ✓' },
 
         // Blok 2 — Vind ʼn persentasie van ʼn bedrag (3-6)
@@ -591,7 +591,7 @@ export const topicData: TopicData = {
       questions: [
         // Blok 1 — Omskakeling tussen persentasies, breuke en desimale (0-2)
         { difficulty: 'Easy', question: 'Skryf 5/8 as ʼn persentasie.', answer: '62,5%', checkMode: 'auto', correctAnswer: '62,5%', correctAnswers: ['62,5%', '62,5', '62.5%', '62.5'], explanation: 'Deel die teller deur die noemer, en vermenigvuldig dan met 100.\n5 ÷ 8 = 0,625. 0,625 × 100 = 62,5%. ✓' },
-        { difficulty: 'Easy', question: 'Skryf 0,28 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '28%, 7/25', checkMode: 'auto', correctAnswer: '28%,7/25', correctAnswers: ['28%,7/25', '28,7/25', '28% en 7/25', '28, 7/25'], explanation: 'Persentasie: vermenigvuldig met 100. 0,28 × 100 = 28%.\nBreuk: 0,28 = 28/100. GGF van 28 en 100 is 4, dus 28/100 = 7/25. ✓' },
+        { difficulty: 'Easy', question: 'Skryf 0,28 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '28%, 7/25', checkMode: 'auto', correctAnswer: '28%,7/25', correctAnswers: ['28%,7/25', '28,7/25', '28% en 7/25', '28, 7/25'], explanation: 'Persentasie: vermenigvuldig met 100. 0,28 × 100 = 28%.\nBreuk: 0,28 = 28/100. GGD van 28 en 100 is 4, dus 28/100 = 7/25. ✓' },
         { difficulty: 'Medium', question: 'ʼn Tenk word tot 11/20 van sy kapasiteit gevul. Skryf hierdie hoeveelheid as ʼn persentasie en as ʼn desimale breuk.', answer: '55%, 0,55', checkMode: 'auto', correctAnswer: '55%,0,55', correctAnswers: ['55%,0,55', '55,0,55', '55% en 0,55', '55%,0.55'], explanation: 'Persentasie: 11 ÷ 20 = 0,55, en dan 0,55 × 100 = 55%.\nDesimale breuk: 11 ÷ 20 = 0,55 direk. ✓' },
 
         // Blok 2 — Vind ʼn persentasie van ʼn bedrag (3-6)
@@ -661,7 +661,7 @@ export const topicData: TopicData = {
       questions: [
         // Blok 1 — Omskakeling tussen persentasies, breuke en desimale (0-2)
         { difficulty: 'Easy', question: 'Skryf 9/16 as ʼn persentasie.', answer: '56,25%', checkMode: 'auto', correctAnswer: '56,25%', correctAnswers: ['56,25%', '56,25', '56.25%', '56.25'], explanation: 'Deel die teller deur die noemer, en vermenigvuldig dan met 100.\n9 ÷ 16 = 0,5625. 0,5625 × 100 = 56,25%. ✓' },
-        { difficulty: 'Easy', question: 'Skryf 0,62 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '62%, 31/50', checkMode: 'auto', correctAnswer: '62%,31/50', correctAnswers: ['62%,31/50', '62,31/50', '62% en 31/50', '62, 31/50'], explanation: 'Persentasie: vermenigvuldig met 100. 0,62 × 100 = 62%.\nBreuk: 0,62 = 62/100. GGF van 62 en 100 is 2, dus 62/100 = 31/50. ✓' },
+        { difficulty: 'Easy', question: 'Skryf 0,62 as ʼn persentasie en as ʼn breuk in eenvoudigste vorm.', answer: '62%, 31/50', checkMode: 'auto', correctAnswer: '62%,31/50', correctAnswers: ['62%,31/50', '62,31/50', '62% en 31/50', '62, 31/50'], explanation: 'Persentasie: vermenigvuldig met 100. 0,62 × 100 = 62%.\nBreuk: 0,62 = 62/100. GGD van 62 en 100 is 2, dus 62/100 = 31/50. ✓' },
         { difficulty: 'Medium', question: 'ʼn Waterbottel word tot 7/20 van sy kapasiteit gevul. Skryf hierdie hoeveelheid as ʼn persentasie en as ʼn desimale breuk.', answer: '35%, 0,35', checkMode: 'auto', correctAnswer: '35%,0,35', correctAnswers: ['35%,0,35', '35,0,35', '35% en 0,35', '35%,0.35'], explanation: 'Persentasie: 7 ÷ 20 = 0,35, en dan 0,35 × 100 = 35%.\nDesimale breuk: 7 ÷ 20 = 0,35 direk. ✓' },
 
         // Blok 2 — Vind ʼn persentasie van ʼn bedrag (3-6)

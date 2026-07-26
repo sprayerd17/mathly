@@ -53,7 +53,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Skaleen</p>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Ongelyksydig</p>` +
         `<p style="color:#374151;font-size:14px;margin:0;">Al drie sye verskillend. Al drie hoeke verskillend.</p>` +
         `</div>` +
 
@@ -174,7 +174,7 @@ export const topicData: TopicData = {
         '</g>' +
         '<g transform="translate(280,68)">' +
         '<polygon points="-28,25 22,29 -6,-30" fill="none" stroke="#0f1f3d" stroke-width="2.2"/>' +
-        '<text x="-3" y="42" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Skaleen</text>' +
+        '<text x="-3" y="42" font-size="11" font-weight="700" fill="#ea580c" text-anchor="middle">Ongelyksydig</text>' +
         '</g>' +
         '<text x="170" y="120" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">Volgens hoekgrootte</text>' +
         '<g transform="translate(60,168)">' +
