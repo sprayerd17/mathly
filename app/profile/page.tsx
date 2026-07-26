@@ -544,7 +544,8 @@ export default function ProfilePage() {
             {children.map((child, i) => {
               const tier: Tier = user.childPlans[i] ?? 'free'
               const paidCount = user.childPlans.filter(pt => pt !== 'free').length
-              const canDowngrade = tier !== 'free' && paidCount > 1
+              const canDowngrade = tier !== 'free'
+              const isLastPaidChild = canDowngrade && paidCount === 1
               return (
                 <div
                   key={i}
@@ -572,7 +573,7 @@ export default function ProfilePage() {
                     )}
                     {canDowngrade && downgradingIndex !== i && (
                       <button
-                        onClick={() => { setDowngradingIndex(i); setDowngradeError(null) }}
+                        onClick={() => { setDowngradingIndex(i); setDowngradeError(null); setCancelError(null) }}
                         className="shrink-0 text-xs font-semibold hover:underline underline-offset-2"
                         style={{ color: '#6b7280' }}
                       >
@@ -582,37 +583,53 @@ export default function ProfilePage() {
                   </div>
                   {canDowngrade && downgradingIndex === i && (
                     <div className="mt-3 p-4 rounded-xl" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
-                      <p className="text-sm text-gray-600 mb-2">
-                        {t.profile_remove_child_confirm_body.replace('{name}', child.name)}
-                      </p>
-                      <p className="text-xs font-semibold mb-3" style={{ color: '#0f1f3d' }}>
-                        {t.profile_remove_child_new_total_label}: R
-                        {computeFamilyPrice(
-                          user.childPlans.map((pt, pi) => (pi === i ? 'free' : pt)),
-                          user.paystackFounding ?? { pro: false, max: false },
-                        ).total}
-                        {t.pricing_per_month}
-                      </p>
-                      {downgradeError && (
-                        <p className="text-xs font-semibold mb-3" style={{ color: '#b91c1c' }}>{downgradeError}</p>
+                      {isLastPaidChild ? (
+                        <p className="text-sm text-gray-600 mb-3">
+                          {t.profile_remove_last_child_confirm_body.replace('{name}', child.name)}
+                        </p>
+                      ) : (
+                        <>
+                          <p className="text-sm text-gray-600 mb-2">
+                            {t.profile_remove_child_confirm_body.replace('{name}', child.name)}
+                          </p>
+                          <p className="text-xs font-semibold mb-3" style={{ color: '#0f1f3d' }}>
+                            {t.profile_remove_child_new_total_label}: R
+                            {computeFamilyPrice(
+                              user.childPlans.map((pt, pi) => (pi === i ? 'free' : pt)),
+                              user.paystackFounding ?? { pro: false, max: false },
+                            ).total}
+                            {t.pricing_per_month}
+                          </p>
+                        </>
+                      )}
+                      {(isLastPaidChild ? cancelError : downgradeError) && (
+                        <p className="text-xs font-semibold mb-3" style={{ color: '#b91c1c' }}>
+                          {isLastPaidChild ? cancelError : downgradeError}
+                        </p>
                       )}
                       <div className="flex gap-3">
                         <button
                           type="button"
-                          onClick={() => { setDowngradingIndex(null); setDowngradeError(null) }}
-                          disabled={downgradeInProgress}
+                          onClick={() => {
+                            setDowngradingIndex(null)
+                            setDowngradeError(null)
+                            setCancelError(null)
+                          }}
+                          disabled={isLastPaidChild ? cancelInProgress : downgradeInProgress}
                           className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2 rounded-lg text-xs hover:bg-gray-50 transition-colors disabled:opacity-50"
                         >
                           {t.profile_cancel_subscription_keep}
                         </button>
                         <button
                           type="button"
-                          onClick={() => handleDowngradeChild(i)}
-                          disabled={downgradeInProgress}
+                          onClick={() => isLastPaidChild ? handleCancelSubscription() : handleDowngradeChild(i)}
+                          disabled={isLastPaidChild ? cancelInProgress : downgradeInProgress}
                           className="flex-1 font-semibold py-2 rounded-lg text-xs text-white transition-colors disabled:opacity-50"
                           style={{ backgroundColor: '#b91c1c' }}
                         >
-                          {downgradeInProgress ? t.profile_remove_child_in_progress : t.profile_remove_child_confirm}
+                          {isLastPaidChild
+                            ? (cancelInProgress ? t.profile_cancel_subscription_in_progress : t.profile_cancel_subscription_confirm)
+                            : (downgradeInProgress ? t.profile_remove_child_in_progress : t.profile_remove_child_confirm)}
                         </button>
                       </div>
                     </div>

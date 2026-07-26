@@ -24,7 +24,7 @@ export const topicData: TopicData = {
       explanation:
         `<p style="margin-bottom:16px;">Jy weet reeds hoe om Venn-diagramme, boomdiagramme en gebeurlikheidstabelle vir afhanklike en onafhanklike gebeurtenisse uit Graad 11 te gebruik. In Graad 12 formaliseer ons die reël vir die kombinasie van "of"-gebeurtenisse in een identiteit, en hersien ons die komplementêre reël wat jy dwarsdeur hierdie onderwerp sal gebruik:</p>` +
 
-        `<div style="text-align:center;font-size:1.05em;font-weight:700;color:#0f1f3d;margin-bottom:20px;padding:12px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;">${gr('W(A of B) = W(A) + W(B) − W(A en B)')}</div>` +
+        `<div style="text-align:center;font-size:1.05em;font-weight:700;color:#0f1f3d;margin-bottom:20px;padding:12px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;">${gr('P(A of B) = P(A) + P(B) − P(A en B)')}</div>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -41,17 +41,17 @@ export const topicData: TopicData = {
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Die Optellingsreël</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Vir ENIGE twee gebeurtenisse: ${gr('W(A of B) = W(A) + W(B) − W(A en B)')}. Jy trek W(A en B) af omdat dit anders twee keer getel sou word — een keer in W(A) en een keer in W(B).</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Vir ENIGE twee gebeurtenisse: ${gr('P(A of B) = P(A) + P(B) − P(A en B)')}. Jy trek P(A en B) af omdat dit anders twee keer getel sou word — een keer in P(A) en een keer in P(B).</p>` +
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Wedersyds Uitsluitende Gebeurtenisse</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Gebeurtenisse wat <strong>nie gelyktydig kan plaasvind nie</strong> (geen oorvleueling nie). Dan is ${bl('W(A en B) = 0')}, so die reël vereenvoudig na ${bl('W(A of B) = W(A) + W(B)')}.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Gebeurtenisse wat <strong>nie gelyktydig kan plaasvind nie</strong> (geen oorvleueling nie). Dan is ${bl('P(A en B) = 0')}, so die reël vereenvoudig na ${bl('P(A of B) = P(A) + P(B)')}.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Komplementêre Gebeurtenisse</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">A en A' (nie-A) is komplementêr as hulle wedersyds uitsluitend is EN elke moontlike uitkoms dek. Dan is ${re("W(A') = 1 − W(A)")}.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A en A' (nie-A) is komplementêr as hulle wedersyds uitsluitend is EN elke moontlike uitkoms dek. Dan is ${re("P(A') = 1 − P(A)")}.</p>` +
         `</div>` +
 
         `</div>` +
@@ -59,27 +59,27 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Wanneer om die komplement te gebruik</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Wanneer 'n vraag vra vir die waarskynlikheid van <strong>"ten minste een"</strong> van iets, is dit byna altyd vinniger om ${re("W(geen) te vind en W(ten minste een) = 1 − W(geen) te gebruik")} in plaas daarvan om elke individuele geval bymekaar te tel.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Wanneer 'n vraag vra vir die waarskynlikheid van <strong>"ten minste een"</strong> van iets, is dit byna altyd vinniger om ${re("P(geen) te vind en P(ten minste een) = 1 − P(geen) te gebruik")} in plaas daarvan om elke individuele geval bymekaar te tel.</p>` +
         `</div>`,
 
       workedExamples: [
         {
-          question: "'n Kaart word uit 'n standaard pak van 52 kaarte getrek. Bepaal W('n hart of 'n heer).",
-          answer: `${gr('W(hart of heer) = 16/52 = 4/13')}`,
+          question: "'n Kaart word uit 'n standaard pak van 52 kaarte getrek. Bepaal P('n hart of 'n heer).",
+          answer: `${gr('P(hart of heer) = 16/52 = 4/13')}`,
           steps: [
-            `Bepaal die individuele waarskynlikhede: ${bl('W(hart) = 13/52')} en ${bl('W(heer) = 4/52')}.`,
-            `Hierdie gebeurtenisse ${or('oorvleuel')} — die heer van harte is beide 'n hart ÉN 'n heer, so hulle is nie wedersyds uitsluitend nie. Bepaal ${or('W(hart en heer) = 1/52')} (net een kaart is albei).`,
-            `Pas die ${gr('optellingsreël')} toe: ${gr('W(hart of heer) = 13/52 + 4/52 − 1/52 = 16/52 = 4/13')}.`,
-            `<strong>Antwoord:</strong> ${gr('W(hart of heer) = 4/13')}. Sonder om die oorvleueling af te trek, sou die heer van harte twee keer getel gewees het.`,
+            `Bepaal die individuele waarskynlikhede: ${bl('P(hart) = 13/52')} en ${bl('P(heer) = 4/52')}.`,
+            `Hierdie gebeurtenisse ${or('oorvleuel')} — die heer van harte is beide 'n hart ÉN 'n heer, so hulle is nie wedersyds uitsluitend nie. Bepaal ${or('P(hart en heer) = 1/52')} (net een kaart is albei).`,
+            `Pas die ${gr('optellingsreël')} toe: ${gr('P(hart of heer) = 13/52 + 4/52 − 1/52 = 16/52 = 4/13')}.`,
+            `<strong>Antwoord:</strong> ${gr('P(hart of heer) = 4/13')}. Sonder om die oorvleueling af te trek, sou die heer van harte twee keer getel gewees het.`,
           ],
         },
         {
           question: "Die waarskynlikheid dat dit môre reën is 0,3. Bepaal die waarskynlikheid dat dit NIE môre reën nie.",
-          answer: `${re("W(nie reën nie) = 0,7")}`,
+          answer: `${re("P(nie reën nie) = 0,7")}`,
           steps: [
             `Reën en geen reën is ${bl('komplementêre gebeurtenisse')} — presies een daarvan moet plaasvind, en hulle kan nie albei plaasvind nie.`,
-            `Pas die ${re('komplementêre reël')} toe: ${re("W(nie reën nie) = 1 − W(reën) = 1 − 0,3 = 0,7")}.`,
-            `<strong>Antwoord:</strong> ${re('W(nie reën nie) = 0,7')}.`,
+            `Pas die ${re('komplementêre reël')} toe: ${re("P(nie reën nie) = 1 − P(reën) = 1 − 0,3 = 0,7")}.`,
+            `<strong>Antwoord:</strong> ${re('P(nie reën nie) = 0,7')}.`,
           ],
         },
       ],
@@ -88,7 +88,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat die optellingsreël W(A of B) = W(A) + W(B) min W(A en B) afy met \'n oorvleuelende Venn-diagram, en dan die komplementêre reël vir ten-minste-een-probleme wys',
+        'Kort video wat die optellingsreël P(A of B) = P(A) + P(B) min P(A en B) afy met \'n oorvleuelende Venn-diagram, en dan die komplementêre reël vir ten-minste-een-probleme wys',
 
       diagramSvg:
         `<svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><circle cx="80" cy="75" r="55" fill="none" stroke="#2563eb" stroke-width="2.5" /><circle cx="140" cy="75" r="55" fill="none" stroke="#2563eb" stroke-width="2.5" /><path d="M110,28.9 A55,55 0 0,1 110,121.1 A55,55 0 0,1 110,28.9 Z" fill="#ea580c" fill-opacity="0.55" stroke="#ea580c" stroke-width="1.5" /><text x="50" y="50" font-weight="700" font-size="16" fill="#2563eb" text-anchor="middle">A</text><text x="170" y="50" font-weight="700" font-size="16" fill="#2563eb" text-anchor="middle">B</text><text x="110" y="150" font-weight="700" font-size="12" fill="#ea580c" text-anchor="middle">A en B (een keer getel)</text></svg>`,
@@ -348,7 +348,7 @@ export const topicData: TopicData = {
       explanation:
         `<p style="margin-bottom:16px;">Sodra jy rangskikkings kan tel, kan jy die waarskynlikheid van 'n spesifieke rangskikking bepaal met dieselfde idee as enige ander waarskynlikheidsberekening:</p>` +
 
-        `<div style="text-align:center;font-size:1.05em;font-weight:700;color:#0f1f3d;margin-bottom:20px;padding:12px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;">${gr('W(spesifieke rangskikking) = aantal gunstige rangskikkings ÷ totale aantal rangskikkings')}</div>` +
+        `<div style="text-align:center;font-size:1.05em;font-weight:700;color:#0f1f3d;margin-bottom:20px;padding:12px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;">${gr('P(spesifieke rangskikking) = aantal gunstige rangskikkings ÷ totale aantal rangskikkings')}</div>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -372,7 +372,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Stap 3 — Deel</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">${or('W(voorwaarde) = gunstige ÷ totaal')}. Vereenvoudig die breuk, of skryf as 'n desimaal indien gevra.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${or('P(voorwaarde) = gunstige ÷ totaal')}. Vereenvoudig die breuk, of skryf as 'n desimaal indien gevra.</p>` +
         `</div>` +
 
         `</div>` +
@@ -391,7 +391,7 @@ export const topicData: TopicData = {
             `${gr('Gunstige rangskikkings:')} behandel Sipho en Thandi as een blok. Dit gee 4 "items" om te rangskik (die blok + 3 ander vriende) = 4! maniere, dan × 2! vir die 2 maniere om Sipho en Thandi binne die blok te orden.`,
             `Bereken gunstige: ${gr('4! × 2! = 24 × 2 = 48')}.`,
             `Pas die waarskynlikheidsformule toe: ${or('W = 48 ÷ 120 = 2/5')}.`,
-            `<strong>Antwoord:</strong> ${or('W(Sipho en Thandi saam) = 2/5')}.`,
+            `<strong>Antwoord:</strong> ${or('P(Sipho en Thandi saam) = 2/5')}.`,
           ],
         },
         {
@@ -402,7 +402,7 @@ export const topicData: TopicData = {
             `${bl('Totale rangskikkings:')} ${bl('6! ÷ (3! × 2!) = 720 ÷ (6 × 2) = 60')}.`,
             `${gr('Gunstige rangskikkings:')} vas B in die eerste posisie, rangskik dan die oorblywende letters A, N, A, N, A (5 letters, A herhaal 3 keer, N herhaal 2 keer) in die ander 5 posisies: ${gr('5! ÷ (3! × 2!) = 120 ÷ 12 = 10')}.`,
             `Pas die waarskynlikheidsformule toe: ${or('W = 10 ÷ 60 = 1/6')}.`,
-            `<strong>Antwoord:</strong> ${or('W(begin met B) = 1/6')}.`,
+            `<strong>Antwoord:</strong> ${or('P(begin met B) = 1/6')}.`,
           ],
         },
       ],
@@ -414,7 +414,7 @@ export const topicData: TopicData = {
         'Kort video wat \'n sitplek-rangskikking-waarskynlikheidsprobleem stap vir stap oplos, deur eers totale rangskikkings te bepaal en dan gunstige rangskikkings met die saam-blok-truuk voor daar gedeel word',
 
       diagramSvg:
-        `<svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><rect x="10" y="30" width="30" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2" /><rect x="46" y="30" width="30" height="40" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" /><rect x="82" y="30" width="30" height="40" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" /><rect x="118" y="30" width="30" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2" /><rect x="154" y="30" width="30" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2" /><rect x="42" y="24" width="78" height="52" rx="8" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="6 4" /><text x="25" y="55" font-weight="700" font-size="14" fill="#2563eb" text-anchor="middle">1</text><text x="61" y="55" font-weight="700" font-size="14" fill="#16a34a" text-anchor="middle">S</text><text x="97" y="55" font-weight="700" font-size="14" fill="#16a34a" text-anchor="middle">T</text><text x="133" y="55" font-weight="700" font-size="14" fill="#2563eb" text-anchor="middle">4</text><text x="169" y="55" font-weight="700" font-size="14" fill="#2563eb" text-anchor="middle">5</text><text x="82" y="15" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">blok</text><text x="235" y="42" font-weight="700" font-size="16" fill="#16a34a" text-anchor="middle">48</text><line x1="208" y1="52" x2="262" y2="52" stroke="#94a3b8" stroke-width="2" /><text x="235" y="72" font-weight="700" font-size="16" fill="#2563eb" text-anchor="middle">120</text><text x="235" y="100" font-weight="700" font-size="15" fill="#ea580c" text-anchor="middle">= 2/5</text><text x="235" y="18" font-size="11" fill="#374151" text-anchor="middle">W(saam)</text></svg>`,
+        `<svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><rect x="10" y="30" width="30" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2" /><rect x="46" y="30" width="30" height="40" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" /><rect x="82" y="30" width="30" height="40" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" /><rect x="118" y="30" width="30" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2" /><rect x="154" y="30" width="30" height="40" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="2" /><rect x="42" y="24" width="78" height="52" rx="8" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="6 4" /><text x="25" y="55" font-weight="700" font-size="14" fill="#2563eb" text-anchor="middle">1</text><text x="61" y="55" font-weight="700" font-size="14" fill="#16a34a" text-anchor="middle">S</text><text x="97" y="55" font-weight="700" font-size="14" fill="#16a34a" text-anchor="middle">T</text><text x="133" y="55" font-weight="700" font-size="14" fill="#2563eb" text-anchor="middle">4</text><text x="169" y="55" font-weight="700" font-size="14" fill="#2563eb" text-anchor="middle">5</text><text x="82" y="15" font-weight="700" font-size="11" fill="#16a34a" text-anchor="middle">blok</text><text x="235" y="42" font-weight="700" font-size="16" fill="#16a34a" text-anchor="middle">48</text><line x1="208" y1="52" x2="262" y2="52" stroke="#94a3b8" stroke-width="2" /><text x="235" y="72" font-weight="700" font-size="16" fill="#2563eb" text-anchor="middle">120</text><text x="235" y="100" font-weight="700" font-size="15" fill="#ea580c" text-anchor="middle">= 2/5</text><text x="235" y="18" font-size="11" fill="#374151" text-anchor="middle">P(saam)</text></svg>`,
     },
   ],
 
@@ -422,41 +422,41 @@ export const topicData: TopicData = {
     // ── Q1 Easy — addition rule ──────────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'W(A) = 0,4, W(B) = 0,3 en W(A en B) = 0,1. Bepaal W(A of B).',
+      question: 'P(A) = 0,4, P(B) = 0,3 en P(A en B) = 0,1. Bepaal P(A of B).',
       checkMode: 'auto',
       correctAnswer: '0,6',
       correctAnswers: ['0,6', '0.6'],
-      explanation: 'W(A of B) = W(A) + W(B) − W(A en B) = 0,4 + 0,3 − 0,1 = 0,6 ✓',
+      explanation: 'P(A of B) = P(A) + P(B) − P(A en B) = 0,4 + 0,3 − 0,1 = 0,6 ✓',
     },
 
     // ── Q2 Easy — mutually exclusive ─────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'A en B is wedersyds uitsluitende gebeurtenisse met W(A) = 0,25 en W(B) = 0,45. Bepaal W(A of B).',
+      question: 'A en B is wedersyds uitsluitende gebeurtenisse met P(A) = 0,25 en P(B) = 0,45. Bepaal P(A of B).',
       checkMode: 'auto',
       correctAnswer: '0,7',
       correctAnswers: ['0,7', '0.7'],
-      explanation: 'Wedersyds uitsluitend beteken W(A en B) = 0, so W(A of B) = W(A) + W(B) = 0,25 + 0,45 = 0,7 ✓',
+      explanation: 'Wedersyds uitsluitend beteken P(A en B) = 0, so P(A of B) = P(A) + P(B) = 0,25 + 0,45 = 0,7 ✓',
     },
 
     // ── Q3 Easy — complementary rule ─────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: "W(A) = 0,65. Bepaal W(A').",
+      question: "P(A) = 0,65. Bepaal P(A').",
       checkMode: 'auto',
       correctAnswer: '0,35',
       correctAnswers: ['0,35', '0.35'],
-      explanation: "W(A') = 1 − W(A) = 1 − 0,65 = 0,35 ✓",
+      explanation: "P(A') = 1 − P(A) = 1 − 0,65 = 0,35 ✓",
     },
 
     // ── Q4 Medium — addition rule with cards ─────────────────────────────────
     {
       difficulty: 'Medium',
-      question: "'n Kaart word uit 'n standaard pak van 52 kaarte getrek. Bepaal W('n skoppie of 'n rooi kaart). (Let wel: skoppies is swart, so 'n kaart kan nie albei wees nie.)",
+      question: "'n Kaart word uit 'n standaard pak van 52 kaarte getrek. Bepaal P('n skoppie of 'n rooi kaart). (Let wel: skoppies is swart, so 'n kaart kan nie albei wees nie.)",
       checkMode: 'auto',
       correctAnswer: '3/4',
       correctAnswers: ['3/4', '0,75', '0.75'],
-      explanation: 'W(skoppie) = 13/52, W(rooi) = 26/52. Skoppies en rooi kaarte kan nie oorvleuel nie, so W(A en B) = 0. W(skoppie of rooi) = 13/52 + 26/52 = 39/52 = 3/4 ✓',
+      explanation: 'P(skoppie) = 13/52, P(rooi) = 26/52. Skoppies en rooi kaarte kan nie oorvleuel nie, so P(A en B) = 0. P(skoppie of rooi) = 13/52 + 26/52 = 39/52 = 3/4 ✓',
     },
 
     // ── Q5 Medium — at least one via complement ──────────────────────────────
@@ -466,7 +466,7 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       correctAnswer: '0,142625',
       correctAnswers: ['0,142625', '0.142625', '≈0,1426', '≈0.1426', '0,1426', '0.1426'],
-      explanation: "W(geen faal nie) = 0,95 × 0,95 × 0,95 = 0,857375. W(ten minste een faal) = 1 − 0,857375 = 0,142625 ✓",
+      explanation: "P(geen faal nie) = 0,95 × 0,95 × 0,95 = 0,857375. P(ten minste een faal) = 1 − 0,857375 = 0,142625 ✓",
     },
 
     // ── Q6 Easy — fundamental counting principle ─────────────────────────────
@@ -581,9 +581,9 @@ export const topicData: TopicData = {
     // ── Q18 Medium — mutually exclusive vs not ────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'n Dobbelsteen word een keer gegooi. Laat A "\'n ewe getal gooi" wees en B "\'n getal groter as 4 gooi". Is A en B wedersyds uitsluitend? Bepaal W(A of B).',
+      question: 'n Dobbelsteen word een keer gegooi. Laat A "\'n ewe getal gooi" wees en B "\'n getal groter as 4 gooi". Is A en B wedersyds uitsluitend? Bepaal P(A of B).',
       checkMode: 'self',
-      answer: 'A = {2,4,6}, B = {5,6}. Hulle oorvleuel by 6, so A en B is NIE wedersyds uitsluitend nie. W(A) = 3/6, W(B) = 2/6, W(A en B) = 1/6 (\'n 6 gooi). W(A of B) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3.',
+      answer: 'A = {2,4,6}, B = {5,6}. Hulle oorvleuel by 6, so A en B is NIE wedersyds uitsluitend nie. P(A) = 3/6, P(B) = 2/6, P(A en B) = 1/6 (\'n 6 gooi). P(A of B) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3.',
     },
 
     // ── Q19 Hard — restriction: specific person NOT at an end ─────────────────
@@ -599,17 +599,17 @@ export const topicData: TopicData = {
       difficulty: 'Hard',
       question: "'n Sak bevat teëltjies genommer 1 tot 9. Twee teëltjies word een na die ander getrek, sonder vervanging, en in die volgorde van trek geplaas om 'n 2-syfergetal te vorm. Hoeveel verskillende 2-syfergetalle kan gevorm word, en wat is die waarskynlikheid dat die getal wat gevorm word groter as 90 is?",
       checkMode: 'self',
-      answer: 'Totale 2-syfergetalle: 9 keuses vir die eerste teël, 8 oorblywende vir die tweede teël = 9 × 8 = 72 verskillende getalle. Getalle groter as 90 moet met 9 begin: die tiene-syfer is vas as 9 (1 keuse), en enige van die oorblywende 8 teëls kan die eenhede-syfer wees, wat 8 gunstige uitkomste gee. W(groter as 90) = 8 ÷ 72 = 1/9.',
+      answer: 'Totale 2-syfergetalle: 9 keuses vir die eerste teël, 8 oorblywende vir die tweede teël = 9 × 8 = 72 verskillende getalle. Getalle groter as 90 moet met 9 begin: die tiene-syfer is vas as 9 (1 keuse), en enige van die oorblywende 8 teëls kan die eenhede-syfer wees, wat 8 gunstige uitkomste gee. P(groter as 90) = 8 ÷ 72 = 1/9.',
     },
 
     // ── Q21 Hard — problem-solving: addition rule with a conditional-probability-derived overlap
     {
       difficulty: 'Hard',
-      question: "By 'n skool is gebeurtenis A 'ʼn leerder neem Wiskunde' en gebeurtenis B 'ʼn leerder neem Fisiese Wetenskap'. Dit is bekend dat W(A) = 0,6 en W(A of B) = 0,75. Van die leerders wat Fisiese Wetenskap neem, neem presies 'n kwart ook Wiskunde. Laat W(B) = x. Stel 'n vergelyking in x op deur die optellingsreël te gebruik, los op vir x, en bepaal dus W(B).",
+      question: "By 'n skool is gebeurtenis A 'ʼn leerder neem Wiskunde' en gebeurtenis B 'ʼn leerder neem Fisiese Wetenskap'. Dit is bekend dat P(A) = 0,6 en P(A of B) = 0,75. Van die leerders wat Fisiese Wetenskap neem, neem presies 'n kwart ook Wiskunde. Laat P(B) = x. Stel 'n vergelyking in x op deur die optellingsreël te gebruik, los op vir x, en bepaal dus P(B).",
       checkMode: 'auto',
       correctAnswer: '0,2',
       correctAnswers: ['0,2', '0.2'],
-      explanation: "Aangesien presies 'n kwart van die Fisiese Wetenskap-leerders ook Wiskunde neem, is W(A en B) = ¼ × W(B) = x/4. Optellingsreël: W(A of B) = W(A) + W(B) − W(A en B), dus 0,75 = 0,6 + x − x/4 = 0,6 + 0,75x. Los op: 0,75x = 0,15, dus x = 0,2. W(B) = 0,2 ✓",
+      explanation: "Aangesien presies 'n kwart van die Fisiese Wetenskap-leerders ook Wiskunde neem, is P(A en B) = ¼ × P(B) = x/4. Optellingsreël: P(A of B) = P(A) + P(B) − P(A en B), dus 0,75 = 0,6 + x − x/4 = 0,6 + 0,75x. Los op: 0,75x = 0,15, dus x = 0,2. P(B) = 0,2 ✓",
     },
 
     // ── Q22 Hard — problem-solving: combinations combined with conditional probability
@@ -619,7 +619,7 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       correctAnswer: '1/13',
       correctAnswers: ['1/13', '≈0.0769', '≈0,0769', '0.0769', '0,0769'],
-      explanation: 'Aantal komitees met presies 3 vrouens en 1 man: C(5,3) × C(6,1) = 10 × 6 = 60. Aantal komitees met presies 4 vrouens (0 mans): C(5,4) × C(6,0) = 5 × 1 = 5. Dus is die aantal komitees met ten minste 3 vrouens = 60 + 5 = 65. "Almal vrouens" is een van die maniere om "ten minste 3 vrouens" te kry, dus W(almal vrouens | ten minste 3 vrouens) = 5 ÷ 65 = 1/13 ✓',
+      explanation: 'Aantal komitees met presies 3 vrouens en 1 man: C(5,3) × C(6,1) = 10 × 6 = 60. Aantal komitees met presies 4 vrouens (0 mans): C(5,4) × C(6,0) = 5 × 1 = 5. Dus is die aantal komitees met ten minste 3 vrouens = 60 + 5 = 65. "Almal vrouens" is een van die maniere om "ten minste 3 vrouens" te kry, dus P(almal vrouens | ten minste 3 vrouens) = 5 ÷ 65 = 1/13 ✓',
     },
   ],
 
@@ -722,7 +722,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: "'n Sportspan van 5 spelers word gekies uit 'n groep van 7 seuns en 5 meisies (12 mense in totaal). Bepaal die aantal maniere om die span te kies as dit TEN MINSTE een seun moet insluit.", checkMode: 'self', answer: 'Totale maniere om enige 5 uit 12 te kies: C(12,5) = 792. Maniere om 5 met geen seuns (almal meisies) te kies: C(5,5) = 1. Ten minste een seun = totaal − geen seuns = 792 − 1 = 791.' },
 
         // Blok 6 — Gekombineerde telbeginsel en waarskynlikheid (V18–V20, Moeilik)
-        { difficulty: 'Hard', question: "6 mense, insluitend twee vriende, sit lukraak in 'n ry van 6 stoele. Bepaal die waarskynlikheid dat die twee vriende NIE saam sit nie.", checkMode: 'auto', correctAnswer: '2/3', correctAnswers: ['2/3', '480/720', '0,667', '0.667', '≈2/3', '≈0,667', '≈0.667'], explanation: 'Totale rangskikkings: 6! = 720. Saam (as een blok): 5! × 2! = 120 × 2 = 240. Uitmekaar = 720 − 240 = 480. W(uitmekaar) = 480 ÷ 720 = 2/3 ✓' },
+        { difficulty: 'Hard', question: "6 mense, insluitend twee vriende, sit lukraak in 'n ry van 6 stoele. Bepaal die waarskynlikheid dat die twee vriende NIE saam sit nie.", checkMode: 'auto', correctAnswer: '2/3', correctAnswers: ['2/3', '480/720', '0,667', '0.667', '≈2/3', '≈0,667', '≈0.667'], explanation: 'Totale rangskikkings: 6! = 720. Saam (as een blok): 5! × 2! = 120 × 2 = 240. Uitmekaar = 720 − 240 = 480. P(uitmekaar) = 480 ÷ 720 = 2/3 ✓' },
         { difficulty: 'Hard', question: 'Die letters van die woord "NOON" word in \'n lukrake volgorde gerangskik. Bepaal die waarskynlikheid dat die rangskikking met die letter N begin.', checkMode: 'auto', correctAnswer: '1/2', correctAnswers: ['1/2', '3/6', '0,5', '0.5'], explanation: 'NOON het 4 letters met N wat twee keer herhaal en O wat twee keer herhaal, so totale rangskikkings = 4! ÷ (2! × 2!) = 24 ÷ 4 = 6. Gunstige: vas N in die eerste posisie, rangskik dan O, O, N (3 letters, O herhaal twee keer) in die oorblywende posisies: 3! ÷ 2! = 3. W = 3 ÷ 6 = 1/2 ✓' },
         { difficulty: 'Hard', question: "'n PIN word gevorm deur 5 verskillende syfers uit 0–9 te rangskik, sonder om enige syfer te herhaal. Bepaal die waarskynlikheid dat die PIN met die syfer 0 eindig.", checkMode: 'self', answer: 'Totale PIN\'s: 10 × 9 × 8 × 7 × 6 = 30 240. Gunstige (eindig met 0): laaste syfer is vas as 0 (1 manier), dan word die eerste 4 syfers uit die oorblywende 9 syfers sonder herhaling gekies = 9 × 8 × 7 × 6 = 3024. W = 3024 ÷ 30 240 = 1/10 = 0,1.' },
       ],
