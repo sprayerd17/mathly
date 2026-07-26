@@ -53,6 +53,27 @@ export async function logEvent(
   }
 }
 
+// Paystack's webhook and the browser's post-checkout verify-checkout call
+// both reach handlePaystackEvent for the same charge by design (see comment
+// on handlePaystackEvent below) — whichever arrives second finds the
+// pendingChildPlans marker already cleared by the first and has nothing left
+// to do. That's a harmless no-op, not a real rejection, but the pre-checks
+// below can't tell "already handled by the other caller" apart from a
+// genuinely stale/bogus retry just by looking at the missing pending marker.
+// This distinguishes them: if this exact transaction reference already has a
+// 'complete' record, the real work already happened — log it as a duplicate
+// (silent) instead of a rejection (which pages the owner and flags a review
+// item for a transaction that's actually fine).
+async function alreadyProcessed(adminDb: Firestore, reference: string | undefined): Promise<boolean> {
+  if (!reference) return false
+  const snap = await adminDb.collection('payments')
+    .where('mPaymentId', '==', reference)
+    .where('outcome', '==', 'complete')
+    .limit(1)
+    .get()
+  return !snap.empty
+}
+
 export type ChargeData = {
   id?: number
   reference?: string
@@ -218,8 +239,13 @@ export async function handlePaystackEvent(
     const userData = userSnap.data()!
     const expectedChildPlans: Tier[] | undefined | null = userData.pendingChildPlans
     if (!expectedChildPlans) {
-      // No pending checkout on file — this uid/metadata combination doesn't
-      // match a fresh signup in progress (already consumed, or stale retry).
+      // No pending checkout on file — either a genuinely stale/bogus retry,
+      // or the other caller (webhook vs. verify-checkout) already consumed
+      // it for this exact reference, which is fine.
+      if (await alreadyProcessed(adminDb, data.reference)) {
+        await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'signup')
+        return
+      }
       await logEvent(adminDb, event, data, 'rejected', 'no_pending_checkout', 'signup')
       return
     }
@@ -447,6 +473,11 @@ export async function handlePaystackEvent(
     const userData = userSnap.data()!
     const expectedChildPlans: Tier[] | undefined | null = userData.pendingChildPlans
     if (!expectedChildPlans) {
+      // Same duplicate-delivery case as the signup branch above.
+      if (await alreadyProcessed(adminDb, data.reference)) {
+        await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'upgrade')
+        return
+      }
       await logEvent(adminDb, event, data, 'rejected', 'no_pending_upgrade', 'upgrade')
       return
     }
