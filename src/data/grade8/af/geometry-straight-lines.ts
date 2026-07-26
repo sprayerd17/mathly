@@ -117,16 +117,16 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'angles-parallel-lines-transversal',
-      title: 'Hoeke Gevorm deur Parallelle Lyne Gesny deur ʼn Transversaal',
+      title: 'Hoeke Gevorm deur Parallelle Lyne Gesny deur ʼn Snylyn',
       icon: '∥',
       explanation:
-        `<p style="margin-bottom:16px;">Ons skryf duidelike beskrywings van die hoekverwantskappe wat gevorm word wanneer ʼn transversaal twee parallelle lyne sny: <strong>ooreenkomstige hoeke</strong> is gelyk, <strong>verwisselende hoeke</strong> is gelyk, en <strong>ko-binnehoeke</strong> is supplementêr.</p>` +
+        `<p style="margin-bottom:16px;">Ons skryf duidelike beskrywings van die hoekverwantskappe wat gevorm word wanneer ʼn snylyn twee parallelle lyne sny: <strong>ooreenkomstige hoeke</strong> is gelyk, <strong>verwisselende hoeke</strong> is gelyk, en <strong>ko-binnehoeke</strong> is supplementêr.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('parallelle lyne')}</span>` +
-        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('transversaal')}</span>` +
+        `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('snylyn')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('ooreenkomstige hoeke')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('ko-binnehoeke')}</span>` +
         `</div>` +
@@ -137,17 +137,17 @@ export const topicData: TopicData = {
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Ooreenkomstige hoeke (F-vorm)</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Hoeke wat in dieselfde posisie is by elke snypunt waar die transversaal die parallelle lyne kruis. Hulle is <strong>gelyk</strong>.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Hoeke wat in dieselfde posisie is by elke snypunt waar die snylyn die parallelle lyne kruis. Hulle is <strong>gelyk</strong>.</p>` +
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Verwisselende hoeke (Z-vorm)</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Hoeke aan teenoorgestelde kante van die transversaal, tussen die parallelle lyne. Hulle is <strong>gelyk</strong>.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Hoeke aan teenoorgestelde kante van die snylyn, tussen die parallelle lyne. Hulle is <strong>gelyk</strong>.</p>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Ko-binnehoeke (C-vorm)</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Hoeke aan dieselfde kant van die transversaal, tussen die parallelle lyne. Hulle is <strong>supplementêr</strong> (tel op tot 180°).</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Hoeke aan dieselfde kant van die snylyn, tussen die parallelle lyne. Hulle is <strong>supplementêr</strong> (tel op tot 180°).</p>` +
         `</div>` +
 
         `</div>` +
@@ -159,20 +159,20 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Een verwisselende hoek is 65°. Bepaal die ander verwisselende hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny. Een verwisselende hoek is 65°. Bepaal die ander verwisselende hoek.',
           answer: `Die ander verwisselende hoek is ${gr('65°')}.`,
           steps: [
-            `Identifiseer die verwantskap: die twee hoeke is ${gr('verwisselende hoeke')} (Z-vorm, tussen die parallelle lyne aan teenoorgestelde kante van die transversaal).`,
+            `Identifiseer die verwantskap: die twee hoeke is ${gr('verwisselende hoeke')} (Z-vorm, tussen die parallelle lyne aan teenoorgestelde kante van die snylyn).`,
             `Verwisselende hoeke is gelyk wanneer lyne parallel is.`,
             `Ander verwisselende hoek = ${gr('65°')}. ✓`,
-            `<em>Sien die diagram hieronder wat die transversaal en parallelle lyne toon.</em>`,
+            `<em>Sien die diagram hieronder wat die snylyn en parallelle lyne toon.</em>`,
           ],
         },
         {
           question: 'Lerato vind ʼn ko-binnehoek van 100°. Bepaal die ander ko-binnehoek.',
           answer: `Die ander ko-binnehoek is ${or('80°')}.`,
           steps: [
-            `Identifiseer die verwantskap: die twee hoeke is ${or('ko-binnehoeke')} (C-vorm, aan dieselfde kant van die transversaal tussen die parallelle lyne).`,
+            `Identifiseer die verwantskap: die twee hoeke is ${or('ko-binnehoeke')} (C-vorm, aan dieselfde kant van die snylyn tussen die parallelle lyne).`,
             `Ko-binnehoeke is supplementêr: hulle tel op tot 180°.`,
             `Ander ko-binnehoek = 180° − ${or('100°')} = ${or('80°')}. ✓`,
             `<strong>Toets:</strong> 100° + 80° = 180° ✓`,
@@ -185,7 +185,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        'Twee parallelle lyne gesny deur ʼn transversaal, met ooreenkomstige, verwisselende, en ko-binnehoekpare gemerk',
+        'Twee parallelle lyne gesny deur ʼn snylyn, met ooreenkomstige, verwisselende, en ko-binnehoekpare gemerk',
 
       diagramSvg:
         '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">' +
@@ -206,7 +206,7 @@ export const topicData: TopicData = {
         '</svg>',
 
       videoPlaceholder:
-        'Kort video wat ooreenkomstige, verwisselende en ko-binnehoeke verduidelik wat gevorm word wanneer ʼn transversaal twee parallelle lyne sny',
+        'Kort video wat ooreenkomstige, verwisselende en ko-binnehoeke verduidelik wat gevorm word wanneer ʼn snylyn twee parallelle lyne sny',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -217,7 +217,7 @@ export const topicData: TopicData = {
       title: 'Oplos van Meetkundige Probleme met Hoekverwantskappe',
       icon: '📐',
       explanation:
-        `<p style="margin-bottom:16px;">Ons los meetkundige probleme op deur die hoekverwantskappe van loodregte lyne, snyende lyne, en parallelle lyne gesny deur ʼn transversaal te gebruik, wat dikwels verskeie stappe vereis om onbekende hoeke te bepaal.</p>` +
+        `<p style="margin-bottom:16px;">Ons los meetkundige probleme op deur die hoekverwantskappe van loodregte lyne, snyende lyne, en parallelle lyne gesny deur ʼn snylyn te gebruik, wat dikwels verskeie stappe vereis om onbekende hoeke te bepaal.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -255,11 +255,11 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Een hoek is 75° en is ooreenkomstig met hoek x, terwyl hoek y ko-binne is met x. Bepaal x en y.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny. Een hoek is 75° en is ooreenkomstig met hoek x, terwyl hoek y ko-binne is met x. Bepaal x en y.',
           answer: `${re('x')} = ${bl('75°')}, &nbsp; ${re('y')} = ${or('105°')}`,
           steps: [
             `Bepaal ${re('x')}: ${re('x')} en die ${bl('gegewe 75°')} hoek is ${gr('ooreenkomstige hoeke')}.`,
-            `${gr('Ooreenkomstige hoeke is gelyk')} (parallelle lyne gesny deur ʼn transversaal).`,
+            `${gr('Ooreenkomstige hoeke is gelyk')} (parallelle lyne gesny deur ʼn snylyn).`,
             `∴ ${re('x')} = ${bl('75°')}`,
             `Bepaal ${re('y')}: ${re('y')} en ${re('x')} is ${or('ko-binnehoeke')}.`,
             `${or('Ko-binnehoeke is supplementêr')}: ${re('y')} + ${re('x')} = 180°`,
@@ -278,11 +278,11 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'ʼn Transversaal sny twee parallelle lyne. Die verwisselende hoek van x is 110°, en y is supplementêr met x. Bepaal x en y.',
+          question: 'ʼn Snylyn sny twee parallelle lyne. Die verwisselende hoek van x is 110°, en y is supplementêr met x. Bepaal x en y.',
           answer: `${re('x')} = ${bl('110°')}, &nbsp; ${re('y')} = ${or('70°')}`,
           steps: [
             `Bepaal ${re('x')}: ${re('x')} en die ${bl('gegewe 110°')} hoek is ${gr('verwisselende hoeke')}.`,
-            `${gr('Verwisselende hoeke is gelyk')} (parallelle lyne gesny deur ʼn transversaal).`,
+            `${gr('Verwisselende hoeke is gelyk')} (parallelle lyne gesny deur ʼn snylyn).`,
             `∴ ${re('x')} = ${bl('110°')}`,
             `Bepaal ${re('y')}: ${re('y')} en ${re('x')} is ${re('supplementêr')}.`,
             `${re('y')} = 180° − ${re('x')} = 180° − ${bl('110°')} = ${or('70°')} ✓`,
@@ -295,7 +295,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        'Twee parallelle lyne gesny deur ʼn transversaal met hoeke x en y, en ʼn gegewe hoek aangedui',
+        'Twee parallelle lyne gesny deur ʼn snylyn met hoeke x en y, en ʼn gegewe hoek aangedui',
 
       diagramSvg:
         '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg">' +
@@ -349,7 +349,7 @@ export const topicData: TopicData = {
     // ── V4 Maklik ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Een ooreenkomstige hoek is 80°. Bepaal die ander.',
+      question: 'Twee parallelle lyne word deur ʼn snylyn gesny. Een ooreenkomstige hoek is 80°. Bepaal die ander.',
       answer: '80°',
       checkMode: 'auto',
       correctAnswer: '80',
@@ -390,7 +390,7 @@ export const topicData: TopicData = {
     // ── V8 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'ʼn Transversaal sny twee parallelle lyne. Een hoek is 72° en ooreenkomstig met hoek x, en y is ko-binne met x. Bepaal x en y.',
+      question: 'ʼn Snylyn sny twee parallelle lyne. Een hoek is 72° en ooreenkomstig met hoek x, en y is ko-binne met x. Bepaal x en y.',
       answer: '',
       checkMode: 'auto',
       parts: [
@@ -420,7 +420,7 @@ export const topicData: TopicData = {
     // ── V10 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Die verwisselende hoek van x is 98°, en y is supplementêr met x. Bepaal x en y.',
+      question: 'Twee parallelle lyne word deur ʼn snylyn gesny. Die verwisselende hoek van x is 98°, en y is supplementêr met x. Bepaal x en y.',
       answer: '',
       checkMode: 'auto',
       parts: [
@@ -443,7 +443,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Definieer ooreenkomstige hoeke.',
-      answer: 'Hoeke wat in dieselfde relatiewe posisie is by elke snypunt waar ʼn transversaal twee parallelle lyne kruis, en wat gelyk is.',
+      answer: 'Hoeke wat in dieselfde relatiewe posisie is by elke snypunt waar ʼn snylyn twee parallelle lyne kruis, en wat gelyk is.',
       checkMode: 'self',
     },
 
@@ -461,7 +461,7 @@ export const topicData: TopicData = {
     // ── V13 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'ʼn Transversaal skep ʼn ko-binnehoekpaar waar een hoek drie keer die ander is. Bepaal albei hoeke.',
+      question: 'ʼn Snylyn skep ʼn ko-binnehoekpaar waar een hoek drie keer die ander is. Bepaal albei hoeke.',
       answer: 'Laat kleiner hoek = x, groter = 3x. x + 3x = 180. 4x = 180. x = 45°. Hoeke is 45° en 135°.',
       checkMode: 'self',
     },
@@ -477,7 +477,7 @@ export const topicData: TopicData = {
     // ── V15 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Twee parallelle lyne word deur ʼn transversaal gesny. Bepaal al 8 hoeke wat gevorm word as een hoek 63° is.',
+      question: 'Twee parallelle lyne word deur ʼn snylyn gesny. Bepaal al 8 hoeke wat gevorm word as een hoek 63° is.',
       answer: 'Hoeke wissel tussen 63° en 117° by elke snypunt volgens die reëls vir ooreenkomstige, verwisselende en ko-binnehoeke — vier hoeke van 63° en vier hoeke van 117°.',
       checkMode: 'self',
     },
@@ -554,25 +554,25 @@ export const topicData: TopicData = {
         // ── Blok 2: Ooreenkomstige & verwisselende hoeke (3-6) ─────────────
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 82°. Bepaal die grootte van sy ooreenkomstige hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek wat gevorm word, is 82°. Bepaal die grootte van sy ooreenkomstige hoek.',
           checkMode: 'auto',
           correctAnswer: '82',
           correctAnswers: ['82', '82°'],
-          explanation: 'Ooreenkomstige hoeke gevorm deur ʼn transversaal wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 82°.',
+          explanation: 'Ooreenkomstige hoeke gevorm deur ʼn snylyn wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 82°.',
           diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 113 55 A 26 26 0 0 0 73.4 32.8" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="98" y="40" font-size="14" font-weight="700" fill="#2563eb">82°</text><path d="M 167 145 A 26 26 0 0 0 127.4 122.8" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
         },
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 47°. Bepaal die grootte van sy verwisselende hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek wat gevorm word, is 47°. Bepaal die grootte van sy verwisselende hoek.',
           checkMode: 'auto',
           correctAnswer: '47',
           correctAnswers: ['47', '47°'],
-          explanation: 'Verwisselende hoeke gevorm deur ʼn transversaal wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 47°.',
+          explanation: 'Verwisselende hoeke gevorm deur ʼn snylyn wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 47°.',
           diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 59 55 A 28 28 0 0 0 101.7 78.9" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">47°</text><path d="M 169 145 A 28 28 0 0 0 126.4 121.1" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="118" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ooreenkomstige hoek is 3x en die ander ooreenkomstige hoek is 99°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ooreenkomstige hoek is 3x en die ander ooreenkomstige hoek is 99°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '33',
           correctAnswers: ['33'],
@@ -581,7 +581,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een verwisselende hoek is (2x + 5)° en die ander verwisselende hoek is 65°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een verwisselende hoek is (2x + 5)° en die ander verwisselende hoek is 65°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '30',
           correctAnswers: ['30'],
@@ -592,7 +592,7 @@ export const topicData: TopicData = {
         // ── Blok 3: Ko-binnehoeke (7-9) ─────────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is 113°. Bepaal die grootte van die ander ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is 113°. Bepaal die grootte van die ander ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '67',
           correctAnswers: ['67', '67°'],
@@ -601,7 +601,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is 128°. Bepaal die grootte van die ander ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is 128°. Bepaal die grootte van die ander ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '52',
           correctAnswers: ['52', '52°'],
@@ -610,7 +610,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Afdak het twee parallelle steunbalke wat deur ʼn diagonale skoor gesny word wat as ʼn transversaal optree, soos getoon. Die ko-binnehoek aan een kant is 75°. Bepaal die ko-binnehoek aan dieselfde kant tussen die ander paar balke.',
+          question: 'ʼn Afdak het twee parallelle steunbalke wat deur ʼn diagonale skoor gesny word wat as ʼn snylyn optree, soos getoon. Die ko-binnehoek aan een kant is 75°. Bepaal die ko-binnehoek aan dieselfde kant tussen die ander paar balke.',
           checkMode: 'auto',
           correctAnswer: '105',
           correctAnswers: ['105', '105°'],
@@ -639,7 +639,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een verwisselende hoek is (4x − 5)° en die ander verwisselende hoek is 75°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een verwisselende hoek is (4x − 5)° en die ander verwisselende hoek is 75°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '20',
           correctAnswers: ['20'],
@@ -648,7 +648,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is (2x + 15)° en die ander is (x + 30)°.\na) Skryf ʼn vergelyking met die ko-binnehoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is (2x + 15)° en die ander is (x + 30)°.\na) Skryf ʼn vergelyking met die ko-binnehoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
           checkMode: 'auto',
           parts: [
             {
@@ -675,7 +675,7 @@ export const topicData: TopicData = {
         // ── Blok 5: Meerstapkettings (14-17) ────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek gevorm waar die transversaal die eerste lyn sny, is 124°. Bepaal die ko-binnehoek op die tweede lyn, en bepaal dan die hoek vertikaal-oorstaande aan daardie ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek gevorm waar die snylyn die eerste lyn sny, is 124°. Bepaal die ko-binnehoek op die tweede lyn, en bepaal dan die hoek vertikaal-oorstaande aan daardie ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '56',
           correctAnswers: ['56', '56°'],
@@ -684,7 +684,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee reguit lyne sny mekaar, soos getoon, en vorm ʼn hoek van 96°. Die hoek aangrensend daaraan op die reguit lyn is ooreenkomstig met hoek y op ʼn paar parallelle lyne wat deur ʼn transversaal gesny word. Bepaal die grootte van hoek y.',
+          question: 'Twee reguit lyne sny mekaar, soos getoon, en vorm ʼn hoek van 96°. Die hoek aangrensend daaraan op die reguit lyn is ooreenkomstig met hoek y op ʼn paar parallelle lyne wat deur ʼn snylyn gesny word. Bepaal die grootte van hoek y.',
           checkMode: 'auto',
           correctAnswer: '84',
           correctAnswers: ['84', '84°'],
@@ -693,7 +693,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. ʼn Hoek van 58° is verwisselend met hoek p. Hoek p en hoek q is ko-binnehoeke. Bepaal die grootte van hoek q.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. ʼn Hoek van 58° is verwisselend met hoek p. Hoek p en hoek q is ko-binnehoeke. Bepaal die grootte van hoek q.',
           checkMode: 'auto',
           correctAnswer: '122',
           correctAnswers: ['122', '122°'],
@@ -702,7 +702,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee reguit lyne sny mekaar by 111°, soos getoon. Hierdie hoek se vertikaal-oorstaande hoek is ooreenkomstig met hoek m op ʼn paar parallelle lyne wat deur ʼn transversaal gesny word. Hoek m is ko-binne met hoek n. Bepaal die grootte van hoek n.',
+          question: 'Twee reguit lyne sny mekaar by 111°, soos getoon. Hierdie hoek se vertikaal-oorstaande hoek is ooreenkomstig met hoek m op ʼn paar parallelle lyne wat deur ʼn snylyn gesny word. Hoek m is ko-binne met hoek n. Bepaal die grootte van hoek n.',
           checkMode: 'auto',
           correctAnswer: '69',
           correctAnswers: ['69', '69°'],
@@ -719,13 +719,13 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Transversaal sny twee lyne wat NIE parallel is nie. Mpho sê die ooreenkomstige hoeke moet steeds gelyk wees, want "ooreenkomstige hoeke is altyd gelyk." Is Mpho korrek? Verduidelik waarom dit saak maak dat die lyne parallel is.',
-          answer: 'Nee — Mpho is verkeerd. Die ooreenkomstige-hoek-reël (en die verwisselende- en ko-binnehoek-reëls) geld slegs wanneer die twee lyne wat deur die transversaal gesny word, parallel is. As die lyne nie parallel is nie, sal die hoeke in ooreenkomstige posisies oor die algemeen van verskillende grootte wees, omdat daar geen konsekwente verwantskap is wat hulle dwing om te pas nie. Parallelle lyne is die sleutelvoorwaarde wat hierdie hoekverwantskappe waar maak.',
+          question: 'ʼn Snylyn sny twee lyne wat NIE parallel is nie. Mpho sê die ooreenkomstige hoeke moet steeds gelyk wees, want "ooreenkomstige hoeke is altyd gelyk." Is Mpho korrek? Verduidelik waarom dit saak maak dat die lyne parallel is.',
+          answer: 'Nee — Mpho is verkeerd. Die ooreenkomstige-hoek-reël (en die verwisselende- en ko-binnehoek-reëls) geld slegs wanneer die twee lyne wat deur die snylyn gesny word, parallel is. As die lyne nie parallel is nie, sal die hoeke in ooreenkomstige posisies oor die algemeen van verskillende grootte wees, omdat daar geen konsekwente verwantskap is wat hulle dwing om te pas nie. Parallelle lyne is die sleutelvoorwaarde wat hierdie hoekverwantskappe waar maak.',
           checkMode: 'self',
         },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy het hoeke op ʼn lyn, om ʼn punt, en met parallelle lyne gesny deur ʼn transversaal bemeester, insluitend algebraïese en meerstapprobleme.' },
+        { minScore: 18, message: 'Uitstekend! Jy het hoeke op ʼn lyn, om ʼn punt, en met parallelle lyne gesny deur ʼn snylyn bemeester, insluitend algebraïese en meerstapprobleme.' },
         { minScore: 14, message: 'Uitstekende werk! Jy het ʼn sterk begrip van hierdie hoekverwantskappe. Gaan enige gemiste vrae weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur, veral die algebraïese en meerstapvrae, en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids, fokus op elke hoekverwantskap een op ʼn slag, en probeer dan hierdie stel weer.' },
@@ -781,25 +781,25 @@ export const topicData: TopicData = {
         // ── Blok 2: Ooreenkomstige & verwisselende hoeke (3-6) ─────────────
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 76°. Bepaal die grootte van sy ooreenkomstige hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek wat gevorm word, is 76°. Bepaal die grootte van sy ooreenkomstige hoek.',
           checkMode: 'auto',
           correctAnswer: '76',
           correctAnswers: ['76', '76°'],
-          explanation: 'Ooreenkomstige hoeke gevorm deur ʼn transversaal wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 76°.',
+          explanation: 'Ooreenkomstige hoeke gevorm deur ʼn snylyn wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 76°.',
           diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 113 55 A 26 26 0 0 0 73.4 32.8" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="98" y="40" font-size="14" font-weight="700" fill="#2563eb">76°</text><path d="M 167 145 A 26 26 0 0 0 127.4 122.8" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
         },
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 132°. Bepaal die grootte van sy verwisselende hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek wat gevorm word, is 132°. Bepaal die grootte van sy verwisselende hoek.',
           checkMode: 'auto',
           correctAnswer: '132',
           correctAnswers: ['132', '132°'],
-          explanation: 'Verwisselende hoeke gevorm deur ʼn transversaal wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 132°.',
+          explanation: 'Verwisselende hoeke gevorm deur ʼn snylyn wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 132°.',
           diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 59 55 A 28 28 0 0 0 101.7 78.9" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">132°</text><path d="M 169 145 A 28 28 0 0 0 126.4 121.1" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="118" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ooreenkomstige hoek is 4x en die ander ooreenkomstige hoek is 108°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ooreenkomstige hoek is 4x en die ander ooreenkomstige hoek is 108°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '27',
           correctAnswers: ['27'],
@@ -808,7 +808,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een verwisselende hoek is (3x − 10)° en die ander verwisselende hoek is 95°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een verwisselende hoek is (3x − 10)° en die ander verwisselende hoek is 95°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '35',
           correctAnswers: ['35'],
@@ -819,7 +819,7 @@ export const topicData: TopicData = {
         // ── Blok 3: Ko-binnehoeke (7-9) ─────────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is 122°. Bepaal die grootte van die ander ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is 122°. Bepaal die grootte van die ander ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '58',
           correctAnswers: ['58', '58°'],
@@ -828,7 +828,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is 149°. Bepaal die grootte van die ander ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is 149°. Bepaal die grootte van die ander ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '31',
           correctAnswers: ['31', '31°'],
@@ -837,7 +837,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Wingerd het twee parallelle rye tralie-draad wat deur ʼn diagonale steundraad gesny word wat as ʼn transversaal optree, soos getoon. Die ko-binnehoek aan een kant is 84°. Bepaal die ko-binnehoek aan dieselfde kant tussen die ander paar drade.',
+          question: 'ʼn Wingerd het twee parallelle rye tralie-draad wat deur ʼn diagonale steundraad gesny word wat as ʼn snylyn optree, soos getoon. Die ko-binnehoek aan een kant is 84°. Bepaal die ko-binnehoek aan dieselfde kant tussen die ander paar drade.',
           checkMode: 'auto',
           correctAnswer: '96',
           correctAnswers: ['96', '96°'],
@@ -866,7 +866,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een verwisselende hoek is (5x − 10)° en die ander verwisselende hoek is 105°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een verwisselende hoek is (5x − 10)° en die ander verwisselende hoek is 105°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '23',
           correctAnswers: ['23'],
@@ -875,7 +875,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is (3x + 5)° en die ander is (x + 15)°.\na) Skryf ʼn vergelyking met die ko-binnehoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is (3x + 5)° en die ander is (x + 15)°.\na) Skryf ʼn vergelyking met die ko-binnehoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
           checkMode: 'auto',
           parts: [
             {
@@ -902,7 +902,7 @@ export const topicData: TopicData = {
         // ── Blok 5: Meerstapkettings (14-17) ────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek gevorm waar die transversaal die eerste lyn sny, is 97°. Bepaal die ko-binnehoek op die tweede lyn, en bepaal dan die hoek vertikaal-oorstaande aan daardie ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek gevorm waar die snylyn die eerste lyn sny, is 97°. Bepaal die ko-binnehoek op die tweede lyn, en bepaal dan die hoek vertikaal-oorstaande aan daardie ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '83',
           correctAnswers: ['83', '83°'],
@@ -911,7 +911,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee reguit lyne sny mekaar, soos getoon, en vorm ʼn hoek van 68°. Die hoek aangrensend daaraan op die reguit lyn is ooreenkomstig met hoek y op ʼn paar parallelle lyne wat deur ʼn transversaal gesny word. Bepaal die grootte van hoek y.',
+          question: 'Twee reguit lyne sny mekaar, soos getoon, en vorm ʼn hoek van 68°. Die hoek aangrensend daaraan op die reguit lyn is ooreenkomstig met hoek y op ʼn paar parallelle lyne wat deur ʼn snylyn gesny word. Bepaal die grootte van hoek y.',
           checkMode: 'auto',
           correctAnswer: '112',
           correctAnswers: ['112', '112°'],
@@ -920,7 +920,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. ʼn Hoek van 73° is verwisselend met hoek p. Hoek p en hoek q is ko-binnehoeke. Bepaal die grootte van hoek q.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. ʼn Hoek van 73° is verwisselend met hoek p. Hoek p en hoek q is ko-binnehoeke. Bepaal die grootte van hoek q.',
           checkMode: 'auto',
           correctAnswer: '107',
           correctAnswers: ['107', '107°'],
@@ -929,7 +929,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee reguit lyne sny mekaar by 132°, soos getoon. Hierdie hoek se vertikaal-oorstaande hoek is ooreenkomstig met hoek m op ʼn paar parallelle lyne wat deur ʼn transversaal gesny word. Hoek m is ko-binne met hoek n. Bepaal die grootte van hoek n.',
+          question: 'Twee reguit lyne sny mekaar by 132°, soos getoon. Hierdie hoek se vertikaal-oorstaande hoek is ooreenkomstig met hoek m op ʼn paar parallelle lyne wat deur ʼn snylyn gesny word. Hoek m is ko-binne met hoek n. Bepaal die grootte van hoek n.',
           checkMode: 'auto',
           correctAnswer: '48',
           correctAnswers: ['48', '48°'],
@@ -946,13 +946,13 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Transversaal sny twee lyne wat NIE parallel is nie. Naledi sê die verwisselende hoeke moet steeds gelyk wees, want "verwisselende hoeke is altyd gelyk." Is Naledi korrek? Verduidelik waarom dit saak maak dat die lyne parallel is.',
-          answer: 'Nee — Naledi is verkeerd. Die verwisselende-hoek-reël (en die ooreenkomstige- en ko-binnehoek-reëls) geld slegs wanneer die twee lyne wat deur die transversaal gesny word, parallel is. As die lyne nie parallel is nie, sal die hoeke in verwisselende posisies oor die algemeen van verskillende grootte wees, omdat daar geen konsekwente verwantskap is wat hulle dwing om te pas nie. Parallelle lyne is die sleutelvoorwaarde wat hierdie hoekverwantskappe waar maak.',
+          question: 'ʼn Snylyn sny twee lyne wat NIE parallel is nie. Naledi sê die verwisselende hoeke moet steeds gelyk wees, want "verwisselende hoeke is altyd gelyk." Is Naledi korrek? Verduidelik waarom dit saak maak dat die lyne parallel is.',
+          answer: 'Nee — Naledi is verkeerd. Die verwisselende-hoek-reël (en die ooreenkomstige- en ko-binnehoek-reëls) geld slegs wanneer die twee lyne wat deur die snylyn gesny word, parallel is. As die lyne nie parallel is nie, sal die hoeke in verwisselende posisies oor die algemeen van verskillende grootte wees, omdat daar geen konsekwente verwantskap is wat hulle dwing om te pas nie. Parallelle lyne is die sleutelvoorwaarde wat hierdie hoekverwantskappe waar maak.',
           checkMode: 'self',
         },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy het hoeke op ʼn lyn, om ʼn punt, en met parallelle lyne gesny deur ʼn transversaal bemeester, insluitend algebraïese en meerstapprobleme.' },
+        { minScore: 18, message: 'Uitstekend! Jy het hoeke op ʼn lyn, om ʼn punt, en met parallelle lyne gesny deur ʼn snylyn bemeester, insluitend algebraïese en meerstapprobleme.' },
         { minScore: 14, message: 'Uitstekende werk! Jy het ʼn sterk begrip van hierdie hoekverwantskappe. Gaan enige gemiste vrae weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur, veral die algebraïese en meerstapvrae, en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids, fokus op elke hoekverwantskap een op ʼn slag, en probeer dan hierdie stel weer.' },
@@ -1008,25 +1008,25 @@ export const topicData: TopicData = {
         // ── Blok 2: Ooreenkomstige & verwisselende hoeke (3-6) ─────────────
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 68°. Bepaal die grootte van sy ooreenkomstige hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek wat gevorm word, is 68°. Bepaal die grootte van sy ooreenkomstige hoek.',
           checkMode: 'auto',
           correctAnswer: '68',
           correctAnswers: ['68', '68°'],
-          explanation: 'Ooreenkomstige hoeke gevorm deur ʼn transversaal wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 68°.',
+          explanation: 'Ooreenkomstige hoeke gevorm deur ʼn snylyn wat parallelle lyne sny, is gelyk.\nOoreenkomstige hoek = 68°.',
           diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 113 55 A 26 26 0 0 0 73.4 32.8" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="98" y="40" font-size="14" font-weight="700" fill="#2563eb">68°</text><path d="M 167 145 A 26 26 0 0 0 127.4 122.8" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="155" y="130" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
         },
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek wat gevorm word, is 101°. Bepaal die grootte van sy verwisselende hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek wat gevorm word, is 101°. Bepaal die grootte van sy verwisselende hoek.',
           checkMode: 'auto',
           correctAnswer: '101',
           correctAnswers: ['101', '101°'],
-          explanation: 'Verwisselende hoeke gevorm deur ʼn transversaal wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 101°.',
+          explanation: 'Verwisselende hoeke gevorm deur ʼn snylyn wat parallelle lyne sny, is gelyk.\nVerwisselende hoek = 101°.',
           diagramSvg: '<svg viewBox="0 0 220 190" xmlns="http://www.w3.org/2000/svg"><line x1="15" y1="55" x2="205" y2="55" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 51 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="15" y1="145" x2="205" y2="145" stroke="#0f1f3d" stroke-width="2"/><path d="M 178 141 l 8 4 l -8 4" fill="none" stroke="#0f1f3d" stroke-width="1.5"/><line x1="55" y1="10" x2="165" y2="190" stroke="#0f1f3d" stroke-width="2"/><path d="M 59 55 A 28 28 0 0 0 101.7 78.9" fill="none" stroke="#2563eb" stroke-width="1.5"/><text x="92" y="75" font-size="14" font-weight="700" fill="#2563eb">101°</text><path d="M 169 145 A 28 28 0 0 0 126.4 121.1" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="118" y="128" font-size="15" font-weight="700" fill="#ea580c">?</text><circle cx="87" cy="55" r="2.5" fill="#0f1f3d"/><circle cx="141" cy="145" r="2.5" fill="#0f1f3d"/></svg>',
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ooreenkomstige hoek is 5x en die ander ooreenkomstige hoek is 115°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ooreenkomstige hoek is 5x en die ander ooreenkomstige hoek is 115°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '23',
           correctAnswers: ['23'],
@@ -1035,7 +1035,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een verwisselende hoek is (2x + 8)° en die ander verwisselende hoek is 90°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een verwisselende hoek is (2x + 8)° en die ander verwisselende hoek is 90°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '41',
           correctAnswers: ['41'],
@@ -1046,7 +1046,7 @@ export const topicData: TopicData = {
         // ── Blok 3: Ko-binnehoeke (7-9) ─────────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is 107°. Bepaal die grootte van die ander ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is 107°. Bepaal die grootte van die ander ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '73',
           correctAnswers: ['73', '73°'],
@@ -1055,7 +1055,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is 136°. Bepaal die grootte van die ander ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is 136°. Bepaal die grootte van die ander ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '44',
           correctAnswers: ['44', '44°'],
@@ -1064,7 +1064,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Trap het twee parallelle trapreëlings wat deur ʼn diagonale steunstut gesny word wat as ʼn transversaal optree, soos getoon. Die ko-binnehoek aan een kant is 69°. Bepaal die ko-binnehoek aan dieselfde kant tussen die ander paar trapreëlings.',
+          question: 'ʼn Trap het twee parallelle trapreëlings wat deur ʼn diagonale steunstut gesny word wat as ʼn snylyn optree, soos getoon. Die ko-binnehoek aan een kant is 69°. Bepaal die ko-binnehoek aan dieselfde kant tussen die ander paar trapreëlings.',
           checkMode: 'auto',
           correctAnswer: '111',
           correctAnswers: ['111', '111°'],
@@ -1093,7 +1093,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ooreenkomstige hoek is (3x + 9)° en die ander ooreenkomstige hoek is 96°. Bepaal die waarde van x.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ooreenkomstige hoek is (3x + 9)° en die ander ooreenkomstige hoek is 96°. Bepaal die waarde van x.',
           checkMode: 'auto',
           correctAnswer: '29',
           correctAnswers: ['29'],
@@ -1102,7 +1102,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een ko-binnehoek is (4x − 10)° en die ander is (2x + 40)°.\na) Skryf ʼn vergelyking met die ko-binnehoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een ko-binnehoek is (4x − 10)° en die ander is (2x + 40)°.\na) Skryf ʼn vergelyking met die ko-binnehoek-eienskap.\nb) Los op vir x.\nc) Bepaal die grootte van elke hoek.',
           checkMode: 'auto',
           parts: [
             {
@@ -1129,7 +1129,7 @@ export const topicData: TopicData = {
         // ── Blok 5: Meerstapkettings (14-17) ────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. Een hoek gevorm waar die transversaal die eerste lyn sny, is 85°. Bepaal die ko-binnehoek op die tweede lyn, en bepaal dan die hoek vertikaal-oorstaande aan daardie ko-binnehoek.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. Een hoek gevorm waar die snylyn die eerste lyn sny, is 85°. Bepaal die ko-binnehoek op die tweede lyn, en bepaal dan die hoek vertikaal-oorstaande aan daardie ko-binnehoek.',
           checkMode: 'auto',
           correctAnswer: '95',
           correctAnswers: ['95', '95°'],
@@ -1138,7 +1138,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee reguit lyne sny mekaar, soos getoon, en vorm ʼn hoek van 54°. Die hoek aangrensend daaraan op die reguit lyn is ooreenkomstig met hoek y op ʼn paar parallelle lyne wat deur ʼn transversaal gesny word. Bepaal die grootte van hoek y.',
+          question: 'Twee reguit lyne sny mekaar, soos getoon, en vorm ʼn hoek van 54°. Die hoek aangrensend daaraan op die reguit lyn is ooreenkomstig met hoek y op ʼn paar parallelle lyne wat deur ʼn snylyn gesny word. Bepaal die grootte van hoek y.',
           checkMode: 'auto',
           correctAnswer: '126',
           correctAnswers: ['126', '126°'],
@@ -1147,7 +1147,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee parallelle lyne word deur ʼn transversaal gesny, soos getoon. ʼn Hoek van 88° is verwisselend met hoek p. Hoek p en hoek q is ko-binnehoeke. Bepaal die grootte van hoek q.',
+          question: 'Twee parallelle lyne word deur ʼn snylyn gesny, soos getoon. ʼn Hoek van 88° is verwisselend met hoek p. Hoek p en hoek q is ko-binnehoeke. Bepaal die grootte van hoek q.',
           checkMode: 'auto',
           correctAnswer: '92',
           correctAnswers: ['92', '92°'],
@@ -1156,7 +1156,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Twee reguit lyne sny mekaar by 77°, soos getoon. Hierdie hoek se vertikaal-oorstaande hoek is ooreenkomstig met hoek m op ʼn paar parallelle lyne wat deur ʼn transversaal gesny word. Hoek m is ko-binne met hoek n. Bepaal die grootte van hoek n.',
+          question: 'Twee reguit lyne sny mekaar by 77°, soos getoon. Hierdie hoek se vertikaal-oorstaande hoek is ooreenkomstig met hoek m op ʼn paar parallelle lyne wat deur ʼn snylyn gesny word. Hoek m is ko-binne met hoek n. Bepaal die grootte van hoek n.',
           checkMode: 'auto',
           correctAnswer: '103',
           correctAnswers: ['103', '103°'],
@@ -1173,13 +1173,13 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Transversaal sny twee lyne wat NIE parallel is nie. Thandiwe sê die ko-binnehoeke moet steeds optel tot 180°, want "ko-binnehoeke is altyd supplementêr." Is Thandiwe korrek? Verduidelik waarom dit saak maak dat die lyne parallel is.',
-          answer: 'Nee — Thandiwe is verkeerd. Die ko-binnehoek-reël (en die ooreenkomstige- en verwisselende-hoek-reëls) geld slegs wanneer die twee lyne wat deur die transversaal gesny word, parallel is. As die lyne nie parallel is nie, sal die ko-binnehoeke oor die algemeen nie presies tot 180° optel nie, omdat daar geen konsekwente verwantskap is wat hulle dwing om supplementêr te wees nie. Parallelle lyne is die sleutelvoorwaarde wat hierdie hoekverwantskappe waar maak.',
+          question: 'ʼn Snylyn sny twee lyne wat NIE parallel is nie. Thandiwe sê die ko-binnehoeke moet steeds optel tot 180°, want "ko-binnehoeke is altyd supplementêr." Is Thandiwe korrek? Verduidelik waarom dit saak maak dat die lyne parallel is.',
+          answer: 'Nee — Thandiwe is verkeerd. Die ko-binnehoek-reël (en die ooreenkomstige- en verwisselende-hoek-reëls) geld slegs wanneer die twee lyne wat deur die snylyn gesny word, parallel is. As die lyne nie parallel is nie, sal die ko-binnehoeke oor die algemeen nie presies tot 180° optel nie, omdat daar geen konsekwente verwantskap is wat hulle dwing om supplementêr te wees nie. Parallelle lyne is die sleutelvoorwaarde wat hierdie hoekverwantskappe waar maak.',
           checkMode: 'self',
         },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy het hoeke op ʼn lyn, om ʼn punt, en met parallelle lyne gesny deur ʼn transversaal bemeester, insluitend algebraïese en meerstapprobleme.' },
+        { minScore: 18, message: 'Uitstekend! Jy het hoeke op ʼn lyn, om ʼn punt, en met parallelle lyne gesny deur ʼn snylyn bemeester, insluitend algebraïese en meerstapprobleme.' },
         { minScore: 14, message: 'Uitstekende werk! Jy het ʼn sterk begrip van hierdie hoekverwantskappe. Gaan enige gemiste vrae weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur, veral die algebraïese en meerstapvrae, en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan probeer — werk weer deur die studiegids, fokus op elke hoekverwantskap een op ʼn slag, en probeer dan hierdie stel weer.' },

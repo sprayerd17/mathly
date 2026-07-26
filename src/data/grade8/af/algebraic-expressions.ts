@@ -17,10 +17,10 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'conventions-like-unlike-terms',
-      title: 'Konvensies, Gelyksoortige/Ongelyksoortige Terme, Koëffisiënte en Monome',
+      title: 'Konvensies, Gelyksoortige/Ongelyksoortige Terme, Koëffisiënte en Eenterme',
       icon: '𝑥',
       explanation:
-        `<p style="margin-bottom:16px;">Ons leer die <strong>konvensies</strong> vir die skryf van algebraïese uitdrukkings (bv. 3xy nie x3y nie), klassifiseer <strong>gelyksoortige</strong> en <strong>ongelyksoortige terme</strong>, identifiseer <strong>koëffisiënte</strong> en <strong>eksponente</strong>, en herken en onderskei tussen <strong>monome</strong> (een term), <strong>binome</strong> (twee terme) en <strong>trinome</strong> (drie terme).</p>` +
+        `<p style="margin-bottom:16px;">Ons leer die <strong>konvensies</strong> vir die skryf van algebraïese uitdrukkings (bv. 3xy nie x3y nie), klassifiseer <strong>gelyksoortige</strong> en <strong>ongelyksoortige terme</strong>, identifiseer <strong>koëffisiënte</strong> en <strong>eksponente</strong>, en herken en onderskei tussen <strong>eenterme</strong> (een term), <strong>tweeterme</strong> (twee terme) en <strong>drieterme</strong> (drie terme).</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
@@ -43,8 +43,8 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Monoom / Binoom / Trinoom</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">${gr('Monoom')}: 1 term. ${gr('Binoom')}: 2 terme. ${gr('Trinoom')}: 3 terme.</p>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Eenterm / Tweeterm / Drieterm</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">${gr('Eenterm')}: 1 term. ${gr('Tweeterm')}: 2 terme. ${gr('Drieterm')}: 3 terme.</p>` +
         `</div>` +
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
@@ -61,11 +61,11 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Klassifiseer 4x²+3x−7 as ʼn monoom, binoom of trinoom.',
-          answer: `Dit is ʼn ${gr('trinoom')}`,
+          question: 'Klassifiseer 4x²+3x−7 as ʼn eenterm, tweeterm of drieterm.',
+          answer: `Dit is ʼn ${gr('drieterm')}`,
           steps: [
             `Tel die terme: ${bl('4')}x${or('²')}, ${bl('3')}x, en −7. Daar is <strong>3 terme</strong>.`,
-            `ʼn Uitdrukking met 3 terme is ʼn ${gr('trinoom')}.`,
+            `ʼn Uitdrukking met 3 terme is ʼn ${gr('drieterm')}.`,
           ],
         },
         {
@@ -82,10 +82,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat konvensies vir die skryf van algebraïese uitdrukkings verduidelik, gelyksoortige en ongelyksoortige terme, koëffisiënte, eksponente, monome, binome en trinome',
+        'Kort video wat konvensies vir die skryf van algebraïese uitdrukkings verduidelik, gelyksoortige en ongelyksoortige terme, koëffisiënte, eksponente, eenterme, tweeterme en drieterme',
 
       diagramPlaceholder:
-        'Gemerkte diagram van die term 4x² wat die koëffisiënt, veranderlike en eksponent wys, met klein voorbeelde van ʼn monoom, binoom en trinoom',
+        'Gemerkte diagram van die term 4x² wat die koëffisiënt, veranderlike en eksponent wys, met klein voorbeelde van ʼn eenterm, tweeterm en drieterm',
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 175" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
@@ -98,13 +98,13 @@ export const topicData: TopicData = {
         `<text x="185" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">eksponent</text>` +
         `<rect x="10" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
         `<text x="46" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">5x</text>` +
-        `<text x="46" y="153" text-anchor="middle" font-size="9" fill="#15803d">monoom</text>` +
+        `<text x="46" y="153" text-anchor="middle" font-size="9" fill="#15803d">eenterm</text>` +
         `<rect x="94" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
         `<text x="130" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#16a34a">3x+2</text>` +
-        `<text x="130" y="153" text-anchor="middle" font-size="9" fill="#15803d">binoom</text>` +
+        `<text x="130" y="153" text-anchor="middle" font-size="9" fill="#15803d">tweeterm</text>` +
         `<rect x="178" y="120" width="72" height="42" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>` +
         `<text x="214" y="138" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">x²+3x−7</text>` +
-        `<text x="214" y="153" text-anchor="middle" font-size="9" fill="#15803d">trinoom</text>` +
+        `<text x="214" y="153" text-anchor="middle" font-size="9" fill="#15803d">drieterm</text>` +
         `</svg>`,
     },
 
@@ -116,7 +116,7 @@ export const topicData: TopicData = {
       title: 'Uitdrukkings Optel, Aftrek, Vermenigvuldig en Deel',
       icon: '±',
       explanation:
-        `<p style="margin-bottom:16px;">Ons <strong>tel gelyksoortige terme op en trek hulle af</strong>, <strong>vermenigvuldig</strong> heelgetalle en monome met monome, binome en trinome deur die <strong>distributiewe wet</strong> te gebruik, en <strong>deel</strong> monome, binome en trinome deur heelgetalle of monome.</p>` +
+        `<p style="margin-bottom:16px;">Ons <strong>tel gelyksoortige terme op en trek hulle af</strong>, <strong>vermenigvuldig</strong> heelgetalle en eenterme met eenterme, tweeterme en drieterme deur die <strong>distributiewe wet</strong> te gebruik, en <strong>deel</strong> eenterme, tweeterme en drieterme deur heelgetalle of eenterme.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om gelyksoortige terme op te tel en af te trek, die distributiewe wet toe te pas by vermenigvuldiging, en monome te deel deur koëffisiënte te deel en eksponente af te trek',
+        'Kort video wat wys hoe om gelyksoortige terme op te tel en af te trek, die distributiewe wet toe te pas by vermenigvuldiging, en eenterme te deel deur koëffisiënte te deel en eksponente af te trek',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -254,10 +254,10 @@ export const topicData: TopicData = {
     // ── Q1 Easy ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Klassifiseer 6x+9 as ʼn monoom, binoom of trinoom.',
+      question: 'Klassifiseer 6x+9 as ʼn eenterm, tweeterm of drieterm.',
       checkMode: 'auto',
-      correctAnswer: 'binoom',
-      answer: 'binoom',
+      correctAnswer: 'tweeterm',
+      answer: 'tweeterm',
     },
 
     // ── Q2 Easy ──────────────────────────────────────────────────────────────
@@ -424,10 +424,10 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Reghoekige tafel het lengte (x+6) cm en breedte 3 cm. Skryf ʼn uitdrukking vir die oppervlakte, en brei dit uit.', checkMode: 'auto', correctAnswer: '3x+18', correctAnswers: ['3x+18', '18+3x'], answer: 'Oppervlakte = 3(x+6) = 3x+18', explanation: 'Oppervlakte van ʼn reghoek = lengte × breedte = 3(x+6).\nBrei uit: (3)(x)+(3)(6)=3x+18.\nAntwoord: 3x+18' },
 
         // Blok 3 — Faktorisering deur gemeenskaplike faktor (Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 6x+9 volledig.', checkMode: 'auto', correctAnswer: '3(2x+3)', correctAnswers: ['3(2x+3)'], answer: '3(2x+3)', explanation: 'Die GGF van 6 en 9 is 3.\nDeel elke term deur 3: 6x÷3=2x en 9÷3=3.\nAntwoord: 3(2x+3)' },
-        { difficulty: 'Medium', question: 'Faktoriseer 8x²+12x volledig.', checkMode: 'auto', correctAnswer: '4x(2x+3)', correctAnswers: ['4x(2x+3)'], answer: '4x(2x+3)', explanation: 'Die GGF van die koëffisiënte 8 en 12 is 4, en albei terme deel ʼn faktor van x.\nDeel elke term deur 4x: 8x²÷4x=2x en 12x÷4x=3.\nAntwoord: 4x(2x+3)' },
-        { difficulty: 'Medium', question: 'Faktoriseer 15xy−10x volledig.', checkMode: 'auto', correctAnswer: '5x(3y-2)', correctAnswers: ['5x(3y-2)', '5x(3y−2)'], answer: '5x(3y−2)', explanation: 'Die GGF van 15 en 10 is 5, en albei terme deel ʼn faktor van x.\nDeel elke term deur 5x: 15xy÷5x=3y en 10x÷5x=2.\nAntwoord: 5x(3y−2)' },
-        { difficulty: 'Medium', question: 'ʼn Leerder faktoriseer 12x+18 en skryf 6(2x+3). Kontroleer of dit volledig gefaktoriseer en korrek is.', checkMode: 'self', answer: 'Korrek en volledig gefaktoriseer. Kontrole: 6(2x)=12x en 6(3)=18, so die produk is reg. Die GGF van 12 en 18 is 6, en 2x en 3 deel geen verdere gemeenskaplike faktor nie, so 6(2x+3) is die volledig gefaktoriseerde vorm.' },
+        { difficulty: 'Medium', question: 'Faktoriseer 6x+9 volledig.', checkMode: 'auto', correctAnswer: '3(2x+3)', correctAnswers: ['3(2x+3)'], answer: '3(2x+3)', explanation: 'Die GGD van 6 en 9 is 3.\nDeel elke term deur 3: 6x÷3=2x en 9÷3=3.\nAntwoord: 3(2x+3)' },
+        { difficulty: 'Medium', question: 'Faktoriseer 8x²+12x volledig.', checkMode: 'auto', correctAnswer: '4x(2x+3)', correctAnswers: ['4x(2x+3)'], answer: '4x(2x+3)', explanation: 'Die GGD van die koëffisiënte 8 en 12 is 4, en albei terme deel ʼn faktor van x.\nDeel elke term deur 4x: 8x²÷4x=2x en 12x÷4x=3.\nAntwoord: 4x(2x+3)' },
+        { difficulty: 'Medium', question: 'Faktoriseer 15xy−10x volledig.', checkMode: 'auto', correctAnswer: '5x(3y-2)', correctAnswers: ['5x(3y-2)', '5x(3y−2)'], answer: '5x(3y−2)', explanation: 'Die GGD van 15 en 10 is 5, en albei terme deel ʼn faktor van x.\nDeel elke term deur 5x: 15xy÷5x=3y en 10x÷5x=2.\nAntwoord: 5x(3y−2)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder faktoriseer 12x+18 en skryf 6(2x+3). Kontroleer of dit volledig gefaktoriseer en korrek is.', checkMode: 'self', answer: 'Korrek en volledig gefaktoriseer. Kontrole: 6(2x)=12x en 6(3)=18, so die produk is reg. Die GGD van 12 en 18 is 6, en 2x en 3 deel geen verdere gemeenskaplike faktor nie, so 6(2x+3) is die volledig gefaktoriseerde vorm.' },
 
         // Blok 4 — Vervanging met negatiewe/breukwaardes (Medium-Hard)
         { difficulty: 'Medium-Hard', question: 'Bereken 3x²−2x wanneer x=−2.', checkMode: 'auto', correctAnswer: '16', answer: '16', explanation: 'Vervang x=−2: 3(−2)²−2(−2).\n(−2)²=4, dus 3(4)=12. Ook −2(−2)=+4.\n12+4=16' },
@@ -437,7 +437,7 @@ export const topicData: TopicData = {
 
         // Blok 5 — Multi-stap vereenvoudiging wat verskeie vaardighede kombineer (Hard)
         { difficulty: 'Hard', question: 'Vereenvoudig 3x(x+2)−5x.', checkMode: 'auto', correctAnswer: '3x²+x', correctAnswers: ['3x²+x', '3x^2+x', 'x+3x²'], answer: '3x²+x', explanation: 'Brei eers uit: 3x(x+2)=3x²+6x.\nTrek 5x af: 3x²+6x−5x.\nKombineer gelyksoortige terme: 6x−5x=x.\nAntwoord: 3x²+x' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 4x+8+2x, en faktoriseer dan die resultaat volledig.', checkMode: 'auto', correctAnswer: '2(3x+4)', correctAnswers: ['2(3x+4)'], answer: '2(3x+4)', explanation: 'Vereenvoudig eers: 4x+8+2x=6x+8.\nFaktoriseer: die GGF van 6 en 8 is 2.\nDeel elke term deur 2: 6x÷2=3x en 8÷2=4.\nAntwoord: 2(3x+4)' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 4x+8+2x, en faktoriseer dan die resultaat volledig.', checkMode: 'auto', correctAnswer: '2(3x+4)', correctAnswers: ['2(3x+4)'], answer: '2(3x+4)', explanation: 'Vereenvoudig eers: 4x+8+2x=6x+8.\nFaktoriseer: die GGD van 6 en 8 is 2.\nDeel elke term deur 2: 6x÷2=3x en 8÷2=4.\nAntwoord: 2(3x+4)' },
         { difficulty: 'Hard', question: 'Brei uit en vereenvoudig: 2(x+3)+3(x−1).', checkMode: 'auto', correctAnswer: '5x+3', correctAnswers: ['5x+3', '3+5x'], answer: '5x+3', explanation: 'Brei elke hakie uit: 2(x+3)=2x+6 en 3(x−1)=3x−3.\nTel op: 2x+6+3x−3.\nKombineer gelyksoortige terme: (2x+3x)+(6−3)=5x+3.\nAntwoord: 5x+3' },
 
         // Blok 6 — Foutopsporing / kritiek (Hard)
@@ -470,10 +470,10 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Klaskamerplakkaat het lengte 4 cm en breedte (x+8) cm. Skryf ʼn uitdrukking vir die oppervlakte, en brei dit uit.', checkMode: 'auto', correctAnswer: '4x+32', correctAnswers: ['4x+32', '32+4x'], answer: 'Oppervlakte = 4(x+8) = 4x+32', explanation: 'Oppervlakte van ʼn reghoek = lengte × breedte = 4(x+8).\nBrei uit: (4)(x)+(4)(8)=4x+32.\nAntwoord: 4x+32' },
 
         // Blok 3 — Faktorisering deur gemeenskaplike faktor (Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 8x+12 volledig.', checkMode: 'auto', correctAnswer: '4(2x+3)', correctAnswers: ['4(2x+3)'], answer: '4(2x+3)', explanation: 'Die GGF van 8 en 12 is 4.\nDeel elke term deur 4: 8x÷4=2x en 12÷4=3.\nAntwoord: 4(2x+3)' },
-        { difficulty: 'Medium', question: 'Faktoriseer 10x²+15x volledig.', checkMode: 'auto', correctAnswer: '5x(2x+3)', correctAnswers: ['5x(2x+3)'], answer: '5x(2x+3)', explanation: 'Die GGF van die koëffisiënte 10 en 15 is 5, en albei terme deel ʼn faktor van x.\nDeel elke term deur 5x: 10x²÷5x=2x en 15x÷5x=3.\nAntwoord: 5x(2x+3)' },
-        { difficulty: 'Medium', question: 'Faktoriseer 21xy−14x volledig.', checkMode: 'auto', correctAnswer: '7x(3y-2)', correctAnswers: ['7x(3y-2)', '7x(3y−2)'], answer: '7x(3y−2)', explanation: 'Die GGF van 21 en 14 is 7, en albei terme deel ʼn faktor van x.\nDeel elke term deur 7x: 21xy÷7x=3y en 14x÷7x=2.\nAntwoord: 7x(3y−2)' },
-        { difficulty: 'Medium', question: 'ʼn Leerder faktoriseer 20x+30 en skryf 5(4x+6). Kontroleer of dit volledig gefaktoriseer is.', checkMode: 'self', answer: 'Nie volledig gefaktoriseer nie. Kontrole van die produk: 5(4x)=20x en 5(6)=30, so die vermenigvuldiging is korrek, maar 4x en 6 deel steeds ʼn gemeenskaplike faktor van 2. Die GGF van 20 en 30 is eintlik 10, dus die volledig gefaktoriseerde vorm is 10(2x+3).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 8x+12 volledig.', checkMode: 'auto', correctAnswer: '4(2x+3)', correctAnswers: ['4(2x+3)'], answer: '4(2x+3)', explanation: 'Die GGD van 8 en 12 is 4.\nDeel elke term deur 4: 8x÷4=2x en 12÷4=3.\nAntwoord: 4(2x+3)' },
+        { difficulty: 'Medium', question: 'Faktoriseer 10x²+15x volledig.', checkMode: 'auto', correctAnswer: '5x(2x+3)', correctAnswers: ['5x(2x+3)'], answer: '5x(2x+3)', explanation: 'Die GGD van die koëffisiënte 10 en 15 is 5, en albei terme deel ʼn faktor van x.\nDeel elke term deur 5x: 10x²÷5x=2x en 15x÷5x=3.\nAntwoord: 5x(2x+3)' },
+        { difficulty: 'Medium', question: 'Faktoriseer 21xy−14x volledig.', checkMode: 'auto', correctAnswer: '7x(3y-2)', correctAnswers: ['7x(3y-2)', '7x(3y−2)'], answer: '7x(3y−2)', explanation: 'Die GGD van 21 en 14 is 7, en albei terme deel ʼn faktor van x.\nDeel elke term deur 7x: 21xy÷7x=3y en 14x÷7x=2.\nAntwoord: 7x(3y−2)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder faktoriseer 20x+30 en skryf 5(4x+6). Kontroleer of dit volledig gefaktoriseer is.', checkMode: 'self', answer: 'Nie volledig gefaktoriseer nie. Kontrole van die produk: 5(4x)=20x en 5(6)=30, so die vermenigvuldiging is korrek, maar 4x en 6 deel steeds ʼn gemeenskaplike faktor van 2. Die GGD van 20 en 30 is eintlik 10, dus die volledig gefaktoriseerde vorm is 10(2x+3).' },
 
         // Blok 4 — Vervanging met negatiewe/breukwaardes (Medium-Hard)
         { difficulty: 'Medium-Hard', question: 'Bereken 4x²−3x wanneer x=−2.', checkMode: 'auto', correctAnswer: '22', answer: '22', explanation: 'Vervang x=−2: 4(−2)²−3(−2).\n(−2)²=4, dus 4(4)=16. Ook −3(−2)=+6.\n16+6=22' },
@@ -483,7 +483,7 @@ export const topicData: TopicData = {
 
         // Blok 5 — Multi-stap vereenvoudiging wat verskeie vaardighede kombineer (Hard)
         { difficulty: 'Hard', question: 'Vereenvoudig 4x(x+3)−7x.', checkMode: 'auto', correctAnswer: '4x²+5x', correctAnswers: ['4x²+5x', '4x^2+5x', '5x+4x²'], answer: '4x²+5x', explanation: 'Brei eers uit: 4x(x+3)=4x²+12x.\nTrek 7x af: 4x²+12x−7x.\nKombineer gelyksoortige terme: 12x−7x=5x.\nAntwoord: 4x²+5x' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 6x+9+3x, en faktoriseer dan die resultaat volledig.', checkMode: 'auto', correctAnswer: '9(x+1)', correctAnswers: ['9(x+1)'], answer: '9(x+1)', explanation: 'Vereenvoudig eers: 6x+9+3x=9x+9.\nFaktoriseer: die GGF van 9 en 9 is 9.\nDeel elke term deur 9: 9x÷9=x en 9÷9=1.\nAntwoord: 9(x+1)' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 6x+9+3x, en faktoriseer dan die resultaat volledig.', checkMode: 'auto', correctAnswer: '9(x+1)', correctAnswers: ['9(x+1)'], answer: '9(x+1)', explanation: 'Vereenvoudig eers: 6x+9+3x=9x+9.\nFaktoriseer: die GGD van 9 en 9 is 9.\nDeel elke term deur 9: 9x÷9=x en 9÷9=1.\nAntwoord: 9(x+1)' },
         { difficulty: 'Hard', question: 'Brei uit en vereenvoudig: 3(x+2)+2(x−4).', checkMode: 'auto', correctAnswer: '5x-2', correctAnswers: ['5x-2', '5x−2'], answer: '5x−2', explanation: 'Brei elke hakie uit: 3(x+2)=3x+6 en 2(x−4)=2x−8.\nTel op: 3x+6+2x−8.\nKombineer gelyksoortige terme: (3x+2x)+(6−8)=5x−2.\nAntwoord: 5x−2' },
 
         // Blok 6 — Foutopsporing / kritiek (Hard)
@@ -516,10 +516,10 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Reghoekige plantbed is 5 m breed en (x+7) m lank. Skryf ʼn uitdrukking vir die oppervlakte, en brei dit uit.', checkMode: 'auto', correctAnswer: '5x+35', correctAnswers: ['5x+35', '35+5x'], answer: 'Oppervlakte = 5(x+7) = 5x+35', explanation: 'Oppervlakte van ʼn reghoek = lengte × breedte = 5(x+7).\nBrei uit: (5)(x)+(5)(7)=5x+35.\nAntwoord: 5x+35' },
 
         // Blok 3 — Faktorisering deur gemeenskaplike faktor (Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 9x+15 volledig.', checkMode: 'auto', correctAnswer: '3(3x+5)', correctAnswers: ['3(3x+5)'], answer: '3(3x+5)', explanation: 'Die GGF van 9 en 15 is 3.\nDeel elke term deur 3: 9x÷3=3x en 15÷3=5.\nAntwoord: 3(3x+5)' },
-        { difficulty: 'Medium', question: 'Faktoriseer 12x²+18x volledig.', checkMode: 'auto', correctAnswer: '6x(2x+3)', correctAnswers: ['6x(2x+3)'], answer: '6x(2x+3)', explanation: 'Die GGF van die koëffisiënte 12 en 18 is 6, en albei terme deel ʼn faktor van x.\nDeel elke term deur 6x: 12x²÷6x=2x en 18x÷6x=3.\nAntwoord: 6x(2x+3)' },
-        { difficulty: 'Medium', question: 'Faktoriseer 24xy−16x volledig.', checkMode: 'auto', correctAnswer: '8x(3y-2)', correctAnswers: ['8x(3y-2)', '8x(3y−2)'], answer: '8x(3y−2)', explanation: 'Die GGF van 24 en 16 is 8, en albei terme deel ʼn faktor van x.\nDeel elke term deur 8x: 24xy÷8x=3y en 16x÷8x=2.\nAntwoord: 8x(3y−2)' },
-        { difficulty: 'Medium', question: 'ʼn Leerder faktoriseer 16x+24 en skryf 4(4x+6). Kontroleer of dit volledig gefaktoriseer is.', checkMode: 'self', answer: 'Nie volledig gefaktoriseer nie. Kontrole van die produk: 4(4x)=16x en 4(6)=24, so die vermenigvuldiging is korrek, maar 4x en 6 deel steeds ʼn gemeenskaplike faktor van 2. Die GGF van 16 en 24 is eintlik 8, dus die volledig gefaktoriseerde vorm is 8(2x+3).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 9x+15 volledig.', checkMode: 'auto', correctAnswer: '3(3x+5)', correctAnswers: ['3(3x+5)'], answer: '3(3x+5)', explanation: 'Die GGD van 9 en 15 is 3.\nDeel elke term deur 3: 9x÷3=3x en 15÷3=5.\nAntwoord: 3(3x+5)' },
+        { difficulty: 'Medium', question: 'Faktoriseer 12x²+18x volledig.', checkMode: 'auto', correctAnswer: '6x(2x+3)', correctAnswers: ['6x(2x+3)'], answer: '6x(2x+3)', explanation: 'Die GGD van die koëffisiënte 12 en 18 is 6, en albei terme deel ʼn faktor van x.\nDeel elke term deur 6x: 12x²÷6x=2x en 18x÷6x=3.\nAntwoord: 6x(2x+3)' },
+        { difficulty: 'Medium', question: 'Faktoriseer 24xy−16x volledig.', checkMode: 'auto', correctAnswer: '8x(3y-2)', correctAnswers: ['8x(3y-2)', '8x(3y−2)'], answer: '8x(3y−2)', explanation: 'Die GGD van 24 en 16 is 8, en albei terme deel ʼn faktor van x.\nDeel elke term deur 8x: 24xy÷8x=3y en 16x÷8x=2.\nAntwoord: 8x(3y−2)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder faktoriseer 16x+24 en skryf 4(4x+6). Kontroleer of dit volledig gefaktoriseer is.', checkMode: 'self', answer: 'Nie volledig gefaktoriseer nie. Kontrole van die produk: 4(4x)=16x en 4(6)=24, so die vermenigvuldiging is korrek, maar 4x en 6 deel steeds ʼn gemeenskaplike faktor van 2. Die GGD van 16 en 24 is eintlik 8, dus die volledig gefaktoriseerde vorm is 8(2x+3).' },
 
         // Blok 4 — Vervanging met negatiewe/breukwaardes (Medium-Hard)
         { difficulty: 'Medium-Hard', question: 'Bereken 2x²−5x wanneer x=−3.', checkMode: 'auto', correctAnswer: '33', answer: '33', explanation: 'Vervang x=−3: 2(−3)²−5(−3).\n(−3)²=9, dus 2(9)=18. Ook −5(−3)=+15.\n18+15=33' },
@@ -529,7 +529,7 @@ export const topicData: TopicData = {
 
         // Blok 5 — Multi-stap vereenvoudiging wat verskeie vaardighede kombineer (Hard)
         { difficulty: 'Hard', question: 'Vereenvoudig 5x(x+1)−4x.', checkMode: 'auto', correctAnswer: '5x²+x', correctAnswers: ['5x²+x', '5x^2+x', 'x+5x²'], answer: '5x²+x', explanation: 'Brei eers uit: 5x(x+1)=5x²+5x.\nTrek 4x af: 5x²+5x−4x.\nKombineer gelyksoortige terme: 5x−4x=x.\nAntwoord: 5x²+x' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 5x+10+3x, en faktoriseer dan die resultaat volledig.', checkMode: 'auto', correctAnswer: '2(4x+5)', correctAnswers: ['2(4x+5)'], answer: '2(4x+5)', explanation: 'Vereenvoudig eers: 5x+10+3x=8x+10.\nFaktoriseer: die GGF van 8 en 10 is 2.\nDeel elke term deur 2: 8x÷2=4x en 10÷2=5.\nAntwoord: 2(4x+5)' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 5x+10+3x, en faktoriseer dan die resultaat volledig.', checkMode: 'auto', correctAnswer: '2(4x+5)', correctAnswers: ['2(4x+5)'], answer: '2(4x+5)', explanation: 'Vereenvoudig eers: 5x+10+3x=8x+10.\nFaktoriseer: die GGD van 8 en 10 is 2.\nDeel elke term deur 2: 8x÷2=4x en 10÷2=5.\nAntwoord: 2(4x+5)' },
         { difficulty: 'Hard', question: 'Brei uit en vereenvoudig: 4(x+1)+2(x−5).', checkMode: 'auto', correctAnswer: '6x-6', correctAnswers: ['6x-6', '6x−6'], answer: '6x−6', explanation: 'Brei elke hakie uit: 4(x+1)=4x+4 en 2(x−5)=2x−10.\nTel op: 4x+4+2x−10.\nKombineer gelyksoortige terme: (4x+2x)+(4−10)=6x−6.\nAntwoord: 6x−6' },
 
         // Blok 6 — Foutopsporing / kritiek (Hard)

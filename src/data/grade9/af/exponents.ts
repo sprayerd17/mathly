@@ -20,7 +20,7 @@ export const topicData: TopicData = {
       title: 'Uitbreiding van die Wette van Eksponente na Heelgetal-eksponente',
       icon: 'xⁿ',
       explanation:
-        `<p style="margin-bottom:16px;">In Graad 8 het jy die vyf wette van eksponente vir natuurlike getal-eksponente opgestel. Ons ${bl('brei')} nou hierdie wette uit om ${or('heelgetal (negatiewe) eksponente')} in te sluit. Die sleutelreël is ${or('a⁻ᵏ')} = ${bl('1 / aᵏ')} — ʼn ${or('negatiewe eksponent')} beteken jy neem die ${bl('resiprook')} van die grondgetal verhef tot die positiewe weergawe van daardie eksponent. Die resultaat is altyd ʼn ${gr('positiewe breuk')} wanneer die grondgetal groter as 1 is.</p>` +
+        `<p style="margin-bottom:16px;">In Graad 8 het jy die vyf wette van eksponente vir natuurlike getal-eksponente opgestel. Ons ${bl('brei')} nou hierdie wette uit om ${or('heelgetal (negatiewe) eksponente')} in te sluit. Die sleutelreël is ${or('a⁻ᵏ')} = ${bl('1 / aᵏ')} — ʼn ${or('negatiewe eksponent')} beteken jy neem die ${bl('resiprook')} van die grondtal verhef tot die positiewe weergawe van daardie eksponent. Die resultaat is altyd ʼn ${gr('positiewe breuk')} wanneer die grondtal groter as 1 is.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -70,7 +70,7 @@ export const topicData: TopicData = {
           question: 'Vereenvoudig 5² × 5⁻⁴.',
           answer: `5² × ${or('5⁻⁴')} = ${bl('5⁻²')} = ${gr('1/25')}`,
           steps: [
-            `Dieselfde grondgetal — ${bl('tel die eksponente bymekaar')}: 5² × ${or('5⁻⁴')} = 5^(2 + (${or('−4')})) = ${bl('5⁻²')}`,
+            `Dieselfde grondtal — ${bl('tel die eksponente bymekaar')}: 5² × ${or('5⁻⁴')} = 5^(2 + (${or('−4')})) = ${bl('5⁻²')}`,
             `Pas die ${or('negatiewe-eksponentreël')} toe: ${bl('5⁻²')} = ${bl('1/5²')}`,
             `Bereken: 5² = 25`,
             `<strong>Antwoord:</strong> 5² × ${or('5⁻⁴')} = ${gr('1/25')} ✓`,
@@ -98,14 +98,14 @@ export const topicData: TopicData = {
           answer: '1/16',
           checkMode: 'auto',
           correctAnswer: '1/16',
-          explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n4³ × 4⁻⁵ = 4^(3 + (−5)) = 4⁻²\nPas negatiewe-eksponentreël toe:\n4⁻² = 1/4² = 1/16 ✓',
+          explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n4³ × 4⁻⁵ = 4^(3 + (−5)) = 4⁻²\nPas negatiewe-eksponentreël toe:\n4⁻² = 1/4² = 1/16 ✓',
         },
 
         // ── Q3 Hard ───────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
           question: 'Sipho sê 2⁻⁴ = −16. Is hy korrek? Verduidelik.',
-          answer: 'Nee — 2⁻⁴ = 1/2⁴ = 1/16, ʼn positiewe breuk, nie −16 nie. ʼn Negatiewe eksponent maak nie die resultaat negatief nie; dit beteken neem die resiprook van die grondgetal verhef tot die positiewe eksponent.',
+          answer: 'Nee — 2⁻⁴ = 1/2⁴ = 1/16, ʼn positiewe breuk, nie −16 nie. ʼn Negatiewe eksponent maak nie die resultaat negatief nie; dit beteken neem die resiprook van die grondtal verhef tot die positiewe eksponent.',
           checkMode: 'self',
         },
       ],
@@ -300,12 +300,12 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
-        `<p style="margin:0;font-size:14px;">${bl('Vermenigvuldig dieselfde grondgetal:')} aᵐ × aⁿ = a^(m+n) — <em>tel</em> die eksponente bymekaar</p>` +
+        `<p style="margin:0;font-size:14px;">${bl('Vermenigvuldig dieselfde grondtal:')} aᵐ × aⁿ = a^(m+n) — <em>tel</em> die eksponente bymekaar</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
-        `<p style="margin:0;font-size:14px;">${bl('Deel dieselfde grondgetal:')} aᵐ ÷ aⁿ = a^(m−n) — <em>trek</em> die eksponente van mekaar af</p>` +
+        `<p style="margin:0;font-size:14px;">${bl('Deel dieselfde grondtal:')} aᵐ ÷ aⁿ = a^(m−n) — <em>trek</em> die eksponente van mekaar af</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
@@ -345,7 +345,7 @@ export const topicData: TopicData = {
           question: 'Vereenvoudig 4³ ÷ 4⁻².',
           answer: `4³ ÷ ${or('4⁻²')} = ${bl('4⁵')} = ${gr('1024')}`,
           steps: [
-            `${bl('Deel-dieselfde-grondgetal-reël:')} trek die eksponente van mekaar af: 4³ ÷ ${or('4⁻²')} = 4^(3 − (${or('−2')})) = 4^(3 + 2) = ${bl('4⁵')}`,
+            `${bl('Deel-dieselfde-grondtal-reël:')} trek die eksponente van mekaar af: 4³ ÷ ${or('4⁻²')} = 4^(3 − (${or('−2')})) = 4^(3 + 2) = ${bl('4⁵')}`,
             `Bereken: 4⁵ = 4 × 4 × 4 × 4 × 4 = 1024`,
             `<strong>Antwoord:</strong> 4³ ÷ ${or('4⁻²')} = ${gr('1024')} ✓`,
           ],
@@ -355,7 +355,7 @@ export const topicData: TopicData = {
           answer: `Totale massa = ${gr('1 × 10⁻⁶ gram')}`,
           steps: [
             `Vermenigvuldig: 5 × (2 × ${or('10⁻⁷')}) = (5 × 2) × ${or('10⁻⁷')} = 10 × ${or('10⁻⁷')}`,
-            `${bl('Vermenigvuldig dieselfde grondgetal:')} 10 × ${or('10⁻⁷')} = 10¹ × ${or('10⁻⁷')} = 10^(1 + (${or('−7')})) = ${bl('10⁻⁶')}`,
+            `${bl('Vermenigvuldig dieselfde grondtal:')} 10 × ${or('10⁻⁷')} = 10¹ × ${or('10⁻⁷')} = 10^(1 + (${or('−7')})) = ${bl('10⁻⁶')}`,
             `Pas aan na wetenskaplike notasie: 10 is nie tussen 1 en 10 nie, dus herskryf 10 × ${or('10⁻⁷')} = 1 × 10¹ × ${or('10⁻⁷')} = 1 × ${bl('10⁻⁶')}`,
             `<strong>Antwoord:</strong> Totale massa = ${gr('1 × 10⁻⁶ gram')} ✓`,
           ],
@@ -382,7 +382,7 @@ export const topicData: TopicData = {
           answer: '216',
           checkMode: 'auto',
           correctAnswer: '216',
-          explanation: 'Deel dieselfde grondgetal — trek eksponente van mekaar af:\n6² ÷ 6⁻¹ = 6^(2 − (−1)) = 6^(2 + 1) = 6³\nBereken: 6³ = 216 ✓',
+          explanation: 'Deel dieselfde grondtal — trek eksponente van mekaar af:\n6² ÷ 6⁻¹ = 6^(2 − (−1)) = 6^(2 + 1) = 6³\nBereken: 6³ = 216 ✓',
         },
 
         // ── Q9 Hard ───────────────────────────────────────────────────────────
@@ -411,7 +411,7 @@ export const topicData: TopicData = {
           answer: '49',
           checkMode: 'auto',
           correctAnswer: '49',
-          explanation: 'Vermenigvuldig dieselfde grondgetal — tel eksponente bymekaar:\n7⁻¹ × 7³ = 7^(−1 + 3) = 7² = 49 ✓',
+          explanation: 'Vermenigvuldig dieselfde grondtal — tel eksponente bymekaar:\n7⁻¹ × 7³ = 7^(−1 + 3) = 7² = 49 ✓',
         },
 
         // ── Q12 Hard ──────────────────────────────────────────────────────────
@@ -429,7 +429,7 @@ export const topicData: TopicData = {
           answer: '1000',
           checkMode: 'auto',
           correctAnswer: '1000',
-          explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n10⁻³ × 10⁵ = 10^(−3 + 5) = 10²\n10² ÷ 10⁻¹ = 10^(2 − (−1)) = 10³ = 1000 ✓',
+          explanation: 'Pas vermenigvuldig/deel met dieselfde grondtal van links na regs toe:\n10⁻³ × 10⁵ = 10^(−3 + 5) = 10²\n10² ÷ 10⁻¹ = 10^(2 − (−1)) = 10³ = 1000 ✓',
         },
 
         // ── Q14 Hard ──────────────────────────────────────────────────────────
@@ -447,7 +447,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Sipho sê negatiewe eksponente maak altyd ʼn getal kleiner as 1. Is hy korrek? Verduidelik met redenasie.',
-          answer: 'Ja (vir ʼn grondgetal groter as 1) — ʼn negatiewe eksponent verteenwoordig ʼn resiprook, wat ʼn breuk kleiner as 1 gee wanneer die grondgetal groter as 1 is.',
+          answer: 'Ja (vir ʼn grondtal groter as 1) — ʼn negatiewe eksponent verteenwoordig ʼn resiprook, wat ʼn breuk kleiner as 1 gee wanneer die grondtal groter as 1 is.',
           checkMode: 'self',
         },
       ],
@@ -478,14 +478,14 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Bereken 6⁻² en gee jou antwoord as ʼn breuk.', answer: '1/36', checkMode: 'auto', correctAnswer: '1/36', explanation: '6⁻² = 1/6² = 1/36 ✓' },
 
         // Blok 2 — Vermenigvuldigingswet met negatiewe eksponente (V5-7)
-        { difficulty: 'Medium', question: 'Vereenvoudig 3⁵ × 3⁻².', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n3⁵ × 3⁻² = 3^(5 + (−2)) = 3³ = 27 ✓' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 2⁻³ × 2⁷.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n2⁻³ × 2⁷ = 2^(−3 + 7) = 2⁴ = 16 ✓' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 6⁴ × 6⁻⁶, en gee jou antwoord as ʼn breuk.', answer: '1/36', checkMode: 'auto', correctAnswer: '1/36', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n6⁴ × 6⁻⁶ = 6^(4 + (−6)) = 6⁻² = 1/6² = 1/36 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 3⁵ × 3⁻².', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n3⁵ × 3⁻² = 3^(5 + (−2)) = 3³ = 27 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 2⁻³ × 2⁷.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n2⁻³ × 2⁷ = 2^(−3 + 7) = 2⁴ = 16 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 6⁴ × 6⁻⁶, en gee jou antwoord as ʼn breuk.', answer: '1/36', checkMode: 'auto', correctAnswer: '1/36', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n6⁴ × 6⁻⁶ = 6^(4 + (−6)) = 6⁻² = 1/6² = 1/36 ✓' },
 
         // Blok 3 — Delingswet met negatiewe eksponente (V8-10)
-        { difficulty: 'Medium', question: 'Vereenvoudig 5² ÷ 5⁻³.', answer: '3125', checkMode: 'auto', correctAnswer: '3125', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n5² ÷ 5⁻³ = 5^(2 − (−3)) = 5⁵ = 3125 ✓' },
-        { difficulty: 'Medium', question: 'Bepaal die waarde van 7⁻² ÷ 7⁻⁵.', answer: '343', checkMode: 'auto', correctAnswer: '343', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n7⁻² ÷ 7⁻⁵ = 7^(−2 − (−5)) = 7³ = 343 ✓' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻¹ ÷ 3², en gee jou antwoord as ʼn breuk.', answer: '1/27', checkMode: 'auto', correctAnswer: '1/27', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n3⁻¹ ÷ 3² = 3^(−1 − 2) = 3⁻³ = 1/27 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 5² ÷ 5⁻³.', answer: '3125', checkMode: 'auto', correctAnswer: '3125', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n5² ÷ 5⁻³ = 5^(2 − (−3)) = 5⁵ = 3125 ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die waarde van 7⁻² ÷ 7⁻⁵.', answer: '343', checkMode: 'auto', correctAnswer: '343', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n7⁻² ÷ 7⁻⁵ = 7^(−2 − (−5)) = 7³ = 343 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻¹ ÷ 3², en gee jou antwoord as ʼn breuk.', answer: '1/27', checkMode: 'auto', correctAnswer: '1/27', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n3⁻¹ ÷ 3² = 3^(−1 − 2) = 3⁻³ = 1/27 ✓' },
 
         // Blok 4 — Mag van ʼn mag met negatiewe eksponente (V11-13)
         { difficulty: 'Medium', question: 'Vereenvoudig (6⁻²)².', answer: '1/1296', checkMode: 'auto', correctAnswer: '1/1296', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(6⁻²)² = 6^(−2 × 2) = 6⁻⁴ = 1/1296 ✓' },
@@ -498,10 +498,10 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Zanele skryf 0,000416 in wetenskaplike notasie as 4,16 × 10⁻⁴. Kontroleer haar antwoord.', answer: 'Korrek — deur die desimaal 4 plekke na regs te skuif vanaf 0,000416 kry jy 4,16, wat 4,16 × 10⁻⁴ bevestig.', checkMode: 'self' },
 
         // Blok 6 — Gekombineerde wette, meerstap- en werklike-lewe-probleme (V17-20)
-        { difficulty: 'Hard', question: 'Vereenvoudig 2⁷ × 2⁻⁴ ÷ 2².', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n2⁷ × 2⁻⁴ = 2^(7 + (−4)) = 2³\n2³ ÷ 2² = 2^(3 − 2) = 2¹ = 2 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 2⁷ × 2⁻⁴ ÷ 2².', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Pas vermenigvuldig/deel met dieselfde grondtal van links na regs toe:\n2⁷ × 2⁻⁴ = 2^(7 + (−4)) = 2³\n2³ ÷ 2² = 2^(3 − 2) = 2¹ = 2 ✓' },
         { difficulty: 'Hard', question: 'ʼn Huidsel het ʼn massa van 3 × 10⁻⁸ gram. Bepaal die totale massa van 5 huidselle in wetenskaplike notasie.', answer: '1,5 × 10⁻⁷ gram', checkMode: 'auto', correctAnswer: '1,5 × 10⁻⁷ gram', correctAnswers: ['1,5 × 10⁻⁷ gram', '1,5×10⁻⁷ gram', '1,5x10⁻⁷ gram', '1,5e-7 gram', '1,5 × 10⁻⁷'], explanation: 'Vermenigvuldig: 5 × (3 × 10⁻⁸) = 15 × 10⁻⁸\nPas aan na wetenskaplike notasie: 15 × 10⁻⁸ = 1,5 × 10¹ × 10⁻⁸ = 1,5 × 10⁻⁷ gram ✓' },
         { difficulty: 'Hard', question: 'Karabo sê 4⁻¹ × 4⁰ × 4³ vereenvoudig tot 4². Is hy korrek? Verduidelik.', answer: 'Ja — deur die eksponente bymekaar te tel kry jy −1 + 0 + 3 = 2, dus 4⁻¹ × 4⁰ × 4³ = 4² = 16.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 10⁻³ × 10⁶ ÷ 10².', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n10⁻³ × 10⁶ = 10^(−3 + 6) = 10³\n10³ ÷ 10² = 10^(3 − 2) = 10¹ = 10 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 10⁻³ × 10⁶ ÷ 10².', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Pas vermenigvuldig/deel met dieselfde grondtal van links na regs toe:\n10⁻³ × 10⁶ = 10^(−3 + 6) = 10³\n10³ ÷ 10² = 10^(3 − 2) = 10¹ = 10 ✓' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Uitstekend! Jy het heelgetal-eksponente en wetenskaplike notasie bemeester.' },
@@ -524,14 +524,14 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Bereken 9⁻² en gee jou antwoord as ʼn breuk.', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: '9⁻² = 1/9² = 1/81 ✓' },
 
         // Blok 2 — Vermenigvuldigingswet met negatiewe eksponente (V5-7)
-        { difficulty: 'Medium', question: 'Vereenvoudig 4⁶ × 4⁻⁴.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n4⁶ × 4⁻⁴ = 4^(6 + (−4)) = 4² = 16 ✓' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 3⁻² × 3⁶.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n3⁻² × 3⁶ = 3^(−2 + 6) = 3⁴ = 81 ✓' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 5³ × 5⁻⁶, en gee jou antwoord as ʼn breuk.', answer: '1/125', checkMode: 'auto', correctAnswer: '1/125', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n5³ × 5⁻⁶ = 5^(3 + (−6)) = 5⁻³ = 1/5³ = 1/125 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 4⁶ × 4⁻⁴.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n4⁶ × 4⁻⁴ = 4^(6 + (−4)) = 4² = 16 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 3⁻² × 3⁶.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n3⁻² × 3⁶ = 3^(−2 + 6) = 3⁴ = 81 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 5³ × 5⁻⁶, en gee jou antwoord as ʼn breuk.', answer: '1/125', checkMode: 'auto', correctAnswer: '1/125', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n5³ × 5⁻⁶ = 5^(3 + (−6)) = 5⁻³ = 1/5³ = 1/125 ✓' },
 
         // Blok 3 — Delingswet met negatiewe eksponente (V8-10)
-        { difficulty: 'Medium', question: 'Vereenvoudig 9¹ ÷ 9⁻³.', answer: '6561', checkMode: 'auto', correctAnswer: '6561', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n9¹ ÷ 9⁻³ = 9^(1 − (−3)) = 9⁴ = 6561 ✓' },
-        { difficulty: 'Medium', question: 'Bepaal die waarde van 6⁻¹ ÷ 6⁻⁴.', answer: '216', checkMode: 'auto', correctAnswer: '216', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n6⁻¹ ÷ 6⁻⁴ = 6^(−1 − (−4)) = 6³ = 216 ✓' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 2⁻² ÷ 2³, en gee jou antwoord as ʼn breuk.', answer: '1/32', checkMode: 'auto', correctAnswer: '1/32', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n2⁻² ÷ 2³ = 2^(−2 − 3) = 2⁻⁵ = 1/32 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 9¹ ÷ 9⁻³.', answer: '6561', checkMode: 'auto', correctAnswer: '6561', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n9¹ ÷ 9⁻³ = 9^(1 − (−3)) = 9⁴ = 6561 ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die waarde van 6⁻¹ ÷ 6⁻⁴.', answer: '216', checkMode: 'auto', correctAnswer: '216', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n6⁻¹ ÷ 6⁻⁴ = 6^(−1 − (−4)) = 6³ = 216 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 2⁻² ÷ 2³, en gee jou antwoord as ʼn breuk.', answer: '1/32', checkMode: 'auto', correctAnswer: '1/32', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n2⁻² ÷ 2³ = 2^(−2 − 3) = 2⁻⁵ = 1/32 ✓' },
 
         // Blok 4 — Mag van ʼn mag met negatiewe eksponente (V11-13)
         { difficulty: 'Medium', question: 'Vereenvoudig (3⁻²)².', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(3⁻²)² = 3^(−2 × 2) = 3⁻⁴ = 1/81 ✓' },
@@ -544,10 +544,10 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Thabo skryf 0,000029 in wetenskaplike notasie as 2,9 × 10⁻⁵. Kontroleer sy antwoord.', answer: 'Korrek — deur die desimaal 5 plekke na regs te skuif vanaf 0,000029 kry jy 2,9, wat 2,9 × 10⁻⁵ bevestig.', checkMode: 'self' },
 
         // Blok 6 — Gekombineerde wette, meerstap- en werklike-lewe-probleme (V17-20)
-        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻² × 3⁵ ÷ 3⁻¹.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n3⁻² × 3⁵ = 3^(−2 + 5) = 3³\n3³ ÷ 3⁻¹ = 3^(3 − (−1)) = 3⁴ = 81 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻² × 3⁵ ÷ 3⁻¹.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Pas vermenigvuldig/deel met dieselfde grondtal van links na regs toe:\n3⁻² × 3⁵ = 3^(−2 + 5) = 3³\n3³ ÷ 3⁻¹ = 3^(3 − (−1)) = 3⁴ = 81 ✓' },
         { difficulty: 'Hard', question: 'ʼn Bakterium het ʼn massa van 6 × 10⁻¹¹ gram. Bepaal die totale massa van 3 bakterieë in wetenskaplike notasie.', answer: '1,8 × 10⁻¹⁰ gram', checkMode: 'auto', correctAnswer: '1,8 × 10⁻¹⁰ gram', correctAnswers: ['1,8 × 10⁻¹⁰ gram', '1,8×10⁻¹⁰ gram', '1,8x10⁻¹⁰ gram', '1,8e-10 gram', '1,8 × 10⁻¹⁰'], explanation: 'Vermenigvuldig: 3 × (6 × 10⁻¹¹) = 18 × 10⁻¹¹\nPas aan na wetenskaplike notasie: 18 × 10⁻¹¹ = 1,8 × 10¹ × 10⁻¹¹ = 1,8 × 10⁻¹⁰ gram ✓' },
         { difficulty: 'Hard', question: 'Amahle sê 6⁻² × 6⁵ is gelyk aan 216. Is sy korrek? Verduidelik.', answer: 'Ja — deur die eksponente bymekaar te tel kry jy −2 + 5 = 3, dus 6⁻² × 6⁵ = 6³ = 216.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 5⁻² × 5⁴ ÷ 5⁻¹.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n5⁻² × 5⁴ = 5^(−2 + 4) = 5²\n5² ÷ 5⁻¹ = 5^(2 − (−1)) = 5³ = 125 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 5⁻² × 5⁴ ÷ 5⁻¹.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: 'Pas vermenigvuldig/deel met dieselfde grondtal van links na regs toe:\n5⁻² × 5⁴ = 5^(−2 + 4) = 5²\n5² ÷ 5⁻¹ = 5^(2 − (−1)) = 5³ = 125 ✓' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Uitstekend! Jy het heelgetal-eksponente en wetenskaplike notasie bemeester.' },
@@ -570,14 +570,14 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Bereken 6⁻³ en gee jou antwoord as ʼn breuk.', answer: '1/216', checkMode: 'auto', correctAnswer: '1/216', explanation: '6⁻³ = 1/6³ = 1/216 ✓' },
 
         // Blok 2 — Vermenigvuldigingswet met negatiewe eksponente (V5-7)
-        { difficulty: 'Medium', question: 'Vereenvoudig 7⁻³ × 7⁻¹.', answer: '1/2401', checkMode: 'auto', correctAnswer: '1/2401', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n7⁻³ × 7⁻¹ = 7^(−3 + (−1)) = 7⁻⁴ = 1/7⁴ = 1/2401 ✓' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 2⁵ × 2⁻⁸.', answer: '1/8', checkMode: 'auto', correctAnswer: '1/8', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n2⁵ × 2⁻⁸ = 2^(5 + (−8)) = 2⁻³ = 1/2³ = 1/8 ✓' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 9⁻¹ × 9⁻², en gee jou antwoord as ʼn breuk.', answer: '1/729', checkMode: 'auto', correctAnswer: '1/729', explanation: 'Dieselfde grondgetal — tel eksponente bymekaar:\n9⁻¹ × 9⁻² = 9^(−1 + (−2)) = 9⁻³ = 1/9³ = 1/729 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 7⁻³ × 7⁻¹.', answer: '1/2401', checkMode: 'auto', correctAnswer: '1/2401', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n7⁻³ × 7⁻¹ = 7^(−3 + (−1)) = 7⁻⁴ = 1/7⁴ = 1/2401 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 2⁵ × 2⁻⁸.', answer: '1/8', checkMode: 'auto', correctAnswer: '1/8', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n2⁵ × 2⁻⁸ = 2^(5 + (−8)) = 2⁻³ = 1/2³ = 1/8 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 9⁻¹ × 9⁻², en gee jou antwoord as ʼn breuk.', answer: '1/729', checkMode: 'auto', correctAnswer: '1/729', explanation: 'Dieselfde grondtal — tel eksponente bymekaar:\n9⁻¹ × 9⁻² = 9^(−1 + (−2)) = 9⁻³ = 1/9³ = 1/729 ✓' },
 
         // Blok 3 — Delingswet met negatiewe eksponente (V8-10)
-        { difficulty: 'Medium', question: 'Vereenvoudig 9² ÷ 9⁻¹.', answer: '729', checkMode: 'auto', correctAnswer: '729', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n9² ÷ 9⁻¹ = 9^(2 − (−1)) = 9³ = 729 ✓' },
-        { difficulty: 'Medium', question: 'Bepaal die waarde van 7³ ÷ 7⁻².', answer: '16807', checkMode: 'auto', correctAnswer: '16807', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n7³ ÷ 7⁻² = 7^(3 − (−2)) = 7⁵ = 16807 ✓' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻³ ÷ 3⁻¹, en gee jou antwoord as ʼn breuk.', answer: '1/9', checkMode: 'auto', correctAnswer: '1/9', explanation: 'Dieselfde grondgetal — trek eksponente van mekaar af:\n3⁻³ ÷ 3⁻¹ = 3^(−3 − (−1)) = 3⁻² = 1/9 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 9² ÷ 9⁻¹.', answer: '729', checkMode: 'auto', correctAnswer: '729', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n9² ÷ 9⁻¹ = 9^(2 − (−1)) = 9³ = 729 ✓' },
+        { difficulty: 'Medium', question: 'Bepaal die waarde van 7³ ÷ 7⁻².', answer: '16807', checkMode: 'auto', correctAnswer: '16807', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n7³ ÷ 7⁻² = 7^(3 − (−2)) = 7⁵ = 16807 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 3⁻³ ÷ 3⁻¹, en gee jou antwoord as ʼn breuk.', answer: '1/9', checkMode: 'auto', correctAnswer: '1/9', explanation: 'Dieselfde grondtal — trek eksponente van mekaar af:\n3⁻³ ÷ 3⁻¹ = 3^(−3 − (−1)) = 3⁻² = 1/9 ✓' },
 
         // Blok 4 — Mag van ʼn mag met negatiewe eksponente (V11-13)
         { difficulty: 'Medium', question: 'Vereenvoudig (6⁻¹)⁻².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Mag van ʼn mag — vermenigvuldig eksponente:\n(6⁻¹)⁻² = 6^(−1 × −2) = 6² = 36 ✓' },
@@ -590,10 +590,10 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Lerato skryf 0,000625 in wetenskaplike notasie as 6,25 × 10⁻⁴. Kontroleer haar antwoord.', answer: 'Korrek — deur die desimaal 4 plekke na regs te skuif vanaf 0,000625 kry jy 6,25, wat 6,25 × 10⁻⁴ bevestig.', checkMode: 'self' },
 
         // Blok 6 — Gekombineerde wette, meerstap- en werklike-lewe-probleme (V17-20)
-        { difficulty: 'Hard', question: 'Vereenvoudig 7² × 7⁻³ ÷ 7⁻².', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n7² × 7⁻³ = 7^(2 + (−3)) = 7⁻¹\n7⁻¹ ÷ 7⁻² = 7^(−1 − (−2)) = 7¹ = 7 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 7² × 7⁻³ ÷ 7⁻².', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Pas vermenigvuldig/deel met dieselfde grondtal van links na regs toe:\n7² × 7⁻³ = 7^(2 + (−3)) = 7⁻¹\n7⁻¹ ÷ 7⁻² = 7^(−1 − (−2)) = 7¹ = 7 ✓' },
         { difficulty: 'Hard', question: 'ʼn Haar het ʼn breedte van 8 × 10⁻⁵ meter. Bepaal die gesamentlike breedte van 200 hare langs mekaar geplaas, in wetenskaplike notasie.', answer: '1,6 × 10⁻² meter', checkMode: 'auto', correctAnswer: '1,6 × 10⁻² meter', correctAnswers: ['1,6 × 10⁻² meter', '1,6×10⁻² meter', '1,6x10⁻² meter', '1,6e-2 meter', '1,6 × 10⁻²', '1,6 × 10⁻² m'], explanation: 'Vermenigvuldig: 200 × (8 × 10⁻⁵) = 1600 × 10⁻⁵\nPas aan na wetenskaplike notasie: 1600 × 10⁻⁵ = 1,6 × 10³ × 10⁻⁵ = 1,6 × 10⁻² meter ✓' },
         { difficulty: 'Hard', question: 'Sipho sê 2⁻⁴ × 2⁶ is gelyk aan 4. Is hy korrek? Verduidelik.', answer: 'Ja — deur die eksponente bymekaar te tel kry jy −4 + 6 = 2, dus 2⁻⁴ × 2⁶ = 2² = 4.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Vereenvoudig 6⁻³ × 6⁷ ÷ 6².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Pas vermenigvuldig/deel met dieselfde grondgetal van links na regs toe:\n6⁻³ × 6⁷ = 6^(−3 + 7) = 6⁴\n6⁴ ÷ 6² = 6^(4 − 2) = 6² = 36 ✓' },
+        { difficulty: 'Hard', question: 'Vereenvoudig 6⁻³ × 6⁷ ÷ 6².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Pas vermenigvuldig/deel met dieselfde grondtal van links na regs toe:\n6⁻³ × 6⁷ = 6^(−3 + 7) = 6⁴\n6⁴ ÷ 6² = 6^(4 − 2) = 6² = 36 ✓' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Uitstekend! Jy het heelgetal-eksponente en wetenskaplike notasie bemeester.' },

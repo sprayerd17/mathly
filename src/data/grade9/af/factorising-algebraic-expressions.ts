@@ -20,7 +20,7 @@ export const topicData: TopicData = {
       title: 'Faktorisering deur Gemeenskaplike Faktore',
       icon: '÷',
       explanation:
-        `<p style="margin-bottom:16px;">Faktorisering beteken om ʼn uitdrukking te skryf as ʼn <strong>produk van sy faktore</strong> — die omgekeerde van uitbreiding. Ons vind die <strong>grootste gemene faktor (GGF)</strong> van al die terme en skryf dit buite hakies, met die oorblywende dele binne.</p>` +
+        `<p style="margin-bottom:16px;">Faktorisering beteken om ʼn uitdrukking te skryf as ʼn <strong>produk van sy faktore</strong> — die omgekeerde van uitbreiding. Ons vind die <strong>grootste gemene deler (GGD)</strong> van al die terme en skryf dit buite hakies, met die oorblywende dele binne.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
@@ -28,29 +28,29 @@ export const topicData: TopicData = {
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('oorblywende uitdrukking')}</span>` +
         `</div>` +
 
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om die GGF te vind en uit te faktoriseer</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om die GGD te vind en uit te faktoriseer</p>` +
         `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
-        `<p style="margin:0;font-size:14px;">Vind die ${bl('GGF')} van die numeriese koëffisiënte van al die terme.</p>` +
+        `<p style="margin:0;font-size:14px;">Vind die ${bl('GGD')} van die numeriese koëffisiënte van al die terme.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
-        `<p style="margin:0;font-size:14px;">Vind die ${bl('GGF')} van enige veranderlike dele — die laagste mag van elke veranderlike wat in elke term voorkom.</p>` +
+        `<p style="margin:0;font-size:14px;">Vind die ${bl('GGD')} van enige veranderlike dele — die laagste mag van elke veranderlike wat in elke term voorkom.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
-        `<p style="margin:0;font-size:14px;">Skryf die ${bl('GGF')} buite die hakies en deel elke term daardeur om die ${gr('oorblywende uitdrukking')} binne die hakies te kry.</p>` +
+        `<p style="margin:0;font-size:14px;">Skryf die ${bl('GGD')} buite die hakies en deel elke term daardeur om die ${gr('oorblywende uitdrukking')} binne die hakies te kry.</p>` +
         `</div>` +
 
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Kontroleer jou antwoord</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Brei altyd jou antwoord uit om te bevestig dat dit ooreenstem met die oorspronklike uitdrukking. As ${bl('GGF')} × ${gr('hakie')} = oorspronklike uitdrukking, is jou faktorisering korrek.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Brei altyd jou antwoord uit om te bevestig dat dit ooreenstem met die oorspronklike uitdrukking. As ${bl('GGD')} × ${gr('hakie')} = oorspronklike uitdrukking, is jou faktorisering korrek.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -58,7 +58,7 @@ export const topicData: TopicData = {
           question: 'Faktoriseer 6x² + 9x.',
           answer: `${bl('3x')}(${gr('2x + 3')})`,
           steps: [
-            `Vind die ${bl('GGF')} van 6x² en 9x. GGF van 6 en 9 is 3; GGF van x² en x is x. Dus ${bl('GGF = 3x')}.`,
+            `Vind die ${bl('GGD')} van 6x² en 9x. GGD van 6 en 9 is 3; GGD van x² en x is x. Dus ${bl('GGD = 3x')}.`,
             `Faktoriseer ${bl('3x')} uit: deel elke term deur ${bl('3x')} om die ${gr('oorblywende uitdrukking')} te kry: 6x² ÷ 3x = ${gr('2x')} en 9x ÷ 3x = ${gr('3')}.`,
             `Skryf die gefaktoriseerde vorm: ${bl('3x')}(${gr('2x + 3')}).`,
             `<strong>Kontroleer:</strong> ${bl('3x')} × ${gr('2x')} = 6x² en ${bl('3x')} × ${gr('3')} = 9x → 6x² + 9x ✓`,
@@ -68,7 +68,7 @@ export const topicData: TopicData = {
           question: 'Faktoriseer 12x³ − 8x² + 4x.',
           answer: `${bl('4x')}(${gr('3x² − 2x + 1')})`,
           steps: [
-            `Vind die ${bl('GGF')} van 12x³, 8x² en 4x. GGF van 12, 8 en 4 is 4; GGF van x³, x² en x is x. Dus ${bl('GGF = 4x')}.`,
+            `Vind die ${bl('GGD')} van 12x³, 8x² en 4x. GGD van 12, 8 en 4 is 4; GGD van x³, x² en x is x. Dus ${bl('GGD = 4x')}.`,
             `Faktoriseer ${bl('4x')} uit: 12x³ ÷ 4x = ${gr('3x²')}, 8x² ÷ 4x = ${gr('2x')}, 4x ÷ 4x = ${gr('1')}.`,
             `Skryf die gefaktoriseerde vorm: ${bl('4x')}(${gr('3x² − 2x + 1')}).`,
             `<strong>Kontroleer:</strong> ${bl('4x')} × ${gr('3x²')} = 12x³, ${bl('4x')} × ${gr('−2x')} = −8x², ${bl('4x')} × ${gr('1')} = 4x → 12x³ − 8x² + 4x ✓`,
@@ -81,10 +81,10 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om die GGF van algebraïese terme te vind en dit uit ʼn uitdrukking te faktoriseer',
+        'Kort video wat wys hoe om die GGD van algebraïese terme te vind en dit uit ʼn uitdrukking te faktoriseer',
 
       diagramPlaceholder:
-        'Diagram wat 6x² en 9x wys wat saamvloei na hul GGF 3x, wat uitgefaktoriseer word om 3x(2x + 3) te gee',
+        'Diagram wat 6x² en 9x wys wat saamvloei na hul GGD 3x, wat uitgefaktoriseer word om 3x(2x + 3) te gee',
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 175" width="100%" style="max-width:400px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
@@ -96,14 +96,14 @@ export const topicData: TopicData = {
         `<polygon points="140,80 130,77 133,86" fill="#0f1f3d"/>` +
         `<line x1="80" y1="138" x2="138" y2="97" stroke="#0f1f3d" stroke-width="1.2"/>` +
         `<polygon points="140,95 130,94 135,102" fill="#0f1f3d"/>` +
-        `<text x="170" y="60" text-anchor="middle" font-size="9" fill="#6b7280">GGF</text>` +
+        `<text x="170" y="60" text-anchor="middle" font-size="9" fill="#6b7280">GGD</text>` +
         `<rect x="140" y="68" width="60" height="38" rx="6" fill="rgba(37,99,235,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<text x="170" y="92" text-anchor="middle" font-size="16" font-weight="700" fill="#2563eb">3x</text>` +
         `<line x1="200" y1="87" x2="233" y2="87" stroke="#0f1f3d" stroke-width="1.2"/>` +
         `<polygon points="235,87 226,83 226,91" fill="#0f1f3d"/>` +
         `<rect x="235" y="62" width="85" height="50" rx="6" fill="rgba(22,163,74,0.1)" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<text x="277" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">3x(2x + 3)</text>` +
-        `<text x="160" y="168" text-anchor="middle" font-size="10" fill="#6b7280">Die GGF word uitgefaktoriseer, wat die res in hakies laat</text>` +
+        `<text x="160" y="168" text-anchor="middle" font-size="10" fill="#6b7280">Die GGD word uitgefaktoriseer, wat die res in hakies laat</text>` +
         `</svg>`,
     },
 
@@ -308,7 +308,7 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       correctAnswer: '4x(2x+3)',
       correctAnswers: ['4x(2x+3)', '4x(2x + 3)'],
-      explanation: 'GGF van 8x² en 12x is 4x.\n8x² ÷ 4x = 2x en 12x ÷ 4x = 3.\nGefaktoriseer: 4x(2x + 3) ✓',
+      explanation: 'GGD van 8x² en 12x is 4x.\n8x² ÷ 4x = 2x en 12x ÷ 4x = 3.\nGefaktoriseer: 4x(2x + 3) ✓',
     },
 
     // ── Q2 Medium — three-term common factor ─────────────────────────────────
@@ -319,7 +319,7 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       correctAnswer: '5x(3x²-2x+1)',
       correctAnswers: ['5x(3x²-2x+1)', '5x(3x² - 2x + 1)', '5x(3x²−2x+1)', '5x(3x² − 2x + 1)'],
-      explanation: 'GGF van 15x³, 10x² en 5x is 5x.\n15x³ ÷ 5x = 3x², 10x² ÷ 5x = 2x, 5x ÷ 5x = 1.\nGefaktoriseer: 5x(3x² − 2x + 1) ✓',
+      explanation: 'GGD van 15x³, 10x² en 5x is 5x.\n15x³ ÷ 5x = 3x², 10x² ÷ 5x = 2x, 5x ÷ 5x = 1.\nGefaktoriseer: 5x(3x² − 2x + 1) ✓',
     },
 
     // ── Q3 Hard — check a learner's common factor answer ─────────────────────
@@ -458,7 +458,7 @@ export const topicData: TopicData = {
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
     // STEL 1 (20 vrae)
-    // Blok 1 (0-1):   Gemeenskaplike faktor — twee-term monoom GGF
+    // Blok 1 (0-1):   Gemeenskaplike faktor — twee-term monoom GGD
     // Blok 2 (2-3):   Gemeenskaplike faktor — drie-term (ingesluit kubies)
     // Blok 3 (4-6):   Verskil van twee kwadrate — basies (x² − n²)
     // Blok 4 (7-9):   Verskil van twee kwadrate — met koëffisiënte
@@ -470,12 +470,12 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Gemeenskaplike faktor, twee-term (Easy)
-        { difficulty: 'Easy', question: 'Faktoriseer 10x² + 15x.', checkMode: 'auto', correctAnswer: '5x(2x+3)', correctAnswers: ['5x(2x+3)', '5x(2x + 3)'], answer: '5x(2x + 3)', explanation: 'GGF van 10x² en 15x is 5x.\n10x² ÷ 5x = 2x en 15x ÷ 5x = 3.\nGefaktoriseer: 5x(2x + 3) ✓' },
-        { difficulty: 'Easy', question: 'Faktoriseer 6x³ − 18x².', checkMode: 'auto', correctAnswer: '6x²(x-3)', correctAnswers: ['6x²(x-3)', '6x²(x - 3)', '6x^2(x-3)', '6x^2(x - 3)'], answer: '6x²(x − 3)', explanation: 'GGF van 6x³ en 18x² is 6x².\n6x³ ÷ 6x² = x en 18x² ÷ 6x² = 3.\nGefaktoriseer: 6x²(x − 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 10x² + 15x.', checkMode: 'auto', correctAnswer: '5x(2x+3)', correctAnswers: ['5x(2x+3)', '5x(2x + 3)'], answer: '5x(2x + 3)', explanation: 'GGD van 10x² en 15x is 5x.\n10x² ÷ 5x = 2x en 15x ÷ 5x = 3.\nGefaktoriseer: 5x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 6x³ − 18x².', checkMode: 'auto', correctAnswer: '6x²(x-3)', correctAnswers: ['6x²(x-3)', '6x²(x - 3)', '6x^2(x-3)', '6x^2(x - 3)'], answer: '6x²(x − 3)', explanation: 'GGD van 6x³ en 18x² is 6x².\n6x³ ÷ 6x² = x en 18x² ÷ 6x² = 3.\nGefaktoriseer: 6x²(x − 3) ✓' },
 
         // Blok 2 — Gemeenskaplike faktor, drie-term / kubies (Easy-Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 4x³ + 8x² − 12x.', checkMode: 'auto', correctAnswer: '4x(x²+2x-3)', correctAnswers: ['4x(x²+2x-3)', '4x(x² + 2x - 3)', '4x(x²+2x−3)', '4x(x² + 2x − 3)', '4x(x^2+2x-3)', '4x(x^2 + 2x - 3)'], answer: '4x(x² + 2x − 3)', explanation: 'GGF van 4x³, 8x² en 12x is 4x.\n4x³ ÷ 4x = x², 8x² ÷ 4x = 2x, 12x ÷ 4x = 3.\nGefaktoriseer: 4x(x² + 2x − 3) ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer 9a²b + 6ab².', checkMode: 'auto', correctAnswer: '3ab(3a+2b)', correctAnswers: ['3ab(3a+2b)', '3ab(3a + 2b)'], answer: '3ab(3a + 2b)', explanation: 'GGF van 9a²b en 6ab² is 3ab.\n9a²b ÷ 3ab = 3a en 6ab² ÷ 3ab = 2b.\nGefaktoriseer: 3ab(3a + 2b) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 4x³ + 8x² − 12x.', checkMode: 'auto', correctAnswer: '4x(x²+2x-3)', correctAnswers: ['4x(x²+2x-3)', '4x(x² + 2x - 3)', '4x(x²+2x−3)', '4x(x² + 2x − 3)', '4x(x^2+2x-3)', '4x(x^2 + 2x - 3)'], answer: '4x(x² + 2x − 3)', explanation: 'GGD van 4x³, 8x² en 12x is 4x.\n4x³ ÷ 4x = x², 8x² ÷ 4x = 2x, 12x ÷ 4x = 3.\nGefaktoriseer: 4x(x² + 2x − 3) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 9a²b + 6ab².', checkMode: 'auto', correctAnswer: '3ab(3a+2b)', correctAnswers: ['3ab(3a+2b)', '3ab(3a + 2b)'], answer: '3ab(3a + 2b)', explanation: 'GGD van 9a²b en 6ab² is 3ab.\n9a²b ÷ 3ab = 3a en 6ab² ÷ 3ab = 2b.\nGefaktoriseer: 3ab(3a + 2b) ✓' },
 
         // Blok 3 — Verskil van twee kwadrate, basies (Medium)
         { difficulty: 'Medium', question: 'Faktoriseer x² − 81.', checkMode: 'auto', correctAnswer: '(x-9)(x+9)', correctAnswers: ['(x-9)(x+9)', '(x − 9)(x + 9)', '(x+9)(x-9)', '(x + 9)(x − 9)'], answer: '(x − 9)(x + 9)', explanation: 'Herken x² − 81 = x² − 9².\nVerskil van kwadrate: (x − 9)(x + 9) ✓' },
@@ -506,7 +506,7 @@ export const topicData: TopicData = {
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het faktorisering van gemeenskaplike faktore, verskille van kwadrate en trinome bemeester.' },
         { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor trinome of verskil van kwadrate weer deur en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGF en faktorisering van trinome weer deur, en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGD en faktorisering van trinome weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -518,12 +518,12 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok 1 — Gemeenskaplike faktor, twee-term (Easy)
-        { difficulty: 'Easy', question: 'Faktoriseer 14x² + 21x.', checkMode: 'auto', correctAnswer: '7x(2x+3)', correctAnswers: ['7x(2x+3)', '7x(2x + 3)'], answer: '7x(2x + 3)', explanation: 'GGF van 14x² en 21x is 7x.\n14x² ÷ 7x = 2x en 21x ÷ 7x = 3.\nGefaktoriseer: 7x(2x + 3) ✓' },
-        { difficulty: 'Easy', question: 'Faktoriseer 8x³ − 20x².', checkMode: 'auto', correctAnswer: '4x²(2x-5)', correctAnswers: ['4x²(2x-5)', '4x²(2x − 5)', '4x^2(2x-5)', '4x^2(2x − 5)'], answer: '4x²(2x − 5)', explanation: 'GGF van 8x³ en 20x² is 4x².\n8x³ ÷ 4x² = 2x en 20x² ÷ 4x² = 5.\nGefaktoriseer: 4x²(2x − 5) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 14x² + 21x.', checkMode: 'auto', correctAnswer: '7x(2x+3)', correctAnswers: ['7x(2x+3)', '7x(2x + 3)'], answer: '7x(2x + 3)', explanation: 'GGD van 14x² en 21x is 7x.\n14x² ÷ 7x = 2x en 21x ÷ 7x = 3.\nGefaktoriseer: 7x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 8x³ − 20x².', checkMode: 'auto', correctAnswer: '4x²(2x-5)', correctAnswers: ['4x²(2x-5)', '4x²(2x − 5)', '4x^2(2x-5)', '4x^2(2x − 5)'], answer: '4x²(2x − 5)', explanation: 'GGD van 8x³ en 20x² is 4x².\n8x³ ÷ 4x² = 2x en 20x² ÷ 4x² = 5.\nGefaktoriseer: 4x²(2x − 5) ✓' },
 
         // Blok 2 — Gemeenskaplike faktor, drie-term / kubies (Easy-Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 6x³ + 9x² − 15x.', checkMode: 'auto', correctAnswer: '3x(2x²+3x-5)', correctAnswers: ['3x(2x²+3x-5)', '3x(2x² + 3x - 5)', '3x(2x²+3x−5)', '3x(2x² + 3x − 5)', '3x(2x^2+3x-5)', '3x(2x^2 + 3x - 5)'], answer: '3x(2x² + 3x − 5)', explanation: 'GGF van 6x³, 9x² en 15x is 3x.\n6x³ ÷ 3x = 2x², 9x² ÷ 3x = 3x, 15x ÷ 3x = 5.\nGefaktoriseer: 3x(2x² + 3x − 5) ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer 12a²b + 8ab².', checkMode: 'auto', correctAnswer: '4ab(3a+2b)', correctAnswers: ['4ab(3a+2b)', '4ab(3a + 2b)'], answer: '4ab(3a + 2b)', explanation: 'GGF van 12a²b en 8ab² is 4ab.\n12a²b ÷ 4ab = 3a en 8ab² ÷ 4ab = 2b.\nGefaktoriseer: 4ab(3a + 2b) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 6x³ + 9x² − 15x.', checkMode: 'auto', correctAnswer: '3x(2x²+3x-5)', correctAnswers: ['3x(2x²+3x-5)', '3x(2x² + 3x - 5)', '3x(2x²+3x−5)', '3x(2x² + 3x − 5)', '3x(2x^2+3x-5)', '3x(2x^2 + 3x - 5)'], answer: '3x(2x² + 3x − 5)', explanation: 'GGD van 6x³, 9x² en 15x is 3x.\n6x³ ÷ 3x = 2x², 9x² ÷ 3x = 3x, 15x ÷ 3x = 5.\nGefaktoriseer: 3x(2x² + 3x − 5) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 12a²b + 8ab².', checkMode: 'auto', correctAnswer: '4ab(3a+2b)', correctAnswers: ['4ab(3a+2b)', '4ab(3a + 2b)'], answer: '4ab(3a + 2b)', explanation: 'GGD van 12a²b en 8ab² is 4ab.\n12a²b ÷ 4ab = 3a en 8ab² ÷ 4ab = 2b.\nGefaktoriseer: 4ab(3a + 2b) ✓' },
 
         // Blok 3 — Verskil van twee kwadrate, basies (Medium)
         { difficulty: 'Medium', question: 'Faktoriseer x² − 36.', checkMode: 'auto', correctAnswer: '(x-6)(x+6)', correctAnswers: ['(x-6)(x+6)', '(x − 6)(x + 6)', '(x+6)(x-6)', '(x + 6)(x − 6)'], answer: '(x − 6)(x + 6)', explanation: 'Herken x² − 36 = x² − 6².\nVerskil van kwadrate: (x − 6)(x + 6) ✓' },
@@ -554,7 +554,7 @@ export const topicData: TopicData = {
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het faktorisering van gemeenskaplike faktore, verskille van kwadrate en trinome bemeester.' },
         { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor trinome of verskil van kwadrate weer deur en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGF en faktorisering van trinome weer deur, en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGD en faktorisering van trinome weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -566,12 +566,12 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok 1 — Gemeenskaplike faktor, twee-term (Easy)
-        { difficulty: 'Easy', question: 'Faktoriseer 12x² + 18x.', checkMode: 'auto', correctAnswer: '6x(2x+3)', correctAnswers: ['6x(2x+3)', '6x(2x + 3)'], answer: '6x(2x + 3)', explanation: 'GGF van 12x² en 18x is 6x.\n12x² ÷ 6x = 2x en 18x ÷ 6x = 3.\nGefaktoriseer: 6x(2x + 3) ✓' },
-        { difficulty: 'Easy', question: 'Faktoriseer 10x³ − 15x².', checkMode: 'auto', correctAnswer: '5x²(2x-3)', correctAnswers: ['5x²(2x-3)', '5x²(2x − 3)', '5x^2(2x-3)', '5x^2(2x − 3)'], answer: '5x²(2x − 3)', explanation: 'GGF van 10x³ en 15x² is 5x².\n10x³ ÷ 5x² = 2x en 15x² ÷ 5x² = 3.\nGefaktoriseer: 5x²(2x − 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 12x² + 18x.', checkMode: 'auto', correctAnswer: '6x(2x+3)', correctAnswers: ['6x(2x+3)', '6x(2x + 3)'], answer: '6x(2x + 3)', explanation: 'GGD van 12x² en 18x is 6x.\n12x² ÷ 6x = 2x en 18x ÷ 6x = 3.\nGefaktoriseer: 6x(2x + 3) ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer 10x³ − 15x².', checkMode: 'auto', correctAnswer: '5x²(2x-3)', correctAnswers: ['5x²(2x-3)', '5x²(2x − 3)', '5x^2(2x-3)', '5x^2(2x − 3)'], answer: '5x²(2x − 3)', explanation: 'GGD van 10x³ en 15x² is 5x².\n10x³ ÷ 5x² = 2x en 15x² ÷ 5x² = 3.\nGefaktoriseer: 5x²(2x − 3) ✓' },
 
         // Blok 2 — Gemeenskaplike faktor, drie-term / kubies (Easy-Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 8x³ + 12x² − 20x.', checkMode: 'auto', correctAnswer: '4x(2x²+3x-5)', correctAnswers: ['4x(2x²+3x-5)', '4x(2x² + 3x - 5)', '4x(2x²+3x−5)', '4x(2x² + 3x − 5)', '4x(2x^2+3x-5)', '4x(2x^2 + 3x - 5)'], answer: '4x(2x² + 3x − 5)', explanation: 'GGF van 8x³, 12x² en 20x is 4x.\n8x³ ÷ 4x = 2x², 12x² ÷ 4x = 3x, 20x ÷ 4x = 5.\nGefaktoriseer: 4x(2x² + 3x − 5) ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer 15a²b + 10ab².', checkMode: 'auto', correctAnswer: '5ab(3a+2b)', correctAnswers: ['5ab(3a+2b)', '5ab(3a + 2b)'], answer: '5ab(3a + 2b)', explanation: 'GGF van 15a²b en 10ab² is 5ab.\n15a²b ÷ 5ab = 3a en 10ab² ÷ 5ab = 2b.\nGefaktoriseer: 5ab(3a + 2b) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 8x³ + 12x² − 20x.', checkMode: 'auto', correctAnswer: '4x(2x²+3x-5)', correctAnswers: ['4x(2x²+3x-5)', '4x(2x² + 3x - 5)', '4x(2x²+3x−5)', '4x(2x² + 3x − 5)', '4x(2x^2+3x-5)', '4x(2x^2 + 3x - 5)'], answer: '4x(2x² + 3x − 5)', explanation: 'GGD van 8x³, 12x² en 20x is 4x.\n8x³ ÷ 4x = 2x², 12x² ÷ 4x = 3x, 20x ÷ 4x = 5.\nGefaktoriseer: 4x(2x² + 3x − 5) ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer 15a²b + 10ab².', checkMode: 'auto', correctAnswer: '5ab(3a+2b)', correctAnswers: ['5ab(3a+2b)', '5ab(3a + 2b)'], answer: '5ab(3a + 2b)', explanation: 'GGD van 15a²b en 10ab² is 5ab.\n15a²b ÷ 5ab = 3a en 10ab² ÷ 5ab = 2b.\nGefaktoriseer: 5ab(3a + 2b) ✓' },
 
         // Blok 3 — Verskil van twee kwadrate, basies (Medium)
         { difficulty: 'Medium', question: 'Faktoriseer x² − 16.', checkMode: 'auto', correctAnswer: '(x-4)(x+4)', correctAnswers: ['(x-4)(x+4)', '(x − 4)(x + 4)', '(x+4)(x-4)', '(x + 4)(x − 4)'], answer: '(x − 4)(x + 4)', explanation: 'Herken x² − 16 = x² − 4².\nVerskil van kwadrate: (x − 4)(x + 4) ✓' },
@@ -602,7 +602,7 @@ export const topicData: TopicData = {
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het faktorisering van gemeenskaplike faktore, verskille van kwadrate en trinome bemeester.' },
         { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor trinome of verskil van kwadrate weer deur en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGF en faktorisering van trinome weer deur, en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die vind van die GGD en faktorisering van trinome weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

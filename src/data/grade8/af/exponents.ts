@@ -27,7 +27,7 @@ export const topicData: TopicData = {
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
-        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('grondgetal')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('grondtal')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('eksponent')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('vereenvoudigde antwoord')}</span>` +
         `</div>` +
@@ -39,13 +39,13 @@ export const topicData: TopicData = {
         `<div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
         `<div><p style="margin:0;font-size:14px;font-weight:700;color:#1e40af;">Produkwet</p>` +
-        `<p style="margin:4px 0 0 0;font-size:14px;">${bl('a')}<sup>${or('m')}</sup> × ${bl('a')}<sup>${or('n')}</sup> = ${gr('a')}<sup>${gr('m+n')}</sup> &nbsp;— tel die ${or('eksponente')} bymekaar wanneer jy magte met dieselfde ${bl('grondgetal')} vermenigvuldig.</p></div>` +
+        `<p style="margin:4px 0 0 0;font-size:14px;">${bl('a')}<sup>${or('m')}</sup> × ${bl('a')}<sup>${or('n')}</sup> = ${gr('a')}<sup>${gr('m+n')}</sup> &nbsp;— tel die ${or('eksponente')} bymekaar wanneer jy magte met dieselfde ${bl('grondtal')} vermenigvuldig.</p></div>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
         `<div><p style="margin:0;font-size:14px;font-weight:700;color:#1e40af;">Kwosiëntwet</p>` +
-        `<p style="margin:4px 0 0 0;font-size:14px;">${bl('a')}<sup>${or('m')}</sup> ÷ ${bl('a')}<sup>${or('n')}</sup> = ${gr('a')}<sup>${gr('m−n')}</sup> &nbsp;— trek die ${or('eksponente')} van mekaar af wanneer jy soortgelyke grondgetalle deel (m &gt; n).</p></div>` +
+        `<p style="margin:4px 0 0 0;font-size:14px;">${bl('a')}<sup>${or('m')}</sup> ÷ ${bl('a')}<sup>${or('n')}</sup> = ${gr('a')}<sup>${gr('m−n')}</sup> &nbsp;— trek die ${or('eksponente')} van mekaar af wanneer jy soortgelyke grondtalle deel (m &gt; n).</p></div>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
@@ -70,8 +70,8 @@ export const topicData: TopicData = {
 
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
-        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Die grondgetal moet dieselfde wees</p>` +
-        `<p style="margin:0;color:#7c2d12;">Die produk- en kwosiëntwette geld slegs wanneer die ${bl('grondgetalle')} identies is. Jy kan nie ${or('eksponente')} bymekaartel of van mekaar aftrek wanneer die grondgetalle verskil nie — bv. 2³ × 3² kan nie met hierdie wette vereenvoudig word nie.</p>` +
+        `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">Die grondtal moet dieselfde wees</p>` +
+        `<p style="margin:0;color:#7c2d12;">Die produk- en kwosiëntwette geld slegs wanneer die ${bl('grondtalle')} identies is. Jy kan nie ${or('eksponente')} bymekaartel of van mekaar aftrek wanneer die grondtalle verskil nie — bv. 2³ × 3² kan nie met hierdie wette vereenvoudig word nie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -79,7 +79,7 @@ export const topicData: TopicData = {
           question: 'Vereenvoudig 3⁴ × 3².',
           answer: `${bl('3')}<sup>${or('4')}</sup> × ${bl('3')}<sup>${or('2')}</sup> = ${bl('3')}<sup>${or('6')}</sup> = ${gr('729')}`,
           steps: [
-            `Albei terme het dieselfde ${bl('grondgetal')}: ${bl('3')}. Pas die <strong>produkwet</strong> toe — tel die ${or('eksponente')} bymekaar.`,
+            `Albei terme het dieselfde ${bl('grondtal')}: ${bl('3')}. Pas die <strong>produkwet</strong> toe — tel die ${or('eksponente')} bymekaar.`,
             `${bl('3')}<sup>${or('4')}</sup> × ${bl('3')}<sup>${or('2')}</sup> = ${bl('3')}<sup>${or('4+2')}</sup> = ${bl('3')}<sup>${or('6')}</sup>`,
             `Bereken: ${bl('3')}<sup>${or('6')}</sup> = 3 × 3 × 3 × 3 × 3 × 3 = ${gr('729')}`,
           ],
@@ -112,7 +112,7 @@ export const topicData: TopicData = {
           answer: '128',
           checkMode: 'auto',
           correctAnswer: '128',
-          explanation: 'Dieselfde grondgetal (2) — pas die produkwet toe: tel die eksponente bymekaar.\n2^(3+4) = 2⁷ = 128 ✓',
+          explanation: 'Dieselfde grondtal (2) — pas die produkwet toe: tel die eksponente bymekaar.\n2^(3+4) = 2⁷ = 128 ✓',
         },
         {
           difficulty: 'Medium',
@@ -148,7 +148,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat al vyf wette van eksponente verduidelik met kleurgekodeerde grondgetal- en eksponentvoorbeelde',
+        'Kort video wat al vyf wette van eksponente verduidelik met kleurgekodeerde grondtal- en eksponentvoorbeelde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -357,7 +357,7 @@ export const topicData: TopicData = {
           question: 'Bereken (−4)² en −4². Verduidelik die verskil.',
           answer: `${re('(−4)²')} = ${gr('16')} &nbsp;en&nbsp; ${re('−4²')} = ${re('−')}${gr('16')} — hierdie is verskillend`,
           steps: [
-            `${re('(−4)²')}: Die ${re('negatiewe teken')} is binne die hakies, dus is dit deel van die grondgetal. Vermenigvuldig: (${re('−')}4) × (${re('−')}4) = ${gr('+16')}.`,
+            `${re('(−4)²')}: Die ${re('negatiewe teken')} is binne die hakies, dus is dit deel van die grondtal. Vermenigvuldig: (${re('−')}4) × (${re('−')}4) = ${gr('+16')}.`,
             `${re('−4²')}: Die eksponent geld slegs vir 4, nie vir die ${re('negatiewe teken')} nie. Bereken: ${re('−')}(4 × 4) = ${re('−')}${gr('16')}.`,
             `<strong>Gevolgtrekking:</strong> ${re('(−4)²')} = ${gr('16')} maar ${re('−4²')} = ${re('−')}${gr('16')}. Hierdie is verskillend omdat die posisie van die ${re('negatiewe teken')} relatief tot die hakies saak maak.`,
           ],
@@ -448,7 +448,7 @@ export const topicData: TopicData = {
       answer: '32',
       checkMode: 'auto',
       correctAnswer: '32',
-      explanation: 'Produkwet — dieselfde grondgetal (2), tel die eksponente bymekaar: 2^(3+2) = 2⁵ = 32 ✓',
+      explanation: 'Produkwet — dieselfde grondtal (2), tel die eksponente bymekaar: 2^(3+2) = 2⁵ = 32 ✓',
     },
 
     // ── Q2 Medium — quotient law ──────────────────────────────────────────────
@@ -458,7 +458,7 @@ export const topicData: TopicData = {
       answer: '343',
       checkMode: 'auto',
       correctAnswer: '343',
-      explanation: 'Kwosiëntwet — dieselfde grondgetal (7), trek die eksponente van mekaar af: 7^(5−2) = 7³ = 343 ✓',
+      explanation: 'Kwosiëntwet — dieselfde grondtal (7), trek die eksponente van mekaar af: 7^(5−2) = 7³ = 343 ✓',
     },
 
     // ── Q3 Medium — power of a power ─────────────────────────────────────────
@@ -613,16 +613,16 @@ export const topicData: TopicData = {
     // STEL 1 (20 vrae)
     // Blokke: 1-4 Produk- en kwosiëntwet | 5-7 Mag van ʼn mag / mag van ʼn
     // produk | 8-10 Nul-eksponent & meerstap-kombinasies van wette |
-    // 11-14 Vierkante/kubusse/wortels van heelgetalle, insl. negatiewe grondgetalle |
+    // 11-14 Vierkante/kubusse/wortels van heelgetalle, insl. negatiewe grondtalle |
     // 15-17 Vierkante/kubusse/wortels van rasionale getalle | 18-20 Wetenskaplike notasie
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Stel 1',
       questions: [
-        { difficulty: 'Easy', question: 'Vereenvoudig 3⁵ × 3², laat jou antwoord as ʼn mag van 3, en bereken dit dan.', answer: '3⁷ = 2 187', checkMode: 'auto', correctAnswer: '2187', correctAnswers: ['2187', '3^7=2187', '3⁷=2187'], explanation: 'Dieselfde grondgetal — tel die eksponente bymekaar: 3⁵ × 3² = 3^(5+2) = 3⁷ = 2 187 ✓' },
-        { difficulty: 'Easy', question: 'Vereenvoudig 4⁶ ÷ 4², laat jou antwoord as ʼn mag van 4, en bereken dit dan.', answer: '4⁴ = 256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', '4^4=256', '4⁴=256'], explanation: 'Dieselfde grondgetal — trek die eksponente van mekaar af: 4⁶ ÷ 4² = 4^(6−2) = 4⁴ = 256 ✓' },
-        { difficulty: 'Medium', question: 'Bongiwe vereenvoudig 2⁴ × 2⁶ as 4¹⁰, en sê "jy vermenigvuldig die grondgetalle en tel die eksponente bymekaar." Verduidelik haar fout en gee die korrekte vereenvoudigde antwoord.', answer: 'Die grondgetal bly dieselfde (2) — dit mag nie vermenigvuldig word nie. Slegs die eksponente word bymekaar getel: 2⁴ × 2⁶ = 2^(4+6) = 2¹⁰ = 1 024, nie 4¹⁰ nie.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 7⁷ ÷ 7³, laat jou antwoord as ʼn mag van 7, en bereken dit dan.', answer: '7⁴ = 2 401', checkMode: 'auto', correctAnswer: '2401', correctAnswers: ['2401', '7^4=2401', '7⁴=2401'], explanation: 'Dieselfde grondgetal — trek die eksponente van mekaar af: 7⁷ ÷ 7³ = 7^(7−3) = 7⁴ = 2 401 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 3⁵ × 3², laat jou antwoord as ʼn mag van 3, en bereken dit dan.', answer: '3⁷ = 2 187', checkMode: 'auto', correctAnswer: '2187', correctAnswers: ['2187', '3^7=2187', '3⁷=2187'], explanation: 'Dieselfde grondtal — tel die eksponente bymekaar: 3⁵ × 3² = 3^(5+2) = 3⁷ = 2 187 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 4⁶ ÷ 4², laat jou antwoord as ʼn mag van 4, en bereken dit dan.', answer: '4⁴ = 256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', '4^4=256', '4⁴=256'], explanation: 'Dieselfde grondtal — trek die eksponente van mekaar af: 4⁶ ÷ 4² = 4^(6−2) = 4⁴ = 256 ✓' },
+        { difficulty: 'Medium', question: 'Bongiwe vereenvoudig 2⁴ × 2⁶ as 4¹⁰, en sê "jy vermenigvuldig die grondtalle en tel die eksponente bymekaar." Verduidelik haar fout en gee die korrekte vereenvoudigde antwoord.', answer: 'Die grondtal bly dieselfde (2) — dit mag nie vermenigvuldig word nie. Slegs die eksponente word bymekaar getel: 2⁴ × 2⁶ = 2^(4+6) = 2¹⁰ = 1 024, nie 4¹⁰ nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 7⁷ ÷ 7³, laat jou antwoord as ʼn mag van 7, en bereken dit dan.', answer: '7⁴ = 2 401', checkMode: 'auto', correctAnswer: '2401', correctAnswers: ['2401', '7^4=2401', '7⁴=2401'], explanation: 'Dieselfde grondtal — trek die eksponente van mekaar af: 7⁷ ÷ 7³ = 7^(7−3) = 7⁴ = 2 401 ✓' },
         { difficulty: 'Medium', question: 'Pas die mag-van-ʼn-mag-wet toe om (2³)⁴ te vereenvoudig, en bereken dit dan.', answer: '2¹² = 4 096', checkMode: 'auto', correctAnswer: '4096', correctAnswers: ['4096', '2^12=4096', '2¹²=4096'], explanation: 'Mag van ʼn mag — vermenigvuldig die eksponente: (2³)⁴ = 2^(3×4) = 2¹² = 4 096 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (3²)³ deur die mag-van-ʼn-mag-wet te gebruik, en bereken dit dan.', answer: '3⁶ = 729', checkMode: 'auto', correctAnswer: '729', correctAnswers: ['729', '3^6=729', '3⁶=729'], explanation: 'Mag van ʼn mag — vermenigvuldig die eksponente: (3²)³ = 3^(2×3) = 3⁶ = 729 ✓' },
         { difficulty: 'Medium-Hard', question: 'Gebruik die mag-van-ʼn-produk-wet om (2 × 5)³ te vereenvoudig, en bereken dit dan op twee verskillende maniere om te kontroleer of jou antwoord ooreenstem.', answer: '(2 × 5)³ = 10³ = 1 000, en 2³ × 5³ = 8 × 125 = 1 000', checkMode: 'auto', correctAnswer: '1000', correctAnswers: ['1000', '10^3=1000', '10³=1000'], explanation: 'Metode 1: (2 × 5)³ = 10³ = 1 000. Metode 2 (mag van ʼn produk): 2³ × 5³ = 8 × 125 = 1 000. Albei metodes stem ooreen ✓' },
@@ -654,10 +654,10 @@ export const topicData: TopicData = {
     {
       name: 'Stel 2',
       questions: [
-        { difficulty: 'Easy', question: 'Vereenvoudig 5³ × 5⁴, laat jou antwoord as ʼn mag van 5, en bereken dit dan.', answer: '5⁷ = 78 125', checkMode: 'auto', correctAnswer: '78125', correctAnswers: ['78125', '5^7=78125', '5⁷=78125'], explanation: 'Dieselfde grondgetal — tel die eksponente bymekaar: 5³ × 5⁴ = 5^(3+4) = 5⁷ = 78 125 ✓' },
-        { difficulty: 'Easy', question: 'Vereenvoudig 8⁷ ÷ 8³, laat jou antwoord as ʼn mag van 8, en bereken dit dan.', answer: '8⁴ = 4 096', checkMode: 'auto', correctAnswer: '4096', correctAnswers: ['4096', '8^4=4096', '8⁴=4096'], explanation: 'Dieselfde grondgetal — trek die eksponente van mekaar af: 8⁷ ÷ 8³ = 8^(7−3) = 8⁴ = 4 096 ✓' },
-        { difficulty: 'Medium', question: 'Thabiso vereenvoudig 3⁵ × 3² as 9⁷, en sê "jy vermenigvuldig die grondgetalle en tel die eksponente bymekaar." Verduidelik sy fout en gee die korrekte vereenvoudigde antwoord.', answer: 'Die grondgetal bly dieselfde (3) — dit mag nie vermenigvuldig word nie. Slegs die eksponente word bymekaar getel: 3⁵ × 3² = 3^(5+2) = 3⁷ = 2 187, nie 9⁷ nie.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 9⁶ ÷ 9⁴, laat jou antwoord as ʼn mag van 9, en bereken dit dan.', answer: '9² = 81', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '9^2=81', '9²=81'], explanation: 'Dieselfde grondgetal — trek die eksponente van mekaar af: 9⁶ ÷ 9⁴ = 9^(6−4) = 9² = 81 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 5³ × 5⁴, laat jou antwoord as ʼn mag van 5, en bereken dit dan.', answer: '5⁷ = 78 125', checkMode: 'auto', correctAnswer: '78125', correctAnswers: ['78125', '5^7=78125', '5⁷=78125'], explanation: 'Dieselfde grondtal — tel die eksponente bymekaar: 5³ × 5⁴ = 5^(3+4) = 5⁷ = 78 125 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 8⁷ ÷ 8³, laat jou antwoord as ʼn mag van 8, en bereken dit dan.', answer: '8⁴ = 4 096', checkMode: 'auto', correctAnswer: '4096', correctAnswers: ['4096', '8^4=4096', '8⁴=4096'], explanation: 'Dieselfde grondtal — trek die eksponente van mekaar af: 8⁷ ÷ 8³ = 8^(7−3) = 8⁴ = 4 096 ✓' },
+        { difficulty: 'Medium', question: 'Thabiso vereenvoudig 3⁵ × 3² as 9⁷, en sê "jy vermenigvuldig die grondtalle en tel die eksponente bymekaar." Verduidelik sy fout en gee die korrekte vereenvoudigde antwoord.', answer: 'Die grondtal bly dieselfde (3) — dit mag nie vermenigvuldig word nie. Slegs die eksponente word bymekaar getel: 3⁵ × 3² = 3^(5+2) = 3⁷ = 2 187, nie 9⁷ nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 9⁶ ÷ 9⁴, laat jou antwoord as ʼn mag van 9, en bereken dit dan.', answer: '9² = 81', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '9^2=81', '9²=81'], explanation: 'Dieselfde grondtal — trek die eksponente van mekaar af: 9⁶ ÷ 9⁴ = 9^(6−4) = 9² = 81 ✓' },
         { difficulty: 'Medium', question: 'Pas die mag-van-ʼn-mag-wet toe om (4²)³ te vereenvoudig, en bereken dit dan.', answer: '4⁶ = 4 096', checkMode: 'auto', correctAnswer: '4096', correctAnswers: ['4096', '4^6=4096', '4⁶=4096'], explanation: 'Mag van ʼn mag — vermenigvuldig die eksponente: (4²)³ = 4^(2×3) = 4⁶ = 4 096 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (2⁴)² deur die mag-van-ʼn-mag-wet te gebruik, en bereken dit dan.', answer: '2⁸ = 256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256', '2^8=256', '2⁸=256'], explanation: 'Mag van ʼn mag — vermenigvuldig die eksponente: (2⁴)² = 2^(4×2) = 2⁸ = 256 ✓' },
         { difficulty: 'Medium-Hard', question: 'Gebruik die mag-van-ʼn-produk-wet om (3 × 4)³ te vereenvoudig, en bereken dit dan op twee verskillende maniere om te kontroleer of jou antwoord ooreenstem.', answer: '(3 × 4)³ = 12³ = 1 728, en 3³ × 4³ = 27 × 64 = 1 728', checkMode: 'auto', correctAnswer: '1728', correctAnswers: ['1728', '12^3=1728', '12³=1728'], explanation: 'Metode 1: (3 × 4)³ = 12³ = 1 728. Metode 2 (mag van ʼn produk): 3³ × 4³ = 27 × 64 = 1 728. Albei metodes stem ooreen ✓' },
@@ -689,10 +689,10 @@ export const topicData: TopicData = {
     {
       name: 'Stel 3',
       questions: [
-        { difficulty: 'Easy', question: 'Vereenvoudig 2⁶ × 2³, laat jou antwoord as ʼn mag van 2, en bereken dit dan.', answer: '2⁹ = 512', checkMode: 'auto', correctAnswer: '512', correctAnswers: ['512', '2^9=512', '2⁹=512'], explanation: 'Dieselfde grondgetal — tel die eksponente bymekaar: 2⁶ × 2³ = 2^(6+3) = 2⁹ = 512 ✓' },
-        { difficulty: 'Easy', question: 'Vereenvoudig 6⁷ ÷ 6⁵, laat jou antwoord as ʼn mag van 6, en bereken dit dan.', answer: '6² = 36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '6^2=36', '6²=36'], explanation: 'Dieselfde grondgetal — trek die eksponente van mekaar af: 6⁷ ÷ 6⁵ = 6^(7−5) = 6² = 36 ✓' },
-        { difficulty: 'Medium', question: 'Amahle vereenvoudig 4³ × 4² as 16⁵, en sê "jy vermenigvuldig die grondgetalle en tel die eksponente bymekaar." Verduidelik haar fout en gee die korrekte vereenvoudigde antwoord.', answer: 'Die grondgetal bly dieselfde (4) — dit mag nie vermenigvuldig word nie. Slegs die eksponente word bymekaar getel: 4³ × 4² = 4^(3+2) = 4⁵ = 1 024, nie 16⁵ nie.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 10⁸ ÷ 10⁵, laat jou antwoord as ʼn mag van 10, en bereken dit dan.', answer: '10³ = 1 000', checkMode: 'auto', correctAnswer: '1000', correctAnswers: ['1000', '10^3=1000', '10³=1000'], explanation: 'Dieselfde grondgetal — trek die eksponente van mekaar af: 10⁸ ÷ 10⁵ = 10^(8−5) = 10³ = 1 000 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 2⁶ × 2³, laat jou antwoord as ʼn mag van 2, en bereken dit dan.', answer: '2⁹ = 512', checkMode: 'auto', correctAnswer: '512', correctAnswers: ['512', '2^9=512', '2⁹=512'], explanation: 'Dieselfde grondtal — tel die eksponente bymekaar: 2⁶ × 2³ = 2^(6+3) = 2⁹ = 512 ✓' },
+        { difficulty: 'Easy', question: 'Vereenvoudig 6⁷ ÷ 6⁵, laat jou antwoord as ʼn mag van 6, en bereken dit dan.', answer: '6² = 36', checkMode: 'auto', correctAnswer: '36', correctAnswers: ['36', '6^2=36', '6²=36'], explanation: 'Dieselfde grondtal — trek die eksponente van mekaar af: 6⁷ ÷ 6⁵ = 6^(7−5) = 6² = 36 ✓' },
+        { difficulty: 'Medium', question: 'Amahle vereenvoudig 4³ × 4² as 16⁵, en sê "jy vermenigvuldig die grondtalle en tel die eksponente bymekaar." Verduidelik haar fout en gee die korrekte vereenvoudigde antwoord.', answer: 'Die grondtal bly dieselfde (4) — dit mag nie vermenigvuldig word nie. Slegs die eksponente word bymekaar getel: 4³ × 4² = 4^(3+2) = 4⁵ = 1 024, nie 16⁵ nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 10⁸ ÷ 10⁵, laat jou antwoord as ʼn mag van 10, en bereken dit dan.', answer: '10³ = 1 000', checkMode: 'auto', correctAnswer: '1000', correctAnswers: ['1000', '10^3=1000', '10³=1000'], explanation: 'Dieselfde grondtal — trek die eksponente van mekaar af: 10⁸ ÷ 10⁵ = 10^(8−5) = 10³ = 1 000 ✓' },
         { difficulty: 'Medium', question: 'Pas die mag-van-ʼn-mag-wet toe om (5³)² te vereenvoudig, en bereken dit dan.', answer: '5⁶ = 15 625', checkMode: 'auto', correctAnswer: '15625', correctAnswers: ['15625', '15 625', '5^6=15625', '5⁶=15625'], explanation: 'Mag van ʼn mag — vermenigvuldig die eksponente: (5³)² = 5^(3×2) = 5⁶ = 15 625 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (3²)⁴ deur die mag-van-ʼn-mag-wet te gebruik, en bereken dit dan.', answer: '3⁸ = 6 561', checkMode: 'auto', correctAnswer: '6561', correctAnswers: ['6561', '3^8=6561', '3⁸=6561'], explanation: 'Mag van ʼn mag — vermenigvuldig die eksponente: (3²)⁴ = 3^(2×4) = 3⁸ = 6 561 ✓' },
         { difficulty: 'Medium-Hard', question: 'Gebruik die mag-van-ʼn-produk-wet om (2 × 3)⁵ te vereenvoudig, en bereken dit dan op twee verskillende maniere om te kontroleer of jou antwoord ooreenstem.', answer: '(2 × 3)⁵ = 6⁵ = 7 776, en 2⁵ × 3⁵ = 32 × 243 = 7 776', checkMode: 'auto', correctAnswer: '7776', correctAnswers: ['7776', '6^5=7776', '6⁵=7776'], explanation: 'Metode 1: (2 × 3)⁵ = 6⁵ = 7 776. Metode 2 (mag van ʼn produk): 2⁵ × 3⁵ = 32 × 243 = 7 776. Albei metodes stem ooreen ✓' },

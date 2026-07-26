@@ -149,20 +149,20 @@ export const topicData: TopicData = {
     },
 
     // ─────────────────────────────────────────────────────────────────────────
-    // AFDELING 2 — PRIEMFAKTORE, KGV EN GGF
+    // AFDELING 2 — PRIEMFAKTORE, KGV EN GGD
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'prime-factors-lcm-hcf',
-      title: 'Priemfaktore, KGV en GGF',
+      title: 'Priemfaktore, KGV en GGD',
       icon: '🧮',
       explanation:
-        `<p style="margin-bottom:16px;">Ons hersien om <strong>priemfaktore</strong> van 3-syfer telgetalle te vind, en gebruik <strong>priemfaktorisering</strong>, inspeksie, of faktoriseringsmetodes om die <strong>KGV</strong> (Kleinste Gemene Veelvoud) en <strong>GGF</strong> (Grootste Gemene Faktor) van getalle tot 3 syfers te vind.</p>` +
+        `<p style="margin-bottom:16px;">Ons hersien om <strong>priemfaktore</strong> van 3-syfer telgetalle te vind, en gebruik <strong>priemfaktorisering</strong>, inspeksie, of faktoriseringsmetodes om die <strong>KGV</strong> (Kleinste Gemene Veelvoud) en <strong>GGD</strong> (Grootste Gemene Faktor) van getalle tot 3 syfers te vind.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('priemfaktore')}</span>` +
-        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('GGF')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('GGD')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('KGV')}</span>` +
         `</div>` +
 
@@ -181,7 +181,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">GGF</p>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">GGD</p>` +
         `<p style="color:#374151;font-size:14px;margin:0;">${gr('Grootste Gemene Faktor')} — gebruik die ${bl('priemfaktore')} wat aan al die getalle gemeen is, elkeen geneem tot sy <em>laagste</em> mag.</p>` +
         `</div>` +
 
@@ -194,21 +194,21 @@ export const topicData: TopicData = {
 
         // ── Method reminder ──────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
-        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">GGF teenoor KGV — vinnige reël</p>` +
-        `<p style="margin:0;color:#1e3a8a;">${gr('GGF')} → gemeenskaplike faktore, <em>laagste</em> eksponente. &nbsp;|&nbsp; ${or('KGV')} → alle faktore, <em>hoogste</em> eksponente.</p>` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">GGD teenoor KGV — vinnige reël</p>` +
+        `<p style="margin:0;color:#1e3a8a;">${gr('GGD')} → gemeenskaplike faktore, <em>laagste</em> eksponente. &nbsp;|&nbsp; ${or('KGV')} → alle faktore, <em>hoogste</em> eksponente.</p>` +
         `</div>`,
 
       workedExamples: [
         {
-          question: 'Vind die GGF van 120, 300 en 900 deur priemfaktore te gebruik.',
-          answer: `${gr('GGF = 60')}`,
+          question: 'Vind die GGD van 120, 300 en 900 deur priemfaktore te gebruik.',
+          answer: `${gr('GGD = 60')}`,
           steps: [
             `${bl('Faktoriseer 120:')} 120 = 2 × 60 = 2 × 2 × 30 = 2 × 2 × 2 × 15 = 2 × 2 × 2 × 3 × 5 = ${bl('2³ × 3 × 5')}`,
             `${bl('Faktoriseer 300:')} 300 = 2 × 150 = 2 × 2 × 75 = 2 × 2 × 3 × 25 = 2 × 2 × 3 × 5 × 5 = ${bl('2² × 3 × 5²')}`,
             `${bl('Faktoriseer 900:')} 900 = 2 × 450 = 2 × 2 × 225 = 2 × 2 × 9 × 25 = 2 × 2 × 3 × 3 × 5 × 5 = ${bl('2² × 3² × 5²')}`,
             `${gr('Vind gemeenskaplike faktore met laagste magte:')} 2 kom in al drie voor — laagste mag is ${gr('2²')}. 3 kom in al drie voor — laagste mag is ${gr('3¹')}. 5 kom in al drie voor — laagste mag is ${gr('5¹')}.`,
-            `${gr('GGF')} = ${gr('2² × 3 × 5')} = ${gr('4 × 3 × 5')} = ${gr('60')}`,
-            `<strong>Antwoord:</strong> ${gr('GGF(120, 300, 900) = 60')} ✓`,
+            `${gr('GGD')} = ${gr('2² × 3 × 5')} = ${gr('4 × 3 × 5')} = ${gr('60')}`,
+            `<strong>Antwoord:</strong> ${gr('GGD(120, 300, 900) = 60')} ✓`,
           ],
         },
         {
@@ -227,14 +227,14 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [
-        // ── V4 Medium — GGF van twee getalle ───────────────────────────────
+        // ── V4 Medium — GGD van twee getalle ───────────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Vind die GGF van 144 en 180.',
+          question: 'Vind die GGD van 144 en 180.',
           answer: '36',
           checkMode: 'auto',
           correctAnswer: '36',
-          explanation: '144 = 2⁴ × 3². 180 = 2² × 3² × 5. Gemeenskaplike faktore met laagste magte: 2² × 3² = 4 × 9 = 36. GGF(144, 180) = 36 ✓',
+          explanation: '144 = 2⁴ × 3². 180 = 2² × 3² × 5. Gemeenskaplike faktore met laagste magte: 2² × 3² = 4 × 9 = 36. GGD(144, 180) = 36 ✓',
         },
 
         // ── V5 Medium — KGV van twee getalle ───────────────────────────────
@@ -247,17 +247,17 @@ export const topicData: TopicData = {
           explanation: '15 = 3 × 5. 20 = 2² × 5. KGV gebruik alle faktore met hoogste magte: 2² × 3 × 5 = 4 × 3 × 5 = 60. KGV(15, 20) = 60 ✓',
         },
 
-        // ── V6 Moeilik — GGF van drie getalle deur priemfaktorisering ──────────
+        // ── V6 Moeilik — GGD van drie getalle deur priemfaktorisering ──────────
         {
           difficulty: 'Hard',
-          question: 'Vind die GGF van 90, 150 en 210 deur priemfaktorisering te gebruik.',
+          question: 'Vind die GGD van 90, 150 en 210 deur priemfaktorisering te gebruik.',
           answer: '90=2×3²×5. 150=2×3×5². 210=2×3×5×7. Gemeenskaplike faktore met laagste magte: 2×3×5=30.',
           checkMode: 'self',
         },
       ],
 
       videoPlaceholder:
-        'Kort video wat priemfaktorisering met ʼn faktorboom wys en hoe om GGF en KGV vanaf priemfaktore te vind',
+        'Kort video wat priemfaktorisering met ʼn faktorboom wys en hoe om GGD en KGV vanaf priemfaktore te vind',
 
       diagramPlaceholder:
         'Faktorboom vir 120 wat vertak na sy priemfaktore 2, 2, 2, 3 en 5, wat ooreenstem met die uitgewerkte voorbeeld se priemfaktorisering',
@@ -316,7 +316,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Verhouding</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Vergelyk hoeveelhede van <em>dieselfde</em> soort. Geskryf as ${bl('a : b')} of as ʼn breuk. Vereenvoudig altyd deur die GGF te deel.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Vergelyk hoeveelhede van <em>dieselfde</em> soort. Geskryf as ${bl('a : b')} of as ʼn breuk. Vereenvoudig altyd deur die GGD te deel.</p>` +
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +

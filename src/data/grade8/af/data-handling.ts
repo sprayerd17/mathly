@@ -25,7 +25,7 @@ export const topicData: TopicData = {
       title: 'Data Organiseer en Maatstawwe van Verspreiding',
       icon: '📊',
       explanation:
-        `<p style="margin-bottom:16px;">Ons hersien die organisering van data met behulp van telmerke, tabelle en stingel-en-blaar-diagramme, groepeer data in intervalle, en som op met behulp van gemiddelde, mediaan en modus. Ons brei dit uit na <strong>maatstawwe van verspreiding</strong>, insluitend variasiewydte en ekstreme (die kleinste en grootste waardes in ʼn datastel).</p>` +
+        `<p style="margin-bottom:16px;">Ons hersien die organisering van data met behulp van telmerke, tabelle en stam-en-blaar-diagramme, groepeer data in intervalle, en som op met behulp van gemiddelde, mediaan en modus. Ons brei dit uit na <strong>maatstawwe van verspreiding</strong>, insluitend variasiewydte en ekstreme (die kleinste en grootste waardes in ʼn datastel).</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
