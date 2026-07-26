@@ -154,7 +154,8 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-5 space-y-1">
             <li>ask us what personal information we hold about you or your child,</li>
             <li>ask us to correct information that is inaccurate or out of date,</li>
-            <li>ask us to delete your account and associated personal information, subject to Section 8,</li>
+            <li>delete your account and associated personal information yourself, any time, from your
+              profile page — or ask us to do it for you — subject to Section 8,</li>
             <li>object to how we process your information, and</li>
             <li>lodge a complaint with the Information Regulator of South Africa if you believe we have
               mishandled your information (<span style={{ color: '#1e40af' }}>inforegulator.org.za</span>).</li>

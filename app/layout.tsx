@@ -14,10 +14,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://mathly.co.za";
+const TITLE = "Mathly — Master Maths, One Step at a Time";
+const DESCRIPTION =
+  "Clear explanations, worked examples, and practice problems for Grades 4 to 12.";
+
 export const metadata: Metadata = {
-  title: "Mathly — Master Maths, One Step at a Time",
-  description:
-    "Clear explanations, worked examples, and practice problems for Grades 4 to 12.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Mathly",
+    images: [{ url: "/logo-icon.png", width: 256, height: 256, alt: "Mathly logo" }],
+    locale: "en_ZA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/logo-icon.png"],
+  },
 };
 
 export default function RootLayout({

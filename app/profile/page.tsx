@@ -9,6 +9,7 @@ import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
 import { db, auth } from '@/src/lib/firebase'
 import { cancelSubscription, downgradeChild } from '@/src/lib/paystack-client'
+import { deleteAccount } from '@/src/lib/account-client'
 import { computeFamilyPrice, addOneMonth } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
@@ -32,7 +33,7 @@ const LANGUAGE_LABELS: Record<Language, string> = {
 type ChildRecord = { name: string; grade: number; language: Language; languageChangeUsed: boolean; gradeChangeUsed: boolean }
 
 export default function ProfilePage() {
-  const { user, loading, updateChildren, addChild, updateActiveChild, openModal } = useAuth()
+  const { user, loading, updateChildren, addChild, updateActiveChild, openModal, logout } = useAuth()
   const t = useTranslations()
 
   // Singular-profile editing (used when the plan only allows 1 profile)
@@ -63,6 +64,25 @@ export default function ProfilePage() {
     } catch (err) {
       setCancelError(err instanceof Error ? err.message : String(err))
       setCancelInProgress(false)
+    }
+  }
+
+  const [confirmingDelete, setConfirmingDelete] = useState(false)
+  const [confirmDeleteUnderstood, setConfirmDeleteUnderstood] = useState(false)
+  const [deleteInProgress, setDeleteInProgress] = useState(false)
+  const [deleteError, setDeleteError] = useState<string | null>(null)
+
+  async function handleDeleteAccount() {
+    if (!auth.currentUser) return
+    setDeleteInProgress(true)
+    setDeleteError(null)
+    try {
+      await deleteAccount(auth.currentUser)
+      await logout()
+      window.location.href = '/'
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : String(err))
+      setDeleteInProgress(false)
     }
   }
 
@@ -1027,6 +1047,60 @@ export default function ProfilePage() {
 
           </div>
         )}
+
+        {/* Danger zone */}
+        <div
+          className="bg-white rounded-2xl shadow-sm p-7 mt-5"
+          style={{ border: '1px solid #e5e7eb' }}
+        >
+          <h2 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
+            {t.profile_danger_zone_heading}
+          </h2>
+          {!confirmingDelete ? (
+            <button
+              onClick={() => setConfirmingDelete(true)}
+              className="text-xs font-semibold hover:underline underline-offset-2"
+              style={{ color: '#b91c1c' }}
+            >
+              {t.profile_delete_account_link}
+            </button>
+          ) : (
+            <div>
+              <p className="text-sm text-gray-600 mb-4">{t.profile_delete_account_body}</p>
+              {deleteError && (
+                <p className="text-xs font-semibold mb-3" style={{ color: '#b91c1c' }}>{deleteError}</p>
+              )}
+              <label className="flex items-start gap-2 mb-4 text-xs text-gray-600 leading-relaxed">
+                <input
+                  type="checkbox"
+                  checked={confirmDeleteUnderstood}
+                  onChange={e => setConfirmDeleteUnderstood(e.target.checked)}
+                  className="mt-0.5"
+                />
+                <span>{t.profile_delete_account_confirm_label}</span>
+              </label>
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => { setConfirmingDelete(false); setConfirmDeleteUnderstood(false); setDeleteError(null) }}
+                  disabled={deleteInProgress}
+                  className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors disabled:opacity-50"
+                >
+                  {t.profile_cancel}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleDeleteAccount}
+                  disabled={deleteInProgress || !confirmDeleteUnderstood}
+                  className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-50"
+                  style={{ backgroundColor: '#b91c1c' }}
+                >
+                  {deleteInProgress ? t.profile_delete_account_in_progress : t.profile_delete_account_confirm}
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </main>
     </div>
   )

@@ -12,6 +12,14 @@ const en = {
     nav_log_out: 'Log out',
     nav_auth_account_menu_label: 'Account menu',
 
+    // ── Global: not-found / error pages ────────────────────────────────────
+    not_found_heading: "This page doesn't exist",
+    not_found_body: "The link you followed might be broken, or the page may have moved. Let's get you back on track.",
+    not_found_cta: 'Back to home',
+    error_page_heading: 'Something went wrong',
+    error_page_body: "We hit an unexpected error. It's not you — please try again, or head back to the home page.",
+    error_page_retry: 'Try again',
+
     // ── Auth modal (providers.tsx) ─────────────────────────────────────────
     auth_grade_label: 'Grade {grade}',
     auth_error_fill_required: 'Please fill in all required fields.',
@@ -281,6 +289,12 @@ const en = {
     profile_cancel_subscription_keep: 'Never mind',
     profile_cancel_subscription_confirm: 'Yes, cancel',
     profile_cancel_subscription_in_progress: 'Cancelling…',
+    profile_danger_zone_heading: 'Danger Zone',
+    profile_delete_account_link: 'Delete my account',
+    profile_delete_account_body: "This permanently deletes your account, your children's profiles, and all associated data. If you have an active subscription, it will be cancelled first. This cannot be undone.",
+    profile_delete_account_confirm_label: 'I understand this is permanent and cannot be undone.',
+    profile_delete_account_confirm: 'Yes, delete my account',
+    profile_delete_account_in_progress: 'Deleting…',
     profile_remove_child_link: 'Move {name} to Free',
     profile_remove_child_confirm_body: 'This moves {name} to the Free plan. Your monthly bill is reduced starting next billing cycle — there’s no refund for the current one.',
     profile_remove_child_new_total_label: 'New monthly total',
@@ -646,6 +660,14 @@ const af: Record<TranslationKeys, string> = {
     nav_log_out: 'Teken uit',
     nav_auth_account_menu_label: 'Rekeningkieslys',
 
+    // ── Global: not-found / error pages ────────────────────────────────────
+    not_found_heading: 'Hierdie bladsy bestaan nie',
+    not_found_body: 'Die skakel wat jy gevolg het, is dalk stukkend, of die bladsy het geskuif. Kom ons bring jou terug op koers.',
+    not_found_cta: 'Terug na tuisblad',
+    error_page_heading: 'Iets het verkeerd geloop',
+    error_page_body: 'Ons het \'n onverwagte fout teëgekom. Dis nie jou skuld nie — probeer asseblief weer, of gaan terug na die tuisblad.',
+    error_page_retry: 'Probeer weer',
+
     // ── Auth modal (providers.tsx) ─────────────────────────────────────────
     auth_grade_label: 'Graad {grade}',
     auth_error_fill_required: 'Vul asseblief al die verpligte velde in.',
@@ -915,6 +937,12 @@ const af: Record<TranslationKeys, string> = {
     profile_cancel_subscription_keep: 'Behou dit',
     profile_cancel_subscription_confirm: 'Ja, kanselleer',
     profile_cancel_subscription_in_progress: 'Kanselleer tans…',
+    profile_danger_zone_heading: 'Gevaarsone',
+    profile_delete_account_link: 'Skrap my rekening',
+    profile_delete_account_body: 'Dit skrap jou rekening, jou kinders se profiele, en alle verwante data permanent. As jy \'n aktiewe subskripsie het, sal dit eers gekanselleer word. Dit kan nie ongedaan gemaak word nie.',
+    profile_delete_account_confirm_label: 'Ek verstaan dit is permanent en kan nie ongedaan gemaak word nie.',
+    profile_delete_account_confirm: 'Ja, skrap my rekening',
+    profile_delete_account_in_progress: 'Word geskrap…',
     profile_remove_child_link: 'Skuif {name} na Gratis',
     profile_remove_child_confirm_body: 'Dit skuif {name} na die Gratis-plan. Jou maandelikse rekening word verminder vanaf jou volgende faktureringsiklus — daar is geen terugbetaling vir die huidige siklus nie.',
     profile_remove_child_new_total_label: 'Nuwe maandelikse totaal',
