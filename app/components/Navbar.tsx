@@ -1,13 +1,24 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import NavAuth from './NavAuth'
+import NavAuth, { type NavAuthHandle } from './NavAuth'
 import { useAuth } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { ADMIN_EMAIL } from '@/src/lib/admin'
+
+// Imperative controls the onboarding tour (OnboardingTour.tsx) uses to open
+// the mobile menu / account dropdown so it can spotlight real nav items —
+// there's no other way to reach this component's internal open/close state
+// from a sibling rendered elsewhere on the page.
+export type NavbarHandle = {
+  openMobileMenu: () => void
+  closeMobileMenu: () => void
+  openAccountMenu: () => void
+  closeAccountMenu: () => void
+}
 
 const navLinks = [
   { key: 'nav_home',         href: '/'            },
@@ -32,12 +43,20 @@ function CloseIcon() {
   )
 }
 
-export default function Navbar() {
+const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
   const { user, loading, logout, openModal } = useAuth()
   const t = useTranslations()
+  const navAuthRef = useRef<NavAuthHandle>(null)
+
+  useImperativeHandle(ref, () => ({
+    openMobileMenu: () => setMenuOpen(true),
+    closeMobileMenu: () => setMenuOpen(false),
+    openAccountMenu: () => navAuthRef.current?.open(),
+    closeAccountMenu: () => navAuthRef.current?.close(),
+  }), [])
 
   const lastScrollY = useRef(0)
 
@@ -99,6 +118,7 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
+                  id={`tour-nav-${key}`}
                   className="flex items-center gap-1.5 text-sm font-medium transition-colors"
                   style={{ color: isActive ? '#1e40af' : '#0f1f3d' }}
                 >
@@ -117,6 +137,7 @@ export default function Navbar() {
             {user && (
               <Link
                 href="/dashboard"
+                id="tour-nav-dashboard"
                 className="text-sm font-medium transition-colors"
                 style={{ color: pathname === '/dashboard' ? '#1e40af' : '#0f1f3d' }}
               >
@@ -128,7 +149,7 @@ export default function Navbar() {
           {/* Right: desktop auth + mobile hamburger */}
           <div className="flex items-center">
             <div className="hidden md:block">
-              <NavAuth />
+              <NavAuth ref={navAuthRef} />
             </div>
             <button
               className="md:hidden p-1.5 -mr-1.5 text-[#0f1f3d] hover:text-[#1e40af] transition-colors rounded-md"
@@ -183,6 +204,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
+                id={`tour-mobile-${key}`}
                 onClick={close}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 style={{
@@ -205,6 +227,7 @@ export default function Navbar() {
           {user && (
             <Link
               href="/dashboard"
+              id="tour-mobile-dashboard"
               onClick={close}
               className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
               style={{
@@ -221,7 +244,7 @@ export default function Navbar() {
         <div className="px-5 pb-8 pt-5 border-t border-white/10">
           {loading ? null : user ? (
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <div id="tour-mobile-account" className="flex items-center gap-3 mb-4 rounded-lg">
                 <div className="w-9 h-9 rounded-full bg-[#1e40af] text-white text-sm font-bold flex items-center justify-center shrink-0">
                   {user.initial}
                 </div>
@@ -267,4 +290,6 @@ export default function Navbar() {
       </aside>
     </>
   )
-}
+})
+
+export default Navbar

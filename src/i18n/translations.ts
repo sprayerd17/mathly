@@ -22,6 +22,10 @@ const en = {
     tour_dashboard_body: 'Track completed topics, quiz scores, and study streaks here — a quick way to see how things are going.',
     tour_contact_heading: 'Contact',
     tour_contact_body: 'Got a question, or come across a diagram that didn’t render quite right? This is where you reach me directly.',
+    tour_account_heading: 'Your account',
+    tour_account_body: 'Click here anytime to jump straight to your profile or manage your subscription.',
+    tour_subscription_heading: 'Your subscription',
+    tour_subscription_body: 'See your plan, your next billing date, and cancel anytime — right here.',
     tour_profile_heading: 'Profile',
     tour_profile_body: 'Manage your children’s grades and languages, your subscription, and your referral link — you’re on this page right now.',
     tour_closing_heading: 'An important request from Mathly',
@@ -29,6 +33,7 @@ const en = {
     tour_back_button: 'Back',
     tour_next_button: 'Next',
     tour_done_button: "Let's go",
+    tour_skip_button: 'Skip tour',
 
     // ── Report-an-issue floating button (topic pages, logged-in only) ──────
     report_issue_fab_label: 'Report an issue',
@@ -699,6 +704,10 @@ const af: Record<TranslationKeys, string> = {
     tour_dashboard_body: 'Hou voltooide onderwerpe, toetstellings en studiestrepe hier dop — \'n vinnige manier om te sien hoe dit gaan.',
     tour_contact_heading: 'Kontak',
     tour_contact_body: 'Het jy \'n vraag, of het jy \'n diagram raakgeloop wat nie reg vertoon het nie? Hier bereik jy my direk.',
+    tour_account_heading: 'Jou rekening',
+    tour_account_body: 'Klik hier enige tyd om reguit na jou profiel te gaan of jou pakket te bestuur.',
+    tour_subscription_heading: 'Jou pakket',
+    tour_subscription_body: 'Sien jou pakket, jou volgende faktureringsdatum, en kanselleer enige tyd — reg hier.',
     tour_profile_heading: 'Profiel',
     tour_profile_body: 'Bestuur jou kinders se grade en tale, jou pakket, en jou verwysingskakel — jy is nou op hierdie bladsy.',
     tour_closing_heading: "'n Belangrike versoek van Mathly",
@@ -706,6 +715,7 @@ const af: Record<TranslationKeys, string> = {
     tour_back_button: 'Terug',
     tour_next_button: 'Volgende',
     tour_done_button: 'Kom ons begin',
+    tour_skip_button: 'Slaan oor',
 
     // ── Report-an-issue floating button (topic pages, logged-in only) ──────
     report_issue_fab_label: "Rapporteer 'n probleem",

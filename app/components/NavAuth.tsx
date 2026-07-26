@@ -1,19 +1,31 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
 import Link from 'next/link'
 import { useAuth } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
-export default function NavAuth() {
+// Imperative controls the onboarding tour uses to open/close this dropdown
+// when spotlighting the account icon — see NavbarHandle in Navbar.tsx.
+export type NavAuthHandle = {
+  open: () => void
+  close: () => void
+}
+
+const NavAuth = forwardRef<NavAuthHandle>(function NavAuth(_props, ref) {
   const { user, loading, logout, openModal } = useAuth()
   const t = useTranslations()
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useImperativeHandle(ref, () => ({
+    open: () => setDropdownOpen(true),
+    close: () => setDropdownOpen(false),
+  }), [])
 
   useEffect(() => {
     function handler(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setDropdownOpen(false)
       }
     }
@@ -37,8 +49,9 @@ export default function NavAuth() {
   }
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative" ref={containerRef}>
       <button
+        id="tour-nav-account"
         onClick={() => setDropdownOpen((o) => !o)}
         className="w-9 h-9 rounded-full bg-[#1e40af] text-white text-sm font-bold flex items-center justify-center hover:bg-[#1d3a9e] transition-colors select-none"
         aria-label={t.nav_auth_account_menu_label}
@@ -82,4 +95,6 @@ export default function NavAuth() {
       )}
     </div>
   )
-}
+})
+
+export default NavAuth

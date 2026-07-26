@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
-import Navbar from '@/app/components/Navbar'
+import Navbar, { type NavbarHandle } from '@/app/components/Navbar'
 import OnboardingTour from '@/app/components/OnboardingTour'
 import { useAuth, LanguageCards, type Language, type Tier } from '@/app/providers'
 import { QRCodeCanvas } from 'qrcode.react'
@@ -60,6 +60,7 @@ export default function ProfilePage() {
   // refresh/revisit doesn't re-trigger it. Reopenable any time via the
   // "Quick run-through" link below.
   const [showTour, setShowTour] = useState(false)
+  const navbarRef = useRef<NavbarHandle>(null)
 
   // Singular-profile editing (used when the plan only allows 1 profile)
   const [editingGrade, setEditingGrade] = useState(false)
@@ -311,7 +312,7 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
-      <Navbar />
+      <Navbar ref={navbarRef} />
 
       <main className="flex-1 w-full max-w-2xl mx-auto px-6 py-14">
         <div className="flex items-start justify-between gap-4 mb-8">
@@ -330,7 +331,7 @@ export default function ProfilePage() {
         <Suspense fallback={null}>
           <TourAutoOpen onOpen={() => setShowTour(true)} />
         </Suspense>
-        {showTour && <OnboardingTour onClose={() => setShowTour(false)} />}
+        {showTour && <OnboardingTour onClose={() => setShowTour(false)} navbarRef={navbarRef} />}
 
         {/* Identity card */}
         <div
@@ -521,6 +522,7 @@ export default function ProfilePage() {
 
         {/* Subscription card */}
         <div
+          id="tour-subscription-section"
           className="bg-white rounded-2xl shadow-sm p-7"
           style={{ border: '1px solid #e5e7eb' }}
         >
@@ -730,6 +732,7 @@ export default function ProfilePage() {
             exactly one child, since that child's own details are already
             shown inline in the identity card above. */}
         <div
+          id="tour-children-section"
           className="bg-white rounded-2xl shadow-sm p-7 mt-5"
           style={{ border: '1px solid #e5e7eb' }}
         >
