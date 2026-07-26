@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useAuth, getActiveChild, type Language } from '@/app/providers'
 import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
 import AIAssistant from '@/app/components/AIAssistant'
+import ReportIssueButton from '@/app/components/ReportIssueButton'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { logActivityCompletion } from '@/src/lib/activity-log'
 import { getTopicStudied, setTopicStudied } from '@/src/lib/study-progress'
@@ -1404,6 +1405,7 @@ export default function TopicTabs({ topicName, topicSlug, grade, isLocked, study
       {activeTab === 'Answers' && !studyGuideData && <Answers />}
 
       {activeTab === 'Study Guide' && <AIAssistant grade={grade} />}
+      {user && <ReportIssueButton grade={grade} topicSlug={topicSlug} topicName={topicName} />}
 
       <div className="mt-10 pt-6 border-t border-gray-100">
         <Link

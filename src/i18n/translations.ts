@@ -24,11 +24,22 @@ const en = {
     tour_contact_body: 'Got a question, or come across a diagram that didn’t render quite right? This is where you reach me directly.',
     tour_profile_heading: 'Profile',
     tour_profile_body: 'Manage your children’s grades and languages, your subscription, and your referral link — you’re on this page right now.',
-    tour_closing_heading: 'One more thing',
-    tour_closing_body: 'Mathly is built and maintained by a single student, not a big team. Most things work great, but every now and then a diagram might not render quite right, or something might look a little off. If you spot anything like that, head to Contact and let me know — a quick report helps me track it down and fix it fast.',
+    tour_closing_heading: 'An important request from Mathly',
+    tour_closing_body: "Mathly is built and maintained by a single student, not a big team — I'm actively working through every topic to check it myself, but there's a lot to get through, so it's going to take a good while. If you spot a diagram that's not rendering quite right, or anything that looks a little off, please submit a request on the Contact page — a quick report helps me find it and fix it fast, and your help would genuinely be appreciated.",
     tour_back_button: 'Back',
     tour_next_button: 'Next',
     tour_done_button: "Let's go",
+
+    // ── Report-an-issue floating button (topic pages, logged-in only) ──────
+    report_issue_fab_label: 'Report an issue',
+    report_issue_heading: "Spot something that's not quite right?",
+    report_issue_body: "Mathly is a solo project, so a second pair of eyes always helps. Tell me what you noticed — a diagram not rendering right, unclear wording, anything — and I'll take a look.",
+    report_issue_placeholder: 'What did you notice?',
+    report_issue_submit_button: 'Submit',
+    report_issue_submitting: 'Submitting…',
+    report_issue_success_heading: 'Thanks for flagging that!',
+    report_issue_success_body: "Your report's been sent through — I'll take a look as soon as I can.",
+    report_issue_close_button: 'Close',
 
     // ── Global: not-found / error pages ────────────────────────────────────
     not_found_heading: "This page doesn't exist",
@@ -585,7 +596,7 @@ const en = {
     contact_submit_request_button: 'Submit Request',
     contact_faq_heading: 'Frequently asked questions',
     contact_about_heading: 'About Mathly',
-    contact_about_blurb: "Mathly is a South African maths education platform covering Grade 4 to Grade 12. Our study guides, worked examples, and practice problems are aligned to the CAPS curriculum. We're a small team passionate about making quality maths education accessible to every learner in South Africa.",
+    contact_about_blurb: "Mathly is a South African maths education platform covering Grade 4 to Grade 12. Our study guides, worked examples, and practice problems are aligned to the CAPS curriculum. Mathly is built and maintained by a single student passionate about making quality maths education accessible to every learner in South Africa.",
 
     // ── FAQ accordion (FAQAccordion.tsx) ────────────────────────────────────
     faq_q1_question: 'How do I subscribe?',
@@ -690,11 +701,22 @@ const af: Record<TranslationKeys, string> = {
     tour_contact_body: 'Het jy \'n vraag, of het jy \'n diagram raakgeloop wat nie reg vertoon het nie? Hier bereik jy my direk.',
     tour_profile_heading: 'Profiel',
     tour_profile_body: 'Bestuur jou kinders se grade en tale, jou pakket, en jou verwysingskakel — jy is nou op hierdie bladsy.',
-    tour_closing_heading: 'Nog iets',
-    tour_closing_body: 'Mathly word deur net een student gebou en onderhou, nie \'n groot span nie. Meeste dinge werk goed, maar af en toe vertoon \'n diagram dalk nie heeltemal reg nie, of lyk iets \'n bietjie skeef. As jy iets soos dit raakloop, gaan na Kontak en laat weet my — \'n vinnige verslag help my om dit vinnig op te spoor en reg te maak.',
+    tour_closing_heading: "'n Belangrike versoek van Mathly",
+    tour_closing_body: 'Mathly word deur net een student gebou en onderhou, nie \'n groot span nie — ek werk tans self deur elke onderwerp om dit na te gaan, maar daar is baie om deur te werk, so dit gaan \'n hele ruk neem. As jy \'n diagram raakloop wat nie heeltemal reg vertoon nie, of iets wat \'n bietjie skeef lyk, dien asseblief \'n versoek in op die Kontak-bladsy — \'n vinnige verslag help my om dit vinnig op te spoor en reg te maak, en jou hulp sal opreg waardeer word.',
     tour_back_button: 'Terug',
     tour_next_button: 'Volgende',
     tour_done_button: 'Kom ons begin',
+
+    // ── Report-an-issue floating button (topic pages, logged-in only) ──────
+    report_issue_fab_label: "Rapporteer 'n probleem",
+    report_issue_heading: "Iets wat nie heeltemal reg lyk nie?",
+    report_issue_body: "Mathly is 'n soloprojek, so 'n tweede stel oë help altyd. Laat weet wat jy raakgeloop het — 'n diagram wat nie reg vertoon nie, onduidelike bewoording, enigiets — en ek sal dit gaan kyk.",
+    report_issue_placeholder: 'Wat het jy raakgeloop?',
+    report_issue_submit_button: 'Dien in',
+    report_issue_submitting: 'Besig om in te dien…',
+    report_issue_success_heading: 'Dankie dat jy dit uitgewys het!',
+    report_issue_success_body: 'Jou verslag is gestuur — ek sal so gou moontlik daarna kyk.',
+    report_issue_close_button: 'Maak toe',
 
     // ── Global: not-found / error pages ────────────────────────────────────
     not_found_heading: 'Hierdie bladsy bestaan nie',
@@ -1250,8 +1272,8 @@ const af: Record<TranslationKeys, string> = {
     contact_form_description_placeholder: 'Beskryf wat jy nodig het',
     contact_submit_request_button: 'Dien Versoek In',
     contact_faq_heading: 'Gereelde vrae',
-    contact_about_heading: 'Van Mathly',
-    contact_about_blurb: "Mathly is 'n Suid-Afrikaanse wiskunde-opvoedkundige platform wat Graad 4 tot Graad 12 dek. Ons studiegidse, uitgewerkte voorbeelde en oefenprobleme is aan die CAPS-kurrikulum belyn. Ons is 'n klein span wat passievol daaroor is om gehalte wiskunde-onderrig toeganklik te maak vir elke leerder in Suid-Afrika.",
+    contact_about_heading: 'Oor Mathly',
+    contact_about_blurb: "Mathly is 'n Suid-Afrikaanse wiskunde-opvoedkundige platform wat Graad 4 tot Graad 12 dek. Ons studiegidse, uitgewerkte voorbeelde en oefenprobleme is aan die CAPS-kurrikulum belyn. Mathly word deur een student gebou en onderhou wat passievol daaroor is om gehalte wiskunde-onderrig toeganklik te maak vir elke leerder in Suid-Afrika.",
 
     // ── FAQ accordion (FAQAccordion.tsx) ────────────────────────────────────
     faq_q1_question: 'Hoe teken ek in?',

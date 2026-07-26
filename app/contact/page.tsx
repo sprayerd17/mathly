@@ -6,6 +6,7 @@ import { db } from '@/src/lib/firebase'
 import Navbar from '@/app/components/Navbar'
 import FAQAccordion from '@/app/components/FAQAccordion'
 import { useTranslations } from '@/src/i18n/useTranslations'
+import { useAuth, getActiveChild } from '@/app/providers'
 
 const CONTACT_GRADES    = [4, 5, 6, 7, 8, 9, 10, 11, 12]
 // Underlying stored values stay in English (matches admin/page.tsx REQUEST_TYPES),
@@ -64,6 +65,7 @@ function ClockIcon() {
 
 export default function ContactPage() {
   const t = useTranslations()
+  const { user } = useAuth()
   const [form, setForm]             = useState(EMPTY_FORM)
   const [submitted, setSubmitted]   = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -75,17 +77,25 @@ export default function ContactPage() {
 
   // Requests land in the Firestore `requests` collection (create-only for
   // clients, see firestore.rules) so the admin dashboard can see them —
-  // previously they only lived in this browser's localStorage.
+  // previously they only lived in this browser's localStorage. For a
+  // logged-in user, identity/grade/language are pulled from the account
+  // instead of asking them to retype what we already know.
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (submitting) return
     setSubmitting(true)
     setSubmitError(false)
     try {
+      const activeChild = user ? getActiveChild(user) : null
       await addDoc(collection(db, 'requests'), {
-        ...form,
-        status:    'unreviewed',
-        createdAt: serverTimestamp(),
+        name:        user?.name ?? form.name,
+        email:       user?.email ?? form.email,
+        grade:       activeChild?.grade ?? form.grade,
+        language:    activeChild?.language ?? form.language,
+        requestType: form.requestType,
+        description: form.description,
+        status:      'unreviewed',
+        createdAt:   serverTimestamp(),
       })
       setSubmitted(true)
       setForm(EMPTY_FORM)
@@ -157,79 +167,83 @@ export default function ContactPage() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
 
-              {/* Name */}
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  {t.contact_form_name_label}
-                </label>
-                <input
-                  type="text"
-                  value={form.name}
-                  onChange={e => f('name', e.target.value)}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm outline-none"
-                  style={{ borderColor: '#d1d5db' }}
-                  placeholder={t.contact_form_name_placeholder}
-                  required
-                />
-              </div>
+              {!user && (
+                <>
+                  {/* Name */}
+                  <div>
+                    <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
+                      {t.contact_form_name_label}
+                    </label>
+                    <input
+                      type="text"
+                      value={form.name}
+                      onChange={e => f('name', e.target.value)}
+                      className="w-full border rounded-lg px-4 py-2.5 text-sm outline-none"
+                      style={{ borderColor: '#d1d5db' }}
+                      placeholder={t.contact_form_name_placeholder}
+                      required
+                    />
+                  </div>
 
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  {t.contact_form_email_label}
-                </label>
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={e => f('email', e.target.value)}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm outline-none"
-                  style={{ borderColor: '#d1d5db' }}
-                  placeholder={t.auth_email_placeholder}
-                  required
-                />
-              </div>
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
+                      {t.contact_form_email_label}
+                    </label>
+                    <input
+                      type="email"
+                      value={form.email}
+                      onChange={e => f('email', e.target.value)}
+                      className="w-full border rounded-lg px-4 py-2.5 text-sm outline-none"
+                      style={{ borderColor: '#d1d5db' }}
+                      placeholder={t.auth_email_placeholder}
+                      required
+                    />
+                  </div>
 
-              {/* Grade */}
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  {t.dash_form_grade}
-                </label>
-                <select
-                  value={form.grade}
-                  onChange={e => f('grade', Number(e.target.value))}
-                  className="w-full border rounded-lg px-4 py-2.5 text-sm bg-white"
-                  style={{ borderColor: '#d1d5db' }}
-                  required
-                >
-                  {CONTACT_GRADES.map(g => (
-                    <option key={g} value={g}>{t.topic_grade_value.replace('{grade}', String(g))}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Language */}
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
-                  {t.contact_form_language_label}
-                </label>
-                <div className="flex gap-3">
-                  {(['en', 'af'] as const).map(lang => (
-                    <button
-                      key={lang}
-                      type="button"
-                      onClick={() => f('language', lang)}
-                      className="flex-1 py-2.5 rounded-lg text-sm font-semibold border transition-all"
-                      style={
-                        form.language === lang
-                          ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
-                          : { backgroundColor: '#f8fafc', color: '#374151', borderColor: '#d1d5db' }
-                      }
+                  {/* Grade */}
+                  <div>
+                    <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
+                      {t.dash_form_grade}
+                    </label>
+                    <select
+                      value={form.grade}
+                      onChange={e => f('grade', Number(e.target.value))}
+                      className="w-full border rounded-lg px-4 py-2.5 text-sm bg-white"
+                      style={{ borderColor: '#d1d5db' }}
+                      required
                     >
-                      {lang === 'en' ? t.topic_language_english : t.topic_language_afrikaans}
-                    </button>
-                  ))}
-                </div>
-              </div>
+                      {CONTACT_GRADES.map(g => (
+                        <option key={g} value={g}>{t.topic_grade_value.replace('{grade}', String(g))}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Language */}
+                  <div>
+                    <label className="block text-sm font-semibold mb-1.5" style={{ color: '#374151' }}>
+                      {t.contact_form_language_label}
+                    </label>
+                    <div className="flex gap-3">
+                      {(['en', 'af'] as const).map(lang => (
+                        <button
+                          key={lang}
+                          type="button"
+                          onClick={() => f('language', lang)}
+                          className="flex-1 py-2.5 rounded-lg text-sm font-semibold border transition-all"
+                          style={
+                            form.language === lang
+                              ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
+                              : { backgroundColor: '#f8fafc', color: '#374151', borderColor: '#d1d5db' }
+                          }
+                        >
+                          {lang === 'en' ? t.topic_language_english : t.topic_language_afrikaans}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
 
               {/* Request type */}
               <div>
