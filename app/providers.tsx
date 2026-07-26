@@ -37,6 +37,7 @@ export type Child = {
   grade: number
   language: Language
   languageChangeUsed: boolean
+  gradeChangeUsed: boolean
 }
 
 // Billing state, driven entirely by the Paystack webhook and the
@@ -779,6 +780,7 @@ function sanitizeChild(raw: unknown): Child {
     grade: typeof c.grade === 'number' ? c.grade : 0,
     language: c.language === 'af' ? 'af' : 'en',
     languageChangeUsed: c.languageChangeUsed ?? false,
+    gradeChangeUsed: c.gradeChangeUsed ?? false,
   }
 }
 
@@ -801,7 +803,7 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
 
   const children: Child[] = Array.isArray(data.children) && data.children.length > 0
     ? data.children.map(sanitizeChild)
-    : [sanitizeChild({ name, grade: 0, language: 'en', languageChangeUsed: false })]
+    : [sanitizeChild({ name, grade: 0, language: 'en', languageChangeUsed: false, gradeChangeUsed: false })]
   const rawActiveIndex = typeof data.activeChildIndex === 'number' ? data.activeChildIndex : 0
   const activeChildIndex = Math.min(Math.max(rawActiveIndex, 0), children.length - 1)
 
@@ -891,7 +893,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     registeringUidRef.current = cred.user.uid
     try {
       await updateAuthProfile(cred.user, { displayName: name })
-      const children: Child[] = childInputs.map(c => ({ ...c, languageChangeUsed: false }))
+      const children: Child[] = childInputs.map(c => ({ ...c, languageChangeUsed: false, gradeChangeUsed: false }))
       const refCode = generateRefCode(name)
       // Every account is created all-free, regardless of the tiers chosen in
       // the wizard — Firestore rules only allow childPlans with no paid tier

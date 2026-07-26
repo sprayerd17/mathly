@@ -29,7 +29,7 @@ const LANGUAGE_LABELS: Record<Language, string> = {
   af: 'Afrikaans',
 }
 
-type ChildRecord = { name: string; grade: number; language: Language; languageChangeUsed: boolean }
+type ChildRecord = { name: string; grade: number; language: Language; languageChangeUsed: boolean; gradeChangeUsed: boolean }
 
 export default function ProfilePage() {
   const { user, loading, updateChildren, addChild, updateActiveChild, openModal } = useAuth()
@@ -38,8 +38,10 @@ export default function ProfilePage() {
   // Singular-profile editing (used when the plan only allows 1 profile)
   const [editingGrade, setEditingGrade] = useState(false)
   const [draftGrade, setDraftGrade]     = useState<number>(4)
+  const [confirmGradeChange, setConfirmGradeChange] = useState(false)
   const [editingLang, setEditingLang]   = useState(false)
   const [draftLang, setDraftLang]       = useState<Language>('en')
+  const [confirmLangChange, setConfirmLangChange] = useState(false)
 
   const [linkCopied, setLinkCopied] = useState(false)
   const [codeCopied, setCodeCopied] = useState(false)
@@ -82,10 +84,6 @@ export default function ProfilePage() {
   }
 
   const [children, setChildren]               = useState<ChildRecord[]>([])
-  const [editingChildIdx, setEditingChildIdx] = useState<number | null>(null)
-  const [draftChildName, setDraftChildName]   = useState('')
-  const [draftChildGrade, setDraftChildGrade] = useState<number>(4)
-  const [draftChildLanguage, setDraftChildLanguage] = useState<Language>('en')
   const [addingChild, setAddingChild]         = useState(false)
   const [newChildName, setNewChildName]       = useState('')
   const [newChildGrade, setNewChildGrade]     = useState<number>(4)
@@ -167,29 +165,6 @@ export default function ProfilePage() {
     updateChildren(updated)
   }
 
-  function startEditChild(i: number) {
-    setDraftChildName(children[i].name)
-    setDraftChildGrade(children[i].grade)
-    setDraftChildLanguage(children[i].language)
-    setEditingChildIdx(i)
-  }
-
-  function saveEditChild() {
-    if (editingChildIdx === null || !draftChildName.trim()) return
-    const idx = editingChildIdx
-    const languageChanged = draftChildLanguage !== children[idx].language
-    const updated = children.map((c, i) => i === idx
-      ? {
-          name: draftChildName.trim(),
-          grade: draftChildGrade,
-          language: draftChildLanguage,
-          languageChangeUsed: c.languageChangeUsed || languageChanged,
-        }
-      : c)
-    saveChildren(updated)
-    setEditingChildIdx(null)
-  }
-
   function startAddChild() {
     setNewChildName('')
     setNewChildGrade(4)
@@ -214,26 +189,43 @@ export default function ProfilePage() {
     }
   }
 
+  // Grade/language are edited one child at a time — whichever child is
+  // currently active (the same toggle used everywhere else in the app to
+  // scope grade-specific content), not always index 0.
+  function activeChildIndex() {
+    const idx = user?.activeChildIndex ?? 0
+    return Math.min(Math.max(idx, 0), Math.max(children.length - 1, 0))
+  }
+
   function startEditGrade() {
-    setDraftGrade(children[0]?.grade ?? 4)
+    const idx = activeChildIndex()
+    setDraftGrade(children[idx]?.grade ?? 4)
+    setConfirmGradeChange(false)
     setEditingGrade(true)
   }
 
   function saveGrade() {
-    if (!children[0]) return
-    saveChildren(children.map((c, i) => i === 0 ? { ...c, grade: draftGrade } : c))
+    const idx = activeChildIndex()
+    if (!children[idx]) return
+    const gradeChanged = draftGrade !== children[idx].grade
+    saveChildren(children.map((c, i) => i === idx
+      ? { ...c, grade: draftGrade, gradeChangeUsed: c.gradeChangeUsed || gradeChanged }
+      : c))
     setEditingGrade(false)
   }
 
   function startEditLangSingular() {
-    setDraftLang(children[0]?.language ?? 'en')
+    const idx = activeChildIndex()
+    setDraftLang(children[idx]?.language ?? 'en')
+    setConfirmLangChange(false)
     setEditingLang(true)
   }
 
   function saveLangSingular() {
-    if (!children[0]) return
-    const languageChanged = draftLang !== children[0].language
-    saveChildren(children.map((c, i) => i === 0
+    const idx = activeChildIndex()
+    if (!children[idx]) return
+    const languageChanged = draftLang !== children[idx].language
+    saveChildren(children.map((c, i) => i === idx
       ? { ...c, language: draftLang, languageChangeUsed: c.languageChangeUsed || languageChanged }
       : c))
     setEditingLang(false)
@@ -263,6 +255,7 @@ export default function ProfilePage() {
 
   const atChildLimit = children.length >= MAX_CHILDREN
   const singularProfile = children.length === 1
+  const activeChild = children[activeChildIndex()] ?? children[0]
   const tierLabel = (tier: Tier) => tier === 'pro' ? t.profile_plan_pro : tier === 'max' ? t.profile_plan_max : t.profile_plan_free
   const tierDesc = (tier: Tier) => tier === 'pro' ? t.profile_plan_desc_pro : tier === 'max' ? t.profile_plan_desc_max : t.profile_plan_desc_free
 
@@ -282,8 +275,8 @@ export default function ProfilePage() {
         >
           {/* Avatar + name + email */}
           <div
-            className={`flex items-center gap-5 ${singularProfile ? 'mb-8 pb-8' : ''}`}
-            style={singularProfile ? { borderBottom: '1px solid #f3f4f6' } : undefined}
+            className={`flex items-center gap-5 ${activeChild ? 'mb-8 pb-8' : ''}`}
+            style={activeChild ? { borderBottom: '1px solid #f3f4f6' } : undefined}
           >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
@@ -299,18 +292,25 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {singularProfile && children[0] && (
+          {activeChild && (
             <>
-              {/* Grade section (single profile) */}
+              {/* Grade section (scoped to whichever child is currently active) */}
               <div className="pb-7 mb-7" style={{ borderBottom: '1px solid #f3f4f6' }}>
                 <div className="flex items-center justify-between mb-3">
-                  <h2
-                    className="text-xs font-bold uppercase tracking-widest"
-                    style={{ color: '#6b7280' }}
-                  >
-                    {t.profile_my_grades_heading}
-                  </h2>
-                  {!editingGrade && (
+                  <div>
+                    <h2
+                      className="text-xs font-bold uppercase tracking-widest"
+                      style={{ color: '#6b7280' }}
+                    >
+                      {t.profile_my_grades_heading}
+                    </h2>
+                    {!singularProfile && (
+                      <p className="text-xs text-gray-400 mt-1">
+                        {t.profile_active_child_label.replace('{name}', activeChild.name)}
+                      </p>
+                    )}
+                  </div>
+                  {!editingGrade && !activeChild.gradeChangeUsed && (
                     <button
                       onClick={startEditGrade}
                       className="text-xs font-semibold hover:underline underline-offset-2"
@@ -322,12 +322,19 @@ export default function ProfilePage() {
                 </div>
 
                 {!editingGrade ? (
-                  <span
-                    className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
-                    style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
-                  >
-                    {t.profile_grade_label.replace('{grade}', String(children[0].grade))}
-                  </span>
+                  <div>
+                    <span
+                      className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
+                      style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
+                    >
+                      {t.profile_grade_label.replace('{grade}', String(activeChild.grade))}
+                    </span>
+                    {activeChild.gradeChangeUsed && (
+                      <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                        {t.profile_grade_change_used_note}
+                      </p>
+                    )}
+                  </div>
                 ) : (
                   <div>
                     <select
@@ -339,6 +346,15 @@ export default function ProfilePage() {
                         <option key={g} value={g}>{t.profile_grade_label.replace('{grade}', String(g))}</option>
                       ))}
                     </select>
+                    <label className="flex items-start gap-2 mb-4 text-xs text-gray-600 leading-relaxed">
+                      <input
+                        type="checkbox"
+                        checked={confirmGradeChange}
+                        onChange={e => setConfirmGradeChange(e.target.checked)}
+                        className="mt-0.5"
+                      />
+                      <span>{t.profile_grade_change_confirm_label}</span>
+                    </label>
                     <div className="flex gap-3">
                       <button
                         type="button"
@@ -350,7 +366,8 @@ export default function ProfilePage() {
                       <button
                         type="button"
                         onClick={saveGrade}
-                        className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors"
+                        disabled={!confirmGradeChange}
+                        className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-40"
                         style={{ backgroundColor: '#1e40af' }}
                       >
                         {t.profile_save_changes}
@@ -360,16 +377,23 @@ export default function ProfilePage() {
                 )}
               </div>
 
-              {/* Language section (single profile) */}
+              {/* Language section (scoped to whichever child is currently active) */}
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <h2
-                    className="text-xs font-bold uppercase tracking-widest"
-                    style={{ color: '#6b7280' }}
-                  >
-                    {t.profile_language_heading}
-                  </h2>
-                  {!editingLang && !children[0].languageChangeUsed && (
+                  <div>
+                    <h2
+                      className="text-xs font-bold uppercase tracking-widest"
+                      style={{ color: '#6b7280' }}
+                    >
+                      {t.profile_language_heading}
+                    </h2>
+                    {!singularProfile && (
+                      <p className="text-xs text-gray-400 mt-1">
+                        {t.profile_active_child_label.replace('{name}', activeChild.name)}
+                      </p>
+                    )}
+                  </div>
+                  {!editingLang && !activeChild.languageChangeUsed && (
                     <button
                       onClick={startEditLangSingular}
                       className="text-xs font-semibold hover:underline underline-offset-2"
@@ -386,9 +410,9 @@ export default function ProfilePage() {
                       className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
                       style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
                     >
-                      {LANGUAGE_LABELS[children[0].language]}
+                      {LANGUAGE_LABELS[activeChild.language]}
                     </span>
-                    {children[0].languageChangeUsed && (
+                    {activeChild.languageChangeUsed && (
                       <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                         {t.profile_language_change_used_note}
                       </p>
@@ -397,6 +421,15 @@ export default function ProfilePage() {
                 ) : (
                   <div>
                     <LanguageCards selected={draftLang} onSelect={setDraftLang} />
+                    <label className="flex items-start gap-2 mt-4 text-xs text-gray-600 leading-relaxed">
+                      <input
+                        type="checkbox"
+                        checked={confirmLangChange}
+                        onChange={e => setConfirmLangChange(e.target.checked)}
+                        className="mt-0.5"
+                      />
+                      <span>{t.profile_language_change_confirm_label}</span>
+                    </label>
                     <div className="flex gap-3 mt-5">
                       <button
                         type="button"
@@ -408,7 +441,8 @@ export default function ProfilePage() {
                       <button
                         type="button"
                         onClick={saveLangSingular}
-                        className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors"
+                        disabled={!confirmLangChange}
+                        className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-40"
                         style={{ backgroundColor: '#1e40af' }}
                       >
                         {t.profile_save_changes}
@@ -639,7 +673,7 @@ export default function ProfilePage() {
             <h2 className="text-xs font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>
               {t.profile_my_children_heading}
             </h2>
-            {!addingChild && editingChildIdx === null && (
+            {!addingChild && (
               atChildLimit ? (
                 <button
                   disabled
@@ -706,95 +740,22 @@ export default function ProfilePage() {
           <div className="flex flex-col gap-3">
             {children.map((child, i) => (
               <div key={i} className="rounded-xl border p-4" style={{ borderColor: '#e5e7eb' }}>
-                {editingChildIdx === i ? (
-                  <div>
-                    <div className="flex flex-col gap-3 mb-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.profile_child_name_label}</label>
-                        <input
-                          type="text"
-                          value={draftChildName}
-                          onChange={e => setDraftChildName(e.target.value)}
-                          className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.profile_grade_field_label}</label>
-                        <select
-                          value={draftChildGrade}
-                          onChange={e => setDraftChildGrade(Number(e.target.value))}
-                          className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors bg-white"
-                        >
-                          {GRADES.map(g => (
-                            <option key={g} value={g}>{t.profile_grade_label.replace('{grade}', String(g))}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.profile_language_heading}</label>
-                        {child.languageChangeUsed ? (
-                          <div>
-                            <span
-                              className="inline-block text-sm font-semibold px-3 py-1.5 rounded-lg"
-                              style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
-                            >
-                              {LANGUAGE_LABELS[child.language]}
-                            </span>
-                            <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                              {t.profile_language_change_used_note}
-                            </p>
-                          </div>
-                        ) : (
-                          <LanguageCards selected={draftChildLanguage} onSelect={setDraftChildLanguage} />
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setEditingChildIdx(null)}
-                        className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors"
+                <div>
+                  <p className="text-sm font-semibold flex items-center gap-2" style={{ color: '#0f1f3d' }}>
+                    {child.name}
+                    {i === user.activeChildIndex && children.length > 1 && (
+                      <span
+                        className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                        style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
                       >
-                        {t.profile_cancel}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={saveEditChild}
-                        disabled={!draftChildName.trim()}
-                        className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-40"
-                        style={{ backgroundColor: '#1e40af' }}
-                      >
-                        {t.profile_save}
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-semibold flex items-center gap-2" style={{ color: '#0f1f3d' }}>
-                        {child.name}
-                        {i === user.activeChildIndex && children.length > 1 && (
-                          <span
-                            className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                            style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
-                          >
-                            {t.profile_active_child_badge}
-                          </span>
-                        )}
-                      </p>
-                      <p className="text-xs text-gray-500 mt-0.5">
-                        {t.profile_grade_label.replace('{grade}', String(child.grade))} · {LANGUAGE_LABELS[child.language]}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => startEditChild(i)}
-                      className="text-xs font-semibold hover:underline underline-offset-2"
-                      style={{ color: '#1e40af' }}
-                    >
-                      {t.profile_edit}
-                    </button>
-                  </div>
-                )}
+                        {t.profile_active_child_badge}
+                      </span>
+                    )}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    {t.profile_grade_label.replace('{grade}', String(child.grade))} · {LANGUAGE_LABELS[child.language]}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

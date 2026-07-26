@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
     return new Response('Child limit reached', { status: 400 })
   }
 
-  const newChildren = [...children, { name: name.trim(), grade, language, languageChangeUsed: false }]
+  const newChildren = [...children, { name: name.trim(), grade, language, languageChangeUsed: false, gradeChangeUsed: false }]
   // childPlans/freeSessionClaimed may be shorter than children if they predate
   // that field — pad rather than trusting length matches exactly.
   const newChildPlans = [...Array.from({ length: children.length }, (_, i) => childPlans[i] ?? 'free'), 'free']
