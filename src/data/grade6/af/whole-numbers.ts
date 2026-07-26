@@ -18,7 +18,7 @@ const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</spa
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
-  title: 'Hele Getalle',
+  title: 'Telgetalle',
   grade: 6,
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
@@ -29,7 +29,7 @@ export const topicData: TopicData = {
       title: 'Plekwaarde tot en met 9-Syfergetalle',
       icon: '#',
       explanation:
-        `<p style="margin-bottom:16px;">In Graad 6 werk ons met hele getalle tot by 999&nbsp;999&nbsp;999 — dit is nege honderd nege en negentig miljoen, nege honderd nege en negentig duisend, nege honderd nege en negentig. Elke syfer in ʼn getal het ʼn <strong>plekwaarde</strong>. Van regs af is die posisies: ${bl('ene')}, ${gr('tiene')}, ${pu('honderde')}, ${bl('duisende')}, ${gr('tienduisende')}, ${ye('honderdduisende')}, ${or('miljoene')}, ${re('tien miljoene')} en ${pu('honderd miljoene')}. Ons kan getalle in <strong>uitgebreide notasie</strong> skryf om die waarde van elke syfer apart te toon.</p>` +
+        `<p style="margin-bottom:16px;">In Graad 6 werk ons met telgetalle tot by 999&nbsp;999&nbsp;999 — dit is nege honderd nege en negentig miljoen, nege honderd nege en negentig duisend, nege honderd nege en negentig. Elke syfer in ʼn getal het ʼn <strong>plekwaarde</strong>. Van regs af is die posisies: ${bl('ene')}, ${gr('tiene')}, ${pu('honderde')}, ${bl('duisende')}, ${gr('tienduisende')}, ${ye('honderdduisende')}, ${or('miljoene')}, ${re('tien miljoene')} en ${pu('honderd miljoene')}. Ons kan getalle in <strong>uitgebreide notasie</strong> skryf om die waarde van elke syfer apart te toon.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -164,7 +164,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat plekwaarde in 9-syfer hele getalle verduidelik met behulp van ʼn kleur-gekodeerde plekwaardetabel en wys hoe om getalle in uitgebreide notasie te skryf',
+        'Kort video wat plekwaarde in 9-syfer telgetalle verduidelik met behulp van ʼn kleur-gekodeerde plekwaardetabel en wys hoe om getalle in uitgebreide notasie te skryf',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -172,10 +172,10 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'properties-of-whole-numbers',
-      title: 'Eienskappe van Hele Getalle',
+      title: 'Eienskappe van Telgetalle',
       icon: '⇄',
       explanation:
-        `<p style="margin-bottom:16px;">Hele getalle volg reëls — genoem <strong>eienskappe</strong> — wat altyd werk, ongeag watter getalle jy gebruik. As jy hierdie eienskappe ken, help dit jou om jou werk na te gaan en baie vinniger in jou kop te bereken, deur getalle te herrangskik, te hergroepeer of in vriendeliker dele op te breek voordat jy optel of vermenigvuldig.</p>` +
+        `<p style="margin-bottom:16px;">Telgetalle volg reëls — genoem <strong>eienskappe</strong> — wat altyd werk, ongeag watter getalle jy gebruik. As jy hierdie eienskappe ken, help dit jou om jou werk na te gaan en baie vinniger in jou kop te bereken, deur getalle te herrangskik, te hergroepeer of in vriendeliker dele op te breek voordat jy optel of vermenigvuldig.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -187,7 +187,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         // ── The properties ───────────────────────────────────────────────────
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die eienskappe van hele getalle</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die eienskappe van telgetalle</p>` +
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
@@ -241,7 +241,7 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'Gebruik die eienskappe van hele getalle om 37 + 58 + 63 in jou kop te bereken.',
+          question: 'Gebruik die eienskappe van telgetalle om 37 + 58 + 63 in jou kop te bereken.',
           answer: `37 + 58 + 63 = ${gr('158')}`,
           steps: [
             `Gebruik die ${bl('kommutatiewe eienskap')} om die getalle te herrangskik sodat die vriendelike paar saam is: 37 + 58 + 63 = 37 + 63 + 58.`,
@@ -307,7 +307,7 @@ export const topicData: TopicData = {
         // ── V4 Medium-Hard — kombineer kommutatiewe en assosiatiewe eienskappe ───
         {
           difficulty: 'Medium-Hard',
-          question: 'Gebruik die eienskappe van hele getalle om 25 + 48 + 75 in jou kop te bereken. Wys watter eienskap jy by elke stap gebruik het.',
+          question: 'Gebruik die eienskappe van telgetalle om 25 + 48 + 75 in jou kop te bereken. Wys watter eienskap jy by elke stap gebruik het.',
           answer: 'Kommutatiewe eienskap om te herrangskik: 25 + 75 + 48. Assosiatiewe eienskap om die vriendelike paar te groepeer: (25 + 75) + 48 = 100 + 48 = 148.',
           checkMode: 'self',
         },
@@ -335,7 +335,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van hele getalle verduidelik, asook die additiewe en vermenigvuldigende identiteite, met voorbeelde van hoe om elke eienskap te gebruik om in jou kop te bereken',
+        'Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van telgetalle verduidelik, asook die additiewe en vermenigvuldigende identiteite, met voorbeelde van hoe om elke eienskap te gebruik om in jou kop te bereken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -343,10 +343,10 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'comparing-ordering-whole-numbers',
-      title: 'Vergelyk en Orden van Hele Getalle',
+      title: 'Vergelyk en Orden van Telgetalle',
       icon: '⇔',
       explanation:
-        `<p style="margin-bottom:16px;">Om hele getalle te <strong>vergelyk</strong>, kyk ons eers na die <strong>aantal syfers</strong> — ʼn getal met meer syfers is altyd groter. As twee getalle dieselfde aantal syfers het, vergelyk ons <strong>syfer vir syfer vanaf links</strong>. Ons gebruik die simbole ${gr('>')} (groter as), ${re('<')} (kleiner as) en ${bl('=')} (gelyk aan) om die verwantskap tussen getalle te wys. Om getalle te <strong>orden</strong> rangskik ons hulle van kleinste na grootste (<em>stygende volgorde</em>) of grootste na kleinste (<em>dalende volgorde</em>).</p>` +
+        `<p style="margin-bottom:16px;">Om telgetalle te <strong>vergelyk</strong>, kyk ons eers na die <strong>aantal syfers</strong> — ʼn getal met meer syfers is altyd groter. As twee getalle dieselfde aantal syfers het, vergelyk ons <strong>syfer vir syfer vanaf links</strong>. Ons gebruik die simbole ${gr('>')} (groter as), ${re('<')} (kleiner as) en ${bl('=')} (gelyk aan) om die verwantskap tussen getalle te wys. Om getalle te <strong>orden</strong> rangskik ons hulle van kleinste na grootste (<em>stygende volgorde</em>) of grootste na kleinste (<em>dalende volgorde</em>).</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -358,7 +358,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         // ── Rules ────────────────────────────────────────────────────────────
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Reëls om hele getalle te vergelyk</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Reëls om telgetalle te vergelyk</p>` +
         `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
@@ -506,14 +506,14 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat wys hoe om groot hele getalle te vergelyk en te orden deur eers syfers te tel en dan syfer vir syfer vanaf links te vergelyk met behulp van die groter-as, kleiner-as en gelyk-aan-simbole',
+        'Kort video wat wys hoe om groot telgetalle te vergelyk en te orden deur eers syfers te tel en dan syfer vir syfer vanaf links te vergelyk met behulp van die groter-as, kleiner-as en gelyk-aan-simbole',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // AFDELING 4 — AFRONDING VAN HELE GETALLE
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'rounding-off-whole-numbers',
-      title: 'Afronding van Hele Getalle',
+      title: 'Afronding van Telgetalle',
       icon: '≈',
       explanation:
         `<p style="margin-bottom:16px;">Afronding beteken om ʼn getal met ʼn eenvoudiger getal te vervang wat naby aan die oorspronklike is. Ons rond af na die naaste <strong>10, 100, 1 000, 10 000, 100 000</strong> of <strong>1 000 000</strong>. Om af te rond, kyk na die syfer onmiddellik regs van die plek waarna jy afrond. As daardie syfer <strong>5 of meer</strong> is, rond op. As daardie syfer <strong>4 of minder</strong> is, rond af — hou die syfer dieselfde en vervang alle syfers regs daarvan met nulle.</p>` +
@@ -666,7 +666,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat wys hoe om hele getalle na die naaste 10 100 1 000 10 000 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël',
+        'Kort video wat wys hoe om telgetalle na die naaste 10 100 1 000 10 000 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // AFDELING 5 — VEELVOUDE EN FAKTORE
@@ -1147,16 +1147,16 @@ export const topicData: TopicData = {
   resultsConfig: {
     totalMarks: 15,
     messages: [
-      { minScore: 15, message: 'Uitstekend! Jy het hele getalle volkome bemeester.' },
-      { minScore: 12, message: 'Uitstekende werk! Jy het ʼn sterk begrip van hele getalle.' },
+      { minScore: 15, message: 'Uitstekend! Jy het telgetalle volkome bemeester.' },
+      { minScore: 12, message: 'Uitstekende werk! Jy het ʼn sterk begrip van telgetalle.' },
       { minScore: 8, message: 'Goeie poging! Hersien die afdelings waar jy punte verloor het en probeer weer.' },
       { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer nog ʼn keer.' },
     ],
   },
 
   scoreMessages: [
-    { minScore: 15, message: 'Uitstekend! ʼn Perfekte telling — jy het hele getalle vir Graad 6 heeltemal bemeester. Hou so aan!' },
-    { minScore: 12, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van hele getalle. Hersien enige gemiste dele en jy sal dit perfek kry.' },
+    { minScore: 15, message: 'Uitstekend! ʼn Perfekte telling — jy het telgetalle vir Graad 6 heeltemal bemeester. Hou so aan!' },
+    { minScore: 12, message: 'Uitstekende werk! Jy het ʼn baie sterk begrip van telgetalle. Hersien enige gemiste dele en jy sal dit perfek kry.' },
     { minScore: 8, message: 'Goed gedaan! Jy verstaan die meeste van die inhoud. Gaan terug na die afdelings waar jy punte laat val het en probeer weer.' },
     { minScore: 4, message: 'Goeie poging! Werk weer deur die studiegids en uitgewerkte voorbeelde vir elke afdeling, en probeer weer.' },
     { minScore: 0, message: 'Moenie tou opgooi nie — elke kenner was eers ʼn beginner! Gaan weer deur die verduidelikings en uitgewerkte voorbeelde afdeling vir afdeling, en probeer weer.' },
@@ -1194,8 +1194,8 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Vind die priemfaktorisering van beide 60 en 84, en gebruik dit om die GGF van 60 en 84 te bepaal.', answer: '60 = 2² x 3 x 5, 84 = 2² x 3 x 7, GGF = 12', checkMode: 'auto', correctAnswer: '60 = 2² x 3 x 5, 84 = 2² x 3 x 7, GGF = 12', correctAnswers: ['GGF = 12', '12'], explanation: '60 = 2 × 2 × 3 × 5 = 2² × 3 × 5\n84 = 2 × 2 × 3 × 7 = 2² × 3 × 7\nGedeelde priemfaktore: 2 (laagste mag 2²) en 3 (laagste mag 3¹)\nGGF = 2² × 3 = 4 × 3 = 12 ✓' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het ʼn rotsvaste begrip van hele getalle — plekwaarde, afronding, faktore en priemgetalle. Hou so aan!' },
-        { minScore: 15, message: 'Uitstekende werk! Jy verstaan hele getalle duidelik — hersien enige gemiste vrae en probeer weer.' },
+        { minScore: 20, message: 'Uitstekend! Jy het ʼn rotsvaste begrip van telgetalle — plekwaarde, afronding, faktore en priemgetalle. Hou so aan!' },
+        { minScore: 15, message: 'Uitstekende werk! Jy verstaan telgetalle duidelik — hersien enige gemiste vrae en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan weer deur die uitgewerkte voorbeelde oor plekwaarde, afronding, faktore en priemgetalle, en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan — elke wiskundige het iewers begin! Werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],

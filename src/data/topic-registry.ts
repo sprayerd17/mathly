@@ -433,7 +433,7 @@ const grade6Topics: Topic[] = [
     slug: 'whole-numbers',
     name: 'Whole Numbers — Counting, Ordering & Place Value',
     description: 'Explore place value up to 9-digit numbers, expanded notation, counting in intervals, comparing and ordering numbers, rounding off and representing numbers on a number line.',
-    nameAf: 'Hele Getalle — Telling, Ordening en Plekwaarde',
+    nameAf: 'Telgetalle — Telling, Ordening en Plekwaarde',
     descriptionAf: 'Verken plekwaarde tot en met 9-syfergetalle, uitgebreide notasie, tel in intervalle, vergelyk en orden getalle, rond af en stel getalle op ʼn getallelyn voor.',
     free: true,
   },
@@ -442,7 +442,7 @@ const grade6Topics: Topic[] = [
     name: 'Addition & Subtraction',
     description: 'Add and subtract whole numbers up to 9 digits, apply column methods, estimation strategies, inverse operations and multi-step word problems.',
     nameAf: 'Optelling en Aftrekking',
-    descriptionAf: 'Tel op en trek hele getalle tot 9 syfers af, pas kolommetodes, skattingstrategieë, inverse bewerkings en meerstap-woordprobleme toe.',
+    descriptionAf: 'Tel op en trek telgetalle tot 9 syfers af, pas kolommetodes, skattingstrategieë, inverse bewerkings en meerstap-woordprobleme toe.',
     free: false,
   },
   {
@@ -450,7 +450,7 @@ const grade6Topics: Topic[] = [
     name: 'Multiplication',
     description: 'Multiply whole numbers by 3-digit numbers, apply properties of multiplication, estimate products and solve real-world multiplication problems.',
     nameAf: 'Vermenigvuldiging',
-    descriptionAf: 'Vermenigvuldig hele getalle met 3-syfergetalle, pas eienskappe van vermenigvuldiging toe, skat produkte en los werklike-wêreld vermenigvuldigingsprobleme op.',
+    descriptionAf: 'Vermenigvuldig telgetalle met 3-syfergetalle, pas eienskappe van vermenigvuldiging toe, skat produkte en los werklike-wêreld vermenigvuldigingsprobleme op.',
     free: false,
   },
   {
@@ -458,7 +458,7 @@ const grade6Topics: Topic[] = [
     name: 'Division',
     description: 'Divide whole numbers by 3-digit divisors, interpret remainders, use long division, verify with inverse operations and solve division word problems.',
     nameAf: 'Deling',
-    descriptionAf: 'Deel hele getalle deur 3-syfergetal-delers, vertolk reste, gebruik langdeling, kontroleer met inverse bewerkings en los delingswoordprobleme op.',
+    descriptionAf: 'Deel telgetalle deur 3-syfergetal-delers, vertolk reste, gebruik langdeling, kontroleer met inverse bewerkings en los delingswoordprobleme op.',
     free: false,
   },
   {
@@ -466,7 +466,7 @@ const grade6Topics: Topic[] = [
     name: 'Properties of Numbers',
     description: 'Explore properties of whole numbers including factors, multiples, prime and composite numbers, divisibility rules, squares and square roots.',
     nameAf: 'Eienskappe van Getalle',
-    descriptionAf: 'Verken eienskappe van hele getalle, insluitend faktore, veelvoude, priem- en saamgestelde getalle, deelbaarheidsreëls, vierkante en vierkantswortels.',
+    descriptionAf: 'Verken eienskappe van telgetalle, insluitend faktore, veelvoude, priem- en saamgestelde getalle, deelbaarheidsreëls, vierkante en vierkantswortels.',
     free: false,
   },
   {
@@ -482,7 +482,7 @@ const grade6Topics: Topic[] = [
     name: 'Common Fractions',
     description: 'Compare, order and simplify fractions, add and subtract fractions with different denominators, multiply fractions by whole numbers and solve fraction problems.',
     nameAf: 'Gewone Breuke',
-    descriptionAf: 'Vergelyk, orden en vereenvoudig breuke, tel breuke met verskillende noemers op en trek dit af, vermenigvuldig breuke met hele getalle en los breukprobleme op.',
+    descriptionAf: 'Vergelyk, orden en vereenvoudig breuke, tel breuke met verskillende noemers op en trek dit af, vermenigvuldig breuke met telgetalle en los breukprobleme op.',
     free: false,
   },
   {
@@ -652,8 +652,8 @@ const grade7Topics: Topic[] = [
     slug: 'whole-numbers',
     name: 'Whole Numbers',
     description: 'Work with whole numbers into the billions, apply ordering and rounding, perform operations with large numbers, and explore squares, cubes, square roots and cube roots.',
-    nameAf: 'Hele Getalle',
-    descriptionAf: 'Werk met hele getalle tot in die miljarde, pas ordening en afronding toe, voer bewerkings met groot getalle uit, en verken vierkantsgetalle, kubusgetalle, kwadraatwortels en kubuswortels.',
+    nameAf: 'Telgetalle',
+    descriptionAf: 'Werk met telgetalle tot in die miljarde, pas ordening en afronding toe, voer bewerkings met groot getalle uit, en verken vierkantsgetalle, kubusgetalle, kwadraatwortels en kubuswortels.',
     free: true,
   },
   {
@@ -807,7 +807,7 @@ const grade8Topics: Topic[] = [
     slug: 'whole-numbers',
     name: 'Whole Numbers',
     description: 'Apply the commutative, associative and distributive properties, explore the division property of zero, find prime factors, HCF and LCM, and solve financial problems involving ratio, profit, VAT, simple interest, hire purchase and exchange rates.',
-    nameAf: 'Hele Getalle',
+    nameAf: 'Telgetalle',
     descriptionAf: 'Pas die kommutatiewe, assosiatiewe en distributiewe eienskappe toe, ondersoek die delingseienskap van nul, vind priemfaktore, GGD en KGV, en los finansiële probleme op wat verhouding, wins, BTW, enkelvoudige rente, huurkoop en wisselkoerse behels.',
     free: true,
   },
@@ -816,7 +816,7 @@ const grade8Topics: Topic[] = [
     name: 'Numbers and the Real Number System',
     description: 'Meet the natural numbers, whole numbers, integers and rational numbers as nested sets, discover irrational numbers for the first time, and practise classifying given numbers into the correct set or sets.',
     nameAf: 'Getalle en die Reële Getallestelsel',
-    descriptionAf: 'Maak kennis met die natuurlike getalle, hele getalle, heelgetalle en rasionale getalle as geneste versamelings, ontdek irrasionale getalle vir die eerste keer, en oefen om gegewe getalle in die korrekte versameling(s) te klassifiseer.',
+    descriptionAf: 'Maak kennis met die natuurlike getalle, telgetalle, heelgetalle en rasionale getalle as geneste versamelings, ontdek irrasionale getalle vir die eerste keer, en oefen om gegewe getalle in die korrekte versameling(s) te klassifiseer.',
     free: false,
   },
   {
@@ -840,7 +840,7 @@ const grade8Topics: Topic[] = [
     name: 'Common Fractions',
     description: 'Divide whole numbers and fractions by common fractions using the reciprocal method, calculate squares, cubes, square roots and cube roots of common fractions, and solve grouping and sharing problems with mixed numbers.',
     nameAf: 'Gewone Breuke',
-    descriptionAf: 'Deel hele getalle en breuke deur gewone breuke deur van die resiprook gebruik te maak, bereken vierkante, kubusse, vierkantswortels en kubuswortels van gewone breuke, en los groeperings- en delingsprobleme met gemengde getalle op.',
+    descriptionAf: 'Deel telgetalle en breuke deur gewone breuke deur van die resiprook gebruik te maak, bereken vierkante, kubusse, vierkantswortels en kubuswortels van gewone breuke, en los groeperings- en delingsprobleme met gemengde getalle op.',
     free: false,
   },
   {
@@ -987,7 +987,7 @@ const grade9Topics: Topic[] = [
     name: 'Numbers and the Real Number System',
     description: 'Classify numbers within the real number system — natural, whole, integer, rational and irrational — and investigate the results of operations involving rational and irrational numbers.',
     nameAf: 'Getalle en die Reële Getallestelsel',
-    descriptionAf: 'Klassifiseer getalle binne die reële getallestelsel — natuurlike getalle, hele getalle, heelgetalle, rasionale en irrasionale getalle — en ondersoek die resultate van bewerkings met rasionale en irrasionale getalle.',
+    descriptionAf: 'Klassifiseer getalle binne die reële getallestelsel — natuurlike getalle, telgetalle, heelgetalle, rasionale en irrasionale getalle — en ondersoek die resultate van bewerkings met rasionale en irrasionale getalle.',
     free: true,
   },
   {

@@ -9,7 +9,7 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
-  title: 'Hele Getalle',
+  title: 'Telgetalle',
   grade: 7,
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
@@ -20,7 +20,7 @@ export const topicData: TopicData = {
       title: 'Plekwaarde en Ordening',
       icon: '#',
       explanation:
-        `<p style="margin-bottom:16px;">In Graad 7 werk ons met hele getalle, insluitend groot waardes tot in die <strong>miljarde</strong>. Ons gebruik <strong>plekwaarde</strong> om getalle te lees, te skryf en te vergelyk. Om getalle te orden, vergelyk ons syfer vir syfer vanaf links, begin by die hoogste plekwaarde. Ons hersien ook <strong>afronding</strong> na verskeie plekwaardes.</p>` +
+        `<p style="margin-bottom:16px;">In Graad 7 werk ons met telgetalle, insluitend groot waardes tot in die <strong>miljarde</strong>. Ons gebruik <strong>plekwaarde</strong> om getalle te lees, te skryf en te vergelyk. Om getalle te orden, vergelyk ons syfer vir syfer vanaf links, begin by die hoogste plekwaarde. Ons hersien ook <strong>afronding</strong> na verskeie plekwaardes.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -176,7 +176,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat wys hoe om groot hele getalle tot in die miljarde te lees, te orden en af te rond met behulp van plekwaarde',
+        'Kort video wat wys hoe om groot telgetalle tot in die miljarde te lees, te orden en af te rond met behulp van plekwaarde',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -187,7 +187,7 @@ export const topicData: TopicData = {
       title: 'Bewerkings met Groot Getalle',
       icon: '+',
       explanation:
-        `<p style="margin-bottom:16px;">Ons pas <strong>optelling, aftrekking, vermenigvuldiging en deling</strong> toe op groot hele getalle deur dieselfde metodes te gebruik wat in vorige grade geleer is, nou met groter waardes en meer komplekse meerstap-probleme. <strong>Eers skat</strong> help om te bevestig of die finale antwoord redelik is.</p>` +
+        `<p style="margin-bottom:16px;">Ons pas <strong>optelling, aftrekking, vermenigvuldiging en deling</strong> toe op groot telgetalle deur dieselfde metodes te gebruik wat in vorige grade geleer is, nou met groter waardes en meer komplekse meerstap-probleme. <strong>Eers skat</strong> help om te bevestig of die finale antwoord redelik is.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -304,7 +304,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat wys hoe om optelling, aftrekking en vermenigvuldiging toe te pas op groot hele getalle, insluitend meerstap-probleme en skatting',
+        'Kort video wat wys hoe om optelling, aftrekking en vermenigvuldiging toe te pas op groot telgetalle, insluitend meerstap-probleme en skatting',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -494,7 +494,7 @@ export const topicData: TopicData = {
   ],
 
   scoreMessages: [
-    { minScore: 12, message: 'Uitstekend! Jy het hele getalle bemeester.' },
+    { minScore: 12, message: 'Uitstekend! Jy het telgetalle bemeester.' },
     { minScore: 9, message: 'Puik werk!' },
     { minScore: 6, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die studiegids.' },
@@ -641,7 +641,7 @@ export const topicData: TopicData = {
   resultsConfig: {
     totalMarks: 12,
     messages: [
-      { minPercent: 100, message: 'Uitstekend! Jy het hele getalle bemeester.' },
+      { minPercent: 100, message: 'Uitstekend! Jy het telgetalle bemeester.' },
       { minPercent: 75, message: 'Puik werk!' },
       { minPercent: 50, message: 'Goeie poging, hersien en probeer weer.' },
       { minPercent: 0, message: 'Hou aan, werk weer deur die studiegids.' },

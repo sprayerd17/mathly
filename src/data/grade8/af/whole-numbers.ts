@@ -11,7 +11,7 @@ const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
-  title: 'Hele Getalle',
+  title: 'Telgetalle',
   grade: 8,
   // @ts-expect-error — subject field extends base type for Grade 8 topics
   subject: 'Mathematics',
@@ -22,10 +22,10 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'properties-division-zero',
-      title: 'Eienskappe van Hele Getalle en die Delingseienskap van Nul',
+      title: 'Eienskappe van Telgetalle en die Delingseienskap van Nul',
       icon: '🔢',
       explanation:
-        `<p style="margin-bottom:16px;">Ons hersien die <strong>kommutatiewe</strong>, <strong>assosiatiewe</strong> en <strong>distributiewe</strong> eienskappe van hele getalle. ʼn Nuwe reël in Graad 8 is die <strong>delingseienskap van nul</strong> — enige getal gedeel deur 0 is <strong>onbepaald</strong>, want daar is geen getal wat, vermenigvuldig met 0, ʼn nie-nul resultaat gee nie.</p>` +
+        `<p style="margin-bottom:16px;">Ons hersien die <strong>kommutatiewe</strong>, <strong>assosiatiewe</strong> en <strong>distributiewe</strong> eienskappe van telgetalle. ʼn Nuwe reël in Graad 8 is die <strong>delingseienskap van nul</strong> — enige getal gedeel deur 0 is <strong>onbepaald</strong>, want daar is geen getal wat, vermenigvuldig met 0, ʼn nie-nul resultaat gee nie.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -145,7 +145,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van hele getalle en die delingseienskap van nul verduidelik',
+        'Kort video wat die kommutatiewe, assosiatiewe en distributiewe eienskappe van telgetalle en die delingseienskap van nul verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -156,7 +156,7 @@ export const topicData: TopicData = {
       title: 'Priemfaktore, KGV en GGF',
       icon: '🧮',
       explanation:
-        `<p style="margin-bottom:16px;">Ons hersien om <strong>priemfaktore</strong> van 3-syfer hele getalle te vind, en gebruik <strong>priemfaktorisering</strong>, inspeksie, of faktoriseringsmetodes om die <strong>KGV</strong> (Kleinste Gemene Veelvoud) en <strong>GGF</strong> (Grootste Gemene Faktor) van getalle tot 3 syfers te vind.</p>` +
+        `<p style="margin-bottom:16px;">Ons hersien om <strong>priemfaktore</strong> van 3-syfer telgetalle te vind, en gebruik <strong>priemfaktorisering</strong>, inspeksie, of faktoriseringsmetodes om die <strong>KGV</strong> (Kleinste Gemene Veelvoud) en <strong>GGF</strong> (Grootste Gemene Faktor) van getalle tot 3 syfers te vind.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -299,7 +299,7 @@ export const topicData: TopicData = {
       title: 'Verhouding, Koers en Proporsie in Finansiële Kontekste',
       icon: '💰',
       explanation:
-        `<p style="margin-bottom:16px;">Ons los probleme op wat <strong>verhouding</strong> (om hoeveelhede van dieselfde soort te vergelyk), <strong>koers</strong> (om hoeveelhede van verskillende soorte te vergelyk, dikwels spoed, afstand of tyd), en om ʼn getal in ʼn gegewe verhouding te vermeerder of verminder, betrek. Ons pas ook hele getalle, persentasies en desimale toe op finansiële kontekste, insluitend wins, verlies, korting, BTW, begrotings, lenings, enkelvoudige rente, huurkoop en wisselkoerse.</p>` +
+        `<p style="margin-bottom:16px;">Ons los probleme op wat <strong>verhouding</strong> (om hoeveelhede van dieselfde soort te vergelyk), <strong>koers</strong> (om hoeveelhede van verskillende soorte te vergelyk, dikwels spoed, afstand of tyd), en om ʼn getal in ʼn gegewe verhouding te vermeerder of verminder, betrek. Ons pas ook telgetalle, persentasies en desimale toe op finansiële kontekste, insluitend wins, verlies, korting, BTW, begrotings, lenings, enkelvoudige rente, huurkoop en wisselkoerse.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -600,7 +600,7 @@ export const topicData: TopicData = {
   ],
 
   scoreMessages: [
-    { minScore: 15, message: 'Uitstekend! Jy het hele getalle bemeester.' },
+    { minScore: 15, message: 'Uitstekend! Jy het telgetalle bemeester.' },
     { minScore: 12, message: 'Puik werk!' },
     { minScore: 8, message: 'Goeie poging, hersien en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die studiegids.' },
@@ -652,7 +652,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Bereken 3 × (120 − 45) + 18 deur die korrekte bewerkingsvolgorde te gebruik, en wys elke stap.', answer: '243', checkMode: 'auto', correctAnswer: '243', explanation: 'Hakies eerste: 120 − 45 = 75. Vermenigvuldig dan: 3 × 75 = 225. Tel dan by: 225 + 18 = 243 ✓' },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van hele getalle bemeester.' },
+        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van telgetalle bemeester.' },
         { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — hersien enige vrae wat jy verkeerd gehad het.' },
         { minScore: 9, message: 'Goeie poging! Hersien BODMAS en die distributiewe eienskap, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -698,7 +698,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Bereken 4 × (85 − 29) + 25 deur die korrekte bewerkingsvolgorde te gebruik, en wys elke stap.', answer: '249', checkMode: 'auto', correctAnswer: '249', explanation: 'Hakies eerste: 85 − 29 = 56. Vermenigvuldig dan: 4 × 56 = 224. Tel dan by: 224 + 25 = 249 ✓' },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van hele getalle bemeester.' },
+        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van telgetalle bemeester.' },
         { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — hersien enige vrae wat jy verkeerd gehad het.' },
         { minScore: 9, message: 'Goeie poging! Hersien BODMAS en die distributiewe eienskap, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -744,7 +744,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Bereken 5 × (96 − 38) + 30 deur die korrekte bewerkingsvolgorde te gebruik, en wys elke stap.', answer: '320', checkMode: 'auto', correctAnswer: '320', explanation: 'Hakies eerste: 96 − 38 = 58. Vermenigvuldig dan: 5 × 58 = 290. Tel dan by: 290 + 30 = 320 ✓' },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van hele getalle bemeester.' },
+        { minScore: 18, message: 'Uitstekend! Jy het bewerkingsvolgorde en die eienskappe van telgetalle bemeester.' },
         { minScore: 14, message: 'Puik werk! Jy is seker van die meeste hiervan — hersien enige vrae wat jy verkeerd gehad het.' },
         { minScore: 9, message: 'Goeie poging! Hersien BODMAS en die distributiewe eienskap, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },

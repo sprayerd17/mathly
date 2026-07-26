@@ -22,7 +22,7 @@ export const topicData: TopicData = {
       title: 'Klassifisering van Getalle in die Reële Getallestelsel',
       icon: 'ℝ',
       explanation:
-        `<p style="margin-bottom:16px;">Die reële getallestelsel sluit verskeie soorte getalle in. ${bl('Natuurlike getalle')} is teltalle (1, 2, 3 ...). <strong>Hele getalle</strong> sluit 0 en die natuurlike getalle in. ${gr('Heelgetalle')} sluit ook negatiewe getalle in. ${or('Rasionale getalle')} kan as ʼn breuk geskryf word (insluitend alle heelgetalle, breuke, en eindigende of herhalende desimale). ${re('Irrasionale getalle')} kan nie as presiese breuke geskryf word nie — hul desimale gaan vir ewig voort sonder om te herhaal, soos π of √2.</p>` +
+        `<p style="margin-bottom:16px;">Die reële getallestelsel sluit verskeie soorte getalle in. ${bl('Natuurlike getalle')} is teltalle (1, 2, 3 ...). <strong>Telgetalle</strong> sluit 0 en die natuurlike getalle in. ${gr('Heelgetalle')} sluit ook negatiewe getalle in. ${or('Rasionale getalle')} kan as ʼn breuk geskryf word (insluitend alle heelgetalle, breuke, en eindigende of herhalende desimale). ${re('Irrasionale getalle')} kan nie as presiese breuke geskryf word nie — hul desimale gaan vir ewig voort sonder om te herhaal, soos π of √2.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -41,13 +41,13 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#374151;margin-bottom:4px;">Hele Getalle</p>` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:4px;">Telgetalle</p>` +
         `<p style="color:#374151;font-size:14px;margin:0;">Natuurlike getalle plus nul: {0, 1, 2, 3, ...}</p>` +
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Heelgetalle</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Alle hele getalle en hul negatiewe: {..., −2, −1, 0, 1, 2, ...}</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Alle telgetalle en hul negatiewe: {..., −2, −1, 0, 1, 2, ...}</p>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
@@ -64,7 +64,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Onthou: die versamelings is geneste</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Elke ${bl('natuurlike getal')} is ook ʼn hele getal, ʼn ${gr('heelgetal')}, en ʼn ${or('rasionale getal')}. Die ${re('irrasionale getalle')} is apart — hulle is reële getalle wat <em>nie</em> rasionaal is nie.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Elke ${bl('natuurlike getal')} is ook ʼn telgetal, ʼn ${gr('heelgetal')}, en ʼn ${or('rasionale getal')}. Die ${re('irrasionale getalle')} is apart — hulle is reële getalle wat <em>nie</em> rasionaal is nie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -72,9 +72,9 @@ export const topicData: TopicData = {
           question: 'Klassifiseer die getal −7.',
           answer: `−7 is ʼn ${gr('heelgetal')} en ʼn ${or('rasionale getal')}`,
           steps: [
-            `−7 is ʼn negatiewe hele getal, dus is dit ʼn ${gr('heelgetal')}.`,
+            `−7 is ʼn negatiewe telgetal, dus is dit ʼn ${gr('heelgetal')}.`,
             `Dit is ook ${or('rasionaal')}, aangesien dit as die breuk −7/1 geskryf kan word.`,
-            `Dit is <strong>nie</strong> ʼn ${bl('natuurlike getal')} of ʼn hele getal nie, aangesien daardie versamelings negatiewe getalle uitsluit.`,
+            `Dit is <strong>nie</strong> ʼn ${bl('natuurlike getal')} of ʼn telgetal nie, aangesien daardie versamelings negatiewe getalle uitsluit.`,
             `<strong>Klassifikasie:</strong> ${gr('heelgetal')} en ${or('rasionale getal')} ✓`,
           ],
         },
@@ -83,7 +83,7 @@ export const topicData: TopicData = {
           answer: `Nee — √16 = ${bl('4')}, wat ${or('rasionaal')} is`,
           steps: [
             `Bereken: √16 = <strong>4</strong> (want 4 × 4 = 16).`,
-            `4 is ʼn ${bl('natuurlike getal')}, ʼn hele getal, ʼn ${gr('heelgetal')}, en dus ook ${or('rasionaal')}.`,
+            `4 is ʼn ${bl('natuurlike getal')}, ʼn telgetal, ʼn ${gr('heelgetal')}, en dus ook ${or('rasionaal')}.`,
             `Sipho is verkeerd. Nie alle vierkantswortels is ${re('irrasionaal')} nie — slegs vierkantswortels van nie-volkome vierkante is ${re('irrasionaal')}. ✓`,
           ],
         },
@@ -95,13 +95,13 @@ export const topicData: TopicData = {
         {
           difficulty: 'Easy',
           question: 'Klassifiseer die getal 12. Lys al die versamelings waaraan dit behoort.',
-          answer: 'Dit is ʼn natuurlike getal, hele getal, heelgetal, en rasionale getal.',
+          answer: 'Dit is ʼn natuurlike getal, telgetal, heelgetal, en rasionale getal.',
           checkMode: 'self',
         },
         {
           difficulty: 'Easy',
           question: 'Klassifiseer die getal −5. Lys al die versamelings waaraan dit behoort.',
-          answer: 'Dit is ʼn heelgetal en ʼn rasionale getal, maar nie ʼn natuurlike getal of hele getal nie.',
+          answer: 'Dit is ʼn heelgetal en ʼn rasionale getal, maar nie ʼn natuurlike getal of telgetal nie.',
           checkMode: 'self',
         },
         {
@@ -112,14 +112,14 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Klassifiseer die getal 0 in terme van natuurlike getalle, hele getalle, heelgetalle en rasionale getalle.',
-          answer: '0 is ʼn hele getal, ʼn heelgetal, en ʼn rasionale getal, maar dit is nie ʼn natuurlike getal nie (wat by 1 begin).',
+          question: 'Klassifiseer die getal 0 in terme van natuurlike getalle, telgetalle, heelgetalle en rasionale getalle.',
+          answer: '0 is ʼn telgetal, ʼn heelgetal, en ʼn rasionale getal, maar dit is nie ʼn natuurlike getal nie (wat by 1 begin).',
           checkMode: 'self',
         },
       ],
 
       diagramPlaceholder:
-        'Geneste diagram wat natuurlike getalle binne hele getalle, binne heelgetalle, binne rasionale getalle wys, met irrasionale getalle as ʼn aparte versameling, alles binne die reële getalle',
+        'Geneste diagram wat natuurlike getalle binne telgetalle, binne heelgetalle, binne rasionale getalle wys, met irrasionale getalle as ʼn aparte versameling, alles binne die reële getalle',
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 225" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
@@ -139,7 +139,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, hele getal, heelgetal, rasionaal of irrasionaal te klassifiseer',
+        'Kort video wat die reële getallestelsel verduidelik en hoe om getalle as natuurlik, telgetal, heelgetal, rasionaal of irrasionaal te klassifiseer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -215,7 +215,7 @@ export const topicData: TopicData = {
           answer: 'rasionaal',
           checkMode: 'auto',
           correctAnswer: 'rasionaal',
-          explanation: '√25 = 5, wat ʼn hele getal is en dus rasionaal. 25 is ʼn volkome vierkant, dus is sy vierkantswortel rasionaal.',
+          explanation: '√25 = 5, wat ʼn telgetal is en dus rasionaal. 25 is ʼn volkome vierkant, dus is sy vierkantswortel rasionaal.',
         },
         {
           difficulty: 'Easy',
@@ -245,7 +245,7 @@ export const topicData: TopicData = {
           answer: 'irrasionaal',
           checkMode: 'auto',
           correctAnswer: 'irrasionaal',
-          explanation: '7 is nie ʼn volkome vierkant nie, dus kan √7 nie as ʼn hele getal of eenvoudige breuk uitgedruk word nie. Sy desimale waarde is 2,6457513..., wat nie-eindigend en nie-herhalend is. Daarom is √7 irrasionaal.',
+          explanation: '7 is nie ʼn volkome vierkant nie, dus kan √7 nie as ʼn telgetal of eenvoudige breuk uitgedruk word nie. Sy desimale waarde is 2,6457513..., wat nie-eindigend en nie-herhalend is. Daarom is √7 irrasionaal.',
         },
         {
           difficulty: 'Easy',
@@ -305,7 +305,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Vereenvoudig altyd eers</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Voordat jy die resultaat klassifiseer, vereenvoudig die uitdrukking heeltemal. ʼn Vierkantswortel wat tot ʼn hele getal vereenvoudig, is ${bl('rasionaal')}, selfs al het dit aanvanklik nie ${bl('rasionaal')} gelyk nie.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Voordat jy die resultaat klassifiseer, vereenvoudig die uitdrukking heeltemal. ʼn Vierkantswortel wat tot ʼn telgetal vereenvoudig, is ${bl('rasionaal')}, selfs al het dit aanvanklik nie ${bl('rasionaal')} gelyk nie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -324,7 +324,7 @@ export const topicData: TopicData = {
           answer: `Die resultaat is ${bl('rasionaal')} — √3 × √3 = ${bl('3')}`,
           steps: [
             `${or('Bereken:')} √3 × √3 = (√3)² = <strong>3</strong>.`,
-            `${or('Klassifiseer:')} 3 is ʼn hele getal, dus ${bl('rasionaal')}.`,
+            `${or('Klassifiseer:')} 3 is ʼn telgetal, dus ${bl('rasionaal')}.`,
             `Om ʼn irrasionale getal met homself te vermenigvuldig (die kwadraat van ʼn vierkantswortel) kanselleer die wortelteken en lewer ʼn ${bl('rasionale')} resultaat.`,
             `<strong>Gevolgtrekking:</strong> √3 × √3 = ${bl('3')}, wat ${bl('rasionaal')} is ✓`,
           ],
@@ -346,7 +346,7 @@ export const topicData: TopicData = {
           answer: '12, wat rasionaal is',
           checkMode: 'auto',
           correctAnswer: '12',
-          explanation: '√9 = 3 en √16 = 4. Dus √9 × √16 = 3 × 4 = 12. Aangesien 12 ʼn hele getal is, is dit rasionaal.',
+          explanation: '√9 = 3 en √16 = 4. Dus √9 × √16 = 3 × 4 = 12. Aangesien 12 ʼn telgetal is, is dit rasionaal.',
         },
         {
           difficulty: 'Hard',
@@ -395,20 +395,20 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Klassifiseer ʼn getal (Easy)
-        { difficulty: 'Easy', question: 'Klassifiseer die getal 9. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, hele getal, heelgetal, rasionale getal.', explanation: '9 is ʼn positiewe teltal, dus is dit natuurlik, ʼn hele getal, ʼn heelgetal, en kan as 9/1 geskryf word, dus is dit ook rasionaal.' },
-        { difficulty: 'Easy', question: 'Klassifiseer die getal −14. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−14 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −14/1 geskryf kan word, is dit ook rasionaal.' },
-        { difficulty: 'Easy', question: 'Klassifiseer die getal 0. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Hele getal, heelgetal, rasionale getal (nie ʼn natuurlike getal nie).', explanation: '0 is nie ʼn natuurlike getal nie (natuurlike getalle begin by 1), maar dit is ʼn hele getal, ʼn heelgetal, en rasionaal aangesien dit as 0/1 geskryf kan word.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 9. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, telgetal, heelgetal, rasionale getal.', explanation: '9 is ʼn positiewe teltal, dus is dit natuurlik, ʼn telgetal, ʼn heelgetal, en kan as 9/1 geskryf word, dus is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −14. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of telgetal nie).', explanation: '−14 is negatief, dus kan dit nie natuurlik of ʼn telgetal wees nie. Dit is ʼn heelgetal, en aangesien dit as −14/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 0. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Telgetal, heelgetal, rasionale getal (nie ʼn natuurlike getal nie).', explanation: '0 is nie ʼn natuurlike getal nie (natuurlike getalle begin by 1), maar dit is ʼn telgetal, ʼn heelgetal, en rasionaal aangesien dit as 0/1 geskryf kan word.' },
 
         // Blok 2 — Rasionaal of irrasionaal? (Easy/Medium)
         { difficulty: 'Easy', question: 'Is 0,8 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '0,8 is ʼn eindigende desimaal — dit kan as 4/5 geskryf word, dus is dit rasionaal.' },
-        { difficulty: 'Easy', question: 'Is √36 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√36 = 6, aangesien 6 × 6 = 36. 36 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn hele getal en daarom rasionaal.' },
-        { difficulty: 'Medium', question: 'Is √13 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '13 is nie ʼn volkome vierkant nie (3² = 9 en 4² = 16), dus kan √13 nie tot ʼn hele getal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
+        { difficulty: 'Easy', question: 'Is √36 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√36 = 6, aangesien 6 × 6 = 36. 36 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn telgetal en daarom rasionaal.' },
+        { difficulty: 'Medium', question: 'Is √13 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '13 is nie ʼn volkome vierkant nie (3² = 9 en 4² = 16), dus kan √13 nie tot ʼn telgetal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
 
         // Blok 3 — Identifiseer die irrasionale getal in ʼn lys (Medium/Hard)
         { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: 7, √21, 3/5, √25?', checkMode: 'auto', correctAnswer: '√21', correctAnswers: ['√21', 'sqrt21', '√(21)'], answer: '√21', explanation: '7 is ʼn heelgetal (rasionaal), 3/5 is reeds ʼn breuk (rasionaal), √25 = 5 (rasionaal). 21 is nie ʼn volkome vierkant nie, dus is √21 irrasionaal.' },
         { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √49, −6, π, 0,25?', checkMode: 'auto', correctAnswer: 'π', correctAnswers: ['π', 'pi'], answer: 'π', explanation: '√49 = 7 (rasionaal), −6 is ʼn heelgetal (rasionaal), 0,25 is ʼn eindigende desimaal (rasionaal). π is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
         { difficulty: 'Hard', question: 'Zinhle lys 4/9, √50, 8, en 1,6 en sê √50 is die enigste irrasionale getal. Is sy korrek?', checkMode: 'self', answer: 'Ja, sy is korrek.', explanation: '4/9 is ʼn breuk (rasionaal), 8 is ʼn heelgetal (rasionaal), 1,6 is ʼn eindigende desimaal (rasionaal). 50 is nie ʼn volkome vierkant nie, dus is √50 irrasionaal. Zinhle is korrek.' },
-        { difficulty: 'Hard', question: 'Verduidelik waarom √64 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√64 = 8, wat ʼn hele getal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √64 asof dit irrasionaal kan wees, is 64 ʼn volkome vierkant (8 × 8 = 64), dus vereenvoudig √64 presies tot 8 — ʼn hele getal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom √64 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√64 = 8, wat ʼn telgetal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √64 asof dit irrasionaal kan wees, is 64 ʼn volkome vierkant (8 × 8 = 64), dus vereenvoudig √64 presies tot 8 — ʼn telgetal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
 
         // Blok 4 — Skryf ʼn herhalende desimaal as ʼn breuk (Medium/Hard)
         { difficulty: 'Medium', question: 'Skryf 0,777... (7 herhalend) as ʼn breuk.', checkMode: 'auto', correctAnswer: '7/9', correctAnswers: ['7/9'], answer: '7/9', explanation: 'Laat x = 0,777...\n10x = 7,777...\n10x − x = 7,777... − 0,777...\n9x = 7\nx = 7/9' },
@@ -441,20 +441,20 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok 1 — Klassifiseer ʼn getal (Easy)
-        { difficulty: 'Easy', question: 'Klassifiseer die getal 15. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, hele getal, heelgetal, rasionale getal.', explanation: '15 is ʼn positiewe teltal, dus is dit natuurlik, ʼn hele getal, ʼn heelgetal, en kan as 15/1 geskryf word, dus is dit ook rasionaal.' },
-        { difficulty: 'Easy', question: 'Klassifiseer die getal −20. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−20 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −20/1 geskryf kan word, is dit ook rasionaal.' },
-        { difficulty: 'Easy', question: 'Klassifiseer die getal −1. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−1 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −1/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 15. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, telgetal, heelgetal, rasionale getal.', explanation: '15 is ʼn positiewe teltal, dus is dit natuurlik, ʼn telgetal, ʼn heelgetal, en kan as 15/1 geskryf word, dus is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −20. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of telgetal nie).', explanation: '−20 is negatief, dus kan dit nie natuurlik of ʼn telgetal wees nie. Dit is ʼn heelgetal, en aangesien dit as −20/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −1. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of telgetal nie).', explanation: '−1 is negatief, dus kan dit nie natuurlik of ʼn telgetal wees nie. Dit is ʼn heelgetal, en aangesien dit as −1/1 geskryf kan word, is dit ook rasionaal.' },
 
         // Blok 2 — Rasionaal of irrasionaal? (Easy/Medium)
         { difficulty: 'Easy', question: 'Is 0,45 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '0,45 is ʼn eindigende desimaal — dit kan as 9/20 geskryf word, dus is dit rasionaal.' },
-        { difficulty: 'Easy', question: 'Is √64 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√64 = 8, aangesien 8 × 8 = 64. 64 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn hele getal en daarom rasionaal.' },
-        { difficulty: 'Medium', question: 'Is √19 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '19 is nie ʼn volkome vierkant nie (4² = 16 en 5² = 25), dus kan √19 nie tot ʼn hele getal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
+        { difficulty: 'Easy', question: 'Is √64 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√64 = 8, aangesien 8 × 8 = 64. 64 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn telgetal en daarom rasionaal.' },
+        { difficulty: 'Medium', question: 'Is √19 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '19 is nie ʼn volkome vierkant nie (4² = 16 en 5² = 25), dus kan √19 nie tot ʼn telgetal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
 
         // Blok 3 — Identifiseer die irrasionale getal in ʼn lys (Medium/Hard)
         { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √30, 9, 2/3, √100?', checkMode: 'auto', correctAnswer: '√30', correctAnswers: ['√30', 'sqrt30', '√(30)'], answer: '√30', explanation: '9 is ʼn heelgetal (rasionaal), 2/3 is reeds ʼn breuk (rasionaal), √100 = 10 (rasionaal). 30 is nie ʼn volkome vierkant nie, dus is √30 irrasionaal.' },
         { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √81, −11, 22/7, √2?', checkMode: 'auto', correctAnswer: '√2', correctAnswers: ['√2', 'sqrt2', '√(2)'], answer: '√2', explanation: '√81 = 9 (rasionaal), −11 is ʼn heelgetal (rasionaal), 22/7 is reeds ʼn breuk (rasionaal). 2 is nie ʼn volkome vierkant nie, dus is √2 irrasionaal.' },
         { difficulty: 'Hard', question: 'Mpho lys 5/6, √45, −3, en 2,4 en sê √45 is die enigste irrasionale getal. Is sy korrek?', checkMode: 'self', answer: 'Ja, sy is korrek.', explanation: '5/6 is ʼn breuk (rasionaal), −3 is ʼn heelgetal (rasionaal), 2,4 is ʼn eindigende desimaal (rasionaal). 45 is nie ʼn volkome vierkant nie, dus is √45 irrasionaal. Mpho is korrek.' },
-        { difficulty: 'Hard', question: 'Verduidelik waarom √100 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√100 = 10, wat ʼn hele getal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √100 asof dit irrasionaal kan wees, is 100 ʼn volkome vierkant (10 × 10 = 100), dus vereenvoudig √100 presies tot 10 — ʼn hele getal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom √100 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√100 = 10, wat ʼn telgetal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √100 asof dit irrasionaal kan wees, is 100 ʼn volkome vierkant (10 × 10 = 100), dus vereenvoudig √100 presies tot 10 — ʼn telgetal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
 
         // Blok 4 — Skryf ʼn herhalende desimaal as ʼn breuk (Medium/Hard)
         { difficulty: 'Medium', question: 'Skryf 0,888... (8 herhalend) as ʼn breuk.', checkMode: 'auto', correctAnswer: '8/9', correctAnswers: ['8/9'], answer: '8/9', explanation: 'Laat x = 0,888...\n10x = 8,888...\n10x − x = 8,888... − 0,888...\n9x = 8\nx = 8/9' },
@@ -470,7 +470,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Waar of onwaar: alle rasionale getalle is heelgetalle.', checkMode: 'auto', correctAnswer: 'onwaar', correctAnswers: ['onwaar'], answer: 'onwaar', explanation: 'Onwaar. Rasionale getalle sluit breuke soos 1/2 in wat nie heelgetalle is nie. Alle heelgetalle is rasionaal, maar nie alle rasionale getalle is heelgetalle nie.' },
         { difficulty: 'Hard', question: 'Waar of onwaar: die produk van twee irrasionale getalle is altyd irrasionaal.', checkMode: 'auto', correctAnswer: 'onwaar', correctAnswers: ['onwaar'], answer: 'onwaar', explanation: 'Onwaar. Byvoorbeeld, √2 × √2 = 2, wat rasionaal is, alhoewel albei faktore irrasionaal was.' },
         { difficulty: 'Hard', question: 'Prakash sê elke eindigende desimaal is irrasionaal omdat dit syfers ná die desimaalkomma het. Is hy korrek?', checkMode: 'self', answer: 'Nee, hy is verkeerd.', explanation: 'ʼn Eindigende desimaal eindig altyd na ʼn eindige aantal syfers en kan as ʼn breuk geskryf word (bv. 0,5 = 1/2), wat dit rasionaal maak. Syfers ná die desimaalkomma maak nie ʼn getal irrasionaal nie — slegs nie-eindigende, nie-herhalende desimale is irrasionaal.' },
-        { difficulty: 'Hard', question: 'Ayanda sê √9 + √16 moet irrasionaal wees omdat albei getalle vierkantsworteltekens het. Verduidelik waarom sy verkeerd is.', checkMode: 'self', answer: 'Sy is verkeerd — √9 + √16 = 3 + 4 = 7, wat rasionaal is.', explanation: 'ʼn Vierkantswortelteken maak nie outomaties ʼn getal irrasionaal nie. 9 en 16 is albei volkome vierkante, dus is √9 = 3 en √16 = 4, albei hele getalle. Hul som, 7, is rasionaal.' },
+        { difficulty: 'Hard', question: 'Ayanda sê √9 + √16 moet irrasionaal wees omdat albei getalle vierkantsworteltekens het. Verduidelik waarom sy verkeerd is.', checkMode: 'self', answer: 'Sy is verkeerd — √9 + √16 = 3 + 4 = 7, wat rasionaal is.', explanation: 'ʼn Vierkantswortelteken maak nie outomaties ʼn getal irrasionaal nie. 9 en 16 is albei volkome vierkante, dus is √9 = 3 en √16 = 4, albei telgetalle. Hul som, 7, is rasionaal.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Uitstekend! Jy het die klassifisering en rangskikking van reële getalle bemeester.' },
@@ -487,20 +487,20 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok 1 — Klassifiseer ʼn getal (Easy)
-        { difficulty: 'Easy', question: 'Klassifiseer die getal 20. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, hele getal, heelgetal, rasionale getal.', explanation: '20 is ʼn positiewe teltal, dus is dit natuurlik, ʼn hele getal, ʼn heelgetal, en kan as 20/1 geskryf word, dus is dit ook rasionaal.' },
-        { difficulty: 'Easy', question: 'Klassifiseer die getal −8. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−8 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −8/1 geskryf kan word, is dit ook rasionaal.' },
-        { difficulty: 'Easy', question: 'Klassifiseer die getal −100. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of hele getal nie).', explanation: '−100 is negatief, dus kan dit nie natuurlik of ʼn hele getal wees nie. Dit is ʼn heelgetal, en aangesien dit as −100/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal 20. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Natuurlike getal, telgetal, heelgetal, rasionale getal.', explanation: '20 is ʼn positiewe teltal, dus is dit natuurlik, ʼn telgetal, ʼn heelgetal, en kan as 20/1 geskryf word, dus is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −8. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of telgetal nie).', explanation: '−8 is negatief, dus kan dit nie natuurlik of ʼn telgetal wees nie. Dit is ʼn heelgetal, en aangesien dit as −8/1 geskryf kan word, is dit ook rasionaal.' },
+        { difficulty: 'Easy', question: 'Klassifiseer die getal −100. Lys al die versamelings waaraan dit behoort.', checkMode: 'self', answer: 'Heelgetal, rasionale getal (nie natuurlike getal of telgetal nie).', explanation: '−100 is negatief, dus kan dit nie natuurlik of ʼn telgetal wees nie. Dit is ʼn heelgetal, en aangesien dit as −100/1 geskryf kan word, is dit ook rasionaal.' },
 
         // Blok 2 — Rasionaal of irrasionaal? (Easy/Medium)
         { difficulty: 'Easy', question: 'Is 0,125 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '0,125 is ʼn eindigende desimaal — dit kan as 1/8 geskryf word, dus is dit rasionaal.' },
-        { difficulty: 'Easy', question: 'Is √81 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√81 = 9, aangesien 9 × 9 = 81. 81 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn hele getal en daarom rasionaal.' },
-        { difficulty: 'Medium', question: 'Is √23 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '23 is nie ʼn volkome vierkant nie (4² = 16 en 5² = 25), dus kan √23 nie tot ʼn hele getal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
+        { difficulty: 'Easy', question: 'Is √81 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', correctAnswers: ['rasionaal'], answer: 'rasionaal', explanation: '√81 = 9, aangesien 9 × 9 = 81. 81 is ʼn volkome vierkant, dus is sy vierkantswortel ʼn telgetal en daarom rasionaal.' },
+        { difficulty: 'Medium', question: 'Is √23 rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'irrasionaal', correctAnswers: ['irrasionaal'], answer: 'irrasionaal', explanation: '23 is nie ʼn volkome vierkant nie (4² = 16 en 5² = 25), dus kan √23 nie tot ʼn telgetal vereenvoudig word nie. Sy desimale waarde is nie-eindigend en nie-herhalend, dus is dit irrasionaal.' },
 
         // Blok 3 — Identifiseer die irrasionale getal in ʼn lys (Medium/Hard)
         { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √40, 11, 5/8, √121?', checkMode: 'auto', correctAnswer: '√40', correctAnswers: ['√40', 'sqrt40', '√(40)'], answer: '√40', explanation: '11 is ʼn heelgetal (rasionaal), 5/8 is reeds ʼn breuk (rasionaal), √121 = 11 (rasionaal). 40 is nie ʼn volkome vierkant nie, dus is √40 irrasionaal.' },
         { difficulty: 'Medium', question: 'Watter van hierdie getalle is irrasionaal: √144, −9, 7/9, √6?', checkMode: 'auto', correctAnswer: '√6', correctAnswers: ['√6', 'sqrt6', '√(6)'], answer: '√6', explanation: '√144 = 12 (rasionaal), −9 is ʼn heelgetal (rasionaal), 7/9 is reeds ʼn breuk (rasionaal). 6 is nie ʼn volkome vierkant nie, dus is √6 irrasionaal.' },
         { difficulty: 'Hard', question: 'Sizwe lys 3/7, √28, −5, en 4,8 en sê √28 is die enigste irrasionale getal. Is hy korrek?', checkMode: 'self', answer: 'Ja, hy is korrek.', explanation: '3/7 is ʼn breuk (rasionaal), −5 is ʼn heelgetal (rasionaal), 4,8 is ʼn eindigende desimaal (rasionaal). 28 is nie ʼn volkome vierkant nie, dus is √28 irrasionaal. Sizwe is korrek.' },
-        { difficulty: 'Hard', question: 'Verduidelik waarom √144 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√144 = 12, wat ʼn hele getal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √144 asof dit irrasionaal kan wees, is 144 ʼn volkome vierkant (12 × 12 = 144), dus vereenvoudig √144 presies tot 12 — ʼn hele getal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
+        { difficulty: 'Hard', question: 'Verduidelik waarom √144 by die rasionale getalle hoort, al bevat dit ʼn vierkantswortelteken.', checkMode: 'self', answer: '√144 = 12, wat ʼn telgetal is, dus is dit rasionaal.', explanation: 'Al lyk die uitdrukking √144 asof dit irrasionaal kan wees, is 144 ʼn volkome vierkant (12 × 12 = 144), dus vereenvoudig √144 presies tot 12 — ʼn telgetal, wat rasionaal is. Slegs vierkantswortels van nie-volkome vierkante is irrasionaal.' },
 
         // Blok 4 — Skryf ʼn herhalende desimaal as ʼn breuk (Medium/Hard)
         { difficulty: 'Medium', question: 'Skryf 0,111... (1 herhalend) as ʼn breuk.', checkMode: 'auto', correctAnswer: '1/9', correctAnswers: ['1/9'], answer: '1/9', explanation: 'Laat x = 0,111...\n10x = 1,111...\n10x − x = 1,111... − 0,111...\n9x = 1\nx = 1/9' },
@@ -513,9 +513,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Gegee die getalle √80, 9, −√1, 6,5 en −7, rangskik hulle van kleinste na grootste.', checkMode: 'auto', correctAnswer: '−7, −√1, 6,5, √80, 9', correctAnswers: ['−7, −√1, 6,5, √80, 9', '-7, -√1, 6,5, √80, 9', '-7, -1, 6,5, √80, 9'], answer: '−7, −√1, 6,5, √80, 9', explanation: '−√1 = −1. √80 ≈ 8,94. Rangorde: −7 < −1 < 6,5 < √80 (≈8,94) < 9.' },
 
         // Blok 6 — Waar/onwaar-redenasie oor eienskappe van getalversamelings (Hard)
-        { difficulty: 'Hard', question: 'Waar of onwaar: nul is ʼn natuurlike getal.', checkMode: 'auto', correctAnswer: 'onwaar', correctAnswers: ['onwaar'], answer: 'onwaar', explanation: 'Onwaar. Natuurlike getalle begin tel by 1. Nul is ʼn hele getal, maar dit is nie ʼn natuurlike getal nie.' },
-        { difficulty: 'Hard', question: 'Waar of onwaar: elke hele getal is ʼn heelgetal.', checkMode: 'auto', correctAnswer: 'waar', correctAnswers: ['waar'], answer: 'waar', explanation: 'Waar. Die hele getalle (0, 1, 2, 3, ...) is almal binne die heelgetalle ingesluit, wat ook die negatiewe hele getalle bevat.' },
-        { difficulty: 'Hard', question: 'Nomvula sê √4 moet irrasionaal wees omdat dit ʼn vierkantswortelteken het. Is sy korrek?', checkMode: 'self', answer: 'Nee, sy is verkeerd.', explanation: '√4 = 2, want 2 × 2 = 4. 4 is ʼn volkome vierkant, dus vereenvoudig √4 presies tot die hele getal 2, wat rasionaal is. ʼn Vierkantswortelteken alleen maak nie ʼn getal irrasionaal nie.' },
+        { difficulty: 'Hard', question: 'Waar of onwaar: nul is ʼn natuurlike getal.', checkMode: 'auto', correctAnswer: 'onwaar', correctAnswers: ['onwaar'], answer: 'onwaar', explanation: 'Onwaar. Natuurlike getalle begin tel by 1. Nul is ʼn telgetal, maar dit is nie ʼn natuurlike getal nie.' },
+        { difficulty: 'Hard', question: 'Waar of onwaar: elke telgetal is ʼn heelgetal.', checkMode: 'auto', correctAnswer: 'waar', correctAnswers: ['waar'], answer: 'waar', explanation: 'Waar. Die telgetalle (0, 1, 2, 3, ...) is almal binne die heelgetalle ingesluit, wat ook die negatiewe telgetalle bevat.' },
+        { difficulty: 'Hard', question: 'Nomvula sê √4 moet irrasionaal wees omdat dit ʼn vierkantswortelteken het. Is sy korrek?', checkMode: 'self', answer: 'Nee, sy is verkeerd.', explanation: '√4 = 2, want 2 × 2 = 4. 4 is ʼn volkome vierkant, dus vereenvoudig √4 presies tot die telgetal 2, wat rasionaal is. ʼn Vierkantswortelteken alleen maak nie ʼn getal irrasionaal nie.' },
         { difficulty: 'Hard', question: 'Lindiwe sê π − π = 0, en aangesien albei terme irrasionaal was, het sy ʼn irrasionale antwoord verwag. Verduidelik waarom die resultaat eintlik rasionaal is.', checkMode: 'self', answer: '0 is rasionaal, al is π irrasionaal.', explanation: 'Om ʼn irrasionale getal van homself af te trek, kanselleer dit altyd presies na 0, wat rasionaal is. Dit wys dat die kombinasie van twee irrasionale getalle nie altyd ʼn irrasionale resultaat gee nie — dit hang af van die spesifieke getalle betrokke.' },
       ],
       scoreMessages: [
