@@ -480,9 +480,9 @@ export default function AIAssistant({ grade }: { grade: string }) {
           style={{
             position: 'fixed',
             bottom: '28px',
-            right: '28px',
+            right: '16px',
             zIndex: 60,
-            width: '380px',
+            width: 'min(380px, calc(100vw - 32px))',
             height: '480px',
             backgroundColor: '#fff',
             borderRadius: '16px',

@@ -165,7 +165,7 @@ export default function PricingPage() {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left pb-4 pr-6 font-semibold text-gray-400 uppercase tracking-wide text-xs w-2/5">
+                  <th className="text-left pb-4 pr-6 font-semibold text-gray-500 uppercase tracking-wide text-xs w-2/5">
                     {t.pricing_table_feature_column}
                   </th>
                   {[
@@ -179,7 +179,7 @@ export default function PricingPage() {
                       style={{ color: col.highlighted ? '#1e40af' : '#0f1f3d' }}
                     >
                       <span className="block">{col.name}</span>
-                      <span className="block font-normal text-gray-400 normal-case tracking-normal mt-0.5">{col.price}</span>
+                      <span className="block font-normal text-gray-500 normal-case tracking-normal mt-0.5">{col.price}</span>
                     </th>
                   ))}
                 </tr>
@@ -201,7 +201,7 @@ export default function PricingPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-4 text-right">{t.pricing_founding_member_rate_note}</p>
+          <p className="text-xs text-gray-500 mt-4 text-right">{t.pricing_founding_member_rate_note}</p>
         </section>
 
       </main>

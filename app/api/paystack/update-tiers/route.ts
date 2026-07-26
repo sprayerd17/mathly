@@ -143,7 +143,7 @@ export async function POST(req: NextRequest) {
         uid, status: result.status, message: result.message,
       })
       return new Response(
-        `Paystack could not process this change (status ${result.status}: ${result.message ?? 'unknown error'}) — please try again or contact support`,
+        'Could not process this change — please try again or contact support',
         { status: 502 },
       )
     }

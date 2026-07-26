@@ -440,7 +440,7 @@ function AuthModal({
                   />
                 ))}
               </div>
-              <span className="text-xs text-gray-400">{t.auth_step_of.replace('{step}', String(registerStep))}</span>
+              <span className="text-xs text-gray-500">{t.auth_step_of.replace('{step}', String(registerStep))}</span>
             </div>
           )}
         </div>
@@ -574,7 +574,7 @@ function AuthModal({
                 )
               })}
             </div>
-            <p className="text-xs text-gray-400 leading-relaxed mt-4">
+            <p className="text-xs text-gray-500 leading-relaxed mt-4">
               {t.auth_plan_size_note}
             </p>
 
@@ -678,7 +678,7 @@ function AuthModal({
                           )
                         })}
                       </div>
-                      <p className="text-[11px] text-gray-400 leading-relaxed mt-1.5">
+                      <p className="text-[11px] text-gray-500 leading-relaxed mt-1.5">
                         {!PAYMENTS_ENABLED ? t.auth_plan_paused_note : (child.tier === 'free' ? t.profile_plan_desc_free : child.tier === 'pro' ? t.profile_plan_desc_pro : t.profile_plan_desc_max)}
                       </p>
                     </div>
@@ -695,7 +695,7 @@ function AuthModal({
                     R{pricePreview.total}{t.pricing_per_month}
                   </span>
                 </div>
-                <p className="text-[11px] text-gray-400 leading-relaxed mb-4">
+                <p className="text-[11px] text-gray-500 leading-relaxed mb-4">
                   {t.billing_recurring_note}
                 </p>
               </>

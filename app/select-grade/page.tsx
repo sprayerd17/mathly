@@ -82,7 +82,7 @@ export default function SelectGradePage() {
             </div>
 
             {/* Profile link */}
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-500">
               {t.grade_not_your_grades}{' '}
               <Link
                 href="/profile"

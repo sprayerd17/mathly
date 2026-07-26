@@ -205,7 +205,7 @@ function CheckCircleIcon() {
 function StatCard({ label, value, accent = false }: { label: string; value: string; accent?: boolean }) {
   return (
     <div className="rounded-xl p-5" style={{ backgroundColor: '#f3f4f6' }}>
-      <p className="text-xs text-gray-400 mb-1.5 leading-tight">{label}</p>
+      <p className="text-xs text-gray-500 mb-1.5 leading-tight">{label}</p>
       <p className="text-2xl font-bold" style={{ color: accent ? '#1e40af' : '#0f1f3d' }}>
         {value}
       </p>
@@ -579,11 +579,11 @@ export default function DashboardPage() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: '#d1d5db' }} />
                 <span className="text-sm font-bold" style={{ color: '#374151' }}>{t.dash_kanban_todo}</span>
-                <span className="text-xs text-gray-400">({notStarted.length})</span>
+                <span className="text-xs text-gray-500">({notStarted.length})</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 {notStarted.length === 0
-                  ? <p className="text-xs text-gray-400 py-2">{t.dash_kanban_todo_empty}</p>
+                  ? <p className="text-xs text-gray-500 py-2">{t.dash_kanban_todo_empty}</p>
                   : notStarted.map(topic => (
                     <div key={topic.slug} className="text-sm py-2 px-3 rounded-lg" style={{ backgroundColor: '#f9fafb', color: '#374151' }}>
                       {topic.name}
@@ -598,11 +598,11 @@ export default function DashboardPage() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: '#1e40af' }} />
                 <span className="text-sm font-bold" style={{ color: '#374151' }}>{t.dash_kanban_in_progress}</span>
-                <span className="text-xs text-gray-400">({inProgress.length})</span>
+                <span className="text-xs text-gray-500">({inProgress.length})</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 {inProgress.length === 0
-                  ? <p className="text-xs text-gray-400 py-2">{t.dash_kanban_in_progress_empty}</p>
+                  ? <p className="text-xs text-gray-500 py-2">{t.dash_kanban_in_progress_empty}</p>
                   : inProgress.map(topic => (
                     <div key={topic.slug} className="flex items-center justify-between text-sm py-2 px-3 rounded-lg gap-2" style={{ backgroundColor: '#eff6ff', color: '#374151' }}>
                       <span className="truncate">{topic.name}</span>
@@ -618,11 +618,11 @@ export default function DashboardPage() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: '#16a34a' }} />
                 <span className="text-sm font-bold" style={{ color: '#374151' }}>{t.dash_kanban_done}</span>
-                <span className="text-xs text-gray-400">({completed.length})</span>
+                <span className="text-xs text-gray-500">({completed.length})</span>
               </div>
               <div className="flex flex-col gap-1.5">
                 {completed.length === 0
-                  ? <p className="text-xs text-gray-400 py-2">{t.dash_kanban_done_empty}</p>
+                  ? <p className="text-xs text-gray-500 py-2">{t.dash_kanban_done_empty}</p>
                   : completed.map(topic => (
                     <div key={topic.slug} className="flex items-center gap-2 text-sm py-2 px-3 rounded-lg" style={{ backgroundColor: '#f0fdf4', color: '#374151' }}>
                       <CheckCircleIcon />
@@ -666,7 +666,7 @@ export default function DashboardPage() {
                         {resetConfirmSlug !== group.slug && (
                           <button
                             onClick={() => setResetConfirmSlug(group.slug)}
-                            className="text-xs font-semibold text-gray-400 hover:text-red-600 transition-colors"
+                            className="text-xs font-semibold text-gray-500 hover:text-red-600 transition-colors"
                           >
                             {t.dash_reset_attempts}
                           </button>
@@ -709,7 +709,7 @@ export default function DashboardPage() {
                             <span className="w-2 h-2 rounded-full" style={{ backgroundColor: scoreColor(entry.score) }} />
                             <span className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{entry.score}%</span>
                           </div>
-                          <p className="text-xs text-gray-400 w-16 text-right">{entry.date ? formatDate(entry.date) : '—'}</p>
+                          <p className="text-xs text-gray-500 w-16 text-right">{entry.date ? formatDate(entry.date) : '—'}</p>
                         </div>
                       </div>
                     ))}
@@ -836,7 +836,7 @@ export default function DashboardPage() {
                       ].map(m => (
                         <div key={m.label} className="rounded-xl border p-4 text-center" style={{ borderColor: '#e5e7eb' }}>
                           <p className="text-2xl font-bold mb-1" style={{ color: '#0f1f3d' }}>{m.value}</p>
-                          <p className="text-xs text-gray-400">{m.label}</p>
+                          <p className="text-xs text-gray-500">{m.label}</p>
                         </div>
                       ))}
                     </div>
@@ -876,7 +876,7 @@ export default function DashboardPage() {
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <h4 className="text-xs font-bold uppercase tracking-widest" style={{ color: '#6b7280' }}>{t.dash_report_consistency_heading}</h4>
-                      <span className="text-xs text-gray-400">{t.dash_report_days_of_days.replace('{studied}', String(studyDayCount)).replace('{total}', String(rPDays))}</span>
+                      <span className="text-xs text-gray-500">{t.dash_report_days_of_days.replace('{studied}', String(studyDayCount)).replace('{total}', String(rPDays))}</span>
                     </div>
                     <div className="flex flex-wrap gap-1">
                       {allDaysInPeriod.map(day => (
@@ -897,7 +897,7 @@ export default function DashboardPage() {
                       <div className="flex gap-1 mt-1.5">
                         {allDaysInPeriod.map(day => (
                           <div key={day} className="flex items-center justify-center" style={{ width: '36px' }}>
-                            <p className="text-xs text-gray-400">
+                            <p className="text-xs text-gray-500">
                               {new Date(day + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short' }).slice(0, 3)}
                             </p>
                           </div>
@@ -907,11 +907,11 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-4 mt-3">
                       <div className="flex items-center gap-1.5">
                         <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#16a34a' }} />
-                        <span className="text-xs text-gray-400">{t.dash_report_legend_studied}</span>
+                        <span className="text-xs text-gray-500">{t.dash_report_legend_studied}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: '#e5e7eb' }} />
-                        <span className="text-xs text-gray-400">{t.dash_report_legend_missed}</span>
+                        <span className="text-xs text-gray-500">{t.dash_report_legend_missed}</span>
                       </div>
                     </div>
                   </div>

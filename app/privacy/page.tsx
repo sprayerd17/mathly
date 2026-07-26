@@ -34,8 +34,8 @@ export default function PrivacyPage() {
           <p>
             This policy explains how Mathly (&quot;Mathly&quot;, &quot;we&quot;, &quot;us&quot;), a South African maths education
             service operated by an individual trading as Mathly, collects, uses, and protects personal
-            information under the Protection of Personal Information Act, 2013 (&quot;POPIA&quot;). You can reach
-            us about privacy matters at{' '}
+            information under the Protection of Personal Information Act, 2013 (&quot;POPIA&quot;). Divan Bosman is
+            Mathly&apos;s Information Officer under POPIA. You can reach us about privacy matters at{' '}
             <a href="mailto:hello@mathly.co.za" style={{ color: '#1e40af', fontWeight: 600 }}>hello@mathly.co.za</a>.
           </p>
         </Section>

@@ -194,7 +194,7 @@ export default function GradePage() {
                     className={`inline-flex items-center gap-1 text-xs font-medium transition-colors ${
                       isUnlocked
                         ? 'text-[#1e40af] group-hover:gap-1.5'
-                        : 'text-gray-400'
+                        : 'text-gray-500'
                     }`}
                   >
                     {isUnlocked ? (

@@ -325,7 +325,7 @@ export default function ProfilePage() {
                       {t.profile_my_grades_heading}
                     </h2>
                     {!singularProfile && (
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className="text-xs text-gray-500 mt-1">
                         {t.profile_active_child_label.replace('{name}', activeChild.name)}
                       </p>
                     )}
@@ -350,7 +350,7 @@ export default function ProfilePage() {
                       {t.profile_grade_label.replace('{grade}', String(activeChild.grade))}
                     </span>
                     {activeChild.gradeChangeUsed && (
-                      <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                      <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                         {t.profile_grade_change_used_note}
                       </p>
                     )}
@@ -408,7 +408,7 @@ export default function ProfilePage() {
                       {t.profile_language_heading}
                     </h2>
                     {!singularProfile && (
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className="text-xs text-gray-500 mt-1">
                         {t.profile_active_child_label.replace('{name}', activeChild.name)}
                       </p>
                     )}
@@ -433,7 +433,7 @@ export default function ProfilePage() {
                       {LANGUAGE_LABELS[activeChild.language]}
                     </span>
                     {activeChild.languageChangeUsed && (
-                      <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                      <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                         {t.profile_language_change_used_note}
                       </p>
                     )}
@@ -720,7 +720,7 @@ export default function ProfilePage() {
               <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#6b7280' }}>
                 {t.profile_active_child_heading}
               </p>
-              <p className="text-xs text-gray-400 mb-3">
+              <p className="text-xs text-gray-500 mb-3">
                 {t.profile_active_child_hint}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -746,7 +746,7 @@ export default function ProfilePage() {
           )}
 
           {children.length === 0 && !addingChild && (
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-500">
               {t.profile_no_children_added}{' '}
               {!atChildLimit && (
                 <button onClick={startAddChild} className="font-semibold hover:underline" style={{ color: '#1e40af' }}>
@@ -965,7 +965,7 @@ export default function ProfilePage() {
               ].map(stat => (
                 <div key={stat.label} className="rounded-xl p-4 text-center" style={{ backgroundColor: '#f3f4f6' }}>
                   <p className="text-xl font-bold mb-1" style={{ color: '#0f1f3d' }}>{stat.value}</p>
-                  <p className="text-xs text-gray-400 leading-snug">{stat.label}</p>
+                  <p className="text-xs text-gray-500 leading-snug">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -991,7 +991,7 @@ export default function ProfilePage() {
                 </div>
                 {referrals.length === 0 ? (
                   <div className="px-4 py-10 text-center">
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-gray-500">
                       {t.profile_no_referrals_yet}
                     </p>
                   </div>

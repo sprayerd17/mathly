@@ -117,7 +117,7 @@ function UploadZone({
     <div>
       <div className="flex items-center justify-between mb-2">
         <span className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{label}</span>
-        <span className="text-xs text-gray-400">
+        <span className="text-xs text-gray-500">
           {t.dash_test_analysis_images_uploaded.replace('{count}', String(images.length)).replace('{max}', String(MAX_IMAGES_PER_ZONE))}
         </span>
       </div>
@@ -356,7 +356,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
           <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>
             {t.dash_test_analysis_remaining.replace('{count}', String(Math.max(0, MONTHLY_LIMIT - usageCount))).replace('{max}', String(MONTHLY_LIMIT))}
           </p>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <p className="text-xs text-gray-500 mt-0.5">
             {t.dash_test_analysis_remaining_hint.replace('{max}', String(MONTHLY_LIMIT))}
           </p>
         </div>
@@ -443,7 +443,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
             </div>
             <div>
               <label className="block text-sm font-semibold mb-2" style={{ color: '#0f1f3d' }}>
-                {t.dash_test_analysis_feedback_focus_label} <span className="font-normal text-gray-400">{t.dash_test_analysis_optional_label}</span>
+                {t.dash_test_analysis_feedback_focus_label} <span className="font-normal text-gray-500">{t.dash_test_analysis_optional_label}</span>
               </label>
               <input
                 type="text"
@@ -454,7 +454,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
                 style={{ borderColor: '#d1d5db', color: '#0f1f3d' }}
                 placeholder={t.dash_test_analysis_feedback_focus_placeholder}
               />
-              <p className="text-xs text-gray-400 mt-1 text-right">{notes.length}/{MAX_NOTES_LENGTH}</p>
+              <p className="text-xs text-gray-500 mt-1 text-right">{notes.length}/{MAX_NOTES_LENGTH}</p>
             </div>
           </div>
 
@@ -473,9 +473,9 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       <div className="pt-5" style={{ borderTop: '1px solid #f3f4f6' }}>
         <h3 className="text-sm font-bold mb-3" style={{ color: '#0f1f3d' }}>{t.dash_test_analysis_previous_reports}</h3>
         {reportsLoading ? (
-          <p className="text-sm text-gray-400">{t.dash_test_analysis_loading}</p>
+          <p className="text-sm text-gray-500">{t.dash_test_analysis_loading}</p>
         ) : reports.length === 0 ? (
-          <p className="text-sm text-gray-400">{t.dash_test_analysis_no_reports}</p>
+          <p className="text-sm text-gray-500">{t.dash_test_analysis_no_reports}</p>
         ) : (
           <div className="flex flex-col gap-2">
             {reports.map(r => (
@@ -484,7 +484,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
                   <p className="text-sm font-semibold truncate" style={{ color: '#0f1f3d' }}>
                     {r.date ? r.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : t.dash_test_analysis_unknown_date}
                   </p>
-                  <p className="text-xs text-gray-400">{t.dash_grade_label.replace('{grade}', String(r.grade))}</p>
+                  <p className="text-xs text-gray-500">{t.dash_grade_label.replace('{grade}', String(r.grade))}</p>
                 </div>
                 <button
                   onClick={() => setViewingReport(r)}
@@ -515,7 +515,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
                 <h3 className="text-lg font-bold" style={{ color: '#0f1f3d' }}>
                   {viewingReport.date ? viewingReport.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : t.dash_test_analysis_report_fallback_heading}
                 </h3>
-                <p className="text-sm text-gray-400">{t.dash_grade_label.replace('{grade}', String(viewingReport.grade))}</p>
+                <p className="text-sm text-gray-500">{t.dash_grade_label.replace('{grade}', String(viewingReport.grade))}</p>
               </div>
               <button
                 onClick={() => setViewingReport(null)}

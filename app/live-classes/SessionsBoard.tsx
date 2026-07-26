@@ -249,7 +249,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
                   {s.description.split('\n')[0]}
                 </p>
               )}
-              <p className="text-xs text-gray-400 mb-4">
+              <p className="text-xs text-gray-500 mb-4">
                 {isLesson ? t.live_type_lesson_detail : t.live_type_crash_detail}
               </p>
 

@@ -96,7 +96,7 @@ export default function LiveClassesPage() {
             ))}
           </div>
           {!hasSessions && (
-            <p className="text-sm text-center text-gray-400">
+            <p className="text-sm text-center text-gray-500">
               {t.live_launch_info_text}
             </p>
           )}

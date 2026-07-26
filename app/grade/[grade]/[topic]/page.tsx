@@ -95,7 +95,7 @@ export default function TopicPage({
             >
               <span aria-hidden="true">←</span>
             </Link>
-            <nav className="flex items-center gap-2 text-sm text-gray-400 min-w-0" aria-label="Breadcrumb">
+            <nav className="flex items-center gap-2 text-sm text-gray-500 min-w-0" aria-label="Breadcrumb">
               <Link href="/" className="hover:text-[#0f1f3d] transition-colors shrink-0">{t.nav_home}</Link>
               <span aria-hidden="true">/</span>
               <Link href={`/grade/${grade}`} className="hover:text-[#0f1f3d] transition-colors shrink-0">{t.grade_heading.replace('{grade}', String(grade))}</Link>

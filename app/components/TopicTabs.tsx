@@ -230,7 +230,7 @@ function WorkedExampleCard({ example, number }: { example: WorkedExample; number
             ))}
           </ol>
           <div className="flex items-center gap-3 mt-6 pt-5 border-t border-gray-100">
-            <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide shrink-0">{t.topic_answer_label}</span>
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide shrink-0">{t.topic_answer_label}</span>
             {looksLikeHtml(example.answer) ? (
               <span className="topic-html bg-blue-50 text-[#1e40af] font-semibold px-3 py-1.5 rounded-lg text-sm leading-snug" dangerouslySetInnerHTML={{ __html: example.answer }} />
             ) : (
@@ -322,7 +322,7 @@ function PracticeCard({
           } else if (isSelected) {
             btnClass += 'border-red-300 bg-red-50 text-red-700'
           } else {
-            btnClass += 'border-gray-100 text-gray-400'
+            btnClass += 'border-gray-100 text-gray-500'
           }
 
           return (
@@ -464,7 +464,7 @@ function OpenQuestionCard({
               const partAnswerText = part.answer || part.correctAnswer || part.correctAnswers?.[0] || ''
               return (
                 <div key={pi}>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
                     {longform
                       ? t.topic_part_show_working_label.replace('{part}', decodeEntities(part.label))
                       : t.topic_part_your_answer_label.replace('{part}', decodeEntities(part.label))}
@@ -538,7 +538,7 @@ function OpenQuestionCard({
           </div>
         ) : (
           <div>
-            <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
+            <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
               {question.checkMode === 'self' ? t.topic_show_your_working_label : t.topic_your_answer_label}
             </label>
             {question.checkMode === 'self' ? (
@@ -645,7 +645,7 @@ function ResultsSummary({
       <div className="flex items-start justify-between gap-4 mb-4">
         <div>
           <p className="text-2xl font-bold text-[#0f1f3d] mb-1">
-            {score} <span className="text-base font-medium text-gray-400">/ {total}</span>
+            {score} <span className="text-base font-medium text-gray-500">/ {total}</span>
           </p>
           <p className="text-sm text-gray-600">{decodeEntities(message)}</p>
         </div>
@@ -822,7 +822,7 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
           >
             {t.topic_reveal_answers}
           </button>
-          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
+          <p className="text-xs text-gray-500 mt-2">{t.topic_reveal_all_prompt}</p>
         </div>
       )}
 
@@ -929,7 +929,7 @@ function OpenPractice({
           >
             {t.topic_reveal_answers}
           </button>
-          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
+          <p className="text-xs text-gray-500 mt-2">{t.topic_reveal_all_prompt}</p>
         </div>
       )}
       {allAnswered && (
@@ -1186,7 +1186,7 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
           >
             {t.topic_reveal_answers}
           </button>
-          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
+          <p className="text-xs text-gray-500 mt-2">{t.topic_reveal_all_prompt}</p>
         </div>
       )}
 
@@ -1295,7 +1295,7 @@ function FlatPracticeQuestions({ data }: { data: TopicData }) {
           >
             {t.topic_reveal_answers}
           </button>
-          <p className="text-xs text-gray-400 mt-2">{t.topic_reveal_all_prompt}</p>
+          <p className="text-xs text-gray-500 mt-2">{t.topic_reveal_all_prompt}</p>
         </div>
       )}
 

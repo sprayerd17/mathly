@@ -243,7 +243,7 @@ export default function FamilyPlanBuilder() {
         <div className="rounded-xl p-5 bg-white flex flex-col" style={{ border: '1px solid #e5e7eb' }}>
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>{t.dash_package_free}</p>
           <p className="text-2xl font-bold mb-4" style={{ color: '#0f1f3d' }}>
-            R0<span className="text-sm font-normal text-gray-400"> {t.pricing_per_month}</span>
+            R0<span className="text-sm font-normal text-gray-500"> {t.pricing_per_month}</span>
           </p>
           <ul className="flex-1 space-y-2.5 mb-5">
             {[
@@ -267,10 +267,10 @@ export default function FamilyPlanBuilder() {
           </div>
           <div className="mb-4">
             {(!mounted || proFounding) && (
-              <p className="text-xs text-gray-400 line-through">R{FULL_PRICE.pro}{t.pricing_per_month}</p>
+              <p className="text-xs text-gray-500 line-through">R{FULL_PRICE.pro}{t.pricing_per_month}</p>
             )}
             <p className="text-2xl font-bold" style={{ color: '#0f1f3d' }}>
-              R{prices.pro}<span className="text-sm font-normal text-gray-400"> {t.pricing_per_month}</span>
+              R{prices.pro}<span className="text-sm font-normal text-gray-500"> {t.pricing_per_month}</span>
             </p>
           </div>
           <FoundingSpotsBar
@@ -302,10 +302,10 @@ export default function FamilyPlanBuilder() {
           </div>
           <div className="mb-4">
             {(!mounted || maxFounding) && (
-              <p className="text-xs text-gray-400 line-through">R{FULL_PRICE.max}{t.pricing_per_month}</p>
+              <p className="text-xs text-gray-500 line-through">R{FULL_PRICE.max}{t.pricing_per_month}</p>
             )}
             <p className="text-2xl font-bold" style={{ color: '#0f1f3d' }}>
-              R{prices.max}<span className="text-sm font-normal text-gray-400"> {t.pricing_per_month}</span>
+              R{prices.max}<span className="text-sm font-normal text-gray-500"> {t.pricing_per_month}</span>
             </p>
           </div>
           <FoundingSpotsBar
@@ -386,7 +386,7 @@ export default function FamilyPlanBuilder() {
                   >
                     {t.pricing_person_1_label}
                   </span>
-                  <span className="text-xs text-gray-400">{t.pricing_required_label}</span>
+                  <span className="text-xs text-gray-500">{t.pricing_required_label}</span>
                 </div>
                 <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
                   {slotBadgeAndSpots(c1)}
@@ -490,18 +490,18 @@ export default function FamilyPlanBuilder() {
               <span className="text-3xl font-bold" style={{ color: hasAnyDiscount ? '#1e40af' : '#0f1f3d' }}>
                 R{grandTotal}
               </span>
-              <span className="text-sm text-gray-400">{t.pricing_per_month}</span>
+              <span className="text-sm text-gray-500">{t.pricing_per_month}</span>
             </div>
             {hasAnyDiscount ? (
               <p className="text-xs font-semibold" style={{ color: '#15803d' }}>
                 {t.pricing_family_discount_applied.replace('{amount}', String(totalSaving))}
               </p>
             ) : multiPerson ? (
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-500">
                 {t.pricing_all_slots_founding_rate}
               </p>
             ) : (
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-500">
                 {t.pricing_add_second_person_prompt}
               </p>
             )}

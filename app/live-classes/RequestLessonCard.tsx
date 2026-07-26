@@ -120,7 +120,7 @@ export default function RequestLessonCard() {
             >
               {submitting ? t.live_request_submitting : t.live_request_submit_button}
             </button>
-            <p className="text-xs text-gray-400 text-center">
+            <p className="text-xs text-gray-500 text-center">
               {t.live_request_grade_note.replace('{grade}', String(getActiveChild(user).grade)).replace('{child}', getActiveChild(user).name)}
             </p>
           </form>

@@ -4,13 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mathly — Coming Soon</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VWN7ZZQMN7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VWN7ZZQMN7');
-</script>
 <meta name="description" content="Mathly gives South African students from Grade 4 to Grade 12 access to clear, CAPS-aligned study guides, worked examples, and practice questions — at a fraction of the cost of a private tutor. Join the waitlist to be first to know when we launch." />
 <link rel="icon" type="image/png" href="logo-icon.png" />
 <style>
@@ -353,9 +346,62 @@
     .logo span { font-size: 1.1rem; }
     .header-cta { font-size: 0.8rem; padding: 9px 14px; }
   }
+
+  /* ── Cookie consent banner ──────────────────────────────── */
+  .cookie-banner {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 50;
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(15, 31, 61, 0.12);
+    padding: 16px 20px;
+    display: none;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .cookie-banner p {
+    flex: 1 1 260px;
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+  .cookie-banner .cookie-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .cookie-banner button {
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 9px 16px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .cookie-banner button.cookie-accept {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+  .cookie-banner button.cookie-accept:hover { background: var(--blue-dark); }
 </style>
 </head>
 <body>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We'd like to use Google Analytics to see how visitors use this page. No personal data is collected without your consent — you can decline and still join the waitlist.</p>
+  <div class="cookie-actions">
+    <button type="button" id="cookie-decline">Decline</button>
+    <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
+  </div>
+</div>
 
 <header>
   <div class="logo">
@@ -566,6 +612,44 @@
 </main>
 
 <footer>© 2026 Mathly. All rights reserved.</footer>
+
+<script>
+  // Google Analytics is only loaded after explicit consent — never on page
+  // load. "granted"/"denied" persist the choice so returning visitors aren't
+  // asked again; an unset value shows the banner.
+  (function () {
+    var CONSENT_KEY = "mathly_analytics_consent";
+
+    function loadAnalytics() {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-VWN7ZZQMN7";
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", "G-VWN7ZZQMN7");
+    }
+
+    var stored = localStorage.getItem(CONSENT_KEY);
+    if (stored === "granted") {
+      loadAnalytics();
+    } else if (stored !== "denied") {
+      var banner = document.getElementById("cookie-banner");
+      if (banner) banner.style.display = "flex";
+    }
+
+    document.getElementById("cookie-accept")?.addEventListener("click", function () {
+      localStorage.setItem(CONSENT_KEY, "granted");
+      document.getElementById("cookie-banner").style.display = "none";
+      loadAnalytics();
+    });
+    document.getElementById("cookie-decline")?.addEventListener("click", function () {
+      localStorage.setItem(CONSENT_KEY, "denied");
+      document.getElementById("cookie-banner").style.display = "none";
+    });
+  })();
+</script>
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";

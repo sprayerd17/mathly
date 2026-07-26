@@ -155,7 +155,7 @@ export default function ReferPage() {
               </p>
             </div>
           </div>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-500">
             {t.refer_examples_fine_print}
           </p>
         </section>
@@ -218,7 +218,7 @@ export default function ReferPage() {
 
           {/* Pro plan table */}
           <h3 className="text-base font-bold mb-3" style={{ color: '#0f1f3d' }}>
-            {t.refer_pro_plan_label} <span className="font-normal text-gray-400 ml-1 text-sm">{t.refer_pro_plan_price}</span>
+            {t.refer_pro_plan_label} <span className="font-normal text-gray-500 ml-1 text-sm">{t.refer_pro_plan_price}</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {EARNINGS_PRO.map(row => (
@@ -251,7 +251,7 @@ export default function ReferPage() {
 
           {/* Max plan table */}
           <h3 className="text-base font-bold mb-3" style={{ color: '#0f1f3d' }}>
-            {t.refer_max_plan_label} <span className="font-normal text-gray-400 ml-1 text-sm">{t.refer_max_plan_price}</span>
+            {t.refer_max_plan_label} <span className="font-normal text-gray-500 ml-1 text-sm">{t.refer_max_plan_price}</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             {EARNINGS_MAX.map(row => (
@@ -282,7 +282,7 @@ export default function ReferPage() {
             ))}
           </div>
 
-          <p className="text-xs text-gray-400 text-center">
+          <p className="text-xs text-gray-500 text-center">
             {t.refer_earn_fine_print}
           </p>
         </section>
