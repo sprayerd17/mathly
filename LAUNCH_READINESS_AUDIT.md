@@ -53,26 +53,31 @@ All three routes now return a fixed generic message to the client ("Could not pr
 
 ## Low
 
-### 9. No unsubscribe link in emails
+### 9. No unsubscribe link in emails — no action needed
 Not currently a problem — every template in `src/lib/email.ts` today is transactional (welcome, receipts, booking confirmations, reminders, dunning), which doesn't legally require an opt-out. Flagging only so this isn't forgotten if a promotional/marketing template is ever added later.
 
-### 10. Cross-border data transfer disclosure is thin
-Privacy Policy Section 6 says Firebase/Google Cloud and Anthropic "may process data on servers located outside South Africa" and relies on "their own safeguards," without naming specific countries/regions or citing POPIA s72's adequacy/binding-agreement basis. Not a blocker, but worth tightening.
+### 10. Cross-border data transfer disclosure is thin — ✅ FIXED
+~~Privacy Policy Section 6 says Firebase/Google Cloud and Anthropic "may process data on servers located outside South Africa" and relies on "their own safeguards," without naming specific countries/regions or citing POPIA s72's adequacy/binding-agreement basis. Not a blocker, but worth tightening.~~
+Section 6 now names the United States as the relevant jurisdiction (both providers are US-headquartered) and explicitly cites POPIA section 72's adequacy/binding-agreement basis, stating that Mathly only engages processors who contractually commit to safeguards meeting that standard.
 
-### 11. `/admin` has no redirect for non-admins
-A logged-out or non-admin visitor to `/admin` sees a bare "Not authorized." in the normal page layout rather than being redirected home. The actual security gate is correct and server-side (verified) — this is purely a UX dead-end, low priority since it's an internal single-operator tool by design.
+### 11. `/admin` has no redirect for non-admins — ✅ FIXED
+~~A logged-out or non-admin visitor to `/admin` sees a bare "Not authorized." in the normal page layout rather than being redirected home. The actual security gate is correct and server-side (verified) — this is purely a UX dead-end, low priority since it's an internal single-operator tool by design.~~
+Added a client-side redirect to `/` once auth state resolves and the signed-in user isn't `ADMIN_EMAIL`. Live-verified: visiting `/admin` logged out now lands on the homepage instead of showing the bare "Not authorized." text.
 
-### 12. No focus-visible styling beyond text inputs
-Text inputs get an explicit `focus:ring-2`, but buttons/icon links rely on default browser focus outlines only, with no global `:focus-visible` styling. Not broken, just visually inconsistent during keyboard navigation.
+### 12. No focus-visible styling beyond text inputs — ✅ FIXED
+~~Text inputs get an explicit `focus:ring-2`, but buttons/icon links rely on default browser focus outlines only, with no global `:focus-visible` styling. Not broken, just visually inconsistent during keyboard navigation.~~
+Added a global `:focus-visible` rule in `app/globals.css` for `a`, `button`, and `[role="button"]` (2px solid `#1e40af` outline, 2px offset) — only shows for keyboard navigation, not mouse clicks. Live-verified via Tab key: the outline renders correctly on the first focusable link.
 
-### 13. `/admin` missing from `robots.txt` disallow list
-`app/robots.ts` disallows `/api/`, `/dashboard`, `/profile`, `/pricing/success`, `/pricing/cancelled` but omits `/admin`. The page itself is auth-gated, but the URL could still get crawled/indexed. Cheap defense-in-depth fix.
+### 13. `/admin` missing from `robots.txt` disallow list — ✅ FIXED
+~~`app/robots.ts` disallows `/api/`, `/dashboard`, `/profile`, `/pricing/success`, `/pricing/cancelled` but omits `/admin`. The page itself is auth-gated, but the URL could still get crawled/indexed. Cheap defense-in-depth fix.~~
+Added `/admin` to the disallow list.
 
-### 14. Confirm `PAYSTACK_CALLBACK_BASE_URL` is actually set in production
-`app/api/paystack/checkout/route.ts:130` falls back to `http://localhost:3000` if the env var is missing, and `.env.example` documents that same localhost value as the example. Since live payments just went live, this is worth a one-time manual confirmation in Netlify that the production value is actually `https://mathly.co.za` and isn't silently falling back.
+### 14. Confirm `PAYSTACK_CALLBACK_BASE_URL` is actually set in production — action needed from you
+`app/api/paystack/checkout/route.ts:130` falls back to `http://localhost:3000` if the env var is missing, and `.env.example` documents that same localhost value as the example. This is a one-time manual check only you can do (Netlify env var dashboard, not something fixable in code) — please confirm the production value is actually `https://mathly.co.za` and isn't silently falling back to localhost.
 
-### 15. No HTTP security headers configured
-No `headers()` block in `next.config.ts`, no `middleware.ts` — so there's no Content-Security-Policy, X-Frame-Options, Strict-Transport-Security, or X-Content-Type-Options at the app level (relying entirely on host/CDN defaults, if any). Lower priority than the payment/auth items, but a straightforward addition.
+### 15. No HTTP security headers configured — ✅ FIXED
+~~No `headers()` block in `next.config.ts`, no `middleware.ts` — so there's no Content-Security-Policy, X-Frame-Options, Strict-Transport-Security, or X-Content-Type-Options at the app level (relying entirely on host/CDN defaults, if any). Lower priority than the payment/auth items, but a straightforward addition.~~
+Added a `headers()` block to `next.config.ts` setting `X-Content-Type-Options: nosniff`, `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, `Strict-Transport-Security` (2yr, includeSubDomains, preload), and a restrictive `Permissions-Policy` (camera/microphone/geolocation all disabled) on every route. Live-verified via `fetch()` response headers. Deliberately did **not** add a Content-Security-Policy — getting one right requires enumerating every Firebase/Paystack/Google Meet/Resend origin the app actually calls, and a wrong directive fails silently (blocked requests, not build errors) rather than breaking loudly; that's a separate, more careful pass, not a quick addition.
 
 ---
 

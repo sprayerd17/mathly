@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Navbar from '@/app/components/Navbar'
 import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
@@ -12,6 +13,7 @@ import type { PublicSession } from '@/src/lib/sessions'
 // user-facing), unlike the rest of the site.
 export default function AdminPage() {
   const { user, loading } = useAuth()
+  const router = useRouter()
   const [sessions, setSessions] = useState<PublicSession[]>([])
   const [confirmingId, setConfirmingId] = useState<string | null>(null)
   const [busyId, setBusyId] = useState<string | null>(null)
@@ -24,6 +26,12 @@ export default function AdminPage() {
       .then(d => setSessions(Array.isArray(d.sessions) ? d.sessions : []))
       .catch(() => {})
   }, [])
+
+  useEffect(() => {
+    if (!loading && user?.email !== ADMIN_EMAIL) {
+      router.replace('/')
+    }
+  }, [loading, user, router])
 
   async function handleCancel(sessionId: string) {
     if (!auth.currentUser) return

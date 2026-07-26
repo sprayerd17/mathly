@@ -17,6 +17,17 @@ body {
   color: var(--foreground);
 }
 
+/* Buttons/links only get the browser's default focus outline otherwise,
+   which is visually inconsistent with the ring-style focus already used on
+   text inputs. Only shows for keyboard navigation (:focus-visible), not
+   mouse clicks. */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #1e40af;
+  outline-offset: 2px;
+}
+
 /* Study-guide content renders diagrams as raw inline SVG via dangerouslySetInnerHTML.
    Some of those SVGs only carry a viewBox (no width/height), which some mobile
    browsers size inconsistently -- force every one to scale to its container so

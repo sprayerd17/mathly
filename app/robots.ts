@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       // Auth-gated (no content to index) or transactional pages, plus
       // every server route — none of these belong in a search index.
-      disallow: ['/api/', '/dashboard', '/profile', '/pricing/success', '/pricing/cancelled'],
+      disallow: ['/api/', '/dashboard', '/profile', '/pricing/success', '/pricing/cancelled', '/admin'],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
   }

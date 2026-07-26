@@ -96,10 +96,14 @@ export default function PrivacyPage() {
 
         <Section heading="6. Where your information is processed">
           <p>
-            Some of the providers listed in Section 5 (Firebase/Google Cloud, Anthropic) may process
-            data on servers located outside South Africa. Where this happens, we rely on providers that
-            maintain their own security and data protection safeguards for the information they process
-            on our behalf.
+            Some of the providers listed in Section 5 (Firebase/Google Cloud, Anthropic) are
+            headquartered in, and may process data in, the United States and other countries outside
+            South Africa. Under POPIA section 72, we may only allow this where the recipient is subject
+            to a law, binding corporate rules, or a binding agreement that provides an adequate level of
+            protection substantially similar to POPIA — Google Cloud/Firebase and Anthropic both
+            contractually commit to data protection and security safeguards (including standard
+            contractual-clause-equivalent terms) that meet this requirement, and we only engage
+            processors on that basis.
           </p>
         </Section>
 

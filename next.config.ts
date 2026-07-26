@@ -21,6 +21,25 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/grade/[grade]/[topic]": ["./src/data/**/*.ts"],
   },
+  // A Content-Security-Policy is deliberately not set here — getting it
+  // right requires enumerating every Firebase/Paystack/Google Meet/Resend
+  // origin the app actually calls, and a wrong directive fails silently
+  // (blocked requests, not build errors). These headers are the safe,
+  // low-risk subset that don't depend on that inventory.
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
