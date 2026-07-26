@@ -7,6 +7,26 @@ const FROM_CLASSES = 'Mathly <classes@mathly.co.za>'
 const FROM_PAYMENTS = 'Mathly <payments@mathly.co.za>'
 const FROM_WELCOME = 'Mathly <welcome@mathly.co.za>'
 const OWNER = process.env.OWNER_ALERT_EMAIL ?? 'divanbosman06@gmail.com'
+const REPLY_TO = 'hello@mathly.co.za'
+
+// Every template below is simple, controlled HTML (no scripts/styles blocks,
+// no nested tags we need to preserve), so a straightforward tag-strip is
+// enough to produce a faithful plain-text alternative for spam filters.
+function htmlToText(html: string): string {
+  return html
+    .replace(/<a\s+[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, '$2 ($1)')
+    .replace(/<\/(p|div|h[1-6])>/gi, '\n\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, '\'')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+}
 
 export async function sendEmail(to: string, subject: string, html: string, from: string): Promise<boolean> {
   const key = process.env.RESEND_API_KEY
@@ -18,7 +38,7 @@ export async function sendEmail(to: string, subject: string, html: string, from:
         Authorization: `Bearer ${key}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ from, to: [to], subject, html }),
+      body: JSON.stringify({ from, to: [to], subject, html, text: htmlToText(html), reply_to: REPLY_TO }),
     })
     if (!res.ok) {
       console.error('[email] Resend rejected send', res.status, await res.text().catch(() => ''))
