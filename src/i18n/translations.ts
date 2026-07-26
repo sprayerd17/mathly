@@ -12,6 +12,24 @@ const en = {
     nav_log_out: 'Log out',
     nav_auth_account_menu_label: 'Account menu',
 
+    // ── Onboarding tour (shown after a Pro/Max subscription, and reopenable from Profile) ──
+    profile_tour_link: 'Quick run-through',
+    tour_welcome_heading: "You're in! Here's a quick tour",
+    tour_welcome_body: 'Thanks for subscribing — here’s where everything lives, so you can dive straight in.',
+    tour_home_heading: 'Home',
+    tour_home_body: 'This is where you’ll find your child’s topics — study guides, worked examples, and practice questions, organised by grade.',
+    tour_dashboard_heading: 'Dashboard',
+    tour_dashboard_body: 'Track completed topics, quiz scores, and study streaks here — a quick way to see how things are going.',
+    tour_contact_heading: 'Contact',
+    tour_contact_body: 'Got a question, or come across a diagram that didn’t render quite right? This is where you reach me directly.',
+    tour_profile_heading: 'Profile',
+    tour_profile_body: 'Manage your children’s grades and languages, your subscription, and your referral link — you’re on this page right now.',
+    tour_closing_heading: 'One more thing',
+    tour_closing_body: 'Mathly is built and maintained by a single student, not a big team. Most things work great, but every now and then a diagram might not render quite right, or something might look a little off. If you spot anything like that, head to Contact and let me know — a quick report helps me track it down and fix it fast.',
+    tour_back_button: 'Back',
+    tour_next_button: 'Next',
+    tour_done_button: "Let's go",
+
     // ── Global: not-found / error pages ────────────────────────────────────
     not_found_heading: "This page doesn't exist",
     not_found_body: "The link you followed might be broken, or the page may have moved. Let's get you back on track.",
@@ -659,6 +677,24 @@ const af: Record<TranslationKeys, string> = {
     nav_my_subscription: 'My Pakket',
     nav_log_out: 'Teken uit',
     nav_auth_account_menu_label: 'Rekeningkieslys',
+
+    // ── Onboarding tour (shown after a Pro/Max subscription, and reopenable from Profile) ──
+    profile_tour_link: 'Vinnige rondleiding',
+    tour_welcome_heading: "Jy's reg! Hier's 'n vinnige rondleiding",
+    tour_welcome_body: 'Dankie dat jy ingeteken het — hier is waar alles is, sodat jy dadelik kan begin.',
+    tour_home_heading: 'Tuis',
+    tour_home_body: 'Hier vind jy jou kind se onderwerpe — studiegidse, uitgewerkte voorbeelde en oefenvrae, volgens graad georden.',
+    tour_dashboard_heading: 'Paneelbord',
+    tour_dashboard_body: 'Hou voltooide onderwerpe, toetstellings en studiestrepe hier dop — \'n vinnige manier om te sien hoe dit gaan.',
+    tour_contact_heading: 'Kontak',
+    tour_contact_body: 'Het jy \'n vraag, of het jy \'n diagram raakgeloop wat nie reg vertoon het nie? Hier bereik jy my direk.',
+    tour_profile_heading: 'Profiel',
+    tour_profile_body: 'Bestuur jou kinders se grade en tale, jou pakket, en jou verwysingskakel — jy is nou op hierdie bladsy.',
+    tour_closing_heading: 'Nog iets',
+    tour_closing_body: 'Mathly word deur net een student gebou en onderhou, nie \'n groot span nie. Meeste dinge werk goed, maar af en toe vertoon \'n diagram dalk nie heeltemal reg nie, of lyk iets \'n bietjie skeef. As jy iets soos dit raakloop, gaan na Kontak en laat weet my — \'n vinnige verslag help my om dit vinnig op te spoor en reg te maak.',
+    tour_back_button: 'Terug',
+    tour_next_button: 'Volgende',
+    tour_done_button: 'Kom ons begin',
 
     // ── Global: not-found / error pages ────────────────────────────────────
     not_found_heading: 'Hierdie bladsy bestaan nie',

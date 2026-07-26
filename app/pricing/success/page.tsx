@@ -152,7 +152,7 @@ export default function PricingSuccessPage() {
         )}
 
         <Link
-          href={status === 'failed' ? '/pricing' : '/profile'}
+          href={status === 'failed' ? '/pricing' : status === 'active' ? '/profile?tour=1' : '/profile'}
           className="inline-flex items-center gap-2 bg-[#1e40af] hover:bg-[#1d3a9e] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors"
         >
           {status === 'failed' ? t.pricing_success_failed_cta : t.pricing_success_profile_link}

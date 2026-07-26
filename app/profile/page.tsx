@@ -1,8 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
+import { useSearchParams, useRouter } from 'next/navigation'
 import Navbar from '@/app/components/Navbar'
+import OnboardingTour from '@/app/components/OnboardingTour'
 import { useAuth, LanguageCards, type Language, type Tier } from '@/app/providers'
 import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
@@ -32,9 +34,32 @@ const LANGUAGE_LABELS: Record<Language, string> = {
 
 type ChildRecord = { name: string; grade: number; language: Language; languageChangeUsed: boolean; gradeChangeUsed: boolean }
 
+// useSearchParams() requires a Suspense boundary (see app/join/page.tsx for
+// the same pattern) — isolated into its own component so only this sliver
+// needs wrapping, rather than the whole profile page.
+function TourAutoOpen({ onOpen }: { onOpen: () => void }) {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  useEffect(() => {
+    if (searchParams.get('tour') === '1') {
+      onOpen()
+      router.replace('/profile', { scroll: false })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams])
+  return null
+}
+
 export default function ProfilePage() {
   const { user, loading, updateChildren, addChild, updateActiveChild, openModal, logout } = useAuth()
   const t = useTranslations()
+
+  // The pricing-success page appends ?tour=1 to its "Go to profile" link
+  // right after a Pro/Max checkout confirms — TourAutoOpen (below) reads that
+  // param and opens the onboarding tour once, then strips it so a later
+  // refresh/revisit doesn't re-trigger it. Reopenable any time via the
+  // "Quick run-through" link below.
+  const [showTour, setShowTour] = useState(false)
 
   // Singular-profile editing (used when the plan only allows 1 profile)
   const [editingGrade, setEditingGrade] = useState(false)
@@ -289,9 +314,23 @@ export default function ProfilePage() {
       <Navbar />
 
       <main className="flex-1 w-full max-w-2xl mx-auto px-6 py-14">
-        <h1 className="text-3xl font-bold mb-8" style={{ color: '#0f1f3d' }}>
-          {t.profile_my_profile_heading}
-        </h1>
+        <div className="flex items-start justify-between gap-4 mb-8">
+          <h1 className="text-3xl font-bold" style={{ color: '#0f1f3d' }}>
+            {t.profile_my_profile_heading}
+          </h1>
+          <button
+            onClick={() => setShowTour(true)}
+            className="text-sm font-medium shrink-0 mt-2 hover:underline underline-offset-4 transition-colors"
+            style={{ color: '#1e40af' }}
+          >
+            {t.profile_tour_link}
+          </button>
+        </div>
+
+        <Suspense fallback={null}>
+          <TourAutoOpen onOpen={() => setShowTour(true)} />
+        </Suspense>
+        {showTour && <OnboardingTour onClose={() => setShowTour(false)} />}
 
         {/* Identity card */}
         <div
