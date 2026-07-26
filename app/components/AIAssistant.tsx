@@ -26,10 +26,17 @@ type AIUsage = {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 100 }
+const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 50 }
 // Same monthly allowances as CAPTURE_LIMITS in app/api/ai-assistant/route.ts
 // — the server is the authority, this is optimistic UI only.
-const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 10, max: 30 }
+const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 5, max: 15 }
+// Mirrors MAX_MESSAGES / MAX_CONTENT_LENGTH in app/api/ai-assistant/route.ts
+// — MAX_HISTORY_MESSAGES trims the conversation sent with every request so a
+// long thread quietly drops its oldest turns instead of getting rejected
+// outright once it hits the server's cap; MAX_MESSAGE_LENGTH caps the input
+// box itself so a student can't type past what the server will accept.
+const MAX_HISTORY_MESSAGES = 16
+const MAX_MESSAGE_LENGTH = 2000
 // Both bumped up from an earlier 1400px/0.8 — html2canvas-pro already
 // captures at devicePixelRatio (so a HiDPI screen starts from a genuinely
 // sharp canvas), but squeezing that down hard and re-compressing it was
@@ -322,10 +329,15 @@ export default function AIAssistant({ grade }: { grade: string }) {
       image: capturedImage ?? undefined,
     }
 
-    const historyForApi = messages.map((m) => ({
-      role: m.role,
-      content: m.apiContent ?? m.content,
-    }))
+    // Keep only the most recent turns so the total sent (history + this new
+    // message) never exceeds the server's MAX_MESSAGES — a long-running
+    // thread just loses its oldest context instead of erroring outright.
+    const historyForApi = messages
+      .slice(-(MAX_HISTORY_MESSAGES - 1))
+      .map((m) => ({
+        role: m.role,
+        content: m.apiContent ?? m.content,
+      }))
     const apiMessages = [...historyForApi, { role: 'user' as const, content: apiContent }]
 
     setMessages((prev) => [...prev, userMsg])
@@ -822,6 +834,7 @@ export default function AIAssistant({ grade }: { grade: string }) {
                     }}
                     placeholder={t.ai_assistant_input_placeholder}
                     rows={1}
+                    maxLength={MAX_MESSAGE_LENGTH}
                     disabled={isLoading}
                     style={{
                       flex: 1,

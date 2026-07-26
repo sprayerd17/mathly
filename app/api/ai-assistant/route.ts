@@ -11,7 +11,12 @@ const BASE_SYSTEM_PROMPT =
   'You help students from Grade 4 to Grade 12 understand maths concepts. ' +
   'Always explain things clearly and simply. Use examples where helpful. ' +
   'Keep responses concise and encouraging. ' +
-  'If a student shares selected text from a study guide, explain it in simpler terms or give an additional example.'
+  'If a student shares selected text from a study guide, explain it in simpler terms or give an additional example. ' +
+  'Never use LaTeX or dollar-sign math delimiters (no $, $$, \\frac{}{}, \\tan^{-1}, etc.) — the chat window ' +
+  'displays plain text and cannot render them, so they would show up as broken raw code. Write all maths in ' +
+  'plain readable text instead: fractions as "a/b" (e.g. 6/8), exponents as x^2 or spelled out, inverse trig as ' +
+  'tan⁻¹, sin⁻¹, cos⁻¹ (the ⁻¹ superscript character), roots as √ (e.g. √16), and degrees with °. ' +
+  '**Bold**, numbered steps, and bullet lists are fine to use.'
 
 function systemPromptFor(grade: string | null): string {
   if (!grade) return BASE_SYSTEM_PROMPT
@@ -23,14 +28,20 @@ type Plan = 'free' | 'pro' | 'max'
 
 // Same monthly allowances as PLAN_LIMITS in app/components/AIAssistant.tsx —
 // the client copy is optimistic UI only, this is the source of truth.
-const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 100 }
+const PLAN_LIMITS: Record<Plan, number> = { free: 5, pro: 20, max: 50 }
 // Same monthly allowances as CAPTURE_LIMITS in app/components/AIAssistant.tsx.
 // Free matches the advertised pricing-page copy ("2 screen captures per
 // month"); pro/max are chosen proportionally to their question limits — both
 // are adjustable product decisions, not derived from anything external.
-const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 10, max: 30 }
-const MAX_MESSAGES = 30
-const MAX_CONTENT_LENGTH = 4000
+const CAPTURE_LIMITS: Record<Plan, number> = { free: 2, pro: 5, max: 15 }
+// Mirrored client-side as MAX_HISTORY_MESSAGES in AIAssistant.tsx, which
+// trims the conversation it sends to this many messages before every
+// request — without that, a conversation that grows past this cap would
+// get flatly rejected below instead of just losing its oldest turns.
+const MAX_MESSAGES = 16
+// Mirrored client-side as MAX_MESSAGE_LENGTH (a textarea maxLength), so a
+// student can't type past this in the first place.
+const MAX_CONTENT_LENGTH = 2000
 // Data-URL string length cap for an attached screen capture — the client
 // downscales to a 1800px-longest-edge JPEG before sending, so a well-behaved
 // client never gets close to this; it's a backstop against a tampered request.
@@ -182,7 +193,7 @@ export async function POST(req: NextRequest) {
       try {
         const response = await client.messages.create({
           model: 'claude-sonnet-5',
-          max_tokens: 1024,
+          max_tokens: 700,
           system: systemPromptFor(grade),
           messages: anthropicMessages,
           stream: true,

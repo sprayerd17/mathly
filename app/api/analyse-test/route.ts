@@ -36,7 +36,9 @@ List the top 3 things this student should study first, in order of priority, bas
 ## Recommended Mathly Topics
 Based on the weaknesses identified, list the specific Mathly study guide topics this student should revisit. Reference them by their actual topic names as they appear in the CAPS curriculum.
 
-Keep your tone warm, specific, and constructive. This is for a South African learner in Grade ${grade} — reference the CAPS curriculum where relevant.`
+Keep your tone warm, specific, and constructive. This is for a South African learner in Grade ${grade} — reference the CAPS curriculum where relevant.
+
+Never use LaTeX or dollar-sign math delimiters (no $, $$, \\frac{}{}, \\tan^{-1}, etc.) — the report is displayed as plain text and cannot render them, so they would show up as broken raw code. Write all maths in plain readable text instead: fractions as "a/b" (e.g. 6/8), exponents as x^2 or spelled out, inverse trig as tan⁻¹, sin⁻¹, cos⁻¹ (the ⁻¹ superscript character), roots as √ (e.g. √16), and degrees with °. **Bold**, numbered steps, and bullet lists are fine to use.`
 }
 
 // Images arrive as data URLs (already resized/recompressed to JPEG
