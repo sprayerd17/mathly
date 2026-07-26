@@ -233,14 +233,14 @@ export const topicData: TopicData = {
       id: 'multiplying-2digit-by-1digit',
       title: 'Vermenigvuldig ʼn 2-Syfergetal met ʼn 1-Syfergetal',
       icon: '🔢',
-      explanation: `<p style="margin-bottom:16px;">Wanneer ons ʼn 2-syfergetal met ʼn 1-syfergetal vermenigvuldig, gebruik ons die <strong>kolommetode</strong>. Skryf die getalle regs belyn, een bo die ander. Vermenigvuldig dan elke kolom afsonderlik — begin altyd by die <span style="color:#1e40af;font-weight:600;">eenhede</span>-kolom aan die regterkant, en beweeg dan na die <span style="color:#16a34a;font-weight:600;">tiene</span>-kolom aan die linkerkant.</p>
+      explanation: `<p style="margin-bottom:16px;">Wanneer ons ʼn 2-syfergetal met ʼn 1-syfergetal vermenigvuldig, gebruik ons die <strong>kolommetode</strong>. Skryf die getalle regs belyn, een bo die ander. Vermenigvuldig dan elke kolom afsonderlik — begin altyd by die <span style="color:#1e40af;font-weight:600;">ene</span>-kolom aan die regterkant, en beweeg dan na die <span style="color:#16a34a;font-weight:600;">tiene</span>-kolom aan die linkerkant.</p>
 
-<p style="margin-bottom:16px;"><strong>Die goue reël:</strong> as jou antwoord in enige kolom <strong>10 of meer</strong> is, skryf die eenhede-syfer van daardie antwoord neer en <em>skuif</em> die tiene-syfer oor na die volgende kolom. Die geskuifde syfer word in <span style="color:#ea580c;font-weight:600;">oranje</span> getoon.</p>
+<p style="margin-bottom:16px;"><strong>Die goue reël:</strong> as jou antwoord in enige kolom <strong>10 of meer</strong> is, skryf die ene-syfer van daardie antwoord neer en <em>skuif</em> die tiene-syfer oor na die volgende kolom. Die geskuifde syfer word in <span style="color:#ea580c;font-weight:600;">oranje</span> getoon.</p>
 
 <div style="background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px 16px;">
   <p style="font-size:13px;font-weight:700;color:#0f1f3d;margin-bottom:10px;">Kleurgids:</p>
   <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:13px;">
-    <span style="background:#eff6ff;color:#1e40af;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #bfdbfe;">Eenhede — blou</span>
+    <span style="background:#eff6ff;color:#1e40af;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #bfdbfe;">Ene — blou</span>
     <span style="background:#f0fdf4;color:#16a34a;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #86efac;">Tiene — groen</span>
     <span style="background:#fff7ed;color:#ea580c;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fdba74;">Skuif — oranje</span>
   </div>
@@ -251,7 +251,7 @@ export const topicData: TopicData = {
           question: 'Bereken 34 × 2',
           answer: '68',
           steps: [
-            `Skryf die getalle in kolomformaat, syfers regs belyn. Ons begin altyd eerste met die <span style="color:#1e40af;font-weight:600;">eenhede</span>-kolom.
+            `Skryf die getalle in kolomformaat, syfers regs belyn. Ons begin altyd eerste met die <span style="color:#1e40af;font-weight:600;">ene</span>-kolom.
 <div style="margin:12px 0;">
   <table style="border-collapse:collapse;font-weight:700;font-size:20px;">
     <tr>
@@ -264,7 +264,7 @@ export const topicData: TopicData = {
     </tr>
   </table>
 </div>`,
-            `Vermenigvuldig die <span style="color:#1e40af;font-weight:700;">eenhede</span>: <span style="color:#1e40af;font-weight:700;">4 × 2 = 8</span>. Skryf <span style="color:#1e40af;font-weight:700;">8</span> in die eenhede-kolom. Daar is niks om te skuif nie omdat 8 minder as 10 is.`,
+            `Vermenigvuldig die <span style="color:#1e40af;font-weight:700;">ene</span>: <span style="color:#1e40af;font-weight:700;">4 × 2 = 8</span>. Skryf <span style="color:#1e40af;font-weight:700;">8</span> in die ene-kolom. Daar is niks om te skuif nie omdat 8 minder as 10 is.`,
             `Vermenigvuldig die <span style="color:#16a34a;font-weight:700;">tiene</span>: <span style="color:#16a34a;font-weight:700;">3 × 2 = 6</span>. Skryf <span style="color:#16a34a;font-weight:700;">6</span> in die tiene-kolom. Die volledige kolomuitleg:
 <div style="margin:12px 0;">
   <table style="border-collapse:collapse;font-weight:700;font-size:20px;">
@@ -288,8 +288,8 @@ export const topicData: TopicData = {
           question: 'Bereken 47 × 3',
           answer: '141',
           steps: [
-            `Skryf <strong>47 × 3</strong> in kolomformaat. Begin met die <span style="color:#1e40af;font-weight:600;">eenhede</span>-kolom.`,
-            `Vermenigvuldig die <span style="color:#1e40af;font-weight:700;">eenhede</span>: <span style="color:#1e40af;font-weight:700;">7 × 3 = 21</span>. 21 is 10 of meer, skryf dus die <span style="color:#1e40af;font-weight:700;">1</span> in die eenhede-kolom en <span style="color:#ea580c;font-weight:700;">skuif die 2</span> oor na die tiene-kolom.`,
+            `Skryf <strong>47 × 3</strong> in kolomformaat. Begin met die <span style="color:#1e40af;font-weight:600;">ene</span>-kolom.`,
+            `Vermenigvuldig die <span style="color:#1e40af;font-weight:700;">ene</span>: <span style="color:#1e40af;font-weight:700;">7 × 3 = 21</span>. 21 is 10 of meer, skryf dus die <span style="color:#1e40af;font-weight:700;">1</span> in die ene-kolom en <span style="color:#ea580c;font-weight:700;">skuif die 2</span> oor na die tiene-kolom.`,
             `Vermenigvuldig die <span style="color:#16a34a;font-weight:700;">tiene</span>: <span style="color:#16a34a;font-weight:700;">4 × 3 = 12</span>. Tel nou die geskuifde <span style="color:#ea580c;font-weight:700;">2</span> by: <span style="color:#16a34a;font-weight:700;">12</span> + <span style="color:#ea580c;font-weight:700;">2</span> = <strong>14</strong>. Skryf <span style="color:#16a34a;font-weight:700;">4</span> in die tiene-kolom en <strong>1</strong> in die honderde-kolom. Die volledige kolomuitleg:
 <div style="margin:12px 0;">
   <table style="border-collapse:collapse;font-weight:700;font-size:20px;">
@@ -323,7 +323,7 @@ export const topicData: TopicData = {
           answer: '224 bome',
           steps: [
             `Die boer het <strong>4</strong> rye met <strong>56</strong> bome in elk. Dit is ʼn vermenigvuldigingsprobleem: <strong>56 × 4</strong>. Skryf dit in kolomformaat.`,
-            `Vermenigvuldig die <span style="color:#1e40af;font-weight:700;">eenhede</span>: <span style="color:#1e40af;font-weight:700;">6 × 4 = 24</span>. 24 is 10 of meer, skryf dus <span style="color:#1e40af;font-weight:700;">4</span> in die eenhede-kolom en <span style="color:#ea580c;font-weight:700;">skuif die 2</span> oor na die tiene-kolom.`,
+            `Vermenigvuldig die <span style="color:#1e40af;font-weight:700;">ene</span>: <span style="color:#1e40af;font-weight:700;">6 × 4 = 24</span>. 24 is 10 of meer, skryf dus <span style="color:#1e40af;font-weight:700;">4</span> in die ene-kolom en <span style="color:#ea580c;font-weight:700;">skuif die 2</span> oor na die tiene-kolom.`,
             `Vermenigvuldig die <span style="color:#16a34a;font-weight:700;">tiene</span>: <span style="color:#16a34a;font-weight:700;">5 × 4 = 20</span>. Tel die geskuifde <span style="color:#ea580c;font-weight:700;">2</span> by: <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">2</span> = <strong>22</strong>. Skryf <span style="color:#16a34a;font-weight:700;">2</span> in die tiene-kolom en <strong>2</strong> in die honderde-kolom. Daar is <strong>224 bome</strong> altesaam.
 <div style="margin:12px 0;">
   <table style="border-collapse:collapse;font-weight:700;font-size:20px;">
@@ -433,7 +433,7 @@ export const topicData: TopicData = {
             `Rond 38 af na die naaste 10: 38 rond <strong>op</strong> na <span style="color:#ea580c;font-weight:700;">40</span>. Vermenigvuldig: <span style="color:#ea580c;font-weight:700;">40 × 4 = 160</span>. Ons presiese antwoord moet dus naby aan <span style="color:#ea580c;font-weight:700;">160</span> wees.`,
             `Bereken nou die presiese antwoord met die kolommetode:
 <br>
-<span style="font-size:13px;color:#6b7280;">• <span style="color:#1e40af;font-weight:600;">Eenhede:</span> 8 × 4 = 32 — skryf <span style="color:#1e40af;font-weight:700;">2</span>, skuif <span style="color:#ea580c;font-weight:700;">3</span></span><br>
+<span style="font-size:13px;color:#6b7280;">• <span style="color:#1e40af;font-weight:600;">Ene:</span> 8 × 4 = 32 — skryf <span style="color:#1e40af;font-weight:700;">2</span>, skuif <span style="color:#ea580c;font-weight:700;">3</span></span><br>
 <span style="font-size:13px;color:#6b7280;">• <span style="color:#16a34a;font-weight:600;">Tiene:</span> 3 × 4 = 12, plus geskuifde <span style="color:#ea580c;font-weight:700;">3</span> = 15 — skryf <span style="color:#16a34a;font-weight:700;">5</span>, skuif 1</span>
 <div style="margin:12px 0;">
   <table style="border-collapse:collapse;font-weight:700;font-size:20px;">
@@ -485,7 +485,7 @@ export const topicData: TopicData = {
             `Skat eers: rond 24 af na die naaste 10 — 24 rond <strong>af</strong> na <span style="color:#ea580c;font-weight:700;">20</span>. Vermenigvuldig: <span style="color:#ea580c;font-weight:700;">9 × 20 = 180</span>. Ons presiese antwoord moet dus naby aan <span style="color:#ea580c;font-weight:700;">180</span> wees.`,
             `Bereken nou die presiese antwoord — 24 × 9 — met die kolommetode:
 <br>
-<span style="font-size:13px;color:#6b7280;">• <span style="color:#1e40af;font-weight:600;">Eenhede:</span> 4 × 9 = 36 — skryf <span style="color:#1e40af;font-weight:700;">6</span>, skuif <span style="color:#ea580c;font-weight:700;">3</span></span><br>
+<span style="font-size:13px;color:#6b7280;">• <span style="color:#1e40af;font-weight:600;">Ene:</span> 4 × 9 = 36 — skryf <span style="color:#1e40af;font-weight:700;">6</span>, skuif <span style="color:#ea580c;font-weight:700;">3</span></span><br>
 <span style="font-size:13px;color:#6b7280;">• <span style="color:#16a34a;font-weight:600;">Tiene:</span> 2 × 9 = 18, plus geskuifde <span style="color:#ea580c;font-weight:700;">3</span> = 21 — skryf <span style="color:#16a34a;font-weight:700;">1</span> in tiene, <strong>2</strong> in honderde</span>
 <div style="margin:12px 0;">
   <table style="border-collapse:collapse;font-weight:700;font-size:20px;">
@@ -542,7 +542,7 @@ export const topicData: TopicData = {
       id: 'multiplying-2digit-by-2digit',
       title: 'Vermenigvuldig ʼn 2-Syfergetal met ʼn 2-Syfergetal',
       icon: '🔲',
-      explanation: `<p style="margin-bottom:16px;">Om twee 2-syfergetalle te vermenigvuldig, kan ons die <strong>roostermetode</strong> gebruik (ook genoem gedeeltelike produkte). Breek <em>albei</em> getalle in tiene en eenhede, vermenigvuldig elke deel van die eerste getal met elke deel van die tweede getal, en tel dan al vier antwoorde bymekaar.</p>
+      explanation: `<p style="margin-bottom:16px;">Om twee 2-syfergetalle te vermenigvuldig, kan ons die <strong>roostermetode</strong> gebruik (ook genoem gedeeltelike produkte). Breek <em>albei</em> getalle in tiene en ene, vermenigvuldig elke deel van die eerste getal met elke deel van die tweede getal, en tel dan al vier antwoorde bymekaar.</p>
 
 <p style="margin-bottom:16px;">Byvoorbeeld, <span style="color:#1e40af;font-weight:700;">23</span> × <span style="color:#16a34a;font-weight:700;">14</span> kan opgebreek word as (<span style="color:#1e40af;font-weight:700;">20</span> + <span style="color:#dc2626;font-weight:700;">3</span>) × (<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#ea580c;font-weight:700;">4</span>). Vermenigvuldig elke deel van die eerste hakie met elke deel van die tweede hakie, en tel dan die vier gedeeltelike produkte bymekaar: <span style="color:#1e40af;font-weight:700;">20</span>×<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#1e40af;font-weight:700;">20</span>×<span style="color:#ea580c;font-weight:700;">4</span> + <span style="color:#dc2626;font-weight:700;">3</span>×<span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#dc2626;font-weight:700;">3</span>×<span style="color:#ea580c;font-weight:700;">4</span> = 200 + 80 + 30 + 12 = <strong>322</strong>.</p>
 
@@ -550,9 +550,9 @@ export const topicData: TopicData = {
   <p style="font-size:13px;font-weight:700;color:#0f1f3d;margin-bottom:10px;">Kleurgids:</p>
   <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:13px;">
     <span style="background:#eff6ff;color:#1e40af;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #bfdbfe;">Eerste getal se tiene — blou</span>
-    <span style="background:#fef2f2;color:#dc2626;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fca5a5;">Eerste getal se eenhede — rooi</span>
+    <span style="background:#fef2f2;color:#dc2626;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fca5a5;">Eerste getal se ene — rooi</span>
     <span style="background:#f0fdf4;color:#16a34a;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #86efac;">Tweede getal se tiene — groen</span>
-    <span style="background:#fff7ed;color:#ea580c;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fdba74;">Tweede getal se eenhede — oranje</span>
+    <span style="background:#fff7ed;color:#ea580c;font-weight:700;padding:3px 12px;border-radius:20px;border:1px solid #fdba74;">Tweede getal se ene — oranje</span>
   </div>
 </div>`,
 
@@ -561,7 +561,7 @@ export const topicData: TopicData = {
           question: 'Bereken 23 × 14 met die roostermetode',
           answer: '322',
           steps: [
-            `Breek albei getalle in tiene en eenhede: <span style="color:#1e40af;font-weight:700;">23</span> = <span style="color:#1e40af;font-weight:700;">20</span> + <span style="color:#dc2626;font-weight:700;">3</span>, en <span style="color:#16a34a;font-weight:700;">14</span> = <span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
+            `Breek albei getalle in tiene en ene: <span style="color:#1e40af;font-weight:700;">23</span> = <span style="color:#1e40af;font-weight:700;">20</span> + <span style="color:#dc2626;font-weight:700;">3</span>, en <span style="color:#16a34a;font-weight:700;">14</span> = <span style="color:#16a34a;font-weight:700;">10</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
             `Teken ʼn rooster en vermenigvuldig elke deel van een getal met elke deel van die ander:
 <div style="margin:12px 0;overflow-x:auto;">
   <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
@@ -589,7 +589,7 @@ export const topicData: TopicData = {
           question: 'Bereken 34 × 21 met die roostermetode',
           answer: '714',
           steps: [
-            `Breek albei getalle in tiene en eenhede: <span style="color:#1e40af;font-weight:700;">34</span> = <span style="color:#1e40af;font-weight:700;">30</span> + <span style="color:#dc2626;font-weight:700;">4</span>, en <span style="color:#16a34a;font-weight:700;">21</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">1</span>.`,
+            `Breek albei getalle in tiene en ene: <span style="color:#1e40af;font-weight:700;">34</span> = <span style="color:#1e40af;font-weight:700;">30</span> + <span style="color:#dc2626;font-weight:700;">4</span>, en <span style="color:#16a34a;font-weight:700;">21</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">1</span>.`,
             `Vermenigvuldig elke deel van een getal met elke deel van die ander:
 <div style="margin:12px 0;overflow-x:auto;">
   <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
@@ -618,7 +618,7 @@ export const topicData: TopicData = {
             'ʼn Skool bestel 15 bokse potlode, met 24 potlode in elke boks. Hoeveel potlode is daar altesaam?',
           answer: '360 potlode',
           steps: [
-            `Dit is ʼn vermenigvuldigingsprobleem: <strong>15 × 24</strong>. Breek albei getalle in tiene en eenhede: <span style="color:#1e40af;font-weight:700;">15</span> = <span style="color:#1e40af;font-weight:700;">10</span> + <span style="color:#dc2626;font-weight:700;">5</span>, en <span style="color:#16a34a;font-weight:700;">24</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
+            `Dit is ʼn vermenigvuldigingsprobleem: <strong>15 × 24</strong>. Breek albei getalle in tiene en ene: <span style="color:#1e40af;font-weight:700;">15</span> = <span style="color:#1e40af;font-weight:700;">10</span> + <span style="color:#dc2626;font-weight:700;">5</span>, en <span style="color:#16a34a;font-weight:700;">24</span> = <span style="color:#16a34a;font-weight:700;">20</span> + <span style="color:#ea580c;font-weight:700;">4</span>.`,
             `Vermenigvuldig elke deel van een getal met elke deel van die ander:
 <div style="margin:12px 0;overflow-x:auto;">
   <table style="border-collapse:collapse;font-size:15px;font-weight:700;">
@@ -666,13 +666,13 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: 9 × ___ = 63', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: 'Tel in 9e totdat jy 63 bereik: 9, 18, 27, 36, 45, 54, 63 — dit is 7 stappe, dus 9 × 7 = 63 ✓' },
 
         // Blok 2 — Kolomvermenigvuldiging (4-7, Easy-Medium)
-        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 34 × 2', answer: '68', checkMode: 'auto', correctAnswer: '68', correctAnswers: ['68'], explanation: 'Eenhede: 4 × 2 = 8. Tiene: 3 × 2 = 6.\nAntwoord: 68 ✓' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 47 × 3', answer: '141', checkMode: 'auto', correctAnswer: '141', correctAnswers: ['141'], explanation: 'Eenhede: 7 × 3 = 21. Skryf 1, skuif 2.\nTiene: 4 × 3 = 12, plus geskuifde 2 = 14. Skryf 4 in tiene, 1 in honderde.\nAntwoord: 141 ✓' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 64 × 9', answer: '576', checkMode: 'auto', correctAnswer: '576', correctAnswers: ['576'], explanation: 'Eenhede: 4 × 9 = 36. Skryf 6, skuif 3.\nTiene: 6 × 9 = 54, plus geskuifde 3 = 57. Skryf 7 in tiene, 5 in honderde.\nAntwoord: 576 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Leerder bereken 53 × 4 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: eenhede-kolom 3 × 4 = 12, hulle het 2 geskryf en 1 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 5 × 4 = 20, plus geskuifde 1 = 21. Finale antwoord: 212', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 34 × 2', answer: '68', checkMode: 'auto', correctAnswer: '68', correctAnswers: ['68'], explanation: 'Ene: 4 × 2 = 8. Tiene: 3 × 2 = 6.\nAntwoord: 68 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 47 × 3', answer: '141', checkMode: 'auto', correctAnswer: '141', correctAnswers: ['141'], explanation: 'Ene: 7 × 3 = 21. Skryf 1, skuif 2.\nTiene: 4 × 3 = 12, plus geskuifde 2 = 14. Skryf 4 in tiene, 1 in honderde.\nAntwoord: 141 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 64 × 9', answer: '576', checkMode: 'auto', correctAnswer: '576', correctAnswers: ['576'], explanation: 'Ene: 4 × 9 = 36. Skryf 6, skuif 3.\nTiene: 6 × 9 = 54, plus geskuifde 3 = 57. Skryf 7 in tiene, 5 in honderde.\nAntwoord: 576 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken 53 × 4 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: ene-kolom 3 × 4 = 12, hulle het 2 geskryf en 1 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 5 × 4 = 20, plus geskuifde 1 = 21. Finale antwoord: 212', checkMode: 'self' },
 
         // Blok 3 — Skatting en Redelikheid (8-10, Medium)
-        { difficulty: 'Medium', question: 'Skat 48 × 6 deur 48 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 300 (50 × 6). Presies: 288', checkMode: 'auto', correctAnswer: '288', correctAnswers: ['288', '300 288', 'Skatting 300 Presies 288'], explanation: '48 rond op na 50, dus die skatting is 50 × 6 = 300. Presies: eenhede 8 × 6 = 48, skryf 8 skuif 4; tiene 4 × 6 = 24, plus geskuifde 4 = 28. Presiese antwoord: 288, wat naby aan die skatting van 300 is ✓' },
+        { difficulty: 'Medium', question: 'Skat 48 × 6 deur 48 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 300 (50 × 6). Presies: 288', checkMode: 'auto', correctAnswer: '288', correctAnswers: ['288', '300 288', 'Skatting 300 Presies 288'], explanation: '48 rond op na 50, dus die skatting is 50 × 6 = 300. Presies: ene 8 × 6 = 48, skryf 8 skuif 4; tiene 4 × 6 = 24, plus geskuifde 4 = 28. Presiese antwoord: 288, wat naby aan die skatting van 300 is ✓' },
         { difficulty: 'Medium', question: 'ʼn Leerder skat 62 × 5 deur 62 na 60 af te rond, en kry 300. Hulle presiese antwoord kom uit op 310. Is 310 ʼn redelike antwoord? Verduidelik hoe jy weet.', answer: 'Ja, 310 is redelik — dit is baie naby aan die skatting van 300, dus maak dit sin as die presiese antwoord op 62 × 5.', checkMode: 'self' },
         { difficulty: 'Medium', question: 'Sonder om enige van hulle heeltemal uit te werk, watter een is groter: 6 × 14 of 9 × 9? Verduidelik hoe jy dit kan sien deur afronding of skatting te gebruik.', answer: '6 × 14 is groter. Skatting: 6 × 14 is naby aan 6 × 15 = 90, terwyl 9 × 9 = 81. Dus is 6 × 14 (wat gelyk is aan 84) groter as 9 × 9 (81).', checkMode: 'self' },
 
@@ -687,7 +687,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Klas A bestel 6 bokse van 15 potlode elk vir die jaar. Klas B bestel 5 bokse van 18 potlode elk. Watter klas het meer potlode bestel, en met hoeveel?', answer: 'Geeneen nie — albei klasse het presies dieselfde aantal potlode bestel (90 elk).', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'hulle is gelyk', 'geeneen nie, hulle is gelyk', 'dieselfde', '90', '90 elk', '0'], explanation: 'Klas A: 6 × 15 = 90 potlode. Klas B: 5 × 18 = 90 potlode. Albei klasse het presies dieselfde aantal potlode bestel — 90 elk ✓' },
 
         // Blok 6 — Foutopsporing en Regverdig-jou-Redenasie (17-19, Hard)
-        { difficulty: 'Hard', question: 'Sipho sê 6 × 23 = 148. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Sipho is verkeerd. 6 × 23 = 138, nie 148 nie. (Eenhede: 3 × 6 = 18, skryf 8 skuif 1. Tiene: 2 × 6 = 12, plus geskuifde 1 = 13, wat 138 gee.)', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho sê 6 × 23 = 148. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Sipho is verkeerd. 6 × 23 = 138, nie 148 nie. (Ene: 3 × 6 = 18, skryf 8 skuif 1. Tiene: 2 × 6 = 12, plus geskuifde 1 = 13, wat 138 gee.)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Boer het 8 rye van 14 kool. ʼn Haelstorm vernietig 2 volle rye. Hoeveel kool bly regop staan?', answer: '84 kool', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84', '84 kool'], explanation: 'Stap 1: Totale kool = 8 × 14 = 112.\nStap 2: Kool vernietig = 2 × 14 = 28.\nStap 3: Kool oor = 112 − 28 = 84 kool ✓' },
         { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom 6 × 8 dieselfde antwoord as 8 × 6 gee.', answer: 'Vermenigvuldiging kan in enige volgorde gedoen word — dit word die kommutatiewe eienskap genoem. 6 groepe van 8 en 8 groepe van 6 bevat albei presies dieselfde totale aantal items (48), net anders gerangskik, dus is die antwoord altyd dieselfde ongeag in watter volgorde jy vermenigvuldig.', checkMode: 'self' },
 
@@ -717,13 +717,13 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: ___ × 7 = 56', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: '8 × 7 = 56, dus is die ontbrekende getal 8 ✓' },
 
         // Blok 2 — Kolomvermenigvuldiging (4-7, Easy-Medium)
-        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 42 × 2', answer: '84', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84'], explanation: 'Eenhede: 2 × 2 = 4. Tiene: 4 × 2 = 8.\nAntwoord: 84 ✓' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 56 × 4', answer: '224', checkMode: 'auto', correctAnswer: '224', correctAnswers: ['224'], explanation: 'Eenhede: 6 × 4 = 24. Skryf 4, skuif 2.\nTiene: 5 × 4 = 20, plus geskuifde 2 = 22. Skryf 2 in tiene, 2 in honderde.\nAntwoord: 224 ✓' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 32 × 8', answer: '256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256'], explanation: 'Eenhede: 2 × 8 = 16. Skryf 6, skuif 1.\nTiene: 3 × 8 = 24, plus geskuifde 1 = 25. Skryf 5 in tiene, 2 in honderde.\nAntwoord: 256 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Leerder bereken 76 × 3 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: eenhede-kolom 6 × 3 = 18, hulle het 8 geskryf en 1 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 7 × 3 = 21, plus geskuifde 1 = 22. Finale antwoord: 228', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 42 × 2', answer: '84', checkMode: 'auto', correctAnswer: '84', correctAnswers: ['84'], explanation: 'Ene: 2 × 2 = 4. Tiene: 4 × 2 = 8.\nAntwoord: 84 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 56 × 4', answer: '224', checkMode: 'auto', correctAnswer: '224', correctAnswers: ['224'], explanation: 'Ene: 6 × 4 = 24. Skryf 4, skuif 2.\nTiene: 5 × 4 = 20, plus geskuifde 2 = 22. Skryf 2 in tiene, 2 in honderde.\nAntwoord: 224 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 32 × 8', answer: '256', checkMode: 'auto', correctAnswer: '256', correctAnswers: ['256'], explanation: 'Ene: 2 × 8 = 16. Skryf 6, skuif 1.\nTiene: 3 × 8 = 24, plus geskuifde 1 = 25. Skryf 5 in tiene, 2 in honderde.\nAntwoord: 256 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken 76 × 3 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: ene-kolom 6 × 3 = 18, hulle het 8 geskryf en 1 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 7 × 3 = 21, plus geskuifde 1 = 22. Finale antwoord: 228', checkMode: 'self' },
 
         // Blok 3 — Skatting en Redelikheid (8-10, Medium)
-        { difficulty: 'Medium', question: 'Skat 75 × 8 deur 75 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 640 (80 × 8). Presies: 600', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600', '640 600', 'Skatting 640 Presies 600'], explanation: '75 rond op na 80, dus die skatting is 80 × 8 = 640. Presies: eenhede 5 × 8 = 40, skryf 0 skuif 4; tiene 7 × 8 = 56, plus geskuifde 4 = 60. Presiese antwoord: 600, wat naby aan die skatting van 640 is ✓' },
+        { difficulty: 'Medium', question: 'Skat 75 × 8 deur 75 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 640 (80 × 8). Presies: 600', checkMode: 'auto', correctAnswer: '600', correctAnswers: ['600', '640 600', 'Skatting 640 Presies 600'], explanation: '75 rond op na 80, dus die skatting is 80 × 8 = 640. Presies: ene 5 × 8 = 40, skryf 0 skuif 4; tiene 7 × 8 = 56, plus geskuifde 4 = 60. Presiese antwoord: 600, wat naby aan die skatting van 640 is ✓' },
         { difficulty: 'Medium', question: 'Twee leerders skat 39 × 7. Bongani rond 39 af na 40 en kry 280. Zanele rond 39 af na 35 (nie die naaste 10 nie) en kry 245. Wie se skatting volg die korrekte afrondingsreël, en waarom?', answer: 'Bongani se skatting is korrek — 39 rond af na die naaste 10, wat 40 is, nie 35 nie. Zanele het nie na die naaste 10 korrek afgerond nie, dus is haar skatting van 245 nie ʼn geldige skatting vir hierdie metode nie.', checkMode: 'self' },
         { difficulty: 'Medium', question: 'Sonder om enige van hulle heeltemal uit te werk, watter een is groter: 7 × 13 of 8 × 11? Verduidelik hoe jy dit kan sien deur afronding of skatting te gebruik.', answer: '7 × 13 is groter. As jy 13 effens afrond en 11 effens oprond, land albei naby 12, so vergelyk eerder die eerste faktore: 7 is naby aan 8, maar 13 is heelwat groter as 11, dus wen die produk met 13 (91) van die produk met 11 (88).', checkMode: 'self' },
 
@@ -738,7 +738,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Taxistaanplek het 7 minibusse wat elk 16 passasiers vervoer. ʼn Tweede staanplek het 8 minibusse wat elk 14 passasiers vervoer. Watter staanplek vervoer meer passasiers, en met hoeveel?', answer: 'Geeneen nie — albei staanplekke vervoer presies dieselfde aantal passasiers (112 elk).', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'hulle is gelyk', 'geeneen nie, hulle is gelyk', 'dieselfde', '112', '112 elk', '0'], explanation: 'Eerste staanplek: 7 × 16 = 112 passasiers. Tweede staanplek: 8 × 14 = 112 passasiers. Albei staanplekke vervoer presies dieselfde aantal — 112 passasiers elk ✓' },
 
         // Blok 6 — Foutopsporing en Regverdig-jou-Redenasie (17-19, Hard)
-        { difficulty: 'Hard', question: 'Thabo sê 9 × 36 = 314. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Thabo is verkeerd. 9 × 36 = 324, nie 314 nie. (Eenhede: 6 × 9 = 54, skryf 4 skuif 5. Tiene: 3 × 9 = 27, plus geskuifde 5 = 32, wat 324 gee.)', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo sê 9 × 36 = 314. Gebruik ʼn korrekte metode om te kontroleer of hy reg is. Wys al jou werk.', answer: 'Thabo is verkeerd. 9 × 36 = 324, nie 314 nie. (Ene: 6 × 9 = 54, skryf 4 skuif 5. Tiene: 3 × 9 = 27, plus geskuifde 5 = 32, wat 324 gee.)', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Skryfbehoeftewinkel koop 7 bokse penne, elk met 12 penne, teen R4 per pen. Wat is die totale koste?', answer: 'R336', checkMode: 'auto', correctAnswer: '336', correctAnswers: ['336', 'R336'], explanation: 'Stap 1: 7 × 12 = 84 penne.\nStap 2: 84 × 4 = R336 ✓' },
         { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom dit help om te skat voordat jy bereken om jou antwoord te kontroleer.', answer: 'Deur die getalle eers af te rond, kry jy vinnig ʼn benaderde antwoord. Nadat jy die presiese antwoord uitgewerk het, wys die vergelyking met die skatting of die presiese antwoord redelik is. As die presiese antwoord baie ver van die skatting af is, is dit ʼn teken dat daar waarskynlik ʼn fout iewers in die berekening gemaak is.', checkMode: 'self' },
 
@@ -768,13 +768,13 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: ___ × 6 = 42', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7'], explanation: 'Tel in 6e totdat jy 42 bereik: 6, 12, 18, 24, 30, 36, 42 — dit is 7 stappe, dus 7 × 6 = 42 ✓' },
 
         // Blok 2 — Kolomvermenigvuldiging (4-7, Easy-Medium)
-        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 23 × 3', answer: '69', checkMode: 'auto', correctAnswer: '69', correctAnswers: ['69'], explanation: 'Eenhede: 3 × 3 = 9. Tiene: 2 × 3 = 6.\nAntwoord: 69 ✓' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 67 × 4', answer: '268', checkMode: 'auto', correctAnswer: '268', correctAnswers: ['268'], explanation: 'Eenhede: 7 × 4 = 28. Skryf 8, skuif 2.\nTiene: 6 × 4 = 24, plus geskuifde 2 = 26. Skryf 6 in tiene, 2 in honderde.\nAntwoord: 268 ✓' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 45 × 6', answer: '270', checkMode: 'auto', correctAnswer: '270', correctAnswers: ['270'], explanation: 'Eenhede: 5 × 6 = 30. Skryf 0, skuif 3.\nTiene: 4 × 6 = 24, plus geskuifde 3 = 27. Skryf 7 in tiene, 2 in honderde.\nAntwoord: 270 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Leerder bereken 84 × 6 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: eenhede-kolom 4 × 6 = 24, hulle het 4 geskryf en 2 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 8 × 6 = 48, plus geskuifde 2 = 50. Finale antwoord: 504', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Bereken met die kolommetode: 23 × 3', answer: '69', checkMode: 'auto', correctAnswer: '69', correctAnswers: ['69'], explanation: 'Ene: 3 × 3 = 9. Tiene: 2 × 3 = 6.\nAntwoord: 69 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 67 × 4', answer: '268', checkMode: 'auto', correctAnswer: '268', correctAnswers: ['268'], explanation: 'Ene: 7 × 4 = 28. Skryf 8, skuif 2.\nTiene: 6 × 4 = 24, plus geskuifde 2 = 26. Skryf 6 in tiene, 2 in honderde.\nAntwoord: 268 ✓' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys jou skuif: 45 × 6', answer: '270', checkMode: 'auto', correctAnswer: '270', correctAnswers: ['270'], explanation: 'Ene: 5 × 6 = 30. Skryf 0, skuif 3.\nTiene: 4 × 6 = 24, plus geskuifde 3 = 27. Skryf 7 in tiene, 2 in honderde.\nAntwoord: 270 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Leerder bereken 84 × 6 met die kolommetode, maar is halfpad onderbreek. Hulle werk wys: ene-kolom 4 × 6 = 24, hulle het 4 geskryf en 2 geskuif — maar die tiene-ry is leeg. Watter getal moet in die tiene-kolom kom, en wat is die finale antwoord?', answer: 'Tiene: 8 × 6 = 48, plus geskuifde 2 = 50. Finale antwoord: 504', checkMode: 'self' },
 
         // Blok 3 — Skatting en Redelikheid (8-10, Medium)
-        { difficulty: 'Medium', question: 'Skat 53 × 7 deur 53 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 350 (50 × 7). Presies: 371', checkMode: 'auto', correctAnswer: '371', correctAnswers: ['371', '350 371', 'Skatting 350 Presies 371'], explanation: '53 rond af na 50, dus die skatting is 50 × 7 = 350. Presies: eenhede 3 × 7 = 21, skryf 1 skuif 2; tiene 5 × 7 = 35, plus geskuifde 2 = 37. Presiese antwoord: 371, wat naby aan die skatting van 350 is ✓' },
+        { difficulty: 'Medium', question: 'Skat 53 × 7 deur 53 af te rond na die naaste 10 eerste, gee dan die presiese antwoord.', answer: 'Skatting: 350 (50 × 7). Presies: 371', checkMode: 'auto', correctAnswer: '371', correctAnswers: ['371', '350 371', 'Skatting 350 Presies 371'], explanation: '53 rond af na 50, dus die skatting is 50 × 7 = 350. Presies: ene 3 × 7 = 21, skryf 1 skuif 2; tiene 5 × 7 = 35, plus geskuifde 2 = 37. Presiese antwoord: 371, wat naby aan die skatting van 350 is ✓' },
         { difficulty: 'Medium', question: 'ʼn Leerder skat 41 × 9 deur 41 na 40 af te rond, en kry 360. Hulle presiese antwoord kom uit op 369. Is 369 ʼn redelike antwoord? Verduidelik hoe jy weet.', answer: 'Ja, 369 is redelik — dit is baie naby aan die skatting van 360, dus maak dit sin as die presiese antwoord op 41 × 9.', checkMode: 'self' },
         { difficulty: 'Medium', question: 'Sonder om enige van hulle heeltemal uit te werk, watter een is groter: 5 × 19 of 8 × 12? Verduidelik hoe jy dit kan sien deur afronding of skatting te gebruik.', answer: '8 × 12 is groter, alhoewel die twee baie naby aan mekaar is. As jy 19 oprond na 20, kry jy ʼn skatting van 5 × 20 = 100 vir die eerste produk, terwyl 8 × 12 reeds naby daaraan is op ongeveer 96 — omdat die skatting vir 5 × 19 opgerond is, is die ware waarde (95) selfs nader aan 96, en 8 × 12 (96) wen net-net.', checkMode: 'self' },
 

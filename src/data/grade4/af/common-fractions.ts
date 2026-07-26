@@ -51,7 +51,7 @@ export const topicData: TopicData = {
   </div>
 </div>
 
-<p style="margin-bottom:12px;font-weight:600;">Algemene breuke en hul name:</p>
+<p style="margin-bottom:12px;font-weight:600;">Gewone breuke en hul name:</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-bottom:8px;">
   <div style="background:white;border:1px solid #bfdbfe;border-radius:8px;padding:12px 8px;text-align:center;">

@@ -11,7 +11,7 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
-  title: 'Inhoud en Volume',
+  title: 'Kapasiteit en Volume',
   grade: 6,
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
@@ -22,7 +22,7 @@ export const topicData: TopicData = {
       title: 'Meerstap-omskakelings en Gemengde Eenhede',
       icon: '🧴',
       explanation:
-        `<p style="margin-bottom:16px;">Jy ken reeds die sleutelfeite ${or('1 000 ml = 1 l')} en ${re('1 000 l = 1 kl')}. Vanjaar kombineer ons hierdie feite om direk tussen ${or('ml')} en ${re('kl')} om te skakel, en om inhoudmetings met ${bl('gemengde eenhede')} te skryf — byvoorbeeld, om 2,3 l as "2 l 300 ml" uit te druk.</p>` +
+        `<p style="margin-bottom:16px;">Jy ken reeds die sleutelfeite ${or('1 000 ml = 1 l')} en ${re('1 000 l = 1 kl')}. Vanjaar kombineer ons hierdie feite om direk tussen ${or('ml')} en ${re('kl')} om te skakel, en om kapasiteitmetings met ${bl('gemengde eenhede')} te skryf — byvoorbeeld, om 2,3 l as "2 l 300 ml" uit te druk.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -109,7 +109,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Watertenk hou 2,25 kl water.\n\na) Skryf hierdie inhoud met gemengde eenhede (kl en l).\nb) Skakel hierdie inhoud direk na ml om.',
+          question: 'ʼn Watertenk hou 2,25 kl water.\n\na) Skryf hierdie kapasiteit met gemengde eenhede (kl en l).\nb) Skakel hierdie kapasiteit direk na ml om.',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -120,7 +120,7 @@ export const topicData: TopicData = {
               explanation: '0,25 kl = 0,25 × 1 000 = 250 l.\n2,25 kl = 2 kl 250 l ✓',
             },
             {
-              label: 'b) Inhoud in ml',
+              label: 'b) Kapasiteit in ml',
               correctAnswer: '2250000',
               correctAnswers: ['2250000', '2 250 000'],
               explanation: '1 kl = 1 000 000 ml.\n2,25 × 1 000 000 = 2 250 000 ml ✓',
@@ -130,7 +130,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat die volle omskakelingsketting vir inhoud van kiloliter na liter na milliliter wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale litermeting na gemengde liter- en milliliter-eenhede om te skakel',
+        'Kort video wat die volle omskakelingsketting vir kapasiteit van kiloliter na liter na milliliter wys, met hoe om twee stappe op ʼn slag te spring en hoe om ʼn desimale litermeting na gemengde liter- en milliliter-eenhede om te skakel',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -138,15 +138,15 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'relating-capacity-and-volume',
-      title: 'Inhoud en Volume Verbind',
+      title: 'Kapasiteit en Volume Verbind',
       icon: '🧊',
       explanation:
-        `<p style="margin-bottom:16px;">${bl('Inhoud')} is die hoeveelheid wat ʼn houer kan hou, gemeet in ${or('ml')}, ${re('l')} of kl. ${gr('Volume')} is die hoeveelheid ruimte wat ʼn 3D-voorwerp inneem, gemeet in ${gr('cm³')} of ${gr('m³')}. Hierdie twee idees is direk verbind deur een sleutelfeit: ${gr('1 cm³ = 1 ml')}. Dit beteken as jy die volume van ʼn houer in cm³ ken, weet jy onmiddellik hoeveel vloeistof dit in ml kan hou!</p>` +
+        `<p style="margin-bottom:16px;">${bl('Kapasiteit')} is die hoeveelheid wat ʼn houer kan hou, gemeet in ${or('ml')}, ${re('l')} of kl. ${gr('Volume')} is die hoeveelheid ruimte wat ʼn 3D-voorwerp inneem, gemeet in ${gr('cm³')} of ${gr('m³')}. Hierdie twee idees is direk verbind deur een sleutelfeit: ${gr('1 cm³ = 1 ml')}. Dit beteken as jy die volume van ʼn houer in cm³ ken, weet jy onmiddellik hoeveel vloeistof dit in ml kan hou!</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
-        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('inhoud')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('kapasiteit')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('volume')}</span>` +
         `</div>` +
 
@@ -173,22 +173,22 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: 'ʼn Reghoekige houer is 20 cm lank, 10 cm breed en 15 cm hoog. Vind sy inhoud in ml.',
-          answer: `Inhoud = ${bl('3 000 ml')}`,
+          question: 'ʼn Reghoekige houer is 20 cm lank, 10 cm breed en 15 cm hoog. Vind sy kapasiteit in ml.',
+          answer: `Kapasiteit = ${bl('3 000 ml')}`,
           steps: [
             `Bereken die ${gr('volume')}: ${gr('V = 20 × 10 × 15 = 3 000 cm³')}.`,
             `Gebruik die feit ${gr('1 cm³ = 1 ml')}: ${bl('3 000 cm³ = 3 000 ml')}.`,
-            `<strong>Antwoord:</strong> Inhoud = ${bl('3 000 ml')}. ✓`,
+            `<strong>Antwoord:</strong> Kapasiteit = ${bl('3 000 ml')}. ✓`,
           ],
         },
         {
-          question: 'ʼn Vistenk is ʼn reghoekige prisma 50 cm lank, 30 cm breed en 40 cm hoog. Vind sy inhoud in liter.',
-          answer: `Inhoud = ${bl('60 l')}`,
+          question: 'ʼn Vistenk is ʼn reghoekige prisma 50 cm lank, 30 cm breed en 40 cm hoog. Vind sy kapasiteit in liter.',
+          answer: `Kapasiteit = ${bl('60 l')}`,
           steps: [
             `Bereken die ${gr('volume')}: ${gr('V = 50 × 30 × 40 = 60 000 cm³')}.`,
             `Skakel om na ml: ${bl('60 000 cm³ = 60 000 ml')}.`,
             `Skakel om na liter: ${bl('60 000 ÷ 1 000 = 60 l')}.`,
-            `<strong>Antwoord:</strong> Inhoud = ${bl('60 l')}. ✓`,
+            `<strong>Antwoord:</strong> Kapasiteit = ${bl('60 l')}. ✓`,
           ],
         },
       ],
@@ -198,7 +198,7 @@ export const topicData: TopicData = {
       openQuestions: [
         {
           difficulty: 'Easy',
-          question: 'ʼn Boks het ʼn volume van 500 cm³. Vind sy inhoud in ml.',
+          question: 'ʼn Boks het ʼn volume van 500 cm³. Vind sy kapasiteit in ml.',
           answer: '500 ml',
           checkMode: 'auto',
           correctAnswer: '500',
@@ -218,7 +218,7 @@ export const topicData: TopicData = {
               explanation: '25 × 20 × 10 = 5 000 cm³ ✓',
             },
             {
-              label: 'b) Vind sy inhoud in liter.',
+              label: 'b) Vind sy kapasiteit in liter.',
               correctAnswer: '5',
               correctAnswers: ['5', '5l', '5 l'],
               explanation: '5 000 cm³ = 5 000 ml = 5 000 ÷ 1 000 = 5 l ✓',
@@ -227,7 +227,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Reghoekige watertenk is 2 m lank, 1,5 m breed en 1 m hoog.\n\na) Vind die volume van die tenk in m³.\nb) Vind sy inhoud in kiloliter.\nc) Vind sy inhoud in liter.',
+          question: 'ʼn Reghoekige watertenk is 2 m lank, 1,5 m breed en 1 m hoog.\n\na) Vind die volume van die tenk in m³.\nb) Vind sy kapasiteit in kiloliter.\nc) Vind sy kapasiteit in liter.',
           answer: '',
           checkMode: 'auto',
           parts: [
@@ -237,13 +237,13 @@ export const topicData: TopicData = {
               explanation: 'V = 2 × 1,5 × 1 = 3 m³ ✓',
             },
             {
-              label: 'b) Inhoud (kl)',
+              label: 'b) Kapasiteit (kl)',
               correctAnswer: '3',
               correctAnswers: ['3', '3kl', '3 kl'],
               explanation: '1 m³ = 1 kl, so 3 m³ = 3 kl ✓',
             },
             {
-              label: 'c) Inhoud (l)',
+              label: 'c) Kapasiteit (l)',
               correctAnswer: '3000',
               correctAnswers: ['3000', '3 000'],
               explanation: '3 kl × 1 000 = 3 000 l ✓',
@@ -253,7 +253,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat ʼn kubus van presies 1 kubieke sentimeter wys wat met presies 1 milliliter water gevul word, en dan wys hoe om die inhoud van ʼn reghoekige tenk te vind deur eers sy volume te bereken',
+        'Kort video wat ʼn kubus van presies 1 kubieke sentimeter wys wat met presies 1 milliliter water gevul word, en dan wys hoe om die kapasiteit van ʼn reghoekige tenk te vind deur eers sy volume te bereken',
 
       diagramPlaceholder:
         'Diagram wat ʼn klein 1 cm-kubus langs ʼn meetsilinder met 1 ml gemerk wys, met ʼn pyl en gelykaan-teken wat hulle verbind om te wys 1 kubieke sentimeter is gelyk aan 1 ml',
@@ -266,15 +266,15 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'real-world-capacity-problems',
-      title: 'Werklike-Wêreld Inhoudprobleme',
+      title: 'Werklike-Wêreld Kapasiteitprobleme',
       icon: '🌍',
       explanation:
-        `<p style="margin-bottom:16px;">Baie werklike-wêreld inhoudprobleme vereis dat jy ${or('tussen eenhede omskakel')} voordat jy kan optel, aftrek, vermenigvuldig of deel. Kyk altyd of al die gegewe inhoude in ${re('dieselfde eenheid')} is voordat jy bereken.</p>` +
+        `<p style="margin-bottom:16px;">Baie werklike-wêreld kapasiteitprobleme vereis dat jy ${or('tussen eenhede omskakel')} voordat jy kan optel, aftrek, vermenigvuldig of deel. Kyk altyd of al die gegewe kapasiteite in ${re('dieselfde eenheid')} is voordat jy bereken.</p>` +
 
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#c2410c;margin-bottom:6px;">ʼn Eenvoudige probleemoplossing-kontrolelys</p>` +
-        `<p style="margin:0;color:#9a3412;">1) Wat word gevra, en in watter eenheid? 2) Is al die gegewe inhoude in ${or('dieselfde eenheid')}? Skakel eers om indien nie. 3) Watter berekening(s) word benodig? 4) Maak jou finale antwoord sin vir die situasie?</p>` +
+        `<p style="margin:0;color:#9a3412;">1) Wat word gevra, en in watter eenheid? 2) Is al die gegewe kapasiteite in ${or('dieselfde eenheid')}? Skakel eers om indien nie. 3) Watter berekening(s) word benodig? 4) Maak jou finale antwoord sin vir die situasie?</p>` +
         `</div>`,
 
       workedExamples: [
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
           question: 'ʼn Swembad hou 45 kl water. Water word teen 500 l per uur ingepomp. Hoeveel uur sal dit neem om die leë swembad vol te maak?',
           answer: `${re('90 uur')}`,
           steps: [
-            `Skakel die swembad se inhoud om na liter: ${or('45 kl = 45 000 l')}.`,
+            `Skakel die swembad se kapasiteit om na liter: ${or('45 kl = 45 000 l')}.`,
             `Deel deur die pomptempo: ${re('45 000 ÷ 500 = 90 uur')}.`,
             `<strong>Antwoord:</strong> Dit sal ${re('90 uur')} neem. ✓`,
           ],
@@ -312,12 +312,12 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'ʼn Tenk het ʼn inhoud van 12 kl. Water word teen ʼn tempo van 300 l per uur ingepomp.',
+          question: 'ʼn Tenk het ʼn kapasiteit van 12 kl. Water word teen ʼn tempo van 300 l per uur ingepomp.',
           answer: '',
           checkMode: 'auto',
           parts: [
             {
-              label: 'a) Skakel die tenk se inhoud om na liter.',
+              label: 'a) Skakel die tenk se kapasiteit om na liter.',
               correctAnswer: '12000',
               correctAnswers: ['12000', '12 000'],
               explanation: '12 kl × 1 000 = 12 000 l ✓',
@@ -357,14 +357,14 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat ʼn multistap-woordprobleem oor inhoud uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar gedeel word om ʼn hoeveelheid gelyk te verdeel of ʼn vultempo te vind',
+        'Kort video wat ʼn multistap-woordprobleem oor kapasiteit uit die regte lewe deurwerk, met omskakeling tussen eenhede voordat daar gedeel word om ʼn hoeveelheid gelyk te verdeel of ʼn vultempo te vind',
     },
   ],
 
   resultsConfig: {
     totalMarks: 20,
     messages: [
-      { minScore: 20, message: 'Uitstekend! Jy het inhoud en volume onder die knie.' },
+      { minScore: 20, message: 'Uitstekend! Jy het kapasiteit en volume onder die knie.' },
       { minScore: 15, message: 'Goeie werk!' },
       { minScore: 10, message: 'Goeie poging, gaan weer deur en probeer weer.' },
       { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
@@ -372,7 +372,7 @@ export const topicData: TopicData = {
   },
 
   scoreMessages: [
-    { minScore: 20, message: 'Uitstekend! Jy het inhoud en volume onder die knie.' },
+    { minScore: 20, message: 'Uitstekend! Jy het kapasiteit en volume onder die knie.' },
     { minScore: 15, message: 'Goeie werk!' },
     { minScore: 10, message: 'Goeie poging, gaan weer deur en probeer weer.' },
     { minScore: 0, message: 'Hou aan, werk weer deur die gids.' },
@@ -382,7 +382,7 @@ export const topicData: TopicData = {
     // ═══════════════════════════════════════════════════════════════════════
     // STEL 1 (20 vrae)
     // Blokke: 0-3 Basiese eenheidomskakelings | 4-7 Meerstap kl↔ml & gemengde eenhede |
-    // 8-10 Volume van reghoekige prismas | 11-14 Volume verbind met inhoud |
+    // 8-10 Volume van reghoekige prismas | 11-14 Volume verbind met kapasiteit |
     // 15-19 Werklike-wêreld probleme (deel, tempo, mengsels, vergelykings)
     // ═══════════════════════════════════════════════════════════════════════
     {
@@ -399,19 +399,19 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Skoenboks is 12 cm lank, 8 cm breed en 5 cm hoog. Bereken sy volume.', checkMode: 'auto', correctAnswer: '480cm3', correctAnswers: ['480cm3', '480 cm3', '480', '480cm³', '480 cm³'], explanation: 'Volume van ʼn reghoekige prisma: V = l × b × h. V = 12 × 8 × 5 = 480 cm³.' },
         { difficulty: 'Medium', question: 'ʼn Stoorhouer het ʼn volume van 2 400 cm³. Dit is 20 cm lank en 12 cm breed. Vind sy hoogte.', checkMode: 'auto', correctAnswer: '10cm', correctAnswers: ['10cm', '10 cm', '10'], explanation: 'Aangesien V = l × b × h, is hoogte = V ÷ (l × b). Hoogte = 2 400 ÷ (20 × 12) = 2 400 ÷ 240 = 10 cm.' },
         { difficulty: 'Medium', question: 'Boks A is 10 cm by 8 cm by 6 cm. Boks B is 12 cm by 6 cm by 7 cm. Watter boks het die groter volume, en met hoeveel?', checkMode: 'auto', correctAnswer: 'B24cm3', correctAnswers: ['B24cm3', 'B, 24cm3', 'B 24cm3', 'Boks B 24cm3', 'boksB24cm3', 'B24cm³'], explanation: 'Boks A: 10 × 8 × 6 = 480 cm³. Boks B: 12 × 6 × 7 = 504 cm³. Boks B is groter, met 504 − 480 = 24 cm³.' },
-        { difficulty: 'Medium', question: 'ʼn Reghoekige vistenk is 40 cm lank, 25 cm breed en 30 cm hoog. Vind sy inhoud in liter.', checkMode: 'auto', correctAnswer: '30l', correctAnswers: ['30l', '30 l', '30'], explanation: 'Volume: V = 40 × 25 × 30 = 30 000 cm³. Aangesien 1 cm³ = 1 ml, is dit 30 000 ml. Skakel om na liter: 30 000 ÷ 1 000 = 30 l.' },
-        { difficulty: 'Medium', question: 'Kabelo sê ʼn reghoekige watertenk wat 5 m by 3 m by 1,5 m meet, het ʼn inhoud van 22,5 liter. Is Kabelo korrek? Verduidelik.', checkMode: 'self', answer: 'Kabelo is verkeerd. Die volume is V = 5 × 3 × 1,5 = 22,5 m³, maar 1 m³ = 1 kl = 1 000 l, nie 1 l nie. Die inhoud is dus 22,5 kl, wat gelyk is aan 22 500 l — nie 22,5 liter nie. Kabelo het vergeet om van kubieke meter volume na die veel groter eenheid liter om te skakel.' },
-        { difficulty: 'Medium', question: 'ʼn Watertenk het ʼn inhoud van 8 000 l. Vind sy volume in m³.', checkMode: 'auto', correctAnswer: '8m3', correctAnswers: ['8m3', '8 m3', '8', '8m³', '8 m³'], explanation: 'Aangesien 1 m³ = 1 000 l, deel deur 1 000: 8 000 ÷ 1 000 = 8 m³.' },
-        { difficulty: 'Medium', question: 'ʼn Swembad is 5 m lank, 3 m breed en 1,5 m diep. Vind sy inhoud in liter.', checkMode: 'auto', correctAnswer: '22500l', correctAnswers: ['22500l', '22500 l', '22500', '22 500l', '22 500 l', '22 500'], explanation: 'Volume: V = 5 × 3 × 1,5 = 22,5 m³. Aangesien 1 m³ = 1 000 l, is die inhoud = 22,5 × 1 000 = 22 500 l.' },
+        { difficulty: 'Medium', question: 'ʼn Reghoekige vistenk is 40 cm lank, 25 cm breed en 30 cm hoog. Vind sy kapasiteit in liter.', checkMode: 'auto', correctAnswer: '30l', correctAnswers: ['30l', '30 l', '30'], explanation: 'Volume: V = 40 × 25 × 30 = 30 000 cm³. Aangesien 1 cm³ = 1 ml, is dit 30 000 ml. Skakel om na liter: 30 000 ÷ 1 000 = 30 l.' },
+        { difficulty: 'Medium', question: 'Kabelo sê ʼn reghoekige watertenk wat 5 m by 3 m by 1,5 m meet, het ʼn kapasiteit van 22,5 liter. Is Kabelo korrek? Verduidelik.', checkMode: 'self', answer: 'Kabelo is verkeerd. Die volume is V = 5 × 3 × 1,5 = 22,5 m³, maar 1 m³ = 1 kl = 1 000 l, nie 1 l nie. Die kapasiteit is dus 22,5 kl, wat gelyk is aan 22 500 l — nie 22,5 liter nie. Kabelo het vergeet om van kubieke meter volume na die veel groter eenheid liter om te skakel.' },
+        { difficulty: 'Medium', question: 'ʼn Watertenk het ʼn kapasiteit van 8 000 l. Vind sy volume in m³.', checkMode: 'auto', correctAnswer: '8m3', correctAnswers: ['8m3', '8 m3', '8', '8m³', '8 m³'], explanation: 'Aangesien 1 m³ = 1 000 l, deel deur 1 000: 8 000 ÷ 1 000 = 8 m³.' },
+        { difficulty: 'Medium', question: 'ʼn Swembad is 5 m lank, 3 m breed en 1,5 m diep. Vind sy kapasiteit in liter.', checkMode: 'auto', correctAnswer: '22500l', correctAnswers: ['22500l', '22500 l', '22500', '22 500l', '22 500 l', '22 500'], explanation: 'Volume: V = 5 × 3 × 1,5 = 22,5 m³. Aangesien 1 m³ = 1 000 l, is die kapasiteit = 22,5 × 1 000 = 22 500 l.' },
         { difficulty: 'Medium-Hard', question: 'ʼn Kan hou 18 l limonade. Dit word gelykop tussen 12 klein bottels gedeel. Hoeveel milliliter kry elke bottel?', checkMode: 'auto', correctAnswer: '1500ml', correctAnswers: ['1500ml', '1500 ml', '1500', '1,5l', '1,5 l'], explanation: 'Skakel om na ml: 18 × 1 000 = 18 000 ml. Deel gelykop: 18 000 ÷ 12 = 1 500 ml per bottel.' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Tenk met ʼn inhoud van 6 kl word teen ʼn tempo van 250 l per uur gevul. Hoeveel uur sal dit neem om die leë tenk vol te maak?', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 uur'], explanation: 'Skakel die tenk se inhoud om na liter: 6 × 1 000 = 6 000 l. Deel deur die tempo: 6 000 ÷ 250 = 24 uur.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Tenk met ʼn kapasiteit van 6 kl word teen ʼn tempo van 250 l per uur gevul. Hoeveel uur sal dit neem om die leë tenk vol te maak?', checkMode: 'auto', correctAnswer: '24', correctAnswers: ['24', '24 uur'], explanation: 'Skakel die tenk se kapasiteit om na liter: 6 × 1 000 = 6 000 l. Deel deur die tempo: 6 000 ÷ 250 = 24 uur.' },
         { difficulty: 'Medium-Hard', question: 'ʼn Sapresep meng konsentraat en water in die verhouding 3 : 2 om altesaam 5 l sap te maak. Vind die volume konsentraat wat benodig word, in ml.', checkMode: 'auto', correctAnswer: '3000ml', correctAnswers: ['3000ml', '3000 ml', '3000', '3l', '3 l'], explanation: 'Totale dele = 3 + 2 = 5. Totale sap in ml: 5 × 1 000 = 5 000 ml. Een deel = 5 000 ÷ 5 = 1 000 ml. Konsentraat = 3 dele = 3 × 1 000 = 3 000 ml.' },
         { difficulty: 'Hard', question: 'ʼn Brandstoftenker begin met ʼn vol vrag van 40 kl. Na aflewerings het dit 27,5 kl oor. Hoeveel kiloliter brandstof is afgelewer?', checkMode: 'auto', correctAnswer: '12,5', correctAnswers: ['12,5', '12,5kl', '12,5 kl', '12.5', '12.5kl', '12.5 kl'], explanation: 'Afgeleweerde brandstof = beginhoeveelheid − oorblywende hoeveelheid = 40 − 27,5 = 12,5 kl.' },
-        { difficulty: 'Hard', question: 'ʼn Waterreservoir hou 45 kl. ʼn Pomp kan 3 000 l per uur beweeg, hetsy om dit te vul of te dreineer. As die reservoir leeg begin, hoeveel uur neem dit om heeltemal vol te word, en hoeveel liter beweeg die pomp altesaam?', checkMode: 'self', answer: 'Skakel die reservoir se inhoud om na liter: 45 × 1 000 = 45 000 l. Tyd om te vul = 45 000 ÷ 3 000 = 15 uur. Aangesien die reservoir leeg begin en vol eindig, beweeg die pomp presies 45 000 liter altesaam oor daardie 15 uur.' },
+        { difficulty: 'Hard', question: 'ʼn Waterreservoir hou 45 kl. ʼn Pomp kan 3 000 l per uur beweeg, hetsy om dit te vul of te dreineer. As die reservoir leeg begin, hoeveel uur neem dit om heeltemal vol te word, en hoeveel liter beweeg die pomp altesaam?', checkMode: 'self', answer: 'Skakel die reservoir se kapasiteit om na liter: 45 × 1 000 = 45 000 l. Tyd om te vul = 45 000 ÷ 3 000 = 15 uur. Aangesien die reservoir leeg begin en vol eindig, beweeg die pomp presies 45 000 liter altesaam oor daardie 15 uur.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue tussen ml, l en kl omskakel, volume bereken, en werklike-wêreld inhoudprobleme oplos.' },
-        { minScore: 15, message: 'Goeie werk! Jy het ʼn goeie begrip van inhoud en volume — kyk enige gemiste vrae weer na.' },
+        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue tussen ml, l en kl omskakel, volume bereken, en werklike-wêreld kapasiteitprobleme oplos.' },
+        { minScore: 15, message: 'Goeie werk! Jy het ʼn goeie begrip van kapasiteit en volume — kyk enige gemiste vrae weer na.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor omskakelings en volume weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
@@ -434,18 +434,18 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Stoorhouer is 15 cm lank, 10 cm breed en 6 cm hoog. Bereken sy volume.', checkMode: 'auto', correctAnswer: '900cm3', correctAnswers: ['900cm3', '900 cm3', '900', '900cm³', '900 cm³'], explanation: 'Volume van ʼn reghoekige prisma: V = l × b × h. V = 15 × 10 × 6 = 900 cm³.' },
         { difficulty: 'Medium', question: 'ʼn Skoenboks het ʼn volume van 3 000 cm³. Dit is 25 cm lank en 10 cm breed. Vind sy hoogte.', checkMode: 'auto', correctAnswer: '12cm', correctAnswers: ['12cm', '12 cm', '12'], explanation: 'Aangesien V = l × b × h, is hoogte = V ÷ (l × b). Hoogte = 3 000 ÷ (25 × 10) = 3 000 ÷ 250 = 12 cm.' },
         { difficulty: 'Medium', question: 'Houer P meet 9 cm by 9 cm by 9 cm. Houer Q meet 10 cm by 8 cm by 10 cm. Watter houer het die groter volume, en met hoeveel?', checkMode: 'auto', correctAnswer: 'Q71cm3', correctAnswers: ['Q71cm3', 'Q, 71cm3', 'Q 71cm3', 'Houer Q 71cm3', 'houerQ71cm3', 'Q71cm³'], explanation: 'Houer P: 9 × 9 × 9 = 729 cm³. Houer Q: 10 × 8 × 10 = 800 cm³. Houer Q is groter, met 800 − 729 = 71 cm³.' },
-        { difficulty: 'Medium', question: 'ʼn Reghoekige akwarium is 60 cm lank, 30 cm breed en 35 cm hoog. Vind sy inhoud in liter.', checkMode: 'auto', correctAnswer: '63l', correctAnswers: ['63l', '63 l', '63'], explanation: 'Volume: V = 60 × 30 × 35 = 63 000 cm³. Aangesien 1 cm³ = 1 ml, is dit 63 000 ml. Skakel om na liter: 63 000 ÷ 1 000 = 63 l.' },
-        { difficulty: 'Medium', question: 'Naledi sê ʼn verkoelerboks wat 45 cm by 25 cm by 20 cm meet, het ʼn inhoud van 22 500 ml. Is Naledi korrek? Verduidelik.', checkMode: 'self', answer: 'Naledi is korrek. Die volume is V = 45 × 25 × 20 = 22 500 cm³. Aangesien 1 cm³ = 1 ml, is die inhoud presies 22 500 ml. Haar berekening pas die volume-na-inhoud reël korrek toe.' },
-        { difficulty: 'Medium', question: 'ʼn Reghoekige watertenk het ʼn inhoud van 12 000 l. Vind sy volume in m³.', checkMode: 'auto', correctAnswer: '12m3', correctAnswers: ['12m3', '12 m3', '12', '12m³', '12 m³'], explanation: 'Aangesien 1 m³ = 1 000 l, deel deur 1 000: 12 000 ÷ 1 000 = 12 m³.' },
-        { difficulty: 'Medium', question: 'ʼn Swembad is 4 m lank, 2,5 m breed en 1,2 m diep. Vind sy inhoud in liter.', checkMode: 'auto', correctAnswer: '12000l', correctAnswers: ['12000l', '12000 l', '12000', '12 000l', '12 000 l', '12 000'], explanation: 'Volume: V = 4 × 2,5 × 1,2 = 12 m³. Aangesien 1 m³ = 1 000 l, is die inhoud = 12 × 1 000 = 12 000 l.' },
+        { difficulty: 'Medium', question: 'ʼn Reghoekige akwarium is 60 cm lank, 30 cm breed en 35 cm hoog. Vind sy kapasiteit in liter.', checkMode: 'auto', correctAnswer: '63l', correctAnswers: ['63l', '63 l', '63'], explanation: 'Volume: V = 60 × 30 × 35 = 63 000 cm³. Aangesien 1 cm³ = 1 ml, is dit 63 000 ml. Skakel om na liter: 63 000 ÷ 1 000 = 63 l.' },
+        { difficulty: 'Medium', question: 'Naledi sê ʼn verkoelerboks wat 45 cm by 25 cm by 20 cm meet, het ʼn kapasiteit van 22 500 ml. Is Naledi korrek? Verduidelik.', checkMode: 'self', answer: 'Naledi is korrek. Die volume is V = 45 × 25 × 20 = 22 500 cm³. Aangesien 1 cm³ = 1 ml, is die kapasiteit presies 22 500 ml. Haar berekening pas die volume-na-kapasiteit reël korrek toe.' },
+        { difficulty: 'Medium', question: 'ʼn Reghoekige watertenk het ʼn kapasiteit van 12 000 l. Vind sy volume in m³.', checkMode: 'auto', correctAnswer: '12m3', correctAnswers: ['12m3', '12 m3', '12', '12m³', '12 m³'], explanation: 'Aangesien 1 m³ = 1 000 l, deel deur 1 000: 12 000 ÷ 1 000 = 12 m³.' },
+        { difficulty: 'Medium', question: 'ʼn Swembad is 4 m lank, 2,5 m breed en 1,2 m diep. Vind sy kapasiteit in liter.', checkMode: 'auto', correctAnswer: '12000l', correctAnswers: ['12000l', '12000 l', '12000', '12 000l', '12 000 l', '12 000'], explanation: 'Volume: V = 4 × 2,5 × 1,2 = 12 m³. Aangesien 1 m³ = 1 000 l, is die kapasiteit = 12 × 1 000 = 12 000 l.' },
         { difficulty: 'Medium-Hard', question: 'ʼn Houer hou 15 l vrugtepons. Dit word gelykop tussen 25 klein bekers gedeel. Hoeveel milliliter kry elke beker?', checkMode: 'auto', correctAnswer: '600ml', correctAnswers: ['600ml', '600 ml', '600'], explanation: 'Skakel om na ml: 15 × 1 000 = 15 000 ml. Deel gelykop: 15 000 ÷ 25 = 600 ml per beker.' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Tenk met ʼn inhoud van 4,5 kl word teen ʼn tempo van 150 l per uur gevul. Hoeveel uur sal dit neem om die leë tenk vol te maak?', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30 uur'], explanation: 'Skakel die tenk se inhoud om na liter: 4,5 × 1 000 = 4 500 l. Deel deur die tempo: 4 500 ÷ 150 = 30 uur.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Tenk met ʼn kapasiteit van 4,5 kl word teen ʼn tempo van 150 l per uur gevul. Hoeveel uur sal dit neem om die leë tenk vol te maak?', checkMode: 'auto', correctAnswer: '30', correctAnswers: ['30', '30 uur'], explanation: 'Skakel die tenk se kapasiteit om na liter: 4,5 × 1 000 = 4 500 l. Deel deur die tempo: 4 500 ÷ 150 = 30 uur.' },
         { difficulty: 'Medium-Hard', question: 'ʼn Heuningdouresep meng konsentraat en water in die verhouding 1 : 5 om altesaam 6 l drankie te maak. Vind die volume konsentraat wat benodig word, in ml.', checkMode: 'auto', correctAnswer: '1000ml', correctAnswers: ['1000ml', '1000 ml', '1000', '1l', '1 l'], explanation: 'Totale dele = 1 + 5 = 6. Totale drankie in ml: 6 × 1 000 = 6 000 ml. Een deel = 6 000 ÷ 6 = 1 000 ml. Konsentraat = 1 deel = 1 000 ml.' },
-        { difficulty: 'Hard', question: 'Tenk X het ʼn inhoud van 8 kl en 3,6 kl is daaruit gedreineer. Tenk Y het ʼn inhoud van 7,5 kl en 2,9 kl is daaruit gedreineer. Watter tenk het meer water oor, en met hoeveel kiloliter?', checkMode: 'auto', correctAnswer: 'Y0,2kl', correctAnswers: ['Y0,2kl', 'Y, 0,2kl', 'Y 0,2kl', 'Tenk Y 0,2kl', 'tenkY0,2kl', 'Y0.2kl'], explanation: 'Tenk X oor: 8 − 3,6 = 4,4 kl. Tenk Y oor: 7,5 − 2,9 = 4,6 kl. Tenk Y het meer oor, met 4,6 − 4,4 = 0,2 kl.' },
-        { difficulty: 'Hard', question: 'ʼn Waterreservoir hou 36 kl. ʼn Pomp kan 2 400 l per uur beweeg, hetsy om dit te vul of te dreineer. As die reservoir leeg begin, hoeveel uur neem dit om heeltemal vol te word, en hoeveel liter beweeg die pomp altesaam?', checkMode: 'self', answer: 'Skakel die reservoir se inhoud om na liter: 36 × 1 000 = 36 000 l. Tyd om te vul = 36 000 ÷ 2 400 = 15 uur. Aangesien die reservoir leeg begin en vol eindig, beweeg die pomp presies 36 000 liter altesaam oor daardie 15 uur.' },
+        { difficulty: 'Hard', question: 'Tenk X het ʼn kapasiteit van 8 kl en 3,6 kl is daaruit gedreineer. Tenk Y het ʼn kapasiteit van 7,5 kl en 2,9 kl is daaruit gedreineer. Watter tenk het meer water oor, en met hoeveel kiloliter?', checkMode: 'auto', correctAnswer: 'Y0,2kl', correctAnswers: ['Y0,2kl', 'Y, 0,2kl', 'Y 0,2kl', 'Tenk Y 0,2kl', 'tenkY0,2kl', 'Y0.2kl'], explanation: 'Tenk X oor: 8 − 3,6 = 4,4 kl. Tenk Y oor: 7,5 − 2,9 = 4,6 kl. Tenk Y het meer oor, met 4,6 − 4,4 = 0,2 kl.' },
+        { difficulty: 'Hard', question: 'ʼn Waterreservoir hou 36 kl. ʼn Pomp kan 2 400 l per uur beweeg, hetsy om dit te vul of te dreineer. As die reservoir leeg begin, hoeveel uur neem dit om heeltemal vol te word, en hoeveel liter beweeg die pomp altesaam?', checkMode: 'self', answer: 'Skakel die reservoir se kapasiteit om na liter: 36 × 1 000 = 36 000 l. Tyd om te vul = 36 000 ÷ 2 400 = 15 uur. Aangesien die reservoir leeg begin en vol eindig, beweeg die pomp presies 36 000 liter altesaam oor daardie 15 uur.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue tussen ml, l en kl omskakel, volume bereken, en werklike-wêreld inhoudprobleme oplos.' },
+        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue tussen ml, l en kl omskakel, volume bereken, en werklike-wêreld kapasiteitprobleme oplos.' },
         { minScore: 15, message: 'Goeie werk! Jy het ʼn stewige begrip — kyk enige gemiste vrae weer na en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor omskakelings en volume weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -469,18 +469,18 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Stoorhouer is 20 cm lank, 15 cm breed en 8 cm hoog. Bereken sy volume.', checkMode: 'auto', correctAnswer: '2400cm3', correctAnswers: ['2400cm3', '2400 cm3', '2400', '2400cm³', '2400 cm³', '2 400cm3', '2 400 cm3'], explanation: 'Volume van ʼn reghoekige prisma: V = l × b × h. V = 20 × 15 × 8 = 2 400 cm³.' },
         { difficulty: 'Medium', question: 'ʼn Skoenboks het ʼn volume van 1 800 cm³. Dit is 15 cm lank en 8 cm breed. Vind sy hoogte.', checkMode: 'auto', correctAnswer: '15cm', correctAnswers: ['15cm', '15 cm', '15'], explanation: 'Aangesien V = l × b × h, is hoogte = V ÷ (l × b). Hoogte = 1 800 ÷ (15 × 8) = 1 800 ÷ 120 = 15 cm.' },
         { difficulty: 'Medium', question: 'Houer M meet 14 cm by 6 cm by 6 cm. Houer N meet 8 cm by 8 cm by 8 cm. Watter houer het die groter volume, en met hoeveel?', checkMode: 'auto', correctAnswer: 'N8cm3', correctAnswers: ['N8cm3', 'N, 8cm3', 'N 8cm3', 'Houer N 8cm3', 'houerN8cm3', 'N8cm³'], explanation: 'Houer M: 14 × 6 × 6 = 504 cm³. Houer N: 8 × 8 × 8 = 512 cm³. Houer N is groter, met 512 − 504 = 8 cm³.' },
-        { difficulty: 'Medium', question: 'ʼn Reghoekige vistenk is 50 cm lank, 20 cm breed en 25 cm hoog. Vind sy inhoud in liter.', checkMode: 'auto', correctAnswer: '25l', correctAnswers: ['25l', '25 l', '25'], explanation: 'Volume: V = 50 × 20 × 25 = 25 000 cm³. Aangesien 1 cm³ = 1 ml, is dit 25 000 ml. Skakel om na liter: 25 000 ÷ 1 000 = 25 l.' },
-        { difficulty: 'Medium', question: 'Bongani sê ʼn verkoelerboks wat 20 cm by 15 cm by 8 cm meet, het ʼn inhoud van 2 400 ml. Is Bongani korrek? Verduidelik.', checkMode: 'self', answer: 'Bongani is korrek. Die volume is V = 20 × 15 × 8 = 2 400 cm³. Aangesien 1 cm³ = 1 ml, is die inhoud presies 2 400 ml. Sy berekening pas die volume-na-inhoud reël korrek toe.' },
-        { difficulty: 'Medium', question: 'ʼn Reghoekige watertenk het ʼn inhoud van 15 000 l. Vind sy volume in m³.', checkMode: 'auto', correctAnswer: '15m3', correctAnswers: ['15m3', '15 m3', '15', '15m³', '15 m³'], explanation: 'Aangesien 1 m³ = 1 000 l, deel deur 1 000: 15 000 ÷ 1 000 = 15 m³.' },
-        { difficulty: 'Medium', question: 'ʼn Swembad is 6 m lank, 3 m breed en 1,5 m diep. Vind sy inhoud in liter.', checkMode: 'auto', correctAnswer: '27000l', correctAnswers: ['27000l', '27000 l', '27000', '27 000l', '27 000 l', '27 000'], explanation: 'Volume: V = 6 × 3 × 1,5 = 27 m³. Aangesien 1 m³ = 1 000 l, is die inhoud = 27 × 1 000 = 27 000 l.' },
+        { difficulty: 'Medium', question: 'ʼn Reghoekige vistenk is 50 cm lank, 20 cm breed en 25 cm hoog. Vind sy kapasiteit in liter.', checkMode: 'auto', correctAnswer: '25l', correctAnswers: ['25l', '25 l', '25'], explanation: 'Volume: V = 50 × 20 × 25 = 25 000 cm³. Aangesien 1 cm³ = 1 ml, is dit 25 000 ml. Skakel om na liter: 25 000 ÷ 1 000 = 25 l.' },
+        { difficulty: 'Medium', question: 'Bongani sê ʼn verkoelerboks wat 20 cm by 15 cm by 8 cm meet, het ʼn kapasiteit van 2 400 ml. Is Bongani korrek? Verduidelik.', checkMode: 'self', answer: 'Bongani is korrek. Die volume is V = 20 × 15 × 8 = 2 400 cm³. Aangesien 1 cm³ = 1 ml, is die kapasiteit presies 2 400 ml. Sy berekening pas die volume-na-kapasiteit reël korrek toe.' },
+        { difficulty: 'Medium', question: 'ʼn Reghoekige watertenk het ʼn kapasiteit van 15 000 l. Vind sy volume in m³.', checkMode: 'auto', correctAnswer: '15m3', correctAnswers: ['15m3', '15 m3', '15', '15m³', '15 m³'], explanation: 'Aangesien 1 m³ = 1 000 l, deel deur 1 000: 15 000 ÷ 1 000 = 15 m³.' },
+        { difficulty: 'Medium', question: 'ʼn Swembad is 6 m lank, 3 m breed en 1,5 m diep. Vind sy kapasiteit in liter.', checkMode: 'auto', correctAnswer: '27000l', correctAnswers: ['27000l', '27000 l', '27000', '27 000l', '27 000 l', '27 000'], explanation: 'Volume: V = 6 × 3 × 1,5 = 27 m³. Aangesien 1 m³ = 1 000 l, is die kapasiteit = 27 × 1 000 = 27 000 l.' },
         { difficulty: 'Medium-Hard', question: 'ʼn Kan hou 21 l ystee. Dit word gelykop tussen 14 bottels gedeel. Hoeveel milliliter kry elke bottel?', checkMode: 'auto', correctAnswer: '1500ml', correctAnswers: ['1500ml', '1500 ml', '1500', '1,5l', '1,5 l'], explanation: 'Skakel om na ml: 21 × 1 000 = 21 000 ml. Deel gelykop: 21 000 ÷ 14 = 1 500 ml per bottel.' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Tenk met ʼn inhoud van 4,8 kl word teen ʼn tempo van 400 l per uur gevul. Hoeveel uur sal dit neem om die leë tenk vol te maak?', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 uur'], explanation: 'Skakel die tenk se inhoud om na liter: 4,8 × 1 000 = 4 800 l. Deel deur die tempo: 4 800 ÷ 400 = 12 uur.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Tenk met ʼn kapasiteit van 4,8 kl word teen ʼn tempo van 400 l per uur gevul. Hoeveel uur sal dit neem om die leë tenk vol te maak?', checkMode: 'auto', correctAnswer: '12', correctAnswers: ['12', '12 uur'], explanation: 'Skakel die tenk se kapasiteit om na liter: 4,8 × 1 000 = 4 800 l. Deel deur die tempo: 4 800 ÷ 400 = 12 uur.' },
         { difficulty: 'Medium-Hard', question: 'ʼn Konsentraatdrankresep meng konsentraat en water in die verhouding 1 : 3 om altesaam 4 l drankie te maak. Vind die volume konsentraat wat benodig word, in ml.', checkMode: 'auto', correctAnswer: '1000ml', correctAnswers: ['1000ml', '1000 ml', '1000', '1l', '1 l'], explanation: 'Totale dele = 1 + 3 = 4. Totale drankie in ml: 4 × 1 000 = 4 000 ml. Een deel = 4 000 ÷ 4 = 1 000 ml. Konsentraat = 1 deel = 1 000 ml.' },
-        { difficulty: 'Hard', question: 'Tenk M het ʼn inhoud van 12 kl en 4 750 l is daaruit gedreineer. Tenk N het ʼn inhoud van 11,5 kl en 4 200 l is daaruit gedreineer. Watter tenk het meer water oor, en met hoeveel liter?', checkMode: 'auto', correctAnswer: 'N50l', correctAnswers: ['N50l', 'N, 50l', 'N 50l', 'Tenk N 50l', 'tenkN50l'], explanation: 'Tenk M oor: 12 000 − 4 750 = 7 250 l. Tenk N oor: 11 500 − 4 200 = 7 300 l. Tenk N het meer oor, met 7 300 − 7 250 = 50 l.' },
-        { difficulty: 'Hard', question: 'ʼn Waterreservoir hou 27 kl. ʼn Pomp kan 1 800 l per uur beweeg, hetsy om dit te vul of te dreineer. As die reservoir leeg begin, hoeveel uur neem dit om heeltemal vol te word, en hoeveel liter beweeg die pomp altesaam?', checkMode: 'self', answer: 'Skakel die reservoir se inhoud om na liter: 27 × 1 000 = 27 000 l. Tyd om te vul = 27 000 ÷ 1 800 = 15 uur. Aangesien die reservoir leeg begin en vol eindig, beweeg die pomp presies 27 000 liter altesaam oor daardie 15 uur.' },
+        { difficulty: 'Hard', question: 'Tenk M het ʼn kapasiteit van 12 kl en 4 750 l is daaruit gedreineer. Tenk N het ʼn kapasiteit van 11,5 kl en 4 200 l is daaruit gedreineer. Watter tenk het meer water oor, en met hoeveel liter?', checkMode: 'auto', correctAnswer: 'N50l', correctAnswers: ['N50l', 'N, 50l', 'N 50l', 'Tenk N 50l', 'tenkN50l'], explanation: 'Tenk M oor: 12 000 − 4 750 = 7 250 l. Tenk N oor: 11 500 − 4 200 = 7 300 l. Tenk N het meer oor, met 7 300 − 7 250 = 50 l.' },
+        { difficulty: 'Hard', question: 'ʼn Waterreservoir hou 27 kl. ʼn Pomp kan 1 800 l per uur beweeg, hetsy om dit te vul of te dreineer. As die reservoir leeg begin, hoeveel uur neem dit om heeltemal vol te word, en hoeveel liter beweeg die pomp altesaam?', checkMode: 'self', answer: 'Skakel die reservoir se kapasiteit om na liter: 27 × 1 000 = 27 000 l. Tyd om te vul = 27 000 ÷ 1 800 = 15 uur. Aangesien die reservoir leeg begin en vol eindig, beweeg die pomp presies 27 000 liter altesaam oor daardie 15 uur.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Fantasties! Jy kan eenheidomskakelings, volumeberekeninge en inhoudprobleemoplossing op werklike-wêreld situasies toepas.' },
+        { minScore: 20, message: 'Fantasties! Jy kan eenheidomskakelings, volumeberekeninge en kapasiteitprobleemoplossing op werklike-wêreld situasies toepas.' },
         { minScore: 15, message: 'Goeie werk! Jy het ʼn stewige begrip van hierdie vaardighede — kyk enige gemiste vrae weer na.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor volume en werklike-wêreld probleme weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },

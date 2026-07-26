@@ -1,7 +1,7 @@
 import type { TopicData } from './numbers-operations'
 
 export const topicData: TopicData = {
-  title: 'Inhoud en Volume',
+  title: 'Kapasiteit en Volume',
   grade: 4,
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
@@ -9,18 +9,18 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'capacity-vs-volume',
-      title: 'Inhoud teenoor Volume',
+      title: 'Kapasiteit teenoor Volume',
       icon: '🧴',
       explanation: `
 <p style="margin-bottom:14px;">Wanneer ons van vloeistowwe in houers praat, gebruik ons twee verskillende woorde: <strong style="color:#1e40af;">inhoud</strong> en <strong style="color:#16a34a;">volume</strong>. Hulle klink amper dieselfde, maar hulle beteken verskillende dinge.</p>
 
 <div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 20px;margin-bottom:16px;">
-  <div style="font-size:13px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">Inhoud teenoor Volume</div>
+  <div style="font-size:13px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;">Kapasiteit teenoor Volume</div>
   <div style="display:flex;flex-direction:column;gap:12px;">
 
     <div style="display:flex;align-items:flex-start;gap:12px;">
-      <span style="background:#1e40af;color:#fff;border-radius:6px;padding:2px 12px;font-weight:700;font-size:13px;flex-shrink:0;min-width:120px;text-align:center;">Inhoud<br/><span style="font-weight:400;font-size:12px;">(die houer)</span></span>
-      <span style="color:#1e3a8a;font-size:15px;padding-top:2px;"><strong style="color:#1e40af;">Inhoud</strong> is die <strong>maksimum hoeveelheid</strong> wat 'n houer kan hou wanneer dit heeltemal vol is. Dit beskryf die grootte van die houer self.</span>
+      <span style="background:#1e40af;color:#fff;border-radius:6px;padding:2px 12px;font-weight:700;font-size:13px;flex-shrink:0;min-width:120px;text-align:center;">Kapasiteit<br/><span style="font-weight:400;font-size:12px;">(die houer)</span></span>
+      <span style="color:#1e3a8a;font-size:15px;padding-top:2px;"><strong style="color:#1e40af;">Kapasiteit</strong> is die <strong>maksimum hoeveelheid</strong> wat 'n houer kan hou wanneer dit heeltemal vol is. Dit beskryf die grootte van die houer self.</span>
     </div>
 
     <div style="display:flex;align-items:flex-start;gap:12px;">

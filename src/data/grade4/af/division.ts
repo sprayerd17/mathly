@@ -41,7 +41,7 @@ export const topicData: TopicData = {
 
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
   <div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px;flex:1;min-width:200px;">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#1e40af;margin-bottom:8px;">Gelyke Deling</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#1e40af;margin-bottom:8px;">Gelyke Verdeling</div>
     <div style="margin-bottom:6px;"><span style="color:#dc2626;font-weight:700;">12</span> ÷ <span style="color:#1e40af;font-weight:700;">4</span> = <span style="color:#16a34a;font-weight:700;">3</span></div>
     <div style="font-size:14px;color:#374151;">Deel <span style="color:#dc2626;font-weight:600;">12</span> in <span style="color:#1e40af;font-weight:600;">4</span> gelyke groepe. Hoeveel is in elke groep? → <span style="color:#16a34a;font-weight:700;">3</span> in elke groep.</div>
   </div>
@@ -86,10 +86,10 @@ export const topicData: TopicData = {
     // AFDELING 2 — DELING AS DIE INVERSE VAN VERMENIGVULDIGING
     // ─────────────────────────────────────────────────────────────────────────
     {
-      id: 'division-inverse-multiplication',
-      title: 'Deling as die Inverse van Vermenigvuldiging',
+      id: 'division-omgekeerde-multiplication',
+      title: 'Deling as die Omgekeerde van Vermenigvuldiging',
       icon: '🔄',
-      explanation: `<p style="margin-bottom:18px;">Deling en vermenigvuldiging is <strong>inverse bewerkings</strong> — dit beteken hulle <em>maak mekaar ongedaan</em>. Net soos optelling en aftrekking mekaar kanselleer, doen vermenigvuldiging en deling dieselfde ding in omgekeerde volgorde.</p>
+      explanation: `<p style="margin-bottom:18px;">Deling en vermenigvuldiging is <strong>omgekeerde bewerkings</strong> — dit beteken hulle <em>maak mekaar ongedaan</em>. Net soos optelling en aftrekking mekaar kanselleer, doen vermenigvuldiging en deling dieselfde ding in omgekeerde volgorde.</p>
 
 <p style="margin-bottom:14px;">As jy jou vermenigvuldigingstafels ken, kan jy dit gebruik om enige delingsprobleem op te los. In plaas daarvan om ʼn deling van voor af uit te werk, vra eenvoudig: <strong>"Wat maal die deler gee my die deeltal?"</strong></p>
 
@@ -858,7 +858,7 @@ export const topicData: TopicData = {
         'Elke klaskamer kry 8 stoele.',
     },
 
-    // ── AFDELING 2 — Deling as die Inverse van Vermenigvuldiging ─────────────
+    // ── AFDELING 2 — Deling as die Omgekeerde van Vermenigvuldiging ─────────────
     {
       difficulty: 'Easy',
       checkMode: 'auto',

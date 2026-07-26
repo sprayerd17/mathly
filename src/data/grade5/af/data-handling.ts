@@ -329,10 +329,10 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'pictographs',
-      title: 'Prentgrafieke',
+      title: 'Piktogramme',
       icon: '📊',
       explanation:
-        `<p style="margin-bottom:16px;">ʼn <strong>Prentgrafiek</strong> gebruik prente of simbole om data voor te stel. Elke simbool verteenwoordig ʼn sekere aantal items — dit word die ${bl('sleutel')} genoem. Kontroleer altyd die ${bl('sleutel')} voordat jy ʼn prentgrafiek lees, want een simbool kan 2, 5, of 10 items verteenwoordig. As ʼn simbool net gedeeltelik (half) geteken is, verteenwoordig dit die helfte van die ${bl('sleutel')}-waarde. Prentgrafieke moet ʼn <strong>titel</strong>, <strong>etikette</strong>, en ʼn <strong>${bl('sleutel')}</strong> hê.</p>` +
+        `<p style="margin-bottom:16px;">ʼn <strong>Piktogram</strong> gebruik prente of simbole om data voor te stel. Elke simbool verteenwoordig ʼn sekere aantal items — dit word die ${bl('sleutel')} genoem. Kontroleer altyd die ${bl('sleutel')} voordat jy ʼn piktogram lees, want een simbool kan 2, 5, of 10 items verteenwoordig. As ʼn simbool net gedeeltelik (half) geteken is, verteenwoordig dit die helfte van die ${bl('sleutel')}-waarde. Piktogramme moet ʼn <strong>titel</strong>, <strong>etikette</strong>, en ʼn <strong>${bl('sleutel')}</strong> hê.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -344,12 +344,12 @@ export const topicData: TopicData = {
         `</div>` +
 
         // ── Parts of a pictograph ────────────────────────────────────────────
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Dele van ʼn prentgrafiek</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Dele van ʼn piktogram</p>` +
         `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#6b7280;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
-        `<p style="margin:0;font-size:14px;"><strong>Titel</strong> — Beskryf wat die prentgrafiek wys. Elke prentgrafiek moet een hê.</p>` +
+        `<p style="margin:0;font-size:14px;"><strong>Titel</strong> — Beskryf wat die piktogram wys. Elke piktogram moet een hê.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +
@@ -370,7 +370,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         // ── How to read a pictograph ─────────────────────────────────────────
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om ʼn prentgrafiek te lees</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om ʼn piktogram te lees</p>` +
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
@@ -398,13 +398,13 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Kontroleer altyd eers die sleutel</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Die ${bl('sleutel')} is die belangrikste deel van ʼn prentgrafiek. Sonder dit beteken die simbole niks. Kontroleer die ${bl('sleutelwaarde')} voordat jy enige simbole tel.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Die ${bl('sleutel')} is die belangrikste deel van ʼn piktogram. Sonder dit beteken die simbole niks. Kontroleer die ${bl('sleutelwaarde')} voordat jy enige simbole tel.</p>` +
         `</div>`,
 
       workedExamples: [
         // ── Example 1: books read ─────────────────────────────────────────────
         {
-          question: 'ʼn Prentgrafiek wys boeke gelees deur leerders. Die sleutel wys dat een boeksimbool = 2 boeke. Sipho het 4 boeksimbole en Lerato het 3 en ʼn half simbole. Hoeveel boeke het elke leerder gelees?',
+          question: 'ʼn Piktogram wys boeke gelees deur leerders. Die sleutel wys dat een boeksimbool = 2 boeke. Sipho het 4 boeksimbole en Lerato het 3 en ʼn half simbole. Hoeveel boeke het elke leerder gelees?',
           answer: `Sipho het ${re('8')} boeke gelees. Lerato het ${re('7')} boeke gelees.`,
           steps: [
             `<strong>Kontroleer die ${bl('sleutel')}:</strong> een simbool = ${bl('2')} boeke. Dit is die ${bl('sleutelwaarde')} — dit vertel ons hoeveel elke simbool werd is.`,
@@ -418,7 +418,7 @@ export const topicData: TopicData = {
 
         // ── Example 2: drawing symbols ────────────────────────────────────────
         {
-          question: 'Thabo wil wys dat 15 leerders pizza gekies het in ʼn prentgrafiek waar elke simbool 5 leerders verteenwoordig. Hoeveel simbole moet hy teken?',
+          question: 'Thabo wil wys dat 15 leerders pizza gekies het in ʼn piktogram waar elke simbool 5 leerders verteenwoordig. Hoeveel simbole moet hy teken?',
           answer: `Thabo moet ${gr('3')} volle simbole vir pizza teken.`,
           steps: [
             `<strong>Identifiseer die ${bl('sleutelwaarde')}:</strong> elke simbool = ${bl('5')} leerders.`,
@@ -435,7 +435,7 @@ export const topicData: TopicData = {
         // ── Q8 Easy — pictograph symbols ─────────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'In ʼn prentgrafiek verteenwoordig elke simbool 5 leerders. Thabo het 3 simbole langs sy naam. Hoeveel leerders verteenwoordig dit?',
+          question: 'In ʼn piktogram verteenwoordig elke simbool 5 leerders. Thabo het 3 simbole langs sy naam. Hoeveel leerders verteenwoordig dit?',
           answer: '15',
           checkMode: 'auto',
           correctAnswer: '15',
@@ -445,7 +445,7 @@ export const topicData: TopicData = {
         // ── Q9 Medium — half symbol in pictograph ───────────────────────────
         {
           difficulty: 'Medium',
-          question: 'ʼn Prentgrafiek wys — Sipho: 4 simbole, Lerato: 2 en ʼn half simbole, Amahle: 3 simbole. Die sleutel wys elke simbool = 4 boeke. Hoeveel boeke het Lerato gelees?',
+          question: 'ʼn Piktogram wys — Sipho: 4 simbole, Lerato: 2 en ʼn half simbole, Amahle: 3 simbole. Die sleutel wys elke simbool = 4 boeke. Hoeveel boeke het Lerato gelees?',
           answer: '10',
           checkMode: 'auto',
           correctAnswer: '10',
@@ -455,20 +455,20 @@ export const topicData: TopicData = {
         // ── Q10 Hard — drawing pictograph with remainder (self) ──────────────
         {
           difficulty: 'Hard',
-          question: 'Thabo wil 22 leerders in ʼn prentgrafiek wys waar elke simbool = 4 leerders. Hoeveel simbole moet hy teken en sal daar ʼn half simbool wees?',
+          question: 'Thabo wil 22 leerders in ʼn piktogram wys waar elke simbool = 4 leerders. Hoeveel simbole moet hy teken en sal daar ʼn half simbool wees?',
           answer: '22 gedeel deur 4 = 5 oor 2. Aangesien 2 presies die helfte van die sleutelwaarde is (4 ÷ 2 = 2), teken hy 5 volle simbole en ʼn half simbool. 5 volle simbole (5 × 4 = 20) plus ʼn half simbool (2) = 22 leerders.',
           checkMode: 'self',
         },
       ],
 
       diagramPlaceholder:
-        'Prentgrafiek wat boeke gelees deur Sipho 4 volle simbole en Lerato 3 en ʼn half simbole wys met sleutelwaarde 2 in blou volle simbole in groen half simbool in oranje en totale in rooi',
+        'Piktogram wat boeke gelees deur Sipho 4 volle simbole en Lerato 3 en ʼn half simbole wys met sleutelwaarde 2 in blou volle simbole in groen half simbool in oranje en totale in rooi',
 
       diagramSvg:
         '<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><text x="100" y="13" font-size="11" fill="#0f1f3d" font-weight="700" text-anchor="middle">Boeke Gelees — Sipho &amp; Lerato</text><text x="6" y="28" font-size="10" fill="#0f1f3d" font-weight="700">Sleutel:</text><circle cx="42" cy="25" r="5" fill="#16a34a"/><text x="50" y="28" font-size="10" fill="#2563eb" font-weight="700">= 2 boeke</text><line x1="6" y1="34" x2="194" y2="34" stroke="#9ca3af" stroke-width="1"/><text x="6" y="54" font-size="10.5" fill="#0f1f3d" font-weight="700">Sipho</text><circle cx="70" cy="50" r="6" fill="#16a34a"/><circle cx="86" cy="50" r="6" fill="#16a34a"/><circle cx="102" cy="50" r="6" fill="#16a34a"/><circle cx="118" cy="50" r="6" fill="#16a34a"/><text x="170" y="54" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">8</text><line x1="6" y1="64" x2="194" y2="64" stroke="#9ca3af" stroke-width="0.6" stroke-dasharray="2,2"/><text x="6" y="84" font-size="10.5" fill="#0f1f3d" font-weight="700">Lerato</text><circle cx="70" cy="80" r="6" fill="#16a34a"/><circle cx="86" cy="80" r="6" fill="#16a34a"/><circle cx="102" cy="80" r="6" fill="#16a34a"/><path d="M 118,74 A 6,6 0 0 0 118,86 Z" fill="#ea580c"/><circle cx="118" cy="80" r="6" fill="none" stroke="#ea580c" stroke-width="1.2"/><text x="170" y="84" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">7</text></svg>',
 
       videoPlaceholder:
-        'Kort video wat wys hoe om ʼn prentgrafiek te lees deur die sleutelwaarde te kontroleer volle simbole te tel en half simbole te hanteer om totale te vind',
+        'Kort video wat wys hoe om ʼn piktogram te lees deur die sleutelwaarde te kontroleer volle simbole te tel en half simbole te hanteer om totale te vind',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -841,14 +841,14 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Troeteldiere</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="133.2" x2="34" y2="133.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="136.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="111.3" x2="34" y2="111.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="114.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="89.5" x2="34" y2="89.5" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="92.5" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="67.7" x2="34" y2="67.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="70.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="45.8" x2="34" y2="45.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="48.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Honde</text><rect x="90.8" y="56.8" width="22" height="98.2" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Katte</text><rect x="133.2" y="111.3" width="22" height="43.7" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Visse</text><rect x="175.8" y="78.6" width="22" height="76.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Voëls</text></svg>',
         },
 
-        // ── Prentgrafieke (8-11) — DIAGRAM BLOK ─────────────────────────────
-        // Gedeelde prentgrafiek: "Boeke Gelees Gedurende die Week"
+        // ── Piktogramme (8-11) — DIAGRAM BLOK ─────────────────────────────
+        // Gedeelde piktogram: "Boeke Gelees Gedurende die Week"
         // Sleutel: 1 boeksimbool = 2 boeke
         // Rye: Maandag = 5 simbole (10 boeke), Dinsdag = 3 simbole (6 boeke),
         //      Woensdag = 2 en ʼn half simbole (5 boeke), Donderdag = 4 simbole (8 boeke)
         {
           difficulty: 'Medium',
-          question: 'Die prentgrafiek hierbo, "Boeke Gelees Gedurende die Week", het ʼn sleutel waar 1 boeksimbool = 2 boeke. Maandag wys 5 simbole. Hoeveel boeke is op Maandag gelees?',
+          question: 'Die piktogram hierbo, "Boeke Gelees Gedurende die Week", het ʼn sleutel waar 1 boeksimbool = 2 boeke. Maandag wys 5 simbole. Hoeveel boeke is op Maandag gelees?',
           checkMode: 'auto',
           correctAnswer: '10',
           correctAnswers: ['10'],
@@ -857,7 +857,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, Woensdag wys 2 volle simbole en 1 half simbool. Hoeveel boeke is op Woensdag gelees?',
+          question: 'Volgens die piktogram hierbo, Woensdag wys 2 volle simbole en 1 half simbool. Hoeveel boeke is op Woensdag gelees?',
           checkMode: 'auto',
           correctAnswer: '5',
           correctAnswers: ['5'],
@@ -866,7 +866,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, Dinsdag wys 3 simbole en Donderdag wys 4 simbole. Hoeveel meer boeke is op Donderdag as op Dinsdag gelees?',
+          question: 'Volgens die piktogram hierbo, Dinsdag wys 3 simbole en Donderdag wys 4 simbole. Hoeveel meer boeke is op Donderdag as op Dinsdag gelees?',
           checkMode: 'auto',
           correctAnswer: '2',
           correctAnswers: ['2'],
@@ -875,7 +875,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, hoeveel boeke is altesaam op Maandag en Donderdag saam gelees?',
+          question: 'Volgens die piktogram hierbo, hoeveel boeke is altesaam op Maandag en Donderdag saam gelees?',
           checkMode: 'auto',
           correctAnswer: '18',
           correctAnswers: ['18'],
@@ -961,7 +961,7 @@ export const topicData: TopicData = {
         },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 1 — jy het telmerktabelle, staafgrafieke, prentgrafieke, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 1 — jy het telmerktabelle, staafgrafieke, piktogramme, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
         { minScore: 15, message: 'Puik werk op Stel 1! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
         { minScore: 10, message: 'Goeie poging op Stel 1! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
         { minScore: 0, message: "Hou aan oefen met Stel 1 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
@@ -1048,14 +1048,14 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Sapgeure</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="136.3" x2="34" y2="136.3" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="139.3" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">2</text><line x1="31" y1="117.6" x2="34" y2="117.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="120.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">4</text><line x1="31" y1="98.9" x2="34" y2="98.9" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="101.9" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="80.1" x2="34" y2="80.1" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="83.1" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">8</text><line x1="31" y1="61.4" x2="34" y2="61.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="64.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">10</text><line x1="31" y1="42.7" x2="34" y2="42.7" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="45.7" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">14</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Lemoen</text><rect x="90.8" y="61.4" width="22" height="93.6" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Appel</text><rect x="133.2" y="98.9" width="22" height="56.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Druif</text><rect x="175.8" y="80.1" width="22" height="74.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Mango</text></svg>',
         },
 
-        // ── Prentgrafieke (8-11) — DIAGRAM BLOK ─────────────────────────────
-        // Gedeelde prentgrafiek: "Plakkers Versamel Hierdie Kwartaal"
+        // ── Piktogramme (8-11) — DIAGRAM BLOK ─────────────────────────────
+        // Gedeelde piktogram: "Plakkers Versamel Hierdie Kwartaal"
         // Sleutel: 1 stersimbool = 4 plakkers
         // Rye: Ayanda = 5 simbole (20 plakkers), Zanele = 3 simbole (12 plakkers),
         //      Kabelo = 2 en ʼn half simbole (10 plakkers), Naledi = 4 simbole (16 plakkers)
         {
           difficulty: 'Medium',
-          question: 'Die prentgrafiek hierbo, "Plakkers Versamel Hierdie Kwartaal", het ʼn sleutel waar 1 stersimbool = 4 plakkers. Ayanda wys 5 simbole. Hoeveel plakkers het Ayanda versamel?',
+          question: 'Die piktogram hierbo, "Plakkers Versamel Hierdie Kwartaal", het ʼn sleutel waar 1 stersimbool = 4 plakkers. Ayanda wys 5 simbole. Hoeveel plakkers het Ayanda versamel?',
           checkMode: 'auto',
           correctAnswer: '20',
           correctAnswers: ['20'],
@@ -1064,7 +1064,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, Kabelo wys 2 volle simbole en 1 half simbool. Hoeveel plakkers het Kabelo versamel?',
+          question: 'Volgens die piktogram hierbo, Kabelo wys 2 volle simbole en 1 half simbool. Hoeveel plakkers het Kabelo versamel?',
           checkMode: 'auto',
           correctAnswer: '10',
           correctAnswers: ['10'],
@@ -1073,7 +1073,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, Zanele wys 3 simbole en Naledi wys 4 simbole. Hoeveel meer plakkers het Naledi as Zanele versamel?',
+          question: 'Volgens die piktogram hierbo, Zanele wys 3 simbole en Naledi wys 4 simbole. Hoeveel meer plakkers het Naledi as Zanele versamel?',
           checkMode: 'auto',
           correctAnswer: '4',
           correctAnswers: ['4'],
@@ -1082,7 +1082,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, hoeveel plakkers is altesaam deur Ayanda en Naledi saam versamel?',
+          question: 'Volgens die piktogram hierbo, hoeveel plakkers is altesaam deur Ayanda en Naledi saam versamel?',
           checkMode: 'auto',
           correctAnswer: '36',
           correctAnswers: ['36'],
@@ -1168,7 +1168,7 @@ export const topicData: TopicData = {
         },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 2 — jy het telmerktabelle, staafgrafieke, prentgrafieke, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 2 — jy het telmerktabelle, staafgrafieke, piktogramme, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
         { minScore: 15, message: 'Puik werk op Stel 2! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
         { minScore: 10, message: 'Goeie poging op Stel 2! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
         { minScore: 0, message: "Hou aan oefen met Stel 2 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },
@@ -1255,14 +1255,14 @@ export const topicData: TopicData = {
           diagramSvg: '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><text x="110" y="14" font-size="12.5" fill="#0f1f3d" font-weight="700" text-anchor="middle">Gunsteling Skoolvakke</text><line x1="34" y1="24" x2="34" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="34" y1="155" x2="210" y2="155" stroke="#0f1f3d" stroke-width="2"/><line x1="31" y1="155.0" x2="34" y2="155.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="158.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">0</text><line x1="31" y1="128.8" x2="34" y2="128.8" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="131.8" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">3</text><line x1="31" y1="102.6" x2="34" y2="102.6" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="105.6" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">6</text><line x1="31" y1="76.4" x2="34" y2="76.4" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="79.4" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">9</text><line x1="31" y1="50.2" x2="34" y2="50.2" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="53.2" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">12</text><line x1="31" y1="24.0" x2="34" y2="24.0" stroke="#0f1f3d" stroke-width="1.5"/><text x="28" y="27.0" font-size="9.5" fill="#ea580c" font-weight="700" text-anchor="end">15</text><rect x="48.2" y="24.0" width="22" height="131.0" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="59.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wisk.</text><rect x="90.8" y="58.9" width="22" height="96.1" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="101.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Eng.</text><rect x="133.2" y="85.1" width="22" height="69.9" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="144.2" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Wet.</text><rect x="175.8" y="102.6" width="22" height="52.4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1.5"/><text x="186.8" y="167" font-size="9.5" fill="#2563eb" font-weight="700" text-anchor="middle">Kuns</text></svg>',
         },
 
-        // ── Prentgrafieke (8-11) — DIAGRAM BLOK ─────────────────────────────
-        // Gedeelde prentgrafiek: "Stemme vir Klas-sportdag Spanname"
+        // ── Piktogramme (8-11) — DIAGRAM BLOK ─────────────────────────────
+        // Gedeelde piktogram: "Stemme vir Klas-sportdag Spanname"
         // Sleutel: 1 trofeesimbool = 10 stemme
         // Rye: Span A = 3 en ʼn half simbole (35 stemme), Span B = 2 simbole (20 stemme),
         //      Span C = 4 simbole (40 stemme), Span D = 1 en ʼn half simbole (15 stemme)
         {
           difficulty: 'Medium',
-          question: 'Die prentgrafiek hierbo, "Stemme vir Klas-sportdag Spanname", het ʼn sleutel waar 1 trofeesimbool = 10 stemme. Span C wys 4 simbole. Hoeveel stemme het Span C ontvang?',
+          question: 'Die piktogram hierbo, "Stemme vir Klas-sportdag Spanname", het ʼn sleutel waar 1 trofeesimbool = 10 stemme. Span C wys 4 simbole. Hoeveel stemme het Span C ontvang?',
           checkMode: 'auto',
           correctAnswer: '40',
           correctAnswers: ['40'],
@@ -1271,7 +1271,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, Span A wys 3 volle simbole en 1 half simbool. Hoeveel stemme het Span A ontvang?',
+          question: 'Volgens die piktogram hierbo, Span A wys 3 volle simbole en 1 half simbool. Hoeveel stemme het Span A ontvang?',
           checkMode: 'auto',
           correctAnswer: '35',
           correctAnswers: ['35'],
@@ -1280,7 +1280,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, Span B wys 2 simbole en Span D wys 1 en ʼn half simbole. Hoeveel meer stemme het Span B as Span D ontvang?',
+          question: 'Volgens die piktogram hierbo, Span B wys 2 simbole en Span D wys 1 en ʼn half simbole. Hoeveel meer stemme het Span B as Span D ontvang?',
           checkMode: 'auto',
           correctAnswer: '5',
           correctAnswers: ['5'],
@@ -1289,7 +1289,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Volgens die prentgrafiek hierbo, hoeveel stemme is altesaam vir Span A en Span C saam uitgebring?',
+          question: 'Volgens die piktogram hierbo, hoeveel stemme is altesaam vir Span A en Span C saam uitgebring?',
           checkMode: 'auto',
           correctAnswer: '75',
           correctAnswers: ['75'],
@@ -1375,7 +1375,7 @@ export const topicData: TopicData = {
         },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 3 — jy het telmerktabelle, staafgrafieke, prentgrafieke, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
+        { minScore: 20, message: 'Uitstekend! ʼn Volpunt-telling op Stel 3 — jy het telmerktabelle, staafgrafieke, piktogramme, mediaan en modus heeltemal baasgeraak, en met gemiddelde kennis gemaak. Puik werk!' },
         { minScore: 15, message: 'Puik werk op Stel 3! Jy het ʼn sterk begrip van datahantering. Kyk weer na enige vrae wat jy gemis het om dit perfek te maak.' },
         { minScore: 10, message: 'Goeie poging op Stel 3! Jy verstaan baie van hierdie afdeling. Gaan weer deur die uitgewerkte voorbeelde vir die dele wat jou probleme gegee het.' },
         { minScore: 0, message: "Hou aan oefen met Stel 3 — datahantering verg oefening om te bemeester. Gaan weer deur die verduidelikings en uitgewerkte voorbeelde, en probeer dan weer." },

@@ -307,17 +307,17 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'cylinders-cones-and-spheres',
-      title: 'Silinders, Keëls en Bolle',
+      title: 'Silinders, Keëls en Sfere',
       icon: '○',
       explanation:
-        `<p style="margin-bottom:16px;">Sommige 3D-voorwerpe het <strong>geboë oppervlakke</strong>. ʼn ${bl('Silinder')} het 2 plat sirkelvormige vlakke en 1 geboë oppervlak — soos ʼn blik. ʼn ${re('Keël')} het 1 plat sirkelvormige vlak, 1 geboë oppervlak en kom tot ʼn punt bo-aan genoem die ${or('apeks')} — soos ʼn roomyshorinkie. ʼn ${gr('Bol')} is perfek rond met slegs 1 geboë oppervlak en geen plat vlakke, geen rande en geen hoekpunte nie — soos ʼn bal.</p>` +
+        `<p style="margin-bottom:16px;">Sommige 3D-voorwerpe het <strong>geboë oppervlakke</strong>. ʼn ${bl('Silinder')} het 2 plat sirkelvormige vlakke en 1 geboë oppervlak — soos ʼn blik. ʼn ${re('Keël')} het 1 plat sirkelvormige vlak, 1 geboë oppervlak en kom tot ʼn punt bo-aan genoem die ${or('apeks')} — soos ʼn roomyshorinkie. ʼn ${gr('Sfeer')} is perfek rond met slegs 1 geboë oppervlak en geen plat vlakke, geen rande en geen hoekpunte nie — soos ʼn bal.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('silinder')}</span>` +
         `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('keël')}</span>` +
-        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('bol')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('sfeer')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('apeks')}</span>` +
         `</div>` +
 
@@ -336,7 +336,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Bol</p>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Sfeer</p>` +
         `<p style="color:#374151;font-size:14px;margin:0;">ʼn Perfek ronde 3D-voorwerp met slegs 1 geboë oppervlak. Dit het geen plat vlakke, geen rande en geen hoekpunte nie.</p>` +
         `</div>` +
 
@@ -364,9 +364,9 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
-        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Bol</p>` +
+        `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Sfeer</p>` +
         `<p style="color:#374151;font-size:14px;margin-bottom:6px;"><strong>Plat vlakke:</strong> 0.<br><strong>Geboë oppervlak:</strong> 1.<br><strong>Rande:</strong> 0. <strong>Hoekpunte:</strong> 0.</p>` +
-        `<p style="color:#6b7280;font-size:13px;margin:0;">Voorbeeld: ʼn bal of ʼn wêreldbol.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Voorbeeld: ʼn bal of ʼn wêreldsfeer.</p>` +
         `</div>` +
 
         `</div>` +
@@ -374,7 +374,7 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Onthou</p>` +
-        `<p style="margin:0;color:#1e3a8a;">ʼn ${bl('Silinder')} het <strong>2</strong> plat vlakke en ʼn ${re('keël')} het <strong>1</strong> plat vlak — albei het ʼn geboë oppervlak. ʼn ${gr('Bol')} het <strong>geen</strong> plat vlakke nie — dit is heeltemal geboë. Slegs ʼn ${re('keël')} het ʼn ${or('apeks')}.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">ʼn ${bl('Silinder')} het <strong>2</strong> plat vlakke en ʼn ${re('keël')} het <strong>1</strong> plat vlak — albei het ʼn geboë oppervlak. ʼn ${gr('Sfeer')} het <strong>geen</strong> plat vlakke nie — dit is heeltemal geboë. Slegs ʼn ${re('keël')} het ʼn ${or('apeks')}.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -406,14 +406,14 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [
-        // ── V7 Maklik — bol ───────────────────────────────────────────────────────────
+        // ── V7 Maklik — sfeer ───────────────────────────────────────────────────────────
         {
           difficulty: 'Easy',
           question: 'Watter 3D-voorwerp lyk soos ʼn bal?',
-          answer: 'bol',
+          answer: 'sfeer',
           checkMode: 'auto',
-          correctAnswer: 'bol',
-          explanation: 'ʼn Bol is perfek rond met slegs 1 geboë oppervlak en geen plat vlakke nie — net soos ʼn bal.',
+          correctAnswer: 'sfeer',
+          explanation: 'ʼn Sfeer is perfek rond met slegs 1 geboë oppervlak en geen plat vlakke nie — net soos ʼn bal.',
         },
 
         // ── V8 Medium — plat vlakke van ʼn silinder ─────────────────────────────────
@@ -436,12 +436,12 @@ export const topicData: TopicData = {
       ],
 
       diagramPlaceholder:
-        'Diagram wat ʼn silinder in blou, ʼn keël in rooi en ʼn bol in groen langs mekaar wys met etikette vir plat vlakke, geboë oppervlak en apeks',
+        'Diagram wat ʼn silinder in blou, ʼn keël in rooi en ʼn sfeer in groen langs mekaar wys met etikette vir plat vlakke, geboë oppervlak en apeks',
       diagramSvg:
-        '<svg viewBox="0 0 400 205" xmlns="http://www.w3.org/2000/svg"><ellipse cx="70" cy="60" rx="28" ry="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><ellipse cx="70" cy="120" rx="28" ry="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><line x1="42" y1="60" x2="42" y2="120" stroke="#2563eb" stroke-width="2.5"/><line x1="98" y1="60" x2="98" y2="120" stroke="#2563eb" stroke-width="2.5"/><text x="70" y="45" font-weight="700" font-size="10" text-anchor="middle" fill="#2563eb">plat vlak</text><text x="70" y="175" font-weight="700" font-size="13" text-anchor="middle" fill="#2563eb">Silinder</text><text x="70" y="190" font-size="9" text-anchor="middle" fill="#2563eb">geboë oppervlak</text><ellipse cx="210" cy="120" rx="26" ry="8" fill="none" stroke="#dc2626" stroke-width="2.5"/><line x1="210" y1="50" x2="184" y2="120" stroke="#dc2626" stroke-width="2.5"/><line x1="210" y1="50" x2="236" y2="120" stroke="#dc2626" stroke-width="2.5"/><circle cx="210" cy="50" r="4" fill="#ea580c"/><text x="210" y="38" font-weight="700" font-size="10" text-anchor="middle" fill="#ea580c">apeks</text><text x="210" y="175" font-weight="700" font-size="13" text-anchor="middle" fill="#dc2626">Keël</text><text x="210" y="190" font-size="9" text-anchor="middle" fill="#dc2626">geboë oppervlak</text><circle cx="330" cy="85" r="33" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M 297 85 Q 330 100 363 85" fill="none" stroke="#16a34a" stroke-width="1.3"/><text x="330" y="175" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">Bol</text><text x="330" y="190" font-size="9" text-anchor="middle" fill="#16a34a">geboë oppervlak</text></svg>',
+        '<svg viewBox="0 0 400 205" xmlns="http://www.w3.org/2000/svg"><ellipse cx="70" cy="60" rx="28" ry="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><ellipse cx="70" cy="120" rx="28" ry="9" fill="none" stroke="#2563eb" stroke-width="2.5"/><line x1="42" y1="60" x2="42" y2="120" stroke="#2563eb" stroke-width="2.5"/><line x1="98" y1="60" x2="98" y2="120" stroke="#2563eb" stroke-width="2.5"/><text x="70" y="45" font-weight="700" font-size="10" text-anchor="middle" fill="#2563eb">plat vlak</text><text x="70" y="175" font-weight="700" font-size="13" text-anchor="middle" fill="#2563eb">Silinder</text><text x="70" y="190" font-size="9" text-anchor="middle" fill="#2563eb">geboë oppervlak</text><ellipse cx="210" cy="120" rx="26" ry="8" fill="none" stroke="#dc2626" stroke-width="2.5"/><line x1="210" y1="50" x2="184" y2="120" stroke="#dc2626" stroke-width="2.5"/><line x1="210" y1="50" x2="236" y2="120" stroke="#dc2626" stroke-width="2.5"/><circle cx="210" cy="50" r="4" fill="#ea580c"/><text x="210" y="38" font-weight="700" font-size="10" text-anchor="middle" fill="#ea580c">apeks</text><text x="210" y="175" font-weight="700" font-size="13" text-anchor="middle" fill="#dc2626">Keël</text><text x="210" y="190" font-size="9" text-anchor="middle" fill="#dc2626">geboë oppervlak</text><circle cx="330" cy="85" r="33" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M 297 85 Q 330 100 363 85" fill="none" stroke="#16a34a" stroke-width="1.3"/><text x="330" y="175" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">Sfeer</text><text x="330" y="190" font-size="9" text-anchor="middle" fill="#16a34a">geboë oppervlak</text></svg>',
 
       videoPlaceholder:
-        'Kort video wat die eienskappe van silinders, keëls en bolle verduidelik en ʼn keël met ʼn piramide vergelyk om die verskil tussen geboë oppervlakke en plat vlakke te wys',
+        'Kort video wat die eienskappe van silinders, keëls en sfere verduidelik en ʼn keël met ʼn piramide vergelyk om die verskil tussen geboë oppervlakke en plat vlakke te wys',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -469,7 +469,7 @@ export const topicData: TopicData = {
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Kan rol</p>` +
         `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Voorwerpe met ʼn <strong>geboë oppervlak</strong> kan rol.</p>` +
-        `<p style="color:#6b7280;font-size:13px;margin:0;">Voorbeelde: bol, silinder, keël.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Voorbeelde: sfeer, silinder, keël.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
@@ -489,16 +489,16 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Sommige voorwerpe kan meer as een ding doen</p>` +
-        `<p style="margin:0;color:#1e3a8a;">ʼn Silinder kan beide ${gr('rol')} (geboë sykant) en ${bl('stapel')} (plat sirkelvormige eindes). ʼn Keël kan ${gr('rol')} maar is moeilik om te ${bl('stapel')} omdat sy ${or('apeks')} dit onstabiel maak. ʼn Bol kan ${gr('rol')} maar kan glad nie ${bl('stapel')} nie.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">ʼn Silinder kan beide ${gr('rol')} (geboë sykant) en ${bl('stapel')} (plat sirkelvormige eindes). ʼn Keël kan ${gr('rol')} maar is moeilik om te ${bl('stapel')} omdat sy ${or('apeks')} dit onstabiel maak. ʼn Sfeer kan ${gr('rol')} maar kan glad nie ${bl('stapel')} nie.</p>` +
         `</div>`,
 
       workedExamples: [
         {
-          question: 'Sorteer hierdie voorwerpe in kan rol en kan nie rol nie — bol, kubus, silinder, piramide, keël.',
-          answer: `${gr('Kan rol')}: bol, silinder, keël. ${re('Kan nie rol nie')}: kubus, piramide.`,
+          question: 'Sorteer hierdie voorwerpe in kan rol en kan nie rol nie — sfeer, kubus, silinder, piramide, keël.',
+          answer: `${gr('Kan rol')}: sfeer, silinder, keël. ${re('Kan nie rol nie')}: kubus, piramide.`,
           steps: [
             `${gr('Kan rol:')}`,
-            `${gr('Bol')} — ʼn bol het ʼn geboë oppervlak, dus rol dit.`,
+            `${gr('Sfeer')} — ʼn sfeer het ʼn geboë oppervlak, dus rol dit.`,
             `${gr('Silinder')} — ʼn silinder het ʼn geboë oppervlak, dus rol dit.`,
             `${gr('Keël')} — ʼn keël het ʼn geboë oppervlak, dus rol dit.`,
             `${re('Kan nie rol nie:')}`,
@@ -507,13 +507,13 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Amahle wil haar vorms stapel. Watter van hierdie kan gestapel word — bol, reghoekige prisma, keël, silinder?',
-          answer: `${bl('Kan stapel')}: reghoekige prisma, silinder. Keël — moeilik. Bol — kan nie stapel nie.`,
+          question: 'Amahle wil haar vorms stapel. Watter van hierdie kan gestapel word — sfeer, reghoekige prisma, keël, silinder?',
+          answer: `${bl('Kan stapel')}: reghoekige prisma, silinder. Keël — moeilik. Sfeer — kan nie stapel nie.`,
           steps: [
             `${bl('Reghoekige prisma')} — ja, plat vlakke stapel maklik.`,
             `${bl('Silinder')} — ja, plat sirkelvormige eindes laat stapeling toe.`,
             `Keël — moeilik, die ${or('apeks')} maak dit onstabiel.`,
-            `Bol — nee, geboë oppervlak maak dit onmoontlik om te stapel.`,
+            `Sfeer — nee, geboë oppervlak maak dit onmoontlik om te stapel.`,
           ],
         },
       ],
@@ -521,15 +521,15 @@ export const topicData: TopicData = {
       practiceQuestions: [],
 
       openQuestions: [
-        // ── V10 Maklik — bol rol ────────────────────────────────────────────────────
+        // ── V10 Maklik — sfeer rol ────────────────────────────────────────────────────
         {
           difficulty: 'Easy',
-          question: 'Kan ʼn bol rol?',
+          question: 'Kan ʼn sfeer rol?',
           answer: 'ja',
           checkMode: 'auto',
           correctAnswer: 'ja',
           correctAnswers: ['ja', 'Ja', 'JA'],
-          explanation: 'Ja — ʼn bol het ʼn geboë oppervlak, dus kan dit in enige rigting rol.',
+          explanation: 'Ja — ʼn sfeer het ʼn geboë oppervlak, dus kan dit in enige rigting rol.',
         },
 
         // ── V11 Medium — rol en stapel ────────────────────────────────────────────────
@@ -547,7 +547,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Thabo sorteer sy vorms en sê slegs voorwerpe met geboë oppervlakke kan rol. Is hy korrek? Gee voorbeelde om jou antwoord te ondersteun.',
-          answer: 'Ja — bol, silinder en keël het almal geboë oppervlakke en kan rol. Kubusse, prismas en piramides het slegs plat vlakke en kan nie rol nie.',
+          answer: 'Ja — sfeer, silinder en keël het almal geboë oppervlakke en kan rol. Kubusse, prismas en piramides het slegs plat vlakke en kan nie rol nie.',
           checkMode: 'self',
         },
       ],
@@ -555,7 +555,7 @@ export const topicData: TopicData = {
       diagramPlaceholder:
         'Diagram wat 3D-voorwerpe in twee groepe sorteer — kan rol in groen en kan nie rol nie in rooi — met ʼn silinder in blou gewys as ʼn voorwerp wat beide kan rol en stapel',
       diagramSvg:
-        '<svg viewBox="0 0 460 245" xmlns="http://www.w3.org/2000/svg"><line x1="230" y1="15" x2="230" y2="145" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/><line x1="20" y1="150" x2="440" y2="150" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3"/><text x="120" y="25" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">Kan rol ✓</text><text x="340" y="25" font-weight="700" font-size="13" text-anchor="middle" fill="#dc2626">Kan nie rol nie ✗</text><circle cx="70" cy="70" r="18" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M 52 70 Q 70 78 88 70" fill="none" stroke="#16a34a" stroke-width="1.2"/><text x="70" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#14532d">Bol</text><ellipse cx="170" cy="95" rx="18" ry="6" fill="none" stroke="#16a34a" stroke-width="2.5"/><line x1="170" y1="45" x2="152" y2="95" stroke="#16a34a" stroke-width="2.5"/><line x1="170" y1="45" x2="188" y2="95" stroke="#16a34a" stroke-width="2.5"/><text x="170" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#14532d">Keël</text><polygon points="270,65 300,65 300,95 270,95" fill="none" stroke="#dc2626" stroke-width="2.5"/><polygon points="270,65 300,65 310,55 280,55" fill="none" stroke="#dc2626" stroke-width="2"/><polygon points="300,65 310,55 310,85 300,95" fill="none" stroke="#dc2626" stroke-width="2"/><text x="290" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#7f1d1d">Kubus</text><line x1="370" y1="95" x2="410" y2="95" stroke="#dc2626" stroke-width="2.5"/><line x1="390" y1="50" x2="370" y2="95" stroke="#dc2626" stroke-width="2.5"/><line x1="390" y1="50" x2="410" y2="95" stroke="#dc2626" stroke-width="2.5"/><text x="390" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#7f1d1d">Piramide</text><text x="230" y="164" font-weight="700" font-size="11" text-anchor="middle" fill="#2563eb">Silinder — kan rol ÉN stapel</text><ellipse cx="230" cy="175" rx="24" ry="7" fill="none" stroke="#2563eb" stroke-width="2.5"/><ellipse cx="230" cy="212" rx="24" ry="7" fill="none" stroke="#2563eb" stroke-width="2.5"/><line x1="206" y1="175" x2="206" y2="212" stroke="#2563eb" stroke-width="2.5"/><line x1="254" y1="175" x2="254" y2="212" stroke="#2563eb" stroke-width="2.5"/><text x="230" y="232" font-weight="700" font-size="12" text-anchor="middle" fill="#2563eb">Silinder</text></svg>',
+        '<svg viewBox="0 0 460 245" xmlns="http://www.w3.org/2000/svg"><line x1="230" y1="15" x2="230" y2="145" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/><line x1="20" y1="150" x2="440" y2="150" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3"/><text x="120" y="25" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">Kan rol ✓</text><text x="340" y="25" font-weight="700" font-size="13" text-anchor="middle" fill="#dc2626">Kan nie rol nie ✗</text><circle cx="70" cy="70" r="18" fill="none" stroke="#16a34a" stroke-width="2.5"/><path d="M 52 70 Q 70 78 88 70" fill="none" stroke="#16a34a" stroke-width="1.2"/><text x="70" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#14532d">Sfeer</text><ellipse cx="170" cy="95" rx="18" ry="6" fill="none" stroke="#16a34a" stroke-width="2.5"/><line x1="170" y1="45" x2="152" y2="95" stroke="#16a34a" stroke-width="2.5"/><line x1="170" y1="45" x2="188" y2="95" stroke="#16a34a" stroke-width="2.5"/><text x="170" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#14532d">Keël</text><polygon points="270,65 300,65 300,95 270,95" fill="none" stroke="#dc2626" stroke-width="2.5"/><polygon points="270,65 300,65 310,55 280,55" fill="none" stroke="#dc2626" stroke-width="2"/><polygon points="300,65 310,55 310,85 300,95" fill="none" stroke="#dc2626" stroke-width="2"/><text x="290" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#7f1d1d">Kubus</text><line x1="370" y1="95" x2="410" y2="95" stroke="#dc2626" stroke-width="2.5"/><line x1="390" y1="50" x2="370" y2="95" stroke="#dc2626" stroke-width="2.5"/><line x1="390" y1="50" x2="410" y2="95" stroke="#dc2626" stroke-width="2.5"/><text x="390" y="112" font-weight="700" font-size="11" text-anchor="middle" fill="#7f1d1d">Piramide</text><text x="230" y="164" font-weight="700" font-size="11" text-anchor="middle" fill="#2563eb">Silinder — kan rol ÉN stapel</text><ellipse cx="230" cy="175" rx="24" ry="7" fill="none" stroke="#2563eb" stroke-width="2.5"/><ellipse cx="230" cy="212" rx="24" ry="7" fill="none" stroke="#2563eb" stroke-width="2.5"/><line x1="206" y1="175" x2="206" y2="212" stroke="#2563eb" stroke-width="2.5"/><line x1="254" y1="175" x2="254" y2="212" stroke="#2563eb" stroke-width="2.5"/><text x="230" y="232" font-weight="700" font-size="12" text-anchor="middle" fill="#2563eb">Silinder</text></svg>',
 
       videoPlaceholder:
         'Kort video wat wys hoe om 3D-voorwerpe volgens hul eienskappe te sorteer, insluitend rol, stapel en gly, en verduidelik waarom geboë oppervlakke rol toelaat terwyl plat vlakke stapeling toelaat',
@@ -597,10 +597,10 @@ export const topicData: TopicData = {
           { label: 'a) Geboë oppervlakke', correctAnswer: '1', correctAnswers: ['1'], explanation: 'ʼn Keël het presies 1 geboë oppervlak wat vanaf die basis tot by die apeks skuins loop.' },
           { label: 'b) Plat vlakke', correctAnswer: '1', correctAnswers: ['1'], explanation: 'ʼn Keël het 1 plat sirkelvormige vlak by sy basis.' },
         ] },
-        { difficulty: 'Medium', question: 'ʼn Bol, soos ʼn sokkerbal, het hoeveel plat vlakke?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'geen', 'geen plat vlakke nie'], explanation: 'ʼn Bol is perfek rond met slegs ʼn geboë oppervlak — dit het 0 plat vlakke, 0 rande en 0 hoekpunte.' },
+        { difficulty: 'Medium', question: 'ʼn Sfeer, soos ʼn sokkerbal, het hoeveel plat vlakke?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'geen', 'geen plat vlakke nie'], explanation: 'ʼn Sfeer is perfek rond met slegs ʼn geboë oppervlak — dit het 0 plat vlakke, 0 rande en 0 hoekpunte.' },
         { difficulty: 'Medium', question: 'Kyk na ʼn kubus en ʼn reghoekige prisma langs mekaar. Verduidelik een eienskap wat hulle deel en een manier waarop hulle verskil.', answer: 'Gedeel: albei het 6 vlakke, 12 rande en 8 hoekpunte, en albei se vlakke ontmoet teen regte hoeke. Verskil: ʼn kubus het 6 identiese vierkantige vlakke, terwyl ʼn reghoekige prisma reghoekige vlakke het wat nie almal dieselfde grootte is nie — teenoorstaande vlakke is gelyk in pare, nie al ses nie.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Sorteer hierdie voorwerpe in twee groepe — kan rol en kan nie rol nie: bol, kubus, keël, reghoekige prisma, silinder.', answer: 'Kan rol: bol, keël, silinder (hulle het ʼn geboë oppervlak). Kan nie rol nie: kubus, reghoekige prisma (hulle het slegs plat vlakke).', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Winkelassistent stapel bokse. Watter van hierdie kan maklik gestapel word en watter nie — reghoekige prisma, bol, vierkantige piramide, silinder? Verduidelik hoekom.', answer: 'Die reghoekige prisma en silinder kan maklik gestapel word omdat hulle plat vlakke bo en onder het. Die vierkantige piramide is moeilik om te stapel omdat dit tot ʼn punt by die apeks kom. Die bol kan glad nie stapel nie omdat sy hele oppervlak geboë is.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie voorwerpe in twee groepe — kan rol en kan nie rol nie: sfeer, kubus, keël, reghoekige prisma, silinder.', answer: 'Kan rol: sfeer, keël, silinder (hulle het ʼn geboë oppervlak). Kan nie rol nie: kubus, reghoekige prisma (hulle het slegs plat vlakke).', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Winkelassistent stapel bokse. Watter van hierdie kan maklik gestapel word en watter nie — reghoekige prisma, sfeer, vierkantige piramide, silinder? Verduidelik hoekom.', answer: 'Die reghoekige prisma en silinder kan maklik gestapel word omdat hulle plat vlakke bo en onder het. Die vierkantige piramide is moeilik om te stapel omdat dit tot ʼn punt by die apeks kom. Die sfeer kan glad nie stapel nie omdat sy hele oppervlak geboë is.', checkMode: 'self' },
         { difficulty: 'Hard', question: "Karabo sê: 'ʼn Keël en ʼn silinder is dieselfde vorm omdat albei ʼn sirkelvormige vlak en ʼn geboë oppervlak het.' Is Karabo korrek? Verduidelik deur die aantal plat vlakke te gebruik en of elke voorwerp ʼn apeks het.", answer: 'Karabo is slegs gedeeltelik korrek. Dit is waar dat albei ʼn keël en ʼn silinder ʼn geboë oppervlak en ten minste een sirkelvormige plat vlak het. Maar ʼn silinder het 2 sirkelvormige plat vlakke terwyl ʼn keël slegs 1 het. ʼn Keël kom ook tot ʼn punt genoem die apeks, maar ʼn silinder het geen apeks nie — sy twee sirkelvormige vlakke is dieselfde grootte regdeur. Die twee vorms is dus verwant, maar nie dieselfde nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: "ʼn Leerder beweer: 'ʼn Vierkantige piramide en ʼn kubus het albei 8 hoekpunte, dus moet hulle ook dieselfde aantal rande hê.' Is hierdie bewering korrek? Verduidelik met die werklike randgetalle.", answer: 'Hierdie bewering is verkeerd. ʼn Vierkantige piramide het nie 8 hoekpunte nie — dit het slegs 5 (4 rondom die basis plus die apeks). ʼn Kubus het 8 hoekpunte en 12 rande, terwyl ʼn vierkantige piramide 5 hoekpunte en slegs 8 rande het. Die feit dat hulle ʼn verskillende aantal hoekpunte het, wys reeds dat die twee vorms nie dieselfde gebou is nie, en hul randgetalle (12 teenoor 8) verskil ook.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Zinhle bou ʼn model van ʼn huis met ʼn reghoekige prisma vir die mure en ʼn vierkantige piramide vir die dak. Hoeveel hoekpunte is daar altesaam oor albei dele, en hoeveel van daardie hoekpunte raak waar die dak die mure ontmoet?', answer: 'Die reghoekige prisma het 8 hoekpunte en die vierkantige piramide het 5 hoekpunte, dus is daar 8 + 5 = 13 hoekpunte altesaam oor die twee vorms. Waar die dak op die mure sit, lê die 4 basis-hoekpunte van die piramide op een lyn met die 4 boonste hoekpunte van die prisma, dus raak 4 hoekpunte by die aansluiting (die piramide se apeks raak nie die mure nie).', checkMode: 'self' },
@@ -622,7 +622,7 @@ export const topicData: TopicData = {
       questions: [
         { difficulty: 'Easy', question: 'ʼn Sjokoladeboks het twee driehoekige eindes en drie reghoekige sye. Watter 3D-voorwerp is dit?', answer: 'driehoekige prisma', checkMode: 'auto', correctAnswer: 'driehoekigeprisma', correctAnswers: ['driehoekigeprisma', 'ʼn driehoekige prisma'], explanation: 'ʼn Driehoekige prisma het 2 identiese driehoekige vlakke aan elke kant en 3 reghoekige vlakke wat hulle verbind.' },
         { difficulty: 'Easy', question: 'Die Egiptiese piramides het ʼn vierkantige basis en vier driehoekige sye wat by ʼn punt ontmoet. Noem hierdie 3D-voorwerp.', answer: 'vierkantige piramide', checkMode: 'auto', correctAnswer: 'vierkantigepiramide', correctAnswers: ['vierkantigepiramide', 'ʼn vierkantige piramide'], explanation: 'ʼn Vierkantige piramide het ʼn vierkantige basis en 4 driehoekige vlakke wat by die apeks ontmoet, net soos die Egiptiese piramides.' },
-        { difficulty: 'Easy', question: 'ʼn Sokkerbal is perfek rond met geen plat vlakke nie. Noem hierdie 3D-voorwerp.', answer: 'bol', checkMode: 'auto', correctAnswer: 'bol', correctAnswers: ['bol', 'ʼn bol'], explanation: 'ʼn Bol is perfek rond met slegs 1 geboë oppervlak en geen plat vlakke, rande of hoekpunte nie.' },
+        { difficulty: 'Easy', question: 'ʼn Sokkerbal is perfek rond met geen plat vlakke nie. Noem hierdie 3D-voorwerp.', answer: 'sfeer', checkMode: 'auto', correctAnswer: 'sfeer', correctAnswers: ['sfeer', 'ʼn sfeer'], explanation: 'ʼn Sfeer is perfek rond met slegs 1 geboë oppervlak en geen plat vlakke, rande of hoekpunte nie.' },
         { difficulty: 'Easy', question: 'ʼn Speelding het 4 driehoekige vlakke, sy basis ingesluit. Noem hierdie 3D-voorwerp.', answer: 'driehoekige piramide', checkMode: 'auto', correctAnswer: 'driehoekigepiramide', correctAnswers: ['driehoekigepiramide', 'ʼn driehoekige piramide', 'tetraëder', 'ʼn tetraëder', 'tetraeder'], explanation: 'ʼn Driehoekige piramide (ook ʼn tetraëder genoem) het ʼn driehoekige basis en 3 driehoekige sy-vlakke wat by die apeks ontmoet.' },
         { difficulty: 'Easy', question: 'Hoeveel hoekpunte het ʼn kubus?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'ʼn Kubus het 8 hoekpunte — 4 op die bo-vlak en 4 op die onder-vlak.' },
         { difficulty: 'Easy-Medium', question: 'Hoeveel vlakke het ʼn reghoekige prisma?', answer: '6', checkMode: 'auto', correctAnswer: '6', correctAnswers: ['6'], explanation: 'ʼn Reghoekige prisma het 6 reghoekige vlakke — bo, onder, voor, agter, links en regs.' },
@@ -646,14 +646,14 @@ export const topicData: TopicData = {
           { label: 'a) Silinder', correctAnswer: '2', correctAnswers: ['2'], explanation: 'ʼn Silinder het 2 sirkelvormige plat vlakke, een aan elke kant.' },
           { label: 'b) Keël', correctAnswer: '1', correctAnswers: ['1'], explanation: 'ʼn Keël het slegs 1 sirkelvormige plat vlak, by sy basis.' },
         ] },
-        { difficulty: 'Medium', question: 'ʼn Wêreldbol is ʼn model van ʼn bol. Hoeveel rande het ʼn bol?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'geen', 'geen rande nie'], explanation: 'ʼn Bol het geen plat vlakke nie, dus is daar geen rande waar vlakke kan ontmoet nie — dit het 0 rande.' },
+        { difficulty: 'Medium', question: 'ʼn Wêreldsfeer is ʼn model van ʼn sfeer. Hoeveel rande het ʼn sfeer?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'geen', 'geen rande nie'], explanation: 'ʼn Sfeer het geen plat vlakke nie, dus is daar geen rande waar vlakke kan ontmoet nie — dit het 0 rande.' },
         { difficulty: 'Medium', question: 'Vergelyk ʼn driehoekige prisma en ʼn driehoekige piramide. Verduidelik hoe hul aantal vlakke verskil, en hoekom.', answer: 'ʼn Driehoekige prisma het 5 vlakke (2 driehoekige eindes en 3 reghoekige sye), terwyl ʼn driehoekige piramide slegs 4 vlakke het (1 driehoekige basis en 3 driehoekige sye). Die prisma het ʼn ekstra vlak omdat dit twee identiese driehoekige eindes het wat deur reghoeke verbind word, terwyl die piramide net een driehoekige basis het en sy sye vernou tot ʼn enkele punt by die apeks in plaas van ʼn tweede basis.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Sorteer hierdie voorwerpe in twee groepe — kan maklik stapel en kan nie maklik stapel nie: silinder, bol, keël, reghoekige prisma.', answer: 'Kan stapel: silinder en reghoekige prisma, omdat hulle albei plat vlakke bo en onder het wat nog ʼn voorwerp kan ondersteun. Kan nie maklik stapel nie: bol (heeltemal geboë, niks om op te balanseer nie) en keël (kom tot ʼn punt by die apeks, dus baie onstabiel om op te stapel).', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Speelgoedmaatskappy ontwerp boublokkies. Watter vorms sou die beste werk vir stapeling — kubus, bol, keël, silinder? Verduidelik jou keuse.', answer: 'Die kubus en silinder werk die beste vir stapeling omdat hulle albei plat vlakke bo en onder het wat gelykop bo-op mekaar sit. Die bol sou wegrol en kan nie stapel nie omdat sy hele oppervlak geboë is. Die keël is onstabiel omdat dit slegs een plat vlak het — sy apeks kan niks wat daarop geplaas word, ondersteun nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie voorwerpe in twee groepe — kan maklik stapel en kan nie maklik stapel nie: silinder, sfeer, keël, reghoekige prisma.', answer: 'Kan stapel: silinder en reghoekige prisma, omdat hulle albei plat vlakke bo en onder het wat nog ʼn voorwerp kan ondersteun. Kan nie maklik stapel nie: sfeer (heeltemal geboë, niks om op te balanseer nie) en keël (kom tot ʼn punt by die apeks, dus baie onstabiel om op te stapel).', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Speelgoedmaatskappy ontwerp boublokkies. Watter vorms sou die beste werk vir stapeling — kubus, sfeer, keël, silinder? Verduidelik jou keuse.', answer: 'Die kubus en silinder werk die beste vir stapeling omdat hulle albei plat vlakke bo en onder het wat gelykop bo-op mekaar sit. Die sfeer sou wegrol en kan nie stapel nie omdat sy hele oppervlak geboë is. Die keël is onstabiel omdat dit slegs een plat vlak het — sy apeks kan niks wat daarop geplaas word, ondersteun nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: "Thandi sê: 'ʼn Reghoekige prisma en ʼn kubus is heeltemal verskillende vorms omdat ʼn kubus ʼn vierkant is en ʼn reghoekige prisma ʼn reghoek is.' Is Thandi korrek? Verduidelik deur die eienskappe van elke 3D-voorwerp te gebruik.", answer: 'Thandi is nie heeltemal korrek nie. Eerstens is ʼn kubus en ʼn reghoekige prisma albei 3D-voorwerpe, nie 2D-vorms soos ʼn vierkant of reghoek nie. Belangriker nog, ʼn kubus is eintlik ʼn spesiale soort reghoekige prisma — dit het 6 vlakke, 12 rande en 8 hoekpunte, net soos ʼn reghoekige prisma, maar al sy vlakke is toevallig gelyke vierkante in plaas van algemene reghoeke. Hulle deel dus dieselfde vlak-, rand- en hoekpunt-getalle; die enigste verskil is dat ʼn kubus se vlakke almal identiese vierkante is.', checkMode: 'self' },
         { difficulty: 'Hard', question: "ʼn Leerder beweer: 'Elke 3D-voorwerp met ʼn apeks is ʼn piramide.' Is hierdie bewering waar? Gebruik ʼn keël as ʼn teenvoorbeeld in jou verduideliking.", answer: 'Hierdie bewering is vals. ʼn Keël het ook ʼn apeks — die punt waar sy geboë oppervlak tot ʼn punt kom — maar ʼn keël is nie ʼn piramide nie. ʼn Piramide word gemaak van plat driehoekige vlakke en reguit rande wat by die apeks ontmoet, terwyl ʼn keël ʼn geboë oppervlak het en glad geen reguit rande nie. Om ʼn apeks te hê, is dus nie genoeg om iets ʼn piramide te maak nie; die vlakke moet ook plat en driehoekig wees.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Markstalletjie sorteer vrugte in ʼn keël-gevormde papiersak en stapel blikke gevorm soos silinders daaragter. As een silinderblik 2 rande het en die keël-sak 1 rand het, hoeveel rande is daar altesaam vir 3 identiese silinderblikke en 1 keël-sak, en watter vorm dra meer rande by in totaal?', answer: 'Elke silinder het 2 rande, dus dra 3 silinders 3 × 2 = 6 rande by. Die keël-sak dra 1 rand by. Altesaam is daar 6 + 1 = 7 rande. Die silinders dra meer rande in totaal by (6 rande) vergeleke met die enkele keël (1 rand).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'ʼn Bakkery pak ʼn boks gebak wat soos ʼn driehoekige prisma gevorm is, en sit ʼn bol-gevormde lemoen bo-op vir die vertoning. Verduidelik, deur eienskappe van vlakke te gebruik, waarom die lemoen nie gebalanseerd bo-op die boks sal bly nie.', answer: 'Die driehoekige-prisma-boks het plat reghoekige en driehoekige vlakke, dus is sy bo-oppervlak plat en kan ʼn plat-vlak voorwerp ondersteun. ʼn Bol het egter glad geen plat vlakke nie — sy hele oppervlak is geboë. Sonder ʼn plat area om kontak met die boks te maak, het die ronde lemoen niks om eweredig op te rus nie, dus sal dit afrol in plaas daarvan om gebalanseerd te bly.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Bakkery pak ʼn boks gebak wat soos ʼn driehoekige prisma gevorm is, en sit ʼn sfeer-gevormde lemoen bo-op vir die vertoning. Verduidelik, deur eienskappe van vlakke te gebruik, waarom die lemoen nie gebalanseerd bo-op die boks sal bly nie.', answer: 'Die driehoekige-prisma-boks het plat reghoekige en driehoekige vlakke, dus is sy bo-oppervlak plat en kan ʼn plat-vlak voorwerp ondersteun. ʼn Sfeer het egter glad geen plat vlakke nie — sy hele oppervlak is geboë. Sonder ʼn plat area om kontak met die boks te maak, het die ronde lemoen niks om eweredig op te rus nie, dus sal dit afrol in plaas daarvan om gebalanseerd te bly.', checkMode: 'self' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue elke soort 3D-voorwerp benoem en beskryf.' },
@@ -673,7 +673,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'ʼn Drom wat in ʼn skoolorkes gebruik word, is rond, met reguit sye en twee plat sirkelvormige eindes. Noem hierdie 3D-voorwerp.', answer: 'silinder', checkMode: 'auto', correctAnswer: 'silinder', correctAnswers: ['silinder', 'ʼn silinder'], explanation: 'ʼn Drom het 2 plat sirkelvormige vlakke verbind deur 1 geboë oppervlak — dit is ʼn silinder.' },
         { difficulty: 'Easy', question: 'ʼn Towenaar se hoed het ʼn sirkelvormige rand-area en vernou tot ʼn skerp punt. Noem hierdie 3D-voorwerp.', answer: 'keël', checkMode: 'auto', correctAnswer: 'keël', correctAnswers: ['keël', 'ʼn keël', 'keel', 'ʼn keel'], explanation: 'ʼn Keël het 1 plat sirkelvormige vlak, 1 geboë oppervlak en kom tot ʼn punt by die apeks.' },
         { difficulty: 'Easy', question: 'ʼn Rubik se kubus het 6 identiese vierkantige vlakke wat kan draai. Watter 3D-voorwerp is dit?', answer: 'kubus', checkMode: 'auto', correctAnswer: 'kubus', correctAnswers: ['kubus', 'ʼn kubus'], explanation: 'ʼn Rubik se kubus het 6 identiese vierkantige vlakke, 12 rande en 8 hoekpunte — dit is ʼn kubus.' },
-        { difficulty: 'Easy', question: 'Hoeveel plat vlakke het ʼn bol?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'geen', 'geen plat vlakke nie'], explanation: 'ʼn Bol is perfek rond met slegs ʼn geboë oppervlak, dus het dit 0 plat vlakke.' },
+        { difficulty: 'Easy', question: 'Hoeveel plat vlakke het ʼn sfeer?', answer: '0', checkMode: 'auto', correctAnswer: '0', correctAnswers: ['0', 'geen', 'geen plat vlakke nie'], explanation: 'ʼn Sfeer is perfek rond met slegs ʼn geboë oppervlak, dus het dit 0 plat vlakke.' },
         { difficulty: 'Easy-Medium', question: 'Hoeveel rande het ʼn vierkantige piramide?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8'], explanation: 'ʼn Vierkantige piramide het 4 rande rondom sy vierkantige basis plus 4 rande wat opgaan na die apeks: 4 + 4 = 8 rande.' },
         { difficulty: 'Medium', question: 'Hoeveel vlakke, rande en hoekpunte het ʼn reghoekige prisma?', answer: '', checkMode: 'auto', parts: [
           { label: 'a) Vlakke', correctAnswer: '6', correctAnswers: ['6'], explanation: 'ʼn Reghoekige prisma het 6 reghoekige vlakke.' },
@@ -691,13 +691,13 @@ export const topicData: TopicData = {
           { label: 'a) Silinder', correctAnswer: '1', correctAnswers: ['1'], explanation: 'ʼn Silinder het presies 1 geboë oppervlak wat sy twee sirkelvormige vlakke verbind.' },
           { label: 'b) Keël', correctAnswer: '1', correctAnswers: ['1'], explanation: 'ʼn Keël het ook presies 1 geboë oppervlak wat skuins van sy basis na die apeks loop.' },
         ] },
-        { difficulty: 'Medium', question: 'ʼn Basketbal is gevorm soos ʼn bol. Hoeveel hoekpunte en hoeveel rande het dit?', answer: '', checkMode: 'auto', parts: [
-          { label: 'a) Hoekpunte', correctAnswer: '0', correctAnswers: ['0', 'geen'], explanation: 'ʼn Bol het geen plat vlakke of reguit rande nie, dus het dit 0 hoekpunte.' },
-          { label: 'b) Rande', correctAnswer: '0', correctAnswers: ['0', 'geen'], explanation: 'ʼn Bol het geen plat vlakke wat ontmoet nie, dus het dit 0 rande.' },
+        { difficulty: 'Medium', question: 'ʼn Basketbal is gevorm soos ʼn sfeer. Hoeveel hoekpunte en hoeveel rande het dit?', answer: '', checkMode: 'auto', parts: [
+          { label: 'a) Hoekpunte', correctAnswer: '0', correctAnswers: ['0', 'geen'], explanation: 'ʼn Sfeer het geen plat vlakke of reguit rande nie, dus het dit 0 hoekpunte.' },
+          { label: 'b) Rande', correctAnswer: '0', correctAnswers: ['0', 'geen'], explanation: 'ʼn Sfeer het geen plat vlakke wat ontmoet nie, dus het dit 0 rande.' },
         ] },
         { difficulty: 'Medium', question: 'Vergelyk ʼn keël en ʼn vierkantige piramide. Verduidelik wat hulle in gemeen het en wat hulle verskillend maak.', answer: 'Albei ʼn keël en ʼn vierkantige piramide kom tot ʼn enkele punt bo-aan genoem die apeks, en albei het presies een basis. ʼn Vierkantige piramide word egter heeltemal uit plat vlakke gemaak (1 vierkantige basis en 4 plat driehoekige sye) wat deur reguit rande verbind word, terwyl ʼn keël ʼn geboë oppervlak het wat sy 1 sirkelvormige basis met die apeks verbind, sonder enige reguit rande.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Sorteer hierdie winkelitems in kan rol en kan nie rol nie: ʼn blik (silinder), ʼn graanboks (reghoekige prisma), ʼn bal (bol), ʼn tent-vorm (driehoekige prisma).', answer: 'Kan rol: die blik (silinder) en die bal (bol), omdat albei ʼn geboë oppervlak het. Kan nie rol nie: die graanboks (reghoekige prisma) en die tent-vorm (driehoekige prisma), omdat albei slegs uit plat vlakke gemaak is.', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Markverkoper wil vrugte vertoon. Sal ʼn bol-gevormde spanspek of ʼn keël-gevormde papiersakkie makliker wees om in ʼn hoop te stapel? Verduidelik jou redenasie deur na hul vlakke te verwys.', answer: 'Die keël-gevormde papiersakkie sou effens makliker wees om neer te sit (dit het 1 plat sirkelvormige vlak om op te rus), maar dit kan steeds nie bo-op nog ʼn keël gestapel word nie omdat sy apeks ʼn enkele punt is. Die bol-gevormde spanspek het glad geen plat vlakke nie, dus kan dit nie gestapel of teen enigiets gerus word sonder om weg te rol nie. Oor die algemeen stapel geeneen goed nie, maar die keël kan ten minste regop op sy plat basis staan, terwyl die bol nie op sy eie stil kan bly nie.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie winkelitems in kan rol en kan nie rol nie: ʼn blik (silinder), ʼn graanboks (reghoekige prisma), ʼn bal (sfeer), ʼn tent-vorm (driehoekige prisma).', answer: 'Kan rol: die blik (silinder) en die bal (sfeer), omdat albei ʼn geboë oppervlak het. Kan nie rol nie: die graanboks (reghoekige prisma) en die tent-vorm (driehoekige prisma), omdat albei slegs uit plat vlakke gemaak is.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Markverkoper wil vrugte vertoon. Sal ʼn sfeer-gevormde spanspek of ʼn keël-gevormde papiersakkie makliker wees om in ʼn hoop te stapel? Verduidelik jou redenasie deur na hul vlakke te verwys.', answer: 'Die keël-gevormde papiersakkie sou effens makliker wees om neer te sit (dit het 1 plat sirkelvormige vlak om op te rus), maar dit kan steeds nie bo-op nog ʼn keël gestapel word nie omdat sy apeks ʼn enkele punt is. Die sfeer-gevormde spanspek het glad geen plat vlakke nie, dus kan dit nie gestapel of teen enigiets gerus word sonder om weg te rol nie. Oor die algemeen stapel geeneen goed nie, maar die keël kan ten minste regop op sy plat basis staan, terwyl die sfeer nie op sy eie stil kan bly nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: "Bongani beweer: 'ʼn Driehoekige prisma het meer hoekpunte as ʼn vierkantige piramide, dus moet dit ook meer vlakke hê.' Is Bongani korrek? Gebruik die werklike vlak- en hoekpuntgetalle om te verduidelik.", answer: 'Bongani is slegs half korrek. ʼn Driehoekige prisma het inderdaad meer hoekpunte (6) as ʼn vierkantige piramide (5), so die eerste deel is waar. Die tweede deel is egter vals: ʼn driehoekige prisma het 5 vlakke, en ʼn vierkantige piramide het ook 5 vlakke — hulle is gelyk, nie verskillend nie. Om meer hoekpunte te hê, beteken nie outomaties dat ʼn vorm meer vlakke het nie.', checkMode: 'self' },
         { difficulty: 'Hard', question: "ʼn Leerder sê: 'ʼn Silinder kan nie ʼn prisma wees nie, want prismas het slegs plat vlakke en ʼn silinder het ʼn geboë oppervlak.' Is hierdie stelling korrek? Verduidelik deur die definisie van ʼn prisma te gebruik.", answer: 'Hierdie stelling is korrek. ʼn Prisma is, per definisie, ʼn 3D-voorwerp met twee identiese plat basisse en plat reghoekige sy-vlakke wat deur reguit rande verbind word. ʼn Silinder het 2 plat sirkelvormige basisse, maar in plaas van plat reghoekige sye het dit 1 aaneenlopende geboë oppervlak sonder enige reguit rande wat die basisse verbind. Omdat ʼn ware prisma heeltemal uit plat vlakke moet bestaan, voldoen ʼn silinder nie aan die definisie van ʼn prisma nie, al het dit wel twee identiese plat eindes soos ʼn prisma.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Fabriek pak 2 vierkantige piramides en 1 driehoekige piramide in ʼn boks vir ʼn meetkunde-stel. Wat is die totale aantal hoekpunte in die boks, en hoeveel van daardie hoekpunte is apeks-punte?', answer: 'Elke vierkantige piramide het 5 hoekpunte, dus dra 2 vierkantige piramides 2 × 5 = 10 hoekpunte by. Die driehoekige piramide het 4 hoekpunte, wat nog 4 bydra. Altesaam is daar 10 + 4 = 14 hoekpunte in die boks. Van hierdie dra elke piramide presies 1 apeks-hoekpunt by, dus is daar 2 + 1 = 3 apeks-punte altesaam.', checkMode: 'self' },

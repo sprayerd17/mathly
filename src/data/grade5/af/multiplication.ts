@@ -200,7 +200,7 @@ export const topicData: TopicData = {
 <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
   <span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>
   <span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('vermenigvuldiger')}</span>
-  <span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('vermenigvuldigende')}</span>
+  <span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('vermenigvuldigtal')}</span>
   <span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('produk')}</span>
 </div>
 
@@ -236,7 +236,7 @@ export const topicData: TopicData = {
           steps: [
             `Die ${re('11')}-tafel het ʼn nuttige patroon vir enkelsyfergetalle (1 tot 9): die antwoord herhaal eenvoudig die <strong>syfer</strong> waarmee jy vermenigvuldig.`,
             `Ons werk ${re('11')} × ${bl('8')} uit. Omdat 8 ʼn enkelsyfer is (tussen 1 en 9), geld die patroon — die antwoord sal <strong>8 as albei syfers</strong> hê.`,
-            `${re('11')} × ${bl('8')} = ${gr('88')}<br>Die tiene-syfer is 8 en die eenhede-syfer is 8.`,
+            `${re('11')} × ${bl('8')} = ${gr('88')}<br>Die tiene-syfer is 8 en die ene-syfer is 8.`,
             `<strong>Kontroleer deur in 11e te tel:</strong> 11, 22, 33, 44, 55, 66, 77, <strong>88</strong> — dit is 8 stappe. ✓`,
           ],
         },
@@ -276,11 +276,11 @@ export const topicData: TopicData = {
       id: 'multiplying-3-digit-by-2-digit',
       title: 'Vermenigvuldig ʼn 3-Syfergetal met ʼn 2-Syfergetal',
       icon: '✖',
-      explanation: `<p style="margin-bottom:16px;">In Graad 5 vermenigvuldig ons groter getalle met die <strong>kolommetode</strong>, uitgebrei na ʼn 2-syfervermenigvuldiger. Ons werk twee afsonderlike <em>gedeeltelike produkte</em> uit — een vir die eenhede-syfer en een vir die tiene-syfer — en tel hulle dan bymekaar om die finale antwoord te kry.</p>
+      explanation: `<p style="margin-bottom:16px;">In Graad 5 vermenigvuldig ons groter getalle met die <strong>kolommetode</strong>, uitgebrei na ʼn 2-syfervermenigvuldiger. Ons werk twee afsonderlike <em>gedeeltelike produkte</em> uit — een vir die ene-syfer en een vir die tiene-syfer — en tel hulle dan bymekaar om die finale antwoord te kry.</p>
 
 <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
   <span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>
-  <span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('eenhede-syfer van vermenigvuldiger')}</span>
+  <span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('ene-syfer van vermenigvuldiger')}</span>
   <span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('tiene-syfer van vermenigvuldiger')}</span>
   <span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('skuiwe')}</span>
   <span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('gedeeltelike produkte')}</span>
@@ -292,11 +292,11 @@ export const topicData: TopicData = {
   <div style="display:flex;flex-direction:column;gap:9px;">
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="background:#1e40af;color:white;font-weight:700;font-size:12px;padding:2px 8px;border-radius:4px;flex-shrink:0;margin-top:2px;">1</span>
-      <span>Vermenigvuldig die boonste getal met die ${bl('eenhede-syfer')} van die vermenigvuldiger.</span>
+      <span>Vermenigvuldig die boonste getal met die ${bl('ene-syfer')} van die vermenigvuldiger.</span>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="background:#1e40af;color:white;font-weight:700;font-size:12px;padding:2px 8px;border-radius:4px;flex-shrink:0;margin-top:2px;">2</span>
-      <span>Skryf ʼn <strong>nul-plekhouer</strong> in die eenhede-kolom van die tweede ry — jy vermenigvuldig nou met tiene.</span>
+      <span>Skryf ʼn <strong>nul-plekhouer</strong> in die ene-kolom van die tweede ry — jy vermenigvuldig nou met tiene.</span>
     </div>
     <div style="display:flex;gap:10px;align-items:flex-start;">
       <span style="background:#1e40af;color:white;font-weight:700;font-size:12px;padding:2px 8px;border-radius:4px;flex-shrink:0;margin-top:2px;">3</span>
@@ -314,15 +314,15 @@ export const topicData: TopicData = {
           question: 'Bereken 347 × 23',
           answer: '7 981',
           steps: [
-            `Skryf die berekening in kolomme: 347 bo en × 23 onder, syfers regs belyn. Die eenhede-syfer van 23 is ${bl('3')} en die tiene-syfer is ${gr('2')}.${we4SetupTable}`,
+            `Skryf die berekening in kolomme: 347 bo en × 23 onder, syfers regs belyn. Die ene-syfer van 23 is ${bl('3')} en die tiene-syfer is ${gr('2')}.${we4SetupTable}`,
 
-            `<strong>Stap 1 — Vermenigvuldig 347 met die eenhede-syfer ${bl('3')}:</strong><br><br>
-${bl('3')} × 7 = 21 → skryf 1 in die eenhede-kolom, skuif ${or('2')} na die tiene-kolom<br>
+            `<strong>Stap 1 — Vermenigvuldig 347 met die ene-syfer ${bl('3')}:</strong><br><br>
+${bl('3')} × 7 = 21 → skryf 1 in die ene-kolom, skuif ${or('2')} na die tiene-kolom<br>
 ${bl('3')} × 4 = 12, tel skuif ${or('2')} by = 14 → skryf 4 in die tiene-kolom, skuif ${or('1')} na die honderde-kolom<br>
 ${bl('3')} × 3 = 9, tel skuif ${or('1')} by = 10 → skryf 0 in die honderde-kolom, skuif ${or('1')} na die duisende-kolom<br><br>
 Eerste ${re('gedeeltelike produk')}: ${re('1 041')}`,
 
-            `<strong>Stap 2 — Skryf die nul-plekhouer:</strong> Omdat ons nou met die tiene-syfer vermenigvuldig (wat 20 verteenwoordig, nie 2 nie), skryf ons ʼn ${bl('0')} in die eenhede-kolom van die tweede ry om alles een plek na links te skuif.<br><br>
+            `<strong>Stap 2 — Skryf die nul-plekhouer:</strong> Omdat ons nou met die tiene-syfer vermenigvuldig (wat 20 verteenwoordig, nie 2 nie), skryf ons ʼn ${bl('0')} in die ene-kolom van die tweede ry om alles een plek na links te skuif.<br><br>
 <strong>Stap 3 — Vermenigvuldig 347 met die tiene-syfer ${gr('2')}:</strong><br><br>
 ${gr('2')} × 7 = 14 → skryf 4 in die tiene-kolom, skuif ${or('1')} na die honderde-kolom<br>
 ${gr('2')} × 4 = 8, tel skuif ${or('1')} by = 9 → skryf 9 in die honderde-kolom<br>
@@ -338,15 +338,15 @@ Dus is 347 × 23 = ${pu('7 981')}${we4FullTable}`,
           question: 'Bereken 256 × 34',
           answer: '8 704',
           steps: [
-            `Skryf die berekening in kolomme: 256 bo en × 34 onder. Die eenhede-syfer van 34 is ${bl('4')} en die tiene-syfer is ${gr('3')}.`,
+            `Skryf die berekening in kolomme: 256 bo en × 34 onder. Die ene-syfer van 34 is ${bl('4')} en die tiene-syfer is ${gr('3')}.`,
 
-            `<strong>Stap 1 — Vermenigvuldig 256 met die eenhede-syfer ${bl('4')}:</strong><br><br>
-${bl('4')} × 6 = 24 → skryf 4 in die eenhede-kolom, skuif ${or('2')} na die tiene-kolom<br>
+            `<strong>Stap 1 — Vermenigvuldig 256 met die ene-syfer ${bl('4')}:</strong><br><br>
+${bl('4')} × 6 = 24 → skryf 4 in die ene-kolom, skuif ${or('2')} na die tiene-kolom<br>
 ${bl('4')} × 5 = 20, tel skuif ${or('2')} by = 22 → skryf 2 in die tiene-kolom, skuif ${or('2')} na die honderde-kolom<br>
 ${bl('4')} × 2 = 8, tel skuif ${or('2')} by = 10 → skryf 0 in die honderde-kolom, skuif ${or('1')} na die duisende-kolom<br><br>
 Eerste ${re('gedeeltelike produk')}: ${re('1 024')}`,
 
-            `<strong>Stap 2 — Skryf die nul-plekhouer</strong> in die eenhede-kolom van die tweede ry.<br><br>
+            `<strong>Stap 2 — Skryf die nul-plekhouer</strong> in die ene-kolom van die tweede ry.<br><br>
 <strong>Stap 3 — Vermenigvuldig 256 met die tiene-syfer ${gr('3')}:</strong><br><br>
 ${gr('3')} × 6 = 18 → skryf 8 in die tiene-kolom, skuif ${or('1')} na die honderde-kolom<br>
 ${gr('3')} × 5 = 15, tel skuif ${or('1')} by = 16 → skryf 6 in die honderde-kolom, skuif ${or('1')} na die duisende-kolom<br>
@@ -478,8 +478,8 @@ Dus is 256 × 34 = ${pu('8 704')}${we5FullTable}`,
           answer: 'Skatting 4 000, presiese antwoord 3 901',
           steps: [
             `<strong>Stap 1 — Rond die getalle af:</strong><br>
-Rond 47 af na die naaste 10: ${or('50')} (eenhede-syfer is 7 — 5 of meer, dus rond op)<br>
-Rond 83 af na die naaste 10: ${or('80')} (eenhede-syfer is 3 — minder as 5, dus rond af)`,
+Rond 47 af na die naaste 10: ${or('50')} (ene-syfer is 7 — 5 of meer, dus rond op)<br>
+Rond 83 af na die naaste 10: ${or('80')} (ene-syfer is 3 — minder as 5, dus rond af)`,
 
             `<strong>Stap 2 — Skatting:</strong><br>
 ${or('50')} × ${or('80')} = ${gr('4 000')}<br>
@@ -499,7 +499,7 @@ Die antwoord is <strong>redelik</strong>.`,
           steps: [
             `<strong>Stap 1 — Rond die getalle af:</strong><br>
 Rond 312 af na die naaste 100: ${or('300')} (tiene-syfer is 1 — minder as 5, dus rond af)<br>
-Rond 28 af na die naaste 10: ${or('30')} (eenhede-syfer is 8 — 5 of meer, dus rond op)`,
+Rond 28 af na die naaste 10: ${or('30')} (ene-syfer is 8 — 5 of meer, dus rond op)`,
 
             `<strong>Stap 2 — Skatting:</strong><br>
 ${or('300')} × ${or('30')} = ${gr('9 000')}<br>
@@ -631,8 +631,8 @@ Daar is <strong>3 600 sjokolade</strong> altesaam.`,
         { difficulty: 'Medium', question: 'Watter is groter: 12 × 9 of 11 × 10? Wys die waarde van elkeen.', answer: '12 × 9 = 108, wat kleiner is as 11 × 10 = 110, dus is 11 × 10 groter.', checkMode: 'auto', correctAnswer: '11x10', correctAnswers: ['11x10', '11 x 10', '11×10', 'die tweede een', '11 x 10 is groter'], explanation: '12 × 9 = 108 (opbreekmetode: 10 × 9 = 90, 2 × 9 = 18, 90 + 18 = 108). 11 × 10 = 110. Aangesien 110 > 108, is 11 × 10 groter.' },
         { difficulty: 'Medium', question: 'Bereken met die kolommetode: 342 × 3', answer: '1 026', checkMode: 'auto', correctAnswer: '1026', correctAnswers: ['1026', '1 026'], explanation: '3 × 2 = 6. 3 × 4 = 12 → skryf 2, skuif 1. 3 × 3 = 9 + 1 = 10 → skryf 0, skuif 1 na die duisende. 342 × 3 = 1 026.' },
         { difficulty: 'Medium', question: 'ʼn Krat bevat 213 appels. Hoeveel appels is daar in 4 kratte? Gebruik die kolommetode.', answer: '852', checkMode: 'auto', correctAnswer: '852', correctAnswers: ['852'], explanation: '4 × 3 = 12 → skryf 2, skuif 1. 4 × 1 = 4 + 1 = 5. 4 × 2 = 8. 213 × 4 = 852 appels.' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 245 × 18', answer: '4 410', checkMode: 'auto', correctAnswer: '4410', correctAnswers: ['4410', '4 410'], explanation: 'Stap 1 — 245 × 8 (eenhede): 8×5=40 skryf 0 skuif 4; 8×4=32+4=36 skryf 6 skuif 3; 8×2=16+3=19. Gedeeltelike produk 1: 1 960.\nStap 2 — 245 × 1 (tiene, 0-plekhouer): 1×5=5; 1×4=4; 1×2=2. Gedeeltelike produk 2: 2 450.\nTel bymekaar: 1 960 + 2 450 = 4 410.' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 412 × 26', answer: '10 712', checkMode: 'auto', correctAnswer: '10712', correctAnswers: ['10712', '10 712'], explanation: 'Stap 1 — 412 × 6 (eenhede): 6×2=12 skryf 2 skuif 1; 6×1=6+1=7; 6×4=24. Gedeeltelike produk 1: 2 472.\nStap 2 — 412 × 2 (tiene, 0-plekhouer): 2×2=4; 2×1=2; 2×4=8. Gedeeltelike produk 2: 8 240.\nTel bymekaar: 2 472 + 8 240 = 10 712.' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 245 × 18', answer: '4 410', checkMode: 'auto', correctAnswer: '4410', correctAnswers: ['4410', '4 410'], explanation: 'Stap 1 — 245 × 8 (ene): 8×5=40 skryf 0 skuif 4; 8×4=32+4=36 skryf 6 skuif 3; 8×2=16+3=19. Gedeeltelike produk 1: 1 960.\nStap 2 — 245 × 1 (tiene, 0-plekhouer): 1×5=5; 1×4=4; 1×2=2. Gedeeltelike produk 2: 2 450.\nTel bymekaar: 1 960 + 2 450 = 4 410.' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 412 × 26', answer: '10 712', checkMode: 'auto', correctAnswer: '10712', correctAnswers: ['10712', '10 712'], explanation: 'Stap 1 — 412 × 6 (ene): 6×2=12 skryf 2 skuif 1; 6×1=6+1=7; 6×4=24. Gedeeltelike produk 1: 2 472.\nStap 2 — 412 × 2 (tiene, 0-plekhouer): 2×2=4; 2×1=2; 2×4=8. Gedeeltelike produk 2: 8 240.\nTel bymekaar: 2 472 + 8 240 = 10 712.' },
         { difficulty: 'Medium', question: 'ʼn Leerder het 356 × 27 so uitgewerk: Gedeeltelike produk 1 (356 × 7) = 2 492. Gedeeltelike produk 2 (356 × 2, met plekhouer) = 7 120. Totaal = 9 612. Kontroleer hierdie leerder se werk — is dit korrek? Gee die korrekte totaal.', answer: '9 612', checkMode: 'auto', correctAnswer: '9612', correctAnswers: ['9612', '9 612'], explanation: 'Kontroleer 356 × 7: 7×6=42 skryf 2 skuif 4; 7×5=35+4=39 skryf 9 skuif 3; 7×3=21+3=24. Gedeeltelike produk 1 is 2 492 (korrek). Kontroleer 356 × 20: 356 × 2 = 712, dus met die plekhouer is dit 7 120 (ook korrek). Tel bymekaar: 2 492 + 7 120 = 9 612 — die gegewe totaal was reeds korrek.' },
         { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 7 × 64 te bereken. Wys hoe jy 64 opgebreek het.', answer: '448', checkMode: 'auto', correctAnswer: '448', correctAnswers: ['448'], explanation: 'Breek 64 = 60 + 4 op. 7 × 60 = 420. 7 × 4 = 28. 420 + 28 = 448.' },
         { difficulty: 'Medium', question: 'Voltooi hierdie distributiewe opbreking: 6 × 137 = (6 × 100) + (6 × ___) = 600 + ___ = ___', answer: '37; 222; 822', checkMode: 'auto', correctAnswer: '37222822', correctAnswers: ['37222822', '37, 222, 822'], explanation: '137 = 100 + 37. 6 × 100 = 600. 6 × 37 = 222. 600 + 222 = 822.' },
@@ -666,8 +666,8 @@ Daar is <strong>3 600 sjokolade</strong> altesaam.`,
         { difficulty: 'Medium', question: 'Watter is kleiner: 11 × 12 of 12 × 11? Verduidelik jou antwoord.', answer: 'Hulle is gelyk — albei is gelyk aan 132.', checkMode: 'auto', correctAnswer: 'gelyk', correctAnswers: ['gelyk', 'geeneen', 'hulle is gelyk', 'dieselfde'], explanation: '11 × 12 = 132 en 12 × 11 = 132. Vermenigvuldiging is kommutatief — die volgorde van die faktore verander nie die produk nie — dus is geeneen kleiner nie; hulle is gelyk.' },
         { difficulty: 'Medium', question: 'Bereken met die kolommetode: 156 × 5', answer: '780', checkMode: 'auto', correctAnswer: '780', correctAnswers: ['780'], explanation: '5 × 6 = 30 → skryf 0, skuif 3. 5 × 5 = 25 + 3 = 28 → skryf 8, skuif 2. 5 × 1 = 5 + 2 = 7. 156 × 5 = 780.' },
         { difficulty: 'Medium', question: 'ʼn Rak bevat 216 boeke. ʼn Biblioteek het 3 identiese rakke. Hoeveel boeke kan dit altesaam bevat? Gebruik die kolommetode.', answer: '648', checkMode: 'auto', correctAnswer: '648', correctAnswers: ['648'], explanation: '3 × 6 = 18 → skryf 8, skuif 1. 3 × 1 = 3 + 1 = 4. 3 × 2 = 6. 216 × 3 = 648 boeke.' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 129 × 34', answer: '4 386', checkMode: 'auto', correctAnswer: '4386', correctAnswers: ['4386', '4 386'], explanation: 'Stap 1 — 129 × 4 (eenhede): 4×9=36 skryf 6 skuif 3; 4×2=8+3=11 skryf 1 skuif 1; 4×1=4+1=5. Gedeeltelike produk 1: 516.\nStap 2 — 129 × 3 (tiene, 0-plekhouer): 3×9=27 skryf 7 skuif 2; 3×2=6+2=8; 3×1=3. Gedeeltelike produk 2: 3 870.\nTel bymekaar: 516 + 3 870 = 4 386.' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 218 × 45', answer: '9 810', checkMode: 'auto', correctAnswer: '9810', correctAnswers: ['9810', '9 810'], explanation: 'Stap 1 — 218 × 5 (eenhede): 5×8=40 skryf 0 skuif 4; 5×1=5+4=9; 5×2=10 skryf 0 skuif 1 → duisende 1. Gedeeltelike produk 1: 1 090.\nStap 2 — 218 × 4 (tiene, 0-plekhouer): 4×8=32 skryf 2 skuif 3; 4×1=4+3=7; 4×2=8. Gedeeltelike produk 2: 8 720.\nTel bymekaar: 1 090 + 8 720 = 9 810.' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 129 × 34', answer: '4 386', checkMode: 'auto', correctAnswer: '4386', correctAnswers: ['4386', '4 386'], explanation: 'Stap 1 — 129 × 4 (ene): 4×9=36 skryf 6 skuif 3; 4×2=8+3=11 skryf 1 skuif 1; 4×1=4+1=5. Gedeeltelike produk 1: 516.\nStap 2 — 129 × 3 (tiene, 0-plekhouer): 3×9=27 skryf 7 skuif 2; 3×2=6+2=8; 3×1=3. Gedeeltelike produk 2: 3 870.\nTel bymekaar: 516 + 3 870 = 4 386.' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 218 × 45', answer: '9 810', checkMode: 'auto', correctAnswer: '9810', correctAnswers: ['9810', '9 810'], explanation: 'Stap 1 — 218 × 5 (ene): 5×8=40 skryf 0 skuif 4; 5×1=5+4=9; 5×2=10 skryf 0 skuif 1 → duisende 1. Gedeeltelike produk 1: 1 090.\nStap 2 — 218 × 4 (tiene, 0-plekhouer): 4×8=32 skryf 2 skuif 3; 4×1=4+3=7; 4×2=8. Gedeeltelike produk 2: 8 720.\nTel bymekaar: 1 090 + 8 720 = 9 810.' },
         { difficulty: 'Medium', question: 'ʼn Leerder het 127 × 36 so uitgewerk: Gedeeltelike produk 1 (127 × 6) = 762. Gedeeltelike produk 2 (127 × 3, met plekhouer) = 3 180. Totaal = 3 942. Kontroleer albei gedeeltelike produkte en gee die korrekte totaal.', answer: '4 572', checkMode: 'auto', correctAnswer: '4572', correctAnswers: ['4572', '4 572'], explanation: 'Kontroleer 127 × 6: 6×7=42 skryf 2 skuif 4; 6×2=12+4=16 skryf 6 skuif 1; 6×1=6+1=7. Gedeeltelike produk 1 is 762 (korrek). Kontroleer 127 × 30: 127 × 3 = 381, dus met die plekhouer is dit 3 810, nie 3 180 nie — die leerder het hier ʼn fout gemaak. Korrekte totaal: 762 + 3 810 = 4 572.' },
         { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 8 × 246 te bereken. Wys hoe jy 246 opgebreek het.', answer: '1 968', checkMode: 'auto', correctAnswer: '1968', correctAnswers: ['1968', '1 968'], explanation: 'Breek 246 = 200 + 46 op (of 200 + 40 + 6). 8 × 200 = 1 600. 8 × 46 = 368. 1 600 + 368 = 1 968.' },
         { difficulty: 'Medium', question: 'Voltooi hierdie distributiewe opbreking: 9 × 53 = (9 × 50) + (9 × ___) = 450 + ___ = ___', answer: '3; 27; 477', checkMode: 'auto', correctAnswer: '327477', correctAnswers: ['327477', '3, 27, 477'], explanation: '53 = 50 + 3. 9 × 50 = 450. 9 × 3 = 27. 450 + 27 = 477.' },
@@ -701,9 +701,9 @@ Daar is <strong>3 600 sjokolade</strong> altesaam.`,
         { difficulty: 'Medium', question: 'Vergelyk 12 × 6 en 11 × 7. Watter produk is groter, en met hoeveel?', answer: '11 × 7 = 77 is groter as 12 × 6 = 72, met 5.', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '11x7', '11 x 7 met 5'], explanation: '12 × 6 = 72 (opbreekmetode: 10×6=60, 2×6=12, 60+12=72). 11 × 7 = 77. Verskil: 77 − 72 = 5. 11 × 7 is 5 groter.' },
         { difficulty: 'Medium', question: 'Bereken met die kolommetode: 523 × 2', answer: '1 046', checkMode: 'auto', correctAnswer: '1046', correctAnswers: ['1046', '1 046'], explanation: '2 × 3 = 6. 2 × 2 = 4. 2 × 5 = 10 → skryf 0, skuif 1 na die duisende. 523 × 2 = 1 046.' },
         { difficulty: 'Medium', question: 'ʼn Tuin het 6 blombeddings, en elke bedding het 214 blomme. Hoeveel blomme is daar altesaam? Gebruik die kolommetode.', answer: '1 284', checkMode: 'auto', correctAnswer: '1284', correctAnswers: ['1284', '1 284'], explanation: '6 × 4 = 24 → skryf 4, skuif 2. 6 × 1 = 6 + 2 = 8. 6 × 2 = 12 → skryf 2, skuif 1 na die duisende. 214 × 6 = 1 284 blomme.' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 319 × 24', answer: '7 656', checkMode: 'auto', correctAnswer: '7656', correctAnswers: ['7656', '7 656'], explanation: 'Stap 1 — 319 × 4 (eenhede): 4×9=36 skryf 6 skuif 3; 4×1=4+3=7; 4×3=12. Gedeeltelike produk 1: 1 276.\nStap 2 — 319 × 2 (tiene, 0-plekhouer): 2×9=18 skryf 8 skuif 1; 2×1=2+1=3; 2×3=6. Gedeeltelike produk 2: 6 380.\nTel bymekaar: 1 276 + 6 380 = 7 656.' },
-        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 418 × 23', answer: '9 614', checkMode: 'auto', correctAnswer: '9614', correctAnswers: ['9614', '9 614'], explanation: 'Stap 1 — 418 × 3 (eenhede): 3×8=24 skryf 4 skuif 2; 3×1=3+2=5; 3×4=12. Gedeeltelike produk 1: 1 254.\nStap 2 — 418 × 2 (tiene, 0-plekhouer): 2×8=16 skryf 6 skuif 1; 2×1=2+1=3; 2×4=8. Gedeeltelike produk 2: 8 360.\nTel bymekaar: 1 254 + 8 360 = 9 614.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder het 134 × 22 so uitgewerk: Gedeeltelike produk 1 (134 × 2) = 268. Gedeeltelike produk 2 (134 × 2, met plekhouer) = 2 680. Totaal = 2 948. Kontroleer die werk en gee die korrekte totaal.', answer: '2 948', checkMode: 'auto', correctAnswer: '2948', correctAnswers: ['2948', '2 948'], explanation: 'Kontroleer 134 × 2 (eenhede): 2×4=8; 2×3=6; 2×1=2. Gedeeltelike produk 1 is 268 (korrek). Kontroleer 134 × 20 (tiene, plekhouer): 134 × 2 = 268, dus met die plekhouer is dit 2 680 (korrek). Tel bymekaar: 268 + 2 680 = 2 948 — die leerder se totaal was reeds korrek.' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 319 × 24', answer: '7 656', checkMode: 'auto', correctAnswer: '7656', correctAnswers: ['7656', '7 656'], explanation: 'Stap 1 — 319 × 4 (ene): 4×9=36 skryf 6 skuif 3; 4×1=4+3=7; 4×3=12. Gedeeltelike produk 1: 1 276.\nStap 2 — 319 × 2 (tiene, 0-plekhouer): 2×9=18 skryf 8 skuif 1; 2×1=2+1=3; 2×3=6. Gedeeltelike produk 2: 6 380.\nTel bymekaar: 1 276 + 6 380 = 7 656.' },
+        { difficulty: 'Medium', question: 'Bereken met die kolommetode en wys albei gedeeltelike produkte: 418 × 23', answer: '9 614', checkMode: 'auto', correctAnswer: '9614', correctAnswers: ['9614', '9 614'], explanation: 'Stap 1 — 418 × 3 (ene): 3×8=24 skryf 4 skuif 2; 3×1=3+2=5; 3×4=12. Gedeeltelike produk 1: 1 254.\nStap 2 — 418 × 2 (tiene, 0-plekhouer): 2×8=16 skryf 6 skuif 1; 2×1=2+1=3; 2×4=8. Gedeeltelike produk 2: 8 360.\nTel bymekaar: 1 254 + 8 360 = 9 614.' },
+        { difficulty: 'Medium', question: 'ʼn Leerder het 134 × 22 so uitgewerk: Gedeeltelike produk 1 (134 × 2) = 268. Gedeeltelike produk 2 (134 × 2, met plekhouer) = 2 680. Totaal = 2 948. Kontroleer die werk en gee die korrekte totaal.', answer: '2 948', checkMode: 'auto', correctAnswer: '2948', correctAnswers: ['2948', '2 948'], explanation: 'Kontroleer 134 × 2 (ene): 2×4=8; 2×3=6; 2×1=2. Gedeeltelike produk 1 is 268 (korrek). Kontroleer 134 × 20 (tiene, plekhouer): 134 × 2 = 268, dus met die plekhouer is dit 2 680 (korrek). Tel bymekaar: 268 + 2 680 = 2 948 — die leerder se totaal was reeds korrek.' },
         { difficulty: 'Medium', question: 'Gebruik die distributiewe eienskap om 5 × 218 te bereken. Wys hoe jy 218 opgebreek het.', answer: '1 090', checkMode: 'auto', correctAnswer: '1090', correctAnswers: ['1090', '1 090'], explanation: 'Breek 218 = 200 + 18 op (of 200 + 10 + 8). 5 × 200 = 1 000. 5 × 18 = 90. 1 000 + 90 = 1 090.' },
         { difficulty: 'Medium', question: 'Voltooi hierdie distributiewe opbreking: 7 × 143 = (7 × 100) + (7 × ___) = 700 + ___ = ___', answer: '43; 301; 1 001', checkMode: 'auto', correctAnswer: '433011001', correctAnswers: ['433011001', '43, 301, 1001', '43, 301, 1 001'], explanation: '143 = 100 + 43. 7 × 100 = 700. 7 × 43 = 301. 700 + 301 = 1 001.' },
         { difficulty: 'Medium', question: 'Om 27 × 9 te bereken, is dit makliker om dit te sien as 9 × (20 + 7) of as (30 − 3) × 9? Verduidelik watter benadering jy vinniger vind en waarom.', answer: 'Om 9 × (20 + 7) te gebruik is die standaard distributiewe benadering: 9 × 20 = 180 en 9 × 7 = 63, wat 180 + 63 = 243 gee. Om (30 − 3) × 9 te gebruik is ʼn slim alternatief: 9 × 30 = 270 en 9 × 3 = 27, wat 270 − 27 = 243 gee. Albei gee dieselfde korrekte antwoord van 243. Die "rond op en trek af"-metode kan vinniger wees sodra jy gemaklik daarmee is, want om met 30 te vermenigvuldig is dikwels makliker as om met 20 en 7 apart te vermenigvuldig — maar vir die meeste leerders wat nog vlotheid opbou, is dit betroubaarder om in (20 + 7) op te breek, want dit vermy die ekstra stap van aftrekking.', checkMode: 'self' },
@@ -818,7 +818,7 @@ Daar is <strong>3 600 sjokolade</strong> altesaam.`,
       correctAnswer: '2808',
       explanation:
         '234 × 12 = 2 808\n\n' +
-        'Stap 1 — 234 × 2 (eenhede-syfer, geen skuiwe):\n' +
+        'Stap 1 — 234 × 2 (ene-syfer, geen skuiwe):\n' +
         '• 2 × 4 = 8\n' +
         '• 2 × 3 = 6\n' +
         '• 2 × 2 = 4\n' +
@@ -843,7 +843,7 @@ Daar is <strong>3 600 sjokolade</strong> altesaam.`,
           correctAnswer: '8328',
           explanation:
             '347 × 24 = 8 328\n\n' +
-            'Stap 1 — 347 × 4 (eenhede-syfer):\n' +
+            'Stap 1 — 347 × 4 (ene-syfer):\n' +
             '• 4 × 7 = 28 → skryf 8, skuif 2\n' +
             '• 4 × 4 = 16 + 2 = 18 → skryf 8, skuif 1\n' +
             '• 4 × 3 = 12 + 1 = 13\n' +
@@ -861,7 +861,7 @@ Daar is <strong>3 600 sjokolade</strong> altesaam.`,
           correctAnswer: '8448',
           explanation:
             '256 × 33 = 8 448\n\n' +
-            'Stap 1 — 256 × 3 (eenhede-syfer):\n' +
+            'Stap 1 — 256 × 3 (ene-syfer):\n' +
             '• 3 × 6 = 18 → skryf 8, skuif 1\n' +
             '• 3 × 5 = 15 + 1 = 16 → skryf 6, skuif 1\n' +
             '• 3 × 2 = 6 + 1 = 7\n' +
@@ -902,7 +902,7 @@ Daar is <strong>3 600 sjokolade</strong> altesaam.`,
           correctAnswer: '4712',
           explanation:
             '124 × 38 = 4 712\n\n' +
-            'Stap 1 — 124 × 8 (eenhede-syfer):\n' +
+            'Stap 1 — 124 × 8 (ene-syfer):\n' +
             '• 8 × 4 = 32 → skryf 2, skuif 3\n' +
             '• 8 × 2 = 16 + 3 = 19 → skryf 9, skuif 1\n' +
             '• 8 × 1 = 8 + 1 = 9\n' +

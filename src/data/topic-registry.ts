@@ -382,8 +382,8 @@ const grade5Topics: Topic[] = [
     slug: 'capacity-and-volume',
     name: 'Capacity and Volume',
     description: 'Measure and convert between ml and l, calculate volume using unit cubes and formulas, read measuring instruments and solve capacity and volume problems.',
-    nameAf: 'Inhoud en Volume',
-    descriptionAf: 'Meet en skakel om tussen ml en l, bereken volume met eenheidskubusse en formules, lees meetinstrumente, en los inhoud- en volumeprobleme op.',
+    nameAf: 'Kapasiteit en Volume',
+    descriptionAf: 'Meet en skakel om tussen ml en l, bereken volume met eenheidskubusse en formules, lees meetinstrumente, en los kapasiteit- en volumeprobleme op.',
     free: false,
   },
   {
@@ -609,8 +609,8 @@ const grade6Topics: Topic[] = [
     slug: 'capacity-and-volume',
     name: 'Capacity and Volume',
     description: 'Convert between ml, l and kl using multi-step conversions and mixed units, relate capacity to volume using the fact that 1 cm³ = 1 ml, and solve real-world capacity problems.',
-    nameAf: 'Inhoud en Volume',
-    descriptionAf: 'Skakel om tussen ml, l en kl met meerstap-omskakelings en gemengde eenhede, verbind inhoud met volume deur die feit dat 1 cm³ = 1 ml te gebruik, en los werklike-wêreld inhoudprobleme op.',
+    nameAf: 'Kapasiteit en Volume',
+    descriptionAf: 'Skakel om tussen ml, l en kl met meerstap-omskakelings en gemengde eenhede, verbind kapasiteit met volume deur die feit dat 1 cm³ = 1 ml te gebruik, en los werklike-wêreld kapasiteitprobleme op.',
     free: false,
   },
   {

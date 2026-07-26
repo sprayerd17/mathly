@@ -11,7 +11,7 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 
 export const topicData: TopicData = {
-  title: 'Inhoud en Volume',
+  title: 'Kapasiteit en Volume',
   grade: 5,
   sections: [
     // ─────────────────────────────────────────────────────────────────────────
@@ -19,15 +19,15 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'understanding-capacity-and-volume',
-      title: 'Inhoud en Volume Verstaan',
+      title: 'Kapasiteit en Volume Verstaan',
       icon: '💧',
       explanation:
-        `<p style="margin-bottom:16px;">${bl('Inhoud')} is die hoeveelheid vloeistof wat ʼn houer kan hou wanneer dit vol is. ${gr('Volume')} is die hoeveelheid vloeistof wat werklik in die houer is. Byvoorbeeld, ʼn bottel kan ʼn ${bl('inhoud')} van 2 ${re('liter')} hê maar slegs 1 ${re('liter')} water bevat — die ${bl('inhoud')} is 2 ${re('liter')} en die ${gr('volume')} is 1 ${re('liter')}. Ons meet ${bl('inhoud')} en ${gr('volume')} in ${or('milliliter')} (${or('ml')}) en ${re('liter')} (${re('l')}). 1 000 ${or('ml')} = 1 ${re('liter')}. ${or('Milliliter')} word gebruik vir kleiner hoeveelhede soos ʼn teelepel medisyne. ${re('Liter')} word gebruik vir groter hoeveelhede soos ʼn bottel vrugtesap.</p>` +
+        `<p style="margin-bottom:16px;">${bl('Kapasiteit')} is die hoeveelheid vloeistof wat ʼn houer kan hou wanneer dit vol is. ${gr('Volume')} is die hoeveelheid vloeistof wat werklik in die houer is. Byvoorbeeld, ʼn bottel kan ʼn ${bl('kapasiteit')} van 2 ${re('liter')} hê maar slegs 1 ${re('liter')} water bevat — die ${bl('kapasiteit')} is 2 ${re('liter')} en die ${gr('volume')} is 1 ${re('liter')}. Ons meet ${bl('kapasiteit')} en ${gr('volume')} in ${or('milliliter')} (${or('ml')}) en ${re('liter')} (${re('l')}). 1 000 ${or('ml')} = 1 ${re('liter')}. ${or('Milliliter')} word gebruik vir kleiner hoeveelhede soos ʼn teelepel medisyne. ${re('Liter')} word gebruik vir groter hoeveelhede soos ʼn bottel vrugtesap.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
-        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('inhoud')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('kapasiteit')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('volume')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('ml')}</span>` +
         `<span style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:3px 10px;font-size:13px;">${re('liter')}</span>` +
@@ -38,7 +38,7 @@ export const topicData: TopicData = {
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Inhoud</p>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Kapasiteit</p>` +
         `<p style="color:#374151;font-size:14px;margin:0;">Die maksimum hoeveelheid vloeistof wat ʼn houer kan hou wanneer dit heeltemal vol is.</p>` +
         `</div>` +
 
@@ -76,17 +76,17 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Onthou die verskil</p>` +
-        `<p style="margin:0;color:#1e3a8a;">${bl('Inhoud')} is die houer se <strong>maksimum</strong> — dit bly dieselfde. ${gr('Volume')} is wat <strong>werklik binne-in</strong> is — dit kan verander. ʼn Emmer kan ʼn ${bl('inhoud')} van 10 ${re('liter')} hê maar ʼn ${gr('volume')} van slegs 6 ${re('liter')} as dit nie vol is nie.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">${bl('Kapasiteit')} is die houer se <strong>maksimum</strong> — dit bly dieselfde. ${gr('Volume')} is wat <strong>werklik binne-in</strong> is — dit kan verander. ʼn Emmer kan ʼn ${bl('kapasiteit')} van 10 ${re('liter')} hê maar ʼn ${gr('volume')} van slegs 6 ${re('liter')} as dit nie vol is nie.</p>` +
         `</div>`,
 
       workedExamples: [
         {
-          question: 'ʼn Emmer kan 10 liter hou wanneer dit vol is. Sipho vul dit met 6 liter water. Wat is die inhoud en wat is die volume?',
-          answer: `${bl('Inhoud')} = 10 ${re('l')}, ${gr('Volume')} = 6 ${re('l')}`,
+          question: 'ʼn Emmer kan 10 liter hou wanneer dit vol is. Sipho vul dit met 6 liter water. Wat is die kapasiteit en wat is die volume?',
+          answer: `${bl('Kapasiteit')} = 10 ${re('l')}, ${gr('Volume')} = 6 ${re('l')}`,
           steps: [
-            `Die ${bl('inhoud')} is hoeveel die emmer kan hou wanneer dit vol is — ${re('10 liter')}. Dit is die maksimum hoeveelheid wat die houer kan hou.`,
+            `Die ${bl('kapasiteit')} is hoeveel die emmer kan hou wanneer dit vol is — ${re('10 liter')}. Dit is die maksimum hoeveelheid wat die houer kan hou.`,
             `Die ${gr('volume')} is hoeveel water werklik daarin is — ${re('6 liter')}. Dit is die hoeveelheid wat tans binne-in is.`,
-            `<strong>Antwoord:</strong> ${bl('Inhoud')} = ${re('10 l')}, ${gr('Volume')} = ${re('6 l')} ✓`,
+            `<strong>Antwoord:</strong> ${bl('Kapasiteit')} = ${re('10 l')}, ${gr('Volume')} = ${re('6 l')} ✓`,
           ],
         },
         {
@@ -106,9 +106,9 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        'ʼn Houer met sy volle inhoud geëtiketteer in blou en die huidige volume vloeistof binne-in geëtiketteer in groen, met die omskakeling 1 000 ml = 1 liter getoon',
+        'ʼn Houer met sy volle kapasiteit geëtiketteer in blou en die huidige volume vloeistof binne-in geëtiketteer in groen, met die omskakeling 1 000 ml = 1 liter getoon',
       diagramSvg:
-        '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="30" width="80" height="120" rx="4" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="62" y="90" width="76" height="58" fill="#16a34a" fill-opacity="0.18"/><line x1="60" y1="30" x2="140" y2="30" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,3"/><line x1="60" y1="90" x2="140" y2="90" stroke="#16a34a" stroke-width="2"/><text x="160" y="34" font-size="12" font-weight="700" fill="#2563eb" text-anchor="start">Inhoud</text><text x="160" y="48" font-size="12" font-weight="700" fill="#2563eb" text-anchor="start">= 2 l</text><text x="160" y="94" font-size="12" font-weight="700" fill="#16a34a" text-anchor="start">Volume</text><text x="160" y="108" font-size="12" font-weight="700" fill="#16a34a" text-anchor="start">= 1 l</text><text x="100" y="170" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">1 000 ml = 1 l</text></svg>',
+        '<svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="30" width="80" height="120" rx="4" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><rect x="62" y="90" width="76" height="58" fill="#16a34a" fill-opacity="0.18"/><line x1="60" y1="30" x2="140" y2="30" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,3"/><line x1="60" y1="90" x2="140" y2="90" stroke="#16a34a" stroke-width="2"/><text x="160" y="34" font-size="12" font-weight="700" fill="#2563eb" text-anchor="start">Kapasiteit</text><text x="160" y="48" font-size="12" font-weight="700" fill="#2563eb" text-anchor="start">= 2 l</text><text x="160" y="94" font-size="12" font-weight="700" fill="#16a34a" text-anchor="start">Volume</text><text x="160" y="108" font-size="12" font-weight="700" fill="#16a34a" text-anchor="start">= 1 l</text><text x="100" y="170" font-size="12" font-weight="700" fill="#0f1f3d" text-anchor="middle">1 000 ml = 1 l</text></svg>',
 
       videoPlaceholder:
         'Kort video wat die verskil tussen kapasiteit en volume verduidelik en hoe om milliliter en liter vir verskillende hoeveelhede vloeistof te gebruik',
@@ -290,7 +290,7 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'calculating-with-capacity-and-volume',
-      title: 'Bereken met Inhoud en Volume',
+      title: 'Bereken met Kapasiteit en Volume',
       icon: '🧮',
       explanation:
         `<p style="margin-bottom:16px;">Ons kan volumes ${gr('optel')} en ${re('aftrek')} om probleme op te los. Maak altyd seker dat alle metings in <strong>dieselfde eenheid</strong> is voordat jy bereken. As die eenhede verskillend is, ${bl('skakel')} eers om, en bereken dan. Skryf ná berekening altyd die korrekte eenheid langs jou ${or('antwoord')}.</p>` +
@@ -305,7 +305,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         // ── Rules ────────────────────────────────────────────────────────────
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Reëls vir berekening met inhoud en volume</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Reëls vir berekening met kapasiteit en volume</p>` +
         `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
@@ -376,8 +376,8 @@ export const topicData: TopicData = {
     // ── Q1 Easy — capacity vs volume ─────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Wat is die verskil tussen inhoud en volume?',
-      answer: 'Inhoud is hoeveel ʼn houer kan hou wanneer dit vol is. Volume is hoeveel vloeistof werklik in die houer is.',
+      question: 'Wat is die verskil tussen kapasiteit en volume?',
+      answer: 'Kapasiteit is hoeveel ʼn houer kan hou wanneer dit vol is. Volume is hoeveel vloeistof werklik in die houer is.',
       checkMode: 'self',
     },
 
@@ -394,7 +394,7 @@ export const topicData: TopicData = {
     // ── Q3 Medium — remaining capacity ───────────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'ʼn Bottel het ʼn inhoud van 500ml en bevat 320ml water. Hoeveel meer water kan dit hou?',
+      question: 'ʼn Bottel het ʼn kapasiteit van 500ml en bevat 320ml water. Hoeveel meer water kan dit hou?',
       answer: '180ml',
       checkMode: 'auto',
       correctAnswer: '180ml',
@@ -482,8 +482,8 @@ export const topicData: TopicData = {
   resultsConfig: {
     totalMarks: 12,
     messages: [
-      { minPercent: 100, message: 'Uitstekend! Jy het inhoud en volume onder die knie.' },
-      { minPercent: 75, message: 'Goeie werk! Jy het ʼn sterk begrip van inhoud en volume.' },
+      { minPercent: 100, message: 'Uitstekend! Jy het kapasiteit en volume onder die knie.' },
+      { minPercent: 75, message: 'Goeie werk! Jy het ʼn sterk begrip van kapasiteit en volume.' },
       { minPercent: 50, message: 'Goeie poging! Gaan die afdelings waar jy punte verloor het weer deur en probeer weer.' },
       { minPercent: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer nog ʼn keer.' },
     ],
@@ -492,15 +492,15 @@ export const topicData: TopicData = {
   practiceSets: [
     // ═══════════════════════════════════════════════════════════════════════
     // STEL 1 (20 vrae)
-    // Blokke: 0-3 Inhoud vs Volume & Eenheidsin | 4-8 Omskakeling ml/l |
+    // Blokke: 0-3 Kapasiteit vs Volume & Eenheidsin | 4-8 Omskakeling ml/l |
     // 9-11 Maatbekers Lees | 12-14 Foutopsporing & Regverdig Redenering |
     // 15-17 Woordprobleme (Optel/Aftrek) | 18-19 Multi-stap & Vergelykings
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Stel 1',
       questions: [
-        { difficulty: 'Easy', question: 'ʼn Beker kan 2 liter water hou wanneer dit heeltemal vol is. Is 2 liter die inhoud of die volume van die beker?', checkMode: 'auto', correctAnswer: 'inhoud', correctAnswers: ['inhoud'], explanation: 'Inhoud is die maksimum hoeveelheid wat ʼn houer kan hou wanneer dit vol is. Aangesien 2 liter is wat die beker kan hou wanneer dit heeltemal vol is, is dit die inhoud.' },
-        { difficulty: 'Easy', question: 'ʼn 1 liter bottel het 600 ml vrugtesap ingegooi. Is 600 ml die inhoud of die volume vrugtesap in die bottel?', checkMode: 'auto', correctAnswer: 'volume', correctAnswers: ['volume'], explanation: '600 ml is die hoeveelheid vrugtesap wat werklik nou in die bottel is, dus is dit die volume. Die bottel se inhoud is steeds 1 liter (1 000 ml) al is dit nie vol nie.' },
+        { difficulty: 'Easy', question: 'ʼn Beker kan 2 liter water hou wanneer dit heeltemal vol is. Is 2 liter die kapasiteit of die volume van die beker?', checkMode: 'auto', correctAnswer: 'kapasiteit', correctAnswers: ['kapasiteit'], explanation: 'Kapasiteit is die maksimum hoeveelheid wat ʼn houer kan hou wanneer dit vol is. Aangesien 2 liter is wat die beker kan hou wanneer dit heeltemal vol is, is dit die kapasiteit.' },
+        { difficulty: 'Easy', question: 'ʼn 1 liter bottel het 600 ml vrugtesap ingegooi. Is 600 ml die kapasiteit of die volume vrugtesap in die bottel?', checkMode: 'auto', correctAnswer: 'volume', correctAnswers: ['volume'], explanation: '600 ml is die hoeveelheid vrugtesap wat werklik nou in die bottel is, dus is dit die volume. Die bottel se kapasiteit is steeds 1 liter (1 000 ml) al is dit nie vol nie.' },
         { difficulty: 'Easy', question: 'Watter eenheid sal jy gebruik om die hoeveelheid hoesstroop in ʼn klein medisynelepel te meet: ml of l?', checkMode: 'auto', correctAnswer: 'ml', correctAnswers: ['ml', 'milliliter', 'milliliters'], explanation: 'ʼn Medisynelepel hou ʼn baie klein hoeveelheid vloeistof, dus is milliliter (ml) die sinvolle eenheid. Liter sou ʼn ongemaklike klein desimaal gee.' },
         { difficulty: 'Easy', question: 'Watter eenheid sal jy gebruik om die hoeveelheid water in ʼn swembad te meet: ml of l?', checkMode: 'auto', correctAnswer: 'l', correctAnswers: ['l', 'liter', 'liters'], explanation: 'ʼn Swembad hou ʼn baie groot hoeveelheid water, dus is liter (l) die sinvolle eenheid. Milliliter sou ʼn enorme, lomp getal gee.' },
         { difficulty: 'Easy', question: 'Skakel 2,5 l na milliliter om.', checkMode: 'auto', correctAnswer: '2500ml', correctAnswers: ['2500ml', '2500 ml', '2500'], explanation: 'Om liter na milliliter om te skakel, vermenigvuldig met 1 000. 2,5 × 1 000 = 2 500 ml.' },
@@ -516,13 +516,13 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Resep benodig 1,8 l aftreksel. Nomvula het reeds 650 ml ingegooi. Hoeveel meer milliliter aftreksel moet sy nog byvoeg?', checkMode: 'auto', correctAnswer: '1150ml', correctAnswers: ['1150ml', '1150 ml', '1150', '1,15l', '1,15 l', '1.15l', '1.15 l'], explanation: 'Skakel 1,8 l na ml om: 1,8 × 1 000 = 1 800 ml. Trek af wat reeds ingegooi is: 1 800 − 650 = 1 150 ml word nog benodig.' },
         { difficulty: 'Hard', question: 'ʼn 3 l bottel koeldrank het 1 250 ml uitgeskink by ʼn verjaardagpartytjie. Hoeveel koeldrank is oor in die bottel, in milliliter?', checkMode: 'auto', correctAnswer: '1750ml', correctAnswers: ['1750ml', '1750 ml', '1750', '1,75l', '1,75 l', '1.75l', '1.75 l'], explanation: 'Skakel 3 l na ml om: 3 × 1 000 = 3 000 ml. Trek die hoeveelheid wat uitgeskink is af: 3 000 − 1 250 = 1 750 ml oor.' },
         { difficulty: 'Hard', question: 'By ʼn skool se sportdag drink ʼn atleet 4 bekers water, elk 200 ml, uit ʼn 2 l waterhouer. Hoeveel water is oor in die houer, in milliliter?', checkMode: 'auto', correctAnswer: '1200ml', correctAnswers: ['1200ml', '1200 ml', '1200', '1,2l', '1,2 l', '1.2l', '1.2 l'], explanation: 'Totaal gedrink: 4 × 200 ml = 800 ml. Skakel 2 l na ml om: 2 × 1 000 = 2 000 ml. Trek af: 2 000 − 800 = 1 200 ml oor.' },
-        { difficulty: 'Hard', question: 'Lindiwe skink drie houers in ʼn leë 3 l beker: 900 ml, 1,3 l, en 450 ml. Sal alles inpas sonder dat die beker oorloop? Wys jou berekening en verduidelik.', checkMode: 'self', answer: 'Skakel alles na milliliter om: 900 ml + (1,3 × 1 000) ml + 450 ml = 900 + 1 300 + 450 = 2 650 ml. Die beker se inhoud is 3 l = 3 000 ml. Aangesien 2 650 ml minder is as 3 000 ml, pas alles in, met 350 ml spasie nog oor — die beker sal nie oorloop nie.' },
+        { difficulty: 'Hard', question: 'Lindiwe skink drie houers in ʼn leë 3 l beker: 900 ml, 1,3 l, en 450 ml. Sal alles inpas sonder dat die beker oorloop? Wys jou berekening en verduidelik.', checkMode: 'self', answer: 'Skakel alles na milliliter om: 900 ml + (1,3 × 1 000) ml + 450 ml = 900 + 1 300 + 450 = 2 650 ml. Die beker se kapasiteit is 3 l = 3 000 ml. Aangesien 2 650 ml minder is as 3 000 ml, pas alles in, met 350 ml spasie nog oor — die beker sal nie oorloop nie.' },
         { difficulty: 'Hard', question: 'Bottel A bevat 2,6 l olie. Bottel B bevat 2 450 ml olie. Watter bottel bevat meer olie, en met hoeveel milliliter?', checkMode: 'auto', correctAnswer: 'A150ml', correctAnswers: ['A150ml', 'A, 150ml', 'A 150ml', 'Bottel A 150ml', 'bottelA150ml'], explanation: 'Skakel Bottel A na milliliter om: 2,6 × 1 000 = 2 600 ml. Vergelyk met Bottel B: 2 450 ml. Bottel A het meer, met 2 600 − 2 450 = 150 ml.' },
-        { difficulty: 'Hard', question: 'ʼn Vistenk het ʼn inhoud van 12 l. Dit word gevul deur ʼn 1,5 l beker 5 keer in te gooi, en dan word ʼn verdere 900 ml uit ʼn ander houer bygevoeg. Is die tenk nou vol, oorlopend, of steeds nie vol nie? Verduidelik jou redenasie met volledige berekening.', checkMode: 'self', answer: 'Water uit die beker: 5 × 1,5 l = 7,5 l = 7 500 ml. Tel die ekstra by: 7 500 + 900 = 8 400 ml, wat 8,4 l is. Die tenk se inhoud is 12 l. Aangesien 8,4 l minder is as 12 l, is die tenk nog nie vol nie — daar is nog 12 − 8,4 = 3,6 l (3 600 ml) spasie oor voordat dit sou oorloop.' },
+        { difficulty: 'Hard', question: 'ʼn Vistenk het ʼn kapasiteit van 12 l. Dit word gevul deur ʼn 1,5 l beker 5 keer in te gooi, en dan word ʼn verdere 900 ml uit ʼn ander houer bygevoeg. Is die tenk nou vol, oorlopend, of steeds nie vol nie? Verduidelik jou redenasie met volledige berekening.', checkMode: 'self', answer: 'Water uit die beker: 5 × 1,5 l = 7,5 l = 7 500 ml. Tel die ekstra by: 7 500 + 900 = 8 400 ml, wat 8,4 l is. Die tenk se kapasiteit is 12 l. Aangesien 8,4 l minder is as 12 l, is die tenk nog nie vol nie — daar is nog 12 − 8,4 = 3,6 l (3 600 ml) spasie oor voordat dit sou oorloop.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het inhoud en volume, omskakelings en bekerlesings onder die knie.' },
-        { minScore: 15, message: 'Goeie werk! Jy het ʼn sterk begrip van inhoud en volume — gaan gemiste vrae weer deur.' },
+        { minScore: 20, message: 'Uitstekend! Jy het kapasiteit en volume, omskakelings en bekerlesings onder die knie.' },
+        { minScore: 15, message: 'Goeie werk! Jy het ʼn sterk begrip van kapasiteit en volume — gaan gemiste vrae weer deur.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor omskakelings en berekeninge weer deur en probeer weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
@@ -534,8 +534,8 @@ export const topicData: TopicData = {
     {
       name: 'Stel 2',
       questions: [
-        { difficulty: 'Easy', question: 'ʼn Ketel kan 1,7 liter water hou wanneer dit heeltemal vol is. Is 1,7 liter die inhoud of die volume van die ketel?', checkMode: 'auto', correctAnswer: 'inhoud', correctAnswers: ['inhoud'], explanation: 'Inhoud is die maksimum wat ʼn houer kan hou wanneer dit vol is. Aangesien 1,7 liter is wat die ketel kan hou wanneer dit heeltemal vol is, is dit die inhoud.' },
-        { difficulty: 'Easy', question: 'ʼn 500 ml fles het 180 ml sop daarin. Is 180 ml die inhoud of die volume sop in die fles?', checkMode: 'auto', correctAnswer: 'volume', correctAnswers: ['volume'], explanation: '180 ml is die hoeveelheid sop wat werklik nou in die fles is, dus is dit die volume. Die fles se inhoud is steeds 500 ml al is dit net gedeeltelik vol.' },
+        { difficulty: 'Easy', question: 'ʼn Ketel kan 1,7 liter water hou wanneer dit heeltemal vol is. Is 1,7 liter die kapasiteit of die volume van die ketel?', checkMode: 'auto', correctAnswer: 'kapasiteit', correctAnswers: ['kapasiteit'], explanation: 'Kapasiteit is die maksimum wat ʼn houer kan hou wanneer dit vol is. Aangesien 1,7 liter is wat die ketel kan hou wanneer dit heeltemal vol is, is dit die kapasiteit.' },
+        { difficulty: 'Easy', question: 'ʼn 500 ml fles het 180 ml sop daarin. Is 180 ml die kapasiteit of die volume sop in die fles?', checkMode: 'auto', correctAnswer: 'volume', correctAnswers: ['volume'], explanation: '180 ml is die hoeveelheid sop wat werklik nou in die fles is, dus is dit die volume. Die fles se kapasiteit is steeds 500 ml al is dit net gedeeltelik vol.' },
         { difficulty: 'Easy', question: 'Watter eenheid sal jy gebruik om die hoeveelheid oogdruppels uit ʼn klein druppelflessie te meet: ml of l?', checkMode: 'auto', correctAnswer: 'ml', correctAnswers: ['ml', 'milliliter', 'milliliters'], explanation: 'ʼn Druppelflessie gee ʼn baie klein hoeveelheid vloeistof, dus is milliliter (ml) die sinvolle eenheid. Liter sou ʼn ongemaklike, baie klein desimaal gee.' },
         { difficulty: 'Easy', question: 'Watter eenheid sal jy gebruik om die hoeveelheid diesel in ʼn afleweringsvragmotor se brandstoftenk te meet: ml of l?', checkMode: 'auto', correctAnswer: 'l', correctAnswers: ['l', 'liter', 'liters'], explanation: 'ʼn Vragmotor se brandstoftenk hou ʼn groot hoeveelheid brandstof, dus is liter (l) die sinvolle eenheid. Milliliter sou ʼn enorme, lomp getal gee.' },
         { difficulty: 'Easy', question: 'Skakel 5 l na milliliter om.', checkMode: 'auto', correctAnswer: '5000ml', correctAnswers: ['5000ml', '5000 ml', '5000'], explanation: 'Om liter na milliliter om te skakel, vermenigvuldig met 1 000. 5 × 1 000 = 5 000 ml.' },
@@ -551,12 +551,12 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Beker benodig 2,3 l limonade vir ʼn partytjie. Lerato het reeds 900 ml ingegooi. Hoeveel meer milliliter limonade moet sy nog byvoeg?', checkMode: 'auto', correctAnswer: '1400ml', correctAnswers: ['1400ml', '1400 ml', '1400', '1,4l', '1,4 l', '1.4l', '1.4 l'], explanation: 'Skakel 2,3 l na ml om: 2,3 × 1 000 = 2 300 ml. Trek af wat reeds ingegooi is: 2 300 − 900 = 1 400 ml word nog benodig.' },
         { difficulty: 'Hard', question: 'ʼn 2,5 l bottel vrugtesap het 1 600 ml in glase uitgeskink by ʼn familiebyeenkoms. Hoeveel vrugtesap is oor in die bottel, in milliliter?', checkMode: 'auto', correctAnswer: '900ml', correctAnswers: ['900ml', '900 ml', '900', '0,9l', '0,9 l', '0.9l', '0.9 l'], explanation: 'Skakel 2,5 l na ml om: 2,5 × 1 000 = 2 500 ml. Trek die hoeveelheid wat uitgeskink is af: 2 500 − 1 600 = 900 ml oor.' },
         { difficulty: 'Hard', question: 'Tydens ʼn wetenskap-eksperiment skink ʼn leerder 6 toetsbuise oplossing, elk 150 ml, uit ʼn 1 l beker. Hoeveel oplossing is oor in die beker, in milliliter?', checkMode: 'auto', correctAnswer: '100ml', correctAnswers: ['100ml', '100 ml', '100', '0,1l', '0,1 l', '0.1l', '0.1 l'], explanation: 'Totaal uitgeskink: 6 × 150 ml = 900 ml. Skakel 1 l na ml om: 1 × 1 000 = 1 000 ml. Trek af: 1 000 − 900 = 100 ml oor.' },
-        { difficulty: 'Hard', question: 'Palesa skink drie houers in ʼn leë 2,5 l beker: 700 ml, 1,1 l, en 650 ml. Sal alles inpas sonder dat die beker oorloop? Wys jou berekening en verduidelik.', checkMode: 'self', answer: 'Skakel alles na milliliter om: 700 ml + (1,1 × 1 000) ml + 650 ml = 700 + 1 100 + 650 = 2 450 ml. Die beker se inhoud is 2,5 l = 2 500 ml. Aangesien 2 450 ml minder is as 2 500 ml, pas alles in, met slegs 50 ml spasie oor — dit is baie naby aan oorloop maar loop nie oor nie.' },
+        { difficulty: 'Hard', question: 'Palesa skink drie houers in ʼn leë 2,5 l beker: 700 ml, 1,1 l, en 650 ml. Sal alles inpas sonder dat die beker oorloop? Wys jou berekening en verduidelik.', checkMode: 'self', answer: 'Skakel alles na milliliter om: 700 ml + (1,1 × 1 000) ml + 650 ml = 700 + 1 100 + 650 = 2 450 ml. Die beker se kapasiteit is 2,5 l = 2 500 ml. Aangesien 2 450 ml minder is as 2 500 ml, pas alles in, met slegs 50 ml spasie oor — dit is baie naby aan oorloop maar loop nie oor nie.' },
         { difficulty: 'Hard', question: 'Tenk X bevat 3,1 l water. Tenk Y bevat 3 050 ml water. Watter tenk bevat meer water, en met hoeveel milliliter?', checkMode: 'auto', correctAnswer: 'X50ml', correctAnswers: ['X50ml', 'X, 50ml', 'X 50ml', 'Tenk X 50ml', 'tenkX50ml'], explanation: 'Skakel Tenk X na milliliter om: 3,1 × 1 000 = 3 100 ml. Vergelyk met Tenk Y: 3 050 ml. Tenk X het meer, met 3 100 − 3 050 = 50 ml.' },
-        { difficulty: 'Hard', question: 'ʼn Watertenk het ʼn inhoud van 15 l. Dit word gevul deur ʼn 2 l emmer 6 keer in te gooi, en dan word ʼn verdere 1,5 l met ʼn beker bygevoeg. Is die tenk nou vol, oorlopend, of steeds nie vol nie? Verduidelik jou redenasie met volledige berekening.', checkMode: 'self', answer: 'Water uit die emmer: 6 × 2 l = 12 l. Tel die ekstra by: 12 + 1,5 = 13,5 l. Die tenk se inhoud is 15 l. Aangesien 13,5 l minder is as 15 l, is die tenk nog nie vol nie — daar is nog 15 − 13,5 = 1,5 l (1 500 ml) spasie oor voordat dit sou oorloop.' },
+        { difficulty: 'Hard', question: 'ʼn Watertenk het ʼn kapasiteit van 15 l. Dit word gevul deur ʼn 2 l emmer 6 keer in te gooi, en dan word ʼn verdere 1,5 l met ʼn beker bygevoeg. Is die tenk nou vol, oorlopend, of steeds nie vol nie? Verduidelik jou redenasie met volledige berekening.', checkMode: 'self', answer: 'Water uit die emmer: 6 × 2 l = 12 l. Tel die ekstra by: 12 + 1,5 = 13,5 l. Die tenk se kapasiteit is 15 l. Aangesien 13,5 l minder is as 15 l, is die tenk nog nie vol nie — daar is nog 15 − 13,5 = 1,5 l (1 500 ml) spasie oor voordat dit sou oorloop.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue met inhoud, volume, omskakelings en bekerlesings werk.' },
+        { minScore: 20, message: 'Uitstekend! Jy kan met selfvertroue met kapasiteit, volume, omskakelings en bekerlesings werk.' },
         { minScore: 15, message: 'Goeie werk! Jy het ʼn stewige begrip — gaan gemiste vrae weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor omskakelings en berekeninge weer deur en probeer weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -569,8 +569,8 @@ export const topicData: TopicData = {
     {
       name: 'Stel 3',
       questions: [
-        { difficulty: 'Easy', question: 'ʼn Gieter hou 4 liter water wanneer dit heeltemal vol is. Is 4 liter die inhoud of die volume van die gieter?', checkMode: 'auto', correctAnswer: 'inhoud', correctAnswers: ['inhoud'], explanation: 'Inhoud is die maksimum wat ʼn houer kan hou wanneer dit vol is. Aangesien 4 liter is wat die gieter hou wanneer dit heeltemal vol is, is dit die inhoud.' },
-        { difficulty: 'Easy', question: 'ʼn 2 liter beker het 1,2 l ystee daarin by ʼn piekniek. Is 1,2 l die inhoud of die volume ystee in die beker?', checkMode: 'auto', correctAnswer: 'volume', correctAnswers: ['volume'], explanation: '1,2 l is die hoeveelheid ystee wat werklik nou in die beker is, dus is dit die volume. Die beker se inhoud is steeds 2 liter al is dit nie vol nie.' },
+        { difficulty: 'Easy', question: 'ʼn Gieter hou 4 liter water wanneer dit heeltemal vol is. Is 4 liter die kapasiteit of die volume van die gieter?', checkMode: 'auto', correctAnswer: 'kapasiteit', correctAnswers: ['kapasiteit'], explanation: 'Kapasiteit is die maksimum wat ʼn houer kan hou wanneer dit vol is. Aangesien 4 liter is wat die gieter hou wanneer dit heeltemal vol is, is dit die kapasiteit.' },
+        { difficulty: 'Easy', question: 'ʼn 2 liter beker het 1,2 l ystee daarin by ʼn piekniek. Is 1,2 l die kapasiteit of die volume ystee in die beker?', checkMode: 'auto', correctAnswer: 'volume', correctAnswers: ['volume'], explanation: '1,2 l is die hoeveelheid ystee wat werklik nou in die beker is, dus is dit die volume. Die beker se kapasiteit is steeds 2 liter al is dit nie vol nie.' },
         { difficulty: 'Easy', question: 'Watter eenheid sal jy gebruik om die hoeveelheid vanieljegeursel wat by koekbeslag gevoeg word te meet: ml of l?', checkMode: 'auto', correctAnswer: 'ml', correctAnswers: ['ml', 'milliliter', 'milliliters'], explanation: 'Vanieljegeursel word in klein hoeveelhede bygevoeg, dus is milliliter (ml) die sinvolle eenheid. Liter sou ʼn ongemaklike, baie klein desimaal gee.' },
         { difficulty: 'Easy', question: 'Watter eenheid sal jy gebruik om die hoeveelheid reënwater wat in ʼn groot tuintenk opgevang word te meet: ml of l?', checkMode: 'auto', correctAnswer: 'l', correctAnswers: ['l', 'liter', 'liters'], explanation: 'ʼn Tuintenk vang ʼn groot hoeveelheid water op, dus is liter (l) die sinvolle eenheid. Milliliter sou ʼn enorme, lomp getal gee.' },
         { difficulty: 'Easy', question: 'Skakel 7 l na milliliter om.', checkMode: 'auto', correctAnswer: '7000ml', correctAnswers: ['7000ml', '7000 ml', '7000'], explanation: 'Om liter na milliliter om te skakel, vermenigvuldig met 1 000. 7 × 1 000 = 7 000 ml.' },
@@ -586,12 +586,12 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Ponsbak-resep benodig 2,25 l vrugtesapmengsel. Ayesha het reeds 800 ml ingegooi. Hoeveel meer milliliter vrugtesapmengsel moet sy nog byvoeg?', checkMode: 'auto', correctAnswer: '1450ml', correctAnswers: ['1450ml', '1450 ml', '1450', '1,45l', '1,45 l', '1.45l', '1.45 l'], explanation: 'Skakel 2,25 l na ml om: 2,25 × 1 000 = 2 250 ml. Trek af wat reeds ingegooi is: 2 250 − 800 = 1 450 ml word nog benodig.' },
         { difficulty: 'Hard', question: 'ʼn 5 l houer swembadchemikalie het 2 350 ml gebruik tydens ʼn skoonmaaksessie. Hoeveel chemikalie is oor in die houer, in milliliter?', checkMode: 'auto', correctAnswer: '2650ml', correctAnswers: ['2650ml', '2650 ml', '2650', '2,65l', '2,65 l', '2.65l', '2.65 l'], explanation: 'Skakel 5 l na ml om: 5 × 1 000 = 5 000 ml. Trek die hoeveelheid wat gebruik is af: 5 000 − 2 350 = 2 650 ml oor.' },
         { difficulty: 'Hard', question: 'By ʼn braai vul ʼn gasheer 7 koeldrankbottels, elk 250 ml, uit ʼn 3 l houer. Hoeveel koeldrank is oor in die houer, in milliliter?', checkMode: 'auto', correctAnswer: '1250ml', correctAnswers: ['1250ml', '1250 ml', '1250', '1,25l', '1,25 l', '1.25l', '1.25 l'], explanation: 'Totaal uitgeskink: 7 × 250 ml = 1 750 ml. Skakel 3 l na ml om: 3 × 1 000 = 3 000 ml. Trek af: 3 000 − 1 750 = 1 250 ml oor.' },
-        { difficulty: 'Hard', question: 'Karabo skink drie houers in ʼn leë 3 l emmer: 1,5 l, 600 ml, en 700 ml. Sal alles inpas sonder dat die emmer oorloop? Wys jou berekening en verduidelik.', checkMode: 'self', answer: 'Skakel alles na milliliter om: (1,5 × 1 000) ml + 600 ml + 700 ml = 1 500 + 600 + 700 = 2 800 ml. Die emmer se inhoud is 3 l = 3 000 ml. Aangesien 2 800 ml minder is as 3 000 ml, pas alles in, met 200 ml spasie nog oor — die emmer sal nie oorloop nie.' },
+        { difficulty: 'Hard', question: 'Karabo skink drie houers in ʼn leë 3 l emmer: 1,5 l, 600 ml, en 700 ml. Sal alles inpas sonder dat die emmer oorloop? Wys jou berekening en verduidelik.', checkMode: 'self', answer: 'Skakel alles na milliliter om: (1,5 × 1 000) ml + 600 ml + 700 ml = 1 500 + 600 + 700 = 2 800 ml. Die emmer se kapasiteit is 3 l = 3 000 ml. Aangesien 2 800 ml minder is as 3 000 ml, pas alles in, met 200 ml spasie nog oor — die emmer sal nie oorloop nie.' },
         { difficulty: 'Hard', question: 'Houer P bevat 4,2 l verf. Houer Q bevat 4 150 ml verf. Watter houer bevat meer verf, en met hoeveel milliliter?', checkMode: 'auto', correctAnswer: 'P50ml', correctAnswers: ['P50ml', 'P, 50ml', 'P 50ml', 'Houer P 50ml', 'houerP50ml'], explanation: 'Skakel Houer P na milliliter om: 4,2 × 1 000 = 4 200 ml. Vergelyk met Houer Q: 4 150 ml. Houer P het meer, met 4 200 − 4 150 = 50 ml.' },
-        { difficulty: 'Hard', question: 'ʼn Akwarium het ʼn inhoud van 20 l. Dit word gevul deur ʼn 2,5 l beker 7 keer in te gooi, en dan word ʼn verdere 1 800 ml uit ʼn tuinslang bygevoeg. Is die akwarium nou vol, oorlopend, of steeds nie vol nie? Verduidelik jou redenasie met volledige berekening.', checkMode: 'self', answer: 'Water uit die beker: 7 × 2,5 l = 17,5 l = 17 500 ml. Tel die ekstra by: 17 500 + 1 800 = 19 300 ml, wat 19,3 l is. Die akwarium se inhoud is 20 l. Aangesien 19,3 l minder is as 20 l, is die akwarium nog nie vol nie — daar is nog 20 − 19,3 = 0,7 l (700 ml) spasie oor voordat dit sou oorloop.' },
+        { difficulty: 'Hard', question: 'ʼn Akwarium het ʼn kapasiteit van 20 l. Dit word gevul deur ʼn 2,5 l beker 7 keer in te gooi, en dan word ʼn verdere 1 800 ml uit ʼn tuinslang bygevoeg. Is die akwarium nou vol, oorlopend, of steeds nie vol nie? Verduidelik jou redenasie met volledige berekening.', checkMode: 'self', answer: 'Water uit die beker: 7 × 2,5 l = 17,5 l = 17 500 ml. Tel die ekstra by: 17 500 + 1 800 = 19 300 ml, wat 19,3 l is. Die akwarium se kapasiteit is 20 l. Aangesien 19,3 l minder is as 20 l, is die akwarium nog nie vol nie — daar is nog 20 − 19,3 = 0,7 l (700 ml) spasie oor voordat dit sou oorloop.' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Fantasties! Jy kan inhoud, volume, omskakelings en bekerlesings op werklike-wêreld probleme toepas.' },
+        { minScore: 20, message: 'Fantasties! Jy kan kapasiteit, volume, omskakelings en bekerlesings op werklike-wêreld probleme toepas.' },
         { minScore: 15, message: 'Goeie werk! Jy het ʼn sterk begrip van hierdie vaardighede — gaan gemiste vrae weer deur.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor woordprobleme en berekeninge weer deur en probeer weer.' },
         { minScore: 0, message: 'Hou aan! Werk weer deur die studiegids en probeer hierdie stel weer.' },

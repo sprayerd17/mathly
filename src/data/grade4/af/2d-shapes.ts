@@ -160,7 +160,7 @@ export const topicData: TopicData = {
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;padding-left:4px;">
         <span style="background:#dbeafe;color:#1e40af;border-radius:20px;padding:3px 12px;font-size:13px;font-weight:600;">Reëlmatig — al die sye gelyk (bv. vierkant, gelyksydige driehoek)</span>
-        <span style="background:#e2e8f0;color:#475569;border-radius:20px;padding:3px 12px;font-size:13px;font-weight:600;">Onreëlmatig — sye nie almal gelyk nie (bv. reghoek, skalene driehoek)</span>
+        <span style="background:#e2e8f0;color:#475569;border-radius:20px;padding:3px 12px;font-size:13px;font-weight:600;">Onreëlmatig — sye nie almal gelyk nie (bv. reghoek, ongelyksydige driehoek)</span>
       </div>
       <p style="margin-top:6px;font-size:14px;color:#1e3a8a;">ʼn <strong>Reëlmatige veelhoek</strong> het al die sye dieselfde lengte EN al die hoeke dieselfde grootte.</p>
     </div>
@@ -216,16 +216,16 @@ export const topicData: TopicData = {
         },
         {
           question:
-            'Sorteer hierdie in reëlmatige en onreëlmatige veelhoeke: gelyksydige driehoek, skalene driehoek, vierkant, reghoek.',
+            'Sorteer hierdie in reëlmatige en onreëlmatige veelhoeke: gelyksydige driehoek, ongelyksydige driehoek, vierkant, reghoek.',
           steps: [
             'ʼn <strong style="color:#1e40af;">Reëlmatige veelhoek</strong> het <strong>al die sye gelyk</strong> EN <strong>al die hoeke gelyk</strong>.',
             '<strong>Gelyksydige driehoek:</strong> al 3 sye gelyk, al die hoeke 60° ✔ reëlmatig.',
             '<strong>Vierkant:</strong> al 4 sye gelyk, al die hoeke 90° ✔ reëlmatig.',
-            '<strong>Skalene driehoek:</strong> al 3 sye verskillende lengtes ✘ onreëlmatig.',
+            '<strong>Ongelyksydige driehoek:</strong> al 3 sye verskillende lengtes ✘ onreëlmatig.',
             '<strong>Reghoek:</strong> oorstaande sye gelyk maar aangrensende sye verskillende lengtes ✘ onreëlmatig.',
           ],
           answer:
-            'Reëlmatig: gelyksydige driehoek, vierkant.\nOnreëlmatig: skalene driehoek, reghoek.',
+            'Reëlmatig: gelyksydige driehoek, vierkant.\nOnreëlmatig: ongelyksydige driehoek, reghoek.',
         },
       ],
       practiceQuestions: [],
@@ -460,7 +460,7 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'ʼn Driehoek en ʼn vierkant is twee aparte vorms. Hoeveel sye het hulle altesaam, en hoeveel hoekpunte het hulle altesaam?', checkMode: 'auto', correctAnswer: '7 sye, 7 hoekpunte', correctAnswers: ['7 sye, 7 hoekpunte', '7, 7', 'sewe sye, sewe hoekpunte'], answer: '7 sye, 7 hoekpunte', explanation: 'ʼn Driehoek het 3 sye en 3 hoekpunte, en ʼn vierkant het 4 sye en 4 hoekpunte. 3 + 4 = 7 vir albei totale.' },
 
         // Blok 2 — Identifiseer die Vorm vanaf Leidrade (pos 4-7, Maklik-Medium)
-        { difficulty: 'Easy', question: 'Ek het 3 sye wat almal verskillende lengtes is. Watter tipe driehoek is ek?', checkMode: 'auto', correctAnswer: 'Skalene driehoek', correctAnswers: ['Skalene driehoek', 'skalene', 'ʼn skalene driehoek'], answer: 'Skalene driehoek', explanation: 'ʼn Driehoek met al 3 sye verskillende lengtes word ʼn skalene driehoek genoem.' },
+        { difficulty: 'Easy', question: 'Ek het 3 sye wat almal verskillende lengtes is. Watter tipe driehoek is ek?', checkMode: 'auto', correctAnswer: 'Ongelyksydige driehoek', correctAnswers: ['Ongelyksydige driehoek', 'ongelyksydige', 'ʼn ongelyksydige driehoek'], answer: 'Ongelyksydige driehoek', explanation: 'ʼn Driehoek met al 3 sye verskillende lengtes word ʼn ongelyksydige driehoek genoem.' },
         { difficulty: 'Easy', question: 'Ek het 5 reguit sye en 5 hoekpunte. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Vyfhoek', correctAnswers: ['Vyfhoek', 'vyfhoek', 'ʼn vyfhoek'], answer: 'Vyfhoek', explanation: 'ʼn Geslote vorm met 5 reguit sye is ʼn vyfhoek.' },
         { difficulty: 'Medium', question: 'Ek het 4 sye wat almal gelyk in lengte is, maar my hoeke is 60° en 120°, nie 90° nie. Watter vorm is ek?', checkMode: 'auto', correctAnswer: 'Ruit', correctAnswers: ['Ruit', 'ruit', 'ʼn ruit'], answer: 'Ruit', explanation: 'ʼn Vorm met 4 gelyke sye maar hoeke wat nie 90° is nie, is ʼn ruit, nie ʼn vierkant nie.' },
         { difficulty: 'Medium', question: 'Ek het presies een regte hoek, en my ander twee hoeke is nie gelyk aan mekaar nie. Watter tipe driehoek is ek?', checkMode: 'auto', correctAnswer: 'Reghoekige driehoek', correctAnswers: ['Reghoekige driehoek', 'ʼn reghoekige driehoek'], answer: 'Reghoekige driehoek', explanation: 'ʼn Driehoek met presies een hoek van 90° word ʼn reghoekige driehoek genoem.' },
@@ -491,7 +491,7 @@ export const topicData: TopicData = {
         },
 
         // Blok 4 — Sorteer en Klassifiseer (pos 13-15, Medium)
-        { difficulty: 'Medium', question: 'Sorteer hierdie vorms: vierkant, reghoek, ruit, skalene driehoek. Watter vorms is reëlmatige veelhoeke?', checkMode: 'auto', correctAnswer: 'Vierkant', correctAnswers: ['Vierkant', 'vierkant', 'slegs die vierkant'], answer: 'Vierkant', explanation: 'Slegs die vierkant het al die sye en al die hoeke gelyk. ʼn Reghoek en ruit het gelyke oorstaande sye maar nie al 4 gelyk nie, en ʼn skalene driehoek het geen gelyke sye nie.' },
+        { difficulty: 'Medium', question: 'Sorteer hierdie vorms: vierkant, reghoek, ruit, ongelyksydige driehoek. Watter vorms is reëlmatige veelhoeke?', checkMode: 'auto', correctAnswer: 'Vierkant', correctAnswers: ['Vierkant', 'vierkant', 'slegs die vierkant'], answer: 'Vierkant', explanation: 'Slegs die vierkant het al die sye en al die hoeke gelyk. ʼn Reghoek en ruit het gelyke oorstaande sye maar nie al 4 gelyk nie, en ʼn ongelyksydige driehoek het geen gelyke sye nie.' },
         { difficulty: 'Medium', question: 'Sorteer hierdie vorms: seshoek, sirkel, vlieër, ovaal. Watter vorms is veelhoeke?', checkMode: 'auto', correctAnswer: 'Seshoek, vlieër', correctAnswers: ['Seshoek, vlieër', 'vlieër, seshoek'], answer: 'Seshoek, vlieër', explanation: 'ʼn Seshoek en ʼn vlieër bestaan albei slegs uit reguit sye, dus is hulle veelhoeke. ʼn Sirkel en ʼn ovaal het geboë rande.' },
         {
           difficulty: 'Medium',
@@ -540,7 +540,7 @@ export const topicData: TopicData = {
 
         // Blok 3 — Vierhoek- en Driehoek-eienskappe (pos 8-12, Medium)
         { difficulty: 'Medium', question: 'ʼn Vierhoek het 2 pare parallelle sye en 2 pare gelyke sye, maar geen regte hoeke nie. Wat is sy naam?', checkMode: 'auto', correctAnswer: 'Parallelogram', correctAnswers: ['Parallelogram', 'parallelogram', 'ʼn parallelogram'], answer: 'Parallelogram', explanation: 'ʼn Vierhoek met 2 pare parallelle, gelyke sye (en geen regte hoeke nie) is ʼn parallelogram.' },
-        { difficulty: 'Medium', question: 'ʼn Driehoek het 3 sye wat almal verskillende lengtes is, en 3 verskillende hoeke. Watter tipe driehoek is dit?', checkMode: 'auto', correctAnswer: 'Skalene driehoek', correctAnswers: ['Skalene driehoek', 'skalene', 'ʼn skalene driehoek'], answer: 'Skalene driehoek', explanation: 'ʼn Driehoek sonder gelyke sye (en dus sonder gelyke hoeke) is ʼn skalene driehoek.' },
+        { difficulty: 'Medium', question: 'ʼn Driehoek het 3 sye wat almal verskillende lengtes is, en 3 verskillende hoeke. Watter tipe driehoek is dit?', checkMode: 'auto', correctAnswer: 'Ongelyksydige driehoek', correctAnswers: ['Ongelyksydige driehoek', 'ongelyksydige', 'ʼn ongelyksydige driehoek'], answer: 'Ongelyksydige driehoek', explanation: 'ʼn Driehoek sonder gelyke sye (en dus sonder gelyke hoeke) is ʼn ongelyksydige driehoek.' },
         { difficulty: 'Medium', question: 'Watter vorm het al die sye gelyk EN al die hoeke gelyk aan 90°?', checkMode: 'auto', correctAnswer: 'Vierkant', correctAnswers: ['Vierkant', 'vierkant', 'ʼn vierkant'], answer: 'Vierkant', explanation: 'ʼn Vierkant het albei eienskappe: 4 gelyke sye en 4 regte hoeke (90° elk).' },
         {
           difficulty: 'Medium',

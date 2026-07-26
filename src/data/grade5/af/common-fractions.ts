@@ -270,7 +270,7 @@ export const topicData: TopicData = {
         // ── Tip box ───────────────────────────────────────────────────────────
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#15803d;margin-bottom:6px;">Onthou</p>` +
-        `<p style="margin:0;color:#166534;">Die ${cd('LGN')} is die <strong>Laagste Gemene Veelvoud (LGV)</strong> van die twee ${de('noemers')}. Sodra breuke dieselfde ${cd('noemer')} deel, is om hulle te vergelyk presies soos om heelgetalle te vergelyk.</p>` +
+        `<p style="margin:0;color:#166534;">Die ${cd('LGN')} is die <strong>Kleinste Gemene Veelvoud (KGV)</strong> van die twee ${de('noemers')}. Sodra breuke dieselfde ${cd('noemer')} deel, is om hulle te vergelyk presies soos om heelgetalle te vergelyk.</p>` +
         `</div>`,
 
       workedExamples: [
