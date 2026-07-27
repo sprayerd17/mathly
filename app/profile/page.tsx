@@ -780,7 +780,7 @@ export default function ProfilePage() {
           </div>
 
           {children.length > 1 && (
-            <div className="mb-5 pb-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
+            <div id="tour-active-child-switcher" className="mb-5 pb-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
               <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#6b7280' }}>
                 {t.profile_active_child_heading}
               </p>
@@ -909,6 +909,7 @@ export default function ProfilePage() {
             unlock referral perks either. */}
         {PAYMENTS_ENABLED && user.childPlans.some(tier => tier !== 'free') && (
           <div
+            id="tour-referral-section"
             className="bg-white rounded-2xl shadow-sm p-7 mt-5"
             style={{ border: '1px solid #e5e7eb' }}
           >

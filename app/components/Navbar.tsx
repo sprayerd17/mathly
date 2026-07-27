@@ -255,6 +255,7 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
               </div>
               <Link
                 href="/profile"
+                id="tour-mobile-my-profile"
                 onClick={close}
                 className="block text-sm py-2 transition-colors"
                 style={{ color: '#a8b8d8' }}

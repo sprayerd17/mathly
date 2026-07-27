@@ -22,6 +22,10 @@ type Step = {
 // separate ids — they're literally different DOM nodes. needsMobileMenu/
 // needsAccountMenu tell the engine below to open those panels via
 // navbarRef before it measures the target's position.
+// tour-active-child-switcher and tour-referral-section are conditionally
+// rendered (only for multi-child accounts / accounts with a paid child
+// respectively) — see the missing-target skip logic below, which advances
+// past a spotlight step automatically if its target isn't in the DOM.
 const STEPS: Step[] = [
   { kind: 'modal', headingKey: 'tour_welcome_heading', bodyKey: 'tour_welcome_body' },
   { kind: 'spotlight', headingKey: 'tour_home_heading', bodyKey: 'tour_home_body',
@@ -32,10 +36,16 @@ const STEPS: Step[] = [
     desktopId: 'tour-nav-nav_contact', mobileId: 'tour-mobile-nav_contact', needsMobileMenu: true },
   { kind: 'spotlight', headingKey: 'tour_account_heading', bodyKey: 'tour_account_body',
     desktopId: 'tour-nav-account', mobileId: 'tour-mobile-account', needsMobileMenu: true, needsAccountMenu: true },
+  { kind: 'spotlight', headingKey: 'tour_my_profile_heading', bodyKey: 'tour_my_profile_body',
+    desktopId: 'tour-nav-my-profile', mobileId: 'tour-mobile-my-profile', needsMobileMenu: true, needsAccountMenu: true },
   { kind: 'spotlight', headingKey: 'tour_subscription_heading', bodyKey: 'tour_subscription_body',
     desktopId: 'tour-subscription-section', mobileId: 'tour-subscription-section' },
+  { kind: 'spotlight', headingKey: 'tour_active_child_heading', bodyKey: 'tour_active_child_body',
+    desktopId: 'tour-active-child-switcher', mobileId: 'tour-active-child-switcher' },
   { kind: 'spotlight', headingKey: 'tour_profile_heading', bodyKey: 'tour_profile_body',
     desktopId: 'tour-children-section', mobileId: 'tour-children-section' },
+  { kind: 'spotlight', headingKey: 'tour_referral_heading', bodyKey: 'tour_referral_body',
+    desktopId: 'tour-referral-section', mobileId: 'tour-referral-section' },
   { kind: 'modal', headingKey: 'tour_closing_heading', bodyKey: 'tour_closing_body' },
 ]
 
@@ -101,6 +111,11 @@ export default function OnboardingTour({ onClose, navbarRef }: Props) {
   const currentTargetIdRef = useRef<string | null>(null)
   const transitionTokenRef = useRef(0)
   const panelStateRef = useRef({ mobileMenuOpen: false, accountMenuOpen: false })
+  // Which way we're moving, so a spotlight step whose target isn't in the
+  // DOM (e.g. the referral section for a free account, or the child
+  // switcher for a single-child account) can be skipped in that same
+  // direction instead of just showing a floating tooltip with no cutout.
+  const directionRef = useRef<1 | -1>(1)
 
   const step = STEPS[stepIndex]
   const isFirst = stepIndex === 0
@@ -119,10 +134,12 @@ export default function OnboardingTour({ onClose, navbarRef }: Props) {
 
   function next() {
     if (isLast) { handleClose(); return }
+    directionRef.current = 1
     setStepIndex(i => i + 1)
   }
 
   function back() {
+    directionRef.current = -1
     setStepIndex(i => Math.max(0, i - 1))
   }
 
@@ -162,16 +179,23 @@ export default function OnboardingTour({ onClose, navbarRef }: Props) {
       const wantAccountMenu = current.kind === 'spotlight' && !mobile && !!current.needsAccountMenu
       const prev = panelStateRef.current
 
-      let waited = false
-      if (wantMobileMenu !== prev.mobileMenuOpen) {
-        if (wantMobileMenu) navbarRef.current?.openMobileMenu()
-        else navbarRef.current?.closeMobileMenu()
-        waited = true
-      }
-      if (wantAccountMenu !== prev.accountMenuOpen) {
-        if (wantAccountMenu) navbarRef.current?.openAccountMenu()
-        else navbarRef.current?.closeAccountMenu()
-      }
+      // Re-issue open calls even when the desired state matches the last
+      // step's — clicking "Next" lands outside NavAuth's dropdown, which
+      // triggers its own outside-click handler and silently closes it, so
+      // two consecutive account-menu steps would otherwise find it shut.
+      // Re-opening an already-open panel is a no-op, so this is safe.
+      if (wantMobileMenu) navbarRef.current?.openMobileMenu()
+      else if (prev.mobileMenuOpen) navbarRef.current?.closeMobileMenu()
+
+      if (wantAccountMenu) navbarRef.current?.openAccountMenu()
+      else if (prev.accountMenuOpen) navbarRef.current?.closeAccountMenu()
+
+      // Always wait out the transition when either panel is being asked to
+      // be open — since the open calls above are idempotent re-issues (see
+      // comment above), we can't tell from the tracked state alone whether
+      // this was a real open (dropdown was actually shut, e.g. by its
+      // outside-click handler) or already open, so wait either way.
+      const waited = wantMobileMenu !== prev.mobileMenuOpen || wantMobileMenu || wantAccountMenu
       panelStateRef.current = { mobileMenuOpen: wantMobileMenu, accountMenuOpen: wantAccountMenu }
 
       if (waited) await sleep(PANEL_TRANSITION_MS)
@@ -186,7 +210,19 @@ export default function OnboardingTour({ onClose, navbarRef }: Props) {
       const targetId = mobile ? (current.mobileId ?? current.desktopId) : (current.desktopId ?? current.mobileId)
       currentTargetIdRef.current = targetId ?? null
       const el = targetId ? document.getElementById(targetId) : null
-      if (!el) { setRect(null); return }
+      if (!el) {
+        // Target isn't in the DOM for this account (e.g. no referral
+        // section, or only one child) — skip past it in whichever
+        // direction we were already moving. Modal steps (welcome/closing)
+        // always exist, so this always has somewhere safe to land.
+        const skipTo = stepIndex + directionRef.current
+        if (skipTo >= 0 && skipTo < STEPS.length) {
+          setStepIndex(skipTo)
+        } else {
+          setRect(null)
+        }
+        return
+      }
 
       el.scrollIntoView({ behavior: 'smooth', block: 'center' })
       await sleep(SCROLL_SETTLE_MS)
