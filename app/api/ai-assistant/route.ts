@@ -74,7 +74,7 @@ function toImageBlock(dataUrl: string): Anthropic.Messages.ImageBlockParam | nul
 }
 
 export async function POST(req: NextRequest) {
-  const body = await req.json().catch(() => null) as { idToken?: string; messages?: unknown; image?: unknown; grade?: unknown } | null
+  const body = await req.json().catch(() => null) as { idToken?: string; messages?: unknown; image?: unknown; grade?: unknown; childIndex?: unknown } | null
 
   if (!body?.idToken) return new Response('Bad request', { status: 400 })
 
@@ -125,8 +125,18 @@ export async function POST(req: NextRequest) {
   // reimplemented server-side — this route can't import client code. Unlike
   // analyse-test, every tier is allowed here — they just get different
   // monthly limits below.
+  //
+  // childIndex comes from the client's own (per-device) active-child
+  // selection rather than the account's Firestore activeChildIndex field —
+  // that field is only a first-load default now (see the comment on
+  // readLocalActiveChild in app/providers.tsx), not a live cross-device
+  // value, so trusting it here could apply the wrong sibling's tier/limit
+  // to this request. Falls back to the Firestore field for any client build
+  // that hasn't picked up the childIndex param yet.
   const childPlans: string[] = Array.isArray(userData.childPlans) ? userData.childPlans : []
-  const activeIdx = Math.min(Math.max(typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0, 0), Math.max(childPlans.length - 1, 0))
+  const fallbackIdx = typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0
+  const requestedIdx = typeof body.childIndex === 'number' ? body.childIndex : fallbackIdx
+  const activeIdx = Math.min(Math.max(requestedIdx, 0), Math.max(childPlans.length - 1, 0))
   const rawTier = childPlans[activeIdx]
   // Same PAYMENTS_ENABLED clamp as getActiveTier() in app/providers.tsx — a
   // "successful" Paystack test-mode checkout must not unlock a higher

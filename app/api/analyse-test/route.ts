@@ -67,6 +67,7 @@ export async function POST(req: NextRequest) {
     questionImages?: string[]
     answerImages?: string[]
     notes?: string
+    childIndex?: unknown
   } | null
 
   if (!body?.idToken) return new Response('Bad request', { status: 400 })
@@ -107,8 +108,15 @@ export async function POST(req: NextRequest) {
 
   // Same tier-resolution logic as getActiveTier() in app/providers.tsx,
   // reimplemented server-side — this route can't import client code.
+  //
+  // childIndex comes from the client's own (per-device) active-child
+  // selection rather than the account's Firestore activeChildIndex field —
+  // see the matching comment in app/api/ai-assistant/route.ts. Falls back
+  // to the Firestore field for any client build that predates this param.
   const childPlans: string[] = Array.isArray(userData.childPlans) ? userData.childPlans : []
-  const activeIdx = Math.min(Math.max(typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0, 0), Math.max(childPlans.length - 1, 0))
+  const fallbackIdx = typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0
+  const requestedIdx = typeof body.childIndex === 'number' ? body.childIndex : fallbackIdx
+  const activeIdx = Math.min(Math.max(requestedIdx, 0), Math.max(childPlans.length - 1, 0))
   const tier = childPlans[activeIdx] ?? 'free'
   // Same PAYMENTS_ENABLED clamp as getActiveTier() in app/providers.tsx — a
   // "successful" Paystack test-mode checkout must not unlock Max features

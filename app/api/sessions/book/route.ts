@@ -34,10 +34,11 @@ import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 // nothing to create, so offering a free session to every Free child would
 // let anyone farm unlimited free sessions with throwaway email addresses.
 export async function POST(req: NextRequest) {
-  const { idToken, sessionId, intent } = await req.json().catch(() => ({})) as {
+  const { idToken, sessionId, intent, childIndex } = await req.json().catch(() => ({})) as {
     idToken?: string
     sessionId?: string
     intent?: string
+    childIndex?: unknown
   }
   if (!idToken || !sessionId) return new Response('Bad request', { status: 400 })
   if (intent !== 'reserve' && intent !== 'pay_now') return new Response('Bad request: invalid intent', { status: 400 })
@@ -96,7 +97,17 @@ export async function POST(req: NextRequest) {
 
   const children = Array.isArray(userData.children) ? userData.children : []
   const childPlans: Tier[] = Array.isArray(userData.childPlans) ? userData.childPlans : []
-  const idx = Math.min(Math.max(typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0, 0), Math.max(children.length - 1, 0))
+  // childIndex comes from the client's own (per-device) active-child
+  // selection rather than the account's Firestore activeChildIndex field —
+  // see the matching comment in app/api/ai-assistant/route.ts. This one
+  // matters most of the three: it decides which sibling actually gets
+  // booked (and whose one-time free-session claim gets consumed), so
+  // trusting a stale shared field here could book the wrong child entirely.
+  // Falls back to the Firestore field for any client build that predates
+  // this param.
+  const fallbackIdx = typeof userData.activeChildIndex === 'number' ? userData.activeChildIndex : 0
+  const requestedIdx = typeof childIndex === 'number' ? childIndex : fallbackIdx
+  const idx = Math.min(Math.max(requestedIdx, 0), Math.max(children.length - 1, 0))
   const child = children[idx]
   if (!child) return new Response('No child profile on account', { status: 409 })
   // Same PAYMENTS_ENABLED clamp as getActiveTier() in app/providers.tsx — a

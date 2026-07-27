@@ -292,6 +292,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
           questionImages: questionImages.map(i => i.dataUrl),
           answerImages: answerImages.map(i => i.dataUrl),
           notes: notes.trim() || undefined,
+          childIndex: user.activeChildIndex,
         }),
       })
       if (!res.ok) {

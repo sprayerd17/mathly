@@ -814,6 +814,36 @@ function sanitizeChild(raw: unknown): Child {
   }
 }
 
+// activeChildIndex is deliberately NOT synced live across devices — a family
+// sharing one login (e.g. two kids each on their own phone, studying their
+// own grade at the same time) would otherwise have one device's profile
+// switch silently hijack the other's the moment either page reloads. Each
+// device keeps its own choice in localStorage; the Firestore field is only
+// ever consulted as the starting default for a device that hasn't picked
+// one yet (a brand-new browser, or one that's never touched the switcher).
+function activeChildStorageKey(uid: string): string {
+  return `mathly_active_child_${uid}`
+}
+
+function readLocalActiveChild(uid: string, maxIndex: number): number | null {
+  if (typeof window === 'undefined') return null
+  const raw = window.localStorage.getItem(activeChildStorageKey(uid))
+  if (raw === null) return null
+  const parsed = Number(raw)
+  if (!Number.isInteger(parsed) || parsed < 0 || parsed > maxIndex) return null
+  return parsed
+}
+
+function writeLocalActiveChild(uid: string, index: number): void {
+  if (typeof window === 'undefined') return
+  try {
+    window.localStorage.setItem(activeChildStorageKey(uid), String(index))
+  } catch {
+    // best-effort — a storage failure (e.g. private browsing quota) just
+    // means this device falls back to the Firestore default next load
+  }
+}
+
 // Builds our app-level User from a Firebase Auth user + their Firestore profile doc.
 async function loadUser(fbUser: FirebaseUser): Promise<User> {
   const snap = await getDoc(doc(db, 'users', fbUser.uid))
@@ -835,7 +865,9 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
     ? data.children.map(sanitizeChild)
     : [sanitizeChild({ name, grade: 0, language: 'en', languageChangeUsed: false, gradeChangeUsed: false })]
   const rawActiveIndex = typeof data.activeChildIndex === 'number' ? data.activeChildIndex : 0
-  const activeChildIndex = Math.min(Math.max(rawActiveIndex, 0), children.length - 1)
+  const firestoreDefault = Math.min(Math.max(rawActiveIndex, 0), children.length - 1)
+  const localOverride = readLocalActiveChild(fbUser.uid, children.length - 1)
+  const activeChildIndex = localOverride ?? firestoreDefault
 
   return {
     uid: fbUser.uid,
@@ -1049,6 +1081,10 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   async function updateActiveChild(index: number) {
     if (!user) return
     setUser({ ...user, activeChildIndex: index })
+    // Local first and authoritative for this device — see the comment above
+    // readLocalActiveChild. The Firestore write below is kept only as the
+    // starting default for a device that's never chosen one of its own.
+    writeLocalActiveChild(user.uid, index)
     try {
       await updateDoc(doc(db, 'users', user.uid), { activeChildIndex: index })
     } catch {

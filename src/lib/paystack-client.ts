@@ -61,6 +61,7 @@ export async function initiateSessionBooking(
   fbUser: FirebaseUser,
   sessionId: string,
   intent: 'reserve' | 'pay_now',
+  childIndex: number,
 ): Promise<
   { free: true } | { reserved: true; bookingId: string; depositDeadline: string } | { free: false; reserved: false }
 > {
@@ -68,7 +69,7 @@ export async function initiateSessionBooking(
   const res = await fetch('/api/sessions/book', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ idToken, sessionId, intent }),
+    body: JSON.stringify({ idToken, sessionId, intent, childIndex }),
   })
   if (!res.ok) {
     throw new CheckoutError(await res.text().catch(() => 'Could not start booking.'))

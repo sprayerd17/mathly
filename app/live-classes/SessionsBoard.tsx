@@ -102,7 +102,7 @@ export default function SessionsBoard({ sessions }: { sessions: PublicSession[] 
     setBookingId(session.id)
     setBookingIntent(intent)
     try {
-      const result = await initiateSessionBooking(auth.currentUser!, session.id, intent)
+      const result = await initiateSessionBooking(auth.currentUser!, session.id, intent, user.activeChildIndex)
       if ('free' in result && result.free) {
         // Free bookings are confirmed instantly server-side — no Paystack
         // redirect happens, so pull the real (now-paid) booking doc rather
