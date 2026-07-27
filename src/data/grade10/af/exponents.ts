@@ -28,11 +28,11 @@ export const topicData: TopicData = {
       title: 'Wette van Eksponente vir Heelgetal-eksponente',
       icon: 'xⁿ',
       explanation:
-        `<p style="margin-bottom:16px;">Ons brei die wette van eksponente uit na <strong>heelgetal-eksponente</strong> — heelgetalle wat negatiewe getalle en nul insluit. Dieselfde reëls wat vir positiewe eksponente gegeld het, geld steeds: ${bl('x')}${or('ᵃ')}·${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁺ᵇ')}, ${bl('x')}${or('ᵃ')}÷${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁻ᵇ')}, (${bl('x')}${or('ᵃ')})${or('ᵇ')}=${bl('x')}${or('ᵃᵇ')}, ${bl('x')}${or('⁻ⁿ')}=1/${bl('x')}${or('ⁿ')}, en ${bl('x')}${or('⁰')}=${gr('1')} (vir x≠0). ʼn Kritieke fout om op te let: wanneer jy dieselfde grondgetalle <em>vermenigvuldig</em>, <strong>tel</strong> jy die eksponente bymekaar — jy vermenigvuldig hulle nie.</p>` +
+        `<p style="margin-bottom:16px;">Ons brei die wette van eksponente uit na <strong>heelgetal-eksponente</strong> — heelgetalle wat negatiewe getalle en nul insluit. Dieselfde reëls wat vir positiewe eksponente gegeld het, geld steeds: ${bl('x')}${or('ᵃ')}·${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁺ᵇ')}, ${bl('x')}${or('ᵃ')}÷${bl('x')}${or('ᵇ')}=${bl('x')}${or('ᵃ⁻ᵇ')}, (${bl('x')}${or('ᵃ')})${or('ᵇ')}=${bl('x')}${or('ᵃᵇ')}, ${bl('x')}${or('⁻ⁿ')}=1/${bl('x')}${or('ⁿ')}, en ${bl('x')}${or('⁰')}=${gr('1')} (vir x≠0). ʼn Kritieke fout om op te let: wanneer jy dieselfde grondtalle <em>vermenigvuldig</em>, <strong>tel</strong> jy die eksponente bymekaar — jy vermenigvuldig hulle nie.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
-        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('grondgetal')}</span>` +
+        `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('grondtal')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('eksponent')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('vereenvoudigde antwoord')}</span>` +
         `</div>` +
@@ -42,12 +42,12 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;flex-wrap:wrap;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
-        `<p style="margin:0;font-size:14px;flex:1;"><strong>Produk van magte:</strong> ${bl('x')}${or('ᵃ')}·${bl('x')}${or('ᵇ')} = ${gr('xᵃ⁺ᵇ')} — tel die eksponente bymekaar wanneer jy dieselfde grondgetalle vermenigvuldig.</p>` +
+        `<p style="margin:0;font-size:14px;flex:1;"><strong>Produk van magte:</strong> ${bl('x')}${or('ᵃ')}·${bl('x')}${or('ᵇ')} = ${gr('xᵃ⁺ᵇ')} — tel die eksponente bymekaar wanneer jy dieselfde grondtalle vermenigvuldig.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;flex-wrap:wrap;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
-        `<p style="margin:0;font-size:14px;flex:1;"><strong>Kwosiënt van magte:</strong> ${bl('x')}${or('ᵃ')}÷${bl('x')}${or('ᵇ')} = ${gr('xᵃ⁻ᵇ')} — trek die eksponente van mekaar af wanneer jy dieselfde grondgetalle deel.</p>` +
+        `<p style="margin:0;font-size:14px;flex:1;"><strong>Kwosiënt van magte:</strong> ${bl('x')}${or('ᵃ')}÷${bl('x')}${or('ᵇ')} = ${gr('xᵃ⁻ᵇ')} — trek die eksponente van mekaar af wanneer jy dieselfde grondtalle deel.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;flex-wrap:wrap;">` +
@@ -62,14 +62,14 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;flex-wrap:wrap;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">5</span>` +
-        `<p style="margin:0;font-size:14px;flex:1;"><strong>Nul-eksponent:</strong> ${bl('x')}${or('⁰')} = ${gr('1')} vir enige nie-nul grondgetal x.</p>` +
+        `<p style="margin:0;font-size:14px;flex:1;"><strong>Nul-eksponent:</strong> ${bl('x')}${or('⁰')} = ${gr('1')} vir enige nie-nul grondtal x.</p>` +
         `</div>` +
 
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:6px;">Algemene fout om te vermy</p>` +
-        `<p style="margin:0;color:#991b1b;">Wanneer jy dieselfde grondgetalle <em>vermenigvuldig</em>, <strong>tel</strong> jy die ${or('eksponente')} bymekaar — moet dit nooit vermenigvuldig nie. ${bl('x')}${or('²')}·${bl('x')}${or('³')} = ${gr('x⁵')} omdat ${or('2+3=5')}, nie x⁶ nie. Die wette van eksponente geld slegs wanneer die ${bl('grondgetalle identies is')}.</p>` +
+        `<p style="margin:0;color:#991b1b;">Wanneer jy dieselfde grondtalle <em>vermenigvuldig</em>, <strong>tel</strong> jy die ${or('eksponente')} bymekaar — moet dit nooit vermenigvuldig nie. ${bl('x')}${or('²')}·${bl('x')}${or('³')} = ${gr('x⁵')} omdat ${or('2+3=5')}, nie x⁶ nie. Die wette van eksponente geld slegs wanneer die ${bl('grondtalle identies is')}.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -98,7 +98,7 @@ export const topicData: TopicData = {
           answer: `${gr('x⁵')}`,
           steps: [
             `Sipho se fout: hy het die ${or('eksponente')} <em>vermenigvuldig</em> (${or('2 × 3 = 6')}) in plaas daarvan om hulle <em>bymekaar te tel</em>.`,
-            `Die korrekte wet om dieselfde ${bl('grondgetalle')} te vermenigvuldig, is die <strong>produk-van-magte</strong>-wet: ${bl('x')}${or('ᵃ')} · ${bl('x')}${or('ᵇ')} = ${bl('x')}${or('ᵃ⁺ᵇ')}.`,
+            `Die korrekte wet om dieselfde ${bl('grondtalle')} te vermenigvuldig, is die <strong>produk-van-magte</strong>-wet: ${bl('x')}${or('ᵃ')} · ${bl('x')}${or('ᵇ')} = ${bl('x')}${or('ᵃ⁺ᵇ')}.`,
             `Pas dit korrek toe: ${bl('x')}${or('²')} · ${bl('x')}${or('³')} = ${bl('x')}${or('²⁺³')} = <strong>Antwoord:</strong> ${gr('x⁵')}, nie x⁶ nie. ✓`,
           ],
         },
@@ -578,14 +578,14 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Vereenvoudig (2x⁻³)⁻¹ en skryf met ʼn positiewe eksponent.', answer: 'x³/2', checkMode: 'auto', correctAnswer: 'x³/2', explanation: 'Pas die mag toe op elke faktor: 2⁻¹ · (x⁻³)⁻¹ = (1/2) · x³ = x³/2 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (x⁻²y³) ÷ (x³y⁻¹) en skryf met slegs positiewe eksponente.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terme: x⁻² ÷ x³ = x⁻²⁻³ = x⁻⁵.\ny-terme: y³ ÷ y⁻¹ = y³⁻⁽⁻¹⁾ = y⁴.\nHerskryf: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (4a⁻²b)⁻² en skryf met slegs positiewe eksponente.', answer: 'a⁴/(16b²)', checkMode: 'auto', correctAnswer: 'a⁴/(16b²)', correctAnswers: ['a⁴/(16b²)', 'a⁴/16b²'], explanation: 'Pas die mag toe op elke faktor: 4⁻² · (a⁻²)⁻² · b⁻² = (1/16) · a⁴ · b⁻² = a⁴/(16b²) ✓' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 5x⁰.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Enige nie-nul grondgetal tot die mag 0 is gelyk aan 1: 5x⁰ = 5 × 1 = 5 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 5x⁰.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Enige nie-nul grondtal tot die mag 0 is gelyk aan 1: 5x⁰ = 5 × 1 = 5 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (x²y⁰) ÷ x⁻¹.', answer: 'x³', checkMode: 'auto', correctAnswer: 'x³', explanation: 'y⁰ = 1, dus is dit x² ÷ x⁻¹ = x²⁻⁽⁻¹⁾ = x³ ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (3x²)⁰ + 2.', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'Enigiets (nie-nul) tot die mag 0 is 1: (3x²)⁰ = 1. Dus 1 + 2 = 3 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (2a³b⁻²)² ÷ (a⁻¹b) en skryf met slegs positiewe eksponente.', answer: '4a⁷/b⁵', checkMode: 'auto', correctAnswer: '4a⁷/b⁵', explanation: '(2a³b⁻²)² = 4a⁶b⁻⁴.\nDeel deur a⁻¹b: 4a⁶⁻⁽⁻¹⁾b⁻⁴⁻¹ = 4a⁷b⁻⁵ = 4a⁷/b⁵ ✓' },
         { difficulty: 'Medium-Hard', question: 'Bereken 16^(1/2).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'ʼn Mag van 1/2 beteken die vierkantswortel: 16^(1/2) = √16 = 4 ✓' },
         { difficulty: 'Medium-Hard', question: 'Bereken 27^(1/3).', answer: '3', checkMode: 'auto', correctAnswer: '3', explanation: 'ʼn Mag van 1/3 beteken die derdemagswortel: 27^(1/3) = ∛27 = 3, aangesien 3³ = 27 ✓' },
         { difficulty: 'Hard', question: 'Bereken 8^(2/3).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'Neem eers die derdemagswortel, dan die kwadraat: 8^(2/3) = (∛8)² = 2² = 4 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 32.', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Skryf 32 as ʼn mag van 2: 32 = 2⁵. Aangesien die grondgetalle gelyk is, is x = 5 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 32.', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Skryf 32 as ʼn mag van 2: 32 = 2⁵. Aangesien die grondtalle gelyk is, is x = 5 ✓' },
         { difficulty: 'Hard', question: 'Los op vir x: 3^(2x) = 9.', answer: 'x=1', checkMode: 'auto', correctAnswer: 'x=1', correctAnswers: ['x=1', 'x = 1', '1'], explanation: 'Skryf 9 as ʼn mag van 3: 9 = 3². Dus 3^(2x) = 3² beteken 2x = 2, wat x = 1 gee ✓' },
         { difficulty: 'Hard', question: 'Zanele sê x⁻² is altyd negatief weens die minus-teken in die eksponent. Is sy korrek? Verduidelik, deur x=3 as voorbeeld te gebruik.', answer: 'Nee — ʼn negatiewe eksponent beteken die resiprook, nie ʼn negatiewe waarde nie. Vir x=3: x⁻²=3⁻²=1/3²=1/9, wat ʼn positiewe breuk is. Die minus-teken in die eksponent beteken jy moet die resiprook neem, dit maak nie die resultaat negatief nie.', checkMode: 'self' },
       ],
@@ -616,15 +616,15 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Vereenvoudig (3x⁻²)⁻¹ en skryf met ʼn positiewe eksponent.', answer: 'x²/3', checkMode: 'auto', correctAnswer: 'x²/3', explanation: 'Pas die mag toe op elke faktor: 3⁻¹ · (x⁻²)⁻¹ = (1/3) · x² = x²/3 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (x⁻³y²) ÷ (x²y⁻²) en skryf met slegs positiewe eksponente.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terme: x⁻³ ÷ x² = x⁻³⁻² = x⁻⁵.\ny-terme: y² ÷ y⁻² = y²⁻⁽⁻²⁾ = y⁴.\nHerskryf: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (2a⁻³b)⁻² en skryf met slegs positiewe eksponente.', answer: 'a⁶/(4b²)', checkMode: 'auto', correctAnswer: 'a⁶/(4b²)', correctAnswers: ['a⁶/(4b²)', 'a⁶/4b²'], explanation: 'Pas die mag toe op elke faktor: 2⁻² · (a⁻³)⁻² · b⁻² = (1/4) · a⁶ · b⁻² = a⁶/(4b²) ✓' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 7x⁰.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Enige nie-nul grondgetal tot die mag 0 is gelyk aan 1: 7x⁰ = 7 × 1 = 7 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 7x⁰.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Enige nie-nul grondtal tot die mag 0 is gelyk aan 1: 7x⁰ = 7 × 1 = 7 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (a³b⁰) ÷ a⁻².', answer: 'a⁵', checkMode: 'auto', correctAnswer: 'a⁵', explanation: 'b⁰ = 1, dus is dit a³ ÷ a⁻² = a³⁻⁽⁻²⁾ = a⁵ ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (5x³)⁰ + 6.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Enigiets (nie-nul) tot die mag 0 is 1: (5x³)⁰ = 1. Dus 1 + 6 = 7 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (3a²b⁻³)² ÷ (a⁻¹b) en skryf met slegs positiewe eksponente.', answer: '9a⁵/b⁷', checkMode: 'auto', correctAnswer: '9a⁵/b⁷', explanation: '(3a²b⁻³)² = 9a⁴b⁻⁶.\nDeel deur a⁻¹b: 9a⁴⁻⁽⁻¹⁾b⁻⁶⁻¹ = 9a⁵b⁻⁷ = 9a⁵/b⁷ ✓' },
         { difficulty: 'Medium-Hard', question: 'Bereken 25^(1/2).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'ʼn Mag van 1/2 beteken die vierkantswortel: 25^(1/2) = √25 = 5 ✓' },
         { difficulty: 'Medium-Hard', question: 'Bereken 64^(1/3).', answer: '4', checkMode: 'auto', correctAnswer: '4', explanation: 'ʼn Mag van 1/3 beteken die derdemagswortel: 64^(1/3) = ∛64 = 4, aangesien 4³ = 64 ✓' },
         { difficulty: 'Hard', question: 'Bereken 4^(3/2).', answer: '8', checkMode: 'auto', correctAnswer: '8', explanation: 'Neem eers die vierkantswortel, dan die derde mag: 4^(3/2) = (√4)³ = 2³ = 8 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 8.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 8 as ʼn mag van 2: 8 = 2³. Aangesien die grondgetalle gelyk is, is x = 3 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 5ˣ = 125.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 125 as ʼn mag van 5: 125 = 5³. Aangesien die grondgetalle gelyk is, is x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 8.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 8 as ʼn mag van 2: 8 = 2³. Aangesien die grondtalle gelyk is, is x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 5ˣ = 125.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 125 as ʼn mag van 5: 125 = 5³. Aangesien die grondtalle gelyk is, is x = 3 ✓' },
         { difficulty: 'Hard', question: 'Bongani sê 9^(1/2) is dieselfde as 9÷2. Is hy korrek? Verduidelik wat die eksponent 1/2 werklik beteken en gee die korrekte waarde.', answer: 'Nee — ʼn eksponent van 1/2 beteken die vierkantswortel, nie deling deur 2 nie. 9^(1/2)=√9=3, nie 4,5 nie (wat 9÷2 is). Breuk-eksponente verteenwoordig wortels: die noemer van die breuk wys watter wortel jy moet neem.', checkMode: 'self' },
       ],
       scoreMessages: [
@@ -654,15 +654,15 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Vereenvoudig (5x⁻²)⁻¹ en skryf met ʼn positiewe eksponent.', answer: 'x²/5', checkMode: 'auto', correctAnswer: 'x²/5', explanation: 'Pas die mag toe op elke faktor: 5⁻¹ · (x⁻²)⁻¹ = (1/5) · x² = x²/5 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (x⁻⁴y³) ÷ (x¹y⁻¹) en skryf met slegs positiewe eksponente.', answer: 'y⁴/x⁵', checkMode: 'auto', correctAnswer: 'y⁴/x⁵', explanation: 'x-terme: x⁻⁴ ÷ x¹ = x⁻⁴⁻¹ = x⁻⁵.\ny-terme: y³ ÷ y⁻¹ = y³⁻⁽⁻¹⁾ = y⁴.\nHerskryf: x⁻⁵y⁴ = y⁴/x⁵ ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (3a⁻²b)⁻² en skryf met slegs positiewe eksponente.', answer: 'a⁴/(9b²)', checkMode: 'auto', correctAnswer: 'a⁴/(9b²)', correctAnswers: ['a⁴/(9b²)', 'a⁴/9b²'], explanation: 'Pas die mag toe op elke faktor: 3⁻² · (a⁻²)⁻² · b⁻² = (1/9) · a⁴ · b⁻² = a⁴/(9b²) ✓' },
-        { difficulty: 'Medium', question: 'Vereenvoudig 9x⁰.', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Enige nie-nul grondgetal tot die mag 0 is gelyk aan 1: 9x⁰ = 9 × 1 = 9 ✓' },
+        { difficulty: 'Medium', question: 'Vereenvoudig 9x⁰.', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: 'Enige nie-nul grondtal tot die mag 0 is gelyk aan 1: 9x⁰ = 9 × 1 = 9 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (b⁴c⁰) ÷ b⁻³.', answer: 'b⁷', checkMode: 'auto', correctAnswer: 'b⁷', explanation: 'c⁰ = 1, dus is dit b⁴ ÷ b⁻³ = b⁴⁻⁽⁻³⁾ = b⁷ ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (7x⁵)⁰ + 4.', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'Enigiets (nie-nul) tot die mag 0 is 1: (7x⁵)⁰ = 1. Dus 1 + 4 = 5 ✓' },
         { difficulty: 'Medium', question: 'Vereenvoudig (2a³b⁻²)³ ÷ (a⁻¹b) en skryf met slegs positiewe eksponente.', answer: '8a¹⁰/b⁷', checkMode: 'auto', correctAnswer: '8a¹⁰/b⁷', explanation: '(2a³b⁻²)³ = 8a⁹b⁻⁶.\nDeel deur a⁻¹b: 8a⁹⁻⁽⁻¹⁾b⁻⁶⁻¹ = 8a¹⁰b⁻⁷ = 8a¹⁰/b⁷ ✓' },
         { difficulty: 'Medium-Hard', question: 'Bereken 36^(1/2).', answer: '6', checkMode: 'auto', correctAnswer: '6', explanation: 'ʼn Mag van 1/2 beteken die vierkantswortel: 36^(1/2) = √36 = 6 ✓' },
         { difficulty: 'Medium-Hard', question: 'Bereken 125^(1/3).', answer: '5', checkMode: 'auto', correctAnswer: '5', explanation: 'ʼn Mag van 1/3 beteken die derdemagswortel: 125^(1/3) = ∛125 = 5, aangesien 5³ = 125 ✓' },
         { difficulty: 'Hard', question: 'Bereken 9^(3/2).', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: 'Neem eers die vierkantswortel, dan die derde mag: 9^(3/2) = (√9)³ = 3³ = 27 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 64.', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Skryf 64 as ʼn mag van 2: 64 = 2⁶. Aangesien die grondgetalle gelyk is, is x = 6 ✓' },
-        { difficulty: 'Hard', question: 'Los op vir x: 4ˣ = 64.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 64 as ʼn mag van 4: 64 = 4³ (4×4×4=64). Aangesien die grondgetalle gelyk is, is x = 3 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 2ˣ = 64.', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Skryf 64 as ʼn mag van 2: 64 = 2⁶. Aangesien die grondtalle gelyk is, is x = 6 ✓' },
+        { difficulty: 'Hard', question: 'Los op vir x: 4ˣ = 64.', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Skryf 64 as ʼn mag van 4: 64 = 4³ (4×4×4=64). Aangesien die grondtalle gelyk is, is x = 3 ✓' },
         { difficulty: 'Hard', question: 'Thabo sê (x³)² en x^(3²) gee dieselfde antwoord. Is hy korrek? Vereenvoudig altwee uitdrukkings om te toets.', answer: 'Nee — (x³)² gebruik die mag-van-ʼn-mag-wet: vermenigvuldig die eksponente, wat x⁶ gee. Maar x^(3²) beteken x tot die mag 3², wat x⁹ is. Hierdie is verskillend (x⁶ ≠ x⁹), dus is Thabo verkeerd. Die hakieplasing verander die betekenis van die uitdrukking.', checkMode: 'self' },
       ],
       scoreMessages: [
@@ -729,7 +729,7 @@ export const topicPractice = [
   {
     difficulty: 'Hard',
     question: 'Sipho vereenvoudig x³·y² en kry (xy)⁵. Is hy korrek? Verduidelik.',
-    answer: 'Nee — jy kan slegs eksponente kombineer wanneer die grondgetalle dieselfde is. x³ en y² het verskillende grondgetalle, dus kan hulle nie op hierdie manier gekombineer word nie.',
+    answer: 'Nee — jy kan slegs eksponente kombineer wanneer die grondtalle dieselfde is. x³ en y² het verskillende grondtalle, dus kan hulle nie op hierdie manier gekombineer word nie.',
     checkMode: 'self',
   },
 

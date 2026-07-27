@@ -17,7 +17,7 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'completing-the-square',
-      title: 'Voltooiing van die Vierkant',
+      title: 'Voltooiing van die Kwadraat',
       icon: '²',
       explanation:
         `<p style="margin-bottom:16px;">Om die vierkant te voltooi, herskryf ons ʼn kwadratiese uitdrukking <strong>ax²+bx+c</strong> in die vorm <strong>a(x+p)²+q</strong>, wat die draaipunt van die verwante parabool direk openbaar. Die metode behels: faktoriseer <strong>a</strong> uit die x²- en x-terme, en voeg dan <strong>(die helfte van die koëffisiënt van x)²</strong> binne die hakie by en trek dit af om ʼn volkome vierkant te vorm.</p>` +
@@ -457,7 +457,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Hard',
           question: 'Sipho sê elke kwadratiese uitdrukking in die vorm ax²+bx+c kan in voltooide vierkantvorm geskryf word. Is hy korrek? Verduidelik.',
-          answer: 'Ja — die voltooiing van die vierkant is ʼn universele algebraïese tegniek wat vir enige kwadratiese uitdrukking werk, ongeag of dit netjies met heelgetalle gefaktoriseer kan word.',
+          answer: 'Ja — die voltooiing van die kwadraat is ʼn universele algebraïese tegniek wat vir enige kwadratiese uitdrukking werk, ongeag of dit netjies met heelgetalle gefaktoriseer kan word.',
           checkMode: 'self',
         },
 
@@ -544,9 +544,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Sipho vereenvoudig 4/(x−4) − 1/(x+2) en kry (3x+12)/[(x−4)(x+2)]. Gaan sy antwoord na.', answer: 'Kombineer: [4(x+2) − 1(x−4)] / [(x−4)(x+2)] = (4x+8−x+4) / [(x−4)(x+2)] = (3x+12) / [(x−4)(x+2)]. Hy is korrek.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het die voltooiing van die vierkant en algebraïese breuke bemeester.' },
-        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor die voltooiing van die vierkant of algebraïese breuke na en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die voltooiing van die vierkant en vereenvoudiging van breuke weer deur, en probeer weer.' },
+        { minScore: 20, message: 'Uitstekend! Jy het die voltooiing van die kwadraat en algebraïese breuke bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor die voltooiing van die kwadraat of algebraïese breuke na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die voltooiing van die kwadraat en vereenvoudiging van breuke weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -590,9 +590,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Amahle vereenvoudig 5/(x−3) − 2/(x+2) en kry (3x+16)/[(x−3)(x+2)]. Gaan haar antwoord na.', answer: 'Kombineer: [5(x+2) − 2(x−3)] / [(x−3)(x+2)] = (5x+10−2x+6) / [(x−3)(x+2)] = (3x+16) / [(x−3)(x+2)]. Sy is korrek.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het die voltooiing van die vierkant en algebraïese breuke bemeester.' },
-        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor die voltooiing van die vierkant of algebraïese breuke na en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die voltooiing van die vierkant en vereenvoudiging van breuke weer deur, en probeer weer.' },
+        { minScore: 20, message: 'Uitstekend! Jy het die voltooiing van die kwadraat en algebraïese breuke bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor die voltooiing van die kwadraat of algebraïese breuke na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die voltooiing van die kwadraat en vereenvoudiging van breuke weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -621,7 +621,7 @@ export const topicData: TopicData = {
         // Blok 4 — Draaipunt / optimeringsprobleem / eweknie-nagaan (Medium/Hard)
         { difficulty: 'Medium', question: 'Vind die draaipunt van y = x²+6x−7 deur die vierkant te voltooi.', checkMode: 'auto', correctAnswer: '(−3,−16)', correctAnswers: ['(−3,−16)', '(-3,-16)', '(−3, −16)', '(-3, -16)'], answer: '(−3, −16)', explanation: 'x²+6x−7 = (x+3)²−9−7 = (x+3)²−16.\nDraaipunt: x=−3, y=−16. Koördinate: (−3, −16) ✓' },
         { difficulty: 'Hard', question: 'ʼn Boer het 32 m draad om ʼn reghoekige area teen ʼn skuurmuur aan een kant in te kamp. Laat die twee gelyke sye (loodreg op die muur) x meter wees. Vind die maksimum moontlike area.', answer: 'Laat loodregte sye = x. Parallelle sy = 32−2x.\nArea = x(32−2x) = −2x²+32x = −2(x−8)²+128.\nMaksimum area = 128 m² wanneer x = 8 m.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Lerato sê elke kwadratiese ax²+bx+c met a≠0 kan die vierkant voltooi word, ongeag of b²−4ac ʼn volkome vierkant is. Is sy korrek? Verduidelik.', answer: 'Ja — die voltooiing van die vierkant is ʼn suiwer algebraïese proses (faktoriseer a uit, halveer en kwadreer die koëffisiënt van x) wat vir enige kwadratiese uitdrukking werk, ongeag of dit netjies faktoriseer.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato sê elke kwadratiese ax²+bx+c met a≠0 kan die kwadraat voltooi word, ongeag of b²−4ac ʼn volkome vierkant is. Is sy korrek? Verduidelik.', answer: 'Ja — die voltooiing van die kwadraat is ʼn suiwer algebraïese proses (faktoriseer a uit, halveer en kwadreer die koëffisiënt van x) wat vir enige kwadratiese uitdrukking werk, ongeag of dit netjies faktoriseer.', checkMode: 'self' },
 
         // Blok 5 — Vereenvoudig ʼn enkele algebraïese breuk (binoomnoemer) (Hard)
         { difficulty: 'Hard', question: 'Vereenvoudig (x²−1) / (x−1).', checkMode: 'auto', correctAnswer: 'x+1', correctAnswers: ['x+1'], answer: 'x+1', explanation: 'Faktoriseer teller: x²−1 = (x−1)(x+1).\nKanselleer (x−1): x+1, waar x ≠ 1 ✓' },
@@ -636,9 +636,9 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Bongani vereenvoudig 3/(x+4) − 2/(x−1) en kry (x−11)/[(x+4)(x−1)]. Gaan sy antwoord na.', answer: 'Kombineer: [3(x−1) − 2(x+4)] / [(x+4)(x−1)] = (3x−3−2x−8) / [(x+4)(x−1)] = (x−11) / [(x+4)(x−1)]. Hy is korrek.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het die voltooiing van die vierkant en algebraïese breuke bemeester.' },
-        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor die voltooiing van die vierkant of algebraïese breuke na en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die voltooiing van die vierkant en vereenvoudiging van breuke weer deur, en probeer weer.' },
+        { minScore: 20, message: 'Uitstekend! Jy het die voltooiing van die kwadraat en algebraïese breuke bemeester.' },
+        { minScore: 15, message: 'Puik werk! Gaan enige gemiste vrae oor die voltooiing van die kwadraat of algebraïese breuke na en probeer weer.' },
+        { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor die voltooiing van die kwadraat en vereenvoudiging van breuke weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

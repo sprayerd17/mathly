@@ -32,13 +32,13 @@ export const topicData: TopicData = {
       title: 'Kwadratiese Vergelykings Oplos deur Drie Metodes',
       icon: '²',
       explanation:
-        `<p style="margin-bottom:16px;">Ons los kwadratiese vergelykings van die vorm <strong>ax² + bx + c = 0</strong> op deur drie metodes te gebruik: ${bl('faktorisering')} (wanneer die uitdrukking maklik faktoriseer), ${or('volledigmaking van die vierkant')} (veral nuttig wanneer faktorisering nie eenvoudig is nie), en die ${gr('kwadratiese formule')} x = (−b ± √(b² − 4ac)) / 2a (wat altyd werk vir enige kwadratiese ax² + bx + c = 0).</p>` +
+        `<p style="margin-bottom:16px;">Ons los kwadratiese vergelykings van die vorm <strong>ax² + bx + c = 0</strong> op deur drie metodes te gebruik: ${bl('faktorisering')} (wanneer die uitdrukking maklik faktoriseer), ${or('volledigmaking van die kwadraat')} (veral nuttig wanneer faktorisering nie eenvoudig is nie), en die ${gr('kwadratiese formule')} x = (−b ± √(b² − 4ac)) / 2a (wat altyd werk vir enige kwadratiese ax² + bx + c = 0).</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('faktorisering')}</span>` +
-        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('volledigmaking van die vierkant')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('volledigmaking van die kwadraat')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('kwadratiese formule')}</span>` +
         `</div>` +
 
@@ -53,7 +53,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
-        `<p style="font-weight:700;color:#ea580c;margin-bottom:6px;">Volledigmaking van die Vierkant</p>` +
+        `<p style="font-weight:700;color:#ea580c;margin-bottom:6px;">Volledigmaking van die Kwadraat</p>` +
         `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Herskryf die vergelyking in die vorm (x + p)² = q, en trek dan die vierkantswortel van albei kante.</p>` +
         `<p style="color:#6b7280;font-size:13px;margin:0;"><strong>Gebruik wanneer:</strong> faktorisering nie voor die hand liggend is nie, of wanneer wortelvorm-antwoorde verwag word.</p>` +
         `</div>` +
@@ -76,7 +76,7 @@ export const topicData: TopicData = {
         // ── Tip box ──────────────────────────────────────────────────────────
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Die doeltreffendste metode kies</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Kyk altyd eers of die kwadratiese ${bl('faktoriseer')} — dit gee die vinnigste oplossing. As dit nie netjies faktoriseer nie, gebruik ${or('volledigmaking van die vierkant')} (veral doeltreffend wanneer a = 1) of die ${gr('kwadratiese formule')} (die veilige alombruikbare keuse, veral wanneer a ≠ 1).</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Kyk altyd eers of die kwadratiese ${bl('faktoriseer')} — dit gee die vinnigste oplossing. As dit nie netjies faktoriseer nie, gebruik ${or('volledigmaking van die kwadraat')} (veral doeltreffend wanneer a = 1) of die ${gr('kwadratiese formule')} (die veilige alombruikbare keuse, veral wanneer a ≠ 1).</p>` +
         `</div>`,
 
       workedExamples: [
@@ -94,7 +94,7 @@ export const topicData: TopicData = {
           question: 'Los op: x² + 6x + 4 = 0 deur die vierkant volledig te maak.',
           answer: `${or('x = −3 + √5')} of ${or('x = −3 − √5')}`,
           steps: [
-            `Skryf die vergelyking: x² + 6x + 4 = 0. Aangesien a = 1, is die volledigmaking van die vierkant eenvoudig.`,
+            `Skryf die vergelyking: x² + 6x + 4 = 0. Aangesien a = 1, is die volledigmaking van die kwadraat eenvoudig.`,
             `${or('Maak die vierkant volledig:')} Neem die helfte van die koëffisiënt van x: die helfte van 6 is 3. Skryf die volkome vierkant-trinoom:<br>(x + 3)² − 9 + 4 = 0`,
             `Vereenvoudig: ${or('(x + 3)² = 5')}`,
             `Trek die vierkantswortel van albei kante: x + 3 = ±√5`,
@@ -117,7 +117,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering, volledigmaking van die vierkant, en die kwadratiese formule, met ʼn uitgewerkte voorbeeld vir elke metode',
+        'Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering, volledigmaking van die kwadraat, en die kwadratiese formule, met ʼn uitgewerkte voorbeeld vir elke metode',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -471,7 +471,7 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">3</span>` +
-        `<p style="margin:0;font-size:14px;">Los die ${gr('gevolglike kwadratiese vergelyking')} op deur enige geskikte metode — faktorisering, volledigmaking van die vierkant, of die kwadratiese formule.</p>` +
+        `<p style="margin:0;font-size:14px;">Los die ${gr('gevolglike kwadratiese vergelyking')} op deur enige geskikte metode — faktorisering, volledigmaking van die kwadraat, of die kwadratiese formule.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:9px;">` +

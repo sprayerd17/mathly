@@ -127,7 +127,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Parallelle lyne</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Twee lyne is ${gr('parallel')} as hul gradiënte ${gr('gelyk')} is: ${gr('m₁ = m₂')}. Die lyne ontmoet mekaar nooit nie.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Twee lyne is ${gr('ewewydig')} as hul gradiënte ${gr('gelyk')} is: ${gr('m₁ = m₂')}. Die lyne ontmoet mekaar nooit nie.</p>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
@@ -155,14 +155,14 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Lerato het twee lyne: een deur (0,2) en (3,8), ʼn ander deur (1,5) en (4,11). Is hulle parallel?',
-          answer: `Die lyne ${gr('is parallel')} — albei het ${gr('gradiënt = 2')}`,
+          question: 'Lerato het twee lyne: een deur (0,2) en (3,8), ʼn ander deur (1,5) en (4,11). Is hulle ewewydig?',
+          answer: `Die lyne ${gr('is ewewydig')} — albei het ${gr('gradiënt = 2')}`,
           steps: [
             `Bereken die ${bl('gradiënt')} van die eerste lyn deur (${bl('0')},${gr('2')}) en (${bl('3')},${gr('8')}):`,
             `${bl('m₁')} = (${gr('8')}−${gr('2')}) ÷ (${bl('3')}−${bl('0')}) = ${gr('6')} ÷ ${bl('3')} = ${bl('2')}`,
             `Bereken die ${bl('gradiënt')} van die tweede lyn deur (${bl('1')},${gr('5')}) en (${bl('4')},${gr('11')}):`,
             `${bl('m₂')} = (${gr('11')}−${gr('5')}) ÷ (${bl('4')}−${bl('1')}) = ${gr('6')} ÷ ${bl('3')} = ${bl('2')}`,
-            `${gr('Vergelyk:')} ${gr('m₁')} = ${gr('2')} en ${gr('m₂')} = ${gr('2')}. Aangesien ${gr('m₁ = m₂')}, is die lyne ${gr('parallel')}. ✓`,
+            `${gr('Vergelyk:')} ${gr('m₁')} = ${gr('2')} en ${gr('m₂')} = ${gr('2')}. Aangesien ${gr('m₁ = m₂')}, is die lyne ${gr('ewewydig')}. ✓`,
           ],
         },
         {
@@ -182,12 +182,12 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       diagramPlaceholder:
-        'Cartesiese vlak wat twee parallelle lyne met gelyke gradiënte in groen gemerk wys, en twee loodregte lyne waarvan die gradiënte vermenigvuldig tot −1 in oranje gemerk, gradiëntberekening in blou getoon',
+        'Cartesiese vlak wat twee ewewydige lyne met gelyke gradiënte in groen gemerk wys, en twee loodregte lyne waarvan die gradiënte vermenigvuldig tot −1 in oranje gemerk, gradiëntberekening in blou getoon',
       diagramSvg:
         '<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><text x="75" y="14" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">Parallel: gelyke gradiënt</text><line x1="25" y1="145" x2="65" y2="85" stroke="#0f1f3d" stroke-width="2.5"/><line x1="85" y1="155" x2="125" y2="95" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 25,145 L 65,145 L 65,85" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/><text x="45" y="158" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Δx</text><text x="73" y="118" font-size="9" fill="#16a34a" font-weight="700" text-anchor="middle">Δy</text><text x="75" y="174" font-size="10" fill="#16a34a" font-weight="700" text-anchor="middle">m₁ = m₂ (dieselfde helling)</text><line x1="160" y1="5" x2="160" y2="175" stroke="#e2e8f0" stroke-width="1"/><text x="230" y="14" font-size="11" fill="#ea580c" font-weight="700" text-anchor="middle">Loodreg: m₁×m₂ = −1</text><line x1="190" y1="144" x2="270" y2="96" stroke="#0f1f3d" stroke-width="2.5"/><line x1="206" y1="80" x2="254" y2="160" stroke="#0f1f3d" stroke-width="2.5"/><path d="M 237,116 L 241,123 L 234,127" fill="none" stroke="#ea580c" stroke-width="1.5"/><text x="272" y="92" font-size="10" fill="#ea580c" font-weight="700" text-anchor="start">m₁</text><text x="256" y="166" font-size="10" fill="#ea580c" font-weight="700" text-anchor="start">m₂</text><text x="230" y="174" font-size="10" fill="#ea580c" font-weight="700" text-anchor="middle">m₁ × m₂ = −1</text></svg>',
 
       videoPlaceholder:
-        'Kort video wat wys hoe om die gradiënt van ʼn lyn te bereken en hoe om parallelle lyne aan gelyke gradiënte en loodregte lyne aan negatiewe resiproke gradiënte te herken',
+        'Kort video wat wys hoe om die gradiënt van ʼn lyn te bereken en hoe om ewewydige lyne aan gelyke gradiënte en loodregte lyne aan negatiewe resiproke gradiënte te herken',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -284,7 +284,7 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#2563eb;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">1</span>` +
-        `<p style="margin:0;font-size:14px;"><strong style="color:#2563eb;">Parallelogram</strong> — oorstaande sye is parallel (gelyke gradiënte) en die diagonale halveer mekaar (deel dieselfde ${bl('middelpunt')}).</p>` +
+        `<p style="margin:0;font-size:14px;"><strong style="color:#2563eb;">Parallelogram</strong> — oorstaande sye is ewewydig (gelyke gradiënte) en die diagonale halveer mekaar (deel dieselfde ${bl('middelpunt')}).</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
@@ -317,7 +317,7 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Bepaal of PQRS (met P(2,5), Q(3,1), R(0,−5), S om te bepaal) ʼn parallelogram vorm, deur S so te bepaal dat PQRS albei pare oorstaande sye parallel het.',
+          question: 'Bepaal of PQRS (met P(2,5), Q(3,1), R(0,−5), S om te bepaal) ʼn parallelogram vorm, deur S so te bepaal dat PQRS albei pare oorstaande sye ewewydig het.',
           answer: `S = ${bl('(−1, −1)')}`,
           steps: [
             `Vir ʼn parallelogram halveer die diagonale mekaar — hulle moet dieselfde ${bl('middelpunt')} deel.`,
@@ -326,7 +326,7 @@ export const topicData: TopicData = {
             `Los op vir ${bl('x')}: (${bl('3')}+${bl('x')})÷2 = ${bl('1')}, dus ${bl('3')}+${bl('x')} = 2, wat ${bl('x')} = ${bl('−1')} gee`,
             `Los op vir ${gr('y')}: (${gr('1')}+${gr('y')})÷2 = ${gr('0')}, dus ${gr('1')}+${gr('y')} = 0, wat ${gr('y')} = ${gr('−1')} gee`,
             `<strong>Antwoord:</strong> S = (${bl('−1')},${gr('−1')}) ✓`,
-            `Verifieer met gradiënte: gradiënt PQ = (${gr('1')}−${gr('5')})/(${bl('3')}−${bl('2')}) = −4, en gradiënt SR = (${gr('−5')}−${gr('−1')})/(${bl('0')}−${bl('−1')}) = −4, dus PQ ∥ SR. Gradiënt QR = (${gr('−5')}−${gr('1')})/(${bl('0')}−${bl('3')}) = 2, en gradiënt PS = (${gr('−1')}−${gr('5')})/(${bl('−1')}−${bl('2')}) = 2, dus QR ∥ PS. Albei pare oorstaande sye is parallel ✓`,
+            `Verifieer met gradiënte: gradiënt PQ = (${gr('1')}−${gr('5')})/(${bl('3')}−${bl('2')}) = −4, en gradiënt SR = (${gr('−5')}−${gr('−1')})/(${bl('0')}−${bl('−1')}) = −4, dus PQ ∥ SR. Gradiënt QR = (${gr('−5')}−${gr('1')})/(${bl('0')}−${bl('3')}) = 2, en gradiënt PS = (${gr('−1')}−${gr('5')})/(${bl('−1')}−${bl('2')}) = 2, dus QR ∥ PS. Albei pare oorstaande sye is ewewydig ✓`,
           ],
         },
         {
@@ -404,11 +404,11 @@ export const topicData: TopicData = {
       explanation: 'm = (−3 − 5) / (3 − (−1)) = −8 / 4 = −2 ✓',
     },
 
-    // ── Q6 Hard — parallel lines from gradient comparison ─────────────────────
+    // ── Q6 Hard — ewewydig lines from gradient comparison ─────────────────────
     {
       difficulty: 'Hard',
-      question: 'Lerato het twee lyne: een deur (0,1) en (2,9), ʼn ander deur (1,4) en (3,12). Is hulle parallel? Verduidelik.',
-      answer: 'Gradiënt 1=(9-1)/2=4. Gradiënt 2=(12-4)/2=4. Ja, hulle is parallel aangesien die gradiënte gelyk is.',
+      question: 'Lerato het twee lyne: een deur (0,1) en (2,9), ʼn ander deur (1,4) en (3,12). Is hulle ewewydig? Verduidelik.',
+      answer: 'Gradiënt 1=(9-1)/2=4. Gradiënt 2=(12-4)/2=4. Ja, hulle is ewewydig aangesien die gradiënte gelyk is.',
       checkMode: 'self',
     },
 
@@ -480,11 +480,11 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── Q14 Hard — determine parallel lines from two pairs of points ──────────
+    // ── Q14 Hard — determine ewewydig lines from two pairs of points ──────────
     {
       difficulty: 'Hard',
-      question: 'Bepaal of die lyn deur (1,2) en (5,10) parallel is aan die lyn deur (0,−3) en (3,3).',
-      answer: 'Gradiënt 1=(10-2)/4=2. Gradiënt 2=(3-(-3))/3=2. Ja, hulle is parallel.',
+      question: 'Bepaal of die lyn deur (1,2) en (5,10) ewewydig is aan die lyn deur (0,−3) en (3,3).',
+      answer: 'Gradiënt 1=(10-2)/4=2. Gradiënt 2=(3-(-3))/3=2. Ja, hulle is ewewydig.',
       checkMode: 'self',
     },
 
@@ -589,7 +589,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Die punte P(−2,−3), Q(1,3) en R(3,7) word op die Cartesiese vlak getoon. Bepaal of P, Q en R kollineêr is, en wys jou werk.', answer: 'Gradiënt PQ = (3-(-3))/(1-(-2)) = 6/3 = 2. Gradiënt QR = (7-3)/(3-1) = 4/2 = 2. Aangesien gradiënt PQ = gradiënt QR, en Q ʼn gemeenskaplike punt is, is P, Q en R kollineêr.', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 164 244" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="218" x2="26" y2="26" /><line x1="42" y1="218" x2="42" y2="26" /><line x1="58" y1="218" x2="58" y2="26" /><line x1="74" y1="218" x2="74" y2="26" /><line x1="90" y1="218" x2="90" y2="26" /><line x1="106" y1="218" x2="106" y2="26" /><line x1="122" y1="218" x2="122" y2="26" /><line x1="138" y1="218" x2="138" y2="26" /><line x1="26" y1="218" x2="138" y2="218" /><line x1="26" y1="202" x2="138" y2="202" /><line x1="26" y1="186" x2="138" y2="186" /><line x1="26" y1="170" x2="138" y2="170" /><line x1="26" y1="154" x2="138" y2="154" /><line x1="26" y1="138" x2="138" y2="138" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="154" x2="138" y2="154" /><line x1="74" y1="218" x2="74" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="166" text-anchor="middle">-3</text><text x="42" y="166" text-anchor="middle">-2</text><text x="58" y="166" text-anchor="middle">-1</text><text x="90" y="166" text-anchor="middle">1</text><text x="106" y="166" text-anchor="middle">2</text><text x="122" y="166" text-anchor="middle">3</text><text x="138" y="166" text-anchor="middle">4</text><text x="66" y="221" text-anchor="end">-4</text><text x="66" y="205" text-anchor="end">-3</text><text x="66" y="189" text-anchor="end">-2</text><text x="66" y="173" text-anchor="end">-1</text><text x="66" y="141" text-anchor="end">1</text><text x="66" y="125" text-anchor="end">2</text><text x="66" y="109" text-anchor="end">3</text><text x="66" y="93" text-anchor="end">4</text><text x="66" y="77" text-anchor="end">5</text><text x="66" y="61" text-anchor="end">6</text><text x="66" y="45" text-anchor="end">7</text><text x="66" y="29" text-anchor="end">8</text><text x="66" y="166" text-anchor="end">0</text></g><circle cx="42" cy="202" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="90" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="194" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(-2,-3)</text><text x="96" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">Q(1,3)</text><text x="128" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">R(3,7)</text></svg>` },
 
         // Blok 6 — Parallel/loodreg en multi-stap gekombineer
-        { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (0,1) en (4,9). ʼn Tweede lyn gaan deur (−1,2) en (1,6). Bepaal of die twee lyne parallel is, en wys jou werk.', answer: 'Gradiënt 1 = (9-1)/(4-0) = 8/4 = 2. Gradiënt 2 = (6-2)/(1-(-1)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne parallel.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (0,1) en (4,9). ʼn Tweede lyn gaan deur (−1,2) en (1,6). Bepaal of die twee lyne ewewydig is, en wys jou werk.', answer: 'Gradiënt 1 = (9-1)/(4-0) = 8/4 = 2. Gradiënt 2 = (6-2)/(1-(-1)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne ewewydig.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Lyn het gradiënt 2/3. ʼn Tweede lyn gaan deur (0,0) en (2,−3). Bepaal of die twee lyne loodreg is, en wys jou werk.', answer: 'Gradiënt van tweede lyn = (-3-0)/(2-0) = -3/2. Produk van gradiënte = (2/3)×(-3/2) = -1. Aangesien die produk van die gradiënte -1 is, is die lyne loodreg.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Gegewe A(1,2) en B(7,10), bereken die afstand AB en die middelpunt van AB, en wys albei berekeninge.', answer: 'Afstand AB = √[(7-1)²+(10-2)²] = √[36+64] = √100 = 10. Middelpunt = ((1+7)/2 , (2+10)/2) = (4,6).', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(1,1), B(5,1) en C(6,4). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((1+6)/2 , (1+4)/2) = (3,5; 2,5). Laat D=(x,y): (5+x)/2=3,5 gee x=2. (1+y)/2=2,5 gee y=4. Dus D=(2,4).', checkMode: 'self' },
@@ -635,7 +635,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Die punte P(−3,−4), Q(0,2) en R(2,6) word op die Cartesiese vlak getoon. Bepaal of P, Q en R kollineêr is, en wys jou werk.', answer: 'Gradiënt PQ = (2-(-4))/(0-(-3)) = 6/3 = 2. Gradiënt QR = (6-2)/(2-0) = 4/2 = 2. Aangesien gradiënt PQ = gradiënt QR, en Q ʼn gemeenskaplike punt is, is P, Q en R kollineêr.', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 164 244" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="218" x2="26" y2="26" /><line x1="42" y1="218" x2="42" y2="26" /><line x1="58" y1="218" x2="58" y2="26" /><line x1="74" y1="218" x2="74" y2="26" /><line x1="90" y1="218" x2="90" y2="26" /><line x1="106" y1="218" x2="106" y2="26" /><line x1="122" y1="218" x2="122" y2="26" /><line x1="138" y1="218" x2="138" y2="26" /><line x1="26" y1="218" x2="138" y2="218" /><line x1="26" y1="202" x2="138" y2="202" /><line x1="26" y1="186" x2="138" y2="186" /><line x1="26" y1="170" x2="138" y2="170" /><line x1="26" y1="154" x2="138" y2="154" /><line x1="26" y1="138" x2="138" y2="138" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="138" x2="138" y2="138" /><line x1="90" y1="218" x2="90" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="150" text-anchor="middle">-4</text><text x="42" y="150" text-anchor="middle">-3</text><text x="58" y="150" text-anchor="middle">-2</text><text x="74" y="150" text-anchor="middle">-1</text><text x="106" y="150" text-anchor="middle">1</text><text x="122" y="150" text-anchor="middle">2</text><text x="138" y="150" text-anchor="middle">3</text><text x="82" y="221" text-anchor="end">-5</text><text x="82" y="205" text-anchor="end">-4</text><text x="82" y="189" text-anchor="end">-3</text><text x="82" y="173" text-anchor="end">-2</text><text x="82" y="157" text-anchor="end">-1</text><text x="82" y="125" text-anchor="end">1</text><text x="82" y="109" text-anchor="end">2</text><text x="82" y="93" text-anchor="end">3</text><text x="82" y="77" text-anchor="end">4</text><text x="82" y="61" text-anchor="end">5</text><text x="82" y="45" text-anchor="end">6</text><text x="82" y="29" text-anchor="end">7</text><text x="82" y="150" text-anchor="end">0</text></g><circle cx="42" cy="202" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="90" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="194" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(-3,-4)</text><text x="96" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">Q(0,2)</text><text x="128" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">R(2,6)</text></svg>` },
 
         // Blok 6 — Parallel/loodreg en multi-stap gekombineer
-        { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (1,2) en (5,10). ʼn Tweede lyn gaan deur (−2,0) en (0,4). Bepaal of die twee lyne parallel is, en wys jou werk.', answer: 'Gradiënt 1 = (10-2)/(5-1) = 8/4 = 2. Gradiënt 2 = (4-0)/(0-(-2)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne parallel.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (1,2) en (5,10). ʼn Tweede lyn gaan deur (−2,0) en (0,4). Bepaal of die twee lyne ewewydig is, en wys jou werk.', answer: 'Gradiënt 1 = (10-2)/(5-1) = 8/4 = 2. Gradiënt 2 = (4-0)/(0-(-2)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne ewewydig.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Lyn het gradiënt 3/4. ʼn Tweede lyn gaan deur (0,0) en (3,−4). Bepaal of die twee lyne loodreg is, en wys jou werk.', answer: 'Gradiënt van tweede lyn = (-4-0)/(3-0) = -4/3. Produk van gradiënte = (3/4)×(-4/3) = -1. Aangesien die produk van die gradiënte -1 is, is die lyne loodreg.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Gegewe A(2,3) en B(8,11), bereken die afstand AB en die middelpunt van AB, en wys albei berekeninge.', answer: 'Afstand AB = √[(8-2)²+(11-3)²] = √[36+64] = √100 = 10. Middelpunt = ((2+8)/2 , (3+11)/2) = (5,7).', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(2,2), B(6,2) en C(7,5). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((2+7)/2 , (2+5)/2) = (4,5; 3,5). Laat D=(x,y): (6+x)/2=4,5 gee x=3. (2+y)/2=3,5 gee y=5. Dus D=(3,5).', checkMode: 'self' },
@@ -681,7 +681,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Die punte P(−4,−5), Q(−1,1) en R(1,5) word op die Cartesiese vlak getoon. Bepaal of P, Q en R kollineêr is, en wys jou werk.', answer: 'Gradiënt PQ = (1-(-5))/(-1-(-4)) = 6/3 = 2. Gradiënt QR = (5-1)/(1-(-1)) = 4/2 = 2. Aangesien gradiënt PQ = gradiënt QR, en Q ʼn gemeenskaplike punt is, is P, Q en R kollineêr.', checkMode: 'self', diagramSvg: `<svg viewBox="0 0 164 244" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><g stroke="#9ca3af" stroke-width="1"><line x1="26" y1="218" x2="26" y2="26" /><line x1="42" y1="218" x2="42" y2="26" /><line x1="58" y1="218" x2="58" y2="26" /><line x1="74" y1="218" x2="74" y2="26" /><line x1="90" y1="218" x2="90" y2="26" /><line x1="106" y1="218" x2="106" y2="26" /><line x1="122" y1="218" x2="122" y2="26" /><line x1="138" y1="218" x2="138" y2="26" /><line x1="26" y1="218" x2="138" y2="218" /><line x1="26" y1="202" x2="138" y2="202" /><line x1="26" y1="186" x2="138" y2="186" /><line x1="26" y1="170" x2="138" y2="170" /><line x1="26" y1="154" x2="138" y2="154" /><line x1="26" y1="138" x2="138" y2="138" /><line x1="26" y1="122" x2="138" y2="122" /><line x1="26" y1="106" x2="138" y2="106" /><line x1="26" y1="90" x2="138" y2="90" /><line x1="26" y1="74" x2="138" y2="74" /><line x1="26" y1="58" x2="138" y2="58" /><line x1="26" y1="42" x2="138" y2="42" /><line x1="26" y1="26" x2="138" y2="26" /></g><g stroke="#0f1f3d" stroke-width="1.5"><line x1="26" y1="122" x2="138" y2="122" /><line x1="106" y1="218" x2="106" y2="26" /></g><g fill="#374151" font-size="9"><text x="26" y="134" text-anchor="middle">-5</text><text x="42" y="134" text-anchor="middle">-4</text><text x="58" y="134" text-anchor="middle">-3</text><text x="74" y="134" text-anchor="middle">-2</text><text x="90" y="134" text-anchor="middle">-1</text><text x="122" y="134" text-anchor="middle">1</text><text x="138" y="134" text-anchor="middle">2</text><text x="98" y="221" text-anchor="end">-6</text><text x="98" y="205" text-anchor="end">-5</text><text x="98" y="189" text-anchor="end">-4</text><text x="98" y="173" text-anchor="end">-3</text><text x="98" y="157" text-anchor="end">-2</text><text x="98" y="141" text-anchor="end">-1</text><text x="98" y="109" text-anchor="end">1</text><text x="98" y="93" text-anchor="end">2</text><text x="98" y="77" text-anchor="end">3</text><text x="98" y="61" text-anchor="end">4</text><text x="98" y="45" text-anchor="end">5</text><text x="98" y="29" text-anchor="end">6</text><text x="98" y="134" text-anchor="end">0</text></g><circle cx="42" cy="202" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="90" cy="106" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><circle cx="122" cy="42" r="4" fill="#2563eb" stroke="#0f1f3d" stroke-width="1" /><text x="48" y="194" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">P(-4,-5)</text><text x="96" y="98" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">Q(-1,1)</text><text x="128" y="34" fill="#2563eb" font-weight="700" font-size="11" text-anchor="start">R(1,5)</text></svg>` },
 
         // Blok 6 — Parallel/loodreg en multi-stap gekombineer
-        { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (2,1) en (6,9). ʼn Tweede lyn gaan deur (−1,−2) en (1,2). Bepaal of die twee lyne parallel is, en wys jou werk.', answer: 'Gradiënt 1 = (9-1)/(6-2) = 8/4 = 2. Gradiënt 2 = (2-(-2))/(1-(-1)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne parallel.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Lyn gaan deur (2,1) en (6,9). ʼn Tweede lyn gaan deur (−1,−2) en (1,2). Bepaal of die twee lyne ewewydig is, en wys jou werk.', answer: 'Gradiënt 1 = (9-1)/(6-2) = 8/4 = 2. Gradiënt 2 = (2-(-2))/(1-(-1)) = 4/2 = 2. Aangesien die gradiënte gelyk is, is die lyne ewewydig.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Lyn het gradiënt 5/2. ʼn Tweede lyn gaan deur (0,0) en (5,−2). Bepaal of die twee lyne loodreg is, en wys jou werk.', answer: 'Gradiënt van tweede lyn = (-2-0)/(5-0) = -2/5. Produk van gradiënte = (5/2)×(-2/5) = -1. Aangesien die produk van die gradiënte -1 is, is die lyne loodreg.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Gegewe A(3,4) en B(9,12), bereken die afstand AB en die middelpunt van AB, en wys albei berekeninge.', answer: 'Afstand AB = √[(9-3)²+(12-4)²] = √[36+64] = √100 = 10. Middelpunt = ((3+9)/2 , (4+12)/2) = (6,8).', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ABCD is ʼn parallelogram met A(3,3), B(7,3) en C(8,6). Bepaal die koördinate van D, en wys jou werk.', answer: 'In ʼn parallelogram deel die diagonale AC en BD dieselfde middelpunt. Middelpunt van AC = ((3+8)/2 , (3+6)/2) = (5,5; 4,5). Laat D=(x,y): (7+x)/2=5,5 gee x=4. (3+y)/2=4,5 gee y=6. Dus D=(4,6).', checkMode: 'self' },

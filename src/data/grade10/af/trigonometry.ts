@@ -704,7 +704,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Thabo sê die hoogtehoek en dieptehoek tussen twee punte is altyd gelyk. Is hy korrek? Verduidelik.',
-      answer: 'Ja — volgens die eienskap van verwisselende hoeke gevorm deur parallelle horisontale lyne en die sig-lyn, is die hoogtehoek vanaf een punt gelyk aan die dieptehoek vanaf die ander.',
+      answer: 'Ja — volgens die eienskap van verwisselende hoeke gevorm deur ewewydige horisontale lyne en die sig-lyn, is die hoogtehoek vanaf een punt gelyk aan die dieptehoek vanaf die ander.',
       checkMode: 'self',
     },
 

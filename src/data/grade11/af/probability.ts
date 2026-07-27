@@ -439,8 +439,8 @@ export const topicData: TopicData = {
     // ── Q19 Hard — combined rules: mutually exclusive vs independent ──────────
     {
       difficulty: 'Hard',
-      question: 'Amahle het gebeurtenisse A en B waar P(A) = 0,45, P(B) = 0,35, en P(A of B) = 0,7. Bepaal of A en B onafhanklik, wedersyds uitsluitend, of nie een van die twee is nie.',
-      answer: 'P(A en B) = P(A) + P(B) − P(A of B) = 0,45 + 0,35 − 0,7 = 0,1. Aangesien P(A en B) ≠ 0, is hulle nie wedersyds uitsluitend nie. Toets onafhanklikheid: P(A) × P(B) = 0,45 × 0,35 = 0,1575 ≠ 0,1, dus is hulle ook nie onafhanklik nie — die gebeurtenisse is nie wedersyds uitsluitend of onafhanklik nie.',
+      question: 'Amahle het gebeurtenisse A en B waar P(A) = 0,45, P(B) = 0,35, en P(A of B) = 0,7. Bepaal of A en B onafhanklik, onderling uitsluitend, of nie een van die twee is nie.',
+      answer: 'P(A en B) = P(A) + P(B) − P(A of B) = 0,45 + 0,35 − 0,7 = 0,1. Aangesien P(A en B) ≠ 0, is hulle nie onderling uitsluitend nie. Toets onafhanklikheid: P(A) × P(B) = 0,45 × 0,35 = 0,1575 ≠ 0,1, dus is hulle ook nie onafhanklik nie — die gebeurtenisse is nie onderling uitsluitend of onafhanklik nie.',
       checkMode: 'self',
     },
 

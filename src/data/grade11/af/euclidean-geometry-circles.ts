@@ -937,7 +937,7 @@ export const topicData: TopicData = {
           ['OA = OB', 'radiusse van dieselfde sirkel'],
           ['∠OAP = ∠OBP = 90°', 'raaklyn ⊥ radius'],
           ['OP = OP', 'gemeenskaplike sy'],
-          ['∴ △OAP ≡ △OBP', 'RHS (regte hoek, skuinssy, sy)'],
+          ['∴ △OAP ≡ △OBP', 'RSS (regte hoek, skuinssy, sy)'],
           ['∴ PA = PB', 'ooreenstemmende sye van kongruente driehoeke'],
         ]) +
         `</div>` +

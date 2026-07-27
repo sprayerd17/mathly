@@ -141,10 +141,10 @@ export const topicData: TopicData = {
     // ─────────────────────────────────────────────────────────────────────────
     {
       id: 'mutually-exclusive-complementary',
-      title: 'Wedersyds Uitsluitende en Komplementêre Gebeurtenisse',
+      title: 'Onderling Uitsluitende en Komplementêre Gebeurtenisse',
       icon: '🔵',
       explanation:
-        `<p style="margin-bottom:16px;">Twee gebeurtenisse is <strong>wedersyds uitsluitend</strong> as hulle nie terselfdertyd kan plaasvind nie (${bl('P(A en B) = 0')}) — byvoorbeeld om ʼn 2 en ʼn 5 met een enkele dobbelsteengooi te gooi. Twee gebeurtenisse is <strong>komplementêr</strong> as hulle wedersyds uitsluitend is EN saam al die moontlike uitkomste dek — wat beteken ${or('P(A) + P(B) = 1')}, dus ${gr('P(nie A nie) = 1 − P(A)')}.</p>` +
+        `<p style="margin-bottom:16px;">Twee gebeurtenisse is <strong>onderling uitsluitend</strong> as hulle nie terselfdertyd kan plaasvind nie (${bl('P(A en B) = 0')}) — byvoorbeeld om ʼn 2 en ʼn 5 met een enkele dobbelsteengooi te gooi. Twee gebeurtenisse is <strong>komplementêr</strong> as hulle onderling uitsluitend is EN saam al die moontlike uitkomste dek — wat beteken ${or('P(A) + P(B) = 1')}, dus ${gr('P(nie A nie) = 1 − P(A)')}.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -157,15 +157,15 @@ export const topicData: TopicData = {
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:20px;">` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Wedersyds Uitsluitend</p>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Onderling Uitsluitend</p>` +
         `<p style="color:#374151;font-size:14px;margin-bottom:4px;">${bl('P(A en B) = 0')} — kan nie gelyktydig plaasvind nie.</p>` +
         `<p style="color:#6b7280;font-size:13px;margin:0;">Vereis NIE dat P(A) + P(B) = 1 nie.</p>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#ea580c;margin-bottom:4px;">Komplementêr</p>` +
-        `<p style="color:#374151;font-size:14px;margin-bottom:4px;">${or('P(A) + P(nie A nie) = 1')} — wedersyds uitsluitend EN uitputtend.</p>` +
-        `<p style="color:#6b7280;font-size:13px;margin:0;">Elke komplementêre paar is wedersyds uitsluitend, maar nie andersom nie.</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:4px;">${or('P(A) + P(nie A nie) = 1')} — onderling uitsluitend EN uitputtend.</p>` +
+        `<p style="color:#6b7280;font-size:13px;margin:0;">Elke komplementêre paar is onderling uitsluitend, maar nie andersom nie.</p>` +
         `</div>` +
 
         `</div>` +
@@ -177,10 +177,10 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: "Is 'om ʼn ewe getal te gooi' en 'om ʼn onewe getal te gooi' met ʼn dobbelsteen wedersyds uitsluitend, komplementêr, of albei?",
-          answer: `${gr('Beide wedersyds uitsluitend EN komplementêr')}`,
+          question: "Is 'om ʼn ewe getal te gooi' en 'om ʼn onewe getal te gooi' met ʼn dobbelsteen onderling uitsluitend, komplementêr, of albei?",
+          answer: `${gr('Beide onderling uitsluitend EN komplementêr')}`,
           steps: [
-            `Hulle kan nie albei terselfdertyd gebeur nie — ${bl('wedersyds uitsluitend')} (P(ewe EN onewe) = 0).`,
+            `Hulle kan nie albei terselfdertyd gebeur nie — ${bl('onderling uitsluitend')} (P(ewe EN onewe) = 0).`,
             `Saam dek hulle elke moontlike uitkoms op die dobbelsteen (1–6) — dus is hulle ook ${or('komplementêr')}: P(ewe) + P(onewe) = 3/6 + 3/6 = ${gr('1')}.`,
           ],
         },
@@ -203,7 +203,7 @@ export const topicData: TopicData = {
         '<svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="20" width="90" height="90" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/><rect x="100" y="20" width="110" height="90" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/><rect x="10" y="20" width="200" height="90" fill="none" stroke="#0f1f3d" stroke-width="2"/><text x="110" y="12" font-size="12" fill="#374151" font-weight="700" text-anchor="middle">Steekproefruimte S</text><text x="55" y="70" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">A</text><text x="155" y="70" font-size="16" fill="#ea580c" font-weight="700" text-anchor="middle">nie-A</text><text x="110" y="130" font-size="13" fill="#16a34a" font-weight="700" text-anchor="middle">P(A) + P(nie-A) = 1</text></svg>',
 
       videoPlaceholder:
-        'Kort video wat wedersyds uitsluitende en komplementêre gebeurtenisse verduidelik met dobbelsteen- en alledaagse voorbeelde, en wys hoe om die komplementêre reël te gebruik',
+        'Kort video wat onderling uitsluitende en komplementêre gebeurtenisse verduidelik met dobbelsteen- en alledaagse voorbeelde, en wys hoe om die komplementêre reël te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -214,7 +214,7 @@ export const topicData: TopicData = {
       title: 'Die Algemene Optellingsreël vir Waarskynlikheid',
       icon: '➕',
       explanation:
-        `<p style="margin-bottom:16px;">Vir enige twee gebeurtenisse A en B, stel die <strong>algemene optellingsreël</strong>: ${bl('P(A of B) = P(A) + P(B) − P(A en B)')}. Dit hou rekening met enige oorvleueling tussen die gebeurtenisse (as A en B saam kan gebeur) — wanneer gebeurtenisse wedersyds uitsluitend is, ${or('P(A en B) = 0')}, wat die reël vereenvoudig tot ${gr('P(A of B) = P(A) + P(B)')}.</p>` +
+        `<p style="margin-bottom:16px;">Vir enige twee gebeurtenisse A en B, stel die <strong>algemene optellingsreël</strong>: ${bl('P(A of B) = P(A) + P(B) − P(A en B)')}. Dit hou rekening met enige oorvleueling tussen die gebeurtenisse (as A en B saam kan gebeur) — wanneer gebeurtenisse onderling uitsluitend is, ${or('P(A en B) = 0')}, wat die reël vereenvoudig tot ${gr('P(A of B) = P(A) + P(B)')}.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
@@ -232,7 +232,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Waarom trek ons die snyding af?</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Wanneer ons P(A) en P(B) optel, word uitkomste in ${or('beide A en B')} twee keer getel. Deur ${or('P(A en B)')} af te trek, word hierdie dubbeltelling reggestel. Vir wedersyds uitsluitende gebeurtenisse is daar geen oorvleueling nie, dus hoef niks afgetrek te word nie.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Wanneer ons P(A) en P(B) optel, word uitkomste in ${or('beide A en B')} twee keer getel. Deur ${or('P(A en B)')} af te trek, word hierdie dubbeltelling reggestel. Vir onderling uitsluitende gebeurtenisse is daar geen oorvleueling nie, dus hoef niks afgetrek te word nie.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -341,19 +341,19 @@ export const topicData: TopicData = {
     // ── Q7 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
-      question: "Is 'om ʼn hartkaart te trek' en 'om ʼn skopkaart te trek' uit ʼn pak kaarte wedersyds uitsluitend?",
+      question: "Is 'om ʼn hartkaart te trek' en 'om ʼn skopkaart te trek' uit ʼn pak kaarte onderling uitsluitend?",
       answer: 'Ja',
       checkMode: 'auto',
       correctAnswer: 'ja',
       correctAnswers: ['yes', 'Yes', 'YES', 'ja', 'Ja', 'JA'],
-      explanation: 'ʼn Kaart kan nie terselfdertyd ʼn hart en ʼn skop wees nie — dit is verskillende maste sonder oorvleueling, dus is die gebeurtenisse wedersyds uitsluitend. ✓',
+      explanation: 'ʼn Kaart kan nie terselfdertyd ʼn hart en ʼn skop wees nie — dit is verskillende maste sonder oorvleueling, dus is die gebeurtenisse onderling uitsluitend. ✓',
     },
 
     // ── Q8 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: "Thabo sê 'om ʼn getal kleiner as 4 te gooi' en 'om ʼn getal groter as 2 te gooi' met ʼn dobbelsteen is wedersyds uitsluitend. Is hy korrek? Verduidelik.",
-      answer: "Nee — albei gebeurtenisse sluit die getal 3 in, dus KAN hulle terselfdertyd gebeur, wat beteken hulle is nie wedersyds uitsluitend nie.",
+      question: "Thabo sê 'om ʼn getal kleiner as 4 te gooi' en 'om ʼn getal groter as 2 te gooi' met ʼn dobbelsteen is onderling uitsluitend. Is hy korrek? Verduidelik.",
+      answer: "Nee — albei gebeurtenisse sluit die getal 3 in, dus KAN hulle terselfdertyd gebeur, wat beteken hulle is nie onderling uitsluitend nie.",
       checkMode: 'self',
     },
 
@@ -371,8 +371,8 @@ export const topicData: TopicData = {
     // ── Q10 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Amahle sê komplementêre gebeurtenisse is altyd wedersyds uitsluitend, maar wedersyds uitsluitende gebeurtenisse is nie altyd komplementêr nie. Is sy korrek? Verduidelik.',
-      answer: 'Ja — komplementêre gebeurtenisse moet wedersyds uitsluitend wees (kan nie oorvleuel nie) EN moet alle uitkomste dek, terwyl wedersyds uitsluitende gebeurtenisse slegs vereis dat daar geen oorvleueling is nie, sonder om noodwendig elke moontlike uitkoms te dek.',
+      question: 'Amahle sê komplementêre gebeurtenisse is altyd onderling uitsluitend, maar onderling uitsluitende gebeurtenisse is nie altyd komplementêr nie. Is sy korrek? Verduidelik.',
+      answer: 'Ja — komplementêre gebeurtenisse moet onderling uitsluitend wees (kan nie oorvleuel nie) EN moet alle uitkomste dek, terwyl onderling uitsluitende gebeurtenisse slegs vereis dat daar geen oorvleueling is nie, sonder om noodwendig elke moontlike uitkoms te dek.',
       checkMode: 'self',
     },
 
@@ -390,8 +390,8 @@ export const topicData: TopicData = {
     // ── Q12 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'P(A) = 0,5, P(B) = 0,45, en A en B is wedersyds uitsluitend. Vind P(A of B).',
-      answer: 'Aangesien hulle wedersyds uitsluitend is, is P(A en B) = 0. P(A of B) = 0,5 + 0,45 − 0 = 0,95.',
+      question: 'P(A) = 0,5, P(B) = 0,45, en A en B is onderling uitsluitend. Vind P(A of B).',
+      answer: 'Aangesien hulle onderling uitsluitend is, is P(A en B) = 0. P(A of B) = 0,5 + 0,45 − 0 = 0,95.',
       checkMode: 'self',
     },
 
@@ -426,7 +426,7 @@ export const topicData: TopicData = {
     {
       difficulty: 'Hard',
       question: 'Lerato sê as P(A en B) = 0, dan moet A en B komplementêr wees. Is dit altyd waar? Verduidelik.',
-      answer: 'Nee — P(A en B) = 0 bevestig slegs dat die gebeurtenisse wedersyds uitsluitend is; om ook komplementêr te wees, moet hulle bykomend die hele steekproefruimte dek (P(A) + P(B) = 1).',
+      answer: 'Nee — P(A en B) = 0 bevestig slegs dat die gebeurtenisse onderling uitsluitend is; om ook komplementêr te wees, moet hulle bykomend die hele steekproefruimte dek (P(A) + P(B) = 1).',
       checkMode: 'self',
     },
 
@@ -449,8 +449,8 @@ export const topicData: TopicData = {
     // ── Q19 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: "Thabo gooi ʼn muntstuk op en gooi ʼn dobbelsteen. Hy beweer dat om 'kop' en 'ʼn ewe getal' te kry wedersyds uitsluitend is omdat dit verskillende tipes gebeurtenisse is. Is sy redenasie korrek? Verduidelik.",
-      answer: "Nee — wedersyds uitsluitend beteken spesifiek dat die gebeurtenisse nie saam in DIESELFDE proefneming van DIESELFDE tipe gebeurtenis kan voorkom nie; aangesien die opgooi van ʼn muntstuk en die gooi van ʼn dobbelsteen onafhanklike aksies is wat gelyktydig gebeur, kan albei uitkomste (kop EN ʼn ewe getal) saam voorkom, dus is dit nie werklik ʼn vraag oor wedersydse uitsluiting in die tradisionele enkel-gebeurtenis-sin nie.",
+      question: "Thabo gooi ʼn muntstuk op en gooi ʼn dobbelsteen. Hy beweer dat om 'kop' en 'ʼn ewe getal' te kry onderling uitsluitend is omdat dit verskillende tipes gebeurtenisse is. Is sy redenasie korrek? Verduidelik.",
+      answer: "Nee — onderling uitsluitend beteken spesifiek dat die gebeurtenisse nie saam in DIESELFDE proefneming van DIESELFDE tipe gebeurtenis kan voorkom nie; aangesien die opgooi van ʼn muntstuk en die gooi van ʼn dobbelsteen onafhanklike aksies is wat gelyktydig gebeur, kan albei uitkomste (kop EN ʼn ewe getal) saam voorkom, dus is dit nie werklik ʼn vraag oor onderlinge uitsluiting in die tradisionele enkel-gebeurtenis-sin nie.",
       checkMode: 'self',
     },
 
@@ -467,7 +467,7 @@ export const topicData: TopicData = {
   // PRACTICE SETS — 3 sets of 20 questions each (Phase 1: content only, no diagrams)
   // Block 1 (0-1):   Relatiewe frekwensie teenoor teoretiese waarskynlikheid
   // Block 2 (2-5):   Venndiagram tweestel-waarskynlikheid (slegs/geen/minstens een) [DIAGRAM LATER]
-  // Block 3 (6-8):   Wedersyds uitsluitende gebeurtenisse
+  // Block 3 (6-8):   Onderling uitsluitende gebeurtenisse
   // Block 4 (9-11):  Komplementêre gebeurtenisse P(nie A nie) = 1 − P(A)
   // Block 5 (12-15): Algemene optellingsreël P(A of B) = P(A) + P(B) − P(A en B)
   // Block 6 (16-19): Gekombineerde meerstap-waarskynlikheidsprobleme
@@ -489,19 +489,19 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Gebruik dieselfde klas van 40 (22 studeer Wiskunde, 19 studeer Wetenskap, 9 studeer albei), vind P(ʼn leerder studeer geen van die twee vakke nie).', checkMode: 'auto', correctAnswer: '1/5', correctAnswers: ['1/5', '8/40'], answer: '1/5', explanation: 'Geen = 40 − 32 = 8 (uit die vorige vraag). P(geen) = 8/40 = 1/5.', diagramSvg: '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="270" height="160" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="115" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="185" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Wiskunde</text><text x="225" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Wetenskap</text><text x="85" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="150" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">9</text><text x="215" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="30" y="35" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text></svg>' },
         { difficulty: 'Medium', question: 'Zanele teken ʼn Venndiagram vir ʼn opname van 40 leerders: 22 studeer Wiskunde, 19 studeer Wetenskap, 9 studeer albei, 8 studeer geen. Sy beweer P(studeer minstens een van die twee vakke) = 22/40 omdat dit die Wiskunde-totaal is. Verduidelik haar fout en gee die korrekte waarskynlikheid.', answer: 'Sy het slegs die Wiskunde-totaal gebruik in plaas van die streek wat minstens een vak dek. "Minstens een" beteken slegs Wiskunde, slegs Wetenskap, en albei saam: 13 + 10 + 9 = 32 (of eweredig 40 − 8 = 32). Die korrekte waarskynlikheid is 32/40 = 4/5, nie 22/40 nie.', checkMode: 'self', diagramSvg: '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="270" height="160" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="115" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="185" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Wiskunde</text><text x="225" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Wetenskap</text><text x="85" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="150" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">9</text><text x="215" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="30" y="35" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text></svg>' },
 
-        // Block 3 — Wedersyds uitsluitende gebeurtenisse (Medium)
-        { difficulty: 'Medium', question: "Is 'om ʼn ruitkaart te trek' en 'om ʼn klawerkaart te trek' uit ʼn standaardpak kaarte wedersyds uitsluitend? Verduidelik.", answer: 'Ja — ʼn kaart kan nie terselfdertyd ʼn ruit en ʼn klawer wees nie, aangesien dit verskillende maste sonder oorvleueling is, dus is die gebeurtenisse wedersyds uitsluitend.', checkMode: 'self' },
-        { difficulty: 'Medium', question: "Thabo sê 'om ʼn veelvoud van 3 te gooi' en 'om ʼn ewe getal te gooi' met ʼn dobbelsteen is wedersyds uitsluitend. Is hy korrek? Verduidelik.", answer: 'Nee — die getal 6 is beide ʼn veelvoud van 3 én ʼn ewe getal, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie wedersyds uitsluitend nie.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Sak bevat gekleurde knoppies. P(trek rooi) = 0,3 en P(trek blou) = 0,45, en om rooi te trek en om blou te trek is wedersyds uitsluitende gebeurtenisse. Vind P(trek rooi of blou).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is P(A en B) = 0, dus P(rooi of blou) = P(rooi) + P(blou) = 0,3 + 0,45 = 0,75.' },
+        // Block 3 — Onderling uitsluitende gebeurtenisse (Medium)
+        { difficulty: 'Medium', question: "Is 'om ʼn ruitkaart te trek' en 'om ʼn klawerkaart te trek' uit ʼn standaardpak kaarte onderling uitsluitend? Verduidelik.", answer: 'Ja — ʼn kaart kan nie terselfdertyd ʼn ruit en ʼn klawer wees nie, aangesien dit verskillende maste sonder oorvleueling is, dus is die gebeurtenisse onderling uitsluitend.', checkMode: 'self' },
+        { difficulty: 'Medium', question: "Thabo sê 'om ʼn veelvoud van 3 te gooi' en 'om ʼn ewe getal te gooi' met ʼn dobbelsteen is onderling uitsluitend. Is hy korrek? Verduidelik.", answer: 'Nee — die getal 6 is beide ʼn veelvoud van 3 én ʼn ewe getal, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie onderling uitsluitend nie.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Sak bevat gekleurde knoppies. P(trek rooi) = 0,3 en P(trek blou) = 0,45, en om rooi te trek en om blou te trek is onderling uitsluitende gebeurtenisse. Vind P(trek rooi of blou).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse onderling uitsluitend is, is P(A en B) = 0, dus P(rooi of blou) = P(rooi) + P(blou) = 0,3 + 0,45 = 0,75.' },
 
         // Block 4 — Komplementêre gebeurtenisse (Medium)
         { difficulty: 'Medium', question: 'P(ʼn aflewering kom laat aan) = 0,24. Vind P(die aflewering kom nie laat aan nie).', checkMode: 'auto', correctAnswer: '0,76', correctAnswers: ['0.76', '0,76'], answer: '0,76', explanation: 'Met die komplementêre reël: P(nie laat nie) = 1 − P(laat) = 1 − 0,24 = 0,76.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 16 albasters, waarvan 6 groen is. Een albaster word lukraak getrek. Vind P(nie groen nie).', checkMode: 'auto', correctAnswer: '5/8', correctAnswers: ['5/8', '10/16'], answer: '5/8', explanation: 'P(groen) = 6/16 = 3/8. P(nie groen nie) = 1 − 3/8 = 5/8.' },
-        { difficulty: 'Medium-Hard', question: "Lindiwe sê komplementêre gebeurtenisse en wedersyds uitsluitende gebeurtenisse beteken presies dieselfde ding. Is sy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — wedersyds uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (P(A en B) = 0). Komplementêre gebeurtenisse moet wedersyds uitsluitend wees EN moet saam die hele steekproefruimte dek (P(A) + P(B) = 1). Elke komplementêre paar is wedersyds uitsluitend, maar nie elke wedersyds uitsluitende paar is komplementêr nie.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: "Lindiwe sê komplementêre gebeurtenisse en onderling uitsluitende gebeurtenisse beteken presies dieselfde ding. Is sy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — onderling uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (P(A en B) = 0). Komplementêre gebeurtenisse moet onderling uitsluitend wees EN moet saam die hele steekproefruimte dek (P(A) + P(B) = 1). Elke komplementêre paar is onderling uitsluitend, maar nie elke onderling uitsluitende paar is komplementêr nie.', checkMode: 'self' },
 
         // Block 5 — Algemene optellingsreël (Medium-Hard)
         { difficulty: 'Medium-Hard', question: 'P(A) = 0,5, P(B) = 0,35, en P(A en B) = 0,15. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,7', correctAnswers: ['0.7', '0,7'], answer: '0,7', explanation: 'P(A of B) = P(A) + P(B) − P(A en B) = 0,5 + 0,35 − 0,15 = 0,7.' },
-        { difficulty: 'Medium-Hard', question: 'P(A) = 0,4, P(B) = 0,45, en A en B is wedersyds uitsluitend. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,85', correctAnswers: ['0.85', '0,85'], answer: '0,85', explanation: 'Aangesien hulle wedersyds uitsluitend is, is P(A en B) = 0. P(A of B) = 0,4 + 0,45 − 0 = 0,85.' },
+        { difficulty: 'Medium-Hard', question: 'P(A) = 0,4, P(B) = 0,45, en A en B is onderling uitsluitend. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,85', correctAnswers: ['0.85', '0,85'], answer: '0,85', explanation: 'Aangesien hulle onderling uitsluitend is, is P(A en B) = 0. P(A of B) = 0,4 + 0,45 − 0 = 0,85.' },
         { difficulty: 'Hard', question: 'In ʼn groep leerders is P(speel skaak) = 0,6, P(speel dambord) = 0,5, en P(speel albei) = 0,25. Vind P(speel skaak of dambord).', checkMode: 'auto', correctAnswer: '0,85', correctAnswers: ['0.85', '0,85'], answer: '0,85', explanation: 'P(skaak of dambord) = P(skaak) + P(dambord) − P(albei) = 0,6 + 0,5 − 0,25 = 0,85.' },
         { difficulty: 'Hard', question: 'Sipho bereken P(A) = 0,65, P(B) = 0,55, P(A en B) = 0,4, en kry P(A of B) = 1,2. Verduidelik waarom hierdie resultaat verkeerd moet wees en vind die korrekte waarde.', answer: 'ʼn Waarskynlikheid kan nooit 1 oorskry nie, aangesien dit ʼn verhouding van die hele steekproefruimte verteenwoordig. Sy fout was waarskynlik dat hy vergeet het om die oorvleueling af te trek, of verkeerd opgetel het. Die korrekte waarde is P(A of B) = 0,65 + 0,55 − 0,4 = 0,8, wat geldig is aangesien dit tussen 0 en 1 lê.', checkMode: 'self' },
 
@@ -509,12 +509,12 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Venndiagram wys 38 atlete in totaal: 5 speel geen van sokker of netbal nie, 21 speel sokker, en 19 speel netbal. Vind hoeveel atlete albei sportsoorte speel.', checkMode: 'auto', correctAnswer: '7', answer: '7', explanation: 'Minstens een = 38 − 5 = 33. Met die optellingsreël: 33 = 21 + 19 − albei, dus albei = 40 − 33 = 7.' },
         { difficulty: 'Hard', question: 'ʼn Opname van 100 mense oor troeteldiere vind 45 het ʼn hond, 38 het ʼn kat, 30 het ʼn vis, 18 het ʼn hond en kat, 15 het ʼn kat en vis, 12 het ʼn hond en vis, en 6 het al drie. Vind hoeveel mense geen van die drie troeteldiere het nie.', checkMode: 'auto', correctAnswer: '26', answer: '26', explanation: 'Minstens een troeteldier = 45 + 38 + 30 − 18 − 15 − 12 + 6 = 74. Geen = 100 − 74 = 26.' },
         { difficulty: 'Hard', question: 'ʼn Boks het 10 penne: 6 blou en 4 swart. Lerato kies ʼn pen, hou dit, en kies dan ʼn tweede pen sonder vervanging. Vind P(albei penne is blou).', checkMode: 'auto', correctAnswer: '1/3', correctAnswers: ['1/3', '30/90'], answer: '1/3', explanation: 'P(blou eerste) = 6/10 = 3/5. Sonder vervanging, P(blou tweede) = 5/9. Gekombineer: 3/5 × 5/9 = 15/45 = 1/3.' },
-        { difficulty: 'Hard', question: 'Amahle sê dat vir enige twee gebeurtenisse A en B, P(A of B) altyd gelyk is aan P(A) + P(B), ongeag of die gebeurtenisse oorvleuel. Verduidelik waarom dit slegs in sekere gevalle waar is, met verwysing na beide die optellingsreël en wedersyds uitsluitende gebeurtenisse.', answer: 'Dit is slegs waar wanneer A en B wedersyds uitsluitend is, wat beteken P(A en B) = 0, sodat die algemene optellingsreël P(A of B) = P(A) + P(B) − P(A en B) vereenvoudig tot P(A of B) = P(A) + P(B). As die gebeurtenisse oorvleuel (nie wedersyds uitsluitend is nie), moet die snyding afgetrek word om te verhoed dat uitkomste wat aan albei gebeurtenisse behoort, dubbel getel word, dus P(A of B) = P(A) + P(B) − P(A en B) met ʼn P(A en B) wat nie nul is nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Amahle sê dat vir enige twee gebeurtenisse A en B, P(A of B) altyd gelyk is aan P(A) + P(B), ongeag of die gebeurtenisse oorvleuel. Verduidelik waarom dit slegs in sekere gevalle waar is, met verwysing na beide die optellingsreël en onderling uitsluitende gebeurtenisse.', answer: 'Dit is slegs waar wanneer A en B onderling uitsluitend is, wat beteken P(A en B) = 0, sodat die algemene optellingsreël P(A of B) = P(A) + P(B) − P(A en B) vereenvoudig tot P(A of B) = P(A) + P(B). As die gebeurtenisse oorvleuel (nie onderling uitsluitend is nie), moet die snyding afgetrek word om te verhoed dat uitkomste wat aan albei gebeurtenisse behoort, dubbel getel word, dus P(A of B) = P(A) + P(B) − P(A en B) met ʼn P(A en B) wat nie nul is nie.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het relatiewe frekwensie, Venndiagramme, wedersyds uitsluitende en komplementêre gebeurtenisse, en die optellingsreël onder die knie.' },
+        { minScore: 20, message: 'Uitstekend! Jy het relatiewe frekwensie, Venndiagramme, onderling uitsluitende en komplementêre gebeurtenisse, en die optellingsreël onder die knie.' },
         { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor die algemene optellingsreël of Venndiagramme en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor wedersyds uitsluitende en komplementêre gebeurtenisse, en probeer dan weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor onderling uitsluitende en komplementêre gebeurtenisse, en probeer dan weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -535,19 +535,19 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Gebruik dieselfde klas van 50 (28 studeer Kuns, 20 studeer Drama, 10 studeer albei), vind P(ʼn leerder studeer geen van die twee vakke nie).', checkMode: 'auto', correctAnswer: '6/25', correctAnswers: ['6/25', '12/50'], answer: '6/25', explanation: 'Geen = 50 − 38 = 12 (uit die vorige vraag). P(geen) = 12/50 = 6/25.', diagramSvg: '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="270" height="160" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="115" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="185" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Kuns</text><text x="225" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Drama</text><text x="85" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="150" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">10</text><text x="215" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="30" y="35" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text></svg>' },
         { difficulty: 'Medium', question: 'Bongani teken ʼn Venndiagram vir ʼn opname van 50 leerders: 28 studeer Kuns, 20 studeer Drama, 10 studeer albei, 12 studeer geen. Hy beweer P(studeer minstens een van die twee vakke) = 28/50 omdat dit die Kuns-totaal is. Verduidelik sy fout en gee die korrekte waarskynlikheid.', answer: 'Hy het slegs die Kuns-totaal gebruik in plaas van die streek wat minstens een vak dek. "Minstens een" beteken slegs Kuns, slegs Drama, en albei saam: 18 + 10 + 10 = 38 (of eweredig 50 − 12 = 38). Die korrekte waarskynlikheid is 38/50 = 19/25, nie 28/50 nie.', checkMode: 'self', diagramSvg: '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="270" height="160" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="115" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="185" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Kuns</text><text x="225" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Drama</text><text x="85" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="150" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">10</text><text x="215" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="30" y="35" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text></svg>' },
 
-        // Block 3 — Wedersyds uitsluitende gebeurtenisse (Medium)
-        { difficulty: 'Medium', question: "Is 'om ʼn Heer te trek' en 'om ʼn Vrou te trek' uit ʼn standaardpak kaarte wedersyds uitsluitend? Verduidelik.", answer: 'Ja — ʼn kaart kan nie terselfdertyd ʼn Heer en ʼn Vrou wees nie, aangesien dit verskillende range sonder oorvleueling is, dus is die gebeurtenisse wedersyds uitsluitend.', checkMode: 'self' },
-        { difficulty: 'Medium', question: "Naledi sê 'om ʼn getal kleiner as 5 te gooi' en 'om ʼn getal groter as 3 te gooi' met ʼn dobbelsteen is wedersyds uitsluitend. Is sy korrek? Verduidelik.", answer: 'Nee — die getal 4 is beide kleiner as 5 én groter as 3, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie wedersyds uitsluitend nie.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Wentelwiel land op gekleurde afdelings. P(land op geel) = 0,35 en P(land op groen) = 0,4, en om op geel te land en om op groen te land is wedersyds uitsluitende gebeurtenisse. Vind P(land op geel of groen).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is P(A en B) = 0, dus P(geel of groen) = P(geel) + P(groen) = 0,35 + 0,4 = 0,75.' },
+        // Block 3 — Onderling uitsluitende gebeurtenisse (Medium)
+        { difficulty: 'Medium', question: "Is 'om ʼn Heer te trek' en 'om ʼn Vrou te trek' uit ʼn standaardpak kaarte onderling uitsluitend? Verduidelik.", answer: 'Ja — ʼn kaart kan nie terselfdertyd ʼn Heer en ʼn Vrou wees nie, aangesien dit verskillende range sonder oorvleueling is, dus is die gebeurtenisse onderling uitsluitend.', checkMode: 'self' },
+        { difficulty: 'Medium', question: "Naledi sê 'om ʼn getal kleiner as 5 te gooi' en 'om ʼn getal groter as 3 te gooi' met ʼn dobbelsteen is onderling uitsluitend. Is sy korrek? Verduidelik.", answer: 'Nee — die getal 4 is beide kleiner as 5 én groter as 3, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie onderling uitsluitend nie.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Wentelwiel land op gekleurde afdelings. P(land op geel) = 0,35 en P(land op groen) = 0,4, en om op geel te land en om op groen te land is onderling uitsluitende gebeurtenisse. Vind P(land op geel of groen).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'Aangesien die gebeurtenisse onderling uitsluitend is, is P(A en B) = 0, dus P(geel of groen) = P(geel) + P(groen) = 0,35 + 0,4 = 0,75.' },
 
         // Block 4 — Komplementêre gebeurtenisse (Medium)
         { difficulty: 'Medium', question: 'P(ʼn vlug vertrek betyds) = 0,42. Vind P(die vlug vertrek nie betyds nie).', checkMode: 'auto', correctAnswer: '0,58', correctAnswers: ['0.58', '0,58'], answer: '0,58', explanation: 'Met die komplementêre reël: P(nie betyds nie) = 1 − P(betyds) = 1 − 0,42 = 0,58.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 18 albasters, waarvan 7 geel is. Een albaster word lukraak getrek. Vind P(nie geel nie).', checkMode: 'auto', correctAnswer: '11/18', answer: '11/18', explanation: 'P(geel) = 7/18. P(nie geel nie) = 1 − 7/18 = 11/18.' },
-        { difficulty: 'Medium-Hard', question: "Kagiso sê komplementêre gebeurtenisse en wedersyds uitsluitende gebeurtenisse beteken presies dieselfde ding. Is hy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — wedersyds uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (P(A en B) = 0). Komplementêre gebeurtenisse moet wedersyds uitsluitend wees EN moet saam die hele steekproefruimte dek (P(A) + P(B) = 1). Elke komplementêre paar is wedersyds uitsluitend, maar nie elke wedersyds uitsluitende paar is komplementêr nie.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: "Kagiso sê komplementêre gebeurtenisse en onderling uitsluitende gebeurtenisse beteken presies dieselfde ding. Is hy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — onderling uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (P(A en B) = 0). Komplementêre gebeurtenisse moet onderling uitsluitend wees EN moet saam die hele steekproefruimte dek (P(A) + P(B) = 1). Elke komplementêre paar is onderling uitsluitend, maar nie elke onderling uitsluitende paar is komplementêr nie.', checkMode: 'self' },
 
         // Block 5 — Algemene optellingsreël (Medium-Hard)
         { difficulty: 'Medium-Hard', question: 'P(A) = 0,45, P(B) = 0,3, en P(A en B) = 0,1. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,65', correctAnswers: ['0.65', '0,65'], answer: '0,65', explanation: 'P(A of B) = P(A) + P(B) − P(A en B) = 0,45 + 0,3 − 0,1 = 0,65.' },
-        { difficulty: 'Medium-Hard', question: 'P(A) = 0,35, P(B) = 0,55, en A en B is wedersyds uitsluitend. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle wedersyds uitsluitend is, is P(A en B) = 0. P(A of B) = 0,35 + 0,55 − 0 = 0,9.' },
+        { difficulty: 'Medium-Hard', question: 'P(A) = 0,35, P(B) = 0,55, en A en B is onderling uitsluitend. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle onderling uitsluitend is, is P(A en B) = 0. P(A of B) = 0,35 + 0,55 − 0 = 0,9.' },
         { difficulty: 'Hard', question: 'In ʼn groep leerders is P(speel hokkie) = 0,7, P(speel tennis) = 0,4, en P(speel albei) = 0,3. Vind P(speel hokkie of tennis).', checkMode: 'auto', correctAnswer: '0,8', correctAnswers: ['0.8', '0,8'], answer: '0,8', explanation: 'P(hokkie of tennis) = P(hokkie) + P(tennis) − P(albei) = 0,7 + 0,4 − 0,3 = 0,8.' },
         { difficulty: 'Hard', question: 'Lerato bereken P(A) = 0,55, P(B) = 0,5, P(A en B) = 0,3, en kry P(A of B) = 1,05. Verduidelik waarom hierdie resultaat verkeerd moet wees en vind die korrekte waarde.', answer: 'ʼn Waarskynlikheid kan nooit 1 oorskry nie, aangesien dit ʼn verhouding van die hele steekproefruimte verteenwoordig. Haar fout was waarskynlik dat sy vergeet het om die oorvleueling af te trek, of verkeerd opgetel het. Die korrekte waarde is P(A of B) = 0,55 + 0,5 − 0,3 = 0,75, wat geldig is aangesien dit tussen 0 en 1 lê.', checkMode: 'self' },
 
@@ -555,12 +555,12 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Venndiagram wys 42 atlete in totaal: 6 speel geen van sokker of netbal nie, 24 speel sokker, en 20 speel netbal. Vind hoeveel atlete albei sportsoorte speel.', checkMode: 'auto', correctAnswer: '8', answer: '8', explanation: 'Minstens een = 42 − 6 = 36. Met die optellingsreël: 36 = 24 + 20 − albei, dus albei = 44 − 36 = 8.' },
         { difficulty: 'Hard', question: 'ʼn Opname van 100 mense oor troeteldiere vind 50 het ʼn hond, 42 het ʼn kat, 35 het ʼn vis, 20 het ʼn hond en kat, 16 het ʼn kat en vis, 14 het ʼn hond en vis, en 7 het al drie. Vind hoeveel mense geen van die drie troeteldiere het nie.', checkMode: 'auto', correctAnswer: '16', answer: '16', explanation: 'Minstens een troeteldier = 50 + 42 + 35 − 20 − 16 − 14 + 7 = 84. Geen = 100 − 84 = 16.' },
         { difficulty: 'Hard', question: 'ʼn Boks het 12 penne: 7 blou en 5 swart. Thabo kies ʼn pen, hou dit, en kies dan ʼn tweede pen sonder vervanging. Vind P(albei penne is blou).', checkMode: 'auto', correctAnswer: '7/22', answer: '7/22', explanation: 'P(blou eerste) = 7/12. Sonder vervanging, P(blou tweede) = 6/11. Gekombineer: 7/12 × 6/11 = 42/132 = 7/22.' },
-        { difficulty: 'Hard', question: 'Sipho sê dat vir enige twee gebeurtenisse A en B, P(A of B) altyd gelyk is aan P(A) + P(B), ongeag of die gebeurtenisse oorvleuel. Verduidelik waarom dit slegs in sekere gevalle waar is, met verwysing na beide die optellingsreël en wedersyds uitsluitende gebeurtenisse.', answer: 'Dit is slegs waar wanneer A en B wedersyds uitsluitend is, wat beteken P(A en B) = 0, sodat die algemene optellingsreël P(A of B) = P(A) + P(B) − P(A en B) vereenvoudig tot P(A of B) = P(A) + P(B). As die gebeurtenisse oorvleuel (nie wedersyds uitsluitend is nie), moet die snyding afgetrek word om te verhoed dat uitkomste wat aan albei gebeurtenisse behoort, dubbel getel word, dus P(A of B) = P(A) + P(B) − P(A en B) met ʼn P(A en B) wat nie nul is nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho sê dat vir enige twee gebeurtenisse A en B, P(A of B) altyd gelyk is aan P(A) + P(B), ongeag of die gebeurtenisse oorvleuel. Verduidelik waarom dit slegs in sekere gevalle waar is, met verwysing na beide die optellingsreël en onderling uitsluitende gebeurtenisse.', answer: 'Dit is slegs waar wanneer A en B onderling uitsluitend is, wat beteken P(A en B) = 0, sodat die algemene optellingsreël P(A of B) = P(A) + P(B) − P(A en B) vereenvoudig tot P(A of B) = P(A) + P(B). As die gebeurtenisse oorvleuel (nie onderling uitsluitend is nie), moet die snyding afgetrek word om te verhoed dat uitkomste wat aan albei gebeurtenisse behoort, dubbel getel word, dus P(A of B) = P(A) + P(B) − P(A en B) met ʼn P(A en B) wat nie nul is nie.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het relatiewe frekwensie, Venndiagramme, wedersyds uitsluitende en komplementêre gebeurtenisse, en die optellingsreël onder die knie.' },
+        { minScore: 20, message: 'Uitstekend! Jy het relatiewe frekwensie, Venndiagramme, onderling uitsluitende en komplementêre gebeurtenisse, en die optellingsreël onder die knie.' },
         { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor die algemene optellingsreël of Venndiagramme en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor wedersyds uitsluitende en komplementêre gebeurtenisse, en probeer dan weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor onderling uitsluitende en komplementêre gebeurtenisse, en probeer dan weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },
@@ -581,19 +581,19 @@ export const topicData: TopicData = {
         { difficulty: 'Medium', question: 'Gebruik dieselfde klas van 45 (25 studeer Skaakklub, 16 studeer Debatsklub, 8 studeer albei), vind P(ʼn leerder doen geen van die twee aktiwiteite nie).', checkMode: 'auto', correctAnswer: '4/15', correctAnswers: ['4/15', '12/45'], answer: '4/15', explanation: 'Geen = 45 − 33 = 12 (uit die vorige vraag). P(geen) = 12/45 = 4/15.', diagramSvg: '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="270" height="160" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="115" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="185" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Skaakklub</text><text x="225" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Debatsklub</text><text x="85" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="150" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">8</text><text x="215" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="30" y="35" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text></svg>' },
         { difficulty: 'Medium', question: 'Amahle teken ʼn Venndiagram vir ʼn opname van 45 leerders: 25 studeer Skaakklub, 16 studeer Debatsklub, 8 studeer albei, 12 studeer geen. Sy beweer P(doen minstens een van die twee aktiwiteite) = 25/45 omdat dit die Skaakklub-totaal is. Verduidelik haar fout en gee die korrekte waarskynlikheid.', answer: 'Sy het slegs die Skaakklub-totaal gebruik in plaas van die streek wat minstens een aktiwiteit dek. "Minstens een" beteken slegs Skaakklub, slegs Debatsklub, en albei saam: 17 + 8 + 8 = 33 (of eweredig 45 − 12 = 33). Die korrekte waarskynlikheid is 33/45 = 11/15, nie 25/45 nie.', checkMode: 'self', diagramSvg: '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="270" height="160" fill="none" stroke="#0f1f3d" stroke-width="2"/><circle cx="115" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><circle cx="185" cy="100" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><text x="75" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Skaakklub</text><text x="225" y="35" font-size="13" fill="#0f1f3d" font-weight="700" text-anchor="middle">Debatsklub</text><text x="85" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="150" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">8</text><text x="215" y="105" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text><text x="30" y="35" font-size="16" fill="#2563eb" font-weight="700" text-anchor="middle">?</text></svg>' },
 
-        // Block 3 — Wedersyds uitsluitende gebeurtenisse (Medium)
-        { difficulty: 'Medium', question: "Is 'om ʼn 1 te gooi' en 'om ʼn 6 te gooi' met ʼn enkele dobbelsteengooi wedersyds uitsluitend? Verduidelik.", answer: 'Ja — ʼn enkele dobbelsteengooi kan slegs een getal op ʼn keer wys, dus kan om ʼn 1 en om ʼn 6 te kry nie saam gebeur nie, wat beteken die gebeurtenisse is wedersyds uitsluitend.', checkMode: 'self' },
-        { difficulty: 'Medium', question: "Sipho sê 'om ʼn rooi kaart te trek' en 'om ʼn prentkaart (Boer, Vrou, Heer) te trek' uit ʼn pak is wedersyds uitsluitend. Is hy korrek? Verduidelik.", answer: 'Nee — ʼn rooi prentkaart (soos die Vrou van Harte) is beide rooi ÉN ʼn prentkaart, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie wedersyds uitsluitend nie.', checkMode: 'self' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Opnamekategorie word aan elke kliënt toegeken. P(verkies aanlyn inkopies) = 0,4 en P(verkies in-winkel inkopies) = 0,5, en hierdie is wedersyds uitsluitende gebeurtenisse. Vind P(verkies aanlyn of in-winkel inkopies).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien die gebeurtenisse wedersyds uitsluitend is, is P(A en B) = 0, dus P(aanlyn of in-winkel) = P(aanlyn) + P(in-winkel) = 0,4 + 0,5 = 0,9.' },
+        // Block 3 — Onderling uitsluitende gebeurtenisse (Medium)
+        { difficulty: 'Medium', question: "Is 'om ʼn 1 te gooi' en 'om ʼn 6 te gooi' met ʼn enkele dobbelsteengooi onderling uitsluitend? Verduidelik.", answer: 'Ja — ʼn enkele dobbelsteengooi kan slegs een getal op ʼn keer wys, dus kan om ʼn 1 en om ʼn 6 te kry nie saam gebeur nie, wat beteken die gebeurtenisse is onderling uitsluitend.', checkMode: 'self' },
+        { difficulty: 'Medium', question: "Sipho sê 'om ʼn rooi kaart te trek' en 'om ʼn prentkaart (Boer, Vrou, Heer) te trek' uit ʼn pak is onderling uitsluitend. Is hy korrek? Verduidelik.", answer: 'Nee — ʼn rooi prentkaart (soos die Vrou van Harte) is beide rooi ÉN ʼn prentkaart, dus KAN albei gebeurtenisse terselfdertyd gebeur, wat beteken hulle is nie onderling uitsluitend nie.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Opnamekategorie word aan elke kliënt toegeken. P(verkies aanlyn inkopies) = 0,4 en P(verkies in-winkel inkopies) = 0,5, en hierdie is onderling uitsluitende gebeurtenisse. Vind P(verkies aanlyn of in-winkel inkopies).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien die gebeurtenisse onderling uitsluitend is, is P(A en B) = 0, dus P(aanlyn of in-winkel) = P(aanlyn) + P(in-winkel) = 0,4 + 0,5 = 0,9.' },
 
         // Block 4 — Komplementêre gebeurtenisse (Medium)
         { difficulty: 'Medium', question: 'P(ʼn drukker vashaak tydens ʼn drukwerk) = 0,18. Vind P(die drukker haak nie vas nie).', checkMode: 'auto', correctAnswer: '0,82', correctAnswers: ['0.82', '0,82'], answer: '0,82', explanation: 'Met die komplementêre reël: P(nie vashaak nie) = 1 − P(vashaak) = 1 − 0,18 = 0,82.' },
         { difficulty: 'Medium', question: 'ʼn Sak het 20 albasters, waarvan 9 pers is. Een albaster word lukraak getrek. Vind P(nie pers nie).', checkMode: 'auto', correctAnswer: '11/20', answer: '11/20', explanation: 'P(pers) = 9/20. P(nie pers nie) = 1 − 9/20 = 11/20.' },
-        { difficulty: 'Medium-Hard', question: "Thabo sê komplementêre gebeurtenisse en wedersyds uitsluitende gebeurtenisse beteken presies dieselfde ding. Is hy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — wedersyds uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (P(A en B) = 0). Komplementêre gebeurtenisse moet wedersyds uitsluitend wees EN moet saam die hele steekproefruimte dek (P(A) + P(B) = 1). Elke komplementêre paar is wedersyds uitsluitend, maar nie elke wedersyds uitsluitende paar is komplementêr nie.', checkMode: 'self' },
+        { difficulty: 'Medium-Hard', question: "Thabo sê komplementêre gebeurtenisse en onderling uitsluitende gebeurtenisse beteken presies dieselfde ding. Is hy korrek? Verduidelik met behulp van die definisies van elk.", answer: 'Nee — onderling uitsluitend vereis slegs dat die gebeurtenisse nie saam kan voorkom nie (P(A en B) = 0). Komplementêre gebeurtenisse moet onderling uitsluitend wees EN moet saam die hele steekproefruimte dek (P(A) + P(B) = 1). Elke komplementêre paar is onderling uitsluitend, maar nie elke onderling uitsluitende paar is komplementêr nie.', checkMode: 'self' },
 
         // Block 5 — Algemene optellingsreël (Medium-Hard)
         { difficulty: 'Medium-Hard', question: 'P(A) = 0,55, P(B) = 0,3, en P(A en B) = 0,2. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,65', correctAnswers: ['0.65', '0,65'], answer: '0,65', explanation: 'P(A of B) = P(A) + P(B) − P(A en B) = 0,55 + 0,3 − 0,2 = 0,65.' },
-        { difficulty: 'Medium-Hard', question: 'P(A) = 0,3, P(B) = 0,6, en A en B is wedersyds uitsluitend. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle wedersyds uitsluitend is, is P(A en B) = 0. P(A of B) = 0,3 + 0,6 − 0 = 0,9.' },
+        { difficulty: 'Medium-Hard', question: 'P(A) = 0,3, P(B) = 0,6, en A en B is onderling uitsluitend. Vind P(A of B).', checkMode: 'auto', correctAnswer: '0,9', correctAnswers: ['0.9', '0,9'], answer: '0,9', explanation: 'Aangesien hulle onderling uitsluitend is, is P(A en B) = 0. P(A of B) = 0,3 + 0,6 − 0 = 0,9.' },
         { difficulty: 'Hard', question: 'In ʼn groep leerders is P(speel basketbal) = 0,65, P(speel volleybal) = 0,45, en P(speel albei) = 0,35. Vind P(speel basketbal of volleybal).', checkMode: 'auto', correctAnswer: '0,75', correctAnswers: ['0.75', '0,75'], answer: '0,75', explanation: 'P(basketbal of volleybal) = P(basketbal) + P(volleybal) − P(albei) = 0,65 + 0,45 − 0,35 = 0,75.' },
         { difficulty: 'Hard', question: 'Zanele bereken P(A) = 0,6, P(B) = 0,5, P(A en B) = 0,35, en kry P(A of B) = 1,1. Verduidelik waarom hierdie resultaat verkeerd moet wees en vind die korrekte waarde.', answer: 'ʼn Waarskynlikheid kan nooit 1 oorskry nie, aangesien dit ʼn verhouding van die hele steekproefruimte verteenwoordig. Haar fout was waarskynlik dat sy vergeet het om die oorvleueling af te trek, of verkeerd opgetel het. Die korrekte waarde is P(A of B) = 0,6 + 0,5 − 0,35 = 0,75, wat geldig is aangesien dit tussen 0 en 1 lê.', checkMode: 'self' },
 
@@ -601,12 +601,12 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Venndiagram wys 36 atlete in totaal: 4 speel geen van sokker of netbal nie, 20 speel sokker, en 18 speel netbal. Vind hoeveel atlete albei sportsoorte speel.', checkMode: 'auto', correctAnswer: '6', answer: '6', explanation: 'Minstens een = 36 − 4 = 32. Met die optellingsreël: 32 = 20 + 18 − albei, dus albei = 38 − 32 = 6.' },
         { difficulty: 'Hard', question: 'ʼn Opname van 100 mense oor troeteldiere vind 48 het ʼn hond, 40 het ʼn kat, 32 het ʼn vis, 19 het ʼn hond en kat, 17 het ʼn kat en vis, 13 het ʼn hond en vis, en 6 het al drie. Vind hoeveel mense geen van die drie troeteldiere het nie.', checkMode: 'auto', correctAnswer: '23', answer: '23', explanation: 'Minstens een troeteldier = 48 + 40 + 32 − 19 − 17 − 13 + 6 = 77. Geen = 100 − 77 = 23.' },
         { difficulty: 'Hard', question: 'ʼn Boks het 9 penne: 5 blou en 4 swart. Naledi kies ʼn pen, hou dit, en kies dan ʼn tweede pen sonder vervanging. Vind P(albei penne is blou).', checkMode: 'auto', correctAnswer: '5/18', answer: '5/18', explanation: 'P(blou eerste) = 5/9. Sonder vervanging, P(blou tweede) = 4/8 = 1/2. Gekombineer: 5/9 × 1/2 = 5/18.' },
-        { difficulty: 'Hard', question: 'Bongani sê dat vir enige twee gebeurtenisse A en B, P(A of B) altyd gelyk is aan P(A) + P(B), ongeag of die gebeurtenisse oorvleuel. Verduidelik waarom dit slegs in sekere gevalle waar is, met verwysing na beide die optellingsreël en wedersyds uitsluitende gebeurtenisse.', answer: 'Dit is slegs waar wanneer A en B wedersyds uitsluitend is, wat beteken P(A en B) = 0, sodat die algemene optellingsreël P(A of B) = P(A) + P(B) − P(A en B) vereenvoudig tot P(A of B) = P(A) + P(B). As die gebeurtenisse oorvleuel (nie wedersyds uitsluitend is nie), moet die snyding afgetrek word om te verhoed dat uitkomste wat aan albei gebeurtenisse behoort, dubbel getel word, dus P(A of B) = P(A) + P(B) − P(A en B) met ʼn P(A en B) wat nie nul is nie.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Bongani sê dat vir enige twee gebeurtenisse A en B, P(A of B) altyd gelyk is aan P(A) + P(B), ongeag of die gebeurtenisse oorvleuel. Verduidelik waarom dit slegs in sekere gevalle waar is, met verwysing na beide die optellingsreël en onderling uitsluitende gebeurtenisse.', answer: 'Dit is slegs waar wanneer A en B onderling uitsluitend is, wat beteken P(A en B) = 0, sodat die algemene optellingsreël P(A of B) = P(A) + P(B) − P(A en B) vereenvoudig tot P(A of B) = P(A) + P(B). As die gebeurtenisse oorvleuel (nie onderling uitsluitend is nie), moet die snyding afgetrek word om te verhoed dat uitkomste wat aan albei gebeurtenisse behoort, dubbel getel word, dus P(A of B) = P(A) + P(B) − P(A en B) met ʼn P(A en B) wat nie nul is nie.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het relatiewe frekwensie, Venndiagramme, wedersyds uitsluitende en komplementêre gebeurtenisse, en die optellingsreël onder die knie.' },
+        { minScore: 20, message: 'Uitstekend! Jy het relatiewe frekwensie, Venndiagramme, onderling uitsluitende en komplementêre gebeurtenisse, en die optellingsreël onder die knie.' },
         { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor die algemene optellingsreël of Venndiagramme en probeer weer.' },
-        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor wedersyds uitsluitende en komplementêre gebeurtenisse, en probeer dan weer.' },
+        { minScore: 10, message: 'Goeie poging! Hersien die uitgewerkte voorbeelde oor onderling uitsluitende en komplementêre gebeurtenisse, en probeer dan weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
       ],
     },

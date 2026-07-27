@@ -82,7 +82,7 @@ export const topicData: TopicData = {
           answer: `0,75 = ${bl('3')}/${or('4')}`,
           steps: [
             `Skryf die desimaal oor sy plekwaarde: 0,75 = ${bl('75')}/${or('100')}.`,
-            `Vind die GGF van ${bl('75')} en ${or('100')}. Die GGF is 25.`,
+            `Vind die GGD van ${bl('75')} en ${or('100')}. Die GGD is 25.`,
             `Vereenvoudig deur albei deur 25 te deel: ${bl('75')} ÷ 25 = ${bl('3')} en ${or('100')} ÷ 25 = ${or('4')}.`,
             `<strong>Antwoord:</strong> 0,75 = ${bl('3')}/${or('4')} ✓`,
           ],
@@ -120,7 +120,7 @@ export const topicData: TopicData = {
           answer: '3/5',
           checkMode: 'auto',
           correctAnswer: '3/5',
-          explanation: '0,6 = 6/10. Die GGF van 6 en 10 is 2. As ons albei deur 2 deel: 6 ÷ 2 = 3, 10 ÷ 2 = 5. Dus 0,6 = 3/5 ✓',
+          explanation: '0,6 = 6/10. Die GGD van 6 en 10 is 2. As ons albei deur 2 deel: 6 ÷ 2 = 3, 10 ÷ 2 = 5. Dus 0,6 = 3/5 ✓',
         },
 
         // ── Q2 Medium ────────────────────────────────────────────────────────
@@ -510,9 +510,9 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Is 0,45 (ʼn eindigende desimaal) rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: 'ʼn Eindigende desimaal kan altyd as ʼn breuk van twee heelgetalle geskryf word (0,45 = 9/20), dus is dit rasionaal ✓' },
 
         // Blok 2 — Skakel eindigende desimaal om na breuk (Maklik-Medium)
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,45 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '9/20', answer: '9/20', explanation: '0,45 = 45/100. Die GGF van 45 en 100 is 5. As ons albei deur 5 deel: 45 ÷ 5 = 9, 100 ÷ 5 = 20. Dus 0,45 = 9/20 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,36 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '9/25', answer: '9/25', explanation: '0,36 = 36/100. Die GGF van 36 en 100 is 4. As ons albei deur 4 deel: 36 ÷ 4 = 9, 100 ÷ 4 = 25. Dus 0,36 = 9/25 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,15 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3/20', answer: '3/20', explanation: '0,15 = 15/100. Die GGF van 15 en 100 is 5. As ons albei deur 5 deel: 15 ÷ 5 = 3, 100 ÷ 5 = 20. Dus 0,15 = 3/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,45 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '9/20', answer: '9/20', explanation: '0,45 = 45/100. Die GGD van 45 en 100 is 5. As ons albei deur 5 deel: 45 ÷ 5 = 9, 100 ÷ 5 = 20. Dus 0,45 = 9/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,36 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '9/25', answer: '9/25', explanation: '0,36 = 36/100. Die GGD van 36 en 100 is 4. As ons albei deur 4 deel: 36 ÷ 4 = 9, 100 ÷ 4 = 25. Dus 0,36 = 9/25 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,15 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '3/20', answer: '3/20', explanation: '0,15 = 15/100. Die GGD van 15 en 100 is 5. As ons albei deur 5 deel: 15 ÷ 5 = 3, 100 ÷ 5 = 20. Dus 0,15 = 3/20 ✓' },
 
         // Blok 3 — Skakel herhalende desimaal om na breuk (Medium)
         { difficulty: 'Medium', question: 'Skakel die herhalende desimaal 0,777... om na ʼn breuk.', checkMode: 'auto', correctAnswer: '7/9', answer: '7/9', explanation: 'Laat x = 0,777... Vermenigvuldig altwee kante met 10: 10x = 7,777... Trek die oorspronklike af: 9x = 7. Dus x = 7/9 ✓' },
@@ -556,9 +556,9 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Is 0,72 (ʼn eindigende desimaal) rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: 'ʼn Eindigende desimaal kan altyd as ʼn breuk van twee heelgetalle geskryf word (0,72 = 18/25), dus is dit rasionaal ✓' },
 
         // Blok 2 — Skakel eindigende desimaal om na breuk (Maklik-Medium)
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,64 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '16/25', answer: '16/25', explanation: '0,64 = 64/100. Die GGF van 64 en 100 is 4. As ons albei deur 4 deel: 64 ÷ 4 = 16, 100 ÷ 4 = 25. Dus 0,64 = 16/25 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,85 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '17/20', answer: '17/20', explanation: '0,85 = 85/100. Die GGF van 85 en 100 is 5. As ons albei deur 5 deel: 85 ÷ 5 = 17, 100 ÷ 5 = 20. Dus 0,85 = 17/20 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,55 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '11/20', answer: '11/20', explanation: '0,55 = 55/100. Die GGF van 55 en 100 is 5. As ons albei deur 5 deel: 55 ÷ 5 = 11, 100 ÷ 5 = 20. Dus 0,55 = 11/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,64 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '16/25', answer: '16/25', explanation: '0,64 = 64/100. Die GGD van 64 en 100 is 4. As ons albei deur 4 deel: 64 ÷ 4 = 16, 100 ÷ 4 = 25. Dus 0,64 = 16/25 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,85 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '17/20', answer: '17/20', explanation: '0,85 = 85/100. Die GGD van 85 en 100 is 5. As ons albei deur 5 deel: 85 ÷ 5 = 17, 100 ÷ 5 = 20. Dus 0,85 = 17/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,55 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '11/20', answer: '11/20', explanation: '0,55 = 55/100. Die GGD van 55 en 100 is 5. As ons albei deur 5 deel: 55 ÷ 5 = 11, 100 ÷ 5 = 20. Dus 0,55 = 11/20 ✓' },
 
         // Blok 3 — Skakel herhalende desimaal om na breuk (Medium)
         { difficulty: 'Medium', question: 'Skakel die herhalende desimaal 0,444... om na ʼn breuk.', checkMode: 'auto', correctAnswer: '4/9', answer: '4/9', explanation: 'Laat x = 0,444... Vermenigvuldig altwee kante met 10: 10x = 4,444... Trek die oorspronklike af: 9x = 4. Dus x = 4/9 ✓' },
@@ -602,9 +602,9 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Is 0,28 (ʼn eindigende desimaal) rasionaal of irrasionaal?', checkMode: 'auto', correctAnswer: 'rasionaal', answer: 'rasionaal', explanation: 'ʼn Eindigende desimaal kan altyd as ʼn breuk van twee heelgetalle geskryf word (0,28 = 7/25), dus is dit rasionaal ✓' },
 
         // Blok 2 — Skakel eindigende desimaal om na breuk (Maklik-Medium)
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,35 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '7/20', answer: '7/20', explanation: '0,35 = 35/100. Die GGF van 35 en 100 is 5. As ons albei deur 5 deel: 35 ÷ 5 = 7, 100 ÷ 5 = 20. Dus 0,35 = 7/20 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,65 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '13/20', answer: '13/20', explanation: '0,65 = 65/100. Die GGF van 65 en 100 is 5. As ons albei deur 5 deel: 65 ÷ 5 = 13, 100 ÷ 5 = 20. Dus 0,65 = 13/20 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Skakel 0,125 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '1/8', answer: '1/8', explanation: '0,125 = 125/1000. Die GGF van 125 en 1000 is 125. As ons albei deur 125 deel: 125 ÷ 125 = 1, 1000 ÷ 125 = 8. Dus 0,125 = 1/8 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,35 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '7/20', answer: '7/20', explanation: '0,35 = 35/100. Die GGD van 35 en 100 is 5. As ons albei deur 5 deel: 35 ÷ 5 = 7, 100 ÷ 5 = 20. Dus 0,35 = 7/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,65 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '13/20', answer: '13/20', explanation: '0,65 = 65/100. Die GGD van 65 en 100 is 5. As ons albei deur 5 deel: 65 ÷ 5 = 13, 100 ÷ 5 = 20. Dus 0,65 = 13/20 ✓' },
+        { difficulty: 'Easy-Medium', question: 'Skakel 0,125 om na ʼn breuk in eenvoudigste vorm.', checkMode: 'auto', correctAnswer: '1/8', answer: '1/8', explanation: '0,125 = 125/1000. Die GGD van 125 en 1000 is 125. As ons albei deur 125 deel: 125 ÷ 125 = 1, 1000 ÷ 125 = 8. Dus 0,125 = 1/8 ✓' },
 
         // Blok 3 — Skakel herhalende desimaal om na breuk (Medium)
         { difficulty: 'Medium', question: 'Skakel die herhalende desimaal 0,555... om na ʼn breuk.', checkMode: 'auto', correctAnswer: '5/9', answer: '5/9', explanation: 'Laat x = 0,555... Vermenigvuldig altwee kante met 10: 10x = 5,555... Trek die oorspronklike af: 9x = 5. Dus x = 5/9 ✓' },
