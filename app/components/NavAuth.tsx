@@ -83,6 +83,13 @@ const NavAuth = forwardRef<NavAuthHandle>(function NavAuth(_props, ref) {
             >
               {t.nav_my_subscription}
             </Link>
+            <Link
+              href="/profile#tour-referral-section"
+              onClick={() => setDropdownOpen(false)}
+              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#1e40af] transition-colors"
+            >
+              {t.nav_refer_earn}
+            </Link>
           </div>
           <div className="border-t border-gray-100 py-1">
             <button

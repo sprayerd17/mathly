@@ -5,8 +5,16 @@ import { sendOwnerAlert } from '@/src/lib/email'
 
 // Referral credit pool — the actual enforcement behind the promises made on
 // /refer and profile.tsx: a referrer's own subscription price caps how much
-// their pool can hold in a calendar year, and the *count* of referrals that
-// can be applied against that cap is earned per child — a child's first-ever
+// their pool can hold in a calendar year. The one exception is a referrer
+// with no paid child yet — there's no plan cost to derive a cap from, so
+// accrual is left uncapped while free (see creditReferrer) rather than
+// blocked outright, precisely so sharing is worth it before they've
+// committed to a plan. It self-corrects the moment they do subscribe: the
+// normal per-plan cap takes back over on all *future* accrual, and whatever
+// they built up while free can only ever be spent down via a real refund on
+// their own actual charge, never handed out directly. The *count* of
+// referrals that can be applied against the cap is earned per child — a
+// child's first-ever
 // year subscribed grants a flat 12, and every year after that the child's own
 // contribution carries forward as however many months that specific child
 // stayed subscribed the previous year. A family with 3 children each active
@@ -101,7 +109,18 @@ export async function creditReferrer(db: Firestore, referrerUid: string, friendP
       tx.set(referrerRef, block, { merge: true })
       return 0
     }
-    const room = Math.max(0, block.referralCreditCap - block.referralCreditBalance)
+    // A referrer with no paid child yet has no plan cost to derive a cap
+    // from (referralCreditCap is 0) — let it accrue uncapped while free
+    // instead of blocking it outright. This can't cost Mathly anything it
+    // didn't already collect: the credit is funded 1:1 by the friend's own
+    // payment, and it can only ever be *spent* via consumeReferralCredit,
+    // which never refunds more than the referrer's own actual charge in a
+    // cycle. The moment they add a paid child, the normal cap below takes
+    // back over automatically — room just comes out to 0 once the balance
+    // already exceeds what their new plan could ever justify.
+    const room = block.referralCreditCap > 0
+      ? Math.max(0, block.referralCreditCap - block.referralCreditBalance)
+      : Infinity
     const credited = Math.min(friendPaymentAmount, room)
     block = {
       ...block,

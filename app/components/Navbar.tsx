@@ -262,6 +262,14 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
               >
                 {t.nav_my_profile}
               </Link>
+              <Link
+                href="/profile#tour-referral-section"
+                onClick={close}
+                className="block text-sm py-2 transition-colors"
+                style={{ color: '#a8b8d8' }}
+              >
+                {t.nav_refer_earn}
+              </Link>
               {user.email === ADMIN_EMAIL && (
                 <Link
                   href="/admin"

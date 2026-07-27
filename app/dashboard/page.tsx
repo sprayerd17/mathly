@@ -561,6 +561,31 @@ export default function DashboardPage() {
           <StatCard label={t.dash_stat_days_active_week} value={`${daysActiveThisWeek}/7`} />
         </div>
 
+        {/* ── Referral nudge (paid users only reach this point — free users
+            get UpgradePrompt above) — the dashboard is the highest-traffic
+            page a subscribed family visits, so a persistent reminder here
+            does more for referral visibility than the profile page alone. */}
+        <div
+          className="rounded-2xl p-6 mb-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6"
+          style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}
+        >
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-bold mb-1" style={{ color: '#0f1f3d' }}>
+              {t.dash_referral_nudge_heading}
+            </p>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              {t.dash_referral_nudge_body.replace('{amount}', String(user.referralCreditBalance))}
+            </p>
+          </div>
+          <Link
+            href="/profile#tour-referral-section"
+            className="shrink-0 text-sm font-semibold px-5 py-2.5 rounded-xl text-white text-center transition-colors"
+            style={{ backgroundColor: '#1e40af' }}
+          >
+            {t.dash_referral_nudge_cta}
+          </Link>
+        </div>
+
         {/* ── Collapsible panels ────────────────────────────────────────────── */}
         <div className="bg-white rounded-2xl border divide-y" style={{ borderColor: '#e5e7eb' }}>
 

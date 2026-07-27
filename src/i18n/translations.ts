@@ -9,6 +9,7 @@ const en = {
     nav_coming_soon: 'Soon',
     nav_my_profile: 'My Profile',
     nav_my_subscription: 'My Subscription',
+    nav_refer_earn: 'Refer & Earn',
     nav_log_out: 'Log out',
     nav_auth_account_menu_label: 'Account menu',
 
@@ -175,6 +176,9 @@ const en = {
     dash_stat_topics_completed: 'Topics Completed',
     dash_stat_average_score: 'Average Score',
     dash_stat_days_active_week: 'Days Active This Week',
+    dash_referral_nudge_heading: 'Refer a friend, earn free months',
+    dash_referral_nudge_body: "You've earned R{amount} in referral credit so far. Share your link and code from your profile — every friend who subscribes gets you closer to a free month.",
+    dash_referral_nudge_cta: 'Share your link',
     dash_panel_progress_title: 'My Progress',
     dash_panel_progress_summary: '{done} of {total} topics done',
     dash_kanban_todo: 'To Do',
@@ -380,6 +384,7 @@ const en = {
     profile_th_status: 'Status',
     profile_no_referrals_yet: 'No referrals yet. Share your link to start earning free months.',
     profile_next_year_preview: 'Based on {months} child-months active this year (added up across all your children, each capped at 12) you will receive {credits} referral credits next year. Keep every child subscribed for longer to earn more.',
+    profile_referral_free_tier_note: "You're on the Free plan and already earning credit — every friend who subscribes adds to your balance right now. The moment you upgrade, that balance is applied straight to your bill, so refer enough friends and your upgrade could cost nothing at all.",
 
     // ── Grade / topic / select-grade pages ─────────────────────────────────
     grade_back_to_home: 'Back to Home',
@@ -701,6 +706,7 @@ const af: Record<TranslationKeys, string> = {
     nav_coming_soon: 'Binnekort',
     nav_my_profile: 'My Profiel',
     nav_my_subscription: 'My Pakket',
+    nav_refer_earn: 'Verwys en Verdien',
     nav_log_out: 'Teken uit',
     nav_auth_account_menu_label: 'Rekeningkieslys',
 
@@ -867,6 +873,9 @@ const af: Record<TranslationKeys, string> = {
     dash_stat_topics_completed: 'Onderwerpe Voltooi',
     dash_stat_average_score: 'Gemiddelde Punt',
     dash_stat_days_active_week: 'Dae Aktief Hierdie Week',
+    dash_referral_nudge_heading: 'Verwys \'n vriend, verdien gratis maande',
+    dash_referral_nudge_body: 'Jy het reeds R{amount} verwysingskrediet verdien. Deel jou skakel en kode vanaf jou profiel — elke vriend wat inteken bring jou nader aan \'n gratis maand.',
+    dash_referral_nudge_cta: 'Deel jou skakel',
     dash_panel_progress_title: 'My Vordering',
     dash_panel_progress_summary: '{done} van {total} onderwerpe voltooi',
     dash_kanban_todo: 'Nog Te Doen',
@@ -1072,6 +1081,7 @@ const af: Record<TranslationKeys, string> = {
     profile_th_status: 'Status',
     profile_no_referrals_yet: 'Nog geen verwysings nie. Deel jou skakel om gratis maande te begin verdien.',
     profile_next_year_preview: 'Op grond van {months} kind-maande aktief vanjaar (opgetel oor al jou kinders, elkeen beperk tot 12) sal jy {credits} verwysingskrediete volgende jaar ontvang. Hou elke kind langer ingeteken om meer te verdien.',
+    profile_referral_free_tier_note: "Jy's op die Gratis-plan en verdien reeds krediet — elke vriend wat inteken tel nou al by jou saldo. Sodra jy opgradeer, word daardie saldo direk op jou rekening toegepas, so met genoeg vriende kan jou opgradering niks kos nie.",
 
     // ── Grade / topic / select-grade pages ─────────────────────────────────
     grade_back_to_home: 'Terug na Tuis',

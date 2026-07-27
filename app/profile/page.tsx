@@ -520,6 +520,227 @@ export default function ProfilePage() {
           )}
         </div>
 
+        {/* Referral section — moved right after the identity card and opened
+            up to every account regardless of tier, since it's the primary
+            inbound growth channel and free users should discover it just as
+            easily as paid ones. Still gated on PAYMENTS_ENABLED: while
+            payments are paused, a childPlans entry can reflect a Paystack
+            test-mode "purchase" that shouldn't unlock referral perks either. */}
+        {PAYMENTS_ENABLED && (
+          <div
+            id="tour-referral-section"
+            className="bg-white rounded-2xl shadow-sm p-7 mb-5"
+            style={{ border: '1px solid #e5e7eb' }}
+          >
+            {/* Heading */}
+            <h2 className="text-xl font-bold mb-1.5" style={{ color: '#0f1f3d' }}>
+              {t.profile_referral_heading}
+            </h2>
+            <p className="text-sm text-gray-500 mb-4 leading-relaxed">
+              {t.profile_referral_subheading}{' '}
+              <Link href="/refer" className="font-semibold" style={{ color: '#1e40af' }}>
+                {t.footer_how_to_get_mathly_free}
+              </Link>
+            </p>
+
+            {!user.childPlans.some(tier => tier !== 'free') && (
+              <p
+                className="text-xs font-semibold mb-4 px-3 py-2 rounded-lg"
+                style={{ color: '#1e40af', backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}
+              >
+                {t.profile_referral_free_tier_note}
+              </p>
+            )}
+
+            {/* Sharing options card */}
+            <div className="rounded-xl border mb-6" style={{ borderColor: '#e5e7eb' }}>
+
+              {/* Referral link */}
+              <div className="p-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
+                  {t.profile_referral_link}
+                </p>
+                <div className="flex items-center gap-3 px-4 py-3 rounded-lg" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
+                  <code className="flex-1 text-sm font-mono truncate" style={{ color: '#374151' }}>
+                    {refCode ? referralUrl : '—'}
+                  </code>
+                  <button
+                    onClick={copyLink}
+                    disabled={!refCode}
+                    className="shrink-0 text-xs font-semibold px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
+                    style={
+                      linkCopied
+                        ? { backgroundColor: '#dcfce7', color: '#15803d', border: '1px solid #bbf7d0' }
+                        : { backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }
+                    }
+                  >
+                    {linkCopied ? t.profile_copied : t.profile_copy_link}
+                  </button>
+                </div>
+              </div>
+
+              {/* Referral code */}
+              <div className="p-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
+                  {t.profile_referral_code}
+                </p>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                  <div
+                    className="flex-1 min-w-0 flex items-center justify-center py-4 rounded-xl px-2"
+                    style={{ backgroundColor: '#0f1f3d' }}
+                  >
+                    <span
+                      className="text-xl sm:text-2xl font-bold tracking-[0.15em] sm:tracking-[0.2em]"
+                      style={{ color: '#ffffff', fontFamily: 'monospace' }}
+                    >
+                      {refCode || '——'}
+                    </span>
+                  </div>
+                  <button
+                    onClick={copyCode}
+                    disabled={!refCode}
+                    className="shrink-0 text-xs font-semibold px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
+                    style={
+                      codeCopied
+                        ? { backgroundColor: '#dcfce7', color: '#15803d', border: '1px solid #bbf7d0' }
+                        : { backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }
+                    }
+                  >
+                    {codeCopied ? t.profile_copied : t.profile_copy_code}
+                  </button>
+                </div>
+              </div>
+
+              {/* QR code */}
+              <div className="p-5">
+                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
+                  {t.profile_qr_code}
+                </p>
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
+                  <div className="p-3 rounded-xl bg-white border inline-flex shrink-0" style={{ borderColor: '#e5e7eb' }}>
+                    {refCode ? (
+                      <QRCodeCanvas
+                        id="referral-qr"
+                        value={`https://${referralUrl}`}
+                        size={120}
+                        bgColor="#ffffff"
+                        fgColor="#0f1f3d"
+                      />
+                    ) : (
+                      <div style={{ width: 120, height: 120, backgroundColor: '#f3f4f6', borderRadius: 4 }} />
+                    )}
+                  </div>
+                  <div className="flex flex-col gap-2 min-w-0">
+                    <p className="text-xs text-gray-500 leading-relaxed sm:max-w-[180px]">
+                      {t.profile_qr_scan_hint}
+                    </p>
+                    <button
+                      onClick={downloadQR}
+                      disabled={!refCode}
+                      className="text-xs font-semibold px-4 py-2 rounded-lg transition-colors self-start"
+                      style={{ backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }}
+                    >
+                      {t.profile_download_qr}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Referral stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+              {[
+                { label: t.profile_stat_referrals_used,   value: `${referralCountThisYear} of ${referralAllowance}` },
+                { label: t.profile_stat_referrals_remaining, value: String(Math.max(referralAllowance - referralCountThisYear, 0)) },
+                { label: t.profile_stat_total_credit,      value: `R${referralCreditBalance}` },
+                { label: t.profile_stat_months_active,     value: String(monthsActive) },
+              ].map(stat => (
+                <div key={stat.label} className="rounded-xl p-4 text-center" style={{ backgroundColor: '#f3f4f6' }}>
+                  <p className="text-xl font-bold mb-1" style={{ color: '#0f1f3d' }}>{stat.value}</p>
+                  <p className="text-xs text-gray-500 leading-snug">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Referral history */}
+            <div className="mb-6">
+              <h3 className="text-sm font-bold mb-3" style={{ color: '#0f1f3d' }}>{t.profile_referral_history_heading}</h3>
+              <div className="rounded-xl border overflow-hidden" style={{ borderColor: '#e5e7eb' }}>
+                <div
+                  className="hidden sm:grid px-4 py-2.5"
+                  style={{
+                    gridTemplateColumns: '1fr 1fr 1fr 90px',
+                    gap: '8px',
+                    backgroundColor: '#f9fafb',
+                    borderBottom: '1px solid #f3f4f6',
+                  }}
+                >
+                  {[t.profile_th_date, t.profile_th_friends_plan, t.profile_th_amount_credited, t.profile_th_status].map(h => (
+                    <span key={h} className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#9ca3af' }}>
+                      {h}
+                    </span>
+                  ))}
+                </div>
+                {referrals.length === 0 ? (
+                  <div className="px-4 py-10 text-center">
+                    <p className="text-sm text-gray-500">
+                      {t.profile_no_referrals_yet}
+                    </p>
+                  </div>
+                ) : (
+                  referrals.map((r, i) => (
+                    <div
+                      key={i}
+                      className="grid grid-cols-2 sm:grid-cols-[1fr_1fr_1fr_90px] gap-2 px-4 py-3"
+                      style={{ borderBottom: i < referrals.length - 1 ? '1px solid #f3f4f6' : undefined }}
+                    >
+                      <span className="text-sm" style={{ color: '#374151' }}>
+                        {r.createdAt ? r.createdAt.toLocaleDateString() : '—'}
+                      </span>
+                      <span className="text-sm" style={{ color: '#374151' }}>
+                        {r.referredName || '—'}
+                        {r.subscribedTiers.some(tr => tr !== 'free')
+                          ? ` · ${r.subscribedTiers.filter(tr => tr !== 'free').map(tierLabel).join(' + ')}`
+                          : ''}
+                      </span>
+                      <span className="text-sm" style={{ color: '#374151' }}>
+                        {r.hasSubscribed ? `R${r.creditAmount}` : '—'}
+                      </span>
+                      <span
+                        className="text-xs font-semibold px-2 py-1 rounded-full self-start"
+                        style={
+                          r.hasSubscribed
+                            ? { backgroundColor: '#dcfce7', color: '#15803d' }
+                            : { backgroundColor: '#f3f4f6', color: '#6b7280' }
+                        }
+                      >
+                        {r.hasSubscribed ? 'Subscribed' : 'Signed up'}
+                      </span>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+
+            {/* Next year preview */}
+            <div
+              className="rounded-xl p-4 flex items-start gap-3"
+              style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#1e40af' }} aria-hidden="true">
+                <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd" />
+              </svg>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {t.profile_next_year_preview
+                  .replace('{months}', String(monthsActive))
+                  .replace('{credits}', String(creditsNextYearPreview))}
+              </p>
+            </div>
+
+          </div>
+        )}
+
         {/* Subscription card */}
         <div
           id="tour-subscription-section"
@@ -902,216 +1123,6 @@ export default function ProfilePage() {
             </div>
           )}
         </div>
-
-        {/* Referral section — any account with at least one paid child. Gated
-            on PAYMENTS_ENABLED too: while payments are paused, a childPlans
-            entry can reflect a Paystack test-mode "purchase" that shouldn't
-            unlock referral perks either. */}
-        {PAYMENTS_ENABLED && user.childPlans.some(tier => tier !== 'free') && (
-          <div
-            id="tour-referral-section"
-            className="bg-white rounded-2xl shadow-sm p-7 mt-5"
-            style={{ border: '1px solid #e5e7eb' }}
-          >
-            {/* Heading */}
-            <h2 className="text-xl font-bold mb-1.5" style={{ color: '#0f1f3d' }}>
-              {t.profile_referral_heading}
-            </h2>
-            <p className="text-sm text-gray-500 mb-7 leading-relaxed">
-              {t.profile_referral_subheading}{' '}
-              <Link href="/refer" className="font-semibold" style={{ color: '#1e40af' }}>
-                {t.footer_how_to_get_mathly_free}
-              </Link>
-            </p>
-
-            {/* Sharing options card */}
-            <div className="rounded-xl border mb-6" style={{ borderColor: '#e5e7eb' }}>
-
-              {/* Referral link */}
-              <div className="p-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
-                  {t.profile_referral_link}
-                </p>
-                <div className="flex items-center gap-3 px-4 py-3 rounded-lg" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
-                  <code className="flex-1 text-sm font-mono truncate" style={{ color: '#374151' }}>
-                    {refCode ? referralUrl : '—'}
-                  </code>
-                  <button
-                    onClick={copyLink}
-                    disabled={!refCode}
-                    className="shrink-0 text-xs font-semibold px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
-                    style={
-                      linkCopied
-                        ? { backgroundColor: '#dcfce7', color: '#15803d', border: '1px solid #bbf7d0' }
-                        : { backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }
-                    }
-                  >
-                    {linkCopied ? t.profile_copied : t.profile_copy_link}
-                  </button>
-                </div>
-              </div>
-
-              {/* Referral code */}
-              <div className="p-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
-                  {t.profile_referral_code}
-                </p>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                  <div
-                    className="flex-1 min-w-0 flex items-center justify-center py-4 rounded-xl px-2"
-                    style={{ backgroundColor: '#0f1f3d' }}
-                  >
-                    <span
-                      className="text-xl sm:text-2xl font-bold tracking-[0.15em] sm:tracking-[0.2em]"
-                      style={{ color: '#ffffff', fontFamily: 'monospace' }}
-                    >
-                      {refCode || '——'}
-                    </span>
-                  </div>
-                  <button
-                    onClick={copyCode}
-                    disabled={!refCode}
-                    className="shrink-0 text-xs font-semibold px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
-                    style={
-                      codeCopied
-                        ? { backgroundColor: '#dcfce7', color: '#15803d', border: '1px solid #bbf7d0' }
-                        : { backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }
-                    }
-                  >
-                    {codeCopied ? t.profile_copied : t.profile_copy_code}
-                  </button>
-                </div>
-              </div>
-
-              {/* QR code */}
-              <div className="p-5">
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>
-                  {t.profile_qr_code}
-                </p>
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
-                  <div className="p-3 rounded-xl bg-white border inline-flex shrink-0" style={{ borderColor: '#e5e7eb' }}>
-                    {refCode ? (
-                      <QRCodeCanvas
-                        id="referral-qr"
-                        value={`https://${referralUrl}`}
-                        size={120}
-                        bgColor="#ffffff"
-                        fgColor="#0f1f3d"
-                      />
-                    ) : (
-                      <div style={{ width: 120, height: 120, backgroundColor: '#f3f4f6', borderRadius: 4 }} />
-                    )}
-                  </div>
-                  <div className="flex flex-col gap-2 min-w-0">
-                    <p className="text-xs text-gray-500 leading-relaxed sm:max-w-[180px]">
-                      {t.profile_qr_scan_hint}
-                    </p>
-                    <button
-                      onClick={downloadQR}
-                      disabled={!refCode}
-                      className="text-xs font-semibold px-4 py-2 rounded-lg transition-colors self-start"
-                      style={{ backgroundColor: '#eff6ff', color: '#1e40af', border: '1px solid #bfdbfe' }}
-                    >
-                      {t.profile_download_qr}
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Referral stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-              {[
-                { label: t.profile_stat_referrals_used,   value: `${referralCountThisYear} of ${referralAllowance}` },
-                { label: t.profile_stat_referrals_remaining, value: String(Math.max(referralAllowance - referralCountThisYear, 0)) },
-                { label: t.profile_stat_total_credit,      value: `R${referralCreditBalance}` },
-                { label: t.profile_stat_months_active,     value: String(monthsActive) },
-              ].map(stat => (
-                <div key={stat.label} className="rounded-xl p-4 text-center" style={{ backgroundColor: '#f3f4f6' }}>
-                  <p className="text-xl font-bold mb-1" style={{ color: '#0f1f3d' }}>{stat.value}</p>
-                  <p className="text-xs text-gray-500 leading-snug">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Referral history */}
-            <div className="mb-6">
-              <h3 className="text-sm font-bold mb-3" style={{ color: '#0f1f3d' }}>{t.profile_referral_history_heading}</h3>
-              <div className="rounded-xl border overflow-hidden" style={{ borderColor: '#e5e7eb' }}>
-                <div
-                  className="hidden sm:grid px-4 py-2.5"
-                  style={{
-                    gridTemplateColumns: '1fr 1fr 1fr 90px',
-                    gap: '8px',
-                    backgroundColor: '#f9fafb',
-                    borderBottom: '1px solid #f3f4f6',
-                  }}
-                >
-                  {[t.profile_th_date, t.profile_th_friends_plan, t.profile_th_amount_credited, t.profile_th_status].map(h => (
-                    <span key={h} className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#9ca3af' }}>
-                      {h}
-                    </span>
-                  ))}
-                </div>
-                {referrals.length === 0 ? (
-                  <div className="px-4 py-10 text-center">
-                    <p className="text-sm text-gray-500">
-                      {t.profile_no_referrals_yet}
-                    </p>
-                  </div>
-                ) : (
-                  referrals.map((r, i) => (
-                    <div
-                      key={i}
-                      className="grid grid-cols-2 sm:grid-cols-[1fr_1fr_1fr_90px] gap-2 px-4 py-3"
-                      style={{ borderBottom: i < referrals.length - 1 ? '1px solid #f3f4f6' : undefined }}
-                    >
-                      <span className="text-sm" style={{ color: '#374151' }}>
-                        {r.createdAt ? r.createdAt.toLocaleDateString() : '—'}
-                      </span>
-                      <span className="text-sm" style={{ color: '#374151' }}>
-                        {r.referredName || '—'}
-                        {r.subscribedTiers.some(tr => tr !== 'free')
-                          ? ` · ${r.subscribedTiers.filter(tr => tr !== 'free').map(tierLabel).join(' + ')}`
-                          : ''}
-                      </span>
-                      <span className="text-sm" style={{ color: '#374151' }}>
-                        {r.hasSubscribed ? `R${r.creditAmount}` : '—'}
-                      </span>
-                      <span
-                        className="text-xs font-semibold px-2 py-1 rounded-full self-start"
-                        style={
-                          r.hasSubscribed
-                            ? { backgroundColor: '#dcfce7', color: '#15803d' }
-                            : { backgroundColor: '#f3f4f6', color: '#6b7280' }
-                        }
-                      >
-                        {r.hasSubscribed ? 'Subscribed' : 'Signed up'}
-                      </span>
-                    </div>
-                  ))
-                )}
-              </div>
-            </div>
-
-            {/* Next year preview */}
-            <div
-              className="rounded-xl p-4 flex items-start gap-3"
-              style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#1e40af' }} aria-hidden="true">
-                <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd" />
-              </svg>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {t.profile_next_year_preview
-                  .replace('{months}', String(monthsActive))
-                  .replace('{credits}', String(creditsNextYearPreview))}
-              </p>
-            </div>
-
-          </div>
-        )}
 
         {/* Danger zone */}
         <div
