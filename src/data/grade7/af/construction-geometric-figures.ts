@@ -455,7 +455,7 @@ export const topicData: TopicData = {
         '<text x="215" y="169" font-size="9.5" font-weight="700" fill="#ea580c" text-anchor="middle">9 cm</text>' +
         '<text x="176" y="120" font-size="9" font-weight="700" fill="#2563eb">3 cm</text>' +
         '<text x="234" y="112" font-size="9" font-weight="700" fill="#2563eb">4 cm</text>' +
-        '<text x="210" y="118" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">boë ontmoet nie</text>' +
+        '<text x="210" y="136" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">boë ontmoet nie</text>' +
         '</svg>',
 
       videoPlaceholder:

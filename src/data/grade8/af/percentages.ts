@@ -127,7 +127,7 @@ export const topicData: TopicData = {
         `<text x="118" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">Nuwe prys R460 (115%)</text>` +
         `<line x1="216" y1="85" x2="30" y2="85" stroke="#2563eb" stroke-width="2"/>` +
         `<polygon points="24,85 32,80 32,90" fill="#2563eb"/>` +
-        `<text x="118" y="103" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2563eb">÷ 1,15 — werk agteruit na die oorspronklike</text>` +
+        `<text x="118" y="103" text-anchor="middle" font-size="8" font-weight="700" fill="#2563eb">÷ 1,15 — werk agteruit na die oorspronklike</text>` +
         `</svg>`,
     },
 

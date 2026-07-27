@@ -1017,7 +1017,8 @@ export const topicData: TopicData = {
         `<text x="127.5" y="128" text-anchor="middle" font-size="9" fill="#6b7280">18 mo</text>` +
         `<text x="160" y="128" text-anchor="middle" font-size="9" fill="#6b7280">24 mo</text>` +
         `<text x="290" y="128" text-anchor="middle" font-size="9" fill="#6b7280">48 mo</text>` +
-        `<text x="160" y="145" text-anchor="middle" font-size="8" fill="#6b7280">Phase 1: 8% p.a. qtrly · Phase 2: 6% p.a. mthly · Phase 3: 6% p.a. mthly (after withdrawal)</text>` +
+        `<text x="160" y="139" text-anchor="middle" font-size="8" fill="#6b7280">Phase 1: 8% p.a. qtrly · Phase 2: 6% p.a. mthly</text>` +
+        `<text x="160" y="150" text-anchor="middle" font-size="8" fill="#6b7280">Phase 3: 6% p.a. mthly (after withdrawal)</text>` +
         `</svg>`,
     },
   ],

@@ -126,7 +126,7 @@ export const topicData: TopicData = {
         `<line x1="20" y1="64" x2="200" y2="64" stroke="#0f1f3d" stroke-width="2"/>` +
         `<text x="200" y="90" text-anchor="end" font-size="16" font-weight="700" fill="#16a34a">245 × 36 = 8 820</text>` +
         `<text x="150" y="102" text-anchor="end" font-size="9" fill="#16a34a">(ignoreer desimale kommas)</text>` +
-        `<text x="200" y="128" text-anchor="end" font-size="14" font-weight="700" fill="#ea580c">2 + 1 = 3 desimale plekke</text>` +
+        `<text x="200" y="128" text-anchor="end" font-size="11" font-weight="700" fill="#ea580c">2 + 1 = 3 desimale plekke</text>` +
         `<line x1="20" y1="140" x2="200" y2="140" stroke="#0f1f3d" stroke-width="2"/>` +
         `<text x="200" y="168" text-anchor="end" font-size="20" font-weight="700" fill="#2563eb">8,82</text>` +
         `<text x="150" y="182" text-anchor="end" font-size="9" fill="#2563eb">(3 plekke van regs af)</text>` +

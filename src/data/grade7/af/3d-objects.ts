@@ -139,7 +139,7 @@ export const topicData: TopicData = {
         '<line x1="70" y1="125" x2="70" y2="45" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="4,3"/>' +
         '<text x="90" y="168" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">lengte (l)</text>' +
         '<text x="200" y="141" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">breedte (b)</text>' +
-        '<text x="14" y="110" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">hoogte (h)</text>' +
+        '<text x="14" y="110" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">h</text>' +
         '<text x="120" y="192" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">OA = 2(lb + lh + bh)</text>' +
         '</svg>',
 

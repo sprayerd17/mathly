@@ -64,6 +64,23 @@ export async function logEvent(
 // 'complete' record, the real work already happened — log it as a duplicate
 // (silent) instead of a rejection (which pages the owner and flags a review
 // item for a transaction that's actually fine).
+// Push notification to the owner's phone via ntfy.sh — same topic/app as the
+// waitlist-signup notification, best-effort only (never blocks or fails the
+// webhook if it errors). No customer PII (name/email) is sent, since ntfy
+// topics are public/unauthenticated — plan tier and founding status aren't
+// personally identifying.
+async function notifyOwnerPush(title: string, message: string): Promise<void> {
+  try {
+    await fetch('https://ntfy.sh/mathly-waitlist-7k2xq9vw4h', {
+      method: 'POST',
+      headers: { Title: title, Priority: '4' },
+      body: message,
+    })
+  } catch {
+    // best-effort — a push failure should never affect the actual subscription
+  }
+}
+
 async function alreadyProcessed(adminDb: Firestore, reference: string | undefined): Promise<boolean> {
   if (!reference) return false
   const snap = await adminDb.collection('payments')
@@ -420,6 +437,9 @@ export async function handlePaystackEvent(
       const mail = paymentReceiptEmail({ name: userData.name ?? '', amount: receivedAmount, item: 'Mathly subscription' })
       await sendEmail(userData.email, mail.subject, mail.html, mail.from)
     }
+    const paidTiers = expectedChildPlans.filter((t): t is Plan => t !== 'free')
+    const tierSummary = paidTiers.map(t => `${t === 'max' ? 'Max' : 'Pro'}${foundingForPersist[t] ? ' (founding)' : ''}`).join(' + ')
+    await notifyOwnerPush('New Mathly subscriber!', `Someone just subscribed — ${tierSummary || 'plan unknown'}`)
     return
   }
 

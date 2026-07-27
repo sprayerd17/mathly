@@ -466,7 +466,7 @@ export const topicData: TopicData = {
         `<text x="34" y="44" font-size="11" font-weight="700" fill="#ea580c">y = −x + 7</text>` +
         `<circle cx="70" cy="90" r="4.5" fill="#16a34a"/>` +
         `<text x="78" y="86" font-size="12" font-weight="700" fill="#16a34a">(2, 5)</text>` +
-        `<text x="110" y="215" text-anchor="middle" font-size="10" fill="#6b7280">The lines intersect where both equations are true</text>` +
+        `<text x="110" y="215" text-anchor="middle" font-size="8" fill="#6b7280">Lines intersect where both equations are true</text>` +
         `</svg>`,
     },
 

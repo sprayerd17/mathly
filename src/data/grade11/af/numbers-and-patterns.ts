@@ -865,10 +865,10 @@ export const topicData: TopicData = {
 
       diagramSvg:
         `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 195" width="100%" style="max-width:380px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
-        `<text x="29" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₁</text>` +
-        `<text x="99" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₂</text>` +
-        `<text x="169" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₃</text>` +
-        `<text x="239" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₄</text>` +
+        `<text x="45" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₁</text>` +
+        `<text x="115" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₂</text>` +
+        `<text x="185" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₃</text>` +
+        `<text x="255" y="16" text-anchor="middle" font-size="9" fill="#6b7280">T₄</text>` +
         `<rect x="29" y="22" width="32" height="26" rx="5" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<rect x="99" y="22" width="32" height="26" rx="5" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<rect x="169" y="22" width="32" height="26" rx="5" fill="#f8fafc" stroke="#0f1f3d" stroke-width="1.5"/>` +

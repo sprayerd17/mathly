@@ -135,7 +135,7 @@ export const topicData: TopicData = {
         'Distribution diagram for (x + 2)(x² + 3x − 5) showing six arrows from each binomial term (x and +2) to each trinomial term (x², 3x, −5), colour coded blue for x and orange for +2',
 
       diagramSvg:
-        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 205" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 225" width="100%" style="max-width:340px;display:block;margin:16px auto 20px;font-family:sans-serif;">` +
         `<text x="130" y="14" text-anchor="middle" font-size="12" font-weight="700" fill="#0f1f3d">(x + 2)(x² + 3x − 5)</text>` +
         `<rect x="45" y="24" width="50" height="30" rx="6" fill="rgba(37,99,235,0.08)" stroke="#2563eb" stroke-width="1.5"/>` +
         `<text x="70" y="44" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">x</text>` +
@@ -153,7 +153,8 @@ export const topicData: TopicData = {
         `<line x1="190" y1="54" x2="35" y2="150" stroke="#ea580c" stroke-width="1.5"/>` +
         `<line x1="190" y1="54" x2="127" y2="150" stroke="#ea580c" stroke-width="1.5"/>` +
         `<line x1="190" y1="54" x2="219" y2="150" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<text x="130" y="196" text-anchor="middle" font-size="11" fill="#6b7280">Each binomial term multiplies every trinomial term — six products</text>` +
+        `<text x="130" y="206" text-anchor="middle" font-size="10.5" fill="#6b7280">Each binomial term multiplies</text>` +
+        `<text x="130" y="219" text-anchor="middle" font-size="10.5" fill="#6b7280">every trinomial term — six products</text>` +
         `</svg>`,
     },
 

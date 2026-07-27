@@ -409,7 +409,7 @@ export const topicData: TopicData = {
         `<text x="225" y="105" text-anchor="middle" font-size="10" fill="#991b1b">√2, √3, √5</text>` +
         `<text x="225" y="122" text-anchor="middle" font-size="10" fill="#991b1b">π</text>` +
         `<text x="225" y="139" text-anchor="middle" font-size="10" fill="#991b1b">1.41421356…</text>` +
-        `<text x="160" y="198" text-anchor="middle" font-size="10" fill="#6b7280">Every real number is either rational or irrational — never both</text>` +
+        `<text x="160" y="198" text-anchor="middle" font-size="8.5" fill="#6b7280">Every real number is either rational or irrational — never both</text>` +
         `</svg>`,
     },
 

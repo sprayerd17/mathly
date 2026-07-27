@@ -664,7 +664,7 @@ export const topicData: TopicData = {
         `<polygon points="162,61 154,57 154,65" fill="#0f1f3d"/>` +
         `<text x="151" y="33" text-anchor="middle" font-size="7" font-weight="700" fill="#dc2626">+16% p.j. × 3jr</text>` +
         `<rect x="162" y="40" width="58" height="42" rx="6" fill="rgba(234,88,12,0.08)" stroke="#ea580c" stroke-width="1.5"/>` +
-        `<text x="191" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Totale terugb.</text>` +
+        `<text x="191" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">Terugbetaal</text>` +
         `<text x="191" y="70" text-anchor="middle" font-size="9" font-weight="700" fill="#ea580c">R19 314</text>` +
         `<line x1="220" y1="61" x2="242" y2="61" stroke="#0f1f3d" stroke-width="1.5"/>` +
         `<polygon points="242,61 234,57 234,65" fill="#0f1f3d"/>` +
