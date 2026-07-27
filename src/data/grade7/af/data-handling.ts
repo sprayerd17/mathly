@@ -21,7 +21,7 @@ export const topicData: TopicData = {
       title: 'Data Insamel en Organiseer',
       icon: '📋',
       explanation:
-        `<p style="margin-bottom:16px;">In Graad 7 stel ons vrae, kies gepaste databronne, en organiseer data met behulp van telmerke, tabelle en <strong>stam-en-blaar-diagrams</strong>. Ons onderskei tussen ʼn ${or('steekproef')} (ʼn kleiner groep) en ʼn ${re('populasie')} (die hele groep wat bestudeer word).</p>` +
+        `<p style="margin-bottom:16px;">In Graad 7 stel ons vrae, kies gepaste databronne, en organiseer data met behulp van telmerke, tabelle en <strong>stingel-en-blaar-diagrams</strong>. Ons onderskei tussen ʼn ${or('steekproef')} (ʼn kleiner groep) en ʼn ${re('populasie')} (die hele groep wat bestudeer word).</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -48,18 +48,18 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Stam</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Die voorste syfer(s) van ʼn waarde — gewoonlik die tiene-syfer in ʼn stam-en-blaar-diagram.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die voorste syfer(s) van ʼn waarde — gewoonlik die tiene-syfer in ʼn stingel-en-blaar-diagram.</p>` +
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:4px;">Blaar</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Die laaste syfer van ʼn waarde — gewoonlik die ene-syfer in ʼn stam-en-blaar-diagram.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die laaste syfer van ʼn waarde — gewoonlik die ene-syfer in ʼn stingel-en-blaar-diagram.</p>` +
         `</div>` +
 
         `</div>` +
 
         // ── Stem-and-leaf guide ──────────────────────────────────────────────
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om ʼn stam-en-blaar-diagram te bou</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Hoe om ʼn stingel-en-blaar-diagram te bou</p>` +
         `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:9px;">` +
@@ -94,7 +94,7 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Organiseer hierdie data in ʼn stam-en-blaar-diagram — toetstellings: 45, 52, 48, 61, 57, 63, 49.',
+          question: 'Organiseer hierdie data in ʼn stingel-en-blaar-diagram — toetstellings: 45, 52, 48, 61, 57, 63, 49.',
           answer: `${bl('4')} | ${gr('5 8 9')} &nbsp; ${bl('5')} | ${gr('2 7')} &nbsp; ${bl('6')} | ${gr('1 3')}`,
           steps: [
             `Identifiseer die ${bl('stams')} (tiene-syfers): die waardes wissel van 45 tot 63, dus is die stams ${bl('4')}, ${bl('5')} en ${bl('6')}.`,
@@ -118,18 +118,18 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Medium',
-          question: 'Skep ʼn stam-en-blaar-diagram vir die volgende data:\n\n23, 31, 27, 35, 22, 38, 29, 34, 21, 36',
+          question: 'Skep ʼn stingel-en-blaar-diagram vir die volgende data:\n\n23, 31, 27, 35, 22, 38, 29, 34, 21, 36',
           answer: '2 | 1 2 3 7 9\n3 | 1 4 5 6 8\nSleutel: 2 | 1 = 21',
           checkMode: 'self',
         },
         {
           difficulty: 'Hard',
-          question: 'ʼn Graad 7-klas het die volgende punte in ʼn toets behaal:\n58, 72, 65, 81, 74, 63, 79, 68, 55, 77, 82, 60\n\na) Organiseer die data in ʼn stam-en-blaar-diagram.\nb) Hoeveel leerders het in die 70s behaal?\nc) Was hierdie klas die hele Graad 7-populasie of ʼn steekproef? Verduidelik.',
+          question: 'ʼn Graad 7-klas het die volgende punte in ʼn toets behaal:\n58, 72, 65, 81, 74, 63, 79, 68, 55, 77, 82, 60\n\na) Organiseer die data in ʼn stingel-en-blaar-diagram.\nb) Hoeveel leerders het in die 70s behaal?\nc) Was hierdie klas die hele Graad 7-populasie of ʼn steekproef? Verduidelik.',
           answer: '',
           checkMode: 'auto',
           parts: [
             {
-              label: 'a) Stam-en-blaar-diagram (skryf stams en blare neer)',
+              label: 'a) Stingel-en-blaar-diagram (skryf stams en blare neer)',
               correctAnswer: '5|58 6|0358 7|2479 8|12',
               correctAnswers: [
                 '5|5 8\n6|0 3 5 8\n7|2 4 7 9\n8|1 2',
@@ -153,7 +153,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om stap vir stap ʼn stam-en-blaar-diagram te bou en hoe om ʼn verteenwoordigende steekproef te kies',
+        'Kort video wat wys hoe om stap vir stap ʼn stingel-en-blaar-diagram te bou en hoe om ʼn verteenwoordigende steekproef te kies',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -522,7 +522,7 @@ export const topicData: TopicData = {
     // ── Q2 Medium — stem-and-leaf display ───────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Organiseer in ʼn stam-en-blaar-diagram: 34, 28, 41, 37, 25, 46.',
+      question: 'Organiseer in ʼn stingel-en-blaar-diagram: 34, 28, 41, 37, 25, 46.',
       answer: '2 | 5 8\n3 | 4 7\n4 | 1 6',
       checkMode: 'self',
     },
@@ -632,7 +632,7 @@ export const topicData: TopicData = {
     // ── Q13 Hard — mode in stem-and-leaf ───────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Amahle sê ʼn stam-en-blaar-diagram kan die modus maklik wys. Is sy korrek? Verduidelik.',
+      question: 'Amahle sê ʼn stingel-en-blaar-diagram kan die modus maklik wys. Is sy korrek? Verduidelik.',
       answer: 'Ja — die modus is die mees herhaalde blaarwaarde, wat maklik is om raak te sien aangesien die data reeds gerangskik is.',
       checkMode: 'self',
     },
