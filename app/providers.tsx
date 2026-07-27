@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   createContext,
   useContext,
@@ -277,6 +278,7 @@ function AuthModal({
   const [regChildren, setRegChildren] = useState<Array<{ name: string; grade: number | ''; language: Language | null; tier: Tier }>>(
     [{ name: '', grade: '', language: null, tier: 'free' }]
   )
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
 
   // Indicative preview only (assumes founding pricing for both tiers, same as
   // the old PLAN_PRICE constant did) — the actual charge is always computed
@@ -330,6 +332,10 @@ function AuthModal({
   async function handleComplete() {
     if (regChildren.some(c => !c.name.trim() || c.grade === '' || c.language === null)) {
       setError(t.auth_error_fill_child_details)
+      return
+    }
+    if (!agreedToTerms) {
+      setError(t.auth_error_accept_terms)
       return
     }
     const children = regChildren.map(c => ({
@@ -708,6 +714,29 @@ function AuthModal({
               </p>
             )}
 
+            <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={agreedToTerms}
+                onChange={e => setAgreedToTerms(e.target.checked)}
+                className="mt-0.5 w-4 h-4 rounded border-gray-300 shrink-0"
+                style={{ accentColor: '#1e40af' }}
+              />
+              <span className="text-xs text-gray-600 leading-relaxed">
+                {t.auth_terms_prefix}{' '}
+                <Link
+                  href="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={e => e.stopPropagation()}
+                  className="underline hover:no-underline"
+                  style={{ color: '#1e40af' }}
+                >
+                  {t.auth_terms_link}
+                </Link>
+              </span>
+            </label>
+
             <div className="flex gap-3">
               <button
                 type="button"
@@ -719,7 +748,7 @@ function AuthModal({
               <button
                 type="button"
                 onClick={handleComplete}
-                disabled={submitting || regChildren.some(c => !c.name.trim() || c.grade === '' || c.language === null)}
+                disabled={submitting || !agreedToTerms || regChildren.some(c => !c.name.trim() || c.grade === '' || c.language === null)}
                 className="flex-1 bg-[#1e40af] text-white font-semibold py-3 rounded-lg text-sm transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {submitting ? '…' : t.auth_complete_registration_button}
