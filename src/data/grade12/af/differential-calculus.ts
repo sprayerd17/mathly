@@ -669,7 +669,7 @@ export const topicData: TopicData = {
           question: 'ʼn Boer het 40 m heining en wil ʼn reghoekige tuin teen ʼn muur toemaak (een kant het geen heining nodig nie). Vind die dimensies wat die oppervlakte maksimeer.',
           answer: `Dimensies: ${gr('10 m × 20 m')}, maksimum oppervlakte = ${gr('200 m²')}`,
           steps: [
-            `<strong>${bl('Beperking')}:</strong> Slegs drie kante het heining nodig. Laat die twee loodregte kante elk lengte x hê. Dan het die parallelle kant (teenoor die muur) lengte ${bl('40 − 2x')}.`,
+            `<strong>${bl('Beperking')}:</strong> Slegs drie kante het heining nodig. Laat die twee loodregte kante elk lengte x hê. Dan het die ewewydige kant (teenoor die muur) lengte ${bl('40 − 2x')}.`,
             `<strong>${or('Doelfunksie')}:</strong> Oppervlakte A = x(${bl('40 − 2x')}) = ${or('40x − 2x²')}.`,
             `<strong>Differensieer:</strong> dA/dx = 40 − 4x.`,
             `<strong>${gr('Kritieke punt')}:</strong> Stel dA/dx = 0 → 40 − 4x = 0 → ${gr('x = 10')}.`,

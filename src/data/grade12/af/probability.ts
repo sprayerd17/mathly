@@ -45,13 +45,13 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
-        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Wedersyds Uitsluitende Gebeurtenisse</p>` +
+        `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Onderling Uitsluitende Gebeurtenisse</p>` +
         `<p style="color:#374151;font-size:14px;margin:0;">Gebeurtenisse wat <strong>nie gelyktydig kan plaasvind nie</strong> (geen oorvleueling nie). Dan is ${bl('P(A en B) = 0')}, so die reël vereenvoudig na ${bl('P(A of B) = P(A) + P(B)')}.</p>` +
         `</div>` +
 
         `<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#dc2626;margin-bottom:4px;">Komplementêre Gebeurtenisse</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">A en A' (nie-A) is komplementêr as hulle wedersyds uitsluitend is EN elke moontlike uitkoms dek. Dan is ${re("P(A') = 1 − P(A)")}.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">A en A' (nie-A) is komplementêr as hulle onderling uitsluitend is EN elke moontlike uitkoms dek. Dan is ${re("P(A') = 1 − P(A)")}.</p>` +
         `</div>` +
 
         `</div>` +
@@ -68,7 +68,7 @@ export const topicData: TopicData = {
           answer: `${gr('P(hart of heer) = 16/52 = 4/13')}`,
           steps: [
             `Bepaal die individuele waarskynlikhede: ${bl('P(hart) = 13/52')} en ${bl('P(heer) = 4/52')}.`,
-            `Hierdie gebeurtenisse ${or('oorvleuel')} — die heer van harte is beide 'n hart ÉN 'n heer, so hulle is nie wedersyds uitsluitend nie. Bepaal ${or('P(hart en heer) = 1/52')} (net een kaart is albei).`,
+            `Hierdie gebeurtenisse ${or('oorvleuel')} — die heer van harte is beide 'n hart ÉN 'n heer, so hulle is nie onderling uitsluitend nie. Bepaal ${or('P(hart en heer) = 1/52')} (net een kaart is albei).`,
             `Pas die ${gr('optellingsreël')} toe: ${gr('P(hart of heer) = 13/52 + 4/52 − 1/52 = 16/52 = 4/13')}.`,
             `<strong>Antwoord:</strong> ${gr('P(hart of heer) = 4/13')}. Sonder om die oorvleueling af te trek, sou die heer van harte twee keer getel gewees het.`,
           ],
@@ -432,11 +432,11 @@ export const topicData: TopicData = {
     // ── Q2 Easy — mutually exclusive ─────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'A en B is wedersyds uitsluitende gebeurtenisse met P(A) = 0,25 en P(B) = 0,45. Bepaal P(A of B).',
+      question: 'A en B is onderling uitsluitende gebeurtenisse met P(A) = 0,25 en P(B) = 0,45. Bepaal P(A of B).',
       checkMode: 'auto',
       correctAnswer: '0,7',
       correctAnswers: ['0,7', '0.7'],
-      explanation: 'Wedersyds uitsluitend beteken P(A en B) = 0, so P(A of B) = P(A) + P(B) = 0,25 + 0,45 = 0,7 ✓',
+      explanation: 'Onderling uitsluitend beteken P(A en B) = 0, so P(A of B) = P(A) + P(B) = 0,25 + 0,45 = 0,7 ✓',
     },
 
     // ── Q3 Easy — complementary rule ─────────────────────────────────────────
@@ -581,9 +581,9 @@ export const topicData: TopicData = {
     // ── Q18 Medium — mutually exclusive vs not ────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'n Dobbelsteen word een keer gegooi. Laat A "\'n ewe getal gooi" wees en B "\'n getal groter as 4 gooi". Is A en B wedersyds uitsluitend? Bepaal P(A of B).',
+      question: 'n Dobbelsteen word een keer gegooi. Laat A "\'n ewe getal gooi" wees en B "\'n getal groter as 4 gooi". Is A en B onderling uitsluitend? Bepaal P(A of B).',
       checkMode: 'self',
-      answer: 'A = {2,4,6}, B = {5,6}. Hulle oorvleuel by 6, so A en B is NIE wedersyds uitsluitend nie. P(A) = 3/6, P(B) = 2/6, P(A en B) = 1/6 (\'n 6 gooi). P(A of B) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3.',
+      answer: 'A = {2,4,6}, B = {5,6}. Hulle oorvleuel by 6, so A en B is NIE onderling uitsluitend nie. P(A) = 3/6, P(B) = 2/6, P(A en B) = 1/6 (\'n 6 gooi). P(A of B) = 3/6 + 2/6 − 1/6 = 4/6 = 2/3.',
     },
 
     // ── Q19 Hard — restriction: specific person NOT at an end ─────────────────

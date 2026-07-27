@@ -133,18 +133,18 @@ export const topicData: TopicData = {
       title: 'Kwadratiese Vergelykings Oplos — Konsolidasie',
       icon: '²',
       explanation:
-        `<p style="margin-bottom:16px;">Om ax²+bx+c=0 op te los, is hersiening van Graad 11, en ʼn kernvaardigheid waarop jy regdeur hierdie onderwerp sal steun. Die twee metodes wat op Graad 12-vlak geëksamineer word, is ${bl('faktorisering')} en die ${gr('kwadratiese formule')} x = (−b ± √(b² − 4ac)) / 2a. ${or('Volledigmaking van die vierkant')} word hieronder ingesluit slegs as hersiening, aangesien dit presies is waar die kwadratiese formule (en dus die diskriminant van Afdeling 1) vandaan kom.</p>` +
+        `<p style="margin-bottom:16px;">Om ax²+bx+c=0 op te los, is hersiening van Graad 11, en ʼn kernvaardigheid waarop jy regdeur hierdie onderwerp sal steun. Die twee metodes wat op Graad 12-vlak geëksamineer word, is ${bl('faktorisering')} en die ${gr('kwadratiese formule')} x = (−b ± √(b² − 4ac)) / 2a. ${or('Volledigmaking van die kwadraat')} word hieronder ingesluit slegs as hersiening, aangesien dit presies is waar die kwadratiese formule (en dus die diskriminant van Afdeling 1) vandaan kom.</p>` +
 
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleursleutel:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('faktorisering')}</span>` +
-        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('volledigmaking van die vierkant (hersiening)')}</span>` +
+        `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('volledigmaking van die kwadraat (hersiening)')}</span>` +
         `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('kwadratiese formule')}</span>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;margin-bottom:20px;">` +
         `<p style="font-weight:700;color:#92400e;margin-bottom:6px;">Nota oor eksamenomvang</p>` +
-        `<p style="margin:0;color:#78350f;">Volgens die NSS-eksamenriglyne word die oplos van ʼn kwadratiese vergelyking deur volledigmaking van die vierkant <strong>nie</strong> as ʼn alleenstaande vraag op Graad 12-vlak geëksamineer nie — jy sal verwag word om ${bl('faktorisering')} of die ${gr('kwadratiese formule')} te gebruik. Die <strong>vervangingsmetode ("k-metode")</strong> vir vergelykings wat tot kwadratiese vorm herlei (later in hierdie onderwerp gebruik vir eksponensiële vergelykings) <em>is</em> wel eksamineerbaar.</p>` +
+        `<p style="margin:0;color:#78350f;">Volgens die NSS-eksamenriglyne word die oplos van ʼn kwadratiese vergelyking deur volledigmaking van die kwadraat <strong>nie</strong> as ʼn alleenstaande vraag op Graad 12-vlak geëksamineer nie — jy sal verwag word om ${bl('faktorisering')} of die ${gr('kwadratiese formule')} te gebruik. Die <strong>vervangingsmetode ("k-metode")</strong> vir vergelykings wat tot kwadratiese vorm herlei (later in hierdie onderwerp gebruik vir eksponensiële vergelykings) <em>is</em> wel eksamineerbaar.</p>` +
         `</div>` +
 
         `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Die kwadratiese formule</p>` +
@@ -175,7 +175,7 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Hersiening: skryf x² + 8x + 3 = 0 in volledige vierkantvorm, en los daarvolgens op vir x.',
+          question: 'Hersiening: skryf x² + 8x + 3 = 0 in volledige kwadraatvorm, en los daarvolgens op vir x.',
           answer: `${or('(x + 4)² = 13')}, dus x = ${or('−4 + √13')} of x = ${or('−4 − √13')}`,
           steps: [
             `Neem die helfte van 8 (die x-koëffisiënt): 8 ÷ 2 = 4. Kwadreer dit: 4² = 16.`,
@@ -204,7 +204,7 @@ export const topicData: TopicData = {
         },
         {
           difficulty: 'Hard',
-          question: 'Skryf x² + 10x − 3 = 0 in volledige vierkantvorm, en los daarvolgens op vir x.',
+          question: 'Skryf x² + 10x − 3 = 0 in volledige kwadraatvorm, en los daarvolgens op vir x.',
           answer: 'Helfte van 10 is 5; 5²=25. x²+10x+25−25−3=0 → (x+5)²−28=0 → (x+5)²=28 → x=−5±√28=−5±2√7.',
           checkMode: 'self',
         },
@@ -780,10 +780,10 @@ export const topicData: TopicData = {
       checkMode: 'self',
     },
 
-    // ── V5 Hard — volledigmaking van die vierkant, terugwerk ─────────────────
+    // ── V5 Hard — volledigmaking van die kwadraat, terugwerk ─────────────────
     {
       difficulty: 'Hard',
-      question: 'Die vergelyking x² + bx + c = 0 word in volledige vierkantvorm geskryf as (x + 7)² = 40. Bepaal die waardes van b en c.',
+      question: 'Die vergelyking x² + bx + c = 0 word in volledige kwadraatvorm geskryf as (x + 7)² = 40. Bepaal die waardes van b en c.',
       answer: 'b = 14, c = 9',
       checkMode: 'auto',
       correctAnswers: ['b=14, c=9', 'b=14 c=9', 'b = 14, c = 9'],

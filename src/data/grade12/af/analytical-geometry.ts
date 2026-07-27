@@ -64,13 +64,13 @@ export const topicData: TopicData = {
 
         `</div>` +
 
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Parallelle en loodregte lyne</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Ewewydige en loodregte lyne</p>` +
         `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px;">` +
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:14px 16px;">` +
-        `<p style="font-weight:700;color:#374151;margin-bottom:6px;">Parallelle lyne</p>` +
+        `<p style="font-weight:700;color:#374151;margin-bottom:6px;">Ewewydige lyne</p>` +
         `<p style="font-family:monospace;font-size:1.05em;color:#0f1f3d;margin-bottom:6px;">m₁ = m₂</p>` +
-        `<p style="color:#374151;font-size:13px;margin:0;">Twee lyne is parallel wanneer hul gradiënte gelyk is.</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">Twee lyne is ewewydig wanneer hul gradiënte gelyk is.</p>` +
         `</div>` +
 
         `<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:14px 16px;">` +
@@ -107,12 +107,12 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Sipho sê ʼn lyn met gradiënt 2 is parallel aan ʼn lyn met gradiënt −2. Is hy korrek?',
-          answer: `Nee — ${or('2 ≠ −2')}, dus is die lyne <strong>nie</strong> parallel nie.`,
+          question: 'Sipho sê ʼn lyn met gradiënt 2 is ewewydig aan ʼn lyn met gradiënt −2. Is hy korrek?',
+          answer: `Nee — ${or('2 ≠ −2')}, dus is die lyne <strong>nie</strong> ewewydig nie.`,
           steps: [
-            `Nee — parallelle lyne het gelyke gradiënte (m₁ = m₂).`,
-            `${or('2 ≠ −2')}, dus is die lyne nie parallel nie.`,
-            `ʼn Lyn parallel aan ʼn lyn met gradiënt 2 moet ook gradiënt ${or('2')} hê.`,
+            `Nee — ewewydige lyne het gelyke gradiënte (m₁ = m₂).`,
+            `${or('2 ≠ −2')}, dus is die lyne nie ewewydig nie.`,
+            `ʼn Lyn ewewydig aan ʼn lyn met gradiënt 2 moet ook gradiënt ${or('2')} hê.`,
           ],
         },
       ],
@@ -190,7 +190,7 @@ export const topicData: TopicData = {
         `<span style="font-size:13px;font-weight:600;color:#374151;margin-right:4px;">Kleurgids:</span>` +
         `<span style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:3px 10px;font-size:13px;">${bl('middelpuntkoördinate')}</span>` +
         `<span style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:3px 10px;font-size:13px;">${or('radius')}</span>` +
-        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('voltooide-vierkant-vorm')}</span>` +
+        `<span style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:3px 10px;font-size:13px;">${gr('voltooide-kwadraat-vorm')}</span>` +
         `</div>` +
 
         `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Standaardvorm van ʼn sirkel</p>` +
@@ -199,7 +199,7 @@ export const topicData: TopicData = {
         `<p style="color:#6b7280;font-size:13px;margin-top:8px;margin-bottom:0;">Middelpunt ${bl('(a, b)')} &nbsp;·&nbsp; Radius ${or('r')}</p>` +
         `</div>` +
 
-        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Uitgebreide vorm — die vierkant voltooi</p>` +
+        `<p style="font-weight:700;color:#0f1f3d;margin-bottom:10px;font-size:1.02em;">Uitgebreide vorm — die kwadraat voltooi</p>` +
         `<p style="margin-bottom:12px;">ʼn Sirkelvergelyking kan ook in die uitgebreide vorm <strong>x² + y² + Dx + Ey + F = 0</strong> voorkom. Om die ${bl('middelpunt')} en ${or('radius')} te vind, ${gr('voltooi ons die vierkant')} op beide die x- en y-terme.</p>` +
 
         `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">` +
@@ -211,7 +211,7 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
-        `<p style="margin:0;font-size:14px;">${gr('Voltooi die vierkant')} — Vir elke veranderlike, neem die helfte van die koëffisiënt, kwadreer dit, en tel dit by albei kante.</p>` +
+        `<p style="margin:0;font-size:14px;">${gr('Voltooi die kwadraat')} — Vir elke veranderlike, neem die helfte van die koëffisiënt, kwadreer dit, en tel dit by albei kante.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
@@ -245,11 +245,11 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: 'Bepaal die middelpunt en radius van x² + y² − 6x + 4y − 12 = 0 deur die vierkant te voltooi.',
+          question: 'Bepaal die middelpunt en radius van x² + y² − 6x + 4y − 12 = 0 deur die kwadraat te voltooi.',
           answer: `${gr('(x − 3)² + (y + 2)² = 25')} &nbsp;·&nbsp; Middelpunt = ${bl('(3, −2)')} &nbsp;·&nbsp; Radius = ${or('5')}`,
           steps: [
             `Groepeer x- en y-terme: (x² − 6x) + (y² + 4y) = 12`,
-            `${gr('Voltooi die vierkant:')} (x² − 6x + 9) + (y² + 4y + 4) = 12 + 9 + 4`,
+            `${gr('Voltooi die kwadraat:')} (x² − 6x + 9) + (y² + 4y + 4) = 12 + 9 + 4`,
             `${gr('(x − 3)² + (y + 2)² = 25')}`,
             `${bl('Middelpunt = (3, −2)')} (verander tekens) &nbsp;&nbsp; ${or('Radius:')} r = √25 = ${or('5')}`,
           ],
@@ -262,7 +262,7 @@ export const topicData: TopicData = {
         // ── Q6 Hard — completing the square to find centre and radius ─────────
         {
           difficulty: 'Hard',
-          question: 'Bepaal die middelpunt en radius van die sirkel x²+y²−4x+6y−12=0 deur die vierkant te voltooi.',
+          question: 'Bepaal die middelpunt en radius van die sirkel x²+y²−4x+6y−12=0 deur die kwadraat te voltooi.',
           answer: '(x²−4x+4)+(y²+6y+9)=12+4+9\n(x−2)²+(y+3)²=25\nMiddelpunt=(2,−3), radius=5',
           checkMode: 'self',
         },
@@ -309,7 +309,7 @@ export const topicData: TopicData = {
         `<svg viewBox="0 0 182 182" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif"><circle cx="91" cy="91" r="70" fill="none" stroke="#0f1f3d" stroke-width="2.5" /><line x1="91" y1="91" x2="161" y2="91" stroke="#ea580c" stroke-width="2" stroke-dasharray="4 3" /><circle cx="91" cy="91" r="3.5" fill="#2563eb" /><circle cx="161" cy="91" r="3.5" fill="#16a34a" /><text x="80" y="80" font-weight="700" font-size="11" fill="#2563eb" text-anchor="end">middelpunt (2, -3)</text><text x="179" y="103" font-weight="700" font-size="10" fill="#16a34a" text-anchor="end">P(7, -3)</text><text x="126" y="83" font-weight="700" font-size="11" fill="#ea580c" text-anchor="middle">r = 5</text></svg>`,
 
       videoPlaceholder:
-        'Kort video wat die vergelyking van \'n sirkel in standaardvorm verduidelik en hoe om die middelpunt en radius te vind deur die vierkant te voltooi',
+        'Kort video wat die vergelyking van \'n sirkel in standaardvorm verduidelik en hoe om die middelpunt en radius te vind deur die kwadraat te voltooi',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -734,7 +734,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:8px;">Parallelogram</p>` +
-        `<p style="color:#374151;font-size:13px;margin:0;">${bl('Albei pare oorstaande sye parallel')} (gelyke gradiënte), OF oorstaande sye gelyk in lengte, OF die diagonale halveer mekaar (gelyke middelpunte).</p>` +
+        `<p style="color:#374151;font-size:13px;margin:0;">${bl('Albei pare oorstaande sye ewewydig')} (gelyke gradiënte), OF oorstaande sye gelyk in lengte, OF die diagonale halveer mekaar (gelyke middelpunte).</p>` +
         `</div>` +
 
         `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:14px 16px;">` +
@@ -783,7 +783,7 @@ export const topicData: TopicData = {
             `${bl('Gradiënt DC:')} m<sub>DC</sub> = (5−4)/(6−2) = ${bl('1/4')}`,
             `${bl('Gradiënt BC:')} m<sub>BC</sub> = (5−1)/(6−4) = ${bl('2')}`,
             `${bl('Gradiënt AD:')} m<sub>AD</sub> = (4−0)/(2−0) = ${bl('2')}`,
-            `Aangesien m<sub>AB</sub> = m<sub>DC</sub> en m<sub>BC</sub> = m<sub>AD</sub>, is albei pare oorstaande sye parallel, dus ${gr('is ABCD ʼn parallelogram.')} ✓`,
+            `Aangesien m<sub>AB</sub> = m<sub>DC</sub> en m<sub>BC</sub> = m<sub>AD</sub>, is albei pare oorstaande sye ewewydig, dus ${gr('is ABCD ʼn parallelogram.')} ✓`,
           ],
         },
         {
@@ -827,7 +827,7 @@ export const topicData: TopicData = {
         // ── Q28 Medium — gradient of the opposite side ─────────────────────────
         {
           difficulty: 'Medium',
-          question: 'Vir dieselfde vierhoek PQRS — P(1, 2), Q(5, 4), R(9, 2), S(5, 0) — bepaal die gradiënt van sy SR. Is SR parallel aan PQ (gradiënt 1/2)?',
+          question: 'Vir dieselfde vierhoek PQRS — P(1, 2), Q(5, 4), R(9, 2), S(5, 0) — bepaal die gradiënt van sy SR. Is SR ewewydig aan PQ (gradiënt 1/2)?',
           answer: '1/2',
           checkMode: 'auto',
           correctAnswer: '1/2',
@@ -839,7 +839,7 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Vir vierhoek PQRS — P(1, 2), Q(5, 4), R(9, 2), S(5, 0) — word jy gegee dat m_QR = m_PS = −1/2. Gebruik dit saam met jou antwoorde vir PQ en SR om, met redes, te sê of PQRS ʼn parallelogram is.',
-          answer: 'm_PQ = m_SR = 1/2, dus PQ ∥ SR. m_QR = m_PS = −1/2, dus QR ∥ PS. Aangesien albei pare oorstaande sye parallel is, is PQRS ʼn parallelogram.',
+          answer: 'm_PQ = m_SR = 1/2, dus PQ ∥ SR. m_QR = m_PS = −1/2, dus QR ∥ PS. Aangesien albei pare oorstaande sye ewewydig is, is PQRS ʼn parallelogram.',
           checkMode: 'self',
         },
 
@@ -881,7 +881,7 @@ export const topicData: TopicData = {
   // ═══════════════════════════════════════════════════════════════════════════
   // PRACTICE SETS — 3 sets x 20 questions, skill blocks in matching positions:
   // Block 1 (Q1-3):   Standaardsirkelvergelyking — skryf vergelyking / lees middelpunt+radius af / verifieer punt op sirkel — Easy, Easy, Medium
-  // Block 2 (Q4-6):   Voltooi die vierkant om middelpunt en radius te vind — Easy, Medium, Medium
+  // Block 2 (Q4-6):   Voltooi die kwadraat om middelpunt en radius te vind — Easy, Medium, Medium
   // Block 3 (Q7-9):   Raaklyn aan 'n sirkel by 'n gegewe punt — Medium, Hard, Hard (diagram: Q9)
   // Block 4 (Q10-12): Afstand tot middelpunt / raaklynlengte vanaf 'n eksterne punt — Easy, Medium, Hard (diagram: Q12)
   // Block 5 (Q13-16): Sirkel uit middellynseindpunte / koord-middelpunt-loodregtheid — Medium, Medium, Hard, Hard (diagram: Q16)
@@ -899,10 +899,10 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van (x+4)²+(y−6)²=100.', checkMode: 'auto', correctAnswer: '(-4, 6)', correctAnswers: ['(-4, 6)', '(-4,6)', '(−4, 6)', '(−4,6)'], answer: 'Middelpunt = (-4, 6), radius = 10', explanation: 'Verander die tekens binne die hakies: middelpunt = (−4, 6). r²=100 → r=10 ✓' },
         { difficulty: 'Medium', question: 'Verifieer dat A(5, 7) op die sirkel (x−2)²+(y−3)²=25 lê. Wat is die waarde van (5−2)²+(7−3)²?', checkMode: 'auto', correctAnswer: '25', answer: '25', explanation: '(5−2)²+(7−3)²=3²+4²=9+16=25=r² ✓\nA(5, 7) voldoen aan die vergelyking en lê dus op die sirkel.' },
 
-        // Block 2 — Voltooi die vierkant om middelpunt en radius te vind
-        { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van x²+y²−6x+2y−15=0 deur die vierkant te voltooi.', answer: '(x²−6x+9)+(y²+2y+1)=15+9+1\n(x−3)²+(y+1)²=25\nMiddelpunt=(3, −1), radius=5', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Sirkel het vergelyking x²+y²+4x−8y−5=0. Bepaal die middelpunt en radius deur die vierkant te voltooi.', answer: '(x²+4x+4)+(y²−8y+16)=5+4+16\n(x+2)²+(y−4)²=25\nMiddelpunt=(−2, 4), radius=5', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Bepaal die middelpunt en radius van x²+y²−2x−4y−20=0 deur die vierkant te voltooi.', answer: '(x²−2x+1)+(y²−4y+4)=20+1+4\n(x−1)²+(y−2)²=25\nMiddelpunt=(1, 2), radius=5', checkMode: 'self' },
+        // Block 2 — Voltooi die kwadraat om middelpunt en radius te vind
+        { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van x²+y²−6x+2y−15=0 deur die kwadraat te voltooi.', answer: '(x²−6x+9)+(y²+2y+1)=15+9+1\n(x−3)²+(y+1)²=25\nMiddelpunt=(3, −1), radius=5', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Sirkel het vergelyking x²+y²+4x−8y−5=0. Bepaal die middelpunt en radius deur die kwadraat te voltooi.', answer: '(x²+4x+4)+(y²−8y+16)=5+4+16\n(x+2)²+(y−4)²=25\nMiddelpunt=(−2, 4), radius=5', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bepaal die middelpunt en radius van x²+y²−2x−4y−20=0 deur die kwadraat te voltooi.', answer: '(x²−2x+1)+(y²−4y+4)=20+1+4\n(x−1)²+(y−2)²=25\nMiddelpunt=(1, 2), radius=5', checkMode: 'self' },
 
         // Block 3 — Raaklyn aan 'n sirkel by 'n gegewe punt
         { difficulty: 'Medium', question: 'Vir die sirkel (x−1)²+(y−2)²=169 met middelpunt O(1, 2), bereken die gradiënt van die radius OA waar A(6, 14).', checkMode: 'auto', correctAnswer: '12/5', correctAnswers: ['12/5', '2.4', '2,4'], answer: '12/5', explanation: 'm = (14−2)/(6−1) = 12/5 ✓' },
@@ -925,7 +925,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Sipho sê enige lyn met gradiënt −5/12 wat deur ʼn punt op (x−1)²+(y−2)²=169 gaan, is ʼn raaklyn aan die sirkel. Is hy korrek? Verduidelik.', answer: 'Nee. ʼn Gradiënt van −5/12 werk slegs as raaklyngradiënt by die spesifieke punte op die sirkel waar die radiusgradiënt 12/5 is — naamlik by (6, 14) en die diametraal teenoorgestelde punt (−4, −10). By enige ander punt op die sirkel het die radius ʼn ander gradiënt, dus is die raaklyngradiënt anders.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Lerato sê ʼn sirkel met radius 5 het altyd ʼn groter omtrek as ʼn sirkel met radius 4, ongeag waar die twee sirkels se middelpunte is. Is sy korrek? Verduidelik.', answer: 'Ja. Omtrek = 2πr, dus die omtrek neem direk toe soos die radius toeneem. ʼn Sirkel met radius 5 het omtrek 10π, wat altyd groter is as 8π (die omtrek van ʼn sirkel met radius 4), ongeag waar enige van die twee sirkels se middelpunt is.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Sirkel het vergelyking x²+y²−4x+6y−23=0. Beantwoord die volgende.', answer: '', checkMode: 'auto', parts: [
-          { label: 'Middelpunt:', correctAnswer: '(2, -3)', correctAnswers: ['(2,-3)', '(2, -3)', '(2, −3)', '(2,−3)'], explanation: 'Voltooi die vierkant: (x²−4x+4)+(y²+6y+9)=23+4+9 → (x−2)²+(y+3)²=36. Middelpunt = (2, −3).' },
+          { label: 'Middelpunt:', correctAnswer: '(2, -3)', correctAnswers: ['(2,-3)', '(2, -3)', '(2, −3)', '(2,−3)'], explanation: 'Voltooi die kwadraat: (x²−4x+4)+(y²+6y+9)=23+4+9 → (x−2)²+(y+3)²=36. Middelpunt = (2, −3).' },
           { label: 'Radius:', correctAnswer: '6', explanation: 'r²=36 → r=6' },
         ] },
       ],
@@ -948,10 +948,10 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van (x−7)²+(y+2)²=81.', checkMode: 'auto', correctAnswer: '(7, -2)', correctAnswers: ['(7, -2)', '(7,-2)', '(7, −2)', '(7,−2)'], answer: 'Middelpunt = (7, -2), radius = 9', explanation: 'Verander die tekens binne die hakies: middelpunt = (7, −2). r²=81 → r=9 ✓' },
         { difficulty: 'Medium', question: 'Verifieer dat A(2, 6) op die sirkel (x+1)²+(y−2)²=25 lê. Wat is die waarde van (2+1)²+(6−2)²?', checkMode: 'auto', correctAnswer: '25', answer: '25', explanation: '(2+1)²+(6−2)²=3²+4²=9+16=25=r² ✓\nA(2, 6) voldoen aan die vergelyking en lê dus op die sirkel.' },
 
-        // Block 2 — Voltooi die vierkant om middelpunt en radius te vind
-        { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van x²+y²−8x−4y−16=0 deur die vierkant te voltooi.', answer: '(x²−8x+16)+(y²−4y+4)=16+16+4\n(x−4)²+(y−2)²=36\nMiddelpunt=(4, 2), radius=6', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Sirkel het vergelyking x²+y²+6x−10y−2=0. Bepaal die middelpunt en radius deur die vierkant te voltooi.', answer: '(x²+6x+9)+(y²−10y+25)=2+9+25\n(x+3)²+(y−5)²=36\nMiddelpunt=(−3, 5), radius=6', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Bepaal die middelpunt en radius van x²+y²−4x+8y−29=0 deur die vierkant te voltooi.', answer: '(x²−4x+4)+(y²+8y+16)=29+4+16\n(x−2)²+(y+4)²=49\nMiddelpunt=(2, −4), radius=7', checkMode: 'self' },
+        // Block 2 — Voltooi die kwadraat om middelpunt en radius te vind
+        { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van x²+y²−8x−4y−16=0 deur die kwadraat te voltooi.', answer: '(x²−8x+16)+(y²−4y+4)=16+16+4\n(x−4)²+(y−2)²=36\nMiddelpunt=(4, 2), radius=6', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Sirkel het vergelyking x²+y²+6x−10y−2=0. Bepaal die middelpunt en radius deur die kwadraat te voltooi.', answer: '(x²+6x+9)+(y²−10y+25)=2+9+25\n(x+3)²+(y−5)²=36\nMiddelpunt=(−3, 5), radius=6', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bepaal die middelpunt en radius van x²+y²−4x+8y−29=0 deur die kwadraat te voltooi.', answer: '(x²−4x+4)+(y²+8y+16)=29+4+16\n(x−2)²+(y+4)²=49\nMiddelpunt=(2, −4), radius=7', checkMode: 'self' },
 
         // Block 3 — Raaklyn aan 'n sirkel by 'n gegewe punt
         { difficulty: 'Medium', question: 'Vir die sirkel (x−2)²+(y+1)²=169 met middelpunt O(2, −1), bereken die gradiënt van die radius OA waar A(14, 4).', checkMode: 'auto', correctAnswer: '5/12', correctAnswers: ['5/12'], answer: '5/12', explanation: 'm = (4−(−1))/(14−2) = 5/12 ✓' },
@@ -974,7 +974,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Sipho sê enige lyn met gradiënt −12/5 wat deur ʼn punt op (x−2)²+(y+1)²=169 gaan, is ʼn raaklyn aan die sirkel. Is hy korrek? Verduidelik.', answer: 'Nee. ʼn Gradiënt van −12/5 werk slegs as raaklyngradiënt by die spesifieke punte op die sirkel waar die radiusgradiënt 5/12 is — naamlik by (14, 4) en die diametraal teenoorgestelde punt (−10, −6). By enige ander punt op die sirkel het die radius ʼn ander gradiënt, dus is die raaklyngradiënt anders.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Lerato sê ʼn sirkel met radius 6 het altyd ʼn groter omtrek as ʼn sirkel met radius 5, ongeag waar die twee sirkels se middelpunte is. Is sy korrek? Verduidelik.', answer: 'Ja. Omtrek = 2πr, dus die omtrek neem direk toe soos die radius toeneem. ʼn Sirkel met radius 6 het omtrek 12π, wat altyd groter is as 10π (die omtrek van ʼn sirkel met radius 5), ongeag waar enige van die twee sirkels se middelpunt is.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Sirkel het vergelyking x²+y²+2x+8y−32=0. Beantwoord die volgende.', answer: '', checkMode: 'auto', parts: [
-          { label: 'Middelpunt:', correctAnswer: '(-1, -4)', correctAnswers: ['(-1,-4)', '(-1, -4)', '(−1, −4)', '(−1,−4)'], explanation: 'Voltooi die vierkant: (x²+2x+1)+(y²+8y+16)=32+1+16 → (x+1)²+(y+4)²=49. Middelpunt = (−1, −4).' },
+          { label: 'Middelpunt:', correctAnswer: '(-1, -4)', correctAnswers: ['(-1,-4)', '(-1, -4)', '(−1, −4)', '(−1,−4)'], explanation: 'Voltooi die kwadraat: (x²+2x+1)+(y²+8y+16)=32+1+16 → (x+1)²+(y+4)²=49. Middelpunt = (−1, −4).' },
           { label: 'Radius:', correctAnswer: '7', explanation: 'r²=49 → r=7' },
         ] },
       ],
@@ -997,10 +997,10 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van (x+1)²+(y−9)²=144.', checkMode: 'auto', correctAnswer: '(-1, 9)', correctAnswers: ['(-1, 9)', '(-1,9)', '(−1, 9)', '(−1,9)'], answer: 'Middelpunt = (-1, 9), radius = 12', explanation: 'Verander die tekens binne die hakies: middelpunt = (−1, 9). r²=144 → r=12 ✓' },
         { difficulty: 'Medium', question: 'Verifieer dat A(7, 2) op die sirkel (x−4)²+(y+2)²=25 lê. Wat is die waarde van (7−4)²+(2+2)²?', checkMode: 'auto', correctAnswer: '25', answer: '25', explanation: '(7−4)²+(2+2)²=3²+4²=9+16=25=r² ✓\nA(7, 2) voldoen aan die vergelyking en lê dus op die sirkel.' },
 
-        // Block 2 — Voltooi die vierkant om middelpunt en radius te vind
-        { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van x²+y²−10x−2y+10=0 deur die vierkant te voltooi.', answer: '(x²−10x+25)+(y²−2y+1)=−10+25+1\n(x−5)²+(y−1)²=16\nMiddelpunt=(5, 1), radius=4', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'ʼn Sirkel het vergelyking x²+y²+8x+4y−16=0. Bepaal die middelpunt en radius deur die vierkant te voltooi.', answer: '(x²+8x+16)+(y²+4y+4)=16+16+4\n(x+4)²+(y+2)²=36\nMiddelpunt=(−4, −2), radius=6', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Bepaal die middelpunt en radius van x²+y²−6y−16=0 deur die vierkant te voltooi.', answer: '(x²)+(y²−6y+9)=16+9\n(x−0)²+(y−3)²=25\nMiddelpunt=(0, 3), radius=5', checkMode: 'self' },
+        // Block 2 — Voltooi die kwadraat om middelpunt en radius te vind
+        { difficulty: 'Easy', question: 'Bepaal die middelpunt en radius van x²+y²−10x−2y+10=0 deur die kwadraat te voltooi.', answer: '(x²−10x+25)+(y²−2y+1)=−10+25+1\n(x−5)²+(y−1)²=16\nMiddelpunt=(5, 1), radius=4', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'ʼn Sirkel het vergelyking x²+y²+8x+4y−16=0. Bepaal die middelpunt en radius deur die kwadraat te voltooi.', answer: '(x²+8x+16)+(y²+4y+4)=16+16+4\n(x+4)²+(y+2)²=36\nMiddelpunt=(−4, −2), radius=6', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bepaal die middelpunt en radius van x²+y²−6y−16=0 deur die kwadraat te voltooi.', answer: '(x²)+(y²−6y+9)=16+9\n(x−0)²+(y−3)²=25\nMiddelpunt=(0, 3), radius=5', checkMode: 'self' },
 
         // Block 3 — Raaklyn aan 'n sirkel by 'n gegewe punt
         { difficulty: 'Medium', question: 'Vir die sirkel (x+3)²+(y−4)²=169 met middelpunt O(−3, 4), bereken die gradiënt van die radius OA waar A(2, 16).', checkMode: 'auto', correctAnswer: '12/5', correctAnswers: ['12/5', '2.4', '2,4'], answer: '12/5', explanation: 'm = (16−4)/(2−(−3)) = 12/5 ✓' },
@@ -1023,7 +1023,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Sipho sê enige lyn met gradiënt −5/12 wat deur ʼn punt op (x+3)²+(y−4)²=169 gaan, is ʼn raaklyn aan die sirkel. Is hy korrek? Verduidelik.', answer: 'Nee. ʼn Gradiënt van −5/12 werk slegs as raaklyngradiënt by die spesifieke punte op die sirkel waar die radiusgradiënt 12/5 is — naamlik by (2, 16) en die diametraal teenoorgestelde punt (−8, −8). By enige ander punt op die sirkel het die radius ʼn ander gradiënt, dus is die raaklyngradiënt anders.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'Lerato sê ʼn sirkel met radius 8 het altyd ʼn groter omtrek as ʼn sirkel met radius 6, ongeag waar die twee sirkels se middelpunte is. Is sy korrek? Verduidelik.', answer: 'Ja. Omtrek = 2πr, dus die omtrek neem direk toe soos die radius toeneem. ʼn Sirkel met radius 8 het omtrek 16π, wat altyd groter is as 12π (die omtrek van ʼn sirkel met radius 6), ongeag waar enige van die twee sirkels se middelpunt is.', checkMode: 'self' },
         { difficulty: 'Hard', question: 'ʼn Sirkel het vergelyking x²+y²−12x+4y−24=0. Beantwoord die volgende.', answer: '', checkMode: 'auto', parts: [
-          { label: 'Middelpunt:', correctAnswer: '(6, -2)', correctAnswers: ['(6,-2)', '(6, -2)', '(6, −2)', '(6,−2)'], explanation: 'Voltooi die vierkant: (x²−12x+36)+(y²+4y+4)=24+36+4 → (x−6)²+(y+2)²=64. Middelpunt = (6, −2).' },
+          { label: 'Middelpunt:', correctAnswer: '(6, -2)', correctAnswers: ['(6,-2)', '(6, -2)', '(6, −2)', '(6,−2)'], explanation: 'Voltooi die kwadraat: (x²−12x+36)+(y²+4y+4)=24+36+4 → (x−6)²+(y+2)²=64. Middelpunt = (6, −2).' },
           { label: 'Radius:', correctAnswer: '8', explanation: 'r²=64 → r=8' },
         ] },
       ],
