@@ -12,7 +12,7 @@ export const SESSION_PRICE: Record<SessionType, number> = {
   crash: 50,   // 30 min crash course on exam pitfalls — watch-only
 }
 
-export const MAX_SESSION_DISCOUNT = 0.2
+export const MAX_SESSION_DISCOUNT = 0.25
 
 // Booking a spot doesn't require immediate payment — it holds the spot as a
 // 'reserved' booking with a payment deadline. Inside this many hours of the
@@ -24,7 +24,7 @@ export function depositDeadlineFor(startsAt: Date): Date {
   return new Date(startsAt.getTime() - DEPOSIT_HOURS_BEFORE_START * 60 * 60 * 1000)
 }
 
-// A child on the Max tier books at 20% off; everyone else pays full price.
+// A child on the Max tier books at 25% off; everyone else pays full price.
 // basePrice overrides the type's catalogue default — an admin can set a
 // custom price on an individual session doc (sessions/list already surfaces
 // it as PublicSession.price), and the discount must apply to whatever price
