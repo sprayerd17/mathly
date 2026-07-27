@@ -64,7 +64,7 @@ export const topicData: TopicData = {
           steps: [
             `Identifiseer ${bl('a = 1, b = −6, c = 9')}.`,
             `Bereken die ${or('diskriminant')}: Δ = b² − 4ac = (−6)² − 4(1)(9) = ${or('36 − 36 = 0')}.`,
-            `Aangesien Δ = 0, is die wortels ${gr('reëel, gelyk, en rasionaal')} (die herhaalde wortel is x = −b/2a = 6/2 = 3, ʼn rasionale getal).`,
+            `Aangesien Δ = 0, is die wortels ${gr('reëel, gelyk en rasionaal')} (die herhaalde wortel is x = −b/2a = 6/2 = 3, ʼn rasionale getal).`,
           ],
         },
         {
@@ -565,7 +565,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Volledige dekking elders</p>` +
-        `<p style="margin:0;color:#1e3a8a;">Hierdie afdeling hersien slegs die algebraïese hantering van eksponente. Vir ʼn volledige behandeling van eksponensiële funksies, logaritmes, en vergelykings wat nie tot dieselfde grondtal herlei kan word nie (wat logaritmes vereis om op te los), sien die onderwerp <strong>Eksponensiële en Logaritmiese Funksies</strong>.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">Hierdie afdeling hersien slegs die algebraïese hantering van eksponente. Vir ʼn volledige behandeling van eksponensiële funksies, logaritmes en vergelykings wat nie tot dieselfde grondtal herlei kan word nie (wat logaritmes vereis om op te los), sien die onderwerp <strong>Eksponensiële en Logaritmiese Funksies</strong>.</p>` +
         `</div>`,
 
       workedExamples: [
@@ -997,7 +997,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Los op vir x: (2x + 1)/(x − 1) = 3 − 2/(x − 1), met vermelding van enige beperkings.', answer: 'x = 6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Beperking: x≠1.\nVermenigvuldig met (x−1): 2x+1=3(x−1)−2 → 2x+1=3x−3−2 → 2x+1=3x−5 → −x=−6 → x=6.\nNie uitgesluit nie — geldig. x=6 ✓' },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy het die aard van wortels, kwadratiese vergelykings en ongelykhede, gelyktydige stelsels, wortelvorm-vergelykings, eksponensiële vergelykings, en algebraïese breukvergelykings bemeester.' },
+        { minScore: 18, message: 'Uitstekend! Jy het die aard van wortels, kwadratiese vergelykings en ongelykhede, gelyktydige stelsels, wortelvorm-vergelykings, eksponensiële vergelykings en algebraïese breukvergelykings bemeester.' },
         { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
         { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur, veral oor wortelvorm- en rasionale breukvergelykings, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -1044,7 +1044,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Los op vir x: (3x − 1)/(x − 2) = 4 + 3/(x − 2), met vermelding van enige beperkings.', answer: 'x = 4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Beperking: x≠2.\nVermenigvuldig met (x−2): 3x−1=4(x−2)+3 → 3x−1=4x−5 → −x=−4 → x=4.\nNie uitgesluit nie — geldig. x=4 ✓' },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Uitstekend! Jy kan die aard van wortels, kwadratiese vergelykings en ongelykhede, gelyktydige stelsels, wortelvorm-vergelykings, eksponensiële vergelykings, en algebraïese breukvergelykings met selfvertroue toepas.' },
+        { minScore: 18, message: 'Uitstekend! Jy kan die aard van wortels, kwadratiese vergelykings en ongelykhede, gelyktydige stelsels, wortelvorm-vergelykings, eksponensiële vergelykings en algebraïese breukvergelykings met selfvertroue toepas.' },
         { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
         { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur, veral oor wortelvorm- en rasionale breukvergelykings, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -1091,7 +1091,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Los op vir x: (4x + 1)/(x + 1) = 3 + 4/(x + 1), met vermelding van enige beperkings.', answer: 'x = 6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Beperking: x≠−1.\nVermenigvuldig met (x+1): 4x+1=3(x+1)+4 → 4x+1=3x+7 → x=6.\nNie uitgesluit nie — geldig. x=6 ✓' },
       ],
       scoreMessages: [
-        { minScore: 18, message: 'Fantasties! Jy kan die aard van wortels, kwadratiese vergelykings en ongelykhede, gelyktydige stelsels, wortelvorm-vergelykings, eksponensiële vergelykings, en algebraïese breukvergelykings met selfvertroue toepas.' },
+        { minScore: 18, message: 'Fantasties! Jy kan die aard van wortels, kwadratiese vergelykings en ongelykhede, gelyktydige stelsels, wortelvorm-vergelykings, eksponensiële vergelykings en algebraïese breukvergelykings met selfvertroue toepas.' },
         { minScore: 14, message: 'Goeie werk! Hersien enige gemiste vrae en probeer weer.' },
         { minScore: 9, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur, veral oor wortelvorm- en rasionale breukvergelykings, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },

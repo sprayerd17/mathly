@@ -20,7 +20,7 @@ export const topicData: TopicData = {
       title: 'Hersiening — Spesiale Hoeke, Identiteite en Reduksieformules',
       icon: '∠',
       explanation:
-        `<p style="margin-bottom:16px;">In Graad 12 bou ons voort op die trigonometrie wat in Graad 11 bestudeer is. Hierdie afdeling hersien die <strong>spesiale hoeke</strong>, <strong>fundamentele identiteite</strong>, <strong>CAST-reël</strong>, en <strong>reduksieformules</strong> wat nodig is vir alle Graad 12-trig-werk.</p>` +
+        `<p style="margin-bottom:16px;">In Graad 12 bou ons voort op die trigonometrie wat in Graad 11 bestudeer is. Hierdie afdeling hersien die <strong>spesiale hoeke</strong>, <strong>fundamentele identiteite</strong>, <strong>CAST-reël</strong> en <strong>reduksieformules</strong> wat nodig is vir alle Graad 12-trig-werk.</p>` +
 
         // ── Colour key ────────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
@@ -218,7 +218,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat spesiale hoeke, die CAST-reël, en hoe om reduksieformules toe te pas om trig-uitdrukkings te vereenvoudig, hersien',
+        'Kort video wat spesiale hoeke, die CAST-reël en hoe om reduksieformules toe te pas om trig-uitdrukkings te vereenvoudig, hersien',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -651,7 +651,7 @@ export const topicData: TopicData = {
       title: 'Trigonometriese Identiteite Bewys',
       icon: '⊢',
       explanation:
-        `<p style="margin-bottom:16px;">ʼn <strong>Trigonometriese identiteit</strong> is ʼn vergelyking wat waar is vir alle geldige waardes van die veranderlike. Om ʼn identiteit te bewys werk ons op <strong>net een kant</strong> (gewoonlik die meer komplekse kant) en gebruik bekende identiteite, reduksieformules, en algebraïese manipulasie totdat ons die ander kant bereik. Ons <strong>kruisvermenigvuldig of skuif nooit terme tussen kante</strong> tydens die bewys nie.</p>` +
+        `<p style="margin-bottom:16px;">ʼn <strong>Trigonometriese identiteit</strong> is ʼn vergelyking wat waar is vir alle geldige waardes van die veranderlike. Om ʼn identiteit te bewys werk ons op <strong>net een kant</strong> (gewoonlik die meer komplekse kant) en gebruik bekende identiteite, reduksieformules en algebraïese manipulasie totdat ons die ander kant bereik. Ons <strong>kruisvermenigvuldig of skuif nooit terme tussen kante</strong> tydens die bewys nie.</p>` +
 
         // ── Colour key ────────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +

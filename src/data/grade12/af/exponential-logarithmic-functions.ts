@@ -99,7 +99,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat die eksponensiële funksie y = a maal b tot die mag x plus q hersien, en wys hoe om die horisontale asimptoot, y-afsnit, en of die grafiek groei of verval, te identifiseer',
+        'Kort video wat die eksponensiële funksie y = a maal b tot die mag x plus q hersien, en wys hoe om die horisontale asimptoot, die y-afsnit en of die grafiek groei of verval te identifiseer',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -291,7 +291,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat al vier logaritmewette demonstreer — produk, kwosiënt, mag, en verandering van grondtal — met uitgewerkte voorbeelde vir elkeen',
+        'Kort video wat al vier logaritmewette demonstreer — produk, kwosiënt, mag en verandering van grondtal — met uitgewerkte voorbeelde vir elkeen',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -675,7 +675,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Sipho sê dat omdat f(x) = 2ˣ ʼn toenemende funksie is, sy inverse f⁻¹(x) = log₂ x ook toenemend moet wees. Is hy korrek? Verduidelik deur gebruik te maak van die feit dat om ʼn grafiek oor y = x te spieël, of dit toeneem of afneem, behou.', answer: 'Ja, Sipho is korrek. Om ʼn toenemende grafiek oor die lyn y = x te spieël, lewer nog ʼn toenemende grafiek (spieëling ruil die rolle van die x- en y-asse om, maar keer nie die toenemende tendens om nie). Aangesien f(x) = 2ˣ vir alle x toeneem, neem sy inverse f⁻¹(x) = log₂ x ook vir alle x > 0 toe.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het omskakeling tussen vorms, logwette, en die oplos van log- en eksponensiële vergelykings bemeester.' },
+        { minScore: 20, message: 'Uitstekend! Jy het omskakeling tussen vorms, logwette en die oplos van log- en eksponensiële vergelykings bemeester.' },
         { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -715,7 +715,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'Lerato sê dat omdat f(x) = (0,5)ˣ ʼn afnemende funksie is, sy inverse f⁻¹(x) = log₀,₅ x ook afnemend moet wees. Is sy korrek? Verduidelik deur gebruik te maak van die feit dat om ʼn grafiek oor y = x te spieël, of dit toeneem of afneem, behou.', answer: 'Ja, Lerato is korrek. Om ʼn afnemende grafiek oor die lyn y = x te spieël, lewer nog ʼn afnemende grafiek (spieëling ruil die rolle van die x- en y-asse om, maar keer nie die afnemende tendens om nie). Aangesien f(x) = (0,5)ˣ vir alle x afneem, neem sy inverse f⁻¹(x) = log₀,₅ x ook vir alle x > 0 af.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy kan vol vertroue omskakel tussen vorms, logwette toepas, en log- en eksponensiële vergelykings oplos.' },
+        { minScore: 20, message: 'Uitstekend! Jy kan vol vertroue omskakel tussen vorms, logwette toepas en log- en eksponensiële vergelykings oplos.' },
         { minScore: 15, message: 'Goeie werk! Gaan enige gemiste vrae weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde weer deur en probeer hierdie stel weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },

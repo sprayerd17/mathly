@@ -345,7 +345,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat populasie teenoor steekproef, verteenwoordigende steekproewe, en algemene bronne van vooroordeel insluitend gerieflikheidsteekproefneming en vrywillige-reaksie-vooroordeel verduidelik',
+        'Kort video wat populasie teenoor steekproef, verteenwoordigende steekproewe en algemene bronne van vooroordeel insluitend gerieflikheidsteekproefneming en vrywillige-reaksie-vooroordeel verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -438,7 +438,7 @@ export const topicData: TopicData = {
     // ── V1 Maklik — interkwartielwydte vanaf mond-en-snor-diagram ────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram, bepaal die interkwartielwydte.\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
+      question: 'Gebruik die diagram om die interkwartielwydte te bepaal.\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
       answer: '30',
       checkMode: 'auto',
       correctAnswer: '30',
@@ -448,7 +448,7 @@ export const topicData: TopicData = {
     // ── V2 Medium — variasiewydte vanaf mond-en-snor-diagram ──────────────────
     {
       difficulty: 'Medium',
-      question: 'Gebruik die diagram, bepaal die variasiewydte.\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
+      question: 'Gebruik die diagram om die variasiewydte te bepaal.\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
       answer: '65',
       checkMode: 'auto',
       correctAnswer: '65',
@@ -458,7 +458,7 @@ export const topicData: TopicData = {
     // ── V3 Moeilik — skeefheid vanaf mond-en-snor-diagram ─────────────────────
     {
       difficulty: 'Hard',
-      question: 'Gebruik die diagram, beskryf die skeefheid van die data en regverdig jou antwoord.\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
+      question: 'Gebruik die diagram om die skeefheid van die data te beskryf en jou antwoord te regverdig.\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
       answer: 'Die mediaan (35) lê nader aan Q1 (25) as aan Q3 (55), en die regtersnor (20 eenhede) is langer as die linkersnor (15 eenhede) — dit dui op positiewe (regse) skeefheid.',
       checkMode: 'self',
     },
@@ -466,7 +466,7 @@ export const topicData: TopicData = {
     // ── V4 Medium — persentasie tussen Q1 en Q3 ───────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Gebruik die diagram, watter persentasie van die data val tussen Q1 en Q3?\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
+      question: 'Gebruik die diagram om die persentasie van die data wat tussen Q1 en Q3 val, te bepaal.\n[Diagram: mond-en-snor-diagram op ʼn getallelyn 0–80. Min=10, Q1=25, Mediaan=35, Q3=55, Maks=75.]',
       answer: '50%',
       checkMode: 'auto',
       correctAnswer: '50%',
@@ -485,7 +485,7 @@ export const topicData: TopicData = {
     // ── V6 Maklik — 68%-reël vanaf normaalverspreiding ────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram, watter persentasie van die data val tussen 60 en 80?\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
+      question: 'Gebruik die diagram om die persentasie van die data wat tussen 60 en 80 val, te bepaal.\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
       answer: '68%',
       checkMode: 'auto',
       correctAnswer: '68%',
@@ -496,7 +496,7 @@ export const topicData: TopicData = {
     // ── V7 Medium — 95%-reël vanaf normaalverspreiding ────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Gebruik die diagram, watter persentasie van die data val tussen 50 en 90?\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
+      question: 'Gebruik die diagram om die persentasie van die data wat tussen 50 en 90 val, te bepaal.\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
       answer: '95%',
       checkMode: 'auto',
       correctAnswer: '95%',
@@ -507,7 +507,7 @@ export const topicData: TopicData = {
     // ── V8 Moeilik — persentasie bo 2 SA ─────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Gebruik die diagram, bepaal die persentasie van die data wat bo 90 val.\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
+      question: 'Gebruik die diagram om die persentasie van die data wat bo 90 val, te bepaal.\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
       answer: '95% val binne 2 standaardafwykings (50 tot 90). 5% val daarbuite. Volgens simmetrie val 2,5% bo 90.',
       checkMode: 'self',
     },
@@ -515,7 +515,7 @@ export const topicData: TopicData = {
     // ── V9 Moeilik — persentiel vanaf normaalverspreiding ─────────────────────
     {
       difficulty: 'Hard',
-      question: 'Gebruik die diagram, ʼn leerder behaal 80. Watter persentasie van leerders het laer as hulle behaal?\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
+      question: 'Volgens die diagram het ʼn leerder 80 behaal. Watter persentasie van leerders het laer as hulle behaal?\n[Diagram: normaalverspreiding-klokkromme. Gemiddelde μ=70, standaardafwyking σ=10. Vertikale lyne by 50, 60, 70, 80 en 90.]',
       answer: '80 = μ + σ. 68% val tussen μ − σ en μ + σ. Dus val 34% tussen μ en μ + σ. Plus 50% onder die gemiddelde: 50 + 34 = 84% van leerders het laer as 80 behaal.',
       checkMode: 'self',
     },

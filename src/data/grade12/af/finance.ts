@@ -695,7 +695,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat huidige waarde-annuïteite en verbandterugbetalings verduidelik, met uitgewerkte voorbeelde oor maandelikse terugbetalings, uitstaande balans, en om vir die aantal betalings op te los',
+        'Kort video wat huidige waarde-annuïteite en verbandterugbetalings verduidelik, met uitgewerkte voorbeelde oor maandelikse terugbetalings, uitstaande balans en om vir die aantal betalings op te los',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

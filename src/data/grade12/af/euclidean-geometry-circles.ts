@@ -668,7 +668,7 @@ export const topicData: TopicData = {
       title: 'Gekombineerde Riders — Sirkels en Gelykvormigheid',
       icon: '∼',
       explanation:
-        `<p style="margin-bottom:16px;">Die moeilikste riders in die Graad 12 Vraestel 2-eksamen toets byna nooit net een sirkelstelling op sy eie nie. In plaas daarvan skakel hulle ʼn ${re('sirkelstelling')} — wat vir jou ʼn hoek verniet gee — saam met ${gr('gelykhoekige (AA) gelykvormigheid')} om te bewys dat twee driehoeke gelykvormig is, en gebruik dan die gevolglike ${or('verhouding')} (soms met die Stelling van Pythagoras aan die einde) om by die vereiste resultaat uit te kom. Dit is presies die Graad 11-vaardighede (eweredigheid, gelykvormigheid, en Pythagoras met behulp van gelykvormige driehoeke) gekombineer met alles wat jy nou van sirkels weet.</p>` +
+        `<p style="margin-bottom:16px;">Die moeilikste riders in die Graad 12 Vraestel 2-eksamen toets byna nooit net een sirkelstelling op sy eie nie. In plaas daarvan skakel hulle ʼn ${re('sirkelstelling')} — wat vir jou ʼn hoek verniet gee — saam met ${gr('gelykhoekige (AA) gelykvormigheid')} om te bewys dat twee driehoeke gelykvormig is, en gebruik dan die gevolglike ${or('verhouding')} (soms met die Stelling van Pythagoras aan die einde) om by die vereiste resultaat uit te kom. Dit is presies die Graad 11-vaardighede (eweredigheid, gelykvormigheid en Pythagoras met behulp van gelykvormige driehoeke) gekombineer met alles wat jy nou van sirkels weet.</p>` +
         `<p style="margin-bottom:16px;">Hierdie afdeling leer nie enige individuele stelling van voor af nie — elke stelling wat hieronder gebruik word, is vroeër in hierdie onderwerp (sirkels) of in Graad 11 (gelykvormigheid) gedek. In plaas daarvan wys dit jou presies hoe die stukke inmekaar pas, en gee jou ʼn stewige bank gekombineerde riders om dieselfde meerstap-redenering te oefen wat die eksamen vereis.</p>` +
 
         // ── Colour key ──────────────────────────────────────────────────────
@@ -785,7 +785,7 @@ export const topicData: TopicData = {
     // ── Q1 Easy — angle at circumference (major arc) ─────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram om die hoek ACB te bepaal wat by C op die hoofboog onderspan word.\n\n[DIAGRAM: ʼn Sirkel met middelpunt O en radius 10 cm. Punte A, B, C en D lê op die omtrek. Hoek AOB = 140° by die middelpunt. C is op die hoofboog. D is op die kleinboog. M is die middelpunt van koord AB met OM loodreg op AB. Koord AB = 12 cm.]',
+      question: 'Gebruik die diagram om die hoek ACB te bepaal wat by C op die hoofboog onderspan word.',
       answer: '70°',
       checkMode: 'auto',
       correctAnswer: '70',
@@ -829,7 +829,7 @@ export const topicData: TopicData = {
     // ── Q6 Easy — opposite angles of cyclic quadrilateral ────────────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram om hoek BCD te bepaal.\n\n[DIAGRAM: Koordevierhoek ABCD ingeskryf in ʼn sirkel. Hoek DAB = 95°. Hoek ABC = 80°. Sy AB verleng verby B na punt E wat buitehoek CBE vorm.]',
+      question: 'Gebruik die diagram om hoek BCD te bepaal.',
       answer: '85°',
       checkMode: 'auto',
       correctAnswer: '85',
@@ -868,7 +868,7 @@ export const topicData: TopicData = {
     // ── Q10 Easy — equal tangent segments ────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Gebruik die diagram om PB te bepaal as PA = 9 cm.\n\n[DIAGRAM: ʼn Sirkel met eksterne punt P. Raaklyne PA en PB word vanaf P getrek en raak die sirkel onderskeidelik by A en B. Koord AB word getrek. Hoek APB = 50°. Punt C is op die hoofboog AB.]',
+      question: 'Gebruik die diagram om PB te bepaal as PA = 9 cm.',
       answer: '9 cm',
       checkMode: 'auto',
       correctAnswer: '9',
@@ -1030,7 +1030,7 @@ export const topicData: TopicData = {
         ]), diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="70" y1="210" x2="210" y2="210" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="210" x2="65.39" y2="69.67" stroke="#ea580c" stroke-width="2.5"/><line x1="65.39" y1="69.67" x2="185" y2="42.06" stroke="#0f1f3d" stroke-width="1.6"/><line x1="185" y1="42.06" x2="140" y2="210" stroke="#0f1f3d" stroke-width="1.6"/><line x1="65.39" y1="69.67" x2="224.57" y2="89.22" stroke="#0f1f3d" stroke-width="1.6"/><line x1="224.57" y1="89.22" x2="140" y2="210" stroke="#0f1f3d" stroke-width="1.6"/><path d="M 118,210 A 22,22 0 0 1 129.67,190.58" fill="none" stroke="#dc2626" stroke-width="2"/><circle cx="140" cy="210" r="2.5" fill="#0f1f3d"/><text x="146" y="226" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="65.39" cy="69.67" r="2.5" fill="#0f1f3d"/><text x="45.39" y="73.67" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="185" cy="42.06" r="2.5" fill="#0f1f3d"/><text x="191" y="32.06" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="224.57" cy="89.22" r="2.5" fill="#0f1f3d"/><text x="234.57" y="83.22" font-size="13" fill="#0f1f3d" font-weight="700">D</text><text x="110" y="200" font-size="11" fill="#dc2626" font-weight="700" text-anchor="middle">62°</text></svg>' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het die Graad 12-sirkelstellings bemeester — loodlyn wat ʼn koord halveer, hoek by die middelpunt, hoeke in dieselfde segment, koordevierhoeke, en raaklynstellings.' },
+        { minScore: 20, message: 'Uitstekend! Jy het die Graad 12-sirkelstellings bemeester — loodlyn wat ʼn koord halveer, hoek by die middelpunt, hoeke in dieselfde segment, koordevierhoeke en raaklynstellings.' },
         { minScore: 15, message: 'Goeie werk! Gaan enige vrae oor die koordevierhoek- of raaklyn-koordstelling weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde van elke sirkelstelling weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -1089,7 +1089,7 @@ export const topicData: TopicData = {
         ]), checkMode: 'self', diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="50" y1="120" x2="230" y2="120" stroke="#0f1f3d" stroke-width="2"/><line x1="50" y1="120" x2="140" y2="30" stroke="#0f1f3d" stroke-width="1.8"/><line x1="140" y1="30" x2="230" y2="120" stroke="#0f1f3d" stroke-width="1.8"/><line x1="60" y1="30" x2="220" y2="30" stroke="#374151" stroke-width="1.6" stroke-dasharray="4,3"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="50" cy="120" r="2.5" fill="#0f1f3d"/><text x="32" y="124" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="230" cy="120" r="2.5" fill="#0f1f3d"/><text x="240" y="124" font-size="13" fill="#0f1f3d" font-weight="700">B</text><circle cx="140" cy="30" r="2.5" fill="#0f1f3d"/><text x="146" y="20" font-size="13" fill="#0f1f3d" font-weight="700">C</text><circle cx="220" cy="30" r="2.5" fill="#0f1f3d"/><text x="230" y="24" font-size="13" fill="#0f1f3d" font-weight="700">T</text></svg>' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het die Graad 12-sirkelstellings bemeester — loodlyn wat ʼn koord halveer, hoek by die middelpunt, hoeke in dieselfde segment, koordevierhoeke, en raaklynstellings.' },
+        { minScore: 20, message: 'Uitstekend! Jy het die Graad 12-sirkelstellings bemeester — loodlyn wat ʼn koord halveer, hoek by die middelpunt, hoeke in dieselfde segment, koordevierhoeke en raaklynstellings.' },
         { minScore: 15, message: 'Goeie werk! Gaan enige vrae oor die koordevierhoek- of raaklyn-koordstelling weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde van elke sirkelstelling weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -1142,7 +1142,7 @@ export const topicData: TopicData = {
         ]), diagramSvg: '<svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="120" r="90" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="140" y1="20" x2="100.77" y2="39" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="20" x2="179.23" y2="39" stroke="#16a34a" stroke-width="2.5"/><line x1="140" y1="120" x2="100.77" y2="39" stroke="#2563eb" stroke-width="2"/><line x1="140" y1="120" x2="140" y2="20" stroke="#374151" stroke-width="1.6" stroke-dasharray="4,3"/><path d="M 109.77,34.64 L 114.13,43.64 L 105.13,48.00" fill="none" stroke="#0f1f3d" stroke-width="1.8"/><circle cx="140" cy="120" r="3" fill="#0f1f3d"/><text x="146" y="114" font-size="13" fill="#0f1f3d" font-weight="700">O</text><circle cx="140" cy="20" r="2.5" fill="#0f1f3d"/><text x="134" y="10" font-size="13" fill="#0f1f3d" font-weight="700">P</text><circle cx="100.77" cy="39" r="2.5" fill="#0f1f3d"/><text x="80.77" y="43" font-size="13" fill="#0f1f3d" font-weight="700">A</text><circle cx="179.23" cy="39" r="2.5" fill="#0f1f3d"/><text x="189.23" y="49" font-size="13" fill="#0f1f3d" font-weight="700">B</text><text x="100.39" y="27.50" font-size="11" fill="#16a34a" font-weight="700" text-anchor="middle">PA = 12 cm</text><text x="104.86" y="83.43" font-size="11" fill="#2563eb" font-weight="700" text-anchor="middle">OA = 9 cm</text></svg>' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het die Graad 12-sirkelstellings bemeester — loodlyn wat ʼn koord halveer, hoek by die middelpunt, hoeke in dieselfde segment, koordevierhoeke, en raaklynstellings.' },
+        { minScore: 20, message: 'Uitstekend! Jy het die Graad 12-sirkelstellings bemeester — loodlyn wat ʼn koord halveer, hoek by die middelpunt, hoeke in dieselfde segment, koordevierhoeke en raaklynstellings.' },
         { minScore: 15, message: 'Goeie werk! Gaan enige vrae oor die koordevierhoek- of raaklyn-koordstelling weer deur en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde van elke sirkelstelling weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },

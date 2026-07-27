@@ -211,7 +211,7 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#16a34a;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
-        `<p style="margin:0;font-size:14px;">${gr('Voltooi die kwadraat')} — Vir elke veranderlike, neem die helfte van die koëffisiënt, kwadreer dit, en tel dit by albei kante.</p>` +
+        `<p style="margin:0;font-size:14px;">${gr('Voltooi die kwadraat')} — Vir elke veranderlike, neem die helfte van die koëffisiënt, kwadreer dit en tel dit by albei kante.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:9px;">` +
@@ -489,7 +489,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Raaklynlengte vanaf ʼn eksterne punt</p>` +
-        `<p style="margin:0;color:#1e3a8a;">As ʼn punt P buite ʼn sirkel met middelpunt O en radius r lê, word die lengte van die raaklyn vanaf P aan die sirkel gegee deur <strong>raaklynlengte = √(d² − r²)</strong>, waar d = |PO| die afstand vanaf P tot die middelpunt is. Dit volg uit die stelling van Pythagoras op die reghoekige driehoek gevorm deur O, P, en die raakpunt.</p>` +
+        `<p style="margin:0;color:#1e3a8a;">As ʼn punt P buite ʼn sirkel met middelpunt O en radius r lê, word die lengte van die raaklyn vanaf P aan die sirkel gegee deur <strong>raaklynlengte = √(d² − r²)</strong>, waar d = |PO| die afstand vanaf P tot die middelpunt is. Dit volg uit die stelling van Pythagoras op die reghoekige driehoek gevorm deur O, P en die raakpunt.</p>` +
         `</div>`,
 
       workedExamples: [

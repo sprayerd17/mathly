@@ -115,7 +115,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat die vier funksietipes — lineêr, kwadraties, hiperbolies en eksponensieel — hersien, met hul standaardvorme, sleuteleienskappe, en hoe om elkeen te skets',
+        'Kort video wat die vier funksietipes — lineêr, kwadraties, hiperbolies en eksponensieel — hersien, met hul standaardvorme, sleuteleienskappe en hoe om elkeen te skets',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -181,7 +181,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat die formele definisie van ʼn funksie, die vertikale-lyn-toets, die horisontale-lyn-toets, en die verskil tussen een-tot-een en veel-tot-een funksies verduidelik',
+        'Kort video wat die formele definisie van ʼn funksie, die vertikale-lyn-toets, die horisontale-lyn-toets en die verskil tussen een-tot-een en veel-tot-een funksies verduidelik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
