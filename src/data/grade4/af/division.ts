@@ -569,7 +569,7 @@ export const topicData: TopicData = {
       id: 'comparing-amounts-for-every-and-per',
       title: 'Vergelyk Hoeveelhede: "Vir Elke" en "Per" Probleme',
       icon: '⚖️',
-      explanation: `<p style="margin-bottom:18px;">Sommige woordprobleme vra nie vir jou om een hoeveelheid te deel of te groepeer nie — hulle vra jou om <strong>twee hoeveelhede wat saam verander, te vergelyk</strong>. Daar is twee soorte van hierdie probleme.</p>
+      explanation: `<p style="margin-bottom:18px;">Sommige woordprobleme vra nie vir jou om een hoeveelheid te deel of te groepeer nie — hulle vra jou om <strong>twee hoeveelhede wat saam verander, te vergelyk</strong>. Hierdie probleme kom in twee soorte voor.</p>
 
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;">
   <div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px;flex:1;min-width:200px;">

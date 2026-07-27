@@ -292,7 +292,7 @@ export const topicData: TopicData = {
         `</div>` +
         `</div>` +
 
-        `<p style="margin-bottom:0">As die omgekeerde toets jou <strong>oorspronklike beginggetal</strong> teruggee, is jou antwoord korrek. As dit nie so is nie, is daar iewers ʼn fout — gaan terug en vind dit.</p>`,
+        `<p style="margin-bottom:0">As die omgekeerde toets jou <strong>oorspronklike begingetal</strong> teruggee, is jou antwoord korrek. As dit nie so is nie, is daar iewers ʼn fout — gaan terug en vind dit.</p>`,
 
       workedExamples: [
         // ── UITGEWERKTE VOORBEELD 6 ─────────────────────────────────────────
@@ -306,7 +306,7 @@ export const topicData: TopicData = {
 
             'Trek af: 3 779 − 1 323 = <span style="color:#dc2626;font-weight:700">2</span> <span style="color:#d97706;font-weight:700">4</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">6</span>.',
 
-            'Ons kry <span style="color:#dc2626;font-weight:700">2</span> <span style="color:#d97706;font-weight:700">4</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">6</span> terug — ons oorspronklike beginggetal. Die antwoord <strong>3 779 is korrek</strong>. ✓',
+            'Ons kry <span style="color:#dc2626;font-weight:700">2</span> <span style="color:#d97706;font-weight:700">4</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">6</span> terug — ons oorspronklike begingetal. Die antwoord <strong>3 779 is korrek</strong>. ✓',
           ],
         },
 
@@ -321,7 +321,7 @@ export const topicData: TopicData = {
 
             'Tel op: 2 510 + 2 340 = <span style="color:#dc2626;font-weight:700">4</span> <span style="color:#d97706;font-weight:700">8</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">0</span>.',
 
-            'Ons kry <span style="color:#dc2626;font-weight:700">4</span> <span style="color:#d97706;font-weight:700">8</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">0</span> terug — ons oorspronklike beginggetal. Die antwoord <strong>2 510 is korrek</strong>. ✓',
+            'Ons kry <span style="color:#dc2626;font-weight:700">4</span> <span style="color:#d97706;font-weight:700">8</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">0</span> terug — ons oorspronklike begingetal. Die antwoord <strong>2 510 is korrek</strong>. ✓',
           ],
         },
       ],

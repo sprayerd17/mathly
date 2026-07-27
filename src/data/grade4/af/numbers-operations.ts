@@ -98,7 +98,7 @@ export const topicData: TopicData = {
       icon: '🌍',
       explanation:
         'Heelgetalle is die getalle wat ons gebruik om te tel: 0, 1, 2, 3, 4, 5 … en hulle gaan ewig voort — jy kan altyd nog een meer tel! ' +
-        'Heelgetalle sluit nie breuke in (soos ½) of desimale getalle (soos 3,5) nie. Hulle is altyd volledige, heelal hoeveelhede sonder iets wat oorskiet. ' +
+        'Heelgetalle sluit nie breuke in (soos ½) of desimale getalle (soos 3,5) nie. Hulle is altyd volledige, heel hoeveelhede sonder iets wat oorskiet. ' +
         'Hier is drie alledaagse voorbeelde wat jy elke dag sien: 12 appels in ʼn sak — jy tel 12 hele appels, nooit ʼn halwe appel nie. ' +
         '3 450 leerders in ʼn skool — daar is nie so iets soos ʼn halwe leerder nie! ' +
         '10 000 meter in ʼn wedloop — die volle wedloopafstand, sonder enige dele wat oorskiet. ' +
