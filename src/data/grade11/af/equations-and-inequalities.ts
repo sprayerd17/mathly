@@ -60,7 +60,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:14px 16px;">` +
         `<p style="font-weight:700;color:#16a34a;margin-bottom:6px;">Kwadratiese Formule</p>` +
-        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Vervang die waardes van a, b, en c uit ax² + bx + c = 0 direk in die formule.</p>` +
+        `<p style="color:#374151;font-size:14px;margin-bottom:6px;">Vervang die waardes van a, b en c uit ax² + bx + c = 0 direk in die formule.</p>` +
         `<p style="color:#6b7280;font-size:13px;margin:0;"><strong>Gebruik wanneer:</strong> enige kwadratiese — hierdie metode werk altyd.</p>` +
         `</div>` +
 

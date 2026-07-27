@@ -339,7 +339,7 @@ export const topicData: TopicData = {
       openQuestions: [],
 
       videoPlaceholder:
-        'Kort video wat die Stelling van Pythagoras bewys met behulp van gelykvormige driehoeke gevorm deur die hoogtelyn na die skuinssy, met ʼn kleurgekodeerde reghoekige driehoek, hoogtelyn, en kleiner gelykvormige driehoeke',
+        'Kort video wat die Stelling van Pythagoras bewys met behulp van gelykvormige driehoeke gevorm deur die hoogtelyn na die skuinssy, met ʼn kleurgekodeerde reghoekige driehoek, hoogtelyn en kleiner gelykvormige driehoeke',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

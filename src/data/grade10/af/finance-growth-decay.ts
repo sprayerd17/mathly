@@ -1047,7 +1047,7 @@ export const topicData: TopicData = {
         `</div>` +
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;">` +
-        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Groei, verval, en verdubbelingstyd</p>` +
+        `<p style="font-weight:700;color:#1e40af;margin-bottom:6px;">Groei, verval en verdubbelingstyd</p>` +
         `<p style="margin:0;color:#1e3a8a;">Nie alle bevolkings groei nie — ʼn dorp wat inwoners aan emigrasie verloor, krimp met dieselfde idee as enkelvoudige/saamgestelde <strong>verval</strong>. En net soos met beleggings kan jy <strong>probeer en verbeter</strong> gebruik (sien Oplos vir n) om te bereken hoeveel jare dit neem vir ʼn bevolking om te verdubbel, of om ʼn teikengrootte te bereik.</p>` +
         `</div>`,
 

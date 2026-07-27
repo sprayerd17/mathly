@@ -455,7 +455,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat reguitlyn- en verminderende-balans-waardevermindering langs mekaar vergelyk vir dieselfde bate, koers, en tydperk',
+        'Kort video wat reguitlyn- en verminderende-balans-waardevermindering langs mekaar vergelyk vir dieselfde bate, koers en tydperk',
       diagramPlaceholder:
         'Albei die reguitlyn- en verminderende-balans-grafieke geteken op dieselfde stel asse vir dieselfde beginwaarde, met die punt waar die verminderende-balans-kromme bo die reguit lyn lê duidelik gemerk',
 

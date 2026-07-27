@@ -134,7 +134,7 @@ export const topicData: TopicData = {
 
       workedExamples: [
         {
-          question: '[DIAGRAM: Venn diagram with two overlapping circles labelled "Plays Sport" and "Plays Music", showing 15 in Sport only, 10 in Music only, 8 in the overlap, and 7 outside both, total 40 students] In ʼn klas van 40 leerders speel 23 sport, 18 speel musiek, en 8 speel albei. Gebruik ʼn Venndiagram om te vind hoeveel geen van die twee speel nie.',
+          question: 'In ʼn klas van 40 leerders speel 23 sport, 18 speel musiek, en 8 speel albei. Gebruik ʼn Venndiagram om te vind hoeveel geen van die twee speel nie.',
           answer: `${gr('7 leerders')} speel geen sport of musiek nie`,
           steps: [
             `Stel die ${bl('Venndiagram')} op met twee oorvleuelende sirkels: ${bl('"Speel Sport"')} en ${or('"Speel Musiek"')}.`,
@@ -146,7 +146,7 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: '[DIAGRAM: A tree diagram showing two draws from a bag of 5 red and 3 blue balls without replacement, with branches for Red/Blue on the first draw and the adjusted probabilities for Red/Blue on the second draw] ʼn Sak het 5 rooi en 3 blou balle. Lerato trek twee balle sonder vervanging. Vind P(albei rooi) met behulp van ʼn boomdiagram-benadering.',
+          question: 'ʼn Sak het 5 rooi en 3 blou balle. Lerato trek twee balle sonder vervanging. Vind P(albei rooi) met behulp van ʼn boomdiagram-benadering.',
           answer: `${gr('P(albei rooi) = 5/14')}`,
           steps: [
             `Teken die ${bl('eerste tak')}: ${bl('P(rooi eerste) = 5/8')} en P(blou eerste) = 3/8.`,
@@ -237,7 +237,7 @@ export const topicData: TopicData = {
           ],
         },
         {
-          question: '[DIAGRAM: A two-way contingency table showing gender (male/female) against pass/fail status for 100 students, with totals: 40 males (30 passed, 10 failed) and 60 females (39 passed, 21 failed)] Gebruik die tweerigting-tabel om P(geslaag | manlik) en P(geslaag | vroulik) te vind, en bepaal dan of slaagstatus onafhanklik van geslag is.',
+          question: 'Gebruik die tweerigting-tabel om P(geslaag | manlik) en P(geslaag | vroulik) te vind, en bepaal dan of slaagstatus onafhanklik van geslag is.',
           answer: `Slaagstatus is ${gr('NIE onafhanklik')} van geslag nie`,
           steps: [
             `Lees die ${bl('individuele waarskynlikhede')} van die tabel: 30 uit 40 mans het geslaag, en 39 uit 60 vrouens het geslaag.`,
@@ -518,7 +518,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Boks het 12 items, waarvan 4 defektief is. Twee items word sonder vervanging gekies. Vind P(minstens een is defektief).', answer: 'P(geen defektief nie) = P(albei nie-defektief) = 8/12 × 7/11 = 56/132 = 14/33. P(minstens een defektief) = 1 − 14/33 = 19/33.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het afhanklike en onafhanklike gebeurtenisse, Venndiagramme, tweerigting-tabelle, boomdiagramme, en die kombinering van die produk-, optellings- en komplementêre reël onder die knie.' },
+        { minScore: 20, message: 'Uitstekend! Jy het afhanklike en onafhanklike gebeurtenisse, Venndiagramme, tweerigting-tabelle, boomdiagramme en die kombinering van die produk-, optellings- en komplementêre reël onder die knie.' },
         { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor boomdiagramme of die kombinering van die waarskynlikheidsreëls, en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor Venndiagramme en tweerigting-tabelle weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -564,7 +564,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Boks het 15 items, waarvan 5 defektief is. Twee items word sonder vervanging gekies. Vind P(minstens een is defektief).', answer: 'P(geen defektief nie) = P(albei nie-defektief) = 10/15 × 9/14 = 90/210 = 3/7. P(minstens een defektief) = 1 − 3/7 = 4/7.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het afhanklike en onafhanklike gebeurtenisse, Venndiagramme, tweerigting-tabelle, boomdiagramme, en die kombinering van die produk-, optellings- en komplementêre reël onder die knie.' },
+        { minScore: 20, message: 'Uitstekend! Jy het afhanklike en onafhanklike gebeurtenisse, Venndiagramme, tweerigting-tabelle, boomdiagramme en die kombinering van die produk-, optellings- en komplementêre reël onder die knie.' },
         { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor boomdiagramme of die kombinering van die waarskynlikheidsreëls, en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor Venndiagramme en tweerigting-tabelle weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },
@@ -610,7 +610,7 @@ export const topicData: TopicData = {
         { difficulty: 'Hard', question: 'ʼn Boks het 10 items, waarvan 3 defektief is. Twee items word sonder vervanging gekies. Vind P(minstens een is defektief).', answer: 'P(geen defektief nie) = P(albei nie-defektief) = 7/10 × 6/9 = 42/90 = 7/15. P(minstens een defektief) = 1 − 7/15 = 8/15.', checkMode: 'self' },
       ],
       scoreMessages: [
-        { minScore: 20, message: 'Uitstekend! Jy het afhanklike en onafhanklike gebeurtenisse, Venndiagramme, tweerigting-tabelle, boomdiagramme, en die kombinering van die produk-, optellings- en komplementêre reël onder die knie.' },
+        { minScore: 20, message: 'Uitstekend! Jy het afhanklike en onafhanklike gebeurtenisse, Venndiagramme, tweerigting-tabelle, boomdiagramme en die kombinering van die produk-, optellings- en komplementêre reël onder die knie.' },
         { minScore: 15, message: 'Goeie werk! Hersien enige gemiste vrae oor boomdiagramme of die kombinering van die waarskynlikheidsreëls, en probeer weer.' },
         { minScore: 10, message: 'Goeie poging! Gaan die uitgewerkte voorbeelde oor Venndiagramme en tweerigting-tabelle weer deur, en probeer weer.' },
         { minScore: 0, message: 'Hou aan — werk weer deur die studiegids en probeer hierdie stel weer.' },

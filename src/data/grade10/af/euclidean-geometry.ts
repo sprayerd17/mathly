@@ -459,7 +459,7 @@ export const topicData: TopicData = {
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:9px;">` +
         `<span style="display:inline-block;min-width:22px;height:22px;line-height:22px;background:#ea580c;color:white;border-radius:50%;font-weight:700;font-size:12px;text-align:center;flex-shrink:0;">2</span>` +
-        `<p style="margin:0;font-size:14px;">${or('Toets met verskeie voorbeelde')} — teken verskeie verskillende gevalle, meet, en soek na ʼn patroon.</p>` +
+        `<p style="margin:0;font-size:14px;">${or('Toets met verskeie voorbeelde')} — teken verskeie verskillende gevalle, meet en soek na ʼn patroon.</p>` +
         `</div>` +
 
         `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fef2f2;border:1.5px solid #fecaca;border-radius:9px;">` +
