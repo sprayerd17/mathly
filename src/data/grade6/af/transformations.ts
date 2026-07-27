@@ -50,7 +50,7 @@ export const topicData: TopicData = {
       explanation:
         priorKnowledge(
           'refleksie, translasie en rotasie het dieselfde grootte behou',
-          'In Graad 5 het jy geleer dat om ʼn vorm te reflekteer, te verplaas of te draai nooit sy grootte verander nie — die beeld is altyd <strong>kongruent</strong> aan die objek (presies dieselfde grootte en vorm). Vanjaar ontmoet jy twee nuwe transformasies, vergroting en verkleining, wat die GROOTTE van ʼn vorm verander terwyl die VORM dieselfde bly.'
+          'In Graad 5 het jy geleer dat om ʼn vorm te reflekteer, te transleer of te draai nooit sy grootte verander nie — die beeld is altyd <strong>kongruent</strong> aan die objek (presies dieselfde grootte en vorm). Vanjaar ontmoet jy twee nuwe transformasies, vergroting en verkleining, wat die GROOTTE van ʼn vorm verander terwyl die VORM dieselfde bly.'
         ) +
         `<p style="margin-bottom:16px;">ʼn <strong>Vergroting</strong> maak ʼn vorm groter. ʼn <strong>Verkleining</strong> maak ʼn vorm kleiner. In albei gevalle is die ${bl('objek')} en sy beeld <strong>eenvormige</strong> vorms — elke hoek bly presies dieselfde, maar elke sylengte verander met dieselfde bedrag. Die getal wat vir ons sê hoeveel groter of kleiner die beeld is, word die <strong>${or('skaalfaktor')}</strong> genoem.</p>` +
 

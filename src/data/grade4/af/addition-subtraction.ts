@@ -275,11 +275,11 @@ export const topicData: TopicData = {
     // AFDELING 4 — ANTWOORDE NAGAAN MET INVERSE BEWERKINGS
     // ─────────────────────────────────────────────────────────────────────────
     {
-      id: 'omgekeerde-operations',
-      title: 'Antwoorde Nagaan met Omgekeerde Bewerkings',
+      id: 'inverse-operations',
+      title: 'Antwoorde Nagaan met Inverse Bewerkings',
       icon: '🔄',
       explanation:
-        `<p style="margin-bottom:14px">Optelling en aftrekking is <strong>teenoorgestelde bewerkings</strong> — hulle <em>maak</em> mekaar <em>ongedaan</em>. Dit word die <strong>omgekeerde bewerking</strong> genoem. Jy kan dit gebruik om te kyk of jou antwoord korrek is nadat jy ʼn berekening voltooi het.</p>` +
+        `<p style="margin-bottom:14px">Optelling en aftrekking is <strong>teenoorgestelde bewerkings</strong> — hulle <em>maak</em> mekaar <em>ongedaan</em>. Dit word die <strong>inverse bewerking</strong> genoem. Jy kan dit gebruik om te kyk of jou antwoord korrek is nadat jy ʼn berekening voltooi het.</p>` +
 
         `<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">` +
         `<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:12px 16px">` +
@@ -292,12 +292,12 @@ export const topicData: TopicData = {
         `</div>` +
         `</div>` +
 
-        `<p style="margin-bottom:0">As die omgekeerde toets jou <strong>oorspronklike begingetal</strong> teruggee, is jou antwoord korrek. As dit nie so is nie, is daar iewers ʼn fout — gaan terug en vind dit.</p>`,
+        `<p style="margin-bottom:0">As die inverse toets jou <strong>oorspronklike begingetal</strong> teruggee, is jou antwoord korrek. As dit nie so is nie, is daar iewers ʼn fout — gaan terug en vind dit.</p>`,
 
       workedExamples: [
         // ── UITGEWERKTE VOORBEELD 6 ─────────────────────────────────────────
         {
-          question: 'Bereken 2 456 + 1 323 = 3 779. Gaan na met die omgekeerde bewerking.',
+          question: 'Bereken 2 456 + 1 323 = 3 779. Gaan na met die inverse bewerking.',
           answer: 'Nagaan: 3 779 − 1 323 = 2 456 ✓ Die antwoord is korrek.',
           steps: [
             'Ons het bereken: <span style="color:#dc2626;font-weight:700">2</span> <span style="color:#d97706;font-weight:700">4</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">6</span> + <span style="color:#dc2626;font-weight:700">1</span> <span style="color:#d97706;font-weight:700">3</span><span style="color:#16a34a;font-weight:700">2</span><span style="color:#2563eb;font-weight:700">3</span> = <span style="color:#dc2626;font-weight:700">3</span> <span style="color:#d97706;font-weight:700">7</span><span style="color:#16a34a;font-weight:700">7</span><span style="color:#2563eb;font-weight:700">9</span>.',
@@ -312,7 +312,7 @@ export const topicData: TopicData = {
 
         // ── UITGEWERKTE VOORBEELD 7 ─────────────────────────────────────────
         {
-          question: 'Bereken 4 850 − 2 340 = 2 510. Gaan na met die omgekeerde bewerking.',
+          question: 'Bereken 4 850 − 2 340 = 2 510. Gaan na met die inverse bewerking.',
           answer: 'Nagaan: 2 510 + 2 340 = 4 850 ✓ Die antwoord is korrek.',
           steps: [
             'Ons het bereken: <span style="color:#dc2626;font-weight:700">4</span> <span style="color:#d97706;font-weight:700">8</span><span style="color:#16a34a;font-weight:700">5</span><span style="color:#2563eb;font-weight:700">0</span> − <span style="color:#dc2626;font-weight:700">2</span> <span style="color:#d97706;font-weight:700">3</span><span style="color:#16a34a;font-weight:700">4</span><span style="color:#2563eb;font-weight:700">0</span> = <span style="color:#dc2626;font-weight:700">2</span> <span style="color:#d97706;font-weight:700">5</span><span style="color:#16a34a;font-weight:700">1</span><span style="color:#2563eb;font-weight:700">0</span>.',
@@ -518,7 +518,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Skat 3 456 + 2 234 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '5 700', checkMode: 'auto', correctAnswer: '5700', correctAnswers: ['5700', '5 700'], explanation: '3 456 → 3 500\n2 234 → 2 200\nSkatting: 3 500 + 2 200 = 5 700 ✓' },
         { difficulty: 'Medium', question: 'Skat 4 872 − 1 439 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '3 500', checkMode: 'auto', correctAnswer: '3500', correctAnswers: ['3500', '3 500'], explanation: '4 872 → 4 900\n1 439 → 1 400\nSkatting: 4 900 − 1 400 = 3 500 ✓' },
         { difficulty: 'Medium', question: 'Bereken 4 850 − 2 340 = 2 510. Gebruik optelling om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', answer: '4 850', checkMode: 'auto', correctAnswer: '4850', correctAnswers: ['4850', '4 850'], explanation: 'Nagaan: 2 510 + 2 340 = 4 850 — dit stem ooreen met die oorspronklike getal, dus is die aftrekking korrek ✓' },
-        { difficulty: 'Hard', question: 'Sipho het 5 304 − 1 867 = 3 537 bereken. Gebruik die omgekeerde bewerking om te kyk of Sipho korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 3 537 + 1 867 = 5 404, nie 5 304 nie, dus is Sipho verkeerd. Die korrekte antwoord is 3 437 (aangesien 3 437 + 1 867 = 5 304).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho het 5 304 − 1 867 = 3 537 bereken. Gebruik die inverse bewerking om te kyk of Sipho korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 3 537 + 1 867 = 5 404, nie 5 304 nie, dus is Sipho verkeerd. Die korrekte antwoord is 3 437 (aangesien 3 437 + 1 867 = 5 304).', checkMode: 'self' },
 
         // Blok C — Hoofrekene-strategieë (8-10)
         { difficulty: 'Medium', question: 'Bereken in jou kop: 3 450 + 300', answer: '3 750', checkMode: 'auto', correctAnswer: '3750', correctAnswers: ['3750', '3 750'], explanation: 'Om 300 by te tel verander net die honderde-syfer: 4+3=7\nAntwoord: 3 750 ✓' },
@@ -564,7 +564,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Skat 5 678 + 2 345 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '8 000', checkMode: 'auto', correctAnswer: '8000', correctAnswers: ['8000', '8 000'], explanation: '5 678 → 5 700\n2 345 → 2 300\nSkatting: 5 700 + 2 300 = 8 000 ✓' },
         { difficulty: 'Medium', question: 'Skat 9 856 − 3 421 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '6 500', checkMode: 'auto', correctAnswer: '6500', correctAnswers: ['6500', '6 500'], explanation: '9 856 → 9 900\n3 421 → 3 400\nSkatting: 9 900 − 3 400 = 6 500 ✓' },
         { difficulty: 'Medium', question: 'Bereken 2 345 + 1 323 = 3 668. Gebruik aftrekking om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', answer: '2 345', checkMode: 'auto', correctAnswer: '2345', correctAnswers: ['2345', '2 345'], explanation: 'Nagaan: 3 668 − 1 323 = 2 345 — dit stem ooreen met die oorspronklike getal, dus is die optelling korrek ✓' },
-        { difficulty: 'Hard', question: 'ʼn Leerder het 6 412 + 1 543 = 7 945 bereken. Gebruik die omgekeerde bewerking om te kyk of die leerder korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 7 945 − 1 543 = 6 402, nie 6 412 nie, dus is die leerder verkeerd. Die korrekte antwoord is 7 955 (aangesien 7 955 − 1 543 = 6 412).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder het 6 412 + 1 543 = 7 945 bereken. Gebruik die inverse bewerking om te kyk of die leerder korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 7 945 − 1 543 = 6 402, nie 6 412 nie, dus is die leerder verkeerd. Die korrekte antwoord is 7 955 (aangesien 7 955 − 1 543 = 6 412).', checkMode: 'self' },
 
         // Blok C — Hoofrekene-strategieë (8-10)
         { difficulty: 'Medium', question: 'Bereken in jou kop: 8 760 − 300', answer: '8 460', checkMode: 'auto', correctAnswer: '8460', correctAnswers: ['8460', '8 460'], explanation: 'Net die honderde-syfer verander: 7−3=4\nAntwoord: 8 460 ✓' },
@@ -610,7 +610,7 @@ export const topicData: TopicData = {
         { difficulty: 'Easy', question: 'Skat 4 321 + 3 789 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '8 100', checkMode: 'auto', correctAnswer: '8100', correctAnswers: ['8100', '8 100'], explanation: '4 321 → 4 300\n3 789 → 3 800\nSkatting: 4 300 + 3 800 = 8 100 ✓' },
         { difficulty: 'Medium', question: 'Skat 8 500 − 3 271 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '5 200', checkMode: 'auto', correctAnswer: '5200', correctAnswers: ['5200', '5 200'], explanation: '8 500 → 8 500\n3 271 → 3 300\nSkatting: 8 500 − 3 300 = 5 200 ✓' },
         { difficulty: 'Medium', question: 'Bereken 6 412 + 1 543 = 7 955. Gebruik aftrekking om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', answer: '6 412', checkMode: 'auto', correctAnswer: '6412', correctAnswers: ['6412', '6 412'], explanation: 'Nagaan: 7 955 − 1 543 = 6 412 — dit stem ooreen met die oorspronklike getal, dus is die optelling korrek ✓' },
-        { difficulty: 'Hard', question: 'ʼn Leerder het 9 856 − 3 421 = 6 345 bereken. Gebruik die omgekeerde bewerking om te kyk of die leerder korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 6 345 + 3 421 = 9 766, nie 9 856 nie, dus is die leerder verkeerd. Die korrekte antwoord is 6 435 (aangesien 6 435 + 3 421 = 9 856).', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder het 9 856 − 3 421 = 6 345 bereken. Gebruik die inverse bewerking om te kyk of die leerder korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 6 345 + 3 421 = 9 766, nie 9 856 nie, dus is die leerder verkeerd. Die korrekte antwoord is 6 435 (aangesien 6 435 + 3 421 = 9 856).', checkMode: 'self' },
 
         // Blok C — Hoofrekene-strategieë (8-10)
         { difficulty: 'Medium', question: 'Bereken in jou kop: 4 230 + 700', answer: '4 930', checkMode: 'auto', correctAnswer: '4930', correctAnswers: ['4930', '4 930'], explanation: 'Net die honderde-syfer verander: 2+7=9\nAntwoord: 4 930 ✓' },
@@ -630,7 +630,7 @@ export const topicData: TopicData = {
 
         // Blok F — Redenasie, regverdiging en foutopsporing (18-19)
         { difficulty: 'Hard', question: 'ʼn Leerder trek 5 304 − 1 867 per ongeluk af as 5 304 − 1 687 en kry ʼn ander antwoord. Verduidelik watter fout die leerder gemaak het en vind die verskil tussen die korrekte antwoord en die leerder se verkeerde antwoord.', answer: 'Die leerder het die tiene- en ene-syfers van 1 867 verwissel, wat dit in 1 687 verander het (ʼn transponeringsfout). Korrek: 5 304 − 1 867 = 3 437. Verkeerd: 5 304 − 1 687 = 3 617. Die verskil is 3 617 − 3 437 = 180.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Thabo beweer dat as jy twee getalle bymekaar tel en dan een van die oorspronklike getalle weer aftrek, jy altyd die ander oorspronklike getal moet kry. Is hy korrek? Verduidelik met ʼn voorbeeld.', answer: 'Ja, Thabo is korrek. Dit is die omgekeerde verhouding tussen optelling en aftrekking. Byvoorbeeld, 2 345 + 1 323 = 3 668, en 3 668 − 1 323 = 2 345, wat die ander oorspronklike getal is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo beweer dat as jy twee getalle bymekaar tel en dan een van die oorspronklike getalle weer aftrek, jy altyd die ander oorspronklike getal moet kry. Is hy korrek? Verduidelik met ʼn voorbeeld.', answer: 'Ja, Thabo is korrek. Dit is die inverse verhouding tussen optelling en aftrekking. Byvoorbeeld, 2 345 + 1 323 = 3 668, en 3 668 − 1 323 = 2 345, wat die ander oorspronklike getal is.', checkMode: 'self' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend — jy het die volle omvang van kolommetodes tot veelvoudige-stap-redenasie bemeester.' },
@@ -824,13 +824,13 @@ export const topicData: TopicData = {
       answer: '6 100 (nie 6 500 nie) — Lebo het ʼn fout gemaak deur een of albei getalle af te rond.',
     },
 
-    // ── AFDELING 4 — Omgekeerde Bewerkings ──────────────────────────────────────
+    // ── AFDELING 4 — Inverse Bewerkings ──────────────────────────────────────
 
     {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Omgekeerde bewerkings laat ons toe om ons antwoorde na te gaan.\n\n' +
+        'Inverse bewerkings laat ons toe om ons antwoorde na te gaan.\n\n' +
         'Deel A: Bereken 2 345 + 1 432. Skryf slegs die getal.\n' +
         'Deel B: Gebruik aftrekking om jou antwoord na te gaan. Skryf die getal wat jy terugkry nadat jy 1 432 afgetrek het.',
       answer: 'Deel A: 3 777 | Deel B: 2 345',
@@ -848,11 +848,11 @@ export const topicData: TopicData = {
             'Antwoord: 3 777',
         },
         {
-          label: 'Deel B — Omgekeerde nagaan',
+          label: 'Deel B — Inverse nagaan',
           // 3 777 − 1 432 = 2 345 (terug na oorspronklike)
           correctAnswer: '2345',
           explanation:
-            'Die omgekeerde van optelling is aftrekking:\n' +
+            'Die inverse van optelling is aftrekking:\n' +
             '3 777 − 1 432 = 2 345\n\n' +
             'Ons kom terug by 2 345, wat bevestig dat ons optelling korrek was.',
         },
@@ -864,7 +864,7 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'Deel A: Bereken 5 678 − 2 345. Skryf slegs die getal.\n' +
-        'Deel B: Gebruik optelling as die omgekeerde bewerking om jou antwoord na te gaan. Skryf die resultaat van 2 345 by jou Deel A-antwoord op te tel.',
+        'Deel B: Gebruik optelling as die inverse bewerking om jou antwoord na te gaan. Skryf die resultaat van 2 345 by jou Deel A-antwoord op te tel.',
       answer: 'Deel A: 3 333 | Deel B: 5 678',
       parts: [
         {
@@ -880,11 +880,11 @@ export const topicData: TopicData = {
             'Antwoord: 3 333',
         },
         {
-          label: 'Deel B — Omgekeerde nagaan',
+          label: 'Deel B — Inverse nagaan',
           // 3 333 + 2 345 = 5 678 (terug na oorspronklike)
           correctAnswer: '5678',
           explanation:
-            'Die omgekeerde van aftrekking is optelling:\n' +
+            'Die inverse van aftrekking is optelling:\n' +
             '3 333 + 2 345 = 5 678\n\n' +
             'Ons kom terug by 5 678, wat bevestig dat ons aftrekking korrek was.',
         },
@@ -896,13 +896,13 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'ʼn Getal is van 4 231 afgetrek en die antwoord was 2 456.\n\n' +
-        'Gebruik die omgekeerde bewerking (optelling) om die ontbrekende getal te vind. Skryf slegs die ontbrekende getal.',
+        'Gebruik die inverse bewerking (optelling) om die ontbrekende getal te vind. Skryf slegs die ontbrekende getal.',
       // 4 231 − ? = 2 456 → ? = 4 231 − 2 456 = 1 775
       // Nagaan: 2 456 + 1 775 = 4 231 ✓
       correctAnswer: '1775',
       explanation:
         'Ons weet: 4 231 − ontbrekend = 2 456\n\n' +
-        'Die omgekeerde bewerking is optelling:\n' +
+        'Die inverse bewerking is optelling:\n' +
         'ontbrekend = 4 231 − 2 456\n\n' +
         'Kolomaftrekking:\n' +
         '• Ene: 1 − 6. Leen van tiene (3 → 2). Ene word 11.\n' +

@@ -86,10 +86,10 @@ export const topicData: TopicData = {
     // AFDELING 2 — DELING AS DIE INVERSE VAN VERMENIGVULDIGING
     // ─────────────────────────────────────────────────────────────────────────
     {
-      id: 'division-omgekeerde-multiplication',
-      title: 'Deling as die Omgekeerde van Vermenigvuldiging',
+      id: 'division-inverse-multiplication',
+      title: 'Deling as die Inverse van Vermenigvuldiging',
       icon: '🔄',
-      explanation: `<p style="margin-bottom:18px;">Deling en vermenigvuldiging is <strong>omgekeerde bewerkings</strong> — dit beteken hulle <em>maak mekaar ongedaan</em>. Net soos optelling en aftrekking mekaar kanselleer, doen vermenigvuldiging en deling dieselfde ding in omgekeerde volgorde.</p>
+      explanation: `<p style="margin-bottom:18px;">Deling en vermenigvuldiging is <strong>inverse bewerkings</strong> — dit beteken hulle <em>maak mekaar ongedaan</em>. Net soos optelling en aftrekking mekaar kanselleer, doen vermenigvuldiging en deling dieselfde ding in inverse volgorde.</p>
 
 <p style="margin-bottom:14px;">As jy jou vermenigvuldigingstafels ken, kan jy dit gebruik om enige delingsprobleem op te los. In plaas daarvan om ʼn deling van voor af uit te werk, vra eenvoudig: <strong>"Wat maal die deler gee my die deeltal?"</strong></p>
 
@@ -858,7 +858,7 @@ export const topicData: TopicData = {
         'Elke klaskamer kry 8 stoele.',
     },
 
-    // ── AFDELING 2 — Deling as die Omgekeerde van Vermenigvuldiging ─────────────
+    // ── AFDELING 2 — Deling as die Inverse van Vermenigvuldiging ─────────────
     {
       difficulty: 'Easy',
       checkMode: 'auto',
