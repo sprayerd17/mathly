@@ -340,7 +340,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om breuke op te tel af te trek te vermenigvuldig en te deel met kleurgekodeerde tellers en noemers',
+        'Kort video wat wys hoe om breuke op te tel, af te trek, te vermenigvuldig en te deel met kleurgekodeerde tellers en noemers',
 
     },
   ],

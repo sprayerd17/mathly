@@ -316,7 +316,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om tussen breuke desimale breuke en persentasies om te skakel deur die vermenigvuldig met 100 en deel deur 100 reëls te gebruik',
+        'Kort video wat wys hoe om tussen breuke, desimale breuke en persentasies om te skakel deur die vermenigvuldig met 100 en deel deur 100 reëls te gebruik',
     },
 
     // ─────────────────────────────────────────────────────────────────────────

@@ -286,7 +286,7 @@ export const topicData: TopicData = {
 
         `<div style="background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;">` +
         `<p style="font-weight:700;color:#2563eb;margin-bottom:4px;">Inset</p>` +
-        `<p style="color:#374151;font-size:14px;margin:0;">Die beginggetal wat in die funksiemasjien ingaan. Jy kies die insetwaarde.</p>` +
+        `<p style="color:#374151;font-size:14px;margin:0;">Die begingetal wat in die funksiemasjien ingaan. Jy kies die insetwaarde.</p>` +
         `</div>` +
 
         `<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;">` +

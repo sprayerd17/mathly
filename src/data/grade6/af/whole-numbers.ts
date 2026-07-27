@@ -666,7 +666,7 @@ export const topicData: TopicData = {
         `</svg>`,
 
       videoPlaceholder:
-        'Kort video wat wys hoe om telgetalle na die naaste 10 100 1 000 10 000 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël',
+        'Kort video wat wys hoe om telgetalle na die naaste 10, 100, 1 000, 10 000, 100 000 en 1 000 000 af te rond met behulp van die kleur-gekodeerde syfer-regs-daarvan-reël',
     },
     // ─────────────────────────────────────────────────────────────────────────
     // AFDELING 5 — VEELVOUDE EN FAKTORE

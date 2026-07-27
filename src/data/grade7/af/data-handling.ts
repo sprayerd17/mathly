@@ -500,7 +500,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om staafgrafieke dubbelstaafgrafieke en sirkelgrafieke te lees en hoe om waardes van persentasies te bereken',
+        'Kort video wat wys hoe om staafgrafieke, dubbelstaafgrafieke en sirkelgrafieke te lees en hoe om waardes van persentasies te bereken',
 
       diagramPlaceholder:
         'Langs mekaar: dubbelstaafgrafiek met blou en groen stawe vir twee groepe oor vier kategorieë, en ʼn sirkelgrafiek met gekleurde skywe en oranje persentasie-etikette',

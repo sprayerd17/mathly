@@ -709,7 +709,7 @@ export const topicData: TopicData = {
       diagramSvg: '<svg viewBox="0 0 230 150" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="20" width="120" height="100" fill="#2563eb" opacity="0.25"/><rect x="15" y="20" width="180" height="75" fill="#dc2626" opacity="0.25"/><rect x="15" y="20" width="120" height="75" fill="none" stroke="#16a34a" stroke-width="3"/><rect x="15" y="20" width="180" height="100" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="75" y1="20" x2="75" y2="120" stroke="#0f1f3d" stroke-width="1"/><line x1="135" y1="20" x2="135" y2="120" stroke="#0f1f3d" stroke-width="1"/><line x1="15" y1="45" x2="195" y2="45" stroke="#0f1f3d" stroke-width="1"/><line x1="15" y1="70" x2="195" y2="70" stroke="#0f1f3d" stroke-width="1"/><line x1="15" y1="95" x2="195" y2="95" stroke="#0f1f3d" stroke-width="1"/><text x="75" y="14" font-weight="700" font-size="12" text-anchor="middle" fill="#2563eb">2/3 dwars</text><text x="205" y="58" font-weight="700" font-size="12" text-anchor="start" fill="#dc2626">3/4</text><text x="205" y="72" font-weight="700" font-size="12" text-anchor="start" fill="#dc2626">af</text><text x="105" y="140" font-weight="700" font-size="13" text-anchor="middle" fill="#16a34a">2/3 × 3/4 = 6/12 = 1/2</text></svg>',
 
       videoPlaceholder:
-        'Kort video wat wys hoe om ʼn breuk met ʼn heelgetal te vermenigvuldig ʼn breuk van ʼn heelgetal te vind en ʼn breuk met ʼn breuk te vermenigvuldig met vereenvoudiging',
+        'Kort video wat wys hoe om ʼn breuk met ʼn heelgetal te vermenigvuldig, ʼn breuk van ʼn heelgetal te vind, en ʼn breuk met ʼn breuk te vermenigvuldig met vereenvoudiging',
     },
   ],
   topicPractice: [

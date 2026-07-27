@@ -358,7 +358,7 @@ export const topicData: TopicData = {
           'woordprobleme na formele vergelykings omskakel',
           'CAPS Graad 6 los woordprobleme op deur ʼn informele getalsin te skryf (met ʼn blokkie vir die onbekende) en dit uit te redeneer — nie deur formeel ʼn letterveranderlike toe te ken en ʼn vergelyking op te los nie. Behou hier as duidelik gemerkte verryking.'
         ) +
-        `<p style="margin-bottom:16px;">Baie werklike lewe probleme kan opgelos word deur ʼn ${or('vergelyking')} te skryf en op te los. Lees die probleem noukeurig en identifiseer die onbekende — dit word jou ${bl('veranderlike')}. Skakel die woorde om in wiskundige simbole. Skryf die ${or('vergelyking')} en los dit op met omgekeerde bewerkings. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang en maak seker dit maak sin binne die konteks van die probleem.</p>` +
+        `<p style="margin-bottom:16px;">Baie probleme uit die werklike lewe kan opgelos word deur ʼn ${or('vergelyking')} te skryf en op te los. Lees die probleem noukeurig en identifiseer die onbekende — dit word jou ${bl('veranderlike')}. Skakel die woorde om in wiskundige simbole. Skryf die ${or('vergelyking')} en los dit op met omgekeerde bewerkings. ${re('Kontroleer')} jou antwoord altyd deur dit terug te vervang en maak seker dit maak sin binne die konteks van die probleem.</p>` +
 
         // ── Colour key ───────────────────────────────────────────────────────
         `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">` +
