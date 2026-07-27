@@ -116,7 +116,7 @@ export const topicData: TopicData = {
       ],
 
       videoPlaceholder:
-        'Kort video wat wys hoe om BODMAS toe te pas met heelgetalbewerkings insluitend kwadrate kubusse vierkantswortels en kubuswortels',
+        'Kort video wat wys hoe om BODMAS toe te pas met heelgetalbewerkings insluitend kwadrate, kubusse, vierkantswortels en kubuswortels',
     },
 
     // ─────────────────────────────────────────────────────────────────────────
