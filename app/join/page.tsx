@@ -16,7 +16,7 @@ function JoinRedirect() {
   useEffect(() => {
     const refCode = searchParams.get('ref')
     if (refCode) {
-      sessionStorage.setItem('mathly_pending_ref', refCode)
+      localStorage.setItem('mathly_pending_ref', refCode)
     }
     openModal('register')
     router.replace('/')

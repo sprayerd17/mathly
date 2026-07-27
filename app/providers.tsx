@@ -269,7 +269,7 @@ function AuthModal({
   // but always shown and editable — not everyone arrives via the link, so
   // typing a code in by hand has to work just as well.
   const [referralCode, setReferralCode] = useState(
-    () => (typeof window !== 'undefined' && sessionStorage.getItem('mathly_pending_ref')) || ''
+    () => (typeof window !== 'undefined' && localStorage.getItem('mathly_pending_ref')) || ''
   )
   const [planSize, setPlanSize] = useState<'solo' | 'family2' | 'family3'>('solo')
   const [error, setError] = useState('')
@@ -902,6 +902,26 @@ async function loadUser(fbUser: FirebaseUser): Promise<User> {
   }
 }
 
+// Backstop for a referral attach that didn't land at registration time (see
+// the comment in register() below) — no-ops instantly if there's nothing
+// pending, so it's cheap to call on every login/page load. Idempotent
+// server-side (see /api/referral/attach), so calling it repeatedly is safe.
+async function tryAttachPendingReferral(fbUser: FirebaseUser): Promise<void> {
+  const pendingRefCode = typeof window !== 'undefined' ? localStorage.getItem('mathly_pending_ref') : null
+  if (!pendingRefCode) return
+  try {
+    const idToken = await fbUser.getIdToken()
+    const res = await fetch('/api/referral/attach', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ idToken, refCode: pendingRefCode }),
+    })
+    if (res.ok) localStorage.removeItem('mathly_pending_ref')
+  } catch {
+    // best-effort — will retry on next login
+  }
+}
+
 export default function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
@@ -927,6 +947,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
         }
         try {
           setUser(await loadUser(fbUser))
+          tryAttachPendingReferral(fbUser).catch(() => {})
         } catch {
           setUser(null)
         }
@@ -1024,21 +1045,26 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     // Was a referral code entered (typed in manually, or pre-filled from a
-    // /join?ref= link) or otherwise pending in sessionStorage? Attach it now,
+    // /join?ref= link) or otherwise pending in localStorage? Attach it now,
     // server-side — best-effort, an invalid/missing code or a failed request
-    // should never block registration.
-    const pendingRefCode = referredByCode?.trim() || sessionStorage.getItem('mathly_pending_ref')
+    // should never block registration. If this attempt fails (closed the tab,
+    // flaky connection right after signing up), the code stays in
+    // localStorage and tryAttachPendingReferral retries on every subsequent
+    // login until it succeeds — the referrer's credit depends on this
+    // actually landing eventually, so a single silent best-effort try isn't
+    // enough on its own.
+    const pendingRefCode = referredByCode?.trim() || localStorage.getItem('mathly_pending_ref')
     if (pendingRefCode) {
-      sessionStorage.removeItem('mathly_pending_ref')
       try {
         const idToken = await cred.user.getIdToken()
-        await fetch('/api/referral/attach', {
+        const res = await fetch('/api/referral/attach', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ idToken, refCode: pendingRefCode }),
         })
+        if (res.ok) localStorage.removeItem('mathly_pending_ref')
       } catch {
-        // best-effort — a missed referral attach isn't worth failing signup over
+        // left in localStorage — retried on next login
       }
     }
 

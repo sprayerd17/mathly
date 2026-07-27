@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { FieldValue } from 'firebase-admin/firestore'
+import { sendOwnerAlert } from '@/src/lib/email'
 
 // Attaches a referral, once, right after the referred friend registers.
 // referredBy is server-only (see firestore.rules) precisely so this is the
@@ -65,14 +66,34 @@ export async function POST(req: NextRequest) {
     return new Response(null, { status: 200 })
   }
 
-  await referredRef.update({ referredBy: referrerUid })
-  await adminDb.collection('referrals').add({
+  // One batch — setting referredBy without the matching referrals record (or
+  // vice versa) would silently break crediting later, since creditReferrer()
+  // requires both (see src/lib/paystack-webhook.ts).
+  const referralRef = adminDb.collection('referrals').doc()
+  const batch = adminDb.batch()
+  batch.update(referredRef, { referredBy: referrerUid })
+  batch.set(referralRef, {
     referrerUid,
     referredUid,
     referredName: referredData.name ?? '',
     hasSubscribed: false,
     createdAt: FieldValue.serverTimestamp(),
   })
+  try {
+    await batch.commit()
+  } catch (err) {
+    // Non-2xx so the client keeps its pending ref code around and retries
+    // (see tryAttachPendingReferral in app/providers.tsx) instead of
+    // silently losing the referral — this is real money for the referrer.
+    console.error('[referral/attach] batch commit failed', { referrerUid, referredUid, err })
+    await sendOwnerAlert(
+      `Mathly: referral attach failed (uid ${referredUid})`,
+      `<p>Referrer ${referrerUid} → referred ${referredUid}: the Firestore write failed
+       (${err instanceof Error ? err.message : 'unknown error'}). The client will retry
+       automatically on next login — flagging in case it keeps failing.</p>`,
+    ).catch(() => {})
+    return new Response('Server error', { status: 500 })
+  }
 
   return new Response(null, { status: 200 })
 }
