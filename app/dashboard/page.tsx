@@ -610,9 +610,14 @@ export default function DashboardPage() {
                 {notStarted.length === 0
                   ? <p className="text-xs text-gray-500 py-2">{t.dash_kanban_todo_empty}</p>
                   : notStarted.map(topic => (
-                    <div key={topic.slug} className="text-sm py-2 px-3 rounded-lg" style={{ backgroundColor: '#f9fafb', color: '#374151' }}>
+                    <Link
+                      key={topic.slug}
+                      href={activeGrade !== null ? `/grade/${activeGrade}/${topic.slug}` : '/select-grade'}
+                      className="text-sm py-2 px-3 rounded-lg transition-colors hover:bg-gray-100"
+                      style={{ backgroundColor: '#f9fafb', color: '#374151' }}
+                    >
                       {topic.name}
-                    </div>
+                    </Link>
                   ))
                 }
               </div>
@@ -629,10 +634,15 @@ export default function DashboardPage() {
                 {inProgress.length === 0
                   ? <p className="text-xs text-gray-500 py-2">{t.dash_kanban_in_progress_empty}</p>
                   : inProgress.map(topic => (
-                    <div key={topic.slug} className="flex items-center justify-between text-sm py-2 px-3 rounded-lg gap-2" style={{ backgroundColor: '#eff6ff', color: '#374151' }}>
+                    <Link
+                      key={topic.slug}
+                      href={activeGrade !== null ? `/grade/${activeGrade}/${topic.slug}` : '/select-grade'}
+                      className="flex items-center justify-between text-sm py-2 px-3 rounded-lg gap-2 transition-colors hover:brightness-95"
+                      style={{ backgroundColor: '#eff6ff', color: '#374151' }}
+                    >
                       <span className="truncate">{topic.name}</span>
                       <span className="text-xs shrink-0" style={{ color: '#1e40af' }}>{topic.score}%</span>
-                    </div>
+                    </Link>
                   ))
                 }
               </div>
@@ -649,10 +659,15 @@ export default function DashboardPage() {
                 {completed.length === 0
                   ? <p className="text-xs text-gray-500 py-2">{t.dash_kanban_done_empty}</p>
                   : completed.map(topic => (
-                    <div key={topic.slug} className="flex items-center gap-2 text-sm py-2 px-3 rounded-lg" style={{ backgroundColor: '#f0fdf4', color: '#374151' }}>
+                    <Link
+                      key={topic.slug}
+                      href={activeGrade !== null ? `/grade/${activeGrade}/${topic.slug}` : '/select-grade'}
+                      className="flex items-center gap-2 text-sm py-2 px-3 rounded-lg transition-colors hover:brightness-95"
+                      style={{ backgroundColor: '#f0fdf4', color: '#374151' }}
+                    >
                       <CheckCircleIcon />
                       <span className="truncate">{topic.name}</span>
-                    </div>
+                    </Link>
                   ))
                 }
               </div>

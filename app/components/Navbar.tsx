@@ -136,6 +136,16 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
             })}
             {user && (
               <Link
+                href="/select-grade"
+                id="tour-nav-my-topics"
+                className="text-sm font-medium transition-colors"
+                style={{ color: pathname === '/select-grade' ? '#1e40af' : '#0f1f3d' }}
+              >
+                {t.nav_my_topics}
+              </Link>
+            )}
+            {user && (
+              <Link
                 href="/dashboard"
                 id="tour-nav-dashboard"
                 className="text-sm font-medium transition-colors"
@@ -224,6 +234,20 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
               </Link>
             )
           })}
+          {user && (
+            <Link
+              href="/select-grade"
+              id="tour-mobile-my-topics"
+              onClick={close}
+              className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+              style={{
+                color: pathname === '/select-grade' ? '#fff' : '#a8b8d8',
+                backgroundColor: pathname === '/select-grade' ? '#1e40af' : 'transparent',
+              }}
+            >
+              {t.nav_my_topics}
+            </Link>
+          )}
           {user && (
             <Link
               href="/dashboard"
