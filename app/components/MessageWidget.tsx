@@ -240,12 +240,12 @@ export default function MessageWidget() {
           <div className="px-5 py-5 overflow-y-auto">
             {myThread && !submitted && (
               <div className="space-y-2 mb-5">
-                <div className="rounded-xl rounded-tl-sm px-3.5 py-2.5 text-sm leading-relaxed" style={{ backgroundColor: '#f1f5f9', color: '#0f1f3d' }}>
+                <div className="rounded-xl rounded-tr-sm px-3.5 py-2.5 text-sm leading-relaxed text-white ml-6" style={{ backgroundColor: '#1e40af' }}>
                   {myThread.description}
                 </div>
                 {myThread.adminReply ? (
-                  <div className="rounded-xl rounded-tr-sm px-3.5 py-2.5 text-sm leading-relaxed text-white ml-6" style={{ backgroundColor: '#1e40af' }}>
-                    <p className="text-[10px] font-semibold uppercase tracking-wide mb-1" style={{ color: '#a8b8d8' }}>{t.msg_widget_reply_label}</p>
+                  <div className="rounded-xl rounded-tl-sm px-3.5 py-2.5 text-sm leading-relaxed" style={{ backgroundColor: '#f1f5f9', color: '#0f1f3d' }}>
+                    <p className="text-[10px] font-semibold uppercase tracking-wide mb-1 text-gray-500">{t.msg_widget_reply_label}</p>
                     {myThread.adminReply.text}
                   </div>
                 ) : (
