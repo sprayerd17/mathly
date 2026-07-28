@@ -96,6 +96,7 @@ export default function ContactPage() {
         description: form.description,
         status:      'unreviewed',
         createdAt:   serverTimestamp(),
+        uid:         user?.uid ?? null,
       })
       setSubmitted(true)
       setForm(EMPTY_FORM)

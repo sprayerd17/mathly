@@ -203,11 +203,18 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
-    // Contact-form requests — create-only from the public site, same
-    // write-only pattern as /waitlist. Reviewed and status-managed from the
-    // admin dashboard (Admin SDK).
+    // Contact-form / floating-widget requests — create-only from the public
+    // site (or a signed-in user's own uid), same write-only-by-default
+    // pattern as /waitlist. uid is optional (anonymous senders on the
+    // contact page still have none) but when present must match the
+    // authenticated caller, so nobody can submit as someone else. A
+    // signed-in sender can read back their own request — this is what lets
+    // the message widget show the coach's reply in-app instead of only by
+    // email. adminReply itself is written only by the admin dashboard
+    // (Admin SDK, bypasses these rules entirely), so a reply can never be
+    // spoofed by a client.
     match /requests/{docId} {
-      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'grade', 'language', 'requestType', 'description', 'status', 'createdAt'])
+      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'grade', 'language', 'requestType', 'description', 'status', 'createdAt', 'uid'])
                     && request.resource.data.name is string
                     && request.resource.data.name.size() > 0
                     && request.resource.data.email is string
@@ -218,8 +225,11 @@ service cloud.firestore {
                     && request.resource.data.description is string
                     && request.resource.data.description.size() <= 5000
                     && request.resource.data.status == 'unreviewed'
-                    && request.resource.data.createdAt is timestamp;
-      allow read, update, delete: if false;
+                    && request.resource.data.createdAt is timestamp
+                    && (request.resource.data.uid == null
+                        || (request.auth != null && request.resource.data.uid == request.auth.uid));
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow update, delete: if false;
     }
 
     // Admin-managed settings (founding-spot counters etc.) — written by the

@@ -27,18 +27,22 @@ export default function SelectGradePage() {
 
       <main className="max-w-3xl mx-auto px-6 py-16">
 
-        {/* Heading */}
-        <div className="mb-10">
-          <h1 className="text-4xl font-bold tracking-tight mb-3" style={{ color: '#0f1f3d' }}>
-            {t.grade_select_heading}
-          </h1>
-          <p className="text-lg text-gray-500">
-            {t.grade_select_description}
-          </p>
-        </div>
-
         {showAllGrades ? (
           /* Guests + free accounts — all grades grid */
+          <>
+          {/* Heading — "choose" framing only makes sense when there's
+              actually more than one grade to pick from. A paid single-child
+              account only ever has the one grade it registered for, so this
+              block is skipped entirely for that branch below — the card
+              itself already carries its own heading. */}
+          <div className="mb-10">
+            <h1 className="text-4xl font-bold tracking-tight mb-3" style={{ color: '#0f1f3d' }}>
+              {t.grade_select_heading}
+            </h1>
+            <p className="text-lg text-gray-500">
+              {t.grade_select_description}
+            </p>
+          </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {ALL_GRADES.map(grade => (
               <Link
@@ -56,6 +60,7 @@ export default function SelectGradePage() {
               </Link>
             ))}
           </div>
+          </>
         ) : (
           /* Paid accounts — only the active profile's grade */
           <>

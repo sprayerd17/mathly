@@ -79,6 +79,7 @@ export default function ReportIssueButton({ grade, topicSlug, topicName }: Props
         description: `[${topicName} — Grade ${grade}, slug: ${topicSlug}] ${description.trim()}`,
         status: 'unreviewed',
         createdAt: serverTimestamp(),
+        uid: user.uid,
       })
       setSubmitted(true)
       setDescription('')
