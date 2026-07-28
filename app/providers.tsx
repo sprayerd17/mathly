@@ -15,6 +15,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   signOut,
   updateProfile as updateAuthProfile,
   type User as FirebaseUser,
@@ -275,6 +276,10 @@ function AuthModal({
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [redirecting, setRedirecting] = useState(false)
+  const [forgotMode, setForgotMode] = useState(false)
+  const [forgotEmail, setForgotEmail] = useState('')
+  const [forgotSubmitting, setForgotSubmitting] = useState(false)
+  const [forgotSent, setForgotSent] = useState(false)
   const [regChildren, setRegChildren] = useState<Array<{ name: string; grade: number | ''; language: Language | null; tier: Tier }>>(
     [{ name: '', grade: '', language: null, tier: 'free' }]
   )
@@ -289,6 +294,8 @@ function AuthModal({
     setTab(t)
     setRegisterStep(1)
     setError('')
+    setForgotMode(false)
+    setForgotSent(false)
   }
 
   async function handleStep1Submit(e: FormEvent) {
@@ -315,6 +322,26 @@ function AuthModal({
       setError(t[authErrorKey(err)])
     } finally {
       setSubmitting(false)
+    }
+  }
+
+  async function handleForgotPassword(e: FormEvent) {
+    e.preventDefault()
+    if (!forgotEmail.trim()) {
+      setError(t.auth_error_fill_required)
+      return
+    }
+    setError('')
+    setForgotSubmitting(true)
+    try {
+      await sendPasswordResetEmail(auth, forgotEmail.trim())
+    } catch {
+      // Swallowed deliberately — including auth/user-not-found. Showing the
+      // same success state whether or not the email has an account avoids
+      // leaking which emails are registered with Mathly.
+    } finally {
+      setForgotSubmitting(false)
+      setForgotSent(true)
     }
   }
 
@@ -454,8 +481,62 @@ function AuthModal({
 
         {/* ── Scrollable step content ──────────────────────────────────── */}
         <div className="overflow-y-auto flex-1">
-        {/* ── Step 1: details ───────────────────────────────────────────── */}
-        {registerStep === 1 && (
+        {/* ── Step 1: details (or the forgot-password sub-form) ──────────── */}
+        {registerStep === 1 && forgotMode && (
+          <div className="px-8 py-6">
+            {forgotSent ? (
+              <>
+                <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+                  {t.auth_forgot_password_sent}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => { setForgotMode(false); setForgotSent(false) }}
+                  className="w-full border border-gray-200 text-gray-600 font-semibold py-3 rounded-lg text-sm hover:bg-gray-50 transition-colors"
+                >
+                  {t.auth_forgot_password_back_to_login}
+                </button>
+              </>
+            ) : (
+              <form onSubmit={handleForgotPassword} className="space-y-4">
+                <p className="text-sm text-gray-500">
+                  {t.auth_forgot_password_subtitle}
+                </p>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">{t.auth_email_label}</label>
+                  <input
+                    type="email"
+                    value={forgotEmail}
+                    onChange={(e) => setForgotEmail(e.target.value)}
+                    placeholder={t.auth_email_placeholder}
+                    autoComplete="email"
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
+                  />
+                </div>
+                {error && (
+                  <p className="text-red-600 text-xs bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                    {error}
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  disabled={forgotSubmitting}
+                  className="w-full bg-[#1e40af] hover:bg-[#1d3a9e] text-white font-semibold py-3 rounded-lg text-sm transition-colors shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {forgotSubmitting ? '…' : t.auth_forgot_password_submit_button}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setForgotMode(false); setError('') }}
+                  className="w-full text-center text-xs text-gray-500 hover:underline pt-1"
+                >
+                  {t.auth_forgot_password_back_to_login}
+                </button>
+              </form>
+            )}
+          </div>
+        )}
+        {registerStep === 1 && !forgotMode && (
           <form onSubmit={handleStep1Submit} className="px-8 py-6 space-y-4">
             {tab === 'register' && (
               <div>
@@ -492,6 +573,15 @@ function AuthModal({
                 autoComplete={tab === 'login' ? 'current-password' : 'new-password'}
                 className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e40af]/25 focus:border-[#1e40af] transition-colors"
               />
+              {tab === 'login' && (
+                <button
+                  type="button"
+                  onClick={() => { setForgotMode(true); setForgotEmail(email); setForgotSent(false); setError('') }}
+                  className="text-xs text-[#1e40af] hover:underline mt-1.5"
+                >
+                  {t.auth_forgot_password_link}
+                </button>
+              )}
             </div>
 
             {tab === 'register' && (
