@@ -13,6 +13,21 @@ type MyThread = {
   adminReply: { text: string; createdAt: Timestamp | null } | null
 }
 
+// "Seen" is tracked client-side only (no Firestore write on read, so no
+// rules change needed) — the timestamp of the last reply this browser has
+// opened the widget to view, per uid. A reply newer than that lights up the
+// dot on the closed FAB; opening the widget clears it.
+const SEEN_KEY_PREFIX = 'mathly_msg_reply_seen_'
+
+function getSeenReplyAt(uid: string): number {
+  if (typeof window === 'undefined') return 0
+  return Number(window.localStorage.getItem(SEEN_KEY_PREFIX + uid) ?? 0)
+}
+
+function setSeenReplyAt(uid: string, ms: number) {
+  if (typeof window !== 'undefined') window.localStorage.setItem(SEEN_KEY_PREFIX + uid, String(ms))
+}
+
 // Hidden on topic/practice pages (/grade/[grade]/[topic]) — that's where the
 // AI Assistant and Report Issue floating buttons already live, and stacking
 // a third floating action there would be clutter. Visible everywhere else,
@@ -56,6 +71,7 @@ export default function MessageWidget() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState(false)
   const [myThread, setMyThread] = useState<MyThread | null>(null)
+  const [hasUnread, setHasUnread] = useState(false)
   const dialogRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -67,11 +83,13 @@ export default function MessageWidget() {
     return () => document.removeEventListener('mousedown', onClickOutside)
   }, [isOpen])
 
-  // Looks up the signed-in user's most recent message every time the widget
-  // opens, so a reply the coach sent from the dashboard shows up here
-  // in-app — no polling while closed, just a fresh check on open.
+  // Looks up the signed-in user's most recent message as soon as they're
+  // known (not gated on isOpen) — this is what lights up the notification
+  // dot on the closed FAB the moment a reply lands, without them having to
+  // open the widget first to find out. Re-checks on open too, in case a
+  // reply arrived since mount.
   useEffect(() => {
-    if (!isOpen || !user) { setMyThread(null); return }
+    if (!user) { setMyThread(null); setHasUnread(false); return }
     let cancelled = false
     getDocs(query(collection(db, 'requests'), where('uid', '==', user.uid), limit(10)))
       .then(snap => {
@@ -83,15 +101,27 @@ export default function MessageWidget() {
           return bt - at
         })
         const latest = docs[0]
+        const adminReply = (latest.adminReply as MyThread['adminReply']) ?? null
         setMyThread({
           id: latest.id as string,
           description: (latest.description as string) ?? '',
-          adminReply: (latest.adminReply as MyThread['adminReply']) ?? null,
+          adminReply,
         })
+        const replyMs = adminReply?.createdAt?.toMillis?.() ?? 0
+        setHasUnread(replyMs > 0 && replyMs > getSeenReplyAt(user.uid))
       })
-      .catch(() => setMyThread(null))
+      .catch(() => {})
     return () => { cancelled = true }
   }, [isOpen, user])
+
+  function openWidget() {
+    setIsOpen(true)
+    setError(false)
+    if (user && myThread?.adminReply?.createdAt) {
+      setSeenReplyAt(user.uid, myThread.adminReply.createdAt.toMillis())
+      setHasUnread(false)
+    }
+  }
 
   if (isTopicPage(pathname ?? '')) return null
 
@@ -129,8 +159,8 @@ export default function MessageWidget() {
     <>
       {!isOpen && (
         <button
-          onClick={() => { setIsOpen(true); setError(false) }}
-          aria-label={t.msg_widget_fab_aria}
+          onClick={openWidget}
+          aria-label={hasUnread ? t.msg_widget_fab_aria_unread : t.msg_widget_fab_aria}
           style={{
             position: 'fixed',
             bottom: '28px',
@@ -153,6 +183,21 @@ export default function MessageWidget() {
           onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#1e40af' }}
         >
           <ChatIcon />
+          {hasUnread && (
+            <span
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                top: '3px',
+                right: '3px',
+                width: '14px',
+                height: '14px',
+                borderRadius: '9999px',
+                backgroundColor: '#ef4444',
+                border: '2px solid #fff',
+              }}
+            />
+          )}
         </button>
       )}
 
