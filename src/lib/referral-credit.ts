@@ -139,6 +139,14 @@ export async function creditReferrer(db: Firestore, referrerUid: string, friendP
 // same-cycle upgrade top-up, so a family isn't credited two "active months"
 // for one calendar month.
 //
+// `eligibleForCredit` (default true) gates whether this specific charge can
+// draw the pool down at all. It's set to false for a family's very first
+// ("activation") charge — someone can accrue credit from friends before ever
+// subscribing themselves (see creditReferrer's uncapped-while-free accrual),
+// and without this flag that pre-existing credit would silently cover their
+// first payment. The active-month/allowance bookkeeping below still runs as
+// normal either way — only the refund is skipped.
+//
 // The balance is decremented *before* calling Paystack (inside the
 // transaction) and restored if the refund call fails — a refund can't itself
 // be part of the Firestore transaction, and reserving first closes the
@@ -150,7 +158,7 @@ export async function consumeReferralCredit(
   uid: string,
   reference: string,
   chargedAmount: number,
-  opts: { countsAsActiveMonth: boolean },
+  opts: { countsAsActiveMonth: boolean; eligibleForCredit?: boolean },
 ): Promise<void> {
   const year = new Date().getFullYear()
   const userRef = db.doc(`users/${uid}`)
@@ -172,7 +180,7 @@ export async function consumeReferralCredit(
       })
       block = { ...block, childMonthsActiveThisYear }
     }
-    const amount = Math.min(block.referralCreditBalance, chargedAmount)
+    const amount = opts.eligibleForCredit === false ? 0 : Math.min(block.referralCreditBalance, chargedAmount)
     if (amount <= 0) {
       tx.set(userRef, block, { merge: true })
       return 0

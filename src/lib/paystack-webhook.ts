@@ -426,10 +426,12 @@ export async function handlePaystackEvent(
     }
 
     // This account's own referral credit pool (from friends *they've*
-    // referred) applies against this charge too, via a partial refund — see
-    // src/lib/referral-credit.ts.
+    // referred) applies against every charge from here on — but not this
+    // one. This is the family's first-ever ("activation") payment, and it's
+    // never discounted by referral credit even if they'd already accrued
+    // some while on the free tier — see src/lib/referral-credit.ts.
     if (data.reference) {
-      await consumeReferralCredit(adminDb, config, uid, data.reference, receivedAmount, { countsAsActiveMonth: true })
+      await consumeReferralCredit(adminDb, config, uid, data.reference, receivedAmount, { countsAsActiveMonth: true, eligibleForCredit: false })
     }
 
     await logEvent(adminDb, event, data, 'complete', null, 'signup')
