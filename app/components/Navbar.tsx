@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import NavAuth, { type NavAuthHandle } from './NavAuth'
-import { useAuth } from '@/app/providers'
+import { useAuth, getActiveChild } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { ADMIN_EMAIL } from '@/src/lib/admin'
 
@@ -43,13 +43,95 @@ function CloseIcon() {
   )
 }
 
+function ChevronDoubleIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
+      className="w-4 h-4 transition-transform duration-200" aria-hidden="true"
+      style={{ transform: open ? 'none' : 'rotate(180deg)' }}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11 16.5L5.5 11l5.5-5.5M18.5 16.5L13 11l5.5-5.5" />
+    </svg>
+  )
+}
+
+function HomeIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+    </svg>
+  )
+}
+
+function PricingIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
+    </svg>
+  )
+}
+
+function LiveClassesIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+    </svg>
+  )
+}
+
+function ContactIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
+    </svg>
+  )
+}
+
+function TopicsIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+    </svg>
+  )
+}
+
+function DashboardIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor" className="w-5 h-5 shrink-0" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+    </svg>
+  )
+}
+
+const navIcons: Record<string, () => React.ReactElement> = {
+  nav_home: HomeIcon,
+  nav_packages: PricingIcon,
+  nav_live_classes: LiveClassesIcon,
+  nav_contact: ContactIcon,
+}
+
 const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const { user, loading, logout, openModal } = useAuth()
   const t = useTranslations()
   const navAuthRef = useRef<NavAuthHandle>(null)
+  const sidebarRef = useRef<HTMLElement>(null)
+
+  // Desktop sidebar collapses back to icon-only on an outside click, same
+  // pattern as NavAuth's dropdown — it's an overlay when expanded (doesn't
+  // reflow page content), so nothing else signals "you're done with this."
+  useEffect(() => {
+    if (!sidebarOpen) return
+    function onClickOutside(e: MouseEvent) {
+      if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node)) setSidebarOpen(false)
+    }
+    document.addEventListener('mousedown', onClickOutside)
+    return () => document.removeEventListener('mousedown', onClickOutside)
+  }, [sidebarOpen])
 
   useImperativeHandle(ref, () => ({
     openMobileMenu: () => setMenuOpen(true),
@@ -110,52 +192,6 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
             </span>
           </Link>
 
-          {/* Desktop nav — centered */}
-          <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-5">
-            {navLinks.map(({ key, href }) => {
-              const isActive = pathname === href
-              return (
-                <Link
-                  key={href}
-                  href={href}
-                  id={`tour-nav-${key}`}
-                  className="flex items-center gap-1.5 text-sm font-medium transition-colors"
-                  style={{ color: isActive ? '#1e40af' : '#0f1f3d' }}
-                >
-                  {t[key]}
-                  {href === '/live-classes' && !hasSessions && (
-                    <span
-                      className="text-[10px] font-bold px-1.5 py-0.5 rounded-full"
-                      style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}
-                    >
-                      {t.nav_coming_soon}
-                    </span>
-                  )}
-                </Link>
-              )
-            })}
-            {user && (
-              <Link
-                href="/select-grade"
-                id="tour-nav-my-topics"
-                className="text-sm font-medium transition-colors"
-                style={{ color: pathname === '/select-grade' ? '#1e40af' : '#0f1f3d' }}
-              >
-                {t.nav_my_topics}
-              </Link>
-            )}
-            {user && (
-              <Link
-                href="/dashboard"
-                id="tour-nav-dashboard"
-                className="text-sm font-medium transition-colors"
-                style={{ color: pathname === '/dashboard' ? '#1e40af' : '#0f1f3d' }}
-              >
-                {t.nav_dashboard}
-              </Link>
-            )}
-          </nav>
-
           {/* Right: desktop auth + mobile hamburger */}
           <div className="flex items-center">
             <div className="hidden md:block">
@@ -174,6 +210,105 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
 
       {/* Spacer so page content starts below the fixed navbar */}
       <div className="h-[57px]" aria-hidden="true" />
+
+      {/* ── Desktop collapsible side panel ───────────────────────────────────
+          Prototype: overlays page content rather than reflowing it (no page
+          file needs to change to make room for it) — collapsed to an
+          icon-only rail by default, widens on click. Replaces the old
+          horizontal nav-link row in the top bar. Spans the full viewport
+          height (top-0) rather than starting below the header — the header
+          (z-50, opaque white) already draws over its top 57px while visible,
+          so this is what fills that strip with matching white the moment
+          the header slides away on scroll, instead of leaving a gap. */}
+      <aside
+        ref={sidebarRef}
+        className="hidden md:flex fixed left-0 top-0 bottom-0 z-40 flex-col pt-[57px] transition-all duration-200 ease-in-out overflow-hidden"
+        style={{
+          width: sidebarOpen ? '224px' : '64px',
+          backgroundColor: '#ffffff',
+          borderRight: '1px solid #e5e7eb',
+          boxShadow: sidebarOpen ? '4px 0 24px rgba(0,0,0,0.08)' : 'none',
+        }}
+        aria-label="Desktop navigation"
+      >
+        <button
+          onClick={() => setSidebarOpen(o => !o)}
+          className="flex items-center gap-3 px-5 py-4 text-[#6b7280] hover:text-[#1e40af] transition-colors shrink-0"
+          aria-label={sidebarOpen ? 'Collapse navigation' : 'Expand navigation'}
+        >
+          <ChevronDoubleIcon open={sidebarOpen} />
+          {sidebarOpen && <span className="text-xs font-semibold uppercase tracking-widest whitespace-nowrap">Menu</span>}
+        </button>
+
+        <nav className="flex flex-col gap-1 px-3 pt-1">
+          {navLinks.map(({ key, href }) => {
+            const isActive = pathname === href
+            const Icon = navIcons[key]
+            return (
+              <Link
+                key={href}
+                href={href}
+                id={`tour-nav-${key}`}
+                title={sidebarOpen ? undefined : t[key]}
+                className="flex items-center gap-3 px-2.5 py-2.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap"
+                style={{
+                  color: isActive ? '#1e40af' : '#374151',
+                  backgroundColor: isActive ? '#eff6ff' : 'transparent',
+                }}
+              >
+                <Icon />
+                {sidebarOpen && (
+                  <span className="flex items-center gap-1.5 min-w-0">
+                    {t[key]}
+                    {href === '/live-classes' && !hasSessions && (
+                      <span
+                        className="text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0"
+                        style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}
+                      >
+                        {t.nav_coming_soon}
+                      </span>
+                    )}
+                  </span>
+                )}
+              </Link>
+            )
+          })}
+          {user && (() => {
+            const myTopicsHref = `/grade/${getActiveChild(user).grade}`
+            const isActive = pathname === myTopicsHref
+            return (
+              <Link
+                href={myTopicsHref}
+                id="tour-nav-my-topics"
+                title={sidebarOpen ? undefined : t.nav_my_topics}
+                className="flex items-center gap-3 px-2.5 py-2.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap"
+                style={{
+                  color: isActive ? '#1e40af' : '#374151',
+                  backgroundColor: isActive ? '#eff6ff' : 'transparent',
+                }}
+              >
+                <TopicsIcon />
+                {sidebarOpen && <span>{t.nav_my_topics}</span>}
+              </Link>
+            )
+          })()}
+          {user && (
+            <Link
+              href="/dashboard"
+              id="tour-nav-dashboard"
+              title={sidebarOpen ? undefined : t.nav_dashboard}
+              className="flex items-center gap-3 px-2.5 py-2.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap"
+              style={{
+                color: pathname === '/dashboard' ? '#1e40af' : '#374151',
+                backgroundColor: pathname === '/dashboard' ? '#eff6ff' : 'transparent',
+              }}
+            >
+              <DashboardIcon />
+              {sidebarOpen && <span>{t.nav_dashboard}</span>}
+            </Link>
+          )}
+        </nav>
+      </aside>
 
       {/* ── Mobile overlay ──────────────────────────────────────────────────── */}
       <div
@@ -234,20 +369,24 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
               </Link>
             )
           })}
-          {user && (
-            <Link
-              href="/select-grade"
-              id="tour-mobile-my-topics"
-              onClick={close}
-              className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
-              style={{
-                color: pathname === '/select-grade' ? '#fff' : '#a8b8d8',
-                backgroundColor: pathname === '/select-grade' ? '#1e40af' : 'transparent',
-              }}
-            >
-              {t.nav_my_topics}
-            </Link>
-          )}
+          {user && (() => {
+            const myTopicsHref = `/grade/${getActiveChild(user).grade}`
+            const isActive = pathname === myTopicsHref
+            return (
+              <Link
+                href={myTopicsHref}
+                id="tour-mobile-my-topics"
+                onClick={close}
+                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                style={{
+                  color: isActive ? '#fff' : '#a8b8d8',
+                  backgroundColor: isActive ? '#1e40af' : 'transparent',
+                }}
+              >
+                {t.nav_my_topics}
+              </Link>
+            )
+          })()}
           {user && (
             <Link
               href="/dashboard"
