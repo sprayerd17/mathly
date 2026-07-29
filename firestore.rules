@@ -82,6 +82,16 @@ service cloud.firestore {
       // its own annual rollover and re-earn a spent allowance early.
       // lastReferralCreditApplied/Reference are a lightweight audit trail for
       // the same feature, same server-only reasoning.
+      // lastPaymentReference (the Paystack transaction reference of the most
+      // recent successful charge) is what paystack-webhook.ts's signup and
+      // upgrade handlers check to recognize "the sibling call already
+      // processed this exact transaction" the instant pendingChildPlans is
+      // cleared, closing a race where the losing call of a duplicate webhook
+      // delivery could log a false 'rejected' alert. A client-tampered value
+      // here couldn't forge billing state (childPlans/subscriptionStatus stay
+      // protected above regardless) — worst case is just breaking that
+      // false-alarm suppression — but it's locked down anyway for the same
+      // server-only consistency as every other field in this list.
       // children is otherwise freely client-writable (name/grade/language
       // edits), but childPlans is locked above to server-only writes — so
       // without this check, a direct Firestore SDK call (bypassing the
@@ -95,7 +105,7 @@ service cloud.firestore {
                                   'paystackCustomerCode', 'paystackSubscriptionCode', 'paystackEmailToken',
                                   'paystackPlanCode', 'pendingPlanCode', 'paystackFounding',
                                   'pendingChildPlans', 'pendingFounding', 'pendingAmount', 'pendingSince',
-                                  'lastPaymentDate', 'lastPaymentAmount', 'accessUntil',
+                                  'lastPaymentDate', 'lastPaymentAmount', 'lastPaymentReference', 'accessUntil',
                                   'referredBy', 'refCode', 'freeSessionClaimed',
                                   'pastDueSince', 'dunningStage',
                                   'testAnalysisUsage', 'aiUsage',

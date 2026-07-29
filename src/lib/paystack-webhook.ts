@@ -258,8 +258,18 @@ export async function handlePaystackEvent(
     if (!expectedChildPlans) {
       // No pending checkout on file — either a genuinely stale/bogus retry,
       // or the other caller (webhook vs. verify-checkout) already consumed
-      // it for this exact reference, which is fine.
-      if (await alreadyProcessed(adminDb, data.reference)) {
+      // it for this exact reference, which is fine. lastPaymentReference is
+      // checked first since it's written in the very same transaction that
+      // clears pendingChildPlans below — so the instant this read observes
+      // pendingChildPlans as null, it also observes lastPaymentReference,
+      // with no window in between. alreadyProcessed() (a payments-collection
+      // query) is a slower fallback: the 'complete' log entry it looks for
+      // isn't written until the end of the winning call, after several
+      // awaited Paystack/email calls, so relying on it alone left a real gap
+      // where the loser's read landed after pendingChildPlans was cleared
+      // but before that log entry existed — a false 'rejected' alert for a
+      // transaction that actually succeeded.
+      if (userData.lastPaymentReference === data.reference || await alreadyProcessed(adminDb, data.reference)) {
         await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'signup')
         return
       }
@@ -328,6 +338,7 @@ export async function handlePaystackEvent(
         pendingSince: null,
         lastPaymentDate: new Date().toISOString(),
         lastPaymentAmount: receivedAmount,
+        lastPaymentReference: data.reference ?? null,
         pastDueSince: null,
         dunningStage: null,
       })
@@ -495,8 +506,11 @@ export async function handlePaystackEvent(
     const userData = userSnap.data()!
     const expectedChildPlans: Tier[] | undefined | null = userData.pendingChildPlans
     if (!expectedChildPlans) {
-      // Same duplicate-delivery case as the signup branch above.
-      if (await alreadyProcessed(adminDb, data.reference)) {
+      // Same duplicate-delivery case as the signup branch above, closed the
+      // same way — lastPaymentReference is written in the same transaction
+      // that clears pendingChildPlans, so it's visible to the loser's read
+      // with no gap, unlike alreadyProcessed()'s slower payments-log lookup.
+      if (userData.lastPaymentReference === data.reference || await alreadyProcessed(adminDb, data.reference)) {
         await logEvent(adminDb, event, data, 'complete', 'duplicate_webhook', 'upgrade')
         return
       }
@@ -575,6 +589,7 @@ export async function handlePaystackEvent(
         pendingAmount: null,
         lastPaymentDate: new Date().toISOString(),
         lastPaymentAmount: receivedAmount,
+        lastPaymentReference: data.reference ?? null,
         // A family stuck past_due from a failed renewal can still upgrade —
         // paying this one-time charge proves the card works right now.
         // Without clearing these, the dunning cron would still auto-cancel
@@ -722,6 +737,7 @@ export async function handlePaystackEvent(
       subscriptionStatus: 'active',
       lastPaymentDate: new Date().toISOString(),
       lastPaymentAmount: receivedAmount,
+      lastPaymentReference: data.reference ?? null,
       pastDueSince: null,
       dunningStage: null,
     })
