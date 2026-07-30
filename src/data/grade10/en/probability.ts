@@ -7,6 +7,11 @@ import type { TopicData } from '@/src/data/grade4/en/numbers-operations'
 const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</span>`
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
+// Stacked numerator/denominator fraction notation (proof-of-concept) instead
+// of a plain "n/d" slash — renders as an actual fraction bar via the
+// site's existing whitelisted-HTML pipeline (no math library needed).
+const frac = (num: string, den: string) =>
+  `<span style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 2px;line-height:1.15;font-size:0.95em;"><span style="border-bottom:1.5px solid currentColor;padding:0 3px;">${num}</span><span style="padding:0 3px;">${den}</span></span>`
 
 export const topicData: TopicData = {
   title: 'Probability',
@@ -116,10 +121,10 @@ export const topicData: TopicData = {
         },
         {
           question: 'Using the same data (class of 30, 18 Maths, 15 Science, 8 both), find the probability a randomly selected student studies Maths only (not Science).',
-          answer: `P(Maths only) = ${gr('1/3')}`,
+          answer: `P(Maths only) = ${gr(frac('1', '3'))}`,
           steps: [
             `${bl('Maths only')} = ${bl('18')} − ${gr('8')} = ${bl('10')}`,
-            `P(Maths only) = ${bl('10')} ÷ 30 = ${gr('1/3')}`,
+            `P(Maths only) = ${bl('10')} ÷ 30 = ${gr(frac('1', '3'))}`,
           ],
         },
       ],
@@ -181,7 +186,7 @@ export const topicData: TopicData = {
           answer: `${gr('Both mutually exclusive AND complementary')}`,
           steps: [
             `They cannot both happen at once — ${bl('mutually exclusive')} (P(even AND odd) = 0).`,
-            `Together they cover every possible outcome on the dice (1–6) — so they are also ${or('complementary')}: P(even) + P(odd) = 3/6 + 3/6 = ${gr('1')}.`,
+            `Together they cover every possible outcome on the dice (1–6) — so they are also ${or('complementary')}: P(even) + P(odd) = ${frac('3', '6')} + ${frac('3', '6')} = ${gr('1')}.`,
           ],
         },
         {
@@ -283,22 +288,22 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Sipho rolls a dice 60 times and gets a 6 exactly 8 times. Find the relative frequency of rolling a 6.',
-      answer: '8/60 or 2/15',
+      answer: `${frac('8', '60')} or ${frac('2', '15')}`,
       checkMode: 'auto',
       correctAnswer: '2/15',
       correctAnswers: ['2/15', '8/60'],
-      explanation: 'Relative frequency = number of times event occurred ÷ total trials = 8 ÷ 60 = 8/60 = 2/15 ✓',
+      explanation: `Relative frequency = number of times event occurred ÷ total trials = 8 ÷ 60 = ${frac('8', '60')} = ${frac('2', '15')} ✓`,
     },
 
     // ── Q2 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Compare the relative frequency in Q1 to the theoretical probability of rolling a 6.',
-      answer: 'Theoretical probability = 1/6 ≈ 0.167; relative frequency ≈ 0.133; fairly close',
+      answer: `Theoretical probability = ${frac('1', '6')} ≈ 0.167; relative frequency ≈ 0.133; fairly close`,
       checkMode: 'auto',
       correctAnswer: '1/6',
       correctAnswers: ['1/6', '0.167', '0.1667'],
-      explanation: 'Theoretical probability of rolling a 6 = 1 ÷ 6 = 1/6 ≈ 0.167. Relative frequency from Q1 = 8 ÷ 60 ≈ 0.133. These are fairly close — the small difference is expected with only 60 trials. ✓',
+      explanation: `Theoretical probability of rolling a 6 = 1 ÷ 6 = ${frac('1', '6')} ≈ 0.167. Relative frequency from Q1 = 8 ÷ 60 ≈ 0.133. These are fairly close — the small difference is expected with only 60 trials. ✓`,
     },
 
     // ── Q3 Hard ───────────────────────────────────────────────────────────────
@@ -323,11 +328,11 @@ export const topicData: TopicData = {
     {
       difficulty: 'Medium',
       question: 'Using the data from Q4 (class of 25: 15 play soccer, 10 play netball, 5 play both), find the probability that a randomly selected student plays soccer only.',
-      answer: '10/25 or 2/5',
+      answer: `${frac('10', '25')} or ${frac('2', '5')}`,
       checkMode: 'auto',
       correctAnswer: '2/5',
       correctAnswers: ['2/5', '10/25'],
-      explanation: 'Soccer only = 15 − 5 = 10. P(soccer only) = 10 ÷ 25 = 10/25 = 2/5 ✓',
+      explanation: `Soccer only = 15 − 5 = 10. P(soccer only) = 10 ÷ 25 = ${frac('10', '25')} = ${frac('2', '5')} ✓`,
     },
 
     // ── Q6 Hard ───────────────────────────────────────────────────────────────
