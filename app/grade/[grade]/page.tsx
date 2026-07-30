@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import NavAuth from '@/app/components/NavAuth'
+import FreePlanBanner from '@/app/components/FreePlanBanner'
 import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { getTopics } from '@/src/data/topic-registry'
@@ -95,6 +96,8 @@ export default function GradePage() {
           <NavAuth />
         </div>
       </header>
+
+      <FreePlanBanner />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* Grade heading */}

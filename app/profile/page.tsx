@@ -187,7 +187,7 @@ export default function ProfilePage() {
 
   const refCode = user?.refCode ?? ''
 
-  const referralUrl = `mathly.co.za/join?ref=${refCode}`
+  const referralUrl = `mathly.co.za/pricing?ref=${refCode}`
 
   function copyLink() {
     navigator.clipboard?.writeText(`https://${referralUrl}`)

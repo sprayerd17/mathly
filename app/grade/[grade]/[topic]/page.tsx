@@ -4,6 +4,7 @@ import { use, useState, useEffect } from 'react'
 import Link from 'next/link'
 import TopicTabs from '@/app/components/TopicTabs'
 import NavAuth from '@/app/components/NavAuth'
+import FreePlanBanner from '@/app/components/FreePlanBanner'
 import { useAuth, getActiveChild, getActiveTier } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { getTopics } from '@/src/data/topic-registry'
@@ -108,6 +109,8 @@ export default function TopicPage({
           <NavAuth />
         </div>
       </header>
+
+      <FreePlanBanner />
 
       <main>
         <TopicTabs topicName={topicName} topicSlug={topic} grade={grade} isLocked={isLocked} studyGuideData={studyGuideData} />

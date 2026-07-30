@@ -24,7 +24,7 @@ import { doc, getDoc, setDoc, updateDoc, serverTimestamp, Timestamp } from 'fire
 import { auth, db } from '@/src/lib/firebase'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateCheckout } from '@/src/lib/paystack-client'
-import { computeFamilyPrice, FOUNDING_PRICE, type Tier, type FoundingStatus } from '@/src/lib/pricing'
+import { computeFamilyPrice, FOUNDING_PRICE, FULL_PRICE, type Tier, type FoundingStatus } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -240,6 +240,50 @@ export function LanguageCards({
   )
 }
 
+// ─── Plan info modal ────────────────────────────────────────────────────────
+// Opened from the small "i" badge on each tier tile in the registration
+// wizard's per-child plan picker — shows exactly what that tier includes,
+// since the tile itself only has room for a name and a price. Rendered above
+// AuthModal's own overlay (z-[300] > z-[200]).
+
+function PlanInfoModal({ tier, onClose }: { tier: Tier; onClose: () => void }) {
+  const t = useTranslations()
+  const title = tier === 'free' ? t.dash_package_free : tier === 'pro' ? t.dash_package_pro : t.dash_package_max
+  const body = tier === 'free' ? t.auth_plan_info_free_body : tier === 'pro' ? t.auth_plan_info_pro_body : t.auth_plan_info_max_body
+
+  return (
+    <div className="fixed inset-0 z-[300] flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(15, 31, 61, 0.6)', backdropFilter: 'blur(2px)' }} aria-hidden="true" />
+      <div
+        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <div>
+            <h3 className="text-base font-bold" style={{ color: '#0f1f3d' }}>{title}</h3>
+            {tier !== 'free' && (
+              <p className="text-xs font-semibold mt-0.5" style={{ color: '#1e40af' }}>
+                {`R${FULL_PRICE[tier]}${t.pricing_per_month} — ${t.auth_plan_info_founding_label} R${FOUNDING_PRICE[tier]}${t.pricing_per_month}`}
+              </p>
+            )}
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-md shrink-0"
+            aria-label={t.auth_close_label}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <p className="text-sm text-gray-600 leading-relaxed">{body}</p>
+      </div>
+    </div>
+  )
+}
+
 // ─── Auth Modal ───────────────────────────────────────────────────────────────
 
 function AuthModal({
@@ -266,13 +310,18 @@ function AuthModal({
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  // Pre-filled from a /join?ref= link (see app/join/page.tsx) when present,
-  // but always shown and editable — not everyone arrives via the link, so
-  // typing a code in by hand has to work just as well.
+  // Pre-filled from a /pricing?ref= link (see the ReferralCapture component
+  // in app/pricing/page.tsx, which stashes it under mathly_referral_code) or
+  // an older /join?ref= link (app/join/page.tsx, mathly_pending_ref) — but
+  // always shown and editable, since not everyone arrives via a link.
   const [referralCode, setReferralCode] = useState(
-    () => (typeof window !== 'undefined' && localStorage.getItem('mathly_pending_ref')) || ''
+    () =>
+      (typeof window !== 'undefined' &&
+        (localStorage.getItem('mathly_referral_code') || localStorage.getItem('mathly_pending_ref'))) ||
+      ''
   )
   const [planSize, setPlanSize] = useState<'solo' | 'family2' | 'family3'>('solo')
+  const [infoTier, setInfoTier] = useState<Tier | null>(null)
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [redirecting, setRedirecting] = useState(false)
@@ -394,6 +443,7 @@ function AuthModal({
   const onRegisterStep = tab === 'register' && registerStep > 1
 
   return (
+    <>
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4"
       onClick={redirecting ? undefined : onClose}
@@ -757,21 +807,36 @@ function AuthModal({
                         {(['free', 'pro', 'max'] as const).map(tier => {
                           const active = child.tier === tier
                           const price = tier === 'free' ? 'R0' : `R${FOUNDING_PRICE[tier]}${t.pricing_per_month}`
+                          const tierLabel = tier === 'free' ? t.dash_package_free : tier === 'pro' ? t.dash_package_pro : t.dash_package_max
                           return (
-                            <button
-                              key={tier}
-                              type="button"
-                              onClick={() => setRegChildren(prev => prev.map((c, idx) => idx === i ? { ...c, tier } : c))}
-                              className="py-2.5 px-2 rounded-xl text-xs font-semibold transition-all border text-center flex flex-col items-center gap-0.5 disabled:opacity-40 disabled:cursor-not-allowed"
-                              style={
-                                active
-                                  ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
-                                  : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
-                              }
-                            >
-                              <span>{tier === 'free' ? t.dash_package_free : tier === 'pro' ? t.dash_package_pro : t.dash_package_max}</span>
-                              <span className="text-[10px] font-normal" style={{ color: active ? '#dbeafe' : '#9ca3af' }}>{price}</span>
-                            </button>
+                            <div key={tier} className="relative">
+                              <button
+                                type="button"
+                                onClick={() => setRegChildren(prev => prev.map((c, idx) => idx === i ? { ...c, tier } : c))}
+                                className="w-full py-2.5 px-2 rounded-xl text-xs font-semibold transition-all border text-center flex flex-col items-center gap-0.5 disabled:opacity-40 disabled:cursor-not-allowed"
+                                style={
+                                  active
+                                    ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
+                                    : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
+                                }
+                              >
+                                <span>{tierLabel}</span>
+                                <span className="text-[10px] font-normal" style={{ color: active ? '#dbeafe' : '#9ca3af' }}>{price}</span>
+                              </button>
+                              <button
+                                type="button"
+                                onClick={(e) => { e.stopPropagation(); setInfoTier(tier) }}
+                                aria-label={t.auth_plan_info_button_label.replace('{plan}', tierLabel)}
+                                className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shadow-sm transition-colors"
+                                style={
+                                  active
+                                    ? { backgroundColor: '#fff', color: '#1e40af', border: '1px solid #1e40af' }
+                                    : { backgroundColor: '#0f1f3d', color: '#fff' }
+                                }
+                              >
+                                i
+                              </button>
+                            </div>
                           )
                         })}
                       </div>
@@ -851,6 +916,8 @@ function AuthModal({
         )}
       </div>
     </div>
+    {infoTier && <PlanInfoModal tier={infoTier} onClose={() => setInfoTier(null)} />}
+    </>
   )
 }
 
@@ -1134,15 +1201,21 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       registeringUidRef.current = null
     }
 
+    // Signup itself has now succeeded (the Firestore account exists) —
+    // mathly_referral_code (see ReferralCapture in app/pricing/page.tsx) has
+    // done its job regardless of whether the best-effort attach below
+    // succeeds, since referredByCode already carries whatever value it held.
+    if (typeof window !== 'undefined') localStorage.removeItem('mathly_referral_code')
+
     // Was a referral code entered (typed in manually, or pre-filled from a
-    // /join?ref= link) or otherwise pending in localStorage? Attach it now,
-    // server-side — best-effort, an invalid/missing code or a failed request
-    // should never block registration. If this attempt fails (closed the tab,
-    // flaky connection right after signing up), the code stays in
-    // localStorage and tryAttachPendingReferral retries on every subsequent
-    // login until it succeeds — the referrer's credit depends on this
-    // actually landing eventually, so a single silent best-effort try isn't
-    // enough on its own.
+    // /pricing?ref= or /join?ref= link) or otherwise pending in localStorage?
+    // Attach it now, server-side — best-effort, an invalid/missing code or a
+    // failed request should never block registration. If this attempt fails
+    // (closed the tab, flaky connection right after signing up), the code
+    // stays in localStorage and tryAttachPendingReferral retries on every
+    // subsequent login until it succeeds — the referrer's credit depends on
+    // this actually landing eventually, so a single silent best-effort try
+    // isn't enough on its own.
     const pendingRefCode = referredByCode?.trim() || localStorage.getItem('mathly_pending_ref')
     if (pendingRefCode) {
       try {

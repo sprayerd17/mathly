@@ -1,10 +1,28 @@
 'use client'
 
+import { Suspense, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
 import FamilyPlanBuilder from './FamilyPlanBuilder'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
+
+// Stashes a ?ref= param into localStorage the instant the page loads, before
+// the visitor does anything else — AuthModal's referral-code field (see
+// app/providers.tsx) reads it back out the moment it mounts. Wrapped in its
+// own component + Suspense since useSearchParams() forces client-side
+// rendering for whatever it's called in, and this keeps that bailout scoped
+// to just this invisible sliver instead of the whole page.
+function ReferralCapture() {
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    const ref = searchParams.get('ref')
+    if (ref) localStorage.setItem('mathly_referral_code', ref)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  return null
+}
 
 function useTableFeatures() {
   const t = useTranslations()
@@ -49,6 +67,9 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
+      <Suspense fallback={null}>
+        <ReferralCapture />
+      </Suspense>
       <Navbar />
 
       <main className="flex-1">
