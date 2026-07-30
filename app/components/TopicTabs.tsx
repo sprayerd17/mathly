@@ -9,6 +9,7 @@ import ReportIssueButton from '@/app/components/ReportIssueButton'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { logActivityCompletion } from '@/src/lib/activity-log'
 import { getTopicStudied, setTopicStudied } from '@/src/lib/study-progress'
+import { getPracticeSetProgress, savePracticeSetProgress } from '@/src/lib/practice-set-progress'
 import { getTopics } from '@/src/data/topic-registry'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -168,6 +169,15 @@ function decodeEntities(text: string): string {
 const HTML_TAG_RE = /<\/?(?:span|strong|em|sub|sup|br|p|div|ul|ol|li|table|thead|tbody|tr|td|th|h3|svg|circle|line|path|polygon|rect|text|g|polyline)(?:\s[^<>]*)?\/?>/i
 function looksLikeHtml(text: string): boolean {
   return HTML_TAG_RE.test(text)
+}
+
+// Mirrors the `isMC` check inside OpenQuestionCard — used by the parent
+// practice components to know, per-question, whether "answered" should mean
+// "picked an option" (trackable before reveal) or fall back to the old
+// always-unblocked behaviour for free-text questions (whose input state
+// isn't lifted to the parent).
+function isMCQuestion(q: OpenQuestion): boolean {
+  return !(q.parts && q.parts.length > 0) && Array.isArray(q.options) && q.options.length > 0 && typeof q.correctIndex === 'number'
 }
 
 function splitIntoParagraphs(text: string, sentencesPerParagraph = 3): string[] {
@@ -391,11 +401,16 @@ function OpenQuestionCard({
   index,
   revealed,
   onResult,
+  onAnswered,
 }: {
   question: OpenQuestion
   index: number
   revealed: boolean
   onResult: (partResults: boolean[]) => void
+  // MC questions only score on reveal (see the auto-grading effect below),
+  // so a "have they engaged with every question" gate can't wait for
+  // onResult — it fires this the instant an option is picked instead.
+  onAnswered?: () => void
 }) {
   const [singleInput, setSingleInput] = useState('')
   const [partInputs, setPartInputs] = useState<string[]>(
@@ -406,10 +421,12 @@ function OpenQuestionCard({
     (question.parts ?? []).map(() => null)
   )
   const [resultSent, setResultSent] = useState(false)
+  const [selectedOption, setSelectedOption] = useState<number | null>(null)
   const t = useTranslations()
 
   const d = DIFFICULTY_STYLE[question.difficulty] ?? DIFFICULTY_STYLE['Medium']
   const parts = question.parts ?? []
+  const isMC = !parts.length && Array.isArray(question.options) && question.options.length > 0 && typeof question.correctIndex === 'number'
 
   function handleSelfMark(correct: boolean) {
     if (resultSent) return
@@ -430,6 +447,15 @@ function OpenQuestionCard({
   }
 
   const revealedAnswerText = question.answer || question.correctAnswer || question.correctAnswers?.[0] || ''
+
+  // MC questions grade themselves off the option the student picked the
+  // instant the set is revealed — no self-mark step, since that's exactly
+  // the honesty gap MC exists to close.
+  useEffect(() => {
+    if (!isMC || !revealed) return
+    handleSelfMark(selectedOption === question.correctIndex)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMC, revealed])
 
   return (
     <div className="bg-white border border-gray-100 rounded-xl shadow-sm" style={{ padding: '24px' }}>
@@ -536,6 +562,68 @@ function OpenQuestionCard({
                 </div>
               )
             })}
+          </div>
+        ) : isMC ? (
+          <div>
+            <div className="space-y-2">
+              {question.options!.map((opt, oi) => {
+                const isCorrect = oi === question.correctIndex
+                const isSelected = oi === selectedOption
+                let btnClass = 'w-full text-left text-sm px-4 py-3 rounded-xl border transition-all duration-150 ease-out active:scale-[0.98] active:duration-75 font-medium '
+                if (!revealed) {
+                  btnClass += isSelected
+                    ? 'border-[#1e40af] bg-blue-50 text-[#1e40af]'
+                    : 'border-gray-200 text-gray-700 hover:border-[#1e40af] hover:bg-blue-50 hover:text-[#1e40af]'
+                } else if (isCorrect) {
+                  btnClass += 'border-green-400 bg-green-50 text-green-800'
+                } else if (isSelected) {
+                  btnClass += 'border-red-300 bg-red-50 text-red-700'
+                } else {
+                  btnClass += 'border-gray-100 text-gray-500'
+                }
+                return (
+                  <button
+                    key={oi}
+                    onClick={() => { if (!revealed) { setSelectedOption(oi); onAnswered?.() } }}
+                    disabled={revealed}
+                    className={btnClass}
+                  >
+                    <span className="inline-flex items-center gap-2.5">
+                      <span className="shrink-0 w-5 h-5 rounded-full border border-current flex items-center justify-center text-xs font-bold">
+                        {revealed && isCorrect ? '✓' : revealed && isSelected ? '✗' : String.fromCharCode(65 + oi)}
+                      </span>
+                      {looksLikeHtml(opt) ? (
+                        <span className="topic-html" dangerouslySetInnerHTML={{ __html: opt }} />
+                      ) : (
+                        decodeEntities(opt)
+                      )}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+            {revealed && question.explanation && (
+              <div
+                className="mt-3 rounded-xl px-4 py-4"
+                style={
+                  selectedOption === question.correctIndex
+                    ? { backgroundColor: '#f0fdf4', border: '1px solid #86efac' }
+                    : { backgroundColor: '#fef2f2', border: '1px solid #fca5a5' }
+                }
+              >
+                <p
+                  className="text-xs font-semibold uppercase tracking-wide mb-2"
+                  style={{ color: selectedOption === question.correctIndex ? '#16a34a' : '#dc2626' }}
+                >
+                  {selectedOption === question.correctIndex ? t.topic_marked_correct : t.topic_marked_incorrect}
+                </p>
+                {looksLikeHtml(question.explanation) ? (
+                  <p className="topic-html text-sm" style={{ color: '#374151', lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.explanation }} />
+                ) : (
+                  <p className="text-sm whitespace-pre-line" style={{ color: '#374151', lineHeight: 1.8 }}>{decodeEntities(question.explanation)}</p>
+                )}
+              </div>
+            )}
           </div>
         ) : (
           <div>
@@ -667,7 +755,104 @@ function ResultsSummary({
   )
 }
 
+// Temporary rollout notice shown above every practice surface while
+// questions are being converted from free-text to multiple choice —
+// remove once the conversion is complete for all grades.
+function PracticeFormatNotice() {
+  const t = useTranslations()
+  return (
+    <div className="flex items-start gap-3 bg-blue-50 border border-blue-100 rounded-xl px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 shrink-0 text-[#1e40af] mt-0.5">
+        <path
+          fillRule="evenodd"
+          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+          clipRule="evenodd"
+        />
+      </svg>
+      <p className="text-sm text-[#1e3a6d]" style={{ lineHeight: 1.6 }}>{t.topic_practice_format_notice}</p>
+    </div>
+  )
+}
+
 // ─── Set-based practice (multiple named sets, e.g. 4 sets of 25) ──────────────
+//
+// Sets must be completed in order (1 -> 2 -> 3) and, once submitted, a set is
+// locked for good — no re-answering, no per-set "Try again". Otherwise a
+// student can just keep re-taking Set 1 until they've memorised the answers,
+// which isn't a real signal of understanding. Only once every set in the
+// cycle is done do they get a combined average + improvement-vs-last-time,
+// and a single "Retry all sets" that starts the whole cycle over.
+
+function LockedSetCard({ score, total }: { score: number; total: number }) {
+  const t = useTranslations()
+  const pct = total > 0 ? score / total : 0
+  const barColor = pct === 1 ? '#16a34a' : pct >= 0.6 ? '#1e40af' : '#dc2626'
+  return (
+    <div className="bg-white border border-gray-200 rounded-2xl px-6 py-6 shadow-sm">
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <div>
+          <p className="text-2xl font-bold text-[#0f1f3d] mb-1">
+            {score} <span className="text-base font-medium text-gray-500">/ {total}</span>
+          </p>
+          <p className="text-sm text-gray-600">{t.topic_set_locked_note}</p>
+        </div>
+        <span className="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-green-50 text-green-700 border border-green-200">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
+            <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+          </svg>
+          {t.topic_set_completed_badge}
+        </span>
+      </div>
+      <div className="h-2.5 w-full rounded-full bg-gray-100 overflow-hidden">
+        <div className="h-full rounded-full" style={{ width: `${pct * 100}%`, backgroundColor: barColor }} />
+      </div>
+    </div>
+  )
+}
+
+function CycleCompleteCard({
+  average,
+  previousAverage,
+  onRetry,
+}: {
+  average: number
+  previousAverage: number | null
+  onRetry: () => void
+}) {
+  const t = useTranslations()
+  const diff = previousAverage !== null ? average - previousAverage : null
+
+  return (
+    <div className="bg-white border border-gray-200 rounded-2xl px-6 py-6 shadow-sm">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">
+            {t.topic_cycle_complete_heading}
+          </p>
+          <p className="text-2xl font-bold text-[#0f1f3d] mb-1">
+            {average}% <span className="text-base font-medium text-gray-500">{t.topic_cycle_average_label}</span>
+          </p>
+          {diff === null ? (
+            <p className="text-sm text-gray-500">{t.topic_cycle_first_attempt}</p>
+          ) : diff > 0 ? (
+            <p className="text-sm font-semibold text-green-600">{t.topic_cycle_improved.replace('{diff}', String(diff))}</p>
+          ) : diff < 0 ? (
+            <p className="text-sm font-semibold text-red-600">{t.topic_cycle_declined.replace('{diff}', String(Math.abs(diff)))}</p>
+          ) : (
+            <p className="text-sm text-gray-500">{t.topic_cycle_no_change}</p>
+          )}
+        </div>
+        <button
+          onClick={onRetry}
+          className="shrink-0 px-4 py-2.5 rounded-xl text-sm font-semibold text-white hover:opacity-90 transition-colors"
+          style={{ backgroundColor: '#1e40af' }}
+        >
+          {t.topic_retry_all_sets}
+        </button>
+      </div>
+    </div>
+  )
+}
 
 function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlug: string; grade: number }) {
   const [activeSet, setActiveSet] = useState(0)
@@ -676,22 +861,73 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
   )
   const [revealedBySet, setRevealedBySet] = useState<boolean[]>(() => sets.map(() => false))
   const [resetKeyBySet, setResetKeyBySet] = useState<number[]>(() => sets.map(() => 0))
+  // MC questions only land in `resultsBySet` once revealed (see the
+  // auto-grading effect in OpenQuestionCard), so gating "Reveal Answers" on
+  // that would be circular — it'd never unlock. This tracks "has the
+  // student picked/typed something" instead, which is available pre-reveal.
+  // Non-MC questions default to true (their input state isn't lifted here),
+  // preserving the original always-enabled behaviour for free-text sets.
+  const [answeredBySet, setAnsweredBySet] = useState<boolean[][]>(() =>
+    sets.map((s) => s.questions.map((q) => !isMCQuestion(q)))
+  )
+  // Sequential lock state, persisted per child+topic so it survives a reload
+  // or a return weeks later — see the comment above this component.
+  const [setDone, setSetDone] = useState<boolean[]>(() => sets.map(() => false))
+  const [setScore, setSetScore] = useState<number[]>(() => sets.map(() => 0))
+  const [lastCycleAverage, setLastCycleAverage] = useState<number | null>(null)
+  const [progressLoaded, setProgressLoaded] = useState(false)
+
   const t = useTranslations()
   const { user } = useAuth()
   const loggedSetsRef = useRef<Set<number>>(new Set())
+  const childIndex = user ? Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1) : 0
+
+  const totalsBySet = sets.map((s) =>
+    s.questions.reduce((sum, q) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1), 0)
+  )
+
+  useEffect(() => {
+    let cancelled = false
+    if (!user) {
+      setProgressLoaded(true)
+      return
+    }
+    getPracticeSetProgress({ uid: user.uid, childIndex, grade, topicSlug }).then((progress) => {
+      if (cancelled) return
+      if (progress && progress.sets.length === sets.length) {
+        setSetDone(progress.sets.map((s) => s.done))
+        setSetScore(progress.sets.map((s) => s.score))
+        setLastCycleAverage(progress.lastCycleAverage)
+        const firstIncomplete = progress.sets.findIndex((s) => !s.done)
+        setActiveSet(firstIncomplete === -1 ? 0 : firstIncomplete)
+        setRevealedBySet(progress.sets.map((s) => s.done))
+      }
+      setProgressLoaded(true)
+    })
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.uid, childIndex, grade, topicSlug, sets.length])
 
   const current = sets[activeSet]
   const currentResults = resultsBySet[activeSet]
+  const currentAnswered = answeredBySet[activeSet]
   const revealed = revealedBySet[activeSet]
-  const totalMarks = current.questions.reduce(
-    (sum, q) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1),
-    0
-  )
+  const totalMarks = totalsBySet[activeSet]
 
   function handleResult(qIndex: number, partResults: boolean[]) {
     setResultsBySet((prev) => {
       const next = prev.map((arr) => [...arr])
       next[activeSet][qIndex] = partResults
+      return next
+    })
+  }
+
+  function handleAnswered(qIndex: number) {
+    setAnsweredBySet((prev) => {
+      const next = prev.map((arr) => [...arr])
+      next[activeSet][qIndex] = true
       return next
     })
   }
@@ -704,136 +940,204 @@ function SetPractice({ sets, topicSlug, grade }: { sets: PracticeSet[]; topicSlu
     })
   }
 
-  function handleReset() {
-    setResultsBySet((prev) => {
-      const next = prev.map((arr) => [...arr])
-      next[activeSet] = Array(current.questions.length).fill(null)
-      return next
-    })
-    setRevealedBySet((prev) => {
-      const next = [...prev]
-      next[activeSet] = false
-      return next
-    })
-    setResetKeyBySet((prev) => {
-      const next = [...prev]
-      next[activeSet] = next[activeSet] + 1
-      return next
-    })
-    loggedSetsRef.current.delete(activeSet)
-  }
-
   const allAnswered = currentResults.every((r) => r !== null)
   const score = currentResults.reduce((sum, r) => sum + (r ? r.filter(Boolean).length : 0), 0)
+  const hasLiveDetail = revealed && allAnswered
+  const unlockedIndex = setDone.every(Boolean) ? -1 : setDone.findIndex((d) => !d)
 
+  // The moment the active (unlocked) set is fully answered and revealed,
+  // lock it in for good: record its score, persist it, and move on to the
+  // next set in the sequence.
   useEffect(() => {
-    if (!allAnswered || !user || loggedSetsRef.current.has(activeSet)) return
+    if (!progressLoaded || !allAnswered || setDone[activeSet] || loggedSetsRef.current.has(activeSet)) return
     loggedSetsRef.current.add(activeSet)
-    logActivityCompletion({
-      uid: user.uid,
-      childIndex: Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1),
-      grade,
-      topicSlug,
-      activityType: 'practiceSet',
-      setName: current.name ?? null,
-      score,
-      total: totalMarks,
-    })
-  }, [allAnswered, activeSet, score, totalMarks, user, grade, topicSlug, current.name])
+
+    if (user) {
+      logActivityCompletion({
+        uid: user.uid,
+        childIndex,
+        grade,
+        topicSlug,
+        activityType: 'practiceSet',
+        setName: current.name ?? null,
+        score,
+        total: totalMarks,
+      })
+    }
+
+    const nextDone = setDone.map((d, i) => (i === activeSet ? true : d))
+    const nextScores = setScore.map((s, i) => (i === activeSet ? score : s))
+    setSetDone(nextDone)
+    setSetScore(nextScores)
+
+    if (user) {
+      savePracticeSetProgress({
+        uid: user.uid,
+        childIndex,
+        grade,
+        topicSlug,
+        sets: nextDone.map((done, i) => ({ done, score: nextScores[i] })),
+        lastCycleAverage,
+      }).catch((err) => console.error('[practice-set-progress] save failed', err))
+    }
+
+    if (activeSet + 1 < sets.length) {
+      setActiveSet(activeSet + 1)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [progressLoaded, allAnswered, activeSet, score, totalMarks, user, grade, topicSlug, current.name])
+
+  function handleRetryAll() {
+    const totalScore = setScore.reduce((sum, s) => sum + s, 0)
+    const totalMarksAll = totalsBySet.reduce((sum, t) => sum + t, 0)
+    const average = totalMarksAll > 0 ? Math.round((totalScore / totalMarksAll) * 100) : 0
+
+    setResultsBySet(sets.map((s) => Array(s.questions.length).fill(null)))
+    setRevealedBySet(sets.map(() => false))
+    setAnsweredBySet(sets.map((s) => s.questions.map((q) => !isMCQuestion(q))))
+    setResetKeyBySet((prev) => prev.map((k) => k + 1))
+    setSetDone(sets.map(() => false))
+    setSetScore(sets.map(() => 0))
+    setLastCycleAverage(average)
+    setActiveSet(0)
+    loggedSetsRef.current.clear()
+
+    if (user) {
+      savePracticeSetProgress({
+        uid: user.uid,
+        childIndex,
+        grade,
+        topicSlug,
+        sets: sets.map(() => ({ done: false, score: 0 })),
+        lastCycleAverage: average,
+      }).catch((err) => console.error('[practice-set-progress] save failed', err))
+    }
+  }
+
+  const cycleAverage = (() => {
+    if (unlockedIndex !== -1) return null
+    const totalScore = setScore.reduce((sum, s) => sum + s, 0)
+    const totalMarksAll = totalsBySet.reduce((sum, t) => sum + t, 0)
+    return totalMarksAll > 0 ? Math.round((totalScore / totalMarksAll) * 100) : 0
+  })()
 
   return (
     <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       <div>
         <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
         <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
-          {t.topic_reveal_instructions}
+          {t.topic_set_sequence_instructions}
         </p>
       </div>
 
-      {/* Set selector */}
-      <div className="flex flex-wrap gap-2">
-        {sets.map((set, i) => {
-          const setResults = resultsBySet[i]
-          const setAnswered = setResults.every((r) => r !== null)
-          const setScore = setResults.reduce((sum, r) => sum + (r ? r.filter(Boolean).length : 0), 0)
-          const setTotal = set.questions.reduce(
-            (sum, q) => sum + (q.parts && q.parts.length > 0 ? q.parts.length : 1),
-            0
-          )
-          return (
-            <button
-              key={i}
-              onClick={() => setActiveSet(i)}
-              className={`px-4 py-2.5 rounded-xl text-sm font-semibold border transition-colors flex items-center gap-2 ${
-                activeSet === i
-                  ? 'border-[#1e40af] bg-blue-50 text-[#1e40af]'
-                  : 'border-gray-200 text-gray-600 hover:border-gray-300'
-              }`}
-            >
-              {set.name ? decodeEntities(set.name) : t.topic_set_label.replace('{number}', String(i + 1))}
-              {setAnswered && (
-                <span
-                  className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${
-                    setScore === setTotal ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+      <PracticeFormatNotice />
+
+      {!progressLoaded ? (
+        <p className="text-sm text-gray-400">{t.topic_loading_progress}</p>
+      ) : (
+        <>
+          {/* Set selector */}
+          <div className="flex flex-wrap gap-2">
+            {sets.map((set, i) => {
+              const isDone = setDone[i]
+              const isUnlocked = unlockedIndex === -1 || i <= unlockedIndex
+              const label = set.name ? decodeEntities(set.name) : t.topic_set_label.replace('{number}', String(i + 1))
+              return (
+                <button
+                  key={i}
+                  onClick={() => {
+                    if (isUnlocked) setActiveSet(i)
+                  }}
+                  disabled={!isUnlocked}
+                  title={!isUnlocked ? t.topic_set_locked_tab : undefined}
+                  className={`px-4 py-2.5 rounded-xl text-sm font-semibold border transition-colors flex items-center gap-2 ${
+                    !isUnlocked
+                      ? 'border-gray-100 text-gray-300 cursor-not-allowed'
+                      : activeSet === i
+                        ? 'border-[#1e40af] bg-blue-50 text-[#1e40af]'
+                        : 'border-gray-200 text-gray-600 hover:border-gray-300'
                   }`}
                 >
-                  {t.topic_set_score_badge.replace('{score}', String(setScore)).replace('{total}', String(setTotal))}
-                </span>
-              )}
-            </button>
-          )
-        })}
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {(() => {
-          const elements: ReactNode[] = []
-          let lastSvg: string | undefined
-          current.questions.forEach((q, i) => {
-            if (q.diagramSvg && q.diagramSvg !== lastSvg) {
-              elements.push(
-                <DiagramPlaceholderCard
-                  key={`set-${activeSet}-diagram-${i}-${resetKeyBySet[activeSet]}`}
-                  label={t.topic_diagram_label}
-                  svg={q.diagramSvg}
-                />
+                  {!isUnlocked && (
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
+                      <path
+                        fillRule="evenodd"
+                        d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3A5.25 5.25 0 0 0 12 1.5Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                  {label}
+                  {isDone && (
+                    <span
+                      className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${
+                        setScore[i] === totalsBySet[i] ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+                      }`}
+                    >
+                      {t.topic_set_score_badge.replace('{score}', String(setScore[i])).replace('{total}', String(totalsBySet[i]))}
+                    </span>
+                  )}
+                </button>
               )
-            }
-            lastSvg = q.diagramSvg
-            elements.push(
-              <OpenQuestionCard
-                key={`set-${activeSet}-q-${i}-${resetKeyBySet[activeSet]}`}
-                question={q}
-                index={i}
-                revealed={revealed}
-                onResult={(partResults) => handleResult(i, partResults)}
-              />
-            )
-          })
-          return elements
-        })()}
-      </div>
+            })}
+          </div>
 
-      {!revealed && (
-        <div>
-          <button
-            onClick={handleReveal}
-            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
-            style={{ backgroundColor: '#1e40af' }}
-          >
-            {t.topic_reveal_answers}
-          </button>
-          <p className="text-xs text-gray-500 mt-2">{t.topic_reveal_all_prompt}</p>
-        </div>
-      )}
+          {setDone[activeSet] && !hasLiveDetail ? (
+            <LockedSetCard score={setScore[activeSet]} total={totalsBySet[activeSet]} />
+          ) : (
+            <>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {(() => {
+                  const elements: ReactNode[] = []
+                  let lastSvg: string | undefined
+                  current.questions.forEach((q, i) => {
+                    if (q.diagramSvg && q.diagramSvg !== lastSvg) {
+                      elements.push(
+                        <DiagramPlaceholderCard
+                          key={`set-${activeSet}-diagram-${i}-${resetKeyBySet[activeSet]}`}
+                          label={t.topic_diagram_label}
+                          svg={q.diagramSvg}
+                        />
+                      )
+                    }
+                    lastSvg = q.diagramSvg
+                    elements.push(
+                      <OpenQuestionCard
+                        key={`set-${activeSet}-q-${i}-${resetKeyBySet[activeSet]}`}
+                        question={q}
+                        index={i}
+                        revealed={revealed}
+                        onResult={(partResults) => handleResult(i, partResults)}
+                        onAnswered={() => handleAnswered(i)}
+                      />
+                    )
+                  })
+                  return elements
+                })()}
+              </div>
 
-      {allAnswered && (
-        <ResultsSummary
-          score={score}
-          total={totalMarks}
-          onReset={handleReset}
-          customMessages={current.scoreMessages}
-        />
+              {!revealed ? (
+                <div>
+                  <button
+                    onClick={handleReveal}
+                    disabled={!currentAnswered.every(Boolean)}
+                    className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:opacity-40"
+                    style={{ backgroundColor: '#1e40af' }}
+                  >
+                    {t.topic_reveal_answers}
+                  </button>
+                  <p className="text-xs text-gray-500 mt-2">{t.topic_reveal_all_prompt}</p>
+                </div>
+              ) : setDone[activeSet] ? (
+                <p className="text-xs text-gray-500">{t.topic_set_locked_note}</p>
+              ) : null}
+            </>
+          )}
+
+          {cycleAverage !== null && (
+            <CycleCompleteCard average={cycleAverage} previousAverage={lastCycleAverage} onRetry={handleRetryAll} />
+          )}
+        </>
       )}
     </div>
   )
@@ -861,6 +1165,11 @@ function OpenPractice({
   const [results, setResults] = useState<(boolean[] | null)[]>(() =>
     Array(questions.length).fill(null)
   )
+  // See the matching comment in SetPractice — MC results only land in
+  // `results` on reveal, so the reveal gate needs its own pre-reveal signal.
+  const [answered, setAnswered] = useState<boolean[]>(() =>
+    questions.map((q) => !isMCQuestion(q))
+  )
   const [revealed, setRevealed] = useState(false)
   const [resetKey, setResetKey] = useState(0)
   const { user } = useAuth()
@@ -874,8 +1183,17 @@ function OpenPractice({
     })
   }
 
+  function handleAnswered(index: number) {
+    setAnswered((prev) => {
+      const next = [...prev]
+      next[index] = true
+      return next
+    })
+  }
+
   function handleReset() {
     setResults(Array(questions.length).fill(null))
+    setAnswered(questions.map((q) => !isMCQuestion(q)))
     setRevealed(false)
     setResetKey((k) => k + 1)
     loggedRef.current = false
@@ -910,6 +1228,9 @@ function OpenPractice({
           {t.topic_reveal_instructions}
         </p>
       </div>
+
+      <PracticeFormatNotice />
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {questions.map((q, i) => (
           <OpenQuestionCard
@@ -918,6 +1239,7 @@ function OpenPractice({
             index={i}
             revealed={revealed}
             onResult={(partResults) => handleResult(i, partResults)}
+            onAnswered={() => handleAnswered(i)}
           />
         ))}
       </div>
@@ -925,7 +1247,8 @@ function OpenPractice({
         <div>
           <button
             onClick={() => setRevealed(true)}
-            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
+            disabled={!answered.every(Boolean)}
+            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:opacity-40"
             style={{ backgroundColor: '#1e40af' }}
           >
             {t.topic_reveal_answers}
@@ -1087,6 +1410,11 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
   const [results, setResults] = useState<(boolean[] | null)[]>(() =>
     Array(flatItems.length).fill(null)
   )
+  // See the matching comment in SetPractice — MC results only land in
+  // `results` on reveal, so the reveal gate needs its own pre-reveal signal.
+  const [answered, setAnswered] = useState<boolean[]>(() =>
+    flatItems.map(({ q }) => !isMCQuestion(q))
+  )
   const [revealed, setRevealed] = useState(false)
   const [resetKey, setResetKey] = useState(0)
 
@@ -1098,11 +1426,20 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
     })
   }
 
+  function handleAnswered(idx: number) {
+    setAnswered(prev => {
+      const next = [...prev]
+      next[idx] = true
+      return next
+    })
+  }
+
   const { user } = useAuth()
   const loggedRef = useRef(false)
 
   function handleReset() {
     setResults(Array(flatItems.length).fill(null))
+    setAnswered(flatItems.map(({ q }) => !isMCQuestion(q)))
     setRevealed(false)
     setResetKey(k => k + 1)
     loggedRef.current = false
@@ -1134,6 +1471,8 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
           {t.topic_reveal_instructions}
         </p>
       </div>
+
+      <PracticeFormatNotice />
 
       {sectionsWithQ.map(section => {
         const items = flatItems.filter(item => item.sectionId === section.id)
@@ -1168,6 +1507,7 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
                       index={idx}
                       revealed={revealed}
                       onResult={r => handleResult(idx, r)}
+                      onAnswered={() => handleAnswered(idx)}
                     />
                   )
                 })
@@ -1182,7 +1522,8 @@ function SectionOpenPractice({ data, topicSlug, grade }: { data: TopicData; topi
         <div>
           <button
             onClick={() => setRevealed(true)}
-            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
+            disabled={!answered.every(Boolean)}
+            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:opacity-40"
             style={{ backgroundColor: '#1e40af' }}
           >
             {t.topic_reveal_answers}
@@ -1259,6 +1600,8 @@ function FlatPracticeQuestions({ data }: { data: TopicData }) {
           {t.topic_reveal_instructions}
         </p>
       </div>
+
+      <PracticeFormatNotice />
 
       {data.sections.map((section: Section) => {
         const items = flatItems.filter((item) => item.sectionId === section.id)

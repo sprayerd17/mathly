@@ -184,6 +184,26 @@ service cloud.firestore {
       allow delete: if request.auth != null && request.auth.uid == userId;
     }
 
+    // Sequential practice-set lock/unlock + retry-cycle state (Set 1 -> 2 ->
+    // 3, no per-set retry until the whole cycle is complete, then one
+    // combined retry) — one doc per child+grade+topic, same doc-id pattern
+    // as studyProgress. Deletes are allowed for the "reset attempts" parent
+    // override, same as activityLog.
+    match /users/{userId}/practiceSetProgress/{docId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.keys().hasOnly(['childIndex', 'grade', 'topicSlug', 'sets', 'lastCycleAverage', 'updatedAt'])
+                    && request.resource.data.childIndex is int && request.resource.data.childIndex >= 0
+                    && request.resource.data.grade is number
+                    && request.resource.data.grade >= 4 && request.resource.data.grade <= 12
+                    && request.resource.data.topicSlug is string
+                    && request.resource.data.topicSlug.size() > 0 && request.resource.data.topicSlug.size() <= 100
+                    && request.resource.data.sets is list && request.resource.data.sets.size() > 0 && request.resource.data.sets.size() <= 10
+                    && (request.resource.data.lastCycleAverage is number || request.resource.data.lastCycleAverage == null)
+                    && request.resource.data.updatedAt is timestamp;
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
     // One record per successful referral attachment, written only by
     // /api/referral/attach (Admin SDK) right after the referred friend
     // registers. Deliberately a separate collection rather than exposing

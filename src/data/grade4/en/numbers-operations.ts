@@ -46,6 +46,12 @@ export type OpenQuestion = {
   correctAnswers?: string[]
   explanation?: string
   parts?: QuestionPart[]
+  // When both are present (no `parts`), the question renders as multiple
+  // choice — one correct option out of `options`, auto-graded by comparing
+  // the student's pick to `correctIndex` (no self-mark step, since that's
+  // exactly the honesty gap MC was introduced to close).
+  options?: string[]
+  correctIndex?: number
   // Raw inline SVG markup. When consecutive questions in a practice set share
   // the exact same diagramSvg string, the UI renders it once as a shared
   // "exam style" diagram above that run of questions instead of repeating it

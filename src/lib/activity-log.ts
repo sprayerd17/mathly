@@ -1,5 +1,6 @@
 import { addDoc, collection, deleteDoc, getDocs, query, serverTimestamp, Timestamp, where } from 'firebase/firestore'
 import { db } from '@/src/lib/firebase'
+import { deletePracticeSetProgress } from '@/src/lib/practice-set-progress'
 
 export type ActivityType = 'practiceSet' | 'sectionPractice' | 'openPractice'
 
@@ -82,4 +83,7 @@ export async function resetTopicAttempts(uid: string, childIndex: number, grade:
   )
   const snap = await getDocs(q)
   await Promise.all(snap.docs.map(d => deleteDoc(d.ref)))
+  // Also clears the Set 1->2->3 lock/retry state, so "reset attempts"
+  // doubles as the parent override for the sequential-set feature.
+  await deletePracticeSetProgress({ uid, childIndex, grade, topicSlug }).catch(() => {})
 }
