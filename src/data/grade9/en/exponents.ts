@@ -85,28 +85,35 @@ export const topicData: TopicData = {
         {
           difficulty: 'Easy',
           question: 'Simplify 3⁻².',
-          answer: '1/9',
           checkMode: 'auto',
-          correctAnswer: '1/9',
-          explanation: 'Apply a⁻ᵏ = 1/aᵏ:\n3⁻² = 1/3² = 1/9 ✓',
+          options: ['1/9', '-9', '1/6', '9'],
+          correctIndex: 0,
+          explanation: 'Apply a⁻ᵏ = 1/aᵏ: 3⁻² = 1/3² = 1/9. (Other options confuse the negative sign with a negative result, multiply the base by the exponent instead of raising it to the power, or forget to take the reciprocal.)',
         },
 
         // ── Q2 Medium ─────────────────────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Simplify 4³ × 4⁻⁵.',
-          answer: '1/16',
           checkMode: 'auto',
-          correctAnswer: '1/16',
-          explanation: 'Same base — add exponents:\n4³ × 4⁻⁵ = 4^(3 + (−5)) = 4⁻²\nApply negative exponent rule:\n4⁻² = 1/4² = 1/16 ✓',
+          options: ['65536', '1/16', '-16', '1/8'],
+          correctIndex: 1,
+          explanation: 'Same base — add the exponents: 4³ × 4⁻⁵ = 4^(3 + (−5)) = 4⁻² = 1/4² = 1/16. (Other options add the exponents as if both were positive, forget to take the reciprocal, or multiply the base by the exponent instead of squaring it.)',
         },
 
         // ── Q3 Hard ───────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Sipho says 2⁻⁴ = −16. Is he correct? Explain.',
-          answer: 'No — 2⁻⁴ = 1/2⁴ = 1/16, a positive fraction, not −16. A negative exponent does not make the result negative; it means take the reciprocal of the base raised to the positive exponent.',
-          checkMode: 'self',
+          question: 'Sipho says 2⁻⁴ = −16. Which statement correctly evaluates 2⁻⁴ and explains his mistake?',
+          checkMode: 'auto',
+          options: [
+            '2⁻⁴ = −16 — Sipho is correct, since the exponent is negative.',
+            '2⁻⁴ = 16 — negative exponents are ignored once the base is squared enough times.',
+            '2⁻⁴ = 1/16 — a negative exponent means take the reciprocal, not make the value negative.',
+            '2⁻⁴ = −1/16 — the reciprocal should also carry the negative sign.',
+          ],
+          correctIndex: 2,
+          explanation: 'A negative exponent means reciprocal, not negative value: 2⁻⁴ = 1/2⁴ = 1/16. Sipho incorrectly treated the negative sign on the exponent as making the answer negative.',
         },
       ],
 
@@ -224,30 +231,35 @@ export const topicData: TopicData = {
         {
           difficulty: 'Easy',
           question: 'Write 0.0036 in scientific notation.',
-          answer: '3.6 × 10⁻³',
           checkMode: 'auto',
-          correctAnswer: '3.6 × 10⁻³',
-          correctAnswers: ['3.6 × 10⁻³', '3.6×10⁻³', '3.6x10⁻³', '3.6 x 10⁻³', '3.6e-3'],
-          explanation: 'Move the decimal 3 places right: 0.0036 → 3.6\nMoving right → negative exponent of −3\nAnswer: 3.6 × 10⁻³ ✓',
+          options: ['3.6 × 10⁻³', '3.6 × 10³', '36 × 10⁻⁴', '3.6 × 10⁻⁴'],
+          correctIndex: 0,
+          explanation: 'Move the decimal 3 places right: 0.0036 → 3.6. Moving right gives a negative exponent: 3.6 × 10⁻³. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)',
         },
 
         // ── Q5 Medium ─────────────────────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Write 0.000089 in scientific notation.',
-          answer: '8.9 × 10⁻⁵',
           checkMode: 'auto',
-          correctAnswer: '8.9 × 10⁻⁵',
-          correctAnswers: ['8.9 × 10⁻⁵', '8.9×10⁻⁵', '8.9x10⁻⁵', '8.9 x 10⁻⁵', '8.9e-5'],
-          explanation: 'Move the decimal 5 places right: 0.000089 → 8.9\nMoving right → negative exponent of −5\nAnswer: 8.9 × 10⁻⁵ ✓',
+          options: ['8.9 × 10⁻⁵', '8.9 × 10⁵', '89 × 10⁻⁶', '8.9 × 10⁻⁴'],
+          correctIndex: 0,
+          explanation: 'Move the decimal 5 places right: 0.000089 → 8.9. Moving right gives a negative exponent: 8.9 × 10⁻⁵. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)',
         },
 
         // ── Q6 Hard ───────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Lerato converts 0.00056 to scientific notation and gets 5.6 × 10⁻⁴. Check her answer.',
-          answer: 'Correct — moving the decimal 4 places right from 0.00056 gives 5.6, confirming 5.6 × 10⁻⁴.',
-          checkMode: 'self',
+          question: 'Lerato converts 0.00056 to scientific notation and gets 5.6 × 10⁻⁴. Which statement correctly checks her answer?',
+          checkMode: 'auto',
+          options: [
+            'Incorrect — the exponent should be positive, giving 5.6 × 10⁴.',
+            'Correct — moving the decimal 4 places right from 0.00056 gives 5.6, so 5.6 × 10⁻⁴ is right.',
+            'Incorrect — moving the decimal only 3 places gives 5.6 × 10⁻³.',
+            'Incorrect — the front number should be 0.56, giving 0.56 × 10⁻³.',
+          ],
+          correctIndex: 1,
+          explanation: 'Moving the decimal point 4 places right from 0.00056 gives 5.6, and moving right gives a negative exponent of −4, so 5.6 × 10⁻⁴ is correct.',
         },
       ],
 
@@ -369,86 +381,105 @@ export const topicData: TopicData = {
         {
           difficulty: 'Medium',
           question: 'Simplify (2⁻³)².',
-          answer: '1/64',
           checkMode: 'auto',
-          correctAnswer: '1/64',
-          explanation: 'Power of a power — multiply exponents:\n(2⁻³)² = 2^(−3 × 2) = 2⁻⁶\nApply negative exponent rule:\n2⁻⁶ = 1/2⁶ = 1/64 ✓',
+          options: ['1/2', '-64', '1/64', '64'],
+          correctIndex: 2,
+          explanation: 'Power of a power — multiply the exponents: (2⁻³)² = 2^(−3 × 2) = 2⁻⁶ = 1/64. (Other options add the exponents instead of multiplying, drop the reciprocal step, or ignore the negative sign entirely.)',
         },
 
         // ── Q8 Medium ─────────────────────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Simplify 6² ÷ 6⁻¹.',
-          answer: '216',
           checkMode: 'auto',
-          correctAnswer: '216',
-          explanation: 'Divide same base — subtract exponents:\n6² ÷ 6⁻¹ = 6^(2 − (−1)) = 6^(2 + 1) = 6³\nEvaluate: 6³ = 216 ✓',
+          options: ['6', '1/36', '36', '216'],
+          correctIndex: 3,
+          explanation: 'Same base — subtract the exponents: 6² ÷ 6⁻¹ = 6^(2 − (−1)) = 6³ = 216. (Other options forget to flip the sign when subtracting a negative, multiply the exponents instead of subtracting, or miscalculate the power.)',
         },
 
         // ── Q9 Hard ───────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Thabo says 5⁰ = 5. Is he correct? Explain.',
-          answer: 'No — any non-zero number raised to the power 0 equals 1, so 5⁰ = 1, not 5.',
-          checkMode: 'self',
+          question: 'Thabo says 5⁰ = 5. Which statement correctly evaluates 5⁰?',
+          checkMode: 'auto',
+          options: [
+            'He is incorrect — any non-zero number raised to the power 0 equals 1, so 5⁰ = 1.',
+            'He is correct — 5⁰ = 5 because any number to the power 0 stays the same.',
+            'He is incorrect — 5⁰ = 0, since anything to the power 0 is zero.',
+            'He is incorrect — 5⁰ is undefined for non-zero bases.',
+          ],
+          correctIndex: 0,
+          explanation: 'Any non-zero number raised to the power 0 equals 1, so 5⁰ = 1, not 5 or 0.',
         },
 
         // ── Q10 Hard ──────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
           question: 'A bacterium has a mass of 3 × 10⁻¹² grams. Find the total mass of 4 bacteria in scientific notation.',
-          answer: '1.2 × 10⁻¹¹ grams',
           checkMode: 'auto',
-          correctAnswer: '1.2 × 10⁻¹¹ grams',
-          correctAnswers: ['1.2 × 10⁻¹¹ grams', '1.2×10⁻¹¹ grams', '1.2x10⁻¹¹ grams', '1.2e-11 grams', '1.2 × 10⁻¹¹'],
-          explanation: 'Multiply: 4 × (3 × 10⁻¹²) = 12 × 10⁻¹²\nAdjust to scientific notation: 12 × 10⁻¹² = 1.2 × 10¹ × 10⁻¹² = 1.2 × 10⁻¹¹ grams ✓',
+          options: ['12 × 10⁻¹² grams', '1.2 × 10⁻¹¹ grams', '1.2 × 10⁻¹² grams', '1.2 × 10⁻¹³ grams'],
+          correctIndex: 1,
+          explanation: 'Multiply: 4 × (3 × 10⁻¹²) = 12 × 10⁻¹². Adjust to scientific notation: 12 × 10⁻¹² = 1.2 × 10¹ × 10⁻¹² = 1.2 × 10⁻¹¹ grams. (Other options leave the front number outside 1–10, or shift the exponent the wrong way when adjusting.)',
         },
 
         // ── Q11 Medium ────────────────────────────────────────────────────────
         {
           difficulty: 'Medium',
           question: 'Simplify 7⁻¹ × 7³.',
-          answer: '49',
           checkMode: 'auto',
-          correctAnswer: '49',
-          explanation: 'Multiply same base — add exponents:\n7⁻¹ × 7³ = 7^(−1 + 3) = 7² = 49 ✓',
+          options: ['1/343', '2401', '49', '7'],
+          correctIndex: 2,
+          explanation: 'Same base — add the exponents: 7⁻¹ × 7³ = 7^(−1 + 3) = 7² = 49. (Other options multiply the exponents instead of adding, ignore the negative sign, or make an arithmetic slip evaluating the power.)',
         },
 
         // ── Q12 Hard ──────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Amahle says (3⁻¹)⁻² equals 9. Is she correct? Explain.',
-          answer: 'Yes — (3⁻¹)⁻² = 3^(−1 × −2) = 3² = 9.',
-          checkMode: 'self',
+          question: 'Amahle says (3⁻¹)⁻² equals 9. Which statement correctly evaluates (3⁻¹)⁻²?',
+          checkMode: 'auto',
+          options: [
+            'She is incorrect — (3⁻¹)⁻² = 3^(−1 + −2) = 3⁻³ = 1/27.',
+            'She is incorrect — the two negative exponents cancel to give 3⁰ = 1.',
+            'She is incorrect — (3⁻¹)⁻² = −9, since one negative sign should remain.',
+            'She is correct — (3⁻¹)⁻² = 3^(−1 × −2) = 3² = 9.',
+          ],
+          correctIndex: 3,
+          explanation: 'Power of a power — multiply the exponents: (3⁻¹)⁻² = 3^(−1 × −2) = 3² = 9. Amahle is correct.',
         },
 
         // ── Q13 Hard ──────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
           question: 'Simplify 10⁻³ × 10⁵ ÷ 10⁻¹.',
-          answer: '1000',
           checkMode: 'auto',
-          correctAnswer: '1000',
-          explanation: 'Apply multiply/divide same base left to right:\n10⁻³ × 10⁵ = 10^(−3 + 5) = 10²\n10² ÷ 10⁻¹ = 10^(2 − (−1)) = 10³ = 1000 ✓',
+          options: ['1000', '10', '1/1000', '100'],
+          correctIndex: 0,
+          explanation: 'Work left to right: 10⁻³ × 10⁵ = 10^(−3 + 5) = 10². Then 10² ÷ 10⁻¹ = 10^(2 − (−1)) = 10³ = 1000. (Other options forget to flip the sign when dividing by a negative exponent, invert the final answer, or miscalculate the power.)',
         },
 
         // ── Q14 Hard ──────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
           question: 'A grain of sand has a mass of approximately 5 × 10⁻⁵ grams. Find the mass of 1000 grains in scientific notation.',
-          answer: '5 × 10⁻² grams',
           checkMode: 'auto',
-          correctAnswer: '5 × 10⁻² grams',
-          correctAnswers: ['5 × 10⁻² grams', '5×10⁻² grams', '5x10⁻² grams', '5e-2 grams', '5 × 10⁻²'],
-          explanation: 'Multiply: 1000 × (5 × 10⁻⁵)\n= 5000 × 10⁻⁵\n= 5 × 10³ × 10⁻⁵\n= 5 × 10^(3 + (−5))\n= 5 × 10⁻² grams ✓',
+          options: ['5 × 10⁻⁸ grams', '5 × 10⁻² grams', '5 × 10⁻³ grams', '5000 × 10⁻⁵ grams'],
+          correctIndex: 1,
+          explanation: 'Multiply: 1000 × (5 × 10⁻⁵) = 5 × 10³ × 10⁻⁵ = 5 × 10^(3 + (−5)) = 5 × 10⁻² grams. (Other options subtract the exponents instead of adding, miscount the powers of 10 in 1000, or leave the answer unadjusted to scientific notation.)',
         },
 
         // ── Q15 Hard ──────────────────────────────────────────────────────────
         {
           difficulty: 'Hard',
-          question: 'Sipho says negative exponents always make a number smaller than 1. Is he correct? Explain with reasoning.',
-          answer: 'Yes (for a base greater than 1) — a negative exponent represents a reciprocal, which results in a fraction smaller than 1 when the base is greater than 1.',
-          checkMode: 'self',
+          question: 'Sipho says negative exponents always make a number smaller than 1. Which statement best explains whether he is correct?',
+          checkMode: 'auto',
+          options: [
+            'Yes, always — a negative exponent makes any number smaller than 1, regardless of the base.',
+            'No — a negative exponent always makes the result negative, not necessarily smaller than 1.',
+            'Yes, provided the base is greater than 1 — a negative exponent gives a reciprocal, which is a fraction smaller than 1 when the base is greater than 1.',
+            'No — the size of the result never depends on the sign of the exponent, only on the base.',
+          ],
+          correctIndex: 2,
+          explanation: 'A negative exponent means take the reciprocal: a⁻ᵏ = 1/aᵏ. If a > 1, then aᵏ > 1, so the reciprocal 1/aᵏ is a fraction smaller than 1 — but this depends on the base being greater than 1, so Sipho\'s claim needs that condition.',
         },
       ],
 
@@ -472,36 +503,36 @@ export const topicData: TopicData = {
       name: 'Set 1',
       questions: [
         // Block 1 — Negative exponent → reciprocal (Q1-4)
-        { difficulty: 'Easy', question: 'Simplify 2⁻⁴.', answer: '1/16', checkMode: 'auto', correctAnswer: '1/16', explanation: 'Apply a⁻ᵏ = 1/aᵏ:\n2⁻⁴ = 1/2⁴ = 1/16 ✓' },
-        { difficulty: 'Easy', question: 'Write 5⁻³ as a fraction in simplest form.', answer: '1/125', checkMode: 'auto', correctAnswer: '1/125', explanation: 'Apply the negative exponent rule:\n5⁻³ = 1/5³ = 1/125 ✓' },
-        { difficulty: 'Easy', question: 'What is the value of 10⁻²?', answer: '1/100', checkMode: 'auto', correctAnswer: '1/100', correctAnswers: ['1/100', '0.01'], explanation: '10⁻² = 1/10² = 1/100 ✓' },
-        { difficulty: 'Medium', question: 'Evaluate 6⁻² and give your answer as a fraction.', answer: '1/36', checkMode: 'auto', correctAnswer: '1/36', explanation: '6⁻² = 1/6² = 1/36 ✓' },
+        { difficulty: 'Easy', question: 'Simplify 2⁻⁴.', checkMode: 'auto', options: ['1/16', '-16', '1/8', '16'], correctIndex: 0, explanation: 'Apply a⁻ᵏ = 1/aᵏ: 2⁻⁴ = 1/2⁴ = 1/16. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Easy', question: 'Write 5⁻³ as a fraction in simplest form.', checkMode: 'auto', options: ['-125', '1/125', '1/15', '125'], correctIndex: 1, explanation: 'Apply the negative exponent rule: 5⁻³ = 1/5³ = 1/125. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Easy', question: 'What is the value of 10⁻²?', checkMode: 'auto', options: ['-100', '1/20', '1/100', '100'], correctIndex: 2, explanation: '10⁻² = 1/10² = 1/100. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Medium', question: 'Evaluate 6⁻² and give your answer as a fraction.', checkMode: 'auto', options: ['-36', '1/12', '36', '1/36'], correctIndex: 3, explanation: '6⁻² = 1/6² = 1/36. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
 
         // Block 2 — Product law with negative exponents (Q5-7)
-        { difficulty: 'Medium', question: 'Simplify 3⁵ × 3⁻².', answer: '27', checkMode: 'auto', correctAnswer: '27', explanation: 'Same base — add exponents:\n3⁵ × 3⁻² = 3^(5 + (−2)) = 3³ = 27 ✓' },
-        { difficulty: 'Medium', question: 'Simplify 2⁻³ × 2⁷.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Same base — add exponents:\n2⁻³ × 2⁷ = 2^(−3 + 7) = 2⁴ = 16 ✓' },
-        { difficulty: 'Hard', question: 'Simplify 6⁴ × 6⁻⁶, giving your answer as a fraction.', answer: '1/36', checkMode: 'auto', correctAnswer: '1/36', explanation: 'Same base — add exponents:\n6⁴ × 6⁻⁶ = 6^(4 + (−6)) = 6⁻² = 1/6² = 1/36 ✓' },
+        { difficulty: 'Medium', question: 'Simplify 3⁵ × 3⁻².', checkMode: 'auto', options: ['27', '2187', '1/59049', '1/27'], correctIndex: 0, explanation: 'Same base — add the exponents: 3⁵ × 3⁻² = 3^(5 + (−2)) = 3³ = 27. (Other options add the exponents as if both were positive, multiply the exponents instead of adding them, or flip the sign of the wrong exponent.)' },
+        { difficulty: 'Medium', question: 'Simplify 2⁻³ × 2⁷.', checkMode: 'auto', options: ['1024', '16', '1/1024', '-16'], correctIndex: 1, explanation: 'Same base — add the exponents: 2⁻³ × 2⁷ = 2^(−3 + 7) = 2⁴ = 16. (Other options add the exponents as if both were positive, subtract instead of add, or wrongly apply a negative sign to the final answer.)' },
+        { difficulty: 'Hard', question: 'Simplify 6⁴ × 6⁻⁶, giving your answer as a fraction.', checkMode: 'auto', options: ['36', '-36', '1/36', '1/12'], correctIndex: 2, explanation: 'Same base — add the exponents: 6⁴ × 6⁻⁶ = 6^(4 + (−6)) = 6⁻² = 1/6² = 1/36. (Other options invert the subtraction order, forget to take the reciprocal after finding a negative exponent, or miscalculate 6² as 12 instead of 36.)' },
 
         // Block 3 — Quotient law with negative exponents (Q8-10)
-        { difficulty: 'Medium', question: 'Simplify 5² ÷ 5⁻³.', answer: '3125', checkMode: 'auto', correctAnswer: '3125', explanation: 'Same base — subtract exponents:\n5² ÷ 5⁻³ = 5^(2 − (−3)) = 5⁵ = 3125 ✓' },
-        { difficulty: 'Medium', question: 'Find the value of 7⁻² ÷ 7⁻⁵.', answer: '343', checkMode: 'auto', correctAnswer: '343', explanation: 'Same base — subtract exponents:\n7⁻² ÷ 7⁻⁵ = 7^(−2 − (−5)) = 7³ = 343 ✓' },
-        { difficulty: 'Hard', question: 'Simplify 3⁻¹ ÷ 3², giving your answer as a fraction.', answer: '1/27', checkMode: 'auto', correctAnswer: '1/27', explanation: 'Same base — subtract exponents:\n3⁻¹ ÷ 3² = 3^(−1 − 2) = 3⁻³ = 1/27 ✓' },
+        { difficulty: 'Medium', question: 'Simplify 5² ÷ 5⁻³.', checkMode: 'auto', options: ['1/5', '1/15625', '1/3125', '3125'], correctIndex: 3, explanation: 'Same base — subtract the exponents: 5² ÷ 5⁻³ = 5^(2 − (−3)) = 5⁵ = 3125. (Other options forget to flip the sign of the negative exponent, multiply the exponents instead of subtracting, or invert the order giving the reciprocal.)' },
+        { difficulty: 'Medium', question: 'Find the value of 7⁻² ÷ 7⁻⁵.', checkMode: 'auto', options: ['343', '1/823543', '282475249', '1/343'], correctIndex: 0, explanation: 'Same base — subtract the exponents: 7⁻² ÷ 7⁻⁵ = 7^(−2 − (−5)) = 7³ = 343. (Other options forget to flip the sign of the second negative exponent, multiply the exponents instead of subtracting, or invert the order giving the reciprocal.)' },
+        { difficulty: 'Hard', question: 'Simplify 3⁻¹ ÷ 3², giving your answer as a fraction.', checkMode: 'auto', options: ['3', '1/27', '1/9', '27'], correctIndex: 1, explanation: 'Same base — subtract the exponents: 3⁻¹ ÷ 3² = 3^(−1 − 2) = 3⁻³ = 1/27. (Other options add the exponents instead of subtracting, multiply the exponents instead of subtracting, or invert the subtraction order.)' },
 
         // Block 4 — Power of a power with negative exponents (Q11-13)
-        { difficulty: 'Medium', question: 'Simplify (6⁻²)².', answer: '1/1296', checkMode: 'auto', correctAnswer: '1/1296', explanation: 'Power of a power — multiply exponents:\n(6⁻²)² = 6^(−2 × 2) = 6⁻⁴ = 1/1296 ✓' },
-        { difficulty: 'Hard', question: 'Simplify (5⁻¹)⁻³.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: 'Power of a power — multiply exponents:\n(5⁻¹)⁻³ = 5^(−1 × −3) = 5³ = 125 ✓' },
-        { difficulty: 'Hard', question: 'Evaluate (3²)⁻², giving your answer as a fraction.', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: 'Power of a power — multiply exponents:\n(3²)⁻² = 3^(2 × −2) = 3⁻⁴ = 1/81 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (6⁻²)².', checkMode: 'auto', options: ['1', '1296', '1/1296', '36'], correctIndex: 2, explanation: 'Power of a power — multiply the exponents: (6⁻²)² = 6^(−2 × 2) = 6⁻⁴ = 1/1296. (Other options add the exponents instead of multiplying, drop the negative sign, or only use the outer exponent while ignoring the inner one.)' },
+        { difficulty: 'Hard', question: 'Simplify (5⁻¹)⁻³.', checkMode: 'auto', options: ['1/625', '1/125', '15', '125'], correctIndex: 3, explanation: 'Power of a power — multiply the exponents: (5⁻¹)⁻³ = 5^(−1 × −3) = 5³ = 125. (Other options add the exponents instead of multiplying, mishandle one of the negative signs, or miscalculate 5³.)' },
+        { difficulty: 'Hard', question: 'Evaluate (3²)⁻², giving your answer as a fraction.', checkMode: 'auto', options: ['1/81', '1', '81', '1/9'], correctIndex: 0, explanation: 'Power of a power — multiply the exponents: (3²)⁻² = 3^(2 × −2) = 3⁻⁴ = 1/81. (Other options add the exponents instead of multiplying, drop the negative sign, or ignore the inner exponent.)' },
 
         // Block 5 — Scientific notation with negative exponents (Q14-16)
-        { difficulty: 'Easy', question: 'Write 0.00052 in scientific notation.', answer: '5.2 × 10⁻⁴', checkMode: 'auto', correctAnswer: '5.2 × 10⁻⁴', correctAnswers: ['5.2 × 10⁻⁴', '5.2×10⁻⁴', '5.2x10⁻⁴', '5.2 x 10⁻⁴', '5.2e-4'], explanation: 'Move the decimal 4 places right: 0.00052 → 5.2\nMoving right → negative exponent of −4\nAnswer: 5.2 × 10⁻⁴ ✓' },
-        { difficulty: 'Medium', question: 'Express 0.0000078 in scientific notation.', answer: '7.8 × 10⁻⁶', checkMode: 'auto', correctAnswer: '7.8 × 10⁻⁶', correctAnswers: ['7.8 × 10⁻⁶', '7.8×10⁻⁶', '7.8x10⁻⁶', '7.8 x 10⁻⁶', '7.8e-6'], explanation: 'Move the decimal 6 places right: 0.0000078 → 7.8\nMoving right → negative exponent of −6\nAnswer: 7.8 × 10⁻⁶ ✓' },
-        { difficulty: 'Hard', question: 'Zanele writes 0.000416 in scientific notation as 4.16 × 10⁻⁴. Check her answer.', answer: 'Correct — moving the decimal 4 places right from 0.000416 gives 4.16, confirming 4.16 × 10⁻⁴.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Write 0.00052 in scientific notation.', checkMode: 'auto', options: ['5.2 × 10⁴', '5.2 × 10⁻⁴', '52 × 10⁻⁵', '5.2 × 10⁻³'], correctIndex: 1, explanation: 'Move the decimal 4 places right: 0.00052 → 5.2. Moving right gives a negative exponent: 5.2 × 10⁻⁴. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)' },
+        { difficulty: 'Medium', question: 'Express 0.0000078 in scientific notation.', checkMode: 'auto', options: ['7.8 × 10⁶', '78 × 10⁻⁷', '7.8 × 10⁻⁶', '7.8 × 10⁻⁵'], correctIndex: 2, explanation: 'Move the decimal 6 places right: 0.0000078 → 7.8. Moving right gives a negative exponent: 7.8 × 10⁻⁶. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)' },
+        { difficulty: 'Hard', question: 'Zanele writes 0.000416 in scientific notation as 4.16 × 10⁻⁴. Which statement correctly checks her answer?', checkMode: 'auto', options: ['Incorrect — the exponent should be positive, giving 4.16 × 10⁴.', 'Incorrect — moving the decimal only 3 places gives 4.16 × 10⁻³.', 'Incorrect — the front number should be 41.6, giving 41.6 × 10⁻⁵.', 'Correct — moving the decimal 4 places right from 0.000416 gives 4.16, confirming 4.16 × 10⁻⁴.'], correctIndex: 3, explanation: 'Moving the decimal 4 places right from 0.000416 gives 4.16, and moving right gives a negative exponent of −4, so 4.16 × 10⁻⁴ is correct.' },
 
         // Block 6 — Combined laws, multi-step and real-life problems (Q17-20)
-        { difficulty: 'Hard', question: 'Simplify 2⁷ × 2⁻⁴ ÷ 2².', answer: '2', checkMode: 'auto', correctAnswer: '2', explanation: 'Apply multiply/divide same base left to right:\n2⁷ × 2⁻⁴ = 2^(7 + (−4)) = 2³\n2³ ÷ 2² = 2^(3 − 2) = 2¹ = 2 ✓' },
-        { difficulty: 'Hard', question: 'A skin cell has a mass of 3 × 10⁻⁸ grams. Find the total mass of 5 skin cells in scientific notation.', answer: '1.5 × 10⁻⁷ grams', checkMode: 'auto', correctAnswer: '1.5 × 10⁻⁷ grams', correctAnswers: ['1.5 × 10⁻⁷ grams', '1.5×10⁻⁷ grams', '1.5x10⁻⁷ grams', '1.5e-7 grams', '1.5 × 10⁻⁷'], explanation: 'Multiply: 5 × (3 × 10⁻⁸) = 15 × 10⁻⁸\nAdjust to scientific notation: 15 × 10⁻⁸ = 1.5 × 10¹ × 10⁻⁸ = 1.5 × 10⁻⁷ grams ✓' },
-        { difficulty: 'Hard', question: 'Karabo says 4⁻¹ × 4⁰ × 4³ simplifies to 4². Is he correct? Explain.', answer: 'Yes — adding the exponents gives −1 + 0 + 3 = 2, so 4⁻¹ × 4⁰ × 4³ = 4² = 16.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Simplify 10⁻³ × 10⁶ ÷ 10².', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: 'Apply multiply/divide same base left to right:\n10⁻³ × 10⁶ = 10^(−3 + 6) = 10³\n10³ ÷ 10² = 10^(3 − 2) = 10¹ = 10 ✓' },
+        { difficulty: 'Hard', question: 'Simplify 2⁷ × 2⁻⁴ ÷ 2².', checkMode: 'auto', options: ['2', '512', '32', '8'], correctIndex: 0, explanation: 'Work left to right: 2⁷ × 2⁻⁴ = 2^(7 + (−4)) = 2³. Then 2³ ÷ 2² = 2^(3 − 2) = 2¹ = 2. (Other options ignore the negative sign in the first step, add instead of subtract in the second step, or forget the division step entirely.)' },
+        { difficulty: 'Hard', question: 'A skin cell has a mass of 3 × 10⁻⁸ grams. Find the total mass of 5 skin cells in scientific notation.', checkMode: 'auto', options: ['15 × 10⁻⁸ grams', '1.5 × 10⁻⁷ grams', '1.5 × 10⁻⁹ grams', '8 × 10⁻⁸ grams'], correctIndex: 1, explanation: 'Multiply: 5 × (3 × 10⁻⁸) = 15 × 10⁻⁸. Adjust to scientific notation: 15 × 10⁻⁸ = 1.5 × 10¹ × 10⁻⁸ = 1.5 × 10⁻⁷ grams. (Other options leave the front number outside 1–10, shift the exponent the wrong way when adjusting, or add the front numbers instead of multiplying them.)' },
+        { difficulty: 'Hard', question: 'Karabo says 4⁻¹ × 4⁰ × 4³ simplifies to 4². Which statement correctly evaluates this?', checkMode: 'auto', options: ['He is incorrect — a zero exponent makes the whole product zero, so the answer is 0.', 'He is incorrect — the exponents should be multiplied, not added, giving 4⁰ = 1.', 'He is correct — adding the exponents gives −1 + 0 + 3 = 2, so 4⁻¹ × 4⁰ × 4³ = 4² = 16.', 'He is incorrect — 4⁻¹ makes the whole expression negative, so the answer is −4².'], correctIndex: 2, explanation: 'Same base — add the exponents: −1 + 0 + 3 = 2, so 4⁻¹ × 4⁰ × 4³ = 4² = 16. Karabo is correct.' },
+        { difficulty: 'Hard', question: 'Simplify 10⁻³ × 10⁶ ÷ 10².', checkMode: 'auto', options: ['10000000', '100000', '1000', '10'], correctIndex: 3, explanation: 'Work left to right: 10⁻³ × 10⁶ = 10^(−3 + 6) = 10³. Then 10³ ÷ 10² = 10^(3 − 2) = 10¹ = 10. (Other options ignore the negative sign in the first step, add instead of subtract in the second step, or forget the division step entirely.)' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered integer exponents and scientific notation.' },
@@ -518,36 +549,36 @@ export const topicData: TopicData = {
       name: 'Set 2',
       questions: [
         // Block 1 — Negative exponent → reciprocal (Q1-4)
-        { difficulty: 'Easy', question: 'Simplify 8⁻².', answer: '1/64', checkMode: 'auto', correctAnswer: '1/64', explanation: 'Apply a⁻ᵏ = 1/aᵏ:\n8⁻² = 1/8² = 1/64 ✓' },
-        { difficulty: 'Easy', question: 'Write 4⁻⁴ as a fraction in simplest form.', answer: '1/256', checkMode: 'auto', correctAnswer: '1/256', explanation: 'Apply the negative exponent rule:\n4⁻⁴ = 1/4⁴ = 1/256 ✓' },
-        { difficulty: 'Easy', question: 'What is the value of 3⁻³?', answer: '1/27', checkMode: 'auto', correctAnswer: '1/27', explanation: '3⁻³ = 1/3³ = 1/27 ✓' },
-        { difficulty: 'Medium', question: 'Evaluate 9⁻² and give your answer as a fraction.', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: '9⁻² = 1/9² = 1/81 ✓' },
+        { difficulty: 'Easy', question: 'Simplify 8⁻².', checkMode: 'auto', options: ['1/64', '-64', '1/16', '64'], correctIndex: 0, explanation: 'Apply a⁻ᵏ = 1/aᵏ: 8⁻² = 1/8² = 1/64. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Easy', question: 'Write 4⁻⁴ as a fraction in simplest form.', checkMode: 'auto', options: ['-256', '1/256', '1/16', '256'], correctIndex: 1, explanation: 'Apply the negative exponent rule: 4⁻⁴ = 1/4⁴ = 1/256. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Easy', question: 'What is the value of 3⁻³?', checkMode: 'auto', options: ['-27', '1/9', '1/27', '27'], correctIndex: 2, explanation: '3⁻³ = 1/3³ = 1/27. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Medium', question: 'Evaluate 9⁻² and give your answer as a fraction.', checkMode: 'auto', options: ['-81', '1/18', '81', '1/81'], correctIndex: 3, explanation: '9⁻² = 1/9² = 1/81. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
 
         // Block 2 — Product law with negative exponents (Q5-7)
-        { difficulty: 'Medium', question: 'Simplify 4⁶ × 4⁻⁴.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Same base — add exponents:\n4⁶ × 4⁻⁴ = 4^(6 + (−4)) = 4² = 16 ✓' },
-        { difficulty: 'Medium', question: 'Simplify 3⁻² × 3⁶.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Same base — add exponents:\n3⁻² × 3⁶ = 3^(−2 + 6) = 3⁴ = 81 ✓' },
-        { difficulty: 'Hard', question: 'Simplify 5³ × 5⁻⁶, giving your answer as a fraction.', answer: '1/125', checkMode: 'auto', correctAnswer: '1/125', explanation: 'Same base — add exponents:\n5³ × 5⁻⁶ = 5^(3 + (−6)) = 5⁻³ = 1/5³ = 1/125 ✓' },
+        { difficulty: 'Medium', question: 'Simplify 4⁶ × 4⁻⁴.', checkMode: 'auto', options: ['16', '1048576', '1/16', '-16'], correctIndex: 0, explanation: 'Same base — add the exponents: 4⁶ × 4⁻⁴ = 4^(6 + (−4)) = 4² = 16. (Other options add the exponents as if both were positive, flip the sign of the wrong exponent, or wrongly apply a negative sign to the final answer.)' },
+        { difficulty: 'Medium', question: 'Simplify 3⁻² × 3⁶.', checkMode: 'auto', options: ['6561', '81', '1/6561', '-81'], correctIndex: 1, explanation: 'Same base — add the exponents: 3⁻² × 3⁶ = 3^(−2 + 6) = 3⁴ = 81. (Other options add the exponents as if both were positive, subtract instead of add, or wrongly apply a negative sign to the final answer.)' },
+        { difficulty: 'Hard', question: 'Simplify 5³ × 5⁻⁶, giving your answer as a fraction.', checkMode: 'auto', options: ['125', '-125', '1/125', '1/15'], correctIndex: 2, explanation: 'Same base — add the exponents: 5³ × 5⁻⁶ = 5^(3 + (−6)) = 5⁻³ = 1/5³ = 1/125. (Other options invert the subtraction order, forget to take the reciprocal after finding a negative exponent, or miscalculate 5³.)' },
 
         // Block 3 — Quotient law with negative exponents (Q8-10)
-        { difficulty: 'Medium', question: 'Simplify 9¹ ÷ 9⁻³.', answer: '6561', checkMode: 'auto', correctAnswer: '6561', explanation: 'Same base — subtract exponents:\n9¹ ÷ 9⁻³ = 9^(1 − (−3)) = 9⁴ = 6561 ✓' },
-        { difficulty: 'Medium', question: 'Find the value of 6⁻¹ ÷ 6⁻⁴.', answer: '216', checkMode: 'auto', correctAnswer: '216', explanation: 'Same base — subtract exponents:\n6⁻¹ ÷ 6⁻⁴ = 6^(−1 − (−4)) = 6³ = 216 ✓' },
-        { difficulty: 'Hard', question: 'Simplify 2⁻² ÷ 2³, giving your answer as a fraction.', answer: '1/32', checkMode: 'auto', correctAnswer: '1/32', explanation: 'Same base — subtract exponents:\n2⁻² ÷ 2³ = 2^(−2 − 3) = 2⁻⁵ = 1/32 ✓' },
+        { difficulty: 'Medium', question: 'Simplify 9¹ ÷ 9⁻³.', checkMode: 'auto', options: ['1/81', '1/729', '1/6561', '6561'], correctIndex: 3, explanation: 'Same base — subtract the exponents: 9¹ ÷ 9⁻³ = 9^(1 − (−3)) = 9⁴ = 6561. (Other options forget to flip the sign of the negative exponent, multiply the exponents instead of subtracting, or invert the order giving the reciprocal.)' },
+        { difficulty: 'Medium', question: 'Find the value of 6⁻¹ ÷ 6⁻⁴.', checkMode: 'auto', options: ['216', '1/7776', '1296', '1/216'], correctIndex: 0, explanation: 'Same base — subtract the exponents: 6⁻¹ ÷ 6⁻⁴ = 6^(−1 − (−4)) = 6³ = 216. (Other options forget to flip the sign of the negative exponent, multiply the exponents instead of subtracting, or invert the order giving the reciprocal.)' },
+        { difficulty: 'Hard', question: 'Simplify 2⁻² ÷ 2³, giving your answer as a fraction.', checkMode: 'auto', options: ['2', '1/32', '1/64', '32'], correctIndex: 1, explanation: 'Same base — subtract the exponents: 2⁻² ÷ 2³ = 2^(−2 − 3) = 2⁻⁵ = 1/32. (Other options add the exponents instead of subtracting, multiply the exponents instead of subtracting, or invert the subtraction order.)' },
 
         // Block 4 — Power of a power with negative exponents (Q11-13)
-        { difficulty: 'Medium', question: 'Simplify (3⁻²)².', answer: '1/81', checkMode: 'auto', correctAnswer: '1/81', explanation: 'Power of a power — multiply exponents:\n(3⁻²)² = 3^(−2 × 2) = 3⁻⁴ = 1/81 ✓' },
-        { difficulty: 'Hard', question: 'Simplify (2⁻¹)⁻⁴.', answer: '16', checkMode: 'auto', correctAnswer: '16', explanation: 'Power of a power — multiply exponents:\n(2⁻¹)⁻⁴ = 2^(−1 × −4) = 2⁴ = 16 ✓' },
-        { difficulty: 'Hard', question: 'Evaluate (4²)⁻², giving your answer as a fraction.', answer: '1/256', checkMode: 'auto', correctAnswer: '1/256', explanation: 'Power of a power — multiply exponents:\n(4²)⁻² = 4^(2 × −2) = 4⁻⁴ = 1/256 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (3⁻²)².', checkMode: 'auto', options: ['1', '81', '1/81', '9'], correctIndex: 2, explanation: 'Power of a power — multiply the exponents: (3⁻²)² = 3^(−2 × 2) = 3⁻⁴ = 1/81. (Other options add the exponents instead of multiplying, drop the negative sign, or only use the outer exponent while ignoring the inner one.)' },
+        { difficulty: 'Hard', question: 'Simplify (2⁻¹)⁻⁴.', checkMode: 'auto', options: ['1/32', '1/16', '8', '16'], correctIndex: 3, explanation: 'Power of a power — multiply the exponents: (2⁻¹)⁻⁴ = 2^(−1 × −4) = 2⁴ = 16. (Other options add the exponents instead of multiplying, mishandle one of the negative signs, or miscalculate 2⁴.)' },
+        { difficulty: 'Hard', question: 'Evaluate (4²)⁻², giving your answer as a fraction.', checkMode: 'auto', options: ['1/256', '1', '256', '1/16'], correctIndex: 0, explanation: 'Power of a power — multiply the exponents: (4²)⁻² = 4^(2 × −2) = 4⁻⁴ = 1/256. (Other options add the exponents instead of multiplying, drop the negative sign, or ignore the inner exponent.)' },
 
         // Block 5 — Scientific notation with negative exponents (Q14-16)
-        { difficulty: 'Easy', question: 'Write 0.0000031 in scientific notation.', answer: '3.1 × 10⁻⁶', checkMode: 'auto', correctAnswer: '3.1 × 10⁻⁶', correctAnswers: ['3.1 × 10⁻⁶', '3.1×10⁻⁶', '3.1x10⁻⁶', '3.1 x 10⁻⁶', '3.1e-6'], explanation: 'Move the decimal 6 places right: 0.0000031 → 3.1\nMoving right → negative exponent of −6\nAnswer: 3.1 × 10⁻⁶ ✓' },
-        { difficulty: 'Medium', question: 'Express 0.0000091 in scientific notation.', answer: '9.1 × 10⁻⁶', checkMode: 'auto', correctAnswer: '9.1 × 10⁻⁶', correctAnswers: ['9.1 × 10⁻⁶', '9.1×10⁻⁶', '9.1x10⁻⁶', '9.1 x 10⁻⁶', '9.1e-6'], explanation: 'Move the decimal 6 places right: 0.0000091 → 9.1\nMoving right → negative exponent of −6\nAnswer: 9.1 × 10⁻⁶ ✓' },
-        { difficulty: 'Hard', question: 'Thabo writes 0.000029 in scientific notation as 2.9 × 10⁻⁵. Check his answer.', answer: 'Correct — moving the decimal 5 places right from 0.000029 gives 2.9, confirming 2.9 × 10⁻⁵.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Write 0.0000031 in scientific notation.', checkMode: 'auto', options: ['3.1 × 10⁶', '3.1 × 10⁻⁶', '31 × 10⁻⁷', '3.1 × 10⁻⁵'], correctIndex: 1, explanation: 'Move the decimal 6 places right: 0.0000031 → 3.1. Moving right gives a negative exponent: 3.1 × 10⁻⁶. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)' },
+        { difficulty: 'Medium', question: 'Express 0.0000091 in scientific notation.', checkMode: 'auto', options: ['9.1 × 10⁶', '91 × 10⁻⁷', '9.1 × 10⁻⁶', '9.1 × 10⁻⁵'], correctIndex: 2, explanation: 'Move the decimal 6 places right: 0.0000091 → 9.1. Moving right gives a negative exponent: 9.1 × 10⁻⁶. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)' },
+        { difficulty: 'Hard', question: 'Thabo writes 0.000029 in scientific notation as 2.9 × 10⁻⁵. Which statement correctly checks his answer?', checkMode: 'auto', options: ['Incorrect — the exponent should be positive, giving 2.9 × 10⁵.', 'Incorrect — moving the decimal only 4 places gives 2.9 × 10⁻⁴.', 'Incorrect — the front number should be 29, giving 29 × 10⁻⁶.', 'Correct — moving the decimal 5 places right from 0.000029 gives 2.9, confirming 2.9 × 10⁻⁵.'], correctIndex: 3, explanation: 'Moving the decimal 5 places right from 0.000029 gives 2.9, and moving right gives a negative exponent of −5, so 2.9 × 10⁻⁵ is correct.' },
 
         // Block 6 — Combined laws, multi-step and real-life problems (Q17-20)
-        { difficulty: 'Hard', question: 'Simplify 3⁻² × 3⁵ ÷ 3⁻¹.', answer: '81', checkMode: 'auto', correctAnswer: '81', explanation: 'Apply multiply/divide same base left to right:\n3⁻² × 3⁵ = 3^(−2 + 5) = 3³\n3³ ÷ 3⁻¹ = 3^(3 − (−1)) = 3⁴ = 81 ✓' },
-        { difficulty: 'Hard', question: 'A bacterium has a mass of 6 × 10⁻¹¹ grams. Find the total mass of 3 bacteria in scientific notation.', answer: '1.8 × 10⁻¹⁰ grams', checkMode: 'auto', correctAnswer: '1.8 × 10⁻¹⁰ grams', correctAnswers: ['1.8 × 10⁻¹⁰ grams', '1.8×10⁻¹⁰ grams', '1.8x10⁻¹⁰ grams', '1.8e-10 grams', '1.8 × 10⁻¹⁰'], explanation: 'Multiply: 3 × (6 × 10⁻¹¹) = 18 × 10⁻¹¹\nAdjust to scientific notation: 18 × 10⁻¹¹ = 1.8 × 10¹ × 10⁻¹¹ = 1.8 × 10⁻¹⁰ grams ✓' },
-        { difficulty: 'Hard', question: 'Amahle says 6⁻² × 6⁵ equals 216. Is she correct? Explain.', answer: 'Yes — adding the exponents gives −2 + 5 = 3, so 6⁻² × 6⁵ = 6³ = 216.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Simplify 5⁻² × 5⁴ ÷ 5⁻¹.', answer: '125', checkMode: 'auto', correctAnswer: '125', explanation: 'Apply multiply/divide same base left to right:\n5⁻² × 5⁴ = 5^(−2 + 4) = 5²\n5² ÷ 5⁻¹ = 5^(2 − (−1)) = 5³ = 125 ✓' },
+        { difficulty: 'Hard', question: 'Simplify 3⁻² × 3⁵ ÷ 3⁻¹.', checkMode: 'auto', options: ['81', '9', '6561', '27'], correctIndex: 0, explanation: 'Work left to right: 3⁻² × 3⁵ = 3^(−2 + 5) = 3³. Then 3³ ÷ 3⁻¹ = 3^(3 − (−1)) = 3⁴ = 81. (Other options forget to flip the sign in the division step, ignore the negative sign in the first step, or forget the division step entirely.)' },
+        { difficulty: 'Hard', question: 'A bacterium has a mass of 6 × 10⁻¹¹ grams. Find the total mass of 3 bacteria in scientific notation.', checkMode: 'auto', options: ['18 × 10⁻¹¹ grams', '1.8 × 10⁻¹⁰ grams', '1.8 × 10⁻¹² grams', '9 × 10⁻¹¹ grams'], correctIndex: 1, explanation: 'Multiply: 3 × (6 × 10⁻¹¹) = 18 × 10⁻¹¹. Adjust to scientific notation: 18 × 10⁻¹¹ = 1.8 × 10¹ × 10⁻¹¹ = 1.8 × 10⁻¹⁰ grams. (Other options leave the front number outside 1–10, shift the exponent the wrong way when adjusting, or add the front numbers instead of multiplying them.)' },
+        { difficulty: 'Hard', question: 'Amahle says 6⁻² × 6⁵ equals 216. Which statement correctly evaluates this?', checkMode: 'auto', options: ['She is incorrect — the exponents should multiply, giving 6⁻¹⁰.', 'She is incorrect — a negative exponent makes the whole product negative, so the answer is −216.', 'She is correct — adding the exponents gives −2 + 5 = 3, so 6⁻² × 6⁵ = 6³ = 216.', 'She is incorrect — the answer should be a fraction, 1/216, since one exponent is negative.'], correctIndex: 2, explanation: 'Same base — add the exponents: −2 + 5 = 3, so 6⁻² × 6⁵ = 6³ = 216. Amahle is correct.' },
+        { difficulty: 'Hard', question: 'Simplify 5⁻² × 5⁴ ÷ 5⁻¹.', checkMode: 'auto', options: ['5', '78125', '25', '125'], correctIndex: 3, explanation: 'Work left to right: 5⁻² × 5⁴ = 5^(−2 + 4) = 5². Then 5² ÷ 5⁻¹ = 5^(2 − (−1)) = 5³ = 125. (Other options forget to flip the sign in the division step, ignore the negative sign in the first step, or forget the division step entirely.)' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered integer exponents and scientific notation.' },
@@ -564,36 +595,36 @@ export const topicData: TopicData = {
       name: 'Set 3',
       questions: [
         // Block 1 — Negative exponent → reciprocal (Q1-4)
-        { difficulty: 'Easy', question: 'Simplify 10⁻³.', answer: '1/1000', checkMode: 'auto', correctAnswer: '1/1000', correctAnswers: ['1/1000', '0.001'], explanation: 'Apply a⁻ᵏ = 1/aᵏ:\n10⁻³ = 1/10³ = 1/1000 ✓' },
-        { difficulty: 'Easy', question: 'Write 2⁻⁶ as a fraction in simplest form.', answer: '1/64', checkMode: 'auto', correctAnswer: '1/64', explanation: 'Apply the negative exponent rule:\n2⁻⁶ = 1/2⁶ = 1/64 ✓' },
-        { difficulty: 'Easy', question: 'What is the value of 5⁻²?', answer: '1/25', checkMode: 'auto', correctAnswer: '1/25', explanation: '5⁻² = 1/5² = 1/25 ✓' },
-        { difficulty: 'Medium', question: 'Evaluate 6⁻³ and give your answer as a fraction.', answer: '1/216', checkMode: 'auto', correctAnswer: '1/216', explanation: '6⁻³ = 1/6³ = 1/216 ✓' },
+        { difficulty: 'Easy', question: 'Simplify 10⁻³.', checkMode: 'auto', options: ['1/1000', '-1000', '1/30', '1000'], correctIndex: 0, explanation: 'Apply a⁻ᵏ = 1/aᵏ: 10⁻³ = 1/10³ = 1/1000. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Easy', question: 'Write 2⁻⁶ as a fraction in simplest form.', checkMode: 'auto', options: ['-64', '1/64', '1/12', '64'], correctIndex: 1, explanation: 'Apply the negative exponent rule: 2⁻⁶ = 1/2⁶ = 1/64. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Easy', question: 'What is the value of 5⁻²?', checkMode: 'auto', options: ['-25', '1/10', '1/25', '25'], correctIndex: 2, explanation: '5⁻² = 1/5² = 1/25. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
+        { difficulty: 'Medium', question: 'Evaluate 6⁻³ and give your answer as a fraction.', checkMode: 'auto', options: ['-216', '1/18', '216', '1/216'], correctIndex: 3, explanation: '6⁻³ = 1/6³ = 1/216. (Other options flip the sign, multiply the base by the exponent, or forget the reciprocal.)' },
 
         // Block 2 — Product law with negative exponents (Q5-7)
-        { difficulty: 'Medium', question: 'Simplify 7⁻³ × 7⁻¹.', answer: '1/2401', checkMode: 'auto', correctAnswer: '1/2401', explanation: 'Same base — add exponents:\n7⁻³ × 7⁻¹ = 7^(−3 + (−1)) = 7⁻⁴ = 1/7⁴ = 1/2401 ✓' },
-        { difficulty: 'Medium', question: 'Simplify 2⁵ × 2⁻⁸.', answer: '1/8', checkMode: 'auto', correctAnswer: '1/8', explanation: 'Same base — add exponents:\n2⁵ × 2⁻⁸ = 2^(5 + (−8)) = 2⁻³ = 1/2³ = 1/8 ✓' },
-        { difficulty: 'Hard', question: 'Simplify 9⁻¹ × 9⁻², giving your answer as a fraction.', answer: '1/729', checkMode: 'auto', correctAnswer: '1/729', explanation: 'Same base — add exponents:\n9⁻¹ × 9⁻² = 9^(−1 + (−2)) = 9⁻³ = 1/9³ = 1/729 ✓' },
+        { difficulty: 'Medium', question: 'Simplify 7⁻³ × 7⁻¹.', checkMode: 'auto', options: ['1/2401', '2401', '1/49', '343'], correctIndex: 0, explanation: 'Same base — add the exponents: 7⁻³ × 7⁻¹ = 7^(−3 + (−1)) = 7⁻⁴ = 1/7⁴ = 1/2401. (Other options forget the reciprocal, subtract instead of add, or multiply the exponents instead of adding them.)' },
+        { difficulty: 'Medium', question: 'Simplify 2⁵ × 2⁻⁸.', checkMode: 'auto', options: ['8192', '1/8', '-8', '1/6'], correctIndex: 1, explanation: 'Same base — add the exponents: 2⁵ × 2⁻⁸ = 2^(5 + (−8)) = 2⁻³ = 1/2³ = 1/8. (Other options add the exponents as if both were positive, forget the reciprocal, or miscalculate 2³.)' },
+        { difficulty: 'Hard', question: 'Simplify 9⁻¹ × 9⁻², giving your answer as a fraction.', checkMode: 'auto', options: ['729', '9', '1/729', '81'], correctIndex: 2, explanation: 'Same base — add the exponents: 9⁻¹ × 9⁻² = 9^(−1 + (−2)) = 9⁻³ = 1/9³ = 1/729. (Other options forget the reciprocal, subtract instead of add, or multiply the exponents instead of adding them.)' },
 
         // Block 3 — Quotient law with negative exponents (Q8-10)
-        { difficulty: 'Medium', question: 'Simplify 9² ÷ 9⁻¹.', answer: '729', checkMode: 'auto', correctAnswer: '729', explanation: 'Same base — subtract exponents:\n9² ÷ 9⁻¹ = 9^(2 − (−1)) = 9³ = 729 ✓' },
-        { difficulty: 'Medium', question: 'Find the value of 7³ ÷ 7⁻².', answer: '16807', checkMode: 'auto', correctAnswer: '16807', explanation: 'Same base — subtract exponents:\n7³ ÷ 7⁻² = 7^(3 − (−2)) = 7⁵ = 16807 ✓' },
-        { difficulty: 'Hard', question: 'Simplify 3⁻³ ÷ 3⁻¹, giving your answer as a fraction.', answer: '1/9', checkMode: 'auto', correctAnswer: '1/9', explanation: 'Same base — subtract exponents:\n3⁻³ ÷ 3⁻¹ = 3^(−3 − (−1)) = 3⁻² = 1/9 ✓' },
+        { difficulty: 'Medium', question: 'Simplify 9² ÷ 9⁻¹.', checkMode: 'auto', options: ['9', '1/81', '1/729', '729'], correctIndex: 3, explanation: 'Same base — subtract the exponents: 9² ÷ 9⁻¹ = 9^(2 − (−1)) = 9³ = 729. (Other options forget to flip the sign of the negative exponent, multiply the exponents instead of subtracting, or invert the order giving the reciprocal.)' },
+        { difficulty: 'Medium', question: 'Find the value of 7³ ÷ 7⁻².', checkMode: 'auto', options: ['16807', '7', '1/117649', '1/16807'], correctIndex: 0, explanation: 'Same base — subtract the exponents: 7³ ÷ 7⁻² = 7^(3 − (−2)) = 7⁵ = 16807. (Other options forget to flip the sign of the negative exponent, multiply the exponents instead of subtracting, or invert the order giving the reciprocal.)' },
+        { difficulty: 'Hard', question: 'Simplify 3⁻³ ÷ 3⁻¹, giving your answer as a fraction.', checkMode: 'auto', options: ['1/81', '1/9', '27', '9'], correctIndex: 1, explanation: 'Same base — subtract the exponents: 3⁻³ ÷ 3⁻¹ = 3^(−3 − (−1)) = 3⁻² = 1/9. (Other options forget to flip the sign of the negative exponent, multiply the exponents instead of subtracting, or invert the subtraction order.)' },
 
         // Block 4 — Power of a power with negative exponents (Q11-13)
-        { difficulty: 'Medium', question: 'Simplify (6⁻¹)⁻².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Power of a power — multiply exponents:\n(6⁻¹)⁻² = 6^(−1 × −2) = 6² = 36 ✓' },
-        { difficulty: 'Hard', question: 'Simplify (10⁻²)².', answer: '1/10000', checkMode: 'auto', correctAnswer: '1/10000', explanation: 'Power of a power — multiply exponents:\n(10⁻²)² = 10^(−2 × 2) = 10⁻⁴ = 1/10000 ✓' },
-        { difficulty: 'Hard', question: 'Evaluate (5⁻²)⁻¹, giving your answer as a whole number.', answer: '25', checkMode: 'auto', correctAnswer: '25', explanation: 'Power of a power — multiply exponents:\n(5⁻²)⁻¹ = 5^(−2 × −1) = 5² = 25 ✓' },
+        { difficulty: 'Medium', question: 'Simplify (6⁻¹)⁻².', checkMode: 'auto', options: ['1/216', '1/36', '36', '12'], correctIndex: 2, explanation: 'Power of a power — multiply the exponents: (6⁻¹)⁻² = 6^(−1 × −2) = 6² = 36. (Other options add the exponents instead of multiplying, mishandle one of the negative signs, or miscalculate 6².)' },
+        { difficulty: 'Hard', question: 'Simplify (10⁻²)².', checkMode: 'auto', options: ['1', '10000', '1/100', '1/10000'], correctIndex: 3, explanation: 'Power of a power — multiply the exponents: (10⁻²)² = 10^(−2 × 2) = 10⁻⁴ = 1/10000. (Other options add the exponents instead of multiplying, drop the negative sign, or only use the outer exponent while ignoring the inner one.)' },
+        { difficulty: 'Hard', question: 'Evaluate (5⁻²)⁻¹, giving your answer as a whole number.', checkMode: 'auto', options: ['25', '1/125', '1/25', '10'], correctIndex: 0, explanation: 'Power of a power — multiply the exponents: (5⁻²)⁻¹ = 5^(−2 × −1) = 5² = 25. (Other options add the exponents instead of multiplying, mishandle one of the negative signs, or miscalculate 5².)' },
 
         // Block 5 — Scientific notation with negative exponents (Q14-16)
-        { difficulty: 'Easy', question: 'Write 0.000000605 in scientific notation.', answer: '6.05 × 10⁻⁷', checkMode: 'auto', correctAnswer: '6.05 × 10⁻⁷', correctAnswers: ['6.05 × 10⁻⁷', '6.05×10⁻⁷', '6.05x10⁻⁷', '6.05 x 10⁻⁷', '6.05e-7'], explanation: 'Move the decimal 7 places right: 0.000000605 → 6.05\nMoving right → negative exponent of −7\nAnswer: 6.05 × 10⁻⁷ ✓' },
-        { difficulty: 'Medium', question: 'Express 0.0000004 in scientific notation.', answer: '4 × 10⁻⁷', checkMode: 'auto', correctAnswer: '4 × 10⁻⁷', correctAnswers: ['4 × 10⁻⁷', '4×10⁻⁷', '4x10⁻⁷', '4 x 10⁻⁷', '4e-7', '4.0 × 10⁻⁷'], explanation: 'Move the decimal 7 places right: 0.0000004 → 4\nMoving right → negative exponent of −7\nAnswer: 4 × 10⁻⁷ ✓' },
-        { difficulty: 'Hard', question: 'Lerato writes 0.000625 in scientific notation as 6.25 × 10⁻⁴. Check her answer.', answer: 'Correct — moving the decimal 4 places right from 0.000625 gives 6.25, confirming 6.25 × 10⁻⁴.', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Write 0.000000605 in scientific notation.', checkMode: 'auto', options: ['6.05 × 10⁷', '6.05 × 10⁻⁷', '60.5 × 10⁻⁸', '6.05 × 10⁻⁶'], correctIndex: 1, explanation: 'Move the decimal 7 places right: 0.000000605 → 6.05. Moving right gives a negative exponent: 6.05 × 10⁻⁷. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)' },
+        { difficulty: 'Medium', question: 'Express 0.0000004 in scientific notation.', checkMode: 'auto', options: ['4 × 10⁷', '40 × 10⁻⁸', '4 × 10⁻⁷', '4 × 10⁻⁶'], correctIndex: 2, explanation: 'Move the decimal 7 places right: 0.0000004 → 4. Moving right gives a negative exponent: 4 × 10⁻⁷. (Other options use a positive exponent, leave the front number outside 1–10, or miscount the number of places moved.)' },
+        { difficulty: 'Hard', question: 'Lerato writes 0.000625 in scientific notation as 6.25 × 10⁻⁴. Which statement correctly checks her answer?', checkMode: 'auto', options: ['Incorrect — the exponent should be positive, giving 6.25 × 10⁴.', 'Incorrect — moving the decimal only 3 places gives 6.25 × 10⁻³.', 'Incorrect — the front number should be 62.5, giving 62.5 × 10⁻⁵.', 'Correct — moving the decimal 4 places right from 0.000625 gives 6.25, confirming 6.25 × 10⁻⁴.'], correctIndex: 3, explanation: 'Moving the decimal 4 places right from 0.000625 gives 6.25, and moving right gives a negative exponent of −4, so 6.25 × 10⁻⁴ is correct.' },
 
         // Block 6 — Combined laws, multi-step and real-life problems (Q17-20)
-        { difficulty: 'Hard', question: 'Simplify 7² × 7⁻³ ÷ 7⁻².', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Apply multiply/divide same base left to right:\n7² × 7⁻³ = 7^(2 + (−3)) = 7⁻¹\n7⁻¹ ÷ 7⁻² = 7^(−1 − (−2)) = 7¹ = 7 ✓' },
-        { difficulty: 'Hard', question: 'A hair has a width of 8 × 10⁻⁵ metres. Find the combined width of 200 hairs laid side by side, in scientific notation.', answer: '1.6 × 10⁻² metres', checkMode: 'auto', correctAnswer: '1.6 × 10⁻² metres', correctAnswers: ['1.6 × 10⁻² metres', '1.6×10⁻² metres', '1.6x10⁻² metres', '1.6e-2 metres', '1.6 × 10⁻²', '1.6 × 10⁻² m'], explanation: 'Multiply: 200 × (8 × 10⁻⁵) = 1600 × 10⁻⁵\nAdjust to scientific notation: 1600 × 10⁻⁵ = 1.6 × 10³ × 10⁻⁵ = 1.6 × 10⁻² metres ✓' },
-        { difficulty: 'Hard', question: 'Sipho says 2⁻⁴ × 2⁶ equals 4. Is he correct? Explain.', answer: 'Yes — adding the exponents gives −4 + 6 = 2, so 2⁻⁴ × 2⁶ = 2² = 4.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Simplify 6⁻³ × 6⁷ ÷ 6².', answer: '36', checkMode: 'auto', correctAnswer: '36', explanation: 'Apply multiply/divide same base left to right:\n6⁻³ × 6⁷ = 6^(−3 + 7) = 6⁴\n6⁴ ÷ 6² = 6^(4 − 2) = 6² = 36 ✓' },
+        { difficulty: 'Hard', question: 'Simplify 7² × 7⁻³ ÷ 7⁻².', checkMode: 'auto', options: ['7', '1/343', '823543', '1/7'], correctIndex: 0, explanation: 'Work left to right: 7² × 7⁻³ = 7^(2 + (−3)) = 7⁻¹. Then 7⁻¹ ÷ 7⁻² = 7^(−1 − (−2)) = 7¹ = 7. (Other options forget to flip the sign in the division step, ignore the negative sign in the first step, or forget the division step entirely.)' },
+        { difficulty: 'Hard', question: 'A hair has a width of 8 × 10⁻⁵ metres. Find the combined width of 200 hairs laid side by side, in scientific notation.', checkMode: 'auto', options: ['1600 × 10⁻⁵ metres', '1.6 × 10⁻² metres', '1.6 × 10² metres', '208 × 10⁻⁵ metres'], correctIndex: 1, explanation: 'Multiply: 200 × (8 × 10⁻⁵) = 1600 × 10⁻⁵ = 1.6 × 10³ × 10⁻⁵ = 1.6 × 10⁻² metres. (Other options leave the front number outside 1–10, shift the exponent the wrong way when adjusting, or add the front numbers instead of multiplying them.)' },
+        { difficulty: 'Hard', question: 'Sipho says 2⁻⁴ × 2⁶ equals 4. Which statement correctly evaluates this?', checkMode: 'auto', options: ['He is incorrect — the exponents should multiply, giving 2⁻²⁴.', 'He is incorrect — a negative exponent makes the product negative, so the answer is −4.', 'He is correct — adding the exponents gives −4 + 6 = 2, so 2⁻⁴ × 2⁶ = 2² = 4.', 'He is incorrect — the answer should be a fraction, 1/4, since one exponent is negative.'], correctIndex: 2, explanation: 'Same base — add the exponents: −4 + 6 = 2, so 2⁻⁴ × 2⁶ = 2² = 4. Sipho is correct.' },
+        { difficulty: 'Hard', question: 'Simplify 6⁻³ × 6⁷ ÷ 6².', checkMode: 'auto', options: ['46656', '1679616', '1296', '36'], correctIndex: 3, explanation: 'Work left to right: 6⁻³ × 6⁷ = 6^(−3 + 7) = 6⁴. Then 6⁴ ÷ 6² = 6^(4 − 2) = 6² = 36. (Other options add instead of subtracting in the final step, ignore the negative sign in the first step, or forget the division step entirely.)' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered integer exponents and scientific notation.' },

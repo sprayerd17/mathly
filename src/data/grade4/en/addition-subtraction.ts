@@ -509,36 +509,36 @@ export const topicData: TopicData = {
       name: 'Set 1',
       questions: [
         // Block A — Column Addition & Subtraction Fluency (0-3)
-        { difficulty: 'Easy', question: 'Calculate: 3 245 + 2 431', answer: '5 676', checkMode: 'auto', correctAnswer: '5676', correctAnswers: ['5676', '5 676'], explanation: 'Units: 5+1=6\nTens: 4+3=7\nHundreds: 2+4=6\nThousands: 3+2=5\nAnswer: 5 676 ✓' },
-        { difficulty: 'Easy', question: 'Calculate: 1 867 + 1 345 (with carrying)', answer: '3 212', checkMode: 'auto', correctAnswer: '3212', correctAnswers: ['3212', '3 212'], explanation: 'Units: 7+5=12, write 2 carry 1\nTens: 6+4+1=11, write 1 carry 1\nHundreds: 8+3+1=12, write 2 carry 1\nThousands: 1+1+1=3\nAnswer: 3 212 ✓' },
-        { difficulty: 'Medium', question: 'Calculate: 5 304 − 1 867 (borrowing needed)', answer: '3 437', checkMode: 'auto', correctAnswer: '3437', correctAnswers: ['3437', '3 437'], explanation: 'Units: 4−7, borrow → 14−7=7\nTens: 9−6=3 (after borrow)\nHundreds: 2−8, borrow → 12−8=4\nThousands: 4−1=3\nAnswer: 3 437 ✓' },
-        { difficulty: 'Medium', question: 'Calculate: 8 000 − 3 456 (cascading borrow through two zeros)', answer: '4 544', checkMode: 'auto', correctAnswer: '4544', correctAnswers: ['4544', '4 544'], explanation: 'Units: 0−6, cascading borrow through tens & hundreds → 10−6=4\nTens: 9−5=4\nHundreds: 9−4=5\nThousands: 7−3=4\nAnswer: 4 544 ✓' },
+        { difficulty: 'Easy', question: 'Calculate: 3 245 + 2 431', checkMode: 'auto', options: ['5 676', '5 667', '5 686', '5 677'], correctIndex: 0, explanation: 'Units: 5+1=6\nTens: 4+3=7\nHundreds: 2+4=6\nThousands: 3+2=5\nAnswer: 5 676 ✓ (5 667 swaps the last two digits, 5 686 and 5 677 come from a slip in one column.)' },
+        { difficulty: 'Easy', question: 'Calculate: 1 867 + 1 345 (with carrying)', checkMode: 'auto', options: ['2 102', '3 212', '3 221', '3 222'], correctIndex: 1, explanation: 'Units: 7+5=12, write 2 carry 1\nTens: 6+4+1=11, write 1 carry 1\nHundreds: 8+3+1=12, write 2 carry 1\nThousands: 1+1+1=3\nAnswer: 3 212 ✓ (2 102 forgets to carry in every column; 3 221 and 3 222 swap or shift a digit.)' },
+        { difficulty: 'Medium', question: 'Calculate: 5 304 − 1 867 (borrowing needed)', checkMode: 'auto', options: ['4 563', '3 473', '3 437', '3 447'], correctIndex: 2, explanation: 'Units: 4−7, borrow → 14−7=7\nTens: 9−6=3 (after borrow)\nHundreds: 2−8, borrow → 12−8=4\nThousands: 4−1=3\nAnswer: 3 437 ✓ (4 563 subtracts the smaller digit from the larger one in each column instead of borrowing; 3 473 and 3 447 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate: 8 000 − 3 456 (cascading borrow through two zeros)', checkMode: 'auto', options: ['5 456', '4 454', '4 554', '4 544'], correctIndex: 3, explanation: 'Units: 0−6, cascading borrow through tens & hundreds → 10−6=4\nTens: 9−5=4\nHundreds: 9−4=5\nThousands: 7−3=4\nAnswer: 4 544 ✓ (5 456 ignores the borrow and subtracts the smaller digit from the larger one; 4 454 and 4 554 come from a digit slip.)' },
 
         // Block B — Estimating & Checking (4-7)
-        { difficulty: 'Easy', question: 'Estimate 3 456 + 2 234 by rounding each number to the nearest hundred. Write only the estimate.', answer: '5 700', checkMode: 'auto', correctAnswer: '5700', correctAnswers: ['5700', '5 700'], explanation: '3 456 → 3 500\n2 234 → 2 200\nEstimate: 3 500 + 2 200 = 5 700 ✓' },
-        { difficulty: 'Medium', question: 'Estimate 4 872 − 1 439 by rounding each number to the nearest hundred. Write only the estimate.', answer: '3 500', checkMode: 'auto', correctAnswer: '3500', correctAnswers: ['3500', '3 500'], explanation: '4 872 → 4 900\n1 439 → 1 400\nEstimate: 4 900 − 1 400 = 3 500 ✓' },
-        { difficulty: 'Medium', question: 'Calculate 4 850 − 2 340 = 2 510. Use addition to check this answer. What number should you get back?', answer: '4 850', checkMode: 'auto', correctAnswer: '4850', correctAnswers: ['4850', '4 850'], explanation: 'Check: 2 510 + 2 340 = 4 850 — this matches the original number, so the subtraction is correct ✓' },
-        { difficulty: 'Medium', question: 'Sipho calculated 5 304 − 1 867 = 3 537. Use the inverse operation to check whether Sipho is correct, and explain your reasoning.', answer: 'Check: 3 537 + 1 867 = 5 404, not 5 304, so Sipho is incorrect. The correct answer is 3 437 (since 3 437 + 1 867 = 5 304).', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Estimate 3 456 + 2 234 by rounding each number to the nearest hundred.', checkMode: 'auto', options: ['5 700', '5 690', '5 600', '5 800'], correctIndex: 0, explanation: '3 456 → 3 500\n2 234 → 2 200\nEstimate: 3 500 + 2 200 = 5 700 ✓ (5 690 is the exact answer, not the estimate; 5 600 rounds 3 456 down to 3 400 by mistake; 5 800 rounds 2 234 up to 2 300 by mistake.)' },
+        { difficulty: 'Medium', question: 'Estimate 4 872 − 1 439 by rounding each number to the nearest hundred.', checkMode: 'auto', options: ['3 433', '3 500', '3 400', '3 430'], correctIndex: 1, explanation: '4 872 → 4 900\n1 439 → 1 400\nEstimate: 4 900 − 1 400 = 3 500 ✓ (3 433 is the exact answer, not the estimate; 3 400 rounds 4 872 down to 4 800 by mistake; 3 430 rounds both numbers to the nearest ten instead of the nearest hundred.)' },
+        { difficulty: 'Medium', question: 'Calculate 4 850 − 2 340 = 2 510. Use addition to check this answer. What number should you get back?', checkMode: 'auto', options: ['4 805', '2 340', '4 850', '4 860'], correctIndex: 2, explanation: 'Check: 2 510 + 2 340 = 4 850 — this matches the original number, so the subtraction is correct ✓ (4 805 and 4 860 come from a slip while re-adding; 2 340 is just one of the numbers used in the check, not the sum.)' },
+        { difficulty: 'Medium', question: "Sipho calculated 5 304 − 1 867 = 3 537. Which statement correctly evaluates his answer using the inverse operation?", checkMode: 'auto', options: ['Sipho is correct — the check confirms 3 537 + 1 867 = 5 304.', 'Sipho is incorrect — the correct answer is 3 473.', 'Sipho is incorrect — the correct answer is 3 447.', 'Sipho is incorrect — checking gives 3 537 + 1 867 = 5 404, not 5 304, so the correct answer is 3 437.'], correctIndex: 3, explanation: 'Check: 3 537 + 1 867 = 5 404, not 5 304, so Sipho is incorrect. The correct answer is 3 437 (since 3 437 + 1 867 = 5 304). (3 473 and 3 447 are plausible slips, not what the check actually shows.)' },
 
         // Block C — Mental Maths Strategies (8-10)
-        { difficulty: 'Medium', question: 'Calculate mentally: 3 450 + 300', answer: '3 750', checkMode: 'auto', correctAnswer: '3750', correctAnswers: ['3750', '3 750'], explanation: 'Adding 300 only changes the hundreds digit: 4+3=7\nAnswer: 3 750 ✓' },
-        { difficulty: 'Medium', question: 'Calculate mentally: 6 120 − 60 (this needs a mental regroup — the tens digit is too small)', answer: '6 060', checkMode: 'auto', correctAnswer: '6060', correctAnswers: ['6060', '6 060'], explanation: '2 tens − 6 tens needs borrowing from hundreds: 12 tens − 6 tens = 6 tens.\nAnswer: 6 060 ✓' },
-        { difficulty: 'Medium', question: 'Calculate mentally: 5 240 + 800. Explain why more than one digit changes this time.', answer: '6 040 — because 2 hundreds + 8 hundreds = 10 hundreds, which is too many for the hundreds column, so the extra hundred rolls over into the thousands digit as well.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 3 450 + 300', checkMode: 'auto', options: ['3 750', '3 705', '3 760', '3 453'], correctIndex: 0, explanation: 'Adding 300 only changes the hundreds digit: 4+3=7\nAnswer: 3 750 ✓ (3 705 swaps the last two digits, 3 760 shifts a digit, 3 453 comes from misreading 300 as 3 and adding it to the units.)' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 6 120 − 60 (this needs a mental regroup — the tens digit is too small)', checkMode: 'auto', options: ['6 140', '6 060', '6 006', '6 070'], correctIndex: 1, explanation: '2 tens − 6 tens needs borrowing from hundreds: 12 tens − 6 tens = 6 tens.\nAnswer: 6 060 ✓ (6 140 subtracts the smaller digit from the larger one instead of regrouping; 6 006 and 6 070 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 5 240 + 800. Which answer is correct, and why does more than one digit change this time?', checkMode: 'auto', options: ['5 340 — only the hundreds digit changes, from 2 to 0, because 2+8=10.', '6 140 — 800 was added to the tens digit by mistake.', '6 040 — because 2 hundreds + 8 hundreds = 10 hundreds, which is too many for the hundreds column, so the extra hundred rolls over into the thousands digit as well.', '5 248 — the 8 from 800 was added to the units digit instead of the hundreds.'], correctIndex: 2, explanation: '2 hundreds + 8 hundreds = 10 hundreds = 1 000, so the hundreds digit becomes 0 and the thousands digit increases by 1: 5 240 + 800 = 6 040 ✓' },
 
         // Block D — Money Word Problems (11-14)
-        { difficulty: 'Easy', question: 'Thabo has R2 450 in savings. He earns R1 375 doing chores. How much does he have altogether?', answer: 'R3 825', checkMode: 'auto', correctAnswer: 'R3825', correctAnswers: ['R3825', 'R3 825', '3825', '3 825'], explanation: '"Altogether" means add: R2 450 + R1 375 = R3 825 ✓' },
-        { difficulty: 'Medium', question: 'A shop sells R3 800 worth of goods on Saturday and R2 150 on Sunday. It pays R2 680 in expenses for the weekend. How much profit is left?', answer: 'R3 270', checkMode: 'auto', correctAnswer: 'R3270', correctAnswers: ['R3270', 'R3 270', '3270', '3 270'], explanation: 'Total sales: R3 800 + R2 150 = R5 950\nProfit: R5 950 − R2 680 = R3 270 ✓' },
-        { difficulty: 'Medium', question: 'Sipho saved R2 999 last year and R1 876 this year. Amahle saved R3 250 last year and R1 500 this year. Who has more total savings, and by how much?', answer: 'Sipho has more, by R125', checkMode: 'auto', correctAnswer: 'R125', correctAnswers: ['R125', 'R 125', '125', 'sipho by r125', 'sipho by 125'], explanation: 'Sipho: R2 999 + R1 876 = R4 875\nAmahle: R3 250 + R1 500 = R4 750\nDifference: R4 875 − R4 750 = R125. Sipho has R125 more than Amahle ✓' },
-        { difficulty: 'Medium', question: 'Lerato buys school shoes for R1 349 and a school bag for R875 out of a R5 000 gift from her grandmother. How much money does she have left?', answer: 'R2 776', checkMode: 'auto', correctAnswer: 'R2776', correctAnswers: ['R2776', 'R2 776', '2776', '2 776'], explanation: 'Total cost: R1 349 + R875 = R2 224\nRemaining: R5 000 − R2 224 = R2 776 ✓' },
+        { difficulty: 'Easy', question: 'Thabo has R2 450 in savings. He earns R1 375 doing chores. How much does he have altogether?', checkMode: 'auto', options: ['R3 725', 'R3 852', 'R3 835', 'R3 825'], correctIndex: 3, explanation: '"Altogether" means add: R2 450 + R1 375 = R3 825 ✓ (R3 725 forgets to carry in a column; R3 852 and R3 835 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'A shop sells R3 800 worth of goods on Saturday and R2 150 on Sunday. It pays R2 680 in expenses for the weekend. How much profit is left?', checkMode: 'auto', options: ['R3 270', 'R5 950', 'R8 630', 'R1 120'], correctIndex: 0, explanation: 'Total sales: R3 800 + R2 150 = R5 950\nProfit: R5 950 − R2 680 = R3 270 ✓ (R5 950 forgets to subtract the expenses; R8 630 adds the expenses instead of subtracting them; R1 120 only uses Saturday\'s sales.)' },
+        { difficulty: 'Medium', question: 'Sipho saved R2 999 last year and R1 876 this year. Amahle saved R3 250 last year and R1 500 this year. Who has more total savings, and by how much?', checkMode: 'auto', options: ['Amahle has more, by R125', 'Sipho has more, by R125', 'Sipho has more, by R152', 'Sipho has more, by R135'], correctIndex: 1, explanation: 'Sipho: R2 999 + R1 876 = R4 875\nAmahle: R3 250 + R1 500 = R4 750\nDifference: R4 875 − R4 750 = R125. Sipho has R125 more than Amahle ✓ (the first option has the direction backwards; R152 and R135 come from a digit slip in the final subtraction.)' },
+        { difficulty: 'Medium', question: 'Lerato buys school shoes for R1 349 and a school bag for R875 out of a R5 000 gift from her grandmother. How much money does she have left?', checkMode: 'auto', options: ['R3 651', 'R2 786', 'R2 776', 'R2 767'], correctIndex: 2, explanation: 'Total cost: R1 349 + R875 = R2 224\nRemaining: R5 000 − R2 224 = R2 776 ✓ (R3 651 only subtracts the shoes and forgets the bag; R2 786 and R2 767 come from a digit slip in the final subtraction.)' },
 
         // Block E — Multi-Step & Combined Word Problems (15-17)
-        { difficulty: 'Hard', question: 'A shop has 6 050 loaves of bread. It sells 2 387, then donates 1 200 more to a charity. How many loaves are left?', answer: '2 463', checkMode: 'auto', correctAnswer: '2463', correctAnswers: ['2463', '2 463'], explanation: '6 050 − 2 387 = 3 663\n3 663 − 1 200 = 2 463 ✓' },
-        { difficulty: 'Hard', question: 'A stadium has 2 345 fans. 1 876 more arrive, then 987 leave early. How many fans remain?', answer: '3 234', checkMode: 'auto', correctAnswer: '3234', correctAnswers: ['3234', '3 234'], explanation: '2 345 + 1 876 = 4 221\n4 221 − 987 = 3 234 ✓' },
-        { difficulty: 'Hard', question: 'A company had 9 999 items in stock. It sold 4 567 items, then received a delivery of 1 233 more. How many items are in stock now?', answer: '6 665', checkMode: 'auto', correctAnswer: '6665', correctAnswers: ['6665', '6 665'], explanation: '9 999 − 4 567 = 5 432\n5 432 + 1 233 = 6 665 ✓' },
+        { difficulty: 'Hard', question: 'A shop has 6 050 loaves of bread. It sells 2 387, then donates 1 200 more to a charity. How many loaves are left?', checkMode: 'auto', options: ['3 663', '4 863', '2 473', '2 463'], correctIndex: 3, explanation: '6 050 − 2 387 = 3 663\n3 663 − 1 200 = 2 463 ✓ (3 663 stops after the first step; 4 863 adds the donation instead of subtracting it; 2 473 comes from a digit slip in the final subtraction.)' },
+        { difficulty: 'Hard', question: 'A stadium has 2 345 fans. 1 876 more arrive, then 987 leave early. How many fans remain?', checkMode: 'auto', options: ['3 234', '4 221', '5 208', '3 244'], correctIndex: 0, explanation: '2 345 + 1 876 = 4 221\n4 221 − 987 = 3 234 ✓ (4 221 stops after the first step; 5 208 adds 987 instead of subtracting it; 3 244 comes from a digit slip.)' },
+        { difficulty: 'Hard', question: 'A company had 9 999 items in stock. It sold 4 567 items, then received a delivery of 1 233 more. How many items are in stock now?', checkMode: 'auto', options: ['5 432', '6 665', '4 199', '6 675'], correctIndex: 1, explanation: '9 999 − 4 567 = 5 432\n5 432 + 1 233 = 6 665 ✓ (5 432 stops after the first step; 4 199 subtracts the delivery instead of adding it; 6 675 comes from a digit slip.)' },
 
         // Block F — Reasoning, Justification & Error-Spotting (18-19)
-        { difficulty: 'Hard', question: 'A learner adds 4 104 + 3 290 by mistake as 4 104 + 3 209 and gets a different answer. Explain what error the learner made and find the difference between the correct answer and the learner\'s incorrect answer.', answer: 'The learner swapped the tens and units digits of 3 290, turning it into 3 209 (a transposition error). Correct: 4 104 + 3 290 = 7 394. Incorrect: 4 104 + 3 209 = 7 313. The difference is 7 394 − 7 313 = 81.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Lerato says that borrowing is only needed when subtracting money amounts, not whole numbers. Is she correct? Explain your reasoning.', answer: 'No, Lerato is incorrect. Borrowing is needed whenever a digit in the top number is smaller than the digit below it in the same column, regardless of whether the numbers represent money or plain whole numbers — the column subtraction method works the same way in both cases.', checkMode: 'self' },
+        { difficulty: 'Hard', question: "A learner adds 4 104 + 3 290 by mistake as 4 104 + 3 209 and gets a different answer. Which statement correctly explains the error and finds the difference between the correct and incorrect answers?", checkMode: 'auto', options: ['The learner forgot to carry a digit; correct = 7 394, incorrect = 7 313, difference = 71.', 'The learner transposed the digits of 4 104 instead of 3 290; correct = 7 394, incorrect = 7 313, difference = 91.', 'The learner swapped the tens and units digits of 3 290, turning it into 3 209 (a transposition error). Correct: 4 104 + 3 290 = 7 394. Incorrect: 4 104 + 3 209 = 7 313. The difference is 7 394 − 7 313 = 81.', 'The learner\'s incorrect answer 7 313 is actually the correct one, and 7 394 is wrong.'], correctIndex: 2, explanation: 'The learner swapped the tens and units digits of 3 290 into 3 209. 4 104 + 3 290 = 7 394 and 4 104 + 3 209 = 7 313, so the difference is 81.' },
+        { difficulty: 'Hard', question: 'Lerato says that borrowing is only needed when subtracting money amounts, not whole numbers. Which statement is correct?', checkMode: 'auto', options: ['Lerato is correct — money calculations always need borrowing.', 'Lerato is correct, but only for numbers with four digits or more.', 'Lerato is incorrect — whole numbers never need borrowing, only money does.', 'Lerato is incorrect — borrowing is needed whenever a digit in the top number is smaller than the digit below it in the same column, whether the numbers represent money or plain whole numbers.'], correctIndex: 3, explanation: 'Borrowing depends only on comparing digits in each column — it works exactly the same way whether the numbers represent money or plain whole numbers, so Lerato is incorrect.' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Outstanding — mastered the full range from column methods to multi-step reasoning.' },
@@ -555,36 +555,36 @@ export const topicData: TopicData = {
       name: 'Set 2',
       questions: [
         // Block A — Column Addition & Subtraction Fluency (0-3)
-        { difficulty: 'Easy', question: 'Calculate: 4 123 + 3 456', answer: '7 579', checkMode: 'auto', correctAnswer: '7579', correctAnswers: ['7579', '7 579'], explanation: 'Units: 3+6=9\nTens: 2+5=7\nHundreds: 1+4=5\nThousands: 4+3=7\nAnswer: 7 579 ✓' },
-        { difficulty: 'Easy', question: 'Calculate: 3 456 + 2 678 (with carrying)', answer: '6 134', checkMode: 'auto', correctAnswer: '6134', correctAnswers: ['6134', '6 134'], explanation: 'Units: 6+8=14, write 4 carry 1\nTens: 5+7+1=13, write 3 carry 1\nHundreds: 4+6+1=11, write 1 carry 1\nThousands: 3+2+1=6\nAnswer: 6 134 ✓' },
-        { difficulty: 'Medium', question: 'Calculate: 7 302 − 4 568 (borrowing needed)', answer: '2 734', checkMode: 'auto', correctAnswer: '2734', correctAnswers: ['2734', '2 734'], explanation: 'Units: 2−8, borrow through tens (0) → 12−8=4\nTens: 9−6=3\nHundreds: 2−5, borrow → 12−5=7\nThousands: 6−4=2\nAnswer: 2 734 ✓' },
-        { difficulty: 'Medium', question: 'Calculate: 7 005 − 2 348 (cascading borrow through two zeros)', answer: '4 657', checkMode: 'auto', correctAnswer: '4657', correctAnswers: ['4657', '4 657'], explanation: 'Units: 5−8, cascading borrow through tens & hundreds → 15−8=7\nTens: 9−4=5\nHundreds: 9−3=6\nThousands: 6−2=4\nAnswer: 4 657 ✓' },
+        { difficulty: 'Easy', question: 'Calculate: 4 123 + 3 456', checkMode: 'auto', options: ['7 579', '7 597', '7 589', '7 578'], correctIndex: 0, explanation: 'Units: 3+6=9\nTens: 2+5=7\nHundreds: 1+4=5\nThousands: 4+3=7\nAnswer: 7 579 ✓ (7 597 swaps the last two digits, 7 589 and 7 578 come from a slip in one column.)' },
+        { difficulty: 'Easy', question: 'Calculate: 3 456 + 2 678 (with carrying)', checkMode: 'auto', options: ['5 024', '6 134', '6 143', '6 144'], correctIndex: 1, explanation: 'Units: 6+8=14, write 4 carry 1\nTens: 5+7+1=13, write 3 carry 1\nHundreds: 4+6+1=11, write 1 carry 1\nThousands: 3+2+1=6\nAnswer: 6 134 ✓ (5 024 forgets to carry in every column; 6 143 and 6 144 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate: 7 302 − 4 568 (borrowing needed)', checkMode: 'auto', options: ['3 266', '2 743', '2 734', '2 744'], correctIndex: 2, explanation: 'Units: 2−8, borrow through tens (0) → 12−8=4\nTens: 9−6=3\nHundreds: 2−5, borrow → 12−5=7\nThousands: 6−4=2\nAnswer: 2 734 ✓ (3 266 subtracts the smaller digit from the larger one in each column instead of borrowing; 2 743 and 2 744 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate: 7 005 − 2 348 (cascading borrow through two zeros)', checkMode: 'auto', options: ['5 343', '4 675', '4 667', '4 657'], correctIndex: 3, explanation: 'Units: 5−8, cascading borrow through tens & hundreds → 15−8=7\nTens: 9−4=5\nHundreds: 9−3=6\nThousands: 6−2=4\nAnswer: 4 657 ✓ (5 343 ignores the borrow and subtracts the smaller digit from the larger one; 4 675 and 4 667 come from a digit slip.)' },
 
         // Block B — Estimating & Checking (4-7)
-        { difficulty: 'Easy', question: 'Estimate 5 678 + 2 345 by rounding each number to the nearest hundred. Write only the estimate.', answer: '8 000', checkMode: 'auto', correctAnswer: '8000', correctAnswers: ['8000', '8 000'], explanation: '5 678 → 5 700\n2 345 → 2 300\nEstimate: 5 700 + 2 300 = 8 000 ✓' },
-        { difficulty: 'Medium', question: 'Estimate 9 856 − 3 421 by rounding each number to the nearest hundred. Write only the estimate.', answer: '6 500', checkMode: 'auto', correctAnswer: '6500', correctAnswers: ['6500', '6 500'], explanation: '9 856 → 9 900\n3 421 → 3 400\nEstimate: 9 900 − 3 400 = 6 500 ✓' },
-        { difficulty: 'Medium', question: 'Calculate 2 345 + 1 323 = 3 668. Use subtraction to check this answer. What number should you get back?', answer: '2 345', checkMode: 'auto', correctAnswer: '2345', correctAnswers: ['2345', '2 345'], explanation: 'Check: 3 668 − 1 323 = 2 345 — this matches the original number, so the addition is correct ✓' },
-        { difficulty: 'Hard', question: 'A learner calculated 6 412 + 1 543 = 7 945. Use the inverse operation to check whether the learner is correct, and explain your reasoning.', answer: 'Check: 7 945 − 1 543 = 6 402, not 6 412, so the learner is incorrect. The correct answer is 7 955 (since 7 955 − 1 543 = 6 412).', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Estimate 5 678 + 2 345 by rounding each number to the nearest hundred.', checkMode: 'auto', options: ['8 000', '8 023', '7 900', '8 100'], correctIndex: 0, explanation: '5 678 → 5 700\n2 345 → 2 300\nEstimate: 5 700 + 2 300 = 8 000 ✓ (8 023 is the exact answer, not the estimate; 7 900 rounds 5 678 down to 5 600 by mistake; 8 100 rounds 2 345 up to 2 400 by mistake.)' },
+        { difficulty: 'Medium', question: 'Estimate 9 856 − 3 421 by rounding each number to the nearest hundred.', checkMode: 'auto', options: ['6 435', '6 500', '6 400', '6 440'], correctIndex: 1, explanation: '9 856 → 9 900\n3 421 → 3 400\nEstimate: 9 900 − 3 400 = 6 500 ✓ (6 435 is the exact answer, not the estimate; 6 400 rounds 9 856 down to 9 800 by mistake; 6 440 rounds both numbers to the nearest ten instead of the nearest hundred.)' },
+        { difficulty: 'Medium', question: 'Calculate 2 345 + 1 323 = 3 668. Use subtraction to check this answer. What number should you get back?', checkMode: 'auto', options: ['2 354', '1 323', '2 345', '2 355'], correctIndex: 2, explanation: 'Check: 3 668 − 1 323 = 2 345 — this matches the original number, so the addition is correct ✓ (2 354 and 2 355 come from a slip while re-subtracting; 1 323 is just one of the numbers used in the check, not the result.)' },
+        { difficulty: 'Hard', question: 'A learner calculated 6 412 + 1 543 = 7 945. Which statement correctly evaluates the answer using the inverse operation?', checkMode: 'auto', options: ['The learner is correct — the check confirms 7 945 − 1 543 = 6 412.', 'The learner is incorrect — the correct answer is 7 595.', 'The learner is incorrect — the correct answer is 7 965.', 'The learner is incorrect — checking gives 7 945 − 1 543 = 6 402, not 6 412, so the correct answer is 7 955.'], correctIndex: 3, explanation: 'Check: 7 945 − 1 543 = 6 402, not 6 412, so the learner is incorrect. The correct answer is 7 955 (since 7 955 − 1 543 = 6 412). (7 595 and 7 965 are plausible slips, not what the check actually shows.)' },
 
         // Block C — Mental Maths Strategies (8-10)
-        { difficulty: 'Medium', question: 'Calculate mentally: 8 760 − 300', answer: '8 460', checkMode: 'auto', correctAnswer: '8460', correctAnswers: ['8460', '8 460'], explanation: 'Only the hundreds digit changes: 7−3=4\nAnswer: 8 460 ✓' },
-        { difficulty: 'Medium', question: 'Calculate mentally: 3 600 − 800 (this needs a mental regroup — the hundreds digit is too small)', answer: '2 800', checkMode: 'auto', correctAnswer: '2800', correctAnswers: ['2800', '2 800'], explanation: '6 hundreds − 8 hundreds needs borrowing from thousands: 3 000 − 800 = 2 800.\nAnswer: 2 800 ✓' },
-        { difficulty: 'Medium', question: 'Calculate mentally: 3 480 + 90. Explain why more than one digit changes this time.', answer: '3 570 — because 8 tens + 9 tens = 17 tens, which is too many for the tens column, so the extra ten rolls over into the hundreds digit as well.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 8 760 − 300', checkMode: 'auto', options: ['8 460', '8 406', '8 470', '8 730'], correctIndex: 0, explanation: 'Only the hundreds digit changes: 7−3=4\nAnswer: 8 460 ✓ (8 406 swaps the last two digits, 8 470 shifts a digit, 8 730 comes from misreading 300 as 30.)' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 3 600 − 800 (this needs a mental regroup — the hundreds digit is too small)', checkMode: 'auto', options: ['3 200', '2 800', '2 080', '2 810'], correctIndex: 1, explanation: '6 hundreds − 8 hundreds needs borrowing from thousands: 3 000 − 800 = 2 800.\nAnswer: 2 800 ✓ (3 200 subtracts the smaller digit from the larger one instead of regrouping; 2 080 and 2 810 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 3 480 + 90. Which answer is correct, and why does more than one digit change this time?', checkMode: 'auto', options: ['3 470 — only the tens digit changes, from 8 to 7, and the carry into hundreds is ignored.', '4 470 — the carried 1 was added to the thousands digit instead of the hundreds.', '3 570 — because 8 tens + 9 tens = 17 tens, which is too many for the tens column, so the extra ten rolls over into the hundreds digit as well.', '3 580 — a slip in the tens column.'], correctIndex: 2, explanation: '8 tens + 9 tens = 17 tens = 170, so the tens digit becomes 7 and the hundreds digit increases by 1: 3 480 + 90 = 3 570 ✓' },
 
         // Block D — Money Word Problems (11-14)
-        { difficulty: 'Easy', question: 'A shop takes R1 899 from a market stall and R2 760 from regular customers in one day. What is its total takings for the day?', answer: 'R4 659', checkMode: 'auto', correctAnswer: 'R4659', correctAnswers: ['R4659', 'R4 659', '4659', '4 659'], explanation: '"Total" means add: R1 899 + R2 760 = R4 659 ✓' },
-        { difficulty: 'Medium', question: 'A store had R7 000 in stock value. It sold R3 899 worth of goods, then received new stock worth R1 250. What value of stock does it have now?', answer: 'R4 351', checkMode: 'auto', correctAnswer: 'R4351', correctAnswers: ['R4351', 'R4 351', '4351', '4 351'], explanation: 'After selling: R7 000 − R3 899 = R3 101\nAfter new stock: R3 101 + R1 250 = R4 351 ✓' },
-        { difficulty: 'Medium', question: 'Thabo has saved R4 200. His sister Amahle has saved R3 475. Who has saved more, and by how much?', answer: 'Thabo has more, by R725', checkMode: 'auto', correctAnswer: 'R725', correctAnswers: ['R725', 'R 725', '725', 'thabo by r725', 'thabo by 725'], explanation: 'R4 200 − R3 475 = R725. Thabo has saved R725 more than Amahle ✓' },
-        { difficulty: 'Medium', question: 'At a market stall, Lerato buys a scarf for R349 and a hat for R275, paying with a R1 000 note. How much change does she get?', answer: 'R376', checkMode: 'auto', correctAnswer: 'R376', correctAnswers: ['R376', 'R 376', '376'], explanation: 'Total cost: R349 + R275 = R624\nChange: R1 000 − R624 = R376 ✓' },
+        { difficulty: 'Easy', question: 'A shop takes R1 899 from a market stall and R2 760 from regular customers in one day. What is its total takings for the day?', checkMode: 'auto', options: ['R3 559', 'R4 695', 'R4 669', 'R4 659'], correctIndex: 3, explanation: '"Total" means add: R1 899 + R2 760 = R4 659 ✓ (R3 559 forgets to carry in a column; R4 695 and R4 669 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'A store had R7 000 in stock value. It sold R3 899 worth of goods, then received new stock worth R1 250. What value of stock does it have now?', checkMode: 'auto', options: ['R4 351', 'R3 101', 'R1 851', 'R6 149'], correctIndex: 0, explanation: 'After selling: R7 000 − R3 899 = R3 101\nAfter new stock: R3 101 + R1 250 = R4 351 ✓ (R3 101 stops after the first step; R1 851 subtracts the new stock instead of adding it; R6 149 starts from a wrong first step.)' },
+        { difficulty: 'Medium', question: 'Thabo has saved R4 200. His sister Amahle has saved R3 475. Who has saved more, and by how much?', checkMode: 'auto', options: ['Amahle has more, by R725', 'Thabo has more, by R725', 'Thabo has more, by R1 275', 'Thabo has more, by R752'], correctIndex: 1, explanation: 'R4 200 − R3 475 = R725. Thabo has saved R725 more than Amahle ✓ (the first option has the direction backwards; R1 275 ignores the borrow when subtracting; R752 comes from a digit slip.)' },
+        { difficulty: 'Medium', question: 'At a market stall, Lerato buys a scarf for R349 and a hat for R275, paying with a R1 000 note. How much change does she get?', checkMode: 'auto', options: ['R624', 'R486', 'R376', 'R386'], correctIndex: 2, explanation: 'Total cost: R349 + R275 = R624\nChange: R1 000 − R624 = R376 ✓ (R624 is the total cost, not the change; R486 forgets to carry when adding the cost; R386 comes from a digit slip in the final subtraction.)' },
 
         // Block E — Multi-Step & Combined Word Problems (15-17)
-        { difficulty: 'Hard', question: 'A farmer has 5 000 apples. He sells 1 234, then 2 345 more. How many apples does he have left?', answer: '1 421', checkMode: 'auto', correctAnswer: '1421', correctAnswers: ['1421', '1 421'], explanation: '5 000 − 1 234 = 3 766\n3 766 − 2 345 = 1 421 ✓' },
-        { difficulty: 'Hard', question: 'A school has 3 456 learners. 2 544 more learners join, then 1 000 graduate and leave. How many learners are at the school now?', answer: '5 000', checkMode: 'auto', correctAnswer: '5000', correctAnswers: ['5000', '5 000'], explanation: '3 456 + 2 544 = 6 000\n6 000 − 1 000 = 5 000 ✓' },
-        { difficulty: 'Hard', question: 'A bus company carried 5 670 passengers on Saturday and 2 340 fewer on Sunday. How many passengers did it carry on Sunday, and what was the total for the weekend?', answer: 'Sunday: 3 330; Weekend total: 9 000', checkMode: 'auto', correctAnswer: '9000', correctAnswers: ['9000', '9 000', '3330 and 9000', 'sunday=3330, total=9000'], explanation: 'Sunday: 5 670 − 2 340 = 3 330\nWeekend total: 5 670 + 3 330 = 9 000 ✓' },
+        { difficulty: 'Hard', question: 'A farmer has 5 000 apples. He sells 1 234, then 2 345 more. How many apples does he have left?', checkMode: 'auto', options: ['3 766', '6 111', '1 431', '1 421'], correctIndex: 3, explanation: '5 000 − 1 234 = 3 766\n3 766 − 2 345 = 1 421 ✓ (3 766 stops after the first step; 6 111 adds the second amount instead of subtracting it; 1 431 comes from a digit slip.)' },
+        { difficulty: 'Hard', question: 'A school has 3 456 learners. 2 544 more learners join, then 1 000 graduate and leave. How many learners are at the school now?', checkMode: 'auto', options: ['5 000', '6 000', '7 000', '5 010'], correctIndex: 0, explanation: '3 456 + 2 544 = 6 000\n6 000 − 1 000 = 5 000 ✓ (6 000 stops after the first step; 7 000 adds the graduating learners instead of subtracting them; 5 010 comes from a digit slip.)' },
+        { difficulty: 'Hard', question: 'A bus company carried 5 670 passengers on Saturday and 2 340 fewer on Sunday. How many passengers did it carry on Sunday, and what was the total for the weekend?', checkMode: 'auto', options: ['Sunday: 3 303; Weekend total: 9 000', 'Sunday: 3 330; Weekend total: 9 000', 'Sunday: 3 330; Weekend total: 8 900', 'Sunday: 3 340; Weekend total: 9 010'], correctIndex: 1, explanation: 'Sunday: 5 670 − 2 340 = 3 330\nWeekend total: 5 670 + 3 330 = 9 000 ✓ (the other options come from a digit slip in one of the two steps.)' },
 
         // Block F — Reasoning, Justification & Error-Spotting (18-19)
-        { difficulty: 'Hard', question: 'A learner says that 4 000 − 3 999 = 1 because "the numbers are so close together". Explain whether this reasoning is correct, and show the calculation to support your answer.', answer: 'The learner\'s final answer of 1 is correct, but the reasoning given ("because the numbers are close together") is not a reliable method — it happens to work here by coincidence. The proper way is to calculate directly: 4 000 − 3 999 = 1, confirmed by column subtraction with borrowing through every column.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'When you borrow in column subtraction, explain in your own words why taking "1" from the column on the left is really worth 10 in the column you borrow it into.', answer: 'Each place value column is 10 times bigger than the one to its right, so when you borrow 1 from a column, that 1 unit of that column is equal to 10 units of the column immediately to its right — for example, borrowing 1 hundred gives you 10 tens, because 1 hundred = 10 tens.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A learner says that 4 000 − 3 999 = 1 because "the numbers are so close together". Which statement correctly evaluates this reasoning?', checkMode: 'auto', options: ['The learner is wrong — the correct answer is actually 11, not 1.', 'The learner is wrong — the answer should be 1 001, because each borrow through a zero adds 1 000.', 'The final answer of 1 is correct, but the reasoning is not reliable — it only works here by coincidence. Direct column subtraction with borrowing through every column confirms 4 000 − 3 999 = 1.', 'The learner is right, and "close together" always means the answer is exactly 1, no matter which numbers are used.'], correctIndex: 2, explanation: 'Column subtraction with borrowing through every column confirms 4 000 − 3 999 = 1, so the learner\'s answer is right — but "the numbers are close together" is not a reliable method in general, it just happened to work here.' },
+        { difficulty: 'Hard', question: 'When you borrow in column subtraction, why is the "1" you take from the column on the left really worth 10 in the column you borrow it into?', checkMode: 'auto', options: ['Borrowing is always worth exactly 10, no matter which columns are involved, because 10 is a fixed rule.', 'Borrowing 1 from a column gives 2 units in the next column, because it is split in half.', 'Borrowing 1 hundred gives 10 units (ones), skipping the tens column entirely.', 'Each place-value column is 10 times the value of the column to its right, so borrowing 1 from a column gives 10 units in the column immediately to its right — for example, borrowing 1 hundred gives 10 tens, because 1 hundred = 10 tens.'], correctIndex: 3, explanation: 'Place value is based on powers of 10, so every column is worth 10 times the column to its right. Borrowing 1 from a column therefore always gives exactly 10 of the next column down — e.g. 1 hundred = 10 tens, 1 ten = 10 units.' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Outstanding — mastered the full range from column methods to multi-step reasoning.' },
@@ -601,36 +601,36 @@ export const topicData: TopicData = {
       name: 'Set 3',
       questions: [
         // Block A — Column Addition & Subtraction Fluency (0-3)
-        { difficulty: 'Easy', question: 'Calculate: 5 678 + 1 231', answer: '6 909', checkMode: 'auto', correctAnswer: '6909', correctAnswers: ['6909', '6 909'], explanation: 'Units: 8+1=9\nTens: 7+3=10, write 0 carry 1\nHundreds: 6+2+1=9\nThousands: 5+1=6\nAnswer: 6 909 ✓' },
-        { difficulty: 'Easy', question: 'Calculate: 4 785 + 1 246 (with carrying)', answer: '6 031', checkMode: 'auto', correctAnswer: '6031', correctAnswers: ['6031', '6 031'], explanation: 'Units: 5+6=11, write 1 carry 1\nTens: 8+4+1=13, write 3 carry 1\nHundreds: 7+2+1=10, write 0 carry 1\nThousands: 4+1+1=6\nAnswer: 6 031 ✓' },
-        { difficulty: 'Medium', question: 'Calculate: 9 302 − 5 678 (borrowing needed)', answer: '3 624', checkMode: 'auto', correctAnswer: '3624', correctAnswers: ['3624', '3 624'], explanation: 'Units: 2−8, borrow → 12−8=4\nTens: 9−7=2 (after borrow)\nHundreds: 2−6, borrow → 12−6=6\nThousands: 8−5=3\nAnswer: 3 624 ✓' },
-        { difficulty: 'Medium', question: 'Calculate: 6 003 − 2 456 (cascading borrow through two zeros)', answer: '3 547', checkMode: 'auto', correctAnswer: '3547', correctAnswers: ['3547', '3 547'], explanation: 'Units: 3−6, cascading borrow through tens & hundreds → 13−6=7\nTens: 9−5=4\nHundreds: 9−4=5\nThousands: 5−2=3\nAnswer: 3 547 ✓' },
+        { difficulty: 'Easy', question: 'Calculate: 5 678 + 1 231', checkMode: 'auto', options: ['6 909', '6 809', '6 990', '6 919'], correctIndex: 0, explanation: 'Units: 8+1=9\nTens: 7+3=10, write 0 carry 1\nHundreds: 6+2+1=9\nThousands: 5+1=6\nAnswer: 6 909 ✓ (6 809 forgets the carry into the hundreds; 6 990 and 6 919 come from a digit slip.)' },
+        { difficulty: 'Easy', question: 'Calculate: 4 785 + 1 246 (with carrying)', checkMode: 'auto', options: ['5 921', '6 031', '6 013', '6 041'], correctIndex: 1, explanation: 'Units: 5+6=11, write 1 carry 1\nTens: 8+4+1=13, write 3 carry 1\nHundreds: 7+2+1=10, write 0 carry 1\nThousands: 4+1+1=6\nAnswer: 6 031 ✓ (5 921 forgets to carry in every column; 6 013 and 6 041 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate: 9 302 − 5 678 (borrowing needed)', checkMode: 'auto', options: ['4 376', '3 642', '3 624', '3 634'], correctIndex: 2, explanation: 'Units: 2−8, borrow → 12−8=4\nTens: 9−7=2 (after borrow)\nHundreds: 2−6, borrow → 12−6=6\nThousands: 8−5=3\nAnswer: 3 624 ✓ (4 376 subtracts the smaller digit from the larger one in each column instead of borrowing; 3 642 and 3 634 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate: 6 003 − 2 456 (cascading borrow through two zeros)', checkMode: 'auto', options: ['4 453', '3 574', '3 557', '3 547'], correctIndex: 3, explanation: 'Units: 3−6, cascading borrow through tens & hundreds → 13−6=7\nTens: 9−5=4\nHundreds: 9−4=5\nThousands: 5−2=3\nAnswer: 3 547 ✓ (4 453 ignores the borrow and subtracts the smaller digit from the larger one; 3 574 and 3 557 come from a digit slip.)' },
 
         // Block B — Estimating & Checking (4-7)
-        { difficulty: 'Easy', question: 'Estimate 4 321 + 3 789 by rounding each number to the nearest hundred. Write only the estimate.', answer: '8 100', checkMode: 'auto', correctAnswer: '8100', correctAnswers: ['8100', '8 100'], explanation: '4 321 → 4 300\n3 789 → 3 800\nEstimate: 4 300 + 3 800 = 8 100 ✓' },
-        { difficulty: 'Medium', question: 'Estimate 8 500 − 3 271 by rounding each number to the nearest hundred. Write only the estimate.', answer: '5 200', checkMode: 'auto', correctAnswer: '5200', correctAnswers: ['5200', '5 200'], explanation: '8 500 → 8 500\n3 271 → 3 300\nEstimate: 8 500 − 3 300 = 5 200 ✓' },
-        { difficulty: 'Medium', question: 'Calculate 6 412 + 1 543 = 7 955. Use subtraction to check this answer. What number should you get back?', answer: '6 412', checkMode: 'auto', correctAnswer: '6412', correctAnswers: ['6412', '6 412'], explanation: 'Check: 7 955 − 1 543 = 6 412 — this matches the original number, so the addition is correct ✓' },
-        { difficulty: 'Hard', question: 'A learner calculated 9 856 − 3 421 = 6 345. Use the inverse operation to check whether the learner is correct, and explain your reasoning.', answer: 'Check: 6 345 + 3 421 = 9 766, not 9 856, so the learner is incorrect. The correct answer is 6 435 (since 6 435 + 3 421 = 9 856).', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Estimate 4 321 + 3 789 by rounding each number to the nearest hundred.', checkMode: 'auto', options: ['8 100', '8 110', '8 200', '8 000'], correctIndex: 0, explanation: '4 321 → 4 300\n3 789 → 3 800\nEstimate: 4 300 + 3 800 = 8 100 ✓ (8 110 is the exact answer, not the estimate; 8 200 rounds 4 321 up to 4 400 by mistake; 8 000 rounds 3 789 down to 3 700 by mistake.)' },
+        { difficulty: 'Medium', question: 'Estimate 8 500 − 3 271 by rounding each number to the nearest hundred.', checkMode: 'auto', options: ['5 229', '5 200', '5 300', '5 230'], correctIndex: 1, explanation: '8 500 → 8 500\n3 271 → 3 300\nEstimate: 8 500 − 3 300 = 5 200 ✓ (5 229 is the exact answer, not the estimate; 5 300 rounds 3 271 down to 3 200 by mistake; 5 230 rounds to the nearest ten instead of the nearest hundred.)' },
+        { difficulty: 'Medium', question: 'Calculate 6 412 + 1 543 = 7 955. Use subtraction to check this answer. What number should you get back?', checkMode: 'auto', options: ['6 421', '1 543', '6 412', '6 422'], correctIndex: 2, explanation: 'Check: 7 955 − 1 543 = 6 412 — this matches the original number, so the addition is correct ✓ (6 421 and 6 422 come from a slip while re-subtracting; 1 543 is just one of the numbers used in the check, not the result.)' },
+        { difficulty: 'Hard', question: 'A learner calculated 9 856 − 3 421 = 6 345. Which statement correctly evaluates the answer using the inverse operation?', checkMode: 'auto', options: ['The learner is correct — the check confirms 6 345 + 3 421 = 9 856.', 'The learner is incorrect — the correct answer is 6 453.', 'The learner is incorrect — the correct answer is 6 445.', 'The learner is incorrect — checking gives 6 345 + 3 421 = 9 766, not 9 856, so the correct answer is 6 435.'], correctIndex: 3, explanation: 'Check: 6 345 + 3 421 = 9 766, not 9 856, so the learner is incorrect. The correct answer is 6 435 (since 6 435 + 3 421 = 9 856). (6 453 and 6 445 are plausible slips, not what the check actually shows.)' },
 
         // Block C — Mental Maths Strategies (8-10)
-        { difficulty: 'Medium', question: 'Calculate mentally: 4 230 + 700', answer: '4 930', checkMode: 'auto', correctAnswer: '4930', correctAnswers: ['4930', '4 930'], explanation: 'Only the hundreds digit changes: 2+7=9\nAnswer: 4 930 ✓' },
-        { difficulty: 'Medium', question: 'Calculate mentally: 2 140 + 90 (this needs a mental regroup — the tens digit becomes too big)', answer: '2 230', checkMode: 'auto', correctAnswer: '2230', correctAnswers: ['2230', '2 230'], explanation: '4 tens + 9 tens = 13 tens, which is too many for the tens column, so 1 hundred is regrouped: 2 140 + 90 = 2 230 ✓' },
-        { difficulty: 'Medium', question: 'Calculate mentally: 6 900 − 500. Explain why only one digit changes this time, unlike some other mental subtraction problems.', answer: '6 400 — because the hundreds digit (9) is bigger than 5, so no regrouping is needed; only the hundreds digit changes from 9 to 4, and the thousands, tens and units all stay the same.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 4 230 + 700', checkMode: 'auto', options: ['4 930', '4 903', '4 940', '4 300'], correctIndex: 0, explanation: 'Only the hundreds digit changes: 2+7=9\nAnswer: 4 930 ✓ (4 903 swaps the last two digits, 4 940 shifts a digit, 4 300 comes from misreading 700 as 70.)' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 2 140 + 90 (this needs a mental regroup — the tens digit becomes too big)', checkMode: 'auto', options: ['2 130', '2 230', '2 203', '2 240'], correctIndex: 1, explanation: '4 tens + 9 tens = 13 tens, which is too many for the tens column, so 1 hundred is regrouped: 2 140 + 90 = 2 230 ✓ (2 130 forgets the regroup into hundreds; 2 203 and 2 240 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'Calculate mentally: 6 900 − 500. Which answer is correct, and why does only one digit change this time, unlike some other mental subtraction problems?', checkMode: 'auto', options: ['6 040 — the tens and hundreds digits both change because subtracting 500 always affects two columns.', '6 410 — a slip in the hundreds column.', '6 400 — because the hundreds digit (9) is bigger than 5, so no regrouping is needed; only the hundreds digit changes from 9 to 4, and the thousands, tens and units all stay the same.', '6 900 − 500 cannot be done mentally and needs column subtraction.'], correctIndex: 2, explanation: 'Since 9 (hundreds digit) is bigger than 5, no regrouping is needed: only the hundreds digit changes from 9 to 4, giving 6 400.' },
 
         // Block D — Money Word Problems (11-14)
-        { difficulty: 'Easy', question: 'Amahle has R2 650 and receives a birthday gift of R1 875. How much does she have altogether?', answer: 'R4 525', checkMode: 'auto', correctAnswer: 'R4525', correctAnswers: ['R4525', 'R4 525', '4525', '4 525'], explanation: '"Altogether" means add: R2 650 + R1 875 = R4 525 ✓' },
-        { difficulty: 'Medium', question: 'A charity raised R4 321 at one fundraiser and R2 109 at a second fundraiser, then spent R3 215 on supplies. How much money remains?', answer: 'R3 215', checkMode: 'auto', correctAnswer: 'R3215', correctAnswers: ['R3215', 'R3 215', '3215', '3 215'], explanation: 'Total raised: R4 321 + R2 109 = R6 430\nRemaining: R6 430 − R3 215 = R3 215 ✓' },
-        { difficulty: 'Medium', question: 'Sipho has R2 350 in savings. His friend Thabo has R2 999 in savings. Who has less money saved, and by how much?', answer: 'Sipho has less, by R649', checkMode: 'auto', correctAnswer: 'R649', correctAnswers: ['R649', 'R 649', '649', 'sipho by r649', 'sipho by 649'], explanation: 'R2 999 − R2 350 = R649. Sipho has R649 less than Thabo ✓' },
-        { difficulty: 'Medium', question: 'At the school tuck shop, a learner buys a pie for R475 and a juice for R225, paying with a R1 000 note. How much change is given?', answer: 'R300', checkMode: 'auto', correctAnswer: 'R300', correctAnswers: ['R300', 'R 300', '300'], explanation: 'Total cost: R475 + R225 = R700\nChange: R1 000 − R700 = R300 ✓' },
+        { difficulty: 'Easy', question: 'Amahle has R2 650 and receives a birthday gift of R1 875. How much does she have altogether?', checkMode: 'auto', options: ['R3 425', 'R4 552', 'R4 535', 'R4 525'], correctIndex: 3, explanation: '"Altogether" means add: R2 650 + R1 875 = R4 525 ✓ (R3 425 forgets to carry in a column; R4 552 and R4 535 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'A charity raised R4 321 at one fundraiser and R2 109 at a second fundraiser, then spent R3 215 on supplies. How much money remains?', checkMode: 'auto', options: ['R3 215', 'R6 430', 'R9 645', 'R3 205'], correctIndex: 0, explanation: 'Total raised: R4 321 + R2 109 = R6 430\nRemaining: R6 430 − R3 215 = R3 215 ✓ (R6 430 stops after the first step; R9 645 adds the money spent instead of subtracting it; R3 205 starts from a wrong first step.)' },
+        { difficulty: 'Medium', question: 'Sipho has R2 350 in savings. His friend Thabo has R2 999 in savings. Who has less money saved, and by how much?', checkMode: 'auto', options: ['Thabo has less, by R649', 'Sipho has less, by R649', 'Sipho has less, by R694', 'Sipho has less, by R659'], correctIndex: 1, explanation: 'R2 999 − R2 350 = R649. Sipho has R649 less than Thabo ✓ (the first option has the direction backwards; R694 and R659 come from a digit slip.)' },
+        { difficulty: 'Medium', question: 'At the school tuck shop, a learner buys a pie for R475 and a juice for R225, paying with a R1 000 note. How much change is given?', checkMode: 'auto', options: ['R700', 'R310', 'R300', 'R290'], correctIndex: 2, explanation: 'Total cost: R475 + R225 = R700\nChange: R1 000 − R700 = R300 ✓ (R700 is the total cost, not the change; R310 and R290 come from a slip while adding the cost or subtracting the change.)' },
 
         // Block E — Multi-Step & Combined Word Problems (15-17)
-        { difficulty: 'Hard', question: 'A factory produced 4 235 items in January and 1 876 more in February. In March, 2 345 items were sold. How many items remain from January and February production?', answer: '3 766', checkMode: 'auto', correctAnswer: '3766', correctAnswers: ['3766', '3 766'], explanation: '4 235 + 1 876 = 6 111\n6 111 − 2 345 = 3 766 ✓' },
-        { difficulty: 'Hard', question: 'Sipho starts with 2 999 marbles. He gives away 1 500, then wins 3 400 more, then loses 1 600 in a game. How many marbles does he have now?', answer: '3 299', checkMode: 'auto', correctAnswer: '3299', correctAnswers: ['3299', '3 299'], explanation: '2 999 − 1 500 = 1 499\n1 499 + 3 400 = 4 899\n4 899 − 1 600 = 3 299 ✓' },
-        { difficulty: 'Hard', question: 'A stadium had 6 500 tickets sold before a match. Another 1 850 people bought tickets at the gate, then 640 ticket holders did not arrive. How many people actually attended the match?', answer: '7 710', checkMode: 'auto', correctAnswer: '7710', correctAnswers: ['7710', '7 710'], explanation: '6 500 + 1 850 = 8 350 tickets in total\n8 350 − 640 (no-shows) = 7 710 people attended ✓' },
+        { difficulty: 'Hard', question: 'A factory produced 4 235 items in January and 1 876 more in February. In March, 2 345 items were sold. How many items remain from January and February production?', checkMode: 'auto', options: ['6 111', '8 456', '3 776', '3 766'], correctIndex: 3, explanation: '4 235 + 1 876 = 6 111\n6 111 − 2 345 = 3 766 ✓ (6 111 stops after the first step; 8 456 adds the items sold instead of subtracting them; 3 776 comes from a digit slip.)' },
+        { difficulty: 'Hard', question: 'Sipho starts with 2 999 marbles. He gives away 1 500, then wins 3 400 more, then loses 1 600 in a game. How many marbles does he have now?', checkMode: 'auto', options: ['3 299', '1 499', '4 899', '3 309'], correctIndex: 0, explanation: '2 999 − 1 500 = 1 499\n1 499 + 3 400 = 4 899\n4 899 − 1 600 = 3 299 ✓ (1 499 stops after step 1; 4 899 stops after step 2; 3 309 comes from a digit slip in the final step.)' },
+        { difficulty: 'Hard', question: 'A stadium had 6 500 tickets sold before a match. Another 1 850 people bought tickets at the gate, then 640 ticket holders did not arrive. How many people actually attended the match?', checkMode: 'auto', options: ['8 350', '7 710', '8 990', '7 720'], correctIndex: 1, explanation: '6 500 + 1 850 = 8 350 tickets in total\n8 350 − 640 (no-shows) = 7 710 people attended ✓ (8 350 stops after the first step; 8 990 adds the no-shows instead of subtracting them; 7 720 comes from a digit slip.)' },
 
         // Block F — Reasoning, Justification & Error-Spotting (18-19)
-        { difficulty: 'Hard', question: 'A learner subtracts 5 304 − 1 867 by mistake as 5 304 − 1 687 and gets a different answer. Explain what error the learner made and find the difference between the correct answer and the learner\'s incorrect answer.', answer: 'The learner swapped the tens and units digits of 1 867, turning it into 1 687 (a transposition error). Correct: 5 304 − 1 867 = 3 437. Incorrect: 5 304 − 1 687 = 3 617. The difference is 3 617 − 3 437 = 180.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Thabo claims that if you add two numbers and then subtract one of the original numbers back, you should always get the other original number. Is he correct? Explain using an example.', answer: 'Yes, Thabo is correct. This is the inverse relationship between addition and subtraction. For example, 2 345 + 1 323 = 3 668, and 3 668 − 1 323 = 2 345, which is the other original number.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'A learner subtracts 5 304 − 1 867 by mistake as 5 304 − 1 687 and gets a different answer. Which statement correctly explains the error and finds the difference between the correct and incorrect answers?', checkMode: 'auto', options: ['The learner forgot to borrow; correct = 3 437, incorrect = 3 617, difference = 170.', 'The learner transposed the digits of 5 304 instead of 1 867; correct = 3 437, incorrect = 3 617, difference = 190.', 'The learner swapped the tens and units digits of 1 867, turning it into 1 687 (a transposition error). Correct: 5 304 − 1 867 = 3 437. Incorrect: 5 304 − 1 687 = 3 617. The difference is 3 617 − 3 437 = 180.', 'The learner\'s incorrect answer 3 617 is actually the correct one, and 3 437 is wrong.'], correctIndex: 2, explanation: 'The learner swapped the tens and units digits of 1 867 into 1 687. 5 304 − 1 867 = 3 437 and 5 304 − 1 687 = 3 617, so the difference is 180.' },
+        { difficulty: 'Hard', question: 'Thabo claims that if you add two numbers and then subtract one of the original numbers back, you should always get the other original number. Which statement is correct?', checkMode: 'auto', options: ['No, this only works when both numbers are even.', 'No, this only works for numbers less than 1 000.', 'Yes, but only if you subtract the larger of the two original numbers, not the smaller one.', 'Yes, Thabo is correct. This is the inverse relationship between addition and subtraction. For example, 2 345 + 1 323 = 3 668, and 3 668 − 1 323 = 2 345, which is the other original number.'], correctIndex: 3, explanation: 'Addition and subtraction are always inverse operations, for any numbers — subtracting one addend from the sum always gives back the other addend.' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Outstanding — mastered the full range from column methods to multi-step reasoning.' },
@@ -649,32 +649,30 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question: 'Calculate and show your working in columns:\n\n3 124 + 2 453',
-      // "5 577" → strip spaces → "5577"
-      correctAnswer: '5577',
+      options: ['5 577', '5 757', '5 587', '5 576'],
+      correctIndex: 0,
       explanation:
         'Working in columns — no carrying needed:\n\n' +
         '• Units:     4 + 3 = 7\n' +
         '• Tens:      2 + 5 = 7\n' +
         '• Hundreds:  1 + 4 = 5\n' +
         '• Thousands: 3 + 2 = 5\n\n' +
-        'Answer: 5 577',
-      answer: '5 577',
+        'Answer: 5 577 ✓ (5 757 swaps the last two digits, 5 587 and 5 576 come from a slip in one column.)',
     },
 
     {
       difficulty: 'Medium',
       checkMode: 'auto',
       question: 'Calculate and show your carrying:\n\n2 867 + 1 445',
-      // "4 312" → strip spaces → "4312"
-      correctAnswer: '4312',
+      options: ['3 202', '4 312', '4 321', '4 322'],
+      correctIndex: 1,
       explanation:
         'Working in columns with carrying:\n\n' +
         '• Units:     7 + 5 = 12 → write 2, carry 1\n' +
         '• Tens:      6 + 4 + 1 (carried) = 11 → write 1, carry 1\n' +
         '• Hundreds:  8 + 4 + 1 (carried) = 13 → write 3, carry 1\n' +
         '• Thousands: 2 + 1 + 1 (carried) = 4\n\n' +
-        'Answer: 4 312',
-      answer: '4 312',
+        'Answer: 4 312 ✓ (3 202 forgets to carry in every column; 4 321 and 4 322 come from a digit slip.)',
     },
 
     {
@@ -682,9 +680,9 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'A school collected 1 876 cans in week one and 2 547 cans in week two.\n\n' +
-        'How many cans did they collect altogether? Show all working.',
-      // "4 423" → strip spaces → "4423"
-      correctAnswer: '4423',
+        'How many cans did they collect altogether?',
+      options: ['3 313', '4 432', '4 423', '4 433'],
+      correctIndex: 2,
       explanation:
         'The word "altogether" tells us to add: 1 876 + 2 547\n\n' +
         'Working in columns with carrying:\n\n' +
@@ -692,8 +690,7 @@ export const topicData: TopicData = {
         '• Tens:      7 + 4 + 1 (carried) = 12 → write 2, carry 1\n' +
         '• Hundreds:  8 + 5 + 1 (carried) = 14 → write 4, carry 1\n' +
         '• Thousands: 1 + 2 + 1 (carried) = 4\n\n' +
-        'The school collected 4 423 cans altogether.',
-      answer: '4 423',
+        'The school collected 4 423 cans altogether ✓ (3 313 forgets to carry in every column; 4 432 and 4 433 come from a digit slip.)',
     },
 
     // ── Section 2: What is Subtraction? ──────────────────────────────────────
@@ -702,24 +699,23 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question: 'Calculate and show your working in columns:\n\n5 678 − 3 245',
-      // "2 433" → strip spaces → "2433"
-      correctAnswer: '2433',
+      options: ['2 343', '2 443', '2 432', '2 433'],
+      correctIndex: 3,
       explanation:
         'Working in columns — no borrowing needed:\n\n' +
         '• Units:     8 − 5 = 3\n' +
         '• Tens:      7 − 4 = 3\n' +
         '• Hundreds:  6 − 2 = 4\n' +
         '• Thousands: 5 − 3 = 2\n\n' +
-        'Answer: 2 433',
-      answer: '2 433',
+        'Answer: 2 433 ✓ (2 343 swaps the last two digits, 2 443 and 2 432 come from a slip in one column.)',
     },
 
     {
       difficulty: 'Medium',
       checkMode: 'auto',
       question: 'Calculate and show your borrowing:\n\n7 302 − 4 568',
-      // "2 734" → strip spaces → "2734"
-      correctAnswer: '2734',
+      options: ['3 266', '2 743', '2 734', '2 744'],
+      correctIndex: 2,
       explanation:
         'The tens digit is 0, so borrowing must travel through it:\n\n' +
         '• Units: 2 − 8. Tens is 0 — borrow from hundreds (3 → 2). ' +
@@ -729,8 +725,7 @@ export const topicData: TopicData = {
         '• Hundreds: 2 − 5. Borrow from thousands (7 → 6). Hundreds becomes 12.\n' +
         '  12 − 5 = 7\n' +
         '• Thousands: 6 − 4 = 2\n\n' +
-        'Answer: 2 734',
-      answer: '2 734',
+        'Answer: 2 734 ✓ (3 266 subtracts the smaller digit from the larger one instead of borrowing; 2 743 and 2 744 come from a digit slip.)',
     },
 
     {
@@ -738,9 +733,9 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'A factory made 6 050 shoes on Monday. By Wednesday 2 387 shoes had been sold.\n\n' +
-        'How many shoes are left? Show all working including borrowing where needed.',
-      // "3 663" → strip spaces → "3663"
-      correctAnswer: '3663',
+        'How many shoes are left?',
+      options: ['4 337', '3 663', '3 636', '3 673'],
+      correctIndex: 1,
       explanation:
         'The word "left" tells us to subtract: 6 050 − 2 387\n\n' +
         '• Units: 0 − 7. Borrow from tens (5 → 4). Units becomes 10.\n' +
@@ -750,8 +745,7 @@ export const topicData: TopicData = {
         '  14 − 8 = 6\n' +
         '• Hundreds: 9 − 3 = 6\n' +
         '• Thousands: 5 − 2 = 3\n\n' +
-        '3 663 shoes are left.',
-      answer: '3 663',
+        '3 663 shoes are left ✓ (4 337 subtracts the smaller digit from the larger one instead of borrowing; 3 636 and 3 673 come from a digit slip.)',
     },
 
     // ── SECTION 3 — Estimating Before You Calculate ─────────────────────────
@@ -760,16 +754,14 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Estimate the answer to 3 456 + 2 234 by rounding each number to the nearest hundred first.\n\n' +
-        'Write only the estimated answer (no spaces or commas).',
-      // 3 456 → 3 500, 2 234 → 2 200; 3 500 + 2 200 = 5 700
-      correctAnswer: '5700',
+        'Estimate the answer to 3 456 + 2 234 by rounding each number to the nearest hundred first.',
+      options: ['5 690', '5 600', '5 700', '5 800'],
+      correctIndex: 2,
       explanation:
         'Round each number to the nearest hundred:\n' +
         '• 3 456 → 3 500 (56 is closer to 100 than to 0)\n' +
         '• 2 234 → 2 200 (34 is closer to 0 than to 100)\n\n' +
-        'Estimate: 3 500 + 2 200 = 5 700',
-      answer: '5 700',
+        'Estimate: 3 500 + 2 200 = 5 700 ✓ (5 690 is the exact answer, not the estimate; 5 600 rounds 3 456 down to 3 400 by mistake; 5 800 rounds 2 234 up to 2 300 by mistake.)',
     },
 
     {
@@ -809,19 +801,23 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'Lebo estimated 2 345 + 3 812 by rounding to the nearest hundred and got 6 500.\n\n' +
-        'Is Lebo correct? Show how you would estimate this calculation correctly and explain where Lebo went wrong.',
+        'Which statement correctly evaluates Lebo\'s estimate?',
+      options: [
+        'Lebo is correct — 2 345 + 3 812 rounds to 6 500.',
+        'Lebo is incorrect — the correct estimate is 6 200, because 2 345 rounds to 2 400.',
+        'Lebo is incorrect — the correct estimate is 6 000, because 3 812 rounds to 3 700.',
+        'Lebo is incorrect — the correct estimate is 6 100 (2 345 → 2 300 and 3 812 → 3 800). Lebo likely rounded one of the numbers in the wrong direction.',
+      ],
+      correctIndex: 3,
       explanation:
         'Correct estimation:\n' +
         '• 2 345 → 2 300 (rounded to nearest hundred)\n' +
         '• 3 812 → 3 800 (rounded to nearest hundred)\n' +
         '• Estimate: 2 300 + 3 800 = 6 100\n\n' +
-        'Lebo is NOT correct. The correct estimate is 6 100, not 6 500.\n\n' +
-        'Lebo likely rounded 2 345 up to 2 400 (rounding to the nearest 500 or using a different rule) ' +
-        'or rounded 3 812 up to 3 900 instead of down to 3 800.',
-      answer: '6 100 (not 6 500) — Lebo made an error rounding one or both numbers.',
+        'Lebo is NOT correct. The correct estimate is 6 100, not 6 500 — Lebo likely rounded one of the numbers in the wrong direction.',
     },
 
     // ── SECTION 4 — Inverse Operations ──────────────────────────────────────
@@ -896,10 +892,9 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'A number was subtracted from 4 231 and the answer was 2 456.\n\n' +
-        'Use the inverse operation (addition) to find the missing number. Write only the missing number.',
-      // 4 231 − ? = 2 456 → ? = 4 231 − 2 456 = 1 775
-      // Check: 2 456 + 1 775 = 4 231 ✓
-      correctAnswer: '1775',
+        'Use the inverse operation (addition) to find the missing number.',
+      options: ['1 775', '2 225', '1 757', '1 785'],
+      correctIndex: 0,
       explanation:
         'We know: 4 231 − missing = 2 456\n\n' +
         'The inverse operation is addition:\n' +
@@ -912,9 +907,7 @@ export const topicData: TopicData = {
         '• Hundreds: 1 − 4. Borrow from thousands (4 → 3). Hundreds becomes 11.\n' +
         '  11 − 4 = 7\n' +
         '• Thousands: 3 − 2 = 1\n\n' +
-        'Missing number = 1 775\n' +
-        'Check: 2 456 + 1 775 = 4 231 ✓',
-      answer: '1 775',
+        'Missing number = 1 775. Check: 2 456 + 1 775 = 4 231 ✓ (2 225 subtracts the smaller digit from the larger one instead of borrowing; 1 757 and 1 785 come from a digit slip.)',
     },
 
     // ── SECTION 5 — Mental Calculations ─────────────────────────────────────
@@ -923,16 +916,14 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Calculate mentally: 4 500 + 300\n\n' +
-        'Write only the answer (no spaces or commas).',
-      // 4 500 + 300 = 4 800
-      correctAnswer: '4800',
+        'Calculate mentally: 4 500 + 300',
+      options: ['4 080', '4 800', '4 810', '4 530'],
+      correctIndex: 1,
       explanation:
         '4 500 + 300:\n' +
         '• Think in hundreds: 5 hundreds + 3 hundreds = 8 hundreds\n' +
         '• The thousands stay the same: 4 000\n' +
-        '• 4 000 + 800 = 4 800',
-      answer: '4 800',
+        '• 4 000 + 800 = 4 800 ✓ (4 080 swaps the last two digits, 4 810 shifts a digit, 4 530 comes from misreading 300 as 30.)',
     },
 
     {
@@ -979,21 +970,19 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'Without writing it all out, calculate mentally: 5 600 + 800\n\n' +
-        'a) What is the answer?\n' +
-        'b) Explain how you worked it out in your head.',
+        'Which answer and strategy are correct?',
+      options: [
+        '6 300 — only the hundreds digit changes, forgetting the carry into the thousands.',
+        '7 400 — 800 was added to the thousands digit instead of the hundreds.',
+        '6 400 — because 6 hundreds + 8 hundreds = 14 hundreds = 1 400, then 5 000 + 1 400 = 6 400.',
+        '6 480 — the 8 from 800 was added to the tens digit instead of the hundreds.',
+      ],
+      correctIndex: 2,
       explanation:
-        'a) Answer: 6 400\n\n' +
-        'b) Strategy:\n' +
-        '• 5 600 = 5 000 + 600\n' +
-        '• Add the hundreds: 600 + 800 = 1 400\n' +
-        '  (6 hundreds + 8 hundreds = 14 hundreds)\n' +
-        '• Add the thousands part back: 5 000 + 1 400 = 6 400',
-      answer:
-        'a) 6 400\n' +
-        'b) 6 hundreds + 8 hundreds = 14 hundreds = 1 400, then 5 000 + 1 400 = 6 400',
+        '5 600 = 5 000 + 600. Add the hundreds: 600 + 800 = 1 400 (6 hundreds + 8 hundreds = 14 hundreds). Add the thousands part back: 5 000 + 1 400 = 6 400.',
     },
 
     // ── SECTION 6 — Money Word Problems ─────────────────────────────────────
@@ -1003,42 +992,43 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'Sipho has R2 350 and earns R1 400 doing chores.\n\n' +
-        'How much does he have altogether?\n' +
-        'Write only the number, without the R symbol (no spaces or commas).',
-      // 2 350 + 1 400 = 3 750
-      correctAnswer: '3750',
+        'How much does he have altogether?',
+      options: ['R3 705', 'R3 760', 'R3 850', 'R3 750'],
+      correctIndex: 3,
       explanation:
         'R2 350 + R1 400:\n' +
         '• Units: 0 + 0 = 0\n' +
         '• Tens: 5 + 0 = 5\n' +
         '• Hundreds: 3 + 4 = 7\n' +
         '• Thousands: 2 + 1 = 3\n\n' +
-        'Sipho has R3 750 altogether.',
-      answer: 'R3 750',
+        'Sipho has R3 750 altogether ✓ (R3 705 swaps the last two digits, R3 760 and R3 850 come from a digit slip.)',
     },
 
     {
       difficulty: 'Medium',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'A television costs R4 999. Mama has R2 875.\n\n' +
-        'How much more money does she need to buy the television? Show all your working.',
+        'How much more money does she need to buy the television?',
+      options: ['R2 124', 'R2 142', 'R2 134', 'R2 114'],
+      correctIndex: 0,
       explanation:
         'R4 999 − R2 875:\n' +
         '• Units: 9 − 5 = 4\n' +
         '• Tens: 9 − 7 = 2\n' +
         '• Hundreds: 9 − 8 = 1\n' +
         '• Thousands: 4 − 2 = 2\n\n' +
-        'Mama needs R2 124 more.',
-      answer: 'R2 124',
+        'Mama needs R2 124 more ✓ (R2 142 and R2 134 come from a digit slip, R2 114 from a slip in the hundreds column.)',
     },
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'Lerato has R5 000. She buys school shoes for R1 349 and a school bag for R875.\n\n' +
-        'How much money does she have left? Show all working step by step.',
+        'How much money does she have left?',
+      options: ['R2 224', 'R2 776', 'R2 767', 'R2 786'],
+      correctIndex: 1,
       explanation:
         'Step 1 — Add the cost of shoes and bag:\n' +
         '1 349 + 875\n' +
@@ -1053,8 +1043,7 @@ export const topicData: TopicData = {
         '• Tens: 9 − 2 = 7 (after borrowing)\n' +
         '• Hundreds: 9 − 2 = 7 (after borrowing)\n' +
         '• Thousands: 4 − 2 = 2 (after borrowing)\n\n' +
-        'Lerato has R2 776 left.',
-      answer: 'R2 776',
+        'Lerato has R2 776 left ✓ (R2 224 is the total cost, not what is left; R2 767 and R2 786 come from a digit slip in the final subtraction.)',
     },
 
   ],

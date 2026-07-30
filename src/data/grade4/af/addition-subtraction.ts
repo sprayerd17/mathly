@@ -509,36 +509,36 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok A — Kolomoptelling en -aftrekking vlotheid (0-3)
-        { difficulty: 'Easy', question: 'Bereken: 3 245 + 2 431', answer: '5 676', checkMode: 'auto', correctAnswer: '5676', correctAnswers: ['5676', '5 676'], explanation: 'Ene: 5+1=6\nTiene: 4+3=7\nHonderde: 2+4=6\nDuisende: 3+2=5\nAntwoord: 5 676 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 1 867 + 1 345 (met oordra)', answer: '3 212', checkMode: 'auto', correctAnswer: '3212', correctAnswers: ['3212', '3 212'], explanation: 'Ene: 7+5=12, skryf 2 dra 1 oor\nTiene: 6+4+1=11, skryf 1 dra 1 oor\nHonderde: 8+3+1=12, skryf 2 dra 1 oor\nDuisende: 1+1+1=3\nAntwoord: 3 212 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 5 304 − 1 867 (leen nodig)', answer: '3 437', checkMode: 'auto', correctAnswer: '3437', correctAnswers: ['3437', '3 437'], explanation: 'Ene: 4−7, leen → 14−7=7\nTiene: 9−6=3 (na leen)\nHonderde: 2−8, leen → 12−8=4\nDuisende: 4−1=3\nAntwoord: 3 437 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 8 000 − 3 456 (kaskade-leen deur twee nulle)', answer: '4 544', checkMode: 'auto', correctAnswer: '4544', correctAnswers: ['4544', '4 544'], explanation: 'Ene: 0−6, kaskade-leen deur tiene en honderde → 10−6=4\nTiene: 9−5=4\nHonderde: 9−4=5\nDuisende: 7−3=4\nAntwoord: 4 544 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: 3 245 + 2 431', checkMode: 'auto', options: ['5 676', '5 667', '5 686', '5 677'], correctIndex: 0, explanation: 'Ene: 5+1=6\nTiene: 4+3=7\nHonderde: 2+4=6\nDuisende: 3+2=5\nAntwoord: 5 676 ✓ (5 667 verwissel die laaste twee syfers, 5 686 en 5 677 kom van ʼn glips in een kolom.)' },
+        { difficulty: 'Easy', question: 'Bereken: 1 867 + 1 345 (met oordra)', checkMode: 'auto', options: ['2 102', '3 212', '3 221', '3 222'], correctIndex: 1, explanation: 'Ene: 7+5=12, skryf 2 dra 1 oor\nTiene: 6+4+1=11, skryf 1 dra 1 oor\nHonderde: 8+3+1=12, skryf 2 dra 1 oor\nDuisende: 1+1+1=3\nAntwoord: 3 212 ✓ (2 102 vergeet om in elke kolom oor te dra; 3 221 en 3 222 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken: 5 304 − 1 867 (leen nodig)', checkMode: 'auto', options: ['4 563', '3 473', '3 437', '3 447'], correctIndex: 2, explanation: 'Ene: 4−7, leen → 14−7=7\nTiene: 9−6=3 (na leen)\nHonderde: 2−8, leen → 12−8=4\nDuisende: 4−1=3\nAntwoord: 3 437 ✓ (4 563 trek die kleiner syfer van die groter een af in elke kolom in plaas van te leen; 3 473 en 3 447 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken: 8 000 − 3 456 (kaskade-leen deur twee nulle)', checkMode: 'auto', options: ['5 456', '4 454', '4 554', '4 544'], correctIndex: 3, explanation: 'Ene: 0−6, kaskade-leen deur tiene en honderde → 10−6=4\nTiene: 9−5=4\nHonderde: 9−4=5\nDuisende: 7−3=4\nAntwoord: 4 544 ✓ (5 456 ignoreer die leen en trek die kleiner syfer van die groter een af; 4 454 en 4 554 kom van ʼn syfer-glips.)' },
 
         // Blok B — Skatting en nagaan (4-7)
-        { difficulty: 'Easy', question: 'Skat 3 456 + 2 234 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '5 700', checkMode: 'auto', correctAnswer: '5700', correctAnswers: ['5700', '5 700'], explanation: '3 456 → 3 500\n2 234 → 2 200\nSkatting: 3 500 + 2 200 = 5 700 ✓' },
-        { difficulty: 'Medium', question: 'Skat 4 872 − 1 439 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '3 500', checkMode: 'auto', correctAnswer: '3500', correctAnswers: ['3500', '3 500'], explanation: '4 872 → 4 900\n1 439 → 1 400\nSkatting: 4 900 − 1 400 = 3 500 ✓' },
-        { difficulty: 'Medium', question: 'Bereken 4 850 − 2 340 = 2 510. Gebruik optelling om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', answer: '4 850', checkMode: 'auto', correctAnswer: '4850', correctAnswers: ['4850', '4 850'], explanation: 'Nagaan: 2 510 + 2 340 = 4 850 — dit stem ooreen met die oorspronklike getal, dus is die aftrekking korrek ✓' },
-        { difficulty: 'Hard', question: 'Sipho het 5 304 − 1 867 = 3 537 bereken. Gebruik die inverse bewerking om te kyk of Sipho korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 3 537 + 1 867 = 5 404, nie 5 304 nie, dus is Sipho verkeerd. Die korrekte antwoord is 3 437 (aangesien 3 437 + 1 867 = 5 304).', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Skat 3 456 + 2 234 deur elke getal na die naaste honderd af te rond.', checkMode: 'auto', options: ['5 700', '5 690', '5 600', '5 800'], correctIndex: 0, explanation: '3 456 → 3 500\n2 234 → 2 200\nSkatting: 3 500 + 2 200 = 5 700 ✓ (5 690 is die presiese antwoord, nie die skatting nie; 5 600 rond 3 456 verkeerdelik af na 3 400; 5 800 rond 2 234 verkeerdelik op na 2 300.)' },
+        { difficulty: 'Medium', question: 'Skat 4 872 − 1 439 deur elke getal na die naaste honderd af te rond.', checkMode: 'auto', options: ['3 433', '3 500', '3 400', '3 430'], correctIndex: 1, explanation: '4 872 → 4 900\n1 439 → 1 400\nSkatting: 4 900 − 1 400 = 3 500 ✓ (3 433 is die presiese antwoord, nie die skatting nie; 3 400 rond 4 872 verkeerdelik af na 4 800; 3 430 rond albei getalle na die naaste tien in plaas van die naaste honderd.)' },
+        { difficulty: 'Medium', question: 'Bereken 4 850 − 2 340 = 2 510. Gebruik optelling om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', checkMode: 'auto', options: ['4 805', '2 340', '4 850', '4 860'], correctIndex: 2, explanation: 'Nagaan: 2 510 + 2 340 = 4 850 — dit stem ooreen met die oorspronklike getal, dus is die aftrekking korrek ✓ (4 805 en 4 860 kom van ʼn glips terwyl weer bygetel word; 2 340 is net een van die getalle wat in die nagaan gebruik is, nie die som nie.)' },
+        { difficulty: 'Hard', question: 'Sipho het 5 304 − 1 867 = 3 537 bereken. Watter stelling evalueer sy antwoord korrek deur die inverse bewerking te gebruik?', checkMode: 'auto', options: ['Sipho is korrek — die nagaan bevestig 3 537 + 1 867 = 5 304.', 'Sipho is verkeerd — die korrekte antwoord is 3 473.', 'Sipho is verkeerd — die korrekte antwoord is 3 447.', 'Sipho is verkeerd — nagaan gee 3 537 + 1 867 = 5 404, nie 5 304 nie, dus is die korrekte antwoord 3 437.'], correctIndex: 3, explanation: 'Nagaan: 3 537 + 1 867 = 5 404, nie 5 304 nie, dus is Sipho verkeerd. Die korrekte antwoord is 3 437 (aangesien 3 437 + 1 867 = 5 304). (3 473 en 3 447 is aanneemlike glipse, nie wat die nagaan werklik wys nie.)' },
 
         // Blok C — Hoofrekene-strategieë (8-10)
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 3 450 + 300', answer: '3 750', checkMode: 'auto', correctAnswer: '3750', correctAnswers: ['3750', '3 750'], explanation: 'Om 300 by te tel verander net die honderde-syfer: 4+3=7\nAntwoord: 3 750 ✓' },
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 6 120 − 60 (dit het ʼn hergroepering nodig — die tiene-syfer is te klein)', answer: '6 060', checkMode: 'auto', correctAnswer: '6060', correctAnswers: ['6060', '6 060'], explanation: '2 tiene − 6 tiene het leen van honderde nodig: 12 tiene − 6 tiene = 6 tiene.\nAntwoord: 6 060 ✓' },
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 5 240 + 800. Verduidelik waarom meer as een syfer hierdie keer verander.', answer: '6 040 — want 2 honderde + 8 honderde = 10 honderde, wat te veel is vir die honderde-kolom, dus rol die ekstra honderd oor na die duisende-syfer ook.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 3 450 + 300', checkMode: 'auto', options: ['3 750', '3 705', '3 760', '3 453'], correctIndex: 0, explanation: 'Om 300 by te tel verander net die honderde-syfer: 4+3=7\nAntwoord: 3 750 ✓ (3 705 verwissel die laaste twee syfers, 3 760 skuif ʼn syfer, 3 453 kom van 300 wat as 3 gelees en by die ene getel is.)' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 6 120 − 60 (dit het ʼn hergroepering nodig — die tiene-syfer is te klein)', checkMode: 'auto', options: ['6 140', '6 060', '6 006', '6 070'], correctIndex: 1, explanation: '2 tiene − 6 tiene het leen van honderde nodig: 12 tiene − 6 tiene = 6 tiene.\nAntwoord: 6 060 ✓ (6 140 trek die kleiner syfer van die groter een af in plaas van te hergroepeer; 6 006 en 6 070 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 5 240 + 800. Watter antwoord is korrek, en waarom verander meer as een syfer hierdie keer?', checkMode: 'auto', options: ['5 340 — net die honderde-syfer verander, van 2 na 0, want 2+8=10.', '6 140 — 800 is per ongeluk by die tiene-syfer getel.', '6 040 — want 2 honderde + 8 honderde = 10 honderde, wat te veel is vir die honderde-kolom, dus rol die ekstra honderd oor na die duisende-syfer ook.', '5 248 — die 8 van 800 is by die ene-syfer getel in plaas van die honderde.'], correctIndex: 2, explanation: '2 honderde + 8 honderde = 10 honderde = 1 000, dus word die honderde-syfer 0 en die duisende-syfer neem met 1 toe: 5 240 + 800 = 6 040 ✓' },
 
         // Blok D — Geldwoordprobleme (11-14)
-        { difficulty: 'Easy', question: 'Thabo het R2 450 spaargeld. Hy verdien R1 375 deur takies te doen. Hoeveel het hy altesaam?', answer: 'R3 825', checkMode: 'auto', correctAnswer: 'R3825', correctAnswers: ['R3825', 'R3 825', '3825', '3 825'], explanation: '"Altesaam" beteken optel: R2 450 + R1 375 = R3 825 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Winkel verkoop R3 800 se goedere op Saterdag en R2 150 op Sondag. Dit betaal R2 680 in uitgawes vir die naweek. Hoeveel wins is oor?', answer: 'R3 270', checkMode: 'auto', correctAnswer: 'R3270', correctAnswers: ['R3270', 'R3 270', '3270', '3 270'], explanation: 'Totale verkope: R3 800 + R2 150 = R5 950\nWins: R5 950 − R2 680 = R3 270 ✓' },
-        { difficulty: 'Medium', question: 'Sipho het R2 999 verlede jaar en R1 876 hierdie jaar gespaar. Amahle het R3 250 verlede jaar en R1 500 hierdie jaar gespaar. Wie het meer totale spaargeld, en met hoeveel?', answer: 'Sipho het meer, met R125', checkMode: 'auto', correctAnswer: 'R125', correctAnswers: ['R125', 'R 125', '125', 'sipho met r125', 'sipho met 125'], explanation: 'Sipho: R2 999 + R1 876 = R4 875\nAmahle: R3 250 + R1 500 = R4 750\nVerskil: R4 875 − R4 750 = R125. Sipho het R125 meer as Amahle ✓' },
-        { difficulty: 'Medium', question: 'Lerato koop skoolskoene vir R1 349 en ʼn skoolsak vir R875 uit ʼn R5 000-geskenk van haar ouma. Hoeveel geld het sy oor?', answer: 'R2 776', checkMode: 'auto', correctAnswer: 'R2776', correctAnswers: ['R2776', 'R2 776', '2776', '2 776'], explanation: 'Totale koste: R1 349 + R875 = R2 224\nOor: R5 000 − R2 224 = R2 776 ✓' },
+        { difficulty: 'Easy', question: 'Thabo het R2 450 spaargeld. Hy verdien R1 375 deur takies te doen. Hoeveel het hy altesaam?', checkMode: 'auto', options: ['R3 725', 'R3 852', 'R3 835', 'R3 825'], correctIndex: 3, explanation: '"Altesaam" beteken optel: R2 450 + R1 375 = R3 825 ✓ (R3 725 vergeet om in ʼn kolom oor te dra; R3 852 en R3 835 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'ʼn Winkel verkoop R3 800 se goedere op Saterdag en R2 150 op Sondag. Dit betaal R2 680 in uitgawes vir die naweek. Hoeveel wins is oor?', checkMode: 'auto', options: ['R3 270', 'R5 950', 'R8 630', 'R1 120'], correctIndex: 0, explanation: 'Totale verkope: R3 800 + R2 150 = R5 950\nWins: R5 950 − R2 680 = R3 270 ✓ (R5 950 vergeet om die uitgawes af te trek; R8 630 tel die uitgawes by in plaas daarvan; R1 120 gebruik net Saterdag se verkope.)' },
+        { difficulty: 'Medium', question: 'Sipho het R2 999 verlede jaar en R1 876 hierdie jaar gespaar. Amahle het R3 250 verlede jaar en R1 500 hierdie jaar gespaar. Wie het meer totale spaargeld, en met hoeveel?', checkMode: 'auto', options: ['Amahle het meer, met R125', 'Sipho het meer, met R125', 'Sipho het meer, met R152', 'Sipho het meer, met R135'], correctIndex: 1, explanation: 'Sipho: R2 999 + R1 876 = R4 875\nAmahle: R3 250 + R1 500 = R4 750\nVerskil: R4 875 − R4 750 = R125. Sipho het R125 meer as Amahle ✓ (die eerste opsie het die rigting omgekeer; R152 en R135 kom van ʼn syfer-glips in die finale aftrekking.)' },
+        { difficulty: 'Medium', question: 'Lerato koop skoolskoene vir R1 349 en ʼn skoolsak vir R875 uit ʼn R5 000-geskenk van haar ouma. Hoeveel geld het sy oor?', checkMode: 'auto', options: ['R3 651', 'R2 786', 'R2 776', 'R2 767'], correctIndex: 2, explanation: 'Totale koste: R1 349 + R875 = R2 224\nOor: R5 000 − R2 224 = R2 776 ✓ (R3 651 trek net die skoene af en vergeet die sak; R2 786 en R2 767 kom van ʼn syfer-glips in die finale aftrekking.)' },
 
         // Blok E — Veelvoudige-stap en gekombineerde woordprobleme (15-17)
-        { difficulty: 'Hard', question: 'ʼn Winkel het 6 050 brode. Dit verkoop 2 387, en skenk dan nog 1 200 aan ʼn liefdadigheidsorganisasie. Hoeveel brode is oor?', answer: '2 463', checkMode: 'auto', correctAnswer: '2463', correctAnswers: ['2463', '2 463'], explanation: '6 050 − 2 387 = 3 663\n3 663 − 1 200 = 2 463 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Stadion het 2 345 ondersteuners. 1 876 meer kom aan, dan verlaat 987 vroeg. Hoeveel ondersteuners bly oor?', answer: '3 234', checkMode: 'auto', correctAnswer: '3234', correctAnswers: ['3234', '3 234'], explanation: '2 345 + 1 876 = 4 221\n4 221 − 987 = 3 234 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Maatskappy het 9 999 items in voorraad gehad. Dit het 4 567 items verkoop, en toe ʼn aflewering van nog 1 233 ontvang. Hoeveel items is nou in voorraad?', answer: '6 665', checkMode: 'auto', correctAnswer: '6665', correctAnswers: ['6665', '6 665'], explanation: '9 999 − 4 567 = 5 432\n5 432 + 1 233 = 6 665 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Winkel het 6 050 brode. Dit verkoop 2 387, en skenk dan nog 1 200 aan ʼn liefdadigheidsorganisasie. Hoeveel brode is oor?', checkMode: 'auto', options: ['3 663', '4 863', '2 473', '2 463'], correctIndex: 3, explanation: '6 050 − 2 387 = 3 663\n3 663 − 1 200 = 2 463 ✓ (3 663 hou op ná die eerste stap; 4 863 tel die skenking by in plaas van dit af te trek; 2 473 kom van ʼn syfer-glips in die finale aftrekking.)' },
+        { difficulty: 'Hard', question: 'ʼn Stadion het 2 345 ondersteuners. 1 876 meer kom aan, dan verlaat 987 vroeg. Hoeveel ondersteuners bly oor?', checkMode: 'auto', options: ['3 234', '4 221', '5 208', '3 244'], correctIndex: 0, explanation: '2 345 + 1 876 = 4 221\n4 221 − 987 = 3 234 ✓ (4 221 hou op ná die eerste stap; 5 208 tel 987 by in plaas van dit af te trek; 3 244 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Hard', question: 'ʼn Maatskappy het 9 999 items in voorraad gehad. Dit het 4 567 items verkoop, en toe ʼn aflewering van nog 1 233 ontvang. Hoeveel items is nou in voorraad?', checkMode: 'auto', options: ['5 432', '6 665', '4 199', '6 675'], correctIndex: 1, explanation: '9 999 − 4 567 = 5 432\n5 432 + 1 233 = 6 665 ✓ (5 432 hou op ná die eerste stap; 4 199 trek die aflewering af in plaas daarvan om dit by te tel; 6 675 kom van ʼn syfer-glips.)' },
 
         // Blok F — Redenasie, regverdiging en foutopsporing (18-19)
-        { difficulty: 'Hard', question: 'ʼn Leerder tel 4 104 + 3 290 per ongeluk op as 4 104 + 3 209 en kry ʼn ander antwoord. Verduidelik watter fout die leerder gemaak het en vind die verskil tussen die korrekte antwoord en die leerder se verkeerde antwoord.', answer: 'Die leerder het die tiene- en ene-syfers van 3 290 verwissel, wat dit in 3 209 verander het (ʼn transponeringsfout). Korrek: 4 104 + 3 290 = 7 394. Verkeerd: 4 104 + 3 209 = 7 313. Die verskil is 7 394 − 7 313 = 81.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Lerato sê leen is net nodig wanneer geldbedrae afgetrek word, nie gewone getalle nie. Is sy korrek? Verduidelik jou redenasie.', answer: 'Nee, Lerato is verkeerd. Leen is nodig wanneer ʼn syfer in die boonste getal kleiner is as die syfer daaronder in dieselfde kolom, ongeag of die getalle geld of gewone heelgetalle voorstel — die kolomaftrekkingsmetode werk dieselfde in beide gevalle.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder tel 4 104 + 3 290 per ongeluk op as 4 104 + 3 209 en kry ʼn ander antwoord. Watter stelling verduidelik die fout korrek en vind die verskil tussen die korrekte en verkeerde antwoorde?', checkMode: 'auto', options: ['Die leerder het vergeet om ʼn syfer oor te dra; korrek = 7 394, verkeerd = 7 313, verskil = 71.', 'Die leerder het die syfers van 4 104 verwissel in plaas van 3 290; korrek = 7 394, verkeerd = 7 313, verskil = 91.', 'Die leerder het die tiene- en ene-syfers van 3 290 verwissel, wat dit in 3 209 verander het (ʼn transponeringsfout). Korrek: 4 104 + 3 290 = 7 394. Verkeerd: 4 104 + 3 209 = 7 313. Die verskil is 7 394 − 7 313 = 81.', 'Die leerder se verkeerde antwoord 7 313 is eintlik die korrekte een, en 7 394 is verkeerd.'], correctIndex: 2, explanation: 'Die leerder het die tiene- en ene-syfers van 3 290 verwissel na 3 209. 4 104 + 3 290 = 7 394 en 4 104 + 3 209 = 7 313, dus is die verskil 81.' },
+        { difficulty: 'Hard', question: 'Lerato sê leen is net nodig wanneer geldbedrae afgetrek word, nie gewone getalle nie. Watter stelling is korrek?', checkMode: 'auto', options: ['Lerato is korrek — geldberekenings het altyd leen nodig.', 'Lerato is korrek, maar net vir getalle met vier syfers of meer.', 'Lerato is verkeerd — gewone getalle het nooit leen nodig nie, net geld.', 'Lerato is verkeerd — leen is nodig wanneer ʼn syfer in die boonste getal kleiner is as die syfer daaronder in dieselfde kolom, ongeag of die getalle geld of gewone heelgetalle voorstel.'], correctIndex: 3, explanation: 'Leen hang net af van die vergelyking van syfers in elke kolom — dit werk presies dieselfde ongeag of die getalle geld of gewone heelgetalle voorstel, dus is Lerato verkeerd.' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend — jy het die volle omvang van kolommetodes tot veelvoudige-stap-redenasie bemeester.' },
@@ -555,36 +555,36 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok A — Kolomoptelling en -aftrekking vlotheid (0-3)
-        { difficulty: 'Easy', question: 'Bereken: 4 123 + 3 456', answer: '7 579', checkMode: 'auto', correctAnswer: '7579', correctAnswers: ['7579', '7 579'], explanation: 'Ene: 3+6=9\nTiene: 2+5=7\nHonderde: 1+4=5\nDuisende: 4+3=7\nAntwoord: 7 579 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 3 456 + 2 678 (met oordra)', answer: '6 134', checkMode: 'auto', correctAnswer: '6134', correctAnswers: ['6134', '6 134'], explanation: 'Ene: 6+8=14, skryf 4 dra 1 oor\nTiene: 5+7+1=13, skryf 3 dra 1 oor\nHonderde: 4+6+1=11, skryf 1 dra 1 oor\nDuisende: 3+2+1=6\nAntwoord: 6 134 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 7 302 − 4 568 (leen nodig)', answer: '2 734', checkMode: 'auto', correctAnswer: '2734', correctAnswers: ['2734', '2 734'], explanation: 'Ene: 2−8, leen deur tiene (0) → 12−8=4\nTiene: 9−6=3\nHonderde: 2−5, leen → 12−5=7\nDuisende: 6−4=2\nAntwoord: 2 734 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 7 005 − 2 348 (kaskade-leen deur twee nulle)', answer: '4 657', checkMode: 'auto', correctAnswer: '4657', correctAnswers: ['4657', '4 657'], explanation: 'Ene: 5−8, kaskade-leen deur tiene en honderde → 15−8=7\nTiene: 9−4=5\nHonderde: 9−3=6\nDuisende: 6−2=4\nAntwoord: 4 657 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: 4 123 + 3 456', checkMode: 'auto', options: ['7 579', '7 597', '7 589', '7 578'], correctIndex: 0, explanation: 'Ene: 3+6=9\nTiene: 2+5=7\nHonderde: 1+4=5\nDuisende: 4+3=7\nAntwoord: 7 579 ✓ (7 597 verwissel die laaste twee syfers, 7 589 en 7 578 kom van ʼn glips in een kolom.)' },
+        { difficulty: 'Easy', question: 'Bereken: 3 456 + 2 678 (met oordra)', checkMode: 'auto', options: ['5 024', '6 134', '6 143', '6 144'], correctIndex: 1, explanation: 'Ene: 6+8=14, skryf 4 dra 1 oor\nTiene: 5+7+1=13, skryf 3 dra 1 oor\nHonderde: 4+6+1=11, skryf 1 dra 1 oor\nDuisende: 3+2+1=6\nAntwoord: 6 134 ✓ (5 024 vergeet om in elke kolom oor te dra; 6 143 en 6 144 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken: 7 302 − 4 568 (leen nodig)', checkMode: 'auto', options: ['3 266', '2 743', '2 734', '2 744'], correctIndex: 2, explanation: 'Ene: 2−8, leen deur tiene (0) → 12−8=4\nTiene: 9−6=3\nHonderde: 2−5, leen → 12−5=7\nDuisende: 6−4=2\nAntwoord: 2 734 ✓ (3 266 trek die kleiner syfer van die groter een af in elke kolom in plaas van te leen; 2 743 en 2 744 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken: 7 005 − 2 348 (kaskade-leen deur twee nulle)', checkMode: 'auto', options: ['5 343', '4 675', '4 667', '4 657'], correctIndex: 3, explanation: 'Ene: 5−8, kaskade-leen deur tiene en honderde → 15−8=7\nTiene: 9−4=5\nHonderde: 9−3=6\nDuisende: 6−2=4\nAntwoord: 4 657 ✓ (5 343 ignoreer die leen en trek die kleiner syfer van die groter een af; 4 675 en 4 667 kom van ʼn syfer-glips.)' },
 
         // Blok B — Skatting en nagaan (4-7)
-        { difficulty: 'Easy', question: 'Skat 5 678 + 2 345 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '8 000', checkMode: 'auto', correctAnswer: '8000', correctAnswers: ['8000', '8 000'], explanation: '5 678 → 5 700\n2 345 → 2 300\nSkatting: 5 700 + 2 300 = 8 000 ✓' },
-        { difficulty: 'Medium', question: 'Skat 9 856 − 3 421 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '6 500', checkMode: 'auto', correctAnswer: '6500', correctAnswers: ['6500', '6 500'], explanation: '9 856 → 9 900\n3 421 → 3 400\nSkatting: 9 900 − 3 400 = 6 500 ✓' },
-        { difficulty: 'Medium', question: 'Bereken 2 345 + 1 323 = 3 668. Gebruik aftrekking om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', answer: '2 345', checkMode: 'auto', correctAnswer: '2345', correctAnswers: ['2345', '2 345'], explanation: 'Nagaan: 3 668 − 1 323 = 2 345 — dit stem ooreen met die oorspronklike getal, dus is die optelling korrek ✓' },
-        { difficulty: 'Hard', question: 'ʼn Leerder het 6 412 + 1 543 = 7 945 bereken. Gebruik die inverse bewerking om te kyk of die leerder korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 7 945 − 1 543 = 6 402, nie 6 412 nie, dus is die leerder verkeerd. Die korrekte antwoord is 7 955 (aangesien 7 955 − 1 543 = 6 412).', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Skat 5 678 + 2 345 deur elke getal na die naaste honderd af te rond.', checkMode: 'auto', options: ['8 000', '8 023', '7 900', '8 100'], correctIndex: 0, explanation: '5 678 → 5 700\n2 345 → 2 300\nSkatting: 5 700 + 2 300 = 8 000 ✓ (8 023 is die presiese antwoord, nie die skatting nie; 7 900 rond 5 678 verkeerdelik af na 5 600; 8 100 rond 2 345 verkeerdelik op na 2 400.)' },
+        { difficulty: 'Medium', question: 'Skat 9 856 − 3 421 deur elke getal na die naaste honderd af te rond.', checkMode: 'auto', options: ['6 435', '6 500', '6 400', '6 440'], correctIndex: 1, explanation: '9 856 → 9 900\n3 421 → 3 400\nSkatting: 9 900 − 3 400 = 6 500 ✓ (6 435 is die presiese antwoord, nie die skatting nie; 6 400 rond 9 856 verkeerdelik af na 9 800; 6 440 rond albei getalle na die naaste tien in plaas van die naaste honderd.)' },
+        { difficulty: 'Medium', question: 'Bereken 2 345 + 1 323 = 3 668. Gebruik aftrekking om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', checkMode: 'auto', options: ['2 354', '1 323', '2 345', '2 355'], correctIndex: 2, explanation: 'Nagaan: 3 668 − 1 323 = 2 345 — dit stem ooreen met die oorspronklike getal, dus is die optelling korrek ✓ (2 354 en 2 355 kom van ʼn glips terwyl weer afgetrek word; 1 323 is net een van die getalle wat in die nagaan gebruik is, nie die resultaat nie.)' },
+        { difficulty: 'Hard', question: 'ʼn Leerder het 6 412 + 1 543 = 7 945 bereken. Watter stelling evalueer die antwoord korrek deur die inverse bewerking te gebruik?', checkMode: 'auto', options: ['Die leerder is korrek — die nagaan bevestig 7 945 − 1 543 = 6 412.', 'Die leerder is verkeerd — die korrekte antwoord is 7 595.', 'Die leerder is verkeerd — die korrekte antwoord is 7 965.', 'Die leerder is verkeerd — nagaan gee 7 945 − 1 543 = 6 402, nie 6 412 nie, dus is die korrekte antwoord 7 955.'], correctIndex: 3, explanation: 'Nagaan: 7 945 − 1 543 = 6 402, nie 6 412 nie, dus is die leerder verkeerd. Die korrekte antwoord is 7 955 (aangesien 7 955 − 1 543 = 6 412). (7 595 en 7 965 is aanneemlike glipse, nie wat die nagaan werklik wys nie.)' },
 
         // Blok C — Hoofrekene-strategieë (8-10)
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 8 760 − 300', answer: '8 460', checkMode: 'auto', correctAnswer: '8460', correctAnswers: ['8460', '8 460'], explanation: 'Net die honderde-syfer verander: 7−3=4\nAntwoord: 8 460 ✓' },
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 3 600 − 800 (dit het ʼn hergroepering nodig — die honderde-syfer is te klein)', answer: '2 800', checkMode: 'auto', correctAnswer: '2800', correctAnswers: ['2800', '2 800'], explanation: '6 honderde − 8 honderde het leen van duisende nodig: 3 000 − 800 = 2 800.\nAntwoord: 2 800 ✓' },
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 3 480 + 90. Verduidelik waarom meer as een syfer hierdie keer verander.', answer: '3 570 — want 8 tiene + 9 tiene = 17 tiene, wat te veel is vir die tiene-kolom, dus rol die ekstra tien oor na die honderde-syfer ook.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 8 760 − 300', checkMode: 'auto', options: ['8 460', '8 406', '8 470', '8 730'], correctIndex: 0, explanation: 'Net die honderde-syfer verander: 7−3=4\nAntwoord: 8 460 ✓ (8 406 verwissel die laaste twee syfers, 8 470 skuif ʼn syfer, 8 730 kom van 300 wat as 30 gelees is.)' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 3 600 − 800 (dit het ʼn hergroepering nodig — die honderde-syfer is te klein)', checkMode: 'auto', options: ['3 200', '2 800', '2 080', '2 810'], correctIndex: 1, explanation: '6 honderde − 8 honderde het leen van duisende nodig: 3 000 − 800 = 2 800.\nAntwoord: 2 800 ✓ (3 200 trek die kleiner syfer van die groter een af in plaas van te hergroepeer; 2 080 en 2 810 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 3 480 + 90. Watter antwoord is korrek, en waarom verander meer as een syfer hierdie keer?', checkMode: 'auto', options: ['3 470 — net die tiene-syfer verander, van 8 na 7, en die oordra na honderde word ignoreer.', '4 470 — die oorgedraagde 1 is by die duisende-syfer getel in plaas van die honderde.', '3 570 — want 8 tiene + 9 tiene = 17 tiene, wat te veel is vir die tiene-kolom, dus rol die ekstra tien oor na die honderde-syfer ook.', '3 580 — ʼn glips in die tiene-kolom.'], correctIndex: 2, explanation: '8 tiene + 9 tiene = 17 tiene = 170, dus word die tiene-syfer 7 en die honderde-syfer neem met 1 toe: 3 480 + 90 = 3 570 ✓' },
 
         // Blok D — Geldwoordprobleme (11-14)
-        { difficulty: 'Easy', question: 'ʼn Winkel neem R1 899 van ʼn markstalletjie en R2 760 van gewone kliënte in een dag in. Wat is die totale inname vir die dag?', answer: 'R4 659', checkMode: 'auto', correctAnswer: 'R4659', correctAnswers: ['R4659', 'R4 659', '4659', '4 659'], explanation: '"Totaal" beteken optel: R1 899 + R2 760 = R4 659 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Winkel het R7 000 se voorraadwaarde gehad. Dit het R3 899 se goedere verkoop, en toe nuwe voorraad ter waarde van R1 250 ontvang. Watter voorraadwaarde het dit nou?', answer: 'R4 351', checkMode: 'auto', correctAnswer: 'R4351', correctAnswers: ['R4351', 'R4 351', '4351', '4 351'], explanation: 'Na verkoop: R7 000 − R3 899 = R3 101\nNa nuwe voorraad: R3 101 + R1 250 = R4 351 ✓' },
-        { difficulty: 'Medium', question: 'Thabo het R4 200 gespaar. Sy suster Amahle het R3 475 gespaar. Wie het meer gespaar, en met hoeveel?', answer: 'Thabo het meer, met R725', checkMode: 'auto', correctAnswer: 'R725', correctAnswers: ['R725', 'R 725', '725', 'thabo met r725', 'thabo met 725'], explanation: 'R4 200 − R3 475 = R725. Thabo het R725 meer as Amahle gespaar ✓' },
-        { difficulty: 'Medium', question: 'By ʼn markstalletjie koop Lerato ʼn serp vir R349 en ʼn hoed vir R275, en betaal met ʼn R1 000-noot. Hoeveel kleingeld kry sy?', answer: 'R376', checkMode: 'auto', correctAnswer: 'R376', correctAnswers: ['R376', 'R 376', '376'], explanation: 'Totale koste: R349 + R275 = R624\nKleingeld: R1 000 − R624 = R376 ✓' },
+        { difficulty: 'Easy', question: 'ʼn Winkel neem R1 899 van ʼn markstalletjie en R2 760 van gewone kliënte in een dag in. Wat is die totale inname vir die dag?', checkMode: 'auto', options: ['R3 559', 'R4 695', 'R4 669', 'R4 659'], correctIndex: 3, explanation: '"Totaal" beteken optel: R1 899 + R2 760 = R4 659 ✓ (R3 559 vergeet om in ʼn kolom oor te dra; R4 695 en R4 669 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'ʼn Winkel het R7 000 se voorraadwaarde gehad. Dit het R3 899 se goedere verkoop, en toe nuwe voorraad ter waarde van R1 250 ontvang. Watter voorraadwaarde het dit nou?', checkMode: 'auto', options: ['R4 351', 'R3 101', 'R1 851', 'R6 149'], correctIndex: 0, explanation: 'Na verkoop: R7 000 − R3 899 = R3 101\nNa nuwe voorraad: R3 101 + R1 250 = R4 351 ✓ (R3 101 hou op ná die eerste stap; R1 851 trek die nuwe voorraad af in plaas daarvan om dit by te tel; R6 149 begin met ʼn verkeerde eerste stap.)' },
+        { difficulty: 'Medium', question: 'Thabo het R4 200 gespaar. Sy suster Amahle het R3 475 gespaar. Wie het meer gespaar, en met hoeveel?', checkMode: 'auto', options: ['Amahle het meer, met R725', 'Thabo het meer, met R725', 'Thabo het meer, met R1 275', 'Thabo het meer, met R752'], correctIndex: 1, explanation: 'R4 200 − R3 475 = R725. Thabo het R725 meer as Amahle gespaar ✓ (die eerste opsie het die rigting omgekeer; R1 275 ignoreer die leen wanneer afgetrek word; R752 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'By ʼn markstalletjie koop Lerato ʼn serp vir R349 en ʼn hoed vir R275, en betaal met ʼn R1 000-noot. Hoeveel kleingeld kry sy?', checkMode: 'auto', options: ['R624', 'R486', 'R376', 'R386'], correctIndex: 2, explanation: 'Totale koste: R349 + R275 = R624\nKleingeld: R1 000 − R624 = R376 ✓ (R624 is die totale koste, nie die kleingeld nie; R486 vergeet om oor te dra wanneer die koste bygetel word; R386 kom van ʼn syfer-glips in die finale aftrekking.)' },
 
         // Blok E — Veelvoudige-stap en gekombineerde woordprobleme (15-17)
-        { difficulty: 'Hard', question: 'ʼn Boer het 5 000 appels. Hy verkoop 1 234, dan nog 2 345 meer. Hoeveel appels het hy oor?', answer: '1 421', checkMode: 'auto', correctAnswer: '1421', correctAnswers: ['1421', '1 421'], explanation: '5 000 − 1 234 = 3 766\n3 766 − 2 345 = 1 421 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Skool het 3 456 leerders. 2 544 meer leerders sluit aan, dan gradueer 1 000 en vertrek. Hoeveel leerders is nou by die skool?', answer: '5 000', checkMode: 'auto', correctAnswer: '5000', correctAnswers: ['5000', '5 000'], explanation: '3 456 + 2 544 = 6 000\n6 000 − 1 000 = 5 000 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Busmaatskappy het 5 670 passasiers op Saterdag vervoer en 2 340 minder op Sondag. Hoeveel passasiers het dit op Sondag vervoer, en wat was die totaal vir die naweek?', answer: 'Sondag: 3 330; Naweektotaal: 9 000', checkMode: 'auto', correctAnswer: '9000', correctAnswers: ['9000', '9 000', '3330 en 9000', 'sondag=3330, totaal=9000'], explanation: 'Sondag: 5 670 − 2 340 = 3 330\nNaweektotaal: 5 670 + 3 330 = 9 000 ✓' },
+        { difficulty: 'Hard', question: 'ʼn Boer het 5 000 appels. Hy verkoop 1 234, dan nog 2 345 meer. Hoeveel appels het hy oor?', checkMode: 'auto', options: ['3 766', '6 111', '1 431', '1 421'], correctIndex: 3, explanation: '5 000 − 1 234 = 3 766\n3 766 − 2 345 = 1 421 ✓ (3 766 hou op ná die eerste stap; 6 111 tel die tweede hoeveelheid by in plaas van dit af te trek; 1 431 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Hard', question: 'ʼn Skool het 3 456 leerders. 2 544 meer leerders sluit aan, dan gradueer 1 000 en vertrek. Hoeveel leerders is nou by die skool?', checkMode: 'auto', options: ['5 000', '6 000', '7 000', '5 010'], correctIndex: 0, explanation: '3 456 + 2 544 = 6 000\n6 000 − 1 000 = 5 000 ✓ (6 000 hou op ná die eerste stap; 7 000 tel die graduerende leerders by in plaas daarvan om hulle af te trek; 5 010 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Hard', question: 'ʼn Busmaatskappy het 5 670 passasiers op Saterdag vervoer en 2 340 minder op Sondag. Hoeveel passasiers het dit op Sondag vervoer, en wat was die totaal vir die naweek?', checkMode: 'auto', options: ['Sondag: 3 303; Naweektotaal: 9 000', 'Sondag: 3 330; Naweektotaal: 9 000', 'Sondag: 3 330; Naweektotaal: 8 900', 'Sondag: 3 340; Naweektotaal: 9 010'], correctIndex: 1, explanation: 'Sondag: 5 670 − 2 340 = 3 330\nNaweektotaal: 5 670 + 3 330 = 9 000 ✓ (die ander opsies kom van ʼn syfer-glips in een van die twee stappe.)' },
 
         // Blok F — Redenasie, regverdiging en foutopsporing (18-19)
-        { difficulty: 'Hard', question: 'ʼn Leerder sê 4 000 − 3 999 = 1 omdat "die getalle so naby aan mekaar is". Verduidelik of hierdie redenasie korrek is, en wys die berekening om jou antwoord te ondersteun.', answer: 'Die leerder se finale antwoord van 1 is korrek, maar die gegewe redenasie ("omdat die getalle naby aan mekaar is") is nie ʼn betroubare metode nie — dit werk toevallig hier. Die korrekte manier is om direk te bereken: 4 000 − 3 999 = 1, bevestig deur kolomaftrekking met leen deur elke kolom.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Wanneer jy in kolomaftrekking leen, verduidelik in jou eie woorde waarom die "1" wat jy van die kolom links af neem, eintlik 10 werd is in die kolom waarheen jy dit leen.', answer: 'Elke plekwaarde-kolom is 10 keer groter as die een regs daarvan, so wanneer jy 1 van ʼn kolom leen, is daardie 1 eenheid van daardie kolom gelyk aan 10 eenhede van die kolom onmiddellik regs daarvan — byvoorbeeld, om 1 honderd te leen gee jou 10 tiene, want 1 honderd = 10 tiene.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder sê 4 000 − 3 999 = 1 omdat "die getalle so naby aan mekaar is". Watter stelling evalueer hierdie redenasie korrek?', checkMode: 'auto', options: ['Die leerder is verkeerd — die korrekte antwoord is eintlik 11, nie 1 nie.', 'Die leerder is verkeerd — die antwoord behoort 1 001 te wees, want elke leen deur ʼn nul tel 1 000 by.', 'Die finale antwoord van 1 is korrek, maar die redenasie is nie betroubaar nie — dit werk hier net toevallig. Direkte kolomaftrekking met leen deur elke kolom bevestig 4 000 − 3 999 = 1.', 'Die leerder is reg, en "naby aan mekaar" beteken altyd dat die antwoord presies 1 is, ongeag watter getalle gebruik word.'], correctIndex: 2, explanation: 'Kolomaftrekking met leen deur elke kolom bevestig 4 000 − 3 999 = 1, dus is die leerder se antwoord reg — maar "die getalle is naby aan mekaar" is nie ʼn betroubare metode in die algemeen nie, dit het net hier toevallig gewerk.' },
+        { difficulty: 'Hard', question: 'Wanneer jy in kolomaftrekking leen, waarom is die "1" wat jy van die kolom links af neem, eintlik 10 werd in die kolom waarheen jy dit leen?', checkMode: 'auto', options: ['Leen is altyd presies 10 werd, ongeag watter kolomme betrokke is, want 10 is ʼn vaste reël.', 'Om 1 van ʼn kolom te leen gee 2 eenhede in die volgende kolom, want dit word in twee gedeel.', 'Om 1 honderd te leen gee 10 eenhede (ene), en spring die tiene-kolom heeltemal oor.', 'Elke plekwaarde-kolom is 10 keer groter as die een regs daarvan, so om 1 van ʼn kolom te leen gee 10 eenhede in die kolom onmiddellik regs daarvan — byvoorbeeld, om 1 honderd te leen gee 10 tiene, want 1 honderd = 10 tiene.'], correctIndex: 3, explanation: 'Plekwaarde is gebaseer op magte van 10, dus is elke kolom 10 keer die waarde van die kolom regs daarvan. Om 1 van ʼn kolom te leen gee dus altyd presies 10 van die volgende kolom — bv. 1 honderd = 10 tiene, 1 tien = 10 ene.' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend — jy het die volle omvang van kolommetodes tot veelvoudige-stap-redenasie bemeester.' },
@@ -601,36 +601,36 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok A — Kolomoptelling en -aftrekking vlotheid (0-3)
-        { difficulty: 'Easy', question: 'Bereken: 5 678 + 1 231', answer: '6 909', checkMode: 'auto', correctAnswer: '6909', correctAnswers: ['6909', '6 909'], explanation: 'Ene: 8+1=9\nTiene: 7+3=10, skryf 0 dra 1 oor\nHonderde: 6+2+1=9\nDuisende: 5+1=6\nAntwoord: 6 909 ✓' },
-        { difficulty: 'Easy', question: 'Bereken: 4 785 + 1 246 (met oordra)', answer: '6 031', checkMode: 'auto', correctAnswer: '6031', correctAnswers: ['6031', '6 031'], explanation: 'Ene: 5+6=11, skryf 1 dra 1 oor\nTiene: 8+4+1=13, skryf 3 dra 1 oor\nHonderde: 7+2+1=10, skryf 0 dra 1 oor\nDuisende: 4+1+1=6\nAntwoord: 6 031 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 9 302 − 5 678 (leen nodig)', answer: '3 624', checkMode: 'auto', correctAnswer: '3624', correctAnswers: ['3624', '3 624'], explanation: 'Ene: 2−8, leen → 12−8=4\nTiene: 9−7=2 (na leen)\nHonderde: 2−6, leen → 12−6=6\nDuisende: 8−5=3\nAntwoord: 3 624 ✓' },
-        { difficulty: 'Medium', question: 'Bereken: 6 003 − 2 456 (kaskade-leen deur twee nulle)', answer: '3 547', checkMode: 'auto', correctAnswer: '3547', correctAnswers: ['3547', '3 547'], explanation: 'Ene: 3−6, kaskade-leen deur tiene en honderde → 13−6=7\nTiene: 9−5=4\nHonderde: 9−4=5\nDuisende: 5−2=3\nAntwoord: 3 547 ✓' },
+        { difficulty: 'Easy', question: 'Bereken: 5 678 + 1 231', checkMode: 'auto', options: ['6 909', '6 809', '6 990', '6 919'], correctIndex: 0, explanation: 'Ene: 8+1=9\nTiene: 7+3=10, skryf 0 dra 1 oor\nHonderde: 6+2+1=9\nDuisende: 5+1=6\nAntwoord: 6 909 ✓ (6 809 vergeet die oordra na die honderde; 6 990 en 6 919 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Easy', question: 'Bereken: 4 785 + 1 246 (met oordra)', checkMode: 'auto', options: ['5 921', '6 031', '6 013', '6 041'], correctIndex: 1, explanation: 'Ene: 5+6=11, skryf 1 dra 1 oor\nTiene: 8+4+1=13, skryf 3 dra 1 oor\nHonderde: 7+2+1=10, skryf 0 dra 1 oor\nDuisende: 4+1+1=6\nAntwoord: 6 031 ✓ (5 921 vergeet om in elke kolom oor te dra; 6 013 en 6 041 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken: 9 302 − 5 678 (leen nodig)', checkMode: 'auto', options: ['4 376', '3 642', '3 624', '3 634'], correctIndex: 2, explanation: 'Ene: 2−8, leen → 12−8=4\nTiene: 9−7=2 (na leen)\nHonderde: 2−6, leen → 12−6=6\nDuisende: 8−5=3\nAntwoord: 3 624 ✓ (4 376 trek die kleiner syfer van die groter een af in elke kolom in plaas van te leen; 3 642 en 3 634 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken: 6 003 − 2 456 (kaskade-leen deur twee nulle)', checkMode: 'auto', options: ['4 453', '3 574', '3 557', '3 547'], correctIndex: 3, explanation: 'Ene: 3−6, kaskade-leen deur tiene en honderde → 13−6=7\nTiene: 9−5=4\nHonderde: 9−4=5\nDuisende: 5−2=3\nAntwoord: 3 547 ✓ (4 453 ignoreer die leen en trek die kleiner syfer van die groter een af; 3 574 en 3 557 kom van ʼn syfer-glips.)' },
 
         // Blok B — Skatting en nagaan (4-7)
-        { difficulty: 'Easy', question: 'Skat 4 321 + 3 789 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '8 100', checkMode: 'auto', correctAnswer: '8100', correctAnswers: ['8100', '8 100'], explanation: '4 321 → 4 300\n3 789 → 3 800\nSkatting: 4 300 + 3 800 = 8 100 ✓' },
-        { difficulty: 'Medium', question: 'Skat 8 500 − 3 271 deur elke getal na die naaste honderd af te rond. Skryf slegs die skatting.', answer: '5 200', checkMode: 'auto', correctAnswer: '5200', correctAnswers: ['5200', '5 200'], explanation: '8 500 → 8 500\n3 271 → 3 300\nSkatting: 8 500 − 3 300 = 5 200 ✓' },
-        { difficulty: 'Medium', question: 'Bereken 6 412 + 1 543 = 7 955. Gebruik aftrekking om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', answer: '6 412', checkMode: 'auto', correctAnswer: '6412', correctAnswers: ['6412', '6 412'], explanation: 'Nagaan: 7 955 − 1 543 = 6 412 — dit stem ooreen met die oorspronklike getal, dus is die optelling korrek ✓' },
-        { difficulty: 'Hard', question: 'ʼn Leerder het 9 856 − 3 421 = 6 345 bereken. Gebruik die inverse bewerking om te kyk of die leerder korrek is, en verduidelik jou redenasie.', answer: 'Nagaan: 6 345 + 3 421 = 9 766, nie 9 856 nie, dus is die leerder verkeerd. Die korrekte antwoord is 6 435 (aangesien 6 435 + 3 421 = 9 856).', checkMode: 'self' },
+        { difficulty: 'Easy', question: 'Skat 4 321 + 3 789 deur elke getal na die naaste honderd af te rond.', checkMode: 'auto', options: ['8 100', '8 110', '8 200', '8 000'], correctIndex: 0, explanation: '4 321 → 4 300\n3 789 → 3 800\nSkatting: 4 300 + 3 800 = 8 100 ✓ (8 110 is die presiese antwoord, nie die skatting nie; 8 200 rond 4 321 verkeerdelik op na 4 400; 8 000 rond 3 789 verkeerdelik af na 3 700.)' },
+        { difficulty: 'Medium', question: 'Skat 8 500 − 3 271 deur elke getal na die naaste honderd af te rond.', checkMode: 'auto', options: ['5 229', '5 200', '5 300', '5 230'], correctIndex: 1, explanation: '8 500 → 8 500\n3 271 → 3 300\nSkatting: 8 500 − 3 300 = 5 200 ✓ (5 229 is die presiese antwoord, nie die skatting nie; 5 300 rond 3 271 verkeerdelik af na 3 200; 5 230 rond na die naaste tien in plaas van die naaste honderd.)' },
+        { difficulty: 'Medium', question: 'Bereken 6 412 + 1 543 = 7 955. Gebruik aftrekking om hierdie antwoord na te gaan. Watter getal behoort jy terug te kry?', checkMode: 'auto', options: ['6 421', '1 543', '6 412', '6 422'], correctIndex: 2, explanation: 'Nagaan: 7 955 − 1 543 = 6 412 — dit stem ooreen met die oorspronklike getal, dus is die optelling korrek ✓ (6 421 en 6 422 kom van ʼn glips terwyl weer afgetrek word; 1 543 is net een van die getalle wat in die nagaan gebruik is, nie die resultaat nie.)' },
+        { difficulty: 'Hard', question: 'ʼn Leerder het 9 856 − 3 421 = 6 345 bereken. Watter stelling evalueer die antwoord korrek deur die inverse bewerking te gebruik?', checkMode: 'auto', options: ['Die leerder is korrek — die nagaan bevestig 6 345 + 3 421 = 9 856.', 'Die leerder is verkeerd — die korrekte antwoord is 6 453.', 'Die leerder is verkeerd — die korrekte antwoord is 6 445.', 'Die leerder is verkeerd — nagaan gee 6 345 + 3 421 = 9 766, nie 9 856 nie, dus is die korrekte antwoord 6 435.'], correctIndex: 3, explanation: 'Nagaan: 6 345 + 3 421 = 9 766, nie 9 856 nie, dus is die leerder verkeerd. Die korrekte antwoord is 6 435 (aangesien 6 435 + 3 421 = 9 856). (6 453 en 6 445 is aanneemlike glipse, nie wat die nagaan werklik wys nie.)' },
 
         // Blok C — Hoofrekene-strategieë (8-10)
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 4 230 + 700', answer: '4 930', checkMode: 'auto', correctAnswer: '4930', correctAnswers: ['4930', '4 930'], explanation: 'Net die honderde-syfer verander: 2+7=9\nAntwoord: 4 930 ✓' },
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 2 140 + 90 (dit het ʼn hergroepering nodig — die tiene-syfer word te groot)', answer: '2 230', checkMode: 'auto', correctAnswer: '2230', correctAnswers: ['2230', '2 230'], explanation: '4 tiene + 9 tiene = 13 tiene, wat te veel is vir die tiene-kolom, dus word 1 honderd hergroepeer: 2 140 + 90 = 2 230 ✓' },
-        { difficulty: 'Medium', question: 'Bereken in jou kop: 6 900 − 500. Verduidelik waarom net een syfer hierdie keer verander, anders as party ander hoofrekene-aftrekkingsprobleme.', answer: '6 400 — want die honderde-syfer (9) is groter as 5, dus is geen hergroepering nodig nie; net die honderde-syfer verander van 9 na 4, en die duisende, tiene en ene bly almal dieselfde.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 4 230 + 700', checkMode: 'auto', options: ['4 930', '4 903', '4 940', '4 300'], correctIndex: 0, explanation: 'Net die honderde-syfer verander: 2+7=9\nAntwoord: 4 930 ✓ (4 903 verwissel die laaste twee syfers, 4 940 skuif ʼn syfer, 4 300 kom van 700 wat as 70 gelees is.)' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 2 140 + 90 (dit het ʼn hergroepering nodig — die tiene-syfer word te groot)', checkMode: 'auto', options: ['2 130', '2 230', '2 203', '2 240'], correctIndex: 1, explanation: '4 tiene + 9 tiene = 13 tiene, wat te veel is vir die tiene-kolom, dus word 1 honderd hergroepeer: 2 140 + 90 = 2 230 ✓ (2 130 vergeet die hergroepering na honderde; 2 203 en 2 240 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'Bereken in jou kop: 6 900 − 500. Watter antwoord is korrek, en waarom verander net een syfer hierdie keer, anders as party ander hoofrekene-aftrekkingsprobleme?', checkMode: 'auto', options: ['6 040 — die tiene- en honderde-syfers verander albei, want om 500 af te trek raak altyd twee kolomme.', '6 410 — ʼn glips in die honderde-kolom.', '6 400 — want die honderde-syfer (9) is groter as 5, dus is geen hergroepering nodig nie; net die honderde-syfer verander van 9 na 4, en die duisende, tiene en ene bly almal dieselfde.', '6 900 − 500 kan nie in jou kop gedoen word nie en het kolomaftrekking nodig.'], correctIndex: 2, explanation: 'Aangesien 9 (die honderde-syfer) groter is as 5, is geen hergroepering nodig nie: net die honderde-syfer verander van 9 na 4, wat 6 400 gee.' },
 
         // Blok D — Geldwoordprobleme (11-14)
-        { difficulty: 'Easy', question: 'Amahle het R2 650 en kry ʼn verjaardaggeskenk van R1 875. Hoeveel het sy altesaam?', answer: 'R4 525', checkMode: 'auto', correctAnswer: 'R4525', correctAnswers: ['R4525', 'R4 525', '4525', '4 525'], explanation: '"Altesaam" beteken optel: R2 650 + R1 875 = R4 525 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Liefdadigheidsorganisasie het R4 321 by een fondsinsameling en R2 109 by ʼn tweede fondsinsameling ingesamel, en toe R3 215 aan voorrade spandeer. Hoeveel geld is oor?', answer: 'R3 215', checkMode: 'auto', correctAnswer: 'R3215', correctAnswers: ['R3215', 'R3 215', '3215', '3 215'], explanation: 'Totaal ingesamel: R4 321 + R2 109 = R6 430\nOor: R6 430 − R3 215 = R3 215 ✓' },
-        { difficulty: 'Medium', question: 'Sipho het R2 350 spaargeld. Sy vriend Thabo het R2 999 spaargeld. Wie het minder geld gespaar, en met hoeveel?', answer: 'Sipho het minder, met R649', checkMode: 'auto', correctAnswer: 'R649', correctAnswers: ['R649', 'R 649', '649', 'sipho met r649', 'sipho met 649'], explanation: 'R2 999 − R2 350 = R649. Sipho het R649 minder as Thabo ✓' },
-        { difficulty: 'Medium', question: 'By die skool se snoepiewinkel koop ʼn leerder ʼn pastei vir R475 en ʼn sap vir R225, en betaal met ʼn R1 000-noot. Hoeveel kleingeld word gegee?', answer: 'R300', checkMode: 'auto', correctAnswer: 'R300', correctAnswers: ['R300', 'R 300', '300'], explanation: 'Totale koste: R475 + R225 = R700\nKleingeld: R1 000 − R700 = R300 ✓' },
+        { difficulty: 'Easy', question: 'Amahle het R2 650 en kry ʼn verjaardaggeskenk van R1 875. Hoeveel het sy altesaam?', checkMode: 'auto', options: ['R3 425', 'R4 552', 'R4 535', 'R4 525'], correctIndex: 3, explanation: '"Altesaam" beteken optel: R2 650 + R1 875 = R4 525 ✓ (R3 425 vergeet om in ʼn kolom oor te dra; R4 552 en R4 535 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'ʼn Liefdadigheidsorganisasie het R4 321 by een fondsinsameling en R2 109 by ʼn tweede fondsinsameling ingesamel, en toe R3 215 aan voorrade spandeer. Hoeveel geld is oor?', checkMode: 'auto', options: ['R3 215', 'R6 430', 'R9 645', 'R3 205'], correctIndex: 0, explanation: 'Totaal ingesamel: R4 321 + R2 109 = R6 430\nOor: R6 430 − R3 215 = R3 215 ✓ (R6 430 hou op ná die eerste stap; R9 645 tel die spandeerde geld by in plaas van dit af te trek; R3 205 begin met ʼn verkeerde eerste stap.)' },
+        { difficulty: 'Medium', question: 'Sipho het R2 350 spaargeld. Sy vriend Thabo het R2 999 spaargeld. Wie het minder geld gespaar, en met hoeveel?', checkMode: 'auto', options: ['Thabo het minder, met R649', 'Sipho het minder, met R649', 'Sipho het minder, met R694', 'Sipho het minder, met R659'], correctIndex: 1, explanation: 'R2 999 − R2 350 = R649. Sipho het R649 minder as Thabo ✓ (die eerste opsie het die rigting omgekeer; R694 en R659 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Medium', question: 'By die skool se snoepiewinkel koop ʼn leerder ʼn pastei vir R475 en ʼn sap vir R225, en betaal met ʼn R1 000-noot. Hoeveel kleingeld word gegee?', checkMode: 'auto', options: ['R700', 'R310', 'R300', 'R290'], correctIndex: 2, explanation: 'Totale koste: R475 + R225 = R700\nKleingeld: R1 000 − R700 = R300 ✓ (R700 is die totale koste, nie die kleingeld nie; R310 en R290 kom van ʼn glips terwyl die koste bygetel of die kleingeld afgetrek word.)' },
 
         // Blok E — Veelvoudige-stap en gekombineerde woordprobleme (15-17)
-        { difficulty: 'Hard', question: 'ʼn Fabriek het 4 235 items in Januarie geproduseer en nog 1 876 in Februarie. In Maart is 2 345 items verkoop. Hoeveel items bly oor van die Januarie- en Februarie-produksie?', answer: '3 766', checkMode: 'auto', correctAnswer: '3766', correctAnswers: ['3766', '3 766'], explanation: '4 235 + 1 876 = 6 111\n6 111 − 2 345 = 3 766 ✓' },
-        { difficulty: 'Hard', question: 'Sipho begin met 2 999 albasters. Hy gee 1 500 weg, wen dan nog 3 400, en verloor dan 1 600 in ʼn speletjie. Hoeveel albasters het hy nou?', answer: '3 299', checkMode: 'auto', correctAnswer: '3299', correctAnswers: ['3299', '3 299'], explanation: '2 999 − 1 500 = 1 499\n1 499 + 3 400 = 4 899\n4 899 − 1 600 = 3 299 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Stadion het 6 500 kaartjies verkoop voor ʼn wedstryd. Nog 1 850 mense het kaartjies by die hek gekoop, en toe het 640 kaartjiehouers nie opgedaag nie. Hoeveel mense het werklik die wedstryd bygewoon?', answer: '7 710', checkMode: 'auto', correctAnswer: '7710', correctAnswers: ['7710', '7 710'], explanation: '6 500 + 1 850 = 8 350 kaartjies in totaal\n8 350 − 640 (wat nie opgedaag het nie) = 7 710 mense het bygewoon ✓' },
+        { difficulty: 'Hard', question: 'ʼn Fabriek het 4 235 items in Januarie geproduseer en nog 1 876 in Februarie. In Maart is 2 345 items verkoop. Hoeveel items bly oor van die Januarie- en Februarie-produksie?', checkMode: 'auto', options: ['6 111', '8 456', '3 776', '3 766'], correctIndex: 3, explanation: '4 235 + 1 876 = 6 111\n6 111 − 2 345 = 3 766 ✓ (6 111 hou op ná die eerste stap; 8 456 tel die verkoopte items by in plaas daarvan om hulle af te trek; 3 776 kom van ʼn syfer-glips.)' },
+        { difficulty: 'Hard', question: 'Sipho begin met 2 999 albasters. Hy gee 1 500 weg, wen dan nog 3 400, en verloor dan 1 600 in ʼn speletjie. Hoeveel albasters het hy nou?', checkMode: 'auto', options: ['3 299', '1 499', '4 899', '3 309'], correctIndex: 0, explanation: '2 999 − 1 500 = 1 499\n1 499 + 3 400 = 4 899\n4 899 − 1 600 = 3 299 ✓ (1 499 hou op ná stap 1; 4 899 hou op ná stap 2; 3 309 kom van ʼn syfer-glips in die finale stap.)' },
+        { difficulty: 'Hard', question: 'ʼn Stadion het 6 500 kaartjies verkoop voor ʼn wedstryd. Nog 1 850 mense het kaartjies by die hek gekoop, en toe het 640 kaartjiehouers nie opgedaag nie. Hoeveel mense het werklik die wedstryd bygewoon?', checkMode: 'auto', options: ['8 350', '7 710', '8 990', '7 720'], correctIndex: 1, explanation: '6 500 + 1 850 = 8 350 kaartjies in totaal\n8 350 − 640 (wat nie opgedaag het nie) = 7 710 mense het bygewoon ✓ (8 350 hou op ná die eerste stap; 8 990 tel dié wat nie opgedaag het nie by in plaas daarvan om hulle af te trek; 7 720 kom van ʼn syfer-glips.)' },
 
         // Blok F — Redenasie, regverdiging en foutopsporing (18-19)
-        { difficulty: 'Hard', question: 'ʼn Leerder trek 5 304 − 1 867 per ongeluk af as 5 304 − 1 687 en kry ʼn ander antwoord. Verduidelik watter fout die leerder gemaak het en vind die verskil tussen die korrekte antwoord en die leerder se verkeerde antwoord.', answer: 'Die leerder het die tiene- en ene-syfers van 1 867 verwissel, wat dit in 1 687 verander het (ʼn transponeringsfout). Korrek: 5 304 − 1 867 = 3 437. Verkeerd: 5 304 − 1 687 = 3 617. Die verskil is 3 617 − 3 437 = 180.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Thabo beweer dat as jy twee getalle bymekaar tel en dan een van die oorspronklike getalle weer aftrek, jy altyd die ander oorspronklike getal moet kry. Is hy korrek? Verduidelik met ʼn voorbeeld.', answer: 'Ja, Thabo is korrek. Dit is die inverse verhouding tussen optelling en aftrekking. Byvoorbeeld, 2 345 + 1 323 = 3 668, en 3 668 − 1 323 = 2 345, wat die ander oorspronklike getal is.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'ʼn Leerder trek 5 304 − 1 867 per ongeluk af as 5 304 − 1 687 en kry ʼn ander antwoord. Watter stelling verduidelik die fout korrek en vind die verskil tussen die korrekte en verkeerde antwoorde?', checkMode: 'auto', options: ['Die leerder het vergeet om te leen; korrek = 3 437, verkeerd = 3 617, verskil = 170.', 'Die leerder het die syfers van 5 304 verwissel in plaas van 1 867; korrek = 3 437, verkeerd = 3 617, verskil = 190.', 'Die leerder het die tiene- en ene-syfers van 1 867 verwissel, wat dit in 1 687 verander het (ʼn transponeringsfout). Korrek: 5 304 − 1 867 = 3 437. Verkeerd: 5 304 − 1 687 = 3 617. Die verskil is 3 617 − 3 437 = 180.', 'Die leerder se verkeerde antwoord 3 617 is eintlik die korrekte een, en 3 437 is verkeerd.'], correctIndex: 2, explanation: 'Die leerder het die tiene- en ene-syfers van 1 867 verwissel na 1 687. 5 304 − 1 867 = 3 437 en 5 304 − 1 687 = 3 617, dus is die verskil 180.' },
+        { difficulty: 'Hard', question: 'Thabo beweer dat as jy twee getalle bymekaar tel en dan een van die oorspronklike getalle weer aftrek, jy altyd die ander oorspronklike getal moet kry. Watter stelling is korrek?', checkMode: 'auto', options: ['Nee, dit werk net wanneer albei getalle ewe is.', 'Nee, dit werk net vir getalle kleiner as 1 000.', 'Ja, maar net as jy die groter van die twee oorspronklike getalle aftrek, nie die kleiner een nie.', 'Ja, Thabo is korrek. Dit is die inverse verhouding tussen optelling en aftrekking. Byvoorbeeld, 2 345 + 1 323 = 3 668, en 3 668 − 1 323 = 2 345, wat die ander oorspronklike getal is.'], correctIndex: 3, explanation: 'Optelling en aftrekking is altyd inverse bewerkings, vir enige getalle — om een term van die som af te trek gee altyd die ander term terug.' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend — jy het die volle omvang van kolommetodes tot veelvoudige-stap-redenasie bemeester.' },
@@ -649,32 +649,30 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question: 'Bereken en wys jou werk in kolomme:\n\n3 124 + 2 453',
-      // "5 577" → strip spaces → "5577"
-      correctAnswer: '5577',
+      options: ['5 577', '5 757', '5 587', '5 576'],
+      correctIndex: 0,
       explanation:
         'Werk in kolomme — geen oordra nodig nie:\n\n' +
         '• Ene:      4 + 3 = 7\n' +
         '• Tiene:    2 + 5 = 7\n' +
         '• Honderde: 1 + 4 = 5\n' +
         '• Duisende: 3 + 2 = 5\n\n' +
-        'Antwoord: 5 577',
-      answer: '5 577',
+        'Antwoord: 5 577 ✓ (5 757 verwissel die laaste twee syfers, 5 587 en 5 576 kom van ʼn glips in een kolom.)',
     },
 
     {
       difficulty: 'Medium',
       checkMode: 'auto',
       question: 'Bereken en wys jou oordra:\n\n2 867 + 1 445',
-      // "4 312" → strip spaces → "4312"
-      correctAnswer: '4312',
+      options: ['3 202', '4 312', '4 321', '4 322'],
+      correctIndex: 1,
       explanation:
         'Werk in kolomme met oordra:\n\n' +
         '• Ene:      7 + 5 = 12 → skryf 2, dra 1 oor\n' +
         '• Tiene:    6 + 4 + 1 (oorgedra) = 11 → skryf 1, dra 1 oor\n' +
         '• Honderde: 8 + 4 + 1 (oorgedra) = 13 → skryf 3, dra 1 oor\n' +
         '• Duisende: 2 + 1 + 1 (oorgedra) = 4\n\n' +
-        'Antwoord: 4 312',
-      answer: '4 312',
+        'Antwoord: 4 312 ✓ (3 202 vergeet om in elke kolom oor te dra; 4 321 en 4 322 kom van ʼn syfer-glips.)',
     },
 
     {
@@ -682,9 +680,9 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'ʼn Skool het 1 876 blikkies in week een versamel en 2 547 blikkies in week twee.\n\n' +
-        'Hoeveel blikkies het hulle altesaam versamel? Wys al jou werk.',
-      // "4 423" → strip spaces → "4423"
-      correctAnswer: '4423',
+        'Hoeveel blikkies het hulle altesaam versamel?',
+      options: ['3 313', '4 432', '4 423', '4 433'],
+      correctIndex: 2,
       explanation:
         'Die woord "altesaam" vertel ons om op te tel: 1 876 + 2 547\n\n' +
         'Werk in kolomme met oordra:\n\n' +
@@ -692,8 +690,7 @@ export const topicData: TopicData = {
         '• Tiene:    7 + 4 + 1 (oorgedra) = 12 → skryf 2, dra 1 oor\n' +
         '• Honderde: 8 + 5 + 1 (oorgedra) = 14 → skryf 4, dra 1 oor\n' +
         '• Duisende: 1 + 2 + 1 (oorgedra) = 4\n\n' +
-        'Die skool het 4 423 blikkies altesaam versamel.',
-      answer: '4 423',
+        'Die skool het 4 423 blikkies altesaam versamel ✓ (3 313 vergeet om in elke kolom oor te dra; 4 432 en 4 433 kom van ʼn syfer-glips.)',
     },
 
     // ── Afdeling 2: Wat is Aftrekking? ───────────────────────────────────────
@@ -702,24 +699,23 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question: 'Bereken en wys jou werk in kolomme:\n\n5 678 − 3 245',
-      // "2 433" → strip spaces → "2433"
-      correctAnswer: '2433',
+      options: ['2 343', '2 443', '2 432', '2 433'],
+      correctIndex: 3,
       explanation:
         'Werk in kolomme — geen leen nodig nie:\n\n' +
         '• Ene:      8 − 5 = 3\n' +
         '• Tiene:    7 − 4 = 3\n' +
         '• Honderde: 6 − 2 = 4\n' +
         '• Duisende: 5 − 3 = 2\n\n' +
-        'Antwoord: 2 433',
-      answer: '2 433',
+        'Antwoord: 2 433 ✓ (2 343 verwissel die laaste twee syfers, 2 443 en 2 432 kom van ʼn glips in een kolom.)',
     },
 
     {
       difficulty: 'Medium',
       checkMode: 'auto',
       question: 'Bereken en wys jou leen:\n\n7 302 − 4 568',
-      // "2 734" → strip spaces → "2734"
-      correctAnswer: '2734',
+      options: ['3 266', '2 743', '2 734', '2 744'],
+      correctIndex: 2,
       explanation:
         'Die tiene-syfer is 0, dus moet die leen daardeur beweeg:\n\n' +
         '• Ene: 2 − 8. Tiene is 0 — leen van honderde (3 → 2). ' +
@@ -729,8 +725,7 @@ export const topicData: TopicData = {
         '• Honderde: 2 − 5. Leen van duisende (7 → 6). Honderde word 12.\n' +
         '  12 − 5 = 7\n' +
         '• Duisende: 6 − 4 = 2\n\n' +
-        'Antwoord: 2 734',
-      answer: '2 734',
+        'Antwoord: 2 734 ✓ (3 266 trek die kleiner syfer van die groter een af in plaas van te leen; 2 743 en 2 744 kom van ʼn syfer-glips.)',
     },
 
     {
@@ -738,9 +733,9 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'ʼn Fabriek het 6 050 skoene op Maandag gemaak. Teen Woensdag is 2 387 skoene verkoop.\n\n' +
-        'Hoeveel skoene is oor? Wys al jou werk, insluitend leen waar nodig.',
-      // "3 663" → strip spaces → "3663"
-      correctAnswer: '3663',
+        'Hoeveel skoene is oor?',
+      options: ['4 337', '3 663', '3 636', '3 673'],
+      correctIndex: 1,
       explanation:
         'Die woord "oor" vertel ons om af te trek: 6 050 − 2 387\n\n' +
         '• Ene: 0 − 7. Leen van tiene (5 → 4). Ene word 10.\n' +
@@ -750,8 +745,7 @@ export const topicData: TopicData = {
         '  14 − 8 = 6\n' +
         '• Honderde: 9 − 3 = 6\n' +
         '• Duisende: 5 − 2 = 3\n\n' +
-        '3 663 skoene is oor.',
-      answer: '3 663',
+        '3 663 skoene is oor ✓ (4 337 trek die kleiner syfer van die groter een af in plaas van te leen; 3 636 en 3 673 kom van ʼn syfer-glips.)',
     },
 
     // ── AFDELING 3 — Skat Voordat Jy Bereken ─────────────────────────────────
@@ -760,16 +754,14 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Skat die antwoord op 3 456 + 2 234 deur eers elke getal na die naaste honderd af te rond.\n\n' +
-        'Skryf slegs die geskatte antwoord (geen spasies of kommas nie).',
-      // 3 456 → 3 500, 2 234 → 2 200; 3 500 + 2 200 = 5 700
-      correctAnswer: '5700',
+        'Skat die antwoord op 3 456 + 2 234 deur eers elke getal na die naaste honderd af te rond.',
+      options: ['5 690', '5 600', '5 700', '5 800'],
+      correctIndex: 2,
       explanation:
         'Rond elke getal af na die naaste honderd:\n' +
         '• 3 456 → 3 500 (56 is nader aan 100 as aan 0)\n' +
         '• 2 234 → 2 200 (34 is nader aan 0 as aan 100)\n\n' +
-        'Skatting: 3 500 + 2 200 = 5 700',
-      answer: '5 700',
+        'Skatting: 3 500 + 2 200 = 5 700 ✓ (5 690 is die presiese antwoord, nie die skatting nie; 5 600 rond 3 456 verkeerdelik af na 3 400; 5 800 rond 2 234 verkeerdelik op na 2 300.)',
     },
 
     {
@@ -809,19 +801,23 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'Lebo het 2 345 + 3 812 geskat deur af te rond na die naaste honderd en het 6 500 gekry.\n\n' +
-        'Is Lebo korrek? Wys hoe jy hierdie berekening korrek sou skat en verduidelik waar Lebo fout gegaan het.',
+        'Watter stelling evalueer Lebo se skatting korrek?',
+      options: [
+        'Lebo is korrek — 2 345 + 3 812 rond af na 6 500.',
+        'Lebo is verkeerd — die korrekte skatting is 6 200, want 2 345 rond af na 2 400.',
+        'Lebo is verkeerd — die korrekte skatting is 6 000, want 3 812 rond af na 3 700.',
+        'Lebo is verkeerd — die korrekte skatting is 6 100 (2 345 → 2 300 en 3 812 → 3 800). Lebo het waarskynlik een van die getalle in die verkeerde rigting afgerond.',
+      ],
+      correctIndex: 3,
       explanation:
         'Korrekte skatting:\n' +
         '• 2 345 → 2 300 (afgerond na naaste honderd)\n' +
         '• 3 812 → 3 800 (afgerond na naaste honderd)\n' +
         '• Skatting: 2 300 + 3 800 = 6 100\n\n' +
-        'Lebo is NIE korrek nie. Die korrekte skatting is 6 100, nie 6 500 nie.\n\n' +
-        'Lebo het waarskynlik 2 345 opgerond na 2 400 (afgerond na naaste 500 of ʼn ander reël gebruik) ' +
-        'of 3 812 opgerond na 3 900 in plaas van afgerond na 3 800.',
-      answer: '6 100 (nie 6 500 nie) — Lebo het ʼn fout gemaak deur een of albei getalle af te rond.',
+        'Lebo is NIE korrek nie. Die korrekte skatting is 6 100, nie 6 500 nie — Lebo het waarskynlik een van die getalle in die verkeerde rigting afgerond.',
     },
 
     // ── AFDELING 4 — Inverse Bewerkings ──────────────────────────────────────
@@ -896,10 +892,9 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'ʼn Getal is van 4 231 afgetrek en die antwoord was 2 456.\n\n' +
-        'Gebruik die inverse bewerking (optelling) om die ontbrekende getal te vind. Skryf slegs die ontbrekende getal.',
-      // 4 231 − ? = 2 456 → ? = 4 231 − 2 456 = 1 775
-      // Nagaan: 2 456 + 1 775 = 4 231 ✓
-      correctAnswer: '1775',
+        'Gebruik die inverse bewerking (optelling) om die ontbrekende getal te vind.',
+      options: ['1 775', '2 225', '1 757', '1 785'],
+      correctIndex: 0,
       explanation:
         'Ons weet: 4 231 − ontbrekend = 2 456\n\n' +
         'Die inverse bewerking is optelling:\n' +
@@ -912,9 +907,7 @@ export const topicData: TopicData = {
         '• Honderde: 1 − 4. Leen van duisende (4 → 3). Honderde word 11.\n' +
         '  11 − 4 = 7\n' +
         '• Duisende: 3 − 2 = 1\n\n' +
-        'Ontbrekende getal = 1 775\n' +
-        'Nagaan: 2 456 + 1 775 = 4 231 ✓',
-      answer: '1 775',
+        'Ontbrekende getal = 1 775. Nagaan: 2 456 + 1 775 = 4 231 ✓ (2 225 trek die kleiner syfer van die groter een af in plaas van te leen; 1 757 en 1 785 kom van ʼn syfer-glips.)',
     },
 
     // ── AFDELING 5 — Hoofrekene ───────────────────────────────────────────────
@@ -923,16 +916,14 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Bereken in jou kop: 4 500 + 300\n\n' +
-        'Skryf slegs die antwoord (geen spasies of kommas nie).',
-      // 4 500 + 300 = 4 800
-      correctAnswer: '4800',
+        'Bereken in jou kop: 4 500 + 300',
+      options: ['4 080', '4 800', '4 810', '4 530'],
+      correctIndex: 1,
       explanation:
         '4 500 + 300:\n' +
         '• Dink in honderde: 5 honderde + 3 honderde = 8 honderde\n' +
         '• Die duisende bly dieselfde: 4 000\n' +
-        '• 4 000 + 800 = 4 800',
-      answer: '4 800',
+        '• 4 000 + 800 = 4 800 ✓ (4 080 verwissel die laaste twee syfers, 4 810 skuif ʼn syfer, 4 530 kom van 300 wat as 30 gelees is.)',
     },
 
     {
@@ -979,21 +970,19 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'Sonder om alles neer te skryf, bereken in jou kop: 5 600 + 800\n\n' +
-        'a) Wat is die antwoord?\n' +
-        'b) Verduidelik hoe jy dit in jou kop uitgewerk het.',
+        'Watter antwoord en strategie is korrek?',
+      options: [
+        '6 300 — net die honderde-syfer verander, en die oordra na die duisende word vergeet.',
+        '7 400 — 800 is by die duisende-syfer getel in plaas van die honderde.',
+        '6 400 — want 6 honderde + 8 honderde = 14 honderde = 1 400, dan 5 000 + 1 400 = 6 400.',
+        '6 480 — die 8 van 800 is by die tiene-syfer getel in plaas van die honderde.',
+      ],
+      correctIndex: 2,
       explanation:
-        'a) Antwoord: 6 400\n\n' +
-        'b) Strategie:\n' +
-        '• 5 600 = 5 000 + 600\n' +
-        '• Tel die honderde by: 600 + 800 = 1 400\n' +
-        '  (6 honderde + 8 honderde = 14 honderde)\n' +
-        '• Tel die duisende-deel weer by: 5 000 + 1 400 = 6 400',
-      answer:
-        'a) 6 400\n' +
-        'b) 6 honderde + 8 honderde = 14 honderde = 1 400, dan 5 000 + 1 400 = 6 400',
+        '5 600 = 5 000 + 600. Tel die honderde by: 600 + 800 = 1 400 (6 honderde + 8 honderde = 14 honderde). Tel die duisende-deel weer by: 5 000 + 1 400 = 6 400.',
     },
 
     // ── AFDELING 6 — Geldwoordprobleme ───────────────────────────────────────
@@ -1003,42 +992,43 @@ export const topicData: TopicData = {
       checkMode: 'auto',
       question:
         'Sipho het R2 350 en verdien R1 400 deur takies te doen.\n\n' +
-        'Hoeveel het hy altesaam?\n' +
-        'Skryf slegs die getal, sonder die R-simbool (geen spasies of kommas nie).',
-      // 2 350 + 1 400 = 3 750
-      correctAnswer: '3750',
+        'Hoeveel het hy altesaam?',
+      options: ['R3 705', 'R3 760', 'R3 850', 'R3 750'],
+      correctIndex: 3,
       explanation:
         'R2 350 + R1 400:\n' +
         '• Ene: 0 + 0 = 0\n' +
         '• Tiene: 5 + 0 = 5\n' +
         '• Honderde: 3 + 4 = 7\n' +
         '• Duisende: 2 + 1 = 3\n\n' +
-        'Sipho het R3 750 altesaam.',
-      answer: 'R3 750',
+        'Sipho het R3 750 altesaam ✓ (R3 705 verwissel die laaste twee syfers, R3 760 en R3 850 kom van ʼn syfer-glips.)',
     },
 
     {
       difficulty: 'Medium',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'ʼn Televisie kos R4 999. Mama het R2 875.\n\n' +
-        'Hoeveel meer geld het sy nodig om die televisie te koop? Wys al jou werk.',
+        'Hoeveel meer geld het sy nodig om die televisie te koop?',
+      options: ['R2 124', 'R2 142', 'R2 134', 'R2 114'],
+      correctIndex: 0,
       explanation:
         'R4 999 − R2 875:\n' +
         '• Ene: 9 − 5 = 4\n' +
         '• Tiene: 9 − 7 = 2\n' +
         '• Honderde: 9 − 8 = 1\n' +
         '• Duisende: 4 − 2 = 2\n\n' +
-        'Mama het nog R2 124 nodig.',
-      answer: 'R2 124',
+        'Mama het nog R2 124 nodig ✓ (R2 142 en R2 134 kom van ʼn syfer-glips, R2 114 van ʼn glips in die honderde-kolom.)',
     },
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'Lerato het R5 000. Sy koop skoolskoene vir R1 349 en ʼn skoolsak vir R875.\n\n' +
-        'Hoeveel geld het sy oor? Wys al jou werk stap vir stap.',
+        'Hoeveel geld het sy oor?',
+      options: ['R2 224', 'R2 776', 'R2 767', 'R2 786'],
+      correctIndex: 1,
       explanation:
         'Stap 1 — Tel die koste van skoene en sak bymekaar:\n' +
         '1 349 + 875\n' +
@@ -1053,8 +1043,7 @@ export const topicData: TopicData = {
         '• Tiene: 9 − 2 = 7 (na leen)\n' +
         '• Honderde: 9 − 2 = 7 (na leen)\n' +
         '• Duisende: 4 − 2 = 2 (na leen)\n\n' +
-        'Lerato het R2 776 oor.',
-      answer: 'R2 776',
+        'Lerato het R2 776 oor ✓ (R2 224 is die totale koste, nie wat oor is nie; R2 767 en R2 786 kom van ʼn syfer-glips in die finale aftrekking.)',
     },
 
   ],

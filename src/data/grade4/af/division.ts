@@ -651,41 +651,41 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Delingsfeite en Feitefamilies (0-3, Maklik)
-        { difficulty: 'Easy', question: 'Bereken: 54 ÷ 6', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '6 × 9 = 54, dus 54 ÷ 6 = 9.' },
-        { difficulty: 'Easy', question: 'ʼn Afrigter deel 32 penne gelyk tussen 4 oefengroepe. Hoeveel penne kry elke groep?', answer: '8', checkMode: 'auto', correctAnswer: '8', correctAnswers: ['8', '8 penne'], explanation: '32 ÷ 4 = 8. Elke groep kry 8 penne.' },
-        { difficulty: 'Easy', question: 'Waar of onwaar: 9 × 6 = 54, dus moet dit ook waar wees dat 54 ÷ 9 = 6. Skryf "waar" of "onwaar".', answer: 'waar', checkMode: 'auto', correctAnswer: 'waar', correctAnswers: ['waar', 'ja', 'korrek'], explanation: 'Waar — 9 × 6 = 54, en as ʼn produk deur een faktor gedeel word, kry jy altyd die ander faktor, dus 54 ÷ 9 = 6.' },
-        { difficulty: 'Easy', question: 'Gebruik die feitefamilie vir 6 × 9 = 54 om die twee verwante delingsfeite te skryf.', answer: '54 ÷ 9 = 6 en 54 ÷ 6 = 9', checkMode: 'auto', correctAnswer: '54÷9=6 en 54÷6=9', correctAnswers: ['54÷9=6 en 54÷6=9', '54/9=6 en 54/6=9', '54÷6=9 en 54÷9=6', '54/6=9 en 54/9=6'], explanation: 'Vanaf 6 × 9 = 54, is die twee delingsfeite 54 ÷ 9 = 6 en 54 ÷ 6 = 9.' },
+        { difficulty: 'Easy', question: 'Bereken: 54 ÷ 6', checkMode: 'auto', options: ['9', '8', '10', '6'], correctIndex: 0, explanation: '6 × 9 = 54, dus 54 ÷ 6 = 9. (8 is een groep te min in die 6×-tafel; 10 is een groep te veel; 6 verwar die deler self met die antwoord.)' },
+        { difficulty: 'Easy', question: 'ʼn Afrigter deel 32 penne gelyk tussen 4 oefengroepe. Hoeveel penne kry elke groep?', checkMode: 'auto', options: ['7', '8', '9', '4'], correctIndex: 1, explanation: '32 ÷ 4 = 8, aangesien 4 × 8 = 32. Elke groep kry 8 penne. (7 en 9 is een-af foute in die 4×-tafel; 4 verwar die aantal groepe met die aantal penne wat elke groep kry.)' },
+        { difficulty: 'Easy', question: '9 × 6 = 54. Watter stelling oor die verwante delingsfeite is korrek?', checkMode: 'auto', options: ['54 ÷ 9 = 5, omdat jy 1 van 6 aftrek', '54 ÷ 6 = 6, omdat albei dele van ʼn feitefamilie altyd gelyk is', '54 ÷ 9 = 6, omdat die deel van ʼn produk deur een faktor altyd die ander faktor gee', '54 ÷ 9 = 9, omdat die antwoord met die deler moet ooreenstem'], correctIndex: 2, explanation: '9 × 6 = 54, dus gee die deel van die produk 54 deur een faktor altyd die ander faktor: 54 ÷ 9 = 6. Die verkeerde opsies wys algemene deurmekaarspul: aftrek in plaas van die inverse verhouding toe te pas, aanname dat albei kwosiënte gelyk moet wees, of verwarring van die kwosiënt met die deler.' },
+        { difficulty: 'Easy', question: 'Gebruik die feitefamilie vir 6 × 9 = 54 om die twee verwante delingsfeite te skryf.', checkMode: 'auto', options: ['54 ÷ 6 = 8 en 54 ÷ 9 = 5', '54 ÷ 5 = 9 en 54 ÷ 6 = 8', '54 ÷ 9 = 9 en 54 ÷ 6 = 6', '54 ÷ 9 = 6 en 54 ÷ 6 = 9'], correctIndex: 3, explanation: 'Vanaf 6 × 9 = 54, is die twee delingsfeite 54 ÷ 9 = 6 en 54 ÷ 6 = 9. Opsie A bereken albei kwosiënte verkeerd; opsie B verzin ʼn deler (5) wat nie deel van hierdie feitefamilie is nie; opsie C maak elke kwosiënt verkeerdelik gelyk aan sy eie deler.' },
 
         // Blok 2 — Reste (4-7, Maklik-Medium)
-        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 34 ÷ 5', answer: '6 r 4', checkMode: 'auto', correctAnswer: '6r4', correctAnswers: ['6r4', '6res4'], explanation: '5 × 6 = 30 (naaste sonder om 34 te oorskry). 34 − 30 = 4 oor. 34 ÷ 5 = 6 r 4.' },
-        { difficulty: 'Easy-Medium', question: 'Zanele het 46 krale en wil dit inryg op halssnoere van 9 krale elk. Hoeveel volledige halssnoere kan sy maak, en hoeveel krale bly oor?', answer: '5 r 1', checkMode: 'auto', correctAnswer: '5r1', correctAnswers: ['5r1', '5res1'], explanation: '9 × 5 = 45 (naaste sonder om 46 te oorskry). 46 − 45 = 1 oor. 46 ÷ 9 = 5 r 1.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder het geskryf: "23 ÷ 5 = 3 r 8". Is dit korrek? Indien nie, skryf die korrekte antwoord in die vorm kwosiënt r res.', answer: '4 r 3', checkMode: 'auto', correctAnswer: '4r3', correctAnswers: ['4r3', '4res3', 'nee4r3', 'onkorrek4r3'], explanation: 'Die leerder is verkeerd: ʼn res van 8 kan nie voorkom wanneer deur 5 gedeel word nie, aangesien 8 groter as 5 is. Korrek: 5 × 4 = 20 en 23 − 20 = 3, dus 23 ÷ 5 = 4 r 3.' },
-        { difficulty: 'Medium', question: 'ʼn Doos hou 61 appels. As 8 appels per sak verpak word, hoeveel volle sakke is daar, en hoeveel appels bly oor?', answer: '7 r 5', checkMode: 'auto', correctAnswer: '7r5', correctAnswers: ['7r5', '7res5'], explanation: '8 × 7 = 56 (naaste sonder om 61 te oorskry). 61 − 56 = 5 oor. 61 ÷ 8 = 7 r 5.' },
+        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 34 ÷ 5', checkMode: 'auto', options: ['6 r 4', '7 r 1', '5 r 9', '6 r 5'], correctIndex: 0, explanation: '5 × 6 = 30 is die naaste veelvoud van 5 sonder om 34 te oorskry. 34 − 30 = 4, dus 34 ÷ 5 = 6 r 4. (7 r 1 kom van afronding van die kwosiënt na bo in plaas van na onder; 5 r 9 tel die kwosiënt een te min, wat ʼn ongeldige res groter as die deler laat; 6 r 5 is ʼn aftrekkingsfoutjie.)' },
+        { difficulty: 'Easy-Medium', question: 'Zanele het 46 krale en wil dit inryg op halssnoere van 9 krale elk. Hoeveel volledige halssnoere kan sy maak, en hoeveel krale bly oor?', checkMode: 'auto', options: ['4 r 10', '5 r 1', '6 r 1', '5 r 0'], correctIndex: 1, explanation: '9 × 5 = 45 is die naaste veelvoud van 9 sonder om 46 te oorskry. 46 − 45 = 1, dus 46 ÷ 9 = 5 r 1. (4 r 10 tel die kwosiënt te min, wat ʼn res groter as die deler laat; 6 r 1 skiet oor aangesien 9 × 6 = 54 reeds meer as 46 is; 5 r 0 neem verkeerdelik aan dat daar geen kraal oorbly nie.)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder het geskryf: "23 ÷ 5 = 3 r 8". Is dit korrek?', checkMode: 'auto', options: ['Die leerder is korrek soos geskryf', 'Onkorrek — die korrekte antwoord is 5 r 3', 'Onkorrek — die korrekte antwoord is 4 r 3', 'Onkorrek — die korrekte antwoord is 3 r 3'], correctIndex: 2, explanation: 'Die leerder is verkeerd: ʼn res van 8 kan nie voorkom wanneer deur 5 gedeel word nie, aangesien 8 groter as 5 is. Korrek: 5 × 4 = 20 en 23 − 20 = 3, dus 23 ÷ 5 = 4 r 3. (5 r 3 skiet oor aangesien 5 × 5 = 25 reeds meer as 23 is; 3 r 3 tel die kwosiënt een te min.)' },
+        { difficulty: 'Medium', question: 'ʼn Doos hou 61 appels. As 8 appels per sak verpak word, hoeveel volle sakke is daar, en hoeveel appels bly oor?', checkMode: 'auto', options: ['6 r 13', '7 r 4', '8 r 5', '7 r 5'], correctIndex: 3, explanation: '8 × 7 = 56 is die naaste veelvoud van 8 sonder om 61 te oorskry. 61 − 56 = 5, dus 61 ÷ 8 = 7 r 5. (6 r 13 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 7 r 4 is ʼn aftrekkingsfoutjie; 8 r 5 skiet oor aangesien 8 × 8 = 64 reeds meer as 61 is.)' },
 
         // Blok 3 — Langdeling (8-11, Medium)
-        { difficulty: 'Medium', question: 'Bereken met langdeling: 78 ÷ 6', answer: '13', checkMode: 'auto', correctAnswer: '13', explanation: '7 ÷ 6 = 1 r 1, bring 8 af → 18. 18 ÷ 6 = 3. Dus 78 ÷ 6 = 13.' },
-        { difficulty: 'Medium', question: 'ʼn Liefdadigheidsorganisasie het 315 komberse gelyk in 5 aflewerings-vragmotors verpak. Hoeveel komberse het in elke vragmotor gegaan? Wys jou langdeling-werk.', answer: '63', checkMode: 'self', correctAnswer: '63', explanation: '31 ÷ 5 = 6 r 1, bring 5 af → 15. 15 ÷ 5 = 3. Dus 315 ÷ 5 = 63 komberse per vragmotor.' },
-        { difficulty: 'Medium', question: 'Bereken met langdeling en skryf jou antwoord in die vorm kwosiënt r res: 259 ÷ 7', answer: '37 r 0', checkMode: 'auto', correctAnswer: '37', correctAnswers: ['37', '37r0', '37 r 0'], explanation: '25 ÷ 7 = 3 r 4, bring 9 af → 49. 49 ÷ 7 = 7. Dus 259 ÷ 7 = 37 presies.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder het langdeling gebruik en gekry: 386 ÷ 9 = 43 r 8. Kontroleer die werk deur die kwosiënt met die deler te vermenigvuldig en die res by te tel. Is die leerder se antwoord korrek? Gee die korrekte kwosiënt en res.', answer: '42 r 8', checkMode: 'self', explanation: 'Kontrole: 9 × 43 = 387, plus 8 gee 395 — veel meer as 386, dus die leerder is verkeerd. Korrekte werk: 38 ÷ 9 = 4 r 2 (9 × 4 = 36, 38 − 36 = 2). Bring 6 af → 26. 26 ÷ 9 = 2 r 8 (9 × 2 = 18, 26 − 18 = 8). Dus 386 ÷ 9 = 42 r 8.' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling: 78 ÷ 6', checkMode: 'auto', options: ['13', '12', '14', '31'], correctIndex: 0, explanation: '7 ÷ 6 = 1 r 1, bring 8 af → 18. 18 ÷ 6 = 3. Dus 78 ÷ 6 = 13. (12 en 14 kom van ʼn een-af fout in die finale delingstap; 31 verruil die syfers van die korrekte antwoord.)' },
+        { difficulty: 'Medium', question: 'ʼn Liefdadigheidsorganisasie het 315 komberse gelyk in 5 aflewerings-vragmotors verpak. Hoeveel komberse het in elke vragmotor gegaan?', checkMode: 'auto', options: ['61', '63', '65', '36'], correctIndex: 1, explanation: '31 ÷ 5 = 6 r 1, bring 5 af → 15. 15 ÷ 5 = 3. Dus 315 ÷ 5 = 63 komberse per vragmotor. (61 en 65 kom van ʼn een-af foutjie in die finale syfer; 36 verruil die syfers van die korrekte antwoord.)' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling en skryf jou antwoord in die vorm kwosiënt r res: 259 ÷ 7', checkMode: 'auto', options: ['36 r 7', '37 r 1', '37 r 0', '27 r 0'], correctIndex: 2, explanation: '25 ÷ 7 = 3 r 4, bring 9 af → 49. 49 ÷ 7 = 7. Dus 259 ÷ 7 = 37 presies, d.w.s. 37 r 0. (36 r 7 stop een groep te vroeg, wat ʼn res gelyk aan die deler laat — nog ʼn groep van 7 pas steeds; 37 r 1 is ʼn aftrekkingsfoutjie in die finale stap; 27 r 0 skryf die tiental-syfer van die kwosiënt verkeerd.)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder het langdeling gebruik en gekry: 386 ÷ 9 = 43 r 8. Kontroleer die werk deur die kwosiënt met die deler te vermenigvuldig en die res by te tel. Is die leerder se antwoord korrek?', checkMode: 'auto', options: ['43 r 8', '42 r 9', '41 r 17', '42 r 8'], correctIndex: 3, explanation: 'Kontrole: 9 × 43 = 387, plus 8 gee 395 — veel meer as 386, dus die leerder se bewering (43 r 8) is verkeerd. Korrekte werk: 38 ÷ 9 = 4 r 2, bring 6 af → 26. 26 ÷ 9 = 2 r 8. Dus 386 ÷ 9 = 42 r 8. (42 r 9 het ʼn aftrekkingsfoutjie in die laaste stap; 41 r 17 tel die finale kwosiënt-syfer te min, wat ʼn ongeldige res groter as die deler laat.)' },
 
         // Blok 4 — Woordprobleme: Deel vs Groepeer (12-15, Medium)
-        { difficulty: 'Medium', question: 'ʼn Winkeleienaar het 96 lemoene en verpak dit in kratte van 8. Is dit ʼn delingsprobleem of ʼn groeperingsprobleem? Verduidelik kortliks, en gee dan die antwoord.', answer: 'Groepering — 12 kratte', checkMode: 'self', explanation: 'Dit is ʼn groeperingsprobleem: ons ken die totaal (96) en die grootte van elke groep (8), en moet vind hoeveel groepe pas. 96 ÷ 8 = 12 kratte.' },
-        { difficulty: 'Medium', question: 'R138 prysgeld word gelyk gedeel tussen 6 wenners. Hoeveel ontvang elke wenner? Skryf slegs die getal sonder die R-simbool.', answer: '23', checkMode: 'auto', correctAnswer: '23', explanation: '138 ÷ 6 = 23. Elke wenner ontvang R23.' },
-        { difficulty: 'Medium', question: 'ʼn Tuinier plant 91 saailinge in gelyke rye van 7. Skryf die delings-getalsin vir hierdie probleem, en los dit dan op om te vind hoeveel rye daar is.', answer: '91 ÷ 7 = 13', checkMode: 'auto', correctAnswer: '91÷7=13', correctAnswers: ['91÷7=13', '91/7=13', '13'], explanation: 'Die getalsin is 91 ÷ 7. 91 ÷ 7 = 13 rye.' },
-        { difficulty: 'Medium', question: 'ʼn Speelgoedwinkel het ʼn aflewering van 175 albasters ontvang. Die eienaar wil dit in klein sakkies verpak, met 5 albasters in elke sakkie, om apart te verkoop. Hoeveel sakkies kan gevul word?', answer: '35', checkMode: 'auto', correctAnswer: '35', correctAnswers: ['35', '35 sakkies'], explanation: '175 ÷ 5 = 35 sakkies.' },
+        { difficulty: 'Medium', question: 'ʼn Winkeleienaar het 96 lemoene en verpak dit in kratte van 8. Watter stelling identifiseer en los hierdie probleem korrek op?', checkMode: 'auto', options: ['Dit is ʼn groeperingsprobleem, aangesien ons die groepgrootte (8) ken en moet vind hoeveel groepe pas — 96 ÷ 8 = 12 kratte.', 'Dit is ʼn delingsprobleem, aangesien ons die totaal (96) ken en dit in 8 gelyke dele moet deel — 96 ÷ 8 = 12 kratte.', 'Dit is ʼn groeperingsprobleem, en die antwoord is 8 kratte, aangesien 8 die kratgrootte is.', 'Dit is ʼn delingsprobleem, en die antwoord is 8 lemoene per krat.'], correctIndex: 0, explanation: 'Dit is ʼn groeperingsprobleem: ons ken die totaal (96) en die grootte van elke groep (8), en moet vind hoeveel groepe pas — 96 ÷ 8 = 12 kratte. (Opsie B kry die regte getal, maar noem die probleemtipe verkeerd — deling sou beteken jy verdeel in ʼn bekende aantal groepe, nie groepe van ʼn bekende grootte nie. Opsies C en D verwar die kratgrootte met die finale antwoord.)' },
+        { difficulty: 'Medium', question: 'R138 prysgeld word gelyk gedeel tussen 6 wenners. Hoeveel ontvang elke wenner? Skryf slegs die getal sonder die R-simbool.', checkMode: 'auto', options: ['22', '23', '24', '6'], correctIndex: 1, explanation: '138 ÷ 6 = 23. Elke wenner ontvang R23. (22 en 24 is een-af foute in die 6×-tafel; 6 verwar die aantal wenners met die bedrag wat elkeen ontvang.)' },
+        { difficulty: 'Medium', question: 'ʼn Tuinier plant 91 saailinge in gelyke rye van 7. Watter getalsin verteenwoordig en los hierdie probleem korrek op?', checkMode: 'auto', options: ['91 ÷ 7 = 12', '91 ÷ 7 = 14', '91 ÷ 7 = 13', '91 × 7 = 13'], correctIndex: 2, explanation: 'Die korrekte getalsin is 91 ÷ 7 = 13 rye. (12 en 14 is een-af foute in die 7×-tafel; die laaste opsie gebruik heeltemal die verkeerde bewerking.)' },
+        { difficulty: 'Medium', question: 'ʼn Speelgoedwinkel het ʼn aflewering van 175 albasters ontvang. Die eienaar wil dit in klein sakkies verpak, met 5 albasters in elke sakkie, om apart te verkoop. Hoeveel sakkies kan gevul word?', checkMode: 'auto', options: ['34', '36', '5', '35'], correctIndex: 3, explanation: '175 ÷ 5 = 35 sakkies. (34 en 36 is een-af foute in die 5×-tafel; 5 verwar die sakkiegrootte met die aantal sakkies.)' },
 
         // Blok 5 — Veelstap en Toegepaste Probleme (16-17, Medium-Hard)
-        { difficulty: 'Medium-Hard', question: 'ʼn Bakkery verdien R216 deur brode te verkoop, gelyk verdeel oor ʼn 9-uur skof. As die bakker dan R14 op meel vir die volgende bondel spandeer, hoeveel geld bly oor van een uur se verdienste nadat die meel gekoop is?', answer: '10', checkMode: 'auto', correctAnswer: '10', explanation: '216 ÷ 9 = 24 (per uur verdien). 24 − 14 = 10. R10 bly oor.' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Skool reël vervoer vir 100 leerders op ʼn uitstappie. Elke bussie vervoer 8 leerders. Verduidelik waarom om net 100 ÷ 8 te bereken nie die aantal bussies gee wat nodig is nie, en gee die werklike aantal bussies wat bespreek moet word.', answer: '13', checkMode: 'self', correctAnswer: '13', correctAnswers: ['13', '13 bussies'], explanation: '100 ÷ 8 = 12 r 4. Twaalf bussies vervoer presies 96 leerders, maar 4 leerders het nog steeds geen sitplek nie, dus is ʼn 13de bussie nodig, al is dit nie vol nie. Om net die kwosiënt (12) te gebruik sou leerders agterlaat — jy moet altyd oprond wanneer daar ʼn res is. 13 bussies in totaal.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Bakkery verdien R216 deur brode te verkoop, gelyk verdeel oor ʼn 9-uur skof. As die bakker dan R14 op meel vir die volgende bondel spandeer, hoeveel geld bly oor van een uur se verdienste nadat die meel gekoop is?', checkMode: 'auto', options: ['10', '24', '38', '11'], correctIndex: 0, explanation: '216 ÷ 9 = 24 per uur verdien. 24 − 14 = 10, dus bly R10 oor. (24 vergeet heeltemal om die meelkoste af te trek; 38 tel per ongeluk die R14 by in plaas daarvan om dit af te trek; 11 is ʼn aftrekkingsfoutjie.)' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Skool reël vervoer vir 100 leerders op ʼn uitstappie. Elke bussie vervoer 8 leerders. Watter stelling verduidelik korrek hoeveel bussies benodig word?', checkMode: 'auto', options: ['100 ÷ 8 = 12 r 4, dus is presies 12 bussies nodig aangesien die res klein is.', '100 ÷ 8 = 12 r 4, dus is 13 bussies nodig omdat die 4 oorblywende leerders steeds ʼn bussie nodig het, al is dit nie vol nie.', '100 ÷ 8 = 12 r 4, dus is 12 bussies nodig en die 4 ekstra leerders kan agtergelaat word.', '100 ÷ 8 = 13 presies, dus is 13 bussies nodig sonder dat enige leerders oorbly.'], correctIndex: 1, explanation: '100 ÷ 8 = 12 r 4. Twaalf bussies vervoer presies 96 leerders, maar die 4 oorblywende leerders het steeds vervoer nodig, dus is ʼn 13de bussie nodig, al is dit nie vol nie — jy moet altyd oprond wanneer daar ʼn res is. (Opsie A stop verkeerdelik by die kwosiënt; opsie C stel absurd voor dat leerders agtergelaat word; opsie D bereken die deling verkeerd as presies.)' },
 
         // Blok 6 — Redenering en Regverdiging (18-19, Moeilik)
-        { difficulty: 'Hard', question: 'ʼn Leerder beweer: "In die feitefamilie vir 8 × 6 = 48, is die twee delingsfeite 48 ÷ 6 = 8 en 48 ÷ 5 = 8." Is hierdie bewering korrek? Verduidelik jou redenering en gee die korrekte tweede delingsfeit indien nodig.', answer: 'Onkorrek — die tweede feit moet 48 ÷ 8 = 6 wees, nie 48 ÷ 5 = 8 nie', checkMode: 'self', explanation: 'Die bewering is onkorrek. Vanaf 8 × 6 = 48, moet die twee verwante delingsfeite dieselfde drie getalle gebruik: 48 ÷ 6 = 8 en 48 ÷ 8 = 6. Die getal 5 behoort glad nie tot hierdie feitefamilie nie.' },
-        { difficulty: 'Hard', question: 'Sonder om altwee volledig te bereken, verduidelik watter een ʼn groter antwoord gee: 96 ÷ 4 of 96 ÷ 8. Hoe weet jy dit?', answer: '96 ÷ 4 is groter', checkMode: 'self', explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 4 kleiner as 8 is, gee 96 ÷ 4 ʼn groter antwoord as 96 ÷ 8, sonder dat jy hoef uit te werk dat hulle 24 en 12 is.' },
+        { difficulty: 'Hard', question: 'ʼn Leerder beweer: "In die feitefamilie vir 8 × 6 = 48, is die twee delingsfeite 48 ÷ 6 = 8 en 48 ÷ 5 = 8." Watter stelling oor hierdie bewering is korrek?', checkMode: 'auto', options: ['Die bewering is korrek — 48 ÷ 6 = 8 en 48 ÷ 5 = 8 is albei geldige feite.', 'Die bewering is onkorrek — die tweede feit moet 48 ÷ 8 = 5 wees.', 'Die bewering is onkorrek — die tweede feit moet 48 ÷ 8 = 6 wees, nie 48 ÷ 5 = 8 nie.', 'Die bewering is onkorrek — geen van die delingsfeite is moontlik vanaf 8 × 6 = 48 nie.'], correctIndex: 2, explanation: 'Die bewering is onkorrek. Vanaf 8 × 6 = 48, moet die twee verwante delingsfeite dieselfde drie getalle gebruik: 48 ÷ 6 = 8 en 48 ÷ 8 = 6. Die getal 5 behoort glad nie tot hierdie feitefamilie nie. (Opsie B hou die regte deler maar die verkeerde kwosiënt; opsie D ontken verkeerdelik dat enige geldige feite bestaan.)' },
+        { difficulty: 'Hard', question: 'Watter stelling vergelyk 96 ÷ 4 en 96 ÷ 8 korrek, sonder om altwee volledig te bereken?', checkMode: 'auto', options: ['96 ÷ 8 is groter, omdat 8 ʼn groter getal is.', 'Hulle is gelyk, omdat albei dieselfde deeltal deel.', '96 ÷ 8 is groter, omdat deling in minder groepe altyd ʼn groter antwoord gee.', '96 ÷ 4 is groter, omdat deling deur ʼn kleiner deler die getal in minder, groter groepe verdeel.'], correctIndex: 3, explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 4 kleiner as 8 is, gee 96 ÷ 4 ʼn groter antwoord as 96 ÷ 8 (24 teenoor 12), sonder dat jy altwee volledig hoef te bereken. (Opsies A en C koppel verkeerdelik ʼn groter deler aan ʼn groter antwoord; opsie B neem verkeerdelik aan dat gelyke delers gelyke antwoorde gee.)' },
 
         // Blok 7 — Vergelyk Hoeveelhede: Vir Elke en Per (20-22, Maklik-Medium)
-        { difficulty: 'Easy', question: 'Vir elke 3 rooi fiches is daar 4 blou fiches. As daar 12 rooi fiches is, hoeveel blou fiches is daar?', answer: '16', checkMode: 'auto', correctAnswer: '16', correctAnswers: ['16', '16 blou fiches'], explanation: '12 rooi fiches is 12 ÷ 3 = 4 keer soveel as 3. Pas dieselfde skaalfaktor op die blou fiches toe: 4 × 4 = 16 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Minibus-taxi ry 150 km in 3 uur teen ʼn konstante spoed. Hoe ver ry dit in 5 uur?', answer: '250 km', checkMode: 'auto', correctAnswer: '250', correctAnswers: ['250', '250 km'], explanation: 'Tempo per uur: 150 ÷ 3 = 50 km per uur. In 5 uur: 50 × 5 = 250 km ✓' },
-        { difficulty: 'Medium', question: 'ʼn Resep het 2 eiers vir elke 3 koppies meel nodig. Sipho het 8 eiers en wil dit almal gebruik, terwyl hy dieselfde patroon volhou. Hoeveel koppies meel het hy nodig? Verduidelik jou redenering.', answer: '12 koppies', checkMode: 'self', explanation: 'Die skaalfaktor is 8 ÷ 2 = 4 (Sipho het 4 keer soveel eiers as die basishoeveelheid van 2). Pas dieselfde skaalfaktor op die meel toe: 3 × 4 = 12 koppies.' },
+        { difficulty: 'Easy', question: 'Vir elke 3 rooi fiches is daar 4 blou fiches. As daar 12 rooi fiches is, hoeveel blou fiches is daar?', checkMode: 'auto', options: ['16', '13', '9', '4'], correctIndex: 0, explanation: '12 rooi fiches is 12 ÷ 3 = 4 keer soveel as 3. Pas dieselfde skaalfaktor op die blou fiches toe: 4 × 4 = 16. (13 kom van die verskil tussen 12 en 3 by die blou-telling op te tel in plaas van te skaleer; 9 kom van verwarring oor watter getal die rooi-telling in die verhouding is; 4 herhaal net die verhouding se blou-getal sonder om enigsins te skaleer.)' },
+        { difficulty: 'Medium', question: 'ʼn Minibus-taxi ry 150 km in 3 uur teen ʼn konstante spoed. Hoe ver ry dit in 5 uur?', checkMode: 'auto', options: ['200', '250', '300', '50'], correctIndex: 1, explanation: 'Tempo per uur: 150 ÷ 3 = 50 km per uur. In 5 uur: 50 × 5 = 250 km. (200 kom van net een ekstra inkrement van 50 km by te tel in plaas van korrek te vermenigvuldig; 300 kom van die gebruik van 6 uur in plaas van 5; 50 stop by die tempo vir 1 uur en vergeet om op te skaleer.)' },
+        { difficulty: 'Medium', question: 'ʼn Resep het 2 eiers vir elke 3 koppies meel nodig. Sipho het 8 eiers en wil dit almal gebruik, terwyl hy dieselfde patroon volhou. Watter stelling vind korrek hoeveel meel hy nodig het?', checkMode: 'auto', options: ['Die skaalfaktor is 8 ÷ 3 = 2,67, dus het hy 3 × 2,67 ≈ 8 koppies nodig.', 'Aangesien Sipho 8 eiers het, het hy eenvoudig ook 8 koppies meel nodig.', 'Die skaalfaktor is 8 ÷ 2 = 4, dus het hy 3 × 4 = 12 koppies meel nodig.', 'Hy het 2 × 8 = 16 koppies meel nodig, aangesien meel altyd dubbel die eiers is.'], correctIndex: 2, explanation: 'Die skaalfaktor is 8 ÷ 2 = 4, aangesien Sipho 4 keer soveel eiers het as die basishoeveelheid van 2. Pas dieselfde skaalfaktor op die meel toe: 3 × 4 = 12 koppies. (Opsie A deel deur die heeltemal verkeerde getal; opsie B ignoreer die verhouding en kopieer net die eiergetal; opsie D neem verkeerdelik ʼn vaste verdubbelingsverhouding aan in plaas van die werklike 2:3-verhouding te gebruik.)' },
       ],
       scoreMessages: [
         { minScore: 23, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling, woordprobleme en die vergelyking van hoeveelhede.' },
@@ -702,41 +702,41 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok 1 — Delingsfeite en Feitefamilies (0-3, Maklik)
-        { difficulty: 'Easy', question: 'Bereken: 72 ÷ 8', answer: '9', checkMode: 'auto', correctAnswer: '9', explanation: '8 × 9 = 72, dus 72 ÷ 8 = 9.' },
-        { difficulty: 'Easy', question: 'ʼn Verkoper verpak 49 lemoene gelyk in 7 mandjies. Hoeveel lemoene gaan in elke mandjie?', answer: '7', checkMode: 'auto', correctAnswer: '7', correctAnswers: ['7', '7 lemoene'], explanation: '49 ÷ 7 = 7. Elke mandjie kry 7 lemoene.' },
-        { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: 7 × ___ = 49, en gebruik dit om te sê wat 49 ÷ 7 gelyk is.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: '7 × 7 = 49, dus die ontbrekende getal is 7. Dit beteken ook 49 ÷ 7 = 7.' },
-        { difficulty: 'Easy', question: 'Gebruik die feitefamilie vir 8 × 7 = 56 om die twee verwante delingsfeite te skryf.', answer: '56 ÷ 7 = 8 en 56 ÷ 8 = 7', checkMode: 'auto', correctAnswer: '56÷7=8 en 56÷8=7', correctAnswers: ['56÷7=8 en 56÷8=7', '56/7=8 en 56/8=7', '56÷8=7 en 56÷7=8', '56/8=7 en 56/7=8'], explanation: 'Vanaf 8 × 7 = 56, is die twee delingsfeite 56 ÷ 7 = 8 en 56 ÷ 8 = 7.' },
+        { difficulty: 'Easy', question: 'Bereken: 72 ÷ 8', checkMode: 'auto', options: ['8', '9', '10', '72'], correctIndex: 1, explanation: '8 × 9 = 72, dus 72 ÷ 8 = 9. (8 is een groep te min in die 8×-tafel; 10 is een groep te veel; 72 vergeet heeltemal om te deel en herhaal net die deeltal.)' },
+        { difficulty: 'Easy', question: 'ʼn Verkoper verpak 49 lemoene gelyk in 7 mandjies. Hoeveel lemoene gaan in elke mandjie?', checkMode: 'auto', options: ['6', '8', '7', '49'], correctIndex: 2, explanation: '49 ÷ 7 = 7. Elke mandjie kry 7 lemoene. (6 en 8 is een-af foute in die 7×-tafel; 49 herhaal per ongeluk die totaal in plaas van te deel.)' },
+        { difficulty: 'Easy', question: 'Vul die ontbrekende getal in: 7 × ___ = 49, en gebruik dit om te sê wat 49 ÷ 7 gelyk is.', checkMode: 'auto', options: ['6', '8', '49', '7'], correctIndex: 3, explanation: '7 × 7 = 49, dus is die ontbrekende getal 7, en 49 ÷ 7 = 7. (6 en 8 is een-af foute in die 7×-tafel; 49 herhaal verkeerdelik die totaal in plaas daarvan om die ontbrekende faktor te vind.)' },
+        { difficulty: 'Easy', question: 'Gebruik die feitefamilie vir 8 × 7 = 56 om die twee verwante delingsfeite te skryf.', checkMode: 'auto', options: ['56 ÷ 7 = 8 en 56 ÷ 8 = 7', '56 ÷ 8 = 6 en 56 ÷ 7 = 9', '56 ÷ 6 = 9 en 56 ÷ 7 = 8', '56 ÷ 7 = 7 en 56 ÷ 8 = 8'], correctIndex: 0, explanation: 'Vanaf 8 × 7 = 56, is die twee delingsfeite 56 ÷ 7 = 8 en 56 ÷ 8 = 7. (Opsie B bereken albei kwosiënte verkeerd; opsie C verzin ʼn deler (6) wat nie deel van hierdie feitefamilie is nie; opsie D maak elke kwosiënt verkeerdelik gelyk aan sy eie deler.)' },
 
         // Blok 2 — Reste (4-7, Maklik-Medium)
-        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 41 ÷ 6', answer: '6 r 5', checkMode: 'auto', correctAnswer: '6r5', correctAnswers: ['6r5', '6res5'], explanation: '6 × 6 = 36 (naaste sonder om 41 te oorskry). 41 − 36 = 5 oor. 41 ÷ 6 = 6 r 5.' },
-        { difficulty: 'Easy-Medium', question: 'Dumisani het 53 albasters en wil flesse vul wat elk 8 albasters hou. Hoeveel volle flesse kan hy vul, en hoeveel albasters bly oor?', answer: '6 r 5', checkMode: 'auto', correctAnswer: '6r5', correctAnswers: ['6r5', '6res5'], explanation: '8 × 6 = 48 (naaste sonder om 53 te oorskry). 53 − 48 = 5 oor. 53 ÷ 8 = 6 r 5.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder het geskryf: "31 ÷ 6 = 4 r 7". Is dit korrek? Indien nie, skryf die korrekte antwoord in die vorm kwosiënt r res.', answer: '5 r 1', checkMode: 'auto', correctAnswer: '5r1', correctAnswers: ['5r1', '5res1', 'nee5r1', 'onkorrek5r1'], explanation: 'Die leerder is verkeerd: ʼn res van 7 kan nie voorkom wanneer deur 6 gedeel word nie, aangesien 7 groter as 6 is. Korrek: 6 × 5 = 30 en 31 − 30 = 1, dus 31 ÷ 6 = 5 r 1.' },
-        { difficulty: 'Medium', question: 'ʼn Krat hou 67 eiers. As dit herverpak word in eierbakkies van 9, hoeveel volle bakkies is daar, en hoeveel eiers bly oor?', answer: '7 r 4', checkMode: 'auto', correctAnswer: '7r4', correctAnswers: ['7r4', '7res4'], explanation: '9 × 7 = 63 (naaste sonder om 67 te oorskry). 67 − 63 = 4 oor. 67 ÷ 9 = 7 r 4.' },
+        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 41 ÷ 6', checkMode: 'auto', options: ['5 r 11', '6 r 5', '6 r 6', '7 r 5'], correctIndex: 1, explanation: '6 × 6 = 36 is die naaste veelvoud van 6 sonder om 41 te oorskry. 41 − 36 = 5, dus 41 ÷ 6 = 6 r 5. (5 r 11 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 6 r 6 is ʼn aftrekkingsfoutjie; 7 r 5 skiet oor aangesien 6 × 7 = 42 reeds meer as 41 is.)' },
+        { difficulty: 'Easy-Medium', question: 'Dumisani het 53 albasters en wil flesse vul wat elk 8 albasters hou. Hoeveel volle flesse kan hy vul, en hoeveel albasters bly oor?', checkMode: 'auto', options: ['5 r 13', '6 r 4', '6 r 5', '7 r 3'], correctIndex: 2, explanation: '8 × 6 = 48 is die naaste veelvoud van 8 sonder om 53 te oorskry. 53 − 48 = 5, dus 53 ÷ 8 = 6 r 5. (5 r 13 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 6 r 4 is ʼn aftrekkingsfoutjie; 7 r 3 skiet oor aangesien 8 × 7 = 56 reeds meer as 53 is.)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder het geskryf: "31 ÷ 6 = 4 r 7". Is dit korrek?', checkMode: 'auto', options: ['Die leerder is korrek soos geskryf', 'Onkorrek — die korrekte antwoord is 6 r 1', 'Onkorrek — die korrekte antwoord is 5 r 0', 'Onkorrek — die korrekte antwoord is 5 r 1'], correctIndex: 3, explanation: 'Die leerder is verkeerd: ʼn res van 7 kan nie voorkom wanneer deur 6 gedeel word nie, aangesien 7 groter as 6 is. Korrek: 6 × 5 = 30 en 31 − 30 = 1, dus 31 ÷ 6 = 5 r 1. (6 r 1 skiet oor aangesien 6 × 6 = 36 reeds meer as 31 is; 5 r 0 neem verkeerdelik aan dat daar niks oorbly nie.)' },
+        { difficulty: 'Medium', question: 'ʼn Krat hou 67 eiers. As dit herverpak word in eierbakkies van 9, hoeveel volle bakkies is daar, en hoeveel eiers bly oor?', checkMode: 'auto', options: ['7 r 4', '6 r 13', '7 r 5', '8 r 5'], correctIndex: 0, explanation: '9 × 7 = 63 is die naaste veelvoud van 9 sonder om 67 te oorskry. 67 − 63 = 4, dus 67 ÷ 9 = 7 r 4. (6 r 13 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 7 r 5 is ʼn aftrekkingsfoutjie; 8 r 5 skiet oor aangesien 9 × 8 = 72 reeds meer as 67 is.)' },
 
         // Blok 3 — Langdeling (8-11, Medium)
-        { difficulty: 'Medium', question: 'Bereken met langdeling: 76 ÷ 4', answer: '19', checkMode: 'auto', correctAnswer: '19', explanation: '7 ÷ 4 = 1 r 3, bring 6 af → 36. 36 ÷ 4 = 9. Dus 76 ÷ 4 = 19.' },
-        { difficulty: 'Medium', question: 'ʼn Fabriek het 434 blikkies gemaak en dit gelyk op 7 pallette verpak. Hoeveel blikkies is op elke palet? Wys jou langdeling-werk.', answer: '62', checkMode: 'self', correctAnswer: '62', explanation: '43 ÷ 7 = 6 r 1, bring 4 af → 14. 14 ÷ 7 = 2. Dus 434 ÷ 7 = 62 blikkies per palet.' },
-        { difficulty: 'Medium', question: 'Bereken met langdeling en skryf jou antwoord in die vorm kwosiënt r res: 287 ÷ 6', answer: '47 r 5', checkMode: 'auto', correctAnswer: '47r5', correctAnswers: ['47r5', '47res5'], explanation: '28 ÷ 6 = 4 r 4, bring 7 af → 47. 47 ÷ 6 = 7 r 5. Dus 287 ÷ 6 = 47 r 5.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder het langdeling gebruik en gekry: 462 ÷ 11 = 24. Kontroleer die werk deur die kwosiënt met die deler te vermenigvuldig. Is die leerder se antwoord korrek? Gee die korrekte antwoord.', answer: '42', checkMode: 'self', explanation: 'Kontrole: 11 × 24 = 264, wat nie gelyk is aan 462 nie, dus is die leerder verkeerd (die syfers van die antwoord is waarskynlik omgeruil). Korrekte werk: 46 ÷ 11 = 4 r 2 (11 × 4 = 44, 46 − 44 = 2). Bring 2 af → 22. 22 ÷ 11 = 2 (11 × 2 = 22, 22 − 22 = 0). Dus 462 ÷ 11 = 42 presies.' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling: 76 ÷ 4', checkMode: 'auto', options: ['18', '19', '20', '91'], correctIndex: 1, explanation: '7 ÷ 4 = 1 r 3, bring 6 af → 36. 36 ÷ 4 = 9. Dus 76 ÷ 4 = 19. (18 en 20 kom van ʼn een-af fout in die finale delingstap; 91 verruil die syfers van die korrekte antwoord.)' },
+        { difficulty: 'Medium', question: 'ʼn Fabriek het 434 blikkies gemaak en dit gelyk op 7 pallette verpak. Hoeveel blikkies is op elke palet?', checkMode: 'auto', options: ['60', '64', '62', '26'], correctIndex: 2, explanation: '43 ÷ 7 = 6 r 1, bring 4 af → 14. 14 ÷ 7 = 2. Dus 434 ÷ 7 = 62 blikkies per palet. (60 en 64 kom van ʼn een-af foutjie in die finale syfer; 26 verruil die syfers van die korrekte antwoord.)' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling en skryf jou antwoord in die vorm kwosiënt r res: 287 ÷ 6', checkMode: 'auto', options: ['46 r 11', '47 r 6', '48 r 1', '47 r 5'], correctIndex: 3, explanation: '28 ÷ 6 = 4 r 4, bring 7 af → 47. 47 ÷ 6 = 7 r 5. Dus 287 ÷ 6 = 47 r 5. (46 r 11 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 47 r 6 is ʼn aftrekkingsfoutjie wat die res gelyk aan die deler laat; 48 r 1 skiet oor aangesien 6 × 48 = 288 reeds meer as 287 is.)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder het langdeling gebruik en gekry: 462 ÷ 11 = 24. Kontroleer die werk deur die kwosiënt met die deler te vermenigvuldig. Is die leerder se antwoord korrek?', checkMode: 'auto', options: ['42', '24', '41', '43'], correctIndex: 0, explanation: 'Kontrole: 11 × 24 = 264, wat nie gelyk is aan 462 nie, dus is die leerder verkeerd (die syfers van die antwoord is waarskynlik omgeruil, "24" geskryf in plaas van "42"). Korrekte werk: 46 ÷ 11 = 4 r 2, bring 2 af → 22. 22 ÷ 11 = 2 presies. Dus 462 ÷ 11 = 42. (41 tel die kwosiënt een te min; 43 tel dit een te veel.)' },
 
         // Blok 4 — Woordprobleme: Deel vs Groepeer (12-15, Medium)
-        { difficulty: 'Medium', question: 'ʼn Winkelier deel 84 lekkers gelyk tussen 6 kinders. Is dit ʼn delingsprobleem of ʼn groeperingsprobleem? Verduidelik kortliks, en gee dan die antwoord.', answer: 'Deling — 14 lekkers elk', checkMode: 'self', explanation: 'Dit is ʼn delingsprobleem: ons ken die totaal (84) en die aantal groepe (6), en moet vind hoeveel elke groep ontvang. 84 ÷ 6 = 14 lekkers elk.' },
-        { difficulty: 'Medium', question: 'R165 word gelyk gedeel tussen 5 vrywilligers vir reiskoste. Hoeveel ontvang elke vrywilliger? Skryf slegs die getal sonder die R-simbool.', answer: '33', checkMode: 'auto', correctAnswer: '33', explanation: '165 ÷ 5 = 33. Elke vrywilliger ontvang R33.' },
-        { difficulty: 'Medium', question: 'ʼn Boer plant 117 kool in gelyke rye van 9. Skryf die delings-getalsin vir hierdie probleem, en los dit dan op om te vind hoeveel rye daar is.', answer: '117 ÷ 9 = 13', checkMode: 'auto', correctAnswer: '117÷9=13', correctAnswers: ['117÷9=13', '117/9=13', '13'], explanation: 'Die getalsin is 117 ÷ 9. 117 ÷ 9 = 13 rye.' },
-        { difficulty: 'Medium', question: 'ʼn Handwerkwinkel het ʼn boks van 152 knope ontvang. Die eienaar wil dit in klein pakkies verpak, met 8 knope in elke pakkie, om apart te verkoop. Hoeveel pakkies kan gevul word?', answer: '19', checkMode: 'auto', correctAnswer: '19', correctAnswers: ['19', '19 pakkies'], explanation: '152 ÷ 8 = 19 pakkies.' },
+        { difficulty: 'Medium', question: 'ʼn Winkelier deel 84 lekkers gelyk tussen 6 kinders. Watter stelling identifiseer en los hierdie probleem korrek op?', checkMode: 'auto', options: ['Dit is ʼn groeperingsprobleem, aangesien ons die groepgrootte (6) ken — 84 ÷ 6 = 14 lekkers elk.', 'Dit is ʼn delingsprobleem, aangesien ons die totaal (84) en die aantal groepe (6) ken, dus kry elkeen 84 ÷ 6 = 14 lekkers.', 'Dit is ʼn delingsprobleem, en die antwoord is 6 lekkers elk, aangesien 6 die aantal kinders is.', 'Dit is ʼn groeperingsprobleem, en die antwoord is 6 groepe.'], correctIndex: 1, explanation: 'Dit is ʼn delingsprobleem: ons ken die totaal (84) en die aantal groepe (6), en moet vind hoeveel elke groep ontvang — 84 ÷ 6 = 14 lekkers elk. (Opsie A kry die regte getal, maar noem die probleemtipe verkeerd — groepering sou beteken die groepgrootte is bekend, nie die aantal groepe nie. Opsies C en D verwar die aantal kinders met die finale antwoord.)' },
+        { difficulty: 'Medium', question: 'R165 word gelyk gedeel tussen 5 vrywilligers vir reiskoste. Hoeveel ontvang elke vrywilliger? Skryf slegs die getal sonder die R-simbool.', checkMode: 'auto', options: ['32', '34', '33', '5'], correctIndex: 2, explanation: '165 ÷ 5 = 33. Elke vrywilliger ontvang R33. (32 en 34 is een-af foute in die 5×-tafel; 5 verwar die aantal vrywilligers met die bedrag wat elkeen ontvang.)' },
+        { difficulty: 'Medium', question: 'ʼn Boer plant 117 kool in gelyke rye van 9. Watter getalsin verteenwoordig en los hierdie probleem korrek op?', checkMode: 'auto', options: ['117 ÷ 9 = 12', '117 ÷ 9 = 14', '117 × 9 = 13', '117 ÷ 9 = 13'], correctIndex: 3, explanation: 'Die korrekte getalsin is 117 ÷ 9 = 13 rye. (12 en 14 is een-af foute in die 9×-tafel; die derde opsie gebruik heeltemal die verkeerde bewerking.)' },
+        { difficulty: 'Medium', question: 'ʼn Handwerkwinkel het ʼn boks van 152 knope ontvang. Die eienaar wil dit in klein pakkies verpak, met 8 knope in elke pakkie, om apart te verkoop. Hoeveel pakkies kan gevul word?', checkMode: 'auto', options: ['19', '18', '20', '8'], correctIndex: 0, explanation: '152 ÷ 8 = 19 pakkies. (18 en 20 is een-af foute in die 8×-tafel; 8 verwar die pakkiegrootte met die aantal pakkies.)' },
 
         // Blok 5 — Veelstap en Toegepaste Probleme (16-17, Medium-Hard)
-        { difficulty: 'Medium-Hard', question: 'ʼn Markstalletjie verdien R270 deur vrugte te verkoop, gelyk verdeel oor ʼn 9-uur dag. As die stalhouer dan R18 op ys spandeer om vrugte koel te hou, hoeveel geld bly oor van een uur se verdienste nadat die ys gekoop is?', answer: '12', checkMode: 'auto', correctAnswer: '12', explanation: '270 ÷ 9 = 30 (per uur verdien). 30 − 18 = 12. R12 bly oor.' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Gemeenskapsaal reël sitplek vir 130 gaste by ʼn troue. Elke tafel het plek vir 9 gaste. Verduidelik waarom om net 130 ÷ 9 te bereken nie die aantal tafels gee wat nodig is nie, en gee die werklike aantal tafels wat opgestel moet word.', answer: '15', checkMode: 'self', correctAnswer: '15', correctAnswers: ['15', '15 tafels'], explanation: '130 ÷ 9 = 14 r 4. Veertien tafels sit presies 126 gaste, maar 4 gaste het nog steeds geen sitplek nie, dus is ʼn 15de tafel nodig, al is dit nie vol nie. Om net die kwosiënt (14) te gebruik sou gaste sonder sitplek laat — jy moet altyd oprond wanneer daar ʼn res is. 15 tafels in totaal.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Markstalletjie verdien R270 deur vrugte te verkoop, gelyk verdeel oor ʼn 9-uur dag. As die stalhouer dan R18 op ys spandeer om vrugte koel te hou, hoeveel geld bly oor van een uur se verdienste nadat die ys gekoop is?', checkMode: 'auto', options: ['30', '12', '48', '13'], correctIndex: 1, explanation: '270 ÷ 9 = 30 per uur verdien. 30 − 18 = 12, dus bly R12 oor. (30 vergeet heeltemal om die yskoste af te trek; 48 tel per ongeluk die R18 by in plaas daarvan om dit af te trek; 13 is ʼn aftrekkingsfoutjie.)' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Gemeenskapsaal reël sitplek vir 130 gaste by ʼn troue. Elke tafel het plek vir 9 gaste. Watter stelling verduidelik korrek hoeveel tafels benodig word?', checkMode: 'auto', options: ['130 ÷ 9 = 14 r 4, dus is presies 14 tafels nodig aangesien die res klein is.', '130 ÷ 9 = 14 r 4, dus is 14 tafels nodig en die 4 ekstra gaste kan bestaande sitplekke deel.', '130 ÷ 9 = 14 r 4, dus is 15 tafels nodig omdat die 4 oorblywende gaste steeds sitplek nodig het, al is die tafel nie vol nie.', '130 ÷ 9 = 15 presies, dus is 15 tafels nodig sonder dat enige gaste oorbly.'], correctIndex: 2, explanation: '130 ÷ 9 = 14 r 4. Veertien tafels sit presies 126 gaste, maar die 4 gaste wat oorbly het steeds sitplek nodig, dus is ʼn 15de tafel nodig, al is dit nie vol nie — jy moet altyd oprond wanneer daar ʼn res is. (Opsies A en B stop verkeerdelik by die kwosiënt; opsie D bereken die deling verkeerd as presies.)' },
 
         // Blok 6 — Redenering en Regverdiging (18-19, Moeilik)
-        { difficulty: 'Hard', question: 'Verduidelik in jou eie woorde waarom die res in ʼn deling altyd kleiner as die deler moet wees. Gebruik die voorbeeld 26 ÷ 7 om jou verduideliking te ondersteun.', answer: '26 ÷ 7 = 3 r 5, aangesien 5 < 7', checkMode: 'self', explanation: 'As die res gelyk aan of groter as die deler was, kon nog ʼn volle groep steeds gemaak word, dus was die deling nie klaar nie. Vir 26 ÷ 7: 7 × 3 = 21, en 26 − 21 = 5, wat kleiner as 7 is, dus is 3 r 5 korrek. As iemand 2 r 12 gesê het, sou dit verkeerd wees omdat 12 groter as 7 is — nog ʼn groep van 7 pas binne 12.' },
-        { difficulty: 'Hard', question: 'Sonder om altwee volledig te bereken, verduidelik watter een ʼn groter antwoord gee: 120 ÷ 6 of 120 ÷ 10. Hoe weet jy dit?', answer: '120 ÷ 6 is groter', checkMode: 'self', explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 6 kleiner as 10 is, gee 120 ÷ 6 ʼn groter antwoord as 120 ÷ 10, sonder dat jy hoef uit te werk dat hulle 20 en 12 is.' },
+        { difficulty: 'Hard', question: 'Watter stelling verduidelik korrek waarom die res in ʼn deling altyd kleiner as die deler moet wees, met die voorbeeld 26 ÷ 7?', checkMode: 'auto', options: ['Die res kan gelyk aan die deler wees, aangesien dit net een ekstra groep beteken.', 'Die res kan groter as die deler wees, solank die kwosiënt korrek is.', '26 ÷ 7 = 2 r 12, aangesien 7 × 2 = 14 en 26 − 14 = 12.', '26 ÷ 7 = 3 r 5, aangesien 7 × 3 = 21 en 26 − 21 = 5, en 5 kleiner as 7 is.'], correctIndex: 3, explanation: 'As die res gelyk aan of groter as die deler was, kon nog ʼn volle groep steeds gemaak word, dus was die deling nie klaar nie. Vir 26 ÷ 7: 7 × 3 = 21, en 26 − 21 = 5, wat kleiner as 7 is, dus is 3 r 5 korrek. (Opsies A en B beweer verkeerdelik dat ʼn res gelyk aan of groter as die deler kan wees; opsie C tel die kwosiënt te min, wat ʼn ongeldige res van 12 laat.)' },
+        { difficulty: 'Hard', question: 'Watter stelling vergelyk 120 ÷ 6 en 120 ÷ 10 korrek, sonder om altwee volledig te bereken?', checkMode: 'auto', options: ['120 ÷ 6 is groter, omdat deling deur ʼn kleiner deler die getal in minder, groter groepe verdeel.', '120 ÷ 10 is groter, omdat 10 ʼn groter getal is.', 'Hulle is gelyk, omdat albei dieselfde deeltal deel.', '120 ÷ 10 is groter, omdat deling in meer groepe altyd ʼn groter antwoord gee.'], correctIndex: 0, explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 6 kleiner as 10 is, gee 120 ÷ 6 ʼn groter antwoord as 120 ÷ 10 (20 teenoor 12), sonder dat jy altwee volledig hoef te bereken. (Opsies B en D koppel verkeerdelik ʼn groter deler, of meer groepe, aan ʼn groter antwoord; opsie C neem verkeerdelik aan dat gelyke delers gelyke antwoorde gee.)' },
 
         // Blok 7 — Vergelyk Hoeveelhede: Vir Elke en Per (20-22, Maklik-Medium)
-        { difficulty: 'Easy', question: 'Vir elke 4 potlode in ʼn pakkie is daar 5 penne in ʼn ooreenstemmende pakkie. As daar 20 potlode is, hoeveel penne is daar?', answer: '25', checkMode: 'auto', correctAnswer: '25', correctAnswers: ['25', '25 penne'], explanation: '20 potlode is 20 ÷ 4 = 5 keer soveel as 4. Pas dieselfde skaalfaktor op die penne toe: 5 × 5 = 25 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Fietsryer ry 84 km in 4 uur teen ʼn konstante spoed. Hoe ver ry sy in 7 uur?', answer: '147 km', checkMode: 'auto', correctAnswer: '147', correctAnswers: ['147', '147 km'], explanation: 'Tempo per uur: 84 ÷ 4 = 21 km per uur. In 7 uur: 21 × 7 = 147 km ✓' },
-        { difficulty: 'Medium', question: 'ʼn Sapresep gebruik 3 dele water vir elke 2 dele konsentraat. Zanele het 10 dele konsentraat en wil sap maak terwyl sy dieselfde patroon volhou. Hoeveel dele water het sy nodig? Verduidelik jou redenering.', answer: '15 dele', checkMode: 'self', explanation: 'Die skaalfaktor is 10 ÷ 2 = 5 (Zanele het 5 keer soveel konsentraat as die basishoeveelheid van 2). Pas dieselfde skaalfaktor op die water toe: 3 × 5 = 15 dele.' },
+        { difficulty: 'Easy', question: 'Vir elke 4 potlode in ʼn pakkie is daar 5 penne in ʼn ooreenstemmende pakkie. As daar 20 potlode is, hoeveel penne is daar?', checkMode: 'auto', options: ['21', '25', '16', '5'], correctIndex: 1, explanation: '20 potlode is 20 ÷ 4 = 5 keer soveel as 4. Pas dieselfde skaalfaktor op die penne toe: 5 × 5 = 25. (21 kom van die verskil tussen 20 en 4 by die penne-telling op te tel in plaas van te skaleer; 16 kom van verwarring oor watter getal die potlood-telling in die verhouding is; 5 herhaal net die verhouding se pen-getal sonder om enigsins te skaleer.)' },
+        { difficulty: 'Medium', question: 'ʼn Fietsryer ry 84 km in 4 uur teen ʼn konstante spoed. Hoe ver ry sy in 7 uur?', checkMode: 'auto', options: ['126', '168', '147', '21'], correctIndex: 2, explanation: 'Tempo per uur: 84 ÷ 4 = 21 km per uur. In 7 uur: 21 × 7 = 147 km. (126 kom van ʼn verkeerde skalering van die tempo; 168 kom van die gebruik van 8 uur in plaas van 7; 21 stop by die tempo vir 1 uur en vergeet om op te skaleer.)' },
+        { difficulty: 'Medium', question: 'ʼn Sapresep gebruik 3 dele water vir elke 2 dele konsentraat. Zanele het 10 dele konsentraat en wil sap maak terwyl sy dieselfde patroon volhou. Watter stelling vind korrek hoeveel water sy nodig het?', checkMode: 'auto', options: ['Die skaalfaktor is 10 ÷ 3 = 3,33, dus het sy 2 × 3,33 ≈ 7 dele nodig.', 'Aangesien Zanele 10 dele konsentraat het, het sy eenvoudig ook 10 dele water nodig.', 'Sy het 2 × 10 = 20 dele water nodig, aangesien water altyd dubbel die konsentraat is.', 'Die skaalfaktor is 10 ÷ 2 = 5, dus het sy 3 × 5 = 15 dele water nodig.'], correctIndex: 3, explanation: 'Die skaalfaktor is 10 ÷ 2 = 5, aangesien Zanele 5 keer soveel konsentraat het as die basishoeveelheid van 2. Pas dieselfde skaalfaktor op die water toe: 3 × 5 = 15 dele. (Opsie A deel deur die heeltemal verkeerde getal; opsie B ignoreer die verhouding en kopieer net die konsentraathoeveelheid; opsie C neem verkeerdelik ʼn vaste verdubbelingsverhouding aan in plaas van die werklike 3:2-verhouding te gebruik.)' },
       ],
       scoreMessages: [
         { minScore: 23, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling, woordprobleme en die vergelyking van hoeveelhede.' },
@@ -753,41 +753,41 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok 1 — Delingsfeite en Feitefamilies (0-3, Maklik)
-        { difficulty: 'Easy', question: 'Bereken: 63 ÷ 9', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: '9 × 7 = 63, dus 63 ÷ 9 = 7.' },
-        { difficulty: 'Easy', question: 'ʼn Onderwyser deel 40 fiches gelyk tussen 8 pare leerders. Hoeveel fiches kry elke paar?', answer: '5', checkMode: 'auto', correctAnswer: '5', correctAnswers: ['5', '5 fiches'], explanation: '40 ÷ 8 = 5. Elke paar kry 5 fiches.' },
-        { difficulty: 'Easy', question: 'ʼn Leerder sê die ontbrekende getal in 6 × ___ = 42 is 8. Is dit korrek? Gee die korrekte ontbrekende getal en sê wat 42 ÷ 6 gelyk is.', answer: '7', checkMode: 'auto', correctAnswer: '7', explanation: 'Die leerder is verkeerd: 6 × 8 = 48, nie 42 nie. Die korrekte ontbrekende getal is 7, aangesien 6 × 7 = 42. Dit beteken ook 42 ÷ 6 = 7.' },
-        { difficulty: 'Easy', question: 'Gebruik die feitefamilie vir 3 × 9 = 27 om die twee verwante delingsfeite te skryf.', answer: '27 ÷ 9 = 3 en 27 ÷ 3 = 9', checkMode: 'auto', correctAnswer: '27÷9=3 en 27÷3=9', correctAnswers: ['27÷9=3 en 27÷3=9', '27/9=3 en 27/3=9', '27÷3=9 en 27÷9=3', '27/3=9 en 27/9=3'], explanation: 'Vanaf 3 × 9 = 27, is die twee delingsfeite 27 ÷ 9 = 3 en 27 ÷ 3 = 9.' },
+        { difficulty: 'Easy', question: 'Bereken: 63 ÷ 9', checkMode: 'auto', options: ['6', '8', '7', '9'], correctIndex: 2, explanation: '9 × 7 = 63, dus 63 ÷ 9 = 7. (6 en 8 is een-af foute in die 9×-tafel; 9 verwar die deler self met die antwoord.)' },
+        { difficulty: 'Easy', question: 'ʼn Onderwyser deel 40 fiches gelyk tussen 8 pare leerders. Hoeveel fiches kry elke paar?', checkMode: 'auto', options: ['4', '6', '8', '5'], correctIndex: 3, explanation: '40 ÷ 8 = 5. Elke paar kry 5 fiches. (4 en 6 is een-af foute in die 8×-tafel; 8 verwar die deler met die aantal fiches wat elke paar kry.)' },
+        { difficulty: 'Easy', question: 'ʼn Leerder sê die ontbrekende getal in 6 × ___ = 42 is 8. Watter stelling is korrek?', checkMode: 'auto', options: ['Die ontbrekende getal is 7, aangesien 6 × 7 = 42, dus 42 ÷ 6 = 7.', 'Die leerder is korrek — die ontbrekende getal is 8.', 'Die ontbrekende getal is 7, maar 42 ÷ 6 = 8.', 'Die ontbrekende getal is 6, aangesien 6 × 6 = 36 naby aan 42 is.'], correctIndex: 0, explanation: 'Die leerder is verkeerd: 6 × 8 = 48, nie 42 nie. Die korrekte ontbrekende getal is 7, aangesien 6 × 7 = 42. Dit beteken ook 42 ÷ 6 = 7. (Opsie C kry die ontbrekende getal reg, maar noem dan ʼn teenstrydige kwosiënt; opsie D kies ʼn getal wat die vermenigvuldiging nie werklik waar maak nie.)' },
+        { difficulty: 'Easy', question: 'Gebruik die feitefamilie vir 3 × 9 = 27 om die twee verwante delingsfeite te skryf.', checkMode: 'auto', options: ['27 ÷ 9 = 4 en 27 ÷ 3 = 8', '27 ÷ 9 = 3 en 27 ÷ 3 = 9', '27 ÷ 6 = 4 en 27 ÷ 3 = 9', '27 ÷ 9 = 9 en 27 ÷ 3 = 3'], correctIndex: 1, explanation: 'Vanaf 3 × 9 = 27, is die twee delingsfeite 27 ÷ 9 = 3 en 27 ÷ 3 = 9. (Opsie A bereken albei kwosiënte verkeerd; opsie C verzin ʼn deler (6) wat nie deel van hierdie feitefamilie is nie; opsie D maak elke kwosiënt verkeerdelik gelyk aan sy eie deler.)' },
 
         // Blok 2 — Reste (4-7, Maklik-Medium)
-        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 37 ÷ 8', answer: '4 r 5', checkMode: 'auto', correctAnswer: '4r5', correctAnswers: ['4r5', '4res5'], explanation: '8 × 4 = 32 (naaste sonder om 37 te oorskry). 37 − 32 = 5 oor. 37 ÷ 8 = 4 r 5.' },
-        { difficulty: 'Easy-Medium', question: 'Palesa het 51 lekkers en wil dit in partytjiesakkies van 7 lekkers elk verpak. Hoeveel volle sakkies kan sy verpak, en hoeveel lekkers bly oor?', answer: '7 r 2', checkMode: 'auto', correctAnswer: '7r2', correctAnswers: ['7r2', '7res2'], explanation: '7 × 7 = 49 (naaste sonder om 51 te oorskry). 51 − 49 = 2 oor. 51 ÷ 7 = 7 r 2.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder het geskryf: "27 ÷ 4 = 5 r 7". Is dit korrek? Indien nie, skryf die korrekte antwoord in die vorm kwosiënt r res.', answer: '6 r 3', checkMode: 'auto', correctAnswer: '6r3', correctAnswers: ['6r3', '6res3', 'nee6r3', 'onkorrek6r3'], explanation: 'Die leerder is verkeerd: ʼn res van 7 kan nie voorkom wanneer deur 4 gedeel word nie, aangesien 7 groter as 4 is. Korrek: 4 × 6 = 24 en 27 − 24 = 3, dus 27 ÷ 4 = 6 r 3.' },
-        { difficulty: 'Medium', question: 'ʼn Tenk hou 71 liter, uitgegooi in houers van 9 liter elk. Hoeveel volle houers is daar, en hoeveel liter bly oor?', answer: '7 r 8', checkMode: 'auto', correctAnswer: '7r8', correctAnswers: ['7r8', '7res8'], explanation: '9 × 7 = 63 (naaste sonder om 71 te oorskry). 71 − 63 = 8 oor. 71 ÷ 9 = 7 r 8.' },
+        { difficulty: 'Easy', question: 'Bereken en skryf jou antwoord in die vorm kwosiënt r res: 37 ÷ 8', checkMode: 'auto', options: ['3 r 13', '4 r 4', '4 r 5', '5 r 3'], correctIndex: 2, explanation: '8 × 4 = 32 is die naaste veelvoud van 8 sonder om 37 te oorskry. 37 − 32 = 5, dus 37 ÷ 8 = 4 r 5. (3 r 13 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 4 r 4 is ʼn aftrekkingsfoutjie; 5 r 3 skiet oor aangesien 8 × 5 = 40 reeds meer as 37 is.)' },
+        { difficulty: 'Easy-Medium', question: 'Palesa het 51 lekkers en wil dit in partytjiesakkies van 7 lekkers elk verpak. Hoeveel volle sakkies kan sy verpak, en hoeveel lekkers bly oor?', checkMode: 'auto', options: ['6 r 9', '7 r 1', '8 r 5', '7 r 2'], correctIndex: 3, explanation: '7 × 7 = 49 is die naaste veelvoud van 7 sonder om 51 te oorskry. 51 − 49 = 2, dus 51 ÷ 7 = 7 r 2. (6 r 9 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 7 r 1 is ʼn aftrekkingsfoutjie; 8 r 5 skiet oor aangesien 7 × 8 = 56 reeds meer as 51 is.)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder het geskryf: "27 ÷ 4 = 5 r 7". Is dit korrek?', checkMode: 'auto', options: ['6 r 3', '5 r 7', '5 r 3', '6 r 1'], correctIndex: 0, explanation: 'Die leerder is verkeerd: ʼn res van 7 kan nie voorkom wanneer deur 4 gedeel word nie, aangesien 7 groter as 4 is. Korrek: 4 × 6 = 24 en 27 − 24 = 3, dus 27 ÷ 4 = 6 r 3. (5 r 7 herhaal die leerder se ongeldige bewering; 5 r 3 tel die kwosiënt een te min; 6 r 1 is ʼn aftrekkingsfoutjie.)' },
+        { difficulty: 'Medium', question: 'ʼn Tenk hou 71 liter, uitgegooi in houers van 9 liter elk. Hoeveel volle houers is daar, en hoeveel liter bly oor?', checkMode: 'auto', options: ['6 r 17', '7 r 8', '8 r 1', '7 r 7'], correctIndex: 1, explanation: '9 × 7 = 63 is die naaste veelvoud van 9 sonder om 71 te oorskry. 71 − 63 = 8, dus 71 ÷ 9 = 7 r 8. (6 r 17 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 8 r 1 skiet oor aangesien 9 × 8 = 72 reeds meer as 71 is; 7 r 7 is ʼn aftrekkingsfoutjie.)' },
 
         // Blok 3 — Langdeling (8-11, Medium)
-        { difficulty: 'Medium', question: 'Bereken met langdeling: 98 ÷ 7', answer: '14', checkMode: 'auto', correctAnswer: '14', explanation: '9 ÷ 7 = 1 r 2, bring 8 af → 28. 28 ÷ 7 = 4. Dus 98 ÷ 7 = 14.' },
-        { difficulty: 'Medium', question: 'ʼn Drukker het 512 pamflette gemaak en dit gelyk in 8 dose gebondel. Hoeveel pamflette is in elke doos? Wys jou langdeling-werk.', answer: '64', checkMode: 'self', correctAnswer: '64', explanation: '51 ÷ 8 = 6 r 3, bring 2 af → 32. 32 ÷ 8 = 4. Dus 512 ÷ 8 = 64 pamflette per doos.' },
-        { difficulty: 'Medium', question: 'Bereken met langdeling en skryf jou antwoord in die vorm kwosiënt r res: 293 ÷ 8', answer: '36 r 5', checkMode: 'auto', correctAnswer: '36r5', correctAnswers: ['36r5', '36res5'], explanation: '29 ÷ 8 = 3 r 5, bring 3 af → 53. 53 ÷ 8 = 6 r 5. Dus 293 ÷ 8 = 36 r 5.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder het langdeling gebruik en gekry: 429 ÷ 12 = 34 r 21. Kontroleer die werk — is hierdie res toelaatbaar vir hierdie deler? Gee die korrekte kwosiënt en res.', answer: '35 r 9', checkMode: 'self', explanation: 'Die leerder is verkeerd: ʼn res van 21 kan nie korrek wees wanneer deur 12 gedeel word nie, aangesien 21 groter as 12 is — nog ʼn volle groep van 12 pas steeds daarin. Korrekte werk: 42 ÷ 12 = 3 r 6 (12 × 3 = 36, 42 − 36 = 6). Bring 9 af → 69. 69 ÷ 12 = 5 r 9 (12 × 5 = 60, 69 − 60 = 9). Dus 429 ÷ 12 = 35 r 9.' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling: 98 ÷ 7', checkMode: 'auto', options: ['13', '15', '14', '41'], correctIndex: 2, explanation: '9 ÷ 7 = 1 r 2, bring 8 af → 28. 28 ÷ 7 = 4. Dus 98 ÷ 7 = 14. (13 en 15 kom van ʼn een-af fout in die finale delingstap; 41 verruil die syfers van die korrekte antwoord.)' },
+        { difficulty: 'Medium', question: 'ʼn Drukker het 512 pamflette gemaak en dit gelyk in 8 dose gebondel. Hoeveel pamflette is in elke doos?', checkMode: 'auto', options: ['62', '66', '46', '64'], correctIndex: 3, explanation: '51 ÷ 8 = 6 r 3, bring 2 af → 32. 32 ÷ 8 = 4. Dus 512 ÷ 8 = 64 pamflette per doos. (62 en 66 kom van ʼn een-af foutjie in die finale syfer; 46 verruil die syfers van die korrekte antwoord.)' },
+        { difficulty: 'Medium', question: 'Bereken met langdeling en skryf jou antwoord in die vorm kwosiënt r res: 293 ÷ 8', checkMode: 'auto', options: ['36 r 5', '35 r 13', '36 r 4', '37 r 3'], correctIndex: 0, explanation: '29 ÷ 8 = 3 r 5, bring 3 af → 53. 53 ÷ 8 = 6 r 5. Dus 293 ÷ 8 = 36 r 5. (35 r 13 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 36 r 4 is ʼn aftrekkingsfoutjie; 37 r 3 skiet oor aangesien 8 × 37 = 296 reeds meer as 293 is.)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder het langdeling gebruik en gekry: 429 ÷ 12 = 34 r 21. Watter stelling kontroleer dit korrek en gee die regte antwoord?', checkMode: 'auto', options: ['Die res is geldig, dus is 34 r 21 korrek soos geskryf.', 'Die res is ongeldig aangesien 21 > 12; die korrekte antwoord is 35 r 9.', 'Die res is ongeldig; die korrekte antwoord is 34 r 9.', 'Die res is ongeldig; die korrekte antwoord is 36 r 9.'], correctIndex: 1, explanation: 'Die leerder is verkeerd: ʼn res van 21 kan nie korrek wees wanneer deur 12 gedeel word nie, aangesien 21 groter as 12 is — nog ʼn volle groep van 12 pas steeds daarin. Korrekte werk: 42 ÷ 12 = 3 r 6, bring 9 af → 69. 69 ÷ 12 = 5 r 9. Dus 429 ÷ 12 = 35 r 9. (Opsie C tel die kwosiënt een te min; opsie D tel dit een te veel.)' },
 
         // Blok 4 — Woordprobleme: Deel vs Groepeer (12-15, Medium)
-        { difficulty: 'Medium', question: 'ʼn Spyseniers het 108 koeksisters om in bakke te rangskik, met 9 koeksisters wat op elke bak pas. Is dit ʼn delingsprobleem of ʼn groeperingsprobleem? Verduidelik kortliks, en gee dan die antwoord.', answer: 'Groepering — 12 bakke', checkMode: 'self', explanation: 'Dit is ʼn groeperingsprobleem: ons ken die totaal (108) en die grootte van elke groep (9), en moet vind hoeveel groepe pas. 108 ÷ 9 = 12 bakke.' },
-        { difficulty: 'Medium', question: 'R141 kaartjieverkope word gelyk gedeel tussen 3 liefdadigheidsorganisasies. Hoeveel ontvang elke organisasie? Skryf slegs die getal sonder die R-simbool.', answer: '47', checkMode: 'auto', correctAnswer: '47', explanation: '141 ÷ 3 = 47. Elke organisasie ontvang R47.' },
-        { difficulty: 'Medium', question: 'ʼn Leerder rangskik 78 lessenaars in gelyke rye van 6. Skryf die delings-getalsin vir hierdie probleem, en los dit dan op om te vind hoeveel rye daar is.', answer: '78 ÷ 6 = 13', checkMode: 'auto', correctAnswer: '78÷6=13', correctAnswers: ['78÷6=13', '78/6=13', '13'], explanation: 'Die getalsin is 78 ÷ 6. 78 ÷ 6 = 13 rye.' },
-        { difficulty: 'Medium', question: 'ʼn Skryfbehoeftewinkel het ʼn boks van 164 kryte ontvang. Die eienaar wil dit in klein houertjies verpak, met 4 kryte in elke houertjie, om apart te verkoop. Hoeveel houertjies kan gevul word?', answer: '41', checkMode: 'auto', correctAnswer: '41', correctAnswers: ['41', '41 houertjies'], explanation: '164 ÷ 4 = 41 houertjies.' },
+        { difficulty: 'Medium', question: 'ʼn Spyseniers het 108 koeksisters om in bakke te rangskik, met 9 koeksisters wat op elke bak pas. Watter stelling identifiseer en los hierdie probleem korrek op?', checkMode: 'auto', options: ['Dit is ʼn delingsprobleem, aangesien ons die totaal (108) ken — 108 ÷ 9 = 12 bakke.', 'Dit is ʼn groeperingsprobleem, en die antwoord is 9 bakke, aangesien 9 die bak-kapasiteit is.', 'Dit is ʼn groeperingsprobleem, aangesien ons die groepgrootte (9) ken en moet vind hoeveel groepe pas — 108 ÷ 9 = 12 bakke.', 'Dit is ʼn delingsprobleem, en die antwoord is 9 koeksisters per bak.'], correctIndex: 2, explanation: 'Dit is ʼn groeperingsprobleem: ons ken die totaal (108) en die grootte van elke groep (9), en moet vind hoeveel groepe pas — 108 ÷ 9 = 12 bakke. (Opsie A kry die regte getal, maar noem die probleemtipe verkeerd — deling sou beteken die aantal groepe is bekend, nie die groepgrootte nie. Opsies B en D verwar die bak-kapasiteit met die finale antwoord.)' },
+        { difficulty: 'Medium', question: 'R141 kaartjieverkope word gelyk gedeel tussen 3 liefdadigheidsorganisasies. Hoeveel ontvang elke organisasie? Skryf slegs die getal sonder die R-simbool.', checkMode: 'auto', options: ['46', '48', '3', '47'], correctIndex: 3, explanation: '141 ÷ 3 = 47. Elke organisasie ontvang R47. (46 en 48 is een-af foute in die 3×-tafel; 3 verwar die aantal organisasies met die bedrag wat elkeen ontvang.)' },
+        { difficulty: 'Medium', question: 'ʼn Leerder rangskik 78 lessenaars in gelyke rye van 6. Watter getalsin verteenwoordig en los hierdie probleem korrek op?', checkMode: 'auto', options: ['78 ÷ 6 = 13', '78 ÷ 6 = 12', '78 ÷ 6 = 14', '78 × 6 = 13'], correctIndex: 0, explanation: 'Die korrekte getalsin is 78 ÷ 6 = 13 rye. (12 en 14 is een-af foute in die 6×-tafel; die laaste opsie gebruik heeltemal die verkeerde bewerking.)' },
+        { difficulty: 'Medium', question: 'ʼn Skryfbehoeftewinkel het ʼn boks van 164 kryte ontvang. Die eienaar wil dit in klein houertjies verpak, met 4 kryte in elke houertjie, om apart te verkoop. Hoeveel houertjies kan gevul word?', checkMode: 'auto', options: ['40', '41', '42', '4'], correctIndex: 1, explanation: '164 ÷ 4 = 41 houertjies. (40 en 42 is een-af foute in die 4×-tafel; 4 verwar die houertjie-grootte met die aantal houertjies.)' },
 
         // Blok 5 — Veelstap en Toegepaste Probleme (16-17, Medium-Hard)
-        { difficulty: 'Medium-Hard', question: 'ʼn Motorwaswinkel verdien R288 deur motors te was, gelyk verdeel oor ʼn 8-uur skof. As die eienaar dan R11 op seep vir die volgende skof spandeer, hoeveel geld bly oor van een uur se verdienste nadat die seep gekoop is?', answer: '25', checkMode: 'auto', correctAnswer: '25', explanation: '288 ÷ 8 = 36 (per uur verdien). 36 − 11 = 25. R25 bly oor.' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Kerk reël vervoer vir 85 lede na ʼn konferensie. Elke bus vervoer 9 lede. Verduidelik waarom om net 85 ÷ 9 te bereken nie die aantal busse gee wat nodig is nie, en gee die werklike aantal busse wat bespreek moet word.', answer: '10', checkMode: 'self', correctAnswer: '10', correctAnswers: ['10', '10 busse'], explanation: '85 ÷ 9 = 9 r 4. Nege busse vervoer presies 81 lede, maar 4 lede het nog steeds geen sitplek nie, dus is ʼn 10de bus nodig, al is dit nie vol nie. Om net die kwosiënt (9) te gebruik sou lede agterlaat — jy moet altyd oprond wanneer daar ʼn res is. 10 busse in totaal.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Motorwaswinkel verdien R288 deur motors te was, gelyk verdeel oor ʼn 8-uur skof. As die eienaar dan R11 op seep vir die volgende skof spandeer, hoeveel geld bly oor van een uur se verdienste nadat die seep gekoop is?', checkMode: 'auto', options: ['36', '47', '25', '24'], correctIndex: 2, explanation: '288 ÷ 8 = 36 per uur verdien. 36 − 11 = 25, dus bly R25 oor. (36 vergeet heeltemal om die seepkoste af te trek; 47 tel per ongeluk die R11 by in plaas daarvan om dit af te trek; 24 is ʼn aftrekkingsfoutjie.)' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Kerk reël vervoer vir 85 lede na ʼn konferensie. Elke bus vervoer 9 lede. Watter stelling verduidelik korrek hoeveel busse benodig word?', checkMode: 'auto', options: ['85 ÷ 9 = 9 r 4, dus is presies 9 busse nodig aangesien die res klein is.', '85 ÷ 9 = 9 r 4, dus is 9 busse nodig en die 4 ekstra lede kan in die gangetjie staan.', '85 ÷ 9 = 10 presies, dus is 10 busse nodig sonder dat enige lede oorbly.', '85 ÷ 9 = 9 r 4, dus is 10 busse nodig omdat die 4 oorblywende lede steeds vervoer nodig het, al is die bus nie vol nie.'], correctIndex: 3, explanation: '85 ÷ 9 = 9 r 4. Nege busse vervoer presies 81 lede, maar die 4 lede wat oorbly het steeds vervoer nodig, dus is ʼn 10de bus nodig, al is dit nie vol nie — jy moet altyd oprond wanneer daar ʼn res is. (Opsies A en B stop verkeerdelik by die kwosiënt; opsie C bereken die deling verkeerd as presies.)' },
 
         // Blok 6 — Redenering en Regverdiging (18-19, Moeilik)
-        { difficulty: 'Hard', question: 'Verduidelik, met ʼn voorbeeld, die verskil tussen ʼn delingsprobleem en ʼn groeperingsprobleem, al kan altwee dieselfde delings-getalsin gebruik.', answer: 'Deling: 4 vriende kry elk 8 albasters uit 32. Groepering: 32 albasters in sakkies van 8 verpak maak 4 sakkies.', checkMode: 'self', explanation: 'In ʼn delingsprobleem ken jy die totaal en die aantal groepe, en jy vind hoeveel items in elke groep gaan — byvoorbeeld, om 32 albasters tussen 4 vriende te deel beteken elke vriend kry 32 ÷ 4 = 8 albasters. In ʼn groeperingsprobleem ken jy die totaal en die grootte van elke groep, en jy vind hoeveel groepe jy kan maak — byvoorbeeld, om 32 albasters in sakkies van 8 te verpak beteken jy kan 32 ÷ 8 = 4 sakkies maak. Die getalsin lyk soortgelyk, maar die betekenis van die antwoord is verskillend.' },
-        { difficulty: 'Hard', question: 'Sonder om altwee volledig te bereken, verduidelik watter een ʼn groter antwoord gee: 144 ÷ 3 of 144 ÷ 9. Hoe weet jy dit?', answer: '144 ÷ 3 is groter', checkMode: 'self', explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 3 kleiner as 9 is, gee 144 ÷ 3 ʼn groter antwoord as 144 ÷ 9, sonder dat jy hoef uit te werk dat hulle 48 en 16 is.' },
+        { difficulty: 'Hard', question: 'Watter stelling verduidelik korrek die verskil tussen ʼn delingsprobleem en ʼn groeperingsprobleem, met 32 albasters as voorbeeld?', checkMode: 'auto', options: ['Deling: 4 vriende kry elk 8 albasters uit 32. Groepering: 32 albasters in sakkies van 8 verpak maak 4 sakkies.', 'Deling: 32 albasters in sakkies van 8 verpak maak 4 sakkies. Groepering: 4 vriende kry elk 8 albasters uit 32.', 'Deling en groepering gee altyd verskillende finale getalle, selfs vanaf dieselfde totaal en deler.', 'Deling beteken jy ken die groepgrootte; groepering beteken jy ken die aantal groepe.'], correctIndex: 0, explanation: 'In ʼn delingsprobleem ken jy die totaal en die aantal groepe, en jy vind hoeveel items in elke groep gaan — om 32 albasters tussen 4 vriende te deel beteken elke vriend kry 32 ÷ 4 = 8 albasters. In ʼn groeperingsprobleem ken jy die totaal en die grootte van elke groep, en jy vind hoeveel groepe jy kan maak — om 32 albasters in sakkies van 8 te verpak beteken jy kan 32 ÷ 8 = 4 sakkies maak. (Opsie B verruil die twee benamings; opsie C is verkeerd aangesien albei geldige delings van dieselfde getalle gee; opsie D verruil die twee definisies.)' },
+        { difficulty: 'Hard', question: 'Watter stelling vergelyk 144 ÷ 3 en 144 ÷ 9 korrek, sonder om altwee volledig te bereken?', checkMode: 'auto', options: ['144 ÷ 9 is groter, omdat 9 ʼn groter getal is.', '144 ÷ 3 is groter, omdat deling deur ʼn kleiner deler die getal in minder, groter groepe verdeel.', 'Hulle is gelyk, omdat albei dieselfde deeltal deel.', '144 ÷ 9 is groter, omdat deling in meer groepe altyd ʼn groter antwoord gee.'], correctIndex: 1, explanation: 'Wanneer dieselfde getal deur ʼn kleiner deler gedeel word, word dit in minder, groter groepe verdeel, dus is die antwoord groter. Aangesien 3 kleiner as 9 is, gee 144 ÷ 3 ʼn groter antwoord as 144 ÷ 9 (48 teenoor 16), sonder dat jy altwee volledig hoef te bereken. (Opsies A en D koppel verkeerdelik ʼn groter deler, of meer groepe, aan ʼn groter antwoord; opsie C neem verkeerdelik aan dat gelyke delers gelyke antwoorde gee.)' },
 
         // Blok 7 — Vergelyk Hoeveelhede: Vir Elke en Per (20-22, Maklik-Medium)
-        { difficulty: 'Easy', question: 'Vir elke 5 doele wat ʼn sokkerspan aanteken, laat hulle 2 doele in. As hulle vanjaar 25 doele aangeteken het, hoeveel doele het hulle ingelaat, volgens dieselfde patroon?', answer: '10', checkMode: 'auto', correctAnswer: '10', correctAnswers: ['10', '10 doele'], explanation: '25 doele is 25 ÷ 5 = 5 keer soveel as 5. Pas dieselfde skaalfaktor op die doele wat ingelaat is toe: 2 × 5 = 10 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Trekker ploeg 36 hektaar in 4 uur teen ʼn konstante tempo. Hoeveel hektaar ploeg dit in 9 uur?', answer: '81 hektaar', checkMode: 'auto', correctAnswer: '81', correctAnswers: ['81', '81 hektaar'], explanation: 'Tempo per uur: 36 ÷ 4 = 9 hektaar per uur. In 9 uur: 9 × 9 = 81 hektaar ✓' },
-        { difficulty: 'Medium', question: 'ʼn Verfmengsel gebruik 2 blikke blou vir elke 5 blikke wit. ʼn Skilder het 8 blikke blou en wil dieselfde patroon volhou. Hoeveel blikke wit het hy nodig? Verduidelik jou redenering.', answer: '20 blikke', checkMode: 'self', explanation: 'Die skaalfaktor is 8 ÷ 2 = 4 (die skilder het 4 keer soveel blou as die basishoeveelheid van 2). Pas dieselfde skaalfaktor op die wit toe: 5 × 4 = 20 blikke.' },
+        { difficulty: 'Easy', question: 'Vir elke 5 doele wat ʼn sokkerspan aanteken, laat hulle 2 doele in. As hulle vanjaar 25 doele aangeteken het, hoeveel doele het hulle ingelaat, volgens dieselfde patroon?', checkMode: 'auto', options: ['22', '4', '10', '2'], correctIndex: 2, explanation: '25 doele is 25 ÷ 5 = 5 keer soveel as 5. Pas dieselfde skaalfaktor op die doele wat ingelaat is toe: 2 × 5 = 10. (22 kom van die verskil tussen 25 en 5 by die ingelate-telling op te tel in plaas van te skaleer; 4 kom van verwarring oor watter getal die basis in die verhouding is; 2 herhaal net die verhouding se ingelate-getal sonder om enigsins te skaleer.)' },
+        { difficulty: 'Medium', question: 'ʼn Trekker ploeg 36 hektaar in 4 uur teen ʼn konstante tempo. Hoeveel hektaar ploeg dit in 9 uur?', checkMode: 'auto', options: ['72', '90', '9', '81'], correctIndex: 3, explanation: 'Tempo per uur: 36 ÷ 4 = 9 hektaar per uur. In 9 uur: 9 × 9 = 81 hektaar. (72 kom van ʼn verkeerde skalering van die tempo; 90 kom van die gebruik van 10 uur in plaas van 9; 9 stop by die tempo vir 1 uur en vergeet om op te skaleer.)' },
+        { difficulty: 'Medium', question: 'ʼn Verfmengsel gebruik 2 blikke blou vir elke 5 blikke wit. ʼn Skilder het 8 blikke blou en wil dieselfde patroon volhou. Watter stelling vind korrek hoeveel wit hy nodig het?', checkMode: 'auto', options: ['Die skaalfaktor is 8 ÷ 2 = 4, dus het hy 5 × 4 = 20 blikke wit nodig.', 'Die skaalfaktor is 8 ÷ 5 = 1,6, dus het hy 2 × 1,6 ≈ 3 blikke nodig.', 'Aangesien hy 8 blikke blou het, het hy eenvoudig ook 8 blikke wit nodig.', 'Hy het 5 × 8 = 40 blikke wit nodig, aangesien wit altyd vyf keer die blou is.'], correctIndex: 0, explanation: 'Die skaalfaktor is 8 ÷ 2 = 4, aangesien die skilder 4 keer soveel blou het as die basishoeveelheid van 2. Pas dieselfde skaalfaktor op die wit toe: 5 × 4 = 20 blikke. (Opsie B deel deur die heeltemal verkeerde getal; opsie C ignoreer die verhouding en kopieer net die blou-hoeveelheid; opsie D neem verkeerdelik ʼn vaste vermenigvuldigingsverhouding aan in plaas van die werklike 2:5-verhouding te gebruik.)' },
       ],
       scoreMessages: [
         { minScore: 23, message: 'Uitstekend! Jy het ʼn sterk begrip van delingsfeite, reste, langdeling, woordprobleme en die vergelyking van hoeveelhede.' },
@@ -804,15 +804,13 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Skryf die volgende as ʼn delings-getalsin:\n\n' +
         'Deel 20 lekkers gelyk tussen 4 vriende. Hoeveel lekkers kry elke vriend?\n\n' +
-        'Skryf jou antwoord as ʼn volledige getalsin.',
-      answer: '20 ÷ 4 = 5',
-      correctAnswer: '20÷4=5',
-      correctAnswers: ['20÷4=5', '20/4=5'],
+        'Watter getalsin verteenwoordig en los hierdie probleem korrek op?',
+      options: ['20 ÷ 4 = 5', '20 ÷ 5 = 4', '20 × 4 = 80', '4 ÷ 20 = 0,2'],
+      correctIndex: 0,
       explanation:
-        'Dit is ʼn delingsprobleem — deel 20 gelyk in 4 groepe.\n' +
-        '20 ÷ 4 = 5. Elke vriend kry 5 lekkers.',
+        'Dit is ʼn delingsprobleem — deel 20 gelyk in 4 groepe: 20 ÷ 4 = 5. Elke vriend kry 5 lekkers.\n' +
+        '(20 ÷ 5 = 4 verruil die totaal en die aantal groepe; 20 × 4 = 80 gebruik die verkeerde bewerking; 4 ÷ 20 = 0,2 deel in die verkeerde volgorde.)',
     },
 
     {
@@ -848,14 +846,20 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'ʼn Skool het 48 stoele om gelyk in 6 klaskamers te rangskik. Hoeveel stoele gaan in elke klaskamer?\n\n' +
-        'Wys jou werk. Identifiseer ook of dit ʼn delings- of groeperingsprobleem is.',
-      answer:
-        'Dit is ʼn delingsprobleem — jy ken die totaal (48 stoele) en die aantal groepe (6 klaskamers), en jy vind hoeveel in elke groep is.\n\n' +
-        'Werk: 48 ÷ 6 = 8\n\n' +
-        'Elke klaskamer kry 8 stoele.',
+        'Watter stelling identifiseer die probleemtipe korrek en gee die korrekte antwoord?',
+      options: [
+        'Dit is ʼn groeperingsprobleem, aangesien ons die totaal (48) ken — elke klaskamer kry 48 ÷ 6 = 8 stoele.',
+        'Dit is ʼn delingsprobleem: jy ken die totaal (48 stoele) en die aantal groepe (6 klaskamers), en jy vind hoeveel in elke groep is — 48 ÷ 6 = 8 stoele.',
+        'Dit is ʼn delingsprobleem, en die antwoord is 6 stoele elk, aangesien 6 die aantal klaskamers is.',
+        'Dit is ʼn groeperingsprobleem, en die antwoord is 6 groepe stoele.',
+      ],
+      correctIndex: 1,
+      explanation:
+        'Dit is ʼn delingsprobleem: jy ken die totaal (48 stoele) en die aantal groepe (6 klaskamers), en jy vind hoeveel in elke groep is. Werk: 48 ÷ 6 = 8. Elke klaskamer kry 8 stoele.\n' +
+        '(Opsie A kry die regte getal, maar noem die probleemtipe verkeerd; opsies C en D verwar die aantal klaskamers met die finale antwoord.)',
     },
 
     // ── AFDELING 2 — Deling as die Inverse van Vermenigvuldiging ─────────────
@@ -912,16 +916,19 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
-        'Die antwoord op ʼn deling is 8. Een van die getalle in die probleem is 64. Wat is die ander getal?\n\n' +
-        'Skryf die volledige feitefamilie vir hierdie drie getalle.',
-      answer:
-        'Die ander getal is ook 8 (aangesien 64 ÷ 8 = 8).\n\n' +
-        'Volledige feitefamilie:\n' +
-        '• 8 × 8 = 64\n' +
-        '• 64 ÷ 8 = 8\n\n' +
-        'Omdat albei faktore dieselfde is (8 is ʼn volkome vierkant), is daar net een unieke delingsfeit in hierdie familie.',
+        'Die antwoord op ʼn deling is 8. Een van die getalle in die probleem is 64. Watter stelling vind die ander getal en die feitefamilie korrek?',
+      options: [
+        'Die ander getal is 56, aangesien 64 − 8 = 56.',
+        'Die ander getal is 512, aangesien 64 × 8 = 512.',
+        'Die ander getal is ook 8, aangesien 64 ÷ 8 = 8. Feitefamilie: 8 × 8 = 64 en 64 ÷ 8 = 8.',
+        'Die ander getal is 4, aangesien 64 ÷ 8 = 4.',
+      ],
+      correctIndex: 2,
+      explanation:
+        'Die ander getal is ook 8, aangesien 64 ÷ 8 = 8. Volledige feitefamilie: 8 × 8 = 64 en 64 ÷ 8 = 8. Omdat albei faktore dieselfde is (8 is ʼn volkome vierkant), is daar net een unieke delingsfeit in hierdie familie.\n' +
+        '(Opsie A trek af in plaas van te deel; opsie B vermenigvuldig in plaas van te deel; opsie D bereken 64 ÷ 8 verkeerd.)',
     },
 
     // ── AFDELING 3 — Deel met Reste ──────────────────────────────────────────
@@ -929,16 +936,12 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Bereken en skryf die volledige antwoord insluitend die res:\n\n' +
-        '19 ÷ 4\n\n' +
-        'Skryf jou antwoord in die vorm: kwosiënt r res.',
-      answer: '4 r 3',
-      correctAnswer: '4r3',
-      correctAnswers: ['4r3', '4res3', '4r03'],
+        'Bereken 19 ÷ 4 en skryf die volledige antwoord insluitend die res, in die vorm: kwosiënt r res.',
+      options: ['3 r 7', '4 r 4', '5 r 1', '4 r 3'],
+      correctIndex: 3,
       explanation:
-        '4 × 4 = 16, wat die naaste veelvoud van 4 is sonder om oor 19 te gaan.\n' +
-        '19 − 16 = 3 oor.\n' +
-        '19 ÷ 4 = 4 r 3.',
+        '4 × 4 = 16 is die naaste veelvoud van 4 sonder om 19 te oorskry. 19 − 16 = 3, dus 19 ÷ 4 = 4 r 3.\n' +
+        '(3 r 7 tel die kwosiënt te min, wat ʼn ongeldige res groter as die deler laat; 4 r 4 is ʼn aftrekkingsfoutjie wat die res gelyk aan die deler laat; 5 r 1 skiet oor aangesien 4 × 5 = 20 reeds meer as 19 is.)',
     },
 
     {
@@ -984,19 +987,20 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
         'ʼn Onderwyser het 35 plakkers om gelyk aan 8 leerders te gee.\n\n' +
-        'a) Hoeveel plakkers kry elke leerder?\n' +
-        'b) Hoeveel plakkers bly oor?\n' +
-        'c) Wat kan die onderwyser met die oorblywende plakkers doen?',
-      answer:
-        '35 ÷ 8:\n' +
-        '8 × 4 = 32 (naaste veelvoud sonder om 35 te oorskry).\n' +
-        '35 − 32 = 3 oor.\n\n' +
-        'a) Elke leerder kry 4 plakkers.\n' +
-        'b) 3 plakkers bly oor.\n' +
-        'c) Die onderwyser kan dit vir volgende keer hou, dit as ʼn prys gee, of ekstra plakkers aan 3 gelukkige leerders gee.',
+        'Watter stelling gee die kwosiënt, res, en ʼn sinvolle gebruik vir die oorblywende plakkers korrek?',
+      options: [
+        'Elke leerder kry 4 plakkers, 3 bly oor, en die onderwyser kan dit vir volgende keer hou of as ʼn klein prys aanbied.',
+        'Elke leerder kry 5 plakkers, met niks oor nie.',
+        'Elke leerder kry 4 plakkers, en die oorblywende 3 moet weggegooi word aangesien dit nie gelyk gedeel kan word nie.',
+        'Elke leerder kry 3 plakkers, met 11 oor.',
+      ],
+      correctIndex: 0,
+      explanation:
+        '35 ÷ 8: 8 × 4 = 32 is die naaste veelvoud sonder om 35 te oorskry, dus bly 35 − 32 = 3 oor. Elke leerder kry 4 plakkers, met 3 oor — die onderwyser kan dit vir volgende keer hou, as ʼn prys gebruik, of ekstra plakkers aan 3 gelukkige leerders gee.\n' +
+        '(Opsie B skiet oor die kwosiënt aangesien 8 × 5 = 40 reeds meer as 35 is; opsie C neem verkeerdelik aan dat oorskot weggegooi moet word; opsie D tel die kwosiënt te min, wat ʼn ongeldige res laat.)',
     },
 
     // ── AFDELING 4 — Langdeling ──────────────────────────────────────────────
@@ -1004,15 +1008,12 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Bereken met langdeling. Skryf slegs die finale antwoord.\n\n' +
-        '84 ÷ 4',
-      answer: '21',
-      correctAnswer: '21',
+        'Bereken 84 ÷ 4 met langdeling.',
+      options: ['20', '21', '22', '12'],
+      correctIndex: 1,
       explanation:
-        '84 ÷ 4 met langdeling:\n' +
-        '• Deel 8 ÷ 4 = 2. Vermenigvuldig 2 × 4 = 8. Trek af 8 − 8 = 0. Bring 4 af.\n' +
-        '• Deel 4 ÷ 4 = 1. Vermenigvuldig 1 × 4 = 4. Trek af 4 − 4 = 0.\n' +
-        '84 ÷ 4 = 21.',
+        '84 ÷ 4 met langdeling: deel 8 ÷ 4 = 2, vermenigvuldig 2 × 4 = 8, trek af 8 − 8 = 0, bring 4 af; deel 4 ÷ 4 = 1, vermenigvuldig 1 × 4 = 4, trek af 4 − 4 = 0. Dus 84 ÷ 4 = 21.\n' +
+        '(20 en 22 kom van ʼn een-af fout in die finale delingstap; 12 verruil die syfers van die korrekte antwoord.)',
     },
 
     {
@@ -1047,16 +1048,14 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
-        'ʼn Skool versamel 168 boeke om gelyk tussen 7 klaskamers te deel. Hoeveel boeke kry elke klaskamer?\n\n' +
-        'Gebruik langdeling en wys al jou werkstappe.',
-      answer:
-        '168 ÷ 7 met langdeling:\n\n' +
-        '• Deel 16 ÷ 7 = 2. Vermenigvuldig 2 × 7 = 14. Trek af 16 − 14 = 2. Bring 8 af → 28.\n' +
-        '• Deel 28 ÷ 7 = 4. Vermenigvuldig 4 × 7 = 28. Trek af 28 − 28 = 0.\n\n' +
-        '168 ÷ 7 = 24.\n' +
-        'Elke klaskamer kry 24 boeke.',
+        'ʼn Skool versamel 168 boeke om gelyk tussen 7 klaskamers te deel. Hoeveel boeke kry elke klaskamer? Gebruik langdeling.',
+      options: ['23', '25', '24', '42'],
+      correctIndex: 2,
+      explanation:
+        '16 ÷ 7 = 2 r 2, bring 8 af → 28. 28 ÷ 7 = 4. Dus 168 ÷ 7 = 24. Elke klaskamer kry 24 boeke.\n' +
+        '(23 en 25 kom van ʼn een-af fout in die finale delingstap; 42 verruil die syfers van die korrekte antwoord.)',
     },
 
     // ── AFDELING 5 — Deling Woordprobleme ────────────────────────────────────
@@ -1064,15 +1063,12 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'ʼn Bakkery bak 72 koekies en verpak dit in bokse van 8. Hoeveel bokse vul hulle?\n\n' +
-        'Skryf slegs die getal.',
-      answer: '9',
-      correctAnswer: '9',
-      correctAnswers: ['9', '9bokse'],
+        'ʼn Bakkery bak 72 koekies en verpak dit in bokse van 8. Hoeveel bokse vul hulle?',
+      options: ['8', '10', '72', '9'],
+      correctIndex: 3,
       explanation:
-        'Dit is ʼn groeperingsprobleem — hoeveel groepe van 8 pas binne 72?\n' +
-        'Dink: 8 × 9 = 72. Dus 72 ÷ 8 = 9.\n' +
-        'Die bakkery vul 9 bokse.',
+        'Dit is ʼn groeperingsprobleem — hoeveel groepe van 8 pas binne 72? 8 × 9 = 72, dus 72 ÷ 8 = 9. Die bakkery vul 9 bokse.\n' +
+        '(8 en 10 is een-af foute in die 8×-tafel; 72 herhaal verkeerdelik die totaal in plaas van te deel.)',
     },
 
     {
@@ -1143,14 +1139,12 @@ export const topicData: TopicData = {
       difficulty: 'Easy',
       checkMode: 'auto',
       question:
-        'Vir elke 3 appels in ʼn mandjie is daar 2 lemoene.\n\n' +
-        'As daar 15 appels is, hoeveel lemoene is daar? Skryf slegs die getal.',
-      answer: '10',
-      correctAnswer: '10',
-      correctAnswers: ['10', '10 lemoene'],
+        'Vir elke 3 appels in ʼn mandjie is daar 2 lemoene. As daar 15 appels is, hoeveel lemoene is daar?',
+      options: ['10', '14', '6', '2'],
+      correctIndex: 0,
       explanation:
-        'Die skaalfaktor is 15 ÷ 3 = 5.\n' +
-        'Pas dieselfde skaalfaktor op die lemoene toe: 2 × 5 = 10.',
+        'Die skaalfaktor is 15 ÷ 3 = 5. Pas dieselfde skaalfaktor op die lemoene toe: 2 × 5 = 10.\n' +
+        '(14 kom van die verskil tussen 15 en 3 by die lemoen-telling op te tel in plaas van te skaleer; 6 kom van vermenigvuldiging met die verkeerde getal (3 in plaas van 5); 2 herhaal net die verhouding se lemoen-getal sonder om enigsins te skaleer.)',
     },
 
     {
@@ -1177,14 +1171,19 @@ export const topicData: TopicData = {
 
     {
       difficulty: 'Hard',
-      checkMode: 'self',
+      checkMode: 'auto',
       question:
-        'ʼn Spyseniers se pannekoekbeslag-resep gebruik 2 koppies melk vir elke 3 koppies meel. Sy moet ʼn groot bondel maak met 15 koppies meel, terwyl sy dieselfde patroon volhou.\n\n' +
-        'Hoeveel koppies melk word benodig? Wys jou werk en verduidelik hoe jy die skaalfaktor gevind het.',
-      answer:
-        'Skaalfaktor: 15 ÷ 3 = 5 (daar is 5 keer soveel meel as die basishoeveelheid van 3 koppies).\n\n' +
-        'Pas dieselfde skaalfaktor op die melk toe: 2 × 5 = 10.\n\n' +
-        'Sy het 10 koppies melk nodig.',
+        'ʼn Spyseniers se pannekoekbeslag-resep gebruik 2 koppies melk vir elke 3 koppies meel. Sy moet ʼn groot bondel maak met 15 koppies meel, terwyl sy dieselfde patroon volhou. Watter stelling vind korrek hoeveel melk benodig word?',
+      options: [
+        'Die skaalfaktor is 15 ÷ 2 = 7,5, dus het sy 3 × 7,5 = 22,5 koppies nodig.',
+        'Die skaalfaktor is 15 ÷ 3 = 5, dus het sy 2 × 5 = 10 koppies melk nodig.',
+        'Aangesien sy 15 koppies meel gebruik, het sy 15 koppies melk ook nodig.',
+        'Sy het 3 × 15 = 45 koppies melk nodig, aangesien meel altyd minder as melk is.',
+      ],
+      correctIndex: 1,
+      explanation:
+        'Skaalfaktor: 15 ÷ 3 = 5, aangesien daar 5 keer soveel meel is as die basishoeveelheid van 3 koppies. Pas dieselfde skaalfaktor op die melk toe: 2 × 5 = 10 koppies.\n' +
+        '(Opsie A deel deur die heeltemal verkeerde getal; opsie C ignoreer die verhouding en kopieer net die meelhoeveelheid; opsie D pas ʼn onsinnige verhouding toe in plaas van die werklike 2:3-verhouding.)',
     },
   ],
 }
