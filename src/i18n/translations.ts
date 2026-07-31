@@ -13,6 +13,8 @@ const en = {
     nav_refer_earn: 'Refer & Earn',
     nav_log_out: 'Log out',
     nav_auth_account_menu_label: 'Account menu',
+    nav_search_placeholder: 'Search topics…',
+    nav_search_no_results: 'No topics found',
 
     // ── Onboarding tour (shown after a Pro/Max subscription, and reopenable from Profile) ──
     profile_tour_link: 'Quick run-through',
@@ -746,6 +748,8 @@ const af: Record<TranslationKeys, string> = {
     nav_refer_earn: 'Verwys en Verdien',
     nav_log_out: 'Teken uit',
     nav_auth_account_menu_label: 'Rekeningkieslys',
+    nav_search_placeholder: 'Soek onderwerpe…',
+    nav_search_no_results: 'Geen onderwerpe gevind nie',
 
     // ── Onboarding tour (shown after a Pro/Max subscription, and reopenable from Profile) ──
     profile_tour_link: 'Vinnige rondleiding',

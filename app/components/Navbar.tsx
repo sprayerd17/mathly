@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import NavAuth, { type NavAuthHandle } from './NavAuth'
+import TopicSearch from './TopicSearch'
 import { useAuth, getActiveChild } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { ADMIN_EMAIL } from '@/src/lib/admin'
@@ -118,6 +119,7 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const { user, loading, logout, openModal } = useAuth()
   const t = useTranslations()
+  const language = (user ? getActiveChild(user).language : 'en') as 'en' | 'af'
   const navAuthRef = useRef<NavAuthHandle>(null)
   const sidebarRef = useRef<HTMLElement>(null)
 
@@ -182,7 +184,7 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
           transform: visible ? 'translateY(0)' : 'translateY(-100%)',
         }}
       >
-        <div className="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -192,8 +194,14 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
             </span>
           </Link>
 
+          {/* Centre: topic search — desktop only, fills the space the sidebar
+              made available now that the logo isn't parked there. */}
+          <div className="hidden md:block md:col-start-2 md:w-72">
+            <TopicSearch language={language} />
+          </div>
+
           {/* Right: desktop auth + mobile hamburger */}
-          <div className="flex items-center">
+          <div className="flex items-center md:col-start-3 md:justify-self-end">
             <div className="hidden md:block">
               <NavAuth ref={navAuthRef} />
             </div>
