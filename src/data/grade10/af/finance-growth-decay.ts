@@ -1149,191 +1149,206 @@ export const topicData: TopicData = {
     // ── V1 Maklik ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Bereken die enkelvoudige rente op R4 000 teen 5% per jaar vir 3 jaar.',
-      answer: 'R600',
+      question: 'Bereken die enkelvoudige rente (nie die finale bedrag nie) op R4 000 teen 5% per jaar vir 3 jaar.',
       checkMode: 'auto',
-      correctAnswer: 'R600',
-      correctAnswers: ['R600', '600'],
-      explanation: 'ER = P × n × i = 4 000 × 3 × 0,05 = R600 ✓',
+      options: ['R600', 'R4 600', 'R400', 'R200'],
+      correctIndex: 0,
+      explanation: 'Slegs die enkelvoudige rente = P × n × i = 4 000 × 3 × 0,05 = R600. (R4 600 is die finale bedrag A, nie net die rente nie; R400 gebruik verkeerdelik n = 2; R200 gebruik verkeerdelik n = 1.)',
     },
 
     // ── V2 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Vind die finale bedrag na 6 jaar as R7 500 teen 6% enkelvoudige rente belê word.',
-      answer: 'R10 200',
       checkMode: 'auto',
-      correctAnswer: 'R10200',
-      correctAnswers: ['R10200', '10200', 'R10 200', '10 200'],
-      explanation: 'A = P(1 + ni) = 7 500(1 + 6 × 0,06) = 7 500(1,36) = R10 200 ✓',
+      options: ['R10 638,90', 'R10 200', 'R9 750', 'R2 700'],
+      correctIndex: 1,
+      explanation: 'A = P(1 + ni) = 7 500(1 + 6 × 0,06) = 7 500(1,36) = R10 200. (R10 638,90 gebruik verkeerdelik saamgestelde rente; R9 750 gebruik verkeerdelik n = 5; R2 700 gee net die rente, nie die finale bedrag nie.)',
     },
 
     // ── V3 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Sipho sê enkelvoudige rente van R500 oor 2 jaar op R5 000 beteken die koers was 10%. Kontroleer sy redenasie.',
-      answer: 'ER = P × n × i. 500 = 5 000 × 2 × i. i = 0,05 = 5%, nie 10% nie. Hy is verkeerd.',
-      checkMode: 'self',
+      question: 'Sipho sê enkelvoudige rente van R500 oor 2 jaar op R5 000 beteken die rentekoers was 10%. Wat is die korrekte rentekoers?',
+      checkMode: 'auto',
+      options: ['10%', '20%', '5%', '2,5%'],
+      correctIndex: 2,
+      explanation: 'ER = P × n × i, dus i = ER ÷ (P × n) = 500 ÷ (5 000 × 2) = 0,05 = 5%. Sipho het vergeet om deur n = 2 te deel, wat is hoe hy die verkeerde 10% gekry het.',
     },
 
     // ── V4 Easy ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'Bereken die saamgestelde-rente-bedrag op R3 000 teen 4% per jaar vir 5 jaar.',
-      answer: 'R3 649,96',
       checkMode: 'auto',
-      correctAnswer: 'R3649,96',
-      correctAnswers: ['R3649.96', '3649.96', 'R3 649.96', '3 649.96'],
-      explanation: 'A = 3 000(1,04)⁵ = 3 000 × 1,21665 ≈ R3 649,96 ✓',
+      options: ['R3 600', 'R3 509,58', 'R649,96', 'R3 649,96'],
+      correctIndex: 3,
+      explanation: 'A = 3 000(1,04)⁵ = 3 000 × 1,21665 ≈ R3 649,96. (R3 600 gebruik verkeerdelik enkelvoudige rente; R3 509,58 gebruik verkeerdelik n = 4; R649,96 gee net die rente verdien, nie die totale bedrag nie.)',
     },
 
     // ── V5 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Vind die finale bedrag na 8 jaar as R6 000 teen 7% saamgestelde rente belê word.',
-      answer: 'R10 309,12',
       checkMode: 'auto',
-      correctAnswer: 'R10309,12',
-      correctAnswers: ['R10309.12', '10309.12', 'R10 309.12', '10 309.12', 'R10309,12'],
-      explanation: 'A = 6 000(1,07)⁸ = 6 000 × 1,7181860 ≈ R10 309,12 ✓',
+      options: ['R10 309,12', 'R9 360', 'R9 634,69', 'R4 309,12'],
+      correctIndex: 0,
+      explanation: 'A = 6 000(1,07)⁸ = 6 000 × 1,718186 ≈ R10 309,12. (R9 360 gebruik verkeerdelik enkelvoudige rente; R9 634,69 gebruik verkeerdelik n = 7; R4 309,12 gee net die rente verdien.)',
     },
 
     // ── V6 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Lerato vergelyk enkelvoudige en saamgestelde rente op R8 000 teen 6% oor 4 jaar. Vind die verskil tussen die twee metodes.',
-      answer: 'Enkelvoudig: 8 000(1 + 4 × 0,06) = R9 920. Saamgesteld: 8 000(1,06)⁴ ≈ R10 099,82. Verskil ≈ R179,82.',
-      checkMode: 'self',
+      question: 'Lerato vergelyk enkelvoudige en saamgestelde rente op R8 000 teen 6% oor 4 jaar. Vind die verskil tussen die twee finale bedrae.',
+      checkMode: 'auto',
+      options: ['R9 920', 'R179,82', 'R10 099,82', 'R199,82'],
+      correctIndex: 1,
+      explanation: 'Enkelvoudig: 8 000(1 + 4 × 0,06) = R9 920. Saamgesteld: 8 000(1,06)⁴ ≈ R10 099,82. Verskil ≈ R179,82. (R9 920 en R10 099,82 is die individuele bedrae, nie die verskil nie; R199,82 het ʼn rekenfout.)',
     },
 
     // ── V7 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'ʼn Bevolking van 40 000 groei teen 4% per jaar. Vind die bevolking na 7 jaar, afgerond na die naaste heelgetal.',
-      answer: '52 637',
       checkMode: 'auto',
-      correctAnswer: '52637',
-      correctAnswers: ['52637', '52 637'],
-      explanation: 'A = 40 000(1,04)⁷ = 40 000 × 1,31593 ≈ 52 637 ✓',
+      options: ['51 200', '50 613', '52 637', '54 743'],
+      correctIndex: 2,
+      explanation: 'A = 40 000(1,04)⁷ = 40 000 × 1,31593 ≈ 52 637. (51 200 gebruik verkeerdelik enkelvoudige groei; 50 613 gebruik verkeerdelik n = 6; 54 743 gebruik verkeerdelik n = 8.)',
     },
 
     // ── V8 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Hoe lank sal dit ʼn belegging neem om te verdubbel teen 10% saamgestelde rente, deur probeer en verbeter te gebruik?',
-      answer: 'Benodig (1,10)ⁿ = 2. Probeer n = 7: 1,10⁷ ≈ 1,949 (naby). Probeer n = 8: 1,10⁸ ≈ 2,144. Dit neem ongeveer 8 jaar (na bo afgerond).',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['7 jaar', '9 jaar', '10 jaar', '8 jaar'],
+      correctIndex: 3,
+      explanation: 'Ons benodig (1,10)ⁿ ≥ 2. Probeer n = 7: 1,10⁷ ≈ 1,949 (nog nie dubbel nie). Probeer n = 8: 1,10⁸ ≈ 2,144 (oorskry dubbel). Dit neem dus 8 jaar — die kleinste heelgetal jare waar die bedrag minstens verdubbel het.',
     },
 
     // ── V9 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Thabo belê R20 000 teen 5% saamgestelde rente. Vind hoeveel jare dit neem om tot minstens R25 000 te groei, deur probeer en verbeter te gebruik.',
-      answer: 'Benodig (1,05)ⁿ = 1,25. Probeer n = 4: 1,05⁴ ≈ 1,216. Probeer n = 5: 1,05⁵ ≈ 1,276. Dit neem ongeveer 5 jaar.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['5 jaar', '4 jaar', '6 jaar', '3 jaar'],
+      correctIndex: 0,
+      explanation: 'Ons benodig (1,05)ⁿ ≥ 1,25. Probeer n = 4: 1,05⁴ ≈ 1,216 (te laag). Probeer n = 5: 1,05⁵ ≈ 1,276 (oorskry 1,25). Dit neem ongeveer 5 jaar.',
     },
 
     // ── V10 Easy ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'As R1 = $0,06, vind die koste in Rand van ʼn $300-item.',
-      answer: 'R5 000',
       checkMode: 'auto',
-      correctAnswer: 'R5000',
-      correctAnswers: ['R5000', '5000', 'R5 000', '5 000'],
-      explanation: 'Koste in Rand = $300 ÷ 0,06 = R5 000 ✓',
+      options: ['R18', 'R5 000', 'R300', 'R50 000'],
+      correctIndex: 1,
+      explanation: 'Skakel Dollar na Rand om: deel deur die wisselkoers: $300 ÷ 0,06 = R5 000. (R18 kom van vermenigvuldig in plaas van deel; R50 000 kom van die koers verkeerdelik as 0,006 te lees.)',
     },
 
     // ── V11 Medium ────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Skakel R10 000 om na Britse Pond teen ʼn wisselkoers van R1 = £0,043.',
-      answer: '£430',
       checkMode: 'auto',
-      correctAnswer: '£430',
-      correctAnswers: ['£430', '430', '£430.00'],
-      explanation: 'R10 000 × 0,043 = £430 ✓',
+      options: ['£232 558,14', '£43', '£430', '£4 300'],
+      correctIndex: 2,
+      explanation: 'Skakel Rand na Britse Pond om: vermenigvuldig met die wisselkoers: R10 000 × 0,043 = £430. (£232 558,14 kom van deel in plaas van vermenigvuldig; £43 en £4 300 kom van die desimale punt verkeerd te plaas.)',
     },
 
     // ── V12 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Amahle koop ʼn item wat $450 (USD) kos wanneer R1 = $0,055. Vind die koste in Rand, afgerond na die naaste Rand.',
-      answer: '450 ÷ 0,055 ≈ R8 182.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['R25', 'R818', 'R81 818', 'R8 182'],
+      correctIndex: 3,
+      explanation: 'Skakel Dollar na Rand om: deel deur die wisselkoers: $450 ÷ 0,055 ≈ R8 182. (R25 kom van vermenigvuldig in plaas van deel; R818 en R81 818 kom van die desimale punt in 0,055 verkeerd te plaas.)',
     },
 
     // ── V13 Medium ────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Sipho koop ʼn TV ter waarde van R9 000 op huurkoop teen 18% enkelvoudige rente oor 2 jaar. Vind sy totale terugbetaling.',
-      answer: 'R12 240',
       checkMode: 'auto',
-      correctAnswer: 'R12240',
-      correctAnswers: ['R12240', '12240', 'R12 240', '12 240'],
-      explanation: 'A = 9 000(1 + 2 × 0,18) = 9 000(1,36) = R12 240 ✓',
+      options: ['R12 240', 'R12 531,60', 'R3 240', 'R13 860'],
+      correctIndex: 0,
+      explanation: 'A = P(1 + ni) = 9 000(1 + 2 × 0,18) = 9 000(1,36) = R12 240. (R12 531,60 gebruik verkeerdelik saamgestelde rente; R3 240 gee net die rente, nie die totale terugbetaling nie; R13 860 gebruik verkeerdelik n = 3.)',
     },
 
     // ── V14 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Lerato belê R15 000 teen 9% saamgestelde rente vir 10 jaar. Vind die finale bedrag, afgerond na die naaste Rand.',
-      answer: 'R35 510',
       checkMode: 'auto',
-      correctAnswer: 'R35510',
-      correctAnswers: ['R35510', '35510', 'R35 510', '35 510'],
-      explanation: 'A = 15 000(1,09)¹⁰ = 15 000 × 2,367363 ≈ R35 510 ✓',
+      options: ['R28 500', 'R35 510', 'R32 578', 'R20 510'],
+      correctIndex: 1,
+      explanation: 'A = 15 000(1,09)¹⁰ = 15 000 × 2,367363 ≈ R35 510. (R28 500 gebruik verkeerdelik enkelvoudige rente; R32 578 gebruik verkeerdelik n = 9; R20 510 gee net die rente verdien.)',
     },
 
     // ── V15 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'ʼn Motor met ʼn waarde van R250 000 verval deur enkelvoudige verval teen 12% per jaar. Vind sy waarde na 5 jaar.',
-      answer: 'R100 000',
       checkMode: 'auto',
-      correctAnswer: 'R100000',
-      correctAnswers: ['R100000', '100000', 'R100 000', '100 000'],
-      explanation: 'A = P(1 − ni) = 250 000(1 − 5 × 0,12) = 250 000(0,4) = R100 000 ✓',
+      options: ['R131 933', 'R130 000', 'R100 000', 'R70 000'],
+      correctIndex: 2,
+      explanation: 'A = P(1 − ni) = 250 000(1 − 5 × 0,12) = 250 000(0,4) = R100 000. (R131 933 gebruik verkeerdelik saamgestelde verval; R130 000 gebruik verkeerdelik n = 4; R70 000 gebruik verkeerdelik n = 6.)',
     },
 
     // ── V16 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Thabo sê om die rentekoers te verdubbel, verdubbel altyd die finale bedrag in saamgestelde rente. Is hy korrek? Verduidelik met ʼn voorbeeld.',
-      answer: 'Nee — byvoorbeeld R1 000 teen 5% vir 10 jaar gee ≈ R1 628,89, terwyl teen 10% vir 10 jaar dit ≈ R2 593,74 gee, wat nie eenvoudig dubbel is nie, aangesien saamgestelde groei eksponensieel is, nie lineêr nie.',
-      checkMode: 'self',
+      question: 'Thabo belê R1 000 vir 10 jaar en vergelyk 5% teenoor 10% saamgestelde rente. Is hy korrek dat die verdubbeling van die rentekoers die finale bedrag verdubbel?',
+      checkMode: 'auto',
+      options: [
+        'Ja — 5% gee R1 500 en 10% gee R3 000, dus verdubbel die bedrag presies.',
+        'Ja — saamgestelde rente skaal altyd lineêr met die rentekoers.',
+        'Nee — maar slegs omdat die aantal jare onewe is; vir ʼn ewe aantal jare sou die verdubbeling van die koers die bedrag verdubbel.',
+        'Nee — 5% vir 10 jaar gee ≈ R1 628,89 terwyl 10% vir 10 jaar ≈ R2 593,74 gee, wat nie dubbel is nie, aangesien saamgestelde groei eksponensieel is, nie lineêr nie.',
+      ],
+      correctIndex: 3,
+      explanation: 'R1 000(1,05)¹⁰ ≈ R1 628,89 en R1 000(1,10)¹⁰ ≈ R2 593,74. R2 593,74 is nie dubbel R1 628,89 nie, dus is Thabo verkeerd — saamgestelde groei is eksponensieel, sodat die verdubbeling van die koers nie eenvoudig die uitkoms verdubbel nie, ongeag of n ewe of onewe is.',
     },
 
     // ── V17 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: "Amahle se bevolking van 60 000 groei teen 2,5% per jaar. Vind hoeveel jare dit neem voordat die bevolking 80 000 oorskry, deur probeer en verbeter te gebruik.",
-      answer: 'Benodig (1,025)ⁿ = 1,333. Probeer n = 11: 1,025¹¹ ≈ 1,312. Probeer n = 12: 1,025¹² ≈ 1,345. Dit neem ongeveer 12 jaar.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['12 jaar', '11 jaar', '13 jaar', '10 jaar'],
+      correctIndex: 0,
+      explanation: 'Ons benodig (1,025)ⁿ ≥ 1,333. Probeer n = 11: 1,025¹¹ ≈ 1,312 (te laag). Probeer n = 12: 1,025¹² ≈ 1,345 (oorskry 1,333). Dit neem ongeveer 12 jaar.',
     },
 
     // ── V18 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Sipho skakel R5 000 om na Amerikaanse Dollar teen R1 = $0,055, en dan terug na Rand ʼn maand later teen R1 = $0,052. Vind sy Rand-waarde na albei omskakelings, en verduidelik waarom dit verander het.',
-      answer: 'Eerste omskakeling: 5 000 × 0,055 = $275. Tweede omskakeling terug: 275 ÷ 0,052 ≈ R5 288,46. Die waarde het toegeneem omdat die Rand teenoor die Dollar verswak het (elke Dollar koop nou meer Rand), wat die omskakeling terug bevoordeel het.',
-      checkMode: 'self',
+      question: 'Sipho skakel R5 000 om na Amerikaanse Dollar teen R1 = $0,055, en skakel dan die Dollarbedrag ʼn maand later terug na Rand teen R1 = $0,052. Wat is sy Rand-waarde na albei omskakelings?',
+      checkMode: 'auto',
+      options: ['R14,30', 'R5 288,46', 'R5 000', 'R96 153,85'],
+      correctIndex: 1,
+      explanation: 'Eerste omskakeling: R5 000 × 0,055 = $275. Tweede omskakeling terug: $275 ÷ 0,052 ≈ R5 288,46. Die waarde het toegeneem omdat die Rand tussen die omskakelings verswak het, sodat elke Dollar op pad terug meer Rand gekoop het. (R14,30 vermenigvuldig verkeerdelik met die tweede koers in plaas van te deel; R5 000 neem verkeerdelik aan daar was geen verandering nie; R96 153,85 skakel die oorspronklike R5 000 direk met die tweede koers om in plaas daarvan om die $275 om te skakel.)',
     },
 
     // ── V19 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Vergelyk die belegging van R12 000 teen 6% enkelvoudige rente vir 8 jaar met 6% saamgestelde rente vir 8 jaar. Vind albei finale bedrae en die verskil.',
-      answer: 'Enkelvoudig: 12 000(1 + 8 × 0,06) = R17 760. Saamgesteld: 12 000(1,06)⁸ ≈ R19 126,18. Verskil ≈ R1 366,18.',
-      checkMode: 'self',
+      question: 'Vergelyk die belegging van R12 000 teen 6% enkelvoudige rente vir 8 jaar met 6% saamgestelde rente vir 8 jaar. Vind die verskil tussen die twee finale bedrae.',
+      checkMode: 'auto',
+      options: ['R17 760', 'R19 126,18', 'R1 366,18', 'R1 266,18'],
+      correctIndex: 2,
+      explanation: 'Enkelvoudig: 12 000(1 + 8 × 0,06) = R17 760. Saamgesteld: 12 000(1,06)⁸ ≈ R19 126,18. Verskil ≈ R1 366,18. (R17 760 en R19 126,18 is die individuele bedrae, nie die verskil nie; R1 266,18 het ʼn rekenfout.)',
     },
 
     // ── V20 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Lerato belê R18 000 teen ʼn onbekende saamgestelde rentekoers en na 6 jaar groei dit tot R24 000. Gebruik probeer en verbeter om die rentekoers na die naaste persent te skat.',
-      answer: 'Benodig (1 + i)⁶ = 24 000/18 000 = 1,333. Probeer i = 5%: 1,05⁶ ≈ 1,340 (naby). Die rentekoers is ongeveer 5%.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['4%', '6%', '3%', '5%'],
+      correctIndex: 3,
+      explanation: 'Ons benodig (1 + i)⁶ = 24 000 ÷ 18 000 ≈ 1,333. Probeer i = 4%: 1,04⁶ ≈ 1,265 (te laag). Probeer i = 5%: 1,05⁶ ≈ 1,340 (naaste passing). Probeer i = 6%: 1,06⁶ ≈ 1,419 (te hoog). Dus is die koers ongeveer 5%.',
     },
   ],
 
@@ -1361,36 +1376,36 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Enkelvoudige rente (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R2 500 teen 6% enkelvoudige rente per jaar vir 3 jaar belê word.', checkMode: 'auto', correctAnswer: 'R2950', correctAnswers: ['R2950', '2950', 'R2 950', '2 950', 'R2950,00', 'R2 950,00'], answer: 'R2 950', explanation: 'A = P(1 + ni) = 2 500(1 + 3 × 0,06) = 2 500(1,18) = R2 950 ✓' },
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R5 000 teen 8% enkelvoudige rente per jaar vir 2 jaar belê word.', checkMode: 'auto', correctAnswer: 'R5800', correctAnswers: ['R5800', '5800', 'R5 800', '5 800', 'R5800,00', 'R5 800,00'], answer: 'R5 800', explanation: 'A = P(1 + ni) = 5 000(1 + 2 × 0,08) = 5 000(1,16) = R5 800 ✓' },
-        { difficulty: 'Medium', question: 'Thabo belê R9 000 teen 5% enkelvoudige rente per jaar vir 4 jaar. Vind die totale rente verdien (nie die finale bedrag nie).', checkMode: 'auto', correctAnswer: 'R1800', correctAnswers: ['R1800', '1800', 'R1 800', '1 800', 'R1800,00', 'R1 800,00'], answer: 'R1 800', explanation: 'Rente = P × n × i = 9 000 × 4 × 0,05 = R1 800 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Belegging wat 5% enkelvoudige rente per jaar verdien, groei na R6 000 na 4 jaar. Vind die oorspronklike hoofsom.', checkMode: 'auto', correctAnswer: 'R5000', correctAnswers: ['R5000', '5000', 'R5 000', '5 000', 'R5000,00', 'R5 000,00'], answer: 'R5 000', explanation: 'A = P(1 + ni)\n6 000 = P(1 + 4 × 0,05) = P(1,20)\nP = 6 000 ÷ 1,20 = R5 000 ✓' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R2 500 teen 6% enkelvoudige rente per jaar vir 3 jaar belê word.', checkMode: 'auto', options: ['R2 950', 'R2 977,54', 'R2 800', 'R450'], correctIndex: 0, explanation: 'A = P(1 + ni) = 2 500(1 + 3 × 0,06) = 2 500(1,18) = R2 950. (R2 977,54 gebruik verkeerdelik saamgestelde rente; R2 800 gebruik verkeerdelik n = 2; R450 gee net die rente, nie die finale bedrag nie.)' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R5 000 teen 8% enkelvoudige rente per jaar vir 2 jaar belê word.', checkMode: 'auto', options: ['R5 832', 'R5 800', 'R5 400', 'R800'], correctIndex: 1, explanation: 'A = P(1 + ni) = 5 000(1 + 2 × 0,08) = 5 000(1,16) = R5 800. (R5 832 gebruik verkeerdelik saamgestelde rente; R5 400 gebruik verkeerdelik n = 1; R800 gee net die rente, nie die finale bedrag nie.)' },
+        { difficulty: 'Medium', question: 'Thabo belê R9 000 teen 5% enkelvoudige rente per jaar vir 4 jaar. Vind die totale rente verdien (nie die finale bedrag nie).', checkMode: 'auto', options: ['R10 800', 'R1 350', 'R1 800', 'R2 250'], correctIndex: 2, explanation: 'Rente = P × n × i = 9 000 × 4 × 0,05 = R1 800. (R10 800 is die finale bedrag, nie net die rente nie; R1 350 en R2 250 gebruik verkeerdelik n = 3 en n = 5.)' },
+        { difficulty: 'Medium', question: 'ʼn Belegging wat 5% enkelvoudige rente per jaar verdien, groei na R6 000 na 4 jaar. Vind die oorspronklike hoofsom.', checkMode: 'auto', options: ['R4 936,14', 'R5 217,39', 'R30 000', 'R5 000'], correctIndex: 3, explanation: 'A = P(1 + ni)\n6 000 = P(1 + 4 × 0,05) = P(1,20)\nP = 6 000 ÷ 1,20 = R5 000. (R4 936,14 deel verkeerdelik deur (1,05)⁴; R5 217,39 gebruik verkeerdelik n = 3; R30 000 behandel R6 000 verkeerdelik as die rente in plaas van die finale bedrag.)' },
 
         // Blok 2 — Saamgestelde rente (Easy, Medium, Medium, Hard)
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R2 000 teen 10% saamgestelde rente per jaar vir 2 jaar belê word.', checkMode: 'auto', correctAnswer: 'R2420', correctAnswers: ['R2420', '2420', 'R2 420', '2 420', 'R2420,00', 'R2 420,00'], answer: 'R2 420', explanation: 'A = P(1 + i)ⁿ = 2 000(1,10)² = 2 000 × 1,21 = R2 420 ✓' },
-        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R3 200 teen 5% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R3704,40', correctAnswers: ['R3704.40', '3704.40', 'R3 704.40', '3 704.40', 'R3704,40', 'R3 704,40', '3704,40'], answer: 'R3 704,40', explanation: 'A = 3 200(1,05)³ = 3 200 × 1,157625 ≈ R3 704,40 ✓' },
-        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R4 500 teen 6% saamgestelde rente per jaar vir 4 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R5681,15', correctAnswers: ['R5681.15', '5681.15', 'R5 681.15', '5 681.15', 'R5681,15', 'R5 681,15'], answer: 'R5 681,15', explanation: 'A = 4 500(1,06)⁴ = 4 500 × 1,26247696 ≈ R5 681,15 ✓' },
-        { difficulty: 'Hard', question: 'Bereken die finale bedrag as R12 000 teen 7% saamgestelde rente per jaar vir 6 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R18008,76', correctAnswers: ['R18008.76', '18008.76', 'R18 008.76', '18 008.76', 'R18008,76', 'R18 008,76'], answer: 'R18 008,76', explanation: 'A = 12 000(1,07)⁶ = 12 000 × 1,50073 ≈ R18 008,76 ✓' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R2 000 teen 10% saamgestelde rente per jaar vir 2 jaar belê word.', checkMode: 'auto', options: ['R2 420', 'R2 400', 'R2 200', 'R420'], correctIndex: 0, explanation: 'A = P(1 + i)ⁿ = 2 000(1,10)² = 2 000 × 1,21 = R2 420. (R2 400 gebruik verkeerdelik enkelvoudige rente; R2 200 gebruik verkeerdelik n = 1; R420 gee net die rente verdien.)' },
+        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R3 200 teen 5% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R3 680', 'R3 704,40', 'R3 528', 'R504,40'], correctIndex: 1, explanation: 'A = 3 200(1,05)³ = 3 200 × 1,157625 ≈ R3 704,40. (R3 680 gebruik verkeerdelik enkelvoudige rente; R3 528 gebruik verkeerdelik n = 2; R504,40 gee net die rente verdien.)' },
+        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R4 500 teen 6% saamgestelde rente per jaar vir 4 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R5 580', 'R5 359,57', 'R5 681,15', 'R1 181,15'], correctIndex: 2, explanation: 'A = 4 500(1,06)⁴ = 4 500 × 1,26247696 ≈ R5 681,15. (R5 580 gebruik verkeerdelik enkelvoudige rente; R5 359,57 gebruik verkeerdelik n = 3; R1 181,15 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Bereken die finale bedrag as R12 000 teen 7% saamgestelde rente per jaar vir 6 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R17 040', 'R16 830,62', 'R6 008,76', 'R18 008,76'], correctIndex: 3, explanation: 'A = 12 000(1,07)⁶ = 12 000 × 1,50073 ≈ R18 008,76. (R17 040 gebruik verkeerdelik enkelvoudige rente; R16 830,62 gebruik verkeerdelik n = 5; R6 008,76 gee net die rente verdien.)' },
 
         // Blok 3 — Vergelyking van enkelvoudige en saamgestelde rente (Medium, Hard, Hard)
-        { difficulty: 'Medium', question: 'Vergelyk die belegging van R7 000 teen 7% vir 4 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R215,57', correctAnswers: ['R215.57', '215.57', 'R215,57', '215,57'], answer: 'R215,57', explanation: 'Enkelvoudig: 7 000(1 + 4 × 0,07) = R8 960.\nSaamgesteld: 7 000(1,07)⁴ ≈ R9 175,57.\nVerskil ≈ R215,57 ✓' },
-        { difficulty: 'Hard', question: 'Vergelyk die belegging van R9 000 teen 6% vir 8 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R1024,63', correctAnswers: ['R1024.63', '1024.63', 'R1 024.63', '1 024.63', 'R1024,63', 'R1 024,63'], answer: 'R1 024,63', explanation: 'Enkelvoudig: 9 000(1 + 8 × 0,06) = R13 320.\nSaamgesteld: 9 000(1,06)⁸ ≈ R14 344,63.\nVerskil ≈ R1 024,63 ✓' },
-        { difficulty: 'Hard', question: 'Vergelyk die belegging van R5 000 teen 8% vir 6 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R534,37', correctAnswers: ['R534.37', '534.37', 'R534,37'], answer: 'R534,37', explanation: 'Enkelvoudig: 5 000(1 + 6 × 0,08) = R7 400.\nSaamgesteld: 5 000(1,08)⁶ ≈ R7 934,37.\nVerskil ≈ R534,37 ✓' },
+        { difficulty: 'Medium', question: 'Vergelyk die belegging van R7 000 teen 7% vir 4 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R215,57', 'R8 960', 'R9 175,57', 'R205,57'], correctIndex: 0, explanation: 'Enkelvoudig: 7 000(1 + 4 × 0,07) = R8 960.\nSaamgesteld: 7 000(1,07)⁴ ≈ R9 175,57.\nVerskil ≈ R215,57. (R8 960 en R9 175,57 is die individuele bedrae, nie die verskil nie; R205,57 het ʼn rekenfout.)' },
+        { difficulty: 'Hard', question: 'Vergelyk die belegging van R9 000 teen 6% vir 8 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R13 320', 'R1 024,63', 'R14 344,63', 'R1 124,63'], correctIndex: 1, explanation: 'Enkelvoudig: 9 000(1 + 8 × 0,06) = R13 320.\nSaamgesteld: 9 000(1,06)⁸ ≈ R14 344,63.\nVerskil ≈ R1 024,63. (R13 320 en R14 344,63 is die individuele bedrae, nie die verskil nie; R1 124,63 het ʼn rekenfout.)' },
+        { difficulty: 'Hard', question: 'Vergelyk die belegging van R5 000 teen 8% vir 6 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R7 400', 'R7 934,37', 'R534,37', 'R634,37'], correctIndex: 2, explanation: 'Enkelvoudig: 5 000(1 + 6 × 0,08) = R7 400.\nSaamgesteld: 5 000(1,08)⁶ ≈ R7 934,37.\nVerskil ≈ R534,37. (R7 400 en R7 934,37 is die individuele bedrae, nie die verskil nie; R634,37 het ʼn rekenfout.)' },
 
         // Blok 4 — Huurkoop (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'Sipho koop ʼn yskas ter waarde van R6 000 op huurkoop teen 15% enkelvoudige rente oor 2 jaar, sonder ʼn deposito. Vind sy totale terugbetaling.', checkMode: 'auto', correctAnswer: 'R7800', correctAnswers: ['R7800', '7800', 'R7 800', '7 800', 'R7800,00', 'R7 800,00'], answer: 'R7 800', explanation: 'A = P(1 + ni) = 6 000(1 + 2 × 0,15) = 6 000(1,30) = R7 800 ✓' },
-        { difficulty: 'Medium', question: 'Lerato koop ʼn skootrekenaar ter waarde van R10 000 op huurkoop teen 20% enkelvoudige rente oor 3 jaar, sonder ʼn deposito. Vind haar totale terugbetaling.', checkMode: 'auto', correctAnswer: 'R16000', correctAnswers: ['R16000', '16000', 'R16 000', '16 000', 'R16000,00', 'R16 000,00'], answer: 'R16 000', explanation: 'A = 10 000(1 + 3 × 0,20) = 10 000(1,60) = R16 000 ✓' },
-        { difficulty: 'Hard', question: 'Amahle koop meubels met ʼn kontantprys van R18 000. Sy betaal ʼn 15%-deposito en betaal die balans op huurkoop terug teen 12% enkelvoudige rente per jaar oor 4 jaar. Vind haar totale terugbetaling (deposito plus huurkoop-paaiemente), afgerond na die naaste sent.', checkMode: 'auto', correctAnswer: 'R25344', correctAnswers: ['R25344', '25344', 'R25 344', '25 344', 'R25344,00', 'R25 344,00'], answer: 'R25 344', explanation: 'Deposito = 15% × 18 000 = R2 700.\nBalans = 18 000 − 2 700 = R15 300.\nHuurkoopbedrag op balans = 15 300(1 + 4 × 0,12) = 15 300(1,48) = R22 644.\nTotale terugbetaling = R2 700 + R22 644 = R25 344 ✓' },
+        { difficulty: 'Medium', question: 'Sipho koop ʼn yskas ter waarde van R6 000 op huurkoop teen 15% enkelvoudige rente oor 2 jaar, sonder ʼn deposito. Vind sy totale terugbetaling.', checkMode: 'auto', options: ['R7 935', 'R1 800', 'R8 700', 'R7 800'], correctIndex: 3, explanation: 'A = P(1 + ni) = 6 000(1 + 2 × 0,15) = 6 000(1,30) = R7 800. (R7 935 gebruik verkeerdelik saamgestelde rente; R1 800 gee net die rente, nie die totale terugbetaling nie; R8 700 gebruik verkeerdelik n = 3.)' },
+        { difficulty: 'Medium', question: 'Lerato koop ʼn skootrekenaar ter waarde van R10 000 op huurkoop teen 20% enkelvoudige rente oor 3 jaar, sonder ʼn deposito. Vind haar totale terugbetaling.', checkMode: 'auto', options: ['R16 000', 'R17 280', 'R6 000', 'R14 000'], correctIndex: 0, explanation: 'A = 10 000(1 + 3 × 0,20) = 10 000(1,60) = R16 000. (R17 280 gebruik verkeerdelik saamgestelde rente; R6 000 gee net die rente, nie die totale terugbetaling nie; R14 000 gebruik verkeerdelik n = 2.)' },
+        { difficulty: 'Hard', question: 'Amahle koop meubels met ʼn kontantprys van R18 000. Sy betaal ʼn 15%-deposito en betaal die balans op huurkoop terug teen 12% enkelvoudige rente per jaar oor 4 jaar. Vind haar totale terugbetaling (deposito plus huurkoop-paaiemente), afgerond na die naaste sent.', checkMode: 'auto', options: ['R26 640', 'R25 344', 'R22 644', 'R23 508'], correctIndex: 1, explanation: 'Deposito = 15% × 18 000 = R2 700.\nBalans = 18 000 − 2 700 = R15 300.\nHuurkoopbedrag op balans = 15 300(1 + 4 × 0,12) = 15 300(1,48) = R22 644.\nTotale terugbetaling = R2 700 + R22 644 = R25 344. (R26 640 pas rente verkeerdelik op die volle kontantprys toe in plaas van die balans; R22 644 vergeet om die deposito weer by te tel; R23 508 gebruik verkeerdelik n = 3.)' },
 
         // Blok 5 — Enkelvoudige groei-/verval-woordprobleme (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'ʼn Dorp se bevolking van 15 000 groei teen 4% saamgestelde groei per jaar. Vind die bevolking na 5 jaar, afgerond na die naaste heelgetal.', checkMode: 'auto', correctAnswer: '18250', correctAnswers: ['18250', '18 250'], answer: '18 250', explanation: 'A = 15 000(1,04)⁵ = 15 000 × 1,21665 ≈ 18 250 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Masjien ter waarde van R150 000 verval deur enkelvoudige (reguitlyn) verval teen 10% per jaar. Vind sy waarde na 4 jaar.', checkMode: 'auto', correctAnswer: 'R90000', correctAnswers: ['R90000', '90000', 'R90 000', '90 000', 'R90000,00', 'R90 000,00'], answer: 'R90 000', explanation: 'A = P(1 − ni) = 150 000(1 − 4 × 0,10) = 150 000(0,60) = R90 000 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Motor ter waarde van R220 000 verval deur enkelvoudige (reguitlyn) verval teen 18% per jaar. Vind sy waarde na 3 jaar.', checkMode: 'auto', correctAnswer: 'R101200', correctAnswers: ['R101200', '101200', 'R101 200', '101 200', 'R101200,00', 'R101 200,00'], answer: 'R101 200', explanation: 'A = P(1 − ni) = 220 000(1 − 3 × 0,18) = 220 000(0,46) = R101 200 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Dorp se bevolking van 15 000 groei teen 4% saamgestelde groei per jaar. Vind die bevolking na 5 jaar, afgerond na die naaste heelgetal.', checkMode: 'auto', options: ['18 000', '17 548', '18 250', '18 980'], correctIndex: 2, explanation: 'A = 15 000(1,04)⁵ = 15 000 × 1,21665 ≈ 18 250. (18 000 gebruik verkeerdelik enkelvoudige groei; 17 548 gebruik verkeerdelik n = 4; 18 980 gebruik verkeerdelik n = 6.)' },
+        { difficulty: 'Medium', question: 'ʼn Masjien ter waarde van R150 000 verval deur enkelvoudige (reguitlyn) verval teen 10% per jaar. Vind sy waarde na 4 jaar.', checkMode: 'auto', options: ['R98 415', 'R105 000', 'R75 000', 'R90 000'], correctIndex: 3, explanation: 'A = P(1 − ni) = 150 000(1 − 4 × 0,10) = 150 000(0,60) = R90 000. (R98 415 gebruik verkeerdelik saamgestelde verval; R105 000 gebruik verkeerdelik n = 3; R75 000 gebruik verkeerdelik n = 5.)' },
+        { difficulty: 'Hard', question: 'ʼn Motor ter waarde van R220 000 verval deur enkelvoudige (reguitlyn) verval teen 18% per jaar. Vind sy waarde na 3 jaar.', checkMode: 'auto', options: ['R101 200', 'R121 301', 'R140 800', 'R61 600'], correctIndex: 0, explanation: 'A = P(1 − ni) = 220 000(1 − 3 × 0,18) = 220 000(0,46) = R101 200. (R121 301 gebruik verkeerdelik saamgestelde verval; R140 800 gebruik verkeerdelik n = 2; R61 600 gebruik verkeerdelik n = 4.)' },
 
         // Blok 6 — Gekombineerde multi-stap probleme (Hard, Hard, Hard)
-        { difficulty: 'Hard', question: 'Thabo belê R8 000 teen 9% saamgestelde rente per jaar vir 5 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R12308,99', correctAnswers: ['R12308.99', '12308.99', 'R12 308.99', '12 308.99', 'R12308,99', 'R12 308,99'], answer: 'R12 308,99', explanation: 'A = 8 000(1,09)⁵ = 8 000 × 1,53862 ≈ R12 308,99 ✓' },
-        { difficulty: 'Hard', question: 'Nomsa belê R6 000 teen 7,5% saamgestelde rente per jaar vir 4 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R8012,81', correctAnswers: ['R8012.81', '8012.81', 'R8 012.81', '8 012.81', 'R8012,81', 'R8 012,81'], answer: 'R8 012,81', explanation: 'A = 6 000(1,075)⁴ = 6 000 × 1,33546... ≈ R8 012,81 ✓' },
-        { difficulty: 'Hard', question: 'Sipho verdien R1 500 enkelvoudige rente op ʼn hoofsom van R5 000 belê vir 3 jaar. Vind die jaarlikse rentekoers wat gebruik is.', checkMode: 'auto', correctAnswer: '10%', correctAnswers: ['10%', '10', '0,1', '0,10'], answer: '10%', explanation: 'Rente = P × n × i\n1 500 = 5 000 × 3 × i\n1 500 = 15 000i\ni = 1 500 ÷ 15 000 = 0,10 = 10% ✓' },
+        { difficulty: 'Hard', question: 'Thabo belê R8 000 teen 9% saamgestelde rente per jaar vir 5 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R11 600', 'R12 308,99', 'R11 292,66', 'R4 308,99'], correctIndex: 1, explanation: 'A = 8 000(1,09)⁵ = 8 000 × 1,53862 ≈ R12 308,99. (R11 600 gebruik verkeerdelik enkelvoudige rente; R11 292,66 gebruik verkeerdelik n = 4; R4 308,99 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Nomsa belê R6 000 teen 7,5% saamgestelde rente per jaar vir 4 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R7 800', 'R7 453,78', 'R8 012,81', 'R2 012,81'], correctIndex: 2, explanation: 'A = 6 000(1,075)⁴ = 6 000 × 1,33546... ≈ R8 012,81. (R7 800 gebruik verkeerdelik enkelvoudige rente; R7 453,78 gebruik verkeerdelik n = 3; R2 012,81 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Sipho verdien R1 500 enkelvoudige rente op ʼn hoofsom van R5 000 belê vir 3 jaar. Vind die jaarlikse rentekoers wat gebruik is.', checkMode: 'auto', options: ['30%', '15%', '5%', '10%'], correctIndex: 3, explanation: 'Rente = P × n × i, dus i = Rente ÷ (P × n) = 1 500 ÷ (5 000 × 3) = 0,10 = 10%. (30% vergeet om deur n = 3 te deel; 15% gebruik verkeerdelik n = 2; 5% halveer verkeerdelik die korrekte koers.)' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het enkelvoudige rente, saamgestelde rente en huurkoopprobleme bemeester.' },
@@ -1407,36 +1422,36 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok 1 — Enkelvoudige rente (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R3 200 teen 5% enkelvoudige rente per jaar vir 4 jaar belê word.', checkMode: 'auto', correctAnswer: 'R3840', correctAnswers: ['R3840', '3840', 'R3 840', '3 840', 'R3840,00', 'R3 840,00'], answer: 'R3 840', explanation: 'A = P(1 + ni) = 3 200(1 + 4 × 0,05) = 3 200(1,20) = R3 840 ✓' },
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R4 000 teen 9% enkelvoudige rente per jaar vir 3 jaar belê word.', checkMode: 'auto', correctAnswer: 'R5080', correctAnswers: ['R5080', '5080', 'R5 080', '5 080', 'R5080,00', 'R5 080,00'], answer: 'R5 080', explanation: 'A = P(1 + ni) = 4 000(1 + 3 × 0,09) = 4 000(1,27) = R5 080 ✓' },
-        { difficulty: 'Medium', question: 'Lerato belê R11 000 teen 4,5% enkelvoudige rente per jaar vir 6 jaar. Vind die totale rente verdien (nie die finale bedrag nie).', checkMode: 'auto', correctAnswer: 'R2970', correctAnswers: ['R2970', '2970', 'R2 970', '2 970', 'R2970,00', 'R2 970,00'], answer: 'R2 970', explanation: 'Rente = P × n × i = 11 000 × 6 × 0,045 = R2 970 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Belegging wat 6% enkelvoudige rente per jaar verdien, groei na R9 000 na 5 jaar. Vind die oorspronklike hoofsom.', checkMode: 'auto', correctAnswer: 'R6923,08', correctAnswers: ['R6923.08', '6923.08', 'R6 923.08', '6 923.08', 'R6923,08', 'R6 923,08', 'R6923,07', '6923,07'], answer: 'R6 923,08', explanation: 'A = P(1 + ni)\n9 000 = P(1 + 5 × 0,06) = P(1,30)\nP = 9 000 ÷ 1,30 ≈ R6 923,08 ✓' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R3 200 teen 5% enkelvoudige rente per jaar vir 4 jaar belê word.', checkMode: 'auto', options: ['R3 840', 'R3 889,62', 'R3 680', 'R640'], correctIndex: 0, explanation: 'A = P(1 + ni) = 3 200(1 + 4 × 0,05) = 3 200(1,20) = R3 840. (R3 889,62 gebruik verkeerdelik saamgestelde rente; R3 680 gebruik verkeerdelik n = 3; R640 gee net die rente, nie die finale bedrag nie.)' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R4 000 teen 9% enkelvoudige rente per jaar vir 3 jaar belê word.', checkMode: 'auto', options: ['R5 180,12', 'R5 080', 'R4 720', 'R1 080'], correctIndex: 1, explanation: 'A = P(1 + ni) = 4 000(1 + 3 × 0,09) = 4 000(1,27) = R5 080. (R5 180,12 gebruik verkeerdelik saamgestelde rente; R4 720 gebruik verkeerdelik n = 2; R1 080 gee net die rente, nie die finale bedrag nie.)' },
+        { difficulty: 'Medium', question: 'Lerato belê R11 000 teen 4,5% enkelvoudige rente per jaar vir 6 jaar. Vind die totale rente verdien (nie die finale bedrag nie).', checkMode: 'auto', options: ['R13 970', 'R2 475', 'R2 970', 'R3 465'], correctIndex: 2, explanation: 'Rente = P × n × i = 11 000 × 6 × 0,045 = R2 970. (R13 970 is die finale bedrag, nie net die rente nie; R2 475 en R3 465 gebruik verkeerdelik n = 5 en n = 7.)' },
+        { difficulty: 'Medium', question: 'ʼn Belegging wat 6% enkelvoudige rente per jaar verdien, groei na R9 000 na 5 jaar. Vind die oorspronklike hoofsom.', checkMode: 'auto', options: ['R6 725,05', 'R7 258,06', 'R30 000', 'R6 923,08'], correctIndex: 3, explanation: 'A = P(1 + ni)\n9 000 = P(1 + 5 × 0,06) = P(1,30)\nP = 9 000 ÷ 1,30 ≈ R6 923,08. (R6 725,05 deel verkeerdelik deur (1,06)⁵; R7 258,06 gebruik verkeerdelik n = 4; R30 000 behandel R9 000 verkeerdelik as die rente in plaas van die finale bedrag.)' },
 
         // Blok 2 — Saamgestelde rente (Easy, Medium, Medium, Hard)
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R3 000 teen 8% saamgestelde rente per jaar vir 2 jaar belê word.', checkMode: 'auto', correctAnswer: 'R3499,20', correctAnswers: ['R3499.20', '3499.20', 'R3 499.20', '3 499.20', 'R3499,20', 'R3 499,20', 'R3499,2', '3499,2'], answer: 'R3 499,20', explanation: 'A = P(1 + i)ⁿ = 3 000(1,08)² = 3 000 × 1,1664 = R3 499,20 ✓' },
-        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R4 800 teen 4% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R5399,35', correctAnswers: ['R5399.35', '5399.35', 'R5 399.35', '5 399.35', 'R5399,35', 'R5 399,35'], answer: 'R5 399,35', explanation: 'A = 4 800(1,04)³ = 4 800 × 1,124864 ≈ R5 399,35 ✓' },
-        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R6 000 teen 7% saamgestelde rente per jaar vir 5 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R8415,31', correctAnswers: ['R8415.31', '8415.31', 'R8 415.31', '8 415.31', 'R8415,31', 'R8 415,31'], answer: 'R8 415,31', explanation: 'A = 6 000(1,07)⁵ = 6 000 × 1,40255... ≈ R8 415,31 ✓' },
-        { difficulty: 'Hard', question: 'Bereken die finale bedrag as R15 000 teen 6,5% saamgestelde rente per jaar vir 7 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R23309,80', correctAnswers: ['R23309.80', '23309.80', 'R23 309.80', '23 309.80', 'R23309,80', 'R23 309,80', 'R23309,8', '23309,8'], answer: 'R23 309,80', explanation: 'A = 15 000(1,065)⁷ = 15 000 × 1,55399... ≈ R23 309,80 ✓' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R3 000 teen 8% saamgestelde rente per jaar vir 2 jaar belê word.', checkMode: 'auto', options: ['R3 499,20', 'R3 480', 'R3 240', 'R499,20'], correctIndex: 0, explanation: 'A = P(1 + i)ⁿ = 3 000(1,08)² = 3 000 × 1,1664 = R3 499,20. (R3 480 gebruik verkeerdelik enkelvoudige rente; R3 240 gebruik verkeerdelik n = 1; R499,20 gee net die rente verdien.)' },
+        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R4 800 teen 4% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R5 376', 'R5 399,35', 'R5 191,68', 'R599,35'], correctIndex: 1, explanation: 'A = 4 800(1,04)³ = 4 800 × 1,124864 ≈ R5 399,35. (R5 376 gebruik verkeerdelik enkelvoudige rente; R5 191,68 gebruik verkeerdelik n = 2; R599,35 gee net die rente verdien.)' },
+        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R6 000 teen 7% saamgestelde rente per jaar vir 5 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R8 100', 'R7 864,78', 'R8 415,31', 'R2 415,31'], correctIndex: 2, explanation: 'A = 6 000(1,07)⁵ = 6 000 × 1,40255... ≈ R8 415,31. (R8 100 gebruik verkeerdelik enkelvoudige rente; R7 864,78 gebruik verkeerdelik n = 4; R2 415,31 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Bereken die finale bedrag as R15 000 teen 6,5% saamgestelde rente per jaar vir 7 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R21 825', 'R21 887,13', 'R8 309,80', 'R23 309,80'], correctIndex: 3, explanation: 'A = 15 000(1,065)⁷ = 15 000 × 1,55399... ≈ R23 309,80. (R21 825 gebruik verkeerdelik enkelvoudige rente; R21 887,13 gebruik verkeerdelik n = 6; R8 309,80 gee net die rente verdien.)' },
 
         // Blok 3 — Vergelyking van enkelvoudige en saamgestelde rente (Medium, Hard, Hard)
-        { difficulty: 'Medium', question: 'Vergelyk die belegging van R8 000 teen 8% vir 3 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R157,70', correctAnswers: ['R157.70', '157.70', 'R157,70', '157,70', 'R157,7', '157,7'], answer: 'R157,70', explanation: 'Enkelvoudig: 8 000(1 + 3 × 0,08) = R9 920.\nSaamgesteld: 8 000(1,08)³ ≈ R10 077,70.\nVerskil ≈ R157,70 ✓' },
-        { difficulty: 'Hard', question: 'Vergelyk die belegging van R10 000 teen 5% vir 10 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R1288,95', correctAnswers: ['R1288.95', '1288.95', 'R1 288.95', '1 288.95', 'R1288,95', 'R1 288,95'], answer: 'R1 288,95', explanation: 'Enkelvoudig: 10 000(1 + 10 × 0,05) = R15 000.\nSaamgesteld: 10 000(1,05)¹⁰ ≈ R16 288,95.\nVerskil ≈ R1 288,95 ✓' },
-        { difficulty: 'Hard', question: 'Vergelyk die belegging van R6 500 teen 9% vir 7 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R1287,25', correctAnswers: ['R1287.25', '1287.25', 'R1 287.25', '1 287.25', 'R1287,25', 'R1 287,25'], answer: 'R1 287,25', explanation: 'Enkelvoudig: 6 500(1 + 7 × 0,09) = R10 595.\nSaamgesteld: 6 500(1,09)⁷ ≈ R11 882,25.\nVerskil ≈ R1 287,25 ✓' },
+        { difficulty: 'Medium', question: 'Vergelyk die belegging van R8 000 teen 8% vir 3 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R157,70', 'R9 920', 'R10 077,70', 'R147,70'], correctIndex: 0, explanation: 'Enkelvoudig: 8 000(1 + 3 × 0,08) = R9 920.\nSaamgesteld: 8 000(1,08)³ ≈ R10 077,70.\nVerskil ≈ R157,70. (R9 920 en R10 077,70 is die individuele bedrae, nie die verskil nie; R147,70 het ʼn rekenfout.)' },
+        { difficulty: 'Hard', question: 'Vergelyk die belegging van R10 000 teen 5% vir 10 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R15 000', 'R1 288,95', 'R16 288,95', 'R1 388,95'], correctIndex: 1, explanation: 'Enkelvoudig: 10 000(1 + 10 × 0,05) = R15 000.\nSaamgesteld: 10 000(1,05)¹⁰ ≈ R16 288,95.\nVerskil ≈ R1 288,95. (R15 000 en R16 288,95 is die individuele bedrae, nie die verskil nie; R1 388,95 het ʼn rekenfout.)' },
+        { difficulty: 'Hard', question: 'Vergelyk die belegging van R6 500 teen 9% vir 7 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R10 595', 'R11 882,25', 'R1 287,25', 'R1 187,25'], correctIndex: 2, explanation: 'Enkelvoudig: 6 500(1 + 7 × 0,09) = R10 595.\nSaamgesteld: 6 500(1,09)⁷ ≈ R11 882,25.\nVerskil ≈ R1 287,25. (R10 595 en R11 882,25 is die individuele bedrae, nie die verskil nie; R1 187,25 het ʼn rekenfout.)' },
 
         // Blok 4 — Huurkoop (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'Sipho koop ʼn TV ter waarde van R7 500 op huurkoop teen 18% enkelvoudige rente oor 3 jaar, sonder ʼn deposito. Vind sy totale terugbetaling.', checkMode: 'auto', correctAnswer: 'R11550', correctAnswers: ['R11550', '11550', 'R11 550', '11 550', 'R11550,00', 'R11 550,00'], answer: 'R11 550', explanation: 'A = P(1 + ni) = 7 500(1 + 3 × 0,18) = 7 500(1,54) = R11 550 ✓' },
-        { difficulty: 'Medium', question: 'Naledi koop ʼn motorfiets ter waarde van R12 000 op huurkoop teen 22% enkelvoudige rente oor 2 jaar, sonder ʼn deposito. Vind haar totale terugbetaling.', checkMode: 'auto', correctAnswer: 'R17280', correctAnswers: ['R17280', '17280', 'R17 280', '17 280', 'R17280,00', 'R17 280,00'], answer: 'R17 280', explanation: 'A = 12 000(1 + 2 × 0,22) = 12 000(1,44) = R17 280 ✓' },
-        { difficulty: 'Hard', question: 'Kagiso koop ʼn rusbank met ʼn kontantprys van R24 000. Hy betaal ʼn 20%-deposito en betaal die balans op huurkoop terug teen 14% enkelvoudige rente per jaar oor 3 jaar. Vind sy totale terugbetaling (deposito plus huurkoop-paaiemente), afgerond na die naaste sent.', checkMode: 'auto', correctAnswer: 'R32064', correctAnswers: ['R32064', '32064', 'R32 064', '32 064', 'R32064,00', 'R32 064,00'], answer: 'R32 064', explanation: 'Deposito = 20% × 24 000 = R4 800.\nBalans = 24 000 − 4 800 = R19 200.\nHuurkoopbedrag op balans = 19 200(1 + 3 × 0,14) = 19 200(1,42) = R27 264.\nTotale terugbetaling = R4 800 + R27 264 = R32 064 ✓' },
+        { difficulty: 'Medium', question: 'Sipho koop ʼn TV ter waarde van R7 500 op huurkoop teen 18% enkelvoudige rente oor 3 jaar, sonder ʼn deposito. Vind sy totale terugbetaling.', checkMode: 'auto', options: ['R12 322,74', 'R4 050', 'R10 200', 'R11 550'], correctIndex: 3, explanation: 'A = P(1 + ni) = 7 500(1 + 3 × 0,18) = 7 500(1,54) = R11 550. (R12 322,74 gebruik verkeerdelik saamgestelde rente; R4 050 gee net die rente, nie die totale terugbetaling nie; R10 200 gebruik verkeerdelik n = 2.)' },
+        { difficulty: 'Medium', question: 'Naledi koop ʼn motorfiets ter waarde van R12 000 op huurkoop teen 22% enkelvoudige rente oor 2 jaar, sonder ʼn deposito. Vind haar totale terugbetaling.', checkMode: 'auto', options: ['R17 280', 'R17 860,80', 'R5 280', 'R14 640'], correctIndex: 0, explanation: 'A = 12 000(1 + 2 × 0,22) = 12 000(1,44) = R17 280. (R17 860,80 gebruik verkeerdelik saamgestelde rente; R5 280 gee net die rente, nie die totale terugbetaling nie; R14 640 gebruik verkeerdelik n = 1.)' },
+        { difficulty: 'Hard', question: 'Kagiso koop ʼn rusbank met ʼn kontantprys van R24 000. Hy betaal ʼn 20%-deposito en betaal die balans op huurkoop terug teen 14% enkelvoudige rente per jaar oor 3 jaar. Vind sy totale terugbetaling (deposito plus huurkoop-paaiemente), afgerond na die naaste sent.', checkMode: 'auto', options: ['R38 880', 'R32 064', 'R27 264', 'R29 376'], correctIndex: 1, explanation: 'Deposito = 20% × 24 000 = R4 800.\nBalans = 24 000 − 4 800 = R19 200.\nHuurkoopbedrag op balans = 19 200(1 + 3 × 0,14) = 19 200(1,42) = R27 264.\nTotale terugbetaling = R4 800 + R27 264 = R32 064. (R38 880 pas rente verkeerdelik op die volle kontantprys toe en tel steeds die deposito by; R27 264 vergeet om die deposito weer by te tel; R29 376 gebruik verkeerdelik n = 2.)' },
 
         // Blok 5 — Enkelvoudige groei-/verval-woordprobleme (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'ʼn Dorp se bevolking van 25 000 groei teen 3% saamgestelde groei per jaar. Vind die bevolking na 6 jaar, afgerond na die naaste heelgetal.', checkMode: 'auto', correctAnswer: '29851', correctAnswers: ['29851', '29 851'], answer: '29 851', explanation: 'A = 25 000(1,03)⁶ = 25 000 × 1,19405... ≈ 29 851 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Masjien ter waarde van R180 000 verval deur enkelvoudige (reguitlyn) verval teen 12% per jaar. Vind sy waarde na 5 jaar.', checkMode: 'auto', correctAnswer: 'R72000', correctAnswers: ['R72000', '72000', 'R72 000', '72 000', 'R72000,00', 'R72 000,00'], answer: 'R72 000', explanation: 'A = P(1 − ni) = 180 000(1 − 5 × 0,12) = 180 000(0,40) = R72 000 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Afleweringsvoertuig ter waarde van R300 000 verval deur enkelvoudige (reguitlyn) verval teen 20% per jaar. Vind sy waarde na 4 jaar.', checkMode: 'auto', correctAnswer: 'R60000', correctAnswers: ['R60000', '60000', 'R60 000', '60 000', 'R60000,00', 'R60 000,00'], answer: 'R60 000', explanation: 'A = P(1 − ni) = 300 000(1 − 4 × 0,20) = 300 000(0,20) = R60 000 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Dorp se bevolking van 25 000 groei teen 3% saamgestelde groei per jaar. Vind die bevolking na 6 jaar, afgerond na die naaste heelgetal.', checkMode: 'auto', options: ['29 500', '28 982', '29 851', '30 747'], correctIndex: 2, explanation: 'A = 25 000(1,03)⁶ = 25 000 × 1,19405... ≈ 29 851. (29 500 gebruik verkeerdelik enkelvoudige groei; 28 982 gebruik verkeerdelik n = 5; 30 747 gebruik verkeerdelik n = 7.)' },
+        { difficulty: 'Medium', question: 'ʼn Masjien ter waarde van R180 000 verval deur enkelvoudige (reguitlyn) verval teen 12% per jaar. Vind sy waarde na 5 jaar.', checkMode: 'auto', options: ['R94 991,80', 'R93 600', 'R50 400', 'R72 000'], correctIndex: 3, explanation: 'A = P(1 − ni) = 180 000(1 − 5 × 0,12) = 180 000(0,40) = R72 000. (R94 991,80 gebruik verkeerdelik saamgestelde verval; R93 600 gebruik verkeerdelik n = 4; R50 400 gebruik verkeerdelik n = 6.)' },
+        { difficulty: 'Hard', question: 'ʼn Afleweringsvoertuig ter waarde van R300 000 verval deur enkelvoudige (reguitlyn) verval teen 20% per jaar. Vind sy waarde na 4 jaar.', checkMode: 'auto', options: ['R60 000', 'R122 880', 'R120 000', 'R180 000'], correctIndex: 0, explanation: 'A = P(1 − ni) = 300 000(1 − 4 × 0,20) = 300 000(0,20) = R60 000. (R122 880 gebruik verkeerdelik saamgestelde verval; R120 000 gebruik verkeerdelik n = 3; R180 000 gebruik verkeerdelik n = 2.)' },
 
         // Blok 6 — Gekombineerde multi-stap probleme (Hard, Hard, Hard)
-        { difficulty: 'Hard', question: 'Amahle belê R10 000 teen 10% saamgestelde rente per jaar vir 6 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R17715,61', correctAnswers: ['R17715.61', '17715.61', 'R17 715.61', '17 715.61', 'R17715,61', 'R17 715,61'], answer: 'R17 715,61', explanation: 'A = 10 000(1,10)⁶ = 10 000 × 1,771561 = R17 715,61 ✓' },
-        { difficulty: 'Hard', question: 'Zanele belê R9 000 teen 5,5% saamgestelde rente per jaar vir 5 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R11762,64', correctAnswers: ['R11762.64', '11762.64', 'R11 762.64', '11 762.64', 'R11762,64', 'R11 762,64'], answer: 'R11 762,64', explanation: 'A = 9 000(1,055)⁵ = 9 000 × 1,30696... ≈ R11 762,64 ✓' },
-        { difficulty: 'Hard', question: 'Thabo verdien R2 100 enkelvoudige rente op ʼn hoofsom van R7 000 belê vir 6 jaar. Vind die jaarlikse rentekoers wat gebruik is.', checkMode: 'auto', correctAnswer: '5%', correctAnswers: ['5%', '5', '0,05'], answer: '5%', explanation: 'Rente = P × n × i\n2 100 = 7 000 × 6 × i\n2 100 = 42 000i\ni = 2 100 ÷ 42 000 = 0,05 = 5% ✓' },
+        { difficulty: 'Hard', question: 'Amahle belê R10 000 teen 10% saamgestelde rente per jaar vir 6 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R16 000', 'R17 715,61', 'R16 105,10', 'R7 715,61'], correctIndex: 1, explanation: 'A = 10 000(1,10)⁶ = 10 000 × 1,771561 = R17 715,61. (R16 000 gebruik verkeerdelik enkelvoudige rente; R16 105,10 gebruik verkeerdelik n = 5; R7 715,61 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Zanele belê R9 000 teen 5,5% saamgestelde rente per jaar vir 5 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R11 475', 'R11 149,43', 'R11 762,64', 'R2 762,64'], correctIndex: 2, explanation: 'A = 9 000(1,055)⁵ = 9 000 × 1,30696... ≈ R11 762,64. (R11 475 gebruik verkeerdelik enkelvoudige rente; R11 149,43 gebruik verkeerdelik n = 4; R2 762,64 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Thabo verdien R2 100 enkelvoudige rente op ʼn hoofsom van R7 000 belê vir 6 jaar. Vind die jaarlikse rentekoers wat gebruik is.', checkMode: 'auto', options: ['30%', '6%', '2,5%', '5%'], correctIndex: 3, explanation: 'Rente = P × n × i, dus i = Rente ÷ (P × n) = 2 100 ÷ (7 000 × 6) = 0,05 = 5%. (30% vergeet om deur n = 6 te deel; 6% gebruik verkeerdelik n = 5; 2,5% halveer verkeerdelik die korrekte koers.)' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het enkelvoudige rente, saamgestelde rente en huurkoopprobleme bemeester.' },
@@ -1453,36 +1468,36 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok 1 — Enkelvoudige rente (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R4 800 teen 7% enkelvoudige rente per jaar vir 2 jaar belê word.', checkMode: 'auto', correctAnswer: 'R5472', correctAnswers: ['R5472', '5472', 'R5 472', '5 472', 'R5472,00', 'R5 472,00'], answer: 'R5 472', explanation: 'A = P(1 + ni) = 4 800(1 + 2 × 0,07) = 4 800(1,14) = R5 472 ✓' },
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R6 500 teen 4% enkelvoudige rente per jaar vir 5 jaar belê word.', checkMode: 'auto', correctAnswer: 'R7800', correctAnswers: ['R7800', '7800', 'R7 800', '7 800', 'R7800,00', 'R7 800,00'], answer: 'R7 800', explanation: 'A = P(1 + ni) = 6 500(1 + 5 × 0,04) = 6 500(1,20) = R7 800 ✓' },
-        { difficulty: 'Medium', question: 'Amahle belê R13 000 teen 5,5% enkelvoudige rente per jaar vir 4 jaar. Vind die totale rente verdien (nie die finale bedrag nie).', checkMode: 'auto', correctAnswer: 'R2860', correctAnswers: ['R2860', '2860', 'R2 860', '2 860', 'R2860,00', 'R2 860,00'], answer: 'R2 860', explanation: 'Rente = P × n × i = 13 000 × 4 × 0,055 = R2 860 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Belegging wat 8% enkelvoudige rente per jaar verdien, groei na R8 400 na 3 jaar. Vind die oorspronklike hoofsom.', checkMode: 'auto', correctAnswer: 'R6774,19', correctAnswers: ['R6774.19', '6774.19', 'R6 774.19', '6 774.19', 'R6774,19', 'R6 774,19'], answer: 'R6 774,19', explanation: 'A = P(1 + ni)\n8 400 = P(1 + 3 × 0,08) = P(1,24)\nP = 8 400 ÷ 1,24 ≈ R6 774,19 ✓' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R4 800 teen 7% enkelvoudige rente per jaar vir 2 jaar belê word.', checkMode: 'auto', options: ['R5 472', 'R5 495,52', 'R5 136', 'R672'], correctIndex: 0, explanation: 'A = P(1 + ni) = 4 800(1 + 2 × 0,07) = 4 800(1,14) = R5 472. (R5 495,52 gebruik verkeerdelik saamgestelde rente; R5 136 gebruik verkeerdelik n = 1; R672 gee net die rente, nie die finale bedrag nie.)' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R6 500 teen 4% enkelvoudige rente per jaar vir 5 jaar belê word.', checkMode: 'auto', options: ['R7 908,24', 'R7 800', 'R7 540', 'R1 300'], correctIndex: 1, explanation: 'A = P(1 + ni) = 6 500(1 + 5 × 0,04) = 6 500(1,20) = R7 800. (R7 908,24 gebruik verkeerdelik saamgestelde rente; R7 540 gebruik verkeerdelik n = 4; R1 300 gee net die rente, nie die finale bedrag nie.)' },
+        { difficulty: 'Medium', question: 'Amahle belê R13 000 teen 5,5% enkelvoudige rente per jaar vir 4 jaar. Vind die totale rente verdien (nie die finale bedrag nie).', checkMode: 'auto', options: ['R15 860', 'R2 145', 'R2 860', 'R3 575'], correctIndex: 2, explanation: 'Rente = P × n × i = 13 000 × 4 × 0,055 = R2 860. (R15 860 is die finale bedrag, nie net die rente nie; R2 145 en R3 575 gebruik verkeerdelik n = 3 en n = 5.)' },
+        { difficulty: 'Medium', question: 'ʼn Belegging wat 8% enkelvoudige rente per jaar verdien, groei na R8 400 na 3 jaar. Vind die oorspronklike hoofsom.', checkMode: 'auto', options: ['R6 668,34', 'R7 241,38', 'R35 000', 'R6 774,19'], correctIndex: 3, explanation: 'A = P(1 + ni)\n8 400 = P(1 + 3 × 0,08) = P(1,24)\nP = 8 400 ÷ 1,24 ≈ R6 774,19. (R6 668,34 deel verkeerdelik deur (1,08)³; R7 241,38 gebruik verkeerdelik n = 2; R35 000 behandel R8 400 verkeerdelik as die rente in plaas van die finale bedrag.)' },
 
         // Blok 2 — Saamgestelde rente (Easy, Medium, Medium, Hard)
-        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R3 500 teen 9% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R4532,60', correctAnswers: ['R4532.60', '4532.60', 'R4 532.60', '4 532.60', 'R4532,60', 'R4 532,60', 'R4532,6', '4532,6'], answer: 'R4 532,60', explanation: 'A = P(1 + i)ⁿ = 3 500(1,09)³ = 3 500 × 1,295029 ≈ R4 532,60 ✓' },
-        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R5 200 teen 4,5% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R5934,06', correctAnswers: ['R5934.06', '5934.06', 'R5 934.06', '5 934.06', 'R5934,06', 'R5 934,06'], answer: 'R5 934,06', explanation: 'A = 5 200(1,045)³ = 5 200 × 1,141166... ≈ R5 934,06 ✓' },
-        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R5 500 teen 7,5% saamgestelde rente per jaar vir 6 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R8488,16', correctAnswers: ['R8488.16', '8488.16', 'R8 488.16', '8 488.16', 'R8488,16', 'R8 488,16'], answer: 'R8 488,16', explanation: 'A = 5 500(1,075)⁶ = 5 500 × 1,54330... ≈ R8 488,16 ✓' },
-        { difficulty: 'Hard', question: 'Bereken die finale bedrag as R18 000 teen 8% saamgestelde rente per jaar vir 9 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R35982,08', correctAnswers: ['R35982.08', '35982.08', 'R35 982.08', '35 982.08', 'R35982,08', 'R35 982,08'], answer: 'R35 982,08', explanation: 'A = 18 000(1,08)⁹ = 18 000 × 1,99900... ≈ R35 982,08 ✓' },
+        { difficulty: 'Easy', question: 'Bereken die finale bedrag as R3 500 teen 9% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R4 532,60', 'R4 445', 'R4 158,35', 'R1 032,60'], correctIndex: 0, explanation: 'A = P(1 + i)ⁿ = 3 500(1,09)³ = 3 500 × 1,295029 ≈ R4 532,60. (R4 445 gebruik verkeerdelik enkelvoudige rente; R4 158,35 gebruik verkeerdelik n = 2; R1 032,60 gee net die rente verdien.)' },
+        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R5 200 teen 4,5% saamgestelde rente per jaar vir 3 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R5 902', 'R5 934,06', 'R5 678,53', 'R734,06'], correctIndex: 1, explanation: 'A = 5 200(1,045)³ = 5 200 × 1,141166... ≈ R5 934,06. (R5 902 gebruik verkeerdelik enkelvoudige rente; R5 678,53 gebruik verkeerdelik n = 2; R734,06 gee net die rente verdien.)' },
+        { difficulty: 'Medium', question: 'Bereken die finale bedrag as R5 500 teen 7,5% saamgestelde rente per jaar vir 6 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R7 975', 'R7 895,96', 'R8 488,16', 'R2 988,16'], correctIndex: 2, explanation: 'A = 5 500(1,075)⁶ = 5 500 × 1,54330... ≈ R8 488,16. (R7 975 gebruik verkeerdelik enkelvoudige rente; R7 895,96 gebruik verkeerdelik n = 5; R2 988,16 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Bereken die finale bedrag as R18 000 teen 8% saamgestelde rente per jaar vir 9 jaar belê word (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R30 960', 'R33 316,74', 'R17 982,08', 'R35 982,08'], correctIndex: 3, explanation: 'A = 18 000(1,08)⁹ = 18 000 × 1,99900... ≈ R35 982,08. (R30 960 gebruik verkeerdelik enkelvoudige rente; R33 316,74 gebruik verkeerdelik n = 8; R17 982,08 gee net die rente verdien.)' },
 
         // Blok 3 — Vergelyking van enkelvoudige en saamgestelde rente (Medium, Hard, Hard)
-        { difficulty: 'Medium', question: 'Vergelyk die belegging van R6 000 teen 9% vir 5 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R531,74', correctAnswers: ['R531.74', '531.74', 'R531,74'], answer: 'R531,74', explanation: 'Enkelvoudig: 6 000(1 + 5 × 0,09) = R8 700.\nSaamgesteld: 6 000(1,09)⁵ ≈ R9 231,74.\nVerskil ≈ R531,74 ✓' },
-        { difficulty: 'Hard', question: 'Vergelyk die belegging van R12 000 teen 7% vir 9 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R2501,51', correctAnswers: ['R2501.51', '2501.51', 'R2 501.51', '2 501.51', 'R2501,51', 'R2 501,51'], answer: 'R2 501,51', explanation: 'Enkelvoudig: 12 000(1 + 9 × 0,07) = R19 560.\nSaamgesteld: 12 000(1,07)⁹ ≈ R22 061,51.\nVerskil ≈ R2 501,51 ✓' },
-        { difficulty: 'Hard', question: 'Vergelyk die belegging van R8 000 teen 10% vir 6 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R1372,49', correctAnswers: ['R1372.49', '1372.49', 'R1 372.49', '1 372.49', 'R1372,49', 'R1 372,49'], answer: 'R1 372,49', explanation: 'Enkelvoudig: 8 000(1 + 6 × 0,10) = R12 800.\nSaamgesteld: 8 000(1,10)⁶ ≈ R14 172,49.\nVerskil ≈ R1 372,49 ✓' },
+        { difficulty: 'Medium', question: 'Vergelyk die belegging van R6 000 teen 9% vir 5 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R531,74', 'R8 700', 'R9 231,74', 'R521,74'], correctIndex: 0, explanation: 'Enkelvoudig: 6 000(1 + 5 × 0,09) = R8 700.\nSaamgesteld: 6 000(1,09)⁵ ≈ R9 231,74.\nVerskil ≈ R531,74. (R8 700 en R9 231,74 is die individuele bedrae, nie die verskil nie; R521,74 het ʼn rekenfout.)' },
+        { difficulty: 'Hard', question: 'Vergelyk die belegging van R12 000 teen 7% vir 9 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R19 560', 'R2 501,51', 'R22 061,51', 'R2 401,51'], correctIndex: 1, explanation: 'Enkelvoudig: 12 000(1 + 9 × 0,07) = R19 560.\nSaamgesteld: 12 000(1,07)⁹ ≈ R22 061,51.\nVerskil ≈ R2 501,51. (R19 560 en R22 061,51 is die individuele bedrae, nie die verskil nie; R2 401,51 het ʼn rekenfout.)' },
+        { difficulty: 'Hard', question: 'Vergelyk die belegging van R8 000 teen 10% vir 6 jaar met enkelvoudige rente teenoor saamgestelde rente. Vind die verskil tussen die twee finale bedrae (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R12 800', 'R14 172,49', 'R1 372,49', 'R1 272,49'], correctIndex: 2, explanation: 'Enkelvoudig: 8 000(1 + 6 × 0,10) = R12 800.\nSaamgesteld: 8 000(1,10)⁶ ≈ R14 172,49.\nVerskil ≈ R1 372,49. (R12 800 en R14 172,49 is die individuele bedrae, nie die verskil nie; R1 272,49 het ʼn rekenfout.)' },
 
         // Blok 4 — Huurkoop (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'Buhle koop ʼn stoof ter waarde van R9 000 op huurkoop teen 16% enkelvoudige rente oor 4 jaar, sonder ʼn deposito. Vind haar totale terugbetaling.', checkMode: 'auto', correctAnswer: 'R14760', correctAnswers: ['R14760', '14760', 'R14 760', '14 760', 'R14760,00', 'R14 760,00'], answer: 'R14 760', explanation: 'A = P(1 + ni) = 9 000(1 + 4 × 0,16) = 9 000(1,64) = R14 760 ✓' },
-        { difficulty: 'Medium', question: 'Sipho koop kantoortoerusting ter waarde van R14 000 op huurkoop teen 19% enkelvoudige rente oor 3 jaar, sonder ʼn deposito. Vind sy totale terugbetaling.', checkMode: 'auto', correctAnswer: 'R21980', correctAnswers: ['R21980', '21980', 'R21 980', '21 980', 'R21980,00', 'R21 980,00'], answer: 'R21 980', explanation: 'A = 14 000(1 + 3 × 0,19) = 14 000(1,57) = R21 980 ✓' },
-        { difficulty: 'Hard', question: 'Lerato koop ʼn slaapkamerstel met ʼn kontantprys van R30 000. Sy betaal ʼn 10%-deposito en betaal die balans op huurkoop terug teen 15% enkelvoudige rente per jaar oor 5 jaar. Vind haar totale terugbetaling (deposito plus huurkoop-paaiemente), afgerond na die naaste sent.', checkMode: 'auto', correctAnswer: 'R50250', correctAnswers: ['R50250', '50250', 'R50 250', '50 250', 'R50250,00', 'R50 250,00'], answer: 'R50 250', explanation: 'Deposito = 10% × 30 000 = R3 000.\nBalans = 30 000 − 3 000 = R27 000.\nHuurkoopbedrag op balans = 27 000(1 + 5 × 0,15) = 27 000(1,75) = R47 250.\nTotale terugbetaling = R3 000 + R47 250 = R50 250 ✓' },
+        { difficulty: 'Medium', question: 'Buhle koop ʼn stoof ter waarde van R9 000 op huurkoop teen 16% enkelvoudige rente oor 4 jaar, sonder ʼn deposito. Vind haar totale terugbetaling.', checkMode: 'auto', options: ['R16 306,16', 'R5 760', 'R13 320', 'R14 760'], correctIndex: 3, explanation: 'A = P(1 + ni) = 9 000(1 + 4 × 0,16) = 9 000(1,64) = R14 760. (R16 306,16 gebruik verkeerdelik saamgestelde rente; R5 760 gee net die rente, nie die totale terugbetaling nie; R13 320 gebruik verkeerdelik n = 3.)' },
+        { difficulty: 'Medium', question: 'Sipho koop kantoortoerusting ter waarde van R14 000 op huurkoop teen 19% enkelvoudige rente oor 3 jaar, sonder ʼn deposito. Vind sy totale terugbetaling.', checkMode: 'auto', options: ['R21 980', 'R23 592,23', 'R7 980', 'R19 320'], correctIndex: 0, explanation: 'A = 14 000(1 + 3 × 0,19) = 14 000(1,57) = R21 980. (R23 592,23 gebruik verkeerdelik saamgestelde rente; R7 980 gee net die rente, nie die totale terugbetaling nie; R19 320 gebruik verkeerdelik n = 2.)' },
+        { difficulty: 'Hard', question: 'Lerato koop ʼn slaapkamerstel met ʼn kontantprys van R30 000. Sy betaal ʼn 10%-deposito en betaal die balans op huurkoop terug teen 15% enkelvoudige rente per jaar oor 5 jaar. Vind haar totale terugbetaling (deposito plus huurkoop-paaiemente), afgerond na die naaste sent.', checkMode: 'auto', options: ['R55 500', 'R50 250', 'R47 250', 'R46 200'], correctIndex: 1, explanation: 'Deposito = 10% × 30 000 = R3 000.\nBalans = 30 000 − 3 000 = R27 000.\nHuurkoopbedrag op balans = 27 000(1 + 5 × 0,15) = 27 000(1,75) = R47 250.\nTotale terugbetaling = R3 000 + R47 250 = R50 250. (R55 500 pas rente verkeerdelik op die volle kontantprys toe en tel steeds die deposito by; R47 250 vergeet om die deposito weer by te tel; R46 200 gebruik verkeerdelik n = 4.)' },
 
         // Blok 5 — Enkelvoudige groei-/verval-woordprobleme (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'ʼn Dorp se bevolking van 40 000 groei teen 3,5% saamgestelde groei per jaar. Vind die bevolking na 7 jaar, afgerond na die naaste heelgetal.', checkMode: 'auto', correctAnswer: '50891', correctAnswers: ['50891', '50 891'], answer: '50 891', explanation: 'A = 40 000(1,035)⁷ = 40 000 × 1,27228... ≈ 50 891 ✓' },
-        { difficulty: 'Medium', question: 'ʼn Masjien ter waarde van R210 000 verval deur enkelvoudige (reguitlyn) verval teen 14% per jaar. Vind sy waarde na 4 jaar.', checkMode: 'auto', correctAnswer: 'R92400', correctAnswers: ['R92400', '92400', 'R92 400', '92 400', 'R92400,00', 'R92 400,00'], answer: 'R92 400', explanation: 'A = P(1 − ni) = 210 000(1 − 4 × 0,14) = 210 000(0,44) = R92 400 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Trekker ter waarde van R260 000 verval deur enkelvoudige (reguitlyn) verval teen 16% per jaar. Vind sy waarde na 5 jaar.', checkMode: 'auto', correctAnswer: 'R52000', correctAnswers: ['R52000', '52000', 'R52 000', '52 000', 'R52000,00', 'R52 000,00'], answer: 'R52 000', explanation: 'A = P(1 − ni) = 260 000(1 − 5 × 0,16) = 260 000(0,20) = R52 000 ✓' },
+        { difficulty: 'Medium', question: 'ʼn Dorp se bevolking van 40 000 groei teen 3,5% saamgestelde groei per jaar. Vind die bevolking na 7 jaar, afgerond na die naaste heelgetal.', checkMode: 'auto', options: ['49 800', '49 170', '50 891', '52 672'], correctIndex: 2, explanation: 'A = 40 000(1,035)⁷ = 40 000 × 1,27228... ≈ 50 891. (49 800 gebruik verkeerdelik enkelvoudige groei; 49 170 gebruik verkeerdelik n = 6; 52 672 gebruik verkeerdelik n = 8.)' },
+        { difficulty: 'Medium', question: 'ʼn Masjien ter waarde van R210 000 verval deur enkelvoudige (reguitlyn) verval teen 14% per jaar. Vind sy waarde na 4 jaar.', checkMode: 'auto', options: ['R114 871,68', 'R121 800', 'R63 000', 'R92 400'], correctIndex: 3, explanation: 'A = P(1 − ni) = 210 000(1 − 4 × 0,14) = 210 000(0,44) = R92 400. (R114 871,68 gebruik verkeerdelik saamgestelde verval; R121 800 gebruik verkeerdelik n = 3; R63 000 gebruik verkeerdelik n = 5.)' },
+        { difficulty: 'Hard', question: 'ʼn Trekker ter waarde van R260 000 verval deur enkelvoudige (reguitlyn) verval teen 16% per jaar. Vind sy waarde na 5 jaar.', checkMode: 'auto', options: ['R52 000', 'R108 735,12', 'R93 600', 'R10 400'], correctIndex: 0, explanation: 'A = P(1 − ni) = 260 000(1 − 5 × 0,16) = 260 000(0,20) = R52 000. (R108 735,12 gebruik verkeerdelik saamgestelde verval; R93 600 gebruik verkeerdelik n = 4; R10 400 gebruik verkeerdelik n = 6.)' },
 
         // Blok 6 — Gekombineerde multi-stap probleme (Hard, Hard, Hard)
-        { difficulty: 'Hard', question: 'Nomsa belê R14 000 teen 8,5% saamgestelde rente per jaar vir 6 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R22840,55', correctAnswers: ['R22840.55', '22840.55', 'R22 840.55', '22 840.55', 'R22840,55', 'R22 840,55'], answer: 'R22 840,55', explanation: 'A = 14 000(1,085)⁶ = 14 000 × 1,63147... ≈ R22 840,55 ✓' },
-        { difficulty: 'Hard', question: 'Kagiso belê R7 000 teen 9,5% saamgestelde rente per jaar vir 5 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', correctAnswer: 'R11019,67', correctAnswers: ['R11019.67', '11019.67', 'R11 019.67', '11 019.67', 'R11019,67', 'R11 019,67'], answer: 'R11 019,67', explanation: 'A = 7 000(1,095)⁵ = 7 000 × 1,57424... ≈ R11 019,67 ✓' },
-        { difficulty: 'Hard', question: 'Zanele verdien R1 440 enkelvoudige rente op ʼn hoofsom van R6 000 belê vir 4 jaar. Vind die jaarlikse rentekoers wat gebruik is.', checkMode: 'auto', correctAnswer: '6%', correctAnswers: ['6%', '6', '0,06'], answer: '6%', explanation: 'Rente = P × n × i\n1 440 = 6 000 × 4 × i\n1 440 = 24 000i\ni = 1 440 ÷ 24 000 = 0,06 = 6% ✓' },
+        { difficulty: 'Hard', question: 'Nomsa belê R14 000 teen 8,5% saamgestelde rente per jaar vir 6 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R21 140', 'R22 840,55', 'R21 051,20', 'R8 840,55'], correctIndex: 1, explanation: 'A = 14 000(1,085)⁶ = 14 000 × 1,63147... ≈ R22 840,55. (R21 140 gebruik verkeerdelik enkelvoudige rente; R21 051,20 gebruik verkeerdelik n = 5; R8 840,55 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Kagiso belê R7 000 teen 9,5% saamgestelde rente per jaar vir 5 jaar. Vind die finale bedrag (rond af tot 2 desimale plekke).', checkMode: 'auto', options: ['R10 325', 'R10 063,63', 'R11 019,67', 'R4 019,67'], correctIndex: 2, explanation: 'A = 7 000(1,095)⁵ = 7 000 × 1,57424... ≈ R11 019,67. (R10 325 gebruik verkeerdelik enkelvoudige rente; R10 063,63 gebruik verkeerdelik n = 4; R4 019,67 gee net die rente verdien.)' },
+        { difficulty: 'Hard', question: 'Zanele verdien R1 440 enkelvoudige rente op ʼn hoofsom van R6 000 belê vir 4 jaar. Vind die jaarlikse rentekoers wat gebruik is.', checkMode: 'auto', options: ['24%', '8%', '3%', '6%'], correctIndex: 3, explanation: 'Rente = P × n × i, dus i = Rente ÷ (P × n) = 1 440 ÷ (6 000 × 4) = 0,06 = 6%. (24% vergeet om deur n = 4 te deel; 8% gebruik verkeerdelik n = 3; 3% halveer verkeerdelik die korrekte koers.)' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het enkelvoudige rente, saamgestelde rente en huurkoopprobleme bemeester.' },

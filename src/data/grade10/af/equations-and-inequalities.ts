@@ -9,6 +9,11 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
+// Stacked numerator/denominator fraction notation instead of a plain "n/d"
+// slash — renders as an actual fraction bar via the site's existing
+// whitelisted-HTML pipeline.
+const frac = (num: string, den: string) =>
+  `<span style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 2px;line-height:1.15;font-size:0.95em;"><span style="border-bottom:1.5px solid currentColor;padding:0 3px;">${num}</span><span style="padding:0 3px;">${den}</span></span>`
 
 export const topicData: TopicData = {
   title: 'Vergelykings en Ongelykhede',
@@ -612,188 +617,215 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Los op vir x: x² − 9x + 20 = 0',
-      answer: 'x=4 of x=5',
       checkMode: 'auto',
-      correctAnswers: ['x=4 of x=5', 'x=5 of x=4'],
-      explanation: 'Vind twee getalle wat vermenigvuldig tot 20 en optel tot −9: −4 en −5. Dus (x−4)(x−5)=0, wat x=4 of x=5 gee.',
+      options: ['x = 4 of x = 5', 'x = -4 of x = -5', 'x = -4 of x = 5', 'x = 4 of x = -5'],
+      correctIndex: 0,
+      explanation: 'Vind twee getalle wat vermenigvuldig tot 20 en optel tot −9: −4 en −5. Dus (x−4)(x−5)=0, wat x=4 of x=5 gee. Om die tekens van die faktore om te keer (die ander opsies) gee getalle wat nie meer tot +20 vermenigvuldig of tot −9 optel nie.',
     },
 
     // ── Q2 Easy — factorisation with negative constant ────────────────────────
     {
       difficulty: 'Easy',
       question: 'Los op vir x: x² + 2x − 15 = 0',
-      answer: 'x=-5 of x=3',
       checkMode: 'auto',
-      correctAnswers: ['x=-5 of x=3', 'x=3 of x=-5'],
-      explanation: 'Vind twee getalle wat vermenigvuldig tot −15 en optel tot 2: 5 en −3. Dus (x+5)(x−3)=0, wat x=−5 of x=3 gee.',
+      options: ['x = 5 of x = -3', 'x = -5 of x = 3', 'x = -3 of x = -5', 'x = 15 of x = -1'],
+      correctIndex: 1,
+      explanation: 'Vind twee getalle wat vermenigvuldig tot −15 en optel tot 2: 5 en −3. Dus (x+5)(x−3)=0, wat x=−5 of x=3 gee. Om albei tekens om te keer (opsie A) of die verkeerde faktorpaar van 15 te gebruik (opsie D) is algemene foute.',
     },
 
     // ── Q3 Medium — factorisation with a≠1 (a×c method) ───────────────────────
     {
       difficulty: 'Medium',
       question: 'Los op vir x: 2x² − x − 6 = 0',
-      answer: 'x=-3/2 of x=2',
       checkMode: 'auto',
-      correctAnswers: ['x=-3/2 of x=2', 'x=2 of x=-3/2', 'x=-1.5 of x=2', 'x=2 of x=-1.5'],
-      explanation: 'a×c = 2×(−6) = −12. Vind twee getalle wat vermenigvuldig tot −12 en optel tot −1: −4 en 3. Splits: 2x²−4x+3x−6=0 → 2x(x−2)+3(x−2)=0 → (2x+3)(x−2)=0, wat x=−3/2 of x=2 gee.',
+      options: ['x = 3/2 of x = -2', 'x = -2/3 of x = 3', 'x = -3/2 of x = 2', 'x = 3/2 of x = 2'],
+      correctIndex: 2,
+      explanation: 'a×c = 2×(−6) = −12. Vind twee getalle wat vermenigvuldig tot −12 en optel tot −1: −4 en 3. Splits: 2x²−4x+3x−6=0 → 2x(x−2)+3(x−2)=0 → (2x+3)(x−2)=0, wat x=−3/2 of x=2 gee. Om die tekens van die wortels om te keer (opsie A) of die verkeerde faktorpaar te gebruik (opsie B) is algemene foute.',
     },
 
     // ── Q4 Medium — rearrange before factorising ──────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Los op vir x: x² = 7x − 12',
-      answer: 'x=3 of x=4',
       checkMode: 'auto',
-      correctAnswers: ['x=3 of x=4', 'x=4 of x=3'],
-      explanation: 'Herrangskik na x²−7x+12=0. Vind twee getalle wat vermenigvuldig tot 12 en optel tot −7: −3 en −4. Dus (x−3)(x−4)=0, wat x=3 of x=4 gee.',
+      options: ['x = -3 of x = -4', 'x = 12 of x = -1', 'x = 2 of x = 5', 'x = 3 of x = 4'],
+      correctIndex: 3,
+      explanation: 'Herrangskik na x²−7x+12=0. Vind twee getalle wat vermenigvuldig tot 12 en optel tot −7: −3 en −4. Dus (x−3)(x−4)=0, wat x=3 of x=4 gee. Om nie korrek te herrangskik nie (opsie A) of ʼn rekenfout in die faktorpaar (opsie C) is algemene foute.',
     },
 
     // ── Q5 Medium — factorisation with fractional root ────────────────────────
     {
       difficulty: 'Medium',
       question: 'Los op vir x: 3x² + 5x − 2 = 0',
-      answer: 'x=1/3 of x=-2',
       checkMode: 'auto',
-      correctAnswers: ['x=1/3 of x=-2', 'x=-2 of x=1/3'],
-      explanation: 'a×c = 3×(−2) = −6. Vind twee getalle wat vermenigvuldig tot −6 en optel tot 5: 6 en −1. Splits: 3x²+6x−x−2=0 → 3x(x+2)−1(x+2)=0 → (3x−1)(x+2)=0, wat x=1/3 of x=−2 gee.',
+      options: ['x = 1/3 of x = -2', 'x = -1/3 of x = 2', 'x = 1/3 of x = 2', 'x = 3 of x = -2'],
+      correctIndex: 0,
+      explanation: 'a×c = 3×(−2) = −6. Vind twee getalle wat vermenigvuldig tot −6 en optel tot 5: 6 en −1. Splits: 3x²+6x−x−2=0 → 3x(x+2)−1(x+2)=0 → (3x−1)(x+2)=0, wat x=1/3 of x=−2 gee. Tekenfoute (opsie B) of om die koëffisiënt 3 te laat val wanneer x geïsoleer word (opsie D) is algemene foute.',
     },
 
     // ── Q6 Medium — quadratic formula, irrational roots ───────────────────────
     {
       difficulty: 'Medium',
       question: 'Gebruik die kwadratiese formule om vir x op te los (korrek tot 2 desimale plekke): x² + 4x − 7 = 0',
-      answer: 'x≈1,32 of x≈-5,32',
       checkMode: 'auto',
-      correctAnswers: ['x≈1,32 of x≈-5,32', 'x≈-5,32 of x≈1,32', 'x=1,32 of x=-5,32', 'x≈1.32 of x≈-5.32', 'x≈-5.32 of x≈1.32', 'x=1.32 of x=-5.32'],
-      explanation: 'a=1, b=4, c=−7. Diskriminant = 4²−4(1)(−7) = 16+28 = 44. x = (−4±√44)/2 = −2±√11. Dus x = −2+√11 ≈ 1,32 of x = −2−√11 ≈ −5,32.',
+      options: ['x ≈ -0,68 of x ≈ -7,32', 'x ≈ 1,32 of x ≈ -5,32', 'x ≈ 5,32 of x ≈ -1,32', 'x ≈ 1,32 of x ≈ 4,68'],
+      correctIndex: 1,
+      explanation: 'a=1, b=4, c=−7. Diskriminant = 4²−4(1)(−7) = 16+28 = 44. x = (−4±√44)/2 = −2±√11 ≈ 1,32 of ≈ −5,32. Om te vergeet om die −b-term deur 2a te deel (opsie A), of die verkeerde teken vir −b te gebruik (opsie C), is algemene foute.',
     },
 
     // ── Q7 Medium — quadratic formula, irrational roots (leave in surd form) ──
     {
       difficulty: 'Medium',
       question: 'Los op vir x met die kwadratiese formule, en los jou antwoord in eenvoudigste wortelvorm: 2x² − 3x − 4 = 0',
-      answer: 'x=(3±√41)/4',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['x = (3 ± √41) / 2', 'x = (-3 ± √41) / 4', 'x = (3 ± √41) / 4', 'x = (3 ± √25) / 4'],
+      correctIndex: 2,
+      explanation: 'a=2, b=−3, c=−4. Diskriminant = (−3)²−4(2)(−4) = 9+32 = 41. x = (−(−3)±√41)/(2×2) = (3±√41)/4. Om te vergeet om a in die noemer te verdubbel (opsie A), of ʼn tekenfout op −b (opsie B), is algemene foute.',
     },
 
     // ── Q8 Hard — discriminant shows no real solutions ────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Toon dat x² + 2x + 5 = 0 geen reële oplossings het nie.',
-      answer: 'Diskriminant = b²−4ac = 2²−4(1)(5) = 4−20 = −16. Aangesien die diskriminant negatief is, is die vierkantswortel van ʼn negatiewe getal nie ʼn reële getal nie, dus het hierdie vergelyking geen reële oplossings nie.',
-      checkMode: 'self',
+      question: 'Wat is die diskriminant van x² + 2x + 5 = 0, en wat sê dit oor die oplossings?',
+      checkMode: 'auto',
+      options: [
+        'Δ = 24, dus is daar twee verskillende reële oplossings (Δ > 0)',
+        'Δ = -16, dus is daar een herhaalde reële oplossing',
+        'Δ = 4, dus is daar twee verskillende reële oplossings (Δ > 0)',
+        'Δ = -16, dus is daar geen reële oplossings nie (Δ < 0)',
+      ],
+      correctIndex: 3,
+      explanation: 'Diskriminant = b²−4ac = 2²−4(1)(5) = 4−20 = −16. Aangesien Δ < 0, is die vierkantswortel van ʼn negatiewe getal nie reëel nie, dus het hierdie vergelyking geen reële oplossings nie. Tekenfoute wanneer 4ac bereken word (opsie A), of om Δ<0 met Δ=0 te verwar (opsie B), is algemene foute.',
     },
 
     // ── Q9 Hard — quadratic formula, irrational roots ─────────────────────────
     {
       difficulty: 'Hard',
       question: 'Los op vir x met die kwadratiese formule, en los jou antwoord in eenvoudigste wortelvorm: 3x² − 2x − 2 = 0',
-      answer: 'x=(1±√7)/3',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['x = (1 ± √7) / 3', 'x = (-1 ± √7) / 3', 'x = (1 ± √10) / 3', 'x = (1 ± √7) / 6'],
+      correctIndex: 0,
+      explanation: 'a=3, b=−2, c=−2. Diskriminant = (−2)²−4(3)(−2) = 4+24 = 28. x = (2±√28)/6 = (2±2√7)/6 = (1±√7)/3 na vereenvoudiging. Tekenfoute op −b (opsie B) of rekenfoute in die diskriminant (opsie C) is algemene foute.',
     },
 
     // ── Q10 Medium — discriminant shows equal roots ───────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Gebruik die diskriminant om te toon dat x² − 6x + 9 = 0 twee gelyke reële wortels het, en los dan die vergelyking op.',
-      answer: 'Diskriminant = (−6)²−4(1)(9) = 36−36 = 0, dus is daar twee gelyke reële wortels. Faktoriseer: (x−3)²=0, dus x=3.',
-      checkMode: 'self',
+      question: 'Gebruik die diskriminant om te toon dat x² − 6x + 9 = 0 twee gelyke reële wortels het, en los dan vir x op.',
+      checkMode: 'auto',
+      options: [
+        'Δ = 36, dus is daar twee verskillende reële wortels; x = 3 of x = -3',
+        'Δ = 0, dus is daar twee gelyke reële wortels; x = 3',
+        'Δ = 0, dus is daar twee gelyke reële wortels; x = -3',
+        'Δ = -36, dus is daar geen reële wortels nie',
+      ],
+      correctIndex: 1,
+      explanation: 'Diskriminant = (−6)²−4(1)(9) = 36−36 = 0, dus is daar twee gelyke reële wortels. Faktoriseer: (x−3)²=0, dus x=3. Om die −4ac-term te vergeet (opsie A), of ʼn tekenfout in die finale wortel (opsie C), is algemene foute.',
     },
 
     // ── Q11 Medium — quadratic inequality (>), roots outside ──────────────────
     {
       difficulty: 'Medium',
       question: 'Los op vir x: x² − x − 6 > 0',
-      answer: 'x<-2 of x>3',
       checkMode: 'auto',
-      correctAnswers: ['x<-2 of x>3', 'x>3 of x<-2'],
-      explanation: 'Faktoriseer: (x−3)(x+2)>0. Kritieke waardes: x=−2 en x=3. Aangesien die parabool opwaarts oopmaak, is dit bo die x-as (positief) buite die wortels: x<−2 of x>3.',
+      options: ['-2 < x < 3', 'x > -2 of x < 3', 'x < -2 of x > 3', 'x ≤ -2 of x ≥ 3'],
+      correctIndex: 2,
+      explanation: 'Faktoriseer: (x−3)(x+2)>0. Kritieke waardes: x=−2 en x=3. Aangesien die parabool opwaarts oopmaak, is dit positief buite die wortels: x<−2 of x>3. Om die interval tussen die wortels te kies (opsie A) of die verkeerde grenstipe te gebruik (opsie D) is algemene foute.',
     },
 
     // ── Q12 Medium — quadratic inequality (≥), between roots after rearranging ─
     {
       difficulty: 'Medium',
       question: 'Los op vir x: −x² + 2x + 8 ≥ 0',
-      answer: '-2≤x≤4',
       checkMode: 'auto',
-      correctAnswer: '-2≤x≤4',
-      explanation: 'Vermenigvuldig albei kante met −1 en keer die ongelykheidsteken om: x²−2x−8≤0. Faktoriseer: (x−4)(x+2)≤0. Kritieke waardes: x=−2 en x=4. Aangesien hierdie parabool (na omkering) opwaarts oopmaak, is dit ≤0 tussen die wortels: −2≤x≤4.',
+      options: ['x ≤ -2 of x ≥ 4', '-4 ≤ x ≤ 2', '-2 < x < 4', '-2 ≤ x ≤ 4'],
+      correctIndex: 3,
+      explanation: 'Vermenigvuldig albei kante met −1 en keer die ongelykheidsteken om: x²−2x−8≤0. Faktoriseer: (x−4)(x+2)≤0. Kritieke waardes: x=−2 en x=4. Aangesien hierdie parabool (na omkering) opwaarts oopmaak, is dit ≤0 tussen die wortels: −2≤x≤4. Om te vergeet om die ongelykheidsteken om te keer (opsie A) is die klassieke fout hier.',
     },
 
     // ── Q13 Hard — quadratic inequality (<), a≠1 ──────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Los op vir x: 2x² + 3x − 2 < 0',
-      answer: '-2<x<1/2',
       checkMode: 'auto',
-      correctAnswer: '-2<x<1/2',
-      explanation: 'Faktoriseer: (2x−1)(x+2)<0. Kritieke waardes: x=1/2 en x=−2. Aangesien die parabool opwaarts oopmaak, is dit onder die x-as (negatief) tussen die wortels: −2<x<1/2.',
+      options: ['-2 < x < 1/2', 'x < -2 of x > 1/2', '-1/2 < x < 2', '-2 ≤ x ≤ 1/2'],
+      correctIndex: 0,
+      explanation: 'Faktoriseer: (2x−1)(x+2)<0. Kritieke waardes: x=1/2 en x=−2. Aangesien die parabool opwaarts oopmaak, is dit negatief tussen die wortels: −2<x<1/2. Om die buitenste interval te kies (opsie B) of die verkeerde grenstipe te gebruik (opsie D) is algemene foute.',
     },
 
     // ── Q14 Medium — quadratic inequality (≤), perfect trinomial ──────────────
     {
       difficulty: 'Medium',
       question: 'Los op vir x: x² − 5x + 6 ≤ 0',
-      answer: '2≤x≤3',
       checkMode: 'auto',
-      correctAnswer: '2≤x≤3',
-      explanation: 'Faktoriseer: (x−2)(x−3)≤0. Kritieke waardes: x=2 en x=3. Aangesien die parabool opwaarts oopmaak, is dit ≤0 tussen die wortels: 2≤x≤3.',
+      options: ['x ≤ 2 of x ≥ 3', '2 ≤ x ≤ 3', '-3 ≤ x ≤ -2', '2 < x < 3'],
+      correctIndex: 1,
+      explanation: 'Faktoriseer: (x−2)(x−3)≤0. Kritieke waardes: x=2 en x=3. Aangesien die parabool opwaarts oopmaak, is dit ≤0 tussen die wortels: 2≤x≤3. Om die buitenste interval te kies (opsie A) of streng ongelykhede te gebruik (opsie D) is algemene foute.',
     },
 
     // ── Q15 Hard — rational inequality, strict, both critical values excluded ──
     {
       difficulty: 'Hard',
-      question: 'Los op vir x: (x−1)/(x+2) > 0. Onthou om enige waarde wat die noemer nul maak, uit te sluit.',
-      answer: 'x<-2 of x>1',
+      question: `Los op vir x: ${frac('x − 1', 'x + 2')} > 0. Onthou om enige waarde wat die noemer nul maak, uit te sluit.`,
       checkMode: 'auto',
-      correctAnswers: ['x<-2 of x>1', 'x>1 of x<-2'],
-      explanation: 'Kritieke waardes: x=1 (teller nul) en x=−2 (noemer nul, uitgesluit). Toetsing van die intervalle toon die uitdrukking is positief wanneer x<−2 of x>1. Let op x=−2 word uitgesluit (onbepaald) en x=1 word uitgesluit aangesien die ongelykheid streng is.',
+      options: ['-2 < x < 1', 'x ≤ -2 of x ≥ 1', 'x < -2 of x > 1', '1 < x'],
+      correctIndex: 2,
+      explanation: 'Kritieke waardes: x=1 (teller nul) en x=−2 (noemer nul, altyd uitgesluit). Toetsing van die intervalle toon die uitdrukking is positief wanneer x<−2 of x>1. Om x=−2 in te sluit (opsie B) is ʼn ernstige fout aangesien die uitdrukking daar onbepaald is; om ʼn tak van die oplossing weg te laat (opsie D) mis deel van die oplossing.',
     },
 
     // ── Q16 Hard — rational inequality, ≤, one boundary included ──────────────
     {
       difficulty: 'Hard',
-      question: 'Los op vir x: (x+3)/(x−2) ≤ 0. Onthou om enige waarde wat die noemer nul maak, uit te sluit.',
-      answer: '-3≤x<2',
+      question: `Los op vir x: ${frac('x + 3', 'x − 2')} ≤ 0. Onthou om enige waarde wat die noemer nul maak, uit te sluit.`,
       checkMode: 'auto',
-      correctAnswer: '-3≤x<2',
-      explanation: 'Kritieke waardes: x=−3 (teller nul, ingesluit aangesien die uitdrukking daar gelyk is aan 0) en x=2 (noemer nul, moet uitgesluit word). Toetsing van die intervalle toon die uitdrukking is negatief of nul vir −3≤x<2.',
+      options: ['-3 < x ≤ 2', '-3 ≤ x ≤ 2', 'x ≤ -3 of x > 2', '-3 ≤ x < 2'],
+      correctIndex: 3,
+      explanation: 'Kritieke waardes: x=−3 (teller nul, ingesluit aangesien die uitdrukking daar gelyk is aan 0) en x=2 (noemer nul, moet altyd uitgesluit word). Toetsing van die intervalle toon die uitdrukking is negatief of nul vir −3≤x<2. Om x=2 in te sluit (opsie B) is ʼn ernstige fout aangesien die uitdrukking daar onbepaald is.',
     },
 
     // ── Q17 Hard — rational inequality, ≥, one boundary included ──────────────
     {
       difficulty: 'Hard',
-      question: 'Los op vir x: (2x−1)/(x+4) ≥ 0. Verduidelik waarom x=−4 uit jou antwoord uitgesluit moet word, al lyk dit of die tekenpatroon iets anders aandui.',
-      answer: 'x<-4 of x≥1/2. x=−4 maak die noemer nul, dus is die uitdrukking daar onbepaald — dit kan nooit in die oplossingstel ingesluit word nie, ongeag die tekenpatroon aan weerskante daarvan.',
-      checkMode: 'self',
+      question: `Los op vir x: ${frac('2x − 1', 'x + 4')} ≥ 0. Onthou dat die waarde wat die noemer nul maak, altyd uitgesluit moet word.`,
+      checkMode: 'auto',
+      options: ['x < -4 of x ≥ 1/2', '-4 ≤ x ≤ 1/2', 'x ≤ -4 of x ≥ 1/2', 'x < -4 of x > 1/2'],
+      correctIndex: 0,
+      explanation: 'Kritieke waardes: teller nul by x=1/2 (ingesluit, aangesien die uitdrukking daar gelyk is aan nul) en noemer nul by x=−4 (altyd uitgesluit, aangesien die uitdrukking daar onbepaald is). Toetsing van die intervalle gee x<−4 of x≥1/2. Om x=−4 in te sluit (opsie C) is ʼn ernstige fout, ongeag die tekenpatroon daar naby.',
     },
 
     // ── Q18 Medium — simultaneous linear-quadratic, two integer solutions ─────
     {
       difficulty: 'Medium',
       question: 'Los gelyktydig op vir x en y: y = x + 1 en y = x² − 1',
-      answer: 'x=2,y=3 of x=-1,y=0',
       checkMode: 'auto',
-      correctAnswers: ['x=2,y=3 of x=-1,y=0', 'x=-1,y=0 of x=2,y=3'],
-      explanation: 'Stel x+1 = x²−1, dus x²−x−2=0, wat (x−2)(x+1)=0 gee, dus x=2 of x=−1. Vervang in y=x+1: as x=2, is y=3; as x=−1, is y=0. Kontroleer: (2)²−1=3 ✓ en (−1)²−1=0 ✓.',
+      options: ['x=2,y=3 of x=1,y=0', 'x=2,y=3 of x=-1,y=0', 'x=-2,y=-1 of x=1,y=0', 'x=2,y=1 of x=-1,y=0'],
+      correctIndex: 1,
+      explanation: 'Stel x+1 = x²−1, dus x²−x−2=0, wat (x−2)(x+1)=0 gee, dus x=2 of x=−1. Vervang in y=x+1: as x=2, is y=3; as x=−1, is y=0. Kontroleer: (2)²−1=3 ✓ en (−1)²−1=0 ✓. Om nie korrek terug te vervang om y te vind nie (opsies A en D) is ʼn algemene fout.',
     },
 
     // ── Q19 Medium — simultaneous linear-quadratic, two integer solutions ─────
     {
       difficulty: 'Medium',
       question: 'Los gelyktydig op vir x en y: y = 2x − 3 en y = x² − 4x + 5',
-      answer: 'x=2,y=1 of x=4,y=5',
       checkMode: 'auto',
-      correctAnswers: ['x=2,y=1 of x=4,y=5', 'x=4,y=5 of x=2,y=1'],
-      explanation: 'Stel 2x−3 = x²−4x+5, dus x²−6x+8=0, wat (x−2)(x−4)=0 gee, dus x=2 of x=4. Vervang in y=2x−3: as x=2, is y=1; as x=4, is y=5. Kontroleer: (2)²−4(2)+5=1 ✓ en (4)²−4(4)+5=5 ✓.',
+      options: ['x=2,y=1 of x=4,y=13', 'x=-2,y=-7 of x=-4,y=-11', 'x=2,y=1 of x=4,y=5', 'x=2,y=5 of x=4,y=1'],
+      correctIndex: 2,
+      explanation: 'Stel 2x−3 = x²−4x+5, dus x²−6x+8=0, wat (x−2)(x−4)=0 gee, dus x=2 of x=4. Vervang in y=2x−3: as x=2, is y=1; as x=4, is y=5. Kontroleer: (2)²−4(2)+5=1 ✓ en (4)²−4(4)+5=5 ✓. Om die gepaarde y-waardes te verwissel (opsie D) is ʼn algemene fout.',
     },
 
     // ── Q20 Hard — simultaneous linear-quadratic, irrational solutions ────────
     {
       difficulty: 'Hard',
       question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: x + y = 5 en y = x² − 3x + 1',
-      answer: 'Uit die eerste vergelyking, y=5−x. Vervang: 5−x=x²−3x+1, dus x²−2x−4=0. Met die kwadratiese formule: x=(2±√20)/2=1±√5. As x=1+√5, is y=5−(1+√5)=4−√5. As x=1−√5, is y=5−(1−√5)=4+√5.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: [
+        'x=1+√5, y=4+√5 of x=1-√5, y=4-√5',
+        'x=2+√5, y=3-√5 of x=2-√5, y=3+√5',
+        'x=1+√20, y=4-√20 of x=1-√20, y=4+√20',
+        'x=1+√5, y=4-√5 of x=1-√5, y=4+√5',
+      ],
+      correctIndex: 3,
+      explanation: 'Uit die eerste vergelyking, y=5−x. Vervang: 5−x=x²−3x+1, dus x²−2x−4=0. Met die kwadratiese formule: x=(2±√20)/2=1±√5. As x=1+√5, is y=5−(1+√5)=4−√5. As x=1−√5, is y=5−(1−√5)=4+√5. Om te vergeet om √20 deur 2 te deel (opsie C) of om die gepaarde y-waardes te verwissel (opsie A) is algemene foute.',
     },
   ],
 
@@ -823,36 +855,36 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok A — Lineêre vergelykings met hakies / breuke (posisies 0-2)
-        { difficulty: 'Easy', question: 'Los op vir x: 4(x − 3) = 20', answer: 'x=8', checkMode: 'auto', correctAnswer: 'x=8', correctAnswers: ['x=8', 'x = 8', '8'], explanation: 'Brei uit: 4x − 12 = 20.\nTel 12 by: 4x = 32.\nDeel deur 4: x = 8 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Los op vir x: 5x − 2(x + 1) = 13', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Brei uit (die minusteken keer albei tekens om): 5x − 2x − 2 = 13.\nBring gelyksoortige terme bymekaar: 3x − 2 = 13.\nTel 2 by: 3x = 15.\nDeel deur 3: x = 5 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: (3x + 1)/4 = (x − 2)/2', answer: 'x=-5', checkMode: 'auto', correctAnswer: 'x=-5', correctAnswers: ['x=-5', 'x = -5', '-5'], explanation: 'Die KGV van 4 en 2 is 4. Vermenigvuldig elke term met 4: (3x + 1) = 2(x − 2).\nBrei uit: 3x + 1 = 2x − 4.\nTrek 2x af: x + 1 = −4.\nTrek 1 af: x = −5 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x: 4(x − 3) = 20', checkMode: 'auto', options: ['x = 9', 'x = 5,75', 'x = 2', 'x = 8'], correctIndex: 3, explanation: 'Brei uit: 4x − 12 = 20. Tel 12 by albei kante: 4x = 32. Deel deur 4: x = 8. Om te vergeet om die 4 oor die hakie te versprei (opsie B), of ʼn tekenfout wanneer x geïsoleer word (opsie C), is algemene foute.' },
+        { difficulty: 'Easy-Medium', question: 'Los op vir x: 5x − 2(x + 1) = 13', checkMode: 'auto', options: ['x = 11/3', 'x = 5', 'x = 3', 'x = 15'], correctIndex: 1, explanation: 'Brei uit (die minusteken keer albei tekens in die hakie om): 5x − 2x − 2 = 13. Bring gelyksoortige terme bymekaar: 3x − 2 = 13. Tel 2 by: 3x = 15. Deel deur 3: x = 5. Om te vergeet om die negatiewe teken oor elke term in die hakie te versprei (opsie A) is die klassieke fout hier.' },
+        { difficulty: 'Medium', question: `Los op vir x: ${frac('3x + 1', '4')} = ${frac('x − 2', '2')}`, checkMode: 'auto', options: ['x = -3', 'x = -1,5', 'x = -5', 'x = 3'], correctIndex: 2, explanation: 'Die KGV van 4 en 2 is 4. Vermenigvuldig elke term met 4: (3x + 1) = 2(x − 2). Brei uit: 3x + 1 = 2x − 4. Trek 2x af: x + 1 = −4. Trek 1 af: x = −5. Om te vergeet om die 2 te versprei, of ʼn tekenfout wanneer die hakie uitgebrei word, is algemene foute.' },
 
         // Blok B — Kwadratiese vergelykings deur faktorisering (posisies 3-5)
-        { difficulty: 'Easy', question: 'Los op vir x: x² − 3x − 10 = 0', answer: 'x=5 of x=-2', checkMode: 'auto', correctAnswers: ['x=5 of x=-2', 'x=-2 of x=5'], explanation: 'Vind twee getalle wat vermenigvuldig tot −10 en optel tot −3: −5 en 2.\n(x − 5)(x + 2) = 0, dus x = 5 of x = −2 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: 2x² − 7x + 3 = 0', answer: 'x=3 of x=1/2', checkMode: 'auto', correctAnswers: ['x=3 of x=1/2', 'x=1/2 of x=3', 'x=3 of x=0,5', 'x=0,5 of x=3'], explanation: 'a×c = 2×3 = 6. Vind twee getalle wat vermenigvuldig tot 6 en optel tot −7: −6 en −1.\nSplits: 2x² − 6x − x + 3 = 0 → 2x(x − 3) − 1(x − 3) = 0 → (2x − 1)(x − 3) = 0, dus x = 1/2 of x = 3 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x² + 4x = 21', answer: 'x=3 of x=-7', checkMode: 'auto', correctAnswers: ['x=3 of x=-7', 'x=-7 of x=3'], explanation: 'Herrangskik: x² + 4x − 21 = 0.\nVind twee getalle wat vermenigvuldig tot −21 en optel tot 4: 7 en −3.\n(x + 7)(x − 3) = 0, dus x = −7 of x = 3 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x: x² − 3x − 10 = 0', checkMode: 'auto', options: ['x = -5 of x = 2', 'x = -5 of x = -2', 'x = 10 of x = -1', 'x = 5 of x = -2'], correctIndex: 3, explanation: 'Vind twee getalle wat vermenigvuldig tot −10 en optel tot −3: −5 en 2, dus (x−5)(x+2)=0, wat x=5 of x=−2 gee. Verwarring met tekens wanneer die faktore geskryf word (opsies A en B), of om die verkeerde faktorpaar van 10 te gebruik (opsie C), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: 2x² − 7x + 3 = 0', checkMode: 'auto', options: ['x = 3 of x = 1/2', 'x = -3 of x = -1/2', 'x = 3 of x = -1/2', 'x = 1/3 of x = -6'], correctIndex: 0, explanation: 'a×c = 2×3 = 6. Vind twee getalle wat vermenigvuldig tot 6 en optel tot −7: −6 en −1. Splits: 2x²−6x−x+3=0 → 2x(x−3)−1(x−3)=0 → (2x−1)(x−3)=0, wat x=1/2 of x=3 gee. Tekenfoute (opsies B en C), of om die verkeerde faktorpaar van 6 te gebruik (opsie D), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² + 4x = 21', checkMode: 'auto', options: ['x = -3 of x = 7', 'x = 3 of x = -7', 'x = -3 of x = -7', 'x = 21 of x = -1'], correctIndex: 1, explanation: 'Herrangskik: x²+4x−21=0. Vind twee getalle wat vermenigvuldig tot −21 en optel tot 4: 7 en −3, dus (x+7)(x−3)=0, wat x=−7 of x=3 gee. Verwarring met tekens (opsies A en C) of om die verkeerde faktorpaar van 21 te gebruik (opsie D) is algemene foute.' },
 
         // Blok C — Gelyktydige lineêre vergelykings (posisies 6-9)
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: x + y = 9 en x − y = 3', answer: 'x=6,y=3', checkMode: 'auto', correctAnswer: 'x=6,y=3', correctAnswers: ['x=6,y=3', 'x = 6, y = 3'], explanation: 'Tel die vergelykings bymekaar: 2x = 12, dus x = 6.\nVervang in x + y = 9: 6 + y = 9, dus y = 3 ✓' },
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y deur substitusie: y = x − 1 en 3x + y = 15', answer: 'x=4,y=3', checkMode: 'auto', correctAnswer: 'x=4,y=3', correctAnswers: ['x=4,y=3', 'x = 4, y = 3'], explanation: 'Vervang y = x − 1 in 3x + y = 15: 3x + x − 1 = 15.\nKombineer: 4x − 1 = 15, dus 4x = 16, x = 4.\nVervang terug: y = 4 − 1 = 3 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y deur eliminasie: 2x + 3y = 16 en 2x − y = 4', answer: 'x=3,5; y=3', checkMode: 'auto', correctAnswer: 'x=3,5; y=3', correctAnswers: ['x=3,5; y=3', 'x=3,5,y=3', 'x=3.5,y=3', 'x=7/2,y=3'], explanation: 'Trek die tweede vergelyking van die eerste af: (2x + 3y) − (2x − y) = 16 − 4, dus 4y = 12, y = 3.\nVervang y = 3 in 2x − y = 4: 2x − 3 = 4, dus 2x = 7, x = 3,5.\nKontroleer: 2(3,5) + 3(3) = 7 + 9 = 16 ✓ en 2(3,5) − 3 = 7 − 3 = 4 ✓' },
-        { difficulty: 'Hard', question: 'Twee getalle het ʼn som van 20 en ʼn verskil van 6. Stel twee vergelykings op en los gelyktydig op om die twee getalle te vind.', answer: 'Laat die getalle x en y wees, met x > y.\nx + y = 20 en x − y = 6.\nTel die vergelykings bymekaar: 2x = 26, dus x = 13.\nVervang in x + y = 20: 13 + y = 20, dus y = 7.\nDie getalle is 13 en 7.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: x + y = 9 en x − y = 3', checkMode: 'auto', options: ['x=3,y=6', 'x=9,y=0', 'x=6,y=3', 'x=6,y=2'], correctIndex: 2, explanation: 'Tel die vergelykings bymekaar: 2x = 12, dus x = 6. Vervang in x + y = 9: 6 + y = 9, dus y = 3. Om x en y te verwissel (opsie A), of ʼn rekenfout in enige stap (opsies B en D), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y deur substitusie: y = x − 1 en 3x + y = 15', checkMode: 'auto', options: ['x=3,5; y=2,5', 'x=3,y=4', 'x=5,y=4', 'x=4,y=3'], correctIndex: 3, explanation: 'Vervang y = x − 1 in 3x + y = 15: 3x + x − 1 = 15. Kombineer: 4x − 1 = 15, dus 4x = 16, x = 4. Vervang terug: y = 4 − 1 = 3. ʼn Tekenfout wanneer vervang word (opsie A), of om te verwar watter veranderlike watter is (opsie B), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y deur eliminasie: 2x + 3y = 16 en 2x − y = 4', checkMode: 'auto', options: ['x=3,5; y=3', 'x=0,5; y=-3', 'x=2,y=3', 'x=3,5; y=4'], correctIndex: 0, explanation: 'Trek die tweede vergelyking van die eerste af: (2x + 3y) − (2x − y) = 16 − 4, dus 4y = 12, y = 3. Vervang y = 3 in 2x − y = 4: 2x − 3 = 4, dus 2x = 7, x = 3,5. ʼn Tekenfout wanneer die vergelykings afgetrek word (opsie B), of om in die verkeerde vergelyking te vervang (opsie C), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Twee getalle het ʼn som van 20 en ʼn verskil van 6. Wat is die twee getalle?', checkMode: 'auto', options: ['14 en 6', '13 en 7', '10 en 10', '13 en 6'], correctIndex: 1, explanation: 'Laat die getalle x en y wees, met x > y. x + y = 20 en x − y = 6. Tel die vergelykings bymekaar: 2x = 26, dus x = 13. Vervang in x + y = 20: 13 + y = 20, dus y = 7. Die getalle is 13 en 7. Om nie albei vergelykings saam te gebruik nie (opsie C), of ʼn rekenfout wanneer opgetel word (opsie A), is algemene foute.' },
 
         // Blok D — Lineêre ongelykhede, insl. tekenomkering en getallelyn-beskrywing (posisies 10-12)
-        { difficulty: 'Easy', question: 'Los op vir x: 3x − 5 > 10', answer: 'x>5', checkMode: 'auto', correctAnswer: 'x>5', correctAnswers: ['x>5', 'x > 5'], explanation: 'Tel 5 by albei kante: 3x > 15.\nDeel deur 3: x > 5 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: −4x + 3 ≤ 15', answer: 'x≥-3', checkMode: 'auto', correctAnswer: 'x≥-3', correctAnswers: ['x≥-3', 'x >= -3', 'x≥−3'], explanation: 'Trek 3 van albei kante af: −4x ≤ 12.\nDeel albei kante deur −4 — die ongelykheidsteken keer om: x ≥ −3 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los op vir x: 5 − 2x < 3(x − 5). Beskryf hoe jy die oplossingstel op ʼn getallelyn sou voorstel.', answer: 'x>2', checkMode: 'auto', correctAnswer: 'x>2', correctAnswers: ['x>2', 'x > 2'], explanation: 'Brei die regterkant uit: 5 − 2x < 3x − 15.\nTel 2x by albei kante: 5 < 5x − 15.\nTel 15 by: 20 < 5x.\nDeel deur 5: 4 < x, d.w.s. x > 2.\nOp ʼn getallelyn word dit met ʼn oop sirkel by 2 en skadu/ʼn pyl wat regs na positiewe oneindigheid strek, aangedui, aangesien 2 self nie ingesluit is nie.' },
+        { difficulty: 'Easy', question: 'Los op vir x: 3x − 5 > 10', checkMode: 'auto', options: ['x < 5', 'x > 15', 'x > 5', 'x > -5'], correctIndex: 2, explanation: 'Tel 5 by albei kante: 3x > 15. Deel deur 3: x > 5 (geen omkering nodig nie aangesien ons deur ʼn positiewe getal gedeel het). Om die ongelykheidsteken onnodig om te keer (opsie A), of om te vergeet om deur 3 te deel (opsie B), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: −4x + 3 ≤ 15', checkMode: 'auto', options: ['x ≤ -3', 'x ≥ 3', 'x ≥ -12', 'x ≥ -3'], correctIndex: 3, explanation: 'Trek 3 van albei kante af: −4x ≤ 12. Deel albei kante deur −4 — die ongelykheidsteken keer om: x ≥ −3. Om te vergeet om die ongelykheidsteken om te keer wanneer deur ʼn negatiewe getal gedeel word (opsie A) is die klassieke fout hier.' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 5 − 2x < 3(x − 5). Beskryf hoe jy die oplossingstel op ʼn getallelyn sou voorstel.', checkMode: 'auto', options: ['x > 4', 'x > 2', 'x < 4', 'x > 5'], correctIndex: 0, explanation: 'Brei die regterkant uit: 5 − 2x < 3x − 15. Tel 2x by albei kante: 5 < 5x − 15. Tel 15 by: 20 < 5x. Deel deur 5: 4 < x, d.w.s. x > 4. Om te vergeet om die 3 oor albei terme in die hakie te versprei (3(x−5) = 3x−5 in plaas van 3x−15) gee die algemene verkeerde antwoord x>2 (opsie B). Op ʼn getallelyn word die ware oplossing met ʼn oop sirkel by 4 en skadu wat regs na positiewe oneindigheid strek, aangedui, aangesien 4 self nie ingesluit is nie.' },
 
         // Blok E — Gelyktydige lineêr-kwadratiese stelsels (posisies 13-16)
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = x + 2 en y = x² − 4', answer: 'x=3,y=5 of x=-2,y=0', checkMode: 'auto', correctAnswers: ['x=3,y=5 of x=-2,y=0', 'x=-2,y=0 of x=3,y=5'], explanation: 'Stel x + 2 = x² − 4, dus x² − x − 6 = 0.\nFaktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2.\nAs x = 3: y = 5. As x = −2: y = 0.\nKontroleer: 3² − 4 = 5 ✓ en (−2)² − 4 = 0 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y: y = 3x − 2 en y = x² + 2x − 8', answer: 'x=3,y=7 of x=-2,y=-8', checkMode: 'auto', correctAnswers: ['x=3,y=7 of x=-2,y=-8', 'x=-2,y=-8 of x=3,y=7'], explanation: 'Stel 3x − 2 = x² + 2x − 8, dus x² − x − 6 = 0.\nFaktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2.\nAs x = 3: y = 3(3) − 2 = 7. As x = −2: y = 3(−2) − 2 = −8.\nKontroleer: 3² + 2(3) − 8 = 7 ✓ en (−2)² + 2(−2) − 8 = −8 ✓' },
-        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: y = x + 4 en y = x² + x − 2', answer: 'Vervang die eerste vergelyking in die tweede: x + 4 = x² + x − 2.\nVereenvoudig: 4 = x² − 2, dus x² = 6, x = ±√6.\nAs x = √6: y = √6 + 4. As x = −√6: y = −√6 + 4.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: 2x + y = 7 en y = x² − 3x + 5', answer: 'x=2,y=3 of x=-1,y=9', checkMode: 'auto', correctAnswers: ['x=2,y=3 of x=-1,y=9', 'x=-1,y=9 of x=2,y=3'], explanation: 'Uit die eerste vergelyking, y = 7 − 2x. Vervang: 7 − 2x = x² − 3x + 5.\nHerrangskik: x² − x − 2 = 0.\nFaktoriseer: (x − 2)(x + 1) = 0, dus x = 2 of x = −1.\nAs x = 2: y = 3. As x = −1: y = 9.\nKontroleer: 2² − 3(2) + 5 = 3 ✓ en (−1)² − 3(−1) + 5 = 9 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = x + 2 en y = x² − 4', checkMode: 'auto', options: ['x=-3,y=-1 of x=2,y=4', 'x=3,y=5 of x=-2,y=0', 'x=3,y=0 of x=-2,y=5', 'x=3,y=5 of x=-2,y=2'], correctIndex: 1, explanation: 'Stel x + 2 = x² − 4, dus x² − x − 6 = 0. Faktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2. As x = 3: y = 5. As x = −2: y = 0. Kontroleer: 3² − 4 = 5 ✓ en (−2)² − 4 = 0 ✓. Tekenfoute in die faktorisering (opsie A), of om te verwar watter y-waarde by watter x hoort (opsie C), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y: y = 3x − 2 en y = x² + 2x − 8', checkMode: 'auto', options: ['x=-3,y=-11 of x=2,y=4', 'x=3,y=-8 of x=-2,y=7', 'x=3,y=7 of x=-2,y=-8', 'x=3,y=7 of x=-2,y=-6'], correctIndex: 2, explanation: 'Stel 3x − 2 = x² + 2x − 8, dus x² − x − 6 = 0. Faktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2. As x = 3: y = 3(3) − 2 = 7. As x = −2: y = 3(−2) − 2 = −8. Kontroleer: 3² + 2(3) − 8 = 7 ✓ en (−2)² + 2(−2) − 8 = −8 ✓. Om die gepaarde y-waardes te verwissel (opsie B), of ʼn rekenfout wanneer y bereken word (opsie D), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: y = x + 4 en y = x² + x − 2', checkMode: 'auto', options: ['x=√6, y=-√6+4 of x=-√6, y=√6+4', 'x=2√2, y=2√2+4 of x=-2√2, y=-2√2+4', 'x=√6, y=√6 of x=-√6, y=-√6', 'x=√6, y=√6+4 of x=-√6, y=-√6+4'], correctIndex: 3, explanation: 'Vervang die eerste vergelyking in die tweede: x + 4 = x² + x − 2. Vereenvoudig: 4 = x² − 2, dus x² = 6, x = ±√6. As x = √6: y = √6 + 4. As x = −√6: y = −√6 + 4. Om die gepaarde y-waardes te verwissel (opsie A), of om te vergeet om die 4 by y te tel (opsie C), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: 2x + y = 7 en y = x² − 3x + 5', checkMode: 'auto', options: ['x=2,y=3 of x=-1,y=9', 'x=2,y=9 of x=-1,y=3', 'x=-2,y=11 of x=1,y=5', 'x=2,y=3 of x=-1,y=8'], correctIndex: 0, explanation: 'Uit die eerste vergelyking, y = 7 − 2x. Vervang: 7 − 2x = x² − 3x + 5. Herrangskik: x² − x − 2 = 0. Faktoriseer: (x − 2)(x + 1) = 0, dus x = 2 of x = −1. As x = 2: y = 3. As x = −1: y = 9. Kontroleer: 2² − 3(2) + 5 = 3 ✓ en (−1)² − 3(−1) + 5 = 9 ✓. Om die gepaarde y-waardes te verwissel (opsie B), of ʼn tekenfout in die faktorisering (opsie C), is algemene foute.' },
 
         // Blok F — Woordprobleme en toepassings in die styl van letterlike vergelykings (posisies 17-19)
-        { difficulty: 'Medium', question: 'Die lengte van ʼn reghoek is 5 cm meer as sy wydte. As die omtrek 34 cm is, stel ʼn vergelyking op in terme van die wydte w en los op vir w.', answer: 'w=6', checkMode: 'auto', correctAnswer: 'w=6', correctAnswers: ['w=6', 'w = 6'], explanation: 'Omtrek = 2(lengte + wydte) = 2((w + 5) + w) = 34.\nVereenvoudig: 2(2w + 5) = 34, dus 4w + 10 = 34.\nTrek 10 af: 4w = 24.\nDeel deur 4: w = 6 ✓' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Getal vermeerder met 3, dan verdubbel, gee dieselfde resultaat as die getal verminder met 1, dan verdriedubbel. Vind die getal.', answer: 'x=9', checkMode: 'auto', correctAnswer: 'x=9', correctAnswers: ['x=9', 'x = 9'], explanation: 'Laat die getal x wees. Vergelyking: 2(x + 3) = 3(x − 1).\nBrei uit: 2x + 6 = 3x − 3.\nTrek 2x af: 6 = x − 3.\nTel 3 by: x = 9.\nKontroleer: 2(9 + 3) = 24 en 3(9 − 1) = 24 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Skool huur stoele vir ʼn matriekafskeid teen ʼn opstelfooi van R500 plus R15 per stoel. Sipho het ʼn begroting van R1 400. Stel ʼn ongelykheid op vir die aantal stoele c wat hy kan bekostig, en los op vir c.', answer: 'c≤60', checkMode: 'auto', correctAnswer: 'c≤60', correctAnswers: ['c≤60', 'c <= 60'], explanation: 'Totale koste: 500 + 15c ≤ 1400.\nTrek 500 af: 15c ≤ 900.\nDeel deur 15: c ≤ 60. Sipho kan hoogstens 60 stoele bekostig ✓' },
+        { difficulty: 'Medium', question: 'Die lengte van ʼn reghoek is 5 cm meer as sy wydte. As die omtrek 34 cm is, stel ʼn vergelyking op in terme van die wydte w en los op vir w.', checkMode: 'auto', options: ['w = 14,5', 'w = 6', 'w = 11', 'w = 7'], correctIndex: 1, explanation: 'Omtrek = 2(lengte + wydte) = 2((w + 5) + w) = 34. Vereenvoudig: 2(2w + 5) = 34, dus 4w + 10 = 34. Trek 10 af: 4w = 24. Deel deur 4: w = 6. Om die faktor 2 in die omtrekformule te vergeet (opsie A), of om die lengte in plaas van die wydte te rapporteer (opsie C), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Getal vermeerder met 3, dan verdubbel, gee dieselfde resultaat as die getal verminder met 1, dan verdriedubbel. Vind die getal.', checkMode: 'auto', options: ['x = 3', 'x = 6', 'x = 9', 'x = 15'], correctIndex: 2, explanation: 'Laat die getal x wees. Vergelyking: 2(x + 3) = 3(x − 1). Brei uit: 2x + 6 = 3x − 3. Trek 2x af: 6 = x − 3. Tel 3 by: x = 9. Kontroleer: 2(9 + 3) = 24 en 3(9 − 1) = 24 ✓. ʼn Tekenfout wanneer uitgebrei word (opsie A), of om nie ten volle te versprei nie (opsie B), is algemene foute.' },
+        { difficulty: 'Hard', question: 'ʼn Skool huur stoele vir ʼn matriekafskeid teen ʼn opstelfooi van R500 plus R15 per stoel. Sipho het ʼn begroting van R1 400. Stel ʼn ongelykheid op vir die aantal stoele c wat hy kan bekostig, en los op vir c.', checkMode: 'auto', options: ['c ≤ 93', 'c ≤ 65', 'c ≥ 60', 'c ≤ 60'], correctIndex: 3, explanation: 'Totale koste: 500 + 15c ≤ 1400. Trek 500 af: 15c ≤ 900. Deel deur 15: c ≤ 60. Sipho kan hoogstens 60 stoele bekostig. Om te vergeet om die opstelfooi eers af te trek (opsie A), of om die ongelykheidsteken onnodig om te keer (opsie C), is algemene foute.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Uitstekend! Jy het lineêre en kwadratiese vergelykings, gelyktydige stelsels, en ongelykhede bemeester.' },
@@ -869,36 +901,36 @@ export const topicData: TopicData = {
       name: 'Stel 2',
       questions: [
         // Blok A — Lineêre vergelykings met hakies / breuke (posisies 0-2)
-        { difficulty: 'Easy', question: 'Los op vir x: 3(x − 4) = 15', answer: 'x=9', checkMode: 'auto', correctAnswer: 'x=9', correctAnswers: ['x=9', 'x = 9', '9'], explanation: 'Brei uit: 3x − 12 = 15.\nTel 12 by: 3x = 27.\nDeel deur 3: x = 9 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Los op vir x: 6x − 3(x + 2) = 12', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Brei uit (die minusteken keer albei tekens om): 6x − 3x − 6 = 12.\nBring gelyksoortige terme bymekaar: 3x − 6 = 12.\nTel 6 by: 3x = 18.\nDeel deur 3: x = 6 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: (2x − 1)/3 = (x + 4)/5', answer: 'x=17/7', checkMode: 'auto', correctAnswer: 'x=17/7', correctAnswers: ['x=17/7'], explanation: 'Die KGV van 3 en 5 is 15. Vermenigvuldig elke term met 15: 5(2x − 1) = 3(x + 4).\nBrei uit: 10x − 5 = 3x + 12.\nTrek 3x af: 7x − 5 = 12.\nTel 5 by: 7x = 17.\nDeel deur 7: x = 17/7 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x: 3(x − 4) = 15', checkMode: 'auto', options: ['x = 9', 'x = 19/3', 'x = 1', 'x = 8'], correctIndex: 0, explanation: 'Brei uit: 3x − 12 = 15. Tel 12 by albei kante: 3x = 27. Deel deur 3: x = 9. Om te vergeet om die 3 oor die hakie te versprei (opsie B), of ʼn tekenfout wanneer x geïsoleer word (opsie C), is algemene foute.' },
+        { difficulty: 'Easy-Medium', question: 'Los op vir x: 6x − 3(x + 2) = 12', checkMode: 'auto', options: ['x = 2', 'x = 6', 'x = 4', 'x = 18'], correctIndex: 1, explanation: 'Brei uit (die minusteken keer albei tekens in die hakie om): 6x − 3x − 6 = 12. Bring gelyksoortige terme bymekaar: 3x − 6 = 12. Tel 6 by: 3x = 18. Deel deur 3: x = 6. Om te vergeet om die negatiewe teken oor elke term in die hakie te versprei (opsie A) is die klassieke fout hier.' },
+        { difficulty: 'Medium', question: `Los op vir x: ${frac('2x − 1', '3')} = ${frac('x + 4', '5')}`, checkMode: 'auto', options: ['x = 1', 'x = -1', 'x = 17/7', 'x = -13'], correctIndex: 2, explanation: 'Die KGV van 3 en 5 is 15. Vermenigvuldig elke term met 15: 5(2x − 1) = 3(x + 4). Brei uit: 10x − 5 = 3x + 12. Trek 3x af: 7x − 5 = 12. Tel 5 by: 7x = 17. Deel deur 7: x = 17/7. Om te vergeet om albei kante met die korrekte KGV-faktor te vermenigvuldig, of ʼn tekenfout wanneer uitgebrei word, is algemene foute.' },
 
         // Blok B — Kwadratiese vergelykings deur faktorisering (posisies 3-5)
-        { difficulty: 'Easy', question: 'Los op vir x: x² − 2x − 8 = 0', answer: 'x=4 of x=-2', checkMode: 'auto', correctAnswers: ['x=4 of x=-2', 'x=-2 of x=4'], explanation: 'Vind twee getalle wat vermenigvuldig tot −8 en optel tot −2: −4 en 2.\n(x − 4)(x + 2) = 0, dus x = 4 of x = −2 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: 3x² − 5x − 2 = 0', answer: 'x=2 of x=-1/3', checkMode: 'auto', correctAnswers: ['x=2 of x=-1/3', 'x=-1/3 of x=2'], explanation: 'a×c = 3×(−2) = −6. Vind twee getalle wat vermenigvuldig tot −6 en optel tot −5: −6 en 1.\nSplits: 3x² − 6x + x − 2 = 0 → 3x(x − 2) + 1(x − 2) = 0 → (3x + 1)(x − 2) = 0, dus x = −1/3 of x = 2 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x² + 3x = 18', answer: 'x=3 of x=-6', checkMode: 'auto', correctAnswers: ['x=3 of x=-6', 'x=-6 of x=3'], explanation: 'Herrangskik: x² + 3x − 18 = 0.\nVind twee getalle wat vermenigvuldig tot −18 en optel tot 3: 6 en −3.\n(x + 6)(x − 3) = 0, dus x = −6 of x = 3 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x: x² − 2x − 8 = 0', checkMode: 'auto', options: ['x = -4 of x = 2', 'x = -4 of x = -2', 'x = 8 of x = -1', 'x = 4 of x = -2'], correctIndex: 3, explanation: 'Vind twee getalle wat vermenigvuldig tot −8 en optel tot −2: −4 en 2, dus (x−4)(x+2)=0, wat x=4 of x=−2 gee. Verwarring met tekens (opsies A en B), of om die verkeerde faktorpaar van 8 te gebruik (opsie C), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: 3x² − 5x − 2 = 0', checkMode: 'auto', options: ['x = 2 of x = -1/3', 'x = -2 of x = 1/3', 'x = 2 of x = 1/3', 'x = -1/6 of x = 6'], correctIndex: 0, explanation: 'a×c = 3×(−2) = −6. Vind twee getalle wat vermenigvuldig tot −6 en optel tot −5: −6 en 1. Splits: 3x²−6x+x−2=0 → 3x(x−2)+1(x−2)=0 → (3x+1)(x−2)=0, wat x=−1/3 of x=2 gee. Tekenfoute (opsies B en C), of om die verkeerde faktorpaar van 6 te gebruik (opsie D), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² + 3x = 18', checkMode: 'auto', options: ['x = -3 of x = 6', 'x = 3 of x = -6', 'x = -3 of x = -6', 'x = 18 of x = -1'], correctIndex: 1, explanation: 'Herrangskik: x²+3x−18=0. Vind twee getalle wat vermenigvuldig tot −18 en optel tot 3: 6 en −3, dus (x+6)(x−3)=0, wat x=−6 of x=3 gee. Verwarring met tekens (opsies A en C), of om die verkeerde faktorpaar van 18 te gebruik (opsie D), is algemene foute.' },
 
         // Blok C — Gelyktydige lineêre vergelykings (posisies 6-9)
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: x + y = 11 en x − y = 5', answer: 'x=8,y=3', checkMode: 'auto', correctAnswer: 'x=8,y=3', correctAnswers: ['x=8,y=3', 'x = 8, y = 3'], explanation: 'Tel die vergelykings bymekaar: 2x = 16, dus x = 8.\nVervang in x + y = 11: 8 + y = 11, dus y = 3 ✓' },
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y deur substitusie: y = 2x + 1 en 2x + y = 13', answer: 'x=3,y=7', checkMode: 'auto', correctAnswer: 'x=3,y=7', correctAnswers: ['x=3,y=7', 'x = 3, y = 7'], explanation: 'Vervang y = 2x + 1 in 2x + y = 13: 2x + 2x + 1 = 13.\nKombineer: 4x + 1 = 13, dus 4x = 12, x = 3.\nVervang terug: y = 2(3) + 1 = 7 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y deur eliminasie: 3x + 2y = 18 en 3x − y = 3', answer: 'x=8/3,y=5', checkMode: 'auto', correctAnswer: 'x=8/3,y=5', correctAnswers: ['x=8/3,y=5', 'x = 8/3, y = 5', 'x=2,67; y=5'], explanation: 'Trek die tweede vergelyking van die eerste af: (3x + 2y) − (3x − y) = 18 − 3, dus 3y = 15, y = 5.\nVervang y = 5 in 3x − y = 3: 3x − 5 = 3, dus 3x = 8, x = 8/3.\nKontroleer: 3(8/3) + 2(5) = 8 + 10 = 18 ✓ en 3(8/3) − 5 = 8 − 5 = 3 ✓' },
-        { difficulty: 'Hard', question: 'Twee getalle het ʼn som van 24 en ʼn verskil van 8. Stel twee vergelykings op en los gelyktydig op om die twee getalle te vind.', answer: 'Laat die getalle x en y wees, met x > y.\nx + y = 24 en x − y = 8.\nTel die vergelykings bymekaar: 2x = 32, dus x = 16.\nVervang in x + y = 24: 16 + y = 24, dus y = 8.\nDie getalle is 16 en 8.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: x + y = 11 en x − y = 5', checkMode: 'auto', options: ['x=3,y=8', 'x=8,y=2', 'x=8,y=3', 'x=11,y=0'], correctIndex: 2, explanation: 'Tel die vergelykings bymekaar: 2x = 16, dus x = 8. Vervang in x + y = 11: 8 + y = 11, dus y = 3. Om x en y te verwissel (opsie A), of ʼn rekenfout (opsies B en D), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y deur substitusie: y = 2x + 1 en 2x + y = 13', checkMode: 'auto', options: ['x=3,5; y=8', 'x=7,y=3', 'x=4,y=9', 'x=3,y=7'], correctIndex: 3, explanation: 'Vervang y = 2x + 1 in 2x + y = 13: 2x + 2x + 1 = 13. Kombineer: 4x + 1 = 13, dus 4x = 12, x = 3. Vervang terug: y = 2(3) + 1 = 7. ʼn Tekenfout wanneer vervang word (opsie A), of om te verwar watter veranderlike watter is (opsie B), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y deur eliminasie: 3x + 2y = 18 en 3x − y = 3', checkMode: 'auto', options: ['x=8/3; y=5', 'x=1,y=5', 'x=8/3; y=-5', 'x=8/3; y=6'], correctIndex: 0, explanation: 'Trek die tweede vergelyking van die eerste af: (3x + 2y) − (3x − y) = 18 − 3, dus 3y = 15, y = 5. Vervang y = 5 in 3x − y = 3: 3x − 5 = 3, dus 3x = 8, x = 8/3. ʼn Tekenfout wanneer teruggevervang word (opsie C), of ʼn rekenfout (opsie D), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Twee getalle het ʼn som van 24 en ʼn verskil van 8. Wat is die twee getalle?', checkMode: 'auto', options: ['17 en 7', '16 en 8', '12 en 12', '16 en 9'], correctIndex: 1, explanation: 'Laat die getalle x en y wees, met x > y. x + y = 24 en x − y = 8. Tel die vergelykings bymekaar: 2x = 32, dus x = 16. Vervang in x + y = 24: 16 + y = 24, dus y = 8. Die getalle is 16 en 8. Om nie albei vergelykings saam te gebruik nie (opsie C), of ʼn rekenfout wanneer opgetel word (opsie A), is algemene foute.' },
 
         // Blok D — Lineêre ongelykhede, insl. tekenomkering en getallelyn-beskrywing (posisies 10-12)
-        { difficulty: 'Easy', question: 'Los op vir x: 2x − 7 > 9', answer: 'x>8', checkMode: 'auto', correctAnswer: 'x>8', correctAnswers: ['x>8', 'x > 8'], explanation: 'Tel 7 by albei kante: 2x > 16.\nDeel deur 2: x > 8 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: −3x + 4 ≥ 19', answer: 'x≤-5', checkMode: 'auto', correctAnswer: 'x≤-5', correctAnswers: ['x≤-5', 'x <= -5', 'x≤−5'], explanation: 'Trek 4 van albei kante af: −3x ≥ 15.\nDeel albei kante deur −3 — die ongelykheidsteken keer om: x ≤ −5 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los op vir x: 8 − 3x ≤ 2(x + 4). Beskryf hoe jy die oplossingstel op ʼn getallelyn sou voorstel.', answer: 'x≥0', checkMode: 'auto', correctAnswer: 'x≥0', correctAnswers: ['x≥0', 'x >= 0'], explanation: 'Brei die regterkant uit: 8 − 3x ≤ 2x + 8.\nTrek 8 van albei kante af: −3x ≤ 2x.\nTrek 2x af: −5x ≤ 0.\nDeel deur −5 — die teken keer om: x ≥ 0.\nOp ʼn getallelyn word dit met ʼn vol (toe) sirkel by 0 en skadu/ʼn pyl wat regs na positiewe oneindigheid strek, aangedui, aangesien 0 self ingesluit is.' },
+        { difficulty: 'Easy', question: 'Los op vir x: 2x − 7 > 9', checkMode: 'auto', options: ['x < 8', 'x > 16', 'x > 8', 'x > -8'], correctIndex: 2, explanation: 'Tel 7 by albei kante: 2x > 16. Deel deur 2: x > 8 (geen omkering nodig nie aangesien ons deur ʼn positiewe getal gedeel het). Om die ongelykheidsteken onnodig om te keer (opsie A), of om te vergeet om deur 2 te deel (opsie B), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: −3x + 4 ≥ 19', checkMode: 'auto', options: ['x ≥ -5', 'x ≤ 5', 'x ≤ -25', 'x ≤ -5'], correctIndex: 3, explanation: 'Trek 4 van albei kante af: −3x ≥ 15. Deel albei kante deur −3 — die ongelykheidsteken keer om: x ≤ −5. Om te vergeet om die ongelykheidsteken om te keer wanneer deur ʼn negatiewe getal gedeel word (opsie A) is die klassieke fout hier.' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 8 − 3x ≤ 2(x + 4). Beskryf hoe jy die oplossingstel op ʼn getallelyn sou voorstel.', checkMode: 'auto', options: ['x ≥ 0', 'x ≥ 4/5', 'x ≤ 0', 'x ≥ 1'], correctIndex: 0, explanation: 'Brei die regterkant uit: 8 − 3x ≤ 2x + 8. Trek 8 van albei kante af: −3x ≤ 2x. Trek 2x af: −5x ≤ 0. Deel deur −5 — die teken keer om: x ≥ 0. Om te vergeet om die 2 oor albei terme in die hakie te versprei (opsie B), of om te vergeet om die ongelykheid om te keer wanneer deur −5 gedeel word (opsie C), is algemene foute. Op ʼn getallelyn word dit met ʼn vol (toe) sirkel by 0 en skadu wat regs na positiewe oneindigheid strek, aangedui, aangesien 0 self ingesluit is.' },
 
         // Blok E — Gelyktydige lineêr-kwadratiese stelsels (posisies 13-16)
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = x + 3 en y = x² − 3', answer: 'x=3,y=6 of x=-2,y=1', checkMode: 'auto', correctAnswers: ['x=3,y=6 of x=-2,y=1', 'x=-2,y=1 of x=3,y=6'], explanation: 'Stel x + 3 = x² − 3, dus x² − x − 6 = 0.\nFaktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2.\nAs x = 3: y = 6. As x = −2: y = 1.\nKontroleer: 3² − 3 = 6 ✓ en (−2)² − 3 = 1 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y: y = 4x − 3 en y = x² + x − 3', answer: 'x=0,y=-3 of x=3,y=9', checkMode: 'auto', correctAnswers: ['x=0,y=-3 of x=3,y=9', 'x=3,y=9 of x=0,y=-3'], explanation: 'Stel 4x − 3 = x² + x − 3, dus x² − 3x = 0.\nFaktoriseer: x(x − 3) = 0, dus x = 0 of x = 3.\nAs x = 0: y = −3. As x = 3: y = 9.\nKontroleer: 0² + 0 − 3 = −3 ✓ en 3² + 3 − 3 = 9 ✓' },
-        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: y = x + 2 en y = x² + x − 6', answer: 'Vervang die eerste vergelyking in die tweede: x + 2 = x² + x − 6.\nVereenvoudig: 2 = x² − 6, dus x² = 8, x = ±√8 = ±2√2.\nAs x = 2√2: y = 2√2 + 2. As x = −2√2: y = −2√2 + 2.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: 3x + y = 11 en y = x² − 2x − 1', answer: 'x=3,y=2 of x=-4,y=23', checkMode: 'auto', correctAnswers: ['x=3,y=2 of x=-4,y=23', 'x=-4,y=23 of x=3,y=2'], explanation: 'Uit die eerste vergelyking, y = 11 − 3x. Vervang: 11 − 3x = x² − 2x − 1.\nHerrangskik: x² + x − 12 = 0.\nFaktoriseer: (x + 4)(x − 3) = 0, dus x = −4 of x = 3.\nAs x = 3: y = 2. As x = −4: y = 23.\nKontroleer: 3² − 2(3) − 1 = 2 ✓ en (−4)² − 2(−4) − 1 = 23 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = x + 3 en y = x² − 3', checkMode: 'auto', options: ['x=-3,y=0 of x=2,y=5', 'x=3,y=6 of x=-2,y=1', 'x=3,y=1 of x=-2,y=6', 'x=3,y=6 of x=-2,y=2'], correctIndex: 1, explanation: 'Stel x + 3 = x² − 3, dus x² − x − 6 = 0. Faktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2. As x = 3: y = 6. As x = −2: y = 1. Kontroleer: 3² − 3 = 6 ✓ en (−2)² − 3 = 1 ✓. Tekenfoute in die faktorisering (opsie A), of om die gepaarde y-waardes te verwissel (opsie C), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y: y = 4x − 3 en y = x² + x − 3', checkMode: 'auto', options: ['x=0,y=-3 of x=-3,y=-15', 'x=0,y=9 of x=3,y=-3', 'x=0,y=-3 of x=3,y=9', 'x=0,y=-3 of x=3,y=10'], correctIndex: 2, explanation: 'Stel 4x − 3 = x² + x − 3, dus x² − 3x = 0. Faktoriseer: x(x − 3) = 0, dus x = 0 of x = 3. As x = 0: y = −3. As x = 3: y = 9. Kontroleer: 0² + 0 − 3 = −3 ✓ en 3² + 3 − 3 = 9 ✓. ʼn Tekenfout op die tweede wortel (opsie A), of om die gepaarde y-waardes te verwissel (opsie B), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: y = x + 2 en y = x² + x − 6', checkMode: 'auto', options: ['x=2√2, y=-2√2+2 of x=-2√2, y=2√2+2', 'x=√6, y=√6+2 of x=-√6, y=-√6+2', 'x=2√2, y=2√2 of x=-2√2, y=-2√2', 'x=2√2, y=2√2+2 of x=-2√2, y=-2√2+2'], correctIndex: 3, explanation: 'Vervang die eerste vergelyking in die tweede: x + 2 = x² + x − 6. Vereenvoudig: 2 = x² − 6, dus x² = 8, x = ±√8 = ±2√2. As x = 2√2: y = 2√2 + 2. As x = −2√2: y = −2√2 + 2. Om die gepaarde y-waardes te verwissel (opsie A), of ʼn rekenfout in die konstante term (opsie B), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: 3x + y = 11 en y = x² − 2x − 1', checkMode: 'auto', options: ['x=3,y=2 of x=-4,y=23', 'x=-3,y=20 of x=4,y=-1', 'x=3,y=23 of x=-4,y=2', 'x=3,y=2 of x=-4,y=22'], correctIndex: 0, explanation: 'Uit die eerste vergelyking, y = 11 − 3x. Vervang: 11 − 3x = x² − 2x − 1. Herrangskik: x² + x − 12 = 0. Faktoriseer: (x + 4)(x − 3) = 0, dus x = −4 of x = 3. As x = 3: y = 2. As x = −4: y = 23. Kontroleer: 3² − 2(3) − 1 = 2 ✓ en (−4)² − 2(−4) − 1 = 23 ✓. ʼn Tekenfout in die faktorisering (opsie B), of om die gepaarde y-waardes te verwissel (opsie C), is algemene foute.' },
 
         // Blok F — Woordprobleme en toepassings in die styl van letterlike vergelykings (posisies 17-19)
-        { difficulty: 'Medium', question: 'Die lengte van ʼn reghoek is 4 cm meer as sy wydte. As die omtrek 28 cm is, stel ʼn vergelyking op in terme van die wydte w en los op vir w.', answer: 'w=5', checkMode: 'auto', correctAnswer: 'w=5', correctAnswers: ['w=5', 'w = 5'], explanation: 'Omtrek = 2(lengte + wydte) = 2((w + 4) + w) = 28.\nVereenvoudig: 2(2w + 4) = 28, dus 4w + 8 = 28.\nTrek 8 af: 4w = 20.\nDeel deur 4: w = 5 ✓' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Getal vermeerder met 4, dan verdubbel, gee dieselfde resultaat as die getal verminder met 2, dan verdriedubbel. Vind die getal.', answer: 'x=14', checkMode: 'auto', correctAnswer: 'x=14', correctAnswers: ['x=14', 'x = 14'], explanation: 'Laat die getal x wees. Vergelyking: 2(x + 4) = 3(x − 2).\nBrei uit: 2x + 8 = 3x − 6.\nTrek 2x af: 8 = x − 6.\nTel 6 by: x = 14.\nKontroleer: 2(14 + 4) = 36 en 3(14 − 2) = 36 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Saal hef ʼn opstelfooi van R800 plus R25 per gas vir ʼn Graad 10-afskeid. Die komitee het ʼn begroting van R3 800. Stel ʼn ongelykheid op vir die aantal gaste g wat hulle kan bekostig, en los op vir g.', answer: 'g≤120', checkMode: 'auto', correctAnswer: 'g≤120', correctAnswers: ['g≤120', 'g <= 120'], explanation: 'Totale koste: 800 + 25g ≤ 3800.\nTrek 800 af: 25g ≤ 3000.\nDeel deur 25: g ≤ 120. Die komitee kan hoogstens 120 gaste bekostig ✓' },
+        { difficulty: 'Medium', question: 'Die lengte van ʼn reghoek is 4 cm meer as sy wydte. As die omtrek 28 cm is, stel ʼn vergelyking op in terme van die wydte w en los op vir w.', checkMode: 'auto', options: ['w = 12', 'w = 5', 'w = 9', 'w = 6'], correctIndex: 1, explanation: 'Omtrek = 2(lengte + wydte) = 2((w + 4) + w) = 28. Vereenvoudig: 2(2w + 4) = 28, dus 4w + 8 = 28. Trek 8 af: 4w = 20. Deel deur 4: w = 5. Om die faktor 2 in die omtrekformule te vergeet (opsie A), of om die lengte in plaas van die wydte te rapporteer (opsie C), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Getal vermeerder met 4, dan verdubbel, gee dieselfde resultaat as die getal verminder met 2, dan verdriedubbel. Vind die getal.', checkMode: 'auto', options: ['x = 2', 'x = 10', 'x = 14', 'x = 20'], correctIndex: 2, explanation: 'Laat die getal x wees. Vergelyking: 2(x + 4) = 3(x − 2). Brei uit: 2x + 8 = 3x − 6. Trek 2x af: 8 = x − 6. Tel 6 by: x = 14. Kontroleer: 2(14 + 4) = 36 en 3(14 − 2) = 36 ✓. ʼn Tekenfout wanneer uitgebrei word (opsie A), of om nie ten volle te versprei nie (opsie B), is algemene foute.' },
+        { difficulty: 'Hard', question: 'ʼn Saal hef ʼn opstelfooi van R800 plus R25 per gas vir ʼn Graad 10-afskeid. Die komitee het ʼn begroting van R3 800. Stel ʼn ongelykheid op vir die aantal gaste g wat hulle kan bekostig, en los op vir g.', checkMode: 'auto', options: ['g ≤ 152', 'g ≤ 128', 'g ≥ 120', 'g ≤ 120'], correctIndex: 3, explanation: 'Totale koste: 800 + 25g ≤ 3800. Trek 800 af: 25g ≤ 3000. Deel deur 25: g ≤ 120. Die komitee kan hoogstens 120 gaste bekostig. Om te vergeet om die opstelfooi eers af te trek (opsie A), of om die ongelykheidsteken onnodig om te keer (opsie C), is algemene foute.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Uitstekend! Jy het lineêre en kwadratiese vergelykings, gelyktydige stelsels, en ongelykhede bemeester.' },
@@ -915,36 +947,36 @@ export const topicData: TopicData = {
       name: 'Stel 3',
       questions: [
         // Blok A — Lineêre vergelykings met hakies / breuke (posisies 0-2)
-        { difficulty: 'Easy', question: 'Los op vir x: 5(x − 2) = 25', answer: 'x=7', checkMode: 'auto', correctAnswer: 'x=7', correctAnswers: ['x=7', 'x = 7', '7'], explanation: 'Brei uit: 5x − 10 = 25.\nTel 10 by: 5x = 35.\nDeel deur 5: x = 7 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Los op vir x: 7x − 4(x − 1) = 22', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Brei uit (die minusteken keer albei tekens om): 7x − 4x + 4 = 22.\nBring gelyksoortige terme bymekaar: 3x + 4 = 22.\nTrek 4 af: 3x = 18.\nDeel deur 3: x = 6 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: (4x − 3)/5 = (x + 6)/2', answer: 'x=12', checkMode: 'auto', correctAnswer: 'x=12', correctAnswers: ['x=12', 'x = 12'], explanation: 'Die KGV van 5 en 2 is 10. Vermenigvuldig elke term met 10: 2(4x − 3) = 5(x + 6).\nBrei uit: 8x − 6 = 5x + 30.\nTrek 5x af: 3x − 6 = 30.\nTel 6 by: 3x = 36.\nDeel deur 3: x = 12 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x: 5(x − 2) = 25', checkMode: 'auto', options: ['x = 7', 'x = 5,4', 'x = 3', 'x = 8'], correctIndex: 0, explanation: 'Brei uit: 5x − 10 = 25. Tel 10 by albei kante: 5x = 35. Deel deur 5: x = 7. Om te vergeet om die 5 oor die hakie te versprei (opsie B), of ʼn tekenfout wanneer x geïsoleer word (opsie C), is algemene foute.' },
+        { difficulty: 'Easy-Medium', question: 'Los op vir x: 7x − 4(x − 1) = 22', checkMode: 'auto', options: ['x = 26/3', 'x = 6', 'x = 8', 'x = 18'], correctIndex: 1, explanation: 'Brei uit (die minusteken keer albei tekens in die hakie om): 7x − 4x + 4 = 22. Bring gelyksoortige terme bymekaar: 3x + 4 = 22. Trek 4 af: 3x = 18. Deel deur 3: x = 6. Om te vergeet om die negatiewe teken oor elke term in die hakie te versprei (opsie A) is die klassieke fout hier.' },
+        { difficulty: 'Medium', question: `Los op vir x: ${frac('4x − 3', '5')} = ${frac('x + 6', '2')}`, checkMode: 'auto', options: ['x = 12/7', 'x = -8', 'x = 12', 'x = -33'], correctIndex: 2, explanation: 'Die KGV van 5 en 2 is 10. Vermenigvuldig elke term met 10: 2(4x − 3) = 5(x + 6). Brei uit: 8x − 6 = 5x + 30. Trek 5x af: 3x − 6 = 30. Tel 6 by: 3x = 36. Deel deur 3: x = 12. Om te vergeet om albei kante met die korrekte KGV-faktor te vermenigvuldig, of ʼn tekenfout wanneer uitgebrei word, is algemene foute.' },
 
         // Blok B — Kwadratiese vergelykings deur faktorisering (posisies 3-5)
-        { difficulty: 'Easy', question: 'Los op vir x: x² − 4x − 21 = 0', answer: 'x=7 of x=-3', checkMode: 'auto', correctAnswers: ['x=7 of x=-3', 'x=-3 of x=7'], explanation: 'Vind twee getalle wat vermenigvuldig tot −21 en optel tot −4: −7 en 3.\n(x − 7)(x + 3) = 0, dus x = 7 of x = −3 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: 4x² − 4x − 3 = 0', answer: 'x=3/2 of x=-1/2', checkMode: 'auto', correctAnswers: ['x=3/2 of x=-1/2', 'x=-1/2 of x=3/2'], explanation: 'a×c = 4×(−3) = −12. Vind twee getalle wat vermenigvuldig tot −12 en optel tot −4: −6 en 2.\nSplits: 4x² − 6x + 2x − 3 = 0 → 2x(2x − 3) + 1(2x − 3) = 0 → (2x + 1)(2x − 3) = 0, dus x = −1/2 of x = 3/2 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: x² + 2x = 24', answer: 'x=4 of x=-6', checkMode: 'auto', correctAnswers: ['x=4 of x=-6', 'x=-6 of x=4'], explanation: 'Herrangskik: x² + 2x − 24 = 0.\nVind twee getalle wat vermenigvuldig tot −24 en optel tot 2: 6 en −4.\n(x + 6)(x − 4) = 0, dus x = −6 of x = 4 ✓' },
+        { difficulty: 'Easy', question: 'Los op vir x: x² − 4x − 21 = 0', checkMode: 'auto', options: ['x = -7 of x = 3', 'x = -7 of x = -3', 'x = 21 of x = -1', 'x = 7 of x = -3'], correctIndex: 3, explanation: 'Vind twee getalle wat vermenigvuldig tot −21 en optel tot −4: −7 en 3, dus (x−7)(x+3)=0, wat x=7 of x=−3 gee. Verwarring met tekens (opsies A en B), of om die verkeerde faktorpaar van 21 te gebruik (opsie C), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: 4x² − 4x − 3 = 0', checkMode: 'auto', options: ['x = 3/2 of x = -1/2', 'x = -3/2 of x = 1/2', 'x = 3/2 of x = 1/2', 'x = 1/4 of x = -3'], correctIndex: 0, explanation: 'a×c = 4×(−3) = −12. Vind twee getalle wat vermenigvuldig tot −12 en optel tot −4: −6 en 2. Splits: 4x²−6x+2x−3=0 → 2x(2x−3)+1(2x−3)=0 → (2x+1)(2x−3)=0, wat x=−1/2 of x=3/2 gee. Tekenfoute (opsies B en C), of om die verkeerde faktorpaar van 12 te gebruik (opsie D), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: x² + 2x = 24', checkMode: 'auto', options: ['x = -4 of x = 6', 'x = 4 of x = -6', 'x = -4 of x = -6', 'x = 24 of x = -1'], correctIndex: 1, explanation: 'Herrangskik: x²+2x−24=0. Vind twee getalle wat vermenigvuldig tot −24 en optel tot 2: 6 en −4, dus (x+6)(x−4)=0, wat x=−6 of x=4 gee. Verwarring met tekens (opsies A en C), of om die verkeerde faktorpaar van 24 te gebruik (opsie D), is algemene foute.' },
 
         // Blok C — Gelyktydige lineêre vergelykings (posisies 6-9)
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: x + y = 14 en x − y = 2', answer: 'x=8,y=6', checkMode: 'auto', correctAnswer: 'x=8,y=6', correctAnswers: ['x=8,y=6', 'x = 8, y = 6'], explanation: 'Tel die vergelykings bymekaar: 2x = 16, dus x = 8.\nVervang in x + y = 14: 8 + y = 14, dus y = 6 ✓' },
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y deur substitusie: y = 3x − 4 en x + y = 12', answer: 'x=4,y=8', checkMode: 'auto', correctAnswer: 'x=4,y=8', correctAnswers: ['x=4,y=8', 'x = 4, y = 8'], explanation: 'Vervang y = 3x − 4 in x + y = 12: x + 3x − 4 = 12.\nKombineer: 4x − 4 = 12, dus 4x = 16, x = 4.\nVervang terug: y = 3(4) − 4 = 8 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y deur eliminasie: 4x + 3y = 26 en 4x − y = 6', answer: 'x=2,75; y=5', checkMode: 'auto', correctAnswer: 'x=2,75; y=5', correctAnswers: ['x=2,75; y=5', 'x=2,75,y=5', 'x=2.75,y=5', 'x=11/4,y=5'], explanation: 'Trek die tweede vergelyking van die eerste af: (4x + 3y) − (4x − y) = 26 − 6, dus 4y = 20, y = 5.\nVervang y = 5 in 4x − y = 6: 4x − 5 = 6, dus 4x = 11, x = 2,75.\nKontroleer: 4(2,75) + 3(5) = 11 + 15 = 26 ✓ en 4(2,75) − 5 = 11 − 5 = 6 ✓' },
-        { difficulty: 'Hard', question: 'Twee getalle het ʼn som van 30 en ʼn verskil van 12. Stel twee vergelykings op en los gelyktydig op om die twee getalle te vind.', answer: 'Laat die getalle x en y wees, met x > y.\nx + y = 30 en x − y = 12.\nTel die vergelykings bymekaar: 2x = 42, dus x = 21.\nVervang in x + y = 30: 21 + y = 30, dus y = 9.\nDie getalle is 21 en 9.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: x + y = 14 en x − y = 2', checkMode: 'auto', options: ['x=6,y=8', 'x=8,y=5', 'x=8,y=6', 'x=14,y=0'], correctIndex: 2, explanation: 'Tel die vergelykings bymekaar: 2x = 16, dus x = 8. Vervang in x + y = 14: 8 + y = 14, dus y = 6. Om x en y te verwissel (opsie A), of ʼn rekenfout (opsies B en D), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y deur substitusie: y = 3x − 4 en x + y = 12', checkMode: 'auto', options: ['x=2,y=2', 'x=8,y=4', 'x=5,y=11', 'x=4,y=8'], correctIndex: 3, explanation: 'Vervang y = 3x − 4 in x + y = 12: x + 3x − 4 = 12. Kombineer: 4x − 4 = 12, dus 4x = 16, x = 4. Vervang terug: y = 3(4) − 4 = 8. ʼn Tekenfout wanneer vervang word (opsie A), of om te verwar watter veranderlike watter is (opsie B), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y deur eliminasie: 4x + 3y = 26 en 4x − y = 6', checkMode: 'auto', options: ['x=2,75; y=5', 'x=1,y=6', 'x=2,75; y=-5', 'x=2,75; y=6'], correctIndex: 0, explanation: 'Trek die tweede vergelyking van die eerste af: (4x + 3y) − (4x − y) = 26 − 6, dus 4y = 20, y = 5. Vervang y = 5 in 4x − y = 6: 4x − 5 = 6, dus 4x = 11, x = 2,75. ʼn Tekenfout wanneer teruggevervang word (opsie C), of ʼn rekenfout (opsie D), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Twee getalle het ʼn som van 30 en ʼn verskil van 12. Wat is die twee getalle?', checkMode: 'auto', options: ['22 en 8', '21 en 9', '15 en 15', '21 en 10'], correctIndex: 1, explanation: 'Laat die getalle x en y wees, met x > y. x + y = 30 en x − y = 12. Tel die vergelykings bymekaar: 2x = 42, dus x = 21. Vervang in x + y = 30: 21 + y = 30, dus y = 9. Die getalle is 21 en 9. Om nie albei vergelykings saam te gebruik nie (opsie C), of ʼn rekenfout wanneer opgetel word (opsie A), is algemene foute.' },
 
         // Blok D — Lineêre ongelykhede, insl. tekenomkering en getallelyn-beskrywing (posisies 10-12)
-        { difficulty: 'Easy', question: 'Los op vir x: 4x − 3 > 13', answer: 'x>4', checkMode: 'auto', correctAnswer: 'x>4', correctAnswers: ['x>4', 'x > 4'], explanation: 'Tel 3 by albei kante: 4x > 16.\nDeel deur 4: x > 4 ✓' },
-        { difficulty: 'Medium', question: 'Los op vir x: −5x + 2 ≤ 22', answer: 'x≥-4', checkMode: 'auto', correctAnswer: 'x≥-4', correctAnswers: ['x≥-4', 'x >= -4', 'x≥−4'], explanation: 'Trek 2 van albei kante af: −5x ≤ 20.\nDeel albei kante deur −5 — die ongelykheidsteken keer om: x ≥ −4 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los op vir x: 10 − x ≥ 2(x − 1). Beskryf hoe jy die oplossingstel op ʼn getallelyn sou voorstel.', answer: 'x≤4', checkMode: 'auto', correctAnswer: 'x≤4', correctAnswers: ['x≤4', 'x <= 4'], explanation: 'Brei die regterkant uit: 10 − x ≥ 2x − 2.\nTel x by albei kante: 10 ≥ 3x − 2.\nTel 2 by: 12 ≥ 3x.\nDeel deur 3: 4 ≥ x, d.w.s. x ≤ 4.\nOp ʼn getallelyn word dit met ʼn vol (toe) sirkel by 4 en skadu/ʼn pyl wat links na negatiewe oneindigheid strek, aangedui, aangesien 4 self ingesluit is.' },
+        { difficulty: 'Easy', question: 'Los op vir x: 4x − 3 > 13', checkMode: 'auto', options: ['x < 4', 'x > 16', 'x > 4', 'x > -4'], correctIndex: 2, explanation: 'Tel 3 by albei kante: 4x > 16. Deel deur 4: x > 4 (geen omkering nodig nie aangesien ons deur ʼn positiewe getal gedeel het). Om die ongelykheidsteken onnodig om te keer (opsie A), of om te vergeet om deur 4 te deel (opsie B), is algemene foute.' },
+        { difficulty: 'Medium', question: 'Los op vir x: −5x + 2 ≤ 22', checkMode: 'auto', options: ['x ≤ -4', 'x ≥ 4', 'x ≥ -20', 'x ≥ -4'], correctIndex: 3, explanation: 'Trek 2 van albei kante af: −5x ≤ 20. Deel albei kante deur −5 — die ongelykheidsteken keer om: x ≥ −4. Om te vergeet om die ongelykheidsteken om te keer wanneer deur ʼn negatiewe getal gedeel word (opsie A) is die klassieke fout hier.' },
+        { difficulty: 'Medium-Hard', question: 'Los op vir x: 10 − x ≥ 2(x − 1). Beskryf hoe jy die oplossingstel op ʼn getallelyn sou voorstel.', checkMode: 'auto', options: ['x ≤ 4', 'x ≤ 11/3', 'x ≥ 4', 'x ≤ 3'], correctIndex: 0, explanation: 'Brei die regterkant uit: 10 − x ≥ 2x − 2. Tel x by albei kante: 10 ≥ 3x − 2. Tel 2 by: 12 ≥ 3x. Deel deur 3: 4 ≥ x, d.w.s. x ≤ 4. Om te vergeet om die 2 oor albei terme in die hakie te versprei (opsie B), of om die ongelykheid onnodig om te keer wanneer deur ʼn positiewe getal gedeel word (opsie C), is algemene foute. Op ʼn getallelyn word dit met ʼn vol (toe) sirkel by 4 en skadu wat links na negatiewe oneindigheid strek, aangedui, aangesien 4 self ingesluit is.' },
 
         // Blok E — Gelyktydige lineêr-kwadratiese stelsels (posisies 13-16)
-        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = x + 1 en y = x² − 5', answer: 'x=3,y=4 of x=-2,y=-1', checkMode: 'auto', correctAnswers: ['x=3,y=4 of x=-2,y=-1', 'x=-2,y=-1 of x=3,y=4'], explanation: 'Stel x + 1 = x² − 5, dus x² − x − 6 = 0.\nFaktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2.\nAs x = 3: y = 4. As x = −2: y = −1.\nKontroleer: 3² − 5 = 4 ✓ en (−2)² − 5 = −1 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y: y = 5x − 4 en y = x² + 2x − 4', answer: 'x=0,y=-4 of x=3,y=11', checkMode: 'auto', correctAnswers: ['x=0,y=-4 of x=3,y=11', 'x=3,y=11 of x=0,y=-4'], explanation: 'Stel 5x − 4 = x² + 2x − 4, dus x² − 3x = 0.\nFaktoriseer: x(x − 3) = 0, dus x = 0 of x = 3.\nAs x = 0: y = −4. As x = 3: y = 11.\nKontroleer: 0² + 2(0) − 4 = −4 ✓ en 3² + 2(3) − 4 = 11 ✓' },
-        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: y = x + 5 en y = x² + x − 1', answer: 'Vervang die eerste vergelyking in die tweede: x + 5 = x² + x − 1.\nVereenvoudig: 5 = x² − 1, dus x² = 6, x = ±√6.\nAs x = √6: y = √6 + 5. As x = −√6: y = −√6 + 5.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: 2x + y = 9 en y = x² − x − 3', answer: 'x=3,y=3 of x=-4,y=17', checkMode: 'auto', correctAnswers: ['x=3,y=3 of x=-4,y=17', 'x=-4,y=17 of x=3,y=3'], explanation: 'Uit die eerste vergelyking, y = 9 − 2x. Vervang: 9 − 2x = x² − x − 3.\nHerrangskik: x² + x − 12 = 0.\nFaktoriseer: (x + 4)(x − 3) = 0, dus x = −4 of x = 3.\nAs x = 3: y = 9 − 2(3) = 3. As x = −4: y = 9 − 2(−4) = 17.\nKontroleer: 3² − 3 − 3 = 3 ✓ en (−4)² − (−4) − 3 = 17 ✓' },
+        { difficulty: 'Medium', question: 'Los gelyktydig op vir x en y: y = x + 1 en y = x² − 5', checkMode: 'auto', options: ['x=-3,y=-2 of x=2,y=3', 'x=3,y=4 of x=-2,y=-1', 'x=3,y=-1 of x=-2,y=4', 'x=3,y=4 of x=-2,y=-3'], correctIndex: 1, explanation: 'Stel x + 1 = x² − 5, dus x² − x − 6 = 0. Faktoriseer: (x − 3)(x + 2) = 0, dus x = 3 of x = −2. As x = 3: y = 4. As x = −2: y = −1. Kontroleer: 3² − 5 = 4 ✓ en (−2)² − 5 = −1 ✓. Tekenfoute in die faktorisering (opsie A), of om die gepaarde y-waardes te verwissel (opsie C), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'Los gelyktydig op vir x en y: y = 5x − 4 en y = x² + 2x − 4', checkMode: 'auto', options: ['x=0,y=-4 of x=-3,y=-19', 'x=0,y=11 of x=3,y=-4', 'x=0,y=-4 of x=3,y=11', 'x=0,y=-4 of x=3,y=12'], correctIndex: 2, explanation: 'Stel 5x − 4 = x² + 2x − 4, dus x² − 3x = 0. Faktoriseer: x(x − 3) = 0, dus x = 0 of x = 3. As x = 0: y = −4. As x = 3: y = 11. Kontroleer: 0² + 2(0) − 4 = −4 ✓ en 3² + 2(3) − 4 = 11 ✓. ʼn Tekenfout op die tweede wortel (opsie A), of om die gepaarde y-waardes te verwissel (opsie B), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y, en los jou antwoorde in eenvoudigste wortelvorm: y = x + 5 en y = x² + x − 1', checkMode: 'auto', options: ['x=√6, y=-√6+5 of x=-√6, y=√6+5', 'x=2, y=7 of x=-2, y=3', 'x=√6, y=√6 of x=-√6, y=-√6', 'x=√6, y=√6+5 of x=-√6, y=-√6+5'], correctIndex: 3, explanation: 'Vervang die eerste vergelyking in die tweede: x + 5 = x² + x − 1. Vereenvoudig: 5 = x² − 1, dus x² = 6, x = ±√6. As x = √6: y = √6 + 5. As x = −√6: y = −√6 + 5. Om die gepaarde y-waardes te verwissel (opsie A), of ʼn rekenfout in die konstante term (opsie B), is algemene foute.' },
+        { difficulty: 'Hard', question: 'Los gelyktydig op vir x en y: 2x + y = 9 en y = x² − x − 3', checkMode: 'auto', options: ['x=3,y=3 of x=-4,y=17', 'x=-3,y=15 of x=4,y=1', 'x=3,y=17 of x=-4,y=3', 'x=3,y=3 of x=-4,y=16'], correctIndex: 0, explanation: 'Uit die eerste vergelyking, y = 9 − 2x. Vervang: 9 − 2x = x² − x − 3. Herrangskik: x² + x − 12 = 0. Faktoriseer: (x + 4)(x − 3) = 0, dus x = −4 of x = 3. As x = 3: y = 9 − 2(3) = 3. As x = −4: y = 9 − 2(−4) = 17. Kontroleer: 3² − 3 − 3 = 3 ✓ en (−4)² − (−4) − 3 = 17 ✓. ʼn Tekenfout in die faktorisering (opsie B), of om die gepaarde y-waardes te verwissel (opsie C), is algemene foute.' },
 
         // Blok F — Woordprobleme en toepassings in die styl van letterlike vergelykings (posisies 17-19)
-        { difficulty: 'Medium', question: 'Die lengte van ʼn reghoek is 6 cm meer as sy wydte. As die omtrek 40 cm is, stel ʼn vergelyking op in terme van die wydte w en los op vir w.', answer: 'w=7', checkMode: 'auto', correctAnswer: 'w=7', correctAnswers: ['w=7', 'w = 7'], explanation: 'Omtrek = 2(lengte + wydte) = 2((w + 6) + w) = 40.\nVereenvoudig: 2(2w + 6) = 40, dus 4w + 12 = 40.\nTrek 12 af: 4w = 28.\nDeel deur 4: w = 7 ✓' },
-        { difficulty: 'Medium-Hard', question: 'ʼn Getal vermeerder met 5, dan verdubbel, gee dieselfde resultaat as die getal verminder met 3, dan verdriedubbel. Vind die getal.', answer: 'x=19', checkMode: 'auto', correctAnswer: 'x=19', correctAnswers: ['x=19', 'x = 19'], explanation: 'Laat die getal x wees. Vergelyking: 2(x + 5) = 3(x − 3).\nBrei uit: 2x + 10 = 3x − 9.\nTrek 2x af: 10 = x − 9.\nTel 9 by: x = 19.\nKontroleer: 2(19 + 5) = 48 en 3(19 − 3) = 48 ✓' },
-        { difficulty: 'Hard', question: 'ʼn Konferensiesentrum hef ʼn opstelfooi van R600 plus R20 per afgevaardigde. Die organiseerder het ʼn begroting van R2 600. Stel ʼn ongelykheid op vir die aantal afgevaardigdes d wat hulle kan bekostig, en los op vir d.', answer: 'd≤100', checkMode: 'auto', correctAnswer: 'd≤100', correctAnswers: ['d≤100', 'd <= 100'], explanation: 'Totale koste: 600 + 20d ≤ 2600.\nTrek 600 af: 20d ≤ 2000.\nDeel deur 20: d ≤ 100. Die organiseerder kan hoogstens 100 afgevaardigdes bekostig ✓' },
+        { difficulty: 'Medium', question: 'Die lengte van ʼn reghoek is 6 cm meer as sy wydte. As die omtrek 40 cm is, stel ʼn vergelyking op in terme van die wydte w en los op vir w.', checkMode: 'auto', options: ['w = 17', 'w = 7', 'w = 13', 'w = 8'], correctIndex: 1, explanation: 'Omtrek = 2(lengte + wydte) = 2((w + 6) + w) = 40. Vereenvoudig: 2(2w + 6) = 40, dus 4w + 12 = 40. Trek 12 af: 4w = 28. Deel deur 4: w = 7. Om die faktor 2 in die omtrekformule te vergeet (opsie A), of om die lengte in plaas van die wydte te rapporteer (opsie C), is algemene foute.' },
+        { difficulty: 'Medium-Hard', question: 'ʼn Getal vermeerder met 5, dan verdubbel, gee dieselfde resultaat as die getal verminder met 3, dan verdriedubbel. Vind die getal.', checkMode: 'auto', options: ['x = 1', 'x = 14', 'x = 19', 'x = 25'], correctIndex: 2, explanation: 'Laat die getal x wees. Vergelyking: 2(x + 5) = 3(x − 3). Brei uit: 2x + 10 = 3x − 9. Trek 2x af: 10 = x − 9. Tel 9 by: x = 19. Kontroleer: 2(19 + 5) = 48 en 3(19 − 3) = 48 ✓. ʼn Tekenfout wanneer uitgebrei word (opsie A), of om nie ten volle te versprei nie (opsie B), is algemene foute.' },
+        { difficulty: 'Hard', question: 'ʼn Konferensiesentrum hef ʼn opstelfooi van R600 plus R20 per afgevaardigde. Die organiseerder het ʼn begroting van R2 600. Stel ʼn ongelykheid op vir die aantal afgevaardigdes d wat hulle kan bekostig, en los op vir d.', checkMode: 'auto', options: ['d ≤ 130', 'd ≤ 110', 'd ≥ 100', 'd ≤ 100'], correctIndex: 3, explanation: 'Totale koste: 600 + 20d ≤ 2600. Trek 600 af: 20d ≤ 2000. Deel deur 20: d ≤ 100. Die organiseerder kan hoogstens 100 afgevaardigdes bekostig. Om te vergeet om die opstelfooi eers af te trek (opsie A), of om die ongelykheidsteken onnodig om te keer (opsie C), is algemene foute.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Uitstekend! Jy het lineêre en kwadratiese vergelykings, gelyktydige stelsels, en ongelykhede bemeester.' },

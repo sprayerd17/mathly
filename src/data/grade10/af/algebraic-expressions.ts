@@ -11,6 +11,12 @@ const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</spa
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
 const pu = (t: string) => `<span style="color:#7c3aed;font-weight:700">${t}</span>`
+// Stacked numerator/denominator fraction notation instead of a plain "n/d"
+// slash — renders as an actual fraction bar via the site's existing
+// whitelisted-HTML pipeline. Works for algebraic numerators/denominators
+// too (e.g. frac('5x+5', '6x²')), not just plain numbers.
+const frac = (num: string, den: string) =>
+  `<span style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 2px;line-height:1.15;font-size:0.95em;"><span style="border-bottom:1.5px solid currentColor;padding:0 3px;">${num}</span><span style="padding:0 3px;">${den}</span></span>`
 
 export const topicData: TopicData = {
   title: 'Algebraïese Uitdrukkings',
@@ -585,196 +591,215 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Brei (x+3)(x²+2x-1) uit.',
-      answer: 'x³+5x²+5x-3',
       checkMode: 'auto',
-      correctAnswer: 'x³+5x²+5x-3',
-      correctAnswers: ['x³+5x²+5x-3', 'x^3+5x^2+5x-3'],
-      explanation: 'Distribueer x: x³+2x²-x. Distribueer +3: 3x²+6x-3. Voeg saam: x³+(2+3)x²+(-1+6)x-3 = x³+5x²+5x-3.',
+      options: ['x³+5x²+5x-3', 'x³+5x²+7x+3', 'x³+5x²-x-3', 'x³+2x²+5x-3'],
+      correctIndex: 0,
+      explanation: 'Distribueer x: x³+2x²-x. Distribueer +3: 3x²+6x-3. Voeg saam: x³+(2+3)x²+(-1+6)x-3 = x³+5x²+5x-3. (Die ander opsies laat elk een van die ses kruisprodukte weg of het die verkeerde teken.)',
     },
 
     // ── Q2 Medium — Expand (2x-3)(x²+x+4) ───────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Brei (2x-3)(x²+x+4) uit.',
-      answer: '2x³-x²+5x-12',
       checkMode: 'auto',
-      correctAnswer: '2x³-x²+5x-12',
-      correctAnswers: ['2x³-x²+5x-12', '2x^3-x^2+5x-12'],
+      options: ['2x³+2x²+5x-12', '2x³-x²+5x-12', '2x³-x²+8x-12', '2x³+5x²+11x+12'],
+      correctIndex: 1,
       explanation: 'Distribueer 2x: 2x³+2x²+8x. Distribueer -3: -3x²-3x-12. Voeg saam: 2x³+(2-3)x²+(8-3)x-12 = 2x³-x²+5x-12.',
     },
 
     // ── Q3 Hard — Check Sipho's expansion of (x-1)(x²+x+1) ──────────────────
     {
       difficulty: 'Hard',
-      question: 'Sipho brei (x-1)(x²+x+1) uit en kry x³-1. Kontroleer sy antwoord.',
-      answer: 'Korrek — deur volledig te distribueer kry ons x³+x²+x-x²-x-1=x³-1.',
-      checkMode: 'self',
+      question: "Sipho brei (x-1)(x²+x+1) uit en kry x³-1. Watter stelling evalueer sy antwoord korrek?",
+      checkMode: 'auto',
+      options: [
+        'Hy is verkeerd — die korrekte uitbreiding is x³+2x²-1.',
+        'Hy is verkeerd — die korrekte uitbreiding is x³-x²+2x-1.',
+        'Hy is korrek — dit stem ooreen met die verskil-van-kubusse-patroon a³-b³ = (a-b)(a²+ab+b²), en volledige uitbreiding bevestig x³-1.',
+        'Hy is korrek, maar slegs per toeval aangesien die middelste terme toevallig kanselleer.',
+      ],
+      correctIndex: 2,
+      explanation: 'Deur volledig te distribueer: x³+x²+x-x²-x-1 = x³-1. Dit is nie toeval nie — dit gebeur altyd vir (a-b)(a²+ab+b²), die verskil-van-kubusse-patroon, met a=x en b=1.',
     },
 
     // ── Q4 Easy — Factorise x²-3x-10 ─────────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'Faktoriseer x²-3x-10.',
-      answer: '(x-5)(x+2)',
       checkMode: 'auto',
-      correctAnswer: '(x-5)(x+2)',
-      correctAnswers: ['(x-5)(x+2)', '(x+2)(x-5)'],
-      explanation: 'Vind twee getalle wat vermenigvuldig na -10 en optel na -3: -5 en 2. Antwoord: (x-5)(x+2). Kontroleer: (x-5)(x+2)=x²+2x-5x-10=x²-3x-10 ✓',
+      options: ['(x+5)(x-2)', '(x-5)(x+2)', '(x+1)(x-10)', '(x-1)(x+10)'],
+      correctIndex: 1,
+      explanation: 'Vind twee getalle wat vermenigvuldig na -10 en optel na -3: -5 en 2. Antwoord: (x-5)(x+2). Kontroleer: x²+2x-5x-10 = x²-3x-10 ✓ (Die ander pare vermenigvuldig ook na -10, maar tel op na +3 of ±9, nie -3 nie.)',
     },
 
     // ── Q5 Medium — Factorise 2x²+7x+3 ──────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Faktoriseer 2x²+7x+3.',
-      answer: '(2x+1)(x+3)',
       checkMode: 'auto',
-      correctAnswer: '(2x+1)(x+3)',
-      correctAnswers: ['(2x+1)(x+3)', '(x+3)(2x+1)'],
-      explanation: 'a×c=6. Getalle wat vermenigvuldig na 6 en optel na 7: 1 en 6. Splits: 2x²+x+6x+3. Groepeer: x(2x+1)+3(2x+1)=(2x+1)(x+3). Kontroleer: (2x+1)(x+3)=2x²+6x+x+3=2x²+7x+3 ✓',
+      options: ['(2x+3)(x+1)', '(2x+1)(x+3)', '(2x-1)(x-3)', '(x+1)(x+6)'],
+      correctIndex: 1,
+      explanation: 'a×c = 2×3 = 6. Getalle wat vermenigvuldig na 6 en optel na 7: 6 en 1. Splits: 2x²+6x+x+3. Groepeer: 2x(x+3)+1(x+3) = (2x+1)(x+3). Kontroleer: 2x²+6x+x+3 = 2x²+7x+3 ✓',
     },
 
     // ── Q6 Hard — Factorise 6x²-13x+6 using a×c method ──────────────────────
     {
       difficulty: 'Hard',
-      question: 'Faktoriseer 6x²-13x+6, en toon die a×c-metode duidelik.',
-      answer: 'a×c=36. Getalle wat vermenigvuldig na 36 en optel na -13: -9 en -4. Splits: 6x²-9x-4x+6. Groepeer: 3x(2x-3)-2(2x-3)=(3x-2)(2x-3).',
-      checkMode: 'self',
+      question: 'Faktoriseer 6x²-13x+6 deur die a×c-metode te gebruik.',
+      checkMode: 'auto',
+      options: ['(3x+2)(2x+3)', '(3x-2)(2x-3)', '(6x-2)(x-3)', '(2x-2)(3x-3)'],
+      correctIndex: 1,
+      explanation: 'a×c = 6×6 = 36. Getalle wat vermenigvuldig na 36 en optel na -13: -9 en -4. Splits: 6x²-9x-4x+6. Groepeer: 3x(2x-3)-2(2x-3) = (3x-2)(2x-3). Kontroleer: 6x²-9x-4x+6 = 6x²-13x+6 ✓',
     },
 
     // ── Q7 Medium — Factorise by grouping: ab+ac+db+dc ───────────────────────
     {
       difficulty: 'Medium',
       question: 'Faktoriseer deur groepering: ab+ac+db+dc.',
-      answer: '(b+c)(a+d)',
       checkMode: 'auto',
-      correctAnswer: '(b+c)(a+d)',
-      correctAnswers: ['(b+c)(a+d)', '(a+d)(b+c)'],
-      explanation: 'Groepeer: (ab+ac)+(db+dc). Faktoriseer: a(b+c)+d(b+c)=(b+c)(a+d).',
+      options: ['(a+b)(c+d)', '(b+c)(a+d)', '(a+c)(b+d)', '(b+c)(a-d)'],
+      correctIndex: 1,
+      explanation: 'Groepeer: (ab+ac)+(db+dc). Faktoriseer elke paar: a(b+c)+d(b+c). Gemeenskaplike binoom: (b+c)(a+d). Kontroleer: ab+ac+bd+cd = ab+ac+db+dc ✓',
     },
 
     // ── Q8 Hard — Factorise x³-2x²-9x+18 fully ──────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Faktoriseer x³-2x²-9x+18 volledig.',
-      answer: 'Groepeer: x²(x-2)-9(x-2)=(x-2)(x²-9)=(x-2)(x-3)(x+3).',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['(x-2)(x²-9)', '(x-2)(x-3)(x+3)', '(x+2)(x-3)(x+3)', '(x-2)(x-3)²'],
+      correctIndex: 1,
+      explanation: 'Groepeer: (x³-2x²)+(-9x+18) = x²(x-2)-9(x-2) = (x-2)(x²-9). "Volledig" beteken nog een stap — x²-9 is ʼn verskil van kwadrate, dus is die finale antwoord (x-2)(x-3)(x+3).',
     },
 
     // ── Q9 Easy — Simplify (4x²+8x)/4x ──────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Vereenvoudig (4x²+8x)/4x &nbsp;(x ≠ 0).',
-      answer: 'x+2',
+      question: `Vereenvoudig ${frac('4x²+8x', '4x')} &nbsp;(x ≠ 0).`,
       checkMode: 'auto',
-      correctAnswer: 'x+2',
-      correctAnswers: ['x+2', 'x + 2'],
-      explanation: 'Faktoriseer teller: 4x(x+2). Kanselleer 4x: x+2.',
+      options: ['x²+2x', 'x+2', '4x+8', 'x'],
+      correctIndex: 1,
+      explanation: `Faktoriseer die teller: 4x²+8x = 4x(x+2). Kanselleer die gemeenskaplike faktor 4x (beide die getal en die x): ${frac('4x(x+2)', '4x')} = x+2.`,
     },
 
     // ── Q10 Medium — Calculate 2/x + 7/3x ────────────────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Bereken 2/x + 7/(3x) &nbsp;(x ≠ 0).',
-      answer: '13/3x',
+      question: `Bereken ${frac('2', 'x')} + ${frac('7', '3x')} &nbsp;(x ≠ 0).`,
       checkMode: 'auto',
-      correctAnswer: '13/(3x)',
-      correctAnswers: ['13/(3x)', '13/3x'],
-      explanation: 'KGV=3x. Skakel eerste breuk om: 2/x=6/3x. Tel op: 6/3x+7/3x=13/3x.',
+      options: [frac('9', '4x'), frac('13', '3x'), frac('3', 'x'), frac('9', 'x')],
+      correctIndex: 1,
+      explanation: `Die KGV van x en 3x is 3x. Skakel die eerste breuk om: ${frac('2', 'x')} = ${frac('6', '3x')}. Tel op: ${frac('6', '3x')} + ${frac('7', '3x')} = ${frac('13', '3x')}.`,
     },
 
-    // ── Q11 Hard — Calculate 5/x² - 2/x showing the LCM step ─────────────────
+    // ── Q11 Hard — Calculate 5/x² - 2/x ───────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Bereken 5/x² - 2/x &nbsp;(x ≠ 0), en toon die KGV-stap.',
-      answer: 'KGV=x². Skakel om: 5/x² - 2x/x². Kombineer: (5-2x)/x².',
-      checkMode: 'self',
+      question: `Bereken ${frac('5', 'x²')} − ${frac('2', 'x')} &nbsp;(x ≠ 0).`,
+      checkMode: 'auto',
+      options: [frac('3', 'x²'), frac('2x-5', 'x²'), frac('5-2x', 'x²'), frac('5-2x', 'x')],
+      correctIndex: 2,
+      explanation: `Die KGV van x² en x is x². ${frac('5', 'x²')} het reeds die KGV-noemer. Skakel om: ${frac('2', 'x')} = ${frac('2x', 'x²')}. Kombineer: ${frac('5', 'x²')} − ${frac('2x', 'x²')} = ${frac('5-2x', 'x²')}.`,
     },
 
     // ── Q12 Medium — Factorise 4x²-9 ─────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Faktoriseer 4x²-9.',
-      answer: '(2x-3)(2x+3)',
       checkMode: 'auto',
-      correctAnswer: '(2x-3)(2x+3)',
-      correctAnswers: ['(2x-3)(2x+3)', '(2x+3)(2x-3)'],
-      explanation: 'Verskil van kwadrate: (2x)²-3²=(2x-3)(2x+3). Kontroleer: (2x-3)(2x+3)=4x²-9 ✓',
+      options: ['(2x-3)²', '(2x-3)(2x+3)', '(4x-3)(x+3)', '(4x+9)(x-1)'],
+      correctIndex: 1,
+      explanation: 'Verskil van kwadrate: (2x)²-3² = (2x-3)(2x+3). Kontroleer: (2x-3)(2x+3) = 4x²-9 ✓ (Opsie A behandel dit verkeerdelik as ʼn volkome kwadraat in plaas van ʼn verskil van kwadrate.)',
     },
 
     // ── Q13 Hard — Lerato's claim about 3x²+12x+9 ───────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Lerato sê 3x²+12x+9 kan nie gefaktoriseer word nie, aangesien 3 nie ʼn volkome kwadraat is nie. Is sy korrek?',
-      answer: 'Nee — faktoriseer eers die gemeenskaplike faktor 3 uit: 3(x²+4x+3)=3(x+1)(x+3).',
-      checkMode: 'self',
+      question: 'Lerato sê 3x²+12x+9 kan nie gefaktoriseer word nie, aangesien 3 nie ʼn volkome kwadraat is nie. Watter stelling is korrek?',
+      checkMode: 'auto',
+      options: [
+        "Sy is korrek — aangesien 3 nie ʼn volkome kwadraat is nie, het die trinoom geen gemeenskaplike faktor nie en kan dit nie verder vereenvoudig word nie.",
+        'Sy is verkeerd — deur eers die gemeenskaplike faktor 3 uit te faktoriseer, kry ons 3(x²+4x+3) = 3(x+1)(x+3), so dit faktoriseer wel volledig.',
+        'Sy is korrek, maar slegs omdat die trinoom priem is oor die heelgetalle.',
+        'Sy is verkeerd — die trinoom kan glad nie oor die heelgetalle gefaktoriseer word nie, so geen verdere stappe is moontlik nie.',
+      ],
+      correctIndex: 1,
+      explanation: "Of 3 ʼn volkome kwadraat is, is irrelevant — dit hoef net ʼn gemeenskaplike faktor te wees, wat dit is. Faktoriseer dit eers uit: 3(x²+4x+3), en faktoriseer dan die trinoom normaalweg: 3(x+1)(x+3).",
     },
 
     // ── Q14 Hard — Expand (x+4)(2x²-3x+5) ───────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Brei (x+4)(2x²-3x+5) uit.',
-      answer: '2x³+5x²-7x+20',
       checkMode: 'auto',
-      correctAnswer: '2x³+5x²-7x+20',
-      correctAnswers: ['2x³+5x²-7x+20', '2x^3+5x^2-7x+20'],
-      explanation: 'Distribueer x: 2x³-3x²+5x. Distribueer +4: 8x²-12x+20. Voeg saam: 2x³+(-3+8)x²+(5-12)x+20=2x³+5x²-7x+20.',
+      options: ['2x³+8x²-7x+20', '2x³+5x²-7x+20', '2x³+5x²+5x+20', '2x³+5x²-12x+20'],
+      correctIndex: 1,
+      explanation: 'Distribueer x: 2x³-3x²+5x. Distribueer +4: 8x²-12x+20. Voeg saam: 2x³+(-3+8)x²+(5-12)x+20 = 2x³+5x²-7x+20.',
     },
 
     // ── Q15 Medium — Factorise x²-11x+24 ────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Faktoriseer x²-11x+24.',
-      answer: '(x-8)(x-3)',
       checkMode: 'auto',
-      correctAnswer: '(x-8)(x-3)',
-      correctAnswers: ['(x-8)(x-3)', '(x-3)(x-8)'],
-      explanation: 'Vind twee getalle wat vermenigvuldig na 24 en optel na -11: -8 en -3. Antwoord: (x-8)(x-3). Kontroleer: (x-8)(x-3)=x²-3x-8x+24=x²-11x+24 ✓',
+      options: ['(x-4)(x-6)', '(x-8)(x-3)', '(x-2)(x-12)', '(x+8)(x+3)'],
+      correctIndex: 1,
+      explanation: 'Vind twee getalle wat vermenigvuldig na 24 en optel na -11: -8 en -3. Antwoord: (x-8)(x-3). Kontroleer: x²-3x-8x+24 = x²-11x+24 ✓ (Die ander pare vermenigvuldig ook na 24, maar tel op na -10, -14, of +11.)',
     },
 
     // ── Q16 Hard — Factorise by grouping: 2x³+6x²-x-3 ──────────────────────
     {
       difficulty: 'Hard',
       question: 'Faktoriseer deur groepering: 2x³+6x²-x-3.',
-      answer: 'Groepeer: 2x²(x+3)-1(x+3)=(x+3)(2x²-1).',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['(x-3)(2x²-1)', '(x+3)(2x²-1)', '(x+3)(2x²+1)', '(2x+3)(x²-1)'],
+      correctIndex: 1,
+      explanation: 'Groepeer: (2x³+6x²)+(-x-3). Faktoriseer elke paar: 2x²(x+3)-1(x+3). Gemeenskaplike binoom: (x+3)(2x²-1). Kontroleer: 2x³+6x²-x-3 ✓',
     },
 
     // ── Q17 Hard — Calculate 1/2x + 3/4x - 1/x ──────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Bereken 1/(2x) + 3/(4x) - 1/x &nbsp;(x ≠ 0).',
-      answer: '1/4x',
+      question: `Bereken ${frac('1', '2x')} + ${frac('3', '4x')} − ${frac('1', 'x')} &nbsp;(x ≠ 0).`,
       checkMode: 'auto',
-      correctAnswer: '1/(4x)',
-      correctAnswers: ['1/(4x)', '1/4x'],
-      explanation: 'KGV=4x. Skakel om: 2/4x+3/4x-4/4x=(2+3-4)/4x=1/4x.',
+      options: [frac('3', '4x'), frac('1', '4x'), frac('9', '4x'), frac('1', '2x')],
+      correctIndex: 1,
+      explanation: `Die KGV van 2x, 4x en x is 4x. Skakel om: ${frac('2', '4x')} + ${frac('3', '4x')} − ${frac('4', '4x')} = ${frac('2+3-4', '4x')} = ${frac('1', '4x')}.`,
     },
 
     // ── Q18 Hard — Factorise 5x²-20x-25 fully ───────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Faktoriseer 5x²-20x-25 volledig, insluitend die gemeenskaplike faktor.',
-      answer: 'Faktoriseer 5 uit: 5(x²-4x-5)=5(x-5)(x+1).',
-      checkMode: 'self',
+      question: 'Faktoriseer 5x²-20x-25 volledig.',
+      checkMode: 'auto',
+      options: ['(x-5)(5x+5)', '5(x-5)(x+1)', '5(x+5)(x-1)', '5(x+5)(x+1)'],
+      correctIndex: 1,
+      explanation: 'Faktoriseer eers die gemeenskaplike faktor 5 uit: 5(x²-4x-5). Faktoriseer dan die trinoom: 5(x-5)(x+1). (Opsie A is ʼn geldige gelyke uitdrukking, maar "volledig gefaktoriseer" beteken elke gemeenskaplike faktor word uitgehaal, insluitend die 5 wat in die tweede hakie wegkruip.)',
     },
 
     // ── Q19 Hard — Expand and simplify (x-2)(x²+2x+4) ───────────────────────
     {
       difficulty: 'Hard',
       question: 'Brei uit en vereenvoudig (x-2)(x²+2x+4).',
-      answer: 'x³-8',
       checkMode: 'auto',
-      correctAnswer: 'x³-8',
-      correctAnswers: ['x³-8', 'x^3-8'],
-      explanation: 'Distribueer x: x³+2x²+4x. Distribueer -2: -2x²-4x-8. Voeg saam: x³+(2-2)x²+(4-4)x-8=x³-8.',
+      options: ['x³+2x²-8', 'x³-8', 'x³+4x-8', 'x³-4x-8'],
+      correctIndex: 1,
+      explanation: 'Distribueer x: x³+2x²+4x. Distribueer -2: -2x²-4x-8. Voeg saam: x³+(2-2)x²+(4-4)x-8 = x³-8. (Die x²- en x-terme kanselleer heeltemal — dit is die verskil-van-kubusse-patroon.)',
     },
 
     // ── Q20 Hard — Thabo's difference of cubes claim ─────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Thabo sê (x-2)(x²+2x+4)=x³-8 is ʼn voorbeeld van ʼn spesiale faktoriseringspatroon (verskil van kubusse). Is hy korrek? Verduidelik.',
-      answer: 'Ja — dit stem ooreen met die verskil-van-kubusse-patroon a³-b³=(a-b)(a²+ab+b²), waar a=x en b=2.',
-      checkMode: 'self',
+      question: 'Thabo sê (x-2)(x²+2x+4) = x³-8 is ʼn voorbeeld van ʼn spesiale faktoriseringspatroon (verskil van kubusse). Watter stelling is korrek?',
+      checkMode: 'auto',
+      options: [
+        'Nee — dit is eintlik ʼn voorbeeld van die som-van-kubusse-patroon, aangesien die finale antwoord negatief is.',
+        'Nee — die patroon geld slegs wanneer albei hakies dieselfde veranderlike tot dieselfde mag deurgaans bevat.',
+        'Ja — dit stem ooreen met die verskil-van-kubusse-patroon a³-b³ = (a-b)(a²+ab+b²), met a=x en b=2.',
+        'Ja, maar slegs per toeval — die algemene patroon geld nie vir uitdrukkings met ʼn liniêre en ʼn kwadratiese faktor nie.',
+      ],
+      correctIndex: 2,
+      explanation: 'Die patroon a³-b³ = (a-b)(a²+ab+b²) lewer altyd hierdie presiese vorm — ʼn liniêre faktor maal ʼn kwadratiese — so dit geld algemeen, nie per toeval nie. Hier is a=x en b=2.',
     },
   ],
 
@@ -802,36 +827,36 @@ export const topicData: TopicData = {
       name: 'Stel 1',
       questions: [
         // Blok 1 — Brei binoom × trinoom uit (Easy)
-        { difficulty: 'Easy', question: 'Brei (x + 1)(x² + 2x + 3) uit.', checkMode: 'auto', correctAnswer: 'x³+3x²+5x+3', correctAnswers: ['x³+3x²+5x+3', 'x^3+3x^2+5x+3'], answer: 'x³ + 3x² + 5x + 3', explanation: 'Distribueer x: x³+2x²+3x. Distribueer +1: x²+2x+3. Voeg saam: x³+(2+1)x²+(3+2)x+3 = x³+3x²+5x+3.' },
-        { difficulty: 'Easy', question: 'Brei (x + 4)(x² − 3x + 2) uit.', checkMode: 'auto', correctAnswer: 'x³+x²-10x+8', correctAnswers: ['x³+x²-10x+8', 'x³+x²−10x+8', 'x^3+x^2-10x+8', 'x^3+x^2−10x+8'], answer: 'x³ + x² − 10x + 8', explanation: 'Distribueer x: x³-3x²+2x. Distribueer +4: 4x²-12x+8. Voeg saam: x³+(-3+4)x²+(2-12)x+8 = x³+x²-10x+8.' },
-        { difficulty: 'Medium', question: 'Brei (2x − 1)(x² + 3x − 4) uit.', checkMode: 'auto', correctAnswer: '2x³+5x²-11x+4', correctAnswers: ['2x³+5x²-11x+4', '2x³+5x²−11x+4', '2x^3+5x^2-11x+4', '2x^3+5x^2−11x+4'], answer: '2x³ + 5x² − 11x + 4', explanation: 'Distribueer 2x: 2x³+6x²-8x. Distribueer -1: -x²-3x+4. Voeg saam: 2x³+(6-1)x²+(-8-3)x+4 = 2x³+5x²-11x+4.' },
+        { difficulty: 'Easy', question: 'Brei (x + 1)(x² + 2x + 3) uit.', checkMode: 'auto', options: ['x³+3x²+5x+3', 'x³+2x²+5x+3', 'x³+3x²+3x+3', 'x³+x²+x-3'], correctIndex: 0, explanation: 'Distribueer x: x³+2x²+3x. Distribueer +1: x²+2x+3. Voeg saam: x³+(2+1)x²+(3+2)x+3 = x³+3x²+5x+3. (Die ander opsies laat elk een kruisproduk weg of het die verkeerde teken.)' },
+        { difficulty: 'Easy', question: 'Brei (x + 4)(x² − 3x + 2) uit.', checkMode: 'auto', options: ['x³-3x²-10x+8', 'x³+x²-10x+8', 'x³+x²+2x+8', 'x³-7x²+14x-8'], correctIndex: 1, explanation: 'Distribueer x: x³-3x²+2x. Distribueer +4: 4x²-12x+8. Voeg saam: x³+(-3+4)x²+(2-12)x+8 = x³+x²-10x+8.' },
+        { difficulty: 'Medium', question: 'Brei (2x − 1)(x² + 3x − 4) uit.', checkMode: 'auto', options: ['2x³+6x²-11x+4', '2x³+5x²-8x+4', '2x³+5x²-11x+4', '2x³+7x²-5x-4'], correctIndex: 2, explanation: 'Distribueer 2x: 2x³+6x²-8x. Distribueer -1: -x²-3x+4. Voeg saam: 2x³+(6-1)x²+(-8-3)x+4 = 2x³+5x²-11x+4.' },
 
         // Blok 2 — Faktoriseer trinoom a = 1 (Easy/Medium)
-        { difficulty: 'Easy', question: 'Faktoriseer x² + 9x + 20.', checkMode: 'auto', correctAnswer: '(x+4)(x+5)', correctAnswers: ['(x+4)(x+5)', '(x+5)(x+4)'], answer: '(x + 4)(x + 5)', explanation: 'Vind twee getalle wat vermenigvuldig na 20 en optel na 9: 4 en 5. Antwoord: (x+4)(x+5). Kontroleer: x²+5x+4x+20 = x²+9x+20 ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer x² − 4x − 21.', checkMode: 'auto', correctAnswer: '(x-7)(x+3)', correctAnswers: ['(x-7)(x+3)', '(x+3)(x-7)'], answer: '(x − 7)(x + 3)', explanation: 'Vind twee getalle wat vermenigvuldig na -21 en optel na -4: -7 en 3. Antwoord: (x-7)(x+3). Kontroleer: x²+3x-7x-21 = x²-4x-21 ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer x² − 13x + 40.', checkMode: 'auto', correctAnswer: '(x-8)(x-5)', correctAnswers: ['(x-8)(x-5)', '(x-5)(x-8)'], answer: '(x − 8)(x − 5)', explanation: 'Vind twee getalle wat vermenigvuldig na 40 en optel na -13: -8 en -5. Antwoord: (x-8)(x-5). Kontroleer: x²-5x-8x+40 = x²-13x+40 ✓' },
+        { difficulty: 'Easy', question: 'Faktoriseer x² + 9x + 20.', checkMode: 'auto', options: ['(x+2)(x+10)', '(x-4)(x-5)', '(x+1)(x+20)', '(x+4)(x+5)'], correctIndex: 3, explanation: 'Vind twee getalle wat vermenigvuldig na 20 en optel na 9: 4 en 5. Antwoord: (x+4)(x+5). Kontroleer: x²+5x+4x+20 = x²+9x+20 ✓ (Die ander pare vermenigvuldig ook na 20, maar tel op na 12, -9 of 21.)' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 4x − 21.', checkMode: 'auto', options: ['(x-7)(x+3)', '(x+7)(x-3)', '(x+1)(x-21)', '(x-1)(x+21)'], correctIndex: 0, explanation: 'Vind twee getalle wat vermenigvuldig na -21 en optel na -4: -7 en 3. Antwoord: (x-7)(x+3). Kontroleer: x²+3x-7x-21 = x²-4x-21 ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 13x + 40.', checkMode: 'auto', options: ['(x-4)(x-10)', '(x-8)(x-5)', '(x+8)(x+5)', '(x-2)(x-20)'], correctIndex: 1, explanation: 'Vind twee getalle wat vermenigvuldig na 40 en optel na -13: -8 en -5. Antwoord: (x-8)(x-5). Kontroleer: x²-5x-8x+40 = x²-13x+40 ✓' },
 
         // Blok 3 — Faktoriseer trinoom a ≠ 1, a×c-metode (Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 2x² + 9x + 4.', checkMode: 'auto', correctAnswer: '(x+4)(2x+1)', correctAnswers: ['(x+4)(2x+1)', '(2x+1)(x+4)'], answer: '(2x + 1)(x + 4)', explanation: 'a×c = 2×4 = 8. Getalle wat vermenigvuldig na 8 en optel na 9: 8 en 1. Splits: 2x²+8x+x+4. Groepeer: 2x(x+4)+1(x+4) = (2x+1)(x+4).' },
-        { difficulty: 'Medium', question: 'Faktoriseer 3x² − 5x − 2.', checkMode: 'auto', correctAnswer: '(x-2)(3x+1)', correctAnswers: ['(x-2)(3x+1)', '(3x+1)(x-2)'], answer: '(3x + 1)(x − 2)', explanation: 'a×c = 3×(-2) = -6. Getalle wat vermenigvuldig na -6 en optel na -5: -6 en 1. Splits: 3x²-6x+x-2. Groepeer: 3x(x-2)+1(x-2) = (3x+1)(x-2).' },
-        { difficulty: 'Medium', question: 'Faktoriseer 4x² − 4x − 3.', checkMode: 'auto', correctAnswer: '(2x-3)(2x+1)', correctAnswers: ['(2x-3)(2x+1)', '(2x+1)(2x-3)'], answer: '(2x − 3)(2x + 1)', explanation: 'a×c = 4×(-3) = -12. Getalle wat vermenigvuldig na -12 en optel na -4: -6 en 2. Splits: 4x²-6x+2x-3. Groepeer: 2x(2x-3)+1(2x-3) = (2x-3)(2x+1).' },
-        { difficulty: 'Hard', question: 'Faktoriseer 6x² + 7x − 3.', checkMode: 'auto', correctAnswer: '(2x+3)(3x-1)', correctAnswers: ['(2x+3)(3x-1)', '(3x-1)(2x+3)'], answer: '(2x + 3)(3x − 1)', explanation: 'a×c = 6×(-3) = -18. Getalle wat vermenigvuldig na -18 en optel na 7: 9 en -2. Splits: 6x²+9x-2x-3. Groepeer: 3x(2x+3)-1(2x+3) = (2x+3)(3x-1).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 2x² + 9x + 4.', checkMode: 'auto', options: ['(2x+4)(x+1)', '(2x-1)(x-4)', '(2x+1)(x+4)', '(2x-1)(x+4)'], correctIndex: 2, explanation: 'a×c = 2×4 = 8. Getalle wat vermenigvuldig na 8 en optel na 9: 8 en 1. Splits: 2x²+8x+x+4. Groepeer: 2x(x+4)+1(x+4) = (2x+1)(x+4).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 3x² − 5x − 2.', checkMode: 'auto', options: ['(x+2)(3x-1)', '(3x-2)(x+1)', '(x-1)(3x+2)', '(x-2)(3x+1)'], correctIndex: 3, explanation: 'a×c = 3×(-2) = -6. Getalle wat vermenigvuldig na -6 en optel na -5: -6 en 1. Splits: 3x²-6x+x-2. Groepeer: 3x(x-2)+1(x-2) = (3x+1)(x-2).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 4x² − 4x − 3.', checkMode: 'auto', options: ['(2x-3)(2x+1)', '(2x+3)(2x-1)', '(4x-3)(x+1)', '(4x+1)(x-3)'], correctIndex: 0, explanation: 'a×c = 4×(-3) = -12. Getalle wat vermenigvuldig na -12 en optel na -4: -6 en 2. Splits: 4x²-6x+2x-3. Groepeer: 2x(2x-3)+1(2x-3) = (2x-3)(2x+1).' },
+        { difficulty: 'Hard', question: 'Faktoriseer 6x² + 7x − 3.', checkMode: 'auto', options: ['(2x-3)(3x+1)', '(2x+3)(3x-1)', '(6x+3)(x-1)', '(6x-1)(x+3)'], correctIndex: 1, explanation: 'a×c = 6×(-3) = -18. Getalle wat vermenigvuldig na -18 en optel na 7: 9 en -2. Splits: 6x²+9x-2x-3. Groepeer: 3x(2x+3)-1(2x+3) = (2x+3)(3x-1).' },
 
         // Blok 4 — Faktoriseer deur groepering in pare (Medium/Hard)
-        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 4x² + 12x + 3x + 9.', checkMode: 'auto', correctAnswer: '(x+3)(4x+3)', correctAnswers: ['(x+3)(4x+3)', '(4x+3)(x+3)'], answer: '(x + 3)(4x + 3)', explanation: 'Groepeer: (4x²+12x)+(3x+9). Faktoriseer elke paar: 4x(x+3)+3(x+3). Gemeenskaplike binoom: (x+3)(4x+3).' },
-        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: ax + 3a + bx + 3b.', checkMode: 'auto', correctAnswer: '(a+b)(x+3)', correctAnswers: ['(a+b)(x+3)', '(x+3)(a+b)'], answer: '(a + b)(x + 3)', explanation: 'Groepeer: (ax+3a)+(bx+3b). Faktoriseer elke paar: a(x+3)+b(x+3). Gemeenskaplike binoom: (a+b)(x+3).' },
-        { difficulty: 'Hard', question: 'Faktoriseer x³ + 2x² − 9x − 18 volledig.', checkMode: 'auto', correctAnswer: '(x-3)(x+2)(x+3)', correctAnswers: ['(x-3)(x+2)(x+3)', '(x+2)(x-3)(x+3)', '(x+2)(x+3)(x-3)', '(x+3)(x+2)(x-3)', '(x+3)(x-3)(x+2)', '(x-3)(x+3)(x+2)'], answer: '(x − 3)(x + 3)(x + 2)', explanation: 'Groepeer: (x³+2x²)+(-9x-18). Faktoriseer: x²(x+2)-9(x+2). Gemeenskaplike binoom: (x+2)(x²-9). Herken x²-9 as ʼn verskil van kwadrate: (x-3)(x+3). Finaal: (x+2)(x-3)(x+3).' },
+        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 4x² + 12x + 3x + 9.', checkMode: 'auto', options: ['(x-3)(4x+3)', '(2x+3)²', '(x+3)(4x+3)', '(x+9)(4x+1)'], correctIndex: 2, explanation: 'Groepeer: (4x²+12x)+(3x+9). Faktoriseer elke paar: 4x(x+3)+3(x+3). Gemeenskaplike binoom: (x+3)(4x+3).' },
+        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: ax + 3a + bx + 3b.', checkMode: 'auto', options: ['(a+x)(b+3)', '(a+3)(b+x)', '(a+b)(x-3)', '(a+b)(x+3)'], correctIndex: 3, explanation: 'Groepeer: (ax+3a)+(bx+3b). Faktoriseer elke paar: a(x+3)+b(x+3). Gemeenskaplike binoom: (a+b)(x+3).' },
+        { difficulty: 'Hard', question: 'Faktoriseer x³ + 2x² − 9x − 18 volledig.', checkMode: 'auto', options: ['(x+2)(x-3)(x+3)', '(x+2)(x²-9)', '(x-2)(x-3)(x+3)', '(x+2)(x-3)²'], correctIndex: 0, explanation: 'Groepeer: (x³+2x²)+(-9x-18). Faktoriseer: x²(x+2)-9(x+2). Gemeenskaplike binoom: (x+2)(x²-9). Herken x²-9 as ʼn verskil van kwadrate: (x-3)(x+3). Finaal: (x+2)(x-3)(x+3).' },
 
         // Blok 5 — Vereenvoudig ʼn enkele algebraïese breuk (Hard)
-        { difficulty: 'Hard', question: 'Vereenvoudig (10x² + 15x) / 5x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x+3', correctAnswers: ['2x+3', '2x + 3'], answer: '2x + 3', explanation: 'Faktoriseer die teller: 10x²+15x = 5x(2x+3). Kanselleer die gemeenskaplike faktor 5x: 2x+3 (x ≠ 0).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig (6x² − 9x) / 3x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x-3', correctAnswers: ['2x-3', '2x − 3'], answer: '2x − 3', explanation: 'Faktoriseer die teller: 6x²-9x = 3x(2x-3). Kanselleer die gemeenskaplike faktor 3x: 2x-3 (x ≠ 0).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig (x² + 7x) / x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: 'x+7', correctAnswers: ['x+7', 'x + 7'], answer: 'x + 7', explanation: 'Faktoriseer die teller: x²+7x = x(x+7). Kanselleer die gemeenskaplike faktor x: x+7 (x ≠ 0).' },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('10x²+15x', '5x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['2x²+3x', '2x+3', '10x+15', '2x'], correctIndex: 1, explanation: `Faktoriseer die teller: 10x²+15x = 5x(2x+3). Kanselleer die gemeenskaplike faktor 5x: ${frac('5x(2x+3)', '5x')} = 2x+3.` },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('6x²-9x', '3x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['2x²-3x', '6x-9', '2x-3', '2x'], correctIndex: 2, explanation: `Faktoriseer die teller: 6x²-9x = 3x(2x-3). Kanselleer die gemeenskaplike faktor 3x: ${frac('3x(2x-3)', '3x')} = 2x-3.` },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('x²+7x', 'x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['8x', '7', 'x²+7', 'x+7'], correctIndex: 3, explanation: `Faktoriseer die teller: x²+7x = x(x+7). Kanselleer die gemeenskaplike faktor x: ${frac('x(x+7)', 'x')} = x+7.` },
 
         // Blok 6 — Optel/aftrek met KGV / multi-stap / foutopsporing (Hard)
-        { difficulty: 'Hard', question: 'Bereken 3/x + 4/(2x) &nbsp;(x ≠ 0), en vereenvoudig volledig.', checkMode: 'auto', correctAnswer: '5/x', correctAnswers: ['5/x'], answer: '5/x', explanation: 'Die KGV van x en 2x is 2x. Skakel om: 6/(2x)+4/(2x) = 10/(2x). Vereenvoudig: 10/(2x) = 5/x.' },
-        { difficulty: 'Hard', question: 'Bereken 5/x² − 3/x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '(5-3x)/x²', correctAnswers: ['(5-3x)/x²', '(5−3x)/x²', '(5-3x)/x^2', '(5−3x)/x^2'], answer: '(5 − 3x)/x²', explanation: 'Die KGV van x² en x is x². 5/x² het reeds die KGV as noemer. Skakel om: 3/x = 3x/x². Kombineer: (5-3x)/x².' },
-        { difficulty: 'Hard', question: 'Bereken 2/(3x) + 1/(4x) &nbsp;(x ≠ 0), en vereenvoudig volledig.', checkMode: 'auto', correctAnswer: '11/(12x)', correctAnswers: ['11/(12x)', '11/12x'], answer: '11/(12x)', explanation: 'Die KGV van 3x en 4x is 12x. Skakel om: 8/(12x)+3/(12x) = 11/(12x).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig volledig: (x² − 9)/(x + 3) &nbsp;(x ≠ −3).', checkMode: 'auto', correctAnswer: 'x-3', correctAnswers: ['x-3', 'x − 3'], answer: 'x − 3', explanation: 'Herken x²-9 as ʼn verskil van kwadrate: x²-9 = (x-3)(x+3). Skryf die breuk as (x-3)(x+3)/(x+3) en kanselleer (x+3): x-3.' },
+        { difficulty: 'Hard', question: `Bereken ${frac('3', 'x')} + ${frac('4', '2x')} &nbsp;(x ≠ 0), en vereenvoudig volledig.`, checkMode: 'auto', options: [frac('5', 'x'), frac('7', 'x'), frac('10', '2x'), frac('7', '2x')], correctIndex: 0, explanation: `Die KGV van x en 2x is 2x. Skakel om: ${frac('6', '2x')} + ${frac('4', '2x')} = ${frac('10', '2x')}. Vereenvoudig: ${frac('10', '2x')} = ${frac('5', 'x')}.` },
+        { difficulty: 'Hard', question: `Bereken ${frac('5', 'x²')} − ${frac('3', 'x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: [frac('2', 'x²'), frac('5-3x', 'x²'), frac('3x-5', 'x²'), frac('5-3x', 'x')], correctIndex: 1, explanation: `Die KGV van x² en x is x². ${frac('5', 'x²')} het reeds die KGV-noemer. Skakel om: ${frac('3', 'x')} = ${frac('3x', 'x²')}. Kombineer: ${frac('5', 'x²')} − ${frac('3x', 'x²')} = ${frac('5-3x', 'x²')}.` },
+        { difficulty: 'Hard', question: `Bereken ${frac('2', '3x')} + ${frac('1', '4x')} &nbsp;(x ≠ 0), en vereenvoudig volledig.`, checkMode: 'auto', options: [frac('3', '7x'), frac('3', '12x'), frac('11', '12x'), frac('7', '12x')], correctIndex: 2, explanation: `Die KGV van 3x en 4x is 12x. Skakel om: ${frac('8', '12x')} + ${frac('3', '12x')} = ${frac('11', '12x')}.` },
+        { difficulty: 'Hard', question: `Vereenvoudig volledig: ${frac('x²-9', 'x+3')} &nbsp;(x ≠ −3).`, checkMode: 'auto', options: ['x+3', '3-x', 'x-9', 'x-3'], correctIndex: 3, explanation: `Herken x²-9 as ʼn verskil van kwadrate: x²-9 = (x-3)(x+3). Skryf die breuk as ${frac('(x-3)(x+3)', 'x+3')} en kanselleer (x+3): x-3.` },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het die uitbrei, faktorisering en vereenvoudiging van algebraïese uitdrukkings bemeester.' },
@@ -846,38 +871,31 @@ export const topicData: TopicData = {
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Stel 2',
+      // Doelbewus NIE in dieselfde blokvolgorde as Stel 1 nie (dieselfde
+      // vaardighede, dieselfde 20 vrae in gees, ander getalle EN geskommelde
+      // volgorde) sodat ʼn leerder nie kan aanleer "vraag 7 is altyd die
+      // a×c een" en kan gemakshalwe deurgly nie.
       questions: [
-        // Blok 1 — Brei binoom × trinoom uit (Easy)
-        { difficulty: 'Easy', question: 'Brei (x + 2)(x² + x + 4) uit.', checkMode: 'auto', correctAnswer: 'x³+3x²+6x+8', correctAnswers: ['x³+3x²+6x+8', 'x^3+3x^2+6x+8'], answer: 'x³ + 3x² + 6x + 8', explanation: 'Distribueer x: x³+x²+4x. Distribueer +2: 2x²+2x+8. Voeg saam: x³+(1+2)x²+(4+2)x+8 = x³+3x²+6x+8.' },
-        { difficulty: 'Easy', question: 'Brei (x + 5)(x² − 2x + 1) uit.', checkMode: 'auto', correctAnswer: 'x³+3x²-9x+5', correctAnswers: ['x³+3x²-9x+5', 'x³+3x²−9x+5', 'x^3+3x^2-9x+5', 'x^3+3x^2−9x+5'], answer: 'x³ + 3x² − 9x + 5', explanation: 'Distribueer x: x³-2x²+x. Distribueer +5: 5x²-10x+5. Voeg saam: x³+(-2+5)x²+(1-10)x+5 = x³+3x²-9x+5.' },
-        { difficulty: 'Medium', question: 'Brei (3x − 2)(x² + x − 5) uit.', checkMode: 'auto', correctAnswer: '3x³+x²-17x+10', correctAnswers: ['3x³+x²-17x+10', '3x³+x²−17x+10', '3x^3+x^2-17x+10', '3x^3+x^2−17x+10'], answer: '3x³ + x² − 17x + 10', explanation: 'Distribueer 3x: 3x³+3x²-15x. Distribueer -2: -2x²-2x+10. Voeg saam: 3x³+(3-2)x²+(-15-2)x+10 = 3x³+x²-17x+10.' },
-
-        // Blok 2 — Faktoriseer trinoom a = 1 (Easy/Medium)
-        { difficulty: 'Easy', question: 'Faktoriseer x² + 10x + 21.', checkMode: 'auto', correctAnswer: '(x+3)(x+7)', correctAnswers: ['(x+3)(x+7)', '(x+7)(x+3)'], answer: '(x + 3)(x + 7)', explanation: 'Vind twee getalle wat vermenigvuldig na 21 en optel na 10: 3 en 7. Antwoord: (x+3)(x+7). Kontroleer: x²+7x+3x+21 = x²+10x+21 ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer x² − 2x − 24.', checkMode: 'auto', correctAnswer: '(x-6)(x+4)', correctAnswers: ['(x-6)(x+4)', '(x+4)(x-6)'], answer: '(x − 6)(x + 4)', explanation: 'Vind twee getalle wat vermenigvuldig na -24 en optel na -2: -6 en 4. Antwoord: (x-6)(x+4). Kontroleer: x²+4x-6x-24 = x²-2x-24 ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer x² − 12x + 35.', checkMode: 'auto', correctAnswer: '(x-7)(x-5)', correctAnswers: ['(x-7)(x-5)', '(x-5)(x-7)'], answer: '(x − 7)(x − 5)', explanation: 'Vind twee getalle wat vermenigvuldig na 35 en optel na -12: -7 en -5. Antwoord: (x-7)(x-5). Kontroleer: x²-5x-7x+35 = x²-12x+35 ✓' },
-
-        // Blok 3 — Faktoriseer trinoom a ≠ 1, a×c-metode (Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 2x² + 11x + 5.', checkMode: 'auto', correctAnswer: '(x+5)(2x+1)', correctAnswers: ['(x+5)(2x+1)', '(2x+1)(x+5)'], answer: '(2x + 1)(x + 5)', explanation: 'a×c = 2×5 = 10. Getalle wat vermenigvuldig na 10 en optel na 11: 10 en 1. Splits: 2x²+10x+x+5. Groepeer: 2x(x+5)+1(x+5) = (2x+1)(x+5).' },
-        { difficulty: 'Medium', question: 'Faktoriseer 3x² + 2x − 8.', checkMode: 'auto', correctAnswer: '(x+2)(3x-4)', correctAnswers: ['(x+2)(3x-4)', '(3x-4)(x+2)'], answer: '(3x − 4)(x + 2)', explanation: 'a×c = 3×(-8) = -24. Getalle wat vermenigvuldig na -24 en optel na 2: 6 en -4. Splits: 3x²+6x-4x-8. Groepeer: 3x(x+2)-4(x+2) = (3x-4)(x+2).' },
-        { difficulty: 'Medium', question: 'Faktoriseer 4x² + 4x − 3.', checkMode: 'auto', correctAnswer: '(2x-1)(2x+3)', correctAnswers: ['(2x-1)(2x+3)', '(2x+3)(2x-1)'], answer: '(2x − 1)(2x + 3)', explanation: 'a×c = 4×(-3) = -12. Getalle wat vermenigvuldig na -12 en optel na 4: 6 en -2. Splits: 4x²+6x-2x-3. Groepeer: 2x(2x+3)-1(2x+3) = (2x-1)(2x+3).' },
-        { difficulty: 'Hard', question: 'Faktoriseer 6x² − 13x + 6.', checkMode: 'auto', correctAnswer: '(2x-3)(3x-2)', correctAnswers: ['(2x-3)(3x-2)', '(3x-2)(2x-3)'], answer: '(2x − 3)(3x − 2)', explanation: 'a×c = 6×6 = 36. Getalle wat vermenigvuldig na 36 en optel na -13: -9 en -4. Splits: 6x²-9x-4x+6. Groepeer: 3x(2x-3)-2(2x-3) = (2x-3)(3x-2).' },
-
-        // Blok 4 — Faktoriseer deur groepering in pare (Medium/Hard)
-        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 3x² + 15x + 2x + 10.', checkMode: 'auto', correctAnswer: '(x+5)(3x+2)', correctAnswers: ['(x+5)(3x+2)', '(3x+2)(x+5)'], answer: '(x + 5)(3x + 2)', explanation: 'Groepeer: (3x²+15x)+(2x+10). Faktoriseer elke paar: 3x(x+5)+2(x+5). Gemeenskaplike binoom: (x+5)(3x+2).' },
-        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 2ax − 2ay + bx − by.', checkMode: 'auto', correctAnswer: '(2a+b)(x-y)', correctAnswers: ['(2a+b)(x-y)', '(x-y)(2a+b)'], answer: '(2a + b)(x − y)', explanation: 'Groepeer: (2ax-2ay)+(bx-by). Faktoriseer elke paar: 2a(x-y)+b(x-y). Gemeenskaplike binoom: (2a+b)(x-y).' },
-        { difficulty: 'Hard', question: 'Faktoriseer x³ + 5x² − 4x − 20 volledig.', checkMode: 'auto', correctAnswer: '(x-2)(x+2)(x+5)', correctAnswers: ['(x-2)(x+2)(x+5)', '(x+2)(x-2)(x+5)', '(x+2)(x+5)(x-2)', '(x+5)(x+2)(x-2)', '(x+5)(x-2)(x+2)', '(x-2)(x+5)(x+2)'], answer: '(x − 2)(x + 2)(x + 5)', explanation: 'Groepeer: (x³+5x²)+(-4x-20). Faktoriseer: x²(x+5)-4(x+5). Gemeenskaplike binoom: (x+5)(x²-4). Herken x²-4 as ʼn verskil van kwadrate: (x-2)(x+2). Finaal: (x+5)(x-2)(x+2).' },
-
-        // Blok 5 — Vereenvoudig ʼn enkele algebraïese breuk (Hard)
-        { difficulty: 'Hard', question: 'Vereenvoudig (12x² + 8x) / 4x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '3x+2', correctAnswers: ['3x+2', '3x + 2'], answer: '3x + 2', explanation: 'Faktoriseer die teller: 12x²+8x = 4x(3x+2). Kanselleer die gemeenskaplike faktor 4x: 3x+2 (x ≠ 0).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig (10x² − 15x) / 5x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x-3', correctAnswers: ['2x-3', '2x − 3'], answer: '2x − 3', explanation: 'Faktoriseer die teller: 10x²-15x = 5x(2x-3). Kanselleer die gemeenskaplike faktor 5x: 2x-3 (x ≠ 0).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig (x² + 9x) / x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: 'x+9', correctAnswers: ['x+9', 'x + 9'], answer: 'x + 9', explanation: 'Faktoriseer die teller: x²+9x = x(x+9). Kanselleer die gemeenskaplike faktor x: x+9 (x ≠ 0).' },
-
-        // Blok 6 — Optel/aftrek met KGV / multi-stap / foutopsporing (Hard)
-        { difficulty: 'Hard', question: 'Bereken 5/x + 3/(2x) &nbsp;(x ≠ 0), en vereenvoudig volledig.', checkMode: 'auto', correctAnswer: '13/(2x)', correctAnswers: ['13/(2x)', '13/2x'], answer: '13/(2x)', explanation: 'Die KGV van x en 2x is 2x. Skakel om: 10/(2x)+3/(2x) = 13/(2x).' },
-        { difficulty: 'Hard', question: 'Bereken 7/x² − 2/x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '(7-2x)/x²', correctAnswers: ['(7-2x)/x²', '(7−2x)/x²', '(7-2x)/x^2', '(7−2x)/x^2'], answer: '(7 − 2x)/x²', explanation: 'Die KGV van x² en x is x². 7/x² het reeds die KGV as noemer. Skakel om: 2/x = 2x/x². Kombineer: (7-2x)/x².' },
-        { difficulty: 'Hard', question: 'Bereken 3/(2x) + 1/(5x) &nbsp;(x ≠ 0), en vereenvoudig volledig.', checkMode: 'auto', correctAnswer: '17/(10x)', correctAnswers: ['17/(10x)', '17/10x'], answer: '17/(10x)', explanation: 'Die KGV van 2x en 5x is 10x. Skakel om: 15/(10x)+2/(10x) = 17/(10x).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig volledig: (x² − 16)/(x + 4) &nbsp;(x ≠ −4).', checkMode: 'auto', correctAnswer: 'x-4', correctAnswers: ['x-4', 'x − 4'], answer: 'x − 4', explanation: 'Herken x²-16 as ʼn verskil van kwadrate: x²-16 = (x-4)(x+4). Skryf die breuk as (x-4)(x+4)/(x+4) en kanselleer (x+4): x-4.' },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('12x²+8x', '4x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['3x+2', '3x²+2x', '12x+8', '3x'], correctIndex: 0, explanation: `Faktoriseer die teller: 12x²+8x = 4x(3x+2). Kanselleer die gemeenskaplike faktor 4x: ${frac('4x(3x+2)', '4x')} = 3x+2.` },
+        { difficulty: 'Easy', question: 'Faktoriseer x² + 10x + 21.', checkMode: 'auto', options: ['(x+1)(x+21)', '(x+3)(x+7)', '(x-3)(x-7)', '(x-1)(x-21)'], correctIndex: 1, explanation: 'Vind twee getalle wat vermenigvuldig na 21 en optel na 10: 3 en 7. Antwoord: (x+3)(x+7). Kontroleer: x²+7x+3x+21 = x²+10x+21 ✓' },
+        { difficulty: 'Hard', question: `Bereken ${frac('7', 'x²')} − ${frac('2', 'x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: [frac('5', 'x²'), frac('2x-7', 'x²'), frac('7-2x', 'x²'), frac('7-2x', 'x')], correctIndex: 2, explanation: `Die KGV van x² en x is x². ${frac('7', 'x²')} het reeds die KGV-noemer. Skakel om: ${frac('2', 'x')} = ${frac('2x', 'x²')}. Kombineer: ${frac('7', 'x²')} − ${frac('2x', 'x²')} = ${frac('7-2x', 'x²')}.` },
+        { difficulty: 'Easy', question: 'Brei (x + 2)(x² + x + 4) uit.', checkMode: 'auto', options: ['x³+x²+6x+8', 'x³+3x²+4x+8', 'x³-x²+2x-8', 'x³+3x²+6x+8'], correctIndex: 3, explanation: 'Distribueer x: x³+x²+4x. Distribueer +2: 2x²+2x+8. Voeg saam: x³+(1+2)x²+(4+2)x+8 = x³+3x²+6x+8.' },
+        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 3x² + 15x + 2x + 10.', checkMode: 'auto', options: ['(x+5)(3x+2)', '(x-5)(3x+2)', '(3x+5)(x+2)', '(3x+2)²'], correctIndex: 0, explanation: 'Groepeer: (3x²+15x)+(2x+10). Faktoriseer elke paar: 3x(x+5)+2(x+5). Gemeenskaplike binoom: (x+5)(3x+2).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 2x² + 11x + 5.', checkMode: 'auto', options: ['(2x+5)(x+1)', '(2x+1)(x+5)', '(2x-1)(x-5)', '(2x-5)(x+1)'], correctIndex: 1, explanation: 'a×c = 2×5 = 10. Getalle wat vermenigvuldig na 10 en optel na 11: 10 en 1. Splits: 2x²+10x+x+5. Groepeer: 2x(x+5)+1(x+5) = (2x+1)(x+5).' },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('x²+9x', 'x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['10x', '9', 'x+9', 'x²+9'], correctIndex: 2, explanation: `Faktoriseer die teller: x²+9x = x(x+9). Kanselleer die gemeenskaplike faktor x: ${frac('x(x+9)', 'x')} = x+9.` },
+        { difficulty: 'Easy', question: 'Brei (x + 5)(x² − 2x + 1) uit.', checkMode: 'auto', options: ['x³-2x²-9x+5', 'x³+3x²+x+5', 'x³-7x²+11x-5', 'x³+3x²-9x+5'], correctIndex: 3, explanation: 'Distribueer x: x³-2x²+x. Distribueer +5: 5x²-10x+5. Voeg saam: x³+(-2+5)x²+(1-10)x+5 = x³+3x²-9x+5.' },
+        { difficulty: 'Hard', question: `Bereken ${frac('3', '2x')} + ${frac('1', '5x')} &nbsp;(x ≠ 0), en vereenvoudig volledig.`, checkMode: 'auto', options: [frac('17', '10x'), frac('4', '7x'), frac('4', '10x'), frac('13', '10x')], correctIndex: 0, explanation: `Die KGV van 2x en 5x is 10x. Skakel om: ${frac('15', '10x')} + ${frac('2', '10x')} = ${frac('17', '10x')}.` },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 2x − 24.', checkMode: 'auto', options: ['(x+6)(x-4)', '(x-6)(x+4)', '(x+2)(x-12)', '(x-2)(x+12)'], correctIndex: 1, explanation: 'Vind twee getalle wat vermenigvuldig na -24 en optel na -2: -6 en 4. Antwoord: (x-6)(x+4). Kontroleer: x²+4x-6x-24 = x²-2x-24 ✓' },
+        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 2ax − 2ay + bx − by.', checkMode: 'auto', options: ['(a+b)(2x-y)', '(2a-b)(x+y)', '(2a+b)(x-y)', '(2a+b)(x+y)'], correctIndex: 2, explanation: 'Groepeer: (2ax-2ay)+(bx-by). Faktoriseer elke paar: 2a(x-y)+b(x-y). Gemeenskaplike binoom: (2a+b)(x-y).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 3x² + 2x − 8.', checkMode: 'auto', options: ['(3x+4)(x-2)', '(x-4)(3x+2)', '(x+4)(3x-2)', '(3x-4)(x+2)'], correctIndex: 3, explanation: 'a×c = 3×(-8) = -24. Getalle wat vermenigvuldig na -24 en optel na 2: 6 en -4. Splits: 3x²+6x-4x-8. Groepeer: 3x(x+2)-4(x+2) = (3x-4)(x+2).' },
+        { difficulty: 'Hard', question: `Vereenvoudig volledig: ${frac('x²-16', 'x+4')} &nbsp;(x ≠ −4).`, checkMode: 'auto', options: ['x-4', 'x+4', '4-x', 'x-16'], correctIndex: 0, explanation: `Herken x²-16 as ʼn verskil van kwadrate: x²-16 = (x-4)(x+4). Skryf die breuk as ${frac('(x-4)(x+4)', 'x+4')} en kanselleer (x+4): x-4.` },
+        { difficulty: 'Medium', question: 'Brei (3x − 2)(x² + x − 5) uit.', checkMode: 'auto', options: ['3x³+3x²-17x+10', '3x³+x²-17x+10', '3x³+x²-15x+10', '3x³+5x²-13x-10'], correctIndex: 1, explanation: 'Distribueer 3x: 3x³+3x²-15x. Distribueer -2: -2x²-2x+10. Voeg saam: 3x³+(3-2)x²+(-15-2)x+10 = 3x³+x²-17x+10.' },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('10x²-15x', '5x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['2x²-3x', '10x-15', '2x-3', '2x'], correctIndex: 2, explanation: `Faktoriseer die teller: 10x²-15x = 5x(2x-3). Kanselleer die gemeenskaplike faktor 5x: ${frac('5x(2x-3)', '5x')} = 2x-3.` },
+        { difficulty: 'Medium', question: 'Faktoriseer 4x² + 4x − 3.', checkMode: 'auto', options: ['(2x+1)(2x-3)', '(4x-1)(x+3)', '(4x+3)(x-1)', '(2x-1)(2x+3)'], correctIndex: 3, explanation: 'a×c = 4×(-3) = -12. Getalle wat vermenigvuldig na -12 en optel na 4: 6 en -2. Splits: 4x²+6x-2x-3. Groepeer: 2x(2x+3)-1(2x+3) = (2x-1)(2x+3).' },
+        { difficulty: 'Hard', question: `Bereken ${frac('5', 'x')} + ${frac('3', '2x')} &nbsp;(x ≠ 0), en vereenvoudig volledig.`, checkMode: 'auto', options: [frac('13', '2x'), frac('8', '2x'), frac('13', 'x'), frac('7', '2x')], correctIndex: 0, explanation: `Die KGV van x en 2x is 2x. Skakel om: ${frac('10', '2x')} + ${frac('3', '2x')} = ${frac('13', '2x')}.` },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 12x + 35.', checkMode: 'auto', options: ['(x-1)(x-35)', '(x-7)(x-5)', '(x+7)(x+5)', '(x+1)(x+35)'], correctIndex: 1, explanation: 'Vind twee getalle wat vermenigvuldig na 35 en optel na -12: -7 en -5. Antwoord: (x-7)(x-5). Kontroleer: x²-5x-7x+35 = x²-12x+35 ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer x³ + 5x² − 4x − 20 volledig.', checkMode: 'auto', options: ['(x+5)(x²-4)', '(x-5)(x-2)(x+2)', '(x-2)(x+2)(x+5)', '(x+5)(x-2)²'], correctIndex: 2, explanation: 'Groepeer: (x³+5x²)+(-4x-20). Faktoriseer: x²(x+5)-4(x+5). Gemeenskaplike binoom: (x+5)(x²-4). Herken x²-4 as ʼn verskil van kwadrate: (x-2)(x+2). Finaal: (x+5)(x-2)(x+2).' },
+        { difficulty: 'Hard', question: 'Faktoriseer 6x² − 13x + 6.', checkMode: 'auto', options: ['(2x+3)(3x+2)', '(6x-2)(x-3)', '(6x-3)(x-2)', '(2x-3)(3x-2)'], correctIndex: 3, explanation: 'a×c = 6×6 = 36. Getalle wat vermenigvuldig na 36 en optel na -13: -9 en -4. Splits: 6x²-9x-4x+6. Groepeer: 3x(2x-3)-2(2x-3) = (2x-3)(3x-2).' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het die uitbrei, faktorisering en vereenvoudiging van algebraïese uitdrukkings bemeester.' },
@@ -892,38 +910,30 @@ export const topicData: TopicData = {
     // ═══════════════════════════════════════════════════════════════════════
     {
       name: 'Stel 3',
+      // ʼn Derde, weer verskillende skommeling — nie dieselfde volgorde as
+      // Stel 1 of Stel 2 nie, sodat die posisie van ʼn vraagtipe nooit
+      // voorspelbaar is nie.
       questions: [
-        // Blok 1 — Brei binoom × trinoom uit (Easy)
-        { difficulty: 'Easy', question: 'Brei (x + 3)(x² + x + 2) uit.', checkMode: 'auto', correctAnswer: 'x³+4x²+5x+6', correctAnswers: ['x³+4x²+5x+6', 'x^3+4x^2+5x+6'], answer: 'x³ + 4x² + 5x + 6', explanation: 'Distribueer x: x³+x²+2x. Distribueer +3: 3x²+3x+6. Voeg saam: x³+(1+3)x²+(2+3)x+6 = x³+4x²+5x+6.' },
-        { difficulty: 'Easy', question: 'Brei (x + 6)(x² − 4x + 3) uit.', checkMode: 'auto', correctAnswer: 'x³+2x²-21x+18', correctAnswers: ['x³+2x²-21x+18', 'x³+2x²−21x+18', 'x^3+2x^2-21x+18', 'x^3+2x^2−21x+18'], answer: 'x³ + 2x² − 21x + 18', explanation: 'Distribueer x: x³-4x²+3x. Distribueer +6: 6x²-24x+18. Voeg saam: x³+(-4+6)x²+(3-24)x+18 = x³+2x²-21x+18.' },
-        { difficulty: 'Medium', question: 'Brei (2x + 3)(x² − 2x − 3) uit.', checkMode: 'auto', correctAnswer: '2x³-x²-12x-9', correctAnswers: ['2x³-x²-12x-9', '2x³−x²−12x−9', '2x^3-x^2-12x-9', '2x^3−x^2−12x−9'], answer: '2x³ − x² − 12x − 9', explanation: 'Distribueer 2x: 2x³-4x²-6x. Distribueer +3: 3x²-6x-9. Voeg saam: 2x³+(-4+3)x²+(-6-6)x-9 = 2x³-x²-12x-9.' },
-
-        // Blok 2 — Faktoriseer trinoom a = 1 (Easy/Medium)
-        { difficulty: 'Easy', question: 'Faktoriseer x² + 11x + 18.', checkMode: 'auto', correctAnswer: '(x+2)(x+9)', correctAnswers: ['(x+2)(x+9)', '(x+9)(x+2)'], answer: '(x + 2)(x + 9)', explanation: 'Vind twee getalle wat vermenigvuldig na 18 en optel na 11: 2 en 9. Antwoord: (x+2)(x+9). Kontroleer: x²+9x+2x+18 = x²+11x+18 ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer x² − 5x − 14.', checkMode: 'auto', correctAnswer: '(x-7)(x+2)', correctAnswers: ['(x-7)(x+2)', '(x+2)(x-7)'], answer: '(x − 7)(x + 2)', explanation: 'Vind twee getalle wat vermenigvuldig na -14 en optel na -5: -7 en 2. Antwoord: (x-7)(x+2). Kontroleer: x²+2x-7x-14 = x²-5x-14 ✓' },
-        { difficulty: 'Medium', question: 'Faktoriseer x² − 14x + 45.', checkMode: 'auto', correctAnswer: '(x-9)(x-5)', correctAnswers: ['(x-9)(x-5)', '(x-5)(x-9)'], answer: '(x − 9)(x − 5)', explanation: 'Vind twee getalle wat vermenigvuldig na 45 en optel na -14: -9 en -5. Antwoord: (x-9)(x-5). Kontroleer: x²-5x-9x+45 = x²-14x+45 ✓' },
-
-        // Blok 3 — Faktoriseer trinoom a ≠ 1, a×c-metode (Medium)
-        { difficulty: 'Medium', question: 'Faktoriseer 2x² + 7x + 3.', checkMode: 'auto', correctAnswer: '(x+3)(2x+1)', correctAnswers: ['(x+3)(2x+1)', '(2x+1)(x+3)'], answer: '(2x + 1)(x + 3)', explanation: 'a×c = 2×3 = 6. Getalle wat vermenigvuldig na 6 en optel na 7: 6 en 1. Splits: 2x²+6x+x+3. Groepeer: 2x(x+3)+1(x+3) = (2x+1)(x+3).' },
-        { difficulty: 'Medium', question: 'Faktoriseer 3x² − 7x − 6.', checkMode: 'auto', correctAnswer: '(x-3)(3x+2)', correctAnswers: ['(x-3)(3x+2)', '(3x+2)(x-3)'], answer: '(3x + 2)(x − 3)', explanation: 'a×c = 3×(-6) = -18. Getalle wat vermenigvuldig na -18 en optel na -7: -9 en 2. Splits: 3x²-9x+2x-6. Groepeer: 3x(x-3)+2(x-3) = (3x+2)(x-3).' },
-        { difficulty: 'Medium', question: 'Faktoriseer 4x² − 9x + 2.', checkMode: 'auto', correctAnswer: '(x-2)(4x-1)', correctAnswers: ['(x-2)(4x-1)', '(4x-1)(x-2)'], answer: '(x − 2)(4x − 1)', explanation: 'a×c = 4×2 = 8. Getalle wat vermenigvuldig na 8 en optel na -9: -8 en -1. Splits: 4x²-8x-x+2. Groepeer: 4x(x-2)-1(x-2) = (x-2)(4x-1).' },
-        { difficulty: 'Hard', question: 'Faktoriseer 6x² + 5x − 6.', checkMode: 'auto', correctAnswer: '(2x+3)(3x-2)', correctAnswers: ['(2x+3)(3x-2)', '(3x-2)(2x+3)'], answer: '(2x + 3)(3x − 2)', explanation: 'a×c = 6×(-6) = -36. Getalle wat vermenigvuldig na -36 en optel na 5: 9 en -4. Splits: 6x²+9x-4x-6. Groepeer: 3x(2x+3)-2(2x+3) = (2x+3)(3x-2).' },
-
-        // Blok 4 — Faktoriseer deur groepering in pare (Medium/Hard)
-        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 2x² + 10x + 3x + 15.', checkMode: 'auto', correctAnswer: '(x+5)(2x+3)', correctAnswers: ['(x+5)(2x+3)', '(2x+3)(x+5)'], answer: '(x + 5)(2x + 3)', explanation: 'Groepeer: (2x²+10x)+(3x+15). Faktoriseer elke paar: 2x(x+5)+3(x+5). Gemeenskaplike binoom: (x+5)(2x+3).' },
-        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 3px − 3py + qx − qy.', checkMode: 'auto', correctAnswer: '(3p+q)(x-y)', correctAnswers: ['(3p+q)(x-y)', '(x-y)(3p+q)'], answer: '(3p + q)(x − y)', explanation: 'Groepeer: (3px-3py)+(qx-qy). Faktoriseer elke paar: 3p(x-y)+q(x-y). Gemeenskaplike binoom: (3p+q)(x-y).' },
-        { difficulty: 'Hard', question: 'Faktoriseer x³ − 3x² − 25x + 75 volledig.', checkMode: 'auto', correctAnswer: '(x-3)(x-5)(x+5)', correctAnswers: ['(x-3)(x-5)(x+5)', '(x-5)(x-3)(x+5)', '(x-5)(x+5)(x-3)', '(x+5)(x-5)(x-3)', '(x+5)(x-3)(x-5)', '(x-3)(x+5)(x-5)'], answer: '(x − 3)(x − 5)(x + 5)', explanation: 'Groepeer: (x³-3x²)+(-25x+75). Faktoriseer: x²(x-3)-25(x-3). Gemeenskaplike binoom: (x-3)(x²-25). Herken x²-25 as ʼn verskil van kwadrate: (x-5)(x+5). Finaal: (x-3)(x-5)(x+5).' },
-
-        // Blok 5 — Vereenvoudig ʼn enkele algebraïese breuk (Hard)
-        { difficulty: 'Hard', question: 'Vereenvoudig (14x² + 21x) / 7x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x+3', correctAnswers: ['2x+3', '2x + 3'], answer: '2x + 3', explanation: 'Faktoriseer die teller: 14x²+21x = 7x(2x+3). Kanselleer die gemeenskaplike faktor 7x: 2x+3 (x ≠ 0).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig (8x² − 12x) / 4x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '2x-3', correctAnswers: ['2x-3', '2x − 3'], answer: '2x − 3', explanation: 'Faktoriseer die teller: 8x²-12x = 4x(2x-3). Kanselleer die gemeenskaplike faktor 4x: 2x-3 (x ≠ 0).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig (x² + 5x) / x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: 'x+5', correctAnswers: ['x+5', 'x + 5'], answer: 'x + 5', explanation: 'Faktoriseer die teller: x²+5x = x(x+5). Kanselleer die gemeenskaplike faktor x: x+5 (x ≠ 0).' },
-
-        // Blok 6 — Optel/aftrek met KGV / multi-stap / foutopsporing (Hard)
-        { difficulty: 'Hard', question: 'Bereken 4/x + 5/(2x) &nbsp;(x ≠ 0), en vereenvoudig volledig.', checkMode: 'auto', correctAnswer: '13/(2x)', correctAnswers: ['13/(2x)', '13/2x'], answer: '13/(2x)', explanation: 'Die KGV van x en 2x is 2x. Skakel om: 8/(2x)+5/(2x) = 13/(2x).' },
-        { difficulty: 'Hard', question: 'Bereken 3/x² − 2/x &nbsp;(x ≠ 0).', checkMode: 'auto', correctAnswer: '(3-2x)/x²', correctAnswers: ['(3-2x)/x²', '(3−2x)/x²', '(3-2x)/x^2', '(3−2x)/x^2'], answer: '(3 − 2x)/x²', explanation: 'Die KGV van x² en x is x². 3/x² het reeds die KGV as noemer. Skakel om: 2/x = 2x/x². Kombineer: (3-2x)/x².' },
-        { difficulty: 'Hard', question: 'Bereken 5/(3x) + 1/(2x) &nbsp;(x ≠ 0), en vereenvoudig volledig.', checkMode: 'auto', correctAnswer: '13/(6x)', correctAnswers: ['13/(6x)', '13/6x'], answer: '13/(6x)', explanation: 'Die KGV van 3x en 2x is 6x. Skakel om: 10/(6x)+3/(6x) = 13/(6x).' },
-        { difficulty: 'Hard', question: 'Vereenvoudig volledig: (x² − 25)/(x + 5) &nbsp;(x ≠ −5).', checkMode: 'auto', correctAnswer: 'x-5', correctAnswers: ['x-5', 'x − 5'], answer: 'x − 5', explanation: 'Herken x²-25 as ʼn verskil van kwadrate: x²-25 = (x-5)(x+5). Skryf die breuk as (x-5)(x+5)/(x+5) en kanselleer (x+5): x-5.' },
+        { difficulty: 'Medium', question: 'Faktoriseer 2x² + 7x + 3.', checkMode: 'auto', options: ['(2x+1)(x+3)', '(2x+3)(x+1)', '(2x-1)(x-3)', '(2x-3)(x-1)'], correctIndex: 0, explanation: 'a×c = 2×3 = 6. Getalle wat vermenigvuldig na 6 en optel na 7: 6 en 1. Splits: 2x²+6x+x+3. Groepeer: 2x(x+3)+1(x+3) = (2x+1)(x+3).' },
+        { difficulty: 'Hard', question: `Bereken ${frac('4', 'x')} + ${frac('5', '2x')} &nbsp;(x ≠ 0), en vereenvoudig volledig.`, checkMode: 'auto', options: [frac('9', '2x'), frac('13', '2x'), frac('13', 'x'), frac('18', '2x')], correctIndex: 1, explanation: `Die KGV van x en 2x is 2x. Skakel om: ${frac('8', '2x')} + ${frac('5', '2x')} = ${frac('13', '2x')}.` },
+        { difficulty: 'Easy', question: 'Brei (x + 6)(x² − 4x + 3) uit.', checkMode: 'auto', options: ['x³-4x²-21x+18', 'x³+2x²+3x+18', 'x³+2x²-21x+18', 'x³-10x²+27x-18'], correctIndex: 2, explanation: 'Distribueer x: x³-4x²+3x. Distribueer +6: 6x²-24x+18. Voeg saam: x³+(-4+6)x²+(3-24)x+18 = x³+2x²-21x+18.' },
+        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 3px − 3py + qx − qy.', checkMode: 'auto', options: ['(p+q)(3x-y)', '(3p-q)(x+y)', '(3p+q)(x+y)', '(3p+q)(x-y)'], correctIndex: 3, explanation: 'Groepeer: (3px-3py)+(qx-qy). Faktoriseer elke paar: 3p(x-y)+q(x-y). Gemeenskaplike binoom: (3p+q)(x-y).' },
+        { difficulty: 'Hard', question: `Vereenvoudig volledig: ${frac('x²-25', 'x+5')} &nbsp;(x ≠ −5).`, checkMode: 'auto', options: ['x-5', 'x+5', '5-x', 'x-25'], correctIndex: 0, explanation: `Herken x²-25 as ʼn verskil van kwadrate: x²-25 = (x-5)(x+5). Skryf die breuk as ${frac('(x-5)(x+5)', 'x+5')} en kanselleer (x+5): x-5.` },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 5x − 14.', checkMode: 'auto', options: ['(x+7)(x-2)', '(x-7)(x+2)', '(x+1)(x-14)', '(x-1)(x+14)'], correctIndex: 1, explanation: 'Vind twee getalle wat vermenigvuldig na -14 en optel na -5: -7 en 2. Antwoord: (x-7)(x+2). Kontroleer: x²+2x-7x-14 = x²-5x-14 ✓' },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('8x²-12x', '4x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['2x²-3x', '8x-12', '2x-3', '2x'], correctIndex: 2, explanation: `Faktoriseer die teller: 8x²-12x = 4x(2x-3). Kanselleer die gemeenskaplike faktor 4x: ${frac('4x(2x-3)', '4x')} = 2x-3.` },
+        { difficulty: 'Easy', question: 'Brei (x + 3)(x² + x + 2) uit.', checkMode: 'auto', options: ['x³+x²+5x+6', 'x³+4x²+2x+6', 'x³-2x²-x-6', 'x³+4x²+5x+6'], correctIndex: 3, explanation: 'Distribueer x: x³+x²+2x. Distribueer +3: 3x²+3x+6. Voeg saam: x³+(1+3)x²+(2+3)x+6 = x³+4x²+5x+6.' },
+        { difficulty: 'Hard', question: 'Faktoriseer 6x² + 5x − 6.', checkMode: 'auto', options: ['(2x+3)(3x-2)', '(2x-3)(3x+2)', '(6x+3)(x-2)', '(6x-2)(x+3)'], correctIndex: 0, explanation: 'a×c = 6×(-6) = -36. Getalle wat vermenigvuldig na -36 en optel na 5: 9 en -4. Splits: 6x²+9x-4x-6. Groepeer: 3x(2x+3)-2(2x+3) = (2x+3)(3x-2).' },
+        { difficulty: 'Hard', question: `Bereken ${frac('3', 'x²')} − ${frac('2', 'x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: [frac('1', 'x²'), frac('3-2x', 'x²'), frac('2x-3', 'x²'), frac('3-2x', 'x')], correctIndex: 1, explanation: `Die KGV van x² en x is x². ${frac('3', 'x²')} het reeds die KGV-noemer. Skakel om: ${frac('2', 'x')} = ${frac('2x', 'x²')}. Kombineer: ${frac('3', 'x²')} − ${frac('2x', 'x²')} = ${frac('3-2x', 'x²')}.` },
+        { difficulty: 'Easy', question: 'Faktoriseer x² + 11x + 18.', checkMode: 'auto', options: ['(x+1)(x+18)', '(x+3)(x+6)', '(x+2)(x+9)', '(x-2)(x-9)'], correctIndex: 2, explanation: 'Vind twee getalle wat vermenigvuldig na 18 en optel na 11: 2 en 9. Antwoord: (x+2)(x+9). Kontroleer: x²+9x+2x+18 = x²+11x+18 ✓' },
+        { difficulty: 'Hard', question: 'Faktoriseer x³ − 3x² − 25x + 75 volledig.', checkMode: 'auto', options: ['(x-3)(x²-25)', '(x+3)(x-5)(x+5)', '(x-3)(x-5)²', '(x-3)(x-5)(x+5)'], correctIndex: 3, explanation: 'Groepeer: (x³-3x²)+(-25x+75). Faktoriseer: x²(x-3)-25(x-3). Gemeenskaplike binoom: (x-3)(x²-25). Herken x²-25 as ʼn verskil van kwadrate: (x-5)(x+5). Finaal: (x-3)(x-5)(x+5).' },
+        { difficulty: 'Medium', question: 'Faktoriseer 3x² − 7x − 6.', checkMode: 'auto', options: ['(3x+2)(x-3)', '(3x-2)(x+3)', '(x+2)(3x-3)', '(x-6)(3x+1)'], correctIndex: 0, explanation: 'a×c = 3×(-6) = -18. Getalle wat vermenigvuldig na -18 en optel na -7: -9 en 2. Splits: 3x²-9x+2x-6. Groepeer: 3x(x-3)+2(x-3) = (3x+2)(x-3).' },
+        { difficulty: 'Hard', question: `Bereken ${frac('5', '3x')} + ${frac('1', '2x')} &nbsp;(x ≠ 0), en vereenvoudig volledig.`, checkMode: 'auto', options: [frac('6', '5x'), frac('13', '6x'), frac('6', '6x'), frac('11', '6x')], correctIndex: 1, explanation: `Die KGV van 3x en 2x is 6x. Skakel om: ${frac('10', '6x')} + ${frac('3', '6x')} = ${frac('13', '6x')}.` },
+        { difficulty: 'Medium', question: 'Brei (2x + 3)(x² − 2x − 3) uit.', checkMode: 'auto', options: ['2x³-4x²-12x-9', '2x³-x²-6x-9', '2x³-7x²+9', '2x³-x²-12x-9'], correctIndex: 3, explanation: 'Distribueer 2x: 2x³-4x²-6x. Distribueer +3: 3x²-6x-9. Voeg saam: 2x³+(-4+3)x²+(-6-6)x-9 = 2x³-x²-12x-9.' },
+        { difficulty: 'Medium', question: 'Faktoriseer deur groepering: 2x² + 10x + 3x + 15.', checkMode: 'auto', options: ['(x-5)(2x+3)', '(2x+5)(x+3)', '(2x+3)²', '(x+5)(2x+3)'], correctIndex: 3, explanation: 'Groepeer: (2x²+10x)+(3x+15). Faktoriseer elke paar: 2x(x+5)+3(x+5). Gemeenskaplike binoom: (x+5)(2x+3).' },
+        { difficulty: 'Medium', question: 'Faktoriseer x² − 14x + 45.', checkMode: 'auto', options: ['(x-9)(x-5)', '(x-3)(x-15)', '(x+9)(x+5)', '(x-1)(x-45)'], correctIndex: 0, explanation: 'Vind twee getalle wat vermenigvuldig na 45 en optel na -14: -9 en -5. Antwoord: (x-9)(x-5). Kontroleer: x²-5x-9x+45 = x²-14x+45 ✓' },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('x²+5x', 'x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['6x', 'x+5', '5', 'x²+5'], correctIndex: 1, explanation: `Faktoriseer die teller: x²+5x = x(x+5). Kanselleer die gemeenskaplike faktor x: ${frac('x(x+5)', 'x')} = x+5.` },
+        { difficulty: 'Medium', question: 'Faktoriseer 4x² − 9x + 2.', checkMode: 'auto', options: ['(x+2)(4x+1)', '(4x-2)(x-1)', '(x-2)(4x-1)', '(4x+2)(x-1)'], correctIndex: 2, explanation: 'a×c = 4×2 = 8. Getalle wat vermenigvuldig na 8 en optel na -9: -8 en -1. Splits: 4x²-8x-x+2. Groepeer: 4x(x-2)-1(x-2) = (x-2)(4x-1).' },
+        { difficulty: 'Hard', question: `Vereenvoudig ${frac('14x²+21x', '7x')} &nbsp;(x ≠ 0).`, checkMode: 'auto', options: ['2x²+3x', '14x+21', '2x', '2x+3'], correctIndex: 3, explanation: `Faktoriseer die teller: 14x²+21x = 7x(2x+3). Kanselleer die gemeenskaplike faktor 7x: ${frac('7x(2x+3)', '7x')} = 2x+3.` },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Uitstekend! Jy het die uitbrei, faktorisering en vereenvoudiging van algebraïese uitdrukkings bemeester.' },

@@ -9,6 +9,11 @@ const bl = (t: string) => `<span style="color:#2563eb;font-weight:700">${t}</spa
 const or = (t: string) => `<span style="color:#ea580c;font-weight:700">${t}</span>`
 const gr = (t: string) => `<span style="color:#16a34a;font-weight:700">${t}</span>`
 const re = (t: string) => `<span style="color:#dc2626;font-weight:700">${t}</span>`
+// Stacked numerator/denominator fraction notation instead of a plain "n/d"
+// slash — renders as an actual fraction bar via the site's existing
+// whitelisted-HTML pipeline.
+const frac = (num: string, den: string) =>
+  `<span style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 2px;line-height:1.15;font-size:0.95em;"><span style="border-bottom:1.5px solid currentColor;padding:0 3px;">${num}</span><span style="padding:0 3px;">${den}</span></span>`
 
 export const topicData: TopicData = {
   title: 'Equations and Inequalities',
@@ -612,188 +617,215 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Solve for x: x² − 9x + 20 = 0',
-      answer: 'x=4 or x=5',
       checkMode: 'auto',
-      correctAnswers: ['x=4 or x=5', 'x=5 or x=4'],
-      explanation: 'Find two numbers that multiply to 20 and add to −9: −4 and −5. So (x−4)(x−5)=0, giving x=4 or x=5.',
+      options: ['x = 4 or x = 5', 'x = -4 or x = -5', 'x = -4 or x = 5', 'x = 4 or x = -5'],
+      correctIndex: 0,
+      explanation: 'Find two numbers that multiply to 20 and add to −9: −4 and −5. So (x−4)(x−5)=0, giving x=4 or x=5. Flipping the signs of the factors (the other options) gives numbers that no longer multiply to +20 or add to −9.',
     },
 
     // ── Q2 Easy — factorisation with negative constant ────────────────────────
     {
       difficulty: 'Easy',
       question: 'Solve for x: x² + 2x − 15 = 0',
-      answer: 'x=-5 or x=3',
       checkMode: 'auto',
-      correctAnswers: ['x=-5 or x=3', 'x=3 or x=-5'],
-      explanation: 'Find two numbers that multiply to −15 and add to 2: 5 and −3. So (x+5)(x−3)=0, giving x=−5 or x=3.',
+      options: ['x = 5 or x = -3', 'x = -5 or x = 3', 'x = -3 or x = -5', 'x = 15 or x = -1'],
+      correctIndex: 1,
+      explanation: 'Find two numbers that multiply to −15 and add to 2: 5 and −3. So (x+5)(x−3)=0, giving x=−5 or x=3. Flipping both signs (option A) or using the wrong factor pair of 15 (option D) are common mistakes.',
     },
 
     // ── Q3 Medium — factorisation with a≠1 (a×c method) ───────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve for x: 2x² − x − 6 = 0',
-      answer: 'x=-3/2 or x=2',
       checkMode: 'auto',
-      correctAnswers: ['x=-3/2 or x=2', 'x=2 or x=-3/2', 'x=-1.5 or x=2', 'x=2 or x=-1.5'],
-      explanation: 'a×c = 2×(−6) = −12. Find two numbers multiplying to −12 and adding to −1: −4 and 3. Split: 2x²−4x+3x−6=0 → 2x(x−2)+3(x−2)=0 → (2x+3)(x−2)=0, giving x=−3/2 or x=2.',
+      options: ['x = 3/2 or x = -2', 'x = -2/3 or x = 3', 'x = -3/2 or x = 2', 'x = 3/2 or x = 2'],
+      correctIndex: 2,
+      explanation: 'a×c = 2×(−6) = −12. Find two numbers multiplying to −12 and adding to −1: −4 and 3. Split: 2x²−4x+3x−6=0 → 2x(x−2)+3(x−2)=0 → (2x+3)(x−2)=0, giving x=−3/2 or x=2. Sign-flipping the roots (option A) or using the wrong factor pair (option B) are common mistakes.',
     },
 
     // ── Q4 Medium — rearrange before factorising ──────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve for x: x² = 7x − 12',
-      answer: 'x=3 or x=4',
       checkMode: 'auto',
-      correctAnswers: ['x=3 or x=4', 'x=4 or x=3'],
-      explanation: 'Rearrange to x²−7x+12=0. Find two numbers that multiply to 12 and add to −7: −3 and −4. So (x−3)(x−4)=0, giving x=3 or x=4.',
+      options: ['x = -3 or x = -4', 'x = 12 or x = -1', 'x = 2 or x = 5', 'x = 3 or x = 4'],
+      correctIndex: 3,
+      explanation: 'Rearrange to x²−7x+12=0. Find two numbers that multiply to 12 and add to −7: −3 and −4. So (x−3)(x−4)=0, giving x=3 or x=4. Forgetting to rearrange correctly (option A) or an arithmetic slip in the factor pair (option C) are common errors.',
     },
 
     // ── Q5 Medium — factorisation with fractional root ────────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve for x: 3x² + 5x − 2 = 0',
-      answer: 'x=1/3 or x=-2',
       checkMode: 'auto',
-      correctAnswers: ['x=1/3 or x=-2', 'x=-2 or x=1/3'],
-      explanation: 'a×c = 3×(−2) = −6. Find two numbers multiplying to −6 and adding to 5: 6 and −1. Split: 3x²+6x−x−2=0 → 3x(x+2)−1(x+2)=0 → (3x−1)(x+2)=0, giving x=1/3 or x=−2.',
+      options: ['x = 1/3 or x = -2', 'x = -1/3 or x = 2', 'x = 1/3 or x = 2', 'x = 3 or x = -2'],
+      correctIndex: 0,
+      explanation: 'a×c = 3×(−2) = −6. Find two numbers multiplying to −6 and adding to 5: 6 and −1. Split: 3x²+6x−x−2=0 → 3x(x+2)−1(x+2)=0 → (3x−1)(x+2)=0, giving x=1/3 or x=−2. Sign errors (option B) or dropping the coefficient 3 when isolating x (option D) are common mistakes.',
     },
 
     // ── Q6 Medium — quadratic formula, irrational roots ───────────────────────
     {
       difficulty: 'Medium',
       question: 'Use the quadratic formula to solve for x (correct to 2 decimal places): x² + 4x − 7 = 0',
-      answer: 'x≈1.32 or x≈-5.32',
       checkMode: 'auto',
-      correctAnswers: ['x≈1.32 or x≈-5.32', 'x≈-5.32 or x≈1.32', 'x=1.32 or x=-5.32'],
-      explanation: 'a=1, b=4, c=−7. Discriminant = 4²−4(1)(−7) = 16+28 = 44. x = (−4±√44)/2 = −2±√11. So x = −2+√11 ≈ 1.32 or x = −2−√11 ≈ −5.32.',
+      options: ['x ≈ -0.68 or x ≈ -7.32', 'x ≈ 1.32 or x ≈ -5.32', 'x ≈ 5.32 or x ≈ -1.32', 'x ≈ 1.32 or x ≈ 4.68'],
+      correctIndex: 1,
+      explanation: 'a=1, b=4, c=−7. Discriminant = 4²−4(1)(−7) = 16+28 = 44. x = (−4±√44)/2 = −2±√11 ≈ 1.32 or ≈ −5.32. Forgetting to divide the −b term by 2a (option A), or using the wrong sign for −b (option C), are common mistakes.',
     },
 
     // ── Q7 Medium — quadratic formula, irrational roots (leave in surd form) ──
     {
       difficulty: 'Medium',
       question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: 2x² − 3x − 4 = 0',
-      answer: 'x=(3±√41)/4',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['x = (3 ± √41) / 2', 'x = (-3 ± √41) / 4', 'x = (3 ± √41) / 4', 'x = (3 ± √25) / 4'],
+      correctIndex: 2,
+      explanation: 'a=2, b=−3, c=−4. Discriminant = (−3)²−4(2)(−4) = 9+32 = 41. x = (−(−3)±√41)/(2×2) = (3±√41)/4. Forgetting to double a in the denominator (option A), or a sign error on −b (option B), are common mistakes.',
     },
 
     // ── Q8 Hard — discriminant shows no real solutions ────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Show that x² + 2x + 5 = 0 has no real solutions.',
-      answer: 'Discriminant = b²−4ac = 2²−4(1)(5) = 4−20 = −16. Since the discriminant is negative, the square root of a negative number is not a real number, so this equation has no real solutions.',
-      checkMode: 'self',
+      question: 'What is the discriminant of x² + 2x + 5 = 0, and what does it tell you about the solutions?',
+      checkMode: 'auto',
+      options: [
+        'Δ = 24, so there are two distinct real solutions (Δ > 0)',
+        'Δ = -16, so there is one repeated real solution',
+        'Δ = 4, so there are two distinct real solutions (Δ > 0)',
+        'Δ = -16, so there are no real solutions (Δ < 0)',
+      ],
+      correctIndex: 3,
+      explanation: 'Discriminant = b²−4ac = 2²−4(1)(5) = 4−20 = −16. Since Δ < 0, the square root of a negative number is not real, so this equation has no real solutions. Sign errors when computing 4ac (option A), or confusing Δ<0 with Δ=0 (option B), are common mistakes.',
     },
 
     // ── Q9 Hard — quadratic formula, irrational roots ─────────────────────────
     {
       difficulty: 'Hard',
       question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: 3x² − 2x − 2 = 0',
-      answer: 'x=(1±√7)/3',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['x = (1 ± √7) / 3', 'x = (-1 ± √7) / 3', 'x = (1 ± √10) / 3', 'x = (1 ± √7) / 6'],
+      correctIndex: 0,
+      explanation: 'a=3, b=−2, c=−2. Discriminant = (−2)²−4(3)(−2) = 4+24 = 28. x = (2±√28)/6 = (2±2√7)/6 = (1±√7)/3 after simplifying. Sign errors on −b (option B) or arithmetic slips in the discriminant (option C) are common mistakes.',
     },
 
     // ── Q10 Medium — discriminant shows equal roots ───────────────────────────
     {
       difficulty: 'Medium',
-      question: 'Use the discriminant to show that x² − 6x + 9 = 0 has two equal real roots, then solve the equation.',
-      answer: 'Discriminant = (−6)²−4(1)(9) = 36−36 = 0, so there are two equal real roots. Factorising: (x−3)²=0, so x=3.',
-      checkMode: 'self',
+      question: 'Use the discriminant to show that x² − 6x + 9 = 0 has two equal real roots, then solve for x.',
+      checkMode: 'auto',
+      options: [
+        'Δ = 36, so there are two distinct real roots; x = 3 or x = -3',
+        'Δ = 0, so there are two equal real roots; x = 3',
+        'Δ = 0, so there are two equal real roots; x = -3',
+        'Δ = -36, so there are no real roots',
+      ],
+      correctIndex: 1,
+      explanation: 'Discriminant = (−6)²−4(1)(9) = 36−36 = 0, so there are two equal real roots. Factorising: (x−3)²=0, so x=3. Forgetting the −4ac term (option A), or a sign error in the final root (option C), are common mistakes.',
     },
 
     // ── Q11 Medium — quadratic inequality (>), roots outside ──────────────────
     {
       difficulty: 'Medium',
       question: 'Solve for x: x² − x − 6 > 0',
-      answer: 'x<-2 or x>3',
       checkMode: 'auto',
-      correctAnswers: ['x<-2 or x>3', 'x>3 or x<-2'],
-      explanation: 'Factorise: (x−3)(x+2)>0. Critical values: x=−2 and x=3. Since the parabola opens upward, it is above the x-axis (positive) outside the roots: x<−2 or x>3.',
+      options: ['-2 < x < 3', 'x > -2 or x < 3', 'x < -2 or x > 3', 'x ≤ -2 or x ≥ 3'],
+      correctIndex: 2,
+      explanation: 'Factorise: (x−3)(x+2)>0. Critical values: x=−2 and x=3. Since the parabola opens upward, it is positive outside the roots: x<−2 or x>3. Choosing the interval between the roots (option A) or using the wrong boundary type (option D) are common mistakes.',
     },
 
     // ── Q12 Medium — quadratic inequality (≥), between roots after rearranging ─
     {
       difficulty: 'Medium',
       question: 'Solve for x: −x² + 2x + 8 ≥ 0',
-      answer: '-2≤x≤4',
       checkMode: 'auto',
-      correctAnswer: '-2≤x≤4',
-      explanation: 'Multiply both sides by −1 and flip the inequality: x²−2x−8≤0. Factorise: (x−4)(x+2)≤0. Critical values: x=−2 and x=4. Since this parabola (after flipping) opens upward, it is ≤0 between the roots: −2≤x≤4.',
+      options: ['x ≤ -2 or x ≥ 4', '-4 ≤ x ≤ 2', '-2 < x < 4', '-2 ≤ x ≤ 4'],
+      correctIndex: 3,
+      explanation: 'Multiply both sides by −1 and flip the inequality: x²−2x−8≤0. Factorise: (x−4)(x+2)≤0. Critical values: x=−2 and x=4. Since this parabola (after flipping) opens upward, it is ≤0 between the roots: −2≤x≤4. Forgetting to flip the inequality sign (option A) is the classic mistake here.',
     },
 
     // ── Q13 Hard — quadratic inequality (<), a≠1 ──────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Solve for x: 2x² + 3x − 2 < 0',
-      answer: '-2<x<1/2',
       checkMode: 'auto',
-      correctAnswer: '-2<x<1/2',
-      explanation: 'Factorise: (2x−1)(x+2)<0. Critical values: x=1/2 and x=−2. Since the parabola opens upward, it is below the x-axis (negative) between the roots: −2<x<1/2.',
+      options: ['-2 < x < 1/2', 'x < -2 or x > 1/2', '-1/2 < x < 2', '-2 ≤ x ≤ 1/2'],
+      correctIndex: 0,
+      explanation: 'Factorise: (2x−1)(x+2)<0. Critical values: x=1/2 and x=−2. Since the parabola opens upward, it is negative between the roots: −2<x<1/2. Choosing the outside interval (option B) or the wrong boundary type (option D) are common mistakes.',
     },
 
     // ── Q14 Medium — quadratic inequality (≤), perfect trinomial ──────────────
     {
       difficulty: 'Medium',
       question: 'Solve for x: x² − 5x + 6 ≤ 0',
-      answer: '2≤x≤3',
       checkMode: 'auto',
-      correctAnswer: '2≤x≤3',
-      explanation: 'Factorise: (x−2)(x−3)≤0. Critical values: x=2 and x=3. Since the parabola opens upward, it is ≤0 between the roots: 2≤x≤3.',
+      options: ['x ≤ 2 or x ≥ 3', '2 ≤ x ≤ 3', '-3 ≤ x ≤ -2', '2 < x < 3'],
+      correctIndex: 1,
+      explanation: 'Factorise: (x−2)(x−3)≤0. Critical values: x=2 and x=3. Since the parabola opens upward, it is ≤0 between the roots: 2≤x≤3. Picking the outside interval (option A) or using strict inequalities (option D) are common mistakes.',
     },
 
     // ── Q15 Hard — rational inequality, strict, both critical values excluded ──
     {
       difficulty: 'Hard',
-      question: 'Solve for x: (x−1)/(x+2) > 0. Remember to exclude any value that makes the denominator zero.',
-      answer: 'x<-2 or x>1',
+      question: `Solve for x: ${frac('x − 1', 'x + 2')} > 0. Remember to exclude any value that makes the denominator zero.`,
       checkMode: 'auto',
-      correctAnswers: ['x<-2 or x>1', 'x>1 or x<-2'],
-      explanation: 'Critical values: x=1 (numerator zero) and x=−2 (denominator zero, excluded). Testing intervals shows the expression is positive when x<−2 or x>1. Note x=−2 is excluded (undefined) and x=1 is excluded since the inequality is strict.',
+      options: ['-2 < x < 1', 'x ≤ -2 or x ≥ 1', 'x < -2 or x > 1', '1 < x'],
+      correctIndex: 2,
+      explanation: 'Critical values: x=1 (numerator zero) and x=−2 (denominator zero, always excluded). Testing intervals shows the expression is positive when x<−2 or x>1. Including x=−2 (option B) is a serious error since the expression is undefined there; dropping a branch (option D) misses part of the solution.',
     },
 
     // ── Q16 Hard — rational inequality, ≤, one boundary included ──────────────
     {
       difficulty: 'Hard',
-      question: 'Solve for x: (x+3)/(x−2) ≤ 0. Remember to exclude any value that makes the denominator zero.',
-      answer: '-3≤x<2',
+      question: `Solve for x: ${frac('x + 3', 'x − 2')} ≤ 0. Remember to exclude any value that makes the denominator zero.`,
       checkMode: 'auto',
-      correctAnswer: '-3≤x<2',
-      explanation: 'Critical values: x=−3 (numerator zero, included since the expression equals 0 there) and x=2 (denominator zero, must be excluded). Testing intervals shows the expression is negative or zero for −3≤x<2.',
+      options: ['-3 < x ≤ 2', '-3 ≤ x ≤ 2', 'x ≤ -3 or x > 2', '-3 ≤ x < 2'],
+      correctIndex: 3,
+      explanation: 'Critical values: x=−3 (numerator zero, included since the expression equals 0 there) and x=2 (denominator zero, must always be excluded). Testing intervals shows the expression is negative or zero for −3≤x<2. Including x=2 (option B) is a serious error since the expression is undefined there.',
     },
 
     // ── Q17 Hard — rational inequality, ≥, one boundary included ──────────────
     {
       difficulty: 'Hard',
-      question: 'Solve for x: (2x−1)/(x+4) ≥ 0. Explain why x=−4 must be excluded from your answer even though the sign pattern might suggest otherwise.',
-      answer: 'x<-4 or x≥1/2. x=−4 makes the denominator zero, so the expression is undefined there — it can never be included in the solution set, regardless of the sign pattern either side of it.',
-      checkMode: 'self',
+      question: `Solve for x: ${frac('2x − 1', 'x + 4')} ≥ 0. Remember that the value making the denominator zero must always be excluded.`,
+      checkMode: 'auto',
+      options: ['x < -4 or x ≥ 1/2', '-4 ≤ x ≤ 1/2', 'x ≤ -4 or x ≥ 1/2', 'x < -4 or x > 1/2'],
+      correctIndex: 0,
+      explanation: 'Critical values: numerator zero at x=1/2 (included, since the expression equals zero there) and denominator zero at x=−4 (always excluded, since the expression is undefined there). Testing intervals gives x<−4 or x≥1/2. Including x=−4 (option C) is a serious error regardless of the sign pattern nearby.',
     },
 
     // ── Q18 Medium — simultaneous linear-quadratic, two integer solutions ─────
     {
       difficulty: 'Medium',
       question: 'Solve simultaneously for x and y: y = x + 1 and y = x² − 1',
-      answer: 'x=2,y=3 or x=-1,y=0',
       checkMode: 'auto',
-      correctAnswers: ['x=2,y=3 or x=-1,y=0', 'x=-1,y=0 or x=2,y=3'],
-      explanation: 'Set x+1 = x²−1, so x²−x−2=0, giving (x−2)(x+1)=0, so x=2 or x=−1. Substitute into y=x+1: when x=2, y=3; when x=−1, y=0. Check: (2)²−1=3 ✓ and (−1)²−1=0 ✓.',
+      options: ['x=2,y=3 or x=1,y=0', 'x=2,y=3 or x=-1,y=0', 'x=-2,y=-1 or x=1,y=0', 'x=2,y=1 or x=-1,y=0'],
+      correctIndex: 1,
+      explanation: 'Set x+1 = x²−1, so x²−x−2=0, giving (x−2)(x+1)=0, so x=2 or x=−1. Substitute into y=x+1: when x=2, y=3; when x=−1, y=0. Check: (2)²−1=3 ✓ and (−1)²−1=0 ✓. Forgetting to substitute back to find y correctly (options A and D) is a common mistake.',
     },
 
     // ── Q19 Medium — simultaneous linear-quadratic, two integer solutions ─────
     {
       difficulty: 'Medium',
       question: 'Solve simultaneously for x and y: y = 2x − 3 and y = x² − 4x + 5',
-      answer: 'x=2,y=1 or x=4,y=5',
       checkMode: 'auto',
-      correctAnswers: ['x=2,y=1 or x=4,y=5', 'x=4,y=5 or x=2,y=1'],
-      explanation: 'Set 2x−3 = x²−4x+5, so x²−6x+8=0, giving (x−2)(x−4)=0, so x=2 or x=4. Substitute into y=2x−3: when x=2, y=1; when x=4, y=5. Check: (2)²−4(2)+5=1 ✓ and (4)²−4(4)+5=5 ✓.',
+      options: ['x=2,y=1 or x=4,y=13', 'x=-2,y=-7 or x=-4,y=-11', 'x=2,y=1 or x=4,y=5', 'x=2,y=5 or x=4,y=1'],
+      correctIndex: 2,
+      explanation: 'Set 2x−3 = x²−4x+5, so x²−6x+8=0, giving (x−2)(x−4)=0, so x=2 or x=4. Substitute into y=2x−3: when x=2, y=1; when x=4, y=5. Check: (2)²−4(2)+5=1 ✓ and (4)²−4(4)+5=5 ✓. Swapping the paired y-values (option D) is a common mistake.',
     },
 
     // ── Q20 Hard — simultaneous linear-quadratic, irrational solutions ────────
     {
       difficulty: 'Hard',
       question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: x + y = 5 and y = x² − 3x + 1',
-      answer: 'From the first equation, y=5−x. Substitute: 5−x=x²−3x+1, so x²−2x−4=0. Using the quadratic formula: x=(2±√20)/2=1±√5. When x=1+√5, y=5−(1+√5)=4−√5. When x=1−√5, y=5−(1−√5)=4+√5.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: [
+        'x=1+√5, y=4+√5 or x=1-√5, y=4-√5',
+        'x=2+√5, y=3-√5 or x=2-√5, y=3+√5',
+        'x=1+√20, y=4-√20 or x=1-√20, y=4+√20',
+        'x=1+√5, y=4-√5 or x=1-√5, y=4+√5',
+      ],
+      correctIndex: 3,
+      explanation: 'From the first equation, y=5−x. Substitute: 5−x=x²−3x+1, so x²−2x−4=0. Using the quadratic formula: x=(2±√20)/2=1±√5. When x=1+√5, y=5−(1+√5)=4−√5. When x=1−√5, y=5−(1−√5)=4+√5. Forgetting to divide √20 by 2 (option C) or swapping the paired y-values (option A) are common mistakes.',
     },
   ],
 
@@ -823,36 +855,36 @@ export const topicData: TopicData = {
       name: 'Set 1',
       questions: [
         // Block A — Linear equations with brackets / fractions (positions 0-2)
-        { difficulty: 'Easy', question: 'Solve for x: 4(x − 3) = 20', answer: 'x=8', checkMode: 'auto', correctAnswer: 'x=8', correctAnswers: ['x=8', 'x = 8', '8'], explanation: 'Expand: 4x − 12 = 20.\nAdd 12: 4x = 32.\nDivide by 4: x = 8 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Solve for x: 5x − 2(x + 1) = 13', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Expand (minus sign flips both signs): 5x − 2x − 2 = 13.\nCombine like terms: 3x − 2 = 13.\nAdd 2: 3x = 15.\nDivide by 3: x = 5 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: (3x + 1)/4 = (x − 2)/2', answer: 'x=-5', checkMode: 'auto', correctAnswer: 'x=-5', correctAnswers: ['x=-5', 'x = -5', '-5'], explanation: 'The LCM of 4 and 2 is 4. Multiply every term by 4: (3x + 1) = 2(x − 2).\nExpand: 3x + 1 = 2x − 4.\nSubtract 2x: x + 1 = −4.\nSubtract 1: x = −5 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: 4(x − 3) = 20', checkMode: 'auto', options: ['x = 9', 'x = 5.75', 'x = 2', 'x = 8'], correctIndex: 3, explanation: 'Expand: 4x − 12 = 20. Add 12 to both sides: 4x = 32. Divide by 4: x = 8. Forgetting to distribute the 4 across the bracket (option B), or a sign slip when isolating x (option C), are common mistakes.' },
+        { difficulty: 'Easy-Medium', question: 'Solve for x: 5x − 2(x + 1) = 13', checkMode: 'auto', options: ['x = 11/3', 'x = 5', 'x = 3', 'x = 15'], correctIndex: 1, explanation: 'Expand (the minus sign flips both signs inside the bracket): 5x − 2x − 2 = 13. Combine like terms: 3x − 2 = 13. Add 2: 3x = 15. Divide by 3: x = 5. Forgetting to distribute the negative sign onto every term in the bracket (option A) is the classic mistake here.' },
+        { difficulty: 'Medium', question: `Solve for x: ${frac('3x + 1', '4')} = ${frac('x − 2', '2')}`, checkMode: 'auto', options: ['x = -3', 'x = -1.5', 'x = -5', 'x = 3'], correctIndex: 2, explanation: 'The LCM of 4 and 2 is 4. Multiply every term by 4: (3x + 1) = 2(x − 2). Expand: 3x + 1 = 2x − 4. Subtract 2x: x + 1 = −4. Subtract 1: x = −5. Forgetting to distribute the 2, or a sign error when expanding the bracket, are common mistakes.' },
 
         // Block B — Quadratic equations by factorisation (positions 3-5)
-        { difficulty: 'Easy', question: 'Solve for x: x² − 3x − 10 = 0', answer: 'x=5 or x=-2', checkMode: 'auto', correctAnswers: ['x=5 or x=-2', 'x=-2 or x=5'], explanation: 'Find two numbers multiplying to −10 and adding to −3: −5 and 2.\n(x − 5)(x + 2) = 0, so x = 5 or x = −2 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: 2x² − 7x + 3 = 0', answer: 'x=3 or x=1/2', checkMode: 'auto', correctAnswers: ['x=3 or x=1/2', 'x=1/2 or x=3', 'x=3 or x=0.5', 'x=0.5 or x=3'], explanation: 'a×c = 2×3 = 6. Find two numbers multiplying to 6 and adding to −7: −6 and −1.\nSplit: 2x² − 6x − x + 3 = 0 → 2x(x − 3) − 1(x − 3) = 0 → (2x − 1)(x − 3) = 0, so x = 1/2 or x = 3 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: x² + 4x = 21', answer: 'x=3 or x=-7', checkMode: 'auto', correctAnswers: ['x=3 or x=-7', 'x=-7 or x=3'], explanation: 'Rearrange: x² + 4x − 21 = 0.\nFind two numbers multiplying to −21 and adding to 4: 7 and −3.\n(x + 7)(x − 3) = 0, so x = −7 or x = 3 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: x² − 3x − 10 = 0', checkMode: 'auto', options: ['x = -5 or x = 2', 'x = -5 or x = -2', 'x = 10 or x = -1', 'x = 5 or x = -2'], correctIndex: 3, explanation: 'Find two numbers multiplying to −10 and adding to −3: −5 and 2, so (x−5)(x+2)=0, giving x=5 or x=−2. Sign confusion when writing the factors (options A and B), or using the wrong factor pair of 10 (option C), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: 2x² − 7x + 3 = 0', checkMode: 'auto', options: ['x = 3 or x = 1/2', 'x = -3 or x = -1/2', 'x = 3 or x = -1/2', 'x = 1/3 or x = -6'], correctIndex: 0, explanation: 'a×c = 2×3 = 6. Two numbers multiplying to 6 and adding to −7: −6 and −1. Split: 2x²−6x−x+3=0 → 2x(x−3)−1(x−3)=0 → (2x−1)(x−3)=0, giving x=1/2 or x=3. Sign errors (options B and C), or using the wrong factor pair of 6 (option D), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: x² + 4x = 21', checkMode: 'auto', options: ['x = -3 or x = 7', 'x = 3 or x = -7', 'x = -3 or x = -7', 'x = 21 or x = -1'], correctIndex: 1, explanation: 'Rearrange: x²+4x−21=0. Two numbers multiplying to −21 and adding to 4: 7 and −3, so (x+7)(x−3)=0, giving x=−7 or x=3. Sign confusion (options A and C) or using the wrong factor pair of 21 (option D) are common mistakes.' },
 
         // Block C — Simultaneous linear equations (positions 6-9)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: x + y = 9 and x − y = 3', answer: 'x=6,y=3', checkMode: 'auto', correctAnswer: 'x=6,y=3', correctAnswers: ['x=6,y=3', 'x = 6, y = 3'], explanation: 'Add the equations: 2x = 12, so x = 6.\nSubstitute into x + y = 9: 6 + y = 9, so y = 3 ✓' },
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y using substitution: y = x − 1 and 3x + y = 15', answer: 'x=4,y=3', checkMode: 'auto', correctAnswer: 'x=4,y=3', correctAnswers: ['x=4,y=3', 'x = 4, y = 3'], explanation: 'Substitute y = x − 1 into 3x + y = 15: 3x + x − 1 = 15.\nCombine: 4x − 1 = 15, so 4x = 16, x = 4.\nSubstitute back: y = 4 − 1 = 3 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y using elimination: 2x + 3y = 16 and 2x − y = 4', answer: 'x=3.5,y=3', checkMode: 'auto', correctAnswer: 'x=3.5,y=3', correctAnswers: ['x=3.5,y=3', 'x = 3.5, y = 3', 'x=7/2,y=3'], explanation: 'Subtract the second equation from the first: (2x + 3y) − (2x − y) = 16 − 4, so 4y = 12, y = 3.\nSubstitute y = 3 into 2x − y = 4: 2x − 3 = 4, so 2x = 7, x = 3.5.\nCheck: 2(3.5) + 3(3) = 7 + 9 = 16 ✓ and 2(3.5) − 3 = 7 − 3 = 4 ✓' },
-        { difficulty: 'Hard', question: 'Two numbers have a sum of 20 and a difference of 6. Form two equations and solve simultaneously to find the two numbers.', answer: 'Let the numbers be x and y, with x > y.\nx + y = 20 and x − y = 6.\nAdd the equations: 2x = 26, so x = 13.\nSubstitute into x + y = 20: 13 + y = 20, so y = 7.\nThe numbers are 13 and 7.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: x + y = 9 and x − y = 3', checkMode: 'auto', options: ['x=3,y=6', 'x=9,y=0', 'x=6,y=3', 'x=6,y=2'], correctIndex: 2, explanation: 'Add the equations: 2x = 12, so x = 6. Substitute into x + y = 9: 6 + y = 9, so y = 3. Swapping x and y (option A), or an arithmetic slip in either step (options B and D), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y using substitution: y = x − 1 and 3x + y = 15', checkMode: 'auto', options: ['x=3.5,y=2.5', 'x=3,y=4', 'x=5,y=4', 'x=4,y=3'], correctIndex: 3, explanation: 'Substitute y = x − 1 into 3x + y = 15: 3x + x − 1 = 15. Combine: 4x − 1 = 15, so 4x = 16, x = 4. Substitute back: y = 4 − 1 = 3. A sign slip when substituting (option A), or swapping which variable is which (option B), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y using elimination: 2x + 3y = 16 and 2x − y = 4', checkMode: 'auto', options: ['x=3.5,y=3', 'x=0.5,y=-3', 'x=2,y=3', 'x=3.5,y=4'], correctIndex: 0, explanation: 'Subtract the second equation from the first: (2x + 3y) − (2x − y) = 16 − 4, so 4y = 12, y = 3. Substitute y = 3 into 2x − y = 4: 2x − 3 = 4, so 2x = 7, x = 3.5. A sign error when subtracting the equations (option B), or substituting into the wrong equation (option C), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Two numbers have a sum of 20 and a difference of 6. What are the two numbers?', checkMode: 'auto', options: ['14 and 6', '13 and 7', '10 and 10', '13 and 6'], correctIndex: 1, explanation: 'Let the numbers be x and y, with x > y. x + y = 20 and x − y = 6. Add the equations: 2x = 26, so x = 13. Substitute into x + y = 20: 13 + y = 20, so y = 7. The numbers are 13 and 7. Forgetting to use both equations together (option C), or an arithmetic slip when adding (option A), are common mistakes.' },
 
         // Block D — Linear inequalities, incl. sign-flip and number-line description (positions 10-12)
-        { difficulty: 'Easy', question: 'Solve for x: 3x − 5 > 10', answer: 'x>5', checkMode: 'auto', correctAnswer: 'x>5', correctAnswers: ['x>5', 'x > 5'], explanation: 'Add 5 to both sides: 3x > 15.\nDivide by 3: x > 5 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: −4x + 3 ≤ 15', answer: 'x≥-3', checkMode: 'auto', correctAnswer: 'x≥-3', correctAnswers: ['x≥-3', 'x >= -3', 'x≥−3'], explanation: 'Subtract 3 from both sides: −4x ≤ 12.\nDivide both sides by −4 — the inequality sign reverses: x ≥ −3 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve for x: 5 − 2x < 3(x − 5). Describe how you would represent the solution set on a number line.', answer: 'x>2', checkMode: 'auto', correctAnswer: 'x>2', correctAnswers: ['x>2', 'x > 2'], explanation: 'Expand the right side: 5 − 2x < 3x − 15.\nAdd 2x to both sides: 5 < 5x − 15.\nAdd 15: 20 < 5x.\nDivide by 5: 4 < x, i.e. x > 2.\nOn a number line this is shown with an open circle at 2 and shading/an arrow extending to the right toward positive infinity, since 2 itself is not included.' },
+        { difficulty: 'Easy', question: 'Solve for x: 3x − 5 > 10', checkMode: 'auto', options: ['x < 5', 'x > 15', 'x > 5', 'x > -5'], correctIndex: 2, explanation: 'Add 5 to both sides: 3x > 15. Divide by 3: x > 5 (no flip needed since we divided by a positive number). Flipping the inequality unnecessarily (option A), or forgetting to divide by 3 (option B), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: −4x + 3 ≤ 15', checkMode: 'auto', options: ['x ≤ -3', 'x ≥ 3', 'x ≥ -12', 'x ≥ -3'], correctIndex: 3, explanation: 'Subtract 3 from both sides: −4x ≤ 12. Divide both sides by −4 — the inequality sign reverses: x ≥ −3. Forgetting to flip the inequality sign when dividing by a negative number (option A) is the classic mistake here.' },
+        { difficulty: 'Medium-Hard', question: 'Solve for x: 5 − 2x < 3(x − 5). Describe how you would represent the solution set on a number line.', checkMode: 'auto', options: ['x > 4', 'x > 2', 'x < 4', 'x > 5'], correctIndex: 0, explanation: 'Expand the right side: 5 − 2x < 3x − 15. Add 2x to both sides: 5 < 5x − 15. Add 15: 20 < 5x. Divide by 5: 4 < x, i.e. x > 4. Forgetting to distribute the 3 onto both terms in the bracket (3(x−5) = 3x−5 instead of 3x−15) gives the common wrong answer x>2 (option B). On a number line the true solution is shown with an open circle at 4 and shading extending right toward positive infinity, since 4 itself is not included.' },
 
         // Block E — Simultaneous linear-quadratic systems (positions 13-16)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = x + 2 and y = x² − 4', answer: 'x=3,y=5 or x=-2,y=0', checkMode: 'auto', correctAnswers: ['x=3,y=5 or x=-2,y=0', 'x=-2,y=0 or x=3,y=5'], explanation: 'Set x + 2 = x² − 4, so x² − x − 6 = 0.\nFactorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2.\nWhen x = 3: y = 5. When x = −2: y = 0.\nCheck: 3² − 4 = 5 ✓ and (−2)² − 4 = 0 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y: y = 3x − 2 and y = x² + 2x − 8', answer: 'x=3,y=7 or x=-2,y=-8', checkMode: 'auto', correctAnswers: ['x=3,y=7 or x=-2,y=-8', 'x=-2,y=-8 or x=3,y=7'], explanation: 'Set 3x − 2 = x² + 2x − 8, so x² − x − 6 = 0.\nFactorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2.\nWhen x = 3: y = 3(3) − 2 = 7. When x = −2: y = 3(−2) − 2 = −8.\nCheck: 3² + 2(3) − 8 = 7 ✓ and (−2)² + 2(−2) − 8 = −8 ✓' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving answers in simplest surd form: y = x + 4 and y = x² + x − 2', answer: 'From the first equation substitute into the second: x + 4 = x² + x − 2.\nSimplify: 4 = x² − 2, so x² = 6, x = ±√6.\nWhen x = √6: y = √6 + 4. When x = −√6: y = −√6 + 4.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: 2x + y = 7 and y = x² − 3x + 5', answer: 'x=2,y=3 or x=-1,y=9', checkMode: 'auto', correctAnswers: ['x=2,y=3 or x=-1,y=9', 'x=-1,y=9 or x=2,y=3'], explanation: 'From the first equation, y = 7 − 2x. Substitute: 7 − 2x = x² − 3x + 5.\nRearrange: x² − x − 2 = 0.\nFactorise: (x − 2)(x + 1) = 0, so x = 2 or x = −1.\nWhen x = 2: y = 3. When x = −1: y = 9.\nCheck: 2² − 3(2) + 5 = 3 ✓ and (−1)² − 3(−1) + 5 = 9 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = x + 2 and y = x² − 4', checkMode: 'auto', options: ['x=-3,y=-1 or x=2,y=4', 'x=3,y=5 or x=-2,y=0', 'x=3,y=0 or x=-2,y=5', 'x=3,y=5 or x=-2,y=2'], correctIndex: 1, explanation: 'Set x + 2 = x² − 4, so x² − x − 6 = 0. Factorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2. When x = 3: y = 5. When x = −2: y = 0. Check: 3² − 4 = 5 ✓ and (−2)² − 4 = 0 ✓. Sign errors in the factoring (option A), or swapping which y-value belongs to which x (option C), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y: y = 3x − 2 and y = x² + 2x − 8', checkMode: 'auto', options: ['x=-3,y=-11 or x=2,y=4', 'x=3,y=-8 or x=-2,y=7', 'x=3,y=7 or x=-2,y=-8', 'x=3,y=7 or x=-2,y=-6'], correctIndex: 2, explanation: 'Set 3x − 2 = x² + 2x − 8, so x² − x − 6 = 0. Factorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2. When x = 3: y = 3(3) − 2 = 7. When x = −2: y = 3(−2) − 2 = −8. Check: 3² + 2(3) − 8 = 7 ✓ and (−2)² + 2(−2) − 8 = −8 ✓. Swapping the paired y-values (option B), or an arithmetic slip computing y (option D), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving answers in simplest surd form: y = x + 4 and y = x² + x − 2', checkMode: 'auto', options: ['x=√6, y=-√6+4 or x=-√6, y=√6+4', 'x=2√2, y=2√2+4 or x=-2√2, y=-2√2+4', 'x=√6, y=√6 or x=-√6, y=-√6', 'x=√6, y=√6+4 or x=-√6, y=-√6+4'], correctIndex: 3, explanation: 'From the first equation substitute into the second: x + 4 = x² + x − 2. Simplify: 4 = x² − 2, so x² = 6, x = ±√6. When x = √6: y = √6 + 4. When x = −√6: y = −√6 + 4. Swapping the paired y-values (option A), or forgetting to add the 4 back into y (option C), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: 2x + y = 7 and y = x² − 3x + 5', checkMode: 'auto', options: ['x=2,y=3 or x=-1,y=9', 'x=2,y=9 or x=-1,y=3', 'x=-2,y=11 or x=1,y=5', 'x=2,y=3 or x=-1,y=8'], correctIndex: 0, explanation: 'From the first equation, y = 7 − 2x. Substitute: 7 − 2x = x² − 3x + 5. Rearrange: x² − x − 2 = 0. Factorise: (x − 2)(x + 1) = 0, so x = 2 or x = −1. When x = 2: y = 3. When x = −1: y = 9. Check: 2² − 3(2) + 5 = 3 ✓ and (−1)² − 3(−1) + 5 = 9 ✓. Swapping the paired y-values (option B), or a sign error in the factoring (option C), are common mistakes.' },
 
         // Block F — Word problems and literal-equation style applications (positions 17-19)
-        { difficulty: 'Medium', question: 'The length of a rectangle is 5 cm more than its width. If the perimeter is 34 cm, form an equation in terms of the width w and solve for w.', answer: 'w=6', checkMode: 'auto', correctAnswer: 'w=6', correctAnswers: ['w=6', 'w = 6'], explanation: 'Perimeter = 2(length + width) = 2((w + 5) + w) = 34.\nSimplify: 2(2w + 5) = 34, so 4w + 10 = 34.\nSubtract 10: 4w = 24.\nDivide by 4: w = 6 ✓' },
-        { difficulty: 'Medium-Hard', question: 'A number increased by 3, then doubled, gives the same result as the number decreased by 1, then tripled. Find the number.', answer: 'x=9', checkMode: 'auto', correctAnswer: 'x=9', correctAnswers: ['x=9', 'x = 9'], explanation: 'Let the number be x. Equation: 2(x + 3) = 3(x − 1).\nExpand: 2x + 6 = 3x − 3.\nSubtract 2x: 6 = x − 3.\nAdd 3: x = 9.\nCheck: 2(9 + 3) = 24 and 3(9 − 1) = 24 ✓' },
-        { difficulty: 'Hard', question: 'A school hires chairs for a matric dance at a set-up fee of R500 plus R15 per chair. Sipho has a budget of R1 400. Form an inequality for the number of chairs c he can afford, and solve for c.', answer: 'c≤60', checkMode: 'auto', correctAnswer: 'c≤60', correctAnswers: ['c≤60', 'c <= 60'], explanation: 'Total cost: 500 + 15c ≤ 1400.\nSubtract 500: 15c ≤ 900.\nDivide by 15: c ≤ 60. Sipho can afford at most 60 chairs ✓' },
+        { difficulty: 'Medium', question: 'The length of a rectangle is 5 cm more than its width. If the perimeter is 34 cm, form an equation in terms of the width w and solve for w.', checkMode: 'auto', options: ['w = 14.5', 'w = 6', 'w = 11', 'w = 7'], correctIndex: 1, explanation: 'Perimeter = 2(length + width) = 2((w + 5) + w) = 34. Simplify: 2(2w + 5) = 34, so 4w + 10 = 34. Subtract 10: 4w = 24. Divide by 4: w = 6. Forgetting the factor of 2 in the perimeter formula (option A), or reporting the length instead of the width (option C), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'A number increased by 3, then doubled, gives the same result as the number decreased by 1, then tripled. Find the number.', checkMode: 'auto', options: ['x = 3', 'x = 6', 'x = 9', 'x = 15'], correctIndex: 2, explanation: 'Let the number be x. Equation: 2(x + 3) = 3(x − 1). Expand: 2x + 6 = 3x − 3. Subtract 2x: 6 = x − 3. Add 3: x = 9. Check: 2(9 + 3) = 24 and 3(9 − 1) = 24 ✓. A sign error when expanding (option A), or forgetting to distribute fully (option B), are common mistakes.' },
+        { difficulty: 'Hard', question: 'A school hires chairs for a matric dance at a set-up fee of R500 plus R15 per chair. Sipho has a budget of R1 400. Form an inequality for the number of chairs c he can afford, and solve for c.', checkMode: 'auto', options: ['c ≤ 93', 'c ≤ 65', 'c ≥ 60', 'c ≤ 60'], correctIndex: 3, explanation: 'Total cost: 500 + 15c ≤ 1400. Subtract 500: 15c ≤ 900. Divide by 15: c ≤ 60. Sipho can afford at most 60 chairs. Forgetting to subtract the set-up fee first (option A), or flipping the inequality unnecessarily (option C), are common mistakes.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered linear and quadratic equations, simultaneous systems, and inequalities.' },
@@ -869,36 +901,36 @@ export const topicData: TopicData = {
       name: 'Set 2',
       questions: [
         // Block A — Linear equations with brackets / fractions (positions 0-2)
-        { difficulty: 'Easy', question: 'Solve for x: 3(x − 4) = 15', answer: 'x=9', checkMode: 'auto', correctAnswer: 'x=9', correctAnswers: ['x=9', 'x = 9', '9'], explanation: 'Expand: 3x − 12 = 15.\nAdd 12: 3x = 27.\nDivide by 3: x = 9 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Solve for x: 6x − 3(x + 2) = 12', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Expand (minus sign flips both signs): 6x − 3x − 6 = 12.\nCombine like terms: 3x − 6 = 12.\nAdd 6: 3x = 18.\nDivide by 3: x = 6 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: (2x − 1)/3 = (x + 4)/5', answer: 'x=17/7', checkMode: 'auto', correctAnswer: 'x=17/7', correctAnswers: ['x=17/7'], explanation: 'The LCM of 3 and 5 is 15. Multiply every term by 15: 5(2x − 1) = 3(x + 4).\nExpand: 10x − 5 = 3x + 12.\nSubtract 3x: 7x − 5 = 12.\nAdd 5: 7x = 17.\nDivide by 7: x = 17/7 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: 3(x − 4) = 15', checkMode: 'auto', options: ['x = 9', 'x = 19/3', 'x = 1', 'x = 8'], correctIndex: 0, explanation: 'Expand: 3x − 12 = 15. Add 12 to both sides: 3x = 27. Divide by 3: x = 9. Forgetting to distribute the 3 across the bracket (option B), or a sign slip when isolating x (option C), are common mistakes.' },
+        { difficulty: 'Easy-Medium', question: 'Solve for x: 6x − 3(x + 2) = 12', checkMode: 'auto', options: ['x = 2', 'x = 6', 'x = 4', 'x = 18'], correctIndex: 1, explanation: 'Expand (the minus sign flips both signs inside the bracket): 6x − 3x − 6 = 12. Combine like terms: 3x − 6 = 12. Add 6: 3x = 18. Divide by 3: x = 6. Forgetting to distribute the negative sign onto every term in the bracket (option A) is the classic mistake here.' },
+        { difficulty: 'Medium', question: `Solve for x: ${frac('2x − 1', '3')} = ${frac('x + 4', '5')}`, checkMode: 'auto', options: ['x = 1', 'x = -1', 'x = 17/7', 'x = -13'], correctIndex: 2, explanation: 'The LCM of 3 and 5 is 15. Multiply every term by 15: 5(2x − 1) = 3(x + 4). Expand: 10x − 5 = 3x + 12. Subtract 3x: 7x − 5 = 12. Add 5: 7x = 17. Divide by 7: x = 17/7. Forgetting to multiply both sides by the correct LCM factor, or a sign error when expanding, are common mistakes.' },
 
         // Block B — Quadratic equations by factorisation (positions 3-5)
-        { difficulty: 'Easy', question: 'Solve for x: x² − 2x − 8 = 0', answer: 'x=4 or x=-2', checkMode: 'auto', correctAnswers: ['x=4 or x=-2', 'x=-2 or x=4'], explanation: 'Find two numbers multiplying to −8 and adding to −2: −4 and 2.\n(x − 4)(x + 2) = 0, so x = 4 or x = −2 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: 3x² − 5x − 2 = 0', answer: 'x=2 or x=-1/3', checkMode: 'auto', correctAnswers: ['x=2 or x=-1/3', 'x=-1/3 or x=2'], explanation: 'a×c = 3×(−2) = −6. Find two numbers multiplying to −6 and adding to −5: −6 and 1.\nSplit: 3x² − 6x + x − 2 = 0 → 3x(x − 2) + 1(x − 2) = 0 → (3x + 1)(x − 2) = 0, so x = −1/3 or x = 2 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: x² + 3x = 18', answer: 'x=3 or x=-6', checkMode: 'auto', correctAnswers: ['x=3 or x=-6', 'x=-6 or x=3'], explanation: 'Rearrange: x² + 3x − 18 = 0.\nFind two numbers multiplying to −18 and adding to 3: 6 and −3.\n(x + 6)(x − 3) = 0, so x = −6 or x = 3 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: x² − 2x − 8 = 0', checkMode: 'auto', options: ['x = -4 or x = 2', 'x = -4 or x = -2', 'x = 8 or x = -1', 'x = 4 or x = -2'], correctIndex: 3, explanation: 'Find two numbers multiplying to −8 and adding to −2: −4 and 2, so (x−4)(x+2)=0, giving x=4 or x=−2. Sign confusion (options A and B), or using the wrong factor pair of 8 (option C), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: 3x² − 5x − 2 = 0', checkMode: 'auto', options: ['x = 2 or x = -1/3', 'x = -2 or x = 1/3', 'x = 2 or x = 1/3', 'x = -1/6 or x = 6'], correctIndex: 0, explanation: 'a×c = 3×(−2) = −6. Two numbers multiplying to −6 and adding to −5: −6 and 1. Split: 3x²−6x+x−2=0 → 3x(x−2)+1(x−2)=0 → (3x+1)(x−2)=0, giving x=−1/3 or x=2. Sign errors (options B and C), or using the wrong factor pair of 6 (option D), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: x² + 3x = 18', checkMode: 'auto', options: ['x = -3 or x = 6', 'x = 3 or x = -6', 'x = -3 or x = -6', 'x = 18 or x = -1'], correctIndex: 1, explanation: 'Rearrange: x²+3x−18=0. Two numbers multiplying to −18 and adding to 3: 6 and −3, so (x+6)(x−3)=0, giving x=−6 or x=3. Sign confusion (options A and C), or using the wrong factor pair of 18 (option D), are common mistakes.' },
 
         // Block C — Simultaneous linear equations (positions 6-9)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: x + y = 11 and x − y = 5', answer: 'x=8,y=3', checkMode: 'auto', correctAnswer: 'x=8,y=3', correctAnswers: ['x=8,y=3', 'x = 8, y = 3'], explanation: 'Add the equations: 2x = 16, so x = 8.\nSubstitute into x + y = 11: 8 + y = 11, so y = 3 ✓' },
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y using substitution: y = 2x + 1 and 2x + y = 13', answer: 'x=3,y=7', checkMode: 'auto', correctAnswer: 'x=3,y=7', correctAnswers: ['x=3,y=7', 'x = 3, y = 7'], explanation: 'Substitute y = 2x + 1 into 2x + y = 13: 2x + 2x + 1 = 13.\nCombine: 4x + 1 = 13, so 4x = 12, x = 3.\nSubstitute back: y = 2(3) + 1 = 7 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y using elimination: 3x + 2y = 18 and 3x − y = 3', answer: 'x=8/3,y=5', checkMode: 'auto', correctAnswer: 'x=8/3,y=5', correctAnswers: ['x=8/3,y=5', 'x = 8/3, y = 5', 'x=2.67,y=5'], explanation: 'Subtract the second equation from the first: (3x + 2y) − (3x − y) = 18 − 3, so 3y = 15, y = 5.\nSubstitute y = 5 into 3x − y = 3: 3x − 5 = 3, so 3x = 8, x = 8/3.\nCheck: 3(8/3) + 2(5) = 8 + 10 = 18 ✓ and 3(8/3) − 5 = 8 − 5 = 3 ✓' },
-        { difficulty: 'Hard', question: 'Two numbers have a sum of 24 and a difference of 8. Form two equations and solve simultaneously to find the two numbers.', answer: 'Let the numbers be x and y, with x > y.\nx + y = 24 and x − y = 8.\nAdd the equations: 2x = 32, so x = 16.\nSubstitute into x + y = 24: 16 + y = 24, so y = 8.\nThe numbers are 16 and 8.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: x + y = 11 and x − y = 5', checkMode: 'auto', options: ['x=3,y=8', 'x=8,y=2', 'x=8,y=3', 'x=11,y=0'], correctIndex: 2, explanation: 'Add the equations: 2x = 16, so x = 8. Substitute into x + y = 11: 8 + y = 11, so y = 3. Swapping x and y (option A), or an arithmetic slip (options B and D), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y using substitution: y = 2x + 1 and 2x + y = 13', checkMode: 'auto', options: ['x=3.5,y=8', 'x=7,y=3', 'x=4,y=9', 'x=3,y=7'], correctIndex: 3, explanation: 'Substitute y = 2x + 1 into 2x + y = 13: 2x + 2x + 1 = 13. Combine: 4x + 1 = 13, so 4x = 12, x = 3. Substitute back: y = 2(3) + 1 = 7. A sign slip when substituting (option A), or swapping which variable is which (option B), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y using elimination: 3x + 2y = 18 and 3x − y = 3', checkMode: 'auto', options: ['x=8/3,y=5', 'x=1,y=5', 'x=8/3,y=-5', 'x=8/3,y=6'], correctIndex: 0, explanation: 'Subtract the second equation from the first: (3x + 2y) − (3x − y) = 18 − 3, so 3y = 15, y = 5. Substitute y = 5 into 3x − y = 3: 3x − 5 = 3, so 3x = 8, x = 8/3. A sign error when substituting back (option C), or an arithmetic slip (option D), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Two numbers have a sum of 24 and a difference of 8. What are the two numbers?', checkMode: 'auto', options: ['17 and 7', '16 and 8', '12 and 12', '16 and 9'], correctIndex: 1, explanation: 'Let the numbers be x and y, with x > y. x + y = 24 and x − y = 8. Add the equations: 2x = 32, so x = 16. Substitute into x + y = 24: 16 + y = 24, so y = 8. The numbers are 16 and 8. Forgetting to use both equations together (option C), or an arithmetic slip when adding (option A), are common mistakes.' },
 
         // Block D — Linear inequalities, incl. sign-flip and number-line description (positions 10-12)
-        { difficulty: 'Easy', question: 'Solve for x: 2x − 7 > 9', answer: 'x>8', checkMode: 'auto', correctAnswer: 'x>8', correctAnswers: ['x>8', 'x > 8'], explanation: 'Add 7 to both sides: 2x > 16.\nDivide by 2: x > 8 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: −3x + 4 ≥ 19', answer: 'x≤-5', checkMode: 'auto', correctAnswer: 'x≤-5', correctAnswers: ['x≤-5', 'x <= -5', 'x≤−5'], explanation: 'Subtract 4 from both sides: −3x ≥ 15.\nDivide both sides by −3 — the inequality sign reverses: x ≤ −5 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve for x: 8 − 3x ≤ 2(x + 4). Describe how you would represent the solution set on a number line.', answer: 'x≥0', checkMode: 'auto', correctAnswer: 'x≥0', correctAnswers: ['x≥0', 'x >= 0'], explanation: 'Expand the right side: 8 − 3x ≤ 2x + 8.\nSubtract 8 from both sides: −3x ≤ 2x.\nSubtract 2x: −5x ≤ 0.\nDivide by −5 — the sign reverses: x ≥ 0.\nOn a number line this is shown with a closed (filled) circle at 0 and shading/an arrow extending to the right toward positive infinity, since 0 itself is included.' },
+        { difficulty: 'Easy', question: 'Solve for x: 2x − 7 > 9', checkMode: 'auto', options: ['x < 8', 'x > 16', 'x > 8', 'x > -8'], correctIndex: 2, explanation: 'Add 7 to both sides: 2x > 16. Divide by 2: x > 8 (no flip needed since we divided by a positive number). Flipping the inequality unnecessarily (option A), or forgetting to divide by 2 (option B), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: −3x + 4 ≥ 19', checkMode: 'auto', options: ['x ≥ -5', 'x ≤ 5', 'x ≤ -25', 'x ≤ -5'], correctIndex: 3, explanation: 'Subtract 4 from both sides: −3x ≥ 15. Divide both sides by −3 — the inequality sign reverses: x ≤ −5. Forgetting to flip the inequality sign when dividing by a negative number (option A) is the classic mistake here.' },
+        { difficulty: 'Medium-Hard', question: 'Solve for x: 8 − 3x ≤ 2(x + 4). Describe how you would represent the solution set on a number line.', checkMode: 'auto', options: ['x ≥ 0', 'x ≥ 4/5', 'x ≤ 0', 'x ≥ 1'], correctIndex: 0, explanation: 'Expand the right side: 8 − 3x ≤ 2x + 8. Subtract 8 from both sides: −3x ≤ 2x. Subtract 2x: −5x ≤ 0. Divide by −5 — the sign reverses: x ≥ 0. Forgetting to distribute the 2 across both terms in the bracket (option B), or forgetting to flip the inequality when dividing by −5 (option C), are common mistakes. On a number line this is shown with a closed (filled) circle at 0 and shading extending right toward positive infinity, since 0 itself is included.' },
 
         // Block E — Simultaneous linear-quadratic systems (positions 13-16)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = x + 3 and y = x² − 3', answer: 'x=3,y=6 or x=-2,y=1', checkMode: 'auto', correctAnswers: ['x=3,y=6 or x=-2,y=1', 'x=-2,y=1 or x=3,y=6'], explanation: 'Set x + 3 = x² − 3, so x² − x − 6 = 0.\nFactorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2.\nWhen x = 3: y = 6. When x = −2: y = 1.\nCheck: 3² − 3 = 6 ✓ and (−2)² − 3 = 1 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y: y = 4x − 3 and y = x² + x − 3', answer: 'x=0,y=-3 or x=3,y=9', checkMode: 'auto', correctAnswers: ['x=0,y=-3 or x=3,y=9', 'x=3,y=9 or x=0,y=-3'], explanation: 'Set 4x − 3 = x² + x − 3, so x² − 3x = 0.\nFactorise: x(x − 3) = 0, so x = 0 or x = 3.\nWhen x = 0: y = −3. When x = 3: y = 9.\nCheck: 0² + 0 − 3 = −3 ✓ and 3² + 3 − 3 = 9 ✓' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving answers in simplest surd form: y = x + 2 and y = x² + x − 6', answer: 'From the first equation substitute into the second: x + 2 = x² + x − 6.\nSimplify: 2 = x² − 6, so x² = 8, x = ±√8 = ±2√2.\nWhen x = 2√2: y = 2√2 + 2. When x = −2√2: y = −2√2 + 2.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: 3x + y = 11 and y = x² − 2x − 1', answer: 'x=3,y=2 or x=-4,y=23', checkMode: 'auto', correctAnswers: ['x=3,y=2 or x=-4,y=23', 'x=-4,y=23 or x=3,y=2'], explanation: 'From the first equation, y = 11 − 3x. Substitute: 11 − 3x = x² − 2x − 1.\nRearrange: x² + x − 12 = 0.\nFactorise: (x + 4)(x − 3) = 0, so x = −4 or x = 3.\nWhen x = 3: y = 2. When x = −4: y = 23.\nCheck: (3)²−2(3)−1=2 ✓ and (−4)²−2(−4)−1=23 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = x + 3 and y = x² − 3', checkMode: 'auto', options: ['x=-3,y=0 or x=2,y=5', 'x=3,y=6 or x=-2,y=1', 'x=3,y=1 or x=-2,y=6', 'x=3,y=6 or x=-2,y=2'], correctIndex: 1, explanation: 'Set x + 3 = x² − 3, so x² − x − 6 = 0. Factorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2. When x = 3: y = 6. When x = −2: y = 1. Check: 3² − 3 = 6 ✓ and (−2)² − 3 = 1 ✓. Sign errors in the factoring (option A), or swapping the paired y-values (option C), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y: y = 4x − 3 and y = x² + x − 3', checkMode: 'auto', options: ['x=0,y=-3 or x=-3,y=-15', 'x=0,y=9 or x=3,y=-3', 'x=0,y=-3 or x=3,y=9', 'x=0,y=-3 or x=3,y=10'], correctIndex: 2, explanation: 'Set 4x − 3 = x² + x − 3, so x² − 3x = 0. Factorise: x(x − 3) = 0, so x = 0 or x = 3. When x = 0: y = −3. When x = 3: y = 9. Check: 0² + 0 − 3 = −3 ✓ and 3² + 3 − 3 = 9 ✓. A sign error on the second root (option A), or swapping the paired y-values (option B), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving answers in simplest surd form: y = x + 2 and y = x² + x − 6', checkMode: 'auto', options: ['x=2√2, y=-2√2+2 or x=-2√2, y=2√2+2', 'x=√6, y=√6+2 or x=-√6, y=-√6+2', 'x=2√2, y=2√2 or x=-2√2, y=-2√2', 'x=2√2, y=2√2+2 or x=-2√2, y=-2√2+2'], correctIndex: 3, explanation: 'From the first equation substitute into the second: x + 2 = x² + x − 6. Simplify: 2 = x² − 6, so x² = 8, x = ±√8 = ±2√2. When x = 2√2: y = 2√2 + 2. When x = −2√2: y = −2√2 + 2. Swapping the paired y-values (option A), or an arithmetic slip in the constant term (option B), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: 3x + y = 11 and y = x² − 2x − 1', checkMode: 'auto', options: ['x=3,y=2 or x=-4,y=23', 'x=-3,y=20 or x=4,y=-1', 'x=3,y=23 or x=-4,y=2', 'x=3,y=2 or x=-4,y=22'], correctIndex: 0, explanation: 'From the first equation, y = 11 − 3x. Substitute: 11 − 3x = x² − 2x − 1. Rearrange: x² + x − 12 = 0. Factorise: (x + 4)(x − 3) = 0, so x = −4 or x = 3. When x = 3: y = 2. When x = −4: y = 23. Check: 3² − 2(3) − 1 = 2 ✓ and (−4)² − 2(−4) − 1 = 23 ✓. A sign error in the factoring (option B), or swapping the paired y-values (option C), are common mistakes.' },
 
         // Block F — Word problems and literal-equation style applications (positions 17-19)
-        { difficulty: 'Medium', question: 'The length of a rectangle is 4 cm more than its width. If the perimeter is 28 cm, form an equation in terms of the width w and solve for w.', answer: 'w=5', checkMode: 'auto', correctAnswer: 'w=5', correctAnswers: ['w=5', 'w = 5'], explanation: 'Perimeter = 2(length + width) = 2((w + 4) + w) = 28.\nSimplify: 2(2w + 4) = 28, so 4w + 8 = 28.\nSubtract 8: 4w = 20.\nDivide by 4: w = 5 ✓' },
-        { difficulty: 'Medium-Hard', question: 'A number increased by 4, then doubled, gives the same result as the number decreased by 2, then tripled. Find the number.', answer: 'x=14', checkMode: 'auto', correctAnswer: 'x=14', correctAnswers: ['x=14', 'x = 14'], explanation: 'Let the number be x. Equation: 2(x + 4) = 3(x − 2).\nExpand: 2x + 8 = 3x − 6.\nSubtract 2x: 8 = x − 6.\nAdd 6: x = 14.\nCheck: 2(14+4)=36 and 3(14-2)=36 ✓' },
-        { difficulty: 'Hard', question: 'A venue charges a set-up fee of R800 plus R25 per guest for a Grade 10 farewell. The committee has a budget of R3 800. Form an inequality for the number of guests g they can afford, and solve for g.', answer: 'g≤120', checkMode: 'auto', correctAnswer: 'g≤120', correctAnswers: ['g≤120', 'g <= 120'], explanation: 'Total cost: 800 + 25g ≤ 3800.\nSubtract 800: 25g ≤ 3000.\nDivide by 25: g ≤ 120. The committee can afford at most 120 guests ✓' },
+        { difficulty: 'Medium', question: 'The length of a rectangle is 4 cm more than its width. If the perimeter is 28 cm, form an equation in terms of the width w and solve for w.', checkMode: 'auto', options: ['w = 12', 'w = 5', 'w = 9', 'w = 6'], correctIndex: 1, explanation: 'Perimeter = 2(length + width) = 2((w + 4) + w) = 28. Simplify: 2(2w + 4) = 28, so 4w + 8 = 28. Subtract 8: 4w = 20. Divide by 4: w = 5. Forgetting the factor of 2 in the perimeter formula (option A), or reporting the length instead of the width (option C), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'A number increased by 4, then doubled, gives the same result as the number decreased by 2, then tripled. Find the number.', checkMode: 'auto', options: ['x = 2', 'x = 10', 'x = 14', 'x = 20'], correctIndex: 2, explanation: 'Let the number be x. Equation: 2(x + 4) = 3(x − 2). Expand: 2x + 8 = 3x − 6. Subtract 2x: 8 = x − 6. Add 6: x = 14. Check: 2(14+4)=36 and 3(14-2)=36 ✓. A sign error when expanding (option A), or forgetting to distribute fully (option B), are common mistakes.' },
+        { difficulty: 'Hard', question: 'A venue charges a set-up fee of R800 plus R25 per guest for a Grade 10 farewell. The committee has a budget of R3 800. Form an inequality for the number of guests g they can afford, and solve for g.', checkMode: 'auto', options: ['g ≤ 152', 'g ≤ 128', 'g ≥ 120', 'g ≤ 120'], correctIndex: 3, explanation: 'Total cost: 800 + 25g ≤ 3800. Subtract 800: 25g ≤ 3000. Divide by 25: g ≤ 120. The committee can afford at most 120 guests. Forgetting to subtract the set-up fee first (option A), or flipping the inequality unnecessarily (option C), are common mistakes.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered linear and quadratic equations, simultaneous systems, and inequalities.' },
@@ -915,36 +947,36 @@ export const topicData: TopicData = {
       name: 'Set 3',
       questions: [
         // Block A — Linear equations with brackets / fractions (positions 0-2)
-        { difficulty: 'Easy', question: 'Solve for x: 5(x − 2) = 25', answer: 'x=7', checkMode: 'auto', correctAnswer: 'x=7', correctAnswers: ['x=7', 'x = 7', '7'], explanation: 'Expand: 5x − 10 = 25.\nAdd 10: 5x = 35.\nDivide by 5: x = 7 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Solve for x: 7x − 4(x − 1) = 22', answer: 'x=6', checkMode: 'auto', correctAnswer: 'x=6', correctAnswers: ['x=6', 'x = 6', '6'], explanation: 'Expand (minus sign flips both signs): 7x − 4x + 4 = 22.\nCombine like terms: 3x + 4 = 22.\nSubtract 4: 3x = 18.\nDivide by 3: x = 6 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: (4x − 3)/5 = (x + 6)/2', answer: 'x=12', checkMode: 'auto', correctAnswer: 'x=12', correctAnswers: ['x=12', 'x = 12'], explanation: 'The LCM of 5 and 2 is 10. Multiply every term by 10: 2(4x − 3) = 5(x + 6).\nExpand: 8x − 6 = 5x + 30.\nSubtract 5x: 3x − 6 = 30.\nAdd 6: 3x = 36.\nDivide by 3: x = 12 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: 5(x − 2) = 25', checkMode: 'auto', options: ['x = 7', 'x = 5.4', 'x = 3', 'x = 8'], correctIndex: 0, explanation: 'Expand: 5x − 10 = 25. Add 10 to both sides: 5x = 35. Divide by 5: x = 7. Forgetting to distribute the 5 across the bracket (option B), or a sign slip when isolating x (option C), are common mistakes.' },
+        { difficulty: 'Easy-Medium', question: 'Solve for x: 7x − 4(x − 1) = 22', checkMode: 'auto', options: ['x = 26/3', 'x = 6', 'x = 8', 'x = 18'], correctIndex: 1, explanation: 'Expand (the minus sign flips both signs inside the bracket): 7x − 4x + 4 = 22. Combine like terms: 3x + 4 = 22. Subtract 4: 3x = 18. Divide by 3: x = 6. Forgetting to distribute the negative sign onto every term in the bracket (option A) is the classic mistake here.' },
+        { difficulty: 'Medium', question: `Solve for x: ${frac('4x − 3', '5')} = ${frac('x + 6', '2')}`, checkMode: 'auto', options: ['x = 12/7', 'x = -8', 'x = 12', 'x = -33'], correctIndex: 2, explanation: 'The LCM of 5 and 2 is 10. Multiply every term by 10: 2(4x − 3) = 5(x + 6). Expand: 8x − 6 = 5x + 30. Subtract 5x: 3x − 6 = 30. Add 6: 3x = 36. Divide by 3: x = 12. Forgetting to multiply both sides by the correct LCM factor, or a sign error when expanding, are common mistakes.' },
 
         // Block B — Quadratic equations by factorisation (positions 3-5)
-        { difficulty: 'Easy', question: 'Solve for x: x² − 4x − 21 = 0', answer: 'x=7 or x=-3', checkMode: 'auto', correctAnswers: ['x=7 or x=-3', 'x=-3 or x=7'], explanation: 'Find two numbers multiplying to −21 and adding to −4: −7 and 3.\n(x − 7)(x + 3) = 0, so x = 7 or x = −3 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: 4x² − 4x − 3 = 0', answer: 'x=3/2 or x=-1/2', checkMode: 'auto', correctAnswers: ['x=3/2 or x=-1/2', 'x=-1/2 or x=3/2'], explanation: 'a×c = 4×(−3) = −12. Find two numbers multiplying to −12 and adding to −4: −6 and 2.\nSplit: 4x² − 6x + 2x − 3 = 0 → 2x(2x − 3) + 1(2x − 3) = 0 → (2x + 1)(2x − 3) = 0, so x = −1/2 or x = 3/2 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: x² + 2x = 24', answer: 'x=4 or x=-6', checkMode: 'auto', correctAnswers: ['x=4 or x=-6', 'x=-6 or x=4'], explanation: 'Rearrange: x² + 2x − 24 = 0.\nFind two numbers multiplying to −24 and adding to 2: 6 and −4.\n(x + 6)(x − 4) = 0, so x = −6 or x = 4 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: x² − 4x − 21 = 0', checkMode: 'auto', options: ['x = -7 or x = 3', 'x = -7 or x = -3', 'x = 21 or x = -1', 'x = 7 or x = -3'], correctIndex: 3, explanation: 'Find two numbers multiplying to −21 and adding to −4: −7 and 3, so (x−7)(x+3)=0, giving x=7 or x=−3. Sign confusion (options A and B), or using the wrong factor pair of 21 (option C), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: 4x² − 4x − 3 = 0', checkMode: 'auto', options: ['x = 3/2 or x = -1/2', 'x = -3/2 or x = 1/2', 'x = 3/2 or x = 1/2', 'x = 1/4 or x = -3'], correctIndex: 0, explanation: 'a×c = 4×(−3) = −12. Two numbers multiplying to −12 and adding to −4: −6 and 2. Split: 4x²−6x+2x−3=0 → 2x(2x−3)+1(2x−3)=0 → (2x+1)(2x−3)=0, giving x=−1/2 or x=3/2. Sign errors (options B and C), or using the wrong factor pair of 12 (option D), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: x² + 2x = 24', checkMode: 'auto', options: ['x = -4 or x = 6', 'x = 4 or x = -6', 'x = -4 or x = -6', 'x = 24 or x = -1'], correctIndex: 1, explanation: 'Rearrange: x²+2x−24=0. Two numbers multiplying to −24 and adding to 2: 6 and −4, so (x+6)(x−4)=0, giving x=−6 or x=4. Sign confusion (options A and C), or using the wrong factor pair of 24 (option D), are common mistakes.' },
 
         // Block C — Simultaneous linear equations (positions 6-9)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: x + y = 14 and x − y = 2', answer: 'x=8,y=6', checkMode: 'auto', correctAnswer: 'x=8,y=6', correctAnswers: ['x=8,y=6', 'x = 8, y = 6'], explanation: 'Add the equations: 2x = 16, so x = 8.\nSubstitute into x + y = 14: 8 + y = 14, so y = 6 ✓' },
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y using substitution: y = 3x − 4 and x + y = 12', answer: 'x=4,y=8', checkMode: 'auto', correctAnswer: 'x=4,y=8', correctAnswers: ['x=4,y=8', 'x = 4, y = 8'], explanation: 'Substitute y = 3x − 4 into x + y = 12: x + 3x − 4 = 12.\nCombine: 4x − 4 = 12, so 4x = 16, x = 4.\nSubstitute back: y = 3(4) − 4 = 8 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y using elimination: 4x + 3y = 26 and 4x − y = 6', answer: 'x=2.75,y=5', checkMode: 'auto', correctAnswer: 'x=2.75,y=5', correctAnswers: ['x=2.75,y=5', 'x = 2.75, y = 5', 'x=11/4,y=5'], explanation: 'Subtract the second equation from the first: (4x + 3y) − (4x − y) = 26 − 6, so 4y = 20, y = 5.\nSubstitute y = 5 into 4x − y = 6: 4x − 5 = 6, so 4x = 11, x = 2.75.\nCheck: 4(2.75) + 3(5) = 11 + 15 = 26 ✓ and 4(2.75) − 5 = 11 − 5 = 6 ✓' },
-        { difficulty: 'Hard', question: 'Two numbers have a sum of 30 and a difference of 12. Form two equations and solve simultaneously to find the two numbers.', answer: 'Let the numbers be x and y, with x > y.\nx + y = 30 and x − y = 12.\nAdd the equations: 2x = 42, so x = 21.\nSubstitute into x + y = 30: 21 + y = 30, so y = 9.\nThe numbers are 21 and 9.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: x + y = 14 and x − y = 2', checkMode: 'auto', options: ['x=6,y=8', 'x=8,y=5', 'x=8,y=6', 'x=14,y=0'], correctIndex: 2, explanation: 'Add the equations: 2x = 16, so x = 8. Substitute into x + y = 14: 8 + y = 14, so y = 6. Swapping x and y (option A), or an arithmetic slip (options B and D), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y using substitution: y = 3x − 4 and x + y = 12', checkMode: 'auto', options: ['x=2,y=2', 'x=8,y=4', 'x=5,y=11', 'x=4,y=8'], correctIndex: 3, explanation: 'Substitute y = 3x − 4 into x + y = 12: x + 3x − 4 = 12. Combine: 4x − 4 = 12, so 4x = 16, x = 4. Substitute back: y = 3(4) − 4 = 8. A sign slip when substituting (option A), or swapping which variable is which (option B), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y using elimination: 4x + 3y = 26 and 4x − y = 6', checkMode: 'auto', options: ['x=2.75,y=5', 'x=1,y=6', 'x=2.75,y=-5', 'x=2.75,y=6'], correctIndex: 0, explanation: 'Subtract the second equation from the first: (4x + 3y) − (4x − y) = 26 − 6, so 4y = 20, y = 5. Substitute y = 5 into 4x − y = 6: 4x − 5 = 6, so 4x = 11, x = 2.75. A sign error when substituting back (option C), or an arithmetic slip (option D), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Two numbers have a sum of 30 and a difference of 12. What are the two numbers?', checkMode: 'auto', options: ['22 and 8', '21 and 9', '15 and 15', '21 and 10'], correctIndex: 1, explanation: 'Let the numbers be x and y, with x > y. x + y = 30 and x − y = 12. Add the equations: 2x = 42, so x = 21. Substitute into x + y = 30: 21 + y = 30, so y = 9. The numbers are 21 and 9. Forgetting to use both equations together (option C), or an arithmetic slip when adding (option A), are common mistakes.' },
 
         // Block D — Linear inequalities, incl. sign-flip and number-line description (positions 10-12)
-        { difficulty: 'Easy', question: 'Solve for x: 4x − 3 > 13', answer: 'x>4', checkMode: 'auto', correctAnswer: 'x>4', correctAnswers: ['x>4', 'x > 4'], explanation: 'Add 3 to both sides: 4x > 16.\nDivide by 4: x > 4 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: −5x + 2 ≤ 22', answer: 'x≥-4', checkMode: 'auto', correctAnswer: 'x≥-4', correctAnswers: ['x≥-4', 'x >= -4', 'x≥−4'], explanation: 'Subtract 2 from both sides: −5x ≤ 20.\nDivide both sides by −5 — the inequality sign reverses: x ≥ −4 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve for x: 10 − x ≥ 2(x − 1). Describe how you would represent the solution set on a number line.', answer: 'x≤4', checkMode: 'auto', correctAnswer: 'x≤4', correctAnswers: ['x≤4', 'x <= 4'], explanation: 'Expand the right side: 10 − x ≥ 2x − 2.\nAdd x to both sides: 10 ≥ 3x − 2.\nAdd 2: 12 ≥ 3x.\nDivide by 3: 4 ≥ x, i.e. x ≤ 4.\nOn a number line this is shown with a closed (filled) circle at 4 and shading/an arrow extending to the left toward negative infinity, since 4 itself is included.' },
+        { difficulty: 'Easy', question: 'Solve for x: 4x − 3 > 13', checkMode: 'auto', options: ['x < 4', 'x > 16', 'x > 4', 'x > -4'], correctIndex: 2, explanation: 'Add 3 to both sides: 4x > 16. Divide by 4: x > 4 (no flip needed since we divided by a positive number). Flipping the inequality unnecessarily (option A), or forgetting to divide by 4 (option B), are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: −5x + 2 ≤ 22', checkMode: 'auto', options: ['x ≤ -4', 'x ≥ 4', 'x ≥ -20', 'x ≥ -4'], correctIndex: 3, explanation: 'Subtract 2 from both sides: −5x ≤ 20. Divide both sides by −5 — the inequality sign reverses: x ≥ −4. Forgetting to flip the inequality sign when dividing by a negative number (option A) is the classic mistake here.' },
+        { difficulty: 'Medium-Hard', question: 'Solve for x: 10 − x ≥ 2(x − 1). Describe how you would represent the solution set on a number line.', checkMode: 'auto', options: ['x ≤ 4', 'x ≤ 11/3', 'x ≥ 4', 'x ≤ 3'], correctIndex: 0, explanation: 'Expand the right side: 10 − x ≥ 2x − 2. Add x to both sides: 10 ≥ 3x − 2. Add 2: 12 ≥ 3x. Divide by 3: 4 ≥ x, i.e. x ≤ 4. Forgetting to distribute the 2 across both terms in the bracket (option B), or flipping the inequality unnecessarily when dividing by a positive number (option C), are common mistakes. On a number line this is shown with a closed (filled) circle at 4 and shading extending left toward negative infinity, since 4 itself is included.' },
 
         // Block E — Simultaneous linear-quadratic systems (positions 13-16)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = x + 1 and y = x² − 5', answer: 'x=3,y=4 or x=-2,y=-1', checkMode: 'auto', correctAnswers: ['x=3,y=4 or x=-2,y=-1', 'x=-2,y=-1 or x=3,y=4'], explanation: 'Set x + 1 = x² − 5, so x² − x − 6 = 0.\nFactorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2.\nWhen x = 3: y = 4. When x = −2: y = −1.\nCheck: 3² − 5 = 4 ✓ and (−2)² − 5 = −1 ✓' },
-        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y: y = 5x − 4 and y = x² + 2x − 4', answer: 'x=0,y=-4 or x=3,y=11', checkMode: 'auto', correctAnswers: ['x=0,y=-4 or x=3,y=11', 'x=3,y=11 or x=0,y=-4'], explanation: 'Set 5x − 4 = x² + 2x − 4, so x² − 3x = 0.\nFactorise: x(x − 3) = 0, so x = 0 or x = 3.\nWhen x = 0: y = −4. When x = 3: y = 11.\nCheck: 0² + 2(0) − 4 = −4 ✓ and 3² + 2(3) − 4 = 11 ✓' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving answers in simplest surd form: y = x + 5 and y = x² + x − 1', answer: 'From the first equation substitute into the second: x + 5 = x² + x − 1.\nSimplify: 5 = x² − 1, so x² = 6, x = ±√6.\nWhen x = √6: y = √6 + 5. When x = −√6: y = −√6 + 5.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: 2x + y = 9 and y = x² − x − 3', answer: 'x=3,y=3 or x=-4,y=17', checkMode: 'auto', correctAnswers: ['x=3,y=3 or x=-4,y=17', 'x=-4,y=17 or x=3,y=3'], explanation: 'From the first equation, y = 9 − 2x. Substitute: 9 − 2x = x² − x − 3.\nRearrange: x² + x − 12 = 0.\nFactorise: (x + 4)(x − 3) = 0, so x = −4 or x = 3.\nWhen x = 3: y = 9 − 2(3) = 3. When x = −4: y = 9 − 2(−4) = 17.\nCheck: 3² − 3 − 3 = 3 ✓ and (−4)² − (−4) − 3 = 17 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = x + 1 and y = x² − 5', checkMode: 'auto', options: ['x=-3,y=-2 or x=2,y=3', 'x=3,y=4 or x=-2,y=-1', 'x=3,y=-1 or x=-2,y=4', 'x=3,y=4 or x=-2,y=-3'], correctIndex: 1, explanation: 'Set x + 1 = x² − 5, so x² − x − 6 = 0. Factorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2. When x = 3: y = 4. When x = −2: y = −1. Check: 3² − 5 = 4 ✓ and (−2)² − 5 = −1 ✓. Sign errors in the factoring (option A), or swapping the paired y-values (option C), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'Solve simultaneously for x and y: y = 5x − 4 and y = x² + 2x − 4', checkMode: 'auto', options: ['x=0,y=-4 or x=-3,y=-19', 'x=0,y=11 or x=3,y=-4', 'x=0,y=-4 or x=3,y=11', 'x=0,y=-4 or x=3,y=12'], correctIndex: 2, explanation: 'Set 5x − 4 = x² + 2x − 4, so x² − 3x = 0. Factorise: x(x − 3) = 0, so x = 0 or x = 3. When x = 0: y = −4. When x = 3: y = 11. Check: 0² + 2(0) − 4 = −4 ✓ and 3² + 2(3) − 4 = 11 ✓. A sign error on the second root (option A), or swapping the paired y-values (option B), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving answers in simplest surd form: y = x + 5 and y = x² + x − 1', checkMode: 'auto', options: ['x=√6, y=-√6+5 or x=-√6, y=√6+5', 'x=2, y=7 or x=-2, y=3', 'x=√6, y=√6 or x=-√6, y=-√6', 'x=√6, y=√6+5 or x=-√6, y=-√6+5'], correctIndex: 3, explanation: 'From the first equation substitute into the second: x + 5 = x² + x − 1. Simplify: 5 = x² − 1, so x² = 6, x = ±√6. When x = √6: y = √6 + 5. When x = −√6: y = −√6 + 5. Swapping the paired y-values (option A), or an arithmetic slip in the constant term (option B), are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: 2x + y = 9 and y = x² − x − 3', checkMode: 'auto', options: ['x=3,y=3 or x=-4,y=17', 'x=-3,y=15 or x=4,y=1', 'x=3,y=17 or x=-4,y=3', 'x=3,y=3 or x=-4,y=16'], correctIndex: 0, explanation: 'From the first equation, y = 9 − 2x. Substitute: 9 − 2x = x² − x − 3. Rearrange: x² + x − 12 = 0. Factorise: (x + 4)(x − 3) = 0, so x = −4 or x = 3. When x = 3: y = 9 − 2(3) = 3. When x = −4: y = 9 − 2(−4) = 17. Check: 3² − 3 − 3 = 3 ✓ and (−4)² − (−4) − 3 = 17 ✓. A sign error in the factoring (option B), or swapping the paired y-values (option C), are common mistakes.' },
 
         // Block F — Word problems and literal-equation style applications (positions 17-19)
-        { difficulty: 'Medium', question: 'The length of a rectangle is 6 cm more than its width. If the perimeter is 40 cm, form an equation in terms of the width w and solve for w.', answer: 'w=7', checkMode: 'auto', correctAnswer: 'w=7', correctAnswers: ['w=7', 'w = 7'], explanation: 'Perimeter = 2(length + width) = 2((w + 6) + w) = 40.\nSimplify: 2(2w + 6) = 40, so 4w + 12 = 40.\nSubtract 12: 4w = 28.\nDivide by 4: w = 7 ✓' },
-        { difficulty: 'Medium-Hard', question: 'A number increased by 5, then doubled, gives the same result as the number decreased by 3, then tripled. Find the number.', answer: 'x=19', checkMode: 'auto', correctAnswer: 'x=19', correctAnswers: ['x=19', 'x = 19'], explanation: 'Let the number be x. Equation: 2(x + 5) = 3(x − 3).\nExpand: 2x + 10 = 3x − 9.\nSubtract 2x: 10 = x − 9.\nAdd 9: x = 19.\nCheck: 2(19+5)=48 and 3(19-3)=48 ✓' },
-        { difficulty: 'Hard', question: 'A conference centre charges a set-up fee of R600 plus R20 per delegate. The organiser has a budget of R2 600. Form an inequality for the number of delegates d they can afford, and solve for d.', answer: 'd≤100', checkMode: 'auto', correctAnswer: 'd≤100', correctAnswers: ['d≤100', 'd <= 100'], explanation: 'Total cost: 600 + 20d ≤ 2600.\nSubtract 600: 20d ≤ 2000.\nDivide by 20: d ≤ 100. The organiser can afford at most 100 delegates ✓' },
+        { difficulty: 'Medium', question: 'The length of a rectangle is 6 cm more than its width. If the perimeter is 40 cm, form an equation in terms of the width w and solve for w.', checkMode: 'auto', options: ['w = 17', 'w = 7', 'w = 13', 'w = 8'], correctIndex: 1, explanation: 'Perimeter = 2(length + width) = 2((w + 6) + w) = 40. Simplify: 2(2w + 6) = 40, so 4w + 12 = 40. Subtract 12: 4w = 28. Divide by 4: w = 7. Forgetting the factor of 2 in the perimeter formula (option A), or reporting the length instead of the width (option C), are common mistakes.' },
+        { difficulty: 'Medium-Hard', question: 'A number increased by 5, then doubled, gives the same result as the number decreased by 3, then tripled. Find the number.', checkMode: 'auto', options: ['x = 1', 'x = 14', 'x = 19', 'x = 25'], correctIndex: 2, explanation: 'Let the number be x. Equation: 2(x + 5) = 3(x − 3). Expand: 2x + 10 = 3x − 9. Subtract 2x: 10 = x − 9. Add 9: x = 19. Check: 2(19+5)=48 and 3(19-3)=48 ✓. A sign error when expanding (option A), or forgetting to distribute fully (option B), are common mistakes.' },
+        { difficulty: 'Hard', question: 'A conference centre charges a set-up fee of R600 plus R20 per delegate. The organiser has a budget of R2 600. Form an inequality for the number of delegates d they can afford, and solve for d.', checkMode: 'auto', options: ['d ≤ 130', 'd ≤ 110', 'd ≥ 100', 'd ≤ 100'], correctIndex: 3, explanation: 'Total cost: 600 + 20d ≤ 2600. Subtract 600: 20d ≤ 2000. Divide by 20: d ≤ 100. The organiser can afford at most 100 delegates. Forgetting to subtract the set-up fee first (option A), or flipping the inequality unnecessarily (option C), are common mistakes.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered linear and quadratic equations, simultaneous systems, and inequalities.' },

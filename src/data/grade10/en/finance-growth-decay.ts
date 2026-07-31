@@ -1149,191 +1149,206 @@ export const topicData: TopicData = {
     // ── Q1 Easy ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
-      question: 'Calculate the simple interest on R4,000 at 5% per year for 3 years.',
-      answer: 'R600',
+      question: 'Calculate the simple interest (not the final amount) on R4,000 at 5% per year for 3 years.',
       checkMode: 'auto',
-      correctAnswer: 'R600',
-      correctAnswers: ['R600', '600'],
-      explanation: 'SI = P × n × i = 4 000 × 3 × 0.05 = R600 ✓',
+      options: ['R600', 'R4 600', 'R400', 'R200'],
+      correctIndex: 0,
+      explanation: 'Simple interest only = P × n × i = 4 000 × 3 × 0.05 = R600. (R4 600 is the final amount A, not just the interest; R400 mistakenly uses n = 2; R200 mistakenly uses n = 1.)',
     },
 
     // ── Q2 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Find the final amount after 6 years if R7,500 is invested at 6% simple interest.',
-      answer: 'R10,200',
       checkMode: 'auto',
-      correctAnswer: 'R10200',
-      correctAnswers: ['R10200', '10200', 'R10 200', '10 200'],
-      explanation: 'A = P(1 + ni) = 7 500(1 + 6 × 0.06) = 7 500(1.36) = R10 200 ✓',
+      options: ['R10 638.90', 'R10 200', 'R9 750', 'R2 700'],
+      correctIndex: 1,
+      explanation: 'A = P(1 + ni) = 7 500(1 + 6 × 0.06) = 7 500(1.36) = R10 200. (R10 638.90 wrongly uses compound interest; R9 750 wrongly uses n = 5; R2 700 gives only the interest, not the final amount.)',
     },
 
     // ── Q3 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Sipho says simple interest of R500 over 2 years on R5,000 means the rate was 10%. Check his reasoning.',
-      answer: 'SI = P × n × i. 500 = 5 000 × 2 × i. i = 0.05 = 5%, not 10%. He is incorrect.',
-      checkMode: 'self',
+      question: 'Sipho says simple interest of R500 over 2 years on R5,000 means the interest rate was 10%. What is the correct interest rate?',
+      checkMode: 'auto',
+      options: ['10%', '20%', '5%', '2.5%'],
+      correctIndex: 2,
+      explanation: 'SI = P × n × i, so i = SI ÷ (P × n) = 500 ÷ (5 000 × 2) = 0.05 = 5%. Sipho forgot to divide by n = 2, which is how he got the incorrect 10%.',
     },
 
     // ── Q4 Easy ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'Calculate the compound interest amount on R3,000 at 4% per year for 5 years.',
-      answer: 'R3,649.96',
       checkMode: 'auto',
-      correctAnswer: 'R3649.96',
-      correctAnswers: ['R3649.96', '3649.96', 'R3 649.96', '3 649.96'],
-      explanation: 'A = 3 000(1.04)⁵ = 3 000 × 1.21665 ≈ R3 649.96 ✓',
+      options: ['R3 600', 'R3 509.58', 'R649.96', 'R3 649.96'],
+      correctIndex: 3,
+      explanation: 'A = 3 000(1.04)⁵ = 3 000 × 1.21665 ≈ R3 649.96. (R3 600 wrongly uses simple interest; R3 509.58 wrongly uses n = 4; R649.96 gives only the interest earned, not the total amount.)',
     },
 
     // ── Q5 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Find the final amount after 8 years if R6,000 is invested at 7% compound interest.',
-      answer: 'R10,309.12',
       checkMode: 'auto',
-      correctAnswer: 'R10309.12',
-      correctAnswers: ['R10309.12', '10309.12', 'R10 309.12', '10 309.12'],
-      explanation: 'A = 6 000(1.07)⁸ = 6 000 × 1.7181860 ≈ R10 309.12 ✓',
+      options: ['R10 309.12', 'R9 360', 'R9 634.69', 'R4 309.12'],
+      correctIndex: 0,
+      explanation: 'A = 6 000(1.07)⁸ = 6 000 × 1.718186 ≈ R10 309.12. (R9 360 wrongly uses simple interest; R9 634.69 wrongly uses n = 7; R4 309.12 gives only the interest earned.)',
     },
 
     // ── Q6 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Lerato compares simple and compound interest on R8,000 at 6% over 4 years. Find the difference between the two methods.',
-      answer: 'Simple: 8 000(1 + 4 × 0.06) = R9,920. Compound: 8 000(1.06)⁴ ≈ R10,099.82. Difference ≈ R179.82.',
-      checkMode: 'self',
+      question: 'Lerato compares simple and compound interest on R8,000 at 6% over 4 years. Find the difference between the two final amounts.',
+      checkMode: 'auto',
+      options: ['R9 920', 'R179.82', 'R10 099.82', 'R199.82'],
+      correctIndex: 1,
+      explanation: 'Simple: 8 000(1 + 4 × 0.06) = R9 920. Compound: 8 000(1.06)⁴ ≈ R10 099.82. Difference ≈ R179.82. (R9 920 and R10 099.82 are the individual amounts, not the difference; R199.82 has an arithmetic slip.)',
     },
 
     // ── Q7 Medium ─────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'A population of 40,000 grows at 4% per year. Find the population after 7 years, rounded to the nearest whole number.',
-      answer: '52,637',
       checkMode: 'auto',
-      correctAnswer: '52637',
-      correctAnswers: ['52637', '52 637'],
-      explanation: 'A = 40 000(1.04)⁷ = 40 000 × 1.31593 ≈ 52 637 ✓',
+      options: ['51 200', '50 613', '52 637', '54 743'],
+      correctIndex: 2,
+      explanation: 'A = 40 000(1.04)⁷ = 40 000 × 1.31593 ≈ 52 637. (51 200 wrongly uses simple growth; 50 613 wrongly uses n = 6; 54 743 wrongly uses n = 8.)',
     },
 
     // ── Q8 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'How long will it take an investment to double at 10% compound interest, using trial and improvement?',
-      answer: 'Need (1.10)ⁿ = 2. Try n = 7: 1.10⁷ ≈ 1.949 (close). Try n = 8: 1.10⁸ ≈ 2.144. It takes approximately 8 years (rounding up).',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['7 years', '9 years', '10 years', '8 years'],
+      correctIndex: 3,
+      explanation: 'Need (1.10)ⁿ ≥ 2. Try n = 7: 1.10⁷ ≈ 1.949 (not yet double). Try n = 8: 1.10⁸ ≈ 2.144 (exceeds double). So it takes 8 years — the smallest whole number of years where the amount has at least doubled.',
     },
 
     // ── Q9 Hard ───────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Thabo invests R20,000 at 5% compound interest. Find how many years it takes to grow to at least R25,000, using trial and improvement.',
-      answer: 'Need (1.05)ⁿ = 1.25. Try n = 4: 1.05⁴ ≈ 1.216. Try n = 5: 1.05⁵ ≈ 1.276. It takes approximately 5 years.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['5 years', '4 years', '6 years', '3 years'],
+      correctIndex: 0,
+      explanation: 'Need (1.05)ⁿ ≥ 1.25. Try n = 4: 1.05⁴ ≈ 1.216 (too low). Try n = 5: 1.05⁵ ≈ 1.276 (exceeds 1.25). It takes approximately 5 years.',
     },
 
     // ── Q10 Easy ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'If R1 = $0.06, find the cost in Rands of a $300 item.',
-      answer: 'R5,000',
       checkMode: 'auto',
-      correctAnswer: 'R5000',
-      correctAnswers: ['R5000', '5000', 'R5 000', '5 000'],
-      explanation: 'Cost in Rands = $300 ÷ 0.06 = R5 000 ✓',
+      options: ['R18', 'R5 000', 'R300', 'R50 000'],
+      correctIndex: 1,
+      explanation: 'Convert Dollars to Rands: divide by the exchange rate: $300 ÷ 0.06 = R5 000. (R18 comes from multiplying instead of dividing; R50 000 comes from misreading the rate as 0.006.)',
     },
 
     // ── Q11 Medium ────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Convert R10,000 to British Pounds at an exchange rate of R1 = £0.043.',
-      answer: '£430',
       checkMode: 'auto',
-      correctAnswer: '£430',
-      correctAnswers: ['£430', '430', '£430.00'],
-      explanation: 'R10 000 × 0.043 = £430 ✓',
+      options: ['£232 558.14', '£43', '£430', '£4 300'],
+      correctIndex: 2,
+      explanation: 'Convert Rands to GBP: multiply by the exchange rate: R10 000 × 0.043 = £430. (£232 558.14 comes from dividing instead of multiplying; £43 and £4 300 come from misplacing the decimal point.)',
     },
 
     // ── Q12 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Amahle buys an item costing $450 (USD) when R1 = $0.055. Find the cost in Rands, rounded to the nearest Rand.',
-      answer: '450 ÷ 0.055 ≈ R8,182.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['R25', 'R818', 'R81 818', 'R8 182'],
+      correctIndex: 3,
+      explanation: 'Convert Dollars to Rands: divide by the exchange rate: $450 ÷ 0.055 ≈ R8 182. (R25 comes from multiplying instead of dividing; R818 and R81 818 come from misplacing the decimal point in 0.055.)',
     },
 
     // ── Q13 Medium ────────────────────────────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Sipho buys a TV worth R9,000 on hire purchase at 18% simple interest over 2 years. Find his total repayment.',
-      answer: 'R12,240',
       checkMode: 'auto',
-      correctAnswer: 'R12240',
-      correctAnswers: ['R12240', '12240', 'R12 240', '12 240'],
-      explanation: 'A = 9 000(1 + 2 × 0.18) = 9 000(1.36) = R12 240 ✓',
+      options: ['R12 240', 'R12 531.60', 'R3 240', 'R13 860'],
+      correctIndex: 0,
+      explanation: 'A = P(1 + ni) = 9 000(1 + 2 × 0.18) = 9 000(1.36) = R12 240. (R12 531.60 wrongly uses compound interest; R3 240 gives only the interest, not the total repayment; R13 860 wrongly uses n = 3.)',
     },
 
     // ── Q14 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Lerato invests R15,000 at 9% compound interest for 10 years. Find the final amount, rounded to the nearest Rand.',
-      answer: 'R35,510',
       checkMode: 'auto',
-      correctAnswer: 'R35510',
-      correctAnswers: ['R35510', '35510', 'R35 510', '35 510'],
-      explanation: 'A = 15 000(1.09)¹⁰ = 15 000 × 2.367363 ≈ R35 510 ✓',
+      options: ['R28 500', 'R35 510', 'R32 578', 'R20 510'],
+      correctIndex: 1,
+      explanation: 'A = 15 000(1.09)¹⁰ = 15 000 × 2.367363 ≈ R35 510. (R28 500 wrongly uses simple interest; R32 578 wrongly uses n = 9; R20 510 gives only the interest earned.)',
     },
 
     // ── Q15 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'A car valued at R250,000 depreciates using simple decay at 12% per year. Find its value after 5 years.',
-      answer: 'R100,000',
       checkMode: 'auto',
-      correctAnswer: 'R100000',
-      correctAnswers: ['R100000', '100000', 'R100 000', '100 000', 'R100,000'],
-      explanation: 'A = P(1 − ni) = 250 000(1 − 5 × 0.12) = 250 000(0.4) = R100 000 ✓',
+      options: ['R131 933', 'R130 000', 'R100 000', 'R70 000'],
+      correctIndex: 2,
+      explanation: 'A = P(1 − ni) = 250 000(1 − 5 × 0.12) = 250 000(0.4) = R100 000. (R131 933 wrongly uses compound decay; R130 000 wrongly uses n = 4; R70 000 wrongly uses n = 6.)',
     },
 
     // ── Q16 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Thabo says doubling the interest rate always doubles the final amount in compound interest. Is he correct? Explain with an example.',
-      answer: 'No — for example R1,000 at 5% for 10 years gives ≈ R1,628.89, while at 10% for 10 years gives ≈ R2,593.74, which is not simply double, since compound growth is exponential, not linear.',
-      checkMode: 'self',
+      question: 'Thabo invests R1,000 for 10 years and compares 5% versus 10% compound interest. Is he correct that doubling the interest rate doubles the final amount?',
+      checkMode: 'auto',
+      options: [
+        'Yes — 5% gives R1 500 and 10% gives R3 000, so the amount exactly doubles.',
+        'Yes — compound interest always scales linearly with the interest rate.',
+        'No — but only because the number of years is odd; for an even number of years, doubling the rate would double the amount.',
+        'No — 5% for 10 years gives ≈ R1 628.89 while 10% for 10 years gives ≈ R2 593.74, which is not double, since compound growth is exponential, not linear.',
+      ],
+      correctIndex: 3,
+      explanation: 'R1 000(1.05)¹⁰ ≈ R1 628.89 and R1 000(1.10)¹⁰ ≈ R2 593.74. R2 593.74 is not double R1 628.89, so Thabo is incorrect — compound growth is exponential, so doubling the rate does not simply double the outcome, regardless of whether n is odd or even.',
     },
 
     // ── Q17 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: "Amahle's population of 60,000 grows at 2.5% per year. Find how many years until the population exceeds 80,000, using trial and improvement.",
-      answer: 'Need (1.025)ⁿ = 1.333. Try n = 11: 1.025¹¹ ≈ 1.312. Try n = 12: 1.025¹² ≈ 1.345. It takes approximately 12 years.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['12 years', '11 years', '13 years', '10 years'],
+      correctIndex: 0,
+      explanation: 'Need (1.025)ⁿ ≥ 1.333. Try n = 11: 1.025¹¹ ≈ 1.312 (too low). Try n = 12: 1.025¹² ≈ 1.345 (exceeds 1.333). It takes approximately 12 years.',
     },
 
     // ── Q18 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Sipho converts R5,000 to US Dollars at R1 = $0.055, then back to Rands a month later at R1 = $0.052. Find his Rand value after both conversions, and explain why it changed.',
-      answer: 'First conversion: 5 000 × 0.055 = $275. Second conversion back: 275 ÷ 0.052 ≈ R5,288.46. The value increased because the Rand weakened against the Dollar (each Dollar now buys more Rand), benefiting the conversion back.',
-      checkMode: 'self',
+      question: 'Sipho converts R5,000 to US Dollars at R1 = $0.055, then converts the resulting Dollar amount back to Rands a month later at R1 = $0.052. What is his Rand value after both conversions?',
+      checkMode: 'auto',
+      options: ['R14.30', 'R5 288.46', 'R5 000', 'R96 153.85'],
+      correctIndex: 1,
+      explanation: 'First conversion: R5 000 × 0.055 = $275. Second conversion back: $275 ÷ 0.052 ≈ R5 288.46. The value increased because the Rand weakened between conversions, so each Dollar bought more Rand on the way back. (R14.30 mistakenly multiplies by the second rate instead of dividing; R5 000 wrongly assumes no change; R96 153.85 converts the original R5 000 using the second rate directly instead of converting the $275.)',
     },
 
     // ── Q19 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Compare investing R12,000 at 6% simple interest for 8 years versus 6% compound interest for 8 years. Find both final amounts and the difference.',
-      answer: 'Simple: 12 000(1 + 8 × 0.06) = R17,760. Compound: 12 000(1.06)⁸ ≈ R19,126.18. Difference ≈ R1,366.18.',
-      checkMode: 'self',
+      question: 'Compare investing R12,000 at 6% simple interest for 8 years versus 6% compound interest for 8 years. Find the difference between the two final amounts.',
+      checkMode: 'auto',
+      options: ['R17 760', 'R19 126.18', 'R1 366.18', 'R1 266.18'],
+      correctIndex: 2,
+      explanation: 'Simple: 12 000(1 + 8 × 0.06) = R17 760. Compound: 12 000(1.06)⁸ ≈ R19 126.18. Difference ≈ R1 366.18. (R17 760 and R19 126.18 are the individual amounts, not the difference; R1 266.18 has an arithmetic slip.)',
     },
 
     // ── Q20 Hard ──────────────────────────────────────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Lerato invests R18,000 at an unknown compound interest rate and after 6 years it grows to R24,000. Use trial and improvement to estimate the interest rate to the nearest percent.',
-      answer: 'Need (1 + i)⁶ = 24 000/18 000 = 1.333. Try i = 5%: 1.05⁶ ≈ 1.340 (close). The interest rate is approximately 5%.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['4%', '6%', '3%', '5%'],
+      correctIndex: 3,
+      explanation: 'Need (1 + i)⁶ = 24 000 ÷ 18 000 ≈ 1.333. Try i = 4%: 1.04⁶ ≈ 1.265 (too low). Try i = 5%: 1.05⁶ ≈ 1.340 (closest fit). Try i = 6%: 1.06⁶ ≈ 1.419 (too high). So the rate is approximately 5%.',
     },
   ],
 
@@ -1361,36 +1376,36 @@ export const topicData: TopicData = {
       name: 'Set 1',
       questions: [
         // Block 1 — Simple interest (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'Calculate the final amount if R2,500 is invested at 6% simple interest per year for 3 years.', checkMode: 'auto', correctAnswer: 'R2950', correctAnswers: ['R2950', '2950', 'R2 950', '2 950', 'R2950.00', 'R2 950.00'], answer: 'R2 950', explanation: 'A = P(1 + ni) = 2 500(1 + 3 × 0.06) = 2 500(1.18) = R2 950 ✓' },
-        { difficulty: 'Easy', question: 'Calculate the final amount if R5,000 is invested at 8% simple interest per year for 2 years.', checkMode: 'auto', correctAnswer: 'R5800', correctAnswers: ['R5800', '5800', 'R5 800', '5 800', 'R5800.00', 'R5 800.00'], answer: 'R5 800', explanation: 'A = P(1 + ni) = 5 000(1 + 2 × 0.08) = 5 000(1.16) = R5 800 ✓' },
-        { difficulty: 'Medium', question: 'Thabo invests R9,000 at 5% simple interest per year for 4 years. Find the total interest earned (not the final amount).', checkMode: 'auto', correctAnswer: 'R1800', correctAnswers: ['R1800', '1800', 'R1 800', '1 800', 'R1800.00', 'R1 800.00'], answer: 'R1 800', explanation: 'Interest = P × n × i = 9 000 × 4 × 0.05 = R1 800 ✓' },
-        { difficulty: 'Medium', question: 'An investment earning 5% simple interest per year grows to R6,000 after 4 years. Find the original principal.', checkMode: 'auto', correctAnswer: 'R5000', correctAnswers: ['R5000', '5000', 'R5 000', '5 000', 'R5000.00', 'R5 000.00'], answer: 'R5 000', explanation: 'A = P(1 + ni)\n6 000 = P(1 + 4 × 0.05) = P(1.20)\nP = 6 000 ÷ 1.20 = R5 000 ✓' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R2,500 is invested at 6% simple interest per year for 3 years.', checkMode: 'auto', options: ['R2 950', 'R2 977.54', 'R2 800', 'R450'], correctIndex: 0, explanation: 'A = P(1 + ni) = 2 500(1 + 3 × 0.06) = 2 500(1.18) = R2 950. (R2 977.54 wrongly uses compound interest; R2 800 wrongly uses n = 2; R450 gives only the interest, not the final amount.)' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R5,000 is invested at 8% simple interest per year for 2 years.', checkMode: 'auto', options: ['R5 832', 'R5 800', 'R5 400', 'R800'], correctIndex: 1, explanation: 'A = P(1 + ni) = 5 000(1 + 2 × 0.08) = 5 000(1.16) = R5 800. (R5 832 wrongly uses compound interest; R5 400 wrongly uses n = 1; R800 gives only the interest, not the final amount.)' },
+        { difficulty: 'Medium', question: 'Thabo invests R9,000 at 5% simple interest per year for 4 years. Find the total interest earned (not the final amount).', checkMode: 'auto', options: ['R10 800', 'R1 350', 'R1 800', 'R2 250'], correctIndex: 2, explanation: 'Interest = P × n × i = 9 000 × 4 × 0.05 = R1 800. (R10 800 is the final amount, not just the interest; R1 350 and R2 250 mistakenly use n = 3 and n = 5.)' },
+        { difficulty: 'Medium', question: 'An investment earning 5% simple interest per year grows to R6,000 after 4 years. Find the original principal.', checkMode: 'auto', options: ['R4 936.14', 'R5 217.39', 'R30 000', 'R5 000'], correctIndex: 3, explanation: 'A = P(1 + ni)\n6 000 = P(1 + 4 × 0.05) = P(1.20)\nP = 6 000 ÷ 1.20 = R5 000. (R4 936.14 wrongly divides by (1.05)⁴; R5 217.39 wrongly uses n = 3; R30 000 wrongly treats R6 000 as the interest instead of the final amount.)' },
 
         // Block 2 — Compound interest (Easy, Medium, Medium, Hard)
-        { difficulty: 'Easy', question: 'Calculate the final amount if R2,000 is invested at 10% compound interest per year for 2 years.', checkMode: 'auto', correctAnswer: 'R2420', correctAnswers: ['R2420', '2420', 'R2 420', '2 420', 'R2420.00', 'R2 420.00'], answer: 'R2 420', explanation: 'A = P(1 + i)ⁿ = 2 000(1.10)² = 2 000 × 1.21 = R2 420 ✓' },
-        { difficulty: 'Medium', question: 'Calculate the final amount if R3,200 is invested at 5% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R3704.40', correctAnswers: ['R3704.40', '3704.40', 'R3 704.40', '3 704.40'], answer: 'R3 704.40', explanation: 'A = 3 200(1.05)³ = 3 200 × 1.157625 ≈ R3 704.40 ✓' },
-        { difficulty: 'Medium', question: 'Calculate the final amount if R4,500 is invested at 6% compound interest per year for 4 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R5681.15', correctAnswers: ['R5681.15', '5681.15', 'R5 681.15', '5 681.15'], answer: 'R5 681.15', explanation: 'A = 4 500(1.06)⁴ = 4 500 × 1.26247696 ≈ R5 681.15 ✓' },
-        { difficulty: 'Hard', question: 'Calculate the final amount if R12,000 is invested at 7% compound interest per year for 6 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R18008.76', correctAnswers: ['R18008.76', '18008.76', 'R18 008.76', '18 008.76'], answer: 'R18 008.76', explanation: 'A = 12 000(1.07)⁶ = 12 000 × 1.50073 ≈ R18 008.76 ✓' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R2,000 is invested at 10% compound interest per year for 2 years.', checkMode: 'auto', options: ['R2 420', 'R2 400', 'R2 200', 'R420'], correctIndex: 0, explanation: 'A = P(1 + i)ⁿ = 2 000(1.10)² = 2 000 × 1.21 = R2 420. (R2 400 wrongly uses simple interest; R2 200 wrongly uses n = 1; R420 gives only the interest earned.)' },
+        { difficulty: 'Medium', question: 'Calculate the final amount if R3,200 is invested at 5% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', options: ['R3 680', 'R3 704.40', 'R3 528', 'R504.40'], correctIndex: 1, explanation: 'A = 3 200(1.05)³ = 3 200 × 1.157625 ≈ R3 704.40. (R3 680 wrongly uses simple interest; R3 528 wrongly uses n = 2; R504.40 gives only the interest earned.)' },
+        { difficulty: 'Medium', question: 'Calculate the final amount if R4,500 is invested at 6% compound interest per year for 4 years (round to 2 decimal places).', checkMode: 'auto', options: ['R5 580', 'R5 359.57', 'R5 681.15', 'R1 181.15'], correctIndex: 2, explanation: 'A = 4 500(1.06)⁴ = 4 500 × 1.26247696 ≈ R5 681.15. (R5 580 wrongly uses simple interest; R5 359.57 wrongly uses n = 3; R1 181.15 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Calculate the final amount if R12,000 is invested at 7% compound interest per year for 6 years (round to 2 decimal places).', checkMode: 'auto', options: ['R17 040', 'R16 830.62', 'R6 008.76', 'R18 008.76'], correctIndex: 3, explanation: 'A = 12 000(1.07)⁶ = 12 000 × 1.50073 ≈ R18 008.76. (R17 040 wrongly uses simple interest; R16 830.62 wrongly uses n = 5; R6 008.76 gives only the interest earned.)' },
 
         // Block 3 — Comparing simple vs compound interest (Medium, Hard, Hard)
-        { difficulty: 'Medium', question: 'Compare investing R7,000 at 7% for 4 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R215.57', correctAnswers: ['R215.57', '215.57'], answer: 'R215.57', explanation: 'Simple: 7 000(1 + 4 × 0.07) = R8 960.\nCompound: 7 000(1.07)⁴ ≈ R9 175.57.\nDifference ≈ R215.57 ✓' },
-        { difficulty: 'Hard', question: 'Compare investing R9,000 at 6% for 8 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R1024.63', correctAnswers: ['R1024.63', '1024.63', 'R1 024.63', '1 024.63'], answer: 'R1 024.63', explanation: 'Simple: 9 000(1 + 8 × 0.06) = R13 320.\nCompound: 9 000(1.06)⁸ ≈ R14 344.63.\nDifference ≈ R1 024.63 ✓' },
-        { difficulty: 'Hard', question: 'Compare investing R5,000 at 8% for 6 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R534.37', correctAnswers: ['R534.37', '534.37'], answer: 'R534.37', explanation: 'Simple: 5 000(1 + 6 × 0.08) = R7 400.\nCompound: 5 000(1.08)⁶ ≈ R7 934.37.\nDifference ≈ R534.37 ✓' },
+        { difficulty: 'Medium', question: 'Compare investing R7,000 at 7% for 4 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R215.57', 'R8 960', 'R9 175.57', 'R205.57'], correctIndex: 0, explanation: 'Simple: 7 000(1 + 4 × 0.07) = R8 960.\nCompound: 7 000(1.07)⁴ ≈ R9 175.57.\nDifference ≈ R215.57. (R8 960 and R9 175.57 are the individual amounts, not the difference; R205.57 has an arithmetic slip.)' },
+        { difficulty: 'Hard', question: 'Compare investing R9,000 at 6% for 8 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R13 320', 'R1 024.63', 'R14 344.63', 'R1 124.63'], correctIndex: 1, explanation: 'Simple: 9 000(1 + 8 × 0.06) = R13 320.\nCompound: 9 000(1.06)⁸ ≈ R14 344.63.\nDifference ≈ R1 024.63. (R13 320 and R14 344.63 are the individual amounts, not the difference; R1 124.63 has an arithmetic slip.)' },
+        { difficulty: 'Hard', question: 'Compare investing R5,000 at 8% for 6 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R7 400', 'R7 934.37', 'R534.37', 'R634.37'], correctIndex: 2, explanation: 'Simple: 5 000(1 + 6 × 0.08) = R7 400.\nCompound: 5 000(1.08)⁶ ≈ R7 934.37.\nDifference ≈ R534.37. (R7 400 and R7 934.37 are the individual amounts, not the difference; R634.37 has an arithmetic slip.)' },
 
         // Block 4 — Hire purchase (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'Sipho buys a fridge worth R6,000 on hire purchase at 15% simple interest over 2 years, with no deposit. Find his total repayment.', checkMode: 'auto', correctAnswer: 'R7800', correctAnswers: ['R7800', '7800', 'R7 800', '7 800', 'R7800.00', 'R7 800.00'], answer: 'R7 800', explanation: 'A = P(1 + ni) = 6 000(1 + 2 × 0.15) = 6 000(1.30) = R7 800 ✓' },
-        { difficulty: 'Medium', question: 'Lerato buys a laptop worth R10,000 on hire purchase at 20% simple interest over 3 years, with no deposit. Find her total repayment.', checkMode: 'auto', correctAnswer: 'R16000', correctAnswers: ['R16000', '16000', 'R16 000', '16 000', 'R16000.00', 'R16 000.00'], answer: 'R16 000', explanation: 'A = 10 000(1 + 3 × 0.20) = 10 000(1.60) = R16 000 ✓' },
-        { difficulty: 'Hard', question: 'Amahle buys furniture with a cash price of R18,000. She pays a 15% deposit and repays the balance on hire purchase at 12% simple interest per year over 4 years. Find her total repayment (deposit plus hire purchase instalments), rounded to the nearest cent.', checkMode: 'auto', correctAnswer: 'R25344', correctAnswers: ['R25344', '25344', 'R25 344', '25 344', 'R25344.00', 'R25 344.00'], answer: 'R25 344', explanation: 'Deposit = 15% × 18 000 = R2 700.\nBalance = 18 000 − 2 700 = R15 300.\nHire purchase amount on balance = 15 300(1 + 4 × 0.12) = 15 300(1.48) = R22 644.\nTotal repayment = R2 700 + R22 644 = R25 344 ✓' },
+        { difficulty: 'Medium', question: 'Sipho buys a fridge worth R6,000 on hire purchase at 15% simple interest over 2 years, with no deposit. Find his total repayment.', checkMode: 'auto', options: ['R7 935', 'R1 800', 'R8 700', 'R7 800'], correctIndex: 3, explanation: 'A = P(1 + ni) = 6 000(1 + 2 × 0.15) = 6 000(1.30) = R7 800. (R7 935 wrongly uses compound interest; R1 800 gives only the interest, not the total repayment; R8 700 wrongly uses n = 3.)' },
+        { difficulty: 'Medium', question: 'Lerato buys a laptop worth R10,000 on hire purchase at 20% simple interest over 3 years, with no deposit. Find her total repayment.', checkMode: 'auto', options: ['R16 000', 'R17 280', 'R6 000', 'R14 000'], correctIndex: 0, explanation: 'A = 10 000(1 + 3 × 0.20) = 10 000(1.60) = R16 000. (R17 280 wrongly uses compound interest; R6 000 gives only the interest, not the total repayment; R14 000 wrongly uses n = 2.)' },
+        { difficulty: 'Hard', question: 'Amahle buys furniture with a cash price of R18,000. She pays a 15% deposit and repays the balance on hire purchase at 12% simple interest per year over 4 years. Find her total repayment (deposit plus hire purchase instalments), rounded to the nearest cent.', checkMode: 'auto', options: ['R26 640', 'R25 344', 'R22 644', 'R23 508'], correctIndex: 1, explanation: 'Deposit = 15% × 18 000 = R2 700.\nBalance = 18 000 − 2 700 = R15 300.\nHire purchase amount on balance = 15 300(1 + 4 × 0.12) = 15 300(1.48) = R22 644.\nTotal repayment = R2 700 + R22 644 = R25 344. (R26 640 wrongly applies interest to the full cash price instead of the balance; R22 644 forgets to add the deposit back; R23 508 wrongly uses n = 3.)' },
 
         // Block 5 — Simple growth/decay word problems (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: "A town's population of 15,000 grows at 4% compound growth per year. Find the population after 5 years, rounded to the nearest whole number.", checkMode: 'auto', correctAnswer: '18250', correctAnswers: ['18250', '18 250'], answer: '18 250', explanation: 'A = 15 000(1.04)⁵ = 15 000 × 1.21665 ≈ 18 250 ✓' },
-        { difficulty: 'Medium', question: 'A machine valued at R150,000 depreciates using simple (straight-line) decay at 10% per year. Find its value after 4 years.', checkMode: 'auto', correctAnswer: 'R90000', correctAnswers: ['R90000', '90000', 'R90 000', '90 000', 'R90000.00', 'R90 000.00'], answer: 'R90 000', explanation: 'A = P(1 − ni) = 150 000(1 − 4 × 0.10) = 150 000(0.60) = R90 000 ✓' },
-        { difficulty: 'Hard', question: 'A car valued at R220,000 depreciates using simple (straight-line) decay at 18% per year. Find its value after 3 years.', checkMode: 'auto', correctAnswer: 'R101200', correctAnswers: ['R101200', '101200', 'R101 200', '101 200', 'R101200.00', 'R101 200.00'], answer: 'R101 200', explanation: 'A = P(1 − ni) = 220 000(1 − 3 × 0.18) = 220 000(0.46) = R101 200 ✓' },
+        { difficulty: 'Medium', question: "A town's population of 15,000 grows at 4% compound growth per year. Find the population after 5 years, rounded to the nearest whole number.", checkMode: 'auto', options: ['18 000', '17 548', '18 250', '18 980'], correctIndex: 2, explanation: 'A = 15 000(1.04)⁵ = 15 000 × 1.21665 ≈ 18 250. (18 000 wrongly uses simple growth; 17 548 wrongly uses n = 4; 18 980 wrongly uses n = 6.)' },
+        { difficulty: 'Medium', question: 'A machine valued at R150,000 depreciates using simple (straight-line) decay at 10% per year. Find its value after 4 years.', checkMode: 'auto', options: ['R98 415', 'R105 000', 'R75 000', 'R90 000'], correctIndex: 3, explanation: 'A = P(1 − ni) = 150 000(1 − 4 × 0.10) = 150 000(0.60) = R90 000. (R98 415 wrongly uses compound decay; R105 000 wrongly uses n = 3; R75 000 wrongly uses n = 5.)' },
+        { difficulty: 'Hard', question: 'A car valued at R220,000 depreciates using simple (straight-line) decay at 18% per year. Find its value after 3 years.', checkMode: 'auto', options: ['R101 200', 'R121 301', 'R140 800', 'R61 600'], correctIndex: 0, explanation: 'A = P(1 − ni) = 220 000(1 − 3 × 0.18) = 220 000(0.46) = R101 200. (R121 301 wrongly uses compound decay; R140 800 wrongly uses n = 2; R61 600 wrongly uses n = 4.)' },
 
         // Block 6 — Combined multi-step problems (Hard, Hard, Hard)
-        { difficulty: 'Hard', question: 'Thabo invests R8,000 at 9% compound interest per year for 5 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R12308.99', correctAnswers: ['R12308.99', '12308.99', 'R12 308.99', '12 308.99'], answer: 'R12 308.99', explanation: 'A = 8 000(1.09)⁵ = 8 000 × 1.53862 ≈ R12 308.99 ✓' },
-        { difficulty: 'Hard', question: 'Nomsa invests R6,000 at 7.5% compound interest per year for 4 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R8012.81', correctAnswers: ['R8012.81', '8012.81', 'R8 012.81', '8 012.81'], answer: 'R8 012.81', explanation: 'A = 6 000(1.075)⁴ = 6 000 × 1.33546... ≈ R8 012.81 ✓' },
-        { difficulty: 'Hard', question: 'Sipho earns R1,500 simple interest on a principal of R5,000 invested for 3 years. Find the annual interest rate used.', checkMode: 'auto', correctAnswer: '10%', correctAnswers: ['10%', '10', '0.1', '0.10'], answer: '10%', explanation: 'Interest = P × n × i\n1 500 = 5 000 × 3 × i\n1 500 = 15 000i\ni = 1 500 ÷ 15 000 = 0.10 = 10% ✓' },
+        { difficulty: 'Hard', question: 'Thabo invests R8,000 at 9% compound interest per year for 5 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', options: ['R11 600', 'R12 308.99', 'R11 292.66', 'R4 308.99'], correctIndex: 1, explanation: 'A = 8 000(1.09)⁵ = 8 000 × 1.53862 ≈ R12 308.99. (R11 600 wrongly uses simple interest; R11 292.66 wrongly uses n = 4; R4 308.99 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Nomsa invests R6,000 at 7.5% compound interest per year for 4 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', options: ['R7 800', 'R7 453.78', 'R8 012.81', 'R2 012.81'], correctIndex: 2, explanation: 'A = 6 000(1.075)⁴ = 6 000 × 1.33546... ≈ R8 012.81. (R7 800 wrongly uses simple interest; R7 453.78 wrongly uses n = 3; R2 012.81 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Sipho earns R1,500 simple interest on a principal of R5,000 invested for 3 years. Find the annual interest rate used.', checkMode: 'auto', options: ['30%', '15%', '5%', '10%'], correctIndex: 3, explanation: 'Interest = P × n × i, so i = Interest ÷ (P × n) = 1 500 ÷ (5 000 × 3) = 0.10 = 10%. (30% forgets to divide by n = 3; 15% mistakenly uses n = 2; 5% mistakenly halves the correct rate.)' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Outstanding! You have mastered simple interest, compound interest and hire purchase problems.' },
@@ -1407,36 +1422,36 @@ export const topicData: TopicData = {
       name: 'Set 2',
       questions: [
         // Block 1 — Simple interest (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'Calculate the final amount if R3,200 is invested at 5% simple interest per year for 4 years.', checkMode: 'auto', correctAnswer: 'R3840', correctAnswers: ['R3840', '3840', 'R3 840', '3 840', 'R3840.00', 'R3 840.00'], answer: 'R3 840', explanation: 'A = P(1 + ni) = 3 200(1 + 4 × 0.05) = 3 200(1.20) = R3 840 ✓' },
-        { difficulty: 'Easy', question: 'Calculate the final amount if R4,000 is invested at 9% simple interest per year for 3 years.', checkMode: 'auto', correctAnswer: 'R5080', correctAnswers: ['R5080', '5080', 'R5 080', '5 080', 'R5080.00', 'R5 080.00'], answer: 'R5 080', explanation: 'A = P(1 + ni) = 4 000(1 + 3 × 0.09) = 4 000(1.27) = R5 080 ✓' },
-        { difficulty: 'Medium', question: 'Lerato invests R11,000 at 4.5% simple interest per year for 6 years. Find the total interest earned (not the final amount).', checkMode: 'auto', correctAnswer: 'R2970', correctAnswers: ['R2970', '2970', 'R2 970', '2 970', 'R2970.00', 'R2 970.00'], answer: 'R2 970', explanation: 'Interest = P × n × i = 11 000 × 6 × 0.045 = R2 970 ✓' },
-        { difficulty: 'Medium', question: 'An investment earning 6% simple interest per year grows to R9,000 after 5 years. Find the original principal.', checkMode: 'auto', correctAnswer: 'R6923.08', correctAnswers: ['R6923.08', '6923.08', 'R6 923.08', '6 923.08', 'R6923.07', '6923.07'], answer: 'R6 923.08', explanation: 'A = P(1 + ni)\n9 000 = P(1 + 5 × 0.06) = P(1.30)\nP = 9 000 ÷ 1.30 ≈ R6 923.08 ✓' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R3,200 is invested at 5% simple interest per year for 4 years.', checkMode: 'auto', options: ['R3 840', 'R3 889.62', 'R3 680', 'R640'], correctIndex: 0, explanation: 'A = P(1 + ni) = 3 200(1 + 4 × 0.05) = 3 200(1.20) = R3 840. (R3 889.62 wrongly uses compound interest; R3 680 wrongly uses n = 3; R640 gives only the interest, not the final amount.)' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R4,000 is invested at 9% simple interest per year for 3 years.', checkMode: 'auto', options: ['R5 180.12', 'R5 080', 'R4 720', 'R1 080'], correctIndex: 1, explanation: 'A = P(1 + ni) = 4 000(1 + 3 × 0.09) = 4 000(1.27) = R5 080. (R5 180.12 wrongly uses compound interest; R4 720 wrongly uses n = 2; R1 080 gives only the interest, not the final amount.)' },
+        { difficulty: 'Medium', question: 'Lerato invests R11,000 at 4.5% simple interest per year for 6 years. Find the total interest earned (not the final amount).', checkMode: 'auto', options: ['R13 970', 'R2 475', 'R2 970', 'R3 465'], correctIndex: 2, explanation: 'Interest = P × n × i = 11 000 × 6 × 0.045 = R2 970. (R13 970 is the final amount, not just the interest; R2 475 and R3 465 mistakenly use n = 5 and n = 7.)' },
+        { difficulty: 'Medium', question: 'An investment earning 6% simple interest per year grows to R9,000 after 5 years. Find the original principal.', checkMode: 'auto', options: ['R6 725.05', 'R7 258.06', 'R30 000', 'R6 923.08'], correctIndex: 3, explanation: 'A = P(1 + ni)\n9 000 = P(1 + 5 × 0.06) = P(1.30)\nP = 9 000 ÷ 1.30 ≈ R6 923.08. (R6 725.05 wrongly divides by (1.06)⁵; R7 258.06 wrongly uses n = 4; R30 000 wrongly treats R9 000 as the interest instead of the final amount.)' },
 
         // Block 2 — Compound interest (Easy, Medium, Medium, Hard)
-        { difficulty: 'Easy', question: 'Calculate the final amount if R3,000 is invested at 8% compound interest per year for 2 years.', checkMode: 'auto', correctAnswer: 'R3499.20', correctAnswers: ['R3499.20', '3499.20', 'R3 499.20', '3 499.20', 'R3499.2', '3499.2'], answer: 'R3 499.20', explanation: 'A = P(1 + i)ⁿ = 3 000(1.08)² = 3 000 × 1.1664 = R3 499.20 ✓' },
-        { difficulty: 'Medium', question: 'Calculate the final amount if R4,800 is invested at 4% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R5399.35', correctAnswers: ['R5399.35', '5399.35', 'R5 399.35', '5 399.35'], answer: 'R5 399.35', explanation: 'A = 4 800(1.04)³ = 4 800 × 1.124864 ≈ R5 399.35 ✓' },
-        { difficulty: 'Medium', question: 'Calculate the final amount if R6,000 is invested at 7% compound interest per year for 5 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R8415.31', correctAnswers: ['R8415.31', '8415.31', 'R8 415.31', '8 415.31'], answer: 'R8 415.31', explanation: 'A = 6 000(1.07)⁵ = 6 000 × 1.40255... ≈ R8 415.31 ✓' },
-        { difficulty: 'Hard', question: 'Calculate the final amount if R15,000 is invested at 6.5% compound interest per year for 7 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R23309.80', correctAnswers: ['R23309.80', '23309.80', 'R23 309.80', '23 309.80', 'R23309.8', '23309.8'], answer: 'R23 309.80', explanation: 'A = 15 000(1.065)⁷ = 15 000 × 1.55399... ≈ R23 309.80 ✓' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R3,000 is invested at 8% compound interest per year for 2 years.', checkMode: 'auto', options: ['R3 499.20', 'R3 480', 'R3 240', 'R499.20'], correctIndex: 0, explanation: 'A = P(1 + i)ⁿ = 3 000(1.08)² = 3 000 × 1.1664 = R3 499.20. (R3 480 wrongly uses simple interest; R3 240 wrongly uses n = 1; R499.20 gives only the interest earned.)' },
+        { difficulty: 'Medium', question: 'Calculate the final amount if R4,800 is invested at 4% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', options: ['R5 376', 'R5 399.35', 'R5 191.68', 'R599.35'], correctIndex: 1, explanation: 'A = 4 800(1.04)³ = 4 800 × 1.124864 ≈ R5 399.35. (R5 376 wrongly uses simple interest; R5 191.68 wrongly uses n = 2; R599.35 gives only the interest earned.)' },
+        { difficulty: 'Medium', question: 'Calculate the final amount if R6,000 is invested at 7% compound interest per year for 5 years (round to 2 decimal places).', checkMode: 'auto', options: ['R8 100', 'R7 864.78', 'R8 415.31', 'R2 415.31'], correctIndex: 2, explanation: 'A = 6 000(1.07)⁵ = 6 000 × 1.40255... ≈ R8 415.31. (R8 100 wrongly uses simple interest; R7 864.78 wrongly uses n = 4; R2 415.31 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Calculate the final amount if R15,000 is invested at 6.5% compound interest per year for 7 years (round to 2 decimal places).', checkMode: 'auto', options: ['R21 825', 'R21 887.13', 'R8 309.80', 'R23 309.80'], correctIndex: 3, explanation: 'A = 15 000(1.065)⁷ = 15 000 × 1.55399... ≈ R23 309.80. (R21 825 wrongly uses simple interest; R21 887.13 wrongly uses n = 6; R8 309.80 gives only the interest earned.)' },
 
         // Block 3 — Comparing simple vs compound interest (Medium, Hard, Hard)
-        { difficulty: 'Medium', question: 'Compare investing R8,000 at 8% for 3 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R157.70', correctAnswers: ['R157.70', '157.70', 'R157.7', '157.7'], answer: 'R157.70', explanation: 'Simple: 8 000(1 + 3 × 0.08) = R9 920.\nCompound: 8 000(1.08)³ ≈ R10 077.70.\nDifference ≈ R157.70 ✓' },
-        { difficulty: 'Hard', question: 'Compare investing R10,000 at 5% for 10 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R1288.95', correctAnswers: ['R1288.95', '1288.95', 'R1 288.95', '1 288.95'], answer: 'R1 288.95', explanation: 'Simple: 10 000(1 + 10 × 0.05) = R15 000.\nCompound: 10 000(1.05)¹⁰ ≈ R16 288.95.\nDifference ≈ R1 288.95 ✓' },
-        { difficulty: 'Hard', question: 'Compare investing R6,500 at 9% for 7 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R1287.25', correctAnswers: ['R1287.25', '1287.25', 'R1 287.25', '1 287.25'], answer: 'R1 287.25', explanation: 'Simple: 6 500(1 + 7 × 0.09) = R10 595.\nCompound: 6 500(1.09)⁷ ≈ R11 882.25.\nDifference ≈ R1 287.25 ✓' },
+        { difficulty: 'Medium', question: 'Compare investing R8,000 at 8% for 3 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R157.70', 'R9 920', 'R10 077.70', 'R147.70'], correctIndex: 0, explanation: 'Simple: 8 000(1 + 3 × 0.08) = R9 920.\nCompound: 8 000(1.08)³ ≈ R10 077.70.\nDifference ≈ R157.70. (R9 920 and R10 077.70 are the individual amounts, not the difference; R147.70 has an arithmetic slip.)' },
+        { difficulty: 'Hard', question: 'Compare investing R10,000 at 5% for 10 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R15 000', 'R1 288.95', 'R16 288.95', 'R1 388.95'], correctIndex: 1, explanation: 'Simple: 10 000(1 + 10 × 0.05) = R15 000.\nCompound: 10 000(1.05)¹⁰ ≈ R16 288.95.\nDifference ≈ R1 288.95. (R15 000 and R16 288.95 are the individual amounts, not the difference; R1 388.95 has an arithmetic slip.)' },
+        { difficulty: 'Hard', question: 'Compare investing R6,500 at 9% for 7 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R10 595', 'R11 882.25', 'R1 287.25', 'R1 187.25'], correctIndex: 2, explanation: 'Simple: 6 500(1 + 7 × 0.09) = R10 595.\nCompound: 6 500(1.09)⁷ ≈ R11 882.25.\nDifference ≈ R1 287.25. (R10 595 and R11 882.25 are the individual amounts, not the difference; R1 187.25 has an arithmetic slip.)' },
 
         // Block 4 — Hire purchase (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'Sipho buys a TV worth R7,500 on hire purchase at 18% simple interest over 3 years, with no deposit. Find his total repayment.', checkMode: 'auto', correctAnswer: 'R11550', correctAnswers: ['R11550', '11550', 'R11 550', '11 550', 'R11550.00', 'R11 550.00'], answer: 'R11 550', explanation: 'A = P(1 + ni) = 7 500(1 + 3 × 0.18) = 7 500(1.54) = R11 550 ✓' },
-        { difficulty: 'Medium', question: 'Naledi buys a motorbike worth R12,000 on hire purchase at 22% simple interest over 2 years, with no deposit. Find her total repayment.', checkMode: 'auto', correctAnswer: 'R17280', correctAnswers: ['R17280', '17280', 'R17 280', '17 280', 'R17280.00', 'R17 280.00'], answer: 'R17 280', explanation: 'A = 12 000(1 + 2 × 0.22) = 12 000(1.44) = R17 280 ✓' },
-        { difficulty: 'Hard', question: 'Kagiso buys a couch with a cash price of R24,000. He pays a 20% deposit and repays the balance on hire purchase at 14% simple interest per year over 3 years. Find his total repayment (deposit plus hire purchase instalments), rounded to the nearest cent.', checkMode: 'auto', correctAnswer: 'R32064', correctAnswers: ['R32064', '32064', 'R32 064', '32 064', 'R32064.00', 'R32 064.00'], answer: 'R32 064', explanation: 'Deposit = 20% × 24 000 = R4 800.\nBalance = 24 000 − 4 800 = R19 200.\nHire purchase amount on balance = 19 200(1 + 3 × 0.14) = 19 200(1.42) = R27 264.\nTotal repayment = R4 800 + R27 264 = R32 064 ✓' },
+        { difficulty: 'Medium', question: 'Sipho buys a TV worth R7,500 on hire purchase at 18% simple interest over 3 years, with no deposit. Find his total repayment.', checkMode: 'auto', options: ['R12 322.74', 'R4 050', 'R10 200', 'R11 550'], correctIndex: 3, explanation: 'A = P(1 + ni) = 7 500(1 + 3 × 0.18) = 7 500(1.54) = R11 550. (R12 322.74 wrongly uses compound interest; R4 050 gives only the interest, not the total repayment; R10 200 wrongly uses n = 2.)' },
+        { difficulty: 'Medium', question: 'Naledi buys a motorbike worth R12,000 on hire purchase at 22% simple interest over 2 years, with no deposit. Find her total repayment.', checkMode: 'auto', options: ['R17 280', 'R17 860.80', 'R5 280', 'R14 640'], correctIndex: 0, explanation: 'A = 12 000(1 + 2 × 0.22) = 12 000(1.44) = R17 280. (R17 860.80 wrongly uses compound interest; R5 280 gives only the interest, not the total repayment; R14 640 wrongly uses n = 1.)' },
+        { difficulty: 'Hard', question: 'Kagiso buys a couch with a cash price of R24,000. He pays a 20% deposit and repays the balance on hire purchase at 14% simple interest per year over 3 years. Find his total repayment (deposit plus hire purchase instalments), rounded to the nearest cent.', checkMode: 'auto', options: ['R38 880', 'R32 064', 'R27 264', 'R29 376'], correctIndex: 1, explanation: 'Deposit = 20% × 24 000 = R4 800.\nBalance = 24 000 − 4 800 = R19 200.\nHire purchase amount on balance = 19 200(1 + 3 × 0.14) = 19 200(1.42) = R27 264.\nTotal repayment = R4 800 + R27 264 = R32 064. (R38 880 wrongly applies interest to the full cash price and still adds the deposit; R27 264 forgets to add the deposit back; R29 376 wrongly uses n = 2.)' },
 
         // Block 5 — Simple growth/decay word problems (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: "A town's population of 25,000 grows at 3% compound growth per year. Find the population after 6 years, rounded to the nearest whole number.", checkMode: 'auto', correctAnswer: '29851', correctAnswers: ['29851', '29 851'], answer: '29 851', explanation: 'A = 25 000(1.03)⁶ = 25 000 × 1.19405... ≈ 29 851 ✓' },
-        { difficulty: 'Medium', question: 'A machine valued at R180,000 depreciates using simple (straight-line) decay at 12% per year. Find its value after 5 years.', checkMode: 'auto', correctAnswer: 'R72000', correctAnswers: ['R72000', '72000', 'R72 000', '72 000', 'R72000.00', 'R72 000.00'], answer: 'R72 000', explanation: 'A = P(1 − ni) = 180 000(1 − 5 × 0.12) = 180 000(0.40) = R72 000 ✓' },
-        { difficulty: 'Hard', question: 'A delivery van valued at R300,000 depreciates using simple (straight-line) decay at 20% per year. Find its value after 4 years.', checkMode: 'auto', correctAnswer: 'R60000', correctAnswers: ['R60000', '60000', 'R60 000', '60 000', 'R60000.00', 'R60 000.00'], answer: 'R60 000', explanation: 'A = P(1 − ni) = 300 000(1 − 4 × 0.20) = 300 000(0.20) = R60 000 ✓' },
+        { difficulty: 'Medium', question: "A town's population of 25,000 grows at 3% compound growth per year. Find the population after 6 years, rounded to the nearest whole number.", checkMode: 'auto', options: ['29 500', '28 982', '29 851', '30 747'], correctIndex: 2, explanation: 'A = 25 000(1.03)⁶ = 25 000 × 1.19405... ≈ 29 851. (29 500 wrongly uses simple growth; 28 982 wrongly uses n = 5; 30 747 wrongly uses n = 7.)' },
+        { difficulty: 'Medium', question: 'A machine valued at R180,000 depreciates using simple (straight-line) decay at 12% per year. Find its value after 5 years.', checkMode: 'auto', options: ['R94 991.80', 'R93 600', 'R50 400', 'R72 000'], correctIndex: 3, explanation: 'A = P(1 − ni) = 180 000(1 − 5 × 0.12) = 180 000(0.40) = R72 000. (R94 991.80 wrongly uses compound decay; R93 600 wrongly uses n = 4; R50 400 wrongly uses n = 6.)' },
+        { difficulty: 'Hard', question: 'A delivery van valued at R300,000 depreciates using simple (straight-line) decay at 20% per year. Find its value after 4 years.', checkMode: 'auto', options: ['R60 000', 'R122 880', 'R120 000', 'R180 000'], correctIndex: 0, explanation: 'A = P(1 − ni) = 300 000(1 − 4 × 0.20) = 300 000(0.20) = R60 000. (R122 880 wrongly uses compound decay; R120 000 wrongly uses n = 3; R180 000 wrongly uses n = 2.)' },
 
         // Block 6 — Combined multi-step problems (Hard, Hard, Hard)
-        { difficulty: 'Hard', question: 'Amahle invests R10,000 at 10% compound interest per year for 6 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R17715.61', correctAnswers: ['R17715.61', '17715.61', 'R17 715.61', '17 715.61'], answer: 'R17 715.61', explanation: 'A = 10 000(1.10)⁶ = 10 000 × 1.771561 = R17 715.61 ✓' },
-        { difficulty: 'Hard', question: 'Zanele invests R9,000 at 5.5% compound interest per year for 5 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R11762.64', correctAnswers: ['R11762.64', '11762.64', 'R11 762.64', '11 762.64'], answer: 'R11 762.64', explanation: 'A = 9 000(1.055)⁵ = 9 000 × 1.30696... ≈ R11 762.64 ✓' },
-        { difficulty: 'Hard', question: 'Thabo earns R2,100 simple interest on a principal of R7,000 invested for 6 years. Find the annual interest rate used.', checkMode: 'auto', correctAnswer: '5%', correctAnswers: ['5%', '5', '0.05'], answer: '5%', explanation: 'Interest = P × n × i\n2 100 = 7 000 × 6 × i\n2 100 = 42 000i\ni = 2 100 ÷ 42 000 = 0.05 = 5% ✓' },
+        { difficulty: 'Hard', question: 'Amahle invests R10,000 at 10% compound interest per year for 6 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', options: ['R16 000', 'R17 715.61', 'R16 105.10', 'R7 715.61'], correctIndex: 1, explanation: 'A = 10 000(1.10)⁶ = 10 000 × 1.771561 = R17 715.61. (R16 000 wrongly uses simple interest; R16 105.10 wrongly uses n = 5; R7 715.61 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Zanele invests R9,000 at 5.5% compound interest per year for 5 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', options: ['R11 475', 'R11 149.43', 'R11 762.64', 'R2 762.64'], correctIndex: 2, explanation: 'A = 9 000(1.055)⁵ = 9 000 × 1.30696... ≈ R11 762.64. (R11 475 wrongly uses simple interest; R11 149.43 wrongly uses n = 4; R2 762.64 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Thabo earns R2,100 simple interest on a principal of R7,000 invested for 6 years. Find the annual interest rate used.', checkMode: 'auto', options: ['30%', '6%', '2.5%', '5%'], correctIndex: 3, explanation: 'Interest = P × n × i, so i = Interest ÷ (P × n) = 2 100 ÷ (7 000 × 6) = 0.05 = 5%. (30% forgets to divide by n = 6; 6% mistakenly uses n = 5; 2.5% mistakenly halves the correct rate.)' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Outstanding! You have mastered simple interest, compound interest and hire purchase problems.' },
@@ -1453,36 +1468,36 @@ export const topicData: TopicData = {
       name: 'Set 3',
       questions: [
         // Block 1 — Simple interest (Easy, Easy, Medium, Medium)
-        { difficulty: 'Easy', question: 'Calculate the final amount if R4,800 is invested at 7% simple interest per year for 2 years.', checkMode: 'auto', correctAnswer: 'R5472', correctAnswers: ['R5472', '5472', 'R5 472', '5 472', 'R5472.00', 'R5 472.00'], answer: 'R5 472', explanation: 'A = P(1 + ni) = 4 800(1 + 2 × 0.07) = 4 800(1.14) = R5 472 ✓' },
-        { difficulty: 'Easy', question: 'Calculate the final amount if R6,500 is invested at 4% simple interest per year for 5 years.', checkMode: 'auto', correctAnswer: 'R7800', correctAnswers: ['R7800', '7800', 'R7 800', '7 800', 'R7800.00', 'R7 800.00'], answer: 'R7 800', explanation: 'A = P(1 + ni) = 6 500(1 + 5 × 0.04) = 6 500(1.20) = R7 800 ✓' },
-        { difficulty: 'Medium', question: 'Amahle invests R13,000 at 5.5% simple interest per year for 4 years. Find the total interest earned (not the final amount).', checkMode: 'auto', correctAnswer: 'R2860', correctAnswers: ['R2860', '2860', 'R2 860', '2 860', 'R2860.00', 'R2 860.00'], answer: 'R2 860', explanation: 'Interest = P × n × i = 13 000 × 4 × 0.055 = R2 860 ✓' },
-        { difficulty: 'Medium', question: 'An investment earning 8% simple interest per year grows to R8,400 after 3 years. Find the original principal.', checkMode: 'auto', correctAnswer: 'R6774.19', correctAnswers: ['R6774.19', '6774.19', 'R6 774.19', '6 774.19'], answer: 'R6 774.19', explanation: 'A = P(1 + ni)\n8 400 = P(1 + 3 × 0.08) = P(1.24)\nP = 8 400 ÷ 1.24 ≈ R6 774.19 ✓' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R4,800 is invested at 7% simple interest per year for 2 years.', checkMode: 'auto', options: ['R5 472', 'R5 495.52', 'R5 136', 'R672'], correctIndex: 0, explanation: 'A = P(1 + ni) = 4 800(1 + 2 × 0.07) = 4 800(1.14) = R5 472. (R5 495.52 wrongly uses compound interest; R5 136 wrongly uses n = 1; R672 gives only the interest, not the final amount.)' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R6,500 is invested at 4% simple interest per year for 5 years.', checkMode: 'auto', options: ['R7 908.24', 'R7 800', 'R7 540', 'R1 300'], correctIndex: 1, explanation: 'A = P(1 + ni) = 6 500(1 + 5 × 0.04) = 6 500(1.20) = R7 800. (R7 908.24 wrongly uses compound interest; R7 540 wrongly uses n = 4; R1 300 gives only the interest, not the final amount.)' },
+        { difficulty: 'Medium', question: 'Amahle invests R13,000 at 5.5% simple interest per year for 4 years. Find the total interest earned (not the final amount).', checkMode: 'auto', options: ['R15 860', 'R2 145', 'R2 860', 'R3 575'], correctIndex: 2, explanation: 'Interest = P × n × i = 13 000 × 4 × 0.055 = R2 860. (R15 860 is the final amount, not just the interest; R2 145 and R3 575 mistakenly use n = 3 and n = 5.)' },
+        { difficulty: 'Medium', question: 'An investment earning 8% simple interest per year grows to R8,400 after 3 years. Find the original principal.', checkMode: 'auto', options: ['R6 668.34', 'R7 241.38', 'R35 000', 'R6 774.19'], correctIndex: 3, explanation: 'A = P(1 + ni)\n8 400 = P(1 + 3 × 0.08) = P(1.24)\nP = 8 400 ÷ 1.24 ≈ R6 774.19. (R6 668.34 wrongly divides by (1.08)³; R7 241.38 wrongly uses n = 2; R35 000 wrongly treats R8 400 as the interest instead of the final amount.)' },
 
         // Block 2 — Compound interest (Easy, Medium, Medium, Hard)
-        { difficulty: 'Easy', question: 'Calculate the final amount if R3,500 is invested at 9% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R4532.60', correctAnswers: ['R4532.60', '4532.60', 'R4 532.60', '4 532.60', 'R4532.6', '4532.6'], answer: 'R4 532.60', explanation: 'A = P(1 + i)ⁿ = 3 500(1.09)³ = 3 500 × 1.295029 ≈ R4 532.60 ✓' },
-        { difficulty: 'Medium', question: 'Calculate the final amount if R5,200 is invested at 4.5% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R5934.06', correctAnswers: ['R5934.06', '5934.06', 'R5 934.06', '5 934.06'], answer: 'R5 934.06', explanation: 'A = 5 200(1.045)³ = 5 200 × 1.141166... ≈ R5 934.06 ✓' },
-        { difficulty: 'Medium', question: 'Calculate the final amount if R5,500 is invested at 7.5% compound interest per year for 6 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R8488.16', correctAnswers: ['R8488.16', '8488.16', 'R8 488.16', '8 488.16'], answer: 'R8 488.16', explanation: 'A = 5 500(1.075)⁶ = 5 500 × 1.54330... ≈ R8 488.16 ✓' },
-        { difficulty: 'Hard', question: 'Calculate the final amount if R18,000 is invested at 8% compound interest per year for 9 years (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R35982.08', correctAnswers: ['R35982.08', '35982.08', 'R35 982.08', '35 982.08'], answer: 'R35 982.08', explanation: 'A = 18 000(1.08)⁹ = 18 000 × 1.99900... ≈ R35 982.08 ✓' },
+        { difficulty: 'Easy', question: 'Calculate the final amount if R3,500 is invested at 9% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', options: ['R4 532.60', 'R4 445', 'R4 158.35', 'R1 032.60'], correctIndex: 0, explanation: 'A = P(1 + i)ⁿ = 3 500(1.09)³ = 3 500 × 1.295029 ≈ R4 532.60. (R4 445 wrongly uses simple interest; R4 158.35 wrongly uses n = 2; R1 032.60 gives only the interest earned.)' },
+        { difficulty: 'Medium', question: 'Calculate the final amount if R5,200 is invested at 4.5% compound interest per year for 3 years (round to 2 decimal places).', checkMode: 'auto', options: ['R5 902', 'R5 934.06', 'R5 678.53', 'R734.06'], correctIndex: 1, explanation: 'A = 5 200(1.045)³ = 5 200 × 1.141166... ≈ R5 934.06. (R5 902 wrongly uses simple interest; R5 678.53 wrongly uses n = 2; R734.06 gives only the interest earned.)' },
+        { difficulty: 'Medium', question: 'Calculate the final amount if R5,500 is invested at 7.5% compound interest per year for 6 years (round to 2 decimal places).', checkMode: 'auto', options: ['R7 975', 'R7 895.96', 'R8 488.16', 'R2 988.16'], correctIndex: 2, explanation: 'A = 5 500(1.075)⁶ = 5 500 × 1.54330... ≈ R8 488.16. (R7 975 wrongly uses simple interest; R7 895.96 wrongly uses n = 5; R2 988.16 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Calculate the final amount if R18,000 is invested at 8% compound interest per year for 9 years (round to 2 decimal places).', checkMode: 'auto', options: ['R30 960', 'R33 316.74', 'R17 982.08', 'R35 982.08'], correctIndex: 3, explanation: 'A = 18 000(1.08)⁹ = 18 000 × 1.99900... ≈ R35 982.08. (R30 960 wrongly uses simple interest; R33 316.74 wrongly uses n = 8; R17 982.08 gives only the interest earned.)' },
 
         // Block 3 — Comparing simple vs compound interest (Medium, Hard, Hard)
-        { difficulty: 'Medium', question: 'Compare investing R6,000 at 9% for 5 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R531.74', correctAnswers: ['R531.74', '531.74'], answer: 'R531.74', explanation: 'Simple: 6 000(1 + 5 × 0.09) = R8 700.\nCompound: 6 000(1.09)⁵ ≈ R9 231.74.\nDifference ≈ R531.74 ✓' },
-        { difficulty: 'Hard', question: 'Compare investing R12,000 at 7% for 9 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R2501.51', correctAnswers: ['R2501.51', '2501.51', 'R2 501.51', '2 501.51'], answer: 'R2 501.51', explanation: 'Simple: 12 000(1 + 9 × 0.07) = R19 560.\nCompound: 12 000(1.07)⁹ ≈ R22 061.51.\nDifference ≈ R2 501.51 ✓' },
-        { difficulty: 'Hard', question: 'Compare investing R8,000 at 10% for 6 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R1372.49', correctAnswers: ['R1372.49', '1372.49', 'R1 372.49', '1 372.49'], answer: 'R1 372.49', explanation: 'Simple: 8 000(1 + 6 × 0.10) = R12 800.\nCompound: 8 000(1.10)⁶ ≈ R14 172.49.\nDifference ≈ R1 372.49 ✓' },
+        { difficulty: 'Medium', question: 'Compare investing R6,000 at 9% for 5 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R531.74', 'R8 700', 'R9 231.74', 'R521.74'], correctIndex: 0, explanation: 'Simple: 6 000(1 + 5 × 0.09) = R8 700.\nCompound: 6 000(1.09)⁵ ≈ R9 231.74.\nDifference ≈ R531.74. (R8 700 and R9 231.74 are the individual amounts, not the difference; R521.74 has an arithmetic slip.)' },
+        { difficulty: 'Hard', question: 'Compare investing R12,000 at 7% for 9 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R19 560', 'R2 501.51', 'R22 061.51', 'R2 401.51'], correctIndex: 1, explanation: 'Simple: 12 000(1 + 9 × 0.07) = R19 560.\nCompound: 12 000(1.07)⁹ ≈ R22 061.51.\nDifference ≈ R2 501.51. (R19 560 and R22 061.51 are the individual amounts, not the difference; R2 401.51 has an arithmetic slip.)' },
+        { difficulty: 'Hard', question: 'Compare investing R8,000 at 10% for 6 years using simple interest versus compound interest. Find the difference between the two final amounts (round to 2 decimal places).', checkMode: 'auto', options: ['R12 800', 'R14 172.49', 'R1 372.49', 'R1 272.49'], correctIndex: 2, explanation: 'Simple: 8 000(1 + 6 × 0.10) = R12 800.\nCompound: 8 000(1.10)⁶ ≈ R14 172.49.\nDifference ≈ R1 372.49. (R12 800 and R14 172.49 are the individual amounts, not the difference; R1 272.49 has an arithmetic slip.)' },
 
         // Block 4 — Hire purchase (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: 'Buhle buys a stove worth R9,000 on hire purchase at 16% simple interest over 4 years, with no deposit. Find her total repayment.', checkMode: 'auto', correctAnswer: 'R14760', correctAnswers: ['R14760', '14760', 'R14 760', '14 760', 'R14760.00', 'R14 760.00'], answer: 'R14 760', explanation: 'A = P(1 + ni) = 9 000(1 + 4 × 0.16) = 9 000(1.64) = R14 760 ✓' },
-        { difficulty: 'Medium', question: 'Sipho buys office equipment worth R14,000 on hire purchase at 19% simple interest over 3 years, with no deposit. Find his total repayment.', checkMode: 'auto', correctAnswer: 'R21980', correctAnswers: ['R21980', '21980', 'R21 980', '21 980', 'R21980.00', 'R21 980.00'], answer: 'R21 980', explanation: 'A = 14 000(1 + 3 × 0.19) = 14 000(1.57) = R21 980 ✓' },
-        { difficulty: 'Hard', question: 'Lerato buys a bedroom suite with a cash price of R30,000. She pays a 10% deposit and repays the balance on hire purchase at 15% simple interest per year over 5 years. Find her total repayment (deposit plus hire purchase instalments), rounded to the nearest cent.', checkMode: 'auto', correctAnswer: 'R50250', correctAnswers: ['R50250', '50250', 'R50 250', '50 250', 'R50250.00', 'R50 250.00'], answer: 'R50 250', explanation: 'Deposit = 10% × 30 000 = R3 000.\nBalance = 30 000 − 3 000 = R27 000.\nHire purchase amount on balance = 27 000(1 + 5 × 0.15) = 27 000(1.75) = R47 250.\nTotal repayment = R3 000 + R47 250 = R50 250 ✓' },
+        { difficulty: 'Medium', question: 'Buhle buys a stove worth R9,000 on hire purchase at 16% simple interest over 4 years, with no deposit. Find her total repayment.', checkMode: 'auto', options: ['R16 306.16', 'R5 760', 'R13 320', 'R14 760'], correctIndex: 3, explanation: 'A = P(1 + ni) = 9 000(1 + 4 × 0.16) = 9 000(1.64) = R14 760. (R16 306.16 wrongly uses compound interest; R5 760 gives only the interest, not the total repayment; R13 320 wrongly uses n = 3.)' },
+        { difficulty: 'Medium', question: 'Sipho buys office equipment worth R14,000 on hire purchase at 19% simple interest over 3 years, with no deposit. Find his total repayment.', checkMode: 'auto', options: ['R21 980', 'R23 592.23', 'R7 980', 'R19 320'], correctIndex: 0, explanation: 'A = 14 000(1 + 3 × 0.19) = 14 000(1.57) = R21 980. (R23 592.23 wrongly uses compound interest; R7 980 gives only the interest, not the total repayment; R19 320 wrongly uses n = 2.)' },
+        { difficulty: 'Hard', question: 'Lerato buys a bedroom suite with a cash price of R30,000. She pays a 10% deposit and repays the balance on hire purchase at 15% simple interest per year over 5 years. Find her total repayment (deposit plus hire purchase instalments), rounded to the nearest cent.', checkMode: 'auto', options: ['R55 500', 'R50 250', 'R47 250', 'R46 200'], correctIndex: 1, explanation: 'Deposit = 10% × 30 000 = R3 000.\nBalance = 30 000 − 3 000 = R27 000.\nHire purchase amount on balance = 27 000(1 + 5 × 0.15) = 27 000(1.75) = R47 250.\nTotal repayment = R3 000 + R47 250 = R50 250. (R55 500 wrongly applies interest to the full cash price and still adds the deposit; R47 250 forgets to add the deposit back; R46 200 wrongly uses n = 4.)' },
 
         // Block 5 — Simple growth/decay word problems (Medium, Medium, Hard)
-        { difficulty: 'Medium', question: "A town's population of 40,000 grows at 3.5% compound growth per year. Find the population after 7 years, rounded to the nearest whole number.", checkMode: 'auto', correctAnswer: '50891', correctAnswers: ['50891', '50 891'], answer: '50 891', explanation: 'A = 40 000(1.035)⁷ = 40 000 × 1.27228... ≈ 50 891 ✓' },
-        { difficulty: 'Medium', question: 'A machine valued at R210,000 depreciates using simple (straight-line) decay at 14% per year. Find its value after 4 years.', checkMode: 'auto', correctAnswer: 'R92400', correctAnswers: ['R92400', '92400', 'R92 400', '92 400', 'R92400.00', 'R92 400.00'], answer: 'R92 400', explanation: 'A = P(1 − ni) = 210 000(1 − 4 × 0.14) = 210 000(0.44) = R92 400 ✓' },
-        { difficulty: 'Hard', question: 'A tractor valued at R260,000 depreciates using simple (straight-line) decay at 16% per year. Find its value after 5 years.', checkMode: 'auto', correctAnswer: 'R52000', correctAnswers: ['R52000', '52000', 'R52 000', '52 000', 'R52000.00', 'R52 000.00'], answer: 'R52 000', explanation: 'A = P(1 − ni) = 260 000(1 − 5 × 0.16) = 260 000(0.20) = R52 000 ✓' },
+        { difficulty: 'Medium', question: "A town's population of 40,000 grows at 3.5% compound growth per year. Find the population after 7 years, rounded to the nearest whole number.", checkMode: 'auto', options: ['49 800', '49 170', '50 891', '52 672'], correctIndex: 2, explanation: 'A = 40 000(1.035)⁷ = 40 000 × 1.27228... ≈ 50 891. (49 800 wrongly uses simple growth; 49 170 wrongly uses n = 6; 52 672 wrongly uses n = 8.)' },
+        { difficulty: 'Medium', question: 'A machine valued at R210,000 depreciates using simple (straight-line) decay at 14% per year. Find its value after 4 years.', checkMode: 'auto', options: ['R114 871.68', 'R121 800', 'R63 000', 'R92 400'], correctIndex: 3, explanation: 'A = P(1 − ni) = 210 000(1 − 4 × 0.14) = 210 000(0.44) = R92 400. (R114 871.68 wrongly uses compound decay; R121 800 wrongly uses n = 3; R63 000 wrongly uses n = 5.)' },
+        { difficulty: 'Hard', question: 'A tractor valued at R260,000 depreciates using simple (straight-line) decay at 16% per year. Find its value after 5 years.', checkMode: 'auto', options: ['R52 000', 'R108 735.12', 'R93 600', 'R10 400'], correctIndex: 0, explanation: 'A = P(1 − ni) = 260 000(1 − 5 × 0.16) = 260 000(0.20) = R52 000. (R108 735.12 wrongly uses compound decay; R93 600 wrongly uses n = 4; R10 400 wrongly uses n = 6.)' },
 
         // Block 6 — Combined multi-step problems (Hard, Hard, Hard)
-        { difficulty: 'Hard', question: 'Nomsa invests R14,000 at 8.5% compound interest per year for 6 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R22840.55', correctAnswers: ['R22840.55', '22840.55', 'R22 840.55', '22 840.55'], answer: 'R22 840.55', explanation: 'A = 14 000(1.085)⁶ = 14 000 × 1.63147... ≈ R22 840.55 ✓' },
-        { difficulty: 'Hard', question: 'Kagiso invests R7,000 at 9.5% compound interest per year for 5 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', correctAnswer: 'R11019.67', correctAnswers: ['R11019.67', '11019.67', 'R11 019.67', '11 019.67'], answer: 'R11 019.67', explanation: 'A = 7 000(1.095)⁵ = 7 000 × 1.57424... ≈ R11 019.67 ✓' },
-        { difficulty: 'Hard', question: 'Zanele earns R1,440 simple interest on a principal of R6,000 invested for 4 years. Find the annual interest rate used.', checkMode: 'auto', correctAnswer: '6%', correctAnswers: ['6%', '6', '0.06'], answer: '6%', explanation: 'Interest = P × n × i\n1 440 = 6 000 × 4 × i\n1 440 = 24 000i\ni = 1 440 ÷ 24 000 = 0.06 = 6% ✓' },
+        { difficulty: 'Hard', question: 'Nomsa invests R14,000 at 8.5% compound interest per year for 6 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', options: ['R21 140', 'R22 840.55', 'R21 051.20', 'R8 840.55'], correctIndex: 1, explanation: 'A = 14 000(1.085)⁶ = 14 000 × 1.63147... ≈ R22 840.55. (R21 140 wrongly uses simple interest; R21 051.20 wrongly uses n = 5; R8 840.55 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Kagiso invests R7,000 at 9.5% compound interest per year for 5 years. Find the final amount (round to 2 decimal places).', checkMode: 'auto', options: ['R10 325', 'R10 063.63', 'R11 019.67', 'R4 019.67'], correctIndex: 2, explanation: 'A = 7 000(1.095)⁵ = 7 000 × 1.57424... ≈ R11 019.67. (R10 325 wrongly uses simple interest; R10 063.63 wrongly uses n = 4; R4 019.67 gives only the interest earned.)' },
+        { difficulty: 'Hard', question: 'Zanele earns R1,440 simple interest on a principal of R6,000 invested for 4 years. Find the annual interest rate used.', checkMode: 'auto', options: ['24%', '8%', '3%', '6%'], correctIndex: 3, explanation: 'Interest = P × n × i, so i = Interest ÷ (P × n) = 1 440 ÷ (6 000 × 4) = 0.06 = 6%. (24% forgets to divide by n = 4; 8% mistakenly uses n = 3; 3% mistakenly halves the correct rate.)' },
       ],
       scoreMessages: [
         { minScore: 20, message: 'Outstanding! You have mastered simple interest, compound interest and hire purchase problems.' },
