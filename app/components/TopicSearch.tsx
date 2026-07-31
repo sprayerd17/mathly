@@ -17,18 +17,24 @@ function SearchIcon({ className }: { className?: string }) {
   )
 }
 
-export default function TopicSearch({ language }: { language: 'en' | 'af' }) {
+export default function TopicSearch({ language, activeGrade }: { language: 'en' | 'af'; activeGrade?: string | null }) {
   const t = useTranslations()
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
 
-  // Flattened once per language change — every grade's topics, searchable by name or grade.
+  // Signed-in users only ever see results for their active child's grade —
+  // searching shouldn't surface topics they can't get to anyway. Guests
+  // (no active grade yet) still search across every grade, since that's how
+  // they discover which grade's free topic to try before signing up.
+  const searchableGrades = activeGrade ? [activeGrade] : GRADES
+
+  // Flattened once per language/grade-scope change — searchable by name or grade.
   const allTopics = useMemo<SearchHit[]>(() => {
-    return GRADES.flatMap(grade =>
+    return searchableGrades.flatMap(grade =>
       getTopics(grade, language).map(topic => ({ grade, slug: topic.slug, name: topic.name }))
     )
-  }, [language])
+  }, [language, activeGrade])
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -76,9 +82,11 @@ export default function TopicSearch({ language }: { language: 'en' | 'af' }) {
                     className="flex items-center justify-between gap-3 px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors"
                   >
                     <span className="truncate" style={{ color: '#0f1f3d' }}>{hit.name}</span>
-                    <span className="shrink-0 text-xs font-medium text-gray-400">
-                      {t.grade_heading.replace('{grade}', hit.grade)}
-                    </span>
+                    {!activeGrade && (
+                      <span className="shrink-0 text-xs font-medium text-gray-400">
+                        {t.grade_heading.replace('{grade}', hit.grade)}
+                      </span>
+                    )}
                   </Link>
                 </li>
               ))}

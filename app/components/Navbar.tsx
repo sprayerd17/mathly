@@ -120,6 +120,7 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
   const { user, loading, logout, openModal } = useAuth()
   const t = useTranslations()
   const language = (user ? getActiveChild(user).language : 'en') as 'en' | 'af'
+  const activeGrade = user ? String(getActiveChild(user).grade) : null
   const navAuthRef = useRef<NavAuthHandle>(null)
   const sidebarRef = useRef<HTMLElement>(null)
 
@@ -197,7 +198,7 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
           {/* Centre: topic search — desktop only, fills the space the sidebar
               made available now that the logo isn't parked there. */}
           <div className="hidden md:block md:col-start-2 md:w-72">
-            <TopicSearch language={language} />
+            <TopicSearch language={language} activeGrade={activeGrade} />
           </div>
 
           {/* Right: desktop auth + mobile hamburger */}
