@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Navbar from '@/app/components/Navbar'
+import MathLitNotify from '@/app/components/MathLitNotify'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
@@ -105,9 +106,11 @@ export default function Home() {
               {t.home_hero_heading}
             </h1>
 
-            <p className="text-lg text-gray-500 leading-relaxed mb-10 max-w-lg mx-auto">
+            <p className="text-lg text-gray-500 leading-relaxed mb-4 max-w-lg mx-auto">
               {t.home_hero_subheading}
             </p>
+
+            <MathLitNotify />
 
             <Link href="/select-grade" className={CTA_CLASS}>
               {t.home_hero_cta}
