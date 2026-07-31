@@ -549,194 +549,270 @@ export const topicData: TopicData = {
     {
       difficulty: 'Easy',
       question: 'Solve x² − 9x + 20 = 0 by factorisation.',
-      answer: 'x = 4 or x = 5',
       checkMode: 'auto',
-      correctAnswers: ['x=4 or x=5', 'x = 4 or x = 5', 'x=5 or x=4', 'x = 5 or x = 4', '4 or 5', '5 or 4'],
-      explanation: 'Find two numbers that multiply to 20 and add to −9: these are −4 and −5.\n(x − 4)(x − 5) = 0\nSet each factor to zero: x = 4 or x = 5 ✓',
+      options: ['x = 4 or x = 5', 'x = −4 or x = −5', 'x = 2 or x = 10', 'x = −2 or x = −10'],
+      correctIndex: 0,
+      explanation: 'Find two numbers that multiply to 20 and add to −9: these are −4 and −5, so (x − 4)(x − 5) = 0, giving x = 4 or x = 5. Flipping the signs when solving each factor gives x = −4 or x = −5; using the factor pair 2 × 10 = 20 satisfies the product but not the sum condition (2 + 10 = 12, not −9).',
     },
 
     // ── Q2 Medium — completing the square ───────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve x² + 4x − 1 = 0 by completing the square.',
-      answer: 'x² + 4x = 1\n(x + 2)² − 4 = 1 → (x + 2)² = 5\nx + 2 = ±√5\nx = −2 + √5 or x = −2 − √5',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['x = −1 or x = −3', 'x = −2 + √5 or x = −2 − √5', 'x = 2 + √5 or x = 2 − √5', 'x = −4 + √5 or x = −4 − √5'],
+      correctIndex: 1,
+      explanation: 'x² + 4x = 1. Half of 4 is 2, so (x + 2)² − 4 = 1, giving (x + 2)² = 5, so x = −2 ± √5. Forgetting to add the 4 back before taking square roots gives x = −1 or x = −3; using the wrong sign inside the bracket gives x = 2 ± √5; using b itself instead of half of b gives x = −4 ± √5.',
     },
 
     // ── Q3 Hard — quadratic formula with full discriminant ───────────────────
     {
       difficulty: 'Hard',
       question: 'Solve 3x² + 2x − 5 = 0 using the quadratic formula, showing the full discriminant calculation.',
-      answer: 'a = 3, b = 2, c = −5.\nDiscriminant: b² − 4ac = 4 − 4(3)(−5) = 4 + 60 = 64.\nx = (−2 ± √64) / 6 = (−2 ± 8) / 6.\nSolutions: x = (−2 + 8) / 6 = 1  or  x = (−2 − 8) / 6 = −5/3.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['x = 5/3 or x = −1', 'x = 1 or x = −5/3', 'No real solutions — the discriminant is negative', 'x = 2 or x = −10/3'],
+      correctIndex: 1,
+      explanation: 'a = 3, b = 2, c = −5. Discriminant = b² − 4ac = 4 − 4(3)(−5) = 4 + 60 = 64. x = (−2 ± 8) / 6, giving x = 1 or x = −5/3. Using +b instead of −b in the numerator gives x = 5/3 or x = −1; incorrectly computing the discriminant as b² + 4ac gives a negative value; dividing by a instead of 2a gives x = 2 or x = −10/3.',
     },
 
     // ── Q4 Easy — quadratic inequality ──────────────────────────────────────
     {
       difficulty: 'Easy',
       question: 'Solve x² − 4 > 0.',
-      answer: 'x < −2 or x > 2',
       checkMode: 'auto',
-      correctAnswers: ['x<-2 or x>2', 'x < -2 or x > 2', 'x<−2 or x>2', 'x < −2 or x > 2'],
-      explanation: 'Critical values: x² − 4 = 0 → x = −2 or x = 2.\nTest intervals:\n• x < −2: positive ✓\n• −2 < x < 2: negative\n• x > 2: positive ✓\nSolution: x < −2 or x > 2.',
+      options: ['−2 < x < 2', 'x > 2', 'x ≤ −2 or x ≥ 2', 'x < −2 or x > 2'],
+      correctIndex: 3,
+      explanation: 'Critical values: x² − 4 = 0 → x = −2 or x = 2. Testing intervals shows the expression is positive outside the roots. Since the inequality is strict (>), endpoints are excluded. Solution: x < −2 or x > 2. Picking the negative/inside interval, missing the left-hand branch, or wrongly including the endpoints are common mistakes.',
     },
 
     // ── Q5 Medium — quadratic inequality ────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve x² − 7x + 10 ≤ 0.',
-      answer: '2 ≤ x ≤ 5',
       checkMode: 'auto',
-      correctAnswers: ['2≤x≤5', '2 ≤ x ≤ 5', '[2,5]', '2<=x<=5', '2 <= x <= 5'],
-      explanation: 'Critical values: (x − 2)(x − 5) = 0 → x = 2 or x = 5.\nTest intervals:\n• x < 2: positive\n• 2 < x < 5: negative ✓\n• x > 5: positive\nThe expression ≤ 0 between and at the roots.\nSolution: 2 ≤ x ≤ 5.',
+      options: ['2 ≤ x ≤ 5', 'x ≤ 2 or x ≥ 5', '2 < x < 5', '−5 ≤ x ≤ −2'],
+      correctIndex: 0,
+      explanation: 'Critical values: (x − 2)(x − 5) = 0 → x = 2 or x = 5. Since the parabola opens upward, the expression is ≤ 0 between the roots, with endpoints included because the inequality is ≤. Solution: 2 ≤ x ≤ 5. Choosing the outside interval, forgetting the endpoints, or using the wrong sign on the critical values are common mistakes.',
     },
 
     // ── Q6 Hard — incomplete inequality answer ───────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Sipho solves x² − 16 < 0 and gets x < 4. Is his answer complete? Explain.',
-      answer: 'No — he is missing part of the solution. The full solution is −4 < x < 4, since x² − 16 < 0 means x must be between −4 and 4.',
-      checkMode: 'self',
+      question: 'Sipho solves x² − 16 < 0 and gets x < 4. Which statement correctly evaluates his answer?',
+      checkMode: 'auto',
+      options: [
+        'He is correct — x < 4 is the full solution.',
+        'He is incorrect — the correct solution is −4 < x < 4, since x² − 16 < 0 only holds between the roots.',
+        'He is incorrect — the correct solution is x < −4 or x > 4.',
+        'He is incorrect — the correct solution is x ≤ 4.',
+      ],
+      correctIndex: 1,
+      explanation: 'The critical values are x = −4 and x = 4. Since the parabola opens upward, x² − 16 < 0 only between the roots (strict, since <). Sipho found one boundary but forgot the lower bound, so the full solution is −4 < x < 4, not just x < 4.',
     },
 
     // ── Q7 Medium — rational inequality ─────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve (x − 3) / (x + 2) < 0.',
-      answer: '−2 < x < 3',
       checkMode: 'auto',
-      correctAnswers: ['-2<x<3', '-2 < x < 3', '−2<x<3', '−2 < x < 3', '(-2,3)'],
-      explanation: 'Critical values: numerator zero → x = 3; denominator zero → x = −2 (always excluded).\nTest intervals:\n• x < −2: positive\n• −2 < x < 3: negative ✓\n• x > 3: positive\nSolution: −2 < x < 3.',
+      options: ['x < −2 or x > 3', '−2 ≤ x < 3', '−2 < x < 3', '−3 < x < 2'],
+      correctIndex: 2,
+      explanation: 'Critical values: numerator zero at x = 3; denominator zero at x = −2 (always excluded). Testing intervals shows the expression is negative between the critical values. Solution: −2 < x < 3. Picking the outside intervals, wrongly including x = −2 (where the expression is undefined), or swapping the two critical values are common mistakes.',
     },
 
     // ── Q8 Hard — excluded value in rational inequality ──────────────────────
     {
       difficulty: 'Hard',
-      question: 'Lerato solves (x + 1) / (x − 4) ≥ 0 and includes x = 4 in her answer. Is this correct? Explain.',
-      answer: 'No — x = 4 makes the denominator zero, making the expression undefined, so x = 4 must be excluded even though the inequality includes "or equal to".',
-      checkMode: 'self',
+      question: 'Lerato solves (x + 1) / (x − 4) ≥ 0 and includes x = 4 in her final answer. Which statement correctly evaluates this?',
+      checkMode: 'auto',
+      options: [
+        'Correct — since the inequality includes "or equal to", x = 4 must be included.',
+        'Incorrect — x = −1 must also be excluded, not just x = 4.',
+        'Correct, but only if x is restricted to positive values.',
+        'Incorrect — x = 4 makes the denominator zero, so the expression is undefined there and must always be excluded, regardless of the inequality sign.',
+      ],
+      correctIndex: 3,
+      explanation: 'A rational expression is undefined wherever its denominator equals zero. Since x = 4 makes (x − 4) = 0, it must be excluded from the solution set even though the inequality uses ≥. Only x = −1 (where the numerator is zero) may be included, since the expression equals exactly 0 there.',
     },
 
     // ── Q9 Hard — quadratic inequality with sign analysis ────────────────────
     {
       difficulty: 'Hard',
       question: 'Solve x² − 2x − 8 ≥ 0.',
-      answer: 'Solve x² − 2x − 8 = 0: (x − 4)(x + 2) = 0, x = 4 or x = −2.\nTest intervals:\n• x < −2: positive ✓\n• −2 < x < 4: negative\n• x > 4: positive ✓\nSolution: x ≤ −2 or x ≥ 4.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: ['x ≤ −2 or x ≥ 4', '−2 ≤ x ≤ 4', 'x < −2 or x > 4', 'x ≤ 2 or x ≥ −4'],
+      correctIndex: 0,
+      explanation: 'Solve x² − 2x − 8 = 0: (x − 4)(x + 2) = 0, so x = 4 or x = −2. Since the parabola opens upward, the expression is ≥ 0 outside the roots, with endpoints included because the inequality is ≥. Solution: x ≤ −2 or x ≥ 4. Choosing the interval between the roots, wrongly excluding the endpoints, or swapping the critical-value signs are common mistakes.',
     },
 
     // ── Q10 Medium — simultaneous linear and quadratic ───────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve simultaneously: y = x + 2 and y = x² − 4.',
-      answer: 'x = 3, y = 5  or  x = −2, y = 0',
       checkMode: 'auto',
-      correctAnswers: ['x=3 or x=-2', 'x = 3 or x = -2', '(3,5) and (-2,0)', 'x=3,y=5 and x=-2,y=0'],
-      explanation: 'Substitute y = x + 2 into y = x² − 4:\nx + 2 = x² − 4\nx² − x − 6 = 0 → (x − 3)(x + 2) = 0\nx = 3 or x = −2\nCorresponding y-values: y = 5 or y = 0.',
+      options: ['(2, 4) and (−3, −1)', '(3, 5) and (−2, 0)', '(3, 3) and (−2, −2)', '(3, 5) and (−2, −8)'],
+      correctIndex: 1,
+      explanation: 'Substitute y = x + 2 into y = x² − 4: x + 2 = x² − 4, so x² − x − 6 = 0. Factorise: (x − 3)(x + 2) = 0, giving x = 3 or x = −2. Corresponding y-values from y = x + 2: y = 5 or y = 0. Solutions: (3, 5) and (−2, 0). A sign error forming the quadratic can give x² + x − 6 = 0 instead; forgetting to add 2 when finding y gives (3, 3) and (−2, −2); and mis-squaring (−2)² as −4 gives (−2, −8).',
     },
 
     // ── Q11 Hard — simultaneous equations, surd solutions ───────────────────
     {
       difficulty: 'Hard',
-      question: 'Thabo solves y = 2x − 1 and y = x² − 3x + 2 simultaneously. Find both solution points.',
-      answer: 'Substitute: 2x − 1 = x² − 3x + 2.\nx² − 5x + 3 = 0.\nx = (5 ± √13) / 2.\nCorresponding y = 2x − 1 = 4 ± √13.\nSolution points: ((5 + √13)/2 ; 4 + √13) and ((5 − √13)/2 ; 4 − √13).',
-      checkMode: 'self',
+      question: 'Thabo solves y = 2x − 1 and y = x² − 3x + 2 simultaneously. Which pair of solution points is correct?',
+      checkMode: 'auto',
+      options: [
+        '((−5 + √13)/2 ; −6 + √13) and ((−5 − √13)/2 ; −6 − √13)',
+        '((5 + √37)/2 ; 4 + √37) and ((5 − √37)/2 ; 4 − √37)',
+        '((5 + √13)/2 ; 4 + √13) and ((5 − √13)/2 ; 4 − √13)',
+        '((5 + √13)/2 ; (3 + √13)/2) and ((5 − √13)/2 ; (3 − √13)/2)',
+      ],
+      correctIndex: 2,
+      explanation: 'Substitute: 2x − 1 = x² − 3x + 2, giving x² − 5x + 3 = 0. Using the quadratic formula: x = (5 ± √13)/2. Corresponding y = 2x − 1 = 4 ± √13. Solution points: ((5+√13)/2 ; 4+√13) and ((5−√13)/2 ; 4−√13). A sign error while rearranging can give x² + 5x + 3 = 0 instead; miscalculating the discriminant as b² + 4ac gives √37 instead of √13; forgetting to double x when substituting back into y = 2x − 1 halves the y-values.',
     },
 
     // ── Q12 Hard — simultaneous equations, surd solutions ───────────────────
     {
       difficulty: 'Hard',
       question: 'Solve simultaneously: y = −x + 5 and y = x² − 2x − 3.',
-      answer: 'Substitute: −x + 5 = x² − 2x − 3.\nx² − x − 8 = 0.\nx = (1 ± √33) / 2.\nCorresponding y-values from y = −x + 5.\nSolution points: ((1 + √33)/2 ; (9 − √33)/2) and ((1 − √33)/2 ; (9 + √33)/2).',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: [
+        '((−1 + √33)/2 ; (11 − √33)/2) and ((−1 − √33)/2 ; (11 + √33)/2)',
+        'No real solutions — the discriminant is negative',
+        '((1 + √33)/2 ; (11 + √33)/2) and ((1 − √33)/2 ; (11 − √33)/2)',
+        '((1 + √33)/2 ; (9 − √33)/2) and ((1 − √33)/2 ; (9 + √33)/2)',
+      ],
+      correctIndex: 3,
+      explanation: 'Substitute −x + 5 = x² − 2x − 3, giving x² − x − 8 = 0. Using the quadratic formula: x = (1 ± √33)/2. Corresponding y = −x + 5 gives the paired values: ((1+√33)/2 ; (9−√33)/2) and ((1−√33)/2 ; (9+√33)/2). A sign error while rearranging can produce x² + x − 8 = 0 instead; using the wrong sign for c makes the discriminant negative with no real solution; and forgetting the negative sign in y = −x + 5 shifts every y-value.',
     },
 
     // ── Q13 Medium — quadratic formula ──────────────────────────────────────
     {
       difficulty: 'Medium',
       question: 'Solve x² + x − 12 = 0 using the quadratic formula.',
-      answer: 'x = 3 or x = −4',
       checkMode: 'auto',
-      correctAnswers: ['x=3 or x=-4', 'x = 3 or x = -4', 'x=-4 or x=3', 'x = -4 or x = 3', '3 or -4', '-4 or 3'],
-      explanation: 'a = 1, b = 1, c = −12. Discriminant: Δ = 1 + 48 = 49.\nx = (−1 ± 7) / 2.\nx = 3 or x = −4 ✓',
+      options: ['x = 3 or x = −4', 'x = 4 or x = −3', 'No real solutions — the discriminant is negative', 'x = 6 or x = −8'],
+      correctIndex: 0,
+      explanation: 'a = 1, b = 1, c = −12. Discriminant = 1 + 48 = 49. x = (−1 ± 7) / 2, giving x = 3 or x = −4. A sign error using +b instead of −b gives x = 4 or x = −3; miscalculating the discriminant as b² + 4ac gives a negative value; forgetting to divide by 2a (dividing by 1 instead) doubles both roots.',
     },
 
     // ── Q14 Hard — discriminant and nature of roots ──────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Amahle says every quadratic equation has two real solutions. Is she correct? Explain using the discriminant.',
-      answer: 'No — if the discriminant (b² − 4ac) is negative, there are no real solutions; if it equals zero, there is exactly one repeated real solution; only a positive discriminant gives two distinct real solutions.',
-      checkMode: 'self',
+      question: 'Amahle says every quadratic equation has two real solutions. Which statement correctly evaluates her claim?',
+      checkMode: 'auto',
+      options: [
+        'Yes — the quadratic formula always produces two values of x.',
+        'No — the number of real solutions depends on the discriminant: negative gives none, zero gives one repeated root, and only a positive discriminant gives two distinct real roots.',
+        'No — every quadratic has exactly one real solution, found using the vertex.',
+        'No — quadratics with a negative constant term c always have two real solutions, but a positive c never does.',
+      ],
+      correctIndex: 1,
+      explanation: 'The discriminant b² − 4ac determines the number of real roots: negative means no real solutions, zero means one repeated real solution, and positive means two distinct real solutions. Amahle is incorrect to assume there are always two.',
     },
 
     // ── Q15 Hard — inequality with repeated root ─────────────────────────────
     {
       difficulty: 'Hard',
       question: 'Solve x² − 6x + 9 ≤ 0, explaining what the discriminant tells us before solving.',
-      answer: 'Discriminant = 36 − 36 = 0 → one repeated root. Solving: (x − 3)² ≤ 0. Since a square is always ≥ 0, the only solution is x = 3 (where it equals exactly 0).',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: [
+        'No solution — a zero discriminant means the inequality can never be satisfied.',
+        'All real x, since (x − 3)² is always ≥ 0.',
+        'x = 3 only, since (x − 3)² ≥ 0 always, and it only equals 0 (satisfying ≤ 0) when x = 3.',
+        '3 ≤ x ≤ 9',
+      ],
+      correctIndex: 2,
+      explanation: 'Discriminant = 36 − 36 = 0, so there is one repeated root at x = 3, meaning x² − 6x + 9 = (x − 3)². Since a perfect square is always ≥ 0, the inequality (x − 3)² ≤ 0 is satisfied only where it equals exactly 0 — at x = 3.',
     },
 
     // ── Q16 Hard — rational inequality requiring rearrangement ───────────────
     {
       difficulty: 'Hard',
       question: 'Solve (2x − 1) / (x + 3) ≤ 2, being careful with the inequality direction when multiplying.',
-      answer: 'Rearrange first: (2x − 1)/(x + 3) − 2 ≤ 0.\nCombine fractions: [(2x − 1) − 2(x + 3)] / (x + 3) ≤ 0.\nSimplify numerator: (2x − 1 − 2x − 6) / (x + 3) = −7 / (x + 3) ≤ 0.\nSince −7 is always negative, we need (x + 3) > 0.\nSolution: x > −3.',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: [
+        'All real x except x = −3 (found by multiplying both sides by (x + 3) directly)',
+        'x < −3',
+        'x ≥ −3',
+        'x > −3',
+      ],
+      correctIndex: 3,
+      explanation: 'Rearranging first avoids the danger of multiplying by an expression of unknown sign: (2x − 1)/(x + 3) − 2 ≤ 0 combines to −7/(x + 3) ≤ 0. Since the numerator −7 is always negative, the fraction is ≤ 0 exactly when the denominator is positive, so x + 3 > 0, giving x > −3. Multiplying both sides by (x + 3) directly, without knowing its sign, is invalid and produces a false "always true" result.',
     },
 
     // ── Q17 Hard — simultaneous linear and quadratic ─────────────────────────
     {
       difficulty: 'Hard',
       question: 'Solve simultaneously: y = 3x − 4 and y = 2x² − 6x − 9, finding both intersection points.',
-      answer: 'x = 5, y = 11  or  x = −½, y = −5.5',
       checkMode: 'auto',
-      correctAnswers: ['x=5 or x=-1/2', 'x = 5 or x = -1/2', 'x=5 or x=-0.5', '(5,11) and (-0.5,-5.5)', '(5,11) and (-1/2,-5.5)'],
-      explanation: 'Substitute y = 3x − 4 into y = 2x² − 6x − 9:\n3x − 4 = 2x² − 6x − 9\n2x² − 9x − 5 = 0 → (2x + 1)(x − 5) = 0\nx = 5 or x = −½\nCorresponding y-values: y = 11 or y = −5.5.',
+      options: [
+        'x = 5, y = 11 or x = −1/2, y = −5.5',
+        'x = 1/2, y = −2.5 or x = −5, y = −19',
+        'x = 5, y = 11 or x = 1/2, y = −2.5',
+        'x = 5, y = 11 or x = −1/2, y = −4.5',
+      ],
+      correctIndex: 0,
+      explanation: 'Substitute y = 3x − 4 into y = 2x² − 6x − 9: 3x − 4 = 2x² − 6x − 9, giving 2x² − 9x − 5 = 0. Factorise: (2x + 1)(x − 5) = 0, so x = 5 or x = −1/2. Corresponding y-values from y = 3x − 4: y = 11 or y = −5.5. A sign error while rearranging can flip the middle term to give 2x² + 9x − 5 = 0 instead; dropping the negative sign on the fractional root, or miscalculating 3(−1/2) − 4, are other common slips.',
     },
 
     // ── Q18 Hard — nature of inequality solutions ────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Sipho says solving a quadratic inequality always gives a single continuous interval as the answer. Is this always true? Explain with an example.',
-      answer: 'No — for example x² − 4 > 0 gives two separate intervals (x < −2 or x > 2), not one continuous interval; this depends on whether the parabola opens upward or downward and the direction of the inequality.',
-      checkMode: 'self',
+      question: 'Sipho says solving a quadratic inequality always gives a single continuous interval as the answer. Which statement is correct?',
+      checkMode: 'auto',
+      options: [
+        'Yes — quadratic inequalities always produce one continuous interval, such as a < x < b.',
+        'No — for example, x² − 4 > 0 gives two separate intervals, x < −2 or x > 2, rather than one continuous interval. Whether the solution is one interval or two depends on the direction of the parabola and the inequality sign.',
+        'No — quadratic inequalities always produce two separate intervals, never one.',
+        'Yes, but only when the coefficient of x² is negative.',
+      ],
+      correctIndex: 1,
+      explanation: 'Whether a quadratic inequality gives one interval or two separate intervals depends on whether the inequality asks for the region between the roots (one interval, e.g. x² − 4 < 0 gives −2 < x < 2) or outside the roots (two intervals, e.g. x² − 4 > 0 gives x < −2 or x > 2). Sipho is wrong to claim it is always a single interval.',
     },
 
     // ── Q19 Hard — boundary points of inequality ─────────────────────────────
     {
       difficulty: 'Hard',
-      question: 'Solve x² + 3x − 10 = 0, then verify both solutions satisfy the inequality x² + 3x − 10 ≤ 0 only at these exact boundary points.',
-      answer: 'Factorise: (x + 5)(x − 2) = 0 → x = −5 or x = 2. These are the boundary points where x² + 3x − 10 = 0. The full inequality x² + 3x − 10 ≤ 0 holds between and including these points: −5 ≤ x ≤ 2.',
-      checkMode: 'self',
+      question: 'Solve x² + 3x − 10 = 0 to find the critical values, then give the complete solution set of x² + 3x − 10 ≤ 0.',
+      checkMode: 'auto',
+      options: ['x ≤ −5 or x ≥ 2', '−5 < x < 2', '−5 ≤ x ≤ 2', '2 ≤ x ≤ 5'],
+      correctIndex: 2,
+      explanation: 'Factorise: (x + 5)(x − 2) = 0, so the critical values are x = −5 and x = 2. Since the parabola opens upward, the expression is ≤ 0 between the roots, with the endpoints included because the inequality is ≤. Full solution: −5 ≤ x ≤ 2.',
     },
 
     // ── Q20 Hard — quadratic inequality in context ───────────────────────────
     {
       difficulty: 'Hard',
       question: 'A rectangular garden has length (x + 4) and width (x − 2), with area greater than 35 m². Find the possible range of x values, given that x > 2 for the dimensions to make sense.',
-      answer: '(x + 4)(x − 2) > 35\nx² + 2x − 8 > 35\nx² + 2x − 43 > 0\nUsing the quadratic formula: x = (−2 ± √(4 + 172)) / 2 = (−2 ± √176) / 2 = −1 ± √44.\nCritical values: x ≈ −7.63 or x ≈ 5.63.\nSince x > 2, the solution is x > −1 + √44 (approximately x > 5.63).',
-      checkMode: 'self',
+      checkMode: 'auto',
+      options: [
+        'x < −1 − √44 or x > −1 + √44',
+        'x > √43 (x ≈ 6.56 m)',
+        'No real solution — so no valid range of x exists.',
+        'x > −1 + √44 (x ≈ 5.63 m)',
+      ],
+      correctIndex: 3,
+      explanation: '(x + 4)(x − 2) > 35 expands to x² + 2x − 8 > 35, so x² + 2x − 43 > 0. Using the quadratic formula: x = (−2 ± √176)/2 = −1 ± √44. Since x > 2 is required for the dimensions to make sense, the negative branch (x < −1 − √44) must be discarded as it lies outside the valid domain. Solution: x > −1 + √44 (approximately x > 5.63). Forgetting the cross term when expanding, or making a sign error in the discriminant, are common mistakes here.',
     },
 
     // ── Q21 Hard — problem-solving: work backwards from equal-roots condition to find k ──
     {
       difficulty: 'Hard',
       question: 'The equation x² − kx + 9 = 0 has real, equal roots. Determine the value(s) of k.',
-      answer: 'k = 6 or k = −6',
       checkMode: 'auto',
-      correctAnswers: ['k=6 or k=-6', 'k = 6 or k = -6', 'k=-6 or k=6', 'k = -6 or k = 6', 'k=±6', 'k = ±6', '6 or -6', '-6 or 6'],
-      explanation: 'For real, equal roots, the discriminant must equal zero: b² − 4ac = 0.\nHere a = 1, b = −k, c = 9, so (−k)² − 4(1)(9) = 0.\nk² − 36 = 0 → k² = 36 → k = 6 or k = −6.\nCheck: k = 6 gives x² − 6x + 9 = (x − 3)² = 0 (one repeated root); k = −6 gives x² + 6x + 9 = (x + 3)² = 0 (one repeated root) ✓',
+      options: ['k = 6 or k = −6', 'k = 3 or k = −3', 'k = 6 only', 'No real value of k exists (k² = −36 has no real solution)'],
+      correctIndex: 0,
+      explanation: 'For real, equal roots the discriminant must be zero: b² − 4ac = 0. With a = 1, b = −k, c = 9: (−k)² − 4(1)(9) = 0, so k² − 36 = 0, giving k = 6 or k = −6. Forgetting the factor of 4 in 4ac gives k² − 9 = 0 (k = ±3 instead); forgetting the ± only gives one value; and flipping the sign of c gives an equation with no real solution.',
     },
 
     // ── Q22 Hard — problem-solving: synthesise systems + discriminant to find range of k ──
     {
       difficulty: 'Hard',
       question: 'For which value(s) of k will the line y = x + k not intersect the parabola y = x² + 3x + 5?',
-      answer: 'k < 4',
       checkMode: 'auto',
-      correctAnswers: ['k<4', 'k < 4'],
-      explanation: 'Substitute the line into the parabola: x + k = x² + 3x + 5.\nRearrange into standard form: x² + 2x + (5 − k) = 0.\nFor the line and parabola not to intersect, this equation must have no real solutions, so the discriminant must be negative: b² − 4ac < 0.\nHere a = 1, b = 2, c = 5 − k, so 4 − 4(5 − k) < 0 → 4 − 20 + 4k < 0 → 4k − 16 < 0.\nSolution: k < 4 ✓',
+      options: ['k > 4', 'k < 4', 'k > −4', 'k ≤ 4'],
+      correctIndex: 1,
+      explanation: 'Substitute the line into the parabola: x + k = x² + 3x + 5, giving x² + 2x + (5 − k) = 0. For the line and parabola not to intersect at all, this equation must have no real solutions, so the discriminant must be negative: 4 − 4(5 − k) < 0 → 4k − 16 < 0 → k < 4. A sign error while distributing the −4 can flip the inequality to k > −4; reversing the discriminant direction gives k > 4; and using ≤ instead of < incorrectly includes the tangent case (exactly one intersection point) as "no intersection."',
     },
   ],
 
@@ -758,38 +834,38 @@ export const topicData: TopicData = {
       name: 'Set 1',
       questions: [
         // Block A — Quadratic formula (positions 0-2)
-        { difficulty: 'Easy', question: 'Solve for x using the quadratic formula: x² + 2x − 8 = 0', answer: 'x=2 or x=-4', checkMode: 'auto', correctAnswers: ['x=2 or x=-4', 'x=-4 or x=2', '2 or -4', '-4 or 2'], explanation: 'a=1, b=2, c=−8. Discriminant = 4 − 4(1)(−8) = 4 + 32 = 36.\nx = (−2 ± 6) / 2.\nx = 2 or x = −4 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Solve for x using the quadratic formula: 2x² + 3x − 5 = 0', answer: 'x=1 or x=-5/2', checkMode: 'auto', correctAnswers: ['x=1 or x=-5/2', 'x=-5/2 or x=1', 'x=1 or x=-2.5', 'x=-2.5 or x=1'], explanation: 'a=2, b=3, c=−5. Discriminant = 9 − 4(2)(−5) = 9 + 40 = 49.\nx = (−3 ± 7) / 4.\nx = 1 or x = −5/2 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula: 3x² − 2x − 8 = 0', answer: 'x=2 or x=-4/3', checkMode: 'auto', correctAnswers: ['x=2 or x=-4/3', 'x=-4/3 or x=2'], explanation: 'a=3, b=−2, c=−8. Discriminant = 4 − 4(3)(−8) = 4 + 96 = 100.\nx = (2 ± 10) / 6.\nx = 2 or x = −4/3 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x using the quadratic formula: x² + 2x − 8 = 0', checkMode: 'auto', options: ['x = 2 or x = −4', 'x = 4 or x = −2', 'x = 4 or x = −8', 'No real solutions — the discriminant is negative'], correctIndex: 0, explanation: 'a = 1, b = 2, c = −8. Discriminant = 4 − 4(1)(−8) = 4 + 32 = 36. x = (−2 ± 6) / 2, giving x = 2 or x = −4. Using +b instead of −b gives x = 4 or x = −2; forgetting to divide by 2a (dividing by a instead) gives x = 4 or x = −8; treating c as positive gives a negative discriminant.' },
+        { difficulty: 'Easy-Medium', question: 'Solve for x using the quadratic formula: 2x² + 3x − 5 = 0', checkMode: 'auto', options: ['x = 5/2 or x = −1', 'x = 1 or x = −5/2', 'No real solutions — the discriminant is negative', 'x = 2 or x = −5'], correctIndex: 1, explanation: 'a = 2, b = 3, c = −5. Discriminant = 9 + 40 = 49. x = (−3 ± 7) / 4, giving x = 1 or x = −5/2. Using +b instead of −b gives x = 5/2 or x = −1; treating c as positive gives a negative discriminant; dividing by a instead of 2a gives x = 2 or x = −5.' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula: 3x² − 2x − 8 = 0', checkMode: 'auto', options: ['x = 4/3 or x = −2', 'No real solutions — the discriminant is negative', 'x = 2 or x = −4/3', 'x = 4 or x = −8/3'], correctIndex: 2, explanation: 'a = 3, b = −2, c = −8. Discriminant = 4 + 96 = 100. x = (2 ± 10) / 6, giving x = 2 or x = −4/3. Using the wrong sign for b gives x = 4/3 or x = −2; treating c as positive gives a negative discriminant; dividing by a instead of 2a gives x = 4 or x = −8/3.' },
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 4x − 3 = 0', answer: 'x=2+√7 or x=2-√7', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 4x + 1 = 0. State the discriminant before solving.', answer: 'a=1, b=4, c=1. Discriminant = 16 − 4(1)(1) = 12, which is positive but not a perfect square, so there are two distinct irrational (surd) roots.\nx = (−4 ± √12) / 2 = (−4 ± 2√3) / 2.\nx = −2 + √3 or x = −2 − √3.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 4x − 3 = 0', checkMode: 'auto', options: ['x = −2 + √7 or x = −2 − √7', 'x = 3 or x = 1', 'x = 4 + 2√7 or x = 4 − 2√7', 'x = 2 + √7 or x = 2 − √7'], correctIndex: 3, explanation: 'a = 1, b = −4, c = −3. Discriminant = 16 + 12 = 28. x = (4 ± √28) / 2 = (4 ± 2√7) / 2 = 2 ± √7. Using the wrong sign for b gives −2 ± √7; miscalculating the discriminant as b² + 4ac = 4 gives the clean-looking but incorrect x = 3 or x = 1; forgetting to divide the 2√7 term by 2 leaves 4 ± 2√7.' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 4x + 1 = 0', checkMode: 'auto', options: ['x = −2 + √3 or x = −2 − √3', 'x = 2 + √3 or x = 2 − √3', 'x = −2 + √5 or x = −2 − √5', 'x = −4 + 2√3 or x = −4 − 2√3'], correctIndex: 0, explanation: 'a = 1, b = 4, c = 1. Discriminant = 16 − 4(1)(1) = 12, positive but not a perfect square, giving surd roots. x = (−4 ± √12)/2 = (−4 ± 2√3)/2 = −2 ± √3. Using the wrong sign for b gives 2 ± √3; miscalculating the discriminant as b² + 4ac = 20 gives −2 ± √5; forgetting to halve the radical term leaves −4 ± 2√3.' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
-        { difficulty: 'Medium', question: 'Solve for x: √(2x + 3) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Square both sides: 2x + 3 = x².\nRearrange: x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0, so x = 3 or x = −1.\nCheck x = 3: √(2(3)+3) = √9 = 3 = 3 ✓ valid.\nCheck x = −1: √(2(−1)+3) = √1 = 1 ≠ −1, so x = −1 is extraneous (rejected).\nSolution: x = 3 only.' },
-        { difficulty: 'Medium', question: 'Solve for x: √(3x + 4) = x, checking for extraneous roots.', answer: 'x=4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Square both sides: 3x + 4 = x².\nRearrange: x² − 3x − 4 = 0 → (x − 4)(x + 1) = 0, so x = 4 or x = −1.\nCheck x = 4: √(3(4)+4) = √16 = 4 = 4 ✓ valid.\nCheck x = −1: √(3(−1)+4) = √1 = 1 ≠ −1, so x = −1 is extraneous (rejected).\nSolution: x = 4 only.' },
-        { difficulty: 'Hard', question: 'Solve for x: √(x + 7) = x − 5, checking carefully for extraneous roots.', answer: 'Square both sides: x + 7 = (x − 5)² = x² − 10x + 25.\nRearrange: x² − 11x + 18 = 0 → (x − 9)(x − 2) = 0, so x = 9 or x = 2.\nCheck x = 9: √16 = 4 and 9 − 5 = 4 ✓ valid.\nCheck x = 2: √9 = 3 but 2 − 5 = −3, and 3 ≠ −3, so x = 2 is extraneous (rejected — the square root can never equal a negative number).\nSolution: x = 9 only.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x: √(2x + 3) = x', checkMode: 'auto', options: ['x = 3 or x = −1', 'x = 3', 'x = −3', 'x = −1'], correctIndex: 1, explanation: 'Square both sides: 2x + 3 = x². Rearranged: x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0, so x = 3 or x = −1. Checking: x = 3 gives √9 = 3 ✓ valid; x = −1 gives √1 = 1 ≠ −1 ✗ extraneous — rejected. Forgetting to check for extraneous roots gives both values; forgetting to square altogether (treating the equation as linear) gives x = −3.' },
+        { difficulty: 'Medium', question: 'Solve for x: √(3x + 4) = x, checking for extraneous roots.', checkMode: 'auto', options: ['x = 4 or x = −1', 'x = −2', 'x = 4', 'x = −1'], correctIndex: 2, explanation: 'Square both sides: 3x + 4 = x². Rearranged: x² − 3x − 4 = 0 → (x − 4)(x + 1) = 0, so x = 4 or x = −1. Checking: x = 4 gives √16 = 4 ✓ valid; x = −1 gives √1 = 1 ≠ −1 ✗ extraneous — rejected. Forgetting to check for extraneous roots keeps both values; forgetting to square (treating it as linear) gives x = −2; keeping only the extraneous root gives x = −1.' },
+        { difficulty: 'Hard', question: 'Solve for x: √(x + 7) = x − 5, checking carefully for extraneous roots.', checkMode: 'auto', options: ['x = 9 or x = 2', 'x = 2', 'No real solutions (from incorrectly expanding (x − 5)² as x² + 25)', 'x = 9'], correctIndex: 3, explanation: 'Square both sides: x + 7 = (x − 5)² = x² − 10x + 25. Rearranged: x² − 11x + 18 = 0 → (x − 9)(x − 2) = 0, so x = 9 or x = 2. Checking: x = 9 gives √16 = 4 = 9 − 5 ✓ valid; x = 2 gives √9 = 3 but 2 − 5 = −3 ✗ extraneous — rejected (a square root can never equal a negative number). Forgetting to check both roots keeps the extraneous x = 2; incorrectly expanding (x − 5)² as x² + 25 gives no real solution at all.' },
 
         // Block D — Exponential equations (positions 8-10)
-        { difficulty: 'Easy', question: 'Solve for x: 2^x = 32', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Write 32 as a power of 2: 32 = 2⁵.\nSo 2^x = 2⁵, which means x = 5 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: 2^(x+1) = 64', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Write 64 as a power of 2: 64 = 2⁶.\nSo 2^(x+1) = 2⁶, which means x + 1 = 6, so x = 5 ✓' },
-        { difficulty: 'Hard', question: 'Solve for x: 2^(2x) − 5 · 2^x + 4 = 0', answer: 'x=0 or x=2', checkMode: 'auto', correctAnswers: ['x=0 or x=2', 'x=2 or x=0'], explanation: 'Let y = 2^x, so 2^(2x) = y². The equation becomes y² − 5y + 4 = 0.\nFactorise: (y − 1)(y − 4) = 0, so y = 1 or y = 4.\nSubstitute back: 2^x = 1 → x = 0. &nbsp; 2^x = 4 = 2² → x = 2.\nSolution: x = 0 or x = 2 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: 2^x = 32', checkMode: 'auto', options: ['x = 5', 'x = 6', 'x = 4', 'x = 16'], correctIndex: 0, explanation: 'Write 32 as a power of 2: 32 = 2⁵. So 2^x = 2⁵, meaning x = 5. Misremembering the power of 2 (thinking 2⁶ = 32 or 2⁴ = 32) gives x = 6 or x = 4; dividing 32 by 2 instead of converting to the same base gives x = 16.' },
+        { difficulty: 'Medium', question: 'Solve for x: 2^(x+1) = 64', checkMode: 'auto', options: ['x = 6', 'x = 5', 'x = 4', 'x = 7'], correctIndex: 1, explanation: 'Write 64 as a power of 2: 64 = 2⁶. So 2^(x+1) = 2⁶, meaning x + 1 = 6, so x = 5. Forgetting to subtract 1 after equating exponents gives x = 6; misremembering 64 as 2⁵ gives x = 4; adding instead of subtracting 1 gives x = 7.' },
+        { difficulty: 'Hard', question: 'Solve for x: 2^(2x) − 5 · 2^x + 4 = 0', checkMode: 'auto', options: ['x = 1 (repeated root, from incorrectly factoring y² − 5y + 4 as (y − 2)²)', 'y = 1 or y = 4 (forgot to convert back to x)', 'x = 0 or x = 2', 'x = 0 only (rejecting y = 4 by mistake)'], correctIndex: 2, explanation: 'Let y = 2^x, so the equation becomes y² − 5y + 4 = 0. Factorise: (y − 1)(y − 4) = 0, so y = 1 or y = 4. Substituting back: 2^x = 1 → x = 0, and 2^x = 4 → x = 2. Misfactoring the quadratic as a perfect square gives a repeated root; forgetting the final substitution step leaves the answer in terms of y; incorrectly rejecting one of the valid y-values loses a solution.' },
 
         // Block E — Quadratic inequalities (positions 11-13)
-        { difficulty: 'Easy', question: 'Solve for x: x² − 25 ≥ 0', answer: 'x≤-5 or x≥5', checkMode: 'auto', correctAnswers: ['x≤-5 or x≥5', 'x<=-5 or x>=5', 'x≥5 or x≤-5'], explanation: 'Critical values: x² − 25 = 0 → x = −5 or x = 5.\nSince the expression is a upward parabola, it is ≥ 0 outside the roots (endpoints included since ≥).\nSolution: x ≤ −5 or x ≥ 5.' },
-        { difficulty: 'Medium', question: 'Solve for x: x² − x − 12 ≤ 0', answer: '-3≤x≤4', checkMode: 'auto', correctAnswer: '-3≤x≤4', correctAnswers: ['-3≤x≤4', '-3 <= x <= 4', '[-3,4]'], explanation: 'Critical values: (x − 4)(x + 3) = 0 → x = 4 or x = −3.\nSince the parabola opens upward, it is ≤ 0 between the roots (endpoints included since ≤).\nSolution: −3 ≤ x ≤ 4.' },
-        { difficulty: 'Hard', question: 'Solve for x: 2x² − x − 6 > 0', answer: 'x<-3/2 or x>2', checkMode: 'auto', correctAnswers: ['x<-3/2 or x>2', 'x>2 or x<-3/2', 'x<-1.5 or x>2'], explanation: 'Factorise: (2x + 3)(x − 2) > 0. Critical values: x = −3/2 or x = 2.\nSince the parabola opens upward, it is > 0 outside the roots (endpoints excluded since strict).\nSolution: x < −3/2 or x > 2.' },
+        { difficulty: 'Easy', question: 'Solve for x: x² − 25 ≥ 0', checkMode: 'auto', options: ['−5 ≤ x ≤ 5', 'x < −5 or x > 5', 'x ≥ 5 only', 'x ≤ −5 or x ≥ 5'], correctIndex: 3, explanation: 'Critical values: x² − 25 = 0 → x = −5 or x = 5. Since the expression is an upward parabola, it is ≥ 0 outside the roots, with endpoints included because the inequality is ≥. Solution: x ≤ −5 or x ≥ 5. Choosing the interval between the roots, excluding the endpoints, or missing the negative branch are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: x² − x − 12 ≤ 0', checkMode: 'auto', options: ['−3 ≤ x ≤ 4', 'x ≤ −3 or x ≥ 4', '−3 < x < 4', '−4 ≤ x ≤ 3'], correctIndex: 0, explanation: 'Critical values: (x − 4)(x + 3) = 0 → x = 4 or x = −3. Since the parabola opens upward, the expression is ≤ 0 between the roots, with endpoints included. Solution: −3 ≤ x ≤ 4. Choosing the outside interval, dropping the endpoints, or swapping the critical values are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve for x: 2x² − x − 6 > 0', checkMode: 'auto', options: ['−3/2 < x < 2', 'x < −3/2 or x > 2', 'x ≤ −3/2 or x ≥ 2', 'x < −2 or x > 3/2'], correctIndex: 1, explanation: 'Factorise: (2x + 3)(x − 2) > 0. Critical values: x = −3/2 or x = 2. Since the parabola opens upward, the expression is > 0 outside the roots, with endpoints excluded since strict. Solution: x < −3/2 or x > 2. Choosing the interval between the roots, wrongly including the endpoints, or swapping the two critical values are common mistakes.' },
 
         // Block F — Simultaneous linear-quadratic systems (positions 14-16)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = 2x − 1 and y = x² − 4', answer: 'x=3,y=5 or x=-1,y=-3', checkMode: 'auto', correctAnswers: ['x=3,y=5 or x=-1,y=-3', 'x=-1,y=-3 or x=3,y=5'], explanation: 'Set 2x − 1 = x² − 4, so x² − 2x − 3 = 0.\nFactorise: (x − 3)(x + 1) = 0, so x = 3 or x = −1.\nWhen x = 3: y = 2(3) − 1 = 5. When x = −1: y = 2(−1) − 1 = −3.\nCheck: 3² − 4 = 5 ✓ and (−1)² − 4 = −3 ✓' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: y = x + 3 and y = x² − x − 2', answer: 'From the first equation substitute into the second: x + 3 = x² − x − 2.\nRearrange: x² − 2x − 5 = 0.\nUsing the quadratic formula: x = (2 ± √(4 + 20)) / 2 = (2 ± √24) / 2 = 1 ± √6.\nWhen x = 1 + √6: y = (1 + √6) + 3 = 4 + √6. When x = 1 − √6: y = (1 − √6) + 3 = 4 − √6.\nSolution points: (1 + √6 ; 4 + √6) and (1 − √6 ; 4 − √6).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: y = x + 6 and y = x² + 2x', answer: 'x=-3,y=3 or x=2,y=8', checkMode: 'auto', correctAnswers: ['x=-3,y=3 or x=2,y=8', 'x=2,y=8 or x=-3,y=3'], explanation: 'Set x + 6 = x² + 2x, so x² + x − 6 = 0.\nFactorise: (x + 3)(x − 2) = 0, so x = −3 or x = 2.\nWhen x = −3: y = −3 + 6 = 3. When x = 2: y = 2 + 6 = 8.\nCheck: (−3)² + 2(−3) = 9 − 6 = 3 ✓ and (2)² + 2(2) = 4 + 4 = 8 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = 2x − 1 and y = x² − 4', checkMode: 'auto', options: ['(−3, −7) and (1, 1)', '(3, 6) and (−1, −2)', '(3, 5) and (−1, −3)', 'x = 3 or x = −1 (y-values not found)'], correctIndex: 2, explanation: 'Substitute y = 2x − 1 into y = x² − 4: 2x − 1 = x² − 4, giving x² − 2x − 3 = 0. Factorise: (x − 3)(x + 1) = 0, so x = 3 or x = −1. Corresponding y = 2x − 1 gives y = 5 or y = −3. A sign error while rearranging can give x² + 2x − 3 = 0 instead; forgetting to subtract 1 when finding y gives (3, 6) and (−1, −2); stopping after finding x leaves the answer incomplete.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: y = x + 3 and y = x² − x − 2', checkMode: 'auto', options: ['(−1 + √6 ; 2 + √6) and (−1 − √6 ; 2 − √6)', 'No real solution — the discriminant is negative', '(1 + √6 ; 1 + √6) and (1 − √6 ; 1 − √6)', '(1 + √6 ; 4 + √6) and (1 − √6 ; 4 − √6)'], correctIndex: 3, explanation: 'Substitute: x + 3 = x² − x − 2, giving x² − 2x − 5 = 0. Using the quadratic formula: x = (2 ± √24)/2 = 1 ± √6. Corresponding y = x + 3 gives y = 4 ± √6. A sign error while rearranging can give x² + 2x − 5 = 0 instead; miscalculating the discriminant gives a false "no real solution"; forgetting to add 3 when finding y leaves y equal to x itself.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: y = x + 6 and y = x² + 2x', checkMode: 'auto', options: ['(3, 9) and (−2, 4)', '(−3, −3) and (2, 2)', 'x = 2, y = 8 only', '(−3, 3) and (2, 8)'], correctIndex: 3, explanation: 'Substitute y = x + 6 into y = x² + 2x: x + 6 = x² + 2x, giving x² + x − 6 = 0. Factorise: (x + 3)(x − 2) = 0, so x = −3 or x = 2. Corresponding y = x + 6 gives y = 3 or y = 8. A sign error while rearranging can give x² − x − 6 = 0 instead; forgetting to add 6 when finding y gives (−3, −3) and (2, 2); reporting only one intersection point misses that a line can cross a parabola twice.' },
 
         // Block G — Conceptual reasoning questions (positions 17-19)
-        { difficulty: 'Hard', question: 'Thabo solves √(x − 2) = −3 and says there is no solution. Is he correct? Explain.', answer: 'Yes, Thabo is correct. The square root symbol always denotes the non-negative square root, so √(x − 2) can never equal a negative number such as −3. Squaring both sides would give x − 2 = 9, so x = 11, but substituting back gives √9 = 3, not −3, confirming this is an extraneous solution and the equation truly has no solution.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Amahle says the equation 3^(2x) − 4 · 3^x + 3 = 0 cannot be solved because it is not a normal quadratic. Show her method to solve it and find x.', answer: 'Let y = 3^x, so 3^(2x) = y². The equation becomes y² − 4y + 3 = 0.\nFactorise: (y − 1)(y − 3) = 0, so y = 1 or y = 3.\nSubstitute back: 3^x = 1 → x = 0. &nbsp; 3^x = 3 → x = 1.\nSolution: x = 0 or x = 1.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Sipho solves x² − x − 12 ≤ 0 and writes his final answer as x ≤ 4. Explain what is wrong with his answer and give the correct solution.', answer: 'Sipho is missing part of the solution — a quadratic inequality of this type is bounded between the two critical values, not just below the larger one. The critical values are x = 4 and x = −3 (from (x − 4)(x + 3) = 0). Since the parabola opens upward, the expression is ≤ 0 only between the roots. The correct solution is −3 ≤ x ≤ 4.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Thabo solves √(x − 2) = −3 and says there is no solution. Which statement correctly evaluates his claim?', checkMode: 'auto', options: ['No — he is incorrect; squaring both sides gives x − 2 = 9, so x = 11 is a valid solution.', 'Yes, he is correct — the square root symbol always denotes the non-negative root, so √(x − 2) can never equal −3, meaning the equation truly has no solution.', 'No — the equation actually has two solutions, x = 11 and x = −7.', 'Yes, but only because the expression inside the root is x − 2 rather than x + 2.'], correctIndex: 1, explanation: 'The square root symbol always denotes the non-negative square root, so √(x − 2) can never equal a negative number such as −3. Squaring both sides gives x − 2 = 9, so x = 11, but substituting back gives √9 = 3, not −3 — confirming this is an extraneous solution and the equation truly has no solution. Thabo is correct.' },
+        { difficulty: 'Hard', question: 'Amahle says the equation 3^(2x) − 4 · 3^x + 3 = 0 cannot be solved because it is not a normal quadratic. Which is the correct solution, found using the substitution y = 3^x?', checkMode: 'auto', options: ['x = 0 only (y = 3 mistakenly rejected)', 'No solution — 3^x can never be negative', 'x = 0 or x = 1', 'y = 1 or y = 3 (the substitution was never converted back to x)'], correctIndex: 2, explanation: 'Amahle is incorrect — the substitution y = 3^x turns the equation into an ordinary quadratic: y² − 4y + 3 = 0. Factorise: (y − 1)(y − 3) = 0, so y = 1 or y = 3. Both are valid since 3^x is always positive. Substituting back: 3^x = 1 → x = 0, and 3^x = 3 → x = 1.' },
+        { difficulty: 'Hard', question: 'Sipho solves x² − x − 12 ≤ 0 and writes his final answer as x ≤ 4. Which statement correctly evaluates his answer, and what is the correct solution?', checkMode: 'auto', options: ['Correct — x ≤ 4 is the complete solution.', 'Incorrect — the correct solution is x ≤ −3.', 'Incorrect — the correct solution is x < −3 or x > 4.', 'Incorrect — he is missing the lower bound; the critical values are x = 4 and x = −3, and since the parabola opens upward the expression is ≤ 0 only between them, so the correct solution is −3 ≤ x ≤ 4.'], correctIndex: 3, explanation: 'The critical values are x = 4 and x = −3 (from (x − 4)(x + 3) = 0). Since the parabola opens upward, the expression is ≤ 0 only between the roots, not below just one of them. Sipho found one boundary but omitted the lower bound, so the correct, complete solution is −3 ≤ x ≤ 4.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered the quadratic formula, surd equations, exponential equations, quadratic inequalities, and simultaneous systems.' },
@@ -806,38 +882,38 @@ export const topicData: TopicData = {
       name: 'Set 2',
       questions: [
         // Block A — Quadratic formula (positions 0-2)
-        { difficulty: 'Easy', question: 'Solve for x using the quadratic formula: x² + 3x − 10 = 0', answer: 'x=2 or x=-5', checkMode: 'auto', correctAnswers: ['x=2 or x=-5', 'x=-5 or x=2', '2 or -5', '-5 or 2'], explanation: 'a=1, b=3, c=−10. Discriminant = 9 − 4(1)(−10) = 9 + 40 = 49.\nx = (−3 ± 7) / 2.\nx = 2 or x = −5 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Solve for x using the quadratic formula: 3x² + 2x − 8 = 0', answer: 'x=4/3 or x=-2', checkMode: 'auto', correctAnswers: ['x=4/3 or x=-2', 'x=-2 or x=4/3'], explanation: 'a=3, b=2, c=−8. Discriminant = 4 − 4(3)(−8) = 4 + 96 = 100.\nx = (−2 ± 10) / 6.\nx = 4/3 or x = −2 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula: 2x² − x − 6 = 0', answer: 'x=2 or x=-3/2', checkMode: 'auto', correctAnswers: ['x=2 or x=-3/2', 'x=-3/2 or x=2', 'x=2 or x=-1.5', 'x=-1.5 or x=2'], explanation: 'a=2, b=−1, c=−6. Discriminant = 1 − 4(2)(−6) = 1 + 48 = 49.\nx = (1 ± 7) / 4.\nx = 2 or x = −3/2 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x using the quadratic formula: x² + 3x − 10 = 0', checkMode: 'auto', options: ['x = 2 or x = −5', 'x = 5 or x = −2', 'x = 4 or x = −10', 'No real solutions — the discriminant is negative'], correctIndex: 0, explanation: 'a = 1, b = 3, c = −10. Discriminant = 9 + 40 = 49. x = (−3 ± 7) / 2, giving x = 2 or x = −5. Using +b instead of −b gives x = 5 or x = −2; dividing by a instead of 2a gives x = 4 or x = −10; treating c as positive gives a negative discriminant.' },
+        { difficulty: 'Easy-Medium', question: 'Solve for x using the quadratic formula: 3x² + 2x − 8 = 0', checkMode: 'auto', options: ['x = 2 or x = −4/3', 'x = 4/3 or x = −2', 'No real solutions — the discriminant is negative', 'x = 8/3 or x = −4'], correctIndex: 1, explanation: 'a = 3, b = 2, c = −8. Discriminant = 4 + 96 = 100. x = (−2 ± 10) / 6, giving x = 4/3 or x = −2. Using +b instead of −b gives x = 2 or x = −4/3; treating c as positive gives a negative discriminant; dividing by a instead of 2a gives x = 8/3 or x = −4.' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula: 2x² − x − 6 = 0', checkMode: 'auto', options: ['x = 3/2 or x = −2', 'No real solutions — the discriminant is negative', 'x = 2 or x = −3/2', 'x = 4 or x = −3'], correctIndex: 2, explanation: 'a = 2, b = −1, c = −6. Discriminant = 1 + 48 = 49. x = (1 ± 7) / 4, giving x = 2 or x = −3/2. Using the wrong sign for b gives x = 3/2 or x = −2; treating c as positive gives a negative discriminant; dividing by a instead of 2a gives x = 4 or x = −3.' },
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 2x − 9 = 0', answer: 'x=1+√10 or x=1-√10', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 6x + 4 = 0. State the discriminant before solving.', answer: 'a=1, b=−6, c=4. Discriminant = 36 − 4(1)(4) = 20, which is positive but not a perfect square, so there are two distinct irrational (surd) roots.\nx = (6 ± √20) / 2 = (6 ± 2√5) / 2.\nx = 3 + √5 or x = 3 − √5.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 2x − 9 = 0', checkMode: 'auto', options: ['x = −1 + √10 or x = −1 − √10', 'No real solutions — the discriminant is negative', 'x = 2 + 2√10 or x = 2 − 2√10', 'x = 1 + √10 or x = 1 − √10'], correctIndex: 3, explanation: 'a = 1, b = −2, c = −9. Discriminant = 4 + 36 = 40. x = (2 ± √40)/2 = (2 ± 2√10)/2 = 1 ± √10. Using the wrong sign for b gives −1 ± √10; treating c as positive gives a negative discriminant; forgetting to halve the radical term leaves 2 ± 2√10.' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² − 6x + 4 = 0', checkMode: 'auto', options: ['x = 3 + √5 or x = 3 − √5', 'x = −3 + √5 or x = −3 − √5', 'x = 3 + √13 or x = 3 − √13', 'x = 6 + 2√5 or x = 6 − 2√5'], correctIndex: 0, explanation: 'a = 1, b = −6, c = 4. Discriminant = 36 − 16 = 20, positive but not a perfect square, giving surd roots. x = (6 ± √20)/2 = (6 ± 2√5)/2 = 3 ± √5. Using the wrong sign for b gives −3 ± √5; miscalculating the discriminant as b² + 4ac = 52 gives 3 ± √13; forgetting to halve the radical term leaves 6 ± 2√5.' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
-        { difficulty: 'Medium', question: 'Solve for x: √(x + 6) = x', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Square both sides: x + 6 = x².\nRearrange: x² − x − 6 = 0 → (x − 3)(x + 2) = 0, so x = 3 or x = −2.\nCheck x = 3: √(3+6) = √9 = 3 = 3 ✓ valid.\nCheck x = −2: √(−2+6) = √4 = 2 ≠ −2, so x = −2 is extraneous (rejected).\nSolution: x = 3 only.' },
-        { difficulty: 'Medium', question: 'Solve for x: √(4x + 5) = x, checking for extraneous roots.', answer: 'x=5', checkMode: 'auto', correctAnswer: 'x=5', correctAnswers: ['x=5', 'x = 5', '5'], explanation: 'Square both sides: 4x + 5 = x².\nRearrange: x² − 4x − 5 = 0 → (x − 5)(x + 1) = 0, so x = 5 or x = −1.\nCheck x = 5: √(4(5)+5) = √25 = 5 = 5 ✓ valid.\nCheck x = −1: √(4(−1)+5) = √1 = 1 ≠ −1, so x = −1 is extraneous (rejected).\nSolution: x = 5 only.' },
-        { difficulty: 'Hard', question: 'Solve for x: √(x + 6) = x − 6, checking carefully for extraneous roots.', answer: 'Square both sides: x + 6 = (x − 6)² = x² − 12x + 36.\nRearrange: x² − 13x + 30 = 0 → (x − 10)(x − 3) = 0, so x = 10 or x = 3.\nCheck x = 10: √16 = 4 and 10 − 6 = 4 ✓ valid.\nCheck x = 3: √9 = 3 but 3 − 6 = −3, and 3 ≠ −3, so x = 3 is extraneous (rejected — the square root can never equal a negative number).\nSolution: x = 10 only.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x: √(x + 6) = x', checkMode: 'auto', options: ['x = 3 or x = −2', 'x = 3', 'No solution (from forgetting to square before solving)', 'x = −2'], correctIndex: 1, explanation: 'Square both sides: x + 6 = x². Rearranged: x² − x − 6 = 0 → (x − 3)(x + 2) = 0, so x = 3 or x = −2. Checking: x = 3 gives √9 = 3 ✓ valid; x = −2 gives √4 = 2 ≠ −2 ✗ extraneous — rejected. Forgetting to check for extraneous roots keeps both values; forgetting to square at all leads to a false "no solution."' },
+        { difficulty: 'Medium', question: 'Solve for x: √(4x + 5) = x, checking for extraneous roots.', checkMode: 'auto', options: ['x = 5 or x = −1', 'x = −5/3', 'x = 5', 'x = −1'], correctIndex: 2, explanation: 'Square both sides: 4x + 5 = x². Rearranged: x² − 4x − 5 = 0 → (x − 5)(x + 1) = 0, so x = 5 or x = −1. Checking: x = 5 gives √25 = 5 ✓ valid; x = −1 gives √1 = 1 ≠ −1 ✗ extraneous — rejected. Forgetting to check for extraneous roots keeps both values; forgetting to square at all gives x = −5/3.' },
+        { difficulty: 'Hard', question: 'Solve for x: √(x + 6) = x − 6, checking carefully for extraneous roots.', checkMode: 'auto', options: ['x = 10 or x = 3', 'x = 3', 'No real solutions (from incorrectly expanding (x − 6)² as x² + 36)', 'x = 10'], correctIndex: 3, explanation: 'Square both sides: x + 6 = (x − 6)² = x² − 12x + 36. Rearranged: x² − 13x + 30 = 0 → (x − 10)(x − 3) = 0, so x = 10 or x = 3. Checking: x = 10 gives √16 = 4 = 10 − 6 ✓ valid; x = 3 gives √9 = 3 but 3 − 6 = −3 ✗ extraneous — rejected. Forgetting to check both roots keeps the extraneous x = 3; incorrectly expanding (x − 6)² by dropping the middle term gives no real solution at all.' },
 
         // Block D — Exponential equations (positions 8-10)
-        { difficulty: 'Easy', question: 'Solve for x: 3^x = 81', answer: 'x=4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Write 81 as a power of 3: 81 = 3⁴.\nSo 3^x = 3⁴, which means x = 4 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: 3^(x-1) = 27', answer: 'x=4', checkMode: 'auto', correctAnswer: 'x=4', correctAnswers: ['x=4', 'x = 4', '4'], explanation: 'Write 27 as a power of 3: 27 = 3³.\nSo 3^(x−1) = 3³, which means x − 1 = 3, so x = 4 ✓' },
-        { difficulty: 'Hard', question: 'Solve for x: 3^(2x) − 4 · 3^x + 3 = 0', answer: 'x=0 or x=1', checkMode: 'auto', correctAnswers: ['x=0 or x=1', 'x=1 or x=0'], explanation: 'Let y = 3^x, so 3^(2x) = y². The equation becomes y² − 4y + 3 = 0.\nFactorise: (y − 1)(y − 3) = 0, so y = 1 or y = 3.\nSubstitute back: 3^x = 1 → x = 0. &nbsp; 3^x = 3 → x = 1.\nSolution: x = 0 or x = 1 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: 3^x = 81', checkMode: 'auto', options: ['x = 4', 'x = 3', 'x = 5', 'x = 27'], correctIndex: 0, explanation: 'Write 81 as a power of 3: 81 = 3⁴. So 3^x = 3⁴, meaning x = 4. Misremembering the power of 3 (thinking 3³ = 81 or 3⁵ = 81) gives x = 3 or x = 5; dividing 81 by 3 instead of converting to the same base gives x = 27.' },
+        { difficulty: 'Medium', question: 'Solve for x: 3^(x-1) = 27', checkMode: 'auto', options: ['x = 3', 'x = 4', 'x = 5', 'x = 2'], correctIndex: 1, explanation: 'Write 27 as a power of 3: 27 = 3³. So 3^(x−1) = 3³, meaning x − 1 = 3, so x = 4. Forgetting to add 1 back after equating exponents gives x = 3; misremembering 27 as 3⁴ gives x = 5; subtracting instead of adding gives x = 2.' },
+        { difficulty: 'Hard', question: 'Solve for x: 3^(2x) − 4 · 3^x + 3 = 0', checkMode: 'auto', options: ['x = 0 only (y = 3 mistakenly rejected)', 'y = 1 or y = 3 (never converted back to x)', 'x = 0 or x = 1', 'No solution — both y-values would need to be negative'], correctIndex: 2, explanation: 'Let y = 3^x, so the equation becomes y² − 4y + 3 = 0. Factorise: (y − 1)(y − 3) = 0, so y = 1 or y = 3 — both valid since 3^x is always positive. Substituting back: 3^x = 1 → x = 0, and 3^x = 3 → x = 1. Misfactoring the quadratic, forgetting the final substitution step, or wrongly assuming a sign error in the setup are common mistakes.' },
 
         // Block E — Quadratic inequalities (positions 11-13)
-        { difficulty: 'Easy', question: 'Solve for x: x² − 36 ≥ 0', answer: 'x≤-6 or x≥6', checkMode: 'auto', correctAnswers: ['x≤-6 or x≥6', 'x<=-6 or x>=6', 'x≥6 or x≤-6'], explanation: 'Critical values: x² − 36 = 0 → x = −6 or x = 6.\nSince the expression is an upward parabola, it is ≥ 0 outside the roots (endpoints included since ≥).\nSolution: x ≤ −6 or x ≥ 6.' },
-        { difficulty: 'Medium', question: 'Solve for x: x² − 2x − 15 ≤ 0', answer: '-3≤x≤5', checkMode: 'auto', correctAnswer: '-3≤x≤5', correctAnswers: ['-3≤x≤5', '-3 <= x <= 5', '[-3,5]'], explanation: 'Critical values: (x − 5)(x + 3) = 0 → x = 5 or x = −3.\nSince the parabola opens upward, it is ≤ 0 between the roots (endpoints included since ≤).\nSolution: −3 ≤ x ≤ 5.' },
-        { difficulty: 'Hard', question: 'Solve for x: 3x² + x − 4 > 0', answer: 'x<-4/3 or x>1', checkMode: 'auto', correctAnswers: ['x<-4/3 or x>1', 'x>1 or x<-4/3'], explanation: 'Factorise: (3x + 4)(x − 1) > 0. Critical values: x = −4/3 or x = 1.\nSince the parabola opens upward, it is > 0 outside the roots (endpoints excluded since strict).\nSolution: x < −4/3 or x > 1.' },
+        { difficulty: 'Easy', question: 'Solve for x: x² − 36 ≥ 0', checkMode: 'auto', options: ['−6 ≤ x ≤ 6', 'x < −6 or x > 6', 'x ≥ 6 only', 'x ≤ −6 or x ≥ 6'], correctIndex: 3, explanation: 'Critical values: x² − 36 = 0 → x = −6 or x = 6. Since the expression is an upward parabola, it is ≥ 0 outside the roots, with endpoints included. Solution: x ≤ −6 or x ≥ 6. Choosing the interval between the roots, excluding the endpoints, or missing the negative branch are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: x² − 2x − 15 ≤ 0', checkMode: 'auto', options: ['−3 ≤ x ≤ 5', 'x ≤ −3 or x ≥ 5', '−3 < x < 5', '−5 ≤ x ≤ 3'], correctIndex: 0, explanation: 'Critical values: (x − 5)(x + 3) = 0 → x = 5 or x = −3. Since the parabola opens upward, the expression is ≤ 0 between the roots, with endpoints included. Solution: −3 ≤ x ≤ 5. Choosing the outside interval, dropping the endpoints, or swapping the critical values are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve for x: 3x² + x − 4 > 0', checkMode: 'auto', options: ['−4/3 < x < 1', 'x < −4/3 or x > 1', 'x ≤ −4/3 or x ≥ 1', 'x < −1 or x > 4/3'], correctIndex: 1, explanation: 'Factorise: (3x + 4)(x − 1) > 0. Critical values: x = −4/3 or x = 1. Since the parabola opens upward, the expression is > 0 outside the roots, with endpoints excluded. Solution: x < −4/3 or x > 1. Choosing the interval between the roots, wrongly including the endpoints, or swapping the two critical values are common mistakes.' },
 
         // Block F — Simultaneous linear-quadratic systems (positions 14-16)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = 3x − 2 and y = x² − 2x − 2', answer: 'x=0,y=-2 or x=5,y=13', checkMode: 'auto', correctAnswers: ['x=0,y=-2 or x=5,y=13', 'x=5,y=13 or x=0,y=-2'], explanation: 'Set 3x − 2 = x² − 2x − 2, so x² − 5x = 0.\nFactorise: x(x − 5) = 0, so x = 0 or x = 5.\nWhen x = 0: y = 3(0) − 2 = −2. When x = 5: y = 3(5) − 2 = 13.\nCheck: 0² − 2(0) − 2 = −2 ✓ and 5² − 2(5) − 2 = 13 ✓' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: y = x + 2 and y = x² − 3x − 4', answer: 'From the first equation substitute into the second: x + 2 = x² − 3x − 4.\nRearrange: x² − 4x − 6 = 0.\nUsing the quadratic formula: x = (4 ± √(16 + 24)) / 2 = (4 ± √40) / 2 = 2 ± √10.\nWhen x = 2 + √10: y = (2 + √10) + 2 = 4 + √10. When x = 2 − √10: y = (2 − √10) + 2 = 4 − √10.\nSolution points: (2 + √10 ; 4 + √10) and (2 − √10 ; 4 − √10).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: y = 4x − 3 and y = x² − x − 3', answer: 'x=0,y=-3 or x=5,y=17', checkMode: 'auto', correctAnswers: ['x=0,y=-3 or x=5,y=17', 'x=5,y=17 or x=0,y=-3'], explanation: 'Set 4x − 3 = x² − x − 3, so x² − 5x = 0.\nFactorise: x(x − 5) = 0, so x = 0 or x = 5.\nWhen x = 0: y = 4(0) − 3 = −3. When x = 5: y = 4(5) − 3 = 17.\nCheck: 0² − 0 − 3 = −3 ✓ and 5² − 5 − 3 = 17 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = 3x − 2 and y = x² − 2x − 2', checkMode: 'auto', options: ['(0, −2) and (−5, −17)', '(0, 0) and (5, 15)', '(0, −2) and (5, 13)', 'x = 5, y = 13 only'], correctIndex: 2, explanation: 'Substitute y = 3x − 2 into y = x² − 2x − 2: 3x − 2 = x² − 2x − 2, giving x² − 5x = 0. Factorise: x(x − 5) = 0, so x = 0 or x = 5. Corresponding y = 3x − 2 gives y = −2 or y = 13. A sign error while rearranging can give x² + 5x = 0 instead; forgetting to subtract 2 when finding y gives (0, 0) and (5, 15); reporting only one intersection point misses the second.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: y = x + 2 and y = x² − 3x − 4', checkMode: 'auto', options: ['(−2 + √10 ; √10) and (−2 − √10 ; −√10)', 'No real solution — the discriminant is negative', '(2 + √10 ; 2 + √10) and (2 − √10 ; 2 − √10)', '(2 + √10 ; 4 + √10) and (2 − √10 ; 4 − √10)'], correctIndex: 3, explanation: 'Substitute: x + 2 = x² − 3x − 4, giving x² − 4x − 6 = 0. Using the quadratic formula: x = (4 ± √40)/2 = 2 ± √10. Corresponding y = x + 2 gives y = 4 ± √10. A sign error while rearranging can give x² + 4x − 6 = 0 instead; treating c as positive gives a negative discriminant; forgetting to add 2 when finding y leaves y equal to x itself.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: y = 4x − 3 and y = x² − x − 3', checkMode: 'auto', options: ['(0, −3) and (5, 17)', '(0, −3) and (−5, −23)', '(0, 0) and (5, 20)', 'x = 0, y = −3 only'], correctIndex: 0, explanation: 'Substitute y = 4x − 3 into y = x² − x − 3: 4x − 3 = x² − x − 3, giving x² − 5x = 0. Factorise: x(x − 5) = 0, so x = 0 or x = 5. Corresponding y = 4x − 3 gives y = −3 or y = 17. A sign error while rearranging can give x² + 5x = 0 instead; forgetting to subtract 3 when finding y gives (0, 0) and (5, 20); reporting only one intersection point misses the second.' },
 
         // Block G — Conceptual reasoning questions (positions 17-19)
-        { difficulty: 'Hard', question: 'Lerato solves √(x − 3) = −4 and says there is no solution. Is she correct? Explain.', answer: 'Yes, Lerato is correct. The square root symbol always denotes the non-negative square root, so √(x − 3) can never equal a negative number such as −4. Squaring both sides would give x − 3 = 16, so x = 19, but substituting back gives √16 = 4, not −4, confirming this is an extraneous solution and the equation truly has no solution.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Sipho says the equation 2^(2x) − 6 · 2^x + 8 = 0 cannot be solved because it is not a normal quadratic. Show his method to solve it and find x.', answer: 'Let y = 2^x, so 2^(2x) = y². The equation becomes y² − 6y + 8 = 0.\nFactorise: (y − 2)(y − 4) = 0, so y = 2 or y = 4.\nSubstitute back: 2^x = 2 → x = 1. &nbsp; 2^x = 4 → x = 2.\nSolution: x = 1 or x = 2.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Amahle solves x² − 2x − 15 ≤ 0 and writes her final answer as x ≤ 5. Explain what is wrong with her answer and give the correct solution.', answer: 'Amahle is missing part of the solution — a quadratic inequality of this type is bounded between the two critical values, not just below the larger one. The critical values are x = 5 and x = −3 (from (x − 5)(x + 3) = 0). Since the parabola opens upward, the expression is ≤ 0 only between the roots. The correct solution is −3 ≤ x ≤ 5.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Lerato solves √(x − 3) = −4 and says there is no solution. Which statement correctly evaluates her claim?', checkMode: 'auto', options: ['No — she is incorrect; squaring both sides gives x − 3 = 16, so x = 19 is a valid solution.', 'Yes, she is correct — the square root symbol always denotes the non-negative root, so √(x − 3) can never equal −4, meaning the equation truly has no solution.', 'No — the equation actually has two solutions, x = 19 and x = −13.', 'Yes, but only because the expression inside the root is x − 3 rather than x + 3.'], correctIndex: 1, explanation: 'The square root symbol always denotes the non-negative square root, so √(x − 3) can never equal a negative number such as −4. Squaring both sides gives x − 3 = 16, so x = 19, but substituting back gives √16 = 4, not −4 — confirming this is an extraneous solution and the equation truly has no solution. Lerato is correct.' },
+        { difficulty: 'Hard', question: 'Sipho says the equation 2^(2x) − 6 · 2^x + 8 = 0 cannot be solved because it is not a normal quadratic. Which is the correct solution, found using the substitution y = 2^x?', checkMode: 'auto', options: ['x = 1 only (y = 4 mistakenly rejected)', 'y = 2 or y = 4 (never converted back to x)', 'x = 1 or x = 2', 'No solution — both y-values would need to be negative'], correctIndex: 2, explanation: 'Sipho is incorrect — the substitution y = 2^x turns the equation into an ordinary quadratic: y² − 6y + 8 = 0. Factorise: (y − 2)(y − 4) = 0, so y = 2 or y = 4, both valid since 2^x is always positive. Substituting back: 2^x = 2 → x = 1, and 2^x = 4 → x = 2.' },
+        { difficulty: 'Hard', question: 'Amahle solves x² − 2x − 15 ≤ 0 and writes her final answer as x ≤ 5. Which statement correctly evaluates her answer, and what is the correct solution?', checkMode: 'auto', options: ['Correct — x ≤ 5 is the complete solution.', 'Incorrect — the correct solution is x ≤ −3.', 'Incorrect — the correct solution is x < −3 or x > 5.', 'Incorrect — she is missing the lower bound; the critical values are x = 5 and x = −3, and since the parabola opens upward the expression is ≤ 0 only between them, so the correct solution is −3 ≤ x ≤ 5.'], correctIndex: 3, explanation: 'The critical values are x = 5 and x = −3 (from (x − 5)(x + 3) = 0). Since the parabola opens upward, the expression is ≤ 0 only between the roots. Amahle found one boundary but omitted the lower bound, so the correct, complete solution is −3 ≤ x ≤ 5.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered the quadratic formula, surd equations, exponential equations, quadratic inequalities, and simultaneous systems.' },
@@ -854,38 +930,38 @@ export const topicData: TopicData = {
       name: 'Set 3',
       questions: [
         // Block A — Quadratic formula (positions 0-2)
-        { difficulty: 'Easy', question: 'Solve for x using the quadratic formula: x² + x − 6 = 0', answer: 'x=2 or x=-3', checkMode: 'auto', correctAnswers: ['x=2 or x=-3', 'x=-3 or x=2', '2 or -3', '-3 or 2'], explanation: 'a=1, b=1, c=−6. Discriminant = 1 − 4(1)(−6) = 1 + 24 = 25.\nx = (−1 ± 5) / 2.\nx = 2 or x = −3 ✓' },
-        { difficulty: 'Easy-Medium', question: 'Solve for x using the quadratic formula: 4x² − 3x − 1 = 0', answer: 'x=1 or x=-1/4', checkMode: 'auto', correctAnswers: ['x=1 or x=-1/4', 'x=-1/4 or x=1', 'x=1 or x=-0.25', 'x=-0.25 or x=1'], explanation: 'a=4, b=−3, c=−1. Discriminant = 9 − 4(4)(−1) = 9 + 16 = 25.\nx = (3 ± 5) / 8.\nx = 1 or x = −1/4 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula: 2x² + 5x − 3 = 0', answer: 'x=1/2 or x=-3', checkMode: 'auto', correctAnswers: ['x=1/2 or x=-3', 'x=-3 or x=1/2', 'x=0.5 or x=-3', 'x=-3 or x=0.5'], explanation: 'a=2, b=5, c=−3. Discriminant = 25 − 4(2)(−3) = 25 + 24 = 49.\nx = (−5 ± 7) / 4.\nx = 1/2 or x = −3 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x using the quadratic formula: x² + x − 6 = 0', checkMode: 'auto', options: ['x = 2 or x = −3', 'x = 3 or x = −2', 'x = 4 or x = −6', 'No real solutions — the discriminant is negative'], correctIndex: 0, explanation: 'a = 1, b = 1, c = −6. Discriminant = 1 + 24 = 25. x = (−1 ± 5) / 2, giving x = 2 or x = −3. Using +b instead of −b gives x = 3 or x = −2; dividing by a instead of 2a gives x = 4 or x = −6; treating c as positive gives a negative discriminant.' },
+        { difficulty: 'Easy-Medium', question: 'Solve for x using the quadratic formula: 4x² − 3x − 1 = 0', checkMode: 'auto', options: ['x = 1/4 or x = −1', 'x = 1 or x = −1/4', 'No real solutions — the discriminant is negative', 'x = 2 or x = −1/2'], correctIndex: 1, explanation: 'a = 4, b = −3, c = −1. Discriminant = 9 + 16 = 25. x = (3 ± 5) / 8, giving x = 1 or x = −1/4. Using the wrong sign for b gives x = 1/4 or x = −1; treating c as positive gives a negative discriminant; dividing by a instead of 2a gives x = 2 or x = −1/2.' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula: 2x² + 5x − 3 = 0', checkMode: 'auto', options: ['x = 3 or x = −1/2', 'x = −1 or x = −3/2', 'x = 1/2 or x = −3', 'x = 1 or x = −6'], correctIndex: 2, explanation: 'a = 2, b = 5, c = −3. Discriminant = 25 + 24 = 49. x = (−5 ± 7) / 4, giving x = 1/2 or x = −3. Using +b instead of −b gives x = 3 or x = −1/2; treating c as positive changes the discriminant to 1, giving x = −1 or x = −3/2; dividing by a instead of 2a gives x = 1 or x = −6.' },
 
         // Block B — Quadratic formula, surd-form answers (positions 3-4)
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 2x − 7 = 0', answer: 'x=-1+2√2 or x=-1-2√2', checkMode: 'self' },
-        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 6x + 3 = 0. State the discriminant before solving.', answer: 'a=1, b=6, c=3. Discriminant = 36 − 4(1)(3) = 24, which is positive but not a perfect square, so there are two distinct irrational (surd) roots.\nx = (−6 ± √24) / 2 = (−6 ± 2√6) / 2.\nx = −3 + √6 or x = −3 − √6.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 2x − 7 = 0', checkMode: 'auto', options: ['x = 1 + 2√2 or x = 1 − 2√2', 'No real solutions — the discriminant is negative', 'x = −2 + 4√2 or x = −2 − 4√2', 'x = −1 + 2√2 or x = −1 − 2√2'], correctIndex: 3, explanation: 'a = 1, b = 2, c = −7. Discriminant = 4 + 28 = 32. x = (−2 ± √32)/2 = (−2 ± 4√2)/2 = −1 ± 2√2. Using the wrong sign for b gives 1 ± 2√2; treating c as positive gives a negative discriminant; forgetting to halve the radical term leaves −2 ± 4√2.' },
+        { difficulty: 'Medium', question: 'Solve for x using the quadratic formula, leaving your answer in simplest surd form: x² + 6x + 3 = 0', checkMode: 'auto', options: ['x = −3 + √6 or x = −3 − √6', 'x = 3 + √6 or x = 3 − √6', 'x = −3 + 2√3 or x = −3 − 2√3', 'x = −6 + 2√6 or x = −6 − 2√6'], correctIndex: 0, explanation: 'a = 1, b = 6, c = 3. Discriminant = 36 − 12 = 24, positive but not a perfect square, giving surd roots. x = (−6 ± √24)/2 = (−6 ± 2√6)/2 = −3 ± √6. Using the wrong sign for b gives 3 ± √6; miscalculating the discriminant as b² + 4ac = 48 gives −3 ± 2√3; forgetting to halve the radical term leaves −6 ± 2√6.' },
 
         // Block C — Surd equations with extraneous-root checks (positions 5-7)
-        { difficulty: 'Medium', question: 'Solve for x: √(x + 2) = x', answer: 'x=2', checkMode: 'auto', correctAnswer: 'x=2', correctAnswers: ['x=2', 'x = 2', '2'], explanation: 'Square both sides: x + 2 = x².\nRearrange: x² − x − 2 = 0 → (x − 2)(x + 1) = 0, so x = 2 or x = −1.\nCheck x = 2: √(2+2) = √4 = 2 = 2 ✓ valid.\nCheck x = −1: √(−1+2) = √1 = 1 ≠ −1, so x = −1 is extraneous (rejected).\nSolution: x = 2 only.' },
-        { difficulty: 'Medium', question: 'Solve for x: √(6x + 7) = x, checking for extraneous roots.', answer: 'x=7', checkMode: 'auto', correctAnswer: 'x=7', correctAnswers: ['x=7', 'x = 7', '7'], explanation: 'Square both sides: 6x + 7 = x².\nRearrange: x² − 6x − 7 = 0 → (x − 7)(x + 1) = 0, so x = 7 or x = −1.\nCheck x = 7: √(6(7)+7) = √49 = 7 = 7 ✓ valid.\nCheck x = −1: √(6(−1)+7) = √1 = 1 ≠ −1, so x = −1 is extraneous (rejected).\nSolution: x = 7 only.' },
-        { difficulty: 'Hard', question: 'Solve for x: √(x + 8) = x − 4, checking carefully for extraneous roots.', answer: 'Square both sides: x + 8 = (x − 4)² = x² − 8x + 16.\nRearrange: x² − 9x + 8 = 0 → (x − 8)(x − 1) = 0, so x = 8 or x = 1.\nCheck x = 8: √16 = 4 and 8 − 4 = 4 ✓ valid.\nCheck x = 1: √9 = 3 but 1 − 4 = −3, and 3 ≠ −3, so x = 1 is extraneous (rejected — the square root can never equal a negative number).\nSolution: x = 8 only.', checkMode: 'self' },
+        { difficulty: 'Medium', question: 'Solve for x: √(x + 2) = x', checkMode: 'auto', options: ['x = 2 or x = −1', 'x = 2', 'No solution (from forgetting to square before solving)', 'x = −1'], correctIndex: 1, explanation: 'Square both sides: x + 2 = x². Rearranged: x² − x − 2 = 0 → (x − 2)(x + 1) = 0, so x = 2 or x = −1. Checking: x = 2 gives √4 = 2 ✓ valid; x = −1 gives √1 = 1 ≠ −1 ✗ extraneous — rejected. Forgetting to check for extraneous roots keeps both values; forgetting to square at all leads to a false "no solution."' },
+        { difficulty: 'Medium', question: 'Solve for x: √(6x + 7) = x, checking for extraneous roots.', checkMode: 'auto', options: ['x = 7 or x = −1', 'x = −7/5', 'x = 7', 'x = −1'], correctIndex: 2, explanation: 'Square both sides: 6x + 7 = x². Rearranged: x² − 6x − 7 = 0 → (x − 7)(x + 1) = 0, so x = 7 or x = −1. Checking: x = 7 gives √49 = 7 ✓ valid; x = −1 gives √1 = 1 ≠ −1 ✗ extraneous — rejected. Forgetting to check for extraneous roots keeps both values; forgetting to square at all gives x = −7/5.' },
+        { difficulty: 'Hard', question: 'Solve for x: √(x + 8) = x − 4, checking carefully for extraneous roots.', checkMode: 'auto', options: ['x = 8 or x = 1', 'x = 1', 'No real solutions (from incorrectly expanding (x − 4)² as x² + 16)', 'x = 8'], correctIndex: 3, explanation: 'Square both sides: x + 8 = (x − 4)² = x² − 8x + 16. Rearranged: x² − 9x + 8 = 0 → (x − 8)(x − 1) = 0, so x = 8 or x = 1. Checking: x = 8 gives √16 = 4 = 8 − 4 ✓ valid; x = 1 gives √9 = 3 but 1 − 4 = −3 ✗ extraneous — rejected. Forgetting to check both roots keeps the extraneous x = 1; incorrectly expanding (x − 4)² by dropping the middle term gives no real solution at all.' },
 
         // Block D — Exponential equations (positions 8-10)
-        { difficulty: 'Easy', question: 'Solve for x: 5^x = 125', answer: 'x=3', checkMode: 'auto', correctAnswer: 'x=3', correctAnswers: ['x=3', 'x = 3', '3'], explanation: 'Write 125 as a power of 5: 125 = 5³.\nSo 5^x = 5³, which means x = 3 ✓' },
-        { difficulty: 'Medium', question: 'Solve for x: 5^(x+2) = 625', answer: 'x=2', checkMode: 'auto', correctAnswer: 'x=2', correctAnswers: ['x=2', 'x = 2', '2'], explanation: 'Write 625 as a power of 5: 625 = 5⁴.\nSo 5^(x+2) = 5⁴, which means x + 2 = 4, so x = 2 ✓' },
-        { difficulty: 'Hard', question: 'Solve for x: 2^(2x) − 6 · 2^x + 8 = 0', answer: 'x=1 or x=2', checkMode: 'auto', correctAnswers: ['x=1 or x=2', 'x=2 or x=1'], explanation: 'Let y = 2^x, so 2^(2x) = y². The equation becomes y² − 6y + 8 = 0.\nFactorise: (y − 2)(y − 4) = 0, so y = 2 or y = 4.\nSubstitute back: 2^x = 2 → x = 1. &nbsp; 2^x = 4 → x = 2.\nSolution: x = 1 or x = 2 ✓' },
+        { difficulty: 'Easy', question: 'Solve for x: 5^x = 125', checkMode: 'auto', options: ['x = 3', 'x = 2', 'x = 4', 'x = 25'], correctIndex: 0, explanation: 'Write 125 as a power of 5: 125 = 5³. So 5^x = 5³, meaning x = 3. Misremembering the power of 5 (thinking 5² = 125 or 5⁴ = 125) gives x = 2 or x = 4; dividing 125 by 5 instead of converting to the same base gives x = 25.' },
+        { difficulty: 'Medium', question: 'Solve for x: 5^(x+2) = 625', checkMode: 'auto', options: ['x = 4', 'x = 2', 'x = 1', 'x = 6'], correctIndex: 1, explanation: 'Write 625 as a power of 5: 625 = 5⁴. So 5^(x+2) = 5⁴, meaning x + 2 = 4, so x = 2. Forgetting to subtract 2 after equating exponents gives x = 4; misremembering 625 as 5³ gives x = 1; adding instead of subtracting 2 gives x = 6.' },
+        { difficulty: 'Hard', question: 'Solve for x: 2^(2x) − 6 · 2^x + 8 = 0', checkMode: 'auto', options: ['x = 1 only (y = 4 mistakenly rejected)', 'y = 2 or y = 4 (never converted back to x)', 'x = 1 or x = 2', 'No solution — both y-values would need to be negative'], correctIndex: 2, explanation: 'Let y = 2^x, so the equation becomes y² − 6y + 8 = 0. Factorise: (y − 2)(y − 4) = 0, so y = 2 or y = 4 — both valid since 2^x is always positive. Substituting back: 2^x = 2 → x = 1, and 2^x = 4 → x = 2. Misfactoring the quadratic, forgetting the final substitution step, or wrongly assuming a sign error are common mistakes.' },
 
         // Block E — Quadratic inequalities (positions 11-13)
-        { difficulty: 'Easy', question: 'Solve for x: x² − 49 ≥ 0', answer: 'x≤-7 or x≥7', checkMode: 'auto', correctAnswers: ['x≤-7 or x≥7', 'x<=-7 or x>=7', 'x≥7 or x≤-7'], explanation: 'Critical values: x² − 49 = 0 → x = −7 or x = 7.\nSince the expression is an upward parabola, it is ≥ 0 outside the roots (endpoints included since ≥).\nSolution: x ≤ −7 or x ≥ 7.' },
-        { difficulty: 'Medium', question: 'Solve for x: x² − 3x − 10 ≤ 0', answer: '-2≤x≤5', checkMode: 'auto', correctAnswer: '-2≤x≤5', correctAnswers: ['-2≤x≤5', '-2 <= x <= 5', '[-2,5]'], explanation: 'Critical values: (x − 5)(x + 2) = 0 → x = 5 or x = −2.\nSince the parabola opens upward, it is ≤ 0 between the roots (endpoints included since ≤).\nSolution: −2 ≤ x ≤ 5.' },
-        { difficulty: 'Hard', question: 'Solve for x: 2x² + 3x − 5 > 0', answer: 'x<-5/2 or x>1', checkMode: 'auto', correctAnswers: ['x<-5/2 or x>1', 'x>1 or x<-5/2'], explanation: 'Factorise: (2x + 5)(x − 1) > 0. Critical values: x = −5/2 or x = 1.\nSince the parabola opens upward, it is > 0 outside the roots (endpoints excluded since strict).\nSolution: x < −5/2 or x > 1.' },
+        { difficulty: 'Easy', question: 'Solve for x: x² − 49 ≥ 0', checkMode: 'auto', options: ['−7 ≤ x ≤ 7', 'x < −7 or x > 7', 'x ≥ 7 only', 'x ≤ −7 or x ≥ 7'], correctIndex: 3, explanation: 'Critical values: x² − 49 = 0 → x = −7 or x = 7. Since the expression is an upward parabola, it is ≥ 0 outside the roots, with endpoints included. Solution: x ≤ −7 or x ≥ 7. Choosing the interval between the roots, excluding the endpoints, or missing the negative branch are common mistakes.' },
+        { difficulty: 'Medium', question: 'Solve for x: x² − 3x − 10 ≤ 0', checkMode: 'auto', options: ['−2 ≤ x ≤ 5', 'x ≤ −2 or x ≥ 5', '−2 < x < 5', '−5 ≤ x ≤ 2'], correctIndex: 0, explanation: 'Critical values: (x − 5)(x + 2) = 0 → x = 5 or x = −2. Since the parabola opens upward, the expression is ≤ 0 between the roots, with endpoints included. Solution: −2 ≤ x ≤ 5. Choosing the outside interval, dropping the endpoints, or swapping the critical values are common mistakes.' },
+        { difficulty: 'Hard', question: 'Solve for x: 2x² + 3x − 5 > 0', checkMode: 'auto', options: ['−5/2 < x < 1', 'x < −5/2 or x > 1', 'x ≤ −5/2 or x ≥ 1', 'x < −1 or x > 5/2'], correctIndex: 1, explanation: 'Factorise: (2x + 5)(x − 1) > 0. Critical values: x = −5/2 or x = 1. Since the parabola opens upward, the expression is > 0 outside the roots, with endpoints excluded. Solution: x < −5/2 or x > 1. Choosing the interval between the roots, wrongly including the endpoints, or swapping the two critical values are common mistakes.' },
 
         // Block F — Simultaneous linear-quadratic systems (positions 14-16)
-        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = 4x − 5 and y = x² − x − 5', answer: 'x=0,y=-5 or x=5,y=15', checkMode: 'auto', correctAnswers: ['x=0,y=-5 or x=5,y=15', 'x=5,y=15 or x=0,y=-5'], explanation: 'Set 4x − 5 = x² − x − 5, so x² − 5x = 0.\nFactorise: x(x − 5) = 0, so x = 0 or x = 5.\nWhen x = 0: y = 4(0) − 5 = −5. When x = 5: y = 4(5) − 5 = 15.\nCheck: 0² − 0 − 5 = −5 ✓ and 5² − 5 − 5 = 15 ✓' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: y = x + 4 and y = x² − 2x − 3', answer: 'From the first equation substitute into the second: x + 4 = x² − 2x − 3.\nRearrange: x² − 3x − 7 = 0.\nUsing the quadratic formula: x = (3 ± √(9 + 28)) / 2 = (3 ± √37) / 2.\nWhen x = (3 + √37)/2: y = (3 + √37)/2 + 4 = (11 + √37)/2. When x = (3 − √37)/2: y = (3 − √37)/2 + 4 = (11 − √37)/2.\nSolution points: ((3 + √37)/2 ; (11 + √37)/2) and ((3 − √37)/2 ; (11 − √37)/2).', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: y = x − 5 and y = x² − 6x + 1', answer: 'x=6,y=1 or x=1,y=-4', checkMode: 'auto', correctAnswers: ['x=6,y=1 or x=1,y=-4', 'x=1,y=-4 or x=6,y=1'], explanation: 'Set x − 5 = x² − 6x + 1, so x² − 7x + 6 = 0.\nFactorise: (x − 6)(x − 1) = 0, so x = 6 or x = 1.\nWhen x = 6: y = 6 − 5 = 1. When x = 1: y = 1 − 5 = −4.\nCheck: 6² − 6(6) + 1 = 1 ✓ and 1² − 6(1) + 1 = −4 ✓' },
+        { difficulty: 'Medium', question: 'Solve simultaneously for x and y: y = 4x − 5 and y = x² − x − 5', checkMode: 'auto', options: ['(0, −5) and (−5, −25)', '(0, 0) and (5, 20)', '(0, −5) and (5, 15)', 'x = 5, y = 15 only'], correctIndex: 2, explanation: 'Substitute y = 4x − 5 into y = x² − x − 5: 4x − 5 = x² − x − 5, giving x² − 5x = 0. Factorise: x(x − 5) = 0, so x = 0 or x = 5. Corresponding y = 4x − 5 gives y = −5 or y = 15. A sign error while rearranging can give x² + 5x = 0 instead; forgetting to subtract 5 when finding y gives (0, 0) and (5, 20); reporting only one intersection point misses the second.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y, leaving your answers in simplest surd form: y = x + 4 and y = x² − 2x − 3', checkMode: 'auto', options: ['((−3 + √37)/2 ; (5 + √37)/2) and ((−3 − √37)/2 ; (5 − √37)/2)', 'No real solution — the discriminant is negative', '((3 + √37)/2 ; (3 + √37)/2) and ((3 − √37)/2 ; (3 − √37)/2)', '((3 + √37)/2 ; (11 + √37)/2) and ((3 − √37)/2 ; (11 − √37)/2)'], correctIndex: 3, explanation: 'Substitute: x + 4 = x² − 2x − 3, giving x² − 3x − 7 = 0. Using the quadratic formula: x = (3 ± √37)/2. Corresponding y = x + 4 gives y = (11 ± √37)/2. A sign error while rearranging can give x² + 3x − 7 = 0 instead; treating c as positive gives a negative discriminant; forgetting to add 4 when finding y leaves y equal to x itself.' },
+        { difficulty: 'Hard', question: 'Solve simultaneously for x and y: y = x − 5 and y = x² − 6x + 1', checkMode: 'auto', options: ['(6, 1) and (1, −4)', '(−6, −11) and (−1, −6)', '(6, 6) and (1, 1)', 'x = 6, y = 1 only'], correctIndex: 0, explanation: 'Substitute y = x − 5 into y = x² − 6x + 1: x − 5 = x² − 6x + 1, giving x² − 7x + 6 = 0. Factorise: (x − 6)(x − 1) = 0, so x = 6 or x = 1. Corresponding y = x − 5 gives y = 1 or y = −4. A sign error while rearranging can give x² + 7x + 6 = 0 instead; forgetting to subtract 5 when finding y gives (6, 6) and (1, 1); reporting only one intersection point misses the second.' },
 
         // Block G — Conceptual reasoning questions (positions 17-19)
-        { difficulty: 'Hard', question: 'Sipho solves √(x − 5) = −2 and says there is no solution. Is he correct? Explain.', answer: 'Yes, Sipho is correct. The square root symbol always denotes the non-negative square root, so √(x − 5) can never equal a negative number such as −2. Squaring both sides would give x − 5 = 4, so x = 9, but substituting back gives √4 = 2, not −2, confirming this is an extraneous solution and the equation truly has no solution.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Lerato says the equation 3^(2x) − 4 · 3^x + 3 = 0 cannot be solved because it is not a normal quadratic. Show her method to solve it and find x.', answer: 'Let y = 3^x, so 3^(2x) = y². The equation becomes y² − 4y + 3 = 0.\nFactorise: (y − 1)(y − 3) = 0, so y = 1 or y = 3.\nSubstitute back: 3^x = 1 → x = 0. &nbsp; 3^x = 3 → x = 1.\nSolution: x = 0 or x = 1.', checkMode: 'self' },
-        { difficulty: 'Hard', question: 'Amahle solves x² − 3x − 10 ≤ 0 and writes her final answer as x ≤ 5. Explain what is wrong with her answer and give the correct solution.', answer: 'Amahle is missing part of the solution — a quadratic inequality of this type is bounded between the two critical values, not just below the larger one. The critical values are x = 5 and x = −2 (from (x − 5)(x + 2) = 0). Since the parabola opens upward, the expression is ≤ 0 only between the roots. The correct solution is −2 ≤ x ≤ 5.', checkMode: 'self' },
+        { difficulty: 'Hard', question: 'Sipho solves √(x − 5) = −2 and says there is no solution. Which statement correctly evaluates his claim?', checkMode: 'auto', options: ['No — he is incorrect; squaring both sides gives x − 5 = 4, so x = 9 is a valid solution.', 'Yes, he is correct — the square root symbol always denotes the non-negative root, so √(x − 5) can never equal −2, meaning the equation truly has no solution.', 'No — the equation actually has two solutions, x = 9 and x = 1.', 'Yes, but only because the expression inside the root is x − 5 rather than x + 5.'], correctIndex: 1, explanation: 'The square root symbol always denotes the non-negative square root, so √(x − 5) can never equal a negative number such as −2. Squaring both sides gives x − 5 = 4, so x = 9, but substituting back gives √4 = 2, not −2 — confirming this is an extraneous solution and the equation truly has no solution. Sipho is correct.' },
+        { difficulty: 'Hard', question: 'Lerato says the equation 3^(2x) − 4 · 3^x + 3 = 0 cannot be solved because it is not a normal quadratic. Which is the correct solution, found using the substitution y = 3^x?', checkMode: 'auto', options: ['x = 0 only (y = 3 mistakenly rejected)', 'y = 1 or y = 3 (never converted back to x)', 'x = 0 or x = 1', 'No solution — both y-values would need to be negative'], correctIndex: 2, explanation: 'Lerato is incorrect — the substitution y = 3^x turns the equation into an ordinary quadratic: y² − 4y + 3 = 0. Factorise: (y − 1)(y − 3) = 0, so y = 1 or y = 3, both valid since 3^x is always positive. Substituting back: 3^x = 1 → x = 0, and 3^x = 3 → x = 1.' },
+        { difficulty: 'Hard', question: 'Amahle solves x² − 3x − 10 ≤ 0 and writes her final answer as x ≤ 5. Which statement correctly evaluates her answer, and what is the correct solution?', checkMode: 'auto', options: ['Correct — x ≤ 5 is the complete solution.', 'Incorrect — the correct solution is x ≤ −2.', 'Incorrect — the correct solution is x < −2 or x > 5.', 'Incorrect — she is missing the lower bound; the critical values are x = 5 and x = −2, and since the parabola opens upward the expression is ≤ 0 only between them, so the correct solution is −2 ≤ x ≤ 5.'], correctIndex: 3, explanation: 'The critical values are x = 5 and x = −2 (from (x − 5)(x + 2) = 0). Since the parabola opens upward, the expression is ≤ 0 only between the roots. Amahle found one boundary but omitted the lower bound, so the correct, complete solution is −2 ≤ x ≤ 5.' },
       ],
       scoreMessages: [
         { minScore: 18, message: 'Outstanding! You have mastered the quadratic formula, surd equations, exponential equations, quadratic inequalities, and simultaneous systems.' },
