@@ -314,5 +314,23 @@ service cloud.firestore {
                     && request.resource.data.createdAt is timestamp;
       allow read, update, delete: if false;
     }
+
+    // General "I'd be interested in a live session" signal — one or more
+    // grades, no specific topic (that's lessonRequests). Signed-in only,
+    // same own-uid enforcement as lessonRequests, create-only: this is the
+    // standing demand signal the admin dashboard aggregates by grade.
+    match /liveClassInterest/{docId} {
+      allow create: if request.auth != null
+                    && request.resource.data.keys().hasOnly(['uid', 'name', 'email', 'grades', 'createdAt'])
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.name is string
+                    && request.resource.data.email is string
+                    && request.resource.data.grades is list
+                    && request.resource.data.grades.size() > 0
+                    && request.resource.data.grades.size() <= 9
+                    && request.resource.data.grades.hasOnly([4, 5, 6, 7, 8, 9, 10, 11, 12])
+                    && request.resource.data.createdAt is timestamp;
+      allow read, update, delete: if false;
+    }
   }
 }
