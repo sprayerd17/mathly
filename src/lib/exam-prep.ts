@@ -21,8 +21,16 @@ export type ExamPrepBag = {
   comingSoon?: boolean
 }
 
-// Flat price for now (per Divan — will likely change once real bags ship).
-export const EXAM_PREP_BAG_PRICE = 49
+// Base price per pack. Pro gets 20% off (rounded); Free (and guests, once
+// they sign up) pay full price; Max gets every pack included free — that
+// path never reaches checkout at all, see /api/exam-prep/checkout.
+export const EXAM_PREP_BAG_PRICE = 99
+export const EXAM_PREP_PRO_DISCOUNT = 0.2
+
+export function examPrepPriceFor(tier: 'free' | 'pro' | 'max'): number {
+  if (tier === 'pro') return Math.round(EXAM_PREP_BAG_PRICE * (1 - EXAM_PREP_PRO_DISCOUNT))
+  return EXAM_PREP_BAG_PRICE
+}
 
 export const EXAM_PREP_BAGS: ExamPrepBag[] = []
 

@@ -7,7 +7,7 @@ import Navbar from '@/app/components/Navbar'
 import { useAuth, getActiveTier, getActiveChild } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { auth, db } from '@/src/lib/firebase'
-import { EXAM_PREP_BAGS, EXAM_PREP_BAG_PRICE, type ExamPrepBag } from '@/src/lib/exam-prep'
+import { EXAM_PREP_BAGS, EXAM_PREP_BAG_PRICE, examPrepPriceFor, type ExamPrepBag } from '@/src/lib/exam-prep'
 import { initiateExamPrepCheckout, getExamPrepDownloadUrl, CheckoutError } from '@/src/lib/paystack-client'
 
 function BagIcon() {
@@ -47,7 +47,9 @@ export default function StorePage() {
     refreshPurchases(user.uid).catch(() => {})
   }, [user, banner])
 
-  const isMax = user ? getActiveTier(user) === 'max' : false
+  const tier = user ? getActiveTier(user) : 'free'
+  const isMax = tier === 'max'
+  const price = examPrepPriceFor(tier)
   // Signed-in accounts only ever see packs matching their active child's
   // grade AND language — a Grade 10 kid shouldn't see Grade 12 packs, and an
   // English-medium child shouldn't see Afrikaans packs (each PDF is only
@@ -193,15 +195,22 @@ export default function StorePage() {
                       </button>
                     </>
                   ) : (
-                    <button
-                      type="button"
-                      onClick={() => handleBuy(bag)}
-                      disabled={isBusy}
-                      className="w-full py-2.5 rounded-lg text-sm font-semibold text-white transition-colors disabled:opacity-60"
-                      style={{ backgroundColor: '#1e40af' }}
-                    >
-                      {isBusy && busy?.action === 'buying' ? t.store_buying : t.store_buy_button.replace('{price}', String(EXAM_PREP_BAG_PRICE))}
-                    </button>
+                    <>
+                      {tier === 'pro' && (
+                        <span className="text-xs font-medium mb-1 text-center" style={{ color: '#9ca3af' }}>
+                          <span className="line-through">R{EXAM_PREP_BAG_PRICE}</span> · {t.store_pro_discount_badge}
+                        </span>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => handleBuy(bag)}
+                        disabled={isBusy}
+                        className="w-full py-2.5 rounded-lg text-sm font-semibold text-white transition-colors disabled:opacity-60"
+                        style={{ backgroundColor: '#1e40af' }}
+                      >
+                        {isBusy && busy?.action === 'buying' ? t.store_buying : t.store_buy_button.replace('{price}', String(price))}
+                      </button>
+                    </>
                   )}
                 </div>
               )

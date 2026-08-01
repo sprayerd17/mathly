@@ -285,6 +285,7 @@ export default function FamilyPlanBuilder() {
               t.pricing_feature_answers,
               t.pricing_pro_feature_ai_assistant,
               t.pricing_pro_feature_dashboard,
+              t.pricing_pro_feature_exam_packs_discount,
             ].map(f => (
               <li key={f} className="flex gap-2 text-xs leading-snug" style={{ color: '#4b5563' }}>
                 <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }}>✓</span>

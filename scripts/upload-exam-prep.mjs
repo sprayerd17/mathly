@@ -140,8 +140,16 @@ export type ExamPrepBag = {
   comingSoon?: boolean
 }
 
-// Flat price for now (per Divan — will likely change once real bags ship).
-export const EXAM_PREP_BAG_PRICE = 49
+// Base price per pack. Pro gets 20% off (rounded); Free (and guests, once
+// they sign up) pay full price; Max gets every pack included free — that
+// path never reaches checkout at all, see /api/exam-prep/checkout.
+export const EXAM_PREP_BAG_PRICE = 99
+export const EXAM_PREP_PRO_DISCOUNT = 0.2
+
+export function examPrepPriceFor(tier) {
+  if (tier === 'pro') return Math.round(EXAM_PREP_BAG_PRICE * (1 - EXAM_PREP_PRO_DISCOUNT))
+  return EXAM_PREP_BAG_PRICE
+}
 
 export const EXAM_PREP_BAGS: ExamPrepBag[] = [
 ${entries}
@@ -200,10 +208,15 @@ async function main() {
     console.log(`Uploaded ${b.filePath} -> ${dest}`)
   }
 
-  const fileBody = generateFileContents(bags).replace(
-    'export function examPrepStoragePath(bagId, fileExt) {',
-    "export function examPrepStoragePath(bagId: string, fileExt: 'pdf' | 'zip'): string {",
-  )
+  const fileBody = generateFileContents(bags)
+    .replace(
+      'export function examPrepStoragePath(bagId, fileExt) {',
+      "export function examPrepStoragePath(bagId: string, fileExt: 'pdf' | 'zip'): string {",
+    )
+    .replace(
+      'export function examPrepPriceFor(tier) {',
+      "export function examPrepPriceFor(tier: 'free' | 'pro' | 'max'): number {",
+    )
   writeFileSync(OUT_FILE, fileBody)
   console.log(`\nWrote ${bags.length} bag(s) to ${OUT_FILE}`)
   console.log('Review the parsed titles/grades/languages above — then commit & push.')

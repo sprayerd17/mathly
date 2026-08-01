@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getAdminAuth, getAdminDb } from '@/src/lib/firebase-admin'
 import { getPaystackConfig, initializeTransaction } from '@/src/lib/paystack'
-import { EXAM_PREP_BAGS, EXAM_PREP_BAG_PRICE } from '@/src/lib/exam-prep'
+import { EXAM_PREP_BAGS, examPrepPriceFor } from '@/src/lib/exam-prep'
 import type { Tier } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
@@ -55,6 +55,7 @@ export async function POST(req: NextRequest) {
   if (tier === 'max') {
     return new Response('Already included in your Max plan', { status: 409 })
   }
+  const amount = examPrepPriceFor(tier)
 
   const existing = await adminDb.collection('examPrepPurchases')
     .where('uid', '==', uid)
@@ -67,7 +68,7 @@ export async function POST(req: NextRequest) {
   const purchaseRef = await adminDb.collection('examPrepPurchases').add({
     uid,
     bagId,
-    amount: EXAM_PREP_BAG_PRICE,
+    amount,
     status: 'pending',
     name: userData.name ?? '',
     email: userData.email ?? '',
@@ -79,7 +80,7 @@ export async function POST(req: NextRequest) {
 
   const initResult = await initializeTransaction(config, {
     email: userData.email ?? '',
-    amountRands: EXAM_PREP_BAG_PRICE,
+    amountRands: amount,
     reference: purchaseRef.id,
     callbackUrl: `${baseUrl}/store?payment=return`,
     metadata: { kind: 'exam_prep_purchase', uid, purchaseId: purchaseRef.id, bagId, bagTitle: bag.title },
