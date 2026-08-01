@@ -13,7 +13,10 @@ export type ExamPrepBag = {
   description: string
   grade: number
   language: 'en' | 'af'
-  // Bags can be listed ahead of the PDF actually being uploaded — shows a
+  // 'zip' for multi-document packs (cheat sheet + practice test + memo
+  // bundled together), 'pdf' for a single-document pack.
+  fileExt: 'pdf' | 'zip'
+  // Bags can be listed ahead of the file actually being uploaded — shows a
   // "Coming soon" state instead of a broken purchase/download flow.
   comingSoon?: boolean
 }
@@ -23,6 +26,6 @@ export const EXAM_PREP_BAG_PRICE = 49
 
 export const EXAM_PREP_BAGS: ExamPrepBag[] = []
 
-export function examPrepStoragePath(bagId: string): string {
-  return `exam-prep-bags/${bagId}.pdf`
+export function examPrepStoragePath(bagId: string, fileExt: 'pdf' | 'zip'): string {
+  return `exam-prep-bags/${bagId}.${fileExt}`
 }

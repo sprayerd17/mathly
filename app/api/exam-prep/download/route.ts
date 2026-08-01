@@ -59,11 +59,11 @@ export async function POST(req: NextRequest) {
   try {
     const [url] = await getAdminStorage()
       .bucket()
-      .file(examPrepStoragePath(bagId))
+      .file(examPrepStoragePath(bagId, bag.fileExt))
       .getSignedUrl({ action: 'read', expires: Date.now() + 5 * 60 * 1000 })
     return Response.json({ url })
   } catch (err) {
-    console.error('[exam-prep/download] could not sign URL — is the PDF uploaded?', { bagId, err })
+    console.error('[exam-prep/download] could not sign URL — is the file uploaded?', { bagId, err })
     return new Response('This pack is not available for download yet. Please contact support.', { status: 404 })
   }
 }

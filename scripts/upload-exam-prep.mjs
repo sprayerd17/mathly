@@ -1,8 +1,12 @@
-// Scans exam-prep-source/ for PDFs, uploads each to Firebase Storage at
-// exam-prep-bags/{filename-without-.pdf}.pdf, and regenerates
-// src/lib/exam-prep.ts's EXAM_PREP_BAGS array from the filenames — that
-// folder is the single source of truth, so re-running after adding/removing
-// files keeps the store in sync automatically.
+// Scans exam-prep-source/ for PDFs and ZIPs, uploads each to Firebase
+// Storage at exam-prep-bags/{filename-without-extension}.{pdf|zip}, and
+// regenerates src/lib/exam-prep.ts's EXAM_PREP_BAGS array from the
+// filenames — that folder is the single source of truth, so re-running
+// after adding/removing files keeps the store in sync automatically.
+//
+// A .zip is a multi-document pack (e.g. cheat sheet + practice test + memo
+// bundled together as one purchase); a lone .pdf is a single-document pack.
+// Either way, one file = one bag = one grade + one language.
 //
 // Run from the project root with Node's built-in env-file support (no
 // dotenv dependency needed):
@@ -17,9 +21,9 @@
 //     pack's title, exactly as typed (dashes/underscores become spaces).
 //
 // Examples:
-//   Grade 10 - Term 3 Exam Practice.pdf   -> Grade 10, English, "Term 3 Exam Practice"
-//   Graad 10 - Kwartaal 3 Oefeneksamen.pdf -> Grade 10, Afrikaans, "Kwartaal 3 Oefeneksamen"
-//   Grade 12 Cheat Sheet.pdf              -> Grade 12, English, "Cheat Sheet"
+//   Grade 10 - Term 3 Pack.zip             -> Grade 10, English, "Term 3 Pack" (bundle)
+//   Graad 10 - Kwartaal 3 Pak.zip          -> Grade 10, Afrikaans, "Kwartaal 3 Pak" (bundle)
+//   Grade 12 Cheat Sheet.pdf               -> Grade 12, English, "Cheat Sheet" (single file)
 
 import { readdirSync, statSync, writeFileSync } from 'node:fs'
 import { join, extname, basename } from 'node:path'
@@ -28,17 +32,18 @@ import { getStorage } from 'firebase-admin/storage'
 
 const SOURCE_DIR = join(process.cwd(), 'exam-prep-source')
 const OUT_FILE = join(process.cwd(), 'src', 'lib', 'exam-prep.ts')
+const ALLOWED_EXTS = ['.pdf', '.zip']
 
 const EN_WORDS = { four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12 }
 const AF_WORDS = { vier: 4, vyf: 5, ses: 6, sewe: 7, agt: 8, nege: 9, tien: 10, elf: 11, twaalf: 12 }
 
-function collectPdfs(dir) {
+function collectFiles(dir) {
   const out = []
   for (const entry of readdirSync(dir)) {
     const full = join(dir, entry)
     const stat = statSync(full)
-    if (stat.isDirectory()) out.push(...collectPdfs(full))
-    else if (extname(entry).toLowerCase() === '.pdf') out.push(full)
+    if (stat.isDirectory()) out.push(...collectFiles(full))
+    else if (ALLOWED_EXTS.includes(extname(entry).toLowerCase())) out.push(full)
   }
   return out
 }
@@ -46,7 +51,8 @@ function collectPdfs(dir) {
 // Returns null if no grade 4-12 could be found — caller skips the file and
 // flags it, rather than silently guessing.
 function parseFilename(filePath) {
-  const raw = basename(filePath, '.pdf')
+  const ext = extname(filePath).toLowerCase().slice(1) // 'pdf' | 'zip'
+  const raw = basename(filePath, extname(filePath))
   const lower = raw.toLowerCase()
 
   const isAfrikaans = /\bgraad\b/.test(lower) || /\bafrikaans\b/.test(lower) || /\baf\b/.test(lower)
@@ -85,18 +91,20 @@ function parseFilename(filePath) {
   const lowerTitle = title.toLowerCase()
   let description
   if (isAfrikaans) {
-    if (lowerTitle.includes('kortnota') || lowerTitle.includes('opsomming')) description = "'n Vinnige verwysingsopsomming."
+    if (ext === 'zip') description = "'n Volledige pak — oefeneksamen, memorandum en opsomming."
+    else if (lowerTitle.includes('kortnota') || lowerTitle.includes('opsomming')) description = "'n Vinnige verwysingsopsomming."
     else if (lowerTitle.includes('oefen') || lowerTitle.includes('eksamen')) description = 'Oefenvrae om jou vir eksamens voor te berei.'
     else description = `Eksamen-voorbereidingsmateriaal vir Graad ${grade}.`
   } else {
-    if (lowerTitle.includes('cheat sheet') || lowerTitle.includes('summary')) description = 'A quick-reference summary sheet.'
+    if (ext === 'zip') description = 'A complete pack — practice exam, memo, and cheat sheet.'
+    else if (lowerTitle.includes('cheat sheet') || lowerTitle.includes('summary')) description = 'A quick-reference summary sheet.'
     else if (lowerTitle.includes('practice') || lowerTitle.includes('exam')) description = 'Practice questions to help you prepare for exams.'
     else description = `Exam prep material for Grade ${grade}.`
   }
 
   const id = raw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
 
-  return { id, title, description, grade, language: isAfrikaans ? 'af' : 'en' }
+  return { id, title, description, grade, language: isAfrikaans ? 'af' : 'en', fileExt: ext }
 }
 
 function generateFileContents(bags) {
@@ -106,16 +114,17 @@ function generateFileContents(bags) {
     description: ${JSON.stringify(b.description)},
     grade: ${b.grade},
     language: ${JSON.stringify(b.language)},
+    fileExt: ${JSON.stringify(b.fileExt)},
   },`).join('\n')
 
   return `// AUTO-GENERATED by scripts/upload-exam-prep.mjs from the filenames in
 // exam-prep-source/ — do not hand-edit EXAM_PREP_BAGS, it gets overwritten
-// every time that script runs. Add/rename PDFs in exam-prep-source/ and
+// every time that script runs. Add/rename files in exam-prep-source/ and
 // re-run the script instead.
 //
-// Each PDF is exactly one language and one grade (a Grade 10 Afrikaans pack
-// and its English equivalent are two separate files/bags, not one bag with
-// two names) — that's what lets the store show only English packs to
+// Each file is exactly one language and one grade (a Grade 10 Afrikaans
+// pack and its English equivalent are two separate files/bags, not one bag
+// with two names) — that's what lets the store show only English packs to
 // English-medium children and only Afrikaans packs to Afrikaans-medium ones.
 export type ExamPrepBag = {
   id: string
@@ -123,7 +132,10 @@ export type ExamPrepBag = {
   description: string
   grade: number
   language: 'en' | 'af'
-  // Bags can be listed ahead of the PDF actually being uploaded — shows a
+  // 'zip' for multi-document packs (cheat sheet + practice test + memo
+  // bundled together), 'pdf' for a single-document pack.
+  fileExt: 'pdf' | 'zip'
+  // Bags can be listed ahead of the file actually being uploaded — shows a
   // "Coming soon" state instead of a broken purchase/download flow.
   comingSoon?: boolean
 }
@@ -135,8 +147,8 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
 ${entries}
 ]
 
-export function examPrepStoragePath(bagId) {
-  return \`exam-prep-bags/\${bagId}.pdf\`
+export function examPrepStoragePath(bagId, fileExt) {
+  return \`exam-prep-bags/\${bagId}.\${fileExt}\`
 }
 `
 }
@@ -151,15 +163,15 @@ async function main() {
     process.exit(1)
   }
 
-  const pdfs = collectPdfs(SOURCE_DIR)
-  if (pdfs.length === 0) {
-    console.log(`No PDFs found in ${SOURCE_DIR} — drop some in and re-run.`)
+  const files = collectFiles(SOURCE_DIR)
+  if (files.length === 0) {
+    console.log(`No PDFs/ZIPs found in ${SOURCE_DIR} — drop some in and re-run.`)
     return
   }
 
   const bags = []
   const skipped = []
-  for (const filePath of pdfs) {
+  for (const filePath of files) {
     const parsed = parseFilename(filePath)
     if (!parsed) { skipped.push(filePath); continue }
     bags.push({ ...parsed, filePath })
@@ -176,20 +188,21 @@ async function main() {
   }
 
   console.log('\nParsed packs:')
-  for (const b of bags) console.log(`  [${b.language.toUpperCase()}] Grade ${b.grade} — "${b.title}"  (id: ${b.id})`)
+  for (const b of bags) console.log(`  [${b.language.toUpperCase()}] Grade ${b.grade} — "${b.title}" (${b.fileExt})  (id: ${b.id})`)
 
   initializeApp({ credential: cert({ projectId, clientEmail, privateKey }), storageBucket })
   const bucket = getStorage().bucket()
 
   for (const b of bags) {
-    const dest = `exam-prep-bags/${b.id}.pdf`
-    await bucket.upload(b.filePath, { destination: dest, metadata: { contentType: 'application/pdf' } })
+    const dest = `exam-prep-bags/${b.id}.${b.fileExt}`
+    const contentType = b.fileExt === 'zip' ? 'application/zip' : 'application/pdf'
+    await bucket.upload(b.filePath, { destination: dest, metadata: { contentType } })
     console.log(`Uploaded ${b.filePath} -> ${dest}`)
   }
 
   const fileBody = generateFileContents(bags).replace(
-    'export function examPrepStoragePath(bagId) {',
-    'export function examPrepStoragePath(bagId: string): string {',
+    'export function examPrepStoragePath(bagId, fileExt) {',
+    "export function examPrepStoragePath(bagId: string, fileExt: 'pdf' | 'zip'): string {",
   )
   writeFileSync(OUT_FILE, fileBody)
   console.log(`\nWrote ${bags.length} bag(s) to ${OUT_FILE}`)
