@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import Navbar from '@/app/components/Navbar'
@@ -49,6 +49,15 @@ export default function StorePage() {
 
   const isMax = user ? getActiveTier(user) === 'max' : false
   const language = user ? getActiveChild(user).language : 'en'
+  // Signed-in accounts only ever see packs for their active child's grade —
+  // a Grade 10 kid shouldn't be browsing (or buying) a Grade 12 pack.
+  // Guests see everything, same reasoning as the navbar topic search: they
+  // haven't picked a child yet, so there's no grade to scope to.
+  const activeGrade = user ? getActiveChild(user).grade : null
+  const visibleBags = useMemo(
+    () => activeGrade ? EXAM_PREP_BAGS.filter(b => b.grades.includes(activeGrade)) : EXAM_PREP_BAGS,
+    [activeGrade],
+  )
 
   async function handleBuy(bag: ExamPrepBag) {
     if (!user) { openModal('login'); return }
@@ -128,11 +137,13 @@ export default function StorePage() {
           </div>
         )}
 
-        {EXAM_PREP_BAGS.length === 0 ? (
-          <p className="text-center text-gray-500 py-16">{t.store_empty_state}</p>
+        {visibleBags.length === 0 ? (
+          <p className="text-center text-gray-500 py-16">
+            {activeGrade ? t.store_empty_state_grade.replace('{grade}', String(activeGrade)) : t.store_empty_state}
+          </p>
         ) : (
           <div className="grid sm:grid-cols-2 gap-6">
-            {EXAM_PREP_BAGS.map(bag => {
+            {visibleBags.map(bag => {
               const isPurchased = purchased.has(bag.id)
               const canDownload = !bag.comingSoon && (isMax || isPurchased)
               const isBusy = busy?.id === bag.id

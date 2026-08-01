@@ -16,7 +16,7 @@ export type ExamPrepBag = {
 }
 
 // Flat price for now (per Divan — will likely change once real bags ship).
-export const EXAM_PREP_BAG_PRICE = 79
+export const EXAM_PREP_BAG_PRICE = 49
 
 export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {

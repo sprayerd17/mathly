@@ -47,3 +47,10 @@ next-env.d.ts
 # Local Claude Code permissions — accumulates per-session tool grants,
 # personal to this machine, not something collaborators need synced.
 .claude/settings.local.json
+
+# Source PDFs for the exam prep store (see scripts/upload-exam-prep.mjs) —
+# these get uploaded to Firebase Storage directly, never committed. A paid
+# PDF sitting in git history would be downloadable by anyone regardless of
+# the app's paywall.
+/exam-prep-source/*
+!/exam-prep-source/.gitkeep
