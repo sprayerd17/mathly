@@ -48,15 +48,20 @@ export default function StorePage() {
   }, [user, banner])
 
   const isMax = user ? getActiveTier(user) === 'max' : false
-  const language = user ? getActiveChild(user).language : 'en'
-  // Signed-in accounts only ever see packs for their active child's grade —
-  // a Grade 10 kid shouldn't be browsing (or buying) a Grade 12 pack.
+  // Signed-in accounts only ever see packs matching their active child's
+  // grade AND language — a Grade 10 kid shouldn't see Grade 12 packs, and an
+  // English-medium child shouldn't see Afrikaans packs (each PDF is only
+  // ever one language, so this is a hard filter, not a display-text swap).
   // Guests see everything, same reasoning as the navbar topic search: they
-  // haven't picked a child yet, so there's no grade to scope to.
+  // haven't picked a child yet, so there's nothing to scope to.
   const activeGrade = user ? getActiveChild(user).grade : null
+  const activeLanguage = user ? getActiveChild(user).language : null
   const visibleBags = useMemo(
-    () => activeGrade ? EXAM_PREP_BAGS.filter(b => b.grades.includes(activeGrade)) : EXAM_PREP_BAGS,
-    [activeGrade],
+    () => EXAM_PREP_BAGS.filter(b =>
+      (activeGrade === null || b.grade === activeGrade) &&
+      (activeLanguage === null || b.language === activeLanguage)
+    ),
+    [activeGrade, activeLanguage],
   )
 
   async function handleBuy(bag: ExamPrepBag) {
@@ -154,17 +159,15 @@ export default function StorePage() {
                     <BagIcon />
                   </div>
                   <h2 className="text-lg font-bold mb-1.5" style={{ color: '#0f1f3d' }}>
-                    {language === 'af' ? bag.titleAf : bag.title}
+                    {bag.title}
                   </h2>
                   <p className="text-sm text-gray-500 leading-relaxed mb-4 flex-1">
-                    {language === 'af' ? bag.descriptionAf : bag.description}
+                    {bag.description}
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-5">
-                    {bag.grades.map(g => (
-                      <span key={g} className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ backgroundColor: '#f1f5f9', color: '#374151' }}>
-                        {t.topic_grade_value.replace('{grade}', String(g))}
-                      </span>
-                    ))}
+                    <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ backgroundColor: '#f1f5f9', color: '#374151' }}>
+                      {t.topic_grade_value.replace('{grade}', String(bag.grade))}
+                    </span>
                   </div>
 
                   {bag.comingSoon ? (
