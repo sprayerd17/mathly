@@ -3,6 +3,7 @@ const en = {
     nav_home: 'Home',
     nav_packages: 'Packages',
     nav_live_classes: 'Live Classes',
+    nav_store: 'Store',
     nav_contact: 'Contact',
     nav_dashboard: 'Dashboard',
     nav_my_topics: 'My Topics',
@@ -735,6 +736,25 @@ const en = {
     refer_share_qr_label: 'QR code',
     refer_share_qr_detail: 'Let someone scan to go straight to your link',
     refer_cta_go_to_profile: 'Go to my profile',
+
+    // ── Store (store/page.tsx) ────────────────────────────────────────────
+    store_hero_heading: 'Exam Prep Store',
+    store_hero_subheading: 'Focused exam prep packs you can buy individually — or get every pack included free, as they release, with a Max subscription.',
+    store_max_banner: "You're on Max — every pack below is included free.",
+    store_upgrade_banner: 'Want every future exam prep pack for free? Upgrade to Max and never pay for one again.',
+    store_upgrade_cta: 'See Max plans',
+    store_buy_button: 'Buy for R{price}',
+    store_buying: 'Redirecting…',
+    store_download_button: 'Download',
+    store_downloading: 'Preparing your download…',
+    store_included_badge: 'Included with Max',
+    store_purchased_badge: 'Purchased',
+    store_coming_soon_badge: 'Coming soon',
+    store_empty_state: 'No exam prep packs yet — check back soon!',
+    store_error_generic: 'Something went wrong. Please try again.',
+    store_login_required: 'Sign in to buy or download exam prep packs.',
+    store_payment_success_banner: "Purchase complete — you're all set to download your pack below.",
+    store_payment_cancelled_banner: 'Payment was cancelled — you can try again anytime.',
 }
 
 type TranslationKeys = keyof typeof en
@@ -744,6 +764,7 @@ const af: Record<TranslationKeys, string> = {
     nav_home: 'Tuis',
     nav_packages: 'Pakkette',
     nav_live_classes: 'Aanlyn Klasse',
+    nav_store: 'Winkel',
     nav_contact: 'Kontak',
     nav_dashboard: 'Paneelbord',
     nav_my_topics: 'My Onderwerpe',
@@ -1476,6 +1497,25 @@ const af: Record<TranslationKeys, string> = {
     refer_share_qr_label: 'QR-kode',
     refer_share_qr_detail: 'Laat iemand skandeer om direk na jou skakel te gaan',
     refer_cta_go_to_profile: 'Gaan na my profiel',
+
+    // ── Store (store/page.tsx) ────────────────────────────────────────────
+    store_hero_heading: 'Eksamen-Voorbereidingswinkel',
+    store_hero_subheading: "Gefokusde eksamen-voorbereidingspakke wat jy individueel kan koop — of kry elke pak gratis ingesluit, soos hulle vrygestel word, met 'n Max-intekening.",
+    store_max_banner: 'Jy is op Max — elke pak hieronder is gratis ingesluit.',
+    store_upgrade_banner: "Wil jy elke toekomstige eksamen-voorbereidingspak gratis hê? Gradeer op na Max en betaal nooit weer vir een nie.",
+    store_upgrade_cta: 'Bekyk Max-planne',
+    store_buy_button: 'Koop vir R{price}',
+    store_buying: 'Herlei tans…',
+    store_download_button: 'Laai af',
+    store_downloading: 'Berei jou aflaai voor…',
+    store_included_badge: 'Ingesluit met Max',
+    store_purchased_badge: 'Gekoop',
+    store_coming_soon_badge: 'Binnekort beskikbaar',
+    store_empty_state: 'Nog geen eksamen-voorbereidingspakke nie — kom kyk binnekort weer!',
+    store_error_generic: 'Iets het verkeerd geloop. Probeer asseblief weer.',
+    store_login_required: 'Teken aan om eksamen-voorbereidingspakke te koop of af te laai.',
+    store_payment_success_banner: 'Aankoop voltooi — jy kan nou jou pak hieronder aflaai.',
+    store_payment_cancelled_banner: "Betaling is gekanselleer — jy kan enige tyd weer probeer.",
 }
 
 export const translations = { en, af }

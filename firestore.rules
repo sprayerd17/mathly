@@ -294,6 +294,14 @@ service cloud.firestore {
       allow create, update, delete: if false;
     }
 
+    // Exam prep bag purchases (once-off, see /store) — same pattern as
+    // bookings: only the owning API route (Admin SDK) writes these, the
+    // client can only read its own.
+    match /examPrepPurchases/{docId} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
     // Lesson requests — signed-in learners asking for specific topics, and
     // waitlist entries for sessions that filled up (sessionId set). Never
     // consumed or deleted when sessions get scheduled: this collection IS the

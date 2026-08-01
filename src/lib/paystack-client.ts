@@ -97,6 +97,38 @@ export async function initiatePayReservation(fbUser: FirebaseUser, bookingId: st
   redirectToPaystack(authorization_url)
 }
 
+// Buys a single exam prep bag (once-off Paystack payment) — see
+// /api/exam-prep/checkout. Redirects the browser to Paystack on success.
+export async function initiateExamPrepCheckout(fbUser: FirebaseUser, bagId: string, childIndex: number) {
+  const idToken = await fbUser.getIdToken()
+  const res = await fetch('/api/exam-prep/checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken, bagId, childIndex }),
+  })
+  if (!res.ok) {
+    throw new CheckoutError(await res.text().catch(() => 'Could not start checkout.'))
+  }
+  const { authorization_url } = await res.json()
+  redirectToPaystack(authorization_url)
+}
+
+// Fetches a short-lived signed download URL for an exam prep bag the caller
+// is entitled to (Max tier or already purchased) — see /api/exam-prep/download.
+export async function getExamPrepDownloadUrl(fbUser: FirebaseUser, bagId: string, childIndex: number): Promise<string> {
+  const idToken = await fbUser.getIdToken()
+  const res = await fetch('/api/exam-prep/download', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ idToken, bagId, childIndex }),
+  })
+  if (!res.ok) {
+    throw new CheckoutError(await res.text().catch(() => 'Could not get the download link.'))
+  }
+  const { url } = await res.json()
+  return url
+}
+
 // Cancels the caller's own unpaid reservation — no payment was made, so
 // there's nothing to refund, just releases the held spot. No gateway
 // dependency at all — unchanged from the PayFast-era implementation.

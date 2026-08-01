@@ -17,7 +17,7 @@ export async function logEvent(
   data: Record<string, unknown>,
   outcome: 'complete' | 'failed' | 'rejected',
   reason: string | null,
-  kind: 'signup' | 'renewal' | 'session' | 'upgrade' | null,
+  kind: 'signup' | 'renewal' | 'session' | 'upgrade' | 'exam_prep' | null,
 ) {
   if (outcome === 'rejected') {
     await sendOwnerAlert(
@@ -236,6 +236,63 @@ export async function handlePaystackEvent(
       await adminDb.doc(`bookings/${bookingId}`).update({ status: 'failed' }).catch(() => {})
     }
     await logEvent(adminDb, event, data, 'failed', 'payment_not_complete', 'session')
+    return
+  }
+
+  // ── Once-off exam prep bag purchases take their own path ────────────────
+  if (event === 'charge.success' && metadata.kind === 'exam_prep_purchase') {
+    const purchaseId = metadata.purchaseId as string | undefined
+    const uid = metadata.uid as string | undefined
+    if (!purchaseId || !uid) {
+      await logEvent(adminDb, event, data, 'rejected', 'missing_metadata', 'exam_prep')
+      return
+    }
+    const purchaseRef = adminDb.doc(`examPrepPurchases/${purchaseId}`)
+    const purchaseSnap = await purchaseRef.get()
+    if (!purchaseSnap.exists) {
+      console.error('[paystack/webhook] exam prep purchase not found', { purchaseId })
+      await logEvent(adminDb, event, data, 'rejected', 'purchase_not_found', 'exam_prep')
+      return
+    }
+    const purchase = purchaseSnap.data()!
+    if (purchase.uid !== uid) {
+      await logEvent(adminDb, event, data, 'rejected', 'purchase_uid_mismatch', 'exam_prep')
+      return
+    }
+    const receivedAmount = typeof data.amount === 'number' ? data.amount / 100 : NaN
+    if (Number.isNaN(receivedAmount) || Math.abs(receivedAmount - purchase.amount) > 0.01) {
+      console.error('[paystack/webhook] exam prep amount mismatch', { purchaseId, expected: purchase.amount, receivedAmount })
+      await logEvent(adminDb, event, data, 'rejected', 'amount_mismatch', 'exam_prep')
+      return
+    }
+    if (!(await verifiedSuccess(data.reference))) {
+      await logEvent(adminDb, event, data, 'rejected', 'verify_call_failed', 'exam_prep')
+      return
+    }
+
+    // Paystack retries webhook delivery — a plain conditional update (not a
+    // transaction) is enough here since there's no counter to double-increment,
+    // just a status flip that's a no-op the second time.
+    if (purchase.status !== 'paid') {
+      await purchaseRef.update({ status: 'paid', paidAt: new Date().toISOString() })
+    }
+    await logEvent(adminDb, event, data, 'complete', null, 'exam_prep')
+
+    const email = data.customer?.email
+    if (email) {
+      const bag = (metadata.bagTitle as string | undefined) ?? 'Exam Prep Pack'
+      const mail = paymentReceiptEmail({ name: (purchase.name as string) ?? '', amount: purchase.amount, item: bag })
+      await sendEmail(email, mail.subject, mail.html, mail.from)
+    }
+    return
+  }
+
+  if (event === 'charge.failed' && metadata.kind === 'exam_prep_purchase') {
+    const purchaseId = metadata.purchaseId as string | undefined
+    if (purchaseId) {
+      await adminDb.doc(`examPrepPurchases/${purchaseId}`).update({ status: 'failed' }).catch(() => {})
+    }
+    await logEvent(adminDb, event, data, 'failed', 'payment_not_complete', 'exam_prep')
     return
   }
 
