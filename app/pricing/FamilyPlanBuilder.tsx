@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
@@ -289,7 +290,9 @@ export default function FamilyPlanBuilder() {
             ].map(f => (
               <li key={f} className="flex gap-2 text-xs leading-snug" style={{ color: '#4b5563' }}>
                 <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }}>✓</span>
-                {f}
+                {f === t.pricing_pro_feature_exam_packs_discount ? (
+                  <Link href="/store" className="underline hover:opacity-75" style={{ color: '#1e40af' }}>{f}</Link>
+                ) : f}
               </li>
             ))}
           </ul>
@@ -323,7 +326,9 @@ export default function FamilyPlanBuilder() {
             ].map(f => (
               <li key={f} className="flex gap-2 text-xs leading-snug" style={{ color: '#4b5563' }}>
                 <span className="shrink-0 font-bold mt-0.5" style={{ color: '#1e40af' }}>✓</span>
-                {f}
+                {f === t.pricing_max_feature_exam_packs ? (
+                  <Link href="/store" className="underline hover:opacity-75" style={{ color: '#1e40af' }}>{f}</Link>
+                ) : f}
               </li>
             ))}
           </ul>
