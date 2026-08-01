@@ -94,12 +94,12 @@ function parseFilename(filePath) {
     if (ext === 'zip') description = "'n Volledige pak — oefeneksamen, memorandum en opsomming."
     else if (lowerTitle.includes('kortnota') || lowerTitle.includes('opsomming')) description = "'n Vinnige verwysingsopsomming."
     else if (lowerTitle.includes('oefen') || lowerTitle.includes('eksamen')) description = 'Oefenvrae om jou vir eksamens voor te berei.'
-    else description = `Eksamen-voorbereidingsmateriaal vir Graad ${grade}.`
+    else description = `Voorbereidingsmateriaal vir Graad ${grade}.`
   } else {
     if (ext === 'zip') description = 'A complete pack — practice exam, memo, and cheat sheet.'
     else if (lowerTitle.includes('cheat sheet') || lowerTitle.includes('summary')) description = 'A quick-reference summary sheet.'
     else if (lowerTitle.includes('practice') || lowerTitle.includes('exam')) description = 'Practice questions to help you prepare for exams.'
-    else description = `Exam prep material for Grade ${grade}.`
+    else description = `Prep material for Grade ${grade}.`
   }
 
   const id = raw.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')

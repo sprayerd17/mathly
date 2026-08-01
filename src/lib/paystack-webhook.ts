@@ -280,7 +280,7 @@ export async function handlePaystackEvent(
 
     const email = data.customer?.email
     if (email) {
-      const bag = (metadata.bagTitle as string | undefined) ?? 'Exam Prep Pack'
+      const bag = (metadata.bagTitle as string | undefined) ?? 'Prep Pack'
       const mail = paymentReceiptEmail({ name: (purchase.name as string) ?? '', amount: purchase.amount, item: bag })
       await sendEmail(email, mail.subject, mail.html, mail.from)
     }
