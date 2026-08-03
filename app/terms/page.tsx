@@ -1,6 +1,6 @@
 import Navbar from '@/app/components/Navbar'
 
-const LAST_UPDATED = '8 July 2026'
+const LAST_UPDATED = '3 August 2026'
 
 function Section({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
@@ -108,7 +108,27 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="7. Live tutoring sessions">
+        <Section heading="7. Prep Packs (Store)">
+          <p>
+            Mathly&apos;s Store offers optional prep packs — downloadable exam-preparation materials (such
+            as practice tests, memos, and cheat sheets) for a specific grade and language. Each pack is a
+            once-off purchase, not a subscription. Pricing is shown in the Store; Pro-plan accounts get a
+            discount, and Max-plan accounts have every prep pack included at no extra charge as it&apos;s
+            released. Prep packs are provided as digital downloads for your and your children&apos;s
+            personal, non-commercial, educational use only. It is your responsibility to select the
+            correct grade and language before purchasing.
+          </p>
+        </Section>
+
+        <Section heading="8. Refunds — Prep Packs">
+          <p>
+            Prep pack purchases are final and non-refundable. If it&apos;s shown that the wrong grade or
+            language pack was provided by mistake, we will send you the correct one to fix the mistake,
+            rather than issue a refund.
+          </p>
+        </Section>
+
+        <Section heading="9. Live tutoring sessions">
           <p>
             Live sessions can be booked from the Live Classes page. If a session starts more than 48
             hours from the time you book, you can reserve your spot without paying immediately — payment
@@ -130,7 +150,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="8. Refunds — live sessions">
+        <Section heading="10. Refunds — live sessions">
           <p>
             Once a live session is paid for, that payment is final and non-refundable, except in one
             case: <strong>if Mathly cancels the session, you will receive a full refund.</strong> Paying
@@ -139,7 +159,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="9. Referral programme">
+        <Section heading="11. Referral programme">
           <p>
             Mathly may offer a referral programme through which you can earn account credit for
             referring other paying families. Referral relationships and credit amounts are tracked in
@@ -150,7 +170,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="10. AI maths assistant">
+        <Section heading="12. AI maths assistant and Test Analyzer">
           <p>
             Mathly&apos;s AI assistant is a study aid, not a qualified teacher, and the number of questions
             you can ask it each month depends on your plan. Like any AI system, it can occasionally give
@@ -158,9 +178,22 @@ export default function TermsPage() {
             study guide or ask a teacher if something seems wrong. The AI assistant should not be relied
             on as the sole source of truth for schoolwork, tests, or exams.
           </p>
+          <p>
+            Max-plan accounts also have access to our Test Analyzer, which reviews photos of a completed
+            test and answer sheet and generates feedback. Like the AI assistant, this feedback is a study
+            aid and can occasionally be wrong — it does not replace a teacher&apos;s marking or judgement.
+          </p>
+          <p>
+            We are working towards building our own AI tutoring model. To help with this, where an AI
+            assistant answer is checked and confirmed to be mathematically correct, or a Test Analyzer
+            submission is processed, we may keep a text-only record of that exchange (never photos, and
+            not linked to your name or email) to train and improve that future model — see our{' '}
+            <a href="/privacy" style={{ color: '#1e40af', fontWeight: 600 }}>Privacy Policy</a> for
+            details.
+          </p>
         </Section>
 
-        <Section heading="11. Acceptable use">
+        <Section heading="13. Acceptable use">
           <p>You agree not to:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>share your account or login details outside your own household,</li>
@@ -171,7 +204,7 @@ export default function TermsPage() {
           <p>We may suspend or close accounts that breach these Terms.</p>
         </Section>
 
-        <Section heading="12. Content and intellectual property">
+        <Section heading="14. Content and intellectual property">
           <p>
             All study guides, questions, explanations, diagrams, and other content on Mathly belong to
             Mathly (or are licensed to us) and are provided for your and your children&apos;s personal,
@@ -180,7 +213,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="13. Educational disclaimer">
+        <Section heading="15. Educational disclaimer">
           <p>
             Mathly&apos;s content is designed to align with the CAPS curriculum, but we cannot guarantee any
             particular exam result, mark, or outcome. Mathly is a supplementary study resource and is
@@ -189,7 +222,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="14. Limitation of liability">
+        <Section heading="16. Limitation of liability">
           <p>
             Mathly is provided &quot;as is.&quot; To the extent permitted by South African law, Mathly is not
             liable for any indirect or consequential loss arising from your use of the service. Nothing
@@ -197,7 +230,7 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="15. Changes to these Terms">
+        <Section heading="17. Changes to these Terms">
           <p>
             We may update these Terms from time to time as the service changes. We&apos;ll update the &quot;Last
             updated&quot; date above when we do; continuing to use Mathly after a change means you accept the
@@ -205,11 +238,11 @@ export default function TermsPage() {
           </p>
         </Section>
 
-        <Section heading="16. Governing law">
+        <Section heading="18. Governing law">
           <p>These Terms are governed by the laws of the Republic of South Africa.</p>
         </Section>
 
-        <Section heading="17. Contact us">
+        <Section heading="19. Contact us">
           <p>
             Questions about these Terms? Write to us at{' '}
             <a href="mailto:hello@mathly.co.za" style={{ color: '#1e40af', fontWeight: 600 }}>hello@mathly.co.za</a>{' '}

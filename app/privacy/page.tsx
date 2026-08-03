@@ -1,6 +1,6 @@
 import Navbar from '@/app/components/Navbar'
 
-const LAST_UPDATED = '9 July 2026'
+const LAST_UPDATED = '3 August 2026'
 
 function Section({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
@@ -46,7 +46,9 @@ export default function PrivacyPage() {
           <p><strong>Subscription and billing information:</strong> which plan each child is on, subscription status, payment amounts and dates, and a payment reference token from our payment processor. We do not collect or store your card number, expiry date, or CVV — these are entered directly with our payment processor, Paystack.</p>
           <p><strong>Live session bookings:</strong> the account holder&apos;s name and email, the child&apos;s name, the session booked, and its payment status.</p>
           <p><strong>Referral information:</strong> your referral code and, if someone signs up using it, a record linking the two accounts so we can apply referral credit.</p>
-          <p><strong>AI assistant questions:</strong> the maths questions and study-guide text you send to the AI assistant, and its replies. We do not attach your name, email, or grade to this content when it is sent for processing.</p>
+          <p><strong>AI assistant questions:</strong> the maths questions and study-guide text you send to the AI assistant, and its replies. We do not attach your name, email, or grade to this content when it is sent for processing. Where an AI assistant reply is separately checked and confirmed to be mathematically correct, we may keep a text-only copy of that conversation (the questions, the answer, your child&apos;s grade, and language) to help us develop and train our own future AI tutoring model. This copy is never linked to your name, email, or account.</p>
+          <p><strong>Test Analyzer submissions (Max plan):</strong> photos of a test paper and answer sheet you upload for AI-generated feedback, and your child&apos;s grade. The photos are processed to generate your feedback and are not stored by us. We may separately keep a text-only, structured summary of that submission (topics covered, marks, the answer given, the correct answer, and general strengths/weaknesses) — never the photos themselves — for the same AI-training purpose described above.</p>
+          <p><strong>Prep pack purchases:</strong> which prep pack you bought from our Store, the price paid, and a payment reference token from Paystack (see Section 5). We do not store your card details.</p>
           <p><strong>Contact and support messages:</strong> anything you send us via our contact form, including your name, email, grade, and message.</p>
         </Section>
 
@@ -69,7 +71,11 @@ export default function PrivacyPage() {
             <li>to send you service emails — for example booking confirmations, payment receipts, session
               reminders, and account/billing notices,</li>
             <li>to respond to support requests and contact-form submissions,</li>
-            <li>to track and apply referral credit, and</li>
+            <li>to track and apply referral credit,</li>
+            <li>to fulfil prep pack purchases from our Store,</li>
+            <li>to develop and improve our AI features, including training our own future AI tutoring
+              model using verified-correct AI assistant exchanges and Test Analyzer summaries (see
+              Section 2), and</li>
             <li>to keep the service secure and working as intended.</li>
           </ul>
           <p>
@@ -85,7 +91,7 @@ export default function PrivacyPage() {
             <li><strong>Firebase / Google Cloud</strong> — hosts our account login system and database.</li>
             <li><strong>Paystack</strong> — processes your subscription and session payments; we never see or store your card details.</li>
             <li><strong>Resend</strong> — sends transactional emails on our behalf (booking confirmations, receipts, reminders).</li>
-            <li><strong>Anthropic</strong> — processes the text of questions sent to the AI maths assistant, without your name, email, or grade attached.</li>
+            <li><strong>Anthropic</strong> — processes the text of questions sent to the AI maths assistant, and Test Analyzer photos you upload, without your name or email attached.</li>
             <li><strong>Google Meet</strong> — used to host live tutoring sessions; the meeting link is shared with you by email.</li>
             <li><strong>Google Analytics</strong> — used only on our pre-launch waitlist page to measure anonymised visit statistics; see Section 7.</li>
           </ul>
