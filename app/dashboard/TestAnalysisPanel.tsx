@@ -4,35 +4,88 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import { collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, Timestamp } from 'firebase/firestore'
-import { db, auth } from '@/src/lib/firebase'
-import { getActiveTier, type User } from '@/app/providers'
+import { getStorage, ref as storageRef, uploadBytes } from 'firebase/storage'
+import firebaseApp, { db, auth } from '@/src/lib/firebase'
+import { getActiveTier, getActiveChild, type User } from '@/app/providers'
 import { useTranslations } from '@/src/i18n/useTranslations'
 
 const MAX_IMAGES_PER_ZONE = 10
 const MAX_IMAGES_TOTAL = 20
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024
 const MAX_NOTES_LENGTH = 200
+const MAX_DISPUTE_NOTE_LENGTH = 500
 const MONTHLY_LIMIT = 2
 const MIN_GRADE = 4
 const MAX_GRADE = 12
-const COMPRESS_MAX_DIMENSION = 1600
-const COMPRESS_QUALITY = 0.75
+// 2000px / q0.85 — raised from 1600px / q0.75. The old, tighter values
+// existed only to keep up to 20 raw phone photos, inlined as base64, under
+// the hosting platform's request-size ceiling and Claude's own per-request
+// image limits. Now that compressed photos are uploaded straight to
+// Firebase Storage (see uploadZoneImages below) and the API request only
+// carries a submissionId, neither constraint applies — so quality can go up,
+// which directly improves handwriting transcription accuracy.
+const COMPRESS_MAX_DIMENSION = 2000
+const COMPRESS_QUALITY = 0.85
 
-type ZoneImage = { id: string; dataUrl: string; name: string }
-type SavedReport = { id: string; grade: number; date: Date | null; report: string; imageCount: number }
+// Client-side Storage instance, built off the same app singleton firebase.ts
+// already initialises for Auth/Firestore. Safe to construct at module scope
+// — like getAuth()/getFirestore() in firebase.ts, this doesn't touch the
+// network until something is actually uploaded.
+const storage = getStorage(firebaseApp)
+
+type ZoneImage = { id: string; blob: Blob; previewUrl: string; name: string }
+type SavedReport = { id: string; grade: number; date: Date | null; report: string; imageCount: number; submissionId: string | null }
 
 function currentMonthStamp(): string {
   const d = new Date()
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
 }
 
+// ── Local bilingual strings ─────────────────────────────────────────────────
+// New copy introduced by this change (upload progress, retention consent,
+// and the post-report correction control) follows the exact en/af
+// keyed-object convention used in src/i18n/translations.ts — but lives here
+// instead, because this change is scoped to this file only and
+// translations.ts may not be edited. Worth folding into the shared file
+// alongside the existing dash_test_analysis_* keys in a follow-up so this
+// duplication doesn't linger.
+const localStrings = {
+  en: {
+    uploading: 'Uploading {done} of {total}…',
+    uploadFailed: 'Something went wrong uploading your photos. Please check your connection and try again.',
+    retainLabel: 'Let Mathly keep these photos to help train our own maths AI.',
+    retainHint: 'Optional — if you leave this unticked, your photos are deleted right after your feedback is generated.',
+    correctionPrompt: 'Did we get this right?',
+    confirmCorrect: 'This looks right',
+    disputeCorrect: "Something's wrong",
+    disputeNotePlaceholder: 'Optional — tell us what seems off',
+    disputeSubmit: 'Send feedback',
+    thankYouConfirmed: 'Thanks for letting us know!',
+    thankYouDisputed: 'Thanks — this helps us improve.',
+  },
+  af: {
+    uploading: 'Laai {done} van {total} op…',
+    uploadFailed: 'Iets het verkeerd geloop met die oplaai van jou foto\'s. Gaan jou verbinding na en probeer asseblief weer.',
+    retainLabel: 'Laat Mathly hierdie foto\'s hou om ons eie wiskunde-KI mee op te lei.',
+    retainHint: 'Opsioneel — as jy dit ongemerk laat, word jou foto\'s uitgevee sodra jou terugvoer gegenereer is.',
+    correctionPrompt: 'Het ons dit reg gekry?',
+    confirmCorrect: 'Dit lyk reg',
+    disputeCorrect: 'Iets is verkeerd',
+    disputeNotePlaceholder: 'Opsioneel — vertel ons wat verkeerd lyk',
+    disputeSubmit: 'Stuur terugvoer',
+    thankYouConfirmed: 'Dankie dat jy ons laat weet het!',
+    thankYouDisputed: 'Dankie — dit help ons verbeter.',
+  },
+} as const
+
 // Every uploaded photo — including HEIC ones — is converted to a resized,
-// recompressed JPEG before it ever leaves the browser. Up to 20 raw phone
-// photos (allowed up to 5MB each by the size check below) would comfortably
-// blow past both the hosting platform's request-size ceiling and Claude's
-// own per-request image limits; this keeps the actual upload small
-// regardless of what the original photos looked like.
-async function fileToCompressedDataUrl(file: File): Promise<string> {
+// recompressed JPEG Blob before it ever leaves the browser. It's then
+// uploaded straight to Firebase Storage (see uploadZoneImages) rather than
+// inlined into the API request as base64. Compression still matters even
+// though the inline size ceiling that originally motivated it no longer
+// applies: it keeps upload times reasonable on a slow connection and keeps
+// the photos a sensible size for the model to read.
+async function fileToCompressedImage(file: File): Promise<{ blob: Blob; previewUrl: string }> {
   const isHeic = file.type === 'image/heic' || file.type === 'image/heif' || /\.hei[cf]$/i.test(file.name)
   let blob: Blob = file
   if (isHeic) {
@@ -56,10 +109,29 @@ async function fileToCompressedDataUrl(file: File): Promise<string> {
     const ctx = canvas.getContext('2d')
     if (!ctx) throw new Error('canvas unavailable')
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-    return canvas.toDataURL('image/jpeg', COMPRESS_QUALITY)
+    const compressed = await new Promise<Blob | null>(resolve => canvas.toBlob(resolve, 'image/jpeg', COMPRESS_QUALITY))
+    if (!compressed) throw new Error('compression failed')
+    return { blob: compressed, previewUrl: URL.createObjectURL(compressed) }
   } finally {
     URL.revokeObjectURL(objectUrl)
   }
+}
+
+// Uploads one zone's images to testAnalysis/{uid}/{submissionId}/{prefix}-{i}.jpg
+// as JPEG blobs, invoking onProgress once per completed upload so the caller
+// can show a running "Uploading X of Y" count across both zones.
+async function uploadZoneImages(
+  uid: string,
+  submissionId: string,
+  prefix: 'q' | 'a',
+  images: ZoneImage[],
+  onProgress: () => void
+): Promise<void> {
+  await Promise.all(images.map(async (img, i) => {
+    const path = `testAnalysis/${uid}/${submissionId}/${prefix}-${i}.jpg`
+    await uploadBytes(storageRef(storage, path), img.blob, { contentType: 'image/jpeg' })
+    onProgress()
+  }))
 }
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
@@ -127,7 +199,7 @@ function UploadZone({
             {images.map(img => (
               <div key={img.id} className="relative rounded-lg overflow-hidden border" style={{ borderColor: '#e5e7eb', aspectRatio: '1' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img.dataUrl} alt={img.name} className="w-full h-full object-cover" />
+                <img src={img.previewUrl} alt={img.name} className="w-full h-full object-cover" />
                 <button
                   type="button"
                   onClick={() => onRemove(img.id)}
@@ -169,16 +241,35 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
   const t = useTranslations()
   const tier = getActiveTier(user)
   const isMax = tier === 'max'
+  // Same language resolution useTranslations() uses internally, but read
+  // directly off the `user` prop already in scope — this drives localStrings
+  // (see comment above) rather than the shared t object.
+  const lt = localStrings[getActiveChild(user).language]
 
   const [questionImages, setQuestionImages] = useState<ZoneImage[]>([])
   const [answerImages, setAnswerImages] = useState<ZoneImage[]>([])
   const [grade, setGrade] = useState<number | ''>('')
   const [notes, setNotes] = useState('')
+  // Unticked by default on every submission — deliberate, not an oversight.
+  // These are photographs of a child's handwriting and exam paper, and the
+  // privacy policy's default promise is that they're deleted; keeping this
+  // is opt-in, per-submission consent, so it must never be persisted or
+  // pre-ticked from a previous submission. resetForm() below always resets
+  // it to false, and it's otherwise plain component state — never written
+  // to storage — so there is nothing to persist across submissions.
+  const [retainImages, setRetainImages] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [uploadProgress, setUploadProgress] = useState<{ done: number; total: number } | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [result, setResult] = useState<string | null>(null)
+  const [submissionId, setSubmissionId] = useState<string | null>(null)
   const [saved, setSaved] = useState(false)
   const [saving, setSaving] = useState(false)
+
+  // Learner correction control (post-report "did we get this right?").
+  const [correctionStatus, setCorrectionStatus] = useState<'idle' | 'sending' | 'confirmed' | 'disputed' | 'failed'>('idle')
+  const [disputing, setDisputing] = useState(false)
+  const [disputeNote, setDisputeNote] = useState('')
 
   const [usageCount, setUsageCount] = useState<number | null>(null)
   const [reports, setReports] = useState<SavedReport[]>([])
@@ -208,6 +299,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
           date: data.date instanceof Timestamp ? data.date.toDate() : null,
           report: typeof data.report === 'string' ? data.report : '',
           imageCount: typeof data.imageCount === 'number' ? data.imageCount : 0,
+          submissionId: typeof data.submissionId === 'string' ? data.submissionId : null,
         }
       }))
     } catch {
@@ -244,11 +336,10 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
 
     const toProcess = fileArray.slice(0, slotsAvailable)
     try {
-      const processed = await Promise.all(toProcess.map(async f => ({
-        id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
-        dataUrl: await fileToCompressedDataUrl(f),
-        name: f.name,
-      })))
+      const processed = await Promise.all(toProcess.map(async f => {
+        const { blob, previewUrl } = await fileToCompressedImage(f)
+        return { id: `${Date.now()}-${Math.random().toString(36).slice(2)}`, blob, previewUrl, name: f.name }
+      }))
       setZone(prev => [...prev, ...processed])
     } catch {
       setError(t.dash_test_analysis_error_photo_processing)
@@ -257,17 +348,29 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
 
   function removeImage(zone: 'question' | 'answer', id: string) {
     const setZone = zone === 'question' ? setQuestionImages : setAnswerImages
-    setZone(prev => prev.filter(img => img.id !== id))
+    setZone(prev => {
+      const target = prev.find(img => img.id === id)
+      if (target) URL.revokeObjectURL(target.previewUrl)
+      return prev.filter(img => img.id !== id)
+    })
   }
 
   function resetForm() {
+    questionImages.forEach(img => URL.revokeObjectURL(img.previewUrl))
+    answerImages.forEach(img => URL.revokeObjectURL(img.previewUrl))
     setQuestionImages([])
     setAnswerImages([])
     setGrade('')
     setNotes('')
+    setRetainImages(false)
     setResult(null)
+    setSubmissionId(null)
     setSaved(false)
     setError(null)
+    setUploadProgress(null)
+    setCorrectionStatus('idle')
+    setDisputing(false)
+    setDisputeNote('')
   }
 
   async function handleAnalyse() {
@@ -281,18 +384,38 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       return
     }
     setSubmitting(true)
+    const total = questionImages.length + answerImages.length
+    let doneCount = 0
+    setUploadProgress({ done: 0, total })
     try {
       const idToken = await auth.currentUser.getIdToken()
+      const uid = auth.currentUser.uid
+      const newSubmissionId = crypto.randomUUID().replace(/-/g, '')
+
+      try {
+        await Promise.all([
+          uploadZoneImages(uid, newSubmissionId, 'q', questionImages, () => setUploadProgress({ done: ++doneCount, total })),
+          uploadZoneImages(uid, newSubmissionId, 'a', answerImages, () => setUploadProgress({ done: ++doneCount, total })),
+        ])
+      } catch (uploadErr) {
+        console.error('[TestAnalysisPanel] photo upload failed', uploadErr)
+        setError(lt.uploadFailed)
+        return
+      }
+      setUploadProgress(null)
+
       const res = await fetch('/api/analyse-test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           idToken,
           grade,
-          questionImages: questionImages.map(i => i.dataUrl),
-          answerImages: answerImages.map(i => i.dataUrl),
+          submissionId: newSubmissionId,
+          questionCount: questionImages.length,
+          answerCount: answerImages.length,
           notes: notes.trim() || undefined,
           childIndex: user.activeChildIndex,
+          retainImages,
         }),
       })
       if (!res.ok) {
@@ -301,12 +424,17 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       }
       const data = await res.json()
       setResult(data.report)
+      setSubmissionId(typeof data.submissionId === 'string' ? data.submissionId : newSubmissionId)
       setSaved(false)
+      setCorrectionStatus('idle')
+      setDisputing(false)
+      setDisputeNote('')
       loadUsage()
     } catch {
       setError(t.auth_error_generic)
     } finally {
       setSubmitting(false)
+      setUploadProgress(null)
     }
   }
 
@@ -319,6 +447,7 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
         date: serverTimestamp(),
         report: result,
         imageCount: totalImageCount(),
+        submissionId,
       })
       setSaved(true)
       loadReports()
@@ -326,6 +455,33 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
       setError(t.dash_test_analysis_error_save_failed)
     } finally {
       setSaving(false)
+    }
+  }
+
+  // "This looks right" / "Something's wrong" — fires after a report is
+  // shown. A lost correction must never disrupt the student, so failures
+  // are swallowed (logged only) rather than surfaced as a panel error; the
+  // control still disables either way so it can't be sent twice.
+  async function submitCorrection(verdict: 'confirmed' | 'disputed') {
+    if (!submissionId || !auth.currentUser) return
+    setCorrectionStatus('sending')
+    try {
+      const idToken = await auth.currentUser.getIdToken()
+      const res = await fetch('/api/test-analysis-feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          idToken,
+          submissionId,
+          verdict,
+          note: verdict === 'disputed' && disputeNote.trim() ? disputeNote.trim() : undefined,
+        }),
+      })
+      if (!res.ok) throw new Error(`feedback request failed: ${res.status}`)
+      setCorrectionStatus(verdict)
+    } catch (err) {
+      console.error('[TestAnalysisPanel] correction feedback failed', err)
+      setCorrectionStatus('failed')
     }
   }
 
@@ -402,11 +558,76 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
             </button>
             {saved && <span className="text-sm font-semibold" style={{ color: '#16a34a' }}>{t.dash_test_analysis_saved_badge}</span>}
           </div>
+
+          {/* ── Learner correction control ───────────────────────────────── */}
+          {submissionId && correctionStatus !== 'failed' && (
+            <div className="mt-4 pt-4" style={{ borderTop: '1px solid #f3f4f6' }}>
+              {correctionStatus === 'confirmed' ? (
+                <p className="text-sm font-semibold" style={{ color: '#16a34a' }}>{lt.thankYouConfirmed}</p>
+              ) : correctionStatus === 'disputed' ? (
+                <p className="text-sm font-semibold" style={{ color: '#16a34a' }}>{lt.thankYouDisputed}</p>
+              ) : (
+                <div>
+                  <p className="text-sm font-semibold mb-2" style={{ color: '#0f1f3d' }}>{lt.correctionPrompt}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => submitCorrection('confirmed')}
+                      disabled={correctionStatus === 'sending'}
+                      className="text-xs font-semibold px-4 py-2 rounded-lg border transition-colors disabled:opacity-50"
+                      style={{ backgroundColor: '#ffffff', color: '#1e40af', borderColor: '#bfdbfe' }}
+                    >
+                      {lt.confirmCorrect}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setDisputing(true)}
+                      disabled={correctionStatus === 'sending' || disputing}
+                      className="text-xs font-semibold px-4 py-2 rounded-lg border transition-colors disabled:opacity-50"
+                      style={{ backgroundColor: '#ffffff', color: '#0f1f3d', borderColor: '#d1d5db' }}
+                    >
+                      {lt.disputeCorrect}
+                    </button>
+                  </div>
+                  {disputing && (
+                    <div className="mt-3">
+                      <textarea
+                        value={disputeNote}
+                        maxLength={MAX_DISPUTE_NOTE_LENGTH}
+                        onChange={e => setDisputeNote(e.target.value)}
+                        placeholder={lt.disputeNotePlaceholder}
+                        rows={2}
+                        disabled={correctionStatus === 'sending'}
+                        className="w-full px-3 py-2 rounded-lg border text-sm"
+                        style={{ borderColor: '#d1d5db', color: '#0f1f3d' }}
+                      />
+                      <div className="flex items-center justify-between mt-1">
+                        <p className="text-xs text-gray-500">{disputeNote.length}/{MAX_DISPUTE_NOTE_LENGTH}</p>
+                        <button
+                          type="button"
+                          onClick={() => submitCorrection('disputed')}
+                          disabled={correctionStatus === 'sending'}
+                          className="text-xs font-semibold px-4 py-2 rounded-lg text-white transition-colors disabled:opacity-50"
+                          style={{ backgroundColor: '#1e40af' }}
+                        >
+                          {lt.disputeSubmit}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       ) : submitting ? (
         <div className="rounded-xl p-8 mb-6 flex flex-col items-center gap-3 text-center" style={{ backgroundColor: '#f9fafb', border: '1px solid #e5e7eb' }}>
           <span style={{ color: '#1e40af' }}><SpinnerIcon /></span>
-          <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>{t.dash_test_analysis_analysing}</p>
+          <p className="text-sm font-semibold" style={{ color: '#0f1f3d' }}>
+            {uploadProgress
+              ? lt.uploading.replace('{done}', String(uploadProgress.done)).replace('{total}', String(uploadProgress.total))
+              : t.dash_test_analysis_analysing}
+          </p>
         </div>
       ) : (
         <div className="mb-6">
@@ -457,6 +678,22 @@ export default function TestAnalysisPanel({ user }: { user: User }) {
               />
               <p className="text-xs text-gray-500 mt-1 text-right">{notes.length}/{MAX_NOTES_LENGTH}</p>
             </div>
+          </div>
+
+          <div className="mb-5">
+            <label className="flex items-start gap-2.5 text-sm cursor-pointer">
+              <input
+                type="checkbox"
+                checked={retainImages}
+                onChange={e => setRetainImages(e.target.checked)}
+                className="mt-0.5 w-4 h-4 rounded shrink-0"
+                style={{ accentColor: '#1e40af' }}
+              />
+              <span>
+                <span className="font-semibold" style={{ color: '#0f1f3d' }}>{lt.retainLabel}</span>{' '}
+                <span className="text-gray-500">{lt.retainHint}</span>
+              </span>
+            </label>
           </div>
 
           <button

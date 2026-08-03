@@ -23,8 +23,23 @@ function systemPromptFor(grade: string | null): string {
   return `${BASE_SYSTEM_PROMPT} The student you're helping right now is in Grade ${grade} — pitch explanations and examples at that level.`
 }
 
+// Single source of truth for the model IDs used by the tutor call and the
+// verifier call below — reused (not re-typed) when stamping
+// tutorModel/verifierModel onto stored training rows, so the stamp can
+// never drift from what actually generated/judged the row.
+const TUTOR_MODEL = 'claude-sonnet-5'
+const VERIFIER_MODEL = 'claude-sonnet-5'
+
 type ApiMessage = { role: 'user' | 'assistant'; content: string }
 type Plan = 'free' | 'pro' | 'max'
+
+// Token spend for a single Anthropic call — input/output plus cache-read
+// (the only cache field the aiTrainingData schema keeps, see the usage
+// comment at the write site below). null means "not obtained", e.g. the
+// verifier call failed before returning a usage object, or a streaming
+// event that should have carried a field never arrived — never a guess.
+type CallUsage = { input: number | null; output: number | null; cacheRead: number | null }
+const EMPTY_USAGE: CallUsage = { input: null, output: null, cacheRead: null }
 
 // Same monthly allowances as PLAN_LIMITS in app/components/AIAssistant.tsx —
 // the client copy is optimistic UI only, this is the source of truth.
@@ -67,16 +82,79 @@ const VERIFY_SYSTEM_PROMPT =
   'follow-up only makes sense given what came before it) — ignore style or tone. ' +
   'After your working, on its own final line, reply with exactly one word: CORRECT or INCORRECT.'
 
+// Bumped whenever VERIFY_SYSTEM_PROMPT changes in a way that could shift
+// verdicts — it already has once (see the factorisation comment above) and
+// will again. Stamped onto every stored training row as verifierVersion so
+// that if a future prompt revision turns out to have been flawed, the rows
+// it produced can be isolated and dropped instead of guessing which rows
+// came from which prompt.
+const VERIFIER_VERSION = 'ai-assistant-verify-v2-2026-08-03'
+
 // Student:/Tutor: transcript, oldest first — same shape used for the stored
 // training example itself, just flattened to plain text for this prompt.
 function transcriptFor(context: ApiMessage[]): string {
   return context.map(m => `${m.role === 'user' ? 'Student' : 'Tutor'}: ${m.content}`).join('\n')
 }
 
-async function isAnswerCorrect(grade: string | null, context: ApiMessage[], answer: string): Promise<boolean> {
+// Afrikaans/English function-word frequency heuristic, used below by
+// detectLanguage. Both lists are common short function words (articles,
+// pronouns, conjunctions, question words) that are highly distinctive
+// between the two languages and appear regardless of the maths topic being
+// discussed.
+const AFRIKAANS_MARKERS = [
+  'die', 'het', 'nie', 'ek', 'jy', 'wat', 'hoe', 'om', 'te', 'en', 'is', 'van', 'vir', 'my', 'jou',
+  'hierdie', 'maar', 'ook', 'kan', 'moet', 'dan', 'sy', 'hulle', 'was', 'sal', 'nou', 'baie', 'goed',
+  'waar', 'wanneer', 'hoekom', 'asseblief', 'antwoord', 'vraag', 'som', 'getal', 'breuk',
+]
+const ENGLISH_MARKERS = [
+  'the', 'is', 'are', 'was', 'were', 'this', 'that', 'what', 'how', 'why', 'i', 'you', 'my', 'your',
+  'and', 'or', 'of', 'for', 'to', 'in', 'on', 'with', 'can', 'do', 'does', 'did', 'not', 'please',
+  'answer', 'question', 'number', 'fraction', 'help', 'need', 'understand',
+]
+// A verdict needs at least this many total hits before we trust it enough
+// to label anything, and needs to beat the other language by at least this
+// margin — a 3-vs-2 split is noise, not a signal.
+const LANGUAGE_MIN_HITS = 2
+const LANGUAGE_MIN_MARGIN = 2
+
+function countMarkerHits(lowerText: string, markers: string[]): number {
+  return markers.reduce((total, word) => {
+    const matches = lowerText.match(new RegExp(`\\b${word}\\b`, 'g'))
+    return total + (matches ? matches.length : 0)
+  }, 0)
+}
+
+// Best-effort label for which language the STUDENT is actually writing in —
+// deliberately not derived from the child's profile language preference,
+// see the detectedLanguage comment at the call site below. Word-boundary
+// matches on a lowercased string, cheap and synchronous (no API call), and
+// bounded by MAX_CONTENT_LENGTH * MAX_MESSAGES worth of text at most, so a
+// couple of regex passes over it is negligible.
+//
+// This is a label, not a guarantee: short or code-switched messages, or
+// messages that happen to lean on words shared between languages, can
+// legitimately fail to clear the threshold. 'unknown' is the deliberate
+// fallback in that case — a wrong language tag silently corrupts a
+// bilingual training set, while a missing one is just discarded by anyone
+// who needs certainty.
+function detectLanguage(text: string): 'en' | 'af' | 'unknown' {
+  const lower = text.toLowerCase()
+  const afHits = countMarkerHits(lower, AFRIKAANS_MARKERS)
+  const enHits = countMarkerHits(lower, ENGLISH_MARKERS)
+  if (afHits < LANGUAGE_MIN_HITS && enHits < LANGUAGE_MIN_HITS) return 'unknown'
+  if (afHits - enHits >= LANGUAGE_MIN_MARGIN) return 'af'
+  if (enHits - afHits >= LANGUAGE_MIN_MARGIN) return 'en'
+  return 'unknown'
+}
+
+async function verifyAnswer(
+  grade: string | null,
+  context: ApiMessage[],
+  answer: string,
+): Promise<{ verified: boolean; reasoning: string | null; usage: CallUsage }> {
   try {
     const verdict = await client.messages.create({
-      model: 'claude-sonnet-5',
+      model: VERIFIER_MODEL,
       // Generous budget: Sonnet 5 spends some of this on an internal
       // thinking block even unrequested, and asking it to show its working
       // (redo the calculation, expand the factorisation back out) before
@@ -90,21 +168,59 @@ async function isAnswerCorrect(grade: string | null, context: ApiMessage[], answ
         content: `Grade: ${grade ?? 'unknown'}\n\nConversation so far:\n${transcriptFor(context)}\n\nTutor's final answer to check: ${answer}`,
       }],
     })
-    const text = (verdict.content.find(b => b.type === 'text')?.text ?? '').toUpperCase()
+    const rawText = verdict.content.find(b => b.type === 'text')?.text ?? ''
+    const text = rawText.toUpperCase()
     // Checked in this order because "INCORRECT" contains "CORRECT" as a
     // substring — a plain .includes('CORRECT') would misread every
     // INCORRECT verdict as correct.
-    if (text.includes('INCORRECT')) return false
-    return text.includes('CORRECT')
+    let verified: boolean
+    if (text.includes('INCORRECT')) {
+      verified = false
+    } else {
+      verified = text.includes('CORRECT')
+    }
+    // The verifier is prompted to show CAPS-style marking working (redo the
+    // calculation, expand the factorisation back out) before its final
+    // CORRECT/INCORRECT line — until now only the boolean verdict was kept
+    // and that whole working was thrown away. It's a free chain-of-thought
+    // corpus for a future marking/diagnosis task, so keep everything before
+    // that final line.
+    // trimEnd() before locating that line: a response ending in a trailing
+    // newline would otherwise make lastIndexOf('\n') point PAST the verdict,
+    // gluing the literal word CORRECT/INCORRECT onto the end of every stored
+    // reasoning string and quietly poisoning the corpus with the label it's
+    // supposed to be independent of.
+    const trimmed = rawText.trimEnd()
+    const lastNewline = trimmed.lastIndexOf('\n')
+    const reasoning = lastNewline >= 0 ? (trimmed.slice(0, lastNewline).trim() || null) : null
+    // Non-streaming call — the usage object is already sitting on the
+    // response, unlike the tutor call below which has to accumulate it from
+    // stream events. cache_read_input_tokens is nullable on the wire; the
+    // others aren't, but everything funnels through the same nullable
+    // CallUsage shape so callers don't need to special-case which field can
+    // be missing.
+    const usage: CallUsage = {
+      input: verdict.usage.input_tokens,
+      output: verdict.usage.output_tokens,
+      cacheRead: verdict.usage.cache_read_input_tokens,
+    }
+    return { verified, reasoning, usage }
   } catch (err) {
     console.error('[ai-assistant] correctness check failed — skipping training-data storage', err)
-    return false
+    return { verified: false, reasoning: null, usage: EMPTY_USAGE }
   }
 }
 
 function currentMonthStamp(): string {
   const d = new Date()
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
+}
+
+// Day-granularity sibling of currentMonthStamp() — the doc key for the
+// apiUsageDaily rollup (see the write site in the POST handler below).
+function currentDayStamp(): string {
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 }
 
 function isValidMessages(value: unknown): value is ApiMessage[] {
@@ -256,9 +372,29 @@ export async function POST(req: NextRequest) {
     async start(controller) {
       const encoder = new TextEncoder()
       let fullAnswer = ''
+      // Streaming responses never carry a usage object on the initial
+      // return value — unlike the verifier's non-streaming call, it only
+      // arrives piecemeal inside the stream itself: message_start carries
+      // the input/cache-read side (known before any output is generated),
+      // and message_delta carries output_tokens, updated cumulatively as
+      // generation proceeds, so the LAST message_delta holds the final
+      // count. Both are captured here, in the same loop that already
+      // consumes the stream for the student-facing text — no second API
+      // call. Left null (not 0) if the corresponding event never arrives,
+      // per the "wrong number is worse than missing" rule.
+      let tutorInput: number | null = null
+      let tutorOutput: number | null = null
+      let tutorCacheRead: number | null = null
+      // Verifier spend, hoisted so the daily rollup can see it — the verifier
+      // only runs for text-only (trainable) exchanges, so these stay 0 on a
+      // screen-capture request, which genuinely makes no verifier call. 0 here
+      // means "no such call was made", distinct from the nulls above, which
+      // mean "the call happened but the number wasn't obtained".
+      let verifierInputSpent = 0
+      let verifierOutputSpent = 0
       try {
         const response = await client.messages.create({
-          model: 'claude-sonnet-5',
+          model: TUTOR_MODEL,
           max_tokens: 700,
           system: systemPromptFor(grade),
           messages: anthropicMessages,
@@ -266,7 +402,12 @@ export async function POST(req: NextRequest) {
         })
 
         for await (const event of response) {
-          if (
+          if (event.type === 'message_start') {
+            tutorInput = event.message.usage.input_tokens
+            tutorCacheRead = event.message.usage.cache_read_input_tokens
+          } else if (event.type === 'message_delta') {
+            tutorOutput = event.usage.output_tokens
+          } else if (
             event.type === 'content_block_delta' &&
             event.delta.type === 'text_delta'
           ) {
@@ -277,10 +418,9 @@ export async function POST(req: NextRequest) {
 
         // Training-data collection — text-only (a screen capture can't be
         // represented in this dataset, so those exchanges are skipped
-        // entirely rather than stored with missing context) and only kept
-        // once Claude itself has checked the answer is actually correct.
-        // Runs after the response has already reached the browser, so it
-        // never adds to how long the student waits.
+        // entirely rather than stored with missing context). Runs after the
+        // response has already reached the browser, so it never adds to how
+        // long the student waits.
         //
         // Stores the FULL conversation up to and including the student's
         // latest message, not just that last message alone — a follow-up
@@ -288,19 +428,115 @@ export async function POST(req: NextRequest) {
         // standalone training pair without the turns it refers to. The
         // stored answer completes that same context.
         if (!imageBlock) {
-          const language = userData.children?.[activeIdx]?.language === 'af' ? 'af' : 'en'
-          const correct = await isAnswerCorrect(grade, messages, fullAnswer)
-          if (correct) {
+          // Everything in here is training-data collection, which must never
+          // be able to affect the student. The .catch() on the write below
+          // only covers a rejected Firestore promise — a SYNCHRONOUS throw
+          // anywhere in this block would otherwise fall through to the outer
+          // catch, which appends "Sorry, I ran into an error" to an answer
+          // the student has already received in full AND rolls back a usage
+          // slot they genuinely used. Own try/catch so the worst case stays
+          // "we lost one training row".
+          try {
+            // userData.children[activeIdx].language (see Child.language in
+            // app/providers.tsx) is a one-time-changeable PROFILE PREFERENCE,
+            // not the language actually used in this exchange —
+            // BASE_SYSTEM_PROMPT never mentions language and the tutor just
+            // replies in whatever the student wrote, so a child whose profile
+            // is set to 'af' asking a question in English would otherwise get
+            // silently mislabelled 'af'. Store both: profileLanguage (the old
+            // value, unchanged logic) for provenance, and detectedLanguage — a
+            // best-effort read of the student's own messages — as the value
+            // that actually describes this exchange.
+            const profileLanguage = userData.children?.[activeIdx]?.language === 'af' ? 'af' : 'en'
+            const detectedLanguage = detectLanguage(
+              messages.filter(m => m.role === 'user').map(m => m.content).join('\n'),
+            )
+            const { verified, reasoning, usage: verifierUsage } = await verifyAnswer(grade, messages, fullAnswer)
+            // Store BOTH verified and rejected exchanges, not just the
+            // correct ones as before. A (prompt, correct answer, incorrect
+            // answer) triple is exactly what preference tuning (DPO)
+            // consumes, and both the generation and the verdict have already
+            // been paid for by the call above — discarding every INCORRECT
+            // verdict threw away a whole training modality for free.
+            // Downstream consumers doing plain supervised fine-tuning must
+            // filter on verified === true; DPO consumers want both sides.
             await adminDb.collection('aiTrainingData').add({
               context: messages,
               answer: fullAnswer,
+              verified,
+              // The verifier's step-by-step marking working — see the
+              // comment in verifyAnswer. A free chain-of-thought corpus for
+              // a future marking/diagnosis task, not just the pass/fail bit.
+              verifierReasoning: reasoning,
               grade: grade ? Number(grade) : null,
-              language,
+              profileLanguage,
+              detectedLanguage,
+              // Provenance stamps: schemaVersion marks this row's field shape
+              // so future migrations can tell old rows from new; verifierVersion/
+              // verifierModel/tutorModel record exactly what generated and
+              // judged this row, so a prompt or model revision later found to
+              // be flawed can be isolated and dropped by these fields instead
+              // of guessing which rows it touched.
+              schemaVersion: 2,
+              verifierVersion: VERIFIER_VERSION,
+              verifierModel: VERIFIER_MODEL,
+              tutorModel: TUTOR_MODEL,
+              // Real (not estimated) token spend for both Anthropic calls
+              // this row cost. Stored per row rather than only aggregated
+              // because it's the only way to compute cost-per-training-
+              // example directly, and because it lets a plan's real margin
+              // be derived from actual traffic later instead of the modelled
+              // estimates that are all we have today. null means the figure
+              // was never obtained (see the comments at each usage source)
+              // rather than that spend was zero.
+              usage: {
+                tutorInput,
+                tutorOutput,
+                verifierInput: verifierUsage.input,
+                verifierOutput: verifierUsage.output,
+                tutorCacheRead,
+                verifierCacheRead: verifierUsage.cacheRead,
+              },
               createdAt: FieldValue.serverTimestamp(),
             }).catch(err => {
               console.error('[ai-assistant] failed to store training example', err)
             })
+
+            // Verifier spend is carried out to the rollup below, which runs
+            // for EVERY request rather than only the trainable ones.
+            verifierInputSpent = verifierUsage.input ?? 0
+            verifierOutputSpent = verifierUsage.output ?? 0
+          } catch (trainingErr) {
+            console.error('[ai-assistant] training-data collection failed', trainingErr)
           }
+        }
+
+        // Lightweight daily rollup so aggregate cost can be read without
+        // scanning every aiTrainingData row. apiUsageDaily is server-only
+        // (see its firestore.rules entry); merge:true so the first write of
+        // a day creates the doc rather than requiring it to pre-exist.
+        //
+        // Deliberately OUTSIDE the !imageBlock guard above. Screen-capture
+        // exchanges are excluded from training data (an image can't be
+        // represented in that dataset) but they are still real, billed
+        // Anthropic calls — and the MOST expensive ones we make, since a
+        // 1800px capture adds a few thousand image tokens on top of the
+        // text. Metering them under the same guard would have silently
+        // omitted our priciest requests and understated cost per plan by
+        // exactly the amount that matters most. captureRequests is tracked
+        // separately so image spend can be isolated from text spend.
+        //
+        // Its own try/catch for the same reason as the block above: a failed
+        // metering write must never reach the student.
+        try {
+          await adminDb.doc(`apiUsageDaily/${currentDayStamp()}`).set({
+            aiAssistantRequests: FieldValue.increment(1),
+            aiAssistantCaptureRequests: FieldValue.increment(imageBlock ? 1 : 0),
+            aiAssistantInputTokens: FieldValue.increment((tutorInput ?? 0) + verifierInputSpent),
+            aiAssistantOutputTokens: FieldValue.increment((tutorOutput ?? 0) + verifierOutputSpent),
+          }, { merge: true })
+        } catch (meteringErr) {
+          console.error('[ai-assistant] failed to update daily usage rollup', meteringErr)
         }
       } catch (err) {
         console.error('[ai-assistant] Anthropic call failed', err)
