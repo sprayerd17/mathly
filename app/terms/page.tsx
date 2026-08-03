@@ -185,11 +185,16 @@ export default function TermsPage() {
           </p>
           <p>
             We are working towards building our own AI tutoring model. To help with this, where an AI
-            assistant answer is checked and confirmed to be mathematically correct, or a Test Analyzer
-            submission is processed, we may keep a text-only record of that exchange (never photos, and
-            not linked to your name or email) to train and improve that future model — see our{' '}
+            assistant answer is checked for mathematical correctness, or a Test Analyzer submission is
+            processed, we may keep a text-only record of that exchange to train and improve that future
+            model. These records do not contain your name or email; Test Analyzer records also carry a
+            pseudonymous reference code that lets us group a learner&apos;s own submissions over time,
+            and may include a correction or confirmation your child gives of the AI&apos;s marking.
+            Separately, on the Test Analyzer form you can opt in to let us also retain the uploaded
+            photos themselves for the same purpose — photos are otherwise deleted straight after
+            analysis and are not stored by default. See our{' '}
             <a href="/privacy" style={{ color: '#1e40af', fontWeight: 600 }}>Privacy Policy</a> for
-            details.
+            full details.
           </p>
         </Section>
 
