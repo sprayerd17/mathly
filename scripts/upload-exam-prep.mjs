@@ -96,7 +96,7 @@ function parseFilename(filePath) {
     else if (lowerTitle.includes('oefen') || lowerTitle.includes('eksamen')) description = 'Oefenvrae om jou vir eksamens voor te berei.'
     else description = `Voorbereidingsmateriaal vir Graad ${grade}.`
   } else {
-    if (ext === 'zip') description = 'A complete pack — practice exam, memo, and cheat sheet.'
+    if (ext === 'zip') description = 'A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.'
     else if (lowerTitle.includes('cheat sheet') || lowerTitle.includes('summary')) description = 'A quick-reference summary sheet.'
     else if (lowerTitle.includes('practice') || lowerTitle.includes('exam')) description = 'Practice questions to help you prepare for exams.'
     else description = `Prep material for Grade ${grade}.`
