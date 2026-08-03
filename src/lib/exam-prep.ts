@@ -36,7 +36,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-10-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 10,
     language: "af",
     fileExt: "zip",
@@ -44,7 +44,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-11-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 11,
     language: "af",
     fileExt: "zip",
@@ -52,7 +52,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-12-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 12,
     language: "af",
     fileExt: "zip",
@@ -60,7 +60,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-4-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 4,
     language: "af",
     fileExt: "zip",
@@ -68,7 +68,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-5-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 5,
     language: "af",
     fileExt: "zip",
@@ -76,7 +76,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-6-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 6,
     language: "af",
     fileExt: "zip",
@@ -84,7 +84,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-7-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 7,
     language: "af",
     fileExt: "zip",
@@ -92,7 +92,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-8-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 8,
     language: "af",
     fileExt: "zip",
@@ -100,7 +100,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "graad-9-kwartaal-3-2026-eksamenpak",
     title: "Kwartaal 3 2026 Eksamenpak",
-    description: "'n Volledige pak — oefeneksamen, memorandum en opsomming.",
+    description: "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal.",
     grade: 9,
     language: "af",
     fileExt: "zip",
@@ -108,7 +108,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-10-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 10,
     language: "en",
     fileExt: "zip",
@@ -116,7 +116,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-11-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 11,
     language: "en",
     fileExt: "zip",
@@ -124,7 +124,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-12-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 12,
     language: "en",
     fileExt: "zip",
@@ -132,7 +132,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-4-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 4,
     language: "en",
     fileExt: "zip",
@@ -140,7 +140,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-5-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 5,
     language: "en",
     fileExt: "zip",
@@ -148,7 +148,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-6-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 6,
     language: "en",
     fileExt: "zip",
@@ -156,7 +156,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-7-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 7,
     language: "en",
     fileExt: "zip",
@@ -164,7 +164,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-8-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 8,
     language: "en",
     fileExt: "zip",
@@ -172,7 +172,7 @@ export const EXAM_PREP_BAGS: ExamPrepBag[] = [
   {
     id: "grade-9-term-3-2026-exam-pack",
     title: "Term 3 2026 Exam Pack",
-    description: "A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.",
+    description: "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language.",
     grade: 9,
     language: "en",
     fileExt: "zip",

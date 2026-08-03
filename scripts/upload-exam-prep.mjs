@@ -91,12 +91,12 @@ function parseFilename(filePath) {
   const lowerTitle = title.toLowerCase()
   let description
   if (isAfrikaans) {
-    if (ext === 'zip') description = "'n Volledige pak — oefeneksamen, memorandum en opsomming."
+    if (ext === 'zip') description = "Alles wat jy nodig het om voorbereid vir jou Kwartaal 3-eksamen te wees: 'n volledige oefeneksamen in die presiese CAPS-formaat, 'n volledige memorandum sodat jy jou eie antwoorde kan nagaan en presies sien waar jy punte verloor het, en 'n opsommingsblad met die belangrikste formules en konsepte vir vinnige hersiening. Spesiaal saamgestel vir jou graad, in jou taal."
     else if (lowerTitle.includes('kortnota') || lowerTitle.includes('opsomming')) description = "'n Vinnige verwysingsopsomming."
     else if (lowerTitle.includes('oefen') || lowerTitle.includes('eksamen')) description = 'Oefenvrae om jou vir eksamens voor te berei.'
     else description = `Voorbereidingsmateriaal vir Graad ${grade}.`
   } else {
-    if (ext === 'zip') description = 'A complete pack — practice exam, memo, and cheat sheet for quick reference to important topics.'
+    if (ext === 'zip') description = "Everything you need to walk into your Term 3 exam prepared: a full practice exam in the exact CAPS format, a complete memo so you can mark your own answers and see precisely where you lost marks, and a one-page cheat sheet summarising the key formulas and concepts for quick revision. Built specifically for your grade, in your language."
     else if (lowerTitle.includes('cheat sheet') || lowerTitle.includes('summary')) description = 'A quick-reference summary sheet.'
     else if (lowerTitle.includes('practice') || lowerTitle.includes('exam')) description = 'Practice questions to help you prepare for exams.'
     else description = `Prep material for Grade ${grade}.`
