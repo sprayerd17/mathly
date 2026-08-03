@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Navbar, { type NavbarHandle } from '@/app/components/Navbar'
 import OnboardingTour from '@/app/components/OnboardingTour'
-import { useAuth, LanguageCards, type Language, type Tier } from '@/app/providers'
+import { useAuth, LanguageCards, hasReviewerAccess, type Language, type Tier } from '@/app/providers'
 import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
@@ -375,7 +375,7 @@ export default function ProfilePage() {
                       </p>
                     )}
                   </div>
-                  {!editingGrade && !activeChild.gradeChangeUsed && (
+                  {!editingGrade && (!activeChild.gradeChangeUsed || hasReviewerAccess(user)) && (
                     <button
                       onClick={startEditGrade}
                       className="text-xs font-semibold hover:underline underline-offset-2"
@@ -394,7 +394,7 @@ export default function ProfilePage() {
                     >
                       {t.profile_grade_label.replace('{grade}', String(activeChild.grade))}
                     </span>
-                    {activeChild.gradeChangeUsed && (
+                    {activeChild.gradeChangeUsed && !hasReviewerAccess(user) && (
                       <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                         {t.profile_grade_change_used_note}
                       </p>
@@ -458,7 +458,7 @@ export default function ProfilePage() {
                       </p>
                     )}
                   </div>
-                  {!editingLang && !activeChild.languageChangeUsed && (
+                  {!editingLang && (!activeChild.languageChangeUsed || hasReviewerAccess(user)) && (
                     <button
                       onClick={startEditLangSingular}
                       className="text-xs font-semibold hover:underline underline-offset-2"
@@ -477,7 +477,7 @@ export default function ProfilePage() {
                     >
                       {LANGUAGE_LABELS[activeChild.language]}
                     </span>
-                    {activeChild.languageChangeUsed && (
+                    {activeChild.languageChangeUsed && !hasReviewerAccess(user) && (
                       <p className="text-xs text-gray-500 mt-2 leading-relaxed">
                         {t.profile_language_change_used_note}
                       </p>

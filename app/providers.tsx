@@ -26,6 +26,7 @@ import { useTranslations } from '@/src/i18n/useTranslations'
 import { initiateCheckout } from '@/src/lib/paystack-client'
 import { computeFamilyPrice, FOUNDING_PRICE, FULL_PRICE, type Tier, type FoundingStatus } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
+import { ADMIN_EMAIL } from '@/src/lib/admin'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -148,6 +149,15 @@ function generateRefCode(name: string): string {
 export function getActiveChild(user: User): Child {
   const idx = Math.min(Math.max(user.activeChildIndex, 0), user.children.length - 1)
   return user.children[idx]
+}
+
+// True only for the tutor's own account — lets that account re-edit a
+// child's grade/language past the normal one-time limit (see profile.tsx),
+// so any grade/tier/language combo can be reviewed by editing into it,
+// exactly as a real user would see it once there — no other bypass. Never
+// applies to real customers' tiers.
+export function hasReviewerAccess(user: User): boolean {
+  return user.email === ADMIN_EMAIL
 }
 
 type AuthContextType = {
