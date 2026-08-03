@@ -13,7 +13,12 @@ export default function Footer() {
 
   return (
     <footer style={{ backgroundColor: "#0f1f3d" }} className="text-white mt-auto">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      {/* md:pl-20 clears the fixed desktop sidebar rail (Navbar.tsx, 64px
+          collapsed) — it's position:fixed and spans the full viewport
+          height, so without this its opaque background sits on top of and
+          hides this footer's own leftmost content whenever the footer
+          scrolls into view. */}
+      <div className="max-w-7xl mx-auto px-6 py-12 md:pl-20">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Brand */}
           <div>
