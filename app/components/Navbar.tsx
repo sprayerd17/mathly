@@ -155,6 +155,20 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
 
   const lastScrollY = useRef(0)
 
+  // "New" badge on the Store nav item — shown until the user actually visits
+  // /store at least once, then permanently gone for that device. Starts
+  // false (matches the server render) and only flips on post-mount, same
+  // hydration-safe pattern as the rest of this component's client-only state.
+  const [showStoreBadge, setShowStoreBadge] = useState(false)
+  useEffect(() => {
+    if (pathname === '/store') {
+      localStorage.setItem('mathly_store_badge_seen', '1')
+      setShowStoreBadge(false)
+      return
+    }
+    setShowStoreBadge(localStorage.getItem('mathly_store_badge_seen') !== '1')
+  }, [pathname])
+
   // Same endpoint the live-classes page itself uses to decide "Bookings
   // open" vs "Coming Soon" — without this the nav badge always said "Soon"
   // even once real sessions were scheduled and bookable below.
@@ -275,7 +289,17 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
                   backgroundColor: isActive ? '#eff6ff' : 'transparent',
                 }}
               >
-                <Icon />
+                <span className="relative inline-flex shrink-0">
+                  <Icon />
+                  {key === 'nav_store' && showStoreBadge && (
+                    <span
+                      className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full"
+                      style={{ backgroundColor: '#1e40af', boxShadow: '0 0 0 1.5px #fff' }}
+                    >
+                      <span className="sr-only">{t.nav_new_badge}</span>
+                    </span>
+                  )}
+                </span>
                 {sidebarOpen && (
                   <span className="flex items-center gap-1.5 min-w-0">
                     {t[key]}
@@ -383,6 +407,14 @@ const Navbar = forwardRef<NavbarHandle>(function Navbar(_props, ref) {
                     style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}
                   >
                     {t.nav_coming_soon}
+                  </span>
+                )}
+                {href === '/store' && showStoreBadge && (
+                  <span
+                    className="text-[10px] font-bold px-1.5 py-0.5 rounded-full"
+                    style={{ backgroundColor: '#dbeafe', color: '#1e3a8a' }}
+                  >
+                    {t.nav_new_badge}
                   </span>
                 )}
               </Link>
