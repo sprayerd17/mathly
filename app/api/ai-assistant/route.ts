@@ -52,32 +52,50 @@ const MAX_IMAGE_DATA_URL_LENGTH = 2_000_000
 // wrong verdicts here only cost us a bad/missed training example, never the
 // student's actual answer, so it's fine for this to run after the response
 // has already been sent to the browser.
+// "Skim for plausibility" verdicts miss exactly the errors that matter most
+// for training data — confirmed live: a factorisation with a single wrong
+// digit ((x+3)(2x+3) instead of (x+3)(2x+1)) read as plausible enough to
+// pass until the prompt was changed to require actually redoing the work.
 const VERIFY_SYSTEM_PROMPT =
   'You are a strict South African CAPS-curriculum maths fact-checker. You will be given a ' +
-  "student's grade, their question, and a tutor's answer. Judge only whether the answer is " +
-  'mathematically correct and appropriate for that grade — ignore style or tone. ' +
-  'Reply with exactly one word, nothing else: CORRECT or INCORRECT.'
+  "student's grade, the full conversation so far, and the tutor's final answer to check. " +
+  'Before judging, work through the answer yourself step by step — if it claims a factorisation, ' +
+  'multiply it back out and check it equals the original expression; if it claims a numeric result, ' +
+  'redo the calculation independently. Do not just skim for plausibility. ' +
+  'Judge only whether that final answer is mathematically correct and appropriate for the grade, using ' +
+  'the rest of the conversation as context for what it refers to (e.g. a "finish the example" ' +
+  'follow-up only makes sense given what came before it) — ignore style or tone. ' +
+  'After your working, on its own final line, reply with exactly one word: CORRECT or INCORRECT.'
 
-async function isAnswerCorrect(grade: string | null, question: string, answer: string): Promise<boolean> {
+// Student:/Tutor: transcript, oldest first — same shape used for the stored
+// training example itself, just flattened to plain text for this prompt.
+function transcriptFor(context: ApiMessage[]): string {
+  return context.map(m => `${m.role === 'user' ? 'Student' : 'Tutor'}: ${m.content}`).join('\n')
+}
+
+async function isAnswerCorrect(grade: string | null, context: ApiMessage[], answer: string): Promise<boolean> {
   try {
     const verdict = await client.messages.create({
       model: 'claude-sonnet-5',
-      // Sonnet 5 emits an internal thinking block before the actual answer
-      // even when it's not explicitly requested, and that eats into
-      // max_tokens too — too low a budget here truncates mid-thought with
-      // stop_reason 'max_tokens' and zero actual text (confirmed live: with
-      // max_tokens 10 a genuinely wrong answer came back as empty text,
-      // which the caller would have treated as an unverifiable no-op rather
-      // than the INCORRECT verdict it should have been).
-      max_tokens: 200,
+      // Generous budget: Sonnet 5 spends some of this on an internal
+      // thinking block even unrequested, and asking it to show its working
+      // (redo the calculation, expand the factorisation back out) before
+      // answering — needed for real accuracy, see the comment above — takes
+      // real tokens too. Too low a budget here truncates mid-work with
+      // stop_reason 'max_tokens' and no verdict at all.
+      max_tokens: 1000,
       system: VERIFY_SYSTEM_PROMPT,
       messages: [{
         role: 'user',
-        content: `Grade: ${grade ?? 'unknown'}\nQuestion: ${question}\nAnswer: ${answer}`,
+        content: `Grade: ${grade ?? 'unknown'}\n\nConversation so far:\n${transcriptFor(context)}\n\nTutor's final answer to check: ${answer}`,
       }],
     })
-    const text = verdict.content.find(b => b.type === 'text')?.text ?? ''
-    return text.trim().toUpperCase().startsWith('CORRECT')
+    const text = (verdict.content.find(b => b.type === 'text')?.text ?? '').toUpperCase()
+    // Checked in this order because "INCORRECT" contains "CORRECT" as a
+    // substring — a plain .includes('CORRECT') would misread every
+    // INCORRECT verdict as correct.
+    if (text.includes('INCORRECT')) return false
+    return text.includes('CORRECT')
   } catch (err) {
     console.error('[ai-assistant] correctness check failed — skipping training-data storage', err)
     return false
@@ -234,11 +252,6 @@ export async function POST(req: NextRequest) {
     return { role: m.role, content: m.content }
   })
 
-  // For training-data storage below — the question this exchange was
-  // actually about. Only the latest turn: a follow-up like "explain more"
-  // wouldn't make sense as a standalone training example anyway.
-  const question = messages[lastUserIdx]?.content ?? ''
-
   const stream = new ReadableStream({
     async start(controller) {
       const encoder = new TextEncoder()
@@ -268,12 +281,18 @@ export async function POST(req: NextRequest) {
         // once Claude itself has checked the answer is actually correct.
         // Runs after the response has already reached the browser, so it
         // never adds to how long the student waits.
-        if (!imageBlock && question) {
+        //
+        // Stores the FULL conversation up to and including the student's
+        // latest message, not just that last message alone — a follow-up
+        // like "you got cut off, finish the example" is meaningless as a
+        // standalone training pair without the turns it refers to. The
+        // stored answer completes that same context.
+        if (!imageBlock) {
           const language = userData.children?.[activeIdx]?.language === 'af' ? 'af' : 'en'
-          const correct = await isAnswerCorrect(grade, question, fullAnswer)
+          const correct = await isAnswerCorrect(grade, messages, fullAnswer)
           if (correct) {
             await adminDb.collection('aiTrainingData').add({
-              question,
+              context: messages,
               answer: fullAnswer,
               grade: grade ? Number(grade) : null,
               language,
