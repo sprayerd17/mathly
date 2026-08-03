@@ -1,0 +1,58 @@
+rules_version = '2';
+
+// Firebase Storage rules. Only ONE thing is stored in this bucket today: the
+// exam-paper and answer-sheet photos a Max-tier student uploads for Test
+// Analysis. Everything else is denied outright at the bottom of this file.
+//
+// Why the client uploads here at all, rather than POSTing the images inline
+// to /api/analyse-test the way it used to: twenty phone photos base64-encoded
+// into one request comfortably exceeds the hosting platform's request-body
+// limit, which is what forced the old aggressive 1600px/q0.75 compression —
+// and that compression was itself a meaningful source of unreadable
+// handwriting in the analysis. Uploading straight to Storage removes the
+// request-size ceiling entirely, so the photos can be sent at a quality the
+// model can actually read.
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    match /testAnalysis/{userId}/{submissionId}/{fileName} {
+      // A signed-in user may only ever write under their OWN uid prefix, so
+      // one account can never stage images inside another account's folder
+      // and have the server pick them up.
+      //
+      // The size and content-type checks are enforced here rather than
+      // trusted from the client because the client is the untrusted party:
+      // without them, an authenticated user could upload arbitrary files of
+      // arbitrary size into our bucket and we'd pay to store them. 6MB is a
+      // generous per-image ceiling — a 2000px JPEG at q0.85 is well under 1MB,
+      // so anything near this cap is already anomalous.
+      allow write: if request.auth != null
+                   && request.auth.uid == userId
+                   && request.resource.size < 6 * 1024 * 1024
+                   && request.resource.contentType.matches('image/jpeg');
+
+      // Never readable by any client. The only reader is /api/analyse-test via
+      // the Admin SDK, which bypasses these rules entirely — it downloads each
+      // image, sends it to Claude, and then (unless the parent explicitly
+      // opted into retention) deletes it again. A client has no reason to read
+      // back what it just uploaded, and these are photographs of a child's
+      // handwriting, so the safe default is that nobody can fetch them.
+      allow read: if false;
+
+      // Deletion is server-only for the same reason. The route is responsible
+      // for cleaning up every submission's images — including on the failure
+      // path, so a crashed analysis can't leave orphaned photos behind. If a
+      // client could delete, it could also remove images mid-analysis and
+      // produce a confidently-wrong report from a partial set.
+      allow delete: if false;
+    }
+
+    // Deny-by-default backstop. Declared last and matched against any path the
+    // specific rule above didn't already handle — a new feature that starts
+    // writing elsewhere in this bucket fails closed until its own rule is
+    // written deliberately, rather than silently inheriting access.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

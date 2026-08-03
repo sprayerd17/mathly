@@ -125,14 +125,26 @@ service cloud.firestore {
     // own-uid write, same trust level as the rest of this user's own data.
     match /users/{userId}/testAnalysisReports/{reportId} {
       allow read: if request.auth != null && request.auth.uid == userId;
+      // submissionId is an opaque handle tying this saved report back to the
+      // (uid-less) training row the same analysis produced. It carries no
+      // meaning on its own — it exists so that when a learner submits a
+      // correction, /api/test-analysis-feedback can prove the caller actually
+      // owns that submission before writing a verdict onto the training data.
+      // The linkage lives here, on the user's own document, and never on the
+      // training row itself, which stays free of any account identifier.
+      // Checked with 'in' rather than a null comparison because reports
+      // created before this field existed simply don't carry the key, and
+      // hasOnly() permits a subset — so old and new clients both still write.
       allow create: if request.auth != null && request.auth.uid == userId
-                    && request.resource.data.keys().hasOnly(['grade', 'date', 'report', 'imageCount'])
+                    && request.resource.data.keys().hasOnly(['grade', 'date', 'report', 'imageCount', 'submissionId'])
                     && request.resource.data.grade is number
                     && request.resource.data.grade >= 4 && request.resource.data.grade <= 12
                     && request.resource.data.date is timestamp
                     && request.resource.data.report is string
                     && request.resource.data.report.size() <= 20000
-                    && request.resource.data.imageCount is number;
+                    && request.resource.data.imageCount is number
+                    && (!('submissionId' in request.resource.data)
+                        || request.resource.data.submissionId is string);
       allow update, delete: if false;
     }
 
@@ -324,6 +336,19 @@ service cloud.firestore {
       match /questions/{questionId} {
         allow read, write: if false;
       }
+    }
+
+    // Daily Anthropic token-spend rollups (one doc per YYYY-MM-DD), written
+    // by /api/ai-assistant and /api/analyse-test via the Admin SDK using
+    // FieldValue.increment(). Exists so real cost per request — and therefore
+    // real margin per plan — can be read from measurement rather than
+    // estimated: scripts/api-cost-report.mjs turns these into a costed
+    // report. Server-only in both directions, same as the training
+    // collections above: a client that could increment these could distort
+    // the cost picture, and a client that could read them would learn our
+    // unit economics.
+    match /apiUsageDaily/{dayId} {
+      allow read, write: if false;
     }
 
     // Lesson requests — signed-in learners asking for specific topics, and
