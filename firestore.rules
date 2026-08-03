@@ -302,6 +302,30 @@ service cloud.firestore {
       allow create, update, delete: if false;
     }
 
+    // Verified-correct AI assistant Q&A pairs, collected for future
+    // fine-tuning of our own model — written only by /api/ai-assistant
+    // (Admin SDK) after Claude itself checks the answer is mathematically
+    // correct. No uid on these documents (not tied to a student's identity)
+    // and no client access at all in either direction.
+    match /aiTrainingData/{docId} {
+      allow read, write: if false;
+    }
+
+    // Structured, text-only breakdowns of test-analysis submissions — same
+    // training-data purpose and same server-only access as aiTrainingData
+    // above, written by /api/analyse-test after Claude extracts the
+    // per-question detail from a report it already generated. Questions are
+    // their own subcollection (not an array on the submission doc) so
+    // "everything flagged uncertain" is a plain collection-group query
+    // instead of scanning every submission by hand.
+    match /testAnalysisSubmissions/{docId} {
+      allow read, write: if false;
+
+      match /questions/{questionId} {
+        allow read, write: if false;
+      }
+    }
+
     // Lesson requests — signed-in learners asking for specific topics, and
     // waitlist entries for sessions that filled up (sessionId set). Never
     // consumed or deleted when sessions get scheduled: this collection IS the

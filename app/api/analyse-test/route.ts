@@ -60,6 +60,99 @@ function currentMonthStamp(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
 }
 
+// ─── Training-data extraction (second, separate call) ─────────────────────
+//
+// Deliberately its own call rather than folded into the report prompt above
+// — the report students actually read is already working and shouldn't risk
+// regressing just to also emit structured JSON. This one re-reads the same
+// photos and only has to produce the structured breakdown, storing nothing
+// but text (see the "images or no images" call from earlier — no images are
+// kept, only what gets extracted from them).
+
+type StructuredQuestion = {
+  questionNumber: string
+  topic: string
+  marks: number
+  studentAnswer: string
+  mistake: string
+  correctAnswer: string
+  uncertain: boolean
+  uncertaintyReason: string
+}
+
+type StructuredBreakdown = {
+  questions: StructuredQuestion[]
+  identifiedWeaknesses: string[]
+  recommendedIntervention: string
+  generatedPracticeAdvice: string
+}
+
+const EXTRACT_SYSTEM_PROMPT = `You are extracting a structured, question-by-question breakdown from a South African CAPS Grade student's maths test — the question paper and their written answer sheet, both photographed.
+
+For every question on the paper (including sub-parts like 2a, 2b), record: the question number, the specific CAPS topic it tests, the marks it's worth, exactly what the student wrote as their answer (transcribed, not paraphrased), the specific mistake they made (write "None" if fully correct), and the correct answer.
+
+Reading photographed handwriting is genuinely hard — do not guess or fill in gaps. If you cannot confidently read the student's handwriting, cannot tell which question a mark belongs to, or are unsure of the marks/topic for any reason, set that question's "uncertain" to true and briefly say why in "uncertaintyReason" (e.g. "handwriting illegible past the first line", "can't confirm marks allocated to this question"). Only set "uncertain" to false when you are actually confident.
+
+Also provide: identifiedWeaknesses (the specific, concrete gaps you found — not vague topics), recommendedIntervention (what this student should focus on first and why), and generatedPracticeAdvice (concrete next steps — e.g. which kinds of problems to practise).`
+
+const EXTRACT_SCHEMA = {
+  type: 'json_schema' as const,
+  schema: {
+    type: 'object',
+    additionalProperties: false,
+    properties: {
+      questions: {
+        type: 'array',
+        items: {
+          type: 'object',
+          additionalProperties: false,
+          properties: {
+            questionNumber: { type: 'string' },
+            topic: { type: 'string' },
+            marks: { type: 'number' },
+            studentAnswer: { type: 'string' },
+            mistake: { type: 'string' },
+            correctAnswer: { type: 'string' },
+            uncertain: { type: 'boolean' },
+            uncertaintyReason: { type: 'string' },
+          },
+          required: ['questionNumber', 'topic', 'marks', 'studentAnswer', 'mistake', 'correctAnswer', 'uncertain', 'uncertaintyReason'],
+        },
+      },
+      identifiedWeaknesses: { type: 'array', items: { type: 'string' } },
+      recommendedIntervention: { type: 'string' },
+      generatedPracticeAdvice: { type: 'string' },
+    },
+    required: ['questions', 'identifiedWeaknesses', 'recommendedIntervention', 'generatedPracticeAdvice'],
+  },
+}
+
+async function extractStructuredBreakdown(
+  grade: number,
+  content: Anthropic.Messages.ContentBlockParam[]
+): Promise<StructuredBreakdown | null> {
+  try {
+    // Plain create() rather than parse() — parse()'s auto-decoding only
+    // kicks in for formats built via a schema-library helper (e.g.
+    // zodOutputFormat, which embeds its own .parse()); a raw JSON-schema
+    // object like EXTRACT_SCHEMA still constrains Claude's output correctly,
+    // it just doesn't get auto-decoded, so the JSON.parse below is manual.
+    const message = await client.messages.create({
+      model: 'claude-sonnet-5',
+      max_tokens: 4000,
+      system: `${EXTRACT_SYSTEM_PROMPT}\n\nThis student is in Grade ${grade}.`,
+      messages: [{ role: 'user', content }],
+      output_config: { format: EXTRACT_SCHEMA },
+    })
+    const text = message.content.find((b): b is Anthropic.Messages.TextBlock => b.type === 'text')?.text
+    if (!text) return null
+    return JSON.parse(text) as StructuredBreakdown
+  } catch (err) {
+    console.error('[analyse-test] structured extraction failed — skipping training-data storage', err)
+    return null
+  }
+}
+
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null) as {
     idToken?: string
@@ -184,6 +277,32 @@ export async function POST(req: NextRequest) {
       .join('\n')
 
     if (!report.trim()) throw new Error('EMPTY_RESPONSE')
+
+    // Training-data collection — see extractStructuredBreakdown above. Runs
+    // after the report is already finalized; any failure here is swallowed
+    // so it can never turn a successful analysis into an error response or
+    // cost the student their monthly usage slot.
+    try {
+      const breakdown = await extractStructuredBreakdown(grade, content)
+      if (breakdown) {
+        const submissionRef = await adminDb.collection('testAnalysisSubmissions').add({
+          grade,
+          curriculum: 'CAPS',
+          subject: 'Mathematics',
+          identifiedWeaknesses: breakdown.identifiedWeaknesses,
+          recommendedIntervention: breakdown.recommendedIntervention,
+          generatedPracticeAdvice: breakdown.generatedPracticeAdvice,
+          createdAt: FieldValue.serverTimestamp(),
+        })
+        const batch = adminDb.batch()
+        for (const q of breakdown.questions) {
+          batch.set(submissionRef.collection('questions').doc(), q)
+        }
+        await batch.commit()
+      }
+    } catch (err) {
+      console.error('[analyse-test] failed to store training data', err)
+    }
 
     return Response.json({ report })
   } catch (err) {

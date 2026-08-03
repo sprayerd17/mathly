@@ -47,6 +47,43 @@ const MAX_CONTENT_LENGTH = 2000
 // client never gets close to this; it's a backstop against a tampered request.
 const MAX_IMAGE_DATA_URL_LENGTH = 2_000_000
 
+// Training-data collection for our own future model — see aiTrainingData in
+// firestore.rules. Kept deliberately separate from the tutoring call itself:
+// wrong verdicts here only cost us a bad/missed training example, never the
+// student's actual answer, so it's fine for this to run after the response
+// has already been sent to the browser.
+const VERIFY_SYSTEM_PROMPT =
+  'You are a strict South African CAPS-curriculum maths fact-checker. You will be given a ' +
+  "student's grade, their question, and a tutor's answer. Judge only whether the answer is " +
+  'mathematically correct and appropriate for that grade — ignore style or tone. ' +
+  'Reply with exactly one word, nothing else: CORRECT or INCORRECT.'
+
+async function isAnswerCorrect(grade: string | null, question: string, answer: string): Promise<boolean> {
+  try {
+    const verdict = await client.messages.create({
+      model: 'claude-sonnet-5',
+      // Sonnet 5 emits an internal thinking block before the actual answer
+      // even when it's not explicitly requested, and that eats into
+      // max_tokens too — too low a budget here truncates mid-thought with
+      // stop_reason 'max_tokens' and zero actual text (confirmed live: with
+      // max_tokens 10 a genuinely wrong answer came back as empty text,
+      // which the caller would have treated as an unverifiable no-op rather
+      // than the INCORRECT verdict it should have been).
+      max_tokens: 200,
+      system: VERIFY_SYSTEM_PROMPT,
+      messages: [{
+        role: 'user',
+        content: `Grade: ${grade ?? 'unknown'}\nQuestion: ${question}\nAnswer: ${answer}`,
+      }],
+    })
+    const text = verdict.content.find(b => b.type === 'text')?.text ?? ''
+    return text.trim().toUpperCase().startsWith('CORRECT')
+  } catch (err) {
+    console.error('[ai-assistant] correctness check failed — skipping training-data storage', err)
+    return false
+  }
+}
+
 function currentMonthStamp(): string {
   const d = new Date()
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
@@ -197,9 +234,15 @@ export async function POST(req: NextRequest) {
     return { role: m.role, content: m.content }
   })
 
+  // For training-data storage below — the question this exchange was
+  // actually about. Only the latest turn: a follow-up like "explain more"
+  // wouldn't make sense as a standalone training example anyway.
+  const question = messages[lastUserIdx]?.content ?? ''
+
   const stream = new ReadableStream({
     async start(controller) {
       const encoder = new TextEncoder()
+      let fullAnswer = ''
       try {
         const response = await client.messages.create({
           model: 'claude-sonnet-5',
@@ -215,6 +258,29 @@ export async function POST(req: NextRequest) {
             event.delta.type === 'text_delta'
           ) {
             controller.enqueue(encoder.encode(event.delta.text))
+            fullAnswer += event.delta.text
+          }
+        }
+
+        // Training-data collection — text-only (a screen capture can't be
+        // represented in this dataset, so those exchanges are skipped
+        // entirely rather than stored with missing context) and only kept
+        // once Claude itself has checked the answer is actually correct.
+        // Runs after the response has already reached the browser, so it
+        // never adds to how long the student waits.
+        if (!imageBlock && question) {
+          const language = userData.children?.[activeIdx]?.language === 'af' ? 'af' : 'en'
+          const correct = await isAnswerCorrect(grade, question, fullAnswer)
+          if (correct) {
+            await adminDb.collection('aiTrainingData').add({
+              question,
+              answer: fullAnswer,
+              grade: grade ? Number(grade) : null,
+              language,
+              createdAt: FieldValue.serverTimestamp(),
+            }).catch(err => {
+              console.error('[ai-assistant] failed to store training example', err)
+            })
           }
         }
       } catch (err) {
