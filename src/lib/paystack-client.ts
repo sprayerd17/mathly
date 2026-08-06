@@ -159,23 +159,6 @@ export async function cancelSubscription(fbUser: FirebaseUser): Promise<{ access
   return res.json()
 }
 
-// Moves one child in a family plan to Free — the family's other children
-// and the subscription itself are untouched; Paystack's billed amount is
-// reduced starting next billing cycle (no proration/refund for the current
-// one).
-export async function downgradeChild(fbUser: FirebaseUser, childIndex: number): Promise<{ childPlans: Tier[]; newTotal: number }> {
-  const idToken = await fbUser.getIdToken()
-  const res = await fetch('/api/paystack/downgrade-child', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ idToken, childIndex }),
-  })
-  if (!res.ok) {
-    throw new CheckoutError(await res.text().catch(() => 'Could not move this child to the Free plan. Please try again.'))
-  }
-  return res.json()
-}
-
 // Changes an already-subscribed family's tier mix (any combination of
 // upgrades/downgrades across children). Two outcomes depending on whether
 // the total is going up or down — see update-tiers/route.ts for why:

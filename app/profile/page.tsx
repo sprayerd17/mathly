@@ -10,7 +10,7 @@ import { QRCodeCanvas } from 'qrcode.react'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore'
 import { db, auth } from '@/src/lib/firebase'
-import { cancelSubscription, downgradeChild } from '@/src/lib/paystack-client'
+import { cancelSubscription, updateTiers } from '@/src/lib/paystack-client'
 import { deleteAccount } from '@/src/lib/account-client'
 import { computeFamilyPrice, addOneMonth } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
@@ -112,20 +112,61 @@ export default function ProfilePage() {
     }
   }
 
-  const [downgradingIndex, setDowngradingIndex]   = useState<number | null>(null)
-  const [downgradeInProgress, setDowngradeInProgress] = useState(false)
-  const [downgradeError, setDowngradeError]       = useState<string | null>(null)
+  // Single "Edit Plan" card, three explicit steps — nothing here is
+  // checkout-ready by accident:
+  //   1. collapsed (editingPlan false) — just an "Edit Plan" button, no
+  //      pickers rendered, nothing clickable toward a charge.
+  //   2. editingPlan true, reviewing false — per-child tier pickers, seeded
+  //      from the real current plan (draftTiers). "Review changes" stays
+  //      disabled until something actually differs from today's plan.
+  //   3. reviewing true — a plain-language summary of exactly what's about
+  //      to happen (silently updates next month's bill for a downgrade, or
+  //      shows the real outstanding balance due today for an upgrade)
+  //      before the one "Confirm" click that actually calls update-tiers.
+  // This replaces the old per-child "Change plan" link entirely, and this
+  // card is now the *only* place an already-subscribed family edits their
+  // plan — see FamilyPlanBuilder.tsx, which no longer lets a subscribed
+  // family submit changes from /pricing.
+  const [editingPlan, setEditingPlan]     = useState(false)
+  const [draftTiers, setDraftTiers]       = useState<Tier[]>([])
+  const [reviewingPlan, setReviewingPlan] = useState(false)
+  const [planSaveInProgress, setPlanSaveInProgress] = useState(false)
+  const [planSaveError, setPlanSaveError] = useState<string | null>(null)
 
-  async function handleDowngradeChild(index: number) {
+  function startEditPlan() {
+    setDraftTiers(user!.childPlans)
+    setReviewingPlan(false)
+    setPlanSaveError(null)
+    setEditingPlan(true)
+  }
+
+  function cancelEditPlan() {
+    setEditingPlan(false)
+    setReviewingPlan(false)
+    setPlanSaveError(null)
+  }
+
+  async function handleSavePlanChange(allFree: boolean) {
     if (!auth.currentUser) return
-    setDowngradeInProgress(true)
-    setDowngradeError(null)
+    if (allFree) {
+      // Leaving zero paid children isn't a "downgrade" update-tiers accepts
+      // — it rejects that outright and expects a real cancellation instead.
+      await handleCancelSubscription()
+      return
+    }
+    setPlanSaveInProgress(true)
+    setPlanSaveError(null)
     try {
-      await downgradeChild(auth.currentUser, index)
-      window.location.reload()
+      const result = await updateTiers(auth.currentUser, draftTiers)
+      // A rising total redirects to Paystack for just the outstanding
+      // balance instead of returning — nothing to reload in that case, the
+      // browser is navigating away. A falling (or equal) total updates
+      // Firestore + the Paystack Plan in place, right here, with no
+      // navigation at all.
+      if (result) window.location.reload()
     } catch (err) {
-      setDowngradeError(err instanceof Error ? err.message : String(err))
-      setDowngradeInProgress(false)
+      setPlanSaveError(err instanceof Error ? err.message : String(err))
+      setPlanSaveInProgress(false)
     }
   }
 
@@ -309,6 +350,11 @@ export default function ProfilePage() {
   const activeChild = children[activeChildIndex()] ?? children[0]
   const tierLabel = (tier: Tier) => tier === 'pro' ? t.profile_plan_pro : tier === 'max' ? t.profile_plan_max : t.profile_plan_free
   const tierDesc = (tier: Tier) => tier === 'pro' ? t.profile_plan_desc_pro : tier === 'max' ? t.profile_plan_desc_max : t.profile_plan_desc_free
+  // Once the family has any active subscription, every child's tier — paid
+  // or still-free — can be changed in place via update-tiers (it amends the
+  // existing Paystack Plan). Only a family with no subscription at all has
+  // to go through /pricing's full checkout flow to capture a first card.
+  const hasActiveSub = user.subscriptionStatus === 'active' || user.subscriptionStatus === 'past_due'
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f8fafc' }}>
@@ -340,8 +386,8 @@ export default function ProfilePage() {
         >
           {/* Avatar + name + email */}
           <div
-            className={`flex items-center gap-5 ${activeChild ? 'mb-8 pb-8' : ''}`}
-            style={activeChild ? { borderBottom: '1px solid #f3f4f6' } : undefined}
+            className={`flex items-center gap-5 ${(activeChild || children.length > 1) ? 'mb-8 pb-8' : ''}`}
+            style={(activeChild || children.length > 1) ? { borderBottom: '1px solid #f3f4f6' } : undefined}
           >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white shrink-0"
@@ -356,6 +402,40 @@ export default function ProfilePage() {
               <p className="text-sm text-gray-500 mt-0.5 truncate">{user.email}</p>
             </div>
           </div>
+
+          {/* Active-child switcher — lives right next to the identity card's
+              own grade/language display below, since that's exactly what it
+              controls. Previously stranded at the bottom of the page, past
+              an entire billing section, separate from the info it switches. */}
+          {children.length > 1 && (
+            <div id="tour-active-child-switcher" className="mb-8 pb-8" style={{ borderBottom: '1px solid #f3f4f6' }}>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#6b7280' }}>
+                {t.profile_active_child_heading}
+              </p>
+              <p className="text-xs text-gray-500 mb-3">
+                {t.profile_active_child_hint}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {children.map((child, i) => {
+                  const active = i === user.activeChildIndex
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => updateActiveChild(i)}
+                      className="px-4 py-2 rounded-full text-sm font-semibold border transition-all"
+                      style={
+                        active
+                          ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
+                          : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
+                      }
+                    >
+                      {child.name}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          )}
 
           {activeChild && (
             <>
@@ -764,9 +844,6 @@ export default function ProfilePage() {
           <div className="flex flex-col gap-4">
             {children.map((child, i) => {
               const tier: Tier = user.childPlans[i] ?? 'free'
-              const paidCount = user.childPlans.filter(pt => pt !== 'free').length
-              const canDowngrade = tier !== 'free'
-              const isLastPaidChild = canDowngrade && paidCount === 1
               return (
                 <div
                   key={i}
@@ -783,7 +860,13 @@ export default function ProfilePage() {
                       </p>
                       <p className="text-sm text-gray-500 mt-0.5">{tierDesc(tier)}</p>
                     </div>
-                    {tier === 'free' && (
+                    {!hasActiveSub && tier === 'free' && (
+                      // No subscription on file at all yet — a first paid
+                      // child needs real checkout (card capture), which only
+                      // /pricing can do. Once any child is paid, the Edit
+                      // Plan card below handles every future change in place
+                      // instead, including bringing this child onto a paid
+                      // tier alongside their sibling.
                       <Link
                         href="/pricing"
                         className="shrink-0 text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
@@ -792,73 +875,151 @@ export default function ProfilePage() {
                         {t.profile_upgrade}
                       </Link>
                     )}
-                    {canDowngrade && downgradingIndex !== i && (
-                      <button
-                        onClick={() => { setDowngradingIndex(i); setDowngradeError(null); setCancelError(null) }}
-                        className="shrink-0 text-xs font-semibold hover:underline underline-offset-2"
-                        style={{ color: '#6b7280' }}
-                      >
-                        {t.profile_remove_child_link.replace('{name}', child.name)}
-                      </button>
-                    )}
                   </div>
-                  {canDowngrade && downgradingIndex === i && (
-                    <div className="mt-3 p-4 rounded-xl" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
-                      {isLastPaidChild ? (
-                        <p className="text-sm text-gray-600 mb-3">
-                          {t.profile_remove_last_child_confirm_body.replace('{name}', child.name)}
-                        </p>
-                      ) : (
-                        <>
-                          <p className="text-sm text-gray-600 mb-2">
-                            {t.profile_remove_child_confirm_body.replace('{name}', child.name)}
-                          </p>
-                          <p className="text-xs font-semibold mb-3" style={{ color: '#0f1f3d' }}>
-                            {t.profile_remove_child_new_total_label}: R
-                            {computeFamilyPrice(
-                              user.childPlans.map((pt, pi) => (pi === i ? 'free' : pt)),
-                              user.paystackFounding ?? { pro: false, max: false },
-                            ).total}
-                            {t.pricing_per_month}
-                          </p>
-                        </>
-                      )}
-                      {(isLastPaidChild ? cancelError : downgradeError) && (
-                        <p className="text-xs font-semibold mb-3" style={{ color: '#b91c1c' }}>
-                          {isLastPaidChild ? cancelError : downgradeError}
-                        </p>
-                      )}
-                      <div className="flex gap-3">
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setDowngradingIndex(null)
-                            setDowngradeError(null)
-                            setCancelError(null)
-                          }}
-                          disabled={isLastPaidChild ? cancelInProgress : downgradeInProgress}
-                          className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2 rounded-lg text-xs hover:bg-gray-50 transition-colors disabled:opacity-50"
-                        >
-                          {t.profile_cancel_subscription_keep}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => isLastPaidChild ? handleCancelSubscription() : handleDowngradeChild(i)}
-                          disabled={isLastPaidChild ? cancelInProgress : downgradeInProgress}
-                          className="flex-1 font-semibold py-2 rounded-lg text-xs text-white transition-colors disabled:opacity-50"
-                          style={{ backgroundColor: '#b91c1c' }}
-                        >
-                          {isLastPaidChild
-                            ? (cancelInProgress ? t.profile_cancel_subscription_in_progress : t.profile_cancel_subscription_confirm)
-                            : (downgradeInProgress ? t.profile_remove_child_in_progress : t.profile_remove_child_confirm)}
-                        </button>
-                      </div>
-                    </div>
-                  )}
                 </div>
               )
             })}
           </div>
+
+          {/* Edit Plan card — the only place an already-subscribed family
+              changes anything. Nothing here is checkout-ready until you
+              deliberately open it, change something, and confirm — see the
+              state comments above. */}
+          {hasActiveSub && (
+            <div className="mt-5 pt-5" style={{ borderTop: '1px solid #f3f4f6' }}>
+              {!editingPlan ? (
+                <button
+                  type="button"
+                  onClick={startEditPlan}
+                  className="text-sm font-semibold px-5 py-2.5 rounded-xl text-white transition-colors"
+                  style={{ backgroundColor: '#1e40af' }}
+                >
+                  {t.profile_edit_plan_button}
+                </button>
+              ) : (() => {
+                const currentTotal = computeFamilyPrice(user.childPlans, user.paystackFounding ?? { pro: false, max: false }).total
+                const draftTotal = computeFamilyPrice(
+                  draftTiers,
+                  user.paystackFounding ?? { pro: false, max: false },
+                ).total
+                const unchanged = draftTiers.length === user.childPlans.length
+                  && draftTiers.every((t, i) => t === user.childPlans[i])
+                const allFree = !draftTiers.some(t => t !== 'free')
+                const isUpgrade = draftTotal > currentTotal
+                const outstandingBalance = draftTotal - currentTotal
+                return (
+                  <div className="p-4 rounded-xl" style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb' }}>
+                    {!reviewingPlan ? (
+                      <>
+                        <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#6b7280' }}>
+                          {t.profile_edit_plan_heading}
+                        </p>
+                        <div className="flex flex-col gap-3 mb-4">
+                          {children.map((child, i) => (
+                            <div key={i} className="flex items-center justify-between gap-3">
+                              <span className="text-sm font-semibold shrink-0" style={{ color: '#0f1f3d' }}>{child.name}</span>
+                              <select
+                                value={draftTiers[i] ?? 'free'}
+                                onChange={e => setDraftTiers(prev => prev.map((t, idx) => idx === i ? e.target.value as Tier : t))}
+                                className="border rounded-lg px-3 py-2 text-sm bg-white font-medium"
+                                style={{ borderColor: '#d1d5db', color: '#0f1f3d' }}
+                              >
+                                <option value="free">{t.profile_plan_free}</option>
+                                <option value="pro">{t.profile_plan_pro}</option>
+                                <option value="max">{t.profile_plan_max}</option>
+                              </select>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex items-center justify-between text-sm mb-4 pt-3" style={{ borderTop: '1px solid #e5e7eb' }}>
+                          <span className="text-gray-500">{t.profile_edit_plan_new_total_label}</span>
+                          <span className="font-bold" style={{ color: '#0f1f3d' }}>R{draftTotal}{t.pricing_per_month}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <button
+                            type="button"
+                            onClick={cancelEditPlan}
+                            className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors"
+                          >
+                            {t.profile_cancel}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setReviewingPlan(true)}
+                            disabled={unchanged}
+                            className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                            style={{ backgroundColor: '#1e40af' }}
+                          >
+                            {t.profile_edit_plan_review_button}
+                          </button>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        {allFree ? (
+                          <p className="text-sm text-gray-600 mb-3">
+                            {t.profile_edit_plan_all_free_body}
+                          </p>
+                        ) : isUpgrade ? (
+                          <>
+                            <p className="text-sm text-gray-600 mb-3">
+                              {t.profile_edit_plan_upgrade_confirm_body}
+                            </p>
+                            <div className="flex items-center justify-between text-sm mb-2">
+                              <span className="text-gray-500">{t.profile_edit_plan_outstanding_balance_label}</span>
+                              <span className="font-bold" style={{ color: '#0f1f3d' }}>R{outstandingBalance}</span>
+                            </div>
+                            <div className="flex items-center justify-between text-sm mb-3">
+                              <span className="text-gray-500">{t.profile_edit_plan_new_total_label}</span>
+                              <span className="font-semibold" style={{ color: '#374151' }}>R{draftTotal}{t.pricing_per_month}</span>
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <p className="text-sm text-gray-600 mb-3">
+                              {t.profile_edit_plan_downgrade_confirm_body}
+                            </p>
+                            <div className="flex items-center justify-between text-sm mb-3">
+                              <span className="text-gray-500">{t.profile_edit_plan_new_total_label}</span>
+                              <span className="font-semibold" style={{ color: '#374151' }}>R{draftTotal}{t.pricing_per_month}</span>
+                            </div>
+                          </>
+                        )}
+                        {(allFree ? cancelError : planSaveError) && (
+                          <p className="text-xs font-semibold mb-3" style={{ color: '#b91c1c' }}>
+                            {allFree ? cancelError : planSaveError}
+                          </p>
+                        )}
+                        <div className="flex gap-3">
+                          <button
+                            type="button"
+                            onClick={() => { setReviewingPlan(false); setPlanSaveError(null); setCancelError(null) }}
+                            disabled={allFree ? cancelInProgress : planSaveInProgress}
+                            className="flex-1 border border-gray-200 text-gray-600 font-semibold py-2.5 rounded-lg text-sm hover:bg-gray-50 transition-colors disabled:opacity-50"
+                          >
+                            {t.profile_edit_plan_back_button}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleSavePlanChange(allFree)}
+                            disabled={allFree ? cancelInProgress : planSaveInProgress}
+                            className="flex-1 font-semibold py-2.5 rounded-lg text-sm text-white transition-colors disabled:opacity-50"
+                            style={{ backgroundColor: allFree ? '#b91c1c' : '#1e40af' }}
+                          >
+                            {allFree
+                              ? (cancelInProgress ? t.profile_cancel_subscription_in_progress : t.profile_cancel_subscription_confirm)
+                              : isUpgrade
+                                ? (planSaveInProgress ? t.profile_edit_plan_saving : t.profile_edit_plan_confirm_pay_button.replace('{amount}', String(outstandingBalance)))
+                                : (planSaveInProgress ? t.profile_edit_plan_saving : t.profile_edit_plan_confirm_button)}
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )
+              })()}
+            </div>
+          )}
           {user.subscriptionStatus === 'active' && user.childPlans.some(tier => tier !== 'free') && (() => {
             const { total, perChild } = computeFamilyPrice(user.childPlans, user.paystackFounding ?? { pro: false, max: false })
             const groups: { tier: Tier; price: number; count: number }[] = []
@@ -999,36 +1160,6 @@ export default function ProfilePage() {
               )
             )}
           </div>
-
-          {children.length > 1 && (
-            <div id="tour-active-child-switcher" className="mb-5 pb-5" style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#6b7280' }}>
-                {t.profile_active_child_heading}
-              </p>
-              <p className="text-xs text-gray-500 mb-3">
-                {t.profile_active_child_hint}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {children.map((child, i) => {
-                  const active = i === user.activeChildIndex
-                  return (
-                    <button
-                      key={i}
-                      onClick={() => updateActiveChild(i)}
-                      className="px-4 py-2 rounded-full text-sm font-semibold border transition-all"
-                      style={
-                        active
-                          ? { backgroundColor: '#1e40af', color: '#fff', borderColor: '#1e40af' }
-                          : { backgroundColor: '#fff', color: '#374151', borderColor: '#d1d5db' }
-                      }
-                    >
-                      {child.name}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-          )}
 
           {children.length === 0 && !addingChild && (
             <p className="text-sm text-gray-500">

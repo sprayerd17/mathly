@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useTranslations } from '@/src/i18n/useTranslations'
 import { useAuth } from '@/app/providers'
 import { auth } from '@/src/lib/firebase'
-import { initiateCheckout, updateTiers, getFoundingStatus, type FoundingPlanStatus } from '@/src/lib/paystack-client'
+import { initiateCheckout, getFoundingStatus, type FoundingPlanStatus } from '@/src/lib/paystack-client'
 import { FOUNDING_PRICE, FULL_PRICE, computeFamilyPrice, type Plan, type Tier } from '@/src/lib/pricing'
 import { PAYMENTS_ENABLED } from '@/src/lib/launch-config'
 
@@ -89,15 +89,6 @@ export default function FamilyPlanBuilder() {
   const LABEL: Record<Plan, string> = { pro: t.dash_package_pro, max: t.dash_package_max }
   const [mounted, setMounted] = useState(false)
 
-  // Logged-out preview — purely illustrative (clicking "claim your spot" just
-  // opens the register modal, which has its own per-child plan picker), so
-  // this stays a free-form 1-3 toggleable comparison, pro/max only.
-  const [c1, setC1]           = useState<Plan>('pro')
-  const [c2On, setC2On]       = useState(false)
-  const [c2, setC2]           = useState<Plan>('pro')
-  const [c3On, setC3On]       = useState(false)
-  const [c3, setC3]           = useState<Plan>('pro')
-
   // Logged-in checkout — the checkout API requires childTiers to align 1:1
   // with the account's actual children, so rows here are fixed to the real
   // family (no add/remove), one tier picker per existing child, defaulting
@@ -115,11 +106,12 @@ export default function FamilyPlanBuilder() {
   const [checkingOut, setCheckingOut]     = useState(false)
   const [checkoutError, setCheckoutError] = useState('')
 
-  // Once a family already has an active subscription, re-submitting this
-  // page must amend that subscription in place rather than starting a new
-  // checkout — checkout unconditionally creates a brand-new Plan +
-  // Transaction, which would leave the original subscription still billing
-  // and double-charge any child who was already paid.
+  // Once a family already has an active subscription, this page no longer
+  // lets them edit it at all — see the render below, which swaps the
+  // interactive builder for a plain pointer to the profile page's "Edit
+  // Plan" card instead. That card is now the only place a subscribed family
+  // changes anything: a live, one-click-from-checkout builder sitting here
+  // made it too easy to trigger a real charge without meaning to.
   const hasActiveSub = user?.subscriptionStatus === 'active' || user?.subscriptionStatus === 'past_due'
 
   // Intentional hydration-safe mount flag — see slotBadgeAndSpots() below.
@@ -152,13 +144,12 @@ export default function FamilyPlanBuilder() {
   }
   const founding: Record<Plan, boolean> = { pro: proFounding, max: maxFounding }
 
-  const persons: { label: string; tier: Tier }[] = user
+  // The interactive builder below only ever renders for a logged-in family
+  // with no active subscription yet (see the render), so persons is only
+  // ever populated for that first-time-subscribing case.
+  const persons: { label: string; tier: Tier }[] = user && !hasActiveSub
     ? user.children.map((c, i) => ({ label: c.name || `Person ${i + 1}`, tier: ownTiers[i] ?? 'free' }))
-    : [
-        { label: t.pricing_person_1_label, tier: c1 },
-        ...(c2On ? [{ label: t.pricing_person_2_label, tier: c2 as Tier }] : []),
-        ...(c3On ? [{ label: t.pricing_person_3_label, tier: c3 as Tier }] : []),
-      ]
+    : []
   const multiPerson = persons.length > 1
 
   const { total: grandTotal, perChild } = computeFamilyPrice(
@@ -167,8 +158,6 @@ export default function FamilyPlanBuilder() {
   )
   const personDetails = persons.map((p, i) => ({ label: p.label, ...perChild[i] }))
   const paidCount = persons.filter(p => p.tier !== 'free').length
-  const noChange = hasActiveSub && !!user && persons.length === user.childPlans.length
-    && persons.every((p, i) => p.tier === user.childPlans[i])
   const hasAnyDiscount = paidCount > 1 && personDetails.some(p => p.tier !== 'free' && !p.isFounding)
   const totalSaving = personDetails.reduce((sum, p) => {
     if (p.tier === 'free') return sum
@@ -176,27 +165,16 @@ export default function FamilyPlanBuilder() {
     return sum + (paidCount > 1 && !p.isFounding ? base - p.price : 0)
   }, 0)
 
+  // Only ever wired to a button rendered for a logged-in, not-yet-subscribed
+  // user — first-time checkout, always a brand-new Plan + Transaction. An
+  // already-subscribed family never reaches this; see the CTA/pointer cards
+  // in the render below for the other two cases.
   async function handleClaimSpot() {
-    if (!user) {
-      openModal('register')
-      return
-    }
     if (!auth.currentUser || paidCount === 0) return
     setCheckoutError('')
     setCheckingOut(true)
     try {
-      if (hasActiveSub) {
-        // Already subscribed — amend the existing Plan/childPlans directly
-        // instead of starting a brand-new checkout, which would create a
-        // duplicate subscription and double-bill any already-paid child.
-        // If the total is increasing, updateTiers redirects to Paystack for
-        // the incremental charge instead of returning — nothing to reload
-        // in that case, the browser is navigating away.
-        const result = await updateTiers(auth.currentUser, persons.map(p => p.tier))
-        if (result) window.location.reload()
-      } else {
-        await initiateCheckout(auth.currentUser, persons.map(p => p.tier), founding)
-      }
+      await initiateCheckout(auth.currentUser, persons.map(p => p.tier), founding)
     } catch {
       // Always show the localized message — CheckoutError's own message is
       // English-only and meant for logs/debugging, not display.
@@ -337,7 +315,14 @@ export default function FamilyPlanBuilder() {
       </div>
 
       <div className="max-w-2xl mx-auto">
-      {/* Builder card */}
+      {user && !hasActiveSub ? (
+      /* Builder card — logged-in, first-time-subscribing family only. A
+         logged-out visitor gets the CTA card below instead: an interactive
+         preview here used to get thrown away the moment "Claim your spot"
+         opened the register modal (which has its own per-child plan picker
+         in steps 2-3), so it was pure duplicated effort with nothing to
+         show for it. An already-subscribed family gets the pointer card
+         further below instead — see hasActiveSub above. */
       <div
         id="plan-builder"
         className="bg-white rounded-2xl shadow-sm p-8"
@@ -347,119 +332,35 @@ export default function FamilyPlanBuilder() {
           {t.pricing_choose_your_plan_heading}
         </h3>
 
-        {/* Person rows */}
+        {/* Person rows — one per actual child, fixed count (add a child from
+            your profile page first if you need another slot). */}
         <div className="mb-8">
-          {user ? (
-            // Logged in — one row per actual child, fixed count (add a child
-            // from your profile page first if you need another slot).
-            user.children.map((child, i) => (
-              <div
-                key={i}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4"
-                style={i < user.children.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}
+          {user.children.map((child, i) => (
+            <div
+              key={i}
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4"
+              style={i < user.children.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : undefined}
+            >
+              <span
+                className="text-xs font-bold px-2.5 py-1 rounded-full self-start"
+                style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
               >
-                <span
-                  className="text-xs font-bold px-2.5 py-1 rounded-full self-start"
-                  style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
-                >
-                  {child.name}
-                </span>
-                <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
-                  {slotBadgeAndSpots(ownTiers[i] ?? 'free')}
-                  <PlanSelect
-                    value={ownTiers[i] ?? 'free'}
-                    onChange={tier => setOwnTiers(prev => prev.map((v, idx) => idx === i ? tier : v))}
-                    prices={prices}
-                    founding={founding}
-                    labels={LABEL}
-                    foundingSuffix={t.pricing_founding_suffix}
-                    allowFree
-                  />
-                </div>
+                {child.name}
+              </span>
+              <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
+                {slotBadgeAndSpots(ownTiers[i] ?? 'free')}
+                <PlanSelect
+                  value={ownTiers[i] ?? 'free'}
+                  onChange={tier => setOwnTiers(prev => prev.map((v, idx) => idx === i ? tier : v))}
+                  prices={prices}
+                  founding={founding}
+                  labels={LABEL}
+                  foundingSuffix={t.pricing_founding_suffix}
+                  allowFree
+                />
               </div>
-            ))
-          ) : (
-            <>
-              {/* Person 1 — always required */}
-              <div
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4"
-                style={{ borderBottom: '1px solid #f3f4f6' }}
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="text-xs font-bold px-2.5 py-1 rounded-full"
-                    style={{ backgroundColor: '#dbeafe', color: '#1e40af' }}
-                  >
-                    {t.pricing_person_1_label}
-                  </span>
-                  <span className="text-xs text-gray-500">{t.pricing_required_label}</span>
-                </div>
-                <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
-                  {slotBadgeAndSpots(c1)}
-                  <PlanSelect value={c1} onChange={tier => setC1(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
-                </div>
-              </div>
-
-              {/* Person 2 */}
-              <div
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4"
-                style={{ borderBottom: '1px solid #f3f4f6' }}
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="text-xs font-bold px-2.5 py-1 rounded-full"
-                    style={c2On
-                      ? { backgroundColor: '#dbeafe', color: '#1e40af' }
-                      : { backgroundColor: '#f3f4f6', color: '#9ca3af' }
-                    }
-                  >
-                    {t.pricing_person_2_label}
-                  </span>
-                  <button
-                    onClick={() => setC2On(!c2On)}
-                    className="text-xs font-semibold"
-                    style={{ color: c2On ? '#b91c1c' : '#1e40af' }}
-                  >
-                    {c2On ? t.pricing_remove_person : t.pricing_add_person}
-                  </button>
-                </div>
-                {c2On && (
-                  <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
-                    {slotBadgeAndSpots(c2)}
-                    <PlanSelect value={c2} onChange={tier => setC2(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
-                  </div>
-                )}
-              </div>
-
-              {/* Person 3 */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 py-4">
-                <div className="flex items-center gap-3">
-                  <span
-                    className="text-xs font-bold px-2.5 py-1 rounded-full"
-                    style={c3On
-                      ? { backgroundColor: '#dbeafe', color: '#1e40af' }
-                      : { backgroundColor: '#f3f4f6', color: '#9ca3af' }
-                    }
-                  >
-                    {t.pricing_person_3_label}
-                  </span>
-                  <button
-                    onClick={() => setC3On(!c3On)}
-                    className="text-xs font-semibold"
-                    style={{ color: c3On ? '#b91c1c' : '#1e40af' }}
-                  >
-                    {c3On ? t.pricing_remove_person : t.pricing_add_person}
-                  </button>
-                </div>
-                {c3On && (
-                  <div className="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
-                    {slotBadgeAndSpots(c3)}
-                    <PlanSelect value={c3} onChange={tier => setC3(tier as Plan)} prices={prices} founding={founding} labels={LABEL} foundingSuffix={t.pricing_founding_suffix} />
-                  </div>
-                )}
-              </div>
-            </>
-          )}
+            </div>
+          ))}
         </div>
 
         {/* Running price summary */}
@@ -532,17 +433,64 @@ export default function FamilyPlanBuilder() {
         <button
           type="button"
           onClick={handleClaimSpot}
-          disabled={checkingOut || (!!user && paidCount === 0) || noChange}
+          disabled={checkingOut || paidCount === 0}
           className="block w-full text-center font-semibold py-3 rounded-xl text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ backgroundColor: '#1e40af', color: '#fff' }}
         >
-          {checkingOut
-            ? (hasActiveSub ? t.pricing_plan_updating : t.pricing_checkout_redirecting)
-            : (hasActiveSub ? t.pricing_update_plan : t.pricing_claim_your_spot)}
+          {checkingOut ? t.pricing_checkout_redirecting : t.pricing_claim_your_spot}
         </button>
       </div>
+      ) : user ? (
+      /* Already subscribed — this page no longer accepts edits at all. A
+         live, always-submittable builder sitting here made it too easy to
+         trigger a real charge without meaning to; the profile page's Edit
+         Plan card is now the only place this family changes anything. */
+      <div
+        id="plan-builder"
+        className="bg-white rounded-2xl shadow-sm p-8 text-center"
+        style={{ border: '1px solid #e5e7eb' }}
+      >
+        <h3 className="text-lg font-bold mb-2" style={{ color: '#0f1f3d' }}>
+          {t.pricing_already_subscribed_heading}
+        </h3>
+        <p className="text-sm text-gray-500 mb-6 max-w-sm mx-auto leading-relaxed">
+          {t.pricing_already_subscribed_body}
+        </p>
+        <Link
+          href="/profile"
+          className="inline-block w-full sm:w-auto sm:px-10 text-center font-semibold py-3 rounded-xl text-sm"
+          style={{ backgroundColor: '#1e40af', color: '#fff' }}
+        >
+          {t.pricing_already_subscribed_cta}
+        </Link>
+      </div>
+      ) : (
+      /* Logged-out CTA — plan selection happens in the register modal's own
+         steps 2-3 instead (see AuthModal in app/providers.tsx), so this is
+         just the single doorway into that flow. */
+      <div
+        id="plan-builder"
+        className="bg-white rounded-2xl shadow-sm p-8 text-center"
+        style={{ border: '1px solid #e5e7eb' }}
+      >
+        <h3 className="text-lg font-bold mb-2" style={{ color: '#0f1f3d' }}>
+          {t.pricing_choose_your_plan_heading}
+        </h3>
+        <p className="text-sm text-gray-500 mb-6 max-w-sm mx-auto leading-relaxed">
+          {t.pricing_cta_body}
+        </p>
+        <button
+          type="button"
+          onClick={() => openModal('register')}
+          className="w-full sm:w-auto sm:px-10 text-center font-semibold py-3 rounded-xl text-sm"
+          style={{ backgroundColor: '#1e40af', color: '#fff' }}
+        >
+          {t.pricing_cta_button}
+        </button>
+      </div>
+      )}
 
-      {/* Price examples */}
+      {/* Price examples — static/informative, shown either way */}
       <div
         className="mt-5 rounded-xl px-5 py-4"
         style={{ backgroundColor: '#f3f4f6' }}
