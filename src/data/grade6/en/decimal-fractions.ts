@@ -136,7 +136,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — place value name ──────────────────────────────────────────
@@ -286,7 +285,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Easy — which is greater ──────────────────────────────────────────
@@ -429,7 +427,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q8 Easy — addition ──────────────────────────────────────────────────
@@ -579,7 +576,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q11 Easy — multiply by 10 ───────────────────────────────────────────
@@ -731,7 +727,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q14 Medium — divide by 100 ──────────────────────────────────────────

@@ -76,7 +76,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to set up equations from word problems and solve by inspection',
@@ -178,7 +177,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to use additive and multiplicative inverses to solve equations, and how to solve equations with squared terms',
@@ -277,7 +275,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to substitute x-values into an equation to generate a table of ordered pairs and plot the points',

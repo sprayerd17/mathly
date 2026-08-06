@@ -92,7 +92,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — completed square form, a=1 ─────────────────────────────
@@ -195,7 +194,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — minimum value from completing the square ────────────────
@@ -361,7 +359,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Easy — difference of squares simplification ────────────────────

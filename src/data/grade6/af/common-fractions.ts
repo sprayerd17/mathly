@@ -147,7 +147,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [],
 
@@ -269,7 +268,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [],
 
@@ -384,7 +382,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [],
 
@@ -518,7 +515,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — mixed number to improper fraction ──────────────────────
@@ -701,7 +697,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [],
 

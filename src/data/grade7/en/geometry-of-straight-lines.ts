@@ -89,7 +89,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         {
@@ -260,7 +259,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         {
@@ -400,7 +398,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         {

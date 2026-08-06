@@ -51,7 +51,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — yes/no line of symmetry ───────────────────────────────
@@ -161,7 +160,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — yes/no symmetry in a letter ───────────────────────────
@@ -271,7 +269,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — symmetry in nature ────────────────────────────────────

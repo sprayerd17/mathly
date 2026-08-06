@@ -72,7 +72,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — perimeter of a square ──────────────────────────────────
@@ -184,7 +183,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Easy — area of a rectangle ────────────────────────────────────
@@ -310,7 +308,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Medium — difference between perimeter and area ─────────────────
@@ -407,7 +404,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q11 Medium — L-shaped garden ─────────────────────────────────────
@@ -515,7 +511,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q13 Medium — paint tins ───────────────────────────────────────────

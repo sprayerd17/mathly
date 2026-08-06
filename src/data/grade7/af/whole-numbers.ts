@@ -108,7 +108,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — ordening van groot getalle ─────────────────────────────
@@ -252,7 +251,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Maklik — vermenigvuldiging ──────────────────────────────────────
@@ -395,7 +393,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Maklik — kwadraat ──────────────────────────────────────────────────

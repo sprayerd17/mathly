@@ -75,7 +75,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       diagramPlaceholder:
         'Stap-vir-stap konstruksie wat wys hoe ʼn lynstuk AB gehalveer word met passerboë bo en onder, en die middelloodlyn deurgetrek',
@@ -164,7 +163,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       diagramPlaceholder:
         'Stap-vir-stap konstruksie van ʼn gelyksydige driehoek met passerboë gewys, en ʼn aparte konstruksie van ʼn 60°-hoek',
@@ -262,7 +260,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       diagramPlaceholder:
         'ʼn Driehoek met al drie hoekhalveerders getrek, wat by ʼn enkele gemerkte binnesentrumpunt ontmoet',

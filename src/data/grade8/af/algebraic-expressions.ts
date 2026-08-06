@@ -78,7 +78,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       videoPlaceholder:
@@ -172,7 +171,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       videoPlaceholder:
@@ -242,7 +240,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       videoPlaceholder:

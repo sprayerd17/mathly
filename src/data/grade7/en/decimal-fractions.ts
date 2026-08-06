@@ -132,7 +132,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — decimal addition ────────────────────────────────────────
@@ -286,7 +285,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — round to 2 decimal places ──────────────────────────────

@@ -98,7 +98,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — choosing the correct unit ──────────────────────────────
@@ -241,7 +240,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — converting kg to g ─────────────────────────────────────
@@ -375,7 +373,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — reading a scale ─────────────────────────────────────────
@@ -488,7 +485,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Hard — subtracting mass after use ──────────────────────────────

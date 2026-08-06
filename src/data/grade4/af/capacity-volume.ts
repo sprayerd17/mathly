@@ -109,7 +109,6 @@ export const topicData: TopicData = {
           answer: 'Milliliter (ml). Medisyne word in baie klein hoeveelhede gemeet, dus is milliliter die korrekte eenheid.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn 1 liter-bottel met merke by 250 ml, 500 ml, 750 ml en 1000 ml, met die huidige volume getoon by 750 ml om kapasiteit teenoor volume te illustreer',
@@ -197,7 +196,6 @@ export const topicData: TopicData = {
           answer: 'Die volume is 360 ml.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Maatbeker met merke by 0, 200, 400, 600, 800 en 1000 ml, met die vloeistofvlak by 600 ml duidelik met ʼn rooi lyn gemerk',
@@ -262,7 +260,6 @@ export const topicData: TopicData = {
           answer: '3,75 l = 3 750 ml.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om tussen milliliters en liters om te skakel deur met 1 000 te vermenigvuldig of te deel, met uitgewerkte voorbeelde',
@@ -341,7 +338,6 @@ export const topicData: TopicData = {
           answer: 'Die volume is 18 cm³.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn 3D-reghoekige blok gemaak van eenheidsblokkies wat 3 blokkies lank, 2 blokkies wyd en 2 blokkies hoog wys, met elke blokkie gemerk as 1 cm in die kubiek',

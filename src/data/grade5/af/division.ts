@@ -121,7 +121,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — two division facts from a fact family ──────────────────
@@ -273,7 +272,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — single 4-digit ÷ 1-digit ──────────────────────────────
@@ -455,7 +453,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — single 3-digit ÷ 2-digit ──────────────────────────────
@@ -602,7 +599,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Easy — remainder calculation ────────────────────────────────
@@ -754,7 +750,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q13 Easy — grouping word problem ─────────────────────────────────

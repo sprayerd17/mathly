@@ -84,7 +84,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — type of transformation that slides ─────────────────────
@@ -179,7 +178,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q3 Medium — translate a single corner ────────────────────────────
@@ -296,7 +294,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q6 Easy — type of transformation that flips ──────────────────────
@@ -410,7 +407,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Easy — degrees in a quarter turn ──────────────────────────────

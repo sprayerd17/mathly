@@ -81,7 +81,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — cube surface area ───────────────────────────────────────
@@ -210,7 +209,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — rectangular prism volume ───────────────────────────────

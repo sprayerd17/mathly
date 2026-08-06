@@ -158,7 +158,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Kort video wat wys hoe om simmetrielyne te vind deur vorms te vou en te kyk of albei helftes pas',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -334,7 +333,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: "’n Rooster van algemene vorms wat elk hul simmetrielyne in rooi geteken wys — sirkel, vierkant, reghoek, gelyksydige driehoek, gelykbenige driehoek en reëlmatige seshoek",
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -471,7 +469,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: "Kort video wat stap vir stap wys hoe om die ander helfte van ’n simmetriese figuur op ’n rooster te teken deur die simmetrielyn te gebruik",
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -608,7 +605,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: "Die alfabet uitgelê met simmetrielyne geteken op elke letter wat een het, en ’n kruis op letters sonder simmetrie",
 
-      practiceQuestions: [],
       openQuestions: [],
     },
   ],

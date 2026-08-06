@@ -76,7 +76,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om vergelykings uit woordprobleme op te stel en deur inspeksie op te los',
@@ -178,7 +177,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om additiewe en multiplikatiewe inverses te gebruik om vergelykings op te los, en hoe om vergelykings met vierkantsterme op te los',
@@ -277,7 +275,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om x-waardes in ʼn vergelyking te vervang om ʼn tabel van geordende pare te genereer en die punte te stip',

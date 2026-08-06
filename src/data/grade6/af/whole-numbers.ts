@@ -123,7 +123,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — plekwaarde van ʼn syfer ──────────────────────────────────
@@ -272,7 +271,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — kommutatiewe eienskap invul ──────────────────────────────
@@ -431,7 +429,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V5 Maklik — vergelyk twee getalle ──────────────────────────────────────
@@ -613,7 +610,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V8 Maklik — afronding na die naaste miljoen ─────────────────────────────
@@ -778,7 +774,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V11 Maklik — eerste vyf veelvoude ──────────────────────────────────────
@@ -949,7 +944,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V14 Maklik — priem of saamgesteld ────────────────────────────────────────

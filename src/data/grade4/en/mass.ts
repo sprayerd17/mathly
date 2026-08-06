@@ -112,7 +112,6 @@ export const topicData: TopicData = {
           answer: 'Grams (g). A sweet is a very light object best measured in grams.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Four objects shown with their mass — a paperclip showing 1g, a slice of bread showing about 30g, a bag of sugar showing 1kg and a school bag showing about 3kg',
@@ -212,7 +211,6 @@ export const topicData: TopicData = {
           answer: 'The mass is 350 g.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A circular kitchen scale dial showing 0 to 1000g with the needle pointing to 350g and each interval clearly marked',
@@ -285,7 +283,6 @@ export const topicData: TopicData = {
           answer: '2.75 kg = 2 750 g',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
     // ─────────────────────────────────────────────────────────────────────────
@@ -380,7 +377,6 @@ export const topicData: TopicData = {
           answer: 'Lerato will have 1 kg 250 g of flour left.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to solve mass word problems by identifying key words and converting to the same unit before calculating',

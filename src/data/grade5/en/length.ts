@@ -104,7 +104,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — choosing unit for a classroom ──────────────────────────
@@ -237,7 +236,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — cm to mm conversion ───────────────────────────────────
@@ -350,7 +348,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — reading a ruler ────────────────────────────────────────
@@ -471,7 +468,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Easy — subtracting lengths ──────────────────────────────────
@@ -575,7 +571,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q13 Easy — perimeter of a square ────────────────────────────────

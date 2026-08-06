@@ -95,7 +95,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — volume of a rectangular box ────────────────────────────
@@ -219,7 +218,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Medium — water tank capacity ──────────────────────────────────

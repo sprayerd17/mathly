@@ -87,7 +87,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',
@@ -186,7 +185,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',
@@ -289,7 +287,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',
@@ -402,7 +399,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',
@@ -514,7 +510,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',
@@ -600,7 +595,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',
@@ -709,7 +703,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',

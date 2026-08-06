@@ -111,7 +111,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — distributive property ──────────────────────────────────
@@ -224,7 +223,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Medium — HCF of two numbers ───────────────────────────────────
@@ -429,7 +427,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — profit ──────────────────────────────────────────────────

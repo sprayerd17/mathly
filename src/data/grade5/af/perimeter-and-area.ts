@@ -72,7 +72,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Easy — omtrek van ʼn vierkant ──────────────────────────────────
@@ -184,7 +183,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V5 Easy — oppervlakte van ʼn reghoek ────────────────────────────────
@@ -310,7 +308,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V9 Medium — verskil tussen omtrek en oppervlakte ─────────────────
@@ -407,7 +404,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V11 Medium — L-vormige tuin ─────────────────────────────────────
@@ -515,7 +511,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V13 Medium — verfblikke ───────────────────────────────────────────

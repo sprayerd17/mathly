@@ -107,7 +107,6 @@ export const topicData: TopicData = {
           answer: 'Kwart oor sewe in die oggend.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Twee horlosies langs mekaar — ʼn analoog horlosie wat 4:30 toon met die uur- en minuutwysers geëtiketteer, en ʼn digitale horlosie wat 4:30 toon',
@@ -215,7 +214,6 @@ export const topicData: TopicData = {
           answer: '4 weke = 28 dae.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Tydomskakelingsleer wat sekondes minute ure dae weke maande en jare toon met vermenigvuldigings- en delingspyle tussen elke eenheid',
@@ -286,7 +284,6 @@ export const topicData: TopicData = {
           answer: 'Die skooldag is 6 ure 30 minute lank.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om die tydsduur tussen twee tye te bereken en ʼn kalender te gebruik om dae tussen datums te tel',
@@ -366,7 +363,6 @@ export const topicData: TopicData = {
           answer: 'Die reis vat 3 ure 30 minute.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om die tydsduur tussen twee tye te bereken en ʼn kalender te gebruik om dae tussen datums te tel',
@@ -448,7 +444,6 @@ export const topicData: TopicData = {
             'ʼn Waterhorlosie is nie afhanklik van sonlig nie, dus kan dit binnenshuis, in die nag, en op bewolkte dae gebruik word, anders as ʼn sonwyser.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Eenvoudige tydlyn wat ʼn sonwyser, ʼn waterhorlosie, ʼn sandloper, ʼn kershorlosie en ʼn moderne digitale horlosie in volgorde wys',

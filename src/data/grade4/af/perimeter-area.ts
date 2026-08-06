@@ -107,7 +107,6 @@ export const topicData: TopicData = {
           answer: 'Elke sy is 6 cm lank.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Reghoek met sye gemerk 8cm en 5cm met elke sy uitgelig in ʼn ander kleur en die omtrekberekening hieronder getoon',
@@ -207,7 +206,6 @@ export const topicData: TopicData = {
           answer: 'Oppervlakte = 9 vierkanteenhede.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn 4 by 3 reghoek op ʼn rooster met al 12 vierkante blou geskadu en genommer om te wys hoe telling die oppervlakte gee',
@@ -263,7 +261,6 @@ export const topicData: TopicData = {
           answer: 'Albei vorms het dieselfde oppervlakte maar verskillende omtrekke.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat twee vorms met dieselfde omtrek maar verskillende oppervlaktes vergelyk, en twee vorms met dieselfde oppervlakte maar verskillende omtrekke',
@@ -324,7 +321,6 @@ export const topicData: TopicData = {
           answer: 'Omtrek = 28 m. Oppervlakte = 49 m².',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om te identifiseer of ʼn woordprobleem omtrek of oppervlakte vereis en dit stap vir stap op te los',

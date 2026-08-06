@@ -86,7 +86,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — find rule and 8th term ─────────────────────────────────
@@ -214,7 +213,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — complete table from given rule ──────────────────────────
@@ -361,7 +359,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — find y-values from a rule ──────────────────────────────

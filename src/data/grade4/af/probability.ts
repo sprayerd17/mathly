@@ -158,7 +158,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       videoPlaceholder:
         'Kort video wat waarskynlikheidstaal verduidelik met werklike-lewe voorbeelde — seker onmoontlik waarskynlik onwaarskynlik en ewe waarskynlik',
     },
@@ -290,7 +289,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       diagramPlaceholder:
         'Drie eksperimentdiagramme langs mekaar — ʼn dobbelsteen wat vlakke 1 tot 6 wys, ʼn muntstuk wat kop en stert wys, en ʼn wieletjie verdeel in 4 gelyke afdelings genommer 1 tot 4',
       diagramSvg:
@@ -399,7 +397,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       diagramPlaceholder:
         'ʼn Resultatetabel wat ʼn muntstuk-opgooi-eksperiment met 20 proewe wys, kolomme vir kop- en stert-telmerke en totale wat die voorspelling van 10 elk vergelyk met werklike resultate',
       diagramSvg:
@@ -462,7 +459,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om ʼn eenvoudige waarskynlikheidseksperiment uit te voer, resultate aan te teken en voorspelde uitkomste met werklike uitkomste te vergelyk',

@@ -107,7 +107,6 @@ export const topicData: TopicData = {
           answer: 'Each side is 6 cm long.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A rectangle with sides labelled 8cm and 5cm with each side highlighted in a different colour and the perimeter calculation shown below',
@@ -207,7 +206,6 @@ export const topicData: TopicData = {
           answer: 'Area = 9 square units.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A 4 by 3 rectangle on a grid with all 12 squares shaded in blue and numbered to show how counting gives the area',
@@ -263,7 +261,6 @@ export const topicData: TopicData = {
           answer: 'Both shapes have the same area but different perimeters.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video comparing two shapes with the same perimeter but different areas and two shapes with the same area but different perimeters',
@@ -324,7 +321,6 @@ export const topicData: TopicData = {
           answer: 'Perimeter = 28 m. Area = 49 m².',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to identify whether a word problem requires perimeter or area and solve it step by step',

@@ -138,7 +138,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — product of prime factors ───────────────────────────────
@@ -365,7 +364,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q6 Easy — HCF by listing factors ─────────────────────────────────
@@ -559,7 +557,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Easy — LCM by listing multiples ───────────────────────────────

@@ -113,7 +113,6 @@ export const topicData: TopicData = {
             'A cube has 6 square faces, 12 edges and 8 vertices. All edges are equal in length.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Seven 3D objects labelled clearly — sphere, cube, rectangular prism, cone, cylinder, triangular pyramid, square pyramid — each with faces, edges and vertices labelled',
@@ -230,7 +229,6 @@ export const topicData: TopicData = {
             'Prisms: triangular prism, rectangular prism, cube.\nPyramids: square pyramid, triangular pyramid.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Two columns — left column showing objects that can roll (sphere, cone, cylinder) with curved surfaces highlighted, right column showing objects that cannot roll (cube, rectangular prism, pyramids) with flat faces highlighted',
@@ -289,7 +287,6 @@ export const topicData: TopicData = {
           answer: 'A square pyramid is made up of 1 square (the base) and 4 triangles (the side faces).',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -346,7 +343,6 @@ export const topicData: TopicData = {
             'A can of beans is a cylinder. It has 2 flat circular faces, 1 curved surface, 2 edges and 0 vertices.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Six real life objects each labelled with their 3D object name — a dice (cube), a cereal box (rectangular prism), a ball (sphere), an ice cream cone (cone), a can (cylinder), an Egyptian pyramid (square pyramid)',

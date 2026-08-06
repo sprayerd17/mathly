@@ -138,7 +138,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — angle sum of a triangle ──────────────────────────────────
@@ -322,7 +321,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q6 Easy — angle sum of a quadrilateral ──────────────────────────────
@@ -543,7 +541,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Easy — number of straight sides on a circle ──────────────────────
@@ -703,7 +700,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Medium — interior angle sum of a pentagon ───────────────────────

@@ -104,7 +104,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Easy — kies eenheid vir ʼn klaskamer ──────────────────────────
@@ -237,7 +236,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Easy — cm na mm omskakeling ───────────────────────────────────
@@ -351,7 +349,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Easy — ʼn liniaal lees ────────────────────────────────────────
@@ -473,7 +470,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V10 Easy — lengtes aftrek ──────────────────────────────────────
@@ -577,7 +573,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V13 Easy — omtrek van ʼn vierkant ────────────────────────────────

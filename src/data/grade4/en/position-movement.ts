@@ -94,7 +94,6 @@ export const topicData: TopicData = {
             'Cat: between the two dogs.\nBird: above the cat.\nFish tank: below the bird and to the right of the cat.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Simple classroom layout viewed from above showing a desk in front, board behind, windows left, door right with position word labels',
@@ -173,7 +172,6 @@ export const topicData: TopicData = {
             'a) D1 — the park is furthest to the right (column D is the rightmost column).\nb) A4 — the shop is highest up (row 4 is the highest row).\nc) B3 is empty — no object is placed there.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A 4×4 grid labelled A to D across the bottom and 1 to 4 up the left side, with a school icon at C2, a shop icon at A4 and a park icon at D1',
@@ -247,7 +245,6 @@ export const topicData: TopicData = {
             'From school, go straight ahead 2 blocks, turn right, go 1 block, and the park is on your left.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -356,7 +353,6 @@ export const topicData: TopicData = {
           answer: 'Lerato is now facing north.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A compass showing north, south, east and west with arrows showing a quarter turn clockwise from north to east and a half turn from south to north',

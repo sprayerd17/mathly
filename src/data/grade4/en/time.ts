@@ -107,7 +107,6 @@ export const topicData: TopicData = {
           answer: 'Quarter past seven in the morning.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Two clocks side by side — an analogue clock showing 4:30 with the hour and minute hands labelled, and a digital clock showing 4:30',
@@ -215,7 +214,6 @@ export const topicData: TopicData = {
           answer: '4 weeks = 28 days.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A time conversion ladder showing seconds minutes hours days weeks months and years with multiplication and division arrows between each unit',
@@ -286,7 +284,6 @@ export const topicData: TopicData = {
           answer: 'The school day is 6 hours 30 minutes long.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to calculate duration between two times and use a calendar to count days between dates',
@@ -366,7 +363,6 @@ export const topicData: TopicData = {
           answer: 'The journey takes 3 hours 30 minutes.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to calculate duration between two times and use a calendar to count days between dates',
@@ -448,7 +444,6 @@ export const topicData: TopicData = {
             'A water clock does not depend on sunlight, so it can be used indoors, at night, and on cloudy days, unlike a sundial.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A simple timeline showing a sundial, a water clock, an hourglass, a candle clock and a modern digital clock in order',

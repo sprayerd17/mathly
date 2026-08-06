@@ -146,7 +146,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — tally marks (self) ─────────────────────────────────────
@@ -282,7 +281,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Easy — bar graph requirements (self) ──────────────────────────
@@ -429,7 +427,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q8 Easy — pictograph symbols ─────────────────────────────────────
@@ -575,7 +572,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q11 Easy — mode ──────────────────────────────────────────────────
@@ -699,7 +695,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q14 Medium — most and least rainfall ─────────────────────────────

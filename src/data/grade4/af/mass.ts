@@ -112,7 +112,6 @@ export const topicData: TopicData = {
           answer: 'Gram (g). ʼn Lekkergoedjie is ʼn baie ligte voorwerp wat die beste in gram gemeet word.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Vier voorwerpe getoon met hul massa — ʼn skuifspeld wat 1g toon, ʼn snytjie brood wat ongeveer 30g toon, ʼn sak suiker wat 1kg toon en ʼn skooltas wat ongeveer 3kg toon',
@@ -210,7 +209,6 @@ export const topicData: TopicData = {
           answer: 'Die massa is 350 g.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Ronde kombuisskaal-wyserplaat wat 0 tot 1000g toon met die wyser wat na 350g wys en elke interval duidelik gemerk',
@@ -283,7 +281,6 @@ export const topicData: TopicData = {
           answer: '2,75 kg = 2 750 g',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
     // ─────────────────────────────────────────────────────────────────────────
@@ -375,7 +372,6 @@ export const topicData: TopicData = {
           answer: 'Lerato sal 1 kg 250 g meel oorhê.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om woordprobleme oor massa op te los deur sleutelwoorde te identifiseer en om te skakel na dieselfde eenheid voordat jy bereken',

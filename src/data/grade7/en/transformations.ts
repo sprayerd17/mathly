@@ -107,7 +107,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — reflect a point over a vertical line ───────────────────
@@ -275,7 +274,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — translate a single point ───────────────────────────────
@@ -467,7 +465,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — 90° clockwise rotation ─────────────────────────────────
@@ -650,7 +647,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — regular polygon rule ────────────────────────────────────
@@ -801,7 +797,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — enlarge a point from the origin ─────────────────────────

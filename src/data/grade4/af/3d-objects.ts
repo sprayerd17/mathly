@@ -113,7 +113,6 @@ export const topicData: TopicData = {
             'ʼn Kubus het 6 vierkantige vlakke, 12 rande en 8 hoekpunte. Al die rande is gelyk in lengte.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Sewe 3D-voorwerpe duidelik geëtiketteer — sfeer, kubus, reghoekige prisma, keël, silinder, driehoekige piramide, vierkantige piramide — elkeen met vlakke, rande en hoekpunte geëtiketteer',
@@ -229,7 +228,6 @@ export const topicData: TopicData = {
             'Prismas: driehoekige prisma, reghoekige prisma, kubus.\nPiramides: vierkantige piramide, driehoekige piramide.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Twee kolomme — linkerkolom wys voorwerpe wat kan rol (sfeer, keël, silinder) met geboë oppervlakke uitgelig, regterkolom wys voorwerpe wat nie kan rol nie (kubus, reghoekige prisma, piramides) met plat vlakke uitgelig',
@@ -288,7 +286,6 @@ export const topicData: TopicData = {
           answer: 'ʼn Vierkantige piramide bestaan uit 1 vierkant (die basis) en 4 driehoeke (die sy-vlakke).',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -345,7 +342,6 @@ export const topicData: TopicData = {
             'ʼn Blik boontjies is ʼn silinder. Dit het 2 plat sirkelvormige vlakke, 1 geboë oppervlak, 2 rande en 0 hoekpunte.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Ses regte-lewe voorwerpe elkeen geëtiketteer met hul 3D-voorwerpnaam — ʼn dobbelsteen (kubus), ʼn graanboks (reghoekige prisma), ʼn bal (sfeer), ʼn roomyshorinkie (keël), ʼn blik (silinder), ʼn Egiptiese piramide (vierkantige piramide)',

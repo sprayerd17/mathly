@@ -101,7 +101,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — faces on a cube ──────────────────────────────────────────────
@@ -261,7 +260,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — base of a pyramid ────────────────────────────────────────────
@@ -403,7 +401,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — sphere ───────────────────────────────────────────────────────
@@ -518,7 +515,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Easy — sphere rolls ────────────────────────────────────────────────

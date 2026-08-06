@@ -53,7 +53,6 @@ export const topicData: TopicData = {
             'Vooraansig: die ronde toon-vorm. Syaansig: die volle buitelyn van hak tot toon. Bo-aansig: ʼn voetspoor-agtige buitelyn van bo gesien.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Eenvoudige pet of skoen drie keer gewys, elke keer met ʼn klein figuurtjie-kyker op ʼn ander plek geposisioneer (voor, aan die kant, bo) met ʼn pyl wat na die voorwerp wys, en die gevolglike aansig langs elke kyker geskets',
@@ -113,7 +112,6 @@ export const topicData: TopicData = {
           answer: 'Die bo-aansig — as jy reguit af kyk, sien jy die ronde rand en kroon as twee sirkels.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Enkele alledaagse voorwerp soos ʼn appel, een keer volledig geteken, met drie klein gemerkte raampies langsaan (voor, kant, bo) wat elk die korrekte buitelyn wys wat die voorwerp vanaf daardie gesigspunt sou lewer, sonder om in die vraagteks te sê watter een "korrek" is',
@@ -167,7 +165,6 @@ export const topicData: TopicData = {
           answer: 'Die vooraansig — dit wys die smaller voorkant van die skoen met die veters sigbaar naby die bokant.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -216,7 +213,6 @@ export const topicData: TopicData = {
             'ʼn Planaansig wys die volle uitleg van bo sonder dat enigiets weggesteek is, wat dit baie makliker maak om te beplan waar mure, deure en meubels moet gaan.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Eenvoudige klaskamertoneel twee keer gewys — een keer as ʼn syaansig (lessenaars, stoele en skryfbord vanaf die deur geteken, met sommige lessenaars gedeeltelik agter ander weggesteek) en een keer as ʼn plan-/bo-aansig (dieselfde lessenaars en stoele as eenvoudige reghoeke op die vloer geposisioneer, almal ten volle sigbaar, soos ʼn eenvoudige kaart)',

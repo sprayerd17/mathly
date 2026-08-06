@@ -108,7 +108,6 @@ export const topicData: TopicData = {
           answer: 'Kilometres (km). The distance between two cities is measured in kilometres.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Four objects shown with their measurements — a coin labelled in mm, a pencil labelled in cm, a door labelled in m and a road sign labelled in km',
@@ -213,7 +212,6 @@ export const topicData: TopicData = {
           answer: 'A standard classroom door is about 2 m tall. The estimate of 2 m was correct.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to correctly place a ruler to measure an object and read the measurement accurately',
@@ -316,7 +314,6 @@ export const topicData: TopicData = {
           answer: '2 500 m = 2.5 km',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A conversion ladder showing mm, cm, m, km from bottom to top with multiply arrows going down and divide arrows going up and the conversion factors labelled',
@@ -390,7 +387,6 @@ export const topicData: TopicData = {
           answer: '3 m 25 cm of rope is left.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
     // ─────────────────────────────────────────────────────────────────────────
@@ -477,7 +473,6 @@ export const topicData: TopicData = {
           answer: 'Lerato runs 750 m further than Sipho.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to solve length word problems by identifying key words and choosing the correct operation',

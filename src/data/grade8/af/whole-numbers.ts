@@ -111,7 +111,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — distributiewe eienskap ──────────────────────────────────
@@ -224,7 +223,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Medium — GGF van twee getalle ───────────────────────────────
@@ -429,7 +427,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Maklik — wins ──────────────────────────────────────────────────

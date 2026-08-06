@@ -158,7 +158,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Short video showing how to find lines of symmetry by folding shapes and checking if both halves match',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -334,7 +333,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: 'A grid of common shapes each showing their lines of symmetry drawn in red — circle square rectangle equilateral triangle isosceles triangle and regular hexagon',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -471,7 +469,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Short video showing step by step how to draw the other half of a symmetrical figure on a grid using the line of symmetry',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -608,7 +605,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: 'The alphabet laid out showing lines of symmetry drawn on each letter that has one and a cross on letters with no symmetry',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
   ],

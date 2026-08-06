@@ -89,7 +89,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to solve linear equations with fractions and brackets using LCM and inverse operations',
@@ -164,7 +163,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to solve quadratic equations by factorisation using the zero product property and the a×c method',
@@ -288,7 +286,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to use the quadratic formula and how the discriminant tells you the number of real solutions',
@@ -357,7 +354,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to change the subject of a formula using inverse operations treating other variables as constants',
@@ -441,7 +437,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to solve linear inequalities including sign reversal and how to solve simultaneous equations by substitution and graphically',
@@ -588,7 +583,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing how to solve quadratic inequalities using a sign diagram and how to solve rational inequalities while always excluding the denominator-zero value',

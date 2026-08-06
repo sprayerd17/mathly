@@ -89,7 +89,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — vertically opposite ────────────────────────────────────
@@ -233,7 +232,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Medium — alternate angle ───────────────────────────────────────

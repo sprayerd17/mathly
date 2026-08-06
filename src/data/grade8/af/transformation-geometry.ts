@@ -76,7 +76,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — reflect point in x-axis ───────────────────────────────
@@ -214,7 +213,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Medium — reflect triangle in x-axis ───────────────────────────
@@ -343,7 +341,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Easy — enlarge perimeter ──────────────────────────────────────

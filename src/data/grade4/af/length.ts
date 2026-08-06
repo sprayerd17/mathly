@@ -108,7 +108,6 @@ export const topicData: TopicData = {
           answer: 'Kilometer (km). Die afstand tussen twee stede word in kilometer gemeet.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Vier voorwerpe getoon met hul metings — ʼn muntstuk gemerk in mm, ʼn potlood gemerk in cm, ʼn deur gemerk in m en ʼn padteken gemerk in km',
@@ -213,7 +212,6 @@ export const topicData: TopicData = {
           answer: 'ʼn Standaard klaskamerdeur is omtrent 2 m hoog. Die skatting van 2 m was korrek.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om ʼn liniaal korrek te plaas om ʼn voorwerp te meet en die meting akkuraat te lees',
@@ -316,7 +314,6 @@ export const topicData: TopicData = {
           answer: '2 500 m = 2,5 km',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Omskakelingsleer wat mm, cm, m, km van onder na bo toon met vermenigvuldig-pyle wat afgaan en deel-pyle wat opgaan en die omskakelingsfaktore gemerk',
@@ -390,7 +387,6 @@ export const topicData: TopicData = {
           answer: '3 m 25 cm tou is oor.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
     // ─────────────────────────────────────────────────────────────────────────
@@ -477,7 +473,6 @@ export const topicData: TopicData = {
           answer: 'Lerato hardloop 750 m verder as Sipho.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om woordprobleme oor lengte op te los deur sleutelwoorde te identifiseer en die korrekte bewerking te kies',

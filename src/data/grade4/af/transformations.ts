@@ -84,7 +84,6 @@ export const topicData: TopicData = {
           answer: 'Thabo het altesaam 4 basiese vorms gebruik.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat eenvoudige prentjies (ʼn huis, ʼn pyl, ʼn roomyshorinkie) wys wat uit basiese 2D-vorms saam gebou word, met elke basiese vorm in ʼn ander kleur uitgelig',
@@ -167,7 +166,6 @@ export const topicData: TopicData = {
           answer: 'Ja — hierdie saamgestelde vorm (ʼn volle sirkel) is simmetries, en dit het eintlik baie simmetrielyne.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe twee identiese driehoeke rug-aan-rug geplaas word om ʼn simmetriese diamantvorm te bou, met die simmetrielyn in rooi in die middel geteken',
@@ -246,7 +244,6 @@ export const topicData: TopicData = {
           answer: 'Nee — sirkels tesseleer nie. Daar sal altyd klein gapings tussen die sirkels oorbly.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Kort video wat vierkante, driehoeke en seshoeke wys wat perfek oor ʼn oppervlak tesseleer, gevolg deur ʼn voorbeeld van sirkels wat nie tesseleer nie weens die gapings wat tussen hulle oorbly',

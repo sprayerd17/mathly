@@ -81,7 +81,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Easy — omtrek gegewe radius ────────────────────────────────────
@@ -216,7 +215,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V6 Medium — L-vormige figuur ───────────────────────────────────────
@@ -363,7 +361,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V11 Easy — eenheidomskakeling cm² na m² ────────────────────────────

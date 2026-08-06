@@ -81,7 +81,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — kubus oppervlakte ───────────────────────────────────────
@@ -210,7 +209,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Maklik — reghoekige prisma volume ───────────────────────────────

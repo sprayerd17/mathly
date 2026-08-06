@@ -98,7 +98,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat die 5 Platoniese vaste liggame bekendstel en dit vergelyk met sfere en silinders, met die klem op geboë oppervlaktes',
@@ -166,7 +165,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat die net van ʼn silinder wys — twee sirkels en ʼn reghoek — en hoe dit vou om die 3D-voorwerp te vorm',
@@ -233,7 +231,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat 3D-voorwerpe vergelyk en klassifiseer volgens vlakke, rande en hoekpunte, en verduidelik wanneer Euler se formule van toepassing is',

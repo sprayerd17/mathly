@@ -94,7 +94,6 @@ export const topicData: TopicData = {
             'Kat: tussen die twee honde.\nVoël: bo die kat.\nVistenk: onder die voël en aan die regterkant van die kat.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         "Eenvoudige klaskameruitleg van bo af gesien, met 'n lessenaar voor, bord agter, vensters links, deur regs met posisiewoordetikette",
@@ -173,7 +172,6 @@ export const topicData: TopicData = {
             'a) D1 — die park is die verste na regs (kolom D is die regterste kolom).\nb) A4 — die winkel is die hoogste op (ry 4 is die hoogste ry).\nc) B3 is leeg — geen voorwerp is daar geplaas nie.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         "'n 4×4 rooster gemerk A tot D oor die onderkant en 1 tot 4 op teen die linkerkant, met 'n skoolikoon by C2, 'n winkelikoon by A4 en 'n parkikoon by D1",
@@ -247,7 +245,6 @@ export const topicData: TopicData = {
             'Van die skool af, gaan reguit vorentoe 2 blokke, draai regs, gaan 1 blok, en die park is aan jou linkerkant.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -356,7 +353,6 @@ export const topicData: TopicData = {
           answer: 'Lerato kyk nou na die noorde.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         "'n Kompas wat noord, suid, oos en wes wys met pyle wat 'n kwartdraai kloksgewys van noord na oos en 'n halfdraai van suid na noord wys",

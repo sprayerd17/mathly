@@ -82,7 +82,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — y-intercept ────────────────────────────────────────────
@@ -202,7 +201,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q6 Hard — intercepts for drawing ─────────────────────────────────
@@ -338,7 +336,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q11 Medium — gradient through origin ─────────────────────────────

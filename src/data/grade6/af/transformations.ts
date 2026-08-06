@@ -118,7 +118,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       diagramPlaceholder:
@@ -209,7 +208,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       diagramPlaceholder:
@@ -297,7 +295,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       diagramPlaceholder:

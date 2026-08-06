@@ -84,7 +84,6 @@ export const topicData: TopicData = {
           answer: 'Thabo used 4 basic shapes in total.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing simple pictures (a house, an arrow, an ice cream cone) being built from basic 2D shapes joined together, with each basic shape highlighted in a different colour',
@@ -167,7 +166,6 @@ export const topicData: TopicData = {
           answer: 'Yes — this composite shape (a full circle) is symmetrical, and it actually has many lines of symmetry.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing two identical triangles being placed back to back to build a symmetrical diamond shape, with the line of symmetry drawn in red down the middle',
@@ -246,7 +244,6 @@ export const topicData: TopicData = {
           answer: 'No — circles do not tessellate. There will always be small gaps left between the circles.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing squares, triangles and hexagons tessellating perfectly across a surface, followed by an example of circles failing to tessellate because of the gaps left between them',

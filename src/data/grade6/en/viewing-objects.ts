@@ -40,7 +40,6 @@ export const topicData: TopicData = {
             'Front view: a pentagon (rectangle + triangle). Side view: a plain rectangle. Top view: a rectangle with a centre line marking the ridge.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A toy house (rectangular walls + triangular roof) shown as a simple 3D sketch, with its front view (pentagon), side view (plain rectangle) and top view (rectangle with a centre ridge line) drawn alongside it',
@@ -95,7 +94,6 @@ export const topicData: TopicData = {
           answer: 'Different — the outline (a rectangle) is the same, but what is printed inside it is different for the front and back views.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A soccer goalpost shown from the front (two upright posts joined by a crossbar, forming an upside-down U shape) and from the side (a single thin upright, since the far post and crossbar are hidden directly behind the near post)',
@@ -146,7 +144,6 @@ export const topicData: TopicData = {
             'Front view: a step shape (tall, then short, then short). Side view: a plain rectangle as tall as the tallest column. Top view: 3 squares in a row.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A cube structure with a tall column of 2 cubes on the left and two single cubes to the right, shown as a simple 3D sketch, with its step-shaped front view, plain rectangular side view and 3-square top view drawn alongside it',
@@ -202,7 +199,6 @@ export const topicData: TopicData = {
             'Front view: an irregular step shape (short, tall, medium). Side view: a plain rectangle, as tall as the tallest box. Top view: three equal squares in a row.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Three storage boxes of the same width and depth but different heights (short, tall, medium) placed in a row, shown as a simple 3D sketch, with its irregular step-shaped front view, plain rectangular side view and three-square top view drawn alongside it',
@@ -258,7 +254,6 @@ export const topicData: TopicData = {
             'Front view: a two-height step shape. Side view: a plain rectangle the height of the taller (house) section. Top view: one rectangle with a dividing wall line.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A house with a shorter garage attached to one side, both the same depth, shown as a simple 3D sketch, with its stepped front view, plain rectangular side view and single divided-rectangle top (plan) view drawn alongside it',

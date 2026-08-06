@@ -86,7 +86,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Easy — sirkeloppervlakte ──────────────────────────────────────
@@ -232,7 +231,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Easy — verdubbel slegs die breedte ───────────────────────────────
@@ -363,7 +361,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Medium — tuinplan-skaalfaktor ──────────────────────────────

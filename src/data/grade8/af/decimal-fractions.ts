@@ -79,7 +79,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Easy ──────────────────────────────────────────────────────────
@@ -194,7 +193,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Easy ──────────────────────────────────────────────────────────
@@ -310,7 +308,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Easy ──────────────────────────────────────────────────────────

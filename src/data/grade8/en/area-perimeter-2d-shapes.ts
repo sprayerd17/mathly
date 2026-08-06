@@ -81,7 +81,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — circumference given radius ──────────────────────────────
@@ -216,7 +215,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q6 Medium — L-shaped figure ──────────────────────────────────────
@@ -363,7 +361,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q11 Easy — unit conversion cm² to m² ──────────────────────────────

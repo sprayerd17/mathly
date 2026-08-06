@@ -108,7 +108,6 @@ export const topicData: TopicData = {
             'ʼn Reghoek het 4 sye met oorstaande sye gelyk in lengte, 4 hoekpunte en 4 regte hoeke (90°).',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Ses 2D-vorms duidelik gemerk — sirkel, driehoek, vierkant, reghoek, vyfhoek, seshoek — elkeen met sye, hoekpunte en hoeke aangedui',
@@ -228,7 +227,6 @@ export const topicData: TopicData = {
             'Reëlmatig: gelyksydige driehoek, vierkant.\nOnreëlmatig: ongelyksydige driehoek, reghoek.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Venn-diagram wat vorms sorteer in veelhoeke en nie-veelhoeke met voorbeeldvorms in elke afdeling',
@@ -303,7 +301,6 @@ export const topicData: TopicData = {
             'Ooreenkomste: albei is veelhoeke met reguit sye en hoekpunte.\nVerskille: ʼn driehoek het 3 sye, 3 hoekpunte en 3 hoeke; ʼn seshoek het 6 sye, 6 hoekpunte en 6 hoeke.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -362,7 +359,6 @@ export const topicData: TopicData = {
             'ʼn Deur is ʼn reghoek. Dit het 4 sye met 2 pare gelyke sye (oorstaande sye is gelyk), 4 regte hoeke en 4 hoekpunte. Die hoogte is groter as die breedte.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Ses regte-lewe-voorwerpe elkeen gemerk met hul 2D-vorm — ʼn munt (sirkel), ʼn toegeeteken (driehoek), ʼn venster (vierkant), ʼn deur (reghoek), ʼn heuningkoek (seshoek)',

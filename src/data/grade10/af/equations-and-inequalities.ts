@@ -89,7 +89,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om lineêre vergelykings met breuke en hakies op te los deur die KGV en inverse bewerkings te gebruik',
@@ -164,7 +163,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om kwadratiese vergelykings op te los deur faktorisering met die nulproduk-eienskap en die a×c-metode',
@@ -288,7 +286,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om die kwadratiese formule te gebruik en hoe die diskriminant die aantal reële oplossings aandui',
@@ -357,7 +354,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om die onderwerp van ʼn formule te verander deur inverse bewerkings te gebruik en ander veranderlikes as konstantes te behandel',
@@ -441,7 +437,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om lineêre ongelykhede op te los, insluitend tekenomkering, en hoe om gelyktydige vergelykings deur substitusie en grafies op te los',
@@ -588,7 +583,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Kort video wat wys hoe om kwadratiese ongelykhede met ʼn tekendiagram op te los en hoe om rasionale ongelykhede op te los deur altyd die noemer-nul-waarde uit te sluit',

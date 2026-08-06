@@ -103,7 +103,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — distance with integer answer ───────────────────────────
@@ -251,7 +250,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Easy — equation from two points ──────────────────────────────
@@ -389,7 +387,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Easy — gradient of a parallel line ────────────────────────────
@@ -529,7 +526,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q13 Easy — inclination with exact value ──────────────────────────
@@ -669,7 +665,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q17 Medium — right angle proof ──────────────────────────────────

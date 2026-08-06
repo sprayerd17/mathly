@@ -89,7 +89,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — vertikaal-oorstaande ────────────────────────────────────
@@ -233,7 +232,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Medium — verwisselende hoek ───────────────────────────────────────

@@ -147,7 +147,6 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -279,7 +278,6 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -404,7 +402,6 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -493,7 +490,6 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
 
       videoPlaceholder: 'Short video showing how to find a fraction of a whole number using divide then multiply',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -693,7 +689,6 @@ Thabo ate <span style="font-weight:700;">three eighths</span> of the chocolate b
       diagramPlaceholder: 'Bar model showing 2/8 plus 3/8 equals 5/8 with each part clearly labelled and colour coded',
       diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="55" width="48" height="40" fill="#93c5fd"/><rect x="62" y="55" width="72" height="40" fill="#fdba74"/><rect x="14" y="55" width="192" height="40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="38" y1="55" x2="38" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="62" y1="55" x2="62" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="86" y1="55" x2="86" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="110" y1="55" x2="110" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="134" y1="55" x2="134" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="158" y1="55" x2="158" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="182" y1="55" x2="182" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><text x="38" y="45" font-weight="700" font-size="14" text-anchor="middle" fill="#2563eb">2/8</text><text x="98" y="45" font-weight="700" font-size="14" text-anchor="middle" fill="#ea580c">3/8</text><text x="110" y="125" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">2/8 + 3/8 = 5/8</text></svg>',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
   ],

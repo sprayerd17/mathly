@@ -102,7 +102,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — vlakke van ʼn reghoekige prisma ──────────────────────
@@ -277,7 +276,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V6 Maklik — vlakke van ʼn vierkantige piramide ───────────────────
@@ -436,7 +434,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V10 Maklik — vierkante in ʼn kubus se net ─────────────────────────

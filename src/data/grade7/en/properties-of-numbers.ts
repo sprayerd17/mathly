@@ -171,7 +171,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — digit sum rule for 3 and 9 ─────────────────────────────
@@ -349,7 +348,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — HCF of three small numbers ─────────────────────────────
@@ -583,7 +581,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — LCD to add two fractions ────────────────────────────────

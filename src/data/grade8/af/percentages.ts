@@ -77,7 +77,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik ──────────────────────────────────────────────────────────
@@ -192,7 +191,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Maklik ──────────────────────────────────────────────────────────
@@ -312,7 +310,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Maklik ──────────────────────────────────────────────────────────

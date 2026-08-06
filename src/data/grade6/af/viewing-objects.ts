@@ -40,7 +40,6 @@ export const topicData: TopicData = {
             'Vooraansig: ʼn vyfhoek (reghoek + driehoek). Syaansig: ʼn eenvoudige reghoek. Bo-aansig: ʼn reghoek met ʼn middellyn wat die nok merk.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Speelgoedhuis (reghoekige mure + driehoekige dak) gewys as ʼn eenvoudige 3D-sketse, met sy vooraansig (vyfhoek), syaansig (eenvoudige reghoek) en bo-aansig (reghoek met ʼn middel-noklyn) langsaan geteken',
@@ -95,7 +94,6 @@ export const topicData: TopicData = {
           answer: 'Verskillend — die buitelyn (ʼn reghoek) is dieselfde, maar wat daarbinne gedruk is, is verskillend vir die voor- en agteraansig.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Sokker-doelpale gewys van voor (twee regoppale verbind deur ʼn kruisbalk, wat ʼn omgekeerde U-vorm maak) en van die kant (ʼn enkele dun regoppaal, aangesien die verste paal en kruisbalk direk agter die naaste paal weggesteek is)',
@@ -146,7 +144,6 @@ export const topicData: TopicData = {
             'Vooraansig: ʼn trapvorm (hoog, dan laag, dan laag). Syaansig: ʼn eenvoudige reghoek so hoog soos die hoogste kolom. Bo-aansig: 3 vierkante in ʼn ry.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Kubusstruktuur met ʼn hoë kolom van 2 kubusse aan die linkerkant en twee enkelkubusse aan die regterkant, gewys as ʼn eenvoudige 3D-sketse, met sy trapvormige vooraansig, eenvoudige reghoekige syaansig en 3-vierkant bo-aansig langsaan geteken',
@@ -202,7 +199,6 @@ export const topicData: TopicData = {
             'Vooraansig: ʼn onreëlmatige trapvorm (kort, hoog, medium). Syaansig: ʼn eenvoudige reghoek, so hoog soos die hoogste boks. Bo-aansig: drie gelyke vierkante in ʼn ry.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Drie stoorbokse met dieselfde breedte en diepte maar verskillende hoogtes (kort, hoog, medium) in ʼn ry geplaas, gewys as ʼn eenvoudige 3D-sketse, met sy onreëlmatige trapvormige vooraansig, eenvoudige reghoekige syaansig en drie-vierkant bo-aansig langsaan geteken',
@@ -258,7 +254,6 @@ export const topicData: TopicData = {
             'Vooraansig: ʼn tweehoogte trapvorm. Syaansig: ʼn eenvoudige reghoek so hoog soos die hoër (huis-) gedeelte. Bo-aansig: een reghoek met ʼn skeidingsmuur-lyn.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'ʼn Huis met ʼn korter motorhuis aan een kant aangeheg, albei dieselfde diepte, gewys as ʼn eenvoudige 3D-sketse, met sy trapvormige vooraansig, eenvoudige reghoekige syaansig en enkele verdeelde-reghoek bo- (plan-) aansig langsaan geteken',

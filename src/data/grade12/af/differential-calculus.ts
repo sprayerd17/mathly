@@ -98,7 +98,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — direct limit by factorising ─────────────────────────────
@@ -227,7 +226,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — derivative of x² from first principles ──────────────────
@@ -356,7 +354,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — differentiate a polynomial using the rules ───────────────
@@ -477,7 +474,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Medium — tangent equation given a point ───────────────────────
@@ -588,7 +584,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q13 Hard — interpret increasing/decreasing from a diagram ──────────
@@ -703,7 +698,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q16 Hard — fencing optimisation ───────────────────────────────────

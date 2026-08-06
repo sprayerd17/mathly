@@ -92,7 +92,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — regular hexagon perimeter ──────────────────────────────
@@ -207,7 +206,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Easy — rectangle area ─────────────────────────────────────────
@@ -314,7 +312,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q9 Easy — triangle area ───────────────────────────────────────────

@@ -114,7 +114,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — klassifiseer ʼn skerp hoek ────────────────────────────
@@ -252,7 +251,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Medium — onbekende hoek rondom ʼn punt ─────────────────────────
@@ -383,7 +381,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Medium — gelyke hoeke op ʼn reguit lyn ─────────────────────────

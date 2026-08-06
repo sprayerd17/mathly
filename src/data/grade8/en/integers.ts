@@ -76,7 +76,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy ─────────────────────────────────────────────────────────
@@ -202,7 +201,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Easy ─────────────────────────────────────────────────────────
@@ -334,7 +332,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q8 Easy ─────────────────────────────────────────────────────────

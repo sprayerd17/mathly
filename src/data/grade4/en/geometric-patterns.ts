@@ -136,7 +136,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Short video showing the difference between repeating and growing geometric patterns with real life examples',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -304,7 +303,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Short video showing how to find the rule in a geometric pattern and extend it correctly',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -454,7 +452,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: 'Two rows — top row showing colour pattern red blue green repeating, bottom row showing shape pattern circle circle square triangle repeating',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -573,7 +570,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Short video showing real life examples of tessellating patterns and explaining why some shapes tessellate and others do not',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -663,7 +659,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: 'Three images side by side showing a honeycomb pattern, a brick wall pattern and a Ndebele geometric wall painting pattern',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -759,7 +754,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Short video showing how to design and describe your own geometric pattern step by step',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
   ],

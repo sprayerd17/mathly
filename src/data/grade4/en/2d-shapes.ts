@@ -108,7 +108,6 @@ export const topicData: TopicData = {
             'A rectangle has 4 sides with opposite sides equal in length, 4 vertices and 4 right angles (90°).',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Six 2D shapes labelled clearly — circle, triangle, square, rectangle, pentagon, hexagon — each with sides, vertices and angles marked',
@@ -228,7 +227,6 @@ export const topicData: TopicData = {
             'Regular: equilateral triangle, square.\nIrregular: scalene triangle, rectangle.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Venn diagram sorting shapes into polygons and non-polygons with example shapes in each section',
@@ -303,7 +301,6 @@ export const topicData: TopicData = {
             'Similarities: both are polygons with straight sides and vertices.\nDifferences: a triangle has 3 sides, 3 vertices and 3 angles; a hexagon has 6 sides, 6 vertices and 6 angles.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -362,7 +359,6 @@ export const topicData: TopicData = {
             'A door is a rectangle. It has 4 sides with 2 pairs of equal sides (opposite sides are equal), 4 right angles and 4 vertices. The height is greater than the width.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Six real life objects each labelled with their 2D shape — a coin (circle), a yield sign (triangle), a window (square), a door (rectangle), a honeycomb (hexagon)',

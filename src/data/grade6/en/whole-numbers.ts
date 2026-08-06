@@ -123,7 +123,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — place value of a digit ──────────────────────────────────────
@@ -272,7 +271,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — commutative property fill-in ──────────────────────────────
@@ -431,7 +429,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Easy — comparing two numbers ──────────────────────────────────────
@@ -614,7 +611,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q8 Easy — rounding to the nearest million ─────────────────────────────
@@ -780,7 +776,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q11 Easy — first five multiples ──────────────────────────────────────
@@ -951,7 +946,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q14 Easy — prime or composite ────────────────────────────────────────

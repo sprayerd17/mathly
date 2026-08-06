@@ -117,7 +117,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — classify an acute angle ────────────────────────────────
@@ -255,7 +254,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Medium — unknown angle around a point ──────────────────────────
@@ -386,7 +384,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Medium — equal angles on a straight line ───────────────────────

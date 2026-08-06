@@ -5,20 +5,12 @@ export type WorkedExample = {
   steps: string[]
 }
 
-export type PracticeQuestion = {
-  question: string
-  answer: string
-  options: string[]
-  correctIndex: number
-}
-
 export type Section = {
   id: string
   title: string
   icon: string
   explanation: string
   workedExamples: WorkedExample[]
-  practiceQuestions: PracticeQuestion[]
   openQuestions?: OpenQuestion[]
   videoPlaceholder?: string
   diagramPlaceholder?: string
@@ -145,7 +137,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -177,7 +168,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -229,7 +219,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -274,7 +263,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -319,7 +307,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -352,7 +339,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
   ],

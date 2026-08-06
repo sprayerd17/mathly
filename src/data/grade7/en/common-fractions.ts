@@ -106,7 +106,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — convert mixed number to improper fraction ──────────────
@@ -239,7 +238,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q3 Medium — addition with unlike denominators ────────────────────

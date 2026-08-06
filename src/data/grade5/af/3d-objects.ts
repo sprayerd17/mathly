@@ -101,7 +101,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Maklik — vlakke op ʼn kubus ──────────────────────────────────────────
@@ -261,7 +260,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V4 Maklik — basis van ʼn piramide ────────────────────────────────────────
@@ -403,7 +401,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V7 Maklik — sfeer ───────────────────────────────────────────────────────────
@@ -518,7 +515,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V10 Maklik — sfeer rol ────────────────────────────────────────────────────

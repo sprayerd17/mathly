@@ -86,7 +86,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — circle area ──────────────────────────────────────────────
@@ -232,7 +231,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — double only the width ───────────────────────────────────
@@ -363,7 +361,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Medium — garden plan scale factor ──────────────────────────────

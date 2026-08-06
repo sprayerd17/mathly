@@ -136,7 +136,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Kort video wat die verskil tussen herhalende en groeiende geometriese patrone wys met voorbeelde uit die alledaagse lewe',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -304,7 +303,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Kort video wat wys hoe om die reël in ʼn geometriese patroon te vind en dit korrek uit te brei',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -454,7 +452,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: 'Twee rye — boonste ry wys kleurpatroon rooi blou groen herhalend, onderste ry wys vormpatroon sirkel sirkel vierkant driehoek herhalend',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -573,7 +570,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Kort video wat voorbeelde uit die alledaagse lewe van tesselerende patrone wys en verduidelik waarom sommige vorms tesseleer en ander nie',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -663,7 +659,6 @@ export const topicData: TopicData = {
 
       diagramPlaceholder: 'Drie beelde langs mekaar wat ʼn heuningkoekpatroon, ʼn baksteenmuurpatroon en ʼn Ndebele geometriese muurskildery-patroon wys',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -759,7 +754,6 @@ export const topicData: TopicData = {
 
       videoPlaceholder: 'Kort video wat wys hoe om jou eie geometriese patroon stap vir stap te ontwerp en te beskryf',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
   ],

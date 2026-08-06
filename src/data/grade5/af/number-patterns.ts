@@ -55,7 +55,6 @@ export const topicData: TopicData = {
           answer: 'Die volgende term is 32.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── V1 Maklik — volgende term in ʼn ×7 optelpatroon ──────────────────────
         {
@@ -163,7 +162,6 @@ export const topicData: TopicData = {
           answer: 'Die reël is vermenigvuldig met 3. Elke term is 3 keer die term voor dit.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── V4 Maklik — beskryf die reël vir ʼn +11 patroon ───────────────────
         {
@@ -287,7 +285,6 @@ export const topicData: TopicData = {
           answer: 'Die ontbrekende inset is 7.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── V7 Maklik — vind uitset van ×6 funksiemasjien ─────────────────────
         {
@@ -414,7 +411,6 @@ export const topicData: TopicData = {
           answer: 'Die reël is deel deur 3. Die volgende term is 3.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── V10 Maklik — volgende term in ʼn ÷2 delingspatroon ───────────────────
         {
@@ -529,7 +525,6 @@ export const topicData: TopicData = {
           answer: 'Die ontbrekende term is 80.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── V13 Maklik — vind ontbrekende term in ʼn +3 patroon ─────────────────────
         {
@@ -669,7 +664,6 @@ export const topicData: TopicData = {
           answer: 'Die patroon is 2, 6, 18, 54, 162.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── V16 Maklik — skryf eerste 5 terme van +9 patroon ─────────────────────
         {

@@ -110,7 +110,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — write a simple addition equation ───────────────────────
@@ -218,7 +217,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q3 Easy — solve an addition equation ────────────────────────────
@@ -370,7 +368,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Medium — solve a two-step addition equation ───────────────────

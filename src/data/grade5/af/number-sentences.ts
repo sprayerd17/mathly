@@ -123,7 +123,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — true or false ───────────────────────────────────────────
@@ -303,7 +302,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — single missing value ───────────────────────────────────
@@ -459,7 +457,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy ───────────────────────────────────────────────────────────
@@ -611,7 +608,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Easy ──────────────────────────────────────────────────────────

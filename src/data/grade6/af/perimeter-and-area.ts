@@ -88,7 +88,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V1 Easy — omtrek van ʼn reëlmatige seshoek ───────────────────────
@@ -203,7 +202,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V5 Easy — reghoek-oppervlakte ─────────────────────────────────────
@@ -310,7 +308,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── V9 Easy — driehoek-oppervlakte ────────────────────────────────────

@@ -158,7 +158,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video explaining probability language using real life examples — certain impossible likely unlikely and equally likely',
@@ -291,7 +290,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'Three experiment diagrams side by side — a die showing faces 1 to 6, a coin showing heads and tails, and a spinner divided into 4 equal sections numbered 1 to 4',
@@ -401,7 +399,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A results table showing a coin flip experiment with 20 trials columns for heads and tails tally marks and totals comparing prediction of 10 each with actual results',
@@ -465,7 +462,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to conduct a simple probability experiment record results and compare predicted outcomes with actual outcomes',

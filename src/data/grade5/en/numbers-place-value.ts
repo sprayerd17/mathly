@@ -103,7 +103,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       videoPlaceholder:
         'Short video explaining place value of 6-digit numbers using a colour coded place value table',
     },
@@ -167,7 +166,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -210,7 +208,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       diagramPlaceholder:
         'Number line from 0 to 100 000 in intervals of 10 000 with 65 000 marked halfway between 60 000 and 70 000',
       diagramSvg:
@@ -302,7 +299,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       videoPlaceholder:
         'Short video showing how to compare, order and round large numbers up to 100 000 using place value',
     },
@@ -359,7 +355,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -403,7 +398,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       diagramPlaceholder:
         'A grid of numbers from 1 to 100 with prime numbers highlighted in blue and composite numbers in a lighter colour showing the distribution of primes up to 100',
       diagramSvg:

@@ -103,7 +103,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       videoPlaceholder:
         'Kort video wat die plekwaarde van 6-syfergetalle verduidelik met behulp van ʼn kleur-gekodeerde plekwaardetabel',
     },
@@ -167,7 +166,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -210,7 +208,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       diagramPlaceholder:
         'Getallelyn van 0 tot 100 000 in intervalle van 10 000 met 65 000 gemerk halfpad tussen 60 000 en 70 000',
       diagramSvg:
@@ -302,7 +299,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       videoPlaceholder:
         'Kort video wat wys hoe om groot getalle tot by 100 000 te vergelyk, te orden en af te rond met behulp van plekwaarde',
     },
@@ -359,7 +355,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
     },
 
     // ─────────────────────────────────────────────────────────────────────────
@@ -403,7 +398,6 @@ export const topicData: TopicData = {
           ],
         },
       ],
-      practiceQuestions: [],
       diagramPlaceholder:
         'ʼn Rooster van getalle van 1 tot 100 met priemgetalle uitgelig in blou en saamgestelde getalle in ʼn ligter kleur wat die verspreiding van priemgetalle tot by 100 toon',
       diagramSvg:

@@ -52,7 +52,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — alternating shapes ─────────────────────────────────────
@@ -160,7 +159,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q4 Easy — step 2 of a growing square pattern ─────────────────────
@@ -288,7 +286,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q7 Easy — Thabo's triangles ──────────────────────────────────────

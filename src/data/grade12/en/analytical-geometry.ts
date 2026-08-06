@@ -117,7 +117,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — write the standard circle equation ──────────────────────
@@ -256,7 +255,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q6 Hard — completing the square to find centre and radius ─────────
@@ -386,7 +384,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q11 Medium — centre and radius from standard form ─────────────────
@@ -524,7 +521,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q16 Hard — evaluate a claim about tangent gradients ───────────────
@@ -658,7 +654,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q22 Easy — θ from a positive gradient ──────────────────────────────
@@ -810,7 +805,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q27 Easy — gradient of one side of a quadrilateral ─────────────────

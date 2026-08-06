@@ -75,7 +75,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       diagramPlaceholder:
         'Step-by-step construction showing a line segment AB being bisected with compass arcs above and below, and the perpendicular bisector drawn through',
@@ -164,7 +163,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       diagramPlaceholder:
         'Step-by-step construction of an equilateral triangle with compass arcs shown, and a separate construction of a 60° angle',
@@ -262,7 +260,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       diagramPlaceholder:
         'A triangle with all three angle bisectors drawn, meeting at a single labelled incentre point',

@@ -53,7 +53,6 @@ export const topicData: TopicData = {
             'Front view: the rounded toe shape. Side view: the full outline from heel to toe. Top view: a footprint-like outline seen from above.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A simple cap or shoe shown three times, each time with a small stick-figure viewer positioned at a different spot (in front, at the side, above) with an arrow pointing at the object, and the resulting view sketched next to each viewer',
@@ -113,7 +112,6 @@ export const topicData: TopicData = {
           answer: 'The top view — looking straight down shows the round brim and crown as two circles.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A single everyday object such as an apple, drawn once in full, with three small labelled frames beside it (front, side, top) each showing the correct outline the object would produce from that viewpoint, without stating which is which is "correct" in the question text',
@@ -167,7 +165,6 @@ export const topicData: TopicData = {
           answer: 'The front view — it shows the narrower front of the shoe with the laces visible near the top.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -216,7 +213,6 @@ export const topicData: TopicData = {
             'A plan view shows the full layout from above with nothing hidden, which makes it much easier to plan where walls, doors and furniture should go.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A simple classroom scene shown twice — once as a side view (desks, chairs and chalkboard drawn from the doorway, with some desks partly hidden behind others) and once as a plan/top view (the same desks and chairs drawn as simple rectangles positioned on the floor, all fully visible, like a simple map)',

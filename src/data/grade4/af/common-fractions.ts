@@ -146,7 +146,6 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -278,7 +277,6 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -403,7 +401,6 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -492,7 +489,6 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
 
       videoPlaceholder: 'Kort video wat wys hoe om ʼn breuk van ʼn heelgetal te vind deur eers te deel en dan te vermenigvuldig',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
 
@@ -692,7 +688,6 @@ Thabo het <span style="font-weight:700;">drie agtstes</span> van die sjokoladele
       diagramPlaceholder: 'Staafmodel wat wys dat 2/8 plus 3/8 gelyk is aan 5/8, met elke deel duidelik geëtiketteer en kleur-gekodeer',
       diagramSvg: '<svg viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="55" width="48" height="40" fill="#93c5fd"/><rect x="62" y="55" width="72" height="40" fill="#fdba74"/><rect x="14" y="55" width="192" height="40" fill="none" stroke="#0f1f3d" stroke-width="2.5"/><line x1="38" y1="55" x2="38" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="62" y1="55" x2="62" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="86" y1="55" x2="86" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="110" y1="55" x2="110" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="134" y1="55" x2="134" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="158" y1="55" x2="158" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><line x1="182" y1="55" x2="182" y2="95" stroke="#0f1f3d" stroke-width="1.5"/><text x="38" y="45" font-weight="700" font-size="14" text-anchor="middle" fill="#2563eb">2/8</text><text x="98" y="45" font-weight="700" font-size="14" text-anchor="middle" fill="#ea580c">3/8</text><text x="110" y="125" font-weight="700" font-size="16" text-anchor="middle" fill="#16a34a">2/8 + 3/8 = 5/8</text></svg>',
 
-      practiceQuestions: [],
       openQuestions: [],
     },
   ],

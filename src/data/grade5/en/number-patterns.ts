@@ -55,7 +55,6 @@ export const topicData: TopicData = {
           answer: 'The next term is 32.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── Q1 Easy — next term in a ×7 addition pattern ──────────────────────
         {
@@ -163,7 +162,6 @@ export const topicData: TopicData = {
           answer: 'The rule is multiply by 3. Each term is 3 times the term before it.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── Q4 Easy — describe the rule for an +11 pattern ───────────────────
         {
@@ -287,7 +285,6 @@ export const topicData: TopicData = {
           answer: 'The missing input is 7.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── Q7 Easy — find output of ×6 function machine ─────────────────────
         {
@@ -414,7 +411,6 @@ export const topicData: TopicData = {
           answer: 'The rule is divide by 3. The next term is 3.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── Q10 Easy — next term in a ÷2 division pattern ───────────────────
         {
@@ -529,7 +525,6 @@ export const topicData: TopicData = {
           answer: 'The missing term is 80.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── Q13 Easy — find missing term in a +3 pattern ─────────────────────
         {
@@ -669,7 +664,6 @@ export const topicData: TopicData = {
           answer: 'The pattern is 2, 6, 18, 54, 162.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [
         // ── Q16 Easy — write first 5 terms of +9 pattern ─────────────────────
         {

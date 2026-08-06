@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, type ReactNode } from 'react'
 import Link from 'next/link'
 import { useAuth, getActiveChild, type Language } from '@/app/providers'
-import type { TopicData, Section, WorkedExample, PracticeQuestion, OpenQuestion, QuestionPart, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
+import type { TopicData, Section, WorkedExample, OpenQuestion, QuestionPart, PracticeSet } from '@/src/data/grade4/en/numbers-operations'
 import AIAssistant from '@/app/components/AIAssistant'
 import ReportIssueButton from '@/app/components/ReportIssueButton'
 import { useTranslations } from '@/src/i18n/useTranslations'
@@ -270,118 +270,6 @@ function DiagramPlaceholderCard({ label, svg }: { label: string; svg: string }) 
         dangerouslySetInnerHTML={{ __html: svg }}
         style={{ maxWidth: '100%', display: 'flex', justifyContent: 'center' }}
       />
-    </div>
-  )
-}
-
-function PracticeCard({
-  question,
-  number,
-  revealed,
-  onAnswer,
-}: {
-  question: PracticeQuestion
-  number: number
-  revealed: boolean
-  onAnswer: (correct: boolean) => void
-}) {
-  const [selected, setSelected] = useState<number | null>(null)
-  const [selfMark, setSelfMark] = useState<boolean | null>(null)
-  const t = useTranslations()
-
-  function handleSelect(idx: number) {
-    if (selected !== null || revealed) return
-    setSelected(idx)
-  }
-
-  function handleSelfMark(correct: boolean) {
-    if (selfMark !== null) return
-    setSelfMark(correct)
-    onAnswer(correct)
-  }
-
-  const isCorrectSelection = selected !== null && selected === question.correctIndex
-
-  return (
-    <div className="bg-white border border-gray-100 rounded-xl shadow-sm" style={{ padding: '24px' }}>
-      <div className="flex items-start gap-4 mb-5">
-        <span className="shrink-0 w-7 h-7 rounded-full bg-[#1e40af] text-white text-xs font-bold flex items-center justify-center mt-0.5">
-          {number}
-        </span>
-        {looksLikeHtml(question.question) ? (
-          <p className="topic-html text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }} dangerouslySetInnerHTML={{ __html: question.question }} />
-        ) : (
-          <p className="text-sm text-gray-800 font-medium pt-0.5" style={{ lineHeight: 1.8 }}>
-            {decodeEntities(question.question)}
-          </p>
-        )}
-      </div>
-
-      <div className="ml-11 space-y-2">
-        {Array.isArray(question.options) && question.options.map((opt, idx) => {
-          const isCorrect = idx === question.correctIndex
-          const isSelected = idx === selected
-
-          let btnClass =
-            'w-full text-left text-sm px-4 py-3 rounded-xl border transition-colors font-medium '
-          if (!revealed) {
-            btnClass += isSelected
-              ? 'border-[#1e40af] bg-blue-50 text-[#1e40af]'
-              : 'border-gray-200 text-gray-700 hover:border-[#1e40af] hover:bg-blue-50 hover:text-[#1e40af]'
-          } else if (isCorrect) {
-            btnClass += 'border-green-400 bg-green-50 text-green-800'
-          } else if (isSelected) {
-            btnClass += 'border-red-300 bg-red-50 text-red-700'
-          } else {
-            btnClass += 'border-gray-100 text-gray-500'
-          }
-
-          return (
-            <button key={idx} onClick={() => handleSelect(idx)} disabled={revealed} className={btnClass}>
-              <span className="inline-flex items-center gap-2.5">
-                <span className="shrink-0 w-5 h-5 rounded-full border border-current flex items-center justify-center text-xs font-bold">
-                  {revealed && isCorrect ? '✓' : revealed && isSelected ? '✗' : String.fromCharCode(65 + idx)}
-                </span>
-                {decodeEntities(opt)}
-              </span>
-            </button>
-          )
-        })}
-      </div>
-
-      {revealed && !isCorrectSelection && (
-        <div className="ml-11 mt-4 bg-blue-50 border border-blue-200 rounded-xl px-4 py-4">
-          <p className="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-2">{t.topic_how_to_work_it_out}</p>
-          <p className="text-sm text-blue-900 whitespace-pre-line" style={{ lineHeight: 1.8 }}>
-            {decodeEntities(question.answer)}
-          </p>
-        </div>
-      )}
-
-      {revealed && (
-        selfMark === null ? (
-          <div className="ml-11 flex gap-3 mt-4">
-            <button
-              onClick={() => handleSelfMark(true)}
-              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-              style={{ backgroundColor: '#f0fdf4', color: '#16a34a', border: '1px solid #86efac' }}
-            >
-              {t.topic_i_got_it_right}
-            </button>
-            <button
-              onClick={() => handleSelfMark(false)}
-              className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-              style={{ backgroundColor: '#fef2f2', color: '#dc2626', border: '1px solid #fca5a5' }}
-            >
-              {t.topic_i_got_it_wrong}
-            </button>
-          </div>
-        ) : (
-          <p className="ml-11 mt-4 text-sm font-semibold" style={{ color: selfMark ? '#16a34a' : '#dc2626' }}>
-            {selfMark ? t.topic_marked_correct : t.topic_marked_incorrect}
-          </p>
-        )
-      )}
     </div>
   )
 }
@@ -1557,97 +1445,11 @@ function RealPractice({ data, topicSlug, grade }: { data: TopicData; topicSlug: 
     return <OpenPractice questions={data.topicPractice} scoreMessages={data.scoreMessages} topicSlug={topicSlug} grade={grade} />
   }
 
-  return <FlatPracticeQuestions data={data} />
-}
-
-// ─── Flat multiple-choice fallback (no practice sets / open questions defined) ─
-
-function FlatPracticeQuestions({ data }: { data: TopicData }) {
-  const t = useTranslations()
-
-  const flatItems: Array<{ q: PracticeQuestion; key: string; sectionId: string }> = []
-  data.sections.forEach((section) => {
-    ;(section.practiceQuestions ?? []).forEach((q, i) => {
-      flatItems.push({ q, key: `${section.id}-${i}`, sectionId: section.id })
-    })
-  })
-  const total = flatItems.length
-
-  const [results, setResults] = useState<Record<string, boolean | null>>(() =>
-    Object.fromEntries(flatItems.map((item) => [item.key, null]))
-  )
-  const [revealed, setRevealed] = useState(false)
-  const [resetKey, setResetKey] = useState(0)
-
-  function handleAnswer(key: string, correct: boolean) {
-    setResults((prev) => ({ ...prev, [key]: correct }))
-  }
-
-  function handleReset() {
-    setResults(Object.fromEntries(flatItems.map((item) => [item.key, null])))
-    setRevealed(false)
-    setResetKey((k) => k + 1)
-  }
-
-  const allAnswered = total > 0 && Object.values(results).every((r) => r !== null)
-  const score = Object.values(results).filter(Boolean).length
-
-  return (
-    <div className="max-w-[720px]" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-      <div>
-        <h2 className="text-base font-bold text-[#0f1f3d] mb-1">{t.topic_practice_questions_heading}</h2>
-        <p className="text-sm text-gray-500" style={{ lineHeight: 1.7 }}>
-          {t.topic_reveal_instructions}
-        </p>
-      </div>
-
-      <PracticeFormatNotice />
-
-      {data.sections.map((section: Section) => {
-        const items = flatItems.filter((item) => item.sectionId === section.id)
-        if (items.length === 0) return null
-        return (
-          <div key={section.id}>
-            <h2
-              className="text-sm font-semibold text-[#0f1f3d] uppercase tracking-wide flex items-center gap-2"
-              style={{ marginBottom: '16px' }}
-            >
-              <span aria-hidden="true">{section.icon}</span>
-              {decodeEntities(section.title)}
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {items.map(({ q, key }, i) => (
-                <PracticeCard
-                  key={`${key}-${resetKey}`}
-                  question={q}
-                  number={i + 1}
-                  revealed={revealed}
-                  onAnswer={(c) => handleAnswer(key, c)}
-                />
-              ))}
-            </div>
-          </div>
-        )
-      })}
-
-      {!revealed && total > 0 && (
-        <div>
-          <button
-            onClick={() => setRevealed(true)}
-            className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors hover:opacity-90"
-            style={{ backgroundColor: '#1e40af' }}
-          >
-            {t.topic_reveal_answers}
-          </button>
-          <p className="text-xs text-gray-500 mt-2">{t.topic_reveal_all_prompt}</p>
-        </div>
-      )}
-
-      {allAnswered && (
-        <ResultsSummary score={score} total={total} onReset={handleReset} />
-      )}
-    </div>
-  )
+  // Unreachable for any real topic — every one of the 339 content files
+  // defines practiceSets, section-level openQuestions, or topicPractice, so
+  // this is just a defensive floor in case a future topic is authored
+  // without any of the three.
+  return null
 }
 
 // ─── Main component ───────────────────────────────────────────────────────────

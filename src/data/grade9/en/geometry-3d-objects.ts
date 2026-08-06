@@ -98,7 +98,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video introducing the 5 Platonic solids and comparing them to spheres and cylinders highlighting curved surfaces',
@@ -166,7 +165,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video showing the net of a cylinder — two circles and a rectangle — and how it folds to form the 3D solid',
@@ -233,7 +231,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       videoPlaceholder:
         'Short video comparing and classifying 3D objects by faces edges and vertices and explaining when Euler\'s formula applies',

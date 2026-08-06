@@ -97,7 +97,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       videoPlaceholder:
@@ -194,7 +193,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [
         {
           difficulty: 'Easy',
@@ -332,7 +330,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       videoPlaceholder:
@@ -419,7 +416,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       videoPlaceholder:
@@ -505,7 +501,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
       openQuestions: [],
 
       videoPlaceholder:

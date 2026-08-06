@@ -102,7 +102,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy — faces of a rectangular prism ───────────────────────────
@@ -277,7 +276,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q6 Easy — faces of a square pyramid ──────────────────────────────
@@ -436,7 +434,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Easy — squares in a cube net ─────────────────────────────────

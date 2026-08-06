@@ -124,7 +124,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q1 Easy ──────────────────────────────────────────────────────────
@@ -270,7 +269,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q5 Medium ─────────────────────────────────────────────────────────
@@ -390,7 +388,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q8 Medium ─────────────────────────────────────────────────────────
@@ -500,7 +497,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q10 Medium ────────────────────────────────────────────────────────
@@ -644,7 +640,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q12 Easy ──────────────────────────────────────────────────────────
@@ -829,7 +824,6 @@ export const topicData: TopicData = {
         },
       ],
 
-      practiceQuestions: [],
 
       openQuestions: [
         // ── Q21 Easy ──────────────────────────────────────────────────────────

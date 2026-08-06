@@ -109,7 +109,6 @@ export const topicData: TopicData = {
           answer: 'Millilitres (ml). Medicine is measured in very small amounts, so millilitres are the correct unit.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A 1 litre bottle shown with markings at 250ml 500ml 750ml and 1000ml with the current volume shown at 750ml to illustrate capacity vs volume',
@@ -197,7 +196,6 @@ export const topicData: TopicData = {
           answer: 'The volume is 360 ml.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A measuring jug showing markings at 0 200 400 600 800 and 1000ml with the liquid level at 600ml clearly marked with a red line',
@@ -262,7 +260,6 @@ export const topicData: TopicData = {
           answer: '3.75 l = 3 750 ml.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       videoPlaceholder:
         'Short video showing how to convert between millilitres and litres by multiplying or dividing by 1 000 with worked examples',
@@ -341,7 +338,6 @@ export const topicData: TopicData = {
           answer: 'The volume is 18 cm³.',
         },
       ],
-      practiceQuestions: [],
       openQuestions: [],
       diagramPlaceholder:
         'A 3D rectangular box made of unit cubes showing 3 cubes long 2 cubes wide and 2 cubes tall with each cube labelled 1cm cubed',
